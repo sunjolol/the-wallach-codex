@@ -39,21 +39,12 @@ function tileStatusFor(key: string, snapshot: CoverageSnapshot | null): Coverage
   if (snapshot === null) {
     return '';
   }
-  /* `key` is the canonical essential name; snapshot tiles are keyed the same. */
-  const found = snapshot.tiles.find(t => t.name === key);
-  if (found === undefined) {
-    return '';
-  }
-  if (found.aggregateVehicle) {
-    return 'trace';
-  }
-  if (found.covered && found.fillPercent >= 1) {
-    return 'covered';
-  }
-  if (found.covered) {
-    return 'partial';
-  }
-  return 'gap';
+  /*
+   * `key` is the canonical essential name; snapshot tiles are keyed the same.
+   * The snapshot owns the authoritative status (state/coverage.ts classify) —
+   * the view renders it directly, no re-derivation.
+   */
+  return snapshot.tiles.find(t => t.name === key)?.status ?? '';
 }
 
 function escHTML(s: unknown): string {
@@ -117,7 +108,10 @@ function renderSection(spec: LayoutSection, snapshot: CoverageSnapshot | null): 
   }
 
   const total = allTiles.length;
-  const covered = allTiles.filter(t => tileStatusFor(t.key, snapshot) === 'covered').length;
+  const covered = allTiles.filter((t) => {
+    const s = tileStatusFor(t.key, snapshot);
+    return s === 'covered' || s === 'trace';
+  }).length;
 
   return `
     <section class="essentials-section">

@@ -4124,6 +4124,70 @@
   };
   var NEVER = INVALID;
 
+  // assets/js/src/core/schemas/coverage-layout.ts
+  var LayoutTileSchema = external_exports.object({
+    /**
+     * Canonical essential name — the join key into the CoverageSnapshot
+     * (state/coverage.ts). Equals the `name` field in essentials-targets-data.json.
+     * Display fields below (name/sym/letter/abbr) are abbreviated chrome; `key` is
+     * the stable identity used to look up live status.
+     */
+    key: external_exports.string().min(1),
+    /** Atomic number (minerals). */
+    num: external_exports.number().optional(),
+    /** Chemical symbol (minerals). */
+    sym: external_exports.string().optional(),
+    /** Vitamin letter code (e.g. "B12"). */
+    letter: external_exports.string().optional(),
+    /** Amino three-letter abbreviation (e.g. "Arg"). */
+    abbr: external_exports.string().optional(),
+    /** Section sequence code (e.g. "V·01", "AA·03", "F·02"). */
+    code: external_exports.string().optional(),
+    /** Display name (abbreviated, uppercase). */
+    name: external_exports.string().min(1),
+    /** Optional sub-hint line (fatty acids). */
+    hint: external_exports.string().optional()
+  });
+  var LayoutSubsectionSchema = external_exports.object({
+    rank: external_exports.string(),
+    label: external_exports.string(),
+    hint: external_exports.string(),
+    tiles: external_exports.array(LayoutTileSchema)
+  });
+  var LayoutSectionSchema = external_exports.object({
+    num: external_exports.string(),
+    title: external_exports.string(),
+    sub: external_exports.string(),
+    gridClass: external_exports.string(),
+    tileClass: external_exports.enum(["tile", "tile--vitamin", "tile--amino", "tile--fat"]),
+    subsections: external_exports.array(LayoutSubsectionSchema).optional(),
+    tiles: external_exports.array(LayoutTileSchema).optional()
+  });
+  var LayoutGoalSchema = external_exports.object({
+    id: external_exports.string(),
+    name: external_exports.string(),
+    total: external_exports.number()
+  });
+  var CoverageLayoutSchema = external_exports.object({
+    sections: external_exports.array(LayoutSectionSchema),
+    goals: external_exports.array(LayoutGoalSchema)
+  });
+
+  // assets/js/src/core/schemas/coverage-status.ts
+  var CoverageTargetSchema = external_exports.object({
+    /** trace_pdm · hbsp · dietary · wallach · wallach_clinical · dietary_with_clinical_lever · unspecified · … */
+    kind: external_exports.string().optional(),
+    /** Lower bound of the Wallach target in `unit`. */
+    low: external_exports.number().optional(),
+    high: external_exports.number().optional(),
+    unit: external_exports.string().optional()
+  }).passthrough();
+  var RegimenNutrientSchema = external_exports.object({
+    name: external_exports.string(),
+    amount: external_exports.coerce.number(),
+    unit: external_exports.string().optional()
+  }).passthrough();
+
   // assets/js/src/core/schemas/knowledge.ts
   var EssentialSchema = external_exports.object({
     name: external_exports.string(),
@@ -4143,6 +4207,39 @@
     nutrients: external_exports.array(external_exports.unknown()).optional()
   }).passthrough();
   var ProductsLookupSchema = external_exports.record(external_exports.string(), external_exports.unknown());
+
+  // assets/js/src/core/schemas/log.ts
+  var LogKindSchema = external_exports.enum([
+    "session-start",
+    "session-end",
+    "round-close",
+    "build",
+    "invariant-pass",
+    "invariant-fail",
+    "incident",
+    "milestone",
+    "design-decision",
+    "note"
+  ]);
+  var LogEntrySchema = external_exports.object({
+    /** Unique id — typically a ULID-ish string. */
+    id: external_exports.string().min(1),
+    /** ISO-8601 timestamp the event was recorded. */
+    ts: external_exports.string().min(1),
+    /** Surface or module the event came from ("coverage", "scanner", "tools", "main", etc). */
+    surface: external_exports.string().min(1),
+    /** Kind tag (drives the chip color in the profile panel). */
+    kind: LogKindSchema,
+    /** Short headline — twitter-length. */
+    summary: external_exports.string().min(1).max(280),
+    /** Optional longer body. */
+    detail: external_exports.string().optional(),
+    /** Optional structured payload (cite paths, file lists, scores, etc). */
+    metadata: external_exports.record(external_exports.unknown()).optional()
+  });
+  var LogShapeSchema = external_exports.object({
+    entries: external_exports.array(LogEntrySchema).default([])
+  });
 
   // assets/js/src/core/schemas/regimen.ts
   var RegimenLabelSchema = external_exports.object({
@@ -4205,87 +4302,28 @@
     items: external_exports.array(HistoryEntrySchema)
   });
 
-  // assets/js/src/core/schemas/log.ts
-  var LogKindSchema = external_exports.enum([
-    "session-start",
-    "session-end",
-    "round-close",
-    "build",
-    "invariant-pass",
-    "invariant-fail",
-    "incident",
-    "milestone",
-    "design-decision",
-    "note"
-  ]);
-  var LogEntrySchema = external_exports.object({
-    /** Unique id — typically a ULID-ish string. */
-    id: external_exports.string().min(1),
-    /** ISO-8601 timestamp the event was recorded. */
-    ts: external_exports.string().min(1),
-    /** Surface or module the event came from ("coverage", "scanner", "tools", "main", etc). */
-    surface: external_exports.string().min(1),
-    /** Kind tag (drives the chip color in the profile panel). */
-    kind: LogKindSchema,
-    /** Short headline — twitter-length. */
-    summary: external_exports.string().min(1).max(280),
-    /** Optional longer body. */
-    detail: external_exports.string().optional(),
-    /** Optional structured payload (cite paths, file lists, scores, etc). */
-    metadata: external_exports.record(external_exports.unknown()).optional()
-  });
-  var LogShapeSchema = external_exports.object({
-    entries: external_exports.array(LogEntrySchema).default([])
-  });
-
-  // assets/js/src/core/schemas/coverage-layout.ts
-  var LayoutTileSchema = external_exports.object({
-    /**
-     * Canonical essential name — the join key into the CoverageSnapshot
-     * (state/coverage.ts). Equals the `name` field in essentials-targets-data.json.
-     * Display fields below (name/sym/letter/abbr) are abbreviated chrome; `key` is
-     * the stable identity used to look up live status.
-     */
-    key: external_exports.string().min(1),
-    /** Atomic number (minerals). */
-    num: external_exports.number().optional(),
-    /** Chemical symbol (minerals). */
-    sym: external_exports.string().optional(),
-    /** Vitamin letter code (e.g. "B12"). */
-    letter: external_exports.string().optional(),
-    /** Amino three-letter abbreviation (e.g. "Arg"). */
-    abbr: external_exports.string().optional(),
-    /** Section sequence code (e.g. "V·01", "AA·03", "F·02"). */
-    code: external_exports.string().optional(),
-    /** Display name (abbreviated, uppercase). */
-    name: external_exports.string().min(1),
-    /** Optional sub-hint line (fatty acids). */
-    hint: external_exports.string().optional()
-  });
-  var LayoutSubsectionSchema = external_exports.object({
-    rank: external_exports.string(),
-    label: external_exports.string(),
-    hint: external_exports.string(),
-    tiles: external_exports.array(LayoutTileSchema)
-  });
-  var LayoutSectionSchema = external_exports.object({
-    num: external_exports.string(),
-    title: external_exports.string(),
-    sub: external_exports.string(),
-    gridClass: external_exports.string(),
-    tileClass: external_exports.enum(["tile", "tile--vitamin", "tile--amino", "tile--fat"]),
-    subsections: external_exports.array(LayoutSubsectionSchema).optional(),
-    tiles: external_exports.array(LayoutTileSchema).optional()
-  });
-  var LayoutGoalSchema = external_exports.object({
-    id: external_exports.string(),
-    name: external_exports.string(),
-    total: external_exports.number()
-  });
-  var CoverageLayoutSchema = external_exports.object({
-    sections: external_exports.array(LayoutSectionSchema),
-    goals: external_exports.array(LayoutGoalSchema)
-  });
+  // assets/js/src/state/regimen.ts
+  var REGIMEN_KEY = "lcRegimen_v1";
+  var RG_OVERRIDES_KEY = "rgOverrides_v1";
+  var RG_MANUAL_KEY = "rgManualItems_v1";
+  var RG_REMOVED_KEY = "rgRemoved_v1";
+  var RG_USER_GOALS_KEY = "rgUserGoals_v1";
+  function loadRegimen() {
+    return getValidated(REGIMEN_KEY, RegimenSchema) ?? { items: [] };
+  }
+  function loadRgOverrides() {
+    return getValidated(RG_OVERRIDES_KEY, OverridesMapSchema) ?? {};
+  }
+  function loadRgManual() {
+    return getValidated(RG_MANUAL_KEY, RgManualSchema) ?? [];
+  }
+  function loadRgRemoved() {
+    const arr = getValidated(RG_REMOVED_KEY, RgRemovedSchema);
+    return new Set(arr ?? []);
+  }
+  function loadRgUserGoals() {
+    return getValidated(RG_USER_GOALS_KEY, RgUserGoalsSchema);
+  }
 
   // assets/js/src/state/coverage.ts
   function catFromTarget(raw) {
@@ -4317,22 +4355,216 @@
     const result = EssentialsDataSchema.safeParse(parsed);
     return result.success ? result.data.essentials : [];
   }
+  function cleanName(s) {
+    return s.toLowerCase().replace(/\s*\([^)]*\)\s*/g, "").trim();
+  }
+  function toMg(value, unit) {
+    const u = (unit ?? "mg").toLowerCase();
+    if (u === "g") {
+      return { v: value * 1e3, u: "mg" };
+    }
+    if (u === "mcg" || u === "\u03BCg" || u === "\xB5g") {
+      return { v: value / 1e3, u: "mg" };
+    }
+    if (u === "iu") {
+      return { v: value, u: "iu" };
+    }
+    return { v: value, u: "mg" };
+  }
+  function buildByName(targets) {
+    const m = /* @__PURE__ */ new Map();
+    for (const t of targets) {
+      m.set(cleanName(t.name), t);
+    }
+    return m;
+  }
+  function matchToEssential(nutrientName, targets, byName) {
+    if (nutrientName === "") {
+      return null;
+    }
+    const nn = cleanName(nutrientName);
+    const direct = byName.get(nn);
+    if (direct !== void 0) {
+      return direct;
+    }
+    for (const t of targets) {
+      const tn = cleanName(t.name);
+      if (tn === nn) {
+        return t;
+      }
+      if (nn.startsWith("vitamin ") && tn.startsWith("vitamin ")) {
+        const nv = nn.replace("vitamin ", "").split(/[\s(+]/)[0] ?? "";
+        const tv = tn.replace("vitamin ", "").split(/[\s(+]/)[0] ?? "";
+        if (nv !== "" && nv === tv) {
+          return t;
+        }
+        const nvBase = nv.replace(/\d+$/, "");
+        const tvBase = tv.replace(/\d+$/, "");
+        if (nvBase !== "" && nvBase === tvBase && nv === nvBase !== (tv === tvBase)) {
+          return t;
+        }
+        if (nv !== nvBase && tv !== tvBase) {
+          const esc = nv.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+          if (new RegExp(`\\b${esc}\\b`).test(tn)) {
+            return t;
+          }
+        }
+      }
+      if (nn.includes("omega") && tn.includes("omega")) {
+        const nm = (nn.match(/omega[-\s]?(\d)/) ?? [])[1];
+        const tm = (tn.match(/omega[-\s]?(\d)/) ?? [])[1];
+        if (nm !== void 0 && tm !== void 0 && nm === tm) {
+          return t;
+        }
+      }
+      if ((nn.includes("folate") || nn.includes("folic")) && tn.includes("folic")) {
+        return t;
+      }
+    }
+    return null;
+  }
+  var EMPTY_DELIVERY = { totalMg: 0, totalIU: 0, sources: [] };
+  function collectRegimenItems() {
+    const removed = loadRgRemoved();
+    const byId = /* @__PURE__ */ new Map();
+    for (const it of [...loadRegimen().items, ...loadRgManual()]) {
+      if (removed.has(it.id)) {
+        continue;
+      }
+      byId.set(it.id, it);
+    }
+    return [...byId.values()];
+  }
+  function readScale(item, overrides) {
+    const ov = overrides[String(item.id)];
+    const candidates = [
+      ov?.["scaling_factor"],
+      item["scaling_factor"],
+      item.label["servings"]
+    ];
+    for (const c of candidates) {
+      const n = typeof c === "number" ? c : typeof c === "string" ? Number.parseFloat(c) : Number.NaN;
+      if (Number.isFinite(n) && n > 0) {
+        return n;
+      }
+    }
+    return 1;
+  }
+  function accumulate(items, overrides, targets, byName) {
+    const out = /* @__PURE__ */ new Map();
+    for (const t of targets) {
+      out.set(t.name, { totalMg: 0, totalIU: 0, sources: [] });
+    }
+    for (const item of items) {
+      const scale = readScale(item, overrides);
+      const displayName = typeof item.label.name === "string" && item.label.name !== "" ? item.label.name : "Unknown";
+      const rawNutrients = Array.isArray(item.label.nutrients) ? item.label.nutrients : [];
+      for (const raw of rawNutrients) {
+        const parsed = RegimenNutrientSchema.safeParse(raw);
+        if (!parsed.success) {
+          continue;
+        }
+        const n = parsed.data;
+        if (!(n.amount > 0)) {
+          continue;
+        }
+        const matched = matchToEssential(n.name, targets, byName);
+        if (matched === null) {
+          continue;
+        }
+        const d = out.get(matched.name);
+        if (d === void 0) {
+          continue;
+        }
+        const conv = toMg(n.amount * scale, n.unit);
+        if (conv.u === "iu") {
+          d.totalIU += conv.v;
+        } else {
+          d.totalMg += conv.v;
+        }
+        if (!d.sources.includes(displayName)) {
+          d.sources.push(displayName);
+        }
+      }
+    }
+    return out;
+  }
+  var PDM_TRACE = /\bbtt\b|tangerine|plant.derived|humic|colloidal|utt/;
+  var PDM_COLLECTIVE = /\bbtt\b|tangerine|utt|amino/;
+  function numericStatus(target, d) {
+    const isIU = (target.unit ?? "").toLowerCase() === "iu";
+    const current = isIU ? d.totalIU : d.totalMg;
+    const lowRaw = target.low ?? 0;
+    const low = isIU ? lowRaw : toMg(lowRaw, target.unit).v;
+    if (low <= 0) {
+      return current > 0 ? "covered" : "";
+    }
+    if (current >= low * 0.95) {
+      return "covered";
+    }
+    if (current >= low * 0.3) {
+      return "partial";
+    }
+    return "gap";
+  }
+  function classify(target, d) {
+    const hasSrc = d.sources.length > 0;
+    const kind = target?.kind;
+    if (target === null || kind === void 0 || kind === "unspecified") {
+      return hasSrc ? "covered" : "";
+    }
+    if (kind === "dietary") {
+      return hasSrc ? "covered" : "";
+    }
+    if (kind === "trace_pdm" || kind === "wallach_collective") {
+      const stack = d.sources.join(" | ").toLowerCase();
+      const re = kind === "trace_pdm" ? PDM_TRACE : PDM_COLLECTIVE;
+      return re.test(stack) ? "trace" : "";
+    }
+    if (kind === "dietary_with_clinical_lever") {
+      if (target.low !== void 0 && target.low > 0) {
+        return numericStatus(target, d);
+      }
+      return hasSrc ? "covered" : "";
+    }
+    return numericStatus(target, d);
+  }
+  function deliveryRatio(target, status, d) {
+    if (target === null) {
+      return status === "covered" || status === "trace" ? 1 : 0;
+    }
+    const isIU = (target.unit ?? "").toLowerCase() === "iu";
+    const current = isIU ? d.totalIU : d.totalMg;
+    const lowRaw = target.low ?? 0;
+    const low = isIU ? lowRaw : toMg(lowRaw, target.unit).v;
+    if (low > 0) {
+      return current / low;
+    }
+    return status === "covered" || status === "trace" ? 1 : 0;
+  }
   var cachedSnapshot = null;
   function recompute() {
     const targets = readTargets();
-    const tiles = targets.map((t) => ({
-      tileId: buildTileId(t.name),
-      category: catFromTarget(t.category),
-      symbol: "",
-      name: t.name,
-      // Live regimen→status classification is pending (Chunk 2.2). An empty
-      // regimen covers nothing, so every essential is a gap until the classifier
-      // lands.
-      covered: false,
-      fillPercent: 0,
-      coveredBy: [],
-      aggregateVehicle: false
-    }));
+    const byName = buildByName(targets);
+    const overrides = loadRgOverrides();
+    const delivery = accumulate(collectRegimenItems(), overrides, targets, byName);
+    const tiles = targets.map((entry) => {
+      const target = CoverageTargetSchema.safeParse(entry.target);
+      const t = target.success ? target.data : null;
+      const d = delivery.get(entry.name) ?? EMPTY_DELIVERY;
+      const status = classify(t, d);
+      return {
+        tileId: buildTileId(entry.name),
+        category: catFromTarget(entry.category),
+        symbol: "",
+        name: entry.name,
+        status,
+        covered: status === "covered" || status === "trace",
+        fillPercent: deliveryRatio(t, status, d),
+        coveredBy: d.sources,
+        aggregateVehicle: status === "trace"
+      };
+    });
     const byCategory = {};
     for (const tile of tiles) {
       const bucket = byCategory[tile.category] ?? { total: 0, covered: 0 };
@@ -4379,16 +4611,6 @@
         }
       };
     }
-  }
-
-  // assets/js/src/state/regimen.ts
-  var REGIMEN_KEY = "lcRegimen_v1";
-  var RG_USER_GOALS_KEY = "rgUserGoals_v1";
-  function loadRegimen() {
-    return getValidated(REGIMEN_KEY, RegimenSchema) ?? { items: [] };
-  }
-  function loadRgUserGoals() {
-    return getValidated(RG_USER_GOALS_KEY, RgUserGoalsSchema);
   }
 
   // assets/data/coverage-layout-data.json
@@ -4559,20 +4781,7 @@
     if (snapshot === null) {
       return "";
     }
-    const found = snapshot.tiles.find((t) => t.name === key);
-    if (found === void 0) {
-      return "";
-    }
-    if (found.aggregateVehicle) {
-      return "trace";
-    }
-    if (found.covered && found.fillPercent >= 1) {
-      return "covered";
-    }
-    if (found.covered) {
-      return "partial";
-    }
-    return "gap";
+    return snapshot.tiles.find((t) => t.name === key)?.status ?? "";
   }
   function escHTML(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
@@ -4631,7 +4840,10 @@
       allTiles = spec.tiles;
     }
     const total = allTiles.length;
-    const covered = allTiles.filter((t) => tileStatusFor(t.key, snapshot) === "covered").length;
+    const covered = allTiles.filter((t) => {
+      const s = tileStatusFor(t.key, snapshot);
+      return s === "covered" || s === "trace";
+    }).length;
     return `
     <section class="essentials-section">
       <header class="essentials-section__head">
