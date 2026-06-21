@@ -200,7 +200,7 @@ def check_safe_write_canary():
 
 def check_brain_version_sync():
     """Brain version must agree across all four places it lives:
-    versions.json, brain/CHANGELOG.md, brain/versions/v{X}-*.md exists,
+    versions.json, chronicle/CHANGELOG.md, chronicle/versions/v{X}-*.md exists,
     dashboard.html versions-data embed. versions.json is the truth anchor."""
     vj_path = ROOT / "memory/versions.json"
     if not vj_path.exists():
@@ -217,19 +217,19 @@ def check_brain_version_sync():
     issues = []
 
     # CHANGELOG entry
-    cl_path = ROOT / "brain/CHANGELOG.md"
+    cl_path = ROOT / "chronicle/CHANGELOG.md"
     if not cl_path.exists():
-        issues.append("brain/CHANGELOG.md missing")
+        issues.append("chronicle/CHANGELOG.md missing")
     else:
         cl = cl_path.read_text(encoding="utf-8")
         if f"v{brain_v}" not in cl:
             issues.append(f"CHANGELOG has no v{brain_v} entry")
 
-    # brain/versions/v{brain_v}*.md exists
-    versions_dir = ROOT / "brain/versions"
+    # chronicle/versions/v{brain_v}*.md exists
+    versions_dir = ROOT / "chronicle/versions"
     matches = list(versions_dir.glob(f"v{brain_v}-*.md"))
     if not matches:
-        issues.append(f"no brain/versions/v{brain_v}-*.md file")
+        issues.append(f"no chronicle/versions/v{brain_v}-*.md file")
 
     # Dashboard embed
     dash_path = ROOT / "dashboard/dashboard.html"
@@ -3791,6 +3791,89 @@ def check_dashboard_dist_fresh():
 # The manifest
 # ---------------------------------------------------------------------------
 
+def _max_inline_literal_elements(src: str) -> int:
+    """Heuristic scan for the largest array/object literal in TS source, by
+    top-level element count. Ignores string + comment content and () call args.
+    Not a parser — a cheap backstop for the §00.B 'no inline data' rule.
+    Returns the max element estimate (top-level commas + 1) found."""
+    max_elems = 0
+    stack = []  # entries: [bracket_char, top_level_comma_count]
+    in_str = None
+    in_line_comment = False
+    in_block_comment = False
+    i, n = 0, len(src)
+    while i < n:
+        c = src[i]
+        nxt = src[i + 1] if i + 1 < n else ""
+        if in_line_comment:
+            if c == "\n":
+                in_line_comment = False
+        elif in_block_comment:
+            if c == "*" and nxt == "/":
+                in_block_comment = False
+                i += 1
+        elif in_str is not None:
+            if c == "\\":
+                i += 1
+            elif c == in_str:
+                in_str = None
+        elif c == "/" and nxt == "/":
+            in_line_comment = True
+            i += 1
+        elif c == "/" and nxt == "*":
+            in_block_comment = True
+            i += 1
+        elif c in ('"', "'", '`'):
+            in_str = c
+        elif c in "[{(":
+            stack.append([c, 0])
+        elif c in "]})":
+            if stack:
+                ch, commas = stack.pop()
+                if ch in "[{" and commas > 0 and commas + 1 > max_elems:
+                    max_elems = commas + 1
+        elif c == "," and stack and stack[-1][0] in "[{":
+            stack[-1][1] += 1
+        i += 1
+    return max_elems
+
+
+def check_views_state_no_inline_data():
+    """§00.B — no array/object literal with more than max_inline top-level
+    elements may live in views/ or state/. Canonical data belongs in
+    assets/data/ behind a Zod schema, loaded once at boot. This is the
+    invariant the 2026-06-21 §00.B incident report prescribed (remediation
+    item 7): the 91 hardcoded tile specs in views/coverage.ts slipped past the
+    lint-warn layer across two rounds. Heuristic scan, not a TS parser.
+    Truth anchor: the .ts source under views/ + state/."""
+    max_inline = 10
+    roots = (
+        ROOT / "dashboard/assets/js/src/views",
+        ROOT / "dashboard/assets/js/src/state",
+    )
+    violations = []
+    for root in roots:
+        if not root.exists():
+            continue
+        for ts in sorted(root.rglob("*.ts")):
+            if ts.name.endswith((".test.ts", ".spec.ts")):
+                continue
+            try:
+                src = ts.read_text(encoding="utf-8")
+            except Exception as exc:
+                violations.append(f"{ts.relative_to(ROOT).as_posix()} unreadable ({exc})")
+                continue
+            elems = _max_inline_literal_elements(src)
+            if elems > max_inline:
+                violations.append(f"{ts.relative_to(ROOT).as_posix()} (~{elems}-element literal)")
+    if violations:
+        return False, (
+            f"§00.B inline data (> {max_inline} elements) in views/state — move to "
+            f"assets/data/ behind a Zod schema: " + "; ".join(violations[:10])
+        )
+    return True, f"no inline literal > {max_inline} elements in views/ or state/"
+
+
 INVARIANTS = [
     Invariant(
         name="tacitus_sentinel_content",
@@ -3863,6 +3946,14 @@ INVARIANTS = [
         truth_anchor="tools/dashboard_integrity.py exit code",
         severity="critical",
         lesson_ref="Round 46 — integrity tool baseline",
+    ),
+    Invariant(
+        name="views_state_no_inline_data",
+        description="§00.B — no array/object literal > 10 elements in views/ or state/ (canonical data lives in assets/data/ behind Zod)",
+        check_fn=check_views_state_no_inline_data,
+        truth_anchor="dashboard/assets/js/src/{views,state}/**/*.ts literal scan",
+        severity="critical",
+        lesson_ref="2026-06-21 §00.B incident — 91 hardcoded tile specs in views/coverage.ts; report remediation items 7-8 (lint-warn -> invariant-block)",
     ),
     Invariant(
         name="catchup_files_exist",
@@ -4344,6 +4435,20 @@ def list_invariants(weekly: bool = False):
 
 
 def main():
+    # Windows stdout/stderr default to cp1252, which raises UnicodeEncodeError
+    # on the non-ASCII glyphs (arrows, command symbols) many invariant messages
+    # carry; the prior sessions never hit it because they ran in a UTF-8 Linux
+    # sandbox. Force UTF-8 on our own streams and export it so child processes
+    # we spawn inherit it, so the audit runs to completion on every host.
+    os.environ.setdefault("PYTHONUTF8", "1")
+    os.environ.setdefault("PYTHONIOENCODING", "utf-8")
+    for _stream in (sys.stdout, sys.stderr):
+        _reconfigure = getattr(_stream, "reconfigure", None)
+        if _reconfigure is not None:
+            try:
+                _reconfigure(encoding="utf-8")
+            except Exception:
+                pass
     import argparse
     ap = argparse.ArgumentParser(description="Run the invariant manifest")
     ap.add_argument("--weekly", action="store_true",

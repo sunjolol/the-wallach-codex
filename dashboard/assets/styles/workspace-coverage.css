@@ -1,0 +1,1046 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+ * workspace-coverage.css — Coverage workspace styles + shared chrome
+ * ═══════════════════════════════════════════════════════════════════════════
+ * EXTRACTED from dashboard/components/workspace-coverage-v3.2-PROPOSAL.html
+ * on 2026-06-21 (Round 26 · task #20 visual fidelity sweep).
+ *
+ * Three blocks:
+ *   1. Workspace chrome (fonts, :root tokens, ds-cipher / ds-scan-line /
+ *      ds-border-travel, coverage-stat glyph pulse) — shared by every
+ *      view, lives here for now until extracted into design-system.css
+ *      by the user (sealed-canonical writer rule).
+ *   2. SKIPPED — .app-shell / .app-rail / .app-topbar already styled by
+ *      dashboard.css. Pulling them in would collide.
+ *   3. Coverage workspace styles — .coverage-grid, .coverage-hero,
+ *      .coverage-stat, .periodic, .tile, .essentials-* etc.
+ *
+ * Load order in dashboard.html: AFTER dashboard.css + legacy-dashboard.css
+ * so workspace styles win on the new coverage mount.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Block 1: shared chrome (fonts, tokens, ds-* decorations) ───────── */
+/* ═══════════════════════════════════════════════════════════════════════════
+ * NEW FONTS — proposed for design-system.css.
+ * Falls back gracefully until user drops the font files.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+@font-face {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/ChakraPetch-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/ChakraPetch-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/ChakraPetch-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Bruno Ace';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/BrunoAce-Regular.ttf') format('truetype');
+}
+
+/* Local design tokens specific to this preview's typography pivot.
+   Once approved, these become --ds-font-display-interface and
+   --ds-font-display-artifact in design-system.css. */
+:root {
+  --ds-font-display-interface: 'Chakra Petch', 'Space Grotesk', system-ui, sans-serif;
+  --ds-font-display-artifact:  'Bruno Ace', 'Chakra Petch', 'Space Grotesk', system-ui, sans-serif;
+}
+
+/* Lock the viewport — no page-level scroll. Workspace scrolls internally
+   so the topbar + system rail + footer stay anchored at all times. True
+   full-screen interface. */
+html, body { height: 100%; overflow: hidden; }
+body { margin: 0; background: var(--ds-paper-deep); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * STYLIZED SCROLLBAR (proposed for design-system.css)
+ * Applies to every scrolling element within .app-shell. ~11px wide (≈70% of
+ * the default 16px), accent-orange thumb on cream-darker track, pill radius.
+ * The browser default ugly bar is gone — every necessary scroll becomes a
+ * designed surface that doubles as a splash of color.
+ *
+ * Firefox: scrollbar-width + scrollbar-color (declared on .app-shell)
+ * WebKit:  ::-webkit-scrollbar pseudo-elements scoped under .app-shell
+ * ═══════════════════════════════════════════════════════════════════════════ */
+.app-shell {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ds-accent) var(--ds-paper-darker);
+}
+.app-shell *::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+.app-shell *::-webkit-scrollbar-track {
+  background: var(--ds-paper-darker);
+  border-radius: var(--ds-radius-pill);
+}
+.app-shell *::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--ds-accent) 0%, var(--ds-accent-hot) 100%);
+  border-radius: var(--ds-radius-pill);
+  border: 2px solid var(--ds-paper-darker);
+  box-shadow: 0 0 8px rgba(255,126,60,0.3);
+}
+.app-shell *::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--ds-accent-hot) 0%, var(--ds-accent-bright) 100%);
+  box-shadow: 0 0 10px rgba(255,126,60,0.5);
+}
+.app-shell *::-webkit-scrollbar-corner {
+  background: var(--ds-paper-darker);
+}
+/* Dark-shell scrollbar (rail / footer if they ever scroll — defensive) */
+.app-rail::-webkit-scrollbar-track,
+.app-footer::-webkit-scrollbar-track { background: var(--ds-ink-medium); }
+.app-rail::-webkit-scrollbar-thumb,
+.app-footer::-webkit-scrollbar-thumb { border-color: var(--ds-ink-medium); }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * AMBIENT ANIMATION PRIMITIVES (proposed for design-system.css)
+ * All gated by prefers-reduced-motion via existing design-system.css rule.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* CIPHER — slow-cycling glyph readout. JS rotates the textContent every 1s.
+   Class only sets the styling; the JS at the bottom of this file does the
+   character cycling. */
+.ds-cipher {
+  font-family: var(--ds-font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  min-width: 1ch;
+}
+
+/* SCAN LINE — sweeps top→bottom across a parent every N seconds.
+   Wrap with .ds-scan-host { position: relative; overflow: hidden; } */
+.ds-scan-line {
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--ds-accent-soft) 20%,
+    var(--ds-accent) 50%,
+    var(--ds-accent-soft) 80%,
+    transparent 100%);
+  opacity: 0.35;
+  pointer-events: none;
+  animation: ds-scan-sweep 10s linear infinite;
+  filter: blur(0.5px);
+}
+@keyframes ds-scan-sweep {
+  0%   { top: -3%; opacity: 0; }
+  10%  { opacity: 0.35; }
+  90%  { opacity: 0.35; }
+  100% { top: 103%; opacity: 0; }
+}
+
+/* BORDER TRAVEL — a hairline accent that travels around a card border.
+   Uses two pseudo elements for top→right and bottom→left edges. */
+.ds-border-travel { position: relative; isolation: isolate; }
+.ds-border-travel::before, .ds-border-travel::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--ds-accent) 50%,
+    transparent 100%);
+  filter: blur(0.5px);
+  z-index: 2;
+}
+.ds-border-travel::before {
+  top: 0; left: -30%;
+  width: 30%; height: 1px;
+  animation: ds-travel-top 8s linear infinite;
+}
+.ds-border-travel::after {
+  bottom: 0; right: -30%;
+  width: 30%; height: 1px;
+  animation: ds-travel-bottom 8s linear infinite;
+  animation-delay: 4s;
+}
+@keyframes ds-travel-top {
+  0%   { left: -30%; opacity: 0; }
+  10%  { opacity: 0.8; }
+  90%  { opacity: 0.8; }
+  100% { left: 130%; opacity: 0; }
+}
+@keyframes ds-travel-bottom {
+  0%   { right: -30%; opacity: 0; }
+  10%  { opacity: 0.8; }
+  90%  { opacity: 0.8; }
+  100% { right: 130%; opacity: 0; }
+}
+
+/* COVERAGE-STAT GLYPH PULSE — the kill-shot numeral now has a slow pulse */
+@keyframes ds-numeric-glow {
+  0%, 100% { text-shadow: 0 0 40px rgba(255,126,60,0.4); }
+  50%      { text-shadow: 0 0 60px rgba(255,126,60,0.65); }
+}
+
+
+
+/* ─── Block 3: coverage workspace styles ──────────────────────────────── */
+/* ════ WORKSPACE ═══════════════════════════════════════════════════════════ */
+.app-workspace {
+  grid-area: workspace;
+  background: var(--ds-paper-deep);
+  position: relative;
+  overflow: auto;
+  min-height: 0;           /* required for grid-cell internal scroll */
+}
+.app-workspace::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,126,60,0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(26,22,18,0.04) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.coverage-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--ds-space-6);
+  padding: var(--ds-space-7);
+}
+
+
+/* ════ COVERAGE HERO ═══════════════════════════════════════════════════════ */
+.coverage-main { display: flex; flex-direction: column; gap: var(--ds-space-6); }
+
+.coverage-hero {
+  background: var(--ds-paper);
+  border-radius: var(--ds-radius-md);
+  padding: var(--ds-space-7);
+  box-shadow: var(--ds-elev-2);
+  position: relative;
+  overflow: hidden;
+}
+.coverage-hero__head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--ds-space-5);
+  align-items: end;
+  margin-bottom: var(--ds-space-6);
+  padding-bottom: var(--ds-space-5);
+  border-bottom: 1px solid var(--ds-rule-soft);
+}
+.coverage-hero__kicker {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  margin-bottom: var(--ds-space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+}
+.coverage-hero__kicker::before {
+  content: '';
+  width: 16px; height: 1px; background: var(--ds-accent);
+}
+/* HERO TITLE — Chakra Petch (interface display, not Playfair) */
+.coverage-hero__title {
+  font-family: var(--ds-font-display-interface);
+  font-size: clamp(1.8rem, 2.4vw, 2.4rem);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.05;
+}
+.coverage-hero__title em {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--ds-accent-deep);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-family: var(--ds-font-mono);
+  font-size: 0.65em;
+  display: block;
+  margin-top: var(--ds-space-2);
+}
+
+/* The kill-shot coverage stat */
+.coverage-stat {
+  display: flex;
+  align-items: baseline;
+  gap: var(--ds-space-2);
+  background: linear-gradient(135deg, var(--ds-ink) 0%, var(--ds-ink-medium) 100%);
+  padding: var(--ds-space-4) var(--ds-space-5);
+  border-radius: var(--ds-radius-sm);
+  color: var(--ds-paper);
+  position: relative;
+  overflow: hidden;
+}
+.coverage-stat::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 30%;
+  width: 180px; height: 180px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, var(--ds-accent) 0%, transparent 70%);
+  opacity: 0.25;
+  pointer-events: none;
+  animation: ds-stat-pulse 4s ease-in-out infinite;
+}
+/* KILL-SHOT NUMERAL — Bruno Ace (rare alien-artifact moment) */
+.coverage-stat__num {
+  font-family: var(--ds-font-display-artifact);
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ds-accent-bright);
+  letter-spacing: 0.02em;
+  position: relative;
+  animation: ds-numeric-glow 4s ease-in-out infinite;
+}
+.coverage-stat__den {
+  font-family: var(--ds-font-display-artifact);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--ds-ink-faint);
+  position: relative;
+}
+.coverage-stat__label {
+  margin-left: var(--ds-space-3);
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-accent-soft);
+  line-height: 1.3;
+  position: relative;
+}
+
+/* The periodic table host — wraps a .ds-scan-line for the sweeping motion */
+.periodic-host {
+  position: relative;
+  overflow: hidden;
+  padding: var(--ds-space-3) 0;
+  margin-bottom: var(--ds-space-3);
+}
+
+
+/* ════ ESSENTIALS — 4-SECTION FUNCTIONAL GRID ═══════════════════════════════
+   Replaces the chemistry-only periodic table with the 92 Wallach essentials
+   organized by function: 60 Minerals · 16 Vitamins · 12 Amino Acids · 3 Fatty
+   Acids. Each section has its own header, divider, grid density, and tile
+   variant. Playfair Display alchemy intent stays in the Minerals section
+   only (mineral symbols use the chemistry serif).
+   ═════════════════════════════════════════════════════════════════════════ */
+
+.essentials-host {
+  position: relative;
+  overflow: hidden;
+  padding: var(--ds-space-3) 0;
+}
+
+.essentials-section { margin-bottom: var(--ds-space-7); }
+.essentials-section:last-child { margin-bottom: 0; }
+
+.essentials-section__head {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: var(--ds-space-4);
+  align-items: baseline;
+  margin-bottom: var(--ds-space-2);
+  padding: 0 2px;
+}
+.essentials-section__num {
+  font-family: var(--ds-font-display-artifact);
+  font-size: var(--ds-text-xl);
+  color: var(--ds-accent);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-shadow: 0 0 12px rgba(255,126,60,0.3);
+}
+.essentials-section__title {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-lg);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+}
+.essentials-section__sub {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+}
+.essentials-section__stat {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-mini);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-accent-deep);
+  font-weight: 600;
+}
+.essentials-section__stat strong {
+  font-family: var(--ds-font-display-artifact);
+  font-weight: 400;
+  color: var(--ds-accent);
+  font-size: 1.15em;
+}
+
+/* Section divider — broken hairline with signal-accent dash + corner registration marks */
+.essentials-section__divider {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(to right,
+    var(--ds-rule) 0%, var(--ds-rule) 20%,
+    transparent 22%, transparent 28%,
+    var(--ds-accent) 30%, var(--ds-accent) 36%,
+    transparent 38%, transparent 100%);
+  margin-bottom: var(--ds-space-4);
+}
+.essentials-section__divider::before,
+.essentials-section__divider::after {
+  content: '';
+  position: absolute;
+  width: 6px; height: 6px;
+  border: 1px solid var(--ds-tech);
+}
+.essentials-section__divider::before {
+  left: 0; top: -3px;
+  border-right: 0; border-bottom: 0;
+}
+.essentials-section__divider::after {
+  right: 0; top: -3px;
+  border-left: 0; border-bottom: 0;
+}
+
+/* SUB-SECTION — mini label that breaks a section into navigable groups
+   (e.g. Minerals: Foundational / Major Trace / Rare Trace). Lighter
+   visual weight than the main section header — a guide-mark, not a divider. */
+.essentials-subsection { margin-bottom: var(--ds-space-4); }
+.essentials-subsection:last-child { margin-bottom: 0; }
+.essentials-subsection__label {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  display: flex;
+  align-items: baseline;
+  gap: var(--ds-space-2);
+  margin: 0 0 var(--ds-space-2);
+  font-weight: 600;
+}
+.essentials-subsection__rank {
+  font-family: var(--ds-font-display-artifact);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--ds-accent);
+  letter-spacing: 0.05em;
+}
+.essentials-subsection__count {
+  color: var(--ds-accent-deep);
+  font-weight: 700;
+}
+.essentials-subsection__hint {
+  color: var(--ds-ink-faint);
+  font-style: normal;
+  font-weight: 500;
+  margin-left: auto;
+}
+
+/* Per-section grid densities */
+.essentials-grid--minerals { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; }
+.essentials-grid--vitamins { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; }
+.essentials-grid--aminos   { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+.essentials-grid--fats     { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ds-space-3); }
+
+
+/* VITAMIN TILE — letter-name based, slightly taller than mineral tiles.
+   Playfair STAYS on the .tile__letter glyph (still alchemy intent — vitamins
+   share the "discovered substance" lineage with minerals). */
+.tile--vitamin {
+  aspect-ratio: 1 / 1.15;
+  background: var(--ds-paper-deep);
+  border: 1px solid var(--ds-rule-soft);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;          /* center horizontally */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;             /* prevents strip from over-shooting */
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+}
+.tile--vitamin {
+  padding: 6px 6px 0;
+}
+.tile--vitamin .tile__code {
+  font-family: var(--ds-font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--ds-ink-soft);
+  letter-spacing: 0.03em;
+  position: absolute;
+  top: 4px; left: 5px;
+}
+.tile--vitamin .tile__letter {
+  font-family: var(--ds-font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ds-ink);
+  line-height: 1;
+  margin: auto 0;               /* fills vertical space — pushes name to bottom */
+  padding-top: 8px;             /* small visual breathing room below the code */
+}
+.tile--vitamin .tile__name {
+  font-family: var(--ds-font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.15;
+  background: var(--ds-paper-darker);
+  border-top: 1px solid var(--ds-rule-soft);
+  /* Bleed past the tile's 1px border on each side so the strip is flush
+     with the tile's outer edge. overflow:hidden on the tile clips cleanly. */
+  width: calc(100% + 4px);
+  margin: 0 -2px;
+  padding: 4px 4px;
+  border-radius: 0;
+}
+.tile--vitamin.covered .tile__name {
+  background: var(--ds-accent-soft);
+  border-color: var(--ds-accent);
+  color: var(--ds-accent-deep);
+}
+.tile--vitamin.partial .tile__name { background: var(--ds-paper); border-color: var(--ds-rule-bright); }
+.tile--vitamin.trace .tile__name { background: var(--ds-paper); border-color: var(--ds-rule-bright); color: var(--ds-ink-soft); }
+.tile--vitamin:hover { transform: translateY(-1px); border-color: var(--ds-accent); box-shadow: 0 4px 10px -2px rgba(255,126,60,0.25); }
+.tile--vitamin.covered { background: linear-gradient(180deg, var(--ds-accent-soft) 0%, var(--ds-accent-wash) 100%); border-color: var(--ds-accent); }
+.tile--vitamin.covered .tile__letter, .tile--vitamin.covered .tile__code, .tile--vitamin.covered .tile__name { color: var(--ds-accent-deep); }
+
+
+/* AMINO ACID TILE — wider rectangle, 3-letter code centered */
+.tile--amino {
+  aspect-ratio: 1.6 / 1;
+  background: var(--ds-paper-deep);
+  border: 1px solid var(--ds-rule-soft);
+  border-radius: 2px;
+  padding: 6px 8px 0;           /* restored — code sits naturally top-left */
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+}
+.tile--amino { padding: 6px 8px 0; }
+.tile--amino .tile__code {
+  font-family: var(--ds-font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--ds-ink-soft);
+  letter-spacing: 0.03em;
+  /* No padding — tile wrapper handles spacing, code sits naturally top-left */
+}
+.tile--amino .tile__abbr {
+  font-family: var(--ds-font-display);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ds-ink);
+  line-height: 1;
+  text-align: center;
+  margin: auto 0;              /* fills vertical space — pushes name to bottom */
+}
+.tile--amino .tile__name {
+  font-family: var(--ds-font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.15;
+  background: var(--ds-paper-darker);
+  border-top: 1px solid var(--ds-rule-soft);
+  /* Bleed past tile padding (8px L/R) + 1px border on each side = -9px each.
+     overflow:hidden on the tile clips cleanly. */
+  width: calc(100% + 20px);
+  margin: 0 -10px;
+  padding: 4px 6px;
+  border-radius: 0;
+}
+.tile--amino.covered .tile__name {
+  background: var(--ds-accent-soft);
+  border-color: var(--ds-accent);
+  color: var(--ds-accent-deep);
+}
+.tile--amino.partial .tile__name { background: var(--ds-paper); border-color: var(--ds-rule-bright); }
+.tile--amino.trace .tile__name { background: var(--ds-paper); border-color: var(--ds-rule-bright); color: var(--ds-ink-soft); }
+.tile--amino:hover { transform: translateY(-1px); border-color: var(--ds-accent); box-shadow: 0 4px 10px -2px rgba(255,126,60,0.25); }
+.tile--amino.covered { background: linear-gradient(180deg, var(--ds-accent-soft) 0%, var(--ds-accent-wash) 100%); border-color: var(--ds-accent); }
+.tile--amino.covered .tile__abbr, .tile--amino.covered .tile__code, .tile--amino.covered .tile__name { color: var(--ds-accent-deep); }
+
+
+/* FATTY ACID TILE — bigger statement tiles. Only 3 of these, so each gets
+   editorial-card weight rather than dense-grid tile weight. */
+.tile--fat {
+  background: var(--ds-paper-deep);
+  border: 1px solid var(--ds-rule-soft);
+  border-radius: var(--ds-radius-sm);
+  padding: var(--ds-space-4) var(--ds-space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-2);
+  cursor: pointer;
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+  position: relative;
+  overflow: hidden;
+  min-height: 92px;
+}
+.tile--fat .tile__code {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  color: var(--ds-ink-faint);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+}
+.tile--fat .tile__code::before {
+  content: '';
+  width: 8px; height: 1px; background: var(--ds-accent);
+}
+.tile--fat .tile__name {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-lg);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.05;
+  /* Explicit reset — fatty-acid tiles use the bigger-statement layout,
+     NOT the label-strip pattern that minerals/vitamins/aminos use. */
+  background: none;
+  border: 0;
+  border-top: 0;
+  margin-top: auto;            /* push to bottom, no strip needed */
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  padding: 0;
+  width: auto;
+  border-radius: 0;
+}
+.tile--fat .tile__hint {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  color: var(--ds-ink-soft);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  margin-top: auto;
+  font-variant-numeric: tabular-nums;
+}
+.tile--fat:hover {
+  transform: translateY(-1px);
+  border-color: var(--ds-accent);
+  box-shadow: 0 6px 14px -3px rgba(255,126,60,0.25);
+}
+.tile--fat.covered {
+  background: linear-gradient(135deg, var(--ds-accent-soft) 0%, var(--ds-accent-wash) 100%);
+  border-color: var(--ds-accent);
+}
+.tile--fat.covered .tile__name,
+.tile--fat.covered .tile__code,
+.tile--fat.covered .tile__hint { color: var(--ds-accent-deep); }
+
+
+/* ════ PERIODIC TABLE (Playfair stays here — alchemy intent) ════════════════ */
+.periodic {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  gap: 4px;
+}
+.tile {
+  aspect-ratio: 1 / 1.05;
+  background: var(--ds-paper-deep);
+  border: 1px solid var(--ds-rule-soft);
+  border-radius: 2px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4px 5px;
+  cursor: pointer;
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+}
+.tile {
+  aspect-ratio: 1 / 1.22;            /* taller to host the bigger label strip */
+  padding: 5px 5px 0;                 /* no bottom padding — label fills it */
+  overflow: hidden;                   /* defensive — strip never over-shoots */
+}
+.tile__num {
+  font-family: var(--ds-font-mono);
+  font-size: 10px;                    /* was 7 — ~40% bigger */
+  font-weight: 600;                   /* bolder */
+  color: var(--ds-ink-soft);
+  letter-spacing: 0.03em;
+}
+/* TILE SYMBOL — Playfair Display STAYS (alchemy reference, intentional) */
+.tile__sym {
+  font-family: var(--ds-font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ds-ink);
+  line-height: 1;
+  text-align: center;
+  margin-top: 1px;
+}
+/* TILE NAME — now a proper bold label strip filling the tile bottom.
+   Read at a glance, scan-friendly. Subtle bg tint defines the zone. */
+.tile__name {
+  font-family: var(--ds-font-sans);
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--ds-ink);
+  text-align: center;
+  letter-spacing: 0.025em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  background: var(--ds-paper-darker);
+  border-top: 1px solid var(--ds-rule-soft);
+  margin: 4px -5px 0;                 /* extend strip to tile edges */
+  padding: 4px 2px 4px;
+  border-radius: 0 0 1px 1px;
+}
+/* Covered tile gets a tinted label strip — signals the state clearly */
+.tile.covered .tile__name {
+  background: var(--ds-accent-soft);
+  border-color: var(--ds-accent);
+  color: var(--ds-accent-deep);
+}
+.tile.partial .tile__name { background: var(--ds-paper); border-color: var(--ds-rule-bright); }
+.tile.trace .tile__name { background: var(--ds-paper); border-color: var(--ds-rule-bright); color: var(--ds-ink-soft); }
+.tile.gap .tile__name { background: var(--ds-status-warn-soft); border-color: var(--ds-status-warn); color: var(--ds-status-warn); }
+.tile:hover { transform: translateY(-1px); border-color: var(--ds-accent); box-shadow: 0 4px 10px -2px rgba(255,126,60,0.25); }
+.tile.covered { background: linear-gradient(180deg, var(--ds-accent-soft) 0%, var(--ds-accent-wash) 100%); border-color: var(--ds-accent); }
+.tile.covered .tile__num { color: var(--ds-accent-deep); }
+.tile.covered .tile__sym { color: var(--ds-accent-deep); }
+.tile.covered .tile__name { color: var(--ds-accent-deep); }
+.tile.partial { background: var(--ds-paper-light); border-color: var(--ds-rule-bright); }
+.tile.trace { background: var(--ds-paper); border: 1px dashed var(--ds-rule-bright); opacity: 0.85; }
+.tile.gap { background: var(--ds-paper-deep); border: 1px dashed var(--ds-status-warn); }
+.tile.gap .tile__sym { color: var(--ds-status-warn); }
+.tile.spacer { background: transparent; border: 0; cursor: default; pointer-events: none; }
+.tile.spacer:hover { transform: none; box-shadow: none; }
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-5);
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  padding-top: var(--ds-space-4);
+  border-top: 1px solid var(--ds-rule-soft);
+}
+.legend__item { display: inline-flex; align-items: center; gap: var(--ds-space-2); }
+.legend__sw { width: 12px; height: 12px; border-radius: 2px; }
+.legend__sw.covered { background: var(--ds-accent-soft); border: 1px solid var(--ds-accent); }
+.legend__sw.partial { background: var(--ds-paper-light); border: 1px solid var(--ds-rule-bright); }
+.legend__sw.trace { background: var(--ds-paper); border: 1px dashed var(--ds-rule-bright); }
+.legend__sw.gap { background: var(--ds-paper-deep); border: 1px dashed var(--ds-status-warn); }
+
+
+/* ════ GOALS STRIP ═════════════════════════════════════════════════════════ */
+.goals-strip {
+  background: var(--ds-paper);
+  border-radius: var(--ds-radius-md);
+  padding: var(--ds-space-5) var(--ds-space-6);
+  box-shadow: var(--ds-elev-1);
+}
+.goals-strip__head {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+  margin-bottom: var(--ds-space-4);
+}
+.goals-strip__title {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-md);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.goals-strip__count {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-accent);
+  margin-left: auto;
+}
+.goals-strip__add {
+  background: transparent;
+  border: 1px dashed var(--ds-accent);
+  color: var(--ds-accent-deep);
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-xs);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--ds-radius-pill);
+  cursor: pointer;
+  font-weight: 600;
+}
+.goals-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--ds-space-3);
+}
+.goal-card {
+  background: var(--ds-paper-deep);
+  border-radius: var(--ds-radius-sm);
+  padding: var(--ds-space-4);
+  border-left: 3px solid var(--ds-accent);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-2);
+}
+.goal-card__kicker {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+}
+.goal-card__name {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-md);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.goal-card__bar {
+  height: 6px;
+  background: var(--ds-paper);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--ds-rule-soft);
+}
+.goal-card__bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ds-accent-hot), var(--ds-accent), var(--ds-accent-bright));
+}
+.goal-card__progress {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-mini);
+  color: var(--ds-ink-soft);
+  letter-spacing: var(--ds-track-wide);
+}
+
+
+/* ════ REGIMEN RAIL ════════════════════════════════════════════════════════ */
+.regimen-rail {
+  background: var(--ds-paper);
+  border-radius: var(--ds-radius-md);
+  box-shadow: var(--ds-elev-2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  /* Bound to the visible workspace area so the action bar always sits
+     correctly with breathing room. Calculation: 100vh minus topbar (≈68px)
+     + footer (≈40px) + workspace padding (5rem total) + 50px tail breathing
+     room as user-requested. List inside scrolls via the global stylized
+     scrollbar if items overflow. */
+  height: calc(100vh - 68px - 40px - 5rem - 50px);
+  max-height: calc(100vh - 68px - 40px - 5rem - 50px);
+}
+.regimen-rail__head {
+  padding: var(--ds-space-5);
+  border-bottom: 1px solid var(--ds-rule);
+  background: var(--ds-paper-darker);
+  position: relative;
+}
+.regimen-rail__head::after {
+  content: '';
+  position: absolute;
+  left: var(--ds-space-5); right: var(--ds-space-5);
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent 0%,
+    var(--ds-accent) 6%, var(--ds-accent) 12%,
+    transparent 14%);
+}
+.regimen-rail__eyebrow {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-accent);
+  font-weight: 600;
+  margin-bottom: var(--ds-space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+}
+.regimen-rail__eyebrow .pulse-dot { width: 6px; height: 6px; background: var(--ds-accent); border-radius: 50%; box-shadow: 0 0 6px var(--ds-accent-soft); }
+/* SLOT NAME — Chakra Petch */
+.regimen-rail__slot-name {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-lg);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.regimen-rail__slot-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+  margin-top: var(--ds-space-2);
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+}
+.regimen-rail__slot-meta strong { color: var(--ds-ink); font-weight: 600; }
+
+.regimen-rail__list {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--ds-space-3);
+}
+.regimen-item {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+  padding: var(--ds-space-3);
+  border-radius: var(--ds-radius-sm);
+  background: var(--ds-paper-light);
+  border: 1px solid var(--ds-rule-soft);
+  margin-bottom: var(--ds-space-2);
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+}
+.regimen-item:hover { border-color: var(--ds-accent); }
+.regimen-item__icon {
+  width: 32px; height: 32px;
+  background: var(--ds-paper-darker);
+  border-radius: var(--ds-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ds-font-display-artifact);
+  font-size: var(--ds-text-sm);
+  font-weight: 400;
+  color: var(--ds-accent-deep);
+}
+.regimen-item__body { flex: 1; min-width: 0; }
+/* ITEM NAME — Chakra Petch (was Playfair) */
+.regimen-item__name {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-sm);
+  font-weight: 600;
+  color: var(--ds-ink);
+  margin: 0;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.regimen-item__meta {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  color: var(--ds-ink-soft);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+}
+.regimen-item__count {
+  font-family: var(--ds-font-display-artifact);
+  font-size: var(--ds-text-md);
+  font-weight: 400;
+  color: var(--ds-accent-deep);
+  font-variant-numeric: tabular-nums;
+}
+
+.regimen-rail__actions {
+  padding: var(--ds-space-4) var(--ds-space-5);
+  border-top: 1px solid var(--ds-rule);
+  background: var(--ds-paper-darker);
+  display: flex;
+  gap: var(--ds-space-2);
+}
+
+
+/* ════ FOOTER ══════════════════════════════════════════════════════════════ */
+.app-footer {
+  grid-area: footer;
+  background: var(--ds-ink);
+  color: var(--ds-paper);
+  padding: var(--ds-space-3) var(--ds-space-7);
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-6);
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  position: relative;
+}
+.app-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--ds-space-7); right: var(--ds-space-7);
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent 0%,
+    var(--ds-tech) 4%, var(--ds-tech) 10%,
+    transparent 12%);
+}
+.footer__item { display: inline-flex; align-items: center; gap: var(--ds-space-2); color: var(--ds-ink-faint); }
+.footer__item strong { color: var(--ds-paper); font-weight: 600; }
+.footer__item .dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--ds-status-ok);
+  margin-right: 2px;
+}
+.footer__spacer { flex: 1; }
+.footer__signature { color: var(--ds-tech); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; }

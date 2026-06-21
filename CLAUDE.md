@@ -7,7 +7,7 @@ _The lint/type/test layers enforce what this file says. If lint disagrees with t
 
 ## §00 — The two prime directives
 
-This project has exactly two prime directives. They are ranked. Any other rule (in `memory/`, in `chronicle/`, in tool descriptions) is a sub-directive and yields to these.
+This project has exactly two prime directives. They are ranked. Any other rule (in `memory/`, in `brain/`, in tool descriptions) is a sub-directive and yields to these.
 
 **§00.A — Wallach source-of-truth mandate (100 / 100).**
 Every numeric claim, every health assertion, every recommendation cites a Wallach allowlist primary: `dddl` · `rbs` · `eps` · `ygy` · `wallach-lecture`. No outside sources contradict Wallach without explicit user review. Enforced by `tools/invariants.py::check_source_rule`.
@@ -15,7 +15,7 @@ Every numeric claim, every health assertion, every recommendation cites a Wallac
 **§00.B — Senior-dev coding standard (99 / 100).**
 This codebase is engineered to the standard of a small team of elite open-source maintainers (calibration references: Anthony Fu's vitesse ecosystem, tldraw's `@tldraw/state` + `@tldraw/store`, Excalidraw's client-only SPA architecture). Discipline lives in tooling, not in promises. Specific rules below.
 
-**Conflict protocol.** If §00.A and §00.B appear to conflict, STOP. Write `chronicle/contradictions/<date>-<slug>.md` describing the conflict. Surface in chat with `⚠ PRIME DIRECTIVE CONFLICT` prefix. User resolves manually. Do not self-resolve. Default precedence is A > B, but silent prioritization is itself a violation.
+**Conflict protocol.** If §00.A and §00.B appear to conflict, STOP. Write `brain/contradictions/<date>-<slug>.md` describing the conflict. Surface in chat with `⚠ PRIME DIRECTIVE CONFLICT` prefix. User resolves manually. Do not self-resolve. Default precedence is A > B, but silent prioritization is itself a violation.
 
 ---
 
@@ -98,9 +98,9 @@ node tools/vendor-tesseract.js
 2. **Never inline demo/fixture data in `state/` or `views/`.** Fixtures live under `assets/data/fixtures/` and load only behind `?fixture=1`. Lint bans literal arrays/objects above 10 elements outside `assets/data/`.
 3. **Never touch `window.localStorage` outside `core/storage.ts`.** All reads pass through Zod schemas; all writes go through one of the named chokepoints. Lint rejects bare `localStorage.` references elsewhere.
 4. **Never use `any`.** `unknown` at boundaries; narrow with Zod. `@typescript-eslint/no-explicit-any: error`.
-5. **Never write prose-as-comments narrating your reasoning.** JSDoc only. `multiline-comment-style: starred-block`. If you have a multi-paragraph thought, it goes in `chronicle/`, not in code.
+5. **Never write prose-as-comments narrating your reasoning.** JSDoc only. `multiline-comment-style: starred-block`. If you have a multi-paragraph thought, it goes in `brain/`, not in code.
 6. **Never claim "done" without `tools/build-dashboard.sh` exit 0 + invariants pass.** The Round-close ritual is non-negotiable.
-7. **No writes to any project file under the repo root via ANY path other than `tools/safe_write.py`.** This bans the `Edit` tool, the `Write` tool, bash `mv`/`cat >`/`tee`/`>>`/redirection, Python `open(...,'w')`, and any other write surface — for every file in `memory/`, `knowledge/`, `chronicle/`, `tools/`, `schemas/`, `dashboard/`, `tacitus/`, `eden/`, and the repo root itself. The §17 ban started as a per-directory list and proved insufficient (2026-06-21: `dashboard/package.json` silently truncated by the Edit tool despite being outside the listed dirs). The corruption pattern is filesystem-level + Read-cache-level; it can hit any file under the project tree. `safe_write.py` is the only sanctioned write primitive. For new files, use `safe_write.py rewrite`. When the sandbox blocks `rm` (Operation not permitted), tombstone in place via `safe_write.py rewrite` (per operating-protocols.md §11) — the user manually deletes the tombstoned files later. The ONLY exception: pure scratch space outside the repo (`/tmp/`, the outputs dir) where intermediate payloads land before being routed through `safe_write.py`.
+7. **Never `Edit` files under `memory/`, `knowledge/`, `brain/`, `tools/`, `dashboard/assets/styles/design-system.css`, or `schemas/`.** Use `tools/safe_write.py replace` (the §17 ban exists because the Edit tool has silently truncated these files 7+ times).
 8. **Never bypass the layer rules** (`views/` → `state/` → `core/`). If you find yourself wanting to, the architecture is wrong — refactor, don't pierce the boundary.
 
 ---
@@ -126,7 +126,7 @@ A round is not "shipped" until **all** of the following pass:
 1. `bash tools/build-dashboard.sh` exits 0
 2. `npx vitest run "state/**"` exits 0
 3. `python3 tools/invariants.py` reports ≥ baseline passing
-4. One-line entry appended to `chronicle/build-log.md`: `[timestamp] surface · concern · file(s) · rationale`
+4. One-line entry appended to `brain/build-log.md`: `[timestamp] surface · concern · file(s) · rationale`
 5. One Creator's Log event written via `state/log.ts::log()` (auto-mirrors to `wallachCreatorsLog_v1` LS key, visible in Profile panel)
 
 **Skipping any of (1)–(5) means the round is not closed.** Do not write "shipped" or "done" in chat without all five. This is the audit trail Luneth needs to verify discipline is firing.
@@ -167,7 +167,7 @@ tools/
 └── vendor-tesseract.js                     ← one-shot OCR vendor
 
 memory/                                     ← long-term preferences + saga
-chronicle/
+brain/
 ├── CHANGELOG.md                            ← version-by-version narrative
 ├── versions/                               ← detailed per-version notes
 ├── build-log.md                            ← Round-close discipline log
@@ -181,12 +181,48 @@ schemas/                                    ← JSON Schemas for data files
 
 ## Glossary
 
-- **§17** — Edit-tool ban for `memory/`, `knowledge/`, `chronicle/`, `tools/`, `dashboard/assets/styles/design-system.css`, `schemas/`. Use `safe_write.py`.
+- **§17** — Edit-tool ban for `memory/`, `knowledge/`, `brain/`, `tools/`, `dashboard/assets/styles/design-system.css`, `schemas/`. Use `safe_write.py`.
 - **§31** — Chokepoint discipline. Five named helpers are the only writers to regimen state.
 - **§00** — The two prime directives + the senior-dev coding standard rules above.
 - **Round** — A closed unit of work that ends with the Round-close ritual. Multiple rounds per version.
-- **Version** — A coherent release captured in `chronicle/versions/v*.md`.
+- **Version** — A coherent release captured in `brain/versions/v*.md`.
 - **Sealed canonical** — A file with a hash anchor (`*.golden.sha256`). User-only writer. Read freely, never edit after seal.
 - **Eden corpus** — The Wallach allowlist primaries under `knowledge/`. Source-rule cornerstone.
 - **The bridge** — The IIFE-local-to-`window.*` overwrite in `state/regimen.ts` that lets legacy callers route through new chokepoints.
-- **Genesis** — The session-start boot ri
+- **Genesis** — The session-start boot ritual. User types `genesis`, Claude reports the five-step catch-up before any work begins. See Genesis section below.
+- **Tacitus** — The historical audit/integrity layer (silent observer). Houses feature flags + invariant baselines.
+- **Cura** — Health/care content layer (Wallach corpus → user-facing logic).
+- **Aegis** — Defense-in-depth shield layer (validation, atomic ops, escape-by-default).
+- **Eden** — Sealed canonical primary sources. Wallach allowlist lives here. Hash-anchored, user-only writer.
+
+---
+
+## Genesis — the session-start ritual
+
+User types **`genesis`** as the first substantive message of every session. That triggers a five-step catch-up Claude reports in chat before any work begins.
+
+The five steps:
+
+1. **CLAUDE.md loaded** — confirm operating contract is in context.
+2. **Build-log tail** — last 5 entries from `brain/build-log.md`.
+3. **Invariant scoreboard** — run `python3 tools/invariants.py`, surface any red.
+4. **Build parity** — confirm `dist/main.js` matches a fresh rebuild (or call out drift).
+5. **Latest Creator's Log entry** — surface the most recent `wallachCreatorsLog_v1` entry. This is the discipline audit — if work shipped last session but no log line exists, the *absence* is the alarm.
+
+Output format:
+
+```
+∴ GENESIS ∴
+⊢ CLAUDE.md loaded
+⊢ build-log last 5: <…>
+⊢ invariants: N/total passing · red: <list or "none">
+⊢ dist parity: fresh | drift
+⊢ last log entry: <ts · surface · summary>
+⊢ ready.
+```
+
+If any step fails (missing log, drift detected, invariants regressed beyond baseline), Claude STOPs and surfaces the failure as the only response — no other work begins until acknowledged.
+
+If the user begins with substantive work without typing `genesis`, Claude runs a silent micro-check (CLAUDE.md loaded + invariant baseline known) and proceeds. The full ritual is reserved for the explicit invocation — discipline visible by user choice.
+
+If anything in this file conflicts with anything older — older loses. This file is the operating contract.

@@ -6,3 +6,9 @@ sessions/
 dashboard/assets/js/dist/*.map
 archive/retired-june-21-2026/
 knowledge/wallach-transcripts
+
+# Python bytecode + transient artifacts
+__pycache__/
+*.pyc
+*.payload.tmp
+dashboard/assets/vendor/tesseract/

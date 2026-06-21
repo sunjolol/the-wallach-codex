@@ -28,7 +28,8 @@ export type EventName =
   | 'journey:event-logged'
   | 'eden:hash-mismatch'
   | 'storage:pressure-warn'
-  | 'rail:navigate';
+  | 'rail:navigate'
+  | 'log:entry-added';
 
 /** Payload shape per event name. Add a case here when adding an event. */
 export interface EventPayloads {
@@ -41,6 +42,7 @@ export interface EventPayloads {
   'eden:hash-mismatch': { file: string; expected: string; actual: string };
   'storage:pressure-warn': { bytesUsed: number; bytesLimit: number };
   'rail:navigate': { target: 'coverage' | 'regimen' | 'scanner' | 'knowledge' | 'journey' };
+  'log:entry-added': { id: string; kind: string };
 }
 
 export type EventHandler<E extends EventName> = (payload: EventPayloads[E]) => void;

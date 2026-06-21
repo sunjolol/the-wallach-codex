@@ -30,12 +30,13 @@ import * as knowledgeView from './views/knowledge.js';
 import * as paletteView from './views/palette.js';
 import * as regimenView from './views/regimen.js';
 import * as scannerView from './views/scanner.js';
+import * as profileView from './views/profile.js';
 
 /*
  * Reference all unused imports so they're held by the bundler (scaffolds
  * still throw on call — that's intended until their rounds land).
  */
-const _refs = { storage, events, eden, sourceRule, regimenState, scannerState, goalsState, journeyState, regimenView, scannerView, knowledgeView, journeyView, paletteView };
+const _refs = { storage, events, eden, sourceRule, regimenState, scannerState, goalsState, journeyState, regimenView, scannerView, knowledgeView, journeyView, paletteView, profileView };
 void _refs;
 
 // ─── Rail navigation state ────────────────────────────────────────────────
@@ -139,6 +140,62 @@ function wireRail(): void {
   }
 }
 
+
+// ─── Profile panel ─────────────────────────────────────────────────────────
+
+let profileHandle: { unmount: () => void } | null = null;
+let profileOverlay: HTMLElement | null = null;
+
+function hideProfilePanel(): void {
+  if (profileHandle !== null) {
+    profileHandle.unmount();
+    profileHandle = null;
+  }
+  if (profileOverlay !== null) {
+    profileOverlay.remove();
+    profileOverlay = null;
+  }
+}
+
+function showProfilePanel(): void {
+  if (profileOverlay !== null) {
+    return;
+  }
+  const overlay = document.createElement('div');
+  overlay.className = 'pf-overlay';
+  overlay.addEventListener('click', (ev) => {
+    if (ev.target === overlay) {
+      hideProfilePanel();
+    }
+  });
+  overlay.addEventListener('pf:close', () => hideProfilePanel());
+  document.body.appendChild(overlay);
+  profileOverlay = overlay;
+  profileHandle = profileView.mount(overlay);
+}
+
+function wireProfileChip(): void {
+  const chip = document.querySelector<HTMLElement>('.rail__profile');
+  if (chip === null) {
+    return;
+  }
+  chip.style.cursor = 'pointer';
+  chip.setAttribute('role', 'button');
+  chip.setAttribute('tabindex', '0');
+  chip.addEventListener('click', () => showProfilePanel());
+  chip.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Enter' || ev.key === ' ') {
+      ev.preventDefault();
+      showProfilePanel();
+    }
+  });
+  document.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape' && profileOverlay !== null) {
+      hideProfilePanel();
+    }
+  });
+}
+
 // ─── Bootstrap ─────────────────────────────────────────────────────────────
 
 function bootstrap(): void {
@@ -153,6 +210,7 @@ function bootstrap(): void {
   }
 
   wireRail();
+  wireProfileChip();
 
   /*
    * Default landing: Coverage (the new view). Defer one tick so legacy JS

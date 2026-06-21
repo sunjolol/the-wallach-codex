@@ -22,10 +22,12 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "skipLibCheck": true,
-
     "resolveJsonModule": true,
-    "allowImportingTsExtensions": false,
+    "allowSyntheticDefaultImports": true,
+    "verbatimModuleSyntax": false,
+
     "noEmit": true,
+    "allowImportingTsExtensions": false,
 
     "baseUrl": "./assets/js/src",
     "paths": {
@@ -35,5 +37,5 @@
     }
   },
   "include": ["assets/js/src/**/*.ts"],
-  "exclude": ["assets/js/dist/**", "node_modules"]
+  "exclude": ["node_modules", "assets/js/dist", "assets/vendor"]
 }

@@ -10,3 +10,5 @@
 export * from './knowledge.js';
 export * from './regimen.js';
 export * from './scanner.js';
+export * from './log.js';
+export * from './coverage-layout.js';
