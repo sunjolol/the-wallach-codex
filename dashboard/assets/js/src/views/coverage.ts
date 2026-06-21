@@ -35,11 +35,12 @@ type CoverageStatus = 'covered' | 'partial' | 'trace' | 'gap' | '';
 
 // ─── Render helpers ───────────────────────────────────────────────────────
 
-function tileStatusFor(name: string, snapshot: CoverageSnapshot | null): CoverageStatus {
+function tileStatusFor(key: string, snapshot: CoverageSnapshot | null): CoverageStatus {
   if (snapshot === null) {
     return '';
   }
-  const found = snapshot.tiles.find(t => t.name.toLowerCase() === name.toLowerCase());
+  /* `key` is the canonical essential name; snapshot tiles are keyed the same. */
+  const found = snapshot.tiles.find(t => t.name === key);
   if (found === undefined) {
     return '';
   }
@@ -66,7 +67,7 @@ function escHTML(s: unknown): string {
 }
 
 function renderTile(spec: LayoutTile, tileClass: string, snapshot: CoverageSnapshot | null): string {
-  const status = tileStatusFor(spec.name, snapshot);
+  const status = tileStatusFor(spec.key, snapshot);
   const cls = `${tileClass} ${status}`.trim();
   let inner = '';
   if (spec.num !== undefined) {
@@ -116,7 +117,7 @@ function renderSection(spec: LayoutSection, snapshot: CoverageSnapshot | null): 
   }
 
   const total = allTiles.length;
-  const covered = allTiles.filter(t => tileStatusFor(t.name, snapshot) === 'covered').length;
+  const covered = allTiles.filter(t => tileStatusFor(t.key, snapshot) === 'covered').length;
 
   return `
     <section class="essentials-section">

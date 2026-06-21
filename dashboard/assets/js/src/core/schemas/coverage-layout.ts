@@ -19,6 +19,13 @@ import { z } from 'zod';
 
 /** One tile. Display fields vary by section; all optional except name. */
 export const LayoutTileSchema = z.object({
+  /**
+   * Canonical essential name — the join key into the CoverageSnapshot
+   * (state/coverage.ts). Equals the `name` field in essentials-targets-data.json.
+   * Display fields below (name/sym/letter/abbr) are abbreviated chrome; `key` is
+   * the stable identity used to look up live status.
+   */
+  key: z.string().min(1),
   /** Atomic number (minerals). */
   num: z.number().optional(),
   /** Chemical symbol (minerals). */

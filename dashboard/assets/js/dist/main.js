@@ -83,118 +83,6 @@
     };
   }
 
-  // assets/js/src/state/coverage.ts
-  function normCategory(raw) {
-    const c = (raw ?? "").toLowerCase();
-    if (c === "foundational" || c === "macro" || c === "major") {
-      return "foundational";
-    }
-    if (c === "major-trace" || c === "major_trace" || c === "majortrace") {
-      return "major-trace";
-    }
-    if (c === "rare-trace" || c === "rare_trace" || c === "raretrace" || c === "trace") {
-      return "rare-trace";
-    }
-    if (c === "vitamin" || c === "vitamins") {
-      return "vitamins";
-    }
-    if (c === "amino" || c === "aminos" || c === "amino_acid") {
-      return "aminos";
-    }
-    if (c === "fatty-acid" || c === "fatty_acid" || c === "fattyacid" || c === "fatty-acids" || c === "omega") {
-      return "fatty-acids";
-    }
-    return "other";
-  }
-  function buildTileId(symbol, name) {
-    if (symbol !== void 0 && symbol.length > 0) {
-      return `tile_${symbol.toLowerCase().replace(/\W+/g, "_")}`;
-    }
-    return `tile_${name.toLowerCase().replace(/\W+/g, "_")}`;
-  }
-  var cachedSnapshot = null;
-  function recompute() {
-    const w = window;
-    const tiles = [];
-    const seenIds = /* @__PURE__ */ new Set();
-    const targets = w.TARGETS_DATA ?? [];
-    let legacyData = {};
-    if (typeof w.computeLiveCoverage === "function") {
-      try {
-        const result = w.computeLiveCoverage();
-        if (result instanceof Map) {
-          legacyData = Object.fromEntries(result.entries());
-        } else {
-          legacyData = result;
-        }
-      } catch (e) {
-        console.warn("[state/coverage] legacy computeLiveCoverage threw:", e);
-      }
-    }
-    for (const t of targets) {
-      const tileId = buildTileId(t.symbol, t.name);
-      seenIds.add(tileId);
-      const legacy = legacyData[t.name.toLowerCase()] ?? legacyData[tileId] ?? {};
-      const sources = legacy.sources ?? [];
-      tiles.push({
-        tileId,
-        category: normCategory(t.category),
-        symbol: t.symbol ?? "",
-        name: t.name,
-        covered: Boolean(legacy.covered) || sources.length > 0,
-        fillPercent: typeof legacy.fillPercent === "number" ? legacy.fillPercent : 0,
-        coveredBy: sources.map((s) => s.productId ?? s.productName ?? "").filter(Boolean),
-        aggregateVehicle: sources.some((s) => s.viaAggregate === true)
-      });
-    }
-    const byCategory = {};
-    for (const tile of tiles) {
-      const bucket = byCategory[tile.category] ?? { total: 0, covered: 0 };
-      bucket.total += 1;
-      if (tile.covered) {
-        bucket.covered += 1;
-      }
-      byCategory[tile.category] = bucket;
-    }
-    const coveredCount = tiles.filter((t) => t.covered).length;
-    cachedSnapshot = {
-      tiles,
-      coveredCount,
-      totalCount: tiles.length,
-      computedAt: (/* @__PURE__ */ new Date()).toISOString(),
-      byCategory
-    };
-    emit("coverage:recomputed", { coveredCount, totalCount: tiles.length });
-    return cachedSnapshot;
-  }
-  function getOrCompute() {
-    return cachedSnapshot ?? recompute();
-  }
-  var wireInstalled = false;
-  function installRecomputeTrigger() {
-    if (wireInstalled) {
-      return;
-    }
-    wireInstalled = true;
-    on("regimen:changed", () => recompute());
-    onChange((key) => {
-      if (key.startsWith("rgSlot") || key === "lcRegimen_v1") {
-        recompute();
-      }
-    });
-    const w = window;
-    const original = w.triggerRegimenRerender;
-    if (typeof original === "function") {
-      w.triggerRegimenRerender = () => {
-        try {
-          original();
-        } finally {
-          recompute();
-        }
-      };
-    }
-  }
-
   // node_modules/zod/v3/external.js
   var external_exports = {};
   __export(external_exports, {
@@ -4352,6 +4240,13 @@
 
   // assets/js/src/core/schemas/coverage-layout.ts
   var LayoutTileSchema = external_exports.object({
+    /**
+     * Canonical essential name — the join key into the CoverageSnapshot
+     * (state/coverage.ts). Equals the `name` field in essentials-targets-data.json.
+     * Display fields below (name/sym/letter/abbr) are abbreviated chrome; `key` is
+     * the stable identity used to look up live status.
+     */
+    key: external_exports.string().min(1),
     /** Atomic number (minerals). */
     num: external_exports.number().optional(),
     /** Chemical symbol (minerals). */
@@ -4392,6 +4287,100 @@
     goals: external_exports.array(LayoutGoalSchema)
   });
 
+  // assets/js/src/state/coverage.ts
+  function catFromTarget(raw) {
+    switch (raw) {
+      case "vitamins":
+        return "vitamins";
+      case "amino_acids":
+        return "aminos";
+      case "fatty_acids":
+        return "fatty-acids";
+      default:
+        return "other";
+    }
+  }
+  function buildTileId(name) {
+    return `tile_${name.toLowerCase().replace(/\W+/g, "_")}`;
+  }
+  function readTargets() {
+    const el = typeof document === "undefined" ? null : document.getElementById("essentials-targets-data");
+    if (el === null) {
+      return [];
+    }
+    let parsed;
+    try {
+      parsed = JSON.parse(el.textContent ?? "{}");
+    } catch {
+      return [];
+    }
+    const result = EssentialsDataSchema.safeParse(parsed);
+    return result.success ? result.data.essentials : [];
+  }
+  var cachedSnapshot = null;
+  function recompute() {
+    const targets = readTargets();
+    const tiles = targets.map((t) => ({
+      tileId: buildTileId(t.name),
+      category: catFromTarget(t.category),
+      symbol: "",
+      name: t.name,
+      // Live regimen→status classification is pending (Chunk 2.2). An empty
+      // regimen covers nothing, so every essential is a gap until the classifier
+      // lands.
+      covered: false,
+      fillPercent: 0,
+      coveredBy: [],
+      aggregateVehicle: false
+    }));
+    const byCategory = {};
+    for (const tile of tiles) {
+      const bucket = byCategory[tile.category] ?? { total: 0, covered: 0 };
+      bucket.total += 1;
+      if (tile.covered) {
+        bucket.covered += 1;
+      }
+      byCategory[tile.category] = bucket;
+    }
+    const coveredCount = tiles.filter((t) => t.covered).length;
+    cachedSnapshot = {
+      tiles,
+      coveredCount,
+      totalCount: tiles.length,
+      computedAt: (/* @__PURE__ */ new Date()).toISOString(),
+      byCategory
+    };
+    emit("coverage:recomputed", { coveredCount, totalCount: tiles.length });
+    return cachedSnapshot;
+  }
+  function getOrCompute() {
+    return cachedSnapshot ?? recompute();
+  }
+  var wireInstalled = false;
+  function installRecomputeTrigger() {
+    if (wireInstalled) {
+      return;
+    }
+    wireInstalled = true;
+    on("regimen:changed", () => recompute());
+    onChange((key) => {
+      if (key.startsWith("rgSlot") || key === "lcRegimen_v1") {
+        recompute();
+      }
+    });
+    const w = window;
+    const original = w.triggerRegimenRerender;
+    if (typeof original === "function") {
+      w.triggerRegimenRerender = () => {
+        try {
+          original();
+        } finally {
+          recompute();
+        }
+      };
+    }
+  }
+
   // assets/js/src/state/regimen.ts
   var REGIMEN_KEY = "lcRegimen_v1";
   var RG_USER_GOALS_KEY = "rgUserGoals_v1";
@@ -4417,17 +4406,17 @@
             label: "FOUNDATIONAL",
             hint: "structural + macro \xB7 atomic order",
             tiles: [
-              { num: 1, sym: "H", name: "HYDROGEN" },
-              { num: 6, sym: "C", name: "CARBON" },
-              { num: 7, sym: "N", name: "NITROGEN" },
-              { num: 8, sym: "O", name: "OXYGEN" },
-              { num: 11, sym: "Na", name: "SODIUM" },
-              { num: 12, sym: "Mg", name: "MAGNES." },
-              { num: 15, sym: "P", name: "PHOS." },
-              { num: 16, sym: "S", name: "SULFUR" },
-              { num: 17, sym: "Cl", name: "CHLORIDE" },
-              { num: 19, sym: "K", name: "POTAS." },
-              { num: 20, sym: "Ca", name: "CALCIUM" }
+              { key: "Hydrogen", num: 1, sym: "H", name: "HYDROGEN" },
+              { key: "Carbon", num: 6, sym: "C", name: "CARBON" },
+              { key: "Nitrogen", num: 7, sym: "N", name: "NITROGEN" },
+              { key: "Oxygen", num: 8, sym: "O", name: "OXYGEN" },
+              { key: "Sodium", num: 11, sym: "Na", name: "SODIUM" },
+              { key: "Magnesium", num: 12, sym: "Mg", name: "MAGNES." },
+              { key: "Phosphorus", num: 15, sym: "P", name: "PHOS." },
+              { key: "Sulfur", num: 16, sym: "S", name: "SULFUR" },
+              { key: "Chloride", num: 17, sym: "Cl", name: "CHLORIDE" },
+              { key: "Potassium", num: 19, sym: "K", name: "POTAS." },
+              { key: "Calcium", num: 20, sym: "Ca", name: "CALCIUM" }
             ]
           },
           {
@@ -4435,20 +4424,20 @@
             label: "MAJOR TRACE",
             hint: "mid-dose essentials \xB7 A\u2192Z",
             tiles: [
-              { num: 5, sym: "B", name: "BORON" },
-              { num: 27, sym: "Co", name: "COBALT" },
-              { num: 24, sym: "Cr", name: "CHROM." },
-              { num: 29, sym: "Cu", name: "COPPER" },
-              { num: 9, sym: "F", name: "FLUORINE" },
-              { num: 26, sym: "Fe", name: "IRON" },
-              { num: 53, sym: "I", name: "IODINE" },
-              { num: 25, sym: "Mn", name: "MANGAN." },
-              { num: 42, sym: "Mo", name: "MOLYB." },
-              { num: 34, sym: "Se", name: "SELEN." },
-              { num: 14, sym: "Si", name: "SILICON" },
-              { num: 38, sym: "Sr", name: "STRONT." },
-              { num: 23, sym: "V", name: "VANAD." },
-              { num: 30, sym: "Zn", name: "ZINC" }
+              { key: "Boron", num: 5, sym: "B", name: "BORON" },
+              { key: "Cobalt", num: 27, sym: "Co", name: "COBALT" },
+              { key: "Chromium", num: 24, sym: "Cr", name: "CHROM." },
+              { key: "Copper", num: 29, sym: "Cu", name: "COPPER" },
+              { key: "Fluoride", num: 9, sym: "F", name: "FLUORINE" },
+              { key: "Iron", num: 26, sym: "Fe", name: "IRON" },
+              { key: "Iodine", num: 53, sym: "I", name: "IODINE" },
+              { key: "Manganese", num: 25, sym: "Mn", name: "MANGAN." },
+              { key: "Molybdenum", num: 42, sym: "Mo", name: "MOLYB." },
+              { key: "Selenium", num: 34, sym: "Se", name: "SELEN." },
+              { key: "Silica", num: 14, sym: "Si", name: "SILICON" },
+              { key: "Strontium", num: 38, sym: "Sr", name: "STRONT." },
+              { key: "Vanadium", num: 23, sym: "V", name: "VANAD." },
+              { key: "Zinc", num: 30, sym: "Zn", name: "ZINC" }
             ]
           },
           {
@@ -4456,41 +4445,41 @@
             label: "RARE TRACE",
             hint: "PDM aggregate spectrum \xB7 A\u2192Z",
             tiles: [
-              { num: 47, sym: "Ag", name: "SILVER" },
-              { num: 13, sym: "Al", name: "ALUMIN." },
-              { num: 33, sym: "As", name: "ARSENIC" },
-              { num: 79, sym: "Au", name: "GOLD" },
-              { num: 56, sym: "Ba", name: "BARIUM" },
-              { num: 4, sym: "Be", name: "BERYL" },
-              { num: 35, sym: "Br", name: "BROMINE" },
-              { num: 58, sym: "Ce", name: "CERIUM" },
-              { num: 55, sym: "Cs", name: "CESIUM" },
-              { num: 66, sym: "Dy", name: "DYSPRO." },
-              { num: 68, sym: "Er", name: "ERBIUM" },
-              { num: 63, sym: "Eu", name: "EUROP." },
-              { num: 31, sym: "Ga", name: "GALL." },
-              { num: 64, sym: "Gd", name: "GADOL." },
-              { num: 72, sym: "Hf", name: "HAFNIUM" },
-              { num: 67, sym: "Ho", name: "HOLMIUM" },
-              { num: 57, sym: "La", name: "LANTH." },
-              { num: 3, sym: "Li", name: "LITHIUM" },
-              { num: 71, sym: "Lu", name: "LUTET." },
-              { num: 41, sym: "Nb", name: "NIOB." },
-              { num: 60, sym: "Nd", name: "NEOD." },
-              { num: 28, sym: "Ni", name: "NICKEL" },
-              { num: 59, sym: "Pr", name: "PRASEO." },
-              { num: 37, sym: "Rb", name: "RUBID." },
-              { num: 75, sym: "Re", name: "RHENIUM" },
-              { num: 21, sym: "Sc", name: "SCAND." },
-              { num: 62, sym: "Sm", name: "SAMAR." },
-              { num: 50, sym: "Sn", name: "TIN" },
-              { num: 73, sym: "Ta", name: "TANTAL." },
-              { num: 65, sym: "Tb", name: "TERBIUM" },
-              { num: 22, sym: "Ti", name: "TITAN." },
-              { num: 69, sym: "Tm", name: "THULIUM" },
-              { num: 39, sym: "Y", name: "YTTRIUM" },
-              { num: 70, sym: "Yb", name: "YTTERB." },
-              { num: 40, sym: "Zr", name: "ZIRCON." }
+              { key: "Silver", num: 47, sym: "Ag", name: "SILVER" },
+              { key: "Aluminum", num: 13, sym: "Al", name: "ALUMIN." },
+              { key: "Arsenic", num: 33, sym: "As", name: "ARSENIC" },
+              { key: "Gold", num: 79, sym: "Au", name: "GOLD" },
+              { key: "Barium", num: 56, sym: "Ba", name: "BARIUM" },
+              { key: "Beryllium", num: 4, sym: "Be", name: "BERYL" },
+              { key: "Bromine", num: 35, sym: "Br", name: "BROMINE" },
+              { key: "Cerium", num: 58, sym: "Ce", name: "CERIUM" },
+              { key: "Cesium", num: 55, sym: "Cs", name: "CESIUM" },
+              { key: "Dysprosium", num: 66, sym: "Dy", name: "DYSPRO." },
+              { key: "Erbium", num: 68, sym: "Er", name: "ERBIUM" },
+              { key: "Europium", num: 63, sym: "Eu", name: "EUROP." },
+              { key: "Gallium", num: 31, sym: "Ga", name: "GALL." },
+              { key: "Gadolinium", num: 64, sym: "Gd", name: "GADOL." },
+              { key: "Hafnium", num: 72, sym: "Hf", name: "HAFNIUM" },
+              { key: "Holmium", num: 67, sym: "Ho", name: "HOLMIUM" },
+              { key: "Lanthanum", num: 57, sym: "La", name: "LANTH." },
+              { key: "Lithium", num: 3, sym: "Li", name: "LITHIUM" },
+              { key: "Lutetium", num: 71, sym: "Lu", name: "LUTET." },
+              { key: "Niobium", num: 41, sym: "Nb", name: "NIOB." },
+              { key: "Neodymium", num: 60, sym: "Nd", name: "NEOD." },
+              { key: "Nickel", num: 28, sym: "Ni", name: "NICKEL" },
+              { key: "Praseodymium", num: 59, sym: "Pr", name: "PRASEO." },
+              { key: "Rubidium", num: 37, sym: "Rb", name: "RUBID." },
+              { key: "Rhenium", num: 75, sym: "Re", name: "RHENIUM" },
+              { key: "Scandium", num: 21, sym: "Sc", name: "SCAND." },
+              { key: "Samarium", num: 62, sym: "Sm", name: "SAMAR." },
+              { key: "Tin", num: 50, sym: "Sn", name: "TIN" },
+              { key: "Tantalum", num: 73, sym: "Ta", name: "TANTAL." },
+              { key: "Terbium", num: 65, sym: "Tb", name: "TERBIUM" },
+              { key: "Titanium", num: 22, sym: "Ti", name: "TITAN." },
+              { key: "Thulium", num: 69, sym: "Tm", name: "THULIUM" },
+              { key: "Yttrium", num: 39, sym: "Y", name: "YTTRIUM" },
+              { key: "Ytterbium", num: 70, sym: "Yb", name: "YTTERB." },
+              { key: "Zirconium", num: 40, sym: "Zr", name: "ZIRCON." }
             ]
           }
         ]
@@ -4502,22 +4491,22 @@
         gridClass: "essentials-grid--vitamins",
         tileClass: "tile--vitamin",
         tiles: [
-          { code: "V\xB701", letter: "A", name: "RETINOL" },
-          { code: "V\xB702", letter: "B1", name: "THIAMINE" },
-          { code: "V\xB703", letter: "B2", name: "RIBOFLAVIN" },
-          { code: "V\xB704", letter: "B3", name: "NIACIN" },
-          { code: "V\xB705", letter: "B5", name: "PANTO." },
-          { code: "V\xB706", letter: "B6", name: "PYRIDOX." },
-          { code: "V\xB707", letter: "B9", name: "FOLATE" },
-          { code: "V\xB708", letter: "B12", name: "COBALAMIN" },
-          { code: "V\xB709", letter: "C", name: "ASCORBIC" },
-          { code: "V\xB710", letter: "D3", name: "CHOLECAL." },
-          { code: "V\xB711", letter: "E", name: "TOCOPH." },
-          { code: "V\xB712", letter: "K", name: "MENAQ." },
-          { code: "V\xB713", letter: "H", name: "BIOTIN" },
-          { code: "V\xB714", letter: "Ch", name: "CHOLINE" },
-          { code: "V\xB715", letter: "In", name: "INOSITOL" },
-          { code: "V\xB716", letter: "Fl", name: "FLAVON." }
+          { key: "Vitamin A (Retinol / beta-carotene)", code: "V\xB701", letter: "A", name: "RETINOL" },
+          { key: "Vitamin B1 (Thiamine)", code: "V\xB702", letter: "B1", name: "THIAMINE" },
+          { key: "Vitamin B2 (Riboflavin)", code: "V\xB703", letter: "B2", name: "RIBOFLAVIN" },
+          { key: "Vitamin B3 (Niacin)", code: "V\xB704", letter: "B3", name: "NIACIN" },
+          { key: "Vitamin B5 (Pantothenic Acid)", code: "V\xB705", letter: "B5", name: "PANTO." },
+          { key: "Vitamin B6 (Pyridoxine)", code: "V\xB706", letter: "B6", name: "PYRIDOX." },
+          { key: "Folic Acid (Folate)", code: "V\xB707", letter: "B9", name: "FOLATE" },
+          { key: "Vitamin B12 (Cobalamin)", code: "V\xB708", letter: "B12", name: "COBALAMIN" },
+          { key: "Vitamin C (Ascorbic Acid)", code: "V\xB709", letter: "C", name: "ASCORBIC" },
+          { key: "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)", code: "V\xB710", letter: "D3", name: "CHOLECAL." },
+          { key: "Vitamin E (Tocopherol)", code: "V\xB711", letter: "E", name: "TOCOPH." },
+          { key: "Vitamin K (Menaquinone = K2)", code: "V\xB712", letter: "K", name: "MENAQ." },
+          { key: "Biotin", code: "V\xB713", letter: "H", name: "BIOTIN" },
+          { key: "Choline", code: "V\xB714", letter: "Ch", name: "CHOLINE" },
+          { key: "Inositol", code: "V\xB715", letter: "In", name: "INOSITOL" },
+          { key: "Flavonoids / Bioflavonoids", code: "V\xB716", letter: "Fl", name: "FLAVON." }
         ]
       },
       {
@@ -4527,18 +4516,18 @@
         gridClass: "essentials-grid--aminos",
         tileClass: "tile--amino",
         tiles: [
-          { code: "AA\xB701", abbr: "Arg", name: "ARGININE" },
-          { code: "AA\xB702", abbr: "Cys", name: "CYSTEINE" },
-          { code: "AA\xB703", abbr: "His", name: "HISTIDINE" },
-          { code: "AA\xB704", abbr: "Ile", name: "ISOLEUCINE" },
-          { code: "AA\xB705", abbr: "Leu", name: "LEUCINE" },
-          { code: "AA\xB706", abbr: "Lys", name: "LYSINE" },
-          { code: "AA\xB707", abbr: "Met", name: "METHIONINE" },
-          { code: "AA\xB708", abbr: "Phe", name: "PHENYLAL." },
-          { code: "AA\xB709", abbr: "Thr", name: "THREONINE" },
-          { code: "AA\xB710", abbr: "Trp", name: "TRYPTOPH." },
-          { code: "AA\xB711", abbr: "Tyr", name: "TYROSINE" },
-          { code: "AA\xB712", abbr: "Val", name: "VALINE" }
+          { key: "Arginine", code: "AA\xB701", abbr: "Arg", name: "ARGININE" },
+          { key: "Cysteine", code: "AA\xB702", abbr: "Cys", name: "CYSTEINE" },
+          { key: "Histidine", code: "AA\xB703", abbr: "His", name: "HISTIDINE" },
+          { key: "Isoleucine", code: "AA\xB704", abbr: "Ile", name: "ISOLEUCINE" },
+          { key: "Leucine", code: "AA\xB705", abbr: "Leu", name: "LEUCINE" },
+          { key: "Lysine", code: "AA\xB706", abbr: "Lys", name: "LYSINE" },
+          { key: "Methionine", code: "AA\xB707", abbr: "Met", name: "METHIONINE" },
+          { key: "Phenylalanine", code: "AA\xB708", abbr: "Phe", name: "PHENYLAL." },
+          { key: "Threonine", code: "AA\xB709", abbr: "Thr", name: "THREONINE" },
+          { key: "Tryptophan", code: "AA\xB710", abbr: "Trp", name: "TRYPTOPH." },
+          { key: "Tyrosine", code: "AA\xB711", abbr: "Tyr", name: "TYROSINE" },
+          { key: "Valine", code: "AA\xB712", abbr: "Val", name: "VALINE" }
         ]
       },
       {
@@ -4548,9 +4537,9 @@
         gridClass: "essentials-grid--fats",
         tileClass: "tile--fat",
         tiles: [
-          { code: "F\xB701", name: "OMEGA-3", hint: "n-3 \xB7 ALA \xB7 EPA \xB7 DHA" },
-          { code: "F\xB702", name: "OMEGA-6", hint: "n-6 \xB7 linoleic \xB7 GLA" },
-          { code: "F\xB703", name: "OMEGA-9", hint: "n-9 \xB7 oleic \xB7 arachidonic" }
+          { key: "Omega-3 (alpha-linolenic + EPA/DHA in marine form)", code: "F\xB701", name: "OMEGA-3", hint: "n-3 \xB7 ALA \xB7 EPA \xB7 DHA" },
+          { key: "Omega-6 (linoleic + GLA)", code: "F\xB702", name: "OMEGA-6", hint: "n-6 \xB7 linoleic \xB7 GLA" },
+          { key: "Omega-9 (Arachidonic / Oleic)", code: "F\xB703", name: "OMEGA-9", hint: "n-9 \xB7 oleic \xB7 arachidonic" }
         ]
       }
     ],
@@ -4566,11 +4555,11 @@
 
   // assets/js/src/views/coverage.ts
   var LAYOUT = CoverageLayoutSchema.parse(coverage_layout_data_default);
-  function tileStatusFor(name, snapshot) {
+  function tileStatusFor(key, snapshot) {
     if (snapshot === null) {
       return "";
     }
-    const found = snapshot.tiles.find((t) => t.name.toLowerCase() === name.toLowerCase());
+    const found = snapshot.tiles.find((t) => t.name === key);
     if (found === void 0) {
       return "";
     }
@@ -4595,7 +4584,7 @@
     })[c]);
   }
   function renderTile(spec, tileClass, snapshot) {
-    const status = tileStatusFor(spec.name, snapshot);
+    const status = tileStatusFor(spec.key, snapshot);
     const cls = `${tileClass} ${status}`.trim();
     let inner = "";
     if (spec.num !== void 0) {
@@ -4642,7 +4631,7 @@
       allTiles = spec.tiles;
     }
     const total = allTiles.length;
-    const covered = allTiles.filter((t) => tileStatusFor(t.name, snapshot) === "covered").length;
+    const covered = allTiles.filter((t) => tileStatusFor(t.key, snapshot) === "covered").length;
     return `
     <section class="essentials-section">
       <header class="essentials-section__head">
