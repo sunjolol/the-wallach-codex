@@ -1,0 +1,8 @@
+# Node toolchain — needed only for rebuilding dist/main.js, never shipped.
+# The compiled dist/main.js IS the runtime contract and IS committed.
+node_modules/
+package-lock.json
+
+# IDE noise
+.vscode/
+.idea/

@@ -1,0 +1,68 @@
+{
+  "name": "wallach-dashboard",
+  "version": "3.27.0",
+  "private": true,
+  "description": "Wallach-framework health dashboard. TypeScript source under assets/js/src/ compiles to a single browser-runnable IIFE bundle (dist/main.js). The compiled output is the runtime contract — you only need Node to rebuild the source.",
+  "type": "module",
+  "scripts": {
+    "build": "node ../tools/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "test": "vitest run \"assets/js/src/state/**\"",
+    "test:watch": "vitest \"assets/js/src/state/**\"",
+    "check-size": "size-limit",
+    "check-cycles": "madge --circular assets/js/src",
+    "check-dead-code": "knip",
+    "check-all": "npm run typecheck && npm run lint && npm run test && npm run check-size && npm run check-cycles && npm run check-dead-code",
+    "prepare": "simple-git-hooks || echo \"(git not initialized yet — run git init at repo root, then npx simple-git-hooks from dashboard/)\""
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.0.0",
+    "@size-limit/preset-app": "^11.1.0",
+    "@types/node": "^20.11.0",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.0.0",
+    "eslint-plugin-boundaries": "^6.0.0",
+    "knip": "^5.0.0",
+    "lint-staged": "^15.0.0",
+    "madge": "^8.0.0",
+    "prettier": "^3.0.0",
+    "simple-git-hooks": "^2.11.0",
+    "size-limit": "^11.1.0",
+    "typescript": "^5.4.5",
+    "vitest": "^2.0.0",
+    "zod": "^3.23.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "cd dashboard && npx lint-staged",
+    "pre-push": "cd dashboard && npm run check-all"
+  },
+  "lint-staged": {
+    "assets/js/src/**/*.ts": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "size-limit": [
+    {
+      "name": "dist/main.js (gzipped) — the spaghetti tripwire",
+      "path": "assets/js/dist/main.js",
+      "limit": "250 KB",
+      "gzip": true
+    },
+    {
+      "name": "assets/styles/*.css combined (gzipped) — design generosity",
+      "path": "assets/styles/*.css",
+      "limit": "150 KB",
+      "gzip": true
+    }
+  ],
+  "overrides": {
+    "esbuild": "^0.25.0"
+  }
+}

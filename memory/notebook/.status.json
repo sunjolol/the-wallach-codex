@@ -1,0 +1,6 @@
+{
+  "_tombstone": "This file has been split in Round 74 (2026-06-15).",
+  "_tacitus_fields_now_at": "memory/tacitus/sentinel.json",
+  "_audit_fields_now_at": "memory/system/audit-sentinel.json",
+  "_safe_to_delete": true
+}

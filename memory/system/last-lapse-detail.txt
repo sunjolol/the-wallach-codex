@@ -1,0 +1,6 @@
+# Last lapse detail — 2026-06-17T17:30:52+00:00
+
+Audit: 2026-06-17 (daily)
+Critical failures: 2
+
+brain_version_sync: CHANGELOG has no v3.11 entry; no brain/versions/v3.11-*.md file; dashboard embed brain=3.10 != canonical v3.11; dashboard_integrity: integrity check failed (1 FAILs): [FAIL] Markdown content: cl-data-saga: size mismatch — embed=304261B, escaped-source=312846B

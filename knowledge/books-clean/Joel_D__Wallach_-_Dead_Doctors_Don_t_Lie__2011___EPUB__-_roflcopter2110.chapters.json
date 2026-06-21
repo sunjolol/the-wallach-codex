@@ -1,0 +1,142 @@
+[
+  {
+    "chapter": "part 1",
+    "char_offset": 0,
+    "file": "titlepage.xhtml"
+  },
+  {
+    "chapter": "part 2",
+    "char_offset": 7,
+    "file": "text/part0000.html"
+  },
+  {
+    "chapter": "part 3",
+    "char_offset": 15908,
+    "file": "text/part0001.html"
+  },
+  {
+    "chapter": "part 4",
+    "char_offset": 23195,
+    "file": "text/part0002.html"
+  },
+  {
+    "chapter": "part 5",
+    "char_offset": 40757,
+    "file": "text/part0003.html"
+  },
+  {
+    "chapter": "part 6",
+    "char_offset": 69652,
+    "file": "text/part0004.html"
+  },
+  {
+    "chapter": "part 7",
+    "char_offset": 91038,
+    "file": "text/part0005.html"
+  },
+  {
+    "chapter": "part 8",
+    "char_offset": 126621,
+    "file": "text/part0006.html"
+  },
+  {
+    "chapter": "part 9",
+    "char_offset": 143967,
+    "file": "text/part0007.html"
+  },
+  {
+    "chapter": "part 10",
+    "char_offset": 156988,
+    "file": "text/part0008.html"
+  },
+  {
+    "chapter": "part 11",
+    "char_offset": 172314,
+    "file": "text/part0009.html"
+  },
+  {
+    "chapter": "part 12",
+    "char_offset": 200664,
+    "file": "text/part0010.html"
+  },
+  {
+    "chapter": "part 13",
+    "char_offset": 228211,
+    "file": "text/part0011.html"
+  },
+  {
+    "chapter": "part 14",
+    "char_offset": 243008,
+    "file": "text/part0012.html"
+  },
+  {
+    "chapter": "part 15",
+    "char_offset": 259797,
+    "file": "text/part0013.html"
+  },
+  {
+    "chapter": "part 16",
+    "char_offset": 286129,
+    "file": "text/part0014.html"
+  },
+  {
+    "chapter": "part 17",
+    "char_offset": 344564,
+    "file": "text/part0015.html"
+  },
+  {
+    "chapter": "part 18",
+    "char_offset": 373603,
+    "file": "text/part0016.html"
+  },
+  {
+    "chapter": "part 19",
+    "char_offset": 390554,
+    "file": "text/part0017.html"
+  },
+  {
+    "chapter": "part 20",
+    "char_offset": 401919,
+    "file": "text/part0018.html"
+  },
+  {
+    "chapter": "part 21",
+    "char_offset": 434338,
+    "file": "text/part0019.html"
+  },
+  {
+    "chapter": "part 22",
+    "char_offset": 451758,
+    "file": "text/part0020.html"
+  },
+  {
+    "chapter": "part 23",
+    "char_offset": 478037,
+    "file": "text/part0021.html"
+  },
+  {
+    "chapter": "part 24",
+    "char_offset": 611433,
+    "file": "text/part0022_split_000.html"
+  },
+  {
+    "chapter": "part 25",
+    "char_offset": 783793,
+    "file": "text/part0022_split_001.html"
+  },
+  {
+    "chapter": "part 26",
+    "char_offset": 961715,
+    "file": "text/part0023.html"
+  },
+  {
+    "chapter": "part 27",
+    "char_offset": 968236,
+    "file": "text/part0024_split_000.html"
+  },
+  {
+    "chapter": "part 28",
+    "char_offset": 976160,
+    "file": "text/part0024_split_001.html"
+  }
+]

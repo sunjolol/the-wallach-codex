@@ -1,0 +1,369 @@
+{
+  "white spots on nails": [
+    "zinc"
+  ],
+  "premature gray": [
+    "copper"
+  ],
+  "premature gray hair": [
+    "copper"
+  ],
+  "brittle nails": [
+    "sulfur",
+    "amino acid"
+  ],
+  "vertical ridges": [
+    "iron",
+    "calcium"
+  ],
+  "ridges in nails": [
+    "iron",
+    "calcium"
+  ],
+  "alopecia": [
+    "zinc",
+    "tin",
+    "biotin"
+  ],
+  "baldness": [
+    "zinc",
+    "tin",
+    "biotin"
+  ],
+  "stretch marks": [
+    "copper",
+    "zinc"
+  ],
+  "wrinkles": [
+    "copper",
+    "vitamin c"
+  ],
+  "osteoporosis": [
+    "calcium",
+    "magnesium",
+    "boron",
+    "vitamin d",
+    "vitamin k",
+    "strontium",
+    "sulfur"
+  ],
+  "arthritis": [
+    "calcium",
+    "magnesium",
+    "sulfur",
+    "msm",
+    "boron"
+  ],
+  "joint pain": [
+    "sulfur",
+    "msm",
+    "calcium",
+    "magnesium",
+    "boron"
+  ],
+  "kidney stones": [
+    "calcium",
+    "magnesium",
+    "manganese"
+  ],
+  "aneurysm": [
+    "copper"
+  ],
+  "ruptured aneurysm": [
+    "copper"
+  ],
+  "varicose veins": [
+    "copper",
+    "bioflavonoids"
+  ],
+  "high blood pressure": [
+    "calcium",
+    "magnesium",
+    "potassium"
+  ],
+  "hypertension": [
+    "calcium",
+    "magnesium",
+    "potassium"
+  ],
+  "low testosterone": [
+    "zinc",
+    "boron"
+  ],
+  "low t": [
+    "zinc",
+    "boron"
+  ],
+  "infertility": [
+    "zinc",
+    "selenium",
+    "boron"
+  ],
+  "low libido": [
+    "zinc",
+    "boron"
+  ],
+  "bph": [
+    "zinc",
+    "essential fatty acids"
+  ],
+  "enlarged prostate": [
+    "zinc",
+    "essential fatty acids"
+  ],
+  "menopause": [
+    "boron",
+    "calcium",
+    "magnesium"
+  ],
+  "hot flashes": [
+    "vitamin e",
+    "essential fatty acids"
+  ],
+  "low thyroid": [
+    "iodine",
+    "selenium",
+    "vitamin b12"
+  ],
+  "hypothyroid": [
+    "iodine",
+    "selenium",
+    "vitamin b12"
+  ],
+  "goiter": [
+    "iodine"
+  ],
+  "memory loss": [
+    "choline",
+    "lecithin",
+    "vitamin b1",
+    "vitamin b12"
+  ],
+  "alzheimer": [
+    "lecithin",
+    "choline",
+    "vitamin b1",
+    "vitamin e",
+    "selenium"
+  ],
+  "korsakoff": [
+    "vitamin b1",
+    "lecithin",
+    "chromium",
+    "vanadium"
+  ],
+  "dementia": [
+    "lecithin",
+    "choline",
+    "vitamin b12"
+  ],
+  "depression": [
+    "essential fatty acids",
+    "vitamin b6",
+    "lithium",
+    "chromium"
+  ],
+  "anxiety": [
+    "calcium",
+    "magnesium",
+    "chromium",
+    "vitamin b6"
+  ],
+  "insomnia": [
+    "calcium",
+    "magnesium"
+  ],
+  "fatigue": [
+    "iron",
+    "vitamin b12",
+    "iodine",
+    "magnesium"
+  ],
+  "chronic fatigue": [
+    "essential fatty acids",
+    "vitamin b12",
+    "iron",
+    "selenium"
+  ],
+  "low energy": [
+    "iron",
+    "vitamin b12",
+    "iodine"
+  ],
+  "cataracts": [
+    "selenium",
+    "zinc",
+    "vitamin e",
+    "vitamin c",
+    "amino acid"
+  ],
+  "macular degeneration": [
+    "selenium",
+    "taurine",
+    "methionine"
+  ],
+  "glaucoma": [
+    "bioflavonoids",
+    "vitamin c",
+    "rutin"
+  ],
+  "night blindness": [
+    "vitamin a",
+    "zinc"
+  ],
+  "dry eyes": [
+    "essential fatty acids"
+  ],
+  "acne": [
+    "zinc",
+    "vitamin a",
+    "essential fatty acids"
+  ],
+  "eczema": [
+    "zinc",
+    "essential fatty acids"
+  ],
+  "psoriasis": [
+    "folic acid",
+    "vitamin a",
+    "lecithin",
+    "essential fatty acids"
+  ],
+  "dandruff": [
+    "zinc",
+    "selenium"
+  ],
+  "gerd": [
+    "betaine hcl"
+  ],
+  "heartburn": [
+    "betaine hcl"
+  ],
+  "indigestion": [
+    "betaine hcl",
+    "pancreatic enzymes"
+  ],
+  "bloating": [
+    "betaine hcl",
+    "pancreatic enzymes"
+  ],
+  "constipation": [
+    "magnesium",
+    "essential fatty acids"
+  ],
+  "diarrhea": [
+    "zinc"
+  ],
+  "diabetes": [
+    "chromium",
+    "vanadium"
+  ],
+  "hypoglycemia": [
+    "chromium",
+    "vanadium",
+    "magnesium"
+  ],
+  "blood sugar swings": [
+    "chromium",
+    "vanadium"
+  ],
+  "sugar cravings": [
+    "chromium"
+  ],
+  "muscle cramps": [
+    "calcium",
+    "magnesium"
+  ],
+  "muscle weakness": [
+    "selenium",
+    "vitamin e"
+  ],
+  "muscular dystrophy": [
+    "selenium",
+    "vitamin e"
+  ],
+  "fibromyalgia": [
+    "magnesium",
+    "essential fatty acids"
+  ],
+  "frequent infections": [
+    "zinc",
+    "vitamin c",
+    "vitamin a"
+  ],
+  "slow wound healing": [
+    "zinc",
+    "vitamin c"
+  ],
+  "allergies": [
+    "essential fatty acids",
+    "vitamin c",
+    "bioflavonoids"
+  ],
+  "anemia": [
+    "iron",
+    "vitamin b12",
+    "folic acid",
+    "copper"
+  ],
+  "pernicious anemia": [
+    "vitamin b12"
+  ],
+  "demyelination": [
+    "vitamin b12"
+  ],
+  "tremors": [
+    "calcium",
+    "magnesium",
+    "lithium"
+  ],
+  "convulsions": [
+    "calcium",
+    "magnesium"
+  ],
+  "seizures": [
+    "calcium",
+    "magnesium"
+  ],
+  "epilepsy": [
+    "calcium",
+    "magnesium",
+    "essential fatty acids"
+  ],
+  "carpal tunnel": [
+    "vitamin b6",
+    "manganese",
+    "arsenic"
+  ],
+  "morning sickness": [
+    "vitamin b6"
+  ],
+  "tinnitus": [
+    "manganese",
+    "zinc"
+  ],
+  "vertigo": [
+    "calcium",
+    "magnesium",
+    "manganese"
+  ],
+  "hearing loss": [
+    "manganese"
+  ],
+  "easy bruising": [
+    "vitamin c",
+    "bioflavonoids"
+  ],
+  "bleeding gums": [
+    "vitamin c",
+    "vitamin k"
+  ],
+  "cavities": [
+    "calcium",
+    "fluoride"
+  ],
+  "tooth decay": [
+    "calcium",
+    "fluoride"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "_purpose": "Round 137 — per-phase extraction counts for today's Tacitus session. Read by check_tacitus_dashboard_extraction_health invariant.",
+  "built_at": "2026-06-19T20:58:20+00:00",
+  "session_date": "2026-06-19",
+  "cura": {
+    "scan_candidates": 7,
+    "prune_verdicts": 7,
+    "deepen_survivors": 3
+  },
+  "vision": {
+    "scan_candidates": 8,
+    "prune_verdicts": 8,
+    "deepen_survivors": 2
+  },
+  "aegis": {
+    "cura_verdicts": 5,
+    "vision_verdicts": 5
+  }
+}

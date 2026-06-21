@@ -1,0 +1,141 @@
+{
+  "_purpose": "Catch-up integrity proof (Phase B, Round 74). Written by tools/catchup_seal.py at the end of every co-work session's catch-up reads. Records the on-disk state of every file in the catch-up trigger list at the moment the agent claims to have read them. The audit's `catchup_freshness` invariant verifies this file is fresh + plausible. Defends against the 'agent pretends to catch up' failure mode (Risk 9).",
+  "schema_version": 1,
+  "sealed_at": "2026-06-20T23:50:44+00:00",
+  "files": {
+    "memory/identity.md": {
+      "present": true,
+      "size": 1098,
+      "mtime_iso": "2026-06-11T20:54:01+00:00",
+      "sha256_first_256": "27fd2b0f52de9d0c",
+      "sha256_last_256": "9e65467500657efa",
+      "first_text_preview": "# Identity  I'm Luneth (serenitybackto@gmail.com). I'm building a personal Walla"
+    },
+    "memory/preferences.md": {
+      "present": true,
+      "size": 13164,
+      "mtime_iso": "2026-06-16T00:29:40+00:00",
+      "sha256_first_256": "92f17af944380890",
+      "sha256_last_256": "88f9b5db86b4eb50",
+      "first_text_preview": "# User Preferences  ## Tone - Direct, terse, no padding. Match my brevity. - No "
+    },
+    "memory/user-prefs/index.md": {
+      "present": true,
+      "size": 5684,
+      "mtime_iso": "2026-06-14T19:39:40+00:00",
+      "sha256_first_256": "c34a80d7c57a631e",
+      "sha256_last_256": "1fc8d5e7c6139024",
+      "first_text_preview": "# User Preferences — Index  _Created: 2026-06-14 at 3:30 PM (Round 52 — refactor"
+    },
+    "memory/user-prefs/communication.md": {
+      "present": true,
+      "size": 3013,
+      "mtime_iso": "2026-06-14T19:39:58+00:00",
+      "sha256_first_256": "2112f3d57d37d07a",
+      "sha256_last_256": "32149dde0faee269",
+      "first_text_preview": "# Communication — User Preferences  _Cross-cutting. Applies to every interaction"
+    },
+    "memory/user-prefs/lifestyle.md": {
+      "present": true,
+      "size": 3055,
+      "mtime_iso": "2026-06-14T19:40:17+00:00",
+      "sha256_first_256": "a096981896323f9c",
+      "sha256_last_256": "8c70353ef67a654c",
+      "first_text_preview": "# Lifestyle & Format — User Preferences  _Cross-cutting. Applies to all body-sys"
+    },
+    "memory/user-prefs/aesthetic.md": {
+      "present": true,
+      "size": 3311,
+      "mtime_iso": "2026-06-14T19:40:42+00:00",
+      "sha256_first_256": "b93d0301afe5fcc8",
+      "sha256_last_256": "9e2719362e7bdf6f",
+      "first_text_preview": "# Aesthetic — User Preferences  _Cross-cutting. Dashboard theme + visual languag"
+    },
+    "memory/open-threads.md": {
+      "present": true,
+      "size": 52110,
+      "mtime_iso": "2026-06-20T16:36:18+00:00",
+      "sha256_first_256": "656355835aedf329",
+      "sha256_last_256": "6b410d5095c73c9b",
+      "first_text_preview": "# Open Threads  _Last updated: 2026-06-20 at ~10:30 PM EDT (Saturday evening — R"
+    },
+    "memory/essence/saga.md": {
+      "present": true,
+      "size": 685690,
+      "mtime_iso": "2026-06-20T22:31:47+00:00",
+      "sha256_first_256": "e1a7cf053fdb1171",
+      "sha256_last_256": "e617ebadd3a3aa8a",
+      "first_text_preview": "# The Saga  The narrative arc of how this agent came to be. Not a transcript — a"
+    },
+    "memory/essence/lessons.md": {
+      "present": true,
+      "size": 330482,
+      "mtime_iso": "2026-06-20T22:29:00+00:00",
+      "sha256_first_256": "79610876db5479a4",
+      "sha256_last_256": "07c545d2da7b303d",
+      "first_text_preview": "# Lessons  Corpus-specific wisdom accumulated across sessions. Add only when a g"
+    },
+    "memory/essence/decisions.md": {
+      "present": true,
+      "size": 304639,
+      "mtime_iso": "2026-06-20T22:29:00+00:00",
+      "sha256_first_256": "02a4f09a827d0599",
+      "sha256_last_256": "32205020dbd50669",
+      "first_text_preview": "# Decisions  Architectural commitments. Add only when a real choice was made tha"
+    },
+    "memory/operating-protocols.md": {
+      "present": true,
+      "size": 103726,
+      "mtime_iso": "2026-06-20T22:25:11+00:00",
+      "sha256_first_256": "7a04ae99c76a0c9e",
+      "sha256_last_256": "58516a2e29a0f745",
+      "first_text_preview": "# Operating Protocols  The codified disciplines for how the agent works on this "
+    },
+    "memory/source-rule.md": {
+      "present": true,
+      "size": 12952,
+      "mtime_iso": "2026-06-16T20:52:00+00:00",
+      "sha256_first_256": "a6b945c0484722e1",
+      "sha256_last_256": "9ea2bcf33a326d51",
+      "first_text_preview": "# Source Rule — Wallach as Immutable Cornerstone  The single most important rule"
+    },
+    "memory/engineering-doctrine.md": {
+      "present": true,
+      "size": 8334,
+      "mtime_iso": "2026-06-15T13:17:09+00:00",
+      "sha256_first_256": "17639921c31e64ad",
+      "sha256_last_256": "e4cd67dd4c3b65d2",
+      "first_text_preview": "# Engineering Doctrine  The ten principles that govern how this system is built,"
+    },
+    "tacitus/sentinel.json": {
+      "present": true,
+      "size": 6556,
+      "mtime_iso": "2026-06-19T13:03:13+00:00",
+      "sha256_first_256": "3e81e31b1ffecb14",
+      "sha256_last_256": "d0e83e20d1b565d4",
+      "first_text_preview": "{   \"_purpose\": \"Tacitus' own sentinel. Tracks autonomous-reflection state. Upda"
+    },
+    "memory/system/audit-sentinel.json": {
+      "present": true,
+      "size": 810,
+      "mtime_iso": "2026-06-19T10:25:21+00:00",
+      "sha256_first_256": "e2f55d4752a41bea",
+      "sha256_last_256": "1c312dcdd4254189",
+      "first_text_preview": "{   \"_purpose\": \"System audit's own sentinel. Updated AFTER successful audit run"
+    },
+    "tacitus/notebook/2026-06.md": {
+      "present": true,
+      "size": 340204,
+      "mtime_iso": "2026-06-20T22:24:40+00:00",
+      "sha256_first_256": "b4e61fc1af97b46c",
+      "sha256_last_256": "5c13470944e6d316",
+      "first_text_preview": "# Notebook — 2026-06  Tacitus' autonomous-reflection entries for June 2026. Appe"
+    }
+  },
+  "summary": {
+    "total_files": 16,
+    "present": 16,
+    "missing": [],
+    "all_present": true
+  }
+}

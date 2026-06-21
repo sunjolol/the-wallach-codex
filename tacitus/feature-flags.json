@@ -1,0 +1,55 @@
+{
+  "_purpose": "Round 140 \u2014 Verified Patterns System feature flags. Read by Cura (Architectural sub-check) and Vision (Phase 1 scan) at session start. If a flag is `false`, the corresponding pattern-search question is SKIPPED entirely in that mode's prompt.",
+  "_rollback": "To disable the entire Verified Patterns System without removing code: set both `cura_pattern_search.enabled` and `vision_pattern_seed.enabled` to false. To remove the feature entirely: see memory/essence/saga.md Round 140 entry, \u00a7 Rollback recipe.",
+  "_round": 140,
+  "_owner": "user-controlled via co-work request (e.g., 'turn off Cura pattern suggestions')",
+  "schema_version": 1,
+  "flags": {
+    "cura_pattern_search": {
+      "enabled": true,
+      "description": "Cura's Architectural sub-check includes the question: 'Does this candidate solve a problem for which a verified pattern already exists in memory/verified-patterns.md?' If a verified pattern fits, the LAND reduces to parameter-tuning rather than full re-derivation.",
+      "default": true,
+      "last_changed_at": "2026-06-19T16:00:00-04:00",
+      "last_changed_by": "Round 140 initial ship",
+      "history": []
+    },
+    "vision_pattern_seed": {
+      "enabled": true,
+      "description": "Vision's Phase 1 scan includes the question: 'Is there a design surface that would benefit from a seed-from-pattern proposal?' Hard cap: ONE candidate per night (not 'convert all N surfaces'). The proposal is a SEED \u2014 human verifies rendered output before any propagation. Vision NEVER proposes batch conversion.",
+      "default": true,
+      "last_changed_at": "2026-06-19T16:00:00-04:00",
+      "last_changed_by": "Round 140 initial ship",
+      "history": []
+    },
+    "cura_security_subcheck": {
+      "enabled": true,
+      "description": "Cura's 6th Phase-1 sub-check \u2014 Security. Scans dashboard.html + tools/* + cart import path for input-validation gaps, XSS vectors, missing SRI hashes, mutable window exports, schema-validation gaps. Cap: 1 LAND per night unless critical finding (CRIT_OVERRIDE noted explicitly in the candidate). Rotation cursor at tacitus/security-audit-cursor.json scopes which surfaces are audited tonight (full set audited once per ~3 weeks at the rotation cadence). Set false to disable entirely.",
+      "default": true,
+      "last_changed_at": "2026-06-20T11:00:00-04:00",
+      "last_changed_by": "Round 156 initial ship",
+      "history": []
+    },
+    "design_system_enforcement": {
+      "enabled": true,
+      "mode": "error",
+      "description": "Design System v3 strictness knob. Three modes: 'warn' = invariants surface findings as warnings (always PASS, payload notes violations), 'error' = invariants FAIL on violation (critical/warning severity per invariant), 'off' = checks skipped entirely. Initial mode is 'warn' for the first 3 rounds of migration. Promote to 'error' once dashboard.html no longer has external-resource imports and uses tokens for all visual values. Three paired invariants read this flag: check_no_external_style_resources, check_design_system_hash_integrity, check_design_system_write_protection.",
+      "default": "warn",
+      "modes_allowed": [
+        "off",
+        "warn",
+        "error"
+      ],
+      "last_changed_at": "2026-06-21T11:00:00-04:00",
+      "last_changed_by": "Round 161 sealing \u2014 all promotion criteria met",
+      "history": [
+        {
+          "ts": "2026-06-21T11:00:00-04:00",
+          "from": "warn",
+          "to": "error",
+          "reason": "Round 161 sealing pass \u00b7 all 3 promotion criteria met: (1) external style/font/script imports removed from dashboard.html, (2) 6 surfaces migrated to design-system.css with screenshot verification, (3) user approved sealing phase via co-work"
+        }
+      ],
+      "promotion_criteria": "Promote to 'error' once: (1) all external style/font/script imports removed from dashboard.html, (2) at least 3 surfaces successfully migrated to design-system.css with screenshot verification, (3) user explicitly approves promotion via co-work."
+    }
+  }
+}

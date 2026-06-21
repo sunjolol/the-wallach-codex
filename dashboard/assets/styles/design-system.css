@@ -1,0 +1,1121 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+ * DESIGN SYSTEM v3 — Wallach Health Agent
+ * ───────────────────────────────────────────────────────────────────────────
+ * THIS FILE IS THE SINGLE SOURCE OF TRUTH FOR EVERY VISUAL TOKEN.
+ *
+ * Adopted: 2026-06-21 (Round 160 — total dashboard overhaul).
+ * Calibration anchors:
+ *   - trace-minerals-popup-v3.html in outputs/ (the approved reference)
+ *   - knowledge/design-wisdom/references/futuristic-tech-reference-empower-by-niteangel-depthcore.jpg
+ *   - knowledge/design-wisdom/index.md (28 captured codepen references)
+ *
+ * STRICT RULES:
+ *   1. NO external resources. Every font, every image, every asset is local.
+ *      The `check_no_external_style_resources` invariant enforces this.
+ *   2. NO hardcoded colors / fonts / shadows in consuming code — use tokens.
+ *      The `check_dashboard_uses_design_system_tokens` invariant enforces this.
+ *   3. NO behavior changes during migration. "Re-theme, don't rewrite logic"
+ *      is the project rule. State + invariants + behaviors stay intact.
+ *   4. NO silent drift. This file is hash-anchored via design-system.golden.sha256
+ *      (warn-mode initially, ERROR-mode after Round 3 of migration).
+ *
+ * THIS FILE IS USER-WRITER-ONLY ONCE SEALED.
+ * The agent may READ this file freely. The agent may NEVER edit it after
+ * the sealing round. To extend the token vocabulary: open a co-work request
+ * with the user, draft the addition in a side file for the user to copy in.
+ *
+ * Engineering doctrine compliance:
+ *   §3  Single source of truth — every visual token lives here, nowhere else
+ *   §10 Self-documenting structure — every section has inline doctrinal comment
+ *   §11 Truth-anchored invariants — golden hash + 3 paired daily invariants
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * FONT-FACE DECLARATIONS
+ * Five families, all self-hosted, all SIL OFL 1.1 (perpetual free use).
+ * Files in ../fonts/. See ../fonts/README.md for procurement; see
+ * ../fonts/LICENSE.md for full open-source licensing.
+ *
+ * `font-display: swap` — render with fallback first, swap when font loads.
+ * `unicode-range` could be added for further subset optimization in a future
+ * micro-pass; for v3 we ship the Latin Extended bundles as-is.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('../fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('../fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url('../fonts/Merriweather-VariableFont_opsz,wdth,wght.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url('../fonts/Merriweather-Italic-VariableFont_opsz,wdth,wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Crimson Pro';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('../fonts/CrimsonPro-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Crimson Pro';
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('../fonts/CrimsonPro-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('../fonts/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url('../fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * ROOT TOKENS — every visual decision lives here
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * PAPER + INK — the warm cream substrate and the warm ink that rests on it
+   * Inviting. Stays a while. Cozy. The opposite of fluorescent.
+   * ──────────────────────────────────────────────────────────────────────── */
+  --ds-paper:          #faf5e8;
+  --ds-paper-light:    #fffbf2;
+  --ds-paper-deep:     #f2ead3;
+  --ds-paper-darker:   #ebe2c4;
+  --ds-paper-shadow:   #d4c8a9;
+
+  --ds-ink:            #1a1612;
+  --ds-ink-medium:     #3d342a;
+  --ds-ink-soft:       #6a5d50;
+  --ds-ink-faint:      #9b8e7c;
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * RULE LINES — the page borders, dividers, hairlines.
+   * Three values for hierarchy: soft (background dividers), default (section
+   * separators), bright (anchor lines that need to assert).
+   * ──────────────────────────────────────────────────────────────────────── */
+  --ds-rule:           #d4c8a9;
+  --ds-rule-soft:      #e8dfc6;
+  --ds-rule-bright:    #c4b889;
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * SIGNAL ACCENT — the bright orange. Calibrated against the Empower image.
+   * This is the SYSTEM signal. Used to mark importance, never decoration.
+   *   accent-hot = brightest, used for very specific kill-shots
+   *   accent     = standard signal — buttons, kickers, marks, alerts
+   *   accent-bright = highlighted variant
+   *   accent-deep = pressed / active / emphasized italic in headers
+   *   accent-soft = wash for tinted surfaces
+   *   accent-wash = barest hint, used for hover bg or subtle fill
+   * ──────────────────────────────────────────────────────────────────────── */
+  --ds-accent:         #ff7e3c;
+  --ds-accent-bright:  #ff9d5c;
+  --ds-accent-hot:     #ff6420;
+  --ds-accent-deep:    #c8552a;
+  --ds-accent-soft:    #ffd0b3;
+  --ds-accent-wash:    #ffe9d8;
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * TECH ACCENT — cool cyan. ONLY in alien-tech micro-details:
+   * corner crosshairs, tiny readouts, status pulses, section number brackets.
+   * Never used for large surfaces, headers, or body text. The cool note that
+   * makes the warm paper feel rendered by precise tech.
+   * ──────────────────────────────────────────────────────────────────────── */
+  --ds-tech:           #5fa4bd;
+  --ds-tech-dim:       #a8c8d5;
+  --ds-tech-wash:      #d8e6ec;
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * HIGHLIGHTER PALETTE — for the textured-mark effect on load-bearing
+   * phrases inside Wallach quotes (or other prose). Used SPARINGLY.
+   * Each mark wraps 1-3 words max. Mixing more than 2 highlight colors in a
+   * single quote reads as noise.
+   * ──────────────────────────────────────────────────────────────────────── */
+  --ds-hl-warm:        #ffe69c;
+  --ds-hl-rose:        #f7c4b8;
+  --ds-hl-mint:        #c8e5b8;
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * SEMANTIC STATUS — for system states that need their own color signal
+   * Used by invariant readouts, system status badges, deficiency/coverage
+   * indicators. Held DISTINCT from the signal accent (orange) so that
+   * "importance" and "status" don't visually conflate.
+   * ──────────────────────────────────────────────────────────────────────── */
+  --ds-status-ok:      #5b8a3f;
+  --ds-status-ok-soft: #d4e6c6;
+  --ds-status-warn:    #c79830;
+  --ds-status-warn-soft:#f3e6c6;
+  --ds-status-err:     #b04a30;
+  --ds-status-err-soft:#f3d6cc;
+  --ds-status-info:    #4a7090;
+  --ds-status-info-soft:#cfdde7;
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * TYPOGRAPHY STACKS — semantic font families, never reference Playfair
+   * directly in component code; always go through these tokens. If we swap
+   * a family later, every consuming surface inherits the change.
+   *
+   * --ds-font-display   — chapter headers, hero titles, pull-quote prose
+   * --ds-font-serif     — long-form body prose (1rem base, generous leading)
+   * --ds-font-serif-light — italic decks, secondary editorial voice
+   * --ds-font-sans      — labels, buttons, navigation, kickers, UI chrome
+   * --ds-font-mono      — tech readouts, technical labels, code, mono numerals
+   * ──────────────────────────────────────────────────────────────────────── */
+  --ds-font-display:   'Playfair Display', 'Times New Roman', Georgia, serif;
+  --ds-font-serif:     'Merriweather', 'Times New Roman', Georgia, serif;
+  --ds-font-serif-light:'Crimson Pro', 'Times New Roman', Georgia, serif;
+  --ds-font-sans:      'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --ds-font-mono:      'JetBrains Mono', ui-monospace, 'SF Mono', Consolas, 'Liberation Mono', monospace;
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * SPACING SCALE — a 4px-rooted modular scale.
+   * Use these tokens for ANY margin/padding/gap in dashboard surfaces. This
+   * means "padding: 1rem" becomes "padding: var(--ds-space-4)" — making the
+   * whole dashboard re-tunable from one place if needed.
+   * ──────────────────────────────────────────────────────────────────────── */
+  --ds-space-0:        0;
+  --ds-space-1:        0.25rem;  /*  4px */
+  --ds-space-2:        0.5rem;   /*  8px */
+  --ds-space-3:        0.75rem;  /* 12px */
+  --ds-space-4:        1rem;     /* 16px */
+  --ds-space-5:        1.5rem;   /* 24px */
+  --ds-space-6:        2rem;     /* 32px */
+  --ds-space-7:        2.5rem;   /* 40px */
+  --ds-space-8:        3rem;     /* 48px */
+  --ds-space-9:        4rem;     /* 64px */
+  --ds-space-10:       6rem;     /* 96px */
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * TYPE SIZES — semantic, not pixel-specific. The display sizes use clamp()
+   * so they scale with viewport while staying within editorial bounds.
+   * ──────────────────────────────────────────────────────────────────────── */
+  --ds-text-micro:     0.6rem;
+  --ds-text-mini:      0.7rem;
+  --ds-text-xs:        0.78rem;
+  --ds-text-sm:        0.85rem;
+  --ds-text-base:      1rem;
+  --ds-text-md:        1.05rem;
+  --ds-text-lg:        1.25rem;
+  --ds-text-xl:        1.4rem;
+  --ds-text-2xl:       1.85rem;
+  --ds-text-3xl:       clamp(2.4rem, 3.2vw, 3rem);
+  --ds-text-4xl:       clamp(2.8rem, 4vw, 4.2rem);
+  --ds-text-5xl:       clamp(5rem, 8vw, 7.5rem);
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * LINE HEIGHTS, LETTER SPACING — semantic
+   * ──────────────────────────────────────────────────────────────────────── */
+  --ds-lh-tight:       0.95;
+  --ds-lh-snug:        1.1;
+  --ds-lh-normal:      1.45;
+  --ds-lh-relaxed:     1.65;
+
+  --ds-track-tight:    -0.025em;
+  --ds-track-normal:   0;
+  --ds-track-wide:     0.08em;
+  --ds-track-wider:    0.15em;
+  --ds-track-widest:   0.22em;
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * RADII — modest. The aesthetic is editorial, not bubble-y.
+   * ──────────────────────────────────────────────────────────────────────── */
+  --ds-radius-xs:      2px;
+  --ds-radius-sm:      3px;
+  --ds-radius-md:      4px;
+  --ds-radius-lg:      8px;
+  --ds-radius-pill:    999px;
+  --ds-radius-circle:  50%;
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * ELEVATION — three tiers. The whole system uses warm-ink shadow color so
+   * shadows have a slight orange undertone (no cold blue-gray drop shadows).
+   * ──────────────────────────────────────────────────────────────────────── */
+  --ds-elev-1: 0 1px 0 rgba(255,255,255,0.6) inset,
+               0 0 0 1px var(--ds-rule-soft),
+               0 6px 14px -8px rgba(26,22,18,0.10);
+  --ds-elev-2: 0 1px 0 rgba(255,255,255,0.6) inset,
+               0 0 0 1px var(--ds-rule-soft),
+               0 14px 32px -16px rgba(26,22,18,0.16),
+               0 4px 10px -5px rgba(26,22,18,0.06);
+  --ds-elev-3: 0 1px 0 rgba(255,255,255,0.6) inset,
+               0 0 0 1px var(--ds-rule-soft),
+               0 24px 60px -25px rgba(26,22,18,0.20),
+               0 6px 18px -8px rgba(26,22,18,0.08);
+
+  /* Glow for the signal accent on hot CTA / pull-stat */
+  --ds-glow-accent:    0 0 60px rgba(255,126,60,0.35);
+  --ds-glow-accent-sm: 0 4px 12px -2px rgba(255,126,60,0.40);
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * MOTION — durations and easings. Honor prefers-reduced-motion globally.
+   * ──────────────────────────────────────────────────────────────────────── */
+  --ds-motion-fast:    0.15s;
+  --ds-motion-base:    0.2s;
+  --ds-motion-slow:    0.4s;
+  --ds-ease-out:       cubic-bezier(0.25, 1, 0.5, 1);
+  --ds-ease-in:        cubic-bezier(0.5, 0, 0.75, 0);
+  --ds-ease-in-out:    cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * Z-INDEX SCALE — semantic, never arbitrary
+   * ──────────────────────────────────────────────────────────────────────── */
+  --ds-z-base:         1;
+  --ds-z-card:         10;
+  --ds-z-dropdown:     20;
+  --ds-z-sticky:       30;
+  --ds-z-modal:        100;
+  --ds-z-toast:        110;
+  --ds-z-tooltip:      120;
+}
+
+/* Respect reduced-motion preference globally */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ds-motion-fast: 0.01s;
+    --ds-motion-base: 0.01s;
+    --ds-motion-slow: 0.01s;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01s !important;
+    transition-duration: 0.01s !important;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * BASE RESET — minimal, additive. Does NOT impose box-sizing on every element
+ * because legacy dashboard surfaces may rely on the existing default. Migration
+ * surfaces opt into ds-canvas which sets the box-sizing baseline.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.ds-canvas, .ds-canvas *, .ds-canvas *::before, .ds-canvas *::after {
+  box-sizing: border-box;
+}
+
+.ds-canvas {
+  font-family: var(--ds-font-serif);
+  color: var(--ds-ink);
+  background: var(--ds-paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * TYPOGRAPHY PRIMITIVES
+ * Apply these classes to elements to get instant correct typography. Never
+ * set font-family / size / weight inline — always use a primitive.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.ds-h-hero {
+  font-family: var(--ds-font-display);
+  font-size: var(--ds-text-4xl);
+  font-weight: 900;
+  line-height: var(--ds-lh-tight);
+  letter-spacing: var(--ds-track-tight);
+  color: var(--ds-ink);
+  margin: 0;
+}
+.ds-h-hero em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ds-accent-deep);
+}
+
+.ds-h-section {
+  font-family: var(--ds-font-display);
+  font-size: var(--ds-text-2xl);
+  font-weight: 700;
+  line-height: var(--ds-lh-snug);
+  letter-spacing: var(--ds-track-tight);
+  color: var(--ds-ink);
+  margin: 0;
+}
+
+.ds-h-subsection {
+  font-family: var(--ds-font-display);
+  font-size: var(--ds-text-xl);
+  font-weight: 700;
+  line-height: var(--ds-lh-snug);
+  color: var(--ds-ink);
+  margin: 0;
+}
+
+.ds-h-tile-name {
+  font-family: var(--ds-font-display);
+  font-size: var(--ds-text-3xl);
+  font-weight: 700;
+  line-height: var(--ds-lh-tight);
+  letter-spacing: var(--ds-track-tight);
+  color: var(--ds-ink);
+  margin: 0;
+}
+
+.ds-deck {
+  font-family: var(--ds-font-serif-light);
+  font-size: var(--ds-text-lg);
+  font-style: italic;
+  font-weight: 300;
+  line-height: var(--ds-lh-normal);
+  color: var(--ds-ink-soft);
+  margin: 0;
+}
+
+.ds-body {
+  font-family: var(--ds-font-serif);
+  font-size: var(--ds-text-base);
+  line-height: var(--ds-lh-relaxed);
+  color: var(--ds-ink-medium);
+}
+.ds-body p { margin: 0 0 var(--ds-space-4); }
+.ds-body p:last-child { margin-bottom: 0; }
+
+.ds-kicker {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-mini);
+  font-weight: 500;
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+}
+.ds-kicker::before {
+  content: '';
+  width: 16px; height: 1px;
+  background: var(--ds-accent);
+}
+
+.ds-eyebrow {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  font-weight: 500;
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+}
+
+.ds-tag-element {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-mini);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-accent);
+  font-weight: 600;
+}
+.ds-tag-element::before {
+  content: '// ';
+  color: var(--ds-tech);
+  opacity: 0.7;
+}
+
+.ds-tag-readout {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide);
+  color: var(--ds-tech);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * MARK — the textured highlighter
+ * Apply `<mark>` (default warm), `<mark class="rose">`, `<mark class="mint">`.
+ * SPARINGLY. 1-3 words max per mark, max 2 marks per quote.
+ * Requires the filter-rough SVG to exist somewhere on the page — see
+ * STYLE-GUIDE.md "Highlighter setup" section.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.ds-canvas mark, .ds-mark {
+  --ds-mark-color: var(--ds-hl-warm);
+  display: inline-block;
+  position: relative;
+  background-color: unset;
+  color: inherit;
+  isolation: isolate;
+  padding: 0 0.1em;
+}
+.ds-canvas mark::before, .ds-mark::before {
+  position: absolute; inset: 0; content: '';
+  width: calc(100% + 0.5ch);
+  left: -0.15ch;
+  height: 108%;
+  top: -4%;
+  border-bottom-right-radius: 18px 28px;
+  background-color: var(--ds-mark-color);
+  opacity: 0.85;
+  box-shadow:
+    inset -2px 0px 1px hsl(from var(--ds-mark-color) h s calc(l - 18)),
+    inset -4px 0px 5px hsl(from var(--ds-mark-color) h s calc(l - 18));
+  filter: url(#ds-filter-rough);
+  z-index: -1;
+}
+.ds-canvas mark::after, .ds-mark::after {
+  position: absolute; content: '';
+  height: 1ch; width: 0.4ch;
+  top: 2px; right: -0.25em;
+  background: radial-gradient(
+    hsl(from var(--ds-mark-color) h s calc(l - 28)),
+    hsl(from var(--ds-mark-color) h s l)
+  );
+  opacity: 0.45;
+  border-radius: 8px 0 40px/180px 0;
+  rotate: 14deg;
+  filter: url(#ds-filter-rough);
+  z-index: -1;
+}
+.ds-canvas mark.rose, .ds-mark.rose { --ds-mark-color: var(--ds-hl-rose); }
+.ds-canvas mark.mint, .ds-mark.mint { --ds-mark-color: var(--ds-hl-mint); }
+
+/* Gradient-underline lift — lower-impact alternative to the textured mark */
+.ds-lift {
+  background: linear-gradient(transparent 62%, var(--ds-accent-soft) 62%);
+  padding: 0 0.05em;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * BUTTON PRIMITIVES
+ * Three classes. The whole dashboard uses these — never roll a custom button.
+ *
+ *   .ds-btn-primary  — the signal-accent CTA. Used for the ONE primary action
+ *                       in any view. Never two primaries on one surface.
+ *   .ds-btn-ghost    — secondary text-button. Used for "Cancel", "Skip", etc.
+ *   .ds-icon-btn     — compact icon-only button for chrome (close, pin, etc.)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.ds-btn-primary {
+  background: linear-gradient(135deg, var(--ds-accent) 0%, var(--ds-accent-hot) 100%);
+  color: var(--ds-paper-light);
+  border: 0;
+  padding: 0.8rem 1.5rem;
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-xs);
+  font-weight: 600;
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: var(--ds-radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  transition: transform var(--ds-motion-fast) var(--ds-ease-out),
+              box-shadow var(--ds-motion-fast) var(--ds-ease-out);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.3) inset,
+    var(--ds-glow-accent-sm);
+}
+.ds-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.4) inset,
+    0 6px 16px -2px rgba(255,126,60,0.5);
+}
+.ds-btn-primary:active {
+  transform: translateY(0);
+}
+.ds-btn-primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.ds-btn-ghost {
+  background: transparent;
+  color: var(--ds-ink-soft);
+  border: 1px solid var(--ds-rule);
+  padding: 0.8rem 1.25rem;
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-xs);
+  font-weight: 500;
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: var(--ds-radius-sm);
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+}
+.ds-btn-ghost:hover {
+  border-color: var(--ds-ink);
+  color: var(--ds-ink);
+}
+
+.ds-icon-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  width: 28px; height: 28px;
+  border-radius: var(--ds-radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ds-ink-soft);
+  font-family: var(--ds-font-mono);
+  font-size: 0.9rem;
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+  padding: 0;
+}
+.ds-icon-btn:hover {
+  border-color: var(--ds-rule);
+  color: var(--ds-accent);
+  background: var(--ds-paper-light);
+}
+.ds-icon-btn--close {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * CARD + SURFACE PRIMITIVES
+ * Use .ds-card as the base for any panel/popup/modal surface.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.ds-card {
+  background: var(--ds-paper);
+  border-radius: var(--ds-radius-md);
+  padding: var(--ds-space-6);
+  box-shadow: var(--ds-elev-3);
+  position: relative;
+}
+
+.ds-card--compact { padding: var(--ds-space-5); }
+.ds-card--airy    { padding: var(--ds-space-7); }
+
+.ds-divider {
+  height: 1px;
+  background: var(--ds-rule);
+  border: 0;
+  margin: var(--ds-space-5) 0;
+  position: relative;
+}
+/* Editorial divider with diamond + dot accents — use sparingly */
+.ds-divider--editorial::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 6px; height: 6px;
+  background: var(--ds-accent);
+  transform: rotate(45deg);
+}
+.ds-divider--editorial::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: 0;
+  width: 4px; height: 4px;
+  background: var(--ds-tech);
+  border-radius: 50%;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * ALIEN-TECH MICRO-DETAILS
+ * The vocabulary that gives the system its futuristic-tech feel. Used in
+ * MODERATION. Over-applying these turns the design into a sci-fi cosplay.
+ * Apply where it adds meaning (a status pulse next to a live data field; a
+ * corner crosshair on a "scanned" surface; a tech bracket on a section
+ * numeral). Do not apply as decoration.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.ds-crosshairs {
+  position: absolute;
+  pointer-events: none;
+  inset: 0;
+}
+.ds-ch-tl, .ds-ch-tr, .ds-ch-bl, .ds-ch-br {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+}
+.ds-ch-tl { top: 8px; left: 8px;
+  border-top: 1px solid var(--ds-tech);
+  border-left: 1px solid var(--ds-tech);
+}
+.ds-ch-tr { top: 8px; right: 8px;
+  border-top: 1px solid var(--ds-tech);
+  border-right: 1px solid var(--ds-tech);
+}
+.ds-ch-bl { bottom: 8px; left: 8px;
+  border-bottom: 1px solid var(--ds-tech);
+  border-left: 1px solid var(--ds-tech);
+}
+.ds-ch-br { bottom: 8px; right: 8px;
+  border-bottom: 1px solid var(--ds-tech);
+  border-right: 1px solid var(--ds-tech);
+}
+
+/* Status pulse dot. Use with class `live` to animate. */
+.ds-pulse {
+  display: inline-block;
+  width: 8px; height: 8px;
+  background: var(--ds-accent);
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.ds-pulse.live {
+  animation: ds-pulse-animate 2s ease-in-out infinite;
+}
+.ds-pulse.tech { background: var(--ds-tech); }
+.ds-pulse.ok   { background: var(--ds-status-ok); }
+.ds-pulse.warn { background: var(--ds-status-warn); }
+.ds-pulse.err  { background: var(--ds-status-err); }
+@keyframes ds-pulse-animate {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 currentColor; }
+  50% { opacity: 0.6; box-shadow: 0 0 0 4px transparent; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * COVERAGE BADGE — used to mark "this tile is covered" or similar binary status
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-mini);
+  font-weight: 600;
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  color: var(--ds-ink);
+}
+.ds-badge::before {
+  content: '';
+  width: 10px; height: 10px;
+  background: var(--ds-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--ds-accent-soft);
+}
+.ds-badge--ok::before   { background: var(--ds-status-ok);   box-shadow: 0 0 0 4px var(--ds-status-ok-soft); }
+.ds-badge--warn::before { background: var(--ds-status-warn); box-shadow: 0 0 0 4px var(--ds-status-warn-soft); }
+.ds-badge--err::before  { background: var(--ds-status-err);  box-shadow: 0 0 0 4px var(--ds-status-err-soft); }
+.ds-badge--info::before { background: var(--ds-status-info); box-shadow: 0 0 0 4px var(--ds-status-info-soft); }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * PULL QUOTE — the editorial pull-quote with curved corner + signal-accent
+ * opening-quote glyph. Use sparingly — once or twice per long-form view.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.ds-pull-quote-wrap {
+  position: relative;
+  margin: var(--ds-space-6) 0 var(--ds-space-7);
+}
+.ds-pull-quote {
+  margin: 0;
+  padding: var(--ds-space-6) var(--ds-space-7) var(--ds-space-6);
+  position: relative;
+  background: var(--ds-paper-light);
+  border: 1px solid var(--ds-rule-soft);
+  border-radius: var(--ds-radius-xs);
+  font-family: var(--ds-font-display);
+  font-size: clamp(1.4rem, 2vw, 1.85rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--ds-ink);
+}
+.ds-pull-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.4em;
+  left: 0.15em;
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--ds-accent);
+  font-family: var(--ds-font-display);
+}
+/* Note (Round 161 follow-up — 2026-06-21): the jupago-inspired curved-corner
+   accent (.ds-pull-quote::after) + paper-cutout notch (.ds-pull-quote-wrap::after)
+   were removed after user-visual review — the curve clipped weirdly against the
+   surrounding card background and read as a floating shape rather than a notch.
+   Pull-quote keeps its giant opening-quote glyph + body + footer + the rounded
+   border — clean editorial pull-quote without the decorative tail. The
+   .ds-pull-quote-wrap class remains as a structural wrapper for backward
+   compatibility / future spacing tweaks. */
+.ds-pull-quote p { margin: 0; }
+.ds-pull-quote footer {
+  margin-top: var(--ds-space-4);
+  font-family: var(--ds-font-mono);
+  font-style: normal;
+  font-size: var(--ds-text-mini);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  font-weight: 500;
+  padding-left: 100px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * PULL STAT — the kill-shot stat block (think "98%"). Used for the single
+ * load-bearing number in any view. Never use more than one per surface.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.ds-pull-stat {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--ds-space-6);
+  align-items: center;
+  margin: var(--ds-space-6) 0;
+  padding: var(--ds-space-7) var(--ds-space-7);
+  background: linear-gradient(135deg, var(--ds-ink) 0%, var(--ds-ink-medium) 100%);
+  border-radius: var(--ds-radius-xs);
+  color: var(--ds-paper);
+  position: relative;
+  overflow: hidden;
+}
+.ds-pull-stat::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 12%;
+  width: 320px; height: 320px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle,
+    var(--ds-accent-hot) 0%,
+    var(--ds-accent) 25%,
+    transparent 65%);
+  opacity: 0.32;
+  pointer-events: none;
+  animation: ds-stat-pulse 4s ease-in-out infinite;
+}
+@keyframes ds-stat-pulse {
+  0%, 100% { opacity: 0.32; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.42; transform: translate(-50%, -50%) scale(1.1); }
+}
+.ds-pull-stat::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 12%;
+  width: 260px; height: 260px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255,126,60,0.15);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 20px rgba(255,126,60,0.06) inset,
+    0 0 0 60px rgba(255,126,60,0.04) inset,
+    0 0 0 120px rgba(255,126,60,0.02) inset;
+  pointer-events: none;
+}
+.ds-pull-stat__num {
+  font-family: var(--ds-font-display);
+  font-size: var(--ds-text-5xl);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: var(--ds-track-tight);
+  color: var(--ds-accent-bright);
+  position: relative;
+  text-shadow: var(--ds-glow-accent);
+}
+.ds-pull-stat__num sup {
+  font-size: 0.4em;
+  font-weight: 600;
+  vertical-align: top;
+  margin-left: 0.05em;
+}
+.ds-pull-stat__body {
+  font-family: var(--ds-font-display);
+  font-size: var(--ds-text-xl);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ds-paper);
+  position: relative;
+}
+.ds-pull-stat__body small {
+  display: block;
+  margin-top: var(--ds-space-3);
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-mini);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ds-accent-soft);
+}
+.ds-pull-stat__readout {
+  position: absolute;
+  top: 1rem; right: 1.25rem;
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide);
+  color: var(--ds-tech-dim);
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * APP CHROME PRIMITIVES — the alien-tech UI shell
+ * Topbar, breadcrumb, tabs, action-bar. Composable across any "interface"
+ * surface. The chrome lets surfaces feel like part of an integrated system
+ * rather than standalone articles.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.ds-topbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: var(--ds-space-5);
+  align-items: center;
+  padding: 0.85rem var(--ds-space-5);
+  background: var(--ds-paper-darker);
+  border-bottom: 1px solid var(--ds-rule);
+  position: relative;
+}
+.ds-topbar::after {
+  content: '';
+  position: absolute;
+  left: var(--ds-space-5); right: var(--ds-space-5);
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent 0%,
+    var(--ds-accent) 8%,
+    var(--ds-accent) 14%,
+    transparent 16%);
+}
+
+.ds-systemid {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+}
+.ds-systemid::before {
+  content: '';
+  width: 8px; height: 8px;
+  background: var(--ds-tech);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--ds-tech-dim);
+}
+
+.ds-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-xs);
+  color: var(--ds-ink-soft);
+  font-weight: 500;
+}
+.ds-breadcrumb a {
+  color: var(--ds-ink-soft);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color var(--ds-motion-fast) var(--ds-ease-out);
+}
+.ds-breadcrumb a:hover { color: var(--ds-accent); }
+.ds-breadcrumb .ds-crumb-sep {
+  color: var(--ds-tech);
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-mini);
+  opacity: 0.6;
+}
+.ds-breadcrumb .ds-current {
+  color: var(--ds-ink);
+  font-weight: 600;
+}
+
+.ds-tabs {
+  display: flex;
+  align-items: stretch;
+  background: var(--ds-paper);
+  border-bottom: 1px solid var(--ds-rule-soft);
+  padding: 0 var(--ds-space-5);
+  position: relative;
+}
+.ds-tab {
+  padding: 0.9rem 0;
+  margin-right: var(--ds-space-6);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-xs);
+  font-weight: 500;
+  letter-spacing: var(--ds-track-wide);
+  color: var(--ds-ink-soft);
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  transition: color var(--ds-motion-fast) var(--ds-ease-out);
+}
+.ds-tab__num {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-mini);
+  color: var(--ds-tech);
+  font-weight: 500;
+}
+.ds-tab:hover { color: var(--ds-ink); }
+.ds-tab.active { color: var(--ds-accent); }
+.ds-tab.active .ds-tab__num { color: var(--ds-accent); }
+.ds-tab.active::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--ds-accent);
+}
+
+.ds-action-bar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--ds-space-5);
+  align-items: center;
+  padding: var(--ds-space-5) var(--ds-space-7);
+  background: var(--ds-paper-darker);
+  border-top: 1px solid var(--ds-rule);
+  position: relative;
+}
+.ds-action-bar::before {
+  content: '';
+  position: absolute;
+  left: var(--ds-space-7); right: var(--ds-space-7);
+  top: -1px;
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent 0%,
+    var(--ds-accent) 4%,
+    var(--ds-accent) 10%,
+    transparent 12%);
+}
+.ds-action-context {
+  font-family: var(--ds-font-serif-light);
+  font-style: italic;
+  font-size: var(--ds-text-sm);
+  color: var(--ds-ink-medium);
+  line-height: var(--ds-lh-normal);
+}
+.ds-action-context strong {
+  font-family: var(--ds-font-sans);
+  font-style: normal;
+  color: var(--ds-accent-deep);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.ds-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * MODULAR LEAVE-ROOM — the dashboard chrome has slots for future features
+ * without requiring re-architecture. Examples:
+ *   .ds-slot-profile  — top-right user/settings slot (currently unused)
+ *   .ds-slot-toast    — global toast region
+ *   .ds-slot-modal    — modal portal root
+ * These are positioning anchors only — empty until a feature claims them.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.ds-slot-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+}
+
+.ds-slot-toast {
+  position: fixed;
+  top: var(--ds-space-5);
+  right: var(--ds-space-5);
+  z-index: var(--ds-z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-2);
+  pointer-events: none;
+}
+.ds-slot-toast > * { pointer-events: auto; }
+
+.ds-slot-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--ds-z-modal);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26,22,18,0.5);
+}
+.ds-slot-modal.open { display: flex; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * UTILITY HELPERS — narrow, named-by-intent
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.ds-visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.ds-flex      { display: flex; }
+.ds-grid      { display: grid; }
+.ds-inline    { display: inline; }
+
+.ds-stack-1 > * + * { margin-top: var(--ds-space-1); }
+.ds-stack-2 > * + * { margin-top: var(--ds-space-2); }
+.ds-stack-3 > * + * { margin-top: var(--ds-space-3); }
+.ds-stack-4 > * + * { margin-top: var(--ds-space-4); }
+.ds-stack-5 > * + * { margin-top: var(--ds-space-5); }
+.ds-stack-6 > * + * { margin-top: var(--ds-space-6); }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * END OF DESIGN SYSTEM v3
+ * To extend: open a co-work request. To rebuild: this file is the brief.
+ * ═══════════════════════════════════════════════════════════════════════════ */

@@ -1,0 +1,346 @@
+{
+  "schema_version": "1.0",
+  "description": "Wallach-framework absorption conflicts, timing rules, and dose-interaction warnings. Sourced from corpus passages where Wallach names specific interactions, plus modern absorption science that aligns with his mechanism statements.",
+  "last_updated": "2026-06-13",
+  "source_legend": {
+    "wallach-direct": "Named explicitly in Wallach corpus (LPD/DDDL/HK/RE)",
+    "wallach-mechanism-extension": "Wallach names the mechanism but not the specific interaction; modern absorption science fills in",
+    "framework-adjacent": "Not Wallach-named but supports framework integrity (e.g., common pharmacology)"
+  },
+  "interactions": [
+    {
+      "id": "zn-cu-ratio",
+      "type": "depletion",
+      "primary": "zinc",
+      "secondary": "copper",
+      "trigger": "Sustained zinc supplementation above ~30 mg/day depletes copper over time",
+      "rule": "If daily zinc > 30 mg: ensure 1-2 mg copper per 15-20 mg zinc; if zinc > 75 mg (clinical): need 4-6 mg copper per Wallach baseline",
+      "wallach_evidence": "DDDL Zn entry: 'Zinc accumulates in mammalian kidney, prostate, and eye'; multiple high-Zn protocols (BPH 150 mg/day, testicular atrophy 150 mg/day) require Cu rebalance per his Zn:Cu ratio framing",
+      "products_to_check": [
+        "XeraTest",
+        "Ultimate Zinc",
+        "BTT 2.0 Tablets",
+        "Ultimate Selenium"
+      ],
+      "source": "wallach-direct",
+      "severity": "high"
+    },
+    {
+      "id": "ca-mg-ratio",
+      "type": "ratio-requirement",
+      "primary": "calcium",
+      "secondary": "magnesium",
+      "trigger": "Calcium without magnesium creates arterial calcification risk and muscle cramping",
+      "rule": "Wallach maintains Ca:Mg approximately 2:1 (2000 mg Ca + 1000 mg Mg for osteoporosis); never push Ca without Mg",
+      "wallach_evidence": "LPD osteoporosis protocol: 'calcium and magnesium at 2,000 mg and 1,000 mg per day'; cerebrovascular passage: 'Magnesium deficiency also results in calcification'",
+      "products_to_check": [
+        "Beyond Osteo FX",
+        "Cal Toddy Liquid",
+        "Ultimate Cal",
+        "Bio Calcium"
+      ],
+      "source": "wallach-direct",
+      "severity": "high"
+    },
+    {
+      "id": "ca-p-ratio",
+      "type": "ratio-requirement",
+      "primary": "calcium",
+      "secondary": "phosphorus",
+      "trigger": "High phosphorus diet (soft drinks, processed meats, processed cheese) drives calcium loss from bones",
+      "rule": "Maintain Ca:P approximately 2:1 in diet AND supplements; avoid phosphate-additive soft drinks and processed foods",
+      "wallach_evidence": "LPD Paget's Disease + osteoporosis sections: 'correct the dietary calcium/phosphorus ratio'; 'avoid phosphate containing soft drinks'",
+      "products_to_check": [
+        "Beyond Osteo FX",
+        "Ultimate Daily Classic",
+        "ReVERSE!®"
+      ],
+      "source": "wallach-direct",
+      "severity": "moderate"
+    },
+    {
+      "id": "fe-absorption-window",
+      "type": "timing-conflict",
+      "primary": "iron",
+      "secondary": "calcium",
+      "trigger": "Calcium taken at same meal as iron blocks iron absorption ~50-60%",
+      "rule": "Separate iron and calcium by at least 2 hours (modern absorption rule, framework-adjacent)",
+      "wallach_evidence": "Wallach does not name this timing rule explicitly; modern absorption science aligns with his general principle that minerals compete for transporters",
+      "products_to_check": [
+        "Ancestral Liver (Fe 9 mg)",
+        "Beyond Osteo FX (Ca 1200 mg)"
+      ],
+      "source": "framework-adjacent",
+      "severity": "moderate"
+    },
+    {
+      "id": "antacid-hcl-conflict",
+      "type": "absorption-block",
+      "primary": "antacids / PPIs",
+      "secondary": "B12, minerals, protein digestion",
+      "trigger": "Antacids and PPIs neutralize stomach acid, blocking B12 absorption (intrinsic factor needs acid) and mineral ionization",
+      "rule": "Wallach uses betaine HCl as opposite intervention \u2014 increase stomach acid; antacid/PPI users face wide-spectrum nutrient malabsorption",
+      "wallach_evidence": "LPD and DDDL: betaine HCl + pancreatic enzymes 75-200 mg t.i.d. before meals appears in 40+ protocols; mechanism is acid-and-enzyme support, opposite of antacids",
+      "products_to_check": [
+        "Ultimate Enzymes (Betaine HCl 105 mg)",
+        "Cell Shield RTQ"
+      ],
+      "source": "wallach-mechanism-extension",
+      "severity": "high"
+    },
+    {
+      "id": "salt-restriction-b12",
+      "type": "depletion-chain",
+      "primary": "salt (low intake)",
+      "secondary": "B12, energy, cognition",
+      "trigger": "Low dietary sodium \u2192 reduced HCl production \u2192 poor B12 absorption (intrinsic factor needs acid) \u2192 demyelination + energy crash",
+      "rule": "Maintain salt to taste (Himalayan/sea salt); do NOT restrict salt unless specific Wallach-named exception (kidney stones, congestive heart failure with diuretic)",
+      "wallach_evidence": "DDDL Na entry + cardiovascular passages: anti-salt-restriction explicit. See evals/2026-06-12-salt.md for full eval",
+      "products_to_check": [
+        "any user with restricted-Na diet"
+      ],
+      "source": "wallach-direct",
+      "severity": "high"
+    },
+    {
+      "id": "caffeine-cr-loss",
+      "type": "depletion",
+      "primary": "caffeine",
+      "secondary": "chromium",
+      "trigger": "Caffeine raises urinary chromium loss for ~12 hours after intake",
+      "rule": "If caffeine > 200 mg/day: ensure chromium supplementation at 200+ mcg/day in GTF-aligned form (polynicotinate or nicotinate glycinate)",
+      "wallach_evidence": "Rare Earths Cr entry: caffeine + sugar raise urinary Cr loss; 'sugar raises urinary Cr loss 300% for 12 hrs'",
+      "products_to_check": [
+        "Neutonic (240-360 mg caffeine)",
+        "ACT Energy",
+        "Pollen Burst Plus",
+        "SmartStiks"
+      ],
+      "source": "wallach-direct",
+      "severity": "moderate"
+    },
+    {
+      "id": "sugar-cr-depletion",
+      "type": "depletion",
+      "primary": "sugar (dietary)",
+      "secondary": "chromium",
+      "trigger": "Sugar intake raises urinary chromium loss 300% for 12 hours",
+      "rule": "Reduce processed sugar; supplement Cr in GTF-aligned form if intake unavoidable",
+      "wallach_evidence": "Rare Earths Cr entry verbatim quote",
+      "products_to_check": [
+        "Glucogenix (Cr polynicotinate)",
+        "Sweet Eze (Cr nicotinate glycinate)",
+        "Ultimate Selenium (Cr nicotinate glycinate)"
+      ],
+      "source": "wallach-direct",
+      "severity": "moderate"
+    },
+    {
+      "id": "fluoride-water-additive",
+      "type": "toxicity-from-source",
+      "primary": "fluoridated tap water",
+      "secondary": "thyroid, bone, neural",
+      "trigger": "Uncontrolled industrial-grade fluoride in tap water (sodium fluorosilicate/hexafluorosilicate) at non-titrated dose",
+      "rule": "Filter fluoride from drinking water (RO, distillation, activated alumina); fluoride remains essential at LPD baseline (~20 mg/day prescription-grade for osteoporosis), but uncontrolled dosing via water is the problem",
+      "wallach_evidence": "LPD baseline supplement table shows fluoride at 20 mg/day prescription level for osteoporosis; rhetorical passages flag fluoride water additive as separate dose/source/context. See evals/2026-06-11-fluoride.md",
+      "products_to_check": [
+        "water filter (third-party)"
+      ],
+      "source": "wallach-direct",
+      "severity": "moderate"
+    },
+    {
+      "id": "aluminum-tier-a-cookware-personal-care",
+      "type": "toxicity-environmental",
+      "primary": "aluminum",
+      "secondary": "brain (Alzheimer's), neural",
+      "trigger": "Daily-exposure aluminum sources: cookware, antiperspirants, shampoos/conditioners/skincare with aluminum compounds (often hidden in ingredient lists)",
+      "rule": "Replace aluminum cookware (stainless / cast iron / glass / ceramic); audit and switch to Al-free deodorant; check personal-care ingredient lists for aluminum compounds (aluminum chlorohydrate, aluminum zirconium, etc.) \u2014 these are the high-leverage, easy-to-replace daily exposures",
+      "wallach_evidence": "LPD Alzheimer's protocol: 'Avoid aluminum cookware, aluminum containing deodorants...' \u2014 cookware and personal-care are the recurring concrete examples Wallach names",
+      "products_to_check": [
+        "user lifestyle audit \u2014 cookware + deodorant + skincare"
+      ],
+      "source": "wallach-direct",
+      "severity": "high",
+      "practical_note": "Tier-A is high-priority because replacement is cheap and the exposure is daily/chronic. Surface this when relevant."
+    },
+    {
+      "id": "aluminum-tier-b-beverage-cans",
+      "type": "toxicity-environmental",
+      "primary": "aluminum",
+      "secondary": "brain (Alzheimer's), neural",
+      "trigger": "Beverage cans (soft drinks, energy drinks, sparkling waters, fruit juices) \u2014 moderate daily exposure",
+      "rule": "Prefer glass-bottled when available; for healthy drinks only available in aluminum cans, accept the trade-off at moderate intake (1-3/day). Do NOT make this a recurring talking point in advice \u2014 most users cannot eliminate this without losing access to good products or paying significantly more",
+      "wallach_evidence": "LPD Alzheimer's protocol names 'soft drinks and fruit juices in aluminum cans' alongside cookware, but the practical-replacement burden differs sharply",
+      "products_to_check": [
+        "user beverage audit"
+      ],
+      "source": "wallach-direct",
+      "severity": "moderate",
+      "practical_note": "Tier-B is the practical-trade-off tier. Mention ONCE per answer at most, with the realistic adoption framing. Per brain v2.7 'practical-trade-off inflation' pitfall: don't make this a recurring theme \u2014 it's correct Wallach-framework but operationally low-leverage for most users."
+    },
+    {
+      "id": "fried-foods-rancid-oils",
+      "type": "oxidative-stress",
+      "primary": "fried foods, processed seed oils",
+      "secondary": "cardiovascular, cognition, eyes",
+      "trigger": "Fried-food oils (especially repeatedly-heated commercial fryer oils) deliver oxidized lipids and trans fats",
+      "rule": "Avoid commercial fryer foods; cook with stable saturated fats (butter, coconut, ghee, lard, tallow); avoid 'oil in name' processed oils (canola, soybean, vegetable oil)",
+      "wallach_evidence": "LPD cataracts + macular degeneration + many cardiovascular protocols: 'avoid fried foods and margarine'; Adventist longevity data: avoid fried foods extends lifespan ~7 years",
+      "products_to_check": [
+        "user diet audit"
+      ],
+      "source": "wallach-direct",
+      "severity": "high"
+    },
+    {
+      "id": "alcohol-b1-cognitive",
+      "type": "depletion-and-direct-damage",
+      "primary": "alcohol",
+      "secondary": "vitamin B1 (thiamine), brain (Korsakoff's risk)",
+      "trigger": "Chronic alcohol consumption depletes thiamine and damages brain tissue directly (Korsakoff's syndrome)",
+      "rule": "Avoid alcohol; if present, supplement B1 100-200 mg/day minimum + full B-complex",
+      "wallach_evidence": "LPD Korsakoff's syndrome explicitly names alcoholism as cause + B1 deficiency mechanism + 100 mg B1 t.i.d. protocol; Adventist data avoid alcohol extends lifespan",
+      "products_to_check": [
+        "Ultimate D-Stress (B1 50 mg)",
+        "BTT 2.5 (B1 30 mg)"
+      ],
+      "source": "wallach-direct",
+      "severity": "high"
+    },
+    {
+      "id": "statin-coq10-cholesterol",
+      "type": "iatrogenic-depletion",
+      "primary": "statin medications",
+      "secondary": "CoQ10, endogenous cholesterol (myelin), cognition",
+      "trigger": "Statins block HMG-CoA reductase, simultaneously depleting CoQ10 (cardiovascular cofactor) and blocking the endogenous cholesterol that the cognition WHY-layer eggs/myelin mechanism depends on",
+      "rule": "If on statins: surface to user the framework conflict; consider niacin + Cr + fiber + EFA cholesterol-modulation protocol per LPD as Wallach-aligned alternative; supplement CoQ10 100-200 mg/day if user continues statins",
+      "wallach_evidence": "LPD cholesterol entry: niacin 450 mg b.i.d. time-release + Cr + EFAs + fiber as cholesterol-modulation approach (NOT statins); cerebrovascular protocol uses CoQ10 implicitly via 'baseline supplements'; cognition WHY-layer eggs/cholesterol/myelin mechanism is statin-conflict-relevant",
+      "products_to_check": [
+        "Integris CoQ10+Vit E Succinate (CoQ10 100 mg + Vit E succinate 66 mg)",
+        "Ultimate Niacin Plus (Niacin 500 mg)"
+      ],
+      "source": "wallach-direct",
+      "severity": "high"
+    },
+    {
+      "id": "high-zn-without-cofactors",
+      "type": "ratio-requirement",
+      "primary": "zinc (high-dose)",
+      "secondary": "copper, chromium, vanadium, lithium",
+      "trigger": "Testosterone elevation (boron, XeraTest, Zn supplementation) requires mineral cofactor floor per Wallach 'explosive mixture' framing",
+      "rule": "When supplementing for T (boron + Zn): ensure Cu (4-6 mg), Cr (200+ mcg GTF-aligned), V (50-200 mcg), Li (trace via PDM)",
+      "wallach_evidence": "Rare Earths pos 110: 'testosterone surges, high sugar intake and mineral deficiencies are as explosive a mixture as matches, nitroglycerine and gun powder combined' \u2014 names Cu, Cr, V, Li specifically",
+      "products_to_check": [
+        "XeraTest stack (need Cu rebalance via Ancestral Liver)",
+        "Ultimate Selenium (Cr + V hidden)"
+      ],
+      "source": "wallach-direct",
+      "severity": "high"
+    },
+    {
+      "id": "vit-d-without-mg-k2",
+      "type": "ratio-requirement",
+      "primary": "vitamin D3 (high-dose)",
+      "secondary": "magnesium, vitamin K2",
+      "trigger": "High-dose Vit D3 without Mg + K2 cofactors can drive arterial calcification (D3 \u2192 \u2191Ca absorption \u2192 without Mg/K2 \u2192 soft-tissue calcification)",
+      "rule": "If Vit D3 > 2000 IU/day: ensure Mg 400+ mg/day and K2 (MK-7) 100+ mcg/day; Wallach caps Vit D at 400 IU in cardiovascular context (calcification-conservative)",
+      "wallach_evidence": "LPD cerebrovascular passage: 'Reduce the amount of vitamin D intake to a maximum of 400 IU/day' (this is a real framework-vs-modern tension)",
+      "products_to_check": [
+        "Citri-D Spray (6000 IU)",
+        "Ultimate D3 5000 IU",
+        "Integris Vitamin K2 (100 mcg MK-7)",
+        "Cal Toddy Liquid (Mg 600)"
+      ],
+      "source": "wallach-direct",
+      "severity": "moderate"
+    },
+    {
+      "id": "iron-without-vit-c",
+      "type": "absorption-cofactor",
+      "primary": "non-heme iron",
+      "secondary": "vitamin C",
+      "trigger": "Non-heme iron (ferrous fumarate/gluconate/sulfate in multivitamins) absorbs poorly without ascorbate",
+      "rule": "Take iron supplements with Vit C source (orange juice, ascorbic acid 100+ mg)",
+      "wallach_evidence": "Not Wallach-direct; modern absorption science aligns with his categorical 'minerals need cofactors' framing",
+      "products_to_check": [
+        "all multivitamins with iron"
+      ],
+      "source": "framework-adjacent",
+      "severity": "low"
+    },
+    {
+      "id": "yohimbe-cardiac-risk",
+      "type": "drug-interaction",
+      "primary": "yohimbe",
+      "secondary": "cardiovascular system, anxiety, blood pressure",
+      "trigger": "Yohimbe is an alpha-2 adrenergic antagonist with stimulant cardiovascular effects",
+      "rule": "Avoid yohimbe if user has any blood pressure, anxiety, cardiac, or MAO-inhibitor concern",
+      "wallach_evidence": "Not Wallach-named (yohimbe doesn't appear in his books); FDA safety flag",
+      "products_to_check": [
+        "Sta-Balanced (contains Yohimbe 2%)"
+      ],
+      "source": "framework-adjacent",
+      "severity": "high"
+    },
+    {
+      "id": "phosphates-bone-loss",
+      "type": "depletion",
+      "primary": "phosphate additives (soft drinks, processed cheese, baked goods)",
+      "secondary": "bone calcium",
+      "trigger": "Industrial phosphate additives upset Ca:P ratio, drive bone calcium loss",
+      "rule": "Avoid phosphate-additive soft drinks, processed cheese, baked goods with phosphate emulsifiers",
+      "wallach_evidence": "LPD Paget's + osteoporosis: 'avoid phosphate containing soft drinks, avoid all phosphate containing supplements'",
+      "products_to_check": [
+        "user diet audit"
+      ],
+      "source": "wallach-direct",
+      "severity": "moderate"
+    },
+    {
+      "id": "food-allergens-pulse-test",
+      "type": "absorption-block-and-inflammation",
+      "primary": "food allergens (individual)",
+      "secondary": "celiac-type intestinal damage, malabsorption, joint pain, mood",
+      "trigger": "Undiagnosed food allergens cause celiac-type intestinal changes \u2192 malabsorption of essentials \u2192 cascade of deficiencies",
+      "rule": "Pulse test (Coca pulse test) to identify; common culprits: wheat/gluten, dairy (cow's milk), corn, eggs",
+      "wallach_evidence": "LPD references pulse testing in 30+ protocols; celiac-type damage is recurring framing",
+      "products_to_check": [
+        "user diet self-test"
+      ],
+      "source": "wallach-direct",
+      "severity": "moderate"
+    },
+    {
+      "id": "low-fat-cholesterol-myelin",
+      "type": "depletion-chain",
+      "primary": "low-fat diet, statin therapy",
+      "secondary": "cholesterol \u2192 myelin \u2192 brain function",
+      "trigger": "Restricting dietary cholesterol AND blocking endogenous synthesis (statins) starves myelin rebuilding",
+      "rule": "Maintain dietary cholesterol intake (eggs daily, red meat 72 oz/month per Wallach); avoid statins; supplement B12 250-400 mcg/day to ensure cholesterol \u2192 myelin conversion proceeds",
+      "wallach_evidence": "DDDL Alzheimer's protocol food anchor: 'Eat soft-scrambled (not fried) eggs every day and 72 oz. red meat each month to replace cholesterol needed to rebuild myelin'",
+      "products_to_check": [
+        "Ancestral Liver (food-form cholesterol + B12)",
+        "BTT 2.5 (methylcobalamin 500 mcg)"
+      ],
+      "source": "wallach-direct",
+      "severity": "high"
+    },
+    {
+      "id": "boron-without-thyroid-check",
+      "type": "endocrine-cascade",
+      "primary": "boron supplementation (T/E doubling)",
+      "secondary": "thyroid, estradiol concerns in men",
+      "trigger": "Boron doubles BOTH testosterone AND estradiol per Wallach. In men, elevated estradiol without aromatase awareness can be a concern.",
+      "rule": "If boron supplementing for T: monitor estradiol via labs; if E2 trends high, consider DIM (diindolylmethane) or similar (modern aromatase-management, framework-adjacent)",
+      "wallach_evidence": "Rare Earths + DDDL boron entries: T AND E double; Wallach doesn't address aromatase management \u2014 modern endocrinology gap",
+      "products_to_check": [
+        "XeraTest",
+        "Beyond Osteo FX Liquid (B 3 mg)",
+        "BTT 2.0 Tablets (B 1 mg)"
+      ],
+      "source": "wallach-mechanism-extension",
+      "severity": "moderate"
+    }
+  ]
+}

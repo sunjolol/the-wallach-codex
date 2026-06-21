@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0",
+  "description": "Operational config for stack coverage analysis: what the user actually takes (and at what dose) right now, plus recommended additions awaiting decision. Single source of truth for tools/stack_coverage.py. Update this when the user's regimen changes; memory-change-log.md should reflect the change.",
+  "last_updated": "2026-06-13",
+  "user": "Luneth",
+  "current": [
+    {
+      "product": "Ultimate Daily Classic",
+      "actual_daily_units": 2,
+      "label_serving_units": 3,
+      "timing": "with main meal",
+      "scaling_factor": 0.667,
+      "notes": "User takes 2 caps/day; label serving = 3 caps. All nutrient amounts in DB are per 3-cap serving; multiply by 0.667 for actual intake."
+    },
+    {
+      "product": "Ultimate EFA Plus",
+      "actual_daily_units": 4.5,
+      "label_serving_units": 1,
+      "timing": "with larger meals (3 max per 4-5 hr window)",
+      "scaling_factor": 4.5,
+      "actual_range": "3-6 softgels/day; midpoint 4.5",
+      "notes": "Label = 1 softgel per serving, 3x daily. User: 3-6/day. Multiply per-softgel amounts by daily count."
+    },
+    {
+      "product": "Ultimate Gluco-Gel",
+      "actual_daily_units": 6,
+      "label_serving_units": 2,
+      "timing": "with meal ideally, flexible (5 max per 4-5 hr)",
+      "scaling_factor": 3.0,
+      "actual_range": "4-8 caps/day; midpoint 6",
+      "notes": "Label = 2 caps per serving. User: 4-8/day. Multiply per-serving amounts by 3 for 6-cap daily intake."
+    },
+    {
+      "product": "Ultimate Enzymes",
+      "actual_daily_units": 1.5,
+      "label_serving_units": 1,
+      "timing": "30 min before animal-protein meals (situational)",
+      "scaling_factor": 1.5,
+      "actual_range": "1-2 capsules per meal, varies by meals/day",
+      "notes": "Digestive enzyme \u2014 no 90-essential contribution. Counted for stack inventory but no nutrient math."
+    },
+    {
+      "product": "Neutonic Productivity Drink",
+      "actual_daily_units": 2.0,
+      "label_serving_units": 1,
+      "timing": "throughout day",
+      "scaling_factor": 2.0,
+      "actual_range": "1-2 cans/day; 2 typical, occasionally 1 (~1-2x/week)",
+      "notes": "Caffeine 240 mg/day midpoint (down from 300 mg/day after substitution with HYDRA DNA Collagen). Still above 200 mg conflict threshold but reduced. Counted as nutrient delivery for B-complex active forms + citicoline."
+    }
+  ],
+  "recommended_pending_decision": [
+    {
+      "product": "Majestic Earth Plant Derived Minerals Liquid",
+      "proposed_daily_units": 1,
+      "label_serving_units": 1,
+      "scaling_factor": 1.0,
+      "rationale": "Goal 3 (90 essentials) anchor \u2014 rare-earth trace mineral foundation. Non-negotiable for 90-essentials coverage."
+    },
+    {
+      "product": "Ultimate Selenium",
+      "proposed_daily_units": 3,
+      "label_serving_units": 1,
+      "scaling_factor": 3.0,
+      "rationale": "Highest goal-overlap SKU. Cr 300 mcg (Wallach's diabetes target), Se 300 mcg (eye protocol), Zn 15 mg (hormonal axis)."
+    },
+    {
+      "product": "Ultimate Iodine",
+      "proposed_daily_units": 1,
+      "label_serving_units": 1,
+      "scaling_factor": 1.0,
+      "rationale": "Replace discontinued Survival Shield X-2."
+    },
+    {
+      "product": "Synaptiv",
+      "proposed_daily_units": 1,
+      "label_serving_units": 1,
+      "scaling_factor": 1.0,
+      "rationale": "Goal 1 (cognition) \u2014 pro-line brain SKU.",
+      "note": "Per-nutrient breakdown not yet captured; coverage contribution unknown."
+    },
+    {
+      "product": "Beyond Osteo FX Liquid",
+      "proposed_daily_units": 1,
+      "label_serving_units": 1,
+      "scaling_factor": 1.0,
+      "rationale": "Bone/Sr/sulfur cluster. Liquid form for higher boron (3 mg). Goals 2 (strength) + 3 (longevity)."
+    },
+    {
+      "product": "Ancestral Supplements Grass Fed Beef Liver",
+      "proposed_daily_units": 6,
+      "label_serving_units": 6,
+      "scaling_factor": 1.0,
+      "rationale": "Organ meat bridge \u2014 user cannot stomach liver directly. Delivers retinol, Cu, heme iron, B12, folate, choline."
+    },
+    {
+      "product": "XeraTest",
+      "proposed_daily_units": 2,
+      "label_serving_units": 2,
+      "scaling_factor": 1.0,
+      "rationale": "Hormonal axis \u2014 try-and-observe goal-2 layer (Boron 3 mg + Zn 30 mg + Fenugreek). Pair with Ultimate Selenium for Cu co-factor."
+    }
+  ],
+  "discontinued": [
+    {
+      "product": "Survival Shield X-2 Iodine",
+      "discontinued_date": "before 2026-06-12",
+      "reason": "Out of stock / replaced; pending Ultimate Iodine substitution decision."
+    }
+  ],
+  "current_diet": [
+    {
+      "food": "egg_whole_large",
+      "servings_per_day": 1,
+      "scaling_factor": 1.0,
+      "notes": "Wallach recommends 8-12/day; current dose well below. Biggest single dietary improvement for goal 1 (cognition)."
+    },
+    {
+      "food": "smoked_salmon_3oz",
+      "servings_per_day": 1,
+      "scaling_factor": 1.0,
+      "notes": "Average across week \u2014 actual pattern is 'often' per user log."
+    },
+    {
+      "food": "chicken_breaded_5oz",
+      "servings_per_day": 1,
+      "scaling_factor": 1.0,
+      "notes": "Primary protein staple; gluten-free breading."
+    },
+    {
+      "food": "skyr_whole_milk_150g",
+      "servings_per_day": 0.4,
+      "scaling_factor": 0.4,
+      "notes": "A few servings/week ~ 0.4/day average. Switching from lowfat in progress."
+    },
+    {
+      "food": "cashews_raw_30g",
+      "servings_per_day": 0.7,
+      "scaling_factor": 0.7,
+      "notes": "Via bars; ~0.7 servings/day estimated."
+    },
+    {
+      "food": "coconut_dried_10g",
+      "servings_per_day": 1,
+      "scaling_factor": 1.0,
+      "notes": "Via bars."
+    },
+    {
+      "food": "dates_medjool_10g",
+      "servings_per_day": 1,
+      "scaling_factor": 1.0,
+      "notes": "Via bars; total sugar from this ~3g/day."
+    },
+    {
+      "food": "himalayan_salt_3g",
+      "servings_per_day": 1,
+      "scaling_factor": 1.0,
+      "notes": "Standard daily salting."
+    },
+    {
+      "food": "hydra_dna_collagen_can",
+      "servings_per_day": 1.5,
+      "scaling_factor": 1.5,
+      "notes": "1-2 cans/day substituting for Neutonic \u2014 caffeine-free collagen+electrolyte drink. 12g collagen \u00d7 1.5 = 18g/day connective tissue substrate, sits in Wallach's joint protocol range (3-15 g/day cartilage)."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "//": "TypeScript config for the Wallach dashboard. Strictest reasonable config by §00 design — the type system is the first enforcement layer. Layer rules: views/ → state/ → core/. Path aliases make cross-layer imports syntactic (relative ../../ imports across layers are banned by lint). The build artifact (dist/main.js) is what the browser loads; this config governs what's allowed in the .ts source.",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitOverride": true,
+
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": false,
+    "noEmit": true,
+
+    "baseUrl": "./assets/js/src",
+    "paths": {
+      "@core/*": ["core/*"],
+      "@state/*": ["state/*"],
+      "@views/*": ["views/*"]
+    }
+  },
+  "include": ["assets/js/src/**/*.ts"],
+  "exclude": ["assets/js/dist/**", "node_modules"]
+}

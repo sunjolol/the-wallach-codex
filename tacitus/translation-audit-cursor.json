@@ -1,0 +1,16 @@
+{
+  "_purpose": "Rotation cursor for Cura's Translation-quality Phase-1 sub-check (Round 135). Tracks which lessons.md / operating-protocols.md / invariants.py entries have been audited recently, so Cura samples oldest-first and rotates through the corpus over time.",
+  "_format": "Map of entry-identifier -> last-audited ISO timestamp. Identifier shape varies by file: lessons.md uses the entry's leading timestamp string (e.g., '2026-06-18 at 5:15 PM'), operating-protocols.md uses section number ('25'), invariants.py uses invariant name ('check_lesson_freshness_vs_saga').",
+  "_rotation_rule": "Each Cura night samples 3-5 entries that have not been audited in the last 14 days, oldest-first. Updates this file at end of Phase 6 close with the entries audited this run.",
+  "_initialized": "2026-06-19 (Round 135 / Cure C ship — empty cursor, all entries treated as never-audited; first Cura run will sample from the most-recent end and work backward).",
+  "lessons_audited": {
+    "2026-06-13 at 4:00 PM": "2026-06-19T03:48:00-04:00",
+    "2026-06-13 at 6:00 PM": "2026-06-19T03:48:00-04:00",
+    "2026-06-13 at 8:30 PM": "2026-06-19T03:48:00-04:00",
+    "2026-06-13 at 11:30 PM": "2026-06-19T03:48:00-04:00",
+    "2026-06-13 at 11:35 PM": "2026-06-19T03:48:00-04:00"
+  },
+  "operating_protocols_audited": {},
+  "invariants_audited": {},
+  "_first_real_audit": "2026-06-19T03:48:00-04:00"
+}

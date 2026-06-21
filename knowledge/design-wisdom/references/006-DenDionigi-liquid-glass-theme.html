@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+  Design Wisdom Reference #006 — DenDionigi-liquid-glass-theme
+═══════════════════════════════════════════════════════════════════════════════
+  Title:         Liquid-glass theme switcher (light/dark/dim)
+  Source URL:    https://codepen.io/DenDionigi/pen/JodwNzX
+  Author:        DenDionigi (CodePen)
+  Captured:      2026-06-20
+  Categories:    theme-system, palette, ui-component, glass, backdrop-filter
+
+  USER NOTES (verbatim):
+  ──────────────────────────────────────────────────────────────────────────────
+  "great theme changer"
+
+  Observed: Apple-WWDC-style "liquid glass" segmented control with three theme
+  options (light/dark/dim). Backdrop-filter blur + SVG displacement map for the
+  refractive glass distortion. body:has(input[value="dark"]:checked) drives
+  the entire palette via :root-level CSS variables — clean theme architecture
+  with zero JS for color application (small JS only tracks previous selection
+  for animation direction). The transitioning ::after pill slides between
+  three positions.
+
+  Highly portable as a theme system: swap the three icon SVGs + the variable
+  blocks and the segmented-glass primitive carries to any project.
+
+  Note: SVG base64 displacement maps below are large (~14KB each) but they
+  are the load-bearing magic — preserved verbatim for fidelity.
+═══════════════════════════════════════════════════════════════════════════════
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Reference #006 — DenDionigi liquid glass theme</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap" rel="stylesheet">
+<style>
+body {
+  --c-glass: #bbbbbc; --c-light: #fff; --c-dark: #000;
+  --c-content: #224; --c-action: #0052f5; --c-bg: #e8e8e9;
+  --glass-reflex-dark: 1; --glass-reflex-light: 1; --saturation: 150%;
+  font-size: 20px; font-family: "DM Sans", sans-serif;
+  background: var(--c-bg); color: var(--c-content);
+  transition: background 400ms cubic-bezier(1, 0, 0.4, 1), color 400ms cubic-bezier(1, 0, 0.4, 1);
+  margin: 0; min-height: 100vh;
+}
+body:has(input[value="dark"]:checked) {
+  --c-content: #e1e1e1; --c-action: #03d5ff; --c-bg: #1b1b1d;
+  --glass-reflex-dark: 2; --glass-reflex-light: 0.3;
+}
+body:has(input[value="dim"]:checked) {
+  --c-light: #99deff; --c-dark: #20001b; --c-glass: hsl(335 250% 74% / 1);
+  --c-content: #d5dbe2; --c-action: #ff48a9; --c-bg: #152433;
+  --glass-reflex-dark: 2; --glass-reflex-light: 0.7; --saturation: 200%;
+}
+.switcher {
+  position: fixed; z-index: 1; top: 40px; left: 50%; translate: -50%;
+  display: flex; align-items: center; gap: 8px;
+  width: 244px; height: 70px; padding: 8px 12px 10px;
+  border: none; border-radius: 99em;
+  background-color: color-mix(in srgb, var(--c-glass) 12%, transparent);
+  backdrop-filter: blur(8px) saturate(var(--saturation));
+  -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+    inset 1.8px 3px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+    inset -2px -2px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+    inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+    inset -0.3px -1px 4px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
+    inset -1.5px 2.5px 0px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+    inset 0px 3px 4px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+    inset 2px -6.5px 1px -4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+    0px 1px 5px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+    0px 6px 16px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+  transition: background-color 400ms cubic-bezier(1, 0, 0.4, 1), box-shadow 400ms cubic-bezier(1, 0, 0.4, 1);
+}
+.switcher__legend, .switcher__input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.switcher__icon { display: block; width: 100%; transition: scale 200ms cubic-bezier(0.5, 0, 0, 1); }
+.switcher__option {
+  --c: var(--c-content);
+  display: flex; justify-content: center; align-items: center;
+  padding: 0 16px; width: 68px; height: 100%; box-sizing: border-box;
+  border-radius: 99em; transition: all 160ms;
+}
+.switcher__option:hover { --c: var(--c-action); cursor: pointer; }
+.switcher__option:hover .switcher__icon { scale: 1.2; }
+.switcher::after {
+  content: ""; position: absolute; left: 4px; top: 4px;
+  display: block; width: 84px; height: calc(100% - 10px);
+  border-radius: 99em;
+  background-color: color-mix(in srgb, var(--c-glass) 36%, transparent);
+  z-index: -1;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+    inset 2px 1px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+    inset -1.5px -1px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+    inset -2px -6px 1px -5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+    inset -1px 2px 3px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+    inset 0px -4px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+    0px 3px 6px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+  transition: background-color 400ms cubic-bezier(1, 0, 0.4, 1), box-shadow 400ms cubic-bezier(1, 0, 0.4, 1), translate 400ms cubic-bezier(1, 0, 0.4, 1);
+}
+.switcher:has(input[c-option="1"]:checked)::after { translate: 0 0; }
+.switcher:has(input[c-option="2"]:checked)::after { translate: 76px 0; }
+.switcher:has(input[c-option="3"]:checked)::after { translate: 152px 0; }
+.article { display: flex; flex-direction: column; align-items: center; padding: 5em 2em; }
+h1 { font-size: 3em; margin: 1.4em 0 0.6em; max-width: 600px; width: 100%; }
+p { line-height: 160%; margin: 0 0 1em; max-width: 600px; width: 100%; }
+</style>
+</head>
+<body>
+<fieldset class="switcher">
+  <legend class="switcher__legend">Choose theme</legend>
+  <label class="switcher__option">
+    <input class="switcher__input" type="radio" name="theme" value="light" c-option="1" checked />
+    <svg class="switcher__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36">
+      <path fill="var(--c)" d="M18 14a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0-2a6 6 0 1 1 0 12 6 6 0 0 1 0-12Z"/>
+      <path fill="var(--c)" d="M17 7a1 1 0 1 1 2 0v3a1 1 0 0 1-2 0V7ZM17 26a1 1 0 1 1 2 0v3a1 1 0 0 1-2 0v-3Z"/>
+    </svg>
+  </label>
+  <label class="switcher__option">
+    <input class="switcher__input" type="radio" name="theme" value="dark" c-option="2" />
+    <svg class="switcher__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36">
+      <path fill="var(--c)" d="M12.5 8.5a11 11 0 0 1 8.8-1 7.4 7.4 0 0 0-3.7 4.7l-.1.4A7.5 7.5 0 0 0 28.7 20.4a11 11 0 0 1-5.2 7.1l-.5.3c-5 2.6-11.2.9-14.2-3.8l-.3-.5c-3-4.9-1.4-11.4 3.5-14.5l.5-.5Z"/>
+    </svg>
+  </label>
+  <label class="switcher__option">
+    <input class="switcher__input" type="radio" name="theme" value="dim" c-option="3" />
+    <svg class="switcher__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36">
+      <path fill="var(--c)" d="M5 21a1 1 0 0 1 1-1h24a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1ZM12 25a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H13a1 1 0 0 1-1-1ZM18 13a6 6 0 0 1 5.9 7h-2a4 4 0 1 0-7.7 0h-2A6 6 0 0 1 18 13Z"/>
+    </svg>
+  </label>
+</fieldset>
+
+<article class="article">
+  <h1>Liquid glass</h1>
+  <p>Demo content — change the theme above to see palette + glass-reflex coupling shift.</p>
+  <p>The CSS variables under <code>body:has(input[value="..."]:checked)</code> selectors drive every color and shadow intensity. JS only tracks previous-selection for animation direction; theme application is pure CSS.</p>
+</article>
+
+<script>
+const switcher = document.querySelector(".switcher");
+const trackPrevious = (el) => {
+  const radios = el.querySelectorAll('input[type="radio"]');
+  let previousValue = null;
+  const initiallyChecked = el.querySelector('input[type="radio"]:checked');
+  if (initiallyChecked) {
+    previousValue = initiallyChecked.getAttribute("c-option");
+    el.setAttribute("c-previous", previousValue);
+  }
+  radios.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      if (radio.checked) {
+        el.setAttribute("c-previous", previousValue ?? "");
+        previousValue = radio.getAttribute("c-option");
+      }
+    });
+  });
+};
+trackPrevious(switcher);
+</script>
+</body>
+</html>

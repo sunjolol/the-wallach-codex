@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+  Design Wisdom Reference #023 — collinsworth-typing-effect
+═══════════════════════════════════════════════════════════════════════════════
+  Title:         Typing effect (needs faster cadence)
+  Source URL:    https://codepen.io/collinsworth/pen/baLLvp
+  Author:        collinsworth (CodePen)
+  Captured:      2026-06-20
+  Categories:    typography, animation, typing, wallach-popup-relevant, needs-tuning
+
+  USER NOTES (verbatim):
+  ──────────────────────────────────────────────────────────────────────────────
+  "very cool typing effect, BUT WAY TOO SLOW, needs to be much faster but not
+  feel schizo, fast enough so the user doesn't need to wait long but slow
+  enough to give a good vibe/flow"
+
+  When adapting: tune interval() in the JS — currently 5-130ms random per char,
+  500-1000ms pause on punctuation. User wants the per-char range cut roughly in
+  half (~5-65ms) and the punctuation pause cut to ~200-400ms.
+═══════════════════════════════════════════════════════════════════════════════
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Reference #023 — collinsworth typing effect</title>
+<style>
+@import 'https://fonts.googleapis.com/css?family=Fira+Mono';
+
+html { font-size: 18px; }
+
+body {
+	color: #333;
+	background: #f8f8f8;
+	font-family: 'Fira Mono', mono;
+	font-size: 1rem;
+	margin: 0;
+	display: grid;
+	width: 100%;
+	height: 100vh;
+	justify-items: center;
+	align-items: center;
+	padding: 0 6vw;
+	box-sizing: border-box;
+	line-height: 1.4;
+}
+
+div {
+	width: 100%;
+	max-width: 30em;
+	white-space: pre-line;
+}
+
+div:after {
+	content: '|';
+	-webkit-animation: cursor 1s linear infinite;
+	        animation: cursor 1s linear infinite;
+}
+
+button {
+	font-family: 'Fira Mono', mono;
+	padding: 1em;
+	font-size: 14px;
+	border-radius: 4px;
+	background: transparent;
+	border: 2px solid #a7a8aa;
+	color: #a7a8aa;
+	cursor: pointer;
+}
+
+@-webkit-keyframes cursor {
+	0%, 49.9% { opacity: 0; }
+	50%, 99.9% { opacity: 1; }
+}
+@keyframes cursor {
+	0%, 49.9% { opacity: 0; }
+	50%, 99.9% { opacity: 1; }
+}
+</style>
+</head>
+<body>
+<div id="target">Your message will be typed out here!</div>
+<button onClick="rerun()">Rerun</button>
+<script>
+const message = `Machines can measure things a user will never notice, and users will notice things a machine can never measure.
+
+If a user thinks your site is slow, a speed test won't convince them otherwise.`;
+
+const container = document.querySelector('#target');
+
+let n;
+
+function rerun(){
+	container.textContent = '';
+	n = 0;
+	typist(message, container);
+};
+
+rerun();
+
+function interval(letter){
+	if(letter == ';' || letter == '.' || letter == ','){
+		return Math.floor((Math.random() * 500) + 500);
+	} else {
+		return Math.floor((Math.random() * 130) + 5);
+	}
+}
+
+function typist(text, target){
+	if(typeof(text[n]) != 'undefined'){
+		target.textContent += text[n];
+	}
+	n++;
+	if(n < text.length){
+		setTimeout(function(){
+			typist(text, target)
+		}, interval(text[n - 1]));
+	}
+}
+</script>
+</body>
+</html>

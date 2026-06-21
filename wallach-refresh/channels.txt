@@ -1,0 +1,20 @@
+# Channels to monitor for new Wallach uploads.
+# One per line. Comments start with #.
+# Format: any URL or handle yt-dlp accepts.
+#   https://www.youtube.com/@HandleName
+#   https://www.youtube.com/@HandleName/videos
+#   https://www.youtube.com/channel/UCxxxxxxxxxxxxxxxxxxxxxx
+#
+# Starter list — replace/extend with the channels you actually trust.
+# Verify each handle exists before relying on it; channel names change.
+
+# Youngevity (official corporate channel — hosts many Wallach talks)
+https://www.youtube.com/@Youngevity
+
+# Daily with Doc (Wallach's current weekly show)
+https://www.youtube.com/results?search_query=%22Daily+with+Doc%22+Wallach
+
+# Ask Doc Live (Wallach's Q&A show)
+https://www.youtube.com/results?search_query=%22Ask+Doc+Live%22+Wallach
+
+# Add your own below — fan compilation channels, Wallach lecture archives, etc.

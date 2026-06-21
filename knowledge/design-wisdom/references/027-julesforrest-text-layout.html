@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+  Design Wisdom Reference #027 — julesforrest-text-layout
+═══════════════════════════════════════════════════════════════════════════════
+  Title:         Interesting text layout/placement
+  Source URL:    https://codepen.io/julesforrest/pen/yowMPw
+  Author:        julesforrest (CodePen)
+  Captured:      2026-06-20
+  Code captured: 2026-06-21 (manual paste from user)
+  Categories:    text-layout, layout, information-architecture
+  Formats:       HTML=HTML · CSS=CSS-SCSS · JS=JS
+
+  USER NOTES (verbatim):
+  ──────────────────────────────────────────────────────────────────────────────
+  "some very cool text layout/formatting ideas here, a tad boring but the actual placement of elements and way they lay different bits of information out is interesting"
+
+  PRESERVATION NOTES:
+  ──────────────────────────────────────────────────────────────────────────────
+  ⚠ CSS uses SCSS preprocessor — won't render without compilation.
+═══════════════════════════════════════════════════════════════════════════════
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Reference #027 — julesforrest text-layout</title>
+<!-- CSS is CSS-SCSS — not vanilla; preserve as authored -->
+<style data-format="css-scss">
+/* CSS-SCSS source — not browser-renderable as-is */
+body {
+  overflow-x: hidden;
+}
+
+.stat {
+  font-size: 30px;
+}
+
+.source-serif {
+  font-family: 'Source Serif Pro', serif;
+}
+
+.numeral {
+  bottom: 0;
+  left: 25px;
+  position: absolute;
+}
+
+.numeral-line {
+  position: absolute;
+  bottom: 10px;
+  width: 10px;
+}
+
+$article-red: #FF4A46;
+
+.article-red {
+  color: $article-red;
+}
+.bg-article-red {
+  background-color: $article-red;
+}
+
+.container {
+  padding: 25px;
+}
+
+.f8 {
+  font-size: .65rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: .75rem;
+  grid-auto-rows: 55px;
+  margin: 100px auto;
+  border-top: 1px solid #000;
+  max-width: 950px;
+}
+
+.folio-1 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  border-right: 1px solid #000;
+}
+
+.folio-2 {
+  grid-column-start: 4;
+  grid-column-end: span 5;
+}
+
+.folio-3 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  border-right: 1px solid #000;
+  border-top: 1px solid #000;
+}
+
+.folio-4 {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 2;
+  border-top: 1px solid #000;
+}
+
+.image {
+  grid-column-start: 1;
+  grid-column-end: span all;
+  grid-row-start: 4;
+  grid-row-end: 9;
+  background: url("https://images.unsplash.com/photo-1458682760028-07c9d41d0cd1?dpr=2&auto=format&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb&crop=");
+  background-position: left;
+  background-size: 1000px;
+}
+
+.article-intro {
+  grid-row-start: 11;
+  grid-row-end: 12;
+  grid-column-start: 1;
+  grid-column-end: span 8;
+}
+
+.caption {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 9;
+  grid-row-end: 12;
+  margin-right: -13px;
+}
+
+.infographic {
+  grid-column-start: 1;
+  grid-column-end: span 8;
+  grid-row-start: 27;
+}
+
+.copy-1 {
+  grid-column-start: 1;
+  grid-column-end: span 8;
+  grid-row-start: 17;
+}
+
+.copy-2 {
+  grid-column-start: 1;
+  grid-column-end: 8;
+  grid-row-start: 33;
+  grid-row-end: 40;
+}
+
+//tablet
+@media (min-width: 740px) {
+  .container {
+    padding: 25px;
+  }
+  
+  .mobile-message {
+    display: none;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: .75rem;
+    grid-auto-rows: 55px;
+    margin: 100px auto;
+    max-width: 950px;
+  }
+
+  .folio-1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    border-right: 1px solid #000;
+  }
+
+  .folio-2 {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-column-end: span 3;
+    border-right: 1px solid #000;
+  }
+
+  .folio-3 {
+    grid-column-start: 5;
+    grid-column-end: span 2;
+    grid-row-start: 1;
+    border-right: 1px solid #000;
+    border-top: none;
+  }
+
+  .folio-4 {
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    border-top: none;
+  }
+
+  .image {
+    grid-column-start: 1;
+    grid-column-end: span all;
+    grid-row-start: 3;
+    grid-row-end: 8;
+    background: url("https://images.unsplash.com/photo-1458682760028-07c9d41d0cd1?dpr=2&auto=format&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb&crop=");
+    background-position: left;
+    background-size: 1000px;
+  }
+
+  .article-intro {
+    grid-row-start: 10;
+    grid-row-end: 13;
+    grid-column-start: 1;
+    grid-column-end: span 7;
+  }
+
+  .caption {
+    grid-column-start: 6;
+    grid-column-end: 9;
+    grid-row-start: 8;
+    grid-row-end: 10;
+    margin-right: -13px;
+  }
+
+  .infographic {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 15;
+    grid-row-end: 21;
+  }
+
+  .copy-1 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 15;
+    grid-row-end: 29;
+    padding: 15px 25px 15px 0;
+  }
+
+  .copy-2 {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 21;
+    grid-row-end: 29;
+    padding: 15px 0 25px 15px;
+  }
+}
+
+// desktop
+@media (min-width: 1160px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: .75rem;
+    grid-auto-rows: 55px;
+    max-width: 1100px;
+    margin: 100px auto;
+    border-top: 1px solid #000;
+  }
+
+  .folio-1 {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    border-right: 1px solid #000;
+  }
+
+  .folio-2 {
+    grid-column-start: 3;
+    grid-column-end: span 4;
+    border-right: 1px solid #000;
+  }
+
+  .folio-3 {
+    grid-column: span 2;
+    border-right: 1px solid #000;
+  }
+
+  .folio-4 {
+    grid-column: span 2;
+  }
+
+  .image {
+    grid-column-start: 9;
+    grid-column-end: 11;
+    grid-row-start: 3;
+    grid-row-end: 12;
+    grid-column-gap: 0;
+    background: url("https://images.unsplash.com/photo-1458682760028-07c9d41d0cd1?dpr=2&auto=format&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb&crop=");
+    background-position: left;
+    background-size: 1000px;
+    margin-right: -400px;
+    padding: 0;
+  }
+
+  .article-intro {
+    grid-row-start: 3;
+    grid-row-end: 7;
+    grid-column-start: 1;
+    grid-column-end: span 7;
+    padding: 0;
+  }
+
+  .caption {
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row-start: 10;
+    grid-row-end: 12;
+    align-self: end;
+    padding-right: 30px;
+    margin-right: 0;
+  }
+
+  .infographic {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 9;
+    grid-row-end: 14;
+    padding: 0;
+  }
+
+  .copy-1 {
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-start: 9;
+    grid-row-end: 22;
+    padding: 15px 25px;
+  }
+
+  .copy-2 {
+    grid-column-start: 7;
+    grid-column-end: 11;
+    grid-row-start: 13;
+    grid-row-end: 22;
+    padding: 15px 25px;
+  }
+}
+</style>
+</head>
+<body>
+<link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<div class="links ttu tracked f6 sans-serif pt5 b tc nb4">
+  <p class="mobile-message">Not (very) optimized for mobile · </p><a href="https://imgur.com/dmM7nbV" class="black no-underline" target="_blank">view original layout</a> · <a href="http://usshop.gestalten.com/the-intelligent-lifestyle-magazine.html" class="black no-underline" target="_blank">original book</a>
+</div>
+<div class="container">
+  <div class="grid">
+    <div class="folio-1 f4 tr pt3 pr3"><i class="article-red fa fa-compass" aria-hidden="true"></i></div>
+    <div class="folio-2 pt3">
+      <p class="f8 ttu sans-serif tracked lh-copy b">luogo</p>
+      <p class="f8 ttu sans-serif tracked lh-copy b article-red">blocco shourok egitto</p>
+    </div>
+    <div class="folio-3 pt3">
+      <p class="f8 ttu sans-serif tracked lh-copy b">Testi</p>
+      <p class="f8 ttu sans-serif tracked lh-copy article-red b">Marco alfieri · eniday.com</p>
+    </div>
+    <div class="folio-4 pt3">
+      <p class="f8 ttu sans-serif tracked lh-copy b">illustrazioni</p>
+      <p class="f8 ttu sans-serif tracked lh-copy b article-red">manuel bortoletti</p>
+    </div>
+    <div class="image"></div>
+    <div class="article-intro">
+      <h1 class="article-red f2 lh-title source-serif b"><span class="dib relative bg-blue mr5"><span class="bt dib bw1 ph3 numeral-line"></span><span class="dib white bg-red sans-serif f8 pv1 ph2 numeral">1</span></span>«Noi non siamo Indiana Jones»</br>Il diario bordo degli eroi di Zohr</h1>
+      <h2 class="f3 lh-title source-serif">Ad agosto tutti hanno parlato della mega scoperta del giacimento nell'offshore egiziano. Non è arrivata per caso, ma è stata il risultato di un lavoro di squadra lungo tre anni. Un'impresa in cul l'elemento umano è stato determinante quanto la tecnologia. I protagonisti raccontano una storia di intuizioni, errori e colpi di scena.</h2>
+    </div>
+    <div class="caption tr">
+      <i class="fa fa-camera-retro article-red" aria-hidden="true"></i>
+      <h3 class="article-red f6 ttu tracked sans-serif b pv2">mare nostrum</h3>
+      <p class="sans-serif f6 article-red lh-copy">Nuovo giacimento, nuovi sviluppi di sisterna. Da qui potrebbe nascere l'hub del gas del Mediterraneo
+    </div>
+    <div class="infographic">
+      <i class="fa fa-binoculars article-red" aria-hidden="true"></i>
+      <p class="f6 ttu tracked sans-serif article-red b pv2">Egitto/1</p>
+      <p class="f3 b pb3 source-serif lh-title">Gas, ma anche</br>tanto petrolio</p>
+      <div class="stat-1 bt flex pb3">
+        <p class="w-50 br ttu lh-title tracked f8 pt3 pr3 pb4 b sans-serif">Produzione giornaliera</p>
+        <div class="w-50 pt3 pl3 article-red">
+          <p class="stat source-serif b">600</p>
+          <p class="f8 sans-serif b ttu tracked">migliaia</br>di barili</p>
+        </div>
+      </div>
+      <div class="stat-1 bt flex pb3">
+        <p class="w-50 br ttu lh-title tracked f8 pt3 pr3 pb4 b sans-serif">consumo giornaliero</p>
+        <div class="w-50 pt3 pl3 article-red">
+          <p class="stat source-serif b">881</p>
+          <p class="f8 sans-serif b ttu tracked">migliaia</br>di barili</p>
+        </div>
+      </div>
+      <div class="stat-1 bt flex pb3">
+        <p class="w-50 br ttu lh-title tracked f8 pt3 pr3 pb4 b sans-serif">riserve</p>
+        <div class="w-50 pt3 pl3 article-red">
+          <p class="stat source-serif b">4.400</p>
+          <p class="f8 sans-serif b ttu tracked">milioni</br>di barili</p>
+        </div>
+      </div>
+    </div>
+    <div class="copy-1 lh-title source-serif">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque posuere condimentum purus, vitae molestie mi tempus eget. Morbi rutrum lacinia nunc vel dapibus. Suspendisse tortor sapien, accumsan quis cursus ac, mollis nec ex. Praesent vitae tincidunt
+        orci, suscipit feugiat orci. Mauris tortor massa, ultrices sit amet rhoncus et, ultrices ac diam. Mauris nulla eros, molestie non, fermentum lectus.</p>
+      <p class=""><span class="ph3"></span>Proin non nulla ac nulla accumsan sagittis. Sed vestibulum dui nec velit hendrerit, et elementum neque sollicitudin. Quisque sit amet erat id urna vulputate volutpat id suscipit velit. Duis at laoreet nisl. Phasellus at
+        purus eget leo aliquet viverra ac nec nulla. Proin hendrerit nisi at purus fringilla, eu tristique nisl convallis. Donec viverra diam vel diam mattis elementum. Nulla cursus imperdiet urna eget laoreet un lavoro. Quisque eu auctor tellus. Ut mollis,
+        neque rutrum suscipit commodo, mauris nisi lobortis nibh, et sagittis diam tellus sit amet lorem. Praesent rutrum pretium felis, id feugiat neque elementum sit amet. Maecenas malesuada elit vel tellus tristique, vel sodales ex vehicula. Ut et
+        metus a enim accumsan faucibus quis at turpis.</p>
+      <span class="w-30 db center pt4 bb b--black"></span>
+      <blockquote class="tc pv3 f4 lh-copy b">Si parte nel 2012. Politicamente il periodo è pieno di incertezze, siamo nel post primavera araba. Al Cairo a guigno vanno al potere i Fratelli Musulmani</blockquote>
+      <span class="w-30 db center pb4 bt b--black"></span>
+      <p>Suspendisse tortor sapien, accumsan quis cursus ac, mollis nec ex. Praesent vitae tincidunt orci, suscipit feugiat orci. Mauris tortor massa, ultrices sit amet rhoncus et, ultrices ac diam. Mauris nulla eros, molestie non leo in, fermentum laoreet
+        lectus. Proin non nulla ac nulla accumsan sagittis. Mauris tortor massa, ultrices sit amet rhoncus et, ultrices ac diam.</p>
+    </div>
+    <div class="copy-2 lh-title source-serif mt2">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque posuere condimentum purus, vitae molestie mi tempus eget. Morbi rutrum lacinia nunc vel dapibus. Suspendisse tortor sapien, accumsan quis cursus ac, mollis nec ex. Praesent vitae tincidunt
+        orci, suscipit feugiat orci. Mauris tortor massa, ultrices sit amet rhoncus et, ultrices ac diam. Mauris nulla eros, molestie non, fermentum lectus.</p>
+      <p class=""><span class="ph3"></span>Proin non nulla ac nulla accumsan sagittis. Sed vestibulum dui nec velit hendrerit, et elementum neque sollicitudin. Quisque sit amet erat id urna vulputate volutpat id suscipit velit. Duis at laoreet nisl. Phasellus at
+        purus eget leo aliquet viverra ac nec nulla. Proin hendrerit nisi at purus fringilla, eu tristique nisl convallis. Donec viverra diam vel diam mattis elementum. Nulla cursus imperdiet urna eget laoreet un lavoro. Quisque eu auctor tellus. Ut mollis,
+        neque rutrum suscipit commodo, mauris nisi lobortis nibh, et sagittis diam tellus sit amet lorem. Praesent rutrum pretium felis, id feugiat neque elementum sit amet. Maecenas malesuada elit vel tellus tristique, vel sodales ex vehicula. Ut et
+        metus a enim accumsan faucibus quis at turpis.</p>
+      <p><span class="ph3"></span>Suspendisse tortor sapien, accumsan quis cursus ac, mollis nec ex. Praesent vitae tincidunt orci, suscipit feugiat orci. Mauris tortor massa, ultrices sit amet rhoncus et, ultrices ac diam.</p>
+    </div>
+  </div>
+</div>
+<!-- (no JS) -->
+</body>
+</html>

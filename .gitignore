@@ -1,0 +1,8 @@
+node_modules/
+outputs/
+sessions/
+*.log
+.npm/
+dashboard/assets/js/dist/*.map
+archive/retired-june-21-2026/
+knowledge/wallach-transcripts

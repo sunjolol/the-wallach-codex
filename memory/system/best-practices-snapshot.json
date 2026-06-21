@@ -1,0 +1,24 @@
+{
+  "pages": {
+    "https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview": {
+      "last_hash": "9bd385a34a3101fb98a016a63cdda1bb5980a6ce1f2f4918ec51468709202801",
+      "last_fetched_at": "2026-06-21T15:07:43.520785+00:00",
+      "last_changed_at": "2026-06-21T15:07:43.520785+00:00",
+      "last_review_acked_at": "2026-06-21T15:07:43.520785+00:00"
+    },
+    "https://docs.claude.com/en/docs/build-with-claude/context-windows": {
+      "last_hash": "8e293b7a2dca81a4c6dc6b27dbf9014f33bcfc3da417f54234daf9ee66b9eb01",
+      "last_fetched_at": "2026-06-21T15:07:43.520785+00:00",
+      "last_changed_at": "2026-06-21T15:07:43.520785+00:00",
+      "last_review_acked_at": "2026-06-21T15:07:43.520785+00:00"
+    },
+    "https://docs.claude.com/en/docs/agents-and-tools/tool-use/overview": {
+      "last_hash": "ac590c76df385225f19106b6d3cb04fe5bb936ab7672e6ec21d7a67ec0bd051c",
+      "last_fetched_at": "2026-06-21T15:07:43.520785+00:00",
+      "last_changed_at": "2026-06-21T15:07:43.520785+00:00",
+      "last_review_acked_at": "2026-06-21T15:07:43.520785+00:00"
+    }
+  },
+  "schema_version": 1,
+  "last_refresh_at": "2026-06-21T15:07:43.520785+00:00"
+}

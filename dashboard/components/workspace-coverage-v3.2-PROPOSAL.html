@@ -1,0 +1,1903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Coverage Workspace v3.2 — typography pivot + ambient alien-tech animation</title>
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+  PHASE 2 — Coverage Workspace v3.2 — typography pivot + ambient animation
+
+  User feedback on v3:
+    1. IA = NAILED. Keep the system rail, persistent regimen rail, drawers
+       for knowledge/journey, topbar with cmd palette, telemetry footer.
+    2. Playfair Display was OVER-USED in interface chrome — "article font,
+       not interface font." Confine it to where it serves a purpose
+       (periodic table tile symbols = alchemy reference). Everything else
+       interface-chrome should feel FUTURISTIC.
+    3. Push HARDER on the alien-tech vibe — more tech readouts present, with
+       subtle animation (the "SIG.LIVE [4f¹⁴ 6s²]" / "PQ·01a" energy). The
+       readouts should feel ALIVE (cypher-cycling glyphs, ambient
+       motion, subtle effect work from the design-wisdom catalog).
+    4. "MORE of a good thing, DEEPER immersion" — hyper-stylistic in good
+       taste. Never tacky.
+
+  Changes in v3.2:
+    TYPOGRAPHY PIVOT
+      - Playfair Display → confined to: periodic table tile SYMBOLS (alchemy
+        intent), popup pull-quotes (article surfaces in modals). Removed
+        from: workspace title, section headers, tab labels, brand name,
+        regimen item names, goal card names.
+      - NEW: Chakra Petch (proposed, SIL OFL) — futuristic geometric
+        condensed sans. Used for: workspace title in topbar, section headers
+        (coverage hero title, goals strip title), regimen slot name, goal
+        card names, tab labels.
+      - NEW: Bruno Ace (proposed, SIL OFL) — distinctive modular geometric.
+        Used SPARINGLY (rarity = power) for: brand mark glyph in system
+        rail, the kill-shot 47/92 numeral, the workspace tag in topbar.
+      - JetBrains Mono — pushed HARDER. All tech readouts use it. More
+        present in telemetry, footer, rail meta, kicker labels.
+      - Space Grotesk — interface body text (button labels, rail items,
+        descriptions, kbd hints).
+
+    AMBIENT ALIEN-TECH ANIMATIONS (all opt-out via prefers-reduced-motion)
+      - .ds-cipher  — slow-cycling glyph element. ONE global setInterval
+        ticks every 1000ms; each .ds-cipher rotates 1 char through its
+        glyph-set. Used on readouts (sig.live values, scan counter,
+        telemetry). Makes the chrome feel ALIVE.
+      - .ds-scan-line — subtle gradient line sweeps top→bottom across the
+        periodic table every 10s. "Alien instrument reading you" energy.
+      - .ds-border-travel — hairline accent travels around card borders.
+        Subtle ambient signal of system activity. Used on the coverage
+        hero edge.
+      - Status pulses, idle accent shimmers — enhanced.
+
+    What was preserved from v3:
+      - The IA (system rail + topbar + workspace + telemetry footer)
+      - Color palette (cream paper + warm ink + signal-accent orange + tech-cyan)
+      - The persistent regimen rail on the right
+      - The coverage stat kill-shot treatment
+      - The goals strip layout
+      - All functions intact (no rewrites)
+
+  FONT PROCUREMENT — for the NEW fonts:
+    Chakra Petch:  https://fonts.google.com/specimen/Chakra+Petch
+                   Drop ChakraPetch-{Regular,SemiBold,Bold}.ttf into
+                   dashboard/assets/fonts/  (or grab a variable build
+                   if one exists)
+    Bruno Ace:     https://fonts.google.com/specimen/Bruno+Ace
+                   Drop BrunoAce-Regular.ttf into dashboard/assets/fonts/
+    Both SIL OFL 1.1. License attribution gets added to fonts/LICENSE.md
+    after user approves the typography direction.
+
+  ⚠ This file inlines the @font-face declarations for the proposed new
+  fonts pointing to ../fonts/{ChakraPetch,BrunoAce}-Regular.ttf paths that
+  don't exist yet. Fallback stack drops to Space Grotesk / system-ui until
+  user drops the font files. So you can preview the layout TODAY and the
+  text will swap to the new fonts once the files arrive.
+═══════════════════════════════════════════════════════════════════════════════
+-->
+<link rel="stylesheet" href="../assets/styles/design-system.css">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════════════════
+ * NEW FONTS — proposed for design-system.css.
+ * Falls back gracefully until user drops the font files.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+@font-face {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/ChakraPetch-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/ChakraPetch-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/ChakraPetch-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Bruno Ace';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/BrunoAce-Regular.ttf') format('truetype');
+}
+
+/* Local design tokens specific to this preview's typography pivot.
+   Once approved, these become --ds-font-display-interface and
+   --ds-font-display-artifact in design-system.css. */
+:root {
+  --ds-font-display-interface: 'Chakra Petch', 'Space Grotesk', system-ui, sans-serif;
+  --ds-font-display-artifact:  'Bruno Ace', 'Chakra Petch', 'Space Grotesk', system-ui, sans-serif;
+}
+
+/* Lock the viewport — no page-level scroll. Workspace scrolls internally
+   so the topbar + system rail + footer stay anchored at all times. True
+   full-screen interface. */
+html, body { height: 100%; overflow: hidden; }
+body { margin: 0; background: var(--ds-paper-deep); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * STYLIZED SCROLLBAR (proposed for design-system.css)
+ * Applies to every scrolling element within .app-shell. ~11px wide (≈70% of
+ * the default 16px), accent-orange thumb on cream-darker track, pill radius.
+ * The browser default ugly bar is gone — every necessary scroll becomes a
+ * designed surface that doubles as a splash of color.
+ *
+ * Firefox: scrollbar-width + scrollbar-color (declared on .app-shell)
+ * WebKit:  ::-webkit-scrollbar pseudo-elements scoped under .app-shell
+ * ═══════════════════════════════════════════════════════════════════════════ */
+.app-shell {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ds-accent) var(--ds-paper-darker);
+}
+.app-shell *::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+.app-shell *::-webkit-scrollbar-track {
+  background: var(--ds-paper-darker);
+  border-radius: var(--ds-radius-pill);
+}
+.app-shell *::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--ds-accent) 0%, var(--ds-accent-hot) 100%);
+  border-radius: var(--ds-radius-pill);
+  border: 2px solid var(--ds-paper-darker);
+  box-shadow: 0 0 8px rgba(255,126,60,0.3);
+}
+.app-shell *::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--ds-accent-hot) 0%, var(--ds-accent-bright) 100%);
+  box-shadow: 0 0 10px rgba(255,126,60,0.5);
+}
+.app-shell *::-webkit-scrollbar-corner {
+  background: var(--ds-paper-darker);
+}
+/* Dark-shell scrollbar (rail / footer if they ever scroll — defensive) */
+.app-rail::-webkit-scrollbar-track,
+.app-footer::-webkit-scrollbar-track { background: var(--ds-ink-medium); }
+.app-rail::-webkit-scrollbar-thumb,
+.app-footer::-webkit-scrollbar-thumb { border-color: var(--ds-ink-medium); }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * AMBIENT ANIMATION PRIMITIVES (proposed for design-system.css)
+ * All gated by prefers-reduced-motion via existing design-system.css rule.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* CIPHER — slow-cycling glyph readout. JS rotates the textContent every 1s.
+   Class only sets the styling; the JS at the bottom of this file does the
+   character cycling. */
+.ds-cipher {
+  font-family: var(--ds-font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  min-width: 1ch;
+}
+
+/* SCAN LINE — sweeps top→bottom across a parent every N seconds.
+   Wrap with .ds-scan-host { position: relative; overflow: hidden; } */
+.ds-scan-line {
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--ds-accent-soft) 20%,
+    var(--ds-accent) 50%,
+    var(--ds-accent-soft) 80%,
+    transparent 100%);
+  opacity: 0.35;
+  pointer-events: none;
+  animation: ds-scan-sweep 10s linear infinite;
+  filter: blur(0.5px);
+}
+@keyframes ds-scan-sweep {
+  0%   { top: -3%; opacity: 0; }
+  10%  { opacity: 0.35; }
+  90%  { opacity: 0.35; }
+  100% { top: 103%; opacity: 0; }
+}
+
+/* BORDER TRAVEL — a hairline accent that travels around a card border.
+   Uses two pseudo elements for top→right and bottom→left edges. */
+.ds-border-travel { position: relative; isolation: isolate; }
+.ds-border-travel::before, .ds-border-travel::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--ds-accent) 50%,
+    transparent 100%);
+  filter: blur(0.5px);
+  z-index: 2;
+}
+.ds-border-travel::before {
+  top: 0; left: -30%;
+  width: 30%; height: 1px;
+  animation: ds-travel-top 8s linear infinite;
+}
+.ds-border-travel::after {
+  bottom: 0; right: -30%;
+  width: 30%; height: 1px;
+  animation: ds-travel-bottom 8s linear infinite;
+  animation-delay: 4s;
+}
+@keyframes ds-travel-top {
+  0%   { left: -30%; opacity: 0; }
+  10%  { opacity: 0.8; }
+  90%  { opacity: 0.8; }
+  100% { left: 130%; opacity: 0; }
+}
+@keyframes ds-travel-bottom {
+  0%   { right: -30%; opacity: 0; }
+  10%  { opacity: 0.8; }
+  90%  { opacity: 0.8; }
+  100% { right: 130%; opacity: 0; }
+}
+
+/* COVERAGE-STAT GLYPH PULSE — the kill-shot numeral now has a slow pulse */
+@keyframes ds-numeric-glow {
+  0%, 100% { text-shadow: 0 0 40px rgba(255,126,60,0.4); }
+  50%      { text-shadow: 0 0 60px rgba(255,126,60,0.65); }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * SHELL — same chassis as v3 with typography pivots applied
+ * ═══════════════════════════════════════════════════════════════════════════ */
+.app-shell {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "rail topbar"
+    "rail workspace"
+    "rail footer";
+  height: 100vh;          /* exact viewport height, not min */
+  overflow: hidden;        /* prevent shell-level scroll bleed */
+  background: var(--ds-paper-deep);
+}
+
+
+/* ════ SYSTEM RAIL ═════════════════════════════════════════════════════════ */
+.app-rail {
+  grid-area: rail;
+  background: var(--ds-ink);
+  color: var(--ds-paper);
+  display: flex;
+  flex-direction: column;
+  padding: var(--ds-space-5) 0;
+  position: relative;
+  border-right: 1px solid var(--ds-ink-medium);
+}
+.app-rail::after {
+  content: '';
+  position: absolute;
+  top: var(--ds-space-7); bottom: var(--ds-space-7);
+  right: -1px;
+  width: 1px;
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    var(--ds-accent) 8%, var(--ds-accent) 12%,
+    transparent 14%,
+    transparent 86%,
+    var(--ds-accent) 88%, var(--ds-accent) 92%,
+    transparent 100%);
+}
+
+.rail__brand {
+  padding: 0 var(--ds-space-5) var(--ds-space-5);
+  border-bottom: 1px solid var(--ds-ink-medium);
+  margin-bottom: var(--ds-space-5);
+}
+.rail__brand-mark {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-tech);
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  margin-bottom: var(--ds-space-3);
+  font-weight: 600;
+}
+.rail__brand-mark::before {
+  content: '';
+  width: 8px; height: 8px;
+  background: var(--ds-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--ds-accent);
+}
+/* BRAND NAME — Bruno Ace (the alien-artifact font, used sparingly) */
+.rail__brand-name {
+  font-family: var(--ds-font-display-artifact);
+  font-size: var(--ds-text-lg);
+  font-weight: 400;
+  color: var(--ds-paper);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+.rail__brand-sub {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  color: var(--ds-ink-faint);
+  margin-top: var(--ds-space-2);
+  text-transform: uppercase;
+}
+
+.rail__section { padding: 0 var(--ds-space-3); }
+.rail__section-label {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-ink-faint);
+  padding: var(--ds-space-3) var(--ds-space-3) var(--ds-space-2);
+  font-weight: 500;
+}
+
+.rail__item {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+  padding: var(--ds-space-3) var(--ds-space-3);
+  border-radius: var(--ds-radius-sm);
+  /* INTERFACE LABEL — Chakra Petch (new futuristic display) */
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-sm);
+  color: var(--ds-ink-faint);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+}
+.rail__item:hover {
+  background: var(--ds-ink-medium);
+  color: var(--ds-paper);
+}
+.rail__item.active {
+  background: linear-gradient(90deg, rgba(255,126,60,0.15) 0%, transparent 100%);
+  color: var(--ds-paper);
+}
+.rail__item.active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 20%; bottom: 20%;
+  width: 3px;
+  background: var(--ds-accent);
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--ds-accent);
+}
+.rail__icon {
+  width: 18px; height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-sm);
+  color: currentColor;
+  opacity: 0.9;
+}
+.rail__label { flex: 1; }
+.rail__kbd {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  color: var(--ds-ink-faint);
+  background: var(--ds-ink-medium);
+  padding: 2px 6px;
+  border-radius: var(--ds-radius-xs);
+  letter-spacing: 0.05em;
+  text-transform: none;
+}
+.rail__item.active .rail__kbd { color: var(--ds-paper); background: rgba(255,255,255,0.08); }
+
+.rail__divider {
+  height: 1px;
+  background: var(--ds-ink-medium);
+  margin: var(--ds-space-3) var(--ds-space-4);
+}
+.rail__spacer { flex: 1; }
+.rail__footer {
+  padding: var(--ds-space-4) var(--ds-space-5) 0;
+  border-top: 1px solid var(--ds-ink-medium);
+  margin-top: var(--ds-space-3);
+}
+.rail__profile {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+  padding: var(--ds-space-3) var(--ds-space-1);
+  cursor: pointer;
+  border-radius: var(--ds-radius-sm);
+  transition: background var(--ds-motion-fast) var(--ds-ease-out);
+}
+.rail__profile:hover { background: var(--ds-ink-medium); }
+.rail__avatar {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ds-accent) 0%, var(--ds-accent-hot) 100%);
+  color: var(--ds-paper-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ds-font-display-artifact);
+  font-weight: 400;
+  font-size: var(--ds-text-sm);
+  box-shadow: 0 0 0 1px var(--ds-paper-light) inset, var(--ds-glow-accent-sm);
+}
+.rail__profile-name {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-sm);
+  font-weight: 600;
+  color: var(--ds-paper);
+  letter-spacing: 0.02em;
+}
+.rail__profile-meta {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  color: var(--ds-ink-faint);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+}
+
+
+/* ════ TOPBAR ══════════════════════════════════════════════════════════════ */
+.app-topbar {
+  grid-area: topbar;
+  background: var(--ds-paper);
+  border-bottom: 1px solid var(--ds-rule-soft);
+  padding: var(--ds-space-4) var(--ds-space-7);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--ds-space-6);
+  align-items: center;
+  position: relative;
+}
+.app-topbar::after {
+  content: '';
+  position: absolute;
+  left: var(--ds-space-7); right: var(--ds-space-7);
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent 0%,
+    var(--ds-accent) 6%, var(--ds-accent) 13%,
+    transparent 15%,
+    transparent 85%,
+    var(--ds-tech) 88%, var(--ds-tech) 92%,
+    transparent 95%);
+}
+
+.topbar__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+}
+.topbar__workspace-tag {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-tech);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+}
+.topbar__workspace-tag::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--ds-accent);
+  border-radius: 50%;
+  animation: ds-pulse-animate 2s ease-in-out infinite;
+}
+/* WORKSPACE TITLE — Chakra Petch (interface display) */
+.topbar__title {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-xl);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 0;
+  padding-left: var(--ds-space-3);
+  border-left: 1px solid var(--ds-rule);
+}
+.topbar__sub {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  margin-left: var(--ds-space-3);
+}
+
+.topbar__cmd {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+  background: var(--ds-paper-deep);
+  border: 1px solid var(--ds-rule);
+  border-radius: var(--ds-radius-md);
+  padding: 0.55rem 0.85rem;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-sm);
+  color: var(--ds-ink-soft);
+  cursor: text;
+  letter-spacing: 0.02em;
+}
+.topbar__cmd-icon { font-family: var(--ds-font-mono); color: var(--ds-tech); }
+.topbar__cmd-input {
+  flex: 1;
+  color: var(--ds-ink-faint);
+  font-family: inherit;
+  background: transparent;
+  border: 0;
+  text-transform: uppercase;
+  font-size: var(--ds-text-xs);
+  letter-spacing: var(--ds-track-wide);
+}
+.topbar__cmd-kbd {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  color: var(--ds-ink-soft);
+  background: var(--ds-paper);
+  border: 1px solid var(--ds-rule);
+  padding: 2px 6px;
+  border-radius: var(--ds-radius-xs);
+}
+
+.topbar__telemetry {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-4);
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+}
+.telemetry__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-space-1);
+}
+.telemetry__item strong { color: var(--ds-ink); font-weight: 600; }
+.telemetry__item .pulse-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--ds-status-ok);
+  margin-right: 4px;
+  box-shadow: 0 0 6px var(--ds-status-ok-soft);
+}
+
+
+/* ════ WORKSPACE ═══════════════════════════════════════════════════════════ */
+.app-workspace {
+  grid-area: workspace;
+  background: var(--ds-paper-deep);
+  position: relative;
+  overflow: auto;
+  min-height: 0;           /* required for grid-cell internal scroll */
+}
+.app-workspace::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,126,60,0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(26,22,18,0.04) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.coverage-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--ds-space-6);
+  padding: var(--ds-space-7);
+}
+
+
+/* ════ COVERAGE HERO ═══════════════════════════════════════════════════════ */
+.coverage-main { display: flex; flex-direction: column; gap: var(--ds-space-6); }
+
+.coverage-hero {
+  background: var(--ds-paper);
+  border-radius: var(--ds-radius-md);
+  padding: var(--ds-space-7);
+  box-shadow: var(--ds-elev-2);
+  position: relative;
+  overflow: hidden;
+}
+.coverage-hero__head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--ds-space-5);
+  align-items: end;
+  margin-bottom: var(--ds-space-6);
+  padding-bottom: var(--ds-space-5);
+  border-bottom: 1px solid var(--ds-rule-soft);
+}
+.coverage-hero__kicker {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  margin-bottom: var(--ds-space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+}
+.coverage-hero__kicker::before {
+  content: '';
+  width: 16px; height: 1px; background: var(--ds-accent);
+}
+/* HERO TITLE — Chakra Petch (interface display, not Playfair) */
+.coverage-hero__title {
+  font-family: var(--ds-font-display-interface);
+  font-size: clamp(1.8rem, 2.4vw, 2.4rem);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.05;
+}
+.coverage-hero__title em {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--ds-accent-deep);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-family: var(--ds-font-mono);
+  font-size: 0.65em;
+  display: block;
+  margin-top: var(--ds-space-2);
+}
+
+/* The kill-shot coverage stat */
+.coverage-stat {
+  display: flex;
+  align-items: baseline;
+  gap: var(--ds-space-2);
+  background: linear-gradient(135deg, var(--ds-ink) 0%, var(--ds-ink-medium) 100%);
+  padding: var(--ds-space-4) var(--ds-space-5);
+  border-radius: var(--ds-radius-sm);
+  color: var(--ds-paper);
+  position: relative;
+  overflow: hidden;
+}
+.coverage-stat::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 30%;
+  width: 180px; height: 180px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, var(--ds-accent) 0%, transparent 70%);
+  opacity: 0.25;
+  pointer-events: none;
+  animation: ds-stat-pulse 4s ease-in-out infinite;
+}
+/* KILL-SHOT NUMERAL — Bruno Ace (rare alien-artifact moment) */
+.coverage-stat__num {
+  font-family: var(--ds-font-display-artifact);
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ds-accent-bright);
+  letter-spacing: 0.02em;
+  position: relative;
+  animation: ds-numeric-glow 4s ease-in-out infinite;
+}
+.coverage-stat__den {
+  font-family: var(--ds-font-display-artifact);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--ds-ink-faint);
+  position: relative;
+}
+.coverage-stat__label {
+  margin-left: var(--ds-space-3);
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-accent-soft);
+  line-height: 1.3;
+  position: relative;
+}
+
+/* The periodic table host — wraps a .ds-scan-line for the sweeping motion */
+.periodic-host {
+  position: relative;
+  overflow: hidden;
+  padding: var(--ds-space-3) 0;
+  margin-bottom: var(--ds-space-3);
+}
+
+
+/* ════ ESSENTIALS — 4-SECTION FUNCTIONAL GRID ═══════════════════════════════
+   Replaces the chemistry-only periodic table with the 92 Wallach essentials
+   organized by function: 60 Minerals · 16 Vitamins · 12 Amino Acids · 3 Fatty
+   Acids. Each section has its own header, divider, grid density, and tile
+   variant. Playfair Display alchemy intent stays in the Minerals section
+   only (mineral symbols use the chemistry serif).
+   ═════════════════════════════════════════════════════════════════════════ */
+
+.essentials-host {
+  position: relative;
+  overflow: hidden;
+  padding: var(--ds-space-3) 0;
+}
+
+.essentials-section { margin-bottom: var(--ds-space-7); }
+.essentials-section:last-child { margin-bottom: 0; }
+
+.essentials-section__head {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: var(--ds-space-4);
+  align-items: baseline;
+  margin-bottom: var(--ds-space-2);
+  padding: 0 2px;
+}
+.essentials-section__num {
+  font-family: var(--ds-font-display-artifact);
+  font-size: var(--ds-text-xl);
+  color: var(--ds-accent);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-shadow: 0 0 12px rgba(255,126,60,0.3);
+}
+.essentials-section__title {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-lg);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+}
+.essentials-section__sub {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+}
+.essentials-section__stat {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-mini);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-accent-deep);
+  font-weight: 600;
+}
+.essentials-section__stat strong {
+  font-family: var(--ds-font-display-artifact);
+  font-weight: 400;
+  color: var(--ds-accent);
+  font-size: 1.15em;
+}
+
+/* Section divider — broken hairline with signal-accent dash + corner registration marks */
+.essentials-section__divider {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(to right,
+    var(--ds-rule) 0%, var(--ds-rule) 20%,
+    transparent 22%, transparent 28%,
+    var(--ds-accent) 30%, var(--ds-accent) 36%,
+    transparent 38%, transparent 100%);
+  margin-bottom: var(--ds-space-4);
+}
+.essentials-section__divider::before,
+.essentials-section__divider::after {
+  content: '';
+  position: absolute;
+  width: 6px; height: 6px;
+  border: 1px solid var(--ds-tech);
+}
+.essentials-section__divider::before {
+  left: 0; top: -3px;
+  border-right: 0; border-bottom: 0;
+}
+.essentials-section__divider::after {
+  right: 0; top: -3px;
+  border-left: 0; border-bottom: 0;
+}
+
+/* SUB-SECTION — mini label that breaks a section into navigable groups
+   (e.g. Minerals: Foundational / Major Trace / Rare Trace). Lighter
+   visual weight than the main section header — a guide-mark, not a divider. */
+.essentials-subsection { margin-bottom: var(--ds-space-4); }
+.essentials-subsection:last-child { margin-bottom: 0; }
+.essentials-subsection__label {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  display: flex;
+  align-items: baseline;
+  gap: var(--ds-space-2);
+  margin: 0 0 var(--ds-space-2);
+  font-weight: 600;
+}
+.essentials-subsection__rank {
+  font-family: var(--ds-font-display-artifact);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--ds-accent);
+  letter-spacing: 0.05em;
+}
+.essentials-subsection__count {
+  color: var(--ds-accent-deep);
+  font-weight: 700;
+}
+.essentials-subsection__hint {
+  color: var(--ds-ink-faint);
+  font-style: normal;
+  font-weight: 500;
+  margin-left: auto;
+}
+
+/* Per-section grid densities */
+.essentials-grid--minerals { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; }
+.essentials-grid--vitamins { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; }
+.essentials-grid--aminos   { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+.essentials-grid--fats     { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ds-space-3); }
+
+
+/* VITAMIN TILE — letter-name based, slightly taller than mineral tiles.
+   Playfair STAYS on the .tile__letter glyph (still alchemy intent — vitamins
+   share the "discovered substance" lineage with minerals). */
+.tile--vitamin {
+  aspect-ratio: 1 / 1.15;
+  background: var(--ds-paper-deep);
+  border: 1px solid var(--ds-rule-soft);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;          /* center horizontally */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;             /* prevents strip from over-shooting */
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+}
+.tile--vitamin {
+  padding: 6px 6px 0;
+}
+.tile--vitamin .tile__code {
+  font-family: var(--ds-font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--ds-ink-soft);
+  letter-spacing: 0.03em;
+  position: absolute;
+  top: 4px; left: 5px;
+}
+.tile--vitamin .tile__letter {
+  font-family: var(--ds-font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ds-ink);
+  line-height: 1;
+  margin: auto 0;               /* fills vertical space — pushes name to bottom */
+  padding-top: 8px;             /* small visual breathing room below the code */
+}
+.tile--vitamin .tile__name {
+  font-family: var(--ds-font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.15;
+  background: var(--ds-paper-darker);
+  border-top: 1px solid var(--ds-rule-soft);
+  /* Bleed past the tile's 1px border on each side so the strip is flush
+     with the tile's outer edge. overflow:hidden on the tile clips cleanly. */
+  width: calc(100% + 4px);
+  margin: 0 -2px;
+  padding: 4px 4px;
+  border-radius: 0;
+}
+.tile--vitamin.covered .tile__name {
+  background: var(--ds-accent-soft);
+  border-color: var(--ds-accent);
+  color: var(--ds-accent-deep);
+}
+.tile--vitamin.partial .tile__name { background: var(--ds-paper); border-color: var(--ds-rule-bright); }
+.tile--vitamin.trace .tile__name { background: var(--ds-paper); border-color: var(--ds-rule-bright); color: var(--ds-ink-soft); }
+.tile--vitamin:hover { transform: translateY(-1px); border-color: var(--ds-accent); box-shadow: 0 4px 10px -2px rgba(255,126,60,0.25); }
+.tile--vitamin.covered { background: linear-gradient(180deg, var(--ds-accent-soft) 0%, var(--ds-accent-wash) 100%); border-color: var(--ds-accent); }
+.tile--vitamin.covered .tile__letter, .tile--vitamin.covered .tile__code, .tile--vitamin.covered .tile__name { color: var(--ds-accent-deep); }
+
+
+/* AMINO ACID TILE — wider rectangle, 3-letter code centered */
+.tile--amino {
+  aspect-ratio: 1.6 / 1;
+  background: var(--ds-paper-deep);
+  border: 1px solid var(--ds-rule-soft);
+  border-radius: 2px;
+  padding: 6px 8px 0;           /* restored — code sits naturally top-left */
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+}
+.tile--amino { padding: 6px 8px 0; }
+.tile--amino .tile__code {
+  font-family: var(--ds-font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--ds-ink-soft);
+  letter-spacing: 0.03em;
+  /* No padding — tile wrapper handles spacing, code sits naturally top-left */
+}
+.tile--amino .tile__abbr {
+  font-family: var(--ds-font-display);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ds-ink);
+  line-height: 1;
+  text-align: center;
+  margin: auto 0;              /* fills vertical space — pushes name to bottom */
+}
+.tile--amino .tile__name {
+  font-family: var(--ds-font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.15;
+  background: var(--ds-paper-darker);
+  border-top: 1px solid var(--ds-rule-soft);
+  /* Bleed past tile padding (8px L/R) + 1px border on each side = -9px each.
+     overflow:hidden on the tile clips cleanly. */
+  width: calc(100% + 20px);
+  margin: 0 -10px;
+  padding: 4px 6px;
+  border-radius: 0;
+}
+.tile--amino.covered .tile__name {
+  background: var(--ds-accent-soft);
+  border-color: var(--ds-accent);
+  color: var(--ds-accent-deep);
+}
+.tile--amino.partial .tile__name { background: var(--ds-paper); border-color: var(--ds-rule-bright); }
+.tile--amino.trace .tile__name { background: var(--ds-paper); border-color: var(--ds-rule-bright); color: var(--ds-ink-soft); }
+.tile--amino:hover { transform: translateY(-1px); border-color: var(--ds-accent); box-shadow: 0 4px 10px -2px rgba(255,126,60,0.25); }
+.tile--amino.covered { background: linear-gradient(180deg, var(--ds-accent-soft) 0%, var(--ds-accent-wash) 100%); border-color: var(--ds-accent); }
+.tile--amino.covered .tile__abbr, .tile--amino.covered .tile__code, .tile--amino.covered .tile__name { color: var(--ds-accent-deep); }
+
+
+/* FATTY ACID TILE — bigger statement tiles. Only 3 of these, so each gets
+   editorial-card weight rather than dense-grid tile weight. */
+.tile--fat {
+  background: var(--ds-paper-deep);
+  border: 1px solid var(--ds-rule-soft);
+  border-radius: var(--ds-radius-sm);
+  padding: var(--ds-space-4) var(--ds-space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-2);
+  cursor: pointer;
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+  position: relative;
+  overflow: hidden;
+  min-height: 92px;
+}
+.tile--fat .tile__code {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  color: var(--ds-ink-faint);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+}
+.tile--fat .tile__code::before {
+  content: '';
+  width: 8px; height: 1px; background: var(--ds-accent);
+}
+.tile--fat .tile__name {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-lg);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.05;
+  /* Explicit reset — fatty-acid tiles use the bigger-statement layout,
+     NOT the label-strip pattern that minerals/vitamins/aminos use. */
+  background: none;
+  border: 0;
+  border-top: 0;
+  margin-top: auto;            /* push to bottom, no strip needed */
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  padding: 0;
+  width: auto;
+  border-radius: 0;
+}
+.tile--fat .tile__hint {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  color: var(--ds-ink-soft);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  margin-top: auto;
+  font-variant-numeric: tabular-nums;
+}
+.tile--fat:hover {
+  transform: translateY(-1px);
+  border-color: var(--ds-accent);
+  box-shadow: 0 6px 14px -3px rgba(255,126,60,0.25);
+}
+.tile--fat.covered {
+  background: linear-gradient(135deg, var(--ds-accent-soft) 0%, var(--ds-accent-wash) 100%);
+  border-color: var(--ds-accent);
+}
+.tile--fat.covered .tile__name,
+.tile--fat.covered .tile__code,
+.tile--fat.covered .tile__hint { color: var(--ds-accent-deep); }
+
+
+/* ════ PERIODIC TABLE (Playfair stays here — alchemy intent) ════════════════ */
+.periodic {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  gap: 4px;
+}
+.tile {
+  aspect-ratio: 1 / 1.05;
+  background: var(--ds-paper-deep);
+  border: 1px solid var(--ds-rule-soft);
+  border-radius: 2px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4px 5px;
+  cursor: pointer;
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+}
+.tile {
+  aspect-ratio: 1 / 1.22;            /* taller to host the bigger label strip */
+  padding: 5px 5px 0;                 /* no bottom padding — label fills it */
+  overflow: hidden;                   /* defensive — strip never over-shoots */
+}
+.tile__num {
+  font-family: var(--ds-font-mono);
+  font-size: 10px;                    /* was 7 — ~40% bigger */
+  font-weight: 600;                   /* bolder */
+  color: var(--ds-ink-soft);
+  letter-spacing: 0.03em;
+}
+/* TILE SYMBOL — Playfair Display STAYS (alchemy reference, intentional) */
+.tile__sym {
+  font-family: var(--ds-font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ds-ink);
+  line-height: 1;
+  text-align: center;
+  margin-top: 1px;
+}
+/* TILE NAME — now a proper bold label strip filling the tile bottom.
+   Read at a glance, scan-friendly. Subtle bg tint defines the zone. */
+.tile__name {
+  font-family: var(--ds-font-sans);
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--ds-ink);
+  text-align: center;
+  letter-spacing: 0.025em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  background: var(--ds-paper-darker);
+  border-top: 1px solid var(--ds-rule-soft);
+  margin: 4px -5px 0;                 /* extend strip to tile edges */
+  padding: 4px 2px 4px;
+  border-radius: 0 0 1px 1px;
+}
+/* Covered tile gets a tinted label strip — signals the state clearly */
+.tile.covered .tile__name {
+  background: var(--ds-accent-soft);
+  border-color: var(--ds-accent);
+  color: var(--ds-accent-deep);
+}
+.tile.partial .tile__name { background: var(--ds-paper); border-color: var(--ds-rule-bright); }
+.tile.trace .tile__name { background: var(--ds-paper); border-color: var(--ds-rule-bright); color: var(--ds-ink-soft); }
+.tile.gap .tile__name { background: var(--ds-status-warn-soft); border-color: var(--ds-status-warn); color: var(--ds-status-warn); }
+.tile:hover { transform: translateY(-1px); border-color: var(--ds-accent); box-shadow: 0 4px 10px -2px rgba(255,126,60,0.25); }
+.tile.covered { background: linear-gradient(180deg, var(--ds-accent-soft) 0%, var(--ds-accent-wash) 100%); border-color: var(--ds-accent); }
+.tile.covered .tile__num { color: var(--ds-accent-deep); }
+.tile.covered .tile__sym { color: var(--ds-accent-deep); }
+.tile.covered .tile__name { color: var(--ds-accent-deep); }
+.tile.partial { background: var(--ds-paper-light); border-color: var(--ds-rule-bright); }
+.tile.trace { background: var(--ds-paper); border: 1px dashed var(--ds-rule-bright); opacity: 0.85; }
+.tile.gap { background: var(--ds-paper-deep); border: 1px dashed var(--ds-status-warn); }
+.tile.gap .tile__sym { color: var(--ds-status-warn); }
+.tile.spacer { background: transparent; border: 0; cursor: default; pointer-events: none; }
+.tile.spacer:hover { transform: none; box-shadow: none; }
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-5);
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  padding-top: var(--ds-space-4);
+  border-top: 1px solid var(--ds-rule-soft);
+}
+.legend__item { display: inline-flex; align-items: center; gap: var(--ds-space-2); }
+.legend__sw { width: 12px; height: 12px; border-radius: 2px; }
+.legend__sw.covered { background: var(--ds-accent-soft); border: 1px solid var(--ds-accent); }
+.legend__sw.partial { background: var(--ds-paper-light); border: 1px solid var(--ds-rule-bright); }
+.legend__sw.trace { background: var(--ds-paper); border: 1px dashed var(--ds-rule-bright); }
+.legend__sw.gap { background: var(--ds-paper-deep); border: 1px dashed var(--ds-status-warn); }
+
+
+/* ════ GOALS STRIP ═════════════════════════════════════════════════════════ */
+.goals-strip {
+  background: var(--ds-paper);
+  border-radius: var(--ds-radius-md);
+  padding: var(--ds-space-5) var(--ds-space-6);
+  box-shadow: var(--ds-elev-1);
+}
+.goals-strip__head {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+  margin-bottom: var(--ds-space-4);
+}
+.goals-strip__title {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-md);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.goals-strip__count {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-accent);
+  margin-left: auto;
+}
+.goals-strip__add {
+  background: transparent;
+  border: 1px dashed var(--ds-accent);
+  color: var(--ds-accent-deep);
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-xs);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--ds-radius-pill);
+  cursor: pointer;
+  font-weight: 600;
+}
+.goals-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--ds-space-3);
+}
+.goal-card {
+  background: var(--ds-paper-deep);
+  border-radius: var(--ds-radius-sm);
+  padding: var(--ds-space-4);
+  border-left: 3px solid var(--ds-accent);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-2);
+}
+.goal-card__kicker {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+}
+.goal-card__name {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-md);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.goal-card__bar {
+  height: 6px;
+  background: var(--ds-paper);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--ds-rule-soft);
+}
+.goal-card__bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ds-accent-hot), var(--ds-accent), var(--ds-accent-bright));
+}
+.goal-card__progress {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-mini);
+  color: var(--ds-ink-soft);
+  letter-spacing: var(--ds-track-wide);
+}
+
+
+/* ════ REGIMEN RAIL ════════════════════════════════════════════════════════ */
+.regimen-rail {
+  background: var(--ds-paper);
+  border-radius: var(--ds-radius-md);
+  box-shadow: var(--ds-elev-2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  /* Bound to the visible workspace area so the action bar always sits
+     correctly with breathing room. Calculation: 100vh minus topbar (≈68px)
+     + footer (≈40px) + workspace padding (5rem total) + 50px tail breathing
+     room as user-requested. List inside scrolls via the global stylized
+     scrollbar if items overflow. */
+  height: calc(100vh - 68px - 40px - 5rem - 50px);
+  max-height: calc(100vh - 68px - 40px - 5rem - 50px);
+}
+.regimen-rail__head {
+  padding: var(--ds-space-5);
+  border-bottom: 1px solid var(--ds-rule);
+  background: var(--ds-paper-darker);
+  position: relative;
+}
+.regimen-rail__head::after {
+  content: '';
+  position: absolute;
+  left: var(--ds-space-5); right: var(--ds-space-5);
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent 0%,
+    var(--ds-accent) 6%, var(--ds-accent) 12%,
+    transparent 14%);
+}
+.regimen-rail__eyebrow {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-accent);
+  font-weight: 600;
+  margin-bottom: var(--ds-space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+}
+.regimen-rail__eyebrow .pulse-dot { width: 6px; height: 6px; background: var(--ds-accent); border-radius: 50%; box-shadow: 0 0 6px var(--ds-accent-soft); }
+/* SLOT NAME — Chakra Petch */
+.regimen-rail__slot-name {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-lg);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.regimen-rail__slot-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+  margin-top: var(--ds-space-2);
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+}
+.regimen-rail__slot-meta strong { color: var(--ds-ink); font-weight: 600; }
+
+.regimen-rail__list {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--ds-space-3);
+}
+.regimen-item {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+  padding: var(--ds-space-3);
+  border-radius: var(--ds-radius-sm);
+  background: var(--ds-paper-light);
+  border: 1px solid var(--ds-rule-soft);
+  margin-bottom: var(--ds-space-2);
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+}
+.regimen-item:hover { border-color: var(--ds-accent); }
+.regimen-item__icon {
+  width: 32px; height: 32px;
+  background: var(--ds-paper-darker);
+  border-radius: var(--ds-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ds-font-display-artifact);
+  font-size: var(--ds-text-sm);
+  font-weight: 400;
+  color: var(--ds-accent-deep);
+}
+.regimen-item__body { flex: 1; min-width: 0; }
+/* ITEM NAME — Chakra Petch (was Playfair) */
+.regimen-item__name {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-sm);
+  font-weight: 600;
+  color: var(--ds-ink);
+  margin: 0;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.regimen-item__meta {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  color: var(--ds-ink-soft);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+}
+.regimen-item__count {
+  font-family: var(--ds-font-display-artifact);
+  font-size: var(--ds-text-md);
+  font-weight: 400;
+  color: var(--ds-accent-deep);
+  font-variant-numeric: tabular-nums;
+}
+
+.regimen-rail__actions {
+  padding: var(--ds-space-4) var(--ds-space-5);
+  border-top: 1px solid var(--ds-rule);
+  background: var(--ds-paper-darker);
+  display: flex;
+  gap: var(--ds-space-2);
+}
+
+
+/* ════ FOOTER ══════════════════════════════════════════════════════════════ */
+.app-footer {
+  grid-area: footer;
+  background: var(--ds-ink);
+  color: var(--ds-paper);
+  padding: var(--ds-space-3) var(--ds-space-7);
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-6);
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  position: relative;
+}
+.app-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--ds-space-7); right: var(--ds-space-7);
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent 0%,
+    var(--ds-tech) 4%, var(--ds-tech) 10%,
+    transparent 12%);
+}
+.footer__item { display: inline-flex; align-items: center; gap: var(--ds-space-2); color: var(--ds-ink-faint); }
+.footer__item strong { color: var(--ds-paper); font-weight: 600; }
+.footer__item .dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--ds-status-ok);
+  margin-right: 2px;
+}
+.footer__spacer { flex: 1; }
+.footer__signature { color: var(--ds-tech); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; }
+</style>
+</head>
+
+<body>
+
+<svg width="0" height="0" aria-hidden="true" style="position: absolute;">
+  <defs>
+    <filter id="ds-filter-rough">
+      <feTurbulence type="fractalNoise" baseFrequency=".08" numOctaves="4"/>
+      <feDisplacementMap in="SourceGraphic" scale="5" />
+    </filter>
+  </defs>
+</svg>
+
+<div class="app-shell">
+
+  <!-- LEFT SYSTEM RAIL -->
+  <aside class="app-rail">
+    <div class="rail__brand">
+      <div class="rail__brand-mark"><span class="ds-cipher" data-cipher-set="hexa">WSC·07A3</span></div>
+      <div class="rail__brand-name">LUNETH</div>
+      <div class="rail__brand-sub">v3.27 · BRAIN</div>
+    </div>
+
+    <div class="rail__section">
+      <div class="rail__section-label">Workspaces</div>
+      <button class="rail__item active">
+        <span class="rail__icon">◉</span>
+        <span class="rail__label">Coverage</span>
+        <span class="rail__kbd">⌘1</span>
+      </button>
+      <button class="rail__item">
+        <span class="rail__icon">▤</span>
+        <span class="rail__label">Regimen</span>
+        <span class="rail__kbd">⌘2</span>
+      </button>
+      <button class="rail__item">
+        <span class="rail__icon">⌖</span>
+        <span class="rail__label">Scanner</span>
+        <span class="rail__kbd">⌘3</span>
+      </button>
+    </div>
+
+    <div class="rail__divider"></div>
+
+    <div class="rail__section">
+      <div class="rail__section-label">Drawers</div>
+      <button class="rail__item">
+        <span class="rail__icon">❡</span>
+        <span class="rail__label">Knowledge</span>
+        <span class="rail__kbd">K</span>
+      </button>
+      <button class="rail__item">
+        <span class="rail__icon">⌭</span>
+        <span class="rail__label">Journey</span>
+        <span class="rail__kbd">J</span>
+      </button>
+    </div>
+
+    <div class="rail__spacer"></div>
+
+    <div class="rail__footer">
+      <div class="rail__profile">
+        <div class="rail__avatar">L</div>
+        <div>
+          <div class="rail__profile-name">Luneth</div>
+          <div class="rail__profile-meta">SETTINGS · PROFILE</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+
+  <!-- TOPBAR -->
+  <header class="app-topbar">
+    <div class="topbar__breadcrumb">
+      <span class="topbar__workspace-tag">WS·01 · <span class="ds-cipher" data-cipher-set="alphanum">COVERAGE</span></span>
+      <h1 class="topbar__title">COVERAGE</h1>
+      <span class="topbar__sub">// where you are, what you're missing</span>
+    </div>
+
+    <div class="topbar__cmd">
+      <span class="topbar__cmd-icon">⌕</span>
+      <span class="topbar__cmd-input">JUMP TO ELEMENT, PRODUCT, GOAL, LAB…</span>
+      <span class="topbar__cmd-kbd">⌘K</span>
+    </div>
+
+    <div class="topbar__telemetry">
+      <span class="telemetry__item"><span class="pulse-dot"></span> SYNCED</span>
+      <span class="telemetry__item">SCAN <strong class="ds-cipher" data-cipher-set="time">2D·14H</strong> AGO</span>
+      <span class="telemetry__item">BRAIN <strong>v3.27</strong></span>
+    </div>
+  </header>
+
+
+  <!-- WORKSPACE -->
+  <main class="app-workspace">
+    <div class="coverage-grid">
+
+      <div class="coverage-main">
+
+        <!-- HERO with .ds-border-travel for ambient signal motion -->
+        <section class="coverage-hero ds-border-travel">
+          <header class="coverage-hero__head">
+            <div>
+              <div class="coverage-hero__kicker">Your essentials · <span class="ds-cipher" data-cipher-set="numfrac">92</span> minerals + vitamins + amino acids + fats</div>
+              <h2 class="coverage-hero__title">
+                THE WHOLE PICTURE
+                <em>// what you're absorbing, what you're missing</em>
+              </h2>
+            </div>
+            <div class="coverage-stat">
+              <span class="coverage-stat__num">47</span>
+              <span class="coverage-stat__den">/ 92</span>
+              <span class="coverage-stat__label">essentials<br>covered</span>
+            </div>
+          </header>
+
+          <!-- Periodic table host wraps the sweeping scan-line -->
+          <div class="essentials-host">
+  <span class="ds-scan-line" aria-hidden="true"></span>
+
+  <section class="essentials-section">
+    <header class="essentials-section__head">
+      <div class="essentials-section__num">01</div>
+      <h3 class="essentials-section__title">MINERALS</h3>
+      <div class="essentials-section__sub">// 60 · THE FOUNDATION · ATOMIC SYMBOLS PRESERVED</div>
+      <div class="essentials-section__stat"><strong>22</strong> / 60 covered</div>
+    </header>
+    <div class="essentials-section__divider"></div>
+          <div class="essentials-subsection">
+        <div class="essentials-subsection__label"><span class="essentials-subsection__rank">A</span> FOUNDATIONAL <span class="essentials-subsection__count">· 11</span> <span class="essentials-subsection__hint">structural + macro · atomic order</span></div>
+        <div class="essentials-grid--minerals">
+        <div class="tile covered"><span class="tile__num">1</span><span class="tile__sym">H</span><span class="tile__name">HYDROGEN</span></div>
+        <div class="tile covered"><span class="tile__num">6</span><span class="tile__sym">C</span><span class="tile__name">CARBON</span></div>
+        <div class="tile covered"><span class="tile__num">7</span><span class="tile__sym">N</span><span class="tile__name">NITROGEN</span></div>
+        <div class="tile covered"><span class="tile__num">8</span><span class="tile__sym">O</span><span class="tile__name">OXYGEN</span></div>
+        <div class="tile covered"><span class="tile__num">11</span><span class="tile__sym">Na</span><span class="tile__name">SODIUM</span></div>
+        <div class="tile covered"><span class="tile__num">12</span><span class="tile__sym">Mg</span><span class="tile__name">MAGNES.</span></div>
+        <div class="tile covered"><span class="tile__num">15</span><span class="tile__sym">P</span><span class="tile__name">PHOS.</span></div>
+        <div class="tile covered"><span class="tile__num">16</span><span class="tile__sym">S</span><span class="tile__name">SULFUR</span></div>
+        <div class="tile covered"><span class="tile__num">17</span><span class="tile__sym">Cl</span><span class="tile__name">CHLORIDE</span></div>
+        <div class="tile covered"><span class="tile__num">19</span><span class="tile__sym">K</span><span class="tile__name">POTAS.</span></div>
+        <div class="tile covered"><span class="tile__num">20</span><span class="tile__sym">Ca</span><span class="tile__name">CALCIUM</span></div>
+        </div>
+      </div>
+      <div class="essentials-subsection">
+        <div class="essentials-subsection__label"><span class="essentials-subsection__rank">B</span> MAJOR TRACE <span class="essentials-subsection__count">· 14</span> <span class="essentials-subsection__hint">mid-dose essentials · A→Z</span></div>
+        <div class="essentials-grid--minerals">
+        <div class="tile covered"><span class="tile__num">5</span><span class="tile__sym">B</span><span class="tile__name">BORON</span></div>
+        <div class="tile trace"><span class="tile__num">27</span><span class="tile__sym">Co</span><span class="tile__name">COBALT</span></div>
+        <div class="tile covered"><span class="tile__num">24</span><span class="tile__sym">Cr</span><span class="tile__name">CHROM.</span></div>
+        <div class="tile covered"><span class="tile__num">29</span><span class="tile__sym">Cu</span><span class="tile__name">COPPER</span></div>
+        <div class="tile gap"><span class="tile__num">9</span><span class="tile__sym">F</span><span class="tile__name">FLUORINE</span></div>
+        <div class="tile covered"><span class="tile__num">26</span><span class="tile__sym">Fe</span><span class="tile__name">IRON</span></div>
+        <div class="tile covered"><span class="tile__num">53</span><span class="tile__sym">I</span><span class="tile__name">IODINE</span></div>
+        <div class="tile covered"><span class="tile__num">25</span><span class="tile__sym">Mn</span><span class="tile__name">MANGAN.</span></div>
+        <div class="tile covered"><span class="tile__num">42</span><span class="tile__sym">Mo</span><span class="tile__name">MOLYB.</span></div>
+        <div class="tile covered"><span class="tile__num">34</span><span class="tile__sym">Se</span><span class="tile__name">SELEN.</span></div>
+        <div class="tile covered"><span class="tile__num">14</span><span class="tile__sym">Si</span><span class="tile__name">SILICON</span></div>
+        <div class="tile covered"><span class="tile__num">38</span><span class="tile__sym">Sr</span><span class="tile__name">STRONT.</span></div>
+        <div class="tile partial"><span class="tile__num">23</span><span class="tile__sym">V</span><span class="tile__name">VANAD.</span></div>
+        <div class="tile covered"><span class="tile__num">30</span><span class="tile__sym">Zn</span><span class="tile__name">ZINC</span></div>
+        </div>
+      </div>
+      <div class="essentials-subsection">
+        <div class="essentials-subsection__label"><span class="essentials-subsection__rank">C</span> RARE TRACE <span class="essentials-subsection__count">· 35</span> <span class="essentials-subsection__hint">PDM aggregate spectrum · A→Z</span></div>
+        <div class="essentials-grid--minerals">
+        <div class="tile trace"><span class="tile__num">47</span><span class="tile__sym">Ag</span><span class="tile__name">SILVER</span></div>
+        <div class="tile trace"><span class="tile__num">13</span><span class="tile__sym">Al</span><span class="tile__name">ALUMIN.</span></div>
+        <div class="tile trace"><span class="tile__num">33</span><span class="tile__sym">As</span><span class="tile__name">ARSENIC</span></div>
+        <div class="tile trace"><span class="tile__num">79</span><span class="tile__sym">Au</span><span class="tile__name">GOLD</span></div>
+        <div class="tile trace"><span class="tile__num">56</span><span class="tile__sym">Ba</span><span class="tile__name">BARIUM</span></div>
+        <div class="tile trace"><span class="tile__num">4</span><span class="tile__sym">Be</span><span class="tile__name">BERYL</span></div>
+        <div class="tile trace"><span class="tile__num">35</span><span class="tile__sym">Br</span><span class="tile__name">BROMINE</span></div>
+        <div class="tile trace"><span class="tile__num">58</span><span class="tile__sym">Ce</span><span class="tile__name">CERIUM</span></div>
+        <div class="tile trace"><span class="tile__num">55</span><span class="tile__sym">Cs</span><span class="tile__name">CESIUM</span></div>
+        <div class="tile trace"><span class="tile__num">66</span><span class="tile__sym">Dy</span><span class="tile__name">DYSPRO.</span></div>
+        <div class="tile trace"><span class="tile__num">68</span><span class="tile__sym">Er</span><span class="tile__name">ERBIUM</span></div>
+        <div class="tile trace"><span class="tile__num">63</span><span class="tile__sym">Eu</span><span class="tile__name">EUROP.</span></div>
+        <div class="tile trace"><span class="tile__num">31</span><span class="tile__sym">Ga</span><span class="tile__name">GALL.</span></div>
+        <div class="tile trace"><span class="tile__num">64</span><span class="tile__sym">Gd</span><span class="tile__name">GADOL.</span></div>
+        <div class="tile trace"><span class="tile__num">72</span><span class="tile__sym">Hf</span><span class="tile__name">HAFNIUM</span></div>
+        <div class="tile trace"><span class="tile__num">67</span><span class="tile__sym">Ho</span><span class="tile__name">HOLMIUM</span></div>
+        <div class="tile trace"><span class="tile__num">57</span><span class="tile__sym">La</span><span class="tile__name">LANTH.</span></div>
+        <div class="tile trace"><span class="tile__num">3</span><span class="tile__sym">Li</span><span class="tile__name">LITHIUM</span></div>
+        <div class="tile trace"><span class="tile__num">71</span><span class="tile__sym">Lu</span><span class="tile__name">LUTET.</span></div>
+        <div class="tile trace"><span class="tile__num">41</span><span class="tile__sym">Nb</span><span class="tile__name">NIOB.</span></div>
+        <div class="tile trace"><span class="tile__num">60</span><span class="tile__sym">Nd</span><span class="tile__name">NEOD.</span></div>
+        <div class="tile trace"><span class="tile__num">28</span><span class="tile__sym">Ni</span><span class="tile__name">NICKEL</span></div>
+        <div class="tile trace"><span class="tile__num">59</span><span class="tile__sym">Pr</span><span class="tile__name">PRASEO.</span></div>
+        <div class="tile trace"><span class="tile__num">37</span><span class="tile__sym">Rb</span><span class="tile__name">RUBID.</span></div>
+        <div class="tile trace"><span class="tile__num">75</span><span class="tile__sym">Re</span><span class="tile__name">RHENIUM</span></div>
+        <div class="tile trace"><span class="tile__num">21</span><span class="tile__sym">Sc</span><span class="tile__name">SCAND.</span></div>
+        <div class="tile trace"><span class="tile__num">62</span><span class="tile__sym">Sm</span><span class="tile__name">SAMAR.</span></div>
+        <div class="tile trace"><span class="tile__num">50</span><span class="tile__sym">Sn</span><span class="tile__name">TIN</span></div>
+        <div class="tile trace"><span class="tile__num">73</span><span class="tile__sym">Ta</span><span class="tile__name">TANTAL.</span></div>
+        <div class="tile trace"><span class="tile__num">65</span><span class="tile__sym">Tb</span><span class="tile__name">TERBIUM</span></div>
+        <div class="tile trace"><span class="tile__num">22</span><span class="tile__sym">Ti</span><span class="tile__name">TITAN.</span></div>
+        <div class="tile trace"><span class="tile__num">69</span><span class="tile__sym">Tm</span><span class="tile__name">THULIUM</span></div>
+        <div class="tile trace"><span class="tile__num">39</span><span class="tile__sym">Y</span><span class="tile__name">YTTRIUM</span></div>
+        <div class="tile trace"><span class="tile__num">70</span><span class="tile__sym">Yb</span><span class="tile__name">YTTERB.</span></div>
+        <div class="tile trace"><span class="tile__num">40</span><span class="tile__sym">Zr</span><span class="tile__name">ZIRCON.</span></div>
+        </div>
+      </div>
+
+  </section>
+
+  <section class="essentials-section">
+    <header class="essentials-section__head">
+      <div class="essentials-section__num">02</div>
+      <h3 class="essentials-section__title">VITAMINS</h3>
+      <div class="essentials-section__sub">// 16 · THE CO-FACTORS · ENZYME ENABLERS</div>
+      <div class="essentials-section__stat"><strong>11</strong> / 16 covered</div>
+    </header>
+    <div class="essentials-section__divider"></div>
+    <div class="essentials-grid--vitamins">
+      <div class="tile--vitamin covered"><span class="tile__code">V·01</span><span class="tile__letter">A</span><span class="tile__name">RETINOL</span></div>
+      <div class="tile--vitamin covered"><span class="tile__code">V·02</span><span class="tile__letter">B1</span><span class="tile__name">THIAMINE</span></div>
+      <div class="tile--vitamin covered"><span class="tile__code">V·03</span><span class="tile__letter">B2</span><span class="tile__name">RIBOFLAVIN</span></div>
+      <div class="tile--vitamin covered"><span class="tile__code">V·04</span><span class="tile__letter">B3</span><span class="tile__name">NIACIN</span></div>
+      <div class="tile--vitamin covered"><span class="tile__code">V·05</span><span class="tile__letter">B5</span><span class="tile__name">PANTO.</span></div>
+      <div class="tile--vitamin covered"><span class="tile__code">V·06</span><span class="tile__letter">B6</span><span class="tile__name">PYRIDOX.</span></div>
+      <div class="tile--vitamin partial"><span class="tile__code">V·07</span><span class="tile__letter">B9</span><span class="tile__name">FOLATE</span></div>
+      <div class="tile--vitamin covered"><span class="tile__code">V·08</span><span class="tile__letter">B12</span><span class="tile__name">COBALAMIN</span></div>
+      <div class="tile--vitamin covered"><span class="tile__code">V·09</span><span class="tile__letter">C</span><span class="tile__name">ASCORBIC</span></div>
+      <div class="tile--vitamin covered"><span class="tile__code">V·10</span><span class="tile__letter">D3</span><span class="tile__name">CHOLECAL.</span></div>
+      <div class="tile--vitamin covered"><span class="tile__code">V·11</span><span class="tile__letter">E</span><span class="tile__name">TOCOPH.</span></div>
+      <div class="tile--vitamin partial"><span class="tile__code">V·12</span><span class="tile__letter">K</span><span class="tile__name">MENAQ.</span></div>
+      <div class="tile--vitamin covered"><span class="tile__code">V·13</span><span class="tile__letter">H</span><span class="tile__name">BIOTIN</span></div>
+      <div class="tile--vitamin trace"><span class="tile__code">V·14</span><span class="tile__letter">Ch</span><span class="tile__name">CHOLINE</span></div>
+      <div class="tile--vitamin trace"><span class="tile__code">V·15</span><span class="tile__letter">In</span><span class="tile__name">INOSITOL</span></div>
+      <div class="tile--vitamin trace"><span class="tile__code">V·16</span><span class="tile__letter">Fl</span><span class="tile__name">FLAVON.</span></div>
+    </div>
+  </section>
+
+  <section class="essentials-section">
+    <header class="essentials-section__head">
+      <div class="essentials-section__num">03</div>
+      <h3 class="essentials-section__title">AMINO ACIDS</h3>
+      <div class="essentials-section__sub">// 12 · PROTEIN BUILDING BLOCKS · ESSENTIAL + CONDITIONAL</div>
+      <div class="essentials-section__stat"><strong>6</strong> / 12 covered</div>
+    </header>
+    <div class="essentials-section__divider"></div>
+    <div class="essentials-grid--aminos">
+      <div class="tile--amino covered"><span class="tile__code">AA·01</span><span class="tile__abbr">Arg</span><span class="tile__name">ARGININE</span></div>
+      <div class="tile--amino trace"><span class="tile__code">AA·02</span><span class="tile__abbr">Cys</span><span class="tile__name">CYSTEINE</span></div>
+      <div class="tile--amino covered"><span class="tile__code">AA·03</span><span class="tile__abbr">His</span><span class="tile__name">HISTIDINE</span></div>
+      <div class="tile--amino trace"><span class="tile__code">AA·04</span><span class="tile__abbr">Ile</span><span class="tile__name">ISOLEUCINE</span></div>
+      <div class="tile--amino trace"><span class="tile__code">AA·05</span><span class="tile__abbr">Leu</span><span class="tile__name">LEUCINE</span></div>
+      <div class="tile--amino covered"><span class="tile__code">AA·06</span><span class="tile__abbr">Lys</span><span class="tile__name">LYSINE</span></div>
+      <div class="tile--amino covered"><span class="tile__code">AA·07</span><span class="tile__abbr">Met</span><span class="tile__name">METHIONINE</span></div>
+      <div class="tile--amino covered"><span class="tile__code">AA·08</span><span class="tile__abbr">Phe</span><span class="tile__name">PHENYLAL.</span></div>
+      <div class="tile--amino trace"><span class="tile__code">AA·09</span><span class="tile__abbr">Thr</span><span class="tile__name">THREONINE</span></div>
+      <div class="tile--amino covered"><span class="tile__code">AA·10</span><span class="tile__abbr">Trp</span><span class="tile__name">TRYPTOPH.</span></div>
+      <div class="tile--amino partial"><span class="tile__code">AA·11</span><span class="tile__abbr">Tyr</span><span class="tile__name">TYROSINE</span></div>
+      <div class="tile--amino trace"><span class="tile__code">AA·12</span><span class="tile__abbr">Val</span><span class="tile__name">VALINE</span></div>
+    </div>
+  </section>
+
+  <section class="essentials-section">
+    <header class="essentials-section__head">
+      <div class="essentials-section__num">04</div>
+      <h3 class="essentials-section__title">FATTY ACIDS</h3>
+      <div class="essentials-section__sub">// 3 · ESSENTIAL LIPIDS · MEMBRANE + SIGNAL</div>
+      <div class="essentials-section__stat"><strong>2</strong> / 3 covered</div>
+    </header>
+    <div class="essentials-section__divider"></div>
+    <div class="essentials-grid--fats">
+      <div class="tile--fat covered"><span class="tile__code">F·01</span><span class="tile__name">OMEGA-3</span><span class="tile__hint">n-3 · ALA · EPA · DHA</span></div>
+      <div class="tile--fat covered"><span class="tile__code">F·02</span><span class="tile__name">OMEGA-6</span><span class="tile__hint">n-6 · linoleic · GLA</span></div>
+      <div class="tile--fat partial"><span class="tile__code">F·03</span><span class="tile__name">OMEGA-9</span><span class="tile__hint">n-9 · oleic · arachidonic</span></div>
+    </div>
+  </section>
+</div>
+
+
+          <div class="legend">
+            <span class="legend__item"><span class="legend__sw covered"></span> COVERED</span>
+            <span class="legend__item"><span class="legend__sw partial"></span> PARTIAL</span>
+            <span class="legend__item"><span class="legend__sw trace"></span> TRACE · VIA AGGREGATE VEHICLE</span>
+            <span class="legend__item"><span class="legend__sw gap"></span> GAP · ATTENTION</span>
+          </div>
+        </section>
+
+
+        <!-- GOALS STRIP -->
+        <section class="goals-strip">
+          <header class="goals-strip__head">
+            <h3 class="goals-strip__title">YOUR GOALS</h3>
+            <span class="goals-strip__count">3 ACTIVE · 14 AVAILABLE</span>
+            <button class="goals-strip__add">+ ADD GOAL</button>
+          </header>
+          <div class="goals-row">
+            <div class="goal-card">
+              <div class="goal-card__kicker">GOAL · 01</div>
+              <div class="goal-card__name">BONE &amp; SKELETAL</div>
+              <div class="goal-card__bar"><div class="goal-card__bar-fill" style="width: 78%"></div></div>
+              <div class="goal-card__progress">78% · 11 / 14 essentials covered</div>
+            </div>
+            <div class="goal-card">
+              <div class="goal-card__kicker">GOAL · 02</div>
+              <div class="goal-card__name">ENERGY &amp; METABOLISM</div>
+              <div class="goal-card__bar"><div class="goal-card__bar-fill" style="width: 62%"></div></div>
+              <div class="goal-card__progress">62% · 8 / 13 essentials covered</div>
+            </div>
+            <div class="goal-card">
+              <div class="goal-card__kicker">GOAL · 03</div>
+              <div class="goal-card__name">COGNITION</div>
+              <div class="goal-card__bar"><div class="goal-card__bar-fill" style="width: 45%"></div></div>
+              <div class="goal-card__progress">45% · 5 / 11 essentials covered</div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- REGIMEN RAIL -->
+      <aside class="regimen-rail">
+        <header class="regimen-rail__head">
+          <div class="regimen-rail__eyebrow"><span class="pulse-dot"></span>CURRENT SLOT · <span class="ds-cipher" data-cipher-set="hexa">02·F71D</span></div>
+          <h3 class="regimen-rail__slot-name">DAILY PROTOCOL</h3>
+          <div class="regimen-rail__slot-meta">
+            <span><strong>9</strong> items</span>
+            <span>·</span>
+            <span>Slot <strong>2 of 5</strong></span>
+            <span>·</span>
+            <span>Synced</span>
+          </div>
+        </header>
+
+        <div class="regimen-rail__list">
+          <div class="regimen-item">
+            <div class="regimen-item__icon">B</div>
+            <div class="regimen-item__body">
+              <p class="regimen-item__name">BTT 2.5 CANISTER</p>
+              <span class="regimen-item__meta">1 SCOOP · DAILY</span>
+            </div>
+            <span class="regimen-item__count">23</span>
+          </div>
+          <div class="regimen-item">
+            <div class="regimen-item__icon">M</div>
+            <div class="regimen-item__body">
+              <p class="regimen-item__name">MAJESTIC EARTH PDM</p>
+              <span class="regimen-item__meta">2 TBSP · DAILY</span>
+            </div>
+            <span class="regimen-item__count">35</span>
+          </div>
+          <div class="regimen-item">
+            <div class="regimen-item__icon">O</div>
+            <div class="regimen-item__body">
+              <p class="regimen-item__name">BEYOND OSTEO FX LIQUID</p>
+              <span class="regimen-item__meta">2 TBSP · DAILY</span>
+            </div>
+            <span class="regimen-item__count">9</span>
+          </div>
+          <div class="regimen-item">
+            <div class="regimen-item__icon">E</div>
+            <div class="regimen-item__body">
+              <p class="regimen-item__name">ULTIMATE EFA PLUS</p>
+              <span class="regimen-item__meta">3 SOFTGELS · DAILY</span>
+            </div>
+            <span class="regimen-item__count">3</span>
+          </div>
+          <div class="regimen-item">
+            <div class="regimen-item__icon">I</div>
+            <div class="regimen-item__body">
+              <p class="regimen-item__name">ULTIMATE IODINE SPRAY</p>
+              <span class="regimen-item__meta">2 SPRAYS · DAILY</span>
+            </div>
+            <span class="regimen-item__count">5</span>
+          </div>
+        </div>
+
+        <div class="regimen-rail__actions">
+          <button class="ds-btn-ghost" style="flex: 1; font-family: var(--ds-font-display-interface);">MANAGE</button>
+          <button class="ds-btn-primary" style="flex: 1; font-family: var(--ds-font-display-interface);">ADD ITEM</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="app-footer">
+    <span class="footer__item"><span class="dot"></span><strong>READY</strong> · all systems</span>
+    <span class="footer__item">EDEN <strong>v1</strong> · sealed <span class="ds-cipher" data-cipher-set="hexa">8E594A01</span></span>
+    <span class="footer__item">MANIFEST <strong>54/59</strong> · 5 known transients</span>
+    <span class="footer__item">LAST ACTION <strong>tile · Lutetium</strong> · <span class="ds-cipher" data-cipher-set="time">0:14</span> ago</span>
+    <span class="footer__spacer"></span>
+    <span class="footer__signature">// RENDERED WITH WALLACH·SYS v3.27</span>
+  </footer>
+
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     CIPHER ANIMATION ENGINE — ultralight, one global setInterval
+     For each .ds-cipher element, rotate ONE character per tick through a
+     character set determined by data-cipher-set attribute.
+
+     Glyph sets:
+       hexa     — 0-9 + A-F
+       alphanum — 0-9 + A-Z
+       numfrac  — 0-9
+       time     — 0-9 + : · D H M S
+
+     Respects prefers-reduced-motion via initial guard.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<script>
+(() => {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) return;
+
+  const SETS = {
+    hexa:     '0123456789ABCDEF',
+    alphanum: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    numfrac:  '0123456789',
+    time:     '0123456789:·DHMS',
+  };
+
+  const elements = Array.from(document.querySelectorAll('.ds-cipher'));
+  // Cache the original textContent + set per element
+  elements.forEach(el => {
+    el.dataset.cipherOriginal = el.textContent;
+    el.dataset.cipherSetResolved = SETS[el.dataset.cipherSet] || SETS.alphanum;
+  });
+
+  // Each tick, for each element: pick a random char position and swap it
+  // for a random glyph from the set. Periodically (every 5 ticks) restore
+  // the original to keep the readout meaningful.
+  let tickCount = 0;
+  setInterval(() => {
+    tickCount++;
+    elements.forEach(el => {
+      const original = el.dataset.cipherOriginal;
+      const set = el.dataset.cipherSetResolved;
+      // Every 5th tick: restore to original (keeps the readout legible)
+      if (tickCount % 5 === 0) {
+        el.textContent = original;
+        return;
+      }
+      // Otherwise: cycle one random position
+      if (original.length === 0) return;
+      const chars = original.split('');
+      const i = Math.floor(Math.random() * chars.length);
+      // Don't replace separators/spaces — only alphanumeric positions
+      if (!/[A-Z0-9·:DHMS]/i.test(chars[i])) return;
+      const newChar = set[Math.floor(Math.random() * set.length)];
+      chars[i] = newChar;
+      el.textContent = chars.join('');
+    });
+  }, 1000);
+})();
+</script>
+
+</body>
+</html>

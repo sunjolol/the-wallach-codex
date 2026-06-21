@@ -1,0 +1,141 @@
+{
+  "aluminum": [
+    {
+      "symptom_claim": "a \u201ccarpal tunnel syndrome,\u201d \u201cTMJ,\u201d and other \u201crepetitive motion\u201d type degeneration.",
+      "book": "DDDL",
+      "element_symbol": "Al"
+    }
+  ],
+  "argon": [
+    {
+      "symptom_claim": "a \u201ccarpal tunnel syndrome,\u201d \u201cTMJ,\u201d and other \u201crepetitive motion\u201d type degeneration.",
+      "book": "DDDL",
+      "element_symbol": "Ar"
+    }
+  ],
+  "cesium": [
+    {
+      "symptom_claim": "Albert\nEnstein (ruptured cerebral aneurysms),\nPaavo Aerola (ruptured cerebral aneu-\nrysms), Conway Twitty (ruptured abdomi-\nnal aorta aneurysm), George and Barbara\nBush ( thyroid disease, white hair) - four to\nsix of every 100 Americans autopsied have\ndied of a ruptured aneurysm, an additional\n40 percent have aneurysms that had not\nyet ruptured.",
+      "book": "RE",
+      "element_symbol": "Cs"
+    },
+    {
+      "symptom_claim": "Albert Einstein (ruptured aneurysm), Paavo Airola (ruptured cerebral aneurysm), Conway Twitty (ruptured abdominal aneurysm), and George and Barbara Bush (thyroid disease and white hair).",
+      "book": "DDDL",
+      "element_symbol": "Cs"
+    }
+  ],
+  "copper": [
+    {
+      "symptom_claim": "Albert\nEnstein (ruptured cerebral aneurysms),\nPaavo Aerola (ruptured cerebral aneu-\nrysms), Conway Twitty (ruptured abdomi-\nnal aorta aneurysm), George and Barbara\nBush ( thyroid disease, white hair) - four to\nsix of every 100 Americans autopsied have\ndied of a ruptured aneurysm, an additional\n40 percent have aneurysms that had not\nyet ruptured.",
+      "book": "RE",
+      "element_symbol": "Cu"
+    },
+    {
+      "symptom_claim": "Albert Einstein (ruptured aneurysm), Paavo Airola (ruptured cerebral aneurysm), Conway Twitty (ruptured abdominal aneurysm), and George and Barbara Bush (thyroid disease and white hair).",
+      "book": "DDDL",
+      "element_symbol": "Cu"
+    }
+  ],
+  "iron": [
+    {
+      "symptom_claim": "listlessness, fatigue, heart palpitations on exertion, reduced cognition, memory deficits, sore tongue, angular stomatitis dysphagia, and hypochromic microcytic anemia.",
+      "book": "DDDL",
+      "element_symbol": "Fe"
+    }
+  ],
+  "molybdenum": [
+    {
+      "symptom_claim": "infertility, poor growth, lowered immune status, edema, and Kwashiorkor (potbellied, thin children of Third World countries).",
+      "book": "DDDL",
+      "element_symbol": "Mo"
+    }
+  ],
+  "neon": [
+    {
+      "symptom_claim": "an increased need for nickel by animals and man.",
+      "book": "DDDL",
+      "element_symbol": "Ne"
+    }
+  ],
+  "nickel": [
+    {
+      "symptom_claim": "an increased need for nickel by animals and man.",
+      "book": "DDDL",
+      "element_symbol": "Ni"
+    }
+  ],
+  "niobium": [
+    {
+      "symptom_claim": "an increased need for nickel by animals and man.",
+      "book": "DDDL",
+      "element_symbol": "Nb"
+    }
+  ],
+  "nitrogen": [
+    {
+      "symptom_claim": "infertility, poor growth, lowered immune status, edema, and Kwashiorkor (potbellied, thin children of Third World countries).",
+      "book": "DDDL",
+      "element_symbol": "N"
+    }
+  ],
+  "osmium": [
+    {
+      "symptom_claim": "the behavior of pica and cribbing and fractures.",
+      "book": "DDDL",
+      "element_symbol": "Os"
+    }
+  ],
+  "phosphorus": [
+    {
+      "symptom_claim": "the behavior of pica and cribbing and fractures.",
+      "book": "DDDL",
+      "element_symbol": "P"
+    }
+  ],
+  "silica": [
+    {
+      "symptom_claim": "dry brittle hair, brittle finger and toe nails,\npoor skin quality, poor calcium utilization\nand arterial disease.",
+      "book": "RE",
+      "element_symbol": "Si"
+    }
+  ],
+  "tungsten": [
+    {
+      "symptom_claim": "a wide range\nof diseases including birth defects (Table\n11- 24) and degenerative diseases of all age\ngroups (Table 11-25).",
+      "book": "RE",
+      "element_symbol": "W"
+    },
+    {
+      "symptom_claim": "a wide range of diseases including congenital birth defects and degenerative diseases of all age groups.",
+      "book": "DDDL",
+      "element_symbol": "W"
+    }
+  ],
+  "vanadium": [
+    {
+      "symptom_claim": "Slow growth\n\nIncreased infant mortality\nInfertility\n\nElevated cholesterol\nElevated triglycerides\nHypoglycemia\nHyperinsulinemia\nDiabetes\n\nCardiovascular disease\nObesity\n\n1.",
+      "book": "RE",
+      "element_symbol": "V"
+    }
+  ],
+  "xenon": [
+    {
+      "symptom_claim": "a wide range\nof diseases including birth defects (Table\n11- 24) and degenerative diseases of all age\ngroups (Table 11-25).",
+      "book": "RE",
+      "element_symbol": "Xe"
+    },
+    {
+      "symptom_claim": "a wide range of diseases including congenital birth defects and degenerative diseases of all age groups.",
+      "book": "DDDL",
+      "element_symbol": "Xe"
+    }
+  ],
+  "zinc": [
+    {
+      "symptom_claim": "a wide range of diseases including congenital birth defects and degenerative diseases of all age groups.",
+      "book": "DDDL",
+      "element_symbol": "Zn"
+    }
+  ]
+}

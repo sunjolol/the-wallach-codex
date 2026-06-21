@@ -1,0 +1,86 @@
+[
+  {
+    "book": "LPD",
+    "nutrient": "and nutritional",
+    "symptom_claim": "birth defects and that good nutritional supplementation and forthright aggressive treatment of food allergies will never be put forth by the \"orthodox\" OB/ GYN or pediatricians.",
+    "page": 89,
+    "char_offset": 168650
+  },
+  {
+    "book": "LPD",
+    "nutrient": "in the veterinary field that a copper",
+    "symptom_claim": "\"kinky wool\" disease.",
+    "page": 160,
+    "char_offset": 402980
+  },
+  {
+    "book": "HK",
+    "nutrient": "the snack food industry knew that mineral",
+    "symptom_claim": "a psychotic eating drive just as the giant tobacco companies knew that cigarettes were addictive.",
+    "page": 193,
+    "char_offset": 353745
+  },
+  {
+    "book": "HK",
+    "nutrient": "the resulting mineral",
+    "symptom_claim": "the munchies, cravings and binge eating; add to these deficiencies a significant increase in carbohydrates in the diet and only one thing can happen - obesity! In 1971, 14.",
+    "page": 249,
+    "char_offset": 451699
+  },
+  {
+    "book": "DDDL",
+    "nutrient": "selenium",
+    "symptom_claim": "infertility, miscarriages, cystic fibrosis of the pancreas, Sudden Infant Death Syndrome in animals, liver cirrhosis, stiff lamb disease, white muscle disease, muscular dystrophy, anemias, encephalomalacia (Alzheimer\u2019s disease), cardiomyopathy heart disease, and mulberry heart disease.",
+    "page": null,
+    "char_offset": 60448
+  },
+  {
+    "book": "DDDL",
+    "nutrient": "classic protein",
+    "symptom_claim": "infertility, poor growth, lowered immune status, edema, and Kwashiorkor (potbellied, thin children of Third World countries).",
+    "page": null,
+    "char_offset": 566110
+  },
+  {
+    "book": "DDDL",
+    "nutrient": "zinc",
+    "symptom_claim": "a wide range of diseases including congenital birth defects and degenerative diseases of all age groups.",
+    "page": null,
+    "char_offset": 608365
+  },
+  {
+    "book": "DDDL",
+    "nutrient": "magnesium",
+    "symptom_claim": "\u201cmalignant calcification\u201d of elastic arteries and are perhaps \u201cthe cause\u201d of arteriosclerosis.",
+    "page": null,
+    "char_offset": 635805
+  },
+  {
+    "book": "DDDL",
+    "nutrient": "in the veterinary field that a copper",
+    "symptom_claim": "\u201ckinky wool\u201d disease.",
+    "page": null,
+    "char_offset": 868179
+  },
+  {
+    "book": "RE",
+    "nutrient": "acids and new proteins classic protein",
+    "symptom_claim": "infertility, poor growth, lowered immune status, edema and Kwashiorkor (potbellied, thin children of third world countries).",
+    "page": 377,
+    "char_offset": 862160
+  },
+  {
+    "book": "RE",
+    "nutrient": "zinc",
+    "symptom_claim": "a wide range of diseases including birth defects (Table 11- 24) and degenerative diseases of all age groups (Table 11-25).",
+    "page": 440,
+    "char_offset": 976937
+  },
+  {
+    "book": "RE",
+    "nutrient": "the average calcium",
+    "symptom_claim": "significant bone loss and is believe to be one of the major causes of bones thinning to the breaking point \u2014 the disease known as osteoporosis, the most common and greatest health threat to women in their later years.",
+    "page": 484,
+    "char_offset": 1099332
+  }
+]

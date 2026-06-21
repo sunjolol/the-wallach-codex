@@ -1,0 +1,52 @@
+{
+  "_purpose": "Round 156 — Cura security sub-check rotation cursor. Records which surfaces Cura has audited recently so each night samples a rotating subset rather than scanning everything every fire. Mirrors tacitus/translation-audit-cursor.json shape (Round 136 precedent).",
+  "_owner": "Cura — updated AFTER each nightly fire as the closing-move-atomic step of the Security sub-check",
+  "schema_version": 1,
+  "rotation_cadence_days": 21,
+  "surfaces": [
+    {
+      "surface": "dashboard.html — input handlers (form fields, search, scanner inputs)",
+      "last_audited_at": null,
+      "lessons_pinned": ["Round 53 (bounded inputs)", "Round 58 (CSP)", "Round 135 security findings 1/2"]
+    },
+    {
+      "surface": "dashboard.html — cart import path (applyImportBundle / parseImportBundle / showImportPreview)",
+      "last_audited_at": null,
+      "lessons_pinned": ["Round 135 security findings 1/2/4", "Round 138 cart-share primitive"]
+    },
+    {
+      "surface": "dashboard.html — window.* exports (mutability + drift risk)",
+      "last_audited_at": null,
+      "lessons_pinned": ["Round 135 security finding 5", "Round 135 cross-IIFE allowlist"]
+    },
+    {
+      "surface": "dashboard.html — innerHTML usage sites",
+      "last_audited_at": null,
+      "lessons_pinned": ["Doctrine §5 (escape by default)", "Round 43 escape-on-embed pattern"]
+    },
+    {
+      "surface": "dashboard.html — CDN-loaded scripts (Tesseract.js + future)",
+      "last_audited_at": null,
+      "lessons_pinned": ["Round 135 security finding 3 (SRI hash)"]
+    },
+    {
+      "surface": "dashboard.html — localStorage write surfaces (schema validation gaps)",
+      "last_audited_at": null,
+      "lessons_pinned": ["Round 54 localStorage migration framework"]
+    },
+    {
+      "surface": "tools/* — safe_write surfaces (input validation on payload)",
+      "last_audited_at": null,
+      "lessons_pinned": ["Round 73 safe_write", "Round 74 cross-platform Python"]
+    },
+    {
+      "surface": "tools/best_practices_refresh.py (new — Round 155) — URL allowlist + response size cap",
+      "last_audited_at": null,
+      "lessons_pinned": ["Round 155 / Saturday Item 5"]
+    }
+  ],
+  "sampling_strategy": "Each night Cura samples 2–3 surfaces from this list that have NOT been audited in the last rotation_cadence_days days, oldest-first. With 8 surfaces and 21-day cadence, each surface gets re-audited ~once every 21 days at the default sampling rate. After auditing a surface, Cura updates its `last_audited_at` field.",
+  "cap_per_night": 1,
+  "cap_override_phrase": "CRIT_OVERRIDE",
+  "_owner_notes": "Surfaces accumulate here as new attack surfaces emerge. User maintains; Cura uses (read+update). Adding a new surface requires the user to populate `lessons_pinned` so Cura has the relevant prior-art context."
+}

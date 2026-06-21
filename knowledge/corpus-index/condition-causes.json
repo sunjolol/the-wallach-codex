@@ -1,0 +1,269 @@
+{
+  "ALZHEIMERS DISEASE": [
+    {
+      "deficiency": "essential fatty acid",
+      "book": "LPD",
+      "page": 95
+    }
+  ],
+  "ANEURYSM": [
+    {
+      "deficiency": "copper",
+      "book": "LPD",
+      "page": 97
+    }
+  ],
+  "ANGINA": [
+    {
+      "deficiency": "zinc",
+      "book": "LPD",
+      "page": 97
+    }
+  ],
+  "ASTHMA": [
+    {
+      "deficiency": "essential fatty acid",
+      "book": "LPD",
+      "page": 99
+    }
+  ],
+  "BLEEDING GUMS": [
+    {
+      "deficiency": "vitamin c",
+      "book": "LPD",
+      "page": 104
+    },
+    {
+      "deficiency": "calcium",
+      "book": "LPD",
+      "page": 104
+    },
+    {
+      "deficiency": "vitamin e",
+      "book": "LPD",
+      "page": 104
+    }
+  ],
+  "BRITTLE NAILS": [
+    {
+      "deficiency": "ala",
+      "book": "LPD",
+      "page": 105
+    }
+  ],
+  "BRUISES": [
+    {
+      "deficiency": "vitamin e",
+      "book": "LPD",
+      "page": 105
+    }
+  ],
+  "CEREBROPALSY": [
+    {
+      "deficiency": "magnesium",
+      "book": "LPD",
+      "page": 112
+    }
+  ],
+  "CERVICAL DYSPLASIA": [
+    {
+      "deficiency": "vitamin a",
+      "book": "LPD",
+      "page": 113
+    }
+  ],
+  "CHALAZION": [
+    {
+      "deficiency": "riboflavin",
+      "book": "LPD",
+      "page": 113
+    }
+  ],
+  "DRY SKIN": [
+    {
+      "deficiency": "essential fatty acid",
+      "book": "LPD",
+      "page": 129
+    }
+  ],
+  "FAILURE TO THRIVE": [
+    {
+      "deficiency": "selenium",
+      "book": "LPD",
+      "page": 134
+    }
+  ],
+  "FIBROCYSTIC BREAST DISEASE": [
+    {
+      "deficiency": "zinc",
+      "book": "LPD",
+      "page": 135
+    },
+    {
+      "deficiency": "calcium",
+      "book": "LPD",
+      "page": 135
+    },
+    {
+      "deficiency": "sulfur",
+      "book": "LPD",
+      "page": 135
+    }
+  ],
+  "GLAUCOMA": [
+    {
+      "deficiency": "iodine",
+      "book": "LPD",
+      "page": 139
+    }
+  ],
+  "HANGNAILS": [
+    {
+      "deficiency": "essential fatty acid",
+      "book": "LPD",
+      "page": 140
+    }
+  ],
+  "HEADACHES (HA)": [
+    {
+      "deficiency": "manganese",
+      "book": "LPD",
+      "page": 140
+    }
+  ],
+  "INTERPRETATION OF\nTHE HAIR ANALYSIS": [
+    {
+      "deficiency": "potassium",
+      "book": "RE",
+      "page": 297
+    }
+  ],
+  "KERATOSIS": [
+    {
+      "deficiency": "vitamin a",
+      "book": "LPD",
+      "page": 152
+    }
+  ],
+  "KERNICTERUS": [
+    {
+      "deficiency": "calcium",
+      "book": "LPD",
+      "page": 152
+    },
+    {
+      "deficiency": "calcium",
+      "book": "LPD",
+      "page": 152
+    }
+  ],
+  "MENKE'S KINKY HAIR SYNDROME": [
+    {
+      "deficiency": "copper",
+      "book": "LPD",
+      "page": 160
+    },
+    {
+      "deficiency": "copper",
+      "book": "LPD",
+      "page": 160
+    }
+  ],
+  "MINERALS": [
+    {
+      "deficiency": "sodium",
+      "book": "RE",
+      "page": 41
+    }
+  ],
+  "MOLLER": [
+    {
+      "deficiency": "calcium",
+      "book": "RE",
+      "page": 483
+    }
+  ],
+  "MONCKEBERG'S ARTERIOSCLEROSIS": [
+    {
+      "deficiency": "zinc",
+      "book": "LPD",
+      "page": 162
+    }
+  ],
+  "MUSCULAR DYSTROPHY (MD)": [
+    {
+      "deficiency": "selenium",
+      "book": "LPD",
+      "page": 164
+    }
+  ],
+  "O73- 1": [
+    {
+      "deficiency": "chromium",
+      "book": "HK",
+      "page": 252
+    }
+  ],
+  "POOR CIRCULATION": [
+    {
+      "deficiency": "vitamin e",
+      "book": "LPD",
+      "page": 173
+    }
+  ],
+  "SOURCE": [
+    {
+      "deficiency": "selenium",
+      "book": "RE",
+      "page": 402
+    },
+    {
+      "deficiency": "selenium",
+      "book": "RE",
+      "page": 402
+    },
+    {
+      "deficiency": "selenium",
+      "book": "RE",
+      "page": 402
+    },
+    {
+      "deficiency": "selenium",
+      "book": "RE",
+      "page": 402
+    },
+    {
+      "deficiency": "selenium",
+      "book": "RE",
+      "page": 402
+    }
+  ],
+  "SWEAT TEST": [
+    {
+      "deficiency": "essential fatty acid",
+      "book": "LPD",
+      "page": 181
+    }
+  ],
+  "TOOTHACHE": [
+    {
+      "deficiency": "calcium",
+      "book": "LPD",
+      "page": 184
+    }
+  ],
+  "VARICOSE VEINS": [
+    {
+      "deficiency": "copper",
+      "book": "LPD",
+      "page": 186
+    }
+  ],
+  "WHITE SPOTS, FINGERNAILS": [
+    {
+      "deficiency": "zinc",
+      "book": "LPD",
+      "page": 186
+    }
+  ]
+}

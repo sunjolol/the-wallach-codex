@@ -1,0 +1,4426 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+ * legacy-dashboard.css — parked legacy styling (Round 1·B extraction)
+ * ───────────────────────────────────────────────────────────────────────────
+ * Lifted VERBATIM from dashboard.html lines 9–4256 on 2026-06-21. Not one
+ * byte was altered. The old teal palette + every workspace-specific rule is
+ * exactly as it was before the extraction.
+ *
+ * MIGRATION STATUS: this file shrinks each subsequent round. As each
+ * workspace's new markup replaces its legacy markup, the corresponding CSS
+ * rules here become dead code and get deleted.
+ *   Round 2 → delete coverage / periodic-table rules (covered by new workspace)
+ *   Round 3 → delete regimen + slot rules
+ *   Round 4 → delete scanner + label rules
+ *   Round 5 → delete journey/knowledge/creators-log rules; this file is deleted
+ *
+ * Loaded AFTER design-system.css so old --teal-* rules still apply to legacy
+ * markup while new --ds-* tokens apply to migrated markup. No collisions:
+ * the variable namespaces don't overlap.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+  :root {
+    --teal-deep: #1a5a52;
+    --teal: #2d8276;
+    --teal-mid: #4ba99a;
+    --teal-bright: #6cc4b5;
+    --teal-soft: #b4ddd5;
+    --teal-mist: #d4ebe5;
+    --teal-veil: #ebf6f3;
+    --teal-tint: #f4faf8;
+
+    --surface: #ffffff;
+    --surface-soft: #f7fbfa;
+    --surface-cool: #eef6f3;
+
+    --ink: #0e3531;
+    --ink-soft: #2d544e;
+    --ink-mute: #5a7a73;
+    --ink-faint: #92aca5;
+
+    --goal-cognition: #1f6f5e;
+    --goal-cognition-bg: #c8e8df;
+    --goal-strength: #a36014;
+    --goal-strength-bg: #f5e3c8;
+
+    --warn: #c8881a;
+    --warn-bg: #fbf2dc;
+    --warn-deep: #8e5e0c;
+    /* Alert (orange) — medium-severity destructive (reversible removes). Sits between warn/yellow (cancel/clear) and crit/red (permanent delete). */
+    --alert: #c95f2a;
+    --alert-bg: #fbe4d2;
+    --alert-deep: #934220;
+    --crit: #a4344a;
+    --crit-bg: #f5d9df;
+    --crit-deep: #771f30;
+    --ok: #2aa14a;       /* true positive green — saturated, not flat teal */
+    --ok-bg: #e1f5e6;    /* bright green tint */
+    --ok-deep: #1a6b30;  /* deep green for chip text */
+
+    /* Background image — swappable via the in-header theme picker; default = background-3 */
+    --bg-image: url("assets/background-3.jpg");
+
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 8px;
+
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+  }
+
+  /* (Theme overhaul reverted — see round-7 in saga/decisions. Eclipse will return as a proper dark mode in a future round
+     once it can be tuned without performance regressions. For now: single Mist look, simple bg picker for backgrounds 3/4/5.) */
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  body {
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    position: relative;
+    overflow-x: hidden;
+    color: var(--ink);
+  }
+
+  /* Wallpaper "border" effect — fixed-position image layer so it stays put as the dashboard scrolls. */
+  .atmosphere {
+    position: fixed;
+    inset: 0;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 1520px;
+    margin: var(--space-8) auto;
+    padding: var(--space-8) var(--space-8) var(--space-10);
+    position: relative;
+    z-index: 1;
+    /* Solid teal-tinted window — matches the slab's bright bottom so the slab seamlessly blends into the page.
+       Was: teal-tint → white at 50%. Now: teal-tint throughout (with a tiny brightening band low for depth). */
+    background: linear-gradient(180deg, var(--teal-tint) 0%, var(--teal-tint) 60%, #f8fcfa 100%);
+    border-radius: 24px;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.5),
+      0 0 0 2px rgba(76, 169, 154, 0.18),
+      0 24px 64px rgba(15, 60, 55, 0.25),
+      0 8px 20px rgba(15, 60, 55, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.95),
+      inset 0 0 0 1px rgba(180, 221, 213, 0.5);
+  }
+
+  /* Outer breathing room — these margins show the wallpaper around the window */
+  @media (max-width: 1660px) {
+    .container { margin: var(--space-6) var(--space-6); }
+  }
+  @media (max-width: 1100px) {
+    .container { margin: var(--space-4) var(--space-4); padding: var(--space-6); }
+  }
+  @media (max-width: 700px) {
+    .container { margin: var(--space-3); padding: var(--space-5) var(--space-4); border-radius: 18px; }
+  }
+
+  /* Header — sunrise-illustration background strip across the top of the window */
+  header {
+    margin-bottom: var(--space-8);
+    padding: var(--space-6) var(--space-6);
+    background-image: url("assets/header-bg.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 16px rgba(15, 60, 55, 0.18);
+    border: 1px solid var(--teal-soft);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    color: var(--ink);
+    position: relative;
+    overflow: hidden;
+    min-height: 90px;
+  }
+
+  /* Subtle cream-tinted veil over the illustration for text readability without washing out the image */
+  header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255, 248, 230, 0.55) 0%, rgba(255, 248, 230, 0.25) 45%, rgba(255, 248, 230, 0.1) 100%);
+    pointer-events: none;
+  }
+
+  .header-left,
+  .header-meta {
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-left h1 {
+    font-size: 28px;
+    margin: 0 0 var(--space-1);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--teal-deep);
+    text-shadow: 0 1px 2px rgba(255, 248, 230, 0.8);
+  }
+
+  .header-left .subtitle {
+    color: var(--ink-soft);
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-shadow: 0 1px 2px rgba(255, 248, 230, 0.6);
+  }
+
+  .header-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    font-size: 12px;
+  }
+
+  .header-meta .pill {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--teal-soft);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+    color: var(--teal-deep);
+  }
+
+  /* Tabs — centered primary navigation (round-7 prominence boost kept; backdrop-filter removed for performance) */
+  nav.tabs {
+    display: flex;
+    gap: 3px;
+    padding: 6px;
+    background: var(--teal-veil);
+    border: 1px solid var(--teal-soft);
+    border-radius: var(--radius-md);
+    margin: 0 auto var(--space-5) auto;
+    overflow-x: auto;
+    width: fit-content;
+    box-shadow: 0 4px 18px rgba(15, 60, 55, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  .tab-btn {
+    background: transparent;
+    border: none;
+    padding: 13px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--teal-deep);
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+  }
+
+  .tab-btn:hover {
+    background: var(--teal-mist);
+  }
+
+  .tab-btn.active {
+    background: var(--teal);
+    color: white;
+    box-shadow: 0 3px 12px rgba(45, 130, 118, 0.42);
+  }
+
+  /* ═══ Tab intro — header banner at the top of Journey / Knowledge subtabs / Regimen / Scanner.
+     Approach: full-width parent with text-align: center is the most robust centering technique here.
+     The earlier flex-column + max-width on the container was failing to center the container itself
+     in some cascade contexts. Now the container is full-width of the .tab-panel and the inline content
+     centers via text-align. The subhead applies its own max-width with margin auto for line-length. */
+  .tab-intro {
+    text-align: center;
+    margin: 0 0 var(--space-7);
+    padding: var(--space-2) 0;
+  }
+  .tab-intro h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--teal-deep);
+    margin: 0 0 10px;
+    letter-spacing: 0.005em;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .tab-intro .subhead {
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--ink-mute);
+    margin: 0 auto;
+    max-width: 720px;
+    text-align: center;
+  }
+  .tab-intro .subhead strong { color: var(--ink); font-weight: 600; }
+  .tab-intro .subhead code {
+    background: var(--teal-veil);
+    padding: 1px 7px;
+    border-radius: 4px;
+    font-size: 13.5px;
+    color: var(--teal-deep);
+  }
+  @media (max-width: 700px) {
+    .tab-intro h2 { font-size: 22px; }
+    .tab-intro .subhead { font-size: 14px; }
+  }
+
+  /* Slab wrapper — bulletproof centering via flex parent (round-9 lesson) */
+  .slab-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto var(--space-6);
+    /* Drop-shadow filter on the wrapper so the cast shadow respects the masked visible shape of the slab.
+       Asymmetric: long offset down-right, short tight contact. No top shadow — light is from below. */
+    filter:
+      drop-shadow(8px 16px 22px rgba(20, 60, 50, 0.32))
+      drop-shadow(2px 5px 7px rgba(20, 60, 50, 0.20));
+  }
+  /* The menu-stack wraps slab + both subnav drawers in a fit-content column. This is what lets
+     the You subnav left-align under the You button: the wrapper hugs the slab's width, so
+     flex-start on a subnav-wrap aligns its left edge with the slab's left edge. */
+  .menu-stack {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+    align-items: stretch;
+  }
+  /* Inside menu-stack: slab-wrap and subnav-wraps have no auto centering, the stack handles centering. */
+  .menu-stack .slab-wrap { margin: 0 0 var(--space-6); }
+  /* When a subnav follows the slab (You + Knowledge tabs), tighten the gap so the subnav
+     reads as a "drawer" extending from beneath the main slab — one composed unit. */
+  .menu-stack .slab-wrap:has(+ .subnav-wrap > nav.subtabs:not(.hidden)) {
+    margin-bottom: 8px;
+  }
+  /* You subnav aligns LEFT (under the You button at the slab's leftmost position) — visually reads
+     as an extension of the You tab. Knowledge subnav stays centered (sits roughly under Knowledge). */
+  .menu-stack .subnav-wrap-you { justify-content: flex-start; }
+  .menu-stack .subnav-wrap-knowledge { justify-content: center; }
+
+  /* ═══ MENU SLAB — unified nav tray in the teal palette family.
+     Asymmetric vertical lighting: top DARK (teal-soft), bottom LIGHT (teal-tint). Light from below.
+     Negative-space technique: top-left of the slab DISSOLVES into the background via diagonal mask-fade,
+     while the bottom-right stays crisp and cast-shadowed. The slab feels like it's emerging FROM the
+     wallpaper rather than sitting ON it. */
+  .menu-slab {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 22px 14px;
+    border-radius: 36px;
+    /* Solid menu background — #dceee8 — a soft teal-cream that holds the buttons.
+       The buttons themselves sit slightly brighter (#f4faf8-ish) so they feel like pressable items
+       on a tray. Mask experiment + tilted gradient both abandoned per Luneth's call. */
+    background: #dceee8;
+    /* Inset bottom rim for subtle depth */
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.55);
+  }
+
+  /* Vertical divider between main nav and feature tabs — a tiny inset line in the teal family,
+     picking up the asymmetric lighting (transparent top → soft teal-deep mid → transparent bottom) */
+  .slab-divider {
+    width: 1px;
+    height: 30px;
+    /* Compensate for the slab gap bump (5→10): subtract 5 from each side so total separator
+       spacing to its neighbors stays 13px (gap + margin) just like before. */
+    margin: 0 3px;
+    background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(45, 130, 118, 0.22) 30%,
+      rgba(45, 130, 118, 0.28) 70%,
+      transparent 100%);
+    box-shadow: 1px 0 0 rgba(255, 255, 255, 0.55);
+  }
+  /* ═══ SLAB BUTTONS — sit ON the menu slab, share the asymmetric lighting language.
+     Idle: flush with slab, very subtle vertical gradient matching the slab's lighting direction.
+     Hover: slight lift (1px) + soft cast shadow appears below (button lifts off the slab).
+     Active: pressed INTO the slab via strong asymmetric inset shadow (light blocked from above by the rim). */
+  .tab-btn.slab-btn {
+    position: relative;
+    padding: 14px 28px;
+    font-size: 17.5px;
+    font-weight: 600;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Sleek/futuristic geometric sans — Space Grotesk has subtle character (the alt-a, the spurless ascenders)
+       that reads as "designed" without being trendy-tech. Falls back gracefully if the @import fails. */
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    white-space: nowrap;
+    /* Darker, denser teal for readability across BOTH the brighter and shaded zones of the tilted gradient */
+    color: #0d3a34;
+    /* Brighter button bg — sits on the teal-cream slab as a defined "tile". Soft cream-white. */
+    background: linear-gradient(180deg, #f4faf8 0%, #ebf5f1 100%);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.85);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.85),
+      0 1px 2px rgba(20, 60, 50, 0.10);
+  }
+  .tab-btn.slab-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(180deg, #ffffff 0%, #f4faf8 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 1),
+      0 6px 14px -3px rgba(20, 60, 50, 0.28),
+      0 2px 4px rgba(20, 60, 50, 0.18);
+  }
+
+  /* ACTIVE — pressed INTO the slab. Lighting inverts: top is in the rim's shadow, bottom is the well floor.
+     Strong asymmetric inset shadow from top, like a keyboard key pressed down. Teal family. */
+  .tab-btn.slab-btn.active {
+    background: linear-gradient(180deg,
+      #4ba99a 0%,        /* teal-mid — top, in the rim's shadow */
+      #59b7a8 35%,
+      #6cc4b5 75%,
+      #7cd0c1 100%       /* teal-mid light — bottom, well floor */
+    );
+    color: white;
+    text-shadow: 0 1px 0 rgba(15, 60, 55, 0.40);
+    box-shadow:
+      inset 0 4px 8px rgba(15, 60, 55, 0.42),
+      inset 0 1px 2px rgba(15, 60, 55, 0.32),
+      inset 0 -1px 2px rgba(255, 255, 255, 0.30),
+      0 0 0 transparent;
+    transform: translateY(0);
+  }
+  .tab-btn.slab-btn.active:hover { transform: translateY(0); }
+
+  /* FEATURE BUTTONS — same slab-button form language, distinct hue families.
+     Regimen = soothing blue (sky/denim). Scanner = sunset orange matching the banner sun. */
+
+  /* Regimen — soothing sky/denim blue. Calm, distinct from teal, distinct from any action-tier color. */
+  .tab-btn.slab-btn.feature-regimen {
+    color: #2f5d8a;
+    background: linear-gradient(180deg,
+      rgba(125, 175, 215, 0.30) 0%,
+      rgba(145, 195, 230, 0.25) 50%,
+      rgba(165, 210, 240, 0.35) 100%);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+  }
+  .tab-btn.slab-btn.feature-regimen:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(180deg,
+      rgba(125, 175, 215, 0.45) 0%,
+      rgba(145, 195, 230, 0.40) 50%,
+      rgba(165, 210, 240, 0.55) 100%);
+    box-shadow:
+      0 4px 8px -2px rgba(50, 90, 130, 0.25),
+      0 1px 2px rgba(50, 90, 130, 0.18);
+  }
+  .tab-btn.slab-btn.feature-regimen.active {
+    background: linear-gradient(180deg,
+      #5e90c0 0%,
+      #6fa0cd 35%,
+      #80b0d8 75%,
+      #8cbce0 100%
+    );
+    color: white;
+    text-shadow: 0 1px 0 rgba(30, 60, 100, 0.40);
+    box-shadow:
+      inset 0 4px 8px rgba(30, 60, 100, 0.42),
+      inset 0 1px 2px rgba(30, 60, 100, 0.32),
+      inset 0 -1px 2px rgba(255, 255, 255, 0.32);
+    transform: translateY(0);
+  }
+
+  /* Scanner — sunset orange. IDLE state pre-lifted (matches what used to be hover) so it pulls focus
+     visually as the "primary action" button. Hover goes further (stronger lift + glow). Active = pressed-in. */
+  .tab-btn.slab-btn.feature-scanner {
+    color: #8a4818;
+    transform: translateY(-1px);
+    background: linear-gradient(180deg,
+      rgba(245, 175, 105, 0.65) 0%,
+      rgba(250, 195, 130, 0.60) 50%,
+      rgba(253, 210, 155, 0.75) 100%);
+    text-shadow: 0 1px 0 rgba(255, 245, 230, 0.75);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 245, 220, 0.55),
+      0 5px 12px -2px rgba(160, 90, 30, 0.32),
+      0 2px 4px rgba(160, 90, 30, 0.20);
+  }
+  .tab-btn.slab-btn.feature-scanner:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(180deg,
+      rgba(248, 185, 115, 0.85) 0%,
+      rgba(252, 200, 140, 0.80) 50%,
+      rgba(255, 215, 165, 0.92) 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 250, 230, 0.70),
+      0 9px 18px -3px rgba(160, 90, 30, 0.40),
+      0 3px 6px rgba(160, 90, 30, 0.25);
+  }
+  .tab-btn.slab-btn.feature-scanner.active {
+    background: linear-gradient(180deg,
+      #e89c5f 0%,
+      #f0a96e 35%,
+      #f5b87f 75%,
+      #f8c389 100%
+    );
+    color: white;
+    text-shadow: 0 1px 0 rgba(110, 55, 15, 0.45);
+    box-shadow:
+      inset 0 4px 9px rgba(110, 55, 15, 0.48),
+      inset 0 1px 2px rgba(110, 55, 15, 0.36),
+      inset 0 -1px 2px rgba(255, 245, 220, 0.35);
+    transform: translateY(0);
+  }
+
+  @media (max-width: 700px) {
+    .menu-slab { padding: 10px 14px; gap: 7px; }
+    .tab-btn.slab-btn { padding: 10px 16px; font-size: 15.5px; }
+    .slab-divider { height: 22px; margin: 0 1px; }
+  }
+
+  .tab-panel { display: none; animation: fadeIn 0.3s ease; }
+  .tab-panel.active { display: block; }
+
+  /* Subnav wrapper — flex-centers the pill regardless of context (margin: 0 auto + width: fit-content
+     wasn't reliably centering across the cascade; wrapper-flex is bulletproof). Hidden state on the nav
+     inside leaves the wrapper as a zero-height flex container — no layout impact. */
+  .subnav-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--space-8);
+  }
+  /* When the nav inside is .hidden, collapse the wrapper too so it doesn't take vertical space */
+  .subnav-wrap:has(> nav.subtabs.hidden) { display: none; }
+
+  /* Subtabs — the "drawer" that extends from beneath the main slab when a sub-grouped tab
+     (You, Knowledge) is active. Matches the slab's #dceee8 palette + shadow language so the
+     two elements read as ONE composed unit, not two floating pills. Buttons inside follow
+     the same cream-white tile family as the main slab buttons — same design DNA, smaller scope. */
+  nav.subtabs {
+    display: flex;
+    gap: 6px;
+    background: #dceee8;
+    padding: 8px 14px;
+    border-radius: 28px;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.55),
+      inset 0 -1px 0 rgba(15, 60, 55, 0.06),
+      0 5px 14px -3px rgba(15, 60, 55, 0.20),
+      0 2px 5px rgba(15, 60, 55, 0.10);
+  }
+  nav.subtabs.hidden { display: none; }
+  .subtab-btn {
+    background: linear-gradient(180deg, #f4faf8 0%, #ebf5f1 100%);
+    border: none;
+    padding: 10px 24px;
+    font-size: 15.5px;
+    font-weight: 600;
+    color: #0d3a34;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.85);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.85),
+      0 1px 2px rgba(20, 60, 50, 0.10);
+  }
+  .subtab-btn:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(180deg, #ffffff 0%, #f4faf8 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 1),
+      0 4px 10px -2px rgba(20, 60, 50, 0.22),
+      0 1px 2px rgba(20, 60, 50, 0.12);
+  }
+  .subtab-btn.active {
+    background: linear-gradient(180deg, #4ba99a 0%, #59b7a8 35%, #6cc4b5 75%, #7cd0c1 100%);
+    color: white;
+    text-shadow: 0 1px 0 rgba(15, 60, 55, 0.40);
+    box-shadow:
+      inset 0 4px 8px rgba(15, 60, 55, 0.42),
+      inset 0 1px 2px rgba(15, 60, 55, 0.32),
+      inset 0 -1px 2px rgba(255, 255, 255, 0.30);
+    transform: translateY(0);
+  }
+  .subtab-btn.active:hover { transform: translateY(0); }
+
+  /* Edit-mode banner for Label Check (engaged when arriving via Regimen Full edit).
+     Pass A.1: position:sticky so Save/Cancel stay visible while user scrolls through the
+     nutrient table. z-index lifts above the form fields. Drop shadow appears once it
+     detaches from the top so the user perceives the float. */
+  .lc-edit-banner {
+    background: linear-gradient(135deg, rgba(255, 215, 130, 0.28), rgba(255, 220, 175, 0.20));
+    border: 1px solid rgba(220, 160, 80, 0.45);
+    border-left: 4px solid rgba(200, 130, 50, 0.85);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 0 0 var(--space-6) 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 13.5px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
+    backdrop-filter: blur(6px);
+  }
+  /* Pass A.1: parallel save/cancel bar at the bottom of the form. Mirrors the banner
+     so the user doesn't have to scroll back up after editing nutrient rows. Hidden by
+     default; shown only when in edit mode via lcHandleEditTarget. */
+  .lc-edit-bottom-bar {
+    background: linear-gradient(135deg, rgba(255, 215, 130, 0.28), rgba(255, 220, 175, 0.20));
+    border: 1px solid rgba(220, 160, 80, 0.45);
+    border-left: 4px solid rgba(200, 130, 50, 0.85);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 14px 0 4px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 13.5px;
+  }
+  .lc-edit-bottom-bar[hidden] { display: none; }
+  .lc-edit-bottom-bar .lc-edit-bottom-label { color: var(--ink); }
+  .lc-edit-bottom-bar .lc-edit-bottom-label strong { font-weight: 700; }
+  .lc-edit-bottom-bar .lc-edit-bottom-actions { display: flex; gap: 8px; align-items: center; }
+  .lc-edit-bottom-bar button {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .lc-edit-bottom-bar .lc-edit-bottom-cancel {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(160, 110, 50, 0.4);
+    color: rgba(110, 70, 20, 1);
+  }
+  .lc-edit-bottom-bar .lc-edit-bottom-cancel:hover { background: rgba(255, 255, 255, 0.95); }
+  .lc-edit-bottom-bar .lc-edit-bottom-save {
+    background: rgba(45, 130, 118, 0.95);
+    color: white;
+    border: 1px solid rgba(35, 110, 100, 1);
+  }
+  .lc-edit-bottom-bar .lc-edit-bottom-save:hover { background: rgba(35, 110, 100, 1); }
+  .lc-edit-banner.hidden { display: none; }
+  .lc-edit-banner .lc-edit-label { color: var(--ink); }
+  .lc-edit-banner .lc-edit-label strong { font-weight: 700; }
+  .lc-edit-banner .lc-edit-hint {
+    margin-top: 6px;
+    font-size: 12.5px;
+    color: rgba(110, 70, 20, 0.95);
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.45);
+    padding: 6px 10px;
+    border-radius: 4px;
+    border-left: 3px solid rgba(200, 130, 50, 0.6);
+  }
+  .lc-edit-banner .lc-edit-back {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(160, 110, 50, 0.4);
+    color: rgba(110, 70, 20, 1);
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    white-space: nowrap;
+  }
+  .lc-edit-banner .lc-edit-back:hover { background: rgba(255, 255, 255, 0.95); }
+  .lc-edit-banner .lc-edit-actions { display: flex; gap: 8px; align-items: center; }
+  .lc-edit-banner .lc-edit-save {
+    background: rgba(45, 130, 118, 0.92);
+    border: 1px solid rgba(45, 130, 118, 1);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 5px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    white-space: nowrap;
+  }
+  .lc-edit-banner .lc-edit-save:hover { background: rgba(35, 110, 100, 1); }
+  .lc-edit-banner .lc-edit-save:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  /* Background picker — small inline cluster in the header for swapping between background-3/4/5. */
+  .bg-picker {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 5px 3px 9px;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(180, 215, 207, 0.55);
+    border-radius: 14px;
+  }
+  .bg-picker-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--teal-deep);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-right: 2px;
+  }
+  .bg-swatch {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background: var(--surface);
+    color: var(--teal-deep);
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: inherit;
+    padding: 0;
+    line-height: 1;
+  }
+  .bg-swatch:hover { background: var(--teal-mist); border-color: var(--teal-soft); }
+  .bg-swatch.active {
+    background: var(--teal);
+    color: white;
+    border-color: var(--teal-deep);
+    box-shadow: 0 1px 4px rgba(45, 130, 118, 0.4);
+  }
+
+  /* Goal evidence — surfaces WHAT triggered each goal match and WHY per Wallach.
+     Compact grid that wraps horizontally; cards size to content. Threshold-filtered so only
+     meaningful matches surface. */
+  .lc-section-hint {
+    font-size: 12.5px;
+    font-weight: 400;
+    color: var(--ink-mute);
+    font-style: italic;
+    margin-left: 6px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  #lc-goal-evidence {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 8px;
+    margin-bottom: var(--space-5);
+  }
+  #lc-goal-evidence .goal-row {
+    background: var(--ok-bg);
+    border: 1px solid rgba(42, 161, 74, 0.32);
+    border-left: 4px solid var(--ok);
+    border-radius: 5px;
+    padding: 10px 13px;
+    font-size: 13.5px;
+  }
+  #lc-goal-evidence .goal-name {
+    font-weight: 700;
+    color: var(--ok-deep);
+    font-size: 14.5px;
+    margin-bottom: 6px;
+    letter-spacing: 0.01em;
+  }
+  #lc-goal-evidence .goal-triggers {
+    color: var(--ink-mute);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  #lc-goal-evidence .trigger-chip {
+    display: inline-block;
+    background: var(--surface);
+    border: 1px solid var(--teal-soft);
+    border-radius: 10px;
+    padding: 2px 9px;
+    font-size: 12.5px;
+    color: var(--teal-deep);
+    line-height: 1.5;
+  }
+  #lc-goal-evidence .trigger-chip.kw { font-style: italic; }
+  #lc-goal-evidence .trigger-chip.pct {
+    background: var(--teal-mist);
+    border-color: var(--teal-mid);
+    font-weight: 600;
+  }
+  #lc-goal-evidence .nut-why-list {
+    margin-top: 4px;
+    padding-top: 5px;
+    border-top: 1px dashed var(--teal-soft);
+  }
+  #lc-goal-evidence .nut-why {
+    font-size: 13px;
+    padding: 3px 0;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  #lc-goal-evidence .nut-why strong {
+    color: var(--teal-deep);
+    font-weight: 700;
+    margin-right: 3px;
+  }
+  #lc-goal-evidence .nut-why .why-text {
+    color: var(--ink-mute);
+    font-style: italic;
+  }
+  #lc-goal-evidence .goal-empty {
+    color: var(--ink-mute);
+    font-style: italic;
+    font-size: 13.5px;
+    padding: 10px 14px;
+    background: var(--teal-veil);
+    border: 1px dashed var(--teal-soft);
+    border-radius: 5px;
+    grid-column: 1 / -1;
+    line-height: 1.55;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Typography */
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: var(--space-8) 0 var(--space-4);
+    letter-spacing: -0.01em;
+    color: var(--teal-deep);
+  }
+
+  h2:first-child { margin-top: 0; }
+
+  h3 {
+    font-size: 12px;
+    font-weight: 700;
+    margin: var(--space-6) 0 var(--space-3);
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* Cards — solid white with teal accents */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--teal-soft);
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 12px rgba(15, 60, 55, 0.06);
+    padding: var(--space-5);
+    margin-bottom: var(--space-4);
+  }
+
+  .card-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+
+  .card-row .goal-card { margin-bottom: 0; }
+
+  /* Goal cards — teal gradient backgrounds, each distinct */
+  .goal-card {
+    padding: var(--space-5);
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: linear-gradient(160deg, var(--teal-veil) 0%, var(--surface) 100%);
+    border: 1px solid var(--teal-soft);
+    box-shadow: 0 2px 12px rgba(15, 60, 55, 0.06);
+  }
+
+  .goal-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--teal-deep), var(--teal-mid));
+  }
+
+  .goal-card .label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--teal-deep);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-2);
+  }
+
+  .goal-card .text {
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: var(--space-3);
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  .goal-card .anchor {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  .goal-card .anchor strong { color: var(--teal-deep); }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  th {
+    text-align: left;
+    font-weight: 700;
+    padding: var(--space-3) var(--space-3);
+    border-bottom: 2px solid var(--teal-soft);
+    color: var(--teal-deep);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--teal-tint);
+  }
+
+  td {
+    padding: var(--space-3);
+    border-bottom: 1px solid var(--teal-veil);
+    vertical-align: top;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  .mono {
+    font-family: ui-monospace, "SF Mono", Monaco, "Cascadia Code", monospace;
+    font-size: 13px;
+  }
+
+  /* Badges */
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .badge-ok { background: #d4ebe2; color: #1a5a4a; border: 1px solid #98c9b8; }
+  .badge-warn { background: #fbf2dc; color: #8a5a14; border: 1px solid #e0c280; }
+  .badge-crit { background: #f5d9df; color: #8a2a38; border: 1px solid #d9a0ad; }
+  .badge-mute { background: var(--teal-mist); color: var(--teal-deep); border: 1px solid var(--teal-soft); }
+
+  /* Notes */
+  .note, .infonote, .critnote {
+    padding: var(--space-3) var(--space-4);
+    font-size: 13.5px;
+    color: var(--ink);
+    margin: var(--space-4) 0;
+    border-radius: var(--radius-sm);
+    border-left-width: 4px;
+    border-left-style: solid;
+  }
+  .note { border-left-color: #c8881a; background: #fbf2dc; }
+  .infonote { border-left-color: var(--teal); background: var(--teal-veil); }
+  .critnote { border-left-color: #a4344a; background: #f5d9df; }
+
+  /* Timeline */
+  .timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .timeline li {
+    padding: var(--space-4) 0 var(--space-4) var(--space-6);
+    border-left: 2px solid var(--teal-soft);
+    position: relative;
+    margin-left: var(--space-2);
+  }
+
+  .timeline li::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--teal);
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px var(--teal-mist);
+    position: absolute;
+    left: -7px;
+    top: 22px;
+  }
+
+  .timeline .date {
+    font-size: 11px;
+    color: var(--ink-mute);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-1);
+  }
+
+  .timeline .title {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 var(--space-2);
+    color: var(--ink);
+  }
+
+  .timeline .body {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* Gaps controls */
+  .gap-controls {
+    display: flex;
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .search-wrap {
+    flex: 1;
+    min-width: 240px;
+    position: relative;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 10px 14px 10px 38px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 1px solid var(--teal-soft);
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .search-input:focus {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px var(--teal-mist);
+  }
+
+  .search-input::placeholder { color: var(--ink-faint); }
+
+  .search-wrap::before {
+    content: "🔍";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .filter-group {
+    display: flex;
+    gap: var(--space-1);
+    background: var(--teal-veil);
+    border: 1px solid var(--teal-soft);
+    border-radius: var(--radius-sm);
+    padding: 3px;
+  }
+
+  .filter-group input[type=radio] { display: none; }
+
+  .filter-group label {
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--teal-deep);
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+
+  .filter-group input[type=radio]:checked + label {
+    background: var(--teal);
+    color: white;
+    box-shadow: 0 1px 4px rgba(45, 130, 118, 0.3);
+  }
+
+  .filter-group label:hover {
+    background: var(--teal-mist);
+  }
+
+  .filter-group input[type=radio]:checked + label:hover {
+    background: var(--teal);
+    color: white;
+  }
+
+  /* Gap table */
+  .gap-table {
+    background: var(--surface);
+    border: 1px solid var(--teal-soft);
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 12px rgba(15, 60, 55, 0.06);
+    overflow: hidden;
+    margin-bottom: var(--space-4);
+  }
+
+  .gap-table table { background: transparent; }
+
+  .gap-table th {
+    background: var(--teal-tint);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  .gap-table td .nutrient-name {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .gap-table td.what-you-get,
+  .gap-table td.recommends,
+  .gap-table td.needed {
+    font-family: ui-monospace, "SF Mono", Monaco, monospace;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  .gap-table td.recommends { color: var(--teal-deep); font-weight: 500; }
+
+  .gap-table td.benefits {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  .benefit-cognition {
+    color: var(--goal-cognition);
+    font-weight: 700;
+    background: var(--goal-cognition-bg);
+    padding: 1px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(45, 122, 107, 0.15);
+  }
+
+  .benefit-strength {
+    color: var(--goal-strength);
+    font-weight: 700;
+    background: var(--goal-strength-bg);
+    padding: 1px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(184, 116, 26, 0.18);
+  }
+
+  /* Legend */
+  .legend {
+    display: flex;
+    gap: var(--space-4);
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin: var(--space-3) 0 var(--space-5);
+    flex-wrap: wrap;
+    padding: var(--space-3) var(--space-4);
+    background: var(--teal-veil);
+    border: 1px solid var(--teal-soft);
+    border-radius: var(--radius-sm);
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Identity card inline */
+  .identity-line {
+    padding: var(--space-3) var(--space-4);
+    background: var(--surface);
+    border: 1px solid var(--teal-soft);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .identity-line strong { color: var(--teal-deep); margin-right: 4px; }
+
+  /* Checklist */
+  ul.checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul.checklist li {
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--teal-veil);
+    display: flex;
+    gap: var(--space-3);
+    align-items: start;
+    font-size: 14px;
+  }
+
+  ul.checklist li:last-child { border-bottom: none; }
+
+  ul.checklist .marker {
+    color: var(--teal);
+    font-weight: bold;
+    flex-shrink: 0;
+    font-size: 16px;
+    margin-top: -1px;
+  }
+
+  /* Active recommendations — elevated treatment per user calibration (2026-06-13).
+     Larger card, teal-toned background, accent left border, larger list text. */
+  .recommendations-section h2 {
+    display: inline-block;
+    background: var(--teal);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 0;
+    font-size: 21px;
+    letter-spacing: 0.01em;
+    box-shadow: 0 2px 6px rgba(45, 130, 118, 0.25);
+  }
+  .recommendations-card {
+    background: linear-gradient(180deg, var(--teal-veil) 0%, var(--surface) 60%);
+    border: 2px solid var(--teal);
+    border-radius: 0 var(--radius-md) var(--radius-md) var(--radius-md);
+    padding: var(--space-6);
+    margin-bottom: var(--space-5);
+    box-shadow: 0 3px 14px rgba(45, 130, 118, 0.12);
+    position: relative;
+  }
+  .recommendations-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 4px;
+    background: var(--teal);
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+  }
+  .recommendations-card ul.checklist li {
+    font-size: 15.5px;
+    line-height: 1.55;
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--teal-soft);
+  }
+  .recommendations-card ul.checklist li:last-child { border-bottom: none; }
+  .recommendations-card ul.checklist .marker {
+    color: var(--teal-deep);
+    font-size: 18px;
+  }
+  .recommendations-card ul.checklist li strong {
+    color: var(--teal-deep);
+    font-weight: 700;
+  }
+  @media (max-width: 720px) {
+    .recommendations-section h2 { font-size: 18px; padding: 5px 12px; }
+    .recommendations-card { padding: var(--space-4); }
+    .recommendations-card ul.checklist li { font-size: 14px; }
+  }
+
+  /* Footer */
+  footer {
+    margin-top: var(--space-10);
+    padding: var(--space-6);
+    background: var(--teal-veil);
+    border: 1px solid var(--teal-soft);
+    border-radius: var(--radius-md);
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  footer code {
+    background: var(--surface);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    color: var(--teal-deep);
+    border: 1px solid var(--teal-soft);
+  }
+
+  /* Visible-gap card */
+  .gap-fields-list {
+    margin: var(--space-2) 0 0;
+    padding-left: var(--space-5);
+    font-size: 13.5px;
+  }
+
+  .gap-fields-list li {
+    margin-bottom: var(--space-1);
+    color: var(--ink-soft);
+  }
+
+  .gap-fields-list li strong {
+    color: var(--ink);
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    .container { padding: var(--space-5) var(--space-4); }
+    header { padding: var(--space-4); }
+    .header-left h1 { font-size: 22px; }
+    h2 { font-size: 17px; }
+    .gap-table { font-size: 13px; }
+    .gap-table td, .gap-table th { padding: var(--space-2); }
+    .gap-table td.benefits { font-size: 12.5px; }
+    table { font-size: 13px; }
+    nav.tabs { width: 100%; }
+    .tab-btn { flex: 1; padding: 9px 8px; font-size: 13px; }
+    .subnav-wrap { width: 100%; }
+    nav.subtabs { width: 100%; padding: 7px 10px; }
+    .subtab-btn { flex: 1; padding: 9px 12px; font-size: 14px; }
+    .lc-edit-banner { flex-direction: column; align-items: stretch; }
+    .lc-edit-banner .lc-edit-back { align-self: flex-end; }
+  }
+
+
+  /* ═══ THE 90 ESSENTIALS PERIODIC TABLE ═══
+     Bird's-eye view of every Wallach essential, color-coded against the user's current stack.
+     Replaces the old radio-filter + dense-table-first layout that buried the high-level signal.
+     The grid is generated by JS from the .gap-row data in the active scenario panel. */
+  .essentials-hero { margin-bottom: var(--space-5); }
+  .essentials-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--teal-deep);
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  }
+  .essentials-subhead {
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    max-width: 760px;
+    margin: 0 auto;
+    line-height: 1.55;
+  }
+
+  /* Legend — compact horizontal row above the grid */
+  .essentials-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    margin: 0 0 var(--space-5);
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    border: 1px solid rgba(180, 215, 207, 0.4);
+  }
+  .el-item { display: inline-flex; align-items: center; gap: 6px; font-weight: 500; }
+  .el-dot { width: 11px; height: 11px; border-radius: 999px; border: 1px solid rgba(0,0,0,0.12); flex-shrink: 0; }
+  .el-gap .el-dot { background: #e85a5a; }
+  .el-warn .el-dot { background: #f0b840; }
+  .el-ok .el-dot { background: #2aa14a; }
+  .el-mute .el-dot { background: #c0c0c0; }
+  .el-item.el-leaf { color: #1e8a4f; font-weight: 600; }
+  .el-item.el-leaf .el-leaf-mark {
+    font-size: 15px;
+    color: #1e8a4f;
+    line-height: 1;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.7);
+  }
+  .el-item.el-star { color: #8a5e0a; font-weight: 600; }
+  .el-item.el-star .el-star-mark {
+    font-size: 13px;
+    color: #d4a017;
+    line-height: 1;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.7);
+  }
+
+
+  /* Grid host — JS builds the category groups inside */
+  .essentials-grid-host {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: var(--space-5);
+  }
+  .essentials-category {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .essentials-category-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-mute);
+    padding-left: 4px;
+  }
+  .essentials-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(78px, 1fr));
+    gap: 6px;
+  }
+  /* Individual tile — small, color-coded, clickable */
+  .essential-tile {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.18s, outline 0.1s;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    text-align: center;
+    user-select: none;
+    position: relative;
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  }
+  .essential-tile:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px -2px rgba(15, 60, 55, 0.22), 0 2px 4px rgba(15, 60, 55, 0.10);
+    z-index: 2;
+  }
+  .essential-tile.gap   { background: #fde2e2; border-color: #e09898; color: #7a1818; }
+  .essential-tile.warn  { background: #fdefd1; border-color: #d9b46c; color: #6a4a10; }
+  .essential-tile.diet  { background: #e0eef4; border-color: #92b6c2; color: #2a4a55; }
+  .essential-tile.ok    { background: #e1f5e6; border-color: #2aa14a; color: #155a26; }
+  .essential-tile.mute  { background: #ededed; border-color: #b8b8b8; color: #555; }
+
+  .essential-tile.selected {
+    outline: 3px solid var(--teal-deep);
+    outline-offset: 2px;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px -2px rgba(15, 60, 55, 0.30);
+  }
+
+  /* Hover preview tooltip — floating card that follows cursor with 180ms delay before showing.
+     Edge-detection in JS flips placement when near viewport edges. pointer-events: none keeps the
+     tooltip from interfering with the tile's own hover/click. */
+  .essential-tile-tooltip {
+    position: fixed;
+    background: #ffffff;
+    border: 1px solid rgba(76, 169, 154, 0.40);
+    border-radius: 11px;
+    padding: 14px 16px 0;
+    box-shadow: 0 12px 28px -4px rgba(15, 60, 55, 0.32), 0 4px 9px rgba(15, 60, 55, 0.18);
+    font-size: 12.5px;
+    width: 320px;
+    max-width: 340px;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    line-height: 1.4;
+    overflow: hidden;
+  }
+  .essential-tile-tooltip.visible { opacity: 1; transform: translateY(0); }
+  .tooltip-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--teal-deep);
+    margin-bottom: 6px;
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    line-height: 1.2;
+  }
+  .tooltip-status {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 8px;
+  }
+  .tooltip-status.gap   { background: #fde2e2; color: #7a1818; }
+  .tooltip-status.warn  { background: #fdefd1; color: #6a4a10; }
+  .tooltip-status.diet  { background: #e0eef4; color: #2a4a55; }
+  .tooltip-status.ok    { background: #e1f5e6; color: #155a26; }
+  .tooltip-status.mute  { background: #ededed; color: #555; }
+  .tooltip-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 3px;
+  }
+  .tooltip-row .tt-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--ink-mute);
+  }
+  .tooltip-row .tt-value {
+    font-weight: 700;
+    color: var(--teal-deep);
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  }
+  .tooltip-bar {
+    height: 6px;
+    background: #ececec;
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 6px 0 8px;
+  }
+  .tooltip-bar-fill { height: 100%; border-radius: 999px; }
+  .tooltip-bar-fill.gap   { background: #e85a5a; }
+  .tooltip-bar-fill.warn  { background: #f0b840; }
+  .tooltip-bar-fill.diet  { background: #8caebf; }
+  .tooltip-bar-fill.ok    { background: #2aa14a; }
+  .tooltip-bar-fill.mute  { background: #c0c0c0; }
+  .tooltip-sources-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--ink-mute);
+    margin-top: 4px;
+    margin-bottom: 2px;
+  }
+  .tooltip-sources {
+    font-size: 11.5px;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+  .tooltip-sources.tt-empty {
+    color: var(--ink-mute);
+    font-style: italic;
+  }
+  .tooltip-note {
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin: 4px 0 8px;
+    line-height: 1.4;
+  }
+  /* Pass 7 polish — dietary-default callout inside tooltip */
+  .tooltip-dietary-row {
+    background: rgba(30, 138, 79, 0.12);
+    border: 1px solid rgba(30, 138, 79, 0.32);
+    border-left: 3px solid #1e8a4f;
+    border-radius: 5px;
+    padding: 7px 10px;
+    margin: 5px 0 6px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .tooltip-dietary-row .tooltip-dietary-leaf {
+    color: #1e8a4f;
+    font-size: 19px;
+    line-height: 1;
+    flex-shrink: 0;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
+  }
+  .tooltip-dietary-row .tooltip-dietary-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+  }
+  .tooltip-dietary-row .tooltip-dietary-label {
+    color: #1e6c3e;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 9.5px;
+  }
+  .tooltip-dietary-row .tooltip-dietary-value {
+    color: #154425;
+    font-weight: 600;
+    font-size: 12.5px;
+    line-height: 1.35;
+  }
+  .tooltip-dietary-note {
+    font-size: 10.5px;
+    color: var(--ink-mute);
+    font-style: italic;
+    line-height: 1.4;
+    margin: 0 0 7px;
+  }
+  .tooltip-dietary-row.tooltip-dietary-compact {
+    margin-top: 6px;
+    padding: 5px 8px;
+    gap: 6px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #d8eddb 100%);
+    border-radius: 5px;
+    border: 1px solid rgba(30,138,79,0.18);
+    align-items: center;
+    font-size: 11px;
+  }
+  .tooltip-dietary-compact .tooltip-dietary-leaf { font-size: 14px; color: #1e8a4f; }
+  .tooltip-dietary-compact-label { color: #234d33; font-weight: 600; }
+  .tooltip-dietary-compact-value { color: #154425; font-weight: 700; }
+  .tooltip-hint {
+    font-size: 10px;
+    color: var(--ink-mute);
+    margin-top: 7px;
+    text-align: right;
+    font-style: italic;
+    border-top: 1px solid rgba(180, 215, 207, 0.4);
+    padding-top: 5px;
+  }
+
+  /* Status text under bar — matches detail panel's status-line logic */
+  .tooltip-status-text {
+    font-size: 11px;
+    margin-top: -4px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-align: right;
+  }
+  .tooltip-status-text.gap   { color: #7a1818; }
+  .tooltip-status-text.warn  { color: #6a4a10; }
+  .tooltip-status-text.diet  { color: #2a4a55; }
+  .tooltip-status-text.ok    { color: #155a26; font-weight: 600; }
+  .tooltip-status-text.mute  { color: #555; }
+
+  /* Top Wallach benefits — small gray pills, max 3 */
+  .tooltip-benefits {
+    display: flex; flex-wrap: wrap; gap: 4px;
+    margin-top: 2px;
+    margin-bottom: 6px;
+  }
+  .tooltip-benefit-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #f0f0f0;
+    color: #5a5a5a;
+    border: 1px solid #c8c8c8;
+    border-radius: 999px;
+    font-size: 10.5px;
+    font-weight: 500;
+  }
+
+  /* Top ideal supplement card — compact version */
+  .tooltip-supp-card {
+    background: rgba(244, 250, 248, 0.85);
+    border: 1px solid rgba(76, 169, 154, 0.32);
+    border-left: 3px solid var(--teal);
+    border-radius: 6px;
+    padding: 6px 9px;
+    margin-bottom: 8px;
+  }
+  .tt-supp-name {
+    font-weight: 600;
+    color: var(--teal-deep);
+    font-size: 12px;
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  }
+  .tt-supp-stats {
+    font-size: 11px;
+    color: var(--ink-mute);
+    margin-top: 2px;
+  }
+  .tt-supp-amount { color: var(--teal-deep); font-weight: 600; }
+  .tt-supp-cost { color: #6b4408; font-weight: 600; }
+  .tt-trace-badge {
+    display: inline-block;
+    background: #ececec;
+    color: #555;
+    border-radius: 999px;
+    padding: 1px 7px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .tt-extra { color: var(--ink-mute); font-size: 11px; }
+
+  /* THE BIG CTA — impossible to miss bar at the bottom */
+  .tooltip-cta {
+    background: linear-gradient(180deg, var(--teal) 0%, var(--teal-deep) 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+    text-align: center;
+    padding: 9px 12px;
+    margin: 10px -16px 0;
+    letter-spacing: 0.10em;
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.20);
+  }
+  /* Goal-match indicator (small star/dot in corner) */
+  /* Goal-match ★ — gold, prominent, with subtle text-shadow for contrast on any tile color */
+  .essential-tile.goal-match::after {
+    content: '★';
+    position: absolute;
+    top: 3px; right: 5px;
+    font-size: 14px;
+    color: #d4a017;
+    text-shadow:
+      0 0 2px rgba(255, 255, 255, 0.85),
+      0 1px 1px rgba(120, 80, 0, 0.35);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .essential-tile .e-symbol {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.05;
+  }
+  .essential-tile .e-name {
+    font-size: 9.5px;
+    line-height: 1.15;
+    margin-top: 3px;
+    opacity: 0.82;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 2px;
+  }
+
+  /* Detail panel — appears below the grid when a tile is clicked, shows full data */
+  .essential-detail {
+    margin: 0 0 var(--space-6);
+    padding: 22px 24px;
+    background: linear-gradient(180deg, #ffffff 0%, #fafdfc 100%);
+    border: 1px solid rgba(76, 169, 154, 0.30);
+    border-left: 4px solid var(--teal);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px -4px rgba(15, 60, 55, 0.16), 0 2px 6px rgba(15, 60, 55, 0.08);
+  }
+  .essential-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+  .essential-detail-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--teal-deep);
+    margin: 0;
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  }
+  .essential-detail-status {
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .essential-detail-status.gap { background: #fde2e2; color: #7a1818; }
+  .essential-detail-status.warn { background: #fdefd1; color: #6a4a10; }
+  .essential-detail-status.diet { background: #e0eef4; color: #2a4a55; }
+  .essential-detail-status.ok { background: #e1f5e6; color: #155a26; }
+  .essential-detail-status.mute { background: #ededed; color: #555; }
+  .essential-detail-close {
+    background: transparent;
+    border: 1px solid var(--teal-soft);
+    color: var(--ink-mute);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .essential-detail-close:hover { background: var(--teal-veil); color: var(--ink); }
+
+  /* Progress bar — current vs target as a visual health-bar */
+  /* Progress bar — now shows actual numbers + an "ideal range" band when target is a range.
+     Current value bolded at the top-left, target bolded at the top-right. If user is OVER target,
+     status reads "OVER by X" so they can see if they're wasting / can dial back. */
+  .essential-progress { margin: 16px 0 18px; }
+  /* Pass 7 — dietary_with_clinical_lever tile + detail-panel styling */
+  .essential-tile.dietary-lever-tile {
+    position: relative;
+  }
+  .essential-tile .tile-leaf {
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    font-size: 18px;
+    color: #1e8a4f;
+    opacity: 1;
+    pointer-events: none;
+    line-height: 1;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.85), 0 0 1px rgba(30, 138, 79, 0.4);
+  }
+  .essential-progress.dietary-lever {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 4px 0;
+  }
+  .essential-pb-default-row {
+    background: rgba(30, 138, 79, 0.10);
+    border: 1px solid rgba(30, 138, 79, 0.32);
+    border-left: 4px solid #1e8a4f;
+    border-radius: 6px;
+    padding: 11px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .essential-pb-default-row .essential-leaf {
+    color: #1e8a4f;
+    font-size: 24px;
+    line-height: 1;
+    flex-shrink: 0;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+  }
+  .essential-pb-default-row .default-label-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .essential-pb-default-row .default-label {
+    color: #1e6c3e;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 11px;
+  }
+  .essential-pb-default-row .default-value {
+    color: #154425;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  .essential-pb-floor-row {
+    background: rgba(74, 128, 96, 0.06);
+    border-left: 3px solid #4a8060;
+    padding: 7px 11px;
+    border-radius: 4px;
+    font-size: 12.5px;
+    color: var(--ink);
+    line-height: 1.45;
+  }
+  .essential-pb-floor-row .floor-label {
+    color: var(--ink-mute);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 10.5px;
+    margin-right: 6px;
+  }
+  .essential-pb-floor-row .floor-value {
+    font-weight: 600;
+    color: #2d5a42;
+  }
+  .essential-pb-floor-row .floor-context {
+    color: var(--ink-mute);
+    font-style: italic;
+    font-size: 11.5px;
+    margin-left: 6px;
+  }
+  .essential-pb-lever-callout {
+    background: rgba(190, 145, 95, 0.08);
+    border: 1px solid rgba(190, 145, 95, 0.25);
+    border-radius: 6px;
+    padding: 10px 13px;
+  }
+  .essential-pb-lever-callout .lever-callout-header {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-size: 11px;
+    color: #8a5d2a;
+    margin-bottom: 6px;
+  }
+  .essential-pb-lever-callout .lever-callout-sublabel {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--ink-mute);
+    font-size: 11px;
+    margin-left: 4px;
+    font-style: italic;
+  }
+  .essential-pb-lever-callout .lever-callout-range {
+    font-size: 16px;
+    font-weight: 700;
+    color: #6e4720;
+    margin-bottom: 4px;
+  }
+  .essential-pb-lever-callout .lever-callout-note {
+    font-size: 12.5px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .lever-callout-note-only {
+    font-size: 12.5px;
+    color: var(--ink-mute);
+    font-style: italic;
+    padding: 4px 2px;
+  }
+  .essential-progress-numbers {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 6px;
+  }
+  .essential-pb-current,
+  .essential-pb-target {
+    font-size: 13px; color: var(--ink-mute);
+    font-weight: 500;
+    display: inline-flex; align-items: baseline; gap: 6px;
+  }
+  /* CURRENT: / TARGET: bold uppercase labels — applies to ALL bars consistently now */
+  .essential-pb-current .lbl,
+  .essential-pb-target .lbl {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+  }
+  .essential-pb-current .num,
+  .essential-pb-target .num {
+    font-size: 18px; font-weight: 700;
+    color: var(--teal-deep);
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  }
+  .essential-progress-bar {
+    position: relative;
+    height: 16px;
+    background: #ececec;
+    border-radius: 999px;
+    overflow: visible;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06);
+  }
+  .essential-progress-fill {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+  .essential-progress-fill.gap   { background: linear-gradient(90deg, #e85a5a, #d04848); }
+  .essential-progress-fill.warn  { background: linear-gradient(90deg, #f0b840, #d99c20); }
+  .essential-progress-fill.diet  { background: linear-gradient(90deg, #8caebf, #6c8e9e); }
+  .essential-progress-fill.ok    { background: linear-gradient(90deg, #2aa14a, #1a8a3a); }
+  .essential-progress-fill.mute  { background: linear-gradient(90deg, #c0c0c0, #a0a0a0); }
+  /* Ideal-range band — overlaid on the bar between low-target and high-target marks */
+  .essential-pb-range-band {
+    position: absolute;
+    top: -3px; bottom: -3px;
+    background: rgba(42, 161, 74, 0.18);
+    border-left: 2px solid #2aa14a;
+    border-right: 2px solid #2aa14a;
+    border-radius: 3px;
+    pointer-events: none;
+  }
+  .essential-progress-status {
+    margin-top: 6px;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    text-align: right;
+  }
+  .essential-progress-status.over { color: #d99c20; font-weight: 600; }
+  .essential-progress-status.way-over { color: #c44a4a; font-weight: 700; }
+
+  /* Wallach stance pull-quote (Round 115 — educational reframing Phase 1).
+     Lives at the top of the detail panel ABOVE What you get / Daily target.
+     The quote leads — the framework speaks first, then the numbers contextualize.
+     Frutiger-Aero teal palette, Georgia serif italic for the editorial voice,
+     attribution in restrained sans below. Absence renders nothing (the row is
+     skipped entirely in showEssentialDetail) per doctrine §7 graceful
+     degradation — most essentials will lack a stance during backfill. */
+  .essential-detail-stance {
+    margin: 4px 0 18px 0;
+    padding: 14px 18px 14px 22px;
+    border-left: 4px solid var(--teal);
+    background: linear-gradient(180deg, var(--teal-veil) 0%, transparent 100%);
+    border-radius: 0 8px 8px 0;
+  }
+  .essential-detail-stance .stance-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--teal-deep);
+    margin-bottom: 8px;
+  }
+  .essential-detail-stance .stance-quote {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 16.5px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0 0 10px 0;
+  }
+  .essential-detail-stance .stance-quote::before {
+    content: "\201C";
+    color: var(--teal-mid);
+    font-size: 30px;
+    line-height: 0;
+    vertical-align: -10px;
+    margin-right: 3px;
+    font-style: normal;
+    opacity: 0.7;
+  }
+  .essential-detail-stance .stance-attr {
+    font-size: 12.5px;
+    color: var(--ink-mute);
+  }
+  .essential-detail-stance .stance-attr .stance-citation {
+    font-weight: 600;
+    color: var(--teal-deep);
+  }
+  .essential-detail-stance .stance-attr .stance-context {
+    display: block;
+    margin-top: 3px;
+    font-style: italic;
+    opacity: 0.85;
+  }
+
+  /* Round 124 — Read-more popup affordance + modal (Frutiger-Aero teal theme,
+     distinct from the Tacitus dashboard's dark roman velvet modal). */
+  .essential-detail-stance .stance-read-more {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 0;
+    padding: 4px 12px;
+    font-family: var(--font-ui, system-ui, sans-serif);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--teal-deep);
+    background: linear-gradient(180deg, rgba(180,221,213,0.4) 0%, rgba(180,221,213,0.15) 100%);
+    border: 1px solid rgba(45,130,118,0.35);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, transform 0.15s;
+    vertical-align: baseline;
+  }
+  .essential-detail-stance .stance-read-more:hover {
+    background: linear-gradient(180deg, rgba(75,169,154,0.35) 0%, rgba(75,169,154,0.18) 100%);
+    border-color: rgba(45,130,118,0.55);
+    transform: translateY(-1px);
+  }
+  .essential-detail-stance .stance-read-more:focus-visible {
+    outline: 2px solid var(--teal-mid, #4ba99a);
+    outline-offset: 2px;
+  }
+
+  .stance-modal-backdrop {
+    position: fixed; inset: 0; z-index: 9000;
+    background: rgba(20, 50, 50, 0.55);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    display: none; align-items: center; justify-content: center;
+    padding: 24px;
+    animation: stance-modal-fade-in 0.18s ease-out;
+  }
+  .stance-modal-backdrop[data-open="true"] { display: flex; }
+  @keyframes stance-modal-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .stance-modal {
+    position: relative;
+    max-width: 720px;
+    width: 100%;
+    max-height: 80vh;
+    background: linear-gradient(180deg, #ffffff 0%, var(--teal-veil, #ebf6f3) 100%);
+    border: 1px solid rgba(45,130,118,0.35);
+    border-radius: 14px;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.7) inset,
+      0 2px 8px rgba(45,130,118,0.18),
+      0 24px 64px rgba(20,50,50,0.45);
+    display: flex; flex-direction: column;
+    overflow: hidden;
+    animation: stance-modal-rise 0.22s cubic-bezier(0.2, 0.7, 0.3, 1);
+  }
+  @keyframes stance-modal-rise {
+    from { opacity: 0; transform: translateY(8px) scale(0.985); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .stance-modal-header {
+    padding: 18px 26px 12px;
+    border-bottom: 1px solid var(--teal-soft, #b4ddd5);
+    background: linear-gradient(180deg, var(--teal-mist, #d4ebe5) 0%, transparent 100%);
+  }
+  .stance-modal-eyebrow {
+    font-family: var(--font-ui, system-ui, sans-serif);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal-deep, #1a5a52);
+    margin-bottom: 4px;
+  }
+  .stance-modal-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--teal-deep, #1a5a52);
+    margin: 0;
+    line-height: 1.3;
+  }
+  .stance-modal-body {
+    padding: 22px 26px 24px;
+    overflow-y: auto;
+    flex: 1 1 auto;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #2a3f3a;
+    white-space: pre-wrap;
+  }
+  .stance-modal-footer {
+    padding: 14px 26px 18px;
+    border-top: 1px solid var(--teal-soft, #b4ddd5);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 14px;
+    background: rgba(235,246,243,0.6);
+  }
+  .stance-modal-citation {
+    font-family: var(--font-ui, system-ui, sans-serif);
+    font-size: 12.5px;
+    color: var(--teal-deep, #1a5a52);
+    font-weight: 600;
+  }
+  .stance-modal-close {
+    padding: 7px 18px;
+    font-family: var(--font-ui, system-ui, sans-serif);
+    font-size: 13px;
+    font-weight: 500;
+    color: #ffffff;
+    background: linear-gradient(180deg, var(--teal, #2d8276) 0%, var(--teal-deep, #1a5a52) 100%);
+    border: 1px solid var(--teal-deep, #1a5a52);
+    border-radius: 100px;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(45,130,118,0.3), 0 0 0 1px rgba(255,255,255,0.2) inset;
+    transition: filter 0.15s;
+  }
+  .stance-modal-close:hover { filter: brightness(1.08); }
+  .stance-modal-close:focus-visible {
+    outline: 2px solid var(--teal-mid, #4ba99a);
+    outline-offset: 2px;
+  }
+
+  .essential-detail-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 14px;
+    padding: 9px 0;
+    border-top: 1px solid var(--teal-veil);
+    font-size: 14px;
+    align-items: baseline;
+  }
+  .essential-detail-row:first-of-type { border-top: none; }
+  .essential-detail-row .label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+  }
+  .essential-detail-row .value { color: var(--ink); line-height: 1.5; }
+  .essential-detail-row .value.goal-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: var(--ok-bg);
+    color: var(--ok-deep);
+    border: 1px solid var(--ok);
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 12.5px; font-weight: 600;
+  }
+
+  /* Per-goal Benefits pills — each goal has its own color (Cognition blue, Strength red, Longevity purple).
+     Star prefix on each pill matches the legend below the detail panel. */
+  .benefit-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .benefit-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 3px 11px;
+    border-radius: 999px;
+    font-size: 12.5px; font-weight: 600;
+    border: 1px solid currentColor;
+  }
+  .benefit-pill .star { font-size: 11px; opacity: 0.85; }
+  /* Goal palette — chosen for contrast and to match the spec (blue / red / purple) */
+  .benefit-pill.cognition  { color: #2a5d9a; background: #dbe8fa; border-color: #5e90c0; }
+  .benefit-pill.strength   { color: #8a2a2a; background: #fbdede; border-color: #c44a4a; }
+  .benefit-pill.longevity  { color: #5a2e7e; background: #ebddf5; border-color: #8a5db5; }
+
+  /* IDEAL SUPPLEMENTS — Youngevity products ranked by amount delivered + cost. Up to 3 per essential. */
+  .ideal-supps {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .ideal-supp-card {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 9px 13px;
+    background: rgba(244, 250, 248, 0.85);
+    border: 1px solid rgba(76, 169, 154, 0.32);
+    border-left: 3px solid var(--teal);
+    border-radius: 7px;
+    font-size: 13px;
+  }
+  .ideal-supp-name {
+    font-weight: 600;
+    color: var(--teal-deep);
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-size: 13.5px;
+  }
+  .ideal-supp-stats {
+    color: var(--ink-mute);
+    font-size: 12.5px;
+    letter-spacing: 0.01em;
+  }
+  .ideal-supp-stats .amount-num {
+    font-weight: 700;
+    color: var(--teal-deep);
+  }
+  .ideal-supp-stats .pct {
+    color: var(--ok-deep);
+    font-weight: 600;
+  }
+  .ideal-supp-stats .cost {
+    color: #6b4408;
+    font-weight: 600;
+  }
+
+  .ideal-supp-trace-header {
+    font-size: 10.5px;
+    color: var(--ink-mute);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 10px;
+    margin-bottom: 4px;
+  }
+  .ideal-supp-card.ideal-supp-trace {
+    border-left-color: #b8b8b8;
+    background: rgba(245, 245, 245, 0.6);
+  }
+  .ideal-supp-card.ideal-supp-trace .ideal-supp-name {
+    color: var(--ink);
+  }
+  .trace-badge {
+    display: inline-block;
+    padding: 1px 8px;
+    background: #ececec;
+    color: #555;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .ideal-supp-norm {
+    font-size: 11.5px;
+    color: var(--ink-mute);
+    margin-top: 2px;
+    font-style: italic;
+  }
+
+
+  .benefit-pill.general    { color: var(--ok-deep); background: var(--ok-bg); border-color: var(--ok); }
+
+
+  /* Wallach-corpus benefits — gray neutral bubbles, smaller than goal-match pills */
+
+  /* Benefit-pill citation popup (P3.6 / Round 57) — clickable Wallach pills */
+  .benefit-pill.wallach-benefit { cursor: pointer; transition: background 0.15s, transform 0.05s; }
+  .benefit-pill.wallach-benefit:active { transform: translateY(1px); }
+  .benefit-pill.wallach-benefit::after { content: ' ⓘ'; opacity: 0.45; font-size: 9px; margin-left: 2px; vertical-align: middle; }
+  .citation-popup-backdrop {
+    position: fixed; inset: 0; background: rgba(20,40,40,0.45);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 9999; opacity: 0; pointer-events: none;
+    transition: opacity 0.2s; padding: 20px; box-sizing: border-box;
+  }
+  .citation-popup-backdrop.open { opacity: 1; pointer-events: auto; }
+  .citation-popup {
+    background: #fff; border-radius: 10px; padding: 24px 28px; max-width: 580px;
+    width: 100%; max-height: 80vh; overflow: auto;
+    box-shadow: 0 8px 40px rgba(20,80,75,0.25), 0 1px 0 rgba(255,255,255,0.7) inset;
+    border: 1px solid var(--teal-soft); transform: translateY(8px);
+    transition: transform 0.2s; font-family: 'Inter', system-ui, sans-serif;
+  }
+  .citation-popup-backdrop.open .citation-popup { transform: translateY(0); }
+  .citation-popup-close {
+    position: absolute; top: 12px; right: 16px; background: none; border: none;
+    font-size: 22px; color: var(--teal-deep); cursor: pointer; padding: 4px 10px;
+    line-height: 1; border-radius: 6px;
+  }
+  .citation-popup-close:hover { background: var(--teal-veil); }
+  .citation-popup .cp-eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal); font-weight: 600; margin-bottom: 4px; }
+  .citation-popup .cp-title { font-size: 20px; font-weight: 700; color: var(--teal-deep); margin: 0 0 14px 0; line-height: 1.25; font-family: 'Space Grotesk', sans-serif; }
+  .citation-popup .cp-cite { font-size: 14px; color: #2a2a2a; line-height: 1.55; }
+  .citation-popup .cp-cite strong { color: var(--teal-deep); }
+  .citation-popup .cp-fallback-note { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--teal-veil); font-size: 12px; color: #6a6a6a; font-style: italic; }
+  .citation-popup .cp-source-tag { display: inline-block; margin-top: 14px; padding: 4px 10px; background: var(--teal-veil); color: var(--teal-deep); border-radius: 4px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .benefit-pill.wallach-benefit {
+    color: #5a5a5a;
+    background: #f0f0f0;
+    border-color: #c8c8c8;
+    font-size: 11.5px;
+    font-weight: 500;
+    padding: 2px 9px;
+  }
+  .benefit-pill.wallach-benefit:hover { background: #e8e8e8; color: #2a2a2a; }
+  .benefits-section-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(180, 215, 207, 0.4);
+    margin: 8px 0;
+  }
+  .benefits-subhead {
+    font-size: 10.5px;
+    color: var(--ink-mute);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 6px;
+    margin-bottom: 4px;
+  }
+
+  /* Legend explaining the goal-color system */
+  .essential-benefits-legend {
+    display: flex; flex-wrap: wrap; gap: 14px;
+    margin: 12px 0 4px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(180, 215, 207, 0.4);
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: var(--ink-mute);
+    align-items: center;
+  }
+  .essential-benefits-legend .legend-intro {
+    font-weight: 600;
+    color: var(--ink-soft);
+  }
+  .essential-benefits-legend .legend-item {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-weight: 500;
+  }
+  .essential-benefits-legend .legend-star { font-size: 12px; }
+  .essential-benefits-legend .legend-star.cognition { color: #5e90c0; }
+  .essential-benefits-legend .legend-star.strength  { color: #c44a4a; }
+  .essential-benefits-legend .legend-star.longevity { color: #8a5db5; }
+  /* Primary benefit indicator — teal-tinted pill + small dot prefix.
+     A benefit is marked "primary" when this essential is the #1 source for the canonical
+     benefit category per the cross-essential weighting pass (Pass 5). */
+  .benefit-pill.wallach-benefit.wallach-benefit-primary {
+    background: #e3f0ed;
+    color: #1a5a52;
+    border-color: var(--teal);
+    font-weight: 600;
+  }
+  .benefit-pill.wallach-benefit-primary .primary-dot {
+    color: var(--teal);
+    margin-right: 4px;
+    font-size: 9px;
+    vertical-align: 1px;
+  }
+  .tooltip-benefit-pill.tooltip-benefit-primary {
+    background: #e3f0ed;
+    color: #1a5a52;
+    border-color: var(--teal);
+    font-weight: 600;
+  }
+  .tooltip-benefit-pill.tooltip-benefit-primary .primary-dot {
+    color: var(--teal);
+    margin-right: 3px;
+    font-size: 8px;
+    vertical-align: 1px;
+  }
+  .primary-legend {
+    color: var(--ink-mute);
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 13px;
+  }
+  .primary-legend .primary-dot {
+    color: var(--teal);
+    font-size: 11px;
+  }
+
+
+  /* Honest note about data source/freshness */
+  .essential-data-source-note {
+    margin-top: 14px;
+    padding: 9px 13px;
+    background: #fbf2dc;
+    border: 1px solid #e0c280;
+    border-radius: 6px;
+    color: #8a5a14;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .essential-data-source-note strong { color: #6b4408; }
+
+  /* Search + quick filter, restyled to match */
+  .essentials-search-wrap { margin: var(--space-5) 0 14px; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .essentials-search {
+    width: 100%;
+    padding: 11px 16px;
+    border: 1px solid rgba(76, 169, 154, 0.40);
+    border-radius: 999px;
+    font-size: 14px;
+    font-family: inherit;
+    background: white;
+    transition: border-color 0.18s, box-shadow 0.18s;
+  }
+  .essentials-search:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(76, 169, 154, 0.18);
+  }
+  .essentials-quickfilter {
+    display: flex; justify-content: center; gap: 6px;
+    margin-bottom: var(--space-6);
+  }
+  .qf-btn {
+    background: white;
+    border: 1px solid rgba(76, 169, 154, 0.40);
+    color: var(--teal-deep);
+    padding: 7px 18px;
+    border-radius: 999px;
+    font-size: 13px; font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s ease;
+  }
+  .qf-btn:hover { background: var(--teal-veil); }
+  .qf-btn.active {
+    background: var(--teal);
+    color: white;
+    border-color: var(--teal-deep);
+  }
+
+  /* Existing full-data tables collapsed by default — JS still drives them, but they live under
+     a <details> wrapper that opens on demand. The periodic-table is the primary view. */
+  .essentials-full-data {
+    margin: var(--space-6) 0 var(--space-4);
+    border: 1px solid var(--teal-soft);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.55);
+  }
+  .essentials-full-data > summary {
+    padding: 14px 18px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--teal-deep);
+    font-size: 14px;
+    list-style: none;
+    user-select: none;
+  }
+  .essentials-full-data > summary::-webkit-details-marker { display: none; }
+  .essentials-full-data > summary::before {
+    content: '▸';
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.18s;
+  }
+  .essentials-full-data[open] > summary::before { transform: rotate(90deg); }
+  .essentials-full-data > .content { padding: 0 18px 18px; }
+
+  /* Live coverage widget (NEW: stack_coverage.py output) */
+  .live-coverage {
+    background: var(--teal-mist);
+    border: 1px solid var(--teal-soft);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+  .live-coverage > h3 { margin-top: 0; }
+  .live-coverage .subhead { font-size: 0.75em; color: var(--ink-soft); font-weight: normal; margin-left: 8px; }
+  .live-coverage code { background: rgba(255,255,255,0.6); padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
+  .scenario-toggle { display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
+  .scenario-btn {
+    padding: 8px 16px;
+    border: 1px solid var(--teal-soft);
+    background: white;
+    color: var(--ink);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font: inherit;
+  }
+  .scenario-btn.active { background: var(--teal); color: white; border-color: var(--teal); }
+  .live-summary { display: none; gap: 10px; flex-wrap: wrap; margin: 12px 0; }
+  .live-summary[data-active="true"] { display: flex; }
+  .live-summary .stat { padding: 6px 12px; border-radius: 999px; font-size: 0.9em; font-weight: 500; }
+  .stat-ok { background: #d4f4dd; color: #0a5a2f; }
+  .stat-warn { background: #fff0d4; color: #7a4e0a; }
+  .stat-gap { background: #ffd4d4; color: #7a0a0a; }
+  .stat-mute { background: #e8e8e8; color: #555; }
+  .live-details { margin-top: 16px; }
+  .live-details > summary { cursor: pointer; padding: 8px; font-weight: 500; color: var(--teal-deep); }
+  .live-details [data-scenario-panel] { display: none; }
+  .live-details [data-scenario-panel][data-active="true"] { display: block; }
+
+  /* Status + form badges within rows */
+  .form-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-left: 4px;
+  }
+  .form-ok { background: #d4f4dd; color: #0a5a2f; }
+  .form-partial { background: #fff0d4; color: #7a4e0a; }
+  .form-warn { background: #ffd4d4; color: #7a0a0a; }
+  .badge-gap { background: #ffd4d4; color: #7a0a0a; }
+  .badge-diet { background: #e8e8e8; color: #555; }
+  .badge-unknown { background: #e8e8e8; color: #555; }
+
+
+  /* === Label Check (v1.4 polished) === */
+  .lc-hero { margin-bottom: 20px; }
+  .lc-hero h2 { font-size: 28px; margin: 0 0 6px; }
+  /* margin: 0 auto preserves block-centering. Earlier override with margin:0 dropped the auto
+     and left the subhead pinned to the parent's left edge. Same fix on rg-hero below. */
+  .lc-hero .subhead { color: var(--ink-mute); font-size: 15px; margin: 0 auto; line-height: 1.5; }
+
+  .scanner { padding: 24px; margin-bottom: 24px; }
+  .scanner > h3 { margin: 0 0 18px; font-size: 16px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-mute); font-weight: 600; }
+  .scanner-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; margin-bottom: 20px; }
+
+  .lc-drop-zone {
+    border: 2px dashed var(--teal-mid); border-radius: var(--radius-md);
+    background: var(--teal-veil); min-height: 280px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; padding: 20px;
+    cursor: pointer; position: relative;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .lc-drop-zone:hover, .lc-drop-zone.dragover { background: var(--teal-mist); border-color: var(--teal); }
+  .lc-drop-zone .empty-state { text-align: center; color: var(--ink-mute); }
+  .lc-drop-zone .empty-state svg { width: 48px; height: 48px; opacity: 0.5; margin-bottom: 10px; color: var(--teal); }
+  .lc-drop-zone .empty-state p { margin: 3px 0; }
+  .lc-drop-zone .empty-state p.bold { font-weight: 600; color: var(--ink-soft); font-size: 15px; }
+  .lc-drop-zone .empty-state .hint { font-size: 12px; opacity: 0.75; margin-top: 8px; }
+  .lc-drop-zone .empty-state .file-btn {
+    display: inline-block; margin-top: 14px; padding: 8px 18px;
+    background: var(--teal); color: white; border-radius: var(--radius-sm);
+    cursor: pointer; font-size: 13px; font-weight: 500;
+    transition: background 0.15s;
+  }
+  .lc-drop-zone .empty-state .file-btn:hover { background: var(--teal-deep); }
+  .lc-drop-zone img.preview { max-width: 100%; max-height: 360px; border-radius: var(--radius-sm); object-fit: contain; }
+  /* Clear image (alert/orange — removes uploaded work but re-uploadable) */
+  .lc-drop-zone .clear-img {
+    position: absolute; top: 10px; right: 10px;
+    background: var(--alert-bg); color: var(--alert-deep); border: 1px solid var(--alert-bg);
+    width: 30px; height: 30px; border-radius: 50%;
+    cursor: pointer; font-size: 16px; line-height: 1; font-weight: 700;
+    transition: all 0.15s;
+  }
+  .lc-drop-zone .clear-img:hover { background: var(--alert); color: white; border-color: var(--alert-deep); }
+
+  .lc-form-block { display: flex; flex-direction: column; gap: 12px; }
+  .lc-form-block .lc-field-label, .form-block-wide .lc-field-label {
+    font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--ink-mute); margin-bottom: 4px; display: block;
+  }
+  .lc-form-block .lc-field-label.required::after { content: " *"; color: var(--crit); }
+  .lc-input, .lc-select, .lc-textarea {
+    width: 100%; padding: 10px 12px;
+    border: 1px solid #d8e4e0; border-radius: var(--radius-sm);
+    font-family: inherit; font-size: 14px; background: white;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    box-sizing: border-box;
+  }
+  .lc-input:focus, .lc-select:focus, .lc-textarea:focus {
+    outline: none; border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(45, 130, 118, 0.12);
+  }
+  .lc-textarea { resize: vertical; min-height: 70px; line-height: 1.45; }
+
+  /* Round 139 v7 — same verified formula from Juxtopposed CodePen
+     (https://codepen.io/Juxtopposed/pen/PoyWzEq), parameters tuned per user request:
+       (1) DIET = LEFT position (default active), SUPPLEMENT = RIGHT
+       (2) SUPPLEMENT color: red → sunrise-orange (sunset-on-beach vibe)
+       (3) All dimensions scaled to 75% of v6 (75% × 0.67 of original = 0.5025 of CodePen)
+       (4) Scanner card provides #EDEDED + grain context at form level — `.lc-kind-stage`
+           wrapper removed; toggle sits directly in the form
+       (5) `.off-red` class renamed to `.is-supplement` (semantic for non-red palette)
+     Verified pattern entry: memory/design-knowledge.md § Verified Patterns >
+     Grainy Neumorphism Toggle. v7 demonstrates the "exact-formula, change-parameters"
+     copy-implementation discipline the user named as the next-up creative goal. */
+
+  /* === Scanner card override — form-level neumorphism context (Round 139 v7) === */
+  /* Scoped to .card.scanner ONLY per user direction: "THIS PAGE ONLY, WE WILL SLOWLY
+     MAKE THIS SCANNER PAGE PERFECT DESIGN-WISE THEN CHANGE THE OTHER PAGES BASED ON
+     WHAT WE LEARN." */
+  .card.scanner {
+    background-color: #EDEDED;
+    border-color: rgba(180, 175, 165, 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+  .card.scanner::before {
+    position: absolute;
+    inset: 0;
+    content: '';
+    z-index: 0;
+    opacity: 0.28;
+    background: #000000;
+    filter: url(#lcKindNoise);
+    pointer-events: none;
+  }
+  .card.scanner > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* === Kind control === */
+  .lc-kind-control {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    user-select: none;
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    padding: 6px;
+  }
+
+  /* Track: 150x75 (75% scale from v6's 200x100). All 6 shadow offsets scaled × 0.75. */
+  .lc-kind-toggle {
+    height: 75px;
+    width: 150px;
+    border-radius: 75px;
+    background-color: #F2F2F2;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    padding: 0;
+    box-shadow:
+      inset 0 -2px 2px 0 rgb(0,0,0,0.13),
+      inset 0 2px 2px 0 rgb(255,255,255,1),
+      inset 11px -17px 14px 0 rgb(255,255,255,0.9),
+      inset -13px 14px 11px 0 rgb(0,0,0,0.1),
+      0 -8px 9px 0 rgb(255,255,255,1),
+      0 13px 20px 0 rgb(0,0,0,0.16);
+    z-index: 1;
+    /* NO TRANSITIONS on the track (Rule 6) — the track never animates */
+  }
+
+  /* Switch: 56x56 (75% scale from 75x75). DEFAULT POSITION: LEFT (DIET).
+     SUPPLEMENT slides RIGHT by 75px (75% scale from 100px). */
+  .lc-kind-switch {
+    height: 56px;
+    width: 56px;
+    border-radius: 56px;
+    position: absolute;
+    left: 10px;
+    transition: all ease 0.3s;
+    background: radial-gradient(circle at 60% 30%, #ACFF85, #66D233);
+    box-shadow:
+      inset 0 0 5px 0 rgb(255,255,255,1),
+      8px -10px 17px 0 rgb(102,210,51,0.56),
+      inset 8px -10px 17px 0 rgb(0,0,0,0.25),
+      -8px 8px 14px 0 rgb(0,0,0,0.25);
+    animation: lc-kind-bounce-to-diet 0.7s ease-out;
+  }
+
+  /* Supplement state — sunrise/sunset orange (replaces red) */
+  .lc-kind-switch.is-supplement {
+    transform: translateX(75px);
+    background: radial-gradient(circle at 60% 30%, #FFB670, #FF8A2E);
+    box-shadow:
+      inset 0 0 9px 0 rgb(255,255,255,1),
+      8px -10px 17px 0 rgb(255,175,110,0.56),
+      inset 8px -10px 17px 0 rgb(0,0,0,0.25),
+      -8px 14px 14px 0 rgb(0,0,0,0.25);
+    animation: lc-kind-bounce-to-supplement 0.7s ease-out;
+  }
+
+  /* Bounce keyframes — slide distance 75px, multi-stage overshoot per Rule 5 */
+  @keyframes lc-kind-bounce-to-supplement {
+    0%   { transform: translateX(0); }
+    15%  { transform: translateX(90px); }
+    30%  { transform: translateX(75px); }
+    45%  { transform: translateX(80px); }
+    60%  { transform: translateX(75px); }
+    75%  { transform: translateX(76px); }
+    100% { transform: translateX(75px); }
+  }
+  @keyframes lc-kind-bounce-to-diet {
+    0%   { transform: translateX(75px); }
+    15%  { transform: translateX(-15px); }
+    30%  { transform: translateX(0); }
+    45%  { transform: translateX(5px); }
+    60%  { transform: translateX(0); }
+    75%  { transform: translateX(1px); }
+    100% { transform: translateX(0); }
+  }
+
+  /* State caption */
+  .lc-kind-caption {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    transition: color 400ms ease;
+    color: #4d7440;
+    line-height: 1;
+    margin-top: 4px;
+  }
+  .lc-kind-control[data-value="supplement"] .lc-kind-caption {
+    color: #c97527;
+  }
+
+  .lc-kind-toggle:focus-visible {
+    outline: 3px solid rgba(60, 120, 50, 0.55);
+    outline-offset: 4px;
+  }
+  .lc-kind-control[data-value="supplement"] .lc-kind-toggle:focus-visible {
+    outline-color: rgba(220, 130, 60, 0.55);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lc-kind-switch, .lc-kind-switch.is-supplement {
+      animation: none !important;
+      transition: background 200ms ease, box-shadow 200ms ease;
+    }
+  }
+
+  .form-block-wide { margin-bottom: 20px; }
+
+  .nutrient-table { width: 100%; border-collapse: separate; border-spacing: 0 6px; }
+  .nutrient-table th { font-size: 11px; text-align: left; color: var(--ink-mute); font-weight: 600; padding: 0 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .nutrient-table td { padding: 3px; vertical-align: middle; }
+  .nutrient-table td input, .nutrient-table td select {
+    width: 100%; padding: 8px 10px; border: 1px solid #d8e4e0;
+    border-radius: var(--radius-sm); font-size: 13px; background: white;
+    font-family: inherit; box-sizing: border-box;
+  }
+  .nutrient-table td input:focus, .nutrient-table td select:focus { outline: none; border-color: var(--teal); }
+  .nutrient-table td.actions-col { width: 40px; text-align: center; padding: 0; }
+  /* Per-row remove (alert/orange — removes a single nutrient row, easily re-added) */
+  .nutrient-table .remove-row {
+    background: none; border: 1px solid transparent; color: var(--alert);
+    font-size: 20px; cursor: pointer; line-height: 1;
+    width: 30px; height: 30px; border-radius: 50%;
+    transition: all 0.15s;
+  }
+  .nutrient-table .remove-row:hover { background: var(--alert-bg); color: var(--alert-deep); border-color: var(--alert-bg); }
+
+  .lc-btn {
+    padding: 10px 16px; border-radius: var(--radius-sm);
+    font-size: 14px; font-weight: 500; cursor: pointer;
+    border: none; transition: all 0.15s; font-family: inherit;
+  }
+  .lc-btn-primary { background: var(--teal); color: white; font-size: 15px; padding: 12px 28px; font-weight: 600; }
+  .lc-btn-primary:hover { background: var(--teal-deep); }
+  .lc-btn-secondary { background: var(--teal-veil); color: var(--teal-deep); }
+  .lc-btn-secondary:hover { background: var(--teal-mist); }
+  /* Tertiary buttons cover "Clear all fields" — soft warn (yellow) tone to signal "wipe form state" without alarm */
+  .lc-btn-tertiary { background: transparent; color: var(--warn-deep); border: 1px solid var(--warn-bg); }
+  .lc-btn-tertiary:hover { color: var(--warn-deep); background: var(--warn-bg); border-color: var(--warn); }
+
+  .scanner .actions {
+    display: flex; gap: 12px; align-items: center;
+    padding-top: 18px; border-top: 1px solid var(--teal-veil);
+  }
+
+  .result-panel { padding: 0; overflow: hidden; margin-bottom: 24px; }
+  .verdict-banner {
+    padding: 22px 26px; font-size: 22px; font-weight: 600;
+    display: flex; align-items: center; gap: 14px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .verdict-banner.ADD { background: var(--ok-bg); color: var(--ok); }
+  .verdict-banner.REJECT { background: var(--crit-bg); color: var(--crit); }
+  .verdict-banner.SAVE { background: var(--warn-bg); color: var(--warn); }
+  .verdict-banner .verdict-icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,0.55); font-size: 22px; font-weight: 700;
+  }
+
+  .result-body { padding: 22px 26px; }
+  .reasons-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 22px; }
+  .reasons h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-mute); margin: 0 0 10px; font-weight: 600; }
+  .reasons ul { list-style: none; padding: 0; margin: 0; }
+  .reasons li { padding: 5px 0; font-size: 15px; line-height: 1.5; display: flex; gap: 8px; align-items: flex-start; }
+  .reasons-for li::before { content: "✓"; color: var(--ok); font-weight: bold; flex-shrink: 0; }
+  .reasons-against li::before { content: "✕"; color: var(--crit); font-weight: bold; flex-shrink: 0; }
+  .reasons li.empty { opacity: 0.5; font-style: italic; }
+  .reasons li.empty::before { content: ""; }
+
+  /* Rich reasons — EVERY reason renders as one or more chips inline with the ✓/✕ icon.
+     No more separate "Goal coverage" label header; the chips themselves carry the meaning.
+     Single-text reasons (no items) become a single chip; multi-item reasons (Goal coverage, gap-fill,
+     anti-list categories) chip each item individually. Tones follow PROS/CONS semantic (green/red). */
+  .reasons li.rich-reason { flex-direction: row; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .reasons li.rich-reason::before { margin-top: 0; }
+  .reasons li.rich-reason .reason-chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .reasons li.rich-reason .reason-chip {
+    display: inline-block;
+    padding: 4px 13px;
+    border-radius: 999px;
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: 0.01em;
+  }
+  .reasons-for li.rich-reason .reason-chip {
+    background: var(--ok-bg);
+    color: var(--ok-deep);
+    border: 1px solid var(--ok);
+  }
+  .reasons-against li.rich-reason .reason-chip {
+    background: var(--crit-bg);
+    color: var(--crit-deep);
+    border: 1px solid rgba(164, 52, 74, 0.40);
+  }
+
+  .alignment-row {
+    display: flex; justify-content: space-between; align-items: center; gap: 20px;
+    padding: 14px 18px; background: var(--teal-veil);
+    border-radius: var(--radius-sm); margin-bottom: 22px;
+    font-size: 15px; flex-wrap: wrap;
+  }
+  .alignment-bar { display: inline-block; width: 100px; height: 8px; background: #e0e8e6; border-radius: 4px; overflow: hidden; margin: 0 8px; vertical-align: middle; }
+  .alignment-bar .fill { height: 100%; background: var(--teal); transition: width 0.4s; }
+
+  .lc-section-label { margin: 18px 0 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-mute); font-weight: 600; }
+
+  .gap-fill-table { width: 100%; border-collapse: collapse; margin-bottom: 14px; font-size: 14.5px; }
+  .gap-fill-table th, .gap-fill-table td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--teal-veil); }
+  .gap-fill-table th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-mute); font-weight: 600; background: var(--surface-cool); }
+  .gap-fill-table .pct-positive { color: var(--ok); font-weight: 600; }
+  .gap-fill-table .pct-zero { color: var(--ink-mute); }
+
+  .anti-flags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .anti-flag { padding: 5px 12px; background: var(--crit-bg); color: var(--crit); border-radius: 14px; font-size: 13px; font-weight: 600; text-transform: lowercase; letter-spacing: 0.02em; }
+  .anti-flags-empty { color: var(--ink-mute); font-size: 14px; font-style: italic; }
+  .anti-flags { flex-direction: column; gap: 10px; }
+  .anti-flag-card { padding: 14px 16px; border-radius: var(--radius-sm); border-left: 3px solid; font-size: 14px; line-height: 1.55; }
+  .anti-flag-card.sev-hard { background: var(--crit-bg); border-left-color: var(--crit); }
+  .anti-flag-card.sev-serious { background: var(--crit-bg); border-left-color: var(--crit); }
+  .anti-flag-card.sev-softened { background: var(--warn-bg); border-left-color: var(--warn); }
+  .anti-flag-card.sev-mild { background: var(--warn-bg); border-left-color: var(--warn); }
+  .anti-flag-card .af-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .anti-flag-card .af-pill { padding: 4px 10px; background: rgba(255,255,255,0.7); border-radius: 12px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+  .anti-flag-card .af-severity { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; opacity: 0.7; }
+  .anti-flag-card.sev-hard .af-pill, .anti-flag-card.sev-serious .af-pill { color: var(--crit); }
+  .anti-flag-card.sev-softened .af-pill, .anti-flag-card.sev-mild .af-pill { color: var(--warn); }
+  .anti-flag-card .af-terms { color: var(--ink-soft); margin-bottom: 8px; font-size: 14.5px; }
+  .anti-flag-card .af-terms em { font-style: normal; font-weight: 600; color: var(--ink); }
+  .anti-flag-card .af-terms-label { color: var(--ink-mute); font-size: 13px; }
+  .anti-flag-card .af-nuance { padding: 10px 12px; background: rgba(255,255,255,0.75); border-radius: 4px; margin-bottom: 8px; color: var(--ink); font-size: 14.5px; line-height: 1.6; }
+  .anti-flag-card .af-note { color: var(--ink-soft); font-size: 14.5px; line-height: 1.65; font-style: normal; padding: 6px 0 0; }
+  .anti-flag-card .af-note strong { color: var(--ink); }
+  /* Recent scans + Regimen UI */
+  .recent-scans-header { margin: 32px 0 12px; font-size: 18px; color: var(--ink-soft); font-weight: 600; }
+  .recent-scans-header .count { font-size: 12px; color: var(--ink-mute); font-weight: 400; }
+  .recent-scans-empty { padding: 20px; color: var(--ink-mute); background: var(--surface-cool); border-radius: var(--radius-sm); border: 1px dashed #d8e4e0; font-size: 13px; font-style: italic; text-align: center; }
+  .recent-scans-list { display: flex; flex-direction: column; gap: 8px; }
+  .recent-scan-row { display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: var(--surface-soft); border-radius: var(--radius-sm); border: 1px solid var(--teal-veil); font-size: 13px; transition: background 0.15s; }
+  .recent-scan-row:hover { background: var(--surface-cool); }
+  .recent-scan-row .verdict-mini { padding: 3px 9px; border-radius: 8px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; flex-shrink: 0; }
+  .recent-scan-row .verdict-mini.ADD { background: var(--ok-bg); color: var(--ok); }
+  .recent-scan-row .verdict-mini.REJECT { background: var(--crit-bg); color: var(--crit); }
+  .recent-scan-row .verdict-mini.SAVE { background: var(--warn-bg); color: var(--warn); }
+  .recent-scan-row .name { flex: 1; font-weight: 500; color: var(--ink); }
+  .recent-scan-row .ts { color: var(--ink-mute); font-size: 12px; }
+  .recent-scan-row .actions { display: flex; gap: 6px; }
+  .recent-scan-row .actions button { padding: 5px 10px; font-size: 12px; border: none; border-radius: var(--radius-sm); background: var(--teal-veil); color: var(--teal-deep); cursor: pointer; font-weight: 500; }
+  .recent-scan-row .actions button:hover { background: var(--teal-mist); }
+  /* Wishlist regimen UI */
+  .wish-card .card-actions { display: flex; gap: 8px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--teal-veil); align-items: center; flex-wrap: wrap; }
+  .wish-card .regimen-btn { padding: 6px 12px; font-size: 12px; border-radius: var(--radius-sm); border: none; cursor: pointer; font-weight: 600; background: var(--teal-deep); color: white; transition: background 0.15s; }
+  .wish-card .regimen-btn:hover { background: #0f3a35; }
+  /* Remove from regimen (reversible) — alert/orange tier */
+  .wish-card .regimen-remove { padding: 6px 12px; font-size: 12px; border-radius: var(--radius-sm); border: 1px solid var(--alert-bg); cursor: pointer; font-weight: 500; background: var(--alert-bg); color: var(--alert-deep); transition: all 0.15s; }
+  .wish-card .regimen-remove:hover { background: var(--alert); color: white; border-color: var(--alert-deep); }
+  .wish-card .in-regimen-badge { display: inline-flex; align-items: center; gap: 5px; padding: 5px 10px; background: var(--ok-bg); color: var(--ok); border-radius: 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+  /* Result panel — Add-to-regimen button. Uses a pure green tone to differentiate from the teal Save-to-wishlist button
+     so the user reads "regimen = primary commit" at a glance. Committed state stays the same green but slightly deeper. */
+  .lc-btn-regimen { background: #2e8b3d; color: white; font-weight: 600; padding: 12px 22px; }
+  .lc-btn-regimen:hover { background: #266f31; }
+  .lc-btn-regimen.committed { background: #266f31; cursor: default; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18); }
+
+  /* ═══════════════════════════════════════════════════════════════════════════════
+     CREATOR'S LOG — backrooms / terminal aesthetic
+     Personal-only section under Journey tab. Removed/admin-gated at ship time.
+     ═══════════════════════════════════════════════════════════════════════════════ */
+  .cl-gate {
+    margin-top: var(--space-8);
+    display: flex;
+    justify-content: center;
+    padding: var(--space-3) 0;
+  }
+  .cl-enter-btn {
+    background: linear-gradient(180deg, #0d1418 0%, #050810 100%);
+    color: #5eff8b;
+    border: 1px solid #1c3a32;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-family: 'JetBrains Mono', 'Consolas', 'Menlo', 'Monaco', 'Courier New', monospace;
+    font-size: 12.5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 12px rgba(0, 80, 60, 0.20), inset 0 0 0 1px rgba(94, 255, 139, 0.06);
+  }
+  .cl-enter-btn:hover {
+    border-color: #2e6657;
+    color: #8aff9e;
+    box-shadow: 0 0 22px rgba(0, 120, 90, 0.40), inset 0 0 0 1px rgba(94, 255, 139, 0.15);
+    transform: translateY(-1px);
+  }
+  .cl-prompt-mini { color: #6cc4b5; opacity: 0.85; }
+  .cl-cmd-mini { color: #b8d4c8; opacity: 0.75; }
+  .cl-enter-tag {
+    color: #ffc34a;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding-left: 8px;
+    border-left: 1px solid #2e4540;
+  }
+
+  .creators-log {
+    margin-top: var(--space-5);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(94, 255, 139, 0.10);
+  }
+  .creators-log[hidden] { display: none; }
+  .cl-screen {
+    background: #050810;
+    color: #b8d4c8;
+    font-family: 'JetBrains Mono', 'Consolas', 'Menlo', 'Monaco', 'Courier New', monospace;
+    font-size: 12.5px;
+    line-height: 1.55;
+    padding: 22px 26px;
+    position: relative;
+    /* Subtle CRT-scanline pattern via repeating gradient — cheap, no animation */
+    background-image:
+      repeating-linear-gradient(
+        180deg,
+        rgba(94, 255, 139, 0.025) 0px,
+        rgba(94, 255, 139, 0.025) 1px,
+        transparent 1px,
+        transparent 3px
+      ),
+      radial-gradient(ellipse at 50% 0%, rgba(45, 130, 118, 0.08) 0%, transparent 60%),
+      linear-gradient(180deg, #0a0f15 0%, #050810 100%);
+  }
+  .cl-bar {
+    display: flex; align-items: center; gap: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed rgba(94, 255, 139, 0.18);
+    margin-bottom: 14px;
+  }
+  .cl-bar-footer {
+    border-bottom: none;
+    border-top: 1px dashed rgba(94, 255, 139, 0.18);
+    padding-top: 8px;
+    padding-bottom: 0;
+    margin-top: 14px;
+    margin-bottom: 0;
+  }
+  .cl-prompt { color: #5eff8b; font-weight: 600; }
+  .cl-cmd { color: #b8d4c8; opacity: 0.85; }
+  .cl-cursor { color: #5eff8b; animation: cl-blink 1.2s steps(2) infinite; }
+  @keyframes cl-blink { 50% { opacity: 0; } }
+
+  .cl-meta-row {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+    font-size: 11.5px;
+    padding: 10px 0;
+    color: #87a39d;
+  }
+  .cl-meta-tag {
+    background: rgba(94, 255, 139, 0.10);
+    color: #5eff8b;
+    border: 1px solid rgba(94, 255, 139, 0.30);
+    padding: 2px 9px;
+    border-radius: 3px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    font-size: 10.5px;
+  }
+  .cl-meta-sep { color: #2e4540; }
+  .cl-meta { color: #87a39d; }
+  .cl-meta.cl-warn { color: #ff8a8a; }
+
+  .cl-sysinfo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 4px 24px;
+    padding: 12px 14px;
+    background: rgba(94, 255, 139, 0.03);
+    border: 1px dashed rgba(94, 255, 139, 0.18);
+    border-radius: 4px;
+    margin-bottom: 18px;
+    font-size: 11.5px;
+  }
+  .cl-sysinfo > div { display: flex; gap: 8px; }
+  .cl-key {
+    color: #87a39d;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    min-width: 90px;
+    font-size: 10.5px;
+    line-height: 1.7;
+  }
+  .cl-val { color: #b8d4c8; }
+
+  .cl-divider {
+    color: #4be6c2;
+    font-weight: 700;
+    margin: 18px 0 10px;
+    letter-spacing: 0.04em;
+    font-size: 12.5px;
+    text-shadow: 0 0 8px rgba(75, 230, 194, 0.40);
+  }
+  .cl-divider.cl-end {
+    color: #5eff8b;
+    text-align: center;
+    margin: 20px 0 6px;
+  }
+
+  .cl-content {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #b8d4c8;
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 12px 14px;
+    background: rgba(0, 20, 18, 0.50);
+    border-left: 2px solid rgba(75, 230, 194, 0.30);
+    border-radius: 0 4px 4px 0;
+    max-height: 480px;
+    overflow-y: auto;
+  }
+  /* Scrollbar styling for the log content blocks */
+  .cl-content::-webkit-scrollbar { width: 8px; }
+  .cl-content::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.3); }
+  .cl-content::-webkit-scrollbar-thumb { background: rgba(94, 255, 139, 0.20); border-radius: 4px; }
+  .cl-content::-webkit-scrollbar-thumb:hover { background: rgba(94, 255, 139, 0.35); }
+
+  .cl-regen-note {
+    margin-top: 16px;
+    padding: 10px 14px;
+    background: rgba(255, 195, 74, 0.06);
+    border: 1px dashed rgba(255, 195, 74, 0.30);
+    border-radius: 4px;
+    font-size: 11.5px;
+    color: #d4b56a;
+  }
+  .cl-regen-note strong { color: #ffc34a; font-weight: 700; }
+  .cl-regen-note code {
+    background: rgba(94, 255, 139, 0.08);
+    color: #5eff8b;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+  }
+
+  .cl-actions { margin-top: 14px; display: flex; justify-content: flex-end; }
+  .cl-exit-btn {
+    background: transparent;
+    color: #87a39d;
+    border: 1px solid rgba(94, 255, 139, 0.20);
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11.5px;
+    transition: all 0.15s;
+  }
+  .cl-exit-btn:hover {
+    color: #5eff8b;
+    border-color: rgba(94, 255, 139, 0.50);
+    background: rgba(94, 255, 139, 0.05);
+  }
+
+  /* Edit-mode notice — shown in the result panel actions area in place of Save-to-wishlist / Add-to-regimen
+     when the user arrived via "Full edit". Same amber tone as the edit banner so visual semantics line up. */
+  .lc-result-edit-note {
+    flex: 1;
+    background: linear-gradient(135deg, rgba(255, 215, 130, 0.20), rgba(255, 220, 175, 0.13));
+    border: 1px solid rgba(220, 160, 80, 0.40);
+    border-left: 4px solid rgba(200, 130, 50, 0.85);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .lc-result-edit-note strong { color: rgba(110, 70, 20, 1); font-weight: 700; }
+  /* Sparse-data banners */
+  .lc-sparse-banner { padding: 10px 14px; border-radius: 4px; font-size: 13px; line-height: 1.5; margin-bottom: 14px; color: var(--ink-soft); }
+  .lc-sparse-banner.sev-info { background: var(--teal-veil); border-left: 3px solid var(--teal-mid); }
+  .lc-sparse-banner.sev-warn { background: var(--warn-bg); border-left: 3px solid var(--warn); }
+  .lc-sparse-banner strong { color: var(--ink); }
+  .lc-sparse-banner.sev-warn strong { color: var(--warn); }
+  /* Custom modal — replaces native confirm() for nicer UX */
+  .lc-modal { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 20px; }
+  .lc-modal[hidden] { display: none; }
+  .lc-modal-backdrop { position: absolute; inset: 0; background: rgba(14, 53, 49, 0.55); animation: lc-fade-in 0.18s ease-out; }
+  .lc-modal-content { position: relative; background: var(--surface); max-width: 440px; width: 100%; padding: 26px 28px 22px; border-radius: var(--radius-md); box-shadow: 0 24px 60px rgba(0,0,0,0.28); animation: lc-modal-in 0.22s cubic-bezier(0.2, 0.9, 0.3, 1.2); }
+  @keyframes lc-fade-in { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes lc-modal-in { from { opacity: 0; transform: translateY(12px) scale(0.96); } to { opacity: 1; transform: none; } }
+  .lc-modal-title { margin: 0 0 10px; font-size: 18px; font-weight: 700; color: var(--warn); display: flex; align-items: center; gap: 8px; }
+  .lc-modal-title.sev-crit { color: var(--crit); }
+  .lc-modal-title.sev-info { color: var(--teal-deep); }
+  /* Pass D.0.1: white-space: pre-line lets composed modal bodies use \n and \n\n
+     for line + paragraph breaks. The body is set via .textContent (XSS-safe)
+     so this is the only way to surface structured content without enhancing
+     the showLcModal helper itself. */
+  .lc-modal-body { margin: 0 0 18px; font-size: 14px; line-height: 1.55; color: var(--ink-soft); white-space: pre-line; }
+  .lc-modal-confirm { display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: var(--warn-bg); border-radius: var(--radius-sm); margin-bottom: 18px; cursor: pointer; user-select: none; transition: background 0.15s; border: 1px solid transparent; }
+  .lc-modal-confirm[hidden] { display: none; }
+  .lc-modal-confirm:hover { background: #f5e3c8; }
+  .lc-modal-confirm.checked { background: #f5e3c8; border-color: var(--warn); }
+  .lc-modal-confirm input { width: 16px; height: 16px; accent-color: var(--warn); cursor: pointer; flex-shrink: 0; }
+  .lc-modal-confirm span { font-size: 13.5px; color: var(--ink); font-weight: 500; }
+  .lc-modal-actions { display: flex; gap: 10px; justify-content: flex-end; }
+  .lc-modal-actions button { padding: 10px 20px; font-size: 14px; border: none; border-radius: var(--radius-sm); cursor: pointer; font-weight: 500; transition: all 0.15s; font-family: inherit; }
+  /* Modal Cancel — soft warn (yellow) signaling "back out without committing" */
+  .lc-modal-actions .modal-cancel { background: var(--warn-bg); color: var(--warn-deep); border: 1px solid var(--warn-bg) !important; }
+  .lc-modal-actions .modal-cancel:hover { background: var(--warn); color: white; border-color: var(--warn-deep) !important; }
+  .lc-modal-actions .modal-confirm { background: var(--teal); color: white; font-weight: 600; }
+  .lc-modal-actions .modal-confirm:hover { background: var(--teal-deep); }
+  /* Danger confirm — crit/red */
+  .lc-modal-actions .modal-confirm.danger { background: var(--crit); }
+  .lc-modal-actions .modal-confirm.danger:hover { background: var(--crit-deep); }
+  .lc-modal-actions .modal-confirm:disabled { opacity: 0.4; cursor: not-allowed; background: var(--ink-faint); }
+  .lc-modal-actions .modal-confirm.committed { background: var(--ok); }
+  .lc-modal-actions .modal-confirm.committed:hover { background: #1f5a4d; }
+
+  /* ───────────────────────────────────────────────────────────────────────
+     Round 132 — Shared design primitives (polish-with-leverage)
+     -----------------------------------------------------------
+     Reusable primitives for delete acknowledgments + "did a thing" toasts.
+     Applies to any card-shaped deletable element via .is-deleting; future
+     surfaces consume these directly rather than rolling their own.
+
+     Anatomy of .is-deleting (~550ms — Round 133 simplified):
+       0-130ms — red inset border + soft red wash fade in together
+       130-380ms — hold (medium pause to register the change)
+       380-550ms — both fade out; element opacity goes to 0
+     After animationend, the consuming JS removes the element from the DOM.
+     No layout shifts (no max-height, no transform on the container); only
+     compositor-friendly properties (opacity, box-shadow color). Glitch-free
+     by design — the prior shrink+slide variant was visually scuffed and the
+     bottom-bar slide-in didn't add value over the inset border treatment.
+
+     Anatomy of .lc-quiet-toast (~3s lifecycle):
+       0-220ms — pill slides in from below + fades in
+       220ms-2700ms — holds
+       2700-2960ms — fades out + subtle upward nudge
+     Auto-removed from DOM at ~3.1s by showQuietToast() teardown timer.
+     ─────────────────────────────────────────────────────────────────────── */
+
+  /* Universal deletion ceremony (Round 133 — simplified to overlay+border).
+     Works on any card-shaped element. No layout shifts: only opacity and
+     box-shadow color change. The element stays put through the ceremony;
+     the consuming JS removes it from the DOM after animationend. */
+  .is-deleting {
+    animation: lc-delete-flash 550ms ease-out forwards;
+    pointer-events: none;
+    position: relative;
+    will-change: opacity, box-shadow;
+  }
+  /* Red wash overlay — soft rinse across the deletable */
+  .is-deleting::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(220, 38, 38, 0.22);
+    border-radius: inherit;
+    pointer-events: none;
+    animation: lc-delete-wash 550ms ease-out forwards;
+    z-index: 5;
+    will-change: opacity;
+  }
+  /* Synced overlay + border keyframes (medium pace) */
+  @keyframes lc-delete-flash {
+    0%   { box-shadow: inset 0 0 0 0 rgba(220, 38, 38, 0); opacity: 1; }
+    24%  { box-shadow: inset 0 0 0 2px rgba(220, 38, 38, 1); opacity: 1; }
+    70%  { box-shadow: inset 0 0 0 2px rgba(220, 38, 38, 1); opacity: 1; }
+    100% { box-shadow: inset 0 0 0 0 rgba(220, 38, 38, 0); opacity: 0; }
+  }
+  @keyframes lc-delete-wash {
+    0%   { opacity: 0; }
+    24%  { opacity: 1; }
+    70%  { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  /* Shared "did a thing" toast — soft acknowledgment, auto-dismiss */
+  .lc-quiet-toast {
+    position: fixed;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(31, 41, 55, 0.96);
+    color: #f3f4f6;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font: 500 13px/1.4 Inter, -apple-system, system-ui, sans-serif;
+    letter-spacing: 0.01em;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28), 0 1px 0 rgba(255, 255, 255, 0.06) inset;
+    z-index: 10000;
+    pointer-events: none;
+    max-width: 80vw;
+    animation: lc-quiet-toast-in 220ms ease-out forwards, lc-quiet-toast-out 260ms ease-in 2700ms forwards;
+    will-change: opacity, transform;
+  }
+  @keyframes lc-quiet-toast-in {
+    from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+  @keyframes lc-quiet-toast-out {
+    from { opacity: 1; transform: translateX(-50%) translateY(0); }
+    to   { opacity: 0; transform: translateX(-50%) translateY(-4px); }
+  }
+  /* Reduced-motion respect — accessibility, ships free */
+  @media (prefers-reduced-motion: reduce) {
+    .is-deleting,
+    .is-deleting::after { animation-duration: 1ms !important; }
+    .lc-quiet-toast { animation: none; opacity: 1; }
+  }
+
+  /* OCR controls inside drop zone */
+  .lc-drop-zone .ocr-overlay { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2; max-width: 92%; }
+  .lc-drop-zone .ocr-btn { background: rgba(45, 130, 118, 0.95); color: white; padding: 9px 18px; border: none; border-radius: 999px; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 14px rgba(0,0,0,0.22); transition: background 0.15s, transform 0.1s; font-family: inherit; }
+  .lc-drop-zone .ocr-action-row { display: flex; gap: 8px; align-items: center; }
+  .lc-drop-zone .replace-btn { background: rgba(255, 255, 255, 0.92); color: var(--ink); padding: 9px 16px; border: 1px solid var(--teal-veil); border-radius: 999px; font-size: 12px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 5px; box-shadow: 0 4px 14px rgba(0,0,0,0.18); transition: background 0.15s; font-family: inherit; }
+  .lc-drop-zone .replace-btn:hover { background: white; color: var(--teal-deep); }
+  .lc-images-strip { display: flex; gap: 10px; margin-top: 14px; padding: 8px; background: var(--surface-cool); border-radius: var(--radius-sm); }
+  .lc-images-strip[hidden] { display: none; }
+  .lc-image-thumb { width: 64px; height: 64px; border-radius: 6px; border: 2px solid transparent; background: white; cursor: pointer; position: relative; overflow: hidden; transition: border-color 0.15s, transform 0.1s; flex-shrink: 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .lc-image-thumb:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+  .lc-image-thumb.active { border-color: var(--teal); }
+  .lc-image-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* Thumb remove (alert/orange — removes an uploaded image) */
+  .lc-image-thumb .thumb-x { position: absolute; top: 3px; right: 3px; width: 20px; height: 20px; border-radius: 50%; background: var(--alert-bg); color: var(--alert-deep); border: 1px solid var(--alert-bg); font-size: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; line-height: 1; padding: 0; opacity: 0; transition: opacity 0.15s, background 0.15s, color 0.15s, border-color 0.15s; }
+  .lc-image-thumb:hover .thumb-x { opacity: 1; }
+  .lc-image-thumb .thumb-x:hover { background: var(--alert); color: white; border-color: var(--alert-deep); }
+  /* Ingredients editing assistance — image reference + click-to-fix suggestions */
+  .lc-ingredients-helper { display: grid; grid-template-columns: 200px 1fr; gap: 14px; margin-top: 12px; align-items: flex-start; }
+  .lc-ingredients-helper[hidden] { display: none; }
+  @media (max-width: 800px) { .lc-ingredients-helper { grid-template-columns: 1fr; } }
+  .lc-image-reference { border-radius: var(--radius-sm); border: 1px solid var(--teal-veil); padding: 8px; background: white; }
+  .lc-image-reference .ref-label { font-size: 10px; color: var(--ink-mute); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; }
+  .lc-image-reference img { width: 100%; height: auto; border-radius: 4px; cursor: zoom-in; max-height: 240px; object-fit: contain; background: var(--surface-cool); display: block; }
+  .lc-image-reference[hidden] { display: none; }
+  .lc-suggestions-panel { min-height: 60px; }
+  .lc-suggestions-panel[hidden] { display: none; }
+  .lc-suggestions-header { font-size: 11px; color: var(--ink-mute); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .lc-suggestions-header .count { background: var(--warn-bg); color: var(--warn); padding: 2px 9px; border-radius: 10px; font-size: 10px; font-weight: 700; letter-spacing: 0.04em; }
+  .lc-suggestions-header .hint { font-size: 11px; color: var(--ink-faint); font-weight: 400; text-transform: none; letter-spacing: 0; }
+  .lc-suggestion-card { padding: 9px 12px; background: var(--surface); border: 1px solid var(--teal-veil); border-left: 3px solid var(--warn); border-radius: var(--radius-sm); margin-bottom: 6px; display: flex; gap: 10px; align-items: center; font-size: 13px; flex-wrap: wrap; }
+  .lc-suggestion-card .target { font-family: ui-monospace, 'SF Mono', Monaco, monospace; background: var(--warn-bg); color: var(--warn); padding: 3px 8px; border-radius: 4px; font-weight: 600; font-size: 12.5px; }
+  .lc-suggestion-card .arrow { color: var(--ink-faint); }
+  .lc-suggestion-card .suggestions { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
+  .lc-suggestion-card .sug-btn { padding: 4px 11px; background: var(--teal-veil); color: var(--teal-deep); border: none; border-radius: 12px; cursor: pointer; font-size: 12px; font-weight: 600; transition: background 0.12s, color 0.12s; }
+  .lc-suggestion-card .sug-btn:hover { background: var(--teal); color: white; }
+  .lc-suggestion-card .dismiss-btn { background: none; border: none; color: var(--ink-faint); cursor: pointer; font-size: 17px; padding: 0 4px; line-height: 1; }
+  .lc-suggestion-card .dismiss-btn:hover { color: var(--crit); }
+  .lc-suggestions-empty { padding: 12px; color: var(--ink-mute); font-size: 12px; font-style: italic; background: var(--surface-cool); border-radius: var(--radius-sm); text-align: center; }
+  /* === My Regimen tab === */
+  .rg-hero { margin-bottom: 20px; }
+  .rg-hero h2 { font-size: 28px; margin: 0 0 6px; }
+  .rg-hero .subhead { color: var(--ink-mute); font-size: 14px; margin: 0 auto; line-height: 1.55; }
+  .rg-controls { display: flex; justify-content: center; align-items: center; gap: 16px; margin-bottom: var(--space-6); flex-wrap: wrap; }
+  /* Pass B: group-by toggle (Kind vs Goal). Sibling to .rg-filters but visually
+     subdued so it reads as a view-mode switch, not another filter. */
+  .rg-groupby {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--surface-soft);
+    border: 1px solid var(--teal-veil);
+    border-radius: 999px;
+    padding: 4px 10px 4px 14px;
+  }
+  .rg-groupby-label {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-right: 2px;
+  }
+  .rg-groupby-btn {
+    padding: 4px 12px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s, color 0.15s;
+  }
+  .rg-groupby-btn:hover { background: var(--teal-veil); }
+  .rg-groupby-btn.active {
+    background: var(--teal-deep);
+    color: white;
+  }
+  /* Pass C.2: disabled state for the Goal button when no user goals on file
+     (multi-user-ready case). The tooltip carries the explanatory text without
+     any chat/assistant language. */
+  .rg-groupby-btn.disabled,
+  .rg-groupby-btn:disabled {
+    color: var(--ink-faint);
+    background: transparent;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  .rg-groupby-btn.disabled:hover,
+  .rg-groupby-btn:disabled:hover {
+    background: transparent;
+  }
+  /* Per-card goal-chip cluster — surfaces which user goals each item serves */
+  .rg-card .rg-goal-chips { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 0 8px 0; }
+  .rg-card .rg-goal-chip {
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: var(--teal-veil);
+    color: var(--teal-deep);
+    border: 1px solid var(--teal-soft);
+  }
+  .rg-card .rg-goal-chip.primary {
+    background: var(--teal-deep);
+    color: white;
+    border-color: var(--teal-deep);
+  }
+  /* Pass B.2: protein-based strength match — distinct amber/dashed styling so
+     users can immediately see it's not the full Wallach-nutrient-threshold
+     match. The dashed border carries the "provisional / soft signal" feel; the
+     amber color separates it from the teal goal-chip family. */
+  .rg-card .rg-goal-chip.protein-based {
+    background: #fff3dc;
+    color: #8a5d1a;
+    border: 1px dashed #c8932a;
+  }
+  .rg-card .rg-goal-chip.protein-based.primary {
+    background: #c8932a;
+    color: white;
+    border: 1px solid #8a5d1a;
+  }
+  /* Pass C: Stack-as-coverage-shape — per-card strip showing which essentials
+     this item meaningfully contributes to + how much. Each cell is one of the 92
+     essentials the item carries at >=15% of low target; colored by contribution
+     bucket; clickable to jump to the Periodic Table tile for that essential. */
+  .rg-card .rg-coverage-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    margin: 0 0 10px 0;
+    align-items: center;
+  }
+  .rg-card .rg-coverage-strip-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-mute);
+    margin-right: 6px;
+  }
+  .rg-card .rg-cov-cell {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.1s, box-shadow 0.1s;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .rg-card .rg-cov-cell:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  }
+  /* Contribution buckets — saturation maps to how close the single item alone
+     gets to Wallach's low-end target for that essential. Darker = more decisive
+     contribution. Light teal = barely-meaningful (15-30%); deep teal = full+ (>=100%).
+     These colors live in the teal family to read as a positive "coverage" signal
+     vs the warn/gap colors used in the periodic-table tiles. */
+  .rg-card .rg-cov-cell.tier-full {
+    background: var(--teal-deep);
+    color: white;
+    border-color: var(--teal-deep);
+  }
+  .rg-card .rg-cov-cell.tier-strong {
+    background: var(--teal);
+    color: white;
+    border-color: var(--teal);
+  }
+  .rg-card .rg-cov-cell.tier-mid {
+    background: var(--teal-mid);
+    color: white;
+    border-color: var(--teal-mid);
+  }
+  .rg-card .rg-cov-cell.tier-soft {
+    background: var(--teal-soft);
+    color: var(--teal-deep);
+    border-color: var(--teal-soft);
+  }
+  .rg-card .rg-cov-cell.tier-faint {
+    background: var(--teal-veil);
+    color: var(--teal-deep);
+    border-color: var(--teal-veil);
+  }
+  /* Blend-bonus marker — appears at the strip's end when the item has any
+     blend_parent nutrients in its lookup data. Signals "this item also contributes
+     to unquantified essentials via proprietary blends." */
+  .rg-card .rg-cov-blend {
+    font-size: 11px;
+    font-weight: 700;
+    color: #8a5d1a;
+    padding: 0 8px;
+    height: 22px;
+    line-height: 22px;
+    border-radius: 4px;
+    background: #fff3dc;
+    border: 1px dashed #c8932a;
+    cursor: help;
+  }
+  .rg-card .rg-cov-overflow {
+    font-size: 10.5px;
+    color: var(--ink-mute);
+    font-style: italic;
+    padding: 0 4px;
+    line-height: 22px;
+  }
+  /* Regimen filters — promoted to a prominent pill cluster so the user can find/navigate at a glance.
+     Visually similar to the main subtabs but distinct enough that filters read as filters, not navigation. */
+  .rg-filters {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(180, 215, 207, 0.55);
+    border-radius: 999px;
+    box-shadow: 0 2px 10px rgba(15, 60, 55, 0.07);
+  }
+  .rg-filter-btn {
+    padding: 9px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--teal-deep);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.18s ease;
+    letter-spacing: 0.01em;
+  }
+  .rg-filter-btn:hover {
+    background: rgba(180, 215, 207, 0.55);
+  }
+  .rg-filter-btn.active {
+    background: linear-gradient(180deg, rgba(76, 169, 154, 0.95) 0%, rgba(45, 130, 118, 0.95) 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(45, 130, 118, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.30);
+  }
+
+  .rg-export-btn {
+    background: var(--teal-veil); color: var(--teal-deep); border: 1px solid var(--teal-soft);
+    padding: 8px 14px; border-radius: 6px; font-size: 13px; font-weight: 500;
+    cursor: pointer; margin-left: 10px; transition: background 0.15s, transform 0.05s;
+    font-family: inherit;
+  }
+  .rg-export-btn:hover { background: var(--teal-soft); }
+  .rg-export-btn:active { transform: translateY(1px); }
+
+  /* ──────────────────────────────────────────────────────────────────────
+     Round 126 — Pass F save-cartridge: Regimen Slots section.
+     Dark slate showcase background (solid, no decorative shapes per user
+     direction — design choice, not constraint). Per-slot accent colors
+     (teal/coral/periwinkle) set via inline --slot-accent-* CSS variables
+     so a single rule renders all three slot states. Card-internal
+     highlight overlays (the ::before strips on active + inactive cards)
+     stay — they're the "glass crystal" feel the v2 mockup landed.
+     ────────────────────────────────────────────────────────────────────── */
+
+  .rg-slots-section {
+    background: #15191e;
+    border-radius: 12px;
+    padding: 22px 20px;
+    margin: 0 0 24px 0;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  }
+  .rg-slots-section *,
+  .rg-slots-detail * { font-family: inherit; }
+  .rg-slots-header {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; margin-bottom: 16px;
+  }
+  .rg-slots-title-block { display: flex; align-items: center; gap: 10px; }
+  .rg-slots-icon {
+    width: 32px; height: 32px;
+    background: #1a5a52;
+    border: 0.5px solid #4ba99a;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    color: #ebf6f3; font-size: 18px; flex-shrink: 0;
+    transition: background 0.15s, transform 0.12s;
+  }
+  .rg-slots-icon:hover { background: #2d8276; transform: translateY(-1px); }
+  .rg-slots-icon:active { transform: translateY(0); }
+  .rg-slots-icon:focus-visible { outline: 2px solid #5DCAA5; outline-offset: 3px; }
+  .rg-slots-section.is-vault-mode .rg-slots-icon { background: #4a3a2a; border-color: #8a6b48; }
+  .rg-slots-section.is-vault-mode .rg-slots-icon:hover { background: #5c4733; }
+  .rg-slots-section.is-vault-mode .rg-slots-title { color: #f4d9a8; }
+  .rg-slots-section.is-vault-mode .rg-slots-subtitle { color: #c9a878; }
+
+  /* Round 130b — Recovery Vault list. Slightly warmer/darker register than
+     the main slots grid — "archive" mood without going pitch-black. */
+  .rg-slots-vault[hidden] { display: none; }
+  .rg-slots-vault {
+    background: #1f1812;
+    border: 0.5px solid #3a2f24;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .rg-vault-header {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 0.5px solid #3a2f24;
+  }
+  .rg-vault-count {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #c9a878; font-weight: 600;
+  }
+  .rg-vault-header-actions { display: flex; gap: 7px; }
+  .rg-vault-clear-btn, .rg-vault-close-btn {
+    padding: 6px 12px; font-size: 12px; font-weight: 500;
+    background: rgba(255,255,255,0.06);
+    border: 0.5px solid rgba(244,217,168,0.25);
+    color: #c9a878;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex; align-items: center; gap: 5px;
+    transition: background 0.15s;
+  }
+  .rg-vault-clear-btn:hover { background: rgba(180,60,40,0.2); color: #f0997b; border-color: rgba(216,90,48,0.45); }
+  .rg-vault-close-btn:hover { background: rgba(255,255,255,0.12); color: #f4d9a8; }
+  .rg-vault-clear-btn:focus-visible, .rg-vault-close-btn:focus-visible { outline: 2px solid #d4a26a; outline-offset: 2px; }
+  .rg-vault-clear-btn svg { width: 13px; height: 13px; }
+
+  .rg-vault-list {
+    display: flex; flex-direction: column; gap: 8px;
+    max-height: 360px;
+    overflow-y: auto;
+    /* Round 133 — clip the 2px hover translateX of vault entries so the body
+       doesn't show a horizontal scrollbar. Hover motion stays visible because
+       it's small enough to fall inside the natural row padding. */
+    overflow-x: hidden;
+    /* Small inset so the entry can translateX 2px without colliding visually
+       with the inner scrollbar edge. */
+    padding-right: 2px;
+  }
+  .rg-vault-list::-webkit-scrollbar { width: 8px; }
+  .rg-vault-list::-webkit-scrollbar-track { background: #2a1f15; border-radius: 4px; }
+  .rg-vault-list::-webkit-scrollbar-thumb { background: #5a4a35; border-radius: 4px; }
+  .rg-vault-list::-webkit-scrollbar-thumb:hover { background: #6b5942; }
+
+  .rg-vault-entry {
+    display: flex; align-items: center; gap: 14px;
+    padding: 12px 14px 12px 12px;
+    background: #2a1f15;
+    border: 0.5px solid #3a2f24;
+    border-left: 3px solid #94a3b8;
+    border-radius: 6px;
+    transition: background 0.15s, transform 0.12s;
+  }
+  .rg-vault-entry:hover { background: #322619; transform: translateX(2px); }
+  .rg-vault-entry-num {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 22px; font-weight: 700;
+    line-height: 1; letter-spacing: -0.03em;
+    width: 32px; flex-shrink: 0;
+    font-feature-settings: 'tnum' on;
+  }
+  .rg-vault-entry-info { flex: 1; min-width: 0; }
+  .rg-vault-entry-title {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 14px; font-weight: 600; color: #f4d9a8;
+    margin-bottom: 3px;
+  }
+  .rg-vault-entry-icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px;
+  }
+  .rg-vault-entry-icon svg { width: 13px; height: 13px; }
+  .rg-vault-entry-stats {
+    font-size: 11px; color: #b8946a; font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .rg-vault-entry-deleted {
+    font-size: 10.5px; color: #8a6b48; font-style: italic;
+    margin-top: 2px;
+  }
+  .rg-vault-restore-btn {
+    padding: 7px 14px; font-size: 12px; font-weight: 600;
+    background: #d4a26a;
+    border: 0.5px solid #f4d9a8;
+    color: #2a1f15;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: 0.04em;
+    transition: background 0.15s, transform 0.12s;
+    flex-shrink: 0;
+  }
+  .rg-vault-restore-btn:hover { background: #f4d9a8; transform: translateY(-1px); }
+  .rg-vault-restore-btn:focus-visible { outline: 2px solid #f4d9a8; outline-offset: 2px; }
+
+  .rg-vault-empty {
+    text-align: center;
+    padding: 32px 16px 24px;
+    color: #c9a878;
+  }
+  .rg-vault-empty-icon {
+    font-size: 30px; color: #5a4a35;
+    margin-bottom: 10px;
+    display: inline-flex;
+  }
+  .rg-vault-empty-icon svg { width: 30px; height: 30px; }
+  .rg-vault-empty-title {
+    font-size: 15px; font-weight: 600; color: #f4d9a8;
+    margin-bottom: 6px;
+  }
+  .rg-vault-empty-sub {
+    font-size: 12.5px; color: #8a6b48;
+    max-width: 380px; margin: 0 auto 16px;
+    line-height: 1.5;
+  }
+  .rg-slots-title { font-size: 16px; font-weight: 600; color: #ebf6f3; line-height: 1.2; margin: 0; font-family: inherit; letter-spacing: 0.04em; text-transform: uppercase; }
+  .rg-slots-subtitle { font-size: 13px; color: #9aa4af; margin: 0; }
+
+  .rg-slots-actions { display: flex; gap: 7px; flex-wrap: wrap; justify-content: flex-end; }
+  .rg-slots-btn {
+    padding: 7px 13px; font-size: 13px; font-weight: 500;
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.07);
+    border: 0.5px solid rgba(255,255,255,0.18);
+    color: #d4d9e0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s, border-color 0.15s, transform 0.05s;
+  }
+  .rg-slots-btn:hover:not(:disabled) { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.3); }
+  .rg-slots-btn:active:not(:disabled) { transform: translateY(1px); }
+  .rg-slots-btn:focus-visible { outline: 2px solid #5DCAA5; outline-offset: 2px; }
+  .rg-slots-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .rg-slots-btn svg { width: 14px; height: 14px; }
+  .rg-slots-btn-primary {
+    background: #1d9e75; border-color: #5DCAA5; color: #ebf6f3;
+  }
+  .rg-slots-btn-primary:hover:not(:disabled) { background: #2dbf90; border-color: #9FE1CB; }
+
+  .rg-slots-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  @media (max-width: 720px) {
+    .rg-slots-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .rg-slot-card {
+    border-radius: 10px;
+    padding: 14px 22px 12px 14px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    min-height: 118px;
+    border: 0.5px solid transparent;
+  }
+  .rg-slot-card:hover { transform: translateY(-2px); }
+  .rg-slot-card:focus-visible { outline: 2px solid #5DCAA5; outline-offset: 2px; }
+
+  .rg-slot-card.is-active {
+    background: #f5fbf9;
+    border-color: #ffffff;
+    border-left: 4px solid var(--slot-accent-mid, #1d9e75);
+    transform: translateY(-2px);
+    box-shadow: 0 0 0 1px var(--slot-accent-soft, #9FE1CB) inset, 0 4px 0 0 var(--slot-accent-soft, #9FE1CB);
+  }
+  .rg-slot-card.is-active::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 40%;
+    background: #ffffff; opacity: 0.6; pointer-events: none;
+  }
+  .rg-slot-energy-line {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+    background: var(--slot-accent-mid, #1d9e75);
+    pointer-events: none;
+  }
+
+  .rg-slot-card.is-inactive {
+    background: #e2e6ec;
+    border-color: #c4cad3;
+    border-left: 4px solid var(--slot-accent-mid, #94a3b8);
+  }
+  .rg-slot-card.is-inactive::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 36%;
+    background: #f1f4f8; opacity: 0.7; pointer-events: none;
+  }
+  .rg-slot-card.is-inactive:hover {
+    background: #ecf0f5;
+  }
+
+  .rg-slot-card.is-empty {
+    background: rgba(255,255,255,0.025);
+    border: 1.5px dashed rgba(180,221,213,0.35);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 7px;
+    transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+  }
+  .rg-slot-card.is-empty:hover {
+    background: rgba(180,221,213,0.07);
+    border-color: rgba(180,221,213,0.55);
+    transform: translateY(-2px);
+  }
+  .rg-slot-plus {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: rgba(180,221,213,0.12);
+    border: 1px solid rgba(180,221,213,0.45);
+    display: flex; align-items: center; justify-content: center;
+    color: #b4ddd5; font-size: 18px;
+    transition: background 0.18s ease, transform 0.18s ease;
+  }
+  .rg-slot-card.is-empty:hover .rg-slot-plus {
+    background: rgba(180,221,213,0.22);
+    transform: scale(1.08);
+  }
+  .rg-slot-plus svg { width: 18px; height: 18px; }
+  .rg-slot-empty-label {
+    font-size: 14px; color: #cbd5e1; font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .rg-slot-empty-hint {
+    font-size: 11px; color: #94a3b8;
+    font-weight: 500;
+  }
+
+  .rg-slot-content { position: relative; }
+  .rg-slot-header-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+  .rg-slot-number {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-size: 36px; font-weight: 700;
+    color: var(--slot-accent-fg, #0F6E56);
+    line-height: 0.95; letter-spacing: -0.04em;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+  }
+  .rg-slot-card.is-inactive .rg-slot-number {
+    color: var(--slot-accent-fg, #475569);
+    opacity: 0.78;
+  }
+  .rg-slot-pill {
+    background: var(--slot-accent-mid, #1d9e75);
+    color: #ffffff;
+    font-size: 10px; font-weight: 700;
+    padding: 4px 9px; border-radius: 999px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.4) inset;
+  }
+  .rg-slot-name-row {
+    display: flex; align-items: center; gap: 6px; margin-bottom: 4px;
+    margin-top: 2px;
+  }
+  .rg-slot-personality-icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    color: var(--slot-accent-fg, #0F6E56); font-size: 14px;
+    flex-shrink: 0;
+  }
+  .rg-slot-personality-icon svg { width: 14px; height: 14px; }
+  .rg-slot-card.is-inactive .rg-slot-personality-icon { color: var(--slot-accent-fg, #475569); opacity: 0.8; }
+  .rg-slot-name {
+    font-size: 15px; font-weight: 700; color: #1f2937;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+  }
+  .rg-slot-card.is-active .rg-slot-name {
+    color: var(--slot-accent-fg, #085041);
+  }
+  .rg-slot-card.is-inactive .rg-slot-name { color: #334155; }
+  .rg-slot-subtitle {
+    font-size: 12px; margin-bottom: 14px; color: #475569; font-weight: 500;
+  }
+  .rg-slot-card.is-active .rg-slot-subtitle { color: var(--slot-accent-mid, #2d8276); }
+  .rg-slot-card.is-inactive .rg-slot-subtitle { color: #64748b; }
+
+  .rg-slot-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 8px;
+  }
+  .rg-slot-coverage-label {
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #94a3b8;
+  }
+  .rg-slot-card.is-active .rg-slot-coverage-label { color: var(--slot-accent-mid, #1d9e75); opacity: 0.7; }
+  .rg-slot-coverage-num {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-size: 14px; font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--slot-accent-fg, #0F6E56);
+    font-feature-settings: 'tnum' on;
+  }
+  .rg-slot-card.is-inactive .rg-slot-coverage-num { color: var(--slot-accent-fg, #475569); opacity: 0.85; }
+
+  /* Round 127 — delete button on filled slot cards. Hidden by default;
+     fades in on hover/focus-within. Sits at top-right corner, INSIDE the
+     strip area (which is on the far right edge at width 6px).
+     Click stops propagation so it doesn't trigger card load. */
+  /* Round 128 — delete button repositioned to BOTTOM-RIGHT corner of the card,
+     out of the way of the CURRENT pill (top-right) and slot number (top-left).
+     Inside the visible card area, above the energy line. Hover-reveal pattern
+     preserved. pointer-events: auto on the button forces it back into the
+     click chain even though parents have overlay effects. */
+  .rg-slot-delete-btn {
+    position: absolute;
+    top: calc(50% + 27px);
+    right: 18px;
+    transform: translateY(-50%);
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgba(46,55,66,0.18);
+    color: #64748b;
+    display: flex; align-items: center; justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s ease, background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+    z-index: 4;
+    font-family: inherit;
+    pointer-events: auto;
+  }
+  .rg-slot-delete-btn svg { width: 12px; height: 12px; }
+  .rg-slot-card:hover .rg-slot-delete-btn,
+  .rg-slot-card:focus-within .rg-slot-delete-btn,
+  .rg-slot-delete-btn:focus-visible {
+    opacity: 1;
+  }
+  .rg-slot-delete-btn:hover {
+    background: #ffffff; color: #b91c1c; border-color: rgba(185,28,28,0.4);
+    transform: translateY(-50%) scale(1.12);
+  }
+  .rg-slot-delete-btn:focus-visible { outline: 2px solid #b91c1c; outline-offset: 2px; }
+
+  .rg-slot-strip {
+    position: absolute; right: 5px; top: 8px; bottom: 8px;
+    width: 6px;
+    display: flex; flex-direction: column-reverse;
+    gap: 1.5px;
+    pointer-events: none;
+  }
+  .rg-slot-strip span {
+    flex: 1; border-radius: 1px; background: #b5bcc4;
+  }
+  .rg-slot-strip span.on { background: var(--slot-accent-mid, #1d9e75); }
+  .rg-slot-strip span.mid { background: var(--slot-accent-soft, #9FE1CB); }
+
+  .rg-slots-detail {
+    background: #f5fbf9;
+    border: 0.5px solid #ffffff;
+    border-radius: 8px;
+    padding: 12px 14px;
+    display: flex; align-items: center; gap: 14px;
+    position: relative;
+    overflow: hidden;
+    flex-wrap: wrap;
+  }
+  .rg-slots-detail::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 14px;
+    background: #ffffff; opacity: 0.55; pointer-events: none;
+  }
+  .rg-slots-detail[hidden] { display: none; }
+  .rg-slot-detail-num {
+    position: relative;
+    width: 52px; height: 52px;
+    background: #1a5a52;
+    border: 0.5px solid #4ba99a;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 19px; font-weight: 600; color: #ebf6f3;
+    letter-spacing: -0.02em; flex-shrink: 0;
+  }
+  .rg-slot-detail-info { position: relative; flex-shrink: 0; }
+  .rg-slot-detail-title {
+    font-size: 15px; font-weight: 600; color: #085041;
+    display: flex; align-items: center; gap: 7px;
+  }
+  .rg-slot-detail-personality {
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #1d9e75; font-size: 15px;
+  }
+  .rg-slot-detail-personality svg { width: 15px; height: 15px; }
+  .rg-slot-detail-sub { font-size: 12px; color: #2d8276; }
+  .rg-slot-detail-stats {
+    position: relative; flex: 1;
+    display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
+  }
+  .rg-slot-stat { display: flex; align-items: center; gap: 6px; }
+  .rg-slot-stat-icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #2d8276; font-size: 16px;
+  }
+  .rg-slot-stat-icon svg { width: 16px; height: 16px; }
+  .rg-slot-stat-value { font-size: 13px; color: #085041; }
+  .rg-slot-stat-value strong { font-weight: 600; }
+  .rg-slot-detail-status {
+    position: relative;
+    display: flex; align-items: center; gap: 7px;
+    padding: 6px 12px;
+    background: #E1F5EE;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  .rg-slot-detail-status-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: #1d9e75;
+  }
+  .rg-slot-detail-status-text {
+    font-size: 13px; color: #085041; font-weight: 600;
+  }
+
+  .rg-add-btn { padding: 8px 16px; background: var(--teal-deep); color: white; border: none; border-radius: var(--radius-sm); cursor: pointer; font-size: 13px; font-weight: 600; font-family: inherit; }
+  .rg-add-btn:hover { background: #0f3a35; }
+  .rg-add-form { background: var(--surface-soft); border-radius: var(--radius-md); padding: 22px 24px; margin-bottom: 20px; border: 1px solid var(--teal-veil); }
+  .rg-add-form[hidden] { display: none; }
+  .rg-add-form h3 { margin: 0 0 16px; font-size: 16px; color: var(--ink); }
+  .rg-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+  .rg-form-grid .span-2 { grid-column: 1 / -1; }
+  .rg-form-grid label { display: block; font-size: 11px; font-weight: 600; color: var(--ink-mute); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .rg-form-grid label .req { color: var(--crit); }
+  .rg-form-actions { display: flex; gap: 10px; justify-content: flex-end; padding-top: 12px; border-top: 1px solid var(--teal-veil); }
+  .rg-group { margin-bottom: 28px; }
+  .rg-group-header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--teal-veil); }
+  .rg-group-title { font-size: 16px; font-weight: 600; color: var(--ink); margin: 0; }
+  .rg-group-count { font-size: 12px; color: var(--ink-mute); background: var(--teal-veil); padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+  .rg-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; }
+  .rg-card { background: var(--surface); border-radius: var(--radius-md); padding: 18px 20px; border: 1px solid var(--teal-veil); box-shadow: 0 1px 3px rgba(0,0,0,0.04); transition: box-shadow 0.15s; position: relative; }
+  .rg-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.07); }
+  .rg-card.removed { opacity: 0.4; }
+  .rg-card .rg-name { font-size: 16px; font-weight: 600; color: var(--ink); margin: 0 0 8px; line-height: 1.3; padding-right: 60px; }
+  .rg-card .rg-dose { font-size: 13px; color: var(--ink-soft); margin: 0 0 8px; font-family: ui-monospace, monospace; background: var(--teal-veil); padding: 4px 9px; border-radius: 4px; display: inline-block; }
+  .rg-card .rg-meta { font-size: 12px; color: var(--ink-mute); margin: 0 0 10px; }
+  .rg-card .rg-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 10px; }
+  .rg-tag { padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+  .rg-tag-chat { background: var(--teal-veil); color: var(--teal-deep); }
+  .rg-tag-label { background: #e8e3f4; color: #5b3d8e; }
+  .rg-tag-manual { background: #fbf2dc; color: #8a5d1a; }
+  .rg-tag-missing { background: var(--warn-bg); color: var(--warn); }
+  .rg-tag-removed { background: var(--surface-cool); color: var(--ink-mute); }
+  .rg-card .rg-notes { font-size: 12.5px; color: var(--ink-soft); padding: 8px 10px; background: var(--surface-soft); border-left: 3px solid var(--teal-mid); border-radius: 4px; margin: 8px 0; line-height: 1.5; }
+  /* Round 158 — inline Dose + Per Day row on every card. Sits above the action
+     row so dosing is visible/modifiable at-a-glance without opening Details. */
+  .rg-card .rg-card-dose-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin: 8px 0 6px; padding: 6px 10px; background: var(--surface-soft); border-radius: 4px; border-left: 3px solid var(--teal-mid); }
+  .rg-card .rg-card-dose-label { display: flex; align-items: center; gap: 6px; font-size: 11.5px; color: var(--ink-mute); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+  .rg-card .rg-card-dose-label input { width: 56px; padding: 3px 6px; font-size: 13px; font-family: inherit; border: 1px solid var(--teal-veil); border-radius: 3px; text-align: center; color: var(--ink); background: white; }
+  .rg-card .rg-card-dose-label input:focus { outline: none; border-color: var(--teal-deep); box-shadow: 0 0 0 2px var(--teal-veil); }
+  .rg-card .rg-card-dose-eff { font-size: 12px; color: var(--ink-soft); margin-left: auto; font-style: italic; }
+  .rg-card .rg-card-dose-eff strong { color: var(--teal-deep); font-style: normal; font-weight: 700; }
+  .rg-card .rg-actions { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; align-items: center; }
+  .rg-card .rg-actions button { padding: 5px 10px; font-size: 12px; border: 1px solid transparent; border-radius: 4px; background: var(--surface-cool); color: var(--ink-soft); cursor: pointer; font-weight: 500; transition: all 0.15s; font-family: inherit; }
+  .rg-card .rg-actions button:hover { background: var(--teal-veil); color: var(--teal-deep); }
+  /* Round 158 v2 — primary card buttons (Details + Add to Regimen / Remove).
+     Larger, friendlier hit targets since each card has only 2 buttons now.
+     Equal-flex sizing so they pair cleanly side-by-side. */
+  .rg-card .rg-actions .rg-btn-primary {
+    flex: 1 1 auto;
+    min-width: 130px;
+    padding: 10px 18px;
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    transition: all 0.18s ease;
+  }
+  .rg-card .rg-actions .rg-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  }
+  .rg-card .rg-actions .rg-btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  /* Details — neutral secondary; soft teal contrast against the colorful primary */
+  .rg-card .rg-actions .rg-toggle-expand.rg-btn-primary {
+    background: white;
+    color: var(--teal-deep);
+    border-color: var(--teal-mid);
+  }
+  .rg-card .rg-actions .rg-toggle-expand.rg-btn-primary:hover {
+    background: var(--teal-veil);
+    color: var(--teal-deep);
+    border-color: var(--teal-deep);
+  }
+  /* Remove (reversible soft-delete on a regimen item) — alert/orange tier */
+  .rg-card .rg-actions .rg-remove { color: var(--alert-deep); background: var(--alert-bg); border-color: var(--alert-bg); }
+  /* Pass D: Adopt button — only renders on items where item.kind === 'recommended'.
+     Distinct teal-primary fill so the call-to-action reads as "this is the next
+     step for this card" without clashing with the existing button family. */
+  .rg-card .rg-actions .rg-adopt {
+    background: var(--teal-deep);
+    color: white;
+    border-color: var(--teal-deep);
+    font-weight: 700;
+  }
+  .rg-card .rg-actions .rg-adopt:hover {
+    background: #0f3a35;
+    color: white;
+    border-color: #0f3a35;
+  }
+  /* Pass D: Unadopt — appears on items that were previously adopted (have an
+     _adopted_at override). Lets the user revert the promotion back to
+     Recommended without losing the original entry data. */
+  .rg-card .rg-actions .rg-unadopt {
+    background: var(--warn-bg);
+    color: var(--warn-deep);
+    border-color: var(--warn-bg);
+  }
+  .rg-card .rg-actions .rg-unadopt:hover {
+    background: var(--warn);
+    color: white;
+    border-color: var(--warn-deep);
+  }
+  .rg-card .rg-actions .rg-remove:hover { background: var(--alert); color: white; border-color: var(--alert-deep); }
+  /* Restore (un-remove) — positive action, ok/teal tier */
+  .rg-card .rg-actions .rg-restore { color: var(--ok); background: var(--ok-bg); border-color: var(--ok-bg); }
+  .rg-card .rg-actions .rg-restore:hover { background: var(--ok); color: white; border-color: var(--ok); }
+  .rg-card.expanded .rg-expanded { display: block; }
+  .rg-expanded { display: none; padding-top: 14px; margin-top: 12px; border-top: 1px solid var(--teal-veil); }
+  .rg-expanded h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-mute); margin: 14px 0 8px; font-weight: 700; }
+  .rg-expanded h4:first-child { margin-top: 0; }
+  .rg-nutrient-list { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; font-size: 12px; }
+  .rg-nutrient-list .nut-row { display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px dotted var(--teal-veil); }
+  .rg-nutrient-list .nut-name { color: var(--ink-soft); font-weight: 500; }
+  /* Pass E: Ingredient education layer. Nutrient names become clickable pills
+     that open the citation-popup with Pass A.3 master DB content (Wallach
+     citation snippet, category, in_products count, blend appearances). Visual
+     signal is subtle — text doesn't shout "I'm a link" but rewards hover with
+     dotted underline + tint. Cursor: help conveys "more info available here." */
+  .rg-ingredient-pill {
+    cursor: help;
+    border-bottom: 1px dotted var(--teal-mid);
+    transition: color 0.12s, border-color 0.12s;
+  }
+  .rg-ingredient-pill:hover {
+    color: var(--teal-deep);
+    border-bottom-color: var(--teal-deep);
+  }
+  .rg-ingredient-pill.no-data {
+    cursor: default;
+    border-bottom: 1px dotted transparent;
+  }
+  /* Pass E.0.3: ingredient-popup body styling. Designed for the showLcModal
+     bodyHtml path. The blockquote treatment turns the Wallach snippet into a
+     real pull-quote: italic, larger text, fancy quotation marks, indented
+     accent border. Source caption sits below in small caps. The category label
+     and the bottom-metadata footer stay quiet so the quote is the focal point. */
+  .ingredient-popup-body {
+    line-height: 1.5;
+  }
+  .ingredient-popup-body .ingredient-cat {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--teal-deep);
+    background: var(--teal-veil);
+    padding: 3px 10px;
+    border-radius: 10px;
+    margin: 0 0 14px 0;
+  }
+  .ingredient-popup-body .ingredient-quote-lead {
+    margin: 0 0 8px 0;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .ingredient-popup-body .ingredient-quote-lead strong {
+    color: var(--teal-deep);
+    font-weight: 600;
+  }
+  .ingredient-popup-body .ingredient-quote {
+    margin: 0 0 4px 0;
+    padding: 14px 18px 4px 22px;
+    border-left: 3px solid var(--teal-mid);
+    background: var(--teal-veil);
+    border-radius: 0 6px 6px 0;
+    position: relative;
+  }
+  .ingredient-popup-body .ingredient-quote::before {
+    content: "❝";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    font-size: 28px;
+    color: var(--teal-mid);
+    line-height: 1;
+    opacity: 0.55;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+  .ingredient-popup-body .ingredient-quote blockquote {
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.55;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+  .ingredient-popup-body .ingredient-source {
+    display: block;
+    margin: 8px 0 16px 0;
+    text-align: right;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--ink-mute);
+  }
+  .ingredient-popup-body .ingredient-source strong {
+    font-style: normal;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  .ingredient-popup-body .ingredient-footer {
+    margin: 10px 0 0 0;
+    padding-top: 10px;
+    border-top: 1px solid var(--teal-veil);
+    font-size: 11.5px;
+    color: var(--ink-mute);
+    line-height: 1.5;
+  }
+  .ingredient-popup-body .ingredient-no-quote {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    padding: 12px 14px;
+    background: var(--surface-soft);
+    border-radius: 6px;
+    margin: 0 0 14px 0;
+  }
+  .rg-nutrient-list .nut-amt { color: var(--ink); font-family: ui-monospace, monospace; font-size: 11.5px; }
+  .rg-edit-form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+  .rg-edit-form .span-2 { grid-column: 1 / -1; }
+  .rg-edit-form label { display: block; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-mute); margin-bottom: 3px; }
+  .rg-edit-form input, .rg-edit-form textarea { width: 100%; padding: 7px 10px; border: 1px solid #d8e4e0; border-radius: 4px; font-size: 13px; font-family: inherit; box-sizing: border-box; }
+  .rg-edit-form textarea { resize: vertical; min-height: 50px; }
+  .rg-edit-actions { display: flex; gap: 8px; justify-content: flex-end; }
+  .rg-edit-actions button { padding: 6px 14px; font-size: 12px; border-radius: 4px; border: none; cursor: pointer; font-weight: 600; }
+  .rg-edit-actions .rg-save-btn { background: var(--teal); color: white; }
+  .rg-edit-actions .rg-save-btn:hover { background: var(--teal-deep); }
+  /* Cancel — soft warn tone (yellow) so it reads as "back out without committing" */
+  .rg-edit-actions .rg-cancel-btn { background: var(--warn-bg); color: var(--warn-deep); border: 1px solid var(--warn-bg); }
+  .rg-edit-actions .rg-cancel-btn:hover { background: var(--warn); color: white; border-color: var(--warn-deep); }
+  .rg-outcome-log { max-height: 180px; overflow-y: auto; }
+  .rg-outcome-entry { padding: 8px 10px; background: var(--surface-soft); border-radius: 4px; margin-bottom: 6px; font-size: 12.5px; line-height: 1.45; }
+  .rg-outcome-entry .when { font-size: 10px; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; margin-bottom: 3px; }
+  .rg-outcome-entry .what { color: var(--ink-soft); }
+  .rg-outcome-add { display: flex; gap: 6px; margin-top: 8px; }
+  .rg-outcome-add textarea { flex: 1; padding: 6px 10px; border: 1px solid #d8e4e0; border-radius: 4px; font-size: 12.5px; font-family: inherit; resize: none; min-height: 38px; box-sizing: border-box; }
+  .rg-outcome-add button { padding: 6px 12px; background: var(--teal-deep); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600; }
+  .rg-outcome-add button:hover { background: #0f3a35; }
+  .rg-doctrine { margin-top: 32px; padding: 12px 16px; background: var(--surface-soft); border-left: 3px solid var(--teal); border-radius: 4px; font-size: 12px; color: var(--ink-mute); font-style: italic; line-height: 1.55; }
+  .rg-empty { text-align: center; padding: 40px; color: var(--ink-mute); background: var(--surface-cool); border-radius: var(--radius-md); border: 1px dashed #d8e4e0; }
+  .lc-drop-zone .ocr-btn:hover { background: var(--teal-deep); transform: translateY(-1px); }
+  .lc-drop-zone .ocr-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .lc-drop-zone .ocr-progress { background: rgba(14, 53, 49, 0.88); color: white; padding: 9px 14px; border-radius: 8px; font-size: 12px; text-align: center; min-width: 220px; box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
+  .lc-drop-zone .ocr-progress[hidden] { display: none; }
+  .lc-drop-zone .ocr-progress-text { font-weight: 500; }
+  .lc-drop-zone .ocr-progress-bar { width: 100%; height: 3px; background: rgba(255,255,255,0.22); border-radius: 2px; margin-top: 6px; overflow: hidden; }
+  .lc-drop-zone .ocr-progress-fill { height: 100%; background: var(--teal-bright); transition: width 0.25s; }
+  .lc-field-autodetect-badge { display: inline-block; padding: 2px 7px; background: var(--teal-veil); color: var(--teal-deep); font-size: 10px; border-radius: 8px; font-weight: 700; margin-left: 8px; text-transform: uppercase; letter-spacing: 0.04em; vertical-align: middle; }
+  .lc-input.autodetect, .lc-textarea.autodetect, .lc-select.autodetect { background: linear-gradient(180deg, var(--teal-veil), var(--surface)); border-color: var(--teal-mid); }
+  .nutrient-table tr.autodetect input, .nutrient-table tr.autodetect select { background: linear-gradient(180deg, var(--teal-veil), white); border-color: var(--teal-mid); }
+  .lc-input.autodetect:focus, .lc-textarea.autodetect:focus, .lc-select.autodetect:focus { background: white; }
+  .lc-drop-zone .empty-state .hint { font-size: 12px; }
+
+  .result-actions { display: flex; gap: 12px; align-items: stretch; padding-top: 18px; border-top: 1px solid var(--teal-veil); margin-top: 18px; }
+  .result-actions textarea { flex: 1; padding: 10px 12px; border: 1px solid #d8e4e0; border-radius: var(--radius-sm); font-family: inherit; font-size: 13px; resize: none; min-height: 44px; box-sizing: border-box; }
+
+  .wishlist-header { margin: 36px 0 16px; font-size: 24px; }
+  .wishlist-empty { text-align: center; padding: 40px; color: var(--ink-mute); background: var(--surface-cool); border-radius: var(--radius-md); border: 1px dashed #d8e4e0; font-size: 14px; }
+  .wishlist-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 16px; }
+  .wish-card {
+    background: var(--surface); border-radius: var(--radius-md);
+    padding: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border: 1px solid var(--teal-veil); position: relative;
+    transition: box-shadow 0.2s;
+  }
+  .wish-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.08); }
+  .wish-card .verdict-pill {
+    display: inline-block; padding: 4px 11px; border-radius: 12px;
+    font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+  .wish-card .verdict-pill.ADD { background: var(--ok-bg); color: var(--ok); }
+  .wish-card .verdict-pill.REJECT { background: var(--crit-bg); color: var(--crit); }
+  .wish-card .verdict-pill.SAVE { background: var(--warn-bg); color: var(--warn); }
+  .wish-card h3.product-name { margin: 0 0 6px; font-size: 20px; font-weight: 600; color: var(--ink); line-height: 1.3; padding-right: 32px; }
+  .wish-card .meta { font-size: 12px; color: var(--ink-mute); margin: 0 0 12px; }
+  .wish-card .user-note {
+    padding: 10px 14px; background: var(--teal-veil);
+    border-left: 3px solid var(--teal-mid); border-radius: 4px;
+    font-size: 13px; line-height: 1.5; margin: 12px 0; color: var(--ink-soft);
+  }
+  .wish-card .gap-fills-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .wish-card .gap-fill-tag { font-size: 11px; padding: 4px 9px; background: var(--ok-bg); color: var(--ok); border-radius: 10px; font-weight: 600; }
+  /* Delete (permanent) — hard crit/red tier. Always faintly visible so user can see destructive affordance, then becomes prominent on hover. */
+  .wish-card .delete-btn {
+    position: absolute; top: 14px; right: 14px;
+    background: var(--crit-bg); border: 1px solid var(--crit-bg); color: var(--crit);
+    font-size: 18px; cursor: pointer; font-weight: 600;
+    width: 28px; height: 28px; border-radius: 50%; line-height: 1;
+    opacity: 0.55; transition: opacity 0.2s, background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .wish-card:hover .delete-btn { opacity: 1; }
+  .wish-card .delete-btn:hover { background: var(--crit); color: white; border-color: var(--crit-deep); }
+
+  .doctrine-note {
+    margin-top: 32px; padding: 12px 16px;
+    background: var(--surface-soft); border-left: 3px solid var(--teal);
+    border-radius: 4px; font-size: 12px;
+    color: var(--ink-mute); font-style: italic; line-height: 1.5;
+  }
+
+  @media (max-width: 900px) {
+    .scanner-grid { grid-template-columns: 1fr; }
+    .reasons-row { grid-template-columns: 1fr; }
+    .wishlist-grid { grid-template-columns: 1fr; }
+  }
+
+
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * APPENDIX · rg-goals regimen-section styling
+ * ───────────────────────────────────────────────────────────────────────────
+ * Moved here in Round 1·B from an inline <style> block that lived inside the
+ * legacy body markup (was nested in the Regimen tab). Same verbatim-extraction
+ * rule as the rest of this file — not one byte altered. Deletes in Round 3 when
+ * the Regimen workspace migrates.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+    .rg-goals-section {
+      margin: 16px 0 24px;
+      padding: 22px 24px 26px;
+      background: linear-gradient(180deg, #1f3a36 0%, #142824 100%);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.04);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 4px 14px rgba(0,0,0,0.18);
+      color: #d4ebe5;
+    }
+    .rg-goals-header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; margin-bottom: 6px;
+    }
+    .rg-goals-title-block { display: flex; align-items: center; gap: 12px; }
+    .rg-goals-icon {
+      width: 36px; height: 36px; display: grid; place-items: center;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #4ba99a 0%, #2d8276 70%);
+      color: #fff; font-size: 18px; font-weight: 600;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .rg-goals-title {
+      margin: 0; font-family: 'Inter', system-ui, sans-serif;
+      font-size: 14px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: #b4ddd5;
+    }
+    .rg-goals-subtitle { margin: 2px 0 0; font-size: 13px; color: #93b5ad; }
+    .rg-goals-counter {
+      font-size: 12px; font-weight: 600;
+      padding: 4px 12px; border-radius: 999px;
+      background: rgba(255,255,255,0.04); color: #b4ddd5;
+    }
+    .rg-goals-empty {
+      margin: 14px 0 4px; padding: 10px 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px dashed rgba(180,221,213,0.15);
+      border-radius: 10px;
+      font-size: 13px; color: #93b5ad;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .rg-goals-empty[hidden] { display: none; }
+    .rg-goals-empty-icon { font-size: 16px; opacity: 0.6; }
+    /* Vertical-column layout — categories as themed cards arranged horizontally.
+       Each category gets its own tinted background drawn from its accent color
+       via color-mix(). Pills stack vertically within their column and fill the
+       available width so the whole section uses its horizontal real estate. */
+    .rg-goals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+      align-items: stretch;
+    }
+    .rg-goals-cat {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 16px 12px 14px;
+      border-radius: 14px;
+      background:
+        linear-gradient(180deg,
+          color-mix(in srgb, var(--rg-cat-color, #4ba99a) 10%, transparent) 0%,
+          color-mix(in srgb, var(--rg-cat-color, #4ba99a) 3%, transparent) 100%);
+      border: 1px solid color-mix(in srgb, var(--rg-cat-color, #4ba99a) 18%, rgba(255,255,255,0.04));
+      box-shadow:
+        inset 0 1px 0 color-mix(in srgb, var(--rg-cat-color, #4ba99a) 12%, rgba(255,255,255,0.04)),
+        0 2px 8px rgba(0,0,0,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+    .rg-goals-cat::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 12px; right: 12px;
+      height: 2px;
+      background: linear-gradient(90deg,
+        color-mix(in srgb, var(--rg-cat-color, #4ba99a) 70%, transparent),
+        color-mix(in srgb, var(--rg-cat-color, #4ba99a) 20%, transparent),
+        transparent);
+      border-radius: 0 0 2px 2px;
+    }
+    .rg-goals-cat-label {
+      font-size: 10.5px; font-weight: 700; letter-spacing: 1.6px;
+      text-transform: uppercase; color: var(--rg-cat-color, #6fa498);
+      padding: 0 2px 6px;
+      border-bottom: 1px solid color-mix(in srgb, var(--rg-cat-color, #4ba99a) 14%, transparent);
+      margin-bottom: 2px;
+    }
+    .rg-goals-cat-pills {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .rg-goal-pill {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 9px 12px 9px 10px; border-radius: 10px;
+      background: rgba(20, 36, 32, 0.55);
+      border: 1px solid color-mix(in srgb, var(--rg-cat-color, #4ba99a) 12%, rgba(255,255,255,0.04));
+      color: #d4ebe5;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 12.5px; font-weight: 500;
+      cursor: pointer; user-select: none;
+      width: 100%;
+      justify-content: flex-start;
+      text-align: left;
+      transition: transform 140ms ease, box-shadow 200ms ease, background 200ms ease, color 200ms ease, border-color 200ms ease;
+      position: relative;
+    }
+    .rg-goal-pill:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.14);
+    }
+    .rg-goal-pill:active { transform: translateY(0); }
+    .rg-goal-pill:focus-visible {
+      outline: 2px solid var(--rg-cat-color, #4ba99a); outline-offset: 2px;
+    }
+    .rg-goal-pill-symbol {
+      width: 22px; height: 22px; display: grid; place-items: center;
+      border-radius: 50%; background: rgba(255,255,255,0.06);
+      color: var(--rg-cat-color, #6fa498);
+      font-size: 12px; font-weight: 600; flex-shrink: 0;
+      transition: background 200ms ease, color 200ms ease;
+    }
+    .rg-goal-pill.is-selected {
+      background: linear-gradient(180deg, var(--rg-cat-color, #4ba99a) 0%, var(--rg-cat-color-dark, #2d8276) 100%);
+      border-color: var(--rg-cat-color-light, rgba(255,255,255,0.25));
+      color: #fff;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 3px 10px var(--rg-cat-color-glow, rgba(45,130,118,0.35));
+      font-weight: 600;
+    }
+    .rg-goal-pill.is-selected .rg-goal-pill-symbol {
+      background: rgba(255,255,255,0.25); color: #fff;
+    }
+    /* Per-category accents (CSS custom property cascade) */
+    .rg-goals-cat[data-cat="foundation"]      { --rg-cat-color: #4ba99a; --rg-cat-color-dark: #2d8276; --rg-cat-color-light: #6fc4b5; --rg-cat-color-glow: rgba(75,169,154,0.4); }
+    .rg-goals-cat[data-cat="mind_energy"]     { --rg-cat-color: #e8a32c; --rg-cat-color-dark: #b07d1f; --rg-cat-color-light: #f0bf5e; --rg-cat-color-glow: rgba(232,163,44,0.4); }
+    .rg-goals-cat[data-cat="structure"]       { --rg-cat-color: #a07b54; --rg-cat-color-dark: #7a5c3e; --rg-cat-color-light: #b89776; --rg-cat-color-glow: rgba(160,123,84,0.35); }
+    .rg-goals-cat[data-cat="internal"]        { --rg-cat-color: #5ba36e; --rg-cat-color-dark: #44794f; --rg-cat-color-light: #82bd92; --rg-cat-color-glow: rgba(91,163,110,0.4); }
+    .rg-goals-cat[data-cat="hormonal"]        { --rg-cat-color: #c66d6e; --rg-cat-color-dark: #99494a; --rg-cat-color-light: #d99597; --rg-cat-color-glow: rgba(198,109,110,0.4); }
+    .rg-goals-cat[data-cat="longevity_vision"]{ --rg-cat-color: #8f6fa8; --rg-cat-color-dark: #6a527d; --rg-cat-color-light: #a991bf; --rg-cat-color-glow: rgba(143,111,168,0.4); }
+    @media (max-width: 640px) {
+      .rg-goals-section { padding: 16px 14px 18px; }
+      .rg-goals-header { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .rg-goal-pill { font-size: 12px; padding: 7px 11px 7px 8px; }
+      .rg-goals-title { font-size: 13px; }
+    }
+  

@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Scanner Workspace v3 — label drop · OCR pipeline · verdict</title>
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+  PHASE 2 / Workspace 03 — SCANNER WORKSPACE
+  Same shell as Coverage v3.2 + Regimen v3 (user-approved IA).
+
+  Workspace content (top → bottom):
+    1. SCAN STAGE — the hero. Either empty drop zone or active image preview
+       with scan-line crossing it + OCR brackets around detected text regions.
+    2. OCR PIPELINE — horizontal status strip with 4 stages and ms timings:
+         EXTRACT (Tesseract)  PARSE (Eden grammar)  MATCH (vault)  VERDICT
+       Each chip shows current state (done/active/queued) + cipher-cycling ms.
+    3. PARSED INGREDIENTS — the verdict list. Each detected ingredient gets a
+       row with: raw OCR string (cipher), parsed canonical name, match status
+       (green/amber/red), mapped essential tile, confidence %, +N heat tag,
+       and ADOPT/DETAILS/DISMISS actions.
+    4. OVERALL VERDICT — kill-shot stat block: "ALIGNS WITH WALLACH" headline
+       + breakdown of essentials gained, trace tiles closed, any red flags.
+
+  Right rail:
+    - SCAN HISTORY — past scans with verdict pills, click to re-open
+    - BATCH QUEUE — items waiting for re-scan
+    - SCANNER CONTROLS — RE-SCAN, EXPORT JSON, COMPARE, CLEAR
+
+  Behavior preserved (per "re-theme don't rewrite logic" rule when wired):
+    - Tesseract.js OCR carve-out (the one allowed external) stays
+    - Eden grammar parser, vault canonical matching, confidence scoring
+    - All §31 chokepoint helpers (adoptFromScan, scanHistoryPersist, etc.)
+    - Cross-tab sync, error-flow doctrine
+    - Eden hash + write-protection invariants
+═══════════════════════════════════════════════════════════════════════════════
+-->
+<link rel="stylesheet" href="../assets/styles/design-system.css">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════════════════
+ * NEW FONTS — same proposal as Coverage v3.2 + Regimen v3
+ * ═══════════════════════════════════════════════════════════════════════════ */
+@font-face { font-family: 'Chakra Petch'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/ChakraPetch-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'Chakra Petch'; font-style: normal; font-weight: 600; font-display: swap; src: url('../fonts/ChakraPetch-SemiBold.ttf') format('truetype'); }
+@font-face { font-family: 'Chakra Petch'; font-style: normal; font-weight: 700; font-display: swap; src: url('../fonts/ChakraPetch-Bold.ttf') format('truetype'); }
+@font-face { font-family: 'Bruno Ace'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/BrunoAce-Regular.ttf') format('truetype'); }
+
+:root {
+  --ds-font-display-interface: 'Chakra Petch', 'Space Grotesk', system-ui, sans-serif;
+  --ds-font-display-artifact:  'Bruno Ace', 'Chakra Petch', 'Space Grotesk', system-ui, sans-serif;
+}
+
+html, body { height: 100%; overflow: hidden; }
+body { margin: 0; background: var(--ds-paper-deep); }
+
+/* Stylized scrollbar — same as other workspaces */
+.app-shell { scrollbar-width: thin; scrollbar-color: var(--ds-accent) var(--ds-paper-darker); }
+.app-shell *::-webkit-scrollbar { width: 11px; height: 11px; }
+.app-shell *::-webkit-scrollbar-track { background: var(--ds-paper-darker); border-radius: var(--ds-radius-pill); }
+.app-shell *::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--ds-accent) 0%, var(--ds-accent-hot) 100%); border-radius: var(--ds-radius-pill); border: 2px solid var(--ds-paper-darker); box-shadow: 0 0 8px rgba(255,126,60,0.3); }
+.app-shell *::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, var(--ds-accent-hot) 0%, var(--ds-accent-bright) 100%); box-shadow: 0 0 10px rgba(255,126,60,0.5); }
+
+/* Animation primitives — same as other workspaces */
+.ds-cipher { font-family: var(--ds-font-mono); font-variant-numeric: tabular-nums; letter-spacing: 0.05em; display: inline-block; min-width: 1ch; }
+.ds-scan-line {
+  position: absolute; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--ds-accent-soft) 20%, var(--ds-accent) 50%, var(--ds-accent-soft) 80%, transparent 100%);
+  opacity: 0.35; pointer-events: none; animation: ds-scan-sweep 10s linear infinite; filter: blur(0.5px);
+}
+@keyframes ds-scan-sweep { 0%{top:-3%;opacity:0;} 10%{opacity:0.35;} 90%{opacity:0.35;} 100%{top:103%;opacity:0;} }
+.ds-border-travel { position: relative; isolation: isolate; }
+.ds-border-travel::before, .ds-border-travel::after { content:''; position:absolute; pointer-events:none; background: linear-gradient(90deg, transparent 0%, var(--ds-accent) 50%, transparent 100%); filter: blur(0.5px); z-index:2; }
+.ds-border-travel::before { top:0; left:-30%; width:30%; height:1px; animation: ds-travel-top 8s linear infinite; }
+.ds-border-travel::after { bottom:0; right:-30%; width:30%; height:1px; animation: ds-travel-bottom 8s linear infinite; animation-delay: 4s; }
+@keyframes ds-travel-top { 0%{left:-30%;opacity:0;} 10%{opacity:0.8;} 90%{opacity:0.8;} 100%{left:130%;opacity:0;} }
+@keyframes ds-travel-bottom { 0%{right:-30%;opacity:0;} 10%{opacity:0.8;} 90%{opacity:0.8;} 100%{right:130%;opacity:0;} }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * SHELL — same as Coverage v3.2 / Regimen v3
+ * ═══════════════════════════════════════════════════════════════════════════ */
+.app-shell { display: grid; grid-template-columns: 220px 1fr; grid-template-rows: auto 1fr auto;
+  grid-template-areas: "rail topbar" "rail workspace" "rail footer";
+  height: 100vh; overflow: hidden; background: var(--ds-paper-deep);
+}
+
+/* SYSTEM RAIL — SCANNER active this time */
+.app-rail { grid-area: rail; background: var(--ds-ink); color: var(--ds-paper); display: flex; flex-direction: column; padding: var(--ds-space-5) 0; position: relative; border-right: 1px solid var(--ds-ink-medium); }
+.app-rail::after { content:''; position:absolute; top: var(--ds-space-7); bottom: var(--ds-space-7); right:-1px; width:1px; background: linear-gradient(to bottom, transparent 0%, var(--ds-accent) 8%, var(--ds-accent) 12%, transparent 14%, transparent 86%, var(--ds-accent) 88%, var(--ds-accent) 92%, transparent 100%); }
+.rail__brand { padding: 0 var(--ds-space-5) var(--ds-space-5); border-bottom: 1px solid var(--ds-ink-medium); margin-bottom: var(--ds-space-5); }
+.rail__brand-mark { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-widest); text-transform: uppercase; color: var(--ds-tech); display: flex; align-items: center; gap: var(--ds-space-2); margin-bottom: var(--ds-space-3); font-weight: 600; }
+.rail__brand-mark::before { content:''; width:8px; height:8px; background: var(--ds-accent); border-radius:50%; box-shadow: 0 0 8px var(--ds-accent); }
+.rail__brand-name { font-family: var(--ds-font-display-artifact); font-size: var(--ds-text-lg); color: var(--ds-paper); letter-spacing: 0.04em; line-height: 1.1; }
+.rail__brand-sub { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); color: var(--ds-ink-faint); margin-top: var(--ds-space-2); text-transform: uppercase; }
+.rail__section { padding: 0 var(--ds-space-3); }
+.rail__section-label { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-widest); text-transform: uppercase; color: var(--ds-ink-faint); padding: var(--ds-space-3) var(--ds-space-3) var(--ds-space-2); font-weight: 500; }
+.rail__item { display: flex; align-items: center; gap: var(--ds-space-3); padding: var(--ds-space-3); border-radius: var(--ds-radius-sm); font-family: var(--ds-font-display-interface); font-size: var(--ds-text-sm); color: var(--ds-ink-faint); font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; cursor: pointer; background: transparent; border: 0; width: 100%; text-align: left; position: relative; transition: all var(--ds-motion-fast) var(--ds-ease-out); }
+.rail__item:hover { background: var(--ds-ink-medium); color: var(--ds-paper); }
+.rail__item.active { background: linear-gradient(90deg, rgba(255,126,60,0.15) 0%, transparent 100%); color: var(--ds-paper); }
+.rail__item.active::before { content:''; position:absolute; left:0; top:20%; bottom:20%; width:3px; background: var(--ds-accent); border-radius: 2px; box-shadow: 0 0 8px var(--ds-accent); }
+.rail__icon { width:18px; height:18px; display:inline-flex; align-items:center; justify-content:center; font-family: var(--ds-font-mono); font-size: var(--ds-text-sm); opacity: 0.9; }
+.rail__label { flex: 1; }
+.rail__kbd { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); background: var(--ds-ink-medium); padding: 2px 6px; border-radius: var(--ds-radius-xs); letter-spacing: 0.05em; text-transform: none; }
+.rail__item.active .rail__kbd { color: var(--ds-paper); background: rgba(255,255,255,0.08); }
+.rail__divider { height: 1px; background: var(--ds-ink-medium); margin: var(--ds-space-3) var(--ds-space-4); }
+.rail__spacer { flex: 1; }
+.rail__footer { padding: var(--ds-space-4) var(--ds-space-5) 0; border-top: 1px solid var(--ds-ink-medium); margin-top: var(--ds-space-3); }
+.rail__profile { display: flex; align-items: center; gap: var(--ds-space-3); padding: var(--ds-space-3) var(--ds-space-1); cursor: pointer; border-radius: var(--ds-radius-sm); transition: background var(--ds-motion-fast) var(--ds-ease-out); }
+.rail__profile:hover { background: var(--ds-ink-medium); }
+.rail__avatar { width:32px; height:32px; border-radius:50%; background: linear-gradient(135deg, var(--ds-accent) 0%, var(--ds-accent-hot) 100%); color: var(--ds-paper-light); display:flex; align-items:center; justify-content:center; font-family: var(--ds-font-display-artifact); font-size: var(--ds-text-sm); box-shadow: 0 0 0 1px var(--ds-paper-light) inset, var(--ds-glow-accent-sm); }
+.rail__profile-name { font-family: var(--ds-font-display-interface); font-size: var(--ds-text-sm); font-weight: 600; color: var(--ds-paper); letter-spacing: 0.02em; }
+.rail__profile-meta { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); letter-spacing: var(--ds-track-wide); text-transform: uppercase; }
+
+
+/* TOPBAR */
+.app-topbar { grid-area: topbar; background: var(--ds-paper); border-bottom: 1px solid var(--ds-rule-soft); padding: var(--ds-space-4) var(--ds-space-7); display: grid; grid-template-columns: auto 1fr auto; gap: var(--ds-space-6); align-items: center; position: relative; }
+.app-topbar::after { content:''; position:absolute; left: var(--ds-space-7); right: var(--ds-space-7); bottom:-1px; height:1px; background: linear-gradient(to right, transparent 0%, var(--ds-accent) 6%, var(--ds-accent) 13%, transparent 15%, transparent 85%, var(--ds-tech) 88%, var(--ds-tech) 92%, transparent 95%); }
+.topbar__breadcrumb { display:flex; align-items:center; gap: var(--ds-space-3); }
+.topbar__workspace-tag { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-widest); text-transform: uppercase; color: var(--ds-tech); font-weight: 600; display:flex; align-items:center; gap: var(--ds-space-2); }
+.topbar__workspace-tag::before { content:''; width:6px; height:6px; background: var(--ds-accent); border-radius:50%; animation: ds-pulse-animate 2s ease-in-out infinite; }
+.topbar__title { font-family: var(--ds-font-display-interface); font-size: var(--ds-text-xl); font-weight: 700; color: var(--ds-ink); letter-spacing: 0.01em; text-transform: uppercase; margin: 0; padding-left: var(--ds-space-3); border-left: 1px solid var(--ds-rule); }
+.topbar__sub { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-soft); margin-left: var(--ds-space-3); }
+.topbar__cmd { display:flex; align-items:center; gap: var(--ds-space-3); background: var(--ds-paper-deep); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-md); padding: 0.55rem 0.85rem; width:100%; max-width:480px; margin:0 auto; font-family: var(--ds-font-display-interface); font-size: var(--ds-text-sm); color: var(--ds-ink-soft); cursor: text; letter-spacing: 0.02em; }
+.topbar__cmd-icon { font-family: var(--ds-font-mono); color: var(--ds-tech); }
+.topbar__cmd-input { flex:1; color: var(--ds-ink-faint); font-family: inherit; background: transparent; border: 0; text-transform: uppercase; font-size: var(--ds-text-xs); letter-spacing: var(--ds-track-wide); }
+.topbar__cmd-kbd { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-soft); background: var(--ds-paper); border: 1px solid var(--ds-rule); padding: 2px 6px; border-radius: var(--ds-radius-xs); }
+.topbar__telemetry { display:flex; align-items:center; gap: var(--ds-space-4); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-soft); }
+.telemetry__item { display:inline-flex; align-items:center; gap: var(--ds-space-1); }
+.telemetry__item strong { color: var(--ds-ink); font-weight: 600; }
+.telemetry__item .pulse-dot { width:6px; height:6px; border-radius:50%; background: var(--ds-status-ok); margin-right:4px; box-shadow: 0 0 6px var(--ds-status-ok-soft); }
+
+
+/* WORKSPACE */
+.app-workspace { grid-area: workspace; background: var(--ds-paper-deep); position: relative; overflow: auto; min-height: 0; }
+.app-workspace::before { content:''; position:fixed; inset:0; background: radial-gradient(circle at 20% 30%, rgba(255,126,60,0.04) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(26,22,18,0.04) 0%, transparent 50%); pointer-events: none; z-index: 0; }
+
+.scanner-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--ds-space-6);
+  padding: var(--ds-space-7);
+}
+.scanner-main { display: flex; flex-direction: column; gap: var(--ds-space-6); min-width: 0; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * SCAN STAGE — the hero. Empty drop zone OR active image preview.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+.scan-stage {
+  background: var(--ds-paper);
+  border-radius: var(--ds-radius-md);
+  padding: 0;
+  box-shadow: var(--ds-elev-2);
+  position: relative;
+  overflow: hidden;
+}
+.scan-stage__head {
+  padding: var(--ds-space-5) var(--ds-space-6) var(--ds-space-4);
+  border-bottom: 1px solid var(--ds-rule-soft);
+  background: var(--ds-paper-darker);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: var(--ds-space-5);
+}
+.scan-stage__head::after {
+  content:''; position:absolute;
+  left: var(--ds-space-6); right: var(--ds-space-6);
+  bottom:-1px; height:1px;
+  background: linear-gradient(to right, transparent 0%, var(--ds-accent) 6%, var(--ds-accent) 13%, transparent 15%, transparent 85%, var(--ds-tech) 88%, var(--ds-tech) 92%, transparent 95%);
+}
+.scan-stage__kicker {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-accent);
+  font-weight: 600;
+  margin-bottom: var(--ds-space-2);
+  display: flex; align-items: center; gap: var(--ds-space-2);
+}
+.scan-stage__kicker .pulse-dot { width:6px; height:6px; background: var(--ds-accent); border-radius:50%; box-shadow: 0 0 6px var(--ds-accent-soft); animation: ds-pulse-animate 2s ease-in-out infinite; }
+.scan-stage__title {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-2xl);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+}
+.scan-stage__title em { font-style: normal; font-weight: 400; color: var(--ds-accent-deep); font-family: var(--ds-font-mono); font-size: 0.55em; display: block; margin-top: var(--ds-space-2); text-transform: none; letter-spacing: 0.05em; }
+.scan-stage__head-stat {
+  display: flex; align-items: baseline; gap: var(--ds-space-2);
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-mini);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+}
+.scan-stage__head-stat strong { color: var(--ds-ink); font-weight: 600; }
+
+/* The image canvas — where the label sits. Locked aspect for shelf-card feel. */
+.scan-canvas {
+  position: relative;
+  background: var(--ds-ink);
+  min-height: 340px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+/* Empty drop state */
+.scan-canvas--empty {
+  background: linear-gradient(135deg, var(--ds-paper-deep) 0%, var(--ds-paper-darker) 100%);
+  border: 2px dashed var(--ds-rule-bright);
+  border-radius: var(--ds-radius-xs);
+  margin: var(--ds-space-5);
+  min-height: 280px;
+  flex-direction: column;
+  gap: var(--ds-space-3);
+  cursor: pointer;
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+}
+.scan-canvas--empty:hover {
+  border-color: var(--ds-accent);
+  background: linear-gradient(135deg, var(--ds-paper) 0%, var(--ds-paper-deep) 100%);
+}
+.scan-canvas__drop-mark {
+  font-family: var(--ds-font-display-artifact);
+  font-size: 3.5rem;
+  color: var(--ds-accent-deep);
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+.scan-canvas__drop-headline {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-lg);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.scan-canvas__drop-sub {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+}
+.scan-canvas__drop-formats {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-faint);
+  display: flex; gap: var(--ds-space-3);
+  margin-top: var(--ds-space-2);
+}
+.scan-canvas__drop-formats span { padding: 2px 8px; background: var(--ds-paper); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-pill); }
+
+/* Active scan state — a captured "label" rendered as a stylized facsimile,
+   since we don't ship a real image. Faux supplement-facts panel + OCR brackets. */
+.scan-canvas--active {
+  padding: var(--ds-space-5);
+  align-items: stretch;
+  justify-content: stretch;
+}
+.scan-label {
+  flex: 1;
+  background: var(--ds-paper-light);
+  border: 1px solid var(--ds-rule);
+  border-radius: var(--ds-radius-xs);
+  padding: var(--ds-space-5) var(--ds-space-6);
+  position: relative;
+  display: flex; flex-direction: column;
+  gap: var(--ds-space-3);
+  /* Subtle paper texture */
+  background-image:
+    radial-gradient(circle at 30% 20%, rgba(213,200,169,0.18) 0%, transparent 40%),
+    radial-gradient(circle at 70% 80%, rgba(213,200,169,0.14) 0%, transparent 40%);
+}
+.scan-label__brand {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-md);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.scan-label__product {
+  font-family: var(--ds-font-display-artifact);
+  font-size: var(--ds-text-xl);
+  color: var(--ds-accent-deep);
+  letter-spacing: 0.03em;
+  text-align: center;
+  line-height: 1.1;
+}
+.scan-label__rule { height: 2px; background: var(--ds-ink); margin: var(--ds-space-2) 0; }
+.scan-label__section-title {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-sm);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+}
+.scan-label__serving {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  color: var(--ds-ink-medium);
+  text-align: center;
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  margin-bottom: var(--ds-space-2);
+}
+.scan-label__rows {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0;
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-mini);
+}
+.scan-label__row { display: contents; }
+.scan-label__row > * {
+  padding: 4px 6px;
+  border-bottom: 1px solid var(--ds-rule-soft);
+  color: var(--ds-ink-medium);
+}
+.scan-label__row > *:nth-child(2) { text-align: right; font-weight: 600; color: var(--ds-ink); }
+.scan-label__row > *:nth-child(3) { text-align: right; padding-left: var(--ds-space-3); }
+
+/* OCR bracket overlays — corner crosshairs on detected text regions */
+.ocr-bracket {
+  position: absolute;
+  pointer-events: none;
+  border: 1px solid var(--ds-tech);
+  box-shadow: 0 0 8px rgba(95,164,189,0.4);
+  border-radius: 2px;
+  opacity: 0.85;
+}
+.ocr-bracket::before, .ocr-bracket::after {
+  content: '';
+  position: absolute;
+  width: 8px; height: 8px;
+  border-color: var(--ds-accent);
+  border-style: solid;
+}
+.ocr-bracket::before { top: -2px; left: -2px; border-width: 1px 0 0 1px; }
+.ocr-bracket::after  { bottom: -2px; right: -2px; border-width: 0 1px 1px 0; }
+.ocr-bracket--brand    { top: 5%;  left: 22%; right: 22%; height: 22px; }
+.ocr-bracket--product  { top: 14%; left: 18%; right: 18%; height: 40px; }
+.ocr-bracket--serving  { top: 31%; left: 25%; right: 25%; height: 18px; }
+.ocr-bracket--rows     { top: 40%; left: 8%;  right: 8%;  bottom: 6%; }
+
+/* Stage controls strip — reset / re-scan / browse */
+.scan-stage__controls {
+  display: flex;
+  gap: var(--ds-space-2);
+  padding: var(--ds-space-4) var(--ds-space-6);
+  background: var(--ds-paper-darker);
+  border-top: 1px solid var(--ds-rule);
+  align-items: center;
+  position: relative;
+}
+.scan-stage__controls::before {
+  content:''; position:absolute; top:0;
+  left: var(--ds-space-6); right: var(--ds-space-6);
+  height:1px;
+  background: linear-gradient(to right, transparent 0%, var(--ds-accent) 4%, var(--ds-accent) 10%, transparent 12%);
+}
+.scan-stage__meta {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+}
+.scan-stage__meta strong { color: var(--ds-ink); font-weight: 600; }
+.scan-stage__spacer { flex: 1; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * OCR PIPELINE — horizontal stages strip with status + ms timing
+ * ═══════════════════════════════════════════════════════════════════════════ */
+.pipeline {
+  background: var(--ds-paper);
+  border-radius: var(--ds-radius-md);
+  padding: var(--ds-space-5) var(--ds-space-6);
+  box-shadow: var(--ds-elev-1);
+  position: relative;
+  overflow: hidden;
+}
+.pipeline__head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: var(--ds-space-4);
+  margin-bottom: var(--ds-space-4);
+  padding-bottom: var(--ds-space-3);
+  border-bottom: 1px solid var(--ds-rule-soft);
+}
+.pipeline__eyebrow {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-tech);
+  font-weight: 600;
+  display: flex; align-items: center; gap: var(--ds-space-2);
+  margin-bottom: var(--ds-space-1);
+}
+.pipeline__eyebrow::before { content:''; width:12px; height:1px; background: var(--ds-accent); }
+.pipeline__title {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-lg);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.pipeline__total {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-mini);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+}
+.pipeline__total strong { color: var(--ds-ink); font-weight: 600; }
+
+.pipeline__stages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--ds-space-3);
+  position: relative;
+}
+.pipeline__stages::before {
+  /* connector line behind chips */
+  content:''; position:absolute;
+  top: 22px; left: 8%; right: 8%; height: 1px;
+  background: linear-gradient(to right, var(--ds-rule) 0%, var(--ds-accent) 35%, var(--ds-accent) 65%, var(--ds-rule) 100%);
+  z-index: 0;
+}
+
+.stage {
+  position: relative;
+  z-index: 1;
+  display: flex; flex-direction: column; align-items: center;
+  gap: var(--ds-space-2);
+  padding-top: 4px;
+}
+.stage__dot {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--ds-paper);
+  border: 2px solid var(--ds-rule);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-md);
+  color: var(--ds-ink-soft);
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+.stage__name {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-sm);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.stage__sub {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+}
+.stage__ms {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  color: var(--ds-tech);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Done state */
+.stage--done .stage__dot {
+  background: var(--ds-status-ok);
+  border-color: var(--ds-status-ok);
+  color: var(--ds-paper-light);
+  box-shadow: 0 0 0 4px var(--ds-status-ok-soft);
+}
+.stage--done .stage__sub { color: var(--ds-status-ok); }
+
+/* Active state — currently running */
+.stage--active .stage__dot {
+  background: var(--ds-paper);
+  border-color: var(--ds-accent);
+  color: var(--ds-accent-deep);
+  box-shadow: 0 0 0 4px var(--ds-accent-wash), 0 0 16px rgba(255,126,60,0.45);
+  animation: stage-pulse 1.6s ease-in-out infinite;
+}
+@keyframes stage-pulse {
+  0%, 100% { box-shadow: 0 0 0 4px var(--ds-accent-wash), 0 0 16px rgba(255,126,60,0.45); }
+  50%      { box-shadow: 0 0 0 7px var(--ds-accent-wash), 0 0 26px rgba(255,126,60,0.65); }
+}
+.stage--active .stage__sub { color: var(--ds-accent); }
+
+/* Queued */
+.stage--queued .stage__dot {
+  background: var(--ds-paper-deep);
+  border-color: var(--ds-rule);
+  color: var(--ds-ink-faint);
+}
+.stage--queued .stage__name { color: var(--ds-ink-soft); }
+.stage--queued .stage__sub  { color: var(--ds-ink-faint); }
+.stage--queued .stage__ms   { color: var(--ds-ink-faint); }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * PARSED INGREDIENTS — the verdict list
+ * ═══════════════════════════════════════════════════════════════════════════ */
+.parsed {
+  background: var(--ds-paper);
+  border-radius: var(--ds-radius-md);
+  padding: 0;
+  box-shadow: var(--ds-elev-2);
+  position: relative;
+  overflow: hidden;
+}
+.parsed__head {
+  padding: var(--ds-space-5) var(--ds-space-6) var(--ds-space-4);
+  border-bottom: 1px solid var(--ds-rule-soft);
+  background: var(--ds-paper-darker);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: var(--ds-space-4);
+}
+.parsed__head::after {
+  content:''; position:absolute;
+  left: var(--ds-space-6); right: var(--ds-space-6);
+  bottom:-1px; height:1px;
+  background: linear-gradient(to right, transparent 0%, var(--ds-accent) 6%, var(--ds-accent) 13%, transparent 15%);
+}
+.parsed__eyebrow {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-accent);
+  font-weight: 600;
+  margin-bottom: var(--ds-space-2);
+}
+.parsed__title {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-xl);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.parsed__legend {
+  display: flex; align-items: center; gap: var(--ds-space-4);
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+}
+.parsed__legend-key {
+  display: inline-flex; align-items: center; gap: var(--ds-space-1);
+}
+.parsed__legend-key .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  display: inline-block;
+}
+.parsed__legend-key .dot--ok    { background: var(--ds-status-ok); box-shadow: 0 0 6px var(--ds-status-ok-soft); }
+.parsed__legend-key .dot--warn  { background: var(--ds-status-warn); box-shadow: 0 0 6px var(--ds-status-warn-soft); }
+.parsed__legend-key .dot--err   { background: var(--ds-status-err); box-shadow: 0 0 6px var(--ds-status-err-soft); }
+
+.parsed__list {
+  display: flex; flex-direction: column;
+  padding: var(--ds-space-4) var(--ds-space-5);
+  gap: var(--ds-space-2);
+}
+
+/* PARSED ROW — the verdict per ingredient */
+.parsed-row {
+  display: grid;
+  grid-template-columns: 28px 1fr auto auto auto auto;
+  align-items: center;
+  gap: var(--ds-space-4);
+  padding: var(--ds-space-3) var(--ds-space-4);
+  background: var(--ds-paper-light);
+  border: 1px solid var(--ds-rule-soft);
+  border-left: 3px solid var(--ds-status-ok);
+  border-radius: var(--ds-radius-sm);
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+  position: relative;
+}
+.parsed-row:hover {
+  border-color: var(--ds-accent);
+  border-left-color: var(--ds-status-ok);
+  box-shadow: 0 2px 8px -2px rgba(255,126,60,0.15);
+}
+.parsed-row--warn { border-left-color: var(--ds-status-warn); }
+.parsed-row--warn:hover { border-left-color: var(--ds-status-warn); }
+.parsed-row--err  { border-left-color: var(--ds-status-err); background: var(--ds-status-err-wash, #fde7e1); }
+.parsed-row--err:hover { border-left-color: var(--ds-status-err); }
+
+.parsed-row__status {
+  width: 18px; height: 18px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  font-weight: 700;
+  color: var(--ds-paper-light);
+}
+.parsed-row--ok   .parsed-row__status { background: var(--ds-status-ok);   box-shadow: 0 0 6px var(--ds-status-ok-soft); }
+.parsed-row--warn .parsed-row__status { background: var(--ds-status-warn); color: var(--ds-ink); box-shadow: 0 0 6px var(--ds-status-warn-soft); }
+.parsed-row--err  .parsed-row__status { background: var(--ds-status-err);  box-shadow: 0 0 6px var(--ds-status-err-soft); }
+
+.parsed-row__body { min-width: 0; }
+.parsed-row__raw {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-faint);
+  margin-bottom: 2px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.parsed-row__name {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-md);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.parsed-row__mapped {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-tech);
+  background: var(--ds-tech-wash);
+  padding: 4px 10px;
+  border-radius: var(--ds-radius-pill);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.parsed-row__mapped--none {
+  color: var(--ds-ink-faint);
+  background: var(--ds-paper-deep);
+}
+.parsed-row__confidence {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-mini);
+  letter-spacing: var(--ds-track-wider);
+  color: var(--ds-ink);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  display: flex; align-items: baseline; gap: 4px;
+}
+.parsed-row__confidence small {
+  font-size: var(--ds-text-micro);
+  color: var(--ds-ink-soft);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Heat-system tag — reused from Regimen */
+.parsed-row__tag {
+  font-family: var(--ds-font-display-artifact);
+  font-size: var(--ds-text-md);
+  letter-spacing: 0.02em;
+  color: var(--ds-paper-light);
+  font-weight: 400;
+  padding: 4px 10px;
+  border-radius: var(--ds-radius-pill);
+  background: linear-gradient(135deg, var(--ds-accent) 0%, var(--ds-accent-hot) 100%);
+  box-shadow: 0 2px 8px -1px rgba(255,126,60,0.3);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  line-height: 1;
+}
+.parsed-row__tag[data-heat="sm"] { background: var(--ds-accent-wash); color: var(--ds-accent-deep); box-shadow: none; font-size: var(--ds-text-sm); padding: 3px 8px; }
+.parsed-row__tag[data-heat="md"] { background: var(--ds-accent-soft); color: var(--ds-accent-deep); box-shadow: 0 1px 4px -1px rgba(255,126,60,0.2); font-size: var(--ds-text-md); }
+.parsed-row__tag[data-heat="lg"] { font-size: var(--ds-text-lg); padding: 5px 12px; }
+.parsed-row__tag[data-heat="xl"] {
+  font-size: var(--ds-text-xl); padding: 6px 14px;
+  background: linear-gradient(135deg, var(--ds-accent-hot) 0%, #ff3d00 100%);
+  box-shadow: 0 4px 14px -2px rgba(255,126,60,0.5);
+  text-shadow: 0 0 12px rgba(255,255,255,0.4);
+}
+.parsed-row__tag[data-heat="none"] {
+  background: transparent; color: var(--ds-ink-faint); box-shadow: none;
+  border: 1px dashed var(--ds-rule); font-size: var(--ds-text-sm); padding: 3px 8px;
+}
+.parsed-row__tag-sign { font-size: 0.55em; font-weight: 700; font-family: var(--ds-font-mono); opacity: 0.85; }
+
+/* Actions cluster */
+.parsed-row__actions {
+  display: flex; align-items: center; gap: var(--ds-space-1);
+}
+.parsed-row__btn {
+  background: transparent;
+  border: 1px solid var(--ds-rule);
+  color: var(--ds-ink);
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-xs);
+  font-weight: 700;
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: var(--ds-radius-pill);
+  cursor: pointer;
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+}
+.parsed-row__btn:hover { border-color: var(--ds-tech); color: var(--ds-tech); background: var(--ds-tech-wash); }
+.parsed-row__btn--adopt {
+  background: var(--ds-accent-wash);
+  border-color: var(--ds-accent);
+  color: var(--ds-accent-deep);
+}
+.parsed-row__btn--adopt:hover {
+  background: linear-gradient(135deg, var(--ds-accent) 0%, var(--ds-accent-hot) 100%);
+  color: var(--ds-paper-light);
+  border-color: var(--ds-accent-deep);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * OVERALL VERDICT — the kill-shot stat block
+ * ═══════════════════════════════════════════════════════════════════════════ */
+.verdict {
+  background: linear-gradient(135deg, var(--ds-ink) 0%, var(--ds-ink-medium) 100%);
+  border-radius: var(--ds-radius-md);
+  padding: var(--ds-space-6) var(--ds-space-7);
+  box-shadow: var(--ds-elev-3);
+  color: var(--ds-paper);
+  position: relative;
+  overflow: hidden;
+}
+.verdict::before {
+  content:''; position:absolute; top:0; left:0; right:0;
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, var(--ds-accent) 8%, var(--ds-accent) 18%, transparent 22%, transparent 78%, var(--ds-tech) 82%, var(--ds-tech) 92%, transparent 95%);
+}
+.verdict::after {
+  content:''; position:absolute;
+  top: -40px; right: -40px;
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, var(--ds-accent) 0%, transparent 65%);
+  opacity: 0.20;
+  pointer-events: none;
+}
+.verdict__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--ds-space-6);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.verdict__lead { display: flex; flex-direction: column; gap: var(--ds-space-3); }
+.verdict__eyebrow {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-accent-bright);
+  font-weight: 600;
+  display: flex; align-items: center; gap: var(--ds-space-2);
+}
+.verdict__eyebrow .pulse-dot { width:6px; height:6px; background: var(--ds-accent); border-radius:50%; box-shadow: 0 0 10px var(--ds-accent); animation: ds-pulse-animate 2s ease-in-out infinite; }
+.verdict__headline {
+  font-family: var(--ds-font-display-artifact);
+  font-size: 2.4rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--ds-paper);
+  margin: 0;
+}
+.verdict__headline em {
+  font-style: normal;
+  color: var(--ds-accent-bright);
+  text-shadow: 0 0 30px rgba(255,126,60,0.4);
+}
+.verdict__body {
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-md);
+  font-weight: 500;
+  color: var(--ds-paper);
+  line-height: 1.45;
+  letter-spacing: 0.005em;
+  margin: 0;
+}
+.verdict__source {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-tech-dim);
+  border-top: 1px solid var(--ds-ink-medium);
+  padding-top: var(--ds-space-2);
+  margin-top: var(--ds-space-1);
+}
+.verdict__source strong { color: var(--ds-tech); font-weight: 600; }
+
+.verdict__stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--ds-space-4);
+}
+.verdict-stat {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--ds-ink-medium);
+  border-radius: var(--ds-radius-sm);
+  padding: var(--ds-space-3) var(--ds-space-4);
+  display: flex; flex-direction: column;
+  gap: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.verdict-stat__num {
+  font-family: var(--ds-font-display-artifact);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--ds-accent-bright);
+  letter-spacing: 0.02em;
+}
+.verdict-stat__num small {
+  font-size: 0.55em;
+  color: var(--ds-ink-faint);
+  font-family: var(--ds-font-display-artifact);
+}
+.verdict-stat__label {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-accent-soft);
+}
+.verdict-stat--warn .verdict-stat__num { color: var(--ds-status-warn); }
+.verdict-stat--warn .verdict-stat__label { color: rgba(232,200,116,0.85); }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * RIGHT RAIL — scan history + batch queue + scanner controls
+ * ═══════════════════════════════════════════════════════════════════════════ */
+.scanner-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-5);
+  position: sticky;
+  top: 0;
+  height: calc(100vh - 68px - 40px - 5rem - 50px);
+}
+
+.side-panel {
+  background: var(--ds-paper);
+  border-radius: var(--ds-radius-md);
+  box-shadow: var(--ds-elev-1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex: 1;
+  min-height: 0;
+}
+.side-panel__head {
+  padding: var(--ds-space-4) var(--ds-space-5);
+  border-bottom: 1px solid var(--ds-rule-soft);
+  background: var(--ds-paper-darker);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: var(--ds-space-3);
+}
+.side-panel__eyebrow {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-tech);
+  font-weight: 600;
+  margin-bottom: var(--ds-space-2);
+}
+.side-panel__title {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-lg);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.side-panel__count {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  color: var(--ds-ink-soft);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  align-self: end;
+}
+.side-panel__count strong { color: var(--ds-ink); font-weight: 600; }
+.side-panel__list {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--ds-space-3);
+  display: flex; flex-direction: column;
+  gap: var(--ds-space-2);
+}
+
+/* SCAN HISTORY ROW */
+.history-row {
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  gap: var(--ds-space-3);
+  align-items: center;
+  padding: var(--ds-space-3);
+  background: var(--ds-paper-light);
+  border: 1px solid var(--ds-rule-soft);
+  border-radius: var(--ds-radius-sm);
+  cursor: pointer;
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+}
+.history-row:hover { border-color: var(--ds-accent); transform: translateX(-1px); }
+.history-row__thumb {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--ds-paper-darker) 0%, var(--ds-paper-deep) 100%);
+  border: 1px solid var(--ds-rule);
+  border-radius: var(--ds-radius-xs);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--ds-font-display-artifact);
+  font-size: var(--ds-text-md);
+  color: var(--ds-accent-deep);
+}
+.history-row__body { min-width: 0; }
+.history-row__name {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-sm);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.history-row__stamp {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-faint);
+}
+.history-row__verdict {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--ds-radius-pill);
+}
+.history-row__verdict--ok   { color: var(--ds-status-ok);   background: var(--ds-status-ok-soft); }
+.history-row__verdict--warn { color: var(--ds-status-warn-deep, #8a6d20); background: var(--ds-status-warn-soft); }
+.history-row__verdict--err  { color: var(--ds-status-err);  background: var(--ds-status-err-soft); }
+
+/* BATCH QUEUE — smaller, denser */
+.queue-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: var(--ds-space-2);
+  align-items: center;
+  padding: var(--ds-space-2) var(--ds-space-3);
+  background: var(--ds-paper-light);
+  border: 1px solid var(--ds-rule-soft);
+  border-radius: var(--ds-radius-sm);
+}
+.queue-row__name {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-sm);
+  font-weight: 600;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.queue-row__state {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-tech);
+  font-weight: 600;
+}
+.queue-row__btn {
+  width: 22px; height: 22px;
+  background: transparent;
+  border: 1px solid var(--ds-rule);
+  border-radius: var(--ds-radius-xs);
+  cursor: pointer;
+  color: var(--ds-ink-soft);
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-mini);
+  display: flex; align-items: center; justify-content: center;
+}
+.queue-row__btn:hover { border-color: var(--ds-accent); color: var(--ds-accent-deep); }
+
+/* SCANNER CONTROLS — bottom action group on right rail */
+.scan-controls {
+  background: var(--ds-paper);
+  border-radius: var(--ds-radius-md);
+  box-shadow: var(--ds-elev-1);
+  padding: var(--ds-space-4) var(--ds-space-5);
+  display: flex; flex-direction: column;
+  gap: var(--ds-space-3);
+}
+.scan-controls__title {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  font-weight: 600;
+  display: flex; align-items: center; gap: var(--ds-space-2);
+}
+.scan-controls__title::before { content:''; width:12px; height:1px; background: var(--ds-accent); }
+.scan-controls__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--ds-space-2);
+}
+.scan-btn {
+  background: transparent;
+  border: 1px solid var(--ds-rule);
+  color: var(--ds-ink);
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-xs);
+  font-weight: 700;
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--ds-radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+}
+.scan-btn:hover { border-color: var(--ds-accent); color: var(--ds-accent-deep); }
+.scan-btn__glyph { font-family: var(--ds-font-mono); color: var(--ds-tech); }
+.scan-btn--primary {
+  background: linear-gradient(135deg, var(--ds-accent) 0%, var(--ds-accent-hot) 100%);
+  color: var(--ds-paper-light);
+  border-color: var(--ds-accent-deep);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset, var(--ds-glow-accent-sm);
+  grid-column: 1 / -1;
+  justify-content: center;
+}
+.scan-btn--primary:hover { color: var(--ds-paper-light); transform: translateY(-1px); }
+.scan-btn--primary .scan-btn__glyph { color: var(--ds-paper-light); }
+
+
+/* FOOTER (telemetry) — same as Coverage / Regimen */
+.app-footer { grid-area: footer; background: var(--ds-ink); color: var(--ds-paper); padding: var(--ds-space-3) var(--ds-space-7); display: flex; align-items: center; gap: var(--ds-space-6); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; position: relative; }
+.app-footer::before { content:''; position:absolute; top:0; left: var(--ds-space-7); right: var(--ds-space-7); height:1px; background: linear-gradient(to right, transparent 0%, var(--ds-tech) 4%, var(--ds-tech) 10%, transparent 12%); }
+.footer__item { display:inline-flex; align-items:center; gap: var(--ds-space-2); color: var(--ds-ink-faint); }
+.footer__item strong { color: var(--ds-paper); font-weight: 600; }
+.footer__item .dot { width:5px; height:5px; border-radius:50%; background: var(--ds-status-ok); margin-right: 2px; }
+.footer__spacer { flex: 1; }
+.footer__signature { color: var(--ds-tech); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; }
+</style>
+</head>
+
+<body>
+
+<svg width="0" height="0" aria-hidden="true" style="position: absolute;">
+  <defs>
+    <filter id="ds-filter-rough">
+      <feTurbulence type="fractalNoise" baseFrequency=".08" numOctaves="4"/>
+      <feDisplacementMap in="SourceGraphic" scale="5"/>
+    </filter>
+  </defs>
+</svg>
+
+<div class="app-shell">
+
+  <!-- SYSTEM RAIL — SCANNER active -->
+  <aside class="app-rail">
+    <div class="rail__brand">
+      <div class="rail__brand-mark"><span class="ds-cipher" data-cipher-set="hexa">WSC·09F1</span></div>
+      <div class="rail__brand-name">LUNETH</div>
+      <div class="rail__brand-sub">v3.27 · BRAIN</div>
+    </div>
+    <div class="rail__section">
+      <div class="rail__section-label">Workspaces</div>
+      <button class="rail__item"><span class="rail__icon">◉</span><span class="rail__label">Coverage</span><span class="rail__kbd">⌘1</span></button>
+      <button class="rail__item"><span class="rail__icon">▤</span><span class="rail__label">Regimen</span><span class="rail__kbd">⌘2</span></button>
+      <button class="rail__item active"><span class="rail__icon">⌖</span><span class="rail__label">Scanner</span><span class="rail__kbd">⌘3</span></button>
+    </div>
+    <div class="rail__divider"></div>
+    <div class="rail__section">
+      <div class="rail__section-label">Drawers</div>
+      <button class="rail__item"><span class="rail__icon">❡</span><span class="rail__label">Knowledge</span><span class="rail__kbd">K</span></button>
+      <button class="rail__item"><span class="rail__icon">⌭</span><span class="rail__label">Journey</span><span class="rail__kbd">J</span></button>
+    </div>
+    <div class="rail__spacer"></div>
+    <div class="rail__footer">
+      <div class="rail__profile">
+        <div class="rail__avatar">L</div>
+        <div>
+          <div class="rail__profile-name">Luneth</div>
+          <div class="rail__profile-meta">SETTINGS · PROFILE</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+
+  <!-- TOPBAR -->
+  <header class="app-topbar">
+    <div class="topbar__breadcrumb">
+      <span class="topbar__workspace-tag">WS·03 · <span class="ds-cipher" data-cipher-set="alphanum">SCANNER</span></span>
+      <h1 class="topbar__title">SCANNER</h1>
+      <span class="topbar__sub">// drop a label → extract → parse → verdict</span>
+    </div>
+    <div class="topbar__cmd">
+      <span class="topbar__cmd-icon">⌕</span>
+      <span class="topbar__cmd-input">SEARCH HISTORY, PRODUCT, INGREDIENT…</span>
+      <span class="topbar__cmd-kbd">⌘K</span>
+    </div>
+    <div class="topbar__telemetry">
+      <span class="telemetry__item"><span class="pulse-dot"></span> READY</span>
+      <span class="telemetry__item">OCR <strong>tesseract·5.0</strong></span>
+      <span class="telemetry__item">VAULT <strong>59 known</strong></span>
+    </div>
+  </header>
+
+
+  <!-- WORKSPACE -->
+  <main class="app-workspace">
+    <div class="scanner-grid">
+
+      <div class="scanner-main">
+
+        <!-- SCAN STAGE (active scan rendered as a stylized label facsimile) -->
+        <section class="scan-stage ds-border-travel">
+          <span class="ds-scan-line" aria-hidden="true"></span>
+
+          <header class="scan-stage__head">
+            <div>
+              <div class="scan-stage__kicker"><span class="pulse-dot"></span>SCANNING · CAPTURE <span class="ds-cipher" data-cipher-set="hexa">SC·B14F</span></div>
+              <h2 class="scan-stage__title">
+                MAJESTIC EARTH PDM
+                <em>// captured 0:08 ago · 1080×1620 · phase 3/4</em>
+              </h2>
+            </div>
+            <div class="scan-stage__head-stat">
+              <span>RESOLUTION <strong>1080×1620</strong></span>
+              <span>·</span>
+              <span>CAPTURE <strong class="ds-cipher" data-cipher-set="time">0:08</strong> AGO</span>
+            </div>
+          </header>
+
+          <div class="scan-canvas scan-canvas--active">
+            <div class="scan-label">
+              <div class="scan-label__brand">YOUNGEVITY</div>
+              <div class="scan-label__product">MAJESTIC EARTH<br>PLANT-DERIVED MINERALS</div>
+              <div class="scan-label__rule"></div>
+              <h4 class="scan-label__section-title">Supplement Facts</h4>
+              <div class="scan-label__serving">Serving Size · 1 Tbsp (15 mL) · 64 servings</div>
+              <div class="scan-label__rows">
+                <div class="scan-label__row"><span>Calcium</span><span>2 mg</span><span>&lt;1%</span></div>
+                <div class="scan-label__row"><span>Sodium</span><span>5 mg</span><span>&lt;1%</span></div>
+                <div class="scan-label__row"><span>Plant-Derived Mineral Complex</span><span>14.5 g</span><span>†</span></div>
+                <div class="scan-label__row"><span>(Containing 70+ trace minerals)</span><span></span><span></span></div>
+                <div class="scan-label__row"><span>Boron, Selenium, Vanadium, Strontium…</span><span></span><span></span></div>
+              </div>
+
+              <!-- OCR bracket overlays -->
+              <span class="ocr-bracket ocr-bracket--brand"></span>
+              <span class="ocr-bracket ocr-bracket--product"></span>
+              <span class="ocr-bracket ocr-bracket--serving"></span>
+              <span class="ocr-bracket ocr-bracket--rows"></span>
+            </div>
+          </div>
+
+          <div class="scan-stage__controls">
+            <span class="scan-stage__meta">
+              <span>CAPTURE <strong class="ds-cipher" data-cipher-set="hexa">SC·B14F</strong></span>
+              <span>·</span>
+              <span>11 REGIONS</span>
+              <span>·</span>
+              <span>CONFIDENCE <strong>0.94</strong></span>
+            </span>
+            <span class="scan-stage__spacer"></span>
+            <button class="scan-btn"><span class="scan-btn__glyph">↺</span>RETAKE</button>
+            <button class="scan-btn"><span class="scan-btn__glyph">⌃</span>UPLOAD</button>
+            <button class="scan-btn"><span class="scan-btn__glyph">⌖</span>CROP</button>
+          </div>
+        </section>
+
+
+        <!-- OCR PIPELINE -->
+        <section class="pipeline">
+          <header class="pipeline__head">
+            <div>
+              <div class="pipeline__eyebrow">PIPELINE · <span class="ds-cipher" data-cipher-set="hexa">PL·24A7</span> · 4 STAGES</div>
+              <h2 class="pipeline__title">Extract · Parse · Match · Verdict</h2>
+            </div>
+            <div class="pipeline__total">TOTAL ELAPSED <strong>3.84s</strong> · target &lt;5s</div>
+          </header>
+
+          <div class="pipeline__stages">
+            <div class="stage stage--done">
+              <div class="stage__dot">✓</div>
+              <div class="stage__name">EXTRACT</div>
+              <div class="stage__sub">tesseract OCR</div>
+              <div class="stage__ms">1.42s</div>
+            </div>
+            <div class="stage stage--done">
+              <div class="stage__dot">✓</div>
+              <div class="stage__name">PARSE</div>
+              <div class="stage__sub">Eden grammar</div>
+              <div class="stage__ms">0.31s</div>
+            </div>
+            <div class="stage stage--active">
+              <div class="stage__dot">●</div>
+              <div class="stage__name">MATCH</div>
+              <div class="stage__sub">vault lookup</div>
+              <div class="stage__ms"><span class="ds-cipher" data-cipher-set="alphanum">2.11s</span></div>
+            </div>
+            <div class="stage stage--queued">
+              <div class="stage__dot">○</div>
+              <div class="stage__name">VERDICT</div>
+              <div class="stage__sub">Wallach align</div>
+              <div class="stage__ms">—</div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- PARSED INGREDIENTS -->
+        <section class="parsed">
+          <header class="parsed__head">
+            <div>
+              <div class="parsed__eyebrow">INGREDIENTS · <span class="ds-cipher" data-cipher-set="hexa">IG·56D2</span> · 7 DETECTED</div>
+              <h2 class="parsed__title">Parsed &amp; Mapped</h2>
+            </div>
+            <div class="parsed__legend">
+              <span class="parsed__legend-key"><span class="dot dot--ok"></span>VAULT HIT</span>
+              <span class="parsed__legend-key"><span class="dot dot--warn"></span>FUZZY MATCH</span>
+              <span class="parsed__legend-key"><span class="dot dot--err"></span>UNKNOWN</span>
+            </div>
+          </header>
+
+          <div class="parsed__list">
+
+            <!-- Row 1 — vault hit, big heat -->
+            <div class="parsed-row parsed-row--ok">
+              <div class="parsed-row__status">✓</div>
+              <div class="parsed-row__body">
+                <span class="parsed-row__raw">"plant-derived mineral complex 14.5g"</span>
+                <h4 class="parsed-row__name">Plant-Derived Mineral Aggregate</h4>
+              </div>
+              <span class="parsed-row__mapped">→ trace_pdm · 35 tiles</span>
+              <span class="parsed-row__confidence">0.98 <small>conf</small></span>
+              <span class="parsed-row__tag" data-heat="xl"><span class="parsed-row__tag-sign">+</span>35</span>
+              <div class="parsed-row__actions">
+                <button class="parsed-row__btn">DETAILS</button>
+                <button class="parsed-row__btn parsed-row__btn--adopt">ADOPT</button>
+              </div>
+            </div>
+
+            <!-- Row 2 — vault hit, medium heat -->
+            <div class="parsed-row parsed-row--ok">
+              <div class="parsed-row__status">✓</div>
+              <div class="parsed-row__body">
+                <span class="parsed-row__raw">"boron"</span>
+                <h4 class="parsed-row__name">Boron</h4>
+              </div>
+              <span class="parsed-row__mapped">→ trace_b</span>
+              <span class="parsed-row__confidence">0.99 <small>conf</small></span>
+              <span class="parsed-row__tag" data-heat="md"><span class="parsed-row__tag-sign">+</span>1</span>
+              <div class="parsed-row__actions">
+                <button class="parsed-row__btn">DETAILS</button>
+                <button class="parsed-row__btn parsed-row__btn--adopt">ADOPT</button>
+              </div>
+            </div>
+
+            <!-- Row 3 — vault hit, small (already covered) -->
+            <div class="parsed-row parsed-row--ok">
+              <div class="parsed-row__status">✓</div>
+              <div class="parsed-row__body">
+                <span class="parsed-row__raw">"selenium"</span>
+                <h4 class="parsed-row__name">Selenium</h4>
+              </div>
+              <span class="parsed-row__mapped">→ trace_se</span>
+              <span class="parsed-row__confidence">0.97 <small>conf</small></span>
+              <span class="parsed-row__tag" data-heat="none">covered</span>
+              <div class="parsed-row__actions">
+                <button class="parsed-row__btn">DETAILS</button>
+                <button class="parsed-row__btn parsed-row__btn--adopt">ADOPT</button>
+              </div>
+            </div>
+
+            <!-- Row 4 — vault hit -->
+            <div class="parsed-row parsed-row--ok">
+              <div class="parsed-row__status">✓</div>
+              <div class="parsed-row__body">
+                <span class="parsed-row__raw">"vanadium"</span>
+                <h4 class="parsed-row__name">Vanadium</h4>
+              </div>
+              <span class="parsed-row__mapped">→ trace_v</span>
+              <span class="parsed-row__confidence">0.96 <small>conf</small></span>
+              <span class="parsed-row__tag" data-heat="md"><span class="parsed-row__tag-sign">+</span>1</span>
+              <div class="parsed-row__actions">
+                <button class="parsed-row__btn">DETAILS</button>
+                <button class="parsed-row__btn parsed-row__btn--adopt">ADOPT</button>
+              </div>
+            </div>
+
+            <!-- Row 5 — fuzzy / amber -->
+            <div class="parsed-row parsed-row--warn">
+              <div class="parsed-row__status">?</div>
+              <div class="parsed-row__body">
+                <span class="parsed-row__raw">"strondium" → likely "strontium"</span>
+                <h4 class="parsed-row__name">Strontium <em style="color: var(--ds-status-warn); font-family: var(--ds-font-mono); font-style: normal; font-size: 0.75em; font-weight: 600;">· OCR DRIFT</em></h4>
+              </div>
+              <span class="parsed-row__mapped">→ trace_sr · fuzzy</span>
+              <span class="parsed-row__confidence">0.74 <small>conf</small></span>
+              <span class="parsed-row__tag" data-heat="sm"><span class="parsed-row__tag-sign">+</span>1</span>
+              <div class="parsed-row__actions">
+                <button class="parsed-row__btn">DETAILS</button>
+                <button class="parsed-row__btn parsed-row__btn--adopt">CONFIRM</button>
+              </div>
+            </div>
+
+            <!-- Row 6 — vault hit, small -->
+            <div class="parsed-row parsed-row--ok">
+              <div class="parsed-row__status">✓</div>
+              <div class="parsed-row__body">
+                <span class="parsed-row__raw">"calcium 2mg"</span>
+                <h4 class="parsed-row__name">Calcium</h4>
+              </div>
+              <span class="parsed-row__mapped">→ Ca · trace amount</span>
+              <span class="parsed-row__confidence">0.99 <small>conf</small></span>
+              <span class="parsed-row__tag" data-heat="none">trace · informational</span>
+              <div class="parsed-row__actions">
+                <button class="parsed-row__btn">DETAILS</button>
+                <button class="parsed-row__btn parsed-row__btn--adopt">ADOPT</button>
+              </div>
+            </div>
+
+            <!-- Row 7 — unknown / red -->
+            <div class="parsed-row parsed-row--err">
+              <div class="parsed-row__status">×</div>
+              <div class="parsed-row__body">
+                <span class="parsed-row__raw">"prebiotic blend (proprietary)"</span>
+                <h4 class="parsed-row__name">Unknown Proprietary Blend</h4>
+              </div>
+              <span class="parsed-row__mapped parsed-row__mapped--none">→ no mapping · not in vault</span>
+              <span class="parsed-row__confidence">— <small>conf</small></span>
+              <span class="parsed-row__tag" data-heat="none">flagged</span>
+              <div class="parsed-row__actions">
+                <button class="parsed-row__btn">DETAILS</button>
+                <button class="parsed-row__btn">DISMISS</button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+
+        <!-- OVERALL VERDICT -->
+        <section class="verdict">
+          <div class="verdict__grid">
+            <div class="verdict__lead">
+              <div class="verdict__eyebrow"><span class="pulse-dot"></span>VERDICT · <span class="ds-cipher" data-cipher-set="hexa">VD·81E3</span> · WALLACH ALIGNMENT</div>
+              <h2 class="verdict__headline">ALIGNS WITH <em>WALLACH DOCTRINE</em></h2>
+              <p class="verdict__body">
+                Plant-derived mineral aggregate present at 14.5g — the Wallach aggregate-vehicle rule
+                triggers coverage on 35 trace tiles by presence, not quantity. 1 OCR drift flagged for
+                confirmation. 1 proprietary blend cannot be verified against the source-rule allowlist.
+              </p>
+              <div class="verdict__source">CITED · <strong>Wallach · Dead Doctors Don't Lie · ch. 4 — Plant-derived mineral doctrine</strong></div>
+            </div>
+            <div class="verdict__stats">
+              <div class="verdict-stat">
+                <div class="verdict-stat__num">+38<small>/92</small></div>
+                <div class="verdict-stat__label">essentials added to coverage</div>
+              </div>
+              <div class="verdict-stat">
+                <div class="verdict-stat__num">35</div>
+                <div class="verdict-stat__label">trace tiles closed via PDM</div>
+              </div>
+              <div class="verdict-stat verdict-stat--warn">
+                <div class="verdict-stat__num">1</div>
+                <div class="verdict-stat__label">OCR drift to confirm</div>
+              </div>
+              <div class="verdict-stat verdict-stat--warn">
+                <div class="verdict-stat__num">1</div>
+                <div class="verdict-stat__label">proprietary blend flagged</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+
+      <!-- RIGHT RAIL -->
+      <aside class="scanner-side">
+
+        <!-- SCAN HISTORY -->
+        <section class="side-panel">
+          <header class="side-panel__head">
+            <div>
+              <div class="side-panel__eyebrow">HISTORY · <span class="ds-cipher" data-cipher-set="hexa">HS·40C8</span></div>
+              <h3 class="side-panel__title">Recent Scans</h3>
+            </div>
+            <div class="side-panel__count"><strong>12</strong> SCANS · 7D</div>
+          </header>
+          <div class="side-panel__list">
+
+            <div class="history-row">
+              <div class="history-row__thumb">M</div>
+              <div class="history-row__body">
+                <h4 class="history-row__name">Majestic Earth PDM</h4>
+                <div class="history-row__stamp">NOW · <span class="ds-cipher" data-cipher-set="time">0:08</span></div>
+              </div>
+              <span class="history-row__verdict history-row__verdict--ok">ALIGNS</span>
+            </div>
+
+            <div class="history-row">
+              <div class="history-row__thumb">B</div>
+              <div class="history-row__body">
+                <h4 class="history-row__name">BTT 2.5 Canister</h4>
+                <div class="history-row__stamp">2H AGO · 6/24</div>
+              </div>
+              <span class="history-row__verdict history-row__verdict--ok">ALIGNS</span>
+            </div>
+
+            <div class="history-row">
+              <div class="history-row__thumb">O</div>
+              <div class="history-row__body">
+                <h4 class="history-row__name">Beyond Osteo FX</h4>
+                <div class="history-row__stamp">YESTERDAY · 6/23</div>
+              </div>
+              <span class="history-row__verdict history-row__verdict--ok">ALIGNS</span>
+            </div>
+
+            <div class="history-row">
+              <div class="history-row__thumb">E</div>
+              <div class="history-row__body">
+                <h4 class="history-row__name">EFA Plus (drugstore)</h4>
+                <div class="history-row__stamp">2D AGO · 6/22</div>
+              </div>
+              <span class="history-row__verdict history-row__verdict--warn">PARTIAL</span>
+            </div>
+
+            <div class="history-row">
+              <div class="history-row__thumb">G</div>
+              <div class="history-row__body">
+                <h4 class="history-row__name">Generic Multivitamin</h4>
+                <div class="history-row__stamp">3D AGO · 6/21</div>
+              </div>
+              <span class="history-row__verdict history-row__verdict--err">OUT</span>
+            </div>
+
+            <div class="history-row">
+              <div class="history-row__thumb">U</div>
+              <div class="history-row__body">
+                <h4 class="history-row__name">Ultimate Vitality Pack</h4>
+                <div class="history-row__stamp">4D AGO · 6/20</div>
+              </div>
+              <span class="history-row__verdict history-row__verdict--ok">ALIGNS</span>
+            </div>
+
+            <div class="history-row">
+              <div class="history-row__thumb">S</div>
+              <div class="history-row__body">
+                <h4 class="history-row__name">Selenium-200 (3rd-party)</h4>
+                <div class="history-row__stamp">5D AGO · 6/19</div>
+              </div>
+              <span class="history-row__verdict history-row__verdict--warn">PARTIAL</span>
+            </div>
+
+            <div class="history-row">
+              <div class="history-row__thumb">P</div>
+              <div class="history-row__body">
+                <h4 class="history-row__name">Pollen Burst Plus</h4>
+                <div class="history-row__stamp">6D AGO · 6/18</div>
+              </div>
+              <span class="history-row__verdict history-row__verdict--ok">ALIGNS</span>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- BATCH QUEUE -->
+        <section class="side-panel" style="flex: 0 0 auto;">
+          <header class="side-panel__head">
+            <div>
+              <div class="side-panel__eyebrow">QUEUE · <span class="ds-cipher" data-cipher-set="hexa">QU·1A93</span></div>
+              <h3 class="side-panel__title">Batch &amp; Re-scan</h3>
+            </div>
+            <div class="side-panel__count"><strong>3</strong> WAITING</div>
+          </header>
+          <div class="side-panel__list" style="max-height: 180px;">
+            <div class="queue-row">
+              <span class="queue-row__name">Liquid CalMag (blur)</span>
+              <span class="queue-row__state">RETAKE</span>
+              <button class="queue-row__btn" title="Run">▶</button>
+            </div>
+            <div class="queue-row">
+              <span class="queue-row__name">YGY Killer Bee</span>
+              <span class="queue-row__state">QUEUED</span>
+              <button class="queue-row__btn" title="Run">▶</button>
+            </div>
+            <div class="queue-row">
+              <span class="queue-row__name">EFA Plus (re-scan)</span>
+              <span class="queue-row__state">REDO</span>
+              <button class="queue-row__btn" title="Run">▶</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- SCANNER CONTROLS -->
+        <section class="scan-controls">
+          <div class="scan-controls__title">SCAN CONTROLS</div>
+          <div class="scan-controls__grid">
+            <button class="scan-btn scan-btn--primary"><span class="scan-btn__glyph">+</span>NEW SCAN</button>
+            <button class="scan-btn"><span class="scan-btn__glyph">↺</span>RE-SCAN</button>
+            <button class="scan-btn"><span class="scan-btn__glyph">⇣</span>EXPORT JSON</button>
+            <button class="scan-btn"><span class="scan-btn__glyph">⇄</span>COMPARE</button>
+            <button class="scan-btn"><span class="scan-btn__glyph">×</span>CLEAR</button>
+          </div>
+        </section>
+
+      </aside>
+
+    </div>
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="app-footer">
+    <span class="footer__item"><span class="dot"></span><strong>READY</strong> · all systems</span>
+    <span class="footer__item">EDEN <strong>v1</strong> · sealed <span class="ds-cipher" data-cipher-set="hexa">8E594A01</span></span>
+    <span class="footer__item">VAULT <strong>54/59</strong> · 5 known transients</span>
+    <span class="footer__item">LAST SCAN <strong>Majestic Earth PDM</strong> · <span class="ds-cipher" data-cipher-set="time">0:08</span> AGO</span>
+    <span class="footer__spacer"></span>
+    <span class="footer__signature">// RENDERED WITH WALLACH·SYS v3.27</span>
+  </footer>
+
+</div>
+
+
+<!-- Cipher animation engine — same as Coverage / Regimen -->
+<script>
+(() => {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) return;
+  const SETS = {
+    hexa: '0123456789ABCDEF',
+    alphanum: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    time: '0123456789:·DHMS',
+  };
+  const elements = Array.from(document.querySelectorAll('.ds-cipher'));
+  elements.forEach(el => {
+    el.dataset.cipherOriginal = el.textContent;
+    el.dataset.cipherSetResolved = SETS[el.dataset.cipherSet] || SETS.alphanum;
+  });
+  let tickCount = 0;
+  setInterval(() => {
+    tickCount++;
+    elements.forEach(el => {
+      const original = el.dataset.cipherOriginal;
+      const set = el.dataset.cipherSetResolved;
+      if (tickCount % 5 === 0) { el.textContent = original; return; }
+      if (original.length === 0) return;
+      const chars = original.split('');
+      const i = Math.floor(Math.random() * chars.length);
+      if (!/[A-Z0-9·:DHMS]/i.test(chars[i])) return;
+      const newChar = set[Math.floor(Math.random() * set.length)];
+      chars[i] = newChar;
+      el.textContent = chars.join('');
+    });
+  }, 1000);
+})();
+</script>
+
+</body>
+</html>

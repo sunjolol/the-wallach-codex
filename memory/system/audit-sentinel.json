@@ -1,0 +1,19 @@
+{
+  "_purpose": "System audit's own sentinel. Updated AFTER successful audit run. Catch-up trigger reads this to verify the audit itself didn't fail. Round 74 \u2014 meta-check, who audits the auditor.",
+  "last_audit_completed_at": "2026-06-21T15:07:48+00:00",
+  "last_audit_started_at": "2026-06-21T15:07:43+00:00",
+  "last_audit_date": "2026-06-21",
+  "last_audit_cadence": "weekly",
+  "last_audit_result": {
+    "total": 64,
+    "pass": 62,
+    "fail": 2,
+    "critical_fail": 0,
+    "warning_fail": 2,
+    "info_fail": 0
+  },
+  "last_lapse_detected": null,
+  "last_lapse_reason": null,
+  "last_lapse_detail_path": null,
+  "schema_version": 2
+}

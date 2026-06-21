@@ -1,0 +1,172 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Essentials Targets",
+  "description": "Wallach's 90 essentials with daily/clinical target ranges. Source-rule.md governs the `source` field: every entry must cite a Wallach-corpus or Youngevity-primary reference.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "categories"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "source_primary": {
+      "type": "string"
+    },
+    "last_updated": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "totals": {
+      "type": "object"
+    },
+    "notes": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "categories": {
+      "type": "object",
+      "required": [
+        "minerals",
+        "vitamins",
+        "amino_acids",
+        "fatty_acids"
+      ],
+      "properties": {
+        "minerals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/essential"
+          }
+        },
+        "vitamins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/essential"
+          }
+        },
+        "amino_acids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/essential"
+          }
+        },
+        "fatty_acids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/essential"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "essential": {
+      "type": "object",
+      "required": [
+        "name",
+        "essential_per_wallach"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "essential_per_wallach": {
+          "type": "boolean"
+        },
+        "essentiality_note": {
+          "type": "string"
+        },
+        "wallach_baseline_target": {
+          "type": "string"
+        },
+        "wallach_target_low_mg": {
+          "type": "number"
+        },
+        "wallach_target_high_mg": {
+          "type": "number"
+        },
+        "wallach_target_low_iu": {
+          "type": "number"
+        },
+        "wallach_target_high_iu": {
+          "type": "number"
+        },
+        "clinical_target_low_mg": {
+          "type": "number"
+        },
+        "clinical_target_high_mg": {
+          "type": "number"
+        },
+        "wallach_clinical_doses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "condition",
+              "dose"
+            ],
+            "properties": {
+              "condition": {
+                "type": "string"
+              },
+              "dose": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string",
+          "minLength": 5,
+          "description": "REQUIRED by source-rule.md. Must cite a Wallach-corpus or Youngevity-primary reference. Validator is in warn-only mode until backfill complete; then required."
+        },
+        "wallach_stance": {
+          "type": "object",
+          "description": "Wallach's editorial voice on this essential — the pull-quote that leads the detail panel and reframes the tile as a teaching moment rather than just a deficiency target. Single canonical quote per essential by curation discipline. Optional field; absence renders nothing (graceful degradation per doctrine §7). Added Round 115 (Wallach-stance Phase 1 infrastructure).",
+          "required": [
+            "quote",
+            "citation"
+          ],
+          "properties": {
+            "quote": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Wallach's words on this essential. Paraphrase only with explicit '[paraphrase]' marker; prefer verbatim. Per source-rule cornerstone, the quote must come from a Wallach-corpus primary."
+            },
+            "citation": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Book + chapter, transcript + timestamp, or episode reference. Specific enough that a reader can verify the source."
+            },
+            "context": {
+              "type": "string",
+              "description": "Optional descriptive setting for the quote ('from the chapter on osteoporosis', 'during the Q&A on amino-acid supplementation'). Helps a reader understand the frame without needing to load the citation."
+            },
+            "expanded_context": {
+              "type": "string",
+              "description": "Optional fuller passage (Round 124 — read-more popup feature). When a pull-quote benefits from surrounding argument context that doesn't fit cleanly in a 2-3 sentence excerpt, expanded_context carries the longer passage. Surfaces via a 'Read more' affordance next to the citation; click opens a modal showing this content. Per source-rule cornerstone, expanded_context content is a Wallach claim displayed and must come from a Wallach-corpus primary (same allowlist as the quote field). Absence renders no read-more affordance (graceful degradation per doctrine §7). Most stances will not need this field; reserved for cases where the pull-quote's argument materially depends on context that would inflate the tile's primary display."
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Doctor's Best Magnesium Glycinate Lysinate",
+  "brand": "Doctor's Best",
+  "category": "magnesium supplement",
+  "container_format": "plastic_bottle",
+  "intended_daily_servings": 2,
+  "ingredients_text": "Magnesium (as TRAACS magnesium lysinate glycinate chelate), microcrystalline cellulose, modified cellulose, magnesium stearate. Gluten-free, soy-free, non-GMO.",
+  "description": "Chelated magnesium for absorption. Supports bone, muscle, heart, and nervous system function. Glycinate-lysinate chelate form is among the best-tolerated and highest-bioavailability magnesium forms.",
+  "nutrients": {
+    "Magnesium": {"amount": 100, "unit": "mg", "form": "magnesium lysinate glycinate chelate (TRAACS)", "form_alignment": "aligned"}
+  }
+}

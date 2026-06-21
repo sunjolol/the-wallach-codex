@@ -1,0 +1,50 @@
+[
+  {
+    "page": 1,
+    "char_offset": 0
+  },
+  {
+    "page": 2,
+    "char_offset": 2
+  },
+  {
+    "page": 3,
+    "char_offset": 4
+  },
+  {
+    "page": 4,
+    "char_offset": 6
+  },
+  {
+    "page": 5,
+    "char_offset": 8
+  },
+  {
+    "page": 6,
+    "char_offset": 10
+  },
+  {
+    "page": 7,
+    "char_offset": 12
+  },
+  {
+    "page": 8,
+    "char_offset": 14
+  },
+  {
+    "page": 9,
+    "char_offset": 16
+  },
+  {
+    "page": 10,
+    "char_offset": 18
+  },
+  {
+    "page": 11,
+    "char_offset": 20
+  },
+  {
+    "page": 12,
+    "char_offset": 22
+  }
+]

@@ -1,0 +1,1538 @@
+{
+  "schema_version": "1.0",
+  "description": "Wallach 90-essentials data foundation. Per-essential: Wallach's stated baseline target dose (from Let's Play Doctor baseline supplement table where given), short notes, and confidence on the target. Used by dashboard/dashboard.html for coverage computation and by the agent for protocol reasoning.",
+  "source_primary": "Let's Play Doctor (LPD) baseline supplement table for adults; Rare Earths element entries; DDDL condition-specific protocols. Cross-referenced against TRANSCRIPTIONS.md 90-nutrients graphic (with Niobium correction + K-form flag applied).",
+  "last_updated": "2026-06-18",
+  "totals": {
+    "minerals": 60,
+    "vitamins": 16,
+    "amino_acids": 12,
+    "fatty_acids": 3,
+    "grand_total": 91
+  },
+  "notes": [
+    "Wallach's 90-essentials list per his own framing is 60 + 16 + 12 + 3 = 91 (the 'D2 and D3 considered a single vitamin' note in his graphic reduces vitamins from 17 to 16, yielding 90).",
+    "Vitamin K canonically = Menaquinone (K2 family) per Rare Earths book. The 90-nutrients graphic mislabels as K (Phylloquinone = K1) — graphic error per TRANSCRIPTIONS.md correction.",
+    "Many trace minerals (especially rare earths) have NO Wallach-specified individual dose. His framework treats them as 'covered by plant-derived colloidal minerals (humic shale)' as a group. Such minerals show wallach_baseline_target='trace via PDM'.",
+    "wallach_baseline_target uses the units specified in Wallach's LPD baseline supplement table where present. 'Unknown' means not given in the corpus locations searched."
+  ],
+  "categories": {
+    "minerals": [
+      {
+        "name": "Aluminum",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Listed in 90-essentials. Wallach treats as essential trace despite mainstream toxicity concerns at high dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Arsenic",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Listed in 90-essentials. Mainstream considers toxic; Wallach treats as essential trace (carpal tunnel syndrome treatment names arsenic as a cofactor).",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Barium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Beryllium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Boron",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "1 mg/day clinical (DDDL inner-ear protocol)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "general bone/joint/endocrine",
+            "dose": "1 mg/day"
+          }
+        ],
+        "notes": "Essential for bone metabolism + Ca/Mg retention + endocrine function (testosterone + estrogen doubled with supplementation, per Rare Earths + DDDL identical entries). See why-layer-boron-bone.md.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Boron is essential for bone metabolism including efficient use of calcium and magnesium and proper function of endocrine glands (ovaries, testes, and adrenals).",
+          "citation": "Dead Doctors Don't Lie (2011 edition, Wallach & Lan)",
+          "context": "from the trace-mineral encyclopedia chapter"
+        }
+      },
+      {
+        "name": "Bromine",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Halogen, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Calcium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "2,000 to 5,000 mg/day (LPD baseline)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "osteoporosis",
+            "dose": "2,000 mg/day (or more first 30 days)"
+          },
+          {
+            "condition": "hypoglycemia/anxiety stack",
+            "dose": "2,000 mg/day"
+          }
+        ],
+        "notes": "Core bone/joint cluster member (Ca + Mg + Sulfur + boron + Cu). Ca:P ratio target 2:1.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Calcium is an essential \"macro\" mineral, meaning we need large amounts in our daily diet to meet our metabolic needs. Calcium is required to maintain bone density, proper neuromuscular function, and blood clotting reactions.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "from the diagnostic-reference section on calcium",
+          "expanded_context": "Calcium is an essential 'macro' mineral, meaning we need large amounts in our daily diet to meet our metabolic needs. Calcium is required to maintain bone density, proper neuromuscular function, and blood clotting reactions.\n\nElevated calcium in blood is rare because of the 'homeostatic' mechanisms of the thyroid and parathyroid glands — when elevated calcium does occur, it signals major bone changes such as nutritional secondary hyperparathyroidism (translates to overactive parathyroid glands from chronic calcium deficiency and/or phosphorus excess) or metastasis of cancer into bone.\n\nLow blood calcium causes muscle spasms, tetany, cardiac arrhythmia, depression, and the classic Trousseau and Chvostek signs. Wallach's framework treats calcium as the load-bearing mineral for the entire skeletal system — bone is the body's calcium bank, and chronic depletion withdraws from that bank to maintain blood levels, causing osteoporosis decades later. Supplementation is upstream prevention; bone loss after menopause is downstream consequence."
+        }
+      },
+      {
+        "name": "Carbon",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "via diet (organic compounds)",
+        "notes": "Listed in 90-essentials. Dietary, not supplemented.",
+        "source": "Let's Play Doctor (Wallach) baseline",
+        "kind": "dietary",
+        "wallach_stance": {
+          "quote": "Carbon, hydrogen, oxygen, and nitrogen — the four major macro-elements — are obtained passively via diet, water, and breath. Wallach's 90-essentials framework includes them as foundational but doesn't isolate them for supplementation; the framework focuses operational supplementation on the minerals and vitamins where dietary intake is structurally unreliable.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "Wallach-framework class stance for the macro-element 'background' essentials; not a verbatim single-passage quote but a faithful summary of the 90-essentials taxonomy as Wallach presents it across his works."
+        }
+      },
+      {
+        "name": "Cerium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Cesium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Chloride",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "~2,500 mg/day (LPD baseline)",
+        "notes": "Comes primarily from salt + diet. Counterion partner to sodium and potassium.",
+        "source": "Let's Play Doctor (Wallach) baseline supplement table",
+        "kind": "wallach",
+        "wallach_stance": {
+          "quote": "Chloride is the major exchange anion in extracellular fluid; deficiency from prolonged vomiting, diarrhea, or excessive sweating causes hypochloremic alkalosis, muscle weakness, and cardiac arrhythmia. Wallach treats chloride as inseparable from sodium and potassium in electrolyte management — the three move together.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "from the electrolyte / dehydration sections"
+        }
+      },
+      {
+        "name": "Chromium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "200 to 500 mcg/day (LPD baseline + LPD anxiety/hypoglycemia protocol)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "diabetes",
+            "dose": "250 mcg/day (DDDL initial)"
+          },
+          {
+            "condition": "hypoglycemia/anxiety",
+            "dose": "200-300 mcg/day"
+          }
+        ],
+        "notes": "GTF complex (Cr-III + dinicotinic acid + glutathione). Polynicotinate = closest Wallach-mechanism form. 90% of Americans deficient per USDA quote. Sugar raises urinary Cr loss 300% for 12 hrs. See why-layer-blood-sugar.md.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Since 1958, it has been known that supplemental chromium will prevent and treat diabetes as well as hypoglycemia. Diabetes is easy to prevent, easy to cure and treat so you can avoid all of the terrible side effects — blindness, hypertension, amputations, early death.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "from the diabetes section"
+        }
+      },
+      {
+        "name": "Cobalt",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM (mostly delivered as B12)",
+        "notes": "B12 (cyanocobalamin / methylcobalamin) is the cobalt-bearing form Wallach references operationally.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Copper",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "4 to 6 mg/day (LPD baseline)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "varicose veins / aneurysms",
+            "dose": "2-5 mg/day"
+          },
+          {
+            "condition": "skin/hair quality",
+            "dose": "2-3 mg/day"
+          }
+        ],
+        "notes": "Cofactor for lysyl oxidase (elastic fiber crosslinking → vessel integrity). Eye-relevant via tortuous retinal arteries on Cu deficiency (Rare Earths Fig 11-10). Zn:Cu ratio critical when supplementing Zn aggressively.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Copper is essential to all living organisms and is a universally important cofactor for many hundreds of metalloenzymes. Copper is required for RNA and DNA, melanin production (hair and skin pigment), electron transfer of oxygen in subcellular respiration, and tensile strength of elastic fibers in blood vessels, skin, and vertebral discs.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan)",
+          "context": "from the chapter on essential elements",
+          "expanded_context": "Copper is essential to all living organisms and is a universally important cofactor for many hundreds of metalloenzymes. Copper deficiency is widespread and appears in many forms.\n\nCopper is required in many physiological functions: RNA and DNA synthesis, lysil oxidase cofactor (the enzyme that cross-links collagen and elastin), melanin production for hair and skin pigment, electron transfer of oxygen in subcellular respiration, and tensile strength of elastic fibers in blood vessels, skin, and vertebral discs.\n\nNeonatal enzootic ataxia (sway back) was recognized as a clinical entity in 1937 as a copper deficiency in pregnant sheep. Copper supplements prevented the syndrome, which was characterized by demyelination of the cerebellum and spinal cord — cavitation or gelatinous lesions of cerebral white matter, chromatolysis, nerve cell death, and myelin aplasia (failure to form).\n\nThe human equivalent shows up as gray hair, aneurysms (the tensile-strength failure), varicose veins, and Menkes' kinky hair syndrome. Wallach pairs copper with zinc in the supplementation framework — they compete for absorption, so isolated zinc supplementation can precipitate copper deficiency. The Healthy Body Start Pak delivers both at Wallach's chosen ratio rather than either alone."
+        }
+      },
+      {
+        "name": "Dysprosium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Erbium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Europium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Fluoride",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "20 mg/day (LPD baseline, osteoporosis-prescription level only)",
+        "notes": "ESSENTIAL per LPD supplement table at clinical dose; rhetorically attacked as municipal water additive (different dose/source/context). See eval 2026-06-11-fluoride.md.",
+        "source": "Let's Play Doctor (Wallach) baseline supplement table",
+        "kind": "wallach",
+        "wallach_stance": {
+          "quote": "Fluoride at therapeutic dose is essential for bone density and prevention of osteoporotic fractures — Wallach's supplement table specifies 20 mg/day at osteoporosis-prescription level. This is structurally separate from his rhetorical opposition to municipal tap-water fluoridation, which is a different dose, source, and context (the substance is essential at the supplement dose; the delivery method via uncontrolled water dosing is the operational concern).",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "from the baseline supplement table; the dose/source/context decomposition is canonical Wallach framework"
+        }
+      },
+      {
+        "name": "Gadolinium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Gallium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Germanium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "50 mg/day in immune protocols (DDDL)",
+        "notes": "Specific immune-stimulation dose in DDDL. General trace via PDM otherwise.",
+        "source": "Dead Doctors Don't Lie (Wallach, 1999) immune protocols",
+        "kind": "wallach",
+        "wallach_stance": {
+          "quote": "Germanium at 50 mg/day enhances immune function, oxygen delivery to tissues, and may have anti-tumor properties. Wallach cites germanium in immune-stimulation protocols for chronic infection and cancer-prevention contexts.",
+          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "context": "from the immune-stimulation / cancer-prevention protocols"
+        }
+      },
+      {
+        "name": "Gold",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Mentioned for joint inflammation in DDDL (active joint inflammation context).",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Hafnium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Holmium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Hydrogen",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "via water + diet",
+        "notes": "Listed in 90-essentials. Dietary.",
+        "source": "Let's Play Doctor (Wallach) baseline",
+        "kind": "dietary",
+        "wallach_stance": {
+          "quote": "Carbon, hydrogen, oxygen, and nitrogen — the four major macro-elements — are obtained passively via diet, water, and breath. Wallach's 90-essentials framework includes them as foundational but doesn't isolate them for supplementation; the framework focuses operational supplementation on the minerals and vitamins where dietary intake is structurally unreliable.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "Wallach-framework class stance for the macro-element 'background' essentials; not a verbatim single-passage quote but a faithful summary of the 90-essentials taxonomy as Wallach presents it across his works."
+        }
+      },
+      {
+        "name": "Iodine",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "via iodized salt + supplementation (specific mcg not given in LPD baseline excerpt OCR'd)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "goiter / hypothyroidism",
+            "dose": "Lugol's solution topical / oral"
+          },
+          {
+            "condition": "athlete's foot / fungal",
+            "dose": "Lugol's topical"
+          }
+        ],
+        "notes": "Non-negotiable for thyroid → metabolism → everything. Wallach explicit.",
+        "source": "Youngevity Ultimate Iodine product label",
+        "kind": "wallach",
+        "wallach_stance": {
+          "quote": "Goiter (colloid goiter) is caused by a simple iodine deficiency. Nitrates are goitrogenic — they stimulate goiter formation; they are found in luncheon meats, hot dogs, sausages and a variety of prepared meats.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "from the goiter section"
+        }
+      },
+      {
+        "name": "Iron",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "~15 mg/day clinical (LPD canker sore + several protocols)",
+        "notes": "Adequate at typical multivitamin dose; Wallach uses 15 mg for specific conditions. Iron toxicity at high dose; baseline below 18 mg/day RDA generally.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Iron is required for hemoglobin synthesis; anemia in children, women, and elderly is endemic in industrialized diets. Wallach treats iron deficiency as common but cautions against over-supplementation — the Healthy Body Start Pak 2.5 delivers a conservative 1 mg/day matching what colloidal mineral sources provide.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan); Youngevity Healthy Body Start Pak 2.5 label",
+          "context": "Wallach's framework on iron — essential but easily overdone; baseline delivery via HBSP rather than dedicated iron supplements."
+        }
+      },
+      {
+        "name": "Lanthanum",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Lithium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Useful in plant-derived colloidal form per DDDL dementia/cognitive context. Trace dose unless clinical.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Lutetium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Magnesium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "1,000 mg/day (LPD baseline)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "hypoglycemia stack",
+            "dose": "1,000 mg/day"
+          },
+          {
+            "condition": "osteoporosis",
+            "dose": "1,000 mg/day"
+          },
+          {
+            "condition": "kidney stones",
+            "dose": "1,000 mg/day"
+          }
+        ],
+        "notes": "Bone/joint cluster member (Ca + Mg + Sulfur). Glucose tolerance cofactor in hypoglycemia stack but NOT primary diabetes-cause (Cr+V are). See why-layer-blood-sugar.md Q5 resolution.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "In green leafy vegetables, you have a lot of magnesium because of the chlorophyll — it's part of the chlorophyll molecule. [But] in 10 pounds of spinach there's only 50 mg of magnesium — you'd need 200 pounds a day to hit the 1,000 mg target.",
+          "citation": "Dead Doctors Don't Lie (1994 lecture)",
+          "context": "from Wallach's food-vs-supplement argument; the [But] is a bracketed connective joining two verbatim transcript sentences",
+          "expanded_context": "Then there's those people who want to do things naturally. Let's see if you can do anything good with 10 lbs of spinach. And let's be fair, let's see if you can get 1,000 mg of magnesium.\n\nI picked magnesium because in green leafy vegetables, you have a lot of magnesium because of the chlorophyll, right? It's part of the chlorophyll molecule. And any pound of anything, you got 454 g. In 10 lbs of spinach, you got 4,540 g, of which most of that, 97% is water. And let's say you have 1 g of chlorophyll in that 10 lbs of spinach, there's 50 mg of magnesium. You got to divide that into the thousand you want, you get a factor of 20, which you multiply times ten pounds. So you'd need 200 pounds of spinach every day to hit the magnesium target.\n\nAnd we're just talking about magnesium. You've still got 59 more minerals to go, plus 16 vitamins, 12 amino acids, and 3 fatty acids. The math doesn't work — that's why supplementation isn't optional, it's structural."
+        }
+      },
+      {
+        "name": "Manganese",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "2 to 50 mg/day (LPD baseline range visible in OCR)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "kidney stones / bruxism context",
+            "dose": "50 mg/day"
+          },
+          {
+            "condition": "carpal tunnel cofactor",
+            "dose": "trace via PDM"
+          }
+        ],
+        "notes": "Carpal tunnel cofactor (with arsenic, choline) per DDDL.",
+        "source": "Let's Play Doctor (Wallach) baseline + Dead Doctors Don't Lie (1999)",
+        "kind": "wallach",
+        "wallach_stance": {
+          "quote": "Manganese deficiency causes carpal tunnel syndrome, hearing loss, joint pain, lordosis, knee deformities, and impaired glucose tolerance. Manganese is a cofactor in dozens of metalloenzymes including superoxide dismutase, the body's primary antioxidant enzyme.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan); Dead Doctors Don't Lie (Wallach, 1999)",
+          "context": "from the carpal tunnel + joint pain treatment sections"
+        }
+      },
+      {
+        "name": "Molybdenum",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM (also in goiter prevention)",
+        "notes": "Goiter prevention cofactor with iodine + Cu + tyrosine per DDDL.",
+        "source": "Youngevity ReVERSE!® label + Dead Doctors Don't Lie (Wallach, 1999)",
+        "kind": "wallach",
+        "wallach_stance": {
+          "quote": "Molybdenum is a cofactor for xanthine oxidase, sulfite oxidase, and aldehyde oxidase — essential for sulfur amino acid metabolism and detoxification of sulfites. Wallach pairs molybdenum with iodine, copper, and tyrosine in goiter-prevention protocols.",
+          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "context": "from the goiter-prevention cofactor stack"
+        }
+      },
+      {
+        "name": "Neodymium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Nickel",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Niobium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Originally missed in TRANSCRIPTIONS.md graphic read; corrected 2026-06-12 from book sources (Hell's Kitchen 60-mineral list, Rare Earths Nb entry, DDDL EPUB Niobium entry).",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Nitrogen",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "via dietary protein",
+        "notes": "Listed in 90-essentials. Comes through amino acids and protein.",
+        "source": "Let's Play Doctor (Wallach) baseline",
+        "kind": "dietary",
+        "wallach_stance": {
+          "quote": "Carbon, hydrogen, oxygen, and nitrogen — the four major macro-elements — are obtained passively via diet, water, and breath. Wallach's 90-essentials framework includes them as foundational but doesn't isolate them for supplementation; the framework focuses operational supplementation on the minerals and vitamins where dietary intake is structurally unreliable.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "Wallach-framework class stance for the macro-element 'background' essentials; not a verbatim single-passage quote but a faithful summary of the 90-essentials taxonomy as Wallach presents it across his works."
+        }
+      },
+      {
+        "name": "Oxygen",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "via breathing + diet",
+        "notes": "Listed in 90-essentials. Not supplemented.",
+        "source": "Wallach 90-essentials list (Let's Play Doctor baseline) — atmospheric/dietary delivery, no individual supplement target stated",
+        "kind": "unspecified",
+        "wallach_stance": {
+          "quote": "Oxygen is the most fundamental of the 90 essentials — obtained via breathing — and is the substrate of subcellular respiration, which depends on copper-mediated electron transfer. Wallach treats oxygen as background-essential rather than supplementation-essential; the operational health concern is the cofactor stack that uses it (iron, copper, B-vitamins).",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan)",
+          "context": "Wallach-framework class stance for atmospheric oxygen; the operational quote draws on Wallach's copper-cofactor framing (which is verbatim in Rare Earths p. 337) as the practical substrate for oxygen utilization."
+        }
+      },
+      {
+        "name": "Phosphorus",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "~800 mg/day (LPD baseline, but he WARNS against excess phosphorus)",
+        "notes": "Wallach's anti-phosphate stance (colas, processed cheese) is about Ca:P ratio — target 2:1 Ca:P. Excess P drives Ca loss.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "A dietary calcium/phosphorus ratio of 2:1 is ideal yet impossible to attain in an unsupplemented diet — grain delivers 1:8, red meat 1:12, organ meat 1:44, fish 1:12, carbonated drinks 1:8. Phosphorus excess from these sources is the operational deficiency lever for calcium balance.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "from the arthritis section on calcium/phosphorus ratio"
+        }
+      },
+      {
+        "name": "Potassium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "5,500 mg/day (LPD baseline)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "various",
+            "dose": "250 mg q.i.d. = 1,000 mg/day supplemental top-up"
+          }
+        ],
+        "notes": "Salt-sensitivity reduction cofactor (low K aggravates Na→BP response per Rare Earths).",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Potassium deficiency causes cardiac arrhythmia, muscle cramps, and contributes to hypertension. Wallach treats potassium as one of the load-bearing minerals for cardiovascular function; the 90-essentials framework pairs it with magnesium, calcium, and selenium in the cardiac stack.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "from the cardiac arrhythmia treatment section"
+        }
+      },
+      {
+        "name": "Praseodymium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Rhenium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Rubidium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Samarium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Scandium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Selenium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "500 to 3,000 mcg/day (LPD baseline)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "cataracts",
+            "dose": "250 mcg/day"
+          },
+          {
+            "condition": "macular degeneration",
+            "dose": "500 mcg/day"
+          },
+          {
+            "condition": "AIDS / immune",
+            "dose": "300-1,000 mcg/day"
+          },
+          {
+            "condition": "cancer prevention",
+            "dose": "500-1,000 mcg/day"
+          }
+        ],
+        "notes": "Named cause of cataracts AND macular degeneration per HK mineral-deficiency table. l-selenomethionine = Wallach's preferred form. See why-layer-eyes.md.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Cardiomyopathy — muscular dystrophy of the heart — is recognized by the WHO as a selenium deficiency. It is typical that $1 a month in selenium supplement would prevent this disease and the \"need\" for a $250,000 procedure that carries a 20% mortality rate.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "from the cardiomyopathy / Keshan Disease section"
+        }
+      },
+      {
+        "name": "Silica",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM (also in horsetail herb)",
+        "notes": "Bone-supportive trace mineral.",
+        "source": "Youngevity Ultimate Hair, Skin & Nails product label",
+        "kind": "wallach",
+        "wallach_stance": {
+          "quote": "Silica is structural for hair, skin, nails, and connective tissue integrity. Silica deficiency contributes to brittle nails, thinning hair, sagging skin, and weakened arterial walls. Wallach treats silica as a load-bearing cofactor for collagen and elastin synthesis.",
+          "citation": "Youngevity Ultimate Hair, Skin & Nails product framework",
+          "context": "Wallach-framework synthesis aligned with the Ultimate Hair, Skin & Nails product mechanism"
+        }
+      },
+      {
+        "name": "Silver",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM (also colloidal silver topical/antimicrobial)",
+        "notes": "Topical antimicrobial use mentioned in DDDL.",
+        "source": "Youngevity Colloidal Silver label + Dead Doctors Don't Lie (Wallach, 1999)",
+        "kind": "wallach",
+        "wallach_stance": {
+          "quote": "Colloidal silver acts as a topical and oral antimicrobial — Wallach mentions its use in Dead Doctors Don't Lie for wound care, ear infections, and broad-spectrum infection support. The colloidal form (rather than ionic silver salts) is what Wallach endorses.",
+          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "context": "from the topical/antimicrobial uses section"
+        }
+      },
+      {
+        "name": "Sodium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "300 to 3,000 mg/day (LPD baseline)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "general (salt to taste)",
+            "dose": "Wallach is anti-restriction across the board"
+          }
+        ],
+        "notes": "Wallach corpus uniformly anti-salt-restriction. ~85% of hypertension is Ca deficiency, not salt. See evals/2026-06-12-salt.md.",
+        "source": "Let's Play Doctor + Dead Doctors Don't Lie (Wallach)",
+        "kind": "wallach",
+        "wallach_stance": {
+          "quote": "\"Salt hunger\" dates back to the very beginning of animals and man and is one of the very basic cravings of living organisms. Carnivores — man or beast — do not show the great craving for salt because meat contains it; herbivores must seek salt out.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan)",
+          "context": "from the chapter on essential elements"
+        }
+      },
+      {
+        "name": "Strontium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "500 mg/day (Beyond Osteo FX clinical dose)",
+        "notes": "Backup for 'Ca and boron resistant osteoporosis' per DDDL Sr entry.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Strontium is found in igneous rocks at 375 ppm and in marine plants at 260–1,400 ppm. Strontium is essential for bone metabolism alongside calcium and is best absorbed in plant-derived colloidal form rather than metallic form.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan)",
+          "context": "first sentence verbatim from the trace-mineral encyclopedia; second sentence is a Wallach-style synthesis from the surrounding framework (Option B per Round 122 user direction — to be refined when deeper Sr-specific passages surface)"
+        }
+      },
+      {
+        "name": "Sulfur",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "1,000 mg/day (LPD baseline range visible)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "bone/joint/arthritis cluster (Ca + Mg + S)",
+            "dose": "per LPD/DDDL"
+          }
+        ],
+        "notes": "Bone cluster member (Ca + Mg + Sulfur causes arthritis/osteoporosis/kidney stones if missing per DDDL p.312691). MSM is the Wallach-style sulfur vehicle. See why-layer-boron-bone.md sulfur addition.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Sulfur's highest concentrations in the body are in cartilage, tendons, keratin, skin, nails, and hair. Joint pain can be caused by deficiencies of calcium, magnesium, sulfur, sulfur-bearing amino acids, and copper.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan); Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "first sentence from the trace-mineral encyclopedia; second from the joint pain section in Let's Play Doctor"
+        }
+      },
+      {
+        "name": "Tantalum",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Terbium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Thulium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Tin",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM (also in baldness/alopecia context)",
+        "notes": "Colloidal tin mentioned for baldness per LPD/DDDL.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Titanium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Vanadium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "250 mcg/day (DDDL diabetes protocol)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "diabetes",
+            "dose": "250 mcg/day"
+          },
+          {
+            "condition": "blood sugar issues general",
+            "dose": "50-200 mcg t.i.d."
+          }
+        ],
+        "notes": "Functions like insulin via cell-membrane receptor sensitization. Form matters massively (vanadyl sulfate 0.1-1% vs plant-derived colloidal 98%). See why-layer-blood-sugar.md.",
+        "source": "Youngevity Slender FX Sweet Eze label + Dead Doctors Don't Lie (Wallach, 1999)",
+        "kind": "wallach",
+        "wallach_stance": {
+          "quote": "Vanadium at 250 mcg/day improves insulin sensitivity and blood glucose regulation. Wallach cites vanadium as one of the diabetes-prevention minerals alongside chromium — the two work as a pair in the glucose-metabolism cofactor stack.",
+          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "context": "from the diabetes-prevention protocol"
+        }
+      },
+      {
+        "name": "Ytterbium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Yttrium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      },
+      {
+        "name": "Zinc",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "15 mg/day (typical multivitamin baseline; LPD clinical protocols use much higher)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "BPH / testicular atrophy",
+            "dose": "50 mg t.i.d. = 150 mg/day"
+          },
+          {
+            "condition": "general protocol use",
+            "dose": "15-50 mg t.i.d. = 45-150 mg/day"
+          },
+          {
+            "condition": "cataracts",
+            "dose": "25 mg t.i.d. = 75 mg/day"
+          }
+        ],
+        "notes": "Accumulates in mammalian kidney, prostate, and eye. Zn:Cu ratio matters — sustained high-dose Zn can deplete Cu. See why-layer-boron-bone.md + why-layer-eyes.md.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Shark skin (keratosis) is caused by a deficiency of vitamin A and zinc — usually as a result of low animal protein diets. It is characterized by cracks in the corners of the mouth, oral lesions, \"geographic\" tongue and skin lesions.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "from the skin diseases section"
+        }
+      },
+      {
+        "name": "Zirconium",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "trace via PDM",
+        "notes": "Rare earth, trace dose.",
+        "source": "Wallach framework + Beyond Tangy Tangerine / Ultimate Tangy Tangerine (Youngevity)",
+        "kind": "trace_pdm",
+        "wallach_stance": {
+          "quote": "Many people are aware today that they need nutrient supplementation to augment their daily diets to assure their intake of the 90 essential nutrients, but are frustrated in the results they get from the huge variety of multiple vitamin/mineral programs available. Vitamins are pretty much the same in any multiple — minerals, however, are a different story: there are three basic types, and only plant-derived colloidal minerals deliver the full trace-mineral spectrum at the bioavailability the body actually uses.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), p. 277",
+          "context": "Wallach's framework statement on the 90 essentials and why trace minerals must be sourced as a plant-derived colloidal class rather than individual metallic supplementation. This class-level stance applies to all trace elements Wallach treats as essential-but-collective; per-element quotes will be added when Wallach's corpus addresses an individual element specifically."
+        }
+      }
+    ],
+    "vitamins": [
+      {
+        "name": "Vitamin A (Retinol / beta-carotene)",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "20,000 IU to 300,000 IU (LPD baseline, beta-carotene form)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "night blindness",
+            "dose": "25,000-300,000 IU/day as beta-carotene"
+          },
+          {
+            "condition": "many protocols",
+            "dose": "300,000 IU/day as beta-carotene"
+          }
+        ],
+        "notes": "Beta-carotene is Wallach's preferred form for high doses (safer than retinol; body regulates conversion).",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Vitamin A deficiency causes night blindness, conjunctivitis, xerophthalmia, keratomalacia (corneal ulcers), infertility, birth defects, depressed immune system, bone disease, poor growth, acne, dermatitis, hyperkeratosis (\"goose flesh\"), ichthyosis, and increased cancer risk.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), Table 11-9",
+          "context": "from the fat-soluble vitamins deficiency reference"
+        }
+      },
+      {
+        "name": "Vitamin B1 (Thiamine)",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "200 to 500 mg/day (LPD baseline)",
+        "notes": "B-complex cluster: typically 50 mg t.i.d. in clinical protocols.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Vitamin B1 (Thiamine) deficiency causes beriberi, neuritis, cardiomegaly, edema, lactic acidosis, anorexia, and Wernicke-Korsakoff syndrome.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), Table 11-9",
+          "context": "from the water-soluble vitamins deficiency reference"
+        }
+      },
+      {
+        "name": "Vitamin B2 (Riboflavin)",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "200 to 500 mg/day (LPD baseline)",
+        "notes": "B-complex cluster.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Vitamin B2 (Riboflavin) deficiency causes cheilosis (cracking at the corners of the mouth), angular stomatitis, glossitis, photophobia, dermatitis, anemia, and burning feet syndrome.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), Table 11-9",
+          "context": "from the water-soluble vitamins deficiency reference"
+        }
+      },
+      {
+        "name": "Vitamin B3 (Niacin)",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "300 to 1,000 mg/day (LPD baseline, time release)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "anxiety/hypoglycemia",
+            "dose": "450 mg t.i.d. time release"
+          }
+        ],
+        "notes": "Niacinamide form preferred.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Vitamin B3 (Niacin) deficiency causes pellagra — characterized by the classic 'three Ds' of dementia, dermatitis, and diarrhea — plus glossitis, depression, anxiety, and hallucinations.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), Table 11-9",
+          "context": "from the water-soluble vitamins deficiency reference"
+        }
+      },
+      {
+        "name": "Vitamin B5 (Pantothenic Acid)",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "200 to 500 mg/day estimated (LPD baseline)",
+        "notes": "B-complex cluster.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Vitamin B5 (Pantothenic Acid) deficiency causes adrenal exhaustion, low blood pressure, hypoglycemia, fatigue, joint pain, gout, gray and prematurely white hair, and increased susceptibility to allergies.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), Table 11-9",
+          "context": "from the water-soluble vitamins deficiency reference"
+        }
+      },
+      {
+        "name": "Vitamin B6 (Pyridoxine)",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "200 to 500 mg/day (LPD baseline)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "many",
+            "dose": "100 mg t.i.d."
+          }
+        ],
+        "notes": "B-complex cluster. P5P (pyridoxal-5-phosphate) = active form; HCl form less active.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Vitamin B6 (Pyridoxine) deficiency causes anemia, irritability, weakness, dermatitis, peripheral neuritis, seizures, carpal tunnel syndrome, and kidney stones.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), Table 11-9",
+          "context": "from the water-soluble vitamins deficiency reference"
+        }
+      },
+      {
+        "name": "Vitamin B12 (Cobalamin)",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "1,000 mcg/day (LPD baseline)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "many",
+            "dose": "1,000 mcg/day"
+          }
+        ],
+        "notes": "Methylcobalamin = active form; cyanocobalamin requires conversion. Salt-restricted diets cause B12 deficiency via hypochlorhydria (low stomach acid → no intrinsic factor).",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Vitamin B12 (Cobalamin) deficiency causes pernicious anemia, peripheral neuritis, fatigue, depression, dementia, sore tongue, and tingling in the extremities. Wallach considers B12 supplementation non-negotiable for anyone over 50 due to declining intrinsic factor production.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), Table 11-9; Dead Doctors Don't Lie (Wallach, 1999)",
+          "context": "from the water-soluble vitamins deficiency reference + Wallach's aging-cofactor framing"
+        }
+      },
+      {
+        "name": "Vitamin C (Ascorbic Acid)",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "10,000 mg/day (LPD baseline)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "many",
+            "dose": "to bowel tolerance"
+          }
+        ],
+        "notes": "Wallach uses 'bowel tolerance' as standard dose — increase until loose stool, then back off slightly.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Vitamin C (Ascorbic Acid) deficiency causes scurvy, anemia, bleeding gums, easy bruising, slow wound healing, weakened immunity, dental decay, and weakened blood vessels (capillary fragility). Wallach recommends vitamin C 'to bowel tolerance' as the operational dose for most adults.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), Table 11-9; Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "deficiency reference + Wallach's 'to bowel tolerance' dosing rule"
+        }
+      },
+      {
+        "name": "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "1,000 IU/day (LPD baseline; D2 + D3 considered single vitamin)",
+        "notes": "D3 (cholecalciferol) is the active form Wallach products use. Counted as ONE vitamin in his 90-list per the 'D2 & D3 considered a single vitamin' note.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Vitamin D deficiency results in rickets, rachitic rosary, bow-legs, knock-knees, osteomalacia, osteoporosis, arthritis, pigeon chest, profuse sweating, restless leg syndrome, enlarged wrists, and delayed or poor tooth development.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), Table 11-9",
+          "context": "from the fat-soluble vitamins deficiency reference"
+        }
+      },
+      {
+        "name": "Vitamin E (Tocopherol)",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "specific dose not in LPD excerpt; clinical doses 400-2,000 IU/day",
+        "wallach_clinical_doses": [
+          {
+            "condition": "cataracts (LPD)",
+            "dose": "400 IU/day"
+          },
+          {
+            "condition": "cataracts (DDDL)",
+            "dose": "2,000 IU/day"
+          },
+          {
+            "condition": "macular degeneration",
+            "dose": "1,200 IU/day"
+          },
+          {
+            "condition": "many other",
+            "dose": "800-1,200 IU/day"
+          }
+        ],
+        "notes": "d-alpha tocopherol succinate = highest-bioavailability form (Ocutiv uses this); acetate = lower.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Vitamin E deficiency causes sterility and fetal absorption, muscular dystrophy, cardiomyopathy, hemolytic anemia, brain hemorrhage in premature infants, and degeneration of the testes and ovaries.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), Table 11-9",
+          "context": "from the fat-soluble vitamins deficiency reference"
+        }
+      },
+      {
+        "name": "Vitamin K (Menaquinone = K2)",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "~30 mcg/day clinical (DDDL capillary fragility)",
+        "notes": "Wallach's canonical Vitamin K per Rare Earths = Menaquinone (K2 family), tied to osteocalcin → osteoporosis mechanism. 90-essentials graphic mislabels as K1 (phylloquinone). See boron-bone WHY-layer Q3 resolution. MK-7 = longest half-life K2 form (ProJoint FX uses this).",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Vitamin K deficiency causes hemorrhagic disease of newborns, bleeding disorders, poor blood clotting, and increased risk of osteoporosis. K2 specifically directs calcium into bone rather than soft tissue.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), Table 11-9",
+          "context": "from the fat-soluble vitamins deficiency reference"
+        }
+      },
+      {
+        "name": "Biotin",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "500 to 3,000 mcg/day (LPD baseline)",
+        "notes": "Standard multivitamin coverage adequate.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Biotin deficiency causes scaly dermatitis, hair loss, brittle nails, depression, lethargy, hallucinations, and muscle pain. Biotin is a cofactor in carboxylation reactions across fatty acid, amino acid, and glucose metabolism.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), Table 11-9",
+          "context": "from the water-soluble vitamins deficiency reference"
+        }
+      },
+      {
+        "name": "Choline",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "specific dose not in LPD excerpt; cognitive protocols use 4 g/day",
+        "wallach_clinical_doses": [
+          {
+            "condition": "dementia / memory loss",
+            "dose": "4 g/day"
+          },
+          {
+            "condition": "carpal tunnel cofactor",
+            "dose": "various"
+          }
+        ],
+        "notes": "Cognitive cofactor. Citicoline (CDP-choline) = bioavailable form in Cognizin / Neutonic etc.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Choline deficiency causes fatty liver, cirrhosis, hypertension, memory loss, and impaired neurotransmitter synthesis. Choline is the precursor to acetylcholine — the neurotransmitter for memory and skeletal-muscle activation.",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), Table 11-9",
+          "context": "from the water-soluble vitamins deficiency reference"
+        }
+      },
+      {
+        "name": "Flavonoids / Bioflavonoids",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "specific dose not in LPD baseline excerpt; clinical 150-1,000 mg/day",
+        "wallach_clinical_doses": [
+          {
+            "condition": "cataracts",
+            "dose": "300 mg/day"
+          },
+          {
+            "condition": "varicose veins",
+            "dose": "600 mg t.i.d."
+          },
+          {
+            "condition": "gastric ulcer",
+            "dose": "1,000 mg q.i.d."
+          }
+        ],
+        "notes": "Antioxidant / capillary integrity. Listed in 90-essentials graphic.",
+        "tile_kind": "dietary_with_clinical_lever",
+        "dietary_default": "via diet (colored fruits + vegetables)",
+        "source": "Let's Play Doctor (Wallach) clinical protocols",
+        "kind": "dietary_with_clinical_lever",
+        "wallach_stance": {
+          "quote": "Bioflavonoids strengthen capillary walls, reduce bruising, and act as cofactors for vitamin C absorption. Wallach's clinical protocols use 300 mg/day for cataracts, 600 mg three times daily for varicose veins, and up to 4,000 mg/day for gastric ulcers.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "from the clinical protocols for capillary fragility / varicose veins / cataracts"
+        }
+      },
+      {
+        "name": "Folic Acid (Folate)",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "15 to 20 g/day (LPD baseline — this likely OCR error; clinical use 5 mg t.i.d. = 15 mg/day)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "canker sores / autoimmune",
+            "dose": "5 mg t.i.d. = 15 mg/day"
+          },
+          {
+            "condition": "various",
+            "dose": "3-5 mg/day"
+          }
+        ],
+        "notes": "Methylfolate (5-MTHF / calcium-L-5-methyltetrahydrofolate) = active form (BTT 2.5 uses this); folic acid = synthetic precursor.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Folic acid deficiency causes megaloblastic anemia, neural tube defects in pregnancy, depression, cognitive decline, and increased homocysteine (cardiovascular risk).",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), Table 11-9",
+          "context": "from the water-soluble vitamins deficiency reference"
+        }
+      },
+      {
+        "name": "Inositol",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "500 to 2,000 mg/day (LPD baseline)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "cataracts",
+            "dose": "150 mg/day"
+          }
+        ],
+        "notes": "B-vitamin-like compound. Listed in 90-essentials graphic.",
+        "source": "Let's Play Doctor (Wallach) cataracts protocol",
+        "kind": "wallach_clinical",
+        "wallach_stance": {
+          "quote": "Inositol at 150 mg/day is cited in Wallach's cataracts protocol; broader doses up to 18 g/day have been used clinically for OCD, panic disorder, and depression in the wider medical literature. Wallach treats inositol as part of the B-complex cofactor family.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "from the cataracts treatment protocol"
+        }
+      }
+    ],
+    "amino_acids": [
+      {
+        "name": "Arginine",
+        "essential_per_wallach": true,
+        "essentiality_note": "Conditionally essential per Wallach (asterisked in graphic — deficiency causes disease states even if not classic essential)",
+        "wallach_baseline_target": "varies; cataracts use 300 mg/day",
+        "notes": "",
+        "tile_kind": "dietary_with_clinical_lever",
+        "dietary_default": "via dietary protein",
+        "source": "Let's Play Doctor (Wallach) cataracts protocol",
+        "kind": "dietary_with_clinical_lever",
+        "wallach_stance": {
+          "quote": "Arginine is a conditionally-essential amino acid required for nitric oxide synthesis, wound healing, and growth hormone release. Wallach's cataracts protocol uses 300 mg/day; higher doses (3-6 g) are used in cardiovascular protocols for vasodilation.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "from the cataracts treatment + cardiovascular cofactor framing"
+        }
+      },
+      {
+        "name": "Histidine",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "via dietary protein",
+        "notes": "Classic essential amino acid.",
+        "tile_kind": "dietary_with_clinical_lever",
+        "dietary_default": "via dietary protein",
+        "source": "Beyond Tangy Tangerine 2.5 amino blend (Youngevity)",
+        "kind": "dietary_with_clinical_lever",
+        "wallach_stance": {
+          "quote": "Wallach's operational framework treats the essential amino acids as dietary-default with clinical-lever supplementation for specific conditions. The Beyond Tangy Tangerine 2.5 amino blend provides baseline coverage of all essential aminos collectively; individual amino acid supplementation is reserved for the clinical levers (e.g., Lysine for herpes, Taurine for macular degeneration, Phenylalanine for joint pain).",
+          "citation": "Beyond Tangy Tangerine 2.5 amino blend label (Youngevity); Dead Doctors Don't Lie (Wallach, 1999)",
+          "context": "Wallach-framework class stance for amino acids covered as a blend rather than individually supplemented"
+        }
+      },
+      {
+        "name": "Isoleucine",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "via dietary protein",
+        "notes": "BCAA, classic essential.",
+        "tile_kind": "dietary_with_clinical_lever",
+        "dietary_default": "via dietary protein",
+        "source": "Beyond Tangy Tangerine 2.5 amino blend (Youngevity)",
+        "kind": "dietary_with_clinical_lever",
+        "wallach_stance": {
+          "quote": "Wallach's operational framework treats the essential amino acids as dietary-default with clinical-lever supplementation for specific conditions. The Beyond Tangy Tangerine 2.5 amino blend provides baseline coverage of all essential aminos collectively; individual amino acid supplementation is reserved for the clinical levers (e.g., Lysine for herpes, Taurine for macular degeneration, Phenylalanine for joint pain).",
+          "citation": "Beyond Tangy Tangerine 2.5 amino blend label (Youngevity); Dead Doctors Don't Lie (Wallach, 1999)",
+          "context": "Wallach-framework class stance for amino acids covered as a blend rather than individually supplemented"
+        }
+      },
+      {
+        "name": "Leucine",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "via dietary protein",
+        "notes": "BCAA, classic essential.",
+        "tile_kind": "dietary_with_clinical_lever",
+        "dietary_default": "via dietary protein",
+        "source": "Beyond Tangy Tangerine 2.5 amino blend (Youngevity)",
+        "kind": "dietary_with_clinical_lever",
+        "wallach_stance": {
+          "quote": "Wallach's operational framework treats the essential amino acids as dietary-default with clinical-lever supplementation for specific conditions. The Beyond Tangy Tangerine 2.5 amino blend provides baseline coverage of all essential aminos collectively; individual amino acid supplementation is reserved for the clinical levers (e.g., Lysine for herpes, Taurine for macular degeneration, Phenylalanine for joint pain).",
+          "citation": "Beyond Tangy Tangerine 2.5 amino blend label (Youngevity); Dead Doctors Don't Lie (Wallach, 1999)",
+          "context": "Wallach-framework class stance for amino acids covered as a blend rather than individually supplemented"
+        }
+      },
+      {
+        "name": "Lysine",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "via dietary protein; clinical 1-6 g/day",
+        "wallach_clinical_doses": [
+          {
+            "condition": "herpes",
+            "dose": "1-6 g/day to effect, 500 mg/day maintenance"
+          }
+        ],
+        "notes": "Classic essential.",
+        "tile_kind": "dietary_with_clinical_lever",
+        "dietary_default": "via dietary protein",
+        "source": "Dead Doctors Don't Lie (Wallach, 1999) herpes protocol",
+        "kind": "dietary_with_clinical_lever",
+        "wallach_stance": {
+          "quote": "Lysine at 1-6 g/day is Wallach's primary clinical lever for herpes outbreak management — both Herpes I (cold sores) and Herpes II (genital). 500 mg/day maintenance; higher doses 'to effect' during acute outbreaks. Lysine competes with arginine for cellular uptake; high-arginine foods like nuts and chocolate trigger outbreaks for susceptible patients.",
+          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "context": "from the herpes-treatment protocol"
+        }
+      },
+      {
+        "name": "Methionine",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "via dietary protein; in macular degeneration protocol",
+        "wallach_clinical_doses": [
+          {
+            "condition": "macular degeneration",
+            "dose": "named in protocol, specific dose not given"
+          }
+        ],
+        "notes": "Sulfur-bearing amino acid; part of Wallach's bone/joint sulfur arm.",
+        "tile_kind": "dietary_with_clinical_lever",
+        "dietary_default": "via dietary protein",
+        "source": "Dead Doctors Don't Lie (Wallach, 1999) macular degeneration",
+        "kind": "dietary_with_clinical_lever",
+        "wallach_stance": {
+          "quote": "Methionine is a sulfur-bearing amino acid essential for methylation reactions, joint cartilage synthesis, and liver detoxification. Wallach cites methionine in the macular degeneration cofactor stack and joint-health protocols.",
+          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "context": "from the macular degeneration + joint cofactor protocols"
+        }
+      },
+      {
+        "name": "Phenylalanine",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "via dietary protein; clinical 1.5 g t.i.d. some protocols",
+        "wallach_clinical_doses": [
+          {
+            "condition": "joint pain",
+            "dose": "1.5 g t.i.d."
+          },
+          {
+            "condition": "vitiligo",
+            "dose": "50 mg/kg/day"
+          }
+        ],
+        "notes": "Classic essential.",
+        "tile_kind": "dietary_with_clinical_lever",
+        "dietary_default": "via dietary protein",
+        "source": "Dead Doctors Don't Lie (Wallach, 1999) joint-pain + vitiligo protocols",
+        "kind": "dietary_with_clinical_lever",
+        "wallach_stance": {
+          "quote": "Phenylalanine at 1.5 g three times daily (4.5 g/day total) is Wallach's joint-pain protocol; 50 mg per kg body weight is the vitiligo protocol. Phenylalanine is the precursor to tyrosine and the catecholamine neurotransmitters (dopamine, norepinephrine).",
+          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "context": "from the joint-pain + vitiligo treatment protocols"
+        }
+      },
+      {
+        "name": "Taurine",
+        "essential_per_wallach": true,
+        "essentiality_note": "Conditionally essential per Wallach (asterisked in graphic)",
+        "wallach_baseline_target": "via diet (animal protein) + supplementation 500 mg-5 g/day",
+        "wallach_clinical_doses": [
+          {
+            "condition": "macular degeneration",
+            "dose": "2-5 g/day"
+          },
+          {
+            "condition": "various",
+            "dose": "500 mg t.i.d."
+          }
+        ],
+        "notes": "No dedicated YGY Ultimate Taurine SKU, but Taurine is present in: Rebound FX Citrus Punch (Powder & Stick Pack, 200 mg/serving), Ultimate Cardio Stx (120 mg/serving), and 3.0 Rise & Restore (within a 500 mg Energy & Metabolism Booster blend where L-taurine is the lead ingredient — likely ~300 mg actual). Multiple servings or stacking required to approach 1.5-5 g clinical range. NOTE: in products-db.json these are classified under non_essentials rather than nutrients, which is a data-hygiene bug (Taurine is one of Wallach's 90 essentials). The Pass 6 lookup parses both fields as of 2026-06-14.",
+        "tile_kind": "dietary_with_clinical_lever",
+        "dietary_default": "via diet (animal protein)",
+        "source": "Dead Doctors Don't Lie (Wallach, 1999) macular degeneration + general",
+        "kind": "dietary_with_clinical_lever",
+        "wallach_stance": {
+          "quote": "Taurine at 2-5 g/day is Wallach's macular degeneration protocol; 500 mg three times daily is general supplementation. Taurine is essential for bile acid conjugation, retinal function, cardiac muscle contractility, and neurotransmission. Cats famously cannot synthesize taurine and develop blindness without dietary intake — humans synthesize it but at insufficient rates under stress.",
+          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "context": "from the macular degeneration treatment protocol"
+        }
+      },
+      {
+        "name": "Tyrosine",
+        "essential_per_wallach": true,
+        "essentiality_note": "Conditionally essential per Wallach (asterisked in graphic)",
+        "wallach_baseline_target": "via dietary protein; clinical 2 g t.i.d. some protocols",
+        "wallach_clinical_doses": [
+          {
+            "condition": "various",
+            "dose": "2 g t.i.d."
+          },
+          {
+            "condition": "goiter cofactor",
+            "dose": "with iodine + Cu + Mo"
+          }
+        ],
+        "notes": "Thyroid hormone precursor.",
+        "tile_kind": "dietary_with_clinical_lever",
+        "dietary_default": "via dietary protein",
+        "source": "Dead Doctors Don't Lie (Wallach, 1999) goiter + general",
+        "kind": "dietary_with_clinical_lever",
+        "wallach_stance": {
+          "quote": "Tyrosine at 2 g three times daily (6 g/day) is Wallach's general protocol; specific use as a goiter-prevention cofactor with iodine, copper, and molybdenum. Tyrosine is the precursor to thyroid hormone (T3, T4), the catecholamine neurotransmitters, and melanin.",
+          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "context": "from the goiter-prevention + general supplementation protocols"
+        }
+      },
+      {
+        "name": "Threonine",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "via dietary protein",
+        "notes": "Classic essential.",
+        "tile_kind": "dietary_with_clinical_lever",
+        "dietary_default": "via dietary protein",
+        "source": "Beyond Tangy Tangerine 2.5 amino blend (Youngevity)",
+        "kind": "dietary_with_clinical_lever",
+        "wallach_stance": {
+          "quote": "Wallach's operational framework treats the essential amino acids as dietary-default with clinical-lever supplementation for specific conditions. The Beyond Tangy Tangerine 2.5 amino blend provides baseline coverage of all essential aminos collectively; individual amino acid supplementation is reserved for the clinical levers (e.g., Lysine for herpes, Taurine for macular degeneration, Phenylalanine for joint pain).",
+          "citation": "Beyond Tangy Tangerine 2.5 amino blend label (Youngevity); Dead Doctors Don't Lie (Wallach, 1999)",
+          "context": "Wallach-framework class stance for amino acids covered as a blend rather than individually supplemented"
+        }
+      },
+      {
+        "name": "Tryptophan",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "via dietary protein; clinical 10 g t.i.d. in anxiety protocol",
+        "wallach_clinical_doses": [
+          {
+            "condition": "anxiety / hypoglycemia stack",
+            "dose": "10 g t.i.d. (very high)"
+          }
+        ],
+        "notes": "Serotonin precursor. Classic essential.",
+        "tile_kind": "dietary_with_clinical_lever",
+        "dietary_default": "via dietary protein",
+        "source": "Dead Doctors Don't Lie (Wallach, 1999) anxiety/hypoglycemia protocol",
+        "kind": "dietary_with_clinical_lever",
+        "wallach_stance": {
+          "quote": "Tryptophan is the precursor to serotonin and melatonin — Wallach's anxiety and hypoglycemia protocols use up to 10 g three times daily for severe cases. Standard maintenance is much lower; tryptophan was banned by the FDA in 1989 over a contamination incident but is now available again as 5-HTP and L-tryptophan.",
+          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "context": "from the anxiety / hypoglycemia / serotonin-precursor protocols"
+        }
+      },
+      {
+        "name": "Valine",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "via dietary protein",
+        "notes": "BCAA, classic essential.",
+        "tile_kind": "dietary_with_clinical_lever",
+        "dietary_default": "via dietary protein",
+        "source": "Beyond Tangy Tangerine 2.5 amino blend (Youngevity)",
+        "kind": "dietary_with_clinical_lever",
+        "wallach_stance": {
+          "quote": "Wallach's operational framework treats the essential amino acids as dietary-default with clinical-lever supplementation for specific conditions. The Beyond Tangy Tangerine 2.5 amino blend provides baseline coverage of all essential aminos collectively; individual amino acid supplementation is reserved for the clinical levers (e.g., Lysine for herpes, Taurine for macular degeneration, Phenylalanine for joint pain).",
+          "citation": "Beyond Tangy Tangerine 2.5 amino blend label (Youngevity); Dead Doctors Don't Lie (Wallach, 1999)",
+          "context": "Wallach-framework class stance for amino acids covered as a blend rather than individually supplemented"
+        }
+      }
+    ],
+    "fatty_acids": [
+      {
+        "name": "Omega-3 (alpha-linolenic + EPA/DHA in marine form)",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "5 g t.i.d. = 15 g/day clinical (LPD many protocols)",
+        "wallach_clinical_doses": [
+          {
+            "condition": "many",
+            "dose": "5 g t.i.d."
+          }
+        ],
+        "notes": "Wallach's framework prefers marine fish oil (IFOS-certified) over flax-only. EPA + DHA = active forms.",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "hbsp",
+        "wallach_stance": {
+          "quote": "Eicosapentanoic acids (EPA — fish oils or flax seed oils) raise HDLs — the most desirable of the cholesterol complexes, the protective form. Refined sugars in your diet will lower this valuable substance to dangerous levels.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "from the cholesterol / lipid section"
+        }
+      },
+      {
+        "name": "Omega-6 (linoleic + GLA)",
+        "essential_per_wallach": true,
+        "wallach_baseline_target": "via diet + EFA supplement",
+        "notes": "Wallach uses 'EFA' as combined omega 3+6+9 category. Imbalance toward omega-6 from seed oils flagged as inflammatory.",
+        "tile_kind": "dietary_with_clinical_lever",
+        "dietary_default": "via diet + EFA supplement",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "dietary_with_clinical_lever",
+        "wallach_stance": {
+          "quote": "Linoleic acid (omega-6) is essential for cell membrane integrity, prostaglandin synthesis, and skin health. Wallach's framework emphasizes the omega-6 to omega-3 ratio rather than omega-6 dose alone — modern Western diets are typically 15:1 to 20:1 (omega-6:omega-3), while the ancestral ratio was closer to 1:1 to 4:1.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "from the essential fatty acid / cardiovascular sections; ratio framing is canonical Wallach across multiple works"
+        }
+      },
+      {
+        "name": "Omega-9 (Arachidonic / Oleic)",
+        "essential_per_wallach": true,
+        "essentiality_note": "Wallach 90-essentials graphic says 'becomes essential if deficient in linoleic acid'",
+        "wallach_baseline_target": "via diet (olive oil, animal fat, etc.)",
+        "notes": "Listed as #3 fatty acid in his 90; conditional essentiality note in graphic.",
+        "tile_kind": "dietary_with_clinical_lever",
+        "dietary_default": "via diet (olive oil, animal fat, etc.)",
+        "source": "Youngevity Healthy Body Start Pak 2.5 component labels (Beyond Tangy Tangerine 2.5 + Beyond Osteo FX + Ultimate EFA Plus), summed at label-stated daily servings",
+        "kind": "dietary_with_clinical_lever",
+        "wallach_stance": {
+          "quote": "Omega-9 fatty acids (oleic acid, arachidonic acid) are technically non-essential since the body can synthesize them, but Wallach's framework treats them as essential-for-supplementation because dietary intake of the right oleic-rich sources (olive oil, animal fat) has declined while seed-oil substitutes have crowded the diet. Arachidonic acid specifically is the precursor for inflammatory prostaglandins — both essential and inflammatory depending on the balance with omega-3.",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
+          "context": "from the essential fatty acid / dietary balance framing"
+        }
+      }
+    ]
+  }
+}

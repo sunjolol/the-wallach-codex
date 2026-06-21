@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+  Design Wisdom Reference #024 — ahmady09-bold-simple-color
+═══════════════════════════════════════════════════════════════════════════════
+  Title:         Bold simple use of color
+  Source URL:    https://codepen.io/ahmady09/pen/PNejyN
+  Author:        ahmady09 (CodePen)
+  Captured:      2026-06-20
+  Code captured: 2026-06-21 (manual paste from user)
+  Categories:    color, bold, simple
+  Formats:       HTML=HTML · CSS=CSS-SCSS · JS=JS
+
+  USER NOTES (verbatim):
+  ──────────────────────────────────────────────────────────────────────────────
+  "pretty simple and not super high-end design wise, but I like the use of color and the bold style"
+
+  PRESERVATION NOTES:
+  ──────────────────────────────────────────────────────────────────────────────
+  ⚠ CSS uses SCSS preprocessor — won't render without compilation.
+═══════════════════════════════════════════════════════════════════════════════
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Reference #024 — ahmady09 bold-simple-color</title>
+<!-- CSS is CSS-SCSS — not vanilla; preserve as authored -->
+<style data-format="css-scss">
+/* CSS-SCSS source — not browser-renderable as-is */
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700);
+body {
+    font: normal 1em 'Josefin Sans';
+    background: #4c7fa7;
+    color: #4c7fa7;
+    transition: all 0.8s cubic-bezier(0.44, 1.13, 0.58, 1);
+}
+.quote-box {
+    border-radius: 3px;
+    position: relative;
+    margin: 8% auto auto auto;
+    width: 50%;
+    padding: 35px 50px;
+    background-color: #fff;
+    overflow: hidden;
+}
+#quote {
+    overflow: hidden;
+    margin-bottom: 20px;
+    opacity: 1;
+    transition: all 0.8s cubic-bezier(0.44, 1.13, 0.58, 1);
+}
+i.fa.fa-quote-left {
+    font-size: 1.8em;
+    position: relative;
+    top: 65px;
+}
+i.fa.fa-twitter {
+    color: #fff;
+}
+.quote-text {
+    font-size: 2em;
+}
+.author {
+    font-size: 1.4em;
+    font-weight: 600;
+    float: right;
+}
+.quote-box .btn {
+    cursor: pointer;
+    opacity: 1;
+    background: #4c7fa7;
+    color: #fff;
+    font: bold 1.5em 'Josefin Sans';
+    height: 50px;
+    line-height: 50px;
+    margin-top: 30px;
+    padding: 0 20px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+}
+.quote-box .btn:hover {
+    opacity: 0.8;
+}
+.quote-box #new-quote {
+    float: right;
+}
+</style>
+</head>
+<body>
+<div class="quote-box">
+		<div id="quote"></div>
+		<button class="btn" id="new-quote">New Quote</button>
+		<button class="btn">
+			<a class="twitter-share-button"
+			   href="https://twitter.com/intent/tweet?text=What’s%20happening?"
+			   data-size="large">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</button>
+	</div>
+	<script src="wikiquote-api.js"></script>
+<script>
+/* random qoutes from WikiQoutes api */
+var Wikiquote = (function() {
+
+    var wqa = {};
+
+    var API_URL = "https://en.wikiquote.org/w/api.php";
+
+    /**
+     * Query based on "titles" parameter and return page id.
+     * If multiple page ids are returned, choose the first one.
+     * Query includes "redirects" option to automatically traverse redirects.
+     * All words will be capitalized as this generally yields more consistent results.
+     */
+    wqa.queryTitles = function(titles, success, error) {
+        $.ajax({
+            url: API_URL,
+            dataType: "jsonp",
+            data: {
+                format: "json",
+                action: "query",
+                redirects: "",
+                titles: titles
+            },
+
+            success: function(result, status) {
+                var pages = result.query.pages;
+                var pageId = -1;
+                for(var p in pages) {
+                    var page = pages[p];
+                    // api can return invalid recrods, these are marked as "missing"
+                    if(!("missing" in page)) {
+                        pageId = page.pageid;
+                        break;
+                    }
+                }
+                if(pageId > 0) {
+                    success(pageId);
+                } else {
+                    error("No results");
+                }
+            },
+
+            error: function(xhr, result, status){
+                error("Error processing your query");
+            }
+        });
+    };
+
+    /**
+     * Get the sections for a given page.
+     * This makes parsing for quotes more manageable.
+     * Returns an array of all "1.x" sections as these usually contain the quotes.
+     * If no 1.x sections exists, returns section 1. Returns the titles that were used
+     * in case there is a redirect.
+     */
+    wqa.getSectionsForPage = function(pageId, success, error) {
+        $.ajax({
+            url: API_URL,
+            dataType: "jsonp",
+            data: {
+                format: "json",
+                action: "parse",
+                prop: "sections",
+                pageid: pageId
+            },
+
+            success: function(result, status){
+                var sectionArray = [];
+                var sections = result.parse.sections;
+                for(var s in sections) {
+                    var splitNum = sections[s].number.split('.');
+                    if(splitNum.length > 1 && splitNum[0] === "1") {
+                        sectionArray.push(sections[s].index);
+                    }
+                }
+                // Use section 1 if there are no "1.x" sections
+                if(sectionArray.length === 0) {
+                    sectionArray.push("1");
+                }
+                success({ titles: result.parse.title, sections: sectionArray });
+            },
+            error: function(xhr, result, status){
+                error("Error getting sections");
+            }
+        });
+    };
+
+    /**
+     * Get all quotes for a given section.  Most sections will be of the format:
+     * <h3> title </h3>
+     * <ul>
+     *   <li>
+     *     Quote text
+     *     <ul>
+     *       <li> additional info on the quote </li>
+     *     </ul>
+     *   </li>
+     * <ul>
+     * <ul> next quote etc... </ul>
+     *
+     * The quote may or may not contain sections inside <b /> tags.
+     *
+     * For quotes with bold sections, only the bold part is returned for brevity
+     * (usually the bold part is more well known).
+     * Otherwise the entire text is returned.  Returns the titles that were used
+     * in case there is a redirect.
+     */
+    wqa.getQuotesForSection = function(pageId, sectionIndex, success, error) {
+        $.ajax({
+            url: API_URL,
+            dataType: "jsonp",
+            data: {
+                format: "json",
+                action: "parse",
+                noimages: "",
+                pageid: pageId,
+                section: sectionIndex
+            },
+
+            success: function(result, status){
+                var quotes = result.parse.text["*"];
+                var quoteArray = []
+
+                // Find top level <li> only
+                var $lis = $(quotes).find('li:not(li li)');
+                $lis.each(function() {
+                    // Remove all children that aren't <b>
+                    $(this).children().remove(':not(b)');
+                    var $bolds = $(this).find('b');
+
+                    // If the section has bold text, use it.  Otherwise pull the plain text.
+                    if($bolds.length > 0) {
+                        quoteArray.push($bolds.html());
+                    } else {
+                        quoteArray.push($(this).html());
+                    }
+                });
+                success({ titles: result.parse.title, quotes: quoteArray });
+            },
+            error: function(xhr, result, status){
+                error("Error getting quotes");
+            }
+        });
+    };
+
+    /**
+     * Search using opensearch api.  Returns an array of search results.
+     */
+    wqa.openSearch = function(titles, success, error) {
+        $.ajax({
+            url: API_URL,
+            dataType: "jsonp",
+            data: {
+                format: "json",
+                action: "opensearch",
+                namespace: 0,
+                suggest: "",
+                search: titles
+            },
+
+            success: function(result, status){
+                success(result[1]);
+            },
+            error: function(xhr, result, status){
+                error("Error with opensearch for " + titles);
+            }
+        });
+    };
+
+    /**
+     * Get a random quote for the given title search.
+     * This function searches for a page id for the given title, chooses a random
+     * section from the list of sections for the page, and then chooses a random
+     * quote from that section.  Returns the titles that were used in case there
+     * is a redirect.
+     */
+    wqa.getRandomQuote = function(titles, success, error) {
+
+        var errorFunction = function(msg) {
+            error(msg);
+        };
+
+        var chooseQuote = function(quotes) {
+            var randomNum = Math.floor(Math.random()*quotes.quotes.length);
+            success({ titles: quotes.titles, quote: quotes.quotes[randomNum] });
+        };
+
+        var getQuotes = function(pageId, sections) {
+            var randomNum = Math.floor(Math.random()*sections.sections.length);
+            wqa.getQuotesForSection(pageId, sections.sections[randomNum], chooseQuote, errorFunction);
+        };
+
+        var getSections = function(pageId) {
+            wqa.getSectionsForPage(pageId, function(sections) { getQuotes(pageId, sections); }, errorFunction);
+        };
+
+        wqa.queryTitles(titles, getSections, errorFunction);
+    };
+
+    /**
+     * Capitalize the first letter of each word
+     */
+    wqa.capitalizeString = function(input) {
+        var inputArray = input.split(' ');
+        var output = [];
+        for(s in inputArray) {
+            output.push(inputArray[s].charAt(0).toUpperCase() + inputArray[s].slice(1));
+        }
+        return output.join(' ');
+    };
+
+    return wqa;
+}());
+/* random qoutes from WikiQoutes api */
+/* my script */
+var authors = [
+        "Mahatma Gandhi",
+        "Albert Einstein",
+        "Martin Luther King, Jr.",
+        "Leonardo da Vinci",
+        "Walt Disney",
+        "Edgar Allan Poe",
+        "Sigmund Freud",
+        "Thomas A. Edison",
+        "Robin Williams",
+        "Steve Jobs"
+    ],
+    $quote = $('#quote'),
+    $btns = $('.btn'),
+    randInt = function(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    },
+    randColor = function() {
+        return 'rgb(' + randInt(0,128) + ',' + randInt(0,128) + ',' + randInt(0,128) + ')';
+    },
+    setHtml = function(q) {
+       $('#quote').html(
+           "<i class='fa fa-quote-left'></i>" +
+            "<blockquote class='quote-text'>"+ q.quote +"</blockquote>" +
+            "<small class='author'> - "+ q.titles +"</small>"
+       );
+    },
+    colorUI = function(color) {
+        color = randColor();
+        $('body').css({
+            'background': color,
+            'color': color
+        });
+        $btns.css('background',color);
+    },
+    getQuote =  function() {
+        $quote.css('opacity','0');
+        Wikiquote.getRandomQuote(authors[randInt(0, 9)],
+            function (quote) {
+                console.log(quote.quote);
+                if (quote.quote && quote.quote.length <= 180) {
+                    colorUI(randColor());
+                    setHtml(quote);
+                    $quote.css('opacity','1');
+                } else {
+                    getQuote();
+                }
+
+            }, function (e) {
+        });
+    };
+
+$(function() {
+    getQuote();
+    $('#new-quote').on('click', getQuote);
+});
+/* my script */
+</script>
+</body>
+</html>

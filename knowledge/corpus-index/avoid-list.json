@@ -1,0 +1,884 @@
+[
+  {
+    "book": "LPD",
+    "avoid": "unnecessary doctor or hospital visits.",
+    "page": 12,
+    "char_offset": 11136
+  },
+  {
+    "book": "LPD",
+    "avoid": "anal sex.",
+    "page": 94,
+    "char_offset": 180468
+  },
+  {
+    "book": "LPD",
+    "avoid": "tobacco smoke.",
+    "page": 96,
+    "char_offset": 185281
+  },
+  {
+    "book": "LPD",
+    "avoid": "sugar, caffeine and cigarette smoke.",
+    "page": 97,
+    "char_offset": 189645
+  },
+  {
+    "book": "LPD",
+    "avoid": "sugar, simple sugars (i.",
+    "page": 101,
+    "char_offset": 203402
+  },
+  {
+    "book": "LPD",
+    "avoid": "methy] xanthines (i.",
+    "page": 105,
+    "char_offset": 215245
+  },
+  {
+    "book": "LPD",
+    "avoid": "caffeine.",
+    "page": 130,
+    "char_offset": 297607
+  },
+  {
+    "book": "LPD",
+    "avoid": "BEEF, DAIRY AND ALFALFA.",
+    "page": 157,
+    "char_offset": 393242
+  },
+  {
+    "book": "LPD",
+    "avoid": "offending foods.",
+    "page": 162,
+    "char_offset": 410057
+  },
+  {
+    "book": "LPD",
+    "avoid": "caffeine.",
+    "page": 166,
+    "char_offset": 422764
+  },
+  {
+    "book": "LPD",
+    "avoid": "caffeine (i.",
+    "page": 176,
+    "char_offset": 457085
+  },
+  {
+    "book": "HK",
+    "avoid": "setting the wooden walls on fire.",
+    "page": 73,
+    "char_offset": 124952
+  },
+  {
+    "book": "HK",
+    "avoid": "the real labor of thinking.",
+    "page": 113,
+    "char_offset": 203907
+  },
+  {
+    "book": "HK",
+    "avoid": "fruit and juices altogether - eat more vegetables.",
+    "page": 284,
+    "char_offset": 507707
+  },
+  {
+    "book": "HK",
+    "avoid": "breaking up the crab meat chunks.",
+    "page": 326,
+    "char_offset": 568632
+  },
+  {
+    "book": "HK",
+    "avoid": "sarcopenia (loss of muscle mass).",
+    "page": 347,
+    "char_offset": 602929
+  },
+  {
+    "book": "DDDL",
+    "avoid": "overlooking valuable anatomical clues.",
+    "page": null,
+    "char_offset": 72543
+  },
+  {
+    "book": "DDDL",
+    "avoid": "water! Just keep away from pools, ponds, streams, and water troughs.",
+    "page": null,
+    "char_offset": 88577
+  },
+  {
+    "book": "DDDL",
+    "avoid": "being rattled a bit.",
+    "page": null,
+    "char_offset": 105361
+  },
+  {
+    "book": "DDDL",
+    "avoid": "failure, I used \u201cKentucky windage,\u201d aimed the tranquilizer gun about four feet above the cow\u2019s shoulder inline with her leg, and lobbed the dart downhill over a distance of sixty yards.",
+    "page": null,
+    "char_offset": 108348
+  },
+  {
+    "book": "DDDL",
+    "avoid": "injecting himself with potentially deadly organisms.",
+    "page": null,
+    "char_offset": 130610
+  },
+  {
+    "book": "DDDL",
+    "avoid": "the collection of data that would support malpractice suits.",
+    "page": null,
+    "char_offset": 131034
+  },
+  {
+    "book": "DDDL",
+    "avoid": "stepping on the land mines or eliminate unnecessary and wasteful death from predators and road accidents.",
+    "page": null,
+    "char_offset": 290411
+  },
+  {
+    "book": "DDDL",
+    "avoid": "agricultural chemicals and industrial wastes in food, air and water.",
+    "page": null,
+    "char_offset": 290573
+  },
+  {
+    "book": "DDDL",
+    "avoid": "going to the doctor.",
+    "page": null,
+    "char_offset": 290668
+  },
+  {
+    "book": "DDDL",
+    "avoid": "caffeine (i.",
+    "page": null,
+    "char_offset": 291059
+  },
+  {
+    "book": "DDDL",
+    "avoid": "the \u201cland mines\u201d of life, longevity depends on how faithfully one consumes optimal amounts of the 90 essential nutrients\u2014the raw material necessary for health and longevity\u2014each and every day.",
+    "page": null,
+    "char_offset": 291511
+  },
+  {
+    "book": "DDDL",
+    "avoid": "grains, meat, wine, and most vegetables.",
+    "page": null,
+    "char_offset": 303157
+  },
+  {
+    "book": "DDDL",
+    "avoid": "stepping on \u201cland mines.",
+    "page": null,
+    "char_offset": 320520
+  },
+  {
+    "book": "DDDL",
+    "avoid": "injury and death found in industrial nations at the hands of high tech health practitioners.",
+    "page": null,
+    "char_offset": 335435
+  },
+  {
+    "book": "DDDL",
+    "avoid": "looking at her because she is very tall for a Chinese lady.",
+    "page": null,
+    "char_offset": 345382
+  },
+  {
+    "book": "DDDL",
+    "avoid": "any possible accusations of Harvard tampering with the results.",
+    "page": null,
+    "char_offset": 361760
+  },
+  {
+    "book": "DDDL",
+    "avoid": "the wrath of his wife.",
+    "page": null,
+    "char_offset": 433915
+  },
+  {
+    "book": "DDDL",
+    "avoid": "as much as possible the food items containing high amounts of phosphorous (I hate calling colas, processed \u201ccheese,\u201d etc.",
+    "page": null,
+    "char_offset": 511241
+  },
+  {
+    "book": "DDDL",
+    "avoid": "problems in diagnosis and treatment by spending some time reading this chapter and confirming your \u201cdiagnosis\u201d and reviewing the \u201ctreatments.",
+    "page": null,
+    "char_offset": 612464
+  },
+  {
+    "book": "DDDL",
+    "avoid": "sugar in all forms (i.",
+    "page": null,
+    "char_offset": 619801
+  },
+  {
+    "book": "DDDL",
+    "avoid": "caffeine, essential fatty acids 9 grams per day, chromium, and vanadium at 50-100 meg each t.",
+    "page": null,
+    "char_offset": 619889
+  },
+  {
+    "book": "DDDL",
+    "avoid": "IV \u201crecreational drugs,\u201d use unlubricated condoms for sex with partners with unknown sexual histories.",
+    "page": null,
+    "char_offset": 620721
+  },
+  {
+    "book": "DDDL",
+    "avoid": "anal sex.",
+    "page": null,
+    "char_offset": 620830
+  },
+  {
+    "book": "DDDL",
+    "avoid": "278- D ead D octors D on\u2019t D e allergenic substance.",
+    "page": null,
+    "char_offset": 623727
+  },
+  {
+    "book": "DDDL",
+    "avoid": "the allergen or allergens is the only \u201ccure\u201d for allergic shiners.",
+    "page": null,
+    "char_offset": 623967
+  },
+  {
+    "book": "DDDL",
+    "avoid": "tobacco smoke.",
+    "page": null,
+    "char_offset": 626419
+  },
+  {
+    "book": "DDDL",
+    "avoid": "all fried food and margarine and supplement with all 90 essential nutrients.",
+    "page": null,
+    "char_offset": 626468
+  },
+  {
+    "book": "DDDL",
+    "avoid": "exposure is the best preventative.",
+    "page": null,
+    "char_offset": 628303
+  },
+  {
+    "book": "DDDL",
+    "avoid": "sugar, caffeine, and cigarette smoke.",
+    "page": null,
+    "char_offset": 631360
+  },
+  {
+    "book": "DDDL",
+    "avoid": "caffeine and sugar in all forms (fruit, juices, processed sugar, candy, etc.",
+    "page": null,
+    "char_offset": 633990
+  },
+  {
+    "book": "DDDL",
+    "avoid": "oils during treatment as they promote absorption of arsenic.",
+    "page": null,
+    "char_offset": 635267
+  },
+  {
+    "book": "DDDL",
+    "avoid": "fried foods, margarine, sugar, and caffeine.",
+    "page": null,
+    "char_offset": 644828
+  },
+  {
+    "book": "DDDL",
+    "avoid": "sugar and food allergens.",
+    "page": null,
+    "char_offset": 645225
+  },
+  {
+    "book": "DDDL",
+    "avoid": "sugar natural and processed, simple sugars (i.",
+    "page": null,
+    "char_offset": 648296
+  },
+  {
+    "book": "DDDL",
+    "avoid": "bee stings.",
+    "page": null,
+    "char_offset": 648831
+  },
+  {
+    "book": "DDDL",
+    "avoid": "offending foods, avoidance of sugar, caffeine, environmental allergens, essential fatty acids at 5 gm t.",
+    "page": null,
+    "char_offset": 652991
+  },
+  {
+    "book": "DDDL",
+    "avoid": "alcohol is especially important to teenage and middle age mothers-to-be.",
+    "page": null,
+    "char_offset": 654564
+  },
+  {
+    "book": "DDDL",
+    "avoid": "methyl xanthines (i.",
+    "page": null,
+    "char_offset": 661217
+  },
+  {
+    "book": "DDDL",
+    "avoid": "methyl xanthines, and remember the base line supplements.",
+    "page": null,
+    "char_offset": 661775
+  },
+  {
+    "book": "DDDL",
+    "avoid": "fried foods and margarine.",
+    "page": null,
+    "char_offset": 668405
+  },
+  {
+    "book": "DDDL",
+    "avoid": "foods fried in fat or oil and use organic foods as much as possible.",
+    "page": null,
+    "char_offset": 669292
+  },
+  {
+    "book": "DDDL",
+    "avoid": "long term use of antibiotics, and as you grow older take betaine HC1 and pancreatic enzymes before meals to offset the normal decrease in production of stomach acid.",
+    "page": null,
+    "char_offset": 680126
+  },
+  {
+    "book": "DDDL",
+    "avoid": "allergens, zinc at 50 mg t.",
+    "page": null,
+    "char_offset": 683115
+  },
+  {
+    "book": "DDDL",
+    "avoid": "known allergens (MSG, sugar, etc.",
+    "page": null,
+    "char_offset": 684114
+  },
+  {
+    "book": "DDDL",
+    "avoid": "margarine and fried foods) and selenium supplementation will reverse this if the diagnosis is correct.",
+    "page": null,
+    "char_offset": 685504
+  },
+  {
+    "book": "DDDL",
+    "avoid": "alcohol, vitamin E at 800-1,200 IU/day, essential fatty acids at 5 mg t.",
+    "page": null,
+    "char_offset": 693079
+  },
+  {
+    "book": "DDDL",
+    "avoid": "fried foods, margarine, sugar natural and processed, and caffiene.",
+    "page": null,
+    "char_offset": 699329
+  },
+  {
+    "book": "DDDL",
+    "avoid": "any food allergens.",
+    "page": null,
+    "char_offset": 700556
+  },
+  {
+    "book": "DDDL",
+    "avoid": "environmental allergens, and avoidance or rotation of food allergens.",
+    "page": null,
+    "char_offset": 704458
+  },
+  {
+    "book": "DDDL",
+    "avoid": "chills.",
+    "page": null,
+    "char_offset": 705451
+  },
+  {
+    "book": "DDDL",
+    "avoid": "raw carrots, peanuts, and corn for the first week of therapy.",
+    "page": null,
+    "char_offset": 707983
+  },
+  {
+    "book": "DDDL",
+    "avoid": "fried food, margarine, and caffiene.",
+    "page": null,
+    "char_offset": 708508
+  },
+  {
+    "book": "DDDL",
+    "avoid": "dairy products, fried foods, margarine, and sugar natural and processed.",
+    "page": null,
+    "char_offset": 708875
+  },
+  {
+    "book": "DDDL",
+    "avoid": "the foods or chemicals or rotate foods on a five-day \u201crotation\u201d diet.",
+    "page": null,
+    "char_offset": 713484
+  },
+  {
+    "book": "DDDL",
+    "avoid": "all sugar, natural and processed (read labels\u2014it\u2019s in everything that comes out of a package, bottle, or box); avoid caffiene and fried foods.",
+    "page": null,
+    "char_offset": 729827
+  },
+  {
+    "book": "DDDL",
+    "avoid": "all of the terrible side effects (i.",
+    "page": null,
+    "char_offset": 732222
+  },
+  {
+    "book": "DDDL",
+    "avoid": "caffeine as it causes a drop in blood sugar 30-90 minutes after consumption and thus creates \u201chunger pangs,\u201d cravings, the \u201cmunchies,\u201d and binge eating behavior.",
+    "page": null,
+    "char_offset": 737736
+  },
+  {
+    "book": "DDDL",
+    "avoid": "fried foods, margarine, and caffiene.",
+    "page": null,
+    "char_offset": 741936
+  },
+  {
+    "book": "DDDL",
+    "avoid": "caffeine.",
+    "page": null,
+    "char_offset": 749893
+  },
+  {
+    "book": "DDDL",
+    "avoid": "cow\u2019s milk and cow\u2019s milk products will prevent chronic \u201cearaches\u201d and tonsillitis.",
+    "page": null,
+    "char_offset": 751886
+  },
+  {
+    "book": "DDDL",
+    "avoid": "milk and milk products and avoidance of sugar.",
+    "page": null,
+    "char_offset": 752045
+  },
+  {
+    "book": "DDDL",
+    "avoid": "fried foods, margarine, sugar, and caffiene.",
+    "page": null,
+    "char_offset": 752749
+  },
+  {
+    "book": "DDDL",
+    "avoid": "offending foods, betaine HC1 and pancreatic enzymes at 75-200 mg t.",
+    "page": null,
+    "char_offset": 753280
+  },
+  {
+    "book": "DDDL",
+    "avoid": "offending foods and betaine HC1 and pancreatic enzymes at 75-200 mg t.",
+    "page": null,
+    "char_offset": 766299
+  },
+  {
+    "book": "DDDL",
+    "avoid": "all sugar natural and processed, avoid soft drinks, and avoid fried foods, margarines, and caffiene.",
+    "page": null,
+    "char_offset": 767052
+  },
+  {
+    "book": "DDDL",
+    "avoid": "fried foods, margarine, and caffiene, as well as supplementation with all 90 334 - D ead D octors D on\u2019t D e essential nutrients.",
+    "page": null,
+    "char_offset": 770553
+  },
+  {
+    "book": "DDDL",
+    "avoid": "trans fatty acids and free radicles), vitamin E at 800-1,200 IU/day, vitamin A at 300,000 IU/day as beta carotene, essential fatty acids at 5 gm t.",
+    "page": null,
+    "char_offset": 771671
+  },
+  {
+    "book": "DDDL",
+    "avoid": "these DNA and RNA inhibitors because they potentially can cause birth defects).",
+    "page": null,
+    "char_offset": 775729
+  },
+  {
+    "book": "DDDL",
+    "avoid": "vaccinations that have egg, blood, or beef origins.",
+    "page": null,
+    "char_offset": 780097
+  },
+  {
+    "book": "DDDL",
+    "avoid": "offending foods, and have patience! It takes up to 90 days to repair the intestinal injury.",
+    "page": null,
+    "char_offset": 780534
+  },
+  {
+    "book": "DDDL",
+    "avoid": "any offending food allergens, zinc at 15 mg t.",
+    "page": null,
+    "char_offset": 785139
+  },
+  {
+    "book": "DDDL",
+    "avoid": "alcohol, organ meats, seafood, lentils, beans, peas, and fructose sources.",
+    "page": null,
+    "char_offset": 790380
+  },
+  {
+    "book": "DDDL",
+    "avoid": "offending foods including all sources of caffeine.",
+    "page": null,
+    "char_offset": 793399
+  },
+  {
+    "book": "DDDL",
+    "avoid": "simple carbohydrates, use proteins and amino acids for snacks.",
+    "page": null,
+    "char_offset": 793639
+  },
+  {
+    "book": "DDDL",
+    "avoid": "as much of Appendix B - 343 the polyunsaturated fatty acids as you can (other than the essentials\u2014 i.",
+    "page": null,
+    "char_offset": 794998
+  },
+  {
+    "book": "DDDL",
+    "avoid": "vitamin D as an adult.",
+    "page": null,
+    "char_offset": 795301
+  },
+  {
+    "book": "DDDL",
+    "avoid": "sugar, fat, margarine, and fried foods, and avoid alcohol.",
+    "page": null,
+    "char_offset": 801336
+  },
+  {
+    "book": "DDDL",
+    "avoid": "kissing and sexual activity when the lesions are active.",
+    "page": null,
+    "char_offset": 802166
+  },
+  {
+    "book": "DDDL",
+    "avoid": "high arginine foods (i.",
+    "page": null,
+    "char_offset": 802365
+  },
+  {
+    "book": "DDDL",
+    "avoid": "chocolate, peanuts, nuts, seeds, grains), eat high lysine foods (i.",
+    "page": null,
+    "char_offset": 802397
+  },
+  {
+    "book": "DDDL",
+    "avoid": "fried food, margarine, and processed sugar, and be sure to faithfully supplement with all 90 essential nutrients.",
+    "page": null,
+    "char_offset": 805876
+  },
+  {
+    "book": "DDDL",
+    "avoid": "sugar natural and processed, additives, food colors, etc.",
+    "page": null,
+    "char_offset": 807323
+  },
+  {
+    "book": "DDDL",
+    "avoid": "sugar and refined flour, avoid more than 400 IU of vitamin D, avoid caffeinated coffee or tea, chelation with EDTA, infusions with hydrogen peroxide, flaxseed oil at 5 gm t.",
+    "page": null,
+    "char_offset": 808898
+  },
+  {
+    "book": "DDDL",
+    "avoid": "alcohol (alcohol is a simple carbohydrate), zinc at 25 mg ti.",
+    "page": null,
+    "char_offset": 813283
+  },
+  {
+    "book": "DDDL",
+    "avoid": "offending foods that you might be allergic to (i.",
+    "page": null,
+    "char_offset": 816098
+  },
+  {
+    "book": "DDDL",
+    "avoid": "food allergens, rotation diets, vitamin C to bowel tolerance, vitamin A at 300,000 IU/day as beta-carotene, zinc at 15 mg t.",
+    "page": null,
+    "char_offset": 819231
+  },
+  {
+    "book": "DDDL",
+    "avoid": "sugar, fried foods, and margarine, use a rotation diet for food allergies, and increase animal protein level of the diet (i.",
+    "page": null,
+    "char_offset": 820855
+  },
+  {
+    "book": "DDDL",
+    "avoid": "fried foods, margarines, and sugar.",
+    "page": null,
+    "char_offset": 824661
+  },
+  {
+    "book": "DDDL",
+    "avoid": "caffeine and offending food allergens, calcium (especially plant derived colloidal calcium), chromium and vanadium at 25-200 meg t.",
+    "page": null,
+    "char_offset": 829043
+  },
+  {
+    "book": "DDDL",
+    "avoid": "soft drinks, fried food, margarine, and sugar.",
+    "page": null,
+    "char_offset": 833168
+  },
+  {
+    "book": "DDDL",
+    "avoid": "alcohol and sugar, chromium and vanadium at 50-200 meg t.",
+    "page": null,
+    "char_offset": 840002
+  },
+  {
+    "book": "DDDL",
+    "avoid": "lactose Appendix B - 361 containing foods, predigestion of lactose by adding lactase to milk-containing foods and the use of digestive enzyme supplements that contain lactase.",
+    "page": null,
+    "char_offset": 843028
+  },
+  {
+    "book": "DDDL",
+    "avoid": "these drugs, as they are teratogenic\u2014that is, they cause birth defects in lab animals).",
+    "page": null,
+    "char_offset": 844354
+  },
+  {
+    "book": "DDDL",
+    "avoid": "fried food, margarine, and cooking oil, and supplement with all 90 essential nutrients.",
+    "page": null,
+    "char_offset": 844448
+  },
+  {
+    "book": "DDDL",
+    "avoid": "fried food and margarine.",
+    "page": null,
+    "char_offset": 847673
+  },
+  {
+    "book": "DDDL",
+    "avoid": "fried foods and margarine.",
+    "page": null,
+    "char_offset": 849366
+  },
+  {
+    "book": "DDDL",
+    "avoid": "prolonged use of the insecticide as it can cause genital skin irritation, especially in males.",
+    "page": null,
+    "char_offset": 851134
+  },
+  {
+    "book": "DDDL",
+    "avoid": "fried foods and margarine.",
+    "page": null,
+    "char_offset": 854201
+  },
+  {
+    "book": "DDDL",
+    "avoid": "offending food allergens, fried foods, and margarine and rotation of non allergic foods to prevent aquiring new allergies, chelation with total nutrition for 15-25 infusions, essential fatty acids (salmon oil and flaxseed oil) at 5 gm t.",
+    "page": null,
+    "char_offset": 856691
+  },
+  {
+    "book": "DDDL",
+    "avoid": "offending food allergens, sugar, fried food, and margarine, avoidance of alcohol, the taking of chromium and vanadium at 25-200 meg t.",
+    "page": null,
+    "char_offset": 863613
+  },
+  {
+    "book": "DDDL",
+    "avoid": "wheat, cow\u2019s milk, and soy), supplement with digestive enzymes and betaine HC1, give copper IV at 200 ug/kg/day, and give copper orally at 1-2 mg per day after relief of symptoms.",
+    "page": null,
+    "char_offset": 868622
+  },
+  {
+    "book": "DDDL",
+    "avoid": "food allergens which are identified by means of a diet diary and the pulse test, rotation diets, autoimmune urine therapy, betaine HC1 and pancreatic enzymes at 75-200 mg t.",
+    "page": null,
+    "char_offset": 871669
+  },
+  {
+    "book": "DDDL",
+    "avoid": "offending foods.",
+    "page": null,
+    "char_offset": 875543
+  },
+  {
+    "book": "DDDL",
+    "avoid": "fried foods and margarine and a relatively high consumption of flaxseed oil or fish oil (cod liver oil or salmon oil) at 5 gm t.",
+    "page": null,
+    "char_offset": 878160
+  },
+  {
+    "book": "DDDL",
+    "avoid": "known food allergens and rotation diets to heal the small intestine, and avoid large doses of vitamin C supplementation.",
+    "page": null,
+    "char_offset": 878845
+  },
+  {
+    "book": "DDDL",
+    "avoid": "food allergens, excessive fats (no more than 20 percent of the calories each day as fat), fried food, and margarine.",
+    "page": null,
+    "char_offset": 882865
+  },
+  {
+    "book": "DDDL",
+    "avoid": "exercise for one month during initial treatment period (this is the opposite recommendation from the \u201corthodox\u201d treatment) to avoid undue injury to already biochemically compromised muscle tissue.",
+    "page": null,
+    "char_offset": 883038
+  },
+  {
+    "book": "DDDL",
+    "avoid": "fried food, margarine, sugar, and dairy products.",
+    "page": null,
+    "char_offset": 884380
+  },
+  {
+    "book": "DDDL",
+    "avoid": "offending food allergens and employ rotation diets.",
+    "page": null,
+    "char_offset": 885532
+  },
+  {
+    "book": "DDDL",
+    "avoid": "offending food allergens, avoidance of sugar, chromium and vanadium at 25-200 meg t.",
+    "page": null,
+    "char_offset": 888623
+  },
+  {
+    "book": "DDDL",
+    "avoid": "caffeine.",
+    "page": null,
+    "char_offset": 888799
+  },
+  {
+    "book": "DDDL",
+    "avoid": "this body maneuver, be sure to consume at least 1,000 calories per day.",
+    "page": null,
+    "char_offset": 890759
+  },
+  {
+    "book": "DDDL",
+    "avoid": "offending food allergens, avoid sugar in all forms (i.",
+    "page": null,
+    "char_offset": 891813
+  },
+  {
+    "book": "DDDL",
+    "avoid": "caffeine which lowers blood sugar and makes you hungry, avoid carbonated soft drinks which ALL are loaded with phosphates which will cause osteoporosis over the long haul especially when you are already on a restricted diet, and drink filtered \u2014not distilled\u2014water.",
+    "page": null,
+    "char_offset": 891904
+  },
+  {
+    "book": "DDDL",
+    "avoid": "allergens.",
+    "page": null,
+    "char_offset": 893523
+  },
+  {
+    "book": "DDDL",
+    "avoid": "offending food allergens, fried foods and margarine, sugar and alcohol, double the base Appendix B - 381 line nutritional supplementation for 30-60 days, acupuncture, and herbs including ginseng (Panax ginseng) and herbal combinations such as Zumba that contain 500 meg of testosterone.",
+    "page": null,
+    "char_offset": 896004
+  },
+  {
+    "book": "DDDL",
+    "avoid": "food allergens including sugar, dairy, and wheat, rotation diets, betaine HC1 and pancreatic enzymes at 75-200 mg.",
+    "page": null,
+    "char_offset": 898348
+  },
+  {
+    "book": "DDDL",
+    "avoid": "phosphate containing soft drinks, avoid all phosphate containing supplements, reduce vitamin D intake and exposure (i.",
+    "page": null,
+    "char_offset": 901392
+  },
+  {
+    "book": "DDDL",
+    "avoid": "cow\u2019s milk in all forms and be sure to take the base line nutritional supplement program.",
+    "page": null,
+    "char_offset": 903887
+  },
+  {
+    "book": "DDDL",
+    "avoid": "caffeine, avoid offending food allergens, avoid sugar and processed foods in all forms, vitamin Bl at 100 mg t.",
+    "page": null,
+    "char_offset": 905400
+  },
+  {
+    "book": "DDDL",
+    "avoid": "sugar, use herbal and hydrogen peroxide mouthwashes, and dental floss to keep gum pockets and teeth clean so rebuilding of bone can take place.",
+    "page": null,
+    "char_offset": 910931
+  },
+  {
+    "book": "DDDL",
+    "avoid": "offending food allergens, rotation diets, folic acid at 15-25 mg per day, vitamin A at 300,000 IU per day as beta-carotene, lecithin at 2,500 mg t.",
+    "page": null,
+    "char_offset": 918119
+  },
+  {
+    "book": "DDDL",
+    "avoid": "offending food allergens, avoid caffeine (i.",
+    "page": null,
+    "char_offset": 923928
+  },
+  {
+    "book": "DDDL",
+    "avoid": "potential neurotoxicity; poke (Phytolacca decandra) may be used topically as a natural alternative.",
+    "page": null,
+    "char_offset": 933322
+  },
+  {
+    "book": "DDDL",
+    "avoid": "offending food allergens, vitamin E at 800-1,200 IU per day, selenium at 500-1,000 meg per day, calcium and magnesium at 2,000 mg and 1,000 mg per day, and the base line supplement program to include plant derived colloidal minerals.",
+    "page": null,
+    "char_offset": 936087
+  },
+  {
+    "book": "DDDL",
+    "avoid": "offending food allergens, avoid sugar and all refined foods, take zinc at 15 mg t.",
+    "page": null,
+    "char_offset": 952274
+  },
+  {
+    "book": "DDDL",
+    "avoid": "a stimulus that initiates pain.",
+    "page": null,
+    "char_offset": 953565
+  },
+  {
+    "book": "DDDL",
+    "avoid": "prolonged use of individual tampons, and avoid food poisoning by proper food handling.",
+    "page": null,
+    "char_offset": 954976
+  },
+  {
+    "book": "DDDL",
+    "avoid": "sugar, avoidance of refined foods, essential fatty acids at 5 gm t.",
+    "page": null,
+    "char_offset": 956973
+  },
+  {
+    "book": "DDDL",
+    "avoid": "alcohol, sugar, and refined foods, and consume a high fiber diet.",
+    "page": null,
+    "char_offset": 957719
+  },
+  {
+    "book": "RE",
+    "avoid": "it!!).",
+    "page": 163,
+    "char_offset": 408999
+  }
+]

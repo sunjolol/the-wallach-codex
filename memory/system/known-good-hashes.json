@@ -1,0 +1,40 @@
+{
+  "_purpose": "Truth anchor for size/hash checks on append-only essence files and static files, plus completeness baselines for data structures. Updated by closing-move-atomic when files change deliberately. Round 74 doctrine §11.",
+  "schema_version": 2,
+  "updated_at": "2026-06-15T18:10:00+00:00",
+  "append_only_baselines": {
+    "memory/essence/saga.md": {
+      "size": 179817,
+      "baselined_at": "2026-06-15T18:10:00+00:00",
+      "round_at_baseline": 75
+    },
+    "memory/essence/lessons.md": {
+      "size": 65773,
+      "baselined_at": "2026-06-15T18:10:00+00:00",
+      "round_at_baseline": 75
+    },
+    "memory/essence/decisions.md": {
+      "size": 73292,
+      "baselined_at": "2026-06-15T18:10:00+00:00",
+      "round_at_baseline": 75
+    },
+    "memory/memory-change-log.md": {
+      "size": 55229,
+      "baselined_at": "2026-06-15T13:58:04+00:00",
+      "round_at_baseline": 74
+    }
+  },
+  "static_file_hashes": {},
+  "products_db_completeness_baseline": {
+    "_purpose": "Tier counts from tools/products_db_audit.py at known-good moment. The check_products_db_completeness_no_regression invariant compares current counts to these baseline values. Update at closing-move-atomic when completeness deliberately improves (e.g., post-OCR pass, post-rescrape pass).",
+    "total": 201,
+    "fully_populated": 97,
+    "partially_populated": 46,
+    "sparse": 53,
+    "skeletal": 5,
+    "baselined_at": "2026-06-15T18:10:00+00:00",
+    "round_at_baseline": 75,
+    "round_label": "Pass A.2.5 — initial baseline post Pass A.2 audit"
+  },
+  "notes": "When an append-only file grows deliberately, update its append_only_baselines entry in the same patch as the file change. When products-db completeness deliberately improves (more fully-populated, fewer skeletal), update products_db_completeness_baseline in the same patch as the data-completion work. Otherwise the next audit will pass trivially and lose the truth-anchor protection."
+}

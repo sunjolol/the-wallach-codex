@@ -1,0 +1,18 @@
+# blocklist.txt — permanently block specific YouTube videos from being
+# downloaded by the Wallach refresh job.
+#
+# Format: one YouTube video ID per line (the 11-char string after the last
+# dash in a filename, or the v= param in a URL). Lines starting with #
+# are ignored. You may also paste full archive-style lines like
+# "youtube <id>" — only the ID is used.
+#
+# When ingest.py runs it:
+#   1. Reads this file
+#   2. Deletes any matching transcript from disk
+#   3. Appends "youtube <id>" to downloaded.txt so yt-dlp skips it forever
+#
+# Use this for false-positives the pattern-based junk detector misses.
+# Pattern-based detection lives in JUNK_PATTERNS in ingest.py.
+
+# Example:
+# dQw4w9WgXcQ
