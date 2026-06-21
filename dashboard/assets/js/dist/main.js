@@ -4350,6 +4350,48 @@
     entries: external_exports.array(LogEntrySchema).default([])
   });
 
+  // assets/js/src/core/schemas/coverage-layout.ts
+  var LayoutTileSchema = external_exports.object({
+    /** Atomic number (minerals). */
+    num: external_exports.number().optional(),
+    /** Chemical symbol (minerals). */
+    sym: external_exports.string().optional(),
+    /** Vitamin letter code (e.g. "B12"). */
+    letter: external_exports.string().optional(),
+    /** Amino three-letter abbreviation (e.g. "Arg"). */
+    abbr: external_exports.string().optional(),
+    /** Section sequence code (e.g. "V·01", "AA·03", "F·02"). */
+    code: external_exports.string().optional(),
+    /** Display name (abbreviated, uppercase). */
+    name: external_exports.string().min(1),
+    /** Optional sub-hint line (fatty acids). */
+    hint: external_exports.string().optional()
+  });
+  var LayoutSubsectionSchema = external_exports.object({
+    rank: external_exports.string(),
+    label: external_exports.string(),
+    hint: external_exports.string(),
+    tiles: external_exports.array(LayoutTileSchema)
+  });
+  var LayoutSectionSchema = external_exports.object({
+    num: external_exports.string(),
+    title: external_exports.string(),
+    sub: external_exports.string(),
+    gridClass: external_exports.string(),
+    tileClass: external_exports.enum(["tile", "tile--vitamin", "tile--amino", "tile--fat"]),
+    subsections: external_exports.array(LayoutSubsectionSchema).optional(),
+    tiles: external_exports.array(LayoutTileSchema).optional()
+  });
+  var LayoutGoalSchema = external_exports.object({
+    id: external_exports.string(),
+    name: external_exports.string(),
+    total: external_exports.number()
+  });
+  var CoverageLayoutSchema = external_exports.object({
+    sections: external_exports.array(LayoutSectionSchema),
+    goals: external_exports.array(LayoutGoalSchema)
+  });
+
   // assets/js/src/state/regimen.ts
   var REGIMEN_KEY = "lcRegimen_v1";
   var RG_USER_GOALS_KEY = "rgUserGoals_v1";
@@ -4360,156 +4402,170 @@
     return getValidated(RG_USER_GOALS_KEY, RgUserGoalsSchema);
   }
 
+  // assets/data/coverage-layout-data.json
+  var coverage_layout_data_default = {
+    sections: [
+      {
+        num: "01",
+        title: "MINERALS",
+        sub: "// 60 \xB7 THE FOUNDATION \xB7 ATOMIC SYMBOLS PRESERVED",
+        gridClass: "essentials-grid--minerals",
+        tileClass: "tile",
+        subsections: [
+          {
+            rank: "A",
+            label: "FOUNDATIONAL",
+            hint: "structural + macro \xB7 atomic order",
+            tiles: [
+              { num: 1, sym: "H", name: "HYDROGEN" },
+              { num: 6, sym: "C", name: "CARBON" },
+              { num: 7, sym: "N", name: "NITROGEN" },
+              { num: 8, sym: "O", name: "OXYGEN" },
+              { num: 11, sym: "Na", name: "SODIUM" },
+              { num: 12, sym: "Mg", name: "MAGNES." },
+              { num: 15, sym: "P", name: "PHOS." },
+              { num: 16, sym: "S", name: "SULFUR" },
+              { num: 17, sym: "Cl", name: "CHLORIDE" },
+              { num: 19, sym: "K", name: "POTAS." },
+              { num: 20, sym: "Ca", name: "CALCIUM" }
+            ]
+          },
+          {
+            rank: "B",
+            label: "MAJOR TRACE",
+            hint: "mid-dose essentials \xB7 A\u2192Z",
+            tiles: [
+              { num: 5, sym: "B", name: "BORON" },
+              { num: 27, sym: "Co", name: "COBALT" },
+              { num: 24, sym: "Cr", name: "CHROM." },
+              { num: 29, sym: "Cu", name: "COPPER" },
+              { num: 9, sym: "F", name: "FLUORINE" },
+              { num: 26, sym: "Fe", name: "IRON" },
+              { num: 53, sym: "I", name: "IODINE" },
+              { num: 25, sym: "Mn", name: "MANGAN." },
+              { num: 42, sym: "Mo", name: "MOLYB." },
+              { num: 34, sym: "Se", name: "SELEN." },
+              { num: 14, sym: "Si", name: "SILICON" },
+              { num: 38, sym: "Sr", name: "STRONT." },
+              { num: 23, sym: "V", name: "VANAD." },
+              { num: 30, sym: "Zn", name: "ZINC" }
+            ]
+          },
+          {
+            rank: "C",
+            label: "RARE TRACE",
+            hint: "PDM aggregate spectrum \xB7 A\u2192Z",
+            tiles: [
+              { num: 47, sym: "Ag", name: "SILVER" },
+              { num: 13, sym: "Al", name: "ALUMIN." },
+              { num: 33, sym: "As", name: "ARSENIC" },
+              { num: 79, sym: "Au", name: "GOLD" },
+              { num: 56, sym: "Ba", name: "BARIUM" },
+              { num: 4, sym: "Be", name: "BERYL" },
+              { num: 35, sym: "Br", name: "BROMINE" },
+              { num: 58, sym: "Ce", name: "CERIUM" },
+              { num: 55, sym: "Cs", name: "CESIUM" },
+              { num: 66, sym: "Dy", name: "DYSPRO." },
+              { num: 68, sym: "Er", name: "ERBIUM" },
+              { num: 63, sym: "Eu", name: "EUROP." },
+              { num: 31, sym: "Ga", name: "GALL." },
+              { num: 64, sym: "Gd", name: "GADOL." },
+              { num: 72, sym: "Hf", name: "HAFNIUM" },
+              { num: 67, sym: "Ho", name: "HOLMIUM" },
+              { num: 57, sym: "La", name: "LANTH." },
+              { num: 3, sym: "Li", name: "LITHIUM" },
+              { num: 71, sym: "Lu", name: "LUTET." },
+              { num: 41, sym: "Nb", name: "NIOB." },
+              { num: 60, sym: "Nd", name: "NEOD." },
+              { num: 28, sym: "Ni", name: "NICKEL" },
+              { num: 59, sym: "Pr", name: "PRASEO." },
+              { num: 37, sym: "Rb", name: "RUBID." },
+              { num: 75, sym: "Re", name: "RHENIUM" },
+              { num: 21, sym: "Sc", name: "SCAND." },
+              { num: 62, sym: "Sm", name: "SAMAR." },
+              { num: 50, sym: "Sn", name: "TIN" },
+              { num: 73, sym: "Ta", name: "TANTAL." },
+              { num: 65, sym: "Tb", name: "TERBIUM" },
+              { num: 22, sym: "Ti", name: "TITAN." },
+              { num: 69, sym: "Tm", name: "THULIUM" },
+              { num: 39, sym: "Y", name: "YTTRIUM" },
+              { num: 70, sym: "Yb", name: "YTTERB." },
+              { num: 40, sym: "Zr", name: "ZIRCON." }
+            ]
+          }
+        ]
+      },
+      {
+        num: "02",
+        title: "VITAMINS",
+        sub: "// 16 \xB7 THE CO-FACTORS \xB7 ENZYME ENABLERS",
+        gridClass: "essentials-grid--vitamins",
+        tileClass: "tile--vitamin",
+        tiles: [
+          { code: "V\xB701", letter: "A", name: "RETINOL" },
+          { code: "V\xB702", letter: "B1", name: "THIAMINE" },
+          { code: "V\xB703", letter: "B2", name: "RIBOFLAVIN" },
+          { code: "V\xB704", letter: "B3", name: "NIACIN" },
+          { code: "V\xB705", letter: "B5", name: "PANTO." },
+          { code: "V\xB706", letter: "B6", name: "PYRIDOX." },
+          { code: "V\xB707", letter: "B9", name: "FOLATE" },
+          { code: "V\xB708", letter: "B12", name: "COBALAMIN" },
+          { code: "V\xB709", letter: "C", name: "ASCORBIC" },
+          { code: "V\xB710", letter: "D3", name: "CHOLECAL." },
+          { code: "V\xB711", letter: "E", name: "TOCOPH." },
+          { code: "V\xB712", letter: "K", name: "MENAQ." },
+          { code: "V\xB713", letter: "H", name: "BIOTIN" },
+          { code: "V\xB714", letter: "Ch", name: "CHOLINE" },
+          { code: "V\xB715", letter: "In", name: "INOSITOL" },
+          { code: "V\xB716", letter: "Fl", name: "FLAVON." }
+        ]
+      },
+      {
+        num: "03",
+        title: "AMINO ACIDS",
+        sub: "// 12 \xB7 PROTEIN BUILDING BLOCKS \xB7 ESSENTIAL + CONDITIONAL",
+        gridClass: "essentials-grid--aminos",
+        tileClass: "tile--amino",
+        tiles: [
+          { code: "AA\xB701", abbr: "Arg", name: "ARGININE" },
+          { code: "AA\xB702", abbr: "Cys", name: "CYSTEINE" },
+          { code: "AA\xB703", abbr: "His", name: "HISTIDINE" },
+          { code: "AA\xB704", abbr: "Ile", name: "ISOLEUCINE" },
+          { code: "AA\xB705", abbr: "Leu", name: "LEUCINE" },
+          { code: "AA\xB706", abbr: "Lys", name: "LYSINE" },
+          { code: "AA\xB707", abbr: "Met", name: "METHIONINE" },
+          { code: "AA\xB708", abbr: "Phe", name: "PHENYLAL." },
+          { code: "AA\xB709", abbr: "Thr", name: "THREONINE" },
+          { code: "AA\xB710", abbr: "Trp", name: "TRYPTOPH." },
+          { code: "AA\xB711", abbr: "Tyr", name: "TYROSINE" },
+          { code: "AA\xB712", abbr: "Val", name: "VALINE" }
+        ]
+      },
+      {
+        num: "04",
+        title: "FATTY ACIDS",
+        sub: "// 3 \xB7 ESSENTIAL LIPIDS \xB7 MEMBRANE + SIGNAL",
+        gridClass: "essentials-grid--fats",
+        tileClass: "tile--fat",
+        tiles: [
+          { code: "F\xB701", name: "OMEGA-3", hint: "n-3 \xB7 ALA \xB7 EPA \xB7 DHA" },
+          { code: "F\xB702", name: "OMEGA-6", hint: "n-6 \xB7 linoleic \xB7 GLA" },
+          { code: "F\xB703", name: "OMEGA-9", hint: "n-9 \xB7 oleic \xB7 arachidonic" }
+        ]
+      }
+    ],
+    goals: [
+      { id: "bone-skeletal", name: "BONE & SKELETAL", total: 14 },
+      { id: "energy-metabolism", name: "ENERGY & METABOLISM", total: 13 },
+      { id: "cognition", name: "COGNITION", total: 11 },
+      { id: "hormones-strength", name: "HORMONES & STRENGTH", total: 12 },
+      { id: "longevity-anti-aging", name: "LONGEVITY & ANTI-AGING", total: 18 },
+      { id: "cardiovascular", name: "CARDIOVASCULAR", total: 10 }
+    ]
+  };
+
   // assets/js/src/views/coverage.ts
-  var MINERALS_FOUNDATIONAL = [
-    { num: 1, sym: "H", name: "HYDROGEN" },
-    { num: 6, sym: "C", name: "CARBON" },
-    { num: 7, sym: "N", name: "NITROGEN" },
-    { num: 8, sym: "O", name: "OXYGEN" },
-    { num: 11, sym: "Na", name: "SODIUM" },
-    { num: 12, sym: "Mg", name: "MAGNES." },
-    { num: 15, sym: "P", name: "PHOS." },
-    { num: 16, sym: "S", name: "SULFUR" },
-    { num: 17, sym: "Cl", name: "CHLORIDE" },
-    { num: 19, sym: "K", name: "POTAS." },
-    { num: 20, sym: "Ca", name: "CALCIUM" }
-  ];
-  var MINERALS_MAJOR_TRACE = [
-    { num: 5, sym: "B", name: "BORON" },
-    { num: 27, sym: "Co", name: "COBALT" },
-    { num: 24, sym: "Cr", name: "CHROM." },
-    { num: 29, sym: "Cu", name: "COPPER" },
-    { num: 9, sym: "F", name: "FLUORINE" },
-    { num: 26, sym: "Fe", name: "IRON" },
-    { num: 53, sym: "I", name: "IODINE" },
-    { num: 25, sym: "Mn", name: "MANGAN." },
-    { num: 42, sym: "Mo", name: "MOLYB." },
-    { num: 34, sym: "Se", name: "SELEN." },
-    { num: 14, sym: "Si", name: "SILICON" },
-    { num: 38, sym: "Sr", name: "STRONT." },
-    { num: 23, sym: "V", name: "VANAD." },
-    { num: 30, sym: "Zn", name: "ZINC" }
-  ];
-  var MINERALS_RARE_TRACE = [
-    { num: 47, sym: "Ag", name: "SILVER" },
-    { num: 13, sym: "Al", name: "ALUMIN." },
-    { num: 33, sym: "As", name: "ARSENIC" },
-    { num: 79, sym: "Au", name: "GOLD" },
-    { num: 56, sym: "Ba", name: "BARIUM" },
-    { num: 4, sym: "Be", name: "BERYL" },
-    { num: 35, sym: "Br", name: "BROMINE" },
-    { num: 58, sym: "Ce", name: "CERIUM" },
-    { num: 55, sym: "Cs", name: "CESIUM" },
-    { num: 66, sym: "Dy", name: "DYSPRO." },
-    { num: 68, sym: "Er", name: "ERBIUM" },
-    { num: 63, sym: "Eu", name: "EUROP." },
-    { num: 31, sym: "Ga", name: "GALL." },
-    { num: 64, sym: "Gd", name: "GADOL." },
-    { num: 72, sym: "Hf", name: "HAFNIUM" },
-    { num: 67, sym: "Ho", name: "HOLMIUM" },
-    { num: 57, sym: "La", name: "LANTH." },
-    { num: 3, sym: "Li", name: "LITHIUM" },
-    { num: 71, sym: "Lu", name: "LUTET." },
-    { num: 41, sym: "Nb", name: "NIOB." },
-    { num: 60, sym: "Nd", name: "NEOD." },
-    { num: 28, sym: "Ni", name: "NICKEL" },
-    { num: 59, sym: "Pr", name: "PRASEO." },
-    { num: 37, sym: "Rb", name: "RUBID." },
-    { num: 75, sym: "Re", name: "RHENIUM" },
-    { num: 21, sym: "Sc", name: "SCAND." },
-    { num: 62, sym: "Sm", name: "SAMAR." },
-    { num: 50, sym: "Sn", name: "TIN" },
-    { num: 73, sym: "Ta", name: "TANTAL." },
-    { num: 65, sym: "Tb", name: "TERBIUM" },
-    { num: 22, sym: "Ti", name: "TITAN." },
-    { num: 69, sym: "Tm", name: "THULIUM" },
-    { num: 39, sym: "Y", name: "YTTRIUM" },
-    { num: 70, sym: "Yb", name: "YTTERB." },
-    { num: 40, sym: "Zr", name: "ZIRCON." }
-  ];
-  var VITAMINS_TILES = [
-    { code: "V\xB701", letter: "A", name: "RETINOL" },
-    { code: "V\xB702", letter: "B1", name: "THIAMINE" },
-    { code: "V\xB703", letter: "B2", name: "RIBOFLAVIN" },
-    { code: "V\xB704", letter: "B3", name: "NIACIN" },
-    { code: "V\xB705", letter: "B5", name: "PANTO." },
-    { code: "V\xB706", letter: "B6", name: "PYRIDOX." },
-    { code: "V\xB707", letter: "B9", name: "FOLATE" },
-    { code: "V\xB708", letter: "B12", name: "COBALAMIN" },
-    { code: "V\xB709", letter: "C", name: "ASCORBIC" },
-    { code: "V\xB710", letter: "D3", name: "CHOLECAL." },
-    { code: "V\xB711", letter: "E", name: "TOCOPH." },
-    { code: "V\xB712", letter: "K", name: "MENAQ." },
-    { code: "V\xB713", letter: "H", name: "BIOTIN" },
-    { code: "V\xB714", letter: "Ch", name: "CHOLINE" },
-    { code: "V\xB715", letter: "In", name: "INOSITOL" },
-    { code: "V\xB716", letter: "Fl", name: "FLAVON." }
-  ];
-  var AMINOS_TILES = [
-    { code: "AA\xB701", abbr: "Arg", name: "ARGININE" },
-    { code: "AA\xB702", abbr: "Cys", name: "CYSTEINE" },
-    { code: "AA\xB703", abbr: "His", name: "HISTIDINE" },
-    { code: "AA\xB704", abbr: "Ile", name: "ISOLEUCINE" },
-    { code: "AA\xB705", abbr: "Leu", name: "LEUCINE" },
-    { code: "AA\xB706", abbr: "Lys", name: "LYSINE" },
-    { code: "AA\xB707", abbr: "Met", name: "METHIONINE" },
-    { code: "AA\xB708", abbr: "Phe", name: "PHENYLAL." },
-    { code: "AA\xB709", abbr: "Thr", name: "THREONINE" },
-    { code: "AA\xB710", abbr: "Trp", name: "TRYPTOPH." },
-    { code: "AA\xB711", abbr: "Tyr", name: "TYROSINE" },
-    { code: "AA\xB712", abbr: "Val", name: "VALINE" }
-  ];
-  var FATS_TILES = [
-    { code: "F\xB701", name: "OMEGA-3", hint: "n-3 \xB7 ALA \xB7 EPA \xB7 DHA" },
-    { code: "F\xB702", name: "OMEGA-6", hint: "n-6 \xB7 linoleic \xB7 GLA" },
-    { code: "F\xB703", name: "OMEGA-9", hint: "n-9 \xB7 oleic \xB7 arachidonic" }
-  ];
-  var SECTION_SPECS = [
-    {
-      num: "01",
-      title: "MINERALS",
-      sub: "// 60 \xB7 THE FOUNDATION \xB7 ATOMIC SYMBOLS PRESERVED",
-      gridClass: "essentials-grid--minerals",
-      tileClass: "tile",
-      subsections: [
-        { rank: "A", label: "FOUNDATIONAL", hint: "structural + macro \xB7 atomic order", tiles: MINERALS_FOUNDATIONAL },
-        { rank: "B", label: "MAJOR TRACE", hint: "mid-dose essentials \xB7 A\u2192Z", tiles: MINERALS_MAJOR_TRACE },
-        { rank: "C", label: "RARE TRACE", hint: "PDM aggregate spectrum \xB7 A\u2192Z", tiles: MINERALS_RARE_TRACE }
-      ]
-    },
-    {
-      num: "02",
-      title: "VITAMINS",
-      sub: "// 16 \xB7 THE CO-FACTORS \xB7 ENZYME ENABLERS",
-      gridClass: "essentials-grid--vitamins",
-      tileClass: "tile--vitamin",
-      tiles: VITAMINS_TILES
-    },
-    {
-      num: "03",
-      title: "AMINO ACIDS",
-      sub: "// 12 \xB7 PROTEIN BUILDING BLOCKS \xB7 ESSENTIAL + CONDITIONAL",
-      gridClass: "essentials-grid--aminos",
-      tileClass: "tile--amino",
-      tiles: AMINOS_TILES
-    },
-    {
-      num: "04",
-      title: "FATTY ACIDS",
-      sub: "// 3 \xB7 ESSENTIAL LIPIDS \xB7 MEMBRANE + SIGNAL",
-      gridClass: "essentials-grid--fats",
-      tileClass: "tile--fat",
-      tiles: FATS_TILES
-    }
-  ];
-  var GOAL_DEFS = [
-    { id: "bone-skeletal", name: "BONE & SKELETAL", total: 14 },
-    { id: "energy-metabolism", name: "ENERGY & METABOLISM", total: 13 },
-    { id: "cognition", name: "COGNITION", total: 11 },
-    { id: "hormones-strength", name: "HORMONES & STRENGTH", total: 12 },
-    { id: "longevity-anti-aging", name: "LONGEVITY & ANTI-AGING", total: 18 },
-    { id: "cardiovascular", name: "CARDIOVASCULAR", total: 10 }
-  ];
+  var LAYOUT = CoverageLayoutSchema.parse(coverage_layout_data_default);
   function tileStatusFor(name, snapshot) {
     if (snapshot === null) {
       return "";
@@ -4603,7 +4659,7 @@
   function renderHero(snapshot) {
     const total = snapshot?.totalCount ?? 92;
     const covered = snapshot?.coveredCount ?? 0;
-    const sections = SECTION_SPECS.map((s) => renderSection(s, snapshot)).join("");
+    const sections = LAYOUT.sections.map((s) => renderSection(s, snapshot)).join("");
     return `
     <section class="coverage-hero ds-border-travel">
       <header class="coverage-hero__head">
@@ -4635,7 +4691,7 @@
   }
   function renderGoalsStrip(snapshot) {
     const userGoals = loadRgUserGoals() ?? [];
-    const activeGoals = userGoals.length > 0 ? GOAL_DEFS.filter((g) => userGoals.includes(g.id)) : GOAL_DEFS.slice(0, 3);
+    const activeGoals = userGoals.length > 0 ? LAYOUT.goals.filter((g) => userGoals.includes(g.id)) : LAYOUT.goals.slice(0, 3);
     const cardsHTML = activeGoals.map((g, i) => {
       const num = String(i + 1).padStart(2, "0");
       const covered = snapshot !== null ? Math.min(g.total, Math.round(snapshot.coveredCount / snapshot.totalCount * g.total)) : 0;
@@ -4653,7 +4709,7 @@
     <section class="goals-strip">
       <header class="goals-strip__head">
         <h3 class="goals-strip__title">YOUR GOALS</h3>
-        <span class="goals-strip__count">${activeGoals.length} ACTIVE \xB7 ${GOAL_DEFS.length} AVAILABLE</span>
+        <span class="goals-strip__count">${activeGoals.length} ACTIVE \xB7 ${LAYOUT.goals.length} AVAILABLE</span>
         <button class="goals-strip__add">+ ADD GOAL</button>
       </header>
       <div class="goals-row">${cardsHTML}</div>

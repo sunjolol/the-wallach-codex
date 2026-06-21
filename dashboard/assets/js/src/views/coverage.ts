@@ -16,7 +16,9 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
+import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import { on } from '../core/events.js';
+import { CoverageLayoutSchema, type LayoutSection, type LayoutTile } from '../core/schemas/index.js';
 import { type CoverageSnapshot, getOrCompute } from '../state/coverage.js';
 import { loadRegimen, loadRgUserGoals } from '../state/regimen.js';
 
@@ -27,191 +29,7 @@ export interface MountHandle {
 
 // ─── Tile layout — the v3.2 periodic-table-of-essentials structure ────────
 
-interface TileSpec {
-  num?: number;
-  sym?: string;
-  letter?: string;
-  abbr?: string;
-  code?: string;
-  name: string;
-  hint?: string;
-}
-
-interface SubsectionSpec {
-  rank: string;
-  label: string;
-  hint: string;
-  tiles: TileSpec[];
-}
-
-interface SectionSpec {
-  num: string;
-  title: string;
-  sub: string;
-  gridClass: string;
-  tileClass: 'tile' | 'tile--vitamin' | 'tile--amino' | 'tile--fat';
-  subsections?: SubsectionSpec[];
-  tiles?: TileSpec[];
-}
-
-/* eslint-disable no-restricted-syntax -- static visual layout for the v3.2 mockup */
-const MINERALS_FOUNDATIONAL: TileSpec[] = [
-  { num: 1, sym: 'H', name: 'HYDROGEN' },
-  { num: 6, sym: 'C', name: 'CARBON' },
-  { num: 7, sym: 'N', name: 'NITROGEN' },
-  { num: 8, sym: 'O', name: 'OXYGEN' },
-  { num: 11, sym: 'Na', name: 'SODIUM' },
-  { num: 12, sym: 'Mg', name: 'MAGNES.' },
-  { num: 15, sym: 'P', name: 'PHOS.' },
-  { num: 16, sym: 'S', name: 'SULFUR' },
-  { num: 17, sym: 'Cl', name: 'CHLORIDE' },
-  { num: 19, sym: 'K', name: 'POTAS.' },
-  { num: 20, sym: 'Ca', name: 'CALCIUM' },
-];
-
-const MINERALS_MAJOR_TRACE: TileSpec[] = [
-  { num: 5, sym: 'B', name: 'BORON' },
-  { num: 27, sym: 'Co', name: 'COBALT' },
-  { num: 24, sym: 'Cr', name: 'CHROM.' },
-  { num: 29, sym: 'Cu', name: 'COPPER' },
-  { num: 9, sym: 'F', name: 'FLUORINE' },
-  { num: 26, sym: 'Fe', name: 'IRON' },
-  { num: 53, sym: 'I', name: 'IODINE' },
-  { num: 25, sym: 'Mn', name: 'MANGAN.' },
-  { num: 42, sym: 'Mo', name: 'MOLYB.' },
-  { num: 34, sym: 'Se', name: 'SELEN.' },
-  { num: 14, sym: 'Si', name: 'SILICON' },
-  { num: 38, sym: 'Sr', name: 'STRONT.' },
-  { num: 23, sym: 'V', name: 'VANAD.' },
-  { num: 30, sym: 'Zn', name: 'ZINC' },
-];
-
-const MINERALS_RARE_TRACE: TileSpec[] = [
-  { num: 47, sym: 'Ag', name: 'SILVER' },
-  { num: 13, sym: 'Al', name: 'ALUMIN.' },
-  { num: 33, sym: 'As', name: 'ARSENIC' },
-  { num: 79, sym: 'Au', name: 'GOLD' },
-  { num: 56, sym: 'Ba', name: 'BARIUM' },
-  { num: 4, sym: 'Be', name: 'BERYL' },
-  { num: 35, sym: 'Br', name: 'BROMINE' },
-  { num: 58, sym: 'Ce', name: 'CERIUM' },
-  { num: 55, sym: 'Cs', name: 'CESIUM' },
-  { num: 66, sym: 'Dy', name: 'DYSPRO.' },
-  { num: 68, sym: 'Er', name: 'ERBIUM' },
-  { num: 63, sym: 'Eu', name: 'EUROP.' },
-  { num: 31, sym: 'Ga', name: 'GALL.' },
-  { num: 64, sym: 'Gd', name: 'GADOL.' },
-  { num: 72, sym: 'Hf', name: 'HAFNIUM' },
-  { num: 67, sym: 'Ho', name: 'HOLMIUM' },
-  { num: 57, sym: 'La', name: 'LANTH.' },
-  { num: 3, sym: 'Li', name: 'LITHIUM' },
-  { num: 71, sym: 'Lu', name: 'LUTET.' },
-  { num: 41, sym: 'Nb', name: 'NIOB.' },
-  { num: 60, sym: 'Nd', name: 'NEOD.' },
-  { num: 28, sym: 'Ni', name: 'NICKEL' },
-  { num: 59, sym: 'Pr', name: 'PRASEO.' },
-  { num: 37, sym: 'Rb', name: 'RUBID.' },
-  { num: 75, sym: 'Re', name: 'RHENIUM' },
-  { num: 21, sym: 'Sc', name: 'SCAND.' },
-  { num: 62, sym: 'Sm', name: 'SAMAR.' },
-  { num: 50, sym: 'Sn', name: 'TIN' },
-  { num: 73, sym: 'Ta', name: 'TANTAL.' },
-  { num: 65, sym: 'Tb', name: 'TERBIUM' },
-  { num: 22, sym: 'Ti', name: 'TITAN.' },
-  { num: 69, sym: 'Tm', name: 'THULIUM' },
-  { num: 39, sym: 'Y', name: 'YTTRIUM' },
-  { num: 70, sym: 'Yb', name: 'YTTERB.' },
-  { num: 40, sym: 'Zr', name: 'ZIRCON.' },
-];
-
-const VITAMINS_TILES: TileSpec[] = [
-  { code: 'V·01', letter: 'A', name: 'RETINOL' },
-  { code: 'V·02', letter: 'B1', name: 'THIAMINE' },
-  { code: 'V·03', letter: 'B2', name: 'RIBOFLAVIN' },
-  { code: 'V·04', letter: 'B3', name: 'NIACIN' },
-  { code: 'V·05', letter: 'B5', name: 'PANTO.' },
-  { code: 'V·06', letter: 'B6', name: 'PYRIDOX.' },
-  { code: 'V·07', letter: 'B9', name: 'FOLATE' },
-  { code: 'V·08', letter: 'B12', name: 'COBALAMIN' },
-  { code: 'V·09', letter: 'C', name: 'ASCORBIC' },
-  { code: 'V·10', letter: 'D3', name: 'CHOLECAL.' },
-  { code: 'V·11', letter: 'E', name: 'TOCOPH.' },
-  { code: 'V·12', letter: 'K', name: 'MENAQ.' },
-  { code: 'V·13', letter: 'H', name: 'BIOTIN' },
-  { code: 'V·14', letter: 'Ch', name: 'CHOLINE' },
-  { code: 'V·15', letter: 'In', name: 'INOSITOL' },
-  { code: 'V·16', letter: 'Fl', name: 'FLAVON.' },
-];
-
-const AMINOS_TILES: TileSpec[] = [
-  { code: 'AA·01', abbr: 'Arg', name: 'ARGININE' },
-  { code: 'AA·02', abbr: 'Cys', name: 'CYSTEINE' },
-  { code: 'AA·03', abbr: 'His', name: 'HISTIDINE' },
-  { code: 'AA·04', abbr: 'Ile', name: 'ISOLEUCINE' },
-  { code: 'AA·05', abbr: 'Leu', name: 'LEUCINE' },
-  { code: 'AA·06', abbr: 'Lys', name: 'LYSINE' },
-  { code: 'AA·07', abbr: 'Met', name: 'METHIONINE' },
-  { code: 'AA·08', abbr: 'Phe', name: 'PHENYLAL.' },
-  { code: 'AA·09', abbr: 'Thr', name: 'THREONINE' },
-  { code: 'AA·10', abbr: 'Trp', name: 'TRYPTOPH.' },
-  { code: 'AA·11', abbr: 'Tyr', name: 'TYROSINE' },
-  { code: 'AA·12', abbr: 'Val', name: 'VALINE' },
-];
-
-const FATS_TILES: TileSpec[] = [
-  { code: 'F·01', name: 'OMEGA-3', hint: 'n-3 · ALA · EPA · DHA' },
-  { code: 'F·02', name: 'OMEGA-6', hint: 'n-6 · linoleic · GLA' },
-  { code: 'F·03', name: 'OMEGA-9', hint: 'n-9 · oleic · arachidonic' },
-];
-
-const SECTION_SPECS: SectionSpec[] = [
-  {
-    num: '01',
-    title: 'MINERALS',
-    sub: '// 60 · THE FOUNDATION · ATOMIC SYMBOLS PRESERVED',
-    gridClass: 'essentials-grid--minerals',
-    tileClass: 'tile',
-    subsections: [
-      { rank: 'A', label: 'FOUNDATIONAL', hint: 'structural + macro · atomic order', tiles: MINERALS_FOUNDATIONAL },
-      { rank: 'B', label: 'MAJOR TRACE', hint: 'mid-dose essentials · A→Z', tiles: MINERALS_MAJOR_TRACE },
-      { rank: 'C', label: 'RARE TRACE', hint: 'PDM aggregate spectrum · A→Z', tiles: MINERALS_RARE_TRACE },
-    ],
-  },
-  {
-    num: '02',
-    title: 'VITAMINS',
-    sub: '// 16 · THE CO-FACTORS · ENZYME ENABLERS',
-    gridClass: 'essentials-grid--vitamins',
-    tileClass: 'tile--vitamin',
-    tiles: VITAMINS_TILES,
-  },
-  {
-    num: '03',
-    title: 'AMINO ACIDS',
-    sub: '// 12 · PROTEIN BUILDING BLOCKS · ESSENTIAL + CONDITIONAL',
-    gridClass: 'essentials-grid--aminos',
-    tileClass: 'tile--amino',
-    tiles: AMINOS_TILES,
-  },
-  {
-    num: '04',
-    title: 'FATTY ACIDS',
-    sub: '// 3 · ESSENTIAL LIPIDS · MEMBRANE + SIGNAL',
-    gridClass: 'essentials-grid--fats',
-    tileClass: 'tile--fat',
-    tiles: FATS_TILES,
-  },
-];
-
-const GOAL_DEFS: Array<{ id: string; name: string; total: number }> = [
-  { id: 'bone-skeletal', name: 'BONE & SKELETAL', total: 14 },
-  { id: 'energy-metabolism', name: 'ENERGY & METABOLISM', total: 13 },
-  { id: 'cognition', name: 'COGNITION', total: 11 },
-  { id: 'hormones-strength', name: 'HORMONES & STRENGTH', total: 12 },
-  { id: 'longevity-anti-aging', name: 'LONGEVITY & ANTI-AGING', total: 18 },
-  { id: 'cardiovascular', name: 'CARDIOVASCULAR', total: 10 },
-];
-/* eslint-enable no-restricted-syntax */
+const LAYOUT = CoverageLayoutSchema.parse(coverageLayoutData);
 
 type CoverageStatus = 'covered' | 'partial' | 'trace' | 'gap' | '';
 
@@ -247,7 +65,7 @@ function escHTML(s: unknown): string {
   }[c] as string));
 }
 
-function renderTile(spec: TileSpec, tileClass: string, snapshot: CoverageSnapshot | null): string {
+function renderTile(spec: LayoutTile, tileClass: string, snapshot: CoverageSnapshot | null): string {
   const status = tileStatusFor(spec.name, snapshot);
   const cls = `${tileClass} ${status}`.trim();
   let inner = '';
@@ -273,9 +91,9 @@ function renderTile(spec: TileSpec, tileClass: string, snapshot: CoverageSnapsho
   return `<div class="${cls}">${inner}</div>`;
 }
 
-function renderSection(spec: SectionSpec, snapshot: CoverageSnapshot | null): string {
+function renderSection(spec: LayoutSection, snapshot: CoverageSnapshot | null): string {
   let bodyHTML = '';
-  let allTiles: TileSpec[] = [];
+  let allTiles: LayoutTile[] = [];
   if (spec.subsections !== undefined) {
     bodyHTML = spec.subsections.map(sub => `
       <div class="essentials-subsection">
@@ -317,7 +135,7 @@ function renderSection(spec: SectionSpec, snapshot: CoverageSnapshot | null): st
 function renderHero(snapshot: CoverageSnapshot | null): string {
   const total = snapshot?.totalCount ?? 92;
   const covered = snapshot?.coveredCount ?? 0;
-  const sections = SECTION_SPECS.map(s => renderSection(s, snapshot)).join('');
+  const sections = LAYOUT.sections.map(s => renderSection(s, snapshot)).join('');
   return `
     <section class="coverage-hero ds-border-travel">
       <header class="coverage-hero__head">
@@ -351,8 +169,8 @@ function renderHero(snapshot: CoverageSnapshot | null): string {
 function renderGoalsStrip(snapshot: CoverageSnapshot | null): string {
   const userGoals = loadRgUserGoals() ?? [];
   const activeGoals = userGoals.length > 0
-    ? GOAL_DEFS.filter(g => userGoals.includes(g.id))
-    : GOAL_DEFS.slice(0, 3);
+    ? LAYOUT.goals.filter(g => userGoals.includes(g.id))
+    : LAYOUT.goals.slice(0, 3);
 
   const cardsHTML = activeGoals.map((g, i) => {
     const num = String(i + 1).padStart(2, '0');
@@ -374,7 +192,7 @@ function renderGoalsStrip(snapshot: CoverageSnapshot | null): string {
     <section class="goals-strip">
       <header class="goals-strip__head">
         <h3 class="goals-strip__title">YOUR GOALS</h3>
-        <span class="goals-strip__count">${activeGoals.length} ACTIVE · ${GOAL_DEFS.length} AVAILABLE</span>
+        <span class="goals-strip__count">${activeGoals.length} ACTIVE · ${LAYOUT.goals.length} AVAILABLE</span>
         <button class="goals-strip__add">+ ADD GOAL</button>
       </header>
       <div class="goals-row">${cardsHTML}</div>
