@@ -46,24 +46,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 SEAL_PATH = ROOT / "memory/system/last-catchup.json"
 
 
-# The catch-up trigger list — must stay in sync with the trigger list in
-# brain/current.md. If the brain trigger list changes, update this constant.
-# (A future audit invariant can verify these two stay in sync.)
-def _current_tacitus_notebook() -> str:
-    """Round 98 — derive the current-month tacitus notebook path at run-time.
-    Round 100: notebook moved from memory/tacitus/ → tacitus/notebook/ as part of
-    the Tacitus folder split (folder lives at project root for portability).
-    The brain's catch-up trigger reads `tacitus/notebook/YYYY-MM.md` (current
-    month); the seal must match what the brain reads. Computed each call
-    rather than hardcoded so month-rollover doesn't require a code change."""
-    now = datetime.datetime.now(datetime.timezone.utc)
-    return "tacitus/notebook/{0}-{1:02d}.md".format(now.year, now.month)
-
-
-# Static portion of the catch-up file list — the brain trigger reads these
-# unconditionally. The current-month tacitus notebook is appended dynamically
-# at the call sites below (Round 98 addition).
-# Round 100: tacitus sentinel moved to tacitus/sentinel.json.
+# The catch-up file list — the files a fresh session reads to orient.
+# Use catchup_files() everywhere instead of the CATCHUP_FILES constant.
 CATCHUP_FILES = [
     "memory/identity.md",
     "memory/preferences.md",
@@ -83,7 +67,7 @@ CATCHUP_FILES = [
 
 
 def catchup_files() -> list:
-    """Round 98 — the live list including the current-month tacitus notebook.
+    """Return the catch-up file list.
     Use this everywhere instead of CATCHUP_FILES directly."""
     return list(CATCHUP_FILES)
 

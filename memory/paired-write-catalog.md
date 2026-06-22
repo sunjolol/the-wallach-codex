@@ -15,18 +15,14 @@ The catalog is the visible answer to: *"do we have equivalent systems for ALL th
 | Surface pair | Trigger | Marker | Paired invariant | Status |
 |---|---|---|---|---|
 | `memory/versions.json` ↔ `brain/CHANGELOG.md` ↔ `brain/versions/` ↔ dashboard embed | brain version bump | (no marker — `version_bump.py` enforces atomicity) | `check_brain_version_sync` | ✅ covered |
-| `memory/open-threads.md` ↔ `tacitus/changelog.md` | Tacitus version declared | (open-threads masthead line) | `check_tacitus_changelog_declared_version_present` | ✅ covered (Round 142 C-A) |
 | `memory/essence/saga.md` ↔ `memory/versions.json` history | round close | (round headers + history entries) | `check_saga_versions_history_match` | ✅ covered |
 | canonical `knowledge/wallach-stance.json` ↔ `dashboard/dashboard.html` embed | wallach_stance data ship | (no marker — build script enforces) | `check_wallach_stance_embed_sync` | ✅ covered |
 | `memory/user-prefs/index.md` ↔ `memory/user-prefs/*.md` | new file added | (index table) | `check_user_prefs_match_index` | ✅ covered |
-| `tacitus/prompts/*.md` enums ↔ `tools/build_tacitus_dashboard_live.py` consumer | prompt edit | (none — direct sync) | `check_prompt_enum_consumer_sync` | ✅ covered |
 | `memory/essence/saga.md` round marker `**Patterns consulted:**` ↔ `memory/verified-patterns.md` | round close | `**Patterns consulted:**` | `check_round_markers_truthful (umbrella)` | ✅ covered (Round 140) |
-| `tacitus/notebook/YYYY-MM.md` ↔ `tacitus/sentinel.json` | reflection lands | (sentinel `last_reflection_date`) | `check_tacitus_sentinel_content` | ✅ covered (§16) |
 | **`tacitus/notebook/YYYY-MM.md` survivor ↔ `memory/system/implementations.jsonl`** | user approval of survivor | `**Implementations logged:**` | `check_round_markers_truthful (umbrella)` + `check_survivor_implementation_logged` | ✅ covered (Round 148) |
 | **`memory/essence/saga.md` round ↔ `memory/essence/lessons.md`** | lesson observed during round | `**Lessons logged:**` | `check_round_markers_truthful (umbrella)` | ✅ covered (Round 148) |
 | **`memory/essence/saga.md` round ↔ `memory/essence/decisions.md`** | architectural commitment | `**Decisions logged:**` | `check_round_markers_truthful (umbrella)` | ✅ covered (Round 148) |
 | **`memory/essence/saga.md` round ↔ `memory/memory-change-log.md`** | memory file written | `**Memory writes logged:**` | `check_round_markers_truthful (umbrella)` | ✅ covered (Round 148) |
-| **`tools/build_tacitus_dashboard_live.py` ↔ `memory/system/implementations.jsonl`** | impl status rendered | (single-source-of-truth pin) | `check_dashboard_impl_status_source_purity` | ✅ covered (Round 148) |
 | `memory/essence/saga.md` round ↔ `memory/design-knowledge.md` | design lesson observed | (no marker yet) | `(none yet — structurally hard to detect)` | ⚠️ partial — relies on §1 discipline + `check_lesson_freshness_vs_saga` |
 | `memory/essence/saga.md` round-touch clusters ↔ §32 doctrine | bug-fix cycle | (in-conversation §32 self-check + brain prompt directive #6) | `check_whack_a_mole_clusters` | ✅ covered (Round 159) — ADVISORY-tier; surfaces clusters from last 14 rounds for next catch-up to mention |
 

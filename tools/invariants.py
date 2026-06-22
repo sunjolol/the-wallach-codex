@@ -99,45 +99,6 @@ def _read_via_os(path) -> bytes:
 # Check functions
 # ---------------------------------------------------------------------------
 
-def check_tacitus_sentinel_content():
-    """Tacitus' sentinel claim of having reflected today must be backed by
-    a session entry in today's notebook. The artifact (notebook entry) is
-    the truth anchor for the sentinel (.status field)."""
-    # Round 100: paths moved from memory/tacitus/ → tacitus/ (folder at project root for portability).
-    sentinel_path = ROOT / "tacitus/sentinel.json"
-    notebook_dir = ROOT / "tacitus/notebook"
-
-    if not sentinel_path.exists():
-        return False, "tacitus/sentinel.json does not exist"
-
-    try:
-        sentinel = json.loads(sentinel_path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as e:
-        return False, f"sentinel.json parse: {e}"
-
-    last_date = sentinel.get("last_reflection_date")
-    if not last_date:
-        return True, "no last_reflection_date set (Tacitus has not run yet)"
-
-    today = _eastern_today()
-    if last_date != today:
-        return True, f"last reflection was {last_date}, not today — no drift to detect"
-
-    # Sentinel claims today — verify notebook artifact
-    yyyy_mm = today[:7]
-    nb_path = notebook_dir / f"{yyyy_mm}.md"
-    if not nb_path.exists():
-        return False, f"sentinel claims reflection today but {nb_path.relative_to(ROOT)} does not exist"
-
-    nb_content = nb_path.read_text(encoding="utf-8")
-    if today not in nb_content:
-        return False, (
-            f"DRIFT — sentinel last_reflection_date={today} but notebook has no entry "
-            f"containing today's date. Tacitus' write did not land. See §16."
-        )
-    return True, f"Tacitus sentinel + notebook agree on {today}"
-
-
 def check_audit_ran_today():
     """The audit's own sentinel — last_audit_completed_at must be within 26h.
     Meta-check: who audits the auditor? This invariant does."""
@@ -819,320 +780,6 @@ def check_orphan_files():
     return True, f"{len(refs)} path references all present on disk"
 
 
-# ---------------------------------------------------------------------------
-# Round 100 — Tacitus three-mode architecture invariants
-# ---------------------------------------------------------------------------
-
-def check_tacitus_folder_integrity():
-    """Verifies the canonical /tacitus/ folder structure is intact —
-    identity, changelog, portability, prompts, sentinel, audit-history,
-    notebook directory all present. This is the load-bearing folder for
-    the three-mode architecture (Cura / Vision / Aegis)."""
-    required_files = [
-        "tacitus/identity.md",
-        "tacitus/changelog.md",
-        "tacitus/portability.md",
-        "tacitus/sentinel.json",
-        "tacitus/audit-history.json",
-        "tacitus/prompts/cura.md",
-        "tacitus/prompts/vision.md",
-        "tacitus/prompts/aegis.md",
-    ]
-    required_dirs = [
-        "tacitus/notebook",
-        "tacitus/prompts",
-    ]
-    missing_files = [p for p in required_files if not (ROOT / p).is_file()]
-    missing_dirs = [p for p in required_dirs if not (ROOT / p).is_dir()]
-    issues = []
-    if missing_files:
-        issues.append("files: " + ", ".join(missing_files))
-    if missing_dirs:
-        issues.append("dirs: " + ", ".join(missing_dirs))
-    if issues:
-        return False, "missing: " + " | ".join(issues)
-    return True, f"all {len(required_files)} required files + {len(required_dirs)} dirs present"
-
-
-def check_tacitus_modes_fired_today():
-    """On Mon-Fri (operational days), verifies all three Tacitus modes
-    (Cura, Vision, Aegis) wrote session headers to today's notebook.
-    Catches the case where a scheduled task failed to fire OR fired but
-    didn't write. Cura fires 02:30, Vision 04:00, Aegis 05:30 EDT; the
-    daily audit at 6:40 EDT sees all three artifacts on a healthy night.
-    Truth anchor: notebook session-header strings literally containing
-    today's date + the mode name."""
-    today = _eastern_today()
-    today_dt = datetime.datetime.strptime(today, "%Y-%m-%d")
-    weekday = today_dt.weekday()  # 0=Mon..6=Sun
-    if weekday >= 5:  # Sat or Sun — rest days, modes don't fire by design
-        return True, f"rest day ({today} is {today_dt.strftime('%A')}); no Tacitus fires expected"
-
-    yyyy_mm = today[:7]
-    nb_path = ROOT / f"tacitus/notebook/{yyyy_mm}.md"
-    if not nb_path.exists():
-        return False, f"tacitus/notebook/{yyyy_mm}.md does not exist on operational day"
-
-    nb = nb_path.read_text(encoding="utf-8")
-
-    # Bootstrap guard: if the three-mode architecture has never produced
-    # any session headers (e.g., the deployment day before the first fire),
-    # skip the completeness check. Once any mode has ever fired, the check
-    # activates and watches for daily completeness.
-    has_any_mode_entry = bool(re.search(r"\([\d-]+ at [^)]+\)\s*[—-]\s*(Cura|Vision|Aegis) session", nb))
-    if not has_any_mode_entry:
-        return True, "three-mode architecture has not produced any session entries yet (bootstrap state; will activate on first mode fire)"
-
-    missing = []
-    for mode in ("Cura", "Vision", "Aegis"):
-        # Session header format from the prompts: "(YYYY-MM-DD at H:MM AM/PM) — <Mode> session #N"
-        pattern = rf"\({re.escape(today)} at [^)]+\)\s*[—-]\s*{mode} session"
-        if not re.search(pattern, nb):
-            missing.append(mode)
-    if missing:
-        return False, f"missing today's session header(s) in {nb_path.relative_to(ROOT)}: {', '.join(missing)}"
-    return True, f"all three modes (Cura, Vision, Aegis) wrote session headers for {today}"
-
-
-def check_tacitus_v1_task_no_resurrection():
-    """Round 107 — closes the verifiability gap Cura session #1's Survivor B
-    surfaced. The deleted `tacitus-autonomous-reflection` v1 task's deletion
-    claim currently lives only as prose at `memory/open-threads.md`. No
-    invariant pinned to file structure verified the deletion held. If the
-    v1 task accidentally re-activates (Windows scheduler restoration,
-    deletion undo, drift in a future port to another machine), it would
-    write a generic `[TACITUS — AUTONOMOUS REFLECTION]` session header to
-    today's notebook — distinct from the v2 format (Cura/Vision/Aegis
-    session #N).
-
-    Truth anchor: the canonical mode allowlist {Cura, Vision, Aegis} from
-    Round 100's three-mode architecture. Today's notebook session headers
-    must all match the allowlist on operational days. Any foreign header
-    indicates either v1 task resurrection OR an unforeseen new mode that
-    hasn't been added to the allowlist (the latter would be a deliberate
-    architectural change, not a silent regression — handled by the user
-    updating this invariant in the same round as the new mode lands).
-
-    Severity: warning. The v1 task being silently re-enabled wouldn't
-    break the system (it would write valid notebook content) but would
-    violate the Round 100 architecture's 'v2 is canonical' commitment AND
-    muddy Aegis's read context for the same night.
-    """
-    today = _eastern_today()
-    today_dt = datetime.datetime.strptime(today, "%Y-%m-%d")
-    weekday = today_dt.weekday()
-    if weekday >= 5:  # Sat or Sun rest days — no fires expected
-        return True, f"rest day ({today} is {today_dt.strftime('%A')}); no Tacitus fires expected"
-
-    yyyy_mm = today[:7]
-    nb_path = ROOT / f"tacitus/notebook/{yyyy_mm}.md"
-    if not nb_path.exists():
-        return True, f"tacitus/notebook/{yyyy_mm}.md does not exist; no session headers to check"
-
-    nb = nb_path.read_text(encoding="utf-8")
-    canonical_modes = {"Cura", "Vision", "Aegis"}
-
-    # Find all session-header lines dated today. Header format per the
-    # mode prompts: "(YYYY-MM-DD at H:MM AM/PM) — Mode session #N"
-    today_header_re = re.compile(
-        rf"\({re.escape(today)} at [^)]+\)\s*[—-]\s*(\S+) session #\d+",
-        re.IGNORECASE,
-    )
-    headers_today = today_header_re.findall(nb)
-    if not headers_today:
-        # No headers today — separate concern (covered by
-        # tacitus_modes_fired_today). Not a v1 resurrection issue.
-        return True, f"no Tacitus session headers for {today} yet (covered by tacitus_modes_fired_today)"
-
-    foreign = [
-        mode for mode in headers_today
-        if mode not in canonical_modes
-    ]
-    if foreign:
-        return False, (
-            f"foreign session header(s) on operational day {today} — "
-            f"not in canonical {{Cura, Vision, Aegis}} allowlist: {foreign}. "
-            f"Possible v1 task resurrection OR unforeseen new mode. "
-            f"Inspect tacitus/notebook/{yyyy_mm}.md."
-        )
-    return True, f"all {len(headers_today)} session header(s) for {today} use canonical modes"
-
-
-def check_tacitus_rest_day_observed():
-    """Verifies no writes to tacitus/ occurred during the most recent
-    Sabbath rest window (Sat 00:00 EDT → Sun 10:00 EDT, 34 hours).
-    Per Luneth's Round 99 doctrinal commitment: 'Saturday is a rest period
-    that deserves no cheats.' This catches scheduled-task misfires AND
-    manual override usage that ignored the rest window.
-    Truth anchor: file mtimes via stat()."""
-    # Find the most recent past Sat 00:00 EDT
-    now_utc = datetime.datetime.now(datetime.timezone.utc)
-    now_edt = now_utc - datetime.timedelta(hours=4)
-    # Days back to most recent Saturday (or today if Sat); 0=Mon..5=Sat
-    days_back_to_sat = (now_edt.weekday() - 5) % 7
-    last_sat_edt = (now_edt - datetime.timedelta(days=days_back_to_sat)).replace(
-        hour=0, minute=0, second=0, microsecond=0
-    )
-    # If today is Sat and we're past midnight, last_sat is today. Otherwise prior week's.
-    if days_back_to_sat == 0 and now_edt.hour < 24:
-        pass  # today is Sat, window is right now (active rest)
-    rest_end_edt = last_sat_edt + datetime.timedelta(hours=34)  # Sun 10:00 EDT
-    # Convert window endpoints to UTC epochs for comparison with file mtime
-    rest_start_epoch = (last_sat_edt + datetime.timedelta(hours=4)).timestamp()
-    rest_end_epoch = (rest_end_edt + datetime.timedelta(hours=4)).timestamp()
-
-    tacitus_dir = ROOT / "tacitus"
-    if not tacitus_dir.exists():
-        return False, "tacitus/ folder missing"
-
-    violations = []
-    for p in tacitus_dir.rglob("*"):
-        if not p.is_file():
-            continue
-        # Skip files under user-managed canonical dirs (identity, changelog, portability,
-        # prompts, rubrics, dashboard, brain) — those CAN be edited during rest by the user in co-work.
-        # Round 156 — also skip user-controlled config surfaces (feature-flags.json,
-        # security-audit-cursor.json) where the user maintains the substrate during
-        # co-work and Tacitus only appends/updates fields during its own scheduled fires.
-        rel = p.relative_to(ROOT).as_posix()
-        if any(rel.startswith(prefix) for prefix in (
-            "tacitus/identity.md", "tacitus/changelog.md", "tacitus/portability.md",
-            "tacitus/prompts/", "tacitus/rubrics/", "tacitus/dashboard/",
-            "tacitus/brain/",
-            "tacitus/feature-flags.json", "tacitus/security-audit-cursor.json",
-        )):
-            continue
-        mtime = p.stat().st_mtime
-        if rest_start_epoch <= mtime <= rest_end_epoch:
-            mtime_edt = datetime.datetime.fromtimestamp(mtime, datetime.timezone.utc) - datetime.timedelta(hours=4)
-            violations.append(f"{rel} (mtime {mtime_edt.strftime('%a %Y-%m-%d %H:%M EDT')})")
-
-    window_label = f"{last_sat_edt.strftime('%a %Y-%m-%d %H:%M')} → {rest_end_edt.strftime('%a %H:%M EDT')}"
-    if violations:
-        return False, f"writes during rest window ({window_label}): " + "; ".join(violations[:5])
-    return True, f"no writes to tacitus/ during rest window {window_label}"
-
-
-def check_aegis_history_well_formed():
-    """Verifies tacitus/audit-history.json exists, parses as JSON, has the
-    expected schema, and each record has the required fields. Append-only
-    surface — Aegis appends after each operational night. Truth anchor:
-    JSON parse + per-record schema validation."""
-    path = ROOT / "tacitus/audit-history.json"
-    if not path.exists():
-        return False, "tacitus/audit-history.json missing"
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as e:
-        return False, f"audit-history.json parse failed: {e}"
-    if not isinstance(data, dict):
-        return False, "audit-history.json root is not an object"
-    if "records" not in data or not isinstance(data["records"], list):
-        return False, "audit-history.json missing 'records' list"
-    required_fields = {"date", "cura_session", "cura_score", "vision_session", "vision_score"}
-    bad_records = []
-    for i, rec in enumerate(data["records"]):
-        if not isinstance(rec, dict):
-            bad_records.append(f"record {i}: not an object")
-            continue
-        missing = required_fields - set(rec.keys())
-        if missing:
-            bad_records.append(f"record {i} ({rec.get('date', 'unknown date')}): missing {sorted(missing)}")
-    if bad_records:
-        return False, f"{len(bad_records)} malformed records: " + "; ".join(bad_records[:3])
-    return True, f"audit-history.json well-formed with {len(data['records'])} records"
-
-
-def check_tacitus_changelog_present():
-    """Verifies tacitus/changelog.md exists, is non-empty, and contains at
-    least one version heading (## v...). Parallel discipline to
-    brain_version_sync but for Tacitus's own evolution. Truth anchor: file
-    content scan for '## v' headers."""
-    path = ROOT / "tacitus/changelog.md"
-    if not path.exists():
-        return False, "tacitus/changelog.md missing"
-    text = path.read_text(encoding="utf-8")
-    if len(text) < 200:
-        return False, f"tacitus/changelog.md suspiciously short ({len(text)} bytes)"
-    version_headers = re.findall(r"^##\s+v[\d.]+", text, re.MULTILINE)
-    if not version_headers:
-        return False, "no '## v...' version headers found in tacitus/changelog.md"
-    return True, f"tacitus/changelog.md present with {len(version_headers)} version entries (current: {version_headers[0]})"
-
-
-def check_implementations_log_well_formed():
-    """Round 108 — verifies implementations.jsonl entries reference real
-    notebook session headers.
-
-    Per the user's stated value: "if anything ever gets implemented/rejected
-    on accident or without my knowledge/full understanding I can look back
-    and easily say 'wait... I never approved/rejected that'." The log is
-    only an audit trail if it accurately reflects reality. This invariant
-    catches drift between log claims and notebook truth.
-
-    Each entry's (source_date, source_mode, source_session) tuple must
-    reference an actual session header in the notebook. The header format
-    canonicalized in Round 100: `(YYYY-MM-DD at H:MM AM/PM) — Mode session #N`.
-
-    Severity: warning. Daily 6:15 AM audit catches drift within 24 hours.
-    Closing-move discipline (operating-protocols §24) is the real-time
-    defense; this invariant is the audit-layer redundancy.
-    """
-    sys.path.insert(0, str(ROOT / "tools"))
-    try:
-        from implementation_log import all_entries
-    except ImportError as e:
-        return False, f"implementation_log module import failed: {e}"
-    entries = all_entries()
-    if not entries:
-        return True, "implementations.jsonl is empty (no entries to verify)"
-
-    # Group entries by year-month so we read each notebook only once
-    by_month: dict[str, list[dict]] = {}
-    for e in entries:
-        ts_date = e.get("source_date", "")
-        if not ts_date or len(ts_date) < 7:
-            return False, f"malformed entry — source_date missing or wrong shape: {e}"
-        by_month.setdefault(ts_date[:7], []).append(e)
-
-    problems = []
-    # Tacitus-mode entries reference a notebook session header; "user" mode
-    # entries are §24 trigger-phrase implementations (user-initiated directly,
-    # no Tacitus notebook session involved) — they only validate status.
-    canonical_tacitus_modes = {"Cura", "Vision", "Aegis"}
-    canonical_modes = canonical_tacitus_modes | {"user"}
-    valid_statuses = {"implemented", "in_progress", "rejected", "deferred"}
-    for yyyy_mm, month_entries in by_month.items():
-        nb_path = ROOT / f"tacitus/notebook/{yyyy_mm}.md"
-        nb = nb_path.read_text(encoding="utf-8") if nb_path.exists() else None
-        for e in month_entries:
-            d = e.get("source_date", "")
-            mode = e.get("source_mode", "")
-            session = e.get("source_session", -1)
-            if mode not in canonical_modes:
-                problems.append(f"entry references non-canonical mode {mode!r} (not in {{Cura, Vision, Aegis, user}})")
-            if e.get("status") not in valid_statuses:
-                problems.append(f"entry has invalid status {e.get('status')!r}")
-            # Skip notebook session lookup for user-mode entries (no Tacitus session involved)
-            if mode == "user":
-                continue
-            # Tacitus-mode entries: verify notebook session header exists
-            if nb is None:
-                problems.append(f"notebook missing for {yyyy_mm}: {mode} #{session} on {d} cannot be verified")
-                continue
-            # Header form: "(YYYY-MM-DD at <time>) — <Mode> session #<N>"
-            pattern = rf"\({re.escape(d)} at [^)]+\)\s*[—-]\s*{re.escape(mode)} session #{session}\b"
-            if not re.search(pattern, nb):
-                problems.append(
-                    f"orphan implementation entry — references non-existent session: "
-                    f"{mode} #{session} on {d} (candidate: {(e.get('candidate','') or '')[:80]})"
-                )
-
-    if problems:
-        return False, f"{len(problems)} implementation log issue(s): " + "; ".join(problems[:3]) + (" ..." if len(problems) > 3 else "")
-    return True, f"all {len(entries)} implementation entries reference valid notebook sessions"
-
-
 def check_no_unresolved_vitality_findings():
     """Round 105 — closes the failure surface where vitality-check findings
     were silently overwritten by subsequent audit runs.
@@ -1250,142 +897,6 @@ def check_saga_versions_history_match():
         f"{len(relevant_saga)} saga rounds (contiguous tail since round {floor}) "
         f"all match versions.json history (max round: {saga_rounds[-1]})"
     )
-
-
-def check_tacitus_prompts_portable_shape():
-    """Verifies tacitus/prompts/{cura,vision}.md contain balanced project-
-    anchor section markers (the portability seam documented in
-    tacitus/portability.md). Aegis is exempt — has no project-specific
-    anchors by design. Catches accidental deletion of anchor blocks that
-    would break drop-in portability to other projects."""
-    prompts_to_check = [
-        "tacitus/prompts/cura.md",
-        "tacitus/prompts/vision.md",
-    ]
-    issues = []
-    for p in prompts_to_check:
-        full = ROOT / p
-        if not full.exists():
-            issues.append(f"{p} (file missing)")
-            continue
-        text = full.read_text(encoding="utf-8")
-        start_count = text.count("<!-- PROJECT_ANCHOR_START:")
-        end_count = text.count("<!-- PROJECT_ANCHOR_END:")
-        if start_count == 0:
-            issues.append(f"{p} (no PROJECT_ANCHOR markers)")
-        elif start_count != end_count:
-            issues.append(f"{p} (unbalanced: {start_count} starts, {end_count} ends)")
-    if issues:
-        return False, "; ".join(issues)
-    return True, f"all {len(prompts_to_check)} prompt files have balanced anchor markers"
-
-
-def check_tacitus_dashboard_freshness():
-    """Round 117 (2026-06-18) — the dashboard-stale failure the user named:
-    *"this is the second day in a row... the dashboard has not been updated"*.
-
-    On Mon-Fri operational days, if today's notebook contains an Aegis
-    session header for today, the Tacitus dashboard (tacitus/dashboard/index.html)
-    must contain today's date string in its LIVE_DATA embed. The dashboard's
-    `tools/build_tacitus_dashboard_live.py` projects the night's parsed
-    notebook content into `LIVE_DATA = { ..., days: [{date: "YYYY-MM-DD", ...}] }`.
-    If Aegis fired but the build script never ran (or ran but failed silently),
-    today's date string will be absent from the embed and the user opens to
-    yesterday's reflections.
-
-    Truth anchor: the literal string `"date": "<today>"` inside dashboard
-    HTML. Content-level, not mtime — mtime can be touched by unrelated edits;
-    the date string can only land via the build pipeline reading today's
-    notebook.
-
-    Paired with the `tacitus-dashboard-build` scheduled task (05:35 EDT
-    Mon-Fri). The task is the writer; this invariant is the detector.
-    Together they are defense-in-depth: if the task fails or skips, this
-    invariant catches it at 6:15 EDT and surfaces it as the FIRST item in
-    the morning briefing.
-
-    Severity: critical. The user's morning open is part of the immersion
-    the project was built for; a stale dashboard is a load-bearing failure.
-    """
-    today = _eastern_today()
-    today_dt = datetime.datetime.strptime(today, "%Y-%m-%d")
-    weekday = today_dt.weekday()
-    if weekday >= 5:  # Sat/Sun rest days
-        return True, f"rest day ({today} is {today_dt.strftime('%A')}); no rebuild expected"
-
-    yyyy_mm = today[:7]
-    nb_path = ROOT / f"tacitus/notebook/{yyyy_mm}.md"
-    if not nb_path.exists():
-        return True, f"tacitus/notebook/{yyyy_mm}.md does not exist; no rebuild required"
-    nb = nb_path.read_text(encoding="utf-8")
-
-    aegis_header_re = re.compile(
-        rf"\({re.escape(today)} at [^)]+\)\s*[—-]\s*Aegis session #\d+"
-    )
-    if not aegis_header_re.search(nb):
-        return True, f"Aegis has not written today's session header yet ({today}); rebuild not yet expected"
-
-    dashboard_path = ROOT / "tacitus/dashboard/index.html"
-    if not dashboard_path.exists():
-        return False, "tacitus/dashboard/index.html missing"
-    dashboard_text = dashboard_path.read_text(encoding="utf-8")
-    today_date_marker = f'"date": "{today}"'
-    if today_date_marker not in dashboard_text:
-        return False, (
-            f"Aegis wrote today's session header to the notebook but the "
-            f"dashboard LIVE_DATA does not contain {today_date_marker!r}. "
-            f"This is the user-named immersion-breaking failure of "
-            f"2026-06-18. The post-Aegis build task `tacitus-dashboard-build` "
-            f"either did not fire or failed silently. Run "
-            f"`python3 tools/build_tacitus_dashboard_live.py` manually and "
-            f"check `memory/system/dashboard-build-log.jsonl` for the failure cause."
-        )
-    return True, f"dashboard LIVE_DATA contains today's date ({today})"
-
-def check_tacitus_changelog_chronological_order():
-    """Round 118 — Cura session #2 Survivor A sibling: verify
-    tacitus/changelog.md '## v' headings appear in reverse chronological
-    order per the file's self-stated rule.
-
-    The file's own footer (line ~120) states: 'Future entries: append in
-    reverse chronological order (newest at top below the heading)...'.
-    Round 103 violated this by appending v2.2 at the bottom; the
-    violation persisted through ~15 subsequent rounds before Cura session
-    #2 surfaced it.
-
-    Truth anchor: the file's self-stated rule. Per-heading date strings
-    extracted from the parenthesized date after each version label;
-    sequence must be strictly non-increasing (newest first).
-
-    Severity: warning. Editorial discipline, not load-bearing correctness;
-    but a stale order signals the closing-move-atomic discipline missed
-    a downstream surface.
-    """
-    path = ROOT / "tacitus/changelog.md"
-    if not path.exists():
-        return False, "tacitus/changelog.md missing"
-    text = path.read_text(encoding="utf-8")
-
-    # Find every "## vX.Y (YYYY-MM-DD, Round NN) — Title" heading in file order.
-    heading_re = re.compile(
-        r"^##\s+v[\d.]+\s+\((\d{4}-\d{2}-\d{2}),\s*Round\s*\d+\)",
-        re.MULTILINE,
-    )
-    matches = heading_re.findall(text)
-    if len(matches) < 2:
-        return True, f"only {len(matches)} version heading(s); nothing to order"
-
-    out_of_order = []
-    for i in range(len(matches) - 1):
-        if matches[i] < matches[i + 1]:
-            out_of_order.append(f"{matches[i]} (pos {i+1}) before {matches[i+1]} (pos {i+2})")
-    if out_of_order:
-        return False, (
-            "tacitus/changelog.md version headings violate file's self-stated "
-            "reverse-chronological rule: "
-            + "; ".join(out_of_order)
-        )
-    return True, f"all {len(matches)} version headings in reverse-chronological order"
 
 
 def check_wallach_stance_source_rule():
@@ -2010,119 +1521,6 @@ def check_cross_iife_bare_refs_reverse_scan():
         f"Sample: " + "; ".join(sample)
     )
 
-def check_tacitus_dashboard_extraction_health():
-    """Round 137 (2026-06-19) — paired structural detector for the silent-
-    degenerate-parse failure mode. The user named this directly:
-    *"This is the third night in a row I've faced disappointment checking
-    the dashboard. This is getting old and I don't want this issue popping
-    up again in a different form as we expand/improve Cura."*
-
-    Cura session #3 (tonight) produced 7 candidates / 0 prune verdicts /
-    0 deepen survivors because Round 136 extended Cura to 5 sub-checks
-    (Translation-quality added) and the prose shape shifted in two ways the
-    night-#1-tuned regex never anticipated. The dashboard rendered "avg 0"
-    instead of failing loud. Doctrine §1 (no silent failures) violated.
-
-    The structural cure is two layers:
-
-    1. Build-time: tools/build_tacitus_dashboard_live.py raises
-       ExtractionHealthError when any phase's substantive input produces
-       zero extracted items. The build fails atomically — previous
-       (correct) dashboard remains.
-
-    2. Audit-time (this invariant): re-reads the sidecar
-       tacitus/dashboard/extraction-health.json written by the build, and
-       fails if today's session shows any zero count for a substantive
-       phase. Defense-in-depth — if the build somehow ships zeros (e.g.
-       the assertion was bypassed, or the sidecar is stale), this catches
-       it at 6:15 AM daily audit.
-
-    Truth anchor: tacitus/dashboard/extraction-health.json (a sidecar
-    written by the build pipeline, distinct from the dashboard HTML
-    surface). The sidecar is the build's own attestation of what it
-    extracted; mismatches between attestation and HTML would be caught by
-    the existing check_tacitus_dashboard_freshness invariant.
-
-    Severity: critical. The user's morning open is load-bearing immersion;
-    a degenerate dashboard is the failure mode this entire round exists to
-    prevent.
-    """
-    today = _eastern_today()
-    today_dt = datetime.datetime.strptime(today, "%Y-%m-%d")
-    weekday = today_dt.weekday()
-    if weekday >= 5:  # Sat/Sun rest days — no rebuild
-        return True, f"rest day ({today} is {today_dt.strftime('%A')}); no rebuild expected"
-
-    yyyy_mm = today[:7]
-    nb_path = ROOT / f"tacitus/notebook/{yyyy_mm}.md"
-    if not nb_path.exists():
-        return True, f"tacitus/notebook/{yyyy_mm}.md does not exist; no rebuild required"
-    nb_text = nb_path.read_text(encoding="utf-8")
-
-    aegis_header_re = re.compile(
-        rf"\({re.escape(today)} at [^)]+\)\s*[—-]\s*Aegis session #\d+"
-    )
-    if not aegis_header_re.search(nb_text):
-        return True, f"Aegis has not written today's session header yet ({today}); rebuild not yet expected"
-
-    sidecar_path = ROOT / "tacitus/dashboard/extraction-health.json"
-    if not sidecar_path.exists():
-        return False, (
-            f"tacitus/dashboard/extraction-health.json missing — Aegis fired today "
-            f"but the build's extraction-health sidecar was never written. Run "
-            f"`python3 tools/build_tacitus_dashboard_live.py` and verify."
-        )
-    try:
-        health = json.loads(sidecar_path.read_text(encoding="utf-8"))
-    except Exception as e:
-        return False, f"extraction-health.json could not parse: {e}"
-
-    if health.get("session_date") != today:
-        return False, (
-            f"extraction-health sidecar session_date={health.get('session_date')!r} "
-            f"!= today={today!r}. Dashboard was not rebuilt for today's session — "
-            f"the post-Aegis build task may have failed. Re-run "
-            f"`python3 tools/build_tacitus_dashboard_live.py`."
-        )
-
-    failures = []
-    cura = health.get("cura", {})
-    if cura.get("scan_candidates", 0) == 0:
-        failures.append("Cura scan_candidates=0")
-    if cura.get("prune_verdicts", 0) == 0:
-        failures.append("Cura prune_verdicts=0")
-    if cura.get("deepen_survivors", 0) == 0:
-        failures.append("Cura deepen_survivors=0")
-    vision = health.get("vision", {})
-    if vision.get("scan_candidates", 0) == 0:
-        failures.append("Vision scan_candidates=0")
-    if vision.get("prune_verdicts", 0) == 0:
-        failures.append("Vision prune_verdicts=0")
-    if vision.get("deepen_survivors", 0) == 0:
-        failures.append("Vision deepen_survivors=0")
-    aegis = health.get("aegis", {})
-    if aegis.get("cura_verdicts", 0) == 0:
-        failures.append("Aegis cura_verdicts=0")
-    if aegis.get("vision_verdicts", 0) == 0:
-        failures.append("Aegis vision_verdicts=0")
-
-    if failures:
-        return False, (
-            f"degenerate extraction for {today}: {', '.join(failures)}. "
-            f"The parser in tools/build_tacitus_dashboard_live.py silently produced "
-            f"zero items for a substantive phase. Inspect the affected section in "
-            f"tacitus/notebook/{yyyy_mm}.md and update the regex to accept the new "
-            f"prose shape (preserving backward compat). Round 137 added this guard "
-            f"after the Cura session #3 regex-drift incident."
-        )
-    return True, (
-        f"all phases populated for {today}: "
-        f"cura=({cura.get('scan_candidates')}/{cura.get('prune_verdicts')}/{cura.get('deepen_survivors')}) "
-        f"vision=({vision.get('scan_candidates')}/{vision.get('prune_verdicts')}/{vision.get('deepen_survivors')}) "
-        f"aegis=({aegis.get('cura_verdicts')}/{aegis.get('vision_verdicts')})"
-    )
-
-
 # ===========================================================================
 # Round 140 — Verified Patterns System invariants
 # ===========================================================================
@@ -2153,34 +1551,6 @@ def check_verified_patterns_catalog_present():
     if len(entries) < 1:
         return False, f"verified-patterns.md has 0 pattern entries — seed catalog likely truncated or not yet populated"
     return True, f"catalog present with {len(entries)} verified pattern entries"
-
-
-def check_feature_flags_present():
-    """Round 140 — verify tacitus/feature-flags.json exists, parses, and
-    contains the expected flag keys for the Verified Patterns System.
-
-    The file is the user's manual toggle for Cura/Vision pattern-search
-    behavior per operating-protocols.md §27.
-
-    Truth anchor: tacitus/feature-flags.json file + expected schema.
-    Severity: warning (degrades gracefully — Cura/Vision treat missing
-    flag as `disabled`).
-    """
-    path = ROOT / "tacitus" / "feature-flags.json"
-    if not path.exists():
-        return False, "tacitus/feature-flags.json missing — Cura/Vision pattern-search defaults to disabled"
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except Exception as e:
-        return False, f"feature-flags.json could not parse: {e}"
-    flags = data.get("flags", {})
-    expected = ["cura_pattern_search", "vision_pattern_seed"]
-    missing = [k for k in expected if k not in flags]
-    if missing:
-        return False, f"feature-flags.json missing required flags: {', '.join(missing)}"
-    cura_state = "enabled" if flags["cura_pattern_search"].get("enabled") else "disabled"
-    vision_state = "enabled" if flags["vision_pattern_seed"].get("enabled") else "disabled"
-    return True, f"feature flags present — cura_pattern_search: {cura_state}, vision_pattern_seed: {vision_state}"
 
 
 def check_round_pattern_consultation_marker():
@@ -2263,47 +1633,6 @@ def check_round_pattern_consultation_marker():
 # ===========================================================================
 # See memory/essence/saga.md Round 142 entry for full context + rollback recipe.
 
-def check_tacitus_changelog_declared_version_present():
-    """Round 142 C-A — declared version in open-threads.md must have a
-    corresponding changelog entry in tacitus/changelog.md.
-
-    Source: Cura session #3 Survivor A (2026-06-19 notebook). The pattern is
-    declared-state-without-paired-verifier: open-threads.md masthead declares
-    "Tacitus at: **v2.X**" but tacitus/changelog.md has no `## v2.X` heading.
-    This invariant closes that structural seam.
-
-    Truth anchor: cross-file declaration vs canonical-history match.
-    Severity: warning (discipline lapse, not correctness break).
-    """
-    ot_path = ROOT / "memory" / "open-threads.md"
-    cl_path = ROOT / "tacitus" / "changelog.md"
-    if not ot_path.exists():
-        return True, "memory/open-threads.md missing (audit assumes fresh-start)"
-    if not cl_path.exists():
-        return False, "tacitus/changelog.md missing — Tacitus changelog discipline broken"
-    try:
-        ot_text = ot_path.read_text(encoding="utf-8")
-        cl_text = cl_path.read_text(encoding="utf-8")
-    except Exception as e:
-        return False, f"could not read files: {e}"
-    # Parse the masthead declaration — pattern: Tacitus at: **v2.5**
-    m = re.search(r"Tacitus\s+at:\s*\*\*v(\d+\.\d+)\*\*", ot_text)
-    if not m:
-        return True, "open-threads.md masthead has no canonical Tacitus version declaration (skipped)"
-    declared = m.group(1)
-    # Check changelog for matching `## v<X.Y>` heading
-    cl_headings = re.findall(r"^## v(\d+\.\d+)\b", cl_text, re.MULTILINE)
-    if declared in cl_headings:
-        return True, f"open-threads declares Tacitus v{declared}; changelog has matching ## v{declared} entry"
-    return False, (
-        f"open-threads.md declares Tacitus at v{declared} but tacitus/changelog.md has no "
-        f"'## v{declared}' heading. Per tacitus/identity.md \"every change to the prompts, "
-        f"rubrics, schedule, voice register, or write boundary lands here in the same patch as "
-        f"the change.\" Add the changelog entry. (Existing changelog versions: "
-        f"{', '.join(sorted(cl_headings, reverse=True)[:5])}.)"
-    )
-
-
 def check_claude_best_practices_freshness():
     """Round 142 C-B — verify memory/claude-best-practices.md has been touched
     within the cadence the file's own maintenance section claims.
@@ -2344,74 +1673,6 @@ def check_claude_best_practices_freshness():
             f"Consider refresh from current Anthropic prompt-engineering guidance."
         )
     return True, f"memory/claude-best-practices.md fresh ({age_days:.0f} days since last refresh)"
-
-
-def check_prompt_enum_consumer_sync():
-    """Round 142 D-2 — detect prompt-vs-parser enum drift before it ships.
-
-    Source: Round 137 parser-drift incident — Round 136 extended Cura's
-    sub-check enum from 4 to 5, but tools/build_tacitus_dashboard_live.py's
-    parser regex was hardcoded to the old 4-enum, silently mis-bucketing the
-    new sub-check's candidates. Round 142 closes the loop with a pre-audit
-    check that surfaces enum drift between prompt and parser.
-
-    Approach: scan tacitus/prompts/cura.md for the sub-check enum names
-    (Bug / Contradiction / Integrity / Architectural / Translation-quality)
-    AND scan tools/build_tacitus_dashboard_live.py for the same enum in the
-    sub_re regex. Flag if either side has values the other doesn't.
-
-    Severity: warning (surfaces drift early; the parser-drift damage was
-    silent-degenerate-data, but tonight's catch is pre-damage detection).
-    """
-    cura_path = ROOT / "tacitus" / "prompts" / "cura.md"
-    parser_path = ROOT / "tools" / "build_tacitus_dashboard_live.py"
-    if not cura_path.exists() or not parser_path.exists():
-        return True, "cura.md or parser file missing (skipped)"
-    try:
-        cura_text = cura_path.read_text(encoding="utf-8")
-        parser_text = parser_path.read_text(encoding="utf-8")
-    except Exception as e:
-        return False, f"could not read files: {e}"
-    # Extract sub-check enum from cura.md — look for the "## Phase 1" sub-check headers
-    # Pattern: lines like "Bug sub-check:" or "Translation-quality sub-check:"
-    cura_subchecks = set()
-    for m in re.finditer(r"^(\w[\w\-]*)\s+sub-check[\s:]", cura_text, re.MULTILINE):
-        name = m.group(1)
-        if name and name not in ('the', 'each'):  # filter prose mentions
-            cura_subchecks.add(name)
-    # Extract sub-check enum from parser
-    # Pattern: r"^(Bug|Contradiction|Integrity|Architectural|Translation-quality|Security) ..."
-    # Round 156 — extended to 6 sub-checks (Security added) per accept-all-shapes alternation pattern.
-    parser_subchecks = set()
-    for m in re.finditer(r"\(Bug\|Contradiction\|Integrity\|Architectural\|Translation-quality\|Security\)", parser_text):
-        parser_subchecks = {'Bug', 'Contradiction', 'Integrity', 'Architectural', 'Translation-quality', 'Security'}
-        break
-    # Backward-compat: accept the pre-Round-156 5-enum literal so a partial downgrade doesn't trip.
-    if not parser_subchecks:
-        for m in re.finditer(r"\(Bug\|Contradiction\|Integrity\|Architectural\|Translation-quality\)", parser_text):
-            parser_subchecks = {'Bug', 'Contradiction', 'Integrity', 'Architectural', 'Translation-quality'}
-            break
-    # Fallback: extract from any enum-style literal
-    if not parser_subchecks:
-        for m in re.finditer(r"r\"\^?\(((?:[A-Z][\w\-]*\|){3,}[A-Z][\w\-]*)\)", parser_text):
-            parser_subchecks = set(m.group(1).split('|'))
-            break
-    cura_only = cura_subchecks - parser_subchecks
-    parser_only = parser_subchecks - cura_subchecks
-    if cura_only or parser_only:
-        msgs = []
-        if cura_only:
-            msgs.append(f"cura.md names but parser doesn't: {sorted(cura_only)}")
-        if parser_only:
-            msgs.append(f"parser hardcodes but cura.md doesn't: {sorted(parser_only)}")
-        return False, (
-            f"prompt-vs-parser sub-check enum drift detected. {'. '.join(msgs)}. "
-            f"Per Round 137 lesson on parser-drift family, prompt changes require "
-            f"parser updates in the same patch. Update tools/build_tacitus_dashboard_live.py."
-        )
-    return True, f"sub-check enum aligned ({len(cura_subchecks)} entries): {sorted(cura_subchecks)}"
-
-
 
 
 def check_regimen_slot_invariant_wired():
@@ -2465,76 +1726,6 @@ def check_regimen_slot_invariant_wired():
     return True, f"REGIMEN_SLOT_INVARIANT fully wired (function + window export + load-time arm + {post_mutation_calls} call sites)"
 
 
-
-
-# ===========================================================================
-# Round 144 — Vision pattern-seed compliance invariant
-# ===========================================================================
-# Drift detector for the seed-not-propagate discipline. Vision cannot see
-# rendered output, so the prompt's structural commitments (feature-flag gate,
-# hard cap, seed-not-propagate framing, never-batch-conversion prohibition)
-# are the user's only safeguard against Vision converting all 20 buttons in
-# one night. This invariant verifies all 4 arms remain in the Vision prompt.
-# See memory/essence/saga.md Round 144 entry for full context + rollback recipe.
-
-def check_vision_pattern_seed_compliance():
-    """Round 144 — verify tacitus/prompts/vision.md structurally retains the
-    four arms of the seed-not-propagate discipline introduced in Round 140.
-
-    Arms:
-      1. Feature-flag gate present (`flags.vision_pattern_seed.enabled` ref +
-         explicit SKIP-if-false instruction)
-      2. HARD CAP language ("HARD CAP" + "ONE pattern-seed candidate per night")
-      3. Seed-not-propagate verbatim framing required ("SEED proposal" +
-         "Vision cannot verify rendered output")
-      4. NEVER-batch-conversion prohibition ("Vision NEVER proposes batch
-         conversion" OR equivalent + "Vision does NOT propose surface-cascade")
-
-    Why this matters: Vision cannot see rendered output. If a future edit
-    accidentally weakens any arm (e.g., dropping the HARD CAP, dropping the
-    surface-cascade prohibition), Vision could land "convert all 20 buttons"
-    as a single LAND proposal — user's named-cure for the Round 140 design
-    concern would be silently undone.
-
-    Truth anchor: grep patterns on tacitus/prompts/vision.md.
-    Severity: warning (procedural-discipline drift, not user-visible break).
-    """
-    prompt_path = ROOT / "tacitus" / "prompts" / "vision.md"
-    if not prompt_path.exists():
-        return False, "tacitus/prompts/vision.md missing — Vision prompt is load-bearing"
-    try:
-        text = prompt_path.read_text(encoding="utf-8")
-    except Exception as e:
-        return False, f"could not read vision.md: {e}"
-    missing = []
-    # Arm 1: feature-flag gate
-    if "flags.vision_pattern_seed.enabled" not in text:
-        missing.append("feature-flag gate (`flags.vision_pattern_seed.enabled` ref)")
-    elif not re.search(r"SKIP\s+this\s+candidate\s+type\s+entirely|SKIP\s+this\s+candidate", text):
-        missing.append("explicit SKIP-if-false instruction")
-    # Arm 2: HARD CAP language
-    if "HARD CAP" not in text:
-        missing.append("HARD CAP marker")
-    elif not re.search(r"ONE\s+pattern-seed\s+candidate\s+per\s+night", text):
-        missing.append("cap quantification (\"ONE pattern-seed candidate per night\")")
-    # Arm 3: Seed-not-propagate framing
-    if "SEED proposal" not in text:
-        missing.append("SEED proposal framing marker")
-    if "Vision cannot verify rendered output" not in text:
-        missing.append("\"Vision cannot verify rendered output\" verbatim phrase")
-    # Arm 4: batch-conversion / surface-cascade prohibition
-    if not re.search(r"NEVER\s+proposes\s+batch\s+conversion|never\s+propose\s+batch\s+conversion", text):
-        missing.append("batch-conversion prohibition")
-    if "surface-cascade" not in text:
-        missing.append("surface-cascade prohibition (\"Vision does NOT propose surface-cascade\")")
-    if missing:
-        return False, (
-            f"Vision pattern-seed discipline drift detected — {len(missing)} arm(s) missing: "
-            f"{'; '.join(missing)}. Per Round 140 architectural commitment, Vision CANNOT see "
-            f"rendered output, so these prompt-level guards are the only safeguard against batch "
-            f"surface-cascade proposals. Restore the missing arms before next Vision run."
-        )
-    return True, "Vision pattern-seed discipline fully intact (feature-flag gate + HARD CAP + seed-not-propagate framing + batch/cascade prohibition)"
 
 
 # ---------------------------------------------------------------------------
@@ -2763,29 +1954,6 @@ def check_survivor_implementation_logged():
     if missing:
         return False, f"{len(missing)} unlogged survivor(s): " + " | ".join(missing[:5])
     return True, f"all {checked} eligible survivor(s) have implementations.jsonl entries"
-
-
-def check_dashboard_impl_status_source_purity():
-    """Round 148 — verify build_tacitus_dashboard_live.py reads implementation
-    status ONLY via implementation_log.latest_status() and contains no other
-    status-overriding surface (hardcoded, env-var, localStorage projection).
-
-    Truth anchor: grep patterns on the build script."""
-    path = ROOT / "tools" / "build_tacitus_dashboard_live.py"
-    if not path.exists():
-        return True, "build script missing (bootstrap-guard)"
-    text = path.read_text(encoding="utf-8")
-    if "from implementation_log import latest_status" not in text:
-        return False, "build_tacitus_dashboard_live.py does not import latest_status — canonical source not wired"
-    forbidden = [
-        ("IMPL_STATUS_OVERRIDE", "env-var status override"),
-        ("hardcoded_status", "hardcoded status branch"),
-        ("FORCE_IMPL_STATUS", "force-impl env"),
-    ]
-    hits = [reason for token, reason in forbidden if token in text]
-    if hits:
-        return False, f"impurity detected: {'; '.join(hits)}"
-    return True, "build_tacitus_dashboard_live.py reads impl status only via latest_status() (no override surfaces)"
 
 
 def check_round_lessons_marker_truthful():
@@ -3267,40 +2435,6 @@ def check_log_surface_mtimes():
         f"all {checked} log surface(s) fresh"
         + (f"; bootstrapping: {', '.join(bootstrapping)}" if bootstrapping else "")
     )
-
-
-def check_tacitus_dashboard_no_real_data_fetches():
-    """Round 156 (filed Round 101) — verify tacitus/dashboard/index.html
-    contains no fetch() / XMLHttpRequest / localStorage calls touching
-    tacitus_* keys. Preserves Round 101 contamination guarantee: Tacitus
-    dashboard is a standalone observation surface with no live-runtime path.
-
-    Truth anchor: regex scan of tacitus/dashboard/index.html."""
-    path = ROOT / "tacitus" / "dashboard" / "index.html"
-    if not path.exists():
-        return True, "tacitus/dashboard/index.html missing (bootstrap-guard)"
-    text = path.read_text(encoding="utf-8")
-    violations = []
-    # fetch( call
-    for m in re.finditer(r"(?<![.\w])\bfetch\s*\(", text):
-        line_no = text.count("\n", 0, m.start()) + 1
-        violations.append(f"fetch() at line {line_no}")
-    # XMLHttpRequest
-    for m in re.finditer(r"\bnew\s+XMLHttpRequest\s*\(", text):
-        line_no = text.count("\n", 0, m.start()) + 1
-        violations.append(f"XMLHttpRequest at line {line_no}")
-    # localStorage.{get,set,remove}Item touching tacitus_* key
-    for m in re.finditer(r"localStorage\.(?:getItem|setItem|removeItem)\s*\(\s*['\"]tacitus_", text):
-        line_no = text.count("\n", 0, m.start()) + 1
-        violations.append(f"localStorage tacitus_* access at line {line_no}")
-    if violations:
-        return False, (
-            f"{len(violations)} contamination-vector(s) detected: "
-            + "; ".join(violations[:5])
-            + ". Round 101 contamination guarantee broken."
-        )
-    return True, "no real-data fetches detected in tacitus/dashboard/index.html"
-
 
 
 # ---------------------------------------------------------------------------
@@ -3886,14 +3020,6 @@ def check_views_state_no_inline_data():
 
 INVARIANTS = [
     Invariant(
-        name="tacitus_sentinel_content",
-        description="Tacitus' last_reflection_date must agree with notebook entry for that date",
-        check_fn=check_tacitus_sentinel_content,
-        truth_anchor="tacitus/notebook/2026-MM.md session headers",
-        severity="critical",
-        lesson_ref="Round 73 §16 — sentinel-without-content pitfall",
-    ),
-    Invariant(
         name="audit_ran_today",
         description="System audit must have completed within last 26h (the audit's own sentinel)",
         check_fn=check_audit_ran_today,
@@ -4048,63 +3174,6 @@ INVARIANTS = [
         lesson_ref="Round 74 — orphan detection",
         cadence="weekly",
     ),
-    # ----- Round 100 — Tacitus three-mode architecture invariants -----
-    Invariant(
-        name="tacitus_folder_integrity",
-        description="/tacitus/ folder has all required files + dirs (identity, changelog, portability, prompts, sentinel, audit-history, notebook)",
-        check_fn=check_tacitus_folder_integrity,
-        truth_anchor="filesystem existence of required paths",
-        severity="critical",
-        lesson_ref="Round 100 — Tacitus three-mode architecture; portability seam",
-    ),
-    Invariant(
-        name="tacitus_modes_fired_today",
-        description="On Mon-Fri, all three Tacitus modes (Cura/Vision/Aegis) wrote session headers to today's notebook",
-        check_fn=check_tacitus_modes_fired_today,
-        truth_anchor="tacitus/notebook/YYYY-MM.md session-header regex matches",
-        severity="warning",
-        lesson_ref="Round 100 — three-mode architecture; per Luneth's 'this will actually work as intended right?' Round 100 check",
-    ),
-    Invariant(
-        name="tacitus_v1_task_no_resurrection",
-        description="Today's notebook contains no session headers outside the canonical {Cura, Vision, Aegis} allowlist (catches v1 task accidental re-enable)",
-        check_fn=check_tacitus_v1_task_no_resurrection,
-        truth_anchor="tacitus/notebook/YYYY-MM.md session-header mode names — canonical allowlist {Cura, Vision, Aegis}",
-        severity="warning",
-        lesson_ref="Round 107 / Cura session #1 Survivor B — deletion claim of v1 tacitus-autonomous-reflection task pinned to file structure; catches Windows scheduler restoration, deletion undo, or unforeseen mode drift",
-    ),
-    Invariant(
-        name="tacitus_rest_day_observed",
-        description="No writes to tacitus/ during the 34-hour Sabbath rest window (Sat 00:00 EDT → Sun 10:00 EDT)",
-        check_fn=check_tacitus_rest_day_observed,
-        truth_anchor="file mtimes via stat()",
-        severity="warning",
-        lesson_ref="Round 100 — Luneth's Sabbath commitment: 'Saturday is a rest period that deserves no cheats'",
-    ),
-    Invariant(
-        name="aegis_history_well_formed",
-        description="tacitus/audit-history.json parses + has records list + each record has required scoring fields",
-        check_fn=check_aegis_history_well_formed,
-        truth_anchor="JSON parse + per-record schema validation",
-        severity="warning",
-        lesson_ref="Round 100 — Aegis structured scoring history shape",
-    ),
-    Invariant(
-        name="tacitus_dashboard_freshness",
-        description="On Mon-Fri, if Aegis wrote today's session header, the Tacitus dashboard LIVE_DATA must contain today's date string",
-        check_fn=check_tacitus_dashboard_freshness,
-        truth_anchor="literal '\"date\": \"<today>\"' string presence in tacitus/dashboard/index.html",
-        severity="critical",
-        lesson_ref="Round 117 (2026-06-18) — user-named immersion-breaking failure: two consecutive days of stale dashboard. Paired with the tacitus-dashboard-build scheduled task (5:35 EDT Mon-Fri).",
-    ),
-    Invariant(
-        name="tacitus_changelog_chronological_order",
-        description="tacitus/changelog.md '## v' headings appear in reverse chronological order per the file's self-stated rule",
-        check_fn=check_tacitus_changelog_chronological_order,
-        truth_anchor="parenthesized date after each version label, sorted strictly non-increasing (newest first)",
-        severity="warning",
-        lesson_ref="Round 118 / Cura session #2 Survivor A sibling — Round 103's v2.2 appended at bottom violated the file's own footer rule; long-lived narrative file paired with §1 bullet 6 broadening.",
-    ),
     Invariant(
         name="wallach_stance_source_rule",
         description="Every wallach_stance.citation in knowledge/essentials-targets.json cites an allowlisted Wallach/Youngevity primary source",
@@ -4130,14 +3199,6 @@ INVARIANTS = [
         lesson_ref="Round 115 filed; Round 122 shipped per §18 same-patch promotion. Two-source-of-truth shape (canonical nested + dashboard flat embed) gains coverage at the new field.",
     ),
     Invariant(
-        name="tacitus_changelog_present",
-        description="tacitus/changelog.md present + non-trivial + has at least one '## v' version heading",
-        check_fn=check_tacitus_changelog_present,
-        truth_anchor="file content scan for version headers",
-        severity="info",
-        lesson_ref="Round 100 — Tacitus's own changelog as parallel to brain CHANGELOG",
-    ),
-    Invariant(
         name="saga_versions_history_match",
         description="Every 'Round N' heading in saga.md has a matching round entry in versions.json history (and no orphan history entries)",
         check_fn=check_saga_versions_history_match,
@@ -4152,23 +3213,6 @@ INVARIANTS = [
         truth_anchor="vitality-findings.jsonl append-only log; resolution-by-ref-ts walk",
         severity="warning",
         lesson_ref="Round 105 — vitality-check signals were being silently overwritten by audit runs sharing the same sentinel; persistent log + in-session re-check discipline close the surface",
-    ),
-    Invariant(
-        name="implementations_log_well_formed",
-        description="memory/system/implementations.jsonl entries all reference real notebook session headers; statuses + modes within canonical allowlist",
-        check_fn=check_implementations_log_well_formed,
-        truth_anchor="tacitus/notebook/YYYY-MM.md session-header regex matches per (source_date, source_mode, source_session) tuple",
-        severity="warning",
-        lesson_ref="Round 108 — implementation crystals on the Tacitus dashboard; the log must accurately reflect reality so the user's audit-trail value holds ('wait... I never approved that')",
-    ),
-    Invariant(
-        name="tacitus_prompts_portable_shape",
-        description="cura.md + vision.md contain balanced PROJECT_ANCHOR markers (the drop-in-to-other-projects portability seam)",
-        check_fn=check_tacitus_prompts_portable_shape,
-        truth_anchor="balanced marker count via string scan",
-        severity="warning",
-        lesson_ref="Round 100 — portability.md drop-in procedure",
-        cadence="weekly",
     ),
     Invariant(
         name="lesson_freshness_vs_saga",
@@ -4202,14 +3246,6 @@ INVARIANTS = [
         severity="warning",
         lesson_ref="Round 149 esc() call from Regimen tab IIFE to Label Check IIFE's private esc — silent ReferenceError; allowlist-based forward check couldn't catch it because esc wasn't on the watchlist",
     ),
-    Invariant(
-        name="tacitus_dashboard_extraction_health",
-        description="Tacitus dashboard build's extraction-health sidecar must show non-zero counts for today's session phases",
-        check_fn=check_tacitus_dashboard_extraction_health,
-        truth_anchor="tacitus/dashboard/extraction-health.json (build-time attestation)",
-        severity="critical",
-        lesson_ref="Round 137 — parser silent-degeneration after Round 136 Cura 5-sub-check extension",
-    ),
     # Round 140 — Verified Patterns System invariants. See memory/essence/saga.md
     # Round 140 entry for full rollback recipe.
     Invariant(
@@ -4220,23 +3256,7 @@ INVARIANTS = [
         severity="warning",
         lesson_ref="Round 140 — Verified Patterns System catalog substrate",
     ),
-    Invariant(
-        name="feature_flags_present",
-        description="tacitus/feature-flags.json exists with cura_pattern_search + vision_pattern_seed flags",
-        check_fn=check_feature_flags_present,
-        truth_anchor="tacitus/feature-flags.json schema",
-        severity="warning",
-        lesson_ref="Round 140 — Verified Patterns System feature-flag toggle for Cura + Vision",
-    ),
     # Round 142 discipline-tightening batch invariants.
-    Invariant(
-        name="tacitus_changelog_declared_version_present",
-        description="open-threads.md masthead Tacitus version must have a matching ## v<X.Y> heading in tacitus/changelog.md",
-        check_fn=check_tacitus_changelog_declared_version_present,
-        truth_anchor="open-threads.md masthead Tacitus declaration vs tacitus/changelog.md headings",
-        severity="warning",
-        lesson_ref="Round 142 C-A — Cura session #3 Survivor A: declared-state-without-paired-verifier",
-    ),
     Invariant(
         name="claude_best_practices_freshness",
         description="memory/claude-best-practices.md mtime within 120 days (warning at 60d)",
@@ -4244,14 +3264,6 @@ INVARIANTS = [
         truth_anchor="filesystem mtime + cadence-expectation",
         severity="warning",
         lesson_ref="Round 142 C-B — Cura session #3 Survivor B: reference-standard staleness",
-    ),
-    Invariant(
-        name="prompt_enum_consumer_sync",
-        description="Cura sub-check enum in tacitus/prompts/cura.md must match the parser enum in tools/build_tacitus_dashboard_live.py",
-        check_fn=check_prompt_enum_consumer_sync,
-        truth_anchor="cura.md sub-check headers + parser regex enum",
-        severity="warning",
-        lesson_ref="Round 142 D-2 — Round 137 parser-drift family pre-emptive detector",
     ),
     # Round 143 — Phase 6 atomic close of vision-default-regimen.md.
     Invariant(
@@ -4261,15 +3273,6 @@ INVARIANTS = [
         truth_anchor="grep patterns on dashboard.html (function def + window export + DOMContentLoaded handler + call site count)",
         severity="warning",
         lesson_ref="Round 134 architectural commitment / vision-default-regimen.md Phase 6 — REGIMEN_SLOT_INVARIANT runtime self-healing",
-    ),
-    # Round 144 — Vision pattern-seed compliance drift detector.
-    Invariant(
-        name="vision_pattern_seed_compliance",
-        description="tacitus/prompts/vision.md retains seed-not-propagate discipline (feature-flag gate + HARD CAP + framing + batch/cascade prohibition)",
-        check_fn=check_vision_pattern_seed_compliance,
-        truth_anchor="grep patterns on tacitus/prompts/vision.md (4 structural arms)",
-        severity="warning",
-        lesson_ref="Round 140 architectural commitment — Vision cannot see rendered output, so prompt-level guards are the only safeguard",
     ),
     # Round 148 — Closing-the-loop logging discipline (Phase A + B + C).
     # Family: paired-write integrity. Every substantive logging surface gets
@@ -4282,14 +3285,6 @@ INVARIANTS = [
         truth_anchor="tacitus/notebook/*.md DEEPEN blocks + implementations.jsonl",
         severity="warning",
         lesson_ref="Round 148 — reverse-direction integrity check (notebook truth → log entry must exist)",
-    ),
-    Invariant(
-        name="dashboard_impl_status_source_purity",
-        description="build_tacitus_dashboard_live.py reads impl status ONLY via implementation_log.latest_status() (no env/hardcoded/projection override)",
-        check_fn=check_dashboard_impl_status_source_purity,
-        truth_anchor="grep patterns on tools/build_tacitus_dashboard_live.py",
-        severity="warning",
-        lesson_ref="Round 148 — single-source-of-truth enforcement at the renderer",
     ),
     Invariant(
         name="paired_write_catalog_coverage",
@@ -4354,14 +3349,6 @@ INVARIANTS = [
         truth_anchor="mtime + file-shape probes on the canonical log set",
         severity="warning",
         lesson_ref="Round 108/135 — log-surface staleness detection; rotted logs are silent integrity gaps",
-    ),
-    Invariant(
-        name="tacitus_dashboard_no_real_data_fetches",
-        description="tacitus/dashboard/index.html must not perform live network fetches; it is build-time-rendered against canonical fixtures",
-        check_fn=check_tacitus_dashboard_no_real_data_fetches,
-        truth_anchor="static scan of tacitus/dashboard/index.html for fetch/XHR/import URL patterns",
-        severity="critical",
-        lesson_ref="Round 117 — the dashboard is a build artifact; runtime fetches reintroduce drift",
     ),
     Invariant(
         name="eden_hash_integrity",
@@ -4436,30 +3423,12 @@ INVARIANTS = [
 # CLI
 # ---------------------------------------------------------------------------
 
-# Tacitus audit layer excised 2026-06-22 (Phase 1 / chunk 1F): the standalone
-# Tacitus system was removed from this repo. These checks read tacitus/ files
-# (now deleted), so they are filtered out of the manifest here. Their now-dead
-# function defs + InvariantSpec registrations are slated for removal in a
-# follow-up tidy; filtering keeps the manifest correct in the meantime.
-_RETIRED_TACITUS = frozenset({
-    "tacitus_sentinel_content", "tacitus_folder_integrity",
-    "tacitus_modes_fired_today", "tacitus_v1_task_no_resurrection",
-    "tacitus_rest_day_observed", "aegis_history_well_formed",
-    "tacitus_dashboard_freshness", "tacitus_changelog_chronological_order",
-    "tacitus_changelog_present", "tacitus_prompts_portable_shape",
-    "tacitus_dashboard_extraction_health", "feature_flags_present",
-    "tacitus_changelog_declared_version_present", "prompt_enum_consumer_sync",
-    "vision_pattern_seed_compliance", "dashboard_impl_status_source_purity",
-    "tacitus_dashboard_no_real_data_fetches",
-    "implementations_log_well_formed",  # verifies the impl-log against tacitus/notebook — retired with the excision
-})
-
-
 def list_invariants(weekly: bool = False):
     """Return all invariants. If weekly=True, include weekly-cadence entries
     alongside daily ones (some weekly invariants are paired with daily)."""
-    pool = list(INVARIANTS) if weekly else [i for i in INVARIANTS if i.cadence == "daily"]
-    return [i for i in pool if i.name not in _RETIRED_TACITUS]
+    if weekly:
+        return list(INVARIANTS)
+    return [i for i in INVARIANTS if i.cadence == "daily"]
 
 
 def main():
