@@ -1,10 +1,8 @@
 {
   "tolerated_failures": [
-    "dashboard_integrity",
-    "tacitus_modes_fired_today",
-    "tacitus_dashboard_extraction_health"
+    "dashboard_integrity"
   ],
   "captured": "2026-06-22",
-  "board": "58/61",
-  "note": "Invariant failures stop_round_close.py tolerates (no NEW-regression block). dashboard_integrity = stale legacy smoke test — the real dashboard renders fine (91 tiles, 0 errors per render_probe). The two tacitus_* are date-gated audit-layer checks, NOT in the Wallach-dashboard path, scheduled for removal with the Phase-1 Tacitus excision (chunk 1F). Re-baseline after 1E/1F land."
+  "board": "44/45 (post tacitus-check retirement, chunk 1F-1)",
+  "note": "Invariant failures stop_round_close.py tolerates (no NEW-regression block). dashboard_integrity = stale legacy smoke test — the real dashboard renders fine (91 tiles, 0 errors per render_probe); re-base tools/dashboard_smoke.js to the new markup to clear it. The 16 Tacitus audit-layer checks were retired from the manifest in Phase-1 chunk 1F-1 (filter in list_invariants). Remaining 1F-2: de-couple the catch-up / implementation-log / dashboard-embed checks from tacitus state, then delete tacitus/ + pure-tacitus tools + the now-dead check defs."
 }

@@ -3622,7 +3622,7 @@ def _ds_finalize(violations, mode, success_msg):
 
 
 def check_no_external_style_resources():
-    """Scan dashboard.html + dashboard/assets/styles/*.css + tacitus/dashboard/index.html
+    """Scan dashboard.html + dashboard/assets/styles/*.css
     for external style/font/script imports. The 'no external resources' rule
     is the foundation of long-term portability (Phase 0 doctrine).
 
@@ -3646,7 +3646,6 @@ def check_no_external_style_resources():
 
     scan_targets = [
         ROOT / "dashboard" / "dashboard.html",
-        ROOT / "tacitus" / "dashboard" / "index.html",
     ]
     styles_dir = ROOT / "dashboard" / "assets" / "styles"
     if styles_dir.exists():
@@ -4438,12 +4437,29 @@ INVARIANTS = [
 # CLI
 # ---------------------------------------------------------------------------
 
+# Tacitus audit layer excised 2026-06-22 (Phase 1 / chunk 1F): the standalone
+# Tacitus system was removed from this repo. These checks read tacitus/ files
+# (now deleted), so they are filtered out of the manifest here. Their now-dead
+# function defs + InvariantSpec registrations are slated for removal in a
+# follow-up tidy; filtering keeps the manifest correct in the meantime.
+_RETIRED_TACITUS = frozenset({
+    "tacitus_sentinel_content", "tacitus_folder_integrity",
+    "tacitus_modes_fired_today", "tacitus_v1_task_no_resurrection",
+    "tacitus_rest_day_observed", "aegis_history_well_formed",
+    "tacitus_dashboard_freshness", "tacitus_changelog_chronological_order",
+    "tacitus_changelog_present", "tacitus_prompts_portable_shape",
+    "tacitus_dashboard_extraction_health", "feature_flags_present",
+    "tacitus_changelog_declared_version_present", "prompt_enum_consumer_sync",
+    "vision_pattern_seed_compliance", "dashboard_impl_status_source_purity",
+    "tacitus_dashboard_no_real_data_fetches",
+})
+
+
 def list_invariants(weekly: bool = False):
     """Return all invariants. If weekly=True, include weekly-cadence entries
     alongside daily ones (some weekly invariants are paired with daily)."""
-    if weekly:
-        return list(INVARIANTS)
-    return [i for i in INVARIANTS if i.cadence == "daily"]
+    pool = list(INVARIANTS) if weekly else [i for i in INVARIANTS if i.cadence == "daily"]
+    return [i for i in pool if i.name not in _RETIRED_TACITUS]
 
 
 def main():
