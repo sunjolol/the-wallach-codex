@@ -250,7 +250,7 @@ def check_brain_version_sync():
 
     if issues:
         return False, "; ".join(issues)
-    return True, f"brain v{brain_v} synced across versions.json + CHANGELOG + brain/versions/ + dashboard embed"
+    return True, f"brain v{brain_v} synced across versions.json + CHANGELOG + chronicle/versions/ + dashboard embed"
 
 
 def check_tools_py_parse():
@@ -437,7 +437,7 @@ def check_dashboard_integrity_passes():
 
 def check_catchup_files_exist():
     """Every file in the catch-up trigger list must exist on disk.
-    The catch-up trigger references brain/current.md → these files. If any
+    The catch-up trigger list (hardcoded in this check) → these files. If any
     are missing, catch-up fails silently."""
     required = [
         "memory/identity.md",
@@ -781,17 +781,16 @@ def check_differential_reads():
 
 
 def check_orphan_files():
-    """Files referenced by path in brain/protocols/decisions but not present
-    on disk; files on disk in critical paths not referenced anywhere."""
+    """Files referenced by path in the memory/ protocol + decision files but not
+    present on disk; files on disk in critical paths not referenced anywhere."""
     refs = set()
     sources = [
-        ROOT / "brain/current.md",
         ROOT / "memory/operating-protocols.md",
         ROOT / "memory/essence/decisions.md",
         ROOT / "memory/source-rule.md",
         ROOT / "memory/engineering-doctrine.md",
     ]
-    pat = re.compile(r'(?<![\w/])(?:memory|brain|tools|dashboard|knowledge|schemas)/[\w./\-]+\.(?:jsonl|md|py|json|html|js|yaml|csv)')
+    pat = re.compile(r'(?<![\w/])(?:memory|tools|dashboard|knowledge|schemas)/[\w./\-]+\.(?:jsonl|md|py|json|html|js|yaml|csv)')
     for s in sources:
         if not s.exists():
             continue
@@ -3500,7 +3499,7 @@ def check_whack_a_mole_clusters():
     severity, not critical) so the next catch-up trigger can mention it.
 
     This is the BACKSTOP layer of §32. Primary enforcement is in-conversation
-    (Claude self-checks per brain/current.md directive #6). This invariant
+    (Claude self-checks per the session-start directive). This invariant
     catches what the in-conversation discipline misses.
 
     Heuristic: parse round entries' 'Files modified' / 'Files written' sections
@@ -3552,7 +3551,6 @@ def check_whack_a_mole_clusters():
                      # we add finer-grained detection, exclude to keep signal:noise high.
                      "dashboard/dashboard.html", "tools/invariants.py",
                      "tools/dashboard_integrity.py", "tools/safe_write.py",
-                     "brain/CHANGELOG.md", "brain/current.md",
                      "memory/paired-write-catalog.md", "memory/verified-patterns.md",
                      "memory/operating-protocols.md", "memory/engineering-doctrine.md"):
                 continue
@@ -3915,7 +3913,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="brain_version_sync",
-        description="Brain version pinned across versions.json + CHANGELOG + brain/versions/* + dashboard embed",
+        description="Brain version pinned across versions.json + CHANGELOG + chronicle/versions/* + dashboard embed",
         check_fn=check_brain_version_sync,
         truth_anchor="memory/versions.json current.brain field",
         severity="critical",
@@ -3973,7 +3971,7 @@ INVARIANTS = [
         name="catchup_files_exist",
         description="Every file in catch-up trigger list must exist + be readable",
         check_fn=check_catchup_files_exist,
-        truth_anchor="brain/current.md catch-up trigger list (hardcoded mirror in this check)",
+        truth_anchor="catch-up trigger list (hardcoded in this check)",
         severity="critical",
         lesson_ref="Round 74 — Risk 9 / catch-up integrity",
     ),
@@ -4045,9 +4043,9 @@ INVARIANTS = [
     ),
     Invariant(
         name="orphan_files",
-        description="Files referenced in brain/protocols/decisions must exist on disk",
+        description="Files referenced in memory/ protocol + decision files must exist on disk",
         check_fn=check_orphan_files,
-        truth_anchor="Path references in brain + protocols + decisions",
+        truth_anchor="Path references in the memory/ protocol + decision files",
         severity="warning",
         lesson_ref="Round 74 — orphan detection",
         cadence="weekly",
