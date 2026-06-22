@@ -1,0 +1,94 @@
+// tools/render_probe_knowledge.js — Knowledge drawer wiring + Products vault (Phase 2 Chunk 2A).
+//
+// Usage: node tools/render_probe_knowledge.js   (exit 0 = PASS, non-zero = FAIL)
+//
+// Verifies the Knowledge drawer is wired end-to-end: the K rail item toggles the
+// overlay, the Products tab lists REAL vault entries (the canonical_name fix in
+// readProducts — the vault keys display names as canonical_name, not name), and
+// both Esc and a bare "K" press close/toggle it. Mirrors render_probe_adopt.js.
+// Requires puppeteer.
+
+const path = require('path');
+const REPO = path.resolve(__dirname, '..');
+
+let pup;
+for (const c of [REPO + '/node_modules/puppeteer', REPO + '/dashboard/node_modules/puppeteer']) {
+  try { pup = require(c); break; } catch (e) { /* try next */ }
+}
+if (!pup) { console.log('NO_PUPPETEER (npm i -D puppeteer at repo root)'); process.exit(2); }
+
+const wait = ms => new Promise(r => setTimeout(r, ms));
+
+(async () => {
+  const browser = await pup.launch({ headless: 'new', args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+  const page = await browser.newPage();
+  const errs = [];
+  page.on('pageerror', e => errs.push(e.message));
+
+  const url = 'file://' + path.join(REPO, 'dashboard', 'dashboard.html').split(path.sep).join('/');
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 }).catch(e => console.log('GOTO_ERR', e.message));
+  await wait(1500);
+
+  const drawerState = () => page.evaluate(() => {
+    const el = document.getElementById('drawer-knowledge-mount');
+    return {
+      open: el ? el.classList.contains('kd-open') : null,
+      hasHead: el ? el.querySelector('.kd-head') !== null : null,
+    };
+  });
+
+  // 1. Closed at boot.
+  const boot = await drawerState();
+
+  // 2. Click the K rail item -> opens.
+  await page.evaluate(() => document.querySelector('[data-rail-nav="knowledge"]')?.click());
+  await wait(300);
+  const afterClick = await drawerState();
+
+  // 3. Switch to the Products tab; read the vault count + the rendered names.
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="products"]')?.click());
+  await wait(300);
+  const products = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const heads = root ? [...root.querySelectorAll('.section-head')].map(e => e.textContent.trim()) : [];
+    const head = heads.find(t => /PRODUCTS VAULT/.test(t)) || '';
+    const m = head.match(/·\s*(\d+)\s*ENTRIES/);
+    const rows = root ? [...root.querySelectorAll('.product-row__name')].map(e => e.textContent.trim()) : [];
+    return {
+      head,
+      count: m ? parseInt(m[1], 10) : 0,
+      rowCount: rows.length,
+      firstNames: rows.slice(0, 3),
+      anyUnnamed: rows.some(n => n === '(unnamed)' || n === ''),
+    };
+  });
+
+  // 4. Esc closes.
+  await page.keyboard.press('Escape');
+  await wait(200);
+  const afterEsc = await drawerState();
+
+  // 5. Bare "K" reopens.
+  await page.keyboard.press('KeyK');
+  await wait(200);
+  const afterK = await drawerState();
+
+  const out = { boot, afterClick, products, afterEsc, afterK };
+  console.log('KNOWLEDGE', JSON.stringify(out));
+  console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
+
+  const checks = [
+    ['drawer closed at boot', boot.open === false],
+    ['rail K opens drawer', afterClick.open === true && afterClick.hasHead === true],
+    ['products vault non-empty', products.count > 0],
+    ['product rows rendered', products.rowCount > 0],
+    ['no unnamed product rows', products.anyUnnamed === false],
+    ['Esc closes drawer', afterEsc.open === false],
+    ['bare K reopens drawer', afterK.open === true],
+    ['no page errors', errs.length === 0],
+  ];
+  const failed = checks.filter(([, ok]) => !ok).map(([n]) => n);
+  await browser.close();
+  if (failed.length) { console.log('FAIL', JSON.stringify(failed)); process.exit(1); }
+  console.log('PASS · Knowledge drawer wired (rail K + Esc + bare K) · Products vault lists real entries');
+})().catch(e => { console.log('PROBE_ERR', e.message); process.exit(1); });

@@ -31,6 +31,7 @@ export const EssentialsDataSchema = z.object({
 
 /** A single product entry — minimal shape, allow additional fields. */
 export const ProductEntrySchema = z.object({
+  canonical_name: z.string().optional(),
   name: z.string().optional(),
   brand: z.string().optional(),
   nutrients: z.array(z.unknown()).optional(),

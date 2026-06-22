@@ -105,7 +105,11 @@ function activateRailItem(target: WorkspaceTarget): void {
   }
 }
 
+let knowledgeDrawer: knowledgeView.DrawerHandle | null = null;
+
 function navigateTo(target: WorkspaceTarget): void {
+  // Switching workspace closes the Knowledge drawer overlay if it's open.
+  knowledgeDrawer?.close();
   activateRailItem(target);
   events.emit('rail:navigate', { target });
 
@@ -162,9 +166,52 @@ function wireRail(): void {
     }
     btn.addEventListener('click', (ev) => {
       ev.preventDefault();
+      if (target === 'knowledge') {
+        toggleKnowledgeDrawer();
+        return;
+      }
       navigateTo(target);
     });
   }
+}
+
+// ─── Knowledge drawer (K) ────────────────────────────────────────────────────
+
+/** Mount the Knowledge drawer overlay into its host once at boot. */
+function mountKnowledgeDrawer(): void {
+  const el = document.getElementById('drawer-knowledge-mount');
+  if (el === null) {
+    return;
+  }
+  knowledgeDrawer = knowledgeView.mount(el);
+}
+
+/** Toggle the Knowledge drawer and reflect its open-state on the rail item. */
+function toggleKnowledgeDrawer(): void {
+  if (knowledgeDrawer === null) {
+    return;
+  }
+  knowledgeDrawer.toggle();
+  const btn = document.querySelector<HTMLElement>('.rail__item[data-rail-nav="knowledge"]');
+  if (btn !== null) {
+    btn.classList.toggle('active', knowledgeDrawer.isOpen());
+  }
+}
+
+/** Esc closes the drawer; bare "K" toggles it (ignored while typing or with a modifier). */
+function wireKnowledgeKeys(): void {
+  document.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape' && knowledgeDrawer !== null && knowledgeDrawer.isOpen()) {
+      toggleKnowledgeDrawer();
+      return;
+    }
+    const t = ev.target as HTMLElement | null;
+    const typing = t !== null && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable);
+    if ((ev.key === 'k' || ev.key === 'K') && !typing && !ev.metaKey && !ev.ctrlKey && !ev.altKey) {
+      ev.preventDefault();
+      toggleKnowledgeDrawer();
+    }
+  });
 }
 
 // ─── Profile panel ─────────────────────────────────────────────────────────
@@ -237,6 +284,8 @@ function bootstrap(): void {
 
   wireRail();
   wireProfileChip();
+  mountKnowledgeDrawer();
+  wireKnowledgeKeys();
 
   /*
    * Default landing: Coverage (the new view). Defer one tick so legacy JS

@@ -66,30 +66,33 @@ function readProducts(): ProductEntry[] {
   catch {
     return [];
   }
-  const lookup = ProductsLookupSchema.safeParse(parsed);
+  // Mirror state regimen's readVault: the embed may wrap the map under a
+  // `products` key, and the vault keys its display name as `canonical_name`
+  // (not always `name`). Walk every value, resolve canonical_name ?? name,
+  // and dedup by lowercased name so the same product never lists twice.
+  let root: unknown = parsed;
+  if (parsed !== null && typeof parsed === 'object' && 'products' in parsed) {
+    root = parsed.products;
+  }
+  const lookup = ProductsLookupSchema.safeParse(root);
   if (!lookup.success) {
     return [];
   }
-  // The vault is keyed by product id; some entries are single objects, some
-  // are arrays of products. Walk every value and Zod-parse each candidate.
-  const products: ProductEntry[] = [];
-  const tryAdd = (candidate: unknown): void => {
-    const r = ProductEntrySchema.safeParse(candidate);
-    if (r.success && r.data.name !== undefined && r.data.name.length > 0) {
-      products.push(r.data);
-    }
-  };
+  const byName = new Map<string, ProductEntry>();
   for (const value of Object.values(lookup.data)) {
-    if (Array.isArray(value)) {
-      for (const p of value) {
-        tryAdd(p);
+    const candidates = Array.isArray(value) ? value : [value];
+    for (const candidate of candidates) {
+      const r = ProductEntrySchema.safeParse(candidate);
+      if (!r.success) {
+        continue;
+      }
+      const nm = r.data.canonical_name ?? r.data.name;
+      if (typeof nm === 'string' && nm.length > 0) {
+        byName.set(nm.toLowerCase(), r.data);
       }
     }
-    else {
-      tryAdd(value);
-    }
   }
-  return products;
+  return [...byName.values()];
 }
 
 // Hard-coded books + doctrines — small, stable, doesn't warrant LS or a fetch.
@@ -171,9 +174,9 @@ function renderProductsTab(): string {
 
   const productsHTML = products.slice(0, 30).map(p => `
     <div class="product-row">
-      <div class="product-row__icon">${escHTML((p.name ?? '?').charAt(0).toUpperCase())}</div>
+      <div class="product-row__icon">${escHTML((p.canonical_name ?? p.name ?? '?').charAt(0).toUpperCase())}</div>
       <div class="product-row__body">
-        <h4 class="product-row__name">${escHTML(p.name ?? '(unnamed)')}</h4>
+        <h4 class="product-row__name">${escHTML(p.canonical_name ?? p.name ?? '(unnamed)')}</h4>
         <div class="product-row__meta">${escHTML(p.brand ?? 'YGY')} · ${(p.nutrients?.length ?? 0)} NUTRIENTS LISTED</div>
       </div>
       <span class="product-row__verdict product-row__verdict--ok">VAULT</span>

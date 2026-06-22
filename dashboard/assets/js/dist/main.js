@@ -4231,6 +4231,7 @@
     essentials: external_exports.array(EssentialSchema)
   }).passthrough();
   var ProductEntrySchema = external_exports.object({
+    canonical_name: external_exports.string().optional(),
     name: external_exports.string().optional(),
     brand: external_exports.string().optional(),
     nutrients: external_exports.array(external_exports.unknown()).optional()
@@ -7114,6 +7115,267 @@
     };
   }
 
+  // assets/js/src/views/knowledge.ts
+  function readEssentials() {
+    const el = document.getElementById("essentials-targets-data");
+    if (el === null) {
+      return [];
+    }
+    let parsed;
+    try {
+      parsed = JSON.parse(el.textContent ?? "{}");
+    } catch {
+      return [];
+    }
+    const result = EssentialsDataSchema.safeParse(parsed);
+    return result.success ? result.data.essentials : [];
+  }
+  function readProducts() {
+    const el = document.getElementById("regimen-label-lookup");
+    if (el === null) {
+      return [];
+    }
+    let parsed;
+    try {
+      parsed = JSON.parse(el.textContent ?? "{}");
+    } catch {
+      return [];
+    }
+    let root = parsed;
+    if (parsed !== null && typeof parsed === "object" && "products" in parsed) {
+      root = parsed.products;
+    }
+    const lookup = ProductsLookupSchema.safeParse(root);
+    if (!lookup.success) {
+      return [];
+    }
+    const byName = /* @__PURE__ */ new Map();
+    for (const value of Object.values(lookup.data)) {
+      const candidates = Array.isArray(value) ? value : [value];
+      for (const candidate of candidates) {
+        const r = ProductEntrySchema.safeParse(candidate);
+        if (!r.success) {
+          continue;
+        }
+        const nm = r.data.canonical_name ?? r.data.name;
+        if (typeof nm === "string" && nm.length > 0) {
+          byName.set(nm.toLowerCase(), r.data);
+        }
+      }
+    }
+    return [...byName.values()];
+  }
+  var BOOKS = [
+    { id: "DDDL", title: "Dead Doctors Don't Lie", chapters: 12, cites: 286, author: "Wallach" },
+    { id: "RBS", title: "Rare Earths: Forbidden Cures", chapters: 16, cites: 412, author: "Wallach" },
+    { id: "EPS", title: "Epigenetics: The Death of the Genetic Theory", chapters: 9, cites: 188, author: "Wallach" },
+    { id: "YGY", title: "YGY Product Compendium", chapters: 0, cites: 59, author: "Secondary \xB7 label data only" }
+  ];
+  var DOCTRINES = [
+    { id: "DOCT\xB701", title: "Source-Rule \xB7 Wallach Primary Only", featured: true, body: "Every numeric target, dose recommendation, deficiency indicator, or health claim displayed by this system must cite a primary source from the Wallach corpus or the YGY product allowlist. No exceptions, including the user.", cite: "ENFORCED BY check_no_unsourced_claims \xB7 invariant tier \xB7 critical" },
+    { id: "DOCT\xB702", title: "Aggregate-Vehicle Coverage (PDM)", featured: false, body: "Plant-derived minerals are defined by sourcing, not by amounts. If a plant-derived mineral aggregate is present in a product, every trace mineral in that aggregate is considered covered \u2014 binary, not graduated.", cite: "CITED \xB7 Dead Doctors Don't Lie \xB7 ch. 4" },
+    { id: "DOCT\xB703", title: "BTT Layering Order", featured: false, body: "Beyond Tangy Tangerine is the foundational morning layer \u2014 vitamins, aminos, foundational minerals. Stack PDM on top for the rare-trace closure. Add EFA Plus for fatty acids. Order matters for absorption.", cite: "CITED \xB7 Wallach lecture corpus \xB7 YGY protocol guide" },
+    { id: "DOCT\xB704", title: "Trace Minerals: Source-Not-Quantity", featured: false, body: "For the 35 rare trace minerals, presence in a plant-derived vehicle is the qualifying criterion. Mass-spec verification of every trace amount is unnecessary if the source is doctrinally sound.", cite: "CITED \xB7 Rare Earths \xB7 ch. 9" },
+    { id: "DOCT\xB705", title: "Atomic LS Write Discipline (\xA717)", featured: false, body: "Every regimen LS write goes through a verified round-trip set \u2192 re-read \u2192 reject-on-mismatch loop. Silent truncations from the Edit tool taught us this. Writes that cannot confirm fail loudly.", cite: "PROVED \xB7 Round 73 lessons + 9 truncation incidents" },
+    { id: "DOCT\xB706", title: "\xA731 Chokepoint Discipline (Cross-Surface Sync)", featured: false, body: "Every regimen mutation flows through one of 5 named chokepoint helpers. Each fires triggerRegimenRerender so all subscribed surfaces re-render. State drift is structurally impossible by module design, not vigilance.", cite: "CITED \xB7 Round 150 doctrine \xB7 enforced by check_regimen_state_mutation_routing" },
+    { id: "DOCT\xB707", title: "Eden Sealed-Canonical (User-Only-Writer)", featured: false, body: "Sealed canonical files (design-system.css, eden corpus) carry hash anchors. Agent reads freely, never writes after sealing time. Drift is detected at startup; reads from drifted files fail loudly.", cite: "CITED \xB7 Round 157 \xB7 enforced by eden_hash_integrity + write_protection invariants" }
+  ];
+  function escHTML2(s) {
+    return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  }
+  function hexSerial(seed) {
+    return (seed * 2654435769 >>> 0).toString(16).toUpperCase().padStart(4, "0").slice(0, 4);
+  }
+  function renderCorpusTab() {
+    const booksHTML = BOOKS.map((b) => `
+    <div class="book-row">
+      <div class="book-row__spine"><span>${escHTML2(b.id)}</span></div>
+      <div class="book-row__body">
+        <h4 class="book-row__title">${escHTML2(b.title)}</h4>
+        <div class="book-row__meta">${escHTML2(b.author)}${b.chapters > 0 ? ` \xB7 ${b.chapters} CHAPTERS` : ""} \xB7 ${b.cites} CITES</div>
+      </div>
+      <div class="book-row__count">${b.cites}<small>cites</small></div>
+    </div>`).join("");
+    return `
+    <div class="featured-citation">
+      <div class="featured-citation__eyebrow"><span class="pulse-dot"></span>SOURCE-RULE CORNERSTONE</div>
+      <p class="featured-citation__quote">The body needs 60 minerals, 16 vitamins, 12 amino acids, and 3 essential fatty acids \u2014 91 essentials total. Plant-derived minerals are the only delivery vehicle that the body absorbs as nature intended.</p>
+      <div class="featured-citation__attr"><strong>Wallach</strong> \xB7 Dead Doctors Don't Lie \xB7 ch. 1 \xB7 paraphrase per primary corpus</div>
+    </div>
+    <div class="section-head">PRIMARY CORPUS \xB7 WALLACH</div>
+    ${booksHTML}`;
+  }
+  function renderEssentialsTab() {
+    const essentials = readEssentials();
+    if (essentials.length === 0) {
+      return '<div class="kd-empty">\u2014 essentials data not loaded \u2014</div>';
+    }
+    const tilesHTML = essentials.slice(0, 60).map((e) => `
+    <div class="essential-tile" data-essential="${escHTML2(e.name)}">
+      <div class="essential-tile__sym">${escHTML2(e.name.charAt(0).toUpperCase())}</div>
+      <div class="essential-tile__name">${escHTML2(e.name)}</div>
+      <div class="essential-tile__meta">${escHTML2(e.category)}</div>
+    </div>`).join("");
+    return `
+    <div class="section-head">ALL ${essentials.length} ESSENTIALS \xB7 CLICK TO DEEP-DIVE</div>
+    <div class="kd-essentials-grid">${tilesHTML}</div>
+    ${essentials.length > 60 ? `<div class="kd-more">\u2014 + ${essentials.length - 60} more \xB7 scroll filter wired in polish pass \u2014</div>` : ""}`;
+  }
+  function renderProductsTab() {
+    const products = readProducts();
+    if (products.length === 0) {
+      return '<div class="kd-empty">\u2014 vault data not loaded \xB7 59 known products live in regimen-label-lookup \u2014</div>';
+    }
+    const productsHTML = products.slice(0, 30).map((p) => `
+    <div class="product-row">
+      <div class="product-row__icon">${escHTML2((p.canonical_name ?? p.name ?? "?").charAt(0).toUpperCase())}</div>
+      <div class="product-row__body">
+        <h4 class="product-row__name">${escHTML2(p.canonical_name ?? p.name ?? "(unnamed)")}</h4>
+        <div class="product-row__meta">${escHTML2(p.brand ?? "YGY")} \xB7 ${p.nutrients?.length ?? 0} NUTRIENTS LISTED</div>
+      </div>
+      <span class="product-row__verdict product-row__verdict--ok">VAULT</span>
+    </div>`).join("");
+    return `
+    <div class="section-head">PRODUCTS VAULT \xB7 ${products.length} ENTRIES</div>
+    ${productsHTML}
+    ${products.length > 30 ? `<div class="kd-more">\u2014 + ${products.length - 30} more \xB7 scroll wired in polish pass \u2014</div>` : ""}`;
+  }
+  function renderDoctrineTab() {
+    return DOCTRINES.map((d) => `
+    <div class="doctrine-card${d.featured ? " featured" : ""}">
+      <div class="doctrine-card__id">${escHTML2(d.id)}${d.featured ? " \xB7 CORNERSTONE" : ""}</div>
+      <h4 class="doctrine-card__title">${escHTML2(d.title)}</h4>
+      <p class="doctrine-card__body">${escHTML2(d.body)}</p>
+      <div class="doctrine-card__cite">${escHTML2(d.cite)}</div>
+    </div>`).join("");
+  }
+  function renderTab(tab) {
+    switch (tab) {
+      case "corpus":
+        return renderCorpusTab();
+      case "essentials":
+        return renderEssentialsTab();
+      case "products":
+        return renderProductsTab();
+      case "doctrine":
+        return renderDoctrineTab();
+    }
+  }
+  function renderShell(activeTab) {
+    const essentialsCount = readEssentials().length;
+    const productsCount = readProducts().length;
+    const tabs = [
+      { id: "corpus", label: "Corpus", count: `${BOOKS.length} BOOKS` },
+      { id: "essentials", label: "Essentials", count: `${essentialsCount} TILES` },
+      { id: "products", label: "Products", count: `${productsCount > 0 ? productsCount : 59} KNOWN` },
+      { id: "doctrine", label: "Doctrine", count: `${DOCTRINES.length} RULES` }
+    ];
+    const tabsHTML = tabs.map((t) => `
+    <button class="kd-tab${t.id === activeTab ? " active" : ""}" data-kd-tab="${t.id}">
+      <span>${escHTML2(t.label)}</span>
+      <span class="kd-tab__count">${escHTML2(t.count)}</span>
+    </button>`).join("");
+    return `
+    <span class="ds-scan-line" aria-hidden="true"></span>
+    <header class="kd-head">
+      <div>
+        <div class="kd-eyebrow"><span class="pulse-dot"></span>DRAWER \xB7 <span class="ds-cipher" data-cipher-set="hexa">KN\xB7${hexSerial(activeTab.length * 7)}</span></div>
+        <h2 class="kd-title">Knowledge</h2>
+        <div class="kd-sub">// the corpus, the essentials, the products, the doctrine</div>
+      </div>
+      <button class="kd-close" data-kd-action="close" title="Close (Esc)">\xD7</button>
+    </header>
+    <div class="kd-tabs">${tabsHTML}</div>
+    <div class="kd-search">
+      <span class="kd-search-icon">\u2315</span>
+      <input class="kd-search-input" type="text" placeholder="SEARCH ${activeTab.toUpperCase()}\u2026" />
+      <span class="kd-search-kbd">/</span>
+    </div>
+    <div class="kd-body">${renderTab(activeTab)}</div>
+    <footer class="kd-footer">
+      <button class="kd-action" data-kd-action="pin"><span class="kd-action__glyph">\u2295</span>PIN</button>
+      <button class="kd-action" data-kd-action="share"><span class="kd-action__glyph">\u2197</span>SHARE</button>
+      <button class="kd-action" data-kd-action="cite"><span class="kd-action__glyph">\u2311</span>CITE</button>
+      <span class="kd-action__spacer"></span>
+      <button class="kd-action kd-action--expand" data-kd-action="expand"><span class="kd-action__glyph">\u2922</span>EXPAND</button>
+    </footer>`;
+  }
+  function mount2(container) {
+    let isOpen = false;
+    let isExpanded = false;
+    let activeTab = "corpus";
+    const render = () => {
+      container.innerHTML = renderShell(activeTab);
+    };
+    const open = () => {
+      if (isOpen) {
+        return;
+      }
+      isOpen = true;
+      container.classList.add("kd-open");
+      render();
+    };
+    const close = () => {
+      if (!isOpen) {
+        return;
+      }
+      isOpen = false;
+      isExpanded = false;
+      container.classList.remove("kd-open", "kd-expanded");
+      container.innerHTML = "";
+    };
+    const toggle = () => {
+      if (isOpen) {
+        close();
+      } else {
+        open();
+      }
+    };
+    const toggleExpanded = () => {
+      isExpanded = !isExpanded;
+      container.classList.toggle("kd-expanded", isExpanded);
+    };
+    const clickHandler = (ev) => {
+      const target = ev.target;
+      if (target === null) {
+        return;
+      }
+      const tabBtn = target.closest("[data-kd-tab]");
+      if (tabBtn !== null) {
+        const next = tabBtn.getAttribute("data-kd-tab");
+        if (next !== null && next !== activeTab) {
+          activeTab = next;
+          render();
+        }
+        return;
+      }
+      const actionEl = target.closest("[data-kd-action]");
+      if (actionEl !== null) {
+        const action = actionEl.getAttribute("data-kd-action");
+        if (action === "close") {
+          close();
+        } else if (action === "expand") {
+          toggleExpanded();
+        } else {
+          console.warn("[views/knowledge] action stub:", action);
+        }
+      }
+    };
+    container.addEventListener("click", clickHandler);
+    on("regimen:changed", () => {
+      if (isOpen) {
+        render();
+      }
+    });
+    return {
+      open,
+      close,
+      toggle,
+      toggleExpanded,
+      isOpen: () => isOpen
+    };
+  }
+
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
   function getEntries() {
@@ -7126,7 +7388,7 @@
   }
 
   // assets/js/src/views/profile.ts
-  function escHTML2(s) {
+  function escHTML3(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -7172,15 +7434,15 @@
     return map[k];
   }
   function renderLogEntry(entry) {
-    const detailHTML = entry.detail !== void 0 && entry.detail.length > 0 ? `<div class="pf-log-entry__detail">${escHTML2(entry.detail)}</div>` : "";
+    const detailHTML = entry.detail !== void 0 && entry.detail.length > 0 ? `<div class="pf-log-entry__detail">${escHTML3(entry.detail)}</div>` : "";
     return `
-    <article class="pf-log-entry" data-log-id="${escHTML2(entry.id)}">
+    <article class="pf-log-entry" data-log-id="${escHTML3(entry.id)}">
       <header class="pf-log-entry__head">
-        <span class="pf-log-entry__ts">${escHTML2(formatTs(entry.ts))}</span>
-        <span class="pf-log-entry__surface">${escHTML2(entry.surface)}</span>
-        <span class="${kindClass(entry.kind)}">${escHTML2(kindLabel(entry.kind))}</span>
+        <span class="pf-log-entry__ts">${escHTML3(formatTs(entry.ts))}</span>
+        <span class="pf-log-entry__surface">${escHTML3(entry.surface)}</span>
+        <span class="${kindClass(entry.kind)}">${escHTML3(kindLabel(entry.kind))}</span>
       </header>
-      <h4 class="pf-log-entry__summary">${escHTML2(entry.summary)}</h4>
+      <h4 class="pf-log-entry__summary">${escHTML3(entry.summary)}</h4>
       ${detailHTML}
     </article>
   `;
@@ -7254,9 +7516,9 @@
     }
     return `
     <div class="pf-build-card">
-      <div class="pf-build-card__ts">${escHTML2(formatTs(lastBuild.ts))}</div>
-      <h3 class="pf-build-card__summary">${escHTML2(lastBuild.summary)}</h3>
-      ${lastBuild.detail !== void 0 ? `<pre class="pf-build-card__detail">${escHTML2(lastBuild.detail)}</pre>` : ""}
+      <div class="pf-build-card__ts">${escHTML3(formatTs(lastBuild.ts))}</div>
+      <h3 class="pf-build-card__summary">${escHTML3(lastBuild.summary)}</h3>
+      ${lastBuild.detail !== void 0 ? `<pre class="pf-build-card__detail">${escHTML3(lastBuild.detail)}</pre>` : ""}
     </div>
   `;
   }
@@ -7269,7 +7531,7 @@
     }
     return renderBuildTab();
   }
-  function renderShell(tab, totalEntries) {
+  function renderShell2(tab, totalEntries) {
     return `
     <div class="pf-panel" role="dialog" aria-label="Profile">
       <header class="pf-panel__head">
@@ -7344,10 +7606,10 @@
       cipherInterval2 = null;
     }
   }
-  function mount2(container) {
+  function mount3(container) {
     let tab = "log";
     const render = () => {
-      container.innerHTML = renderShell(tab, getEntries().length);
+      container.innerHTML = renderShell2(tab, getEntries().length);
     };
     const onClick = (ev) => {
       const target = ev.target;
@@ -7401,7 +7663,7 @@
     { name: "HYDRA DNA COLLAGEN", contribution: 0, heat: "sm", reason: "Logged 2026-06-15 \xB7 skin & connective tissue goal \xB7 pending cost/timing decision." },
     { name: "OPTIVIDA HEMP EXTRACT", contribution: 0, heat: "sm", reason: "Deferred \u2014 overlap with sleep stack already; revisit once sleep goal closes." }
   ];
-  function escHTML3(s) {
+  function escHTML4(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -7431,7 +7693,7 @@
   function renderSlot(slot) {
     if (slot.empty === true) {
       return `
-      <article class="slot-card empty" data-slot-id="${escHTML3(slot.id)}">
+      <article class="slot-card empty" data-slot-id="${escHTML4(slot.id)}">
         <div class="slot-card__empty-mark">+</div>
         <div class="slot-card__empty-label">EMPTY SLOT</div>
       </article>
@@ -7442,13 +7704,13 @@
     const serialPrefix = slot.active === true ? "\u25CF " : "";
     const serialSuffix = slot.active === true ? " \xB7 ACTIVE" : "";
     return `
-    <article class="slot-card${activeClass}" data-slot-id="${escHTML3(slot.id)}" data-slot-num="${escHTML3(slot.num)}">
+    <article class="slot-card${activeClass}" data-slot-id="${escHTML4(slot.id)}" data-slot-num="${escHTML4(slot.num)}">
       ${scanLine}
-      <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML3(slot.serial)}</span>${serialSuffix}</div>
-      <div class="slot-card__num">${escHTML3(slot.num)}</div>
-      <h3 class="slot-card__name">${escHTML3(slot.name)}</h3>
+      <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML4(slot.serial)}</span>${serialSuffix}</div>
+      <div class="slot-card__num">${escHTML4(slot.num)}</div>
+      <h3 class="slot-card__name">${escHTML4(slot.name)}</h3>
       <div class="slot-card__items">${slot.items} items \xB7 <span class="slot-card__coverage">${slot.coverage}</span>/${slot.total}</div>
-      <div class="slot-card__stamp">${escHTML3(slot.stamp)}</div>
+      <div class="slot-card__stamp">${escHTML4(slot.stamp)}</div>
     </article>
   `;
   }
@@ -7485,9 +7747,9 @@
     const scaling = amount * freq;
     return `
     <div class="regimen-item-row" data-item-id="${item.id}">
-      <div class="regimen-item-row__icon">${escHTML3(icon)}</div>
+      <div class="regimen-item-row__icon">${escHTML4(icon)}</div>
       <div class="regimen-item-row__body">
-        <h4 class="regimen-item-row__name">${escHTML3(name)}</h4>
+        <h4 class="regimen-item-row__name">${escHTML4(name)}</h4>
         <div class="regimen-item-row__contrib">
           <span class="regimen-item-row__contrib-label">CONTRIBUTES \xB7 ${contrib}</span>
           ${pips}
@@ -7550,13 +7812,13 @@
     return `
     <div class="rec-item">
       <div class="rec-item__head">
-        <h4 class="rec-item__name">${escHTML3(item.name)}</h4>
-        <span class="rec-item__tag" data-heat="${escHTML3(item.heat)}"><span class="rec-item__tag-sign">${escHTML3(sign)}</span>${escHTML3(tagText)}</span>
+        <h4 class="rec-item__name">${escHTML4(item.name)}</h4>
+        <span class="rec-item__tag" data-heat="${escHTML4(item.heat)}"><span class="rec-item__tag-sign">${escHTML4(sign)}</span>${escHTML4(tagText)}</span>
       </div>
-      <div class="rec-item__reason">${escHTML3(item.reason)}</div>
+      <div class="rec-item__reason">${escHTML4(item.reason)}</div>
       <div class="rec-item__actions">
-        <button class="rec-item__adopt" data-rg-action="adopt" data-item-name="${escHTML3(item.name)}">+ ADOPT</button>
-        <button class="rec-item__details" data-rg-action="details" data-item-name="${escHTML3(item.name)}">DETAILS</button>
+        <button class="rec-item__adopt" data-rg-action="adopt" data-item-name="${escHTML4(item.name)}">+ ADOPT</button>
+        <button class="rec-item__details" data-rg-action="details" data-item-name="${escHTML4(item.name)}">DETAILS</button>
       </div>
     </div>
   `;
@@ -7767,7 +8029,7 @@
   }
   function renderAddRow() {
     const names = [...readVault().values()].map((p) => p.canonical_name ?? p.name).filter((n) => typeof n === "string").sort((a, b) => a.localeCompare(b));
-    const options = names.map((n) => `<option value="${escHTML3(n)}"></option>`).join("");
+    const options = names.map((n) => `<option value="${escHTML4(n)}"></option>`).join("");
     return `
     <section class="active-slot rg-add-panel">
       <div class="search-wrap">
@@ -7781,7 +8043,7 @@
     </section>
   `;
   }
-  function mount3(container) {
+  function mount4(container) {
     let pickerOpen = false;
     const render = () => {
       const items = loadEffectiveRegimen();
@@ -7859,7 +8121,7 @@
   }
 
   // assets/js/src/views/scanner.ts
-  function escHTML4(s) {
+  function escHTML5(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -7904,19 +8166,19 @@
     const servings = label.servings === void 0 ? "\u2014 \xB7 \u2014 servings" : String(label.servings);
     const nutrientRows = (label.nutrients ?? []).slice(0, 8).map((n) => `
     <div class="scan-label__row">
-      <span>${escHTML4(n.name)}</span>
-      <span>${escHTML4(n.amount ?? "")}${escHTML4(n.unit ?? "")}</span>
+      <span>${escHTML5(n.name)}</span>
+      <span>${escHTML5(n.amount ?? "")}${escHTML5(n.unit ?? "")}</span>
       <span>\u2014</span>
     </div>
   `).join("");
     return `
     <div class="scan-canvas scan-canvas--active">
       <div class="scan-label">
-        <div class="scan-label__brand">${escHTML4(brand)}</div>
-        <div class="scan-label__product">${escHTML4(product)}</div>
+        <div class="scan-label__brand">${escHTML5(brand)}</div>
+        <div class="scan-label__product">${escHTML5(product)}</div>
         <div class="scan-label__rule"></div>
         <h4 class="scan-label__section-title">Supplement Facts</h4>
-        <div class="scan-label__serving">Serving Size \xB7 ${escHTML4(servings)}</div>
+        <div class="scan-label__serving">Serving Size \xB7 ${escHTML5(servings)}</div>
         <div class="scan-label__rows">${nutrientRows}</div>
         <span class="ocr-bracket ocr-bracket--brand"></span>
         <span class="ocr-bracket ocr-bracket--product"></span>
@@ -7936,7 +8198,7 @@
     <span>\xB7</span>
     <span>${regionCount} REGIONS</span>
     <span>\xB7</span>
-    <span>CONFIDENCE <strong>${escHTML4(confidence)}</strong></span>
+    <span>CONFIDENCE <strong>${escHTML5(confidence)}</strong></span>
   ` : `
     <span>CAPTURE <strong class="ds-cipher" data-cipher-set="hexa">SC\xB7----</strong></span>
     <span>\xB7</span>
@@ -7998,9 +8260,9 @@
       return `
       <div class="stage stage--${s.status}">
         <div class="stage__dot">${dotChar}</div>
-        <div class="stage__name">${escHTML4(s.name)}</div>
-        <div class="stage__sub">${escHTML4(s.sub)}</div>
-        <div class="stage__ms">${s.status === "active" ? `<span class="ds-cipher" data-cipher-set="alphanum">${escHTML4(s.ms)}</span>` : escHTML4(s.ms)}</div>
+        <div class="stage__name">${escHTML5(s.name)}</div>
+        <div class="stage__sub">${escHTML5(s.sub)}</div>
+        <div class="stage__ms">${s.status === "active" ? `<span class="ds-cipher" data-cipher-set="alphanum">${escHTML5(s.ms)}</span>` : escHTML5(s.ms)}</div>
       </div>
     `;
     }).join("");
@@ -8012,7 +8274,7 @@
           <div class="pipeline__eyebrow">PIPELINE \xB7 <span class="ds-cipher" data-cipher-set="hexa">PL\xB724A7</span> \xB7 4 STAGES</div>
           <h2 class="pipeline__title">Extract \xB7 Parse \xB7 Match \xB7 Verdict</h2>
         </div>
-        <div class="pipeline__total">TOTAL ELAPSED <strong>${escHTML4(total)}</strong> \xB7 target &lt;5s</div>
+        <div class="pipeline__total">TOTAL ELAPSED <strong>${escHTML5(total)}</strong> \xB7 target &lt;5s</div>
       </header>
       <div class="pipeline__stages">${stagesHTML}</div>
     </section>
@@ -8023,17 +8285,17 @@
     const adoptLabel = row.status === "warn" ? "CONFIRM" : row.status === "err" ? "DISMISS" : "ADOPT";
     const adoptClass = row.status === "err" ? "parsed-row__btn" : "parsed-row__btn parsed-row__btn--adopt";
     const mappedClass = row.status === "err" ? "parsed-row__mapped parsed-row__mapped--none" : "parsed-row__mapped";
-    const tagSignHTML = row.tag.sign !== void 0 ? `<span class="parsed-row__tag-sign">${escHTML4(row.tag.sign)}</span>` : "";
+    const tagSignHTML = row.tag.sign !== void 0 ? `<span class="parsed-row__tag-sign">${escHTML5(row.tag.sign)}</span>` : "";
     return `
     <div class="parsed-row parsed-row--${row.status}">
       <div class="parsed-row__status">${statusChar}</div>
       <div class="parsed-row__body">
-        <span class="parsed-row__raw">"${escHTML4(row.raw)}"</span>
-        <h4 class="parsed-row__name">${escHTML4(row.name)}</h4>
+        <span class="parsed-row__raw">"${escHTML5(row.raw)}"</span>
+        <h4 class="parsed-row__name">${escHTML5(row.name)}</h4>
       </div>
-      <span class="${mappedClass}">\u2192 ${escHTML4(row.mapped)}</span>
-      <span class="parsed-row__confidence">${escHTML4(row.confidence)} <small>conf</small></span>
-      <span class="parsed-row__tag" data-heat="${escHTML4(row.tag.heat)}">${tagSignHTML}${escHTML4(row.tag.text)}</span>
+      <span class="${mappedClass}">\u2192 ${escHTML5(row.mapped)}</span>
+      <span class="parsed-row__confidence">${escHTML5(row.confidence)} <small>conf</small></span>
+      <span class="parsed-row__tag" data-heat="${escHTML5(row.tag.heat)}">${tagSignHTML}${escHTML5(row.tag.text)}</span>
       <div class="parsed-row__actions">
         <button class="parsed-row__btn" data-sc-action="details">DETAILS</button>
         <button class="${adoptClass}" data-sc-action="${row.status === "err" ? "dismiss" : "adopt"}">${adoptLabel}</button>
@@ -8139,10 +8401,10 @@
     return `
     <div class="scan-history-item" data-sc-action="reopen" data-scan-id="${entry.id}">
       <div class="scan-history-item__body">
-        <h4 class="scan-history-item__name">${escHTML4(name)}</h4>
-        <span class="scan-history-item__ts">${escHTML4(entry.ts.slice(0, 16))}</span>
+        <h4 class="scan-history-item__name">${escHTML5(name)}</h4>
+        <span class="scan-history-item__ts">${escHTML5(entry.ts.slice(0, 16))}</span>
       </div>
-      <span class="${pillClass}">${escHTML4(verdictText)}</span>
+      <span class="${pillClass}">${escHTML5(verdictText)}</span>
     </div>
   `;
   }
@@ -8241,7 +8503,7 @@
     };
     saveRgManual([...loadRgManual(), item]);
   }
-  function mount4(container) {
+  function mount5(container) {
     let state = "idle";
     const currentResult = () => {
       const w = window;
@@ -8404,7 +8666,9 @@
       btn.classList.toggle("active", btn.getAttribute("data-rail-nav") === target);
     }
   }
+  var knowledgeDrawer = null;
   function navigateTo(target) {
+    knowledgeDrawer?.close();
     activateRailItem(target);
     emit("rail:navigate", { target });
     hideAllNewMounts();
@@ -8428,7 +8692,7 @@
       }
       mountEl.style.display = "block";
       if (mounted.regimen === void 0) {
-        mounted.regimen = mount3(mountEl);
+        mounted.regimen = mount4(mountEl);
       }
       return;
     }
@@ -8440,7 +8704,7 @@
       }
       mountEl.style.display = "block";
       if (mounted.scanner === void 0) {
-        mounted.scanner = mount4(mountEl);
+        mounted.scanner = mount5(mountEl);
       }
       return;
     }
@@ -8454,9 +8718,44 @@
       }
       btn.addEventListener("click", (ev) => {
         ev.preventDefault();
+        if (target === "knowledge") {
+          toggleKnowledgeDrawer();
+          return;
+        }
         navigateTo(target);
       });
     }
+  }
+  function mountKnowledgeDrawer() {
+    const el = document.getElementById("drawer-knowledge-mount");
+    if (el === null) {
+      return;
+    }
+    knowledgeDrawer = mount2(el);
+  }
+  function toggleKnowledgeDrawer() {
+    if (knowledgeDrawer === null) {
+      return;
+    }
+    knowledgeDrawer.toggle();
+    const btn = document.querySelector('.rail__item[data-rail-nav="knowledge"]');
+    if (btn !== null) {
+      btn.classList.toggle("active", knowledgeDrawer.isOpen());
+    }
+  }
+  function wireKnowledgeKeys() {
+    document.addEventListener("keydown", (ev) => {
+      if (ev.key === "Escape" && knowledgeDrawer !== null && knowledgeDrawer.isOpen()) {
+        toggleKnowledgeDrawer();
+        return;
+      }
+      const t = ev.target;
+      const typing = t !== null && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable);
+      if ((ev.key === "k" || ev.key === "K") && !typing && !ev.metaKey && !ev.ctrlKey && !ev.altKey) {
+        ev.preventDefault();
+        toggleKnowledgeDrawer();
+      }
+    });
   }
   var profileHandle = null;
   var profileOverlay = null;
@@ -8484,7 +8783,7 @@
     overlay.addEventListener("pf:close", () => hideProfilePanel());
     document.body.appendChild(overlay);
     profileOverlay = overlay;
-    profileHandle = mount2(overlay);
+    profileHandle = mount3(overlay);
   }
   function wireProfileChip() {
     const chip = document.querySelector(".rail__profile");
@@ -8516,6 +8815,8 @@
     }
     wireRail();
     wireProfileChip();
+    mountKnowledgeDrawer();
+    wireKnowledgeKeys();
     setTimeout(() => navigateTo("coverage"), 0);
   }
   if (document.readyState === "loading") {
