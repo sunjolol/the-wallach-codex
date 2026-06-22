@@ -77,8 +77,6 @@ Top-level folders, one line each:
   and the active build plan.
 - **`.claude/`** — Claude Code settings + the enforcement-hook wiring
   (`settings.json`).
-- **`brain/`** — *retired.* The pre-redesign system; its good content was ported
-  to `chronicle/` / `eden/` / `knowledge/`. **Scheduled for deletion in Phase 1.**
 - **`tacitus/`** — the historical audit/integrity layer, now a standalone repo
   (`the-tacitus-system`). **Scheduled for excision from this repo in Phase 1.**
 
