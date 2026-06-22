@@ -33,3 +33,11 @@ export const RegimenNutrientSchema = z.object({
   unit: z.string().optional(),
 }).passthrough();
 export type RegimenNutrient = z.infer<typeof RegimenNutrientSchema>;
+
+/** A product-vault entry (`regimen-label-lookup`) as the add-item picker needs it. The vault keys its display name as `canonical_name`. */
+export const RegimenVaultEntrySchema = z.object({
+  canonical_name: z.string().optional(),
+  name: z.string().optional(),
+  nutrients: z.array(z.unknown()).optional(),
+}).passthrough();
+export type RegimenVaultEntry = z.infer<typeof RegimenVaultEntrySchema>;

@@ -20,14 +20,21 @@
  */
 
 import { on } from '../core/events.js';
+import {
+  ProductsLookupSchema,
+  type RegimenVaultEntry,
+  RegimenVaultEntrySchema,
+} from '../core/schemas/index.js';
 import { getOrCompute } from '../state/coverage.js';
 import {
   loadEffectiveRegimen,
+  loadRgManual,
   loadRgOverrides,
   loadRgRemoved,
   loadRgUserGoals,
   type OverridesMap,
   type RegimenItem,
+  saveRgManual,
   saveRgOverride,
   saveRgRemoved,
 } from '../state/regimen.js';
@@ -396,16 +403,6 @@ function handleAction(action: string, target: HTMLElement): void {
         }
       }
       break;
-    case 'add-item':
-      if (typeof w.showAddItemModal === 'function') {
-        try {
-          w.showAddItemModal();
-        }
-        catch (e) {
-          console.warn('[views/regimen] showAddItemModal threw:', e);
-        }
-      }
-      break;
     case 'export':
       if (typeof w.exportRegimen === 'function') {
         try {
@@ -476,9 +473,88 @@ function handleDoseEdit(input: HTMLInputElement): void {
   saveRgOverride(id, { dose_amount: amount, dose_freq: freq, scaling_factor: amount * freq });
 }
 
+// ─── Add-item picker (vault → saveRgManual) ───────────────────────────────
+
+let cachedVault: Map<string, RegimenVaultEntry> | null = null;
+
+/** Read + Zod-validate the embedded product vault (`regimen-label-lookup`), keyed by lowercased name. */
+function readVault(): Map<string, RegimenVaultEntry> {
+  if (cachedVault !== null) {
+    return cachedVault;
+  }
+  const m = new Map<string, RegimenVaultEntry>();
+  const el = typeof document === 'undefined' ? null : document.getElementById('regimen-label-lookup');
+  if (el !== null) {
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(el.textContent ?? '{}');
+    }
+    catch {
+      parsed = {};
+    }
+    let root: unknown = parsed;
+    if (parsed !== null && typeof parsed === 'object' && 'products' in parsed) {
+      root = parsed.products;
+    }
+    const rec = ProductsLookupSchema.safeParse(root);
+    if (rec.success) {
+      for (const value of Object.values(rec.data)) {
+        const candidates = Array.isArray(value) ? value : [value];
+        for (const candidate of candidates) {
+          const r = RegimenVaultEntrySchema.safeParse(candidate);
+          const nm = r.success ? r.data.canonical_name ?? r.data.name : undefined;
+          if (typeof nm === 'string' && nm.length > 0 && r.success) {
+            m.set(nm.toLowerCase(), r.data);
+          }
+        }
+      }
+    }
+  }
+  cachedVault = m;
+  return m;
+}
+
+/** Build a RegimenItem from a vault product (matched by name) and persist via §31 saveRgManual. */
+function addItem(rawName: string): void {
+  const product = readVault().get(rawName.trim().toLowerCase());
+  if (product === undefined) {
+    return;
+  }
+  const item: RegimenItem = {
+    id: Date.now(),
+    label: { name: product.canonical_name ?? product.name ?? rawName, nutrients: product.nutrients ?? [] },
+    addedDate: new Date().toISOString().slice(0, 10),
+    provenance: 'user_manual',
+  };
+  saveRgManual([...loadRgManual(), item]);
+}
+
+/** The inline add-item panel: a vault-autocomplete search (native datalist) + add/cancel. */
+function renderAddRow(): string {
+  const names = [...readVault().values()]
+    .map(p => p.canonical_name ?? p.name)
+    .filter((n): n is string => typeof n === 'string')
+    .sort((a, b) => a.localeCompare(b));
+  const options = names.map(n => `<option value="${escHTML(n)}"></option>`).join('');
+  return `
+    <section class="active-slot rg-add-panel">
+      <div class="search-wrap">
+        <input class="search-input" type="text" list="rg-product-options" data-rg-add-input placeholder="Search the product vault…" autocomplete="off" />
+        <datalist id="rg-product-options">${options}</datalist>
+      </div>
+      <div class="active-slot__actions">
+        <button class="cart-action cart-action--primary" data-rg-action="add-confirm"><span class="cart-action__glyph">+</span>ADD TO STACK</button>
+        <button class="cart-action" data-rg-action="add-cancel">CANCEL</button>
+      </div>
+    </section>
+  `;
+}
+
 // ─── Mount ────────────────────────────────────────────────────────────────
 
 export function mount(container: HTMLElement): MountHandle {
+  let pickerOpen = false;
+
   const render = (): void => {
     // The active slot reflects the effective stack (HBSP base + committed +
     // manual − removed) and the live coverage count from the one snapshot.
@@ -490,6 +566,7 @@ export function mount(container: HTMLElement): MountHandle {
         <div class="regimen-main">
           ${renderSlotsShowcase()}
           ${renderActiveSlot(items, coverageCount, overrides)}
+          ${pickerOpen ? renderAddRow() : ''}
         </div>
         ${renderRail()}
       </div>
@@ -502,10 +579,33 @@ export function mount(container: HTMLElement): MountHandle {
       return;
     }
     const actionEl = target.closest<HTMLElement>('[data-rg-action]');
-    if (actionEl !== null) {
-      const action = actionEl.dataset['rgAction'] ?? '';
-      handleAction(action, actionEl);
+    if (actionEl === null) {
+      return;
     }
+    const action = actionEl.dataset['rgAction'] ?? '';
+    if (action === 'add-item') {
+      pickerOpen = !pickerOpen;
+      render();
+      if (pickerOpen) {
+        container.querySelector<HTMLInputElement>('[data-rg-add-input]')?.focus();
+      }
+      return;
+    }
+    if (action === 'add-cancel') {
+      pickerOpen = false;
+      render();
+      return;
+    }
+    if (action === 'add-confirm') {
+      const input = container.querySelector<HTMLInputElement>('[data-rg-add-input]');
+      if (input !== null) {
+        addItem(input.value);
+      }
+      pickerOpen = false;
+      render();
+      return;
+    }
+    handleAction(action, actionEl);
   };
 
   const changeHandler = (ev: Event): void => {

@@ -4204,6 +4204,11 @@
     amount: external_exports.coerce.number(),
     unit: external_exports.string().optional()
   }).passthrough();
+  var RegimenVaultEntrySchema = external_exports.object({
+    canonical_name: external_exports.string().optional(),
+    name: external_exports.string().optional(),
+    nutrients: external_exports.array(external_exports.unknown()).optional()
+  }).passthrough();
 
   // assets/js/src/core/schemas/knowledge.ts
   var EssentialSchema = external_exports.object({
@@ -4663,6 +4668,11 @@
     set(RG_OVERRIDES_KEY, all);
     fireLegacyTrigger(`saveRgOverride:${id}`);
     emit("regimen:changed", { slotId: RG_OVERRIDES_KEY, reason: "dose-edit" });
+  }
+  function saveRgManual(items) {
+    set(RG_MANUAL_KEY, items);
+    fireLegacyTrigger("saveRgManual");
+    emit("regimen:changed", { slotId: RG_MANUAL_KEY, reason: "add" });
   }
   function saveRgRemoved(setOfIds) {
     set(RG_REMOVED_KEY, [...setOfIds]);
@@ -5919,15 +5929,6 @@
           }
         }
         break;
-      case "add-item":
-        if (typeof w.showAddItemModal === "function") {
-          try {
-            w.showAddItemModal();
-          } catch (e) {
-            console.warn("[views/regimen] showAddItemModal threw:", e);
-          }
-        }
-        break;
       case "export":
         if (typeof w.exportRegimen === "function") {
           try {
@@ -5983,7 +5984,72 @@
     const freq = readDose(row.querySelector('[data-rg-dose="freq"]')?.value);
     saveRgOverride(id, { dose_amount: amount, dose_freq: freq, scaling_factor: amount * freq });
   }
+  var cachedVault = null;
+  function readVault() {
+    if (cachedVault !== null) {
+      return cachedVault;
+    }
+    const m = /* @__PURE__ */ new Map();
+    const el = typeof document === "undefined" ? null : document.getElementById("regimen-label-lookup");
+    if (el !== null) {
+      let parsed;
+      try {
+        parsed = JSON.parse(el.textContent ?? "{}");
+      } catch {
+        parsed = {};
+      }
+      let root = parsed;
+      if (parsed !== null && typeof parsed === "object" && "products" in parsed) {
+        root = parsed.products;
+      }
+      const rec = ProductsLookupSchema.safeParse(root);
+      if (rec.success) {
+        for (const value of Object.values(rec.data)) {
+          const candidates = Array.isArray(value) ? value : [value];
+          for (const candidate of candidates) {
+            const r = RegimenVaultEntrySchema.safeParse(candidate);
+            const nm = r.success ? r.data.canonical_name ?? r.data.name : void 0;
+            if (typeof nm === "string" && nm.length > 0 && r.success) {
+              m.set(nm.toLowerCase(), r.data);
+            }
+          }
+        }
+      }
+    }
+    cachedVault = m;
+    return m;
+  }
+  function addItem(rawName) {
+    const product = readVault().get(rawName.trim().toLowerCase());
+    if (product === void 0) {
+      return;
+    }
+    const item = {
+      id: Date.now(),
+      label: { name: product.canonical_name ?? product.name ?? rawName, nutrients: product.nutrients ?? [] },
+      addedDate: (/* @__PURE__ */ new Date()).toISOString().slice(0, 10),
+      provenance: "user_manual"
+    };
+    saveRgManual([...loadRgManual(), item]);
+  }
+  function renderAddRow() {
+    const names = [...readVault().values()].map((p) => p.canonical_name ?? p.name).filter((n) => typeof n === "string").sort((a, b) => a.localeCompare(b));
+    const options = names.map((n) => `<option value="${escHTML3(n)}"></option>`).join("");
+    return `
+    <section class="active-slot rg-add-panel">
+      <div class="search-wrap">
+        <input class="search-input" type="text" list="rg-product-options" data-rg-add-input placeholder="Search the product vault\u2026" autocomplete="off" />
+        <datalist id="rg-product-options">${options}</datalist>
+      </div>
+      <div class="active-slot__actions">
+        <button class="cart-action cart-action--primary" data-rg-action="add-confirm"><span class="cart-action__glyph">+</span>ADD TO STACK</button>
+        <button class="cart-action" data-rg-action="add-cancel">CANCEL</button>
+      </div>
+    </section>
+  `;
+  }
   function mount3(container) {
+    let pickerOpen = false;
     const render = () => {
       const items = loadEffectiveRegimen();
       const coverageCount = getOrCompute().coveredCount;
@@ -5993,6 +6059,7 @@
         <div class="regimen-main">
           ${renderSlotsShowcase()}
           ${renderActiveSlot(items, coverageCount, overrides)}
+          ${pickerOpen ? renderAddRow() : ""}
         </div>
         ${renderRail2()}
       </div>
@@ -6004,10 +6071,33 @@
         return;
       }
       const actionEl = target.closest("[data-rg-action]");
-      if (actionEl !== null) {
-        const action = actionEl.dataset["rgAction"] ?? "";
-        handleAction(action, actionEl);
+      if (actionEl === null) {
+        return;
       }
+      const action = actionEl.dataset["rgAction"] ?? "";
+      if (action === "add-item") {
+        pickerOpen = !pickerOpen;
+        render();
+        if (pickerOpen) {
+          container.querySelector("[data-rg-add-input]")?.focus();
+        }
+        return;
+      }
+      if (action === "add-cancel") {
+        pickerOpen = false;
+        render();
+        return;
+      }
+      if (action === "add-confirm") {
+        const input = container.querySelector("[data-rg-add-input]");
+        if (input !== null) {
+          addItem(input.value);
+        }
+        pickerOpen = false;
+        render();
+        return;
+      }
+      handleAction(action, actionEl);
     };
     const changeHandler = (ev) => {
       const target = ev.target;
