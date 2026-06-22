@@ -80,10 +80,18 @@ Wire the parsed-row / verdict-card adopt action so a scanned product enters the 
 
 ---
 
+## GitHub — keep the work logged (connected 2026-06-22)
+This project is now mirrored to GitHub: `origin` = https://github.com/sunjolol/the-wallach-codex (**PRIVATE**, branch `master`; auth via the machine's Git Credential Manager — no token needed). The app's official name is **The Wallach Codex** (internal systems keep theirs: Eden, Tacitus, Cura, Aegis). The full history through the README commit is pushed. **After each chunk's commit, also push** so the work stays mirrored for Luneth to review/learn from:
+```
+git -C "C:/Users/Light/Desktop/claude/health expert" push
+```
+NOTE: the repo holds ~95MB of copyrighted Wallach book PDFs (`knowledge/wallach-books/`) — fine while PRIVATE; do NOT flip the repo public without stripping those from history first.
+
 ## First commands of the next session
+
 ```
 PYTHONUTF8=1 python tools/invariants.py | tail -1                       # expect 58/61 (3 date-gated Tacitus reds)
-git -C "C:/Users/Light/Desktop/claude/health expert" log --oneline -6   # expect HEAD = f516f4e
+git -C "C:/Users/Light/Desktop/claude/health expert" log --oneline -6   # expect HEAD = 87fb167 (README) or later
 node tools/build.mjs                                                     # expect Build OK
 node tools/render_probe.js                                              # coveredStat ~20, /92, 0 errors
 node tools/render_probe_seeded.js                                       # PASS
