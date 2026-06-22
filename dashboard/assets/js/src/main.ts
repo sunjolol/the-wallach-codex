@@ -136,6 +136,19 @@ function navigateTo(target: WorkspaceTarget): void {
     return;
   }
 
+  if (target === 'scanner') {
+    hideLegacy();
+    const mountEl = document.getElementById('workspace-scanner-mount');
+    if (mountEl === null) {
+      return;
+    }
+    mountEl.style.display = 'block';
+    if (mounted.scanner === undefined) {
+      mounted.scanner = scannerView.mount(mountEl);
+    }
+    return;
+  }
+
   // Other workspaces fall back to legacy until their round lands.
   showLegacy(target);
 }
