@@ -432,6 +432,55 @@ export function getOrCompute(): CoverageSnapshot {
   return cachedSnapshot ?? recompute();
 }
 
+// ─── Shared accessors for the scanner verdict engine (Chunk 6b) ────────────
+
+let cachedTargets: Essential[] | null = null;
+let cachedByName: Map<string, Essential> | null = null;
+
+function ensureTargets(): void {
+  if (cachedTargets === null) {
+    cachedTargets = readTargets();
+    cachedByName = buildByName(cachedTargets);
+  }
+}
+
+/** The Wallach targets DB (cached). Shared with state/scanner.ts. */
+export function getTargets(): Essential[] {
+  ensureTargets();
+  return cachedTargets ?? [];
+}
+
+/**
+ * Match a nutrient/label name to its essential via the SAME matcher the live
+ * classifier uses — so the scanner's gap-fill math lines up with the Coverage
+ * surface (one matcher, no drift).
+ */
+export function matchEssential(name: string): Essential | null {
+  ensureTargets();
+  if (cachedTargets === null || cachedByName === null) {
+    return null;
+  }
+  return matchToEssential(name, cachedTargets, cachedByName);
+}
+
+/**
+ * Per-essential delivery (mg + IU) from the current EFFECTIVE regimen — the
+ * same accumulation the snapshot is built from. The scanner subtracts this from
+ * each Wallach target to compute how much a scanned product still fills.
+ */
+export function currentDelivery(): Map<string, { totalMg: number; totalIU: number }> {
+  ensureTargets();
+  if (cachedTargets === null || cachedByName === null) {
+    return new Map();
+  }
+  const full = accumulate(loadEffectiveRegimen(), loadRgOverrides(), cachedTargets, cachedByName);
+  const out = new Map<string, { totalMg: number; totalIU: number }>();
+  for (const [k, v] of full) {
+    out.set(k, { totalMg: v.totalMg, totalIU: v.totalIU });
+  }
+  return out;
+}
+
 // ─── Wire to regimen changes ───────────────────────────────────────────────
 
 let wireInstalled = false;

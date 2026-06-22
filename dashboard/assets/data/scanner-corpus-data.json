@@ -1,0 +1,640 @@
+{
+  "dietaryBaseline": {
+    "Calcium": {
+      "amount": 110,
+      "unit": "mg"
+    },
+    "Copper": {
+      "amount": 0.4,
+      "unit": "mg"
+    },
+    "Iodine": {
+      "amount": 121,
+      "unit": "mcg"
+    },
+    "Iron": {
+      "amount": 1.6,
+      "unit": "mg"
+    },
+    "Magnesium": {
+      "amount": 85,
+      "unit": "mg"
+    },
+    "Manganese": {
+      "amount": 0.5,
+      "unit": "mg"
+    },
+    "Phosphorus": {
+      "amount": 727,
+      "unit": "mg"
+    },
+    "Potassium": {
+      "amount": 108,
+      "unit": "mg"
+    },
+    "Selenium": {
+      "amount": 81.2,
+      "unit": "mcg"
+    },
+    "Sodium": {
+      "amount": 1275,
+      "unit": "mg"
+    },
+    "Zinc": {
+      "amount": 4,
+      "unit": "mg"
+    },
+    "Vitamin A (Retinol / beta-carotene)": {
+      "amount": 130,
+      "unit": "mcg"
+    },
+    "Vitamin B2 (Riboflavin)": {
+      "amount": 0.4,
+      "unit": "mg"
+    },
+    "Vitamin B3 (Niacin)": {
+      "amount": 17,
+      "unit": "mg"
+    },
+    "Vitamin B5 (Pantothenic Acid)": {
+      "amount": 2.4,
+      "unit": "mg"
+    },
+    "Vitamin B6 (Pyridoxine)": {
+      "amount": 1.2,
+      "unit": "mg"
+    },
+    "Vitamin B12 (Cobalamin)": {
+      "amount": 4.2,
+      "unit": "mcg"
+    },
+    "Vitamin C (Ascorbic Acid)": {
+      "amount": 67.5,
+      "unit": "mg"
+    },
+    "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)": {
+      "amount": 681,
+      "unit": "iu"
+    },
+    "Vitamin K (Menaquinone = K2)": {
+      "amount": 9,
+      "unit": "mcg"
+    },
+    "Biotin": {
+      "amount": 10,
+      "unit": "mcg"
+    },
+    "Choline": {
+      "amount": 147,
+      "unit": "mg"
+    },
+    "Folic Acid (Folate)": {
+      "amount": 24,
+      "unit": "mcg"
+    },
+    "Omega-3 (alpha-linolenic + EPA/DHA in marine form)": {
+      "amount": 1000,
+      "unit": "mg"
+    },
+    "Omega-6 (linoleic + GLA)": {
+      "amount": 1000,
+      "unit": "mg"
+    },
+    "Omega-9 (Arachidonic / Oleic)": {
+      "amount": 1000,
+      "unit": "mg"
+    }
+  },
+  "goalKeywords": {
+    "cognition": [
+      "cogniti",
+      "memory",
+      "focus",
+      "brain",
+      "neuro",
+      "mental",
+      "alzheimer",
+      "dementia",
+      "lecithin",
+      "choline",
+      "phosphatidyl",
+      "nerve",
+      "synaptic",
+      "myelin",
+      "mood"
+    ],
+    "hormones_strength": [
+      "testosterone",
+      "hormone",
+      "libido",
+      "strength",
+      "muscle",
+      "androgen",
+      "estrogen",
+      "boron",
+      "tribulus",
+      "anabolic",
+      "vitality",
+      "sexual"
+    ],
+    "longevity_anti_aging": [
+      "aging",
+      "longevity",
+      "anti-aging",
+      "youthful",
+      "lifespan",
+      "telomere",
+      "rejuven",
+      "centenarian"
+    ],
+    "joints_collagen": [
+      "joint",
+      "cartilage",
+      "collagen",
+      "msm",
+      "glucosamine",
+      "chondroitin",
+      "arthritis",
+      "flexibility",
+      "mobility",
+      "tendon",
+      "ligament"
+    ],
+    "energy_metabolism": [
+      "energy",
+      "metabolism",
+      "fatigue",
+      "stamina",
+      "endurance",
+      "atp",
+      "mitochondri",
+      "co-q10",
+      "coq10",
+      "b-complex",
+      "b vitamin"
+    ],
+    "immunity": [
+      "immun",
+      "infection",
+      "antiviral",
+      "antimicrobial",
+      "lymph",
+      "thymus"
+    ],
+    "gut_digestion": [
+      "digesti",
+      "gut",
+      "probiotic",
+      "enzyme",
+      "stomach",
+      "intestin",
+      "betaine",
+      "hcl",
+      "microbiome",
+      "bowel",
+      "colon"
+    ],
+    "cardiovascular": [
+      "cardiovasc",
+      "heart",
+      "blood pressure",
+      "cholesterol",
+      "circulation",
+      "artery",
+      "stroke"
+    ],
+    "bone_skeletal": [
+      "bone",
+      "osteoporosis",
+      "skeletal",
+      "spine",
+      "fracture",
+      "vertebr"
+    ],
+    "thyroid_endocrine": [
+      "thyroid",
+      "adrenal",
+      "endocrine",
+      "cortisol"
+    ],
+    "skin_hair_nails": [
+      "skin",
+      "hair",
+      "nail",
+      "wrinkle",
+      "biotin",
+      "silica"
+    ],
+    "blood_sugar": [
+      "blood sugar",
+      "glucose",
+      "diabet",
+      "insulin",
+      "glycemic"
+    ],
+    "sleep_stress": [
+      "sleep",
+      "insomnia",
+      "stress",
+      "relax",
+      "anxiety",
+      "calm",
+      "melatonin"
+    ],
+    "hydration_electrolyte": [
+      "hydrat",
+      "electrolyte",
+      "sparkling beverage"
+    ]
+  },
+  "nutrientToGoalMap": {
+    "cognition": [
+      {
+        "nutrient": "Choline",
+        "why": "Wallach: 4 g/day clinical for memory / focus; primary cognitive substrate."
+      },
+      {
+        "nutrient": "Lecithin",
+        "why": "Wallach: dietary choline carrier; supports myelin / synaptic function."
+      },
+      {
+        "nutrient": "Chromium",
+        "why": "Wallach: cognition pairs with vanadium; blood-sugar stability underwrites focus."
+      },
+      {
+        "nutrient": "Vanadium",
+        "why": "Wallach: paired with Cr for cognition + blood-sugar stability."
+      },
+      {
+        "nutrient": "Zinc",
+        "why": "Wallach: cognition cofactor; supports neurotransmitter synthesis."
+      },
+      {
+        "nutrient": "Copper",
+        "why": "Wallach: cognitive cofactor; required for catecholamine synthesis."
+      },
+      {
+        "nutrient": "DHA",
+        "why": "Wallach: essential fatty acid for brain membrane integrity."
+      },
+      {
+        "nutrient": "Omega-3",
+        "why": "Wallach: EFA family; EPA+DHA support brain + nerve health."
+      },
+      {
+        "nutrient": "Vitamin E",
+        "why": "Wallach: neuronal cellular membrane integrity."
+      },
+      {
+        "nutrient": "Vitamin B1 (Thiamine)",
+        "why": "Wallach: nerve health; B-complex anchor for cognition."
+      },
+      {
+        "nutrient": "Vitamin B6 (Pyridoxine)",
+        "why": "Wallach: cognition / mood; B-complex anchor."
+      },
+      {
+        "nutrient": "Vitamin B12 (Cobalamin)",
+        "why": "Wallach: nerve / methylation; B-complex anchor for cognition."
+      },
+      {
+        "nutrient": "Taurine",
+        "why": "Wallach: cognition / nerve support."
+      }
+    ],
+    "hormones_strength": [
+      {
+        "nutrient": "Zinc",
+        "why": "Wallach: 45-150 mg/day for testosterone protocol; T-supporting cofactor."
+      },
+      {
+        "nutrient": "Boron",
+        "why": "Wallach: ≥1 mg clinical for hormonal balance; T-supporting."
+      },
+      {
+        "nutrient": "Vitamin A",
+        "why": "Wallach: hormonal support; beta-carotene form preferred."
+      },
+      {
+        "nutrient": "Vitamin E",
+        "why": "Wallach: hormone synthesis cofactor."
+      },
+      {
+        "nutrient": "Selenium",
+        "why": "Wallach: hormone-supporting cofactor."
+      },
+      {
+        "nutrient": "Omega-3",
+        "why": "Wallach: hormonal support via EFA pathway."
+      }
+    ],
+    "longevity_anti_aging": [
+      {
+        "nutrient": "Selenium",
+        "why": "Wallach: longevity-supporting mineral; aligned with hair-mineral baseline."
+      },
+      {
+        "nutrient": "Zinc",
+        "why": "Wallach: cellular repair / longevity cofactor."
+      },
+      {
+        "nutrient": "Vitamin E",
+        "why": "Wallach: antioxidant pathway for longevity."
+      }
+    ],
+    "joints_collagen": [
+      {
+        "nutrient": "Collagen",
+        "why": "Joint substrate; framework-adjacent (Wallach silent on collagen specifically)."
+      },
+      {
+        "nutrient": "Collagen Peptides",
+        "why": "Joint substrate; framework-adjacent — supports cartilage / tendon."
+      },
+      {
+        "nutrient": "Vitamin C",
+        "why": "Wallach: collagen synthesis cofactor (ascorbate-dependent)."
+      },
+      {
+        "nutrient": "Copper",
+        "why": "Wallach: collagen + elastin cross-linking; aneurysm-prevention cofactor."
+      },
+      {
+        "nutrient": "Manganese",
+        "why": "Wallach: bone / connective tissue cofactor."
+      },
+      {
+        "nutrient": "Boron",
+        "why": "Wallach: joint / bone supporting cofactor."
+      }
+    ],
+    "energy_metabolism": [
+      {
+        "nutrient": "Vitamin B1 (Thiamine)",
+        "why": "Wallach: carbohydrate utilization for energy."
+      },
+      {
+        "nutrient": "Vitamin B2 (Riboflavin)",
+        "why": "Wallach: cellular energy production."
+      },
+      {
+        "nutrient": "Vitamin B3 (Niacin)",
+        "why": "Wallach: NAD+ pathway; ATP production."
+      },
+      {
+        "nutrient": "Vitamin B5 (Pantothenic Acid)",
+        "why": "Wallach: CoA synthesis; energy substrate."
+      },
+      {
+        "nutrient": "Iron",
+        "why": "Wallach: hemoglobin / oxygen transport for energy."
+      },
+      {
+        "nutrient": "Magnesium",
+        "why": "Wallach: ATP cofactor."
+      }
+    ],
+    "immunity": [
+      {
+        "nutrient": "Zinc",
+        "why": "Wallach: immune cofactor."
+      },
+      {
+        "nutrient": "Vitamin C",
+        "why": "Wallach: 10,000 mg/day clinical; immune anchor."
+      },
+      {
+        "nutrient": "Selenium",
+        "why": "Wallach: antiviral / immune support."
+      },
+      {
+        "nutrient": "Vitamin A",
+        "why": "Wallach: epithelial / immune support; beta-carotene form preferred."
+      }
+    ],
+    "gut_digestion": [
+      {
+        "nutrient": "Fiber",
+        "why": "Substrate for gut microbiome; not a Wallach 90-essential but tracked."
+      },
+      {
+        "nutrient": "Dietary Fiber",
+        "why": "Substrate for gut microbiome; not a Wallach 90-essential but tracked."
+      }
+    ],
+    "cardiovascular": [
+      {
+        "nutrient": "Copper",
+        "why": "Wallach: elastin / vascular integrity; aneurysm-prevention cofactor."
+      },
+      {
+        "nutrient": "Magnesium",
+        "why": "Wallach: vascular / heart-rhythm cofactor."
+      },
+      {
+        "nutrient": "Omega-3",
+        "why": "Wallach: vascular EFA support."
+      },
+      {
+        "nutrient": "Selenium",
+        "why": "Wallach: vascular / heart cofactor (Keshan disease region)."
+      }
+    ],
+    "bone_skeletal": [
+      {
+        "nutrient": "Calcium",
+        "why": "Wallach: 2,000-5,000 mg/day clinical; bone foundation."
+      },
+      {
+        "nutrient": "Magnesium",
+        "why": "Wallach: 1,000 mg/day; bone matrix cofactor; Ca:Mg ratio."
+      },
+      {
+        "nutrient": "Boron",
+        "why": "Wallach: ≥1 mg clinical; bone density / Ca utilization."
+      },
+      {
+        "nutrient": "Vitamin D",
+        "why": "Wallach: 1,000 IU/day baseline; Ca absorption."
+      },
+      {
+        "nutrient": "Vitamin K",
+        "why": "Wallach: bone matrix; K2 form preferred."
+      },
+      {
+        "nutrient": "Phosphorus",
+        "why": "Wallach: bone mineral matrix."
+      }
+    ],
+    "thyroid_endocrine": [
+      {
+        "nutrient": "Iodine",
+        "why": "Wallach: 150-1,500 mcg/day; thyroid foundation."
+      },
+      {
+        "nutrient": "Selenium",
+        "why": "Wallach: 500-3,000 mcg/day; T4→T3 conversion cofactor."
+      },
+      {
+        "nutrient": "Vitamin B12 (Cobalamin)",
+        "why": "Wallach: B12 + thyroid support pair; methylation."
+      }
+    ],
+    "skin_hair_nails": [
+      {
+        "nutrient": "Biotin",
+        "why": "Wallach: hair / nail cofactor."
+      },
+      {
+        "nutrient": "Collagen",
+        "why": "Skin substrate; framework-adjacent."
+      },
+      {
+        "nutrient": "Collagen Peptides",
+        "why": "Skin substrate; framework-adjacent."
+      },
+      {
+        "nutrient": "Vitamin C",
+        "why": "Wallach: skin collagen synthesis cofactor."
+      }
+    ],
+    "blood_sugar": [
+      {
+        "nutrient": "Chromium",
+        "why": "Wallach: 200-500 mcg/day; insulin sensitivity cofactor."
+      },
+      {
+        "nutrient": "Vanadium",
+        "why": "Wallach: paired with Cr for blood-sugar stability."
+      },
+      {
+        "nutrient": "Magnesium",
+        "why": "Wallach: insulin signaling cofactor."
+      }
+    ],
+    "hydration_electrolyte": [
+      {
+        "nutrient": "Sodium",
+        "why": "Wallach: 300-3,000 mg/day; electrolyte baseline."
+      },
+      {
+        "nutrient": "Potassium",
+        "why": "Wallach: 5,500 mg/day; counter-balance to sodium."
+      },
+      {
+        "nutrient": "Magnesium",
+        "why": "Wallach: electrolyte / muscle relaxation."
+      },
+      {
+        "nutrient": "Calcium",
+        "why": "Wallach: electrolyte / muscle function."
+      }
+    ],
+    "sleep_stress": [
+      {
+        "nutrient": "Magnesium",
+        "why": "Wallach: relaxation / sleep cofactor."
+      },
+      {
+        "nutrient": "Calcium",
+        "why": "Wallach: pairs with Mg for relaxation."
+      }
+    ]
+  },
+  "goalDisplayNames": {
+    "cognition": "Cognition",
+    "hormones_strength": "Hormones / strength",
+    "longevity_anti_aging": "Longevity / anti-aging",
+    "joints_collagen": "Joints / collagen",
+    "energy_metabolism": "Energy / metabolism",
+    "immunity": "Immunity",
+    "gut_digestion": "Gut / digestion",
+    "cardiovascular": "Cardiovascular",
+    "bone_skeletal": "Bone / skeletal",
+    "thyroid_endocrine": "Thyroid / endocrine",
+    "skin_hair_nails": "Skin / hair / nails",
+    "blood_sugar": "Blood sugar",
+    "sleep_stress": "Sleep / stress",
+    "hydration_electrolyte": "Hydration / electrolyte",
+    "essential_baseline": "Essential baseline",
+    "detox_cleanse": "Detox / cleanse",
+    "prostate_urinary": "Prostate / urinary",
+    "weight_management": "Weight management",
+    "eye_vision": "Eye / vision"
+  },
+  "antiList": {
+    "fried oils / seed oils": [
+      "canola oil",
+      "soybean oil",
+      "vegetable oil",
+      "sunflower oil",
+      "safflower oil",
+      "corn oil",
+      "cottonseed oil",
+      "rapeseed oil",
+      "hydrogenated"
+    ],
+    "added sugar": [
+      "high fructose corn syrup",
+      "corn syrup",
+      "cane sugar",
+      "evaporated cane juice",
+      "dextrose",
+      "maltodextrin"
+    ],
+    "artificial sweeteners": [
+      "sucralose",
+      "aspartame",
+      "acesulfame",
+      "saccharin",
+      "neotame"
+    ],
+    "caffeine": [
+      "caffeine",
+      "yerba mate",
+      "guarana",
+      "kola nut"
+    ],
+    "gluten sources": [
+      "wheat",
+      "barley",
+      "rye",
+      "malt",
+      "spelt",
+      "oats",
+      "oat",
+      "oatmeal",
+      "oat flour",
+      "oat syrup",
+      "oat groats",
+      "oat bran"
+    ],
+    "msg / glutamate": [
+      "monosodium glutamate",
+      "yeast extract",
+      "hydrolyzed protein"
+    ]
+  },
+  "antiListNotes": {
+    "fried oils / seed oils": "Wallach: 'if it has oil in name, don't use it' — broad rule against industrial seed oils due to omega-6 oxidation. High-oleic variants (sunflower/safflower/canola bred for >80% oleic acid) are framework-adjacent — significantly more stable than standard, but the broad rule still applies.",
+    "added sugar": "Wallach-direct: sugar raises urinary chromium loss 300% for 12 hours (Rare Earths Cr entry). Severity scales with daily exposure; low-dose trace use is bounded harm.",
+    "artificial sweeteners": "Wallach acknowledges sucralose as acceptable (Hell's Kitchen). Aspartame and acesulfame are mainstream-controversial — framework-adjacent. Stevia is Wallach-friendly.",
+    "caffeine": "Wallach-direct: caffeine raises urinary Cr loss for ~12 hrs per dose. Not anti-coffee absolute, but flag for Cr cofactor balance.",
+    "gluten sources": "Wallach-direct on actual gluten proteins: wheat / barley / rye / malt / spelt — these always flag serious regardless of marketing. Oats flag by default (commercial supply chains carry cross-contamination risk). Operational rule: if ANY oat ingredient in the label is declared 'gluten-free' — in either word order ('gluten free oats' or 'oats (gluten free)') — ALL oat-derivatives in that product are presumed GF, because a brand certifying one oat ingredient operates in a GF-aware supply chain across the rest. A 'gluten-free' claim attached to a NON-oat ingredient (e.g., 'gluten-free pasta') does NOT certify oats. Hard gluten proteins appearing elsewhere still flag independently — no shutoff trick. Buckwheat is a pseudocereal, gluten-free despite the name.",
+    "msg / glutamate": "Wallach: free glutamate is a neurotoxin concern. Common hidden sources: yeast extract, hydrolyzed protein."
+  },
+  "hardRejectTerms": [
+    "high fructose corn syrup",
+    "corn syrup",
+    "hydrogenated",
+    "monosodium glutamate",
+    "aspartame",
+    "acesulfame"
+  ],
+  "seriousAnti": [
+    "fried oils / seed oils",
+    "added sugar",
+    "gluten sources",
+    "msg / glutamate"
+  ]
+}

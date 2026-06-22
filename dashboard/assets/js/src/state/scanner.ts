@@ -1,17 +1,44 @@
 /**
- * state/scanner.ts — scan history + OCR pipeline bridge
+ * state/scanner.ts — scan history + native OCR/verdict pipeline
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * Bridges to the legacy scan engine (window.lcScan + Tesseract pipeline) and
- * exposes a typed read API for views/scanner.ts. The OCR + parse + verdict
- * pipeline lives in legacy-dashboard.js — re-implementing it would risk
- * doctrine drift in scoring. Round 4 wraps; future rounds can replace.
+ * Owns the Scanner surface's state: the scan-history FIFO + the native scoring
+ * engine (Chunk 6b). The OCR → parse → verdict pipeline used to live in
+ * legacy-dashboard.js (window.lcScan), but the page no longer loads legacy, so
+ * the math lives here now — a faithful port. Every NUMBER + every doctrine
+ * string still comes from Luneth's corpus (scanner-corpus-data.json, migrated
+ * verbatim) and the Wallach targets DB; §00.A holds, nothing is invented.
+ *
+ * Pipeline (scan):
+ *   alignmentScore (form-alignment tally) · gapFillFor (per-nutrient gap-fill %
+ *   vs the EFFECTIVE coverage the Coverage surface shows — same matcher +
+ *   delivery, so the two surfaces line up) · matchGoals (keyword + meaningful-
+ *   nutrient goal inclusion) · antiFlags (anti-list with gluten/oat/high-oleic
+ *   nuance) · decideVerdict (ADD/SAVE/REJECT ladder).
+ *
+ * gapFill's "current" = the assumed dietary baseline (corpus.dietaryBaseline,
+ * verbatim) + the live regimen delivery from state/coverage.currentDelivery() —
+ * i.e. legacy getEffectiveCoverage with the dead window.computeLiveCoverage
+ * swapped for the migrated regimen state.
+ *
+ * Deliberate deviations from the legacy runtime (documented for Luneth's
+ * end-pass): (1) matchGoals reads ess.target.low (the Round-99 shape) — legacy
+ * matchGoalsRich read the pre-shape ess.low (then undefined → pctOfTarget never
+ * fired), so goal-matching here actually evaluates nutrient meaningfulness;
+ * (2) container conflicts are inert (OCR labels carry no container metadata);
+ * (3) the Eden-severance guard is omitted (scanned product labels are never
+ * Eden corpus items by construction).
  *
  * LS keys:
- *   'lcRecentScans_v1' — scan history (FIFO list, dedup by label.name)
+ *   'lcRecentScans_v1' — scan history (FIFO list, dedup by label.name, ≤5)
  *
- * §00 Zod boundary: getHistory() reads through `getValidated` against
- * HistoryShapeSchema; bad LS data → empty array, never enters typed-land.
+ * §00 Zod boundary: getHistory() reads through getValidated against
+ * HistoryShapeSchema; writes go through setValidated. Bad LS data → empty
+ * array, never enters typed-land.
+ *
+ * The bridge: window.lcScan = scan (legacy-style callers + the regimen adopt
+ * path + headless probes route through the native engine); window.lcLastResult
+ * holds the most recent UI scan for views/scanner.ts.
  *
  * Legacy verdicts (preserved verbatim):
  *   'ADD'    — strong fit, recommend adopting into regimen
@@ -20,18 +47,32 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
+import scanCorpusData from '../../../data/scanner-corpus-data.json';
 import { emit } from '../core/events.js';
 import {
   type Alignment,
+  type CoverageTarget,
+  CoverageTargetSchema,
+  type Essential,
   type GapFill,
   type HistoryEntry,
   HistoryShapeSchema,
+  type ScanCorpus,
+  ScanCorpusSchema,
   type ScanLabel,
   type Verdict,
 } from '../core/schemas/index.js';
-import { getValidated } from '../core/storage.js';
+import { getValidated, setValidated } from '../core/storage.js';
+import {
+  currentDelivery,
+  getTargets,
+  matchEssential,
+} from './coverage.js';
 
 export const RECENT_SCANS_KEY = 'lcRecentScans_v1';
+
+/** Faithful to legacy MAX_RECENT — the history is capped at 5 entries. */
+const MAX_RECENT = 5;
 
 // ─── Re-export inferred types so callers can import from @state/scanner ───
 export type { Alignment, GapFill, HistoryEntry, ScanLabel, Verdict };
@@ -41,7 +82,20 @@ export type { Alignment, GapFill, HistoryEntry, ScanLabel, Verdict };
 export interface AntiFlag {
   category: string;
   severity: 'hard' | 'serious' | 'softened' | 'mild';
-  term?: string;
+  terms?: string[];
+  nuance?: string;
+  softened?: boolean;
+}
+
+interface Conflict {
+  rule: string;
+  severity: string;
+  framing?: string;
+}
+
+interface Reason {
+  label: string;
+  items?: string[];
 }
 
 export interface ScanResult {
@@ -50,12 +104,38 @@ export interface ScanResult {
   gapFills: GapFill[];
   goals: string[];
   anti: AntiFlag[];
-  conflicts?: unknown;
+  conflicts?: Conflict[];
   verdict: Verdict;
-  reasonsFor: Array<{ label: string; items?: string[] }>;
-  reasonsAgainst: Array<{ label: string; items?: string[] }>;
+  reasonsFor: Reason[];
+  reasonsAgainst: Reason[];
   sparseNutrients?: boolean;
   sparseIngredients?: boolean;
+}
+
+type ScanNutrient = NonNullable<ScanLabel['nutrients']>[number];
+
+interface Norm {
+  family: 'mass_mcg' | 'iu';
+  value: number;
+}
+
+type EffectiveCov = Record<string, { amount: number; unit: string }>;
+
+interface LegacyWindow extends Window {
+  lcScan?: (label: ScanLabel, opts?: { logToRecent?: boolean }) => ScanResult;
+  lcLastResult?: ScanResult;
+}
+
+// ─── Corpus load (esbuild JSON import + Zod, cached) ────────────────────────
+
+let cachedCorpus: ScanCorpus | null = null;
+
+/** The Wallach scan corpus, validated once at the Zod boundary then cached. */
+function loadScanCorpus(): ScanCorpus {
+  if (cachedCorpus === null) {
+    cachedCorpus = ScanCorpusSchema.parse(scanCorpusData);
+  }
+  return cachedCorpus;
 }
 
 // ─── Read API — Zod-validated boundary ────────────────────────────────────
@@ -69,32 +149,462 @@ export function getLastScan(): HistoryEntry | null {
   return getHistory()[0] ?? null;
 }
 
-// ─── Scan bridge ───────────────────────────────────────────────────────────
+let lastResult: ScanResult | null = null;
 
-interface LegacyWindow extends Window {
-  lcScan?: (label: ScanLabel, opts?: { logToRecent?: boolean }) => ScanResult;
+/** The most recent scan result (in-memory) — views/scanner.ts renders from this. */
+export function getLastResult(): ScanResult | null {
+  return lastResult;
+}
+
+// ─── Unit math (legacy normalize / formatAmt / unitConv ports) ─────────────
+
+/** Normalize an amount to a comparison family: mass→mcg base, IU→iu. */
+function normalize(amount: number, unit: string | undefined): Norm | null {
+  if (typeof amount !== 'number' || Number.isNaN(amount)) {
+    return null;
+  }
+  const u = (unit ?? '').toLowerCase().trim();
+  if (u === 'mcg') {
+    return { family: 'mass_mcg', value: amount };
+  }
+  if (u === 'mg') {
+    return { family: 'mass_mcg', value: amount * 1000 };
+  }
+  if (u === 'g') {
+    return { family: 'mass_mcg', value: amount * 1000000 };
+  }
+  if (u === 'iu') {
+    return { family: 'iu', value: amount };
+  }
+  return null;
+}
+
+/** Convert a value between mass units / IU. Returns null for incompatible pairs. */
+function unitConv(value: number, fromUnit: string | undefined, toUnit: string | undefined): number | null {
+  const f = (fromUnit ?? '').toLowerCase();
+  const tu = (toUnit ?? '').toLowerCase();
+  if (f === tu) {
+    return value;
+  }
+  if (f === 'iu' || tu === 'iu') {
+    return null;
+  }
+  let mg: number;
+  if (f === 'mg') {
+    mg = value;
+  }
+  else if (f === 'mcg') {
+    mg = value / 1000;
+  }
+  else if (f === 'g') {
+    mg = value * 1000;
+  }
+  else {
+    return null;
+  }
+  if (tu === 'mg') {
+    return mg;
+  }
+  if (tu === 'mcg') {
+    return mg * 1000;
+  }
+  if (tu === 'g') {
+    return mg / 1000;
+  }
+  return null;
+}
+
+/** Word-boundary keyword match — prevents "buckwheat" matching "wheat". */
+function matchKeyword(text: string, kw: string): boolean {
+  const escaped = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(`\\b${escaped}\\b`, 'i').test(text);
+}
+
+/** Narrow an essential's loosely-typed target to the fields the engine reads. */
+function essTarget(ess: Essential): CoverageTarget | null {
+  const r = CoverageTargetSchema.safeParse(ess.target);
+  return r.success ? r.data : null;
+}
+
+// ─── Alignment ──────────────────────────────────────────────────────────────
+
+/** Tally per-nutrient form alignment into a 0..2 score (legacy alignmentScore). */
+function alignmentScore(nutrients: ScanNutrient[]): Alignment {
+  let a = 0;
+  let p = 0;
+  let m = 0;
+  let u = 0;
+  for (const n of nutrients) {
+    const raw = (n as Record<string, unknown>)['form_alignment'];
+    const al = typeof raw === 'string' ? raw : 'unknown';
+    if (al === 'aligned') {
+      a += 1;
+    }
+    else if (al === 'partial') {
+      p += 1;
+    }
+    else if (al === 'misaligned') {
+      m += 1;
+    }
+    else {
+      u += 1;
+    }
+  }
+  const total = a + p + m + u;
+  const score = total ? Math.round(((a * 2 + p - m) / total) * 100) / 100 : 0;
+  return { score, aligned: a, total, misaligned: m };
+}
+
+// ─── Gap-fill ────────────────────────────────────────────────────────────────
+
+/** Effective current coverage = dietary baseline (verbatim) + live regimen delivery. */
+function getEffectiveCoverage(): EffectiveCov {
+  const corpus = loadScanCorpus();
+  const targets = getTargets();
+  const live = currentDelivery();
+
+  const dbByTargetName: EffectiveCov = {};
+  for (const [dbKey, dbEntry] of Object.entries(corpus.dietaryBaseline)) {
+    const matched = matchEssential(dbKey);
+    if (matched !== null) {
+      dbByTargetName[matched.name] = { amount: dbEntry.amount, unit: dbEntry.unit };
+    }
+  }
+
+  const base: EffectiveCov = {};
+  for (const t of targets) {
+    const tgt = essTarget(t);
+    if (tgt === null || tgt.low === undefined || tgt.low === null) {
+      continue;
+    }
+    const targetUnit = (tgt.unit ?? 'mg').toLowerCase();
+    let amount = 0;
+    const dbEntry = dbByTargetName[t.name];
+    if (dbEntry !== undefined) {
+      const conv = unitConv(dbEntry.amount, dbEntry.unit, targetUnit);
+      if (conv !== null) {
+        amount += conv;
+      }
+    }
+    const liveEntry = live.get(t.name);
+    if (liveEntry !== undefined) {
+      if (targetUnit === 'iu') {
+        amount += liveEntry.totalIU;
+      }
+      else {
+        const conv = unitConv(liveEntry.totalMg, 'mg', targetUnit);
+        if (conv !== null) {
+          amount += conv;
+        }
+      }
+    }
+    if (amount > 0) {
+      base[t.name] = { amount: Math.round(amount * 100) / 100, unit: targetUnit };
+    }
+  }
+  return base;
+}
+
+/** Per-nutrient gap-fill %: how much this nutrient closes of the remaining gap. */
+function gapFillFor(n: ScanNutrient, dailyServings: number, effectiveCov: EffectiveCov): GapFill | null {
+  const ess = matchEssential(n.name);
+  if (ess === null) {
+    return null;
+  }
+  const tgt = essTarget(ess);
+  if (tgt === null || tgt.low === undefined || tgt.low === null) {
+    return null;
+  }
+  const norm = normalize(Number(n.amount), n.unit);
+  if (norm === null) {
+    return null;
+  }
+  const targetNorm = normalize(tgt.low, tgt.unit);
+  if (targetNorm === null || norm.family !== targetNorm.family) {
+    return null;
+  }
+  const addedPerDay = norm.value * dailyServings;
+  const cov = effectiveCov[ess.name];
+  const curr = cov !== undefined ? (normalize(cov.amount, cov.unit)?.value ?? 0) : 0;
+  const gap = Math.max(0, targetNorm.value - curr);
+  const pct = targetNorm.value > 0 ? Math.round(1000 * Math.min(addedPerDay, gap) / targetNorm.value) / 10 : 0;
+  return {
+    essential: ess.name,
+    gapFillPct: pct,
+    amountClaimed: addedPerDay,
+    unit: norm.family === 'iu' ? 'iu' : 'mcg',
+  };
+}
+
+// ─── Goal matching ───────────────────────────────────────────────────────────
+
+/** Goals the product serves — strong keyword OR a meaningful (≥10% target) nutrient. */
+function matchGoals(label: ScanLabel, corpus: ScanCorpus): string[] {
+  const nameTxt = `${label.name ?? ''} ${label.brand ?? ''}`.toLowerCase();
+  const labelNutrients: ScanNutrient[] = label.nutrients ?? [];
+  const dailyServings = Number.parseFloat(String(label.servings)) || 1;
+  const MEANINGFUL_PCT = 10;
+
+  const stats: Record<string, { pct: number | null; has: boolean }> = {};
+  for (const ln of labelNutrients) {
+    const key = (ln.name ?? '').toLowerCase().trim();
+    const ess = matchEssential(ln.name);
+    let pct: number | null = null;
+    if (ess !== null) {
+      const tgt = essTarget(ess);
+      const norm = normalize(Number(ln.amount), ln.unit);
+      const targetNorm = tgt !== null && tgt.low !== undefined && tgt.low !== null
+        ? normalize(tgt.low, tgt.unit)
+        : null;
+      if (norm !== null && targetNorm !== null && norm.family === targetNorm.family && targetNorm.value > 0) {
+        pct = Math.round(1000 * (norm.value * dailyServings) / targetNorm.value) / 10;
+      }
+    }
+    stats[key] = { pct, has: ess !== null };
+  }
+
+  const goals: string[] = [];
+  for (const [goal, kws] of Object.entries(corpus.goalKeywords)) {
+    const strong = kws.filter(kw => nameTxt.includes(kw));
+    const goalNutMap = corpus.nutrientToGoalMap[goal] ?? [];
+    const seen = new Set<string>();
+    const matched: Array<{ pct: number | null; has: boolean }> = [];
+    for (const gn of goalNutMap) {
+      const b = gn.nutrient.toLowerCase().trim();
+      const hit = labelNutrients.find((ln) => {
+        const a = (ln.name ?? '').toLowerCase().trim();
+        return a === b || a.includes(b) || b.includes(a);
+      });
+      if (hit !== undefined && !seen.has(b)) {
+        seen.add(b);
+        const key = (hit.name ?? '').toLowerCase().trim();
+        matched.push(stats[key] ?? { pct: null, has: false });
+      }
+    }
+    const meaningful = matched.filter(s => (s.has ? (s.pct !== null && s.pct >= MEANINGFUL_PCT) : strong.length > 0));
+    if (strong.length > 0 || meaningful.length > 0) {
+      goals.push(goal);
+    }
+  }
+  return goals;
+}
+
+// ─── Anti-list flags (legacy antiFlags port, nuance preserved) ─────────────
+
+const HARD_GLUTEN = new Set(['wheat', 'barley', 'rye', 'malt', 'spelt']);
+const OAT_DERIVED = new Set(['oats', 'oat', 'oatmeal', 'oat flour', 'oat syrup', 'oat groats', 'oat bran']);
+
+function antiFlags(label: ScanLabel, corpus: ScanCorpus): AntiFlag[] {
+  const text = (label.ingredients ?? '').toLowerCase();
+  const hardReject = new Set(corpus.hardRejectTerms);
+  const flags: AntiFlag[] = [];
+
+  for (const [cat, kws] of Object.entries(corpus.antiList)) {
+    const hits = kws.filter(kw => matchKeyword(text, kw));
+    if (hits.length === 0) {
+      continue;
+    }
+    const flag: AntiFlag = { category: cat, terms: hits, severity: 'mild' };
+
+    if (cat === 'fried oils / seed oils') {
+      const variants = ['sunflower oil', 'safflower oil', 'canola oil'];
+      const variantHits = hits.filter(h => variants.includes(h));
+      const otherHits = hits.filter(h => !variants.includes(h));
+      if (variantHits.length > 0 && otherHits.length === 0) {
+        const isHighOleic = /high oleic[^,.]*(?:sunflower|safflower|canola)/i.test(text);
+        if (isHighOleic) {
+          flag.nuance = 'High-oleic variant detected — significantly more oxidation-stable than standard seed oil (>80% oleic acid, low omega-6). Wallach\'s broad rule still applies but severity is softened.';
+          flag.softened = true;
+        }
+      }
+    }
+
+    if (cat === 'gluten sources') {
+      const hardHits = hits.filter(h => HARD_GLUTEN.has(h));
+      const oatHits = hits.filter(h => OAT_DERIVED.has(h));
+      const oatGfPre = /gluten[-\s]+free[^,]+\b(?:oats|oat|oatmeal|oat\s+flour|oat\s+groats|oat\s+bran|oat\s+syrup)\b/i;
+      const oatGfPost = /\b(?:oats|oat|oatmeal|oat\s+flour|oat\s+groats|oat\s+bran|oat\s+syrup)\b[^,]+gluten[-\s]+free/i;
+      const hasGFOatsAnchor = oatGfPre.test(text) || oatGfPost.test(text);
+
+      if (hardHits.length > 0) {
+        flag.nuance = `Hard gluten proteins detected: ${hardHits.map(t => `"${t}"`).join(', ')}. Wallach-direct: wheat / barley / rye / malt / spelt are the actual gluten proteins. No softening — a gluten free oats declaration cannot shut off the trigger for actual gluten elsewhere on the label.`;
+      }
+      else if (oatHits.length > 0) {
+        if (hasGFOatsAnchor) {
+          flag.nuance = `Oat-anchored gluten-free declaration detected on the label. Per the operational rule: once a brand certifies ANY oat ingredient as GF, they are operating in a GF-aware supply chain across all oat ingredients in that product. All oat hits (${oatHits.map(t => `"${t}"`).join(', ')}) are presumed gluten-free. Flag softened.`;
+          flag.softened = true;
+        }
+        else {
+          flag.nuance = `Oat ingredients detected (${oatHits.map(t => `"${t}"`).join(', ')}) with no gluten free oats declaration on the label. Standard commercial oats carry real cross-contamination risk from shared supply chains. A gluten-free claim attached to a non-oat ingredient (e.g., gluten-free pasta) does NOT certify the oats. Flag stays serious until brand certifies oat GF status.`;
+        }
+      }
+    }
+
+    let severity: AntiFlag['severity'] = 'mild';
+    for (const term of hits) {
+      if (hardReject.has(term)) {
+        severity = 'hard';
+        break;
+      }
+    }
+    if (severity !== 'hard') {
+      if (corpus.seriousAnti.includes(cat) && flag.softened !== true) {
+        severity = 'serious';
+      }
+      else if (flag.softened === true) {
+        severity = 'softened';
+      }
+    }
+    flag.severity = severity;
+    flags.push(flag);
+  }
+  return flags;
+}
+
+/** Container conflicts — inert for OCR labels (no container metadata). */
+function containerFlag(): Conflict[] {
+  return [];
+}
+
+// ─── Verdict ladder (legacy decideVerdict port) ────────────────────────────
+
+function decideVerdict(
+  alignment: Alignment,
+  gapFills: GapFill[],
+  anti: AntiFlag[],
+  conflicts: Conflict[],
+  goals: string[],
+  corpus: ScanCorpus,
+): { verdict: Verdict; reasonsFor: Reason[]; reasonsAgainst: Reason[] } {
+  const reasonsFor: Reason[] = [];
+  const reasonsAgainst: Reason[] = [];
+  if (alignment.score >= 1.5) {
+    reasonsFor.push({ label: `High form alignment (${alignment.score}/2.0, ${alignment.aligned}/${alignment.total} aligned)` });
+  }
+  else if (alignment.score >= 0.5) {
+    reasonsFor.push({ label: `Moderate form alignment (${alignment.score}/2.0)` });
+  }
+  if (alignment.misaligned > 0) {
+    reasonsAgainst.push({ label: `${alignment.misaligned} misaligned form${alignment.misaligned > 1 ? 's' : ''} — non-Wallach-preferred` });
+  }
+
+  const meaningful = gapFills.filter(g => g.gapFillPct >= 10);
+  if (meaningful.length > 0) {
+    const top = [...meaningful].sort((a, b) => b.gapFillPct - a.gapFillPct).slice(0, 3);
+    reasonsFor.push({ label: 'Meaningful gap-fill', items: top.map(g => `${g.essential} (+${g.gapFillPct}%)`) });
+  }
+  else if (gapFills.length > 0) {
+    reasonsAgainst.push({ label: 'No nutrient closes >10% of a current gap' });
+  }
+  if (goals.length > 0) {
+    reasonsFor.push({
+      label: 'Goal coverage',
+      items: goals.slice(0, 4).map(g => corpus.goalDisplayNames[g] ?? g),
+    });
+  }
+
+  const hardHits = anti.filter(f => f.severity === 'hard');
+  const seriousHits = anti.filter(f => f.severity === 'serious');
+  const softHits = anti.filter(f => f.severity === 'softened' || f.severity === 'mild');
+  if (hardHits.length > 0) {
+    reasonsAgainst.push({ label: 'Hard-reject ingredients', items: hardHits.map(f => f.category) });
+  }
+  if (seriousHits.length > 0) {
+    reasonsAgainst.push({ label: 'Serious anti-list flags', items: seriousHits.map(f => f.category) });
+  }
+  if (softHits.length > 0) {
+    reasonsAgainst.push({ label: 'Mild / softened flags (nuance applied)', items: softHits.map(f => f.category) });
+  }
+  const high = conflicts.filter(c => c.severity === 'high');
+  if (high.length > 0) {
+    reasonsAgainst.push({ label: 'High-severity conflicts', items: high.map(c => c.rule) });
+  }
+
+  let verdict: Verdict;
+  if (high.length > 0 || hardHits.length > 0 || seriousHits.length >= 2) {
+    verdict = 'REJECT';
+  }
+  else if (alignment.score >= 1.0 && meaningful.length > 0 && seriousHits.length === 0) {
+    verdict = 'ADD';
+  }
+  else if (meaningful.length > 0 || alignment.score >= 0.5 || goals.length > 0 || seriousHits.length > 0 || softHits.length > 0) {
+    verdict = 'SAVE';
+  }
+  else {
+    verdict = 'REJECT';
+  }
+  return { verdict, reasonsFor, reasonsAgainst };
+}
+
+// ─── Scan orchestration + history ──────────────────────────────────────────
+
+/** Persist a scan to the FIFO history (dedup by label.name, cap MAX_RECENT). */
+function pushRecentScan(label: ScanLabel, result: ScanResult): void {
+  const shape = getValidated(RECENT_SCANS_KEY, HistoryShapeSchema) ?? { items: [] };
+  const items = shape.items.filter(i => i.label.name !== label.name);
+  items.unshift({
+    id: Date.now() + Math.floor(Math.random() * 1000),
+    ts: new Date().toISOString(),
+    label,
+    verdict: result.verdict,
+    alignment: result.alignment,
+    goals: result.goals,
+    gapFills: result.gapFills,
+  });
+  setValidated(RECENT_SCANS_KEY, { items: items.slice(0, MAX_RECENT) }, HistoryShapeSchema);
 }
 
 /**
- * Run a scan through the legacy engine. Always logs to history. Emits
- * `scanner:scan-complete` so subscribers re-render.
+ * Score a label through the native engine. logToRecent (default true) logs to
+ * history, stashes the UI result, and emits scanner:scan-complete; the regimen
+ * adopt path passes false to reuse scoring without polluting the log.
+ */
+function scan(label: ScanLabel, opts?: { logToRecent?: boolean }): ScanResult {
+  const cfg = { logToRecent: true, ...opts };
+  const corpus = loadScanCorpus();
+  const nutrients: ScanNutrient[] = label.nutrients ?? [];
+  const alignment = alignmentScore(nutrients);
+  const dailyServings = Number.parseFloat(String(label.servings)) || 1;
+  const effectiveCov = getEffectiveCoverage();
+  const gapFills = nutrients
+    .map(n => gapFillFor(n, dailyServings, effectiveCov))
+    .filter((g): g is GapFill => g !== null);
+  const goals = matchGoals(label, corpus);
+  const anti = antiFlags(label, corpus);
+  const conflicts = containerFlag();
+  const { verdict, reasonsFor, reasonsAgainst } = decideVerdict(alignment, gapFills, anti, conflicts, goals, corpus);
+  const result: ScanResult = {
+    label,
+    alignment,
+    gapFills,
+    goals,
+    anti,
+    conflicts,
+    verdict,
+    reasonsFor,
+    reasonsAgainst,
+  };
+  result.sparseNutrients = nutrients.length === 0;
+  result.sparseIngredients = (label.ingredients ?? '').trim().length === 0;
+  if (cfg.logToRecent) {
+    pushRecentScan(label, result);
+    lastResult = result;
+    (window as LegacyWindow).lcLastResult = result;
+    emit('scanner:scan-complete', { captureId: String(Date.now()), verdict: mapVerdict(verdict) });
+  }
+  return result;
+}
+
+/**
+ * Run a scan through the native engine. Always logs to history. Emits
+ * `scanner:scan-complete` so subscribers re-render. Returns null on failure.
  */
 export function runScan(label: ScanLabel): ScanResult | null {
-  const w = window as LegacyWindow;
-  if (typeof w.lcScan !== 'function') {
-    console.warn('[state/scanner] window.lcScan not available — legacy not loaded?');
-    return null;
-  }
   try {
-    const result = w.lcScan(label, { logToRecent: true });
-    emit('scanner:scan-complete', {
-      captureId: String(Date.now()),
-      verdict: mapVerdict(result.verdict),
-    });
-    return result;
+    return scan(label, { logToRecent: true });
   }
   catch (e) {
-    console.warn('[state/scanner] legacy lcScan threw:', e);
+    console.warn('[state/scanner] scan threw:', e);
     return null;
   }
 }
@@ -108,4 +618,10 @@ function mapVerdict(v: Verdict): 'aligns' | 'partial' | 'out' {
     return 'partial';
   }
   return 'out';
+}
+
+// ─── The bridge — expose the native engine for legacy-style callers + probes ──
+
+if (typeof window !== 'undefined') {
+  (window as LegacyWindow).lcScan = scan;
 }

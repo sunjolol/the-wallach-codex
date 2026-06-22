@@ -3797,7 +3797,7 @@ def _max_inline_literal_elements(src: str) -> int:
     Not a parser — a cheap backstop for the §00.B 'no inline data' rule.
     Returns the max element estimate (top-level commas + 1) found."""
     max_elems = 0
-    stack = []  # entries: [bracket_char, comma_count, dirty_since_comma]
+    stack = []  # entries: [bracket_char, comma_count, dirty_since_comma, count_this]
     in_str = None
     in_line_comment = False
     in_block_comment = False
@@ -3830,11 +3830,16 @@ def _max_inline_literal_elements(src: str) -> int:
         elif c in "[{(":
             if stack:
                 stack[-1][2] = True
-            stack.append([c, 0, False])
+            count_this = True
+            if c == "{" and not stack:
+                stmt = src[src.rfind(";", 0, i) + 1:i]
+                if re.match(r"\s*(?:import|export)\b", stmt) and "=" not in stmt:
+                    count_this = False
+            stack.append([c, 0, False, count_this])
         elif c in "]})":
             if stack:
-                ch, commas, dirty = stack.pop()
-                if ch in "[{":
+                ch, commas, dirty, count_this = stack.pop()
+                if ch in "[{" and count_this:
                     elems = commas + (1 if dirty else 0)
                     if elems > max_elems:
                         max_elems = elems

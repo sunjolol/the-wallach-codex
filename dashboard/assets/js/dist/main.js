@@ -92,6 +92,13 @@
     const result = schema.safeParse(parsed);
     return result.success ? result.data : null;
   }
+  function setValidated(key, value, schema) {
+    const result = schema.safeParse(value);
+    if (!result.success) {
+      return { ok: false, key, reason: "schema-invalid" };
+    }
+    return set(key, result.data);
+  }
   function onChange(handler) {
     installNativeListener();
     subscribers2.add(handler);
@@ -4285,6 +4292,26 @@
   var RgRemovedSchema = external_exports.array(external_exports.number());
   var RgUserGoalsSchema = external_exports.array(external_exports.string());
 
+  // assets/js/src/core/schemas/scanner-corpus.ts
+  var DietaryBaselineEntrySchema = external_exports.object({
+    amount: external_exports.number(),
+    unit: external_exports.string()
+  });
+  var NutrientGoalEntrySchema = external_exports.object({
+    nutrient: external_exports.string(),
+    why: external_exports.string()
+  });
+  var ScanCorpusSchema = external_exports.object({
+    dietaryBaseline: external_exports.record(external_exports.string(), DietaryBaselineEntrySchema),
+    goalKeywords: external_exports.record(external_exports.string(), external_exports.array(external_exports.string())),
+    nutrientToGoalMap: external_exports.record(external_exports.string(), external_exports.array(NutrientGoalEntrySchema)),
+    goalDisplayNames: external_exports.record(external_exports.string(), external_exports.string()),
+    antiList: external_exports.record(external_exports.string(), external_exports.array(external_exports.string())),
+    antiListNotes: external_exports.record(external_exports.string(), external_exports.string()),
+    hardRejectTerms: external_exports.array(external_exports.string()),
+    seriousAnti: external_exports.array(external_exports.string())
+  });
+
   // assets/js/src/core/schemas/scanner.ts
   var VerdictSchema = external_exports.enum(["ADD", "SAVE", "REJECT"]);
   var ScanLabelSchema = external_exports.object({
@@ -4932,6 +4959,37 @@
   function getOrCompute() {
     return cachedSnapshot ?? recompute();
   }
+  var cachedTargets = null;
+  var cachedByName = null;
+  function ensureTargets() {
+    if (cachedTargets === null) {
+      cachedTargets = readTargets();
+      cachedByName = buildByName(cachedTargets);
+    }
+  }
+  function getTargets() {
+    ensureTargets();
+    return cachedTargets ?? [];
+  }
+  function matchEssential(name) {
+    ensureTargets();
+    if (cachedTargets === null || cachedByName === null) {
+      return null;
+    }
+    return matchToEssential(name, cachedTargets, cachedByName);
+  }
+  function currentDelivery() {
+    ensureTargets();
+    if (cachedTargets === null || cachedByName === null) {
+      return /* @__PURE__ */ new Map();
+    }
+    const full = accumulate(loadEffectiveRegimen(), loadRgOverrides(), cachedTargets, cachedByName);
+    const out = /* @__PURE__ */ new Map();
+    for (const [k, v] of full) {
+      out.set(k, { totalMg: v.totalMg, totalIU: v.totalIU });
+    }
+    return out;
+  }
   var wireInstalled = false;
   function installRecomputeTrigger() {
     if (wireInstalled) {
@@ -4957,10 +5015,1031 @@
     }
   }
 
+  // assets/data/scanner-corpus-data.json
+  var scanner_corpus_data_default = {
+    dietaryBaseline: {
+      Calcium: {
+        amount: 110,
+        unit: "mg"
+      },
+      Copper: {
+        amount: 0.4,
+        unit: "mg"
+      },
+      Iodine: {
+        amount: 121,
+        unit: "mcg"
+      },
+      Iron: {
+        amount: 1.6,
+        unit: "mg"
+      },
+      Magnesium: {
+        amount: 85,
+        unit: "mg"
+      },
+      Manganese: {
+        amount: 0.5,
+        unit: "mg"
+      },
+      Phosphorus: {
+        amount: 727,
+        unit: "mg"
+      },
+      Potassium: {
+        amount: 108,
+        unit: "mg"
+      },
+      Selenium: {
+        amount: 81.2,
+        unit: "mcg"
+      },
+      Sodium: {
+        amount: 1275,
+        unit: "mg"
+      },
+      Zinc: {
+        amount: 4,
+        unit: "mg"
+      },
+      "Vitamin A (Retinol / beta-carotene)": {
+        amount: 130,
+        unit: "mcg"
+      },
+      "Vitamin B2 (Riboflavin)": {
+        amount: 0.4,
+        unit: "mg"
+      },
+      "Vitamin B3 (Niacin)": {
+        amount: 17,
+        unit: "mg"
+      },
+      "Vitamin B5 (Pantothenic Acid)": {
+        amount: 2.4,
+        unit: "mg"
+      },
+      "Vitamin B6 (Pyridoxine)": {
+        amount: 1.2,
+        unit: "mg"
+      },
+      "Vitamin B12 (Cobalamin)": {
+        amount: 4.2,
+        unit: "mcg"
+      },
+      "Vitamin C (Ascorbic Acid)": {
+        amount: 67.5,
+        unit: "mg"
+      },
+      "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)": {
+        amount: 681,
+        unit: "iu"
+      },
+      "Vitamin K (Menaquinone = K2)": {
+        amount: 9,
+        unit: "mcg"
+      },
+      Biotin: {
+        amount: 10,
+        unit: "mcg"
+      },
+      Choline: {
+        amount: 147,
+        unit: "mg"
+      },
+      "Folic Acid (Folate)": {
+        amount: 24,
+        unit: "mcg"
+      },
+      "Omega-3 (alpha-linolenic + EPA/DHA in marine form)": {
+        amount: 1e3,
+        unit: "mg"
+      },
+      "Omega-6 (linoleic + GLA)": {
+        amount: 1e3,
+        unit: "mg"
+      },
+      "Omega-9 (Arachidonic / Oleic)": {
+        amount: 1e3,
+        unit: "mg"
+      }
+    },
+    goalKeywords: {
+      cognition: [
+        "cogniti",
+        "memory",
+        "focus",
+        "brain",
+        "neuro",
+        "mental",
+        "alzheimer",
+        "dementia",
+        "lecithin",
+        "choline",
+        "phosphatidyl",
+        "nerve",
+        "synaptic",
+        "myelin",
+        "mood"
+      ],
+      hormones_strength: [
+        "testosterone",
+        "hormone",
+        "libido",
+        "strength",
+        "muscle",
+        "androgen",
+        "estrogen",
+        "boron",
+        "tribulus",
+        "anabolic",
+        "vitality",
+        "sexual"
+      ],
+      longevity_anti_aging: [
+        "aging",
+        "longevity",
+        "anti-aging",
+        "youthful",
+        "lifespan",
+        "telomere",
+        "rejuven",
+        "centenarian"
+      ],
+      joints_collagen: [
+        "joint",
+        "cartilage",
+        "collagen",
+        "msm",
+        "glucosamine",
+        "chondroitin",
+        "arthritis",
+        "flexibility",
+        "mobility",
+        "tendon",
+        "ligament"
+      ],
+      energy_metabolism: [
+        "energy",
+        "metabolism",
+        "fatigue",
+        "stamina",
+        "endurance",
+        "atp",
+        "mitochondri",
+        "co-q10",
+        "coq10",
+        "b-complex",
+        "b vitamin"
+      ],
+      immunity: [
+        "immun",
+        "infection",
+        "antiviral",
+        "antimicrobial",
+        "lymph",
+        "thymus"
+      ],
+      gut_digestion: [
+        "digesti",
+        "gut",
+        "probiotic",
+        "enzyme",
+        "stomach",
+        "intestin",
+        "betaine",
+        "hcl",
+        "microbiome",
+        "bowel",
+        "colon"
+      ],
+      cardiovascular: [
+        "cardiovasc",
+        "heart",
+        "blood pressure",
+        "cholesterol",
+        "circulation",
+        "artery",
+        "stroke"
+      ],
+      bone_skeletal: [
+        "bone",
+        "osteoporosis",
+        "skeletal",
+        "spine",
+        "fracture",
+        "vertebr"
+      ],
+      thyroid_endocrine: [
+        "thyroid",
+        "adrenal",
+        "endocrine",
+        "cortisol"
+      ],
+      skin_hair_nails: [
+        "skin",
+        "hair",
+        "nail",
+        "wrinkle",
+        "biotin",
+        "silica"
+      ],
+      blood_sugar: [
+        "blood sugar",
+        "glucose",
+        "diabet",
+        "insulin",
+        "glycemic"
+      ],
+      sleep_stress: [
+        "sleep",
+        "insomnia",
+        "stress",
+        "relax",
+        "anxiety",
+        "calm",
+        "melatonin"
+      ],
+      hydration_electrolyte: [
+        "hydrat",
+        "electrolyte",
+        "sparkling beverage"
+      ]
+    },
+    nutrientToGoalMap: {
+      cognition: [
+        {
+          nutrient: "Choline",
+          why: "Wallach: 4 g/day clinical for memory / focus; primary cognitive substrate."
+        },
+        {
+          nutrient: "Lecithin",
+          why: "Wallach: dietary choline carrier; supports myelin / synaptic function."
+        },
+        {
+          nutrient: "Chromium",
+          why: "Wallach: cognition pairs with vanadium; blood-sugar stability underwrites focus."
+        },
+        {
+          nutrient: "Vanadium",
+          why: "Wallach: paired with Cr for cognition + blood-sugar stability."
+        },
+        {
+          nutrient: "Zinc",
+          why: "Wallach: cognition cofactor; supports neurotransmitter synthesis."
+        },
+        {
+          nutrient: "Copper",
+          why: "Wallach: cognitive cofactor; required for catecholamine synthesis."
+        },
+        {
+          nutrient: "DHA",
+          why: "Wallach: essential fatty acid for brain membrane integrity."
+        },
+        {
+          nutrient: "Omega-3",
+          why: "Wallach: EFA family; EPA+DHA support brain + nerve health."
+        },
+        {
+          nutrient: "Vitamin E",
+          why: "Wallach: neuronal cellular membrane integrity."
+        },
+        {
+          nutrient: "Vitamin B1 (Thiamine)",
+          why: "Wallach: nerve health; B-complex anchor for cognition."
+        },
+        {
+          nutrient: "Vitamin B6 (Pyridoxine)",
+          why: "Wallach: cognition / mood; B-complex anchor."
+        },
+        {
+          nutrient: "Vitamin B12 (Cobalamin)",
+          why: "Wallach: nerve / methylation; B-complex anchor for cognition."
+        },
+        {
+          nutrient: "Taurine",
+          why: "Wallach: cognition / nerve support."
+        }
+      ],
+      hormones_strength: [
+        {
+          nutrient: "Zinc",
+          why: "Wallach: 45-150 mg/day for testosterone protocol; T-supporting cofactor."
+        },
+        {
+          nutrient: "Boron",
+          why: "Wallach: \u22651 mg clinical for hormonal balance; T-supporting."
+        },
+        {
+          nutrient: "Vitamin A",
+          why: "Wallach: hormonal support; beta-carotene form preferred."
+        },
+        {
+          nutrient: "Vitamin E",
+          why: "Wallach: hormone synthesis cofactor."
+        },
+        {
+          nutrient: "Selenium",
+          why: "Wallach: hormone-supporting cofactor."
+        },
+        {
+          nutrient: "Omega-3",
+          why: "Wallach: hormonal support via EFA pathway."
+        }
+      ],
+      longevity_anti_aging: [
+        {
+          nutrient: "Selenium",
+          why: "Wallach: longevity-supporting mineral; aligned with hair-mineral baseline."
+        },
+        {
+          nutrient: "Zinc",
+          why: "Wallach: cellular repair / longevity cofactor."
+        },
+        {
+          nutrient: "Vitamin E",
+          why: "Wallach: antioxidant pathway for longevity."
+        }
+      ],
+      joints_collagen: [
+        {
+          nutrient: "Collagen",
+          why: "Joint substrate; framework-adjacent (Wallach silent on collagen specifically)."
+        },
+        {
+          nutrient: "Collagen Peptides",
+          why: "Joint substrate; framework-adjacent \u2014 supports cartilage / tendon."
+        },
+        {
+          nutrient: "Vitamin C",
+          why: "Wallach: collagen synthesis cofactor (ascorbate-dependent)."
+        },
+        {
+          nutrient: "Copper",
+          why: "Wallach: collagen + elastin cross-linking; aneurysm-prevention cofactor."
+        },
+        {
+          nutrient: "Manganese",
+          why: "Wallach: bone / connective tissue cofactor."
+        },
+        {
+          nutrient: "Boron",
+          why: "Wallach: joint / bone supporting cofactor."
+        }
+      ],
+      energy_metabolism: [
+        {
+          nutrient: "Vitamin B1 (Thiamine)",
+          why: "Wallach: carbohydrate utilization for energy."
+        },
+        {
+          nutrient: "Vitamin B2 (Riboflavin)",
+          why: "Wallach: cellular energy production."
+        },
+        {
+          nutrient: "Vitamin B3 (Niacin)",
+          why: "Wallach: NAD+ pathway; ATP production."
+        },
+        {
+          nutrient: "Vitamin B5 (Pantothenic Acid)",
+          why: "Wallach: CoA synthesis; energy substrate."
+        },
+        {
+          nutrient: "Iron",
+          why: "Wallach: hemoglobin / oxygen transport for energy."
+        },
+        {
+          nutrient: "Magnesium",
+          why: "Wallach: ATP cofactor."
+        }
+      ],
+      immunity: [
+        {
+          nutrient: "Zinc",
+          why: "Wallach: immune cofactor."
+        },
+        {
+          nutrient: "Vitamin C",
+          why: "Wallach: 10,000 mg/day clinical; immune anchor."
+        },
+        {
+          nutrient: "Selenium",
+          why: "Wallach: antiviral / immune support."
+        },
+        {
+          nutrient: "Vitamin A",
+          why: "Wallach: epithelial / immune support; beta-carotene form preferred."
+        }
+      ],
+      gut_digestion: [
+        {
+          nutrient: "Fiber",
+          why: "Substrate for gut microbiome; not a Wallach 90-essential but tracked."
+        },
+        {
+          nutrient: "Dietary Fiber",
+          why: "Substrate for gut microbiome; not a Wallach 90-essential but tracked."
+        }
+      ],
+      cardiovascular: [
+        {
+          nutrient: "Copper",
+          why: "Wallach: elastin / vascular integrity; aneurysm-prevention cofactor."
+        },
+        {
+          nutrient: "Magnesium",
+          why: "Wallach: vascular / heart-rhythm cofactor."
+        },
+        {
+          nutrient: "Omega-3",
+          why: "Wallach: vascular EFA support."
+        },
+        {
+          nutrient: "Selenium",
+          why: "Wallach: vascular / heart cofactor (Keshan disease region)."
+        }
+      ],
+      bone_skeletal: [
+        {
+          nutrient: "Calcium",
+          why: "Wallach: 2,000-5,000 mg/day clinical; bone foundation."
+        },
+        {
+          nutrient: "Magnesium",
+          why: "Wallach: 1,000 mg/day; bone matrix cofactor; Ca:Mg ratio."
+        },
+        {
+          nutrient: "Boron",
+          why: "Wallach: \u22651 mg clinical; bone density / Ca utilization."
+        },
+        {
+          nutrient: "Vitamin D",
+          why: "Wallach: 1,000 IU/day baseline; Ca absorption."
+        },
+        {
+          nutrient: "Vitamin K",
+          why: "Wallach: bone matrix; K2 form preferred."
+        },
+        {
+          nutrient: "Phosphorus",
+          why: "Wallach: bone mineral matrix."
+        }
+      ],
+      thyroid_endocrine: [
+        {
+          nutrient: "Iodine",
+          why: "Wallach: 150-1,500 mcg/day; thyroid foundation."
+        },
+        {
+          nutrient: "Selenium",
+          why: "Wallach: 500-3,000 mcg/day; T4\u2192T3 conversion cofactor."
+        },
+        {
+          nutrient: "Vitamin B12 (Cobalamin)",
+          why: "Wallach: B12 + thyroid support pair; methylation."
+        }
+      ],
+      skin_hair_nails: [
+        {
+          nutrient: "Biotin",
+          why: "Wallach: hair / nail cofactor."
+        },
+        {
+          nutrient: "Collagen",
+          why: "Skin substrate; framework-adjacent."
+        },
+        {
+          nutrient: "Collagen Peptides",
+          why: "Skin substrate; framework-adjacent."
+        },
+        {
+          nutrient: "Vitamin C",
+          why: "Wallach: skin collagen synthesis cofactor."
+        }
+      ],
+      blood_sugar: [
+        {
+          nutrient: "Chromium",
+          why: "Wallach: 200-500 mcg/day; insulin sensitivity cofactor."
+        },
+        {
+          nutrient: "Vanadium",
+          why: "Wallach: paired with Cr for blood-sugar stability."
+        },
+        {
+          nutrient: "Magnesium",
+          why: "Wallach: insulin signaling cofactor."
+        }
+      ],
+      hydration_electrolyte: [
+        {
+          nutrient: "Sodium",
+          why: "Wallach: 300-3,000 mg/day; electrolyte baseline."
+        },
+        {
+          nutrient: "Potassium",
+          why: "Wallach: 5,500 mg/day; counter-balance to sodium."
+        },
+        {
+          nutrient: "Magnesium",
+          why: "Wallach: electrolyte / muscle relaxation."
+        },
+        {
+          nutrient: "Calcium",
+          why: "Wallach: electrolyte / muscle function."
+        }
+      ],
+      sleep_stress: [
+        {
+          nutrient: "Magnesium",
+          why: "Wallach: relaxation / sleep cofactor."
+        },
+        {
+          nutrient: "Calcium",
+          why: "Wallach: pairs with Mg for relaxation."
+        }
+      ]
+    },
+    goalDisplayNames: {
+      cognition: "Cognition",
+      hormones_strength: "Hormones / strength",
+      longevity_anti_aging: "Longevity / anti-aging",
+      joints_collagen: "Joints / collagen",
+      energy_metabolism: "Energy / metabolism",
+      immunity: "Immunity",
+      gut_digestion: "Gut / digestion",
+      cardiovascular: "Cardiovascular",
+      bone_skeletal: "Bone / skeletal",
+      thyroid_endocrine: "Thyroid / endocrine",
+      skin_hair_nails: "Skin / hair / nails",
+      blood_sugar: "Blood sugar",
+      sleep_stress: "Sleep / stress",
+      hydration_electrolyte: "Hydration / electrolyte",
+      essential_baseline: "Essential baseline",
+      detox_cleanse: "Detox / cleanse",
+      prostate_urinary: "Prostate / urinary",
+      weight_management: "Weight management",
+      eye_vision: "Eye / vision"
+    },
+    antiList: {
+      "fried oils / seed oils": [
+        "canola oil",
+        "soybean oil",
+        "vegetable oil",
+        "sunflower oil",
+        "safflower oil",
+        "corn oil",
+        "cottonseed oil",
+        "rapeseed oil",
+        "hydrogenated"
+      ],
+      "added sugar": [
+        "high fructose corn syrup",
+        "corn syrup",
+        "cane sugar",
+        "evaporated cane juice",
+        "dextrose",
+        "maltodextrin"
+      ],
+      "artificial sweeteners": [
+        "sucralose",
+        "aspartame",
+        "acesulfame",
+        "saccharin",
+        "neotame"
+      ],
+      caffeine: [
+        "caffeine",
+        "yerba mate",
+        "guarana",
+        "kola nut"
+      ],
+      "gluten sources": [
+        "wheat",
+        "barley",
+        "rye",
+        "malt",
+        "spelt",
+        "oats",
+        "oat",
+        "oatmeal",
+        "oat flour",
+        "oat syrup",
+        "oat groats",
+        "oat bran"
+      ],
+      "msg / glutamate": [
+        "monosodium glutamate",
+        "yeast extract",
+        "hydrolyzed protein"
+      ]
+    },
+    antiListNotes: {
+      "fried oils / seed oils": "Wallach: 'if it has oil in name, don't use it' \u2014 broad rule against industrial seed oils due to omega-6 oxidation. High-oleic variants (sunflower/safflower/canola bred for >80% oleic acid) are framework-adjacent \u2014 significantly more stable than standard, but the broad rule still applies.",
+      "added sugar": "Wallach-direct: sugar raises urinary chromium loss 300% for 12 hours (Rare Earths Cr entry). Severity scales with daily exposure; low-dose trace use is bounded harm.",
+      "artificial sweeteners": "Wallach acknowledges sucralose as acceptable (Hell's Kitchen). Aspartame and acesulfame are mainstream-controversial \u2014 framework-adjacent. Stevia is Wallach-friendly.",
+      caffeine: "Wallach-direct: caffeine raises urinary Cr loss for ~12 hrs per dose. Not anti-coffee absolute, but flag for Cr cofactor balance.",
+      "gluten sources": "Wallach-direct on actual gluten proteins: wheat / barley / rye / malt / spelt \u2014 these always flag serious regardless of marketing. Oats flag by default (commercial supply chains carry cross-contamination risk). Operational rule: if ANY oat ingredient in the label is declared 'gluten-free' \u2014 in either word order ('gluten free oats' or 'oats (gluten free)') \u2014 ALL oat-derivatives in that product are presumed GF, because a brand certifying one oat ingredient operates in a GF-aware supply chain across the rest. A 'gluten-free' claim attached to a NON-oat ingredient (e.g., 'gluten-free pasta') does NOT certify oats. Hard gluten proteins appearing elsewhere still flag independently \u2014 no shutoff trick. Buckwheat is a pseudocereal, gluten-free despite the name.",
+      "msg / glutamate": "Wallach: free glutamate is a neurotoxin concern. Common hidden sources: yeast extract, hydrolyzed protein."
+    },
+    hardRejectTerms: [
+      "high fructose corn syrup",
+      "corn syrup",
+      "hydrogenated",
+      "monosodium glutamate",
+      "aspartame",
+      "acesulfame"
+    ],
+    seriousAnti: [
+      "fried oils / seed oils",
+      "added sugar",
+      "gluten sources",
+      "msg / glutamate"
+    ]
+  };
+
   // assets/js/src/state/scanner.ts
   var RECENT_SCANS_KEY = "lcRecentScans_v1";
+  var MAX_RECENT = 5;
+  var cachedCorpus = null;
+  function loadScanCorpus() {
+    if (cachedCorpus === null) {
+      cachedCorpus = ScanCorpusSchema.parse(scanner_corpus_data_default);
+    }
+    return cachedCorpus;
+  }
   function getHistory() {
     return getValidated(RECENT_SCANS_KEY, HistoryShapeSchema)?.items ?? [];
+  }
+  var lastResult = null;
+  function normalize(amount, unit) {
+    if (typeof amount !== "number" || Number.isNaN(amount)) {
+      return null;
+    }
+    const u = (unit ?? "").toLowerCase().trim();
+    if (u === "mcg") {
+      return { family: "mass_mcg", value: amount };
+    }
+    if (u === "mg") {
+      return { family: "mass_mcg", value: amount * 1e3 };
+    }
+    if (u === "g") {
+      return { family: "mass_mcg", value: amount * 1e6 };
+    }
+    if (u === "iu") {
+      return { family: "iu", value: amount };
+    }
+    return null;
+  }
+  function unitConv(value, fromUnit, toUnit) {
+    const f = (fromUnit ?? "").toLowerCase();
+    const tu = (toUnit ?? "").toLowerCase();
+    if (f === tu) {
+      return value;
+    }
+    if (f === "iu" || tu === "iu") {
+      return null;
+    }
+    let mg;
+    if (f === "mg") {
+      mg = value;
+    } else if (f === "mcg") {
+      mg = value / 1e3;
+    } else if (f === "g") {
+      mg = value * 1e3;
+    } else {
+      return null;
+    }
+    if (tu === "mg") {
+      return mg;
+    }
+    if (tu === "mcg") {
+      return mg * 1e3;
+    }
+    if (tu === "g") {
+      return mg / 1e3;
+    }
+    return null;
+  }
+  function matchKeyword(text, kw) {
+    const escaped = kw.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return new RegExp(`\\b${escaped}\\b`, "i").test(text);
+  }
+  function essTarget(ess) {
+    const r = CoverageTargetSchema.safeParse(ess.target);
+    return r.success ? r.data : null;
+  }
+  function alignmentScore(nutrients) {
+    let a = 0;
+    let p = 0;
+    let m = 0;
+    let u = 0;
+    for (const n of nutrients) {
+      const raw = n["form_alignment"];
+      const al = typeof raw === "string" ? raw : "unknown";
+      if (al === "aligned") {
+        a += 1;
+      } else if (al === "partial") {
+        p += 1;
+      } else if (al === "misaligned") {
+        m += 1;
+      } else {
+        u += 1;
+      }
+    }
+    const total = a + p + m + u;
+    const score = total ? Math.round((a * 2 + p - m) / total * 100) / 100 : 0;
+    return { score, aligned: a, total, misaligned: m };
+  }
+  function getEffectiveCoverage() {
+    const corpus = loadScanCorpus();
+    const targets = getTargets();
+    const live = currentDelivery();
+    const dbByTargetName = {};
+    for (const [dbKey, dbEntry] of Object.entries(corpus.dietaryBaseline)) {
+      const matched = matchEssential(dbKey);
+      if (matched !== null) {
+        dbByTargetName[matched.name] = { amount: dbEntry.amount, unit: dbEntry.unit };
+      }
+    }
+    const base = {};
+    for (const t of targets) {
+      const tgt = essTarget(t);
+      if (tgt === null || tgt.low === void 0 || tgt.low === null) {
+        continue;
+      }
+      const targetUnit = (tgt.unit ?? "mg").toLowerCase();
+      let amount = 0;
+      const dbEntry = dbByTargetName[t.name];
+      if (dbEntry !== void 0) {
+        const conv = unitConv(dbEntry.amount, dbEntry.unit, targetUnit);
+        if (conv !== null) {
+          amount += conv;
+        }
+      }
+      const liveEntry = live.get(t.name);
+      if (liveEntry !== void 0) {
+        if (targetUnit === "iu") {
+          amount += liveEntry.totalIU;
+        } else {
+          const conv = unitConv(liveEntry.totalMg, "mg", targetUnit);
+          if (conv !== null) {
+            amount += conv;
+          }
+        }
+      }
+      if (amount > 0) {
+        base[t.name] = { amount: Math.round(amount * 100) / 100, unit: targetUnit };
+      }
+    }
+    return base;
+  }
+  function gapFillFor(n, dailyServings, effectiveCov) {
+    const ess = matchEssential(n.name);
+    if (ess === null) {
+      return null;
+    }
+    const tgt = essTarget(ess);
+    if (tgt === null || tgt.low === void 0 || tgt.low === null) {
+      return null;
+    }
+    const norm = normalize(Number(n.amount), n.unit);
+    if (norm === null) {
+      return null;
+    }
+    const targetNorm = normalize(tgt.low, tgt.unit);
+    if (targetNorm === null || norm.family !== targetNorm.family) {
+      return null;
+    }
+    const addedPerDay = norm.value * dailyServings;
+    const cov = effectiveCov[ess.name];
+    const curr = cov !== void 0 ? normalize(cov.amount, cov.unit)?.value ?? 0 : 0;
+    const gap = Math.max(0, targetNorm.value - curr);
+    const pct = targetNorm.value > 0 ? Math.round(1e3 * Math.min(addedPerDay, gap) / targetNorm.value) / 10 : 0;
+    return {
+      essential: ess.name,
+      gapFillPct: pct,
+      amountClaimed: addedPerDay,
+      unit: norm.family === "iu" ? "iu" : "mcg"
+    };
+  }
+  function matchGoals(label, corpus) {
+    const nameTxt = `${label.name ?? ""} ${label.brand ?? ""}`.toLowerCase();
+    const labelNutrients = label.nutrients ?? [];
+    const dailyServings = Number.parseFloat(String(label.servings)) || 1;
+    const MEANINGFUL_PCT = 10;
+    const stats = {};
+    for (const ln of labelNutrients) {
+      const key = (ln.name ?? "").toLowerCase().trim();
+      const ess = matchEssential(ln.name);
+      let pct = null;
+      if (ess !== null) {
+        const tgt = essTarget(ess);
+        const norm = normalize(Number(ln.amount), ln.unit);
+        const targetNorm = tgt !== null && tgt.low !== void 0 && tgt.low !== null ? normalize(tgt.low, tgt.unit) : null;
+        if (norm !== null && targetNorm !== null && norm.family === targetNorm.family && targetNorm.value > 0) {
+          pct = Math.round(1e3 * (norm.value * dailyServings) / targetNorm.value) / 10;
+        }
+      }
+      stats[key] = { pct, has: ess !== null };
+    }
+    const goals = [];
+    for (const [goal, kws] of Object.entries(corpus.goalKeywords)) {
+      const strong = kws.filter((kw) => nameTxt.includes(kw));
+      const goalNutMap = corpus.nutrientToGoalMap[goal] ?? [];
+      const seen = /* @__PURE__ */ new Set();
+      const matched = [];
+      for (const gn of goalNutMap) {
+        const b = gn.nutrient.toLowerCase().trim();
+        const hit = labelNutrients.find((ln) => {
+          const a = (ln.name ?? "").toLowerCase().trim();
+          return a === b || a.includes(b) || b.includes(a);
+        });
+        if (hit !== void 0 && !seen.has(b)) {
+          seen.add(b);
+          const key = (hit.name ?? "").toLowerCase().trim();
+          matched.push(stats[key] ?? { pct: null, has: false });
+        }
+      }
+      const meaningful = matched.filter((s) => s.has ? s.pct !== null && s.pct >= MEANINGFUL_PCT : strong.length > 0);
+      if (strong.length > 0 || meaningful.length > 0) {
+        goals.push(goal);
+      }
+    }
+    return goals;
+  }
+  var HARD_GLUTEN = /* @__PURE__ */ new Set(["wheat", "barley", "rye", "malt", "spelt"]);
+  var OAT_DERIVED = /* @__PURE__ */ new Set(["oats", "oat", "oatmeal", "oat flour", "oat syrup", "oat groats", "oat bran"]);
+  function antiFlags(label, corpus) {
+    const text = (label.ingredients ?? "").toLowerCase();
+    const hardReject = new Set(corpus.hardRejectTerms);
+    const flags = [];
+    for (const [cat, kws] of Object.entries(corpus.antiList)) {
+      const hits = kws.filter((kw) => matchKeyword(text, kw));
+      if (hits.length === 0) {
+        continue;
+      }
+      const flag = { category: cat, terms: hits, severity: "mild" };
+      if (cat === "fried oils / seed oils") {
+        const variants = ["sunflower oil", "safflower oil", "canola oil"];
+        const variantHits = hits.filter((h) => variants.includes(h));
+        const otherHits = hits.filter((h) => !variants.includes(h));
+        if (variantHits.length > 0 && otherHits.length === 0) {
+          const isHighOleic = /high oleic[^,.]*(?:sunflower|safflower|canola)/i.test(text);
+          if (isHighOleic) {
+            flag.nuance = "High-oleic variant detected \u2014 significantly more oxidation-stable than standard seed oil (>80% oleic acid, low omega-6). Wallach's broad rule still applies but severity is softened.";
+            flag.softened = true;
+          }
+        }
+      }
+      if (cat === "gluten sources") {
+        const hardHits = hits.filter((h) => HARD_GLUTEN.has(h));
+        const oatHits = hits.filter((h) => OAT_DERIVED.has(h));
+        const oatGfPre = /gluten[-\s]+free[^,]+\b(?:oats|oat|oatmeal|oat\s+flour|oat\s+groats|oat\s+bran|oat\s+syrup)\b/i;
+        const oatGfPost = /\b(?:oats|oat|oatmeal|oat\s+flour|oat\s+groats|oat\s+bran|oat\s+syrup)\b[^,]+gluten[-\s]+free/i;
+        const hasGFOatsAnchor = oatGfPre.test(text) || oatGfPost.test(text);
+        if (hardHits.length > 0) {
+          flag.nuance = `Hard gluten proteins detected: ${hardHits.map((t) => `"${t}"`).join(", ")}. Wallach-direct: wheat / barley / rye / malt / spelt are the actual gluten proteins. No softening \u2014 a gluten free oats declaration cannot shut off the trigger for actual gluten elsewhere on the label.`;
+        } else if (oatHits.length > 0) {
+          if (hasGFOatsAnchor) {
+            flag.nuance = `Oat-anchored gluten-free declaration detected on the label. Per the operational rule: once a brand certifies ANY oat ingredient as GF, they are operating in a GF-aware supply chain across all oat ingredients in that product. All oat hits (${oatHits.map((t) => `"${t}"`).join(", ")}) are presumed gluten-free. Flag softened.`;
+            flag.softened = true;
+          } else {
+            flag.nuance = `Oat ingredients detected (${oatHits.map((t) => `"${t}"`).join(", ")}) with no gluten free oats declaration on the label. Standard commercial oats carry real cross-contamination risk from shared supply chains. A gluten-free claim attached to a non-oat ingredient (e.g., gluten-free pasta) does NOT certify the oats. Flag stays serious until brand certifies oat GF status.`;
+          }
+        }
+      }
+      let severity = "mild";
+      for (const term of hits) {
+        if (hardReject.has(term)) {
+          severity = "hard";
+          break;
+        }
+      }
+      if (severity !== "hard") {
+        if (corpus.seriousAnti.includes(cat) && flag.softened !== true) {
+          severity = "serious";
+        } else if (flag.softened === true) {
+          severity = "softened";
+        }
+      }
+      flag.severity = severity;
+      flags.push(flag);
+    }
+    return flags;
+  }
+  function containerFlag() {
+    return [];
+  }
+  function decideVerdict(alignment, gapFills, anti, conflicts, goals, corpus) {
+    const reasonsFor = [];
+    const reasonsAgainst = [];
+    if (alignment.score >= 1.5) {
+      reasonsFor.push({ label: `High form alignment (${alignment.score}/2.0, ${alignment.aligned}/${alignment.total} aligned)` });
+    } else if (alignment.score >= 0.5) {
+      reasonsFor.push({ label: `Moderate form alignment (${alignment.score}/2.0)` });
+    }
+    if (alignment.misaligned > 0) {
+      reasonsAgainst.push({ label: `${alignment.misaligned} misaligned form${alignment.misaligned > 1 ? "s" : ""} \u2014 non-Wallach-preferred` });
+    }
+    const meaningful = gapFills.filter((g) => g.gapFillPct >= 10);
+    if (meaningful.length > 0) {
+      const top = [...meaningful].sort((a, b) => b.gapFillPct - a.gapFillPct).slice(0, 3);
+      reasonsFor.push({ label: "Meaningful gap-fill", items: top.map((g) => `${g.essential} (+${g.gapFillPct}%)`) });
+    } else if (gapFills.length > 0) {
+      reasonsAgainst.push({ label: "No nutrient closes >10% of a current gap" });
+    }
+    if (goals.length > 0) {
+      reasonsFor.push({
+        label: "Goal coverage",
+        items: goals.slice(0, 4).map((g) => corpus.goalDisplayNames[g] ?? g)
+      });
+    }
+    const hardHits = anti.filter((f) => f.severity === "hard");
+    const seriousHits = anti.filter((f) => f.severity === "serious");
+    const softHits = anti.filter((f) => f.severity === "softened" || f.severity === "mild");
+    if (hardHits.length > 0) {
+      reasonsAgainst.push({ label: "Hard-reject ingredients", items: hardHits.map((f) => f.category) });
+    }
+    if (seriousHits.length > 0) {
+      reasonsAgainst.push({ label: "Serious anti-list flags", items: seriousHits.map((f) => f.category) });
+    }
+    if (softHits.length > 0) {
+      reasonsAgainst.push({ label: "Mild / softened flags (nuance applied)", items: softHits.map((f) => f.category) });
+    }
+    const high = conflicts.filter((c) => c.severity === "high");
+    if (high.length > 0) {
+      reasonsAgainst.push({ label: "High-severity conflicts", items: high.map((c) => c.rule) });
+    }
+    let verdict;
+    if (high.length > 0 || hardHits.length > 0 || seriousHits.length >= 2) {
+      verdict = "REJECT";
+    } else if (alignment.score >= 1 && meaningful.length > 0 && seriousHits.length === 0) {
+      verdict = "ADD";
+    } else if (meaningful.length > 0 || alignment.score >= 0.5 || goals.length > 0 || seriousHits.length > 0 || softHits.length > 0) {
+      verdict = "SAVE";
+    } else {
+      verdict = "REJECT";
+    }
+    return { verdict, reasonsFor, reasonsAgainst };
+  }
+  function pushRecentScan(label, result) {
+    const shape = getValidated(RECENT_SCANS_KEY, HistoryShapeSchema) ?? { items: [] };
+    const items = shape.items.filter((i) => i.label.name !== label.name);
+    items.unshift({
+      id: Date.now() + Math.floor(Math.random() * 1e3),
+      ts: (/* @__PURE__ */ new Date()).toISOString(),
+      label,
+      verdict: result.verdict,
+      alignment: result.alignment,
+      goals: result.goals,
+      gapFills: result.gapFills
+    });
+    setValidated(RECENT_SCANS_KEY, { items: items.slice(0, MAX_RECENT) }, HistoryShapeSchema);
+  }
+  function scan(label, opts) {
+    const cfg = { logToRecent: true, ...opts };
+    const corpus = loadScanCorpus();
+    const nutrients = label.nutrients ?? [];
+    const alignment = alignmentScore(nutrients);
+    const dailyServings = Number.parseFloat(String(label.servings)) || 1;
+    const effectiveCov = getEffectiveCoverage();
+    const gapFills = nutrients.map((n) => gapFillFor(n, dailyServings, effectiveCov)).filter((g) => g !== null);
+    const goals = matchGoals(label, corpus);
+    const anti = antiFlags(label, corpus);
+    const conflicts = containerFlag();
+    const { verdict, reasonsFor, reasonsAgainst } = decideVerdict(alignment, gapFills, anti, conflicts, goals, corpus);
+    const result = {
+      label,
+      alignment,
+      gapFills,
+      goals,
+      anti,
+      conflicts,
+      verdict,
+      reasonsFor,
+      reasonsAgainst
+    };
+    result.sparseNutrients = nutrients.length === 0;
+    result.sparseIngredients = (label.ingredients ?? "").trim().length === 0;
+    if (cfg.logToRecent) {
+      pushRecentScan(label, result);
+      lastResult = result;
+      window.lcLastResult = result;
+      emit("scanner:scan-complete", { captureId: String(Date.now()), verdict: mapVerdict(verdict) });
+    }
+    return result;
+  }
+  function mapVerdict(v) {
+    if (v === "ADD") {
+      return "aligns";
+    }
+    if (v === "SAVE") {
+      return "partial";
+    }
+    return "out";
+  }
+  if (typeof window !== "undefined") {
+    window.lcScan = scan;
   }
 
   // assets/data/coverage-layout-data.json
