@@ -3,6 +3,14 @@
 _Single source of human-judgment truth. Read at session start. ≤250 lines, enforced._
 _The lint/type/test layers enforce what this file says. If lint disagrees with this file, this file is wrong — fix it, don't override lint._
 
+## First 5 minutes in this repo
+
+1. Read `CLAUDE.md` (this file) in full.
+2. Read `sunjo/02-clarifications-and-plan.md` — the active build plan (Phases 1–4).
+3. Read `REVIEW.md` — the enforcement contract (what gets blocked).
+4. `tail -n 20 chronicle/build-log.md` — recent project state.
+5. `python tools/invariants.py` — confirm a sane baseline (currently 58/61; the 3 reds are date-gated Tacitus checks, not the dashboard).
+
 ---
 
 ## §00 — The two prime directives

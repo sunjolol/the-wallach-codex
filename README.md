@@ -44,6 +44,44 @@ python tools/invariants.py           # integrity invariants
 node tools/render_probe.js           # headless render check
 ```
 
+## Directory glossary
+
+Top-level folders, one line each:
+
+- **`dashboard/`** — the app: the single-HTML shell, TypeScript `src/`
+  (`core/ → state/ → views/`), bundled `dist/main.js`, the sealed
+  `design-system.css`, vendored Tesseract OCR, and v3 mockup references under
+  `components/`.
+- **`eden/`** — the sealed canonical source. Every Wallach/Youngevity number,
+  label, and claim originates here; hash-anchored, user-only-writable once sealed.
+- **`schemas/`** — JSON Schemas that validate the data files at load.
+- **`knowledge/`** — Wallach corpus + general health/educational reference
+  (cleaned transcripts, book extracts, manifests, research images).
+- **`transcripts/`** — raw Wallach lecture/interview captions (`.en.vtt`); the
+  source `wallach-refresh/` ingests. See `transcripts/README.md`.
+- **`wallach-refresh/`** — the self-maintaining corpus pipeline (yt-dlp captions,
+  book + podcast ingest → `knowledge/`). See `wallach-refresh/README.md`.
+- **`labels/`** — sample supplement-label JSON fixtures for Scanner testing. See
+  `labels/README.md`.
+- **`chronicle/`** — the discipline ledger: `build-log.md`, `next-chunk.md`,
+  `domain-glossary.md`, `worked-example-chunk.md`, `CHANGELOG.md`, `versions/`,
+  `contradictions/`, `evals/`.
+- **`tools/`** — `build.mjs`, `invariants.py`, `safe_write.py`, the enforcement
+  `hooks/`, and the headless render probes.
+- **`memory/`** — long-term project preference + saga storage.
+- **`outputs/`** — generated health-reference documents (framework summary,
+  protocol drafts, research briefs, medical red-flag / escalation rules).
+- **`sessions/`** — cross-session working notes (session log, open questions,
+  follow-ups).
+- **`sunjo/`** — the Cowork → Claude-Code handoff: the pre-handoff conversation
+  and the active build plan.
+- **`.claude/`** — Claude Code settings + the enforcement-hook wiring
+  (`settings.json`).
+- **`brain/`** — *retired.* The pre-redesign system; its good content was ported
+  to `chronicle/` / `eden/` / `knowledge/`. **Scheduled for deletion in Phase 1.**
+- **`tacitus/`** — the historical audit/integrity layer, now a standalone repo
+  (`the-tacitus-system`). **Scheduled for excision from this repo in Phase 1.**
+
 ## Sources & licensing note
 
 Nutrient targets and health assertions trace to the Wallach primary-source
