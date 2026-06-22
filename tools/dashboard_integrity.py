@@ -43,7 +43,7 @@ MARKDOWN_BLOCKS = {
     "cl-data-lessons":   "memory/essence/lessons.md",
     "cl-data-decisions": "memory/essence/decisions.md",
     "cl-data-changelog": None,
-    "cl-data-notebook":  "tacitus/notebook/2026-06.md",  # Round 100: relocated from memory/tacitus/; block ID kept for backwards compat
+    "cl-data-notebook":  None,  # tacitus excised (Phase 1 chunk 1F); block is now dashboard-resident historical content
 }
 
 EXPECTED_ORDER = JSON_BLOCKS + list(MARKDOWN_BLOCKS.keys())

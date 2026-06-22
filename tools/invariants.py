@@ -453,7 +453,6 @@ def check_catchup_files_exist():
         "memory/operating-protocols.md",
         "memory/source-rule.md",
         "memory/engineering-doctrine.md",
-        "tacitus/sentinel.json",
         "memory/system/audit-sentinel.json",
     ]
     missing = []
@@ -4452,6 +4451,7 @@ _RETIRED_TACITUS = frozenset({
     "tacitus_changelog_declared_version_present", "prompt_enum_consumer_sync",
     "vision_pattern_seed_compliance", "dashboard_impl_status_source_purity",
     "tacitus_dashboard_no_real_data_fetches",
+    "implementations_log_well_formed",  # verifies the impl-log against tacitus/notebook — retired with the excision
 })
 
 

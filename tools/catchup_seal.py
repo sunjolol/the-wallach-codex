@@ -78,7 +78,6 @@ CATCHUP_FILES = [
     "memory/operating-protocols.md",
     "memory/source-rule.md",
     "memory/engineering-doctrine.md",
-    "tacitus/sentinel.json",
     "memory/system/audit-sentinel.json",
 ]
 
@@ -86,7 +85,7 @@ CATCHUP_FILES = [
 def catchup_files() -> list:
     """Round 98 — the live list including the current-month tacitus notebook.
     Use this everywhere instead of CATCHUP_FILES directly."""
-    return CATCHUP_FILES + [_current_tacitus_notebook()]
+    return list(CATCHUP_FILES)
 
 
 def _utc_now_iso() -> str:

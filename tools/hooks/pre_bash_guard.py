@@ -23,7 +23,7 @@ import json
 import re
 import sys
 
-BANNED_DIRS = ("chronicle", "tools", "memory", "knowledge", "schemas", "eden", "tacitus")
+BANNED_DIRS = ("chronicle", "tools", "memory", "knowledge", "schemas", "eden")
 
 
 def _allow(note=""):
