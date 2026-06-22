@@ -8106,6 +8106,9 @@
             ${anti > 0 ? `${anti} item${anti === 1 ? "" : "s"} flagged for review.` : ""}
           </p>
           <div class="verdict__source">CITED \xB7 <strong>Wallach corpus \u2014 alignment per source-rule allowlist</strong></div>
+          <div class="verdict__actions">
+            <button class="scan-btn scan-btn--adopt" data-sc-action="adopt-product"><span class="scan-btn__glyph">+</span>ADD TO REGIMEN</button>
+          </div>
         </div>
         <div class="verdict__stats">
           <div class="verdict-stat">
@@ -8229,6 +8232,15 @@
       console.warn("[views/scanner] OCR scan failed:", e);
     }
   }
+  function adoptProduct(label) {
+    const item = {
+      id: Date.now(),
+      label: { name: label.name, nutrients: label.nutrients ?? [] },
+      addedDate: (/* @__PURE__ */ new Date()).toISOString().slice(0, 10),
+      provenance: "user_scanned"
+    };
+    saveRgManual([...loadRgManual(), item]);
+  }
   function mount4(container) {
     let state = "idle";
     const currentResult = () => {
@@ -8275,6 +8287,16 @@
           }
         });
         input.click();
+      } else if (action === "adopt-product") {
+        const result = currentResult();
+        if (result === null) {
+          return;
+        }
+        adoptProduct(result.label);
+        actionEl.textContent = "\u2713 ADDED TO REGIMEN";
+        if (actionEl instanceof HTMLButtonElement) {
+          actionEl.disabled = true;
+        }
       }
     };
     const dragHandler = (ev) => {

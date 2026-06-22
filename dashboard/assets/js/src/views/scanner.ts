@@ -20,6 +20,7 @@
 
 import { on } from '../core/events.js';
 import { scanImage } from '../state/ocr.js';
+import { loadRgManual, type RegimenItem, saveRgManual } from '../state/regimen.js';
 import {
   getHistory,
   type HistoryEntry,
@@ -330,6 +331,9 @@ function renderVerdict(result: ScanResult | null): string {
             ${anti > 0 ? `${anti} item${anti === 1 ? '' : 's'} flagged for review.` : ''}
           </p>
           <div class="verdict__source">CITED · <strong>Wallach corpus — alignment per source-rule allowlist</strong></div>
+          <div class="verdict__actions">
+            <button class="scan-btn scan-btn--adopt" data-sc-action="adopt-product"><span class="scan-btn__glyph">+</span>ADD TO REGIMEN</button>
+          </div>
         </div>
         <div class="verdict__stats">
           <div class="verdict-stat">
@@ -471,6 +475,24 @@ async function handleImageFile(file: File): Promise<void> {
   }
 }
 
+// ─── Adopt to regimen — scanned product → §31 saveRgManual → coverage ──────
+
+/**
+ * Adopt a scanned product into the regimen: mirror views/regimen.ts addItem,
+ * building a RegimenItem (provenance 'user_scanned') from the scored label and
+ * persisting via the §31 saveRgManual chokepoint, which cascades regimen:changed
+ * → coverage recompute. Per-product (not per-row): one label → one stack entry.
+ */
+function adoptProduct(label: ScanLabel): void {
+  const item: RegimenItem = {
+    id: Date.now(),
+    label: { name: label.name, nutrients: label.nutrients ?? [] },
+    addedDate: new Date().toISOString().slice(0, 10),
+    provenance: 'user_scanned',
+  };
+  saveRgManual([...loadRgManual(), item]);
+}
+
 // ─── Mount ────────────────────────────────────────────────────────────────
 
 export function mount(container: HTMLElement): MountHandle {
@@ -522,6 +544,17 @@ export function mount(container: HTMLElement): MountHandle {
         }
       });
       input.click();
+    }
+    else if (action === 'adopt-product') {
+      const result = currentResult();
+      if (result === null) {
+        return;
+      }
+      adoptProduct(result.label);
+      actionEl.textContent = '✓ ADDED TO REGIMEN';
+      if (actionEl instanceof HTMLButtonElement) {
+        actionEl.disabled = true;
+      }
     }
   };
 
