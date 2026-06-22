@@ -23,9 +23,12 @@ import { on } from '../core/events.js';
 import { getOrCompute } from '../state/coverage.js';
 import {
   loadEffectiveRegimen,
+  loadRgOverrides,
   loadRgRemoved,
   loadRgUserGoals,
+  type OverridesMap,
   type RegimenItem,
+  saveRgOverride,
   saveRgRemoved,
 } from '../state/regimen.js';
 
@@ -166,11 +169,21 @@ function renderSlotsShowcase(): string {
 
 // ─── Active slot ──────────────────────────────────────────────────────────
 
-function renderItemRow(item: RegimenItem): string {
+/** Parse a stored dose factor; defaults to 1, rejects <=0 / NaN. */
+function readDose(raw: unknown): number {
+  const n = typeof raw === 'number' ? raw : typeof raw === 'string' ? Number.parseFloat(raw) : Number.NaN;
+  return Number.isFinite(n) && n > 0 ? n : 1;
+}
+
+function renderItemRow(item: RegimenItem, overrides: OverridesMap): string {
   const contrib = itemContribution(item);
   const pips = renderPips(contributionPips(contrib));
   const icon = itemIcon(item);
   const name = (item.label.name ?? '(unnamed)').toString();
+  const ov = overrides[String(item.id)] ?? {};
+  const amount = readDose(ov['dose_amount']);
+  const freq = readDose(ov['dose_freq']);
+  const scaling = amount * freq;
   return `
     <div class="regimen-item-row" data-item-id="${item.id}">
       <div class="regimen-item-row__icon">${escHTML(icon)}</div>
@@ -182,21 +195,21 @@ function renderItemRow(item: RegimenItem): string {
         </div>
       </div>
       <div class="dose-block">
-        <input class="dose-input" type="text" value="1" data-rg-dose="amount" />
+        <input class="dose-input" type="text" value="${amount}" data-rg-dose="amount" data-item-id="${item.id}" />
         <span class="dose-unit dose-unit--label">DOSE</span>
         <span class="dose-sep">×</span>
-        <input class="dose-input" type="text" value="1" data-rg-dose="freq" />
+        <input class="dose-input" type="text" value="${freq}" data-rg-dose="freq" data-item-id="${item.id}" />
         <span class="dose-unit dose-unit--label">PER DAY</span>
       </div>
-      <span class="scaling">×1.0</span>
+      <span class="scaling">×${scaling.toFixed(1)}</span>
       <button class="btn-remove" title="Remove" data-rg-action="remove" data-item-id="${item.id}">×</button>
     </div>
   `;
 }
 
-function renderActiveSlot(items: RegimenItem[], coverageCount: number): string {
+function renderActiveSlot(items: RegimenItem[], coverageCount: number, overrides: OverridesMap): string {
   const rowsHTML = items.length > 0
-    ? items.map(renderItemRow).join('')
+    ? items.map(item => renderItemRow(item, overrides)).join('')
     : '<div class="regimen-item-row regimen-item-row--empty"><div class="regimen-item-row__body"><h4 class="regimen-item-row__name">— no items yet —</h4></div></div>';
 
   return `
@@ -443,6 +456,26 @@ function handleAction(action: string, target: HTMLElement): void {
   }
 }
 
+/**
+ * A dose / per-day input changed → recompute the scaling factor and persist via
+ * the §31 saveRgOverride chokepoint, which cascades to coverage. Keyed by item
+ * id (works for user items AND the negative-id HBSP base foundation).
+ */
+function handleDoseEdit(input: HTMLInputElement): void {
+  const idStr = input.dataset['itemId'];
+  const id = idStr === undefined ? Number.NaN : Number(idStr);
+  if (!Number.isFinite(id)) {
+    return;
+  }
+  const row = input.closest('.regimen-item-row');
+  if (row === null) {
+    return;
+  }
+  const amount = readDose(row.querySelector<HTMLInputElement>('[data-rg-dose="amount"]')?.value);
+  const freq = readDose(row.querySelector<HTMLInputElement>('[data-rg-dose="freq"]')?.value);
+  saveRgOverride(id, { dose_amount: amount, dose_freq: freq, scaling_factor: amount * freq });
+}
+
 // ─── Mount ────────────────────────────────────────────────────────────────
 
 export function mount(container: HTMLElement): MountHandle {
@@ -451,11 +484,12 @@ export function mount(container: HTMLElement): MountHandle {
     // manual − removed) and the live coverage count from the one snapshot.
     const items = loadEffectiveRegimen();
     const coverageCount = getOrCompute().coveredCount;
+    const overrides = loadRgOverrides();
     container.innerHTML = `
       <div class="regimen-grid">
         <div class="regimen-main">
           ${renderSlotsShowcase()}
-          ${renderActiveSlot(items, coverageCount)}
+          ${renderActiveSlot(items, coverageCount, overrides)}
         </div>
         ${renderRail()}
       </div>
@@ -474,9 +508,18 @@ export function mount(container: HTMLElement): MountHandle {
     }
   };
 
+  const changeHandler = (ev: Event): void => {
+    const target = ev.target as HTMLElement | null;
+    const doseEl = target?.closest<HTMLInputElement>('[data-rg-dose]') ?? null;
+    if (doseEl !== null) {
+      handleDoseEdit(doseEl);
+    }
+  };
+
   render();
   startCipherEngine(container);
   container.addEventListener('click', clickHandler);
+  container.addEventListener('change', changeHandler);
 
   const unsubRegimen = on('regimen:changed', () => render());
   const unsubCoverage = on('coverage:recomputed', () => render());
@@ -488,6 +531,7 @@ export function mount(container: HTMLElement): MountHandle {
       unsubCoverage();
       stopCipherEngine();
       container.removeEventListener('click', clickHandler);
+      container.removeEventListener('change', changeHandler);
       container.innerHTML = '';
     },
   };

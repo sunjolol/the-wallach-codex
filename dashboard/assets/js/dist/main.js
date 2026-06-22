@@ -4656,6 +4656,14 @@
     }
     return [...byId.values()];
   }
+  function saveRgOverride(id, patch) {
+    const all = loadRgOverrides();
+    const key = String(id);
+    all[key] = { ...all[key] ?? {}, ...patch };
+    set(RG_OVERRIDES_KEY, all);
+    fireLegacyTrigger(`saveRgOverride:${id}`);
+    emit("regimen:changed", { slotId: RG_OVERRIDES_KEY, reason: "dose-edit" });
+  }
   function saveRgRemoved(setOfIds) {
     set(RG_REMOVED_KEY, [...setOfIds]);
     fireLegacyTrigger("saveRgRemoved");
@@ -5719,11 +5727,19 @@
     </section>
   `;
   }
-  function renderItemRow(item) {
+  function readDose(raw) {
+    const n = typeof raw === "number" ? raw : typeof raw === "string" ? Number.parseFloat(raw) : Number.NaN;
+    return Number.isFinite(n) && n > 0 ? n : 1;
+  }
+  function renderItemRow(item, overrides) {
     const contrib = itemContribution(item);
     const pips = renderPips(contributionPips(contrib));
     const icon = itemIcon(item);
     const name = (item.label.name ?? "(unnamed)").toString();
+    const ov = overrides[String(item.id)] ?? {};
+    const amount = readDose(ov["dose_amount"]);
+    const freq = readDose(ov["dose_freq"]);
+    const scaling = amount * freq;
     return `
     <div class="regimen-item-row" data-item-id="${item.id}">
       <div class="regimen-item-row__icon">${escHTML3(icon)}</div>
@@ -5735,19 +5751,19 @@
         </div>
       </div>
       <div class="dose-block">
-        <input class="dose-input" type="text" value="1" data-rg-dose="amount" />
+        <input class="dose-input" type="text" value="${amount}" data-rg-dose="amount" data-item-id="${item.id}" />
         <span class="dose-unit dose-unit--label">DOSE</span>
         <span class="dose-sep">\xD7</span>
-        <input class="dose-input" type="text" value="1" data-rg-dose="freq" />
+        <input class="dose-input" type="text" value="${freq}" data-rg-dose="freq" data-item-id="${item.id}" />
         <span class="dose-unit dose-unit--label">PER DAY</span>
       </div>
-      <span class="scaling">\xD71.0</span>
+      <span class="scaling">\xD7${scaling.toFixed(1)}</span>
       <button class="btn-remove" title="Remove" data-rg-action="remove" data-item-id="${item.id}">\xD7</button>
     </div>
   `;
   }
-  function renderActiveSlot(items, coverageCount) {
-    const rowsHTML = items.length > 0 ? items.map(renderItemRow).join("") : '<div class="regimen-item-row regimen-item-row--empty"><div class="regimen-item-row__body"><h4 class="regimen-item-row__name">\u2014 no items yet \u2014</h4></div></div>';
+  function renderActiveSlot(items, coverageCount, overrides) {
+    const rowsHTML = items.length > 0 ? items.map((item) => renderItemRow(item, overrides)).join("") : '<div class="regimen-item-row regimen-item-row--empty"><div class="regimen-item-row__body"><h4 class="regimen-item-row__name">\u2014 no items yet \u2014</h4></div></div>';
     return `
     <section class="active-slot">
       <header class="active-slot__head">
@@ -5953,15 +5969,30 @@
         break;
     }
   }
+  function handleDoseEdit(input) {
+    const idStr = input.dataset["itemId"];
+    const id = idStr === void 0 ? Number.NaN : Number(idStr);
+    if (!Number.isFinite(id)) {
+      return;
+    }
+    const row = input.closest(".regimen-item-row");
+    if (row === null) {
+      return;
+    }
+    const amount = readDose(row.querySelector('[data-rg-dose="amount"]')?.value);
+    const freq = readDose(row.querySelector('[data-rg-dose="freq"]')?.value);
+    saveRgOverride(id, { dose_amount: amount, dose_freq: freq, scaling_factor: amount * freq });
+  }
   function mount3(container) {
     const render = () => {
       const items = loadEffectiveRegimen();
       const coverageCount = getOrCompute().coveredCount;
+      const overrides = loadRgOverrides();
       container.innerHTML = `
       <div class="regimen-grid">
         <div class="regimen-main">
           ${renderSlotsShowcase()}
-          ${renderActiveSlot(items, coverageCount)}
+          ${renderActiveSlot(items, coverageCount, overrides)}
         </div>
         ${renderRail2()}
       </div>
@@ -5978,9 +6009,17 @@
         handleAction(action, actionEl);
       }
     };
+    const changeHandler = (ev) => {
+      const target = ev.target;
+      const doseEl = target?.closest("[data-rg-dose]") ?? null;
+      if (doseEl !== null) {
+        handleDoseEdit(doseEl);
+      }
+    };
     render();
     startCipherEngine3(container);
     container.addEventListener("click", clickHandler);
+    container.addEventListener("change", changeHandler);
     const unsubRegimen = on("regimen:changed", () => render());
     const unsubCoverage = on("coverage:recomputed", () => render());
     return {
@@ -5990,6 +6029,7 @@
         unsubCoverage();
         stopCipherEngine3();
         container.removeEventListener("click", clickHandler);
+        container.removeEventListener("change", changeHandler);
         container.innerHTML = "";
       }
     };
