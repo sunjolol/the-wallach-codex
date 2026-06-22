@@ -20,11 +20,13 @@
  */
 
 import { on } from '../core/events.js';
+import { getOrCompute } from '../state/coverage.js';
 import {
-  loadRegimen,
+  loadEffectiveRegimen,
+  loadRgRemoved,
   loadRgUserGoals,
-  type Regimen,
   type RegimenItem,
+  saveRgRemoved,
 } from '../state/regimen.js';
 
 export interface MountHandle {
@@ -192,8 +194,7 @@ function renderItemRow(item: RegimenItem): string {
   `;
 }
 
-function renderActiveSlot(regimen: Regimen, coverageCount: number): string {
-  const items = regimen.items;
+function renderActiveSlot(items: RegimenItem[], coverageCount: number): string {
   const rowsHTML = items.length > 0
     ? items.map(renderItemRow).join('')
     : '<div class="regimen-item-row regimen-item-row--empty"><div class="regimen-item-row__body"><h4 class="regimen-item-row__name">— no items yet —</h4></div></div>';
@@ -422,9 +423,22 @@ function handleAction(action: string, target: HTMLElement): void {
         }
       }
       break;
+    case 'remove': {
+      // §31 chokepoint: soft-delete via the removed-set. Works for user items
+      // AND the negative-id HBSP base foundation (the "power user clears the
+      // default" path). Fires regimen:changed → coverage recomputes → re-render.
+      const idStr = target.dataset['itemId'];
+      const id = idStr === undefined ? Number.NaN : Number(idStr);
+      if (Number.isFinite(id)) {
+        const removed = loadRgRemoved();
+        removed.add(id);
+        saveRgRemoved(removed);
+      }
+      break;
+    }
     default:
-      // No-op: action types we don't yet handle natively (duplicate, adopt, details, remove)
-      // will be wired in a later round.
+      // No-op: action types we don't yet handle natively (duplicate, adopt,
+      // details) will be wired in a later round.
       break;
   }
 }
@@ -433,14 +447,15 @@ function handleAction(action: string, target: HTMLElement): void {
 
 export function mount(container: HTMLElement): MountHandle {
   const render = (): void => {
-    const regimen = loadRegimen();
-    // Coverage count placeholder — real count flows in via coverage:recomputed.
-    const coverageCount = regimen.items.length > 0 ? 47 : 0;
+    // The active slot reflects the effective stack (HBSP base + committed +
+    // manual − removed) and the live coverage count from the one snapshot.
+    const items = loadEffectiveRegimen();
+    const coverageCount = getOrCompute().coveredCount;
     container.innerHTML = `
       <div class="regimen-grid">
         <div class="regimen-main">
           ${renderSlotsShowcase()}
-          ${renderActiveSlot(regimen, coverageCount)}
+          ${renderActiveSlot(items, coverageCount)}
         </div>
         ${renderRail()}
       </div>

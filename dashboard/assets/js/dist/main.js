@@ -61,6 +61,23 @@
       }
     });
   }
+  function set(key, value) {
+    let serialized;
+    try {
+      serialized = JSON.stringify(value);
+    } catch {
+      return { ok: false, key, reason: "serialize-error" };
+    }
+    try {
+      localStorage.setItem(key, serialized);
+    } catch {
+      return { ok: false, key, reason: "quota-exceeded" };
+    }
+    if (localStorage.getItem(key) !== serialized) {
+      return { ok: false, key, reason: "verify-mismatch" };
+    }
+    return { ok: true, key };
+  }
   function getValidated(key, schema) {
     const raw = localStorage.getItem(key);
     if (raw === null) {
@@ -4594,6 +4611,16 @@
   var RG_MANUAL_KEY = "rgManualItems_v1";
   var RG_REMOVED_KEY = "rgRemoved_v1";
   var RG_USER_GOALS_KEY = "rgUserGoals_v1";
+  function fireLegacyTrigger(label) {
+    const w = window;
+    if (typeof w.triggerRegimenRerender === "function") {
+      try {
+        w.triggerRegimenRerender(label);
+      } catch (e) {
+        console.warn("[state/regimen] legacy triggerRegimenRerender threw:", e);
+      }
+    }
+  }
   function loadRegimen() {
     return getValidated(REGIMEN_KEY, RegimenSchema) ?? { items: [] };
   }
@@ -4628,6 +4655,11 @@
       byId.set(item.id, item);
     }
     return [...byId.values()];
+  }
+  function saveRgRemoved(setOfIds) {
+    set(RG_REMOVED_KEY, [...setOfIds]);
+    fireLegacyTrigger("saveRgRemoved");
+    emit("regimen:changed", { slotId: RG_REMOVED_KEY, reason: "remove" });
   }
 
   // assets/js/src/state/coverage.ts
@@ -5600,6 +5632,369 @@
     };
   }
 
+  // assets/js/src/views/regimen.ts
+  var SLOT_PLACEHOLDERS = [
+    { id: "slot-01", num: "01", serial: "01\xB7A23F", name: "Travel Pack", items: 6, coverage: 31, total: 92, stamp: "SAVED \xB7 2D AGO" },
+    { id: "slot-02", num: "02", serial: "02\xB7F71D", name: "Daily Protocol", items: 9, coverage: 47, total: 92, stamp: "EDIT 0:14 AGO", active: true },
+    { id: "slot-03", num: "03", serial: "03\xB7C8B2", name: "Sleep Stack", items: 4, coverage: 18, total: 92, stamp: "SAVED \xB7 1W AGO" },
+    { id: "slot-04", num: "04", serial: "04\xB7E901", name: "Recovery Ramp", items: 11, coverage: 54, total: 92, stamp: "SAVED \xB7 3W AGO" },
+    { id: "slot-05", num: "05", serial: "", name: "", items: 0, coverage: 0, total: 92, stamp: "", empty: true }
+  ];
+  var RECOMMENDATIONS = [
+    { name: "CHEWABLE VITAMIN D3", contribution: 12, heat: "xl", reason: "Closes 12 trace tiles via the PDM-aggregate vehicle. Single-serve daily, neutral taste." },
+    { name: "ULTIMATE EFA PLUS", contribution: 2, heat: "md", reason: "Adds Omega-6 + Omega-9 coverage. Bone & skeletal goal already at 78%, this raises to 84%." },
+    { name: "CHEWABLE C\xB71000", contribution: 1, heat: "sm", reason: "Strengthens existing Vitamin C coverage to clinical-dose level per Wallach Rare Earths p. 132." },
+    { name: "SLENDER FX SHAKE", contribution: 8, heat: "lg", reason: "Meal-replacement option; adds 8 essentials at once but high overlap with existing BTT." }
+  ];
+  var WISHLIST = [
+    { name: "HYDRA DNA COLLAGEN", contribution: 0, heat: "sm", reason: "Logged 2026-06-15 \xB7 skin & connective tissue goal \xB7 pending cost/timing decision." },
+    { name: "OPTIVIDA HEMP EXTRACT", contribution: 0, heat: "sm", reason: "Deferred \u2014 overlap with sleep stack already; revisit once sleep goal closes." }
+  ];
+  function escHTML3(s) {
+    return String(s ?? "").replace(/[&<>"']/g, (c) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    })[c]);
+  }
+  function contributionPips(contribution) {
+    return Math.max(0, Math.min(10, Math.ceil(contribution / 3)));
+  }
+  function renderPips(filled) {
+    let html = "";
+    for (let i = 0; i < 10; i += 1) {
+      const cls = i < filled ? "contrib-pip fill" : "contrib-pip";
+      html += `<span class="${cls}"></span>`;
+    }
+    return html;
+  }
+  function itemIcon(item) {
+    const name = (item.label.name ?? "?").toString();
+    return name.charAt(0).toUpperCase();
+  }
+  function itemContribution(item) {
+    return item.label.nutrients?.length ?? 0;
+  }
+  function renderSlot(slot) {
+    if (slot.empty === true) {
+      return `
+      <article class="slot-card empty" data-slot-id="${escHTML3(slot.id)}">
+        <div class="slot-card__empty-mark">+</div>
+        <div class="slot-card__empty-label">EMPTY SLOT</div>
+      </article>
+    `;
+    }
+    const activeClass = slot.active === true ? " active ds-border-travel" : "";
+    const scanLine = slot.active === true ? '<span class="ds-scan-line" aria-hidden="true"></span>' : "";
+    const serialPrefix = slot.active === true ? "\u25CF " : "";
+    const serialSuffix = slot.active === true ? " \xB7 ACTIVE" : "";
+    return `
+    <article class="slot-card${activeClass}" data-slot-id="${escHTML3(slot.id)}" data-slot-num="${escHTML3(slot.num)}">
+      ${scanLine}
+      <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML3(slot.serial)}</span>${serialSuffix}</div>
+      <div class="slot-card__num">${escHTML3(slot.num)}</div>
+      <h3 class="slot-card__name">${escHTML3(slot.name)}</h3>
+      <div class="slot-card__items">${slot.items} items \xB7 <span class="slot-card__coverage">${slot.coverage}</span>/${slot.total}</div>
+      <div class="slot-card__stamp">${escHTML3(slot.stamp)}</div>
+    </article>
+  `;
+  }
+  function renderSlotsShowcase() {
+    const slotsHTML = SLOT_PLACEHOLDERS.map(renderSlot).join("");
+    return `
+    <section class="slots-showcase">
+      <header class="slots-showcase__head">
+        <div>
+          <div class="slots-showcase__kicker">YOUR CARTRIDGES \xB7 ${SLOT_PLACEHOLDERS.length} SLOTS \xB7 <span class="ds-cipher" data-cipher-set="hexa">02\xB7F71D</span> ACTIVE</div>
+          <h2 class="slots-showcase__title">
+            CARTRIDGES
+            <em>// each slot is a standalone protocol \u2014 save, switch, share</em>
+          </h2>
+        </div>
+        <button class="slots-showcase__new" data-rg-action="new-cartridge">+ NEW CARTRIDGE</button>
+      </header>
+      <div class="slots-grid">${slotsHTML}</div>
+    </section>
+  `;
+  }
+  function renderItemRow(item) {
+    const contrib = itemContribution(item);
+    const pips = renderPips(contributionPips(contrib));
+    const icon = itemIcon(item);
+    const name = (item.label.name ?? "(unnamed)").toString();
+    return `
+    <div class="regimen-item-row" data-item-id="${item.id}">
+      <div class="regimen-item-row__icon">${escHTML3(icon)}</div>
+      <div class="regimen-item-row__body">
+        <h4 class="regimen-item-row__name">${escHTML3(name)}</h4>
+        <div class="regimen-item-row__contrib">
+          <span class="regimen-item-row__contrib-label">CONTRIBUTES \xB7 ${contrib}</span>
+          ${pips}
+        </div>
+      </div>
+      <div class="dose-block">
+        <input class="dose-input" type="text" value="1" data-rg-dose="amount" />
+        <span class="dose-unit dose-unit--label">DOSE</span>
+        <span class="dose-sep">\xD7</span>
+        <input class="dose-input" type="text" value="1" data-rg-dose="freq" />
+        <span class="dose-unit dose-unit--label">PER DAY</span>
+      </div>
+      <span class="scaling">\xD71.0</span>
+      <button class="btn-remove" title="Remove" data-rg-action="remove" data-item-id="${item.id}">\xD7</button>
+    </div>
+  `;
+  }
+  function renderActiveSlot(items, coverageCount) {
+    const rowsHTML = items.length > 0 ? items.map(renderItemRow).join("") : '<div class="regimen-item-row regimen-item-row--empty"><div class="regimen-item-row__body"><h4 class="regimen-item-row__name">\u2014 no items yet \u2014</h4></div></div>';
+    return `
+    <section class="active-slot">
+      <header class="active-slot__head">
+        <div class="active-slot__eyebrow"><span class="pulse-dot"></span>EDITING \xB7 SLOT <span class="ds-cipher" data-cipher-set="hexa">02\xB7F71D</span></div>
+        <div class="active-slot__title-row">
+          <div>
+            <h2 class="active-slot__title">Daily Protocol</h2>
+            <div class="active-slot__meta">
+              <span><strong>${items.length}</strong> items</span>
+              <span>\xB7</span>
+              <span>EDITED <strong><span class="ds-cipher" data-cipher-set="time">0:14</span> AGO</strong></span>
+              <span>\xB7</span>
+              <span>SYNCED</span>
+            </div>
+          </div>
+          <div class="active-slot__stat">
+            <span class="active-slot__stat-num">${coverageCount}</span>
+            <span class="active-slot__stat-den">/ 92</span>
+            <span class="active-slot__stat-label">essentials<br>covered</span>
+          </div>
+        </div>
+      </header>
+      <div class="active-slot__items">${rowsHTML}</div>
+      <div class="active-slot__actions">
+        <button class="cart-action cart-action--primary" data-rg-action="add-item">
+          <span class="cart-action__glyph">+</span>ADD ITEM
+        </button>
+        <span class="cart-action__spacer"></span>
+        <button class="cart-action" data-rg-action="save"><span class="cart-action__glyph">\u25A4</span>SAVE</button>
+        <button class="cart-action" data-rg-action="duplicate"><span class="cart-action__glyph">\u21BB</span>DUPLICATE</button>
+        <button class="cart-action" data-rg-action="import"><span class="cart-action__glyph">\u2193</span>IMPORT</button>
+        <button class="cart-action" data-rg-action="export"><span class="cart-action__glyph">\u2191</span>EXPORT</button>
+        <button class="cart-action" data-rg-action="vault"><span class="cart-action__glyph">\u2303</span>VAULT</button>
+      </div>
+    </section>
+  `;
+  }
+  function renderRecItem(item) {
+    const sign = item.contribution > 0 ? "+" : "";
+    const tagText = item.contribution > 0 ? `${sign}${item.contribution}` : "\xB7";
+    return `
+    <div class="rec-item">
+      <div class="rec-item__head">
+        <h4 class="rec-item__name">${escHTML3(item.name)}</h4>
+        <span class="rec-item__tag" data-heat="${escHTML3(item.heat)}"><span class="rec-item__tag-sign">${escHTML3(sign)}</span>${escHTML3(tagText)}</span>
+      </div>
+      <div class="rec-item__reason">${escHTML3(item.reason)}</div>
+      <div class="rec-item__actions">
+        <button class="rec-item__adopt" data-rg-action="adopt" data-item-name="${escHTML3(item.name)}">+ ADOPT</button>
+        <button class="rec-item__details" data-rg-action="details" data-item-name="${escHTML3(item.name)}">DETAILS</button>
+      </div>
+    </div>
+  `;
+  }
+  function renderRail2() {
+    const userGoals = loadRgUserGoals();
+    const hasGoals = userGoals !== null && userGoals.length > 0;
+    const recsHTML = hasGoals ? RECOMMENDATIONS.map(renderRecItem).join("") : '<div class="rec-item rec-item--empty"><div class="rec-item__reason">Set a goal to see personalized recommendations.</div></div>';
+    const wishHTML = WISHLIST.length > 0 ? WISHLIST.map(renderRecItem).join("") : '<div class="rec-item rec-item--empty"><div class="rec-item__reason">No items saved for later.</div></div>';
+    return `
+    <aside class="regimen-side">
+      <section class="side-panel">
+        <header class="side-panel__head">
+          <div class="side-panel__eyebrow">RECOMMENDED \xB7 GOAL-DRIVEN</div>
+          <h3 class="side-panel__title">CLOSES YOUR GAPS</h3>
+        </header>
+        <div class="side-panel__list">${recsHTML}</div>
+      </section>
+      <section class="side-panel">
+        <header class="side-panel__head">
+          <div class="side-panel__eyebrow">WISHLIST \xB7 SAVED-FOR-LATER</div>
+          <h3 class="side-panel__title">DECISIONS DEFERRED</h3>
+        </header>
+        <div class="side-panel__list">${wishHTML}</div>
+      </section>
+    </aside>
+  `;
+  }
+  var CIPHER_SETS3 = {
+    hexa: "0123456789ABCDEF",
+    alphanum: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    numfrac: "0123456789",
+    time: "0123456789:\xB7"
+  };
+  var cipherInterval3 = null;
+  var cipherTickCount2 = 0;
+  function startCipherEngine3(container) {
+    if (cipherInterval3 !== null) {
+      return;
+    }
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+    cipherInterval3 = window.setInterval(() => {
+      cipherTickCount2 += 1;
+      const elements = Array.from(container.querySelectorAll(".ds-cipher"));
+      for (const el of elements) {
+        let original = el.dataset["cipherOriginal"];
+        if (original === void 0) {
+          original = el.textContent ?? "";
+          el.dataset["cipherOriginal"] = original;
+          const setKey = el.dataset["cipherSet"] ?? "alphanum";
+          el.dataset["cipherSetResolved"] = CIPHER_SETS3[setKey] ?? CIPHER_SETS3["alphanum"] ?? "";
+        }
+        const set2 = el.dataset["cipherSetResolved"] ?? "";
+        if (cipherTickCount2 % 5 === 0) {
+          el.textContent = original;
+          continue;
+        }
+        if (original.length === 0 || set2.length === 0) {
+          continue;
+        }
+        const chars = original.split("");
+        const i = Math.floor(Math.random() * chars.length);
+        const charAt = chars[i];
+        if (charAt === void 0) {
+          continue;
+        }
+        if (!/[A-Z0-9·:]/i.test(charAt)) {
+          continue;
+        }
+        const newChar = set2[Math.floor(Math.random() * set2.length)] ?? charAt;
+        chars[i] = newChar;
+        el.textContent = chars.join("");
+      }
+    }, 1e3);
+  }
+  function stopCipherEngine3() {
+    if (cipherInterval3 !== null) {
+      window.clearInterval(cipherInterval3);
+      cipherInterval3 = null;
+    }
+  }
+  function handleAction(action, target) {
+    const w = window;
+    const slotId = target.closest("[data-slot-id]")?.dataset["slotId"];
+    switch (action) {
+      case "save":
+        if (slotId !== void 0 && typeof w.saveCurrentToSlot === "function") {
+          try {
+            w.saveCurrentToSlot(slotId);
+          } catch (e) {
+            console.warn("[views/regimen] saveCurrentToSlot threw:", e);
+          }
+        }
+        break;
+      case "new-cartridge":
+        if (typeof w.showSlotInputModal === "function") {
+          try {
+            w.showSlotInputModal();
+          } catch (e) {
+            console.warn("[views/regimen] showSlotInputModal threw:", e);
+          }
+        }
+        break;
+      case "add-item":
+        if (typeof w.showAddItemModal === "function") {
+          try {
+            w.showAddItemModal();
+          } catch (e) {
+            console.warn("[views/regimen] showAddItemModal threw:", e);
+          }
+        }
+        break;
+      case "export":
+        if (typeof w.exportRegimen === "function") {
+          try {
+            w.exportRegimen();
+          } catch (e) {
+            console.warn("[views/regimen] exportRegimen threw:", e);
+          }
+        }
+        break;
+      case "import":
+        if (typeof w.importRegimen === "function") {
+          try {
+            w.importRegimen();
+          } catch (e) {
+            console.warn("[views/regimen] importRegimen threw:", e);
+          }
+        }
+        break;
+      case "vault":
+        if (typeof w.showVaultModal === "function") {
+          try {
+            w.showVaultModal();
+          } catch (e) {
+            console.warn("[views/regimen] showVaultModal threw:", e);
+          }
+        }
+        break;
+      case "remove": {
+        const idStr = target.dataset["itemId"];
+        const id = idStr === void 0 ? Number.NaN : Number(idStr);
+        if (Number.isFinite(id)) {
+          const removed = loadRgRemoved();
+          removed.add(id);
+          saveRgRemoved(removed);
+        }
+        break;
+      }
+      default:
+        break;
+    }
+  }
+  function mount3(container) {
+    const render = () => {
+      const items = loadEffectiveRegimen();
+      const coverageCount = getOrCompute().coveredCount;
+      container.innerHTML = `
+      <div class="regimen-grid">
+        <div class="regimen-main">
+          ${renderSlotsShowcase()}
+          ${renderActiveSlot(items, coverageCount)}
+        </div>
+        ${renderRail2()}
+      </div>
+    `;
+    };
+    const clickHandler = (ev) => {
+      const target = ev.target;
+      if (target === null) {
+        return;
+      }
+      const actionEl = target.closest("[data-rg-action]");
+      if (actionEl !== null) {
+        const action = actionEl.dataset["rgAction"] ?? "";
+        handleAction(action, actionEl);
+      }
+    };
+    render();
+    startCipherEngine3(container);
+    container.addEventListener("click", clickHandler);
+    const unsubRegimen = on("regimen:changed", () => render());
+    const unsubCoverage = on("coverage:recomputed", () => render());
+    return {
+      update: render,
+      unmount: () => {
+        unsubRegimen();
+        unsubCoverage();
+        stopCipherEngine3();
+        container.removeEventListener("click", clickHandler);
+        container.innerHTML = "";
+      }
+    };
+  }
+
   // assets/js/src/main.ts
   var LEGACY_TAB_FOR = {
     coverage: "tab-stand",
@@ -5660,6 +6055,18 @@
       mountEl.style.display = "block";
       if (mounted.coverage === void 0) {
         mounted.coverage = mount(mountEl);
+      }
+      return;
+    }
+    if (target === "regimen") {
+      hideLegacy();
+      const mountEl = document.getElementById("workspace-regimen-mount");
+      if (mountEl === null) {
+        return;
+      }
+      mountEl.style.display = "block";
+      if (mounted.regimen === void 0) {
+        mounted.regimen = mount3(mountEl);
       }
       return;
     }

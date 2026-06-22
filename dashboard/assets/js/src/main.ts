@@ -28,9 +28,9 @@ import * as coverageView from './views/coverage.js';
 import * as journeyView from './views/journey.js';
 import * as knowledgeView from './views/knowledge.js';
 import * as paletteView from './views/palette.js';
+import * as profileView from './views/profile.js';
 import * as regimenView from './views/regimen.js';
 import * as scannerView from './views/scanner.js';
-import * as profileView from './views/profile.js';
 
 /*
  * Reference all unused imports so they're held by the bundler (scaffolds
@@ -123,6 +123,19 @@ function navigateTo(target: WorkspaceTarget): void {
     return;
   }
 
+  if (target === 'regimen') {
+    hideLegacy();
+    const mountEl = document.getElementById('workspace-regimen-mount');
+    if (mountEl === null) {
+      return;
+    }
+    mountEl.style.display = 'block';
+    if (mounted.regimen === undefined) {
+      mounted.regimen = regimenView.mount(mountEl);
+    }
+    return;
+  }
+
   // Other workspaces fall back to legacy until their round lands.
   showLegacy(target);
 }
@@ -139,7 +152,6 @@ function wireRail(): void {
     });
   }
 }
-
 
 // ─── Profile panel ─────────────────────────────────────────────────────────
 
