@@ -4270,6 +4270,12 @@
     entries: external_exports.array(LogEntrySchema).default([])
   });
 
+  // assets/js/src/core/schemas/ocr-dict.ts
+  var OcrDictSchema = external_exports.object({
+    fuzzyDict: external_exports.array(external_exports.string()),
+    knownNutrientNames: external_exports.array(external_exports.string())
+  });
+
   // assets/js/src/core/schemas/regimen.ts
   var RegimenLabelSchema = external_exports.object({
     name: external_exports.string(),
@@ -5014,6 +5020,333 @@
       };
     }
   }
+
+  // assets/data/ocr-dict-data.json
+  var ocr_dict_data_default = {
+    fuzzyDict: [
+      "organic",
+      "regenerative",
+      "certified",
+      "gluten",
+      "free",
+      "non-gmo",
+      "natural",
+      "flavor",
+      "flavors",
+      "color",
+      "colors",
+      "ingredients",
+      "nutrition",
+      "facts",
+      "contains",
+      "and",
+      "or",
+      "for",
+      "with",
+      "less",
+      "than",
+      "may",
+      "contain",
+      "trace",
+      "amount",
+      "total",
+      "per",
+      "serving",
+      "daily",
+      "value",
+      "from",
+      "of",
+      "a",
+      "as",
+      "in",
+      "to",
+      "the",
+      "an",
+      "root",
+      "leaf",
+      "leaves",
+      "seeds",
+      "seed",
+      "nuts",
+      "nut",
+      "bean",
+      "beans",
+      "peel",
+      "rind",
+      "pulp",
+      "juice",
+      "meal",
+      "flour",
+      "grain",
+      "grains",
+      "flake",
+      "flakes",
+      "meal",
+      "base",
+      "oats",
+      "oat",
+      "oatmeal",
+      "rolled",
+      "steel",
+      "cut",
+      "syrup",
+      "solids",
+      "groats",
+      "bran",
+      "fiber",
+      "fibre",
+      "soluble",
+      "insoluble",
+      "dietary",
+      "prebiotic",
+      "probiotic",
+      "probiotics",
+      "peptide",
+      "peptides",
+      "isolate",
+      "isolates",
+      "hydrolyzed",
+      "collagen",
+      "calories",
+      "ocean",
+      "sea",
+      "trace",
+      "mineral",
+      "minerals",
+      "electrolyte",
+      "electrolytes",
+      "sparkling",
+      "infused",
+      "beverage",
+      "berry",
+      "punch",
+      "flavor",
+      "flavors",
+      "flavour",
+      "flavours",
+      "wheat",
+      "barley",
+      "rye",
+      "malt",
+      "spelt",
+      "buckwheat",
+      "amaranth",
+      "quinoa",
+      "rice",
+      "brown",
+      "millet",
+      "sorghum",
+      "teff",
+      "sunflower",
+      "safflower",
+      "canola",
+      "soybean",
+      "corn",
+      "cottonseed",
+      "rapeseed",
+      "coconut",
+      "olive",
+      "avocado",
+      "palm",
+      "oil",
+      "high",
+      "oleic",
+      "hydrogenated",
+      "cane",
+      "sugar",
+      "evaporated",
+      "fructose",
+      "corn",
+      "syrup",
+      "maple",
+      "honey",
+      "agave",
+      "dextrose",
+      "maltodextrin",
+      "molasses",
+      "stevia",
+      "sucralose",
+      "aspartame",
+      "acesulfame",
+      "saccharin",
+      "xylitol",
+      "erythritol",
+      "monk",
+      "fruit",
+      "salt",
+      "sea",
+      "himalayan",
+      "kosher",
+      "iodized",
+      "pink",
+      "cassava",
+      "tapioca",
+      "starch",
+      "cornstarch",
+      "potato",
+      "arrowroot",
+      "cinnamon",
+      "vanilla",
+      "cocoa",
+      "chocolate",
+      "cacao",
+      "nutmeg",
+      "ginger",
+      "clove",
+      "turmeric",
+      "pumpkin",
+      "sunflower",
+      "flax",
+      "chia",
+      "sesame",
+      "hemp",
+      "poppy",
+      "seeds",
+      "seed",
+      "almonds",
+      "almond",
+      "cashews",
+      "cashew",
+      "walnuts",
+      "pecans",
+      "peanuts",
+      "pistachios",
+      "hazelnut",
+      "macadamia",
+      "brazil",
+      "nuts",
+      "milk",
+      "cream",
+      "butter",
+      "cheese",
+      "yogurt",
+      "whey",
+      "casein",
+      "protein",
+      "isolate",
+      "concentrate",
+      "collagen",
+      "peptides",
+      "gelatin",
+      "eggs",
+      "egg",
+      "whites",
+      "yolks",
+      "vitamin",
+      "riboflavin",
+      "thiamine",
+      "niacin",
+      "pyridoxine",
+      "cobalamin",
+      "folate",
+      "biotin",
+      "choline",
+      "inositol",
+      "freshness",
+      "enriched",
+      "fortified",
+      "extract",
+      "concentrate",
+      "blend",
+      "contains",
+      "water",
+      "carbonated",
+      "sparkling",
+      "filtered",
+      "distilled",
+      "spring",
+      "pea",
+      "soy",
+      "chickpea",
+      "lentil",
+      "bean",
+      "beans",
+      "black",
+      "navy",
+      "kidney",
+      "pinto",
+      "lecithin",
+      "sunflower",
+      "soy",
+      "xanthan",
+      "guar",
+      "gum",
+      "pectin",
+      "agar",
+      "citric",
+      "malic",
+      "ascorbic",
+      "tartaric",
+      "phosphoric",
+      "acid",
+      "sodium",
+      "bicarbonate",
+      "baking",
+      "soda",
+      "powder",
+      "paprika",
+      "rosemary",
+      "thyme",
+      "oregano",
+      "basil",
+      "parsley",
+      "sage",
+      "garlic",
+      "onion"
+    ],
+    knownNutrientNames: [
+      "Vitamin B12",
+      "Vitamin B6",
+      "Vitamin B5",
+      "Vitamin B3",
+      "Vitamin B2",
+      "Vitamin B1",
+      "Vitamin A",
+      "Vitamin C",
+      "Vitamin D",
+      "Vitamin E",
+      "Vitamin K",
+      "Collagen Peptides",
+      "Dietary Fiber",
+      "Total Carbohydrate",
+      "Total Sugars",
+      "Added Sugars",
+      "Pantothenic Acid",
+      "Folic Acid",
+      "Ascorbic Acid",
+      "Omega-3",
+      "Omega 3",
+      "EPA",
+      "DHA",
+      "Calcium",
+      "Magnesium",
+      "Potassium",
+      "Sodium",
+      "Iron",
+      "Zinc",
+      "Copper",
+      "Manganese",
+      "Chromium",
+      "Selenium",
+      "Iodine",
+      "Boron",
+      "Molybdenum",
+      "Phosphorus",
+      "Sulfur",
+      "Thiamine",
+      "Riboflavin",
+      "Niacin",
+      "Pyridoxine",
+      "Cobalamin",
+      "Folate",
+      "Biotin",
+      "Choline",
+      "Inositol",
+      "Protein",
+      "Collagen",
+      "Fiber"
+    ]
+  };
 
   // assets/data/scanner-corpus-data.json
   var scanner_corpus_data_default = {
@@ -6029,6 +6362,14 @@
     }
     return result;
   }
+  function runScan(label) {
+    try {
+      return scan(label, { logToRecent: true });
+    } catch (e) {
+      console.warn("[state/scanner] scan threw:", e);
+      return null;
+    }
+  }
   function mapVerdict(v) {
     if (v === "ADD") {
       return "aligns";
@@ -6040,6 +6381,313 @@
   }
   if (typeof window !== "undefined") {
     window.lcScan = scan;
+  }
+
+  // assets/js/src/state/ocr.ts
+  var cachedDict = null;
+  function loadDict() {
+    if (cachedDict === null) {
+      const parsed = OcrDictSchema.parse(ocr_dict_data_default);
+      cachedDict = {
+        fuzzy: new Set(parsed.fuzzyDict.map((w) => w.toLowerCase())),
+        known: parsed.knownNutrientNames
+      };
+    }
+    return cachedDict;
+  }
+  async function loadTesseract() {
+    const w = window;
+    if (w.Tesseract !== void 0) {
+      return;
+    }
+    await new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = "./assets/vendor/tesseract/tesseract.min.js";
+      script.onload = () => resolve();
+      script.onerror = () => reject(new Error("Could not load local OCR engine. Run `node tools/vendor-tesseract.js` once to vendor Tesseract files into dashboard/assets/vendor/tesseract/."));
+      document.head.appendChild(script);
+    });
+  }
+  async function preprocessImage(dataUrl) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => {
+        try {
+          const canvas = document.createElement("canvas");
+          const target = 2e3;
+          const scale = Math.max(1, Math.min(3, target / Math.max(img.naturalWidth, img.naturalHeight)));
+          canvas.width = Math.round(img.naturalWidth * scale);
+          canvas.height = Math.round(img.naturalHeight * scale);
+          const ctx = canvas.getContext("2d");
+          if (ctx === null) {
+            reject(new Error("2D canvas context unavailable"));
+            return;
+          }
+          ctx.imageSmoothingEnabled = true;
+          ctx.imageSmoothingQuality = "high";
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          const id = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          const d = id.data;
+          for (let i = 0; i < d.length; i += 4) {
+            const gray = (d[i] ?? 0) * 0.299 + (d[i + 1] ?? 0) * 0.587 + (d[i + 2] ?? 0) * 0.114;
+            const v = Math.max(0, Math.min(255, (gray - 128) * 1.25 + 128));
+            d[i] = v;
+            d[i + 1] = v;
+            d[i + 2] = v;
+          }
+          ctx.putImageData(id, 0, 0);
+          resolve(canvas.toDataURL("image/png"));
+        } catch (e) {
+          reject(e instanceof Error ? e : new Error(String(e)));
+        }
+      };
+      img.onerror = () => reject(new Error("Failed to load image for preprocessing"));
+      img.src = dataUrl;
+    });
+  }
+  async function runOcr(imageData, progress) {
+    progress("Preprocessing image...", 0);
+    let processed;
+    try {
+      processed = await preprocessImage(imageData);
+    } catch {
+      processed = imageData;
+    }
+    progress("Warming up high-accuracy OCR...", 0.05);
+    await loadTesseract();
+    progress("Starting recognition...", 0.1);
+    const tesseract = window.Tesseract;
+    if (tesseract === void 0) {
+      throw new Error("OCR engine did not initialize");
+    }
+    const worker = await tesseract.createWorker("eng", 1, {
+      corePath: "./assets/vendor/tesseract/",
+      langPath: "./assets/vendor/tesseract/lang-data",
+      logger: (m) => {
+        if (m.status === "recognizing text") {
+          progress("Reading text carefully...", 0.1 + (m.progress ?? 0) * 0.9);
+        } else if (m.status === "loading language traineddata") {
+          progress("Loading language model from local vendor...", m.progress ?? 0);
+        } else if (typeof m.status === "string" && m.status.length < 40) {
+          progress(m.status, m.progress ?? 0);
+        }
+      },
+      workerPath: "./assets/vendor/tesseract/worker.min.js"
+    });
+    try {
+      await worker.setParameters({ preserve_interword_spaces: "1", tessedit_pageseg_mode: "6" });
+    } catch {
+    }
+    const result = await worker.recognize(processed);
+    await worker.terminate();
+    return result.data.text;
+  }
+  function levenshtein(a, b) {
+    if (a === b) {
+      return 0;
+    }
+    if (a.length === 0) {
+      return b.length;
+    }
+    if (b.length === 0) {
+      return a.length;
+    }
+    let prev = Array.from({ length: b.length + 1 }, () => 0);
+    let curr = Array.from({ length: b.length + 1 }, () => 0);
+    for (let j = 0; j <= b.length; j++) {
+      prev[j] = j;
+    }
+    for (let i = 1; i <= a.length; i++) {
+      curr[0] = i;
+      for (let j = 1; j <= b.length; j++) {
+        const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+        curr[j] = Math.min((curr[j - 1] ?? 0) + 1, (prev[j] ?? 0) + 1, (prev[j - 1] ?? 0) + cost);
+      }
+      [prev, curr] = [curr, prev];
+    }
+    return prev[b.length] ?? 0;
+  }
+  function ocrFuzzyFix(word) {
+    if (word.length < 3) {
+      return word;
+    }
+    if (/[\d()]/.test(word)) {
+      return word;
+    }
+    const dict = loadDict();
+    const lower = word.toLowerCase();
+    if (dict.fuzzy.has(lower)) {
+      return word;
+    }
+    let best = null;
+    let bestDist = Infinity;
+    const maxDist = lower.length <= 4 ? 1 : 2;
+    for (const candidate of dict.fuzzy) {
+      if (Math.abs(candidate.length - lower.length) > 2) {
+        continue;
+      }
+      const dist = levenshtein(lower, candidate);
+      if (dist <= maxDist && dist < bestDist) {
+        bestDist = dist;
+        best = candidate;
+      }
+    }
+    if (best === null) {
+      return word;
+    }
+    if (word === word.toUpperCase()) {
+      return best.toUpperCase();
+    }
+    const firstChar = word.charAt(0);
+    if (firstChar === firstChar.toUpperCase()) {
+      return best.charAt(0).toUpperCase() + best.slice(1);
+    }
+    return best;
+  }
+  function ocrPostProcess(text) {
+    return text.replace(/[a-z]+/gi, (m) => ocrFuzzyFix(m));
+  }
+  function parseOcrText(rawTextInput) {
+    const out = { containerHint: "", ingredients: "", nutrients: [] };
+    const rawText = ocrPostProcess(rawTextInput);
+    const ingMatch = rawText.match(/INGREDIENTS?\s{0,8}[:.]?\s{0,8}([\s\S]+?)(?:\n\s*\n|NUTRITION\s+FACTS|SUPPLEMENT\s+FACTS|DIRECTIONS|SUGGESTED\s+USE|OTHER\s+INGREDIENTS|CONTAINS\s*:|WARNING|ALLERGEN|MANUFACTURED|DISTRIBUTED|$)/i);
+    if (ingMatch !== null && ingMatch[1] !== void 0) {
+      const ing = ingMatch[1].trim().replace(/\s+/g, " ").replace(/[.\s]+$/, "");
+      if (ing.length > 8) {
+        out.ingredients = ing;
+      }
+    }
+    if (out.ingredients === "") {
+      const trimmed = rawText.trim().replace(/\s+/g, " ").replace(/[.\s]+$/, "");
+      const commas = (trimmed.match(/,/g) ?? []).length;
+      const hasNutritionHeader = /NUTRITION\s+FACTS|SUPPLEMENT\s+FACTS|Calories|Serving/i.test(trimmed);
+      if (commas >= 4 && trimmed.length >= 30 && trimmed.length <= 2e3 && !hasNutritionHeader) {
+        out.ingredients = trimmed;
+      }
+    }
+    const lines = rawText.split("\n").map((l) => l.trim()).filter((l) => l.length > 0);
+    const nutPat = /^([a-z][a-z\s()+\-/]{0,54}?)\s+(\d+(?:\.\d+)?)\s*(mg|mcg|g|iu)\b/i;
+    const skip = /^(?:calories|serving|amount per|daily value|total fat|saturated|trans fat|cholesterol|total carbohydrate|dietary fiber|total sugars|added sugars|nutrition|facts|amount)$/i;
+    const seen = /* @__PURE__ */ new Set();
+    for (const line of lines) {
+      const m2 = line.match(nutPat);
+      if (m2 === null || m2[1] === void 0 || m2[2] === void 0 || m2[3] === void 0) {
+        continue;
+      }
+      const name = m2[1].trim();
+      if (skip.test(name)) {
+        continue;
+      }
+      if (name.length < 2 || name.length > 55) {
+        continue;
+      }
+      const openParens = (name.match(/\(/g) ?? []).length;
+      const closeParens = (name.match(/\)/g) ?? []).length;
+      if (openParens !== closeParens) {
+        continue;
+      }
+      if (/[:;]/.test(name)) {
+        continue;
+      }
+      const wordCount = (name.match(/\b[a-z]+\b/gi) ?? []).length;
+      if (wordCount > 4) {
+        continue;
+      }
+      const hasSubstantiveWord = (name.match(/\b[a-z]{4,}\b/gi) ?? []).length > 0;
+      if (!hasSubstantiveWord) {
+        continue;
+      }
+      const key = name.toLowerCase();
+      if (seen.has(key)) {
+        continue;
+      }
+      seen.add(key);
+      out.nutrients.push({ amount: Number.parseFloat(m2[2]), name, unit: m2[3].toLowerCase() });
+    }
+    const reversedPat = /\b(\d+(?:\.\d+)?)\s*(mg|mcg|g|iu)\s+([a-z][a-z-]{3,20})\b/gi;
+    const reversedAllow = /* @__PURE__ */ new Set(["collagen", "protein", "fiber", "peptides", "calcium", "magnesium", "potassium", "sodium"]);
+    for (let rm = reversedPat.exec(rawText); rm !== null; rm = reversedPat.exec(rawText)) {
+      const g1 = rm[1];
+      const g2 = rm[2];
+      const g3 = rm[3];
+      if (g1 === void 0 || g2 === void 0 || g3 === void 0) {
+        continue;
+      }
+      const nameLower = g3.toLowerCase();
+      if (!reversedAllow.has(nameLower)) {
+        continue;
+      }
+      const canonical = nameLower === "peptides" ? "Collagen Peptides" : g3.charAt(0).toUpperCase() + g3.slice(1).toLowerCase();
+      const key = canonical.toLowerCase();
+      if (seen.has(key)) {
+        continue;
+      }
+      if (key === "collagen" && seen.has("collagen peptides")) {
+        continue;
+      }
+      if (key === "collagen peptides" && seen.has("collagen")) {
+        continue;
+      }
+      seen.add(key);
+      out.nutrients.push({ amount: Number.parseFloat(g1), name: canonical, unit: g2.toLowerCase() });
+    }
+    const known = loadDict().known;
+    for (const nutName of known) {
+      const escaped = nutName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const pat = new RegExp(`\\b${escaped}\\b[\\s,]*(?:\\([^)]{1,30}\\)[\\s,]*)?(\\d+(?:\\.\\d+)?)\\s*(mg|mcg|g|iu)\\b`, "i");
+      const m = rawText.match(pat);
+      if (m === null || m[1] === void 0 || m[2] === void 0) {
+        continue;
+      }
+      const key = nutName.toLowerCase();
+      if (key === "collagen" && seen.has("collagen peptides")) {
+        continue;
+      }
+      if (key === "fiber" && seen.has("dietary fiber")) {
+        continue;
+      }
+      if (seen.has(key)) {
+        continue;
+      }
+      seen.add(key);
+      out.nutrients.push({ amount: Number.parseFloat(m[1]), name: nutName, unit: m[2].toLowerCase() });
+    }
+    if (/\bfl\s*oz\b/i.test(rawText)) {
+      out.containerHint = "aluminum_can";
+    } else if (/capsules?|softgels?|tablets?/i.test(rawText)) {
+      out.containerHint = "capsule";
+    } else if (/powder|scoops?\b/i.test(rawText)) {
+      out.containerHint = "powder";
+    }
+    return out;
+  }
+  function parseLabel(rawText) {
+    const parsed = parseOcrText(rawText);
+    return {
+      name: parsed.containerHint !== "" ? parsed.containerHint : "Scanned label",
+      brand: "",
+      servings: 1,
+      nutrients: parsed.nutrients,
+      ingredients: parsed.ingredients
+    };
+  }
+  async function scanImage(dataUrl) {
+    if (dataUrl === "") {
+      throw new Error("scanImage: no dataUrl provided");
+    }
+    const text = await runOcr(dataUrl, (message, progress) => {
+      try {
+        window.dispatchEvent(new CustomEvent("lcscan:progress", { detail: { message, progress } }));
+      } catch {
+      }
+    });
+    const label = parseLabel(text);
+    return runScan(label);
+  }
+  if (typeof window !== "undefined") {
+    const w = window;
+    w.lcScanImage = scanImage;
+    w.lcParseLabel = parseLabel;
   }
 
   // assets/data/coverage-layout-data.json
@@ -7565,7 +8213,7 @@
       cipherInterval4 = null;
     }
   }
-  function readFileAsDataURL(file) {
+  async function readFileAsDataURL(file) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onload = () => resolve(String(reader.result ?? ""));
@@ -7574,16 +8222,11 @@
     });
   }
   async function handleImageFile(file) {
-    const w = window;
-    if (typeof w.lcScanImage !== "function") {
-      console.warn("[views/scanner] window.lcScanImage not available \u2014 legacy not loaded");
-      return;
-    }
     try {
       const dataUrl = await readFileAsDataURL(file);
-      w.lcScanImage(dataUrl);
+      await scanImage(dataUrl);
     } catch (e) {
-      console.warn("[views/scanner] failed to read image:", e);
+      console.warn("[views/scanner] OCR scan failed:", e);
     }
   }
   function mount4(container) {

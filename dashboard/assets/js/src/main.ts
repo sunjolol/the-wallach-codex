@@ -21,6 +21,7 @@ import * as storage from './core/storage.js';
 import { installRecomputeTrigger } from './state/coverage.js';
 import * as goalsState from './state/goals.js';
 import * as journeyState from './state/journey.js';
+import * as ocrState from './state/ocr.js';
 import * as regimenState from './state/regimen.js';
 import * as scannerState from './state/scanner.js';
 
@@ -36,7 +37,7 @@ import * as scannerView from './views/scanner.js';
  * Reference all unused imports so they're held by the bundler (scaffolds
  * still throw on call — that's intended until their rounds land).
  */
-const _refs = { storage, events, eden, sourceRule, regimenState, scannerState, goalsState, journeyState, regimenView, scannerView, knowledgeView, journeyView, paletteView, profileView };
+const _refs = { storage, events, eden, sourceRule, regimenState, scannerState, ocrState, goalsState, journeyState, regimenView, scannerView, knowledgeView, journeyView, paletteView, profileView };
 void _refs;
 
 // ─── Rail navigation state ────────────────────────────────────────────────

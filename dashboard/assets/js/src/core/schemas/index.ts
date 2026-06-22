@@ -11,6 +11,7 @@ export * from './coverage-layout.js';
 export * from './coverage-status.js';
 export * from './knowledge.js';
 export * from './log.js';
+export * from './ocr-dict.js';
 export * from './regimen.js';
 export * from './scanner-corpus.js';
 export * from './scanner.js';

@@ -13,12 +13,13 @@
  *   - Verdict card: alignment headline + 4 stat slabs
  *   - Right rail: scan history with verdict pills
  *
- * Legacy bridges: window.lcScanImage(dataUrl) triggers OCR pipeline.
- * Listens to `scanner:scan-complete` for re-render on result.
+ * Drives the native OCR pipeline via scanImage(dataUrl) (state/ocr.ts) and
+ * listens to `scanner:scan-complete` for re-render on result.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
 import { on } from '../core/events.js';
+import { scanImage } from '../state/ocr.js';
 import {
   getHistory,
   type HistoryEntry,
@@ -35,7 +36,6 @@ export interface MountHandle {
 type ScanState = 'idle' | 'scanning' | 'result';
 
 interface LegacyWindow extends Window {
-  lcScanImage?: (dataUrl: string) => void;
   lcScan?: (label: ScanLabel, opts?: { logToRecent?: boolean }) => ScanResult;
   lcLastResult?: ScanResult;
 }
@@ -123,13 +123,15 @@ function renderStage(state: ScanState, result: ScanResult | null): string {
   const regionCount = result?.label.nutrients?.length ?? 0;
   const confidence = result?.alignment.score.toFixed(2) ?? '—';
   const controlsActive = state === 'result' && result !== null;
-  const metaHTML = controlsActive ? `
+  const metaHTML = controlsActive
+    ? `
     <span>CAPTURE <strong class="ds-cipher" data-cipher-set="hexa">SC·B14F</strong></span>
     <span>·</span>
     <span>${regionCount} REGIONS</span>
     <span>·</span>
     <span>CONFIDENCE <strong>${escHTML(confidence)}</strong></span>
-  ` : `
+  `
+    : `
     <span>CAPTURE <strong class="ds-cipher" data-cipher-set="hexa">SC·----</strong></span>
     <span>·</span>
     <span>0 REGIONS</span>
@@ -450,7 +452,7 @@ function stopCipherEngine(): void {
 
 // ─── Image handling — file → dataURL → legacy bridge ─────────────────────
 
-function readFileAsDataURL(file: File): Promise<string> {
+async function readFileAsDataURL(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.onload = () => resolve(String(reader.result ?? ''));
@@ -460,17 +462,12 @@ function readFileAsDataURL(file: File): Promise<string> {
 }
 
 async function handleImageFile(file: File): Promise<void> {
-  const w = window as LegacyWindow;
-  if (typeof w.lcScanImage !== 'function') {
-    console.warn('[views/scanner] window.lcScanImage not available — legacy not loaded');
-    return;
-  }
   try {
     const dataUrl = await readFileAsDataURL(file);
-    w.lcScanImage(dataUrl);
+    await scanImage(dataUrl);
   }
   catch (e) {
-    console.warn('[views/scanner] failed to read image:', e);
+    console.warn('[views/scanner] OCR scan failed:', e);
   }
 }
 
