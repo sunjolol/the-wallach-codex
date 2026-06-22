@@ -4302,6 +4302,292 @@
     items: external_exports.array(HistoryEntrySchema)
   });
 
+  // assets/data/regimen-base-data.json
+  var regimen_base_data_default = {
+    _purpose: "Default HBSP foundation stack (Wallach Healthy Body Start Pak 2.5: BTT 2.5 + Beyond Osteo FX + Ultimate EFA Plus). Migrated VERBATIM from legacy-dashboard.js REGIMEN_BASE_DATA.recommended (YGY label data). Merged as the base layer of the effective regimen so a fresh dashboard demos real coverage; user-removable via rgRemoved (negative ids).",
+    _source: "legacy-dashboard.js REGIMEN_BASE_DATA.recommended",
+    items: [
+      {
+        id: -1,
+        label: {
+          name: "BTT 2.5 Canister",
+          dose_text: "2 scoops (15g) daily",
+          nutrients: [
+            {
+              name: "Vitamin A (beta-carotene)",
+              amount: 810,
+              unit: "mcg RAE",
+              form: "retinyl palmitate (46%) + beta-carotene (54%)",
+              alignment: "aligned"
+            },
+            {
+              name: "Vitamin C",
+              amount: 1e3,
+              unit: "mg",
+              form: "ascorbic acid",
+              alignment: "aligned"
+            },
+            {
+              name: "Vitamin D3",
+              amount: 18.8,
+              unit: "mcg",
+              form: "cholecalciferol",
+              alignment: "aligned"
+            },
+            {
+              name: "Vitamin E",
+              amount: 100,
+              unit: "mg",
+              form: "d-alpha tocopheryl acetate",
+              alignment: "partial"
+            },
+            {
+              name: "Vitamin B1 (Thiamine)",
+              amount: 30,
+              unit: "mg",
+              form: "thiamine mononitrate",
+              alignment: "aligned"
+            },
+            {
+              name: "Vitamin B2 (Riboflavin)",
+              amount: 30,
+              unit: "mg",
+              form: "riboflavin",
+              alignment: "aligned"
+            },
+            {
+              name: "Vitamin B3 (Niacin)",
+              amount: 40,
+              unit: "mg NE",
+              form: "niacinamide",
+              alignment: "aligned"
+            },
+            {
+              name: "Vitamin B6 (Pyridoxine)",
+              amount: 30,
+              unit: "mg",
+              form: "pyridoxine HCl",
+              alignment: "partial"
+            },
+            {
+              name: "Folic Acid (Folate)",
+              amount: 400,
+              unit: "mcg DFE",
+              form: "calcium-L-5-methylfolate",
+              alignment: "aligned"
+            },
+            {
+              name: "Vitamin B12 (Cobalamin)",
+              amount: 500,
+              unit: "mcg",
+              form: "methylcobalamin",
+              alignment: "aligned"
+            },
+            {
+              name: "Biotin",
+              amount: 600,
+              unit: "mcg",
+              form: "biotin",
+              alignment: "aligned"
+            },
+            {
+              name: "Vitamin B5 (Pantothenic Acid)",
+              amount: 150,
+              unit: "mg",
+              form: "D-calcium pantothenate",
+              alignment: "aligned"
+            },
+            {
+              name: "Choline",
+              amount: 25,
+              unit: "mg",
+              form: "choline bitartrate",
+              alignment: "partial"
+            },
+            {
+              name: "Calcium",
+              amount: 130,
+              unit: "mg",
+              form: "Ca gluconate/ascorbate/citrate",
+              alignment: "partial"
+            },
+            {
+              name: "Iron",
+              amount: 1,
+              unit: "mg",
+              form: "ferrous gluconate",
+              alignment: "partial"
+            },
+            {
+              name: "Magnesium",
+              amount: 20,
+              unit: "mg",
+              form: "Mg gluconate and oxide",
+              alignment: "partial"
+            },
+            {
+              name: "Zinc",
+              amount: 2,
+              unit: "mg",
+              form: "zinc gluconate",
+              alignment: "partial"
+            },
+            {
+              name: "Selenium",
+              amount: 100,
+              unit: "mcg",
+              form: "selenomethionine",
+              alignment: "aligned"
+            },
+            {
+              name: "Copper",
+              amount: 1,
+              unit: "mg",
+              form: "copper gluconate",
+              alignment: "partial"
+            },
+            {
+              name: "Chromium",
+              amount: 200,
+              unit: "mcg",
+              form: "chromium chelate",
+              alignment: "partial"
+            },
+            {
+              name: "Potassium",
+              amount: 100,
+              unit: "mg",
+              form: "K gluconate and citrate",
+              alignment: "aligned"
+            },
+            {
+              name: "Boron",
+              amount: 1,
+              unit: "mg",
+              form: "boron citrate",
+              alignment: "aligned"
+            },
+            {
+              name: "Vitamin K (Menaquinone = K2)",
+              amount: 30,
+              unit: "mcg",
+              form: "menaquinone-7 (K2 MK-7)",
+              alignment: "aligned"
+            }
+          ]
+        },
+        addedDate: "2026-06-21",
+        provenance: "wallach_hbsp_default"
+      },
+      {
+        id: -2,
+        label: {
+          name: "Beyond Osteo FX Powder",
+          dose_text: "1 scoop (12.8 g) daily",
+          nutrients: [
+            {
+              name: "Vitamin D3",
+              amount: 25,
+              unit: "mcg",
+              form: "cholecalciferol",
+              alignment: "aligned"
+            },
+            {
+              name: "Calcium",
+              amount: 1200,
+              unit: "mg",
+              form: "unspecified",
+              alignment: "aligned"
+            },
+            {
+              name: "Phosphorus",
+              amount: 600,
+              unit: "mg",
+              form: "unspecified",
+              alignment: "aligned"
+            },
+            {
+              name: "Magnesium",
+              amount: 300,
+              unit: "mg",
+              form: "unspecified",
+              alignment: "aligned"
+            },
+            {
+              name: "Zinc",
+              amount: 5,
+              unit: "mg",
+              form: "unspecified",
+              alignment: "partial"
+            },
+            {
+              name: "Copper",
+              amount: 0.1,
+              unit: "mg",
+              form: "unspecified",
+              alignment: "partial"
+            },
+            {
+              name: "Sulfur",
+              amount: 250,
+              unit: "mg",
+              form: "MSM",
+              alignment: "aligned"
+            },
+            {
+              name: "Strontium",
+              amount: 500,
+              unit: "mg",
+              form: "unspecified",
+              alignment: "aligned"
+            },
+            {
+              name: "Boron",
+              amount: 1,
+              unit: "mg",
+              form: "unspecified",
+              alignment: "aligned"
+            }
+          ]
+        },
+        addedDate: "2026-06-21",
+        provenance: "wallach_hbsp_default"
+      },
+      {
+        id: -3,
+        label: {
+          name: "Ultimate EFA Plus",
+          dose_text: "1 softgel daily",
+          nutrients: [
+            {
+              name: "Omega-3 (alpha-linolenic + EPA/DHA in marine form)",
+              amount: 585,
+              unit: "mg",
+              form: "ALA 300 + EPA 171 + DHA 114 (per softgel)",
+              alignment: "aligned"
+            },
+            {
+              name: "Omega-6 (linoleic + GLA)",
+              amount: 122,
+              unit: "mg",
+              form: "Linoleic 103 + GLA 19 (per softgel)",
+              alignment: "aligned"
+            },
+            {
+              name: "Omega-9 (Arachidonic / Oleic)",
+              amount: 120,
+              unit: "mg",
+              form: "Oleic",
+              alignment: "aligned"
+            }
+          ]
+        },
+        addedDate: "2026-06-21",
+        provenance: "wallach_hbsp_default"
+      }
+    ]
+  };
+
   // assets/js/src/state/regimen.ts
   var REGIMEN_KEY = "lcRegimen_v1";
   var RG_OVERRIDES_KEY = "rgOverrides_v1";
@@ -4323,6 +4609,25 @@
   }
   function loadRgUserGoals() {
     return getValidated(RG_USER_GOALS_KEY, RgUserGoalsSchema);
+  }
+  var cachedBase = null;
+  function loadBaseRegimen() {
+    if (cachedBase === null) {
+      const parsed = RegimenSchema.safeParse(regimen_base_data_default);
+      cachedBase = parsed.success ? parsed.data.items : [];
+    }
+    return cachedBase;
+  }
+  function loadEffectiveRegimen() {
+    const removed = loadRgRemoved();
+    const byId = /* @__PURE__ */ new Map();
+    for (const item of [...loadBaseRegimen(), ...loadRegimen().items, ...loadRgManual()]) {
+      if (removed.has(item.id)) {
+        continue;
+      }
+      byId.set(item.id, item);
+    }
+    return [...byId.values()];
   }
 
   // assets/js/src/state/coverage.ts
@@ -4424,17 +4729,6 @@
     return null;
   }
   var EMPTY_DELIVERY = { totalMg: 0, totalIU: 0, sources: [] };
-  function collectRegimenItems() {
-    const removed = loadRgRemoved();
-    const byId = /* @__PURE__ */ new Map();
-    for (const it of [...loadRegimen().items, ...loadRgManual()]) {
-      if (removed.has(it.id)) {
-        continue;
-      }
-      byId.set(it.id, it);
-    }
-    return [...byId.values()];
-  }
   function readScale(item, overrides) {
     const ov = overrides[String(item.id)];
     const candidates = [
@@ -4547,7 +4841,7 @@
     const targets = readTargets();
     const byName = buildByName(targets);
     const overrides = loadRgOverrides();
-    const delivery = accumulate(collectRegimenItems(), overrides, targets, byName);
+    const delivery = accumulate(loadEffectiveRegimen(), overrides, targets, byName);
     const tiles = targets.map((entry) => {
       const target = CoverageTargetSchema.safeParse(entry.target);
       const t = target.success ? target.data : null;
@@ -4918,8 +5212,7 @@
   `;
   }
   function renderRail() {
-    const regimen = loadRegimen();
-    const items = regimen.items.slice(0, 8);
+    const items = loadEffectiveRegimen().slice(0, 8);
     const itemsHTML = items.map((item) => {
       const labelName = (item.label.name || "?").toString();
       const icon = labelName.charAt(0).toUpperCase();

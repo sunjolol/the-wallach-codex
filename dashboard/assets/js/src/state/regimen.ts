@@ -23,6 +23,7 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
+import regimenBaseData from '../../../data/regimen-base-data.json';
 import { emit } from '../core/events.js';
 import {
   type OverridesMap,
@@ -81,6 +82,43 @@ export function loadRgRemoved(): Set<number> {
 
 export function loadRgUserGoals(): string[] | null {
   return getValidated(RG_USER_GOALS_KEY, RgUserGoalsSchema);
+}
+
+// ─── Effective regimen (base foundation + user stack) ──────────────────────
+
+let cachedBase: RegimenItem[] | null = null;
+
+/**
+ * The default HBSP foundation stack (BTT 2.5 + Beyond Osteo FX + Ultimate EFA
+ * Plus), migrated verbatim from legacy REGIMEN_BASE_DATA (YGY label data). Always
+ * present so a fresh dashboard demos real coverage; users hide entries via the
+ * §31 removed-set (the base items carry negative synthetic ids). Validated once
+ * at the Zod boundary, then cached.
+ */
+export function loadBaseRegimen(): RegimenItem[] {
+  if (cachedBase === null) {
+    const parsed = RegimenSchema.safeParse(regimenBaseData);
+    cachedBase = parsed.success ? parsed.data.items : [];
+  }
+  return cachedBase;
+}
+
+/**
+ * The effective stack coverage + rails read from: base foundation + committed +
+ * manual, deduped by id, minus the removed-set. The migrated, slimmed successor
+ * to legacy getUnifiedRegimenItems (its recommendations / wishlist / adopted
+ * machinery is the Regimen-surface migration's concern, not this).
+ */
+export function loadEffectiveRegimen(): RegimenItem[] {
+  const removed = loadRgRemoved();
+  const byId = new Map<number, RegimenItem>();
+  for (const item of [...loadBaseRegimen(), ...loadRegimen().items, ...loadRgManual()]) {
+    if (removed.has(item.id)) {
+      continue;
+    }
+    byId.set(item.id, item);
+  }
+  return [...byId.values()];
 }
 
 // ─── Chokepoints (THE 5 §31-protected mutation paths) ──────────────────────

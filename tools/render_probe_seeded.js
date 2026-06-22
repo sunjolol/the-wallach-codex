@@ -42,8 +42,13 @@ const SEED = { items: [{
   const pageErrors = [];
   page.on('pageerror', e => pageErrors.push(e.message));
 
+  // Hide the HBSP base foundation (negative ids) so this exercises the live
+  // classifier in isolation on the seeded item alone.
   await page.evaluateOnNewDocument((seed) => {
-    try { localStorage.setItem('lcRegimen_v1', JSON.stringify(seed)); }
+    try {
+      localStorage.setItem('lcRegimen_v1', JSON.stringify(seed));
+      localStorage.setItem('rgRemoved_v1', JSON.stringify([-1, -2, -3]));
+    }
     catch (e) { window.__seedErr = String(e); }
   }, SEED);
 

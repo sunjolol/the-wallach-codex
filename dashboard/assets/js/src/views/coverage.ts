@@ -20,7 +20,7 @@ import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import { on } from '../core/events.js';
 import { CoverageLayoutSchema, type LayoutSection, type LayoutTile } from '../core/schemas/index.js';
 import { type CoverageSnapshot, getOrCompute } from '../state/coverage.js';
-import { loadRegimen, loadRgUserGoals } from '../state/regimen.js';
+import { loadEffectiveRegimen, loadRgUserGoals } from '../state/regimen.js';
 
 export interface MountHandle {
   update: () => void;
@@ -196,8 +196,7 @@ function renderGoalsStrip(snapshot: CoverageSnapshot | null): string {
 }
 
 function renderRail(): string {
-  const regimen = loadRegimen();
-  const items = regimen.items.slice(0, 8);
+  const items = loadEffectiveRegimen().slice(0, 8);
   const itemsHTML = items.map((item) => {
     const labelName = (item.label.name || '?').toString();
     const icon = labelName.charAt(0).toUpperCase();

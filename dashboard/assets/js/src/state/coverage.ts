@@ -51,10 +51,8 @@ import {
 } from '../core/schemas/index.js';
 import { onChange } from '../core/storage.js';
 import {
-  loadRegimen,
-  loadRgManual,
+  loadEffectiveRegimen,
   loadRgOverrides,
-  loadRgRemoved,
   type OverridesMap,
   type RegimenItem,
 } from './regimen.js';
@@ -243,19 +241,6 @@ interface Delivery {
 
 const EMPTY_DELIVERY: Delivery = { totalMg: 0, totalIU: 0, sources: [] };
 
-/** Active stack: committed + manual items, deduped by id, minus removed ids. */
-function collectRegimenItems(): RegimenItem[] {
-  const removed = loadRgRemoved();
-  const byId = new Map<number, RegimenItem>();
-  for (const it of [...loadRegimen().items, ...loadRgManual()]) {
-    if (removed.has(it.id)) {
-      continue;
-    }
-    byId.set(it.id, it);
-  }
-  return [...byId.values()];
-}
-
 /** Resolve an item's serving/dose scaling factor (override → item → label.servings → 1). */
 function readScale(item: RegimenItem, overrides: OverridesMap): number {
   const ov = overrides[String(item.id)];
@@ -393,7 +378,7 @@ export function recompute(): CoverageSnapshot {
   const targets = readTargets();
   const byName = buildByName(targets);
   const overrides = loadRgOverrides();
-  const delivery = accumulate(collectRegimenItems(), overrides, targets, byName);
+  const delivery = accumulate(loadEffectiveRegimen(), overrides, targets, byName);
 
   const tiles: CoverageTile[] = targets.map((entry) => {
     const target = CoverageTargetSchema.safeParse(entry.target);
