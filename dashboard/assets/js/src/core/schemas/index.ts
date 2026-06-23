@@ -9,6 +9,7 @@
 
 export * from './coverage-layout.js';
 export * from './coverage-status.js';
+export * from './goals.js';
 export * from './journey.js';
 export * from './knowledge.js';
 export * from './log.js';

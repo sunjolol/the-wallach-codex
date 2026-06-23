@@ -1,53 +1,76 @@
 /**
- * state/goals.ts — active goals + Wallach milestone triggers
+ * state/goals.ts — active goals + Wallach milestone ledger (reads)
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * Owns the goalsManifest (user's active protocols) and the milestone ledger.
- * Milestones are NEVER user-claimable — they're triggered by doctrine-met
- * invariants computed off coverage / regimen / scanner state. The point of
- * the source-rule discipline is that achievements are earned algorithmically,
- * not declared.
+ * Owns the user's active goals (goalsManifest) and the milestone ledger.
+ * Milestones are NEVER user-claimable — they're stamped by a doctrine-trigger
+ * algorithm (evaluateMilestoneTriggers, deferred) computed off coverage /
+ * regimen / scanner state. The source-rule point: achievements are earned
+ * algorithmically, not declared.
  *
- * Each milestone ties back to a Wallach doctrine ID (DOCT·NN from
- * knowledge/doctrines). When the doctrine-check function returns true for
- * the first time, the milestone fires and a `journey:changed` event
- * goes out so the timeline picks it up.
- *
- * SCAFFOLD STATUS (Round 1·A): types declared. Wired in Round 5.
+ * J2 status: the READ side is live — listGoals / listMilestones are Zod-
+ * validated LS readers (mirror state/journey.ts). Bad LS data → empty array,
+ * never enters typed-land. The write side (goal create/edit chokepoints) and
+ * the milestone trigger algorithm land in a later Journey chunk.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
+import {
+  type Goal,
+  GoalsShapeSchema,
+  type Milestone,
+  MilestonesShapeSchema,
+} from '../core/schemas/index.js';
+import { getValidated } from '../core/storage.js';
+
+export type { Goal, Milestone };
 export type GoalId = string;
 export type MilestoneId = string;
 
-export interface Goal {
-  goalId: GoalId;
-  title: string;
-  targetDate: string;
-  progress: number; // 0..1
-  numerator: number;
-  denominator: number;
-  blockers: string[];
-  featured: boolean;
-}
+export const GOALS_KEY = 'wallachGoals_v1';
+export const MILESTONES_KEY = 'wallachMilestones_v1';
 
-export interface Milestone {
-  milestoneId: MilestoneId;
-  title: string;
-  doctrineRef: string; // e.g. "DOCT·02"
-  earnedAt: string | null; // null = locked
-  badge: string; // text on the badge ("35", "11", "60d", etc.)
-}
-
+/**
+ * Active goals. Featured first, then highest progress first. Bad LS data →
+ * empty array (never enters typed-land).
+ */
 export function listGoals(): Goal[] {
-  throw new Error('state/goals.listGoals — pending Round 5 migration');
+  const shape = getValidated(GOALS_KEY, GoalsShapeSchema);
+  const goals = shape?.goals ?? [];
+  return [...goals].sort((a, b) => {
+    const af = a.featured ?? false;
+    const bf = b.featured ?? false;
+    if (af !== bf) {
+      return af ? -1 : 1;
+    }
+    return b.progress - a.progress;
+  });
 }
 
+/**
+ * Milestone ledger. Earned (newest first) before locked. Bad LS data → empty.
+ */
 export function listMilestones(): Milestone[] {
-  throw new Error('state/goals.listMilestones — pending Round 5');
+  const shape = getValidated(MILESTONES_KEY, MilestonesShapeSchema);
+  const milestones = shape?.milestones ?? [];
+  return [...milestones].sort((a, b) => {
+    const aLocked = a.earnedAt === null;
+    const bLocked = b.earnedAt === null;
+    if (aLocked !== bLocked) {
+      return aLocked ? 1 : -1;
+    }
+    if (a.earnedAt !== null && b.earnedAt !== null) {
+      return a.earnedAt < b.earnedAt ? 1 : a.earnedAt > b.earnedAt ? -1 : 0;
+    }
+    return 0;
+  });
 }
 
-/** Run all doctrine checks. Any that now pass and weren't passing → fire. */
+/**
+ * Run all doctrine checks; fire any milestone that now passes and wasn't earned
+ * before. Deferred — the doctrine-trigger algorithm (coverage/regimen checks +
+ * the §31 write chokepoint) lands in a later Journey chunk.
+ */
 export function evaluateMilestoneTriggers(): MilestoneId[] {
-  throw new Error('state/goals.evaluateMilestoneTriggers — pending Round 5');
+  throw new Error('state/goals.evaluateMilestoneTriggers — deferred to a later Journey chunk');
 }
