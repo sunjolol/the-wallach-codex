@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_5 entries · deterministic render of log.jsonl_
+_6 entries · deterministic render of log.jsonl_
 
 ---
+
+## 2026-06-23 03:41 UTC · invariant-pass · tools
+Teeth-test PROVEN: creators_log_append_only catches both deletion (truncate 5→1) and mutation of committed entries; git restores; board 23/23. The sacred-log guarantee is structural, not aspirational.
+  ↳ Simulated 'delete entries for efficiency' via safe_write truncate → invariant fired RED 'SACRED LEDGER TRUNCATED'; in-place edit → 'SACRED LEDGER MUTATED at entry 1'; git checkout restored. try/finally guaranteed recovery.
 
 ## 2026-06-23 03:39 UTC · milestone · tools
 Sacred Creator's Log: moved to chronicle/creators-log/ (log.jsonl + generated LOG.md + README) and added the covenant's teeth — git-anchored append-only invariant, digest-sync invariant, shell delete-guard, and a never-skip round-close hard-block. Board 21→23.
