@@ -2,17 +2,18 @@
 
 **Status (2026-06-22, HEAD after file-audit cleanup A-C4):** The operating contract was
 restructured (Cowork) and the entire OLD discipline system was decommissioned.
-There is now **ONE instruction surface**: `CLAUDE.md` + `.claude/rules/` (10
+There is now **ONE instruction surface**: `CLAUDE.md` + `.claude/rules/` (11
 files). `memory/` is gone (70 files). `invariants.py` is pruned to **20 checks
-that protect the live app / code / eden / §17** — board **20/20 GREEN**, baseline
+that protect the live app / code / eden / §17** — board **21/21 GREEN** (+creators_log_well_formed), baseline
 empty (any red now is a real regression). Phase 1 is done + tagged
 `v0.1.0-cleanup-complete`; Phase 2 has started (Coverage/Regimen/Scanner live;
-**Knowledge drawer wired in 2A**). The FILE-AUDIT cleanup is now COMPLETE (A: invariants.py dead-helper reachability sweep -151 lines; B: sunjo plan de-staled; C/C2/C3/C4: repo-wide deleted-reference fixes + the 8-file `.claude/rules/` instruction surface now git-TRACKED + orphaned *.payload.tmp / products-db-audit artifacts removed; the stale out-of-repo `C:\Users\Light\Desktop\CLAUDE.md` duplicate deleted by Luneth). Board 20/20. **Do NOT resurrect memory/, brain/, tacitus,
+**Knowledge drawer wired in 2A**). The FILE-AUDIT cleanup is now COMPLETE (A: invariants.py dead-helper reachability sweep -151 lines; B: sunjo plan de-staled; C/C2/C3/C4: repo-wide deleted-reference fixes + the 8-file `.claude/rules/` instruction surface now git-TRACKED + orphaned *.payload.tmp / products-db-audit artifacts removed; the stale out-of-repo `C:\Users\Light\Desktop\CLAUDE.md` duplicate deleted by Luneth). Board 21/21. SINCE THEN: the LOGGING MANDATE was codified (`.claude/rules/logging-doctrine.md` — the 3rd "why" doctrine, historical memory) + **Phase-2 L1** shipped — the Creator's-Log file-mirror (`chronicle/creators-log.jsonl` + `tools/creators_log.py`) makes round-close step 5 CLI-fireable. **Do NOT resurrect memory/, brain/, tacitus,
 saga/lessons/decisions, or the old invariant paperwork — it was deleted on purpose.**
 
 ## First commands (catch-up)
 ```
-PYTHONUTF8=1 python tools/invariants.py | tail -1     # expect: 20/20 passed (0 failed)
+PYTHONUTF8=1 python tools/invariants.py | tail -1     # expect: 21/21 passed (0 failed)
+PYTHONUTF8=1 python tools/creators_log.py verify      # Creator's-Log mirror: N entries, 0 problems
 git -C "C:/Users/Light/Desktop/claude/health expert" log --oneline -8
 node tools/build.mjs                                  # Build OK (~291 KB raw / ~59 KB gzip)
 node tools/render_probe.js                            # coverage 20/92, 0 errors
@@ -24,8 +25,9 @@ Read order: `CLAUDE.md` → the matching `.claude/rules/*.md` for your domain �
 ## The new instruction surface (memorize)
 - `CLAUDE.md` — orientation + §00 prime directives + Disciplines + the Behavioral-rules table.
 - `.claude/rules/`: write-discipline · chokepoint-discipline · data-flow · typescript · testing ·
-  commits-and-rounds · windows-host · wild-west-mode · **source-rule (§00.A)** · **engineering-doctrine (§00.B)**.
-  (source-rule + engineering-doctrine were folded in from the deleted memory/ during cleanup.)
+  commits-and-rounds · windows-host · wild-west-mode · **source-rule (§00.A)** · **engineering-doctrine (§00.B)** ·
+  **logging-doctrine** (the §00 historical-memory why — build>test>log>repeat, repo-as-teaching-tool, never-poison-the-future).
+  (source-rule + engineering-doctrine folded in from the deleted memory/ during cleanup; logging-doctrine codified 2026-06-23.)
 
 ## What's DONE
 - **Phase 1** (1A–1G) tagged `v0.1.0-cleanup-complete` — tacitus/brain/tmp_jscheck excised; invariants tacitus-free.
@@ -35,6 +37,12 @@ Read order: `CLAUDE.md` → the matching `.claude/rules/*.md` for your domain �
   deleted 11 orphaned tools + 4 trap docs (HANDOFF, dashboard SUMMARY/README/ARCHITECTURE); deleted all of
   `memory/` + conflict_detector; neutralized `eslint --fix` in dashboard lint-staged; logged §17 incident #6
   (Cowork Write NUL-padding) in `chronicle/contradictions/`.
+- **File-audit cleanup A–C4** (2026-06-22/23) — invariants dead-helper sweep (−151 lines) · sunjo plan de-staled ·
+  repo-wide deleted-ref fixes · `.claude/rules/` instruction surface git-tracked · orphaned artifacts removed.
+- **Logging doctrine codified** — `.claude/rules/logging-doctrine.md` (3rd "why" doctrine: historical memory); wired into CLAUDE.md.
+- **Phase 2 · L1 — Creator's-Log file-mirror** — `chronicle/creators-log.jsonl` + `tools/creators_log.py {append,verify,list}`
+  make round-close step 5 CLI-fireable; the §00 audit trail now lives in the repo. Invariant `creators_log_well_formed` (board 20→21).
+  L2 (the in-app boot-merge into the Profile panel) is the remaining display half — see Phase-2 item 2.
 
 ## Phase 2 REMAINING (recommended order)
 1. **Journey drawer (J)** — ASSESSED 2026-06-22: NOT built-but-unmounted like Knowledge. Both
@@ -51,9 +59,11 @@ Read order: `CLAUDE.md` → the matching `.claude/rules/*.md` for your domain �
    (generalize `mountKnowledgeDrawer`/`toggleKnowledgeDrawer`/`wireKnowledgeKeys` into ONE shared K+J drawer
    helper; mount + J rail toggle + Esc + bare-J) -> **J4** `tools/render_probe_journey.js`. Template to mirror:
    the implemented `views/knowledge.ts` (336 lines) + its 2A wiring in `main.ts` (lines ~108-212, 287-288).
-2. **Profile panel + Creator's-Log file-mirror** — Profile mounts (`showProfilePanel`). `state/log.ts::log()`
-   is localStorage-only → round-close step 5 is CLI-unfireable. Build `chronicle/creators-log.jsonl` + a
-   boot-merge so the Profile log is live AND CLI-writable, unblocking the discipline loop.
+2. **Profile panel + Creator's-Log boot-merge (L2)** — the CLI half is DONE (L1: `chronicle/creators-log.jsonl` +
+   `tools/creators_log.py`; step 5 CLI-fireable). REMAINING: build the Profile panel (`showProfilePanel`) + the
+   app-side boot-merge. The offline file:// app CAN'T fetch() local files at runtime, so embed the jsonl at BUILD
+   time (mirror the existing HTML-embedded-JSON / esbuild-JSON-import pattern) and merge it with the LS
+   `wallachCreatorsLog_v1` entries in `state/log.ts` (dedup by id) so Profile shows BOTH CLI- and in-app-fired entries.
 3. **Command palette (⌘K)** — `views/palette.ts` exists; universal nav.
 Per-surface: data flows `eden/* → schemas/* → core/* → state/* → views/*`; no literal >10-elem array in
 views/state; visual-match the v3 mockups in `dashboard/components/` (VISUALS ONLY — that demo code is slop).
@@ -79,8 +89,10 @@ views/state; visual-match the v3 mockups in `dashboard/components/` (VISUALS ONL
 - **CWD trap:** never bare `cd subdir`; use `(cd dir && …)` subshells; recover via PowerShell `Set-Location`.
 - **`PYTHONUTF8=1`** prefix for python (Windows cp1252). **NEVER `eslint --fix`** (corruption surface; lint-staged
   is now read-only). **Numbers placeholder-faithful** (migrate verbatim).
-- **Round-close:** build OK + invariants 20/20 + render probe + build-log line + commit + push. Creator's-Log
-  is deferred until the file-mirror lands (Phase-2 item 2). Co-author trailer: `Claude Opus 4.8`.
+- **Round-close:** build OK + invariants 21/21 + render probe + build-log line + **Creator's Log entry** + commit + push.
+  Creator's Log is now CLI-fireable (L1): `PYTHONUTF8=1 python tools/creators_log.py append --surface <s> --kind
+  <round-close|milestone|incident|design-decision|…> --summary <≤280> [--detail …]` (validated by `creators_log_well_formed`).
+  Co-author trailer: `Claude Opus 4.8`.
 - **GitHub:** `origin` = https://github.com/sunjolol/the-wallach-codex (PRIVATE, `master`). Push after each chunk.
   ~95MB copyrighted Wallach PDFs under `knowledge/wallach-books/` — no public repo without the Phase-4 scrub.
 
