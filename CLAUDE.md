@@ -94,6 +94,7 @@ Read the matching file before the first write in that domain:
 | any health number / dose / claim (§00.A) | `source-rule.md` |
 | proposing a new system, tool, or invariant (§00.B) | `engineering-doctrine.md` |
 | logging · history · what & why to record | `logging-doctrine.md` |
+| building/perfecting a page or any visual/UX surface | `visual-verification.md` |
 
 ---
 
