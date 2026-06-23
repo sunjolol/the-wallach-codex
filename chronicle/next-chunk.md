@@ -1,100 +1,100 @@
-# Next chunk — Phase 1 (Cleanup) ~COMPLETE → finish **1F-3 + 1G**, then start **Phase 2**
+# Next chunk — **Phase 1 COMPLETE** (tagged `v0.1.0-cleanup-complete`) → continue **Phase 2** surfaces
 
-**Status (2026-06-22, HEAD = `1c89ab9`):** The sunjo Phase-1 cleanup is substantively done.
-`brain/`, `tacitus/`, and `tmp_jscheck.js` are gone; operating-language docs + enforcement
-hooks are in; `invariants.py` is swept of active brain/tacitus refs. Board **43/44** (the one
-red, `dashboard_integrity`, is a *pre-existing* stale headless smoke test — NOT a regression).
-This file + `chronicle/build-log.md` (read the last ~12 entries: chunks 1B → 1F-2) are the
-fast-orient pointers. **Do NOT re-investigate what's below — it's already mapped.**
+**Status (2026-06-22, HEAD = `7d58368`):** Phase 1 (cleanup) is DONE and tagged.
+Phase 2 (feature surfaces) has started: **Coverage/Regimen/Scanner** were already live;
+**Knowledge drawer (K)** is now wired + correct (Chunk 2A). Remaining Phase-2 surfaces:
+**Journey (J)**, **Profile panel + Creator's-Log mirror**, **Command palette (⌘K)**.
+Board **43/44** (sole red = `dashboard_integrity`, a *pre-existing* stale headless smoke
+test — NOT a regression; to clear it, re-base `tools/dashboard_smoke.js` to the new
+`.tile`/`.regimen-item-row`/`.scanner-grid` markup). Read the last ~6 `chronicle/build-log.md`
+entries (1F-3 → 2A) to orient. **Do NOT re-investigate what's mapped below.**
 
 ---
 
 ## First commands of the next session (catch-up)
 ```
 PYTHONUTF8=1 python tools/invariants.py | tail -1     # expect: 43/44 passed (1 failed)
-git -C "C:/Users/Light/Desktop/claude/health expert" log --oneline -10   # HEAD = 1c89ab9 (1F-2)
-node tools/build.mjs                                  # expect: Build OK
-node tools/render_probe.js                            # coveredStat ~20, /92, 0 errors
+git -C "C:/Users/Light/Desktop/claude/health expert" log --oneline -6   # HEAD = 7d58368 (2A)
+node tools/build.mjs                                  # expect: Build OK (dist ~291 KB raw / ~59 KB gzip)
+node tools/render_probe.js                            # coveredStat 20 / 92, 0 errors
+node tools/render_probe_knowledge.js                  # Knowledge drawer + 201-entry Products vault → PASS
 ```
-Read order (per CLAUDE.md First-5-min): `CLAUDE.md` → `sunjo/02-clarifications-and-plan.md`
+Read order (CLAUDE.md First-5-min): `CLAUDE.md` → `sunjo/02-clarifications-and-plan.md`
 → `REVIEW.md` → `tail -20 chronicle/build-log.md` → `python tools/invariants.py`.
 
 ---
 
-## What Phase 1 finished (chunks 1A–1F-2, all committed + pushed)
-- **1A** `v0.0.0-pre-cleanup` recovery tag.
-- **1B** CLAUDE.md "First 5 minutes" block · root README "Directory glossary" ·
-  `chronicle/domain-glossary.md` + `worked-example-chunk.md` · `labels/` + `transcripts/` READMEs.
-- **1C** deleted root `tmp_jscheck.js` (was a partial copy of `dashboard/assets/js/legacy-dashboard.js`).
-- **1D** built the last two enforcement hooks: `tools/hooks/post_write_verify.py` (PostToolUse/Bash —
-  re-scans safe_write'd files for NUL/UTF-8/empty) + `stop_round_close.py` (Stop — blocks only on a
-  NEW invariant regression vs `.claude/invariant-baseline.json`; build/log/Creator's-Log are reminders).
-  **Both go live next session (settings.json hot-reload).**
-- **1E** deleted the retired `brain/` folder (was a dead duplicate of `chronicle/`).
-- **1E-sweep** purged stale `brain/` folder-path refs from `invariants.py`.
-- **1F-1** retired the 16 Tacitus invariant checks (filter in `list_invariants` via `_RETIRED_TACITUS`).
-- **1F-2** de-coupled the catch-up / impl-log / dashboard-embed checks from tacitus, re-sealed
-  `last-catchup.json`, then deleted `tacitus/` + `build_tacitus_dashboard_live.py` + `tacitus_simulate.py`.
+## What's DONE
+- **Phase 1 (all chunks 1A–1G), tagged `v0.1.0-cleanup-complete`.** tacitus/ + brain/ +
+  tmp_jscheck.js excised; operating-language docs + enforcement hooks shipped; `invariants.py`
+  is now truly tacitus-free (1F-3 removed the 18 dead retired-check fns + registrations + the
+  `_RETIRED_TACITUS` frozenset/filter; `list_invariants()` is a plain daily/weekly split).
+- **Phase 2 · Chunk 2A — Knowledge drawer (K).** `main.ts` mounts `knowledgeView` into
+  `#drawer-knowledge-mount`, the K rail item + bare-`K` + Esc toggle it, navigate-away closes it.
+  `readProducts()` now mirrors `views/regimen.ts::readVault` (the `{products:{…}}` wrapper +
+  `canonical_name ?? name` + dedup) so the Products tab lists the real 201-entry vault (was ~0);
+  `ProductEntrySchema` gained `canonical_name`. Probe: `tools/render_probe_knowledge.js`.
 
-## Phase 1 REMAINING (do these first next session)
-1. **1F-3 — dead-code tidy (optional but wanted; makes `invariants.py` truly tacitus-free).**
-   The 16+1 retired checks are *filtered* but their code still exists. Remove:
-   - The ~17 dead `def check_tacitus_*` / `check_aegis_history_well_formed` / `check_feature_flags_present`
-     / `check_prompt_enum_consumer_sync` / `check_vision_pattern_seed_compliance` /
-     `check_dashboard_impl_status_source_purity` / `check_tacitus_prompts_portable_shape` function
-     defs (scattered: lines ~102, 827, 858, 898, 962, 1017, 1047, 1256, 1284, 1346, 2014, 2159, 2267,
-     2350, 2481, 2769, 3273 — verify with `grep -nE '^def check_(tacitus|aegis_history|feature_flags|prompt_enum|vision_pattern|dashboard_impl)'`).
-   - Their `InvariantSpec(...)` registrations (the `name="tacitus_..."` blocks, ~lines 3891, 4055–4405).
-   - Once registrations are gone you can also drop the `_RETIRED_TACITUS` frozenset + filter (no longer needed).
-   - `tools/catchup_seal.py::_current_tacitus_notebook()` (now-dead) + its docstring tacitus mentions.
-   - Historical/incidental tacitus refs in `tools/version_bump.py` (a `tacitus` version key bump —
-     versions.json `current{}` only has brain+dashboard, so it's dead), `tools/round74_essence_entries.py`,
-     `tools/round73_recovery.py` (a one-time historical recovery script — fine to leave).
-   - **Method:** each removal via `safe_write replace` (ast.parse-validated). After each batch,
-     `PYTHONUTF8=1 python tools/invariants.py | tail -1` must stay **43/44**.
-   - **Leave intact:** the versions.json `"brain"` version KEY + `check_brain_version_sync` (data contract,
-     not a folder ref); historical PROSE mentions of tacitus in logs/docs/versions-data (Luneth: keep as history).
-2. **1G — tag Phase 1 complete:** `git -C "<root>" tag -a v0.1.0-cleanup-complete -m "Phase 1 cleanup complete"`.
+## Phase 2 REMAINING (recommended order)
+1. **Journey drawer (J).** Same overlay pattern as Knowledge: `#drawer-journey-mount` is already
+   in `dashboard.html` (line 696). `views/journey.ts` + `state/journey.ts` exist (assess them first —
+   Knowledge was fully built but unmounted; Journey may be the same). Wire mount + J rail toggle +
+   Esc in `main.ts` (mirror `mountKnowledgeDrawer`/`toggleKnowledgeDrawer`/`wireKnowledgeKeys` — a
+   `wireDrawerKeys` generalization that handles both K and J is the clean refactor). Content = the
+   Creator's-Log / versions.json history timeline.
+2. **Profile panel + Creator's-Log file-mirror.** Profile already mounts (click "Luneth" →
+   `showProfilePanel` in `main.ts`); extend `views/profile.ts`. **Natural pairing:** `state/log.ts::log()`
+   is localStorage-only → round-close step 5 (Creator's-Log event) is CLI-unfireable AND the
+   `stop_round_close.py` hook can't see log events. Build `chronicle/creators-log.jsonl` + a `main.ts`
+   boot-merge so the Profile log is live AND CLI-writable. This unblocks the discipline loop.
+3. **Command palette (⌘K).** `views/palette.ts` exists; universal nav. (⌘K is deliberately left free —
+   2A's bare-`K` handler ignores ⌘/Ctrl/Alt.)
+Per-surface: data flows `eden/* → schemas/* → core/* → state/* → views/*`; no literal >10-elem array
+in views/state; visual-match the v3 mockups in `dashboard/components/`; verify with a render probe.
 
 ---
 
-## Phase 2 — the real feature work (after 1F-3 + 1G)
-Per `sunjo/02-clarifications-and-plan.md` §3. **Coverage (⌘1), Regimen (⌘2), Scanner (⌘3) are ALREADY
-live + data-driven** (done pre-sunjo). Remaining surfaces:
-- **Knowledge drawer (K)** — `views/knowledge.ts`; its product tab filters on `name` but the vault uses
-  `canonical_name` (mirror `readVault`/`RegimenVaultEntrySchema` from the regimen view). Wire the K-key drawer.
-- **Journey drawer (J)** — `views/journey.ts` + `state/journey.ts`; Creator's-Log / history timeline.
-- **Profile panel** — already mounts (click "Luneth"); extend content. **Natural pairing: the user-approved
-  Creator's-Log file-mirror** (`state/log.ts::log()` is localStorage-only → round-close step 5 is
-  CLI-unfireable; build `chronicle/creators-log.jsonl` + a `main.ts` boot-merge → makes the Profile log
-  live AND lets `stop_round_close.py` see Creator's-Log events).
-- **Command palette (⌘K)** — universal nav.
-Per-surface: data flows `eden/* → schemas/* → core/* → state/* → views/*`; no literal >10-elem array in
-views/state; visual-match the v3 mockups in `dashboard/components/`.
+## Flagged loose ends (Luneth's call — NOT auto-actioned)
+- **Kept checks still read now-deleted tacitus paths and pass vacuously.** 1F-2's NARROW boundary
+  kept these; they were out of 1F-3's dead-code scope. Decide retire-or-repoint:
+  `check_cura_phase_0_present` + `check_survivor_implementation_logged` read `tacitus/notebook/*.md`;
+  the `_design_system_enforcement` mode helper reads `tacitus/feature-flags.json` (feeds the critical
+  `design_system_*` checks — verify its default when the file is absent). Also stale-but-harmless:
+  the `no_external_style_resources` registration *description* still names `tacitus/dashboard/index.html`
+  (1F-1 fixed its scan_targets but not the description string); the `paired-write-catalog.md` row 17
+  still cites `brain/CHANGELOG.md`/`brain/versions/` paths (check kept, paths stale).
+- **`sunjo/` is UNTRACKED** (`git status` → `?? sunjo/`). The authoritative build plan
+  (`sunjo/02-clarifications-and-plan.md`, referenced by CLAUDE.md First-5-min) is not committed —
+  it could be lost. Decide whether to `git add sunjo/` (it's Wild-West-Mode private-repo content).
 
 ---
 
 ## Discipline / gotchas (carry every session)
 - **ALL repo writes via `python tools/safe_write.py {replace|append|rewrite|check}`** — direct
   Edit/Write is hook-blocked. Stage payloads in `C:/Users/Light/AppData/Local/Temp` via the Write tool
-  (fresh unique names). `replace` payloads must be **LF**. (Memory: `safe-write-crlf-flip`.)
-- **CWD trap:** never bare `cd subdir` (drifts the shared Bash+PS cwd, blocks everything). Use
-  `(cd dir && …)` subshells; recover via PowerShell `Set-Location "<root>"`. (Memory: `hooks-cwd-relative-trap`.)
+  (fresh unique names). `replace` payloads must be **LF**. (Memory: `safe-write-crlf-flip`.) For
+  multi-edit mechanical changes, a Temp python script that computes new content + calls
+  `safe_write.safe_rewrite` (transactional: validate-all-then-write) worked cleanly in 1F-3 + 2A.
+- **CWD trap:** never bare `cd subdir`. Use `(cd dir && …)` subshells; recover via PowerShell
+  `Set-Location "<root>"`. (Memory: `hooks-cwd-relative-trap`.)
 - **`PYTHONUTF8=1` prefix** for python on this Windows host (cp1252 stdout crashes on em-dashes).
 - **NEVER `eslint --fix`** (§17 corruption surface); fix lint via safe_write.
-- **Numbers are placeholder-faithful** — migrate verbatim, never invent, don't chase number-only oddities
-  (Luneth batch-corrects at the end). (Memory: `numbers-corrected-at-end`.)
+- **Numbers are placeholder-faithful** — migrate verbatim (Memory: `numbers-corrected-at-end`).
 - **Wild West Mode (Phases 1–3):** no TOS/privacy/disclaimers/copyright headers; don't refuse Wallach corpus.
-- **Baseline:** `.claude/invariant-baseline.json` tolerates `dashboard_integrity` only. To clear it for real,
-  re-base `tools/dashboard_smoke.js` to the new `.tile`/`.regimen-item-row`/`.scanner-grid` markup.
-- **GitHub:** `origin` = https://github.com/sunjolol/the-wallach-codex (PRIVATE, branch `master`). Push
-  after each chunk: `git -C "C:/Users/Light/Desktop/claude/health expert" push`. Repo holds ~95MB
-  copyrighted Wallach PDFs under `knowledge/wallach-books/` — do NOT make the repo public without stripping
-  those from history first (Phase 4 copyright scrub, sunjo §8.4).
+- **vitest is N/A right now** — no `state/*.test.ts` authored yet (glob empty). View/wiring chunks are
+  verified via render probes (the "views verified visually" contract). Don't treat the empty-glob exit 1
+  as a failure.
+- **Round-close:** build OK + invariants ≥43/44 + build-log entry + (Creator's-Log = deferred until the
+  file-mirror lands). Commit + `git push` after each chunk. Co-author trailer: `Claude Opus 4.8`.
+- **Baseline:** `.claude/invariant-baseline.json` tolerates `dashboard_integrity` only.
+- **GitHub:** `origin` = https://github.com/sunjolol/the-wallach-codex (PRIVATE, branch `master`).
+  ~95MB copyrighted Wallach PDFs under `knowledge/wallach-books/` — do NOT make the repo public without
+  the Phase-4 copyright scrub (sunjo §8.4).
 
 ## Working commands (verified, Windows host)
 - Build: `node tools/build.mjs` · Invariants: `PYTHONUTF8=1 python tools/invariants.py`
 - Lint one file: `(cd dashboard && node_modules/.bin/eslint assets/js/src/views/X.ts)` — SUBSHELL, never bare cd
-- Probes: `node tools/render_probe.js` (coverage) · `render_probe_seeded.js` · `render_probe_scan.js` ·
-  `render_probe_ocr.js` · `render_probe_adopt.js` (scanner)
+- size-limit: `(cd dashboard && node_modules/.bin/size-limit)` (JS ≤250 KB gzip · CSS ≤150 KB gzip)
+- Probes: `render_probe.js` (coverage) · `_seeded` · `_scan` · `_ocr` · `_adopt` (scanner) ·
+  `_knowledge` (Knowledge drawer + Products vault)
 - madge: `(cd dashboard && node_modules/.bin/madge --circular --extensions ts assets/js/src)`
