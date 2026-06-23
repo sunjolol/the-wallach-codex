@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_14 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_15 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-23 11:25 UTC-04:00 · design-decision · tooling
+Creator's Log timestamps now store machine-LOCAL time (auto-follow ET->CT + DST) instead of UTC. _now_iso uses datetime.now().astimezone(); _fmt_ts derives the zone from the stored offset. Historical UTC entries stay UTC (immutable ledger).
+  ↳ Luneth flagged that log times read in UTC (an entry made at 10:31 EDT showed as 14:31 / 06:44), confusing against his local clock, and that he's moving ET->CT next week. Chose auto-follow-local over hard-pinning CT so it adapts to the move + DST with zero maintenance. Two-line change in tools/creators_log.py: _now_iso() now returns datetime.now().astimezone().isoformat() (local-aware, carries the offset); _fmt_ts() derives the zone label from the parsed offset (%Z) instead of hardcoding 'UTC'. The slice-based renderers (genesis last-log line, Profile panel formatTs) need no change — they read the stored wall-clock directly, so new entries show local automatically. The ~13 pre-change entries stored +00:00 stay UTC (the ledger is append-only/immutable; never rewriting history). This entry is the first stored in local time.
 
 ## 2026-06-23 14:31 UTC · round-close · journey
 Journey J2 — views/journey.ts 4-tab drawer renderer + LOG EVENT/check-in forms; mirrors knowledge.ts, reads only via state layer, zero inline literals. Also implemented read side of state/goals.ts (+ new core/schemas/goals.ts). Board 25/25, probes pass.

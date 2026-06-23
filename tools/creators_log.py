@@ -77,7 +77,10 @@ def _gen_id() -> str:
 
 
 def _now_iso() -> str:
-    return datetime.datetime.now(datetime.timezone.utc).isoformat()
+    # Machine-LOCAL time (aware, carries the offset) so entries read in the
+    # user's own timezone and auto-follow a move (e.g. ET -> CT) + DST. The
+    # ledger is immutable, so entries written before this stay UTC.
+    return datetime.datetime.now().astimezone().isoformat()
 
 
 def validate_entry(e: dict) -> list[str]:
@@ -144,12 +147,14 @@ def verify_file() -> tuple[bool, list[str], int]:
 
 
 def _fmt_ts(ts: str) -> str:
-    """ISO-8601 -> 'YYYY-MM-DD HH:MM UTC' for the human digest (best-effort)."""
+    """ISO-8601 -> 'YYYY-MM-DD HH:MM <zone>' for the human digest. The zone is
+    derived from the stored offset (entries store machine-local time; entries
+    predating that were stored UTC and still render as UTC)."""
     try:
         dt = datetime.datetime.fromisoformat(ts)
-        return dt.strftime("%Y-%m-%d %H:%M UTC")
     except Exception:
         return ts
+    return dt.strftime("%Y-%m-%d %H:%M ") + (dt.strftime("%Z") or "UTC")
 
 
 def _flatten(s: str) -> str:
