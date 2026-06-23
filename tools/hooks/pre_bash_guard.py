@@ -88,12 +88,22 @@ def main():
                    "Needs user sign-off + safe_write + golden-hash update.")
             return
 
-    # Sacred Creator's Log — the canonical ledger is append-only + never deleted/moved
-    if re.search(r"(?:^|[\n;&|(])\s*(?:sudo\s+)?(?:git\s+rm|rm|mv)\b[^\n;&|]*chronicle/creators-log/log\.jsonl", cmd):
-        _block("the Creator's Log ledger (chronicle/creators-log/log.jsonl) is SACRED + "
-               "append-only (.claude/rules/logging-doctrine.md). It is never deleted, moved, "
-               "or truncated — not even under a broad delete authorization. Append only via "
-               "tools/creators_log.py; if removal ever seems needed, STOP and ask the user.")
+    # Sacred Creator's Log — the ledger AND its directory are append-only, never
+    # deleted/moved/renamed (the whole dir + any child, not just the one filename).
+    if re.search(r"(?:^|[\n;&|(])\s*(?:sudo\s+)?(?:git\s+rm|rm|mv)\b[^\n;&|]*chronicle/creators-log", cmd):
+        _block("the Creator's Log (chronicle/creators-log/) is SACRED + append-only "
+               "(.claude/rules/logging-doctrine.md). The ledger, its directory, and every "
+               "entry are never deleted, moved, renamed, or truncated — not even under a "
+               "broad delete authorization. Append only via tools/creators_log.py; if "
+               "removal ever seems needed, STOP and ask the user.")
+        return
+    # ...and a recursive rm of the chronicle/ root would take the sacred ledger with it.
+    rmc = re.search(r"\brm\s+([^\n;&|]+)", cmd)
+    if rmc and re.search(r"(?:^|\s)-[a-zA-Z]*r|--recursive", rmc.group(1)) \
+            and re.search(r"(?:^|\s)\.?/?chronicle/?(?=\s|$)", rmc.group(1)):
+        _block("recursive rm targeting chronicle/ would delete the SACRED Creator's Log "
+               "(chronicle/creators-log/). Scope the delete to a specific non-sacred path, "
+               "or STOP and ask the user.")
         return
 
     _allow()

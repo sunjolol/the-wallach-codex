@@ -1465,17 +1465,29 @@ def check_creators_log_append_only():
     """The Creator's Log is sacred + append-only. The committed ledger
     (`git show HEAD:chronicle/creators-log/log.jsonl`) must remain a line-PREFIX
     of the working file — every committed entry still present, in order, at the
-    start. Catches any delete / truncate / edit / reorder of a past entry. A path
-    not yet in HEAD passes (first commit). Truth anchor: git-committed history."""
+    start. Catches any delete / truncate / edit / reorder of a past entry — incl.
+    a COMMITTED deletion (path gone from HEAD but with prior history → RED). A
+    genuinely-new path (no history) passes; git being unavailable fails OPEN but
+    LOUD (⚠ UNVERIFIED message, never a silent green). Truth anchor: git history."""
     import subprocess
     rel = "chronicle/creators-log/log.jsonl"
     try:
         r = subprocess.run(["git", "-C", str(ROOT), "show", f"HEAD:{rel}"],
                            capture_output=True, text=True, timeout=15)
     except Exception as e:
-        return True, f"git unavailable ({e}) — cannot anchor, fail-open"
+        return True, (f"⚠ UNVERIFIED — git unavailable ({e}); the sacred append-only "
+                      f"anchor could NOT be checked this run (fail-open, not a silent pass)")
     if r.returncode != 0:
-        return True, "ledger not in HEAD yet (new path) — nothing committed to anchor"
+        try:
+            hist = subprocess.run(["git", "-C", str(ROOT), "log", "--oneline", "--", rel],
+                                  capture_output=True, text=True, timeout=15)
+            ever_committed = hist.returncode == 0 and bool(hist.stdout.strip())
+        except Exception:
+            ever_committed = False
+        if ever_committed:
+            return False, (f"SACRED LEDGER REMOVED FROM HEAD — {rel} has committed history but "
+                           f"is absent from the current commit (a committed deletion). violated")
+        return True, "ledger not yet committed (new path) — nothing to anchor"
     committed = [ln for ln in r.stdout.splitlines() if ln.strip()]
     path = ROOT / rel
     if not path.exists():

@@ -33,6 +33,7 @@ import datetime
 import json
 import pathlib
 import random
+import re
 import sys
 import time
 
@@ -84,6 +85,8 @@ def validate_entry(e: dict) -> list[str]:
     summ = e.get("summary")
     if isinstance(summ, str) and len(summ) > SUMMARY_MAX:
         errs.append(f"summary >{SUMMARY_MAX} chars ({len(summ)})")
+    if isinstance(summ, str) and ("\n" in summ or "\r" in summ):
+        errs.append("summary contains a newline (must be a single-line headline)")
     if "detail" in e and not isinstance(e["detail"], str):
         errs.append("detail not a string")
     if "metadata" in e and not isinstance(e["metadata"], dict):
@@ -142,6 +145,21 @@ def _fmt_ts(ts: str) -> str:
         return ts
 
 
+def _flatten(s: str) -> str:
+    """Collapse any newline run to a single space so user content can never
+    inject extra markdown blocks (a fake heading/entry) into the human digest."""
+    return re.sub(r"[\r\n]+", " ", s).strip()
+
+
+def _safe_md(s: str) -> str:
+    """Digest-safe headline: flattened + a leading markdown control char escaped
+    so a crafted summary cannot masquerade as a heading/quote (a separate entry)."""
+    s = _flatten(s)
+    if s[:1] in "#>":
+        s = "\\" + s
+    return s
+
+
 def render_digest() -> str:
     """Render LOG.md from the canonical ledger — newest first. Pure function of
     log.jsonl, so it can be diffed against the on-disk LOG.md (digest-sync)."""
@@ -160,10 +178,10 @@ def render_digest() -> str:
     blocks = []
     for e in reversed(entries):
         line = f"\n## {_fmt_ts(e.get('ts', ''))} · {e.get('kind', '?')} · {e.get('surface', '?')}\n"
-        line += (e.get("summary", "") or "").strip() + "\n"
+        line += _safe_md(e.get("summary", "") or "") + "\n"
         detail = e.get("detail")
         if isinstance(detail, str) and detail.strip():
-            line += f"  ↳ {detail.strip()}\n"
+            line += f"  ↳ {_flatten(detail)}\n"
         blocks.append(line)
     return head + "".join(blocks)
 

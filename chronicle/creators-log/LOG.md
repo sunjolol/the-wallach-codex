@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_6 entries · deterministic render of log.jsonl_
+_7 entries · deterministic render of log.jsonl_
 
 ---
+
+## 2026-06-23 04:23 UTC · round-close · tools
+Chunk H: hardened the sacred ledger per the Opus-4.8 audit — closed 3 enforcement gaps (4a digest spoof, 5a delete-guard dir hole, 5b silent committed-deletion + silent fail-open). All re-proven; board 23/23.
+  ↳ 4a: validate_entry rejects newline summaries + render_digest escapes a leading #/> and flattens newlines so the human digest can't be made to show a fake entry (the jsonl was already injection-proof — json.dumps escaping, proven). 5a: pre_bash_guard now blocks the whole chronicle/creators-log dir + any child + 'rm -rf chronicle' + a dir mv, while non-sacred deletes still pass. 5b: a COMMITTED deletion (ledger gone from HEAD with prior history) is now a hard RED 'SACRED LEDGER REMOVED FROM HEAD'; git-unavailable now prints a loud UNVERIFIED warning but stays fail-open per Luneth's 'visible warning, not blocking' choice. Verified: invariants 23/23, verify 6/0, digest byte-identical, build OK 290.9 KB, every fix re-proven against real code (incl. the real append_only on an isolated temp git repo). The req-3 truthfulness ceiling stands by design — next feature (L2 dashboard Creator's Log) is Luneth's visual truth-verification layer; then navigability archive-tree.
 
 ## 2026-06-23 03:41 UTC · invariant-pass · tools
 Teeth-test PROVEN: creators_log_append_only catches both deletion (truncate 5→1) and mutation of committed entries; git restores; board 23/23. The sacred-log guarantee is structural, not aspirational.
