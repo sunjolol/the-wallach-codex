@@ -64,13 +64,6 @@ class Invariant:
 # Helper utilities
 # ---------------------------------------------------------------------------
 
-def _eastern_today() -> str:
-    """Today's date in Eastern time as YYYY-MM-DD (EDT during daylight).
-    Timezone-aware (avoids datetime.utcnow deprecation in Python 3.12+)."""
-    now_utc = datetime.datetime.now(datetime.timezone.utc)
-    eastern = now_utc - datetime.timedelta(hours=4)  # EDT
-    return eastern.strftime("%Y-%m-%d")
-
 
 def _file_hash(path) -> str:
     """SHA-256 of file content (empty string if file missing)."""
@@ -369,8 +362,6 @@ def check_wallach_stance_source_rule():
     return True, f"all {n_stances} wallach_stance citation(s) cite allowlisted Wallach/Youngevity primary"
 
 
-
-
 def check_wallach_stance_embed_sync():
     """Round 122 — verify every canonical `wallach_stance` field in
     knowledge/essentials-targets.json is mirrored byte-equal in the
@@ -470,8 +461,6 @@ def check_wallach_stance_embed_sync():
     return True, f"all {n} wallach_stance entries byte-equal between canonical and dashboard embed"
 
 
-
-
 # ---------------------------------------------------------------------------
 # Round 135 — Discipline invariants (lesson logging + raw-key surfacing +
 # cross-IIFE bare refs). Codified after the Round 135 meta-failure: lessons
@@ -479,29 +468,6 @@ def check_wallach_stance_embed_sync():
 # sites; cross-IIFE bare refs silently fell back to empty. The 30+ existing
 # invariants audit STRUCTURE; these three audit DISCIPLINE.
 # ---------------------------------------------------------------------------
-
-_RE_TIMESTAMP = re.compile(r'\*\*\((\d{4}-\d{2}-\d{2}) at (\d{1,2}):(\d{2})\s*(AM|PM)\)\*\*')
-
-def _max_timestamp(path):
-    """Return max datetime found in a markdown file's **(YYYY-MM-DD at H:MM AM/PM)** entries."""
-    try:
-        text = path.read_text(encoding="utf-8")
-    except Exception:
-        return None
-    latest = None
-    for m in _RE_TIMESTAMP.finditer(text):
-        date_str, hh, mm, ampm = m.group(1), int(m.group(2)), int(m.group(3)), m.group(4)
-        if ampm == 'PM' and hh != 12:
-            hh += 12
-        elif ampm == 'AM' and hh == 12:
-            hh = 0
-        try:
-            dt = datetime.datetime.strptime(date_str, '%Y-%m-%d').replace(hour=hh, minute=mm)
-            if latest is None or dt > latest:
-                latest = dt
-        except Exception:
-            continue
-    return latest
 
 
 def check_raw_key_surfacing():
@@ -866,122 +832,6 @@ def check_regimen_slot_invariant_wired():
     return True, f"REGIMEN_SLOT_INVARIANT fully wired (function + window export + load-time arm + {post_mutation_calls} call sites)"
 
 
-
-
-_ROUND_HEADER_RE = re.compile(r"^## Round (\d+)\b", re.MULTILINE)
-
-
-def _saga_rounds(saga_text: str, n_recent: int = 5) -> list[tuple[int, str]]:
-    """Return list of (round_number, round_body) for the N most-recent rounds
-    in saga.md. Body runs from this round's header to the next `## ` heading."""
-    matches = list(_ROUND_HEADER_RE.finditer(saga_text))
-    if not matches:
-        return []
-    rounds: list[tuple[int, str]] = []
-    for i, m in enumerate(matches):
-        rnum = int(m.group(1))
-        start = m.start()
-        end = matches[i + 1].start() if i + 1 < len(matches) else len(saga_text)
-        rounds.append((rnum, saga_text[start:end]))
-    rounds.sort(key=lambda x: x[0], reverse=True)
-    return rounds[:n_recent]
-
-
-def _marker_lines(round_body: str, marker_label: str) -> tuple[bool, list[str]]:
-    """Return (marker_present, citation_lines) for a `**<label>:**` marker.
-
-    Two acceptable shapes per Round 148 §30:
-
-    Shape A (standalone marker — original Round 140 §27 pattern):
-        **<Label>:** <inline content OR N/A>
-        - bullet 1
-        - bullet 2
-
-    Shape B (sub-bullet inside the unified Closing-move record block,
-    introduced Round 148 §30):
-        **Closing-move record:**
-        - <Label>: <citations OR N/A>
-        - <Other label>: ...
-
-    For Shape B, the citation lines are just the single bullet (its content
-    after the colon); if that content starts with `N/A`, returns (True, [])."""
-    # Shape A first
-    pat_a = re.compile(
-        rf"\*\*{re.escape(marker_label)}:\*\*\s*(?P<inline>[^\n]*)\n(?P<bullets>(?:- [^\n]*\n)*)",
-        re.MULTILINE,
-    )
-    m = pat_a.search(round_body)
-    if m:
-        inline = m.group("inline").strip()
-        if inline.upper().startswith("N/A"):
-            return True, []
-        bullets = [ln.strip() for ln in m.group("bullets").splitlines() if ln.strip().startswith("-")]
-        return True, bullets
-    # Shape B — sub-bullet under Closing-move record
-    pat_b = re.compile(
-        r"\*\*Closing-move record:\*\*\s*\n(?P<block>(?:- [^\n]*\n)+)",
-        re.MULTILINE,
-    )
-    m = pat_b.search(round_body)
-    if not m:
-        return False, []
-    label_lc = marker_label.lower()
-    for ln in m.group("block").splitlines():
-        ls = ln.strip()
-        if not ls.startswith("-"):
-            continue
-        # Strip leading dash + spaces
-        content = ls[1:].strip()
-        # Expect format "<Label>: <citations or N/A>"
-        if ":" not in content:
-            continue
-        line_label, _, line_value = content.partition(":")
-        if line_label.strip().lower() != label_lc:
-            continue
-        value = line_value.strip()
-        if value.upper().startswith("N/A"):
-            return True, []
-        # Treat the single value line as a citation bullet (parsers downstream
-        # accept any bullet shape; we wrap it in the leading-dash form so the
-        # existing citation-parse regexes still hit).
-        return True, ["- " + value]
-    return False, []
-
-
-def _parse_notebook_survivors(notebook_text: str) -> list[tuple[str, str, int, str]]:
-    """Return list of (session_date, mode, session_num, candidate) for every
-    deepen-phase survivor across the notebook. Uses same regex shape as
-    build_tacitus_dashboard_live.py _parse_deepen_block to mirror parser truth."""
-    out: list[tuple[str, str, int, str]] = []
-    # Find each "<MODE> session #N (YYYY-MM-DD..." header
-    header_re = re.compile(
-        r"(?:^|\n)\s*(Cura|Vision)\s+session\s+#(\d+)\b.*?\((\d{4}-\d{2}-\d{2})",
-        re.IGNORECASE,
-    )
-    headers = list(header_re.finditer(notebook_text))
-    for i, h in enumerate(headers):
-        mode = h.group(1).capitalize()
-        sess = int(h.group(2))
-        date = h.group(3)
-        start = h.end()
-        end = headers[i + 1].start() if i + 1 < len(headers) else len(notebook_text)
-        block = notebook_text[start:end]
-        # Find DEEPEN section within this session block
-        m = re.search(r"PHASE 3\s*[—\-]\s*DEEPEN(.+?)(?:PHASE 4|\Z)", block, re.DOTALL)
-        if not m:
-            continue
-        deepen = m.group(1)
-        surv_re = re.compile(
-            r"^Survivor [A-Z]\s*(?:—\s*(?P<dash>.+?)\.\s*\n[═=]{3,}|\((?P<paren>[^\n]+)\))",
-            re.MULTILINE,
-        )
-        for s in surv_re.finditer(deepen):
-            title = (s.group("dash") or s.group("paren") or "").strip()
-            if title:
-                out.append((date, mode, sess, title))
-    return out
-
-
 # ---------------------------------------------------------------------------
 # Round 150 — Cross-Surface State Sync chokepoint routing (§31)
 # ---------------------------------------------------------------------------
@@ -1135,7 +985,6 @@ def check_regimen_state_mutation_routing():
         f"all {len(_REGIMEN_LS_KEYS)} regimen LS key(s) registered in LS_SCHEMAS; "
         f"no regimen LS write bypasses §31 routing"
     )
-
 
 
 def check_no_native_dialogs():
