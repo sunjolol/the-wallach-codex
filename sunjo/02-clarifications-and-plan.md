@@ -8,11 +8,13 @@
 1. `sunjo/01-pre-handoff-conversation.md` — verbatim history that produced this plan
 2. **This file** — the plan you execute against
 3. `CLAUDE.md` — the operating contract (architecture, layer rules, build/test commands)
-4. `HANDOFF.md` — the bootstrap context Cowork wrote before this plan existed
+4. `.claude/rules/` — the behavioral defaults; read the file matching your work domain
 5. `REVIEW.md` — the highest-priority enforcement contract
 6. `chronicle/build-log.md` — current project state (last ~20 entries)
 
-This plan **supplements** HANDOFF.md and REVIEW.md. Where this file and HANDOFF.md disagree, this file wins (it's newer and reflects the most recent clarifications). Where this file is silent, HANDOFF.md and CLAUDE.md still govern.
+This plan **supplements** `CLAUDE.md` + `.claude/rules/` and `REVIEW.md`. Where this file and `CLAUDE.md` disagree, `CLAUDE.md` wins (it is the operating contract — per its own closing line, "older loses"). Where this file is silent, `CLAUDE.md`, `.claude/rules/`, and `REVIEW.md` govern.
+
+> **Execution status (updated 2026-06-22):** Phase 1 is complete and tagged `v0.1.0-cleanup-complete`; Phase 2 has begun. The operating system was since restructured into **ONE instruction surface** — `CLAUDE.md` + `.claude/rules/` (10 files). The original `HANDOFF.md` and the entire `memory/` tree were deleted on purpose; references to them below are preserved as captured plan-history, not live pointers. The invariant board is **20/20 green** (baseline empty — any red is now a real regression). The vision and phases below stand; the Phase-1 task list (§3) and the §4–§5 excision/migration specs describe cleanup work that is now done.
 
 ---
 
@@ -36,9 +38,9 @@ These are not flavor sentences. They are constraints. Every decision below trace
 
 ## §2 — The five operating modes you must honor at all times
 
-### 2.1 — Anti-fakery (prime directive, from §0 of HANDOFF.md)
+### 2.1 — Anti-fakery (prime directive — CLAUDE.md §00.B + `.claude/rules/data-flow.md`)
 
-Do not hard-code canonical data into view files. Do not stub canonical data with literal arrays "until later." Do not copy data values from mockup HTML into TypeScript. The 91-tile-spec incident in `views/coverage.ts` is the failure pattern this rule exists to prevent. If a render needs data that doesn't exist yet, the next step is "add it to Eden with a schema," not "fake it in the view." The pre-write hooks (per HANDOFF.md §7) will block this structurally; this rule is your behavior independent of those hooks.
+Do not hard-code canonical data into view files. Do not stub canonical data with literal arrays "until later." Do not copy data values from mockup HTML into TypeScript. The 91-tile-spec incident in `views/coverage.ts` is the failure pattern this rule exists to prevent. If a render needs data that doesn't exist yet, the next step is "add it to Eden with a schema," not "fake it in the view." The pre-write hooks (§17 write-discipline — `.claude/rules/write-discipline.md`) will block this structurally; this rule is your behavior independent of those hooks.
 
 ### 2.2 — Wild West Mode during the build
 
@@ -66,7 +68,7 @@ Luneth explicitly authorizes deletion of obsolete files without per-file confirm
 - Any file explicitly named in a build-log entry as "scheduled for deletion this round"
 - Any orphaned generated artifacts (`*.bak`, `*.tmp`, stray `*.log`)
 
-You do **not** have deletion authorization for: `eden/` (sacred), Wallach corpus content under `knowledge/` or `transcripts/` (Luneth scrubs these later), anything under `chronicle/`, `schemas/`, `tools/`, `dashboard/`, `memory/`, `.git/`, `.claude/`, or the root-level config files (`package.json`, `package-lock.json`, `CLAUDE.md`, `HANDOFF.md`, `REVIEW.md`, `README.md`, `.gitignore`). When in doubt, do not delete — file the candidate in `chronicle/build-log.md` as a question and surface it.
+You do **not** have deletion authorization for: `eden/` (sacred), Wallach corpus content under `knowledge/` or `transcripts/` (Luneth scrubs these later), anything under `chronicle/`, `schemas/`, `tools/`, `dashboard/`, `.git/`, `.claude/`, or the root-level config files (`package.json`, `package-lock.json`, `CLAUDE.md`, `REVIEW.md`, `README.md`, `.gitignore`). (The original list also named `memory/` and `HANDOFF.md`; both were since removed on purpose in the post-Phase-1 operating-system cleanup — there is now one instruction surface, `CLAUDE.md` + `.claude/rules/`.) When in doubt, do not delete — file the candidate in `chronicle/build-log.md` as a question and surface it.
 
 ### 2.4 — Vision-first desktop, mobile is deferred
 
@@ -119,7 +121,7 @@ Execute strictly in order. Do not start Phase 2 until Phase 1's exit criteria ar
 
 7. **Add a Domain Glossary** to the repo. New file at `chronicle/domain-glossary.md`. One-line definitions for the key types and concepts you encounter constantly: `CoverageSnapshot`, `RegimenItem`, `EdenManifest`, `WallachStance`, `LcScan`, the five §31 chokepoints (`persistRegimen`, `saveRgOverride`, `saveRgManual`, `saveRgRemoved`, `saveRgUserGoals`), the six surfaces (Coverage, Regimen, Scanner, Knowledge, Journey, Profile), the layer terms (`core/`, `state/`, `views/`). Keep each entry to one or two sentences.
 8. **Add a Worked-Example Chunk** documentation file. New file at `chronicle/worked-example-chunk.md`. Walk through a single past chunk (pick one from `build-log.md`) start-to-finish: the build-log line, what was changed, the chunk-close ritual run, the commit message format. This is the artifact a fresh Claude session reads to learn "what a good chunk looks like here." Five hundred words is plenty.
-9. **Initialize the hook infrastructure per HANDOFF.md §7.** Three custom hooks (pre-write guard, post-write verify, stop round-close) wired to `tools/invariants.py` and `tools/safe_write.py`. Smoke-test each before moving on.
+9. **Initialize the hook infrastructure (§17 — `.claude/rules/write-discipline.md`).** Four custom hooks (pre-write guard, pre-bash guard, post-write verify, stop round-close) wired to `tools/invariants.py` and `tools/safe_write.py`. Smoke-test each before moving on.
 10. **Initialize git at the repo root if not already** (it is already, based on the 24 commits visible). Tag `v0.0.0-pre-cleanup` so there's an anchor to return to if cleanup breaks something.
 
 **Phase 1 exit criteria:**
@@ -286,7 +288,7 @@ Add a new section to `README.md` titled "## Directory glossary." One paragraph o
 - eden/ — the sealed canonical source: every Wallach/Youngevity claim originates here
 - knowledge/ — general health and educational reference content
 - labels/ — [Claude Code: read the folder, write a one-liner about what's in it]
-- memory/ — long-term project preference and saga storage (gitignored where appropriate)
+- .claude/rules/ — behavioral defaults (write-discipline, chokepoint, data-flow, source-rule, …)
 - schemas/ — Zod schemas validating every data load
 - tools/ — build, invariants, safe_write, hooks
 - transcripts/ — Wallach lecture transcripts (Wild West Mode applies)
