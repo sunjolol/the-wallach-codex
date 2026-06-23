@@ -15,8 +15,15 @@
 
 /* ─── Page-level chrome ─────────────────────────────────────────────────── */
 
+/* [v3-contain] Global box model + text rendering — the new shell OWNS these
+   instead of riding on legacy-dashboard.css's leaked `* {box-sizing}` and
+   `html,body {font-smoothing}`. Required so the Round-5 legacy deletion can't
+   regress the shell. design-system.css scopes box-sizing/smoothing to
+   .ds-canvas only; the .app-* shell doesn't use .ds-canvas, so it declares
+   the baseline here. */
+*, *::before, *::after { box-sizing: border-box; }
 html, body { height: 100%; overflow: hidden; }
-body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-sans); color: var(--ds-ink); }
+body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-sans); color: var(--ds-ink); line-height: 1.55; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 /* Stylized scrollbar — orange gradient, 70% of browser default */
 .app-shell { scrollbar-width: thin; scrollbar-color: var(--ds-accent) var(--ds-paper-darker); }

@@ -84,14 +84,14 @@
   /* (Theme overhaul reverted — see round-7 in saga/decisions. Eclipse will return as a proper dark mode in a future round
      once it can be tuned without performance regressions. For now: single Mist look, simple bg picker for backgrounds 3/4/5.) */
 
-  * { box-sizing: border-box; }
+  :where(#legacy-workspace-host) * { box-sizing: border-box; }
 
   /* [v3-contain] color / font-family / font-size REMOVED — they set the
      OLD design's document root (teal ink, Inter, 15px) and bled into the
      new v3 shell, shrinking the whole UI to 15/16. The design system now
      owns the root: 16px base (browser default = what the v3 mockups use),
      --ds-ink + --ds-font-sans via dashboard.css's body rule. */
-  html, body {
+  #legacy-workspace-host {
     margin: 0;
     padding: 0;
     line-height: 1.55;
@@ -100,7 +100,7 @@
     min-height: 100vh;
   }
 
-  body {
+  #legacy-workspace-host {
     background-image: var(--bg-image);
     background-size: cover;
     background-position: center center;
@@ -227,7 +227,7 @@
   }
 
   /* Tabs — centered primary navigation (round-7 prominence boost kept; backdrop-filter removed for performance) */
-  nav.tabs {
+  :where(#legacy-workspace-host) nav.tabs {
     display: flex;
     gap: 3px;
     padding: 6px;
@@ -535,7 +535,7 @@
      (You, Knowledge) is active. Matches the slab's #dceee8 palette + shadow language so the
      two elements read as ONE composed unit, not two floating pills. Buttons inside follow
      the same cream-white tile family as the main slab buttons — same design DNA, smaller scope. */
-  nav.subtabs {
+  :where(#legacy-workspace-host) nav.subtabs {
     display: flex;
     gap: 6px;
     background: #dceee8;
@@ -547,7 +547,7 @@
       0 5px 14px -3px rgba(15, 60, 55, 0.20),
       0 2px 5px rgba(15, 60, 55, 0.10);
   }
-  nav.subtabs.hidden { display: none; }
+  :where(#legacy-workspace-host) nav.subtabs.hidden { display: none; }
   .subtab-btn {
     background: linear-gradient(180deg, #f4faf8 0%, #ebf5f1 100%);
     border: none;
@@ -826,7 +826,7 @@
   }
 
   /* Typography */
-  h2 {
+  :where(#legacy-workspace-host) h2 {
     font-size: 20px;
     font-weight: 600;
     margin: var(--space-8) 0 var(--space-4);
@@ -834,9 +834,9 @@
     color: var(--teal-deep);
   }
 
-  h2:first-child { margin-top: 0; }
+  :where(#legacy-workspace-host) h2:first-child { margin-top: 0; }
 
-  h3 {
+  :where(#legacy-workspace-host) h3 {
     font-size: 12px;
     font-weight: 700;
     margin: var(--space-6) 0 var(--space-3);
@@ -909,13 +909,13 @@
   .goal-card .anchor strong { color: var(--teal-deep); }
 
   /* Table */
-  table {
+  :where(#legacy-workspace-host) table {
     width: 100%;
     border-collapse: collapse;
     font-size: 14px;
   }
 
-  th {
+  :where(#legacy-workspace-host) th {
     text-align: left;
     font-weight: 700;
     padding: var(--space-3) var(--space-3);
@@ -927,13 +927,13 @@
     background: var(--teal-tint);
   }
 
-  td {
+  :where(#legacy-workspace-host) td {
     padding: var(--space-3);
     border-bottom: 1px solid var(--teal-veil);
     vertical-align: top;
   }
 
-  tr:last-child td { border-bottom: none; }
+  :where(#legacy-workspace-host) tr:last-child td { border-bottom: none; }
 
   .mono {
     font-family: ui-monospace, "SF Mono", Monaco, "Cascadia Code", monospace;
@@ -1192,13 +1192,13 @@
   .identity-line strong { color: var(--teal-deep); margin-right: 4px; }
 
   /* Checklist */
-  ul.checklist {
+  :where(#legacy-workspace-host) ul.checklist {
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  ul.checklist li {
+  :where(#legacy-workspace-host) ul.checklist li {
     padding: var(--space-3) 0;
     border-bottom: 1px solid var(--teal-veil);
     display: flex;
@@ -1207,9 +1207,9 @@
     font-size: 14px;
   }
 
-  ul.checklist li:last-child { border-bottom: none; }
+  :where(#legacy-workspace-host) ul.checklist li:last-child { border-bottom: none; }
 
-  ul.checklist .marker {
+  :where(#legacy-workspace-host) ul.checklist .marker {
     color: var(--teal);
     font-weight: bold;
     flex-shrink: 0;
@@ -1281,7 +1281,7 @@
     line-height: 1.6;
   }
 
-  footer code {
+  :where(#legacy-workspace-host) footer code {
     background: var(--surface);
     padding: 1px 6px;
     border-radius: 4px;
@@ -1309,17 +1309,17 @@
   /* Responsive */
   @media (max-width: 700px) {
     .container { padding: var(--space-5) var(--space-4); }
-    header { padding: var(--space-4); }
+    :where(#legacy-workspace-host) header { padding: var(--space-4); }
     .header-left h1 { font-size: 22px; }
-    h2 { font-size: 17px; }
+    :where(#legacy-workspace-host) h2 { font-size: 17px; }
     .gap-table { font-size: 13px; }
     .gap-table td, .gap-table th { padding: var(--space-2); }
     .gap-table td.benefits { font-size: 12.5px; }
-    table { font-size: 13px; }
-    nav.tabs { width: 100%; }
+    :where(#legacy-workspace-host) table { font-size: 13px; }
+    :where(#legacy-workspace-host) nav.tabs { width: 100%; }
     .tab-btn { flex: 1; padding: 9px 8px; font-size: 13px; }
     .subnav-wrap { width: 100%; }
-    nav.subtabs { width: 100%; padding: 7px 10px; }
+    :where(#legacy-workspace-host) nav.subtabs { width: 100%; padding: 7px 10px; }
     .subtab-btn { flex: 1; padding: 9px 12px; font-size: 14px; }
     .lc-edit-banner { flex-direction: column; align-items: stretch; }
     .lc-edit-banner .lc-edit-back { align-self: flex-end; }

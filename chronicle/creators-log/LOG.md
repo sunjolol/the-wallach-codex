@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_17 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_18 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-23 18:07 UTC-04:00 · round-close · dashboard/legacy-css
+Sever-Safety: scoped all 24 legacy-dashboard.css leak vectors under :where(#legacy-workspace-host); moved the globals the shell was secretly inheriting into dashboard.css; new critical invariant legacy_css_contained makes the leak impossible. Luneth-verified.
+  ↳ Audit (Luneth's 'total clean cut' ask) confirmed the legacy->v3 sever is clean at the markup level (one #legacy-workspace-host div, R2->R5 deletion schedule) but was leaky at the CSS level with no enforcement. The parked legacy stylesheet (loaded after the v3 design system) had 24 bare element/universal selectors (teal h2/h3/table, @media header, *, html/body) that bleed into the .app-* shell; only the 4 that already bit were hand-patched. Fix: :where(#legacy-workspace-host) scoping (zero added specificity -> legacy cascade preserved byte-for-byte) + html,body/body collapsed onto the host. Critical mid-chunk catch: the pixel-exact shell was silently riding on legacy's leaked star{box-sizing} + html,body font-smoothing (the sealed v3 token sheet scopes those to .ds-canvas only, which .app-shell doesn't use), so moved box-sizing/smoothing/line-height into dashboard.css. New critical invariant legacy_css_contained: deterministic re-parse, no bare element/star/non-var :root selector may ever exist; proven with a negative test. Verified 24->0 leak vectors, style_diff 4 live-better residuals only, invariants 26/26, render probes 0 errors.
 
 ## 2026-06-23 13:35 UTC-04:00 · milestone · coverage
 Coverage Phase 1 — shell now ~pixel-exact to v3.2 (Luneth verified). Fixed via new tools/style_diff.js: legacy 15px root + bare header/footer selectors bleeding into the .app-* shell; in-housed the missing Chakra Petch/Bruno Ace fonts. Visual-match lesson codified.
