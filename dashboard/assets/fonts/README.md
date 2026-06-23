@@ -1,6 +1,6 @@
 # Font Procurement — Design System v3
 
-_Five typefaces, all SIL OFL 1.1 licensed (perpetual free use, redistributable forever). Self-hosted to honor the "no external resources" rule._
+_Seven typefaces (5 original editorial + 2 added for the v3.2 typography pivot), all SIL OFL 1.1 licensed (perpetual free use, redistributable forever). Self-hosted to honor the "no external resources" rule._
 
 ---
 
@@ -71,3 +71,18 @@ _If the procurement process ever changes (Google Fonts moves, etc.), the upstrea
 - _Crimson Pro: <https://github.com/Fonthausen/CrimsonPro>_
 - _Space Grotesk: <https://github.com/floriankarsten/space-grotesk>_
 - _JetBrains Mono: <https://github.com/JetBrains/JetBrainsMono>_
+
+---
+
+## v3.2 typography-pivot additions (2026-06-23)
+
+Two static-weight families were in-housed to land the v3.2 Coverage typography pivot (condensed futuristic display + a rare alien-artifact face). Without them every shell/title element fell back to Space Grotesk, which is why the live shell read as "slightly off" everywhere.
+
+| Family | Filename(s) | Weights | Source |
+|---|---|---|---|
+| **Chakra Petch** | `ChakraPetch-Regular.ttf` + `-SemiBold.ttf` + `-Bold.ttf` (static) | 400 / 600 / 700 | <https://fonts.google.com/specimen/Chakra+Petch> |
+| **Bruno Ace** | `BrunoAce-Regular.ttf` (static) | 400 | <https://fonts.google.com/specimen/Bruno+Ace> |
+
+Their `@font-face` declarations + the `--ds-font-display-interface` / `--ds-font-display-artifact` tokens currently live in `dashboard/assets/styles/workspace-coverage.css` (lifted from the v3.2 mockup). Per the mockup's note they should eventually be promoted into the sealed `design-system.css` — that is a user-signed-off sealed-canonical edit, deferred until the typography direction is locked across all surfaces.
+
+Upstream (GitHub, OFL): Chakra Petch <https://github.com/cadsondemak/Chakra-Petch> · Bruno Ace <https://github.com/google/fonts/tree/main/ofl/brunoace>

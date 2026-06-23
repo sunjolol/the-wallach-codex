@@ -13,6 +13,8 @@ All fonts in this directory are distributed under the **SIL Open Font License Ve
 | **Crimson Pro** | Copyright (c) Sebastian Kosch (original), Jacques Le Bailly (Pro version) | OFL-1.1 |
 | **Space Grotesk** | Copyright (c) Florian Karsten | OFL-1.1 |
 | **JetBrains Mono** | Copyright (c) 2020 The JetBrains Mono Project Authors | OFL-1.1 |
+| **Chakra Petch** | Copyright (c) 2018 Cadson Demak | OFL-1.1 |
+| **Bruno Ace** | Copyright (c) 2022 The Bruno Ace Project Authors | OFL-1.1 |
 
 Each font's original distribution includes its own `OFL.txt` from the upstream repo; those individual licenses are preserved as part of the source ZIPs available at the URLs in `README.md`.
 

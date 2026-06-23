@@ -25,3 +25,15 @@ Applies to any page / view / visual / UX / copy / interaction-feel / requirement
 
 ## Enforcement
 Behavioral discipline, like the §00.A turn-gap — documented here and loaded every session via CLAUDE.md. A Python invariant cannot verify "the user approved the visuals," so the guarantee is structural: visual chunks END at a STOP-for-verification by default, and the agent never chains past it. The honesty rule binds absolutely — NEVER claim the user verified something they did not, and never log a visual chunk as "done" before sign-off.
+
+---
+
+## Getting to "exact": measure, don't eyeball (2026-06-23 lesson)
+
+When a surface must pixel-match a v3 mockup and reads as "almost everything slightly off," that is almost always ONE systemic cause, not a hundred per-element bugs. Check these FIRST, before touching individual rules:
+
+1. **Root font-size (rem base).** If every size/space is off by the SAME ratio, the document root font-size differs. Real case: `legacy-dashboard.css` set `html, body { font-size: 15px }` while the mockup uses the 16px browser default → the whole rem-based UI rendered at 93.75%. One removal fixed all of it.
+2. **Cascade pollution from bare/broad selectors.** "Lifted-verbatim" CSS (`legacy-dashboard.css`) uses BARE element selectors (`html, body`, `header`, `footer`, `*`) that leak into the new `.app-*` shell — wrong radius / shadow / border / color, even a `header::before` veil painted over the topbar (hiding its accents + fading the search). Containment: scope them to `#legacy-workspace-host` (grep `[v3-contain]`), or remove the doc-level overrides so the design system owns the root.
+3. **Missing fonts → silent fallback.** If an `@font-face` `src` 404s (check the render probe's `FAILED_RESOURCES`), its token falls back (e.g. Chakra Petch → Space Grotesk), shifting metrics on EVERY element. In-house the real TTFs.
+
+**The tool, not your eyes.** A CSS read AND a screenshot glance both lied this session. Run an objective computed-style diff: `node tools/style_diff.js <mockup.html>` loads the live surface + the mockup headless and prints only the `getComputedStyle` deltas. Fix until `TOTAL DIFFS: 0` — except residual diffs where the LIVE uses a correct `--ds-*` token vs the mockup's unset browser default (black / Times New Roman); that is the live being BETTER than the demo — keep it. This took a confident "shell ~95% done" misread to objectively exact in a single pass.

@@ -16,6 +16,14 @@
  * Loaded AFTER design-system.css so old --teal-* rules still apply to legacy
  * markup while new --ds-* tokens apply to migrated markup. No collisions:
  * the variable namespaces don't overlap.
+ *
+ * 2026-06-23 CONTAINMENT EDIT: this file's BARE element selectors
+ * (html/body/header/footer) were leaking into the NEW v3 shell — a 15px
+ * document root instead of 16, and a teal header radius/shadow + cream
+ * veil painted over <header class="app-topbar">. Fixed at the root: the
+ * doc-level font/size/color overrides are removed (design-system.css +
+ * dashboard.css body own the root) and header/footer are scoped to
+ * #legacy-workspace-host. Search '[v3-contain]' for each site.
  * ═══════════════════════════════════════════════════════════════════════════ */
 
   :root {
@@ -78,12 +86,14 @@
 
   * { box-sizing: border-box; }
 
+  /* [v3-contain] color / font-family / font-size REMOVED — they set the
+     OLD design's document root (teal ink, Inter, 15px) and bled into the
+     new v3 shell, shrinking the whole UI to 15/16. The design system now
+     owns the root: 16px base (browser default = what the v3 mockups use),
+     --ds-ink + --ds-font-sans via dashboard.css's body rule. */
   html, body {
     margin: 0;
     padding: 0;
-    color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 15px;
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -98,7 +108,7 @@
     background-attachment: scroll;
     position: relative;
     overflow-x: hidden;
-    color: var(--ink);
+    /* [v3-contain] body color removed — dashboard.css body owns --ds-ink */
   }
 
   /* Wallpaper "border" effect — fixed-position image layer so it stays put as the dashboard scrolls. */
@@ -144,7 +154,10 @@
   }
 
   /* Header — sunrise-illustration background strip across the top of the window */
-  header {
+  /* [v3-contain] scoped to the legacy zone — the bare `header` selector was
+     styling the new shell's <header class="app-topbar"> (legacy bg image,
+     14px radius, teal shadow + border, 90px min-height). */
+  #legacy-workspace-host header {
     margin-bottom: var(--space-8);
     padding: var(--space-6) var(--space-6);
     background-image: url("assets/header-bg.jpg");
@@ -166,7 +179,7 @@
   }
 
   /* Subtle cream-tinted veil over the illustration for text readability without washing out the image */
-  header::before {
+  #legacy-workspace-host header::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -1255,8 +1268,9 @@
     .recommendations-card ul.checklist li { font-size: 14px; }
   }
 
-  /* Footer */
-  footer {
+  /* Footer — [v3-contain] scoped to the legacy zone (bare `footer` was
+     styling the new shell's <footer class="app-footer">). */
+  #legacy-workspace-host footer {
     margin-top: var(--space-10);
     padding: var(--space-6);
     background: var(--teal-veil);
