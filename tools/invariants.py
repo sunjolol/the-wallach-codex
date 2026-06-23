@@ -1541,6 +1541,32 @@ def check_creators_log_embed_synced():
     return False, "creators-log-embed.json is STALE — run `python tools/creators_log.py digest`"
 
 
+def check_creators_log_archive_synced():
+    """The navigable archive (chronicle/creators-log/INDEX.md + digests/YYYY-MM.md)
+    must match what regenerates from the canonical ledger. Full-history human
+    fidelity lives here (LOG.md is a recent-window view), so this is the check that
+    proves no past entry's human view drifts. A missed regen or hand-edit fails it;
+    regenerate via `python tools/creators_log.py digest`."""
+    sys.path.insert(0, str(ROOT / "tools"))
+    import creators_log
+    base = ROOT / "chronicle/creators-log"
+    index = base / "INDEX.md"
+    if not index.exists():
+        return False, "INDEX.md missing — run `python tools/creators_log.py digest`"
+    if index.read_text(encoding="utf-8") != creators_log.render_index():
+        return False, "INDEX.md is STALE — run `python tools/creators_log.py digest`"
+    digdir = base / "digests"
+    expected = set(creators_log.month_set())
+    present = {p.stem for p in digdir.glob("*.md")} if digdir.exists() else set()
+    if expected != present:
+        return False, (f"monthly digests drift — missing {sorted(expected - present)} "
+                       f"extra {sorted(present - expected)} (run digest)")
+    for ym in sorted(expected):
+        if (digdir / f"{ym}.md").read_text(encoding="utf-8") != creators_log.render_month(ym):
+            return False, f"digests/{ym}.md is STALE — run `python tools/creators_log.py digest`"
+    return True, f"archive in sync — INDEX + {len(expected)} monthly digest(s)"
+
+
 INVARIANTS = [
     Invariant(
         name="safe_write_canary",
@@ -1733,6 +1759,14 @@ INVARIANTS = [
         truth_anchor="json.loads(dashboard/assets/data/creators-log-embed.json) == tools/creators_log.py::read_entries() over chronicle/creators-log/log.jsonl",
         severity="warning",
         lesson_ref="Creator's Log L2 (dashboard boot-merge) — the file:// app inlines the ledger at build; this catches a stale build or hand-edit that would make the in-app Profile log lie",
+    ),
+    Invariant(
+        name="creators_log_archive_synced",
+        description="the navigable archive (chronicle/creators-log/INDEX.md + digests/YYYY-MM.md) matches what regenerates from log.jsonl — full-history human fidelity (LOG.md is the recent-window view)",
+        check_fn=check_creators_log_archive_synced,
+        truth_anchor="tools/creators_log.py::render_index()/render_month() vs INDEX.md + digests/*.md; month set derived from log.jsonl",
+        severity="warning",
+        lesson_ref="Creator's Log Chunk N (navigability) — as the ledger grows the full history lives in monthly digests; this keeps them + the index byte-true to the canonical jsonl so deep history never silently drifts",
     ),
 ]
 

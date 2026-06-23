@@ -12,14 +12,19 @@ clone. See the doctrine: `.claude/rules/logging-doctrine.md` — "The two layers
 - **`log.jsonl`** — THE canonical ledger. One schema-valid JSON entry per line,
   **append-only**, the machine source of truth. Never edited, deleted, reordered,
   or pruned — not even under a broad "delete what you need" authorization.
-- **`LOG.md`** — a **generated** human-readable view of `log.jsonl`, newest first.
-  Regenerated on every append. **Do not hand-edit** — changes are overwritten and
-  would make the human view diverge from the truth (the digest-sync invariant
-  catches that).
+- **`LOG.md`** — a **generated**, recent-window human view of `log.jsonl` (the most
+  recent entries), newest first. Regenerated on every append. **Do not hand-edit**
+  — changes are overwritten (the digest-sync invariant catches that).
+- **`INDEX.md`** — a **generated** navigable month-by-month map of the whole ledger
+  (entry counts + kind tallies + links to each monthly digest). Newest first.
+- **`digests/`** — **generated** per-month digests (`YYYY-MM.md`) holding the FULL
+  history — where the complete human-readable record lives as the ledger grows.
 - **`README.md`** — this file.
 
 ## How to read it
-- **Humans:** open **`LOG.md`** and scroll / Ctrl-F. Newest entries at the top.
+- **Humans (recent):** open **`LOG.md`** and scroll / Ctrl-F. Newest at the top.
+- **Humans (full history):** open **`INDEX.md`**, jump to a month, read its
+  **`digests/YYYY-MM.md`**. The complete record always lives in the monthly digests.
 - **Machines / Claude:** read **`log.jsonl`** (one JSON object per line).
 - **Either:** `PYTHONUTF8=1 python tools/creators_log.py list [--n N]`.
 
@@ -39,8 +44,11 @@ appends one line through `safe_write` (§17 atomic-verify), and regenerates
   fails if any committed entry is removed, truncated, edited, or reordered: the
   committed ledger must remain a line-prefix of the working file.
 - **Always well-formed** — `creators_log_well_formed` validates every line.
-- **Human view never lies** — `creators_log_digest_synced` verifies `LOG.md`
-  equals the deterministic render of `log.jsonl`.
+- **Human view never lies** — `creators_log_digest_synced` (LOG.md) +
+  `creators_log_archive_synced` (INDEX.md + monthly `digests/`) verify the human
+  views equal the deterministic render of `log.jsonl`.
+- **In-app view never lies** — `creators_log_embed_synced` verifies the dashboard
+  build-time embed equals the ledger (the Profile-panel Creator's Log).
 - **Never skipped** — a chunk that adds a `chronicle/build-log.md` line without a
   new Creator's Log entry is blocked at round-close (`stop_round_close.py`).
 - **Never casually deleted** — `pre_bash_guard.py` blocks `rm`/`git rm`/`mv` of
