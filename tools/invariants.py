@@ -1446,6 +1446,21 @@ def check_views_state_no_inline_data():
     return True, f"no inline literal > {max_inline} elements in views/ or state/"
 
 
+def check_creators_log_well_formed():
+    """Every line of chronicle/creators-log.jsonl is a schema-valid Creator's
+    Log entry. tools/creators_log.py is the sanctioned CLI producer; this
+    invariant reuses its verify_file() as the audit-time defense-in-depth layer
+    so a hand-edit or bad append can't silently corrupt the §00 audit trail.
+    An absent/empty ledger passes vacuously."""
+    sys.path.insert(0, str(ROOT / "tools"))
+    import creators_log
+    ok, problems, total = creators_log.verify_file()
+    if not ok:
+        return False, "; ".join(problems[:8])
+    plural = "y" if total == 1 else "ies"
+    return True, f"all {total} creators-log entr{plural} well-formed"
+
+
 INVARIANTS = [
     Invariant(
         name="safe_write_canary",
@@ -1606,6 +1621,14 @@ INVARIANTS = [
         truth_anchor="mtime(dist/main.js) vs max(mtime(src/**/*.ts)) — stale dist means the runtime is behind the source",
         severity="warning",
         lesson_ref="Round 161 R1·A — committed build artifact must not be stale relative to its source; otherwise we ship a runtime contract that doesn't match the canonical .ts truth",
+    ),
+    Invariant(
+        name="creators_log_well_formed",
+        description="every line of chronicle/creators-log.jsonl is a schema-valid Creator's Log entry (id/ts/surface/kind/summary, allowlisted kind, summary<=280)",
+        check_fn=check_creators_log_well_formed,
+        truth_anchor="tools/creators_log.py::verify_file() applied to chronicle/creators-log.jsonl — the same validator the CLI writer uses",
+        severity="warning",
+        lesson_ref="Creator's-Log file-mirror (logging-doctrine rule 6) — the §00 audit trail must stay machine-valid so the Phase-2 boot-merge can ingest it; defense-in-depth second layer over the CLI writer's write-time validation",
     ),
 ]
 
