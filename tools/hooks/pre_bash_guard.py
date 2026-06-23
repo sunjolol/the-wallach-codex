@@ -54,11 +54,11 @@ def main():
         return
 
     # git push --force / -f  (allow --force-with-lease)
-    if re.search(r"\bgit\s+push\b.*?(--force(?!-with-lease)\b|\s-f\b)", cmd, re.DOTALL):
+    if re.search(r"\bgit\s+push\b[^\n;&|]*?(--force(?!-with-lease)\b|\s-f\b)", cmd):
         _block("git push --force rewrites remote history — ask the user, or use --force-with-lease.")
         return
     # git reset --hard
-    if re.search(r"\bgit\s+reset\b.*?--hard\b", cmd, re.DOTALL):
+    if re.search(r"\bgit\s+reset\b[^\n;&|]*?--hard\b", cmd):
         _block("git reset --hard destroys uncommitted work. Stash/commit first or get user confirmation.")
         return
     # git clean -d + -x/-X

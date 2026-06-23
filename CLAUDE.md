@@ -161,10 +161,8 @@ tools/
 - **Version** — A coherent release captured in `chronicle/versions/v*.md`.
 - **Sealed canonical** — File with a `*.golden.sha256` sibling. User-only writer.
 - **Eden** — Sealed canonical source corpus under `eden/`. Every Wallach / Youngevity number originates here.
-- **Cura** — Health/care content layer.
-- **Aegis** — Defense-in-depth: validation, atomic writes, escape-by-default.
 - **Chronicle** — The discipline ledger (`chronicle/`).
-- **Tacitus** — Standalone audit system in its own repo (`the-tacitus-system`). Not present in this repo; do not re-introduce.
+- **Tacitus** — Retired/excised to its own `the-tacitus-system` repo; not part of this project. Do not re-introduce.
 - **The bridge** — IIFE-local → `window.*` exports in `state/*` (`lcScan`, `lcScanImage`, `lcParseLabel`, `lcLastResult`) that let DOM handlers and headless probes reach migrated engines.
 - **Render probe** — A headless puppeteer script under `tools/render_probe_*.js` that drives one surface end-to-end and asserts visible state.
 - **Genesis** — The session-start boot ritual.
