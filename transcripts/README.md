@@ -9,5 +9,5 @@ under `knowledge/transcripts-clean/`, and indexes it in `knowledge/manifest.csv`
 These are unedited third-party captions (messy, no speaker tags, occasional
 mis-transcriptions). They feed the Wallach allowlist (`wallach-lecture`) behind
 §00.A. Copyright handling — trimming long passages, attribution — is a deferred
-Phase 4 polish task (see `sunjo/02-clarifications-and-plan.md` §8.4); during the
+Phase 4 polish task (see `genesis/02-clarifications-and-plan.md` §8.4); during the
 build, Wild West Mode applies and the repo stays private.

@@ -2,7 +2,7 @@
 
 One- or two-sentence definitions for the terms a fresh session meets constantly.
 Fast orientation, not exhaustive documentation. See `CLAUDE.md` for the full
-operating contract and `sunjo/02-clarifications-and-plan.md` for the build plan.
+operating contract and `genesis/02-clarifications-and-plan.md` for the build plan.
 
 ## Module layers (import direction: `views → state → core`, never the reverse)
 

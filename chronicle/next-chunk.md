@@ -1,6 +1,6 @@
 # Next chunk — operating system CLEANED → continue **Phase 2** surfaces
 
-## LATEST (2026-06-23, HEAD 99215fe) — Creator's Log AUDIT + hardening + README audit + L2 SHIPPED
+## LATEST (2026-06-23) — Creator's Log system complete + Journey J1 + Genesis boot system
 - **Audit done (Opus 4.8):** the Creator's Log works; its sacred guarantees are STRUCTURAL, re-proven live. Board is now **25/25**: `creators_log_well_formed` + `creators_log_append_only` (critical, git-anchored) + `creators_log_digest_synced` + `creators_log_embed_synced` + `creators_log_archive_synced`.
 - **Canonical path is `chronicle/creators-log/log.jsonl`** (+ generated `LOG.md` + `README.md`). The old flat `chronicle/creators-log.jsonl` path is GONE — ignore any older mention of it below.
 - **Chunk H shipped (commit 5c63212)** — 3 audit fixes: (4a) digest-spoof closed — `validate_entry` rejects newline summaries + `render_digest` escapes a leading #/> and flattens newlines so the human view can't show a forged entry; (5a) delete-guard now covers the whole `chronicle/creators-log/` dir + `rm -rf chronicle` + a dir `mv`; (5b) a COMMITTED deletion is a hard RED ('SACRED LEDGER REMOVED FROM HEAD') + git-unavailable is a loud fail-open ('⚠ UNVERIFIED').
@@ -8,6 +8,7 @@
 - **L2 SHIPPED (99215fe) — DASHBOARD Creator's Log.** The CLI ledger is inlined at build (`creators_log.py write_embed()` → `dashboard/assets/data/creators-log-embed.json`; esbuild JSON import in `state/log.ts`) and boot-merged with the LS `wallachCreatorsLog_v1` entries (dedup by id) so the Profile panel shows BOTH. Probe: `tools/render_probe_profile.js`; invariant `creators_log_embed_synced`. The req-3 VISUAL truth-verification layer is LIVE.
 - **Chunk N SHIPPED (088ab1c) — navigability archive-tree.** `INDEX.md` (month-by-month map: count + kind tally + digest link) + `digests/YYYY-MM.md` (full history per month) generated over `log.jsonl`; `LOG.md` is now a recent-window view (cap `DIGEST_RECENT=200`). New invariant `creators_log_archive_synced`. `log.jsonl` stays the unsharded canonical spine. The Creator's Log system is now COMPLETE: L1 (CLI mirror) + hardening (4a/5a/5b) + L2 (dashboard boot-merge) + N (navigability). Deferred: cap the L2 embed to recent-N once it grows large.
 - **Journey J1 SHIPPED (bb08e5f) — state engine.** `core/schemas/journey.ts` (Zod) + a real `state/journey.ts`: `logEvent`/`listEvents`/`logCheckin`/`listCheckins` (§31 chokepoints to `wallachJourneyEvents_v1`/`wallachJourneyCheckins_v1`, emit `journey:changed`, FIFO cap 5000), `crossRefForCheckin` (±7-day walker), all Zod-validated; `journey:event-logged` → `journey:changed`. `state/journey.ts` is NO LONGER a scaffold; `views/journey.ts` STILL is. No fake seed (reads empty; fills from real activity). Functionally smoke-tested.
+- **Genesis boot system SHIPPED** — type **`genesis`** → `tools/genesis.py` prints the boot report (banner + invariants/build-parity/Creator's-Log/build-log scoreboard + THIS live pass-off) and Claude ends with the action question (never flair-only). `sunjo/` was renamed → `genesis/` (boot-system home + archived original pass-off); the LIVE rolling pass-off stays `chronicle/next-chunk.md`. CLAUDE.md "Genesis" documents it.
 - **NEXT ORDER (Luneth):** (1) **Journey J2** — `views/journey.ts` 4-tab render (Timeline/Goals/Check-ins/Milestones per `dashboard/components/drawer-journey-v3-PROPOSAL.html`) + the LOG EVENT footer form; reads `state/journey.ts` (+ `state/goals.ts`); zero inline literal >10 elems; mirror the implemented `views/knowledge.ts`. (2) **J3** — generalize the K-drawer mount/toggle/keys into ONE shared K+J helper; mount + J rail toggle + Esc + bare-J; AND wire the auto-derive: subscribe journey to the existing `regimen:changed`/`scanner:scan-complete`/`coverage:recomputed`/`goals:updated` events → `journey.logEvent` (no chokepoint surgery needed). (3) **J4** — `tools/render_probe_journey.js`. (4) Command palette (⌘K).
 - Older notes below are superseded where they conflict ('older loses').
 
@@ -31,7 +32,7 @@ node tools/render_probe.js                            # coverage 20/92, 0 errors
 node tools/render_probe_knowledge.js                  # Knowledge drawer + 201-product vault → PASS
 ```
 Read order: `CLAUDE.md` → the matching `.claude/rules/*.md` for your domain →
-`sunjo/02-clarifications-and-plan.md` → `REVIEW.md` → `tail -20 chronicle/build-log.md` → this file.
+`genesis/02-clarifications-and-plan.md` → `REVIEW.md` → `tail -20 chronicle/build-log.md` → this file.
 
 ## The new instruction surface (memorize)
 - `CLAUDE.md` — orientation + §00 prime directives + Disciplines + the Behavioral-rules table.
@@ -83,7 +84,7 @@ views/state; visual-match the v3 mockups in `dashboard/components/` (VISUALS ONL
 - **Old-agent CLI reasoning tools — DELETED** (cleanup C6: label_scorer, trace_verify, symptom_lookup,
   lab_interpreter, stack_coverage, catalog_index). `tools/` is now 10 purposeful files: build_*/extract_*
   (data pipeline) + corpus_search (pipeline dep) + invariants.py + safe_write.py.
-- **`sunjo/02-clarifications-and-plan.md`** is the captured plan but has stale file refs (HANDOFF.md, a
+- **`genesis/02-clarifications-and-plan.md`** is the captured plan but has stale file refs (HANDOFF.md, a
   "do not delete memory/" clause now superseded). It's now git-TRACKED. Refresh or leave as captured history.
 - **`dashboard.html` still embeds old versions/saga/lessons/decisions content** (shown in Profile/Journey).
   That's live-app content for the Phase-2 Journey/Profile rebuild — intentionally untouched by the purge.

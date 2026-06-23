@@ -73,7 +73,7 @@ Top-level folders, one line each:
   protocol drafts, research briefs, medical red-flag / escalation rules).
 - **`sessions/`** — cross-session working notes (session log, open questions,
   follow-ups).
-- **`sunjo/`** — the Cowork → Claude-Code handoff: the pre-handoff conversation
+- **`genesis/`** — the session boot system + the archived Cowork → Claude-Code handoff: the pre-handoff conversation
   and the active build plan.
 - **`.claude/`** — Claude Code settings + the enforcement-hook wiring
   (`settings.json`).

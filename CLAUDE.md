@@ -6,7 +6,7 @@ _High-level orientation + repository layout + constraints that apply everywhere.
 ## First 5 minutes
 
 1. Read this file in full.
-2. Read `sunjo/02-clarifications-and-plan.md` — active phased plan.
+2. Read `genesis/02-clarifications-and-plan.md` — active phased plan.
 3. Read `REVIEW.md` — enforcement contract.
 4. `tail -n 20 chronicle/build-log.md` — recent project state.
 5. `chronicle/next-chunk.md` — rolling session pointer + any active time-bound notes.
@@ -16,7 +16,7 @@ _High-level orientation + repository layout + constraints that apply everywhere.
 
 ## Mission
 
-A single-HTML, offline-first health-coverage dashboard for Dr. Joel Wallach's framework. Opens from `file://`. No server, no backend, no accounts, no telemetry, no runtime network. The user owns 100 % of their data on their device; export/import is JSON. Distributed as static files behind a CDN (Cloudflare Pages) so it cannot be attacked into bankruptcy and cannot be taken offline. Designed to run at least four years with no upkeep. Phasing and deferred-polish scope: `sunjo/02-clarifications-and-plan.md`.
+A single-HTML, offline-first health-coverage dashboard for Dr. Joel Wallach's framework. Opens from `file://`. No server, no backend, no accounts, no telemetry, no runtime network. The user owns 100 % of their data on their device; export/import is JSON. Distributed as static files behind a CDN (Cloudflare Pages) so it cannot be attacked into bankruptcy and cannot be taken offline. Designed to run at least four years with no upkeep. Phasing and deferred-polish scope: `genesis/02-clarifications-and-plan.md`.
 
 ---
 
@@ -137,7 +137,7 @@ chronicle/                                  ← discipline ledger
 ├── domain-glossary.md · worked-example-chunk.md
 └── evals/
 
-sunjo/                                      ← Cowork ↔ Claude-Code handoff (plan + pre-log)
+genesis/                                    ← session boot system + archived original pass-off
 
 tools/
 ├── build.mjs · build-dashboard.sh          ← tsc --noEmit + esbuild
@@ -169,27 +169,26 @@ tools/
 
 ---
 
-## Genesis — session-start ritual
+## Genesis — session-start boot
 
-User types **`genesis`** as the first substantive message of a session. Claude reports the five-step catch-up before any work begins.
-
-1. **CLAUDE.md loaded** — operating contract is in context.
-2. **Build-log tail** — last 5 entries from `chronicle/build-log.md`.
-3. **Invariant scoreboard** — `PYTHONUTF8=1 python tools/invariants.py`; surface any NEW red beyond `.claude/invariant-baseline.json`.
-4. **Build parity** — confirm `dist/main.js` is fresh against `src/`; run `node tools/build.mjs` if drift is suspected.
-5. **Latest Creator's Log entry** — most recent `wallachCreatorsLog_v1` entry (or most recent `chronicle/build-log.md` line if the file-mirror is not yet in place). Absence after shipped work is itself the alarm.
+User types **`genesis`** as the first message of a session. Claude runs the boot
+command, presents the report, then **asks which task to resume — never a
+flair-only boot.** One command:
 
 ```
-∴ GENESIS ∴
-⊢ CLAUDE.md loaded
-⊢ build-log last 5: <…>
-⊢ invariants: N/total passing · new reds: <list or "none">
-⊢ dist parity: fresh | drift
-⊢ last log entry: <ts · surface · summary>
-⊢ ready.
+PYTHONUTF8=1 python tools/genesis.py
 ```
 
-If any step fails, STOP and surface the failure as the only response. If the user opens with substantive work and skips `genesis`, run a silent micro-check (this file loaded + invariant baseline known) and proceed.
+It prints the banner + scoreboard (invariants · build parity · last Creator's Log
+entry · build-log tail) and the live pass-off (`chronicle/next-chunk.md` — the
+rolling handoff that hands a fresh session past depth instantly). The `genesis/`
+folder is the boot system's home + the archived original pass-off.
+
+Then Claude: (1) if a NEW invariant red beyond the baseline appears, STOP and
+surface it as the only response; (2) else report + end with the action question —
+"resume <next-order task>, or redirect?". If the user opens with substantive work
+and skips `genesis`, run a silent micro-check (contract loaded + baseline known)
+and proceed.
 
 ---
 
