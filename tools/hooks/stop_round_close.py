@@ -152,7 +152,7 @@ def main():
         '  • npx vitest run "state/**" (if state/ changed)\n'
         f"  • append a chronicle/build-log.md line  {bl}\n"
         "  • commit (+ push) the chunk\n"
-        "  • Creator's Log event — CLI-unfireable until the file-mirror lands (known)"
+        "  • Creator's Log event — fire one: python tools/creators_log.py append … (mirror landed in L1; round-close firing-enforcement pending)"
     )
 
 
