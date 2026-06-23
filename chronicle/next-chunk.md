@@ -49,10 +49,9 @@ Per-surface: data flows `eden/* → schemas/* → core/* → state/* → views/*
 views/state; visual-match the v3 mockups in `dashboard/components/` (VISUALS ONLY — that demo code is slop).
 
 ## Flags (Luneth's call — not auto-actioned)
-- **Old-agent CLI reasoning tools still in `tools/`** (`label_scorer`, `trace_verify`, `symptom_lookup`,
-  `lab_interpreter`, `stack_coverage`, `catalog_index`) — vestigial of the old health-agent concept, not wired
-  to the dashboard; `label_scorer`/`trace_verify` mention deleted `memory/` paths in docstrings. Candidate
-  deletes — confirm. (`corpus_search` is KEPT — `build_ingredients_master.py` imports it.)
+- **Old-agent CLI reasoning tools — DELETED** (cleanup C6: label_scorer, trace_verify, symptom_lookup,
+  lab_interpreter, stack_coverage, catalog_index). `tools/` is now 10 purposeful files: build_*/extract_*
+  (data pipeline) + corpus_search (pipeline dep) + invariants.py + safe_write.py.
 - **`sunjo/02-clarifications-and-plan.md`** is the captured plan but has stale file refs (HANDOFF.md, a
   "do not delete memory/" clause now superseded). It's now git-TRACKED. Refresh or leave as captured history.
 - **`dashboard.html` still embeds old versions/saga/lessons/decisions content** (shown in Profile/Journey).
