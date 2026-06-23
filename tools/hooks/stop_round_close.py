@@ -107,6 +107,20 @@ def main():
         _allow()  # loop guard — never recurse on our own continuation
         return
 
+    # Never-skip the Creator's Log (sacred covenant): if this round-close added a
+    # chronicle/build-log.md line but no new Creator's Log entry, HARD-BLOCK. Only
+    # triggers when build-log is dirty (a real round-close), so chat/plan turns are free.
+    if _porcelain("chronicle/build-log.md").strip() and not _porcelain(
+            "chronicle/creators-log/log.jsonl").strip():
+        _block(
+            "ROUND NOT CLOSED — chronicle/build-log.md has a new line but the Creator's Log "
+            "(chronicle/creators-log/log.jsonl) has no new entry this batch. The Creator's Log "
+            "is sacred and must fire every round-close (.claude/rules/logging-doctrine.md). Fire one:\n"
+            "  PYTHONUTF8=1 python tools/creators_log.py append --surface <s> --kind round-close "
+            "--summary <\u2264280>\nthen commit both together."
+        )
+        return
+
     forced = os.environ.get("STOP_ROUND_CLOSE_FORCE", "").strip() in ("1", "true", "yes")
     source_changes = _source_changes()
     if not source_changes and not forced:

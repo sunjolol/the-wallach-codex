@@ -1461,6 +1461,51 @@ def check_creators_log_well_formed():
     return True, f"all {total} creators-log entr{plural} well-formed"
 
 
+def check_creators_log_append_only():
+    """The Creator's Log is sacred + append-only. The committed ledger
+    (`git show HEAD:chronicle/creators-log/log.jsonl`) must remain a line-PREFIX
+    of the working file — every committed entry still present, in order, at the
+    start. Catches any delete / truncate / edit / reorder of a past entry. A path
+    not yet in HEAD passes (first commit). Truth anchor: git-committed history."""
+    import subprocess
+    rel = "chronicle/creators-log/log.jsonl"
+    try:
+        r = subprocess.run(["git", "-C", str(ROOT), "show", f"HEAD:{rel}"],
+                           capture_output=True, text=True, timeout=15)
+    except Exception as e:
+        return True, f"git unavailable ({e}) — cannot anchor, fail-open"
+    if r.returncode != 0:
+        return True, "ledger not in HEAD yet (new path) — nothing committed to anchor"
+    committed = [ln for ln in r.stdout.splitlines() if ln.strip()]
+    path = ROOT / rel
+    if not path.exists():
+        return False, f"SACRED LEDGER DELETED — {rel} is committed but now missing"
+    working = [ln for ln in path.read_text(encoding="utf-8").splitlines() if ln.strip()]
+    if len(working) < len(committed):
+        return False, (f"SACRED LEDGER TRUNCATED — {len(committed)} committed entries, "
+                       f"{len(working)} present (append-only violated)")
+    for i, cl in enumerate(committed):
+        if working[i] != cl:
+            return False, (f"SACRED LEDGER MUTATED at entry {i + 1} — a committed entry was "
+                           f"edited or reordered (append-only violated)")
+    return True, (f"append-only intact — {len(committed)} committed entries preserved, "
+                  f"{len(working) - len(committed)} new")
+
+
+def check_creators_log_digest_synced():
+    """LOG.md must equal the deterministic render of log.jsonl. It is a generated
+    human view; drift means a hand-edit or a missed regeneration, which would let
+    the human-facing log lie. Reuses the tool's render_digest()."""
+    sys.path.insert(0, str(ROOT / "tools"))
+    import creators_log
+    digest = ROOT / "chronicle/creators-log/LOG.md"
+    if not digest.exists():
+        return False, "LOG.md (human digest) missing — run `python tools/creators_log.py digest`"
+    if digest.read_text(encoding="utf-8") == creators_log.render_digest():
+        return True, "LOG.md matches the canonical ledger render"
+    return False, "LOG.md is STALE or hand-edited — run `python tools/creators_log.py digest`"
+
+
 INVARIANTS = [
     Invariant(
         name="safe_write_canary",
@@ -1624,11 +1669,27 @@ INVARIANTS = [
     ),
     Invariant(
         name="creators_log_well_formed",
-        description="every line of chronicle/creators-log.jsonl is a schema-valid Creator's Log entry (id/ts/surface/kind/summary, allowlisted kind, summary<=280)",
+        description="every line of chronicle/creators-log/log.jsonl is a schema-valid Creator's Log entry (id/ts/surface/kind/summary, allowlisted kind, summary<=280)",
         check_fn=check_creators_log_well_formed,
-        truth_anchor="tools/creators_log.py::verify_file() applied to chronicle/creators-log.jsonl — the same validator the CLI writer uses",
+        truth_anchor="tools/creators_log.py::verify_file() applied to chronicle/creators-log/log.jsonl — the same validator the CLI writer uses",
         severity="warning",
         lesson_ref="Creator's-Log file-mirror (logging-doctrine rule 6) — the §00 audit trail must stay machine-valid so the Phase-2 boot-merge can ingest it; defense-in-depth second layer over the CLI writer's write-time validation",
+    ),
+    Invariant(
+        name="creators_log_append_only",
+        description="the Creator's Log ledger is append-only — committed entries are never deleted, truncated, edited, or reordered (sacred covenant)",
+        check_fn=check_creators_log_append_only,
+        truth_anchor="git show HEAD:chronicle/creators-log/log.jsonl must be a line-prefix of the working file — git-committed history is the immutable anchor",
+        severity="critical",
+        lesson_ref="Creator's Log sacred covenant (logging-doctrine) — a broad delete authorization never includes the ledger; this is the git-anchored teeth that block any removal/mutation of a past entry at round-close",
+    ),
+    Invariant(
+        name="creators_log_digest_synced",
+        description="LOG.md equals the deterministic render of log.jsonl (the human view never drifts from the canonical ledger)",
+        check_fn=check_creators_log_digest_synced,
+        truth_anchor="tools/creators_log.py::render_digest() vs chronicle/creators-log/LOG.md",
+        severity="warning",
+        lesson_ref="Creator's Log sacred covenant — the generated human digest must always tell the same truth as the canonical jsonl; a hand-edit or missed regen is caught here",
     ),
 ]
 

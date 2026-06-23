@@ -88,6 +88,14 @@ def main():
                    "Needs user sign-off + safe_write + golden-hash update.")
             return
 
+    # Sacred Creator's Log — the canonical ledger is append-only + never deleted/moved
+    if re.search(r"(?:^|[\n;&|(])\s*(?:sudo\s+)?(?:git\s+rm|rm|mv)\b[^\n;&|]*chronicle/creators-log/log\.jsonl", cmd):
+        _block("the Creator's Log ledger (chronicle/creators-log/log.jsonl) is SACRED + "
+               "append-only (.claude/rules/logging-doctrine.md). It is never deleted, moved, "
+               "or truncated — not even under a broad delete authorization. Append only via "
+               "tools/creators_log.py; if removal ever seems needed, STOP and ask the user.")
+        return
+
     _allow()
 
 
