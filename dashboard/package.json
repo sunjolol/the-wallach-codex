@@ -41,11 +41,11 @@
   },
   "lint-staged": {
     "assets/js/src/**/*.ts": [
-      "prettier --write",
-      "eslint --fix"
+      "prettier --check",
+      "eslint"
     ],
     "*.{json,md}": [
-      "prettier --write"
+      "prettier --check"
     ]
   },
   "size-limit": [
