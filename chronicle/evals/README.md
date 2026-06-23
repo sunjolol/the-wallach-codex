@@ -1,10 +1,24 @@
-# Brain Evaluations
+# Evals — historical answer comparisons
 
-Real test questions that the brain has answered, with comparisons across versions. The point: measure whether brain edits actually make the agent better, not just feel like they do.
+_Historical artifacts from the project's earlier **agent-prompt era** — when the
+system prompt was versioned like software and answers were A/B-compared across
+versions. That workflow is **paused**: the project is now an offline dashboard
+app governed by `/CLAUDE.md`, not a swap-the-prompt agent. These files are kept
+as history (never deleted — see `.claude/rules/logging-doctrine.md`), not as a
+current process._
 
-## Format
+## What's here
 
-Each file is one question and the answers it produced under different brain versions.
+Each file is one test question and the answers it produced under different prompt
+versions, with a hand-written "best known correct answer" benchmark and a
+per-version verdict:
+
+- `2026-06-11-fluoride.md`
+- `2026-06-12-salt.md`
+- `2026-06-13-phase4-end-to-end.md`
+- `2026-06-13-v2.6-end-to-end.md`
+
+## Format (as used at the time)
 
 ```
 # Topic — short slug
@@ -13,31 +27,20 @@ Each file is one question and the answers it produced under different brain vers
 (what the user asked, verbatim)
 
 ## The "best known correct answer"
-(written by hand or arrived at after deep corpus exploration. The benchmark.)
+(the benchmark — written by hand or after deep corpus exploration)
 
-## v1.0 answer
-[paste the actual answer the agent gave under v1.0]
-**Verdict:** correct / partially correct / wrong, with explanation
-
-## v2.0 answer
-[paste the actual answer]
+## vN.N answer
+[the actual answer that prompt version produced]
 **Verdict:** correct / partially correct / wrong, with explanation
 
 ## Winner
 v?.? — why
 ```
 
-## How to run a comparison
+## Why it's preserved
 
-In a session, ask the agent the same question twice, each time with a different brain loaded as the system prompt:
-
-1. Load `versions/vN.N-...md` as the active prompt for that test
-2. Ask the question fresh (don't reuse context from a prior answer)
-3. Save the answer into the eval file under the right heading
-4. Repeat for each brain you want to compare
-
-Then write the verdict and pick a winner.
-
-## Why this matters
-
-Without evals, every brain edit is just vibes. With evals, we have evidence that v2 actually outperforms v1 on the things that previously broke. When we add v3, we can verify it didn't regress on v2's wins.
+Even a paused workflow is part of how the project got here. These evals captured
+which prompt versions handled hard questions (fluoride, salt) well or badly —
+evidence, not vibes. Kept so the path is never lost; superseded as a live
+practice by the `CLAUDE.md` contract and the render-probe + invariant
+verification the app uses now.

@@ -4,9 +4,13 @@ _Five typefaces, all SIL OFL 1.1 licensed (perpetual free use, redistributable f
 
 ---
 
-## What you need to drop into this folder
+## The five families
 
-| Family | Filename(s) expected | Variable-font weights | Source |
+All five `.ttf` files below are **already in-housed in this folder** (verified
+present). This table documents the expected filenames + upstream sources for
+re-procurement or replacement; `.woff2` siblings are optional (see below).
+
+| Family | Filename(s) | Variable-font weights | Source |
 |---|---|---|---|
 | **Playfair Display** | `PlayfairDisplay-VariableFont_wght.woff2` + `.ttf` (roman) + `PlayfairDisplay-Italic-VariableFont_wght.woff2` + `.ttf` | 400-900 | <https://fonts.google.com/specimen/Playfair+Display> |
 | **Merriweather** | `Merriweather-VariableFont_opsz,wdth,wght.woff2` + `.ttf` (roman) + `Merriweather-Italic-VariableFont_opsz,wdth,wght.woff2` + `.ttf` | 300-900 | <https://fonts.google.com/specimen/Merriweather> |

@@ -6,10 +6,9 @@ no network, no runtime dependencies — and scans supplement labels locally with
 vendored OCR (Tesseract.js).
 
 > The **app** is *The Wallach Codex*. Its internal **systems keep their own
-> names**: **Eden** (the sealed canonical source corpus), **Cura**
-> (health/care content), and **Aegis** (defense-in-depth validation).
-> (Tacitus, the former audit layer, now lives in its own `the-tacitus-system`
-> repo and is not part of this project.)
+> names**: **Eden** (the sealed canonical source corpus), **Chronicle** (the
+> discipline ledger + the sacred, append-only Creator's Log audit trail), and
+> **Sunjo** (the Cowork ↔ Claude-Code build-handoff).
 
 ## This repo is also a working log
 
@@ -64,7 +63,8 @@ Top-level folders, one line each:
   book + podcast ingest → `knowledge/`). See `wallach-refresh/README.md`.
 - **`labels/`** — sample supplement-label JSON fixtures for Scanner testing. See
   `labels/README.md`.
-- **`chronicle/`** — the discipline ledger: `build-log.md`, `next-chunk.md`,
+- **`chronicle/`** — the discipline ledger + audit trail: `build-log.md`,
+  `next-chunk.md`, `creators-log/` (the sacred, append-only Creator's Log),
   `domain-glossary.md`, `worked-example-chunk.md`, `CHANGELOG.md`, `versions/`,
   `contradictions/`, `evals/`.
 - **`tools/`** — `build.mjs`, `invariants.py`, `safe_write.py`, the enforcement
