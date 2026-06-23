@@ -1,8 +1,6 @@
 {
-  "tolerated_failures": [
-    "dashboard_integrity"
-  ],
+  "tolerated_failures": [],
   "captured": "2026-06-22",
-  "board": "44/45 (post tacitus-check retirement, chunk 1F-1)",
-  "note": "Invariant failures stop_round_close.py tolerates (no NEW-regression block). dashboard_integrity = stale legacy smoke test — the real dashboard renders fine (91 tiles, 0 errors per render_probe); re-base tools/dashboard_smoke.js to the new markup to clear it. The 16 Tacitus audit-layer checks were retired from the manifest in Phase-1 chunk 1F-1 (filter in list_invariants). Remaining 1F-2: de-couple the catch-up / implementation-log / dashboard-embed checks from tacitus state, then delete tacitus/ + pure-tacitus tools + the now-dead check defs."
+  "board": "20/20 (old-system decommission, cleanup chunk C2)",
+  "note": "Failures stop_round_close.py tolerates (no NEW-regression block). Empty by design: invariants.py was pruned to the 20 checks that protect the live app / code / eden / §17 write-discipline. The perpetually-red dashboard_integrity smoke test was retired (render probes verify the dashboard end-to-end). Any red now is a real regression."
 }
