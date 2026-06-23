@@ -1,3 +1,0 @@
-{
-  "_TOMBSTONE": "Round 100 (2026-06-16). Tacitus sentinel migrated to tacitus/sentinel.json. This file is safe to delete; remains only because sandbox blocks rm (operating-protocols §11). All consumers (catchup_seal.py, dashboard_integrity.py, invariants.py, brain/current.md) updated to read from the new path. See tacitus/identity.md or tacitus/changelog.md for the v2.0 migration record."
-}

@@ -23,7 +23,7 @@ import json
 import re
 import sys
 
-BANNED_DIRS = ("chronicle", "tools", "memory", "knowledge", "schemas", "eden")
+BANNED_DIRS = ("chronicle", "tools", "knowledge", "schemas", "eden")
 
 
 def _allow(note=""):
@@ -79,8 +79,8 @@ def main():
     if "safe_write.py" not in cmd:
         dirs = "|".join(BANNED_DIRS)
         if re.search(r"(?:>>?\s*|\btee\s+(?:-a\s+)?|\bsed\s+-i\S*\s+[^|]*?)['\"]?(?:%s)/" % dirs, cmd):
-            _block("direct bash write into a banned project dir (chronicle/ tools/ memory/ "
-                   "knowledge/ schemas/ eden/ tacitus/). This is the §17 corruption surface — "
+            _block("direct bash write into a banned project dir (chronicle/ tools/ knowledge/ "
+                   "schemas/ eden/). This is the §17 corruption surface — "
                    "route through `python tools/safe_write.py {replace|append|rewrite}`.")
             return
         if re.search(r"(?:>>?|\btee\b|\bsed\s+-i|\bcp\b|\bmv\b)[^|]*design-system\.css", cmd):

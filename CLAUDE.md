@@ -136,7 +136,6 @@ chronicle/                                  ← discipline ledger
 ├── domain-glossary.md · worked-example-chunk.md
 └── evals/
 
-memory/                                     ← long-term user preference + project saga
 sunjo/                                      ← Cowork ↔ Claude-Code handoff (plan + pre-log)
 
 tools/

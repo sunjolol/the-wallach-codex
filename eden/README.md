@@ -53,6 +53,6 @@ This is the "no silent failures + no discipline-only + truth-anchored" framing f
 
 ## Related doctrine
 
-- `memory/source-rule.md` — Eden formalizes the boundary the cornerstone has been protecting.
-- `memory/engineering-doctrine.md` — Doctrine §1 (no silent failures), §6 (verifiable invariants), §11 (truth-anchored invariants) instantiated in code.
-- `memory/operating-protocols.md` §17 — Edit-tool ban applies to all Eden files; only `safe_write` for agent-readable edits; `eden-catalog.json` and `eden-catalog.golden.sha256` are user-only.
+- `.claude/rules/source-rule.md` — Eden formalizes the boundary the cornerstone has been protecting.
+- `.claude/rules/engineering-doctrine.md` — Doctrine §1 (no silent failures), §6 (verifiable invariants), §11 (truth-anchored invariants) instantiated in code.
+- `.claude/rules/write-discipline.md` (§17) — Edit-tool ban applies to all Eden files; only `safe_write` for agent-readable edits; `eden-catalog.json` and `eden-catalog.golden.sha256` are user-only.

@@ -3,7 +3,7 @@
 safe_write.py — universal atomic write primitive for the Wallach project.
 
 Round 73 (2026-06-15) adopted: replaces the Edit tool for ALL writes to
-project files in memory/, knowledge/, brain/, tools/, dashboard/.
+project files in knowledge/, tools/, dashboard/, eden/, schemas/, chronicle/.
 
 The Edit tool's silent-truncation pattern (lessons.md Rounds 22/41/43/54/56/
 71b/72/73) reports success while the on-disk file is partially written or

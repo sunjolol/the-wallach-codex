@@ -868,21 +868,6 @@ def check_regimen_slot_invariant_wired():
 
 
 
-# ---------------------------------------------------------------------------
-# Round 148 — Closing-the-loop logging discipline (Phase A + B + C)
-# ---------------------------------------------------------------------------
-# Family: paired-write integrity for every logging surface. Saga round close
-# writes a unified `**Closing-move record:**` marker enumerating each paired
-# surface this round touched (Implementations / Lessons / Decisions / Memory
-# writes). Each marker line is verified by its own invariant. The catalog at
-# memory/paired-write-catalog.md is the visible enumeration of which surfaces
-# are covered by which invariants.
-#
-# Round 120 lesson recurred 2026-06-19 (the user noticed today's Cura/Vision
-# survivors had no icons; Edit-truncation of latest_status() compounded the
-# silent-fail by swallowing the resulting exception in build_tacitus_dashboard
-# _live.py). Round 148 closes the loop.
-
 _ROUND_HEADER_RE = re.compile(r"^## Round (\d+)\b", re.MULTILINE)
 
 
@@ -1215,18 +1200,13 @@ def check_no_native_dialogs():
 # ---------------------------------------------------------------------------
 # Eden — sealed catalog architecture (Round 157 / 2026-06-20)
 # ---------------------------------------------------------------------------
-# Three invariants that hold the sealed garden together:
+# Two invariants that hold the sealed garden together:
 #   1. check_eden_hash_integrity — actual SHA-256 of eden-catalog.json must
 #      match the locked golden hash. Truth anchor: math (deterministic hash).
 #   2. check_eden_embeds_match_canonical — the three dashboard embeds
 #      (regimen-label-lookup, goal-recommendations-data, REGIMEN_BASE_DATA
 #      .recommended) must carry the same eden_version as the canonical
 #      catalog. Drift = loud failure.
-#   3. check_eden_write_protection — agent (this codebase) must never write
-#      to eden/eden-catalog.json or eden/eden-catalog.golden.sha256. Scans
-#      memory/memory-change-log.md for any agent-touched line matching
-#      those paths.
-
 def check_eden_hash_integrity():
     """Round 157 — Eden truth anchor. Computes SHA-256 of eden-catalog.json,
     compares against eden-catalog.golden.sha256. Identical = pass. Any drift
