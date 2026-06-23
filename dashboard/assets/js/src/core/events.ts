@@ -25,7 +25,7 @@ export type EventName =
   | 'scanner:scan-complete'
   | 'scanner:scan-cleared'
   | 'goals:updated'
-  | 'journey:event-logged'
+  | 'journey:changed'
   | 'eden:hash-mismatch'
   | 'storage:pressure-warn'
   | 'rail:navigate'
@@ -38,7 +38,7 @@ export interface EventPayloads {
   'scanner:scan-complete': { captureId: string; verdict: 'aligns' | 'partial' | 'out' };
   'scanner:scan-cleared': { captureId: string };
   'goals:updated': { goalId: string };
-  'journey:event-logged': { eventId: string; kind: string };
+  'journey:changed': { reason: 'event-logged' | 'checkin-logged' };
   'eden:hash-mismatch': { file: string; expected: string; actual: string };
   'storage:pressure-warn': { bytesUsed: number; bytesLimit: number };
   'rail:navigate': { target: 'coverage' | 'regimen' | 'scanner' | 'knowledge' | 'journey' };

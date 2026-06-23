@@ -10,7 +10,7 @@
  *
  * Each milestone ties back to a Wallach doctrine ID (DOCT·NN from
  * knowledge/doctrines). When the doctrine-check function returns true for
- * the first time, the milestone fires and a `journey:event-logged` event
+ * the first time, the milestone fires and a `journey:changed` event
  * goes out so the timeline picks it up.
  *
  * SCAFFOLD STATUS (Round 1·A): types declared. Wired in Round 5.
