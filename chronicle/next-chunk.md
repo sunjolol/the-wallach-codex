@@ -1,5 +1,12 @@
 # Next chunk — operating system CLEANED → continue **Phase 2** surfaces
 
+## LATEST (2026-06-23, HEAD 5c63212) — Creator's Log AUDIT + Chunk H hardening
+- **Audit done (Opus 4.8):** the Creator's Log works; its sacred guarantees are STRUCTURAL, not aspirational (re-proven live). Board is now **23/23**: `creators_log_well_formed` + `creators_log_append_only` (critical, git-anchored) + `creators_log_digest_synced`.
+- **Canonical path is `chronicle/creators-log/log.jsonl`** (+ generated `LOG.md` + `README.md`). The old flat `chronicle/creators-log.jsonl` path is GONE — ignore any older mention of it below.
+- **Chunk H shipped (commit 5c63212)** — 3 audit fixes: (4a) digest-spoof closed — `validate_entry` rejects newline summaries + `render_digest` escapes a leading #/> and flattens newlines so the human view can't show a forged entry; (5a) delete-guard now covers the whole `chronicle/creators-log/` dir + `rm -rf chronicle` + a dir `mv`; (5b) a COMMITTED deletion is a hard RED ('SACRED LEDGER REMOVED FROM HEAD') + git-unavailable is a loud fail-open ('⚠ UNVERIFIED').
+- **NEXT ORDER (Luneth, 2026-06-23):** (1) **Feature L2 — DASHBOARD Creator's Log**: build-time embed of `log.jsonl` + boot-merge with the LS `wallachCreatorsLog_v1` entries in `state/log.ts` (dedup by id) + Profile-panel render. This is Luneth's VISUAL truth-verification layer — the human-in-the-loop answer to the req-3 ceiling (no machine can verify an entry is *truthful/complete*; Luneth reviews the front-facing log periodically). Don't skip anything important for it. (2) **Chunk N — navigability archive-tree**: per-period digest files + an `INDEX.md`, generated over the canonical `log.jsonl` (Luneth chose 'archive tree + index'; do NOT shard the canonical jsonl — it'd complicate the git-prefix anchor). (3) Journey J1-J4. (4) Command palette (⌘K).
+- Older notes below are superseded where they conflict ('older loses').
+
 **Status (2026-06-22, HEAD after file-audit cleanup A-C4):** The operating contract was
 restructured (Cowork) and the entire OLD discipline system was decommissioned.
 There is now **ONE instruction surface**: `CLAUDE.md` + `.claude/rules/` (11
@@ -12,8 +19,8 @@ saga/lessons/decisions, or the old invariant paperwork — it was deleted on pur
 
 ## First commands (catch-up)
 ```
-PYTHONUTF8=1 python tools/invariants.py | tail -1     # expect: 21/21 passed (0 failed)
-PYTHONUTF8=1 python tools/creators_log.py verify      # Creator's-Log mirror: N entries, 0 problems
+PYTHONUTF8=1 python tools/invariants.py | tail -1     # expect: 23/23 passed (0 failed)
+PYTHONUTF8=1 python tools/creators_log.py verify      # Creator's Log: N entries, 0 problems
 git -C "C:/Users/Light/Desktop/claude/health expert" log --oneline -8
 node tools/build.mjs                                  # Build OK (~291 KB raw / ~59 KB gzip)
 node tools/render_probe.js                            # coverage 20/92, 0 errors
