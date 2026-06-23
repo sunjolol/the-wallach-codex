@@ -60,3 +60,13 @@ export const LogShapeSchema = z.object({
 });
 
 export type LogShape = z.infer<typeof LogShapeSchema>;
+
+/**
+ * Build-time embed shape: a bare array of entries generated from the canonical
+ * file ledger (chronicle/creators-log/log.jsonl) and inlined into the bundle at
+ * build. Validated at the state-layer boundary before merging with the
+ * localStorage entries (the file:// app cannot fetch() local files at runtime).
+ */
+export const LogEmbedSchema = z.array(LogEntrySchema);
+
+export type LogEmbed = z.infer<typeof LogEmbedSchema>;

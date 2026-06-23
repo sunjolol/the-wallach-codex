@@ -16,7 +16,8 @@ Layout (chronicle/creators-log/):
 
 `append` auto-stamps id + ISO-8601 UTC ts, validates against the LogEntrySchema
 shape (mirrors core/schemas/log.ts), appends one JSON line through
-safe_write.safe_append (§17 atomic-verify), then regenerates LOG.md. KINDS
+safe_write.safe_append (§17 atomic-verify), then regenerates LOG.md + the
+dashboard build-time embed (dashboard/assets/data/creators-log-embed.json). KINDS
 mirrors LogKindSchema — if that enum grows, update KINDS here in the same patch
 (the creators_log_well_formed invariant reuses verify_file() below).
 
@@ -41,6 +42,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 LOG_DIR = ROOT / "chronicle" / "creators-log"
 LOG_PATH = LOG_DIR / "log.jsonl"
 DIGEST_PATH = LOG_DIR / "LOG.md"
+EMBED_PATH = ROOT / "dashboard" / "assets" / "data" / "creators-log-embed.json"
 sys.path.insert(0, str(ROOT / "tools"))
 import safe_write  # noqa: E402
 
@@ -191,6 +193,19 @@ def write_digest() -> int:
     return safe_write.safe_rewrite(DIGEST_PATH, render_digest())
 
 
+def write_embed() -> int:
+    """Regenerate the dashboard build-time embed from the ledger via safe_write.
+
+    The offline file:// app cannot fetch() local files, so the canonical ledger
+    is inlined into the bundle at build (esbuild JSON import in state/log.ts,
+    merged with localStorage). This derived array is kept byte-fresh on every
+    append/digest — single source of truth is log.jsonl; the embed holds no
+    independent state. Returns bytes written."""
+    payload = json.dumps(read_entries(), ensure_ascii=False, separators=(",", ":")) + "\n"
+    EMBED_PATH.parent.mkdir(parents=True, exist_ok=True)
+    return safe_write.safe_rewrite(EMBED_PATH, payload)
+
+
 def cmd_append(args) -> None:
     entry: dict = {
         "id": _gen_id(),
@@ -219,7 +234,8 @@ def cmd_append(args) -> None:
     LOG_DIR.mkdir(parents=True, exist_ok=True)
     safe_write.safe_append(LOG_PATH, line)
     write_digest()
-    print(f"OK  appended {entry['kind']} entry {entry['id']} (digest regenerated)")
+    write_embed()
+    print(f"OK  appended {entry['kind']} entry {entry['id']} (digest + dashboard embed regenerated)")
 
 
 def cmd_verify(_args) -> None:
@@ -232,7 +248,9 @@ def cmd_verify(_args) -> None:
 
 def cmd_digest(_args) -> None:
     n = write_digest()
-    print(f"OK  regenerated {DIGEST_PATH.relative_to(ROOT).as_posix()} ({n} B)")
+    m = write_embed()
+    print(f"OK  regenerated {DIGEST_PATH.relative_to(ROOT).as_posix()} ({n} B) + "
+          f"{EMBED_PATH.relative_to(ROOT).as_posix()} ({m} B)")
 
 
 def cmd_list(args) -> None:

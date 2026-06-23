@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_9 entries · deterministic render of log.jsonl_
+_10 entries · deterministic render of log.jsonl_
 
 ---
+
+## 2026-06-23 05:01 UTC · round-close · profile
+Phase 2 L2 shipped: the dashboard Creator's Log. The CLI ledger is now inlined at build time and boot-merged with localStorage so the Profile panel shows both CLI- and in-app-fired entries — Luneth's visual truth-verification layer. Board 23→24.
+  ↳ Closes the in-app half (L1 was the CLI mirror). creators_log.py gains write_embed() (every append/digest regenerates dashboard/assets/data/creators-log-embed.json from log.jsonl via safe_write — sibling of LOG.md; log.jsonl stays the single source of truth). core/schemas/log.ts adds LogEmbedSchema; state/log.ts imports the embed (esbuild JSON import), validates once at the boundary, and getEntries() boot-merges embed + LS deduped by id (embed canonical wins), newest-first. The existing Profile panel renders getEntries() unchanged, so it now shows the unified log. New invariant creators_log_embed_synced (warning, truth-anchored: json.loads(embed) == read_entries()) catches a stale build / hand-edit. Verified: tsc strict + esbuild OK (298.9 KB); invariants 24/24; render_probe_profile.js PASS — empty localStorage still renders all embedded CLI entries (count == embed == subheader), a real ROUND CLOSE surfaces, Esc closes, 0 page errors. Deferred: cap the embed to recent-N as the ledger grows (Chunk N). Next: navigability archive-tree.
 
 ## 2026-06-23 04:46 UTC · round-close · tools
 Audit follow-ups: retired Cura/Aegis from the CLAUDE.md glossary (slimmed the Tacitus guard) + fixed a pre_bash_guard false-positive where the push-force/reset-hard regexes spanned a separator into an unrelated short-flag. Board 23/23.

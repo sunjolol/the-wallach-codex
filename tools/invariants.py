@@ -1518,6 +1518,29 @@ def check_creators_log_digest_synced():
     return False, "LOG.md is STALE or hand-edited — run `python tools/creators_log.py digest`"
 
 
+def check_creators_log_embed_synced():
+    """The dashboard build-time embed (dashboard/assets/data/creators-log-embed.json)
+    must equal the canonical ledger (chronicle/creators-log/log.jsonl) parsed to a
+    JSON array, in file order. The offline file:// app inlines this at build (esbuild
+    JSON import in state/log.ts, merged with localStorage); drift means a stale build
+    or a hand-edit, which would make the in-app Creator's Log lie. Regenerate via
+    `python tools/creators_log.py digest` (or `node tools/build.mjs`)."""
+    import json as _json
+    sys.path.insert(0, str(ROOT / "tools"))
+    import creators_log
+    embed = ROOT / "dashboard/assets/data/creators-log-embed.json"
+    if not embed.exists():
+        return False, "creators-log-embed.json missing — run `python tools/creators_log.py digest`"
+    try:
+        on_disk = _json.loads(embed.read_text(encoding="utf-8"))
+    except Exception as e:
+        return False, f"creators-log-embed.json is not valid JSON: {e}"
+    expected = creators_log.read_entries()
+    if on_disk == expected:
+        return True, f"embed in sync with the ledger ({len(expected)} entries)"
+    return False, "creators-log-embed.json is STALE — run `python tools/creators_log.py digest`"
+
+
 INVARIANTS = [
     Invariant(
         name="safe_write_canary",
@@ -1702,6 +1725,14 @@ INVARIANTS = [
         truth_anchor="tools/creators_log.py::render_digest() vs chronicle/creators-log/LOG.md",
         severity="warning",
         lesson_ref="Creator's Log sacred covenant — the generated human digest must always tell the same truth as the canonical jsonl; a hand-edit or missed regen is caught here",
+    ),
+    Invariant(
+        name="creators_log_embed_synced",
+        description="the dashboard build-time embed (dashboard/assets/data/creators-log-embed.json) equals the canonical ledger parsed to a JSON array (the in-app Creator's Log never drifts from log.jsonl)",
+        check_fn=check_creators_log_embed_synced,
+        truth_anchor="json.loads(dashboard/assets/data/creators-log-embed.json) == tools/creators_log.py::read_entries() over chronicle/creators-log/log.jsonl",
+        severity="warning",
+        lesson_ref="Creator's Log L2 (dashboard boot-merge) — the file:// app inlines the ledger at build; this catches a stale build or hand-edit that would make the in-app Profile log lie",
     ),
 ]
 

@@ -21,9 +21,11 @@ import { emit } from '../core/events.js';
 import {
   type LogEntry,
   type LogKind,
+  LogEmbedSchema,
   LogShapeSchema,
 } from '../core/schemas/index.js';
 import { getValidated, set } from '../core/storage.js';
+import creatorsLogEmbed from '../../../data/creators-log-embed.json';
 
 export type { LogEntry, LogKind };
 
@@ -38,17 +40,54 @@ export const LOG_RETENTION = 2000;
  * All entries, newest first. Bad LS data → empty array (never enters
  * typed-land unvalidated).
  */
-export function getEntries(): LogEntry[] {
-  const shape = getValidated(CREATORS_LOG_KEY, LogShapeSchema);
-  const entries = shape?.entries ?? [];
-  // Newest-first ordering — sort by ts descending so consumers don't need to.
-  return [...entries].sort((a, b) => (a.ts < b.ts ? 1 : a.ts > b.ts ? -1 : 0));
+/**
+ * The build-time embed of the canonical file ledger
+ * (chronicle/creators-log/log.jsonl) — the CLI-fired entries (round closes,
+ * milestones, incidents) that never touched this device's localStorage.
+ * Validated once at the boundary; a bad/absent embed reads as empty so it can
+ * never throw into the app.
+ */
+let cachedEmbed: LogEntry[] | null = null;
+function embeddedEntries(): LogEntry[] {
+  if (cachedEmbed === null) {
+    const parsed = LogEmbedSchema.safeParse(creatorsLogEmbed);
+    cachedEmbed = parsed.success ? parsed.data : [];
+  }
+  return cachedEmbed;
 }
 
-/** Count of total entries on file. */
-export function getEntryCount(): number {
+/** Concatenate lists, keeping the first entry seen per id. */
+function mergeById(...lists: LogEntry[][]): LogEntry[] {
+  const seen = new Set<string>();
+  const out: LogEntry[] = [];
+  for (const list of lists) {
+    for (const entry of list) {
+      if (seen.has(entry.id)) {
+        continue;
+      }
+      seen.add(entry.id);
+      out.push(entry);
+    }
+  }
+  return out;
+}
+
+/**
+ * All entries, newest first. Boot-merge of the build-time embed (CLI-fired
+ * entries from the sacred file ledger) + this device's localStorage entries,
+ * deduped by id. The embed is canonical, so it wins on an id collision. Bad LS
+ * data → that layer is dropped (never enters typed-land unvalidated).
+ */
+export function getEntries(): LogEntry[] {
   const shape = getValidated(CREATORS_LOG_KEY, LogShapeSchema);
-  return (shape?.entries ?? []).length;
+  const lsEntries = shape?.entries ?? [];
+  return mergeById(embeddedEntries(), lsEntries)
+    .sort((a, b) => (a.ts < b.ts ? 1 : a.ts > b.ts ? -1 : 0));
+}
+
+/** Count of total entries (embed + localStorage, deduped). */
+export function getEntryCount(): number {
+  return getEntries().length;
 }
 
 /** Entries filtered by kind. Useful for the invariant scoreboard. */
