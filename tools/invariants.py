@@ -23,10 +23,10 @@ Adding a new invariant:
   2. Append an Invariant entry to INVARIANTS below
   3. Reference the lesson/decision/protocol it ties back to in lesson_ref
 
-Promotion gate (operating-protocols §18, Round 74): whenever a new pitfall
-lands in lessons.md, the same patch must add an invariant here that would
-catch the next occurrence of that pitfall. No new pitfalls without
-detectors.
+Promotion gate (engineering-doctrine §6 — verifiable invariants): whenever a
+new pitfall is recorded in the chronicle or a `.claude/rules/` file, the same
+patch must add an invariant here that would catch the next occurrence. No
+new pitfalls without detectors.
 """
 
 import ast
@@ -296,9 +296,9 @@ def check_wallach_stance_source_rule():
     """Round 118 — Cura session #2 Survivor B: every wallach_stance.citation
     in knowledge/essentials-targets.json must cite an allowlisted Wallach or
     Youngevity primary source (same allowlist as the existing `source` field
-    check). Defense-in-depth pair for the dashboard_integrity check_source_rule
-    extension — runs daily over the canonical file so the cornerstone has
-    coverage at both the dashboard-write moment and the daily audit moment.
+    check). Runs daily over the canonical file so the §00.A cornerstone is enforced
+    in-code — this invariant is now the sole in-code allowlist check (the
+    old dashboard_integrity co-writer was retired in the June-2026 cleanup).
 
     Truth anchor: source-rule.md's allowlist markers, applied to the new
     wallach_stance.citation schema field (Round 115 addition).
@@ -315,10 +315,10 @@ def check_wallach_stance_source_rule():
     except json.JSONDecodeError as e:
         return False, f"essentials-targets.json parse failed: {e}"
 
-    # Allowlist markers — kept in sync with tools/dashboard_integrity.py's
-    # ALLOWLIST_MARKERS. Per §3, the dashboard_integrity tool is the canonical
-    # writer; this invariant duplicates the allowlist for defense-in-depth.
-    # If the allowlist grows, both surfaces update in the same patch.
+    # Allowlist markers — the canonical in-code home for the §00.A allowlist.
+    # (The old tools/dashboard_integrity.py co-writer was retired in the
+    # June-2026 cleanup, so this is now the single source.) If the allowlist
+    # grows, update it here and the note in .claude/rules/source-rule.md.
     allowlist = [
         "wallach", "dddl", "dead doctors don't lie", "let's play doctor",
         "hell's kitchen", "rare earths", "wallach files", "rare earths and forbidden cures",

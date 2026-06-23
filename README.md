@@ -6,9 +6,10 @@ no network, no runtime dependencies — and scans supplement labels locally with
 vendored OCR (Tesseract.js).
 
 > The **app** is *The Wallach Codex*. Its internal **systems keep their own
-> names**: **Eden** (the sealed canonical source corpus), **Tacitus** (the
-> historical audit / integrity layer), **Cura** (health/care content), and
-> **Aegis** (defense-in-depth validation).
+> names**: **Eden** (the sealed canonical source corpus), **Cura**
+> (health/care content), and **Aegis** (defense-in-depth validation).
+> (Tacitus, the former audit layer, now lives in its own `the-tacitus-system`
+> repo and is not part of this project.)
 
 ## This repo is also a working log
 
@@ -68,7 +69,6 @@ Top-level folders, one line each:
   `contradictions/`, `evals/`.
 - **`tools/`** — `build.mjs`, `invariants.py`, `safe_write.py`, the enforcement
   `hooks/`, and the headless render probes.
-- **`memory/`** — long-term project preference + saga storage.
 - **`outputs/`** — generated health-reference documents (framework summary,
   protocol drafts, research briefs, medical red-flag / escalation rules).
 - **`sessions/`** — cross-session working notes (session log, open questions,
@@ -77,8 +77,6 @@ Top-level folders, one line each:
   and the active build plan.
 - **`.claude/`** — Claude Code settings + the enforcement-hook wiring
   (`settings.json`).
-- **`tacitus/`** — the historical audit/integrity layer, now a standalone repo
-  (`the-tacitus-system`). **Scheduled for excision from this repo in Phase 1.**
 
 ## Sources & licensing note
 

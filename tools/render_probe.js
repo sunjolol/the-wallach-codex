@@ -6,9 +6,10 @@
 // actually renders: tile counts by section, goal cards, the coverage-stat
 // pill, status classes (covered/gap), page errors, and failed resources.
 //
-// Why this exists: tools/dashboard_smoke.js is a STALE legacy-contract test
-// (hunts .essential-tile[data-name] + legacy window.* fns the new src/
-// architecture replaced). This probe checks the new architecture's real DOM.
+// Why this exists: it replaced the old tools/dashboard_smoke.js (deleted in the
+// June-2026 cleanup), a stale legacy-contract test that hunted
+// .essential-tile[data-name] + legacy window.* fns the new src/ architecture
+// replaced. This probe checks the new architecture's real DOM.
 // It is the build→test loop's eyes. Requires puppeteer (in node_modules).
 
 const path = require('path');

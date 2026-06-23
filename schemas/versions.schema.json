@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Versions Manifest",
-  "description": "Single source of truth for component versions. The only sanctioned writer is tools/version_bump.py.",
+  "description": "Single source of truth for component versions.",
   "type": "object",
   "required": ["current", "history"],
   "properties": {

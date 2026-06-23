@@ -1,6 +1,6 @@
 # Review instructions
 
-_Injected as highest-priority guidance into every review and verification step. Short by design. For project context, identity, and architecture, read CLAUDE.md and HANDOFF.md._
+_Injected as highest-priority guidance into every review and verification step. Short by design. For project context, identity, and architecture, read CLAUDE.md and `.claude/rules/`._
 
 ## What "Important" means here
 

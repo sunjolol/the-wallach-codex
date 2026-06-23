@@ -1,6 +1,6 @@
 # Canary probes — Round 74
 
-Files in this directory are **overwritten on every system_audit run**. They
+Files in this directory are **overwritten on every `tools/invariants.py` run** (the `safe_write_canary` check). They
 exist to verify that the write surfaces (`safe_write`, etc.) actually persist
 content to disk byte-equal to intent.
 

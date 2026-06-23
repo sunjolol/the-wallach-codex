@@ -34,5 +34,5 @@ Symmetric: applies whether Claude or the user initiates. If the user proposes a 
 Mechanism explanations drawn from general biology (descriptive context, not a target source) · engineering tool selection · general reference clearly marked as such and not surfaced as Wallach's view. When ambiguous, apply the rule — over-application is recoverable, under-application erodes the cornerstone.
 
 ## Enforcement
-- Invariant `wallach_stance_source_rule` (critical) — every `wallach_stance.citation` in `knowledge/essentials-targets.json` cites an allowlisted primary. The allowlist lives in-code (`tools/invariants.py` + `tools/dashboard_integrity.py`'s markers); if it grows, both update in the same patch.
+- Invariant `wallach_stance_source_rule` (critical) — every `wallach_stance.citation` in `knowledge/essentials-targets.json` cites an allowlisted primary. The allowlist lives in-code in `tools/invariants.py` (`check_wallach_stance_source_rule`); if it grows, update it there and this note in the same patch.
 - Invariant `wallach_stance_embed_sync` — the canonical stance dict is byte-equal in the dashboard embed.
