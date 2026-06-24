@@ -1450,6 +1450,349 @@
       "extracted_at": "2026-06-24T17:42:16+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000046",
+      "kind": "prognosis",
+      "essentials": [
+        "chromium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "diabetes",
+        "hypoglycemia"
+      ],
+      "symptoms": [],
+      "claim_text": "Supplemental chromium prevents and treats both diabetes and hypoglycemia (known since 1958).",
+      "verbatim": "Since\n1958, it has been known that supplemental chromium will prevent and treat\ndiabetes as well as hypoglycemia.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 731237
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:52:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000047",
+      "kind": "quote",
+      "essentials": [
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "diabetes"
+      ],
+      "symptoms": [],
+      "claim_text": "A University of Vancouver medical school statement (1985): vanadium will replace insulin for adult-onset diabetics.",
+      "verbatim": "the medical school at the\nUniversity of Vancouver, BC, Canada stated that “vanadium will replace\ninsulin for adult onset diabetics.”",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 731784
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:52:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000048",
+      "kind": "protocol",
+      "essentials": [
+        "chromium",
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "diabetes"
+      ],
+      "symptoms": [],
+      "claim_text": "Diabetes treatment starts with chromium and vanadium at 250 mcg/day in the initial stages to prevent insulin shock.",
+      "verbatim": "Treatment of diabetes should include chromium and vanadium at 250\nmeg/day in the initial stages to prevent “insulin shock”",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 732936
+      },
+      "dose": {
+        "amount": 250,
+        "unit": "mcg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "diabetes"
+      },
+      "tags": [
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:52:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000049",
+      "kind": "protocol",
+      "essentials": [
+        "zinc",
+        "vitamin-b3",
+        "vitamin-b12",
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "diabetes"
+      ],
+      "symptoms": [],
+      "claim_text": "The diabetes regimen also includes zinc 50 mg t.i.d., B-complex 50 mg t.i.d. (with niacin), EFAs 5 g t.i.d., B12 1,000 mcg/day, quercetin 150 mg/day, copper 2-3 mg/day, lecithin 2,500 mg t.i.d., and glutathione 100 mg/day.",
+      "verbatim": "Treatment of diabetes should also include zinc at 50 mg t.i.d., B-complex at\n50 mg t.i.d. (be sure to include niacin which is part of the GTF “glucose\ntolerance factor”), essential fatty acids at 5 gm t.i.d., B12 at 1,000 meg/day,\nbioflavonoids including quercetin at 150 mg/day, copper at 2-3 mg/day,\nlecithin at 2,500 mg t.i.d., and glutathione at 100 mg/day.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 733585
+      },
+      "dose": null,
+      "tags": [
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:52:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000050",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "osteoarthritis",
+        "rheumatoid_arthritis"
+      ],
+      "symptoms": [],
+      "claim_text": "Osteoarthritis and degenerative arthritis are a complex of nutritional deficiencies; rheumatoid arthritis's overt cause is chronic Mycoplasma infection.",
+      "verbatim": "osteoarthritis and degenerative arthritis are a complex of\nnutritional deficiencies. In the case of rheumatoid arthritis, a chronic\ninfection with a Mycoplasma spp. is the overt cause.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 636837
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:52:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000051",
+      "kind": "protocol",
+      "essentials": [
+        "calcium",
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "arthritis"
+      ],
+      "symptoms": [],
+      "claim_text": "Arthritis treatment includes calcium at 2,000 mg/day (more if eating meat) plus magnesium at 800-1,000 mg/day.",
+      "verbatim": "Treatment of arthritis should include calcium at 2000 mg/day and more if\nyou eat meat two or three times per day. Also take magnesium at 800-1000\nmg/day",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 638022
+      },
+      "dose": null,
+      "tags": [
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:52:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000052",
+      "kind": "mechanism",
+      "essentials": [
+        "calcium",
+        "phosphorus"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "arthritis",
+        "osteoporosis"
+      ],
+      "symptoms": [],
+      "claim_text": "A dietary calcium:phosphorus ratio of 2:1 is ideal but impossible to attain on an unsupplemented diet; the more meat eaten, the more calcium supplementation needed.",
+      "verbatim": "A dietary calcium/phosphorus ratio of 2:1 is ideal yet impossible to attain in\nan unsupplemented diet.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 637153
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:52:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000053",
+      "kind": "mechanism",
+      "essentials": [
+        "manganese",
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "asthma"
+      ],
+      "symptoms": [],
+      "claim_text": "Asthma is a malabsorption disease featuring essential fatty acid, manganese, and magnesium deficiencies.",
+      "verbatim": "Asthma is a\ndisease of malabsorption with essential fatty acid deficiencies and\ndeficiencies of manganese and magnesium.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 639684
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:52:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000054",
+      "kind": "protocol",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cor_pulmonale"
+      ],
+      "symptoms": [],
+      "claim_text": "Cor pulmonale treatment includes resolving the lung disease plus oxygen, IV hydrogen peroxide, and selenium at 500-1,000 mcg/day for adults.",
+      "verbatim": "Treatment of cor pulmonale includes resolving the precipitating lung\ndisease and oxygen, IV hydrogen peroxide, and selenium at 500-1,000 meg\nper day for adults.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 713354
+      },
+      "dose": {
+        "amount": "500-1000",
+        "unit": "mcg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "cor_pulmonale"
+      },
+      "tags": [
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:52:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000055",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b6",
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cradle_cap"
+      ],
+      "symptoms": [],
+      "claim_text": "Cradle cap treatment includes regular shampooing plus B6 at 10-25 mg/day and zinc at 15-25 mg/day.",
+      "verbatim": "Treatment of cradle cap includes shampooing regularly to loosen the greasy\nscale, B6 at 10-25 mg per day, and zinc at 15-25 mg per day.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 715037
+      },
+      "dose": null,
+      "tags": [
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:52:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
