@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_22 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_23 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-24 13:14 UTC-04:00 · round-close · eden/corpus
+Phase β.1: DDDL extraction pipeline live + first 10 claims sealed (knowledge_version=4). corpus_extract.py finalize snaps agent-authored verbatims to exact book bytes; corpus_verify proves every verbatim is a real book substring. Board 29/29. Stop for format review.
+  ↳ Agent-in-the-loop extraction proven end-to-end on DDDL: 10 claims across 6 kinds (deficiency_sign×3, mechanism×2, prevalence×2, prognosis, personal_anecdote, quote) — selenium/copper/calcium/chromium/vanadium deficiency-disease claims + the 1895-JAMA doctor-lifespan hook + plant-derived-colloidal-minerals framing. Pipeline: I author kind/slugs/claim_text/verbatim → corpus_extract.py finalize snaps verbatim to exact book bytes (whitespace-collapse + quote/dash fold + index map), assigns WAL-CLM ids + char_offset, validates essentials against the 90-canon → corpus_seal promotes → corpus_verify check #2 proves substrings. Fixed 2 bugs: seal counted claims pre-promotion (note said 0 for 10); finalize overwrote the draft (now merges the sealed shard for safe multi-batch). STOP for Luneth's claim format/quality review before extracting DDDL at volume.
 
 ## 2026-06-24 12:58 UTC-04:00 · milestone · eden/corpus
 Wallach Knowledge Revamp Phase α: Eden gains Wing 2 (eden/corpus — 6 books in-housed + sealed 90-canon + claim-graph scaffold) and Wing 3 (eden/graphics — 5 sacred hand-made graphics). 6 seal/verify tools, 3 invariants. Board 29/29. Two-tier knowledge model live.

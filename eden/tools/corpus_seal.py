@@ -80,6 +80,11 @@ def main() -> int:
             ip.write_text(json.dumps(obj, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
             sealed_indices.append(ip)
 
+    # recount claims AFTER promotion (the pre-promotion run_checks saw an empty claims/)
+    n_claims = 0
+    for s in shards:
+        n_claims += len(json.loads(s.read_text(encoding="utf-8")).get("claims", []))
+
     # 4. bump version
     version = json.loads(VERSION_PATH.read_text(encoding="utf-8"))
     new_v = int(version.get("knowledge_version") or 0) + 1

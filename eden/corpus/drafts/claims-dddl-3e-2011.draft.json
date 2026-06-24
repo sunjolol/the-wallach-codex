@@ -1,0 +1,337 @@
+{
+  "schema_version": 1,
+  "book_id": "dddl-3e-2011",
+  "knowledge_version": null,
+  "claims": [
+    {
+      "id": "WAL-CLM-DDDL-000001",
+      "kind": "prevalence",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach cites an 1895 Journal of the American Medical Association report that the average lifespan of doctors was just 55 years.",
+      "verbatim": "what he discovered, in an 1895 edition of the Journal of the American\nMedical Association was that the average life of doctors was just 55 years.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1673
+      },
+      "dose": null,
+      "tags": [
+        "dddl-hook",
+        "doctor-lifespan"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000002",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach frames the solution as supplementing with plant derived colloidal minerals.",
+      "verbatim": "took positive\naction to enhance their own lives and the lives of others by supplementing\nwith plant derived colloidal minerals.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1323
+      },
+      "dose": null,
+      "tags": [
+        "plant-derived-colloidal-minerals",
+        "framing"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000003",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [
+        "gray_hair"
+      ],
+      "claim_text": "Copper deficiency in humans first presents as white, gray, or silver hair.",
+      "verbatim": "Copper deficiency in human beings presents itself first as white, gray, or\nsilver hair.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 63286
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000004",
+      "kind": "mechanism",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "aneurysm"
+      ],
+      "symptoms": [],
+      "claim_text": "Copper is required to manufacture the heavy elastic fibers in arteries; copper deficiency causes aneurysms.",
+      "verbatim": "This has got to be\ndue to a copper deficiency, because copper is required to manufacture the\nheavy elastic fibers found in arteries.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 63030
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000005",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cystic_fibrosis",
+        "sids",
+        "muscular_dystrophy",
+        "cardiomyopathy",
+        "white_muscle_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach lists selenium deficiency as causing infertility, miscarriages, cystic fibrosis of the pancreas, SIDS, white muscle disease, muscular dystrophy, cardiomyopathy, and more.",
+      "verbatim": "Selenium deficiency causes infertility,\nmiscarriages, cystic fibrosis of the pancreas, Sudden Infant Death\nSyndrome in animals, liver cirrhosis, stiff lamb disease, white muscle\ndisease, muscular dystrophy, anemias, encephalomalacia (Alzheimer’s\ndisease), cardiomyopathy heart disease, and mulberry heart disease.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 60358
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000006",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [
+        "age_spots",
+        "liver_spots"
+      ],
+      "claim_text": "An early symptom of selenium deficiency in older humans is the appearance of liver spots or age spots.",
+      "verbatim": "Another early symptom of selenium deficiency in older humans is the\nappearance of “liver spots” or “age spots.”",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 61350
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000007",
+      "kind": "prognosis",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cardiomyopathy",
+        "white_muscle_disease",
+        "muscular_dystrophy"
+      ],
+      "symptoms": [],
+      "claim_text": "Selenium supplementation prevented, and in many cases reversed or cured, the selenium-deficiency diseases in animals.",
+      "verbatim": "In each\ncase, selenium supplementation prevented the disease and in many cases\nreversed or cured existing diseases, which were all significant causes of\nanimal losses to the livestock industry.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 60672
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000008",
+      "kind": "personal_anecdote",
+      "essentials": [
+        "chromium",
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "diabetes"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach autopsied zoo animals (marmosets, shrews) that died of diabetes, which he attributes to chromium and vanadium deficiency.",
+      "verbatim": "I saw marmosets, alligators, and\nshrews that died of diabetes, a chromium and vanadium deficiency.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 134226
+      },
+      "dose": null,
+      "tags": [
+        "zoo-pathology",
+        "pet_anecdote"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000009",
+      "kind": "prevalence",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "osteoporosis",
+        "osteoarthritis",
+        "osteomalacia",
+        "bells_palsy",
+        "tinnitus",
+        "trigeminal_neuralgia",
+        "spinal_stenosis"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach asserts calcium deficiency alone could result in as many as 147 different diseases.",
+      "verbatim": "Calcium deficiency alone could result in as many as 147 different diseases\nranging from osteoporosis, osteoarthritis, osteomalacia, degenerative\nathritis, Bell’s Palsy, tinnitis, trigeminal neuralgia, and spinal stenosis to\nname a few.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 55546
+      },
+      "dose": null,
+      "tags": [
+        "calcium-147"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000010",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "cardiomyopathy",
+        "diabetes",
+        "cancer",
+        "liver_cirrhosis"
+      ],
+      "symptoms": [],
+      "claim_text": "In the clinical phase of trace mineral deficiency, full-blown disease states appear: cardiomyopathy, diabetes, cancer, liver cirrhosis.",
+      "verbatim": "The clinical phase of trace mineral deficiencies is characterized by the onset\nof full-blown disease states and even death—i.e., cardiomyopathy, diabetes,\ncancer, liver cirrhosis.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 68686
+      },
+      "dose": null,
+      "tags": [
+        "deficiency-cascade"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    }
+  ]
+}
