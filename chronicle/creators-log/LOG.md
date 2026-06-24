@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_29 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_30 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-24 14:14 UTC-04:00 · round-close · eden/corpus
+Phase β.10-β.12: DDDL disease-encyclopedia sweep — 75→94 claims (knowledge_version=15). ~25 common conditions (angina, BPH, kidney stones, Bell's palsy, menopause, colds, arteriosclerosis, anxiety, ...). Board 29/29.
+  ↳ Appendix B alphabetical encyclopedia (A-C range), common/high-value conditions only. Iconic: arteriosclerosis=magnesium-deficiency calcification + vit-D angiotoxicity; kidney stones from Ca/Mg deficiency ('stones come from your own bones'); BPH from zinc deficiency; menopause estrogen contraindication. 94 claims span all four essential categories + ~25 conditions / 12 of 13 kinds. SCOPE: encyclopedia long tail (~175 obscure entries) remains. DECISION: proceed to Phase δ/dashboard test, or grind full encyclopedia first.
 
 ## 2026-06-24 14:01 UTC-04:00 · round-close · eden/corpus
 Phase β.8+β.9: DDDL aminos/fatty-acids + more diseases — 62→75 claims (knowledge_version=12). ALL FOUR essential categories now covered; 12 of 13 kinds. Taurine adjudication evidence captured. Board 29/29.

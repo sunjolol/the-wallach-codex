@@ -2451,6 +2451,634 @@
       "extracted_at": "2026-06-24T18:00:30+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000076",
+      "kind": "protocol",
+      "essentials": [
+        "calcium",
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "angina",
+        "cardiovascular_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "For angina, calcium 2,000 mg/day, magnesium 800 mg/day, and essential fatty acids help prevent disease progression; lifestyle change and supplementation can reverse cardiovascular disease.",
+      "verbatim": "Calcium (2000 mg/day) and magnesium (800 mg/day) and essential fatty\nacids can help prevent progress of current disease",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 630460
+      },
+      "dose": null,
+      "tags": [
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:11:12+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000077",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anosmia"
+      ],
+      "symptoms": [
+        "loss_of_smell"
+      ],
+      "claim_text": "Chronic loss of the sense of smell (anosmia) is most frequently the result of a zinc deficiency.",
+      "verbatim": "Chronic loss of the sense of\nsmell is most frequently the result of a zinc deficiency.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 632168
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:11:12+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000078",
+      "kind": "protocol",
+      "essentials": [
+        "chromium",
+        "vanadium",
+        "vitamin-b6",
+        "vitamin-b3",
+        "calcium",
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anxiety"
+      ],
+      "symptoms": [],
+      "claim_text": "Anxiety/panic treatment: avoid caffeine and sugar; chromium + vanadium 200-300 mcg/day, B6 100 mg t.i.d., B3 450 mg t.i.d., L-tryptophan, calcium 2,000 mg/day, magnesium 800 mg/day.",
+      "verbatim": "Take chromium and vanadium\n200-300 meg/day, B6 100 mg t.i.d., B3 450 mg t.i.d. as time-release tablets,\nBl, B2, and B5 at the rate of 50 mg t.i.d., L-tryptophan 10 grams t.i.d.,\ncalcium 2000 mg/day, and magnesium at 800 mg/day.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 633064
+      },
+      "dose": null,
+      "tags": [
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:11:12+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000079",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "zinc",
+        "lithium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anorexia"
+      ],
+      "symptoms": [],
+      "claim_text": "Deficiencies of zinc and lithium are associated with anorexia.",
+      "verbatim": "Deficiencies of zinc and lithium are associated with anorexia.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 631349
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:11:12+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000080",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b9",
+        "vitamin-b12",
+        "iron",
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "canker_sores",
+        "aphthous_stomatitis"
+      ],
+      "symptoms": [],
+      "claim_text": "Canker sores (aphthous stomatitis): folic acid 5 mg t.i.d., B12 1,000 mcg/day, iron 15 mg/day, and zinc 50 mg t.i.d. as adjuncts to allergen-avoidance diets.",
+      "verbatim": "Folic acid at 5 mg ti.d., B12 at 1000 meg/day, iron at 15 mg/day and zinc at\n50 mg t.i.d. are effective adjuncts to avoidance diets.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 633674
+      },
+      "dose": null,
+      "tags": [
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:11:12+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000081",
+      "kind": "protocol",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "arsenic_toxicity"
+      ],
+      "symptoms": [],
+      "claim_text": "For arsenic toxicity, IV chelation and oral colloidal/chelated selenium effectively remove the body's arsenic load.",
+      "verbatim": "IV chelation is very effective in removing\nthe body load of arsenic, as is the oral use of colloidal or chelated selenium.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 634358
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:11:12+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000082",
+      "kind": "mechanism",
+      "essentials": [
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "arteriosclerosis"
+      ],
+      "symptoms": [],
+      "claim_text": "Magnesium deficiency produces malignant calcification of the elastic arteries and may be the cause of arteriosclerosis.",
+      "verbatim": "Magnesium deficiencies produce “malignant calcification” of\nelastic arteries and are perhaps “the cause” of arteriosclerosis.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 634784
+      },
+      "dose": null,
+      "tags": [
+        "iconic"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:11:12+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000083",
+      "kind": "contraindication",
+      "essentials": [
+        "vitamin-d"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "arteriosclerosis"
+      ],
+      "symptoms": [],
+      "claim_text": "Vitamin D toxicity (angiotoxicity) targets the elastic arteries, causing fibrosis of the vascular smooth muscle and calcification of the vessel wall.",
+      "verbatim": "The target tissue of vitamin D toxicity is the\nelastic arteries and the specific result is fibrosis of the vascular smooth\nmuscle and calcification of the blood vessel wall",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 635172
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:11:12+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000084",
+      "kind": "mechanism",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "benign_prostatic_hyperplasia"
+      ],
+      "symptoms": [],
+      "claim_text": "Age-related prostate enlargement (BPH) is usually the result of a zinc deficiency.",
+      "verbatim": "As the prostate\nenlarges with age (usually the result of a zinc deficiency)",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 648143
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:12:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000085",
+      "kind": "protocol",
+      "essentials": [
+        "zinc",
+        "vitamin-a",
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "benign_prostatic_hyperplasia"
+      ],
+      "symptoms": [],
+      "claim_text": "BPH treatment: zinc 50 mg t.i.d., flaxseed-oil EFAs 9 g/day, high-fiber diet with pumpkin seeds, 300,000 IU vitamin A as beta-carotene/day, and selenium 250 mcg t.i.d.",
+      "verbatim": "Benign prostatic hypertrophy is treated with zinc at 50 mg t.i.d., essential\nfatty acids as flaxseed oil at 9 grams per day, high fiber diets including\npumpkin seeds and alfalfa, 300,000 IU vitamin A as beta carotene per day",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 649108
+      },
+      "dose": null,
+      "tags": [
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:12:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000086",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b12",
+        "calcium",
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "bells_palsy"
+      ],
+      "symptoms": [],
+      "claim_text": "Bell's palsy treatment: B12 1,000 mcg/day to a total of 20,000 mcg, calcium/magnesium 2,000 and 800 mg/day, and essential fatty acids 5 g t.i.d.",
+      "verbatim": "Treatment is B12 at 1000 meg/day for a total of 20,000 meg, calcium/\nmagnesium at 2,000 mg and 800 mg per day, essential fatty acids at 5 gm\nt.i.d.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 650188
+      },
+      "dose": null,
+      "tags": [
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:12:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000087",
+      "kind": "mechanism",
+      "essentials": [
+        "calcium",
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "kidney_stones",
+        "bladder_stones"
+      ],
+      "symptoms": [],
+      "claim_text": "Kidney/bladder stones are ironically caused by a calcium- and/or magnesium-deficient diet — the stone minerals come from your own bones.",
+      "verbatim": "BLADDER STONES (kidney stones, cystic calculi) are ironically caused\nby a calcium and/or a magnesium deficient diet",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 653798
+      },
+      "dose": null,
+      "tags": [
+        "iconic"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:12:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000088",
+      "kind": "protocol",
+      "essentials": [
+        "calcium",
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "kidney_stones"
+      ],
+      "symptoms": [],
+      "claim_text": "For kidney stones, calcium and magnesium at 2,000 and 1,000 mg is imperative to stop calcium loss from the bones (plus reducing meat to fix the Ca:P ratio).",
+      "verbatim": "Calcium and\nmagnesium at 2,000 mg and 1,000 mg is imperative to stop calcium loss\nfrom the bones.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 654739
+      },
+      "dose": null,
+      "tags": [
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:12:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000089",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-e",
+        "vitamin-k"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [
+        "easy_bruising"
+      ],
+      "claim_text": "Bleeding under the skin may indicate vitamin E or vitamin K deficiency (or excessive blood thinners).",
+      "verbatim": "Bleeding under the skin may indicate vitamin E or vitamin K\ndeficiencies",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 655316
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:12:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000090",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "menopause"
+      ],
+      "symptoms": [],
+      "claim_text": "In a normal gradual menopause, the adrenals and liver increase female-hormone (estrogen) output to make up for lost ovarian function; insufficient output produces hot flashes and night sweats.",
+      "verbatim": "the adrenals and liver increase their\noutput of female hormones (primarily estrogen) and make up the difference\nfrom the lost ovarian function.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 701362
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:13:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000091",
+      "kind": "contraindication",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "menopause",
+        "breast_cancer",
+        "uterine_cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Estrogen supplements should not be used in menopause — they increase the breast and uterine cancer induction risk.",
+      "verbatim": "Estrogen supplements should not be used as\nthey increase the breast and uterine cancer induction risk.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 702044
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:13:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000092",
+      "kind": "protocol",
+      "essentials": [
+        "calcium",
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "menopause"
+      ],
+      "symptoms": [],
+      "claim_text": "Menopause support includes the baseline supplement program plus calcium and magnesium at 2,000 and 1,000 mg/day.",
+      "verbatim": "Use the base line supplement program, plus calcium and magnesium\nat 2,000 mg and 1,000 mg per day",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 702240
+      },
+      "dose": null,
+      "tags": [
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:13:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000093",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "common_cold"
+      ],
+      "symptoms": [],
+      "claim_text": "Colds are caused by more than 100 different viruses — which is why no vaccine has been made available.",
+      "verbatim": "COLDS (nasal catarrh, coryza) are caused by more than 100 different\nviruses, this is why no vaccine has been made available.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 703472
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:13:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000094",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "common_cold"
+      ],
+      "symptoms": [],
+      "claim_text": "Common-cold treatment: vitamin C to bowel tolerance, bioflavonoids 150 mg t.i.d., garlic, the baseline supplement program, and chicken-rice soup.",
+      "verbatim": "Treatment of the “common cold” should include vitamin C to bowel\ntolerance, bioflavonoids at 150 mg t.i.d., garlic, gelatin capsules t.i.d.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 703989
+      },
+      "dose": null,
+      "tags": [
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:13:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
