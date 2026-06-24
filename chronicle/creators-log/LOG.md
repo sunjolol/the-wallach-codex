@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_40 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_41 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-24 19:46 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 3: Rare Earths Ch.2 (60-metals + lithium) + Ch.3 'Our Earth Is Anemic' opening, 5 claims (kv 21→22, RARE 27→32, 126 total). Used the PDF text layer + programmatic de-hyphenation to stay off image renders after the prior content-policy block. Luneth-approved.
+  ↳ 5 claims WAL-CLM-RARE-000028..32: the foundational 60-of-75-metals-have-physiological-value + no-bodily-function-without-a-mineral-cofactor; Wallach's lithium-to-public-water + eliminate-fluoride recommendation; the Earth-is-anemic soil-depletion thesis; remineralizing farmland is technically possible but economically impossible; soil minerals are uneven (chocolate-swirl veins) so food alone is a mineral crap-shoot. Skipped the Ch.2 history-of-mineral-medicine survey (arsenic/mercury/lead/alchemy/Epsom) + salt-trade history as anecdote per claim-first. Reflow done programmatically (de-hyphenate + join lines) to preserve exact original characters incl. curly quotes; verified .txt against the PDF text layer (two independent OCRs). Left page-boundary header garble (CREED, physi-/cians split) for a later sweep. NEXT (Luneth ruling): close the fluoride re-adjudication — Wallach's books are now the sole authority (claim 29 = his anti-fluoride stance), scrub old pre-corpus fluoride remnants.
 
 ## 2026-06-24 19:30 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 2: Rare Earths Ch.2 opening (Minerals: The Currency of Life) reflowed + 3 claims (kv 20→21, RARE 24→27, 121 total). Hit a content-policy block on a full-page image render (salt-slave-trade history) — worked around via the PDF text layer. Luneth-approved.

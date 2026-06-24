@@ -307,7 +307,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 402452
+        "char_offset": 402424
       },
       "dose": null,
       "tags": [
@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817824
+        "char_offset": 817796
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 818026
+        "char_offset": 817998
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817588
+        "char_offset": 817560
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 772515
+        "char_offset": 772487
       },
       "dose": {
         "amount": "250-400",
@@ -488,7 +488,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 392830
+        "char_offset": 392802
       },
       "dose": null,
       "tags": [
@@ -520,7 +520,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 393607
+        "char_offset": 393579
       },
       "dose": null,
       "tags": [
@@ -551,7 +551,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 473976
+        "char_offset": 473948
       },
       "dose": null,
       "tags": [
@@ -581,7 +581,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 474600
+        "char_offset": 474572
       },
       "dose": null,
       "tags": [
@@ -880,6 +880,164 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-24T23:26:16+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000028",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Of the 75 metals on the periodic chart — all detected in human blood and body fluids — at least 60 have physiological value for humans, and not a single function in the body can take place without at least one mineral or metal cofactor.",
+      "verbatim": "There are 75 metals listed in the periodic chart, all of which have been detected in human blood and other body fluids - we know that at least 60 of these metals (minerals) have physiological value for man. Organically not a single function in the human body can take place without at least one mineral or metal cofactor.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 2",
+        "page": "25",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 100836
+      },
+      "dose": null,
+      "tags": [
+        "thesis",
+        "60-minerals",
+        "cofactor"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T23:41:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000029",
+      "kind": "definition",
+      "essentials": [
+        "lithium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach recommends adding lithium to the public water supply and eliminating fluoride; conventional medicine confines lithium to psychiatric use (manic depression).",
+      "verbatim": "The current medical use of lithium is limited to psychiatric patients, especially manic depression. We would like to see lithium added to the public water supply and eliminate fluoride!!!",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 2",
+        "page": "25",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 100003
+      },
+      "dose": null,
+      "tags": [
+        "lithium",
+        "fluoride",
+        "recommendation",
+        "fluoride-adjudication"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T23:41:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000030",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The Earth's soils are \"anemic\" — mining, deforestation, farming, irrigation, and acid rain have shifted, eroded, and leached the life-sustaining minerals from once mineral-rich land.",
+      "verbatim": "Our Earth is anemic!!!! A potentially apocalyptic mixture of mining, deforestation, farming, irrigation and acid rain has shifted, eroded or leached our life giving and life-sustaining raw materials from our formerly mineral rich land.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 3",
+        "page": "37",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 140805
+      },
+      "dose": null,
+      "tags": [
+        "thesis",
+        "soil-depletion",
+        "earth-anemic"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T23:41:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000031",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Remineralizing the Earth's depleted farmland is technically possible but, as a realistic project, an economic impossibility.",
+      "verbatim": "To remineralize the Earth is technically possible but as a realistic project would be an economic impossibility.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 3",
+        "page": "37",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 141564
+      },
+      "dose": null,
+      "tags": [
+        "soil-depletion",
+        "remineralization",
+        "economics"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T23:41:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000032",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Minerals are unevenly distributed in soil — croplands hold no uniform blanket of minerals but veins (like chocolate swirls in ripple ice cream), so relying on food alone for minerals is a risky gamble.",
+      "verbatim": "It is obvious that minerals are not equally distributed in soils. The scary part is that fields where our food crops are grown do not contain a uniform blanket of minerals, if they contain any nutritional minerals at all, they occur in veins much like the chocolate swirls found in chocolate ripple ice cream - at best depending solely on getting minerals from food grown in soil is a very risky crap shoot!!",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 3",
+        "page": "38",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 145402
+      },
+      "dose": null,
+      "tags": [
+        "soil-depletion",
+        "mineral-distribution",
+        "food-unreliable"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T23:41:48+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

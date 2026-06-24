@@ -971,10 +971,13 @@
     "display_name": "Lithium",
     "canon_slug": "lithium",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000079"
+      ],
+      "definition": [
+        "WAL-CLM-RARE-000029"
       ]
     },
     "deficiency_signs": [],
@@ -985,7 +988,8 @@
       "zinc"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "lutetium": {
