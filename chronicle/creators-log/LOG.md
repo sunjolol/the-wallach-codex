@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_28 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_29 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-24 14:01 UTC-04:00 · round-close · eden/corpus
+Phase β.8+β.9: DDDL aminos/fatty-acids + more diseases — 62→75 claims (knowledge_version=12). ALL FOUR essential categories now covered; 12 of 13 kinds. Taurine adjudication evidence captured. Board 29/29.
+  ↳ β.8 closed fatty acids (EFA def/prostaglandins/infant deficiency) + aminos (Wallach adds arginine/taurine/tyrosine→cancer/macular/goiter — taurine in other_substances + tagged for the Cysteine-Taurine canon audit; tryptophan/phenylalanine/methionine functions; cholesterol→vit-D/hormones). β.9: infertility, muscular dystrophy+Keshan (selenium), muscle cramps (Ca/Mg), insomnia. 75 claims span minerals+vitamins+aminos+fatty-acids + condition protocols. NEXT: remaining DDDL diseases, then Phase γ (Rare Earths next).
 
 ## 2026-06-24 13:55 UTC-04:00 · round-close · eden/corpus
 Phase β.7: more DDDL disease entries — 55→62 claims (knowledge_version=10). Cancer (prevention + iconic survival quote), osteoporosis (HCl+Ca, estrogen/fluoride critique, estrogen contraindication), otitis (95% milk allergy). Board 29/29.

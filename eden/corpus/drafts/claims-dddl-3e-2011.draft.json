@@ -2020,6 +2020,437 @@
       "extracted_at": "2026-06-24T17:54:58+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000063",
+      "kind": "definition",
+      "essentials": [
+        "omega-3",
+        "omega-6"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The essential fatty acids are linoleic, linolenic, and arachidonic acids; about 3% of total daily calorie intake should come from EFAs (linoleic and linolenic are strictly essential).",
+      "verbatim": "Three polyunsaturated fatty acids (linoleic, linolenic, and arachidonic acids)\nare known as essential fatty acids (EFA). Three percent of the total daily\ncalorie intake is required from EFA.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 495294
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:59:15+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000064",
+      "kind": "mechanism",
+      "essentials": [
+        "omega-3",
+        "omega-6"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "EFAs are the raw material the body uses to manufacture prostaglandins, which regulate blood pressure, heart rate, vascular and bronchial dilation, blood clotting, and CNS function.",
+      "verbatim": "EFA’s are also the raw material for the human body to\nmanufacture prostaglandins that help regulate blood pressure, heart rate,\nvascular dilation, blood clotting, bronchial dilation, and central nervous\nsystem (brain and spinal cord) function.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 495981
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:59:15+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000065",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "omega-3",
+        "omega-6"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "eczema"
+      ],
+      "symptoms": [],
+      "claim_text": "Essential fatty acid deficiency in infants causes poor growth, eczema, and lowered resistance to infectious disease.",
+      "verbatim": "EFA deficiency in human infants\nresults in a poor growth rate, eczema, and lowered resistance to infectious\ndiseases.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 496225
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:59:15+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000066",
+      "kind": "quote",
+      "essentials": [
+        "arginine",
+        "tyrosine"
+      ],
+      "other_substances": [
+        "taurine"
+      ],
+      "conditions": [
+        "cancer",
+        "macular_degeneration",
+        "goiter"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach adds arginine, taurine, and tyrosine to the classic essential amino acids — over the long haul preventing cancer, macular degeneration, and goiter respectively.",
+      "verbatim": "To the classic list of essential amino\nacids, I would add arginine, taurine, and tyrosine. Over the long haul, these\nthree amino acids help prevent certain specific diseases. Respectively, those\ndiseases are cancer, macular degeneration, and goiter.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 498364
+      },
+      "dose": null,
+      "tags": [
+        "cysteine-taurine-adjudication"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:59:15+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000067",
+      "kind": "mechanism",
+      "essentials": [
+        "tryptophan",
+        "phenylalanine",
+        "methionine"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Tryptophan is a precursor of niacin and serotonin; phenylalanine of thyroxin and epinephrine; methionine forms choline and creatine phosphate.",
+      "verbatim": "Tryptophane precursor of niacin and serotonin\nPhenylalanine precursor of thyroxin and epinephrine\nMethionine formation of choline and creatine phosphate",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 498811
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:59:15+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000068",
+      "kind": "mechanism",
+      "essentials": [
+        "vitamin-d"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "menopause"
+      ],
+      "symptoms": [],
+      "claim_text": "Cholesterol is structural to cell walls and myelin and is the raw material for vitamin D, bile acids, and the steroid hormones (estrogen, progesterone, testosterone).",
+      "verbatim": "Cholesterol is an essential part\nof the structure of cell walls, brain and spinal cord (myelin), the raw\nmaterial for the production of vitamin D in the human body, bile acids,\nadrenal cortical hormones, estrogen (a cholesterol deficiency makes\nmenopause a living hell), progesterone, and testosterone",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 496542
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:59:15+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000069",
+      "kind": "prognosis",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "infertility"
+      ],
+      "symptoms": [],
+      "claim_text": "Infertility is usually caused by a nutritional deficiency; Wallach reports curing several hundred cases with supplementation of vitamins, minerals, trace minerals, and digestive aids.",
+      "verbatim": "INFERTILITY (curable inability to have children) is usually caused by a\nnutritional deficiency of some nutrient. We have “cured” several hundred\ncases of infertility by simple supplementation of vitamins, minerals, trace\nminerals, and digestive aids.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 824840
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:00:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000070",
+      "kind": "protocol",
+      "essentials": [
+        "arginine",
+        "zinc",
+        "selenium",
+        "vitamin-a",
+        "germanium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "infertility"
+      ],
+      "symptoms": [],
+      "claim_text": "Infertility protocol: EFA 5 g t.i.d., L-arginine 500 mg t.i.d., zinc, selenium 250 mcg/day, vitamin A 100,000 IU/day for 30 days then 25,000 IU/day, and germanium 50 mg/day.",
+      "verbatim": "EFA at 5 gm t.i.d., 1-arginine at 500 mg t.i.d., zinc at 15 gm t.i.d., selenium\nat 250 meg/day, vitamin A at 100,000 IU/day for 30 days then drop to\n25,000 IU/day, germanium at 50 mg/day",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 825428
+      },
+      "dose": null,
+      "tags": [
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:00:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000071",
+      "kind": "mechanism",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "muscular_dystrophy",
+        "keshan_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Selenium prevents muscular dystrophy in all its forms (and Keshan disease, heart muscular dystrophy); preconception selenium levels matter for both pregnancy maintenance and MD prevention.",
+      "verbatim": "The selenium levels in\npreconception women is important to the maintenance of pregnancy as well\nas the prevention of muscular dystrophy in all of its forms",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 879633
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:00:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000072",
+      "kind": "prognosis",
+      "essentials": [
+        "selenium",
+        "vitamin-e"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "muscular_dystrophy"
+      ],
+      "symptoms": [],
+      "claim_text": "Given selenium and vitamin E (IM or IV) at the very first onset of symptoms, muscular dystrophy can be arrested or even cured.",
+      "verbatim": "If selenium and vitamin E were to\nbe given IM or IV at the very first onset of symptoms, the disease will be\narrested or maybe even “cured.”",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 880868
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:00:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000073",
+      "kind": "protocol",
+      "essentials": [
+        "selenium",
+        "vitamin-e"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "muscular_dystrophy",
+        "keshan_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "MD / Keshan disease treatment uses selenium (oral colloidal, IV or IM) at 50-1,000 mcg/day by weight plus vitamin E IM at 80 mg/day.",
+      "verbatim": "Treatment of MD and/or Keshan disease includes the use of selenium orally\n(plant derived colloidal minerals), IV or IM at 50-1,000 meg per day (based\non weight), vitamin E IM at 80 mg per day",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 881224
+      },
+      "dose": {
+        "amount": "50-1000",
+        "unit": "mcg",
+        "period": "daily",
+        "form": "selenium",
+        "duration": null,
+        "for_condition": "muscular dystrophy"
+      },
+      "tags": [
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:00:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000074",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "calcium",
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "muscle_cramps"
+      ],
+      "symptoms": [],
+      "claim_text": "Muscle cramps (charley horse) are a mini-convulsion in the muscle resulting from deficiencies of calcium and magnesium.",
+      "verbatim": "MUSCLE CRAMPS (Charley horse) are a “mini” convulsion that is taking\nplace in the muscle as a result of deficiencies of calcium, magnesium",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 882033
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:00:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000075",
+      "kind": "protocol",
+      "essentials": [
+        "calcium",
+        "chromium",
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "insomnia"
+      ],
+      "symptoms": [],
+      "claim_text": "Insomnia treatment includes avoiding caffeine and food allergens, calcium (esp. plant-derived colloidal), and chromium + vanadium at 25-200 mcg t.i.d.",
+      "verbatim": "Treatment for insomnia includes avoidance of caffeine and offending food allergens, calcium\n(especially plant derived colloidal calcium), chromium and vanadium at 25-200 meg t.i.d.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 827836
+      },
+      "dose": null,
+      "tags": [
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T18:00:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
