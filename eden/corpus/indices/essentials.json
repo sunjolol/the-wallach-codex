@@ -47,17 +47,23 @@
     "display_name": "Sodium",
     "canon_slug": "sodium",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 3,
     "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-RARE-000026"
+      ],
       "mechanism": [
-        "WAL-CLM-RARE-000003"
+        "WAL-CLM-RARE-000003",
+        "WAL-CLM-RARE-000027"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [
       "heat_stroke"
     ],
-    "interacts_with": [],
+    "interacts_with": [
+      "chloride"
+    ],
     "books_cited": [
       "rare-earths"
     ]
@@ -151,12 +157,20 @@
     "display_name": "Chloride",
     "canon_slug": "chloride",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-RARE-000026"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
-    "interacts_with": [],
-    "books_cited": []
+    "interacts_with": [
+      "sodium"
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "potassium": {
     "display_name": "Potassium",

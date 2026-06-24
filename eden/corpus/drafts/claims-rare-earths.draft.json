@@ -11,7 +11,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Minerals are the currency of life — the body's basic functions depend on them, and Wallach argues the medical profession ignores this truth to the point past the absurd.",
-      "verbatim": "Simply said, minerals are the currency\nof life. The medical profession ignores this\ntruth to the point past the absurd",
+      "verbatim": "Simply said, minerals are the currency of life. The medical profession ignores this truth to the point past the absurd",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -19,7 +19,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 81424
+        "char_offset": 81416
       },
       "dose": null,
       "tags": [
@@ -41,7 +41,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "The basic functions of life cannot be performed without minerals — either as a structural part of the function or as a catalytic cofactor (for RNA, DNA, sub-cellular and digestive enzymes, and the utilization of vitamins).",
-      "verbatim": "The basic functions of life itself cannot\nbe performed without minerals, either as a\nmajor part of the function or as a catalytic\ncofactor",
+      "verbatim": "The basic functions of life itself cannot be performed without minerals, either as a major part of the function or as a catalytic cofactor",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -49,7 +49,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 80912
+        "char_offset": 80910
       },
       "dose": null,
       "tags": [
@@ -75,7 +75,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach frames heat-stroke deaths (he points to the deadly July 1993 US east-coast heat wave) as a simple salt/sodium deficiency — easily remedied with water and salt, and worsened by doctor-ordered low-salt diets.",
-      "verbatim": "a simple salt or sodium deficiency\n(your basic heat stroke that any boy scout\ncould diagnose and recognize and remedy\nwith water and salt)",
+      "verbatim": "a simple salt or sodium deficiency (your basic heat stroke that any boy scout could diagnose and recognize and remedy with water and salt",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -83,7 +83,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 82656
+        "char_offset": 82632
       },
       "dose": null,
       "tags": [
@@ -307,7 +307,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 402482
+        "char_offset": 402452
       },
       "dose": null,
       "tags": [
@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817854
+        "char_offset": 817824
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 818056
+        "char_offset": 818026
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817618
+        "char_offset": 817588
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 772545
+        "char_offset": 772515
       },
       "dose": {
         "amount": "250-400",
@@ -488,7 +488,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 392860
+        "char_offset": 392830
       },
       "dose": null,
       "tags": [
@@ -520,7 +520,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 393637
+        "char_offset": 393607
       },
       "dose": null,
       "tags": [
@@ -551,7 +551,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 474006
+        "char_offset": 473976
       },
       "dose": null,
       "tags": [
@@ -581,7 +581,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 474630
+        "char_offset": 474600
       },
       "dose": null,
       "tags": [
@@ -779,6 +779,107 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-24T23:01:47+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000025",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Mineral supplementation is a necessity of life — since before recorded history humans craved and consumed minerals (major minerals, trace minerals, and rare earths) as clays, salts, animal tissue, and colloidal-mineral-rich plants.",
+      "verbatim": "Minerals and mineral supplements to our meals are in fact a necessity of life. Since before recorded history man craved and consciously consumed minerals including the major minerals, trace minerals and Rare Earths in the form of clays, salts, animal tissue (bones and meat) or colloidal mineral rich plants.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 2",
+        "page": "19",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 80600
+      },
+      "dose": null,
+      "tags": [
+        "thesis",
+        "minerals-necessity",
+        "historical"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T23:26:16+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000026",
+      "kind": "definition",
+      "essentials": [
+        "sodium",
+        "chloride"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach rejects the medical advice to eat little or no salt — sodium is a craved necessity, evidenced by the salt block every rancher provides livestock and the snack-food industry that profits from the craving.",
+      "verbatim": "Physicians would have you believe that you need little or no salt (they must think we’re dumber than cows for the first food item a good husbandryman puts out for his livestock is a salt block!!); however, the multibillion dollar a year snack food industry is well aware of your need and craving for salt and other minerals.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 2",
+        "page": "19",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 81589
+      },
+      "dose": null,
+      "tags": [
+        "salt",
+        "sodium",
+        "anti-low-salt"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T23:26:16+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000027",
+      "kind": "mechanism",
+      "essentials": [
+        "sodium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "heat_stroke"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach attributes the July 1993 East Coast heat-wave deaths to salt/sodium deficiency caused by physician-prescribed low- or no-salt diets for high blood pressure and heart disease; those successfully treated received IV saline.",
+      "verbatim": "The human tragedy of the heat wave of ’93 was a direct result of the allopathic doctors who put their charges (their patients) on reduced or salt free diets for high blood pressure or heart disease.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 2",
+        "page": "20",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 82839
+      },
+      "dose": null,
+      "tags": [
+        "salt",
+        "sodium",
+        "iatrogenic",
+        "heat-stroke"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T23:26:16+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

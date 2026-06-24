@@ -738,10 +738,11 @@
   },
   "heat_stroke": {
     "display_name": "Heat Stroke",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-RARE-000003"
+        "WAL-CLM-RARE-000003",
+        "WAL-CLM-RARE-000027"
       ]
     },
     "essentials_involved": [

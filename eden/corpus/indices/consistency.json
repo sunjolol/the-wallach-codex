@@ -48,10 +48,14 @@
       {
         "claim_id": "WAL-CLM-RARE-000024",
         "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000025",
+        "book": "rare-earths"
       }
     ],
     "books_repeating": 1,
-    "claim_count": 11
+    "claim_count": 12
   },
   {
     "id": "CG-0002",
@@ -121,6 +125,28 @@
   },
   {
     "id": "CG-0005",
+    "essentials": [
+      "sodium"
+    ],
+    "conditions": [
+      "heat_stroke"
+    ],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-RARE-000003",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000027",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0006",
     "essentials": [
       "zinc"
     ],
