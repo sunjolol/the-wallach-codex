@@ -25,7 +25,7 @@ import {
   type RegimenVaultEntry,
   RegimenVaultEntrySchema,
 } from '../core/schemas/index.js';
-import { getOrCompute } from '../state/coverage.js';
+import { essentialCount, getOrCompute } from '../state/coverage.js';
 import {
   loadEffectiveRegimen,
   loadRgManual,
@@ -58,11 +58,11 @@ interface SlotMeta {
 }
 
 const SLOT_PLACEHOLDERS: SlotMeta[] = [
-  { id: 'slot-01', num: '01', serial: '01·A23F', name: 'Travel Pack', items: 6, coverage: 31, total: 92, stamp: 'SAVED · 2D AGO' },
-  { id: 'slot-02', num: '02', serial: '02·F71D', name: 'Daily Protocol', items: 9, coverage: 47, total: 92, stamp: 'EDIT 0:14 AGO', active: true },
-  { id: 'slot-03', num: '03', serial: '03·C8B2', name: 'Sleep Stack', items: 4, coverage: 18, total: 92, stamp: 'SAVED · 1W AGO' },
-  { id: 'slot-04', num: '04', serial: '04·E901', name: 'Recovery Ramp', items: 11, coverage: 54, total: 92, stamp: 'SAVED · 3W AGO' },
-  { id: 'slot-05', num: '05', serial: '', name: '', items: 0, coverage: 0, total: 92, stamp: '', empty: true },
+  { id: 'slot-01', num: '01', serial: '01·A23F', name: 'Travel Pack', items: 6, coverage: 31, total: essentialCount(), stamp: 'SAVED · 2D AGO' },
+  { id: 'slot-02', num: '02', serial: '02·F71D', name: 'Daily Protocol', items: 9, coverage: 47, total: essentialCount(), stamp: 'EDIT 0:14 AGO', active: true },
+  { id: 'slot-03', num: '03', serial: '03·C8B2', name: 'Sleep Stack', items: 4, coverage: 18, total: essentialCount(), stamp: 'SAVED · 1W AGO' },
+  { id: 'slot-04', num: '04', serial: '04·E901', name: 'Recovery Ramp', items: 11, coverage: 54, total: essentialCount(), stamp: 'SAVED · 3W AGO' },
+  { id: 'slot-05', num: '05', serial: '', name: '', items: 0, coverage: 0, total: essentialCount(), stamp: '', empty: true },
 ];
 
 interface RecItem {
@@ -236,7 +236,7 @@ function renderActiveSlot(items: RegimenItem[], coverageCount: number, overrides
           </div>
           <div class="active-slot__stat">
             <span class="active-slot__stat-num">${coverageCount}</span>
-            <span class="active-slot__stat-den">/ 92</span>
+            <span class="active-slot__stat-den">/ ${essentialCount()}</span>
             <span class="active-slot__stat-label">essentials<br>covered</span>
           </div>
         </div>

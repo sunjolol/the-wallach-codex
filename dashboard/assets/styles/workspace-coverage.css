@@ -471,66 +471,61 @@ body { margin: 0; background: var(--ds-paper-deep); }
 }
 
 /* Per-section grid densities */
-.essentials-grid--minerals { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; }
-.essentials-grid--vitamins { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; }
-.essentials-grid--aminos   { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+.essentials-grid--minerals { display: grid; grid-template-columns: repeat(auto-fill, minmax(82px, 1fr)); gap: 5px; }
+.essentials-grid--vitamins { display: grid; grid-template-columns: repeat(auto-fill, minmax(82px, 1fr)); gap: 5px; }
+.essentials-grid--aminos   { display: grid; grid-template-columns: repeat(auto-fill, minmax(82px, 1fr)); gap: 5px; }
 .essentials-grid--fats     { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ds-space-3); }
 
 
-/* VITAMIN TILE — letter-name based, slightly taller than mineral tiles.
-   Playfair STAYS on the .tile__letter glyph (still alchemy intent — vitamins
-   share the "discovered substance" lineage with minerals). */
+/* VITAMIN TILE — mineral format: code top-left, Playfair letter centered, name
+   strip at the bottom. Same sizing/placement as .tile (Playfair stays on the
+   letter glyph — the "discovered substance" lineage shared with minerals). */
 .tile--vitamin {
-  aspect-ratio: 1 / 1.15;
+  aspect-ratio: auto;
+  min-height: 80px;
   background: var(--ds-paper-deep);
   border: 1px solid var(--ds-rule-soft);
   border-radius: 2px;
   display: flex;
   flex-direction: column;
-  align-items: center;          /* center horizontally */
+  justify-content: space-between;   /* code top · letter mid · name bottom — mineral format */
   cursor: pointer;
   position: relative;
-  overflow: hidden;             /* prevents strip from over-shooting */
+  overflow: hidden;
+  padding: 5px 5px 0;
   transition: all var(--ds-motion-fast) var(--ds-ease-out);
-}
-.tile--vitamin {
-  padding: 6px 6px 0;
 }
 .tile--vitamin .tile__code {
   font-family: var(--ds-font-mono);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 600;
   color: var(--ds-ink-soft);
   letter-spacing: 0.03em;
-  position: absolute;
-  top: 4px; left: 5px;
 }
 .tile--vitamin .tile__letter {
   font-family: var(--ds-font-display);
-  font-size: 26px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--ds-ink);
   line-height: 1;
-  margin: auto 0;               /* fills vertical space — pushes name to bottom */
-  padding-top: 8px;             /* small visual breathing room below the code */
+  text-align: center;
+  margin-top: 1px;
 }
 .tile--vitamin .tile__name {
   font-family: var(--ds-font-sans);
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 700;
   color: var(--ds-ink);
   letter-spacing: 0.025em;
   text-transform: uppercase;
   text-align: center;
   line-height: 1.15;
+  overflow-wrap: anywhere;
   background: var(--ds-paper-darker);
   border-top: 1px solid var(--ds-rule-soft);
-  /* Bleed past the tile's 1px border on each side so the strip is flush
-     with the tile's outer edge. overflow:hidden on the tile clips cleanly. */
-  width: calc(100% + 4px);
-  margin: 0 -2px;
-  padding: 4px 4px;
-  border-radius: 0;
+  margin: auto -5px 0;                /* strip bleeds to tile edges — kills L/R gap */
+  padding: 4px 2px 4px;
+  border-radius: 0 0 1px 1px;
 }
 .tile--vitamin.covered .tile__name {
   background: var(--ds-accent-soft);
@@ -544,55 +539,53 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .tile--vitamin.covered .tile__letter, .tile--vitamin.covered .tile__code, .tile--vitamin.covered .tile__name { color: var(--ds-accent-deep); }
 
 
-/* AMINO ACID TILE — wider rectangle, 3-letter code centered */
+/* AMINO ACID TILE — mineral format: code top-left, 3-letter abbr centered, name strip bottom */
 .tile--amino {
-  aspect-ratio: 1.6 / 1;
+  aspect-ratio: auto;
+  min-height: 80px;
   background: var(--ds-paper-deep);
   border: 1px solid var(--ds-rule-soft);
   border-radius: 2px;
-  padding: 6px 8px 0;           /* restored — code sits naturally top-left */
+  padding: 5px 5px 0;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;   /* code top · abbr mid · name bottom — mineral format */
   cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: all var(--ds-motion-fast) var(--ds-ease-out);
 }
-.tile--amino { padding: 6px 8px 0; }
 .tile--amino .tile__code {
   font-family: var(--ds-font-mono);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 600;
   color: var(--ds-ink-soft);
   letter-spacing: 0.03em;
-  /* No padding — tile wrapper handles spacing, code sits naturally top-left */
 }
 .tile--amino .tile__abbr {
   font-family: var(--ds-font-display);
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--ds-ink);
   line-height: 1;
   text-align: center;
-  margin: auto 0;              /* fills vertical space — pushes name to bottom */
+  margin-top: 1px;
 }
 .tile--amino .tile__name {
   font-family: var(--ds-font-sans);
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 700;
   color: var(--ds-ink);
   letter-spacing: 0.025em;
   text-transform: uppercase;
   text-align: center;
   line-height: 1.15;
+  overflow-wrap: anywhere;
   background: var(--ds-paper-darker);
   border-top: 1px solid var(--ds-rule-soft);
-  /* Bleed past tile padding (8px L/R) + 1px border on each side = -9px each.
-     overflow:hidden on the tile clips cleanly. */
-  width: calc(100% + 20px);
-  margin: 0 -10px;
-  padding: 4px 6px;
-  border-radius: 0;
+  margin: auto -5px 0;                /* strip bleeds to tile edges — kills L/R gap */
+  padding: 4px 2px 4px;
+  border-radius: 0 0 1px 1px;
 }
 .tile--amino.covered .tile__name {
   background: var(--ds-accent-soft);
@@ -700,9 +693,10 @@ body { margin: 0; background: var(--ds-paper-deep); }
   transition: all var(--ds-motion-fast) var(--ds-ease-out);
 }
 .tile {
-  aspect-ratio: 1 / 1.22;            /* taller to host the bigger label strip */
+  aspect-ratio: auto;                 /* full names — grow to fit, never clip */
+  min-height: 80px;
   padding: 5px 5px 0;                 /* no bottom padding — label fills it */
-  overflow: hidden;                   /* defensive — strip never over-shoots */
+  overflow: hidden;                   /* clips the horizontal bleed strip only */
 }
 .tile__num {
   font-family: var(--ds-font-mono);
@@ -732,9 +726,10 @@ body { margin: 0; background: var(--ds-paper-deep); }
   letter-spacing: 0.025em;
   line-height: 1.15;
   text-transform: uppercase;
+  overflow-wrap: anywhere;            /* long element names wrap, never clip */
   background: var(--ds-paper-darker);
   border-top: 1px solid var(--ds-rule-soft);
-  margin: 4px -5px 0;                 /* extend strip to tile edges */
+  margin: auto -5px 0;                /* strip pinned to the tile bottom */
   padding: 4px 2px 4px;
   border-radius: 0 0 1px 1px;
 }

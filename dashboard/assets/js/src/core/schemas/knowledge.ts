@@ -3,7 +3,7 @@
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * Covers the two embedded JSON blocks the knowledge drawer reads:
- *   `essentials-targets-data` — 92 essentials with Wallach stance + citations
+ *   `essentials-targets-data` — Wallach targets DB (90 essentials + Omega-9) with stance + citations
  *   `regimen-label-lookup`    — product vault, keyed by id (mixed shapes)
  *
  * Both are read via getElementById + JSON.parse at the boundary; schemas

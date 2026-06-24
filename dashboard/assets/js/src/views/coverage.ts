@@ -19,7 +19,7 @@
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import { on } from '../core/events.js';
 import { CoverageLayoutSchema, type LayoutSection, type LayoutTile } from '../core/schemas/index.js';
-import { type CoverageSnapshot, getOrCompute } from '../state/coverage.js';
+import { type CoverageSnapshot, essentialCount, getOrCompute } from '../state/coverage.js';
 import { loadEffectiveRegimen, loadRgUserGoals } from '../state/regimen.js';
 
 export interface MountHandle {
@@ -64,6 +64,9 @@ function renderTile(spec: LayoutTile, tileClass: string, snapshot: CoverageSnaps
   if (spec.num !== undefined) {
     inner += `<span class="tile__num">${spec.num}</span>`;
   }
+  if (spec.code !== undefined) {
+    inner += `<span class="tile__code">${escHTML(spec.code)}</span>`;
+  }
   if (spec.sym !== undefined) {
     inner += `<span class="tile__sym">${escHTML(spec.sym)}</span>`;
   }
@@ -72,9 +75,6 @@ function renderTile(spec: LayoutTile, tileClass: string, snapshot: CoverageSnaps
   }
   if (spec.abbr !== undefined) {
     inner += `<span class="tile__abbr">${escHTML(spec.abbr)}</span>`;
-  }
-  if (spec.code !== undefined) {
-    inner += `<span class="tile__code">${escHTML(spec.code)}</span>`;
   }
   inner += `<span class="tile__name">${escHTML(spec.name)}</span>`;
   if (spec.hint !== undefined) {
@@ -107,8 +107,9 @@ function renderSection(spec: LayoutSection, snapshot: CoverageSnapshot | null): 
     allTiles = spec.tiles;
   }
 
-  const total = allTiles.length;
-  const covered = allTiles.filter((t) => {
+  const counted = allTiles.filter(t => t.essential !== false);
+  const total = counted.length;
+  const covered = counted.filter((t) => {
     const s = tileStatusFor(t.key, snapshot);
     return s === 'covered' || s === 'trace';
   }).length;
@@ -128,14 +129,14 @@ function renderSection(spec: LayoutSection, snapshot: CoverageSnapshot | null): 
 }
 
 function renderHero(snapshot: CoverageSnapshot | null): string {
-  const total = snapshot?.totalCount ?? 92;
+  const total = snapshot?.totalCount ?? essentialCount();
   const covered = snapshot?.coveredCount ?? 0;
   const sections = LAYOUT.sections.map(s => renderSection(s, snapshot)).join('');
   return `
     <section class="coverage-hero ds-border-travel">
       <header class="coverage-hero__head">
         <div>
-          <div class="coverage-hero__kicker">Your essentials · <span class="ds-cipher" data-cipher-set="numfrac">92</span> minerals + vitamins + amino acids + fats</div>
+          <div class="coverage-hero__kicker">Your essentials · <span class="ds-cipher" data-cipher-set="numfrac">${essentialCount()}</span> minerals + vitamins + amino acids + fats</div>
           <h2 class="coverage-hero__title">
             THE WHOLE PICTURE
             <em>// what you'\''re absorbing, what you'\''re missing</em>

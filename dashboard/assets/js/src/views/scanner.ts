@@ -19,6 +19,7 @@
  */
 
 import { on } from '../core/events.js';
+import { essentialCount } from '../state/coverage.js';
 import { scanImage } from '../state/ocr.js';
 import { loadRgManual, type RegimenItem, saveRgManual } from '../state/regimen.js';
 import {
@@ -337,7 +338,7 @@ function renderVerdict(result: ScanResult | null): string {
         </div>
         <div class="verdict__stats">
           <div class="verdict-stat">
-            <div class="verdict-stat__num">+${added}<small>/92</small></div>
+            <div class="verdict-stat__num">+${added}<small>/${essentialCount()}</small></div>
             <div class="verdict-stat__label">essentials added to coverage</div>
           </div>
           <div class="verdict-stat">

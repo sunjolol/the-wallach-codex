@@ -69,7 +69,7 @@ const SEED = { items: [{
       seeded: !!localStorage.getItem('lcRegimen_v1'),
       coveredStat: (document.querySelector('.coverage-stat__num') || {}).textContent,
       covered: cls('covered'), partial: cls('partial'), trace: cls('trace'), gap: cls('gap'),
-      VitaminC: statusOf('ASCORBIC'), Boron: statusOf('BORON'), Aluminum: statusOf('ALUMIN.'),
+      VitaminC: statusOf('ASCORBIC ACID'), Boron: statusOf('BORON'), Aluminum: statusOf('ALUMINUM'),
     };
   });
 

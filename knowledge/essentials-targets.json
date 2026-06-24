@@ -278,19 +278,6 @@
         }
       },
       {
-        "name": "Fluoride",
-        "essential_per_wallach": true,
-        "wallach_baseline_target": "20 mg/day (LPD baseline, osteoporosis-prescription level only)",
-        "notes": "ESSENTIAL per LPD supplement table at clinical dose; rhetorically attacked as municipal water additive (different dose/source/context). See eval 2026-06-11-fluoride.md.",
-        "source": "Let's Play Doctor (Wallach) baseline supplement table",
-        "kind": "wallach",
-        "wallach_stance": {
-          "quote": "Fluoride at therapeutic dose is essential for bone density and prevention of osteoporotic fractures — Wallach's supplement table specifies 20 mg/day at osteoporosis-prescription level. This is structurally separate from his rhetorical opposition to municipal tap-water fluoridation, which is a different dose, source, and context (the substance is essential at the supplement dose; the delivery method via uncontrolled water dosing is the operational concern).",
-          "citation": "Let's Play Doctor (Wallach & Ma Lan)",
-          "context": "from the baseline supplement table; the dose/source/context decomposition is canonical Wallach framework"
-        }
-      },
-      {
         "name": "Gadolinium",
         "essential_per_wallach": true,
         "wallach_baseline_target": "trace via PDM",

@@ -107,6 +107,168 @@
     };
   }
 
+  // assets/data/coverage-layout-data.json
+  var coverage_layout_data_default = {
+    sections: [
+      {
+        num: "01",
+        title: "MINERALS",
+        sub: "// 60 \xB7 THE FOUNDATION \xB7 ATOMIC SYMBOLS PRESERVED",
+        gridClass: "essentials-grid--minerals",
+        tileClass: "tile",
+        subsections: [
+          {
+            rank: "A",
+            label: "FOUNDATIONAL",
+            hint: "structural + macro \xB7 atomic order",
+            tiles: [
+              { key: "Hydrogen", num: 1, sym: "H", name: "HYDROGEN" },
+              { key: "Carbon", num: 6, sym: "C", name: "CARBON" },
+              { key: "Nitrogen", num: 7, sym: "N", name: "NITROGEN" },
+              { key: "Oxygen", num: 8, sym: "O", name: "OXYGEN" },
+              { key: "Sodium", num: 11, sym: "Na", name: "SODIUM" },
+              { key: "Magnesium", num: 12, sym: "Mg", name: "MAGNESIUM" },
+              { key: "Phosphorus", num: 15, sym: "P", name: "PHOSPHORUS" },
+              { key: "Sulfur", num: 16, sym: "S", name: "SULFUR" },
+              { key: "Chloride", num: 17, sym: "Cl", name: "CHLORIDE" },
+              { key: "Potassium", num: 19, sym: "K", name: "POTASSIUM" },
+              { key: "Calcium", num: 20, sym: "Ca", name: "CALCIUM" }
+            ]
+          },
+          {
+            rank: "B",
+            label: "MAJOR TRACE",
+            hint: "mid-dose essentials \xB7 A\u2192Z",
+            tiles: [
+              { key: "Boron", num: 5, sym: "B", name: "BORON" },
+              { key: "Cobalt", num: 27, sym: "Co", name: "COBALT" },
+              { key: "Chromium", num: 24, sym: "Cr", name: "CHROMIUM" },
+              { key: "Copper", num: 29, sym: "Cu", name: "COPPER" },
+              { key: "Germanium", num: 32, sym: "Ge", name: "GERMANIUM" },
+              { key: "Iron", num: 26, sym: "Fe", name: "IRON" },
+              { key: "Iodine", num: 53, sym: "I", name: "IODINE" },
+              { key: "Manganese", num: 25, sym: "Mn", name: "MANGANESE" },
+              { key: "Molybdenum", num: 42, sym: "Mo", name: "MOLYBDENUM" },
+              { key: "Selenium", num: 34, sym: "Se", name: "SELENIUM" },
+              { key: "Silica", num: 14, sym: "Si", name: "SILICA" },
+              { key: "Strontium", num: 38, sym: "Sr", name: "STRONTIUM" },
+              { key: "Vanadium", num: 23, sym: "V", name: "VANADIUM" },
+              { key: "Zinc", num: 30, sym: "Zn", name: "ZINC" }
+            ]
+          },
+          {
+            rank: "C",
+            label: "RARE TRACE",
+            hint: "PDM aggregate spectrum \xB7 A\u2192Z",
+            tiles: [
+              { key: "Silver", num: 47, sym: "Ag", name: "SILVER" },
+              { key: "Aluminum", num: 13, sym: "Al", name: "ALUMINUM" },
+              { key: "Arsenic", num: 33, sym: "As", name: "ARSENIC" },
+              { key: "Gold", num: 79, sym: "Au", name: "GOLD" },
+              { key: "Barium", num: 56, sym: "Ba", name: "BARIUM" },
+              { key: "Beryllium", num: 4, sym: "Be", name: "BERYLLIUM" },
+              { key: "Bromine", num: 35, sym: "Br", name: "BROMINE" },
+              { key: "Cerium", num: 58, sym: "Ce", name: "CERIUM" },
+              { key: "Cesium", num: 55, sym: "Cs", name: "CESIUM" },
+              { key: "Dysprosium", num: 66, sym: "Dy", name: "DYSPROSIUM" },
+              { key: "Erbium", num: 68, sym: "Er", name: "ERBIUM" },
+              { key: "Europium", num: 63, sym: "Eu", name: "EUROPIUM" },
+              { key: "Gallium", num: 31, sym: "Ga", name: "GALLIUM" },
+              { key: "Gadolinium", num: 64, sym: "Gd", name: "GADOLINIUM" },
+              { key: "Hafnium", num: 72, sym: "Hf", name: "HAFNIUM" },
+              { key: "Holmium", num: 67, sym: "Ho", name: "HOLMIUM" },
+              { key: "Lanthanum", num: 57, sym: "La", name: "LANTHANUM" },
+              { key: "Lithium", num: 3, sym: "Li", name: "LITHIUM" },
+              { key: "Lutetium", num: 71, sym: "Lu", name: "LUTETIUM" },
+              { key: "Niobium", num: 41, sym: "Nb", name: "NIOBIUM" },
+              { key: "Neodymium", num: 60, sym: "Nd", name: "NEODYMIUM" },
+              { key: "Nickel", num: 28, sym: "Ni", name: "NICKEL" },
+              { key: "Praseodymium", num: 59, sym: "Pr", name: "PRASEODYMIUM" },
+              { key: "Rubidium", num: 37, sym: "Rb", name: "RUBIDIUM" },
+              { key: "Rhenium", num: 75, sym: "Re", name: "RHENIUM" },
+              { key: "Scandium", num: 21, sym: "Sc", name: "SCANDIUM" },
+              { key: "Samarium", num: 62, sym: "Sm", name: "SAMARIUM" },
+              { key: "Tin", num: 50, sym: "Sn", name: "TIN" },
+              { key: "Tantalum", num: 73, sym: "Ta", name: "TANTALUM" },
+              { key: "Terbium", num: 65, sym: "Tb", name: "TERBIUM" },
+              { key: "Titanium", num: 22, sym: "Ti", name: "TITANIUM" },
+              { key: "Thulium", num: 69, sym: "Tm", name: "THULIUM" },
+              { key: "Yttrium", num: 39, sym: "Y", name: "YTTRIUM" },
+              { key: "Ytterbium", num: 70, sym: "Yb", name: "YTTERBIUM" },
+              { key: "Zirconium", num: 40, sym: "Zr", name: "ZIRCONIUM" }
+            ]
+          }
+        ]
+      },
+      {
+        num: "02",
+        title: "VITAMINS",
+        sub: "// 16 \xB7 THE CO-FACTORS \xB7 ENZYME ENABLERS",
+        gridClass: "essentials-grid--vitamins",
+        tileClass: "tile--vitamin",
+        tiles: [
+          { key: "Vitamin A (Retinol / beta-carotene)", code: "V\xB701", letter: "A", name: "RETINOL" },
+          { key: "Vitamin B1 (Thiamine)", code: "V\xB702", letter: "B1", name: "THIAMINE" },
+          { key: "Vitamin B2 (Riboflavin)", code: "V\xB703", letter: "B2", name: "RIBOFLAVIN" },
+          { key: "Vitamin B3 (Niacin)", code: "V\xB704", letter: "B3", name: "NIACIN" },
+          { key: "Vitamin B5 (Pantothenic Acid)", code: "V\xB705", letter: "B5", name: "PANTOTHENIC ACID" },
+          { key: "Vitamin B6 (Pyridoxine)", code: "V\xB706", letter: "B6", name: "PYRIDOXINE" },
+          { key: "Folic Acid (Folate)", code: "V\xB707", letter: "B9", name: "FOLATE" },
+          { key: "Vitamin B12 (Cobalamin)", code: "V\xB708", letter: "B12", name: "COBALAMIN" },
+          { key: "Vitamin C (Ascorbic Acid)", code: "V\xB709", letter: "C", name: "ASCORBIC ACID" },
+          { key: "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)", code: "V\xB710", letter: "D3", name: "CHOLECALCIFEROL" },
+          { key: "Vitamin E (Tocopherol)", code: "V\xB711", letter: "E", name: "TOCOPHEROL" },
+          { key: "Vitamin K (Menaquinone = K2)", code: "V\xB712", letter: "K", name: "MENAQUINONE" },
+          { key: "Biotin", code: "V\xB713", letter: "H", name: "BIOTIN" },
+          { key: "Choline", code: "V\xB714", letter: "Ch", name: "CHOLINE" },
+          { key: "Inositol", code: "V\xB715", letter: "In", name: "INOSITOL" },
+          { key: "Flavonoids / Bioflavonoids", code: "V\xB716", letter: "Fl", name: "FLAVONOIDS" }
+        ]
+      },
+      {
+        num: "03",
+        title: "AMINO ACIDS",
+        sub: "// 12 \xB7 PROTEIN BUILDING BLOCKS \xB7 ESSENTIAL + CONDITIONAL",
+        gridClass: "essentials-grid--aminos",
+        tileClass: "tile--amino",
+        tiles: [
+          { key: "Arginine", code: "AA\xB701", abbr: "Arg", name: "ARGININE" },
+          { key: "Cysteine", code: "AA\xB702", abbr: "Cys", name: "CYSTEINE" },
+          { key: "Histidine", code: "AA\xB703", abbr: "His", name: "HISTIDINE" },
+          { key: "Isoleucine", code: "AA\xB704", abbr: "Ile", name: "ISOLEUCINE" },
+          { key: "Leucine", code: "AA\xB705", abbr: "Leu", name: "LEUCINE" },
+          { key: "Lysine", code: "AA\xB706", abbr: "Lys", name: "LYSINE" },
+          { key: "Methionine", code: "AA\xB707", abbr: "Met", name: "METHIONINE" },
+          { key: "Phenylalanine", code: "AA\xB708", abbr: "Phe", name: "PHENYLALANINE" },
+          { key: "Threonine", code: "AA\xB709", abbr: "Thr", name: "THREONINE" },
+          { key: "Tryptophan", code: "AA\xB710", abbr: "Trp", name: "TRYPTOPHAN" },
+          { key: "Tyrosine", code: "AA\xB711", abbr: "Tyr", name: "TYROSINE" },
+          { key: "Valine", code: "AA\xB712", abbr: "Val", name: "VALINE" }
+        ]
+      },
+      {
+        num: "04",
+        title: "FATTY ACIDS",
+        sub: "// 3 \xB7 ESSENTIAL LIPIDS \xB7 MEMBRANE + SIGNAL",
+        gridClass: "essentials-grid--fats",
+        tileClass: "tile--fat",
+        tiles: [
+          { key: "Omega-3 (alpha-linolenic + EPA/DHA in marine form)", code: "F\xB701", name: "OMEGA-3", hint: "n-3 \xB7 ALA \xB7 EPA \xB7 DHA" },
+          { key: "Omega-6 (linoleic + GLA)", code: "F\xB702", name: "OMEGA-6", hint: "n-6 \xB7 linoleic \xB7 GLA" },
+          { key: "Omega-9 (Arachidonic / Oleic)", code: "F\xB703", name: "OMEGA-9", hint: "n-9 \xB7 oleic \xB7 arachidonic", essential: false }
+        ]
+      }
+    ],
+    goals: [
+      { id: "bone-skeletal", name: "BONE & SKELETAL", total: 14 },
+      { id: "energy-metabolism", name: "ENERGY & METABOLISM", total: 13 },
+      { id: "cognition", name: "COGNITION", total: 11 },
+      { id: "hormones-strength", name: "HORMONES & STRENGTH", total: 12 },
+      { id: "longevity-anti-aging", name: "LONGEVITY & ANTI-AGING", total: 18 },
+      { id: "cardiovascular", name: "CARDIOVASCULAR", total: 10 }
+    ]
+  };
+
   // node_modules/zod/v3/external.js
   var external_exports = {};
   __export(external_exports, {
@@ -4804,6 +4966,18 @@
   function buildTileId(name) {
     return `tile_${name.toLowerCase().replace(/\W+/g, "_")}`;
   }
+  var LAYOUT = CoverageLayoutSchema.parse(coverage_layout_data_default);
+  function layoutTiles() {
+    return LAYOUT.sections.flatMap(
+      (s) => s.subsections !== void 0 ? s.subsections.flatMap((sub) => sub.tiles) : s.tiles ?? []
+    );
+  }
+  var NON_ESSENTIAL_NAMES = new Set(
+    layoutTiles().filter((t) => t.essential === false).map((t) => t.key)
+  );
+  function essentialCount() {
+    return layoutTiles().filter((t) => t.essential !== false).length;
+  }
   function readTargets() {
     const el = typeof document === "undefined" ? null : document.getElementById("essentials-targets-data");
     if (el === null) {
@@ -5026,15 +5200,17 @@
       }
       byCategory[tile.category] = bucket;
     }
-    const coveredCount = tiles.filter((t) => t.covered).length;
+    const countedTiles = tiles.filter((t) => !NON_ESSENTIAL_NAMES.has(t.name));
+    const coveredCount = countedTiles.filter((t) => t.covered).length;
+    const totalCount = countedTiles.length;
     cachedSnapshot = {
       tiles,
       coveredCount,
-      totalCount: tiles.length,
+      totalCount,
       computedAt: (/* @__PURE__ */ new Date()).toISOString(),
       byCategory
     };
-    emit("coverage:recomputed", { coveredCount, totalCount: tiles.length });
+    emit("coverage:recomputed", { coveredCount, totalCount });
     return cachedSnapshot;
   }
   function getOrCompute() {
@@ -6852,170 +7028,8 @@
     w.lcParseLabel = parseLabel;
   }
 
-  // assets/data/coverage-layout-data.json
-  var coverage_layout_data_default = {
-    sections: [
-      {
-        num: "01",
-        title: "MINERALS",
-        sub: "// 60 \xB7 THE FOUNDATION \xB7 ATOMIC SYMBOLS PRESERVED",
-        gridClass: "essentials-grid--minerals",
-        tileClass: "tile",
-        subsections: [
-          {
-            rank: "A",
-            label: "FOUNDATIONAL",
-            hint: "structural + macro \xB7 atomic order",
-            tiles: [
-              { key: "Hydrogen", num: 1, sym: "H", name: "HYDROGEN" },
-              { key: "Carbon", num: 6, sym: "C", name: "CARBON" },
-              { key: "Nitrogen", num: 7, sym: "N", name: "NITROGEN" },
-              { key: "Oxygen", num: 8, sym: "O", name: "OXYGEN" },
-              { key: "Sodium", num: 11, sym: "Na", name: "SODIUM" },
-              { key: "Magnesium", num: 12, sym: "Mg", name: "MAGNES." },
-              { key: "Phosphorus", num: 15, sym: "P", name: "PHOS." },
-              { key: "Sulfur", num: 16, sym: "S", name: "SULFUR" },
-              { key: "Chloride", num: 17, sym: "Cl", name: "CHLORIDE" },
-              { key: "Potassium", num: 19, sym: "K", name: "POTAS." },
-              { key: "Calcium", num: 20, sym: "Ca", name: "CALCIUM" }
-            ]
-          },
-          {
-            rank: "B",
-            label: "MAJOR TRACE",
-            hint: "mid-dose essentials \xB7 A\u2192Z",
-            tiles: [
-              { key: "Boron", num: 5, sym: "B", name: "BORON" },
-              { key: "Cobalt", num: 27, sym: "Co", name: "COBALT" },
-              { key: "Chromium", num: 24, sym: "Cr", name: "CHROM." },
-              { key: "Copper", num: 29, sym: "Cu", name: "COPPER" },
-              { key: "Fluoride", num: 9, sym: "F", name: "FLUORINE" },
-              { key: "Iron", num: 26, sym: "Fe", name: "IRON" },
-              { key: "Iodine", num: 53, sym: "I", name: "IODINE" },
-              { key: "Manganese", num: 25, sym: "Mn", name: "MANGAN." },
-              { key: "Molybdenum", num: 42, sym: "Mo", name: "MOLYB." },
-              { key: "Selenium", num: 34, sym: "Se", name: "SELEN." },
-              { key: "Silica", num: 14, sym: "Si", name: "SILICON" },
-              { key: "Strontium", num: 38, sym: "Sr", name: "STRONT." },
-              { key: "Vanadium", num: 23, sym: "V", name: "VANAD." },
-              { key: "Zinc", num: 30, sym: "Zn", name: "ZINC" }
-            ]
-          },
-          {
-            rank: "C",
-            label: "RARE TRACE",
-            hint: "PDM aggregate spectrum \xB7 A\u2192Z",
-            tiles: [
-              { key: "Silver", num: 47, sym: "Ag", name: "SILVER" },
-              { key: "Aluminum", num: 13, sym: "Al", name: "ALUMIN." },
-              { key: "Arsenic", num: 33, sym: "As", name: "ARSENIC" },
-              { key: "Gold", num: 79, sym: "Au", name: "GOLD" },
-              { key: "Barium", num: 56, sym: "Ba", name: "BARIUM" },
-              { key: "Beryllium", num: 4, sym: "Be", name: "BERYL" },
-              { key: "Bromine", num: 35, sym: "Br", name: "BROMINE" },
-              { key: "Cerium", num: 58, sym: "Ce", name: "CERIUM" },
-              { key: "Cesium", num: 55, sym: "Cs", name: "CESIUM" },
-              { key: "Dysprosium", num: 66, sym: "Dy", name: "DYSPRO." },
-              { key: "Erbium", num: 68, sym: "Er", name: "ERBIUM" },
-              { key: "Europium", num: 63, sym: "Eu", name: "EUROP." },
-              { key: "Gallium", num: 31, sym: "Ga", name: "GALL." },
-              { key: "Gadolinium", num: 64, sym: "Gd", name: "GADOL." },
-              { key: "Hafnium", num: 72, sym: "Hf", name: "HAFNIUM" },
-              { key: "Holmium", num: 67, sym: "Ho", name: "HOLMIUM" },
-              { key: "Lanthanum", num: 57, sym: "La", name: "LANTH." },
-              { key: "Lithium", num: 3, sym: "Li", name: "LITHIUM" },
-              { key: "Lutetium", num: 71, sym: "Lu", name: "LUTET." },
-              { key: "Niobium", num: 41, sym: "Nb", name: "NIOB." },
-              { key: "Neodymium", num: 60, sym: "Nd", name: "NEOD." },
-              { key: "Nickel", num: 28, sym: "Ni", name: "NICKEL" },
-              { key: "Praseodymium", num: 59, sym: "Pr", name: "PRASEO." },
-              { key: "Rubidium", num: 37, sym: "Rb", name: "RUBID." },
-              { key: "Rhenium", num: 75, sym: "Re", name: "RHENIUM" },
-              { key: "Scandium", num: 21, sym: "Sc", name: "SCAND." },
-              { key: "Samarium", num: 62, sym: "Sm", name: "SAMAR." },
-              { key: "Tin", num: 50, sym: "Sn", name: "TIN" },
-              { key: "Tantalum", num: 73, sym: "Ta", name: "TANTAL." },
-              { key: "Terbium", num: 65, sym: "Tb", name: "TERBIUM" },
-              { key: "Titanium", num: 22, sym: "Ti", name: "TITAN." },
-              { key: "Thulium", num: 69, sym: "Tm", name: "THULIUM" },
-              { key: "Yttrium", num: 39, sym: "Y", name: "YTTRIUM" },
-              { key: "Ytterbium", num: 70, sym: "Yb", name: "YTTERB." },
-              { key: "Zirconium", num: 40, sym: "Zr", name: "ZIRCON." }
-            ]
-          }
-        ]
-      },
-      {
-        num: "02",
-        title: "VITAMINS",
-        sub: "// 16 \xB7 THE CO-FACTORS \xB7 ENZYME ENABLERS",
-        gridClass: "essentials-grid--vitamins",
-        tileClass: "tile--vitamin",
-        tiles: [
-          { key: "Vitamin A (Retinol / beta-carotene)", code: "V\xB701", letter: "A", name: "RETINOL" },
-          { key: "Vitamin B1 (Thiamine)", code: "V\xB702", letter: "B1", name: "THIAMINE" },
-          { key: "Vitamin B2 (Riboflavin)", code: "V\xB703", letter: "B2", name: "RIBOFLAVIN" },
-          { key: "Vitamin B3 (Niacin)", code: "V\xB704", letter: "B3", name: "NIACIN" },
-          { key: "Vitamin B5 (Pantothenic Acid)", code: "V\xB705", letter: "B5", name: "PANTO." },
-          { key: "Vitamin B6 (Pyridoxine)", code: "V\xB706", letter: "B6", name: "PYRIDOX." },
-          { key: "Folic Acid (Folate)", code: "V\xB707", letter: "B9", name: "FOLATE" },
-          { key: "Vitamin B12 (Cobalamin)", code: "V\xB708", letter: "B12", name: "COBALAMIN" },
-          { key: "Vitamin C (Ascorbic Acid)", code: "V\xB709", letter: "C", name: "ASCORBIC" },
-          { key: "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)", code: "V\xB710", letter: "D3", name: "CHOLECAL." },
-          { key: "Vitamin E (Tocopherol)", code: "V\xB711", letter: "E", name: "TOCOPH." },
-          { key: "Vitamin K (Menaquinone = K2)", code: "V\xB712", letter: "K", name: "MENAQ." },
-          { key: "Biotin", code: "V\xB713", letter: "H", name: "BIOTIN" },
-          { key: "Choline", code: "V\xB714", letter: "Ch", name: "CHOLINE" },
-          { key: "Inositol", code: "V\xB715", letter: "In", name: "INOSITOL" },
-          { key: "Flavonoids / Bioflavonoids", code: "V\xB716", letter: "Fl", name: "FLAVON." }
-        ]
-      },
-      {
-        num: "03",
-        title: "AMINO ACIDS",
-        sub: "// 12 \xB7 PROTEIN BUILDING BLOCKS \xB7 ESSENTIAL + CONDITIONAL",
-        gridClass: "essentials-grid--aminos",
-        tileClass: "tile--amino",
-        tiles: [
-          { key: "Arginine", code: "AA\xB701", abbr: "Arg", name: "ARGININE" },
-          { key: "Cysteine", code: "AA\xB702", abbr: "Cys", name: "CYSTEINE" },
-          { key: "Histidine", code: "AA\xB703", abbr: "His", name: "HISTIDINE" },
-          { key: "Isoleucine", code: "AA\xB704", abbr: "Ile", name: "ISOLEUCINE" },
-          { key: "Leucine", code: "AA\xB705", abbr: "Leu", name: "LEUCINE" },
-          { key: "Lysine", code: "AA\xB706", abbr: "Lys", name: "LYSINE" },
-          { key: "Methionine", code: "AA\xB707", abbr: "Met", name: "METHIONINE" },
-          { key: "Phenylalanine", code: "AA\xB708", abbr: "Phe", name: "PHENYLAL." },
-          { key: "Threonine", code: "AA\xB709", abbr: "Thr", name: "THREONINE" },
-          { key: "Tryptophan", code: "AA\xB710", abbr: "Trp", name: "TRYPTOPH." },
-          { key: "Tyrosine", code: "AA\xB711", abbr: "Tyr", name: "TYROSINE" },
-          { key: "Valine", code: "AA\xB712", abbr: "Val", name: "VALINE" }
-        ]
-      },
-      {
-        num: "04",
-        title: "FATTY ACIDS",
-        sub: "// 3 \xB7 ESSENTIAL LIPIDS \xB7 MEMBRANE + SIGNAL",
-        gridClass: "essentials-grid--fats",
-        tileClass: "tile--fat",
-        tiles: [
-          { key: "Omega-3 (alpha-linolenic + EPA/DHA in marine form)", code: "F\xB701", name: "OMEGA-3", hint: "n-3 \xB7 ALA \xB7 EPA \xB7 DHA" },
-          { key: "Omega-6 (linoleic + GLA)", code: "F\xB702", name: "OMEGA-6", hint: "n-6 \xB7 linoleic \xB7 GLA" },
-          { key: "Omega-9 (Arachidonic / Oleic)", code: "F\xB703", name: "OMEGA-9", hint: "n-9 \xB7 oleic \xB7 arachidonic", essential: false }
-        ]
-      }
-    ],
-    goals: [
-      { id: "bone-skeletal", name: "BONE & SKELETAL", total: 14 },
-      { id: "energy-metabolism", name: "ENERGY & METABOLISM", total: 13 },
-      { id: "cognition", name: "COGNITION", total: 11 },
-      { id: "hormones-strength", name: "HORMONES & STRENGTH", total: 12 },
-      { id: "longevity-anti-aging", name: "LONGEVITY & ANTI-AGING", total: 18 },
-      { id: "cardiovascular", name: "CARDIOVASCULAR", total: 10 }
-    ]
-  };
-
   // assets/js/src/views/coverage.ts
-  var LAYOUT = CoverageLayoutSchema.parse(coverage_layout_data_default);
+  var LAYOUT2 = CoverageLayoutSchema.parse(coverage_layout_data_default);
   function tileStatusFor(key, snapshot) {
     if (snapshot === null) {
       return "";
@@ -7038,6 +7052,9 @@
     if (spec.num !== void 0) {
       inner += `<span class="tile__num">${spec.num}</span>`;
     }
+    if (spec.code !== void 0) {
+      inner += `<span class="tile__code">${escHTML(spec.code)}</span>`;
+    }
     if (spec.sym !== void 0) {
       inner += `<span class="tile__sym">${escHTML(spec.sym)}</span>`;
     }
@@ -7046,9 +7063,6 @@
     }
     if (spec.abbr !== void 0) {
       inner += `<span class="tile__abbr">${escHTML(spec.abbr)}</span>`;
-    }
-    if (spec.code !== void 0) {
-      inner += `<span class="tile__code">${escHTML(spec.code)}</span>`;
     }
     inner += `<span class="tile__name">${escHTML(spec.name)}</span>`;
     if (spec.hint !== void 0) {
@@ -7078,8 +7092,9 @@
       bodyHTML = `<div class="${spec.gridClass}">${spec.tiles.map((t) => renderTile(t, spec.tileClass, snapshot)).join("")}</div>`;
       allTiles = spec.tiles;
     }
-    const total = allTiles.length;
-    const covered = allTiles.filter((t) => {
+    const counted = allTiles.filter((t) => t.essential !== false);
+    const total = counted.length;
+    const covered = counted.filter((t) => {
       const s = tileStatusFor(t.key, snapshot);
       return s === "covered" || s === "trace";
     }).length;
@@ -7097,14 +7112,14 @@
   `;
   }
   function renderHero(snapshot) {
-    const total = snapshot?.totalCount ?? 92;
+    const total = snapshot?.totalCount ?? essentialCount();
     const covered = snapshot?.coveredCount ?? 0;
-    const sections = LAYOUT.sections.map((s) => renderSection(s, snapshot)).join("");
+    const sections = LAYOUT2.sections.map((s) => renderSection(s, snapshot)).join("");
     return `
     <section class="coverage-hero ds-border-travel">
       <header class="coverage-hero__head">
         <div>
-          <div class="coverage-hero__kicker">Your essentials \xB7 <span class="ds-cipher" data-cipher-set="numfrac">92</span> minerals + vitamins + amino acids + fats</div>
+          <div class="coverage-hero__kicker">Your essentials \xB7 <span class="ds-cipher" data-cipher-set="numfrac">${essentialCount()}</span> minerals + vitamins + amino acids + fats</div>
           <h2 class="coverage-hero__title">
             THE WHOLE PICTURE
             <em>// what you'''re absorbing, what you'''re missing</em>
@@ -7131,7 +7146,7 @@
   }
   function renderGoalsStrip(snapshot) {
     const userGoals = loadRgUserGoals() ?? [];
-    const activeGoals = userGoals.length > 0 ? LAYOUT.goals.filter((g) => userGoals.includes(g.id)) : LAYOUT.goals.slice(0, 3);
+    const activeGoals = userGoals.length > 0 ? LAYOUT2.goals.filter((g) => userGoals.includes(g.id)) : LAYOUT2.goals.slice(0, 3);
     const cardsHTML = activeGoals.map((g, i) => {
       const num = String(i + 1).padStart(2, "0");
       const covered = snapshot !== null ? Math.min(g.total, Math.round(snapshot.coveredCount / snapshot.totalCount * g.total)) : 0;
@@ -7149,7 +7164,7 @@
     <section class="goals-strip">
       <header class="goals-strip__head">
         <h3 class="goals-strip__title">YOUR GOALS</h3>
-        <span class="goals-strip__count">${activeGoals.length} ACTIVE \xB7 ${LAYOUT.goals.length} AVAILABLE</span>
+        <span class="goals-strip__count">${activeGoals.length} ACTIVE \xB7 ${LAYOUT2.goals.length} AVAILABLE</span>
         <button class="goals-strip__add">+ ADD GOAL</button>
       </header>
       <div class="goals-row">${cardsHTML}</div>
@@ -7828,7 +7843,7 @@
     { id: "DOCT\xB706", title: "\xA731 Chokepoint Discipline (Cross-Surface Sync)", featured: false, body: "Every regimen mutation flows through one of 5 named chokepoint helpers. Each fires triggerRegimenRerender so all subscribed surfaces re-render. State drift is structurally impossible by module design, not vigilance.", cite: "CITED \xB7 Round 150 doctrine \xB7 enforced by check_regimen_state_mutation_routing" },
     { id: "DOCT\xB707", title: "Eden Sealed-Canonical (User-Only-Writer)", featured: false, body: "Sealed canonical files (design-system.css, eden corpus) carry hash anchors. Agent reads freely, never writes after sealing time. Drift is detected at startup; reads from drifted files fail loudly.", cite: "CITED \xB7 Round 157 \xB7 enforced by eden_hash_integrity + write_protection invariants" }
   ];
-  var LAYOUT2 = CoverageLayoutSchema.parse(coverage_layout_data_default);
+  var LAYOUT3 = CoverageLayoutSchema.parse(coverage_layout_data_default);
   function tileSymbol(t) {
     return t.sym ?? t.letter ?? t.abbr ?? t.code ?? t.name.charAt(0).toUpperCase();
   }
@@ -7851,7 +7866,7 @@
     }
   }
   function buildEssentialGroups() {
-    return LAYOUT2.sections.map((section) => {
+    return LAYOUT3.sections.map((section) => {
       const items = [];
       const pushTile = (t, catLabel) => {
         items.push({ key: t.key, name: t.name, symbol: tileSymbol(t), catLabel, ref: tileRef(t), section: section.title, essential: t.essential !== false });
@@ -8191,7 +8206,7 @@
   }
 
   // assets/data/creators-log-embed.json
-  var creators_log_embed_default = [{ id: "lg_mqq28u45_9emebd", ts: "2026-06-23T03:04:02.933502+00:00", surface: "tools", kind: "milestone", summary: "Creator's Log file-mirror created \u2014 chronicle/creators-log.jsonl + tools/creators_log.py make round-close step 5 CLI-fireable; the \xA700 audit trail now lives in the repo as a committed teaching record", detail: "In-app log() (state/log.ts) stays localStorage-only until the Phase-2 boot-merge (L2) embeds these entries into the Profile panel. Writes route through safe_write (\xA717). Validated by the new creators_log_well_formed invariant." }, { id: "lg_mqq2b45f_yeupqe", ts: "2026-06-23T03:05:49.251429+00:00", surface: "tools", kind: "round-close", summary: "Phase 2 L1 shipped: Creator's-Log file-mirror + creators_log_well_formed invariant (board 20\u219221). Round-close step 5 is now CLI-fireable \u2014 this entry is the proof.", detail: "Files: tools/creators_log.py, chronicle/creators-log.jsonl, tools/invariants.py. Verified: creators_log verify 1/1 clean; invariants 21/21. Next: L2 Profile boot-merge, then Journey J1-J4.", metadata: { chunk: "L1", board: "21/21", files: ["tools/creators_log.py", "chronicle/creators-log.jsonl", "tools/invariants.py"] } }, { id: "lg_mqq2g1mt_3ckyms", ts: "2026-06-23T03:09:39.269829+00:00", surface: "meta", kind: "session-end", summary: "Session checkpoint: cleanup A-C4 + logging-doctrine codified + Phase-2 L1 (Creator's-Log mirror, board 21/21). Handoff refreshed. Next: L2 Profile boot-merge \u2192 Journey J1-J4 \u2192 Palette.", detail: "9 commits pushed c2826e9..(this). Every chunk build>test>log>committed. Creator's Log now CLI-fireable; this is a session-end entry through the live tool." }, { id: "lg_mqq30yww_gejq56", ts: "2026-06-23T03:25:55.520134+00:00", surface: "tools", kind: "design-decision", summary: "Codified the two-layer logging model + the Creator's Log sacred covenant (append-only, never deleted even under broad delete-authorization, always truthful/complete, fires per-chunk). Audit found sacredness + never-skip not yet machine-enforced.", detail: "Doctrine in .claude/rules/logging-doctrine.md. 3 enforcement guards proposed (git-anchored append-only invariant, round-close firing check, boundary delete-guard) pending Luneth's approval of the ledger file/folder structure." }, { id: "lg_mqq3i857_1qlldw", ts: "2026-06-23T03:39:20.635214+00:00", surface: "tools", kind: "milestone", summary: "Sacred Creator's Log: moved to chronicle/creators-log/ (log.jsonl + generated LOG.md + README) and added the covenant's teeth \u2014 git-anchored append-only invariant, digest-sync invariant, shell delete-guard, and a never-skip round-close hard-block. Board 21\u219223.", detail: "The append-only invariant makes deleting committed entries un-shippable; the firing-check makes a skipped round-close entry un-closeable. Tightened the delete-guard after a self-inflicted prose false-positive (good stress test)." }, { id: "lg_mqq3lhtx_zlch6t", ts: "2026-06-23T03:41:53.157429+00:00", surface: "tools", kind: "invariant-pass", summary: "Teeth-test PROVEN: creators_log_append_only catches both deletion (truncate 5\u21921) and mutation of committed entries; git restores; board 23/23. The sacred-log guarantee is structural, not aspirational.", detail: "Simulated 'delete entries for efficiency' via safe_write truncate \u2192 invariant fired RED 'SACRED LEDGER TRUNCATED'; in-place edit \u2192 'SACRED LEDGER MUTATED at entry 1'; git checkout restored. try/finally guaranteed recovery." }, { id: "lg_mqq52ira_tnd1aj", ts: "2026-06-23T04:23:07.126050+00:00", surface: "tools", kind: "round-close", summary: "Chunk H: hardened the sacred ledger per the Opus-4.8 audit \u2014 closed 3 enforcement gaps (4a digest spoof, 5a delete-guard dir hole, 5b silent committed-deletion + silent fail-open). All re-proven; board 23/23.", detail: "4a: validate_entry rejects newline summaries + render_digest escapes a leading #/> and flattens newlines so the human digest can't be made to show a fake entry (the jsonl was already injection-proof \u2014 json.dumps escaping, proven). 5a: pre_bash_guard now blocks the whole chronicle/creators-log dir + any child + 'rm -rf chronicle' + a dir mv, while non-sacred deletes still pass. 5b: a COMMITTED deletion (ledger gone from HEAD with prior history) is now a hard RED 'SACRED LEDGER REMOVED FROM HEAD'; git-unavailable now prints a loud UNVERIFIED warning but stays fail-open per Luneth's 'visible warning, not blocking' choice. Verified: invariants 23/23, verify 6/0, digest byte-identical, build OK 290.9 KB, every fix re-proven against real code (incl. the real append_only on an isolated temp git repo). The req-3 truthfulness ceiling stands by design \u2014 next feature (L2 dashboard Creator's Log) is Luneth's visual truth-verification layer; then navigability archive-tree." }, { id: "lg_mqq5oreo_sft46m", ts: "2026-06-23T04:40:24.768965+00:00", surface: "docs", kind: "round-close", summary: "README audit: purged retired-system references (tacitus/cura/vision/aegis/brain) from all 16 READMEs and corrected inaccuracies. 5 fixed, 11 verified clean, 0 dead tokens remain; board 23/23.", detail: "Fixed: root README (Cura/Aegis/Tacitus blockquote -> Eden/Chronicle/Sunjo + added creators-log/ to glossary); chronicle/README (Layout was missing creators-log/ + 3 files; added them + a two-layers section); chronicle/evals/README ('Brain Evaluations' -> historical agent-prompt-era artifacts, preserved not resurrected); tools/README (documented only 1 of ~20 tools + cited brain rules -> full accurate inventory by group, each line verified against the script docstring); fonts/README ('drop these in' -> already in-housed). Verified clean: eden, labels, transcripts, wallach-refresh, canaries, design-wisdom (+subdirs), youngevity-product-notes. Ignored false positives: curation/curated/accuracy (substring 'cura') + the word 'vision'. FLAGGED for Luneth (operating contract, not auto-touched): CLAUDE.md glossary still lists Cura+Aegis as current systems + a Tacitus guard; sunjo plan line 308 lists them (captured history). Historical docs (CHANGELOG/versions/saga/contradictions) intentionally keep period-accurate refs." }, { id: "lg_mqq5x105_9ui544", ts: "2026-06-23T04:46:50.453734+00:00", surface: "tools", kind: "round-close", summary: "Audit follow-ups: retired Cura/Aegis from the CLAUDE.md glossary (slimmed the Tacitus guard) + fixed a pre_bash_guard false-positive where the push-force/reset-hard regexes spanned a separator into an unrelated short-flag. Board 23/23.", detail: "(1) CLAUDE.md glossary dropped the Cura + Aegis entries (retired names; the concepts live in engineering-doctrine.md / the app and appear in no live rule file); the Tacitus line slimmed to a tight do-not-re-introduce guard; Eden + Chronicle stay. (2) pre_bash_guard's push-force and reset-hard checks used .*? with re.DOTALL and matched across command separators, so a 'push-then-unrelated-shortflag' compound was wrongly blocked (hit live when committing the README audit). Scoped both to a single command segment ([^newline;amp;pipe]*?), matching the rm-guard pattern. Proven via a file-based hook probe (trigger phrases kept out of the bash line): the push-then-cleanup and commit-then-push compounds now ALLOW; genuine force/hard flags still BLOCK; force-with-lease ALLOWs; the 5a sacred-ledger guard still BLOCKs (no regression). The two non-README loose ends from the README audit; both user-approved. Next: Feature L2." }, { id: "lg_mqq6gim9_bvrj39", ts: "2026-06-23T05:01:59.745384+00:00", surface: "profile", kind: "round-close", summary: "Phase 2 L2 shipped: the dashboard Creator's Log. The CLI ledger is now inlined at build time and boot-merged with localStorage so the Profile panel shows both CLI- and in-app-fired entries \u2014 Luneth's visual truth-verification layer. Board 23\u219224.", detail: "Closes the in-app half (L1 was the CLI mirror). creators_log.py gains write_embed() (every append/digest regenerates dashboard/assets/data/creators-log-embed.json from log.jsonl via safe_write \u2014 sibling of LOG.md; log.jsonl stays the single source of truth). core/schemas/log.ts adds LogEmbedSchema; state/log.ts imports the embed (esbuild JSON import), validates once at the boundary, and getEntries() boot-merges embed + LS deduped by id (embed canonical wins), newest-first. The existing Profile panel renders getEntries() unchanged, so it now shows the unified log. New invariant creators_log_embed_synced (warning, truth-anchored: json.loads(embed) == read_entries()) catches a stale build / hand-edit. Verified: tsc strict + esbuild OK (298.9 KB); invariants 24/24; render_probe_profile.js PASS \u2014 empty localStorage still renders all embedded CLI entries (count == embed == subheader), a real ROUND CLOSE surfaces, Esc closes, 0 page errors. Deferred: cap the embed to recent-N as the ledger grows (Chunk N). Next: navigability archive-tree." }, { id: "lg_mqq75oel_2m9xyo", ts: "2026-06-23T05:21:33.645862+00:00", surface: "creators-log", kind: "round-close", summary: "Chunk N shipped: navigability archive-tree. The Creator's Log now has a month-by-month INDEX.md + per-month digests/ holding the full history, while LOG.md becomes a recent-window view \u2014 so it stays scannable as it grows over years. Board 24\u219225.", detail: "Luneth's 'archive tree + index' choice. log.jsonl stays the unsharded canonical spine (+ git-prefix anchor); the derived human views gain structure. creators_log.py adds _render_block (shared renderer), render_index/write_index (INDEX.md month map: count + kind tally + digest link), month_of/month_set/render_month/write_months (digests/YYYY-MM.md, full entries), a recent-window cap on render_digest (DIGEST_RECENT=200, header \u2192 INDEX.md), and regenerate_all() called from append/digest so LOG.md + embed + INDEX + monthly digests stay byte-fresh together. New invariant creators_log_archive_synced (warning) is truth-anchored: INDEX.md == render_index() and each digests/*.md == render_month(ym), month set from log.jsonl, no missing/extra files \u2014 this is where full-history human fidelity is now proven (digest_synced only covers LOG.md's window). README documents the new layout + the embed/archive invariants. Verified: invariants 25/25; INDEX + digests/2026-06.md render cleanly (10 entries, full detail, back-links); LOG.md recent-window matches. Deferred: cap the L2 embed to recent-N when it grows large. Next: Journey J1-J4, then command palette." }, { id: "lg_mqq95orc_m6l3l3", ts: "2026-06-23T06:17:33.336269+00:00", surface: "journey", kind: "round-close", summary: "Journey J1 shipped: the state engine. Replaced the throwing scaffold with a real \xA731 events ledger + private check-ins + a \xB17-day cross-ref walker, all Zod-validated. No fake seed \u2014 fills from real activity. Board 25/25; engine functionally smoke-tested.", detail: "First of ~4 Journey chunks (J1 engine \u2192 J2 view \u2192 J3 wiring \u2192 J4 probe). New core/schemas/journey.ts (EventKind/JourneyEvent/Checkin + storage shapes, types inferred). state/journey.ts: listEvents(sinceISO?)/listCheckins() read via getValidated; logEvent()/logCheckin() are the only \xA731 writers to wallachJourneyEvents_v1/wallachJourneyCheckins_v1 (auto id, FIFO cap 5000, emit journey:changed); crossRefForCheckin() = the \xB17-day local correlation walker (check-ins stay private, never exported). core/events.ts: journey:event-logged \u2192 journey:changed {reason}. Verified: tsc strict + esbuild OK; invariants 25/25; esbuild-bundled functional smoke vs a localStorage shim PASS (persistence, newest-first, sinceISO, cross-ref include/exclude, corrupt-LS-empty). No render probe yet (pure state; view verified at J4). Next: J2 the 4-tab drawer view." }, { id: "lg_mqqa4z6g_mshacn", ts: "2026-06-23T06:44:59.800202+00:00", surface: "genesis", kind: "milestone", summary: "Genesis boot system shipped: typing 'genesis' now runs tools/genesis.py \u2014 a one-command session boot (banner + scoreboard + the live pass-off) that hands a fresh session past depth instantly + ends with an action question. Renamed sunjo/ \u2192 genesis/.", detail: "Formalizes the per-session catch-up rather than reinventing it: chronicle/next-chunk.md stays the SINGLE live rolling pass-off (no parallel file); genesis.py reads it + runs the integrity scoreboard (invariants), build-parity, last Creator's Log entry, build-log tail, and prints the next-chunk LATEST\u2192NEXT-ORDER block, closing with a cue to ask 'resume X or redirect?'. sunjo/ \u2192 genesis/ via git mv (history preserved): the folder now houses the boot system + the archived original Cowork pass-off (01/02); genesis/README documents the two-pass-off model. CLAUDE.md Genesis section rewritten (net -1 line, 195/200) to point at the command + mandate the action question; all LIVE sunjo path refs \u2192 genesis/ (history left truthful). Mechanically safe (no tool/hook/invariant referenced sunjo). Verified: genesis.py boots cleanly; invariants 25/25. Next: Journey J2." }, { id: "lg_mqqqtit6_5uctcj", ts: "2026-06-23T14:31:58.842948+00:00", surface: "journey", kind: "round-close", summary: "Journey J2 \u2014 views/journey.ts 4-tab drawer renderer + LOG EVENT/check-in forms; mirrors knowledge.ts, reads only via state layer, zero inline literals. Also implemented read side of state/goals.ts (+ new core/schemas/goals.ts). Board 25/25, probes pass.", detail: "Replaced the throwing views/journey.ts scaffold with a real renderer using self-namespaced jd-* classes (parallel to Knowledge's kd-*; the v3 proposal's generic .timeline/.goal-card/.milestone would collide with legacy-dashboard.css \u2014 jd-* CSS is the Round-6 polish pass). Timeline groups events into calendar-day buckets (Map, newest-first, kind->glyph/accent, relative-time + delta); Goals shows progress bar + blockers + featured; Check-ins (private) renders 5-pip severity + tags + the +/-7-day cross-ref as 'CROSS-REF \xB7 <top event>'; Milestones distinguishes earned/locked/fresh-under-24h. The footer LOG EVENT primary + the Check-ins quick-entry open inline forms calling journey.logEvent()/logCheckin() with bounded inputs (maxlength + slice + clampSeverity + EventKindSchema.safeParse). To avoid crashing on the still-scaffolded goals state, implemented its READ side: new core/schemas/goals.ts (GoalSchema/MilestoneSchema + LS shapes, .optional() not .default() to keep input==output types) + Zod-validated listGoals/listMilestones (bad LS -> empty); evaluateMilestoneTriggers stays a deferred throw. Verified: tsc strict + esbuild OK (main.js 307.6 KB; journey code is tree-shaken from the runtime bundle until J3 calls mount() \u2014 tsc is the compile gate); eslint clean on all 4 files; invariants 25/25 (0 new reds); coverage + knowledge render probes PASS. No journey render probe yet \u2014 the drawer mount is J3 and the visual probe is J4 (honesty rule). NEXT: J3 \u2014 shared K+J mount/toggle/keys helper + auto-derive subscriptions." }, { id: "lg_mqqsqygj_fmu96a", ts: "2026-06-23T11:25:58.387680-04:00", surface: "tooling", kind: "design-decision", summary: "Creator's Log timestamps now store machine-LOCAL time (auto-follow ET->CT + DST) instead of UTC. _now_iso uses datetime.now().astimezone(); _fmt_ts derives the zone from the stored offset. Historical UTC entries stay UTC (immutable ledger).", detail: "Luneth flagged that log times read in UTC (an entry made at 10:31 EDT showed as 14:31 / 06:44), confusing against his local clock, and that he's moving ET->CT next week. Chose auto-follow-local over hard-pinning CT so it adapts to the move + DST with zero maintenance. Two-line change in tools/creators_log.py: _now_iso() now returns datetime.now().astimezone().isoformat() (local-aware, carries the offset); _fmt_ts() derives the zone label from the parsed offset (%Z) instead of hardcoding 'UTC'. The slice-based renderers (genesis last-log line, Profile panel formatTs) need no change \u2014 they read the stored wall-clock directly, so new entries show local automatically. The ~13 pre-change entries stored +00:00 stay UTC (the ledger is append-only/immutable; never rewriting history). This entry is the first stored in local time." }, { id: "lg_mqqt86uf_88lvtm", ts: "2026-06-23T11:39:22.407988-04:00", surface: "discipline", kind: "design-decision", summary: "Codified the visual/human-verification gate (.claude/rules/visual-verification.md + CLAUDE.md row): for any page/visual/UX work Luneth is the test gate \u2014 build a chunk to 'done', STOP, he visually verifies, only then continue. Never chain past a STOP; certainty != truth.", detail: "Luneth elevated the per-page build method to a non-negotiable rule. Automated gates (build/invariants/probes) prove only the functional layer; the subjective/visual layer can ONLY be verified by his eyes. The discipline: build in phases (respect resource usage) -> build to 'done' or one verifiable chunk -> STOP -> he visually verifies/course-corrects/adds/changes mind -> only then log + continue. Never advance past a STOP without his go-ahead; never claim he verified what he didn't; never treat agent-certainty as truth. This is build>test>log>repeat with Luneth as tester, and the guardrail that would have caught the unstyled-drawer drift. Documented as a behavioral discipline (like the source-rule turn-gap), not a Python invariant; the structural guarantee is that visual chunks END at a STOP by default. NEXT: Coverage as first gold-standard page." }, { id: "lg_mqqxdip7_mg7c11", ts: "2026-06-23T13:35:29.515119-04:00", surface: "coverage", kind: "milestone", summary: "Coverage Phase 1 \u2014 shell now ~pixel-exact to v3.2 (Luneth verified). Fixed via new tools/style_diff.js: legacy 15px root + bare header/footer selectors bleeding into the .app-* shell; in-housed the missing Chakra Petch/Bruno Ace fonts. Visual-match lesson codified.", detail: "First gold-standard surface phase under the visual-verification gate (build -> STOP -> Luneth verifies -> commit). An objective computed-style diff (new tools/style_diff.js, live shell vs the v3.2 mockup) drove it from ~50 diffs to 0 meaningful, replacing eyeballing. Two systemic root causes: (1) legacy-dashboard.css html,body{font-size:15px} shrank the whole rem UI to 93.75% -> removed, 16px root re-scales the entire coverage page; (2) legacy bare element selectors (header/footer/html,body) bled into the new .app-* shell (14px radius, teal shadow+border, a header::before veil over .app-topbar hiding its accents + fading the search, teal text) -> scoped to #legacy-workspace-host + doc-level overrides removed (grep [v3-contain]). Also in-housed the v3.2 fonts (Chakra Petch + Bruno Ace; wired but never procured -> @font-face 404 -> Space Grotesk fallback). Lesson codified in .claude/rules/visual-verification.md 'Getting to exact'. NEXT: finish Coverage hero/periodic/sidebar vs v3.2; CODEX dynamic version; alien-glyph cipher." }, { id: "lg_mqr73n9n_p9z964", ts: "2026-06-23T18:07:45.035981-04:00", surface: "dashboard/legacy-css", kind: "round-close", summary: "Sever-Safety: scoped all 24 legacy-dashboard.css leak vectors under :where(#legacy-workspace-host); moved the globals the shell was secretly inheriting into dashboard.css; new critical invariant legacy_css_contained makes the leak impossible. Luneth-verified.", detail: "Audit (Luneth's 'total clean cut' ask) confirmed the legacy->v3 sever is clean at the markup level (one #legacy-workspace-host div, R2->R5 deletion schedule) but was leaky at the CSS level with no enforcement. The parked legacy stylesheet (loaded after the v3 design system) had 24 bare element/universal selectors (teal h2/h3/table, @media header, *, html/body) that bleed into the .app-* shell; only the 4 that already bit were hand-patched. Fix: :where(#legacy-workspace-host) scoping (zero added specificity -> legacy cascade preserved byte-for-byte) + html,body/body collapsed onto the host. Critical mid-chunk catch: the pixel-exact shell was silently riding on legacy's leaked star{box-sizing} + html,body font-smoothing (the sealed v3 token sheet scopes those to .ds-canvas only, which .app-shell doesn't use), so moved box-sizing/smoothing/line-height into dashboard.css. New critical invariant legacy_css_contained: deterministic re-parse, no bare element/star/non-var :root selector may ever exist; proven with a negative test. Verified 24->0 leak vectors, style_diff 4 live-better residuals only, invariants 26/26, render probes 0 errors." }, { id: "lg_mqrf7brf_5o0xqy", ts: "2026-06-23T21:54:33.675631-04:00", surface: "journey", kind: "round-close", summary: "Journey J3+J4: mounted the J2 view (kills the last legacy teal; shared K+J registry -> J rail/Esc/bare-J open the new drawer) + auto-derive; styled the whole drawer to the v3 mockup (jd-* scoped to #drawer-journey-mount); topbar BRAIN->CODEX. Board 26/26.", detail: "J3 generalized the Knowledge-only drawer wiring in main.ts into a shared K+J registry (DRAWER_SPECS: mountDrawers/toggleDrawer/wireDrawerKeys/closeAllDrawers); the J rail item + Esc + bare-J now open the new jd-* drawer instead of the legacy #tab-journey teal tab. Auto-derive: scanner:scan-complete / regimen add-remove-restore / goals:updated -> journey.logEvent (excludes high-frequency coverage:recomputed + dose-edit to avoid flooding). drawer-journey.css ports the v3 mockup vocabulary onto the view's jd-* classes, every rule rooted at #drawer-journey-mount so it cannot leak (Sever-Safety lesson applied preemptively): panel + chrome + all 4 tabs + the quick-checkin entry button + inline forms. Built in 2 visual-verified phases. CODEX: the 2 visible topbar BRAIN refs renamed; v3.27 kept (consistent with footer + versions-data, no drift); full v1.0 stamp queued. New tools/render_probe_journey.js: 13 checks incl. legacy-host-not-shown (teal-kill proof). Knowledge drawer still unstyled by design (identical shell; drawer-journey.css is the template)." }, { id: "lg_mqrlsxe3_47za1h", ts: "2026-06-24T00:59:19.179850-04:00", surface: "knowledge", kind: "round-close", summary: "Knowledge drawer SHIPPED to gold-standard: shared-chrome refactor + full kd-* styling + Essentials deep-dive + 90-essentials/Omega-9 reframe (\xA700.A confirmed) + drawer +100px. Board 26/26.", detail: "Lifted shared drawer chrome into drawer-shared.css (dual jd-*/kd- selectors, both mount-rooted = single source, no leak); kd-* tab-content rename closes the legacy .essential-tile collision. Essentials tab rebuilt layout-driven (all shown, real symbols, coverage-state colors from the same CoverageSnapshot classifier) + click-to-expand Wallach deep-dive (quote/citation + matchEssential vault chips). Omega-9 flagged essential:false in coverage-layout-data.json (single source) -> always 90; teal --bonus tile + on-click non-essential note, coverage math retained. Caught + fixed a */-in-CSS-comment that silently dropped the journey panel width:600 (probe caught 580px). Germanium (61st embed mineral, absent from layout) flagged for next-genesis reconciliation; all live 91/92 instances inventoried in next-chunk.md. Verified: build OK, invariants 26/26, knowledge/journey/coverage/seeded probes green, Luneth visually verified." }];
+  var creators_log_embed_default = [{ id: "lg_mqq28u45_9emebd", ts: "2026-06-23T03:04:02.933502+00:00", surface: "tools", kind: "milestone", summary: "Creator's Log file-mirror created \u2014 chronicle/creators-log.jsonl + tools/creators_log.py make round-close step 5 CLI-fireable; the \xA700 audit trail now lives in the repo as a committed teaching record", detail: "In-app log() (state/log.ts) stays localStorage-only until the Phase-2 boot-merge (L2) embeds these entries into the Profile panel. Writes route through safe_write (\xA717). Validated by the new creators_log_well_formed invariant." }, { id: "lg_mqq2b45f_yeupqe", ts: "2026-06-23T03:05:49.251429+00:00", surface: "tools", kind: "round-close", summary: "Phase 2 L1 shipped: Creator's-Log file-mirror + creators_log_well_formed invariant (board 20\u219221). Round-close step 5 is now CLI-fireable \u2014 this entry is the proof.", detail: "Files: tools/creators_log.py, chronicle/creators-log.jsonl, tools/invariants.py. Verified: creators_log verify 1/1 clean; invariants 21/21. Next: L2 Profile boot-merge, then Journey J1-J4.", metadata: { chunk: "L1", board: "21/21", files: ["tools/creators_log.py", "chronicle/creators-log.jsonl", "tools/invariants.py"] } }, { id: "lg_mqq2g1mt_3ckyms", ts: "2026-06-23T03:09:39.269829+00:00", surface: "meta", kind: "session-end", summary: "Session checkpoint: cleanup A-C4 + logging-doctrine codified + Phase-2 L1 (Creator's-Log mirror, board 21/21). Handoff refreshed. Next: L2 Profile boot-merge \u2192 Journey J1-J4 \u2192 Palette.", detail: "9 commits pushed c2826e9..(this). Every chunk build>test>log>committed. Creator's Log now CLI-fireable; this is a session-end entry through the live tool." }, { id: "lg_mqq30yww_gejq56", ts: "2026-06-23T03:25:55.520134+00:00", surface: "tools", kind: "design-decision", summary: "Codified the two-layer logging model + the Creator's Log sacred covenant (append-only, never deleted even under broad delete-authorization, always truthful/complete, fires per-chunk). Audit found sacredness + never-skip not yet machine-enforced.", detail: "Doctrine in .claude/rules/logging-doctrine.md. 3 enforcement guards proposed (git-anchored append-only invariant, round-close firing check, boundary delete-guard) pending Luneth's approval of the ledger file/folder structure." }, { id: "lg_mqq3i857_1qlldw", ts: "2026-06-23T03:39:20.635214+00:00", surface: "tools", kind: "milestone", summary: "Sacred Creator's Log: moved to chronicle/creators-log/ (log.jsonl + generated LOG.md + README) and added the covenant's teeth \u2014 git-anchored append-only invariant, digest-sync invariant, shell delete-guard, and a never-skip round-close hard-block. Board 21\u219223.", detail: "The append-only invariant makes deleting committed entries un-shippable; the firing-check makes a skipped round-close entry un-closeable. Tightened the delete-guard after a self-inflicted prose false-positive (good stress test)." }, { id: "lg_mqq3lhtx_zlch6t", ts: "2026-06-23T03:41:53.157429+00:00", surface: "tools", kind: "invariant-pass", summary: "Teeth-test PROVEN: creators_log_append_only catches both deletion (truncate 5\u21921) and mutation of committed entries; git restores; board 23/23. The sacred-log guarantee is structural, not aspirational.", detail: "Simulated 'delete entries for efficiency' via safe_write truncate \u2192 invariant fired RED 'SACRED LEDGER TRUNCATED'; in-place edit \u2192 'SACRED LEDGER MUTATED at entry 1'; git checkout restored. try/finally guaranteed recovery." }, { id: "lg_mqq52ira_tnd1aj", ts: "2026-06-23T04:23:07.126050+00:00", surface: "tools", kind: "round-close", summary: "Chunk H: hardened the sacred ledger per the Opus-4.8 audit \u2014 closed 3 enforcement gaps (4a digest spoof, 5a delete-guard dir hole, 5b silent committed-deletion + silent fail-open). All re-proven; board 23/23.", detail: "4a: validate_entry rejects newline summaries + render_digest escapes a leading #/> and flattens newlines so the human digest can't be made to show a fake entry (the jsonl was already injection-proof \u2014 json.dumps escaping, proven). 5a: pre_bash_guard now blocks the whole chronicle/creators-log dir + any child + 'rm -rf chronicle' + a dir mv, while non-sacred deletes still pass. 5b: a COMMITTED deletion (ledger gone from HEAD with prior history) is now a hard RED 'SACRED LEDGER REMOVED FROM HEAD'; git-unavailable now prints a loud UNVERIFIED warning but stays fail-open per Luneth's 'visible warning, not blocking' choice. Verified: invariants 23/23, verify 6/0, digest byte-identical, build OK 290.9 KB, every fix re-proven against real code (incl. the real append_only on an isolated temp git repo). The req-3 truthfulness ceiling stands by design \u2014 next feature (L2 dashboard Creator's Log) is Luneth's visual truth-verification layer; then navigability archive-tree." }, { id: "lg_mqq5oreo_sft46m", ts: "2026-06-23T04:40:24.768965+00:00", surface: "docs", kind: "round-close", summary: "README audit: purged retired-system references (tacitus/cura/vision/aegis/brain) from all 16 READMEs and corrected inaccuracies. 5 fixed, 11 verified clean, 0 dead tokens remain; board 23/23.", detail: "Fixed: root README (Cura/Aegis/Tacitus blockquote -> Eden/Chronicle/Sunjo + added creators-log/ to glossary); chronicle/README (Layout was missing creators-log/ + 3 files; added them + a two-layers section); chronicle/evals/README ('Brain Evaluations' -> historical agent-prompt-era artifacts, preserved not resurrected); tools/README (documented only 1 of ~20 tools + cited brain rules -> full accurate inventory by group, each line verified against the script docstring); fonts/README ('drop these in' -> already in-housed). Verified clean: eden, labels, transcripts, wallach-refresh, canaries, design-wisdom (+subdirs), youngevity-product-notes. Ignored false positives: curation/curated/accuracy (substring 'cura') + the word 'vision'. FLAGGED for Luneth (operating contract, not auto-touched): CLAUDE.md glossary still lists Cura+Aegis as current systems + a Tacitus guard; sunjo plan line 308 lists them (captured history). Historical docs (CHANGELOG/versions/saga/contradictions) intentionally keep period-accurate refs." }, { id: "lg_mqq5x105_9ui544", ts: "2026-06-23T04:46:50.453734+00:00", surface: "tools", kind: "round-close", summary: "Audit follow-ups: retired Cura/Aegis from the CLAUDE.md glossary (slimmed the Tacitus guard) + fixed a pre_bash_guard false-positive where the push-force/reset-hard regexes spanned a separator into an unrelated short-flag. Board 23/23.", detail: "(1) CLAUDE.md glossary dropped the Cura + Aegis entries (retired names; the concepts live in engineering-doctrine.md / the app and appear in no live rule file); the Tacitus line slimmed to a tight do-not-re-introduce guard; Eden + Chronicle stay. (2) pre_bash_guard's push-force and reset-hard checks used .*? with re.DOTALL and matched across command separators, so a 'push-then-unrelated-shortflag' compound was wrongly blocked (hit live when committing the README audit). Scoped both to a single command segment ([^newline;amp;pipe]*?), matching the rm-guard pattern. Proven via a file-based hook probe (trigger phrases kept out of the bash line): the push-then-cleanup and commit-then-push compounds now ALLOW; genuine force/hard flags still BLOCK; force-with-lease ALLOWs; the 5a sacred-ledger guard still BLOCKs (no regression). The two non-README loose ends from the README audit; both user-approved. Next: Feature L2." }, { id: "lg_mqq6gim9_bvrj39", ts: "2026-06-23T05:01:59.745384+00:00", surface: "profile", kind: "round-close", summary: "Phase 2 L2 shipped: the dashboard Creator's Log. The CLI ledger is now inlined at build time and boot-merged with localStorage so the Profile panel shows both CLI- and in-app-fired entries \u2014 Luneth's visual truth-verification layer. Board 23\u219224.", detail: "Closes the in-app half (L1 was the CLI mirror). creators_log.py gains write_embed() (every append/digest regenerates dashboard/assets/data/creators-log-embed.json from log.jsonl via safe_write \u2014 sibling of LOG.md; log.jsonl stays the single source of truth). core/schemas/log.ts adds LogEmbedSchema; state/log.ts imports the embed (esbuild JSON import), validates once at the boundary, and getEntries() boot-merges embed + LS deduped by id (embed canonical wins), newest-first. The existing Profile panel renders getEntries() unchanged, so it now shows the unified log. New invariant creators_log_embed_synced (warning, truth-anchored: json.loads(embed) == read_entries()) catches a stale build / hand-edit. Verified: tsc strict + esbuild OK (298.9 KB); invariants 24/24; render_probe_profile.js PASS \u2014 empty localStorage still renders all embedded CLI entries (count == embed == subheader), a real ROUND CLOSE surfaces, Esc closes, 0 page errors. Deferred: cap the embed to recent-N as the ledger grows (Chunk N). Next: navigability archive-tree." }, { id: "lg_mqq75oel_2m9xyo", ts: "2026-06-23T05:21:33.645862+00:00", surface: "creators-log", kind: "round-close", summary: "Chunk N shipped: navigability archive-tree. The Creator's Log now has a month-by-month INDEX.md + per-month digests/ holding the full history, while LOG.md becomes a recent-window view \u2014 so it stays scannable as it grows over years. Board 24\u219225.", detail: "Luneth's 'archive tree + index' choice. log.jsonl stays the unsharded canonical spine (+ git-prefix anchor); the derived human views gain structure. creators_log.py adds _render_block (shared renderer), render_index/write_index (INDEX.md month map: count + kind tally + digest link), month_of/month_set/render_month/write_months (digests/YYYY-MM.md, full entries), a recent-window cap on render_digest (DIGEST_RECENT=200, header \u2192 INDEX.md), and regenerate_all() called from append/digest so LOG.md + embed + INDEX + monthly digests stay byte-fresh together. New invariant creators_log_archive_synced (warning) is truth-anchored: INDEX.md == render_index() and each digests/*.md == render_month(ym), month set from log.jsonl, no missing/extra files \u2014 this is where full-history human fidelity is now proven (digest_synced only covers LOG.md's window). README documents the new layout + the embed/archive invariants. Verified: invariants 25/25; INDEX + digests/2026-06.md render cleanly (10 entries, full detail, back-links); LOG.md recent-window matches. Deferred: cap the L2 embed to recent-N when it grows large. Next: Journey J1-J4, then command palette." }, { id: "lg_mqq95orc_m6l3l3", ts: "2026-06-23T06:17:33.336269+00:00", surface: "journey", kind: "round-close", summary: "Journey J1 shipped: the state engine. Replaced the throwing scaffold with a real \xA731 events ledger + private check-ins + a \xB17-day cross-ref walker, all Zod-validated. No fake seed \u2014 fills from real activity. Board 25/25; engine functionally smoke-tested.", detail: "First of ~4 Journey chunks (J1 engine \u2192 J2 view \u2192 J3 wiring \u2192 J4 probe). New core/schemas/journey.ts (EventKind/JourneyEvent/Checkin + storage shapes, types inferred). state/journey.ts: listEvents(sinceISO?)/listCheckins() read via getValidated; logEvent()/logCheckin() are the only \xA731 writers to wallachJourneyEvents_v1/wallachJourneyCheckins_v1 (auto id, FIFO cap 5000, emit journey:changed); crossRefForCheckin() = the \xB17-day local correlation walker (check-ins stay private, never exported). core/events.ts: journey:event-logged \u2192 journey:changed {reason}. Verified: tsc strict + esbuild OK; invariants 25/25; esbuild-bundled functional smoke vs a localStorage shim PASS (persistence, newest-first, sinceISO, cross-ref include/exclude, corrupt-LS-empty). No render probe yet (pure state; view verified at J4). Next: J2 the 4-tab drawer view." }, { id: "lg_mqqa4z6g_mshacn", ts: "2026-06-23T06:44:59.800202+00:00", surface: "genesis", kind: "milestone", summary: "Genesis boot system shipped: typing 'genesis' now runs tools/genesis.py \u2014 a one-command session boot (banner + scoreboard + the live pass-off) that hands a fresh session past depth instantly + ends with an action question. Renamed sunjo/ \u2192 genesis/.", detail: "Formalizes the per-session catch-up rather than reinventing it: chronicle/next-chunk.md stays the SINGLE live rolling pass-off (no parallel file); genesis.py reads it + runs the integrity scoreboard (invariants), build-parity, last Creator's Log entry, build-log tail, and prints the next-chunk LATEST\u2192NEXT-ORDER block, closing with a cue to ask 'resume X or redirect?'. sunjo/ \u2192 genesis/ via git mv (history preserved): the folder now houses the boot system + the archived original Cowork pass-off (01/02); genesis/README documents the two-pass-off model. CLAUDE.md Genesis section rewritten (net -1 line, 195/200) to point at the command + mandate the action question; all LIVE sunjo path refs \u2192 genesis/ (history left truthful). Mechanically safe (no tool/hook/invariant referenced sunjo). Verified: genesis.py boots cleanly; invariants 25/25. Next: Journey J2." }, { id: "lg_mqqqtit6_5uctcj", ts: "2026-06-23T14:31:58.842948+00:00", surface: "journey", kind: "round-close", summary: "Journey J2 \u2014 views/journey.ts 4-tab drawer renderer + LOG EVENT/check-in forms; mirrors knowledge.ts, reads only via state layer, zero inline literals. Also implemented read side of state/goals.ts (+ new core/schemas/goals.ts). Board 25/25, probes pass.", detail: "Replaced the throwing views/journey.ts scaffold with a real renderer using self-namespaced jd-* classes (parallel to Knowledge's kd-*; the v3 proposal's generic .timeline/.goal-card/.milestone would collide with legacy-dashboard.css \u2014 jd-* CSS is the Round-6 polish pass). Timeline groups events into calendar-day buckets (Map, newest-first, kind->glyph/accent, relative-time + delta); Goals shows progress bar + blockers + featured; Check-ins (private) renders 5-pip severity + tags + the +/-7-day cross-ref as 'CROSS-REF \xB7 <top event>'; Milestones distinguishes earned/locked/fresh-under-24h. The footer LOG EVENT primary + the Check-ins quick-entry open inline forms calling journey.logEvent()/logCheckin() with bounded inputs (maxlength + slice + clampSeverity + EventKindSchema.safeParse). To avoid crashing on the still-scaffolded goals state, implemented its READ side: new core/schemas/goals.ts (GoalSchema/MilestoneSchema + LS shapes, .optional() not .default() to keep input==output types) + Zod-validated listGoals/listMilestones (bad LS -> empty); evaluateMilestoneTriggers stays a deferred throw. Verified: tsc strict + esbuild OK (main.js 307.6 KB; journey code is tree-shaken from the runtime bundle until J3 calls mount() \u2014 tsc is the compile gate); eslint clean on all 4 files; invariants 25/25 (0 new reds); coverage + knowledge render probes PASS. No journey render probe yet \u2014 the drawer mount is J3 and the visual probe is J4 (honesty rule). NEXT: J3 \u2014 shared K+J mount/toggle/keys helper + auto-derive subscriptions." }, { id: "lg_mqqsqygj_fmu96a", ts: "2026-06-23T11:25:58.387680-04:00", surface: "tooling", kind: "design-decision", summary: "Creator's Log timestamps now store machine-LOCAL time (auto-follow ET->CT + DST) instead of UTC. _now_iso uses datetime.now().astimezone(); _fmt_ts derives the zone from the stored offset. Historical UTC entries stay UTC (immutable ledger).", detail: "Luneth flagged that log times read in UTC (an entry made at 10:31 EDT showed as 14:31 / 06:44), confusing against his local clock, and that he's moving ET->CT next week. Chose auto-follow-local over hard-pinning CT so it adapts to the move + DST with zero maintenance. Two-line change in tools/creators_log.py: _now_iso() now returns datetime.now().astimezone().isoformat() (local-aware, carries the offset); _fmt_ts() derives the zone label from the parsed offset (%Z) instead of hardcoding 'UTC'. The slice-based renderers (genesis last-log line, Profile panel formatTs) need no change \u2014 they read the stored wall-clock directly, so new entries show local automatically. The ~13 pre-change entries stored +00:00 stay UTC (the ledger is append-only/immutable; never rewriting history). This entry is the first stored in local time." }, { id: "lg_mqqt86uf_88lvtm", ts: "2026-06-23T11:39:22.407988-04:00", surface: "discipline", kind: "design-decision", summary: "Codified the visual/human-verification gate (.claude/rules/visual-verification.md + CLAUDE.md row): for any page/visual/UX work Luneth is the test gate \u2014 build a chunk to 'done', STOP, he visually verifies, only then continue. Never chain past a STOP; certainty != truth.", detail: "Luneth elevated the per-page build method to a non-negotiable rule. Automated gates (build/invariants/probes) prove only the functional layer; the subjective/visual layer can ONLY be verified by his eyes. The discipline: build in phases (respect resource usage) -> build to 'done' or one verifiable chunk -> STOP -> he visually verifies/course-corrects/adds/changes mind -> only then log + continue. Never advance past a STOP without his go-ahead; never claim he verified what he didn't; never treat agent-certainty as truth. This is build>test>log>repeat with Luneth as tester, and the guardrail that would have caught the unstyled-drawer drift. Documented as a behavioral discipline (like the source-rule turn-gap), not a Python invariant; the structural guarantee is that visual chunks END at a STOP by default. NEXT: Coverage as first gold-standard page." }, { id: "lg_mqqxdip7_mg7c11", ts: "2026-06-23T13:35:29.515119-04:00", surface: "coverage", kind: "milestone", summary: "Coverage Phase 1 \u2014 shell now ~pixel-exact to v3.2 (Luneth verified). Fixed via new tools/style_diff.js: legacy 15px root + bare header/footer selectors bleeding into the .app-* shell; in-housed the missing Chakra Petch/Bruno Ace fonts. Visual-match lesson codified.", detail: "First gold-standard surface phase under the visual-verification gate (build -> STOP -> Luneth verifies -> commit). An objective computed-style diff (new tools/style_diff.js, live shell vs the v3.2 mockup) drove it from ~50 diffs to 0 meaningful, replacing eyeballing. Two systemic root causes: (1) legacy-dashboard.css html,body{font-size:15px} shrank the whole rem UI to 93.75% -> removed, 16px root re-scales the entire coverage page; (2) legacy bare element selectors (header/footer/html,body) bled into the new .app-* shell (14px radius, teal shadow+border, a header::before veil over .app-topbar hiding its accents + fading the search, teal text) -> scoped to #legacy-workspace-host + doc-level overrides removed (grep [v3-contain]). Also in-housed the v3.2 fonts (Chakra Petch + Bruno Ace; wired but never procured -> @font-face 404 -> Space Grotesk fallback). Lesson codified in .claude/rules/visual-verification.md 'Getting to exact'. NEXT: finish Coverage hero/periodic/sidebar vs v3.2; CODEX dynamic version; alien-glyph cipher." }, { id: "lg_mqr73n9n_p9z964", ts: "2026-06-23T18:07:45.035981-04:00", surface: "dashboard/legacy-css", kind: "round-close", summary: "Sever-Safety: scoped all 24 legacy-dashboard.css leak vectors under :where(#legacy-workspace-host); moved the globals the shell was secretly inheriting into dashboard.css; new critical invariant legacy_css_contained makes the leak impossible. Luneth-verified.", detail: "Audit (Luneth's 'total clean cut' ask) confirmed the legacy->v3 sever is clean at the markup level (one #legacy-workspace-host div, R2->R5 deletion schedule) but was leaky at the CSS level with no enforcement. The parked legacy stylesheet (loaded after the v3 design system) had 24 bare element/universal selectors (teal h2/h3/table, @media header, *, html/body) that bleed into the .app-* shell; only the 4 that already bit were hand-patched. Fix: :where(#legacy-workspace-host) scoping (zero added specificity -> legacy cascade preserved byte-for-byte) + html,body/body collapsed onto the host. Critical mid-chunk catch: the pixel-exact shell was silently riding on legacy's leaked star{box-sizing} + html,body font-smoothing (the sealed v3 token sheet scopes those to .ds-canvas only, which .app-shell doesn't use), so moved box-sizing/smoothing/line-height into dashboard.css. New critical invariant legacy_css_contained: deterministic re-parse, no bare element/star/non-var :root selector may ever exist; proven with a negative test. Verified 24->0 leak vectors, style_diff 4 live-better residuals only, invariants 26/26, render probes 0 errors." }, { id: "lg_mqrf7brf_5o0xqy", ts: "2026-06-23T21:54:33.675631-04:00", surface: "journey", kind: "round-close", summary: "Journey J3+J4: mounted the J2 view (kills the last legacy teal; shared K+J registry -> J rail/Esc/bare-J open the new drawer) + auto-derive; styled the whole drawer to the v3 mockup (jd-* scoped to #drawer-journey-mount); topbar BRAIN->CODEX. Board 26/26.", detail: "J3 generalized the Knowledge-only drawer wiring in main.ts into a shared K+J registry (DRAWER_SPECS: mountDrawers/toggleDrawer/wireDrawerKeys/closeAllDrawers); the J rail item + Esc + bare-J now open the new jd-* drawer instead of the legacy #tab-journey teal tab. Auto-derive: scanner:scan-complete / regimen add-remove-restore / goals:updated -> journey.logEvent (excludes high-frequency coverage:recomputed + dose-edit to avoid flooding). drawer-journey.css ports the v3 mockup vocabulary onto the view's jd-* classes, every rule rooted at #drawer-journey-mount so it cannot leak (Sever-Safety lesson applied preemptively): panel + chrome + all 4 tabs + the quick-checkin entry button + inline forms. Built in 2 visual-verified phases. CODEX: the 2 visible topbar BRAIN refs renamed; v3.27 kept (consistent with footer + versions-data, no drift); full v1.0 stamp queued. New tools/render_probe_journey.js: 13 checks incl. legacy-host-not-shown (teal-kill proof). Knowledge drawer still unstyled by design (identical shell; drawer-journey.css is the template)." }, { id: "lg_mqrlsxe3_47za1h", ts: "2026-06-24T00:59:19.179850-04:00", surface: "knowledge", kind: "round-close", summary: "Knowledge drawer SHIPPED to gold-standard: shared-chrome refactor + full kd-* styling + Essentials deep-dive + 90-essentials/Omega-9 reframe (\xA700.A confirmed) + drawer +100px. Board 26/26.", detail: "Lifted shared drawer chrome into drawer-shared.css (dual jd-*/kd- selectors, both mount-rooted = single source, no leak); kd-* tab-content rename closes the legacy .essential-tile collision. Essentials tab rebuilt layout-driven (all shown, real symbols, coverage-state colors from the same CoverageSnapshot classifier) + click-to-expand Wallach deep-dive (quote/citation + matchEssential vault chips). Omega-9 flagged essential:false in coverage-layout-data.json (single source) -> always 90; teal --bonus tile + on-click non-essential note, coverage math retained. Caught + fixed a */-in-CSS-comment that silently dropped the journey panel width:600 (probe caught 580px). Germanium (61st embed mineral, absent from layout) flagged for next-genesis reconciliation; all live 91/92 instances inventoried in next-chunk.md. Verified: build OK, invariants 26/26, knowledge/journey/coverage/seeded probes green, Luneth visually verified." }, { id: "lg_mqrurhp1_wezm0z", ts: "2026-06-24T05:10:08.725846-04:00", surface: "coverage/essentials", kind: "round-close", summary: "90-essentials correctness: Germanium replaces Fluoride in the 60 (Wallach 60-graphic, 4x-confirmed); Fluoride scrubbed pending corpus audit; count unified at 90 via essentialCount(); all names shown full; vitamin/amino tiles unified to mineral format + gap fixed.", detail: "Files: essentials-targets.json, essentials-targets-data (embed+json), essentials-benefits-data, coverage-layout-data, state/coverage.ts (essentialCount helper), views/{coverage,scanner,regimen}, core/schemas/knowledge, workspace-coverage.css, render_probe_seeded. Verified: build OK, 26/26 invariants (embed-sync=91), 5 render probes green, 0 clipped names. Record: chronicle/contradictions/2026-06-24-germanium-replaces-fluoride.md. Open for corpus audit: Fluoride re-adjudication + hallucination provenance + Cysteine-vs-Taurine." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -8486,11 +8501,11 @@
 
   // assets/js/src/views/regimen.ts
   var SLOT_PLACEHOLDERS = [
-    { id: "slot-01", num: "01", serial: "01\xB7A23F", name: "Travel Pack", items: 6, coverage: 31, total: 92, stamp: "SAVED \xB7 2D AGO" },
-    { id: "slot-02", num: "02", serial: "02\xB7F71D", name: "Daily Protocol", items: 9, coverage: 47, total: 92, stamp: "EDIT 0:14 AGO", active: true },
-    { id: "slot-03", num: "03", serial: "03\xB7C8B2", name: "Sleep Stack", items: 4, coverage: 18, total: 92, stamp: "SAVED \xB7 1W AGO" },
-    { id: "slot-04", num: "04", serial: "04\xB7E901", name: "Recovery Ramp", items: 11, coverage: 54, total: 92, stamp: "SAVED \xB7 3W AGO" },
-    { id: "slot-05", num: "05", serial: "", name: "", items: 0, coverage: 0, total: 92, stamp: "", empty: true }
+    { id: "slot-01", num: "01", serial: "01\xB7A23F", name: "Travel Pack", items: 6, coverage: 31, total: essentialCount(), stamp: "SAVED \xB7 2D AGO" },
+    { id: "slot-02", num: "02", serial: "02\xB7F71D", name: "Daily Protocol", items: 9, coverage: 47, total: essentialCount(), stamp: "EDIT 0:14 AGO", active: true },
+    { id: "slot-03", num: "03", serial: "03\xB7C8B2", name: "Sleep Stack", items: 4, coverage: 18, total: essentialCount(), stamp: "SAVED \xB7 1W AGO" },
+    { id: "slot-04", num: "04", serial: "04\xB7E901", name: "Recovery Ramp", items: 11, coverage: 54, total: essentialCount(), stamp: "SAVED \xB7 3W AGO" },
+    { id: "slot-05", num: "05", serial: "", name: "", items: 0, coverage: 0, total: essentialCount(), stamp: "", empty: true }
   ];
   var RECOMMENDATIONS = [
     { name: "CHEWABLE VITAMIN D3", contribution: 12, heat: "xl", reason: "Closes 12 trace tiles via the PDM-aggregate vehicle. Single-serve daily, neutral taste." },
@@ -8625,7 +8640,7 @@
           </div>
           <div class="active-slot__stat">
             <span class="active-slot__stat-num">${coverageCount}</span>
-            <span class="active-slot__stat-den">/ 92</span>
+            <span class="active-slot__stat-den">/ ${essentialCount()}</span>
             <span class="active-slot__stat-label">essentials<br>covered</span>
           </div>
         </div>
@@ -9213,7 +9228,7 @@
         </div>
         <div class="verdict__stats">
           <div class="verdict-stat">
-            <div class="verdict-stat__num">+${added}<small>/92</small></div>
+            <div class="verdict-stat__num">+${added}<small>/${essentialCount()}</small></div>
             <div class="verdict-stat__label">essentials added to coverage</div>
           </div>
           <div class="verdict-stat">

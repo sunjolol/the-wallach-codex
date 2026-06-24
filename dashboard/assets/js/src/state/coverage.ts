@@ -2,7 +2,7 @@
  * state/coverage.ts — periodic-table coverage state + live classifier
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * Owns the answer to "which of the 92 essentials does the active regimen
+ * Owns the answer to "which of the 90 essentials does the active regimen
  * cover, and how heavily." Builds a typed CoverageSnapshot keyed by the
  * canonical essential name — the single source of the live numbers consumed by
  * views/coverage.ts (hero count + per-section counts + per-tile status). The
@@ -10,7 +10,7 @@
  * `key` field, which equals the essential `name` here.
  *
  * DATA SOURCE:
- *   The 92 essentials come from the embedded `essentials-targets-data` block —
+ *   The essentials come from the embedded `essentials-targets-data` block —
  *   the Wallach targets DB, owned by Luneth. Read via getElementById +
  *   JSON.parse + Zod (same boundary discipline as views/knowledge.ts).
  *
@@ -41,12 +41,15 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
+import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import { emit, on } from '../core/events.js';
 import {
+  CoverageLayoutSchema,
   type CoverageTarget,
   CoverageTargetSchema,
   type Essential,
   EssentialsDataSchema,
+  type LayoutTile,
   RegimenNutrientSchema,
 } from '../core/schemas/index.js';
 import { onChange } from '../core/storage.js';
@@ -120,6 +123,36 @@ function catFromTarget(raw: string): TileCategory {
 
 function buildTileId(name: string): TileId {
   return `tile_${name.toLowerCase().replace(/\W+/g, '_')}`;
+}
+
+// ─── Essential membership — single source for the "90" count ───────────────
+
+/**
+ * The periodic-table presentation layout. Single source for which essentials
+ * exist and which count toward Wallach's 90: a tile flagged `essential: false`
+ * (Omega-9 / oleic — body-synthesizable) is shown for completeness but NOT
+ * counted. The targets-DB embed carries the per-essential dose; the layout
+ * carries essentiality. §00.A: the count traces to Wallach's "90 Essential
+ * Nutrients" enumeration (60 minerals + 16 vitamins + 12 amino acids + 2 EFAs).
+ */
+const LAYOUT = CoverageLayoutSchema.parse(coverageLayoutData);
+
+function layoutTiles(): readonly LayoutTile[] {
+  return LAYOUT.sections.flatMap(s =>
+    s.subsections !== undefined
+      ? s.subsections.flatMap(sub => sub.tiles)
+      : (s.tiles ?? []),
+  );
+}
+
+/** Canonical names the layout marks non-essential — excluded from the count. */
+const NON_ESSENTIAL_NAMES: ReadonlySet<string> = new Set(
+  layoutTiles().filter(t => t.essential === false).map(t => t.key),
+);
+
+/** Count of Wallach essentials (layout tiles where `essential !== false`) — 90. */
+export function essentialCount(): number {
+  return layoutTiles().filter(t => t.essential !== false).length;
 }
 
 // ─── Targets DB read (Zod-validated at the boundary) ───────────────────────
@@ -409,16 +442,18 @@ export function recompute(): CoverageSnapshot {
     byCategory[tile.category] = bucket;
   }
 
-  const coveredCount = tiles.filter(t => t.covered).length;
+  const countedTiles = tiles.filter(t => !NON_ESSENTIAL_NAMES.has(t.name));
+  const coveredCount = countedTiles.filter(t => t.covered).length;
+  const totalCount = countedTiles.length;
   cachedSnapshot = {
     tiles,
     coveredCount,
-    totalCount: tiles.length,
+    totalCount,
     computedAt: new Date().toISOString(),
     byCategory,
   };
 
-  emit('coverage:recomputed', { coveredCount, totalCount: tiles.length });
+  emit('coverage:recomputed', { coveredCount, totalCount });
   return cachedSnapshot;
 }
 
