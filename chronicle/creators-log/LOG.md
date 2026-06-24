@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_38 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_39 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-24 19:12 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 1: Rare Earths Preface (xvii-xix) reflowed + 6 thesis claims sealed (kv 19→20, RARE 18→24, 118 total). corpus_resnap healed 4/relocated 13/0 broken — the OCR-correction pipeline works end-to-end. Luneth-approved.
+  ↳ First real exercise of the full OCR-correction pipeline: render scanned PDF page -> read at high DPI -> safe_write reflow of the book text -> corpus_resnap (re-hash books-meta + heal/relocate existing claims) -> finalize new claims (verbatims snap to cleaned bytes) -> corpus_seal -> corpus_embed -> build -> invariants 30/30. 6 net-new Preface thesis claims (WAL-CLM-RARE-000019..24): population doubling-time collapse; 75.5y US lifespan=62% of 120-140y potential, 17th rank; no lifestyle movement extends lifespan; the 90 essentials no longer reliably in food; genetic engineering can't substitute for raw materials (Mercedes-without-oil); the 5+ ancient longevity cultures via plant-derived colloidal minerals. Process lesson: the Preface .txt OCR was high-quality; trust it as base, verify at high DPI, fix only genuine errors (one: Biosphere Il->II). Caught + corrected a gist-read error in my own fringe file (dead->steal records) — careful word-level reading matters. Criminal-behavior passages filed to knowledge/fringe-knowledge/, never front-facing.
 
 ## 2026-06-24 18:51 UTC-04:00 · design-decision · knowledge
 Fringe containment zone established per Luneth's ruling: knowledge/fringe-knowledge/ with one file per category (criminal-behavior, social-emotional-defects) + README. Criminal-behavior content filed there, never front-facing, for his later manual review.

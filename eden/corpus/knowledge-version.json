@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "_doctrine": "Monotonic seal stamp for eden/corpus (mirrors eden_version). User-only-writer via corpus_seal.py.",
-  "knowledge_version": 19,
-  "sealed_at": "2026-06-24T20:45:54+00:00",
+  "knowledge_version": 20,
+  "sealed_at": "2026-06-24T23:02:14+00:00",
   "status": "sealed",
-  "note": "Sealed at knowledge_version=19. 112 claims across 2 book shard(s)."
+  "note": "Sealed at knowledge_version=20. 118 claims across 2 book shard(s)."
 }

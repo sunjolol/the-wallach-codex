@@ -17,7 +17,7 @@ need the 90 essential nutrients daily, citing 1,000,000 US prisoners.
 ### Preface (p. xviii) — Biospherians' "criminal behavior"
 Summary: Wallach cites two Biosphere II participants breaking into sealed records
 after their two-year low-calorie confinement as "criminal behavior."
-> "In addition, two of the Biospherians a short time after their scheduled exit from the dome illegally broke into dead records- criminal behavior!"
+> "In addition, two of the Biospherians a short time after their scheduled exit from the dome illegally broke into steal records- criminal behavior!"
 
 ### Ch.6 "The Verdict" — mineral deficiency → violent / criminal behavior
 Wallach's most fringe thesis: that violent crime and serial murder are downstream

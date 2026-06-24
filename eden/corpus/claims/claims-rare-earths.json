@@ -19,7 +19,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 81460
+        "char_offset": 81424
       },
       "dose": null,
       "tags": [
@@ -49,7 +49,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 80948
+        "char_offset": 80912
       },
       "dose": null,
       "tags": [
@@ -83,7 +83,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 82692
+        "char_offset": 82656
       },
       "dose": null,
       "tags": [
@@ -140,7 +140,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach cites U.S. Senate Document 264 (1936) and the 1992 Rio Earth Summit report on soil mineral-depletion rates: the world's farm and range soils are 'anemic' — soils that should contain 60 elements have few or none.",
-      "verbatim": "U.S Senate Document 264 (1936) and the 1992 Earth Summit Report (Rio) on mineral\ndepletion rates of the world's farm and range soils point out graphically that our Earth's soils\nare anemic - the soil should contain 60 of them, there are few or none!",
+      "verbatim": "U.S Senate Document 264 (1936) and the 1992 Earth Summit Report (Rio) on mineral depletion rates of the world's farm and range soils point out graphically that our Earth's soils are anemic - the soil should contain 60 of them, there are few or none",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -170,7 +170,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach puts the human genetic potential for longevity at 120 to 140 years — the US average life span falls as much as 50% short of it.",
-      "verbatim": "falls\nfar short (as much as 50% short) of our human genetic potential for longevity of 120 to 140\nyears.",
+      "verbatim": "falls far short (as much as 50% short) of our human genetic potential for longevity of 120 to 140 years",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -178,7 +178,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 29488
+        "char_offset": 29464
       },
       "dose": null,
       "tags": [
@@ -200,7 +200,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach argues the extended rat lifespans in calorie-restriction studies came not from fewer calories but from the higher concentration of minerals per calorie in the diet.",
-      "verbatim": "It is not the reduced calorie level that gave the rats their extended life spans by 30, 40 and\n50%, but rather it is the increased concentration of mineral per calorie in the diet",
+      "verbatim": "It is not the reduced calorie level that gave the rats their extended life spans by 30, 40 and 50%, but rather it is the increased concentration of mineral per calorie in the diet",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -208,7 +208,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 30480
+        "char_offset": 30456
       },
       "dose": null,
       "tags": [
@@ -232,7 +232,7 @@
         "pica"
       ],
       "claim_text": "After two years of minimal-calorie intake in Biosphere II, five of the six Biospherians craved only pizza and junk food — which Wallach reads as a manifestation of pica (mineral hunger).",
-      "verbatim": "five of the six Biospherians (excluding Walford) wanted only pizza\nand junk food (a manifestation of pica)",
+      "verbatim": "five of the six Biospherians (excluding Walford) wanted only pizza and junk food (a manifestation of pica",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -240,7 +240,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 30887
+        "char_offset": 30863
       },
       "dose": null,
       "tags": [
@@ -270,7 +270,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 35455
+        "char_offset": 35419
       },
       "dose": null,
       "tags": [
@@ -307,7 +307,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 402518
+        "char_offset": 402482
       },
       "dose": null,
       "tags": [
@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817890
+        "char_offset": 817854
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 818092
+        "char_offset": 818056
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817654
+        "char_offset": 817618
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 772581
+        "char_offset": 772545
       },
       "dose": {
         "amount": "250-400",
@@ -488,7 +488,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 392896
+        "char_offset": 392860
       },
       "dose": null,
       "tags": [
@@ -520,7 +520,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 393673
+        "char_offset": 393637
       },
       "dose": null,
       "tags": [
@@ -551,7 +551,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 474042
+        "char_offset": 474006
       },
       "dose": null,
       "tags": [
@@ -581,7 +581,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 474666
+        "char_offset": 474630
       },
       "dose": null,
       "tags": [
@@ -592,6 +592,193 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-24T20:45:46+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000019",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The human population's doubling time has collapsed — 100,000 years before written history, 700 years after the dawn of agriculture, and only 35 to 40 years today — intensifying the competition for the body's basic raw materials.",
+      "verbatim": "Before written history, it took 100,000 years to double the Earth’s human populations; after the dawn of agriculture, (5,000 to 8,000 years ago) it took 700 years to double the population of human kind; today at the brink of the 21st century, it takes only 35 to 40 years to double our numbers!",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Preface",
+        "page": "xvii",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 26173
+      },
+      "dose": null,
+      "tags": [
+        "thesis",
+        "population",
+        "raw-materials"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T23:01:47+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000020",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The 75.5-year average American lifespan is only 62% of the human genetic potential for longevity of 120 to 140 years and ranks 17th among industrialized nations — falling as much as 50% short of that potential.",
+      "verbatim": "The 75.5 year average life span for Americans places us at 17th in longevity when we are compared with the other industrialized nations and this level of boastful “success” falls far short (as much as 50% short) of our human genetic potential for longevity of 120 to 140 years.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Preface",
+        "page": "xviii",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 29291
+      },
+      "dose": null,
+      "tags": [
+        "thesis",
+        "longevity",
+        "genetic-potential"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T23:01:47+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000021",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Popular health movements — vegetarianism, macrobiotics, biofeedback, meditation, exercise, yoga, free medical care — have not extended the American lifespan beyond 75.5 years, only 62% of the 120-to-140-year genetic potential.",
+      "verbatim": "evangelize vegetarianism, macrobiotics, biofeedback, meditation, exercise, pure thought, yoga and free medical care for all (usually vote-buying politicians!); yet none of these practices have extended the human lifespan in America to more than 75.5 years- only 62% of our human genetic potential for longevity of 120 to 140 years.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Preface",
+        "page": "xvii",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 26873
+      },
+      "dose": null,
+      "tags": [
+        "thesis",
+        "lifestyle-movements",
+        "longevity"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T23:01:47+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000022",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The full complement of 90 essential nutrients once present in Earthly foods is no longer reliably there — either totally absent or so highly variable that obtaining them from food alone is a gamble.",
+      "verbatim": "Unfortunately, the entire complement of the 90 essential nutrients required for optimal health and longevity historically found in our Earthly foods are no longer there - they are either totally absent or their availability is so highly variable that your chances of obtaining them from food alone is more of a gamble than a Las Vegas “crap-shoot”!!!",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Preface",
+        "page": "xvii",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 28113
+      },
+      "dose": null,
+      "tags": [
+        "thesis",
+        "90-essentials",
+        "food-depletion"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T23:01:47+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000023",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Genetic potential is meaningless without the basic mineral raw materials to support development and maintenance — Wallach likens engineered flesh without minerals to running a Mercedes with no oil or coolant.",
+      "verbatim": "genetic potential without the basic raw materials to support the process of development and extended maintenance of the flesh is inherently faulty in its premise!!",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Preface",
+        "page": "xix",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 32205
+      },
+      "dose": null,
+      "tags": [
+        "thesis",
+        "genetic-engineering",
+        "raw-materials"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T23:01:47+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000024",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach identifies ancient, diverse cultures that reach the 120-to-140-year longevity potential disease-free — Tibetans, Russian Georgians, Armenians, Azerbaijanis, Abkhazians, Hunzakuts, Vilcabambas, the Titicacas — through access to plant-derived colloidal minerals (rare earths).",
+      "verbatim": "If you access and plug into the plant derived RARE EARTHS used for thousands of years by certain tribes of Tibetans, Russian Georgians, Armenians, Azerbaijanies, Abkhazians, Hunzakuts, Vilcabambas or the Titicacas you can make it too!!!",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Preface",
+        "page": "xix",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 34989
+      },
+      "dose": null,
+      "tags": [
+        "thesis",
+        "longevity-cultures",
+        "colloidal-minerals",
+        "rare-earths"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T23:01:47+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }
