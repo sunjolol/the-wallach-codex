@@ -470,6 +470,827 @@
       "extracted_at": "2026-06-24T17:27:11+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000015",
+      "kind": "prevalence",
+      "essentials": [
+        "chromium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Per USDA researcher Richard Anderson, 90 percent of Americans are deficient in chromium.",
+      "verbatim": "According to Richard Anderson, USDA, “Ninety percent of\nall Americans are deficient in chromium.”",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 521366
+      },
+      "dose": null,
+      "tags": [
+        "deficiency-prevalence"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:36:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000016",
+      "kind": "prognosis",
+      "essentials": [
+        "chromium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Chromium supplementation increased laboratory-animal lifespan by 33.3 percent (Gary Evans, Bemidji State University).",
+      "verbatim": "Gary Evans, Bemidji State University, Minnesota, very clearly showed an\nincreased life span in laboratory animals by 33.3 percent when they were\nsupplemented with chromium.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 521464
+      },
+      "dose": null,
+      "tags": [
+        "longevity"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:36:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000017",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "chromium",
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "hypoglycemia",
+        "diabetes",
+        "coronary_artery_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Chromium deficiency produces a wide range of clinical diseases (low blood sugar, type II diabetes, elevated triglycerides/cholesterol, coronary vessel disease, infertility) and a shortened lifespan, aggravated by concurrent vanadium deficiency.",
+      "verbatim": "Deficiencies of chromium in humans are\ncharacterized by a wide variety of clinical diseases as well as a shortened\nlife expectancy. The clinical diseases of chromium deficiency are\naggravated by concurrent vanadium deficiencies.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 521790
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:36:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000018",
+      "kind": "protocol",
+      "essentials": [
+        "cesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Cesium chloride is used in alternative cancer therapy ('high-pH therapy'), entering the cancer cell to produce an alkaline environment.",
+      "verbatim": "Cesium chloride is used as part of alternative cancer therapy programs.\nCesium provides “high ph therapy” for cancer by entering the cancer cell\nand producing an alkaline environment.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 523280
+      },
+      "dose": null,
+      "tags": [
+        "cancer-protocol"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:36:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000019",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "iron"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [
+        "pica"
+      ],
+      "claim_text": "Pica (a compulsion to eat ice, dirt, or lead paint) is a specific sign of iron deficiency.",
+      "verbatim": "Experimental evidence shows very clearly that “pica” is a specific sign of\niron deficiency. Pica can drive children and adults to eat ice (pagophagia),\ndirt (geophagia), or lead paint.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 534803
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:36:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000020",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "iron"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anemia"
+      ],
+      "symptoms": [],
+      "claim_text": "Iron deficiency symptoms include fatigue, heart palpitations on exertion, reduced cognition and memory, sore tongue, and hypochromic microcytic anemia.",
+      "verbatim": "Symptoms of iron deficiency\ninclude listlessness, fatigue, heart palpitations on exertion, reduced\ncognition, memory deficits, sore tongue, angular stomatitis dysphagia, and\nhypochromic microcytic anemia.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 535312
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:36:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000021",
+      "kind": "interaction",
+      "essentials": [
+        "iron",
+        "vitamin-c"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Ascorbic acid (vitamin C) increases iron absorption; clays and phytates decrease it.",
+      "verbatim": "Ascorbic acid increases the absorption of iron;\nclays and phytates decrease the absorption of iron.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 535587
+      },
+      "dose": null,
+      "tags": [
+        "absorption"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:36:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000022",
+      "kind": "contraindication",
+      "essentials": [
+        "iron"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "liver_cirrhosis",
+        "diabetes",
+        "heart_failure"
+      ],
+      "symptoms": [],
+      "claim_text": "Excess iron can cause liver cirrhosis, pancreatic fibrosis, diabetes, and heart failure (largely by raising the need for selenium, copper, and zinc).",
+      "verbatim": "Excesses of iron can cause cirrhosis of the liver, fibrosis of the pancreas,\ndiabetes, and heart failure.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 535789
+      },
+      "dose": null,
+      "tags": [
+        "excess"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:36:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000023",
+      "kind": "mechanism",
+      "essentials": [
+        "iodine",
+        "tyrosine"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "hypothyroidism"
+      ],
+      "symptoms": [],
+      "claim_text": "Iodine combines with the amino acid tyrosine to manufacture the thyroid hormone thyroxin.",
+      "verbatim": "In combination with the amino acid tyrosine,\niodine is manufactured into the thyroid hormone thyroxin.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 548505
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:36:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000024",
+      "kind": "prevalence",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "goiter",
+        "hypothyroidism"
+      ],
+      "symptoms": [],
+      "claim_text": "Since Americans began restricting salt intake on doctors' advice, goiter and hypothyroidism have become epidemic (iodized salt was a key iodine source).",
+      "verbatim": "Iodine intake is\nusually low to begin with, but since Americans have begun restricting their\nsalt intake at the advice of their doctors, goiter and hypothyroidism has\nbecome epidemic.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 548608
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:36:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000025",
+      "kind": "interaction",
+      "essentials": [
+        "iodine",
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "goiter"
+      ],
+      "symptoms": [],
+      "claim_text": "Copper is a required cofactor to utilize iodine; copper deficiency can drive an iodine-deficiency (goiter) state even where soil iodine is adequate.",
+      "verbatim": "A severe copper deficiency\nin the soils of the north and the south cause the deficiency state because\ncopper is a required cofactor to utilize iodine.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 549627
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:36:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000026",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "manganese"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "carpal_tunnel_syndrome",
+        "tmj",
+        "asthma",
+        "congenital_ataxia",
+        "repetitive_motion_syndrome"
+      ],
+      "symptoms": [],
+      "claim_text": "Manganese deficiency causes birth defects (congenital ataxia, deafness), asthma, convulsions, skeletal defects, and joint problems including TMJ, repetitive motion syndrome, and carpal tunnel syndrome.",
+      "verbatim": "Deficiency diseases of Mn are very striking, ranging from severe birth\ndefects (congenital ataxia, deafness, chondrodystrophy), asthma,\nconvulsions, retarded growth, skeletal defects, disruption of fat and\ncarbohydrate metabolism to joint problems in children and adults (i.e. TMJ,\nRepetitive Motion Syndrome, Carpal Tunnel Syndrome).",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 560664
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:36:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000027",
+      "kind": "mechanism",
+      "essentials": [
+        "manganese"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Manganese is structural to the three small ear bones and to joint cartilage.",
+      "verbatim": "Manganese is part of the developmental process and the structure\nof the three fragile ear bones and joint cartilage.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 560342
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:36:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000028",
+      "kind": "mechanism",
+      "essentials": [
+        "molybdenum"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Molybdenum is an integral part of three essential enzymes: xanthine oxidase, aldehyde oxidase, and sulfite oxidase.",
+      "verbatim": "Molybdenum is known to be an integral part of no less\nthan three essential enzymes: Xanthine oxidase, Aldehyde oxidase, and\nSulfite oxidase.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 563459
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:36:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000029",
+      "kind": "mechanism",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Selenium is the most efficient antioxidant, working in the glutathione peroxidase enzyme system to keep body fats from going rancid.",
+      "verbatim": "Selenium is the most efficient antioxidant (anti-peroxident).\nIt’s used at the subcellular level in the glutathione peroxidase enzyme\nsystem and metalloamino acids (selenomethionine, etc.).",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 590949
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:39:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000030",
+      "kind": "mechanism",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "heart_attack",
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "High vegetable-oil intake combined with selenium deficiency is, per Wallach, the quickest route to heart attack and cancer.",
+      "verbatim": "High intakes of vegetable oils,\nincluding salad dressing and cooking oils, concurrent with a selenium\ndeficiency is the quickest route to a heart attack and cancer.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 591599
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:39:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000031",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "tin"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "male_pattern_baldness"
+      ],
+      "symptoms": [
+        "hair_loss",
+        "hearing_loss"
+      ],
+      "claim_text": "Tin deficiency in rats produced poor growth, hearing loss, and bilateral (male-pattern) hair loss; Wallach links tin to male-pattern baldness and hearing loss.",
+      "verbatim": "Rats fed tin at 17.0 ng/gm show poor growth, reduced feeding efficiency,\nhearing loss, and bilateral (male pattern) hair loss, while rats fed 1.99\n|ng/gm were physiologically and anatomically normal.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 599059
+      },
+      "dose": null,
+      "tags": [
+        "iconic"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:39:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000032",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "strontium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "osteoporosis",
+        "arthritis"
+      ],
+      "symptoms": [],
+      "claim_text": "Strontium deficiency is associated with certain calcium- and boron-resistant forms of osteoporosis and arthritis.",
+      "verbatim": "Deficiencies of strontium are associated with certain types of Ca and boron\nresistant osteoporosis and arthritis.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 600284
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:39:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000033",
+      "kind": "mechanism",
+      "essentials": [
+        "strontium",
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Strontium can substitute for calcium in many organisms, including humans, and concentrates in bone.",
+      "verbatim": "where it’s most highly concentrated in mammalian bone. Strontium\ncan replace calcium in many organisms, including man.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 600091
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:39:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000034",
+      "kind": "mechanism",
+      "essentials": [
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "diabetes"
+      ],
+      "symptoms": [],
+      "claim_text": "Vanadium functions like insulin, making cell-membrane insulin receptors more sensitive and aiding glucose/carbohydrate intolerance.",
+      "verbatim": "Vanadium appears to function\nlike insulin by altering cell membrane function for ion transport.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 603611
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:39:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000035",
+      "kind": "prognosis",
+      "essentials": [
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "diabetes"
+      ],
+      "symptoms": [],
+      "claim_text": "Vanadium supplementation can reduce or even eliminate most cases of adult-onset diabetes.",
+      "verbatim": "Vanadium supplementation can have a major positive\neconomic impact by reducing or even eliminating most cases of adult onset\ndiabetes.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 604298
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:39:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000036",
+      "kind": "mechanism",
+      "essentials": [
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Vanadium has anticarcinogenic properties; in mice it blocked induction of mammary tumor growth and reduced tumor incidence.",
+      "verbatim": "Vanadium has known\nanticarcinogenic properties. Feeding 25 |ng of vanadium per gram of diet\nblocked induction of mouse mammary tumor growth.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 604769
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:39:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000037",
+      "kind": "mechanism",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "At least 70 metalloenzymes require zinc as a functional cofactor.",
+      "verbatim": "There are no less than 70 metalloenzymes that require Zn as a\nfunctional cofactor.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 608399
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:39:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000038",
+      "kind": "mechanism",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Zinc is integral to the RNA molecule (the 'metallic fingers') and participates in cell division and DNA synthesis.",
+      "verbatim": "Zinc is also an integral part of the RNA molecule itself where Zinc\nprovides the “metallic fingers” and participates in cell division and\nsynthesis of DNA.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 608860
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:39:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000039",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "birth_defects"
+      ],
+      "symptoms": [],
+      "claim_text": "Zinc deficiency produces a wide range of diseases, including congenital birth defects and degenerative diseases across all age groups.",
+      "verbatim": "Zinc deficiency\nproduces a wide range of diseases including congenital birth defects and\ndegenerative diseases of all age groups.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 607397
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:39:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000040",
+      "kind": "interaction",
+      "essentials": [
+        "zinc",
+        "copper",
+        "iron"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Excess dietary copper and iron, and high-phytate (vegan) diets, reduce the availability of dietary zinc.",
+      "verbatim": "Excesses of dietary copper and iron and high phytate diets (vegans) will\nreduce availability of dietary zinc.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 609102
+      },
+      "dose": null,
+      "tags": [
+        "absorption"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:39:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

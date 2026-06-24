@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_24 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_25 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-24 13:39 UTC-04:00 · round-close · eden/corpus
+Phase β.3+β.4: DDDL extraction at volume — 40 claims sealed (knowledge_version=7) across ~15 minerals from Appendix A (copper/selenium/chromium/vanadium/iron/iodine/zinc/tin/manganese/molybdenum/germanium/silver/cesium/strontium/calcium). 10 of 13 kinds in use. Board 29/29.
+  ↳ Three merge-batches: 14→28→40, ids contiguous WAL-CLM-DDDL-1..40, every verbatim proven an exact book substring. Added kinds interaction/contraindication/protocol. Highlights: tin→male-pattern baldness; vanadium-as-insulin (adult-onset diabetes); selenium glutathione-peroxidase + heart/cancer route; zinc 70 metalloenzymes; chromium 90%-deficient/33% lifespan; iron pica + ascorbate interaction; iodine+tyrosine→thyroxin; cesium high-pH cancer; manganese→carpal tunnel; germanium/silver doses. NEXT: DDDL vitamins+aminos + the disease-protocol chapters, then Phase γ.
 
 ## 2026-06-24 13:27 UTC-04:00 · round-close · eden/corpus
 Phase β.2: claim voice locked (neutral declarative, Luneth-approved) + dose kind added; DDDL re-sealed at 14 claims (knowledge_version=5, 7 kinds). Board 29/29.
