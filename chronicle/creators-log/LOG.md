@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_23 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_24 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-24 13:27 UTC-04:00 · round-close · eden/corpus
+Phase β.2: claim voice locked (neutral declarative, Luneth-approved) + dose kind added; DDDL re-sealed at 14 claims (knowledge_version=5, 7 kinds). Board 29/29.
+  ↳ Luneth ruled claim_text = neutral declarative (no 'Wallach asserts' prefix; attribution lives in verbatim + the all-Wallach corpus). Re-authored the 10 + added 4 incl. first dose claims (germanium 20-30 mg/day maintenance, silver 400 mg/day + mechanism, germanium deficiency). ids restart 1-14. corpus_verify PASS — all 14 verbatims exact book substrings. Granularity: keep faithful list-claims; Phase-δ derive explodes conditions[] into per-condition index entries. NEXT: continue DDDL at volume, then γ books, then δ indices.
 
 ## 2026-06-24 13:14 UTC-04:00 · round-close · eden/corpus
 Phase β.1: DDDL extraction pipeline live + first 10 claims sealed (knowledge_version=4). corpus_extract.py finalize snaps agent-authored verbatims to exact book bytes; corpus_verify proves every verbatim is a real book substring. Board 29/29. Stop for format review.

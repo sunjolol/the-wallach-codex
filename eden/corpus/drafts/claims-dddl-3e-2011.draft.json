@@ -10,7 +10,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach cites an 1895 Journal of the American Medical Association report that the average lifespan of doctors was just 55 years.",
+      "claim_text": "An 1895 Journal of the American Medical Association report found the average lifespan of doctors was just 55 years.",
       "verbatim": "what he discovered, in an 1895 edition of the Journal of the American\nMedical Association was that the average life of doctors was just 55 years.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -29,7 +29,7 @@
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
-      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "extracted_at": "2026-06-24T17:27:11+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     },
@@ -40,7 +40,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach frames the solution as supplementing with plant derived colloidal minerals.",
+      "claim_text": "The corrective action is supplementation with plant derived colloidal minerals.",
       "verbatim": "took positive\naction to enhance their own lives and the lives of others by supplementing\nwith plant derived colloidal minerals.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -59,7 +59,7 @@
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
-      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "extracted_at": "2026-06-24T17:27:11+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     },
@@ -90,7 +90,7 @@
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
-      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "extracted_at": "2026-06-24T17:27:11+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     },
@@ -121,7 +121,7 @@
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
-      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "extracted_at": "2026-06-24T17:27:11+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     },
@@ -140,7 +140,7 @@
         "white_muscle_disease"
       ],
       "symptoms": [],
-      "claim_text": "Wallach lists selenium deficiency as causing infertility, miscarriages, cystic fibrosis of the pancreas, SIDS, white muscle disease, muscular dystrophy, cardiomyopathy, and more.",
+      "claim_text": "Selenium deficiency causes infertility, miscarriages, cystic fibrosis of the pancreas, SIDS, white muscle disease, muscular dystrophy, cardiomyopathy, and more.",
       "verbatim": "Selenium deficiency causes infertility,\nmiscarriages, cystic fibrosis of the pancreas, Sudden Infant Death\nSyndrome in animals, liver cirrhosis, stiff lamb disease, white muscle\ndisease, muscular dystrophy, anemias, encephalomalacia (Alzheimer’s\ndisease), cardiomyopathy heart disease, and mulberry heart disease.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -156,7 +156,7 @@
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
-      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "extracted_at": "2026-06-24T17:27:11+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     },
@@ -172,7 +172,7 @@
         "age_spots",
         "liver_spots"
       ],
-      "claim_text": "An early symptom of selenium deficiency in older humans is the appearance of liver spots or age spots.",
+      "claim_text": "An early sign of selenium deficiency in older adults is the appearance of liver spots or age spots.",
       "verbatim": "Another early symptom of selenium deficiency in older humans is the\nappearance of “liver spots” or “age spots.”",
       "locator": {
         "book": "dddl-3e-2011",
@@ -188,7 +188,7 @@
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
-      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "extracted_at": "2026-06-24T17:27:11+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     },
@@ -205,7 +205,7 @@
         "muscular_dystrophy"
       ],
       "symptoms": [],
-      "claim_text": "Selenium supplementation prevented, and in many cases reversed or cured, the selenium-deficiency diseases in animals.",
+      "claim_text": "Selenium supplementation prevented, and in many cases reversed or cured, selenium-deficiency diseases in animals.",
       "verbatim": "In each\ncase, selenium supplementation prevented the disease and in many cases\nreversed or cured existing diseases, which were all significant causes of\nanimal losses to the livestock industry.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -221,7 +221,7 @@
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
-      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "extracted_at": "2026-06-24T17:27:11+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     },
@@ -237,7 +237,7 @@
         "diabetes"
       ],
       "symptoms": [],
-      "claim_text": "Wallach autopsied zoo animals (marmosets, shrews) that died of diabetes, which he attributes to chromium and vanadium deficiency.",
+      "claim_text": "Zoo marmosets and shrews died of diabetes attributed to chromium and vanadium deficiency (observed at autopsy).",
       "verbatim": "I saw marmosets, alligators, and\nshrews that died of diabetes, a chromium and vanadium deficiency.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -256,7 +256,7 @@
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
-      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "extracted_at": "2026-06-24T17:27:11+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     },
@@ -277,7 +277,7 @@
         "spinal_stenosis"
       ],
       "symptoms": [],
-      "claim_text": "Wallach asserts calcium deficiency alone could result in as many as 147 different diseases.",
+      "claim_text": "Calcium deficiency alone can result in as many as 147 different diseases (osteoporosis, osteoarthritis, Bell's palsy, tinnitus, trigeminal neuralgia, spinal stenosis, and more).",
       "verbatim": "Calcium deficiency alone could result in as many as 147 different diseases\nranging from osteoporosis, osteoarthritis, osteomalacia, degenerative\nathritis, Bell’s Palsy, tinnitis, trigeminal neuralgia, and spinal stenosis to\nname a few.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -295,7 +295,7 @@
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
-      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "extracted_at": "2026-06-24T17:27:11+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     },
@@ -311,7 +311,7 @@
         "liver_cirrhosis"
       ],
       "symptoms": [],
-      "claim_text": "In the clinical phase of trace mineral deficiency, full-blown disease states appear: cardiomyopathy, diabetes, cancer, liver cirrhosis.",
+      "claim_text": "In the clinical phase of trace-mineral deficiency, full-blown disease states appear: cardiomyopathy, diabetes, cancer, liver cirrhosis.",
       "verbatim": "The clinical phase of trace mineral deficiencies is characterized by the onset\nof full-blown disease states and even death—i.e., cardiomyopathy, diabetes,\ncancer, liver cirrhosis.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -329,7 +329,145 @@
       "confidence": "medium",
       "review_state": "draft",
       "superseded_by": null,
-      "extracted_at": "2026-06-24T17:09:27+00:00",
+      "extracted_at": "2026-06-24T17:27:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000011",
+      "kind": "dose",
+      "essentials": [
+        "germanium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The recommended maintenance dose for germanium is 20–30 mg per day (50–100 mg/day is used for serious illness requiring increased oxygenation).",
+      "verbatim": "Twenty to 30 mg per day is the recommended maintenance dose for\ngermanium. Fifty to 100 mg per day doses are commonly used when an\nindividual has a serious illness that requires an increased oxygen level in\nthe body.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 539483
+      },
+      "dose": {
+        "amount": "20-30",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "maintenance"
+      },
+      "tags": [
+        "dose-table"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:27:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000012",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "germanium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "arthritis",
+        "osteoporosis",
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Germanium deficiency is typified by reduced immune status, arthritis, osteoporosis, low energy, and cancer.",
+      "verbatim": "A severely reduced immune status, arthritis, osteoporosis, low energy, and\ncancer typify deficiencies of germanium.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 539367
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:27:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000013",
+      "kind": "dose",
+      "essentials": [
+        "silver"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Humans can consume 400 mg of silver per day; silver deficiency results in an impaired immune system.",
+      "verbatim": "Humans can\nconsume 400 mg of silver per day. A silver “deficiency” results in an\nimpaired immune system.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 481943
+      },
+      "dose": {
+        "amount": 400,
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": null
+      },
+      "tags": [
+        "dose-table"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:27:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000014",
+      "kind": "mechanism",
+      "essentials": [
+        "silver"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Silver is antibacterial, antiviral, and antifungal, disabling enzymes that microorganisms use for respiration.",
+      "verbatim": "Silver is an anti-bacterial, anti-viral, anti-fungal, anti-metabolite that\ndisables specific enzymes that microorganisms use for respiration.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 481652
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:27:11+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }
