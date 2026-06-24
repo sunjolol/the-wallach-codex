@@ -1,0 +1,520 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+ * drawer-knowledge.css — Knowledge drawer (views/knowledge.ts · kd-* vocabulary)
+ * ───────────────────────────────────────────────────────────────────────────
+ * Knowledge-SPECIFIC styling only. The shared drawer chrome (head · tabs ·
+ * search · body · footer · close · action · eyebrow · empty) lives in
+ * drawer-shared.css, which targets both kd-* and jd-* and MUST load before this
+ * file. Here: the panel starting width (420px) + the four Knowledge tabs
+ * (Corpus / Essentials / Products / Doctrine).
+ *
+ * Ported from dashboard/components/drawer-knowledge-v3-PROPOSAL.html. The mockup
+ * uses generic .section-head / .book-row / .featured-citation / .essential-tile
+ * / .product-row / .doctrine-card names that COLLIDE with legacy-dashboard.css
+ * (.essential-tile) + workspace-coverage.css (.essentials-grid); the live view
+ * self-namespaces them as kd-* (mirroring Journey's jd-*) so no global can ever
+ * leak in. Every selector is rooted at #drawer-knowledge-mount so nothing here
+ * can leak out either (Sever-Safety). Tokens come from design-system.css (sealed).
+ * Only the states the view actually renders are styled (no phantom variants).
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── PANEL WIDTH (the chrome base lives in drawer-shared.css) ────────────── */
+#drawer-knowledge-mount.kd-open { width: 520px; }
+#drawer-knowledge-mount.kd-expanded { width: calc(100vw - 220px); }
+
+/* ─── SECTION HEADERS — used across all four content tabs ─────────────────── */
+#drawer-knowledge-mount .kd-section-head {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  margin: var(--ds-space-4) 0 var(--ds-space-3);
+}
+#drawer-knowledge-mount .kd-section-head::before { content: ''; width: 12px; height: 1px; background: var(--ds-accent); }
+#drawer-knowledge-mount .kd-section-head:first-child { margin-top: 0; }
+
+/* ─── CORPUS · featured citation ─────────────────────────────────────────── */
+#drawer-knowledge-mount .kd-featured-citation {
+  background: linear-gradient(135deg, var(--ds-ink) 0%, var(--ds-ink-medium) 100%);
+  border-radius: var(--ds-radius-md);
+  padding: var(--ds-space-5);
+  color: var(--ds-paper);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--ds-elev-2);
+  margin-bottom: var(--ds-space-4);
+}
+#drawer-knowledge-mount .kd-featured-citation::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, var(--ds-accent) 8%, var(--ds-accent) 18%, transparent 22%, transparent 78%, var(--ds-tech) 82%, var(--ds-tech) 92%, transparent 95%);
+}
+#drawer-knowledge-mount .kd-featured-citation::after {
+  content: ''; position: absolute;
+  top: -20px; right: -20px;
+  width: 140px; height: 140px;
+  background: radial-gradient(circle, var(--ds-accent) 0%, transparent 65%);
+  opacity: 0.20;
+  pointer-events: none;
+}
+#drawer-knowledge-mount .kd-featured-citation__eyebrow {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-accent-bright);
+  font-weight: 600;
+  display: flex; align-items: center; gap: var(--ds-space-2);
+  margin-bottom: var(--ds-space-3);
+  position: relative;
+}
+#drawer-knowledge-mount .kd-featured-citation__eyebrow .pulse-dot { width: 6px; height: 6px; background: var(--ds-accent); border-radius: 50%; box-shadow: 0 0 8px var(--ds-accent); }
+#drawer-knowledge-mount .kd-featured-citation__quote {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: var(--ds-text-md);
+  line-height: 1.45;
+  color: var(--ds-paper);
+  margin: 0 0 var(--ds-space-3);
+  position: relative;
+}
+#drawer-knowledge-mount .kd-featured-citation__quote::before {
+  content: '\201C';
+  position: absolute;
+  left: -8px; top: -12px;
+  font-size: 2.5rem;
+  color: var(--ds-accent);
+  line-height: 1;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+}
+#drawer-knowledge-mount .kd-featured-citation__attr {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-tech-dim);
+  border-top: 1px solid var(--ds-ink-medium);
+  padding-top: var(--ds-space-2);
+  margin-top: var(--ds-space-2);
+  position: relative;
+}
+#drawer-knowledge-mount .kd-featured-citation__attr strong { color: var(--ds-accent-bright); font-weight: 600; }
+
+/* ─── CORPUS · book rows ─────────────────────────────────────────────────── */
+#drawer-knowledge-mount .kd-book-row {
+  background: var(--ds-paper-light);
+  border: 1px solid var(--ds-rule-soft);
+  border-radius: var(--ds-radius-sm);
+  padding: var(--ds-space-3) var(--ds-space-4);
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  gap: var(--ds-space-3);
+  align-items: center;
+  cursor: pointer;
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+  margin-bottom: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-book-row:hover {
+  border-color: var(--ds-accent);
+  box-shadow: 0 2px 8px -2px rgba(255, 126, 60, 0.15);
+}
+#drawer-knowledge-mount .kd-book-row__spine {
+  width: 36px; height: 44px;
+  background: linear-gradient(135deg, var(--ds-accent-deep) 0%, var(--ds-accent-hot) 100%);
+  border-radius: 2px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 2px 6px -1px rgba(255, 126, 60, 0.4);
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+#drawer-knowledge-mount .kd-book-row__spine span {
+  font-family: var(--ds-font-display-artifact);
+  font-size: 0.7rem;
+  color: var(--ds-paper-light);
+  letter-spacing: 0.05em;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+#drawer-knowledge-mount .kd-book-row__body { min-width: 0; }
+#drawer-knowledge-mount .kd-book-row__title {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-sm);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.15;
+}
+#drawer-knowledge-mount .kd-book-row__meta {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  margin-top: 2px;
+}
+#drawer-knowledge-mount .kd-book-row__count {
+  font-family: var(--ds-font-display-artifact);
+  font-size: var(--ds-text-md);
+  color: var(--ds-accent-deep);
+  letter-spacing: 0.02em;
+  text-align: right;
+}
+#drawer-knowledge-mount .kd-book-row__count small {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  color: var(--ds-ink-soft);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  display: block;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+/* ─── ESSENTIALS · tile grid ─────────────────────────────────────────────── */
+#drawer-knowledge-mount .kd-essentials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-essential-tile {
+  background: var(--ds-paper-light);
+  border: 1px solid var(--ds-rule-soft);
+  border-radius: var(--ds-radius-sm);
+  padding: var(--ds-space-3);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+}
+#drawer-knowledge-mount .kd-essential-tile:hover {
+  border-color: var(--ds-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px -2px rgba(255, 126, 60, 0.2);
+}
+#drawer-knowledge-mount .kd-essential-tile__sym {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+#drawer-knowledge-mount .kd-essential-tile__name {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-xs);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+#drawer-knowledge-mount .kd-essential-tile__meta {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  margin-top: auto;
+}
+
+/* ─── Overflow note ("+ N more") shown by Essentials / Products tabs ──────── */
+#drawer-knowledge-mount .kd-more {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-faint);
+  text-align: center;
+  padding: var(--ds-space-3) var(--ds-space-4);
+}
+
+/* ─── PRODUCTS · vault rows ──────────────────────────────────────────────── */
+#drawer-knowledge-mount .kd-product-row {
+  background: var(--ds-paper-light);
+  border: 1px solid var(--ds-rule-soft);
+  border-left: 3px solid var(--ds-status-ok);
+  border-radius: var(--ds-radius-sm);
+  padding: var(--ds-space-3) var(--ds-space-4);
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  gap: var(--ds-space-3);
+  align-items: center;
+  cursor: pointer;
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+  margin-bottom: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-product-row:hover { border-color: var(--ds-accent); box-shadow: 0 2px 8px -2px rgba(255, 126, 60, 0.15); }
+#drawer-knowledge-mount .kd-product-row__icon {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--ds-paper-darker) 0%, var(--ds-paper-deep) 100%);
+  border: 1px solid var(--ds-rule);
+  border-radius: var(--ds-radius-xs);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--ds-font-display-artifact);
+  font-size: var(--ds-text-md);
+  color: var(--ds-accent-deep);
+}
+#drawer-knowledge-mount .kd-product-row__body { min-width: 0; }
+#drawer-knowledge-mount .kd-product-row__name {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-sm);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#drawer-knowledge-mount .kd-product-row__meta {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-faint);
+}
+#drawer-knowledge-mount .kd-product-row__verdict {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--ds-radius-pill);
+}
+#drawer-knowledge-mount .kd-product-row__verdict--ok { color: var(--ds-status-ok); background: var(--ds-status-ok-soft); }
+
+/* ─── DOCTRINE · cards ───────────────────────────────────────────────────── */
+#drawer-knowledge-mount .kd-doctrine-card {
+  background: var(--ds-paper-light);
+  border: 1px solid var(--ds-rule-soft);
+  border-radius: var(--ds-radius-sm);
+  padding: var(--ds-space-4);
+  margin-bottom: var(--ds-space-3);
+  position: relative;
+  cursor: pointer;
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+  overflow: hidden;
+}
+#drawer-knowledge-mount .kd-doctrine-card:hover {
+  border-color: var(--ds-accent);
+  box-shadow: 0 4px 12px -3px rgba(255, 126, 60, 0.18);
+}
+#drawer-knowledge-mount .kd-doctrine-card__id {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-tech);
+  font-weight: 600;
+  margin-bottom: var(--ds-space-1);
+}
+#drawer-knowledge-mount .kd-doctrine-card__title {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-md);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0 0 var(--ds-space-2);
+  line-height: 1.15;
+}
+#drawer-knowledge-mount .kd-doctrine-card__body {
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-sm);
+  line-height: 1.5;
+  color: var(--ds-ink-medium);
+  font-weight: 500;
+  margin-bottom: var(--ds-space-3);
+}
+#drawer-knowledge-mount .kd-doctrine-card__cite {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  border-top: 1px solid var(--ds-rule-soft);
+  padding-top: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-doctrine-card__cite strong { color: var(--ds-accent-deep); font-weight: 600; }
+#drawer-knowledge-mount .kd-doctrine-card.featured {
+  background: linear-gradient(135deg, var(--ds-accent-wash) 0%, var(--ds-paper) 100%);
+  border-color: var(--ds-accent);
+  box-shadow: 0 6px 16px -4px rgba(255, 126, 60, 0.2);
+}
+#drawer-knowledge-mount .kd-doctrine-card.featured::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent 0%, var(--ds-accent) 15%, var(--ds-accent) 35%, transparent 40%);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * ESSENTIALS — coverage-state tile variants + click-to-expand deep-dive.
+ * State joins from the CoverageSnapshot (state/coverage.ts) — the SAME source
+ * the Coverage surface uses: covered/trace → green, partial/gap → amber,
+ * pending → base neutral. Deep-dive ported from the v3 proposal (.essential-deep*).
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Tile coverage states ───────────────────────────────────────────────── */
+#drawer-knowledge-mount .kd-essential-tile--covered { background: var(--ds-status-ok-soft); border-color: var(--ds-status-ok); }
+#drawer-knowledge-mount .kd-essential-tile--covered .kd-essential-tile__meta { color: var(--ds-status-ok); }
+#drawer-knowledge-mount .kd-essential-tile--partial { background: var(--ds-status-warn-soft); border-color: var(--ds-status-warn); }
+#drawer-knowledge-mount .kd-essential-tile--partial .kd-essential-tile__meta { color: var(--ds-status-warn-deep, #8a6d20); }
+#drawer-knowledge-mount .kd-essential-tile.is-selected { border-color: var(--ds-accent); box-shadow: 0 0 0 1px var(--ds-accent), 0 4px 12px -3px rgba(255, 126, 60, 0.28); }
+
+/* ─── Deep-dive (rendered above the grid when a tile is selected) ─────────── */
+#drawer-knowledge-mount .kd-essential-deep {
+  background: var(--ds-paper);
+  border: 1px solid var(--ds-accent);
+  box-shadow: 0 4px 14px -3px rgba(255, 126, 60, 0.25);
+  border-radius: var(--ds-radius-md);
+  padding: var(--ds-space-4);
+  margin-bottom: var(--ds-space-4);
+  position: relative;
+  overflow: hidden;
+}
+#drawer-knowledge-mount .kd-essential-deep::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, var(--ds-accent) 8%, var(--ds-accent) 18%, transparent 22%, transparent 78%, var(--ds-tech) 82%, var(--ds-tech) 92%, transparent 95%);
+}
+#drawer-knowledge-mount .kd-essential-deep__close {
+  position: absolute; top: var(--ds-space-3); right: var(--ds-space-3);
+  width: 24px; height: 24px;
+  background: transparent; border: 1px solid var(--ds-rule);
+  color: var(--ds-ink-soft); font-size: 1rem; line-height: 1;
+  border-radius: var(--ds-radius-sm); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--ds-font-mono);
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+  z-index: 1;
+}
+#drawer-knowledge-mount .kd-essential-deep__close:hover { border-color: var(--ds-ink); color: var(--ds-ink); }
+#drawer-knowledge-mount .kd-essential-deep__head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: var(--ds-space-3);
+  padding: 0 40px var(--ds-space-3) 0;
+  border-bottom: 1px solid var(--ds-rule-soft);
+  margin-bottom: var(--ds-space-3);
+}
+#drawer-knowledge-mount .kd-essential-deep__sym-row { display: flex; align-items: baseline; gap: var(--ds-space-3); min-width: 0; }
+#drawer-knowledge-mount .kd-essential-deep__sym {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.4rem;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+#drawer-knowledge-mount .kd-essential-deep__name-block { display: flex; flex-direction: column; min-width: 0; }
+#drawer-knowledge-mount .kd-essential-deep__name {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-lg);
+  font-weight: 700;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.05;
+}
+#drawer-knowledge-mount .kd-essential-deep__cat {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-tech);
+  margin-top: 4px;
+}
+#drawer-knowledge-mount .kd-essential-deep__status-pill {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--ds-radius-pill);
+  font-weight: 700;
+  display: inline-flex; align-items: center; gap: 4px;
+  white-space: nowrap;
+}
+#drawer-knowledge-mount .kd-essential-deep__status-pill--ok { background: var(--ds-status-ok-soft); color: var(--ds-status-ok); }
+#drawer-knowledge-mount .kd-essential-deep__status-pill--warn { background: var(--ds-status-warn-soft); color: var(--ds-status-warn-deep, #8a6d20); }
+#drawer-knowledge-mount .kd-essential-deep__status-pill--pending { background: var(--ds-paper-darker); color: var(--ds-ink-soft); }
+#drawer-knowledge-mount .kd-essential-deep__sub {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-accent);
+  font-weight: 600;
+  margin-bottom: var(--ds-space-1);
+  margin-top: var(--ds-space-3);
+  display: flex; align-items: center; gap: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-essential-deep__sub::before { content: ''; width: 8px; height: 1px; background: var(--ds-accent); }
+#drawer-knowledge-mount .kd-essential-deep__body {
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-sm);
+  line-height: 1.5;
+  color: var(--ds-ink-medium);
+  font-weight: 500;
+  margin: 0;
+}
+#drawer-knowledge-mount .kd-essential-deep__source {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  background: var(--ds-accent-wash);
+  padding: var(--ds-space-2) var(--ds-space-3);
+  border-radius: var(--ds-radius-xs);
+  border-left: 2px solid var(--ds-accent);
+  margin-top: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-essential-deep__source strong { color: var(--ds-accent-deep); font-weight: 600; }
+#drawer-knowledge-mount .kd-essential-deep__products { display: flex; flex-wrap: wrap; gap: 4px; margin-top: var(--ds-space-2); }
+#drawer-knowledge-mount .kd-essential-deep__product-chip {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  color: var(--ds-tech);
+  background: var(--ds-tech-wash);
+  padding: 3px 8px;
+  border-radius: var(--ds-radius-pill);
+  font-weight: 600;
+}
+
+/* ─── Non-essential ("bonus") nutrient — Omega-9: shown + covered, but not one
+       of the 90. Distinct teal so it reads apart from the green/amber/neutral
+       coverage states. Detail surfaces on-click (kd-essential-deep__flag). ─── */
+#drawer-knowledge-mount .kd-essential-tile--bonus { background: var(--ds-tech-wash); border-color: var(--ds-tech); }
+#drawer-knowledge-mount .kd-essential-tile--bonus .kd-essential-tile__meta { color: var(--ds-tech); }
+#drawer-knowledge-mount .kd-essential-deep__flag {
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-mini);
+  line-height: 1.4;
+  font-weight: 500;
+  color: var(--ds-ink-medium);
+  background: var(--ds-tech-wash);
+  border-left: 2px solid var(--ds-tech);
+  border-radius: var(--ds-radius-xs);
+  padding: var(--ds-space-2) var(--ds-space-3);
+  margin-top: var(--ds-space-3);
+}
+#drawer-knowledge-mount .kd-essential-deep__flag strong {
+  color: var(--ds-tech);
+  font-family: var(--ds-font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--ds-track-wide);
+}

@@ -40,6 +40,15 @@ export const LayoutTileSchema = z.object({
   name: z.string().min(1),
   /** Optional sub-hint line (fatty acids). */
   hint: z.string().optional(),
+  /**
+   * Essential vs non-essential per Wallach's "90 Essential Nutrients" framing.
+   * Absent/true = one of the 90 essentials. `false` marks a nutrient the body
+   * can synthesize — shown for completeness + coverage, but NOT counted toward
+   * the 90 (e.g. Omega-9 / oleic, included by Youngevity for cardiovascular
+   * balance). Source: Wallach "The 90 Essential Nutrients" lecture corpus +
+   * the conditional-essentiality note on Omega-9 in essentials-benefits-data.
+   */
+  essential: z.boolean().optional(),
 });
 export type LayoutTile = z.infer<typeof LayoutTileSchema>;
 

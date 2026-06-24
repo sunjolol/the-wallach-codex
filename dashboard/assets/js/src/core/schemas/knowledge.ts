@@ -20,7 +20,9 @@ export const EssentialSchema = z.object({
   target: z.unknown().optional(),
   wallach_stance: z.object({
     stance: z.string().optional(),
+    quote: z.string().optional(),
     citation: z.string().optional(),
+    context: z.string().optional(),
   }).optional(),
 }).passthrough();
 

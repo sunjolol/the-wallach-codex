@@ -1,224 +1,21 @@
 /* ═══════════════════════════════════════════════════════════════════════════
  * drawer-journey.css — Journey drawer (views/journey.ts · jd-* vocabulary)
  * ───────────────────────────────────────────────────────────────────────────
- * Ported from dashboard/components/drawer-journey-v3-PROPOSAL.html. The mockup
- * uses generic .app-drawer / .drawer__* / .timeline / .tl-* class names; the
- * live view self-namespaces as jd-* (J2), so every rule is remapped onto the
- * jd-* class the view actually renders. Every selector is rooted at
- * #drawer-journey-mount so nothing here can touch another surface.
+ * Journey-SPECIFIC styling only. The shared drawer chrome (head · tabs · search
+ * · body · footer · close · action · eyebrow · empty) lives in drawer-shared.css,
+ * which targets both jd-* and kd-* and MUST load before this file. Here: the
+ * panel starting width (600px) + the four Journey tabs (Timeline / Goals /
+ * Check-ins / Milestones) + inline forms + the primary footer action.
  *
- * Loaded after workspace-coverage.css (which defines --ds-font-display-*).
- * Tokens come from design-system.css (sealed) — no hardcoded colors/fonts.
- *
- * SCOPE (Phase B.1): panel + chrome (head/tabs/search/body/footer) + the
- * Timeline tab + severity pips. The Goals / Check-ins / Milestones tab content
- * (jd-goal / jd-checkin / jd-milestone / jd-form) is Phase B.2.
+ * Ported from dashboard/components/drawer-journey-v3-PROPOSAL.html (the mockup's
+ * generic .drawer__* / .timeline / .tl-* remapped onto the view's self-namespaced
+ * jd-* classes). Every selector is rooted at #drawer-journey-mount so nothing
+ * here can leak. Tokens come from design-system.css (sealed).
  * ═══════════════════════════════════════════════════════════════════════════ */
 
-/* ─── PANEL — the view renders its shell into #drawer-journey-mount and toggles
-       .jd-open / .jd-expanded on it; the container IS the drawer panel. ────── */
-#drawer-journey-mount.jd-open {
-  top: 0;
-  bottom: 0;
-  left: 220px;
-  width: 600px;
-  background: var(--ds-paper);
-  border-right: 1px solid var(--ds-rule);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  box-shadow: 8px 0 24px -8px rgba(26, 22, 18, 0.22), 16px 0 56px -16px rgba(26, 22, 18, 0.18);
-  z-index: 10;
-  pointer-events: auto;
-  transition: width var(--ds-motion-base) var(--ds-ease-out);
-}
+/* ─── PANEL WIDTH (the chrome base lives in drawer-shared.css) ────────────── */
+#drawer-journey-mount.jd-open { width: 600px; }
 #drawer-journey-mount.jd-expanded { width: calc(100vw - 220px); }
-#drawer-journey-mount.jd-open::after {
-  content: '';
-  position: absolute;
-  top: var(--ds-space-7);
-  bottom: var(--ds-space-7);
-  right: -1px;
-  width: 1px;
-  background: linear-gradient(to bottom, transparent 0%, var(--ds-accent) 8%, var(--ds-accent) 12%, transparent 14%, transparent 86%, var(--ds-accent) 88%, var(--ds-accent) 92%, transparent 100%);
-  z-index: 1;
-}
-
-/* ─── HEAD ───────────────────────────────────────────────────────────────── */
-#drawer-journey-mount .jd-head {
-  padding: var(--ds-space-5) var(--ds-space-5) var(--ds-space-4);
-  background: var(--ds-paper-darker);
-  border-bottom: 1px solid var(--ds-rule);
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: start;
-  gap: var(--ds-space-3);
-}
-#drawer-journey-mount .jd-head::after {
-  content: '';
-  position: absolute;
-  left: var(--ds-space-5);
-  right: var(--ds-space-5);
-  bottom: -1px;
-  height: 1px;
-  background: linear-gradient(to right, transparent 0%, var(--ds-accent) 6%, var(--ds-accent) 13%, transparent 15%, transparent 85%, var(--ds-tech) 88%, var(--ds-tech) 92%, transparent 95%);
-}
-#drawer-journey-mount .jd-eyebrow {
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  letter-spacing: var(--ds-track-widest);
-  text-transform: uppercase;
-  color: var(--ds-accent);
-  font-weight: 600;
-  margin-bottom: var(--ds-space-2);
-  display: flex;
-  align-items: center;
-  gap: var(--ds-space-2);
-}
-#drawer-journey-mount .jd-eyebrow .pulse-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--ds-accent);
-  border-radius: 50%;
-  box-shadow: 0 0 6px var(--ds-accent-soft);
-}
-#drawer-journey-mount .jd-title {
-  font-family: var(--ds-font-display-interface);
-  font-size: var(--ds-text-2xl);
-  font-weight: 700;
-  color: var(--ds-ink);
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  margin: 0;
-  line-height: 1;
-}
-#drawer-journey-mount .jd-sub {
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  letter-spacing: var(--ds-track-wider);
-  text-transform: uppercase;
-  color: var(--ds-ink-soft);
-  margin-top: var(--ds-space-2);
-}
-#drawer-journey-mount .jd-close {
-  width: 32px;
-  height: 32px;
-  background: transparent;
-  border: 1px solid var(--ds-rule);
-  color: var(--ds-ink-soft);
-  font-size: 1.1rem;
-  border-radius: var(--ds-radius-sm);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--ds-font-mono);
-  transition: all var(--ds-motion-fast) var(--ds-ease-out);
-}
-#drawer-journey-mount .jd-close:hover { border-color: var(--ds-ink); color: var(--ds-ink); }
-
-/* ─── TAB STRIP ──────────────────────────────────────────────────────────── */
-#drawer-journey-mount .jd-tabs {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background: var(--ds-paper);
-  border-bottom: 1px solid var(--ds-rule-soft);
-  position: relative;
-}
-#drawer-journey-mount .jd-tab {
-  background: transparent;
-  border: 0;
-  padding: var(--ds-space-3) var(--ds-space-2);
-  font-family: var(--ds-font-display-interface);
-  font-size: var(--ds-text-xs);
-  font-weight: 700;
-  letter-spacing: var(--ds-track-wide);
-  text-transform: uppercase;
-  color: var(--ds-ink-soft);
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  position: relative;
-  transition: all var(--ds-motion-fast) var(--ds-ease-out);
-  border-bottom: 2px solid transparent;
-}
-#drawer-journey-mount .jd-tab:hover { color: var(--ds-ink); background: var(--ds-paper-deep); }
-#drawer-journey-mount .jd-tab.active {
-  color: var(--ds-accent-deep);
-  background: var(--ds-paper);
-  border-bottom-color: var(--ds-accent);
-}
-#drawer-journey-mount .jd-tab.active::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 30%;
-  right: 30%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--ds-accent), transparent);
-  box-shadow: 0 0 8px var(--ds-accent);
-}
-#drawer-journey-mount .jd-tab__count {
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  letter-spacing: 0.05em;
-  color: var(--ds-ink-faint);
-  font-weight: 600;
-}
-#drawer-journey-mount .jd-tab.active .jd-tab__count { color: var(--ds-accent); }
-
-/* ─── SEARCH BAR ─────────────────────────────────────────────────────────── */
-#drawer-journey-mount .jd-search {
-  padding: var(--ds-space-3) var(--ds-space-4);
-  background: var(--ds-paper-deep);
-  border-bottom: 1px solid var(--ds-rule-soft);
-  display: flex;
-  align-items: center;
-  gap: var(--ds-space-2);
-}
-#drawer-journey-mount .jd-search-icon { font-family: var(--ds-font-mono); color: var(--ds-tech); font-size: var(--ds-text-md); }
-#drawer-journey-mount .jd-search-input {
-  flex: 1;
-  background: transparent;
-  border: 0;
-  outline: none;
-  font-family: var(--ds-font-display-interface);
-  font-size: var(--ds-text-sm);
-  color: var(--ds-ink);
-  letter-spacing: 0.02em;
-  padding: 4px 0;
-}
-#drawer-journey-mount .jd-search-input::placeholder {
-  color: var(--ds-ink-faint);
-  text-transform: uppercase;
-  font-size: var(--ds-text-xs);
-  letter-spacing: var(--ds-track-wide);
-}
-#drawer-journey-mount .jd-search-kbd {
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  color: var(--ds-ink-soft);
-  background: var(--ds-paper);
-  border: 1px solid var(--ds-rule);
-  padding: 2px 6px;
-  border-radius: var(--ds-radius-xs);
-}
-
-/* ─── BODY ───────────────────────────────────────────────────────────────── */
-#drawer-journey-mount .jd-body { flex: 1; overflow-y: auto; padding: var(--ds-space-4) var(--ds-space-5); }
-#drawer-journey-mount .jd-empty {
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-xs);
-  letter-spacing: var(--ds-track-wide);
-  text-transform: uppercase;
-  color: var(--ds-ink-faint);
-  text-align: center;
-  padding: var(--ds-space-7) var(--ds-space-4);
-  line-height: 1.6;
-}
 
 /* ─── TIMELINE ───────────────────────────────────────────────────────────── */
 #drawer-journey-mount .jd-timeline { position: relative; padding-left: 28px; }
@@ -338,35 +135,7 @@
 #drawer-journey-mount .jd-sev-pip.fill-warn { background: var(--ds-status-warn); }
 #drawer-journey-mount .jd-sev-pip.fill-ok { background: var(--ds-status-ok); }
 
-/* ─── FOOTER + ACTIONS ───────────────────────────────────────────────────── */
-#drawer-journey-mount .jd-footer {
-  padding: var(--ds-space-3) var(--ds-space-4);
-  background: var(--ds-paper-darker);
-  border-top: 1px solid var(--ds-rule);
-  display: flex;
-  gap: var(--ds-space-2);
-  align-items: center;
-}
-#drawer-journey-mount .jd-action {
-  background: transparent;
-  border: 1px solid var(--ds-rule);
-  color: var(--ds-ink);
-  font-family: var(--ds-font-display-interface);
-  font-size: var(--ds-text-xs);
-  font-weight: 700;
-  letter-spacing: var(--ds-track-wide);
-  text-transform: uppercase;
-  padding: 0.45rem 0.85rem;
-  border-radius: var(--ds-radius-sm);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--ds-space-2);
-  transition: all var(--ds-motion-fast) var(--ds-ease-out);
-}
-#drawer-journey-mount .jd-action:hover { border-color: var(--ds-accent); color: var(--ds-accent-deep); }
-#drawer-journey-mount .jd-action__glyph { font-family: var(--ds-font-mono); color: var(--ds-tech); }
-#drawer-journey-mount .jd-action__spacer { flex: 1; }
+/* ─── PRIMARY FOOTER ACTION (base .jd-action lives in drawer-shared.css) ──── */
 #drawer-journey-mount .jd-action--primary {
   background: linear-gradient(135deg, var(--ds-accent) 0%, var(--ds-accent-hot) 100%);
   color: var(--ds-paper-light);
@@ -377,8 +146,8 @@
 #drawer-journey-mount .jd-action--primary .jd-action__glyph { color: var(--ds-paper-light); }
 
 /* ═══════════════════════════════════════════════════════════════════════════
- * PHASE B.2 — Goals / Check-ins / Milestones tab content + inline forms.
- * Same mockup → jd-* remap as B.1, scoped to #drawer-journey-mount.
+ * Goals / Check-ins / Milestones tab content + inline forms.
+ * Same mockup → jd-* remap, scoped to #drawer-journey-mount.
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 /* ─── GOALS ──────────────────────────────────────────────────────────────── */

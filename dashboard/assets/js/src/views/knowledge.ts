@@ -4,27 +4,42 @@
  *
  * Slide-in-from-left overlay drawer, 420px starting width, EXPAND grows to
  * fill the workspace area. Renders 4 tabs: Corpus / Essentials / Products /
- * Doctrine. Reads from the extracted .json + .md data files via getElementById
- * (data still inline in dashboard.html for Round 5 — Round 6 polish pass
- * migrates to fetch('./assets/data/*.json')).
+ * Doctrine.
+ *
+ * The Essentials tab is layout-driven: it walks the SAME presentation layout
+ * the Coverage periodic table uses (coverage-layout-data.json) for symbols +
+ * category grouping, and joins the AUTHORITATIVE per-essential status from the
+ * CoverageSnapshot (state/coverage.ts) — one source of truth for "covered". A
+ * tile click expands an in-place deep-dive: Wallach's stance (quote + citation,
+ * §00.A educational layer) + the YGY vault products that carry the essential
+ * (resolved via the canonical matchEssential — no matcher drift).
  *
  * §00 Zod boundary: data reads pass through schemas defined in
- * core/schemas/knowledge before any field access enters typed-land.
+ * core/schemas/knowledge + core/schemas/coverage-layout before field access.
  *
- * Visual contract: drawer-knowledge-v3-PROPOSAL.html.
- *
- * Keyboard: rail "K" item toggles. Esc closes (handler installed in main.ts).
+ * Visual contract: drawer-knowledge-v3-PROPOSAL.html. Styling: drawer-shared.css
+ * (chrome) + drawer-knowledge.css (kd-* content). Keyboard: rail "K" toggles;
+ * Esc closes (handler in main.ts).
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
+import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import { on as onEvent } from '../core/events.js';
 import {
-  type Essential,
-  EssentialsDataSchema,
+  CoverageLayoutSchema,
+  type LayoutSection,
+  type LayoutTile,
   type ProductEntry,
   ProductEntrySchema,
   ProductsLookupSchema,
 } from '../core/schemas/index.js';
+import {
+  type CoverageSnapshot,
+  type CoverageStatus,
+  getOrCompute,
+  getTargets,
+  matchEssential,
+} from '../state/coverage.js';
 
 export interface DrawerHandle {
   open: () => void;
@@ -37,22 +52,6 @@ export interface DrawerHandle {
 type Tab = 'corpus' | 'essentials' | 'products' | 'doctrine';
 
 // ─── Data readers — Zod-validated at the parse boundary ───────────────────
-
-function readEssentials(): Essential[] {
-  const el = document.getElementById('essentials-targets-data');
-  if (el === null) {
-    return [];
-  }
-  let parsed: unknown;
-  try {
-    parsed = JSON.parse(el.textContent ?? '{}');
-  }
-  catch {
-    return [];
-  }
-  const result = EssentialsDataSchema.safeParse(parsed);
-  return result.success ? result.data.essentials : [];
-}
 
 function readProducts(): ProductEntry[] {
   const el = document.getElementById('regimen-label-lookup');
@@ -114,6 +113,157 @@ const DOCTRINES = [
   { id: 'DOCT·07', title: 'Eden Sealed-Canonical (User-Only-Writer)', featured: false, body: 'Sealed canonical files (design-system.css, eden corpus) carry hash anchors. Agent reads freely, never writes after sealing time. Drift is detected at startup; reads from drifted files fail loudly.', cite: 'CITED · Round 157 · enforced by eden_hash_integrity + write_protection invariants' },
 ];
 
+// ─── Essentials layout (shared with the Coverage periodic table) ───────────
+
+const LAYOUT = CoverageLayoutSchema.parse(coverageLayoutData);
+
+/** One essential as the drawer grid + deep-dive render it. */
+interface EssentialView {
+  /** Canonical name — join key into the CoverageSnapshot + targets DB. */
+  key: string;
+  /** Abbreviated display name (uppercase). */
+  name: string;
+  /** Chemical symbol / vitamin letter / amino abbr / section code. */
+  symbol: string;
+  /** Granular category label (FOUNDATIONAL / RARE TRACE / VITAMIN / …). */
+  catLabel: string;
+  /** Reference token (#24 atomic, or V·01 code) for the deep-dive head. */
+  ref: string;
+  /** Broad section title (MINERALS / VITAMINS / …). */
+  section: string;
+  /** False for non-essential nutrients shown but not counted in the 90 (Omega-9). */
+  essential: boolean;
+}
+
+function tileSymbol(t: LayoutTile): string {
+  return t.sym ?? t.letter ?? t.abbr ?? t.code ?? t.name.charAt(0).toUpperCase();
+}
+
+function tileRef(t: LayoutTile): string {
+  if (t.num !== undefined) {
+    return `#${t.num}`;
+  }
+  return t.code ?? '';
+}
+
+function sectionCatLabel(section: LayoutSection): string {
+  switch (section.tileClass) {
+    case 'tile--vitamin':
+      return 'VITAMIN';
+    case 'tile--amino':
+      return 'AMINO ACID';
+    case 'tile--fat':
+      return 'FATTY ACID';
+    default:
+      return 'MINERAL';
+  }
+}
+
+interface EssentialGroup {
+  title: string;
+  sub: string;
+  items: EssentialView[];
+}
+
+/** Flatten the layout into render groups (one per section) + a key→view map. */
+function buildEssentialGroups(): EssentialGroup[] {
+  return LAYOUT.sections.map((section) => {
+    const items: EssentialView[] = [];
+    const pushTile = (t: LayoutTile, catLabel: string): void => {
+      items.push({ key: t.key, name: t.name, symbol: tileSymbol(t), catLabel, ref: tileRef(t), section: section.title, essential: t.essential !== false });
+    };
+    if (section.subsections !== undefined) {
+      for (const sub of section.subsections) {
+        for (const t of sub.tiles) {
+          pushTile(t, sub.label);
+        }
+      }
+    }
+    else if (section.tiles !== undefined) {
+      const label = sectionCatLabel(section);
+      for (const t of section.tiles) {
+        pushTile(t, label);
+      }
+    }
+    return { title: section.title, sub: section.sub, items };
+  });
+}
+
+const ESS_GROUPS = buildEssentialGroups();
+const ESS_BY_KEY = new Map<string, EssentialView>(
+  ESS_GROUPS.flatMap(g => g.items.map(i => [i.key, i] as const)),
+);
+/** The 90 — count of essential tiles (Omega-9 and any other non-essential excluded). */
+const ESS_ESSENTIAL_COUNT = ESS_GROUPS.reduce((n, g) => n + g.items.filter(i => i.essential).length, 0);
+
+// ─── Status → presentation ─────────────────────────────────────────────────
+
+function statusOf(snapshot: CoverageSnapshot | null, key: string): CoverageStatus {
+  if (snapshot === null) {
+    return '';
+  }
+  return snapshot.tiles.find(t => t.name === key)?.status ?? '';
+}
+
+function statusTileClass(s: CoverageStatus): string {
+  if (s === 'covered' || s === 'trace') {
+    return 'kd-essential-tile--covered';
+  }
+  if (s === 'partial' || s === 'gap') {
+    return 'kd-essential-tile--partial';
+  }
+  return '';
+}
+
+function statusLabel(s: CoverageStatus): string {
+  switch (s) {
+    case 'covered':
+    case 'trace':
+      return 'COVERED';
+    case 'partial':
+      return 'PARTIAL';
+    case 'gap':
+      return 'GAP';
+    default:
+      return 'PENDING';
+  }
+}
+
+function statusPillClass(s: CoverageStatus): string {
+  if (s === 'covered' || s === 'trace') {
+    return 'kd-essential-deep__status-pill--ok';
+  }
+  if (s === 'partial' || s === 'gap') {
+    return 'kd-essential-deep__status-pill--warn';
+  }
+  return 'kd-essential-deep__status-pill--pending';
+}
+
+/** Vault products that carry this essential — resolved via the canonical matcher. */
+function vaultProductsFor(key: string): string[] {
+  const out: string[] = [];
+  for (const p of readProducts()) {
+    const nutrients = p.nutrients ?? [];
+    const carries = nutrients.some((n) => {
+      if (typeof n !== 'object' || n === null) {
+        return false;
+      }
+      const nm = (n as { name?: unknown }).name;
+      return typeof nm === 'string' && matchEssential(nm)?.name === key;
+    });
+    if (carries) {
+      const nm = p.canonical_name ?? p.name;
+      if (typeof nm === 'string' && nm.length > 0) {
+        out.push(nm);
+      }
+    }
+    if (out.length >= 8) {
+      break;
+    }
+  }
+  return out;
+}
+
 // ─── Render helpers ────────────────────────────────────────────────────────
 
 function escHTML(s: unknown): string {
@@ -128,42 +278,96 @@ function hexSerial(seed: number): string {
 
 function renderCorpusTab(): string {
   const booksHTML = BOOKS.map(b => `
-    <div class="book-row">
-      <div class="book-row__spine"><span>${escHTML(b.id)}</span></div>
-      <div class="book-row__body">
-        <h4 class="book-row__title">${escHTML(b.title)}</h4>
-        <div class="book-row__meta">${escHTML(b.author)}${b.chapters > 0 ? ` · ${b.chapters} CHAPTERS` : ''} · ${b.cites} CITES</div>
+    <div class="kd-book-row">
+      <div class="kd-book-row__spine"><span>${escHTML(b.id)}</span></div>
+      <div class="kd-book-row__body">
+        <h4 class="kd-book-row__title">${escHTML(b.title)}</h4>
+        <div class="kd-book-row__meta">${escHTML(b.author)}${b.chapters > 0 ? ` · ${b.chapters} CHAPTERS` : ''} · ${b.cites} CITES</div>
       </div>
-      <div class="book-row__count">${b.cites}<small>cites</small></div>
+      <div class="kd-book-row__count">${b.cites}<small>cites</small></div>
     </div>`).join('');
 
   return `
-    <div class="featured-citation">
-      <div class="featured-citation__eyebrow"><span class="pulse-dot"></span>SOURCE-RULE CORNERSTONE</div>
-      <p class="featured-citation__quote">The body needs 60 minerals, 16 vitamins, 12 amino acids, and 3 essential fatty acids — 91 essentials total. Plant-derived minerals are the only delivery vehicle that the body absorbs as nature intended.</p>
-      <div class="featured-citation__attr"><strong>Wallach</strong> · Dead Doctors Don\'t Lie · ch. 1 · paraphrase per primary corpus</div>
+    <div class="kd-featured-citation">
+      <div class="kd-featured-citation__eyebrow"><span class="pulse-dot"></span>SOURCE-RULE CORNERSTONE</div>
+      <p class="kd-featured-citation__quote">The body needs 60 minerals, 16 vitamins, 12 amino acids, and 2 essential fatty acids — 90 essentials total. Plant-derived minerals are the only delivery vehicle that the body absorbs as nature intended.</p>
+      <div class="kd-featured-citation__attr"><strong>Wallach</strong> · Dead Doctors Don\'t Lie · ch. 1 · paraphrase per primary corpus</div>
     </div>
-    <div class="section-head">PRIMARY CORPUS · WALLACH</div>
+    <div class="kd-section-head">PRIMARY CORPUS · WALLACH</div>
     ${booksHTML}`;
 }
 
-function renderEssentialsTab(): string {
-  const essentials = readEssentials();
-  if (essentials.length === 0) {
-    return '<div class="kd-empty">— essentials data not loaded —</div>';
+function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): string {
+  const e = ESS_BY_KEY.get(key);
+  if (e === undefined) {
+    return '';
   }
+  const status = statusOf(snapshot, key);
+  const target = getTargets().find(t => t.name === key);
+  const stance = target?.wallach_stance;
+  const quote = stance?.quote ?? stance?.stance;
+  const citation = stance?.citation;
+  const products = vaultProductsFor(key);
 
-  const tilesHTML = essentials.slice(0, 60).map(e => `
-    <div class="essential-tile" data-essential="${escHTML(e.name)}">
-      <div class="essential-tile__sym">${escHTML(e.name.charAt(0).toUpperCase())}</div>
-      <div class="essential-tile__name">${escHTML(e.name)}</div>
-      <div class="essential-tile__meta">${escHTML(e.category)}</div>
-    </div>`).join('');
+  const wallachHTML = (quote !== undefined && quote.length > 0)
+    ? `
+      <div class="kd-essential-deep__sub">WALLACH SAYS</div>
+      <p class="kd-essential-deep__body">${escHTML(quote)}</p>
+      ${citation !== undefined ? `<div class="kd-essential-deep__source">CITED · <strong>${escHTML(citation)}</strong></div>` : ''}`
+    : '<div class="kd-essential-deep__sub">WALLACH SAYS</div><p class="kd-essential-deep__body">— no stance on file for this essential —</p>';
+
+  const productsHTML = products.length > 0
+    ? `
+      <div class="kd-essential-deep__sub">FOUND IN YGY VAULT</div>
+      <div class="kd-essential-deep__products">
+        ${products.map(p => `<span class="kd-essential-deep__product-chip">${escHTML(p)}</span>`).join('')}
+      </div>`
+    : '';
 
   return `
-    <div class="section-head">ALL ${essentials.length} ESSENTIALS · CLICK TO DEEP-DIVE</div>
-    <div class="kd-essentials-grid">${tilesHTML}</div>
-    ${essentials.length > 60 ? `<div class="kd-more">— + ${essentials.length - 60} more · scroll filter wired in polish pass —</div>` : ''}`;
+    <div class="kd-essential-deep">
+      <button class="kd-essential-deep__close" data-kd-action="essential-close" title="Close (Esc)">×</button>
+      <header class="kd-essential-deep__head">
+        <div class="kd-essential-deep__sym-row">
+          <div class="kd-essential-deep__sym">${escHTML(e.symbol)}</div>
+          <div class="kd-essential-deep__name-block">
+            <h3 class="kd-essential-deep__name">${escHTML(e.key)}</h3>
+            <div class="kd-essential-deep__cat">${escHTML(e.catLabel)}${e.ref !== '' ? ` · ${escHTML(e.ref)}` : ''}</div>
+          </div>
+        </div>
+        <span class="kd-essential-deep__status-pill ${statusPillClass(status)}">● ${statusLabel(status)}</span>
+      </header>
+      ${e.essential ? '' : '<div class="kd-essential-deep__flag"><strong>NON-ESSENTIAL</strong> · the body can synthesize this, so it is not one of the 90. Shown for completeness — Youngevity includes it (Ultimate EFA Plus) for cardiovascular balance + optimal absorption.</div>'}
+      ${wallachHTML}
+      ${productsHTML}
+    </div>`;
+}
+
+function renderEssentialsTab(snapshot: CoverageSnapshot | null, selectedKey: string | null): string {
+  const deepHTML = selectedKey !== null ? renderEssentialDeep(selectedKey, snapshot) : '';
+  const groupsHTML = ESS_GROUPS.map((group) => {
+    const tilesHTML = group.items.map((e) => {
+      const status = statusOf(snapshot, e.key);
+      const stateClass = e.essential ? statusTileClass(status) : 'kd-essential-tile--bonus';
+      const cls = `kd-essential-tile ${stateClass}${e.key === selectedKey ? ' is-selected' : ''}`.trim();
+      const meta = e.essential
+        ? `${escHTML(e.catLabel)} · ${statusLabel(status)}`
+        : `${escHTML(e.catLabel)} · NON-ESSENTIAL`;
+      return `
+        <div class="${cls}" data-kd-essential="${escHTML(e.key)}" role="button" tabindex="0">
+          <div class="kd-essential-tile__sym">${escHTML(e.symbol)}</div>
+          <div class="kd-essential-tile__name">${escHTML(e.name)}</div>
+          <div class="kd-essential-tile__meta">${meta}</div>
+        </div>`;
+    }).join('');
+    const essentialN = group.items.filter(i => i.essential).length;
+    const bonusN = group.items.length - essentialN;
+    return `
+      <div class="kd-section-head">${escHTML(group.title)} · ${essentialN}${bonusN > 0 ? ` + ${bonusN}` : ''}</div>
+      <div class="kd-essentials-grid">${tilesHTML}</div>`;
+  }).join('');
+
+  return `${deepHTML}${groupsHTML}`;
 }
 
 function renderProductsTab(): string {
@@ -173,46 +377,46 @@ function renderProductsTab(): string {
   }
 
   const productsHTML = products.slice(0, 30).map(p => `
-    <div class="product-row">
-      <div class="product-row__icon">${escHTML((p.canonical_name ?? p.name ?? '?').charAt(0).toUpperCase())}</div>
-      <div class="product-row__body">
-        <h4 class="product-row__name">${escHTML(p.canonical_name ?? p.name ?? '(unnamed)')}</h4>
-        <div class="product-row__meta">${escHTML(p.brand ?? 'YGY')} · ${(p.nutrients?.length ?? 0)} NUTRIENTS LISTED</div>
+    <div class="kd-product-row">
+      <div class="kd-product-row__icon">${escHTML((p.canonical_name ?? p.name ?? '?').charAt(0).toUpperCase())}</div>
+      <div class="kd-product-row__body">
+        <h4 class="kd-product-row__name">${escHTML(p.canonical_name ?? p.name ?? '(unnamed)')}</h4>
+        <div class="kd-product-row__meta">${escHTML(p.brand ?? 'YGY')} · ${(p.nutrients?.length ?? 0)} NUTRIENTS LISTED</div>
       </div>
-      <span class="product-row__verdict product-row__verdict--ok">VAULT</span>
+      <span class="kd-product-row__verdict kd-product-row__verdict--ok">VAULT</span>
     </div>`).join('');
 
   return `
-    <div class="section-head">PRODUCTS VAULT · ${products.length} ENTRIES</div>
+    <div class="kd-section-head">PRODUCTS VAULT · ${products.length} ENTRIES</div>
     ${productsHTML}
     ${products.length > 30 ? `<div class="kd-more">— + ${products.length - 30} more · scroll wired in polish pass —</div>` : ''}`;
 }
 
 function renderDoctrineTab(): string {
   return DOCTRINES.map(d => `
-    <div class="doctrine-card${d.featured ? ' featured' : ''}">
-      <div class="doctrine-card__id">${escHTML(d.id)}${d.featured ? ' · CORNERSTONE' : ''}</div>
-      <h4 class="doctrine-card__title">${escHTML(d.title)}</h4>
-      <p class="doctrine-card__body">${escHTML(d.body)}</p>
-      <div class="doctrine-card__cite">${escHTML(d.cite)}</div>
+    <div class="kd-doctrine-card${d.featured ? ' featured' : ''}">
+      <div class="kd-doctrine-card__id">${escHTML(d.id)}${d.featured ? ' · CORNERSTONE' : ''}</div>
+      <h4 class="kd-doctrine-card__title">${escHTML(d.title)}</h4>
+      <p class="kd-doctrine-card__body">${escHTML(d.body)}</p>
+      <div class="kd-doctrine-card__cite">${escHTML(d.cite)}</div>
     </div>`).join('');
 }
 
-function renderTab(tab: Tab): string {
+function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null): string {
   switch (tab) {
     case 'corpus': return renderCorpusTab();
-    case 'essentials': return renderEssentialsTab();
+    case 'essentials': return renderEssentialsTab(snapshot, selectedKey);
     case 'products': return renderProductsTab();
     case 'doctrine': return renderDoctrineTab();
   }
 }
 
-function renderShell(activeTab: Tab): string {
-  const essentialsCount = readEssentials().length;
+function renderShell(activeTab: Tab, selectedKey: string | null): string {
+  const snapshot = getOrCompute();
   const productsCount = readProducts().length;
   const tabs = [
     { id: 'corpus' as Tab, label: 'Corpus', count: `${BOOKS.length} BOOKS` },
-    { id: 'essentials' as Tab, label: 'Essentials', count: `${essentialsCount} TILES` },
+    { id: 'essentials' as Tab, label: 'Essentials', count: `${ESS_ESSENTIAL_COUNT} ESSENTIAL` },
     { id: 'products' as Tab, label: 'Products', count: `${productsCount > 0 ? productsCount : 59} KNOWN` },
     { id: 'doctrine' as Tab, label: 'Doctrine', count: `${DOCTRINES.length} RULES` },
   ];
@@ -238,7 +442,7 @@ function renderShell(activeTab: Tab): string {
       <input class="kd-search-input" type="text" placeholder="SEARCH ${activeTab.toUpperCase()}…" />
       <span class="kd-search-kbd">/</span>
     </div>
-    <div class="kd-body">${renderTab(activeTab)}</div>
+    <div class="kd-body">${renderTab(activeTab, snapshot, selectedKey)}</div>
     <footer class="kd-footer">
       <button class="kd-action" data-kd-action="pin"><span class="kd-action__glyph">⊕</span>PIN</button>
       <button class="kd-action" data-kd-action="share"><span class="kd-action__glyph">↗</span>SHARE</button>
@@ -254,9 +458,10 @@ export function mount(container: HTMLElement): DrawerHandle {
   let isOpen = false;
   let isExpanded = false;
   let activeTab: Tab = 'corpus';
+  let selectedEssential: string | null = null;
 
   const render = (): void => {
-    container.innerHTML = renderShell(activeTab);
+    container.innerHTML = renderShell(activeTab, selectedEssential);
   };
 
   const open = (): void => {
@@ -273,6 +478,7 @@ export function mount(container: HTMLElement): DrawerHandle {
     }
     isOpen = false;
     isExpanded = false;
+    selectedEssential = null;
     container.classList.remove('kd-open', 'kd-expanded');
     container.innerHTML = '';
   };
@@ -299,8 +505,16 @@ export function mount(container: HTMLElement): DrawerHandle {
       const next = tabBtn.getAttribute('data-kd-tab') as Tab | null;
       if (next !== null && next !== activeTab) {
         activeTab = next;
+        selectedEssential = null;
         render();
       }
+      return;
+    }
+    const essEl = target.closest<HTMLElement>('[data-kd-essential]');
+    if (essEl !== null) {
+      const k = essEl.getAttribute('data-kd-essential');
+      selectedEssential = (k !== null && k === selectedEssential) ? null : k;
+      render();
       return;
     }
     const actionEl = target.closest<HTMLElement>('[data-kd-action]');
@@ -312,6 +526,10 @@ export function mount(container: HTMLElement): DrawerHandle {
       else if (action === 'expand') {
         toggleExpanded();
       }
+      else if (action === 'essential-close') {
+        selectedEssential = null;
+        render();
+      }
       else {
         console.warn('[views/knowledge] action stub:', action);
       }
@@ -319,7 +537,7 @@ export function mount(container: HTMLElement): DrawerHandle {
   };
   container.addEventListener('click', clickHandler);
 
-  // Re-render if regimen changes (Products tab might show different items)
+  // Re-render if regimen changes (Products tab + Essentials status reflect it).
   onEvent('regimen:changed', () => {
     if (isOpen) {
       render();

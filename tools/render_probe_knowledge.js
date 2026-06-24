@@ -1,12 +1,12 @@
-// tools/render_probe_knowledge.js — Knowledge drawer wiring + Products vault (Phase 2 Chunk 2A).
+// tools/render_probe_knowledge.js — Knowledge drawer wiring + Products vault + Essentials.
 //
 // Usage: node tools/render_probe_knowledge.js   (exit 0 = PASS, non-zero = FAIL)
 //
-// Verifies the Knowledge drawer is wired end-to-end: the K rail item toggles the
-// overlay, the Products tab lists REAL vault entries (the canonical_name fix in
-// readProducts — the vault keys display names as canonical_name, not name), and
-// both Esc and a bare "K" press close/toggle it. Mirrors render_probe_adopt.js.
-// Requires puppeteer.
+// Verifies the Knowledge drawer end-to-end: the K rail item toggles the overlay,
+// the Products tab lists REAL vault entries (canonical_name fix in readProducts),
+// the Essentials tab shows ALL essentials (every section, not paginated) with
+// coverage-state tiles, a tile click expands the Wallach deep-dive, and both Esc
+// and a bare "K" press close/toggle it. Requires puppeteer.
 
 const path = require('path');
 const REPO = path.resolve(__dirname, '..');
@@ -50,10 +50,10 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(300);
   const products = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
-    const heads = root ? [...root.querySelectorAll('.section-head')].map(e => e.textContent.trim()) : [];
+    const heads = root ? [...root.querySelectorAll('.kd-section-head')].map(e => e.textContent.trim()) : [];
     const head = heads.find(t => /PRODUCTS VAULT/.test(t)) || '';
     const m = head.match(/·\s*(\d+)\s*ENTRIES/);
-    const rows = root ? [...root.querySelectorAll('.product-row__name')].map(e => e.textContent.trim()) : [];
+    const rows = root ? [...root.querySelectorAll('.kd-product-row__name')].map(e => e.textContent.trim()) : [];
     return {
       head,
       count: m ? parseInt(m[1], 10) : 0,
@@ -63,17 +63,39 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     };
   });
 
-  // 4. Esc closes.
+  // 4. Essentials tab -> ALL essentials shown (every section), then click a tile
+  //    to expand the Wallach deep-dive.
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="essentials"]')?.click());
+  await wait(300);
+  const essentials = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const tiles = root ? [...root.querySelectorAll('.kd-essential-tile')] : [];
+    const heads = root ? [...root.querySelectorAll('.kd-section-head')].map(e => e.textContent.trim()) : [];
+    const stateTiles = tiles.filter(t => t.classList.contains('kd-essential-tile--covered') || t.classList.contains('kd-essential-tile--partial')).length;
+    return { tileCount: tiles.length, sectionCount: heads.length, stateTiles };
+  });
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount .kd-essential-tile')?.click());
+  await wait(250);
+  const deep = await page.evaluate(() => {
+    const d = document.querySelector('#drawer-knowledge-mount .kd-essential-deep');
+    return {
+      shown: d !== null,
+      hasPill: d ? d.querySelector('.kd-essential-deep__status-pill') !== null : false,
+      hasName: d ? (d.querySelector('.kd-essential-deep__name')?.textContent || '').length > 0 : false,
+    };
+  });
+
+  // 5. Esc closes.
   await page.keyboard.press('Escape');
   await wait(200);
   const afterEsc = await drawerState();
 
-  // 5. Bare "K" reopens.
+  // 6. Bare "K" reopens.
   await page.keyboard.press('KeyK');
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, products, afterEsc, afterK };
+  const out = { boot, afterClick, products, essentials, deep, afterEsc, afterK };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -83,6 +105,10 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['products vault non-empty', products.count > 0],
     ['product rows rendered', products.rowCount > 0],
     ['no unnamed product rows', products.anyUnnamed === false],
+    ['essentials: all shown (>= 90 tiles)', essentials.tileCount >= 90],
+    ['essentials: every section present (>= 4 heads)', essentials.sectionCount >= 4],
+    ['essentials: coverage states rendered', essentials.stateTiles > 0],
+    ['essentials: tile click expands deep-dive', deep.shown === true && deep.hasPill === true && deep.hasName === true],
     ['Esc closes drawer', afterEsc.open === false],
     ['bare K reopens drawer', afterK.open === true],
     ['no page errors', errs.length === 0],
@@ -90,5 +116,5 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   const failed = checks.filter(([, ok]) => !ok).map(([n]) => n);
   await browser.close();
   if (failed.length) { console.log('FAIL', JSON.stringify(failed)); process.exit(1); }
-  console.log('PASS · Knowledge drawer wired (rail K + Esc + bare K) · Products vault lists real entries');
+  console.log('PASS · Knowledge drawer wired · Products vault real · Essentials all-shown + deep-dive');
 })().catch(e => { console.log('PROBE_ERR', e.message); process.exit(1); });
