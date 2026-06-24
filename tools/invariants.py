@@ -1687,6 +1687,37 @@ def check_corpus_runtime_purity():
     return True, "dist/main.js carries no LLM/external-network markers (extraction stays offline)"
 
 
+def check_corpus_embed_synced():
+    """Phase epsilon — the dashboard build-time corpus embed
+    (dashboard/assets/data/corpus-embed.json) must equal a fresh projection of the
+    sealed corpus (eden/tools/corpus_embed.py::build_embed). The offline file:// app
+    cannot fetch(), so the slim claim graph is inlined into the bundle at build
+    (esbuild JSON import in state/corpus.ts); drift means a stale build or a hand-edit,
+    which would make the Knowledge drawer's Essential/Condition deep-dive lie.
+    build_embed() is pure (no write); regenerate the embed via
+    `python eden/tools/corpus_embed.py`. Mirrors creators_log_embed_synced."""
+    import json as _json
+    embed = ROOT / "dashboard" / "assets" / "data" / "corpus-embed.json"
+    builder = ROOT / "eden" / "tools" / "corpus_embed.py"
+    if not builder.exists():
+        return True, "eden/tools/corpus_embed.py missing (corpus not installed; bootstrap-guard)"
+    if not embed.exists():
+        return False, "corpus-embed.json missing — run `python eden/tools/corpus_embed.py`"
+    sys.path.insert(0, str(ROOT / "tools"))
+    sys.path.insert(0, str(ROOT / "eden" / "tools"))
+    import corpus_embed
+    try:
+        on_disk = _json.loads(embed.read_text(encoding="utf-8"))
+    except Exception as e:
+        return False, f"corpus-embed.json is not valid JSON: {e}"
+    expected = corpus_embed.build_embed()
+    if on_disk == expected:
+        n = len(expected.get("claims", {}))
+        return True, (f"corpus embed in sync with the sealed corpus "
+                      f"({n} claims, knowledge_version={expected.get('knowledge_version')})")
+    return False, "corpus-embed.json is STALE — run `python eden/tools/corpus_embed.py`"
+
+
 def check_graphics_integrity():
     """Phase alpha — the sacred hand-made graphics (eden/graphics) must match their
     sealed manifest. Delegates to eden/tools/graphics_verify.py: 0 = sealed & healthy,
@@ -1928,6 +1959,14 @@ INVARIANTS = [
         truth_anchor="grep of dashboard/assets/js/dist/main.js for LLM-SDK + API-endpoint markers",
         severity="critical",
         lesson_ref="Wallach Knowledge Revamp Phase alpha (2026-06-24) — L10 portability guarantee: extraction may use an LLM, the runtime never may (offline-forever)",
+    ),
+    Invariant(
+        name="corpus_embed_synced",
+        description="the dashboard build-time corpus embed (dashboard/assets/data/corpus-embed.json) equals a fresh projection of the sealed corpus (eden/tools/corpus_embed.py::build_embed) — the Knowledge drawer's claim graph never drifts from claims/*",
+        check_fn=check_corpus_embed_synced,
+        truth_anchor="json.loads(dashboard/assets/data/corpus-embed.json) == eden/tools/corpus_embed.py::build_embed() over the sealed indices + claim shards",
+        severity="warning",
+        lesson_ref="Wallach Knowledge Revamp Phase epsilon (2026-06-24) — the offline file:// dashboard inlines the sealed claim graph at build; this catches a stale build or hand-edit that would make the in-app Essential/Condition deep-dive lie",
     ),
     Invariant(
         name="graphics_integrity",

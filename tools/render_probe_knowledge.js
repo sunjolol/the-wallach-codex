@@ -45,6 +45,21 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(300);
   const afterClick = await drawerState();
 
+  // 2b. Corpus tab (default on open) — books driven by the sealed corpus, NOT a
+  //     hard-coded list; real per-book claim counts; planned books 'coming soon'.
+  const corpus = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const rows = root ? [...root.querySelectorAll('.kd-book-row:not(.kd-book-row--planned)')] : [];
+    const planned = root ? [...root.querySelectorAll('.kd-book-row--planned')] : [];
+    const dddl = rows.find(r => /Dead Doctors/i.test(r.querySelector('.kd-book-row__title')?.textContent || ''));
+    return {
+      bookCount: rows.length,
+      plannedCount: planned.length,
+      dddlShowsClaims: dddl ? /\d+\s*claims/i.test(dddl.querySelector('.kd-book-row__count')?.textContent || '') : false,
+      fakeCites: rows.some(r => /CITES|CHAPTERS/i.test(r.textContent || '')),
+    };
+  });
+
   // 3. Switch to the Products tab; read the vault count + the rendered names.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="products"]')?.click());
   await wait(300);
@@ -74,14 +89,27 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     const stateTiles = tiles.filter(t => t.classList.contains('kd-essential-tile--covered') || t.classList.contains('kd-essential-tile--partial')).length;
     return { tileCount: tiles.length, sectionCount: heads.length, stateTiles };
   });
-  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount .kd-essential-tile')?.click());
+  // Click Magnesium specifically — it carries 11 sealed DDDL claims, so its
+  // deep-dive must render the FROM-THE-CORPUS block (grouped claims + verbatim).
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-essential="Magnesium"]')?.click());
   await wait(250);
   const deep = await page.evaluate(() => {
-    const d = document.querySelector('#drawer-knowledge-mount .kd-essential-deep');
+    const root = document.getElementById('drawer-knowledge-mount');
+    const d = root ? root.querySelector('.kd-essential-deep') : null;
+    const corpus = root ? root.querySelector('.kd-corpus') : null;
+    const claims = corpus ? [...corpus.querySelectorAll('.kd-claim')] : [];
+    const first = claims[0] || null;
     return {
       shown: d !== null,
       hasPill: d ? d.querySelector('.kd-essential-deep__status-pill') !== null : false,
       hasName: d ? (d.querySelector('.kd-essential-deep__name')?.textContent || '').length > 0 : false,
+      corpusShown: corpus !== null,
+      claimCount: claims.length,
+      groupCount: corpus ? corpus.querySelectorAll('.kd-corpus__group').length : 0,
+      countTxt: corpus ? (corpus.querySelector('.kd-corpus__count')?.textContent || '').trim() : '',
+      firstText: first ? (first.querySelector('.kd-claim__text')?.textContent || '').length > 0 : false,
+      firstVerbatim: first ? (first.querySelector('.kd-claim__verbatim')?.textContent || '').length > 0 : false,
+      firstCite: first ? /DEAD DOCTORS|DDDL/i.test(first.querySelector('.kd-claim__cite')?.textContent || '') : false,
     };
   });
 
@@ -95,20 +123,28 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, products, essentials, deep, afterEsc, afterK };
+  const out = { boot, afterClick, corpus, products, essentials, deep, afterEsc, afterK };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
   const checks = [
     ['drawer closed at boot', boot.open === false],
     ['rail K opens drawer', afterClick.open === true && afterClick.hasHead === true],
+    ['corpus: in-housed books rendered', corpus.bookCount >= 1],
+    ['corpus: DDDL shows a real claim count', corpus.dddlShowsClaims === true],
+    ['corpus: no fabricated CITES/CHAPTERS', corpus.fakeCites === false],
+    ['corpus: coming-soon books shown', corpus.plannedCount >= 1],
     ['products vault non-empty', products.count > 0],
     ['product rows rendered', products.rowCount > 0],
     ['no unnamed product rows', products.anyUnnamed === false],
     ['essentials: all shown (>= 90 tiles)', essentials.tileCount >= 90],
     ['essentials: every section present (>= 4 heads)', essentials.sectionCount >= 4],
     ['essentials: coverage states rendered', essentials.stateTiles > 0],
-    ['essentials: tile click expands deep-dive', deep.shown === true && deep.hasPill === true && deep.hasName === true],
+    ['essentials: Magnesium tile expands deep-dive', deep.shown === true && deep.hasPill === true && deep.hasName === true],
+    ['corpus: claim block rendered in deep-dive', deep.corpusShown === true],
+    ['corpus: sealed claims present (Magnesium)', deep.claimCount > 0],
+    ['corpus: claims grouped by kind', deep.groupCount > 0],
+    ['corpus: claim shows paraphrase + verbatim + citation', deep.firstText && deep.firstVerbatim && deep.firstCite],
     ['Esc closes drawer', afterEsc.open === false],
     ['bare K reopens drawer', afterK.open === true],
     ['no page errors', errs.length === 0],
@@ -116,5 +152,5 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   const failed = checks.filter(([, ok]) => !ok).map(([n]) => n);
   await browser.close();
   if (failed.length) { console.log('FAIL', JSON.stringify(failed)); process.exit(1); }
-  console.log('PASS · Knowledge drawer wired · Products vault real · Essentials all-shown + deep-dive');
+  console.log('PASS · Knowledge drawer wired · Products vault real · Essentials all-shown + deep-dive + sealed-corpus claims');
 })().catch(e => { console.log('PROBE_ERR', e.message); process.exit(1); });

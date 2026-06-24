@@ -26,6 +26,10 @@
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import { on as onEvent } from '../core/events.js';
 import {
+  type CorpusBook,
+  type CorpusClaim,
+  type CorpusEssential,
+  type CorpusPlannedBook,
   CoverageLayoutSchema,
   type LayoutSection,
   type LayoutTile,
@@ -33,6 +37,15 @@ import {
   ProductEntrySchema,
   ProductsLookupSchema,
 } from '../core/schemas/index.js';
+import {
+  conditionDisplayName,
+  essentialDisplayName,
+  getBookLabel,
+  getEssentialByLayoutKey,
+  listBooks,
+  listPlannedBooks,
+  resolveClaims,
+} from '../state/corpus.js';
 import {
   type CoverageSnapshot,
   type CoverageStatus,
@@ -94,15 +107,11 @@ function readProducts(): ProductEntry[] {
   return [...byName.values()];
 }
 
-// Hard-coded books + doctrines — small, stable, doesn't warrant LS or a fetch.
-// Round 6 polish: move into knowledge/corpus/ as actual file refs.
-const BOOKS = [
-  { id: 'DDDL', title: 'Dead Doctors Don\'t Lie', chapters: 12, cites: 286, author: 'Wallach' },
-  { id: 'RBS', title: 'Rare Earths: Forbidden Cures', chapters: 16, cites: 412, author: 'Wallach' },
-  { id: 'EPS', title: 'Epigenetics: The Death of the Genetic Theory', chapters: 9, cites: 188, author: 'Wallach' },
-  { id: 'YGY', title: 'YGY Product Compendium', chapters: 0, cites: 59, author: 'Secondary · label data only' },
-];
-
+// Doctrines — small, stable curated cards; doesn't warrant LS or a fetch.
+// (Books are NOT hard-coded: the Corpus tab is driven by the sealed corpus via
+//  state/corpus.ts — listBooks() = in-housed books-meta + REAL per-book claim
+//  counts; listPlannedBooks() = the books-roadmap 'coming soon' set. No fabricated
+//  cite totals ever — §00.A/anti-fakery.)
 const DOCTRINES = [
   { id: 'DOCT·01', title: 'Source-Rule · Wallach Primary Only', featured: true, body: 'Every numeric target, dose recommendation, deficiency indicator, or health claim displayed by this system must cite a primary source from the Wallach corpus or the YGY product allowlist. No exceptions, including the user.', cite: 'ENFORCED BY check_no_unsourced_claims · invariant tier · critical' },
   { id: 'DOCT·02', title: 'Aggregate-Vehicle Coverage (PDM)', featured: false, body: 'Plant-derived minerals are defined by sourcing, not by amounts. If a plant-derived mineral aggregate is present in a product, every trace mineral in that aggregate is considered covered — binary, not graduated.', cite: 'CITED · Dead Doctors Don\'t Lie · ch. 4' },
@@ -276,16 +285,61 @@ function hexSerial(seed: number): string {
 
 // ─── Tab renderers ─────────────────────────────────────────────────────────
 
-function renderCorpusTab(): string {
-  const booksHTML = BOOKS.map(b => `
+/** "WALLACH" / "WALLACH ET AL" — primary author surname + et-al marker. */
+function authorLabel(authors: string[] | undefined): string {
+  if (authors === undefined || authors.length === 0) {
+    return 'WALLACH';
+  }
+  const first = authors[0] ?? '';
+  const parts = first.trim().split(/\s+/);
+  const surname = parts.length > 0 ? (parts[parts.length - 1] ?? first) : first;
+  return authors.length > 1 ? `${surname.toUpperCase()} ET AL` : surname.toUpperCase();
+}
+
+/** The count cell: real claim total, or a muted 'queued' for un-mined in-housed books. */
+function bookCountHTML(n: number): string {
+  if (n > 0) {
+    return `${n}<small>claims</small>`;
+  }
+  return '<span class="kd-book-row__count--queued">⋯</span><small>queued</small>';
+}
+
+/** One in-housed book row — driven by books-meta + REAL per-book claim_count. */
+function renderBookRow(b: CorpusBook): string {
+  const ed = (b.edition !== undefined && b.edition !== null && b.edition.length > 0) ? `${escHTML(b.edition)} ED · ` : '';
+  const yr = (b.year !== undefined && b.year !== null) ? escHTML(String(b.year)) : '';
+  return `
     <div class="kd-book-row">
-      <div class="kd-book-row__spine"><span>${escHTML(b.id)}</span></div>
+      <div class="kd-book-row__spine"><span>${escHTML(b.code ?? '')}</span></div>
       <div class="kd-book-row__body">
         <h4 class="kd-book-row__title">${escHTML(b.title)}</h4>
-        <div class="kd-book-row__meta">${escHTML(b.author)}${b.chapters > 0 ? ` · ${b.chapters} CHAPTERS` : ''} · ${b.cites} CITES</div>
+        <div class="kd-book-row__meta">${escHTML(authorLabel(b.authors))} · ${ed}${yr}</div>
       </div>
-      <div class="kd-book-row__count">${b.cites}<small>cites</small></div>
-    </div>`).join('');
+      <div class="kd-book-row__count">${bookCountHTML(b.claim_count ?? 0)}</div>
+    </div>`;
+}
+
+/** One planned ('coming soon') book row — grayed/dashed, not yet in-housed. */
+function renderPlannedRow(b: CorpusPlannedBook): string {
+  return `
+    <div class="kd-book-row kd-book-row--planned">
+      <div class="kd-book-row__spine"><span>${escHTML(b.code ?? '')}</span></div>
+      <div class="kd-book-row__body">
+        <h4 class="kd-book-row__title">${escHTML(b.title)}</h4>
+        <div class="kd-book-row__meta">${escHTML(authorLabel(b.authors))} · COMING SOON</div>
+      </div>
+      <div class="kd-book-row__count kd-book-row__count--soon">—<small>soon</small></div>
+    </div>`;
+}
+
+function renderCorpusTab(): string {
+  const books = listBooks();
+  const planned = listPlannedBooks();
+  const totalClaims = books.reduce((s, b) => s + (b.claim_count ?? 0), 0);
+  const booksHTML = books.map(b => renderBookRow(b)).join('');
+  const plannedHTML = planned.length > 0
+    ? `<div class="kd-section-head">COMING SOON · ACQUIRING</div>${planned.map(p => renderPlannedRow(p)).join('')}`
+    : '';
 
   return `
     <div class="kd-featured-citation">
@@ -293,8 +347,100 @@ function renderCorpusTab(): string {
       <p class="kd-featured-citation__quote">The body needs 60 minerals, 16 vitamins, 12 amino acids, and 2 essential fatty acids — 90 essentials total. Plant-derived minerals are the only delivery vehicle that the body absorbs as nature intended.</p>
       <div class="kd-featured-citation__attr"><strong>Wallach</strong> · Dead Doctors Don\'t Lie · ch. 1 · paraphrase per primary corpus</div>
     </div>
-    <div class="kd-section-head">PRIMARY CORPUS · WALLACH</div>
-    ${booksHTML}`;
+    <div class="kd-section-head">PRIMARY CORPUS · WALLACH · ${books.length} BOOKS · ${totalClaims} CLAIMS</div>
+    ${booksHTML}
+    ${plannedHTML}`;
+}
+
+// ─── Corpus deep-dive (the sealed Wallach claim graph) ─────────────────────
+
+/** Most-salient claim kinds first; the rest fall after, alphabetically. */
+const CORPUS_KIND_PRIORITY = ['deficiency_sign', 'dose', 'protocol', 'mechanism', 'prognosis'];
+
+/** A claim kind slug → an uppercase human label (no literal map — §00.B). */
+function corpusKindLabel(kind: string): string {
+  return kind.replace(/[_-]+/g, ' ').toUpperCase();
+}
+
+/** Priority-then-alphabetical ordering for the claim-kind groups. */
+function corpusKindOrder(a: string, b: string): number {
+  const ia = CORPUS_KIND_PRIORITY.indexOf(a);
+  const ib = CORPUS_KIND_PRIORITY.indexOf(b);
+  const ra = ia === -1 ? CORPUS_KIND_PRIORITY.length : ia;
+  const rb = ib === -1 ? CORPUS_KIND_PRIORITY.length : ib;
+  return ra !== rb ? ra - rb : (a < b ? -1 : a > b ? 1 : 0);
+}
+
+/** Collapse a book verbatim's hard line-wraps into one clean line. */
+function collapseWS(s: string): string {
+  return s.replace(/\s+/g, ' ').trim();
+}
+
+/** A short "50 mg / daily" dose label, or '' when no structured dose. */
+function formatDose(dose: CorpusClaim['dose']): string {
+  if (dose === null || dose === undefined) {
+    return '';
+  }
+  const amount = (typeof dose.amount === 'number' || typeof dose.amount === 'string') ? String(dose.amount) : '';
+  const unit = typeof dose.unit === 'string' ? dose.unit : '';
+  const period = typeof dose.period === 'string' ? dose.period : '';
+  const head = [amount, unit].filter(s => s.length > 0).join(' ');
+  if (head.length === 0) {
+    return '';
+  }
+  return period.length > 0 ? `${head} / ${period}` : head;
+}
+
+/** One corpus claim: paraphrase + optional dose + verbatim source + citation. */
+function renderCorpusClaim(claim: CorpusClaim): string {
+  const dose = formatDose(claim.dose);
+  return `
+    <div class="kd-claim">
+      <p class="kd-claim__text">${escHTML(claim.claim_text)}</p>
+      ${dose.length > 0 ? `<div class="kd-claim__dose">${escHTML(dose)}</div>` : ''}
+      <blockquote class="kd-claim__verbatim">${escHTML(collapseWS(claim.verbatim))}</blockquote>
+      <div class="kd-claim__cite">CITED · ${escHTML(getBookLabel(claim.book))}</div>
+    </div>`;
+}
+
+/** The full "FROM THE CORPUS" block for one essential. */
+function renderCorpusForEssential(c: CorpusEssential): string {
+  if (c.claim_count === 0) {
+    return `
+      <div class="kd-corpus">
+        <div class="kd-corpus__head"><span class="kd-corpus__eyebrow"><span class="pulse-dot"></span>FROM THE WALLACH CORPUS</span></div>
+        <p class="kd-corpus__empty">— no sealed claims extracted for this essential yet · the corpus is still being built out —</p>
+      </div>`;
+  }
+  const groupsHTML = Object.keys(c.claims_by_kind).sort(corpusKindOrder).map((kind) => {
+    const ids = c.claims_by_kind[kind] ?? [];
+    const claimsHTML = resolveClaims(ids).map(renderCorpusClaim).join('');
+    return `
+      <div class="kd-corpus__group">
+        <div class="kd-corpus__group-label">${escHTML(corpusKindLabel(kind))}</div>
+        ${claimsHTML}
+      </div>`;
+  }).join('');
+
+  const condChips = c.conditions_treated
+    .map(s => `<span class="kd-corpus__chip">${escHTML(conditionDisplayName(s))}</span>`)
+    .join('');
+  const interactChips = c.interacts_with
+    .map(s => `<span class="kd-corpus__chip kd-corpus__chip--ess">${escHTML(essentialDisplayName(s))}</span>`)
+    .join('');
+  const books = c.books_cited.map(b => getBookLabel(b)).join(' · ');
+
+  return `
+    <div class="kd-corpus">
+      <div class="kd-corpus__head">
+        <span class="kd-corpus__eyebrow"><span class="pulse-dot"></span>FROM THE WALLACH CORPUS</span>
+        <span class="kd-corpus__count">${c.claim_count} CLAIM${c.claim_count === 1 ? '' : 'S'}</span>
+      </div>
+      ${condChips.length > 0 ? `<div class="kd-corpus__sub">IMPLICATED CONDITIONS</div><div class="kd-corpus__chips">${condChips}</div>` : ''}
+      ${interactChips.length > 0 ? `<div class="kd-corpus__sub">WORKS ALONGSIDE</div><div class="kd-corpus__chips">${interactChips}</div>` : ''}
+      ${groupsHTML}
+      <div class="kd-corpus__foot">SOURCE · ${escHTML(books)}</div>
+    </div>`;
 }
 
 function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): string {
@@ -302,6 +448,8 @@ function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): st
   if (e === undefined) {
     return '';
   }
+  const corpusEss = getEssentialByLayoutKey(key);
+  const corpusHTML = corpusEss !== null ? renderCorpusForEssential(corpusEss) : '';
   const status = statusOf(snapshot, key);
   const target = getTargets().find(t => t.name === key);
   const stance = target?.wallach_stance;
@@ -339,6 +487,7 @@ function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): st
       </header>
       ${e.essential ? '' : '<div class="kd-essential-deep__flag"><strong>NON-ESSENTIAL</strong> · the body can synthesize this, so it is not one of the 90. Shown for completeness — Youngevity includes it (Ultimate EFA Plus) for cardiovascular balance + optimal absorption.</div>'}
       ${wallachHTML}
+      ${corpusHTML}
       ${productsHTML}
     </div>`;
 }
@@ -415,7 +564,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null): string {
   const snapshot = getOrCompute();
   const productsCount = readProducts().length;
   const tabs = [
-    { id: 'corpus' as Tab, label: 'Corpus', count: `${BOOKS.length} BOOKS` },
+    { id: 'corpus' as Tab, label: 'Corpus', count: `${listBooks().length} BOOKS` },
     { id: 'essentials' as Tab, label: 'Essentials', count: `${ESS_ESSENTIAL_COUNT} ESSENTIAL` },
     { id: 'products' as Tab, label: 'Products', count: `${productsCount > 0 ? productsCount : 59} KNOWN` },
     { id: 'doctrine' as Tab, label: 'Doctrine', count: `${DOCTRINES.length} RULES` },

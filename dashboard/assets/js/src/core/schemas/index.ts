@@ -7,6 +7,7 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
+export * from './corpus.js';
 export * from './coverage-layout.js';
 export * from './coverage-status.js';
 export * from './goals.js';

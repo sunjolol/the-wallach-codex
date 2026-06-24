@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "_doctrine": "Wallach books PLANNED for the corpus but not yet in-housed (awaiting acquisition). Surfaced grayed/'coming soon' in the Knowledge Corpus tab so the corpus visibly grows. NOT sealed (a roadmap of intent, not canonical claim data) and NOT a source-rule target. When a book is acquired + in-housed + sealed, it moves to books-meta.json and drops out of here. User-maintained.",
+  "planned": [
+    { "title": "Let's Play Herbal Doctor", "authors": ["Joel D. Wallach"] },
+    { "title": "Hell's Kitchen: Causes, Prevention and Cure of Obesity, Diabetes and Metabolic Syndrome", "authors": ["Joel D. Wallach"] },
+    { "title": "Energy Crisis", "authors": ["Joel D. Wallach"] },
+    { "title": "Passport to Aromatherapy", "authors": ["Joel D. Wallach"] }
+  ]
+}

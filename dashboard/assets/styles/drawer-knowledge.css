@@ -518,3 +518,181 @@
   text-transform: uppercase;
   letter-spacing: var(--ds-track-wide);
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * CORPUS DEEP-DIVE — the sealed Wallach claim graph (eden/corpus), surfaced
+ * inside the Essentials deep-dive (Phase ε). claim_text = neutral paraphrase,
+ * verbatim = the exact book words (the §00.A source made visible), cite = the
+ * primary. Rooted at #drawer-knowledge-mount (Sever-Safety); ds-* tokens only.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+#drawer-knowledge-mount .kd-corpus {
+  margin-top: var(--ds-space-4);
+  padding-top: var(--ds-space-3);
+  border-top: 1px solid var(--ds-rule-soft);
+}
+#drawer-knowledge-mount .kd-corpus__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ds-space-2);
+  margin-bottom: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-corpus__eyebrow {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-accent);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-corpus__eyebrow .pulse-dot {
+  width: 6px; height: 6px;
+  background: var(--ds-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--ds-accent);
+}
+#drawer-knowledge-mount .kd-corpus__count {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  font-weight: 600;
+}
+#drawer-knowledge-mount .kd-corpus__sub {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  font-weight: 600;
+  margin: var(--ds-space-3) 0 var(--ds-space-1);
+}
+#drawer-knowledge-mount .kd-corpus__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+#drawer-knowledge-mount .kd-corpus__chip {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  color: var(--ds-ink-medium);
+  background: var(--ds-paper-darker);
+  border: 1px solid var(--ds-rule-soft);
+  padding: 3px 8px;
+  border-radius: var(--ds-radius-pill);
+  font-weight: 600;
+}
+#drawer-knowledge-mount .kd-corpus__chip--ess {
+  color: var(--ds-tech);
+  background: var(--ds-tech-wash);
+  border-color: transparent;
+}
+#drawer-knowledge-mount .kd-corpus__group { margin-top: var(--ds-space-3); }
+#drawer-knowledge-mount .kd-corpus__group-label {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-tech);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  margin-bottom: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-corpus__group-label::before {
+  content: ''; width: 8px; height: 1px; background: var(--ds-tech);
+}
+#drawer-knowledge-mount .kd-claim {
+  background: var(--ds-paper-light);
+  border: 1px solid var(--ds-rule-soft);
+  border-left: 2px solid var(--ds-accent);
+  border-radius: var(--ds-radius-xs);
+  padding: var(--ds-space-3);
+  margin-bottom: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-claim__text {
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-sm);
+  line-height: 1.5;
+  color: var(--ds-ink);
+  font-weight: 500;
+  margin: 0;
+}
+#drawer-knowledge-mount .kd-claim__dose {
+  display: inline-block;
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  color: var(--ds-accent-deep);
+  background: var(--ds-accent-wash);
+  padding: 2px 8px;
+  border-radius: var(--ds-radius-pill);
+  font-weight: 700;
+  margin-top: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-claim__verbatim {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: var(--ds-text-sm);
+  line-height: 1.4;
+  color: var(--ds-ink-soft);
+  margin: var(--ds-space-2) 0 0;
+  padding-left: var(--ds-space-3);
+  border-left: 1px solid var(--ds-rule);
+}
+#drawer-knowledge-mount .kd-claim__cite {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-faint);
+  margin-top: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-corpus__foot {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-faint);
+  border-top: 1px solid var(--ds-rule-soft);
+  padding-top: var(--ds-space-2);
+  margin-top: var(--ds-space-3);
+}
+#drawer-knowledge-mount .kd-corpus__empty {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  color: var(--ds-ink-faint);
+  margin: var(--ds-space-2) 0 0;
+}
+
+/* ─── CORPUS · book-row states (Phase ε — data-driven from the sealed corpus) ──
+ * queued  = in-housed book, claims not yet extracted (muted count glyph).
+ * planned = roadmap book, not yet in-housed (dashed + grayed, non-interactive). */
+#drawer-knowledge-mount .kd-book-row__count--queued { color: var(--ds-ink-faint); }
+#drawer-knowledge-mount .kd-book-row--planned {
+  border-style: dashed;
+  border-color: var(--ds-rule);
+  background: transparent;
+  opacity: 0.6;
+  cursor: default;
+}
+#drawer-knowledge-mount .kd-book-row--planned:hover {
+  border-color: var(--ds-rule);
+  box-shadow: none;
+}
+#drawer-knowledge-mount .kd-book-row--planned .kd-book-row__spine {
+  background: var(--ds-paper-darker);
+  box-shadow: none;
+}
+#drawer-knowledge-mount .kd-book-row--planned .kd-book-row__spine span { color: var(--ds-ink-soft); }
+#drawer-knowledge-mount .kd-book-row__count--soon { color: var(--ds-ink-faint); }
