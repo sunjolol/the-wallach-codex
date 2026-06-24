@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_35 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_36 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-24 17:05 UTC-04:00 · design-decision · chronicle
+Session close — editorial-fringe policy LOCKED: exclude Wallach content only in extreme cases + run by Luneth every time; excluded fringe lives in chronicle/wallach-fringe-excluded.md, not the app. Next genesis: fix Rare Earths OCR from screenshots, then resume extraction.
+  ↳ NEW chronicle/wallach-fringe-excluded.md catalog (first entries: RE Ch.6 crime claims + Ch.7 emotional-defects list). Memories saved: editorial-fringe-exclusion-policy, claim-summary-verbatim-format, citation-context-expansion. Corpus unchanged kv=19 (112 claims), board 30/30. Session shipped epsilon.1 + epsilon.2 (corpus surfaced in the Knowledge drawer) + gamma.1/gamma.2 (Rare Earths 18 claims). Next session: OCR fix from Luneth screenshots (incl. Wallach own table of the elements), then resume extraction.
 
 ## 2026-06-24 16:47 UTC-04:00 · milestone · eden/corpus
 Phase γ.2 — Rare Earths batch 2: 5 claims sealed (kv 18->19, 112 total). B12/cobalt dose; birth-defects-preventable + Down's-as-mineral-depletion (Ch7); species longevity ceiling (man 145) + 90-essentials premise (Ch8). Skipped Ch6 fringe crime claims. 30/30, probe green.
