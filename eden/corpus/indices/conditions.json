@@ -159,14 +159,15 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000012",
-        "WAL-CLM-DDDL-000032"
+        "WAL-CLM-DDDL-000032",
+        "WAL-CLM-RARE-000011"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000051"
@@ -181,7 +182,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "asthma": {
@@ -328,7 +330,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -336,7 +338,8 @@
         "WAL-CLM-DDDL-000036"
       ],
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000012"
+        "WAL-CLM-DDDL-000012",
+        "WAL-CLM-RARE-000011"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000018",
@@ -360,7 +363,8 @@
       "taurine"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "canker_sores": {
@@ -573,18 +577,26 @@
   },
   "cystic_fibrosis": {
     "display_name": "Cystic Fibrosis",
-    "claim_count": 1,
+    "claim_count": 3,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000004",
+        "WAL-CLM-RARE-000010"
+      ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005"
       ]
     },
     "essentials_involved": [
-      "selenium"
+      "selenium",
+      "vitamin-b2",
+      "vitamin-e",
+      "zinc"
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "diabetes": {
@@ -704,6 +716,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "heat_stroke": {
+    "display_name": "Heat Stroke",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000003"
+      ]
+    },
+    "essentials_involved": [
+      "sodium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "hypoglycemia": {
@@ -1003,7 +1031,7 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
@@ -1013,7 +1041,8 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000012",
-        "WAL-CLM-DDDL-000032"
+        "WAL-CLM-DDDL-000032",
+        "WAL-CLM-RARE-000011"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000009"
@@ -1037,7 +1066,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "otitis": {

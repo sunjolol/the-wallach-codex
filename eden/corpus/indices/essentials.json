@@ -47,12 +47,20 @@
     "display_name": "Sodium",
     "canon_slug": "sodium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000003"
+      ]
+    },
     "deficiency_signs": [],
-    "conditions_treated": [],
+    "conditions_treated": [
+      "heat_stroke"
+    ],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "magnesium": {
     "display_name": "Magnesium",
@@ -346,19 +354,35 @@
     "display_name": "Germanium",
     "canon_slug": "germanium",
     "category": "mineral",
-    "claim_count": 3,
+    "claim_count": 6,
     "claims_by_kind": {
       "deficiency_sign": [
-        "WAL-CLM-DDDL-000012"
+        "WAL-CLM-DDDL-000012",
+        "WAL-CLM-RARE-000011"
       ],
       "dose": [
-        "WAL-CLM-DDDL-000011"
+        "WAL-CLM-DDDL-000011",
+        "WAL-CLM-RARE-000012"
+      ],
+      "food_source": [
+        "WAL-CLM-RARE-000013"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000070"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "low_energy",
+        "claim_id": "WAL-CLM-RARE-000011",
+        "confidence": "high"
+      },
+      {
+        "sign": "reduced_immune_status",
+        "claim_id": "WAL-CLM-RARE-000011",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
       "arthritis",
       "cancer",
@@ -372,7 +396,8 @@
       "zinc"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "iron": {
@@ -501,7 +526,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 13,
+    "claim_count": 15,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -510,7 +535,9 @@
       "mechanism": [
         "WAL-CLM-DDDL-000029",
         "WAL-CLM-DDDL-000030",
-        "WAL-CLM-DDDL-000071"
+        "WAL-CLM-DDDL-000071",
+        "WAL-CLM-RARE-000004",
+        "WAL-CLM-RARE-000010"
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000007",
@@ -555,11 +582,13 @@
       "arginine",
       "germanium",
       "vitamin-a",
+      "vitamin-b2",
       "vitamin-e",
       "zinc"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "silica": {
@@ -650,7 +679,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -664,7 +693,8 @@
       "mechanism": [
         "WAL-CLM-DDDL-000037",
         "WAL-CLM-DDDL-000038",
-        "WAL-CLM-DDDL-000084"
+        "WAL-CLM-DDDL-000084",
+        "WAL-CLM-RARE-000010"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000049",
@@ -690,6 +720,7 @@
       "canker_sores",
       "cleft_palate",
       "cradle_cap",
+      "cystic_fibrosis",
       "diabetes",
       "infertility",
       "spina_bifida"
@@ -703,12 +734,15 @@
       "selenium",
       "vitamin-a",
       "vitamin-b12",
+      "vitamin-b2",
       "vitamin-b3",
       "vitamin-b6",
-      "vitamin-b9"
+      "vitamin-b9",
+      "vitamin-e"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "silver": {
@@ -1200,12 +1234,24 @@
     "display_name": "Riboflavin",
     "canon_slug": "vitamin-b2",
     "category": "vitamin",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000010"
+      ]
+    },
     "deficiency_signs": [],
-    "conditions_treated": [],
-    "interacts_with": [],
-    "books_cited": []
+    "conditions_treated": [
+      "cystic_fibrosis"
+    ],
+    "interacts_with": [
+      "selenium",
+      "vitamin-e",
+      "zinc"
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "vitamin-b3": {
     "display_name": "Niacin",
@@ -1393,10 +1439,13 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089"
+      ],
+      "mechanism": [
+        "WAL-CLM-RARE-000010"
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000072"
@@ -1413,15 +1462,19 @@
       }
     ],
     "conditions_treated": [
+      "cystic_fibrosis",
       "keshan_disease",
       "muscular_dystrophy"
     ],
     "interacts_with": [
       "selenium",
-      "vitamin-k"
+      "vitamin-b2",
+      "vitamin-k",
+      "zinc"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "vitamin-k": {

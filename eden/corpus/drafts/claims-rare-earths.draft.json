@@ -1,0 +1,433 @@
+{
+  "schema_version": 1,
+  "book_id": "rare-earths",
+  "knowledge_version": null,
+  "claims": [
+    {
+      "id": "WAL-CLM-RARE-000001",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Minerals are the currency of life — the body's basic functions depend on them, and Wallach argues the medical profession ignores this truth to the point past the absurd.",
+      "verbatim": "Simply said, minerals are the currency\nof life. The medical profession ignores this\ntruth to the point past the absurd",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 81460
+      },
+      "dose": null,
+      "tags": [
+        "thesis",
+        "minerals-currency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T20:33:28+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000002",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The basic functions of life cannot be performed without minerals — either as a structural part of the function or as a catalytic cofactor (for RNA, DNA, sub-cellular and digestive enzymes, and the utilization of vitamins).",
+      "verbatim": "The basic functions of life itself cannot\nbe performed without minerals, either as a\nmajor part of the function or as a catalytic\ncofactor",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 80948
+      },
+      "dose": null,
+      "tags": [
+        "thesis",
+        "cofactor"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T20:33:28+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000003",
+      "kind": "mechanism",
+      "essentials": [
+        "sodium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "heat_stroke"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach frames heat-stroke deaths (he points to the deadly July 1993 US east-coast heat wave) as a simple salt/sodium deficiency — easily remedied with water and salt, and worsened by doctor-ordered low-salt diets.",
+      "verbatim": "a simple salt or sodium deficiency\n(your basic heat stroke that any boy scout\ncould diagnose and recognize and remedy\nwith water and salt)",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 82692
+      },
+      "dose": null,
+      "tags": [
+        "heat-wave-1993",
+        "low-salt-critique"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T20:33:28+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000004",
+      "kind": "mechanism",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cystic_fibrosis"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach discovered the trace mineral selenium's pivotal role in the cause and prevention of cystic fibrosis while working as a research veterinary pathologist.",
+      "verbatim": "a trace mineral, Selenium, in the etiology and\nprevention of Cystic Fibrosis while a research veterinary pathologist",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 13752
+      },
+      "dose": null,
+      "tags": [
+        "cystic-fibrosis",
+        "selenium-discovery",
+        "veterinary-origin"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T20:33:28+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000005",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach cites U.S. Senate Document 264 (1936) and the 1992 Rio Earth Summit report on soil mineral-depletion rates: the world's farm and range soils are 'anemic' — soils that should contain 60 elements have few or none.",
+      "verbatim": "U.S Senate Document 264 (1936) and the 1992 Earth Summit Report (Rio) on mineral\ndepletion rates of the world's farm and range soils point out graphically that our Earth's soils\nare anemic - the soil should contain 60 of them, there are few or none!",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 28465
+      },
+      "dose": null,
+      "tags": [
+        "soil-depletion",
+        "senate-doc-264"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T20:33:28+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000006",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach puts the human genetic potential for longevity at 120 to 140 years — the US average life span falls as much as 50% short of it.",
+      "verbatim": "falls\nfar short (as much as 50% short) of our human genetic potential for longevity of 120 to 140\nyears.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 29488
+      },
+      "dose": null,
+      "tags": [
+        "longevity",
+        "genetic-potential"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T20:33:28+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000007",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach argues the extended rat lifespans in calorie-restriction studies came not from fewer calories but from the higher concentration of minerals per calorie in the diet.",
+      "verbatim": "It is not the reduced calorie level that gave the rats their extended life spans by 30, 40 and\n50%, but rather it is the increased concentration of mineral per calorie in the diet",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 30480
+      },
+      "dose": null,
+      "tags": [
+        "caloric-restriction",
+        "longevity"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T20:33:28+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000008",
+      "kind": "personal_anecdote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [
+        "pica"
+      ],
+      "claim_text": "After two years of minimal-calorie intake in Biosphere II, five of the six Biospherians craved only pizza and junk food — which Wallach reads as a manifestation of pica (mineral hunger).",
+      "verbatim": "five of the six Biospherians (excluding Walford) wanted only pizza\nand junk food (a manifestation of pica)",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 30887
+      },
+      "dose": null,
+      "tags": [
+        "pica",
+        "biosphere-ii"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T20:33:28+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000009",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach frames the Earth as a finite, limited resource for the raw-material elements that are the basis of all plant, animal, and human life.",
+      "verbatim": "our planet is a limited finite resource for\nthe raw materials that are the basis of all\nplant, animal and human life as we know\nit.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 35455
+      },
+      "dose": null,
+      "tags": [
+        "framing",
+        "finite-earth"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T20:33:28+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000010",
+      "kind": "mechanism",
+      "essentials": [
+        "selenium",
+        "zinc",
+        "vitamin-b2",
+        "vitamin-e"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cystic_fibrosis"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach's theory holds that cystic fibrosis can be an acquired environmental disease produced by a deficiency of selenium, zinc, and riboflavin, and worsened by diets low in vitamin E and high in polyunsaturated fatty acids.",
+      "verbatim": "an acquired environmental disease\nthat can be produced by a deficiency of selenium, zinc, and\nriboflavin and exacerbated by diets also low in vitamin E",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 402518
+      },
+      "dose": null,
+      "tags": [
+        "cystic-fibrosis",
+        "selenium-theory"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T20:33:28+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000011",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "germanium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "arthritis",
+        "osteoporosis",
+        "cancer"
+      ],
+      "symptoms": [
+        "low_energy",
+        "reduced_immune_status"
+      ],
+      "claim_text": "Germanium deficiency is typified by severely reduced immune status, arthritis, osteoporosis, low energy, and cancer.",
+      "verbatim": "Deficiencies of germanium are typified\nby severely reduced immune status,",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 817890
+      },
+      "dose": null,
+      "tags": [
+        "germanium-deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T20:33:28+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000012",
+      "kind": "dose",
+      "essentials": [
+        "germanium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach gives a germanium maintenance dose of 20-30 mg/day; 50-100 mg/day is commonly used when an individual has a serious illness that requires an increased oxygen level in the body.",
+      "verbatim": "50 to 100 mg per day are commonly used\nwhen an individual has a serious illness that\nrequires an increased oxygen level in the\nbody.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 818092
+      },
+      "dose": {
+        "amount": "50-100",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "serious illness (increased oxygen demand)"
+      },
+      "tags": [
+        "germanium-dose"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T20:33:28+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000013",
+      "kind": "food_source",
+      "essentials": [
+        "germanium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach lists germanium-rich foods — watercress, shiitake mushroom, pearl barley, sanzukon, sushi, waternut, boxthorn seed, and wisteria knob — at 100 to 2,000 ppm germanium.",
+      "verbatim": "sanzukon, sushi, waternut, boxthorn\nseed and wisteria knob contain germanium\nin amounts ranging from 100 to 2,000 ppm.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 817654
+      },
+      "dose": null,
+      "tags": [
+        "food-source",
+        "germanium"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T20:33:28+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    }
+  ]
+}

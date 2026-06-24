@@ -110,9 +110,24 @@
       "dddl-3e-2011"
     ]
   },
+  "low_energy": {
+    "display_name": "Low Energy",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "germanium",
+        "claim_id": "WAL-CLM-RARE-000011",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "pica": {
     "display_name": "Pica",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "iron",
@@ -122,7 +137,23 @@
       }
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
+    ]
+  },
+  "reduced_immune_status": {
+    "display_name": "Reduced Immune Status",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "germanium",
+        "claim_id": "WAL-CLM-RARE-000011",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
     ]
   }
 }

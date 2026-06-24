@@ -1,6 +1,94 @@
 [
   {
     "id": "CG-0001",
+    "essentials": [],
+    "conditions": [],
+    "kind": "definition",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-RARE-000001",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000005",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000006",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000009",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 4
+  },
+  {
+    "id": "CG-0002",
+    "essentials": [],
+    "conditions": [],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-RARE-000002",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000007",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0003",
+    "essentials": [
+      "germanium"
+    ],
+    "conditions": [],
+    "kind": "dose",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000011",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000012",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0004",
+    "essentials": [
+      "germanium"
+    ],
+    "conditions": [
+      "arthritis",
+      "cancer",
+      "osteoporosis"
+    ],
+    "kind": "deficiency_sign",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000012",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000011",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0005",
     "essentials": [
       "zinc"
     ],
