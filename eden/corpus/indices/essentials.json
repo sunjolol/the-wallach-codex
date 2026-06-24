@@ -248,8 +248,11 @@
     "display_name": "Cobalt",
     "canon_slug": "cobalt",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
+      "dose": [
+        "WAL-CLM-RARE-000014"
+      ],
       "mechanism": [
         "WAL-CLM-DDDL-000044"
       ]
@@ -260,7 +263,8 @@
       "vitamin-b12"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "chromium": {
@@ -1355,8 +1359,11 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
+      "dose": [
+        "WAL-CLM-RARE-000014"
+      ],
       "mechanism": [
         "WAL-CLM-DDDL-000044",
         "WAL-CLM-DDDL-000045"
@@ -1385,7 +1392,8 @@
       "zinc"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "vitamin-c": {

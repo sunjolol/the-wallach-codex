@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_34 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_35 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-24 16:47 UTC-04:00 · milestone · eden/corpus
+Phase γ.2 — Rare Earths batch 2: 5 claims sealed (kv 18->19, 112 total). B12/cobalt dose; birth-defects-preventable + Down's-as-mineral-depletion (Ch7); species longevity ceiling (man 145) + 90-essentials premise (Ch8). Skipped Ch6 fringe crime claims. 30/30, probe green.
+  ↳ WAL-CLM-RARE-000014..18; dose x1, mechanism x2, definition x2. New conditions birth_defects, down_syndrome. Per-element catalog is OCR-hyphenation-heavy so verbatims drawn from cleaner prose; editorial choice to skip Ch6 behavioral-crime claims (off-mission). Every verbatim exact on first pass. corpus_seal kv=19; build OK; invariants 30/30; probe PASS 0 errors. Rare Earths now 18 claims.
 
 ## 2026-06-24 16:41 UTC-04:00 · milestone · eden/corpus
 Phase γ.1 — Rare Earths first batch: 13 claims sealed (kv 17->18, 94->107 total). Thesis-heavy book #2 (minerals-as-currency, selenium->cystic-fibrosis discovery, soil depletion, longevity, germanium deficiency/dose/food). Luneth approved the format. Board 30/30, probe green.

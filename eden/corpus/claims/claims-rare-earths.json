@@ -428,6 +428,172 @@
       "extracted_at": "2026-06-24T20:33:28+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000014",
+      "kind": "dose",
+      "essentials": [
+        "vitamin-b12",
+        "cobalt"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Against an RDA of 3-4 mcg/day, Wallach prefers a vitamin B12/cobalt intake of 250 to 400 mcg/day, especially when preparing for pregnancy and while nursing.",
+      "verbatim": "250 to 400 mcg per day, especially while\npreparing for a pregnancy and nursing",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 772581
+      },
+      "dose": {
+        "amount": "250-400",
+        "unit": "mcg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "pregnancy preparation and nursing"
+      },
+      "tags": [
+        "b12-dose",
+        "cobalt",
+        "pregnancy"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T20:45:46+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000015",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "birth_defects"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach holds that birth defects — physical, emotional, biochemical, and behavioral — that occur to the embryo or fetus and show up at birth are not genetic, but are in fact preventable.",
+      "verbatim": "Injuries or birth defects (i.e.-physical,\nemotional, biochemical and behavioral)\nthat occur to the embryo and fetus and\nshow up at birth regardless of cause are not\ngenetic and are in fact preventable.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 392896
+      },
+      "dose": null,
+      "tags": [
+        "birth-defects",
+        "preventable"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T20:45:46+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000016",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "down_syndrome"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach attributes the higher trisomy (Down's syndrome) risk in older mothers to mineral depletion — a woman depleted of minerals by her mid-30s carries higher-risk embryos.",
+      "verbatim": "(the poor woman would be depleted\nof minerals by the time she was over 35 so\nthe last two or three embryos were at higher\ntisk for trisomy)",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 393673
+      },
+      "dose": null,
+      "tags": [
+        "down-syndrome",
+        "trisomy",
+        "mineral-depletion"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T20:45:46+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000017",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Every species has a genetic-potential ceiling for longevity — Wallach lists mice ~700 days, dogs 23 years, horses 32, elephants 45, chimpanzees 52, and humans 145 years.",
+      "verbatim": "All species have a “genetic potential” or\nupper limit for longevity - mice 700 days,\ndogs 23 years, horses 32 years, elephant\n45 years, chimpanzee 52 years and man\n145 years",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 474042
+      },
+      "dose": null,
+      "tags": [
+        "longevity",
+        "genetic-potential"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T20:45:46+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000018",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Reaching the 145-year longevity potential requires consuming each of the 90 essential nutrients in optimal amounts every day.",
+      "verbatim": "Do those positive things necessary\nto make it to 145 including consuming each\nof the 90 essential nutrients in optimal\namounts each day.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 474666
+      },
+      "dose": null,
+      "tags": [
+        "90-essentials",
+        "longevity"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T20:45:46+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

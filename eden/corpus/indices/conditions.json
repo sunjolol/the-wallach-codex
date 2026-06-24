@@ -266,8 +266,11 @@
   },
   "birth_defects": {
     "display_name": "Birth Defects",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000015"
+      ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000039"
       ]
@@ -277,7 +280,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "bladder_stones": {
@@ -640,6 +644,20 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "down_syndrome": {
+    "display_name": "Down Syndrome",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000016"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "eczema": {
