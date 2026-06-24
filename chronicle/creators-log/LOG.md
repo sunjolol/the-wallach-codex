@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_27 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_28 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-24 13:55 UTC-04:00 · round-close · eden/corpus
+Phase β.7: more DDDL disease entries — 55→62 claims (knowledge_version=10). Cancer (prevention + iconic survival quote), osteoporosis (HCl+Ca, estrogen/fluoride critique, estrogen contraindication), otitis (95% milk allergy). Board 29/29.
+  ↳ 62 claims span minerals + vitamins + condition protocols / 11 of 13 kinds. Cancer-survival quote anchored on the clean sub-span to skip a mid-sentence page-header. NEXT: aminos/fatty-acids + remaining disease entries, then Phase γ the other 5 books, then Phase δ indices.
 
 ## 2026-06-24 13:53 UTC-04:00 · round-close · eden/corpus
 Phase β.6: DDDL disease-protocol chapters — 45→55 claims (knowledge_version=9). First condition→protocol+dose claims (diabetes, arthritis, asthma, cor pulmonale, cradle cap). 11 of 13 kinds. Board 29/29.
