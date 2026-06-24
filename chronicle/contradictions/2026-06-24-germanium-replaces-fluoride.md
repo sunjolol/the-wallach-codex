@@ -50,3 +50,18 @@ Luneth's stated concern: the Fluoride essential entry likely traces to an **earl
 2. **Audit the provenance** of the Fluoride/transcript claim recorded in the fluoride eval — confirm which parts are real primary reads vs hallucinated.
 3. **Cysteine vs Taurine** — the layout aminos list **Cysteine**, but Wallach's enumerated graphic has **Taurine**. Same class of discrepancy as Fluoride; spotted this chunk, NOT acted on (membership/data = Luneth's batch domain).
 4. The "definitively log all essentials from the books and attach to the table" pass Luneth described — this record is a thread into it.
+
+---
+
+## RESOLUTION (2026-06-24) — fluoride re-adjudication CLOSED
+
+Luneth ruled: **Wallach's books are now the sole authority on fluoride** (per the corpus revamp — the single source of truth is the Eden corpus, gathered in batches). The "fluoride re-adjudication" pending item is **closed**:
+
+- Fluoride stays OUT of the 90 essentials (Germanium holds the slot — that decision stands).
+- Wallach's own anti-fluoride position is now captured directly from the book as **WAL-CLM-RARE-000029** (Rare Earths, Ch.2, p.25): _"The current medical use of lithium is limited to psychiatric patients, especially manic depression. We would like to see lithium added to the public water supply and eliminate fluoride!!!"_
+
+**Actions taken (knowledge_version → 23):**
+- Removed the `fluoride-re-adjudication` entry from `essentials-canon.json` `pending_adjudications` (the `cysteine-vs-taurine` adjudication remains open).
+- Dropped the now-stale `fluoride-adjudication` tag from WAL-CLM-RARE-000029.
+
+**Remnant audit.** The live app already surfaced no fluoride essential (`coverage-layout-data.json` carries Germanium, not fluoride; the Knowledge drawer reads the Eden embed). Remaining `fluoride` strings in the repo are: (a) Wallach's own book/transcript text (source of truth — kept); (b) chronicle history incl. this record + the Creator's Log saga (kept, never edited); (c) deprecated pre-Eden knowledge-layer artifacts (`knowledge/_wallach_stance_candidates.json`, `knowledge/corpus-index/*`, `why-layer-*`) — dormant, not consumed by the live app, slated for the Phase η wholesale cleanup. **No live "fluoride-as-essential" claim remains.**

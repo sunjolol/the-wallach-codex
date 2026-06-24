@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_41 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_42 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-24 19:57 UTC-04:00 · design-decision · eden/corpus
+Fluoride re-adjudication CLOSED (Luneth ruling): Wallach's books are sole authority. Removed the fluoride pending_adjudication + claim-29 stale tag; his anti-fluoride stance is now book claim WAL-CLM-RARE-000029. kv 22→23.
+  ↳ Luneth: 'Fluoride is no longer a pending item, whatever Wallach says from his books is what we go off of. Close the fluoride thing, no remnants of the old fluoride claims, only the new book files / single source of truth.' Done: removed fluoride-re-adjudication from essentials-canon.json (cysteine-vs-taurine remains open); dropped the fluoride-adjudication tag from claim 29 (synced shard + draft so seal-promotion wouldn't revert it); appended a RESOLUTION to chronicle/contradictions/2026-06-24-germanium-replaces-fluoride.md. Remnant audit: live app already fluoride-clean (coverage-layout-data.json = Germanium); other fluoride strings are Wallach source, chronicle history (incl. Creator's Log saga), or deprecated pre-Eden knowledge-layer (Phase η). next-chunk.md to update at session close.
 
 ## 2026-06-24 19:46 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 3: Rare Earths Ch.2 (60-metals + lithium) + Ch.3 'Our Earth Is Anemic' opening, 5 claims (kv 21→22, RARE 27→32, 126 total). Used the PDF text layer + programmatic de-hyphenation to stay off image renders after the prior content-policy block. Luneth-approved.

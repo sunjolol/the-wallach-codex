@@ -17,14 +17,6 @@
       "status": "open",
       "resolve_in": "Phase δ corpus audit",
       "affects_slug": "cysteine"
-    },
-    {
-      "id": "fluoride-re-adjudication",
-      "slot": "mineral",
-      "question": "Fluoride was removed (Germanium took its slot) on a suspected hallucinated-citation basis. Re-confirm against the actual Wallach books whether Fluoride is one of the 60 minerals.",
-      "status": "open",
-      "resolve_in": "Phase δ corpus audit",
-      "affects_slug": null
     }
   ],
   "essentials": [
