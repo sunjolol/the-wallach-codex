@@ -7917,6 +7917,9 @@
   function getCondition(slug) {
     return corpus().conditions[slug] ?? null;
   }
+  function listConditions() {
+    return Object.values(corpus().conditions);
+  }
   function conditionDisplayName(slug) {
     return getCondition(slug)?.display_name ?? humanizeSlug(slug);
   }
@@ -7954,219 +7957,9 @@
     return corpus().planned_books;
   }
 
-  // assets/js/src/views/knowledge.ts
-  function readProducts() {
-    const el = document.getElementById("regimen-label-lookup");
-    if (el === null) {
-      return [];
-    }
-    let parsed;
-    try {
-      parsed = JSON.parse(el.textContent ?? "{}");
-    } catch {
-      return [];
-    }
-    let root = parsed;
-    if (parsed !== null && typeof parsed === "object" && "products" in parsed) {
-      root = parsed.products;
-    }
-    const lookup = ProductsLookupSchema.safeParse(root);
-    if (!lookup.success) {
-      return [];
-    }
-    const byName = /* @__PURE__ */ new Map();
-    for (const value of Object.values(lookup.data)) {
-      const candidates = Array.isArray(value) ? value : [value];
-      for (const candidate of candidates) {
-        const r = ProductEntrySchema.safeParse(candidate);
-        if (!r.success) {
-          continue;
-        }
-        const nm = r.data.canonical_name ?? r.data.name;
-        if (typeof nm === "string" && nm.length > 0) {
-          byName.set(nm.toLowerCase(), r.data);
-        }
-      }
-    }
-    return [...byName.values()];
-  }
-  var DOCTRINES = [
-    { id: "DOCT\xB701", title: "Source-Rule \xB7 Wallach Primary Only", featured: true, body: "Every numeric target, dose recommendation, deficiency indicator, or health claim displayed by this system must cite a primary source from the Wallach corpus or the YGY product allowlist. No exceptions, including the user.", cite: "ENFORCED BY check_no_unsourced_claims \xB7 invariant tier \xB7 critical" },
-    { id: "DOCT\xB702", title: "Aggregate-Vehicle Coverage (PDM)", featured: false, body: "Plant-derived minerals are defined by sourcing, not by amounts. If a plant-derived mineral aggregate is present in a product, every trace mineral in that aggregate is considered covered \u2014 binary, not graduated.", cite: "CITED \xB7 Dead Doctors Don't Lie \xB7 ch. 4" },
-    { id: "DOCT\xB703", title: "BTT Layering Order", featured: false, body: "Beyond Tangy Tangerine is the foundational morning layer \u2014 vitamins, aminos, foundational minerals. Stack PDM on top for the rare-trace closure. Add EFA Plus for fatty acids. Order matters for absorption.", cite: "CITED \xB7 Wallach lecture corpus \xB7 YGY protocol guide" },
-    { id: "DOCT\xB704", title: "Trace Minerals: Source-Not-Quantity", featured: false, body: "For the 35 rare trace minerals, presence in a plant-derived vehicle is the qualifying criterion. Mass-spec verification of every trace amount is unnecessary if the source is doctrinally sound.", cite: "CITED \xB7 Rare Earths \xB7 ch. 9" },
-    { id: "DOCT\xB705", title: "Atomic LS Write Discipline (\xA717)", featured: false, body: "Every regimen LS write goes through a verified round-trip set \u2192 re-read \u2192 reject-on-mismatch loop. Silent truncations from the Edit tool taught us this. Writes that cannot confirm fail loudly.", cite: "PROVED \xB7 Round 73 lessons + 9 truncation incidents" },
-    { id: "DOCT\xB706", title: "\xA731 Chokepoint Discipline (Cross-Surface Sync)", featured: false, body: "Every regimen mutation flows through one of 5 named chokepoint helpers. Each fires triggerRegimenRerender so all subscribed surfaces re-render. State drift is structurally impossible by module design, not vigilance.", cite: "CITED \xB7 Round 150 doctrine \xB7 enforced by check_regimen_state_mutation_routing" },
-    { id: "DOCT\xB707", title: "Eden Sealed-Canonical (User-Only-Writer)", featured: false, body: "Sealed canonical files (design-system.css, eden corpus) carry hash anchors. Agent reads freely, never writes after sealing time. Drift is detected at startup; reads from drifted files fail loudly.", cite: "CITED \xB7 Round 157 \xB7 enforced by eden_hash_integrity + write_protection invariants" }
-  ];
-  var LAYOUT3 = CoverageLayoutSchema.parse(coverage_layout_data_default);
-  function tileSymbol(t) {
-    return t.sym ?? t.letter ?? t.abbr ?? t.code ?? t.name.charAt(0).toUpperCase();
-  }
-  function tileRef(t) {
-    if (t.num !== void 0) {
-      return `#${t.num}`;
-    }
-    return t.code ?? "";
-  }
-  function sectionCatLabel(section) {
-    switch (section.tileClass) {
-      case "tile--vitamin":
-        return "VITAMIN";
-      case "tile--amino":
-        return "AMINO ACID";
-      case "tile--fat":
-        return "FATTY ACID";
-      default:
-        return "MINERAL";
-    }
-  }
-  function buildEssentialGroups() {
-    return LAYOUT3.sections.map((section) => {
-      const items = [];
-      const pushTile = (t, catLabel) => {
-        items.push({ key: t.key, name: t.name, symbol: tileSymbol(t), catLabel, ref: tileRef(t), section: section.title, essential: t.essential !== false });
-      };
-      if (section.subsections !== void 0) {
-        for (const sub of section.subsections) {
-          for (const t of sub.tiles) {
-            pushTile(t, sub.label);
-          }
-        }
-      } else if (section.tiles !== void 0) {
-        const label = sectionCatLabel(section);
-        for (const t of section.tiles) {
-          pushTile(t, label);
-        }
-      }
-      return { title: section.title, sub: section.sub, items };
-    });
-  }
-  var ESS_GROUPS = buildEssentialGroups();
-  var ESS_BY_KEY = new Map(
-    ESS_GROUPS.flatMap((g) => g.items.map((i) => [i.key, i]))
-  );
-  var ESS_ESSENTIAL_COUNT = ESS_GROUPS.reduce((n, g) => n + g.items.filter((i) => i.essential).length, 0);
-  function statusOf(snapshot, key) {
-    if (snapshot === null) {
-      return "";
-    }
-    return snapshot.tiles.find((t) => t.name === key)?.status ?? "";
-  }
-  function statusTileClass(s) {
-    if (s === "covered" || s === "trace") {
-      return "kd-essential-tile--covered";
-    }
-    if (s === "partial" || s === "gap") {
-      return "kd-essential-tile--partial";
-    }
-    return "";
-  }
-  function statusLabel(s) {
-    switch (s) {
-      case "covered":
-      case "trace":
-        return "COVERED";
-      case "partial":
-        return "PARTIAL";
-      case "gap":
-        return "GAP";
-      default:
-        return "PENDING";
-    }
-  }
-  function statusPillClass(s) {
-    if (s === "covered" || s === "trace") {
-      return "kd-essential-deep__status-pill--ok";
-    }
-    if (s === "partial" || s === "gap") {
-      return "kd-essential-deep__status-pill--warn";
-    }
-    return "kd-essential-deep__status-pill--pending";
-  }
-  function vaultProductsFor(key) {
-    const out = [];
-    for (const p of readProducts()) {
-      const nutrients = p.nutrients ?? [];
-      const carries = nutrients.some((n) => {
-        if (typeof n !== "object" || n === null) {
-          return false;
-        }
-        const nm = n.name;
-        return typeof nm === "string" && matchEssential(nm)?.name === key;
-      });
-      if (carries) {
-        const nm = p.canonical_name ?? p.name;
-        if (typeof nm === "string" && nm.length > 0) {
-          out.push(nm);
-        }
-      }
-      if (out.length >= 8) {
-        break;
-      }
-    }
-    return out;
-  }
+  // assets/js/src/views/knowledge-corpus.ts
   function escHTML3(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-  }
-  function hexSerial2(seed) {
-    return (seed * 2654435769 >>> 0).toString(16).toUpperCase().padStart(4, "0").slice(0, 4);
-  }
-  function authorLabel(authors) {
-    if (authors === void 0 || authors.length === 0) {
-      return "WALLACH";
-    }
-    const first = authors[0] ?? "";
-    const parts = first.trim().split(/\s+/);
-    const surname = parts.length > 0 ? parts[parts.length - 1] ?? first : first;
-    return authors.length > 1 ? `${surname.toUpperCase()} ET AL` : surname.toUpperCase();
-  }
-  function bookCountHTML(n) {
-    if (n > 0) {
-      return `${n}<small>claims</small>`;
-    }
-    return '<span class="kd-book-row__count--queued">\u22EF</span><small>queued</small>';
-  }
-  function renderBookRow(b) {
-    const ed = b.edition !== void 0 && b.edition !== null && b.edition.length > 0 ? `${escHTML3(b.edition)} ED \xB7 ` : "";
-    const yr = b.year !== void 0 && b.year !== null ? escHTML3(String(b.year)) : "";
-    return `
-    <div class="kd-book-row">
-      <div class="kd-book-row__spine"><span>${escHTML3(b.code ?? "")}</span></div>
-      <div class="kd-book-row__body">
-        <h4 class="kd-book-row__title">${escHTML3(b.title)}</h4>
-        <div class="kd-book-row__meta">${escHTML3(authorLabel(b.authors))} \xB7 ${ed}${yr}</div>
-      </div>
-      <div class="kd-book-row__count">${bookCountHTML(b.claim_count ?? 0)}</div>
-    </div>`;
-  }
-  function renderPlannedRow(b) {
-    return `
-    <div class="kd-book-row kd-book-row--planned">
-      <div class="kd-book-row__spine"><span>${escHTML3(b.code ?? "")}</span></div>
-      <div class="kd-book-row__body">
-        <h4 class="kd-book-row__title">${escHTML3(b.title)}</h4>
-        <div class="kd-book-row__meta">${escHTML3(authorLabel(b.authors))} \xB7 COMING SOON</div>
-      </div>
-      <div class="kd-book-row__count kd-book-row__count--soon">\u2014<small>soon</small></div>
-    </div>`;
-  }
-  function renderCorpusTab() {
-    const books = listBooks();
-    const planned = listPlannedBooks();
-    const totalClaims = books.reduce((s, b) => s + (b.claim_count ?? 0), 0);
-    const booksHTML = books.map((b) => renderBookRow(b)).join("");
-    const plannedHTML = planned.length > 0 ? `<div class="kd-section-head">COMING SOON \xB7 ACQUIRING</div>${planned.map((p) => renderPlannedRow(p)).join("")}` : "";
-    return `
-    <div class="kd-featured-citation">
-      <div class="kd-featured-citation__eyebrow"><span class="pulse-dot"></span>SOURCE-RULE CORNERSTONE</div>
-      <p class="kd-featured-citation__quote">The body needs 60 minerals, 16 vitamins, 12 amino acids, and 2 essential fatty acids \u2014 90 essentials total. Plant-derived minerals are the only delivery vehicle that the body absorbs as nature intended.</p>
-      <div class="kd-featured-citation__attr"><strong>Wallach</strong> \xB7 Dead Doctors Don't Lie \xB7 ch. 1 \xB7 paraphrase per primary corpus</div>
-    </div>
-    <div class="kd-section-head">PRIMARY CORPUS \xB7 WALLACH \xB7 ${books.length} BOOKS \xB7 ${totalClaims} CLAIMS</div>
-    ${booksHTML}
-    ${plannedHTML}`;
   }
   var CORPUS_KIND_PRIORITY = ["deficiency_sign", "dose", "protocol", "mechanism", "prognosis"];
   function corpusKindLabel(kind) {
@@ -8237,6 +8030,287 @@
       <div class="kd-corpus__foot">SOURCE \xB7 ${escHTML3(books)}</div>
     </div>`;
   }
+  var CORPUS_ROLE_PRIORITY = ["causes", "deficiency_signs", "protocols", "doses", "prognosis"];
+  function corpusRoleOrder(a, b) {
+    const ia = CORPUS_ROLE_PRIORITY.indexOf(a);
+    const ib = CORPUS_ROLE_PRIORITY.indexOf(b);
+    const ra = ia === -1 ? CORPUS_ROLE_PRIORITY.length : ia;
+    const rb = ib === -1 ? CORPUS_ROLE_PRIORITY.length : ib;
+    return ra !== rb ? ra - rb : a < b ? -1 : a > b ? 1 : 0;
+  }
+  function renderConditionRow(c, selectedSlug) {
+    const ess = c.essentials_involved.slice(0, 6).map((s) => essentialDisplayName(s)).join(" \xB7 ");
+    const cls = `kd-condition-row${c.slug === selectedSlug ? " is-selected" : ""}`;
+    return `
+    <div class="${cls}" data-kd-condition="${escHTML3(c.slug)}" role="button" tabindex="0">
+      <div class="kd-condition-row__body">
+        <h4 class="kd-condition-row__name">${escHTML3(c.display_name)}</h4>
+        <div class="kd-condition-row__meta">${ess.length > 0 ? escHTML3(ess) : "\u2014 corpus entry \u2014"}</div>
+      </div>
+      <div class="kd-condition-row__count">${c.claim_count}<small>claims</small></div>
+    </div>`;
+  }
+  function renderConditionDeep(slug) {
+    const c = getCondition(slug);
+    if (c === null) {
+      return "";
+    }
+    const groupsHTML = Object.keys(c.claims_by_role).sort(corpusRoleOrder).map((role) => {
+      const ids = c.claims_by_role[role] ?? [];
+      const claimsHTML = resolveClaims(ids).map((cl) => renderCorpusClaim(cl)).join("");
+      return `
+      <div class="kd-corpus__group">
+        <div class="kd-corpus__group-label">${escHTML3(corpusKindLabel(role))}</div>
+        ${claimsHTML}
+      </div>`;
+    }).join("");
+    const essChips = c.essentials_involved.map((s) => `<span class="kd-corpus__chip kd-corpus__chip--ess">${escHTML3(essentialDisplayName(s))}</span>`).join("");
+    const books = c.books_cited.map((b) => getBookLabel(b)).join(" \xB7 ");
+    return `
+    <div class="kd-essential-deep kd-condition-deep">
+      <button class="kd-essential-deep__close" data-kd-action="condition-close" title="Close (Esc)">\xD7</button>
+      <header class="kd-essential-deep__head">
+        <div class="kd-essential-deep__name-block">
+          <h3 class="kd-essential-deep__name">${escHTML3(c.display_name)}</h3>
+          <div class="kd-essential-deep__cat">CONDITION \xB7 ${c.claim_count} CLAIM${c.claim_count === 1 ? "" : "S"}</div>
+        </div>
+      </header>
+      ${essChips.length > 0 ? `<div class="kd-corpus__sub">ADDRESSED BY</div><div class="kd-corpus__chips">${essChips}</div>` : ""}
+      ${groupsHTML}
+      <div class="kd-corpus__foot">SOURCE \xB7 ${escHTML3(books)}</div>
+    </div>`;
+  }
+  function renderConditionsTab(selectedSlug) {
+    const conditions = listConditions();
+    if (conditions.length === 0) {
+      return '<div class="kd-empty">\u2014 no conditions in the corpus yet \u2014</div>';
+    }
+    const deepHTML = selectedSlug !== null ? renderConditionDeep(selectedSlug) : "";
+    const rowsHTML = conditions.map((c) => renderConditionRow(c, selectedSlug)).join("");
+    return `
+    ${deepHTML}
+    <div class="kd-section-head">CONDITIONS \xB7 ${conditions.length} \xB7 WALLACH CORPUS</div>
+    ${rowsHTML}`;
+  }
+
+  // assets/js/src/views/knowledge.ts
+  function readProducts() {
+    const el = document.getElementById("regimen-label-lookup");
+    if (el === null) {
+      return [];
+    }
+    let parsed;
+    try {
+      parsed = JSON.parse(el.textContent ?? "{}");
+    } catch {
+      return [];
+    }
+    let root = parsed;
+    if (parsed !== null && typeof parsed === "object" && "products" in parsed) {
+      root = parsed.products;
+    }
+    const lookup = ProductsLookupSchema.safeParse(root);
+    if (!lookup.success) {
+      return [];
+    }
+    const byName = /* @__PURE__ */ new Map();
+    for (const value of Object.values(lookup.data)) {
+      const candidates = Array.isArray(value) ? value : [value];
+      for (const candidate of candidates) {
+        const r = ProductEntrySchema.safeParse(candidate);
+        if (!r.success) {
+          continue;
+        }
+        const nm = r.data.canonical_name ?? r.data.name;
+        if (typeof nm === "string" && nm.length > 0) {
+          byName.set(nm.toLowerCase(), r.data);
+        }
+      }
+    }
+    return [...byName.values()];
+  }
+  var DOCTRINES = [
+    { id: "DOCT\xB701", title: "Source-Rule \xB7 Wallach Primary Only", featured: true, body: "Every numeric target, dose recommendation, deficiency indicator, or health claim displayed by this system must cite a primary source from the Wallach corpus or the YGY product allowlist. No exceptions, including the user.", cite: "ENFORCED BY check_no_unsourced_claims \xB7 invariant tier \xB7 critical" },
+    { id: "DOCT\xB702", title: "Aggregate-Vehicle Coverage (PDM)", featured: false, body: "Plant-derived minerals are defined by sourcing, not by amounts. If a plant-derived mineral aggregate is present in a product, every trace mineral in that aggregate is considered covered \u2014 binary, not graduated.", cite: "CITED \xB7 Dead Doctors Don't Lie \xB7 ch. 4" },
+    { id: "DOCT\xB703", title: "BTT Layering Order", featured: false, body: "Beyond Tangy Tangerine is the foundational morning layer \u2014 vitamins, aminos, foundational minerals. Stack PDM on top for the rare-trace closure. Add EFA Plus for fatty acids. Order matters for absorption.", cite: "CITED \xB7 Wallach lecture corpus \xB7 YGY protocol guide" },
+    { id: "DOCT\xB704", title: "Trace Minerals: Source-Not-Quantity", featured: false, body: "For the 35 rare trace minerals, presence in a plant-derived vehicle is the qualifying criterion. Mass-spec verification of every trace amount is unnecessary if the source is doctrinally sound.", cite: "CITED \xB7 Rare Earths \xB7 ch. 9" },
+    { id: "DOCT\xB705", title: "Atomic LS Write Discipline (\xA717)", featured: false, body: "Every regimen LS write goes through a verified round-trip set \u2192 re-read \u2192 reject-on-mismatch loop. Silent truncations from the Edit tool taught us this. Writes that cannot confirm fail loudly.", cite: "PROVED \xB7 Round 73 lessons + 9 truncation incidents" },
+    { id: "DOCT\xB706", title: "\xA731 Chokepoint Discipline (Cross-Surface Sync)", featured: false, body: "Every regimen mutation flows through one of 5 named chokepoint helpers. Each fires triggerRegimenRerender so all subscribed surfaces re-render. State drift is structurally impossible by module design, not vigilance.", cite: "CITED \xB7 Round 150 doctrine \xB7 enforced by check_regimen_state_mutation_routing" },
+    { id: "DOCT\xB707", title: "Eden Sealed-Canonical (User-Only-Writer)", featured: false, body: "Sealed canonical files (design-system.css, eden corpus) carry hash anchors. Agent reads freely, never writes after sealing time. Drift is detected at startup; reads from drifted files fail loudly.", cite: "CITED \xB7 Round 157 \xB7 enforced by eden_hash_integrity + write_protection invariants" }
+  ];
+  var LAYOUT3 = CoverageLayoutSchema.parse(coverage_layout_data_default);
+  function tileSymbol(t) {
+    return t.sym ?? t.letter ?? t.abbr ?? t.code ?? t.name.charAt(0).toUpperCase();
+  }
+  function tileRef(t) {
+    if (t.num !== void 0) {
+      return `#${t.num}`;
+    }
+    return t.code ?? "";
+  }
+  function sectionCatLabel(section) {
+    switch (section.tileClass) {
+      case "tile--vitamin":
+        return "VITAMIN";
+      case "tile--amino":
+        return "AMINO ACID";
+      case "tile--fat":
+        return "FATTY ACID";
+      case "tile":
+        return "MINERAL";
+      default:
+        return "MINERAL";
+    }
+  }
+  function buildEssentialGroups() {
+    return LAYOUT3.sections.map((section) => {
+      const items = [];
+      const pushTile = (t, catLabel) => {
+        items.push({ key: t.key, name: t.name, symbol: tileSymbol(t), catLabel, ref: tileRef(t), section: section.title, essential: t.essential !== false });
+      };
+      if (section.subsections !== void 0) {
+        for (const sub of section.subsections) {
+          for (const t of sub.tiles) {
+            pushTile(t, sub.label);
+          }
+        }
+      } else if (section.tiles !== void 0) {
+        const label = sectionCatLabel(section);
+        for (const t of section.tiles) {
+          pushTile(t, label);
+        }
+      }
+      return { title: section.title, sub: section.sub, items };
+    });
+  }
+  var ESS_GROUPS = buildEssentialGroups();
+  var ESS_BY_KEY = new Map(
+    ESS_GROUPS.flatMap((g) => g.items.map((i) => [i.key, i]))
+  );
+  var ESS_ESSENTIAL_COUNT = ESS_GROUPS.reduce((n, g) => n + g.items.filter((i) => i.essential).length, 0);
+  function statusOf(snapshot, key) {
+    if (snapshot === null) {
+      return "";
+    }
+    return snapshot.tiles.find((t) => t.name === key)?.status ?? "";
+  }
+  function statusTileClass(s) {
+    if (s === "covered" || s === "trace") {
+      return "kd-essential-tile--covered";
+    }
+    if (s === "partial" || s === "gap") {
+      return "kd-essential-tile--partial";
+    }
+    return "";
+  }
+  function statusLabel(s) {
+    switch (s) {
+      case "covered":
+      case "trace":
+        return "COVERED";
+      case "partial":
+        return "PARTIAL";
+      case "gap":
+        return "GAP";
+      case "":
+        return "PENDING";
+      default:
+        return "PENDING";
+    }
+  }
+  function statusPillClass(s) {
+    if (s === "covered" || s === "trace") {
+      return "kd-essential-deep__status-pill--ok";
+    }
+    if (s === "partial" || s === "gap") {
+      return "kd-essential-deep__status-pill--warn";
+    }
+    return "kd-essential-deep__status-pill--pending";
+  }
+  function vaultProductsFor(key) {
+    const out = [];
+    for (const p of readProducts()) {
+      const nutrients = p.nutrients ?? [];
+      const carries = nutrients.some((n) => {
+        if (typeof n !== "object" || n === null) {
+          return false;
+        }
+        const nm = n.name;
+        return typeof nm === "string" && matchEssential(nm)?.name === key;
+      });
+      if (carries) {
+        const nm = p.canonical_name ?? p.name;
+        if (typeof nm === "string" && nm.length > 0) {
+          out.push(nm);
+        }
+      }
+      if (out.length >= 8) {
+        break;
+      }
+    }
+    return out;
+  }
+  function escHTML4(s) {
+    return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  }
+  function hexSerial2(seed) {
+    return (seed * 2654435769 >>> 0).toString(16).toUpperCase().padStart(4, "0").slice(0, 4);
+  }
+  function authorLabel(authors) {
+    if (authors === void 0 || authors.length === 0) {
+      return "WALLACH";
+    }
+    const first = authors[0] ?? "";
+    const parts = first.trim().split(/\s+/);
+    const surname = parts.length > 0 ? parts[parts.length - 1] ?? first : first;
+    return authors.length > 1 ? `${surname.toUpperCase()} ET AL` : surname.toUpperCase();
+  }
+  function bookCountHTML(n) {
+    if (n > 0) {
+      return `${n}<small>claims</small>`;
+    }
+    return '<span class="kd-book-row__count--queued">\u22EF</span><small>queued</small>';
+  }
+  function renderBookRow(b) {
+    const ed = b.edition !== void 0 && b.edition !== null && b.edition.length > 0 ? `${escHTML4(b.edition)} ED \xB7 ` : "";
+    const yr = b.year !== void 0 && b.year !== null ? escHTML4(String(b.year)) : "";
+    return `
+    <div class="kd-book-row">
+      <div class="kd-book-row__spine"><span>${escHTML4(b.code ?? "")}</span></div>
+      <div class="kd-book-row__body">
+        <h4 class="kd-book-row__title">${escHTML4(b.title)}</h4>
+        <div class="kd-book-row__meta">${escHTML4(authorLabel(b.authors))} \xB7 ${ed}${yr}</div>
+      </div>
+      <div class="kd-book-row__count">${bookCountHTML(b.claim_count ?? 0)}</div>
+    </div>`;
+  }
+  function renderPlannedRow(b) {
+    return `
+    <div class="kd-book-row kd-book-row--planned">
+      <div class="kd-book-row__spine"><span>${escHTML4(b.code ?? "")}</span></div>
+      <div class="kd-book-row__body">
+        <h4 class="kd-book-row__title">${escHTML4(b.title)}</h4>
+        <div class="kd-book-row__meta">${escHTML4(authorLabel(b.authors))} \xB7 COMING SOON</div>
+      </div>
+      <div class="kd-book-row__count kd-book-row__count--soon">\u2014<small>soon</small></div>
+    </div>`;
+  }
+  function renderCorpusTab() {
+    const books = listBooks();
+    const planned = listPlannedBooks();
+    const totalClaims = books.reduce((s, b) => s + (b.claim_count ?? 0), 0);
+    const booksHTML = books.map((b) => renderBookRow(b)).join("");
+    const plannedHTML = planned.length > 0 ? `<div class="kd-section-head">COMING SOON \xB7 ACQUIRING</div>${planned.map((p) => renderPlannedRow(p)).join("")}` : "";
+    return `
+    <div class="kd-featured-citation">
+      <div class="kd-featured-citation__eyebrow"><span class="pulse-dot"></span>SOURCE-RULE CORNERSTONE</div>
+      <p class="kd-featured-citation__quote">The body needs 60 minerals, 16 vitamins, 12 amino acids, and 2 essential fatty acids \u2014 90 essentials total. Plant-derived minerals are the only delivery vehicle that the body absorbs as nature intended.</p>
+      <div class="kd-featured-citation__attr"><strong>Wallach</strong> \xB7 Dead Doctors Don't Lie \xB7 ch. 1 \xB7 paraphrase per primary corpus</div>
+    </div>
+    <div class="kd-section-head">PRIMARY CORPUS \xB7 WALLACH \xB7 ${books.length} BOOKS \xB7 ${totalClaims} CLAIMS</div>
+    ${booksHTML}
+    ${plannedHTML}`;
+  }
   function renderEssentialDeep(key, snapshot) {
     const e = ESS_BY_KEY.get(key);
     if (e === void 0) {
@@ -8252,22 +8326,22 @@
     const products = vaultProductsFor(key);
     const wallachHTML = quote !== void 0 && quote.length > 0 ? `
       <div class="kd-essential-deep__sub">WALLACH SAYS</div>
-      <p class="kd-essential-deep__body">${escHTML3(quote)}</p>
-      ${citation !== void 0 ? `<div class="kd-essential-deep__source">CITED \xB7 <strong>${escHTML3(citation)}</strong></div>` : ""}` : '<div class="kd-essential-deep__sub">WALLACH SAYS</div><p class="kd-essential-deep__body">\u2014 no stance on file for this essential \u2014</p>';
+      <p class="kd-essential-deep__body">${escHTML4(quote)}</p>
+      ${citation !== void 0 ? `<div class="kd-essential-deep__source">CITED \xB7 <strong>${escHTML4(citation)}</strong></div>` : ""}` : '<div class="kd-essential-deep__sub">WALLACH SAYS</div><p class="kd-essential-deep__body">\u2014 no stance on file for this essential \u2014</p>';
     const productsHTML = products.length > 0 ? `
       <div class="kd-essential-deep__sub">FOUND IN YGY VAULT</div>
       <div class="kd-essential-deep__products">
-        ${products.map((p) => `<span class="kd-essential-deep__product-chip">${escHTML3(p)}</span>`).join("")}
+        ${products.map((p) => `<span class="kd-essential-deep__product-chip">${escHTML4(p)}</span>`).join("")}
       </div>` : "";
     return `
     <div class="kd-essential-deep">
       <button class="kd-essential-deep__close" data-kd-action="essential-close" title="Close (Esc)">\xD7</button>
       <header class="kd-essential-deep__head">
         <div class="kd-essential-deep__sym-row">
-          <div class="kd-essential-deep__sym">${escHTML3(e.symbol)}</div>
+          <div class="kd-essential-deep__sym">${escHTML4(e.symbol)}</div>
           <div class="kd-essential-deep__name-block">
-            <h3 class="kd-essential-deep__name">${escHTML3(e.key)}</h3>
-            <div class="kd-essential-deep__cat">${escHTML3(e.catLabel)}${e.ref !== "" ? ` \xB7 ${escHTML3(e.ref)}` : ""}</div>
+            <h3 class="kd-essential-deep__name">${escHTML4(e.key)}</h3>
+            <div class="kd-essential-deep__cat">${escHTML4(e.catLabel)}${e.ref !== "" ? ` \xB7 ${escHTML4(e.ref)}` : ""}</div>
           </div>
         </div>
         <span class="kd-essential-deep__status-pill ${statusPillClass(status)}">\u25CF ${statusLabel(status)}</span>
@@ -8285,18 +8359,18 @@
         const status = statusOf(snapshot, e.key);
         const stateClass = e.essential ? statusTileClass(status) : "kd-essential-tile--bonus";
         const cls = `kd-essential-tile ${stateClass}${e.key === selectedKey ? " is-selected" : ""}`.trim();
-        const meta = e.essential ? `${escHTML3(e.catLabel)} \xB7 ${statusLabel(status)}` : `${escHTML3(e.catLabel)} \xB7 NON-ESSENTIAL`;
+        const meta = e.essential ? `${escHTML4(e.catLabel)} \xB7 ${statusLabel(status)}` : `${escHTML4(e.catLabel)} \xB7 NON-ESSENTIAL`;
         return `
-        <div class="${cls}" data-kd-essential="${escHTML3(e.key)}" role="button" tabindex="0">
-          <div class="kd-essential-tile__sym">${escHTML3(e.symbol)}</div>
-          <div class="kd-essential-tile__name">${escHTML3(e.name)}</div>
+        <div class="${cls}" data-kd-essential="${escHTML4(e.key)}" role="button" tabindex="0">
+          <div class="kd-essential-tile__sym">${escHTML4(e.symbol)}</div>
+          <div class="kd-essential-tile__name">${escHTML4(e.name)}</div>
           <div class="kd-essential-tile__meta">${meta}</div>
         </div>`;
       }).join("");
       const essentialN = group.items.filter((i) => i.essential).length;
       const bonusN = group.items.length - essentialN;
       return `
-      <div class="kd-section-head">${escHTML3(group.title)} \xB7 ${essentialN}${bonusN > 0 ? ` + ${bonusN}` : ""}</div>
+      <div class="kd-section-head">${escHTML4(group.title)} \xB7 ${essentialN}${bonusN > 0 ? ` + ${bonusN}` : ""}</div>
       <div class="kd-essentials-grid">${tilesHTML}</div>`;
     }).join("");
     return `${deepHTML}${groupsHTML}`;
@@ -8308,10 +8382,10 @@
     }
     const productsHTML = products.slice(0, 30).map((p) => `
     <div class="kd-product-row">
-      <div class="kd-product-row__icon">${escHTML3((p.canonical_name ?? p.name ?? "?").charAt(0).toUpperCase())}</div>
+      <div class="kd-product-row__icon">${escHTML4((p.canonical_name ?? p.name ?? "?").charAt(0).toUpperCase())}</div>
       <div class="kd-product-row__body">
-        <h4 class="kd-product-row__name">${escHTML3(p.canonical_name ?? p.name ?? "(unnamed)")}</h4>
-        <div class="kd-product-row__meta">${escHTML3(p.brand ?? "YGY")} \xB7 ${p.nutrients?.length ?? 0} NUTRIENTS LISTED</div>
+        <h4 class="kd-product-row__name">${escHTML4(p.canonical_name ?? p.name ?? "(unnamed)")}</h4>
+        <div class="kd-product-row__meta">${escHTML4(p.brand ?? "YGY")} \xB7 ${p.nutrients?.length ?? 0} NUTRIENTS LISTED</div>
       </div>
       <span class="kd-product-row__verdict kd-product-row__verdict--ok">VAULT</span>
     </div>`).join("");
@@ -8323,37 +8397,40 @@
   function renderDoctrineTab() {
     return DOCTRINES.map((d) => `
     <div class="kd-doctrine-card${d.featured ? " featured" : ""}">
-      <div class="kd-doctrine-card__id">${escHTML3(d.id)}${d.featured ? " \xB7 CORNERSTONE" : ""}</div>
-      <h4 class="kd-doctrine-card__title">${escHTML3(d.title)}</h4>
-      <p class="kd-doctrine-card__body">${escHTML3(d.body)}</p>
-      <div class="kd-doctrine-card__cite">${escHTML3(d.cite)}</div>
+      <div class="kd-doctrine-card__id">${escHTML4(d.id)}${d.featured ? " \xB7 CORNERSTONE" : ""}</div>
+      <h4 class="kd-doctrine-card__title">${escHTML4(d.title)}</h4>
+      <p class="kd-doctrine-card__body">${escHTML4(d.body)}</p>
+      <div class="kd-doctrine-card__cite">${escHTML4(d.cite)}</div>
     </div>`).join("");
   }
-  function renderTab2(tab, snapshot, selectedKey) {
+  function renderTab2(tab, snapshot, selectedKey, selectedCondition) {
     switch (tab) {
       case "corpus":
         return renderCorpusTab();
       case "essentials":
         return renderEssentialsTab(snapshot, selectedKey);
+      case "conditions":
+        return renderConditionsTab(selectedCondition);
       case "products":
         return renderProductsTab();
       case "doctrine":
         return renderDoctrineTab();
     }
   }
-  function renderShell2(activeTab, selectedKey) {
+  function renderShell2(activeTab, selectedKey, selectedCondition) {
     const snapshot = getOrCompute();
     const productsCount = readProducts().length;
     const tabs = [
       { id: "corpus", label: "Corpus", count: `${listBooks().length} BOOKS` },
       { id: "essentials", label: "Essentials", count: `${ESS_ESSENTIAL_COUNT} ESSENTIAL` },
+      { id: "conditions", label: "Conditions", count: `${listConditions().length} INDEXED` },
       { id: "products", label: "Products", count: `${productsCount > 0 ? productsCount : 59} KNOWN` },
       { id: "doctrine", label: "Doctrine", count: `${DOCTRINES.length} RULES` }
     ];
     const tabsHTML = tabs.map((t) => `
     <button class="kd-tab${t.id === activeTab ? " active" : ""}" data-kd-tab="${t.id}">
-      <span>${escHTML3(t.label)}</span>
-      <span class="kd-tab__count">${escHTML3(t.count)}</span>
+      <span>${escHTML4(t.label)}</span>
+      <span class="kd-tab__count">${escHTML4(t.count)}</span>
     </button>`).join("");
     return `
     <span class="ds-scan-line" aria-hidden="true"></span>
@@ -8361,7 +8438,7 @@
       <div>
         <div class="kd-eyebrow"><span class="pulse-dot"></span>DRAWER \xB7 <span class="ds-cipher" data-cipher-set="hexa">KN\xB7${hexSerial2(activeTab.length * 7)}</span></div>
         <h2 class="kd-title">Knowledge</h2>
-        <div class="kd-sub">// the corpus, the essentials, the products, the doctrine</div>
+        <div class="kd-sub">// the corpus, the essentials, the conditions, the products, the doctrine</div>
       </div>
       <button class="kd-close" data-kd-action="close" title="Close (Esc)">\xD7</button>
     </header>
@@ -8371,7 +8448,7 @@
       <input class="kd-search-input" type="text" placeholder="SEARCH ${activeTab.toUpperCase()}\u2026" />
       <span class="kd-search-kbd">/</span>
     </div>
-    <div class="kd-body">${renderTab2(activeTab, snapshot, selectedKey)}</div>
+    <div class="kd-body">${renderTab2(activeTab, snapshot, selectedKey, selectedCondition)}</div>
     <footer class="kd-footer">
       <button class="kd-action" data-kd-action="pin"><span class="kd-action__glyph">\u2295</span>PIN</button>
       <button class="kd-action" data-kd-action="share"><span class="kd-action__glyph">\u2197</span>SHARE</button>
@@ -8385,8 +8462,9 @@
     let isExpanded = false;
     let activeTab = "corpus";
     let selectedEssential = null;
+    let selectedCondition = null;
     const render = () => {
-      container.innerHTML = renderShell2(activeTab, selectedEssential);
+      container.innerHTML = renderShell2(activeTab, selectedEssential, selectedCondition);
     };
     const open = () => {
       if (isOpen) {
@@ -8403,6 +8481,7 @@
       isOpen = false;
       isExpanded = false;
       selectedEssential = null;
+      selectedCondition = null;
       container.classList.remove("kd-open", "kd-expanded");
       container.innerHTML = "";
     };
@@ -8428,6 +8507,7 @@
         if (next !== null && next !== activeTab) {
           activeTab = next;
           selectedEssential = null;
+          selectedCondition = null;
           render();
         }
         return;
@@ -8436,6 +8516,13 @@
       if (essEl !== null) {
         const k = essEl.getAttribute("data-kd-essential");
         selectedEssential = k !== null && k === selectedEssential ? null : k;
+        render();
+        return;
+      }
+      const condEl = target.closest("[data-kd-condition]");
+      if (condEl !== null) {
+        const k = condEl.getAttribute("data-kd-condition");
+        selectedCondition = k !== null && k === selectedCondition ? null : k;
         render();
         return;
       }
@@ -8448,6 +8535,9 @@
           toggleExpanded();
         } else if (action === "essential-close") {
           selectedEssential = null;
+          render();
+        } else if (action === "condition-close") {
+          selectedCondition = null;
           render();
         } else {
           console.warn("[views/knowledge] action stub:", action);
@@ -8470,7 +8560,7 @@
   }
 
   // assets/data/creators-log-embed.json
-  var creators_log_embed_default = [{ id: "lg_mqq28u45_9emebd", ts: "2026-06-23T03:04:02.933502+00:00", surface: "tools", kind: "milestone", summary: "Creator's Log file-mirror created \u2014 chronicle/creators-log.jsonl + tools/creators_log.py make round-close step 5 CLI-fireable; the \xA700 audit trail now lives in the repo as a committed teaching record", detail: "In-app log() (state/log.ts) stays localStorage-only until the Phase-2 boot-merge (L2) embeds these entries into the Profile panel. Writes route through safe_write (\xA717). Validated by the new creators_log_well_formed invariant." }, { id: "lg_mqq2b45f_yeupqe", ts: "2026-06-23T03:05:49.251429+00:00", surface: "tools", kind: "round-close", summary: "Phase 2 L1 shipped: Creator's-Log file-mirror + creators_log_well_formed invariant (board 20\u219221). Round-close step 5 is now CLI-fireable \u2014 this entry is the proof.", detail: "Files: tools/creators_log.py, chronicle/creators-log.jsonl, tools/invariants.py. Verified: creators_log verify 1/1 clean; invariants 21/21. Next: L2 Profile boot-merge, then Journey J1-J4.", metadata: { chunk: "L1", board: "21/21", files: ["tools/creators_log.py", "chronicle/creators-log.jsonl", "tools/invariants.py"] } }, { id: "lg_mqq2g1mt_3ckyms", ts: "2026-06-23T03:09:39.269829+00:00", surface: "meta", kind: "session-end", summary: "Session checkpoint: cleanup A-C4 + logging-doctrine codified + Phase-2 L1 (Creator's-Log mirror, board 21/21). Handoff refreshed. Next: L2 Profile boot-merge \u2192 Journey J1-J4 \u2192 Palette.", detail: "9 commits pushed c2826e9..(this). Every chunk build>test>log>committed. Creator's Log now CLI-fireable; this is a session-end entry through the live tool." }, { id: "lg_mqq30yww_gejq56", ts: "2026-06-23T03:25:55.520134+00:00", surface: "tools", kind: "design-decision", summary: "Codified the two-layer logging model + the Creator's Log sacred covenant (append-only, never deleted even under broad delete-authorization, always truthful/complete, fires per-chunk). Audit found sacredness + never-skip not yet machine-enforced.", detail: "Doctrine in .claude/rules/logging-doctrine.md. 3 enforcement guards proposed (git-anchored append-only invariant, round-close firing check, boundary delete-guard) pending Luneth's approval of the ledger file/folder structure." }, { id: "lg_mqq3i857_1qlldw", ts: "2026-06-23T03:39:20.635214+00:00", surface: "tools", kind: "milestone", summary: "Sacred Creator's Log: moved to chronicle/creators-log/ (log.jsonl + generated LOG.md + README) and added the covenant's teeth \u2014 git-anchored append-only invariant, digest-sync invariant, shell delete-guard, and a never-skip round-close hard-block. Board 21\u219223.", detail: "The append-only invariant makes deleting committed entries un-shippable; the firing-check makes a skipped round-close entry un-closeable. Tightened the delete-guard after a self-inflicted prose false-positive (good stress test)." }, { id: "lg_mqq3lhtx_zlch6t", ts: "2026-06-23T03:41:53.157429+00:00", surface: "tools", kind: "invariant-pass", summary: "Teeth-test PROVEN: creators_log_append_only catches both deletion (truncate 5\u21921) and mutation of committed entries; git restores; board 23/23. The sacred-log guarantee is structural, not aspirational.", detail: "Simulated 'delete entries for efficiency' via safe_write truncate \u2192 invariant fired RED 'SACRED LEDGER TRUNCATED'; in-place edit \u2192 'SACRED LEDGER MUTATED at entry 1'; git checkout restored. try/finally guaranteed recovery." }, { id: "lg_mqq52ira_tnd1aj", ts: "2026-06-23T04:23:07.126050+00:00", surface: "tools", kind: "round-close", summary: "Chunk H: hardened the sacred ledger per the Opus-4.8 audit \u2014 closed 3 enforcement gaps (4a digest spoof, 5a delete-guard dir hole, 5b silent committed-deletion + silent fail-open). All re-proven; board 23/23.", detail: "4a: validate_entry rejects newline summaries + render_digest escapes a leading #/> and flattens newlines so the human digest can't be made to show a fake entry (the jsonl was already injection-proof \u2014 json.dumps escaping, proven). 5a: pre_bash_guard now blocks the whole chronicle/creators-log dir + any child + 'rm -rf chronicle' + a dir mv, while non-sacred deletes still pass. 5b: a COMMITTED deletion (ledger gone from HEAD with prior history) is now a hard RED 'SACRED LEDGER REMOVED FROM HEAD'; git-unavailable now prints a loud UNVERIFIED warning but stays fail-open per Luneth's 'visible warning, not blocking' choice. Verified: invariants 23/23, verify 6/0, digest byte-identical, build OK 290.9 KB, every fix re-proven against real code (incl. the real append_only on an isolated temp git repo). The req-3 truthfulness ceiling stands by design \u2014 next feature (L2 dashboard Creator's Log) is Luneth's visual truth-verification layer; then navigability archive-tree." }, { id: "lg_mqq5oreo_sft46m", ts: "2026-06-23T04:40:24.768965+00:00", surface: "docs", kind: "round-close", summary: "README audit: purged retired-system references (tacitus/cura/vision/aegis/brain) from all 16 READMEs and corrected inaccuracies. 5 fixed, 11 verified clean, 0 dead tokens remain; board 23/23.", detail: "Fixed: root README (Cura/Aegis/Tacitus blockquote -> Eden/Chronicle/Sunjo + added creators-log/ to glossary); chronicle/README (Layout was missing creators-log/ + 3 files; added them + a two-layers section); chronicle/evals/README ('Brain Evaluations' -> historical agent-prompt-era artifacts, preserved not resurrected); tools/README (documented only 1 of ~20 tools + cited brain rules -> full accurate inventory by group, each line verified against the script docstring); fonts/README ('drop these in' -> already in-housed). Verified clean: eden, labels, transcripts, wallach-refresh, canaries, design-wisdom (+subdirs), youngevity-product-notes. Ignored false positives: curation/curated/accuracy (substring 'cura') + the word 'vision'. FLAGGED for Luneth (operating contract, not auto-touched): CLAUDE.md glossary still lists Cura+Aegis as current systems + a Tacitus guard; sunjo plan line 308 lists them (captured history). Historical docs (CHANGELOG/versions/saga/contradictions) intentionally keep period-accurate refs." }, { id: "lg_mqq5x105_9ui544", ts: "2026-06-23T04:46:50.453734+00:00", surface: "tools", kind: "round-close", summary: "Audit follow-ups: retired Cura/Aegis from the CLAUDE.md glossary (slimmed the Tacitus guard) + fixed a pre_bash_guard false-positive where the push-force/reset-hard regexes spanned a separator into an unrelated short-flag. Board 23/23.", detail: "(1) CLAUDE.md glossary dropped the Cura + Aegis entries (retired names; the concepts live in engineering-doctrine.md / the app and appear in no live rule file); the Tacitus line slimmed to a tight do-not-re-introduce guard; Eden + Chronicle stay. (2) pre_bash_guard's push-force and reset-hard checks used .*? with re.DOTALL and matched across command separators, so a 'push-then-unrelated-shortflag' compound was wrongly blocked (hit live when committing the README audit). Scoped both to a single command segment ([^newline;amp;pipe]*?), matching the rm-guard pattern. Proven via a file-based hook probe (trigger phrases kept out of the bash line): the push-then-cleanup and commit-then-push compounds now ALLOW; genuine force/hard flags still BLOCK; force-with-lease ALLOWs; the 5a sacred-ledger guard still BLOCKs (no regression). The two non-README loose ends from the README audit; both user-approved. Next: Feature L2." }, { id: "lg_mqq6gim9_bvrj39", ts: "2026-06-23T05:01:59.745384+00:00", surface: "profile", kind: "round-close", summary: "Phase 2 L2 shipped: the dashboard Creator's Log. The CLI ledger is now inlined at build time and boot-merged with localStorage so the Profile panel shows both CLI- and in-app-fired entries \u2014 Luneth's visual truth-verification layer. Board 23\u219224.", detail: "Closes the in-app half (L1 was the CLI mirror). creators_log.py gains write_embed() (every append/digest regenerates dashboard/assets/data/creators-log-embed.json from log.jsonl via safe_write \u2014 sibling of LOG.md; log.jsonl stays the single source of truth). core/schemas/log.ts adds LogEmbedSchema; state/log.ts imports the embed (esbuild JSON import), validates once at the boundary, and getEntries() boot-merges embed + LS deduped by id (embed canonical wins), newest-first. The existing Profile panel renders getEntries() unchanged, so it now shows the unified log. New invariant creators_log_embed_synced (warning, truth-anchored: json.loads(embed) == read_entries()) catches a stale build / hand-edit. Verified: tsc strict + esbuild OK (298.9 KB); invariants 24/24; render_probe_profile.js PASS \u2014 empty localStorage still renders all embedded CLI entries (count == embed == subheader), a real ROUND CLOSE surfaces, Esc closes, 0 page errors. Deferred: cap the embed to recent-N as the ledger grows (Chunk N). Next: navigability archive-tree." }, { id: "lg_mqq75oel_2m9xyo", ts: "2026-06-23T05:21:33.645862+00:00", surface: "creators-log", kind: "round-close", summary: "Chunk N shipped: navigability archive-tree. The Creator's Log now has a month-by-month INDEX.md + per-month digests/ holding the full history, while LOG.md becomes a recent-window view \u2014 so it stays scannable as it grows over years. Board 24\u219225.", detail: "Luneth's 'archive tree + index' choice. log.jsonl stays the unsharded canonical spine (+ git-prefix anchor); the derived human views gain structure. creators_log.py adds _render_block (shared renderer), render_index/write_index (INDEX.md month map: count + kind tally + digest link), month_of/month_set/render_month/write_months (digests/YYYY-MM.md, full entries), a recent-window cap on render_digest (DIGEST_RECENT=200, header \u2192 INDEX.md), and regenerate_all() called from append/digest so LOG.md + embed + INDEX + monthly digests stay byte-fresh together. New invariant creators_log_archive_synced (warning) is truth-anchored: INDEX.md == render_index() and each digests/*.md == render_month(ym), month set from log.jsonl, no missing/extra files \u2014 this is where full-history human fidelity is now proven (digest_synced only covers LOG.md's window). README documents the new layout + the embed/archive invariants. Verified: invariants 25/25; INDEX + digests/2026-06.md render cleanly (10 entries, full detail, back-links); LOG.md recent-window matches. Deferred: cap the L2 embed to recent-N when it grows large. Next: Journey J1-J4, then command palette." }, { id: "lg_mqq95orc_m6l3l3", ts: "2026-06-23T06:17:33.336269+00:00", surface: "journey", kind: "round-close", summary: "Journey J1 shipped: the state engine. Replaced the throwing scaffold with a real \xA731 events ledger + private check-ins + a \xB17-day cross-ref walker, all Zod-validated. No fake seed \u2014 fills from real activity. Board 25/25; engine functionally smoke-tested.", detail: "First of ~4 Journey chunks (J1 engine \u2192 J2 view \u2192 J3 wiring \u2192 J4 probe). New core/schemas/journey.ts (EventKind/JourneyEvent/Checkin + storage shapes, types inferred). state/journey.ts: listEvents(sinceISO?)/listCheckins() read via getValidated; logEvent()/logCheckin() are the only \xA731 writers to wallachJourneyEvents_v1/wallachJourneyCheckins_v1 (auto id, FIFO cap 5000, emit journey:changed); crossRefForCheckin() = the \xB17-day local correlation walker (check-ins stay private, never exported). core/events.ts: journey:event-logged \u2192 journey:changed {reason}. Verified: tsc strict + esbuild OK; invariants 25/25; esbuild-bundled functional smoke vs a localStorage shim PASS (persistence, newest-first, sinceISO, cross-ref include/exclude, corrupt-LS-empty). No render probe yet (pure state; view verified at J4). Next: J2 the 4-tab drawer view." }, { id: "lg_mqqa4z6g_mshacn", ts: "2026-06-23T06:44:59.800202+00:00", surface: "genesis", kind: "milestone", summary: "Genesis boot system shipped: typing 'genesis' now runs tools/genesis.py \u2014 a one-command session boot (banner + scoreboard + the live pass-off) that hands a fresh session past depth instantly + ends with an action question. Renamed sunjo/ \u2192 genesis/.", detail: "Formalizes the per-session catch-up rather than reinventing it: chronicle/next-chunk.md stays the SINGLE live rolling pass-off (no parallel file); genesis.py reads it + runs the integrity scoreboard (invariants), build-parity, last Creator's Log entry, build-log tail, and prints the next-chunk LATEST\u2192NEXT-ORDER block, closing with a cue to ask 'resume X or redirect?'. sunjo/ \u2192 genesis/ via git mv (history preserved): the folder now houses the boot system + the archived original Cowork pass-off (01/02); genesis/README documents the two-pass-off model. CLAUDE.md Genesis section rewritten (net -1 line, 195/200) to point at the command + mandate the action question; all LIVE sunjo path refs \u2192 genesis/ (history left truthful). Mechanically safe (no tool/hook/invariant referenced sunjo). Verified: genesis.py boots cleanly; invariants 25/25. Next: Journey J2." }, { id: "lg_mqqqtit6_5uctcj", ts: "2026-06-23T14:31:58.842948+00:00", surface: "journey", kind: "round-close", summary: "Journey J2 \u2014 views/journey.ts 4-tab drawer renderer + LOG EVENT/check-in forms; mirrors knowledge.ts, reads only via state layer, zero inline literals. Also implemented read side of state/goals.ts (+ new core/schemas/goals.ts). Board 25/25, probes pass.", detail: "Replaced the throwing views/journey.ts scaffold with a real renderer using self-namespaced jd-* classes (parallel to Knowledge's kd-*; the v3 proposal's generic .timeline/.goal-card/.milestone would collide with legacy-dashboard.css \u2014 jd-* CSS is the Round-6 polish pass). Timeline groups events into calendar-day buckets (Map, newest-first, kind->glyph/accent, relative-time + delta); Goals shows progress bar + blockers + featured; Check-ins (private) renders 5-pip severity + tags + the +/-7-day cross-ref as 'CROSS-REF \xB7 <top event>'; Milestones distinguishes earned/locked/fresh-under-24h. The footer LOG EVENT primary + the Check-ins quick-entry open inline forms calling journey.logEvent()/logCheckin() with bounded inputs (maxlength + slice + clampSeverity + EventKindSchema.safeParse). To avoid crashing on the still-scaffolded goals state, implemented its READ side: new core/schemas/goals.ts (GoalSchema/MilestoneSchema + LS shapes, .optional() not .default() to keep input==output types) + Zod-validated listGoals/listMilestones (bad LS -> empty); evaluateMilestoneTriggers stays a deferred throw. Verified: tsc strict + esbuild OK (main.js 307.6 KB; journey code is tree-shaken from the runtime bundle until J3 calls mount() \u2014 tsc is the compile gate); eslint clean on all 4 files; invariants 25/25 (0 new reds); coverage + knowledge render probes PASS. No journey render probe yet \u2014 the drawer mount is J3 and the visual probe is J4 (honesty rule). NEXT: J3 \u2014 shared K+J mount/toggle/keys helper + auto-derive subscriptions." }, { id: "lg_mqqsqygj_fmu96a", ts: "2026-06-23T11:25:58.387680-04:00", surface: "tooling", kind: "design-decision", summary: "Creator's Log timestamps now store machine-LOCAL time (auto-follow ET->CT + DST) instead of UTC. _now_iso uses datetime.now().astimezone(); _fmt_ts derives the zone from the stored offset. Historical UTC entries stay UTC (immutable ledger).", detail: "Luneth flagged that log times read in UTC (an entry made at 10:31 EDT showed as 14:31 / 06:44), confusing against his local clock, and that he's moving ET->CT next week. Chose auto-follow-local over hard-pinning CT so it adapts to the move + DST with zero maintenance. Two-line change in tools/creators_log.py: _now_iso() now returns datetime.now().astimezone().isoformat() (local-aware, carries the offset); _fmt_ts() derives the zone label from the parsed offset (%Z) instead of hardcoding 'UTC'. The slice-based renderers (genesis last-log line, Profile panel formatTs) need no change \u2014 they read the stored wall-clock directly, so new entries show local automatically. The ~13 pre-change entries stored +00:00 stay UTC (the ledger is append-only/immutable; never rewriting history). This entry is the first stored in local time." }, { id: "lg_mqqt86uf_88lvtm", ts: "2026-06-23T11:39:22.407988-04:00", surface: "discipline", kind: "design-decision", summary: "Codified the visual/human-verification gate (.claude/rules/visual-verification.md + CLAUDE.md row): for any page/visual/UX work Luneth is the test gate \u2014 build a chunk to 'done', STOP, he visually verifies, only then continue. Never chain past a STOP; certainty != truth.", detail: "Luneth elevated the per-page build method to a non-negotiable rule. Automated gates (build/invariants/probes) prove only the functional layer; the subjective/visual layer can ONLY be verified by his eyes. The discipline: build in phases (respect resource usage) -> build to 'done' or one verifiable chunk -> STOP -> he visually verifies/course-corrects/adds/changes mind -> only then log + continue. Never advance past a STOP without his go-ahead; never claim he verified what he didn't; never treat agent-certainty as truth. This is build>test>log>repeat with Luneth as tester, and the guardrail that would have caught the unstyled-drawer drift. Documented as a behavioral discipline (like the source-rule turn-gap), not a Python invariant; the structural guarantee is that visual chunks END at a STOP by default. NEXT: Coverage as first gold-standard page." }, { id: "lg_mqqxdip7_mg7c11", ts: "2026-06-23T13:35:29.515119-04:00", surface: "coverage", kind: "milestone", summary: "Coverage Phase 1 \u2014 shell now ~pixel-exact to v3.2 (Luneth verified). Fixed via new tools/style_diff.js: legacy 15px root + bare header/footer selectors bleeding into the .app-* shell; in-housed the missing Chakra Petch/Bruno Ace fonts. Visual-match lesson codified.", detail: "First gold-standard surface phase under the visual-verification gate (build -> STOP -> Luneth verifies -> commit). An objective computed-style diff (new tools/style_diff.js, live shell vs the v3.2 mockup) drove it from ~50 diffs to 0 meaningful, replacing eyeballing. Two systemic root causes: (1) legacy-dashboard.css html,body{font-size:15px} shrank the whole rem UI to 93.75% -> removed, 16px root re-scales the entire coverage page; (2) legacy bare element selectors (header/footer/html,body) bled into the new .app-* shell (14px radius, teal shadow+border, a header::before veil over .app-topbar hiding its accents + fading the search, teal text) -> scoped to #legacy-workspace-host + doc-level overrides removed (grep [v3-contain]). Also in-housed the v3.2 fonts (Chakra Petch + Bruno Ace; wired but never procured -> @font-face 404 -> Space Grotesk fallback). Lesson codified in .claude/rules/visual-verification.md 'Getting to exact'. NEXT: finish Coverage hero/periodic/sidebar vs v3.2; CODEX dynamic version; alien-glyph cipher." }, { id: "lg_mqr73n9n_p9z964", ts: "2026-06-23T18:07:45.035981-04:00", surface: "dashboard/legacy-css", kind: "round-close", summary: "Sever-Safety: scoped all 24 legacy-dashboard.css leak vectors under :where(#legacy-workspace-host); moved the globals the shell was secretly inheriting into dashboard.css; new critical invariant legacy_css_contained makes the leak impossible. Luneth-verified.", detail: "Audit (Luneth's 'total clean cut' ask) confirmed the legacy->v3 sever is clean at the markup level (one #legacy-workspace-host div, R2->R5 deletion schedule) but was leaky at the CSS level with no enforcement. The parked legacy stylesheet (loaded after the v3 design system) had 24 bare element/universal selectors (teal h2/h3/table, @media header, *, html/body) that bleed into the .app-* shell; only the 4 that already bit were hand-patched. Fix: :where(#legacy-workspace-host) scoping (zero added specificity -> legacy cascade preserved byte-for-byte) + html,body/body collapsed onto the host. Critical mid-chunk catch: the pixel-exact shell was silently riding on legacy's leaked star{box-sizing} + html,body font-smoothing (the sealed v3 token sheet scopes those to .ds-canvas only, which .app-shell doesn't use), so moved box-sizing/smoothing/line-height into dashboard.css. New critical invariant legacy_css_contained: deterministic re-parse, no bare element/star/non-var :root selector may ever exist; proven with a negative test. Verified 24->0 leak vectors, style_diff 4 live-better residuals only, invariants 26/26, render probes 0 errors." }, { id: "lg_mqrf7brf_5o0xqy", ts: "2026-06-23T21:54:33.675631-04:00", surface: "journey", kind: "round-close", summary: "Journey J3+J4: mounted the J2 view (kills the last legacy teal; shared K+J registry -> J rail/Esc/bare-J open the new drawer) + auto-derive; styled the whole drawer to the v3 mockup (jd-* scoped to #drawer-journey-mount); topbar BRAIN->CODEX. Board 26/26.", detail: "J3 generalized the Knowledge-only drawer wiring in main.ts into a shared K+J registry (DRAWER_SPECS: mountDrawers/toggleDrawer/wireDrawerKeys/closeAllDrawers); the J rail item + Esc + bare-J now open the new jd-* drawer instead of the legacy #tab-journey teal tab. Auto-derive: scanner:scan-complete / regimen add-remove-restore / goals:updated -> journey.logEvent (excludes high-frequency coverage:recomputed + dose-edit to avoid flooding). drawer-journey.css ports the v3 mockup vocabulary onto the view's jd-* classes, every rule rooted at #drawer-journey-mount so it cannot leak (Sever-Safety lesson applied preemptively): panel + chrome + all 4 tabs + the quick-checkin entry button + inline forms. Built in 2 visual-verified phases. CODEX: the 2 visible topbar BRAIN refs renamed; v3.27 kept (consistent with footer + versions-data, no drift); full v1.0 stamp queued. New tools/render_probe_journey.js: 13 checks incl. legacy-host-not-shown (teal-kill proof). Knowledge drawer still unstyled by design (identical shell; drawer-journey.css is the template)." }, { id: "lg_mqrlsxe3_47za1h", ts: "2026-06-24T00:59:19.179850-04:00", surface: "knowledge", kind: "round-close", summary: "Knowledge drawer SHIPPED to gold-standard: shared-chrome refactor + full kd-* styling + Essentials deep-dive + 90-essentials/Omega-9 reframe (\xA700.A confirmed) + drawer +100px. Board 26/26.", detail: "Lifted shared drawer chrome into drawer-shared.css (dual jd-*/kd- selectors, both mount-rooted = single source, no leak); kd-* tab-content rename closes the legacy .essential-tile collision. Essentials tab rebuilt layout-driven (all shown, real symbols, coverage-state colors from the same CoverageSnapshot classifier) + click-to-expand Wallach deep-dive (quote/citation + matchEssential vault chips). Omega-9 flagged essential:false in coverage-layout-data.json (single source) -> always 90; teal --bonus tile + on-click non-essential note, coverage math retained. Caught + fixed a */-in-CSS-comment that silently dropped the journey panel width:600 (probe caught 580px). Germanium (61st embed mineral, absent from layout) flagged for next-genesis reconciliation; all live 91/92 instances inventoried in next-chunk.md. Verified: build OK, invariants 26/26, knowledge/journey/coverage/seeded probes green, Luneth visually verified." }, { id: "lg_mqrurhp1_wezm0z", ts: "2026-06-24T05:10:08.725846-04:00", surface: "coverage/essentials", kind: "round-close", summary: "90-essentials correctness: Germanium replaces Fluoride in the 60 (Wallach 60-graphic, 4x-confirmed); Fluoride scrubbed pending corpus audit; count unified at 90 via essentialCount(); all names shown full; vitamin/amino tiles unified to mineral format + gap fixed.", detail: "Files: essentials-targets.json, essentials-targets-data (embed+json), essentials-benefits-data, coverage-layout-data, state/coverage.ts (essentialCount helper), views/{coverage,scanner,regimen}, core/schemas/knowledge, workspace-coverage.css, render_probe_seeded. Verified: build OK, 26/26 invariants (embed-sync=91), 5 render probes green, 0 clipped names. Record: chronicle/contradictions/2026-06-24-germanium-replaces-fluoride.md. Open for corpus audit: Fluoride re-adjudication + hallucination provenance + Cysteine-vs-Taurine." }, { id: "lg_mqsbi1oa_o37hbt", ts: "2026-06-24T12:58:41.530708-04:00", surface: "eden/corpus", kind: "milestone", summary: "Wallach Knowledge Revamp Phase \u03B1: Eden gains Wing 2 (eden/corpus \u2014 6 books in-housed + sealed 90-canon + claim-graph scaffold) and Wing 3 (eden/graphics \u2014 5 sacred hand-made graphics). 6 seal/verify tools, 3 invariants. Board 29/29. Two-tier knowledge model live.", detail: "Reframe: Eden = all Tier-1 canonical Wallach truth (three wings: YGY catalog, corpus, graphics); knowledge/ = Tier-2 unsealed (transcripts-clean + design-wisdom). Engineering: claims sharded per book; verbatim is the durable anchor (PDF books lack reliable page markers); content hashes over LF-normalized text (clone-stable, .gitattributes eol=lf); agent-in-the-loop extraction (no LLM subsystem \u2014 determinism from seal+hash); corpus_verify.py is the single impl of 10 checks, the corpus_integrity invariant shells out to it. Sealed files protected free via <name>.json.golden.sha256 = pre_write_guard auto-block. Sealed knowledge_version=2 (re-sealed after an is_sealed naming-bug caught by the seal's own gate). Deviations from the approved proposal (improvements): no invariant-baseline entries (bootstrap returns green like eden_hash_integrity); deferred core/schemas/corpus.ts to Phase \u03B5 (avoid a dual schema source). Proposal: chronicle/proposals/wallach-knowledge-revamp.md. NEXT: Phase \u03B2 DDDL extraction." }, { id: "lg_mqsc1qv5_y0atm9", ts: "2026-06-24T13:14:00.641209-04:00", surface: "eden/corpus", kind: "round-close", summary: "Phase \u03B2.1: DDDL extraction pipeline live + first 10 claims sealed (knowledge_version=4). corpus_extract.py finalize snaps agent-authored verbatims to exact book bytes; corpus_verify proves every verbatim is a real book substring. Board 29/29. Stop for format review.", detail: "Agent-in-the-loop extraction proven end-to-end on DDDL: 10 claims across 6 kinds (deficiency_sign\xD73, mechanism\xD72, prevalence\xD72, prognosis, personal_anecdote, quote) \u2014 selenium/copper/calcium/chromium/vanadium deficiency-disease claims + the 1895-JAMA doctor-lifespan hook + plant-derived-colloidal-minerals framing. Pipeline: I author kind/slugs/claim_text/verbatim \u2192 corpus_extract.py finalize snaps verbatim to exact book bytes (whitespace-collapse + quote/dash fold + index map), assigns WAL-CLM ids + char_offset, validates essentials against the 90-canon \u2192 corpus_seal promotes \u2192 corpus_verify check #2 proves substrings. Fixed 2 bugs: seal counted claims pre-promotion (note said 0 for 10); finalize overwrote the draft (now merges the sealed shard for safe multi-batch). STOP for Luneth's claim format/quality review before extracting DDDL at volume." }, { id: "lg_mqscjnqk_7itlhf", ts: "2026-06-24T13:27:56.396722-04:00", surface: "eden/corpus", kind: "round-close", summary: "Phase \u03B2.2: claim voice locked (neutral declarative, Luneth-approved) + dose kind added; DDDL re-sealed at 14 claims (knowledge_version=5, 7 kinds). Board 29/29.", detail: "Luneth ruled claim_text = neutral declarative (no 'Wallach asserts' prefix; attribution lives in verbatim + the all-Wallach corpus). Re-authored the 10 + added 4 incl. first dose claims (germanium 20-30 mg/day maintenance, silver 400 mg/day + mechanism, germanium deficiency). ids restart 1-14. corpus_verify PASS \u2014 all 14 verbatims exact book substrings. Granularity: keep faithful list-claims; Phase-\u03B4 derive explodes conditions[] into per-condition index entries. NEXT: continue DDDL at volume, then \u03B3 books, then \u03B4 indices." }, { id: "lg_mqscz2b6_bp896n", ts: "2026-06-24T13:39:55.122321-04:00", surface: "eden/corpus", kind: "round-close", summary: "Phase \u03B2.3+\u03B2.4: DDDL extraction at volume \u2014 40 claims sealed (knowledge_version=7) across ~15 minerals from Appendix A (copper/selenium/chromium/vanadium/iron/iodine/zinc/tin/manganese/molybdenum/germanium/silver/cesium/strontium/calcium). 10 of 13 kinds in use. Board 29/29.", detail: "Three merge-batches: 14\u219228\u219240, ids contiguous WAL-CLM-DDDL-1..40, every verbatim proven an exact book substring. Added kinds interaction/contraindication/protocol. Highlights: tin\u2192male-pattern baldness; vanadium-as-insulin (adult-onset diabetes); selenium glutathione-peroxidase + heart/cancer route; zinc 70 metalloenzymes; chromium 90%-deficient/33% lifespan; iron pica + ascorbate interaction; iodine+tyrosine\u2192thyroxin; cesium high-pH cancer; manganese\u2192carpal tunnel; germanium/silver doses. NEXT: DDDL vitamins+aminos + the disease-protocol chapters, then Phase \u03B3." }, { id: "lg_mqsd3481_0gzz8v", ts: "2026-06-24T13:43:04.225476-04:00", surface: "eden/corpus", kind: "round-close", summary: "Phase \u03B2.5: DDDL vitamins batch \u2014 40\u219245 claims sealed (knowledge_version=8). Minerals + vitamins now covered (A, B9, B1, B12). Board 29/29.", detail: "Vitamins scattered in DDDL (no element-style appendix); harvested clinic-deficiency narrative + B12/cobalt section. OCR lesson: page-headers inject mid-sentence + hyphen-at-linebreak words break the snapper \u2014 avoid spanning them. NEXT: aminos+fatty-acids, then disease-protocol chapters, then Phase \u03B3." }, { id: "lg_mqsdgdq7_0k4gy3", ts: "2026-06-24T13:53:23.071934-04:00", surface: "eden/corpus", kind: "round-close", summary: "Phase \u03B2.6: DDDL disease-protocol chapters \u2014 45\u219255 claims (knowledge_version=9). First condition\u2192protocol+dose claims (diabetes, arthritis, asthma, cor pulmonale, cradle cap). 11 of 13 kinds. Board 29/29.", detail: "From DDDL Appendix B alphabetical disease encyclopedia. Diabetes: chromium prevents/treats; vanadium-replaces-insulin quote; Cr+V 250 mcg/day + full regimen. Arthritis: nutritional-deficiency complex + RA=Mycoplasma; Ca 2000/Mg 800-1000 mg/day; Ca:P 2:1. Asthma: EFA/Mn/Mg malabsorption. Cor pulmonale: selenium 500-1000 mcg/day. Cradle cap: B6+zinc. protocol kind now heavy. Verbatims dodge OCR page-headers. NEXT: more disease entries + aminos/fatty-acids, then Phase \u03B3." }, { id: "lg_mqsdja42_tt6qp7", ts: "2026-06-24T13:55:38.354192-04:00", surface: "eden/corpus", kind: "round-close", summary: "Phase \u03B2.7: more DDDL disease entries \u2014 55\u219262 claims (knowledge_version=10). Cancer (prevention + iconic survival quote), osteoporosis (HCl+Ca, estrogen/fluoride critique, estrogen contraindication), otitis (95% milk allergy). Board 29/29.", detail: "62 claims span minerals + vitamins + condition protocols / 11 of 13 kinds. Cancer-survival quote anchored on the clean sub-span to skip a mid-sentence page-header. NEXT: aminos/fatty-acids + remaining disease entries, then Phase \u03B3 the other 5 books, then Phase \u03B4 indices." }, { id: "lg_mqsdqmg6_lflnfb", ts: "2026-06-24T14:01:20.934283-04:00", surface: "eden/corpus", kind: "round-close", summary: "Phase \u03B2.8+\u03B2.9: DDDL aminos/fatty-acids + more diseases \u2014 62\u219275 claims (knowledge_version=12). ALL FOUR essential categories now covered; 12 of 13 kinds. Taurine adjudication evidence captured. Board 29/29.", detail: "\u03B2.8 closed fatty acids (EFA def/prostaglandins/infant deficiency) + aminos (Wallach adds arginine/taurine/tyrosine\u2192cancer/macular/goiter \u2014 taurine in other_substances + tagged for the Cysteine-Taurine canon audit; tryptophan/phenylalanine/methionine functions; cholesterol\u2192vit-D/hormones). \u03B2.9: infertility, muscular dystrophy+Keshan (selenium), muscle cramps (Ca/Mg), insomnia. 75 claims span minerals+vitamins+aminos+fatty-acids + condition protocols. NEXT: remaining DDDL diseases, then Phase \u03B3 (Rare Earths next)." }, { id: "lg_mqse78vp_f666sf", ts: "2026-06-24T14:14:16.501380-04:00", surface: "eden/corpus", kind: "round-close", summary: "Phase \u03B2.10-\u03B2.12: DDDL disease-encyclopedia sweep \u2014 75\u219294 claims (knowledge_version=15). ~25 common conditions (angina, BPH, kidney stones, Bell's palsy, menopause, colds, arteriosclerosis, anxiety, ...). Board 29/29.", detail: "Appendix B alphabetical encyclopedia (A-C range), common/high-value conditions only. Iconic: arteriosclerosis=magnesium-deficiency calcification + vit-D angiotoxicity; kidney stones from Ca/Mg deficiency ('stones come from your own bones'); BPH from zinc deficiency; menopause estrogen contraindication. 94 claims span all four essential categories + ~25 conditions / 12 of 13 kinds. SCOPE: encyclopedia long tail (~175 obscure entries) remains. DECISION: proceed to Phase \u03B4/dashboard test, or grind full encyclopedia first." }, { id: "lg_mqsel3yr_60y12r", ts: "2026-06-24T14:25:03.315864-04:00", surface: "eden/corpus", kind: "milestone", summary: "Phase \u03B4: derived indices implemented + sealed (knowledge_version=16). 5 indices from 94 DDDL claims: essentials(90)/conditions(64)/symptoms(8)/other-substances(1)/consistency(1). verify check #8 (re-derive byte-compare) now active. Board 29/29.", detail: "corpus_derive.py fully implemented (was stub) + deterministic. Pure top-level slug\u2192entry maps so check #4 (other-substances \u2229 canon = \u2205) is real. Index layer can't drift from claims. NEXT: Phase \u03B5 surface in dashboard (Knowledge drawer Essential Deep-Dive + Condition view) \u2014 lands deferred core/schemas/corpus.ts + embed build + state/corpus.ts + probe \u2014 so Luneth can test." }];
+  var creators_log_embed_default = [{ id: "lg_mqq28u45_9emebd", ts: "2026-06-23T03:04:02.933502+00:00", surface: "tools", kind: "milestone", summary: "Creator's Log file-mirror created \u2014 chronicle/creators-log.jsonl + tools/creators_log.py make round-close step 5 CLI-fireable; the \xA700 audit trail now lives in the repo as a committed teaching record", detail: "In-app log() (state/log.ts) stays localStorage-only until the Phase-2 boot-merge (L2) embeds these entries into the Profile panel. Writes route through safe_write (\xA717). Validated by the new creators_log_well_formed invariant." }, { id: "lg_mqq2b45f_yeupqe", ts: "2026-06-23T03:05:49.251429+00:00", surface: "tools", kind: "round-close", summary: "Phase 2 L1 shipped: Creator's-Log file-mirror + creators_log_well_formed invariant (board 20\u219221). Round-close step 5 is now CLI-fireable \u2014 this entry is the proof.", detail: "Files: tools/creators_log.py, chronicle/creators-log.jsonl, tools/invariants.py. Verified: creators_log verify 1/1 clean; invariants 21/21. Next: L2 Profile boot-merge, then Journey J1-J4.", metadata: { chunk: "L1", board: "21/21", files: ["tools/creators_log.py", "chronicle/creators-log.jsonl", "tools/invariants.py"] } }, { id: "lg_mqq2g1mt_3ckyms", ts: "2026-06-23T03:09:39.269829+00:00", surface: "meta", kind: "session-end", summary: "Session checkpoint: cleanup A-C4 + logging-doctrine codified + Phase-2 L1 (Creator's-Log mirror, board 21/21). Handoff refreshed. Next: L2 Profile boot-merge \u2192 Journey J1-J4 \u2192 Palette.", detail: "9 commits pushed c2826e9..(this). Every chunk build>test>log>committed. Creator's Log now CLI-fireable; this is a session-end entry through the live tool." }, { id: "lg_mqq30yww_gejq56", ts: "2026-06-23T03:25:55.520134+00:00", surface: "tools", kind: "design-decision", summary: "Codified the two-layer logging model + the Creator's Log sacred covenant (append-only, never deleted even under broad delete-authorization, always truthful/complete, fires per-chunk). Audit found sacredness + never-skip not yet machine-enforced.", detail: "Doctrine in .claude/rules/logging-doctrine.md. 3 enforcement guards proposed (git-anchored append-only invariant, round-close firing check, boundary delete-guard) pending Luneth's approval of the ledger file/folder structure." }, { id: "lg_mqq3i857_1qlldw", ts: "2026-06-23T03:39:20.635214+00:00", surface: "tools", kind: "milestone", summary: "Sacred Creator's Log: moved to chronicle/creators-log/ (log.jsonl + generated LOG.md + README) and added the covenant's teeth \u2014 git-anchored append-only invariant, digest-sync invariant, shell delete-guard, and a never-skip round-close hard-block. Board 21\u219223.", detail: "The append-only invariant makes deleting committed entries un-shippable; the firing-check makes a skipped round-close entry un-closeable. Tightened the delete-guard after a self-inflicted prose false-positive (good stress test)." }, { id: "lg_mqq3lhtx_zlch6t", ts: "2026-06-23T03:41:53.157429+00:00", surface: "tools", kind: "invariant-pass", summary: "Teeth-test PROVEN: creators_log_append_only catches both deletion (truncate 5\u21921) and mutation of committed entries; git restores; board 23/23. The sacred-log guarantee is structural, not aspirational.", detail: "Simulated 'delete entries for efficiency' via safe_write truncate \u2192 invariant fired RED 'SACRED LEDGER TRUNCATED'; in-place edit \u2192 'SACRED LEDGER MUTATED at entry 1'; git checkout restored. try/finally guaranteed recovery." }, { id: "lg_mqq52ira_tnd1aj", ts: "2026-06-23T04:23:07.126050+00:00", surface: "tools", kind: "round-close", summary: "Chunk H: hardened the sacred ledger per the Opus-4.8 audit \u2014 closed 3 enforcement gaps (4a digest spoof, 5a delete-guard dir hole, 5b silent committed-deletion + silent fail-open). All re-proven; board 23/23.", detail: "4a: validate_entry rejects newline summaries + render_digest escapes a leading #/> and flattens newlines so the human digest can't be made to show a fake entry (the jsonl was already injection-proof \u2014 json.dumps escaping, proven). 5a: pre_bash_guard now blocks the whole chronicle/creators-log dir + any child + 'rm -rf chronicle' + a dir mv, while non-sacred deletes still pass. 5b: a COMMITTED deletion (ledger gone from HEAD with prior history) is now a hard RED 'SACRED LEDGER REMOVED FROM HEAD'; git-unavailable now prints a loud UNVERIFIED warning but stays fail-open per Luneth's 'visible warning, not blocking' choice. Verified: invariants 23/23, verify 6/0, digest byte-identical, build OK 290.9 KB, every fix re-proven against real code (incl. the real append_only on an isolated temp git repo). The req-3 truthfulness ceiling stands by design \u2014 next feature (L2 dashboard Creator's Log) is Luneth's visual truth-verification layer; then navigability archive-tree." }, { id: "lg_mqq5oreo_sft46m", ts: "2026-06-23T04:40:24.768965+00:00", surface: "docs", kind: "round-close", summary: "README audit: purged retired-system references (tacitus/cura/vision/aegis/brain) from all 16 READMEs and corrected inaccuracies. 5 fixed, 11 verified clean, 0 dead tokens remain; board 23/23.", detail: "Fixed: root README (Cura/Aegis/Tacitus blockquote -> Eden/Chronicle/Sunjo + added creators-log/ to glossary); chronicle/README (Layout was missing creators-log/ + 3 files; added them + a two-layers section); chronicle/evals/README ('Brain Evaluations' -> historical agent-prompt-era artifacts, preserved not resurrected); tools/README (documented only 1 of ~20 tools + cited brain rules -> full accurate inventory by group, each line verified against the script docstring); fonts/README ('drop these in' -> already in-housed). Verified clean: eden, labels, transcripts, wallach-refresh, canaries, design-wisdom (+subdirs), youngevity-product-notes. Ignored false positives: curation/curated/accuracy (substring 'cura') + the word 'vision'. FLAGGED for Luneth (operating contract, not auto-touched): CLAUDE.md glossary still lists Cura+Aegis as current systems + a Tacitus guard; sunjo plan line 308 lists them (captured history). Historical docs (CHANGELOG/versions/saga/contradictions) intentionally keep period-accurate refs." }, { id: "lg_mqq5x105_9ui544", ts: "2026-06-23T04:46:50.453734+00:00", surface: "tools", kind: "round-close", summary: "Audit follow-ups: retired Cura/Aegis from the CLAUDE.md glossary (slimmed the Tacitus guard) + fixed a pre_bash_guard false-positive where the push-force/reset-hard regexes spanned a separator into an unrelated short-flag. Board 23/23.", detail: "(1) CLAUDE.md glossary dropped the Cura + Aegis entries (retired names; the concepts live in engineering-doctrine.md / the app and appear in no live rule file); the Tacitus line slimmed to a tight do-not-re-introduce guard; Eden + Chronicle stay. (2) pre_bash_guard's push-force and reset-hard checks used .*? with re.DOTALL and matched across command separators, so a 'push-then-unrelated-shortflag' compound was wrongly blocked (hit live when committing the README audit). Scoped both to a single command segment ([^newline;amp;pipe]*?), matching the rm-guard pattern. Proven via a file-based hook probe (trigger phrases kept out of the bash line): the push-then-cleanup and commit-then-push compounds now ALLOW; genuine force/hard flags still BLOCK; force-with-lease ALLOWs; the 5a sacred-ledger guard still BLOCKs (no regression). The two non-README loose ends from the README audit; both user-approved. Next: Feature L2." }, { id: "lg_mqq6gim9_bvrj39", ts: "2026-06-23T05:01:59.745384+00:00", surface: "profile", kind: "round-close", summary: "Phase 2 L2 shipped: the dashboard Creator's Log. The CLI ledger is now inlined at build time and boot-merged with localStorage so the Profile panel shows both CLI- and in-app-fired entries \u2014 Luneth's visual truth-verification layer. Board 23\u219224.", detail: "Closes the in-app half (L1 was the CLI mirror). creators_log.py gains write_embed() (every append/digest regenerates dashboard/assets/data/creators-log-embed.json from log.jsonl via safe_write \u2014 sibling of LOG.md; log.jsonl stays the single source of truth). core/schemas/log.ts adds LogEmbedSchema; state/log.ts imports the embed (esbuild JSON import), validates once at the boundary, and getEntries() boot-merges embed + LS deduped by id (embed canonical wins), newest-first. The existing Profile panel renders getEntries() unchanged, so it now shows the unified log. New invariant creators_log_embed_synced (warning, truth-anchored: json.loads(embed) == read_entries()) catches a stale build / hand-edit. Verified: tsc strict + esbuild OK (298.9 KB); invariants 24/24; render_probe_profile.js PASS \u2014 empty localStorage still renders all embedded CLI entries (count == embed == subheader), a real ROUND CLOSE surfaces, Esc closes, 0 page errors. Deferred: cap the embed to recent-N as the ledger grows (Chunk N). Next: navigability archive-tree." }, { id: "lg_mqq75oel_2m9xyo", ts: "2026-06-23T05:21:33.645862+00:00", surface: "creators-log", kind: "round-close", summary: "Chunk N shipped: navigability archive-tree. The Creator's Log now has a month-by-month INDEX.md + per-month digests/ holding the full history, while LOG.md becomes a recent-window view \u2014 so it stays scannable as it grows over years. Board 24\u219225.", detail: "Luneth's 'archive tree + index' choice. log.jsonl stays the unsharded canonical spine (+ git-prefix anchor); the derived human views gain structure. creators_log.py adds _render_block (shared renderer), render_index/write_index (INDEX.md month map: count + kind tally + digest link), month_of/month_set/render_month/write_months (digests/YYYY-MM.md, full entries), a recent-window cap on render_digest (DIGEST_RECENT=200, header \u2192 INDEX.md), and regenerate_all() called from append/digest so LOG.md + embed + INDEX + monthly digests stay byte-fresh together. New invariant creators_log_archive_synced (warning) is truth-anchored: INDEX.md == render_index() and each digests/*.md == render_month(ym), month set from log.jsonl, no missing/extra files \u2014 this is where full-history human fidelity is now proven (digest_synced only covers LOG.md's window). README documents the new layout + the embed/archive invariants. Verified: invariants 25/25; INDEX + digests/2026-06.md render cleanly (10 entries, full detail, back-links); LOG.md recent-window matches. Deferred: cap the L2 embed to recent-N when it grows large. Next: Journey J1-J4, then command palette." }, { id: "lg_mqq95orc_m6l3l3", ts: "2026-06-23T06:17:33.336269+00:00", surface: "journey", kind: "round-close", summary: "Journey J1 shipped: the state engine. Replaced the throwing scaffold with a real \xA731 events ledger + private check-ins + a \xB17-day cross-ref walker, all Zod-validated. No fake seed \u2014 fills from real activity. Board 25/25; engine functionally smoke-tested.", detail: "First of ~4 Journey chunks (J1 engine \u2192 J2 view \u2192 J3 wiring \u2192 J4 probe). New core/schemas/journey.ts (EventKind/JourneyEvent/Checkin + storage shapes, types inferred). state/journey.ts: listEvents(sinceISO?)/listCheckins() read via getValidated; logEvent()/logCheckin() are the only \xA731 writers to wallachJourneyEvents_v1/wallachJourneyCheckins_v1 (auto id, FIFO cap 5000, emit journey:changed); crossRefForCheckin() = the \xB17-day local correlation walker (check-ins stay private, never exported). core/events.ts: journey:event-logged \u2192 journey:changed {reason}. Verified: tsc strict + esbuild OK; invariants 25/25; esbuild-bundled functional smoke vs a localStorage shim PASS (persistence, newest-first, sinceISO, cross-ref include/exclude, corrupt-LS-empty). No render probe yet (pure state; view verified at J4). Next: J2 the 4-tab drawer view." }, { id: "lg_mqqa4z6g_mshacn", ts: "2026-06-23T06:44:59.800202+00:00", surface: "genesis", kind: "milestone", summary: "Genesis boot system shipped: typing 'genesis' now runs tools/genesis.py \u2014 a one-command session boot (banner + scoreboard + the live pass-off) that hands a fresh session past depth instantly + ends with an action question. Renamed sunjo/ \u2192 genesis/.", detail: "Formalizes the per-session catch-up rather than reinventing it: chronicle/next-chunk.md stays the SINGLE live rolling pass-off (no parallel file); genesis.py reads it + runs the integrity scoreboard (invariants), build-parity, last Creator's Log entry, build-log tail, and prints the next-chunk LATEST\u2192NEXT-ORDER block, closing with a cue to ask 'resume X or redirect?'. sunjo/ \u2192 genesis/ via git mv (history preserved): the folder now houses the boot system + the archived original Cowork pass-off (01/02); genesis/README documents the two-pass-off model. CLAUDE.md Genesis section rewritten (net -1 line, 195/200) to point at the command + mandate the action question; all LIVE sunjo path refs \u2192 genesis/ (history left truthful). Mechanically safe (no tool/hook/invariant referenced sunjo). Verified: genesis.py boots cleanly; invariants 25/25. Next: Journey J2." }, { id: "lg_mqqqtit6_5uctcj", ts: "2026-06-23T14:31:58.842948+00:00", surface: "journey", kind: "round-close", summary: "Journey J2 \u2014 views/journey.ts 4-tab drawer renderer + LOG EVENT/check-in forms; mirrors knowledge.ts, reads only via state layer, zero inline literals. Also implemented read side of state/goals.ts (+ new core/schemas/goals.ts). Board 25/25, probes pass.", detail: "Replaced the throwing views/journey.ts scaffold with a real renderer using self-namespaced jd-* classes (parallel to Knowledge's kd-*; the v3 proposal's generic .timeline/.goal-card/.milestone would collide with legacy-dashboard.css \u2014 jd-* CSS is the Round-6 polish pass). Timeline groups events into calendar-day buckets (Map, newest-first, kind->glyph/accent, relative-time + delta); Goals shows progress bar + blockers + featured; Check-ins (private) renders 5-pip severity + tags + the +/-7-day cross-ref as 'CROSS-REF \xB7 <top event>'; Milestones distinguishes earned/locked/fresh-under-24h. The footer LOG EVENT primary + the Check-ins quick-entry open inline forms calling journey.logEvent()/logCheckin() with bounded inputs (maxlength + slice + clampSeverity + EventKindSchema.safeParse). To avoid crashing on the still-scaffolded goals state, implemented its READ side: new core/schemas/goals.ts (GoalSchema/MilestoneSchema + LS shapes, .optional() not .default() to keep input==output types) + Zod-validated listGoals/listMilestones (bad LS -> empty); evaluateMilestoneTriggers stays a deferred throw. Verified: tsc strict + esbuild OK (main.js 307.6 KB; journey code is tree-shaken from the runtime bundle until J3 calls mount() \u2014 tsc is the compile gate); eslint clean on all 4 files; invariants 25/25 (0 new reds); coverage + knowledge render probes PASS. No journey render probe yet \u2014 the drawer mount is J3 and the visual probe is J4 (honesty rule). NEXT: J3 \u2014 shared K+J mount/toggle/keys helper + auto-derive subscriptions." }, { id: "lg_mqqsqygj_fmu96a", ts: "2026-06-23T11:25:58.387680-04:00", surface: "tooling", kind: "design-decision", summary: "Creator's Log timestamps now store machine-LOCAL time (auto-follow ET->CT + DST) instead of UTC. _now_iso uses datetime.now().astimezone(); _fmt_ts derives the zone from the stored offset. Historical UTC entries stay UTC (immutable ledger).", detail: "Luneth flagged that log times read in UTC (an entry made at 10:31 EDT showed as 14:31 / 06:44), confusing against his local clock, and that he's moving ET->CT next week. Chose auto-follow-local over hard-pinning CT so it adapts to the move + DST with zero maintenance. Two-line change in tools/creators_log.py: _now_iso() now returns datetime.now().astimezone().isoformat() (local-aware, carries the offset); _fmt_ts() derives the zone label from the parsed offset (%Z) instead of hardcoding 'UTC'. The slice-based renderers (genesis last-log line, Profile panel formatTs) need no change \u2014 they read the stored wall-clock directly, so new entries show local automatically. The ~13 pre-change entries stored +00:00 stay UTC (the ledger is append-only/immutable; never rewriting history). This entry is the first stored in local time." }, { id: "lg_mqqt86uf_88lvtm", ts: "2026-06-23T11:39:22.407988-04:00", surface: "discipline", kind: "design-decision", summary: "Codified the visual/human-verification gate (.claude/rules/visual-verification.md + CLAUDE.md row): for any page/visual/UX work Luneth is the test gate \u2014 build a chunk to 'done', STOP, he visually verifies, only then continue. Never chain past a STOP; certainty != truth.", detail: "Luneth elevated the per-page build method to a non-negotiable rule. Automated gates (build/invariants/probes) prove only the functional layer; the subjective/visual layer can ONLY be verified by his eyes. The discipline: build in phases (respect resource usage) -> build to 'done' or one verifiable chunk -> STOP -> he visually verifies/course-corrects/adds/changes mind -> only then log + continue. Never advance past a STOP without his go-ahead; never claim he verified what he didn't; never treat agent-certainty as truth. This is build>test>log>repeat with Luneth as tester, and the guardrail that would have caught the unstyled-drawer drift. Documented as a behavioral discipline (like the source-rule turn-gap), not a Python invariant; the structural guarantee is that visual chunks END at a STOP by default. NEXT: Coverage as first gold-standard page." }, { id: "lg_mqqxdip7_mg7c11", ts: "2026-06-23T13:35:29.515119-04:00", surface: "coverage", kind: "milestone", summary: "Coverage Phase 1 \u2014 shell now ~pixel-exact to v3.2 (Luneth verified). Fixed via new tools/style_diff.js: legacy 15px root + bare header/footer selectors bleeding into the .app-* shell; in-housed the missing Chakra Petch/Bruno Ace fonts. Visual-match lesson codified.", detail: "First gold-standard surface phase under the visual-verification gate (build -> STOP -> Luneth verifies -> commit). An objective computed-style diff (new tools/style_diff.js, live shell vs the v3.2 mockup) drove it from ~50 diffs to 0 meaningful, replacing eyeballing. Two systemic root causes: (1) legacy-dashboard.css html,body{font-size:15px} shrank the whole rem UI to 93.75% -> removed, 16px root re-scales the entire coverage page; (2) legacy bare element selectors (header/footer/html,body) bled into the new .app-* shell (14px radius, teal shadow+border, a header::before veil over .app-topbar hiding its accents + fading the search, teal text) -> scoped to #legacy-workspace-host + doc-level overrides removed (grep [v3-contain]). Also in-housed the v3.2 fonts (Chakra Petch + Bruno Ace; wired but never procured -> @font-face 404 -> Space Grotesk fallback). Lesson codified in .claude/rules/visual-verification.md 'Getting to exact'. NEXT: finish Coverage hero/periodic/sidebar vs v3.2; CODEX dynamic version; alien-glyph cipher." }, { id: "lg_mqr73n9n_p9z964", ts: "2026-06-23T18:07:45.035981-04:00", surface: "dashboard/legacy-css", kind: "round-close", summary: "Sever-Safety: scoped all 24 legacy-dashboard.css leak vectors under :where(#legacy-workspace-host); moved the globals the shell was secretly inheriting into dashboard.css; new critical invariant legacy_css_contained makes the leak impossible. Luneth-verified.", detail: "Audit (Luneth's 'total clean cut' ask) confirmed the legacy->v3 sever is clean at the markup level (one #legacy-workspace-host div, R2->R5 deletion schedule) but was leaky at the CSS level with no enforcement. The parked legacy stylesheet (loaded after the v3 design system) had 24 bare element/universal selectors (teal h2/h3/table, @media header, *, html/body) that bleed into the .app-* shell; only the 4 that already bit were hand-patched. Fix: :where(#legacy-workspace-host) scoping (zero added specificity -> legacy cascade preserved byte-for-byte) + html,body/body collapsed onto the host. Critical mid-chunk catch: the pixel-exact shell was silently riding on legacy's leaked star{box-sizing} + html,body font-smoothing (the sealed v3 token sheet scopes those to .ds-canvas only, which .app-shell doesn't use), so moved box-sizing/smoothing/line-height into dashboard.css. New critical invariant legacy_css_contained: deterministic re-parse, no bare element/star/non-var :root selector may ever exist; proven with a negative test. Verified 24->0 leak vectors, style_diff 4 live-better residuals only, invariants 26/26, render probes 0 errors." }, { id: "lg_mqrf7brf_5o0xqy", ts: "2026-06-23T21:54:33.675631-04:00", surface: "journey", kind: "round-close", summary: "Journey J3+J4: mounted the J2 view (kills the last legacy teal; shared K+J registry -> J rail/Esc/bare-J open the new drawer) + auto-derive; styled the whole drawer to the v3 mockup (jd-* scoped to #drawer-journey-mount); topbar BRAIN->CODEX. Board 26/26.", detail: "J3 generalized the Knowledge-only drawer wiring in main.ts into a shared K+J registry (DRAWER_SPECS: mountDrawers/toggleDrawer/wireDrawerKeys/closeAllDrawers); the J rail item + Esc + bare-J now open the new jd-* drawer instead of the legacy #tab-journey teal tab. Auto-derive: scanner:scan-complete / regimen add-remove-restore / goals:updated -> journey.logEvent (excludes high-frequency coverage:recomputed + dose-edit to avoid flooding). drawer-journey.css ports the v3 mockup vocabulary onto the view's jd-* classes, every rule rooted at #drawer-journey-mount so it cannot leak (Sever-Safety lesson applied preemptively): panel + chrome + all 4 tabs + the quick-checkin entry button + inline forms. Built in 2 visual-verified phases. CODEX: the 2 visible topbar BRAIN refs renamed; v3.27 kept (consistent with footer + versions-data, no drift); full v1.0 stamp queued. New tools/render_probe_journey.js: 13 checks incl. legacy-host-not-shown (teal-kill proof). Knowledge drawer still unstyled by design (identical shell; drawer-journey.css is the template)." }, { id: "lg_mqrlsxe3_47za1h", ts: "2026-06-24T00:59:19.179850-04:00", surface: "knowledge", kind: "round-close", summary: "Knowledge drawer SHIPPED to gold-standard: shared-chrome refactor + full kd-* styling + Essentials deep-dive + 90-essentials/Omega-9 reframe (\xA700.A confirmed) + drawer +100px. Board 26/26.", detail: "Lifted shared drawer chrome into drawer-shared.css (dual jd-*/kd- selectors, both mount-rooted = single source, no leak); kd-* tab-content rename closes the legacy .essential-tile collision. Essentials tab rebuilt layout-driven (all shown, real symbols, coverage-state colors from the same CoverageSnapshot classifier) + click-to-expand Wallach deep-dive (quote/citation + matchEssential vault chips). Omega-9 flagged essential:false in coverage-layout-data.json (single source) -> always 90; teal --bonus tile + on-click non-essential note, coverage math retained. Caught + fixed a */-in-CSS-comment that silently dropped the journey panel width:600 (probe caught 580px). Germanium (61st embed mineral, absent from layout) flagged for next-genesis reconciliation; all live 91/92 instances inventoried in next-chunk.md. Verified: build OK, invariants 26/26, knowledge/journey/coverage/seeded probes green, Luneth visually verified." }, { id: "lg_mqrurhp1_wezm0z", ts: "2026-06-24T05:10:08.725846-04:00", surface: "coverage/essentials", kind: "round-close", summary: "90-essentials correctness: Germanium replaces Fluoride in the 60 (Wallach 60-graphic, 4x-confirmed); Fluoride scrubbed pending corpus audit; count unified at 90 via essentialCount(); all names shown full; vitamin/amino tiles unified to mineral format + gap fixed.", detail: "Files: essentials-targets.json, essentials-targets-data (embed+json), essentials-benefits-data, coverage-layout-data, state/coverage.ts (essentialCount helper), views/{coverage,scanner,regimen}, core/schemas/knowledge, workspace-coverage.css, render_probe_seeded. Verified: build OK, 26/26 invariants (embed-sync=91), 5 render probes green, 0 clipped names. Record: chronicle/contradictions/2026-06-24-germanium-replaces-fluoride.md. Open for corpus audit: Fluoride re-adjudication + hallucination provenance + Cysteine-vs-Taurine." }, { id: "lg_mqsbi1oa_o37hbt", ts: "2026-06-24T12:58:41.530708-04:00", surface: "eden/corpus", kind: "milestone", summary: "Wallach Knowledge Revamp Phase \u03B1: Eden gains Wing 2 (eden/corpus \u2014 6 books in-housed + sealed 90-canon + claim-graph scaffold) and Wing 3 (eden/graphics \u2014 5 sacred hand-made graphics). 6 seal/verify tools, 3 invariants. Board 29/29. Two-tier knowledge model live.", detail: "Reframe: Eden = all Tier-1 canonical Wallach truth (three wings: YGY catalog, corpus, graphics); knowledge/ = Tier-2 unsealed (transcripts-clean + design-wisdom). Engineering: claims sharded per book; verbatim is the durable anchor (PDF books lack reliable page markers); content hashes over LF-normalized text (clone-stable, .gitattributes eol=lf); agent-in-the-loop extraction (no LLM subsystem \u2014 determinism from seal+hash); corpus_verify.py is the single impl of 10 checks, the corpus_integrity invariant shells out to it. Sealed files protected free via <name>.json.golden.sha256 = pre_write_guard auto-block. Sealed knowledge_version=2 (re-sealed after an is_sealed naming-bug caught by the seal's own gate). Deviations from the approved proposal (improvements): no invariant-baseline entries (bootstrap returns green like eden_hash_integrity); deferred core/schemas/corpus.ts to Phase \u03B5 (avoid a dual schema source). Proposal: chronicle/proposals/wallach-knowledge-revamp.md. NEXT: Phase \u03B2 DDDL extraction." }, { id: "lg_mqsc1qv5_y0atm9", ts: "2026-06-24T13:14:00.641209-04:00", surface: "eden/corpus", kind: "round-close", summary: "Phase \u03B2.1: DDDL extraction pipeline live + first 10 claims sealed (knowledge_version=4). corpus_extract.py finalize snaps agent-authored verbatims to exact book bytes; corpus_verify proves every verbatim is a real book substring. Board 29/29. Stop for format review.", detail: "Agent-in-the-loop extraction proven end-to-end on DDDL: 10 claims across 6 kinds (deficiency_sign\xD73, mechanism\xD72, prevalence\xD72, prognosis, personal_anecdote, quote) \u2014 selenium/copper/calcium/chromium/vanadium deficiency-disease claims + the 1895-JAMA doctor-lifespan hook + plant-derived-colloidal-minerals framing. Pipeline: I author kind/slugs/claim_text/verbatim \u2192 corpus_extract.py finalize snaps verbatim to exact book bytes (whitespace-collapse + quote/dash fold + index map), assigns WAL-CLM ids + char_offset, validates essentials against the 90-canon \u2192 corpus_seal promotes \u2192 corpus_verify check #2 proves substrings. Fixed 2 bugs: seal counted claims pre-promotion (note said 0 for 10); finalize overwrote the draft (now merges the sealed shard for safe multi-batch). STOP for Luneth's claim format/quality review before extracting DDDL at volume." }, { id: "lg_mqscjnqk_7itlhf", ts: "2026-06-24T13:27:56.396722-04:00", surface: "eden/corpus", kind: "round-close", summary: "Phase \u03B2.2: claim voice locked (neutral declarative, Luneth-approved) + dose kind added; DDDL re-sealed at 14 claims (knowledge_version=5, 7 kinds). Board 29/29.", detail: "Luneth ruled claim_text = neutral declarative (no 'Wallach asserts' prefix; attribution lives in verbatim + the all-Wallach corpus). Re-authored the 10 + added 4 incl. first dose claims (germanium 20-30 mg/day maintenance, silver 400 mg/day + mechanism, germanium deficiency). ids restart 1-14. corpus_verify PASS \u2014 all 14 verbatims exact book substrings. Granularity: keep faithful list-claims; Phase-\u03B4 derive explodes conditions[] into per-condition index entries. NEXT: continue DDDL at volume, then \u03B3 books, then \u03B4 indices." }, { id: "lg_mqscz2b6_bp896n", ts: "2026-06-24T13:39:55.122321-04:00", surface: "eden/corpus", kind: "round-close", summary: "Phase \u03B2.3+\u03B2.4: DDDL extraction at volume \u2014 40 claims sealed (knowledge_version=7) across ~15 minerals from Appendix A (copper/selenium/chromium/vanadium/iron/iodine/zinc/tin/manganese/molybdenum/germanium/silver/cesium/strontium/calcium). 10 of 13 kinds in use. Board 29/29.", detail: "Three merge-batches: 14\u219228\u219240, ids contiguous WAL-CLM-DDDL-1..40, every verbatim proven an exact book substring. Added kinds interaction/contraindication/protocol. Highlights: tin\u2192male-pattern baldness; vanadium-as-insulin (adult-onset diabetes); selenium glutathione-peroxidase + heart/cancer route; zinc 70 metalloenzymes; chromium 90%-deficient/33% lifespan; iron pica + ascorbate interaction; iodine+tyrosine\u2192thyroxin; cesium high-pH cancer; manganese\u2192carpal tunnel; germanium/silver doses. NEXT: DDDL vitamins+aminos + the disease-protocol chapters, then Phase \u03B3." }, { id: "lg_mqsd3481_0gzz8v", ts: "2026-06-24T13:43:04.225476-04:00", surface: "eden/corpus", kind: "round-close", summary: "Phase \u03B2.5: DDDL vitamins batch \u2014 40\u219245 claims sealed (knowledge_version=8). Minerals + vitamins now covered (A, B9, B1, B12). Board 29/29.", detail: "Vitamins scattered in DDDL (no element-style appendix); harvested clinic-deficiency narrative + B12/cobalt section. OCR lesson: page-headers inject mid-sentence + hyphen-at-linebreak words break the snapper \u2014 avoid spanning them. NEXT: aminos+fatty-acids, then disease-protocol chapters, then Phase \u03B3." }, { id: "lg_mqsdgdq7_0k4gy3", ts: "2026-06-24T13:53:23.071934-04:00", surface: "eden/corpus", kind: "round-close", summary: "Phase \u03B2.6: DDDL disease-protocol chapters \u2014 45\u219255 claims (knowledge_version=9). First condition\u2192protocol+dose claims (diabetes, arthritis, asthma, cor pulmonale, cradle cap). 11 of 13 kinds. Board 29/29.", detail: "From DDDL Appendix B alphabetical disease encyclopedia. Diabetes: chromium prevents/treats; vanadium-replaces-insulin quote; Cr+V 250 mcg/day + full regimen. Arthritis: nutritional-deficiency complex + RA=Mycoplasma; Ca 2000/Mg 800-1000 mg/day; Ca:P 2:1. Asthma: EFA/Mn/Mg malabsorption. Cor pulmonale: selenium 500-1000 mcg/day. Cradle cap: B6+zinc. protocol kind now heavy. Verbatims dodge OCR page-headers. NEXT: more disease entries + aminos/fatty-acids, then Phase \u03B3." }, { id: "lg_mqsdja42_tt6qp7", ts: "2026-06-24T13:55:38.354192-04:00", surface: "eden/corpus", kind: "round-close", summary: "Phase \u03B2.7: more DDDL disease entries \u2014 55\u219262 claims (knowledge_version=10). Cancer (prevention + iconic survival quote), osteoporosis (HCl+Ca, estrogen/fluoride critique, estrogen contraindication), otitis (95% milk allergy). Board 29/29.", detail: "62 claims span minerals + vitamins + condition protocols / 11 of 13 kinds. Cancer-survival quote anchored on the clean sub-span to skip a mid-sentence page-header. NEXT: aminos/fatty-acids + remaining disease entries, then Phase \u03B3 the other 5 books, then Phase \u03B4 indices." }, { id: "lg_mqsdqmg6_lflnfb", ts: "2026-06-24T14:01:20.934283-04:00", surface: "eden/corpus", kind: "round-close", summary: "Phase \u03B2.8+\u03B2.9: DDDL aminos/fatty-acids + more diseases \u2014 62\u219275 claims (knowledge_version=12). ALL FOUR essential categories now covered; 12 of 13 kinds. Taurine adjudication evidence captured. Board 29/29.", detail: "\u03B2.8 closed fatty acids (EFA def/prostaglandins/infant deficiency) + aminos (Wallach adds arginine/taurine/tyrosine\u2192cancer/macular/goiter \u2014 taurine in other_substances + tagged for the Cysteine-Taurine canon audit; tryptophan/phenylalanine/methionine functions; cholesterol\u2192vit-D/hormones). \u03B2.9: infertility, muscular dystrophy+Keshan (selenium), muscle cramps (Ca/Mg), insomnia. 75 claims span minerals+vitamins+aminos+fatty-acids + condition protocols. NEXT: remaining DDDL diseases, then Phase \u03B3 (Rare Earths next)." }, { id: "lg_mqse78vp_f666sf", ts: "2026-06-24T14:14:16.501380-04:00", surface: "eden/corpus", kind: "round-close", summary: "Phase \u03B2.10-\u03B2.12: DDDL disease-encyclopedia sweep \u2014 75\u219294 claims (knowledge_version=15). ~25 common conditions (angina, BPH, kidney stones, Bell's palsy, menopause, colds, arteriosclerosis, anxiety, ...). Board 29/29.", detail: "Appendix B alphabetical encyclopedia (A-C range), common/high-value conditions only. Iconic: arteriosclerosis=magnesium-deficiency calcification + vit-D angiotoxicity; kidney stones from Ca/Mg deficiency ('stones come from your own bones'); BPH from zinc deficiency; menopause estrogen contraindication. 94 claims span all four essential categories + ~25 conditions / 12 of 13 kinds. SCOPE: encyclopedia long tail (~175 obscure entries) remains. DECISION: proceed to Phase \u03B4/dashboard test, or grind full encyclopedia first." }, { id: "lg_mqsel3yr_60y12r", ts: "2026-06-24T14:25:03.315864-04:00", surface: "eden/corpus", kind: "milestone", summary: "Phase \u03B4: derived indices implemented + sealed (knowledge_version=16). 5 indices from 94 DDDL claims: essentials(90)/conditions(64)/symptoms(8)/other-substances(1)/consistency(1). verify check #8 (re-derive byte-compare) now active. Board 29/29.", detail: "corpus_derive.py fully implemented (was stub) + deterministic. Pure top-level slug\u2192entry maps so check #4 (other-substances \u2229 canon = \u2205) is real. Index layer can't drift from claims. NEXT: Phase \u03B5 surface in dashboard (Knowledge drawer Essential Deep-Dive + Condition view) \u2014 lands deferred core/schemas/corpus.ts + embed build + state/corpus.ts + probe \u2014 so Luneth can test." }, { id: "lg_mqshqpij_8bb84r", ts: "2026-06-24T15:53:23.371136-04:00", surface: "dashboard/knowledge", kind: "round-close", summary: "Phase \u03B5.1 \u2014 sealed Wallach corpus surfaced in the Knowledge drawer: Essential deep-dive claims (paraphrase+verbatim+cite) + data-driven Corpus tab (real claim counts, newest-first, coming-soon books). New embed/schema/reader + corpus_embed_synced (30/30); kv 16to17.", detail: "Deferred Phase-\u03B5 read path lands: corpus_embed.py \u2192 slim deterministic embed inlined via esbuild JSON import (file:// can't fetch); core/schemas/corpus.ts Zod boundary mirrors the REAL derive output (SCHEMA.md \xA74 corrected, \xA77 documents the embed); state/corpus.ts validated reader. Essential deep-dive shows each essential's claims grouped by kind with the exact book verbatim + citation (\xA700.A source made visible). Corpus tab de-faked: was a hard-coded BOOKS list with invented cite totals; now books-meta + REAL claim_count (DDDL=94, others queued), newest-first, + books-roadmap.json coming-soon set grayed. Luneth-verified the deep-dive; he caught the Corpus-tab fakery + the Immortality year (2017\u21922008, re-sealed kv 16\u219217). Build OK, invariants 30/30, knowledge+coverage+seeded probes green." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -8506,7 +8596,7 @@
   }
 
   // assets/js/src/views/profile.ts
-  function escHTML4(s) {
+  function escHTML5(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -8552,15 +8642,15 @@
     return map[k];
   }
   function renderLogEntry(entry) {
-    const detailHTML = entry.detail !== void 0 && entry.detail.length > 0 ? `<div class="pf-log-entry__detail">${escHTML4(entry.detail)}</div>` : "";
+    const detailHTML = entry.detail !== void 0 && entry.detail.length > 0 ? `<div class="pf-log-entry__detail">${escHTML5(entry.detail)}</div>` : "";
     return `
-    <article class="pf-log-entry" data-log-id="${escHTML4(entry.id)}">
+    <article class="pf-log-entry" data-log-id="${escHTML5(entry.id)}">
       <header class="pf-log-entry__head">
-        <span class="pf-log-entry__ts">${escHTML4(formatTs(entry.ts))}</span>
-        <span class="pf-log-entry__surface">${escHTML4(entry.surface)}</span>
-        <span class="${kindClass(entry.kind)}">${escHTML4(kindLabel(entry.kind))}</span>
+        <span class="pf-log-entry__ts">${escHTML5(formatTs(entry.ts))}</span>
+        <span class="pf-log-entry__surface">${escHTML5(entry.surface)}</span>
+        <span class="${kindClass(entry.kind)}">${escHTML5(kindLabel(entry.kind))}</span>
       </header>
-      <h4 class="pf-log-entry__summary">${escHTML4(entry.summary)}</h4>
+      <h4 class="pf-log-entry__summary">${escHTML5(entry.summary)}</h4>
       ${detailHTML}
     </article>
   `;
@@ -8634,9 +8724,9 @@
     }
     return `
     <div class="pf-build-card">
-      <div class="pf-build-card__ts">${escHTML4(formatTs(lastBuild.ts))}</div>
-      <h3 class="pf-build-card__summary">${escHTML4(lastBuild.summary)}</h3>
-      ${lastBuild.detail !== void 0 ? `<pre class="pf-build-card__detail">${escHTML4(lastBuild.detail)}</pre>` : ""}
+      <div class="pf-build-card__ts">${escHTML5(formatTs(lastBuild.ts))}</div>
+      <h3 class="pf-build-card__summary">${escHTML5(lastBuild.summary)}</h3>
+      ${lastBuild.detail !== void 0 ? `<pre class="pf-build-card__detail">${escHTML5(lastBuild.detail)}</pre>` : ""}
     </div>
   `;
   }
@@ -8781,7 +8871,7 @@
     { name: "HYDRA DNA COLLAGEN", contribution: 0, heat: "sm", reason: "Logged 2026-06-15 \xB7 skin & connective tissue goal \xB7 pending cost/timing decision." },
     { name: "OPTIVIDA HEMP EXTRACT", contribution: 0, heat: "sm", reason: "Deferred \u2014 overlap with sleep stack already; revisit once sleep goal closes." }
   ];
-  function escHTML5(s) {
+  function escHTML6(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -8811,7 +8901,7 @@
   function renderSlot(slot) {
     if (slot.empty === true) {
       return `
-      <article class="slot-card empty" data-slot-id="${escHTML5(slot.id)}">
+      <article class="slot-card empty" data-slot-id="${escHTML6(slot.id)}">
         <div class="slot-card__empty-mark">+</div>
         <div class="slot-card__empty-label">EMPTY SLOT</div>
       </article>
@@ -8822,13 +8912,13 @@
     const serialPrefix = slot.active === true ? "\u25CF " : "";
     const serialSuffix = slot.active === true ? " \xB7 ACTIVE" : "";
     return `
-    <article class="slot-card${activeClass}" data-slot-id="${escHTML5(slot.id)}" data-slot-num="${escHTML5(slot.num)}">
+    <article class="slot-card${activeClass}" data-slot-id="${escHTML6(slot.id)}" data-slot-num="${escHTML6(slot.num)}">
       ${scanLine}
-      <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML5(slot.serial)}</span>${serialSuffix}</div>
-      <div class="slot-card__num">${escHTML5(slot.num)}</div>
-      <h3 class="slot-card__name">${escHTML5(slot.name)}</h3>
+      <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML6(slot.serial)}</span>${serialSuffix}</div>
+      <div class="slot-card__num">${escHTML6(slot.num)}</div>
+      <h3 class="slot-card__name">${escHTML6(slot.name)}</h3>
       <div class="slot-card__items">${slot.items} items \xB7 <span class="slot-card__coverage">${slot.coverage}</span>/${slot.total}</div>
-      <div class="slot-card__stamp">${escHTML5(slot.stamp)}</div>
+      <div class="slot-card__stamp">${escHTML6(slot.stamp)}</div>
     </article>
   `;
   }
@@ -8865,9 +8955,9 @@
     const scaling = amount * freq;
     return `
     <div class="regimen-item-row" data-item-id="${item.id}">
-      <div class="regimen-item-row__icon">${escHTML5(icon)}</div>
+      <div class="regimen-item-row__icon">${escHTML6(icon)}</div>
       <div class="regimen-item-row__body">
-        <h4 class="regimen-item-row__name">${escHTML5(name)}</h4>
+        <h4 class="regimen-item-row__name">${escHTML6(name)}</h4>
         <div class="regimen-item-row__contrib">
           <span class="regimen-item-row__contrib-label">CONTRIBUTES \xB7 ${contrib}</span>
           ${pips}
@@ -8930,13 +9020,13 @@
     return `
     <div class="rec-item">
       <div class="rec-item__head">
-        <h4 class="rec-item__name">${escHTML5(item.name)}</h4>
-        <span class="rec-item__tag" data-heat="${escHTML5(item.heat)}"><span class="rec-item__tag-sign">${escHTML5(sign)}</span>${escHTML5(tagText)}</span>
+        <h4 class="rec-item__name">${escHTML6(item.name)}</h4>
+        <span class="rec-item__tag" data-heat="${escHTML6(item.heat)}"><span class="rec-item__tag-sign">${escHTML6(sign)}</span>${escHTML6(tagText)}</span>
       </div>
-      <div class="rec-item__reason">${escHTML5(item.reason)}</div>
+      <div class="rec-item__reason">${escHTML6(item.reason)}</div>
       <div class="rec-item__actions">
-        <button class="rec-item__adopt" data-rg-action="adopt" data-item-name="${escHTML5(item.name)}">+ ADOPT</button>
-        <button class="rec-item__details" data-rg-action="details" data-item-name="${escHTML5(item.name)}">DETAILS</button>
+        <button class="rec-item__adopt" data-rg-action="adopt" data-item-name="${escHTML6(item.name)}">+ ADOPT</button>
+        <button class="rec-item__details" data-rg-action="details" data-item-name="${escHTML6(item.name)}">DETAILS</button>
       </div>
     </div>
   `;
@@ -9147,7 +9237,7 @@
   }
   function renderAddRow() {
     const names = [...readVault().values()].map((p) => p.canonical_name ?? p.name).filter((n) => typeof n === "string").sort((a, b) => a.localeCompare(b));
-    const options = names.map((n) => `<option value="${escHTML5(n)}"></option>`).join("");
+    const options = names.map((n) => `<option value="${escHTML6(n)}"></option>`).join("");
     return `
     <section class="active-slot rg-add-panel">
       <div class="search-wrap">
@@ -9239,7 +9329,7 @@
   }
 
   // assets/js/src/views/scanner.ts
-  function escHTML6(s) {
+  function escHTML7(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -9284,19 +9374,19 @@
     const servings = label.servings === void 0 ? "\u2014 \xB7 \u2014 servings" : String(label.servings);
     const nutrientRows = (label.nutrients ?? []).slice(0, 8).map((n) => `
     <div class="scan-label__row">
-      <span>${escHTML6(n.name)}</span>
-      <span>${escHTML6(n.amount ?? "")}${escHTML6(n.unit ?? "")}</span>
+      <span>${escHTML7(n.name)}</span>
+      <span>${escHTML7(n.amount ?? "")}${escHTML7(n.unit ?? "")}</span>
       <span>\u2014</span>
     </div>
   `).join("");
     return `
     <div class="scan-canvas scan-canvas--active">
       <div class="scan-label">
-        <div class="scan-label__brand">${escHTML6(brand)}</div>
-        <div class="scan-label__product">${escHTML6(product)}</div>
+        <div class="scan-label__brand">${escHTML7(brand)}</div>
+        <div class="scan-label__product">${escHTML7(product)}</div>
         <div class="scan-label__rule"></div>
         <h4 class="scan-label__section-title">Supplement Facts</h4>
-        <div class="scan-label__serving">Serving Size \xB7 ${escHTML6(servings)}</div>
+        <div class="scan-label__serving">Serving Size \xB7 ${escHTML7(servings)}</div>
         <div class="scan-label__rows">${nutrientRows}</div>
         <span class="ocr-bracket ocr-bracket--brand"></span>
         <span class="ocr-bracket ocr-bracket--product"></span>
@@ -9316,7 +9406,7 @@
     <span>\xB7</span>
     <span>${regionCount} REGIONS</span>
     <span>\xB7</span>
-    <span>CONFIDENCE <strong>${escHTML6(confidence)}</strong></span>
+    <span>CONFIDENCE <strong>${escHTML7(confidence)}</strong></span>
   ` : `
     <span>CAPTURE <strong class="ds-cipher" data-cipher-set="hexa">SC\xB7----</strong></span>
     <span>\xB7</span>
@@ -9378,9 +9468,9 @@
       return `
       <div class="stage stage--${s.status}">
         <div class="stage__dot">${dotChar}</div>
-        <div class="stage__name">${escHTML6(s.name)}</div>
-        <div class="stage__sub">${escHTML6(s.sub)}</div>
-        <div class="stage__ms">${s.status === "active" ? `<span class="ds-cipher" data-cipher-set="alphanum">${escHTML6(s.ms)}</span>` : escHTML6(s.ms)}</div>
+        <div class="stage__name">${escHTML7(s.name)}</div>
+        <div class="stage__sub">${escHTML7(s.sub)}</div>
+        <div class="stage__ms">${s.status === "active" ? `<span class="ds-cipher" data-cipher-set="alphanum">${escHTML7(s.ms)}</span>` : escHTML7(s.ms)}</div>
       </div>
     `;
     }).join("");
@@ -9392,7 +9482,7 @@
           <div class="pipeline__eyebrow">PIPELINE \xB7 <span class="ds-cipher" data-cipher-set="hexa">PL\xB724A7</span> \xB7 4 STAGES</div>
           <h2 class="pipeline__title">Extract \xB7 Parse \xB7 Match \xB7 Verdict</h2>
         </div>
-        <div class="pipeline__total">TOTAL ELAPSED <strong>${escHTML6(total)}</strong> \xB7 target &lt;5s</div>
+        <div class="pipeline__total">TOTAL ELAPSED <strong>${escHTML7(total)}</strong> \xB7 target &lt;5s</div>
       </header>
       <div class="pipeline__stages">${stagesHTML}</div>
     </section>
@@ -9403,17 +9493,17 @@
     const adoptLabel = row.status === "warn" ? "CONFIRM" : row.status === "err" ? "DISMISS" : "ADOPT";
     const adoptClass = row.status === "err" ? "parsed-row__btn" : "parsed-row__btn parsed-row__btn--adopt";
     const mappedClass = row.status === "err" ? "parsed-row__mapped parsed-row__mapped--none" : "parsed-row__mapped";
-    const tagSignHTML = row.tag.sign !== void 0 ? `<span class="parsed-row__tag-sign">${escHTML6(row.tag.sign)}</span>` : "";
+    const tagSignHTML = row.tag.sign !== void 0 ? `<span class="parsed-row__tag-sign">${escHTML7(row.tag.sign)}</span>` : "";
     return `
     <div class="parsed-row parsed-row--${row.status}">
       <div class="parsed-row__status">${statusChar}</div>
       <div class="parsed-row__body">
-        <span class="parsed-row__raw">"${escHTML6(row.raw)}"</span>
-        <h4 class="parsed-row__name">${escHTML6(row.name)}</h4>
+        <span class="parsed-row__raw">"${escHTML7(row.raw)}"</span>
+        <h4 class="parsed-row__name">${escHTML7(row.name)}</h4>
       </div>
-      <span class="${mappedClass}">\u2192 ${escHTML6(row.mapped)}</span>
-      <span class="parsed-row__confidence">${escHTML6(row.confidence)} <small>conf</small></span>
-      <span class="parsed-row__tag" data-heat="${escHTML6(row.tag.heat)}">${tagSignHTML}${escHTML6(row.tag.text)}</span>
+      <span class="${mappedClass}">\u2192 ${escHTML7(row.mapped)}</span>
+      <span class="parsed-row__confidence">${escHTML7(row.confidence)} <small>conf</small></span>
+      <span class="parsed-row__tag" data-heat="${escHTML7(row.tag.heat)}">${tagSignHTML}${escHTML7(row.tag.text)}</span>
       <div class="parsed-row__actions">
         <button class="parsed-row__btn" data-sc-action="details">DETAILS</button>
         <button class="${adoptClass}" data-sc-action="${row.status === "err" ? "dismiss" : "adopt"}">${adoptLabel}</button>
@@ -9519,10 +9609,10 @@
     return `
     <div class="scan-history-item" data-sc-action="reopen" data-scan-id="${entry.id}">
       <div class="scan-history-item__body">
-        <h4 class="scan-history-item__name">${escHTML6(name)}</h4>
-        <span class="scan-history-item__ts">${escHTML6(entry.ts.slice(0, 16))}</span>
+        <h4 class="scan-history-item__name">${escHTML7(name)}</h4>
+        <span class="scan-history-item__ts">${escHTML7(entry.ts.slice(0, 16))}</span>
       </div>
-      <span class="${pillClass}">${escHTML6(verdictText)}</span>
+      <span class="${pillClass}">${escHTML7(verdictText)}</span>
     </div>
   `;
   }

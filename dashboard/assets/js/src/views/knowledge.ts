@@ -27,8 +27,6 @@ import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import { on as onEvent } from '../core/events.js';
 import {
   type CorpusBook,
-  type CorpusClaim,
-  type CorpusEssential,
   type CorpusPlannedBook,
   CoverageLayoutSchema,
   type LayoutSection,
@@ -38,13 +36,10 @@ import {
   ProductsLookupSchema,
 } from '../core/schemas/index.js';
 import {
-  conditionDisplayName,
-  essentialDisplayName,
-  getBookLabel,
   getEssentialByLayoutKey,
   listBooks,
+  listConditions,
   listPlannedBooks,
-  resolveClaims,
 } from '../state/corpus.js';
 import {
   type CoverageSnapshot,
@@ -53,6 +48,7 @@ import {
   getTargets,
   matchEssential,
 } from '../state/coverage.js';
+import { renderConditionsTab, renderCorpusForEssential } from './knowledge-corpus.js';
 
 export interface DrawerHandle {
   open: () => void;
@@ -62,7 +58,7 @@ export interface DrawerHandle {
   isOpen: () => boolean;
 }
 
-type Tab = 'corpus' | 'essentials' | 'products' | 'doctrine';
+type Tab = 'corpus' | 'essentials' | 'conditions' | 'products' | 'doctrine';
 
 // ─── Data readers — Zod-validated at the parse boundary ───────────────────
 
@@ -163,6 +159,8 @@ function sectionCatLabel(section: LayoutSection): string {
       return 'AMINO ACID';
     case 'tile--fat':
       return 'FATTY ACID';
+    case 'tile':
+      return 'MINERAL';
     default:
       return 'MINERAL';
   }
@@ -233,6 +231,8 @@ function statusLabel(s: CoverageStatus): string {
       return 'PARTIAL';
     case 'gap':
       return 'GAP';
+    case '':
+      return 'PENDING';
     default:
       return 'PENDING';
   }
@@ -352,97 +352,6 @@ function renderCorpusTab(): string {
     ${plannedHTML}`;
 }
 
-// ─── Corpus deep-dive (the sealed Wallach claim graph) ─────────────────────
-
-/** Most-salient claim kinds first; the rest fall after, alphabetically. */
-const CORPUS_KIND_PRIORITY = ['deficiency_sign', 'dose', 'protocol', 'mechanism', 'prognosis'];
-
-/** A claim kind slug → an uppercase human label (no literal map — §00.B). */
-function corpusKindLabel(kind: string): string {
-  return kind.replace(/[_-]+/g, ' ').toUpperCase();
-}
-
-/** Priority-then-alphabetical ordering for the claim-kind groups. */
-function corpusKindOrder(a: string, b: string): number {
-  const ia = CORPUS_KIND_PRIORITY.indexOf(a);
-  const ib = CORPUS_KIND_PRIORITY.indexOf(b);
-  const ra = ia === -1 ? CORPUS_KIND_PRIORITY.length : ia;
-  const rb = ib === -1 ? CORPUS_KIND_PRIORITY.length : ib;
-  return ra !== rb ? ra - rb : (a < b ? -1 : a > b ? 1 : 0);
-}
-
-/** Collapse a book verbatim's hard line-wraps into one clean line. */
-function collapseWS(s: string): string {
-  return s.replace(/\s+/g, ' ').trim();
-}
-
-/** A short "50 mg / daily" dose label, or '' when no structured dose. */
-function formatDose(dose: CorpusClaim['dose']): string {
-  if (dose === null || dose === undefined) {
-    return '';
-  }
-  const amount = (typeof dose.amount === 'number' || typeof dose.amount === 'string') ? String(dose.amount) : '';
-  const unit = typeof dose.unit === 'string' ? dose.unit : '';
-  const period = typeof dose.period === 'string' ? dose.period : '';
-  const head = [amount, unit].filter(s => s.length > 0).join(' ');
-  if (head.length === 0) {
-    return '';
-  }
-  return period.length > 0 ? `${head} / ${period}` : head;
-}
-
-/** One corpus claim: paraphrase + optional dose + verbatim source + citation. */
-function renderCorpusClaim(claim: CorpusClaim): string {
-  const dose = formatDose(claim.dose);
-  return `
-    <div class="kd-claim">
-      <p class="kd-claim__text">${escHTML(claim.claim_text)}</p>
-      ${dose.length > 0 ? `<div class="kd-claim__dose">${escHTML(dose)}</div>` : ''}
-      <blockquote class="kd-claim__verbatim">${escHTML(collapseWS(claim.verbatim))}</blockquote>
-      <div class="kd-claim__cite">CITED · ${escHTML(getBookLabel(claim.book))}</div>
-    </div>`;
-}
-
-/** The full "FROM THE CORPUS" block for one essential. */
-function renderCorpusForEssential(c: CorpusEssential): string {
-  if (c.claim_count === 0) {
-    return `
-      <div class="kd-corpus">
-        <div class="kd-corpus__head"><span class="kd-corpus__eyebrow"><span class="pulse-dot"></span>FROM THE WALLACH CORPUS</span></div>
-        <p class="kd-corpus__empty">— no sealed claims extracted for this essential yet · the corpus is still being built out —</p>
-      </div>`;
-  }
-  const groupsHTML = Object.keys(c.claims_by_kind).sort(corpusKindOrder).map((kind) => {
-    const ids = c.claims_by_kind[kind] ?? [];
-    const claimsHTML = resolveClaims(ids).map(renderCorpusClaim).join('');
-    return `
-      <div class="kd-corpus__group">
-        <div class="kd-corpus__group-label">${escHTML(corpusKindLabel(kind))}</div>
-        ${claimsHTML}
-      </div>`;
-  }).join('');
-
-  const condChips = c.conditions_treated
-    .map(s => `<span class="kd-corpus__chip">${escHTML(conditionDisplayName(s))}</span>`)
-    .join('');
-  const interactChips = c.interacts_with
-    .map(s => `<span class="kd-corpus__chip kd-corpus__chip--ess">${escHTML(essentialDisplayName(s))}</span>`)
-    .join('');
-  const books = c.books_cited.map(b => getBookLabel(b)).join(' · ');
-
-  return `
-    <div class="kd-corpus">
-      <div class="kd-corpus__head">
-        <span class="kd-corpus__eyebrow"><span class="pulse-dot"></span>FROM THE WALLACH CORPUS</span>
-        <span class="kd-corpus__count">${c.claim_count} CLAIM${c.claim_count === 1 ? '' : 'S'}</span>
-      </div>
-      ${condChips.length > 0 ? `<div class="kd-corpus__sub">IMPLICATED CONDITIONS</div><div class="kd-corpus__chips">${condChips}</div>` : ''}
-      ${interactChips.length > 0 ? `<div class="kd-corpus__sub">WORKS ALONGSIDE</div><div class="kd-corpus__chips">${interactChips}</div>` : ''}
-      ${groupsHTML}
-      <div class="kd-corpus__foot">SOURCE · ${escHTML(books)}</div>
-    </div>`;
-}
-
 function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): string {
   const e = ESS_BY_KEY.get(key);
   if (e === undefined) {
@@ -551,21 +460,23 @@ function renderDoctrineTab(): string {
     </div>`).join('');
 }
 
-function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null): string {
+function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null, selectedCondition: string | null): string {
   switch (tab) {
     case 'corpus': return renderCorpusTab();
     case 'essentials': return renderEssentialsTab(snapshot, selectedKey);
+    case 'conditions': return renderConditionsTab(selectedCondition);
     case 'products': return renderProductsTab();
     case 'doctrine': return renderDoctrineTab();
   }
 }
 
-function renderShell(activeTab: Tab, selectedKey: string | null): string {
+function renderShell(activeTab: Tab, selectedKey: string | null, selectedCondition: string | null): string {
   const snapshot = getOrCompute();
   const productsCount = readProducts().length;
   const tabs = [
     { id: 'corpus' as Tab, label: 'Corpus', count: `${listBooks().length} BOOKS` },
     { id: 'essentials' as Tab, label: 'Essentials', count: `${ESS_ESSENTIAL_COUNT} ESSENTIAL` },
+    { id: 'conditions' as Tab, label: 'Conditions', count: `${listConditions().length} INDEXED` },
     { id: 'products' as Tab, label: 'Products', count: `${productsCount > 0 ? productsCount : 59} KNOWN` },
     { id: 'doctrine' as Tab, label: 'Doctrine', count: `${DOCTRINES.length} RULES` },
   ];
@@ -581,7 +492,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null): string {
       <div>
         <div class="kd-eyebrow"><span class="pulse-dot"></span>DRAWER · <span class="ds-cipher" data-cipher-set="hexa">KN·${hexSerial(activeTab.length * 7)}</span></div>
         <h2 class="kd-title">Knowledge</h2>
-        <div class="kd-sub">// the corpus, the essentials, the products, the doctrine</div>
+        <div class="kd-sub">// the corpus, the essentials, the conditions, the products, the doctrine</div>
       </div>
       <button class="kd-close" data-kd-action="close" title="Close (Esc)">×</button>
     </header>
@@ -591,7 +502,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null): string {
       <input class="kd-search-input" type="text" placeholder="SEARCH ${activeTab.toUpperCase()}…" />
       <span class="kd-search-kbd">/</span>
     </div>
-    <div class="kd-body">${renderTab(activeTab, snapshot, selectedKey)}</div>
+    <div class="kd-body">${renderTab(activeTab, snapshot, selectedKey, selectedCondition)}</div>
     <footer class="kd-footer">
       <button class="kd-action" data-kd-action="pin"><span class="kd-action__glyph">⊕</span>PIN</button>
       <button class="kd-action" data-kd-action="share"><span class="kd-action__glyph">↗</span>SHARE</button>
@@ -608,9 +519,10 @@ export function mount(container: HTMLElement): DrawerHandle {
   let isExpanded = false;
   let activeTab: Tab = 'corpus';
   let selectedEssential: string | null = null;
+  let selectedCondition: string | null = null;
 
   const render = (): void => {
-    container.innerHTML = renderShell(activeTab, selectedEssential);
+    container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition);
   };
 
   const open = (): void => {
@@ -628,6 +540,7 @@ export function mount(container: HTMLElement): DrawerHandle {
     isOpen = false;
     isExpanded = false;
     selectedEssential = null;
+    selectedCondition = null;
     container.classList.remove('kd-open', 'kd-expanded');
     container.innerHTML = '';
   };
@@ -655,6 +568,7 @@ export function mount(container: HTMLElement): DrawerHandle {
       if (next !== null && next !== activeTab) {
         activeTab = next;
         selectedEssential = null;
+        selectedCondition = null;
         render();
       }
       return;
@@ -663,6 +577,13 @@ export function mount(container: HTMLElement): DrawerHandle {
     if (essEl !== null) {
       const k = essEl.getAttribute('data-kd-essential');
       selectedEssential = (k !== null && k === selectedEssential) ? null : k;
+      render();
+      return;
+    }
+    const condEl = target.closest<HTMLElement>('[data-kd-condition]');
+    if (condEl !== null) {
+      const k = condEl.getAttribute('data-kd-condition');
+      selectedCondition = (k !== null && k === selectedCondition) ? null : k;
       render();
       return;
     }
@@ -677,6 +598,10 @@ export function mount(container: HTMLElement): DrawerHandle {
       }
       else if (action === 'essential-close') {
         selectedEssential = null;
+        render();
+      }
+      else if (action === 'condition-close') {
+        selectedCondition = null;
         render();
       }
       else {

@@ -113,6 +113,30 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     };
   });
 
+  // 4b. Conditions tab — list over conditions.json + click a condition to expand
+  //     the role-grouped deep view (causes/protocols/doses/... with citations).
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="conditions"]')?.click());
+  await wait(300);
+  const conditions = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const rows = root ? [...root.querySelectorAll('.kd-condition-row')] : [];
+    return { rowCount: rows.length };
+  });
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-condition="diabetes"]')?.click());
+  await wait(250);
+  const condDeep = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const d = root ? root.querySelector('.kd-condition-deep') : null;
+    const claims = d ? [...d.querySelectorAll('.kd-claim')] : [];
+    const first = claims[0] || null;
+    return {
+      shown: d !== null,
+      claimCount: claims.length,
+      groupCount: d ? d.querySelectorAll('.kd-corpus__group').length : 0,
+      firstCite: first ? /DEAD DOCTORS|DDDL/i.test(first.querySelector('.kd-claim__cite')?.textContent || '') : false,
+    };
+  });
+
   // 5. Esc closes.
   await page.keyboard.press('Escape');
   await wait(200);
@@ -123,7 +147,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, corpus, products, essentials, deep, afterEsc, afterK };
+  const out = { boot, afterClick, corpus, products, essentials, deep, conditions, condDeep, afterEsc, afterK };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -145,6 +169,10 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['corpus: sealed claims present (Magnesium)', deep.claimCount > 0],
     ['corpus: claims grouped by kind', deep.groupCount > 0],
     ['corpus: claim shows paraphrase + verbatim + citation', deep.firstText && deep.firstVerbatim && deep.firstCite],
+    ['conditions: list rendered', conditions.rowCount >= 1],
+    ['conditions: deep view opens (diabetes)', condDeep.shown === true],
+    ['conditions: claims grouped by role', condDeep.groupCount >= 1 && condDeep.claimCount >= 1],
+    ['conditions: claim cites the book', condDeep.firstCite === true],
     ['Esc closes drawer', afterEsc.open === false],
     ['bare K reopens drawer', afterK.open === true],
     ['no page errors', errs.length === 0],

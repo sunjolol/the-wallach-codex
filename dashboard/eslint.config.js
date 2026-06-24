@@ -61,7 +61,7 @@ export default antfu({
       rules: [
         { from: 'core', allow: [] },
         { from: 'state', allow: ['core'] },
-        { from: 'views', allow: ['core', 'state'] },
+        { from: 'views', allow: ['core', 'state', 'views'] },
         { from: 'main', allow: ['core', 'state', 'views'] },
       ],
     }],
