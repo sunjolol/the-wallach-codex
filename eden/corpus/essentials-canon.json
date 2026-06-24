@@ -1,0 +1,902 @@
+{
+  "schema_version": 1,
+  "_doctrine": "The immutable 90 essential nutrients (Wallach's 'The 90 Essential Nutrients'). Sealed once for life. Every essentials slug used anywhere in eden/corpus MUST appear here, or the build fails. User is sole writer. See eden/corpus/SCHEMA.md.",
+  "provenance": "Bootstrapped 2026-06-24 from dashboard/assets/data/coverage-layout-data.json (essential!=false tiles) -- the same canonical layout the Coverage periodic table renders. Germanium-in / Fluoride-out per the 2026-06-24 ruling.",
+  "counts": {
+    "minerals": 60,
+    "vitamins": 16,
+    "amino_acids": 12,
+    "fatty_acids": 2,
+    "total": 90
+  },
+  "pending_adjudications": [
+    {
+      "id": "cysteine-vs-taurine",
+      "slot": "amino_acid",
+      "question": "Wallach's 90-graphic shows Taurine; the layout shows Cysteine. Which is canon?",
+      "status": "open",
+      "resolve_in": "Phase δ corpus audit",
+      "affects_slug": "cysteine"
+    },
+    {
+      "id": "fluoride-re-adjudication",
+      "slot": "mineral",
+      "question": "Fluoride was removed (Germanium took its slot) on a suspected hallucinated-citation basis. Re-confirm against the actual Wallach books whether Fluoride is one of the 60 minerals.",
+      "status": "open",
+      "resolve_in": "Phase δ corpus audit",
+      "affects_slug": null
+    }
+  ],
+  "essentials": [
+    {
+      "slug": "hydrogen",
+      "display_name": "Hydrogen",
+      "category": "mineral",
+      "subtype": "foundational",
+      "atomic_number": 1,
+      "symbol": "H",
+      "layout_key": "Hydrogen",
+      "essential": true
+    },
+    {
+      "slug": "carbon",
+      "display_name": "Carbon",
+      "category": "mineral",
+      "subtype": "foundational",
+      "atomic_number": 6,
+      "symbol": "C",
+      "layout_key": "Carbon",
+      "essential": true
+    },
+    {
+      "slug": "nitrogen",
+      "display_name": "Nitrogen",
+      "category": "mineral",
+      "subtype": "foundational",
+      "atomic_number": 7,
+      "symbol": "N",
+      "layout_key": "Nitrogen",
+      "essential": true
+    },
+    {
+      "slug": "oxygen",
+      "display_name": "Oxygen",
+      "category": "mineral",
+      "subtype": "foundational",
+      "atomic_number": 8,
+      "symbol": "O",
+      "layout_key": "Oxygen",
+      "essential": true
+    },
+    {
+      "slug": "sodium",
+      "display_name": "Sodium",
+      "category": "mineral",
+      "subtype": "foundational",
+      "atomic_number": 11,
+      "symbol": "Na",
+      "layout_key": "Sodium",
+      "essential": true
+    },
+    {
+      "slug": "magnesium",
+      "display_name": "Magnesium",
+      "category": "mineral",
+      "subtype": "foundational",
+      "atomic_number": 12,
+      "symbol": "Mg",
+      "layout_key": "Magnesium",
+      "essential": true
+    },
+    {
+      "slug": "phosphorus",
+      "display_name": "Phosphorus",
+      "category": "mineral",
+      "subtype": "foundational",
+      "atomic_number": 15,
+      "symbol": "P",
+      "layout_key": "Phosphorus",
+      "essential": true
+    },
+    {
+      "slug": "sulfur",
+      "display_name": "Sulfur",
+      "category": "mineral",
+      "subtype": "foundational",
+      "atomic_number": 16,
+      "symbol": "S",
+      "layout_key": "Sulfur",
+      "essential": true
+    },
+    {
+      "slug": "chloride",
+      "display_name": "Chloride",
+      "category": "mineral",
+      "subtype": "foundational",
+      "atomic_number": 17,
+      "symbol": "Cl",
+      "layout_key": "Chloride",
+      "essential": true
+    },
+    {
+      "slug": "potassium",
+      "display_name": "Potassium",
+      "category": "mineral",
+      "subtype": "foundational",
+      "atomic_number": 19,
+      "symbol": "K",
+      "layout_key": "Potassium",
+      "essential": true
+    },
+    {
+      "slug": "calcium",
+      "display_name": "Calcium",
+      "category": "mineral",
+      "subtype": "foundational",
+      "atomic_number": 20,
+      "symbol": "Ca",
+      "layout_key": "Calcium",
+      "essential": true
+    },
+    {
+      "slug": "boron",
+      "display_name": "Boron",
+      "category": "mineral",
+      "subtype": "major_trace",
+      "atomic_number": 5,
+      "symbol": "B",
+      "layout_key": "Boron",
+      "essential": true
+    },
+    {
+      "slug": "cobalt",
+      "display_name": "Cobalt",
+      "category": "mineral",
+      "subtype": "major_trace",
+      "atomic_number": 27,
+      "symbol": "Co",
+      "layout_key": "Cobalt",
+      "essential": true
+    },
+    {
+      "slug": "chromium",
+      "display_name": "Chromium",
+      "category": "mineral",
+      "subtype": "major_trace",
+      "atomic_number": 24,
+      "symbol": "Cr",
+      "layout_key": "Chromium",
+      "essential": true
+    },
+    {
+      "slug": "copper",
+      "display_name": "Copper",
+      "category": "mineral",
+      "subtype": "major_trace",
+      "atomic_number": 29,
+      "symbol": "Cu",
+      "layout_key": "Copper",
+      "essential": true
+    },
+    {
+      "slug": "germanium",
+      "display_name": "Germanium",
+      "category": "mineral",
+      "subtype": "major_trace",
+      "atomic_number": 32,
+      "symbol": "Ge",
+      "layout_key": "Germanium",
+      "essential": true
+    },
+    {
+      "slug": "iron",
+      "display_name": "Iron",
+      "category": "mineral",
+      "subtype": "major_trace",
+      "atomic_number": 26,
+      "symbol": "Fe",
+      "layout_key": "Iron",
+      "essential": true
+    },
+    {
+      "slug": "iodine",
+      "display_name": "Iodine",
+      "category": "mineral",
+      "subtype": "major_trace",
+      "atomic_number": 53,
+      "symbol": "I",
+      "layout_key": "Iodine",
+      "essential": true
+    },
+    {
+      "slug": "manganese",
+      "display_name": "Manganese",
+      "category": "mineral",
+      "subtype": "major_trace",
+      "atomic_number": 25,
+      "symbol": "Mn",
+      "layout_key": "Manganese",
+      "essential": true
+    },
+    {
+      "slug": "molybdenum",
+      "display_name": "Molybdenum",
+      "category": "mineral",
+      "subtype": "major_trace",
+      "atomic_number": 42,
+      "symbol": "Mo",
+      "layout_key": "Molybdenum",
+      "essential": true
+    },
+    {
+      "slug": "selenium",
+      "display_name": "Selenium",
+      "category": "mineral",
+      "subtype": "major_trace",
+      "atomic_number": 34,
+      "symbol": "Se",
+      "layout_key": "Selenium",
+      "essential": true
+    },
+    {
+      "slug": "silica",
+      "display_name": "Silica",
+      "category": "mineral",
+      "subtype": "major_trace",
+      "atomic_number": 14,
+      "symbol": "Si",
+      "layout_key": "Silica",
+      "essential": true
+    },
+    {
+      "slug": "strontium",
+      "display_name": "Strontium",
+      "category": "mineral",
+      "subtype": "major_trace",
+      "atomic_number": 38,
+      "symbol": "Sr",
+      "layout_key": "Strontium",
+      "essential": true
+    },
+    {
+      "slug": "vanadium",
+      "display_name": "Vanadium",
+      "category": "mineral",
+      "subtype": "major_trace",
+      "atomic_number": 23,
+      "symbol": "V",
+      "layout_key": "Vanadium",
+      "essential": true
+    },
+    {
+      "slug": "zinc",
+      "display_name": "Zinc",
+      "category": "mineral",
+      "subtype": "major_trace",
+      "atomic_number": 30,
+      "symbol": "Zn",
+      "layout_key": "Zinc",
+      "essential": true
+    },
+    {
+      "slug": "silver",
+      "display_name": "Silver",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 47,
+      "symbol": "Ag",
+      "layout_key": "Silver",
+      "essential": true
+    },
+    {
+      "slug": "aluminum",
+      "display_name": "Aluminum",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 13,
+      "symbol": "Al",
+      "layout_key": "Aluminum",
+      "essential": true
+    },
+    {
+      "slug": "arsenic",
+      "display_name": "Arsenic",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 33,
+      "symbol": "As",
+      "layout_key": "Arsenic",
+      "essential": true
+    },
+    {
+      "slug": "gold",
+      "display_name": "Gold",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 79,
+      "symbol": "Au",
+      "layout_key": "Gold",
+      "essential": true
+    },
+    {
+      "slug": "barium",
+      "display_name": "Barium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 56,
+      "symbol": "Ba",
+      "layout_key": "Barium",
+      "essential": true
+    },
+    {
+      "slug": "beryllium",
+      "display_name": "Beryllium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 4,
+      "symbol": "Be",
+      "layout_key": "Beryllium",
+      "essential": true
+    },
+    {
+      "slug": "bromine",
+      "display_name": "Bromine",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 35,
+      "symbol": "Br",
+      "layout_key": "Bromine",
+      "essential": true
+    },
+    {
+      "slug": "cerium",
+      "display_name": "Cerium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 58,
+      "symbol": "Ce",
+      "layout_key": "Cerium",
+      "essential": true
+    },
+    {
+      "slug": "cesium",
+      "display_name": "Cesium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 55,
+      "symbol": "Cs",
+      "layout_key": "Cesium",
+      "essential": true
+    },
+    {
+      "slug": "dysprosium",
+      "display_name": "Dysprosium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 66,
+      "symbol": "Dy",
+      "layout_key": "Dysprosium",
+      "essential": true
+    },
+    {
+      "slug": "erbium",
+      "display_name": "Erbium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 68,
+      "symbol": "Er",
+      "layout_key": "Erbium",
+      "essential": true
+    },
+    {
+      "slug": "europium",
+      "display_name": "Europium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 63,
+      "symbol": "Eu",
+      "layout_key": "Europium",
+      "essential": true
+    },
+    {
+      "slug": "gallium",
+      "display_name": "Gallium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 31,
+      "symbol": "Ga",
+      "layout_key": "Gallium",
+      "essential": true
+    },
+    {
+      "slug": "gadolinium",
+      "display_name": "Gadolinium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 64,
+      "symbol": "Gd",
+      "layout_key": "Gadolinium",
+      "essential": true
+    },
+    {
+      "slug": "hafnium",
+      "display_name": "Hafnium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 72,
+      "symbol": "Hf",
+      "layout_key": "Hafnium",
+      "essential": true
+    },
+    {
+      "slug": "holmium",
+      "display_name": "Holmium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 67,
+      "symbol": "Ho",
+      "layout_key": "Holmium",
+      "essential": true
+    },
+    {
+      "slug": "lanthanum",
+      "display_name": "Lanthanum",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 57,
+      "symbol": "La",
+      "layout_key": "Lanthanum",
+      "essential": true
+    },
+    {
+      "slug": "lithium",
+      "display_name": "Lithium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 3,
+      "symbol": "Li",
+      "layout_key": "Lithium",
+      "essential": true
+    },
+    {
+      "slug": "lutetium",
+      "display_name": "Lutetium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 71,
+      "symbol": "Lu",
+      "layout_key": "Lutetium",
+      "essential": true
+    },
+    {
+      "slug": "niobium",
+      "display_name": "Niobium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 41,
+      "symbol": "Nb",
+      "layout_key": "Niobium",
+      "essential": true
+    },
+    {
+      "slug": "neodymium",
+      "display_name": "Neodymium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 60,
+      "symbol": "Nd",
+      "layout_key": "Neodymium",
+      "essential": true
+    },
+    {
+      "slug": "nickel",
+      "display_name": "Nickel",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 28,
+      "symbol": "Ni",
+      "layout_key": "Nickel",
+      "essential": true
+    },
+    {
+      "slug": "praseodymium",
+      "display_name": "Praseodymium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 59,
+      "symbol": "Pr",
+      "layout_key": "Praseodymium",
+      "essential": true
+    },
+    {
+      "slug": "rubidium",
+      "display_name": "Rubidium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 37,
+      "symbol": "Rb",
+      "layout_key": "Rubidium",
+      "essential": true
+    },
+    {
+      "slug": "rhenium",
+      "display_name": "Rhenium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 75,
+      "symbol": "Re",
+      "layout_key": "Rhenium",
+      "essential": true
+    },
+    {
+      "slug": "scandium",
+      "display_name": "Scandium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 21,
+      "symbol": "Sc",
+      "layout_key": "Scandium",
+      "essential": true
+    },
+    {
+      "slug": "samarium",
+      "display_name": "Samarium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 62,
+      "symbol": "Sm",
+      "layout_key": "Samarium",
+      "essential": true
+    },
+    {
+      "slug": "tin",
+      "display_name": "Tin",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 50,
+      "symbol": "Sn",
+      "layout_key": "Tin",
+      "essential": true
+    },
+    {
+      "slug": "tantalum",
+      "display_name": "Tantalum",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 73,
+      "symbol": "Ta",
+      "layout_key": "Tantalum",
+      "essential": true
+    },
+    {
+      "slug": "terbium",
+      "display_name": "Terbium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 65,
+      "symbol": "Tb",
+      "layout_key": "Terbium",
+      "essential": true
+    },
+    {
+      "slug": "titanium",
+      "display_name": "Titanium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 22,
+      "symbol": "Ti",
+      "layout_key": "Titanium",
+      "essential": true
+    },
+    {
+      "slug": "thulium",
+      "display_name": "Thulium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 69,
+      "symbol": "Tm",
+      "layout_key": "Thulium",
+      "essential": true
+    },
+    {
+      "slug": "yttrium",
+      "display_name": "Yttrium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 39,
+      "symbol": "Y",
+      "layout_key": "Yttrium",
+      "essential": true
+    },
+    {
+      "slug": "ytterbium",
+      "display_name": "Ytterbium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 70,
+      "symbol": "Yb",
+      "layout_key": "Ytterbium",
+      "essential": true
+    },
+    {
+      "slug": "zirconium",
+      "display_name": "Zirconium",
+      "category": "mineral",
+      "subtype": "rare_trace",
+      "atomic_number": 40,
+      "symbol": "Zr",
+      "layout_key": "Zirconium",
+      "essential": true
+    },
+    {
+      "slug": "vitamin-a",
+      "display_name": "Retinol",
+      "category": "vitamin",
+      "subtype": null,
+      "letter": "A",
+      "layout_key": "Vitamin A (Retinol / beta-carotene)",
+      "essential": true
+    },
+    {
+      "slug": "vitamin-b1",
+      "display_name": "Thiamine",
+      "category": "vitamin",
+      "subtype": null,
+      "letter": "B1",
+      "layout_key": "Vitamin B1 (Thiamine)",
+      "essential": true
+    },
+    {
+      "slug": "vitamin-b2",
+      "display_name": "Riboflavin",
+      "category": "vitamin",
+      "subtype": null,
+      "letter": "B2",
+      "layout_key": "Vitamin B2 (Riboflavin)",
+      "essential": true
+    },
+    {
+      "slug": "vitamin-b3",
+      "display_name": "Niacin",
+      "category": "vitamin",
+      "subtype": null,
+      "letter": "B3",
+      "layout_key": "Vitamin B3 (Niacin)",
+      "essential": true
+    },
+    {
+      "slug": "vitamin-b5",
+      "display_name": "Pantothenic Acid",
+      "category": "vitamin",
+      "subtype": null,
+      "letter": "B5",
+      "layout_key": "Vitamin B5 (Pantothenic Acid)",
+      "essential": true
+    },
+    {
+      "slug": "vitamin-b6",
+      "display_name": "Pyridoxine",
+      "category": "vitamin",
+      "subtype": null,
+      "letter": "B6",
+      "layout_key": "Vitamin B6 (Pyridoxine)",
+      "essential": true
+    },
+    {
+      "slug": "vitamin-b9",
+      "display_name": "Folate",
+      "category": "vitamin",
+      "subtype": null,
+      "letter": "B9",
+      "layout_key": "Folic Acid (Folate)",
+      "essential": true
+    },
+    {
+      "slug": "vitamin-b12",
+      "display_name": "Cobalamin",
+      "category": "vitamin",
+      "subtype": null,
+      "letter": "B12",
+      "layout_key": "Vitamin B12 (Cobalamin)",
+      "essential": true
+    },
+    {
+      "slug": "vitamin-c",
+      "display_name": "Ascorbic Acid",
+      "category": "vitamin",
+      "subtype": null,
+      "letter": "C",
+      "layout_key": "Vitamin C (Ascorbic Acid)",
+      "essential": true
+    },
+    {
+      "slug": "vitamin-d",
+      "display_name": "Cholecalciferol",
+      "category": "vitamin",
+      "subtype": null,
+      "letter": "D3",
+      "layout_key": "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)",
+      "essential": true
+    },
+    {
+      "slug": "vitamin-e",
+      "display_name": "Tocopherol",
+      "category": "vitamin",
+      "subtype": null,
+      "letter": "E",
+      "layout_key": "Vitamin E (Tocopherol)",
+      "essential": true
+    },
+    {
+      "slug": "vitamin-k",
+      "display_name": "Menaquinone",
+      "category": "vitamin",
+      "subtype": null,
+      "letter": "K",
+      "layout_key": "Vitamin K (Menaquinone = K2)",
+      "essential": true
+    },
+    {
+      "slug": "biotin",
+      "display_name": "Biotin",
+      "category": "vitamin",
+      "subtype": null,
+      "letter": "H",
+      "layout_key": "Biotin",
+      "essential": true
+    },
+    {
+      "slug": "choline",
+      "display_name": "Choline",
+      "category": "vitamin",
+      "subtype": null,
+      "letter": "Ch",
+      "layout_key": "Choline",
+      "essential": true
+    },
+    {
+      "slug": "inositol",
+      "display_name": "Inositol",
+      "category": "vitamin",
+      "subtype": null,
+      "letter": "In",
+      "layout_key": "Inositol",
+      "essential": true
+    },
+    {
+      "slug": "flavonoids",
+      "display_name": "Flavonoids",
+      "category": "vitamin",
+      "subtype": null,
+      "letter": "Fl",
+      "layout_key": "Flavonoids / Bioflavonoids",
+      "essential": true
+    },
+    {
+      "slug": "arginine",
+      "display_name": "Arginine",
+      "category": "amino_acid",
+      "subtype": null,
+      "abbr": "Arg",
+      "layout_key": "Arginine",
+      "essential": true
+    },
+    {
+      "slug": "cysteine",
+      "display_name": "Cysteine",
+      "category": "amino_acid",
+      "subtype": null,
+      "abbr": "Cys",
+      "layout_key": "Cysteine",
+      "essential": true,
+      "provisional": true,
+      "provisional_note": "Wallach's enumerated 90-graphic lists TAURINE in this amino slot; the live layout uses Cysteine. Unresolved until the Phase-δ corpus audit rules against the books. See pending_adjudications."
+    },
+    {
+      "slug": "histidine",
+      "display_name": "Histidine",
+      "category": "amino_acid",
+      "subtype": null,
+      "abbr": "His",
+      "layout_key": "Histidine",
+      "essential": true
+    },
+    {
+      "slug": "isoleucine",
+      "display_name": "Isoleucine",
+      "category": "amino_acid",
+      "subtype": null,
+      "abbr": "Ile",
+      "layout_key": "Isoleucine",
+      "essential": true
+    },
+    {
+      "slug": "leucine",
+      "display_name": "Leucine",
+      "category": "amino_acid",
+      "subtype": null,
+      "abbr": "Leu",
+      "layout_key": "Leucine",
+      "essential": true
+    },
+    {
+      "slug": "lysine",
+      "display_name": "Lysine",
+      "category": "amino_acid",
+      "subtype": null,
+      "abbr": "Lys",
+      "layout_key": "Lysine",
+      "essential": true
+    },
+    {
+      "slug": "methionine",
+      "display_name": "Methionine",
+      "category": "amino_acid",
+      "subtype": null,
+      "abbr": "Met",
+      "layout_key": "Methionine",
+      "essential": true
+    },
+    {
+      "slug": "phenylalanine",
+      "display_name": "Phenylalanine",
+      "category": "amino_acid",
+      "subtype": null,
+      "abbr": "Phe",
+      "layout_key": "Phenylalanine",
+      "essential": true
+    },
+    {
+      "slug": "threonine",
+      "display_name": "Threonine",
+      "category": "amino_acid",
+      "subtype": null,
+      "abbr": "Thr",
+      "layout_key": "Threonine",
+      "essential": true
+    },
+    {
+      "slug": "tryptophan",
+      "display_name": "Tryptophan",
+      "category": "amino_acid",
+      "subtype": null,
+      "abbr": "Trp",
+      "layout_key": "Tryptophan",
+      "essential": true
+    },
+    {
+      "slug": "tyrosine",
+      "display_name": "Tyrosine",
+      "category": "amino_acid",
+      "subtype": null,
+      "abbr": "Tyr",
+      "layout_key": "Tyrosine",
+      "essential": true
+    },
+    {
+      "slug": "valine",
+      "display_name": "Valine",
+      "category": "amino_acid",
+      "subtype": null,
+      "abbr": "Val",
+      "layout_key": "Valine",
+      "essential": true
+    },
+    {
+      "slug": "omega-3",
+      "display_name": "Omega-3",
+      "category": "fatty_acid",
+      "subtype": null,
+      "layout_key": "Omega-3 (alpha-linolenic + EPA/DHA in marine form)",
+      "essential": true
+    },
+    {
+      "slug": "omega-6",
+      "display_name": "Omega-6",
+      "category": "fatty_acid",
+      "subtype": null,
+      "layout_key": "Omega-6 (linoleic + GLA)",
+      "essential": true
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "_doctrine": "Sacred user-authored Wallach-derived graphics (Tier-1, admitted by the source-owner's authority -- see proposal §8). Treated as direct Wallach info. If a sealed BOOK later contradicts one of these, corpus extraction writes a chronicle/contradictions report and surfaces it -- never a silent resolution. file_sha256 = raw bytes. User is sole writer.",
+  "graphics": [
+    {
+      "file": "eden/graphics/90-nutrients-front.jpg",
+      "file_sha256": "54a7fbbbdfc85b2876c4e7e45a1a27c2ecfb6b45a30ad9d9c285f45edee64136",
+      "file_bytes": 5687357,
+      "title": "Dr. Wallach 90 Essential Nutrients (front)",
+      "provenance": "user-authored, Wallach-derived",
+      "captured_year": 2019,
+      "depicts": "The enumerated 90-essentials graphic",
+      "related_essentials": [
+        "*all-90*"
+      ],
+      "status": "canonical"
+    },
+    {
+      "file": "eden/graphics/Good-Foods-Front.jpg",
+      "file_sha256": "219f83ea32fb5dd2120c0340ed5270aee674145918e5d98e91af51010d90944c",
+      "file_bytes": 1419895,
+      "title": "Good Foods chart (front)",
+      "provenance": "user-authored, Wallach-derived",
+      "captured_year": 2020,
+      "depicts": "Wallach-aligned recommended foods",
+      "related_essentials": [],
+      "status": "canonical"
+    },
+    {
+      "file": "eden/graphics/Good-Foods-Back.jpg",
+      "file_sha256": "6b6336f963455dd0f8bae4141dda5d197cb8415f6c32d41f18ff7ce19f4284f7",
+      "file_bytes": 1264935,
+      "title": "Good Foods chart (back)",
+      "provenance": "user-authored, Wallach-derived",
+      "captured_year": 2020,
+      "depicts": "Wallach-aligned recommended foods",
+      "related_essentials": [],
+      "status": "canonical"
+    },
+    {
+      "file": "eden/graphics/Bad-Foods-Front.jpg",
+      "file_sha256": "661f67285ff4c25795b9a976f596ff86a0508082173c077a652750da9bac9f61",
+      "file_bytes": 2120943,
+      "title": "Bad Foods chart (front)",
+      "provenance": "user-authored, Wallach-derived",
+      "captured_year": 2020,
+      "depicts": "Wallach-flagged foods to avoid",
+      "related_essentials": [],
+      "status": "canonical"
+    },
+    {
+      "file": "eden/graphics/Bad-Foods-Back.jpg",
+      "file_sha256": "e992bbe118d8ba2fedefaebff54946f60ebaad782d14e84b5009ab548142e814",
+      "file_bytes": 2568909,
+      "title": "Bad Foods chart (back)",
+      "provenance": "user-authored, Wallach-derived",
+      "captured_year": 2020,
+      "depicts": "Wallach-flagged foods to avoid",
+      "related_essentials": [],
+      "status": "canonical"
+    }
+  ]
+}

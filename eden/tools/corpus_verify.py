@@ -1,0 +1,267 @@
+#!/usr/bin/env python3
+"""corpus_verify.py — read-only integrity verifier for eden/corpus.
+
+Truth-anchored and deterministic: it only hashes files and tests substrings, so it
+cannot lie. The single implementation of the 10 corpus checks (the `corpus_integrity`
+invariant shells out to this file — one source, no duplication).
+
+All corpus text/JSON hashes are over LF-NORMALIZED UTF-8 content (clone/CRLF-stable).
+Graphics are not this tool's concern (see graphics_verify.py).
+
+Exit codes:
+  0  SEALED & healthy — every check passed.
+  1  FAIL — a real violation (drift, broken verbatim, bad slug, ...). Loud.
+  2  BOOTSTRAP — not yet sealed (no golden hashes). The always-valid checks
+     (canon == 90, book content hashes match books-meta, any present claims/indices)
+     still ran and passed; the seal-gated checks were skipped. Distinct from FAIL.
+
+The agent MAY run this. It never writes anything.
+"""
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent.parent
+CORPUS = ROOT / "eden" / "corpus"
+BOOKS_DIR = CORPUS / "books"
+CLAIMS_DIR = CORPUS / "claims"
+INDICES_DIR = CORPUS / "indices"
+CANON_PATH = CORPUS / "essentials-canon.json"
+META_PATH = CORPUS / "books-meta.json"
+VERSION_PATH = CORPUS / "knowledge-version.json"
+
+INDEX_NAMES = ["essentials", "other-substances", "conditions", "symptoms", "consistency"]
+
+
+def lf_text(p: Path) -> str:
+    return p.read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n")
+
+
+def lf_sha256(p: Path) -> str:
+    return hashlib.sha256(lf_text(p).encode("utf-8")).hexdigest()
+
+
+def load_json(p: Path):
+    return json.loads(p.read_text(encoding="utf-8"))
+
+
+def is_sealed() -> bool:
+    """Sealed iff the canon's golden sibling exists."""
+    return (CORPUS / "essentials-canon.json.golden.sha256").exists()
+
+
+def collect_claim_shards():
+    return sorted(CLAIMS_DIR.glob("claims-*.json")) if CLAIMS_DIR.exists() else []
+
+
+def collect_indices():
+    out = {}
+    if INDICES_DIR.exists():
+        for name in INDEX_NAMES:
+            p = INDICES_DIR / f"{name}.json"
+            if p.exists():
+                out[name] = p
+    return out
+
+
+def run_checks():
+    """Returns (fails, infos, n_claims). fails non-empty => FAIL regardless of seal."""
+    fails, infos = [], []
+
+    # --- canon (always valid) ---
+    if not CANON_PATH.exists():
+        return [f"missing {CANON_PATH.relative_to(ROOT)}"], infos, 0
+    try:
+        canon = load_json(CANON_PATH)
+    except json.JSONDecodeError as e:
+        return [f"essentials-canon.json parse error: {e}"], infos, 0
+    essentials = canon.get("essentials", [])
+    canon_slugs = [e.get("slug") for e in essentials]
+    if len(essentials) != 90:
+        fails.append(f"canon has {len(essentials)} essentials, expected 90")
+    if canon.get("counts", {}).get("total") != 90:
+        fails.append(f"canon counts.total != 90: {canon.get('counts', {}).get('total')}")
+    if len(set(canon_slugs)) != len(canon_slugs):
+        fails.append("canon slugs are not unique")
+    canon_set = set(canon_slugs)
+
+    # --- books-meta + book content hashes (check #6, always valid; the truth anchor) ---
+    if not META_PATH.exists():
+        return [f"missing {META_PATH.relative_to(ROOT)}"], infos, 0
+    try:
+        meta = load_json(META_PATH)
+    except json.JSONDecodeError as e:
+        return [f"books-meta.json parse error: {e}"], infos, 0
+    book_text = {}  # book_id -> lf text (cached for verbatim checks)
+    book_ids = set()
+    for b in meta.get("books", []):
+        bid = b.get("book_id")
+        book_ids.add(bid)
+        bp = ROOT / b.get("file", "")
+        if not bp.exists():
+            fails.append(f"book file missing for {bid}: {b.get('file')}")
+            continue
+        actual = lf_sha256(bp)
+        if actual != b.get("content_sha256"):
+            fails.append(f"[#6] book {bid} content hash drift: meta={str(b.get('content_sha256'))[:12]}... actual={actual[:12]}...")
+        else:
+            book_text[bid] = lf_text(bp)
+    infos.append(f"{len(meta.get('books', []))} books, hashes match" if not fails else f"{len(meta.get('books', []))} books")
+
+    # --- claims (only if present) ---
+    shards = collect_claim_shards()
+    all_ids = set()
+    n_claims = 0
+    for shard in shards:
+        try:
+            data = load_json(shard)
+        except json.JSONDecodeError as e:
+            fails.append(f"{shard.name} parse error: {e}")
+            continue
+        bid = data.get("book_id")
+        for c in data.get("claims", []):
+            n_claims += 1
+            cid = c.get("id")
+            if cid in all_ids:
+                fails.append(f"[#5] duplicate claim id {cid}")
+            all_ids.add(cid)
+            # #3 essentials slugs in canon
+            for slug in c.get("essentials", []):
+                if slug not in canon_set:
+                    fails.append(f"[#3] claim {cid} uses non-canon essential slug '{slug}'")
+            # #2 verbatim is a substring of its book (THE load-bearing check)
+            vb = c.get("verbatim", "")
+            loc = c.get("locator", {}) or {}
+            lbid = loc.get("book", bid)
+            txt = book_text.get(lbid)
+            if not vb or len(vb) < 60 or len(vb) > 500:
+                fails.append(f"[#2] claim {cid} verbatim length {len(vb)} outside 60–500")
+            elif txt is None:
+                fails.append(f"[#2] claim {cid} references unknown/unhashed book '{lbid}'")
+            else:
+                idx = txt.find(vb)
+                if idx < 0:
+                    fails.append(f"[#2] claim {cid} verbatim NOT found in book {lbid}")
+                else:
+                    # #9 char_offset agreement (when present)
+                    off = loc.get("char_offset")
+                    if off is not None and txt[off:off + len(vb)] != vb:
+                        fails.append(f"[#9] claim {cid} char_offset {off} does not point at verbatim")
+
+    # --- indices (only if present) ---
+    indices = collect_indices()
+    # #4 other-substances disjoint from canon
+    if "other-substances" in indices:
+        try:
+            other = load_json(indices["other-substances"])
+            other_keys = set(other.keys()) if isinstance(other, dict) else set()
+            overlap = other_keys & canon_set
+            if overlap:
+                fails.append(f"[#4] other-substances overlaps canon: {sorted(overlap)[:5]}")
+        except json.JSONDecodeError as e:
+            fails.append(f"other-substances.json parse error: {e}")
+    # #1 every claim id referenced by an index exists
+    for name, p in indices.items():
+        try:
+            referenced = _claim_ids_in(load_json(p))
+        except json.JSONDecodeError as e:
+            fails.append(f"{name}.json parse error: {e}")
+            continue
+        missing = referenced - all_ids
+        if missing:
+            fails.append(f"[#1] {name}.json references {len(missing)} unknown claim id(s): {sorted(missing)[:3]}")
+
+    # #8 indices are an honest derivation (only when claims AND indices both exist)
+    if shards and indices:
+        try:
+            sys.path.insert(0, str(ROOT / "eden" / "tools"))
+            import corpus_derive
+            regen = corpus_derive.derive_indices(shards)
+            for name, p in indices.items():
+                want = json.dumps(regen.get(name, {}), indent=2, ensure_ascii=False, sort_keys=True)
+                have = json.dumps(load_json(p), indent=2, ensure_ascii=False, sort_keys=True)
+                if want != have:
+                    fails.append(f"[#8] {name}.json is not a clean derivation of claims/* (hand-edited or stale)")
+        except Exception as e:  # noqa: BLE001 — derive is allowed to be a stub in early phases
+            infos.append(f"[#8] skipped (derive unavailable: {e})")
+
+    # #10 no draft referenced by a sealed index
+    draft_names = {p.name for p in (CORPUS / "drafts").glob("*.json")} if (CORPUS / "drafts").exists() else set()
+    if draft_names and indices:
+        blob = " ".join(p.read_text(encoding="utf-8") for p in indices.values())
+        for dn in draft_names:
+            if dn in blob:
+                fails.append(f"[#10] sealed index references a draft file '{dn}'")
+
+    return fails, infos, n_claims
+
+
+def _claim_ids_in(obj):
+    """Recursively collect any WAL-CLM-* ids referenced anywhere in an index."""
+    found = set()
+
+    def walk(o):
+        if isinstance(o, str):
+            if o.startswith("WAL-CLM-"):
+                found.add(o)
+        elif isinstance(o, list):
+            for x in o:
+                walk(x)
+        elif isinstance(o, dict):
+            for x in o.values():
+                walk(x)
+
+    walk(obj)
+    return found
+
+
+def check_golden_hashes():
+    """#7 — every sealed file's LF-content hash matches its *.golden.sha256."""
+    fails = []
+    sealed_targets = [CANON_PATH, META_PATH, VERSION_PATH]
+    sealed_targets += collect_claim_shards()
+    sealed_targets += [p for p in collect_indices().values()]
+    for p in sealed_targets:
+        golden = p.parent / (p.name + ".golden.sha256")
+        if not golden.exists():
+            fails.append(f"[#7] sealed file {p.relative_to(ROOT)} has no golden sibling")
+            continue
+        want = golden.read_text(encoding="utf-8").strip()
+        actual = lf_sha256(p)
+        if actual != want:
+            fails.append(f"[#7] hash drift {p.name}: golden={want[:12]}... actual={actual[:12]}...")
+    return fails
+
+
+def main() -> int:
+    fails, infos, n_claims = run_checks()
+
+    if not is_sealed():
+        if fails:
+            print("FAIL (bootstrap state, but always-valid checks failed):")
+            for f in fails:
+                print(f"  - {f}")
+            return 1
+        print("BOOTSTRAP: eden/corpus not yet sealed. Run eden/tools/corpus_seal.py to seal.")
+        print(f"  always-valid checks passed: {'; '.join(infos)}")
+        print(f"  claims present: {n_claims}")
+        return 2
+
+    # sealed: run the golden-hash gate too
+    fails += check_golden_hashes()
+    if fails:
+        print(f"FAIL: {len(fails)} corpus integrity violation(s):")
+        for f in fails[:15]:
+            print(f"  - {f}")
+        if len(fails) > 15:
+            print(f"  ... and {len(fails) - 15} more")
+        return 1
+    version = load_json(VERSION_PATH).get("knowledge_version")
+    print(f"PASS: eden/corpus integrity verified (knowledge_version={version}).")
+    print(f"  {n_claims} claims; {'; '.join(infos)}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

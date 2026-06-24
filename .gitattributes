@@ -1,0 +1,12 @@
+# Sealed Wallach corpus — line-ending + binary anchors (Phase α, 2026-06-24)
+#
+# All corpus text/JSON hashes (books-meta content_sha256, the *.golden.sha256 seals)
+# are computed over LF-normalized UTF-8 content, so they are clone/platform-stable.
+# Pin LF on disk too, so the working tree never diverges from the sealed hash.
+eden/corpus/books/*.txt text eol=lf
+eden/corpus/**/*.json text eol=lf
+eden/corpus/**/*.md text eol=lf
+eden/corpus/**/*.golden.sha256 text eol=lf
+
+# Sealed graphics are binary; file_sha256 = raw bytes. Never EOL-convert them.
+eden/graphics/*.jpg binary

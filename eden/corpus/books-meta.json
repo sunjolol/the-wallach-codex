@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "_doctrine": "Per-book metadata + content hash anchor for the sealed corpus. content_sha256 is over LF-normalized UTF-8 text (clone/CRLF-stable), NOT raw disk bytes. corpus_verify checks each book against this. User is sole writer.",
+  "hash_note": "content_sha256 = sha256( read_text().replace(CRLF,LF).encode('utf-8') ). See .gitattributes (eol=lf).",
+  "books": [
+    {
+      "book_id": "dddl-3e-2011",
+      "title": "Dead Doctors Don't Lie",
+      "edition": "3rd",
+      "year": 2011,
+      "authors": [
+        "Joel D. Wallach",
+        "Ma Lan"
+      ],
+      "file": "eden/corpus/books/dddl-third-edition-2011.txt",
+      "content_sha256": "3a76d989686f5bd3a5ef98dcb23b4f3e71af25cd83acf8110d4e35d9c86eb7da",
+      "content_bytes": 983512,
+      "line_count": 14851,
+      "hash_basis": "lf_normalized_utf8",
+      "locator_scheme": "chapter_page",
+      "ocr_confidence_band": "n/a",
+      "notes": "PDF-extracted clean text. No reliable in-text page markers; verbatim snippet is the durable anchor."
+    },
+    {
+      "book_id": "rare-earths",
+      "title": "Rare Earths: Forbidden Cures",
+      "edition": "1st",
+      "year": 1994,
+      "authors": [
+        "Joel D. Wallach",
+        "Ma Lan"
+      ],
+      "file": "eden/corpus/books/rare-earths-forbidden-cures.txt",
+      "content_sha256": "2cc08a23b20b9aaa0cc9e56104684a7e4af01b7d95a063c928c01a32832862c0",
+      "content_bytes": 1190455,
+      "line_count": 40878,
+      "hash_basis": "lf_normalized_utf8",
+      "locator_scheme": "chapter_page",
+      "ocr_confidence_band": "n/a",
+      "notes": "PDF-extracted clean text. Verbatim snippet is the durable anchor."
+    },
+    {
+      "book_id": "lets-play-doctor",
+      "title": "Let's Play Doctor",
+      "edition": "4th",
+      "year": 1995,
+      "authors": [
+        "Joel D. Wallach",
+        "Ma Lan"
+      ],
+      "file": "eden/corpus/books/lets-play-doctor-fourth-edition-1995.txt",
+      "content_sha256": "ce8269c2a44cbddb01bd4b56fc992d28df5897a2abe85ba2c4dc044e6473a800",
+      "content_bytes": 509773,
+      "line_count": 13006,
+      "hash_basis": "lf_normalized_utf8",
+      "locator_scheme": "chapter_page",
+      "ocr_confidence_band": "n/a",
+      "notes": "PDF-extracted clean text. Carries the baseline supplement dose table. Verbatim is the durable anchor."
+    },
+    {
+      "book_id": "epigenetics",
+      "title": "Epigenetics: The Death of the Genetic Theory of Disease Transmission",
+      "edition": "1st",
+      "year": 2014,
+      "authors": [
+        "Joel D. Wallach",
+        "Ma Lan",
+        "Gerhard N. Schrauzer"
+      ],
+      "file": "eden/corpus/books/epigenetics.txt",
+      "content_sha256": "f0b4030d13e76ee1540466270d89db3ac6260e013ef15f5e12e10c9b5352d838",
+      "content_bytes": 1558896,
+      "line_count": 32141,
+      "hash_basis": "lf_normalized_utf8",
+      "locator_scheme": "screenshot",
+      "ocr_confidence_band": "high",
+      "notes": "OCR from Kindle screenshots (Tesseract). '===== Screenshot (N) -- Page X | Location Y =====' markers."
+    },
+    {
+      "book_id": "immortality",
+      "title": "Immortality",
+      "edition": "1st",
+      "year": 2017,
+      "authors": [
+        "Joel D. Wallach"
+      ],
+      "file": "eden/corpus/books/immortality.txt",
+      "content_sha256": "67d5cd5de87e071fd4afb6fb6b8bd1011e0ebbc2ab38086148378c9708003a3a",
+      "content_bytes": 807170,
+      "line_count": 23352,
+      "hash_basis": "lf_normalized_utf8",
+      "locator_scheme": "screenshot",
+      "ocr_confidence_band": "high",
+      "notes": "OCR from Kindle screenshots. Screenshot/location markers present."
+    },
+    {
+      "book_id": "iaiyh",
+      "title": "It's All In Your Head",
+      "edition": "1st",
+      "year": 2020,
+      "authors": [
+        "Joel D. Wallach"
+      ],
+      "file": "eden/corpus/books/iaiyh.txt",
+      "content_sha256": "739f654b52d0328bf3c45ea16a0472bc839c3bcc1a1c9b79973aaf0d80cb13f0",
+      "content_bytes": 49109,
+      "line_count": 1289,
+      "hash_basis": "lf_normalized_utf8",
+      "locator_scheme": "screenshot",
+      "ocr_confidence_band": "medium",
+      "notes": "OCR from Kindle screenshots. Shorter extract. Screenshot/location markers present."
+    }
+  ]
+}

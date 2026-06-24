@@ -1650,6 +1650,60 @@ def check_legacy_css_contained():
     return True, "legacy-dashboard.css fully contained -- 0 bare element/universal selectors"
 
 
+def check_corpus_integrity():
+    """Phase alpha — eden/corpus sealed claim-graph integrity. Delegates to the single
+    implementation eden/tools/corpus_verify.py (one source of the 10 checks, no
+    duplication): exit 0 = sealed & healthy, 2 = BOOTSTRAP (unsealed; always-valid
+    checks passed), 1 = FAIL. Truth-anchored on book bytes + golden hashes."""
+    verify = ROOT / "eden" / "tools" / "corpus_verify.py"
+    if not verify.exists():
+        return True, "eden/tools/corpus_verify.py missing (corpus not installed; bootstrap-guard)"
+    env = dict(os.environ)
+    env.setdefault("PYTHONUTF8", "1")
+    r = subprocess.run([sys.executable, str(verify)], capture_output=True, text=True, env=env)
+    lines = (r.stdout or "").strip().splitlines()
+    head = lines[0] if lines else (r.stderr or "").strip()[:160]
+    if r.returncode in (0, 2):
+        return True, head
+    return False, f"corpus integrity FAIL: {head}"
+
+
+def check_corpus_runtime_purity():
+    """Phase alpha — the shipped dashboard bundle must make no LLM / external-network
+    call (offline-forever; proposal section 5). Greps dist/main.js for LLM-SDK +
+    API-endpoint markers. Same family as no_external_style_resources."""
+    dist = ROOT / "dashboard" / "assets" / "js" / "dist" / "main.js"
+    if not dist.exists():
+        return True, "dist/main.js missing (build not present; bootstrap-guard)"
+    text = dist.read_text(encoding="utf-8", errors="replace").lower()
+    markers = [
+        "anthropic", "openai", "generativelanguage", "x-api-key",
+        "api.anthropic", "api.openai", "/v1/messages", "/v1/chat/completions",
+        "claude-opus", "claude-sonnet", "claude-haiku", "gpt-4", "gpt-3",
+    ]
+    hits = [m for m in markers if m in text]
+    if hits:
+        return False, f"dist/main.js carries LLM/network marker(s) {hits} -- offline-forever / extraction-purity breach"
+    return True, "dist/main.js carries no LLM/external-network markers (extraction stays offline)"
+
+
+def check_graphics_integrity():
+    """Phase alpha — the sacred hand-made graphics (eden/graphics) must match their
+    sealed manifest. Delegates to eden/tools/graphics_verify.py: 0 = sealed & healthy,
+    2 = BOOTSTRAP (manifest unsealed; image hashes still verified), 1 = FAIL."""
+    verify = ROOT / "eden" / "tools" / "graphics_verify.py"
+    if not verify.exists():
+        return True, "eden/tools/graphics_verify.py missing (graphics not installed; bootstrap-guard)"
+    env = dict(os.environ)
+    env.setdefault("PYTHONUTF8", "1")
+    r = subprocess.run([sys.executable, str(verify)], capture_output=True, text=True, env=env)
+    lines = (r.stdout or "").strip().splitlines()
+    head = lines[0] if lines else (r.stderr or "").strip()[:160]
+    if r.returncode in (0, 2):
+        return True, head
+    return False, f"graphics integrity FAIL: {head}"
+
+
 INVARIANTS = [
     Invariant(
         name="safe_write_canary",
@@ -1858,6 +1912,30 @@ INVARIANTS = [
         truth_anchor="deterministic re-parse of dashboard/assets/styles/legacy-dashboard.css — every selector's first compound must be a class/id/pseudo/host-scope, never a bare element or '*'; recomputed each run, no stale-to-stale comparison",
         severity="critical",
         lesson_ref="2026-06-23 containment incident — legacy bare selectors (html/body 15px root, header veil, teal h2/table) bled into the new .app-* shell and cost a full session of eyeball-debugging; the fix had to become a machine gate (§00.B: discipline lives in tooling, not vigilance) so the leak can never silently recur as the file shrinks to its Round-5 death",
+    ),
+    Invariant(
+        name="corpus_integrity",
+        description="eden/corpus sealed claim graph is coherent — verbatim substrings real, book hashes anchored, slugs in canon, indices an honest derivation (delegates to corpus_verify.py; BOOTSTRAP passes pre-seal)",
+        check_fn=check_corpus_integrity,
+        truth_anchor="eden/tools/corpus_verify.py — substring/hash checks over eden/corpus/books bytes + *.golden.sha256; deterministic, cannot lie",
+        severity="critical",
+        lesson_ref="Wallach Knowledge Revamp Phase alpha (2026-06-24) — Eden gains a second sealed wing; the corpus is the single source of Wallach claim-truth and must fail loud on drift",
+    ),
+    Invariant(
+        name="corpus_runtime_purity",
+        description="dashboard dist/main.js carries no LLM / external-network markers — the LLM lives only at extraction time; the shipped app is pure offline-static",
+        check_fn=check_corpus_runtime_purity,
+        truth_anchor="grep of dashboard/assets/js/dist/main.js for LLM-SDK + API-endpoint markers",
+        severity="critical",
+        lesson_ref="Wallach Knowledge Revamp Phase alpha (2026-06-24) — L10 portability guarantee: extraction may use an LLM, the runtime never may (offline-forever)",
+    ),
+    Invariant(
+        name="graphics_integrity",
+        description="the sacred hand-made Wallach graphics (eden/graphics) match their sealed manifest hashes (delegates to graphics_verify.py; BOOTSTRAP passes pre-seal)",
+        check_fn=check_graphics_integrity,
+        truth_anchor="eden/tools/graphics_verify.py — raw-byte sha256 of each image vs graphics-manifest.json; manifest vs golden",
+        severity="critical",
+        lesson_ref="Wallach Knowledge Revamp Phase alpha (2026-06-24) — Wing 3; Luneth's user-authored Wallach-derived graphics admitted Tier-1 by source-owner authority (proposal section 8)",
     ),
 ]
 
