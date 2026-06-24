@@ -6,9 +6,8 @@ no network, no runtime dependencies — and scans supplement labels locally with
 vendored OCR (Tesseract.js).
 
 > The **app** is *The Wallach Codex*. Its internal **systems keep their own
-> names**: **Eden** (the sealed canonical source corpus), **Chronicle** (the
-> discipline ledger + the sacred, append-only Creator's Log audit trail), and
-> **Sunjo** (the Cowork ↔ Claude-Code build-handoff).
+> names**: **Eden** (the sealed canonical source corpus), and **Chronicle** 
+> (the discipline ledger + the sacred, append-only Creator's Log audit trail)
 
 ## This repo is also a working log
 
