@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_25 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_26 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-24 13:43 UTC-04:00 · round-close · eden/corpus
+Phase β.5: DDDL vitamins batch — 40→45 claims sealed (knowledge_version=8). Minerals + vitamins now covered (A, B9, B1, B12). Board 29/29.
+  ↳ Vitamins scattered in DDDL (no element-style appendix); harvested clinic-deficiency narrative + B12/cobalt section. OCR lesson: page-headers inject mid-sentence + hyphen-at-linebreak words break the snapper — avoid spanning them. NEXT: aminos+fatty-acids, then disease-protocol chapters, then Phase γ.
 
 ## 2026-06-24 13:39 UTC-04:00 · round-close · eden/corpus
 Phase β.3+β.4: DDDL extraction at volume — 40 claims sealed (knowledge_version=7) across ~15 minerals from Appendix A (copper/selenium/chromium/vanadium/iron/iodine/zinc/tin/manganese/molybdenum/germanium/silver/cesium/strontium/calcium). 10 of 13 kinds in use. Board 29/29.

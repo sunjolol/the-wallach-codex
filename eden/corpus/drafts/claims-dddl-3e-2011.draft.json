@@ -1291,6 +1291,165 @@
       "extracted_at": "2026-06-24T17:39:10+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000041",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-a"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "keratitis",
+        "corneal_ulcers",
+        "blindness"
+      ],
+      "symptoms": [],
+      "claim_text": "Vitamin A deficiency in children causes keratitis, corneal ulcers, and blindness.",
+      "verbatim": "Vitamin A deficiencies in\nchildren caused keratitis, corneal ulcers, and blindness.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 125146
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:42:16+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000042",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-b9",
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "spina_bifida",
+        "cleft_palate"
+      ],
+      "symptoms": [],
+      "claim_text": "Folic acid (or zinc) deficiency causes spina bifida and serious cleft palate in infants.",
+      "verbatim": "Infants born with spina bifida and serious cleft palates as a result of folic\nacid or zinc deficiencies did not survive the primitive environment.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 125396
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:42:16+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000043",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-b1"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "beriberi",
+        "congestive_heart_failure"
+      ],
+      "symptoms": [],
+      "claim_text": "Thiamin (vitamin B1) deficiency causes beriberi with resulting congestive heart failure.",
+      "verbatim": "Beriberi with resultant congestive\nheart failure was common, the result of a thiamin or vitamin Bl deficiency.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 125654
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:42:16+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000044",
+      "kind": "mechanism",
+      "essentials": [
+        "vitamin-b12",
+        "cobalt"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Vitamin B12 is a water-soluble red crystalline substance; its red color comes from the cobalt atom at its center.",
+      "verbatim": "Vitamin B12 is a red crystalline substance that is water soluble. The red\ncolor is due to the cobalt in the molecule.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 513751
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:42:16+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000045",
+      "kind": "mechanism",
+      "essentials": [
+        "vitamin-b12"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "About 30 percent of vitamin B12 activity is lost during cooking (electric, gas, or microwave).",
+      "verbatim": "About 30 percent of B12 activity is lost during cooking\n(electric, gas, or microwave).",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 513977
+      },
+      "dose": null,
+      "tags": [
+        "food-handling"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-24T17:42:16+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
