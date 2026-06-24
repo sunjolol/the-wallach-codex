@@ -1,0 +1,128 @@
+{
+  "age_spots": {
+    "display_name": "Age Spots",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "selenium",
+        "claim_id": "WAL-CLM-DDDL-000006",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "easy_bruising": {
+    "display_name": "Easy Bruising",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "vitamin-e",
+        "claim_id": "WAL-CLM-DDDL-000089",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-k",
+        "claim_id": "WAL-CLM-DDDL-000089",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "gray_hair": {
+    "display_name": "Gray Hair",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "copper",
+        "claim_id": "WAL-CLM-DDDL-000003",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "hair_loss": {
+    "display_name": "Hair Loss",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "tin",
+        "claim_id": "WAL-CLM-DDDL-000031",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "hearing_loss": {
+    "display_name": "Hearing Loss",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "tin",
+        "claim_id": "WAL-CLM-DDDL-000031",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "liver_spots": {
+    "display_name": "Liver Spots",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "selenium",
+        "claim_id": "WAL-CLM-DDDL-000006",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "loss_of_smell": {
+    "display_name": "Loss Of Smell",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "zinc",
+        "claim_id": "WAL-CLM-DDDL-000077",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "pica": {
+    "display_name": "Pica",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "iron",
+        "claim_id": "WAL-CLM-DDDL-000019",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  }
+}

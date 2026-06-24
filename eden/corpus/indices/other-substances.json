@@ -1,0 +1,19 @@
+{
+  "taurine": {
+    "display_name": "Taurine",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "quote": [
+        "WAL-CLM-DDDL-000066"
+      ]
+    },
+    "conditions_treated": [
+      "cancer",
+      "goiter",
+      "macular_degeneration"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  }
+}

@@ -1,0 +1,1218 @@
+{
+  "anemia": {
+    "display_name": "Anemia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000020"
+      ]
+    },
+    "essentials_involved": [
+      "iron"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "aneurysm": {
+    "display_name": "Aneurysm",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000004"
+      ]
+    },
+    "essentials_involved": [
+      "copper"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "angina": {
+    "display_name": "Angina",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-DDDL-000076"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "anorexia": {
+    "display_name": "Anorexia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000079"
+      ]
+    },
+    "essentials_involved": [
+      "lithium",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "anosmia": {
+    "display_name": "Anosmia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000077"
+      ]
+    },
+    "essentials_involved": [
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "anxiety": {
+    "display_name": "Anxiety",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-DDDL-000078"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "chromium",
+      "magnesium",
+      "vanadium",
+      "vitamin-b3",
+      "vitamin-b6"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "aphthous_stomatitis": {
+    "display_name": "Aphthous Stomatitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-DDDL-000080"
+      ]
+    },
+    "essentials_involved": [
+      "iron",
+      "vitamin-b12",
+      "vitamin-b9",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "arsenic_toxicity": {
+    "display_name": "Arsenic Toxicity",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-DDDL-000081"
+      ]
+    },
+    "essentials_involved": [
+      "selenium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "arteriosclerosis": {
+    "display_name": "Arteriosclerosis",
+    "claim_count": 2,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000082"
+      ],
+      "contraindications": [
+        "WAL-CLM-DDDL-000083"
+      ]
+    },
+    "essentials_involved": [
+      "magnesium",
+      "vitamin-d"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "arthritis": {
+    "display_name": "Arthritis",
+    "claim_count": 4,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000052"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000012",
+        "WAL-CLM-DDDL-000032"
+      ],
+      "protocols": [
+        "WAL-CLM-DDDL-000051"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "germanium",
+      "magnesium",
+      "phosphorus",
+      "strontium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "asthma": {
+    "display_name": "Asthma",
+    "claim_count": 2,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000053"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000026"
+      ]
+    },
+    "essentials_involved": [
+      "magnesium",
+      "manganese"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "bells_palsy": {
+    "display_name": "Bells Palsy",
+    "claim_count": 2,
+    "claims_by_role": {
+      "prevalence": [
+        "WAL-CLM-DDDL-000009"
+      ],
+      "protocols": [
+        "WAL-CLM-DDDL-000086"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium",
+      "vitamin-b12"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "benign_prostatic_hyperplasia": {
+    "display_name": "Benign Prostatic Hyperplasia",
+    "claim_count": 2,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000084"
+      ],
+      "protocols": [
+        "WAL-CLM-DDDL-000085"
+      ]
+    },
+    "essentials_involved": [
+      "selenium",
+      "vitamin-a",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "beriberi": {
+    "display_name": "Beriberi",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000043"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b1"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "birth_defects": {
+    "display_name": "Birth Defects",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000039"
+      ]
+    },
+    "essentials_involved": [
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "bladder_stones": {
+    "display_name": "Bladder Stones",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000087"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "blindness": {
+    "display_name": "Blindness",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000041"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "breast_cancer": {
+    "display_name": "Breast Cancer",
+    "claim_count": 2,
+    "claims_by_role": {
+      "contraindications": [
+        "WAL-CLM-DDDL-000061",
+        "WAL-CLM-DDDL-000091"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "cancer": {
+    "display_name": "Cancer",
+    "claim_count": 8,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000010",
+        "WAL-CLM-DDDL-000030",
+        "WAL-CLM-DDDL-000036"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000012"
+      ],
+      "protocols": [
+        "WAL-CLM-DDDL-000018",
+        "WAL-CLM-DDDL-000056"
+      ],
+      "quotes": [
+        "WAL-CLM-DDDL-000057",
+        "WAL-CLM-DDDL-000066"
+      ]
+    },
+    "essentials_involved": [
+      "arginine",
+      "cesium",
+      "germanium",
+      "selenium",
+      "tyrosine",
+      "vanadium",
+      "vitamin-a"
+    ],
+    "other_substances_involved": [
+      "taurine"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "canker_sores": {
+    "display_name": "Canker Sores",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-DDDL-000080"
+      ]
+    },
+    "essentials_involved": [
+      "iron",
+      "vitamin-b12",
+      "vitamin-b9",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "cardiomyopathy": {
+    "display_name": "Cardiomyopathy",
+    "claim_count": 3,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000010"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000005"
+      ],
+      "prognosis": [
+        "WAL-CLM-DDDL-000007"
+      ]
+    },
+    "essentials_involved": [
+      "selenium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "cardiovascular_disease": {
+    "display_name": "Cardiovascular Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-DDDL-000076"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "carpal_tunnel_syndrome": {
+    "display_name": "Carpal Tunnel Syndrome",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000026"
+      ]
+    },
+    "essentials_involved": [
+      "manganese"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "cleft_palate": {
+    "display_name": "Cleft Palate",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000042"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b9",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "common_cold": {
+    "display_name": "Common Cold",
+    "claim_count": 2,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000093"
+      ],
+      "protocols": [
+        "WAL-CLM-DDDL-000094"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-c"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "congenital_ataxia": {
+    "display_name": "Congenital Ataxia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000026"
+      ]
+    },
+    "essentials_involved": [
+      "manganese"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "congestive_heart_failure": {
+    "display_name": "Congestive Heart Failure",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000043"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b1"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "cor_pulmonale": {
+    "display_name": "Cor Pulmonale",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-DDDL-000054"
+      ]
+    },
+    "essentials_involved": [
+      "selenium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "corneal_ulcers": {
+    "display_name": "Corneal Ulcers",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000041"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "coronary_artery_disease": {
+    "display_name": "Coronary Artery Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000017"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "vanadium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "cradle_cap": {
+    "display_name": "Cradle Cap",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-DDDL-000055"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b6",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "cystic_fibrosis": {
+    "display_name": "Cystic Fibrosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000005"
+      ]
+    },
+    "essentials_involved": [
+      "selenium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "diabetes": {
+    "display_name": "Diabetes",
+    "claim_count": 10,
+    "claims_by_role": {
+      "anecdotes": [
+        "WAL-CLM-DDDL-000008"
+      ],
+      "causes": [
+        "WAL-CLM-DDDL-000010",
+        "WAL-CLM-DDDL-000034"
+      ],
+      "contraindications": [
+        "WAL-CLM-DDDL-000022"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000017"
+      ],
+      "prognosis": [
+        "WAL-CLM-DDDL-000035",
+        "WAL-CLM-DDDL-000046"
+      ],
+      "protocols": [
+        "WAL-CLM-DDDL-000048",
+        "WAL-CLM-DDDL-000049"
+      ],
+      "quotes": [
+        "WAL-CLM-DDDL-000047"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "copper",
+      "iron",
+      "vanadium",
+      "vitamin-b12",
+      "vitamin-b3",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "eczema": {
+    "display_name": "Eczema",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000065"
+      ]
+    },
+    "essentials_involved": [
+      "omega-3",
+      "omega-6"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "goiter": {
+    "display_name": "Goiter",
+    "claim_count": 3,
+    "claims_by_role": {
+      "interactions": [
+        "WAL-CLM-DDDL-000025"
+      ],
+      "prevalence": [
+        "WAL-CLM-DDDL-000024"
+      ],
+      "quotes": [
+        "WAL-CLM-DDDL-000066"
+      ]
+    },
+    "essentials_involved": [
+      "arginine",
+      "copper",
+      "iodine",
+      "tyrosine"
+    ],
+    "other_substances_involved": [
+      "taurine"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "heart_attack": {
+    "display_name": "Heart Attack",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000030"
+      ]
+    },
+    "essentials_involved": [
+      "selenium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "heart_failure": {
+    "display_name": "Heart Failure",
+    "claim_count": 1,
+    "claims_by_role": {
+      "contraindications": [
+        "WAL-CLM-DDDL-000022"
+      ]
+    },
+    "essentials_involved": [
+      "iron"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "hypoglycemia": {
+    "display_name": "Hypoglycemia",
+    "claim_count": 2,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000017"
+      ],
+      "prognosis": [
+        "WAL-CLM-DDDL-000046"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "vanadium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "hypothyroidism": {
+    "display_name": "Hypothyroidism",
+    "claim_count": 2,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000023"
+      ],
+      "prevalence": [
+        "WAL-CLM-DDDL-000024"
+      ]
+    },
+    "essentials_involved": [
+      "iodine",
+      "tyrosine"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "infertility": {
+    "display_name": "Infertility",
+    "claim_count": 2,
+    "claims_by_role": {
+      "prognosis": [
+        "WAL-CLM-DDDL-000069"
+      ],
+      "protocols": [
+        "WAL-CLM-DDDL-000070"
+      ]
+    },
+    "essentials_involved": [
+      "arginine",
+      "germanium",
+      "selenium",
+      "vitamin-a",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "insomnia": {
+    "display_name": "Insomnia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-DDDL-000075"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "chromium",
+      "vanadium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "keratitis": {
+    "display_name": "Keratitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000041"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "keshan_disease": {
+    "display_name": "Keshan Disease",
+    "claim_count": 2,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000071"
+      ],
+      "protocols": [
+        "WAL-CLM-DDDL-000073"
+      ]
+    },
+    "essentials_involved": [
+      "selenium",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "kidney_stones": {
+    "display_name": "Kidney Stones",
+    "claim_count": 2,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000087"
+      ],
+      "protocols": [
+        "WAL-CLM-DDDL-000088"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "liver_cirrhosis": {
+    "display_name": "Liver Cirrhosis",
+    "claim_count": 2,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000010"
+      ],
+      "contraindications": [
+        "WAL-CLM-DDDL-000022"
+      ]
+    },
+    "essentials_involved": [
+      "iron"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "macular_degeneration": {
+    "display_name": "Macular Degeneration",
+    "claim_count": 1,
+    "claims_by_role": {
+      "quotes": [
+        "WAL-CLM-DDDL-000066"
+      ]
+    },
+    "essentials_involved": [
+      "arginine",
+      "tyrosine"
+    ],
+    "other_substances_involved": [
+      "taurine"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "male_pattern_baldness": {
+    "display_name": "Male Pattern Baldness",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000031"
+      ]
+    },
+    "essentials_involved": [
+      "tin"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "menopause": {
+    "display_name": "Menopause",
+    "claim_count": 4,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000068",
+        "WAL-CLM-DDDL-000090"
+      ],
+      "contraindications": [
+        "WAL-CLM-DDDL-000091"
+      ],
+      "protocols": [
+        "WAL-CLM-DDDL-000092"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium",
+      "vitamin-d"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "muscle_cramps": {
+    "display_name": "Muscle Cramps",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000074"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "muscular_dystrophy": {
+    "display_name": "Muscular Dystrophy",
+    "claim_count": 5,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000071"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000005"
+      ],
+      "prognosis": [
+        "WAL-CLM-DDDL-000007",
+        "WAL-CLM-DDDL-000072"
+      ],
+      "protocols": [
+        "WAL-CLM-DDDL-000073"
+      ]
+    },
+    "essentials_involved": [
+      "selenium",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "osteoarthritis": {
+    "display_name": "Osteoarthritis",
+    "claim_count": 2,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000050"
+      ],
+      "prevalence": [
+        "WAL-CLM-DDDL-000009"
+      ]
+    },
+    "essentials_involved": [
+      "calcium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "osteomalacia": {
+    "display_name": "Osteomalacia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "prevalence": [
+        "WAL-CLM-DDDL-000009"
+      ]
+    },
+    "essentials_involved": [
+      "calcium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "osteoporosis": {
+    "display_name": "Osteoporosis",
+    "claim_count": 8,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000052"
+      ],
+      "contraindications": [
+        "WAL-CLM-DDDL-000061"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000012",
+        "WAL-CLM-DDDL-000032"
+      ],
+      "prevalence": [
+        "WAL-CLM-DDDL-000009"
+      ],
+      "prognosis": [
+        "WAL-CLM-DDDL-000058"
+      ],
+      "protocols": [
+        "WAL-CLM-DDDL-000060"
+      ],
+      "quotes": [
+        "WAL-CLM-DDDL-000059"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "germanium",
+      "magnesium",
+      "phosphorus",
+      "strontium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "otitis": {
+    "display_name": "Otitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "prevalence": [
+        "WAL-CLM-DDDL-000062"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "repetitive_motion_syndrome": {
+    "display_name": "Repetitive Motion Syndrome",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000026"
+      ]
+    },
+    "essentials_involved": [
+      "manganese"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "rheumatoid_arthritis": {
+    "display_name": "Rheumatoid Arthritis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000050"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "sids": {
+    "display_name": "Sids",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000005"
+      ]
+    },
+    "essentials_involved": [
+      "selenium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "spina_bifida": {
+    "display_name": "Spina Bifida",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000042"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b9",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "spinal_stenosis": {
+    "display_name": "Spinal Stenosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "prevalence": [
+        "WAL-CLM-DDDL-000009"
+      ]
+    },
+    "essentials_involved": [
+      "calcium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "tinnitus": {
+    "display_name": "Tinnitus",
+    "claim_count": 1,
+    "claims_by_role": {
+      "prevalence": [
+        "WAL-CLM-DDDL-000009"
+      ]
+    },
+    "essentials_involved": [
+      "calcium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "tmj": {
+    "display_name": "Tmj",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000026"
+      ]
+    },
+    "essentials_involved": [
+      "manganese"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "trigeminal_neuralgia": {
+    "display_name": "Trigeminal Neuralgia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "prevalence": [
+        "WAL-CLM-DDDL-000009"
+      ]
+    },
+    "essentials_involved": [
+      "calcium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "uterine_cancer": {
+    "display_name": "Uterine Cancer",
+    "claim_count": 2,
+    "claims_by_role": {
+      "contraindications": [
+        "WAL-CLM-DDDL-000061",
+        "WAL-CLM-DDDL-000091"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "white_muscle_disease": {
+    "display_name": "White Muscle Disease",
+    "claim_count": 2,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000005"
+      ],
+      "prognosis": [
+        "WAL-CLM-DDDL-000007"
+      ]
+    },
+    "essentials_involved": [
+      "selenium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  }
+}

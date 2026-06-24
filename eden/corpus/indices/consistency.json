@@ -1,0 +1,22 @@
+[
+  {
+    "id": "CG-0001",
+    "essentials": [
+      "zinc"
+    ],
+    "conditions": [],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000037",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000038",
+        "book": "dddl-3e-2011"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  }
+]

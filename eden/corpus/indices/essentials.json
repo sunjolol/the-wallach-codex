@@ -1,0 +1,1746 @@
+{
+  "hydrogen": {
+    "display_name": "Hydrogen",
+    "canon_slug": "hydrogen",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "carbon": {
+    "display_name": "Carbon",
+    "canon_slug": "carbon",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "nitrogen": {
+    "display_name": "Nitrogen",
+    "canon_slug": "nitrogen",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "oxygen": {
+    "display_name": "Oxygen",
+    "canon_slug": "oxygen",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "sodium": {
+    "display_name": "Sodium",
+    "canon_slug": "sodium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "magnesium": {
+    "display_name": "Magnesium",
+    "canon_slug": "magnesium",
+    "category": "mineral",
+    "claim_count": 11,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000074"
+      ],
+      "mechanism": [
+        "WAL-CLM-DDDL-000053",
+        "WAL-CLM-DDDL-000082",
+        "WAL-CLM-DDDL-000087"
+      ],
+      "protocol": [
+        "WAL-CLM-DDDL-000051",
+        "WAL-CLM-DDDL-000060",
+        "WAL-CLM-DDDL-000076",
+        "WAL-CLM-DDDL-000078",
+        "WAL-CLM-DDDL-000086",
+        "WAL-CLM-DDDL-000088",
+        "WAL-CLM-DDDL-000092"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "angina",
+      "anxiety",
+      "arteriosclerosis",
+      "arthritis",
+      "asthma",
+      "bells_palsy",
+      "bladder_stones",
+      "cardiovascular_disease",
+      "kidney_stones",
+      "menopause",
+      "muscle_cramps",
+      "osteoporosis"
+    ],
+    "interacts_with": [
+      "calcium",
+      "chromium",
+      "manganese",
+      "vanadium",
+      "vitamin-b12",
+      "vitamin-b3",
+      "vitamin-b6"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "phosphorus": {
+    "display_name": "Phosphorus",
+    "canon_slug": "phosphorus",
+    "category": "mineral",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-DDDL-000052"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "arthritis",
+      "osteoporosis"
+    ],
+    "interacts_with": [
+      "calcium"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "sulfur": {
+    "display_name": "Sulfur",
+    "canon_slug": "sulfur",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "chloride": {
+    "display_name": "Chloride",
+    "canon_slug": "chloride",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "potassium": {
+    "display_name": "Potassium",
+    "canon_slug": "potassium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "calcium": {
+    "display_name": "Calcium",
+    "canon_slug": "calcium",
+    "category": "mineral",
+    "claim_count": 14,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000074"
+      ],
+      "mechanism": [
+        "WAL-CLM-DDDL-000033",
+        "WAL-CLM-DDDL-000052",
+        "WAL-CLM-DDDL-000087"
+      ],
+      "prevalence": [
+        "WAL-CLM-DDDL-000009"
+      ],
+      "prognosis": [
+        "WAL-CLM-DDDL-000058"
+      ],
+      "protocol": [
+        "WAL-CLM-DDDL-000051",
+        "WAL-CLM-DDDL-000060",
+        "WAL-CLM-DDDL-000075",
+        "WAL-CLM-DDDL-000076",
+        "WAL-CLM-DDDL-000078",
+        "WAL-CLM-DDDL-000086",
+        "WAL-CLM-DDDL-000088",
+        "WAL-CLM-DDDL-000092"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "angina",
+      "anxiety",
+      "arthritis",
+      "bells_palsy",
+      "bladder_stones",
+      "cardiovascular_disease",
+      "insomnia",
+      "kidney_stones",
+      "menopause",
+      "muscle_cramps",
+      "osteoarthritis",
+      "osteomalacia",
+      "osteoporosis",
+      "spinal_stenosis",
+      "tinnitus",
+      "trigeminal_neuralgia"
+    ],
+    "interacts_with": [
+      "chromium",
+      "magnesium",
+      "phosphorus",
+      "strontium",
+      "vanadium",
+      "vitamin-b12",
+      "vitamin-b3",
+      "vitamin-b6"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "boron": {
+    "display_name": "Boron",
+    "canon_slug": "boron",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "cobalt": {
+    "display_name": "Cobalt",
+    "canon_slug": "cobalt",
+    "category": "mineral",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-DDDL-000044"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [
+      "vitamin-b12"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "chromium": {
+    "display_name": "Chromium",
+    "canon_slug": "chromium",
+    "category": "mineral",
+    "claim_count": 8,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000017"
+      ],
+      "personal_anecdote": [
+        "WAL-CLM-DDDL-000008"
+      ],
+      "prevalence": [
+        "WAL-CLM-DDDL-000015"
+      ],
+      "prognosis": [
+        "WAL-CLM-DDDL-000016",
+        "WAL-CLM-DDDL-000046"
+      ],
+      "protocol": [
+        "WAL-CLM-DDDL-000048",
+        "WAL-CLM-DDDL-000075",
+        "WAL-CLM-DDDL-000078"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "anxiety",
+      "coronary_artery_disease",
+      "diabetes",
+      "hypoglycemia",
+      "insomnia"
+    ],
+    "interacts_with": [
+      "calcium",
+      "magnesium",
+      "vanadium",
+      "vitamin-b3",
+      "vitamin-b6"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "copper": {
+    "display_name": "Copper",
+    "canon_slug": "copper",
+    "category": "mineral",
+    "claim_count": 5,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000003"
+      ],
+      "interaction": [
+        "WAL-CLM-DDDL-000025",
+        "WAL-CLM-DDDL-000040"
+      ],
+      "mechanism": [
+        "WAL-CLM-DDDL-000004"
+      ],
+      "protocol": [
+        "WAL-CLM-DDDL-000049"
+      ]
+    },
+    "deficiency_signs": [
+      {
+        "sign": "gray_hair",
+        "claim_id": "WAL-CLM-DDDL-000003",
+        "confidence": "high"
+      }
+    ],
+    "conditions_treated": [
+      "aneurysm",
+      "diabetes",
+      "goiter"
+    ],
+    "interacts_with": [
+      "iodine",
+      "iron",
+      "vitamin-b12",
+      "vitamin-b3",
+      "zinc"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "germanium": {
+    "display_name": "Germanium",
+    "canon_slug": "germanium",
+    "category": "mineral",
+    "claim_count": 3,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000012"
+      ],
+      "dose": [
+        "WAL-CLM-DDDL-000011"
+      ],
+      "protocol": [
+        "WAL-CLM-DDDL-000070"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "arthritis",
+      "cancer",
+      "infertility",
+      "osteoporosis"
+    ],
+    "interacts_with": [
+      "arginine",
+      "selenium",
+      "vitamin-a",
+      "zinc"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "iron": {
+    "display_name": "Iron",
+    "canon_slug": "iron",
+    "category": "mineral",
+    "claim_count": 6,
+    "claims_by_kind": {
+      "contraindication": [
+        "WAL-CLM-DDDL-000022"
+      ],
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000019",
+        "WAL-CLM-DDDL-000020"
+      ],
+      "interaction": [
+        "WAL-CLM-DDDL-000021",
+        "WAL-CLM-DDDL-000040"
+      ],
+      "protocol": [
+        "WAL-CLM-DDDL-000080"
+      ]
+    },
+    "deficiency_signs": [
+      {
+        "sign": "pica",
+        "claim_id": "WAL-CLM-DDDL-000019",
+        "confidence": "high"
+      }
+    ],
+    "conditions_treated": [
+      "anemia",
+      "aphthous_stomatitis",
+      "canker_sores",
+      "diabetes",
+      "heart_failure",
+      "liver_cirrhosis"
+    ],
+    "interacts_with": [
+      "copper",
+      "vitamin-b12",
+      "vitamin-b9",
+      "vitamin-c",
+      "zinc"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "iodine": {
+    "display_name": "Iodine",
+    "canon_slug": "iodine",
+    "category": "mineral",
+    "claim_count": 3,
+    "claims_by_kind": {
+      "interaction": [
+        "WAL-CLM-DDDL-000025"
+      ],
+      "mechanism": [
+        "WAL-CLM-DDDL-000023"
+      ],
+      "prevalence": [
+        "WAL-CLM-DDDL-000024"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "goiter",
+      "hypothyroidism"
+    ],
+    "interacts_with": [
+      "copper",
+      "tyrosine"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "manganese": {
+    "display_name": "Manganese",
+    "canon_slug": "manganese",
+    "category": "mineral",
+    "claim_count": 3,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000026"
+      ],
+      "mechanism": [
+        "WAL-CLM-DDDL-000027",
+        "WAL-CLM-DDDL-000053"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "asthma",
+      "carpal_tunnel_syndrome",
+      "congenital_ataxia",
+      "repetitive_motion_syndrome",
+      "tmj"
+    ],
+    "interacts_with": [
+      "magnesium"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "molybdenum": {
+    "display_name": "Molybdenum",
+    "canon_slug": "molybdenum",
+    "category": "mineral",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-DDDL-000028"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "selenium": {
+    "display_name": "Selenium",
+    "canon_slug": "selenium",
+    "category": "mineral",
+    "claim_count": 13,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000005",
+        "WAL-CLM-DDDL-000006"
+      ],
+      "mechanism": [
+        "WAL-CLM-DDDL-000029",
+        "WAL-CLM-DDDL-000030",
+        "WAL-CLM-DDDL-000071"
+      ],
+      "prognosis": [
+        "WAL-CLM-DDDL-000007",
+        "WAL-CLM-DDDL-000072"
+      ],
+      "protocol": [
+        "WAL-CLM-DDDL-000054",
+        "WAL-CLM-DDDL-000056",
+        "WAL-CLM-DDDL-000070",
+        "WAL-CLM-DDDL-000073",
+        "WAL-CLM-DDDL-000081",
+        "WAL-CLM-DDDL-000085"
+      ]
+    },
+    "deficiency_signs": [
+      {
+        "sign": "age_spots",
+        "claim_id": "WAL-CLM-DDDL-000006",
+        "confidence": "high"
+      },
+      {
+        "sign": "liver_spots",
+        "claim_id": "WAL-CLM-DDDL-000006",
+        "confidence": "high"
+      }
+    ],
+    "conditions_treated": [
+      "arsenic_toxicity",
+      "benign_prostatic_hyperplasia",
+      "cancer",
+      "cardiomyopathy",
+      "cor_pulmonale",
+      "cystic_fibrosis",
+      "heart_attack",
+      "infertility",
+      "keshan_disease",
+      "muscular_dystrophy",
+      "sids",
+      "white_muscle_disease"
+    ],
+    "interacts_with": [
+      "arginine",
+      "germanium",
+      "vitamin-a",
+      "vitamin-e",
+      "zinc"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "silica": {
+    "display_name": "Silica",
+    "canon_slug": "silica",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "strontium": {
+    "display_name": "Strontium",
+    "canon_slug": "strontium",
+    "category": "mineral",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000032"
+      ],
+      "mechanism": [
+        "WAL-CLM-DDDL-000033"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "arthritis",
+      "osteoporosis"
+    ],
+    "interacts_with": [
+      "calcium"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "vanadium": {
+    "display_name": "Vanadium",
+    "canon_slug": "vanadium",
+    "category": "mineral",
+    "claim_count": 9,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000017"
+      ],
+      "mechanism": [
+        "WAL-CLM-DDDL-000034",
+        "WAL-CLM-DDDL-000036"
+      ],
+      "personal_anecdote": [
+        "WAL-CLM-DDDL-000008"
+      ],
+      "prognosis": [
+        "WAL-CLM-DDDL-000035"
+      ],
+      "protocol": [
+        "WAL-CLM-DDDL-000048",
+        "WAL-CLM-DDDL-000075",
+        "WAL-CLM-DDDL-000078"
+      ],
+      "quote": [
+        "WAL-CLM-DDDL-000047"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "anxiety",
+      "cancer",
+      "coronary_artery_disease",
+      "diabetes",
+      "hypoglycemia",
+      "insomnia"
+    ],
+    "interacts_with": [
+      "calcium",
+      "chromium",
+      "magnesium",
+      "vitamin-b3",
+      "vitamin-b6"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "zinc": {
+    "display_name": "Zinc",
+    "canon_slug": "zinc",
+    "category": "mineral",
+    "claim_count": 13,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000039",
+        "WAL-CLM-DDDL-000042",
+        "WAL-CLM-DDDL-000077",
+        "WAL-CLM-DDDL-000079"
+      ],
+      "interaction": [
+        "WAL-CLM-DDDL-000040"
+      ],
+      "mechanism": [
+        "WAL-CLM-DDDL-000037",
+        "WAL-CLM-DDDL-000038",
+        "WAL-CLM-DDDL-000084"
+      ],
+      "protocol": [
+        "WAL-CLM-DDDL-000049",
+        "WAL-CLM-DDDL-000055",
+        "WAL-CLM-DDDL-000070",
+        "WAL-CLM-DDDL-000080",
+        "WAL-CLM-DDDL-000085"
+      ]
+    },
+    "deficiency_signs": [
+      {
+        "sign": "loss_of_smell",
+        "claim_id": "WAL-CLM-DDDL-000077",
+        "confidence": "high"
+      }
+    ],
+    "conditions_treated": [
+      "anorexia",
+      "anosmia",
+      "aphthous_stomatitis",
+      "benign_prostatic_hyperplasia",
+      "birth_defects",
+      "canker_sores",
+      "cleft_palate",
+      "cradle_cap",
+      "diabetes",
+      "infertility",
+      "spina_bifida"
+    ],
+    "interacts_with": [
+      "arginine",
+      "copper",
+      "germanium",
+      "iron",
+      "lithium",
+      "selenium",
+      "vitamin-a",
+      "vitamin-b12",
+      "vitamin-b3",
+      "vitamin-b6",
+      "vitamin-b9"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "silver": {
+    "display_name": "Silver",
+    "canon_slug": "silver",
+    "category": "mineral",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "dose": [
+        "WAL-CLM-DDDL-000013"
+      ],
+      "mechanism": [
+        "WAL-CLM-DDDL-000014"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "aluminum": {
+    "display_name": "Aluminum",
+    "canon_slug": "aluminum",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "arsenic": {
+    "display_name": "Arsenic",
+    "canon_slug": "arsenic",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "gold": {
+    "display_name": "Gold",
+    "canon_slug": "gold",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "barium": {
+    "display_name": "Barium",
+    "canon_slug": "barium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "beryllium": {
+    "display_name": "Beryllium",
+    "canon_slug": "beryllium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "bromine": {
+    "display_name": "Bromine",
+    "canon_slug": "bromine",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "cerium": {
+    "display_name": "Cerium",
+    "canon_slug": "cerium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "cesium": {
+    "display_name": "Cesium",
+    "canon_slug": "cesium",
+    "category": "mineral",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-DDDL-000018"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "cancer"
+    ],
+    "interacts_with": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "dysprosium": {
+    "display_name": "Dysprosium",
+    "canon_slug": "dysprosium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "erbium": {
+    "display_name": "Erbium",
+    "canon_slug": "erbium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "europium": {
+    "display_name": "Europium",
+    "canon_slug": "europium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "gallium": {
+    "display_name": "Gallium",
+    "canon_slug": "gallium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "gadolinium": {
+    "display_name": "Gadolinium",
+    "canon_slug": "gadolinium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "hafnium": {
+    "display_name": "Hafnium",
+    "canon_slug": "hafnium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "holmium": {
+    "display_name": "Holmium",
+    "canon_slug": "holmium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "lanthanum": {
+    "display_name": "Lanthanum",
+    "canon_slug": "lanthanum",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "lithium": {
+    "display_name": "Lithium",
+    "canon_slug": "lithium",
+    "category": "mineral",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000079"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "anorexia"
+    ],
+    "interacts_with": [
+      "zinc"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "lutetium": {
+    "display_name": "Lutetium",
+    "canon_slug": "lutetium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "niobium": {
+    "display_name": "Niobium",
+    "canon_slug": "niobium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "neodymium": {
+    "display_name": "Neodymium",
+    "canon_slug": "neodymium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "nickel": {
+    "display_name": "Nickel",
+    "canon_slug": "nickel",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "praseodymium": {
+    "display_name": "Praseodymium",
+    "canon_slug": "praseodymium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "rubidium": {
+    "display_name": "Rubidium",
+    "canon_slug": "rubidium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "rhenium": {
+    "display_name": "Rhenium",
+    "canon_slug": "rhenium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "scandium": {
+    "display_name": "Scandium",
+    "canon_slug": "scandium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "samarium": {
+    "display_name": "Samarium",
+    "canon_slug": "samarium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "tin": {
+    "display_name": "Tin",
+    "canon_slug": "tin",
+    "category": "mineral",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000031"
+      ]
+    },
+    "deficiency_signs": [
+      {
+        "sign": "hair_loss",
+        "claim_id": "WAL-CLM-DDDL-000031",
+        "confidence": "high"
+      },
+      {
+        "sign": "hearing_loss",
+        "claim_id": "WAL-CLM-DDDL-000031",
+        "confidence": "high"
+      }
+    ],
+    "conditions_treated": [
+      "male_pattern_baldness"
+    ],
+    "interacts_with": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "tantalum": {
+    "display_name": "Tantalum",
+    "canon_slug": "tantalum",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "terbium": {
+    "display_name": "Terbium",
+    "canon_slug": "terbium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "titanium": {
+    "display_name": "Titanium",
+    "canon_slug": "titanium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "thulium": {
+    "display_name": "Thulium",
+    "canon_slug": "thulium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "yttrium": {
+    "display_name": "Yttrium",
+    "canon_slug": "yttrium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "ytterbium": {
+    "display_name": "Ytterbium",
+    "canon_slug": "ytterbium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "zirconium": {
+    "display_name": "Zirconium",
+    "canon_slug": "zirconium",
+    "category": "mineral",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "vitamin-a": {
+    "display_name": "Retinol",
+    "canon_slug": "vitamin-a",
+    "category": "vitamin",
+    "claim_count": 4,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000041"
+      ],
+      "protocol": [
+        "WAL-CLM-DDDL-000056",
+        "WAL-CLM-DDDL-000070",
+        "WAL-CLM-DDDL-000085"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "benign_prostatic_hyperplasia",
+      "blindness",
+      "cancer",
+      "corneal_ulcers",
+      "infertility",
+      "keratitis"
+    ],
+    "interacts_with": [
+      "arginine",
+      "germanium",
+      "selenium",
+      "zinc"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "vitamin-b1": {
+    "display_name": "Thiamine",
+    "canon_slug": "vitamin-b1",
+    "category": "vitamin",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000043"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "beriberi",
+      "congestive_heart_failure"
+    ],
+    "interacts_with": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "vitamin-b2": {
+    "display_name": "Riboflavin",
+    "canon_slug": "vitamin-b2",
+    "category": "vitamin",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "vitamin-b3": {
+    "display_name": "Niacin",
+    "canon_slug": "vitamin-b3",
+    "category": "vitamin",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-DDDL-000049",
+        "WAL-CLM-DDDL-000078"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "anxiety",
+      "diabetes"
+    ],
+    "interacts_with": [
+      "calcium",
+      "chromium",
+      "copper",
+      "magnesium",
+      "vanadium",
+      "vitamin-b12",
+      "vitamin-b6",
+      "zinc"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "vitamin-b5": {
+    "display_name": "Pantothenic Acid",
+    "canon_slug": "vitamin-b5",
+    "category": "vitamin",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "vitamin-b6": {
+    "display_name": "Pyridoxine",
+    "canon_slug": "vitamin-b6",
+    "category": "vitamin",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-DDDL-000055",
+        "WAL-CLM-DDDL-000078"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "anxiety",
+      "cradle_cap"
+    ],
+    "interacts_with": [
+      "calcium",
+      "chromium",
+      "magnesium",
+      "vanadium",
+      "vitamin-b3",
+      "zinc"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "vitamin-b9": {
+    "display_name": "Folate",
+    "canon_slug": "vitamin-b9",
+    "category": "vitamin",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000042"
+      ],
+      "protocol": [
+        "WAL-CLM-DDDL-000080"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "aphthous_stomatitis",
+      "canker_sores",
+      "cleft_palate",
+      "spina_bifida"
+    ],
+    "interacts_with": [
+      "iron",
+      "vitamin-b12",
+      "zinc"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "vitamin-b12": {
+    "display_name": "Cobalamin",
+    "canon_slug": "vitamin-b12",
+    "category": "vitamin",
+    "claim_count": 5,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-DDDL-000044",
+        "WAL-CLM-DDDL-000045"
+      ],
+      "protocol": [
+        "WAL-CLM-DDDL-000049",
+        "WAL-CLM-DDDL-000080",
+        "WAL-CLM-DDDL-000086"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "aphthous_stomatitis",
+      "bells_palsy",
+      "canker_sores",
+      "diabetes"
+    ],
+    "interacts_with": [
+      "calcium",
+      "cobalt",
+      "copper",
+      "iron",
+      "magnesium",
+      "vitamin-b3",
+      "vitamin-b9",
+      "zinc"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "vitamin-c": {
+    "display_name": "Ascorbic Acid",
+    "canon_slug": "vitamin-c",
+    "category": "vitamin",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "interaction": [
+        "WAL-CLM-DDDL-000021"
+      ],
+      "protocol": [
+        "WAL-CLM-DDDL-000094"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "common_cold"
+    ],
+    "interacts_with": [
+      "iron"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "vitamin-d": {
+    "display_name": "Cholecalciferol",
+    "canon_slug": "vitamin-d",
+    "category": "vitamin",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "contraindication": [
+        "WAL-CLM-DDDL-000083"
+      ],
+      "mechanism": [
+        "WAL-CLM-DDDL-000068"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "arteriosclerosis",
+      "menopause"
+    ],
+    "interacts_with": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "vitamin-e": {
+    "display_name": "Tocopherol",
+    "canon_slug": "vitamin-e",
+    "category": "vitamin",
+    "claim_count": 3,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000089"
+      ],
+      "prognosis": [
+        "WAL-CLM-DDDL-000072"
+      ],
+      "protocol": [
+        "WAL-CLM-DDDL-000073"
+      ]
+    },
+    "deficiency_signs": [
+      {
+        "sign": "easy_bruising",
+        "claim_id": "WAL-CLM-DDDL-000089",
+        "confidence": "high"
+      }
+    ],
+    "conditions_treated": [
+      "keshan_disease",
+      "muscular_dystrophy"
+    ],
+    "interacts_with": [
+      "selenium",
+      "vitamin-k"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "vitamin-k": {
+    "display_name": "Menaquinone",
+    "canon_slug": "vitamin-k",
+    "category": "vitamin",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000089"
+      ]
+    },
+    "deficiency_signs": [
+      {
+        "sign": "easy_bruising",
+        "claim_id": "WAL-CLM-DDDL-000089",
+        "confidence": "high"
+      }
+    ],
+    "conditions_treated": [],
+    "interacts_with": [
+      "vitamin-e"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "biotin": {
+    "display_name": "Biotin",
+    "canon_slug": "biotin",
+    "category": "vitamin",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "choline": {
+    "display_name": "Choline",
+    "canon_slug": "choline",
+    "category": "vitamin",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "inositol": {
+    "display_name": "Inositol",
+    "canon_slug": "inositol",
+    "category": "vitamin",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "flavonoids": {
+    "display_name": "Flavonoids",
+    "canon_slug": "flavonoids",
+    "category": "vitamin",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "arginine": {
+    "display_name": "Arginine",
+    "canon_slug": "arginine",
+    "category": "amino_acid",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-DDDL-000070"
+      ],
+      "quote": [
+        "WAL-CLM-DDDL-000066"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "cancer",
+      "goiter",
+      "infertility",
+      "macular_degeneration"
+    ],
+    "interacts_with": [
+      "germanium",
+      "selenium",
+      "tyrosine",
+      "vitamin-a",
+      "zinc"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "cysteine": {
+    "display_name": "Cysteine",
+    "canon_slug": "cysteine",
+    "category": "amino_acid",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "histidine": {
+    "display_name": "Histidine",
+    "canon_slug": "histidine",
+    "category": "amino_acid",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "isoleucine": {
+    "display_name": "Isoleucine",
+    "canon_slug": "isoleucine",
+    "category": "amino_acid",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "leucine": {
+    "display_name": "Leucine",
+    "canon_slug": "leucine",
+    "category": "amino_acid",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "lysine": {
+    "display_name": "Lysine",
+    "canon_slug": "lysine",
+    "category": "amino_acid",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "methionine": {
+    "display_name": "Methionine",
+    "canon_slug": "methionine",
+    "category": "amino_acid",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-DDDL-000067"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [
+      "phenylalanine",
+      "tryptophan"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "phenylalanine": {
+    "display_name": "Phenylalanine",
+    "canon_slug": "phenylalanine",
+    "category": "amino_acid",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-DDDL-000067"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [
+      "methionine",
+      "tryptophan"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "threonine": {
+    "display_name": "Threonine",
+    "canon_slug": "threonine",
+    "category": "amino_acid",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "tryptophan": {
+    "display_name": "Tryptophan",
+    "canon_slug": "tryptophan",
+    "category": "amino_acid",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-DDDL-000067"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [
+      "methionine",
+      "phenylalanine"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "tyrosine": {
+    "display_name": "Tyrosine",
+    "canon_slug": "tyrosine",
+    "category": "amino_acid",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-DDDL-000023"
+      ],
+      "quote": [
+        "WAL-CLM-DDDL-000066"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "cancer",
+      "goiter",
+      "hypothyroidism",
+      "macular_degeneration"
+    ],
+    "interacts_with": [
+      "arginine",
+      "iodine"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "valine": {
+    "display_name": "Valine",
+    "canon_slug": "valine",
+    "category": "amino_acid",
+    "claim_count": 0,
+    "claims_by_kind": {},
+    "deficiency_signs": [],
+    "conditions_treated": [],
+    "interacts_with": [],
+    "books_cited": []
+  },
+  "omega-3": {
+    "display_name": "Omega-3",
+    "canon_slug": "omega-3",
+    "category": "fatty_acid",
+    "claim_count": 3,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000065"
+      ],
+      "definition": [
+        "WAL-CLM-DDDL-000063"
+      ],
+      "mechanism": [
+        "WAL-CLM-DDDL-000064"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "eczema"
+    ],
+    "interacts_with": [
+      "omega-6"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "omega-6": {
+    "display_name": "Omega-6",
+    "canon_slug": "omega-6",
+    "category": "fatty_acid",
+    "claim_count": 3,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-DDDL-000065"
+      ],
+      "definition": [
+        "WAL-CLM-DDDL-000063"
+      ],
+      "mechanism": [
+        "WAL-CLM-DDDL-000064"
+      ]
+    },
+    "deficiency_signs": [],
+    "conditions_treated": [
+      "eczema"
+    ],
+    "interacts_with": [
+      "omega-3"
+    ],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  }
+}
