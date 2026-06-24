@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_36 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_37 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-24 17:38 UTC-04:00 · milestone · eden/corpus
+Phase γ.3 step 0 — built corpus_resnap.py, the safety tool that makes editing sealed book TEXT safe (re-hash books-meta + relocate/heal/flag every claim verbatim+offset). Tested all paths. Starts the Rare Earths OCR-correction campaign.
+  ↳ Workflow flip this session: the user supplied the full scanned PDF; the agent can render any page via PyMuPDF and read it at full fidelity (prose AND dense tables, e.g. the periodic table), so no screenshots/page-feeding needed — agent drives front-to-back. Decisions locked with the user: canonical text format = de-hyphenate + reflow (feeds both verbatim-snapping and the future ±200-word context popup); periodic-table grids = clean marker + caption. Mechanics traced: corpus_seal seals books-meta but never re-hashes the book; finalize carries existing claims forward unchanged; corpus_verify check #6 (book hash) + #9 (offset) catch drift loudly. corpus_resnap fills the gap: skeleton (letters-only) match auto-heals reflow/hyphen/whitespace changes, refuses to guess on letter-changes (a fixed scan error inside a verbatim span) or ambiguous duplicates -> --fix path for manual re-author. Honest note: handoff overstated the periodic table as a custom nutrient graphic; it is the STANDARD periodic table of all 103 elements (Table 11-6) that frames the alphabetical-by-symbol element catalog.
 
 ## 2026-06-24 17:05 UTC-04:00 · design-decision · chronicle
 Session close — editorial-fringe policy LOCKED: exclude Wallach content only in extreme cases + run by Luneth every time; excluded fringe lives in chronicle/wallach-fringe-excluded.md, not the app. Next genesis: fix Rare Earths OCR from screenshots, then resume extraction.
