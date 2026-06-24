@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_18 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_19 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-23 21:54 UTC-04:00 · round-close · journey
+Journey J3+J4: mounted the J2 view (kills the last legacy teal; shared K+J registry -> J rail/Esc/bare-J open the new drawer) + auto-derive; styled the whole drawer to the v3 mockup (jd-* scoped to #drawer-journey-mount); topbar BRAIN->CODEX. Board 26/26.
+  ↳ J3 generalized the Knowledge-only drawer wiring in main.ts into a shared K+J registry (DRAWER_SPECS: mountDrawers/toggleDrawer/wireDrawerKeys/closeAllDrawers); the J rail item + Esc + bare-J now open the new jd-* drawer instead of the legacy #tab-journey teal tab. Auto-derive: scanner:scan-complete / regimen add-remove-restore / goals:updated -> journey.logEvent (excludes high-frequency coverage:recomputed + dose-edit to avoid flooding). drawer-journey.css ports the v3 mockup vocabulary onto the view's jd-* classes, every rule rooted at #drawer-journey-mount so it cannot leak (Sever-Safety lesson applied preemptively): panel + chrome + all 4 tabs + the quick-checkin entry button + inline forms. Built in 2 visual-verified phases. CODEX: the 2 visible topbar BRAIN refs renamed; v3.27 kept (consistent with footer + versions-data, no drift); full v1.0 stamp queued. New tools/render_probe_journey.js: 13 checks incl. legacy-host-not-shown (teal-kill proof). Knowledge drawer still unstyled by design (identical shell; drawer-journey.css is the template).
 
 ## 2026-06-23 18:07 UTC-04:00 · round-close · dashboard/legacy-css
 Sever-Safety: scoped all 24 legacy-dashboard.css leak vectors under :where(#legacy-workspace-host); moved the globals the shell was secretly inheriting into dashboard.css; new critical invariant legacy_css_contained makes the leak impossible. Luneth-verified.

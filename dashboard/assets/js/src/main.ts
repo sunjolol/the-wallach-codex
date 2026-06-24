@@ -105,11 +105,43 @@ function activateRailItem(target: WorkspaceTarget): void {
   }
 }
 
-let knowledgeDrawer: knowledgeView.DrawerHandle | null = null;
+// ─── Drawers (Knowledge · K, Journey · J) ──────────────────────────────
+
+/** The structural subset of each view's DrawerHandle that the shell drives. */
+interface DrawerHandle {
+  close: () => void;
+  toggle: () => void;
+  isOpen: () => boolean;
+}
+
+/** One overlay drawer: a rail target, its mount slot, and a bare-key toggle. */
+interface DrawerSpec {
+  target: WorkspaceTarget;
+  mountId: string;
+  key: string;
+  mount: (el: HTMLElement) => DrawerHandle;
+}
+
+const DRAWER_SPECS: readonly DrawerSpec[] = [
+  { target: 'knowledge', mountId: 'drawer-knowledge-mount', key: 'k', mount: knowledgeView.mount },
+  { target: 'journey', mountId: 'drawer-journey-mount', key: 'j', mount: journeyView.mount },
+];
+
+const drawerHandles = new Map<WorkspaceTarget, DrawerHandle>();
+
+function isDrawerTarget(target: WorkspaceTarget): boolean {
+  return DRAWER_SPECS.some(s => s.target === target);
+}
+
+function closeAllDrawers(): void {
+  for (const handle of drawerHandles.values()) {
+    handle.close();
+  }
+}
 
 function navigateTo(target: WorkspaceTarget): void {
-  // Switching workspace closes the Knowledge drawer overlay if it's open.
-  knowledgeDrawer?.close();
+  // Switching workspace closes any open drawer overlay.
+  closeAllDrawers();
   activateRailItem(target);
   events.emit('rail:navigate', { target });
 
@@ -166,8 +198,8 @@ function wireRail(): void {
     }
     btn.addEventListener('click', (ev) => {
       ev.preventDefault();
-      if (target === 'knowledge') {
-        toggleKnowledgeDrawer();
+      if (isDrawerTarget(target)) {
+        toggleDrawer(target);
         return;
       }
       navigateTo(target);
@@ -175,42 +207,97 @@ function wireRail(): void {
   }
 }
 
-// ─── Knowledge drawer (K) ────────────────────────────────────────────────────
+// ─── Drawer mounting + wiring (shared K + J) ──────────────────────────
 
-/** Mount the Knowledge drawer overlay into its host once at boot. */
-function mountKnowledgeDrawer(): void {
-  const el = document.getElementById('drawer-knowledge-mount');
-  if (el === null) {
-    return;
-  }
-  knowledgeDrawer = knowledgeView.mount(el);
-}
-
-/** Toggle the Knowledge drawer and reflect its open-state on the rail item. */
-function toggleKnowledgeDrawer(): void {
-  if (knowledgeDrawer === null) {
-    return;
-  }
-  knowledgeDrawer.toggle();
-  const btn = document.querySelector<HTMLElement>('.rail__item[data-rail-nav="knowledge"]');
-  if (btn !== null) {
-    btn.classList.toggle('active', knowledgeDrawer.isOpen());
+/** Mount every overlay drawer into its host once at boot. */
+function mountDrawers(): void {
+  for (const spec of DRAWER_SPECS) {
+    const el = document.getElementById(spec.mountId);
+    if (el === null) {
+      continue;
+    }
+    drawerHandles.set(spec.target, spec.mount(el));
   }
 }
 
-/** Esc closes the drawer; bare "K" toggles it (ignored while typing or with a modifier). */
-function wireKnowledgeKeys(): void {
+/** Reflect each drawer's open-state on its rail item. */
+function syncDrawerRail(): void {
+  for (const spec of DRAWER_SPECS) {
+    const btn = document.querySelector<HTMLElement>(`.rail__item[data-rail-nav="${spec.target}"]`);
+    if (btn === null) {
+      continue;
+    }
+    const handle = drawerHandles.get(spec.target);
+    btn.classList.toggle('active', handle !== undefined && handle.isOpen());
+  }
+}
+
+/**
+ * Toggle one drawer. Only one overlay is open at a time, so opening one closes
+ * the others first.
+ */
+function toggleDrawer(target: WorkspaceTarget): void {
+  const handle = drawerHandles.get(target);
+  if (handle === undefined) {
+    return;
+  }
+  for (const [other, h] of drawerHandles) {
+    if (other !== target) {
+      h.close();
+    }
+  }
+  handle.toggle();
+  syncDrawerRail();
+}
+
+/** Esc closes any open drawer; a bare drawer key (K / J) toggles it. */
+function wireDrawerKeys(): void {
   document.addEventListener('keydown', (ev) => {
-    if (ev.key === 'Escape' && knowledgeDrawer !== null && knowledgeDrawer.isOpen()) {
-      toggleKnowledgeDrawer();
+    if (ev.key === 'Escape') {
+      closeAllDrawers();
+      syncDrawerRail();
       return;
     }
     const t = ev.target as HTMLElement | null;
     const typing = t !== null && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable);
-    if ((ev.key === 'k' || ev.key === 'K') && !typing && !ev.metaKey && !ev.ctrlKey && !ev.altKey) {
-      ev.preventDefault();
-      toggleKnowledgeDrawer();
+    if (typing || ev.metaKey || ev.ctrlKey || ev.altKey) {
+      return;
     }
+    for (const spec of DRAWER_SPECS) {
+      if (ev.key.toLowerCase() === spec.key) {
+        ev.preventDefault();
+        toggleDrawer(spec.target);
+        return;
+      }
+    }
+  });
+}
+
+/**
+ * Auto-derive — real app activity becomes Journey timeline events so the
+ * timeline fills from genuine use (J1 reads real activity; there is no fake
+ * seed). Deliberately excludes coverage:recomputed and regimen 'dose-edit':
+ * both fire on every micro-change and would flood the timeline with redundant
+ * noise. Only deliberate, low-frequency actions are recorded.
+ */
+function wireJourneyAutoDerive(): void {
+  events.on('scanner:scan-complete', (p) => {
+    const label = p.verdict === 'aligns'
+      ? 'aligns with the framework'
+      : p.verdict === 'partial' ? 'a partial match' : 'outside the framework';
+    journeyState.logEvent({ kind: 'scan', title: `Scanned a product — ${label}`, occurredAt: new Date().toISOString() });
+  });
+  events.on('regimen:changed', (p) => {
+    if (p.reason === 'dose-edit') {
+      return;
+    }
+    const verb = p.reason === 'add'
+      ? 'Added an item to'
+      : p.reason === 'remove' ? 'Removed an item from' : 'Restored an item to';
+    journeyState.logEvent({ kind: 'regimen', title: `${verb} your regimen`, occurredAt: new Date().toISOString() });
+  });
+  events.on('goals:updated', () => {
+    journeyState.logEvent({ kind: 'milestone', title: 'Updated a goal', occurredAt: new Date().toISOString() });
   });
 }
 
@@ -284,8 +371,9 @@ function bootstrap(): void {
 
   wireRail();
   wireProfileChip();
-  mountKnowledgeDrawer();
-  wireKnowledgeKeys();
+  mountDrawers();
+  wireDrawerKeys();
+  wireJourneyAutoDerive();
 
   /*
    * Default landing: Coverage (the new view). Defer one tick so legacy JS

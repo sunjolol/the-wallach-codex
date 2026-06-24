@@ -5085,8 +5085,92 @@
     }
   }
 
+  // assets/js/src/state/goals.ts
+  var GOALS_KEY = "wallachGoals_v1";
+  var MILESTONES_KEY = "wallachMilestones_v1";
+  function listGoals() {
+    const shape = getValidated(GOALS_KEY, GoalsShapeSchema);
+    const goals = shape?.goals ?? [];
+    return [...goals].sort((a, b) => {
+      const af = a.featured ?? false;
+      const bf = b.featured ?? false;
+      if (af !== bf) {
+        return af ? -1 : 1;
+      }
+      return b.progress - a.progress;
+    });
+  }
+  function listMilestones() {
+    const shape = getValidated(MILESTONES_KEY, MilestonesShapeSchema);
+    const milestones = shape?.milestones ?? [];
+    return [...milestones].sort((a, b) => {
+      const aLocked = a.earnedAt === null;
+      const bLocked = b.earnedAt === null;
+      if (aLocked !== bLocked) {
+        return aLocked ? 1 : -1;
+      }
+      if (a.earnedAt !== null && b.earnedAt !== null) {
+        return a.earnedAt < b.earnedAt ? 1 : a.earnedAt > b.earnedAt ? -1 : 0;
+      }
+      return 0;
+    });
+  }
+
   // assets/js/src/state/journey.ts
+  var JOURNEY_EVENTS_KEY = "wallachJourneyEvents_v1";
+  var JOURNEY_CHECKINS_KEY = "wallachJourneyCheckins_v1";
+  var CROSS_REF_WINDOW_DAYS = 7;
+  var JOURNEY_RETENTION = 5e3;
   var DAY_MS = 24 * 60 * 60 * 1e3;
+  function genId(prefix) {
+    return `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`;
+  }
+  function byTsDesc(aTs, bTs) {
+    return aTs < bTs ? 1 : aTs > bTs ? -1 : 0;
+  }
+  function listEvents(sinceISO) {
+    const shape = getValidated(JOURNEY_EVENTS_KEY, JourneyEventsShapeSchema);
+    let events = shape?.events ?? [];
+    if (sinceISO !== void 0) {
+      events = events.filter((e) => e.occurredAt >= sinceISO);
+    }
+    return [...events].sort((a, b) => byTsDesc(a.occurredAt, b.occurredAt));
+  }
+  function listCheckins() {
+    const shape = getValidated(JOURNEY_CHECKINS_KEY, CheckinsShapeSchema);
+    return [...shape?.checkins ?? []].sort((a, b) => byTsDesc(a.loggedAt, b.loggedAt));
+  }
+  function logEvent(event) {
+    const eventId = genId("ev");
+    const full = { ...event, eventId };
+    const shape = getValidated(JOURNEY_EVENTS_KEY, JourneyEventsShapeSchema);
+    const all = [...shape?.events ?? [], full];
+    const pruned = all.length > JOURNEY_RETENTION ? all.slice(all.length - JOURNEY_RETENTION) : all;
+    set(JOURNEY_EVENTS_KEY, { events: pruned });
+    emit("journey:changed", { reason: "event-logged" });
+    return eventId;
+  }
+  function logCheckin(checkin) {
+    const checkinId = genId("ci");
+    const full = { ...checkin, checkinId };
+    const shape = getValidated(JOURNEY_CHECKINS_KEY, CheckinsShapeSchema);
+    const all = [...shape?.checkins ?? [], full];
+    const pruned = all.length > JOURNEY_RETENTION ? all.slice(all.length - JOURNEY_RETENTION) : all;
+    set(JOURNEY_CHECKINS_KEY, { checkins: pruned });
+    emit("journey:changed", { reason: "checkin-logged" });
+    return checkinId;
+  }
+  function crossRefForCheckin(checkin) {
+    const center = Date.parse(checkin.loggedAt);
+    if (Number.isNaN(center)) {
+      return [];
+    }
+    const windowMs = CROSS_REF_WINDOW_DAYS * DAY_MS;
+    return listEvents().filter((e) => {
+      const t = Date.parse(e.occurredAt);
+      return !Number.isNaN(t) && Math.abs(t - center) <= windowMs;
+    });
+  }
 
   // assets/data/ocr-dict-data.json
   var ocr_dict_data_default = {
@@ -7183,6 +7267,504 @@
 
   // assets/js/src/views/journey.ts
   var DAY_MS2 = 24 * 60 * 60 * 1e3;
+  function escHTML2(s) {
+    return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  }
+  function hexSerial(seed) {
+    return (seed * 2654435769 >>> 0).toString(16).toUpperCase().padStart(4, "0").slice(0, 4);
+  }
+  function relTime(iso) {
+    const t = Date.parse(iso);
+    if (Number.isNaN(t)) {
+      return "";
+    }
+    const sec = Math.max(0, Math.round((Date.now() - t) / 1e3));
+    if (sec < 60) {
+      return `${sec}S AGO`;
+    }
+    const min = Math.round(sec / 60);
+    if (min < 60) {
+      return `${min}M AGO`;
+    }
+    const hr = Math.round(min / 60);
+    if (hr < 24) {
+      return `${hr}H AGO`;
+    }
+    return `${Math.round(hr / 24)}D AGO`;
+  }
+  function dayKey(iso) {
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) {
+      return iso.slice(0, 10);
+    }
+    return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+  }
+  function dayStamp(iso) {
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) {
+      return iso;
+    }
+    const startOfDay = (x) => new Date(x.getFullYear(), x.getMonth(), x.getDate()).getTime();
+    const diffDays = Math.round((startOfDay(/* @__PURE__ */ new Date()) - startOfDay(d)) / DAY_MS2);
+    const wd = d.toLocaleDateString("en-US", { weekday: "short" }).toUpperCase();
+    const mo = d.toLocaleDateString("en-US", { month: "short" }).toUpperCase();
+    const base = `${wd} ${mo}\xB7${String(d.getDate()).padStart(2, "0")}`;
+    if (diffDays === 0) {
+      return `TODAY \xB7 ${base}`;
+    }
+    if (diffDays === 1) {
+      return `YESTERDAY \xB7 ${base}`;
+    }
+    if (diffDays > 1 && diffDays < 7) {
+      return `THIS WEEK \xB7 ${base}`;
+    }
+    return base;
+  }
+  function sevWord(n) {
+    switch (n) {
+      case 1:
+        return "MINIMAL";
+      case 2:
+        return "MILD";
+      case 3:
+        return "MODERATE";
+      case 4:
+        return "STRONG";
+      case 5:
+        return "PEAK";
+      default:
+        return "\u2014";
+    }
+  }
+  function kindMeta(kind) {
+    switch (kind) {
+      case "scan":
+        return { glyph: "\u2316", cls: "jd-tl-event--scan", label: "SCAN" };
+      case "regimen":
+        return { glyph: "\u25A4", cls: "jd-tl-event--regimen", label: "REGIMEN" };
+      case "coverage":
+        return { glyph: "\u25C9", cls: "jd-tl-event--coverage", label: "COVERAGE" };
+      case "symptom":
+        return { glyph: "!", cls: "jd-tl-event--symptom", label: "SYMPTOM" };
+      case "milestone":
+        return { glyph: "\u2726", cls: "jd-tl-event--milestone", label: "MILESTONE" };
+    }
+  }
+  function groupByDay(events) {
+    const groups = [];
+    const byKey = /* @__PURE__ */ new Map();
+    for (const ev of events) {
+      const key = dayKey(ev.occurredAt);
+      let group = byKey.get(key);
+      if (group === void 0) {
+        group = { stamp: dayStamp(ev.occurredAt), events: [] };
+        byKey.set(key, group);
+        groups.push(group);
+      }
+      group.events.push(ev);
+    }
+    return groups;
+  }
+  function renderPips(severity) {
+    const fill = severity >= 4 ? "fill-ok" : "fill-warn";
+    let out = "";
+    for (let i = 1; i <= 5; i++) {
+      out += `<span class="jd-sev-pip${i <= severity ? ` ${fill}` : ""}"></span>`;
+    }
+    return out;
+  }
+  function renderTimeline() {
+    const events = listEvents();
+    if (events.length === 0) {
+      return '<div class="jd-empty">\u2014 no events yet \xB7 scans, regimen edits, and coverage jumps land here \u2014</div>';
+    }
+    const days = groupByDay(events).map((g) => `
+    <div class="jd-tl-day">
+      <div class="jd-tl-day__stamp">${escHTML2(g.stamp)}</div>
+      ${g.events.map((ev) => {
+      const m = kindMeta(ev.kind);
+      const hasDetail = ev.detail !== void 0 && ev.detail.length > 0;
+      const hasDelta = ev.delta !== void 0 && ev.delta.length > 0;
+      return `
+        <div class="jd-tl-event ${m.cls}">
+          <div class="jd-tl-event__glyph">${escHTML2(m.glyph)}</div>
+          <div class="jd-tl-event__body">
+            <div class="jd-tl-event__meta"><span class="jd-tl-event__kind">${escHTML2(m.label)}</span> \xB7 ${escHTML2(relTime(ev.occurredAt))}</div>
+            <h4 class="jd-tl-event__title">${escHTML2(ev.title)}</h4>
+            ${hasDetail ? `<div class="jd-tl-event__detail">${escHTML2(ev.detail)}</div>` : ""}
+            ${hasDelta ? `<span class="jd-tl-event__delta">${escHTML2(ev.delta)}</span>` : ""}
+          </div>
+        </div>`;
+    }).join("")}
+    </div>`).join("");
+    return `<div class="jd-timeline">${days}</div>`;
+  }
+  function renderGoals() {
+    const goals = listGoals();
+    if (goals.length === 0) {
+      return '<div class="jd-empty">\u2014 no active goals yet \u2014</div>';
+    }
+    return goals.map((g) => {
+      const pct = Math.max(0, Math.min(100, Math.round(g.progress * 100)));
+      const unit = g.unit ?? "done";
+      const blockerList = g.blockers ?? [];
+      const blockers = blockerList.length > 0 ? `<div class="jd-goal__blockers">BLOCKED BY \xB7 ${blockerList.map((b) => `<span class="jd-goal__chip">${escHTML2(b)}</span>`).join("")}</div>` : "";
+      return `
+    <div class="jd-goal${g.featured === true ? " featured" : ""}">
+      <header class="jd-goal__head">
+        <div>
+          <div class="jd-goal__id">GOAL \xB7 <span class="ds-cipher" data-cipher-set="hexa">G\xB7${hexSerial(g.goalId.length * 7)}</span>${g.featured === true ? " \xB7 FEATURED" : ""}</div>
+          <h4 class="jd-goal__title">${escHTML2(g.title)}</h4>
+        </div>
+        <div class="jd-goal__due">DUE<strong>${escHTML2(g.targetDate)}</strong></div>
+      </header>
+      <div class="jd-goal__progress">
+        <span class="jd-goal__pct">${pct}<small>%</small></span>
+        <span class="jd-goal__counts"><strong>${escHTML2(g.numerator)}</strong> / ${escHTML2(g.denominator)} ${escHTML2(unit)}</span>
+      </div>
+      <div class="jd-goal__bar"><div class="jd-goal__bar-fill" style="width: ${pct}%;"></div></div>
+      ${blockers}
+    </div>`;
+    }).join("");
+  }
+  function renderCheckins() {
+    const entry = `
+    <button class="jd-checkin-entry" data-jd-action="quick-checkin">
+      <span class="jd-checkin-entry__glyph">+</span> QUICK CHECK-IN \u2014 HOW ARE YOU FEELING?
+      <span class="jd-checkin-entry__spacer"></span>
+      <span class="jd-checkin-entry__kbd">\u2318.</span>
+    </button>`;
+    const checkins = listCheckins();
+    if (checkins.length === 0) {
+      return `${entry}<div class="jd-empty">\u2014 no check-ins yet \xB7 they stay private on this device \u2014</div>`;
+    }
+    const cards = checkins.map((c) => {
+      const d = new Date(c.loggedAt);
+      const valid = !Number.isNaN(d.getTime());
+      const day = valid ? String(d.getDate()) : "\xB7\xB7";
+      const mo = valid ? d.toLocaleDateString("en-US", { month: "short" }).toUpperCase() : "";
+      const tags = c.tags.length > 0 ? `<div class="jd-checkin__tags">${c.tags.map((t) => `<span class="jd-checkin__tag">${escHTML2(t)}</span>`).join("")}</div>` : "";
+      const top = crossRefForCheckin(c)[0];
+      const xrefHTML = top !== void 0 ? `<div class="jd-checkin__xref">CROSS-REF \xB7 <strong>${escHTML2(top.title)}</strong></div>` : "";
+      return `
+    <div class="jd-checkin">
+      <div class="jd-checkin__date">
+        <div class="jd-checkin__date-day">${escHTML2(day)}</div>
+        <div class="jd-checkin__date-mo">${escHTML2(mo)}</div>
+      </div>
+      <div class="jd-checkin__body">
+        <div class="jd-checkin__row">
+          <div class="jd-checkin__severity">${renderPips(c.severity)}</div>
+          <span class="jd-checkin__sev"><strong>${c.severity} / 5</strong> \xB7 ${escHTML2(sevWord(c.severity))}</span>
+        </div>
+        ${c.note.length > 0 ? `<p class="jd-checkin__note">${escHTML2(c.note)}</p>` : ""}
+        ${tags}
+        ${xrefHTML}
+      </div>
+    </div>`;
+    }).join("");
+    return entry + cards;
+  }
+  function renderMilestones() {
+    const milestones = listMilestones();
+    if (milestones.length === 0) {
+      return '<div class="jd-empty">\u2014 no milestones yet \xB7 earned automatically as coverage doctrine is met \u2014</div>';
+    }
+    return milestones.map((m) => {
+      const locked = m.earnedAt === null;
+      const fresh = !locked && Date.now() - Date.parse(m.earnedAt ?? "") < DAY_MS2;
+      const cls = locked ? " locked" : fresh ? " fresh" : "";
+      const hasProgress = m.numerator !== void 0 && m.denominator !== void 0;
+      const earnedLine = locked ? hasProgress ? `PROGRESS \xB7 ${escHTML2(m.numerator)} / ${escHTML2(m.denominator)}` : "LOCKED" : `EARNED \xB7 ${escHTML2(relTime(m.earnedAt ?? ""))}`;
+      const tag = locked ? " \xB7 LOCKED" : fresh ? " \xB7 JUST EARNED" : "";
+      return `
+    <div class="jd-milestone${cls}">
+      <div class="jd-milestone__badge">${escHTML2(m.badge)}</div>
+      <div class="jd-milestone__body">
+        <div class="jd-milestone__id">${escHTML2(m.milestoneId)}${tag}</div>
+        <h4 class="jd-milestone__title">${escHTML2(m.title)}</h4>
+        <div class="jd-milestone__doctrine">DOCTRINE \xB7 <strong>${escHTML2(m.doctrineRef)}</strong></div>
+        <div class="jd-milestone__earned">${earnedLine}</div>
+      </div>
+    </div>`;
+    }).join("");
+  }
+  function renderTab(tab) {
+    switch (tab) {
+      case "timeline":
+        return renderTimeline();
+      case "goals":
+        return renderGoals();
+      case "checkins":
+        return renderCheckins();
+      case "milestones":
+        return renderMilestones();
+    }
+  }
+  function renderEventForm() {
+    return `
+    <div class="jd-form" data-jd-form="event">
+      <div class="jd-form__title">LOG EVENT</div>
+      <label class="jd-form__row">
+        <span class="jd-form__label">KIND</span>
+        <select class="jd-form__input" data-jd-field="kind">
+          <option value="regimen">Regimen</option>
+          <option value="scan">Scan</option>
+          <option value="coverage">Coverage</option>
+          <option value="symptom">Symptom</option>
+          <option value="milestone">Milestone</option>
+        </select>
+      </label>
+      <label class="jd-form__row">
+        <span class="jd-form__label">TITLE</span>
+        <input class="jd-form__input" data-jd-field="title" type="text" maxlength="200" placeholder="What happened?" />
+      </label>
+      <label class="jd-form__row">
+        <span class="jd-form__label">DETAIL</span>
+        <input class="jd-form__input" data-jd-field="detail" type="text" maxlength="2000" placeholder="Optional context" />
+      </label>
+      <label class="jd-form__row">
+        <span class="jd-form__label">DELTA</span>
+        <input class="jd-form__input" data-jd-field="delta" type="text" maxlength="80" placeholder="e.g. +35 trace" />
+      </label>
+      <div class="jd-form__err" data-jd-field="err"></div>
+      <div class="jd-form__actions">
+        <button class="jd-action jd-action--primary" data-jd-action="event-save">SAVE</button>
+        <button class="jd-action" data-jd-action="form-cancel">CANCEL</button>
+      </div>
+    </div>`;
+  }
+  function renderCheckinForm() {
+    return `
+    <div class="jd-form" data-jd-form="checkin">
+      <div class="jd-form__title">QUICK CHECK-IN</div>
+      <label class="jd-form__row">
+        <span class="jd-form__label">FEELING</span>
+        <select class="jd-form__input" data-jd-field="severity">
+          <option value="5">5 \xB7 Peak</option>
+          <option value="4">4 \xB7 Strong</option>
+          <option value="3" selected>3 \xB7 Moderate</option>
+          <option value="2">2 \xB7 Mild</option>
+          <option value="1">1 \xB7 Minimal</option>
+        </select>
+      </label>
+      <label class="jd-form__row">
+        <span class="jd-form__label">NOTE</span>
+        <textarea class="jd-form__input jd-form__input--area" data-jd-field="note" maxlength="2000" placeholder="How are you feeling?"></textarea>
+      </label>
+      <label class="jd-form__row">
+        <span class="jd-form__label">TAGS</span>
+        <input class="jd-form__input" data-jd-field="tags" type="text" maxlength="200" placeholder="comma,separated" />
+      </label>
+      <div class="jd-form__err" data-jd-field="err"></div>
+      <div class="jd-form__actions">
+        <button class="jd-action jd-action--primary" data-jd-action="checkin-save">SAVE</button>
+        <button class="jd-action" data-jd-action="form-cancel">CANCEL</button>
+      </div>
+    </div>`;
+  }
+  function renderShell(activeTab, formMode) {
+    const events = listEvents();
+    const goals = listGoals();
+    const checkins = listCheckins();
+    const milestones = listMilestones();
+    const earned = milestones.filter((m) => m.earnedAt !== null).length;
+    const tabs = [
+      { id: "timeline", label: "Timeline", count: `${events.length} EVENTS` },
+      { id: "goals", label: "Goals", count: `${goals.length} ACTIVE` },
+      { id: "checkins", label: "Check-ins", count: `${checkins.length} LOGGED` },
+      { id: "milestones", label: "Milestones", count: `${earned} / ${milestones.length}` }
+    ];
+    const tabsHTML = tabs.map((t) => `
+    <button class="jd-tab${t.id === activeTab ? " active" : ""}" data-jd-tab="${t.id}">
+      <span>${escHTML2(t.label)}</span>
+      <span class="jd-tab__count">${escHTML2(t.count)}</span>
+    </button>`).join("");
+    let formHTML = "";
+    if (formMode === "event") {
+      formHTML = renderEventForm();
+    } else if (formMode === "checkin") {
+      formHTML = renderCheckinForm();
+    }
+    return `
+    <span class="ds-scan-line" aria-hidden="true"></span>
+    <header class="jd-head">
+      <div>
+        <div class="jd-eyebrow"><span class="pulse-dot"></span>DRAWER \xB7 <span class="ds-cipher" data-cipher-set="hexa">JN\xB7${hexSerial(activeTab.length * 7)}</span></div>
+        <h2 class="jd-title">Journey</h2>
+        <div class="jd-sub">// timeline \xB7 goals \xB7 check-ins \xB7 milestones</div>
+      </div>
+      <button class="jd-close" data-jd-action="close" title="Close (Esc)">\xD7</button>
+    </header>
+    <div class="jd-tabs">${tabsHTML}</div>
+    <div class="jd-search">
+      <span class="jd-search-icon">\u2315</span>
+      <input class="jd-search-input" type="text" placeholder="SEARCH ${escHTML2(activeTab.toUpperCase())}\u2026" />
+      <span class="jd-search-kbd">/</span>
+    </div>
+    <div class="jd-body">${formHTML}${renderTab(activeTab)}</div>
+    <footer class="jd-footer">
+      <button class="jd-action jd-action--primary" data-jd-action="log-event"><span class="jd-action__glyph">+</span>LOG EVENT</button>
+      <button class="jd-action" data-jd-action="pin"><span class="jd-action__glyph">\u2295</span>PIN</button>
+      <button class="jd-action" data-jd-action="export"><span class="jd-action__glyph">\u21E3</span>EXPORT</button>
+      <span class="jd-action__spacer"></span>
+      <button class="jd-action jd-action--expand" data-jd-action="expand"><span class="jd-action__glyph">\u2922</span>EXPAND</button>
+    </footer>`;
+  }
+  function normalizeKind(raw) {
+    const parsed = EventKindSchema.safeParse(raw);
+    return parsed.success ? parsed.data : "regimen";
+  }
+  function clampSeverity(raw) {
+    const n = Math.round(Number(raw));
+    const clamped = Number.isFinite(n) ? Math.min(5, Math.max(1, n)) : 3;
+    return clamped;
+  }
+  function mount2(container) {
+    let isOpen = false;
+    let isExpanded = false;
+    let activeTab = "timeline";
+    let formMode = null;
+    const render = () => {
+      container.innerHTML = renderShell(activeTab, formMode);
+    };
+    const open = () => {
+      if (isOpen) {
+        return;
+      }
+      isOpen = true;
+      container.classList.add("jd-open");
+      render();
+    };
+    const close = () => {
+      if (!isOpen) {
+        return;
+      }
+      isOpen = false;
+      isExpanded = false;
+      formMode = null;
+      container.classList.remove("jd-open", "jd-expanded");
+      container.innerHTML = "";
+    };
+    const toggle = () => {
+      if (isOpen) {
+        close();
+      } else {
+        open();
+      }
+    };
+    const toggleExpanded = () => {
+      isExpanded = !isExpanded;
+      container.classList.toggle("jd-expanded", isExpanded);
+    };
+    const submitEvent = () => {
+      const kindEl = container.querySelector('[data-jd-field="kind"]');
+      const titleEl = container.querySelector('[data-jd-field="title"]');
+      const detailEl = container.querySelector('[data-jd-field="detail"]');
+      const deltaEl = container.querySelector('[data-jd-field="delta"]');
+      const errEl = container.querySelector('[data-jd-field="err"]');
+      const title = (titleEl?.value ?? "").trim().slice(0, 200);
+      if (title.length === 0) {
+        if (errEl !== null) {
+          errEl.textContent = "Title is required.";
+        }
+        return;
+      }
+      const detail = (detailEl?.value ?? "").trim().slice(0, 2e3);
+      const delta = (deltaEl?.value ?? "").trim().slice(0, 80);
+      const event = {
+        kind: normalizeKind(kindEl?.value),
+        title,
+        occurredAt: (/* @__PURE__ */ new Date()).toISOString(),
+        ...detail.length > 0 ? { detail } : {},
+        ...delta.length > 0 ? { delta } : {}
+      };
+      formMode = null;
+      logEvent(event);
+      render();
+    };
+    const submitCheckin = () => {
+      const sevEl = container.querySelector('[data-jd-field="severity"]');
+      const noteEl = container.querySelector('[data-jd-field="note"]');
+      const tagsEl = container.querySelector('[data-jd-field="tags"]');
+      const note = (noteEl?.value ?? "").trim().slice(0, 2e3);
+      const tags = (tagsEl?.value ?? "").split(",").map((t) => t.trim().slice(0, 40)).filter((t) => t.length > 0).slice(0, 20);
+      formMode = null;
+      logCheckin({ severity: clampSeverity(sevEl?.value), note, tags, loggedAt: (/* @__PURE__ */ new Date()).toISOString() });
+      render();
+    };
+    const clickHandler = (ev) => {
+      const target = ev.target;
+      if (target === null) {
+        return;
+      }
+      const tabBtn = target.closest("[data-jd-tab]");
+      if (tabBtn !== null) {
+        const next = tabBtn.getAttribute("data-jd-tab");
+        if (next !== null && next !== activeTab) {
+          activeTab = next;
+          formMode = null;
+          render();
+        }
+        return;
+      }
+      const actionEl = target.closest("[data-jd-action]");
+      if (actionEl === null) {
+        return;
+      }
+      const action = actionEl.getAttribute("data-jd-action");
+      if (action === null) {
+        return;
+      }
+      switch (action) {
+        case "close":
+          close();
+          break;
+        case "expand":
+          toggleExpanded();
+          break;
+        case "log-event":
+          formMode = "event";
+          render();
+          break;
+        case "quick-checkin":
+          activeTab = "checkins";
+          formMode = "checkin";
+          render();
+          break;
+        case "event-save":
+          submitEvent();
+          break;
+        case "checkin-save":
+          submitCheckin();
+          break;
+        case "form-cancel":
+          formMode = null;
+          render();
+          break;
+        default:
+          break;
+      }
+    };
+    container.addEventListener("click", clickHandler);
+    on("journey:changed", () => {
+      if (isOpen) {
+        render();
+      }
+    });
+    on("goals:updated", () => {
+      if (isOpen) {
+        render();
+      }
+    });
+    return {
+      open,
+      close,
+      toggle,
+      toggleExpanded,
+      isOpen: () => isOpen
+    };
+  }
 
   // assets/js/src/views/knowledge.ts
   function readEssentials() {
@@ -7249,19 +7831,19 @@
     { id: "DOCT\xB706", title: "\xA731 Chokepoint Discipline (Cross-Surface Sync)", featured: false, body: "Every regimen mutation flows through one of 5 named chokepoint helpers. Each fires triggerRegimenRerender so all subscribed surfaces re-render. State drift is structurally impossible by module design, not vigilance.", cite: "CITED \xB7 Round 150 doctrine \xB7 enforced by check_regimen_state_mutation_routing" },
     { id: "DOCT\xB707", title: "Eden Sealed-Canonical (User-Only-Writer)", featured: false, body: "Sealed canonical files (design-system.css, eden corpus) carry hash anchors. Agent reads freely, never writes after sealing time. Drift is detected at startup; reads from drifted files fail loudly.", cite: "CITED \xB7 Round 157 \xB7 enforced by eden_hash_integrity + write_protection invariants" }
   ];
-  function escHTML2(s) {
+  function escHTML3(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
-  function hexSerial(seed) {
+  function hexSerial2(seed) {
     return (seed * 2654435769 >>> 0).toString(16).toUpperCase().padStart(4, "0").slice(0, 4);
   }
   function renderCorpusTab() {
     const booksHTML = BOOKS.map((b) => `
     <div class="book-row">
-      <div class="book-row__spine"><span>${escHTML2(b.id)}</span></div>
+      <div class="book-row__spine"><span>${escHTML3(b.id)}</span></div>
       <div class="book-row__body">
-        <h4 class="book-row__title">${escHTML2(b.title)}</h4>
-        <div class="book-row__meta">${escHTML2(b.author)}${b.chapters > 0 ? ` \xB7 ${b.chapters} CHAPTERS` : ""} \xB7 ${b.cites} CITES</div>
+        <h4 class="book-row__title">${escHTML3(b.title)}</h4>
+        <div class="book-row__meta">${escHTML3(b.author)}${b.chapters > 0 ? ` \xB7 ${b.chapters} CHAPTERS` : ""} \xB7 ${b.cites} CITES</div>
       </div>
       <div class="book-row__count">${b.cites}<small>cites</small></div>
     </div>`).join("");
@@ -7280,10 +7862,10 @@
       return '<div class="kd-empty">\u2014 essentials data not loaded \u2014</div>';
     }
     const tilesHTML = essentials.slice(0, 60).map((e) => `
-    <div class="essential-tile" data-essential="${escHTML2(e.name)}">
-      <div class="essential-tile__sym">${escHTML2(e.name.charAt(0).toUpperCase())}</div>
-      <div class="essential-tile__name">${escHTML2(e.name)}</div>
-      <div class="essential-tile__meta">${escHTML2(e.category)}</div>
+    <div class="essential-tile" data-essential="${escHTML3(e.name)}">
+      <div class="essential-tile__sym">${escHTML3(e.name.charAt(0).toUpperCase())}</div>
+      <div class="essential-tile__name">${escHTML3(e.name)}</div>
+      <div class="essential-tile__meta">${escHTML3(e.category)}</div>
     </div>`).join("");
     return `
     <div class="section-head">ALL ${essentials.length} ESSENTIALS \xB7 CLICK TO DEEP-DIVE</div>
@@ -7297,10 +7879,10 @@
     }
     const productsHTML = products.slice(0, 30).map((p) => `
     <div class="product-row">
-      <div class="product-row__icon">${escHTML2((p.canonical_name ?? p.name ?? "?").charAt(0).toUpperCase())}</div>
+      <div class="product-row__icon">${escHTML3((p.canonical_name ?? p.name ?? "?").charAt(0).toUpperCase())}</div>
       <div class="product-row__body">
-        <h4 class="product-row__name">${escHTML2(p.canonical_name ?? p.name ?? "(unnamed)")}</h4>
-        <div class="product-row__meta">${escHTML2(p.brand ?? "YGY")} \xB7 ${p.nutrients?.length ?? 0} NUTRIENTS LISTED</div>
+        <h4 class="product-row__name">${escHTML3(p.canonical_name ?? p.name ?? "(unnamed)")}</h4>
+        <div class="product-row__meta">${escHTML3(p.brand ?? "YGY")} \xB7 ${p.nutrients?.length ?? 0} NUTRIENTS LISTED</div>
       </div>
       <span class="product-row__verdict product-row__verdict--ok">VAULT</span>
     </div>`).join("");
@@ -7312,13 +7894,13 @@
   function renderDoctrineTab() {
     return DOCTRINES.map((d) => `
     <div class="doctrine-card${d.featured ? " featured" : ""}">
-      <div class="doctrine-card__id">${escHTML2(d.id)}${d.featured ? " \xB7 CORNERSTONE" : ""}</div>
-      <h4 class="doctrine-card__title">${escHTML2(d.title)}</h4>
-      <p class="doctrine-card__body">${escHTML2(d.body)}</p>
-      <div class="doctrine-card__cite">${escHTML2(d.cite)}</div>
+      <div class="doctrine-card__id">${escHTML3(d.id)}${d.featured ? " \xB7 CORNERSTONE" : ""}</div>
+      <h4 class="doctrine-card__title">${escHTML3(d.title)}</h4>
+      <p class="doctrine-card__body">${escHTML3(d.body)}</p>
+      <div class="doctrine-card__cite">${escHTML3(d.cite)}</div>
     </div>`).join("");
   }
-  function renderTab(tab) {
+  function renderTab2(tab) {
     switch (tab) {
       case "corpus":
         return renderCorpusTab();
@@ -7330,7 +7912,7 @@
         return renderDoctrineTab();
     }
   }
-  function renderShell(activeTab) {
+  function renderShell2(activeTab) {
     const essentialsCount = readEssentials().length;
     const productsCount = readProducts().length;
     const tabs = [
@@ -7341,14 +7923,14 @@
     ];
     const tabsHTML = tabs.map((t) => `
     <button class="kd-tab${t.id === activeTab ? " active" : ""}" data-kd-tab="${t.id}">
-      <span>${escHTML2(t.label)}</span>
-      <span class="kd-tab__count">${escHTML2(t.count)}</span>
+      <span>${escHTML3(t.label)}</span>
+      <span class="kd-tab__count">${escHTML3(t.count)}</span>
     </button>`).join("");
     return `
     <span class="ds-scan-line" aria-hidden="true"></span>
     <header class="kd-head">
       <div>
-        <div class="kd-eyebrow"><span class="pulse-dot"></span>DRAWER \xB7 <span class="ds-cipher" data-cipher-set="hexa">KN\xB7${hexSerial(activeTab.length * 7)}</span></div>
+        <div class="kd-eyebrow"><span class="pulse-dot"></span>DRAWER \xB7 <span class="ds-cipher" data-cipher-set="hexa">KN\xB7${hexSerial2(activeTab.length * 7)}</span></div>
         <h2 class="kd-title">Knowledge</h2>
         <div class="kd-sub">// the corpus, the essentials, the products, the doctrine</div>
       </div>
@@ -7360,7 +7942,7 @@
       <input class="kd-search-input" type="text" placeholder="SEARCH ${activeTab.toUpperCase()}\u2026" />
       <span class="kd-search-kbd">/</span>
     </div>
-    <div class="kd-body">${renderTab(activeTab)}</div>
+    <div class="kd-body">${renderTab2(activeTab)}</div>
     <footer class="kd-footer">
       <button class="kd-action" data-kd-action="pin"><span class="kd-action__glyph">\u2295</span>PIN</button>
       <button class="kd-action" data-kd-action="share"><span class="kd-action__glyph">\u2197</span>SHARE</button>
@@ -7369,12 +7951,12 @@
       <button class="kd-action kd-action--expand" data-kd-action="expand"><span class="kd-action__glyph">\u2922</span>EXPAND</button>
     </footer>`;
   }
-  function mount2(container) {
+  function mount3(container) {
     let isOpen = false;
     let isExpanded = false;
     let activeTab = "corpus";
     const render = () => {
-      container.innerHTML = renderShell(activeTab);
+      container.innerHTML = renderShell2(activeTab);
     };
     const open = () => {
       if (isOpen) {
@@ -7446,7 +8028,7 @@
   }
 
   // assets/data/creators-log-embed.json
-  var creators_log_embed_default = [{ id: "lg_mqq28u45_9emebd", ts: "2026-06-23T03:04:02.933502+00:00", surface: "tools", kind: "milestone", summary: "Creator's Log file-mirror created \u2014 chronicle/creators-log.jsonl + tools/creators_log.py make round-close step 5 CLI-fireable; the \xA700 audit trail now lives in the repo as a committed teaching record", detail: "In-app log() (state/log.ts) stays localStorage-only until the Phase-2 boot-merge (L2) embeds these entries into the Profile panel. Writes route through safe_write (\xA717). Validated by the new creators_log_well_formed invariant." }, { id: "lg_mqq2b45f_yeupqe", ts: "2026-06-23T03:05:49.251429+00:00", surface: "tools", kind: "round-close", summary: "Phase 2 L1 shipped: Creator's-Log file-mirror + creators_log_well_formed invariant (board 20\u219221). Round-close step 5 is now CLI-fireable \u2014 this entry is the proof.", detail: "Files: tools/creators_log.py, chronicle/creators-log.jsonl, tools/invariants.py. Verified: creators_log verify 1/1 clean; invariants 21/21. Next: L2 Profile boot-merge, then Journey J1-J4.", metadata: { chunk: "L1", board: "21/21", files: ["tools/creators_log.py", "chronicle/creators-log.jsonl", "tools/invariants.py"] } }, { id: "lg_mqq2g1mt_3ckyms", ts: "2026-06-23T03:09:39.269829+00:00", surface: "meta", kind: "session-end", summary: "Session checkpoint: cleanup A-C4 + logging-doctrine codified + Phase-2 L1 (Creator's-Log mirror, board 21/21). Handoff refreshed. Next: L2 Profile boot-merge \u2192 Journey J1-J4 \u2192 Palette.", detail: "9 commits pushed c2826e9..(this). Every chunk build>test>log>committed. Creator's Log now CLI-fireable; this is a session-end entry through the live tool." }, { id: "lg_mqq30yww_gejq56", ts: "2026-06-23T03:25:55.520134+00:00", surface: "tools", kind: "design-decision", summary: "Codified the two-layer logging model + the Creator's Log sacred covenant (append-only, never deleted even under broad delete-authorization, always truthful/complete, fires per-chunk). Audit found sacredness + never-skip not yet machine-enforced.", detail: "Doctrine in .claude/rules/logging-doctrine.md. 3 enforcement guards proposed (git-anchored append-only invariant, round-close firing check, boundary delete-guard) pending Luneth's approval of the ledger file/folder structure." }, { id: "lg_mqq3i857_1qlldw", ts: "2026-06-23T03:39:20.635214+00:00", surface: "tools", kind: "milestone", summary: "Sacred Creator's Log: moved to chronicle/creators-log/ (log.jsonl + generated LOG.md + README) and added the covenant's teeth \u2014 git-anchored append-only invariant, digest-sync invariant, shell delete-guard, and a never-skip round-close hard-block. Board 21\u219223.", detail: "The append-only invariant makes deleting committed entries un-shippable; the firing-check makes a skipped round-close entry un-closeable. Tightened the delete-guard after a self-inflicted prose false-positive (good stress test)." }, { id: "lg_mqq3lhtx_zlch6t", ts: "2026-06-23T03:41:53.157429+00:00", surface: "tools", kind: "invariant-pass", summary: "Teeth-test PROVEN: creators_log_append_only catches both deletion (truncate 5\u21921) and mutation of committed entries; git restores; board 23/23. The sacred-log guarantee is structural, not aspirational.", detail: "Simulated 'delete entries for efficiency' via safe_write truncate \u2192 invariant fired RED 'SACRED LEDGER TRUNCATED'; in-place edit \u2192 'SACRED LEDGER MUTATED at entry 1'; git checkout restored. try/finally guaranteed recovery." }, { id: "lg_mqq52ira_tnd1aj", ts: "2026-06-23T04:23:07.126050+00:00", surface: "tools", kind: "round-close", summary: "Chunk H: hardened the sacred ledger per the Opus-4.8 audit \u2014 closed 3 enforcement gaps (4a digest spoof, 5a delete-guard dir hole, 5b silent committed-deletion + silent fail-open). All re-proven; board 23/23.", detail: "4a: validate_entry rejects newline summaries + render_digest escapes a leading #/> and flattens newlines so the human digest can't be made to show a fake entry (the jsonl was already injection-proof \u2014 json.dumps escaping, proven). 5a: pre_bash_guard now blocks the whole chronicle/creators-log dir + any child + 'rm -rf chronicle' + a dir mv, while non-sacred deletes still pass. 5b: a COMMITTED deletion (ledger gone from HEAD with prior history) is now a hard RED 'SACRED LEDGER REMOVED FROM HEAD'; git-unavailable now prints a loud UNVERIFIED warning but stays fail-open per Luneth's 'visible warning, not blocking' choice. Verified: invariants 23/23, verify 6/0, digest byte-identical, build OK 290.9 KB, every fix re-proven against real code (incl. the real append_only on an isolated temp git repo). The req-3 truthfulness ceiling stands by design \u2014 next feature (L2 dashboard Creator's Log) is Luneth's visual truth-verification layer; then navigability archive-tree." }, { id: "lg_mqq5oreo_sft46m", ts: "2026-06-23T04:40:24.768965+00:00", surface: "docs", kind: "round-close", summary: "README audit: purged retired-system references (tacitus/cura/vision/aegis/brain) from all 16 READMEs and corrected inaccuracies. 5 fixed, 11 verified clean, 0 dead tokens remain; board 23/23.", detail: "Fixed: root README (Cura/Aegis/Tacitus blockquote -> Eden/Chronicle/Sunjo + added creators-log/ to glossary); chronicle/README (Layout was missing creators-log/ + 3 files; added them + a two-layers section); chronicle/evals/README ('Brain Evaluations' -> historical agent-prompt-era artifacts, preserved not resurrected); tools/README (documented only 1 of ~20 tools + cited brain rules -> full accurate inventory by group, each line verified against the script docstring); fonts/README ('drop these in' -> already in-housed). Verified clean: eden, labels, transcripts, wallach-refresh, canaries, design-wisdom (+subdirs), youngevity-product-notes. Ignored false positives: curation/curated/accuracy (substring 'cura') + the word 'vision'. FLAGGED for Luneth (operating contract, not auto-touched): CLAUDE.md glossary still lists Cura+Aegis as current systems + a Tacitus guard; sunjo plan line 308 lists them (captured history). Historical docs (CHANGELOG/versions/saga/contradictions) intentionally keep period-accurate refs." }, { id: "lg_mqq5x105_9ui544", ts: "2026-06-23T04:46:50.453734+00:00", surface: "tools", kind: "round-close", summary: "Audit follow-ups: retired Cura/Aegis from the CLAUDE.md glossary (slimmed the Tacitus guard) + fixed a pre_bash_guard false-positive where the push-force/reset-hard regexes spanned a separator into an unrelated short-flag. Board 23/23.", detail: "(1) CLAUDE.md glossary dropped the Cura + Aegis entries (retired names; the concepts live in engineering-doctrine.md / the app and appear in no live rule file); the Tacitus line slimmed to a tight do-not-re-introduce guard; Eden + Chronicle stay. (2) pre_bash_guard's push-force and reset-hard checks used .*? with re.DOTALL and matched across command separators, so a 'push-then-unrelated-shortflag' compound was wrongly blocked (hit live when committing the README audit). Scoped both to a single command segment ([^newline;amp;pipe]*?), matching the rm-guard pattern. Proven via a file-based hook probe (trigger phrases kept out of the bash line): the push-then-cleanup and commit-then-push compounds now ALLOW; genuine force/hard flags still BLOCK; force-with-lease ALLOWs; the 5a sacred-ledger guard still BLOCKs (no regression). The two non-README loose ends from the README audit; both user-approved. Next: Feature L2." }, { id: "lg_mqq6gim9_bvrj39", ts: "2026-06-23T05:01:59.745384+00:00", surface: "profile", kind: "round-close", summary: "Phase 2 L2 shipped: the dashboard Creator's Log. The CLI ledger is now inlined at build time and boot-merged with localStorage so the Profile panel shows both CLI- and in-app-fired entries \u2014 Luneth's visual truth-verification layer. Board 23\u219224.", detail: "Closes the in-app half (L1 was the CLI mirror). creators_log.py gains write_embed() (every append/digest regenerates dashboard/assets/data/creators-log-embed.json from log.jsonl via safe_write \u2014 sibling of LOG.md; log.jsonl stays the single source of truth). core/schemas/log.ts adds LogEmbedSchema; state/log.ts imports the embed (esbuild JSON import), validates once at the boundary, and getEntries() boot-merges embed + LS deduped by id (embed canonical wins), newest-first. The existing Profile panel renders getEntries() unchanged, so it now shows the unified log. New invariant creators_log_embed_synced (warning, truth-anchored: json.loads(embed) == read_entries()) catches a stale build / hand-edit. Verified: tsc strict + esbuild OK (298.9 KB); invariants 24/24; render_probe_profile.js PASS \u2014 empty localStorage still renders all embedded CLI entries (count == embed == subheader), a real ROUND CLOSE surfaces, Esc closes, 0 page errors. Deferred: cap the embed to recent-N as the ledger grows (Chunk N). Next: navigability archive-tree." }, { id: "lg_mqq75oel_2m9xyo", ts: "2026-06-23T05:21:33.645862+00:00", surface: "creators-log", kind: "round-close", summary: "Chunk N shipped: navigability archive-tree. The Creator's Log now has a month-by-month INDEX.md + per-month digests/ holding the full history, while LOG.md becomes a recent-window view \u2014 so it stays scannable as it grows over years. Board 24\u219225.", detail: "Luneth's 'archive tree + index' choice. log.jsonl stays the unsharded canonical spine (+ git-prefix anchor); the derived human views gain structure. creators_log.py adds _render_block (shared renderer), render_index/write_index (INDEX.md month map: count + kind tally + digest link), month_of/month_set/render_month/write_months (digests/YYYY-MM.md, full entries), a recent-window cap on render_digest (DIGEST_RECENT=200, header \u2192 INDEX.md), and regenerate_all() called from append/digest so LOG.md + embed + INDEX + monthly digests stay byte-fresh together. New invariant creators_log_archive_synced (warning) is truth-anchored: INDEX.md == render_index() and each digests/*.md == render_month(ym), month set from log.jsonl, no missing/extra files \u2014 this is where full-history human fidelity is now proven (digest_synced only covers LOG.md's window). README documents the new layout + the embed/archive invariants. Verified: invariants 25/25; INDEX + digests/2026-06.md render cleanly (10 entries, full detail, back-links); LOG.md recent-window matches. Deferred: cap the L2 embed to recent-N when it grows large. Next: Journey J1-J4, then command palette." }, { id: "lg_mqq95orc_m6l3l3", ts: "2026-06-23T06:17:33.336269+00:00", surface: "journey", kind: "round-close", summary: "Journey J1 shipped: the state engine. Replaced the throwing scaffold with a real \xA731 events ledger + private check-ins + a \xB17-day cross-ref walker, all Zod-validated. No fake seed \u2014 fills from real activity. Board 25/25; engine functionally smoke-tested.", detail: "First of ~4 Journey chunks (J1 engine \u2192 J2 view \u2192 J3 wiring \u2192 J4 probe). New core/schemas/journey.ts (EventKind/JourneyEvent/Checkin + storage shapes, types inferred). state/journey.ts: listEvents(sinceISO?)/listCheckins() read via getValidated; logEvent()/logCheckin() are the only \xA731 writers to wallachJourneyEvents_v1/wallachJourneyCheckins_v1 (auto id, FIFO cap 5000, emit journey:changed); crossRefForCheckin() = the \xB17-day local correlation walker (check-ins stay private, never exported). core/events.ts: journey:event-logged \u2192 journey:changed {reason}. Verified: tsc strict + esbuild OK; invariants 25/25; esbuild-bundled functional smoke vs a localStorage shim PASS (persistence, newest-first, sinceISO, cross-ref include/exclude, corrupt-LS-empty). No render probe yet (pure state; view verified at J4). Next: J2 the 4-tab drawer view." }, { id: "lg_mqqa4z6g_mshacn", ts: "2026-06-23T06:44:59.800202+00:00", surface: "genesis", kind: "milestone", summary: "Genesis boot system shipped: typing 'genesis' now runs tools/genesis.py \u2014 a one-command session boot (banner + scoreboard + the live pass-off) that hands a fresh session past depth instantly + ends with an action question. Renamed sunjo/ \u2192 genesis/.", detail: "Formalizes the per-session catch-up rather than reinventing it: chronicle/next-chunk.md stays the SINGLE live rolling pass-off (no parallel file); genesis.py reads it + runs the integrity scoreboard (invariants), build-parity, last Creator's Log entry, build-log tail, and prints the next-chunk LATEST\u2192NEXT-ORDER block, closing with a cue to ask 'resume X or redirect?'. sunjo/ \u2192 genesis/ via git mv (history preserved): the folder now houses the boot system + the archived original Cowork pass-off (01/02); genesis/README documents the two-pass-off model. CLAUDE.md Genesis section rewritten (net -1 line, 195/200) to point at the command + mandate the action question; all LIVE sunjo path refs \u2192 genesis/ (history left truthful). Mechanically safe (no tool/hook/invariant referenced sunjo). Verified: genesis.py boots cleanly; invariants 25/25. Next: Journey J2." }, { id: "lg_mqqqtit6_5uctcj", ts: "2026-06-23T14:31:58.842948+00:00", surface: "journey", kind: "round-close", summary: "Journey J2 \u2014 views/journey.ts 4-tab drawer renderer + LOG EVENT/check-in forms; mirrors knowledge.ts, reads only via state layer, zero inline literals. Also implemented read side of state/goals.ts (+ new core/schemas/goals.ts). Board 25/25, probes pass.", detail: "Replaced the throwing views/journey.ts scaffold with a real renderer using self-namespaced jd-* classes (parallel to Knowledge's kd-*; the v3 proposal's generic .timeline/.goal-card/.milestone would collide with legacy-dashboard.css \u2014 jd-* CSS is the Round-6 polish pass). Timeline groups events into calendar-day buckets (Map, newest-first, kind->glyph/accent, relative-time + delta); Goals shows progress bar + blockers + featured; Check-ins (private) renders 5-pip severity + tags + the +/-7-day cross-ref as 'CROSS-REF \xB7 <top event>'; Milestones distinguishes earned/locked/fresh-under-24h. The footer LOG EVENT primary + the Check-ins quick-entry open inline forms calling journey.logEvent()/logCheckin() with bounded inputs (maxlength + slice + clampSeverity + EventKindSchema.safeParse). To avoid crashing on the still-scaffolded goals state, implemented its READ side: new core/schemas/goals.ts (GoalSchema/MilestoneSchema + LS shapes, .optional() not .default() to keep input==output types) + Zod-validated listGoals/listMilestones (bad LS -> empty); evaluateMilestoneTriggers stays a deferred throw. Verified: tsc strict + esbuild OK (main.js 307.6 KB; journey code is tree-shaken from the runtime bundle until J3 calls mount() \u2014 tsc is the compile gate); eslint clean on all 4 files; invariants 25/25 (0 new reds); coverage + knowledge render probes PASS. No journey render probe yet \u2014 the drawer mount is J3 and the visual probe is J4 (honesty rule). NEXT: J3 \u2014 shared K+J mount/toggle/keys helper + auto-derive subscriptions." }, { id: "lg_mqqsqygj_fmu96a", ts: "2026-06-23T11:25:58.387680-04:00", surface: "tooling", kind: "design-decision", summary: "Creator's Log timestamps now store machine-LOCAL time (auto-follow ET->CT + DST) instead of UTC. _now_iso uses datetime.now().astimezone(); _fmt_ts derives the zone from the stored offset. Historical UTC entries stay UTC (immutable ledger).", detail: "Luneth flagged that log times read in UTC (an entry made at 10:31 EDT showed as 14:31 / 06:44), confusing against his local clock, and that he's moving ET->CT next week. Chose auto-follow-local over hard-pinning CT so it adapts to the move + DST with zero maintenance. Two-line change in tools/creators_log.py: _now_iso() now returns datetime.now().astimezone().isoformat() (local-aware, carries the offset); _fmt_ts() derives the zone label from the parsed offset (%Z) instead of hardcoding 'UTC'. The slice-based renderers (genesis last-log line, Profile panel formatTs) need no change \u2014 they read the stored wall-clock directly, so new entries show local automatically. The ~13 pre-change entries stored +00:00 stay UTC (the ledger is append-only/immutable; never rewriting history). This entry is the first stored in local time." }, { id: "lg_mqqt86uf_88lvtm", ts: "2026-06-23T11:39:22.407988-04:00", surface: "discipline", kind: "design-decision", summary: "Codified the visual/human-verification gate (.claude/rules/visual-verification.md + CLAUDE.md row): for any page/visual/UX work Luneth is the test gate \u2014 build a chunk to 'done', STOP, he visually verifies, only then continue. Never chain past a STOP; certainty != truth.", detail: "Luneth elevated the per-page build method to a non-negotiable rule. Automated gates (build/invariants/probes) prove only the functional layer; the subjective/visual layer can ONLY be verified by his eyes. The discipline: build in phases (respect resource usage) -> build to 'done' or one verifiable chunk -> STOP -> he visually verifies/course-corrects/adds/changes mind -> only then log + continue. Never advance past a STOP without his go-ahead; never claim he verified what he didn't; never treat agent-certainty as truth. This is build>test>log>repeat with Luneth as tester, and the guardrail that would have caught the unstyled-drawer drift. Documented as a behavioral discipline (like the source-rule turn-gap), not a Python invariant; the structural guarantee is that visual chunks END at a STOP by default. NEXT: Coverage as first gold-standard page." }, { id: "lg_mqqxdip7_mg7c11", ts: "2026-06-23T13:35:29.515119-04:00", surface: "coverage", kind: "milestone", summary: "Coverage Phase 1 \u2014 shell now ~pixel-exact to v3.2 (Luneth verified). Fixed via new tools/style_diff.js: legacy 15px root + bare header/footer selectors bleeding into the .app-* shell; in-housed the missing Chakra Petch/Bruno Ace fonts. Visual-match lesson codified.", detail: "First gold-standard surface phase under the visual-verification gate (build -> STOP -> Luneth verifies -> commit). An objective computed-style diff (new tools/style_diff.js, live shell vs the v3.2 mockup) drove it from ~50 diffs to 0 meaningful, replacing eyeballing. Two systemic root causes: (1) legacy-dashboard.css html,body{font-size:15px} shrank the whole rem UI to 93.75% -> removed, 16px root re-scales the entire coverage page; (2) legacy bare element selectors (header/footer/html,body) bled into the new .app-* shell (14px radius, teal shadow+border, a header::before veil over .app-topbar hiding its accents + fading the search, teal text) -> scoped to #legacy-workspace-host + doc-level overrides removed (grep [v3-contain]). Also in-housed the v3.2 fonts (Chakra Petch + Bruno Ace; wired but never procured -> @font-face 404 -> Space Grotesk fallback). Lesson codified in .claude/rules/visual-verification.md 'Getting to exact'. NEXT: finish Coverage hero/periodic/sidebar vs v3.2; CODEX dynamic version; alien-glyph cipher." }, { id: "lg_mqr73n9n_p9z964", ts: "2026-06-23T18:07:45.035981-04:00", surface: "dashboard/legacy-css", kind: "round-close", summary: "Sever-Safety: scoped all 24 legacy-dashboard.css leak vectors under :where(#legacy-workspace-host); moved the globals the shell was secretly inheriting into dashboard.css; new critical invariant legacy_css_contained makes the leak impossible. Luneth-verified.", detail: "Audit (Luneth's 'total clean cut' ask) confirmed the legacy->v3 sever is clean at the markup level (one #legacy-workspace-host div, R2->R5 deletion schedule) but was leaky at the CSS level with no enforcement. The parked legacy stylesheet (loaded after the v3 design system) had 24 bare element/universal selectors (teal h2/h3/table, @media header, *, html/body) that bleed into the .app-* shell; only the 4 that already bit were hand-patched. Fix: :where(#legacy-workspace-host) scoping (zero added specificity -> legacy cascade preserved byte-for-byte) + html,body/body collapsed onto the host. Critical mid-chunk catch: the pixel-exact shell was silently riding on legacy's leaked star{box-sizing} + html,body font-smoothing (the sealed v3 token sheet scopes those to .ds-canvas only, which .app-shell doesn't use), so moved box-sizing/smoothing/line-height into dashboard.css. New critical invariant legacy_css_contained: deterministic re-parse, no bare element/star/non-var :root selector may ever exist; proven with a negative test. Verified 24->0 leak vectors, style_diff 4 live-better residuals only, invariants 26/26, render probes 0 errors." }];
+  var creators_log_embed_default = [{ id: "lg_mqq28u45_9emebd", ts: "2026-06-23T03:04:02.933502+00:00", surface: "tools", kind: "milestone", summary: "Creator's Log file-mirror created \u2014 chronicle/creators-log.jsonl + tools/creators_log.py make round-close step 5 CLI-fireable; the \xA700 audit trail now lives in the repo as a committed teaching record", detail: "In-app log() (state/log.ts) stays localStorage-only until the Phase-2 boot-merge (L2) embeds these entries into the Profile panel. Writes route through safe_write (\xA717). Validated by the new creators_log_well_formed invariant." }, { id: "lg_mqq2b45f_yeupqe", ts: "2026-06-23T03:05:49.251429+00:00", surface: "tools", kind: "round-close", summary: "Phase 2 L1 shipped: Creator's-Log file-mirror + creators_log_well_formed invariant (board 20\u219221). Round-close step 5 is now CLI-fireable \u2014 this entry is the proof.", detail: "Files: tools/creators_log.py, chronicle/creators-log.jsonl, tools/invariants.py. Verified: creators_log verify 1/1 clean; invariants 21/21. Next: L2 Profile boot-merge, then Journey J1-J4.", metadata: { chunk: "L1", board: "21/21", files: ["tools/creators_log.py", "chronicle/creators-log.jsonl", "tools/invariants.py"] } }, { id: "lg_mqq2g1mt_3ckyms", ts: "2026-06-23T03:09:39.269829+00:00", surface: "meta", kind: "session-end", summary: "Session checkpoint: cleanup A-C4 + logging-doctrine codified + Phase-2 L1 (Creator's-Log mirror, board 21/21). Handoff refreshed. Next: L2 Profile boot-merge \u2192 Journey J1-J4 \u2192 Palette.", detail: "9 commits pushed c2826e9..(this). Every chunk build>test>log>committed. Creator's Log now CLI-fireable; this is a session-end entry through the live tool." }, { id: "lg_mqq30yww_gejq56", ts: "2026-06-23T03:25:55.520134+00:00", surface: "tools", kind: "design-decision", summary: "Codified the two-layer logging model + the Creator's Log sacred covenant (append-only, never deleted even under broad delete-authorization, always truthful/complete, fires per-chunk). Audit found sacredness + never-skip not yet machine-enforced.", detail: "Doctrine in .claude/rules/logging-doctrine.md. 3 enforcement guards proposed (git-anchored append-only invariant, round-close firing check, boundary delete-guard) pending Luneth's approval of the ledger file/folder structure." }, { id: "lg_mqq3i857_1qlldw", ts: "2026-06-23T03:39:20.635214+00:00", surface: "tools", kind: "milestone", summary: "Sacred Creator's Log: moved to chronicle/creators-log/ (log.jsonl + generated LOG.md + README) and added the covenant's teeth \u2014 git-anchored append-only invariant, digest-sync invariant, shell delete-guard, and a never-skip round-close hard-block. Board 21\u219223.", detail: "The append-only invariant makes deleting committed entries un-shippable; the firing-check makes a skipped round-close entry un-closeable. Tightened the delete-guard after a self-inflicted prose false-positive (good stress test)." }, { id: "lg_mqq3lhtx_zlch6t", ts: "2026-06-23T03:41:53.157429+00:00", surface: "tools", kind: "invariant-pass", summary: "Teeth-test PROVEN: creators_log_append_only catches both deletion (truncate 5\u21921) and mutation of committed entries; git restores; board 23/23. The sacred-log guarantee is structural, not aspirational.", detail: "Simulated 'delete entries for efficiency' via safe_write truncate \u2192 invariant fired RED 'SACRED LEDGER TRUNCATED'; in-place edit \u2192 'SACRED LEDGER MUTATED at entry 1'; git checkout restored. try/finally guaranteed recovery." }, { id: "lg_mqq52ira_tnd1aj", ts: "2026-06-23T04:23:07.126050+00:00", surface: "tools", kind: "round-close", summary: "Chunk H: hardened the sacred ledger per the Opus-4.8 audit \u2014 closed 3 enforcement gaps (4a digest spoof, 5a delete-guard dir hole, 5b silent committed-deletion + silent fail-open). All re-proven; board 23/23.", detail: "4a: validate_entry rejects newline summaries + render_digest escapes a leading #/> and flattens newlines so the human digest can't be made to show a fake entry (the jsonl was already injection-proof \u2014 json.dumps escaping, proven). 5a: pre_bash_guard now blocks the whole chronicle/creators-log dir + any child + 'rm -rf chronicle' + a dir mv, while non-sacred deletes still pass. 5b: a COMMITTED deletion (ledger gone from HEAD with prior history) is now a hard RED 'SACRED LEDGER REMOVED FROM HEAD'; git-unavailable now prints a loud UNVERIFIED warning but stays fail-open per Luneth's 'visible warning, not blocking' choice. Verified: invariants 23/23, verify 6/0, digest byte-identical, build OK 290.9 KB, every fix re-proven against real code (incl. the real append_only on an isolated temp git repo). The req-3 truthfulness ceiling stands by design \u2014 next feature (L2 dashboard Creator's Log) is Luneth's visual truth-verification layer; then navigability archive-tree." }, { id: "lg_mqq5oreo_sft46m", ts: "2026-06-23T04:40:24.768965+00:00", surface: "docs", kind: "round-close", summary: "README audit: purged retired-system references (tacitus/cura/vision/aegis/brain) from all 16 READMEs and corrected inaccuracies. 5 fixed, 11 verified clean, 0 dead tokens remain; board 23/23.", detail: "Fixed: root README (Cura/Aegis/Tacitus blockquote -> Eden/Chronicle/Sunjo + added creators-log/ to glossary); chronicle/README (Layout was missing creators-log/ + 3 files; added them + a two-layers section); chronicle/evals/README ('Brain Evaluations' -> historical agent-prompt-era artifacts, preserved not resurrected); tools/README (documented only 1 of ~20 tools + cited brain rules -> full accurate inventory by group, each line verified against the script docstring); fonts/README ('drop these in' -> already in-housed). Verified clean: eden, labels, transcripts, wallach-refresh, canaries, design-wisdom (+subdirs), youngevity-product-notes. Ignored false positives: curation/curated/accuracy (substring 'cura') + the word 'vision'. FLAGGED for Luneth (operating contract, not auto-touched): CLAUDE.md glossary still lists Cura+Aegis as current systems + a Tacitus guard; sunjo plan line 308 lists them (captured history). Historical docs (CHANGELOG/versions/saga/contradictions) intentionally keep period-accurate refs." }, { id: "lg_mqq5x105_9ui544", ts: "2026-06-23T04:46:50.453734+00:00", surface: "tools", kind: "round-close", summary: "Audit follow-ups: retired Cura/Aegis from the CLAUDE.md glossary (slimmed the Tacitus guard) + fixed a pre_bash_guard false-positive where the push-force/reset-hard regexes spanned a separator into an unrelated short-flag. Board 23/23.", detail: "(1) CLAUDE.md glossary dropped the Cura + Aegis entries (retired names; the concepts live in engineering-doctrine.md / the app and appear in no live rule file); the Tacitus line slimmed to a tight do-not-re-introduce guard; Eden + Chronicle stay. (2) pre_bash_guard's push-force and reset-hard checks used .*? with re.DOTALL and matched across command separators, so a 'push-then-unrelated-shortflag' compound was wrongly blocked (hit live when committing the README audit). Scoped both to a single command segment ([^newline;amp;pipe]*?), matching the rm-guard pattern. Proven via a file-based hook probe (trigger phrases kept out of the bash line): the push-then-cleanup and commit-then-push compounds now ALLOW; genuine force/hard flags still BLOCK; force-with-lease ALLOWs; the 5a sacred-ledger guard still BLOCKs (no regression). The two non-README loose ends from the README audit; both user-approved. Next: Feature L2." }, { id: "lg_mqq6gim9_bvrj39", ts: "2026-06-23T05:01:59.745384+00:00", surface: "profile", kind: "round-close", summary: "Phase 2 L2 shipped: the dashboard Creator's Log. The CLI ledger is now inlined at build time and boot-merged with localStorage so the Profile panel shows both CLI- and in-app-fired entries \u2014 Luneth's visual truth-verification layer. Board 23\u219224.", detail: "Closes the in-app half (L1 was the CLI mirror). creators_log.py gains write_embed() (every append/digest regenerates dashboard/assets/data/creators-log-embed.json from log.jsonl via safe_write \u2014 sibling of LOG.md; log.jsonl stays the single source of truth). core/schemas/log.ts adds LogEmbedSchema; state/log.ts imports the embed (esbuild JSON import), validates once at the boundary, and getEntries() boot-merges embed + LS deduped by id (embed canonical wins), newest-first. The existing Profile panel renders getEntries() unchanged, so it now shows the unified log. New invariant creators_log_embed_synced (warning, truth-anchored: json.loads(embed) == read_entries()) catches a stale build / hand-edit. Verified: tsc strict + esbuild OK (298.9 KB); invariants 24/24; render_probe_profile.js PASS \u2014 empty localStorage still renders all embedded CLI entries (count == embed == subheader), a real ROUND CLOSE surfaces, Esc closes, 0 page errors. Deferred: cap the embed to recent-N as the ledger grows (Chunk N). Next: navigability archive-tree." }, { id: "lg_mqq75oel_2m9xyo", ts: "2026-06-23T05:21:33.645862+00:00", surface: "creators-log", kind: "round-close", summary: "Chunk N shipped: navigability archive-tree. The Creator's Log now has a month-by-month INDEX.md + per-month digests/ holding the full history, while LOG.md becomes a recent-window view \u2014 so it stays scannable as it grows over years. Board 24\u219225.", detail: "Luneth's 'archive tree + index' choice. log.jsonl stays the unsharded canonical spine (+ git-prefix anchor); the derived human views gain structure. creators_log.py adds _render_block (shared renderer), render_index/write_index (INDEX.md month map: count + kind tally + digest link), month_of/month_set/render_month/write_months (digests/YYYY-MM.md, full entries), a recent-window cap on render_digest (DIGEST_RECENT=200, header \u2192 INDEX.md), and regenerate_all() called from append/digest so LOG.md + embed + INDEX + monthly digests stay byte-fresh together. New invariant creators_log_archive_synced (warning) is truth-anchored: INDEX.md == render_index() and each digests/*.md == render_month(ym), month set from log.jsonl, no missing/extra files \u2014 this is where full-history human fidelity is now proven (digest_synced only covers LOG.md's window). README documents the new layout + the embed/archive invariants. Verified: invariants 25/25; INDEX + digests/2026-06.md render cleanly (10 entries, full detail, back-links); LOG.md recent-window matches. Deferred: cap the L2 embed to recent-N when it grows large. Next: Journey J1-J4, then command palette." }, { id: "lg_mqq95orc_m6l3l3", ts: "2026-06-23T06:17:33.336269+00:00", surface: "journey", kind: "round-close", summary: "Journey J1 shipped: the state engine. Replaced the throwing scaffold with a real \xA731 events ledger + private check-ins + a \xB17-day cross-ref walker, all Zod-validated. No fake seed \u2014 fills from real activity. Board 25/25; engine functionally smoke-tested.", detail: "First of ~4 Journey chunks (J1 engine \u2192 J2 view \u2192 J3 wiring \u2192 J4 probe). New core/schemas/journey.ts (EventKind/JourneyEvent/Checkin + storage shapes, types inferred). state/journey.ts: listEvents(sinceISO?)/listCheckins() read via getValidated; logEvent()/logCheckin() are the only \xA731 writers to wallachJourneyEvents_v1/wallachJourneyCheckins_v1 (auto id, FIFO cap 5000, emit journey:changed); crossRefForCheckin() = the \xB17-day local correlation walker (check-ins stay private, never exported). core/events.ts: journey:event-logged \u2192 journey:changed {reason}. Verified: tsc strict + esbuild OK; invariants 25/25; esbuild-bundled functional smoke vs a localStorage shim PASS (persistence, newest-first, sinceISO, cross-ref include/exclude, corrupt-LS-empty). No render probe yet (pure state; view verified at J4). Next: J2 the 4-tab drawer view." }, { id: "lg_mqqa4z6g_mshacn", ts: "2026-06-23T06:44:59.800202+00:00", surface: "genesis", kind: "milestone", summary: "Genesis boot system shipped: typing 'genesis' now runs tools/genesis.py \u2014 a one-command session boot (banner + scoreboard + the live pass-off) that hands a fresh session past depth instantly + ends with an action question. Renamed sunjo/ \u2192 genesis/.", detail: "Formalizes the per-session catch-up rather than reinventing it: chronicle/next-chunk.md stays the SINGLE live rolling pass-off (no parallel file); genesis.py reads it + runs the integrity scoreboard (invariants), build-parity, last Creator's Log entry, build-log tail, and prints the next-chunk LATEST\u2192NEXT-ORDER block, closing with a cue to ask 'resume X or redirect?'. sunjo/ \u2192 genesis/ via git mv (history preserved): the folder now houses the boot system + the archived original Cowork pass-off (01/02); genesis/README documents the two-pass-off model. CLAUDE.md Genesis section rewritten (net -1 line, 195/200) to point at the command + mandate the action question; all LIVE sunjo path refs \u2192 genesis/ (history left truthful). Mechanically safe (no tool/hook/invariant referenced sunjo). Verified: genesis.py boots cleanly; invariants 25/25. Next: Journey J2." }, { id: "lg_mqqqtit6_5uctcj", ts: "2026-06-23T14:31:58.842948+00:00", surface: "journey", kind: "round-close", summary: "Journey J2 \u2014 views/journey.ts 4-tab drawer renderer + LOG EVENT/check-in forms; mirrors knowledge.ts, reads only via state layer, zero inline literals. Also implemented read side of state/goals.ts (+ new core/schemas/goals.ts). Board 25/25, probes pass.", detail: "Replaced the throwing views/journey.ts scaffold with a real renderer using self-namespaced jd-* classes (parallel to Knowledge's kd-*; the v3 proposal's generic .timeline/.goal-card/.milestone would collide with legacy-dashboard.css \u2014 jd-* CSS is the Round-6 polish pass). Timeline groups events into calendar-day buckets (Map, newest-first, kind->glyph/accent, relative-time + delta); Goals shows progress bar + blockers + featured; Check-ins (private) renders 5-pip severity + tags + the +/-7-day cross-ref as 'CROSS-REF \xB7 <top event>'; Milestones distinguishes earned/locked/fresh-under-24h. The footer LOG EVENT primary + the Check-ins quick-entry open inline forms calling journey.logEvent()/logCheckin() with bounded inputs (maxlength + slice + clampSeverity + EventKindSchema.safeParse). To avoid crashing on the still-scaffolded goals state, implemented its READ side: new core/schemas/goals.ts (GoalSchema/MilestoneSchema + LS shapes, .optional() not .default() to keep input==output types) + Zod-validated listGoals/listMilestones (bad LS -> empty); evaluateMilestoneTriggers stays a deferred throw. Verified: tsc strict + esbuild OK (main.js 307.6 KB; journey code is tree-shaken from the runtime bundle until J3 calls mount() \u2014 tsc is the compile gate); eslint clean on all 4 files; invariants 25/25 (0 new reds); coverage + knowledge render probes PASS. No journey render probe yet \u2014 the drawer mount is J3 and the visual probe is J4 (honesty rule). NEXT: J3 \u2014 shared K+J mount/toggle/keys helper + auto-derive subscriptions." }, { id: "lg_mqqsqygj_fmu96a", ts: "2026-06-23T11:25:58.387680-04:00", surface: "tooling", kind: "design-decision", summary: "Creator's Log timestamps now store machine-LOCAL time (auto-follow ET->CT + DST) instead of UTC. _now_iso uses datetime.now().astimezone(); _fmt_ts derives the zone from the stored offset. Historical UTC entries stay UTC (immutable ledger).", detail: "Luneth flagged that log times read in UTC (an entry made at 10:31 EDT showed as 14:31 / 06:44), confusing against his local clock, and that he's moving ET->CT next week. Chose auto-follow-local over hard-pinning CT so it adapts to the move + DST with zero maintenance. Two-line change in tools/creators_log.py: _now_iso() now returns datetime.now().astimezone().isoformat() (local-aware, carries the offset); _fmt_ts() derives the zone label from the parsed offset (%Z) instead of hardcoding 'UTC'. The slice-based renderers (genesis last-log line, Profile panel formatTs) need no change \u2014 they read the stored wall-clock directly, so new entries show local automatically. The ~13 pre-change entries stored +00:00 stay UTC (the ledger is append-only/immutable; never rewriting history). This entry is the first stored in local time." }, { id: "lg_mqqt86uf_88lvtm", ts: "2026-06-23T11:39:22.407988-04:00", surface: "discipline", kind: "design-decision", summary: "Codified the visual/human-verification gate (.claude/rules/visual-verification.md + CLAUDE.md row): for any page/visual/UX work Luneth is the test gate \u2014 build a chunk to 'done', STOP, he visually verifies, only then continue. Never chain past a STOP; certainty != truth.", detail: "Luneth elevated the per-page build method to a non-negotiable rule. Automated gates (build/invariants/probes) prove only the functional layer; the subjective/visual layer can ONLY be verified by his eyes. The discipline: build in phases (respect resource usage) -> build to 'done' or one verifiable chunk -> STOP -> he visually verifies/course-corrects/adds/changes mind -> only then log + continue. Never advance past a STOP without his go-ahead; never claim he verified what he didn't; never treat agent-certainty as truth. This is build>test>log>repeat with Luneth as tester, and the guardrail that would have caught the unstyled-drawer drift. Documented as a behavioral discipline (like the source-rule turn-gap), not a Python invariant; the structural guarantee is that visual chunks END at a STOP by default. NEXT: Coverage as first gold-standard page." }, { id: "lg_mqqxdip7_mg7c11", ts: "2026-06-23T13:35:29.515119-04:00", surface: "coverage", kind: "milestone", summary: "Coverage Phase 1 \u2014 shell now ~pixel-exact to v3.2 (Luneth verified). Fixed via new tools/style_diff.js: legacy 15px root + bare header/footer selectors bleeding into the .app-* shell; in-housed the missing Chakra Petch/Bruno Ace fonts. Visual-match lesson codified.", detail: "First gold-standard surface phase under the visual-verification gate (build -> STOP -> Luneth verifies -> commit). An objective computed-style diff (new tools/style_diff.js, live shell vs the v3.2 mockup) drove it from ~50 diffs to 0 meaningful, replacing eyeballing. Two systemic root causes: (1) legacy-dashboard.css html,body{font-size:15px} shrank the whole rem UI to 93.75% -> removed, 16px root re-scales the entire coverage page; (2) legacy bare element selectors (header/footer/html,body) bled into the new .app-* shell (14px radius, teal shadow+border, a header::before veil over .app-topbar hiding its accents + fading the search, teal text) -> scoped to #legacy-workspace-host + doc-level overrides removed (grep [v3-contain]). Also in-housed the v3.2 fonts (Chakra Petch + Bruno Ace; wired but never procured -> @font-face 404 -> Space Grotesk fallback). Lesson codified in .claude/rules/visual-verification.md 'Getting to exact'. NEXT: finish Coverage hero/periodic/sidebar vs v3.2; CODEX dynamic version; alien-glyph cipher." }, { id: "lg_mqr73n9n_p9z964", ts: "2026-06-23T18:07:45.035981-04:00", surface: "dashboard/legacy-css", kind: "round-close", summary: "Sever-Safety: scoped all 24 legacy-dashboard.css leak vectors under :where(#legacy-workspace-host); moved the globals the shell was secretly inheriting into dashboard.css; new critical invariant legacy_css_contained makes the leak impossible. Luneth-verified.", detail: "Audit (Luneth's 'total clean cut' ask) confirmed the legacy->v3 sever is clean at the markup level (one #legacy-workspace-host div, R2->R5 deletion schedule) but was leaky at the CSS level with no enforcement. The parked legacy stylesheet (loaded after the v3 design system) had 24 bare element/universal selectors (teal h2/h3/table, @media header, *, html/body) that bleed into the .app-* shell; only the 4 that already bit were hand-patched. Fix: :where(#legacy-workspace-host) scoping (zero added specificity -> legacy cascade preserved byte-for-byte) + html,body/body collapsed onto the host. Critical mid-chunk catch: the pixel-exact shell was silently riding on legacy's leaked star{box-sizing} + html,body font-smoothing (the sealed v3 token sheet scopes those to .ds-canvas only, which .app-shell doesn't use), so moved box-sizing/smoothing/line-height into dashboard.css. New critical invariant legacy_css_contained: deterministic re-parse, no bare element/star/non-var :root selector may ever exist; proven with a negative test. Verified 24->0 leak vectors, style_diff 4 live-better residuals only, invariants 26/26, render probes 0 errors." }, { id: "lg_mqrf7brf_5o0xqy", ts: "2026-06-23T21:54:33.675631-04:00", surface: "journey", kind: "round-close", summary: "Journey J3+J4: mounted the J2 view (kills the last legacy teal; shared K+J registry -> J rail/Esc/bare-J open the new drawer) + auto-derive; styled the whole drawer to the v3 mockup (jd-* scoped to #drawer-journey-mount); topbar BRAIN->CODEX. Board 26/26.", detail: "J3 generalized the Knowledge-only drawer wiring in main.ts into a shared K+J registry (DRAWER_SPECS: mountDrawers/toggleDrawer/wireDrawerKeys/closeAllDrawers); the J rail item + Esc + bare-J now open the new jd-* drawer instead of the legacy #tab-journey teal tab. Auto-derive: scanner:scan-complete / regimen add-remove-restore / goals:updated -> journey.logEvent (excludes high-frequency coverage:recomputed + dose-edit to avoid flooding). drawer-journey.css ports the v3 mockup vocabulary onto the view's jd-* classes, every rule rooted at #drawer-journey-mount so it cannot leak (Sever-Safety lesson applied preemptively): panel + chrome + all 4 tabs + the quick-checkin entry button + inline forms. Built in 2 visual-verified phases. CODEX: the 2 visible topbar BRAIN refs renamed; v3.27 kept (consistent with footer + versions-data, no drift); full v1.0 stamp queued. New tools/render_probe_journey.js: 13 checks incl. legacy-host-not-shown (teal-kill proof). Knowledge drawer still unstyled by design (identical shell; drawer-journey.css is the template)." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -7482,7 +8064,7 @@
   }
 
   // assets/js/src/views/profile.ts
-  function escHTML3(s) {
+  function escHTML4(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -7528,15 +8110,15 @@
     return map[k];
   }
   function renderLogEntry(entry) {
-    const detailHTML = entry.detail !== void 0 && entry.detail.length > 0 ? `<div class="pf-log-entry__detail">${escHTML3(entry.detail)}</div>` : "";
+    const detailHTML = entry.detail !== void 0 && entry.detail.length > 0 ? `<div class="pf-log-entry__detail">${escHTML4(entry.detail)}</div>` : "";
     return `
-    <article class="pf-log-entry" data-log-id="${escHTML3(entry.id)}">
+    <article class="pf-log-entry" data-log-id="${escHTML4(entry.id)}">
       <header class="pf-log-entry__head">
-        <span class="pf-log-entry__ts">${escHTML3(formatTs(entry.ts))}</span>
-        <span class="pf-log-entry__surface">${escHTML3(entry.surface)}</span>
-        <span class="${kindClass(entry.kind)}">${escHTML3(kindLabel(entry.kind))}</span>
+        <span class="pf-log-entry__ts">${escHTML4(formatTs(entry.ts))}</span>
+        <span class="pf-log-entry__surface">${escHTML4(entry.surface)}</span>
+        <span class="${kindClass(entry.kind)}">${escHTML4(kindLabel(entry.kind))}</span>
       </header>
-      <h4 class="pf-log-entry__summary">${escHTML3(entry.summary)}</h4>
+      <h4 class="pf-log-entry__summary">${escHTML4(entry.summary)}</h4>
       ${detailHTML}
     </article>
   `;
@@ -7610,9 +8192,9 @@
     }
     return `
     <div class="pf-build-card">
-      <div class="pf-build-card__ts">${escHTML3(formatTs(lastBuild.ts))}</div>
-      <h3 class="pf-build-card__summary">${escHTML3(lastBuild.summary)}</h3>
-      ${lastBuild.detail !== void 0 ? `<pre class="pf-build-card__detail">${escHTML3(lastBuild.detail)}</pre>` : ""}
+      <div class="pf-build-card__ts">${escHTML4(formatTs(lastBuild.ts))}</div>
+      <h3 class="pf-build-card__summary">${escHTML4(lastBuild.summary)}</h3>
+      ${lastBuild.detail !== void 0 ? `<pre class="pf-build-card__detail">${escHTML4(lastBuild.detail)}</pre>` : ""}
     </div>
   `;
   }
@@ -7625,7 +8207,7 @@
     }
     return renderBuildTab();
   }
-  function renderShell2(tab, totalEntries) {
+  function renderShell3(tab, totalEntries) {
     return `
     <div class="pf-panel" role="dialog" aria-label="Profile">
       <header class="pf-panel__head">
@@ -7700,10 +8282,10 @@
       cipherInterval2 = null;
     }
   }
-  function mount3(container) {
+  function mount4(container) {
     let tab = "log";
     const render = () => {
-      container.innerHTML = renderShell2(tab, getEntries().length);
+      container.innerHTML = renderShell3(tab, getEntries().length);
     };
     const onClick = (ev) => {
       const target = ev.target;
@@ -7757,7 +8339,7 @@
     { name: "HYDRA DNA COLLAGEN", contribution: 0, heat: "sm", reason: "Logged 2026-06-15 \xB7 skin & connective tissue goal \xB7 pending cost/timing decision." },
     { name: "OPTIVIDA HEMP EXTRACT", contribution: 0, heat: "sm", reason: "Deferred \u2014 overlap with sleep stack already; revisit once sleep goal closes." }
   ];
-  function escHTML4(s) {
+  function escHTML5(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -7769,7 +8351,7 @@
   function contributionPips(contribution) {
     return Math.max(0, Math.min(10, Math.ceil(contribution / 3)));
   }
-  function renderPips(filled) {
+  function renderPips2(filled) {
     let html = "";
     for (let i = 0; i < 10; i += 1) {
       const cls = i < filled ? "contrib-pip fill" : "contrib-pip";
@@ -7787,7 +8369,7 @@
   function renderSlot(slot) {
     if (slot.empty === true) {
       return `
-      <article class="slot-card empty" data-slot-id="${escHTML4(slot.id)}">
+      <article class="slot-card empty" data-slot-id="${escHTML5(slot.id)}">
         <div class="slot-card__empty-mark">+</div>
         <div class="slot-card__empty-label">EMPTY SLOT</div>
       </article>
@@ -7798,13 +8380,13 @@
     const serialPrefix = slot.active === true ? "\u25CF " : "";
     const serialSuffix = slot.active === true ? " \xB7 ACTIVE" : "";
     return `
-    <article class="slot-card${activeClass}" data-slot-id="${escHTML4(slot.id)}" data-slot-num="${escHTML4(slot.num)}">
+    <article class="slot-card${activeClass}" data-slot-id="${escHTML5(slot.id)}" data-slot-num="${escHTML5(slot.num)}">
       ${scanLine}
-      <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML4(slot.serial)}</span>${serialSuffix}</div>
-      <div class="slot-card__num">${escHTML4(slot.num)}</div>
-      <h3 class="slot-card__name">${escHTML4(slot.name)}</h3>
+      <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML5(slot.serial)}</span>${serialSuffix}</div>
+      <div class="slot-card__num">${escHTML5(slot.num)}</div>
+      <h3 class="slot-card__name">${escHTML5(slot.name)}</h3>
       <div class="slot-card__items">${slot.items} items \xB7 <span class="slot-card__coverage">${slot.coverage}</span>/${slot.total}</div>
-      <div class="slot-card__stamp">${escHTML4(slot.stamp)}</div>
+      <div class="slot-card__stamp">${escHTML5(slot.stamp)}</div>
     </article>
   `;
   }
@@ -7832,7 +8414,7 @@
   }
   function renderItemRow(item, overrides) {
     const contrib = itemContribution(item);
-    const pips = renderPips(contributionPips(contrib));
+    const pips = renderPips2(contributionPips(contrib));
     const icon = itemIcon(item);
     const name = (item.label.name ?? "(unnamed)").toString();
     const ov = overrides[String(item.id)] ?? {};
@@ -7841,9 +8423,9 @@
     const scaling = amount * freq;
     return `
     <div class="regimen-item-row" data-item-id="${item.id}">
-      <div class="regimen-item-row__icon">${escHTML4(icon)}</div>
+      <div class="regimen-item-row__icon">${escHTML5(icon)}</div>
       <div class="regimen-item-row__body">
-        <h4 class="regimen-item-row__name">${escHTML4(name)}</h4>
+        <h4 class="regimen-item-row__name">${escHTML5(name)}</h4>
         <div class="regimen-item-row__contrib">
           <span class="regimen-item-row__contrib-label">CONTRIBUTES \xB7 ${contrib}</span>
           ${pips}
@@ -7906,13 +8488,13 @@
     return `
     <div class="rec-item">
       <div class="rec-item__head">
-        <h4 class="rec-item__name">${escHTML4(item.name)}</h4>
-        <span class="rec-item__tag" data-heat="${escHTML4(item.heat)}"><span class="rec-item__tag-sign">${escHTML4(sign)}</span>${escHTML4(tagText)}</span>
+        <h4 class="rec-item__name">${escHTML5(item.name)}</h4>
+        <span class="rec-item__tag" data-heat="${escHTML5(item.heat)}"><span class="rec-item__tag-sign">${escHTML5(sign)}</span>${escHTML5(tagText)}</span>
       </div>
-      <div class="rec-item__reason">${escHTML4(item.reason)}</div>
+      <div class="rec-item__reason">${escHTML5(item.reason)}</div>
       <div class="rec-item__actions">
-        <button class="rec-item__adopt" data-rg-action="adopt" data-item-name="${escHTML4(item.name)}">+ ADOPT</button>
-        <button class="rec-item__details" data-rg-action="details" data-item-name="${escHTML4(item.name)}">DETAILS</button>
+        <button class="rec-item__adopt" data-rg-action="adopt" data-item-name="${escHTML5(item.name)}">+ ADOPT</button>
+        <button class="rec-item__details" data-rg-action="details" data-item-name="${escHTML5(item.name)}">DETAILS</button>
       </div>
     </div>
   `;
@@ -8123,7 +8705,7 @@
   }
   function renderAddRow() {
     const names = [...readVault().values()].map((p) => p.canonical_name ?? p.name).filter((n) => typeof n === "string").sort((a, b) => a.localeCompare(b));
-    const options = names.map((n) => `<option value="${escHTML4(n)}"></option>`).join("");
+    const options = names.map((n) => `<option value="${escHTML5(n)}"></option>`).join("");
     return `
     <section class="active-slot rg-add-panel">
       <div class="search-wrap">
@@ -8137,7 +8719,7 @@
     </section>
   `;
   }
-  function mount4(container) {
+  function mount5(container) {
     let pickerOpen = false;
     const render = () => {
       const items = loadEffectiveRegimen();
@@ -8215,7 +8797,7 @@
   }
 
   // assets/js/src/views/scanner.ts
-  function escHTML5(s) {
+  function escHTML6(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -8260,19 +8842,19 @@
     const servings = label.servings === void 0 ? "\u2014 \xB7 \u2014 servings" : String(label.servings);
     const nutrientRows = (label.nutrients ?? []).slice(0, 8).map((n) => `
     <div class="scan-label__row">
-      <span>${escHTML5(n.name)}</span>
-      <span>${escHTML5(n.amount ?? "")}${escHTML5(n.unit ?? "")}</span>
+      <span>${escHTML6(n.name)}</span>
+      <span>${escHTML6(n.amount ?? "")}${escHTML6(n.unit ?? "")}</span>
       <span>\u2014</span>
     </div>
   `).join("");
     return `
     <div class="scan-canvas scan-canvas--active">
       <div class="scan-label">
-        <div class="scan-label__brand">${escHTML5(brand)}</div>
-        <div class="scan-label__product">${escHTML5(product)}</div>
+        <div class="scan-label__brand">${escHTML6(brand)}</div>
+        <div class="scan-label__product">${escHTML6(product)}</div>
         <div class="scan-label__rule"></div>
         <h4 class="scan-label__section-title">Supplement Facts</h4>
-        <div class="scan-label__serving">Serving Size \xB7 ${escHTML5(servings)}</div>
+        <div class="scan-label__serving">Serving Size \xB7 ${escHTML6(servings)}</div>
         <div class="scan-label__rows">${nutrientRows}</div>
         <span class="ocr-bracket ocr-bracket--brand"></span>
         <span class="ocr-bracket ocr-bracket--product"></span>
@@ -8292,7 +8874,7 @@
     <span>\xB7</span>
     <span>${regionCount} REGIONS</span>
     <span>\xB7</span>
-    <span>CONFIDENCE <strong>${escHTML5(confidence)}</strong></span>
+    <span>CONFIDENCE <strong>${escHTML6(confidence)}</strong></span>
   ` : `
     <span>CAPTURE <strong class="ds-cipher" data-cipher-set="hexa">SC\xB7----</strong></span>
     <span>\xB7</span>
@@ -8354,9 +8936,9 @@
       return `
       <div class="stage stage--${s.status}">
         <div class="stage__dot">${dotChar}</div>
-        <div class="stage__name">${escHTML5(s.name)}</div>
-        <div class="stage__sub">${escHTML5(s.sub)}</div>
-        <div class="stage__ms">${s.status === "active" ? `<span class="ds-cipher" data-cipher-set="alphanum">${escHTML5(s.ms)}</span>` : escHTML5(s.ms)}</div>
+        <div class="stage__name">${escHTML6(s.name)}</div>
+        <div class="stage__sub">${escHTML6(s.sub)}</div>
+        <div class="stage__ms">${s.status === "active" ? `<span class="ds-cipher" data-cipher-set="alphanum">${escHTML6(s.ms)}</span>` : escHTML6(s.ms)}</div>
       </div>
     `;
     }).join("");
@@ -8368,7 +8950,7 @@
           <div class="pipeline__eyebrow">PIPELINE \xB7 <span class="ds-cipher" data-cipher-set="hexa">PL\xB724A7</span> \xB7 4 STAGES</div>
           <h2 class="pipeline__title">Extract \xB7 Parse \xB7 Match \xB7 Verdict</h2>
         </div>
-        <div class="pipeline__total">TOTAL ELAPSED <strong>${escHTML5(total)}</strong> \xB7 target &lt;5s</div>
+        <div class="pipeline__total">TOTAL ELAPSED <strong>${escHTML6(total)}</strong> \xB7 target &lt;5s</div>
       </header>
       <div class="pipeline__stages">${stagesHTML}</div>
     </section>
@@ -8379,17 +8961,17 @@
     const adoptLabel = row.status === "warn" ? "CONFIRM" : row.status === "err" ? "DISMISS" : "ADOPT";
     const adoptClass = row.status === "err" ? "parsed-row__btn" : "parsed-row__btn parsed-row__btn--adopt";
     const mappedClass = row.status === "err" ? "parsed-row__mapped parsed-row__mapped--none" : "parsed-row__mapped";
-    const tagSignHTML = row.tag.sign !== void 0 ? `<span class="parsed-row__tag-sign">${escHTML5(row.tag.sign)}</span>` : "";
+    const tagSignHTML = row.tag.sign !== void 0 ? `<span class="parsed-row__tag-sign">${escHTML6(row.tag.sign)}</span>` : "";
     return `
     <div class="parsed-row parsed-row--${row.status}">
       <div class="parsed-row__status">${statusChar}</div>
       <div class="parsed-row__body">
-        <span class="parsed-row__raw">"${escHTML5(row.raw)}"</span>
-        <h4 class="parsed-row__name">${escHTML5(row.name)}</h4>
+        <span class="parsed-row__raw">"${escHTML6(row.raw)}"</span>
+        <h4 class="parsed-row__name">${escHTML6(row.name)}</h4>
       </div>
-      <span class="${mappedClass}">\u2192 ${escHTML5(row.mapped)}</span>
-      <span class="parsed-row__confidence">${escHTML5(row.confidence)} <small>conf</small></span>
-      <span class="parsed-row__tag" data-heat="${escHTML5(row.tag.heat)}">${tagSignHTML}${escHTML5(row.tag.text)}</span>
+      <span class="${mappedClass}">\u2192 ${escHTML6(row.mapped)}</span>
+      <span class="parsed-row__confidence">${escHTML6(row.confidence)} <small>conf</small></span>
+      <span class="parsed-row__tag" data-heat="${escHTML6(row.tag.heat)}">${tagSignHTML}${escHTML6(row.tag.text)}</span>
       <div class="parsed-row__actions">
         <button class="parsed-row__btn" data-sc-action="details">DETAILS</button>
         <button class="${adoptClass}" data-sc-action="${row.status === "err" ? "dismiss" : "adopt"}">${adoptLabel}</button>
@@ -8495,10 +9077,10 @@
     return `
     <div class="scan-history-item" data-sc-action="reopen" data-scan-id="${entry.id}">
       <div class="scan-history-item__body">
-        <h4 class="scan-history-item__name">${escHTML5(name)}</h4>
-        <span class="scan-history-item__ts">${escHTML5(entry.ts.slice(0, 16))}</span>
+        <h4 class="scan-history-item__name">${escHTML6(name)}</h4>
+        <span class="scan-history-item__ts">${escHTML6(entry.ts.slice(0, 16))}</span>
       </div>
-      <span class="${pillClass}">${escHTML5(verdictText)}</span>
+      <span class="${pillClass}">${escHTML6(verdictText)}</span>
     </div>
   `;
   }
@@ -8597,7 +9179,7 @@
     };
     saveRgManual([...loadRgManual(), item]);
   }
-  function mount5(container) {
+  function mount6(container) {
     let state = "idle";
     const currentResult = () => {
       const w = window;
@@ -8760,9 +9342,21 @@
       btn.classList.toggle("active", btn.getAttribute("data-rail-nav") === target);
     }
   }
-  var knowledgeDrawer = null;
+  var DRAWER_SPECS = [
+    { target: "knowledge", mountId: "drawer-knowledge-mount", key: "k", mount: mount3 },
+    { target: "journey", mountId: "drawer-journey-mount", key: "j", mount: mount2 }
+  ];
+  var drawerHandles = /* @__PURE__ */ new Map();
+  function isDrawerTarget(target) {
+    return DRAWER_SPECS.some((s) => s.target === target);
+  }
+  function closeAllDrawers() {
+    for (const handle of drawerHandles.values()) {
+      handle.close();
+    }
+  }
   function navigateTo(target) {
-    knowledgeDrawer?.close();
+    closeAllDrawers();
     activateRailItem(target);
     emit("rail:navigate", { target });
     hideAllNewMounts();
@@ -8786,7 +9380,7 @@
       }
       mountEl.style.display = "block";
       if (mounted.regimen === void 0) {
-        mounted.regimen = mount4(mountEl);
+        mounted.regimen = mount5(mountEl);
       }
       return;
     }
@@ -8798,7 +9392,7 @@
       }
       mountEl.style.display = "block";
       if (mounted.scanner === void 0) {
-        mounted.scanner = mount5(mountEl);
+        mounted.scanner = mount6(mountEl);
       }
       return;
     }
@@ -8812,43 +9406,81 @@
       }
       btn.addEventListener("click", (ev) => {
         ev.preventDefault();
-        if (target === "knowledge") {
-          toggleKnowledgeDrawer();
+        if (isDrawerTarget(target)) {
+          toggleDrawer(target);
           return;
         }
         navigateTo(target);
       });
     }
   }
-  function mountKnowledgeDrawer() {
-    const el = document.getElementById("drawer-knowledge-mount");
-    if (el === null) {
-      return;
-    }
-    knowledgeDrawer = mount2(el);
-  }
-  function toggleKnowledgeDrawer() {
-    if (knowledgeDrawer === null) {
-      return;
-    }
-    knowledgeDrawer.toggle();
-    const btn = document.querySelector('.rail__item[data-rail-nav="knowledge"]');
-    if (btn !== null) {
-      btn.classList.toggle("active", knowledgeDrawer.isOpen());
+  function mountDrawers() {
+    for (const spec of DRAWER_SPECS) {
+      const el = document.getElementById(spec.mountId);
+      if (el === null) {
+        continue;
+      }
+      drawerHandles.set(spec.target, spec.mount(el));
     }
   }
-  function wireKnowledgeKeys() {
+  function syncDrawerRail() {
+    for (const spec of DRAWER_SPECS) {
+      const btn = document.querySelector(`.rail__item[data-rail-nav="${spec.target}"]`);
+      if (btn === null) {
+        continue;
+      }
+      const handle = drawerHandles.get(spec.target);
+      btn.classList.toggle("active", handle !== void 0 && handle.isOpen());
+    }
+  }
+  function toggleDrawer(target) {
+    const handle = drawerHandles.get(target);
+    if (handle === void 0) {
+      return;
+    }
+    for (const [other, h] of drawerHandles) {
+      if (other !== target) {
+        h.close();
+      }
+    }
+    handle.toggle();
+    syncDrawerRail();
+  }
+  function wireDrawerKeys() {
     document.addEventListener("keydown", (ev) => {
-      if (ev.key === "Escape" && knowledgeDrawer !== null && knowledgeDrawer.isOpen()) {
-        toggleKnowledgeDrawer();
+      if (ev.key === "Escape") {
+        closeAllDrawers();
+        syncDrawerRail();
         return;
       }
       const t = ev.target;
       const typing = t !== null && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable);
-      if ((ev.key === "k" || ev.key === "K") && !typing && !ev.metaKey && !ev.ctrlKey && !ev.altKey) {
-        ev.preventDefault();
-        toggleKnowledgeDrawer();
+      if (typing || ev.metaKey || ev.ctrlKey || ev.altKey) {
+        return;
       }
+      for (const spec of DRAWER_SPECS) {
+        if (ev.key.toLowerCase() === spec.key) {
+          ev.preventDefault();
+          toggleDrawer(spec.target);
+          return;
+        }
+      }
+    });
+  }
+  function wireJourneyAutoDerive() {
+    on("scanner:scan-complete", (p) => {
+      const label = p.verdict === "aligns" ? "aligns with the framework" : p.verdict === "partial" ? "a partial match" : "outside the framework";
+      logEvent({ kind: "scan", title: `Scanned a product \u2014 ${label}`, occurredAt: (/* @__PURE__ */ new Date()).toISOString() });
+    });
+    on("regimen:changed", (p) => {
+      if (p.reason === "dose-edit") {
+        return;
+      }
+      const verb = p.reason === "add" ? "Added an item to" : p.reason === "remove" ? "Removed an item from" : "Restored an item to";
+      logEvent({ kind: "regimen", title: `${verb} your regimen`, occurredAt: (/* @__PURE__ */ new Date()).toISOString() });
+    });
+    on("goals:updated", () => {
+      logEvent({ kind: "milestone", title: "Updated a goal", occurredAt: (/* @__PURE__ */ new Date()).toISOString() });
     });
   }
   var profileHandle = null;
@@ -8877,7 +9509,7 @@
     overlay.addEventListener("pf:close", () => hideProfilePanel());
     document.body.appendChild(overlay);
     profileOverlay = overlay;
-    profileHandle = mount3(overlay);
+    profileHandle = mount4(overlay);
   }
   function wireProfileChip() {
     const chip = document.querySelector(".rail__profile");
@@ -8909,8 +9541,9 @@
     }
     wireRail();
     wireProfileChip();
-    mountKnowledgeDrawer();
-    wireKnowledgeKeys();
+    mountDrawers();
+    wireDrawerKeys();
+    wireJourneyAutoDerive();
     setTimeout(() => navigateTo("coverage"), 0);
   }
   if (document.readyState === "loading") {
