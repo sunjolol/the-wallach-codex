@@ -134,10 +134,14 @@
       {
         "claim_id": "WAL-CLM-RARE-000063",
         "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000066",
+        "book": "rare-earths"
       }
     ],
     "books_repeating": 1,
-    "claim_count": 9
+    "claim_count": 10
   },
   {
     "id": "CG-0003",
@@ -165,6 +169,36 @@
     "id": "CG-0004",
     "essentials": [],
     "conditions": [],
+    "kind": "prevalence",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000001",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000064",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000065",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000067",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000068",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 5
+  },
+  {
+    "id": "CG-0005",
+    "essentials": [],
+    "conditions": [],
     "kind": "quote",
     "repetitions": [
       {
@@ -180,7 +214,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0005",
+    "id": "CG-0006",
     "essentials": [],
     "conditions": [
       "birth_defects"
@@ -200,7 +234,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0006",
+    "id": "CG-0007",
     "essentials": [],
     "conditions": [
       "pica"
@@ -220,7 +254,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0007",
+    "id": "CG-0008",
     "essentials": [
       "germanium"
     ],
@@ -240,7 +274,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0008",
+    "id": "CG-0009",
     "essentials": [
       "germanium"
     ],
@@ -264,7 +298,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0009",
+    "id": "CG-0010",
     "essentials": [
       "sodium"
     ],
@@ -286,7 +320,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0010",
+    "id": "CG-0011",
     "essentials": [
       "zinc"
     ],
