@@ -150,6 +150,9 @@ def cmd_finalize(args) -> int:
         bad = [s for s in rc.get("essentials", []) if s not in canon]
         if bad:
             errors.append(f"{ctx}: non-canon essential slug(s) {bad}")
+        dose = rc.get("dose")
+        if dose is not None and not isinstance(dose, dict):
+            errors.append(f"{ctx}: dose must be null or an object {{amount,unit,period,form,duration,for_condition}}, got {type(dose).__name__}")
         vb_raw = rc.get("verbatim", "")
         exact, off = snap_verbatim(book_text, norm_book, idx_map, vb_raw)
         if exact is None:

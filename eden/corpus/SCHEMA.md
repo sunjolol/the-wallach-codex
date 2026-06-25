@@ -104,7 +104,7 @@ produced — corrected Phase ε):
     "related_essentials": [...], "status": "canonical" } ] }
 ```
 
-## 6 · The 10 verify checks (`corpus_verify.py`)
+## 6 · The 11 verify checks (`corpus_verify.py`)
 
 1. Every claim id referenced by any index exists in some `claims/*` shard.
 2. **Every claim `verbatim` is a byte-equal substring of its source book (LF space).** ← load-bearing
@@ -116,6 +116,7 @@ produced — corrected Phase ε):
 8. `indices/*` byte-equal a fresh `corpus_derive.py` run over `claims/*`.
 9. `locator.char_offset` (when present) points at the verbatim start.
 10. No `drafts/*` file is referenced by any sealed index.
+11. Every claim `dose` is `null` or an object — never a bare string/number/list (the runtime-break class that empties the Knowledge drawer). The `CorpusDoseSchema` key set is `{amount, unit, period, form, duration, for_condition}`; extra keys pass (Zod `.passthrough()`), so verify enforces only the null-or-object shape.
 
 Bootstrap (no golden hashes yet) → verify reports BOOTSTRAP, the invariant passes green.
 

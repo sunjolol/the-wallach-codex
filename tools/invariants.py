@@ -1652,7 +1652,7 @@ def check_legacy_css_contained():
 
 def check_corpus_integrity():
     """Phase alpha — eden/corpus sealed claim-graph integrity. Delegates to the single
-    implementation eden/tools/corpus_verify.py (one source of the 10 checks, no
+    implementation eden/tools/corpus_verify.py (one source of the 11 checks, no
     duplication): exit 0 = sealed & healthy, 2 = BOOTSTRAP (unsealed; always-valid
     checks passed), 1 = FAIL. Truth-anchored on book bytes + golden hashes."""
     verify = ROOT / "eden" / "tools" / "corpus_verify.py"

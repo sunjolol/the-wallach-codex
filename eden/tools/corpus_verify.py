@@ -2,7 +2,7 @@
 """corpus_verify.py — read-only integrity verifier for eden/corpus.
 
 Truth-anchored and deterministic: it only hashes files and tests substrings, so it
-cannot lie. The single implementation of the 10 corpus checks (the `corpus_integrity`
+cannot lie. The single implementation of the 11 corpus checks (the `corpus_integrity`
 invariant shells out to this file — one source, no duplication).
 
 All corpus text/JSON hashes are over LF-NORMALIZED UTF-8 content (clone/CRLF-stable).
@@ -148,6 +148,10 @@ def run_checks():
                     off = loc.get("char_offset")
                     if off is not None and txt[off:off + len(vb)] != vb:
                         fails.append(f"[#9] claim {cid} char_offset {off} does not point at verbatim")
+            # #11 dose is null or an object (the CorpusDoseSchema shape) — a bare string/number/list is the runtime-break class that empties the drawer
+            dose = c.get("dose")
+            if dose is not None and not isinstance(dose, dict):
+                fails.append(f"[#11] claim {cid} dose must be null or an object, got {type(dose).__name__}")
 
     # --- indices (only if present) ---
     indices = collect_indices()
