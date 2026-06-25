@@ -320,12 +320,31 @@
     "display_name": "Sulfur",
     "canon_slug": "sulfur",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 5,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000223"
+      ],
+      "definition": [
+        "WAL-CLM-RARE-000219"
+      ],
+      "mechanism": [
+        "WAL-CLM-RARE-000220",
+        "WAL-CLM-RARE-000221",
+        "WAL-CLM-RARE-000222"
+      ]
+    },
     "deficiency_signs": [],
-    "conditions_treated": [],
+    "conditions_treated": [
+      "arthritis",
+      "collagen_disease",
+      "lupus",
+      "sickle_cell_anemia"
+    ],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "chloride": {
     "display_name": "Chloride",

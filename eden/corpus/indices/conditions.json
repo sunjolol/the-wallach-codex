@@ -302,7 +302,7 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
@@ -310,7 +310,8 @@
       "deficiency_signs": [
         "WAL-CLM-DDDL-000012",
         "WAL-CLM-DDDL-000032",
-        "WAL-CLM-RARE-000011"
+        "WAL-CLM-RARE-000011",
+        "WAL-CLM-RARE-000223"
       ],
       "definitions": [
         "WAL-CLM-RARE-000105",
@@ -339,6 +340,7 @@
       "phosphorus",
       "selenium",
       "strontium",
+      "sulfur",
       "vanadium",
       "zinc"
     ],
@@ -914,6 +916,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "collagen_disease": {
+    "display_name": "Collagen Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000223"
+      ]
+    },
+    "essentials_involved": [
+      "sulfur"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "colorectal_cancer": {
@@ -2021,6 +2039,22 @@
       "rare-earths"
     ]
   },
+  "lupus": {
+    "display_name": "Lupus",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000223"
+      ]
+    },
+    "essentials_involved": [
+      "sulfur"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "macular_degeneration": {
     "display_name": "Macular Degeneration",
     "claim_count": 1,
@@ -2571,6 +2605,22 @@
       "iron",
       "manganese",
       "vanadium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "sickle_cell_anemia": {
+    "display_name": "Sickle Cell Anemia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000223"
+      ]
+    },
+    "essentials_involved": [
+      "sulfur"
     ],
     "other_substances_involved": [],
     "books_cited": [

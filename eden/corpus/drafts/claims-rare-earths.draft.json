@@ -7774,6 +7774,188 @@
       "extracted_at": "2026-06-25T20:26:38+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000219",
+      "kind": "definition",
+      "essentials": [
+        "sulfur"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach explains that sulfur is an important structural atom in most proteins, present as the sulfur amino acids cystine, cysteine, and methionine and in small organic molecules; glutathione, a tripeptide containing cysteine, is essential to cellular reactions involving these sulfur amino acids in protein.",
+      "verbatim": "Glutathione, a\ntripeptide containing cysteine, is essential\nto cellular reactions involving sulfur amino\nacids in protein.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 376,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 902140
+      },
+      "dose": null,
+      "tags": [
+        "sulfur",
+        "amino-acids",
+        "cysteine",
+        "glutathione",
+        "protein"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T20:42:04+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000220",
+      "kind": "mechanism",
+      "essentials": [
+        "sulfur"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach notes that sulfur's sulfhydryl chemistry — the reduced -SH form in cysteine and the oxidized disulfide -S-S- form in the double molecule cystine — is important for the specific configuration of some structural proteins and for the biological activity of some enzymes.",
+      "verbatim": "This “sulfhydryl group” is important for the specific configuration of some structural proteins and for the biological activities of somes enzymes (proteins that do work).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 377,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 904033
+      },
+      "dose": null,
+      "tags": [
+        "sulfur",
+        "sulfhydryl",
+        "disulfide",
+        "enzymes",
+        "protein-structure"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T20:42:04+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000221",
+      "kind": "mechanism",
+      "essentials": [
+        "sulfur"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach lists sulfur-containing proteins that work in indirect ways to maintain life: hemoglobin, hormones (insulin and the adrenal cortical hormones), enzymes, and antibodies.",
+      "verbatim": "Sulfur containing proteins work in indirect ways to maintain life",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 377,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 904206
+      },
+      "dose": null,
+      "tags": [
+        "sulfur",
+        "hemoglobin",
+        "hormones",
+        "enzymes",
+        "antibodies"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T20:42:04+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000222",
+      "kind": "mechanism",
+      "essentials": [
+        "sulfur"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach adds that sulfur appears in carbohydrates such as heparin (an anticoagulant concentrated in the liver and other tissues) and chondroitin sulfate (in cartilage; Knox gelatin); the vitamins thiamine (B1) and biotin contain bound sulfur; and the toxic action of arsenic comes from its ability to combine with sulfhydryl groups.",
+      "verbatim": "Sulfur also occurs in carbohydrates\nsuch as heparin, an anticoagulant that is\nconcentrated in the liver and other tissues,\nand chondroitin sulfate (cartilage, Knox\ngelatin).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 377,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 904362
+      },
+      "dose": null,
+      "tags": [
+        "sulfur",
+        "heparin",
+        "chondroitin",
+        "thiamine",
+        "biotin",
+        "arsenic"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T20:42:04+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000223",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "sulfur"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "arthritis",
+        "lupus",
+        "sickle_cell_anemia",
+        "collagen_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach states that sulfur deficiency results in degenerative types of arthritis (with degeneration of cartilage, ligaments, and tendons), systemic lupus erythematosus, sickle-cell anemia, and various 'collagen diseases.'",
+      "verbatim": "Deficiency of sulfur results in degenerative types of arthritis involving degeneration of cartilage, ligaments, tendons, Systemic Lupus Erythematosis, Sicklecell anemia and various “collagen diseases.”",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 377,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 904706
+      },
+      "dose": null,
+      "tags": [
+        "sulfur",
+        "deficiency",
+        "arthritis",
+        "lupus",
+        "sickle-cell",
+        "collagen"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T20:42:04+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

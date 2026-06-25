@@ -723,6 +723,30 @@
   {
     "id": "CG-0027",
     "essentials": [
+      "sulfur"
+    ],
+    "conditions": [],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-RARE-000220",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000221",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000222",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 3
+  },
+  {
+    "id": "CG-0028",
+    "essentials": [
       "zinc"
     ],
     "conditions": [],

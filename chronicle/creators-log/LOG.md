@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_88 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_89 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-25 16:54 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 40 — Rare Earths S/Sulfur: 5 claims RARE-219..223 (definition, mechanism x3, deficiency_sign). kv 77→78, corpus 312→317, conditions 141→144, board 30/30, knowledge probe green.
+  ↳ Mined the rich S/Sulfur canon entry (p376-377). Claims: (219) structural atom in most proteins as sulfur amino acids cystine/cysteine/methionine + glutathione (cysteine tripeptide) essential to cellular reactions; (220) sulfhydryl group (reduced -SH cysteine / oxidized disulfide -S-S- cystine) → protein configuration + enzyme activity; (221) sulfur-containing proteins maintain life — hemoglobin, hormones (insulin, adrenal cortical), enzymes, antibodies; (222) sulfur in heparin (anticoagulant), chondroitin sulfate (cartilage/Knox gelatin), thiamine(B1)+biotin; arsenic toxicity via sulfhydryl binding; (223) deficiency → degenerative arthritis (cartilage/ligament/tendon), systemic lupus erythematosus, sickle-cell anemia, collagen diseases. The structural sentence is split by a firefighter-death news clipping (p377) left RAW — verbatims sit in the contiguous spans on either side, none crossing the clipping. 3 targeted reflows (S2/S3/S5 de-hyphenated); S1/S4 snapped from raw; resnap 0 broken. Faithful OCR/book typos kept in verbatims (somes, Systemic Lupus Erythematosis, Sicklecell); claim_texts clean. New condition slugs lupus/sickle_cell_anemia/collagen_disease. Claims reviewed + approved by Luneth before commit.
 
 ## 2026-06-25 16:38 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 39 — Rare Earths Re/Rh/Ru confirmed geology (no claim) + RARE-218 Rn/Radon (carcinogenic household hazard, other_substances=[radon]). kv 76→77, corpus 311→312, conditions 141, board 30/30, knowledge probe green.
