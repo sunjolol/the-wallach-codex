@@ -31,5 +31,6 @@ knowable in one place.
 ## Categories
 - `criminal-behavior.md` — minerals / deficiency linked to violent, criminal, or antisocial behavior.
 - `social-emotional-defects.md` — the "emotional defects" framing (incl. dated social claims).
+- `divine-hunger-cannibalism.md` — the "Divine Hunger" thesis (cannibalism, vampires & werewolves as extreme mineral-deficiency pica; Rare Earths Ch.5, whole-chapter exclusion).
 
 _Locators are page/chapter-based (durable across re-OCR). Appended to, never pruned._
