@@ -2588,6 +2588,22 @@
       "rare-earths"
     ]
   },
+  "schistosomiasis": {
+    "display_name": "Schistosomiasis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-RARE-000224"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "antimony"
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "schizophrenia": {
     "display_name": "Schizophrenia",
     "claim_count": 2,

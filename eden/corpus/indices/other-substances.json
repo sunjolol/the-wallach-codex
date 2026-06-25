@@ -1,4 +1,19 @@
 {
+  "antimony": {
+    "display_name": "Antimony",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-RARE-000224"
+      ]
+    },
+    "conditions_treated": [
+      "schistosomiasis"
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "cadmium": {
     "display_name": "Cadmium",
     "claim_count": 1,

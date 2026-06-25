@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_89 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_90 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-25 17:05 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 41 — Rare Earths Sb/Antimony + Sc/Scandium: RARE-224 Sb (tartar emetic for schistosomiasis, other_substances=[antimony]); Sc confirmed geology-only. kv 78→79, corpus 317→318, conditions 144→145, board 30/30, knowledge probe green.
+  ↳ Sc/Scandium read + confirmed geology-only (igneous 22 ppm, concentrates in mammalian heart and bone; canon-90 yet geology-only, same pattern as Re/Dy/Er/Gd/Hf/Ho/Lu/Nb). RARE-224 Sb/Antimony (toxic, non-canon → other_substances=[antimony], cond=schistosomiasis, kind=protocol): antimony potassium tartrate (tartar emetic) is still used today as the preferred treatment for blood flukes (schistosomiasis / bilharziasis). No book .txt edit this batch — the Sb claim sentence had no line-break hyphens, so its verbatim snapped from raw text; no resnap required. New condition slug schistosomiasis. Next: Se/Selenium as a dedicated rich batch (cross-check DDDL's heavy selenium coverage, extract only new Rare Earths angles). Claim reviewed + approved by Luneth before commit.
 
 ## 2026-06-25 16:54 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 40 — Rare Earths S/Sulfur: 5 claims RARE-219..223 (definition, mechanism x3, deficiency_sign). kv 77→78, corpus 312→317, conditions 141→144, board 30/30, knowledge probe green.

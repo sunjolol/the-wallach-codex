@@ -7956,6 +7956,43 @@
       "extracted_at": "2026-06-25T20:42:04+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000224",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "antimony"
+      ],
+      "conditions": [
+        "schistosomiasis"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach notes that antimony potassium tartrate (tartar emetic) is still used today as the preferred treatment for blood flukes (schistosomiasis, also called bilharziasis).",
+      "verbatim": "Antimony potassium tartrate (tartar\nemetic) is still used today as the preferred\ntreatment for blood flukes (schistosomiasis\nor Bilharziasis).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 378,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 905164
+      },
+      "dose": null,
+      "tags": [
+        "antimony",
+        "tartar-emetic",
+        "schistosomiasis",
+        "blood-flukes",
+        "parasites"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T20:56:45+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
