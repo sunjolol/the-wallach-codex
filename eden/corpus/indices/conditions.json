@@ -1,4 +1,20 @@
 {
+  "adhd": {
+    "display_name": "Adhd",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000116"
+      ]
+    },
+    "essentials_involved": [
+      "chromium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "als": {
     "display_name": "Als",
     "claim_count": 1,
@@ -314,6 +330,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "bipolar_disorder": {
+    "display_name": "Bipolar Disorder",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000116"
+      ]
+    },
+    "essentials_involved": [
+      "chromium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "birth_defects": {
@@ -691,10 +723,13 @@
   },
   "coronary_artery_disease": {
     "display_name": "Coronary Artery Disease",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000017"
+      ],
+      "definitions": [
+        "WAL-CLM-RARE-000116"
       ]
     },
     "essentials_involved": [
@@ -703,7 +738,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "cradle_cap": {
@@ -750,22 +786,42 @@
       "rare-earths"
     ]
   },
+  "depression": {
+    "display_name": "Depression",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000116"
+      ]
+    },
+    "essentials_involved": [
+      "chromium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "diabetes": {
     "display_name": "Diabetes",
-    "claim_count": 12,
+    "claim_count": 14,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-DDDL-000008"
       ],
       "causes": [
         "WAL-CLM-DDDL-000010",
-        "WAL-CLM-DDDL-000034"
+        "WAL-CLM-DDDL-000034",
+        "WAL-CLM-RARE-000118"
       ],
       "contraindications": [
         "WAL-CLM-DDDL-000022"
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000017"
+      ],
+      "definitions": [
+        "WAL-CLM-RARE-000116"
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000081"
@@ -915,6 +971,54 @@
       "rare-earths"
     ]
   },
+  "hyperactivity": {
+    "display_name": "Hyperactivity",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000116"
+      ]
+    },
+    "essentials_involved": [
+      "chromium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "hyperinsulinemia": {
+    "display_name": "Hyperinsulinemia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000116"
+      ]
+    },
+    "essentials_involved": [
+      "chromium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "hyperirritability": {
+    "display_name": "Hyperirritability",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000116"
+      ]
+    },
+    "essentials_involved": [
+      "chromium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "hypertension": {
     "display_name": "Hypertension",
     "claim_count": 3,
@@ -942,10 +1046,13 @@
   },
   "hypoglycemia": {
     "display_name": "Hypoglycemia",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000017"
+      ],
+      "definitions": [
+        "WAL-CLM-RARE-000116"
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000046"
@@ -957,7 +1064,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "hypothyroidism": {
@@ -982,8 +1090,11 @@
   },
   "infertility": {
     "display_name": "Infertility",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000116"
+      ],
       "prognosis": [
         "WAL-CLM-DDDL-000069"
       ],
@@ -993,6 +1104,7 @@
     },
     "essentials_involved": [
       "arginine",
+      "chromium",
       "germanium",
       "selenium",
       "vitamin-a",
@@ -1000,7 +1112,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "insomnia": {
@@ -1105,6 +1218,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "rare-earths"
+    ]
+  },
+  "learning_disabilities": {
+    "display_name": "Learning Disabilities",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000116"
+      ]
+    },
+    "essentials_involved": [
+      "chromium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
       "rare-earths"
     ]
   },
@@ -1371,6 +1500,22 @@
       "dddl-3e-2011"
     ]
   },
+  "panic_attacks": {
+    "display_name": "Panic Attacks",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000105"
+      ]
+    },
+    "essentials_involved": [
+      "calcium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "parkinsons_disease": {
     "display_name": "Parkinsons Disease",
     "claim_count": 1,
@@ -1397,6 +1542,39 @@
       ]
     },
     "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "peripheral_neuropathy": {
+    "display_name": "Peripheral Neuropathy",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000116"
+      ]
+    },
+    "essentials_involved": [
+      "chromium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "pernicious_anemia": {
+    "display_name": "Pernicious Anemia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000115"
+      ]
+    },
+    "essentials_involved": [
+      "cobalt",
+      "vitamin-b12"
+    ],
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"

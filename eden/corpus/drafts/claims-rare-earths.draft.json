@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811705
+        "char_offset": 811691
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811907
+        "char_offset": 811893
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811469
+        "char_offset": 811455
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 766396
+        "char_offset": 766392
       },
       "dose": {
         "amount": "250-400",
@@ -3537,7 +3537,8 @@
         "insomnia",
         "premenstrual_syndrome",
         "bells_palsy",
-        "tetany"
+        "tetany",
+        "panic_attacks"
       ],
       "symptoms": [],
       "claim_text": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists (Table 11-10) include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
@@ -3853,6 +3854,201 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T06:25:58+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000114",
+      "kind": "mechanism",
+      "essentials": [
+        "cobalt",
+        "vitamin-b12"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach explains the essentiality of cobalt is unusual: the actual requirement is for the cobalt-containing complex vitamin B12 (cyanocobalamin), in which a single cobalt atom is the central metal. Vitamin B12/cobalt works with folic acid, choline, and the amino acid methionine to transfer methyl groups in the synthesis of RNA and DNA (directly involved in gene function and preconception nutrition), and is required for growth, myelin formation, and red-blood-cell synthesis.",
+      "verbatim": "a\nsingle cobalt atom is the central metal\ncomponant of vitamin B,, which itself is a\ncofactor and activator",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 305,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 761270
+      },
+      "dose": null,
+      "tags": [
+        "cobalt",
+        "vitamin-b12",
+        "cyanocobalamin",
+        "methyl-groups",
+        "dna-rna"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:33:04+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000115",
+      "kind": "mechanism",
+      "essentials": [
+        "cobalt",
+        "vitamin-b12"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "pernicious_anemia"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach states that in humans a failure to absorb vitamin B12/cobalt causes deficiency disease — from surgical removal of part of the stomach or the ileum, low stomach acid, parasites (tapeworm), celiac disease, or other malabsorption — and that pernicious anemia and demyelination of the spinal cord and large nerve trunks are classic signs of B12/cobalt deficiency. Vitamin B12 was isolated from liver extract in 1948 and shown to have anti-pernicious-anemia activity.",
+      "verbatim": "Pernicious anemia and demyelination of the spinal cord and large nerve trunks are classic for B, /cobalt deficiency.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 306,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 766009
+      },
+      "dose": null,
+      "tags": [
+        "cobalt",
+        "vitamin-b12",
+        "pernicious-anemia",
+        "demyelination",
+        "malabsorption"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:33:04+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000116",
+      "kind": "definition",
+      "essentials": [
+        "chromium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "diabetes",
+        "hypoglycemia",
+        "hyperinsulinemia",
+        "hyperactivity",
+        "learning_disabilities",
+        "adhd",
+        "hyperirritability",
+        "depression",
+        "bipolar_disorder",
+        "peripheral_neuropathy",
+        "coronary_artery_disease",
+        "infertility"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency (Table 11-12) produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
+      "verbatim": "Chromium activates phosphoglucosonetase and other enzymes and is tightly associated with GTF (glucose tolerance factor",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 306,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 767247
+      },
+      "dose": null,
+      "tags": [
+        "chromium",
+        "glucose-tolerance-factor",
+        "diabetes",
+        "mental-health",
+        "cardiovascular",
+        "deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:33:04+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000117",
+      "kind": "mechanism",
+      "essentials": [
+        "chromium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports chromium is poorly absorbed in inorganic form: an average dietary intake of 50 to 100 micrograms of inorganic chromium supplies only 0.25 to 0.5 micrograms of usable chromium, whereas about 25% of chelated chromium is absorbed (the Recommended Dietary Allowance is 50 to 200 micrograms per day for adults). Dietary sugar loads — colas, apple and grape juice, honey, candy, sugar, fructose — increase the rate of urinary chromium loss by 300% for 12 hours.",
+      "verbatim": "The average intake of 50 to 100 ug of inorganic chromium from food and water supplies only 0.25 to 0.5 ug of usable chromium, by contrast 25 % of chelated chromium is absorbed.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 307,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 768746
+      },
+      "dose": null,
+      "tags": [
+        "chromium",
+        "absorption",
+        "chelated",
+        "sugar-loss",
+        "bioavailability"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:33:04+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000118",
+      "kind": "mechanism",
+      "essentials": [
+        "chromium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "diabetes"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach cites Richard Anderson of the USDA stating that 90 percent of Americans are deficient in chromium, and reports that the impaired glucose tolerance of pregnancy reflects a chromium deficiency that often results in pregnancy-onset diabetes, and that one study found abnormal glucose tolerance in 77 percent of clinically 'normal' adults over the age of 70.",
+      "verbatim": "According to Richard Anderson , USDA, \"90 percent of Americans are deficient in chromium.\"",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 307,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 769752
+      },
+      "dose": null,
+      "tags": [
+        "chromium",
+        "deficiency-prevalence",
+        "anderson-usda",
+        "glucose-tolerance",
+        "diabetes"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:33:04+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

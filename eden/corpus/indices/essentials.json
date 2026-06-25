@@ -277,6 +277,7 @@
       "osteoarthritis",
       "osteomalacia",
       "osteoporosis",
+      "panic_attacks",
       "premenstrual_syndrome",
       "spinal_stenosis",
       "tetany",
@@ -330,17 +331,21 @@
     "display_name": "Cobalt",
     "canon_slug": "cobalt",
     "category": "mineral",
-    "claim_count": 2,
+    "claim_count": 4,
     "claims_by_kind": {
       "dose": [
         "WAL-CLM-RARE-000014"
       ],
       "mechanism": [
-        "WAL-CLM-DDDL-000044"
+        "WAL-CLM-DDDL-000044",
+        "WAL-CLM-RARE-000114",
+        "WAL-CLM-RARE-000115"
       ]
     },
     "deficiency_signs": [],
-    "conditions_treated": [],
+    "conditions_treated": [
+      "pernicious_anemia"
+    ],
     "interacts_with": [
       "vitamin-b12"
     ],
@@ -353,19 +358,24 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 13,
+    "claim_count": 16,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
         "WAL-CLM-RARE-000039",
         "WAL-CLM-RARE-000042"
       ],
+      "definition": [
+        "WAL-CLM-RARE-000116"
+      ],
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000081"
       ],
       "mechanism": [
         "WAL-CLM-RARE-000043",
-        "WAL-CLM-RARE-000074"
+        "WAL-CLM-RARE-000074",
+        "WAL-CLM-RARE-000117",
+        "WAL-CLM-RARE-000118"
       ],
       "personal_anecdote": [
         "WAL-CLM-DDDL-000008"
@@ -396,13 +406,22 @@
       }
     ],
     "conditions_treated": [
+      "adhd",
       "anemia",
       "anxiety",
       "arthritis",
+      "bipolar_disorder",
       "coronary_artery_disease",
+      "depression",
       "diabetes",
+      "hyperactivity",
+      "hyperinsulinemia",
+      "hyperirritability",
       "hypoglycemia",
+      "infertility",
       "insomnia",
+      "learning_disabilities",
+      "peripheral_neuropathy",
       "schizophrenia"
     ],
     "interacts_with": [
@@ -1664,14 +1683,16 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 6,
+    "claim_count": 8,
     "claims_by_kind": {
       "dose": [
         "WAL-CLM-RARE-000014"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000044",
-        "WAL-CLM-DDDL-000045"
+        "WAL-CLM-DDDL-000045",
+        "WAL-CLM-RARE-000114",
+        "WAL-CLM-RARE-000115"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000049",
@@ -1684,7 +1705,8 @@
       "aphthous_stomatitis",
       "bells_palsy",
       "canker_sores",
-      "diabetes"
+      "diabetes",
+      "pernicious_anemia"
     ],
     "interacts_with": [
       "calcium",

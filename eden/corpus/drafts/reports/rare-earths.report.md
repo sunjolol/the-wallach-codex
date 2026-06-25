@@ -1,39 +1,34 @@
 # Extraction report — rare-earths (Rare Earths: Forbidden Cures)
 
-_5 claim(s) drafted 2026-06-25T06:25:58+00:00. Review then run corpus_seal.py to promote._
+_5 claim(s) drafted 2026-06-25T06:33:04+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×2, mechanism×3
+Kinds: definition×1, mechanism×4
 
-### WAL-CLM-RARE-000109 · definition
-- **essentials:** omega-3, omega-6 · **conditions:** — · **symptoms:** —
-- **claim:** Wallach explains that of the three polyunsaturated fatty acids called essential fatty acids — linoleic, linolenic and arachidonic — only two (linoleic and linolenic) are truly essential, because the human body can synthesize arachidonic acid from linoleic acid.
-- **verbatim** (offset 733749): “only two (linoleic and linolenic) are
-designated as EFA as arachidonic acid can
-be synthesized by the human from lenoleic
-acid.”
+### WAL-CLM-RARE-000114 · mechanism
+- **essentials:** cobalt, vitamin-b12 · **conditions:** — · **symptoms:** —
+- **claim:** Wallach explains the essentiality of cobalt is unusual: the actual requirement is for the cobalt-containing complex vitamin B12 (cyanocobalamin), in which a single cobalt atom is the central metal. Vitamin B12/cobalt works with folic acid, choline, and the amino acid methionine to transfer methyl groups in the synthesis of RNA and DNA (directly involved in gene function and preconception nutrition), and is required for growth, myelin formation, and red-blood-cell synthesis.
+- **verbatim** (offset 761270): “a
+single cobalt atom is the central metal
+componant of vitamin B,, which itself is a
+cofactor and activator”
 
-### WAL-CLM-RARE-000110 · mechanism
-- **essentials:** omega-3, omega-6 · **conditions:** — · **symptoms:** —
-- **claim:** Wallach states that essential fatty acids are the raw material the body uses to make prostaglandins, which help regulate blood pressure, heart rate, vascular dilation, blood clotting, bronchial dilation, and central nervous system (brain and spinal cord) function; they also maintain cell-wall integrity and can lower serum cholesterol.
-- **verbatim** (offset 734234): “EFA are also the raw material for the
-human body to manufacture prostaglandins
-that help regulate blood pressure, heart rate,
-vascular dilation, blood clotting, bronchial
-dilation, and central nervous system (brain
-and spinal cord) function.”
+### WAL-CLM-RARE-000115 · mechanism
+- **essentials:** cobalt, vitamin-b12 · **conditions:** pernicious_anemia · **symptoms:** —
+- **claim:** Wallach states that in humans a failure to absorb vitamin B12/cobalt causes deficiency disease — from surgical removal of part of the stomach or the ileum, low stomach acid, parasites (tapeworm), celiac disease, or other malabsorption — and that pernicious anemia and demyelination of the spinal cord and large nerve trunks are classic signs of B12/cobalt deficiency. Vitamin B12 was isolated from liver extract in 1948 and shown to have anti-pernicious-anemia activity.
+- **verbatim** (offset 766009): “Pernicious anemia and demyelination of the spinal cord and large nerve trunks are classic for B, /cobalt deficiency.”
 
-### WAL-CLM-RARE-000111 · mechanism
-- **essentials:** omega-3, omega-6 · **conditions:** eczema · **symptoms:** —
-- **claim:** Wallach reports that essential fatty acid deficiency in human infants results in a poor growth rate, eczema, and lowered resistance to infectious diseases; in animals, essential fatty acid deficiency produces atherosclerosis (Fig. 11-2 shows it in a sheep's aorta and a pheasant's coronary arteries).
-- **verbatim** (offset 734477): “EFA deficiency in human infants results in a poor growth rate, eczema, lowered resistance to infectious diseases.”
+### WAL-CLM-RARE-000116 · definition
+- **essentials:** chromium · **conditions:** diabetes, hypoglycemia, hyperinsulinemia, coronary_artery_disease, infertility, peripheral_neuropathy · **symptoms:** —
+- **claim:** Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency (Table 11-12) produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, peripheral neuropathy, elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.
+- **verbatim** (offset 767247): “Chromium activates phosphoglucosonetase and other enzymes and is tightly associated with GTF (glucose tolerance factor”
 
-### WAL-CLM-RARE-000112 · definition
-- **essentials:** cerium · **conditions:** burns · **symptoms:** —
-- **claim:** Wallach notes that cerium — a Rare Earth element that accumulates in bone — has a medical use: cerium nitrate is used as a topical disinfectant for severe burn victims.
-- **verbatim** (offset 759383): “Cerium nitrate is used as a topical disinfectant for severe burn victims.”
+### WAL-CLM-RARE-000117 · mechanism
+- **essentials:** chromium · **conditions:** — · **symptoms:** —
+- **claim:** Wallach reports chromium is poorly absorbed in inorganic form: an average dietary intake of 50 to 100 micrograms of inorganic chromium supplies only 0.25 to 0.5 micrograms of usable chromium, whereas about 25% of chelated chromium is absorbed (the Recommended Dietary Allowance is 50 to 200 micrograms per day for adults). Dietary sugar loads — colas, apple and grape juice, honey, candy, sugar, fructose — increase the rate of urinary chromium loss by 300% for 12 hours.
+- **verbatim** (offset 768746): “The average intake of 50 to 100 ug of inorganic chromium from food and water supplies only 0.25 to 0.5 ug of usable chromium, by contrast 25 % of chelated chromium is absorbed.”
 
-### WAL-CLM-RARE-000113 · mechanism
-- **essentials:** chloride · **conditions:** — · **symptoms:** —
-- **claim:** Wallach states chloride is essential for all living species — serving electrochemical and catalytic functions and activating numerous enzymes — and is the basic raw material the stomach uses to make stomach acid (hydrochloric acid, HCl) for protein digestion (pepsin), vitamin B12 absorption (intrinsic factor), and absorption of metallic minerals. Sodium chloride (salt) is the universal source of chloride ions.
-- **verbatim** (offset 759898): “Essential for all living species - electrochemical and catalytic functions, activates numerous enzymes and is the basic raw material for our stomachs to make stomach acid (HC]) for protein digestion (pepsin)”
+### WAL-CLM-RARE-000118 · mechanism
+- **essentials:** chromium · **conditions:** diabetes · **symptoms:** —
+- **claim:** Wallach cites Richard Anderson of the USDA stating that 90 percent of Americans are deficient in chromium, and reports that the impaired glucose tolerance of pregnancy reflects a chromium deficiency that often results in pregnancy-onset diabetes, and that one study found abnormal glucose tolerance in 77 percent of clinically 'normal' adults over the age of 70.
+- **verbatim** (offset 769752): “According to Richard Anderson , USDA, "90 percent of Americans are deficient in chromium."”
 

@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_66 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_67 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-25 02:39 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 21 — Rare Earths Ch.11 catalog Co/Cobalt + Cr/Chromium (p305-307): 5 claims (RARE-114..118) + Luneth behavioral-condition correction, kv 48→51, corpus 212
+  ↳ Cobalt+Chromium catalog. RARE-114 cobalt essentiality = vitamin B12 complex (single cobalt central atom; methyl-group transfer for DNA/RNA); RARE-115 B12/cobalt malabsorption -> pernicious anemia + demyelination; RARE-116 chromium = GTF + deficiency diseases; RARE-117 chromium absorption (50-100ug -> 0.25-0.5ug usable vs 25% chelated; sugar +300% loss); RARE-118 Anderson/USDA 90% of Americans Cr-deficient. Co dose dropped (dup of RARE-14). LUNETH CORRECTION (re-seal kv 50->51): behavioral/mental-health deficiency conditions are CORE dashboard value -> re-added hyperactivity/learning_disabilities/adhd/hyperirritability/depression/bipolar_disorder to RARE-116 + panic_attacks to RARE-105 (calcium). Only graphic crime 'Bad Seeds' stays fringe. New memory document-behavioral-mental-conditions. conditions 81->91. Board 30/30, build OK, knowledge probe green. Luneth-approved.
 
 ## 2026-06-25 02:27 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 20 — Rare Earths Ch.11 catalog C/Carbon EFA + Ce + Cl (p291,304): 5 claims (RARE-109..113), kv 48→49, corpus 207
