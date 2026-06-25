@@ -28,9 +28,18 @@ knowable in one place.
    this folder, so later review is per-category and what (if anything) graduates
    to Eden is a clean, manual decision.
 
+## Two tiers (added 2026-06-24)
+- **Tier 1 — graphic / violent / user-repellent** (cannibalism, serial-killer crime): graphic
+  anecdotes are SUMMARIZED, not reproduced; only the thesis verbatims are kept.
+- **Tier 2 — controversial-but-not-graphic, Luneth-considers-valid** (homosexuality / intersex as
+  preventable congenital nutritional defects): mapped FULLY + faithfully (all of it) in its own
+  file, and **earmarked for a future "uncensored" version of the app**. Still excluded from the
+  current dashboard; still requires Luneth's per-instance ruling.
+
 ## Categories
-- `criminal-behavior.md` — minerals / deficiency linked to violent, criminal, or antisocial behavior.
-- `social-emotional-defects.md` — the "emotional defects" framing (incl. dated social claims).
-- `divine-hunger-cannibalism.md` — the "Divine Hunger" thesis (cannibalism, vampires & werewolves as extreme mineral-deficiency pica; Rare Earths Ch.5, whole-chapter exclusion).
+- `criminal-behavior.md` (Tier 1) — minerals / deficiency linked to violent, criminal, or antisocial behavior.
+- `social-emotional-defects.md` (Tier 1) — the "emotional defects" framing (incl. dated social claims).
+- `divine-hunger-cannibalism.md` (Tier 1) — the "Divine Hunger" thesis (cannibalism, vampires & werewolves as extreme mineral-deficiency pica; Rare Earths Ch.5, whole-chapter exclusion).
+- `homosexuality-intersex.md` (Tier 2 · uncensored-earmarked) — homosexuality, hermaphroditism & intersex as preventable congenital nutritional defects (Rare Earths Ch.7, pp.153–160).
 
 _Locators are page/chapter-based (durable across re-OCR). Appended to, never pruned._

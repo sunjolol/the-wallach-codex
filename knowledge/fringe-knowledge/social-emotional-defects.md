@@ -20,6 +20,8 @@ neural-tube birth defects are preventable via nutrition — WAS extracted to the
 corpus as WAL-CLM-RARE-000015. Only the "emotional defects / homosexuality"
 framing is excluded.)_
 
+_Cross-reference: Wallach's FULL homosexuality / hermaphroditism / intersex thesis (Ch.7 pp.153–160) is mapped completely in [`homosexuality-intersex.md`](homosexuality-intersex.md) (Tier 2, uncensored-earmarked). This entry is only the brief idx151 list that names homosexuality among several 'emotional defects.'_
+
 ---
 
 _Locators are page/chapter-based (durable across re-OCR). Appended to, never pruned.
