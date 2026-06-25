@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_55 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_56 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-25 00:05 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 14 — Rare Earths Ch.11 hair-analysis half: 4 claims (RARE-80..83: hair-analysis premise/200×-blood, disease→hair-mineral patterns, interpretation caveats, Table 11-2 ideal ratios). kv 34→35, RARE 79→83, corpus 177, conditions 68→71.
+  ↳ Cleaned pp273-275 (idx 294-296): reflowed 3 spans + hand-rebuilt the OCR-tangled pattern list + marked Table 11-2. resnap 4 relocated/0 broken. +3 condition slugs (schizophrenia, celiac_disease, malabsorption). FRINGE (Luneth ruling = cross-ref): the p275 pattern list repeats the Jekyll/Hyde crime shorthand — one-line cross-ref appended to criminal-behavior.md, kept out of corpus. Board 30/30, build OK, knowledge probe green. NEXT: Ch.11 batch 3 (toxic-metal substitution + lead/cadmium/mercury + dental amalgam + Dr. Todd colloidal study + 79/60 periodic-table intro, idx 297-301), then the alphabetical per-element catalog (idx 302+).
 
 ## 2026-06-24 23:48 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 13 — Rare Earths Ch.11 conceptual foundation: 6 claims (RARE-74..79: colloidal/metallic absorption ratios, RDA critique, monk-bone soil-depletion, clinical-phase disease, 48hr-30day reversibility, compensated-phase signs). kv 33→34, RARE 73→79, corpus 173.

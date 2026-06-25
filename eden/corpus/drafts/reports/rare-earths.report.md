@@ -1,38 +1,30 @@
 # Extraction report — rare-earths (Rare Earths: Forbidden Cures)
 
-_6 claim(s) drafted 2026-06-25T03:39:21+00:00. Review then run corpus_seal.py to promote._
+_4 claim(s) drafted 2026-06-25T04:02:24+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: deficiency_sign×1, definition×2, mechanism×1, prognosis×2
+Kinds: definition×1, diagnostic_pattern×3
 
-### WAL-CLM-RARE-000074 · mechanism
-- **essentials:** iodine, iron, chromium · **conditions:** — · **symptoms:** —
-- **claim:** Wallach teaches that minerals are absorbed at very different efficiencies depending on their form, so the most efficient supplement form — plant-derived colloidal minerals — should be consumed; for the poorly absorbed metallic form the absorption ratio is roughly 1:1 for iodine, 1:10 for iron and 1:100 for chromium, meaning the colloidal form can be absorbed up to 100 times better for some minerals.
-- **verbatim** (offset 681977): “the most efficient form of trace mineral supplement, such as plant derived colloidal minerals should be consumed.
-
-For the metallic form of iodine the ratio is almost 1:1; for iron it’s 1:10 and for chromium it’s 1:100.”
-
-### WAL-CLM-RARE-000075 · definition
+### WAL-CLM-RARE-000080 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach asserts that the RDA and other dietary recommendations — conceived by the National Science Foundation to meet the needs of "practically all healthy people" — are not applicable to people with health challenges or full-blown disease states.
-- **verbatim** (offset 682198): “The RDA and other dietary recommendations for trace minerals are conceived by the National Science Foundation to meet the needs of “practically all healthy people” - they are not applicable to people with “health challenges” or full blown disease states.”
+- **claim:** Wallach explains that a hair analysis reads non-perishable body-tissue minerals and records the body's mineral status over several months; hair concentrations of trace minerals and Rare Earths run about 200 times greater than those found in blood (where calcium and other essentials are held at normal levels by drawing on body reserves even during a raging deficiency).
+- **verbatim** (offset 696753): “Hair analysis are performed on nonperishable samples of body tissue minerals and are a recording of the bodies mineral status over a period of several months - additionally hair concentration of trace minerals and Rare Earths are 200 times greater than those found in blood.”
 
-### WAL-CLM-RARE-000076 · definition
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** As evidence of progressive soil and food mineral depletion over time, Wallach cites that the 3,000-year-old bones of Japanese temple monks contained a greater spectrum of minerals and a greater amount of each mineral than the bones of modern-day Japanese.
-- **verbatim** (offset 682454): “Mineral analysis of 3,000 year old bones of Japanese temple monks showed that they contained a greater spectrum of minerals and greater amount of each mineral than the bones of modern day Japanese.”
+### WAL-CLM-RARE-000081 · diagnostic_pattern
+- **essentials:** iron, copper, chromium, vanadium · **conditions:** schizophrenia, arthritis, anemia, diabetes · **symptoms:** —
+- **claim:** Wallach lists well-documented hair-analysis mineral patterns for disease: schizophrenia = high calcium, low iron, high copper; arthritis (osteoporosis/hyperparathyroidism) = high lead, calcium and phosphorus, low iron and copper; anemia = low iron, copper, selenium, cobalt; diabetes (prediabetes/hypoglycemia) = low chromium, vanadium, sodium, potassium, manganese and zinc.
+- **verbatim** (offset 699962): “Arthritis - (osteoporosis/ hyperparathyroidism) - high Lead, Calcium and Phosphorus; low Iron and Copper.
 
-### WAL-CLM-RARE-000077 · prognosis
-- **essentials:** — · **conditions:** cardiomyopathy, diabetes, cancer, aneurysm · **symptoms:** —
-- **claim:** Wallach describes the "clinical phase" of trace-mineral deficiency as the onset of full-blown disease states and even death, naming cardiomyopathy, diabetes, cancer and aneurysms as examples of conditions that are, at root, trace-mineral deficiencies.
-- **verbatim** (offset 689932): “The clinical phase of trace mineral deficiency is characterized by the onset of full blown disease states and even death (i.e. - cardiomyopathy, diabetes, cancer, aneurysms, etc.).”
+Anemia - low Iron, Copper, Selenium, Cobalt.
 
-### WAL-CLM-RARE-000078 · prognosis
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach contends that most clinical-phase trace-mineral deficiencies go undiagnosed by orthodox physicians, yet the cure is simply replacing the missing element: a correct diagnosis can produce a rapid positive clinical response within 48 hours to 30 days — unless permanent biochemical, chromosomal or physical damage has already occurred.
-- **verbatim** (offset 690233): “the cure, however, is simply a matter of replacement of the trace element (a correct diagnosis can lead to a remarkably rapid positive clinical response ranging from 48 hours to 30 days for recognizable results)”
+Diabetes(prediabetes/hypoglycemia) - low Chromium, Vanadium, sodium, potassium, manganese, Zinc.”
 
-### WAL-CLM-RARE-000079 · deficiency_sign
-- **essentials:** — · **conditions:** — · **symptoms:** irregular_heartbeat, white_hair, hair_loss
-- **claim:** Wallach describes the "compensated metabolic phase" of trace-mineral deficiency — a reduction in specific enzyme reactions and receptor-site functions that produces early warning signs such as low blood sugar, irregular heartbeat, white hair and hair loss, before any full-blown disease appears.
-- **verbatim** (offset 684852): “a reduction in biochemical function (i.e. low blood sugar, irregular heart beat, white hair, hair loss, etc.)”
+### WAL-CLM-RARE-000082 · diagnostic_pattern
+- **essentials:** calcium, magnesium · **conditions:** osteoporosis, celiac_disease, malabsorption · **symptoms:** —
+- **claim:** Wallach cautions that hair-mineral readings need interpretation: universally low levels indicate maldigestion (hypochlorhydria) and/or malabsorption (celiac disease); and paradoxically "elevated" calcium and magnesium can mean active depletion/shedding from bone — revealing very active osteoporosis with associated arthritis, periodontitis and a predilection for kidney stones — while elevated sodium/potassium/chloride signal essential-fatty-acid deficiency.
+- **verbatim** (offset 700432): “In some cases “elevated” hair level values represent actual depletion or shedding of minerals from body stores, i.e.- elevated calcium and magnesium levels reveal very active osteoporosis and associated arthritis, periodontitis and prediliction for kidney stones.”
+
+### WAL-CLM-RARE-000083 · diagnostic_pattern
+- **essentials:** zinc, copper, calcium, magnesium, iron · **conditions:** — · **symptoms:** —
+- **claim:** Wallach teaches that the RATIOS between hair minerals — not just absolute levels — are good barometers of specific organ systems. His Table 11-2 ideal hair mineral ratios: Zn/Cu 8:1 (cardiovascular, liver, female reproductive system), Zn/Mn 150:1 (musculoskeletal, collagen, cholesterol biosynthesis), Zn/Ca 3:1 (cardiovascular, osteodynamics, kidney), Na/P 2:1 (adrenal and general endocrine function), Ca/Mg 8:1 (cardiovascular, osteodynamics, dietary imbalances), and Fe/Cu 2.5:1 (hematology, energy production, cellular respiration).
+- **verbatim** (offset 701014): “The ratios of trace minerals and Rare Earths in hair are of interest in the interpretation of a hair analysis as they are good barometers of what is happening in specific organ systems or tissues (Table 11 - 2).”
 

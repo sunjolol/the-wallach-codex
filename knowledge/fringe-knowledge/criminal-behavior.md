@@ -90,6 +90,8 @@ phase list — clinical-phase disease onset, the 48-hours-to-30-days reversibili
 compensated-phase early signs — are in the sealed corpus as WAL-CLM-RARE-000077..079.
 > "appearence of symptoms or defects in the metabolic (prediabetes), cognative (learning disabilities, ADD, ADHD), emotional (DR. Jykell/Mr.Hyde, "Bad Seeds"), developmental ( dyslexia, gay behavior), structural (dystrophy of muscles), work-stamina and longevity of a species."
 
+**Also (p. 275 / PDF idx 296):** the "Interpretation of the Hair Analysis" pattern list repeats the crime shorthand as a hair-mineral signature — "Sociopath/violent (Dr.Jykel/Mr.Hyde rages) - low in copper, zinc, sodium, chromium, vanadium and lithium." Excluded from the corpus (the in-scope hair patterns — schizophrenia, arthritis, anemia, diabetes — are sealed as WAL-CLM-RARE-000081). (Logged 2026-06-25.)
+
 ---
 
 _Locators are page/chapter-based (durable across re-OCR). Appended to + corrected, never

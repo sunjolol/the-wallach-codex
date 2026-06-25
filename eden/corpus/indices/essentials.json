@@ -72,10 +72,14 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 11,
+    "claim_count": 13,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074"
+      ],
+      "diagnostic_pattern": [
+        "WAL-CLM-RARE-000082",
+        "WAL-CLM-RARE-000083"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000053",
@@ -102,7 +106,9 @@
       "bells_palsy",
       "bladder_stones",
       "cardiovascular_disease",
+      "celiac_disease",
       "kidney_stones",
+      "malabsorption",
       "menopause",
       "muscle_cramps",
       "osteoporosis"
@@ -110,14 +116,18 @@
     "interacts_with": [
       "calcium",
       "chromium",
+      "copper",
+      "iron",
       "manganese",
       "vanadium",
       "vitamin-b12",
       "vitamin-b3",
-      "vitamin-b6"
+      "vitamin-b6",
+      "zinc"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "phosphorus": {
@@ -193,10 +203,14 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 14,
+    "claim_count": 16,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074"
+      ],
+      "diagnostic_pattern": [
+        "WAL-CLM-RARE-000082",
+        "WAL-CLM-RARE-000083"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000033",
@@ -228,8 +242,10 @@
       "bells_palsy",
       "bladder_stones",
       "cardiovascular_disease",
+      "celiac_disease",
       "insomnia",
       "kidney_stones",
+      "malabsorption",
       "menopause",
       "muscle_cramps",
       "osteoarthritis",
@@ -241,16 +257,20 @@
     ],
     "interacts_with": [
       "chromium",
+      "copper",
+      "iron",
       "magnesium",
       "phosphorus",
       "strontium",
       "vanadium",
       "vitamin-b12",
       "vitamin-b3",
-      "vitamin-b6"
+      "vitamin-b6",
+      "zinc"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "boron": {
@@ -291,12 +311,15 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
         "WAL-CLM-RARE-000039",
         "WAL-CLM-RARE-000042"
+      ],
+      "diagnostic_pattern": [
+        "WAL-CLM-RARE-000081"
       ],
       "mechanism": [
         "WAL-CLM-RARE-000043",
@@ -331,14 +354,18 @@
       }
     ],
     "conditions_treated": [
+      "anemia",
       "anxiety",
+      "arthritis",
       "coronary_artery_disease",
       "diabetes",
       "hypoglycemia",
-      "insomnia"
+      "insomnia",
+      "schizophrenia"
     ],
     "interacts_with": [
       "calcium",
+      "copper",
       "iodine",
       "iron",
       "lithium",
@@ -357,10 +384,14 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 6,
+    "claim_count": 8,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000003"
+      ],
+      "diagnostic_pattern": [
+        "WAL-CLM-RARE-000081",
+        "WAL-CLM-RARE-000083"
       ],
       "interaction": [
         "WAL-CLM-DDDL-000025",
@@ -382,14 +413,21 @@
       }
     ],
     "conditions_treated": [
+      "anemia",
       "aneurysm",
+      "arthritis",
       "diabetes",
       "goiter",
-      "kawasaki_disease"
+      "kawasaki_disease",
+      "schizophrenia"
     ],
     "interacts_with": [
+      "calcium",
+      "chromium",
       "iodine",
       "iron",
+      "magnesium",
+      "vanadium",
       "vitamin-b12",
       "vitamin-b3",
       "zinc"
@@ -453,7 +491,7 @@
     "display_name": "Iron",
     "canon_slug": "iron",
     "category": "mineral",
-    "claim_count": 8,
+    "claim_count": 10,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000022"
@@ -461,6 +499,10 @@
       "deficiency_sign": [
         "WAL-CLM-DDDL-000019",
         "WAL-CLM-DDDL-000020"
+      ],
+      "diagnostic_pattern": [
+        "WAL-CLM-RARE-000081",
+        "WAL-CLM-RARE-000083"
       ],
       "interaction": [
         "WAL-CLM-DDDL-000021",
@@ -484,16 +526,21 @@
     "conditions_treated": [
       "anemia",
       "aphthous_stomatitis",
+      "arthritis",
       "canker_sores",
       "diabetes",
       "heart_failure",
       "liver_cirrhosis",
-      "pica"
+      "pica",
+      "schizophrenia"
     ],
     "interacts_with": [
+      "calcium",
       "chromium",
       "copper",
       "iodine",
+      "magnesium",
+      "vanadium",
       "vitamin-b12",
       "vitamin-b9",
       "vitamin-c",
@@ -696,12 +743,15 @@
     "display_name": "Vanadium",
     "canon_slug": "vanadium",
     "category": "mineral",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
         "WAL-CLM-RARE-000039",
         "WAL-CLM-RARE-000042"
+      ],
+      "diagnostic_pattern": [
+        "WAL-CLM-RARE-000081"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000034",
@@ -736,16 +786,21 @@
       }
     ],
     "conditions_treated": [
+      "anemia",
       "anxiety",
+      "arthritis",
       "cancer",
       "coronary_artery_disease",
       "diabetes",
       "hypoglycemia",
-      "insomnia"
+      "insomnia",
+      "schizophrenia"
     ],
     "interacts_with": [
       "calcium",
       "chromium",
+      "copper",
+      "iron",
       "lithium",
       "magnesium",
       "vitamin-b3",
@@ -761,7 +816,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 18,
+    "claim_count": 19,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -769,6 +824,9 @@
         "WAL-CLM-DDDL-000077",
         "WAL-CLM-DDDL-000079",
         "WAL-CLM-RARE-000042"
+      ],
+      "diagnostic_pattern": [
+        "WAL-CLM-RARE-000083"
       ],
       "interaction": [
         "WAL-CLM-DDDL-000040"
@@ -824,11 +882,13 @@
     ],
     "interacts_with": [
       "arginine",
+      "calcium",
       "chromium",
       "copper",
       "germanium",
       "iron",
       "lithium",
+      "magnesium",
       "selenium",
       "vanadium",
       "vitamin-a",

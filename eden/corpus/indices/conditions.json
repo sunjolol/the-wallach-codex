@@ -1,18 +1,25 @@
 {
   "anemia": {
     "display_name": "Anemia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000020"
+      ],
+      "diagnostics": [
+        "WAL-CLM-RARE-000081"
       ]
     },
     "essentials_involved": [
-      "iron"
+      "chromium",
+      "copper",
+      "iron",
+      "vanadium"
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "aneurysm": {
@@ -163,7 +170,7 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
@@ -173,16 +180,23 @@
         "WAL-CLM-DDDL-000032",
         "WAL-CLM-RARE-000011"
       ],
+      "diagnostics": [
+        "WAL-CLM-RARE-000081"
+      ],
       "protocols": [
         "WAL-CLM-DDDL-000051"
       ]
     },
     "essentials_involved": [
       "calcium",
+      "chromium",
+      "copper",
       "germanium",
+      "iron",
       "magnesium",
       "phosphorus",
-      "strontium"
+      "strontium",
+      "vanadium"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -455,6 +469,23 @@
       "dddl-3e-2011"
     ]
   },
+  "celiac_disease": {
+    "display_name": "Celiac Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "diagnostics": [
+        "WAL-CLM-RARE-000082"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "cleft_palate": {
     "display_name": "Cleft Palate",
     "claim_count": 1,
@@ -618,7 +649,7 @@
   },
   "diabetes": {
     "display_name": "Diabetes",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-DDDL-000008"
@@ -632,6 +663,9 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000017"
+      ],
+      "diagnostics": [
+        "WAL-CLM-RARE-000081"
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000035",
@@ -972,6 +1006,23 @@
       "dddl-3e-2011"
     ]
   },
+  "malabsorption": {
+    "display_name": "Malabsorption",
+    "claim_count": 1,
+    "claims_by_role": {
+      "diagnostics": [
+        "WAL-CLM-RARE-000082"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "male_pattern_baldness": {
     "display_name": "Male Pattern Baldness",
     "claim_count": 1,
@@ -1099,7 +1150,7 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
@@ -1111,6 +1162,9 @@
         "WAL-CLM-DDDL-000012",
         "WAL-CLM-DDDL-000032",
         "WAL-CLM-RARE-000011"
+      ],
+      "diagnostics": [
+        "WAL-CLM-RARE-000082"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000009"
@@ -1201,6 +1255,25 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "schizophrenia": {
+    "display_name": "Schizophrenia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "diagnostics": [
+        "WAL-CLM-RARE-000081"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "copper",
+      "iron",
+      "vanadium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "sids": {

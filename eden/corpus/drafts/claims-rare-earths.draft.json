@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 814248
+        "char_offset": 813821
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 814450
+        "char_offset": 814023
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 814012
+        "char_offset": 813585
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 768939
+        "char_offset": 768512
       },
       "dose": {
         "amount": "250-400",
@@ -2607,6 +2607,160 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T03:39:21+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000080",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach explains that a hair analysis reads non-perishable body-tissue minerals and records the body's mineral status over several months; hair concentrations of trace minerals and Rare Earths run about 200 times greater than those found in blood (where calcium and other essentials are held at normal levels by drawing on body reserves even during a raging deficiency).",
+      "verbatim": "Hair analysis are performed on nonperishable samples of body tissue minerals and are a recording of the bodies mineral status over a period of several months - additionally hair concentration of trace minerals and Rare Earths are 200 times greater than those found in blood.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 274,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 696753
+      },
+      "dose": null,
+      "tags": [
+        "hair-analysis",
+        "200x-blood",
+        "mineral-status",
+        "diagnostic-method"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T04:02:24+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000081",
+      "kind": "diagnostic_pattern",
+      "essentials": [
+        "iron",
+        "copper",
+        "chromium",
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "schizophrenia",
+        "arthritis",
+        "anemia",
+        "diabetes"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach lists well-documented hair-analysis mineral patterns for disease: schizophrenia = high calcium, low iron, high copper; arthritis (osteoporosis/hyperparathyroidism) = high lead, calcium and phosphorus, low iron and copper; anemia = low iron, copper, selenium, cobalt; diabetes (prediabetes/hypoglycemia) = low chromium, vanadium, sodium, potassium, manganese and zinc.",
+      "verbatim": "Arthritis - (osteoporosis/ hyperparathyroidism) - high Lead, Calcium and Phosphorus; low Iron and Copper.\n\nAnemia - low Iron, Copper, Selenium, Cobalt.\n\nDiabetes(prediabetes/hypoglycemia) - low Chromium, Vanadium, sodium, potassium, manganese, Zinc.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 275,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 699962
+      },
+      "dose": null,
+      "tags": [
+        "hair-analysis",
+        "diagnostic-pattern",
+        "schizophrenia",
+        "arthritis",
+        "anemia",
+        "diabetes"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T04:02:24+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000082",
+      "kind": "diagnostic_pattern",
+      "essentials": [
+        "calcium",
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "osteoporosis",
+        "celiac_disease",
+        "malabsorption"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach cautions that hair-mineral readings need interpretation: universally low levels indicate maldigestion (hypochlorhydria) and/or malabsorption (celiac disease); and paradoxically \"elevated\" calcium and magnesium can mean active depletion/shedding from bone — revealing very active osteoporosis with associated arthritis, periodontitis and a predilection for kidney stones — while elevated sodium/potassium/chloride signal essential-fatty-acid deficiency.",
+      "verbatim": "In some cases “elevated” hair level values represent actual depletion or shedding of minerals from body stores, i.e.- elevated calcium and magnesium levels reveal very active osteoporosis and associated arthritis, periodontitis and prediliction for kidney stones.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 275,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 700432
+      },
+      "dose": null,
+      "tags": [
+        "hair-analysis",
+        "interpretation",
+        "osteoporosis",
+        "malabsorption",
+        "bone-depletion"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T04:02:24+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000083",
+      "kind": "diagnostic_pattern",
+      "essentials": [
+        "zinc",
+        "copper",
+        "calcium",
+        "magnesium",
+        "iron"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach teaches that the RATIOS between hair minerals — not just absolute levels — are good barometers of specific organ systems. His Table 11-2 ideal hair mineral ratios: Zn/Cu 8:1 (cardiovascular, liver, female reproductive system), Zn/Mn 150:1 (musculoskeletal, collagen, cholesterol biosynthesis), Zn/Ca 3:1 (cardiovascular, osteodynamics, kidney), Na/P 2:1 (adrenal and general endocrine function), Ca/Mg 8:1 (cardiovascular, osteodynamics, dietary imbalances), and Fe/Cu 2.5:1 (hematology, energy production, cellular respiration).",
+      "verbatim": "The ratios of trace minerals and Rare Earths in hair are of interest in the interpretation of a hair analysis as they are good barometers of what is happening in specific organ systems or tissues (Table 11 - 2).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 275,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 701014
+      },
+      "dose": null,
+      "tags": [
+        "hair-analysis",
+        "mineral-ratios",
+        "zn-cu-8to1",
+        "table-11-2"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T04:02:24+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }
