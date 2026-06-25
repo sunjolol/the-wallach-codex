@@ -321,14 +321,15 @@
   },
   "asthma": {
     "display_name": "Asthma",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000053"
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000026",
-        "WAL-CLM-RARE-000172"
+        "WAL-CLM-RARE-000172",
+        "WAL-CLM-RARE-000176"
       ]
     },
     "essentials_involved": [
@@ -717,10 +718,17 @@
   },
   "carpal_tunnel_syndrome": {
     "display_name": "Carpal Tunnel Syndrome",
-    "claim_count": 1,
+    "claim_count": 4,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000178"
+      ],
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000026"
+        "WAL-CLM-DDDL-000026",
+        "WAL-CLM-RARE-000176"
+      ],
+      "prevalence": [
+        "WAL-CLM-RARE-000177"
       ]
     },
     "essentials_involved": [
@@ -728,7 +736,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "cataracts": {
@@ -780,6 +789,38 @@
     },
     "essentials_involved": [
       "copper"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "chondrodystrophy": {
+    "display_name": "Chondrodystrophy",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000176"
+      ]
+    },
+    "essentials_involved": [
+      "manganese"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "chondromalacia": {
+    "display_name": "Chondromalacia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000176"
+      ]
+    },
+    "essentials_involved": [
+      "manganese"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -860,13 +901,14 @@
   },
   "congenital_ataxia": {
     "display_name": "Congenital Ataxia",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000123"
       ],
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000026"
+        "WAL-CLM-DDDL-000026",
+        "WAL-CLM-RARE-000176"
       ]
     },
     "essentials_involved": [
@@ -1028,6 +1070,22 @@
     },
     "essentials_involved": [
       "hydrogen"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "deafness": {
+    "display_name": "Deafness",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000176"
+      ]
+    },
+    "essentials_involved": [
+      "manganese"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1518,11 +1576,12 @@
   },
   "infertility": {
     "display_name": "Infertility",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
-        "WAL-CLM-RARE-000163"
+        "WAL-CLM-RARE-000163",
+        "WAL-CLM-RARE-000176"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
@@ -1539,6 +1598,7 @@
       "chromium",
       "germanium",
       "lithium",
+      "manganese",
       "selenium",
       "vitamin-a",
       "zinc"
@@ -1717,6 +1777,22 @@
       "rare-earths"
     ]
   },
+  "low_libido": {
+    "display_name": "Low Libido",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000176"
+      ]
+    },
+    "essentials_involved": [
+      "manganese"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "macular_degeneration": {
     "display_name": "Macular Degeneration",
     "claim_count": 1,
@@ -1844,18 +1920,21 @@
   },
   "miscarriage": {
     "display_name": "Miscarriage",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005"
+        "WAL-CLM-DDDL-000005",
+        "WAL-CLM-RARE-000176"
       ]
     },
     "essentials_involved": [
+      "manganese",
       "selenium"
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "multiple_sclerosis": {
@@ -2082,6 +2161,22 @@
       "rare-earths"
     ]
   },
+  "parkinsonism": {
+    "display_name": "Parkinsonism",
+    "claim_count": 1,
+    "claims_by_role": {
+      "contraindications": [
+        "WAL-CLM-RARE-000175"
+      ]
+    },
+    "essentials_involved": [
+      "manganese"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "parkinsons_disease": {
     "display_name": "Parkinsons Disease",
     "claim_count": 1,
@@ -2185,10 +2280,17 @@
   },
   "repetitive_motion_syndrome": {
     "display_name": "Repetitive Motion Syndrome",
-    "claim_count": 1,
+    "claim_count": 4,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000178"
+      ],
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000026"
+        "WAL-CLM-DDDL-000026",
+        "WAL-CLM-RARE-000176"
+      ],
+      "prevalence": [
+        "WAL-CLM-RARE-000177"
       ]
     },
     "essentials_involved": [
@@ -2196,7 +2298,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "rheumatoid_arthritis": {
@@ -2221,8 +2324,11 @@
   },
   "schizophrenia": {
     "display_name": "Schizophrenia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "contraindications": [
+        "WAL-CLM-RARE-000175"
+      ],
       "diagnostics": [
         "WAL-CLM-RARE-000081"
       ]
@@ -2231,6 +2337,7 @@
       "chromium",
       "copper",
       "iron",
+      "manganese",
       "vanadium"
     ],
     "other_substances_involved": [],
@@ -2357,10 +2464,11 @@
   },
   "tmj": {
     "display_name": "Tmj",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000026"
+        "WAL-CLM-DDDL-000026",
+        "WAL-CLM-RARE-000176"
       ]
     },
     "essentials_involved": [
@@ -2368,7 +2476,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "trigeminal_neuralgia": {

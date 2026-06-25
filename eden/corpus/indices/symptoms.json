@@ -109,11 +109,17 @@
   },
   "convulsions": {
     "display_name": "Convulsions",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "magnesium",
         "claim_id": "WAL-CLM-RARE-000172",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "manganese",
+        "claim_id": "WAL-CLM-RARE-000176",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -609,6 +615,21 @@
       "rare-earths"
     ]
   },
+  "retarded_growth": {
+    "display_name": "Retarded Growth",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "manganese",
+        "claim_id": "WAL-CLM-RARE-000176",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "shortened_lifespan": {
     "display_name": "Shortened Lifespan",
     "claim_count": 1,
@@ -616,6 +637,51 @@
       {
         "essential": "lithium",
         "claim_id": "WAL-CLM-RARE-000163",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "shortened_long_bones": {
+    "display_name": "Shortened Long Bones",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "manganese",
+        "claim_id": "WAL-CLM-RARE-000176",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "slipped_tendon": {
+    "display_name": "Slipped Tendon",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "manganese",
+        "claim_id": "WAL-CLM-RARE-000176",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "testicular_atrophy": {
+    "display_name": "Testicular Atrophy",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "manganese",
+        "claim_id": "WAL-CLM-RARE-000176",
         "confidence": "high",
         "appears_in_books": 1
       }

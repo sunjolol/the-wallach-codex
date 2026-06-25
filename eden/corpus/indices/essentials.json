@@ -875,29 +875,75 @@
     "display_name": "Manganese",
     "canon_slug": "manganese",
     "category": "mineral",
-    "claim_count": 3,
+    "claim_count": 8,
     "claims_by_kind": {
+      "contraindication": [
+        "WAL-CLM-RARE-000175"
+      ],
       "deficiency_sign": [
-        "WAL-CLM-DDDL-000026"
+        "WAL-CLM-DDDL-000026",
+        "WAL-CLM-RARE-000176"
+      ],
+      "definition": [
+        "WAL-CLM-RARE-000174"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000027",
-        "WAL-CLM-DDDL-000053"
+        "WAL-CLM-DDDL-000053",
+        "WAL-CLM-RARE-000178"
+      ],
+      "prevalence": [
+        "WAL-CLM-RARE-000177"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "convulsions",
+        "claim_id": "WAL-CLM-RARE-000176",
+        "confidence": "high"
+      },
+      {
+        "sign": "retarded_growth",
+        "claim_id": "WAL-CLM-RARE-000176",
+        "confidence": "high"
+      },
+      {
+        "sign": "shortened_long_bones",
+        "claim_id": "WAL-CLM-RARE-000176",
+        "confidence": "high"
+      },
+      {
+        "sign": "slipped_tendon",
+        "claim_id": "WAL-CLM-RARE-000176",
+        "confidence": "high"
+      },
+      {
+        "sign": "testicular_atrophy",
+        "claim_id": "WAL-CLM-RARE-000176",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
       "asthma",
       "carpal_tunnel_syndrome",
+      "chondrodystrophy",
+      "chondromalacia",
       "congenital_ataxia",
+      "deafness",
+      "infertility",
+      "low_libido",
+      "miscarriage",
+      "parkinsonism",
       "repetitive_motion_syndrome",
+      "schizophrenia",
       "tmj"
     ],
     "interacts_with": [
       "magnesium"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "molybdenum": {
