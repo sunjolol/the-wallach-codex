@@ -206,10 +206,13 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 20,
+    "claim_count": 25,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074"
+      ],
+      "definition": [
+        "WAL-CLM-RARE-000105"
       ],
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000082",
@@ -224,7 +227,11 @@
         "WAL-CLM-DDDL-000052",
         "WAL-CLM-DDDL-000087",
         "WAL-CLM-RARE-000098",
-        "WAL-CLM-RARE-000099"
+        "WAL-CLM-RARE-000099",
+        "WAL-CLM-RARE-000104",
+        "WAL-CLM-RARE-000106",
+        "WAL-CLM-RARE-000107",
+        "WAL-CLM-RARE-000108"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000009"
@@ -257,6 +264,7 @@
       "cardiovascular_disease",
       "cataracts",
       "celiac_disease",
+      "colorectal_cancer",
       "hypertension",
       "insomnia",
       "kidney_stones",
@@ -266,7 +274,9 @@
       "osteoarthritis",
       "osteomalacia",
       "osteoporosis",
+      "premenstrual_syndrome",
       "spinal_stenosis",
+      "tetany",
       "tinnitus",
       "trigeminal_neuralgia"
     ],

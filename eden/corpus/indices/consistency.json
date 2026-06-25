@@ -300,6 +300,26 @@
   {
     "id": "CG-0008",
     "essentials": [
+      "calcium"
+    ],
+    "conditions": [],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-RARE-000104",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000106",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0009",
+    "essentials": [
       "germanium"
     ],
     "conditions": [],
@@ -318,7 +338,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0009",
+    "id": "CG-0010",
     "essentials": [
       "germanium"
     ],
@@ -342,7 +362,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0010",
+    "id": "CG-0011",
     "essentials": [
       "silver"
     ],
@@ -362,7 +382,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0011",
+    "id": "CG-0012",
     "essentials": [
       "silver"
     ],
@@ -382,7 +402,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0012",
+    "id": "CG-0013",
     "essentials": [
       "sodium"
     ],
@@ -404,7 +424,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0013",
+    "id": "CG-0014",
     "essentials": [
       "zinc"
     ],

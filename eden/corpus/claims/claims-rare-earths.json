@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811729
+        "char_offset": 811715
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811931
+        "char_offset": 811917
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811493
+        "char_offset": 811479
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 766420
+        "char_offset": 766406
       },
       "dose": {
         "amount": "250-400",
@@ -3484,6 +3484,193 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T06:02:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000104",
+      "kind": "mechanism",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach states calcium is essential to all organisms — forming the cell walls of plants and all calcareous tissue and mammalian bone — and serves electrochemical functions in cells while activating several enzymes. It is the fifth most abundant mineral in the Earth's crust and the most abundant mineral in the human body (about 1,200 g in men, 1,000 g in women), with 99% held in the bones and teeth.",
+      "verbatim": "Functions include essentiality for all organisms; cell walls of plants; all calcareous tissues and mammalian bones; electrochemical functions in cells and activates several enzymes.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 293,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 739256
+      },
+      "dose": null,
+      "tags": [
+        "calcium",
+        "essential",
+        "bone",
+        "enzyme-cofactor",
+        "function"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:18:39+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000105",
+      "kind": "definition",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "osteoporosis",
+        "arthritis",
+        "hypertension",
+        "kidney_stones",
+        "insomnia",
+        "premenstrual_syndrome",
+        "bells_palsy",
+        "tetany"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists (Table 11-10) include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
+      "verbatim": "There are no less than 147 deficiency\ndiseases that can be attributed to calcium\ndeficiency or imbalances.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 296,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 744285
+      },
+      "dose": null,
+      "tags": [
+        "calcium",
+        "147-deficiency-diseases",
+        "osteoporosis",
+        "deficiency",
+        "table-11-10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:18:39+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000106",
+      "kind": "mechanism",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports calcium is mainly absorbed in the acidic duodenum, and that metallic calcium absorption may be limited to 10 percent or less, whereas calcium in organically-bound, plant-derived colloidal form and water-soluble chelates is far better absorbed. Lack of vitamin D, low stomach acid (hypochlorhydria), phytates, oxalates, fiber, and caffeine all reduce calcium absorption and retention.",
+      "verbatim": "Metallic calcium absorption may be limited\nto 10 percent or less and is affected by many\nsubstances in the gut.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 298,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 748830
+      },
+      "dose": null,
+      "tags": [
+        "calcium",
+        "absorption",
+        "metallic-vs-colloidal",
+        "vitamin-d",
+        "bioavailability"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:18:39+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000107",
+      "kind": "mechanism",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "hypertension"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach reports that McCarron and colleagues theorized in 1980 that chronic calcium deficiency leads to hypertension — a theory supported by more than 30 subsequent studies — and that serum ionized calcium runs consistently lower in people with untreated high blood pressure. In a four-year study of 58,218 nurses, hypertension was more likely in women taking in less than 800 mg of calcium per day.",
+      "verbatim": "In 1980, McCarron, et al, theorized that\nchronic calcium deficiency probably led to\nhypertension. More than 30 subsequent\nstudies supported the original theory of\ncalcium deficiency as the cause of\nhypertention",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 298,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 750500
+      },
+      "dose": null,
+      "tags": [
+        "calcium",
+        "hypertension",
+        "mccarron",
+        "blood-pressure",
+        "deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:18:39+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000108",
+      "kind": "mechanism",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "colorectal_cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach cites a 19-year observational study of 1,954 men in which the incidence of colorectal cancer increased 300% as calcium intake decreased from 160 to 24.9 mg per 100 kcal of diet.",
+      "verbatim": "showed very clearly that the incidence of\ncolorectal cancer increased 300 % as the\ncalcium intake decreased",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 299,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 751635
+      },
+      "dose": null,
+      "tags": [
+        "calcium",
+        "colorectal-cancer",
+        "dose-response",
+        "epidemiology"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:18:39+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

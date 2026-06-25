@@ -190,7 +190,7 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
@@ -199,6 +199,9 @@
         "WAL-CLM-DDDL-000012",
         "WAL-CLM-DDDL-000032",
         "WAL-CLM-RARE-000011"
+      ],
+      "definitions": [
+        "WAL-CLM-RARE-000105"
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000081"
@@ -253,8 +256,11 @@
   },
   "bells_palsy": {
     "display_name": "Bells Palsy",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000105"
+      ],
       "prevalence": [
         "WAL-CLM-DDDL-000009"
       ],
@@ -269,7 +275,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "benign_prostatic_hyperplasia": {
@@ -565,6 +572,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "colorectal_cancer": {
+    "display_name": "Colorectal Cancer",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000108"
+      ]
+    },
+    "essentials_involved": [
+      "calcium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "common_cold": {
@@ -874,8 +897,14 @@
   },
   "hypertension": {
     "display_name": "Hypertension",
-    "claim_count": 1,
+    "claim_count": 3,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000107"
+      ],
+      "definitions": [
+        "WAL-CLM-RARE-000105"
+      ],
       "interactions": [
         "WAL-CLM-RARE-000086"
       ]
@@ -956,8 +985,11 @@
   },
   "insomnia": {
     "display_name": "Insomnia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000105"
+      ],
       "protocols": [
         "WAL-CLM-DDDL-000075"
       ]
@@ -969,7 +1001,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "kawasaki_disease": {
@@ -1033,10 +1066,13 @@
   },
   "kidney_stones": {
     "display_name": "Kidney Stones",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000087"
+      ],
+      "definitions": [
+        "WAL-CLM-RARE-000105"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000088"
@@ -1048,7 +1084,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "liver_cirrhosis": {
@@ -1247,7 +1284,7 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052",
@@ -1260,6 +1297,9 @@
         "WAL-CLM-DDDL-000012",
         "WAL-CLM-DDDL-000032",
         "WAL-CLM-RARE-000011"
+      ],
+      "definitions": [
+        "WAL-CLM-RARE-000105"
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000082"
@@ -1357,6 +1397,22 @@
     },
     "essentials_involved": [
       "iron"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "premenstrual_syndrome": {
+    "display_name": "Premenstrual Syndrome",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000105"
+      ]
+    },
+    "essentials_involved": [
+      "calcium"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1465,6 +1521,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "tetany": {
+    "display_name": "Tetany",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000105"
+      ]
+    },
+    "essentials_involved": [
+      "calcium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "tinnitus": {
