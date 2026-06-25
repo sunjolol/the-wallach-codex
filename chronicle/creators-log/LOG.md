@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_65 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_66 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-25 02:27 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 20 — Rare Earths Ch.11 catalog C/Carbon EFA + Ce + Cl (p291,304): 5 claims (RARE-109..113), kv 48→49, corpus 207
+  ↳ Held Carbon/EFA claims + Ce + Cl. RARE-109 only 2 of 3 PUFAs truly essential (arachidonic synthesized from linoleic); RARE-110 EFA -> prostaglandins (BP/heart/CNS); RARE-111 EFA deficiency infants poor growth/eczema/infection + animal atherosclerosis; RARE-112 cerium nitrate topical burn disinfectant; RARE-113 chloride essential, raw material for stomach HCl (pepsin/B12/mineral absorption). EFA maps to omega-3/omega-6. Cd skipped (toxic, thin); Co held (B12). conditions 80->81 (+eczema, burns). Board 30/30, build OK, knowledge probe green. Luneth-approved.
 
 ## 2026-06-25 02:20 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 19 — Rare Earths Ch.11 catalog Ca/Calcium (p293-299): 5 claims (RARE-104..108), kv 47→48, corpus 202

@@ -170,10 +170,13 @@
     "display_name": "Chloride",
     "canon_slug": "chloride",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-RARE-000026"
+      ],
+      "mechanism": [
+        "WAL-CLM-RARE-000113"
       ]
     },
     "deficiency_signs": [],
@@ -1111,12 +1114,20 @@
     "display_name": "Cerium",
     "canon_slug": "cerium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-RARE-000112"
+      ]
+    },
     "deficiency_signs": [],
-    "conditions_treated": [],
+    "conditions_treated": [
+      "burns"
+    ],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "cesium": {
     "display_name": "Cesium",
@@ -2048,16 +2059,19 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 3,
+    "claim_count": 6,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065"
       ],
       "definition": [
-        "WAL-CLM-DDDL-000063"
+        "WAL-CLM-DDDL-000063",
+        "WAL-CLM-RARE-000109"
       ],
       "mechanism": [
-        "WAL-CLM-DDDL-000064"
+        "WAL-CLM-DDDL-000064",
+        "WAL-CLM-RARE-000110",
+        "WAL-CLM-RARE-000111"
       ]
     },
     "deficiency_signs": [],
@@ -2068,23 +2082,27 @@
       "omega-6"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "omega-6": {
     "display_name": "Omega-6",
     "canon_slug": "omega-6",
     "category": "fatty_acid",
-    "claim_count": 3,
+    "claim_count": 6,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065"
       ],
       "definition": [
-        "WAL-CLM-DDDL-000063"
+        "WAL-CLM-DDDL-000063",
+        "WAL-CLM-RARE-000109"
       ],
       "mechanism": [
-        "WAL-CLM-DDDL-000064"
+        "WAL-CLM-DDDL-000064",
+        "WAL-CLM-RARE-000110",
+        "WAL-CLM-RARE-000111"
       ]
     },
     "deficiency_signs": [],
@@ -2095,7 +2113,8 @@
       "omega-3"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   }
 }

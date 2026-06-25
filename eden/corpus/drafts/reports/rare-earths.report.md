@@ -1,42 +1,39 @@
 # Extraction report — rare-earths (Rare Earths: Forbidden Cures)
 
-_5 claim(s) drafted 2026-06-25T06:18:39+00:00. Review then run corpus_seal.py to promote._
+_5 claim(s) drafted 2026-06-25T06:25:58+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×1, mechanism×4
+Kinds: definition×2, mechanism×3
 
-### WAL-CLM-RARE-000104 · mechanism
-- **essentials:** calcium · **conditions:** — · **symptoms:** —
-- **claim:** Wallach states calcium is essential to all organisms — forming the cell walls of plants and all calcareous tissue and mammalian bone — and serves electrochemical functions in cells while activating several enzymes. It is the fifth most abundant mineral in the Earth's crust and the most abundant mineral in the human body (about 1,200 g in men, 1,000 g in women), with 99% held in the bones and teeth.
-- **verbatim** (offset 739256): “Functions include essentiality for all organisms; cell walls of plants; all calcareous tissues and mammalian bones; electrochemical functions in cells and activates several enzymes.”
+### WAL-CLM-RARE-000109 · definition
+- **essentials:** omega-3, omega-6 · **conditions:** — · **symptoms:** —
+- **claim:** Wallach explains that of the three polyunsaturated fatty acids called essential fatty acids — linoleic, linolenic and arachidonic — only two (linoleic and linolenic) are truly essential, because the human body can synthesize arachidonic acid from linoleic acid.
+- **verbatim** (offset 733749): “only two (linoleic and linolenic) are
+designated as EFA as arachidonic acid can
+be synthesized by the human from lenoleic
+acid.”
 
-### WAL-CLM-RARE-000105 · definition
-- **essentials:** calcium · **conditions:** osteoporosis, arthritis, hypertension, kidney_stones, insomnia, premenstrual_syndrome, bells_palsy, tetany · **symptoms:** —
-- **claim:** Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists (Table 11-10) include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.
-- **verbatim** (offset 744285): “There are no less than 147 deficiency
-diseases that can be attributed to calcium
-deficiency or imbalances.”
+### WAL-CLM-RARE-000110 · mechanism
+- **essentials:** omega-3, omega-6 · **conditions:** — · **symptoms:** —
+- **claim:** Wallach states that essential fatty acids are the raw material the body uses to make prostaglandins, which help regulate blood pressure, heart rate, vascular dilation, blood clotting, bronchial dilation, and central nervous system (brain and spinal cord) function; they also maintain cell-wall integrity and can lower serum cholesterol.
+- **verbatim** (offset 734234): “EFA are also the raw material for the
+human body to manufacture prostaglandins
+that help regulate blood pressure, heart rate,
+vascular dilation, blood clotting, bronchial
+dilation, and central nervous system (brain
+and spinal cord) function.”
 
-### WAL-CLM-RARE-000106 · mechanism
-- **essentials:** calcium · **conditions:** — · **symptoms:** —
-- **claim:** Wallach reports calcium is mainly absorbed in the acidic duodenum, and that metallic calcium absorption may be limited to 10 percent or less, whereas calcium in organically-bound, plant-derived colloidal form and water-soluble chelates is far better absorbed. Lack of vitamin D, low stomach acid (hypochlorhydria), phytates, oxalates, fiber, and caffeine all reduce calcium absorption and retention.
-- **verbatim** (offset 748830): “Metallic calcium absorption may be limited
-to 10 percent or less and is affected by many
-substances in the gut.”
+### WAL-CLM-RARE-000111 · mechanism
+- **essentials:** omega-3, omega-6 · **conditions:** eczema · **symptoms:** —
+- **claim:** Wallach reports that essential fatty acid deficiency in human infants results in a poor growth rate, eczema, and lowered resistance to infectious diseases; in animals, essential fatty acid deficiency produces atherosclerosis (Fig. 11-2 shows it in a sheep's aorta and a pheasant's coronary arteries).
+- **verbatim** (offset 734477): “EFA deficiency in human infants results in a poor growth rate, eczema, lowered resistance to infectious diseases.”
 
-### WAL-CLM-RARE-000107 · mechanism
-- **essentials:** calcium · **conditions:** hypertension · **symptoms:** —
-- **claim:** Wallach reports that McCarron and colleagues theorized in 1980 that chronic calcium deficiency leads to hypertension — a theory supported by more than 30 subsequent studies — and that serum ionized calcium runs consistently lower in people with untreated high blood pressure. In a four-year study of 58,218 nurses, hypertension was more likely in women taking in less than 800 mg of calcium per day.
-- **verbatim** (offset 750500): “In 1980, McCarron, et al, theorized that
-chronic calcium deficiency probably led to
-hypertension. More than 30 subsequent
-studies supported the original theory of
-calcium deficiency as the cause of
-hypertention”
+### WAL-CLM-RARE-000112 · definition
+- **essentials:** cerium · **conditions:** burns · **symptoms:** —
+- **claim:** Wallach notes that cerium — a Rare Earth element that accumulates in bone — has a medical use: cerium nitrate is used as a topical disinfectant for severe burn victims.
+- **verbatim** (offset 759383): “Cerium nitrate is used as a topical disinfectant for severe burn victims.”
 
-### WAL-CLM-RARE-000108 · mechanism
-- **essentials:** calcium · **conditions:** colorectal_cancer · **symptoms:** —
-- **claim:** Wallach cites a 19-year observational study of 1,954 men in which the incidence of colorectal cancer increased 300% as calcium intake decreased from 160 to 24.9 mg per 100 kcal of diet.
-- **verbatim** (offset 751635): “showed very clearly that the incidence of
-colorectal cancer increased 300 % as the
-calcium intake decreased”
+### WAL-CLM-RARE-000113 · mechanism
+- **essentials:** chloride · **conditions:** — · **symptoms:** —
+- **claim:** Wallach states chloride is essential for all living species — serving electrochemical and catalytic functions and activating numerous enzymes — and is the basic raw material the stomach uses to make stomach acid (hydrochloric acid, HCl) for protein digestion (pepsin), vitamin B12 absorption (intrinsic factor), and absorption of metallic minerals. Sodium chloride (salt) is the universal source of chloride ions.
+- **verbatim** (offset 759898): “Essential for all living species - electrochemical and catalytic functions, activates numerous enzymes and is the basic raw material for our stomachs to make stomach acid (HC]) for protein digestion (pepsin)”
 

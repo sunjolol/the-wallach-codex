@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811715
+        "char_offset": 811705
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811917
+        "char_offset": 811907
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811479
+        "char_offset": 811469
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 766406
+        "char_offset": 766396
       },
       "dose": {
         "amount": "250-400",
@@ -3505,7 +3505,7 @@
         "page": 293,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 739256
+        "char_offset": 739254
       },
       "dose": null,
       "tags": [
@@ -3549,7 +3549,7 @@
         "page": 296,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 744285
+        "char_offset": 744283
       },
       "dose": null,
       "tags": [
@@ -3584,7 +3584,7 @@
         "page": 298,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 748830
+        "char_offset": 748828
       },
       "dose": null,
       "tags": [
@@ -3621,7 +3621,7 @@
         "page": 298,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 750500
+        "char_offset": 750498
       },
       "dose": null,
       "tags": [
@@ -3658,7 +3658,7 @@
         "page": 299,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 751635
+        "char_offset": 751633
       },
       "dose": null,
       "tags": [
@@ -3671,6 +3671,188 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T06:18:39+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000109",
+      "kind": "definition",
+      "essentials": [
+        "omega-3",
+        "omega-6"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach explains that of the three polyunsaturated fatty acids called essential fatty acids — linoleic, linolenic and arachidonic — only two (linoleic and linolenic) are truly essential, because the human body can synthesize arachidonic acid from linoleic acid.",
+      "verbatim": "only two (linoleic and linolenic) are\ndesignated as EFA as arachidonic acid can\nbe synthesized by the human from lenoleic\nacid.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 291,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 733749
+      },
+      "dose": null,
+      "tags": [
+        "essential-fatty-acids",
+        "linoleic",
+        "linolenic",
+        "arachidonic",
+        "omega-3-omega-6"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:25:58+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000110",
+      "kind": "mechanism",
+      "essentials": [
+        "omega-3",
+        "omega-6"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach states that essential fatty acids are the raw material the body uses to make prostaglandins, which help regulate blood pressure, heart rate, vascular dilation, blood clotting, bronchial dilation, and central nervous system (brain and spinal cord) function; they also maintain cell-wall integrity and can lower serum cholesterol.",
+      "verbatim": "EFA are also the raw material for the\nhuman body to manufacture prostaglandins\nthat help regulate blood pressure, heart rate,\nvascular dilation, blood clotting, bronchial\ndilation, and central nervous system (brain\nand spinal cord) function.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 291,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 734234
+      },
+      "dose": null,
+      "tags": [
+        "essential-fatty-acids",
+        "prostaglandins",
+        "blood-pressure",
+        "central-nervous-system",
+        "function"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:25:58+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000111",
+      "kind": "mechanism",
+      "essentials": [
+        "omega-3",
+        "omega-6"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "eczema"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach reports that essential fatty acid deficiency in human infants results in a poor growth rate, eczema, and lowered resistance to infectious diseases; in animals, essential fatty acid deficiency produces atherosclerosis (Fig. 11-2 shows it in a sheep's aorta and a pheasant's coronary arteries).",
+      "verbatim": "EFA deficiency in human infants results in a poor growth rate, eczema, lowered resistance to infectious diseases.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 291,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 734477
+      },
+      "dose": null,
+      "tags": [
+        "essential-fatty-acids",
+        "deficiency",
+        "infants",
+        "eczema",
+        "atherosclerosis"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:25:58+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000112",
+      "kind": "definition",
+      "essentials": [
+        "cerium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "burns"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach notes that cerium — a Rare Earth element that accumulates in bone — has a medical use: cerium nitrate is used as a topical disinfectant for severe burn victims.",
+      "verbatim": "Cerium nitrate is used as a topical disinfectant for severe burn victims.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 304,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 759383
+      },
+      "dose": null,
+      "tags": [
+        "cerium",
+        "rare-earth",
+        "cerium-nitrate",
+        "burns",
+        "topical-disinfectant"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:25:58+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000113",
+      "kind": "mechanism",
+      "essentials": [
+        "chloride"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach states chloride is essential for all living species — serving electrochemical and catalytic functions and activating numerous enzymes — and is the basic raw material the stomach uses to make stomach acid (hydrochloric acid, HCl) for protein digestion (pepsin), vitamin B12 absorption (intrinsic factor), and absorption of metallic minerals. Sodium chloride (salt) is the universal source of chloride ions.",
+      "verbatim": "Essential for all living species - electrochemical and catalytic functions, activates numerous enzymes and is the basic raw material for our stomachs to make stomach acid (HC]) for protein digestion (pepsin)",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 304,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 759898
+      },
+      "dose": null,
+      "tags": [
+        "chloride",
+        "stomach-acid",
+        "hydrochloric-acid",
+        "pepsin",
+        "essential"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:25:58+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

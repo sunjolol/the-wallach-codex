@@ -391,6 +391,22 @@
       "dddl-3e-2011"
     ]
   },
+  "burns": {
+    "display_name": "Burns",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000112"
+      ]
+    },
+    "essentials_involved": [
+      "cerium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "cancer": {
     "display_name": "Cancer",
     "claim_count": 11,
@@ -804,8 +820,11 @@
   },
   "eczema": {
     "display_name": "Eczema",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000111"
+      ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000065"
       ]
@@ -816,7 +835,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "goiter": {
