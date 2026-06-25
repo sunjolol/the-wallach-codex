@@ -7993,6 +7993,77 @@
       "extracted_at": "2026-06-25T20:56:45+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000225",
+      "kind": "mechanism",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach describes selenium as the most efficient antioxidant (anti-peroxidant), acting at the subcellular level in the glutathione peroxidase enzyme system and in metallo amino acids such as selenomethionine. By preventing cellular and subcellular lipids and fats from being peroxidized, it keeps body fats from going rancid; the externally visible 'age spots' or 'liver spots' are this brown peroxidized lipid, known as ceroid lipofuscin.",
+      "verbatim": "Selenium prevents cellular and subcellular lipids and fats from being peroxidized which literally means it prevents body fats from going rancid (seen externally as “age spots” or “liver spots” - this brown gold peroxidized lipid is known as ceroid lipofucsin).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 378,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 906251
+      },
+      "dose": null,
+      "tags": [
+        "selenium",
+        "antioxidant",
+        "glutathione-peroxidase",
+        "selenomethionine",
+        "ceroid-lipofuscin",
+        "age-spots"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T21:11:16+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000226",
+      "kind": "mechanism",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach explains that selenium also protects the bi-lipid-layer membranes of cells and organelles from oxidative damage. In a selenium-deficient rhesus monkey liver, the inner mitochondrial membrane (made of enzymes and RNA) precipitates out of its normal structure into a nonfunctioning 'crystalloid' — the damage seen under a standard light microscope as 'age pigment.'",
+      "verbatim": "Selenium also functions to protect cellular and organelle bi-lipid layer membranes from oxidative damage",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 378,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 906513
+      },
+      "dose": null,
+      "tags": [
+        "selenium",
+        "membrane",
+        "mitochondria",
+        "oxidative-damage",
+        "age-pigment"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T21:11:16+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
