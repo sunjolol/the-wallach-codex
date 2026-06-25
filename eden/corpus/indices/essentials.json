@@ -1056,12 +1056,18 @@
     "display_name": "Barium",
     "canon_slug": "barium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000100"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "beryllium": {
     "display_name": "Beryllium",
@@ -1078,12 +1084,18 @@
     "display_name": "Bromine",
     "canon_slug": "bromine",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000103"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "cerium": {
     "display_name": "Cerium",

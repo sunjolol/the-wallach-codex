@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_63 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_64 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-25 02:07 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 18 — Rare Earths Ch.11 catalog Ba/Be/Bi/Br (p287-288): 4 claims (RARE-100..103), kv 46→47, corpus 197
+  ↳ Per-element catalog chunk 3. Reflowed Ba-Br book region (de-hyphenated across 287->288 page break, sentence-aware column-break merge, dropped 287 marker); resnap 0 broken. RARE-100 barium thought essential to mammals (Rygh 1949); RARE-101 peptic ulcers caused by H. pylori not stress (Marshall/Warren 1983, 92%-vs-75% antibiotic-vs-placebo trial); RARE-102 ulcer Rx = tetracycline + anti-ulcer med + bismuth subsalicylate (Pepto-Bismol); RARE-103 bromine essentiality via brominated amino acids. Be skipped (pure geology); bismuth not canon -> filed under new peptic_ulcers condition (76->77). Board 30/30, build OK, knowledge probe green. Luneth-approved.
 
 ## 2026-06-25 01:49 UTC-04:00 · round-close · eden/corpus
 Abbreviation-audit follow-up (Luneth): reverted EFA + USDA to abbreviations (super common) in 6 DDDL claims, keeping all other expansions. Memory gained the common-knowledge exception. Refreshed handoff. kv 44→46. Session wrap: corpus 193, conditions 76, board 30/30, all pushed.

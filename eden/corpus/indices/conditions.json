@@ -1325,6 +1325,23 @@
       "rare-earths"
     ]
   },
+  "peptic_ulcers": {
+    "display_name": "Peptic Ulcers",
+    "claim_count": 2,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000101"
+      ],
+      "protocols": [
+        "WAL-CLM-RARE-000102"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "pica": {
     "display_name": "Pica",
     "claim_count": 4,
