@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_69 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_70 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-25 03:24 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 23 — Rare Earths catalog Fe/Iron + Ga/Gallium + F/Fluorine (Wallach anti-fluoride): 5 claims (RARE-130..134), kv 56→57, corpus 228
+  ↳ RARE-130 iron function/essentiality (hemoglobin/myoglobin, iron:hemoglobin::Mg:chlorophyll); 131 heme-meat 10% vs plant 1% absorption; 132 gallium brain-metalloenzyme + reduces brain cancer (lab animals + British pregnant-women study); 133 FLUORIDE toxicity thresholds (dental fluorosis 2-7ppm, osteosclerosis 8-20ppm, systemic 20-80mg/day); 134 FLUORIDE->cancer (Yiamouyiannis-Burk 1977 hearings; 1990 NTP study oral SCC/osteosarcoma/thyroid/liver). FLUORIDE per Luneth: Wallach said it -> include it; non-canon (germanium holds slot) so essentials=[] + fluoride in other_substances (future searchable-substance feature). Skipped duplicates: iron pica/symptoms/overload=DDDL; germanium=RARE-11/12/13; Fr/Gd geology; pro-fluoride news clipping. conditions 104->108. Board 30/30, build OK, knowledge probe green. Luneth-approved.
 
 ## 2026-06-25 03:12 UTC-04:00 · round-close · eden/corpus
 Batch 22 (Cu/Cr) + cesium enrichment + behavioral-rage policy update + fringe salvage: kv 52→55, corpus 223, conditions 91→103

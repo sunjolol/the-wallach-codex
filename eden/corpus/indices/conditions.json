@@ -465,6 +465,22 @@
       "dddl-3e-2011"
     ]
   },
+  "brain_cancer": {
+    "display_name": "Brain Cancer",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000132"
+      ]
+    },
+    "essentials_involved": [
+      "gallium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "breast_cancer": {
     "display_name": "Breast Cancer",
     "claim_count": 2,
@@ -498,12 +514,13 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
         "WAL-CLM-DDDL-000030",
-        "WAL-CLM-DDDL-000036"
+        "WAL-CLM-DDDL-000036",
+        "WAL-CLM-RARE-000134"
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000012",
@@ -538,6 +555,7 @@
       "zinc"
     ],
     "other_substances_involved": [
+      "fluoride",
       "taurine"
     ],
     "books_cited": [
@@ -892,6 +910,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "rare-earths"
+    ]
+  },
+  "dental_fluorosis": {
+    "display_name": "Dental Fluorosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000133"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "fluoride"
+    ],
+    "books_cited": [
       "rare-earths"
     ]
   },
@@ -1419,6 +1453,22 @@
       "rare-earths"
     ]
   },
+  "liver_cancer": {
+    "display_name": "Liver Cancer",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000134"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "fluoride"
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "liver_cirrhosis": {
     "display_name": "Liver Cirrhosis",
     "claim_count": 4,
@@ -1709,6 +1759,22 @@
       "rare-earths"
     ]
   },
+  "osteosarcoma": {
+    "display_name": "Osteosarcoma",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000134"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "fluoride"
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "otitis": {
     "display_name": "Otitis",
     "claim_count": 1,
@@ -1965,6 +2031,22 @@
       "calcium"
     ],
     "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "thyroid_cancer": {
+    "display_name": "Thyroid Cancer",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000134"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "fluoride"
+    ],
     "books_cited": [
       "rare-earths"
     ]

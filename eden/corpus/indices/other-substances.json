@@ -1,4 +1,24 @@
 {
+  "fluoride": {
+    "display_name": "Fluoride",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000133",
+        "WAL-CLM-RARE-000134"
+      ]
+    },
+    "conditions_treated": [
+      "cancer",
+      "dental_fluorosis",
+      "liver_cancer",
+      "osteosarcoma",
+      "thyroid_cancer"
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "taurine": {
     "display_name": "Taurine",
     "claim_count": 1,

@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811679
+        "char_offset": 811657
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811881
+        "char_offset": 811859
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811443
+        "char_offset": 811421
       },
       "dose": null,
       "tags": [
@@ -4491,6 +4491,190 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T07:09:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000130",
+      "kind": "mechanism",
+      "essentials": [
+        "iron"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach states iron is essential to all land animals (first recognized as an essential nutrient by Boussingault in the 1860s). A healthy adult holds 3 to 5 grams of iron — 60 to 70 percent functional (built into hemoglobin, the muscle oxygen-store myoglobin, and respiratory enzymes) and 30 to 40 percent stored as ferritin and hemosiderin in bone marrow and liver. Iron's functions: enzyme/metalloenzyme cofactor, the respiratory pigment hemoglobin (iron is to hemoglobin what magnesium is to chlorophyll), and electron transfer for the utilization of oxygen.",
+      "verbatim": "Functions of iron include cofactor and\nactivator of enzymes and metallo enzymes;\nrespiratory pigments (hemoglobin - iron is\nto hemoglobin what Mg is to chlorophyll)",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 329,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 800840
+      },
+      "dose": null,
+      "tags": [
+        "iron",
+        "essential",
+        "hemoglobin",
+        "myoglobin",
+        "oxygen-transport"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:18:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000131",
+      "kind": "mechanism",
+      "essentials": [
+        "iron"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports heme iron from meat is about 10 percent available for absorption, whereas iron from fresh plant sources is only about 1 percent available because of phytates. Absorption occurs primarily in the duodenum where the environment is still acid; stomach hydrochloric acid is required for optimal iron absorption. The Recommended Dietary Allowance of 18 mg per day as metallic iron is very low for a vegan eating high-fiber, high-phytate plant material.",
+      "verbatim": "Heme iron from meat is 10 percent available for absorption while iron from fresh plant sources are only one percent available because of phytates.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 329,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 801131
+      },
+      "dose": null,
+      "tags": [
+        "iron",
+        "absorption",
+        "heme-vs-plant",
+        "phytates",
+        "stomach-acid"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:18:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000132",
+      "kind": "mechanism",
+      "essentials": [
+        "gallium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "brain_cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach reports gallium was claimed to be essential in 1938 and again in 1958, has specific metalloenzyme activity in the human brain, and has been reported to specifically reduce the rate of brain cancer in laboratory animals; he adds that British research shows supplemented diets in pregnant women reduce the rate of brain cancer in their children.",
+      "verbatim": "Gallium has specific areas of metalloenzyme activity in the human brain and has been reported to specifically reduce the rate of brain cancer in laboratory animals.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 330,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 803048
+      },
+      "dose": null,
+      "tags": [
+        "gallium",
+        "brain-cancer",
+        "metalloenzyme",
+        "essential",
+        "prevention"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:18:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000133",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "fluoride"
+      ],
+      "conditions": [
+        "dental_fluorosis"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach gives fluoride's toxicity thresholds: clinical toxicity appears as dental fluorosis at fluoride concentrations of 2–7 ppm and osteosclerosis at 8–20 ppm, with chronic systemic toxicity when fluoride levels reach 20–80 mg per day for years. (About 10,000 American towns serving 100 million people fluoridate water at 1 mg/L, reportedly cutting dental cavities 60–70%, while some western states have a natural fluoride excess of 10–45 ppm that mottles children's teeth.)",
+      "verbatim": "Clinical toxicity is observed as dental\nflourosis at flouride concentrations of 2 to7\nppm and osteosclerosis at 8 to 20 ppm;\nchronic systemic toxicity appears when the\nflouride levels reach 20 to 80 mg per day\nfor years.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 329,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 797923
+      },
+      "dose": null,
+      "tags": [
+        "fluoride",
+        "toxicity",
+        "dental-fluorosis",
+        "osteosclerosis",
+        "fluoridation"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:23:34+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000134",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "fluoride"
+      ],
+      "conditions": [
+        "cancer",
+        "osteosarcoma",
+        "thyroid_cancer",
+        "liver_cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach cites the cancer evidence against fluoridation: epidemiological studies by Yiamouyiannis and Burk (1977) prompted congressional hearings over a charge of 10,000 excess cancer deaths from fluoridated water, leading to mandated animal studies. The 1990 National Toxicology Program results showed increased precancerous oral-mucosa cells, oral squamous-cell carcinoma, a rare osteosarcoma at double the rate in males versus females, and increased thyroid follicular-cell tumors and liver cancer.",
+      "verbatim": "there was an increase in cancers of the oral mucus membranes (squamous cell carcinoma); a rare form of osteosarcoma appeared at double the rate in males as females",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 329,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 799239
+      },
+      "dose": null,
+      "tags": [
+        "fluoride",
+        "cancer",
+        "osteosarcoma",
+        "national-toxicology-program",
+        "yiamouyiannis-burk"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:23:34+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

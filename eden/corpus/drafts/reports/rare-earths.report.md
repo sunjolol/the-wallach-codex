@@ -1,30 +1,21 @@
 # Extraction report — rare-earths (Rare Earths: Forbidden Cures)
 
-_4 claim(s) drafted 2026-06-25T07:09:43+00:00. Review then run corpus_seal.py to promote._
+_2 claim(s) drafted 2026-06-25T07:23:34+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×1, diagnostic_pattern×1, mechanism×2
+Kinds: mechanism×2
 
-### WAL-CLM-RARE-000126 · definition
-- **essentials:** — · **conditions:** criminal_behavior · **symptoms:** —
-- **claim:** Wallach lists 'normal sociability' and 'preventing criminal behavior' among the reasons humans need the 90 essential nutrients in optimal levels every day — alongside preventing developmental and degenerative disease and reaching genetic longevity potential.
-- **verbatim** (offset 31428): “for normal sociability, for preventing criminal behavior (there are now 1,000,000 prisoners in American jails!)”
+### WAL-CLM-RARE-000133 · mechanism
+- **essentials:** — · **conditions:** dental_fluorosis · **symptoms:** —
+- **claim:** Wallach gives fluoride's toxicity thresholds: clinical toxicity appears as dental fluorosis at fluoride concentrations of 2–7 ppm and osteosclerosis at 8–20 ppm, with chronic systemic toxicity when fluoride levels reach 20–80 mg per day for years. (About 10,000 American towns serving 100 million people fluoridate water at 1 mg/L, reportedly cutting dental cavities 60–70%, while some western states have a natural fluoride excess of 10–45 ppm that mottles children's teeth.)
+- **verbatim** (offset 797923): “Clinical toxicity is observed as dental
+flourosis at flouride concentrations of 2 to7
+ppm and osteosclerosis at 8 to 20 ppm;
+chronic systemic toxicity appears when the
+flouride levels reach 20 to 80 mg per day
+for years.”
 
-### WAL-CLM-RARE-000127 · mechanism
-- **essentials:** chromium, vanadium · **conditions:** explosive_outbursts, blind_rage, violent_behavior, hyperirritability · **symptoms:** —
-- **claim:** Wallach explains the mechanism behind rage and explosive behavior: while awake, a brain low in fuel (blood sugar) becomes very irritable, explosively reactive, and can be vicious because the normal civilized social restraints fall away. Chromium and vanadium, which stabilize blood sugar, are the relevant nutrients.
-- **verbatim** (offset 315900): “the brain low in fuel is very irritable, explosively reactive and can be very vicious because there are no longer any civilized social restraints”
-
-### WAL-CLM-RARE-000128 · mechanism
-- **essentials:** chromium, vanadium, copper, lithium · **conditions:** explosive_outbursts, blind_rage, violent_behavior · **symptoms:** —
-- **claim:** Wallach attributes histories of explosive rage and aggressive behavior to chromium and vanadium deficiency (hypoglycemia), copper deficiency, or lithium deficiency — aggravated by a high-sugar diet.
-- **verbatim** (offset 357205): “classic symptoms
-of chromium and vanadium deficiency
-(hypoglycemia), copper deficiency or a
-lithium deficiency aggravated by a high
-sugar diet”
-
-### WAL-CLM-RARE-000129 · diagnostic_pattern
-- **essentials:** copper, zinc, sodium, chromium, vanadium, lithium · **conditions:** violent_behavior, blind_rage, explosive_outbursts · **symptoms:** —
-- **claim:** Wallach lists a hair-analysis mineral signature for a violent, explosive temperament: low hair levels of copper, zinc, sodium, chromium, vanadium, and lithium.
-- **verbatim** (offset 699855): “Sociopath/violent (Dr.Jykel/Mr.Hyde rages) - low in copper, zinc, sodium, chromium, vanadium and lithium.”
+### WAL-CLM-RARE-000134 · mechanism
+- **essentials:** — · **conditions:** cancer, osteosarcoma, thyroid_cancer, liver_cancer · **symptoms:** —
+- **claim:** Wallach cites the cancer evidence against fluoridation: epidemiological studies by Yiamouyiannis and Burk (1977) prompted congressional hearings over a charge of 10,000 excess cancer deaths from fluoridated water, leading to mandated animal studies. The 1990 National Toxicology Program results showed increased precancerous oral-mucosa cells, oral squamous-cell carcinoma, a rare osteosarcoma at double the rate in males versus females, and increased thyroid follicular-cell tumors and liver cancer.
+- **verbatim** (offset 799239): “there was an increase in cancers of the oral mucus membranes (squamous cell carcinoma); a rare form of osteosarcoma appeared at double the rate in males as females”
 

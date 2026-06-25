@@ -607,7 +607,7 @@
     "display_name": "Iron",
     "canon_slug": "iron",
     "category": "mineral",
-    "claim_count": 10,
+    "claim_count": 12,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000022"
@@ -626,7 +626,9 @@
       ],
       "mechanism": [
         "WAL-CLM-RARE-000037",
-        "WAL-CLM-RARE-000074"
+        "WAL-CLM-RARE-000074",
+        "WAL-CLM-RARE-000130",
+        "WAL-CLM-RARE-000131"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000080"
@@ -1272,12 +1274,20 @@
     "display_name": "Gallium",
     "canon_slug": "gallium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000132"
+      ]
+    },
     "deficiency_signs": [],
-    "conditions_treated": [],
+    "conditions_treated": [
+      "brain_cancer"
+    ],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "gadolinium": {
     "display_name": "Gadolinium",
