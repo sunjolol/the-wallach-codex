@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811781
+        "char_offset": 811779
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811983
+        "char_offset": 811981
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811545
+        "char_offset": 811543
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 766472
+        "char_offset": 766470
       },
       "dose": {
         "amount": "250-400",
@@ -2975,6 +2975,152 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T04:12:22+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000090",
+      "kind": "dose",
+      "essentials": [
+        "silver"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [
+        "reduced_immune_status"
+      ],
+      "claim_text": "Wallach reports that silver — used in human health care since the Chinese alchemists 8,000 years ago — is considered by many to be an essential element, acting not as an enzyme cofactor but as a systemic disinfectant and immune-system support. Humans can safely consume up to 400 mg of silver per day, and a silver 'deficiency' results in an impaired immune system.",
+      "verbatim": "Humans can consume 400 mg of silver\nper day. A silver “deficiency” results in an\nimpaired immune system.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 282,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 712000
+      },
+      "dose": {
+        "amount": 400,
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": null
+      },
+      "tags": [
+        "silver",
+        "400mg-daily",
+        "immune-support",
+        "systemic-disinfectant"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T04:58:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000091",
+      "kind": "mechanism",
+      "essentials": [
+        "silver"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach describes silver as a broad-spectrum anti-bacterial, anti-viral and anti-fungal anti-metabolite that disables the respiration enzymes microorganisms depend on. Per Science Digest (1978), silver kills over 650 disease-causing organisms, resistant strains fail to develop, and silver is non-toxic to humans at standard rates of consumption.",
+      "verbatim": "silver kills over 650 disease\ncausing organisms; resistant strains fail to\ndevelop; silver is absolutely non-toxic to\nhumans at standard rates of consumption.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 282,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 712985
+      },
+      "dose": null,
+      "tags": [
+        "silver",
+        "antimicrobial",
+        "650-organisms",
+        "no-resistance",
+        "non-toxic"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T04:58:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000092",
+      "kind": "definition",
+      "essentials": [
+        "silver"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach notes silver's clinical pedigree: silver sulfadiazine (Silvadene) — discovered by Dr. Charles Fox at Columbia University — is used in 70 percent of America's burn centers and has been used to treat syphilis, cholera and malaria; it also stops the herpes virus behind cold sores and fever blisters. Earlier, colloidal silver was documented in the British Medical Journal and Lancet (1917–1918) for septic conditions, inflammation and wound healing.",
+      "verbatim": "Silver sulfadiazine (Silvadene, Marion\nLaboratories) is used in 70 percent of the\nburn centers in America; discovered by Dr.\nCharles Fox, Columbia, University ,\nsulfadiazine has been used successfully to\ntreat syphilis, cholera and malaria",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 281,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 711370
+      },
+      "dose": null,
+      "tags": [
+        "silver",
+        "silver-sulfadiazine",
+        "burn-centers",
+        "colloidal-silver"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T04:58:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000093",
+      "kind": "mechanism",
+      "essentials": [
+        "aluminum"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach states aluminum has a known biological function — activating the enzyme succinic dehydrogenase and increasing the survival rate of newborns — and that, per Professor Gerhardt Schrauzer (head of chemistry at UCSD), aluminum is probably an essential mineral for human nutrition.",
+      "verbatim": "Known biological function is to activate the enzyme succinic dehydrogenase, increases survival rate of newborn and according to professor Gerhardt Schrauzer, head of the department of chemistry at UCSD, is probably an essential mineral for human nutrition.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 282,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 713781
+      },
+      "dose": null,
+      "tags": [
+        "aluminum",
+        "succinic-dehydrogenase",
+        "schrauzer",
+        "probably-essential"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T04:58:50+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

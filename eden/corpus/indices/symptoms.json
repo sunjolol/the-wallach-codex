@@ -218,11 +218,17 @@
   },
   "reduced_immune_status": {
     "display_name": "Reduced Immune Status",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "germanium",
         "claim_id": "WAL-CLM-RARE-000011",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "silver",
+        "claim_id": "WAL-CLM-RARE-000090",
         "confidence": "high",
         "appears_in_books": 1
       }

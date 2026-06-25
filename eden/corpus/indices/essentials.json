@@ -947,32 +947,44 @@
     "display_name": "Silver",
     "canon_slug": "silver",
     "category": "mineral",
-    "claim_count": 2,
+    "claim_count": 5,
     "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-RARE-000092"
+      ],
       "dose": [
-        "WAL-CLM-DDDL-000013"
+        "WAL-CLM-DDDL-000013",
+        "WAL-CLM-RARE-000090"
       ],
       "mechanism": [
-        "WAL-CLM-DDDL-000014"
+        "WAL-CLM-DDDL-000014",
+        "WAL-CLM-RARE-000091"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "aluminum": {
     "display_name": "Aluminum",
     "canon_slug": "aluminum",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000093"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "arsenic": {
     "display_name": "Arsenic",
