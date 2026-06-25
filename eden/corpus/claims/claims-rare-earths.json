@@ -6755,6 +6755,156 @@
       "extracted_at": "2026-06-25T18:05:09+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000191",
+      "kind": "mechanism",
+      "essentials": [
+        "neodymium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports neodymium, a 'light' rare earth, is proven to enhance normal cell growth and double the life spans of laboratory species.",
+      "verbatim": "Neodymium is a “light” Rare Earth proven to enhance normal cell growth and double life spans of laboratory species.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 356,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 858616
+      },
+      "dose": null,
+      "tags": [
+        "neodymium",
+        "longevity",
+        "lifespan",
+        "cell-growth"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T18:15:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000192",
+      "kind": "mechanism",
+      "essentials": [
+        "nickel",
+        "iron",
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports nickel functions as a cofactor for metalloenzymes and facilitates the gastrointestinal absorption of iron and zinc; less than 10% of ingested metallic nickel is absorbed, nickel accumulates in RNA, and nickel deficiency was first reported in 1970.",
+      "verbatim": "Nickel functions as a cofactor for metalloenzymes and facilitates gastrointestinal absorption of iron and zinc.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 356,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 859534
+      },
+      "dose": null,
+      "tags": [
+        "nickel",
+        "metalloenzyme",
+        "iron",
+        "zinc",
+        "absorption"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T18:15:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000193",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "nickel"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anemia",
+        "dermatitis"
+      ],
+      "symptoms": [
+        "poor_growth",
+        "high_newborn_mortality",
+        "dry_hair",
+        "delayed_puberty",
+        "poor_zinc_absorption"
+      ],
+      "claim_text": "Wallach lists the symptoms of nickel deficiency in the rat (Table 11-21): poor growth, lower hematocrit (anemia), depressed oxidative ability of the liver, high newborn mortality, rough/dry hair coat, dermatitis, delayed puberty, and poor zinc absorption.",
+      "verbatim": "Table 11-21. Symptoms of Nickel Deficiency in the rat.\nPoor growth\nLower hematocrit (anemia)\nDepressed oxidative ability of the liver\nHigh newborn mortality\nRough/dry hair coat\nDermatitis\nDelayed puberty\nPoor zinc absorption",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 356,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 859191
+      },
+      "dose": null,
+      "tags": [
+        "nickel",
+        "deficiency",
+        "anemia",
+        "dermatitis",
+        "newborn-mortality"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T18:15:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000194",
+      "kind": "interaction",
+      "essentials": [
+        "nickel",
+        "vitamin-b12"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach notes nickel and vitamin B12 are interdependent: optimal tissue levels of B12 are necessary for nickel's biological function, and B12 deficiency increases the body's need for nickel.",
+      "verbatim": "Optimal tissue levels of B12 is necessary for the optimal biological function of nickel - B12 deficiency results in an increased need for nickel by animals and man.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 356,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 859646
+      },
+      "dose": null,
+      "tags": [
+        "nickel",
+        "vitamin-b12",
+        "interaction",
+        "interdependence"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T18:15:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

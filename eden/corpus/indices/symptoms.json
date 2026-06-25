@@ -128,6 +128,21 @@
       "rare-earths"
     ]
   },
+  "delayed_puberty": {
+    "display_name": "Delayed Puberty",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "nickel",
+        "claim_id": "WAL-CLM-RARE-000193",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "depression": {
     "display_name": "Depression",
     "claim_count": 1,
@@ -135,6 +150,21 @@
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "dry_hair": {
+    "display_name": "Dry Hair",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "nickel",
+        "claim_id": "WAL-CLM-RARE-000193",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -331,6 +361,21 @@
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000151",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "high_newborn_mortality": {
+    "display_name": "High Newborn Mortality",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "nickel",
+        "claim_id": "WAL-CLM-RARE-000193",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -572,8 +617,14 @@
   },
   "poor_growth": {
     "display_name": "Poor Growth",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
+      {
+        "essential": "nickel",
+        "claim_id": "WAL-CLM-RARE-000193",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "nitrogen",
         "claim_id": "WAL-CLM-RARE-000185",
@@ -592,6 +643,21 @@
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "poor_zinc_absorption": {
+    "display_name": "Poor Zinc Absorption",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "nickel",
+        "claim_id": "WAL-CLM-RARE-000193",
         "confidence": "high",
         "appears_in_books": 1
       }

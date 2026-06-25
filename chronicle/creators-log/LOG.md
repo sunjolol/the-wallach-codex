@@ -7,9 +7,17 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_80 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_82 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-25 14:19 UTC-04:00 · session-end · session
+Session 3 (2026-06-25 PM) wrap — Phase γ.3 catalog second half I→Na + Nb/Nd/Ne/Ni/Np mined; 9 batches; corpus 237→288 (+51), kv 59→71, conditions 114→134; all pushed. NEXT: O/Oxygen (behemoth).
+  ↳ Mined the per-element catalog second half front-to-back: I/Iodine, K/Potassium, La/Lanthanum, Kr/Krypton, Li/Lithium, Mg/Magnesium, Mn/Manganese, Mo/Molybdenum, N/Nitrogen, Na/Sodium, Nd/Neodymium, Ni/Nickel (RARE-144..194); Ho/In/Ir/Lu/Nb/Ne/Np read + confirmed geology/radioactive. Decisions locked: dose-unit standard (mg default, mcg if <1mg); Krypton→other_substances; 'Muscle Ties'=muscle knots (not a typo); Adictis→Adriatic logged reversible in chronicle/contradictions/. Tool fix: corpus_resnap re-hashes 0-claim books. Memories added: dose-unit-standard; reading-and-correcting updated (typo protocol + reversible-correction logging). Handoff (chronicle/next-chunk.md) updated to SESSION 3; SESSION 2 marked superseded. Deferred tasks kept active (Table 11-9 behavioral goldmine; Tables 11-10/-11/-13/-20 + Schrauzer tables; Ch.3 Senate-Doc + Table 7-8; Ch.9 pill-mill; other in-housed books). Every batch round-closed (build OK, invariants 30/30, knowledge probe 0 errors) + pushed. NEXT SESSION: O/Oxygen (~1,100 .txt lines).
+
+## 2026-06-25 14:17 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 33 — Rare Earths catalog: Nd/Neodymium + Ni/Nickel, 4 claims (Nd lifespan-doubling; Ni metalloenzyme cofactor + Fe/Zn absorption, Table 11-21 deficiency symptoms, B12 interdependence). kv 70→71, corpus 288.
+  ↳ Neodymium RARE-191: a 'light' rare earth proven to enhance normal cell growth and double the life spans of laboratory species (parallels La/Eu). Nickel RARE-192..194: functions as a cofactor for metalloenzymes and facilitates GI absorption of iron and zinc (<10% of metallic nickel absorbed, accumulates in RNA, deficiency first reported 1970); Table 11-21 nickel-deficiency symptoms in the rat (poor growth, lower hematocrit/anemia, depressed liver oxidative ability, high newborn mortality, rough/dry hair coat, dermatitis, delayed puberty, poor zinc absorption); nickel-B12 interdependence (optimal B12 needed for nickel function, B12 deficiency raises nickel need). READ + confirmed geology/radioactive (no claim): Nb/Niobium [canon], Ne/Neon, Np/Neptunium (radioactive). USA Today 'Did the dinosaurs suffocate' clipping skipped (O/Oxygen sidebar). OCR fixes: B,,→B12, ¢-bullets removed, RareEarth→Rare Earth. Gates: corpus_verify PASS (6 books), build OK, invariants 30/30, knowledge probe 0 errors. NEXT: O/Oxygen (a ~1100-line behemoth — fresh context).
 
 ## 2026-06-25 14:10 UTC-04:00 · design-decision · chronicle/contradictions
 Logged Adictis→Adriatic as a PROVISIONAL, reversible editorial correction (Luneth not 100% sure it should be corrected; keep applying but keep findable/undoable).

@@ -26491,59 +26491,29 @@ stone at 0.05 ppm; limestone 0.3 ppm; sea
 water 0.00001 ppm; land plants 0.3 ppm
 and marine animals 0.001 ppm.
 
-Nd - Neodymium, a RareEarth, is
-found in igneous rocks at 28 ppm; shale at
-16 ppm; sandstone 11 ppm; limestone 4.3
-ppm; marine plants at 5 ppm; land plants
-accumulates up to 460 ppm in Carya spp.;
-marine animals at 0.5 ppm; accumulates
-in the liver and bone of land animals.
+Nd - Neodymium, a Rare Earth, is found in igneous rocks at 28 ppm; shale at 16 ppm; sandstone 11 ppm; limestone 4.3 ppm; marine plants at 5 ppm; land plants accumulates up to 460 ppm in Carya spp.; marine animals at 0.5 ppm; accumulates in the liver and bone of land animals.
 
-Neodymium is a “light” Rare Earth
-proven to enhance normal cell growth and
-double life spans of laboratory species.
+Neodymium is a “light” Rare Earth proven to enhance normal cell growth and double life spans of laboratory species.
 
 Ne - Neon is found in igneous rocks
 at 0.005 ppm and sea water at 0.00014
 ppm.
 
-Ni - Nickel is found in igneous rocks
+Ni - Nickel is found in igneous rocks at 75 ppm; shale at 68 ppm; sandstone at 2 ppm; limestone at 20 ppm; fresh water at 0.01 ppm; sea water at 0.0054 ppm; soils at 40 ppm (higher in soils derived from serpentine); marine plants at 3 ppm; land plants at 3 ppm (accumulated by Alyssum bertalonii); marine animals at 0.4-25 ppm and land animals at 0.8 ppm (accumulates in RNA).
 
-at 75 ppm; shale at 68 ppm; sandstone at 2
-ppm; limestone at 20 ppm; fresh water at
-0.01 ppm; sea water at 0.0054 ppm; soils
-at 40 ppm (higher in soils derived from ser-
-pentine); marine plants at 3 ppm; land
-plants at 3 ppm (accumulated by Alyssum
-bertalonii); marine animals at 0.4-25ppm
-and land animals at 0.8 ppm (accumulates
-in RNA).
-
-Table 11-21. Symptoms of Nickel
-Deficiency in the rat.
-
-* Poor growth
+Table 11-21. Symptoms of Nickel Deficiency in the rat.
+Poor growth
 Lower hematocrit (anemia)
-* Depressed oxidative ability
+Depressed oxidative ability of the liver
+High newborn mortality
+Rough/dry hair coat
+Dermatitis
+Delayed puberty
+Poor zinc absorption
 
-of the liver
-* High newborn mortality
-¢ Rough/dry hair coat
-* Dermatitis
-* Delayed puberty
-* Poor zinc absorption
+Less than 10 % of ingested metallic nickel is absorbed. Nickel deficiency was first reported in 1970 (Table 11-21).
 
-Less than 10 % of ingested metallic
-nickel is absorbed. Nickel deficiency was
-first reported in 1970 (Table 11- 21).
-
-Nickel functions as a cofactor for
-metalloenzymes and facilitates gastrointes-
-tinal absorption of iron and zinc. Optimal
-tissue levels of B,, is necessary for the op-
-timal biological function of nickel - B,, de-
-ficiency results in an increased need for
-nickel by animals and man.
+Nickel functions as a cofactor for metalloenzymes and facilitates gastrointestinal absorption of iron and zinc. Optimal tissue levels of B12 is necessary for the optimal biological function of nickel - B12 deficiency results in an increased need for nickel by animals and man.
 
 Np - All isotopes of neptunium are
 radioactive. the half life of Np is 2.2 x 10°.

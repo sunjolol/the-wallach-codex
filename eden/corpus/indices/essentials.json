@@ -761,7 +761,7 @@
     "display_name": "Iron",
     "canon_slug": "iron",
     "category": "mineral",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000022"
@@ -782,7 +782,8 @@
         "WAL-CLM-RARE-000037",
         "WAL-CLM-RARE-000074",
         "WAL-CLM-RARE-000130",
-        "WAL-CLM-RARE-000131"
+        "WAL-CLM-RARE-000131",
+        "WAL-CLM-RARE-000192"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000080"
@@ -812,6 +813,7 @@
       "copper",
       "iodine",
       "magnesium",
+      "nickel",
       "vanadium",
       "vitamin-b12",
       "vitamin-b9",
@@ -1240,7 +1242,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 22,
+    "claim_count": 23,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -1264,7 +1266,8 @@
         "WAL-CLM-RARE-000010",
         "WAL-CLM-RARE-000044",
         "WAL-CLM-RARE-000046",
-        "WAL-CLM-RARE-000094"
+        "WAL-CLM-RARE-000094",
+        "WAL-CLM-RARE-000192"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000049",
@@ -1327,6 +1330,7 @@
       "iron",
       "lithium",
       "magnesium",
+      "nickel",
       "selenium",
       "sodium",
       "vanadium",
@@ -1746,23 +1750,74 @@
     "display_name": "Neodymium",
     "canon_slug": "neodymium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000191"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "nickel": {
     "display_name": "Nickel",
     "canon_slug": "nickel",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
-    "deficiency_signs": [],
-    "conditions_treated": [],
-    "interacts_with": [],
-    "books_cited": []
+    "claim_count": 3,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000193"
+      ],
+      "interaction": [
+        "WAL-CLM-RARE-000194"
+      ],
+      "mechanism": [
+        "WAL-CLM-RARE-000192"
+      ]
+    },
+    "deficiency_signs": [
+      {
+        "sign": "delayed_puberty",
+        "claim_id": "WAL-CLM-RARE-000193",
+        "confidence": "high"
+      },
+      {
+        "sign": "dry_hair",
+        "claim_id": "WAL-CLM-RARE-000193",
+        "confidence": "high"
+      },
+      {
+        "sign": "high_newborn_mortality",
+        "claim_id": "WAL-CLM-RARE-000193",
+        "confidence": "high"
+      },
+      {
+        "sign": "poor_growth",
+        "claim_id": "WAL-CLM-RARE-000193",
+        "confidence": "high"
+      },
+      {
+        "sign": "poor_zinc_absorption",
+        "claim_id": "WAL-CLM-RARE-000193",
+        "confidence": "high"
+      }
+    ],
+    "conditions_treated": [
+      "anemia",
+      "dermatitis"
+    ],
+    "interacts_with": [
+      "iron",
+      "vitamin-b12",
+      "zinc"
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "praseodymium": {
     "display_name": "Praseodymium",
@@ -2107,13 +2162,14 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_kind": {
       "dose": [
         "WAL-CLM-RARE-000014"
       ],
       "interaction": [
-        "WAL-CLM-RARE-000167"
+        "WAL-CLM-RARE-000167",
+        "WAL-CLM-RARE-000194"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000044",
@@ -2142,6 +2198,7 @@
       "iron",
       "lithium",
       "magnesium",
+      "nickel",
       "vitamin-b3",
       "vitamin-b9",
       "zinc"

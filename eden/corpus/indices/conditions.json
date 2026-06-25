@@ -100,11 +100,12 @@
   },
   "anemia": {
     "display_name": "Anemia",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
-        "WAL-CLM-DDDL-000020"
+        "WAL-CLM-DDDL-000020",
+        "WAL-CLM-RARE-000193"
       ],
       "definitions": [
         "WAL-CLM-RARE-000122"
@@ -117,6 +118,7 @@
       "chromium",
       "copper",
       "iron",
+      "nickel",
       "selenium",
       "vanadium"
     ],
@@ -1148,6 +1150,22 @@
       "chromium",
       "lithium",
       "magnesium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "dermatitis": {
+    "display_name": "Dermatitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000193"
+      ]
+    },
+    "essentials_involved": [
+      "nickel"
     ],
     "other_substances_involved": [],
     "books_cited": [
