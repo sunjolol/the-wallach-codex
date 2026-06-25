@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_61 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_62 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-25 01:38 UTC-04:00 · milestone · eden/corpus
+Corpus-wide abbreviation audit (Luneth mandate): spelled out non-obvious jargon in 31 claims across both shards; Wallach verbatims stay byte-faithful. kv 42→44. Also fixed recurring permission prompts: broad allowlist at defaultMode=default + stop cd-prefixing.
+  ↳ Scanned all 193 claim_texts/doses; 31 fixed via draft-edit→reseal (no verbatim/book change). t.i.d.→three times daily, EFA→essential fatty acids, IU→International Units, IM/IV→intramuscular/intravenous, MD→muscular dystrophy, BPH, SIDS, TMJ, CNS, HCl, RDA, NPK, KSD, USDA/UCLA/UCSD/EPA/ADA. Kept HIV/DNA/RNA + in-line MS/ALS + 'Dr. …, MD' credential (RARE-88). Permissions: settings.local.json had 779 dead exact-match entries + project-set bypassPermissions (not honored at startup); replaced with broad patterns (Luneth's 'known tools' scope). Memories: no-unexplained-abbreviations, permission-allowlist-setup. Board 30/30, probe green. NEXT: catalog Ba/Be/Bi/Br…
 
 ## 2026-06-25 01:17 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 17 — Rare Earths Ch.11 catalog chunk 2 (As/Au/B): 6 claims (RARE-94..99) — arsenic ×2, gold ×2, boron ×2. kv 41→42, RARE 99, corpus 193. Post-finalize: spelled out all jargon abbreviations per the no-abbreviations mandate (Luneth review).

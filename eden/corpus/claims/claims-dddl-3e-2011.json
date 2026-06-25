@@ -140,7 +140,7 @@
         "white_muscle_disease"
       ],
       "symptoms": [],
-      "claim_text": "Selenium deficiency causes infertility, miscarriages, cystic fibrosis of the pancreas, SIDS, white muscle disease, muscular dystrophy, cardiomyopathy, and more.",
+      "claim_text": "Selenium deficiency causes infertility, miscarriages, cystic fibrosis of the pancreas, sudden infant death syndrome (SIDS), white muscle disease, muscular dystrophy, cardiomyopathy, and more.",
       "verbatim": "Selenium deficiency causes infertility,\nmiscarriages, cystic fibrosis of the pancreas, Sudden Infant Death\nSyndrome in animals, liver cirrhosis, stiff lamb disease, white muscle\ndisease, muscular dystrophy, anemias, encephalomalacia (Alzheimer’s\ndisease), cardiomyopathy heart disease, and mulberry heart disease.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -480,7 +480,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Per USDA researcher Richard Anderson, 90 percent of Americans are deficient in chromium.",
+      "claim_text": "Per United States Department of Agriculture (USDA) researcher Richard Anderson, 90 percent of Americans are deficient in chromium.",
       "verbatim": "According to Richard Anderson, USDA, “Ninety percent of\nall Americans are deficient in chromium.”",
       "locator": {
         "book": "dddl-3e-2011",
@@ -840,7 +840,7 @@
         "repetitive_motion_syndrome"
       ],
       "symptoms": [],
-      "claim_text": "Manganese deficiency causes birth defects (congenital ataxia, deafness), asthma, convulsions, skeletal defects, and joint problems including TMJ, repetitive motion syndrome, and carpal tunnel syndrome.",
+      "claim_text": "Manganese deficiency causes birth defects (congenital ataxia, deafness), asthma, convulsions, skeletal defects, and joint problems including temporomandibular joint (jaw) disorder, repetitive motion syndrome, and carpal tunnel syndrome.",
       "verbatim": "Deficiency diseases of Mn are very striking, ranging from severe birth\ndefects (congenital ataxia, deafness, chondrodystrophy), asthma,\nconvulsions, retarded growth, skeletal defects, disruption of fat and\ncarbohydrate metabolism to joint problems in children and adults (i.e. TMJ,\nRepetitive Motion Syndrome, Carpal Tunnel Syndrome).",
       "locator": {
         "book": "dddl-3e-2011",
@@ -1569,7 +1569,7 @@
         "diabetes"
       ],
       "symptoms": [],
-      "claim_text": "The diabetes regimen also includes zinc 50 mg t.i.d., B-complex 50 mg t.i.d. (with niacin), EFAs 5 g t.i.d., B12 1,000 mcg/day, quercetin 150 mg/day, copper 2-3 mg/day, lecithin 2,500 mg t.i.d., and glutathione 100 mg/day.",
+      "claim_text": "The diabetes regimen also includes zinc 50 mg three times daily, B-complex 50 mg three times daily (with niacin), essential fatty acids 5 g three times daily, B12 1,000 mcg/day, quercetin 150 mg/day, copper 2-3 mg/day, lecithin 2,500 mg three times daily, and glutathione 100 mg/day.",
       "verbatim": "Treatment of diabetes should also include zinc at 50 mg t.i.d., B-complex at\n50 mg t.i.d. (be sure to include niacin which is part of the GTF “glucose\ntolerance factor”), essential fatty acids at 5 gm t.i.d., B12 at 1,000 meg/day,\nbioflavonoids including quercetin at 150 mg/day, copper at 2-3 mg/day,\nlecithin at 2,500 mg t.i.d., and glutathione at 100 mg/day.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -1731,7 +1731,7 @@
         "cor_pulmonale"
       ],
       "symptoms": [],
-      "claim_text": "Cor pulmonale treatment includes resolving the lung disease plus oxygen, IV hydrogen peroxide, and selenium at 500-1,000 mcg/day for adults.",
+      "claim_text": "Cor pulmonale treatment includes resolving the lung disease plus oxygen, intravenous (into a vein) hydrogen peroxide, and selenium at 500-1,000 mcg/day for adults.",
       "verbatim": "Treatment of cor pulmonale includes resolving the precipitating lung\ndisease and oxygen, IV hydrogen peroxide, and selenium at 500-1,000 meg\nper day for adults.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -1806,7 +1806,7 @@
         "cancer"
       ],
       "symptoms": [],
-      "claim_text": "Cancer prevention includes beta-carotene at ~300,000 IU/day (vitamin A equivalent) and selenium at 250-500 mcg/day, alongside a low-fat, high-fiber, fried-food-free diet.",
+      "claim_text": "Cancer prevention includes beta-carotene at ~300,000 International Units/day (vitamin A equivalent) and selenium at 250-500 mcg/day, alongside a low-fat, high-fiber, fried-food-free diet.",
       "verbatim": "Try to OD on beta-carotene\n(almost impossible—first sign is dry skin) at about a vitamin A equivalent\nof 300,000 IU per day. Use selenium at 250 to 500 meg per day.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -1878,7 +1878,7 @@
         "osteoporosis"
       ],
       "symptoms": [],
-      "claim_text": "Osteoporosis is easy to prevent and cure with proper supplementation of stomach acid (HCl) and calcium.",
+      "claim_text": "Osteoporosis is easy to prevent and cure with proper supplementation of stomach acid (hydrochloric acid) and calcium.",
       "verbatim": "In our personal experience\nosteoporosis is easy to prevent and cure with proper supplementation of\nstomach acid (HC1) and calcium.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -1939,7 +1939,7 @@
         "osteoporosis"
       ],
       "symptoms": [],
-      "claim_text": "Osteoporosis treatment includes betaine HCl and pancreatic enzymes (75-200 mg t.i.d. before meals) plus calcium and magnesium at 2,000 and 1,000 mg/day or more for the first 30 days.",
+      "claim_text": "Osteoporosis treatment includes betaine hydrochloride and pancreatic enzymes (75-200 mg three times daily before meals) plus calcium and magnesium at 2,000 and 1,000 mg/day or more for the first 30 days.",
       "verbatim": "Treatment of osteoporosis should include betaine HC1 and pancreatic\nenzymes at 75-200 mg t.i.d. 15 minutes before meals, and calcium and\nmagnesium at 2,000 mg and 1,000 mg per day or more for the first 30 days.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -2031,7 +2031,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "The essential fatty acids are linoleic, linolenic, and arachidonic acids; about 3% of total daily calorie intake should come from EFAs (linoleic and linolenic are strictly essential).",
+      "claim_text": "The essential fatty acids are linoleic, linolenic, and arachidonic acids; about 3% of total daily calorie intake should come from these essential fatty acids (linoleic and linolenic are strictly essential).",
       "verbatim": "Three polyunsaturated fatty acids (linoleic, linolenic, and arachidonic acids)\nare known as essential fatty acids (EFA). Three percent of the total daily\ncalorie intake is required from EFA.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -2061,7 +2061,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "EFAs are the raw material the body uses to manufacture prostaglandins, which regulate blood pressure, heart rate, vascular and bronchial dilation, blood clotting, and CNS function.",
+      "claim_text": "Essential fatty acids are the raw material the body uses to manufacture prostaglandins, which regulate blood pressure, heart rate, vascular and bronchial dilation, blood clotting, and central nervous system (CNS) function.",
       "verbatim": "EFA’s are also the raw material for the human body to\nmanufacture prostaglandins that help regulate blood pressure, heart rate,\nvascular dilation, blood clotting, bronchial dilation, and central nervous\nsystem (brain and spinal cord) function.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -2257,7 +2257,7 @@
         "infertility"
       ],
       "symptoms": [],
-      "claim_text": "Infertility protocol: EFA 5 g t.i.d., L-arginine 500 mg t.i.d., zinc, selenium 250 mcg/day, vitamin A 100,000 IU/day for 30 days then 25,000 IU/day, and germanium 50 mg/day.",
+      "claim_text": "Infertility protocol: essential fatty acids 5 g three times daily, L-arginine 500 mg three times daily, zinc, selenium 250 mcg/day, vitamin A 100,000 International Units/day for 30 days then 25,000 International Units/day, and germanium 50 mg/day.",
       "verbatim": "EFA at 5 gm t.i.d., 1-arginine at 500 mg t.i.d., zinc at 15 gm t.i.d., selenium\nat 250 meg/day, vitamin A at 100,000 IU/day for 30 days then drop to\n25,000 IU/day, germanium at 50 mg/day",
       "locator": {
         "book": "dddl-3e-2011",
@@ -2291,7 +2291,7 @@
         "keshan_disease"
       ],
       "symptoms": [],
-      "claim_text": "Selenium prevents muscular dystrophy in all its forms (and Keshan disease, heart muscular dystrophy); preconception selenium levels matter for both pregnancy maintenance and MD prevention.",
+      "claim_text": "Selenium prevents muscular dystrophy in all its forms (and Keshan disease, heart muscular dystrophy); preconception selenium levels matter for both pregnancy maintenance and muscular-dystrophy prevention.",
       "verbatim": "The selenium levels in\npreconception women is important to the maintenance of pregnancy as well\nas the prevention of muscular dystrophy in all of its forms",
       "locator": {
         "book": "dddl-3e-2011",
@@ -2323,7 +2323,7 @@
         "muscular_dystrophy"
       ],
       "symptoms": [],
-      "claim_text": "Given selenium and vitamin E (IM or IV) at the very first onset of symptoms, muscular dystrophy can be arrested or even cured.",
+      "claim_text": "Given selenium and vitamin E (intramuscular [injected into a muscle] or intravenous [into a vein]) at the very first onset of symptoms, muscular dystrophy can be arrested or even cured.",
       "verbatim": "If selenium and vitamin E were to\nbe given IM or IV at the very first onset of symptoms, the disease will be\narrested or maybe even “cured.”",
       "locator": {
         "book": "dddl-3e-2011",
@@ -2356,7 +2356,7 @@
         "keshan_disease"
       ],
       "symptoms": [],
-      "claim_text": "MD / Keshan disease treatment uses selenium (oral colloidal, IV or IM) at 50-1,000 mcg/day by weight plus vitamin E IM at 80 mg/day.",
+      "claim_text": "Muscular dystrophy / Keshan disease treatment uses selenium (oral colloidal, intravenous or intramuscular) at 50-1,000 mcg/day by weight plus vitamin E intramuscular at 80 mg/day.",
       "verbatim": "Treatment of MD and/or Keshan disease includes the use of selenium orally\n(plant derived colloidal minerals), IV or IM at 50-1,000 meg per day (based\non weight), vitamin E IM at 80 mg per day",
       "locator": {
         "book": "dddl-3e-2011",
@@ -2430,7 +2430,7 @@
         "insomnia"
       ],
       "symptoms": [],
-      "claim_text": "Insomnia treatment includes avoiding caffeine and food allergens, calcium (esp. plant-derived colloidal), and chromium + vanadium at 25-200 mcg t.i.d.",
+      "claim_text": "Insomnia treatment includes avoiding caffeine and food allergens, calcium (especially plant-derived colloidal), and chromium + vanadium at 25-200 mcg three times daily.",
       "verbatim": "Treatment for insomnia includes avoidance of caffeine and offending food allergens, calcium\n(especially plant derived colloidal calcium), chromium and vanadium at 25-200 meg t.i.d.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -2536,7 +2536,7 @@
         "anxiety"
       ],
       "symptoms": [],
-      "claim_text": "Anxiety/panic treatment: avoid caffeine and sugar; chromium + vanadium 200-300 mcg/day, B6 100 mg t.i.d., B3 450 mg t.i.d., L-tryptophan, calcium 2,000 mg/day, magnesium 800 mg/day.",
+      "claim_text": "Anxiety/panic treatment: avoid caffeine and sugar; chromium + vanadium 200-300 mcg/day, B6 100 mg three times daily, B3 450 mg three times daily, L-tryptophan, calcium 2,000 mg/day, magnesium 800 mg/day.",
       "verbatim": "Take chromium and vanadium\n200-300 meg/day, B6 100 mg t.i.d., B3 450 mg t.i.d. as time-release tablets,\nBl, B2, and B5 at the rate of 50 mg t.i.d., L-tryptophan 10 grams t.i.d.,\ncalcium 2000 mg/day, and magnesium at 800 mg/day.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -2605,7 +2605,7 @@
         "aphthous_stomatitis"
       ],
       "symptoms": [],
-      "claim_text": "Canker sores (aphthous stomatitis): folic acid 5 mg t.i.d., B12 1,000 mcg/day, iron 15 mg/day, and zinc 50 mg t.i.d. as adjuncts to allergen-avoidance diets.",
+      "claim_text": "Canker sores (aphthous stomatitis): folic acid 5 mg three times daily, B12 1,000 mcg/day, iron 15 mg/day, and zinc 50 mg three times daily as adjuncts to allergen-avoidance diets.",
       "verbatim": "Folic acid at 5 mg ti.d., B12 at 1000 meg/day, iron at 15 mg/day and zinc at\n50 mg t.i.d. are effective adjuncts to avoidance diets.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -2638,7 +2638,7 @@
         "arsenic_toxicity"
       ],
       "symptoms": [],
-      "claim_text": "For arsenic toxicity, IV chelation and oral colloidal/chelated selenium effectively remove the body's arsenic load.",
+      "claim_text": "For arsenic toxicity, intravenous (into a vein) chelation and oral colloidal/chelated selenium effectively remove the body's arsenic load.",
       "verbatim": "IV chelation is very effective in removing\nthe body load of arsenic, as is the oral use of colloidal or chelated selenium.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -2733,7 +2733,7 @@
         "benign_prostatic_hyperplasia"
       ],
       "symptoms": [],
-      "claim_text": "Age-related prostate enlargement (BPH) is usually the result of a zinc deficiency.",
+      "claim_text": "Age-related prostate enlargement (benign prostatic hyperplasia) is usually the result of a zinc deficiency.",
       "verbatim": "As the prostate\nenlarges with age (usually the result of a zinc deficiency)",
       "locator": {
         "book": "dddl-3e-2011",
@@ -2766,7 +2766,7 @@
         "benign_prostatic_hyperplasia"
       ],
       "symptoms": [],
-      "claim_text": "BPH treatment: zinc 50 mg t.i.d., flaxseed-oil EFAs 9 g/day, high-fiber diet with pumpkin seeds, 300,000 IU vitamin A as beta-carotene/day, and selenium 250 mcg t.i.d.",
+      "claim_text": "Benign prostatic hyperplasia (enlarged prostate) treatment: zinc 50 mg three times daily, flaxseed-oil essential fatty acids 9 g/day, high-fiber diet with pumpkin seeds, 300,000 International Units vitamin A as beta-carotene/day, and selenium 250 mcg three times daily.",
       "verbatim": "Benign prostatic hypertrophy is treated with zinc at 50 mg t.i.d., essential\nfatty acids as flaxseed oil at 9 grams per day, high fiber diets including\npumpkin seeds and alfalfa, 300,000 IU vitamin A as beta carotene per day",
       "locator": {
         "book": "dddl-3e-2011",
@@ -2801,7 +2801,7 @@
         "bells_palsy"
       ],
       "symptoms": [],
-      "claim_text": "Bell's palsy treatment: B12 1,000 mcg/day to a total of 20,000 mcg, calcium/magnesium 2,000 and 800 mg/day, and essential fatty acids 5 g t.i.d.",
+      "claim_text": "Bell's palsy treatment: B12 1,000 mcg/day to a total of 20,000 mcg, calcium/magnesium 2,000 and 800 mg/day, and essential fatty acids 5 g three times daily.",
       "verbatim": "Treatment is B12 at 1000 meg/day for a total of 20,000 meg, calcium/\nmagnesium at 2,000 mg and 800 mg per day, essential fatty acids at 5 gm\nt.i.d.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -3058,7 +3058,7 @@
         "common_cold"
       ],
       "symptoms": [],
-      "claim_text": "Common-cold treatment: vitamin C to bowel tolerance, bioflavonoids 150 mg t.i.d., garlic, the baseline supplement program, and chicken-rice soup.",
+      "claim_text": "Common-cold treatment: vitamin C to bowel tolerance, bioflavonoids 150 mg three times daily, garlic, the baseline supplement program, and chicken-rice soup.",
       "verbatim": "Treatment of the “common cold” should include vitamin C to bowel\ntolerance, bioflavonoids at 150 mg t.i.d., garlic, gelatin capsules t.i.d.",
       "locator": {
         "book": "dddl-3e-2011",
