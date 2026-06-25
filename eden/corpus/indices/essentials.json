@@ -39,12 +39,40 @@
     "display_name": "Nitrogen",
     "canon_slug": "nitrogen",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
-    "deficiency_signs": [],
-    "conditions_treated": [],
+    "claim_count": 4,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000185"
+      ],
+      "definition": [
+        "WAL-CLM-RARE-000182"
+      ],
+      "mechanism": [
+        "WAL-CLM-RARE-000183",
+        "WAL-CLM-RARE-000184"
+      ]
+    },
+    "deficiency_signs": [
+      {
+        "sign": "lowered_immunity",
+        "claim_id": "WAL-CLM-RARE-000185",
+        "confidence": "high"
+      },
+      {
+        "sign": "poor_growth",
+        "claim_id": "WAL-CLM-RARE-000185",
+        "confidence": "high"
+      }
+    ],
+    "conditions_treated": [
+      "edema",
+      "infertility",
+      "kwashiorkor"
+    ],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "oxygen": {
     "display_name": "Oxygen",

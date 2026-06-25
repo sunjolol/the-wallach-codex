@@ -1230,6 +1230,22 @@
       "rare-earths"
     ]
   },
+  "edema": {
+    "display_name": "Edema",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000185"
+      ]
+    },
+    "essentials_involved": [
+      "nitrogen"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "explosive_outbursts": {
     "display_name": "Explosive Outbursts",
     "claim_count": 5,
@@ -1593,12 +1609,13 @@
   },
   "infertility": {
     "display_name": "Infertility",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
         "WAL-CLM-RARE-000163",
-        "WAL-CLM-RARE-000176"
+        "WAL-CLM-RARE-000176",
+        "WAL-CLM-RARE-000185"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
@@ -1616,6 +1633,7 @@
       "germanium",
       "lithium",
       "manganese",
+      "nitrogen",
       "selenium",
       "vitamin-a",
       "zinc"
@@ -1729,6 +1747,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "rare-earths"
+    ]
+  },
+  "kwashiorkor": {
+    "display_name": "Kwashiorkor",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000185"
+      ]
+    },
+    "essentials_involved": [
+      "nitrogen"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
       "rare-earths"
     ]
   },

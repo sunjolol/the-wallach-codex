@@ -437,6 +437,21 @@
       "rare-earths"
     ]
   },
+  "lowered_immunity": {
+    "display_name": "Lowered Immunity",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "nitrogen",
+        "claim_id": "WAL-CLM-RARE-000185",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "mental_apathy": {
     "display_name": "Mental Apathy",
     "claim_count": 1,
@@ -531,6 +546,21 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "rare-earths"
+    ]
+  },
+  "poor_growth": {
+    "display_name": "Poor Growth",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "nitrogen",
+        "claim_id": "WAL-CLM-RARE-000185",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
       "rare-earths"
     ]
   },

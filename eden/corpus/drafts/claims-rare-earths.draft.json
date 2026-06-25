@@ -6423,6 +6423,152 @@
       "extracted_at": "2026-06-25T17:54:10+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000182",
+      "kind": "definition",
+      "essentials": [
+        "nitrogen"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach explains nitrogen is a structural atom in protein, nucleic acids (RNA and DNA), and a wide variety of organic molecules; dietary nitrogen, supplied as protein, furnishes the amino acids for building tissue protein and other metabolic functions.",
+      "verbatim": "Nitrogen functions as a structural atom in protein, nucleic acids (RNA, DNA) and a wide variety of organic molecules. Dietary N (as protein) furnish the amino acids for synthesis of tissue protein and other special metabolic functions",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 353,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 852765
+      },
+      "dose": null,
+      "tags": [
+        "nitrogen",
+        "protein",
+        "rna",
+        "dna",
+        "amino-acids"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T18:00:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000183",
+      "kind": "mechanism",
+      "essentials": [
+        "nitrogen"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach lists the body's uses of protein (functions 1-3): repairing worn-out tissue (the anabolic process), building new tissue (muscle, infant and childhood and teen growth, pregnancy), and serving as an emergency source of heat and energy (though biologically more expensive than fat or carbohydrate).",
+      "verbatim": "1) Proteins are used to repair worn-out body tissue (anabolic process)\n2) Proteins are used to build new tissue (muscle, infant growth, childhood, teenagers, pregnancy)\n3) Proteins can be an emergency source of heat and energy (albeit more expensive in biological terms than fat or carbohydrate)",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 353,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 853002
+      },
+      "dose": null,
+      "tags": [
+        "nitrogen",
+        "protein",
+        "anabolic",
+        "growth",
+        "energy"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T18:00:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000184",
+      "kind": "mechanism",
+      "essentials": [
+        "nitrogen"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach continues the body's uses of protein (functions 4-9): forming essential secretions and fluids (enzymes, hormones, mucus, milk, semen); maintaining osmotic fluid balance via blood-plasma proteins (low plasma protein, or hypoproteinemia, causes edema); maintaining acid-base balance; transporting minerals, fats, and vitamins; forming immunoglobulins (antibodies); and providing a nitrogen pool for synthesizing amino acids and new proteins.",
+      "verbatim": "4) Proteins make up essential body secretions and fluids (i.e.- enzymes, hormones, mucus, milk, semen, etc.)\n5) Blood plasma proteins maintain osmotic fluid balance (hypoproteinemia results in edema)\n6) Proteins maintain acid-base balance of blood and tissues\n7) Proteins aid in transport of other essential substances (i.e. - minerals, fats, vitamins, etc.)\n8) Proteins make up basic immunoglobulins (antibodies)\n9) Proteins provide a N pool for the synthesis of amino acids and new proteins",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 354,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 854798
+      },
+      "dose": null,
+      "tags": [
+        "nitrogen",
+        "protein",
+        "immunoglobulins",
+        "osmotic-balance",
+        "transport"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T18:00:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000185",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "nitrogen"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "infertility",
+        "kwashiorkor",
+        "edema"
+      ],
+      "symptoms": [
+        "poor_growth",
+        "lowered_immunity"
+      ],
+      "claim_text": "Wallach notes classic protein deficiency results in infertility, poor growth, lowered immune status, edema, and Kwashiorkor (the potbellied, thin children of third-world countries).",
+      "verbatim": "Classic protein deficiency results in infertility, poor growth, lowered immune status, edema and Kwashiorkor (potbellied, thin children of third world countries).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 354,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 855292
+      },
+      "dose": null,
+      "tags": [
+        "nitrogen",
+        "protein-deficiency",
+        "kwashiorkor",
+        "edema"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T18:00:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

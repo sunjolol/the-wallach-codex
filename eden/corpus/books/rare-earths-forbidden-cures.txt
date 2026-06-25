@@ -26382,46 +26382,13 @@ Toxicity occurs at 10 mg per day as a gout-like disease and interference with co
 
 [Table 11-20 · Nitrogen/Protein Utilization Values of Common Foods — figure]
 
-N.- Nitrogen is found in igneous rocks
+N - Nitrogen is found in igneous rocks at 20 ppm; fresh water at 0.23 ppm; sea water 0.5 ppm; soils 1,000 ppm (99 % present as non-basic N bound in humus); marine plants at 15,000 ppm; land plants at 30,000 ppm; marine animals at 75,000 ppm; land animals at 100,000 ppm.
 
-at 20 ppm; fresh water at 0.23 ppm; sea
-water 0.5 ppm; soils 1,000 ppm (99 %
+Nitrogen functions as a structural atom in protein, nucleic acids (RNA, DNA) and a wide variety of organic molecules. Dietary N (as protein) furnish the amino acids for synthesis of tissue protein and other special metabolic functions:
 
-100
-100
-95
-74
-50
-65
-81
-49
-63
-67
-53
-
-present as non-basic N bound in humus);
-marine plants at 15,000 ppm; land plants
-at 30,000 ppm; marine animals at 75,000
-ppm; land animals at 100,000 ppm.
-
-Nitrogen functions as a structural atom
-in protein, nucleic acids (RNA, DNA) and
-a wide variety of organic molecules. Dietary
-N (as protein) furnish the amino acids for
-synthesis of tissue protein and other spe-
-cial metabolic functions:
-
-1) Proteins are used to repair worn-
-out body tissue (anabolic process)
-
-2) Proteins are used to build new tis-
-sue (muscle, infant growth, child-
-hood, teenagers, pregnancy)
-
-3) Proteins can be an emergency
-source of heat and energy (albeit
-more expensive in biological terms.
-than fat or carbohydrate)
+1) Proteins are used to repair worn-out body tissue (anabolic process)
+2) Proteins are used to build new tissue (muscle, infant growth, childhood, teenagers, pregnancy)
+3) Proteins can be an emergency source of heat and energy (albeit more expensive in biological terms than fat or carbohydrate)
 
 353
 
@@ -26492,36 +26459,14 @@ lot of people jumping around.”
 
 354
 
-4) Proteins make up essential body
-secretions and fluids (i.e.- enzymes,
-hormones, mucus, milk, semen, etc.)
+4) Proteins make up essential body secretions and fluids (i.e.- enzymes, hormones, mucus, milk, semen, etc.)
+5) Blood plasma proteins maintain osmotic fluid balance (hypoproteinemia results in edema)
+6) Proteins maintain acid-base balance of blood and tissues
+7) Proteins aid in transport of other essential substances (i.e. - minerals, fats, vitamins, etc.)
+8) Proteins make up basic immunoglobulins (antibodies)
+9) Proteins provide a N pool for the synthesis of amino acids and new proteins
 
-5) Blood plasma proteins maintain
-osmotic fluid balance (hypo-
-proteinemia results in edema)
-
-6) Proteins maintain acid-base bal-
-ance of blood and tissues
-
-7) Proteins aid in transport of other
-essential substances (i.e. - minerals,
-fats, vitamins, etc.)
-
-8) Proteins make up basic immuno-
-globulins (antibodies)
-
-9) Proteins provide a N pool for the
-synthesis of amino acids and new
-proteins
-
-Classic protein deficiency results in in-
-fertility, poor growth, lowered immune sta-
-tus, edema and Kwashiorkor (potbellied,
-thin children of third world countries). The
-availability and usability of N from various
-foods is quite different and must be con-
-sidered when choosing N sources (Table
-11- 20).
+Classic protein deficiency results in infertility, poor growth, lowered immune status, edema and Kwashiorkor (potbellied, thin children of third world countries). The availability and usability of N from various foods is quite different and must be considered when choosing N sources (Table 11-20).
 
 Na- Sodium is found in igneous rocks
 at 23,600 ppm; shale at 9,600 ppm; sand-
