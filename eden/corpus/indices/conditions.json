@@ -1103,6 +1103,26 @@
       "dddl-3e-2011"
     ]
   },
+  "pica": {
+    "display_name": "Pica",
+    "claim_count": 3,
+    "claims_by_role": {
+      "anecdotes": [
+        "WAL-CLM-RARE-000036"
+      ],
+      "causes": [
+        "WAL-CLM-RARE-000035",
+        "WAL-CLM-RARE-000037"
+      ]
+    },
+    "essentials_involved": [
+      "iron"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "repetitive_motion_syndrome": {
     "display_name": "Repetitive Motion Syndrome",
     "claim_count": 1,

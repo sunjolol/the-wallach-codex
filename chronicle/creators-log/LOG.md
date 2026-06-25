@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_43 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_44 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-24 20:12 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 5: Rare Earths Ch.4 pica/cravings — 3 claims (kv 24→25, RARE 34→37, 131 total; new condition 'pica'). Pica = the body craving missing minerals, incl. a controlled iron-vs-saline trial linking pica to iron deficiency. Luneth-approved.
+  ↳ WAL-CLM-RARE-000035 (pica/cribbing in domestic animals = a craving for minerals; mineral-starved animals eat supplements then self-regulate to maintenance), 000036 (geophagia/earth-eating = pica common in mineral-deficient pregnant humans; Wallach's own observation of a hundred pregnant Montana sheep eating clay; kind personal_anecdote), 000037 (iron deficiency drives pica; McDonald & Marshall 1964 controlled trial: 11 of 13 sand-eating children given iron lost their pica vs only 3 of 12 given saline — links the pica condition to the iron essential). Avoided the garbled hemoglobin values (OCR 'g%'->'9%') by choosing the clean controlled-trial verbatim. Left the colorful Queen Kekuiapoiwa pregnancy-craving anecdote in the book text but did not extract it. Ch.5 ahead (idx 80, the 'I ate his liver' chapter) is likely extreme-pica/fringe territory — will screen carefully.
 
 ## 2026-06-24 20:05 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 4: Rare Earths Ch.3 — the iconic Senate-Doc-264 minerals>vitamins quote + the soil-mining-by-cropping mechanism (2 claims, kv 23→24, RARE 32→34, 128 total). Text-layer-only nav to avoid the sensitive collapse news-clipping pages. Luneth-approved.

@@ -422,7 +422,7 @@
     "display_name": "Iron",
     "canon_slug": "iron",
     "category": "mineral",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000022"
@@ -434,6 +434,9 @@
       "interaction": [
         "WAL-CLM-DDDL-000021",
         "WAL-CLM-DDDL-000040"
+      ],
+      "mechanism": [
+        "WAL-CLM-RARE-000037"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000080"
@@ -452,7 +455,8 @@
       "canker_sores",
       "diabetes",
       "heart_failure",
-      "liver_cirrhosis"
+      "liver_cirrhosis",
+      "pica"
     ],
     "interacts_with": [
       "copper",
@@ -462,7 +466,8 @@
       "zinc"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "iodine": {

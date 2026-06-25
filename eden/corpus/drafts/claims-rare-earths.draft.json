@@ -307,7 +307,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 402418
+        "char_offset": 402410
       },
       "dose": null,
       "tags": [
@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817790
+        "char_offset": 817782
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817992
+        "char_offset": 817984
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817554
+        "char_offset": 817546
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 772481
+        "char_offset": 772473
       },
       "dose": {
         "amount": "250-400",
@@ -488,7 +488,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 392796
+        "char_offset": 392788
       },
       "dose": null,
       "tags": [
@@ -520,7 +520,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 393573
+        "char_offset": 393565
       },
       "dose": null,
       "tags": [
@@ -551,7 +551,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 473942
+        "char_offset": 473934
       },
       "dose": null,
       "tags": [
@@ -581,7 +581,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 474566
+        "char_offset": 474558
       },
       "dose": null,
       "tags": [
@@ -1100,6 +1100,110 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T00:03:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000035",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "pica"
+      ],
+      "symptoms": [],
+      "claim_text": "Pica in animals (\"cribbing\" — a horse or cow gnawing wood, fences, or feed boxes) is a craving for minerals; mineral-starved animals first eat large amounts of supplemental minerals, then self-regulate down to a maintenance level.",
+      "verbatim": "the animal really has a craving for minerals. Such mineral starved animals will at first eat large amounts of supplemental minerals until they are satisfied, then they will automatically reduce their level of consumption to a maintenance level.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 4",
+        "page": "54",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 195764
+      },
+      "dose": null,
+      "tags": [
+        "pica",
+        "cribbing",
+        "mineral-craving",
+        "animals"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T00:09:13+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000036",
+      "kind": "personal_anecdote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "pica"
+      ],
+      "symptoms": [],
+      "claim_text": "Geophagia (earth-eating) is a form of pica common in mineral-deficient pregnant humans; Wallach observed a hundred pregnant sheep in Montana eating clay along an embankment.",
+      "verbatim": "We have seen a hundred pregnant sheep in Montana lined up along an embankment eating clay (this is a form of pica known as “geophagia” or earth eating geophagia is very common in minerally deficient pregnant humans).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 4",
+        "page": "54",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 196421
+      },
+      "dose": null,
+      "tags": [
+        "pica",
+        "geophagia",
+        "pregnancy",
+        "mineral-deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T00:09:13+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000037",
+      "kind": "mechanism",
+      "essentials": [
+        "iron"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "pica"
+      ],
+      "symptoms": [],
+      "claim_text": "Pica is driven by iron deficiency: in a controlled trial of 25 children who ate sand, 11 of 13 given iron lost their pica behavior within months versus only 3 of 12 given saline.",
+      "verbatim": "McDonald and Marshall (1964) reported on 25 children who ate sand. They divided the group in half; they gave one group iron and the other group saline (salt solution). After three to four months 11 of the 13 children given iron had lost their pica behavior compared with only 3 of the 12 given saline.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 4",
+        "page": "56",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 202735
+      },
+      "dose": null,
+      "tags": [
+        "pica",
+        "iron",
+        "iron-deficiency",
+        "clinical-trial"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T00:09:13+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }
