@@ -47,6 +47,21 @@
       "rare-earths"
     ]
   },
+  "behavioral_problems": {
+    "display_name": "Behavioral Problems",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "lithium",
+        "claim_id": "WAL-CLM-RARE-000163",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "brittle_nails": {
     "display_name": "Brittle Nails",
     "claim_count": 1,
@@ -477,6 +492,21 @@
       "rare-earths"
     ]
   },
+  "reduced_growth": {
+    "display_name": "Reduced Growth",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "lithium",
+        "claim_id": "WAL-CLM-RARE-000163",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "reduced_immune_status": {
     "display_name": "Reduced Immune Status",
     "claim_count": 2,
@@ -490,6 +520,36 @@
       {
         "essential": "silver",
         "claim_id": "WAL-CLM-RARE-000090",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "reproductive_failure": {
+    "display_name": "Reproductive Failure",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "lithium",
+        "claim_id": "WAL-CLM-RARE-000163",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "shortened_lifespan": {
+    "display_name": "Shortened Lifespan",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "lithium",
+        "claim_id": "WAL-CLM-RARE-000163",
         "confidence": "high",
         "appears_in_books": 1
       }

@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_73 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_74 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-25 13:30 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 27 — Rare Earths catalog: Li/Lithium, 8 claims (depression/manic-depression = lithium deficiency thesis + behavioral deficiency signs + dose + crime hair-Li + Prozac + interactions). kv 63→64, corpus 261.
+  ↳ Lithium (the book's biggest single entry, pp344-350) RARE-160..167. Wallach prose claims: depression epidemiology (risk ~doubles each generation since 1915, younger onset, 1-in-4 women/1-in-10 men per Weissman); the core thesis (depression + manic depression are simply a lithium deficiency aggravated by high sugar); Prozac sales explosion (50M 1989 → projected B 1995, 650k Rx/month); lithium-deficiency hallmarks (animal: reproductive failure/infertility/stunted growth/short lifespan; human: bipolar, depression, rages, Jekyll-Hyde behavior, hyperactivity, ADD); chelated Li 1-2 mg/day → dose-dependent hair-Li kinetics (rise 4 wk, plateau 3 mo, baseline 2 mo off), not for metallic carbonate; violent criminals ~400x less hair Li than controls; EPA intake 650-3,100 mcg/day mostly metallic/non-bioavailable; Li supplementation raises hair V/Al/Pb/As/Co + short-term raises/long-term lowers serum B12. CORE-behavioral policy applied per Luneth (verbatims keep Jekyll-Hyde/Bad Seeds/rages/violent-criminal faithfully; summaries softened, Bad Seeds label dropped from summary). Disclosed non-extractions: 2 reproduced NYT clippings (depression-cost, Villechaize suicide) + 3 Schrauzer crime tables (11-5/11-16/11-17) left raw OCR (thesis already RARE-41; tables added to deferred cleanup); 2,648-subject hair-Li distribution aside not claimed; Lu/Lutetium READ + confirmed geology-only. OCR fixes: B,,→B12, verified 'rages' at 420 DPI. Gates: corpus_verify PASS (6 books), build OK, invariants 30/30, knowledge probe 0 errors. NEXT: Mg/Magnesium.
 
 ## 2026-06-25 13:01 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 26 — Rare Earths catalog: Potassium (5), Lanthanum (2: Candida/chronic-fatigue + lifespan-doubling), Krypton (1, other_substances per Luneth). kv 61→63, corpus 253.

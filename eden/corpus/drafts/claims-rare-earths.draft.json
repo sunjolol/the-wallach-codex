@@ -5594,6 +5594,304 @@
       "extracted_at": "2026-06-25T17:01:05+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000160",
+      "kind": "prevalence",
+      "essentials": [
+        "lithium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "depression"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach reports that since 1915 the risk of clinical depression nearly doubles with each succeeding generation; psychiatrist Myrna Weissman notes depression is a worldwide phenomenon striking at younger and younger ages (onset fell from the late 20s in 1935 to between 15 and 20 by 1955), and that one in four women and one in ten men will develop it.",
+      "verbatim": "Since 1915, the risk of clinical depression nearly doubles with each succeeding generation.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 344,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 831806
+      },
+      "dose": null,
+      "tags": [
+        "lithium",
+        "depression",
+        "epidemiology"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T17:16:38+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000161",
+      "kind": "mechanism",
+      "essentials": [
+        "lithium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "depression",
+        "bipolar_disorder"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach's position is that although psychiatrists attribute depression and manic depression to negative thinking and self-recrimination, they treat it successfully with the trace mineral lithium — so depression and manic depression are simply a lithium deficiency, aggravated by high sugar consumption.",
+      "verbatim": "they treat depression successfully with the trace mineral lithium - depression and manic depression with all that implies are simply a lithium deficiency aggravated by high sugar consumption.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 344,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 832478
+      },
+      "dose": null,
+      "tags": [
+        "lithium",
+        "depression",
+        "manic-depression",
+        "sugar",
+        "thesis"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T17:16:38+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000162",
+      "kind": "prevalence",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "depression"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach notes Prozac, America's leading antidepressant, was introduced in 1987 and sales soared to $350 million by 1989 (more than was spent on all antidepressants two years earlier), with projections to top $1 billion by 1995 as allopathic doctors generated 650,000 prescriptions per month.",
+      "verbatim": "Prozac, America’s “leading” antidepressant pharmaceutical was introduced in 1987, sales soared to $350 million in 1989, more than was spent on all antidepressants just two years earlier",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 350,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 843305
+      },
+      "dose": null,
+      "tags": [
+        "prozac",
+        "antidepressants",
+        "pharmaceutical-industry",
+        "depression"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T17:16:38+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000163",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "lithium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "depression",
+        "bipolar_disorder",
+        "hyperactivity",
+        "adhd",
+        "violent_behavior",
+        "blind_rage",
+        "infertility"
+      ],
+      "symptoms": [
+        "reproductive_failure",
+        "reduced_growth",
+        "shortened_lifespan",
+        "behavioral_problems"
+      ],
+      "claim_text": "Wallach lists the hallmarks of lithium deficiency: in animal studies, reproductive failure, infertility, reduced growth rate, shortened life expectancy, and behavioral problems; in humans, manic depression, depression, bipolar disorder, rages, aggressive 'Dr. Jekyll/Mr. Hyde' behavior, hyperactivity, and attention-deficit disorder (ADD).",
+      "verbatim": "Animal studies show that a deficiency of lithium results in reproductive failure, infertility, reduced growth rate, shortened life expectancy and behavioral problems. In humans, manic depression, depression, “Bi-polar” disease, rages, Dr. Jekyll/Mr. Hyde behavior, hyperactivity, ADD, “Bad Seeds” are hallmarks of Li deficiency.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 350,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 843641
+      },
+      "dose": null,
+      "tags": [
+        "lithium",
+        "behavioral",
+        "bipolar",
+        "adhd",
+        "rage",
+        "deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T17:16:38+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000164",
+      "kind": "dose",
+      "essentials": [
+        "lithium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports chelated lithium supplemented at 1 to 2 mg per day (1,000–2,000 mcg) produces a dose-dependent rise in hair lithium — increasing over four weeks, plateauing by three months, and falling back to baseline two months after stopping — and that this does not hold for metallic lithium carbonate.",
+      "verbatim": "Chelated Li supplemented at 1,000 to 2,000 ug/d causes a dose-dependent increase in hair Li levels; hair Li levels increased after four weeks of supplementation and leveled off and became stationary after three months",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 350,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 843971
+      },
+      "dose": null,
+      "tags": [
+        "lithium",
+        "chelated",
+        "dose",
+        "hair-lithium",
+        "metallic-vs-chelated"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T17:16:38+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000165",
+      "kind": "diagnostic_pattern",
+      "essentials": [
+        "lithium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "violent_behavior",
+        "criminal_behavior"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach reports that normal controls have almost 400 times more hair lithium than violent criminals (sampled from California, Florida, Texas, and Oregon).",
+      "verbatim": "Normal controls showed almost 400 times more hair Li than do the violent criminal (Table 11-15, 11-16, 11-17) from California, Florida, Texas and Oregon.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 350,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 844663
+      },
+      "dose": null,
+      "tags": [
+        "lithium",
+        "violent-behavior",
+        "hair-analysis",
+        "crime"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T17:16:38+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000166",
+      "kind": "definition",
+      "essentials": [
+        "lithium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach notes the EPA estimates daily lithium intake at 650 to 3,100 mcg per day, but much of it is metallic and not biologically available.",
+      "verbatim": "The estimated daily intake of Li by the EPA ranges from 650 to 3,100 ug/d; however, much of this Li is metallic and not biologically available.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 350,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 844818
+      },
+      "dose": null,
+      "tags": [
+        "lithium",
+        "daily-intake",
+        "epa",
+        "bioavailability",
+        "metallic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T17:16:38+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000167",
+      "kind": "interaction",
+      "essentials": [
+        "lithium",
+        "vitamin-b12"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports that lithium supplementation increases hair concentrations of vanadium, aluminum, lead, arsenic, and cobalt; short-term supplementation raises serum vitamin B12, while long-term supplementation lowers it.",
+      "verbatim": "Lithium supplementation increases the hair concentrations of V, Al, Pb, As and Co. Short term supplementation of Li elevates serum B12 levels; with long term supplementation serum B12 drops.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 350,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 844962
+      },
+      "dose": null,
+      "tags": [
+        "lithium",
+        "vitamin-b12",
+        "heavy-metals",
+        "interaction"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T17:16:38+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

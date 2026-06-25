@@ -1472,22 +1472,35 @@
     "display_name": "Lithium",
     "canon_slug": "lithium",
     "category": "mineral",
-    "claim_count": 7,
+    "claim_count": 14,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000079",
-        "WAL-CLM-RARE-000042"
+        "WAL-CLM-RARE-000042",
+        "WAL-CLM-RARE-000163"
       ],
       "definition": [
-        "WAL-CLM-RARE-000029"
+        "WAL-CLM-RARE-000029",
+        "WAL-CLM-RARE-000166"
       ],
       "diagnostic_pattern": [
-        "WAL-CLM-RARE-000129"
+        "WAL-CLM-RARE-000129",
+        "WAL-CLM-RARE-000165"
+      ],
+      "dose": [
+        "WAL-CLM-RARE-000164"
+      ],
+      "interaction": [
+        "WAL-CLM-RARE-000167"
       ],
       "mechanism": [
         "WAL-CLM-RARE-000041",
         "WAL-CLM-RARE-000043",
-        "WAL-CLM-RARE-000128"
+        "WAL-CLM-RARE-000128",
+        "WAL-CLM-RARE-000161"
+      ],
+      "prevalence": [
+        "WAL-CLM-RARE-000160"
       ]
     },
     "deficiency_signs": [
@@ -1497,17 +1510,41 @@
         "confidence": "high"
       },
       {
+        "sign": "behavioral_problems",
+        "claim_id": "WAL-CLM-RARE-000163",
+        "confidence": "high"
+      },
+      {
         "sign": "geographic_tongue",
         "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high"
+      },
+      {
+        "sign": "reduced_growth",
+        "claim_id": "WAL-CLM-RARE-000163",
+        "confidence": "high"
+      },
+      {
+        "sign": "reproductive_failure",
+        "claim_id": "WAL-CLM-RARE-000163",
+        "confidence": "high"
+      },
+      {
+        "sign": "shortened_lifespan",
+        "claim_id": "WAL-CLM-RARE-000163",
         "confidence": "high"
       }
     ],
     "conditions_treated": [
+      "adhd",
       "anorexia",
       "bipolar_disorder",
       "blind_rage",
       "criminal_behavior",
+      "depression",
       "explosive_outbursts",
+      "hyperactivity",
+      "infertility",
       "violent_behavior"
     ],
     "interacts_with": [
@@ -1515,6 +1552,7 @@
       "copper",
       "sodium",
       "vanadium",
+      "vitamin-b12",
       "zinc"
     ],
     "books_cited": [
@@ -1909,10 +1947,13 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_kind": {
       "dose": [
         "WAL-CLM-RARE-000014"
+      ],
+      "interaction": [
+        "WAL-CLM-RARE-000167"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000044",
@@ -1939,6 +1980,7 @@
       "cobalt",
       "copper",
       "iron",
+      "lithium",
       "magnesium",
       "vitamin-b3",
       "vitamin-b9",

@@ -17,14 +17,18 @@
   },
   "adhd": {
     "display_name": "Adhd",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000163"
+      ],
       "definitions": [
         "WAL-CLM-RARE-000116"
       ]
     },
     "essentials_involved": [
-      "chromium"
+      "chromium",
+      "lithium"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -392,8 +396,14 @@
   },
   "bipolar_disorder": {
     "display_name": "Bipolar Disorder",
-    "claim_count": 2,
+    "claim_count": 4,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000161"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000163"
+      ],
       "definitions": [
         "WAL-CLM-RARE-000029",
         "WAL-CLM-RARE-000116"
@@ -454,11 +464,14 @@
   },
   "blind_rage": {
     "display_name": "Blind Rage",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000127",
         "WAL-CLM-RARE-000128"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000163"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116",
@@ -945,7 +958,7 @@
   },
   "criminal_behavior": {
     "display_name": "Criminal Behavior",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000041"
@@ -954,6 +967,9 @@
         "WAL-CLM-RARE-000116",
         "WAL-CLM-RARE-000122",
         "WAL-CLM-RARE-000126"
+      ],
+      "diagnostics": [
+        "WAL-CLM-RARE-000165"
       ]
     },
     "essentials_involved": [
@@ -1027,14 +1043,25 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 1,
+    "claim_count": 5,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000161"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000163"
+      ],
       "definitions": [
         "WAL-CLM-RARE-000116"
+      ],
+      "prevalence": [
+        "WAL-CLM-RARE-000160",
+        "WAL-CLM-RARE-000162"
       ]
     },
     "essentials_involved": [
-      "chromium"
+      "chromium",
+      "lithium"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1317,14 +1344,18 @@
   },
   "hyperactivity": {
     "display_name": "Hyperactivity",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000163"
+      ],
       "definitions": [
         "WAL-CLM-RARE-000116"
       ]
     },
     "essentials_involved": [
-      "chromium"
+      "chromium",
+      "lithium"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1476,10 +1507,11 @@
   },
   "infertility": {
     "display_name": "Infertility",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005"
+        "WAL-CLM-DDDL-000005",
+        "WAL-CLM-RARE-000163"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
@@ -1495,6 +1527,7 @@
       "arginine",
       "chromium",
       "germanium",
+      "lithium",
       "selenium",
       "vitamin-a",
       "zinc"
@@ -2372,19 +2405,23 @@
   },
   "violent_behavior": {
     "display_name": "Violent Behavior",
-    "claim_count": 6,
+    "claim_count": 8,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000041",
         "WAL-CLM-RARE-000127",
         "WAL-CLM-RARE-000128"
       ],
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000163"
+      ],
       "definitions": [
         "WAL-CLM-RARE-000116",
         "WAL-CLM-RARE-000122"
       ],
       "diagnostics": [
-        "WAL-CLM-RARE-000129"
+        "WAL-CLM-RARE-000129",
+        "WAL-CLM-RARE-000165"
       ]
     },
     "essentials_involved": [
