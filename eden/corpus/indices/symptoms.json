@@ -107,6 +107,21 @@
       "rare-earths"
     ]
   },
+  "convulsions": {
+    "display_name": "Convulsions",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "magnesium",
+        "claim_id": "WAL-CLM-RARE-000172",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "depression": {
     "display_name": "Depression",
     "claim_count": 1,
@@ -141,6 +156,21 @@
     ],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "ecg_changes": {
+    "display_name": "Ecg Changes",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "magnesium",
+        "claim_id": "WAL-CLM-RARE-000172",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "exophthalmos": {
@@ -219,6 +249,21 @@
     ],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "growth_failure": {
+    "display_name": "Growth Failure",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "magnesium",
+        "claim_id": "WAL-CLM-RARE-000172",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "hair_loss": {
@@ -401,6 +446,21 @@
       "rare-earths"
     ]
   },
+  "muscle_ties": {
+    "display_name": "Muscle Ties",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "magnesium",
+        "claim_id": "WAL-CLM-RARE-000172",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "muscle_weakness": {
     "display_name": "Muscle Weakness",
     "claim_count": 1,
@@ -418,8 +478,14 @@
   },
   "muscular_weakness": {
     "display_name": "Muscular Weakness",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
+      {
+        "essential": "magnesium",
+        "claim_id": "WAL-CLM-RARE-000172",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "potassium",
         "claim_id": "WAL-CLM-RARE-000155",
@@ -550,6 +616,21 @@
       {
         "essential": "lithium",
         "claim_id": "WAL-CLM-RARE-000163",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "tremors": {
+    "display_name": "Tremors",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "magnesium",
+        "claim_id": "WAL-CLM-RARE-000172",
         "confidence": "high",
         "appears_in_books": 1
       }

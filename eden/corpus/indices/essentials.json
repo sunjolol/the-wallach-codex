@@ -100,21 +100,31 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 15,
+    "claim_count": 21,
     "claims_by_kind": {
       "deficiency_sign": [
-        "WAL-CLM-DDDL-000074"
+        "WAL-CLM-DDDL-000074",
+        "WAL-CLM-RARE-000172"
+      ],
+      "definition": [
+        "WAL-CLM-RARE-000168",
+        "WAL-CLM-RARE-000169"
       ],
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000082",
         "WAL-CLM-RARE-000083"
+      ],
+      "dose": [
+        "WAL-CLM-RARE-000173"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000053",
         "WAL-CLM-DDDL-000082",
         "WAL-CLM-DDDL-000087",
         "WAL-CLM-RARE-000098",
-        "WAL-CLM-RARE-000099"
+        "WAL-CLM-RARE-000099",
+        "WAL-CLM-RARE-000170",
+        "WAL-CLM-RARE-000171"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000051",
@@ -126,9 +136,41 @@
         "WAL-CLM-DDDL-000092"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "convulsions",
+        "claim_id": "WAL-CLM-RARE-000172",
+        "confidence": "high"
+      },
+      {
+        "sign": "ecg_changes",
+        "claim_id": "WAL-CLM-RARE-000172",
+        "confidence": "high"
+      },
+      {
+        "sign": "growth_failure",
+        "claim_id": "WAL-CLM-RARE-000172",
+        "confidence": "high"
+      },
+      {
+        "sign": "muscle_ties",
+        "claim_id": "WAL-CLM-RARE-000172",
+        "confidence": "high"
+      },
+      {
+        "sign": "muscular_weakness",
+        "claim_id": "WAL-CLM-RARE-000172",
+        "confidence": "high"
+      },
+      {
+        "sign": "tremors",
+        "claim_id": "WAL-CLM-RARE-000172",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
       "angina",
+      "anorexia",
       "anxiety",
       "arteriosclerosis",
       "arthritis",
@@ -137,12 +179,16 @@
       "bladder_stones",
       "cardiovascular_disease",
       "celiac_disease",
+      "depression",
       "kidney_stones",
       "malabsorption",
       "menopause",
+      "migraine",
       "muscle_cramps",
       "osteoporosis",
-      "panic_attacks"
+      "panic_attacks",
+      "tetany",
+      "vertigo"
     ],
     "interacts_with": [
       "boron",
@@ -151,6 +197,7 @@
       "copper",
       "iron",
       "manganese",
+      "potassium",
       "vanadium",
       "vitamin-b12",
       "vitamin-b3",
@@ -221,13 +268,14 @@
     "display_name": "Potassium",
     "canon_slug": "potassium",
     "category": "mineral",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000155"
       ],
       "definition": [
-        "WAL-CLM-RARE-000152"
+        "WAL-CLM-RARE-000152",
+        "WAL-CLM-RARE-000169"
       ],
       "dose": [
         "WAL-CLM-RARE-000154"
@@ -258,6 +306,7 @@
     ],
     "interacts_with": [
       "calcium",
+      "magnesium",
       "sodium"
     ],
     "books_cited": [
@@ -268,7 +317,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 26,
+    "claim_count": 27,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074"
@@ -294,7 +343,8 @@
         "WAL-CLM-RARE-000106",
         "WAL-CLM-RARE-000107",
         "WAL-CLM-RARE-000108",
-        "WAL-CLM-RARE-000153"
+        "WAL-CLM-RARE-000153",
+        "WAL-CLM-RARE-000170"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000009"

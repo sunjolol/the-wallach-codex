@@ -158,19 +158,22 @@
   },
   "anorexia": {
     "display_name": "Anorexia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000079"
+        "WAL-CLM-DDDL-000079",
+        "WAL-CLM-RARE-000172"
       ]
     },
     "essentials_involved": [
       "lithium",
+      "magnesium",
       "zinc"
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "anosmia": {
@@ -247,13 +250,16 @@
   },
   "arteriosclerosis": {
     "display_name": "Arteriosclerosis",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000082"
       ],
       "contraindications": [
         "WAL-CLM-DDDL-000083"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000172"
       ]
     },
     "essentials_involved": [
@@ -262,7 +268,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "arthritis": {
@@ -314,13 +321,14 @@
   },
   "asthma": {
     "display_name": "Asthma",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000053"
       ],
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000026"
+        "WAL-CLM-DDDL-000026",
+        "WAL-CLM-RARE-000172"
       ]
     },
     "essentials_involved": [
@@ -329,7 +337,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "bells_palsy": {
@@ -1043,13 +1052,14 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000161"
       ],
       "deficiency_signs": [
-        "WAL-CLM-RARE-000163"
+        "WAL-CLM-RARE-000163",
+        "WAL-CLM-RARE-000172"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
@@ -1061,7 +1071,8 @@
     },
     "essentials_involved": [
       "chromium",
-      "lithium"
+      "lithium",
+      "magnesium"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1799,6 +1810,22 @@
       "dddl-3e-2011"
     ]
   },
+  "migraine": {
+    "display_name": "Migraine",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000172"
+      ]
+    },
+    "essentials_involved": [
+      "magnesium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "minamata_disease": {
     "display_name": "Minamata Disease",
     "claim_count": 1,
@@ -2262,14 +2289,18 @@
   },
   "tetany": {
     "display_name": "Tetany",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000172"
+      ],
       "definitions": [
         "WAL-CLM-RARE-000105"
       ]
     },
     "essentials_involved": [
-      "calcium"
+      "calcium",
+      "magnesium"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -2397,6 +2428,22 @@
     },
     "essentials_involved": [
       "copper"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "vertigo": {
+    "display_name": "Vertigo",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000172"
+      ]
+    },
+    "essentials_involved": [
+      "magnesium"
     ],
     "other_substances_involved": [],
     "books_cited": [

@@ -5892,6 +5892,232 @@
       "extracted_at": "2026-06-25T17:16:38+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000168",
+      "kind": "definition",
+      "essentials": [
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach states magnesium is essential to all living organisms, with electrochemical, catalytic, and structural functions; it activates numerous enzymes and is a constituent of all chlorophylls.",
+      "verbatim": "Magnesium is essential to all living organisms and has electrochemical, catalytic and structural functions, activates numerous enzymes and is a constituent of all chlorophylls.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 350,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 846194
+      },
+      "dose": null,
+      "tags": [
+        "magnesium",
+        "essentiality",
+        "enzyme-cofactor",
+        "chlorophyll"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T17:35:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000169",
+      "kind": "definition",
+      "essentials": [
+        "magnesium",
+        "potassium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach notes the adult human body contains 20 to 28 grams of total magnesium — about 60% in bone, 26% in skeletal muscle, the rest in organs and fluids — with serum levels of 1.5 to 2.1 milliequivalents per liter (mEq/L); magnesium is second only to potassium as an intracellular cation, and about half (mostly bone-bound) is not exchangeable.",
+      "verbatim": "The adult human contains 20 to 28 grams of total body magnesium. Approximately 60 % is found in bone, 26 % is associated with skeletal muscle and the balance is distributed between various organs and body fluids. Serum levels of Mg range from 1.5 to 2.1 mEq/L; it is second to K as an intracellular cation",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 351,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 846372
+      },
+      "dose": null,
+      "tags": [
+        "magnesium",
+        "potassium",
+        "body-content",
+        "bone",
+        "intracellular"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T17:35:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000170",
+      "kind": "mechanism",
+      "essentials": [
+        "magnesium",
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach explains magnesium is required for energy production and transfer, protein synthesis, muscle contractility, and nerve excitability, and serves as a cofactor in countless enzyme systems. An excess of magnesium inhibits bone calcification; calcium and magnesium play antagonistic roles in muscle contraction (calcium the stimulator, magnesium the relaxer), and an excess of calcium can induce signs of magnesium deficiency.",
+      "verbatim": "AN EXCESS OF MG WILL INHIBIT BONE CALCIFICATION. Calcium and Mg have antagonistic roles in normal muscle contraction, calcium acting as the stimulator and Mg as the relaxer. An excessive amount of Ca can induce signs of Mg deficiency.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 351,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 846950
+      },
+      "dose": null,
+      "tags": [
+        "magnesium",
+        "calcium",
+        "calcium-magnesium-antagonism",
+        "muscle",
+        "bone-calcification"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T17:35:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000171",
+      "kind": "mechanism",
+      "essentials": [
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports magnesium absorption ranges from 24 to 85 percent — lower from metallic sources, higher from plant-derived colloidal sources; vitamin D has no effect on it, while fat, phytates, and calcium reduce it, and high-performance athletes lose considerable magnesium in sweat.",
+      "verbatim": "The rate of absorption of Mg ranges from 24 to 85 %. The lesser absorption rate is for metallic sources of Mg, the higher levels are associated with plant derived colloidal sources. Vitamin D has no effect on Mg absorption; the presence of fat, phytates and calcium reduces the efficiency of absorption.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 351,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 847186
+      },
+      "dose": null,
+      "tags": [
+        "magnesium",
+        "absorption",
+        "metallic-vs-colloidal",
+        "phytates",
+        "sweat"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T17:35:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000172",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "asthma",
+        "anorexia",
+        "migraine",
+        "tetany",
+        "depression",
+        "vertigo",
+        "arteriosclerosis"
+      ],
+      "symptoms": [
+        "growth_failure",
+        "muscular_weakness",
+        "muscle_ties",
+        "tremors",
+        "convulsions",
+        "ecg_changes"
+      ],
+      "claim_text": "Wallach lists the deficiency diseases of magnesium (Table 11-18): asthma, anorexia, menstrual migraines, growth failure, electrocardiogram (ECG) changes, neuromuscular problems, tetany (convulsions), depression, muscular weakness, muscle 'Ties' (muscle knots), tremors, vertigo, calcification of small arteries, and 'malignant' calcification of soft tissue.",
+      "verbatim": "Table 11-18. Deficiency Diseases of Magnesium.\nAsthma\nAnorexia\nMenstrual migraines\nGrowth failure\nECG changes\nNeuromuscular problems\nTetany (Convulsions)\nDepression\nMuscular weakness\nMuscle “Ties”\nTremors\nVertigo\nCalcification of small arteries\n“Malignant” calcification of soft tissue",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 351,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 847560
+      },
+      "dose": null,
+      "tags": [
+        "magnesium",
+        "deficiency",
+        "depression",
+        "tetany",
+        "asthma",
+        "arterial-calcification"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T17:35:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000173",
+      "kind": "dose",
+      "essentials": [
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports the RDA for magnesium is 350 mg/day for adult males, 300 mg/day for adult females, and 450 mg/day for pregnant and lactating females, and that if the kidneys are healthy there is no evidence of toxicity up to 6,000 mg/day.",
+      "verbatim": "The RDA for Mg is 350 mg/day for adult males, 300 mg/day for adult females and 450 mg/day for pregnant and lactating females. If kidneys are healthy there is no evidence of toxicity at up to 6,000 mg per day.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 351,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 847847
+      },
+      "dose": null,
+      "tags": [
+        "magnesium",
+        "rda",
+        "dose",
+        "toxicity"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T17:35:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

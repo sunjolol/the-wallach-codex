@@ -26309,98 +26309,35 @@ by Carya spp.; marine animals at 0.003
 ppm; land animals at 0.00012 ppm in soft
 tissue and 0.08 ppm in bone.
 
-Mg -Magnesium is found in igneous
-rocks at 23,300 ppm; in shale at 15,000
-ppm; sandstone 10,700 ppm; limestone at
-2,700 ppm; fresh water at 4.1 ppm; sea
-water at 1,350 ppm; soil at 5,000 ppm (high-
-est in soil derived from basalt, serpentine
-or dolamite) - Mg is the second most com-
-mon exchangeable cation in most soils;
-marine plants at 5,200 ppm; land plants at
-3,200 ppm; marine animals at 5,000 ppm;
-land animals at 1,000 ppm (accumulates
-in mammalian bone).
+Mg - Magnesium is found in igneous rocks at 23,300 ppm; in shale at 15,000 ppm; sandstone 10,700 ppm; limestone at 2,700 ppm; fresh water at 4.1 ppm; sea water at 1,350 ppm; soil at 5,000 ppm (highest in soil derived from basalt, serpentine or dolomite) - Mg is the second most common exchangeable cation in most soils; marine plants at 5,200 ppm; land plants at 3,200 ppm; marine animals at 5,000 ppm; land animals at 1,000 ppm (accumulates in mammalian bone).
 
-Magnesium is essential to all living or-
-ganisms and has electrochemical, catalytic
-and structural functions, activates numer-
-ous enzymes and is a constituent of all
-chlorophylls.
+Magnesium is essential to all living organisms and has electrochemical, catalytic and structural functions, activates numerous enzymes and is a constituent of all chlorophylls.
 
-The adult human contains 20 to 28
-grams of total body magnesium. Approxi-
+The adult human contains 20 to 28 grams of total body magnesium. Approximately 60 % is found in bone, 26 % is associated with skeletal muscle and the balance is distributed between various organs and body fluids. Serum levels of Mg range from 1.5 to 2.1 mEq/L; it is second to K as an intracellular cation - half of the Mg, including most that is bound in the bone is not exchangeable.
 
-350
+Magnesium is required for the production and transfer of energy for protein synthesis, for contractility of muscle and excitability of nerves, and as a cofactor in myriads of enzyme systems. AN EXCESS OF MG WILL INHIBIT BONE CALCIFICATION. Calcium and Mg have antagonistic roles in normal muscle contraction, calcium acting as the stimulator and Mg as the relaxer. An excessive amount of Ca can induce signs of Mg deficiency.
 
-mately 60 % is found in bone, 26 % is asso-
-ciated with skeletal muscle and the balance
-is distributed between various organs and
-body fluids. Serum levels of Mg range from
-1.5 to 2.1 mEq/L; it is second to K as an
-intracellular cation - half of the Mg, includ-
-ing most that is bound in the bone is not
-exchangeable.
+The rate of absorption of Mg ranges from 24 to 85 %. The lesser absorption rate is for metallic sources of Mg, the higher levels are associated with plant derived colloidal sources. Vitamin D has no effect on Mg absorption; the presence of fat, phytates and calcium reduces the efficiency of absorption. High performance athletes lose a considerable amount of Mg in sweat.
 
-Magnesium is required for the produc-
-tion and transfer of energy for protein syn-
-thesis, for contractility of muscle and excit-
-ability of nerves , and as a cofactor in myri-
-ads of enzyme systems. AN EXCESS OF
-MG WILL INHIBIT BONE CALCIFICA-
-TION. Calcium and Mg have antagonistic
-roles in normal muscle contraction, calcium
-acting as the stimulator and Mg as the re-
-laxer. An excessive amount of Ca can in-
-duce signs of Mg deficiency.
-
-The rate of absorption of Mg ranges from
-24 to 85 %. The lesser absorption rate is for
-
-Table 11- 18. Deficiency Diseases
-of Magnesium.
-
+Table 11-18. Deficiency Diseases of Magnesium.
 Asthma
-
 Anorexia
-
 Menstrual migraines
-
 Growth failure
-
 ECG changes
 Neuromuscular problems
 Tetany (Convulsions)
 Depression
-
 Muscular weakness
-
 Muscle “Ties”
-
 Tremors
-
 Vertigo
-
 Calcification of small arteries
 “Malignant” calcification of soft tissue
 
-metallic sources of Mg, the higher levels are
-associated with plant derived colloidal
-sources. Vitamin D has no effect on Mg
-absorption,; the presence of fat, phytates
-and calcium reduces the efficiency of ab-
-sorption . High performance athletes lose a
-considerable amount of Mg in sweat.
+The RDA for Mg is 350 mg/day for adult males, 300 mg/day for adult females and 450 mg/day for pregnant and lactating females. If kidneys are healthy there is no evidence of toxicity at up to 6,000 mg per day.
 
-The RDA for Mg is 350mg/day for adult
-males, 300mg/day for adult females and 450
-mg/day for pregnant and lactating females.
-If kidneys are healthy there is no evidence
-of toxicity at up to 6,000 mg per day.
-
-Deficiencies of Mg result in a wide vari-
-ety of deficiency diseases and symptoms
-(Table 11- 18).
+Deficiencies of Mg result in a wide variety of deficiency diseases and symptoms (Table 11-18).
 
 Mn. Manganese is found in igneous
 rocks at 950 ppm; shale at 850 ppm; sand-
