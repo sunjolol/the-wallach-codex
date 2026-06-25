@@ -116,10 +116,14 @@
       {
         "claim_id": "WAL-CLM-RARE-000080",
         "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000089",
+        "book": "rare-earths"
       }
     ],
     "books_repeating": 1,
-    "claim_count": 28
+    "claim_count": 29
   },
   {
     "id": "CG-0002",
@@ -170,10 +174,14 @@
       {
         "claim_id": "WAL-CLM-RARE-000072",
         "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000088",
+        "book": "rare-earths"
       }
     ],
     "books_repeating": 1,
-    "claim_count": 11
+    "claim_count": 12
   },
   {
     "id": "CG-0003",
@@ -222,10 +230,14 @@
       {
         "claim_id": "WAL-CLM-RARE-000068",
         "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000085",
+        "book": "rare-earths"
       }
     ],
     "books_repeating": 2,
-    "claim_count": 5
+    "claim_count": 6
   },
   {
     "id": "CG-0005",

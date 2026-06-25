@@ -203,7 +203,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 16,
+    "claim_count": 18,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074"
@@ -211,6 +211,10 @@
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000082",
         "WAL-CLM-RARE-000083"
+      ],
+      "interaction": [
+        "WAL-CLM-RARE-000084",
+        "WAL-CLM-RARE-000086"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000033",
@@ -236,13 +240,19 @@
     },
     "deficiency_signs": [],
     "conditions_treated": [
+      "aneurysm",
       "angina",
       "anxiety",
       "arthritis",
       "bells_palsy",
+      "birth_defects",
       "bladder_stones",
+      "cancer",
+      "cardiomyopathy",
       "cardiovascular_disease",
+      "cataracts",
       "celiac_disease",
+      "hypertension",
       "insomnia",
       "kidney_stones",
       "malabsorption",
@@ -261,6 +271,7 @@
       "iron",
       "magnesium",
       "phosphorus",
+      "selenium",
       "strontium",
       "vanadium",
       "vitamin-b12",
@@ -384,7 +395,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000003"
@@ -395,7 +406,8 @@
       ],
       "interaction": [
         "WAL-CLM-DDDL-000025",
-        "WAL-CLM-DDDL-000040"
+        "WAL-CLM-DDDL-000040",
+        "WAL-CLM-RARE-000086"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000004",
@@ -416,9 +428,15 @@
       "anemia",
       "aneurysm",
       "arthritis",
+      "birth_defects",
+      "cancer",
+      "cardiomyopathy",
+      "cataracts",
       "diabetes",
       "goiter",
+      "hypertension",
       "kawasaki_disease",
+      "osteoporosis",
       "schizophrenia"
     ],
     "interacts_with": [
@@ -427,6 +445,7 @@
       "iodine",
       "iron",
       "magnesium",
+      "selenium",
       "vanadium",
       "vitamin-b12",
       "vitamin-b3",
@@ -634,7 +653,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 17,
+    "claim_count": 19,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -642,6 +661,10 @@
       ],
       "dose": [
         "WAL-CLM-RARE-000048"
+      ],
+      "interaction": [
+        "WAL-CLM-RARE-000084",
+        "WAL-CLM-RARE-000086"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000029",
@@ -677,21 +700,29 @@
       }
     ],
     "conditions_treated": [
+      "aneurysm",
       "arsenic_toxicity",
+      "arthritis",
       "benign_prostatic_hyperplasia",
+      "birth_defects",
       "cancer",
       "cardiomyopathy",
+      "cataracts",
       "cor_pulmonale",
       "cystic_fibrosis",
       "heart_attack",
+      "hypertension",
       "infertility",
       "keshan_disease",
       "muscular_dystrophy",
+      "osteoporosis",
       "sids",
       "white_muscle_disease"
     ],
     "interacts_with": [
       "arginine",
+      "calcium",
+      "copper",
       "germanium",
       "vitamin-a",
       "vitamin-b2",
@@ -816,7 +847,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 19,
+    "claim_count": 20,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -829,7 +860,8 @@
         "WAL-CLM-RARE-000083"
       ],
       "interaction": [
-        "WAL-CLM-DDDL-000040"
+        "WAL-CLM-DDDL-000040",
+        "WAL-CLM-RARE-000086"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000037",
@@ -866,18 +898,25 @@
       }
     ],
     "conditions_treated": [
+      "aneurysm",
       "anorexia",
       "anosmia",
       "aphthous_stomatitis",
+      "arthritis",
       "benign_prostatic_hyperplasia",
       "birth_defects",
+      "cancer",
       "canker_sores",
+      "cardiomyopathy",
+      "cataracts",
       "cleft_palate",
       "cradle_cap",
       "cystic_fibrosis",
       "diabetes",
       "down_syndrome",
+      "hypertension",
       "infertility",
+      "osteoporosis",
       "spina_bifida"
     ],
     "interacts_with": [

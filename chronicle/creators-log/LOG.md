@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_56 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_57 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-25 00:22 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 15 — Rare Earths Ch.11 toxic-metals/mercury half: 6 claims (RARE-84..89). Completes the Ch.11 conceptual half. kv 35→38, RARE 83→89, corpus 183, conditions 71→76. Render probe caught a string-dose Zod break (fixed to null).
+  ↳ Cleaned pp276-279 (idx 297-300): 6 reflow spans (sentence-aware merge added) + marked the 3 toxic-metal graphs + Periodic Table. resnap 4 relocated/0 broken. Claims: Se/Ca antidote toxic metals; lead 400k-tons/38M; cadmium→disease cascade; mercury amalgam→MS/ALS/Parkinson's; Dr. Todd colloidal unmask/reduce; 79-detected/60-essential. NO fringe. Two post-finalize re-seals: (1) RARE-88 claim_text made self-contained re: Dr. Gary Price Todd's protocol (Luneth note); (2) RARE-88 dose fixed string→null — a string dose made Zod reject the whole corpus-embed at runtime (empty drawer); build+invariants blind, render probe caught it. Flagged follow-up: Python dose-shape guard (§00.B). Board 30/30, build OK, probe green. NEXT: alphabetical per-element catalog (idx 302+).
 
 ## 2026-06-25 00:05 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 14 — Rare Earths Ch.11 hair-analysis half: 4 claims (RARE-80..83: hair-analysis premise/200×-blood, disease→hair-mineral patterns, interpretation caveats, Table 11-2 ideal ratios). kv 34→35, RARE 79→83, corpus 177, conditions 68→71.

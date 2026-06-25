@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 813821
+        "char_offset": 811781
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 814023
+        "char_offset": 811983
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 813585
+        "char_offset": 811545
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 768512
+        "char_offset": 766472
       },
       "dose": {
         "amount": "250-400",
@@ -2761,6 +2761,220 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T04:02:24+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000084",
+      "kind": "interaction",
+      "essentials": [
+        "selenium",
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach notes the well-established principle among nutritional chemists that minerals can neutralize or reverse the toxic effects of other minerals — for example selenium is a specific antidote for mercury (Hg) poisoning and calcium for lead (Pb) — and presents Dr. Gary Price Todd's clinical study built on this mineral-substitution approach.",
+      "verbatim": "It is very well known among nutritional chemists that minerals can neutralize or reverse the toxic effects of other minerals (i.e.- Se is a specific antidote for Hg poisoning, Ca for Pb, etc.)",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 276,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 701333
+      },
+      "dose": null,
+      "tags": [
+        "mineral-substitution",
+        "toxic-metal-antidote",
+        "selenium-mercury",
+        "calcium-lead",
+        "gary-price-todd"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T04:12:22+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000085",
+      "kind": "prevalence",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports the scale of lead toxicity in America: more than 400,000 tons of industrial lead is pumped into the American biosphere each year, insidiously poisoning over 38 million Americans annually.",
+      "verbatim": "more than 400,000 tons of industrial lead is pumped into the American bios annually resulting in the incidious poisoning of over 38 million Americans each year!!",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 276,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 701912
+      },
+      "dose": null,
+      "tags": [
+        "lead-toxicity",
+        "400000-tons",
+        "38-million",
+        "environmental-lead"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T04:12:22+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000086",
+      "kind": "interaction",
+      "essentials": [
+        "zinc",
+        "copper",
+        "calcium",
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "birth_defects",
+        "aneurysm",
+        "hypertension",
+        "osteoporosis",
+        "arthritis",
+        "cataracts",
+        "cancer",
+        "cardiomyopathy"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach explains that cadmium (23 micrograms per pack of cigarettes; a major component of \"second hand\" smoke) interferes with zinc-, copper-, calcium- and selenium-dependent metalloenzymes, so cadmium-driven deficiency of those minerals produces a disease cascade: zinc loss → weakened immunity and birth defects; copper loss → skin wrinkles and aneurysms; calcium loss → hypertension, osteoporosis and arthritis; selenium loss → cataracts, cancer and cardiomyopathy/heart disease.",
+      "verbatim": "copper (deficiency increases loss of elastic fibers. therefore smokers have more skin wrinkles and aneurysms), calcium (deficiency results in hypertension, osteoporosis and arthritis) and selenium (deficiency increases the individuals risk of cataracts, cancer and cardiomyopathy heart disease).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 276,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 704128
+      },
+      "dose": null,
+      "tags": [
+        "cadmium",
+        "smoking",
+        "metalloenzyme-displacement",
+        "23mcg-per-pack"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T04:12:22+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000087",
+      "kind": "interaction",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "multiple_sclerosis",
+        "als",
+        "parkinsons_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach warns that 50% or more of the mercury in \"silver\" dental amalgams slowly volatilizes over a decade (the EPA classes amalgam scrap as toxic waste, and the ADA itself warns dentists to use \"a no touch technique\") — and that mercury toxicity from dental amalgam is associated with causing multiple sclerosis (MS), Lou Gehrig's disease (ALS) and Parkinson's disease.",
+      "verbatim": "Mercury toxicity from dental amalgam is associated with the cause of multiple sclerosis (MS), Lou Gehrig's Disease (ALS) and Parkinson’s Disease.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 279,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 705626
+      },
+      "dose": null,
+      "tags": [
+        "mercury",
+        "dental-amalgam",
+        "ms-als-parkinsons",
+        "50-percent-volatilized"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T04:12:22+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000088",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Dr. Gary Price Todd, MD — a physician whose published clinical study on mineral substitution Wallach cites in this chapter (it is not an independently famous protocol; it is known here only through Wallach's book) — gave patients three ounces of liquid plant-derived colloidal minerals daily. Wallach relays Todd's finding that this regimen first UNMASKS hidden body stores of lead, cadmium and mercury — hair levels actually rise at the three-month mark as the tissue stores mobilize into the blood — and then progressively REDUCES them, with the rate and degree of toxic-mineral clearance being time- and dose-related.",
+      "verbatim": "use of Todd’s protocol may be an effective method of unmasking latent (hidden) body stores of lead, cadmium or mercury.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 279,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 706618
+      },
+      "dose": null,
+      "tags": [
+        "colloidal-minerals",
+        "heavy-metal-detox",
+        "unmask-then-reduce",
+        "dr-todd"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T04:12:22+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000089",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach states that some 79 minerals have been detected in animal and human tissue, and that thousands of animal studies have documented the essentiality of at least 60 of them — acting as mineral cofactors for DNA, RNA, enzyme systems or vitamin utilization (the basis of the \"60 minerals\" within his 90-essential-nutrients framework).",
+      "verbatim": "have documented additional support for the essentiality of at least 60 minerals (i.e.- act as mineral cofactors for DNA, RNA or enzyme systems or vitamin utilization).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 279,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 707692
+      },
+      "dose": null,
+      "tags": [
+        "79-detected",
+        "60-essential-minerals",
+        "cofactors",
+        "90-essentials"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T04:12:22+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

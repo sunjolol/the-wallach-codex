@@ -1,4 +1,18 @@
 {
+  "als": {
+    "display_name": "Als",
+    "claim_count": 1,
+    "claims_by_role": {
+      "interactions": [
+        "WAL-CLM-RARE-000087"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "anemia": {
     "display_name": "Anemia",
     "claim_count": 2,
@@ -24,17 +38,23 @@
   },
   "aneurysm": {
     "display_name": "Aneurysm",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000004"
+      ],
+      "interactions": [
+        "WAL-CLM-RARE-000086"
       ],
       "prognosis": [
         "WAL-CLM-RARE-000077"
       ]
     },
     "essentials_involved": [
-      "copper"
+      "calcium",
+      "copper",
+      "selenium",
+      "zinc"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -170,7 +190,7 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
@@ -182,6 +202,9 @@
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000081"
+      ],
+      "interactions": [
+        "WAL-CLM-RARE-000086"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000051"
@@ -195,8 +218,10 @@
       "iron",
       "magnesium",
       "phosphorus",
+      "selenium",
       "strontium",
-      "vanadium"
+      "vanadium",
+      "zinc"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -284,7 +309,7 @@
   },
   "birth_defects": {
     "display_name": "Birth Defects",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000015",
@@ -292,9 +317,15 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000039"
+      ],
+      "interactions": [
+        "WAL-CLM-RARE-000086"
       ]
     },
     "essentials_involved": [
+      "calcium",
+      "copper",
+      "selenium",
       "zinc"
     ],
     "other_substances_involved": [],
@@ -353,7 +384,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -363,6 +394,9 @@
       "deficiency_signs": [
         "WAL-CLM-DDDL-000012",
         "WAL-CLM-RARE-000011"
+      ],
+      "interactions": [
+        "WAL-CLM-RARE-000086"
       ],
       "prognosis": [
         "WAL-CLM-RARE-000077"
@@ -378,12 +412,15 @@
     },
     "essentials_involved": [
       "arginine",
+      "calcium",
       "cesium",
+      "copper",
       "germanium",
       "selenium",
       "tyrosine",
       "vanadium",
-      "vitamin-a"
+      "vitamin-a",
+      "zinc"
     ],
     "other_substances_involved": [
       "taurine"
@@ -414,7 +451,7 @@
   },
   "cardiomyopathy": {
     "display_name": "Cardiomyopathy",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010"
@@ -422,13 +459,19 @@
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005"
       ],
+      "interactions": [
+        "WAL-CLM-RARE-000086"
+      ],
       "prognosis": [
         "WAL-CLM-DDDL-000007",
         "WAL-CLM-RARE-000077"
       ]
     },
     "essentials_involved": [
-      "selenium"
+      "calcium",
+      "copper",
+      "selenium",
+      "zinc"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -467,6 +510,25 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "cataracts": {
+    "display_name": "Cataracts",
+    "claim_count": 1,
+    "claims_by_role": {
+      "interactions": [
+        "WAL-CLM-RARE-000086"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "copper",
+      "selenium",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "celiac_disease": {
@@ -808,6 +870,25 @@
       "rare-earths"
     ]
   },
+  "hypertension": {
+    "display_name": "Hypertension",
+    "claim_count": 1,
+    "claims_by_role": {
+      "interactions": [
+        "WAL-CLM-RARE-000086"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "copper",
+      "selenium",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "hypoglycemia": {
     "display_name": "Hypoglycemia",
     "claim_count": 2,
@@ -1064,6 +1145,20 @@
       "dddl-3e-2011"
     ]
   },
+  "multiple_sclerosis": {
+    "display_name": "Multiple Sclerosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "interactions": [
+        "WAL-CLM-RARE-000087"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "muscle_cramps": {
     "display_name": "Muscle Cramps",
     "claim_count": 1,
@@ -1150,7 +1245,7 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
@@ -1165,6 +1260,9 @@
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000082"
+      ],
+      "interactions": [
+        "WAL-CLM-RARE-000086"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000009"
@@ -1181,10 +1279,13 @@
     },
     "essentials_involved": [
       "calcium",
+      "copper",
       "germanium",
       "magnesium",
       "phosphorus",
-      "strontium"
+      "selenium",
+      "strontium",
+      "zinc"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1204,6 +1305,20 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "parkinsons_disease": {
+    "display_name": "Parkinsons Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "interactions": [
+        "WAL-CLM-RARE-000087"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "pica": {

@@ -1,30 +1,37 @@
 # Extraction report — rare-earths (Rare Earths: Forbidden Cures)
 
-_4 claim(s) drafted 2026-06-25T04:02:24+00:00. Review then run corpus_seal.py to promote._
+_6 claim(s) drafted 2026-06-25T04:12:22+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×1, diagnostic_pattern×3
+Kinds: definition×1, interaction×3, mechanism×1, prevalence×1
 
-### WAL-CLM-RARE-000080 · definition
+### WAL-CLM-RARE-000084 · interaction
+- **essentials:** selenium, calcium · **conditions:** — · **symptoms:** —
+- **claim:** Wallach notes the well-established principle among nutritional chemists that minerals can neutralize or reverse the toxic effects of other minerals — for example selenium is a specific antidote for mercury (Hg) poisoning and calcium for lead (Pb) — and presents Dr. Gary Price Todd's clinical study built on this mineral-substitution approach.
+- **verbatim** (offset 701333): “It is very well known among nutritional chemists that minerals can neutralize or reverse the toxic effects of other minerals (i.e.- Se is a specific antidote for Hg poisoning, Ca for Pb, etc.)”
+
+### WAL-CLM-RARE-000085 · prevalence
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach explains that a hair analysis reads non-perishable body-tissue minerals and records the body's mineral status over several months; hair concentrations of trace minerals and Rare Earths run about 200 times greater than those found in blood (where calcium and other essentials are held at normal levels by drawing on body reserves even during a raging deficiency).
-- **verbatim** (offset 696753): “Hair analysis are performed on nonperishable samples of body tissue minerals and are a recording of the bodies mineral status over a period of several months - additionally hair concentration of trace minerals and Rare Earths are 200 times greater than those found in blood.”
+- **claim:** Wallach reports the scale of lead toxicity in America: more than 400,000 tons of industrial lead is pumped into the American biosphere each year, insidiously poisoning over 38 million Americans annually.
+- **verbatim** (offset 701912): “more than 400,000 tons of industrial lead is pumped into the American bios annually resulting in the incidious poisoning of over 38 million Americans each year!!”
 
-### WAL-CLM-RARE-000081 · diagnostic_pattern
-- **essentials:** iron, copper, chromium, vanadium · **conditions:** schizophrenia, arthritis, anemia, diabetes · **symptoms:** —
-- **claim:** Wallach lists well-documented hair-analysis mineral patterns for disease: schizophrenia = high calcium, low iron, high copper; arthritis (osteoporosis/hyperparathyroidism) = high lead, calcium and phosphorus, low iron and copper; anemia = low iron, copper, selenium, cobalt; diabetes (prediabetes/hypoglycemia) = low chromium, vanadium, sodium, potassium, manganese and zinc.
-- **verbatim** (offset 699962): “Arthritis - (osteoporosis/ hyperparathyroidism) - high Lead, Calcium and Phosphorus; low Iron and Copper.
+### WAL-CLM-RARE-000086 · interaction
+- **essentials:** zinc, copper, calcium, selenium · **conditions:** birth_defects, aneurysm, hypertension, osteoporosis, arthritis, cataracts, cancer, cardiomyopathy · **symptoms:** —
+- **claim:** Wallach explains that cadmium (23 micrograms per pack of cigarettes; a major component of "second hand" smoke) interferes with zinc-, copper-, calcium- and selenium-dependent metalloenzymes, so cadmium-driven deficiency of those minerals produces a disease cascade: zinc loss → weakened immunity and birth defects; copper loss → skin wrinkles and aneurysms; calcium loss → hypertension, osteoporosis and arthritis; selenium loss → cataracts, cancer and cardiomyopathy/heart disease.
+- **verbatim** (offset 704128): “copper (deficiency increases loss of elastic fibers. therefore smokers have more skin wrinkles and aneurysms), calcium (deficiency results in hypertension, osteoporosis and arthritis) and selenium (deficiency increases the individuals risk of cataracts, cancer and cardiomyopathy heart disease).”
 
-Anemia - low Iron, Copper, Selenium, Cobalt.
+### WAL-CLM-RARE-000087 · interaction
+- **essentials:** — · **conditions:** multiple_sclerosis, als, parkinsons_disease · **symptoms:** —
+- **claim:** Wallach warns that 50% or more of the mercury in "silver" dental amalgams slowly volatilizes over a decade (the EPA classes amalgam scrap as toxic waste, and the ADA itself warns dentists to use "a no touch technique") — and that mercury toxicity from dental amalgam is associated with causing multiple sclerosis (MS), Lou Gehrig's disease (ALS) and Parkinson's disease.
+- **verbatim** (offset 705626): “Mercury toxicity from dental amalgam is associated with the cause of multiple sclerosis (MS), Lou Gehrig's Disease (ALS) and Parkinson’s Disease.”
 
-Diabetes(prediabetes/hypoglycemia) - low Chromium, Vanadium, sodium, potassium, manganese, Zinc.”
+### WAL-CLM-RARE-000088 · mechanism
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **dose:** 3 oz liquid plant-derived colloidal minerals daily
+- **claim:** Wallach relays Dr. Todd's finding that three ounces of liquid plant-derived colloidal minerals daily first UNMASKS hidden body stores of lead, cadmium and mercury — hair levels actually rise at three months as the tissue stores mobilize — and then progressively REDUCES them, with the rate and degree of toxic-mineral clearance being time- and dose-related.
+- **verbatim** (offset 706618): “use of Todd’s protocol may be an effective method of unmasking latent (hidden) body stores of lead, cadmium or mercury.”
 
-### WAL-CLM-RARE-000082 · diagnostic_pattern
-- **essentials:** calcium, magnesium · **conditions:** osteoporosis, celiac_disease, malabsorption · **symptoms:** —
-- **claim:** Wallach cautions that hair-mineral readings need interpretation: universally low levels indicate maldigestion (hypochlorhydria) and/or malabsorption (celiac disease); and paradoxically "elevated" calcium and magnesium can mean active depletion/shedding from bone — revealing very active osteoporosis with associated arthritis, periodontitis and a predilection for kidney stones — while elevated sodium/potassium/chloride signal essential-fatty-acid deficiency.
-- **verbatim** (offset 700432): “In some cases “elevated” hair level values represent actual depletion or shedding of minerals from body stores, i.e.- elevated calcium and magnesium levels reveal very active osteoporosis and associated arthritis, periodontitis and prediliction for kidney stones.”
-
-### WAL-CLM-RARE-000083 · diagnostic_pattern
-- **essentials:** zinc, copper, calcium, magnesium, iron · **conditions:** — · **symptoms:** —
-- **claim:** Wallach teaches that the RATIOS between hair minerals — not just absolute levels — are good barometers of specific organ systems. His Table 11-2 ideal hair mineral ratios: Zn/Cu 8:1 (cardiovascular, liver, female reproductive system), Zn/Mn 150:1 (musculoskeletal, collagen, cholesterol biosynthesis), Zn/Ca 3:1 (cardiovascular, osteodynamics, kidney), Na/P 2:1 (adrenal and general endocrine function), Ca/Mg 8:1 (cardiovascular, osteodynamics, dietary imbalances), and Fe/Cu 2.5:1 (hematology, energy production, cellular respiration).
-- **verbatim** (offset 701014): “The ratios of trace minerals and Rare Earths in hair are of interest in the interpretation of a hair analysis as they are good barometers of what is happening in specific organ systems or tissues (Table 11 - 2).”
+### WAL-CLM-RARE-000089 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach states that some 79 minerals have been detected in animal and human tissue, and that thousands of animal studies have documented the essentiality of at least 60 of them — acting as mineral cofactors for DNA, RNA, enzyme systems or vitamin utilization (the basis of the "60 minerals" within his 90-essential-nutrients framework).
+- **verbatim** (offset 707692): “have documented additional support for the essentiality of at least 60 minerals (i.e.- act as mineral cofactors for DNA, RNA or enzyme systems or vitamin utilization).”
 
