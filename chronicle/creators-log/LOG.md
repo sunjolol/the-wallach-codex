@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_58 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_59 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-25 00:47 UTC-04:00 · round-close · eden/corpus
+RARE-48 dose normalized to CorpusDoseSchema keys (amount:1, unit:mg, period) - fixes the silently-dropped 'three times per week' cadence (formatDose reads period, not frequency). Monotonic re-seal kv 38->39. Board 30/30, build OK, knowledge probe green.
+  ↳ WAL-CLM-RARE-000048 (selenium / Keshan disease, RARE Ch.7 p152) carried non-schema dose keys (essential, frequency) plus a conflated amount '1 mg sodium selenite'. formatDose() in knowledge-corpus.ts reads `period`/`amount`/`unit` only, so it silently dropped the 'three times per week' cadence and rendered just '1 mg sodium selenite'. Re-keyed to the canonical CorpusDoseSchema set {amount:1, unit:'mg', period:'three times per week', form:'sodium selenite', duration:'3 years', for_condition:'keshan disease'}; dropped redundant `essential` (the claim's essentials[] already carries selenium); amount as number 1 per DDDL convention (numbers for clean single values, strings only for ranges). Faithful structural re-key of the SAME Wallach claim — no new source, no value change — so the §00.A three-confirm override is N/A; sealed-canonical sign-off obtained from Luneth via AskUserQuestion (proceed + number-amount + authorize-seal-once). Edited the DRAFT (unprotected working copy) so corpus_seal promoted it cleanly; pre-seal verified dddl draft == shard (promotion no-op) and rare-earths draft diff was exactly the 3-key swap. Pipeline: safe_write -> corpus_seal (kv 38->39, corpus_verify PASS) -> corpus_embed -> build -> invariants 30/30 -> render_probe_knowledge green (0 page errors). Renderer now emits '1 mg / three times per week'. Closes the batch-15 dose-guard follow-up (the scope decision that deliberately enforced null-or-object shape but NOT a key-subset, leaving this normalization as the data fix).
 
 ## 2026-06-25 00:36 UTC-04:00 · round-close · eden/corpus-pipeline
 Closed the malformed-dose defense-in-depth gap (batch-15 follow-up): a bare-string dose passed every Python gate yet broke the runtime Zod parse. corpus_extract.finalize + corpus_verify check #11 now refuse a non-null/non-object dose. 30/30 green; negative test proves it fires.

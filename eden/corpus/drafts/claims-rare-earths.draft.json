@@ -1580,9 +1580,9 @@
         "char_offset": 431080
       },
       "dose": {
-        "essential": "selenium",
-        "amount": "1 mg sodium selenite",
-        "frequency": "three times per week",
+        "amount": 1,
+        "unit": "mg",
+        "period": "three times per week",
         "form": "sodium selenite",
         "duration": "3 years",
         "for_condition": "keshan disease"
