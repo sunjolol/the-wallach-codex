@@ -7200,7 +7200,7 @@
       ],
       "symptoms": [],
       "claim_text": "Citing Dr. Renate Viebahn's book The Use of Ozone in Medicine — which references 22 peer-reviewed medical journal articles on ozone's therapeutic effect against cancer cells — Wallach describes a bell-shaped \"therapeutic window\" for ozone dosage of 20–100 µg/ml of blood: less is ineffective, while more can damage normal cells. He adds oxygen-therapy expert Ed McCabe's point that the rare cases where ozone seems to aggravate a condition trace to mineral-deficient diets, because a minerally deficient body lacks the functioning antioxidant-enzyme systems needed to use oxygen correctly.",
-      "verbatim": "There does appear to be a bell shaped curve or “therapeutic window” for the optimal dosage of ozone (20 to 100 wml of blood); anything less is ineffective - anything more can be damaging to normal cells.",
+      "verbatim": "There does appear to be a bell shaped curve or “therapeutic window” for the optimal dosage of ozone (20 to 100 u/ml of blood); anything less is ineffective - anything more can be damaging to normal cells.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -7243,7 +7243,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 891329
+        "char_offset": 891330
       },
       "dose": null,
       "tags": [
@@ -7277,7 +7277,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 891683
+        "char_offset": 891684
       },
       "dose": null,
       "tags": [
@@ -7318,7 +7318,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 892342
+        "char_offset": 892343
       },
       "dose": null,
       "tags": [
@@ -7353,7 +7353,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 892864
+        "char_offset": 892865
       },
       "dose": {
         "amount": "1,000-1,500",
@@ -7395,7 +7395,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 893330
+        "char_offset": 893331
       },
       "dose": null,
       "tags": [
@@ -7431,7 +7431,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 893619
+        "char_offset": 893620
       },
       "dose": null,
       "tags": [
@@ -7465,7 +7465,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 894031
+        "char_offset": 894032
       },
       "dose": null,
       "tags": [
@@ -7502,7 +7502,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 896806
+        "char_offset": 896807
       },
       "dose": null,
       "tags": [
@@ -7539,7 +7539,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 897202
+        "char_offset": 897203
       },
       "dose": null,
       "tags": [
@@ -7569,7 +7569,7 @@
       ],
       "symptoms": [],
       "claim_text": "At blood-lead levels above 80 mcg/dl, Wallach says children show anemia, kidney damage (Fanconi syndrome — increased urinary loss of amino acids, glucose, and phosphate), peripheral neuritis, ataxia and muscular incoordination, joint pain, and encephalopathy (brain damage, learning disabilities), with eventual death.",
-      "verbatim": "Children with blood levels of lead above 80 ug/dl show anemia, kidney damage (Fanconi syndrome - increased urinary loss of amino acids, glucose and phosphotus), peripheral neuritis, ataxia and muscular incoordination, joint pain and encephalopathy (brain damage, learning disabilities, etc.) with eventual death.",
+      "verbatim": "Children with blood levels of lead above 80 ug/dl show anemia, kidney damage (Fanconi syndrome - increased urinary loss of amino acids, glucose and phosphorus), peripheral neuritis, ataxia and muscular incoordination, joint pain and encephalopathy (brain damage, learning disabilities, etc.) with eventual death.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -7577,7 +7577,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 897420
+        "char_offset": 897421
       },
       "dose": null,
       "tags": [
@@ -7614,7 +7614,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 897734
+        "char_offset": 897735
       },
       "dose": null,
       "tags": [
@@ -7653,7 +7653,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 898090
+        "char_offset": 898091
       },
       "dose": null,
       "tags": [
@@ -7688,7 +7688,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 899070
+        "char_offset": 899071
       },
       "dose": null,
       "tags": [
@@ -7723,7 +7723,7 @@
         "page": 376,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 900443
+        "char_offset": 900444
       },
       "dose": null,
       "tags": [
@@ -7758,7 +7758,7 @@
         "page": 376,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 901010
+        "char_offset": 901011
       },
       "dose": null,
       "tags": [
@@ -7793,7 +7793,7 @@
         "page": 376,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 902140
+        "char_offset": 902141
       },
       "dose": null,
       "tags": [
@@ -7828,7 +7828,7 @@
         "page": 377,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 904033
+        "char_offset": 904034
       },
       "dose": null,
       "tags": [
@@ -7863,7 +7863,7 @@
         "page": 377,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 904206
+        "char_offset": 904207
       },
       "dose": null,
       "tags": [
@@ -7898,7 +7898,7 @@
         "page": 377,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 904362
+        "char_offset": 904363
       },
       "dose": null,
       "tags": [
@@ -7939,7 +7939,7 @@
         "page": 377,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 904706
+        "char_offset": 904707
       },
       "dose": null,
       "tags": [
@@ -7977,7 +7977,7 @@
         "page": 378,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 905164
+        "char_offset": 905165
       },
       "dose": null,
       "tags": [
@@ -8012,7 +8012,7 @@
         "page": 378,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 906251
+        "char_offset": 906252
       },
       "dose": null,
       "tags": [
@@ -8048,7 +8048,7 @@
         "page": 378,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 906513
+        "char_offset": 906514
       },
       "dose": null,
       "tags": [
@@ -8092,7 +8092,7 @@
         "page": 382,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 910893
+        "char_offset": 910894
       },
       "dose": null,
       "tags": [
@@ -8132,7 +8132,7 @@
         "page": 382,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 911257
+        "char_offset": 911258
       },
       "dose": null,
       "tags": [
