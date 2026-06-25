@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817711
+        "char_offset": 817670
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817913
+        "char_offset": 817872
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817475
+        "char_offset": 817434
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 772402
+        "char_offset": 772361
       },
       "dose": {
         "amount": "250-400",
@@ -573,7 +573,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Reaching the 145-year longevity potential requires consuming each of the 90 essential nutrients in optimal amounts every day.",
-      "verbatim": "Do those positive things necessary\nto make it to 145 including consuming each\nof the 90 essential nutrients in optimal\namounts each day.",
+      "verbatim": "Do those positive things necessary to make it to 145 including consuming each of the 90 essential nutrients in optimal amounts each day",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -581,7 +581,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 474487
+        "char_offset": 474481
       },
       "dose": null,
       "tags": [
@@ -1862,6 +1862,228 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T02:02:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000057",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach frames reaching one's longevity potential as two concepts: first, avoiding the \"land mines\" (predators, accidents, smoking, excess alcohol, illegal and prescription drugs, chemicals/toxic wastes, and even going to the doctor); and second, taking in each of the 90 essential nutrients in optimal amounts daily.",
+      "verbatim": "Avoiding the “land mines” or eliminating unnecessary and wasteful death from predators or road accidents, not smoking, not drinking alcohol to excess, avoiding the use of illegal (and prescription) drugs, avoiding chemicals and toxic wastes in our food, air and water and avoid going to the doctor.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 8",
+        "page": 171,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 474178
+      },
+      "dose": null,
+      "tags": [
+        "longevity",
+        "land-mines",
+        "90-nutrients",
+        "avoid-doctor"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:23:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000058",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach likens genetic potential to a Mercedes engine built to run 300,000 miles: without the essential coolants, lubricants and oil it won't run 50 miles — just as the body cannot reach its longevity potential without the essential nutrients.",
+      "verbatim": "the engine is designed to run 300,000 miles before it needs a major overhaul or needs to be replaced, yet if you the owner/driver doesn’t maintain the Mercedes engine by supplying the essential coolants, lubricants and motor oil that wondrous engine designed to run 300,000 miles won't run 50 miles",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 8",
+        "page": 171,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 474959
+      },
+      "dose": null,
+      "tags": [
+        "genetic-potential",
+        "longevity",
+        "analogy"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:23:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000059",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach holds that the secret of the five long-lived \"Age-Beater\" cultures is eating plants rich in organic colloidal minerals — minerals the plants take up from inorganic \"Glacial Milk\" and convert into the cell-usable organic colloidal form.",
+      "verbatim": "It is the eating of the plants rich in organic colloidal minerals that is the secret of health and longevity of the five cultures we have called the “Agebeaters”",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 8",
+        "page": 212,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 561818
+      },
+      "dose": null,
+      "tags": [
+        "colloidal-minerals",
+        "longevity",
+        "age-beaters",
+        "glacial-milk"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:23:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000060",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach asserts that the centenarians of the long-lived cultures do not die of the degenerative diseases (which he attributes to mineral deficiencies) that plague the West — when they die it is usually of hypothermia in the cold high-altitude winter.",
+      "verbatim": "When a centenarian does die it is usually in the cold of the winter, which can be quite cold above the 8,500 foot level. Hypothermia is usually the most common cause of death in these long lived cultures",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 8",
+        "page": 212,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 562541
+      },
+      "dose": null,
+      "tags": [
+        "longevity",
+        "degenerative-disease",
+        "hypothermia",
+        "age-beaters"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:23:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000061",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach states that organic colloidal minerals from plants are about 98% bioavailable to humans, versus only 8 to 12% for metallic (inorganic) minerals.",
+      "verbatim": "Organic colloidal minerals derived from plants are 98 % available to humans as compared to 8 to 12 % availability for the metallic minerals.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 8",
+        "page": 213,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 562765
+      },
+      "dose": null,
+      "tags": [
+        "colloidal-minerals",
+        "bioavailability",
+        "organic-vs-metallic"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:23:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000062",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach identifies the common denominator of the five long-lived cultures as the serendipitous irrigation of their terraced fields with mineral-rich \"Glacial Milk\" carrying 60 or more minerals — the secret of their 120-to-140-year lifespans.",
+      "verbatim": "The serendipitous irrigation of their terraced fields with the common denominator of “Glacial Milk” from the mountains containing 60 or more minerals is the secret of the five cultures who live to be 120 to 140 years of age.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 8",
+        "page": 213,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 562906
+      },
+      "dose": null,
+      "tags": [
+        "glacial-milk",
+        "longevity",
+        "60-minerals",
+        "long-lived-cultures"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:23:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000063",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach cites Roy Walford's UCLA laboratory, where the maximum lifespan of fish was extended by 300% by maximizing the micronutrients fed to them (and lowering the water temperature a few degrees) — direct evidence that nutrient intake governs longevity.",
+      "verbatim": "The maximum survival rate or longevity for fish has been extended by 300 % in the UCLA laboratory of Roy Walford by maximizing the micronutrients fed to the fish as well as lowering the water temperature by just a few degrees.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 8",
+        "page": 186,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 506317
+      },
+      "dose": null,
+      "tags": [
+        "longevity",
+        "micronutrients",
+        "walford",
+        "ucla"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:25:43+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }
