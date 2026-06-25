@@ -371,6 +371,21 @@
       "rare-earths"
     ]
   },
+  "mental_apathy": {
+    "display_name": "Mental Apathy",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "potassium",
+        "claim_id": "WAL-CLM-RARE-000155",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "muscle_weakness": {
     "display_name": "Muscle Weakness",
     "claim_count": 1,
@@ -378,6 +393,21 @@
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000151",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "muscular_weakness": {
+    "display_name": "Muscular Weakness",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "potassium",
+        "claim_id": "WAL-CLM-RARE-000155",
         "confidence": "high",
         "appears_in_books": 1
       }

@@ -61,7 +61,7 @@
     "display_name": "Sodium",
     "canon_slug": "sodium",
     "category": "mineral",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-RARE-000026"
@@ -71,7 +71,8 @@
       ],
       "mechanism": [
         "WAL-CLM-RARE-000003",
-        "WAL-CLM-RARE-000027"
+        "WAL-CLM-RARE-000027",
+        "WAL-CLM-RARE-000153"
       ]
     },
     "deficiency_signs": [],
@@ -82,10 +83,12 @@
       "violent_behavior"
     ],
     "interacts_with": [
+      "calcium",
       "chloride",
       "chromium",
       "copper",
       "lithium",
+      "potassium",
       "vanadium",
       "zinc"
     ],
@@ -218,15 +221,45 @@
     "display_name": "Potassium",
     "canon_slug": "potassium",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 6,
     "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000155"
+      ],
+      "definition": [
+        "WAL-CLM-RARE-000152"
+      ],
+      "dose": [
+        "WAL-CLM-RARE-000154"
+      ],
       "interaction": [
-        "WAL-CLM-RARE-000038"
+        "WAL-CLM-RARE-000038",
+        "WAL-CLM-RARE-000156"
+      ],
+      "mechanism": [
+        "WAL-CLM-RARE-000153"
       ]
     },
-    "deficiency_signs": [],
-    "conditions_treated": [],
-    "interacts_with": [],
+    "deficiency_signs": [
+      {
+        "sign": "mental_apathy",
+        "claim_id": "WAL-CLM-RARE-000155",
+        "confidence": "high"
+      },
+      {
+        "sign": "muscular_weakness",
+        "claim_id": "WAL-CLM-RARE-000155",
+        "confidence": "high"
+      }
+    ],
+    "conditions_treated": [
+      "cardiac_failure",
+      "hypokalemia"
+    ],
+    "interacts_with": [
+      "calcium",
+      "sodium"
+    ],
     "books_cited": [
       "rare-earths"
     ]
@@ -235,7 +268,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 25,
+    "claim_count": 26,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074"
@@ -260,7 +293,8 @@
         "WAL-CLM-RARE-000104",
         "WAL-CLM-RARE-000106",
         "WAL-CLM-RARE-000107",
-        "WAL-CLM-RARE-000108"
+        "WAL-CLM-RARE-000108",
+        "WAL-CLM-RARE-000153"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000009"
@@ -317,7 +351,9 @@
       "iron",
       "magnesium",
       "phosphorus",
+      "potassium",
       "selenium",
+      "sodium",
       "strontium",
       "vanadium",
       "vitamin-b12",
@@ -1415,12 +1451,22 @@
     "display_name": "Lanthanum",
     "canon_slug": "lanthanum",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 2,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000157",
+        "WAL-CLM-RARE-000158"
+      ]
+    },
     "deficiency_signs": [],
-    "conditions_treated": [],
+    "conditions_treated": [
+      "candidiasis",
+      "chronic_fatigue"
+    ],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "lithium": {
     "display_name": "Lithium",

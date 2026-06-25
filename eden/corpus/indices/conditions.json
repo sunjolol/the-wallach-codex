@@ -595,6 +595,22 @@
       "rare-earths"
     ]
   },
+  "candidiasis": {
+    "display_name": "Candidiasis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000157"
+      ]
+    },
+    "essentials_involved": [
+      "lanthanum"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "canker_sores": {
     "display_name": "Canker Sores",
     "claim_count": 1,
@@ -612,6 +628,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "cardiac_failure": {
+    "display_name": "Cardiac Failure",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000155"
+      ]
+    },
+    "essentials_involved": [
+      "potassium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "cardiomyopathy": {
@@ -726,6 +758,22 @@
     },
     "essentials_involved": [
       "copper"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "chronic_fatigue": {
+    "display_name": "Chronic Fatigue",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000157"
+      ]
+    },
+    "essentials_involved": [
+      "lanthanum"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1383,6 +1431,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "rare-earths"
+    ]
+  },
+  "hypokalemia": {
+    "display_name": "Hypokalemia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000155"
+      ]
+    },
+    "essentials_involved": [
+      "potassium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
       "rare-earths"
     ]
   },

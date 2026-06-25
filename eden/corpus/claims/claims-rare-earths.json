@@ -5309,6 +5309,291 @@
       "extracted_at": "2026-06-25T14:15:07+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000152",
+      "kind": "definition",
+      "essentials": [
+        "potassium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach states potassium is essential to all organisms and is the major cation (positive ion) in the cell cytoplasm, with a wide variety of electrochemical and catalytic functions for enzyme systems; it makes up about five percent of the body's total mineral content.",
+      "verbatim": "Potassium is essential to all organisms and is the major cation in cell cytoplasm with wide variety of electrochemical and catalytic functions for enzyme systems.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 343,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 829468
+      },
+      "dose": null,
+      "tags": [
+        "potassium",
+        "essentiality",
+        "intracellular",
+        "enzyme-cofactor"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T14:49:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000153",
+      "kind": "mechanism",
+      "essentials": [
+        "potassium",
+        "sodium",
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach explains that potassium, together with sodium (the two main 'electrolytes'), maintains normal water balance, osmotic equilibrium, and acid-base balance, and that potassium works with calcium to regulate neuromuscular activity.",
+      "verbatim": "With sodium, the other “electrolyte,” K participates in the maintenance of normal water balance, osmotic equilibrium and acid-base balance. Potassium participates with Ca in the regulation of neuromuscular activity.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 344,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 829814
+      },
+      "dose": null,
+      "tags": [
+        "potassium",
+        "sodium",
+        "calcium",
+        "electrolyte",
+        "neuromuscular"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T14:49:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000154",
+      "kind": "dose",
+      "essentials": [
+        "potassium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach notes potassium is easily absorbed, about 90 percent of ingested potassium is excreted in the urine, and because the body stores essentially none, it requires a significant daily intake of 5,000 mg.",
+      "verbatim": "Potassium is easily absorbed, 90 % of ingested K is excreted through the urine, there is essentially no storage of K in the human body requiring significant daily intake of 5,000 mg.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 344,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 830031
+      },
+      "dose": null,
+      "tags": [
+        "potassium",
+        "daily-intake",
+        "excretion",
+        "absorption"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T14:49:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000155",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "potassium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "hypokalemia",
+        "cardiac_failure"
+      ],
+      "symptoms": [
+        "muscular_weakness",
+        "mental_apathy"
+      ],
+      "claim_text": "Wallach lists muscular weakness and mental apathy as features of potassium deficiency, with hypokalemic cardiac failure (heart failure from low potassium) the most serious deficiency event.",
+      "verbatim": "Muscular weakness and mental apathy are features of K deficiency, hypokalemic cardiac failure is the most serious K deficiency event.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 344,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 830215
+      },
+      "dose": null,
+      "tags": [
+        "potassium",
+        "deficiency",
+        "hypokalemia",
+        "cardiac-failure"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T14:49:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000156",
+      "kind": "interaction",
+      "essentials": [
+        "potassium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach warns that diuretics (both natural and prescribed) and fluid losses from colds, flu, exercise, vomiting, and diarrhea increase the rate of loss of all minerals, including potassium, above normal expected excretion.",
+      "verbatim": "Diuretics, both natural and prescribed and sweating from colds and flu or exercise, vomiting and diarrhea increase the rate of loss of all minerals, including K, compared with normal expected excretion.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 344,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 830349
+      },
+      "dose": null,
+      "tags": [
+        "potassium",
+        "diuretics",
+        "mineral-loss",
+        "sweating",
+        "vomiting",
+        "diarrhea"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T14:49:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000157",
+      "kind": "mechanism",
+      "essentials": [
+        "lanthanum"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "chronic_fatigue",
+        "candidiasis"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach reports the yeast Candida albicans accumulates lanthanum (up to 370 ppm per day) and speculates this may be how Candida causes a debilitating, energy-sapping 'chronic-fatigue-like' disease — by 'stealing' lanthanum from the patient.",
+      "verbatim": "by the yeast Candida albicans up to 370 ppm/day - this may be how Candida causes a debilitating energy sapping “chronic fatigue-like” disease by “stealing” Lanthanum from the patient",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 344,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 831049
+      },
+      "dose": null,
+      "tags": [
+        "lanthanum",
+        "candida",
+        "chronic-fatigue",
+        "yeast"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T14:49:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000158",
+      "kind": "mechanism",
+      "essentials": [
+        "lanthanum"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports that the rare earth lanthanum, at a concentration of 0.32 ppm, stimulates the growth of the protozoa Blepharisma and Tetrahymena pyriformis and doubles their life span.",
+      "verbatim": "The growth of the protozoa Blepharisma and Tetrahymena pyriformis is stimulated and life span doubled by the presence of the Rare Earth Lanthanum at concentrations of 0.32 ppm.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 344,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 831326
+      },
+      "dose": null,
+      "tags": [
+        "lanthanum",
+        "longevity",
+        "lifespan",
+        "protozoa"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T14:49:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000159",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [
+        "krypton"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach remarks that krypton, despite its fictional debilitating effect on 'Superman', is in fact totally harmless to humans and may even be an essential element.",
+      "verbatim": "Krypton is legendary for having debilitating effects on “Superman” but in fact is totally harmless for humans and may in fact be an essential element.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 344,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 830632
+      },
+      "dose": null,
+      "tags": [
+        "krypton",
+        "noble-gas",
+        "speculative-essentiality"
+      ],
+      "confidence": "low",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T17:01:05+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

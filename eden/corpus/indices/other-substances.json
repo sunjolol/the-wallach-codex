@@ -32,6 +32,19 @@
       "rare-earths"
     ]
   },
+  "krypton": {
+    "display_name": "Krypton",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-RARE-000159"
+      ]
+    },
+    "conditions_treated": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "mercury": {
     "display_name": "Mercury",
     "claim_count": 3,
