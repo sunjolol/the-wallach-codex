@@ -80,6 +80,16 @@ comparison. Only the crime thesis itself is held here.
   corpus):
   > "We would like to see lithium placed in our community drinking water to help control crime instead of fluoride which has produced cancer in laboratory animals!!!"
 
+### Ch.11 "Rare Earths: Their secrets of health and longevity" (p. 272 / PDF idx 293) — cross-reference
+**No new thesis content; a compact restatement.** In the chapter's catalog of trace-mineral
+deficiency phases, the **decompensated metabolic phase** lists emotional/developmental
+manifestations that name the crime thesis in shorthand — "emotional (DR. Jykell/Mr.Hyde, 'Bad
+Seeds')." It points back to the fully-mapped Ch.6 material above; recorded here only so the
+cross-reference is not lost. (Logged 2026-06-24.) The legitimate, in-scope claims from this same
+phase list — clinical-phase disease onset, the 48-hours-to-30-days reversibility, and the
+compensated-phase early signs — are in the sealed corpus as WAL-CLM-RARE-000077..079.
+> "appearence of symptoms or defects in the metabolic (prediabetes), cognative (learning disabilities, ADD, ADHD), emotional (DR. Jykell/Mr.Hyde, "Bad Seeds"), developmental ( dyslexia, gay behavior), structural (dystrophy of muscles), work-stamina and longevity of a species."
+
 ---
 
 _Locators are page/chapter-based (durable across re-OCR). Appended to + corrected, never

@@ -1,31 +1,38 @@
 # Extraction report — rare-earths (Rare Earths: Forbidden Cures)
 
-_5 claim(s) drafted 2026-06-25T02:54:55+00:00. Review then run corpus_seal.py to promote._
+_6 claim(s) drafted 2026-06-25T03:39:21+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×4, mechanism×1
+Kinds: deficiency_sign×1, definition×2, mechanism×1, prognosis×2
 
-### WAL-CLM-RARE-000069 · definition
+### WAL-CLM-RARE-000074 · mechanism
+- **essentials:** iodine, iron, chromium · **conditions:** — · **symptoms:** —
+- **claim:** Wallach teaches that minerals are absorbed at very different efficiencies depending on their form, so the most efficient supplement form — plant-derived colloidal minerals — should be consumed; for the poorly absorbed metallic form the absorption ratio is roughly 1:1 for iodine, 1:10 for iron and 1:100 for chromium, meaning the colloidal form can be absorbed up to 100 times better for some minerals.
+- **verbatim** (offset 681977): “the most efficient form of trace mineral supplement, such as plant derived colloidal minerals should be consumed.
+
+For the metallic form of iodine the ratio is almost 1:1; for iron it’s 1:10 and for chromium it’s 1:100.”
+
+### WAL-CLM-RARE-000075 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach holds that of the 90 essential nutrients, the most critical for the health and longevity of the long-lived cultures are the plant-derived colloidal minerals delivered routinely each day.
-- **verbatim** (offset 647099): “Their basic truth for health and longevity boils down to the routine daily availability of a highly usable source of 90 essential nutrients of which the most critical are the plant derived colloidal minerals”
+- **claim:** Wallach asserts that the RDA and other dietary recommendations — conceived by the National Science Foundation to meet the needs of "practically all healthy people" — are not applicable to people with health challenges or full-blown disease states.
+- **verbatim** (offset 682198): “The RDA and other dietary recommendations for trace minerals are conceived by the National Science Foundation to meet the needs of “practically all healthy people” - they are not applicable to people with “health challenges” or full blown disease states.”
 
-### WAL-CLM-RARE-000070 · definition
+### WAL-CLM-RARE-000076 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach describes how "Glacial Milk" forms: ageless glaciers grind two to six inches of parent rock off the mountain surface each year into a fine dust or rock "flour" carried out by glacial melt water.
-- **verbatim** (offset 647523): “Ageless glaciers scrape, grind and pulverize from two to six inches of parent rock from the mountain surface each year into a fine dust or rock “flour””
+- **claim:** As evidence of progressive soil and food mineral depletion over time, Wallach cites that the 3,000-year-old bones of Japanese temple monks contained a greater spectrum of minerals and a greater amount of each mineral than the bones of modern-day Japanese.
+- **verbatim** (offset 682454): “Mineral analysis of 3,000 year old bones of Japanese temple monks showed that they contained a greater spectrum of minerals and greater amount of each mineral than the bones of modern day Japanese.”
 
-### WAL-CLM-RARE-000071 · definition
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach's key distinction: the "Glacial Milk" that nourishes the long-lived cultures carries 60 to 72 minerals, whereas the thousands of other glaciers worldwide may have only three to 20 minerals — too few to fulfill the human genetic potential for longevity.
-- **verbatim** (offset 649372): “the great common denominator of the “Glacial Milk” that nourishes the long-lived cultures is that they contain 60 to 72 minerals; there are thousands of glaciers in the world that prodyce vast quantities of “Glacial Milk,” however, they may only have three to 20 minerals in them”
+### WAL-CLM-RARE-000077 · prognosis
+- **essentials:** — · **conditions:** cardiomyopathy, diabetes, cancer, aneurysm · **symptoms:** —
+- **claim:** Wallach describes the "clinical phase" of trace-mineral deficiency as the onset of full-blown disease states and even death, naming cardiomyopathy, diabetes, cancer and aneurysms as examples of conditions that are, at root, trace-mineral deficiencies.
+- **verbatim** (offset 689932): “The clinical phase of trace mineral deficiency is characterized by the onset of full blown disease states and even death (i.e. - cardiomyopathy, diabetes, cancer, aneurysms, etc.).”
 
-### WAL-CLM-RARE-000072 · mechanism
+### WAL-CLM-RARE-000078 · prognosis
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach stresses that the centenarians absorb only 5 to 12% of the suspended metallic colloids they drink in "Glacial Milk"; the real key to their longevity is using it as IRRIGATION water, so plants convert the metallic minerals into highly usable organic plant-derived colloidal minerals.
-- **verbatim** (offset 652266): “The bottom line for the centenarians to reach their genetic potentials of 120 to 140 years of age is in fact their utilization of the “Glacial Milk” as irrigation water.”
+- **claim:** Wallach contends that most clinical-phase trace-mineral deficiencies go undiagnosed by orthodox physicians, yet the cure is simply replacing the missing element: a correct diagnosis can produce a rapid positive clinical response within 48 hours to 30 days — unless permanent biochemical, chromosomal or physical damage has already occurred.
+- **verbatim** (offset 690233): “the cure, however, is simply a matter of replacement of the trace element (a correct diagnosis can lead to a remarkably rapid positive clinical response ranging from 48 hours to 30 days for recognizable results)”
 
-### WAL-CLM-RARE-000073 · definition
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach asserts that millennia of farming terraces irrigated with mineral-rich "Glacial Milk" reward the long-lived cultures with optimal health free of the Western degenerative diseases — hypertension, heart disease, stroke, aneurysms, arthritis, osteoporosis, dental disease, cataracts, diabetes, cancer and lupus among them.
-- **verbatim** (offset 653256): “they have been blessed with optimal health without hypertension, heart disease, stroke, aneurysms, arthritis, osteoporosis, dental disease, cataracts, diabetes, cancer, lupus”
+### WAL-CLM-RARE-000079 · deficiency_sign
+- **essentials:** — · **conditions:** — · **symptoms:** irregular_heartbeat, white_hair, hair_loss
+- **claim:** Wallach describes the "compensated metabolic phase" of trace-mineral deficiency — a reduction in specific enzyme reactions and receptor-site functions that produces early warning signs such as low blood sugar, irregular heartbeat, white hair and hair loss, before any full-blown disease appears.
+- **verbatim** (offset 684852): “a reduction in biochemical function (i.e. low blood sugar, irregular heart beat, white hair, hair loss, etc.)”
 

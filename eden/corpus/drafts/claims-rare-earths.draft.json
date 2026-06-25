@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817624
+        "char_offset": 814248
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817826
+        "char_offset": 814450
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817388
+        "char_offset": 814012
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 772315
+        "char_offset": 768939
       },
       "dose": {
         "amount": "250-400",
@@ -2405,6 +2405,208 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T02:54:55+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000074",
+      "kind": "mechanism",
+      "essentials": [
+        "iodine",
+        "iron",
+        "chromium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach teaches that minerals are absorbed at very different efficiencies depending on their form, so the most efficient supplement form — plant-derived colloidal minerals — should be consumed; for the poorly absorbed metallic form the absorption ratio is roughly 1:1 for iodine, 1:10 for iron and 1:100 for chromium, meaning the colloidal form can be absorbed up to 100 times better for some minerals.",
+      "verbatim": "the most efficient form of trace mineral supplement, such as plant derived colloidal minerals should be consumed.\n\nFor the metallic form of iodine the ratio is almost 1:1; for iron it’s 1:10 and for chromium it’s 1:100.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 270,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 681977
+      },
+      "dose": null,
+      "tags": [
+        "colloidal-minerals",
+        "bioavailability",
+        "absorption-ratio",
+        "metallic-vs-colloidal"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T03:39:21+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000075",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach asserts that the RDA and other dietary recommendations — conceived by the National Science Foundation to meet the needs of \"practically all healthy people\" — are not applicable to people with health challenges or full-blown disease states.",
+      "verbatim": "The RDA and other dietary recommendations for trace minerals are conceived by the National Science Foundation to meet the needs of “practically all healthy people” - they are not applicable to people with “health challenges” or full blown disease states.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 270,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 682198
+      },
+      "dose": null,
+      "tags": [
+        "rda-critique",
+        "national-science-foundation",
+        "healthy-people"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T03:39:21+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000076",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "As evidence of progressive soil and food mineral depletion over time, Wallach cites that the 3,000-year-old bones of Japanese temple monks contained a greater spectrum of minerals and a greater amount of each mineral than the bones of modern-day Japanese.",
+      "verbatim": "Mineral analysis of 3,000 year old bones of Japanese temple monks showed that they contained a greater spectrum of minerals and greater amount of each mineral than the bones of modern day Japanese.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 270,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 682454
+      },
+      "dose": null,
+      "tags": [
+        "soil-depletion",
+        "mineral-depletion",
+        "japanese-monks",
+        "historical-evidence"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T03:39:21+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000077",
+      "kind": "prognosis",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "cardiomyopathy",
+        "diabetes",
+        "cancer",
+        "aneurysm"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach describes the \"clinical phase\" of trace-mineral deficiency as the onset of full-blown disease states and even death, naming cardiomyopathy, diabetes, cancer and aneurysms as examples of conditions that are, at root, trace-mineral deficiencies.",
+      "verbatim": "The clinical phase of trace mineral deficiency is characterized by the onset of full blown disease states and even death (i.e. - cardiomyopathy, diabetes, cancer, aneurysms, etc.).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 272,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 689932
+      },
+      "dose": null,
+      "tags": [
+        "clinical-phase",
+        "deficiency-progression",
+        "degenerative-disease"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T03:39:21+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000078",
+      "kind": "prognosis",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach contends that most clinical-phase trace-mineral deficiencies go undiagnosed by orthodox physicians, yet the cure is simply replacing the missing element: a correct diagnosis can produce a rapid positive clinical response within 48 hours to 30 days — unless permanent biochemical, chromosomal or physical damage has already occurred.",
+      "verbatim": "the cure, however, is simply a matter of replacement of the trace element (a correct diagnosis can lead to a remarkably rapid positive clinical response ranging from 48 hours to 30 days for recognizable results)",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 272,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 690233
+      },
+      "dose": null,
+      "tags": [
+        "reversibility",
+        "mineral-replacement",
+        "48-hours-30-days",
+        "clinical-response"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T03:39:21+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000079",
+      "kind": "deficiency_sign",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [
+        "irregular_heartbeat",
+        "white_hair",
+        "hair_loss"
+      ],
+      "claim_text": "Wallach describes the \"compensated metabolic phase\" of trace-mineral deficiency — a reduction in specific enzyme reactions and receptor-site functions that produces early warning signs such as low blood sugar, irregular heartbeat, white hair and hair loss, before any full-blown disease appears.",
+      "verbatim": "a reduction in biochemical function (i.e. low blood sugar, irregular heart beat, white hair, hair loss, etc.)",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 270,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 684852
+      },
+      "dose": null,
+      "tags": [
+        "compensated-phase",
+        "early-signs",
+        "deficiency-progression"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T03:39:21+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

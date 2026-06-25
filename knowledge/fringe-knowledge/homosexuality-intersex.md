@@ -138,6 +138,14 @@ congenital defects.
 
 > "It is an easy mental jump to perceive that one should be able to prevent the congenital hermaphrodite and the intersexual as well as the gay embryo with complete preconception nutrition with 90 nutrients including minerals (i.e.- zinc, manganese, magnesium, gallium, copper, etc.), vitamins (B-12, folic acid, vitamin A), amino acids and essential fatty acids. This can perhaps best be described as insurance against gay embryo's."
 
+## Cross-reference — Ch.11 "Rare Earths" (p. 272 / PDF idx 293)
+**No new thesis content; a compact restatement.** Far from Ch.7, the chapter on trace-mineral
+deficiency phases names the sexuality thesis in shorthand: the **decompensated metabolic phase**
+manifestations list includes "developmental ( dyslexia, gay behavior)" alongside the crime
+shorthand. It adds nothing beyond what is fully mapped above; recorded here only so the
+cross-reference is not lost. (Logged 2026-06-24.)
+> "appearence of symptoms or defects in the metabolic (prediabetes), cognative (learning disabilities, ADD, ADHD), emotional (DR. Jykell/Mr.Hyde, "Bad Seeds"), developmental ( dyslexia, gay behavior), structural (dystrophy of muscles), work-stamina and longevity of a species."
+
 ---
 
 _Locator: Rare Earths Ch.7 "Genetic Potential," pp. 153–160 (PDF idx 174–181). Read directly from

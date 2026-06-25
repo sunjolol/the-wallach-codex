@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_54 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_55 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-24 23:48 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 13 — Rare Earths Ch.11 conceptual foundation: 6 claims (RARE-74..79: colloidal/metallic absorption ratios, RDA critique, monk-bone soil-depletion, clinical-phase disease, 48hr-30day reversibility, compensated-phase signs). kv 33→34, RARE 73→79, corpus 173.
+  ↳ Cleaned pp265-272 (idx 286-293): reflowed P1/P3/P2 prose spans + marked the garbled element-concentration Table 11-1. Reflow de-hyphenation HARDENED to [A-Za-z]-$ so a line-final dash (i.e. -) is not eaten (caught by the pre-apply verbatim check). resnap 4 relocated/0 broken. +2 symptom slugs (irregular_heartbeat, white_hair). FRINGE (Luneth ruling = cross-ref): the decompensated-phase list restates the Bad-Seeds/crime + gay-behavior theses — cross-ref notes added to criminal-behavior.md + homosexuality-intersex.md, kept out of corpus. Board 30/30, build OK, knowledge probe green. NEXT: Ch.11 batch 2 (hair-analysis interp + Table 11-2 + toxic-metal substitution + Hg amalgam, idx 294-301), then the alphabetical per-element catalog (idx 302+).
 
 ## 2026-06-24 22:58 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 12 — Rare Earths Ch.10 'Glacial Milk': 5 claims (colloidal-minerals=most-critical-of-90; Glacial Milk=glaciers grind 2-6in rock/yr; 60-72 vs 3-20 minerals; 5-12% absorbed by drinking but irrigation is the key; millennia→optimal health). kv 32→33, 167 claims.

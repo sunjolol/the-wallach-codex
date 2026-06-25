@@ -118,7 +118,7 @@
   },
   "hair_loss": {
     "display_name": "Hair Loss",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "tin",
@@ -128,7 +128,8 @@
       }
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "hearing_loss": {
@@ -144,6 +145,14 @@
     ],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "irregular_heartbeat": {
+    "display_name": "Irregular Heartbeat",
+    "claim_count": 1,
+    "likely_deficiencies": [],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "liver_spots": {
@@ -218,6 +227,14 @@
         "appears_in_books": 1
       }
     ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "white_hair": {
+    "display_name": "White Hair",
+    "claim_count": 1,
+    "likely_deficiencies": [],
     "books_cited": [
       "rare-earths"
     ]

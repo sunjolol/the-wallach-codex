@@ -291,7 +291,7 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -299,7 +299,8 @@
         "WAL-CLM-RARE-000042"
       ],
       "mechanism": [
-        "WAL-CLM-RARE-000043"
+        "WAL-CLM-RARE-000043",
+        "WAL-CLM-RARE-000074"
       ],
       "personal_anecdote": [
         "WAL-CLM-DDDL-000008"
@@ -338,6 +339,8 @@
     ],
     "interacts_with": [
       "calcium",
+      "iodine",
+      "iron",
       "lithium",
       "magnesium",
       "vanadium",
@@ -450,7 +453,7 @@
     "display_name": "Iron",
     "canon_slug": "iron",
     "category": "mineral",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000022"
@@ -464,7 +467,8 @@
         "WAL-CLM-DDDL-000040"
       ],
       "mechanism": [
-        "WAL-CLM-RARE-000037"
+        "WAL-CLM-RARE-000037",
+        "WAL-CLM-RARE-000074"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000080"
@@ -487,7 +491,9 @@
       "pica"
     ],
     "interacts_with": [
+      "chromium",
       "copper",
+      "iodine",
       "vitamin-b12",
       "vitamin-b9",
       "vitamin-c",
@@ -502,13 +508,14 @@
     "display_name": "Iodine",
     "canon_slug": "iodine",
     "category": "mineral",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "interaction": [
         "WAL-CLM-DDDL-000025"
       ],
       "mechanism": [
-        "WAL-CLM-DDDL-000023"
+        "WAL-CLM-DDDL-000023",
+        "WAL-CLM-RARE-000074"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000024"
@@ -520,11 +527,14 @@
       "hypothyroidism"
     ],
     "interacts_with": [
+      "chromium",
       "copper",
+      "iron",
       "tyrosine"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "manganese": {

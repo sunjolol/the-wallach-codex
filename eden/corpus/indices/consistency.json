@@ -104,10 +104,18 @@
       {
         "claim_id": "WAL-CLM-RARE-000073",
         "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000075",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000076",
+        "book": "rare-earths"
       }
     ],
     "books_repeating": 1,
-    "claim_count": 25
+    "claim_count": 27
   },
   {
     "id": "CG-0002",

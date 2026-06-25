@@ -17,10 +17,13 @@
   },
   "aneurysm": {
     "display_name": "Aneurysm",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000004"
+      ],
+      "prognosis": [
+        "WAL-CLM-RARE-000077"
       ]
     },
     "essentials_involved": [
@@ -28,7 +31,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "angina": {
@@ -335,7 +339,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -345,6 +349,9 @@
       "deficiency_signs": [
         "WAL-CLM-DDDL-000012",
         "WAL-CLM-RARE-000011"
+      ],
+      "prognosis": [
+        "WAL-CLM-RARE-000077"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000018",
@@ -393,7 +400,7 @@
   },
   "cardiomyopathy": {
     "display_name": "Cardiomyopathy",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010"
@@ -402,7 +409,8 @@
         "WAL-CLM-DDDL-000005"
       ],
       "prognosis": [
-        "WAL-CLM-DDDL-000007"
+        "WAL-CLM-DDDL-000007",
+        "WAL-CLM-RARE-000077"
       ]
     },
     "essentials_involved": [
@@ -410,7 +418,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "cardiovascular_disease": {
@@ -609,7 +618,7 @@
   },
   "diabetes": {
     "display_name": "Diabetes",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-DDDL-000008"
@@ -626,7 +635,8 @@
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000035",
-        "WAL-CLM-DDDL-000046"
+        "WAL-CLM-DDDL-000046",
+        "WAL-CLM-RARE-000077"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000048",
@@ -647,7 +657,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "down_syndrome": {

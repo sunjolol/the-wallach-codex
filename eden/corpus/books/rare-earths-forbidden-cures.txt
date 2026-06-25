@@ -21225,124 +21225,7 @@ ability of Mo to limit Cu retention in ani-
 
 266
 
-Table 11-1
-
-Elements in mammalian blood, plasma and red cells
-
-=]
-
-Element mgl-1 blood mgl-! plasma mgl-!redcells atoms/red coll
-Ag 0-024 G 0-004 G (0-051) 23000
-Al 0:32 G 0-44 G (0-16) 270000
-As 0-49 0-040 (1-1) 700000
-Au 0-00004 <0-0025 L (0-000041) 10
-B OSA 0-17 (0-077) 340000
-Ba 0-069 G 0-079 E, G (0-056) 19000
-Bo <0-0001 <0-004 L (<0-0001) < 500
-Bi <0-01 <0-0006 L ( < 0-0006) <150
-Br 46 3-9 (5-6) 3-3 x 108
-Cc 94200 40500 166000 6-6 x 1011
-Ca 62G 99 6-32H,1, J 7-5 x 108
-Ca 0-0074 A <0-09 (0-015) 6300
-Ce <0-002 L (<0-0021) < 700
-cl 2900 3950 1890 2-5 x 109
-Co 0-00033 0-00038 IK 0-00015 120
-Cr 0-0267A,0 0-024 0-020 18000
-Cs 0-0028 0-0031 (0-0028) 1000
-Cu 1-07 1-12 0-98 730000
-Dy <0-002L (<0-0021) <600
-Er < 0-006 L (< 0-006!) <1700
-Ea < 0-004 L (< 0-004?) < 1200
-F 0-36 0-287 0-437 1-1 x 106
-Fo 475 1:14 1110 9-5 x 109
-Gao 0-00052 < 0-006 L (0-0005?) 340
-Gd < 0-002 L (< 0-002?) < 600
-Ge <003L (<0-06) < 40000
-H 98000 106000 87000 4-1x 1012
-HE < 0-002 L (<0-0021) < 500
-Hg 0-0065 0-0030 0-0067 1600
-Ho < 0-002 L (<0-0022) < 600
-I 0-063 D 0-077 (0-044) 16000
-In < 0-004 L (< 0-004?) < 1600
-Ir <0-0025 L (< 0-00251) <600
-K 1690 170 3690 4:5 x 109
-La < 0-006 L (< 0-006?) < 2000
-Li < 0-005 E (< 0-005?) < 30000
-Lu <0-0006 L (<0-0006?) < 160
-Mg 41 22 61 1-2 x 108
-Mn 0-026 0-0029 0-022 19000
-Mo 0-0041 F (< 0-008) < 5000
-N 33000 12000 51000 1-7x 100
-Na 1990 3280 260 6-4 x 108
-Nb <0-011 (<0-011) < 5000
-Nd < 0-002 L (< 0-002?) <700
-Ni 0-038 A 0-042 0-049 40000
-(e) 775000 848000 698000 2-1 x 1012
-Os <0-0025 L (<0-00251) <500
-P 370 132 620 9-5 x 10?
-
-267
-
-beeeeeeED
-
-Eloment mgl-! blood mg I>! plasina ing I! red cells atoms/red cell
-Tb 0-27 0-043 O-34 78000
-Pd <001L (< 0-012) < 4500
-Pr <0-05 L (< 0-052) < 17000
-rt <0-04 L (< 0-041) < 10000
-Ra <2x 10-332 (<2 10-137) <i
-Rb 2-72 1-2? 5-37 3x 106
-Re < 0-002 L (< 0-0027) <500
-Rh < 0-004 L ( < 0-004?) < 2000
-Ru < 0-004 L (< 0-004?) < 2000
-Ss 2040 1220 3600 5-4 x 109
-Sb 0-0047 0-054? L (0-005?) 2000
-Se 0-075? <0-03 L (<0-14) < 150000
-So 0-27 F,N 0-11 0-267 160000
-Si 40 25C,M 4-1? 7x 108
-Sm < 0-002 L (< 0-0027) < 600
-Sn 0-13? 0-033? 0-25? 100000
-Sr 0-0397 G 0-038? L (0-0407) 22000
-Ta < 0-006 L (< 0-0062) < 1500
-Tb < 0-0006 L (< 0-0006?) < 180
-To <0-03 L (< 0-032) < 11000
-Th 0-047 (0-042) 8000
-Ti 0-026 <0-04L (< 0-056) < 55000
-TL <0-02 < 0-0025 L (< 0-02) < 5000
-‘Tm <0-0006 L ( < 0-0006?) < 180
-U 0-00055 B < 0-001 L (<0-0011?) < 220
-v 0-017? 0-010? P (0-026?) 25000
-w 0-001 (< 0-002) <500
-Y <0011L (< 0-012) < 5000
-Yb < 0-002 L (< 0-002?) < 600
-VAN G5 16 12-3 8-9 x 106
-Zr < 0-006 L (< 0-0062) < 3000
-
-Red cell concentrations were mostly calculated from blood and plasma concentrations,
-assuming that 1 litre blood =572 ml plasma 4428 ml red cells; calculated values aro
-enclosed in brackets.
-Atoms/red cell were calculated assuming thero are 1-26 x 10!3 red cells per | of packed
-colls; henco
-atoms/red cell = 4-75 x 10? x m/A
-
-where thero are m mg I! red cells, and tho atomie woight is A.
-
-Most values aro taken from the compilation by Bowen (1963) with tho following
-additions:
-
-A—Imbus et al., 1963 I—Wallach et al., 1962
-B—Boirio et al., 1962 J—Hunter, 1960
-
-C—Aumonier and Quilichini, 1962 K—Parr and Taylor, 1964
-D—Perkin and Lahey, 1940 L—Wolstenholme, 1964
-
-E Niedermayer et al., 1962 M—Ivanov and Rozenberg, 1962
-¥F—Bruno et al., 1964 N—Bowen and Cawse, 1963
-G—Butt etal, 1964 O—Rowen, 1964
-
-H—Keitel et al., 1955 P—Gofinann et al., 1962
-
-268
+[Table 11-1 · Elements in mammalian blood, plasma and red cells — figure]
 
 (88 J $$
 
@@ -21440,32 +21323,13 @@ enzymes with some changes in substrate
 specificity but the enzyme is not deacti-
 vated.
 
-Because of the frequently wide dispar-
-ity between the absolute and dietary re-
-quirements (results from different intesti-
+Because of the frequently wide disparity between the absolute and dietary requirements (results from different intestinal absorption efficiencies for individual elements) the most efficient form of trace mineral supplement, such as plant derived colloidal minerals should be consumed.
 
-nal absorption efficiencies for individual
-elements) the most efficient form of trace
-mineral supplement, such as plant derived
-colloidal minerals should be consumed.
+For the metallic form of iodine the ratio is almost 1:1; for iron it’s 1:10 and for chromium it’s 1:100.
 
-For the metallic form of iodine the ratio
-is almost 1:1; for iron it’s 1:10 and for chro-
-mium it’s 1:100.
+The RDA and other dietary recommendations for trace minerals are conceived by the National Science Foundation to meet the needs of “practically all healthy people” - they are not applicable to people with “health challenges” or full blown disease states.
 
-The RDA and other dietary recommen-
-dations for trace minerals are conceived by
-the National Science Foundation to meet
-the needs of “practically all healthy people”
-- they are not applicable to people with
-“health challenges” or full blown disease
-states.
-
-Mineral analysis of 3,000 year old bones
-of Japanese temple monks showed that they
-contained a greater spectrum of minerals
-and greater amount of each mineral than
-the bones of modern day Japanese.
+Mineral analysis of 3,000 year old bones of Japanese temple monks showed that they contained a greater spectrum of minerals and greater amount of each mineral than the bones of modern day Japanese.
 
 Dr. Wilhelm Heinrich Schuessler (1821-
 1898), a physician from Oldenburg, Ger-
@@ -21520,16 +21384,7 @@ with a return of normal intake.
 COMPENSATED
 METABOLIC PHASE:
 
-The compensated metabolic phase is
-characterized by a reduction of certain spe-
-cific biochemical functions, such as trace
-mineral dependent enzyme reactions or
-receptor sites. The “homeostatic” mecha-
-nism becomes ineffective in maintaining
-the normal trace element concentrations at
-receptor sites causing a reduction in bio-
-chemical function (i.e. low blood sugar, ir-
-regular heart beat, white hair, hair loss, etc.).
+The compensated metabolic phase is characterized by a reduction of certain specific biochemical functions, such as trace mineral dependent enzyme reactions or receptor sites. The “homeostatic” mechanism becomes ineffective in maintaining the normal trace element concentrations at receptor sites causing a reduction in biochemical function (i.e. low blood sugar, irregular heart beat, white hair, hair loss, etc.).
 
 DECOMPENSATED
 METABOLIC PHASE:
@@ -21605,22 +21460,7 @@ and longevity of a species.
 
 CLINICAL PHASE:
 
-The clinical phase of trace mineral defi-
-ciency is characterized by the onset of full
-blown disease states and even death (i.e. -
-cardiomyopathy, diabetes, cancer, aneu-
-rysms, etc.). For most trace mineral defi-
-ciencies in the clinical phase diagnosis by
-the “orthodox” physician is almost non-
-existent, the cure, however, is simply a mat-
-ter of replacement of the trace element (a
-correct diagnosis can lead to a remarkably
-rapid positive clinical response ranging from
-48 hours to 30 days for recognizable re-
-sults); others do not reach full return to
-normal after permanant biochemical, chro-
-mosomal or gross physical damage has
-occured.
+The clinical phase of trace mineral deficiency is characterized by the onset of full blown disease states and even death (i.e. - cardiomyopathy, diabetes, cancer, aneurysms, etc.). For most trace mineral deficiencies in the clinical phase diagnosis by the “orthodox” physician is almost non-existent, the cure, however, is simply a matter of replacement of the trace element (a correct diagnosis can lead to a remarkably rapid positive clinical response ranging from 48 hours to 30 days for recognizable results); others do not reach full return to normal after permanant biochemical, chromosomal or gross physical damage has occured.
 
 HAIR ANALYSIS
 
