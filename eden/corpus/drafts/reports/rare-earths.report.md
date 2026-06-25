@@ -1,16 +1,11 @@
 # Extraction report — rare-earths (Rare Earths: Forbidden Cures)
 
-_2 claim(s) drafted 2026-06-25T20:13:46+00:00. Review then run corpus_seal.py to promote._
+_1 claim(s) drafted 2026-06-25T20:26:38+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: mechanism×2
+Kinds: mechanism×1
 
-### WAL-CLM-RARE-000216 · mechanism
-- **essentials:** praseodymium · **conditions:** — · **symptoms:** —
-- **claim:** Wallach reports that praseodymium, a 'light' rare earth, enhances the proliferation of normal cell growth and doubles the life spans of laboratory species.
-- **verbatim** (offset 899070): “Enhances proliferation of normal cell growth and doubling of the life spans in laboratory species.”
-
-### WAL-CLM-RARE-000217 · mechanism
-- **essentials:** rubidium · **conditions:** — · **symptoms:** —
-- **claim:** Wallach notes that rubidium can replace the electrolyte function of potassium in many species, including bacteria, algae, fungi, and certain invertebrates such as echinoderms (starfish).
-- **verbatim** (offset 900443): “Rubidium can replace the electrolyte function of K in many species including bacteria, algae, fungi and certain invertebrates (echinoderms -starfish).”
+### WAL-CLM-RARE-000218 · mechanism
+- **essentials:** — · **conditions:** cancer · **symptoms:** —
+- **claim:** Wallach notes that all isotopes of radon are radioactive (half-life 54 seconds to 3.8 days) and that radon is carcinogenic and highly toxic when inhaled — a common household hazard that is odorless and colorless, so detecting it requires a test kit (which are generally available).
+- **verbatim** (offset 901010): “Rn is carcinogenic and highly toxic when inhaled. Radon is a common household hazard, it is odorless and colorless; detection requires the use of a kit which are generally available.”
 

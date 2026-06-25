@@ -92,6 +92,21 @@
       "rare-earths"
     ]
   },
+  "radon": {
+    "display_name": "Radon",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000218"
+      ]
+    },
+    "conditions_treated": [
+      "cancer"
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "taurine": {
     "display_name": "Taurine",
     "claim_count": 1,

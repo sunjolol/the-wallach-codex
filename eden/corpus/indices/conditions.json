@@ -602,7 +602,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 17,
+    "claim_count": 18,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -610,7 +610,8 @@
         "WAL-CLM-DDDL-000036",
         "WAL-CLM-RARE-000134",
         "WAL-CLM-RARE-000197",
-        "WAL-CLM-RARE-000198"
+        "WAL-CLM-RARE-000198",
+        "WAL-CLM-RARE-000218"
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000012",
@@ -649,6 +650,7 @@
     ],
     "other_substances_involved": [
       "fluoride",
+      "radon",
       "taurine"
     ],
     "books_cited": [

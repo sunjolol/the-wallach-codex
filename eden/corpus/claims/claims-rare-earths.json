@@ -7737,6 +7737,43 @@
       "extracted_at": "2026-06-25T20:13:46+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000218",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "radon"
+      ],
+      "conditions": [
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach notes that all isotopes of radon are radioactive (half-life 54 seconds to 3.8 days) and that radon is carcinogenic and highly toxic when inhaled — a common household hazard that is odorless and colorless, so detecting it requires a test kit (which are generally available).",
+      "verbatim": "Rn is carcinogenic and highly toxic when inhaled. Radon is a common household hazard, it is odorless and colorless; detection requires the use of a kit which are generally available.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 376,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 901010
+      },
+      "dose": null,
+      "tags": [
+        "radon",
+        "carcinogen",
+        "household-hazard",
+        "radioactive",
+        "toxicity"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T20:26:38+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

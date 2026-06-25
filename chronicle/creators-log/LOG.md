@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_87 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_88 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-25 16:38 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 39 — Rare Earths Re/Rh/Ru confirmed geology (no claim) + RARE-218 Rn/Radon (carcinogenic household hazard, other_substances=[radon]). kv 76→77, corpus 311→312, conditions 141, board 30/30, knowledge probe green.
+  ↳ Re/Rhenium (canon yet geology-only — 'accumulates in thyroid tissue' = bioaccumulation, no function), Rh/Rhodium (0.001 ppm), Ru/Ruthenium (0.001 ppm + RuO4-toxic aside too short for a claim) all read + confirmed geology-only. RARE-218 Rn/Radon (toxic, non-canon → other_substances=[radon], cond=cancer, kind=mechanism): all isotopes radioactive (half-life 54 sec to 3.8 days); carcinogenic and highly toxic when inhaled; a common odorless/colorless household hazard requiring a detection kit. Rn paragraph reflowed (de-hyphenated). resnap 0 broken (all 217 prior claims upstream). Next: S/Sulfur as a dedicated batch 40 (rich canon, ~5 claims; structural sentence split by a firefighter-death news clipping on p377 that stays raw; several book typos kept faithful). Claim reviewed + approved by Luneth before commit.
 
 ## 2026-06-25 16:19 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 38 — Rare Earths Pd→Rb: confirmed Pd/Pm/Po/Pt/Pu/Ra geology/radioactive (no claim) + 2 canon claims RARE-216 Pr (lifespan-doubling) + RARE-217 Rb (replaces K electrolyte function). kv 75→76, corpus 309→311, conditions 141, board 30/30, knowledge probe green.
