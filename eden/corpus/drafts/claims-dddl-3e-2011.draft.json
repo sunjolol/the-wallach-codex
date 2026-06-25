@@ -137,10 +137,15 @@
         "sids",
         "muscular_dystrophy",
         "cardiomyopathy",
-        "white_muscle_disease"
+        "white_muscle_disease",
+        "alzheimers",
+        "anemia",
+        "liver_cirrhosis",
+        "infertility",
+        "miscarriage"
       ],
       "symptoms": [],
-      "claim_text": "Selenium deficiency causes infertility, miscarriages, cystic fibrosis of the pancreas, sudden infant death syndrome (SIDS), white muscle disease, muscular dystrophy, cardiomyopathy, and more.",
+      "claim_text": "Selenium deficiency causes infertility, miscarriages, cystic fibrosis of the pancreas, sudden infant death syndrome (SIDS), liver cirrhosis, white muscle disease, muscular dystrophy, anemia, encephalomalacia (Alzheimer's disease), cardiomyopathy, and mulberry heart disease.",
       "verbatim": "Selenium deficiency causes infertility,\nmiscarriages, cystic fibrosis of the pancreas, Sudden Infant Death\nSyndrome in animals, liver cirrhosis, stiff lamb disease, white muscle\ndisease, muscular dystrophy, anemias, encephalomalacia (Alzheimer’s\ndisease), cardiomyopathy heart disease, and mulberry heart disease.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -2533,7 +2538,8 @@
       ],
       "other_substances": [],
       "conditions": [
-        "anxiety"
+        "anxiety",
+        "panic_attacks"
       ],
       "symptoms": [],
       "claim_text": "Anxiety/panic treatment: avoid caffeine and sugar; chromium + vanadium 200-300 mcg/day, B6 100 mg three times daily, B3 450 mg three times daily, L-tryptophan, calcium 2,000 mg/day, magnesium 800 mg/day.",

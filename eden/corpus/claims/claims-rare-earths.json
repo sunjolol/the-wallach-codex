@@ -921,7 +921,9 @@
         "lithium"
       ],
       "other_substances": [],
-      "conditions": [],
+      "conditions": [
+        "bipolar_disorder"
+      ],
       "symptoms": [],
       "claim_text": "Wallach recommends adding lithium to the public water supply and eliminating fluoride; conventional medicine confines lithium to psychiatric use (manic depression).",
       "verbatim": "The current medical use of lithium is limited to psychiatric patients, especially manic depression. We would like to see lithium added to the public water supply and eliminate fluoride!!!",

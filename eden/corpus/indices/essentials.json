@@ -113,7 +113,8 @@
       "malabsorption",
       "menopause",
       "muscle_cramps",
-      "osteoporosis"
+      "osteoporosis",
+      "panic_attacks"
     ],
     "interacts_with": [
       "boron",
@@ -421,6 +422,7 @@
       "infertility",
       "insomnia",
       "learning_disabilities",
+      "panic_attacks",
       "peripheral_neuropathy",
       "schizophrenia"
     ],
@@ -751,6 +753,8 @@
       }
     ],
     "conditions_treated": [
+      "alzheimers",
+      "anemia",
       "aneurysm",
       "arsenic_toxicity",
       "arthritis",
@@ -765,6 +769,8 @@
       "hypertension",
       "infertility",
       "keshan_disease",
+      "liver_cirrhosis",
+      "miscarriage",
       "muscular_dystrophy",
       "osteoporosis",
       "sids",
@@ -877,6 +883,7 @@
       "diabetes",
       "hypoglycemia",
       "insomnia",
+      "panic_attacks",
       "schizophrenia"
     ],
     "interacts_with": [
@@ -1286,7 +1293,8 @@
       }
     ],
     "conditions_treated": [
-      "anorexia"
+      "anorexia",
+      "bipolar_disorder"
     ],
     "interacts_with": [
       "chromium",
@@ -1595,7 +1603,8 @@
     "deficiency_signs": [],
     "conditions_treated": [
       "anxiety",
-      "diabetes"
+      "diabetes",
+      "panic_attacks"
     ],
     "interacts_with": [
       "calcium",
@@ -1636,7 +1645,8 @@
     "deficiency_signs": [],
     "conditions_treated": [
       "anxiety",
-      "cradle_cap"
+      "cradle_cap",
+      "panic_attacks"
     ],
     "interacts_with": [
       "calcium",

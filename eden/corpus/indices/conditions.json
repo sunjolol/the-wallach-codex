@@ -29,11 +29,28 @@
       "rare-earths"
     ]
   },
-  "anemia": {
-    "display_name": "Anemia",
-    "claim_count": 2,
+  "alzheimers": {
+    "display_name": "Alzheimers",
+    "claim_count": 1,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-DDDL-000005"
+      ]
+    },
+    "essentials_involved": [
+      "selenium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "anemia": {
+    "display_name": "Anemia",
+    "claim_count": 3,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000005",
         "WAL-CLM-DDDL-000020"
       ],
       "diagnostics": [
@@ -44,6 +61,7 @@
       "chromium",
       "copper",
       "iron",
+      "selenium",
       "vanadium"
     ],
     "other_substances_involved": [],
@@ -334,14 +352,16 @@
   },
   "bipolar_disorder": {
     "display_name": "Bipolar Disorder",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "definitions": [
+        "WAL-CLM-RARE-000029",
         "WAL-CLM-RARE-000116"
       ]
     },
     "essentials_involved": [
-      "chromium"
+      "chromium",
+      "lithium"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1090,8 +1110,11 @@
   },
   "infertility": {
     "display_name": "Infertility",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000005"
+      ],
       "definitions": [
         "WAL-CLM-RARE-000116"
       ],
@@ -1239,17 +1262,21 @@
   },
   "liver_cirrhosis": {
     "display_name": "Liver Cirrhosis",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010"
       ],
       "contraindications": [
         "WAL-CLM-DDDL-000022"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000005"
       ]
     },
     "essentials_involved": [
-      "iron"
+      "iron",
+      "selenium"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1327,6 +1354,22 @@
       "calcium",
       "magnesium",
       "vitamin-d"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011"
+    ]
+  },
+  "miscarriage": {
+    "display_name": "Miscarriage",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000005"
+      ]
+    },
+    "essentials_involved": [
+      "selenium"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1502,17 +1545,26 @@
   },
   "panic_attacks": {
     "display_name": "Panic Attacks",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "definitions": [
         "WAL-CLM-RARE-000105"
+      ],
+      "protocols": [
+        "WAL-CLM-DDDL-000078"
       ]
     },
     "essentials_involved": [
-      "calcium"
+      "calcium",
+      "chromium",
+      "magnesium",
+      "vanadium",
+      "vitamin-b3",
+      "vitamin-b6"
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "dddl-3e-2011",
       "rare-earths"
     ]
   },
