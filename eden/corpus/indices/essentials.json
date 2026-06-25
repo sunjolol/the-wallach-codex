@@ -3,12 +3,26 @@
     "display_name": "Hydrogen",
     "canon_slug": "hydrogen",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 2,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000135"
+      ],
+      "protocol": [
+        "WAL-CLM-RARE-000136"
+      ]
+    },
     "deficiency_signs": [],
-    "conditions_treated": [],
+    "conditions_treated": [
+      "acidosis",
+      "alkalosis",
+      "cystitis",
+      "urinary_tract_infection"
+    ],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "carbon": {
     "display_name": "Carbon",
@@ -467,10 +481,11 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 16,
+    "claim_count": 18,
     "claims_by_kind": {
       "deficiency_sign": [
-        "WAL-CLM-DDDL-000003"
+        "WAL-CLM-DDDL-000003",
+        "WAL-CLM-RARE-000141"
       ],
       "definition": [
         "WAL-CLM-RARE-000122"
@@ -492,7 +507,8 @@
         "WAL-CLM-RARE-000120",
         "WAL-CLM-RARE-000121",
         "WAL-CLM-RARE-000123",
-        "WAL-CLM-RARE-000128"
+        "WAL-CLM-RARE-000128",
+        "WAL-CLM-RARE-000142"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000049"
@@ -527,6 +543,7 @@
       "kawasaki_disease",
       "learning_disabilities",
       "liver_cirrhosis",
+      "menkes_disease",
       "neutropenia",
       "osteoporosis",
       "schizophrenia",
@@ -1263,12 +1280,18 @@
     "display_name": "Europium",
     "canon_slug": "europium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000140"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "gallium": {
     "display_name": "Gallium",

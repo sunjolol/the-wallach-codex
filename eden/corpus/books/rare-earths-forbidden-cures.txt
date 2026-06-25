@@ -23377,10 +23377,7 @@ ter 0.08 ppm; sea water 0.00011 ppm; soils
 0.06 ppm; marine plants 0.4 ppm; land
 plants 0.6 ppm; marine animals 0.15 to 3.0
 ppm; land animals 0.5 ppm (accumulates
-in kidney). Functions by stimulating the
-hatching of nematode cysts (worms). Cad-
-mium bound proteins have been isolated
-from molluscs and the horse kidney.
+in kidney). Functions by stimulating the hatching of nematode cysts (worms). Cadmium bound proteins have been isolated from molluscs and the horse kidney.
 
 Ce - Cerium, a Rare Earth, is found in
 igneous rocks 60 ppm; shale 59 ppm; sand-
@@ -24604,12 +24601,7 @@ WEDNESDAY, DECEMBER 1, 1993
 ==] Se
 
 thought to be a sex-linked recessive defect
-of copper absorption. The affected infants
-exibit retarded growth, defective keratin
-formation and loss of hair pigment, low
-body temperature, degeneration and frac-
-ture of aortic elastin (aneurysms), arthritis
-in the growth plate of long bones, and a
+of copper absorption. The affected infants exibit retarded growth, defective keratin formation and loss of hair pigment, low body temperature, degeneration and fracture of aortic elastin (aneurysms), arthritis in the growth plate of long bones, and a
 progressive mental deterioration (brain tis-
 sue is totally free of the essential enzyme
 cytochrome c oxidase). Because of absorp-
@@ -24649,9 +24641,7 @@ mals 0.00012 ppm in soft tissue and 0.2
 
 ppm in bone.
 
-Europium has extended the life of labo-
-ratory species over their normal expected
-lifespan by 100 percent. Europium is found
+Europium has extended the life of laboratory species over their normal expected lifespan by 100 percent. Europium is found
 in higher concentration in breast milk from
 women in third world countries than in
 American women.

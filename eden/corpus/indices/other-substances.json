@@ -1,4 +1,17 @@
 {
+  "cadmium": {
+    "display_name": "Cadmium",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000143"
+      ]
+    },
+    "conditions_treated": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "fluoride": {
     "display_name": "Fluoride",
     "claim_count": 2,
@@ -14,6 +27,23 @@
       "liver_cancer",
       "osteosarcoma",
       "thyroid_cancer"
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "mercury": {
+    "display_name": "Mercury",
+    "claim_count": 3,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000137",
+        "WAL-CLM-RARE-000138",
+        "WAL-CLM-RARE-000139"
+      ]
+    },
+    "conditions_treated": [
+      "minamata_disease"
     ],
     "books_cited": [
       "rare-earths"

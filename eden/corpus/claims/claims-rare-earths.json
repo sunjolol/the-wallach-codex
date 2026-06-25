@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811657
+        "char_offset": 811651
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811859
+        "char_offset": 811853
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811421
+        "char_offset": 811415
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 766392
+        "char_offset": 766390
       },
       "dose": {
         "amount": "250-400",
@@ -3810,7 +3810,7 @@
         "page": 304,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 759383
+        "char_offset": 759381
       },
       "dose": null,
       "tags": [
@@ -3845,7 +3845,7 @@
         "page": 304,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 759898
+        "char_offset": 759896
       },
       "dose": null,
       "tags": [
@@ -3881,7 +3881,7 @@
         "page": 305,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 761270
+        "char_offset": 761268
       },
       "dose": null,
       "tags": [
@@ -3919,7 +3919,7 @@
         "page": 306,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 766009
+        "char_offset": 766007
       },
       "dose": null,
       "tags": [
@@ -3971,7 +3971,7 @@
         "page": 306,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 767247
+        "char_offset": 767245
       },
       "dose": null,
       "tags": [
@@ -4008,7 +4008,7 @@
         "page": 307,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 768746
+        "char_offset": 768744
       },
       "dose": null,
       "tags": [
@@ -4045,7 +4045,7 @@
         "page": 307,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 769752
+        "char_offset": 769750
       },
       "dose": null,
       "tags": [
@@ -4080,7 +4080,7 @@
         "page": 315,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 779158
+        "char_offset": 779156
       },
       "dose": null,
       "tags": [
@@ -4117,7 +4117,7 @@
         "page": 315,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 780381
+        "char_offset": 780379
       },
       "dose": null,
       "tags": [
@@ -4152,7 +4152,7 @@
         "page": 316,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 782423
+        "char_offset": 782421
       },
       "dose": null,
       "tags": [
@@ -4205,7 +4205,7 @@
         "page": 315,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 779279
+        "char_offset": 779277
       },
       "dose": null,
       "tags": [
@@ -4244,7 +4244,7 @@
         "page": 315,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 779992
+        "char_offset": 779990
       },
       "dose": null,
       "tags": [
@@ -4279,7 +4279,7 @@
         "page": 314,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 776236
+        "char_offset": 776234
       },
       "dose": null,
       "tags": [
@@ -4317,7 +4317,7 @@
         "page": 314,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 777661
+        "char_offset": 777659
       },
       "dose": null,
       "tags": [
@@ -4512,7 +4512,7 @@
         "page": 329,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 800840
+        "char_offset": 800834
       },
       "dose": null,
       "tags": [
@@ -4547,7 +4547,7 @@
         "page": 329,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 801131
+        "char_offset": 801125
       },
       "dose": null,
       "tags": [
@@ -4584,7 +4584,7 @@
         "page": 330,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 803048
+        "char_offset": 803042
       },
       "dose": null,
       "tags": [
@@ -4621,7 +4621,7 @@
         "page": 329,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 797923
+        "char_offset": 797917
       },
       "dose": null,
       "tags": [
@@ -4661,7 +4661,7 @@
         "page": 329,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 799239
+        "char_offset": 799233
       },
       "dose": null,
       "tags": [
@@ -4675,6 +4675,330 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T07:23:34+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000135",
+      "kind": "mechanism",
+      "essentials": [
+        "hydrogen"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "acidosis",
+        "alkalosis"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach explains hydrogen is a major constituent of water (70% of the human body) and of all organic molecules, and that acid-base balance is in fact the regulation of hydrogen-ion (H+) levels. The pH of healthy blood ranges from 7.36 to 7.44 — below 7.30 is acidosis, above 7.44 is alkalosis — and a blood pH below 6.8 or above 7.8 is rapidly fatal.",
+      "verbatim": "The pH of healthy blood ranges from 7.36\nto 7.44; when the pH falls below 7.30, the\npatient has acidosis and when the pH rises\nabove 7.44, the person has alkalosis.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 335,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 813073
+      },
+      "dose": null,
+      "tags": [
+        "hydrogen",
+        "ph",
+        "acid-base",
+        "acidosis",
+        "alkalosis"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:30:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000136",
+      "kind": "protocol",
+      "essentials": [
+        "hydrogen"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cystitis",
+        "urinary_tract_infection"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach notes that bladder infections (cystitis) can often be controlled by acidifying the urine with unsweetened cranberry juice.",
+      "verbatim": "Bladder infections (cystitis) can often times\nbe controlled by acidifying the urine with\nunsweatened cranberry juice.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 336,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 815049
+      },
+      "dose": null,
+      "tags": [
+        "hydrogen",
+        "ph",
+        "cystitis",
+        "cranberry-juice",
+        "urine-acidification"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:30:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000137",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "mercury"
+      ],
+      "conditions": [
+        "minamata_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach reports that the biological half-life of methylmercury in humans is 70 days versus 4 days for inorganic mercury, and that while the placenta blocks inorganic mercury it does NOT block methylmercury — which transfers easily to the fetus (congenital Minamata disease). Methylmercury is the form found in fish: rare fish-eaters carry 2-5 micrograms/kg, moderate consumers about 10 micrograms/kg, and high consumers of shark, tuna, or swordfish up to 400 micrograms/kg.",
+      "verbatim": "The placenta acts as\na barrier against the passage of inorganic\nmercury but not methyl mercury; methyl\nmercury transfers very easily to the fetus",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 337,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 817208
+      },
+      "dose": null,
+      "tags": [
+        "mercury",
+        "methylmercury",
+        "fish",
+        "minamata",
+        "placental-transfer"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:30:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000138",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "mercury"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach cites a striking experiment on mercury and antibiotic resistance: mercury vapor from dental amalgam increased the percentage of antibiotic-resistant bacteria in the gut from 9% to 70% in monkeys given dental mercury fillings, and the drug-resistant bacterial population dropped back to 12% once the fillings were removed.",
+      "verbatim": "Mercury vapor from dental amalgam\nhas been shown to increase the percent of\nantibiotic resistant bacteria in the gut from\n9 percent to 70 percent in monkeys given\ndental mercury fillings; the drug resistant\nbacterial population dropped to 12 percent\nwhen the fillings were removed.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 337,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 818096
+      },
+      "dose": null,
+      "tags": [
+        "mercury",
+        "amalgam",
+        "antibiotic-resistance",
+        "gut-bacteria",
+        "dental"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:30:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000139",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "mercury"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach recounts mercury's history as a vapor toxin: Victorian 'hatters' who used mercuric-nitrate paste on felt hats developed mercury poisoning ('mad as a hatter,' from Alice in Wonderland), as did goldsmiths and mirror workers; in modern times dentists have developed mental disease from chronic mercury-vapor exposure and have the highest suicide rate among all health professionals.",
+      "verbatim": "in modern times dentists\nhave developed mental disease from\nchronic exposure to mercury vapors (they\nhave the highest rate of suicide amongst all\nthe health professionals)",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 337,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 818637
+      },
+      "dose": null,
+      "tags": [
+        "mercury",
+        "occupational",
+        "mad-as-a-hatter",
+        "dentists",
+        "vapor"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:30:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000140",
+      "kind": "mechanism",
+      "essentials": [
+        "europium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports that europium has extended the lifespan of laboratory species 100 percent beyond their normal expected lifespan, and notes europium is found in higher concentration in the breast milk of women in third-world countries than in American women.",
+      "verbatim": "Europium has extended the life of laboratory species over their normal expected lifespan by 100 percent.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 327,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 793127
+      },
+      "dose": null,
+      "tags": [
+        "europium",
+        "longevity",
+        "lifespan",
+        "rare-earth",
+        "breast-milk"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:41:32+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000141",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "menkes_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach describes Menkes' Kinky Hair Syndrome — thought to be a sex-linked recessive defect of copper absorption — in which affected infants show retarded growth, defective keratin formation and loss of hair pigment, low body temperature, degeneration and fracture of aortic elastin (aneurysms), arthritis in the growth plate of long bones, and progressive mental deterioration (the brain is left free of the essential enzyme cytochrome c oxidase). Because metallic copper is poorly absorbed, copper injections are useful.",
+      "verbatim": "The affected infants exibit retarded growth, defective keratin formation and loss of hair pigment, low body temperature, degeneration and fracture of aortic elastin (aneurysms), arthritis in the growth plate of long bones,",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 327,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 791670
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "menkes",
+        "kinky-hair-syndrome",
+        "congenital",
+        "cytochrome-c-oxidase"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:41:32+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000142",
+      "kind": "mechanism",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach notes serum and plasma copper rise 100 percent in pregnant women and in women using oral contraceptives, and are also elevated during acute infections, liver disease, and pellagra (niacin deficiency); accumulations of copper in the cornea form Kayser-Fleischer rings.",
+      "verbatim": "Serum and plasma copper increase 100\n% in pregnant women and women using\noral contraceptives.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 327,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 792099
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "serum-copper",
+        "pregnancy",
+        "kayser-fleischer",
+        "oral-contraceptives"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:41:32+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000143",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "cadmium"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In the per-element catalog Wallach records that cadmium accumulates in the kidney, has a biological function stimulating the hatching of nematode (worm) cysts, and that cadmium-binding proteins have been isolated from molluscs and horse kidney. (Wallach treats cadmium primarily as a toxic metal that displaces zinc, copper, calcium, and selenium.)",
+      "verbatim": "Functions by stimulating the hatching of nematode cysts (worms). Cadmium bound proteins have been isolated from molluscs and the horse kidney.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 304,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 758991
+      },
+      "dose": null,
+      "tags": [
+        "cadmium",
+        "kidney-accumulation",
+        "cadmium-binding-protein",
+        "toxic-metal"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:41:32+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

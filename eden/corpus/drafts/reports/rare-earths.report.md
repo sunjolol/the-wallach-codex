@@ -1,21 +1,28 @@
 # Extraction report — rare-earths (Rare Earths: Forbidden Cures)
 
-_2 claim(s) drafted 2026-06-25T07:23:34+00:00. Review then run corpus_seal.py to promote._
+_4 claim(s) drafted 2026-06-25T07:41:32+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: mechanism×2
+Kinds: deficiency_sign×1, mechanism×3
 
-### WAL-CLM-RARE-000133 · mechanism
-- **essentials:** — · **conditions:** dental_fluorosis · **symptoms:** —
-- **claim:** Wallach gives fluoride's toxicity thresholds: clinical toxicity appears as dental fluorosis at fluoride concentrations of 2–7 ppm and osteosclerosis at 8–20 ppm, with chronic systemic toxicity when fluoride levels reach 20–80 mg per day for years. (About 10,000 American towns serving 100 million people fluoridate water at 1 mg/L, reportedly cutting dental cavities 60–70%, while some western states have a natural fluoride excess of 10–45 ppm that mottles children's teeth.)
-- **verbatim** (offset 797923): “Clinical toxicity is observed as dental
-flourosis at flouride concentrations of 2 to7
-ppm and osteosclerosis at 8 to 20 ppm;
-chronic systemic toxicity appears when the
-flouride levels reach 20 to 80 mg per day
-for years.”
+### WAL-CLM-RARE-000140 · mechanism
+- **essentials:** europium · **conditions:** — · **symptoms:** —
+- **claim:** Wallach reports that europium has extended the lifespan of laboratory species 100 percent beyond their normal expected lifespan, and notes europium is found in higher concentration in the breast milk of women in third-world countries than in American women.
+- **verbatim** (offset 793127): “Europium has extended the life of laboratory species over their normal expected lifespan by 100 percent.”
 
-### WAL-CLM-RARE-000134 · mechanism
-- **essentials:** — · **conditions:** cancer, osteosarcoma, thyroid_cancer, liver_cancer · **symptoms:** —
-- **claim:** Wallach cites the cancer evidence against fluoridation: epidemiological studies by Yiamouyiannis and Burk (1977) prompted congressional hearings over a charge of 10,000 excess cancer deaths from fluoridated water, leading to mandated animal studies. The 1990 National Toxicology Program results showed increased precancerous oral-mucosa cells, oral squamous-cell carcinoma, a rare osteosarcoma at double the rate in males versus females, and increased thyroid follicular-cell tumors and liver cancer.
-- **verbatim** (offset 799239): “there was an increase in cancers of the oral mucus membranes (squamous cell carcinoma); a rare form of osteosarcoma appeared at double the rate in males as females”
+### WAL-CLM-RARE-000141 · deficiency_sign
+- **essentials:** copper · **conditions:** menkes_disease · **symptoms:** —
+- **claim:** Wallach describes Menkes' Kinky Hair Syndrome — thought to be a sex-linked recessive defect of copper absorption — in which affected infants show retarded growth, defective keratin formation and loss of hair pigment, low body temperature, degeneration and fracture of aortic elastin (aneurysms), arthritis in the growth plate of long bones, and progressive mental deterioration (the brain is left free of the essential enzyme cytochrome c oxidase). Because metallic copper is poorly absorbed, copper injections are useful.
+- **verbatim** (offset 791670): “The affected infants exibit retarded growth, defective keratin formation and loss of hair pigment, low body temperature, degeneration and fracture of aortic elastin (aneurysms), arthritis in the growth plate of long bones,”
+
+### WAL-CLM-RARE-000142 · mechanism
+- **essentials:** copper · **conditions:** — · **symptoms:** —
+- **claim:** Wallach notes serum and plasma copper rise 100 percent in pregnant women and in women using oral contraceptives, and are also elevated during acute infections, liver disease, and pellagra (niacin deficiency); accumulations of copper in the cornea form Kayser-Fleischer rings.
+- **verbatim** (offset 792099): “Serum and plasma copper increase 100
+% in pregnant women and women using
+oral contraceptives.”
+
+### WAL-CLM-RARE-000143 · mechanism
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** In the per-element catalog Wallach records that cadmium accumulates in the kidney, has a biological function stimulating the hatching of nematode (worm) cysts, and that cadmium-binding proteins have been isolated from molluscs and horse kidney. (Wallach treats cadmium primarily as a toxic metal that displaces zinc, copper, calcium, and selenium.)
+- **verbatim** (offset 758991): “Functions by stimulating the hatching of nematode cysts (worms). Cadmium bound proteins have been isolated from molluscs and the horse kidney.”
 

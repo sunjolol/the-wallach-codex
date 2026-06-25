@@ -1,4 +1,20 @@
 {
+  "acidosis": {
+    "display_name": "Acidosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000135"
+      ]
+    },
+    "essentials_involved": [
+      "hydrogen"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "adhd": {
     "display_name": "Adhd",
     "claim_count": 1,
@@ -9,6 +25,22 @@
     },
     "essentials_involved": [
       "chromium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "alkalosis": {
+    "display_name": "Alkalosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000135"
+      ]
+    },
+    "essentials_involved": [
+      "hydrogen"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -913,6 +945,22 @@
       "rare-earths"
     ]
   },
+  "cystitis": {
+    "display_name": "Cystitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-RARE-000136"
+      ]
+    },
+    "essentials_involved": [
+      "hydrogen"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "dental_fluorosis": {
     "display_name": "Dental Fluorosis",
     "claim_count": 1,
@@ -1549,6 +1597,22 @@
       "dddl-3e-2011"
     ]
   },
+  "menkes_disease": {
+    "display_name": "Menkes Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000141"
+      ]
+    },
+    "essentials_involved": [
+      "copper"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "menopause": {
     "display_name": "Menopause",
     "claim_count": 4,
@@ -1572,6 +1636,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "minamata_disease": {
+    "display_name": "Minamata Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000137"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "mercury"
+    ],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "miscarriage": {
@@ -2113,6 +2193,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "urinary_tract_infection": {
+    "display_name": "Urinary Tract Infection",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-RARE-000136"
+      ]
+    },
+    "essentials_involved": [
+      "hydrogen"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "uterine_cancer": {
