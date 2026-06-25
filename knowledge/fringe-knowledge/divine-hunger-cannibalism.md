@@ -67,11 +67,13 @@ pushed to an extreme, off-mission claim.
 ---
 
 ## Cross-reference
-Chapter 5 overlaps the crime-thesis material already filed in
-[`criminal-behavior.md`](criminal-behavior.md): **Ed Gein** and **Waneta Hoyt** appear in
-both (Ch.5 frames them as "vampires/werewolves," Ch.6 "The Verdict" as the mineral-deficiency
-→ serial-killer thesis). Both chapters are excluded for the same reasons; this file is the
-fuller "Divine Hunger" framing, that file is the Ch.6 "Verdict" framing.
+**Ed Gein** and **Waneta Hoyt** appear in **this** chapter (Ch.5 "Divine Hunger,"
+framed as "vampires / werewolves") and are also filed in
+[`criminal-behavior.md`](criminal-behavior.md) as criminal-behavior claims. (An earlier
+catalog mislabeled their location as a chapter "Ch.6 'The Verdict'"; there is no such
+chapter — a direct read of the scanned PDF shows Chapter 6 is "The Bad Seeds: The Jekyll
+and Hyde Syndrome," which has its own entry in `criminal-behavior.md`.) Both are excluded
+for the same reasons; this file carries the fuller "Divine Hunger" framing.
 
 _Locator: Rare Earths Ch.5, pp. 59–84 (PDF idx 80–105). Read via the PDF text layer only
 (graphic content not rendered as images). Appended to, never pruned._

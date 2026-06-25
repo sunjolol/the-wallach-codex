@@ -291,11 +291,15 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 9,
+    "claim_count": 11,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
-        "WAL-CLM-RARE-000039"
+        "WAL-CLM-RARE-000039",
+        "WAL-CLM-RARE-000042"
+      ],
+      "mechanism": [
+        "WAL-CLM-RARE-000043"
       ],
       "personal_anecdote": [
         "WAL-CLM-DDDL-000008"
@@ -313,7 +317,18 @@
         "WAL-CLM-DDDL-000078"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "allergic_shiners",
+        "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high"
+      },
+      {
+        "sign": "geographic_tongue",
+        "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
       "anxiety",
       "coronary_artery_disease",
@@ -323,10 +338,12 @@
     ],
     "interacts_with": [
       "calcium",
+      "lithium",
       "magnesium",
       "vanadium",
       "vitamin-b3",
-      "vitamin-b6"
+      "vitamin-b6",
+      "zinc"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -662,15 +679,17 @@
     "display_name": "Vanadium",
     "canon_slug": "vanadium",
     "category": "mineral",
-    "claim_count": 10,
+    "claim_count": 12,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
-        "WAL-CLM-RARE-000039"
+        "WAL-CLM-RARE-000039",
+        "WAL-CLM-RARE-000042"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000034",
-        "WAL-CLM-DDDL-000036"
+        "WAL-CLM-DDDL-000036",
+        "WAL-CLM-RARE-000043"
       ],
       "personal_anecdote": [
         "WAL-CLM-DDDL-000008"
@@ -687,7 +706,18 @@
         "WAL-CLM-DDDL-000047"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "allergic_shiners",
+        "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high"
+      },
+      {
+        "sign": "geographic_tongue",
+        "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
       "anxiety",
       "cancer",
@@ -699,9 +729,11 @@
     "interacts_with": [
       "calcium",
       "chromium",
+      "lithium",
       "magnesium",
       "vitamin-b3",
-      "vitamin-b6"
+      "vitamin-b6",
+      "zinc"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -712,13 +744,14 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 14,
+    "claim_count": 15,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
         "WAL-CLM-DDDL-000042",
         "WAL-CLM-DDDL-000077",
-        "WAL-CLM-DDDL-000079"
+        "WAL-CLM-DDDL-000079",
+        "WAL-CLM-RARE-000042"
       ],
       "interaction": [
         "WAL-CLM-DDDL-000040"
@@ -738,6 +771,16 @@
       ]
     },
     "deficiency_signs": [
+      {
+        "sign": "allergic_shiners",
+        "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high"
+      },
+      {
+        "sign": "geographic_tongue",
+        "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high"
+      },
       {
         "sign": "loss_of_smell",
         "claim_id": "WAL-CLM-DDDL-000077",
@@ -760,11 +803,13 @@
     ],
     "interacts_with": [
       "arginine",
+      "chromium",
       "copper",
       "germanium",
       "iron",
       "lithium",
       "selenium",
+      "vanadium",
       "vitamin-a",
       "vitamin-b12",
       "vitamin-b2",
@@ -986,20 +1031,38 @@
     "display_name": "Lithium",
     "canon_slug": "lithium",
     "category": "mineral",
-    "claim_count": 2,
+    "claim_count": 5,
     "claims_by_kind": {
       "deficiency_sign": [
-        "WAL-CLM-DDDL-000079"
+        "WAL-CLM-DDDL-000079",
+        "WAL-CLM-RARE-000042"
       ],
       "definition": [
         "WAL-CLM-RARE-000029"
+      ],
+      "mechanism": [
+        "WAL-CLM-RARE-000041",
+        "WAL-CLM-RARE-000043"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "allergic_shiners",
+        "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high"
+      },
+      {
+        "sign": "geographic_tongue",
+        "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
       "anorexia"
     ],
     "interacts_with": [
+      "chromium",
+      "vanadium",
       "zinc"
     ],
     "books_cited": [

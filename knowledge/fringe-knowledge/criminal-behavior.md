@@ -19,11 +19,14 @@ Summary: Wallach cites two Biosphere II participants breaking into sealed record
 after their two-year low-calorie confinement as "criminal behavior."
 > "In addition, two of the Biospherians a short time after their scheduled exit from the dome illegally broke into steal records- criminal behavior!"
 
-### Ch.6 "The Verdict" — mineral deficiency → violent / criminal behavior
-Wallach's most fringe thesis: that violent crime and serial murder are downstream
-of mineral deficiency, illustrated with two killers. Fringe + unfalsifiable +
-reputationally toxic for a health app; off-mission (criminology, not nutrient
-coverage).
+### Ch.5 "Divine Hunger" (pp. 59–84 / PDF idx 80–105) — Ed Gein & Waneta Hoyt
+**Locator correction (2026-06-24):** these two cases were previously filed here under a
+phantom heading "Ch.6 'The Verdict'." A direct read of the scanned PDF shows there is **no
+chapter by that name** — Ed Gein and Waneta Hoyt appear in **Chapter 5 "Divine Hunger"**
+(the cannibalism / vampire / werewolf thesis), and the real Chapter 6 is "The Bad Seeds"
+(see below). Both cases are recorded more fully in
+[`divine-hunger-cannibalism.md`](divine-hunger-cannibalism.md); kept here too because they
+are also squarely criminal-behavior claims.
 
 - **Ed Gein (cannibalism as mineral-deficiency pica).** Summary: Wallach claims
   Gein's depleted-farm diet caused severe mineral deficiencies that "probably
@@ -39,8 +42,49 @@ coverage).
 - **General thesis.** Wallach frames "remineralizing our younger generation" as
   the answer to crime, vs jails / police / Prozac / psychiatrists.
 
+### Ch.6 "The Bad Seeds": The Jekyll and Hyde Syndrome (pp. 85–122 / PDF idx 106–143)
+**Whole-chapter fringe** (Luneth ruling, 2026-06-24). The chapter argues that violent
+crime, serial murder, mass shootings, arson and juvenile sociopathy are caused by mineral
+deficiency (chromium, vanadium, lithium) plus high-sugar diets — the "Dr. Jekyll and Mr.
+Hyde" / "Bad Seed" thesis. It is built almost entirely from graphic serial-killer
+biographies (Dahmer, Berkowitz / "Son of Sam," the Menendez brothers, the James Bulger
+killers, Charles Whitman, the Killeen Luby's massacre, serial postal-worker shootings),
+~15 reproduced full-page newspaper crime clippings, and racially-framed crime statistics.
+Off-mission, unfalsifiable, and reputationally toxic for a nutrient-coverage app, so
+excluded from the corpus + dashboard. Graphic case detail is **summarized, not
+reproduced**; the thesis verbatims below are what matter for study.
+
+**Salvaged (NOT fringe):** by Luneth's ruling, three *general* deficiency claims embedded in
+this chapter were extracted into the sealed corpus as **WAL-CLM-RARE-000041..043** — the
+Schrauzer lithium-in-drinking-water study, the Fig. 6-3 deficiency signs (allergic shiners
+→ Cr/V/Li; "geographic" tongue → B-vitamins/Zn), and the infant-formula-vs-pet-food mineral
+comparison. Only the crime thesis itself is held here.
+
+- **The core thesis.**
+  > "The “Dr. Jekyll and Mr. Hyde” Syndrome is very descriptive of children, teens or adults who at one moment turn from being “little angels” and the “salts of the earth” to little monsters, sociopathic rebellious teens ( many of whom in their rage assault or kill friends, siblings and parents) and abusive adults who hurt or kill their spouse or children."
+
+- **Hypoglycemia → loss of "civilized social restraints."**
+  > "While you are awake the brain low in fuel is very irritable, explosively reactive and can be very vicious because there are no longer any civilized social restraints which translates into Dr. Jekyll and Mr.Hyde explosive behavior, violence and today more frequently homicide."
+
+- **Mass-murderer "early warning signs" recast as deficiency symptoms** (the enuresis / fire-setting / animal-cruelty triad).
+  > "Adult mass murderers have identical sociopathic backgrounds and histories of “explosive rages” - they have histories of fire setting, cruelty to animals and other children, bed-wetting, pants-wetting and nightmares. All of the early warning signs of the mass murderer are classic symptoms of chromium and vanadium deficiency (hypoglycemia), copper deficiency or a lithium deficiency aggravated by a high sugar diet."
+
+- **Conclusion — "no conscience" from mineral deficiency; jails "filled with Bad Seeds."**
+  > "Our jails and mental hospitals are filled with “Bad Seeds,” these sociopathic souls are people, who in their mineral deficient states have no human feelings of compassion or respect of life - no conscience!!!!"
+
+- **The "answer."** Remineralization (a sugar-free diet + the 90 nutrients), not jails,
+  police, Prozac or psychiatrists; cites McCarrison's Hunza rat experiments and the claim
+  that "the highly mineralized Hunza have no jails or criminals," and recasts Easter
+  Island's collapse as soil-depletion-driven cannibalism between warring clans. The
+  crime-framed lithium recommendation (the neutral study-finding is what was salvaged to the
+  corpus):
+  > "We would like to see lithium placed in our community drinking water to help control crime instead of fluoride which has produced cancer in laboratory animals!!!"
+
 ---
 
-_Locators are page/chapter-based (durable across re-OCR). Appended to, never pruned.
-The Ch.6 verbatims were migrated from the prior `chronicle/wallach-fringe-excluded.md`
-catalog (OCR line refs ~7946 / ~7967 / ~7977-7982 at migration time)._
+_Locators are page/chapter-based (durable across re-OCR). Appended to + corrected, never
+pruned. The Preface + Ch.5 verbatims were migrated from the prior
+`chronicle/wallach-fringe-excluded.md` catalog (OCR line refs ~7946 / ~7967 / ~7977-7982 at
+migration time); the Ch.5 mislabel ("Ch.6 'The Verdict'") was corrected on 2026-06-24
+against a direct read of the scanned PDF, and the real Ch.6 "The Bad Seeds" was added the
+same day._

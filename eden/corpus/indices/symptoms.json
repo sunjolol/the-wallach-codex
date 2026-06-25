@@ -14,6 +14,39 @@
       "dddl-3e-2011"
     ]
   },
+  "allergic_shiners": {
+    "display_name": "Allergic Shiners",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "chromium",
+        "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "lithium",
+        "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vanadium",
+        "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "zinc",
+        "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "easy_bruising": {
     "display_name": "Easy Bruising",
     "claim_count": 1,
@@ -33,6 +66,39 @@
     ],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "geographic_tongue": {
+    "display_name": "Geographic Tongue",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "chromium",
+        "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "lithium",
+        "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vanadium",
+        "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "zinc",
+        "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "gray_hair": {
