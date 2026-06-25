@@ -6320,6 +6320,109 @@
       "extracted_at": "2026-06-25T17:48:54+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000179",
+      "kind": "definition",
+      "essentials": [
+        "molybdenum"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach states molybdenum is essential to all organisms as a constituent of numerous metalloenzymes.",
+      "verbatim": "Molybdenum is essential to all organisms as a constituent of numerous metalloenzymes.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 352,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 851973
+      },
+      "dose": null,
+      "tags": [
+        "molybdenum",
+        "essentiality",
+        "metalloenzyme"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T17:54:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000180",
+      "kind": "dose",
+      "essentials": [
+        "molybdenum"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach notes the average American's daily molybdenum intake from food ranges from 76 to 109 mcg, while the RDA for molybdenum is 250 mcg per day.",
+      "verbatim": "The average American daily intake in food ranges from 76 to 109 mcg per day - the RDA for Mo is 250 mcg per day.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 352,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 852203
+      },
+      "dose": null,
+      "tags": [
+        "molybdenum",
+        "intake",
+        "rda"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T17:54:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000181",
+      "kind": "contraindication",
+      "essentials": [
+        "molybdenum",
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "gout"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach reports molybdenum toxicity occurs at 10 mg per day, producing a gout-like disease and interfering with copper metabolism.",
+      "verbatim": "Toxicity occurs at 10 mg per day as a gout-like disease and interference with copper metabolism.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 352,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 852317
+      },
+      "dose": null,
+      "tags": [
+        "molybdenum",
+        "toxicity",
+        "gout",
+        "copper"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T17:54:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

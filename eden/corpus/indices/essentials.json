@@ -567,8 +567,11 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 19,
+    "claim_count": 20,
     "claims_by_kind": {
+      "contraindication": [
+        "WAL-CLM-RARE-000181"
+      ],
       "deficiency_sign": [
         "WAL-CLM-DDDL-000003",
         "WAL-CLM-RARE-000141"
@@ -623,6 +626,7 @@
       "diabetes",
       "explosive_outbursts",
       "goiter",
+      "gout",
       "hernia",
       "high_cholesterol",
       "hypertension",
@@ -645,6 +649,7 @@
       "iron",
       "lithium",
       "magnesium",
+      "molybdenum",
       "selenium",
       "sodium",
       "vanadium",
@@ -950,17 +955,31 @@
     "display_name": "Molybdenum",
     "canon_slug": "molybdenum",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 4,
     "claims_by_kind": {
+      "contraindication": [
+        "WAL-CLM-RARE-000181"
+      ],
+      "definition": [
+        "WAL-CLM-RARE-000179"
+      ],
+      "dose": [
+        "WAL-CLM-RARE-000180"
+      ],
       "mechanism": [
         "WAL-CLM-DDDL-000028"
       ]
     },
     "deficiency_signs": [],
-    "conditions_treated": [],
-    "interacts_with": [],
+    "conditions_treated": [
+      "gout"
+    ],
+    "interacts_with": [
+      "copper"
+    ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "selenium": {

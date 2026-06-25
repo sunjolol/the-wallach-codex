@@ -1298,6 +1298,23 @@
       "rare-earths"
     ]
   },
+  "gout": {
+    "display_name": "Gout",
+    "claim_count": 1,
+    "claims_by_role": {
+      "contraindications": [
+        "WAL-CLM-RARE-000181"
+      ]
+    },
+    "essentials_involved": [
+      "copper",
+      "molybdenum"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "graves_disease": {
     "display_name": "Graves Disease",
     "claim_count": 1,

@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_76 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_77 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-25 13:55 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 30 — Rare Earths catalog: Mo/Molybdenum, 3 claims (essentiality/metalloenzyme, intake+RDA, toxicity/gout/copper). kv 67→68, corpus 275.
+  ↳ Molybdenum RARE-179..181 (catalog fundamentals; the 3 essential enzymes xanthine/aldehyde/sulfite oxidase were already DDDL-028, not duplicated): essential to all organisms as a constituent of numerous metalloenzymes; average American food intake 76-109 mcg/day, RDA 250 mcg/day; toxicity at 10 mg/day = gout-like disease + interferes with copper metabolism. The stray Table 11-20 (Nitrogen/Protein Utilization Values of Common Foods) that floated into the Mo column was converted to a figure marker and added to the deferred-tables task (protein chemical-score ranking egg->wheat not yet extracted). OCR fixes: constituant->constituent, ozidase->oxidase, rejoined the Mo ppm line split by the page-marker+table intrusion. Gates: corpus_verify PASS (6 books), build OK, invariants 30/30, knowledge probe 0 errors. NEXT: N/Nitrogen.
 
 ## 2026-06-25 13:51 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 29 — Rare Earths catalog: Mn/Manganese, 5 claims (essentiality+enzymes, excess→Parkinsonian/schizophrenia, Table 11-19 deficiency diseases, RMS economic burden, RMS=Mn-deficiency thesis). kv 66→67, corpus 272.
