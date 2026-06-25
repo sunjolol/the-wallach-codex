@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811691
+        "char_offset": 811679
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811893
+        "char_offset": 811881
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811455
+        "char_offset": 811443
       },
       "dose": null,
       "tags": [
@@ -1318,7 +1318,10 @@
         "lithium"
       ],
       "other_substances": [],
-      "conditions": [],
+      "conditions": [
+        "violent_behavior",
+        "criminal_behavior"
+      ],
       "symptoms": [],
       "claim_text": "Lithium has measurable mood- and behavior-moderating effects even at the trace levels found in municipal drinking water. A study of 27 Texas counties (1978–1987) by Dr. Gerhard Schrauzer found significantly higher rates of suicide, homicide and rape in counties whose water contained little or no lithium than in those with water-lithium levels of 70–170 µg/L; Wallach argues lithium, not fluoride, belongs in community drinking water.",
       "verbatim": "These results suggest that lithium has moderating effects on suicidal and violent criminal behavior at levels that may be encountered in municipal water supplies.",
@@ -3952,10 +3955,14 @@
         "bipolar_disorder",
         "peripheral_neuropathy",
         "coronary_artery_disease",
-        "infertility"
+        "infertility",
+        "violent_behavior",
+        "blind_rage",
+        "explosive_outbursts",
+        "criminal_behavior"
       ],
       "symptoms": [],
-      "claim_text": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency (Table 11-12) produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
+      "claim_text": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency (Table 11-12) produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "verbatim": "Chromium activates phosphoglucosonetase and other enzymes and is tightly associated with GTF (glucose tolerance factor",
       "locator": {
         "book": "rare-earths",
@@ -3973,7 +3980,8 @@
         "diabetes",
         "mental-health",
         "cardiovascular",
-        "deficiency"
+        "deficiency",
+        "behavioral-rage"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -4051,6 +4059,438 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T06:33:04+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000119",
+      "kind": "mechanism",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach states copper is essential to all living organisms and is a universally important cofactor for many hundreds of metalloenzymes. Copper is required for RNA and DNA, as the lysyl-oxidase cofactor, for melanin production (hair and skin pigment), for electron transfer in oxygen-based subcellular respiration, and for the tensile strength of the elastic fibers in blood vessels, skin, and vertebral discs.",
+      "verbatim": "Copper is essential to all living organisms and is a universally important cofactor for many hundreds of metalloenzynes.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 315,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 779158
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "essential",
+        "metalloenzymes",
+        "lysyl-oxidase",
+        "melanin"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:50:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000120",
+      "kind": "mechanism",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "aneurysm"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach explains copper deficiency reduces lysyl-oxidase activity, lowering the conversion of pro-elastin to elastin and weakening the tensile strength of arterial walls — producing ruptured aneurysms. He notes probable copper-deficiency deaths (Albert Einstein and Paavo Airola from ruptured cerebral aneurysms; Conway Twitty from a ruptured abdominal aortic aneurysm), and that four to six of every 100 Americans autopsied have died of a ruptured aneurysm, with another 40 percent carrying aneurysms that had not yet ruptured.",
+      "verbatim": "four to\nsix of every 100 Americans autopsied have\ndied of a ruptured aneurysm, an additional\n40 percent have aneurysms that had not\nyet ruptured.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 315,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 780381
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "aneurysm",
+        "lysyl-oxidase",
+        "elastin",
+        "cardiovascular"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:50:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000121",
+      "kind": "mechanism",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports that the gray, white, or silver hair of copper deficiency can be reversed: a figure in the book (Fig. 11-7) shows normal hair color returning six months after supplementing with colloidal copper.",
+      "verbatim": "Normal color\nreturned six months after supplementing with colloidal copper.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 316,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 782423
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "gray-hair",
+        "reversal",
+        "colloidal-copper",
+        "melanin"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:50:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000122",
+      "kind": "definition",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "aneurysm",
+        "varicose_veins",
+        "hernia",
+        "thyroid_disease",
+        "arthritis",
+        "liver_cirrhosis",
+        "learning_disabilities",
+        "cerebral_palsy",
+        "anemia",
+        "neutropenia",
+        "high_cholesterol",
+        "hypoglycemia",
+        "kawasaki_disease",
+        "violent_behavior",
+        "blind_rage",
+        "explosive_outbursts",
+        "criminal_behavior"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach lists copper deficiency as widespread and appearing in many forms (Table 11-13): white, gray, and dry brittle hair; ptosis (sagging tissue); congenital and acquired hernias; varicose veins; aneurysms (including cerebral); Kawasaki disease; anemia (especially on vegan and high-milk diets); hypo- and hyperthyroid; arthritis; ruptured vertebral disc; liver cirrhosis; learning disabilities; violent behavior, blind rage, explosive outbursts and criminal behavior; cerebral palsy and hypoplasia of the cerebellum (congenital ataxia); high blood cholesterol; iron-storage disease; reduced glucose tolerance (low blood sugar); and neutropenia.",
+      "verbatim": "Copper deficiency is widespread and appears in many forms (Table 11 -13).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 315,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 779279
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "deficiency",
+        "table-11-13",
+        "aneurysm",
+        "gray-hair",
+        "behavioral-rage"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:50:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000123",
+      "kind": "mechanism",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cerebral_palsy",
+        "congenital_ataxia"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach traces congenital brain damage to copper deficiency in pregnancy: neonatal enzootic ataxia ('sway back') was recognized in 1937 as a copper deficiency in pregnant sheep, producing demyelination of the cerebellum and spinal cord, cavitation of cerebral white matter, nerve-cell death, and failure of myelin to form — changes identical to human cerebral palsy and hypoplasia of the cerebellum (congenital ataxia).",
+      "verbatim": "nerve cell death and myelin\naplasia (failure to form). These are all\nchanges identical with human cerebral\npalsy.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 315,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 779992
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "cerebral-palsy",
+        "congenital",
+        "demyelination",
+        "pregnancy"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:50:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000124",
+      "kind": "mechanism",
+      "essentials": [
+        "chromium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach cites Gary Evans of Bemidji State University, Minnesota, who showed a 33.3 percent increase in the lifespan of laboratory animals supplemented with chromium — challenging the prior gerontology view (led by Roy Walford) that severe calorie restriction was the only way to extend life beyond the average.",
+      "verbatim": "Gary Evans, Bemidji State University, Minnesota, very clearly showed an increased life span in laboratory animals by 33.3 per cent when they were supplemented with chromium.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 314,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 776236
+      },
+      "dose": null,
+      "tags": [
+        "chromium",
+        "longevity",
+        "lifespan",
+        "gary-evans",
+        "anti-aging"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T06:50:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000125",
+      "kind": "protocol",
+      "essentials": [
+        "cesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cancer",
+        "colorectal_cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach reports cesium chloride is used in alternative cancer therapy as a 'high-pH therapy': as an alkaline mineral that behaves chemically like sodium, potassium, and rubidium, cesium enters the cancer cell and produces an alkaline environment. It has been recommended for all types of cancer including sarcomas, bronchogenic carcinoma, and colon cancer. (Supplemental potassium increases the rate of cesium excretion.)",
+      "verbatim": "It has been recommended for all types of cancers including sarcomas, bronchiogenic carcinoma and colon cancer.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 314,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 777661
+      },
+      "dose": null,
+      "tags": [
+        "cesium",
+        "high-ph-therapy",
+        "cancer",
+        "cesium-chloride",
+        "alternative-therapy"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:01:14+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000126",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "criminal_behavior"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach lists 'normal sociability' and 'preventing criminal behavior' among the reasons humans need the 90 essential nutrients in optimal levels every day — alongside preventing developmental and degenerative disease and reaching genetic longevity potential.",
+      "verbatim": "for normal sociability, for preventing criminal behavior (there are now 1,000,000 prisoners in American jails!)",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Preface",
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 31428
+      },
+      "dose": null,
+      "tags": [
+        "90-essentials",
+        "sociability",
+        "criminal-behavior",
+        "framework"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:09:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000127",
+      "kind": "mechanism",
+      "essentials": [
+        "chromium",
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "explosive_outbursts",
+        "blind_rage",
+        "violent_behavior",
+        "hyperirritability"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach explains the mechanism behind rage and explosive behavior: while awake, a brain low in fuel (blood sugar) becomes very irritable, explosively reactive, and can be vicious because the normal civilized social restraints fall away. Chromium and vanadium, which stabilize blood sugar, are the relevant nutrients.",
+      "verbatim": "the brain low in fuel is very irritable, explosively reactive and can be very vicious because there are no longer any civilized social restraints",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 6",
+        "page": 99,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 315900
+      },
+      "dose": null,
+      "tags": [
+        "chromium",
+        "vanadium",
+        "hypoglycemia",
+        "explosive-behavior",
+        "blood-sugar"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:09:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000128",
+      "kind": "mechanism",
+      "essentials": [
+        "chromium",
+        "vanadium",
+        "copper",
+        "lithium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "explosive_outbursts",
+        "blind_rage",
+        "violent_behavior"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach attributes histories of explosive rage and aggressive behavior to chromium and vanadium deficiency (hypoglycemia), copper deficiency, or lithium deficiency — aggravated by a high-sugar diet.",
+      "verbatim": "classic symptoms\nof chromium and vanadium deficiency\n(hypoglycemia), copper deficiency or a\nlithium deficiency aggravated by a high\nsugar diet",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 6",
+        "page": 114,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 357205
+      },
+      "dose": null,
+      "tags": [
+        "chromium",
+        "vanadium",
+        "copper",
+        "lithium",
+        "explosive-rage"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:09:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000129",
+      "kind": "diagnostic_pattern",
+      "essentials": [
+        "copper",
+        "zinc",
+        "sodium",
+        "chromium",
+        "vanadium",
+        "lithium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "violent_behavior",
+        "blind_rage",
+        "explosive_outbursts"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach lists a hair-analysis mineral signature for a violent, explosive temperament: low hair levels of copper, zinc, sodium, chromium, vanadium, and lithium.",
+      "verbatim": "Sociopath/violent (Dr.Jykel/Mr.Hyde rages) - low in copper, zinc, sodium, chromium, vanadium and lithium.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 275,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 699855
+      },
+      "dose": null,
+      "tags": [
+        "hair-analysis",
+        "violent-temperament",
+        "copper-zinc-lithium",
+        "diagnostic"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T07:09:43+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

@@ -1,34 +1,30 @@
 # Extraction report — rare-earths (Rare Earths: Forbidden Cures)
 
-_5 claim(s) drafted 2026-06-25T06:33:04+00:00. Review then run corpus_seal.py to promote._
+_4 claim(s) drafted 2026-06-25T07:09:43+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×1, mechanism×4
+Kinds: definition×1, diagnostic_pattern×1, mechanism×2
 
-### WAL-CLM-RARE-000114 · mechanism
-- **essentials:** cobalt, vitamin-b12 · **conditions:** — · **symptoms:** —
-- **claim:** Wallach explains the essentiality of cobalt is unusual: the actual requirement is for the cobalt-containing complex vitamin B12 (cyanocobalamin), in which a single cobalt atom is the central metal. Vitamin B12/cobalt works with folic acid, choline, and the amino acid methionine to transfer methyl groups in the synthesis of RNA and DNA (directly involved in gene function and preconception nutrition), and is required for growth, myelin formation, and red-blood-cell synthesis.
-- **verbatim** (offset 761270): “a
-single cobalt atom is the central metal
-componant of vitamin B,, which itself is a
-cofactor and activator”
+### WAL-CLM-RARE-000126 · definition
+- **essentials:** — · **conditions:** criminal_behavior · **symptoms:** —
+- **claim:** Wallach lists 'normal sociability' and 'preventing criminal behavior' among the reasons humans need the 90 essential nutrients in optimal levels every day — alongside preventing developmental and degenerative disease and reaching genetic longevity potential.
+- **verbatim** (offset 31428): “for normal sociability, for preventing criminal behavior (there are now 1,000,000 prisoners in American jails!)”
 
-### WAL-CLM-RARE-000115 · mechanism
-- **essentials:** cobalt, vitamin-b12 · **conditions:** pernicious_anemia · **symptoms:** —
-- **claim:** Wallach states that in humans a failure to absorb vitamin B12/cobalt causes deficiency disease — from surgical removal of part of the stomach or the ileum, low stomach acid, parasites (tapeworm), celiac disease, or other malabsorption — and that pernicious anemia and demyelination of the spinal cord and large nerve trunks are classic signs of B12/cobalt deficiency. Vitamin B12 was isolated from liver extract in 1948 and shown to have anti-pernicious-anemia activity.
-- **verbatim** (offset 766009): “Pernicious anemia and demyelination of the spinal cord and large nerve trunks are classic for B, /cobalt deficiency.”
+### WAL-CLM-RARE-000127 · mechanism
+- **essentials:** chromium, vanadium · **conditions:** explosive_outbursts, blind_rage, violent_behavior, hyperirritability · **symptoms:** —
+- **claim:** Wallach explains the mechanism behind rage and explosive behavior: while awake, a brain low in fuel (blood sugar) becomes very irritable, explosively reactive, and can be vicious because the normal civilized social restraints fall away. Chromium and vanadium, which stabilize blood sugar, are the relevant nutrients.
+- **verbatim** (offset 315900): “the brain low in fuel is very irritable, explosively reactive and can be very vicious because there are no longer any civilized social restraints”
 
-### WAL-CLM-RARE-000116 · definition
-- **essentials:** chromium · **conditions:** diabetes, hypoglycemia, hyperinsulinemia, coronary_artery_disease, infertility, peripheral_neuropathy · **symptoms:** —
-- **claim:** Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency (Table 11-12) produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, peripheral neuropathy, elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.
-- **verbatim** (offset 767247): “Chromium activates phosphoglucosonetase and other enzymes and is tightly associated with GTF (glucose tolerance factor”
+### WAL-CLM-RARE-000128 · mechanism
+- **essentials:** chromium, vanadium, copper, lithium · **conditions:** explosive_outbursts, blind_rage, violent_behavior · **symptoms:** —
+- **claim:** Wallach attributes histories of explosive rage and aggressive behavior to chromium and vanadium deficiency (hypoglycemia), copper deficiency, or lithium deficiency — aggravated by a high-sugar diet.
+- **verbatim** (offset 357205): “classic symptoms
+of chromium and vanadium deficiency
+(hypoglycemia), copper deficiency or a
+lithium deficiency aggravated by a high
+sugar diet”
 
-### WAL-CLM-RARE-000117 · mechanism
-- **essentials:** chromium · **conditions:** — · **symptoms:** —
-- **claim:** Wallach reports chromium is poorly absorbed in inorganic form: an average dietary intake of 50 to 100 micrograms of inorganic chromium supplies only 0.25 to 0.5 micrograms of usable chromium, whereas about 25% of chelated chromium is absorbed (the Recommended Dietary Allowance is 50 to 200 micrograms per day for adults). Dietary sugar loads — colas, apple and grape juice, honey, candy, sugar, fructose — increase the rate of urinary chromium loss by 300% for 12 hours.
-- **verbatim** (offset 768746): “The average intake of 50 to 100 ug of inorganic chromium from food and water supplies only 0.25 to 0.5 ug of usable chromium, by contrast 25 % of chelated chromium is absorbed.”
-
-### WAL-CLM-RARE-000118 · mechanism
-- **essentials:** chromium · **conditions:** diabetes · **symptoms:** —
-- **claim:** Wallach cites Richard Anderson of the USDA stating that 90 percent of Americans are deficient in chromium, and reports that the impaired glucose tolerance of pregnancy reflects a chromium deficiency that often results in pregnancy-onset diabetes, and that one study found abnormal glucose tolerance in 77 percent of clinically 'normal' adults over the age of 70.
-- **verbatim** (offset 769752): “According to Richard Anderson , USDA, "90 percent of Americans are deficient in chromium."”
+### WAL-CLM-RARE-000129 · diagnostic_pattern
+- **essentials:** copper, zinc, sodium, chromium, vanadium, lithium · **conditions:** violent_behavior, blind_rage, explosive_outbursts · **symptoms:** —
+- **claim:** Wallach lists a hair-analysis mineral signature for a violent, explosive temperament: low hair levels of copper, zinc, sodium, chromium, vanadium, and lithium.
+- **verbatim** (offset 699855): “Sociopath/violent (Dr.Jykel/Mr.Hyde rages) - low in copper, zinc, sodium, chromium, vanadium and lithium.”
 

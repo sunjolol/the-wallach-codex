@@ -320,6 +320,26 @@
   {
     "id": "CG-0009",
     "essentials": [
+      "chromium"
+    ],
+    "conditions": [],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-RARE-000117",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000124",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0010",
+    "essentials": [
       "cobalt",
       "vitamin-b12"
     ],
@@ -339,7 +359,49 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0010",
+    "id": "CG-0011",
+    "essentials": [
+      "copper"
+    ],
+    "conditions": [],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-RARE-000119",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000121",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0012",
+    "essentials": [
+      "copper"
+    ],
+    "conditions": [
+      "aneurysm"
+    ],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000004",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000120",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0013",
     "essentials": [
       "germanium"
     ],
@@ -359,7 +421,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0011",
+    "id": "CG-0014",
     "essentials": [
       "germanium"
     ],
@@ -383,7 +445,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0012",
+    "id": "CG-0015",
     "essentials": [
       "omega-3",
       "omega-6"
@@ -404,7 +466,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0013",
+    "id": "CG-0016",
     "essentials": [
       "omega-3",
       "omega-6"
@@ -425,7 +487,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0014",
+    "id": "CG-0017",
     "essentials": [
       "silver"
     ],
@@ -445,7 +507,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0015",
+    "id": "CG-0018",
     "essentials": [
       "silver"
     ],
@@ -465,7 +527,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0016",
+    "id": "CG-0019",
     "essentials": [
       "sodium"
     ],
@@ -487,7 +549,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0017",
+    "id": "CG-0020",
     "essentials": [
       "zinc"
     ],

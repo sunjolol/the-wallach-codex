@@ -47,10 +47,13 @@
     "display_name": "Sodium",
     "canon_slug": "sodium",
     "category": "mineral",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-RARE-000026"
+      ],
+      "diagnostic_pattern": [
+        "WAL-CLM-RARE-000129"
       ],
       "mechanism": [
         "WAL-CLM-RARE-000003",
@@ -59,10 +62,18 @@
     },
     "deficiency_signs": [],
     "conditions_treated": [
-      "heat_stroke"
+      "blind_rage",
+      "explosive_outbursts",
+      "heat_stroke",
+      "violent_behavior"
     ],
     "interacts_with": [
-      "chloride"
+      "chloride",
+      "chromium",
+      "copper",
+      "lithium",
+      "vanadium",
+      "zinc"
     ],
     "books_cited": [
       "rare-earths"
@@ -359,7 +370,7 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 16,
+    "claim_count": 20,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -370,13 +381,17 @@
         "WAL-CLM-RARE-000116"
       ],
       "diagnostic_pattern": [
-        "WAL-CLM-RARE-000081"
+        "WAL-CLM-RARE-000081",
+        "WAL-CLM-RARE-000129"
       ],
       "mechanism": [
         "WAL-CLM-RARE-000043",
         "WAL-CLM-RARE-000074",
         "WAL-CLM-RARE-000117",
-        "WAL-CLM-RARE-000118"
+        "WAL-CLM-RARE-000118",
+        "WAL-CLM-RARE-000124",
+        "WAL-CLM-RARE-000127",
+        "WAL-CLM-RARE-000128"
       ],
       "personal_anecdote": [
         "WAL-CLM-DDDL-000008"
@@ -412,9 +427,12 @@
       "anxiety",
       "arthritis",
       "bipolar_disorder",
+      "blind_rage",
       "coronary_artery_disease",
+      "criminal_behavior",
       "depression",
       "diabetes",
+      "explosive_outbursts",
       "hyperactivity",
       "hyperinsulinemia",
       "hyperirritability",
@@ -424,7 +442,8 @@
       "learning_disabilities",
       "panic_attacks",
       "peripheral_neuropathy",
-      "schizophrenia"
+      "schizophrenia",
+      "violent_behavior"
     ],
     "interacts_with": [
       "calcium",
@@ -433,6 +452,7 @@
       "iron",
       "lithium",
       "magnesium",
+      "sodium",
       "vanadium",
       "vitamin-b3",
       "vitamin-b6",
@@ -447,14 +467,18 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 9,
+    "claim_count": 16,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000003"
       ],
+      "definition": [
+        "WAL-CLM-RARE-000122"
+      ],
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000081",
-        "WAL-CLM-RARE-000083"
+        "WAL-CLM-RARE-000083",
+        "WAL-CLM-RARE-000129"
       ],
       "interaction": [
         "WAL-CLM-DDDL-000025",
@@ -463,7 +487,12 @@
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000004",
-        "WAL-CLM-RARE-000051"
+        "WAL-CLM-RARE-000051",
+        "WAL-CLM-RARE-000119",
+        "WAL-CLM-RARE-000120",
+        "WAL-CLM-RARE-000121",
+        "WAL-CLM-RARE-000123",
+        "WAL-CLM-RARE-000128"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000049"
@@ -481,23 +510,39 @@
       "aneurysm",
       "arthritis",
       "birth_defects",
+      "blind_rage",
       "cancer",
       "cardiomyopathy",
       "cataracts",
+      "cerebral_palsy",
+      "congenital_ataxia",
+      "criminal_behavior",
       "diabetes",
+      "explosive_outbursts",
       "goiter",
+      "hernia",
+      "high_cholesterol",
       "hypertension",
+      "hypoglycemia",
       "kawasaki_disease",
+      "learning_disabilities",
+      "liver_cirrhosis",
+      "neutropenia",
       "osteoporosis",
-      "schizophrenia"
+      "schizophrenia",
+      "thyroid_disease",
+      "varicose_veins",
+      "violent_behavior"
     ],
     "interacts_with": [
       "calcium",
       "chromium",
       "iodine",
       "iron",
+      "lithium",
       "magnesium",
       "selenium",
+      "sodium",
       "vanadium",
       "vitamin-b12",
       "vitamin-b3",
@@ -832,7 +877,7 @@
     "display_name": "Vanadium",
     "canon_slug": "vanadium",
     "category": "mineral",
-    "claim_count": 13,
+    "claim_count": 16,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -840,12 +885,15 @@
         "WAL-CLM-RARE-000042"
       ],
       "diagnostic_pattern": [
-        "WAL-CLM-RARE-000081"
+        "WAL-CLM-RARE-000081",
+        "WAL-CLM-RARE-000129"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000034",
         "WAL-CLM-DDDL-000036",
-        "WAL-CLM-RARE-000043"
+        "WAL-CLM-RARE-000043",
+        "WAL-CLM-RARE-000127",
+        "WAL-CLM-RARE-000128"
       ],
       "personal_anecdote": [
         "WAL-CLM-DDDL-000008"
@@ -878,13 +926,17 @@
       "anemia",
       "anxiety",
       "arthritis",
+      "blind_rage",
       "cancer",
       "coronary_artery_disease",
       "diabetes",
+      "explosive_outbursts",
+      "hyperirritability",
       "hypoglycemia",
       "insomnia",
       "panic_attacks",
-      "schizophrenia"
+      "schizophrenia",
+      "violent_behavior"
     ],
     "interacts_with": [
       "calcium",
@@ -893,6 +945,7 @@
       "iron",
       "lithium",
       "magnesium",
+      "sodium",
       "vitamin-b3",
       "vitamin-b6",
       "zinc"
@@ -906,7 +959,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 21,
+    "claim_count": 22,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -916,7 +969,8 @@
         "WAL-CLM-RARE-000042"
       ],
       "diagnostic_pattern": [
-        "WAL-CLM-RARE-000083"
+        "WAL-CLM-RARE-000083",
+        "WAL-CLM-RARE-000129"
       ],
       "interaction": [
         "WAL-CLM-DDDL-000040",
@@ -965,6 +1019,7 @@
       "arthritis",
       "benign_prostatic_hyperplasia",
       "birth_defects",
+      "blind_rage",
       "cancer",
       "canker_sores",
       "cardiomyopathy",
@@ -974,10 +1029,12 @@
       "cystic_fibrosis",
       "diabetes",
       "down_syndrome",
+      "explosive_outbursts",
       "hypertension",
       "infertility",
       "osteoporosis",
-      "spina_bifida"
+      "spina_bifida",
+      "violent_behavior"
     ],
     "interacts_with": [
       "arginine",
@@ -990,6 +1047,7 @@
       "lithium",
       "magnesium",
       "selenium",
+      "sodium",
       "vanadium",
       "vitamin-a",
       "vitamin-b12",
@@ -1159,19 +1217,22 @@
     "display_name": "Cesium",
     "canon_slug": "cesium",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-DDDL-000018"
+        "WAL-CLM-DDDL-000018",
+        "WAL-CLM-RARE-000125"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [
-      "cancer"
+      "cancer",
+      "colorectal_cancer"
     ],
     "interacts_with": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "dysprosium": {
@@ -1266,7 +1327,7 @@
     "display_name": "Lithium",
     "canon_slug": "lithium",
     "category": "mineral",
-    "claim_count": 5,
+    "claim_count": 7,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000079",
@@ -1275,9 +1336,13 @@
       "definition": [
         "WAL-CLM-RARE-000029"
       ],
+      "diagnostic_pattern": [
+        "WAL-CLM-RARE-000129"
+      ],
       "mechanism": [
         "WAL-CLM-RARE-000041",
-        "WAL-CLM-RARE-000043"
+        "WAL-CLM-RARE-000043",
+        "WAL-CLM-RARE-000128"
       ]
     },
     "deficiency_signs": [
@@ -1294,10 +1359,16 @@
     ],
     "conditions_treated": [
       "anorexia",
-      "bipolar_disorder"
+      "bipolar_disorder",
+      "blind_rage",
+      "criminal_behavior",
+      "explosive_outbursts",
+      "violent_behavior"
     ],
     "interacts_with": [
       "chromium",
+      "copper",
+      "sodium",
       "vanadium",
       "zinc"
     ],

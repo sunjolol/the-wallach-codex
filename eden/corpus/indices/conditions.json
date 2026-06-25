@@ -47,11 +47,14 @@
   },
   "anemia": {
     "display_name": "Anemia",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
         "WAL-CLM-DDDL-000020"
+      ],
+      "definitions": [
+        "WAL-CLM-RARE-000122"
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000081"
@@ -72,10 +75,14 @@
   },
   "aneurysm": {
     "display_name": "Aneurysm",
-    "claim_count": 3,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-DDDL-000004"
+        "WAL-CLM-DDDL-000004",
+        "WAL-CLM-RARE-000120"
+      ],
+      "definitions": [
+        "WAL-CLM-RARE-000122"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -224,7 +231,7 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
@@ -235,7 +242,8 @@
         "WAL-CLM-RARE-000011"
       ],
       "definitions": [
-        "WAL-CLM-RARE-000105"
+        "WAL-CLM-RARE-000105",
+        "WAL-CLM-RARE-000122"
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000081"
@@ -412,6 +420,35 @@
       "dddl-3e-2011"
     ]
   },
+  "blind_rage": {
+    "display_name": "Blind Rage",
+    "claim_count": 5,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000127",
+        "WAL-CLM-RARE-000128"
+      ],
+      "definitions": [
+        "WAL-CLM-RARE-000116",
+        "WAL-CLM-RARE-000122"
+      ],
+      "diagnostics": [
+        "WAL-CLM-RARE-000129"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "copper",
+      "lithium",
+      "sodium",
+      "vanadium",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "blindness": {
     "display_name": "Blindness",
     "claim_count": 1,
@@ -461,7 +498,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -480,7 +517,8 @@
       ],
       "protocols": [
         "WAL-CLM-DDDL-000018",
-        "WAL-CLM-DDDL-000056"
+        "WAL-CLM-DDDL-000056",
+        "WAL-CLM-RARE-000125"
       ],
       "quotes": [
         "WAL-CLM-DDDL-000057",
@@ -625,6 +663,25 @@
       "rare-earths"
     ]
   },
+  "cerebral_palsy": {
+    "display_name": "Cerebral Palsy",
+    "claim_count": 2,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000123"
+      ],
+      "definitions": [
+        "WAL-CLM-RARE-000122"
+      ]
+    },
+    "essentials_involved": [
+      "copper"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "cleft_palate": {
     "display_name": "Cleft Palate",
     "claim_count": 1,
@@ -644,14 +701,18 @@
   },
   "colorectal_cancer": {
     "display_name": "Colorectal Cancer",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000108"
+      ],
+      "protocols": [
+        "WAL-CLM-RARE-000125"
       ]
     },
     "essentials_involved": [
-      "calcium"
+      "calcium",
+      "cesium"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -679,18 +740,23 @@
   },
   "congenital_ataxia": {
     "display_name": "Congenital Ataxia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000123"
+      ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000026"
       ]
     },
     "essentials_involved": [
+      "copper",
       "manganese"
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "congestive_heart_failure": {
@@ -777,6 +843,29 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "criminal_behavior": {
+    "display_name": "Criminal Behavior",
+    "claim_count": 4,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000041"
+      ],
+      "definitions": [
+        "WAL-CLM-RARE-000116",
+        "WAL-CLM-RARE-000122",
+        "WAL-CLM-RARE-000126"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "copper",
+      "lithium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "cystic_fibrosis": {
@@ -915,6 +1004,35 @@
       "rare-earths"
     ]
   },
+  "explosive_outbursts": {
+    "display_name": "Explosive Outbursts",
+    "claim_count": 5,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000127",
+        "WAL-CLM-RARE-000128"
+      ],
+      "definitions": [
+        "WAL-CLM-RARE-000116",
+        "WAL-CLM-RARE-000122"
+      ],
+      "diagnostics": [
+        "WAL-CLM-RARE-000129"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "copper",
+      "lithium",
+      "sodium",
+      "vanadium",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "goiter": {
     "display_name": "Goiter",
     "claim_count": 3,
@@ -991,6 +1109,38 @@
       "rare-earths"
     ]
   },
+  "hernia": {
+    "display_name": "Hernia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000122"
+      ]
+    },
+    "essentials_involved": [
+      "copper"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "high_cholesterol": {
+    "display_name": "High Cholesterol",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000122"
+      ]
+    },
+    "essentials_involved": [
+      "copper"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "hyperactivity": {
     "display_name": "Hyperactivity",
     "claim_count": 1,
@@ -1025,14 +1175,18 @@
   },
   "hyperirritability": {
     "display_name": "Hyperirritability",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000127"
+      ],
       "definitions": [
         "WAL-CLM-RARE-000116"
       ]
     },
     "essentials_involved": [
-      "chromium"
+      "chromium",
+      "vanadium"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1066,13 +1220,14 @@
   },
   "hypoglycemia": {
     "display_name": "Hypoglycemia",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000017"
       ],
       "definitions": [
-        "WAL-CLM-RARE-000116"
+        "WAL-CLM-RARE-000116",
+        "WAL-CLM-RARE-000122"
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000046"
@@ -1080,6 +1235,7 @@
     },
     "essentials_involved": [
       "chromium",
+      "copper",
       "vanadium"
     ],
     "other_substances_involved": [],
@@ -1163,13 +1319,14 @@
   },
   "kawasaki_disease": {
     "display_name": "Kawasaki Disease",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000051"
       ],
       "definitions": [
-        "WAL-CLM-RARE-000049"
+        "WAL-CLM-RARE-000049",
+        "WAL-CLM-RARE-000122"
       ]
     },
     "essentials_involved": [
@@ -1246,14 +1403,16 @@
   },
   "learning_disabilities": {
     "display_name": "Learning Disabilities",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "definitions": [
-        "WAL-CLM-RARE-000116"
+        "WAL-CLM-RARE-000116",
+        "WAL-CLM-RARE-000122"
       ]
     },
     "essentials_involved": [
-      "chromium"
+      "chromium",
+      "copper"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1262,7 +1421,7 @@
   },
   "liver_cirrhosis": {
     "display_name": "Liver Cirrhosis",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010"
@@ -1272,15 +1431,20 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005"
+      ],
+      "definitions": [
+        "WAL-CLM-RARE-000122"
       ]
     },
     "essentials_involved": [
+      "copper",
       "iron",
       "selenium"
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "macular_degeneration": {
@@ -1436,6 +1600,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "rare-earths"
+    ]
+  },
+  "neutropenia": {
+    "display_name": "Neutropenia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000122"
+      ]
+    },
+    "essentials_involved": [
+      "copper"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
       "rare-earths"
     ]
   },
@@ -1789,6 +1969,22 @@
       "rare-earths"
     ]
   },
+  "thyroid_disease": {
+    "display_name": "Thyroid Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000122"
+      ]
+    },
+    "essentials_involved": [
+      "copper"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "tinnitus": {
     "display_name": "Tinnitus",
     "claim_count": 1,
@@ -1850,6 +2046,52 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "varicose_veins": {
+    "display_name": "Varicose Veins",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000122"
+      ]
+    },
+    "essentials_involved": [
+      "copper"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "violent_behavior": {
+    "display_name": "Violent Behavior",
+    "claim_count": 6,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000041",
+        "WAL-CLM-RARE-000127",
+        "WAL-CLM-RARE-000128"
+      ],
+      "definitions": [
+        "WAL-CLM-RARE-000116",
+        "WAL-CLM-RARE-000122"
+      ],
+      "diagnostics": [
+        "WAL-CLM-RARE-000129"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "copper",
+      "lithium",
+      "sodium",
+      "vanadium",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "white_muscle_disease": {

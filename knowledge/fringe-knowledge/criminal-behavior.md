@@ -7,6 +7,21 @@ front-facing.**_
 
 ---
 
+> **POLICY UPDATE — 2026-06-25 (Luneth).** The GENERIC behavioral conditions named in this
+> chapter — violent behavior, blind rage, explosive outbursts, criminal behavior — are now
+> SALVAGED into the sealed corpus (softened, non-graphic, with Wallach's mechanism + authority),
+> because surfacing the deficiency link can help people manage rage / emotional issues and may
+> prevent harm. Only the GRAPHIC prose (named serial killers, gore, the cannibalism / vampire /
+> werewolf framing) stays here, OUT of the app. Salvaged this pass: **WAL-CLM-RARE-000126**
+> (Preface — 90 essentials for sociability + preventing criminal behavior), **000127** (a brain
+> low in fuel → irritable / explosive / vicious; chromium + vanadium), **000128** (explosive
+> rage ← chromium / vanadium / copper / lithium deficiency + high sugar), **000129** (hair
+> signature of a violent temperament — low copper / zinc / sodium / chromium / vanadium /
+> lithium); plus enrichment of **000041** (Schrauzer Texas lithium–crime study) and the
+> chromium / copper table claims **000116 / 000122** with the behavioral condition slugs. See
+> memory `document-behavioral-mental-conditions`. The Schrauzer study and the four salvaged
+> claims are scientific, non-graphic statements; what remains below is the graphic case material.
+
 ## Rare Earths: Forbidden Cures (1994)
 
 ### Preface (p. xviii) — minerals for "preventing criminal behavior"
