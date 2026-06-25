@@ -72,7 +72,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 13,
+    "claim_count": 15,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074"
@@ -84,7 +84,9 @@
       "mechanism": [
         "WAL-CLM-DDDL-000053",
         "WAL-CLM-DDDL-000082",
-        "WAL-CLM-DDDL-000087"
+        "WAL-CLM-DDDL-000087",
+        "WAL-CLM-RARE-000098",
+        "WAL-CLM-RARE-000099"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000051",
@@ -114,6 +116,7 @@
       "osteoporosis"
     ],
     "interacts_with": [
+      "boron",
       "calcium",
       "chromium",
       "copper",
@@ -203,7 +206,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 18,
+    "claim_count": 20,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074"
@@ -219,7 +222,9 @@
       "mechanism": [
         "WAL-CLM-DDDL-000033",
         "WAL-CLM-DDDL-000052",
-        "WAL-CLM-DDDL-000087"
+        "WAL-CLM-DDDL-000087",
+        "WAL-CLM-RARE-000098",
+        "WAL-CLM-RARE-000099"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000009"
@@ -266,6 +271,7 @@
       "trigeminal_neuralgia"
     ],
     "interacts_with": [
+      "boron",
       "chromium",
       "copper",
       "iron",
@@ -288,12 +294,24 @@
     "display_name": "Boron",
     "canon_slug": "boron",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 2,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000098",
+        "WAL-CLM-RARE-000099"
+      ]
+    },
     "deficiency_signs": [],
-    "conditions_treated": [],
-    "interacts_with": [],
-    "books_cited": []
+    "conditions_treated": [
+      "osteoporosis"
+    ],
+    "interacts_with": [
+      "calcium",
+      "magnesium"
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "cobalt": {
     "display_name": "Cobalt",
@@ -653,7 +671,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 19,
+    "claim_count": 20,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -672,7 +690,8 @@
         "WAL-CLM-DDDL-000071",
         "WAL-CLM-RARE-000004",
         "WAL-CLM-RARE-000010",
-        "WAL-CLM-RARE-000050"
+        "WAL-CLM-RARE-000050",
+        "WAL-CLM-RARE-000094"
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000007",
@@ -721,6 +740,7 @@
     ],
     "interacts_with": [
       "arginine",
+      "arsenic",
       "calcium",
       "copper",
       "germanium",
@@ -847,7 +867,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 20,
+    "claim_count": 21,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -869,7 +889,8 @@
         "WAL-CLM-DDDL-000084",
         "WAL-CLM-RARE-000010",
         "WAL-CLM-RARE-000044",
-        "WAL-CLM-RARE-000046"
+        "WAL-CLM-RARE-000046",
+        "WAL-CLM-RARE-000094"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000049",
@@ -921,6 +942,7 @@
     ],
     "interacts_with": [
       "arginine",
+      "arsenic",
       "calcium",
       "chromium",
       "copper",
@@ -990,23 +1012,45 @@
     "display_name": "Arsenic",
     "canon_slug": "arsenic",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 2,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000094",
+        "WAL-CLM-RARE-000095"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
-    "interacts_with": [],
-    "books_cited": []
+    "interacts_with": [
+      "selenium",
+      "zinc"
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "gold": {
     "display_name": "Gold",
     "canon_slug": "gold",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 2,
+    "claims_by_kind": {
+      "contraindication": [
+        "WAL-CLM-RARE-000097"
+      ],
+      "protocol": [
+        "WAL-CLM-RARE-000096"
+      ]
+    },
     "deficiency_signs": [],
-    "conditions_treated": [],
+    "conditions_treated": [
+      "arthritis",
+      "rheumatoid_arthritis"
+    ],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "barium": {
     "display_name": "Barium",

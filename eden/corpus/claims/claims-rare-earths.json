@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811779
+        "char_offset": 811764
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811981
+        "char_offset": 811966
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811543
+        "char_offset": 811528
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 766470
+        "char_offset": 766455
       },
       "dose": {
         "amount": "250-400",
@@ -3121,6 +3121,231 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T04:58:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000094",
+      "kind": "mechanism",
+      "essentials": [
+        "arsenic",
+        "zinc",
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach states arsenic is essential for the survivability of the newborn and for neonatal growth, and that its function in human physiology lies in methyl-group metabolism and polyamine synthesis — a function modulated by tissue and blood levels of zinc, selenium, arginine, choline, methionine, taurine and guaniacetic acid.",
+      "verbatim": "Arsenic metabolism is affected by tissue and blood levels of zinc, selenium, arginine, choline, methionine, taurine and guaniacetic acid, all of which affect methyl-group metabolism and polyamine synthesis which is the site of arsenic function in human physiology.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 285,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 720912
+      },
+      "dose": null,
+      "tags": [
+        "arsenic",
+        "essential",
+        "methyl-group-metabolism",
+        "polyamine-synthesis",
+        "neonatal-growth"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T05:08:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000095",
+      "kind": "mechanism",
+      "essentials": [
+        "arsenic"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach illustrates that the FORM of a mineral governs its toxicity: 18% of dietary arsenic trioxide (As2O3, the metallic form) was retained in rat liver versus only 0.7% of the organically-bound arsenic in shrimp tissue — a 65-times greater toxicity potential for metallic arsenic than for organically-bound arsenic.",
+      "verbatim": "Eighteen percent of dietary As,O, was\nstored in rat liver whereas only 0.7 percent\nof shrimp tissue arsenic was stored in rat\nlivers (65 times greater toxicity potential\nfrom metalic arsenic than from organically\nbound arsenic).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 285,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 721791
+      },
+      "dose": null,
+      "tags": [
+        "arsenic",
+        "metallic-vs-organic",
+        "65x-toxicity",
+        "bioavailability"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T05:08:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000096",
+      "kind": "protocol",
+      "essentials": [
+        "gold"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "rheumatoid_arthritis",
+        "arthritis"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach documents the allopathic use of gold compounds (gold sodium thiomalate, aurothioglucose) as an add-on to aspirin for rheumatoid arthritis when extra pain relief is needed. Gold is not analgesic but may be anti-inflammatory — effective against active joint inflammation, though not for advanced destructive rheumatoid arthritis. Standard intramuscular (injected into a muscle) schedule: 10 mg week one, 25 mg week two, then 50 mg per week to a 1 gram total, then 50 mg every two to four weeks as maintenance; relapse is expected three to four months after withdrawal.",
+      "verbatim": "Standard doses are\ngiven IM at weekly intervals: 10 mg initially,\n25 mg second week and 50 mg per week\nuntil a total of 1 G has been administered\nthen the maintenance dose is reduced to\n50 mg every two to four weeks.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 287,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 723395
+      },
+      "dose": {
+        "amount": "10/25/50",
+        "unit": "mg",
+        "period": "weekly, by intramuscular injection",
+        "form": "gold compounds (sodium thiomalate / aurothioglucose)",
+        "duration": "to a 1 gram total, then 50 mg every 2-4 weeks maintenance",
+        "for_condition": "rheumatoid arthritis"
+      },
+      "tags": [
+        "gold",
+        "rheumatoid-arthritis",
+        "anti-inflammatory",
+        "im-dose-schedule"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T05:08:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000097",
+      "kind": "contraindication",
+      "essentials": [
+        "gold"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach warns gold compounds are contraindicated in patients with liver or kidney disease, blood diseases, or systemic lupus erythematosus (also called lupus). Toxic reactions to gold therapy include pruritus (itching), dermatitis, stomatitis, gastrointestinal (digestive-tract) discomfort, increased urine albumin, blood in the urine, aplastic anemia, reduced white blood cells, hepatitis and pneumonitis.",
+      "verbatim": "Gold compounds are not to be used in\npatients with liver or kidney disease, blood\ndiseases or SLE.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 287,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 723694
+      },
+      "dose": null,
+      "tags": [
+        "gold",
+        "contraindication",
+        "toxicity",
+        "sle"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T05:08:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000098",
+      "kind": "mechanism",
+      "essentials": [
+        "boron",
+        "calcium",
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach states boron is essential for bone metabolism — including the efficient use of calcium and magnesium — and for proper function of the endocrine glands (ovaries, testes and adrenals). Boron was only accepted as an essential nutrient for humans in 1990.",
+      "verbatim": "boron is essential for bone metabolism including efficient use of calcium and magnesium and proper function of endocrine glands (i.e.- ovaries, testes and adrenals).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 287,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 724457
+      },
+      "dose": null,
+      "tags": [
+        "boron",
+        "bone-metabolism",
+        "calcium-magnesium",
+        "endocrine",
+        "essential-1990"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T05:08:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000099",
+      "kind": "mechanism",
+      "essentials": [
+        "boron",
+        "calcium",
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "osteoporosis"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach reports that within eight days of boron supplementation, women lost 40% less calcium, 33% less magnesium, and less phosphorus through their urine; boron also doubled blood estradiol-17B to levels seen with estrogen-replacement therapy and nearly doubled testosterone — supporting bone maintenance and hormone balance.",
+      "verbatim": "within eight days of supplementing boron women lost 40 percent less calcium , 33 percent less magnesium and less phosphorus through their urine.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 287,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 725695
+      },
+      "dose": null,
+      "tags": [
+        "boron",
+        "calcium-retention",
+        "estradiol",
+        "testosterone",
+        "osteoporosis"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T05:08:56+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

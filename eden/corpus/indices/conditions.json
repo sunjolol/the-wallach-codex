@@ -190,7 +190,7 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
@@ -207,7 +207,8 @@
         "WAL-CLM-RARE-000086"
       ],
       "protocols": [
-        "WAL-CLM-DDDL-000051"
+        "WAL-CLM-DDDL-000051",
+        "WAL-CLM-RARE-000096"
       ]
     },
     "essentials_involved": [
@@ -215,6 +216,7 @@
       "chromium",
       "copper",
       "germanium",
+      "gold",
       "iron",
       "magnesium",
       "phosphorus",
@@ -1245,10 +1247,11 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-DDDL-000052"
+        "WAL-CLM-DDDL-000052",
+        "WAL-CLM-RARE-000099"
       ],
       "contraindications": [
         "WAL-CLM-DDDL-000061"
@@ -1278,6 +1281,7 @@
       ]
     },
     "essentials_involved": [
+      "boron",
       "calcium",
       "copper",
       "germanium",
@@ -1360,16 +1364,22 @@
   },
   "rheumatoid_arthritis": {
     "display_name": "Rheumatoid Arthritis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000050"
+      ],
+      "protocols": [
+        "WAL-CLM-RARE-000096"
       ]
     },
-    "essentials_involved": [],
+    "essentials_involved": [
+      "gold"
+    ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "schizophrenia": {
