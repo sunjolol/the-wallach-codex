@@ -5001,6 +5001,314 @@
       "extracted_at": "2026-06-25T07:41:32+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000144",
+      "kind": "definition",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach records that iodine is an essential element for red and brown algae and for all vertebrates; in animals it concentrates in the thyroid gland and hair.",
+      "verbatim": "Known to be essential to red and brown algae and all vertebrates.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 341,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 826447
+      },
+      "dose": null,
+      "tags": [
+        "iodine",
+        "essentiality",
+        "thyroid"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T14:15:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000145",
+      "kind": "mechanism",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach explains that the thyroid hormones formed from iodine control and regulate digestion, heart rate, body temperature, sweat-gland activity, the nervous and reproductive systems, general metabolism, and body weight.",
+      "verbatim": "Thyroid hormones control and regulate digestion, heart rate, body temperature, sweat gland activity, nervous and reproductive system, general metabolism and body weight.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 343,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 827821
+      },
+      "dose": null,
+      "tags": [
+        "iodine",
+        "thyroid-hormone",
+        "metabolism"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T14:15:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000146",
+      "kind": "dose",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach notes the average American takes in 170 to 250 micrograms (mcg) of iodine per day and loses considerable iodine in sweat (up to 146 mcg per day with only moderate exercise), and that metallic iodine is not toxic up to 2 mg per day.",
+      "verbatim": "The average American takes in 170-250 mcg/day of I; humans lose considerable amounts of I in their sweat (up to 146mcg/day with only moderate exercise).\n\nMetallic iodine is not toxic up to 2,000 mcg/day.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 341,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 826816
+      },
+      "dose": null,
+      "tags": [
+        "iodine",
+        "intake",
+        "sweat-loss",
+        "toxicity",
+        "metallic"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T14:15:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000147",
+      "kind": "mechanism",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "goiter"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach observes that goiter develops in Japanese living along the sea coast despite high daily iodine intake; in a feeding study, subjects fed Chinese cabbage, turnips, buckwheat, noodles, iodine, or soybean developed goiter in every group except the one fed seaweed.",
+      "verbatim": "Goiter develops in Japanese living along the sea coast despite high daily iodine consumption.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 341,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 827021
+      },
+      "dose": null,
+      "tags": [
+        "iodine",
+        "goiter",
+        "seaweed",
+        "japan"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T14:15:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000148",
+      "kind": "mechanism",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "goiter"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach explains that many foods and food additives act as 'goitrogens' that interfere with the thyroid's metabolism and produce goiter when eaten in inordinate amounts (for example nitrates, broccoli, cabbage, and brussel sprouts).",
+      "verbatim": "Many foods and food aditives are known as \"goitrogens\" because they interfere with the thyroids metabolism and produce goiter when consumed in inordinate amounts (i.e.- nitrates, broccoli, cabbage, brusselsprouts, etc.).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 343,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 828580
+      },
+      "dose": null,
+      "tags": [
+        "iodine",
+        "goitrogens",
+        "goiter",
+        "diet"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T14:15:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000149",
+      "kind": "mechanism",
+      "essentials": [
+        "iodine",
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "goiter"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach cites island populations (Pisila, Polje, and Milahnici) with identical soil-iodine content but sharply different goiter rates: a severe copper deficiency in the soils of the high-goiter areas accounts for the difference, because copper is required to utilize iodine.",
+      "verbatim": "there is identical iodine content of the soil in all three locations; however, there is a severe copper deficiency in the soils of the north and the south (copper is required to utilize iodine).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 343,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 827512
+      },
+      "dose": null,
+      "tags": [
+        "iodine",
+        "copper",
+        "goiter",
+        "soil",
+        "cofactor"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T14:15:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000150",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "hypothyroidism",
+        "hashimotos_disease",
+        "goiter"
+      ],
+      "symptoms": [
+        "fatigue",
+        "cold_intolerance",
+        "depression",
+        "hair_loss",
+        "weight_gain",
+        "poor_memory",
+        "constipation",
+        "brittle_nails",
+        "low_sex_drive"
+      ],
+      "claim_text": "Wallach lists the symptoms of hypothyroidism (Hashimoto's disease): fatigue, cold intolerance, muscle aches and pains, heavy or more frequent periods, low sex drive, brittle nails, weight gain, hair loss, muscle cramps, depression, constipation, elevated blood cholesterol, puffy face, dry skin and hair, inability to concentrate, poor memory, and goiter. He notes some 11 million Americans have a hypothyroid or hyperthyroid condition.",
+      "verbatim": "SYMPTOMS of HYPOTHYROISM\n(Hashimoto's Disease)\nFatigue\nCold intolerance\nMuscle aches & pains\nHeavy or more frequent periods\nLow sex drive\nBrittle nails\nWeight gain\nHair loss\nMuscle cramps\nDepression\nConstipation\nElevated blood cholesterol\nPuffy face\nDry skin and hair\nInability to concentrate\nPoor memory\nGoiter",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 343,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 827992
+      },
+      "dose": null,
+      "tags": [
+        "iodine",
+        "hypothyroidism",
+        "hashimotos",
+        "thyroid",
+        "depression"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T14:15:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000151",
+      "kind": "diagnostic_pattern",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "hyperthyroidism",
+        "graves_disease",
+        "goiter"
+      ],
+      "symptoms": [
+        "insomnia",
+        "heat_intolerance",
+        "hand_tremors",
+        "rapid_pulse",
+        "exophthalmos",
+        "weight_loss",
+        "irritability",
+        "nervousness",
+        "muscle_weakness"
+      ],
+      "claim_text": "Wallach lists the symptoms of hyperthyroidism (Grave's disease): insomnia, heat intolerance, excessive sweating, lighter or less frequent periods, hand tremors, rapid pulse, exophthalmos (bulging 'bug-eyes'), weight loss, increased appetite, muscle weakness, frequent bowel movements, irritability, nervousness, and goiter.",
+      "verbatim": "SYMPTOMS of HYPERTHYROISM\n(Grave's Disease)\nInsomnia\nHeat Intolerance\nExcessive sweating\nLighter/less frequent periods\nHand Tremors\nRapid pulse\nExophthalmos (\"bug-eyes\")\nWeight loss\nIncreased appetite\nMuscle weakness\nFrequent bowel movements\nIrritability\nNervousness\nGoiter",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 343,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 828305
+      },
+      "dose": null,
+      "tags": [
+        "iodine",
+        "hyperthyroidism",
+        "graves",
+        "thyroid"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T14:15:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

@@ -1117,8 +1117,19 @@
   },
   "goiter": {
     "display_name": "Goiter",
-    "claim_count": 3,
+    "claim_count": 8,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000147",
+        "WAL-CLM-RARE-000148",
+        "WAL-CLM-RARE-000149"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000150"
+      ],
+      "diagnostics": [
+        "WAL-CLM-RARE-000151"
+      ],
       "interactions": [
         "WAL-CLM-DDDL-000025"
       ],
@@ -1139,7 +1150,40 @@
       "taurine"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
+    ]
+  },
+  "graves_disease": {
+    "display_name": "Graves Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "diagnostics": [
+        "WAL-CLM-RARE-000151"
+      ]
+    },
+    "essentials_involved": [
+      "iodine"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "hashimotos_disease": {
+    "display_name": "Hashimotos Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000150"
+      ]
+    },
+    "essentials_involved": [
+      "iodine"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "heart_attack": {
@@ -1300,6 +1344,22 @@
       "rare-earths"
     ]
   },
+  "hyperthyroidism": {
+    "display_name": "Hyperthyroidism",
+    "claim_count": 1,
+    "claims_by_role": {
+      "diagnostics": [
+        "WAL-CLM-RARE-000151"
+      ]
+    },
+    "essentials_involved": [
+      "iodine"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "hypoglycemia": {
     "display_name": "Hypoglycemia",
     "claim_count": 4,
@@ -1328,10 +1388,13 @@
   },
   "hypothyroidism": {
     "display_name": "Hypothyroidism",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000023"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000150"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000024"
@@ -1343,7 +1406,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "infertility": {

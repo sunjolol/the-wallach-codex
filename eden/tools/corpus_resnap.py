@@ -118,10 +118,8 @@ def main() -> int:
     hash_changed = new_sha != b.get("content_sha256")
 
     shard_path = CLAIMS_DIR / f"claims-{args.book}.json"
-    if not shard_path.exists():
-        print(f"no claims shard for '{args.book}' — nothing to re-snap")
-        return 0
-    shard = json.loads(shard_path.read_text(encoding="utf-8"))
+    has_shard = shard_path.exists()
+    shard = json.loads(shard_path.read_text(encoding="utf-8")) if has_shard else {"claims": []}
     claims = shard.get("claims", [])
 
     fixes = {}
@@ -166,8 +164,9 @@ def main() -> int:
     b["content_bytes"] = new_bytes
     b["line_count"] = new_lines
     META_PATH.write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    shard_path.write_text(json.dumps(shard, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"  WROTE books-meta ({args.book}: bytes={new_bytes}, lines={new_lines}) + shard.")
+    if has_shard:
+        shard_path.write_text(json.dumps(shard, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"  WROTE books-meta ({args.book}: bytes={new_bytes}, lines={new_lines}){' + shard' if has_shard else ' (no shard — hash only)'}.")
     print("  Next: run corpus_seal.py to re-derive indices + re-seal goldens.")
     return 0
 

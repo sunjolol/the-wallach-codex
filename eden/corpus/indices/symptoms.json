@@ -47,6 +47,66 @@
       "rare-earths"
     ]
   },
+  "brittle_nails": {
+    "display_name": "Brittle Nails",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "cold_intolerance": {
+    "display_name": "Cold Intolerance",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "constipation": {
+    "display_name": "Constipation",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "depression": {
+    "display_name": "Depression",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "easy_bruising": {
     "display_name": "Easy Bruising",
     "claim_count": 1,
@@ -66,6 +126,36 @@
     ],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "exophthalmos": {
+    "display_name": "Exophthalmos",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-RARE-000151",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "fatigue": {
+    "display_name": "Fatigue",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "geographic_tongue": {
@@ -118,8 +208,14 @@
   },
   "hair_loss": {
     "display_name": "Hair Loss",
-    "claim_count": 2,
+    "claim_count": 3,
     "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "tin",
         "claim_id": "WAL-CLM-DDDL-000031",
@@ -129,6 +225,21 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "rare-earths"
+    ]
+  },
+  "hand_tremors": {
+    "display_name": "Hand Tremors",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-RARE-000151",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
       "rare-earths"
     ]
   },
@@ -147,10 +258,55 @@
       "dddl-3e-2011"
     ]
   },
+  "heat_intolerance": {
+    "display_name": "Heat Intolerance",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-RARE-000151",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "insomnia": {
+    "display_name": "Insomnia",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-RARE-000151",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "irregular_heartbeat": {
     "display_name": "Irregular Heartbeat",
     "claim_count": 1,
     "likely_deficiencies": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "irritability": {
+    "display_name": "Irritability",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-RARE-000151",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
     "books_cited": [
       "rare-earths"
     ]
@@ -200,6 +356,51 @@
       "rare-earths"
     ]
   },
+  "low_sex_drive": {
+    "display_name": "Low Sex Drive",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "muscle_weakness": {
+    "display_name": "Muscle Weakness",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-RARE-000151",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "nervousness": {
+    "display_name": "Nervousness",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-RARE-000151",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "pica": {
     "display_name": "Pica",
     "claim_count": 2,
@@ -216,6 +417,36 @@
       "rare-earths"
     ]
   },
+  "poor_memory": {
+    "display_name": "Poor Memory",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "rapid_pulse": {
+    "display_name": "Rapid Pulse",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-RARE-000151",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "reduced_immune_status": {
     "display_name": "Reduced Immune Status",
     "claim_count": 2,
@@ -229,6 +460,36 @@
       {
         "essential": "silver",
         "claim_id": "WAL-CLM-RARE-000090",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "weight_gain": {
+    "display_name": "Weight Gain",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "weight_loss": {
+    "display_name": "Weight Loss",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-RARE-000151",
         "confidence": "high",
         "appears_in_books": 1
       }

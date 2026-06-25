@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_71 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_72 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-25 10:41 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 25 — Rare Earths catalog second-half start: Iodine (8 claims, RARE-144..151); Ho/In/Ir confirmed geology-only; Adictis→Adriatic fixed in 4 books; dose-unit standard locked (mg default, mcg if <1mg).
+  ↳ Mined the densest catalog element, Iodine (kv 59→61, corpus 237→245, conditions 114→117). 8 new RARE claims covering essentiality, thyroid-hormone systemic functions, intake/sweat-loss/toxicity, goiter-despite-high-intake + the Japanese seaweed feeding study, goitrogens, the Adriatic copper-deficiency goiter epidemiology (copper required to utilize iodine), and the full hypothyroid (Hashimoto's) + hyperthyroid (Grave's) symptom profiles. Skipped DDDL duplicates (thyroxin mechanism, salt-restriction→goiter, copper-cofactor). The Ho/In/Ir gap flagged by the pass-off: all three READ and confirmed geology-only, no claims. Luneth rulings applied this chunk: (1) Adictis is clearly a mistake for Adriatic — corrected everywhere in Eden (rare-earths, dddl, epigenetics, immortality); deprecated knowledge/ raw-OCR copies left for Phase η. (2) Dose-unit standard locked corpus-wide: mg default, mcg only when the mg value would be sub-1; RARE-146 2,000 mcg→2 mg (book verbatim stays faithful). Patched corpus_resnap.py to re-hash books-meta for 0-claim books (epigenetics/immortality hashes were going stale — truth-anchor fix). Gates: build OK, invariants 30/30, knowledge render probe green (0 page errors).
 
 ## 2026-06-25 03:42 UTC-04:00 · incident · eden/corpus
 Silent-skip audit (Luneth-mandated): catalog A→Hg fully re-checked; found+fixed Europium (+100% lifespan, CANON, silently skipped), Copper Menkes/serum, Cadmium; kv 57→59, corpus 237

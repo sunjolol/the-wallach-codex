@@ -481,7 +481,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 18,
+    "claim_count": 19,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000003",
@@ -508,7 +508,8 @@
         "WAL-CLM-RARE-000121",
         "WAL-CLM-RARE-000123",
         "WAL-CLM-RARE-000128",
-        "WAL-CLM-RARE-000142"
+        "WAL-CLM-RARE-000142",
+        "WAL-CLM-RARE-000149"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000049"
@@ -690,22 +691,87 @@
     "display_name": "Iodine",
     "canon_slug": "iodine",
     "category": "mineral",
-    "claim_count": 4,
+    "claim_count": 12,
     "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000150"
+      ],
+      "definition": [
+        "WAL-CLM-RARE-000144"
+      ],
+      "diagnostic_pattern": [
+        "WAL-CLM-RARE-000151"
+      ],
+      "dose": [
+        "WAL-CLM-RARE-000146"
+      ],
       "interaction": [
         "WAL-CLM-DDDL-000025"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000023",
-        "WAL-CLM-RARE-000074"
+        "WAL-CLM-RARE-000074",
+        "WAL-CLM-RARE-000145",
+        "WAL-CLM-RARE-000147",
+        "WAL-CLM-RARE-000148",
+        "WAL-CLM-RARE-000149"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000024"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "brittle_nails",
+        "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high"
+      },
+      {
+        "sign": "cold_intolerance",
+        "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high"
+      },
+      {
+        "sign": "constipation",
+        "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high"
+      },
+      {
+        "sign": "depression",
+        "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high"
+      },
+      {
+        "sign": "fatigue",
+        "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high"
+      },
+      {
+        "sign": "hair_loss",
+        "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high"
+      },
+      {
+        "sign": "low_sex_drive",
+        "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high"
+      },
+      {
+        "sign": "poor_memory",
+        "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high"
+      },
+      {
+        "sign": "weight_gain",
+        "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
       "goiter",
+      "graves_disease",
+      "hashimotos_disease",
+      "hyperthyroidism",
       "hypothyroidism"
     ],
     "interacts_with": [
