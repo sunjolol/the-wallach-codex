@@ -574,11 +574,14 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 15,
+    "claim_count": 16,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
         "WAL-CLM-DDDL-000006"
+      ],
+      "dose": [
+        "WAL-CLM-RARE-000048"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000029",
@@ -744,7 +747,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 15,
+    "claim_count": 18,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -760,14 +763,17 @@
         "WAL-CLM-DDDL-000037",
         "WAL-CLM-DDDL-000038",
         "WAL-CLM-DDDL-000084",
-        "WAL-CLM-RARE-000010"
+        "WAL-CLM-RARE-000010",
+        "WAL-CLM-RARE-000044",
+        "WAL-CLM-RARE-000046"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000049",
         "WAL-CLM-DDDL-000055",
         "WAL-CLM-DDDL-000070",
         "WAL-CLM-DDDL-000080",
-        "WAL-CLM-DDDL-000085"
+        "WAL-CLM-DDDL-000085",
+        "WAL-CLM-RARE-000045"
       ]
     },
     "deficiency_signs": [
@@ -798,6 +804,7 @@
       "cradle_cap",
       "cystic_fibrosis",
       "diabetes",
+      "down_syndrome",
       "infertility",
       "spina_bifida"
     ],

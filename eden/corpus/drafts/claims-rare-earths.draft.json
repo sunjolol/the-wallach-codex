@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817794
+        "char_offset": 817751
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817996
+        "char_offset": 817953
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817558
+        "char_offset": 817515
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 772485
+        "char_offset": 772442
       },
       "dose": {
         "amount": "250-400",
@@ -551,7 +551,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 473946
+        "char_offset": 473903
       },
       "dose": null,
       "tags": [
@@ -581,7 +581,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 474570
+        "char_offset": 474527
       },
       "dose": null,
       "tags": [
@@ -1414,6 +1414,226 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T01:06:02+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000044",
+      "kind": "mechanism",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "down_syndrome"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach holds that Down's Syndrome is not genetic but is the result of a preconception zinc deficiency, which produces a chromosomal/DNA injury similar to radiation damage; he notes that nutritional studies have created Trisomy/Down's in animals and cell cultures at will via preconception zinc deficiency during sperm and egg formation.",
+      "verbatim": "Down’s Syndrome is in fact the result of a preconception zinc deficiency which produces a chromosomal/DNA injury or defect similar in nature to the changes created by radiation",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 141,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 408325
+      },
+      "dose": null,
+      "tags": [
+        "down-syndrome",
+        "preconception",
+        "zinc",
+        "trisomy"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T01:32:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000045",
+      "kind": "protocol",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "down_syndrome"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach estimates that about $40 of supplements per month, taken before and during pregnancy, is enough to prevent Down's Syndrome — against a lifetime care cost he puts near a million dollars per patient.",
+      "verbatim": "It only takes $40 worth of supplements a month before and during pregnancy to prevent Down's Syndrome and in addition to the human tragedy it costs us a million dollars to care for each Down's Syndrome patient over their life time.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 141,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 409060
+      },
+      "dose": null,
+      "tags": [
+        "down-syndrome",
+        "preconception",
+        "supplements",
+        "cost"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T01:32:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000046",
+      "kind": "mechanism",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Essential mineral cofactors act as the \"metal fingers\" (e.g. zinc fingers) that genetic engineers say are required to activate genes — without the right metal cofactor, Wallach argues, DNA and genes are inert.",
+      "verbatim": "Genetic engineers refer to the essential mineral cofactors as “metal fingers” which are required to activate genes!!! In the absence of the appropriate “metal finger” DNA and genes are powerless",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 141,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 410789
+      },
+      "dose": null,
+      "tags": [
+        "metal-fingers",
+        "cofactor",
+        "zinc",
+        "gene-activation"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T01:32:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000047",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "birth_defects"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach asserts that roughly 98% of birth defects are not genetic but are nutritional deficiencies of the egg, embryo and fetus — preventable by preconception nutrition; he points to the animal industry having all but eliminated birth defects this way.",
+      "verbatim": "It has been clearly demonstrated in the laboratory animal, pet animal and agriculture that 98 % of all birth defects are not “genetic” in nature, but in fact are nutritional deficiencies of the egg, embryo and fetus and can be prevented by preconception nutrition.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 141,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 409293
+      },
+      "dose": null,
+      "tags": [
+        "birth-defects",
+        "preconception",
+        "animal-industry",
+        "98-percent"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T01:32:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000048",
+      "kind": "dose",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "keshan_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach cites a Chinese selenium trial: supplementing children with 1 mg sodium selenite three times a week dropped Keshan Disease incidence from 13/1,000 to 1/1,000 over three years (vs unchanged 13/1,000 on placebo), and larger studies confirmed selenium is specific for preventing KSD.",
+      "verbatim": "At the end of a three year study, the rate of KSD in the selenium supplemented group dropped from 13/1,000 children to 1/1,000 children; the rate of KSD in the control group remained at 13/1,000.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 152,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 431080
+      },
+      "dose": {
+        "essential": "selenium",
+        "amount": "1 mg sodium selenite",
+        "frequency": "three times per week",
+        "form": "sodium selenite",
+        "duration": "3 years",
+        "for_condition": "keshan disease"
+      },
+      "tags": [
+        "selenium",
+        "keshan-disease",
+        "china-trial",
+        "sodium-selenite"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T01:32:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000049",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "cystic_fibrosis",
+        "muscular_dystrophy",
+        "kawasaki_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach maintains that dozens of human \"genetic\" diseases can in fact be prevented — and in early stages reversed or \"cured\" — with minerals, naming cystic fibrosis, muscular dystrophy and Kawasaki Disease as prime examples.",
+      "verbatim": "There are literally dozens of human “genetic” diseases that can be prevented and in the early stages reversed or “cured” with minerals.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 149,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 423274
+      },
+      "dose": null,
+      "tags": [
+        "genetic-diseases",
+        "minerals",
+        "cystic-fibrosis",
+        "muscular-dystrophy",
+        "kawasaki"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T01:32:50+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

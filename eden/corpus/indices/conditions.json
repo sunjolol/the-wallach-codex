@@ -266,10 +266,11 @@
   },
   "birth_defects": {
     "display_name": "Birth Defects",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-RARE-000015"
+        "WAL-CLM-RARE-000015",
+        "WAL-CLM-RARE-000047"
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000039"
@@ -581,7 +582,7 @@
   },
   "cystic_fibrosis": {
     "display_name": "Cystic Fibrosis",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000004",
@@ -589,6 +590,9 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005"
+      ],
+      "definitions": [
+        "WAL-CLM-RARE-000049"
       ]
     },
     "essentials_involved": [
@@ -648,13 +652,19 @@
   },
   "down_syndrome": {
     "display_name": "Down Syndrome",
-    "claim_count": 1,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-RARE-000016"
+        "WAL-CLM-RARE-000016",
+        "WAL-CLM-RARE-000044"
+      ],
+      "protocols": [
+        "WAL-CLM-RARE-000045"
       ]
     },
-    "essentials_involved": [],
+    "essentials_involved": [
+      "zinc"
+    ],
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
@@ -834,6 +844,20 @@
       "dddl-3e-2011"
     ]
   },
+  "kawasaki_disease": {
+    "display_name": "Kawasaki Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-RARE-000049"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "keratitis": {
     "display_name": "Keratitis",
     "claim_count": 1,
@@ -852,10 +876,13 @@
   },
   "keshan_disease": {
     "display_name": "Keshan Disease",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000071"
+      ],
+      "doses": [
+        "WAL-CLM-RARE-000048"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000073"
@@ -867,7 +894,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "kidney_stones": {
@@ -988,13 +1016,16 @@
   },
   "muscular_dystrophy": {
     "display_name": "Muscular Dystrophy",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000071"
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005"
+      ],
+      "definitions": [
+        "WAL-CLM-RARE-000049"
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000007",
@@ -1010,7 +1041,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "osteoarthritis": {
