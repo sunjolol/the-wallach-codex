@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_86 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_87 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-25 16:19 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 38 — Rare Earths Pd→Rb: confirmed Pd/Pm/Po/Pt/Pu/Ra geology/radioactive (no claim) + 2 canon claims RARE-216 Pr (lifespan-doubling) + RARE-217 Rb (replaces K electrolyte function). kv 75→76, corpus 309→311, conditions 141, board 30/30, knowledge probe green.
+  ↳ Pd (accumulates liver/kidney), Pm (radioactive 2.6yr fission product), Po (2x10^-10 ppm), Pt (0.005 ppm), Pu (radioactive 24,000yr, nuclear), Ra (all isotopes radioactive) — all read + confirmed geology/radioactive, no claims. RARE-216 Pr/Praseodymium (canon): 'light' rare earth enhances proliferation of normal cell growth + doubles lab-species lifespan — mirrors the La/Nd/Eu lifespan claims (RARE-158/191/140), kind=mechanism. RARE-217 Rb/Rubidium (canon): replaces the electrolyte function of potassium in many species (bacteria/algae/fungi/echinoderms-starfish), kind=mechanism. Two tiny targeted reflows of the claim paragraphs (Pr newline-merge; Rb de-hyphenate 'inverte-brates'); resnap 0 broken (all 215 prior claims upstream). No new condition slugs. Claims reviewed + approved by Luneth before commit.
 
 ## 2026-06-25 16:09 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 37 — Rare Earths Pa (confirmed geology/radioactive, no claim) + Pb/Lead: 5 claims RARE-211..215 (toxic → other_substances=[lead]). kv 74→75, corpus 304→309, conditions 139→141, board 30/30, knowledge probe green.
