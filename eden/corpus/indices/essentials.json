@@ -78,7 +78,7 @@
     "display_name": "Oxygen",
     "canon_slug": "oxygen",
     "category": "mineral",
-    "claim_count": 5,
+    "claim_count": 9,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-RARE-000195"
@@ -87,12 +87,26 @@
         "WAL-CLM-RARE-000196",
         "WAL-CLM-RARE-000197",
         "WAL-CLM-RARE-000198",
-        "WAL-CLM-RARE-000199"
+        "WAL-CLM-RARE-000199",
+        "WAL-CLM-RARE-000200",
+        "WAL-CLM-RARE-000201"
+      ],
+      "prognosis": [
+        "WAL-CLM-RARE-000203"
+      ],
+      "protocol": [
+        "WAL-CLM-RARE-000202"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [
-      "cancer"
+      "arteriosclerosis",
+      "asthma",
+      "cancer",
+      "circulatory_disease",
+      "emphysema",
+      "gangrene",
+      "stroke"
     ],
     "interacts_with": [],
     "books_cited": [

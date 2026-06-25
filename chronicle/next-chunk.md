@@ -1,6 +1,28 @@
 # Next chunk — operating system CLEANED → continue **Phase 2** surfaces
 
-## LATEST (2026-06-25 SESSION 4 — Phase γ.3 catalog: O/Oxygen PART 1 of 2 mined (the ~1,100-line behemoth); context-screening forced an early clean checkpoint + reset · kv 71→72 · RARE 194→199 (corpus 293) · conditions 134 · board 30/30 · knowledge probe green · PUSHED)
+## LATEST (2026-06-25 SESSION 5 — Phase γ.3 catalog: O/Oxygen PART 2 of 2 (block 3, p372) mined → Oxygen COMPLETE; resuming the catalog at P/Phosphorus · kv 72→73 · RARE 199→203 (corpus 297) · conditions 134→138 · board 30/30 · knowledge probe green · PUSHED)
+
+**SESSION 2026-06-25 (SESSION 5) — fresh session after SESSION 4's context-screening reset. Batch 35 shipped (the deferred Oxygen block-3 oxygen-therapy claims), pushed to origin/master. Corpus 293→297 (+4), conditions 134→138 (+4 new slugs), kv 72→73. Continuing the per-element catalog at P/Phosphorus.**
+
+**BATCH 35 — O/Oxygen PART 2 (block 3, p372; RARE-200..203; essentials=[oxygen]):**
+- RARE-200 (mechanism): singlet/atomic O kills cells outside circulation (cell culture/test-tube/wound) but in-body the lone free electron pairs w/ a carcinogenic free electron OR another singlet-O → becomes O2 ("the required stuff of respiration").
+- RARE-201 (mechanism): food-grade H2O2 — proper dilution on empty stomach OR IV → absorbed via stomach/duodenal walls → immediately broken to water + singlet oxygen.
+- RARE-202 (protocol; cond=cancer/circulatory_disease/arteriosclerosis/emphysema/asthma/gangrene/stroke): H2O2 used topically/IV/orally since the Civil War; 50+ yrs in Europe for those conditions; "sleeping beauty" cells reactivated in hyperbaric chambers.
+- RARE-203 (prognosis; cond=cancer): Dr. Renate Viebahn ("The Use of Ozone in Medicine", 22 articles vs cancer cells); ozone "therapeutic window" 20-100 µg/ml of blood (less=ineffective, more=damages normal cells); Ed McCabe — mineral-deficient bodies lack antioxidant-enzyme systems to use O2.
+- CLEANING: block 3 reflowed (de-hyphenated; [reece]/PERRET OCR garble dropped; chem-equation "Ozone (O,) -> H,O, + O- / catalase -> H,O + O," kept as a 2-line block); resnap 0 broken (all prior 199 claims upstream of the edit). Os/Osmium READ + confirmed geology-only ("It oxidizes organic matter as OsO, and is reduced to Os") — no claim.
+
+**⚠ 3 OCR/BOOK DISCREPANCIES — FLAGGED OPEN, .txt KEPT BYTE-FAITHFUL (awaiting Luneth's ruling; none inside an extracted verbatim → each is a clean follow-up .txt edit + resnap):**
+1. `.txt` "wml" vs the book actually prints "u/ml" (= µg/ml). claim_text uses µg/ml; verbatim keeps "wml". → correct .txt "wml"→"u/ml"?
+2. Book's OWN misspelling "Vicbahn" vs the real author **Renate Viebahn**. claim_text uses Viebahn; not in any verbatim. → leave the book faithful, or correct?
+3. `.txt` OCR "peopk:" vs "people" (clear garble; not in any verbatim). → correct .txt "peopk:"→"people"?
+
+**⚠⚠ NEXT — resume the catalog at P/Phosphorus (book p372-373+; the entry begins "P- Phosphorus is found in igneous rocks at 1,050 ppm…").** Rich canon element: structural mineral for bones/teeth (700g of ~800g body P as calcium phosphate/apatite), most functions of any mineral (nucleic acids, enzyme activation, ATP energy cycle, RBC metabolism), 22% of body mineral content, B-complex coenzyme dependence; intake 1,000-1,500 mg/day, absorption (metallic 3-5%/infants 8-12%, chelated 40-50%, colloidal 98%), optimal Ca:P 1:1; high-protein-diet problem (elevated P → ↑Ca requirements → osteoporosis/arthritis/high-BP/loose teeth), phytate mineral-binding; deficiency → hypophosphatemia (ATP/energy failure → neuromuscular/skeletal/blood/kidney disease), causes (IV glucose/TPN without P, excess antacids, hyperparathyroidism). Then Pb/Lead (toxic). Remaining catalog tail (READ each, never assume — many geology/noble-gas/radioactive): Pd/Po/Pr/Pt/Ra/Rb/Re/Rh/Rn/Ru/S/Sb/Sc/Se/Si/Sn/Sr/Ta/Tb/Te/Th/Ti/Tl/Tm/U/V/W/Xe/Y/Yb/Zn/Zr. Canon heavy-hitters ahead: P, Pb, Rb, S/Sulfur, Se/Selenium, Si/Silica, Sn/Tin, Sr/Strontium, Ti, V/Vanadium, Zn/Zinc. METHOD unchanged: `grep "found in igneous"` enumerate every entry, cross-check DDDL, READ before skipping, state every skip, per-batch pipeline + STOP for Luneth's review + knowledge render probe every batch.
+
+**TOOLING TRAP (don't relearn):** `post_write_verify.py` parses safe_write's success line via regex `^OK\s+(.+?)\s+—`; a helper script printing a line starting `OK <text> — …` is misparsed → a FALSE "POST-WRITE CORRUPTION" (the real write succeeded; `safe_write check <path>` confirms clean). Never start a helper-script stdout line with `OK … —`.
+
+**POLICY/STATE (still active):** dose-unit standard [[dose-unit-standard]] (mg default, mcg only sub-1; Wallach verbatim faithful); Adriatic correction REVERSIBLE (chronicle/contradictions/2026-06-25-adictis-to-adriatic.md). STILL DEFERRED: Table 11-9 (Ch.11 vitamin-deficiency BEHAVIORAL goldmine pp295-296); raw-OCR Schrauzer/Li tables + Table 11-20; Ch.3 Senate-Doc-264 companion + Table 7-8; Ch.9 Pill Mills drug-specifics + Table 9-1; then the other in-housed books. Corpus = 297 (DDDL 94 + RARE 203), conditions 138, kv=73.
+
+## (SUPERSEDED 2026-06-25 SESSION 5 above — O/Oxygen PART 2 now mined → Oxygen complete, kv 72→73, corpus 293→297) LATEST (2026-06-25 SESSION 4 — Phase γ.3 catalog: O/Oxygen PART 1 of 2 mined (the ~1,100-line behemoth); context-screening forced an early clean checkpoint + reset · kv 71→72 · RARE 194→199 (corpus 293) · conditions 134 · board 30/30 · knowledge probe green · PUSHED)
 
 **SESSION 2026-06-25 (SESSION 4) — what shipped: 1 round-close batch (batch 34), pushed to origin/master. Corpus 288→293 (+5 claims), kv 71→72. O/Oxygen is the behemoth flagged last session; mined HALF (blocks 1-2), deliberately stopped at a clean checkpoint — see CONTEXT-SCREENING.**
 

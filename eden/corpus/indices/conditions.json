@@ -269,7 +269,7 @@
   },
   "arteriosclerosis": {
     "display_name": "Arteriosclerosis",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000082"
@@ -279,10 +279,14 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-RARE-000172"
+      ],
+      "protocols": [
+        "WAL-CLM-RARE-000202"
       ]
     },
     "essentials_involved": [
       "magnesium",
+      "oxygen",
       "vitamin-d"
     ],
     "other_substances_involved": [],
@@ -340,7 +344,7 @@
   },
   "asthma": {
     "display_name": "Asthma",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000053"
@@ -349,11 +353,15 @@
         "WAL-CLM-DDDL-000026",
         "WAL-CLM-RARE-000172",
         "WAL-CLM-RARE-000176"
+      ],
+      "protocols": [
+        "WAL-CLM-RARE-000202"
       ]
     },
     "essentials_involved": [
       "magnesium",
-      "manganese"
+      "manganese",
+      "oxygen"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -588,7 +596,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 15,
+    "claim_count": 17,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -606,12 +614,14 @@
         "WAL-CLM-RARE-000086"
       ],
       "prognosis": [
-        "WAL-CLM-RARE-000077"
+        "WAL-CLM-RARE-000077",
+        "WAL-CLM-RARE-000203"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000018",
         "WAL-CLM-DDDL-000056",
-        "WAL-CLM-RARE-000125"
+        "WAL-CLM-RARE-000125",
+        "WAL-CLM-RARE-000202"
       ],
       "quotes": [
         "WAL-CLM-DDDL-000057",
@@ -859,6 +869,22 @@
     },
     "essentials_involved": [
       "lanthanum"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "circulatory_disease": {
+    "display_name": "Circulatory Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-RARE-000202"
+      ]
+    },
+    "essentials_involved": [
+      "oxygen"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1284,6 +1310,22 @@
       "rare-earths"
     ]
   },
+  "emphysema": {
+    "display_name": "Emphysema",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-RARE-000202"
+      ]
+    },
+    "essentials_involved": [
+      "oxygen"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "explosive_outbursts": {
     "display_name": "Explosive Outbursts",
     "claim_count": 5,
@@ -1307,6 +1349,22 @@
       "sodium",
       "vanadium",
       "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "gangrene": {
+    "display_name": "Gangrene",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-RARE-000202"
+      ]
+    },
+    "essentials_involved": [
+      "oxygen"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -2484,6 +2542,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "stroke": {
+    "display_name": "Stroke",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-RARE-000202"
+      ]
+    },
+    "essentials_involved": [
+      "oxygen"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "tetany": {
