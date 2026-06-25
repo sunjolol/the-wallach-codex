@@ -15,6 +15,23 @@
       "rare-earths"
     ]
   },
+  "addisons_disease": {
+    "display_name": "Addisons Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000188"
+      ]
+    },
+    "essentials_involved": [
+      "potassium",
+      "sodium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "adhd": {
     "display_name": "Adhd",
     "claim_count": 2,
@@ -1397,11 +1414,14 @@
   },
   "heat_stroke": {
     "display_name": "Heat Stroke",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000003",
         "WAL-CLM-RARE-000027"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000189"
       ]
     },
     "essentials_involved": [
@@ -2638,6 +2658,22 @@
       "sodium",
       "vanadium",
       "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "water_intoxication": {
+    "display_name": "Water Intoxication",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000189"
+      ]
+    },
+    "essentials_involved": [
+      "sodium"
     ],
     "other_substances_involved": [],
     "books_cited": [

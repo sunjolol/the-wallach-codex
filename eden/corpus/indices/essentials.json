@@ -89,10 +89,14 @@
     "display_name": "Sodium",
     "canon_slug": "sodium",
     "category": "mineral",
-    "claim_count": 5,
+    "claim_count": 10,
     "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000189"
+      ],
       "definition": [
-        "WAL-CLM-RARE-000026"
+        "WAL-CLM-RARE-000026",
+        "WAL-CLM-RARE-000187"
       ],
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000129"
@@ -100,15 +104,22 @@
       "mechanism": [
         "WAL-CLM-RARE-000003",
         "WAL-CLM-RARE-000027",
-        "WAL-CLM-RARE-000153"
+        "WAL-CLM-RARE-000153",
+        "WAL-CLM-RARE-000186",
+        "WAL-CLM-RARE-000188"
+      ],
+      "protocol": [
+        "WAL-CLM-RARE-000190"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [
+      "addisons_disease",
       "blind_rage",
       "explosive_outbursts",
       "heat_stroke",
-      "violent_behavior"
+      "violent_behavior",
+      "water_intoxication"
     ],
     "interacts_with": [
       "calcium",
@@ -274,10 +285,11 @@
     "display_name": "Chloride",
     "canon_slug": "chloride",
     "category": "mineral",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "definition": [
-        "WAL-CLM-RARE-000026"
+        "WAL-CLM-RARE-000026",
+        "WAL-CLM-RARE-000187"
       ],
       "mechanism": [
         "WAL-CLM-RARE-000113"
@@ -286,6 +298,7 @@
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [
+      "potassium",
       "sodium"
     ],
     "books_cited": [
@@ -296,14 +309,15 @@
     "display_name": "Potassium",
     "canon_slug": "potassium",
     "category": "mineral",
-    "claim_count": 7,
+    "claim_count": 9,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000155"
       ],
       "definition": [
         "WAL-CLM-RARE-000152",
-        "WAL-CLM-RARE-000169"
+        "WAL-CLM-RARE-000169",
+        "WAL-CLM-RARE-000187"
       ],
       "dose": [
         "WAL-CLM-RARE-000154"
@@ -313,7 +327,8 @@
         "WAL-CLM-RARE-000156"
       ],
       "mechanism": [
-        "WAL-CLM-RARE-000153"
+        "WAL-CLM-RARE-000153",
+        "WAL-CLM-RARE-000188"
       ]
     },
     "deficiency_signs": [
@@ -329,11 +344,13 @@
       }
     ],
     "conditions_treated": [
+      "addisons_disease",
       "cardiac_failure",
       "hypokalemia"
     ],
     "interacts_with": [
       "calcium",
+      "chloride",
       "magnesium",
       "sodium"
     ],

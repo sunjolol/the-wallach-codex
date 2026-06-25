@@ -6569,6 +6569,192 @@
       "extracted_at": "2026-06-25T18:00:07+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000186",
+      "kind": "mechanism",
+      "essentials": [
+        "sodium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach describes salt hunger as one of the most basic cravings of living organisms: carnivores crave salt less because meat is rich in sodium chloride (salt), while herbivores and human vegetarians demand large amounts because grains, vegetables, and fruits contain little or none. Average sodium intake is 5 to 12 grams per day in Western cultures, while the Japanese — who outlive Americans by about four years — average 28 grams per day.",
+      "verbatim": "The average sodium dietary intake per day in western cultures is five to 12 G/day while the Japanese who on the average out live Americans by four years consume an average of 28 G/day!!",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 354,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 856359
+      },
+      "dose": null,
+      "tags": [
+        "sodium",
+        "salt-craving",
+        "japan",
+        "longevity"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T18:05:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000187",
+      "kind": "definition",
+      "essentials": [
+        "sodium",
+        "chloride",
+        "potassium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach groups sodium, chloride, and potassium as the three indispensable 'electrolytes': sodium is about 2%, potassium 5%, and chloride 3% of the body's total mineral content; sodium and chloride are mainly extracellular while potassium is intracellular. Together they maintain normal water balance and distribution, osmotic equilibrium, acid-base balance, and muscular irritability.",
+      "verbatim": "Sodium, Cl and K are three indispensable “electrolytes” so intimately associated in the body that they can be presented together. Sodium makes up two percent, K five percent and Cl three percent of the total mineral content of the human body.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 354,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 856546
+      },
+      "dose": null,
+      "tags": [
+        "sodium",
+        "chloride",
+        "potassium",
+        "electrolytes",
+        "water-balance"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T18:05:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000188",
+      "kind": "mechanism",
+      "essentials": [
+        "sodium",
+        "potassium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "addisons_disease"
+      ],
+      "symptoms": [
+        "muscle_cramps",
+        "weakness",
+        "weight_loss",
+        "salt_hunger"
+      ],
+      "claim_text": "Wallach notes hormonal control of sodium, potassium, and chloride balance comes from the adrenal cortex and anterior pituitary; Addison's disease (failure of the adrenal cortex) causes loss of sodium and potassium retention with general weakness, muscle cramps, weight loss, and a marked 'salt hunger,' relieved by salt (sodium chloride) or adrenal cortical hormones.",
+      "verbatim": "Addison's Disease, a loss of function of the adrenal cortex, results in the loss of Na and K retention with clinical signs of general weakness, muscle cramps, weight loss and a marked “salt hunger.”",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 355,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 857408
+      },
+      "dose": null,
+      "tags": [
+        "sodium",
+        "potassium",
+        "addisons-disease",
+        "adrenal",
+        "salt-hunger"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T18:05:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000189",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "sodium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "water_intoxication",
+        "heat_stroke"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach reports sodium-chloride deficiency occurs mainly in hot weather (e.g., the July 1993 heat wave) or heavy work in heat with heavy sweating; he also cites 'water intoxication' in infants fed low-sodium formula (from physicians' fear of sodium) — their brains swelled, causing death from a simple sodium deficiency.",
+      "verbatim": "“Water intoxication” occurred in infants fed low Na formulas because of the allopathic doctors paranoia with Na - their brains swelled causing death from a simple Na deficiency.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 355,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 857888
+      },
+      "dose": null,
+      "tags": [
+        "sodium",
+        "deficiency",
+        "water-intoxication",
+        "infant-formula",
+        "heat"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T18:05:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000190",
+      "kind": "protocol",
+      "essentials": [
+        "sodium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach gives the treatment for sodium deficiency as water and salt, taken either orally or intravenously (0.9% saline).",
+      "verbatim": "The treatment for Na deficiency is water and salt either orally or IV (saline 0.9 %).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 355,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 858067
+      },
+      "dose": null,
+      "tags": [
+        "sodium",
+        "treatment",
+        "saline",
+        "intravenous"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T18:05:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
