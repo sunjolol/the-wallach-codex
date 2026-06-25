@@ -100,7 +100,7 @@
   },
   "anemia": {
     "display_name": "Anemia",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
@@ -112,6 +112,9 @@
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000081"
+      ],
+      "prognosis": [
+        "WAL-CLM-RARE-000213"
       ]
     },
     "essentials_involved": [
@@ -122,7 +125,9 @@
       "selenium",
       "vanadium"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "lead"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "rare-earths"
@@ -1327,6 +1332,22 @@
       "rare-earths"
     ]
   },
+  "encephalopathy": {
+    "display_name": "Encephalopathy",
+    "claim_count": 1,
+    "claims_by_role": {
+      "prognosis": [
+        "WAL-CLM-RARE-000213"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "lead"
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "explosive_outbursts": {
     "display_name": "Explosive Outbursts",
     "claim_count": 5,
@@ -1546,20 +1567,25 @@
   },
   "hyperactivity": {
     "display_name": "Hyperactivity",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000163"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
+      ],
+      "prognosis": [
+        "WAL-CLM-RARE-000215"
       ]
     },
     "essentials_involved": [
       "chromium",
       "lithium"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "lead"
+    ],
     "books_cited": [
       "rare-earths"
     ]
@@ -1884,20 +1910,51 @@
       "rare-earths"
     ]
   },
+  "lead_poisoning": {
+    "display_name": "Lead Poisoning",
+    "claim_count": 5,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000211"
+      ],
+      "diagnostics": [
+        "WAL-CLM-RARE-000212"
+      ],
+      "prognosis": [
+        "WAL-CLM-RARE-000213",
+        "WAL-CLM-RARE-000215"
+      ],
+      "protocols": [
+        "WAL-CLM-RARE-000214"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "lead"
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "learning_disabilities": {
     "display_name": "Learning Disabilities",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "definitions": [
         "WAL-CLM-RARE-000116",
         "WAL-CLM-RARE-000122"
+      ],
+      "prognosis": [
+        "WAL-CLM-RARE-000215"
       ]
     },
     "essentials_involved": [
       "chromium",
       "copper"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "lead"
+    ],
     "books_cited": [
       "rare-earths"
     ]
@@ -2413,7 +2470,7 @@
   },
   "pica": {
     "display_name": "Pica",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-RARE-000036"
@@ -2421,13 +2478,16 @@
       "causes": [
         "WAL-CLM-RARE-000035",
         "WAL-CLM-RARE-000037",
-        "WAL-CLM-RARE-000040"
+        "WAL-CLM-RARE-000040",
+        "WAL-CLM-RARE-000211"
       ]
     },
     "essentials_involved": [
       "iron"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "lead"
+    ],
     "books_cited": [
       "rare-earths"
     ]

@@ -7480,6 +7480,195 @@
       "extracted_at": "2026-06-25T19:44:31+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000211",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "lead"
+      ],
+      "conditions": [
+        "lead_poisoning",
+        "pica"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach explains that children with pica — cravings for non-food items such as paint, sand, or dirt — are highly susceptible to lead poisoning (plumbism) because they chew on toys, cribs, window sills, furniture, and paint; a penny-sized chip of lead paint can hold 50–100 mcg of lead, and consuming that much daily for three months will cause lead poisoning.",
+      "verbatim": "Children with cravings (pica) for non-food items (i.e.- paint, sand, dirt, etc.) are very susceptible to lead poisoning (plumbism).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 375,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 896806
+      },
+      "dose": null,
+      "tags": [
+        "lead",
+        "pica",
+        "plumbism",
+        "lead-paint",
+        "toxicity"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T20:05:13+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000212",
+      "kind": "diagnostic_pattern",
+      "essentials": [],
+      "other_substances": [
+        "lead"
+      ],
+      "conditions": [
+        "lead_poisoning"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach gives blood-lead thresholds: the \"normal\" level is below 40 mcg/dl, while children with blood lead of 60–80 mcg/dl show vomiting, irritability, weight loss, muscular weakness, headache, abdominal pain, insomnia, and anorexia.",
+      "verbatim": "The “normal” blood lead level is below 40 ug/dl - children with blood lead above 60 to 80 ug/dl have symptoms of vomiting, irritability, weight loss, muscular weakness, headache, abdominal pain, insomnia and anorexia.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 375,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 897202
+      },
+      "dose": null,
+      "tags": [
+        "lead",
+        "blood-lead",
+        "toxicity",
+        "children"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T20:05:13+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000213",
+      "kind": "prognosis",
+      "essentials": [],
+      "other_substances": [
+        "lead"
+      ],
+      "conditions": [
+        "lead_poisoning",
+        "anemia",
+        "encephalopathy"
+      ],
+      "symptoms": [],
+      "claim_text": "At blood-lead levels above 80 mcg/dl, Wallach says children show anemia, kidney damage (Fanconi syndrome — increased urinary loss of amino acids, glucose, and phosphate), peripheral neuritis, ataxia and muscular incoordination, joint pain, and encephalopathy (brain damage, learning disabilities), with eventual death.",
+      "verbatim": "Children with blood levels of lead above 80 ug/dl show anemia, kidney damage (Fanconi syndrome - increased urinary loss of amino acids, glucose and phosphotus), peripheral neuritis, ataxia and muscular incoordination, joint pain and encephalopathy (brain damage, learning disabilities, etc.) with eventual death.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 375,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 897420
+      },
+      "dose": null,
+      "tags": [
+        "lead",
+        "blood-lead",
+        "encephalopathy",
+        "fanconi-syndrome",
+        "toxicity"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T20:05:13+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000214",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "lead"
+      ],
+      "conditions": [
+        "lead_poisoning"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach's approach to treating lead poisoning: supplement with 60 colloidal minerals (especially calcium and iron, to eliminate pica and further lead ingestion), restore fluid and electrolyte balance (especially phosphorus), and use intravenous or intramuscular chelation with CaEDTA (calcium EDTA) and BAL (British Anti-Lewisite) for a minimum of five days.",
+      "verbatim": "The approach to treating lead poisoning includes supplementing with 60 colloidal minerals (especially Ca and Fe to eliminate pica and further ingestion of Pb), restoring fluid and electrolyte balance (especially P) and the use of IV or IM chelation using CaEDTA (ethylenediaminetetraacetic acid) and BAL (British Anti-Lewisite) for a minimum of five days.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 375,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 897734
+      },
+      "dose": null,
+      "tags": [
+        "lead",
+        "chelation",
+        "colloidal-minerals",
+        "caedta",
+        "bal"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T20:05:13+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000215",
+      "kind": "prognosis",
+      "essentials": [],
+      "other_substances": [
+        "lead"
+      ],
+      "conditions": [
+        "lead_poisoning",
+        "hyperactivity",
+        "learning_disabilities"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach notes that as many as 25 percent of lead-poisoned individuals are left with residual damage — loss of IQ, loss of coordination, hyperactivity, learning disabilities, and impulsiveness.",
+      "verbatim": "It is not unusual for as many as 25 % of Pb poisoned individuals to have residual loss of IQ, loss of coordination, hyperactivity, learning disabilities and impulsiveness.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 375,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 898090
+      },
+      "dose": null,
+      "tags": [
+        "lead",
+        "residual-damage",
+        "iq-loss",
+        "behavioral",
+        "toxicity"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T20:05:13+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

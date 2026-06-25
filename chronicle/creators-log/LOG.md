@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_85 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_86 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-25 16:09 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 37 — Rare Earths Pa (confirmed geology/radioactive, no claim) + Pb/Lead: 5 claims RARE-211..215 (toxic → other_substances=[lead]). kv 74→75, corpus 304→309, conditions 139→141, board 30/30, knowledge probe green.
+  ↳ Pa/Protoactinium read + confirmed radioactive/geology-only (half-life 32,000 yrs, accumulates in mammalian bone) — no claim. Pb/Lead is TOXIC and non-canon, so claims carry essentials=[] and other_substances=[lead] (alongside mercury/cadmium/fluoride). Claims: (211) pica → plumbism, penny-size lead-paint chip = 50-100 mcg Pb daily x3 months → poisoning [lead_poisoning/pica]; (212) blood-lead tiers normal <40, 60-80 mcg/dl symptom set [lead_poisoning, diagnostic_pattern]; (213) >80 mcg/dl → anemia/Fanconi kidney damage/peripheral neuritis/ataxia/encephalopathy → death [lead_poisoning/anemia/encephalopathy]; (214) treatment — 60 colloidal minerals (Ca+Fe to stop pica), restore fluid/electrolyte (P), IV/IM chelation CaEDTA+BAL ≥5 days [protocol]; (215) ~25% residual IQ-loss/incoordination/hyperactivity/learning-disabilities/impulsiveness [prognosis, behavioral conditions]. Pb prose reflowed (de-hyphenated; compound 'non-food' preserved via restore-map; '==)}—_' garble dropped; sentence-aware rejoin). resnap 0 broken (all 210 prior claims upstream). The interleaved USA TODAY 'Lead tests for all kids under 3 urged' clipping (p374) left raw — not Wallach's voice. Faithful OCR oddity 'phosphotus' (the book's own typo for phosphate) kept in RARE-213 verbatim; claim_text says phosphate. New condition slugs lead_poisoning + encephalopathy. Claims reviewed + approved by Luneth before commit.
 
 ## 2026-06-25 15:56 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 36 — Rare Earths P/Phosphorus: 7 claims RARE-204..210 (definition x2, interaction x2, dose, deficiency_sign, mechanism). kv 73→74, corpus 297→304, conditions 138→139, board 30/30, knowledge probe green.

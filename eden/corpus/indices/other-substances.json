@@ -45,6 +45,36 @@
       "rare-earths"
     ]
   },
+  "lead": {
+    "display_name": "Lead",
+    "claim_count": 5,
+    "claims_by_kind": {
+      "diagnostic_pattern": [
+        "WAL-CLM-RARE-000212"
+      ],
+      "mechanism": [
+        "WAL-CLM-RARE-000211"
+      ],
+      "prognosis": [
+        "WAL-CLM-RARE-000213",
+        "WAL-CLM-RARE-000215"
+      ],
+      "protocol": [
+        "WAL-CLM-RARE-000214"
+      ]
+    },
+    "conditions_treated": [
+      "anemia",
+      "encephalopathy",
+      "hyperactivity",
+      "lead_poisoning",
+      "learning_disabilities",
+      "pica"
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "mercury": {
     "display_name": "Mercury",
     "claim_count": 3,
