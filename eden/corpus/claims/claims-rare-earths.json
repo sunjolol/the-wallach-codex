@@ -307,7 +307,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 402424
+        "char_offset": 402418
       },
       "dose": null,
       "tags": [
@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817796
+        "char_offset": 817790
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817998
+        "char_offset": 817992
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817560
+        "char_offset": 817554
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 772487
+        "char_offset": 772481
       },
       "dose": {
         "amount": "250-400",
@@ -488,7 +488,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 392802
+        "char_offset": 392796
       },
       "dose": null,
       "tags": [
@@ -520,7 +520,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 393579
+        "char_offset": 393573
       },
       "dose": null,
       "tags": [
@@ -551,7 +551,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 473948
+        "char_offset": 473942
       },
       "dose": null,
       "tags": [
@@ -581,7 +581,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 474572
+        "char_offset": 474566
       },
       "dose": null,
       "tags": [
@@ -1037,6 +1037,69 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-24T23:41:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000033",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Minerals are more fundamental than vitamins: the body can make some use of minerals without vitamins, but lacking minerals, vitamins are useless. (Wallach reproduces this within his U.S. Senate Document 264 discussion.)",
+      "verbatim": "Lacking vitamins, the system can make some use of minerals, but lacking minerals, vitamins are useless.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 3",
+        "page": "44",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 161689
+      },
+      "dose": null,
+      "tags": [
+        "minerals-over-vitamins",
+        "senate-doc-264",
+        "quote"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T00:03:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000034",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Modern NPK fertilizer replaces only three elements, so cropping \"mines\" the soil's minerals within 5 to 10 years and irrigation speeds the leaching — after 100+ years the result is rising rates of degenerative disease.",
+      "verbatim": "It only takes 5 to 10 years for agriculture to “mine” the minerals from the soil by cropping. Irrigation while providing water for increased production in terms of tons and bushels actually speeds up the leaching of nutritional minerals from the land",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 3",
+        "page": "52",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 191609
+      },
+      "dose": null,
+      "tags": [
+        "soil-depletion",
+        "npk",
+        "cropping",
+        "farming"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T00:03:09+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }
