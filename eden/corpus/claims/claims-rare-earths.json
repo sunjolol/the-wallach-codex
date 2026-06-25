@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817751
+        "char_offset": 817711
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817953
+        "char_offset": 817913
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817515
+        "char_offset": 817475
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 772442
+        "char_offset": 772402
       },
       "dose": {
         "amount": "250-400",
@@ -551,7 +551,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 473903
+        "char_offset": 473863
       },
       "dose": null,
       "tags": [
@@ -581,7 +581,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 474527
+        "char_offset": 474487
       },
       "dose": null,
       "tags": [
@@ -1634,6 +1634,234 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T01:32:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000050",
+      "kind": "mechanism",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "muscular_dystrophy"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach holds that muscular dystrophy is a preventable selenium-deficiency disease: adequate selenium in the diets and supplements of preconception women is key to preventing MD in all its named forms (Duchenne, Erb, Leyden-Moebius, Landouzy-Dejerine, Becker's, Gowers), which he calls artificial classifications by the muscle group first affected. He notes the veterinary industry wiped out white muscle disease / mulberry heart disease with simple selenium supplementation.",
+      "verbatim": "Prevention is the name of the game with MD; the selenium levels in the diets and supplements of preconception women is important to the maintenance of pregnancy as well as the prevention of MD in all of its forms",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 153,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 432793
+      },
+      "dose": null,
+      "tags": [
+        "selenium",
+        "muscular-dystrophy",
+        "preconception",
+        "veterinary"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:02:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000051",
+      "kind": "mechanism",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "kawasaki_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach frames Kawasaki Disease as a congenital copper deficiency — the infant is born with a coronary artery aneurysm because copper is required to build and maintain the elastic fibers of arteries (the second part being a Streptococcal invasion of the aneurysm site) — and holds it is totally preventable with preconception copper, especially colloidal copper.",
+      "verbatim": "Kawasaki Disease is totally preventable with preconception supplementation of copper (especially colloidal copper).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 153,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 434152
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "kawasaki-disease",
+        "aneurysm",
+        "preconception"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:02:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000052",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach puts the human genetic potential for height at roughly seven feet — against an average American male of five-foot-eight and female of five-foot-four — and attributes the gap to nutrition (calories, protein and minerals) rather than genetics.",
+      "verbatim": "The average American male is five foot eight inches tall and the average female is five foot four inches tall, even though our human genetic potential for height is is approximately seven feet.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 161,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 457805
+      },
+      "dose": null,
+      "tags": [
+        "height",
+        "genetic-potential",
+        "growth"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:02:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000053",
+      "kind": "personal_anecdote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In Wallach's duckling experiment, 100 identical ducklings split into four diet groups showed that only the two groups fed supplemented pellets containing all known nutrients came close to their genetic potential for growth at one month — the lettuce and barley-only groups grew almost not at all.",
+      "verbatim": "only group 3 and 4 came close to fulfilling their genetic potential for physical growth and development at age one month; only group 3 and 4 were fed supplemented pellets that contained all of the known nutrients required by ducklings.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 163,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 460342
+      },
+      "dose": null,
+      "tags": [
+        "duckling-experiment",
+        "complete-nutrition",
+        "genetic-potential"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:02:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000054",
+      "kind": "personal_anecdote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach cites a marathon-runner comparison in which the group taking a broad mineral supplement (Ca, P, I, Fe, Mg, Cu, K, Zn, Mn, Cr, Se plus a 72-mineral clay) improved their average race time by 16:57 after six months of training, versus only 5:27 for the unsupplemented group.",
+      "verbatim": "The unsupplemented group showed an improvement of 5:27 minutes following training, while the supplemented group showed an improvement of a whopping 16:57 minutes following training!!!",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 163,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 462509
+      },
+      "dose": null,
+      "tags": [
+        "minerals",
+        "athletic-performance",
+        "marathon",
+        "supplementation"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:02:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000055",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach holds that the immune system needs the full complement of 90 essential nutrients to maintain and repair itself and protect against infectious disease (colds, flu, strep, Epstein-Barr, HIV, Candida, herpes, cancer, etc.).",
+      "verbatim": "our immune system requires all 90 nutrients (60 minerals, 16 vitamins, 12 essential amino acids and three essential fatty acids) to maintain and repair itself in order to protect us from infectious diseases",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 165,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 465304
+      },
+      "dose": null,
+      "tags": [
+        "immune-system",
+        "90-nutrients",
+        "infectious-disease"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:02:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000056",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach asserts that the healthiest, longest-lived cultures on Earth consistently consume high levels of 60 to 72 minerals with every meal, generation after generation, and that this is the basis of their drug-free, disease-free longevity.",
+      "verbatim": "The healthiest and longest lived cultures on the planet consistently consume high levels of 60 to 72 minerals with each meal, generation after generation",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 167,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 470133
+      },
+      "dose": null,
+      "tags": [
+        "longevity",
+        "minerals",
+        "long-lived-cultures"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:02:51+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

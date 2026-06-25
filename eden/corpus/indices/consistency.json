@@ -68,10 +68,18 @@
       {
         "claim_id": "WAL-CLM-RARE-000032",
         "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000052",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000056",
+        "book": "rare-earths"
       }
     ],
     "books_repeating": 1,
-    "claim_count": 16
+    "claim_count": 18
   },
   {
     "id": "CG-0002",
@@ -94,13 +102,39 @@
       {
         "claim_id": "WAL-CLM-RARE-000034",
         "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000055",
+        "book": "rare-earths"
       }
     ],
     "books_repeating": 1,
-    "claim_count": 4
+    "claim_count": 5
   },
   {
     "id": "CG-0003",
+    "essentials": [],
+    "conditions": [],
+    "kind": "personal_anecdote",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-RARE-000008",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000053",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000054",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 3
+  },
+  {
+    "id": "CG-0004",
     "essentials": [],
     "conditions": [],
     "kind": "quote",
@@ -118,7 +152,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0004",
+    "id": "CG-0005",
     "essentials": [],
     "conditions": [
       "birth_defects"
@@ -138,7 +172,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0005",
+    "id": "CG-0006",
     "essentials": [],
     "conditions": [
       "pica"
@@ -158,7 +192,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0006",
+    "id": "CG-0007",
     "essentials": [
       "germanium"
     ],
@@ -178,7 +212,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0007",
+    "id": "CG-0008",
     "essentials": [
       "germanium"
     ],
@@ -202,7 +236,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0008",
+    "id": "CG-0009",
     "essentials": [
       "sodium"
     ],
@@ -224,7 +258,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0009",
+    "id": "CG-0010",
     "essentials": [
       "zinc"
     ],

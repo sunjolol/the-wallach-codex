@@ -354,7 +354,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000003"
@@ -364,7 +364,8 @@
         "WAL-CLM-DDDL-000040"
       ],
       "mechanism": [
-        "WAL-CLM-DDDL-000004"
+        "WAL-CLM-DDDL-000004",
+        "WAL-CLM-RARE-000051"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000049"
@@ -380,7 +381,8 @@
     "conditions_treated": [
       "aneurysm",
       "diabetes",
-      "goiter"
+      "goiter",
+      "kawasaki_disease"
     ],
     "interacts_with": [
       "iodine",
@@ -390,7 +392,8 @@
       "zinc"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "germanium": {
@@ -574,7 +577,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 16,
+    "claim_count": 17,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -588,7 +591,8 @@
         "WAL-CLM-DDDL-000030",
         "WAL-CLM-DDDL-000071",
         "WAL-CLM-RARE-000004",
-        "WAL-CLM-RARE-000010"
+        "WAL-CLM-RARE-000010",
+        "WAL-CLM-RARE-000050"
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000007",

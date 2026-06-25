@@ -1,37 +1,41 @@
 # Extraction report — rare-earths (Rare Earths: Forbidden Cures)
 
-_6 claim(s) drafted 2026-06-25T01:32:50+00:00. Review then run corpus_seal.py to promote._
+_7 claim(s) drafted 2026-06-25T02:02:51+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×1, dose×1, mechanism×3, protocol×1
+Kinds: definition×2, mechanism×3, personal_anecdote×2
 
-### WAL-CLM-RARE-000044 · mechanism
-- **essentials:** zinc · **conditions:** down_syndrome · **symptoms:** —
-- **claim:** Wallach holds that Down's Syndrome is not genetic but is the result of a preconception zinc deficiency, which produces a chromosomal/DNA injury similar to radiation damage; he notes that nutritional studies have created Trisomy/Down's in animals and cell cultures at will via preconception zinc deficiency during sperm and egg formation.
-- **verbatim** (offset 408325): “Down’s Syndrome is in fact the result of a preconception zinc deficiency which produces a chromosomal/DNA injury or defect similar in nature to the changes created by radiation”
+### WAL-CLM-RARE-000050 · mechanism
+- **essentials:** selenium · **conditions:** muscular_dystrophy · **symptoms:** —
+- **claim:** Wallach holds that muscular dystrophy is a preventable selenium-deficiency disease: adequate selenium in the diets and supplements of preconception women is key to preventing MD in all its named forms (Duchenne, Erb, Leyden-Moebius, Landouzy-Dejerine, Becker's, Gowers), which he calls artificial classifications by the muscle group first affected. He notes the veterinary industry wiped out white muscle disease / mulberry heart disease with simple selenium supplementation.
+- **verbatim** (offset 432793): “Prevention is the name of the game with MD; the selenium levels in the diets and supplements of preconception women is important to the maintenance of pregnancy as well as the prevention of MD in all of its forms”
 
-### WAL-CLM-RARE-000045 · protocol
-- **essentials:** zinc · **conditions:** down_syndrome · **symptoms:** —
-- **claim:** Wallach estimates that about $40 of supplements per month, taken before and during pregnancy, is enough to prevent Down's Syndrome — against a lifetime care cost he puts near a million dollars per patient.
-- **verbatim** (offset 409060): “It only takes $40 worth of supplements a month before and during pregnancy to prevent Down's Syndrome and in addition to the human tragedy it costs us a million dollars to care for each Down's Syndrome patient over their life time.”
+### WAL-CLM-RARE-000051 · mechanism
+- **essentials:** copper · **conditions:** kawasaki_disease · **symptoms:** —
+- **claim:** Wallach frames Kawasaki Disease as a congenital copper deficiency — the infant is born with a coronary artery aneurysm because copper is required to build and maintain the elastic fibers of arteries (the second part being a Streptococcal invasion of the aneurysm site) — and holds it is totally preventable with preconception copper, especially colloidal copper.
+- **verbatim** (offset 434152): “Kawasaki Disease is totally preventable with preconception supplementation of copper (especially colloidal copper).”
 
-### WAL-CLM-RARE-000046 · mechanism
-- **essentials:** zinc · **conditions:** — · **symptoms:** —
-- **claim:** Essential mineral cofactors act as the "metal fingers" (e.g. zinc fingers) that genetic engineers say are required to activate genes — without the right metal cofactor, Wallach argues, DNA and genes are inert.
-- **verbatim** (offset 410789): “Genetic engineers refer to the essential mineral cofactors as “metal fingers” which are required to activate genes!!! In the absence of the appropriate “metal finger” DNA and genes are powerless”
+### WAL-CLM-RARE-000052 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach puts the human genetic potential for height at roughly seven feet — against an average American male of five-foot-eight and female of five-foot-four — and attributes the gap to nutrition (calories, protein and minerals) rather than genetics.
+- **verbatim** (offset 457805): “The average American male is five foot eight inches tall and the average female is five foot four inches tall, even though our human genetic potential for height is is approximately seven feet.”
 
-### WAL-CLM-RARE-000047 · mechanism
-- **essentials:** — · **conditions:** birth_defects · **symptoms:** —
-- **claim:** Wallach asserts that roughly 98% of birth defects are not genetic but are nutritional deficiencies of the egg, embryo and fetus — preventable by preconception nutrition; he points to the animal industry having all but eliminated birth defects this way.
-- **verbatim** (offset 409293): “It has been clearly demonstrated in the laboratory animal, pet animal and agriculture that 98 % of all birth defects are not “genetic” in nature, but in fact are nutritional deficiencies of the egg, embryo and fetus and can be prevented by preconception nutrition.”
+### WAL-CLM-RARE-000053 · personal_anecdote
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** In Wallach's duckling experiment, 100 identical ducklings split into four diet groups showed that only the two groups fed supplemented pellets containing all known nutrients came close to their genetic potential for growth at one month — the lettuce and barley-only groups grew almost not at all.
+- **verbatim** (offset 460342): “only group 3 and 4 came close to fulfilling their genetic potential for physical growth and development at age one month; only group 3 and 4 were fed supplemented pellets that contained all of the known nutrients required by ducklings.”
 
-### WAL-CLM-RARE-000048 · dose
-- **essentials:** selenium · **conditions:** keshan_disease · **symptoms:** —
-- **dose:** {'essential': 'selenium', 'amount': '1 mg sodium selenite', 'frequency': 'three times per week', 'form': 'sodium selenite', 'duration': '3 years', 'for_condition': 'keshan disease'}
-- **claim:** Wallach cites a Chinese selenium trial: supplementing children with 1 mg sodium selenite three times a week dropped Keshan Disease incidence from 13/1,000 to 1/1,000 over three years (vs unchanged 13/1,000 on placebo), and larger studies confirmed selenium is specific for preventing KSD.
-- **verbatim** (offset 431080): “At the end of a three year study, the rate of KSD in the selenium supplemented group dropped from 13/1,000 children to 1/1,000 children; the rate of KSD in the control group remained at 13/1,000.”
+### WAL-CLM-RARE-000054 · personal_anecdote
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach cites a marathon-runner comparison in which the group taking a broad mineral supplement (Ca, P, I, Fe, Mg, Cu, K, Zn, Mn, Cr, Se plus a 72-mineral clay) improved their average race time by 16:57 after six months of training, versus only 5:27 for the unsupplemented group.
+- **verbatim** (offset 462509): “The unsupplemented group showed an improvement of 5:27 minutes following training, while the supplemented group showed an improvement of a whopping 16:57 minutes following training!!!”
 
-### WAL-CLM-RARE-000049 · definition
-- **essentials:** — · **conditions:** cystic_fibrosis, muscular_dystrophy, kawasaki_disease · **symptoms:** —
-- **claim:** Wallach maintains that dozens of human "genetic" diseases can in fact be prevented — and in early stages reversed or "cured" — with minerals, naming cystic fibrosis, muscular dystrophy and Kawasaki Disease as prime examples.
-- **verbatim** (offset 423274): “There are literally dozens of human “genetic” diseases that can be prevented and in the early stages reversed or “cured” with minerals.”
+### WAL-CLM-RARE-000055 · mechanism
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach holds that the immune system needs the full complement of 90 essential nutrients to maintain and repair itself and protect against infectious disease (colds, flu, strep, Epstein-Barr, HIV, Candida, herpes, cancer, etc.).
+- **verbatim** (offset 465304): “our immune system requires all 90 nutrients (60 minerals, 16 vitamins, 12 essential amino acids and three essential fatty acids) to maintain and repair itself in order to protect us from infectious diseases”
+
+### WAL-CLM-RARE-000056 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach asserts that the healthiest, longest-lived cultures on Earth consistently consume high levels of 60 to 72 minerals with every meal, generation after generation, and that this is the basis of their drug-free, disease-free longevity.
+- **verbatim** (offset 470133): “The healthiest and longest lived cultures on the planet consistently consume high levels of 60 to 72 minerals with each meal, generation after generation”
 

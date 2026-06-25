@@ -846,13 +846,18 @@
   },
   "kawasaki_disease": {
     "display_name": "Kawasaki Disease",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000051"
+      ],
       "definitions": [
         "WAL-CLM-RARE-000049"
       ]
     },
-    "essentials_involved": [],
+    "essentials_involved": [
+      "copper"
+    ],
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
@@ -1016,10 +1021,11 @@
   },
   "muscular_dystrophy": {
     "display_name": "Muscular Dystrophy",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-DDDL-000071"
+        "WAL-CLM-DDDL-000071",
+        "WAL-CLM-RARE-000050"
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005"

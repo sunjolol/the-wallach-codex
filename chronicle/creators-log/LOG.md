@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_50 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_51 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-24 22:05 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 9 — Rare Earths Ch.7 second half: 7 claims (selenium→MD, copper→Kawasaki, height ~7ft, duckling experiment, marathon mineral study, immune needs 90 nutrients, longest-lived cultures eat 60-72 minerals/meal). kv 28→29, 150 claims. Ch.7 COMPLETE.
+  ↳ Completed Rare Earths Ch.7 'Genetic Potential' by salvaging the legitimate second-half claims (pp153-170) that ran alongside the Tier-2 homosexuality/intersex fringe (handled in fa3eb54): WAL-CLM-RARE-000050 (selenium prevents muscular dystrophy in all named forms — Duchenne/Erb/Leyden-Moebius/Landouzy-Dejerine/Becker's/Gowers; vet industry eliminated white-muscle/mulberry-heart disease with selenium — selenium/muscular_dystrophy, p153), 000051 (Kawasaki = congenital copper deficiency: coronary aneurysm because copper builds arterial elastic fibers + a Strep second part; preventable with colloidal copper — copper/kawasaki_disease, p153), 000052 (human genetic potential for height ~7ft vs 5'8/5'4 average; gap is nutritional — definition, p161), 000053 (duckling experiment: 100 identical ducklings, 4 diets, only the 2 complete-nutrient groups reached growth potential at 1 month — personal_anecdote, p163), 000054 (marathon study: broad mineral supplement gave 16:57 race-time improvement vs 5:27 — personal_anecdote, p163), 000055 (immune system needs all 90 nutrients — mechanism, p165), 000056 (longest-lived cultures eat 60-72 minerals/meal — definition, p167). Pipeline: reflowed 7 spans (de-hyphenation + sentence-aware merge + OCR fix 9f->of), resnap 6 relocated/0 broken, seal kv 28->29 (claims 143->150, RARE 56), embed, build, invariants 30/30. Ch.7 fully processed: first half batch 8 (44-49), second half batch 9 (50-56), homosexuality/intersex thesis to Tier-2 fringe. NEXT: Ch.8 'The Age Beaters' (idx 192/p171).
 
 ## 2026-06-24 21:56 UTC-04:00 · design-decision · knowledge
 Rare Earths Ch.7 homosexuality/intersex thesis → new Tier-2 fringe file (Luneth ruling): mapped FULLY, excluded from current app but earmarked for a future 'uncensored' version. New 2-tier policy: graphic=summarize, controversial-but-valid=full-map.
