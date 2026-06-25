@@ -1,31 +1,31 @@
 # Extraction report — rare-earths (Rare Earths: Forbidden Cures)
 
-_5 claim(s) drafted 2026-06-25T02:33:36+00:00. Review then run corpus_seal.py to promote._
+_5 claim(s) drafted 2026-06-25T02:54:55+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: mechanism×1, prevalence×4
+Kinds: definition×4, mechanism×1
 
-### WAL-CLM-RARE-000064 · prevalence
+### WAL-CLM-RARE-000069 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach cites a 1991 Harvard School of Public Health study finding 1.3 million injuries and 198,000 deaths a year in American hospitals from iatrogenic (doctor-caused) mishaps — four to five times the toll of the highways, with seven of ten adverse results judged totally avoidable and about a third due to negligence.
-- **verbatim** (offset 564779): “In 1991 a Harvard University, School of Public Health study revealed that 1.3 million injuries and 198,000 deaths occur in American Hospitals each year as a result of “iatrogenic” or doctor caused mishaps or “adverse events.””
+- **claim:** Wallach holds that of the 90 essential nutrients, the most critical for the health and longevity of the long-lived cultures are the plant-derived colloidal minerals delivered routinely each day.
+- **verbatim** (offset 647099): “Their basic truth for health and longevity boils down to the routine daily availability of a highly usable source of 90 essential nutrients of which the most critical are the plant derived colloidal minerals”
 
-### WAL-CLM-RARE-000065 · prevalence
+### WAL-CLM-RARE-000070 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach drives the iatrogenic toll home by comparison: Dr. Sidney Wolfe (Public Citizen) put hospital-negligence deaths at 300,000 Americans a year (possibly 600,000), versus the 56,000 US troops lost over the entire 10-year Vietnam War — i.e. safer on the battlefield than in an American hospital.
-- **verbatim** (offset 586567): “To appreciate how big a figure 300,000 dead is, we have to compare Wolfes figures of Americans killed by “friendly fire” in American hospitals with our U.S. military losses in Vietnam over the course of the 10 year war where we lost 56,000 for an average loss of 5,600 per year”
+- **claim:** Wallach describes how "Glacial Milk" forms: ageless glaciers grind two to six inches of parent rock off the mountain surface each year into a fine dust or rock "flour" carried out by glacial melt water.
+- **verbatim** (offset 647523): “Ageless glaciers scrape, grind and pulverize from two to six inches of parent rock from the mountain surface each year into a fine dust or rock “flour””
 
-### WAL-CLM-RARE-000066 · mechanism
+### WAL-CLM-RARE-000071 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach warns that inappropriate or multiple prescriptions ("poly-pharmacy") endanger 25% or more of Americans over 65 living at home — many drugs being prescribed only to counteract the side effects of an earlier drug.
-- **verbatim** (offset 587970): “Inappropriate prescriptions or multiple prescriptions (“Poly-pharmacy”) are dangerous to 25 percent or more of Americans over the age of 65 living at home.”
+- **claim:** Wallach's key distinction: the "Glacial Milk" that nourishes the long-lived cultures carries 60 to 72 minerals, whereas the thousands of other glaciers worldwide may have only three to 20 minerals — too few to fulfill the human genetic potential for longevity.
+- **verbatim** (offset 649372): “the great common denominator of the “Glacial Milk” that nourishes the long-lived cultures is that they contain 60 to 72 minerals; there are thousands of glaciers in the world that prodyce vast quantities of “Glacial Milk,” however, they may only have three to 20 minerals in them”
 
-### WAL-CLM-RARE-000067 · prevalence
+### WAL-CLM-RARE-000072 · mechanism
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach reports that 70% of allopathic doctors flunked a 1994 survey quiz on prescription drugs and prescribing to seniors, and that they incorrectly prescribe pharmaceuticals to 25% of American senior citizens (per a July 1994 New England Journal of Medicine study).
-- **verbatim** (offset 588226): “Allopathic doctors (70 % of whom flunked a 1994 survey quiz on prescription drugs and prescribing to seniors!!) are incorrectly prescribing pharmaceuticals to 25 percent of American senior citizens”
+- **claim:** Wallach stresses that the centenarians absorb only 5 to 12% of the suspended metallic colloids they drink in "Glacial Milk"; the real key to their longevity is using it as IRRIGATION water, so plants convert the metallic minerals into highly usable organic plant-derived colloidal minerals.
+- **verbatim** (offset 652266): “The bottom line for the centenarians to reach their genetic potentials of 120 to 140 years of age is in fact their utilization of the “Glacial Milk” as irrigation water.”
 
-### WAL-CLM-RARE-000068 · prevalence
+### WAL-CLM-RARE-000073 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach cites an expert panel finding that 20 drugs from a list that should never be given to the elderly are nonetheless prescribed to more than 6.6 million seniors a year — often several at once via the poly-pharmacy trap.
-- **verbatim** (offset 589055): “An expert panel found that 20 drugs (Table 9-1) from a list that should never be taken by the elderly are in fact prescribed to more than 6.6 million seniors each year”
+- **claim:** Wallach asserts that millennia of farming terraces irrigated with mineral-rich "Glacial Milk" reward the long-lived cultures with optimal health free of the Western degenerative diseases — hypertension, heart disease, stroke, aneurysms, arthritis, osteoporosis, dental disease, cataracts, diabetes, cancer and lupus among them.
+- **verbatim** (offset 653256): “they have been blessed with optimal health without hypertension, heart disease, stroke, aneurysms, arthritis, osteoporosis, dental disease, cataracts, diabetes, cancer, lupus”
 

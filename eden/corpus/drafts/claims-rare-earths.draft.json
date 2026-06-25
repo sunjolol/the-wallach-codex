@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817645
+        "char_offset": 817624
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817847
+        "char_offset": 817826
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817409
+        "char_offset": 817388
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 772336
+        "char_offset": 772315
       },
       "dose": {
         "amount": "250-400",
@@ -2245,6 +2245,166 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T02:33:36+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000069",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach holds that of the 90 essential nutrients, the most critical for the health and longevity of the long-lived cultures are the plant-derived colloidal minerals delivered routinely each day.",
+      "verbatim": "Their basic truth for health and longevity boils down to the routine daily availability of a highly usable source of 90 essential nutrients of which the most critical are the plant derived colloidal minerals",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 10",
+        "page": 251,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 647099
+      },
+      "dose": null,
+      "tags": [
+        "colloidal-minerals",
+        "longevity",
+        "90-nutrients",
+        "most-critical"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:54:55+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000070",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach describes how \"Glacial Milk\" forms: ageless glaciers grind two to six inches of parent rock off the mountain surface each year into a fine dust or rock \"flour\" carried out by glacial melt water.",
+      "verbatim": "Ageless glaciers scrape, grind and pulverize from two to six inches of parent rock from the mountain surface each year into a fine dust or rock “flour”",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 10",
+        "page": 251,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 647523
+      },
+      "dose": null,
+      "tags": [
+        "glacial-milk",
+        "rock-flour",
+        "glaciers",
+        "minerals"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:54:55+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000071",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach's key distinction: the \"Glacial Milk\" that nourishes the long-lived cultures carries 60 to 72 minerals, whereas the thousands of other glaciers worldwide may have only three to 20 minerals — too few to fulfill the human genetic potential for longevity.",
+      "verbatim": "the great common denominator of the “Glacial Milk” that nourishes the long-lived cultures is that they contain 60 to 72 minerals; there are thousands of glaciers in the world that prodyce vast quantities of “Glacial Milk,” however, they may only have three to 20 minerals in them",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 10",
+        "page": 252,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 649372
+      },
+      "dose": null,
+      "tags": [
+        "glacial-milk",
+        "60-72-minerals",
+        "longevity",
+        "long-lived-cultures"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:54:55+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000072",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach stresses that the centenarians absorb only 5 to 12% of the suspended metallic colloids they drink in \"Glacial Milk\"; the real key to their longevity is using it as IRRIGATION water, so plants convert the metallic minerals into highly usable organic plant-derived colloidal minerals.",
+      "verbatim": "The bottom line for the centenarians to reach their genetic potentials of 120 to 140 years of age is in fact their utilization of the “Glacial Milk” as irrigation water.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 10",
+        "page": 253,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 652266
+      },
+      "dose": null,
+      "tags": [
+        "glacial-milk",
+        "irrigation",
+        "colloidal-conversion",
+        "absorption"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:54:55+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000073",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach asserts that millennia of farming terraces irrigated with mineral-rich \"Glacial Milk\" reward the long-lived cultures with optimal health free of the Western degenerative diseases — hypertension, heart disease, stroke, aneurysms, arthritis, osteoporosis, dental disease, cataracts, diabetes, cancer and lupus among them.",
+      "verbatim": "they have been blessed with optimal health without hypertension, heart disease, stroke, aneurysms, arthritis, osteoporosis, dental disease, cataracts, diabetes, cancer, lupus",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 10",
+        "page": 253,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 653256
+      },
+      "dose": null,
+      "tags": [
+        "longevity",
+        "degenerative-disease",
+        "glacial-milk",
+        "disease-absence"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T02:54:55+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }
