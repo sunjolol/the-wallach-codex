@@ -8064,6 +8064,90 @@
       "extracted_at": "2026-06-25T21:11:16+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000227",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "multiple_sclerosis",
+        "als",
+        "parkinsons_disease",
+        "alzheimers",
+        "cardiomyopathy",
+        "cataracts",
+        "liver_cirrhosis",
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach lists the conditions that selenium deficiency produces in adults: reduced immune capacity, anemia, infertility, 'age spots' or 'liver spots,' myalgia, muscle weakness, multiple sclerosis, amyotrophic lateral sclerosis (Lou Gehrig's disease), Parkinson's disease, Alzheimer's disease, heart palpitations or irregular heartbeat, cardiomyopathy, hypertrophy (thickening) of the cardiac muscle, liver cirrhosis, cataracts, and cancer.",
+      "verbatim": "myalgia, muscle weakness multiple sclerosis, ALS, Parkinson's Disease, Alzheimer’s Disease, palpitations or irregular heart beat, cardiomyopathy, hypertrophy or thickening of the cardiac muscle, liver cirrhosis, cataracts and cancer.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 382,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 910893
+      },
+      "dose": null,
+      "tags": [
+        "selenium",
+        "deficiency",
+        "multiple-sclerosis",
+        "als",
+        "parkinsons",
+        "alzheimers",
+        "cardiomyopathy",
+        "cancer"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T21:26:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000228",
+      "kind": "quote",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach quotes Dr. Gerhard N. Schrauzer (head of the Department of Chemistry, University of California, San Diego), who reviewed selenium's anti-cancer effects: selenium is increasingly recognized as a versatile anticarcinogenic agent whose protection cannot be attributed to glutathione peroxidase alone. It acts as a 'redox switch' on cellular growth factors, stimulates cellular respiration (more oxygen, less cancer), inhibits tumor-virus replication and oncogene activation, alters carcinogen metabolism and protects DNA from carcinogen-induced damage, accepts biogenic methyl groups, aids detoxification of metals, and is immunopotentiating.",
+      "verbatim": "Selenium is increasingly recognized as a versatile anticarcinogenic agent. Its protective functions cannot be solely attributed to the action of glutathione peroxidase. Instead, selenium appears to operate by several mechanisms, depending on dosage and chemical form of selenium and the nature of the carcinogenic stress.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 382,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 911257
+      },
+      "dose": null,
+      "tags": [
+        "selenium",
+        "cancer",
+        "schrauzer",
+        "anticarcinogen",
+        "redox-switch"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T21:26:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

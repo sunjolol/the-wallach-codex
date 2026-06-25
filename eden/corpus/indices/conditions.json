@@ -70,24 +70,13 @@
   },
   "als": {
     "display_name": "Als",
-    "claim_count": 1,
-    "claims_by_role": {
-      "interactions": [
-        "WAL-CLM-RARE-000087"
-      ]
-    },
-    "essentials_involved": [],
-    "other_substances_involved": [],
-    "books_cited": [
-      "rare-earths"
-    ]
-  },
-  "alzheimers": {
-    "display_name": "Alzheimers",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005"
+        "WAL-CLM-RARE-000227"
+      ],
+      "interactions": [
+        "WAL-CLM-RARE-000087"
       ]
     },
     "essentials_involved": [
@@ -95,7 +84,25 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "rare-earths"
+    ]
+  },
+  "alzheimers": {
+    "display_name": "Alzheimers",
+    "claim_count": 2,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000005",
+        "WAL-CLM-RARE-000227"
+      ]
+    },
+    "essentials_involved": [
+      "selenium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "anemia": {
@@ -604,7 +611,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 18,
+    "claim_count": 20,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -617,7 +624,8 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000012",
-        "WAL-CLM-RARE-000011"
+        "WAL-CLM-RARE-000011",
+        "WAL-CLM-RARE-000227"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -634,7 +642,8 @@
       ],
       "quotes": [
         "WAL-CLM-DDDL-000057",
-        "WAL-CLM-DDDL-000066"
+        "WAL-CLM-DDDL-000066",
+        "WAL-CLM-RARE-000228"
       ]
     },
     "essentials_involved": [
@@ -713,13 +722,14 @@
   },
   "cardiomyopathy": {
     "display_name": "Cardiomyopathy",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010"
       ],
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005"
+        "WAL-CLM-DDDL-000005",
+        "WAL-CLM-RARE-000227"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -784,8 +794,11 @@
   },
   "cataracts": {
     "display_name": "Cataracts",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000227"
+      ],
       "interactions": [
         "WAL-CLM-RARE-000086"
       ]
@@ -1997,7 +2010,7 @@
   },
   "liver_cirrhosis": {
     "display_name": "Liver Cirrhosis",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010"
@@ -2006,7 +2019,8 @@
         "WAL-CLM-DDDL-000022"
       ],
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005"
+        "WAL-CLM-DDDL-000005",
+        "WAL-CLM-RARE-000227"
       ],
       "definitions": [
         "WAL-CLM-RARE-000122"
@@ -2201,13 +2215,18 @@
   },
   "multiple_sclerosis": {
     "display_name": "Multiple Sclerosis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000227"
+      ],
       "interactions": [
         "WAL-CLM-RARE-000087"
       ]
     },
-    "essentials_involved": [],
+    "essentials_involved": [
+      "selenium"
+    ],
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
@@ -2442,13 +2461,18 @@
   },
   "parkinsons_disease": {
     "display_name": "Parkinsons Disease",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000227"
+      ],
       "interactions": [
         "WAL-CLM-RARE-000087"
       ]
     },
-    "essentials_involved": [],
+    "essentials_involved": [
+      "selenium"
+    ],
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
