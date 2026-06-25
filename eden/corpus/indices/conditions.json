@@ -297,7 +297,7 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
@@ -315,7 +315,8 @@
         "WAL-CLM-RARE-000081"
       ],
       "interactions": [
-        "WAL-CLM-RARE-000086"
+        "WAL-CLM-RARE-000086",
+        "WAL-CLM-RARE-000206"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000051",
@@ -1601,7 +1602,7 @@
   },
   "hypertension": {
     "display_name": "Hypertension",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000107"
@@ -1610,12 +1611,14 @@
         "WAL-CLM-RARE-000105"
       ],
       "interactions": [
-        "WAL-CLM-RARE-000086"
+        "WAL-CLM-RARE-000086",
+        "WAL-CLM-RARE-000206"
       ]
     },
     "essentials_involved": [
       "calcium",
       "copper",
+      "phosphorus",
       "selenium",
       "zinc"
     ],
@@ -1676,6 +1679,22 @@
     },
     "essentials_involved": [
       "potassium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "hypophosphatemia": {
+    "display_name": "Hypophosphatemia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000209"
+      ]
+    },
+    "essentials_involved": [
+      "phosphorus"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -2203,7 +2222,7 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052",
@@ -2224,7 +2243,8 @@
         "WAL-CLM-RARE-000082"
       ],
       "interactions": [
-        "WAL-CLM-RARE-000086"
+        "WAL-CLM-RARE-000086",
+        "WAL-CLM-RARE-000206"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000009"

@@ -280,22 +280,40 @@
     "display_name": "Phosphorus",
     "canon_slug": "phosphorus",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 8,
     "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000208"
+      ],
+      "definition": [
+        "WAL-CLM-RARE-000204",
+        "WAL-CLM-RARE-000205"
+      ],
+      "dose": [
+        "WAL-CLM-RARE-000207"
+      ],
+      "interaction": [
+        "WAL-CLM-RARE-000206",
+        "WAL-CLM-RARE-000210"
+      ],
       "mechanism": [
-        "WAL-CLM-DDDL-000052"
+        "WAL-CLM-DDDL-000052",
+        "WAL-CLM-RARE-000209"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [
       "arthritis",
+      "hypertension",
+      "hypophosphatemia",
       "osteoporosis"
     ],
     "interacts_with": [
       "calcium"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "sulfur": {

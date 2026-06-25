@@ -621,6 +621,26 @@
   {
     "id": "CG-0022",
     "essentials": [
+      "phosphorus"
+    ],
+    "conditions": [],
+    "kind": "definition",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-RARE-000204",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000205",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0023",
+    "essentials": [
       "potassium"
     ],
     "conditions": [],
@@ -639,7 +659,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0023",
+    "id": "CG-0024",
     "essentials": [
       "silver"
     ],
@@ -659,7 +679,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0024",
+    "id": "CG-0025",
     "essentials": [
       "silver"
     ],
@@ -679,7 +699,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0025",
+    "id": "CG-0026",
     "essentials": [
       "sodium"
     ],
@@ -701,7 +721,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0026",
+    "id": "CG-0027",
     "essentials": [
       "zinc"
     ],

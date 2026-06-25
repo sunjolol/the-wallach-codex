@@ -437,6 +437,21 @@
       "dddl-3e-2011"
     ]
   },
+  "loose_teeth": {
+    "display_name": "Loose Teeth",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "phosphorus",
+        "claim_id": "WAL-CLM-RARE-000206",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "loss_of_smell": {
     "display_name": "Loss Of Smell",
     "claim_count": 1,

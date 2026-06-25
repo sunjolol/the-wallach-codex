@@ -27487,103 +27487,19 @@ OS - Osmium is found in igneous
 rocks at 0.0015 ppm. It oxidizes organic
 matter as OsO, and is reduced to Os.
 
-P- Phosphorus is found in igneous.
-rocks at 1,050 ppm; shale at 700 ppm;
-sandstone at 170 ppm; limestone at 400
-ppm; fresh water at 0.005 ppm; sea water
-at 0.07 ppm; soil at 650 ppm (“fixed” by
-hydrous oxides of Al and Fe in acid soil).
-Great and vast reaches of Earth are defi-
-cient in P; marine plants at 3,500 ppm; land
-plants at 2,300 ppm; marine animals at
-4,000 to 18,000 ppm; land animals at
-17,000 to 44,000 ppm.
+P- Phosphorus is found in igneous. rocks at 1,050 ppm; shale at 700 ppm; sandstone at 170 ppm; limestone at 400 ppm; fresh water at 0.005 ppm; sea water at 0.07 ppm; soil at 650 ppm (“fixed” by hydrous oxides of Al and Fe in acid soil). Great and vast reaches of Earth are deficient in P; marine plants at 3,500 ppm; land plants at 2,300 ppm; marine animals at 4,000 to 18,000 ppm; land animals at 17,000 to 44,000 ppm.
 
-Phosphorus is an extremely important
+Phosphorus is an extremely important essential mineral, however, it gets little or no attention from nutritionists because it is widely available in all foods. Phosphorus is a major structural mineral for bones and teeth, it has more functions in the human than any other mineral including its role as a vital constituent of nucleic acids, activates enzymes, for several steps of the ATP energy cycle; RBC metabolism (a complete discussion of P would require a discussion of every metabolic function in the body). Second in abundance only to calcium in the human body, it comprises 22 percent of the bodies total mineral content. The human body contains about 800 grams of P (just short of two pounds) of which 700 grams is found in bones and teeth as insoluble calcium phosphate (apatite crystals). The balance of P in the human body is found as biologically active intra and extracellular colloidal P in combination with carbohydrates, lipids, protein and a wide variety of other biologically active organic compounds including the bloods’s major buffering system. B-complex vitamins function as coenzymes to intracellular metabolic functions only when combined with P.
 
-372
+Phosphorus is part of most proteins and as such becomes problematic (elevated P intake increases Ca requirements) when “high protein diets” are consumed by aggravating osteoporosis, arthritis, high blood pressure, loose teeth, etc. Phosphorus is present as phytates in cereals and grain flours, therefore, if bread is made from unleavened flours, the phytic acid will complex with Ca, Fe, Zn and other minerals further lowering their absorption rate.
 
-essential mineral, however, it gets little or
-no attention from nutritionists because it is
-widely available in all foods. Phosphorus
-is a major structural mineral for bones and
-teeth, it has more functions in the human
-than any other mineral including its role as
-a vital constituent of nucleic acids, activates
-enzymes, for several steps of the ATP en-
-ergy cycle; RBC metabolism (a complete
-discussion of P would require a discussion
-of every metabolic function in the body).
-Second in abundance only to calcium in
-the human body, it comprises 22 percent
-of the bodies total mineral content. The
-human body contains about 800 grams of
-P (just short of two pounds) of which 700
-grams is found in bones and teeth as in-
-soluble calcium phosphate (apatite crys-
-tals). The balance of P in the human body
-is found as biologically active intra and
-extracellular colloidal P in combination
-with carbohydrates, lipids, protein and a
-wide variety of other biologically active or-
-ganic compounds including the bloods’s
-major buffering system. B-complex vita-
-mins function as coenzymes to intracellu-
-lar metabolic functions only when com-
-bined with P.
+The average adult human dietary intake of P is 1,000 to 1,500 mg/day. In adults and older children, the absorption of metallic P is limited to about three to five percent and as high as eight to 12 percent in infants. Mixed dietary sources of P (chelated forms) may be absorbed at the rate of 40 to 50 %. Optimal absorption of metallic and chelated P occurs when the Ca:P ratio is 1:1. Colloidal P is absorbed up to 98 %.
 
-Phosphorus is part of most proteins and
-as such becomes problematic (elevated P
-intake increases Ca requirements) when
-“high protein diets” are consumed by ag-
-gravating osteoporosis, arthritis, high blood
-pressure, loose teeth, etc. Phosphorus is
-present as phytates in cereals and grain
-flours, therefore, if bread is made from un-
-leavened flours, the phytic acid will com-
-plex with Ca, Fe, Zn and other minerals
-further lowering their absorption rate.
+Deficiencies of P have long been recognised in livestock but only recently have been deemed important in humans. The widespread, universal and ultimately fatal results of P deficiency are the result of its widespread biological functions, significantly as the result of a decrease in ATP synthesis (complete metabolic energy failure) with associated neuromuscular, skeletal, blood and kidney disease.
 
-The average adult human dietary intake
-of P is 1,000 to 1,500 mg/day. In adults and
-older children, the absorption of metallic P
+Clinical P depletion and resultant low blood P (hypophosphatemia) result from IV administration of glucose or TPN (Total Parenteral Nutrition) without P supplementation, excessive use of antacids, hyperparathyroidism (low calcium/ high phosphate diets are the cause of this one), improper treatment of diabetic acidosis, use of diuretics, sweating during exercise and alcoholism with and without liver disease.
 
-is limited to about three to five percent and
-as high as eight to 12 percent in infants.
-Mixed dietary sources of P (chelated forms)
-may be absorbed at the rate of 40 to 50 %.
-Optimal absorption of metallic and chelated
-P occurs when the Ca:P ratio is 1:1. Colloi-
-dal P is absorbed up to 98 %.
-
-Deficiencies of P have long been
-recognised in livestock but only recently
-have been deemed important in humans.
-The widespread, universal and ultimately
-fatal results of P deficiency are the result of
-its widespread biological functions, signifi-
-cantly as the result of a decrease in ATP
-synthesis (complete metabolic energy fail-
-ure) with associated neuromuscular, skel-
-etal, blood and kidney disease.
-
-Clinical P depletion and resultant low
-blood P (hypophosphatemia) result from IV
-administration of glucose or TPN (Total
-Parenteral Nutrition) without P supplemen-
-tation, excessive use of antacids,
-hyperparathyroidism (low calcium/ high
-phosphate diets are the cause of this one),
-improper treatment of diabetic acidosis, use
-of diuretics, sweating during exercise and
-alcoholism with and without liver disease.
-
-Vegetarians and vegans who do not
-supplement with minerals rarely have P
-deficiency, however, because of their high
-phytic acid intake they always have other
-mineral deficiencies icluding Ca, Cu, Cr, V.
-Li and Zn.
+Vegetarians and vegans who do not supplement with minerals rarely have P deficiency, however, because of their high phytic acid intake they always have other mineral deficiencies icluding Ca, Cu, Cr, V. Li and Zn.
 
 Pa - Protoactinium is found in igne-
 ous rocks at 1.4 x 10 ppm and sea water

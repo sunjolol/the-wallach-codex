@@ -7224,6 +7224,262 @@
       "extracted_at": "2026-06-25T19:26:36+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000204",
+      "kind": "definition",
+      "essentials": [
+        "phosphorus"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach describes phosphorus as an extremely important essential mineral that nutritionists largely ignore because it is so widely available in food. It is a major structural mineral of bones and teeth and has more functions in the body than any other mineral — serving as a vital constituent of nucleic acids, activating enzymes, driving several steps of the ATP (adenosine triphosphate) energy cycle, and supporting red blood cell metabolism; B-complex vitamins act as coenzymes only when combined with phosphorus.",
+      "verbatim": "Phosphorus is a major structural mineral for bones and teeth, it has more functions in the human than any other mineral including its role as a vital constituent of nucleic acids, activates enzymes, for several steps of the ATP energy cycle; RBC metabolism",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 373,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 891329
+      },
+      "dose": null,
+      "tags": [
+        "phosphorus",
+        "bones",
+        "atp",
+        "nucleic-acids"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T19:44:31+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000205",
+      "kind": "definition",
+      "essentials": [
+        "phosphorus"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach notes that phosphorus is second in abundance only to calcium in the human body, comprising about 22 percent of total mineral content. The body contains roughly 800 grams of phosphorus (just under two pounds), about 700 grams of it held in bones and teeth as insoluble calcium phosphate (apatite crystals); the remainder is biologically active phosphorus combined with carbohydrates, lipids, and proteins, and it forms the blood's major buffering system.",
+      "verbatim": "Second in abundance only to calcium in the human body, it comprises 22 percent of the bodies total mineral content. The human body contains about 800 grams of P (just short of two pounds) of which 700 grams is found in bones and teeth as insoluble calcium phosphate (apatite crystals).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 373,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 891683
+      },
+      "dose": null,
+      "tags": [
+        "phosphorus",
+        "calcium",
+        "bones",
+        "apatite",
+        "body-content"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T19:44:31+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000206",
+      "kind": "interaction",
+      "essentials": [
+        "phosphorus"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "osteoporosis",
+        "arthritis",
+        "hypertension"
+      ],
+      "symptoms": [
+        "loose_teeth"
+      ],
+      "claim_text": "Because phosphorus is part of most proteins, Wallach warns that high-protein diets raise phosphorus intake, which increases the body's calcium requirement and can aggravate osteoporosis, arthritis, high blood pressure, and loose teeth. Phosphorus also occurs as phytates in cereal and grain flours, so bread made from unleavened flour lets phytic acid bind calcium, iron, zinc, and other minerals and lower their absorption.",
+      "verbatim": "Phosphorus is part of most proteins and as such becomes problematic (elevated P intake increases Ca requirements) when “high protein diets” are consumed by aggravating osteoporosis, arthritis, high blood pressure, loose teeth, etc.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 373,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 892342
+      },
+      "dose": null,
+      "tags": [
+        "phosphorus",
+        "calcium",
+        "high-protein-diet",
+        "phytate",
+        "absorption"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T19:44:31+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000207",
+      "kind": "dose",
+      "essentials": [
+        "phosphorus"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach gives the average adult dietary phosphorus intake as 1,000–1,500 mg per day. Absorption depends heavily on form: metallic phosphorus is absorbed at only about 3–5 percent in adults (up to 8–12 percent in infants), chelated forms at 40–50 percent, and colloidal phosphorus up to 98 percent — and optimal absorption of metallic and chelated phosphorus occurs at a calcium-to-phosphorus ratio of 1:1.",
+      "verbatim": "In adults and older children, the absorption of metallic P is limited to about three to five percent and as high as eight to 12 percent in infants. Mixed dietary sources of P (chelated forms) may be absorbed at the rate of 40 to 50 %.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 373,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 892864
+      },
+      "dose": {
+        "amount": "1,000-1,500",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": null
+      },
+      "tags": [
+        "phosphorus",
+        "intake",
+        "absorption",
+        "colloidal",
+        "bioavailability"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T19:44:31+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000208",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "phosphorus"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach states that phosphorus deficiency — long recognized in livestock and only recently deemed important in humans — produces widespread, universal, and ultimately fatal effects, chiefly through a drop in ATP (adenosine triphosphate) synthesis (a complete metabolic energy failure) that brings on neuromuscular, skeletal, blood, and kidney disease.",
+      "verbatim": "The widespread, universal and ultimately fatal results of P deficiency are the result of its widespread biological functions, significantly as the result of a decrease in ATP synthesis (complete metabolic energy failure) with associated neuromuscular, skeletal, blood and kidney disease.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 373,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 893330
+      },
+      "dose": null,
+      "tags": [
+        "phosphorus",
+        "deficiency",
+        "atp",
+        "energy-failure"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T19:44:31+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000209",
+      "kind": "mechanism",
+      "essentials": [
+        "phosphorus"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "hypophosphatemia"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach lists the causes of clinical phosphorus depletion and low blood phosphorus (hypophosphatemia): intravenous glucose or total parenteral nutrition (intravenous feeding) given without phosphorus supplementation, excessive antacid use, hyperparathyroidism (driven by high-phosphate, low-calcium diets), improper treatment of diabetic acidosis, diuretic use, sweating during exercise, and alcoholism with or without liver disease.",
+      "verbatim": "Clinical P depletion and resultant low blood P (hypophosphatemia) result from IV administration of glucose or TPN (Total Parenteral Nutrition) without P supplementation, excessive use of antacids, hyperparathyroidism (low calcium/ high phosphate diets are the cause of this one), improper treatment of diabetic acidosis, use of diuretics, sweating during exercise and alcoholism with and without liver disease.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 373,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 893619
+      },
+      "dose": null,
+      "tags": [
+        "phosphorus",
+        "hypophosphatemia",
+        "antacids",
+        "alcoholism"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T19:44:31+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000210",
+      "kind": "interaction",
+      "essentials": [
+        "phosphorus"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach observes that vegetarians and vegans who do not supplement rarely show phosphorus deficiency, thanks to their high phytic acid intake — but for that same reason they always carry other mineral deficiencies, including calcium, copper, chromium, vanadium, lithium, and zinc.",
+      "verbatim": "Vegetarians and vegans who do not supplement with minerals rarely have P deficiency, however, because of their high phytic acid intake they always have other mineral deficiencies icluding Ca, Cu, Cr, V. Li and Zn.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 373,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 894031
+      },
+      "dose": null,
+      "tags": [
+        "phosphorus",
+        "vegetarian",
+        "phytate",
+        "mineral-deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T19:44:31+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
