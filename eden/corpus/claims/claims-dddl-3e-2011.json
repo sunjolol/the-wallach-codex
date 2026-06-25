@@ -480,7 +480,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Per United States Department of Agriculture (USDA) researcher Richard Anderson, 90 percent of Americans are deficient in chromium.",
+      "claim_text": "Per USDA researcher Richard Anderson, 90 percent of Americans are deficient in chromium.",
       "verbatim": "According to Richard Anderson, USDA, “Ninety percent of\nall Americans are deficient in chromium.”",
       "locator": {
         "book": "dddl-3e-2011",
@@ -1569,7 +1569,7 @@
         "diabetes"
       ],
       "symptoms": [],
-      "claim_text": "The diabetes regimen also includes zinc 50 mg three times daily, B-complex 50 mg three times daily (with niacin), essential fatty acids 5 g three times daily, B12 1,000 mcg/day, quercetin 150 mg/day, copper 2-3 mg/day, lecithin 2,500 mg three times daily, and glutathione 100 mg/day.",
+      "claim_text": "The diabetes regimen also includes zinc 50 mg three times daily, B-complex 50 mg three times daily (with niacin), EFAs 5 g three times daily, B12 1,000 mcg/day, quercetin 150 mg/day, copper 2-3 mg/day, lecithin 2,500 mg three times daily, and glutathione 100 mg/day.",
       "verbatim": "Treatment of diabetes should also include zinc at 50 mg t.i.d., B-complex at\n50 mg t.i.d. (be sure to include niacin which is part of the GTF “glucose\ntolerance factor”), essential fatty acids at 5 gm t.i.d., B12 at 1,000 meg/day,\nbioflavonoids including quercetin at 150 mg/day, copper at 2-3 mg/day,\nlecithin at 2,500 mg t.i.d., and glutathione at 100 mg/day.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -2031,7 +2031,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "The essential fatty acids are linoleic, linolenic, and arachidonic acids; about 3% of total daily calorie intake should come from these essential fatty acids (linoleic and linolenic are strictly essential).",
+      "claim_text": "The essential fatty acids are linoleic, linolenic, and arachidonic acids; about 3% of total daily calorie intake should come from EFAs (linoleic and linolenic are strictly essential).",
       "verbatim": "Three polyunsaturated fatty acids (linoleic, linolenic, and arachidonic acids)\nare known as essential fatty acids (EFA). Three percent of the total daily\ncalorie intake is required from EFA.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -2061,7 +2061,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Essential fatty acids are the raw material the body uses to manufacture prostaglandins, which regulate blood pressure, heart rate, vascular and bronchial dilation, blood clotting, and central nervous system (CNS) function.",
+      "claim_text": "EFAs are the raw material the body uses to manufacture prostaglandins, which regulate blood pressure, heart rate, vascular and bronchial dilation, blood clotting, and central nervous system (CNS) function.",
       "verbatim": "EFA’s are also the raw material for the human body to\nmanufacture prostaglandins that help regulate blood pressure, heart rate,\nvascular dilation, blood clotting, bronchial dilation, and central nervous\nsystem (brain and spinal cord) function.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -2257,7 +2257,7 @@
         "infertility"
       ],
       "symptoms": [],
-      "claim_text": "Infertility protocol: essential fatty acids 5 g three times daily, L-arginine 500 mg three times daily, zinc, selenium 250 mcg/day, vitamin A 100,000 International Units/day for 30 days then 25,000 International Units/day, and germanium 50 mg/day.",
+      "claim_text": "Infertility protocol: EFA 5 g three times daily, L-arginine 500 mg three times daily, zinc, selenium 250 mcg/day, vitamin A 100,000 International Units/day for 30 days then 25,000 International Units/day, and germanium 50 mg/day.",
       "verbatim": "EFA at 5 gm t.i.d., 1-arginine at 500 mg t.i.d., zinc at 15 gm t.i.d., selenium\nat 250 meg/day, vitamin A at 100,000 IU/day for 30 days then drop to\n25,000 IU/day, germanium at 50 mg/day",
       "locator": {
         "book": "dddl-3e-2011",
@@ -2766,7 +2766,7 @@
         "benign_prostatic_hyperplasia"
       ],
       "symptoms": [],
-      "claim_text": "Benign prostatic hyperplasia (enlarged prostate) treatment: zinc 50 mg three times daily, flaxseed-oil essential fatty acids 9 g/day, high-fiber diet with pumpkin seeds, 300,000 International Units vitamin A as beta-carotene/day, and selenium 250 mcg three times daily.",
+      "claim_text": "Benign prostatic hyperplasia (enlarged prostate) treatment: zinc 50 mg three times daily, flaxseed-oil EFAs 9 g/day, high-fiber diet with pumpkin seeds, 300,000 International Units vitamin A as beta-carotene/day, and selenium 250 mcg three times daily.",
       "verbatim": "Benign prostatic hypertrophy is treated with zinc at 50 mg t.i.d., essential\nfatty acids as flaxseed oil at 9 grams per day, high fiber diets including\npumpkin seeds and alfalfa, 300,000 IU vitamin A as beta carotene per day",
       "locator": {
         "book": "dddl-3e-2011",
