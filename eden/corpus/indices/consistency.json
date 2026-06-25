@@ -571,6 +571,48 @@
   {
     "id": "CG-0020",
     "essentials": [
+      "oxygen"
+    ],
+    "conditions": [],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-RARE-000196",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000199",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0021",
+    "essentials": [
+      "oxygen"
+    ],
+    "conditions": [
+      "cancer"
+    ],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-RARE-000197",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000198",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0022",
+    "essentials": [
       "potassium"
     ],
     "conditions": [],
@@ -589,7 +631,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0021",
+    "id": "CG-0023",
     "essentials": [
       "silver"
     ],
@@ -609,7 +651,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0022",
+    "id": "CG-0024",
     "essentials": [
       "silver"
     ],
@@ -629,7 +671,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0023",
+    "id": "CG-0025",
     "essentials": [
       "sodium"
     ],
@@ -651,7 +693,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0024",
+    "id": "CG-0026",
     "essentials": [
       "zinc"
     ],

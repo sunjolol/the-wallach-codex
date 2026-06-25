@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_82 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_83 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-25 15:11 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 34 — Rare Earths O/Oxygen part 1/2: 5 claims (RARE-195..199) — essentiality, atmospheric O2 decline, anaerobic-disease emergence, Warburg, neutrophil-catalase. Blocks 1-2 reflowed; clippings raw. kv 71→72, corpus 293, board 30/30, probe green.
+  ↳ O/Oxygen is the ~1,100-line behemoth, interleaved with ~7pp of E.coli/AIDS-obituary clippings + a full-page TB-sanatorium photo (p362). Rendering the photo + reading obituary spans pulled sensitive content into context, which the image classifier re-screened every turn -> intermittent 'request blocked' (tools still succeeded). Luneth-directed: ship batch 34 as a clean checkpoint, then re-genesis fresh to mine O part 2 (block 3 p372 = singlet-oxygen/H2O2/ozone therapy, ~4 claims fully enumerated in next-chunk so nothing is lost). Memory reading-and-correcting-scanned-pdfs updated (screen before rendering). Tooling trap logged: post_write_verify misparses a helper-script 'OK ... —' status line as a missing file path -> false corruption flag.
 
 ## 2026-06-25 14:19 UTC-04:00 · session-end · session
 Session 3 (2026-06-25 PM) wrap — Phase γ.3 catalog second half I→Na + Nb/Nd/Ne/Ni/Np mined; 9 batches; corpus 237→288 (+51), kv 59→71, conditions 114→134; all pushed. NEXT: O/Oxygen (behemoth).

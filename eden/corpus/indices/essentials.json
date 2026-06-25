@@ -78,12 +78,26 @@
     "display_name": "Oxygen",
     "canon_slug": "oxygen",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 5,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-RARE-000195"
+      ],
+      "mechanism": [
+        "WAL-CLM-RARE-000196",
+        "WAL-CLM-RARE-000197",
+        "WAL-CLM-RARE-000198",
+        "WAL-CLM-RARE-000199"
+      ]
+    },
     "deficiency_signs": [],
-    "conditions_treated": [],
+    "conditions_treated": [
+      "cancer"
+    ],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "sodium": {
     "display_name": "Sodium",
