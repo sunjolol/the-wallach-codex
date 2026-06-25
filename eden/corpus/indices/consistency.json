@@ -119,6 +119,26 @@
   },
   {
     "id": "CG-0004",
+    "essentials": [],
+    "conditions": [
+      "pica"
+    ],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-RARE-000035",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000040",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0005",
     "essentials": [
       "germanium"
     ],
@@ -138,7 +158,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0005",
+    "id": "CG-0006",
     "essentials": [
       "germanium"
     ],
@@ -162,7 +182,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0006",
+    "id": "CG-0007",
     "essentials": [
       "sodium"
     ],
@@ -184,7 +204,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0007",
+    "id": "CG-0008",
     "essentials": [
       "zinc"
     ],

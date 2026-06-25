@@ -176,12 +176,18 @@
     "display_name": "Potassium",
     "canon_slug": "potassium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "interaction": [
+        "WAL-CLM-RARE-000038"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "calcium": {
     "display_name": "Calcium",
@@ -285,10 +291,11 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_kind": {
       "deficiency_sign": [
-        "WAL-CLM-DDDL-000017"
+        "WAL-CLM-DDDL-000017",
+        "WAL-CLM-RARE-000039"
       ],
       "personal_anecdote": [
         "WAL-CLM-DDDL-000008"
@@ -322,7 +329,8 @@
       "vitamin-b6"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "copper": {
@@ -654,10 +662,11 @@
     "display_name": "Vanadium",
     "canon_slug": "vanadium",
     "category": "mineral",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_kind": {
       "deficiency_sign": [
-        "WAL-CLM-DDDL-000017"
+        "WAL-CLM-DDDL-000017",
+        "WAL-CLM-RARE-000039"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000034",
@@ -695,7 +704,8 @@
       "vitamin-b6"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "zinc": {

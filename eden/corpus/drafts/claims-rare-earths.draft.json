@@ -307,7 +307,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 402410
+        "char_offset": 402397
       },
       "dose": null,
       "tags": [
@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817782
+        "char_offset": 817769
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817984
+        "char_offset": 817971
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817546
+        "char_offset": 817533
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 772473
+        "char_offset": 772460
       },
       "dose": {
         "amount": "250-400",
@@ -488,7 +488,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 392788
+        "char_offset": 392775
       },
       "dose": null,
       "tags": [
@@ -520,7 +520,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 393565
+        "char_offset": 393552
       },
       "dose": null,
       "tags": [
@@ -551,7 +551,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 473934
+        "char_offset": 473921
       },
       "dose": null,
       "tags": [
@@ -581,7 +581,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 474558
+        "char_offset": 474545
       },
       "dose": null,
       "tags": [
@@ -1204,6 +1204,108 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T00:09:13+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000038",
+      "kind": "interaction",
+      "essentials": [
+        "potassium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Dietary potassium deficiency is unlikely (grains, fruits, and vegetables are rich in it), but it becomes common in people taking diuretics for high blood pressure or weight loss.",
+      "verbatim": "a potassium deficiency can be common in those individuals taking diuretics for high blood pressure or weight loss.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 4",
+        "page": "57",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 205588
+      },
+      "dose": null,
+      "tags": [
+        "potassium",
+        "diuretics",
+        "drug-interaction"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T00:15:44+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000039",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "chromium",
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The \"munchies\" and cravings for alcohol and sweets (especially chocolate) are signs of chromium and vanadium deficiency.",
+      "verbatim": "The “munchies”, cravings for alcohol and candy cravings (especially chocolate) are sure signs of a chromium and vanadium deficiency.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 4",
+        "page": "57",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 206234
+      },
+      "dose": null,
+      "tags": [
+        "chromium",
+        "vanadium",
+        "cravings",
+        "sugar"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T00:15:44+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000040",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "pica"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach attributes preteen and teen infatuation with snack foods, drugs, smoking, and alcohol to pica — a mineral-deficiency-driven craving to put something in the mouth.",
+      "verbatim": "The preteen and teen age infatuation with snack foods, drugs, smoking and alcohol appear to be the result of pica - because they are so minerally deficient they are seeking something, anything, to put in their mouth that will satisfy an irresistable craving for minerals.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 4",
+        "page": "57",
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 206368
+      },
+      "dose": null,
+      "tags": [
+        "pica",
+        "cravings",
+        "adolescents",
+        "addiction"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T00:15:44+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

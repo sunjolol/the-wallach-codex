@@ -1105,14 +1105,15 @@
   },
   "pica": {
     "display_name": "Pica",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-RARE-000036"
       ],
       "causes": [
         "WAL-CLM-RARE-000035",
-        "WAL-CLM-RARE-000037"
+        "WAL-CLM-RARE-000037",
+        "WAL-CLM-RARE-000040"
       ]
     },
     "essentials_involved": [
