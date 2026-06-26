@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811680
+        "char_offset": 811678
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811882
+        "char_offset": 811880
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811444
+        "char_offset": 811442
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 766419
+        "char_offset": 766416
       },
       "dose": {
         "amount": "250-400",
@@ -512,7 +512,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach attributes the higher trisomy (Down's syndrome) risk in older mothers to mineral depletion — a woman depleted of minerals by her mid-30s carries higher-risk embryos.",
-      "verbatim": "(the poor woman would be depleted\nof minerals by the time she was over 35 so\nthe last two or three embryos were at higher\ntisk for trisomy)",
+      "verbatim": "(the poor woman would be depleted\nof minerals by the time she was over 35 so\nthe last two or three embryos were at higher\nrisk for trisomy)",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -1287,7 +1287,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach attributes preteen and teen infatuation with snack foods, drugs, smoking, and alcohol to pica — a mineral-deficiency-driven craving to put something in the mouth.",
-      "verbatim": "The preteen and teen age infatuation with snack foods, drugs, smoking and alcohol appear to be the result of pica - because they are so minerally deficient they are seeking something, anything, to put in their mouth that will satisfy an irresistable craving for minerals.",
+      "verbatim": "The preteen and teen age infatuation with snack foods, drugs, smoking and alcohol appear to be the result of pica - because they are so minerally deficient they are seeking something, anything, to put in their mouth that will satisfy an irresistible craving for minerals.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -1941,7 +1941,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach holds that the secret of the five long-lived \"Age-Beater\" cultures is eating plants rich in organic colloidal minerals — minerals the plants take up from inorganic \"Glacial Milk\" and convert into the cell-usable organic colloidal form.",
-      "verbatim": "It is the eating of the plants rich in organic colloidal minerals that is the secret of health and longevity of the five cultures we have called the “Agebeaters”",
+      "verbatim": "It is the eating of the plants rich in organic colloidal minerals that is the secret of health and longevity of the five cultures we have called the “Age Beaters”",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -1981,7 +1981,7 @@
         "page": 212,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 562541
+        "char_offset": 562542
       },
       "dose": null,
       "tags": [
@@ -2013,7 +2013,7 @@
         "page": 213,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 562765
+        "char_offset": 562766
       },
       "dose": null,
       "tags": [
@@ -2044,7 +2044,7 @@
         "page": 213,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 562906
+        "char_offset": 562907
       },
       "dose": null,
       "tags": [
@@ -2108,7 +2108,7 @@
         "page": 215,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 564779
+        "char_offset": 564780
       },
       "dose": null,
       "tags": [
@@ -2140,7 +2140,7 @@
         "page": 226,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 586567
+        "char_offset": 586568
       },
       "dose": null,
       "tags": [
@@ -2173,7 +2173,7 @@
         "page": 226,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 587970
+        "char_offset": 587971
       },
       "dose": null,
       "tags": [
@@ -2205,7 +2205,7 @@
         "page": 226,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 588226
+        "char_offset": 588227
       },
       "dose": null,
       "tags": [
@@ -2237,7 +2237,7 @@
         "page": 226,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 589055
+        "char_offset": 589056
       },
       "dose": null,
       "tags": [
@@ -2269,7 +2269,7 @@
         "page": 251,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 647099
+        "char_offset": 647100
       },
       "dose": null,
       "tags": [
@@ -2301,7 +2301,7 @@
         "page": 251,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 647523
+        "char_offset": 647524
       },
       "dose": null,
       "tags": [
@@ -2325,7 +2325,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach's key distinction: the \"Glacial Milk\" that nourishes the long-lived cultures carries 60 to 72 minerals, whereas the thousands of other glaciers worldwide may have only three to 20 minerals — too few to fulfill the human genetic potential for longevity.",
-      "verbatim": "the great common denominator of the “Glacial Milk” that nourishes the long-lived cultures is that they contain 60 to 72 minerals; there are thousands of glaciers in the world that prodyce vast quantities of “Glacial Milk,” however, they may only have three to 20 minerals in them",
+      "verbatim": "the great common denominator of the “Glacial Milk” that nourishes the long-lived cultures is that they contain 60 to 72 minerals; there are thousands of glaciers in the world that produce vast quantities of “Glacial Milk,” however, they may only have three to 20 minerals in them",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -2333,7 +2333,7 @@
         "page": 252,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 649372
+        "char_offset": 649373
       },
       "dose": null,
       "tags": [
@@ -2365,7 +2365,7 @@
         "page": 253,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 652266
+        "char_offset": 652267
       },
       "dose": null,
       "tags": [
@@ -2397,7 +2397,7 @@
         "page": 253,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 653256
+        "char_offset": 653257
       },
       "dose": null,
       "tags": [
@@ -2433,7 +2433,7 @@
         "page": 270,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 681977
+        "char_offset": 681978
       },
       "dose": null,
       "tags": [
@@ -2465,7 +2465,7 @@
         "page": 270,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 682198
+        "char_offset": 682199
       },
       "dose": null,
       "tags": [
@@ -2496,7 +2496,7 @@
         "page": 270,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 682454
+        "char_offset": 682455
       },
       "dose": null,
       "tags": [
@@ -2533,7 +2533,7 @@
         "page": 272,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 689932
+        "char_offset": 689933
       },
       "dose": null,
       "tags": [
@@ -2564,7 +2564,7 @@
         "page": 272,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 690233
+        "char_offset": 690234
       },
       "dose": null,
       "tags": [
@@ -2600,7 +2600,7 @@
         "page": 270,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 684852
+        "char_offset": 684853
       },
       "dose": null,
       "tags": [
@@ -2631,7 +2631,7 @@
         "page": 274,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 696753
+        "char_offset": 696754
       },
       "dose": null,
       "tags": [
@@ -2673,7 +2673,7 @@
         "page": 275,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 699962
+        "char_offset": 699963
       },
       "dose": null,
       "tags": [
@@ -2706,7 +2706,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach cautions that hair-mineral readings need interpretation: universally low levels indicate maldigestion (hypochlorhydria) and/or malabsorption (celiac disease); and paradoxically \"elevated\" calcium and magnesium can mean active depletion/shedding from bone — revealing very active osteoporosis with associated arthritis, periodontitis and a predilection for kidney stones — while elevated sodium/potassium/chloride signal essential-fatty-acid deficiency.",
-      "verbatim": "In some cases “elevated” hair level values represent actual depletion or shedding of minerals from body stores, i.e.- elevated calcium and magnesium levels reveal very active osteoporosis and associated arthritis, periodontitis and prediliction for kidney stones.",
+      "verbatim": "In some cases “elevated” hair level values represent actual depletion or shedding of minerals from body stores, i.e.- elevated calcium and magnesium levels reveal very active osteoporosis and associated arthritis, periodontitis and predilection for kidney stones.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -2714,7 +2714,7 @@
         "page": 275,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 700432
+        "char_offset": 700433
       },
       "dose": null,
       "tags": [
@@ -2753,7 +2753,7 @@
         "page": 275,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 701014
+        "char_offset": 701015
       },
       "dose": null,
       "tags": [
@@ -2788,7 +2788,7 @@
         "page": 276,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 701333
+        "char_offset": 701334
       },
       "dose": null,
       "tags": [
@@ -2813,7 +2813,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach reports the scale of lead toxicity in America: more than 400,000 tons of industrial lead is pumped into the American biosphere each year, insidiously poisoning over 38 million Americans annually.",
-      "verbatim": "more than 400,000 tons of industrial lead is pumped into the American bios annually resulting in the incidious poisoning of over 38 million Americans each year!!",
+      "verbatim": "more than 400,000 tons of industrial lead is pumped into the American bios annually resulting in the insidious poisoning of over 38 million Americans each year!!",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -2821,7 +2821,7 @@
         "page": 276,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 701912
+        "char_offset": 701913
       },
       "dose": null,
       "tags": [
@@ -2867,7 +2867,7 @@
         "page": 276,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 704128
+        "char_offset": 704129
       },
       "dose": null,
       "tags": [
@@ -2903,7 +2903,7 @@
         "page": 279,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 705626
+        "char_offset": 705627
       },
       "dose": null,
       "tags": [
@@ -2935,7 +2935,7 @@
         "page": 279,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 706618
+        "char_offset": 706619
       },
       "dose": null,
       "tags": [
@@ -2967,7 +2967,7 @@
         "page": 279,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 707692
+        "char_offset": 707693
       },
       "dose": null,
       "tags": [
@@ -3003,7 +3003,7 @@
         "page": 282,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 712000
+        "char_offset": 711999
       },
       "dose": {
         "amount": 400,
@@ -3044,7 +3044,7 @@
         "page": 282,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 712985
+        "char_offset": 712984
       },
       "dose": null,
       "tags": [
@@ -3071,7 +3071,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach notes silver's clinical pedigree: silver sulfadiazine (Silvadene) — discovered by Dr. Charles Fox at Columbia University — is used in 70 percent of America's burn centers and has been used to treat syphilis, cholera and malaria; it also stops the herpes virus behind cold sores and fever blisters. Earlier, colloidal silver was documented in the British Medical Journal and Lancet (1917–1918) for septic conditions, inflammation and wound healing.",
-      "verbatim": "Silver sulfadiazine (Silvadene, Marion\nLaboratories) is used in 70 percent of the\nburn centers in America; discovered by Dr.\nCharles Fox, Columbia, University ,\nsulfadiazine has been used successfully to\ntreat syphilis, cholera and malaria",
+      "verbatim": "Silver sulfadiazine (Silvadene, Marion\nLaboratories) is used in 70 percent of the\nburn centers in America; discovered by Dr.\nCharles Fox, Columbia University,\nsulfadiazine has been used successfully to\ntreat syphilis, cholera and malaria",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -3079,7 +3079,7 @@
         "page": 281,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 711370
+        "char_offset": 711371
       },
       "dose": null,
       "tags": [
@@ -3113,7 +3113,7 @@
         "page": 282,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 713781
+        "char_offset": 713780
       },
       "dose": null,
       "tags": [
@@ -3149,7 +3149,7 @@
         "page": 285,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 720912
+        "char_offset": 720911
       },
       "dose": null,
       "tags": [
@@ -3176,7 +3176,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach illustrates that the FORM of a mineral governs its toxicity: 18% of dietary arsenic trioxide (As2O3, the metallic form) was retained in rat liver versus only 0.7% of the organically-bound arsenic in shrimp tissue — a 65-times greater toxicity potential for metallic arsenic than for organically-bound arsenic.",
-      "verbatim": "Eighteen percent of dietary As,O, was\nstored in rat liver whereas only 0.7 percent\nof shrimp tissue arsenic was stored in rat\nlivers (65 times greater toxicity potential\nfrom metalic arsenic than from organically\nbound arsenic).",
+      "verbatim": "Eighteen percent of dietary As2O3 was\nstored in rat liver whereas only 0.7 percent\nof shrimp tissue arsenic was stored in rat\nlivers (65 times greater toxicity potential\nfrom metallic arsenic than from organically\nbound arsenic).",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -3184,7 +3184,7 @@
         "page": 285,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 721791
+        "char_offset": 721790
       },
       "dose": null,
       "tags": [
@@ -3329,7 +3329,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach reports that within eight days of boron supplementation, women lost 40% less calcium, 33% less magnesium, and less phosphorus through their urine; boron also doubled blood estradiol-17B to levels seen with estrogen-replacement therapy and nearly doubled testosterone — supporting bone maintenance and hormone balance.",
-      "verbatim": "within eight days of supplementing boron women lost 40 percent less calcium , 33 percent less magnesium and less phosphorus through their urine.",
+      "verbatim": "within eight days of supplementing boron women lost 40 percent less calcium, 33 percent less magnesium and less phosphorus through their urine.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -3372,7 +3372,7 @@
         "page": 288,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 726462
+        "char_offset": 726461
       },
       "dose": null,
       "tags": [
@@ -3406,7 +3406,7 @@
         "page": 288,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 727253
+        "char_offset": 727252
       },
       "dose": null,
       "tags": [
@@ -3433,7 +3433,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach gives the treatment of choice for ulcers as ten days to four weeks of tetracycline antibiotics, anti-ulcer medication, and bismuth subsalicylate — the active ingredient in Pepto-Bismol.",
-      "verbatim": "The treatment of choice for ulcers is ten days to four weeks on tetracycline antibiotics, anti-ulcer medication and bismuth subsalicylate - (the active ingrediant in Pepto Bismol).",
+      "verbatim": "The treatment of choice for ulcers is ten days to four weeks on tetracycline antibiotics, anti-ulcer medication and bismuth subsalicylate - (the active ingredient in Pepto Bismol).",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -3441,7 +3441,7 @@
         "page": 288,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 728604
+        "char_offset": 728603
       },
       "dose": null,
       "tags": [
@@ -3476,7 +3476,7 @@
         "page": 288,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 729108
+        "char_offset": 729107
       },
       "dose": null,
       "tags": [
@@ -3510,7 +3510,7 @@
         "page": 293,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 739254
+        "char_offset": 739253
       },
       "dose": null,
       "tags": [
@@ -3555,7 +3555,7 @@
         "page": 296,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 744312
+        "char_offset": 744309
       },
       "dose": null,
       "tags": [
@@ -3590,7 +3590,7 @@
         "page": 298,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 748857
+        "char_offset": 748854
       },
       "dose": null,
       "tags": [
@@ -3619,7 +3619,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach reports that McCarron and colleagues theorized in 1980 that chronic calcium deficiency leads to hypertension — a theory supported by more than 30 subsequent studies — and that serum ionized calcium runs consistently lower in people with untreated high blood pressure. In a four-year study of 58,218 nurses, hypertension was more likely in women taking in less than 800 mg of calcium per day.",
-      "verbatim": "In 1980, McCarron, et al, theorized that\nchronic calcium deficiency probably led to\nhypertension. More than 30 subsequent\nstudies supported the original theory of\ncalcium deficiency as the cause of\nhypertention",
+      "verbatim": "In 1980, McCarron, et al, theorized that\nchronic calcium deficiency probably led to\nhypertension. More than 30 subsequent\nstudies supported the original theory of\ncalcium deficiency as the cause of\nhypertension",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -3627,7 +3627,7 @@
         "page": 298,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 750527
+        "char_offset": 750524
       },
       "dose": null,
       "tags": [
@@ -3664,7 +3664,7 @@
         "page": 299,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 751662
+        "char_offset": 751659
       },
       "dose": null,
       "tags": [
@@ -3691,7 +3691,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach explains that of the three polyunsaturated fatty acids called essential fatty acids — linoleic, linolenic and arachidonic — only two (linoleic and linolenic) are truly essential, because the human body can synthesize arachidonic acid from linoleic acid.",
-      "verbatim": "only two (linoleic and linolenic) are\ndesignated as EFA as arachidonic acid can\nbe synthesized by the human from lenoleic\nacid.",
+      "verbatim": "only two (linoleic and linolenic) are\ndesignated as EFA as arachidonic acid can\nbe synthesized by the human from linoleic\nacid.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -3699,7 +3699,7 @@
         "page": 291,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 733749
+        "char_offset": 733748
       },
       "dose": null,
       "tags": [
@@ -3735,7 +3735,7 @@
         "page": 291,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 734234
+        "char_offset": 734233
       },
       "dose": null,
       "tags": [
@@ -3773,7 +3773,7 @@
         "page": 291,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 734477
+        "char_offset": 734476
       },
       "dose": null,
       "tags": [
@@ -3810,7 +3810,7 @@
         "page": 304,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 759410
+        "char_offset": 759407
       },
       "dose": null,
       "tags": [
@@ -3845,7 +3845,7 @@
         "page": 304,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 759925
+        "char_offset": 759922
       },
       "dose": null,
       "tags": [
@@ -3873,7 +3873,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach explains the essentiality of cobalt is unusual: the actual requirement is for the cobalt-containing complex vitamin B12 (cyanocobalamin), in which a single cobalt atom is the central metal. Vitamin B12/cobalt works with folic acid, choline, and the amino acid methionine to transfer methyl groups in the synthesis of RNA and DNA (directly involved in gene function and preconception nutrition), and is required for growth, myelin formation, and red-blood-cell synthesis.",
-      "verbatim": "a\nsingle cobalt atom is the central metal\ncomponant of vitamin B,, which itself is a\ncofactor and activator",
+      "verbatim": "a\nsingle cobalt atom is the central metal\ncomponent of vitamin B12 which itself is a\ncofactor and activator",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -3881,7 +3881,7 @@
         "page": 305,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 761297
+        "char_offset": 761294
       },
       "dose": null,
       "tags": [
@@ -3919,7 +3919,7 @@
         "page": 306,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 766036
+        "char_offset": 766033
       },
       "dose": null,
       "tags": [
@@ -3971,7 +3971,7 @@
         "page": 306,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 767274
+        "char_offset": 767271
       },
       "dose": null,
       "tags": [
@@ -4008,7 +4008,7 @@
         "page": 307,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 768773
+        "char_offset": 768770
       },
       "dose": null,
       "tags": [
@@ -4037,7 +4037,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach cites Richard Anderson of the USDA stating that 90 percent of Americans are deficient in chromium, and reports that the impaired glucose tolerance of pregnancy reflects a chromium deficiency that often results in pregnancy-onset diabetes, and that one study found abnormal glucose tolerance in 77 percent of clinically 'normal' adults over the age of 70.",
-      "verbatim": "According to Richard Anderson , USDA, \"90 percent of Americans are deficient in chromium.\"",
+      "verbatim": "According to Richard Anderson, USDA, \"90 percent of Americans are deficient in chromium.\"",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -4045,7 +4045,7 @@
         "page": 307,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 769779
+        "char_offset": 769776
       },
       "dose": null,
       "tags": [
@@ -4072,7 +4072,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach states copper is essential to all living organisms and is a universally important cofactor for many hundreds of metalloenzymes. Copper is required for RNA and DNA, as the lysyl-oxidase cofactor, for melanin production (hair and skin pigment), for electron transfer in oxygen-based subcellular respiration, and for the tensile strength of the elastic fibers in blood vessels, skin, and vertebral discs.",
-      "verbatim": "Copper is essential to all living organisms and is a universally important cofactor for many hundreds of metalloenzynes.",
+      "verbatim": "Copper is essential to all living organisms and is a universally important cofactor for many hundreds of metalloenzymes.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -4080,7 +4080,7 @@
         "page": 315,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 779185
+        "char_offset": 779181
       },
       "dose": null,
       "tags": [
@@ -4117,7 +4117,7 @@
         "page": 315,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 780408
+        "char_offset": 780404
       },
       "dose": null,
       "tags": [
@@ -4152,7 +4152,7 @@
         "page": 316,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 782450
+        "char_offset": 782446
       },
       "dose": null,
       "tags": [
@@ -4205,7 +4205,7 @@
         "page": 315,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 779306
+        "char_offset": 779302
       },
       "dose": null,
       "tags": [
@@ -4244,7 +4244,7 @@
         "page": 315,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 780019
+        "char_offset": 780015
       },
       "dose": null,
       "tags": [
@@ -4279,7 +4279,7 @@
         "page": 314,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 776263
+        "char_offset": 776259
       },
       "dose": null,
       "tags": [
@@ -4317,7 +4317,7 @@
         "page": 314,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 777688
+        "char_offset": 777684
       },
       "dose": null,
       "tags": [
@@ -4478,7 +4478,7 @@
         "page": 275,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 699855
+        "char_offset": 699856
       },
       "dose": null,
       "tags": [
@@ -4512,7 +4512,7 @@
         "page": 329,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 800863
+        "char_offset": 800861
       },
       "dose": null,
       "tags": [
@@ -4547,7 +4547,7 @@
         "page": 329,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 801154
+        "char_offset": 801152
       },
       "dose": null,
       "tags": [
@@ -4584,7 +4584,7 @@
         "page": 330,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 803071
+        "char_offset": 803069
       },
       "dose": null,
       "tags": [
@@ -4613,7 +4613,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach gives fluoride's toxicity thresholds: clinical toxicity appears as dental fluorosis at fluoride concentrations of 2–7 ppm and osteosclerosis at 8–20 ppm, with chronic systemic toxicity when fluoride levels reach 20–80 mg per day for years. (About 10,000 American towns serving 100 million people fluoridate water at 1 mg/L, reportedly cutting dental cavities 60–70%, while some western states have a natural fluoride excess of 10–45 ppm that mottles children's teeth.)",
-      "verbatim": "Clinical toxicity is observed as dental\nflourosis at flouride concentrations of 2 to7\nppm and osteosclerosis at 8 to 20 ppm;\nchronic systemic toxicity appears when the\nflouride levels reach 20 to 80 mg per day\nfor years.",
+      "verbatim": "Clinical toxicity is observed as dental\nfluorosis at fluoride concentrations of 2 to 7\nppm and osteosclerosis at 8 to 20 ppm;\nchronic systemic toxicity appears when the\nfluoride levels reach 20 to 80 mg per day\nfor years.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -4621,7 +4621,7 @@
         "page": 329,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 797946
+        "char_offset": 797943
       },
       "dose": null,
       "tags": [
@@ -4661,7 +4661,7 @@
         "page": 329,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 799262
+        "char_offset": 799260
       },
       "dose": null,
       "tags": [
@@ -4699,7 +4699,7 @@
         "page": 335,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 813102
+        "char_offset": 813100
       },
       "dose": null,
       "tags": [
@@ -4729,7 +4729,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach notes that bladder infections (cystitis) can often be controlled by acidifying the urine with unsweetened cranberry juice.",
-      "verbatim": "Bladder infections (cystitis) can often times\nbe controlled by acidifying the urine with\nunsweatened cranberry juice.",
+      "verbatim": "Bladder infections (cystitis) can often times\nbe controlled by acidifying the urine with\nunsweetened cranberry juice.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -4737,7 +4737,7 @@
         "page": 336,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 815078
+        "char_offset": 815076
       },
       "dose": null,
       "tags": [
@@ -4774,7 +4774,7 @@
         "page": 337,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817237
+        "char_offset": 817235
       },
       "dose": null,
       "tags": [
@@ -4809,7 +4809,7 @@
         "page": 337,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 818125
+        "char_offset": 818123
       },
       "dose": null,
       "tags": [
@@ -4844,7 +4844,7 @@
         "page": 337,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 818666
+        "char_offset": 818664
       },
       "dose": null,
       "tags": [
@@ -4879,7 +4879,7 @@
         "page": 327,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 793156
+        "char_offset": 793153
       },
       "dose": null,
       "tags": [
@@ -4908,7 +4908,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach describes Menkes' Kinky Hair Syndrome — thought to be a sex-linked recessive defect of copper absorption — in which affected infants show retarded growth, defective keratin formation and loss of hair pigment, low body temperature, degeneration and fracture of aortic elastin (aneurysms), arthritis in the growth plate of long bones, and progressive mental deterioration (the brain is left free of the essential enzyme cytochrome c oxidase). Because metallic copper is poorly absorbed, copper injections are useful.",
-      "verbatim": "The affected infants exibit retarded growth, defective keratin formation and loss of hair pigment, low body temperature, degeneration and fracture of aortic elastin (aneurysms), arthritis in the growth plate of long bones,",
+      "verbatim": "The affected infants exhibit retarded growth, defective keratin formation and loss of hair pigment, low body temperature, degeneration and fracture of aortic elastin (aneurysms), arthritis in the growth plate of long bones,",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -4916,7 +4916,7 @@
         "page": 327,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 791699
+        "char_offset": 791695
       },
       "dose": null,
       "tags": [
@@ -4951,7 +4951,7 @@
         "page": 327,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 792128
+        "char_offset": 792125
       },
       "dose": null,
       "tags": [
@@ -4986,7 +4986,7 @@
         "page": 304,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 759020
+        "char_offset": 759017
       },
       "dose": null,
       "tags": [
@@ -5020,7 +5020,7 @@
         "page": 341,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 826476
+        "char_offset": 826474
       },
       "dose": null,
       "tags": [
@@ -5053,7 +5053,7 @@
         "page": 343,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 827850
+        "char_offset": 827848
       },
       "dose": null,
       "tags": [
@@ -5086,7 +5086,7 @@
         "page": 341,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 826845
+        "char_offset": 826843
       },
       "dose": null,
       "tags": [
@@ -5123,7 +5123,7 @@
         "page": 341,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 827050
+        "char_offset": 827048
       },
       "dose": null,
       "tags": [
@@ -5151,7 +5151,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach explains that many foods and food additives act as 'goitrogens' that interfere with the thyroid's metabolism and produce goiter when eaten in inordinate amounts (for example nitrates, broccoli, cabbage, and brussel sprouts).",
-      "verbatim": "Many foods and food aditives are known as \"goitrogens\" because they interfere with the thyroids metabolism and produce goiter when consumed in inordinate amounts (i.e.- nitrates, broccoli, cabbage, brusselsprouts, etc.).",
+      "verbatim": "Many foods and food additives are known as \"goitrogens\" because they interfere with the thyroids metabolism and produce goiter when consumed in inordinate amounts (i.e.- nitrates, broccoli, cabbage, Brussels sprouts, etc.).",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -5159,7 +5159,7 @@
         "page": 343,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 828609
+        "char_offset": 828611
       },
       "dose": null,
       "tags": [
@@ -5196,7 +5196,7 @@
         "page": 343,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 827541
+        "char_offset": 827539
       },
       "dose": null,
       "tags": [
@@ -5237,7 +5237,7 @@
         "low_sex_drive"
       ],
       "claim_text": "Wallach lists the symptoms of hypothyroidism (Hashimoto's disease): fatigue, cold intolerance, muscle aches and pains, heavy or more frequent periods, low sex drive, brittle nails, weight gain, hair loss, muscle cramps, depression, constipation, elevated blood cholesterol, puffy face, dry skin and hair, inability to concentrate, poor memory, and goiter. He notes some 11 million Americans have a hypothyroid or hyperthyroid condition.",
-      "verbatim": "SYMPTOMS of HYPOTHYROISM\n(Hashimoto's Disease)\nFatigue\nCold intolerance\nMuscle aches & pains\nHeavy or more frequent periods\nLow sex drive\nBrittle nails\nWeight gain\nHair loss\nMuscle cramps\nDepression\nConstipation\nElevated blood cholesterol\nPuffy face\nDry skin and hair\nInability to concentrate\nPoor memory\nGoiter",
+      "verbatim": "SYMPTOMS of HYPOTHYROIDISM\n(Hashimoto's Disease)\nFatigue\nCold intolerance\nMuscle aches & pains\nHeavy or more frequent periods\nLow sex drive\nBrittle nails\nWeight gain\nHair loss\nMuscle cramps\nDepression\nConstipation\nElevated blood cholesterol\nPuffy face\nDry skin and hair\nInability to concentrate\nPoor memory\nGoiter",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -5245,7 +5245,7 @@
         "page": 343,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 828021
+        "char_offset": 828019
       },
       "dose": null,
       "tags": [
@@ -5286,7 +5286,7 @@
         "muscle_weakness"
       ],
       "claim_text": "Wallach lists the symptoms of hyperthyroidism (Grave's disease): insomnia, heat intolerance, excessive sweating, lighter or less frequent periods, hand tremors, rapid pulse, exophthalmos (bulging 'bug-eyes'), weight loss, increased appetite, muscle weakness, frequent bowel movements, irritability, nervousness, and goiter.",
-      "verbatim": "SYMPTOMS of HYPERTHYROISM\n(Grave's Disease)\nInsomnia\nHeat Intolerance\nExcessive sweating\nLighter/less frequent periods\nHand Tremors\nRapid pulse\nExophthalmos (\"bug-eyes\")\nWeight loss\nIncreased appetite\nMuscle weakness\nFrequent bowel movements\nIrritability\nNervousness\nGoiter",
+      "verbatim": "SYMPTOMS of HYPERTHYROIDISM\n(Grave's Disease)\nInsomnia\nHeat Intolerance\nExcessive sweating\nLighter/less frequent periods\nHand Tremors\nRapid pulse\nExophthalmos (\"bug-eyes\")\nWeight loss\nIncreased appetite\nMuscle weakness\nFrequent bowel movements\nIrritability\nNervousness\nGoiter",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -5328,7 +5328,7 @@
         "page": 343,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 829497
+        "char_offset": 829502
       },
       "dose": null,
       "tags": [
@@ -5364,7 +5364,7 @@
         "page": 344,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 829843
+        "char_offset": 829848
       },
       "dose": null,
       "tags": [
@@ -5399,7 +5399,7 @@
         "page": 344,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 830060
+        "char_offset": 830065
       },
       "dose": null,
       "tags": [
@@ -5439,7 +5439,7 @@
         "page": 344,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 830244
+        "char_offset": 830249
       },
       "dose": null,
       "tags": [
@@ -5473,7 +5473,7 @@
         "page": 344,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 830378
+        "char_offset": 830383
       },
       "dose": null,
       "tags": [
@@ -5512,7 +5512,7 @@
         "page": 344,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 831078
+        "char_offset": 831083
       },
       "dose": null,
       "tags": [
@@ -5546,7 +5546,7 @@
         "page": 344,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 831355
+        "char_offset": 831360
       },
       "dose": null,
       "tags": [
@@ -5580,7 +5580,7 @@
         "page": 344,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 830661
+        "char_offset": 830666
       },
       "dose": null,
       "tags": [
@@ -5615,7 +5615,7 @@
         "page": 344,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 831835
+        "char_offset": 831840
       },
       "dose": null,
       "tags": [
@@ -5651,7 +5651,7 @@
         "page": 344,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 832507
+        "char_offset": 832512
       },
       "dose": null,
       "tags": [
@@ -5686,7 +5686,7 @@
         "page": 350,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 843334
+        "char_offset": 843339
       },
       "dose": null,
       "tags": [
@@ -5733,7 +5733,7 @@
         "page": 350,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 843670
+        "char_offset": 843675
       },
       "dose": null,
       "tags": [
@@ -5769,7 +5769,7 @@
         "page": 350,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 844000
+        "char_offset": 844005
       },
       "dose": null,
       "tags": [
@@ -5807,7 +5807,7 @@
         "page": 350,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 844692
+        "char_offset": 844697
       },
       "dose": null,
       "tags": [
@@ -5841,7 +5841,7 @@
         "page": 350,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 844847
+        "char_offset": 844852
       },
       "dose": null,
       "tags": [
@@ -5877,7 +5877,7 @@
         "page": 350,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 844991
+        "char_offset": 844996
       },
       "dose": null,
       "tags": [
@@ -5911,7 +5911,7 @@
         "page": 350,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 846223
+        "char_offset": 846228
       },
       "dose": null,
       "tags": [
@@ -5946,7 +5946,7 @@
         "page": 351,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 846401
+        "char_offset": 846406
       },
       "dose": null,
       "tags": [
@@ -5982,7 +5982,7 @@
         "page": 351,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 846979
+        "char_offset": 846984
       },
       "dose": null,
       "tags": [
@@ -6017,7 +6017,7 @@
         "page": 351,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 847215
+        "char_offset": 847220
       },
       "dose": null,
       "tags": [
@@ -6067,7 +6067,7 @@
         "page": 351,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 847589
+        "char_offset": 847594
       },
       "dose": null,
       "tags": [
@@ -6103,7 +6103,7 @@
         "page": 351,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 847876
+        "char_offset": 847881
       },
       "dose": null,
       "tags": [
@@ -6137,7 +6137,7 @@
         "page": 351,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 848608
+        "char_offset": 848613
       },
       "dose": null,
       "tags": [
@@ -6175,7 +6175,7 @@
         "page": 351,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 848991
+        "char_offset": 848996
       },
       "dose": null,
       "tags": [
@@ -6228,7 +6228,7 @@
         "page": 352,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 849890
+        "char_offset": 849895
       },
       "dose": null,
       "tags": [
@@ -6267,7 +6267,7 @@
         "page": 352,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 849541
+        "char_offset": 849546
       },
       "dose": null,
       "tags": [
@@ -6304,7 +6304,7 @@
         "page": 352,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 851189
+        "char_offset": 851194
       },
       "dose": null,
       "tags": [
@@ -6339,7 +6339,7 @@
         "page": 352,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 852002
+        "char_offset": 852007
       },
       "dose": null,
       "tags": [
@@ -6372,7 +6372,7 @@
         "page": 352,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 852232
+        "char_offset": 852237
       },
       "dose": null,
       "tags": [
@@ -6408,7 +6408,7 @@
         "page": 352,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 852346
+        "char_offset": 852351
       },
       "dose": null,
       "tags": [
@@ -6442,7 +6442,7 @@
         "page": 353,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 852794
+        "char_offset": 852799
       },
       "dose": null,
       "tags": [
@@ -6477,7 +6477,7 @@
         "page": 353,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 853031
+        "char_offset": 853036
       },
       "dose": null,
       "tags": [
@@ -6512,7 +6512,7 @@
         "page": 354,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 854827
+        "char_offset": 854832
       },
       "dose": null,
       "tags": [
@@ -6554,7 +6554,7 @@
         "page": 354,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 855321
+        "char_offset": 855326
       },
       "dose": null,
       "tags": [
@@ -6588,7 +6588,7 @@
         "page": 354,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 856388
+        "char_offset": 856393
       },
       "dose": null,
       "tags": [
@@ -6624,7 +6624,7 @@
         "page": 354,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 856575
+        "char_offset": 856580
       },
       "dose": null,
       "tags": [
@@ -6667,7 +6667,7 @@
         "page": 355,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 857437
+        "char_offset": 857442
       },
       "dose": null,
       "tags": [
@@ -6705,7 +6705,7 @@
         "page": 355,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 857917
+        "char_offset": 857922
       },
       "dose": null,
       "tags": [
@@ -6740,7 +6740,7 @@
         "page": 355,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 858096
+        "char_offset": 858101
       },
       "dose": null,
       "tags": [
@@ -6774,7 +6774,7 @@
         "page": 356,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 858645
+        "char_offset": 858650
       },
       "dose": null,
       "tags": [
@@ -6810,7 +6810,7 @@
         "page": 356,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 859563
+        "char_offset": 859568
       },
       "dose": null,
       "tags": [
@@ -6854,7 +6854,7 @@
         "page": 356,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 859220
+        "char_offset": 859225
       },
       "dose": null,
       "tags": [
@@ -6890,7 +6890,7 @@
         "page": 356,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 859675
+        "char_offset": 859680
       },
       "dose": null,
       "tags": [
@@ -6924,7 +6924,7 @@
         "page": 358,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 861824
+        "char_offset": 861829
       },
       "dose": null,
       "tags": [
@@ -6957,7 +6957,7 @@
         "page": 358,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 862829
+        "char_offset": 862834
       },
       "dose": null,
       "tags": [
@@ -6992,7 +6992,7 @@
         "page": 363,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 869141
+        "char_offset": 869146
       },
       "dose": null,
       "tags": [
@@ -7027,7 +7027,7 @@
         "page": 363,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 870998
+        "char_offset": 871003
       },
       "dose": null,
       "tags": [
@@ -7053,7 +7053,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach describes how neutrophils, a type of white blood cell, destroy invading micro-organisms, parasites, and cancer cells using hydrogen peroxide produced by organelles called peroxisomes, and that excess hydrogen peroxide spilled into the bloodstream is broken down by the enzyme catalase, which coats the red blood cells and blood-vessel walls, into water and singlet oxygen.",
-      "verbatim": "The function of catalase is to rapidly facilitate the decomposition of hydrogen peroxide down to water (H,O) and singlet oxygen (O).",
+      "verbatim": "The function of catalase is to rapidly facilitate the decomposition of hydrogen peroxide down to water (H2O) and singlet oxygen (O).",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -7061,7 +7061,7 @@
         "page": 363,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 872002
+        "char_offset": 872007
       },
       "dose": null,
       "tags": [
@@ -7095,7 +7095,7 @@
         "page": 372,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 889042
+        "char_offset": 889047
       },
       "dose": null,
       "tags": [
@@ -7129,7 +7129,7 @@
         "page": 372,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 888397
+        "char_offset": 888402
       },
       "dose": null,
       "tags": [
@@ -7171,7 +7171,7 @@
         "page": 372,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 889338
+        "char_offset": 889343
       },
       "dose": null,
       "tags": [
@@ -7208,7 +7208,7 @@
         "page": 372,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 890064
+        "char_offset": 890069
       },
       "dose": null,
       "tags": [
@@ -7243,7 +7243,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 891359
+        "char_offset": 891364
       },
       "dose": null,
       "tags": [
@@ -7277,7 +7277,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 891713
+        "char_offset": 891718
       },
       "dose": null,
       "tags": [
@@ -7318,7 +7318,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 892372
+        "char_offset": 892377
       },
       "dose": null,
       "tags": [
@@ -7353,7 +7353,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 892894
+        "char_offset": 892899
       },
       "dose": {
         "amount": "1,000-1,500",
@@ -7395,7 +7395,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 893360
+        "char_offset": 893365
       },
       "dose": null,
       "tags": [
@@ -7431,7 +7431,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 893649
+        "char_offset": 893654
       },
       "dose": null,
       "tags": [
@@ -7457,7 +7457,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach observes that vegetarians and vegans who do not supplement rarely show phosphorus deficiency, thanks to their high phytic acid intake — but for that same reason they always carry other mineral deficiencies, including calcium, copper, chromium, vanadium, lithium, and zinc.",
-      "verbatim": "Vegetarians and vegans who do not supplement with minerals rarely have P deficiency, however, because of their high phytic acid intake they always have other mineral deficiencies icluding Ca, Cu, Cr, V. Li and Zn.",
+      "verbatim": "Vegetarians and vegans who do not supplement with minerals rarely have P deficiency, however, because of their high phytic acid intake they always have other mineral deficiencies including Ca, Cu, Cr, V. Li and Zn.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -7465,7 +7465,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 894061
+        "char_offset": 894066
       },
       "dose": null,
       "tags": [
@@ -7502,7 +7502,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 896836
+        "char_offset": 896842
       },
       "dose": null,
       "tags": [
@@ -7539,7 +7539,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 897232
+        "char_offset": 897238
       },
       "dose": null,
       "tags": [
@@ -7577,7 +7577,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 897450
+        "char_offset": 897456
       },
       "dose": null,
       "tags": [
@@ -7614,7 +7614,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 897764
+        "char_offset": 897770
       },
       "dose": null,
       "tags": [
@@ -7653,7 +7653,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 898120
+        "char_offset": 898126
       },
       "dose": null,
       "tags": [
@@ -7688,7 +7688,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 899100
+        "char_offset": 899106
       },
       "dose": null,
       "tags": [
@@ -7723,7 +7723,7 @@
         "page": 376,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 900473
+        "char_offset": 900479
       },
       "dose": null,
       "tags": [
@@ -7758,7 +7758,7 @@
         "page": 376,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 901040
+        "char_offset": 901046
       },
       "dose": null,
       "tags": [
@@ -7793,7 +7793,7 @@
         "page": 376,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 902170
+        "char_offset": 902176
       },
       "dose": null,
       "tags": [
@@ -7820,7 +7820,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach notes that sulfur's sulfhydryl chemistry — the reduced -SH form in cysteine and the oxidized disulfide -S-S- form in the double molecule cystine — is important for the specific configuration of some structural proteins and for the biological activity of some enzymes.",
-      "verbatim": "This “sulfhydryl group” is important for the specific configuration of some structural proteins and for the biological activities of somes enzymes (proteins that do work).",
+      "verbatim": "This “sulfhydryl group” is important for the specific configuration of some structural proteins and for the biological activities of some enzymes (proteins that do work).",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -7828,7 +7828,7 @@
         "page": 377,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 904063
+        "char_offset": 904069
       },
       "dose": null,
       "tags": [
@@ -7863,7 +7863,7 @@
         "page": 377,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 904236
+        "char_offset": 904241
       },
       "dose": null,
       "tags": [
@@ -7898,7 +7898,7 @@
         "page": 377,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 904392
+        "char_offset": 904397
       },
       "dose": null,
       "tags": [
@@ -7931,7 +7931,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach states that sulfur deficiency results in degenerative types of arthritis (with degeneration of cartilage, ligaments, and tendons), systemic lupus erythematosus, sickle-cell anemia, and various 'collagen diseases.'",
-      "verbatim": "Deficiency of sulfur results in degenerative types of arthritis involving degeneration of cartilage, ligaments, tendons, Systemic Lupus Erythematosis, Sicklecell anemia and various “collagen diseases.”",
+      "verbatim": "Deficiency of sulfur results in degenerative types of arthritis involving degeneration of cartilage, ligaments, tendons, Systemic Lupus Erythematosus, Sickle-cell anemia and various “collagen diseases.”",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -7939,7 +7939,7 @@
         "page": 377,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 904736
+        "char_offset": 904741
       },
       "dose": null,
       "tags": [
@@ -7977,7 +7977,7 @@
         "page": 378,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 905194
+        "char_offset": 905200
       },
       "dose": null,
       "tags": [
@@ -8004,7 +8004,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach describes selenium as the most efficient antioxidant (anti-peroxidant), acting at the subcellular level in the glutathione peroxidase enzyme system and in metallo amino acids such as selenomethionine. By preventing cellular and subcellular lipids and fats from being peroxidized, it keeps body fats from going rancid; the externally visible 'age spots' or 'liver spots' are this brown peroxidized lipid, known as ceroid lipofuscin.",
-      "verbatim": "Selenium prevents cellular and subcellular lipids and fats from being peroxidized which literally means it prevents body fats from going rancid (seen externally as “age spots” or “liver spots” - this brown gold peroxidized lipid is known as ceroid lipofucsin).",
+      "verbatim": "Selenium prevents cellular and subcellular lipids and fats from being peroxidized which literally means it prevents body fats from going rancid (seen externally as “age spots” or “liver spots” - this brown gold peroxidized lipid is known as ceroid lipofuscin).",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -8012,7 +8012,7 @@
         "page": 378,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 906281
+        "char_offset": 906287
       },
       "dose": null,
       "tags": [
@@ -8048,7 +8048,7 @@
         "page": 378,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 906543
+        "char_offset": 906549
       },
       "dose": null,
       "tags": [
@@ -8092,7 +8092,7 @@
         "page": 382,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 910923
+        "char_offset": 910929
       },
       "dose": null,
       "tags": [
@@ -8132,7 +8132,7 @@
         "page": 382,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 911287
+        "char_offset": 911293
       },
       "dose": null,
       "tags": [
@@ -8181,7 +8181,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 740496
+        "char_offset": 740495
       },
       "dose": null,
       "tags": [
@@ -8223,7 +8223,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 740808
+        "char_offset": 740807
       },
       "dose": null,
       "tags": [
@@ -8261,7 +8261,7 @@
         "myalgia"
       ],
       "claim_text": "Wallach lists the common diseases of vitamin E (tocopherol) deficiency in Table 11-9: infertility, a lowered immune system, age spots or liver spots (from lipid peroxidation by free radicals), ischemic heart disease, fibrocystic breast disease, muscle weakness, muscle pain (myalgia), muscular dystrophy, anemia from red-blood-cell breakdown (hemolysis), increased cancer risk, and Alzheimer's syndrome.",
-      "verbatim": "Infertility, lowered immune system, age spots (liver spots, lipid\nperoxidation, free radicals), ischemic heart disease, fibrocystic breast\ndisease, muscle weakness, myalgia, muscular dystrophy, anemia\n(hemolysis) , increased risk of cancer, Alzheimer’s syndrome.",
+      "verbatim": "Infertility, lowered immune system, age spots (liver spots, lipid\nperoxidation, free radicals), ischemic heart disease, fibrocystic breast\ndisease, muscle weakness, myalgia, muscular dystrophy, anemia\n(hemolysis), increased risk of cancer, Alzheimer’s syndrome.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -8269,7 +8269,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 741034
+        "char_offset": 741033
       },
       "dose": null,
       "tags": [
@@ -8307,7 +8307,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 741327
+        "char_offset": 741325
       },
       "dose": null,
       "tags": [
@@ -8352,7 +8352,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 741449
+        "char_offset": 741447
       },
       "dose": null,
       "tags": [
@@ -8393,7 +8393,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 741675
+        "char_offset": 741673
       },
       "dose": null,
       "tags": [
@@ -8433,7 +8433,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 741986
+        "char_offset": 741984
       },
       "dose": null,
       "tags": [
@@ -8474,7 +8474,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 742173
+        "char_offset": 742171
       },
       "dose": null,
       "tags": [
@@ -8517,7 +8517,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 742318
+        "char_offset": 742316
       },
       "dose": null,
       "tags": [
@@ -8554,7 +8554,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 742549
+        "char_offset": 742547
       },
       "dose": null,
       "tags": [
@@ -8584,7 +8584,7 @@
         "poor_growth"
       ],
       "claim_text": "Wallach lists the common diseases of folic acid (folacin, vitamin B9) deficiency in Table 11-9: anemia, poor growth, and birth defects (spina bifida).",
-      "verbatim": "Folic acid (Folacin) - 1946\nAnemia, poor growth , birth defects (spina bifida).",
+      "verbatim": "Folic acid (Folacin) - 1946\nAnemia, poor growth, birth defects (spina bifida).",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -8592,7 +8592,7 @@
         "page": 296,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 742742
+        "char_offset": 742740
       },
       "dose": null,
       "tags": [
@@ -8633,7 +8633,7 @@
         "page": 296,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 742823
+        "char_offset": 742820
       },
       "dose": null,
       "tags": [
@@ -8675,7 +8675,7 @@
         "page": 296,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 742941
+        "char_offset": 742938
       },
       "dose": null,
       "tags": [
@@ -8714,7 +8714,7 @@
         "page": 296,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 743165
+        "char_offset": 743162
       },
       "dose": null,
       "tags": [
@@ -8749,7 +8749,7 @@
         "page": 296,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 743337
+        "char_offset": 743334
       },
       "dose": null,
       "tags": [

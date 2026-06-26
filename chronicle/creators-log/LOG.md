@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_96 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_97 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-26 03:07 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 48 — corpus-wide obvious-typo SWEEP (both shards). Hapax scan found more than catalogued. Applied 37 rules (A misspellings + B spacing + C formulas→digits); 30 verbatims fixed, resnap 0 broken. Group D deferred to book-verify. kv 88→89, corpus 337, board 30/30.
+  ↳ Hapax+targeted scan of all 337 verbatims. Luneth 4-way ruling: fix A(27 misspellings)/B(7 spacing)/C(3 formulas→plain digits), defer D(5 uncertain) to book-verification. 37 replacement rules across rare-earths.txt + dddl.txt; global per-token where unambiguous, context-scoped for risky (tisk for / somes enzymes). 30 claims corrected (28 RARE + 2 DDDL), resnap 0 broken. Examples: somes→some, Erythematosis→Erythematosus, Sicklecell→Sickle-cell, lipofucsin→lipofuscin(x5), athritis→arthritis, tinnitis→tinnitus, flouride→fluoride(x11), HYPER/HYPOTHYROISM fixed, tisk→risk; spacing (hemolysis)/Columbia University/2 to 7/Brussels sprouts; formulas As,O,→As2O3 (book-verified p285), B,,→B12(x3), (H,O)→(H2O). Precedent (batch 46): obvious typos corrected even in faithful verbatims. claim_texts unchanged, no new claims. NEXT = Group D verify then Si/Silica.
 
 ## 2026-06-26 02:45 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 47 — Table 11-9 PART 3 (p296): 5 claims RARE-239..243 (Folic/Biotin/Vit C/Choline/Bioflavonoids). De-interleave reflow, restored dropped labels, bleeing→bleeding; Inositol skipped. TABLE 11-9 COMPLETE. kv 87→88, corpus 337, conditions 166, board 30/30.

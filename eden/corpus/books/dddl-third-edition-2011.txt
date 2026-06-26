@@ -822,7 +822,7 @@ learned the many deficiency diseases that occur when single and multiple
 nutrients were missing from a ration.
 Calcium deficiency alone could result in as many as 147 different diseases
 ranging from osteoporosis, osteoarthritis, osteomalacia, degenerative
-athritis, Bell’s Palsy, tinnitis, trigeminal neuralgia, and spinal stenosis to
+arthritis, Bell’s Palsy, tinnitus, trigeminal neuralgia, and spinal stenosis to
 name a few.
 4
 WE CURED DISEASES IN ANIMALS WITH
@@ -915,7 +915,7 @@ Another early symptom of selenium deficiency in older humans is the
 appearance of “liver spots” or “age spots.” When one has ten age spots on
 their skin they have millions of them in their brain, eyes, thyroid gland,
 heart, lungs, liver, kidneys, intestines, bone marrow, and muscle. This
-“pigment of aging,” scientifically known as ceroid lipofucsin, is a collection of
+“pigment of aging,” scientifically known as ceroid lipofuscin, is a collection of
 rancid fat known as “free radicals” that interferes with cell function and
 increases one’s risk of cancer, Alzheimer’s disease, and heart disease many
 times.
@@ -4543,7 +4543,7 @@ Unfortunately for the Carrel and the immortality of the cell theory, a Dr.
 Leonard Hayflick came along and used artificial growth media with major
 mineral deficiencies for human fibroblast propagation. In his experiment
 (faulted from the beginning), human fibroblasts could only divide 50 times
-before dying out and showing accumulations of ceroid lipofucsin, the
+before dying out and showing accumulations of ceroid lipofuscin, the
 pigment of aging that indicates lipid peroxidation and a selenium
 deficiency. Hayflick attributed Carrel’s success in unending propagation of
 healthy chicken fibroblasts to the contamination of the growth media by
@@ -5069,7 +5069,7 @@ intracellular (within the cell) organically bound plant colloids. These
 organic plant colloids are the form of minerals found in and used by all
 living cells of plants, animals, and humans. It is the eating of the plants rich
 in organic colloidal minerals that is the secret of health and longevity of the
-eight long-lived cultures known as the “Agebeaters.”
+eight long-lived cultures known as the “Age Beaters.”
 In May, 1994 Margaret Skeets, of Radford, Virginia turned 115 before she
 died. The Guinness Book of Records identified Margaret Skeets as the
 oldest documented living American, age 115 at that time. They said there
@@ -7918,7 +7918,7 @@ concentration in breast milk from women in third world countries than in
 American women.
 F—Fluorine is found in igneous rocks at 625 ppm, in shale at 740 ppm,
 sandstone at 270 ppm, limestone at 330 ppm, fresh water at 0.09 ppm, sea
-water at 1.3 ppm, and soils at 200 ppm (flouride can be “fixed” or tightly
+water at 1.3 ppm, and soils at 200 ppm (fluoride can be “fixed” or tightly
 bonded in several types of clay.) Certain types of F rich soils in Madras,
 Spain, and South America are toxic to grazing livestock. Fluorine is found
 in marine plants at 4.5 ppm, land plants at 0.5 to 40.0 ppm (accumulates in
@@ -8879,7 +8879,7 @@ combine with sulfhydryl groups. A deficiency of sulfur results in
 degenerative types of arthritis involving degeneration of
 Appendix A-263
 cartilage, osteoarthritis, degenerative arthritis, weakened ligaments,
-weakened tendons, Systemic Lupus Erythematosis, sickle cell anemia, and
+weakened tendons, Systemic Lupus Erythematosus, sickle cell anemia, and
 various “collagen diseases.”
 Sb—Antimony is found in igneous rocks at 0.2 ppm, shale at 1.5 ppm,
 sandstone at 0.05ppm, limestone at 0.2 ppm, sea water at 0.00033 ppm, soil
@@ -8898,13 +8898,13 @@ plants at 0.2 ppm, and in land animals at 1.7 ppm where the highest
 concentrations are found in liver, kidney, heart, and skeletal muscle. Keep
 in mind that Se is not universally distributed. Vast areas of earth are
 deficient or totally devoid of Se. Se is found in the humus of alkaline soils
-when present. Selenium is the most efficient antioxidant (anti-peroxident).
+when present. Selenium is the most efficient antioxidant (anti-peroxidant).
 It’s used at the subcellular level in the glutathione peroxidase enzyme
 system and metalloamino acids (selenomethionine, etc.). Selenium prevents
 cellular and subcellular lipids and fats from being peroxidized which
 literally means it prevents body fats from going rancid. “Rancid” body fats
 are seen externally as “age spots” or “liver spots.” The golden brown
-“pigment of aging” is technically known as ceroid lipofucsin and results
+“pigment of aging” is technically known as ceroid lipofuscin and results
 from peroxidation that selenium could reverse.
 Selenium also functions to protect cellular and organelle bi-lipid layer
 membranes from oxidative damage. High intakes of vegetable oils,
@@ -9340,7 +9340,7 @@ to bowel tolerance, and zinc 25-50 mg t.i.d. Don’t forget to remove the
 stress. Dietary recommendations: no fried foods, no margarine, no caffeine,
 and no sugar.
 AGE SPOTS: (Liver spots, pigment of aging): These unsightiy brown
-spots are caused by rancid fat (ceroid lipofucsin or trans fatty acids)from
+spots are caused by rancid fat (ceroid lipofuscin or trans fatty acids)from
 cell walls accumulating under the skin. If you have ten on the back of your
 hand, you have millions in your brain, heart, liver, kidney, lungs, etc. They
 interfere with cell function, shorten your life, and are a red flag warning for
@@ -13937,7 +13937,7 @@ Treatment of rickets includes supplementation with vitamin D at 400 IU
 orally b.i.d., calcium and magnesium at 2,000 mg and 1,000 mg per day,
 and exposure to sunshine for 30 minutes per day. Advanced cases will
 require orthotic correction and, in some cases, orthopedic surgery.
-RINGING IN THE EARS (tinnitis, Miniar’s disease, and Wallach’s
+RINGING IN THE EARS (tinnitus, Miniar’s disease, and Wallach’s
 vertigo) can be caused by high blood pressure, drug side effects, and
 osteoporosis (fibrous connective tissue squeezing the 8th cranial nerve).
 The bones of the body try to get stronger following the loss of mineral by
