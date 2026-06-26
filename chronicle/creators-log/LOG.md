@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_97 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_98 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-26 03:33 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 49 — catalog resumed at Si/Silica. 3 claims RARE-244..246 [silica] (canon, zero prior coverage): mechanism (+100% bone collagen), deficiency_sign (brittle hair/nails, arterial disease), dose (200-500 mg/day). Handoff refreshed. kv 89→90, corpus 340, board 30/30.
+  ↳ Si/Silica = canon slug silica, ZERO prior claims (full entry new — verified not assumed; SESSION-5 handoff wrongly said Si had DDDL coverage). mechanism (supplementation→+100% growing-bone collagen; tissue Si declines with age unsupplemented); deficiency_sign (dry brittle hair, brittle finger/toe nails, poor skin, poor calcium utilization, arterial disease); dose (high-fiber→Si-rich→may lower cholesterol; 200-500 mg/day). Read word-level high-DPI p409. Claims 1+2 snapped raw; claim 3 de-hyphenation reflow (con-tain/investiga-tors/choles-terol.. → contain/investigators/cholesterol.; book single period, .txt OCR double-period). resnap 0 broken. Kept faithful: Cyoeraceae/Graineae + 100 % space. SESSION 6 WRAP (b44-49). next-chunk.md refreshed. NEXT = Sn/Tin.
 
 ## 2026-06-26 03:07 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 48 — corpus-wide obvious-typo SWEEP (both shards). Hapax scan found more than catalogued. Applied 37 rules (A misspellings + B spacing + C formulas→digits); 30 verbatims fixed, resnap 0 broken. Group D deferred to book-verify. kv 88→89, corpus 337, board 30/30.

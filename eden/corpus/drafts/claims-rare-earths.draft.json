@@ -8762,6 +8762,119 @@
       "extracted_at": "2026-06-26T06:38:19+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000244",
+      "kind": "mechanism",
+      "essentials": [
+        "silica"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach says silicon (silica) supplementation increases the collagen in growing bone by 100%, and that tissue levels of silicon decrease with age in people and laboratory animals who are not supplemented.",
+      "verbatim": "Silicon supplementation increases the\ncollagen in growing bone by 100 %. Tissue\nlevels of Si decrease with aging in\nunsupplemented humans and laboratory\nspecies.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": 409,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 956734
+      },
+      "dose": null,
+      "tags": [
+        "silicon",
+        "collagen",
+        "bone"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-26T07:28:39+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000245",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "silica"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cardiovascular_disease"
+      ],
+      "symptoms": [
+        "dry_hair",
+        "brittle_nails",
+        "poor_skin"
+      ],
+      "claim_text": "Wallach states that silica deficiency is characterized by dry brittle hair, brittle finger and toe nails, poor skin quality, poor calcium utilization, and arterial disease.",
+      "verbatim": "Silica deficiency is characterized\nby dry brittle hair, brittle finger and toe nails,\npoor skin quality, poor calcium utilization\nand arterial disease.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": 409,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 956896
+      },
+      "dose": null,
+      "tags": [
+        "silicon",
+        "deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-26T07:28:39+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000246",
+      "kind": "dose",
+      "essentials": [
+        "silica"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "high_cholesterol"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach notes that high-fiber diets contain a lot of silicon, which leads many investigators to think silicon helps lower cholesterol; he gives a recommended silicon intake of 200 to 500 mg per day.",
+      "verbatim": "High fiber diets contain lots of Si which leads many investigators to think that Si helps to lower cholesterol. The recommended intake of Si ranges\nfrom 200 to 500 mg/day.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": 409,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 957048
+      },
+      "dose": {
+        "amount": "200-500",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": null
+      },
+      "tags": [
+        "silicon",
+        "dose",
+        "cholesterol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-26T07:28:39+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

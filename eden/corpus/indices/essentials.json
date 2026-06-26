@@ -1198,12 +1198,43 @@
     "display_name": "Silica",
     "canon_slug": "silica",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
-    "deficiency_signs": [],
-    "conditions_treated": [],
+    "claim_count": 3,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000245"
+      ],
+      "dose": [
+        "WAL-CLM-RARE-000246"
+      ],
+      "mechanism": [
+        "WAL-CLM-RARE-000244"
+      ]
+    },
+    "deficiency_signs": [
+      {
+        "sign": "brittle_nails",
+        "claim_id": "WAL-CLM-RARE-000245",
+        "confidence": "high"
+      },
+      {
+        "sign": "dry_hair",
+        "claim_id": "WAL-CLM-RARE-000245",
+        "confidence": "high"
+      },
+      {
+        "sign": "poor_skin",
+        "claim_id": "WAL-CLM-RARE-000245",
+        "confidence": "high"
+      }
+    ],
+    "conditions_treated": [
+      "cardiovascular_disease",
+      "high_cholesterol"
+    ],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "strontium": {
     "display_name": "Strontium",

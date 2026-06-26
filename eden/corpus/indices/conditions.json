@@ -828,19 +828,24 @@
   },
   "cardiovascular_disease": {
     "display_name": "Cardiovascular Disease",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000245"
+      ],
       "protocols": [
         "WAL-CLM-DDDL-000076"
       ]
     },
     "essentials_involved": [
       "calcium",
-      "magnesium"
+      "magnesium",
+      "silica"
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "carpal_tunnel_syndrome": {
@@ -1743,14 +1748,18 @@
   },
   "high_cholesterol": {
     "display_name": "High Cholesterol",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "definitions": [
         "WAL-CLM-RARE-000122"
+      ],
+      "doses": [
+        "WAL-CLM-RARE-000246"
       ]
     },
     "essentials_involved": [
-      "copper"
+      "copper",
+      "silica"
     ],
     "other_substances_involved": [],
     "books_cited": [

@@ -122,11 +122,17 @@
   },
   "brittle_nails": {
     "display_name": "Brittle Nails",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "silica",
+        "claim_id": "WAL-CLM-RARE-000245",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -269,11 +275,17 @@
   },
   "dry_hair": {
     "display_name": "Dry Hair",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "nickel",
         "claim_id": "WAL-CLM-RARE-000193",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "silica",
+        "claim_id": "WAL-CLM-RARE-000245",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -1073,6 +1085,21 @@
       {
         "essential": "vitamin-b1",
         "claim_id": "WAL-CLM-RARE-000233",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "poor_skin": {
+    "display_name": "Poor Skin",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "silica",
+        "claim_id": "WAL-CLM-RARE-000245",
         "confidence": "high",
         "appears_in_books": 1
       }
