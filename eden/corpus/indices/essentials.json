@@ -2125,35 +2125,94 @@
     "display_name": "Thiamine",
     "canon_slug": "vitamin-b1",
     "category": "vitamin",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "deficiency_sign": [
-        "WAL-CLM-DDDL-000043"
+        "WAL-CLM-DDDL-000043",
+        "WAL-CLM-RARE-000233"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "emotional_instability",
+        "claim_id": "WAL-CLM-RARE-000233",
+        "confidence": "high"
+      },
+      {
+        "sign": "loss_of_appetite",
+        "claim_id": "WAL-CLM-RARE-000233",
+        "confidence": "high"
+      },
+      {
+        "sign": "low_energy",
+        "claim_id": "WAL-CLM-RARE-000233",
+        "confidence": "high"
+      },
+      {
+        "sign": "mental_confusion",
+        "claim_id": "WAL-CLM-RARE-000233",
+        "confidence": "high"
+      },
+      {
+        "sign": "muscle_weakness",
+        "claim_id": "WAL-CLM-RARE-000233",
+        "confidence": "high"
+      },
+      {
+        "sign": "paralysis",
+        "claim_id": "WAL-CLM-RARE-000233",
+        "confidence": "high"
+      },
+      {
+        "sign": "poor_memory",
+        "claim_id": "WAL-CLM-RARE-000233",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
       "beriberi",
-      "congestive_heart_failure"
+      "congestive_heart_failure",
+      "depression",
+      "wernicke_korsakoff_syndrome"
     ],
     "interacts_with": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "vitamin-b2": {
     "display_name": "Riboflavin",
     "canon_slug": "vitamin-b2",
     "category": "vitamin",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000234"
+      ],
       "mechanism": [
         "WAL-CLM-RARE-000010"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "geographic_tongue",
+        "claim_id": "WAL-CLM-RARE-000234",
+        "confidence": "high"
+      },
+      {
+        "sign": "magenta_tongue",
+        "claim_id": "WAL-CLM-RARE-000234",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
-      "cystic_fibrosis"
+      "anemia",
+      "angular_stomatitis",
+      "cystic_fibrosis",
+      "peripheral_neuropathy",
+      "photophobia",
+      "seborrheic_dermatitis"
     ],
     "interacts_with": [
       "selenium",
@@ -2168,18 +2227,36 @@
     "display_name": "Niacin",
     "canon_slug": "vitamin-b3",
     "category": "vitamin",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000235"
+      ],
       "protocol": [
         "WAL-CLM-DDDL-000049",
         "WAL-CLM-DDDL-000078"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "diarrhea",
+        "claim_id": "WAL-CLM-RARE-000235",
+        "confidence": "high"
+      },
+      {
+        "sign": "muscle_weakness",
+        "claim_id": "WAL-CLM-RARE-000235",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
+      "anorexia",
       "anxiety",
+      "dementia",
+      "dermatitis",
       "diabetes",
-      "panic_attacks"
+      "panic_attacks",
+      "pellagra"
     ],
     "interacts_with": [
       "calcium",
@@ -2192,36 +2269,101 @@
       "zinc"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "vitamin-b5": {
     "display_name": "Pantothenic Acid",
     "canon_slug": "vitamin-b5",
     "category": "vitamin",
-    "claim_count": 0,
-    "claims_by_kind": {},
-    "deficiency_signs": [],
-    "conditions_treated": [],
+    "claim_count": 1,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000236"
+      ]
+    },
+    "deficiency_signs": [
+      {
+        "sign": "behavioral_problems",
+        "claim_id": "WAL-CLM-RARE-000236",
+        "confidence": "high"
+      },
+      {
+        "sign": "burning_feet",
+        "claim_id": "WAL-CLM-RARE-000236",
+        "confidence": "high"
+      },
+      {
+        "sign": "fainting",
+        "claim_id": "WAL-CLM-RARE-000236",
+        "confidence": "high"
+      },
+      {
+        "sign": "loss_of_appetite",
+        "claim_id": "WAL-CLM-RARE-000236",
+        "confidence": "high"
+      },
+      {
+        "sign": "rapid_pulse",
+        "claim_id": "WAL-CLM-RARE-000236",
+        "confidence": "high"
+      }
+    ],
+    "conditions_treated": [
+      "depression",
+      "dermatitis"
+    ],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "vitamin-b6": {
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000237"
+      ],
       "protocol": [
         "WAL-CLM-DDDL-000055",
         "WAL-CLM-DDDL-000078"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "ataxia",
+        "claim_id": "WAL-CLM-RARE-000237",
+        "confidence": "high"
+      },
+      {
+        "sign": "convulsions",
+        "claim_id": "WAL-CLM-RARE-000237",
+        "confidence": "high"
+      },
+      {
+        "sign": "nausea",
+        "claim_id": "WAL-CLM-RARE-000237",
+        "confidence": "high"
+      },
+      {
+        "sign": "vomiting",
+        "claim_id": "WAL-CLM-RARE-000237",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
       "anxiety",
       "cradle_cap",
-      "panic_attacks"
+      "depression",
+      "hyperirritability",
+      "panic_attacks",
+      "peripheral_neuropathy",
+      "seborrheic_dermatitis",
+      "tourette_syndrome"
     ],
     "interacts_with": [
       "calcium",
@@ -2232,7 +2374,8 @@
       "zinc"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "vitamin-b9": {
@@ -2268,8 +2411,11 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000238"
+      ],
       "dose": [
         "WAL-CLM-RARE-000014"
       ],
@@ -2289,12 +2435,19 @@
         "WAL-CLM-DDDL-000086"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "spinal_cord_demyelination",
+        "claim_id": "WAL-CLM-RARE-000238",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
       "aphthous_stomatitis",
       "bells_palsy",
       "canker_sores",
       "diabetes",
+      "peripheral_neuropathy",
       "pernicious_anemia"
     ],
     "interacts_with": [

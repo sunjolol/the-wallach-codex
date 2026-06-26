@@ -22757,13 +22757,12 @@ deficiency).
 
 WATER SOLUBLE
 
-B, (Thiamine) - 1897, 1911... Congestive heart failure (Beriberi), loss of memory (Wernicke-
-Korsakoff syndrome), mental confusion, depression, lethargy,
+B, (Thiamine) - 1897, 1911... Congestive heart failure (Beriberi), loss of memory (Wernicke-Korsakoff syndrome), mental confusion, depression, lethargy,
 muscular weakness, paralysis, emotional instability, loss of appetite.
 
-B, (Riboflavin) - 1879,1932... Soreness and burning of lips,mouth and tongue, erosions and swelling
-of tongue “geographic” tongue), magenta tongue, photophobia,
-lacrimation (tearing), chelosis, angular stomatitis, seborrheic dermatitis
+B, (Riboflavin) - 1879,1932... Soreness and burning of lips, mouth and tongue, erosions and swelling
+of tongue (“geographic” tongue), magenta tongue, photophobia,
+lacrimation (tearing), cheilosis, angular stomatitis, seborrheic dermatitis
 of the nasal folds, capillary “injection” of cornea, anemia, neuropathy.
 
 B, (Niacin) -1900........... Pellagra (dermatitis, diarrhea, dementia and retardation), muscular

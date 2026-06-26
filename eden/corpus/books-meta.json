@@ -31,9 +31,9 @@
         "Ma Lan"
       ],
       "file": "eden/corpus/books/rare-earths-forbidden-cures.txt",
-      "content_sha256": "635bfe6b09ebd09c07648d526ddedff3ac4b17a6a36ed773202d407e30038675",
-      "content_bytes": 1182787,
-      "line_count": 38597,
+      "content_sha256": "5df474828815145886a1106fa2d4653915bac0b048c1a01e7076df39cf1d7338",
+      "content_bytes": 1182789,
+      "line_count": 38596,
       "hash_basis": "lf_normalized_utf8",
       "locator_scheme": "chapter_page",
       "ocr_confidence_band": "n/a",

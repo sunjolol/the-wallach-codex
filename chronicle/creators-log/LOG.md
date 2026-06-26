@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_94 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_95 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-26 02:25 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 46 — Table 11-9 PART 2 (water-soluble B1/B2/B3/B5/B6/B12, p295): 6 deficiency_sign claims RARE-233..238. NEW Luneth ruling: correct obvious typos (lips,mouth; chelosis→cheilosis) in verbatims. kv 85→87, corpus 332, conditions 161, board 30/30, probe green.
+  ↳ PART 2 = water-soluble B-complex, all 6 rows read word-level at high DPI. B3 confirmed "dementia and retardation" (last batch full-page misread as irritation — corrected). 4 targeted .txt edits: B1 de-hyphenate line-wrapped Wernicke-Korsakoff (reflow); B2 restore OCR-dropped open paren before "geographic" (fix-to-book); and a NEW Luneth ruling — VERY OBVIOUS typos get corrected in verbatims too: lips,mouth→lips, mouth and chelosis→cheilosis. PRECEDENT SHIFT: the .txt now intentionally departs from the books literal print for unambiguous typos (prior stance kept all book typos faithful). resnap 1 healed (RARE-234 --fix), 125 relocated, 0 broken. Behavioral goldmine: B1 mental-confusion/emotional-instability, B5 quarrelsome/sullen/depressed, B6 hyperirritability/Tourettes. +7 conditions +~13 symptoms. OPEN consistency Q (non-blocking): batch-44 kept-typos Sicklecell/somes/methionone/lipofucsin/Erythematosis same class. Next: PART 3 p296 (Folic acid/Biotin/C/Choline/Inositol/Bioflavonoids) finishes Table 11-9.
 
 ## 2026-06-26 02:12 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 45 — Table 11-9 vitamin-deficiency PART 1 (fat-soluble A/D/E/K, p295): 4 deficiency_sign claims RARE-229..232, one per vitamin. No .txt edit. Luneth reviewed+approved. kv 84→85, corpus 326, conditions 154, board 30/30, knowledge probe green.

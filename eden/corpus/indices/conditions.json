@@ -125,13 +125,14 @@
   },
   "anemia": {
     "display_name": "Anemia",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
         "WAL-CLM-DDDL-000020",
         "WAL-CLM-RARE-000193",
-        "WAL-CLM-RARE-000231"
+        "WAL-CLM-RARE-000231",
+        "WAL-CLM-RARE-000234"
       ],
       "definitions": [
         "WAL-CLM-RARE-000122"
@@ -150,6 +151,7 @@
       "nickel",
       "selenium",
       "vanadium",
+      "vitamin-b2",
       "vitamin-e"
     ],
     "other_substances_involved": [
@@ -207,18 +209,36 @@
       "dddl-3e-2011"
     ]
   },
+  "angular_stomatitis": {
+    "display_name": "Angular Stomatitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000234"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b2"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "anorexia": {
     "display_name": "Anorexia",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000079",
-        "WAL-CLM-RARE-000172"
+        "WAL-CLM-RARE-000172",
+        "WAL-CLM-RARE-000235"
       ]
     },
     "essentials_involved": [
       "lithium",
       "magnesium",
+      "vitamin-b3",
       "zinc"
     ],
     "other_substances_involved": [],
@@ -454,10 +474,11 @@
   },
   "beriberi": {
     "display_name": "Beriberi",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000043"
+        "WAL-CLM-DDDL-000043",
+        "WAL-CLM-RARE-000233"
       ]
     },
     "essentials_involved": [
@@ -465,7 +486,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "bipolar_disorder": {
@@ -1037,10 +1059,11 @@
   },
   "congestive_heart_failure": {
     "display_name": "Congestive Heart Failure",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000043"
+        "WAL-CLM-DDDL-000043",
+        "WAL-CLM-RARE-000233"
       ]
     },
     "essentials_involved": [
@@ -1048,7 +1071,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "conjunctivitis": {
@@ -1224,6 +1248,22 @@
       "rare-earths"
     ]
   },
+  "dementia": {
+    "display_name": "Dementia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000235"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b3"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "dental_fluorosis": {
     "display_name": "Dental Fluorosis",
     "claim_count": 1,
@@ -1242,14 +1282,17 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 6,
+    "claim_count": 9,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000161"
       ],
       "deficiency_signs": [
         "WAL-CLM-RARE-000163",
-        "WAL-CLM-RARE-000172"
+        "WAL-CLM-RARE-000172",
+        "WAL-CLM-RARE-000233",
+        "WAL-CLM-RARE-000236",
+        "WAL-CLM-RARE-000237"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
@@ -1262,7 +1305,10 @@
     "essentials_involved": [
       "chromium",
       "lithium",
-      "magnesium"
+      "magnesium",
+      "vitamin-b1",
+      "vitamin-b5",
+      "vitamin-b6"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1271,16 +1317,20 @@
   },
   "dermatitis": {
     "display_name": "Dermatitis",
-    "claim_count": 2,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000193",
-        "WAL-CLM-RARE-000229"
+        "WAL-CLM-RARE-000229",
+        "WAL-CLM-RARE-000235",
+        "WAL-CLM-RARE-000236"
       ]
     },
     "essentials_involved": [
       "nickel",
-      "vitamin-a"
+      "vitamin-a",
+      "vitamin-b3",
+      "vitamin-b5"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1704,10 +1754,13 @@
   },
   "hyperirritability": {
     "display_name": "Hyperirritability",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000127"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000237"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
@@ -1715,7 +1768,8 @@
     },
     "essentials_involved": [
       "chromium",
-      "vanadium"
+      "vanadium",
+      "vitamin-b6"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -2602,6 +2656,22 @@
       "rare-earths"
     ]
   },
+  "pellagra": {
+    "display_name": "Pellagra",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000235"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b3"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "peptic_ulcers": {
     "display_name": "Peptic Ulcers",
     "claim_count": 2,
@@ -2621,14 +2691,22 @@
   },
   "peripheral_neuropathy": {
     "display_name": "Peripheral Neuropathy",
-    "claim_count": 1,
+    "claim_count": 4,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000234",
+        "WAL-CLM-RARE-000237",
+        "WAL-CLM-RARE-000238"
+      ],
       "definitions": [
         "WAL-CLM-RARE-000116"
       ]
     },
     "essentials_involved": [
-      "chromium"
+      "chromium",
+      "vitamin-b12",
+      "vitamin-b2",
+      "vitamin-b6"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -2637,15 +2715,34 @@
   },
   "pernicious_anemia": {
     "display_name": "Pernicious Anemia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000115"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000238"
       ]
     },
     "essentials_involved": [
       "cobalt",
       "vitamin-b12"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "photophobia": {
+    "display_name": "Photophobia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000234"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b2"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -2801,6 +2898,24 @@
       "iron",
       "manganese",
       "vanadium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "seborrheic_dermatitis": {
+    "display_name": "Seborrheic Dermatitis",
+    "claim_count": 2,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000234",
+        "WAL-CLM-RARE-000237"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b2",
+      "vitamin-b6"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -2974,6 +3089,22 @@
       "rare-earths"
     ]
   },
+  "tourette_syndrome": {
+    "display_name": "Tourette Syndrome",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000237"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b6"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "trigeminal_neuralgia": {
     "display_name": "Trigeminal Neuralgia",
     "claim_count": 1,
@@ -3097,6 +3228,22 @@
     },
     "essentials_involved": [
       "sodium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "wernicke_korsakoff_syndrome": {
+    "display_name": "Wernicke Korsakoff Syndrome",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000233"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b1"
     ],
     "other_substances_involved": [],
     "books_cited": [
