@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_95 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_96 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-26 02:45 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 47 — Table 11-9 PART 3 (p296): 5 claims RARE-239..243 (Folic/Biotin/Vit C/Choline/Bioflavonoids). De-interleave reflow, restored dropped labels, bleeing→bleeding; Inositol skipped. TABLE 11-9 COMPLETE. kv 87→88, corpus 337, conditions 166, board 30/30.
+  ↳ PART 3 finishes Table 11-9 (15/16 vitamins; Inositol cell too short for the 60-char floor even with label, skipped, .txt keeps the row). De-interleaved two-column OCR reflow: re-paired labels with deficiency texts, RESTORED OCR-dropped Choline/Inositol/Bioflavonoids labels from the page render (more faithful), fixed obvious typo bleeing→bleeding (book typo, per the new ruling), dropped the - leader artifact. Verbatims = label\ntext (Luneth chose label-inclusion to clear the floor for short cells). Kept faithful: poor growth , (book space-before-comma, pending sweep) + Choline curly apostrophes. resnap 0 broken, 121 relocated. +5 conditions +6 symptoms. NEXT = corpus-wide obvious-typo sweep (Luneth directive), then Si/Silica.
 
 ## 2026-06-26 02:25 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 46 — Table 11-9 PART 2 (water-soluble B1/B2/B3/B5/B6/B12, p295): 6 deficiency_sign claims RARE-233..238. NEW Luneth ruling: correct obvious typos (lips,mouth; chelosis→cheilosis) in verbatims. kv 85→87, corpus 332, conditions 161, board 30/30, probe green.

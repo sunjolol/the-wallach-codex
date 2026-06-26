@@ -105,15 +105,17 @@
   },
   "alzheimers": {
     "display_name": "Alzheimers",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
         "WAL-CLM-RARE-000227",
-        "WAL-CLM-RARE-000231"
+        "WAL-CLM-RARE-000231",
+        "WAL-CLM-RARE-000242"
       ]
     },
     "essentials_involved": [
+      "choline",
       "selenium",
       "vitamin-e"
     ],
@@ -125,14 +127,16 @@
   },
   "anemia": {
     "display_name": "Anemia",
-    "claim_count": 8,
+    "claim_count": 10,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
         "WAL-CLM-DDDL-000020",
         "WAL-CLM-RARE-000193",
         "WAL-CLM-RARE-000231",
-        "WAL-CLM-RARE-000234"
+        "WAL-CLM-RARE-000234",
+        "WAL-CLM-RARE-000239",
+        "WAL-CLM-RARE-000241"
       ],
       "definitions": [
         "WAL-CLM-RARE-000122"
@@ -152,6 +156,8 @@
       "selenium",
       "vanadium",
       "vitamin-b2",
+      "vitamin-b9",
+      "vitamin-c",
       "vitamin-e"
     ],
     "other_substances_involved": [
@@ -516,7 +522,7 @@
   },
   "birth_defects": {
     "display_name": "Birth Defects",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000015",
@@ -524,7 +530,8 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000039",
-        "WAL-CLM-RARE-000229"
+        "WAL-CLM-RARE-000229",
+        "WAL-CLM-RARE-000239"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -535,6 +542,7 @@
       "copper",
       "selenium",
       "vitamin-a",
+      "vitamin-b9",
       "zinc"
     ],
     "other_substances_involved": [],
@@ -558,6 +566,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "blepharitis": {
+    "display_name": "Blepharitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000240"
+      ]
+    },
+    "essentials_involved": [
+      "biotin"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
     ]
   },
   "blind_rage": {
@@ -657,7 +681,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 22,
+    "claim_count": 23,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -673,7 +697,8 @@
         "WAL-CLM-RARE-000011",
         "WAL-CLM-RARE-000227",
         "WAL-CLM-RARE-000229",
-        "WAL-CLM-RARE-000231"
+        "WAL-CLM-RARE-000231",
+        "WAL-CLM-RARE-000241"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -705,6 +730,7 @@
       "tyrosine",
       "vanadium",
       "vitamin-a",
+      "vitamin-c",
       "vitamin-e",
       "zinc"
     ],
@@ -1282,7 +1308,7 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000161"
@@ -1292,7 +1318,8 @@
         "WAL-CLM-RARE-000172",
         "WAL-CLM-RARE-000233",
         "WAL-CLM-RARE-000236",
-        "WAL-CLM-RARE-000237"
+        "WAL-CLM-RARE-000237",
+        "WAL-CLM-RARE-000240"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
@@ -1303,6 +1330,7 @@
       ]
     },
     "essentials_involved": [
+      "biotin",
       "chromium",
       "lithium",
       "magnesium",
@@ -1411,16 +1439,18 @@
   },
   "eczema": {
     "display_name": "Eczema",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000111"
       ],
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000065"
+        "WAL-CLM-DDDL-000065",
+        "WAL-CLM-RARE-000240"
       ]
     },
     "essentials_involved": [
+      "biotin",
       "omega-3",
       "omega-6"
     ],
@@ -1501,6 +1531,22 @@
       "sodium",
       "vanadium",
       "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "fatty_liver": {
+    "display_name": "Fatty Liver",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000242"
+      ]
+    },
+    "essentials_involved": [
+      "choline"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1705,6 +1751,22 @@
     },
     "essentials_involved": [
       "copper"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "huntingtons_disease": {
+    "display_name": "Huntingtons Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000242"
+      ]
+    },
+    "essentials_involved": [
+      "choline"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -2904,6 +2966,22 @@
       "rare-earths"
     ]
   },
+  "scurvy": {
+    "display_name": "Scurvy",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000241"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-c"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "seborrheic_dermatitis": {
     "display_name": "Seborrheic Dermatitis",
     "claim_count": 2,
@@ -2956,10 +3034,11 @@
   },
   "spina_bifida": {
     "display_name": "Spina Bifida",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000042"
+        "WAL-CLM-DDDL-000042",
+        "WAL-CLM-RARE-000239"
       ]
     },
     "essentials_involved": [
@@ -2968,7 +3047,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "spinal_stenosis": {
@@ -2997,6 +3077,22 @@
     },
     "essentials_involved": [
       "oxygen"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "tardive_dyskinesia": {
+    "display_name": "Tardive Dyskinesia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000242"
+      ]
+    },
+    "essentials_involved": [
+      "choline"
     ],
     "other_substances_involved": [],
     "books_cited": [

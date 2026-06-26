@@ -2382,18 +2382,27 @@
     "display_name": "Folate",
     "canon_slug": "vitamin-b9",
     "category": "vitamin",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "deficiency_sign": [
-        "WAL-CLM-DDDL-000042"
+        "WAL-CLM-DDDL-000042",
+        "WAL-CLM-RARE-000239"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000080"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "poor_growth",
+        "claim_id": "WAL-CLM-RARE-000239",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
+      "anemia",
       "aphthous_stomatitis",
+      "birth_defects",
       "canker_sores",
       "cleft_palate",
       "spina_bifida"
@@ -2404,7 +2413,8 @@
       "zinc"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "vitamin-b12": {
@@ -2471,8 +2481,11 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000241"
+      ],
       "interaction": [
         "WAL-CLM-DDDL-000021"
       ],
@@ -2480,15 +2493,45 @@
         "WAL-CLM-DDDL-000094"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "bleeding_gums",
+        "claim_id": "WAL-CLM-RARE-000241",
+        "confidence": "high"
+      },
+      {
+        "sign": "loose_teeth",
+        "claim_id": "WAL-CLM-RARE-000241",
+        "confidence": "high"
+      },
+      {
+        "sign": "poor_appetite",
+        "claim_id": "WAL-CLM-RARE-000241",
+        "confidence": "high"
+      },
+      {
+        "sign": "poor_growth",
+        "claim_id": "WAL-CLM-RARE-000241",
+        "confidence": "high"
+      },
+      {
+        "sign": "skin_hemorrhages",
+        "claim_id": "WAL-CLM-RARE-000241",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
-      "common_cold"
+      "anemia",
+      "cancer",
+      "common_cold",
+      "scurvy"
     ],
     "interacts_with": [
       "iron"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "vitamin-d": {
@@ -2661,23 +2704,71 @@
     "display_name": "Biotin",
     "canon_slug": "biotin",
     "category": "vitamin",
-    "claim_count": 0,
-    "claims_by_kind": {},
-    "deficiency_signs": [],
-    "conditions_treated": [],
+    "claim_count": 1,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000240"
+      ]
+    },
+    "deficiency_signs": [
+      {
+        "sign": "gray_hair",
+        "claim_id": "WAL-CLM-RARE-000240",
+        "confidence": "high"
+      },
+      {
+        "sign": "hair_loss",
+        "claim_id": "WAL-CLM-RARE-000240",
+        "confidence": "high"
+      },
+      {
+        "sign": "paresthesia",
+        "claim_id": "WAL-CLM-RARE-000240",
+        "confidence": "high"
+      },
+      {
+        "sign": "white_hair",
+        "claim_id": "WAL-CLM-RARE-000240",
+        "confidence": "high"
+      }
+    ],
+    "conditions_treated": [
+      "blepharitis",
+      "depression",
+      "eczema"
+    ],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "choline": {
     "display_name": "Choline",
     "canon_slug": "choline",
     "category": "vitamin",
-    "claim_count": 0,
-    "claims_by_kind": {},
-    "deficiency_signs": [],
-    "conditions_treated": [],
+    "claim_count": 1,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000242"
+      ]
+    },
+    "deficiency_signs": [
+      {
+        "sign": "kidney_hemorrhage",
+        "claim_id": "WAL-CLM-RARE-000242",
+        "confidence": "high"
+      }
+    ],
+    "conditions_treated": [
+      "alzheimers",
+      "fatty_liver",
+      "huntingtons_disease",
+      "tardive_dyskinesia"
+    ],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "inositol": {
     "display_name": "Inositol",
@@ -2694,12 +2785,29 @@
     "display_name": "Flavonoids",
     "canon_slug": "flavonoids",
     "category": "vitamin",
-    "claim_count": 0,
-    "claims_by_kind": {},
-    "deficiency_signs": [],
+    "claim_count": 1,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000243"
+      ]
+    },
+    "deficiency_signs": [
+      {
+        "sign": "capillary_hemorrhage",
+        "claim_id": "WAL-CLM-RARE-000243",
+        "confidence": "high"
+      },
+      {
+        "sign": "lowered_immunity",
+        "claim_id": "WAL-CLM-RARE-000243",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "arginine": {
     "display_name": "Arginine",

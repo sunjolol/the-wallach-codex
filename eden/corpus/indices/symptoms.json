@@ -90,6 +90,21 @@
       "rare-earths"
     ]
   },
+  "bleeding_gums": {
+    "display_name": "Bleeding Gums",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "vitamin-c",
+        "claim_id": "WAL-CLM-RARE-000241",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "bow_legs": {
     "display_name": "Bow Legs",
     "claim_count": 1,
@@ -127,6 +142,21 @@
       {
         "essential": "vitamin-b5",
         "claim_id": "WAL-CLM-RARE-000236",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "capillary_hemorrhage": {
+    "display_name": "Capillary Hemorrhage",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "flavonoids",
+        "claim_id": "WAL-CLM-RARE-000243",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -396,8 +426,14 @@
   },
   "gray_hair": {
     "display_name": "Gray Hair",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
+      {
+        "essential": "biotin",
+        "claim_id": "WAL-CLM-RARE-000240",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "copper",
         "claim_id": "WAL-CLM-DDDL-000003",
@@ -406,7 +442,8 @@
       }
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "growth_failure": {
@@ -426,8 +463,14 @@
   },
   "hair_loss": {
     "display_name": "Hair Loss",
-    "claim_count": 3,
+    "claim_count": 4,
     "likely_deficiencies": [
+      {
+        "essential": "biotin",
+        "claim_id": "WAL-CLM-RARE-000240",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000150",
@@ -559,6 +602,21 @@
       "rare-earths"
     ]
   },
+  "kidney_hemorrhage": {
+    "display_name": "Kidney Hemorrhage",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "choline",
+        "claim_id": "WAL-CLM-RARE-000242",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "knock_knees": {
     "display_name": "Knock Knees",
     "claim_count": 1,
@@ -598,11 +656,17 @@
   },
   "loose_teeth": {
     "display_name": "Loose Teeth",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "phosphorus",
         "claim_id": "WAL-CLM-RARE-000206",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-c",
+        "claim_id": "WAL-CLM-RARE-000241",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -685,8 +749,14 @@
   },
   "lowered_immunity": {
     "display_name": "Lowered Immunity",
-    "claim_count": 3,
+    "claim_count": 4,
     "likely_deficiencies": [
+      {
+        "essential": "flavonoids",
+        "claim_id": "WAL-CLM-RARE-000243",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "nitrogen",
         "claim_id": "WAL-CLM-RARE-000185",
@@ -905,6 +975,21 @@
       "rare-earths"
     ]
   },
+  "paresthesia": {
+    "display_name": "Paresthesia",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "biotin",
+        "claim_id": "WAL-CLM-RARE-000240",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "pica": {
     "display_name": "Pica",
     "claim_count": 2,
@@ -921,9 +1006,24 @@
       "rare-earths"
     ]
   },
+  "poor_appetite": {
+    "display_name": "Poor Appetite",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "vitamin-c",
+        "claim_id": "WAL-CLM-RARE-000241",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "poor_growth": {
     "display_name": "Poor Growth",
-    "claim_count": 3,
+    "claim_count": 5,
     "likely_deficiencies": [
       {
         "essential": "nickel",
@@ -940,6 +1040,18 @@
       {
         "essential": "vitamin-a",
         "claim_id": "WAL-CLM-RARE-000229",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-b9",
+        "claim_id": "WAL-CLM-RARE-000239",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-c",
+        "claim_id": "WAL-CLM-RARE-000241",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -1152,6 +1264,21 @@
       "rare-earths"
     ]
   },
+  "skin_hemorrhages": {
+    "display_name": "Skin Hemorrhages",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "vitamin-c",
+        "claim_id": "WAL-CLM-RARE-000241",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "slipped_tendon": {
     "display_name": "Slipped Tendon",
     "claim_count": 1,
@@ -1292,8 +1419,15 @@
   },
   "white_hair": {
     "display_name": "White Hair",
-    "claim_count": 1,
-    "likely_deficiencies": [],
+    "claim_count": 2,
+    "likely_deficiencies": [
+      {
+        "essential": "biotin",
+        "claim_id": "WAL-CLM-RARE-000240",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
     "books_cited": [
       "rare-earths"
     ]
