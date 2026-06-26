@@ -8148,6 +8148,178 @@
       "extracted_at": "2026-06-25T21:26:50+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000229",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-a"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "night_blindness",
+        "conjunctivitis",
+        "xerophthalmia",
+        "corneal_ulcers",
+        "infertility",
+        "birth_defects",
+        "acne",
+        "dermatitis",
+        "ichthyosis",
+        "cancer"
+      ],
+      "symptoms": [
+        "lowered_immunity",
+        "poor_growth"
+      ],
+      "claim_text": "Wallach lists the common diseases of vitamin A (retinol) deficiency in Table 11-9: night blindness (nyctalopia), conjunctivitis, dryness of the eyes (xerophthalmia), softening of the cornea with corneal ulcers (keratomalacia), infertility, birth defects, a depressed immune system, bone disease, poor growth, acne, dermatitis (skin inflammation), rough bumpy 'goose flesh' skin (hyperkeratosis), scaly skin (ichthyosis), and increased cancer risk.",
+      "verbatim": "Night blindness (Nyctalopia), conjunctivitis, xerophthalmia,\nkeratomalacia (corneal ulcers), infertility, birth defects, depressed\nimmune system, bone disease, poor growth, acne, dermatitis,\nhyperkeratosis (“goose flesh”), ichthyosis, increased cancer risk.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": 295,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 740496
+      },
+      "dose": null,
+      "tags": [
+        "table-11-9",
+        "vitamin-deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T23:21:08+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000230",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-d"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "rickets",
+        "osteomalacia",
+        "osteoporosis",
+        "arthritis",
+        "restless_leg_syndrome"
+      ],
+      "symptoms": [
+        "bow_legs",
+        "knock_knees",
+        "profuse_sweating"
+      ],
+      "claim_text": "Wallach lists the common diseases of vitamin D deficiency in Table 11-9: rickets, beaded rib cartilage (rachitic rosary), bow-legs, knock-knees, soft bones (osteomalacia), osteoporosis, arthritis, pigeon chest, profuse sweating, restless leg syndrome, enlarged wrists, and delayed or poor tooth development.",
+      "verbatim": "Rickets, rachitic rosary, bow-legs, knock-knees, osteomalacia,\nosteoporosis, arthritis, pigeon chest, profuse sweating, restless leg\nsyndrome, enlarged wrists, delayed or poor tooth development.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": 295,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 740808
+      },
+      "dose": null,
+      "tags": [
+        "table-11-9",
+        "vitamin-deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T23:21:08+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000231",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-e"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "infertility",
+        "ischemic_heart_disease",
+        "fibrocystic_breast_disease",
+        "muscular_dystrophy",
+        "anemia",
+        "cancer",
+        "alzheimers"
+      ],
+      "symptoms": [
+        "lowered_immunity",
+        "age_spots",
+        "liver_spots",
+        "muscle_weakness",
+        "myalgia"
+      ],
+      "claim_text": "Wallach lists the common diseases of vitamin E (tocopherol) deficiency in Table 11-9: infertility, a lowered immune system, age spots or liver spots (from lipid peroxidation by free radicals), ischemic heart disease, fibrocystic breast disease, muscle weakness, muscle pain (myalgia), muscular dystrophy, anemia from red-blood-cell breakdown (hemolysis), increased cancer risk, and Alzheimer's syndrome.",
+      "verbatim": "Infertility, lowered immune system, age spots (liver spots, lipid\nperoxidation, free radicals), ischemic heart disease, fibrocystic breast\ndisease, muscle weakness, myalgia, muscular dystrophy, anemia\n(hemolysis) , increased risk of cancer, Alzheimer’s syndrome.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": 295,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 741034
+      },
+      "dose": null,
+      "tags": [
+        "table-11-9",
+        "vitamin-deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T23:21:08+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000232",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-k"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "osteoporosis"
+      ],
+      "symptoms": [
+        "hemorrhage",
+        "prolonged_clotting_time",
+        "easy_bruising"
+      ],
+      "claim_text": "Wallach lists the common diseases of vitamin K (menaquinone) deficiency in Table 11-9: extended clotting time, hemorrhage (bleeding), and osteoporosis (from a deficiency of the bone protein osteocalcin).",
+      "verbatim": "Extended clotting time, hemorrhage, osteoporosis (osteocalcin\n\ndeficiency).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": 295,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 741327
+      },
+      "dose": null,
+      "tags": [
+        "table-11-9",
+        "vitamin-deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-25T23:21:08+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

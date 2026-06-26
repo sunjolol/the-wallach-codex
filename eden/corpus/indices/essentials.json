@@ -2071,10 +2071,11 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "deficiency_sign": [
-        "WAL-CLM-DDDL-000041"
+        "WAL-CLM-DDDL-000041",
+        "WAL-CLM-RARE-000229"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000056",
@@ -2082,14 +2083,32 @@
         "WAL-CLM-DDDL-000085"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "lowered_immunity",
+        "claim_id": "WAL-CLM-RARE-000229",
+        "confidence": "high"
+      },
+      {
+        "sign": "poor_growth",
+        "claim_id": "WAL-CLM-RARE-000229",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
+      "acne",
       "benign_prostatic_hyperplasia",
+      "birth_defects",
       "blindness",
       "cancer",
+      "conjunctivitis",
       "corneal_ulcers",
+      "dermatitis",
+      "ichthyosis",
       "infertility",
-      "keratitis"
+      "keratitis",
+      "night_blindness",
+      "xerophthalmia"
     ],
     "interacts_with": [
       "arginine",
@@ -2098,7 +2117,8 @@
       "zinc"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "vitamin-b1": {
@@ -2322,33 +2342,59 @@
     "display_name": "Cholecalciferol",
     "canon_slug": "vitamin-d",
     "category": "vitamin",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000083"
+      ],
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000230"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000068"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "bow_legs",
+        "claim_id": "WAL-CLM-RARE-000230",
+        "confidence": "high"
+      },
+      {
+        "sign": "knock_knees",
+        "claim_id": "WAL-CLM-RARE-000230",
+        "confidence": "high"
+      },
+      {
+        "sign": "profuse_sweating",
+        "claim_id": "WAL-CLM-RARE-000230",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
       "arteriosclerosis",
-      "menopause"
+      "arthritis",
+      "menopause",
+      "osteomalacia",
+      "osteoporosis",
+      "restless_leg_syndrome",
+      "rickets"
     ],
     "interacts_with": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "vitamin-e": {
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "deficiency_sign": [
-        "WAL-CLM-DDDL-000089"
+        "WAL-CLM-DDDL-000089",
+        "WAL-CLM-RARE-000231"
       ],
       "mechanism": [
         "WAL-CLM-RARE-000010"
@@ -2362,13 +2408,44 @@
     },
     "deficiency_signs": [
       {
+        "sign": "age_spots",
+        "claim_id": "WAL-CLM-RARE-000231",
+        "confidence": "high"
+      },
+      {
         "sign": "easy_bruising",
         "claim_id": "WAL-CLM-DDDL-000089",
+        "confidence": "high"
+      },
+      {
+        "sign": "liver_spots",
+        "claim_id": "WAL-CLM-RARE-000231",
+        "confidence": "high"
+      },
+      {
+        "sign": "lowered_immunity",
+        "claim_id": "WAL-CLM-RARE-000231",
+        "confidence": "high"
+      },
+      {
+        "sign": "muscle_weakness",
+        "claim_id": "WAL-CLM-RARE-000231",
+        "confidence": "high"
+      },
+      {
+        "sign": "myalgia",
+        "claim_id": "WAL-CLM-RARE-000231",
         "confidence": "high"
       }
     ],
     "conditions_treated": [
+      "alzheimers",
+      "anemia",
+      "cancer",
       "cystic_fibrosis",
+      "fibrocystic_breast_disease",
+      "infertility",
+      "ischemic_heart_disease",
       "keshan_disease",
       "muscular_dystrophy"
     ],
@@ -2387,10 +2464,11 @@
     "display_name": "Menaquinone",
     "canon_slug": "vitamin-k",
     "category": "vitamin",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "deficiency_sign": [
-        "WAL-CLM-DDDL-000089"
+        "WAL-CLM-DDDL-000089",
+        "WAL-CLM-RARE-000232"
       ]
     },
     "deficiency_signs": [
@@ -2398,14 +2476,32 @@
         "sign": "easy_bruising",
         "claim_id": "WAL-CLM-DDDL-000089",
         "confidence": "high"
+      },
+      {
+        "sign": "easy_bruising",
+        "claim_id": "WAL-CLM-RARE-000232",
+        "confidence": "high"
+      },
+      {
+        "sign": "hemorrhage",
+        "claim_id": "WAL-CLM-RARE-000232",
+        "confidence": "high"
+      },
+      {
+        "sign": "prolonged_clotting_time",
+        "claim_id": "WAL-CLM-RARE-000232",
+        "confidence": "high"
       }
     ],
-    "conditions_treated": [],
+    "conditions_treated": [
+      "osteoporosis"
+    ],
     "interacts_with": [
       "vitamin-e"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "biotin": {

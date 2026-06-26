@@ -15,6 +15,22 @@
       "rare-earths"
     ]
   },
+  "acne": {
+    "display_name": "Acne",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000229"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "addisons_disease": {
     "display_name": "Addisons Disease",
     "claim_count": 1,
@@ -89,15 +105,17 @@
   },
   "alzheimers": {
     "display_name": "Alzheimers",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
-        "WAL-CLM-RARE-000227"
+        "WAL-CLM-RARE-000227",
+        "WAL-CLM-RARE-000231"
       ]
     },
     "essentials_involved": [
-      "selenium"
+      "selenium",
+      "vitamin-e"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -107,12 +125,13 @@
   },
   "anemia": {
     "display_name": "Anemia",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
         "WAL-CLM-DDDL-000020",
-        "WAL-CLM-RARE-000193"
+        "WAL-CLM-RARE-000193",
+        "WAL-CLM-RARE-000231"
       ],
       "definitions": [
         "WAL-CLM-RARE-000122"
@@ -130,7 +149,8 @@
       "iron",
       "nickel",
       "selenium",
-      "vanadium"
+      "vanadium",
+      "vitamin-e"
     ],
     "other_substances_involved": [
       "lead"
@@ -309,7 +329,7 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
@@ -318,7 +338,8 @@
         "WAL-CLM-DDDL-000012",
         "WAL-CLM-DDDL-000032",
         "WAL-CLM-RARE-000011",
-        "WAL-CLM-RARE-000223"
+        "WAL-CLM-RARE-000223",
+        "WAL-CLM-RARE-000230"
       ],
       "definitions": [
         "WAL-CLM-RARE-000105",
@@ -349,6 +370,7 @@
       "strontium",
       "sulfur",
       "vanadium",
+      "vitamin-d",
       "zinc"
     ],
     "other_substances_involved": [],
@@ -472,14 +494,15 @@
   },
   "birth_defects": {
     "display_name": "Birth Defects",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000015",
         "WAL-CLM-RARE-000047"
       ],
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000039"
+        "WAL-CLM-DDDL-000039",
+        "WAL-CLM-RARE-000229"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -489,6 +512,7 @@
       "calcium",
       "copper",
       "selenium",
+      "vitamin-a",
       "zinc"
     ],
     "other_substances_involved": [],
@@ -611,7 +635,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 20,
+    "claim_count": 22,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -625,7 +649,9 @@
       "deficiency_signs": [
         "WAL-CLM-DDDL-000012",
         "WAL-CLM-RARE-000011",
-        "WAL-CLM-RARE-000227"
+        "WAL-CLM-RARE-000227",
+        "WAL-CLM-RARE-000229",
+        "WAL-CLM-RARE-000231"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -657,6 +683,7 @@
       "tyrosine",
       "vanadium",
       "vitamin-a",
+      "vitamin-e",
       "zinc"
     ],
     "other_substances_involved": [
@@ -1024,6 +1051,22 @@
       "dddl-3e-2011"
     ]
   },
+  "conjunctivitis": {
+    "display_name": "Conjunctivitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000229"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "cor_pulmonale": {
     "display_name": "Cor Pulmonale",
     "claim_count": 1,
@@ -1042,10 +1085,11 @@
   },
   "corneal_ulcers": {
     "display_name": "Corneal Ulcers",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000041"
+        "WAL-CLM-DDDL-000041",
+        "WAL-CLM-RARE-000229"
       ]
     },
     "essentials_involved": [
@@ -1053,7 +1097,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "coronary_artery_disease": {
@@ -1226,14 +1271,16 @@
   },
   "dermatitis": {
     "display_name": "Dermatitis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-RARE-000193"
+        "WAL-CLM-RARE-000193",
+        "WAL-CLM-RARE-000229"
       ]
     },
     "essentials_involved": [
-      "nickel"
+      "nickel",
+      "vitamin-a"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1404,6 +1451,22 @@
       "sodium",
       "vanadium",
       "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "fibrocystic_breast_disease": {
+    "display_name": "Fibrocystic Breast Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000231"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-e"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1784,15 +1847,33 @@
       "rare-earths"
     ]
   },
+  "ichthyosis": {
+    "display_name": "Ichthyosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000229"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "infertility": {
     "display_name": "Infertility",
-    "claim_count": 7,
+    "claim_count": 9,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
         "WAL-CLM-RARE-000163",
         "WAL-CLM-RARE-000176",
-        "WAL-CLM-RARE-000185"
+        "WAL-CLM-RARE-000185",
+        "WAL-CLM-RARE-000229",
+        "WAL-CLM-RARE-000231"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
@@ -1813,6 +1894,7 @@
       "nitrogen",
       "selenium",
       "vitamin-a",
+      "vitamin-e",
       "zinc"
     ],
     "other_substances_involved": [],
@@ -1840,6 +1922,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "rare-earths"
+    ]
+  },
+  "ischemic_heart_disease": {
+    "display_name": "Ischemic Heart Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000231"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-e"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
       "rare-earths"
     ]
   },
@@ -2251,14 +2349,15 @@
   },
   "muscular_dystrophy": {
     "display_name": "Muscular Dystrophy",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000071",
         "WAL-CLM-RARE-000050"
       ],
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005"
+        "WAL-CLM-DDDL-000005",
+        "WAL-CLM-RARE-000231"
       ],
       "definitions": [
         "WAL-CLM-RARE-000049"
@@ -2297,6 +2396,22 @@
       "rare-earths"
     ]
   },
+  "night_blindness": {
+    "display_name": "Night Blindness",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000229"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "osteoarthritis": {
     "display_name": "Osteoarthritis",
     "claim_count": 2,
@@ -2318,23 +2433,28 @@
   },
   "osteomalacia": {
     "display_name": "Osteomalacia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000230"
+      ],
       "prevalence": [
         "WAL-CLM-DDDL-000009"
       ]
     },
     "essentials_involved": [
-      "calcium"
+      "calcium",
+      "vitamin-d"
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 14,
+    "claim_count": 16,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052",
@@ -2346,7 +2466,9 @@
       "deficiency_signs": [
         "WAL-CLM-DDDL-000012",
         "WAL-CLM-DDDL-000032",
-        "WAL-CLM-RARE-000011"
+        "WAL-CLM-RARE-000011",
+        "WAL-CLM-RARE-000230",
+        "WAL-CLM-RARE-000232"
       ],
       "definitions": [
         "WAL-CLM-RARE-000105"
@@ -2380,6 +2502,8 @@
       "phosphorus",
       "selenium",
       "strontium",
+      "vitamin-d",
+      "vitamin-k",
       "zinc"
     ],
     "other_substances_involved": [],
@@ -2592,6 +2716,22 @@
       "rare-earths"
     ]
   },
+  "restless_leg_syndrome": {
+    "display_name": "Restless Leg Syndrome",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000230"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-d"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "rheumatoid_arthritis": {
     "display_name": "Rheumatoid Arthritis",
     "claim_count": 2,
@@ -2609,6 +2749,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "rare-earths"
+    ]
+  },
+  "rickets": {
+    "display_name": "Rickets",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000230"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-d"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
       "rare-earths"
     ]
   },
@@ -2964,6 +3120,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "xerophthalmia": {
+    "display_name": "Xerophthalmia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000229"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
     ]
   }
 }

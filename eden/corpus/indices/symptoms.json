@@ -1,17 +1,24 @@
 {
   "age_spots": {
     "display_name": "Age Spots",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "selenium",
         "claim_id": "WAL-CLM-DDDL-000006",
         "confidence": "high",
         "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-e",
+        "claim_id": "WAL-CLM-RARE-000231",
+        "confidence": "high",
+        "appears_in_books": 1
       }
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "allergic_shiners": {
@@ -54,6 +61,21 @@
       {
         "essential": "lithium",
         "claim_id": "WAL-CLM-RARE-000163",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "bow_legs": {
+    "display_name": "Bow Legs",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "vitamin-d",
+        "claim_id": "WAL-CLM-RARE-000230",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -175,7 +197,7 @@
   },
   "easy_bruising": {
     "display_name": "Easy Bruising",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "vitamin-e",
@@ -188,10 +210,17 @@
         "claim_id": "WAL-CLM-DDDL-000089",
         "confidence": "high",
         "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-k",
+        "claim_id": "WAL-CLM-RARE-000232",
+        "confidence": "high",
+        "appears_in_books": 1
       }
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "ecg_changes": {
@@ -369,6 +398,21 @@
       "rare-earths"
     ]
   },
+  "hemorrhage": {
+    "display_name": "Hemorrhage",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "vitamin-k",
+        "claim_id": "WAL-CLM-RARE-000232",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "high_newborn_mortality": {
     "display_name": "High Newborn Mortality",
     "claim_count": 1,
@@ -422,19 +466,41 @@
       "rare-earths"
     ]
   },
+  "knock_knees": {
+    "display_name": "Knock Knees",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "vitamin-d",
+        "claim_id": "WAL-CLM-RARE-000230",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "liver_spots": {
     "display_name": "Liver Spots",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "selenium",
         "claim_id": "WAL-CLM-DDDL-000006",
         "confidence": "high",
         "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-e",
+        "claim_id": "WAL-CLM-RARE-000231",
+        "confidence": "high",
+        "appears_in_books": 1
       }
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "loose_teeth": {
@@ -499,11 +565,23 @@
   },
   "lowered_immunity": {
     "display_name": "Lowered Immunity",
-    "claim_count": 1,
+    "claim_count": 3,
     "likely_deficiencies": [
       {
         "essential": "nitrogen",
         "claim_id": "WAL-CLM-RARE-000185",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-a",
+        "claim_id": "WAL-CLM-RARE-000229",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-e",
+        "claim_id": "WAL-CLM-RARE-000231",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -565,11 +643,17 @@
   },
   "muscle_weakness": {
     "display_name": "Muscle Weakness",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000151",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-e",
+        "claim_id": "WAL-CLM-RARE-000231",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -591,6 +675,21 @@
       {
         "essential": "potassium",
         "claim_id": "WAL-CLM-RARE-000155",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "myalgia": {
+    "display_name": "Myalgia",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "vitamin-e",
+        "claim_id": "WAL-CLM-RARE-000231",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -632,7 +731,7 @@
   },
   "poor_growth": {
     "display_name": "Poor Growth",
-    "claim_count": 2,
+    "claim_count": 3,
     "likely_deficiencies": [
       {
         "essential": "nickel",
@@ -643,6 +742,12 @@
       {
         "essential": "nitrogen",
         "claim_id": "WAL-CLM-RARE-000185",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-a",
+        "claim_id": "WAL-CLM-RARE-000229",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -673,6 +778,36 @@
       {
         "essential": "nickel",
         "claim_id": "WAL-CLM-RARE-000193",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "profuse_sweating": {
+    "display_name": "Profuse Sweating",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "vitamin-d",
+        "claim_id": "WAL-CLM-RARE-000230",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "prolonged_clotting_time": {
+    "display_name": "Prolonged Clotting Time",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "vitamin-k",
+        "claim_id": "WAL-CLM-RARE-000232",
         "confidence": "high",
         "appears_in_books": 1
       }
