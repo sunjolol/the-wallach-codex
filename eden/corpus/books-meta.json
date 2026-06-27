@@ -13,7 +13,7 @@
         "Ma Lan"
       ],
       "file": "eden/corpus/books/dddl-third-edition-2011.txt",
-      "content_sha256": "65d03f5e54ac4ee516df1e6cfd8cd40c914e5100de58fc9a7251aadf8607ffbe",
+      "content_sha256": "6800208402a4a09f5ecbfaa4b419df7a94b999686774dc90b20235c3c4a2db6d",
       "content_bytes": 983515,
       "line_count": 14851,
       "hash_basis": "lf_normalized_utf8",

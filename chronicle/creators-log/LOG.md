@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_120 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_121 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-27 18:37 UTC-05:00 · milestone · eden/corpus
+✅ Corpus-wide DOSE-SAFETY SCAN (Luneth-mandated) complete. Caught + fixed DDDL 'zinc at 15 gm'→'15 mg' (×2, death-risk OCR unit error) and 126 DDDL 'meg'→mcg (10 claim verbatims). All 457 claims re-scanned: 0 meg, 0 zinc-grams remain. kv 114.
+  ↳ After the Fig 8-1 folic-acid catch, scanned all 457 claims for risky dose misprints. Zinc-in-grams (impossible, ~lethal) fixed to mg, render-verified vs parallel Wallach mg protocols. All 126 DDDL 'meg' verified = mcg trace nutrients (none mg) → global meg→mcg. Tryptophan '10 grams' render-verified legit (gram-dosed amino acid), KEPT. ~13 other grams tokens all legit (body content, EFA/oil/amino-acid doses, gold cumulative) KEPT. Method: safe_rewrite DDDL .txt → resnap --fix (10 healed, 0 broken, same-length) → finalize empty → seal. Standing: 'meg' still in non-extracted DDDL+LPD protocol text, fixed at extraction. Policy recorded in dose-misprint-safety-mandate memory.
 
 ## 2026-06-27 18:26 UTC-05:00 · round-close · eden/corpus
 LPD batches 7-8 — Fig 8-1 dose table COMPLETE: 33 kind=dose claims LETS-045..077 (every nutrient, per-nutrient True Need drives the dose object, both Wallach columns in claim_text). SAFETY: folic-acid '15 to 20 gm'→mg corrected; all units render-verified. corpus 424→457, kv 113.

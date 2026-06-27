@@ -1532,7 +1532,7 @@
       ],
       "symptoms": [],
       "claim_text": "Diabetes treatment starts with chromium and vanadium at 250 mcg/day in the initial stages to prevent insulin shock.",
-      "verbatim": "Treatment of diabetes should include chromium and vanadium at 250\nmeg/day in the initial stages to prevent “insulin shock”",
+      "verbatim": "Treatment of diabetes should include chromium and vanadium at 250\nmcg/day in the initial stages to prevent “insulin shock”",
       "locator": {
         "book": "dddl-3e-2011",
         "scheme": "chapter_page",
@@ -1575,7 +1575,7 @@
       ],
       "symptoms": [],
       "claim_text": "The diabetes regimen also includes zinc 50 mg three times daily, B-complex 50 mg three times daily (with niacin), EFAs 5 g three times daily, B12 1,000 mcg/day, quercetin 150 mg/day, copper 2-3 mg/day, lecithin 2,500 mg three times daily, and glutathione 100 mg/day.",
-      "verbatim": "Treatment of diabetes should also include zinc at 50 mg t.i.d., B-complex at\n50 mg t.i.d. (be sure to include niacin which is part of the GTF “glucose\ntolerance factor”), essential fatty acids at 5 gm t.i.d., B12 at 1,000 meg/day,\nbioflavonoids including quercetin at 150 mg/day, copper at 2-3 mg/day,\nlecithin at 2,500 mg t.i.d., and glutathione at 100 mg/day.",
+      "verbatim": "Treatment of diabetes should also include zinc at 50 mg t.i.d., B-complex at\n50 mg t.i.d. (be sure to include niacin which is part of the GTF “glucose\ntolerance factor”), essential fatty acids at 5 gm t.i.d., B12 at 1,000 mcg/day,\nbioflavonoids including quercetin at 150 mg/day, copper at 2-3 mg/day,\nlecithin at 2,500 mg t.i.d., and glutathione at 100 mg/day.",
       "locator": {
         "book": "dddl-3e-2011",
         "scheme": "chapter_page",
@@ -1737,7 +1737,7 @@
       ],
       "symptoms": [],
       "claim_text": "Cor pulmonale treatment includes resolving the lung disease plus oxygen, intravenous (into a vein) hydrogen peroxide, and selenium at 500-1,000 mcg/day for adults.",
-      "verbatim": "Treatment of cor pulmonale includes resolving the precipitating lung\ndisease and oxygen, IV hydrogen peroxide, and selenium at 500-1,000 meg\nper day for adults.",
+      "verbatim": "Treatment of cor pulmonale includes resolving the precipitating lung\ndisease and oxygen, IV hydrogen peroxide, and selenium at 500-1,000 mcg\nper day for adults.",
       "locator": {
         "book": "dddl-3e-2011",
         "scheme": "chapter_page",
@@ -1812,7 +1812,7 @@
       ],
       "symptoms": [],
       "claim_text": "Cancer prevention includes beta-carotene at ~300,000 International Units/day (vitamin A equivalent) and selenium at 250-500 mcg/day, alongside a low-fat, high-fiber, fried-food-free diet.",
-      "verbatim": "Try to OD on beta-carotene\n(almost impossible—first sign is dry skin) at about a vitamin A equivalent\nof 300,000 IU per day. Use selenium at 250 to 500 meg per day.",
+      "verbatim": "Try to OD on beta-carotene\n(almost impossible—first sign is dry skin) at about a vitamin A equivalent\nof 300,000 IU per day. Use selenium at 250 to 500 mcg per day.",
       "locator": {
         "book": "dddl-3e-2011",
         "scheme": "chapter_page",
@@ -2263,7 +2263,7 @@
       ],
       "symptoms": [],
       "claim_text": "Infertility protocol: EFA 5 g three times daily, L-arginine 500 mg three times daily, zinc, selenium 250 mcg/day, vitamin A 100,000 International Units/day for 30 days then 25,000 International Units/day, and germanium 50 mg/day.",
-      "verbatim": "EFA at 5 gm t.i.d., 1-arginine at 500 mg t.i.d., zinc at 15 gm t.i.d., selenium\nat 250 meg/day, vitamin A at 100,000 IU/day for 30 days then drop to\n25,000 IU/day, germanium at 50 mg/day",
+      "verbatim": "EFA at 5 gm t.i.d., 1-arginine at 500 mg t.i.d., zinc at 15 mg t.i.d., selenium\nat 250 mcg/day, vitamin A at 100,000 IU/day for 30 days then drop to\n25,000 IU/day, germanium at 50 mg/day",
       "locator": {
         "book": "dddl-3e-2011",
         "scheme": "chapter_page",
@@ -2362,7 +2362,7 @@
       ],
       "symptoms": [],
       "claim_text": "Muscular dystrophy / Keshan disease treatment uses selenium (oral colloidal, intravenous or intramuscular) at 50-1,000 mcg/day by weight plus vitamin E intramuscular at 80 mg/day.",
-      "verbatim": "Treatment of MD and/or Keshan disease includes the use of selenium orally\n(plant derived colloidal minerals), IV or IM at 50-1,000 meg per day (based\non weight), vitamin E IM at 80 mg per day",
+      "verbatim": "Treatment of MD and/or Keshan disease includes the use of selenium orally\n(plant derived colloidal minerals), IV or IM at 50-1,000 mcg per day (based\non weight), vitamin E IM at 80 mg per day",
       "locator": {
         "book": "dddl-3e-2011",
         "scheme": "chapter_page",
@@ -2436,7 +2436,7 @@
       ],
       "symptoms": [],
       "claim_text": "Insomnia treatment includes avoiding caffeine and food allergens, calcium (especially plant-derived colloidal), and chromium + vanadium at 25-200 mcg three times daily.",
-      "verbatim": "Treatment for insomnia includes avoidance of caffeine and offending food allergens, calcium\n(especially plant derived colloidal calcium), chromium and vanadium at 25-200 meg t.i.d.",
+      "verbatim": "Treatment for insomnia includes avoidance of caffeine and offending food allergens, calcium\n(especially plant derived colloidal calcium), chromium and vanadium at 25-200 mcg t.i.d.",
       "locator": {
         "book": "dddl-3e-2011",
         "scheme": "chapter_page",
@@ -2543,7 +2543,7 @@
       ],
       "symptoms": [],
       "claim_text": "Anxiety/panic treatment: avoid caffeine and sugar; chromium + vanadium 200-300 mcg/day, B6 100 mg three times daily, B3 450 mg three times daily, L-tryptophan, calcium 2,000 mg/day, magnesium 800 mg/day.",
-      "verbatim": "Take chromium and vanadium\n200-300 meg/day, B6 100 mg t.i.d., B3 450 mg t.i.d. as time-release tablets,\nBl, B2, and B5 at the rate of 50 mg t.i.d., L-tryptophan 10 grams t.i.d.,\ncalcium 2000 mg/day, and magnesium at 800 mg/day.",
+      "verbatim": "Take chromium and vanadium\n200-300 mcg/day, B6 100 mg t.i.d., B3 450 mg t.i.d. as time-release tablets,\nBl, B2, and B5 at the rate of 50 mg t.i.d., L-tryptophan 10 grams t.i.d.,\ncalcium 2000 mg/day, and magnesium at 800 mg/day.",
       "locator": {
         "book": "dddl-3e-2011",
         "scheme": "chapter_page",
@@ -2612,7 +2612,7 @@
       ],
       "symptoms": [],
       "claim_text": "Canker sores (aphthous stomatitis): folic acid 5 mg three times daily, B12 1,000 mcg/day, iron 15 mg/day, and zinc 50 mg three times daily as adjuncts to allergen-avoidance diets.",
-      "verbatim": "Folic acid at 5 mg ti.d., B12 at 1000 meg/day, iron at 15 mg/day and zinc at\n50 mg t.i.d. are effective adjuncts to avoidance diets.",
+      "verbatim": "Folic acid at 5 mg ti.d., B12 at 1000 mcg/day, iron at 15 mg/day and zinc at\n50 mg t.i.d. are effective adjuncts to avoidance diets.",
       "locator": {
         "book": "dddl-3e-2011",
         "scheme": "chapter_page",
@@ -2808,7 +2808,7 @@
       ],
       "symptoms": [],
       "claim_text": "Bell's palsy treatment: B12 1,000 mcg/day to a total of 20,000 mcg, calcium/magnesium 2,000 and 800 mg/day, and essential fatty acids 5 g three times daily.",
-      "verbatim": "Treatment is B12 at 1000 meg/day for a total of 20,000 meg, calcium/\nmagnesium at 2,000 mg and 800 mg per day, essential fatty acids at 5 gm\nt.i.d.",
+      "verbatim": "Treatment is B12 at 1000 mcg/day for a total of 20,000 mcg, calcium/\nmagnesium at 2,000 mg and 800 mg per day, essential fatty acids at 5 gm\nt.i.d.",
       "locator": {
         "book": "dddl-3e-2011",
         "scheme": "chapter_page",
