@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_112 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_113 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-27 16:23 UTC-05:00 · design-decision · eden+dashboard
+Added toxicity_sign claim-kind end-to-end (LPD Table 6-1 maps nutrient EXCESS signs, not just deficiency). Luneth-ruled new kind. Plumbed corpus_extract KINDS + corpus_derive role-map + knowledge-corpus.ts ordering + SCHEMA.md. build/invariants 30/30/probe green.
+  ↳ Table 6-1 needs a toxicity dimension the corpus lacked. AskUserQuestion -> new kind (vs tag/skip). Zod is z.string (no change); verify/invariants carry no kind enum. Generic UI (corpusKindLabel) renders toxicity_sign as a TOXICITY SIGN group, no per-kind code. Deferred: a structured toxicity_signs essentials-tile field (future visual feature). NEXT = render+extract Table 6-1 + Fig 8-1.
 
 ## 2026-06-27 14:32 UTC-05:00 · round-close · eden/corpus
 Phase γ.3 batch 63 — .txt-cleanup B: Table 3-1 (Accumulator Organisms) de-interleave. Restored OCR-scattered 2-column element→organism table as one clean 16-row block (16 element labels re-added from p43 render); rejoined 2 broken sentences. NO new claims; corpus 380, kv 104→105.

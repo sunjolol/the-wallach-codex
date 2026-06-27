@@ -37,7 +37,7 @@ function escHTML(s: unknown): string {
 // ─── Corpus claim rendering (Essentials deep-dive) ─────────────────────────
 
 /** Most-salient claim kinds first; the rest fall after, alphabetically. */
-const CORPUS_KIND_PRIORITY = ['deficiency_sign', 'dose', 'protocol', 'mechanism', 'prognosis'];
+const CORPUS_KIND_PRIORITY = ['deficiency_sign', 'toxicity_sign', 'dose', 'protocol', 'mechanism', 'prognosis'];
 
 /** A claim kind slug → an uppercase human label (no literal map — §00.B). */
 function corpusKindLabel(kind: string): string {
@@ -128,7 +128,7 @@ export function renderCorpusForEssential(c: CorpusEssential): string {
 // ─── Conditions tab ────────────────────────────────────────────────────────
 
 /** Most-salient claim roles first; the rest fall after, alphabetically. */
-const CORPUS_ROLE_PRIORITY = ['causes', 'deficiency_signs', 'protocols', 'doses', 'prognosis'];
+const CORPUS_ROLE_PRIORITY = ['causes', 'deficiency_signs', 'toxicity_signs', 'protocols', 'doses', 'prognosis'];
 
 /** Priority-then-alphabetical ordering for the claim-role groups. */
 function corpusRoleOrder(a: string, b: string): number {

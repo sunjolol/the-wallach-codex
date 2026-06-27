@@ -54,7 +54,7 @@ Any deviation = verify failure = seal refused._
   "claims": [
     {
       "id": "WAL-CLM-DDDL-000123",     // WAL-CLM-<BOOKSHORT>-<6 digits>, globally unique, immutable once sealed
-      "kind": "dose|protocol|deficiency_sign|mechanism|food_source|interaction|contraindication|prognosis|diagnostic_pattern|prevalence|quote|definition|personal_anecdote",
+      "kind": "dose|protocol|deficiency_sign|toxicity_sign|mechanism|food_source|interaction|contraindication|prognosis|diagnostic_pattern|prevalence|quote|definition|personal_anecdote",
       "essentials": ["copper"],         // slugs ∈ essentials-canon.json
       "other_substances": [],           // slugs ∈ indices/other-substances.json keyspace
       "conditions": ["aneurysm"],       // slugs ∈ indices/conditions.json keyspace
@@ -91,7 +91,7 @@ produced — corrected Phase ε):
 
 - **`essentials.json`** — `{ "<slug>": { display_name, canon_slug, category, claim_count, claims_by_kind{<kind>:[ids]}, deficiency_signs:[{sign,claim_id,confidence}], conditions_treated:[slugs], interacts_with:[slugs], books_cited:[...] } }`. All 90 canon slugs, in canon order; an essential with no claims carries `claim_count: 0` and empty lists.
 - **`other-substances.json`** — `{ "<slug>": { display_name, claim_count, claims_by_kind{}, conditions_treated:[slugs], books_cited:[...] } }`. Slug set **disjoint** from the 90-canon — partition enforced by verify #4.
-- **`conditions.json`** — `{ "<slug>": { display_name, claim_count, claims_by_role{<role>:[ids]}, essentials_involved:[slugs], other_substances_involved:[slugs], books_cited:[...] } }`. A claim's kind maps to a role bucket (mechanism→causes, protocol→protocols, dose→doses, deficiency_sign→deficiency_signs, prognosis→prognosis, personal_anecdote→anecdotes, quote→quotes, definition→definitions, …; unmapped kinds keep their own name).
+- **`conditions.json`** — `{ "<slug>": { display_name, claim_count, claims_by_role{<role>:[ids]}, essentials_involved:[slugs], other_substances_involved:[slugs], books_cited:[...] } }`. A claim's kind maps to a role bucket (mechanism→causes, protocol→protocols, dose→doses, deficiency_sign→deficiency_signs, toxicity_sign→toxicity_signs, prognosis→prognosis, personal_anecdote→anecdotes, quote→quotes, definition→definitions, …; unmapped kinds keep their own name).
 - **`symptoms.json`** — `{ "<slug>": { display_name, claim_count, likely_deficiencies:[{essential,claim_id,confidence,appears_in_books}], books_cited:[...] } }`
 - **`consistency.json`** — `[{ id, essentials:[slugs], conditions:[slugs], kind, repetitions:[{claim_id,book}], books_repeating:int, claim_count:int }]`. Only signatures (essentials+conditions+kind) shared by ≥2 claims are emitted.
 

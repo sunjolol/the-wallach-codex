@@ -24,7 +24,7 @@ INDEX_NAMES = ["essentials", "other-substances", "conditions", "symptoms", "cons
 COND_ROLE = {
     "mechanism": "causes", "protocol": "protocols", "dose": "doses",
     "prognosis": "prognosis", "personal_anecdote": "anecdotes",
-    "deficiency_sign": "deficiency_signs", "prevalence": "prevalence",
+    "deficiency_sign": "deficiency_signs", "toxicity_sign": "toxicity_signs", "prevalence": "prevalence",
     "quote": "quotes", "definition": "definitions", "interaction": "interactions",
     "contraindication": "contraindications", "diagnostic_pattern": "diagnostics",
     "food_source": "food_sources",

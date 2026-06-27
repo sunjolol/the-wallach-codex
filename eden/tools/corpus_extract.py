@@ -37,7 +37,7 @@ REPORTS_DIR = DRAFTS_DIR / "reports"
 
 DOSE_RE = re.compile(r"\b\d[\d,\.]*\s?(mg|mcg|µg|ug|g|iu|i\.u\.|grams?|milligrams?|micrograms?)\b", re.I)
 
-KINDS = {"dose", "protocol", "deficiency_sign", "mechanism", "food_source", "interaction",
+KINDS = {"dose", "protocol", "deficiency_sign", "toxicity_sign", "mechanism", "food_source", "interaction",
          "contraindication", "prognosis", "diagnostic_pattern", "prevalence", "quote",
          "definition", "personal_anecdote"}
 
