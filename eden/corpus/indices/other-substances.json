@@ -120,6 +120,21 @@
       "rare-earths"
     ]
   },
+  "paba": {
+    "display_name": "Paba",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-LETS-000022"
+      ]
+    },
+    "conditions_treated": [
+      "depression"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "radon": {
     "display_name": "Radon",
     "claim_count": 1,

@@ -663,6 +663,326 @@
       "extracted_at": "2026-06-27T21:54:59+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000016",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anxiety",
+        "birth_defects",
+        "depression",
+        "hyperactivity",
+        "hypotension",
+        "insomnia",
+        "sids"
+      ],
+      "symptoms": [
+        "mental_confusion",
+        "irritability",
+        "restlessness",
+        "sonophobia",
+        "hypothermia",
+        "myalgia",
+        "tremors",
+        "muscle_weakness",
+        "nervousness",
+        "neuromuscular_excitability",
+        "convulsions",
+        "rapid_pulse",
+        "palpitations"
+      ],
+      "claim_text": "Wallach lists the signs of magnesium deficiency: anxiety, confusion, irritability and restlessness; birth defects; depression; hyperactivity and sonophobia (sound sensitivity); low blood pressure; hypothermia (low body temperature); insomnia; muscle pain, muscle tremors and muscle weakness; nervousness and neuromuscular irritability; sudden infant death syndrome (SIDS); seizures; and a rapid heartbeat with palpitations.",
+      "verbatim": "MAGNESIUM DEFICIENCY\nanxiety/confusion/irritability/\nrestlessness\nbirth defects\ndepression\nhyperactivity/sonophobia\nhypotension\nhypothermia\ninsomnia\nmuscle pain/muscle tremors/\nmuscle weakness\nnervousness/neuromuscular\nirritability\nSIDS\nseizures\ntachycardia/palpitations",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 46,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 88716
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:25:01+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000017",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "manganese"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "atherosclerosis",
+        "high_cholesterol",
+        "hypoglycemia",
+        "tinnitus"
+      ],
+      "symptoms": [
+        "ataxia",
+        "dizziness",
+        "hearing_loss",
+        "muscle_atrophy",
+        "pancreatic_atrophy"
+      ],
+      "claim_text": "Wallach lists the signs of manganese deficiency: ataxia (loss of coordination), atherosclerosis, dizziness, hearing loss, high cholesterol, hypoglycemia (low blood sugar), muscle atrophy, pancreatic atrophy, and tinnitus (ringing in the ears).",
+      "verbatim": "MANGANESE DEFICIENCY\nataxia\natherosclerosis\ndizziness\nhearing loss\nhypercholesterolemia\nhypoglycemia\nmuscle therapy\npancreatic atrophy\ntinnitus",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 46,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 88987
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map",
+        "sic:muscle-therapy-as-muscle-atrophy",
+        "xref:WAL-CLM-DDDL-000026",
+        "xref:WAL-CLM-RARE-000176"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:25:01+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000018",
+      "kind": "toxicity_sign",
+      "essentials": [
+        "manganese"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anorexia",
+        "parkinsonism"
+      ],
+      "symptoms": [
+        "cognitive_impairment",
+        "poor_memory"
+      ],
+      "claim_text": "Wallach lists the signs of manganese toxicity (excess): anorexia (loss of appetite), impaired judgement, Parkinsonism (a Parkinson's-like movement disorder), and memory loss.",
+      "verbatim": "MANGANESE TOXICITY\nanorexia\nimpaired judgement\nParkinsonism\nmemory loss",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 46,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 89131
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "toxicity-map",
+        "xref:WAL-CLM-RARE-000175"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:25:01+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000019",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-b3"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anorexia",
+        "canker_sores",
+        "depression",
+        "dermatitis",
+        "diarrhea",
+        "insomnia",
+        "eczema"
+      ],
+      "symptoms": [
+        "nausea",
+        "mental_confusion",
+        "emotional_instability",
+        "fatigue",
+        "halitosis",
+        "headache",
+        "dyspepsia",
+        "irritability",
+        "limb_pain",
+        "poor_memory",
+        "muscle_weakness",
+        "skin_eruptions"
+      ],
+      "claim_text": "Wallach lists the signs of niacin (vitamin B-3) deficiency: anorexia (loss of appetite) and nausea, canker sores, confusion, depression, dermatitis (including a localized scaly, dark-pigmented dermatitis), diarrhea, crying jags and emotional lability, fatigue, halitosis (bad breath), headache, dyspepsia (indigestion), insomnia, irritability, limb pains, memory loss, muscular weakness, and skin eruptions with eczema.",
+      "verbatim": "NIACIN DEFICIENCY\nanorexia & nausea\ncanker sores\nconfusion\ndepression\ndermatitis\nlocalized scaly,\ndark pigmented\ndermatitis\ndiarrhea\ncrying jags, emotional\nfatigue\nhalitosis (bad breath)\nheadache\ndyspepsia\ninsomnia\nirritability\nlimb pains\nmemory loss\nmuscular weakness\nskin eruptions/eczema",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 46,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 89203
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:25:01+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000020",
+      "kind": "toxicity_sign",
+      "essentials": [
+        "vitamin-b3"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "liver_disease"
+      ],
+      "symptoms": [
+        "flushing"
+      ],
+      "claim_text": "Wallach lists the signs of niacin (vitamin B-3) toxicity (excess): the characteristic niacin \"flush\" (skin flushing) and liver impairment.",
+      "verbatim": "NIACIN TOXICITY\nniacin \"flush\"\nliver impairment\nPANTOTHENIC ACID\n(B-5) DEFICIENCY",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 46,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 89494
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "toxicity-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:25:01+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000021",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-b5"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "alopecia",
+        "depression",
+        "eczema",
+        "hypotension",
+        "insomnia"
+      ],
+      "symptoms": [
+        "abdominal_pain",
+        "burning_feet",
+        "ataxia",
+        "fainting",
+        "fatigue",
+        "lowered_immunity",
+        "muscle_cramps",
+        "nausea",
+        "vomiting",
+        "nervousness",
+        "rapid_pulse",
+        "weakness"
+      ],
+      "claim_text": "Wallach lists the signs of pantothenic acid (vitamin B-5) deficiency: abdominal pain, hair loss (alopecia), burning feet, coordination impairment, depression, eczema, faintness, fatigue, low blood pressure, infections, insomnia, muscle spasms, nausea and vomiting, nervousness, a rapid heartbeat (tachycardia), and weakness.",
+      "verbatim": "PANTOTHENIC ACID\n(B-5) DEFICIENCY\nabdominal pain\nalopecia\nburning feet\ncoordination impairment\ndepression\neczema\nfaintness\nfatigue\nhypotension\ninfections\ninsomnia\nmuscle spasms\nnausea & vomiting",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 46,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 89542
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:25:01+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000022",
+      "kind": "deficiency_sign",
+      "essentials": [],
+      "other_substances": [
+        "paba"
+      ],
+      "conditions": [
+        "depression"
+      ],
+      "symptoms": [
+        "constipation",
+        "headache",
+        "irritability",
+        "dyspepsia",
+        "fatigue",
+        "gray_hair"
+      ],
+      "claim_text": "Wallach lists the signs of para-aminobenzoic acid (PABA) deficiency: constipation; depression, headache and irritability; gastrointestinal disorders; fatigue; and graying hair.",
+      "verbatim": "PARA AMINOBENZOIC ACID (PABA)\nDEFICIENCY\nconstipation\ndepression/headache/irritability\nG I disorders\nfatigue\ngraying hair",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 47,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 89839
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:25:01+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
