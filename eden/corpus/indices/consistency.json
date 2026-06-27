@@ -198,10 +198,14 @@
       {
         "claim_id": "WAL-CLM-RARE-000252",
         "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000258",
+        "book": "rare-earths"
       }
     ],
     "books_repeating": 1,
-    "claim_count": 16
+    "claim_count": 17
   },
   {
     "id": "CG-0003",
@@ -794,6 +798,26 @@
   },
   {
     "id": "CG-0030",
+    "essentials": [
+      "yttrium"
+    ],
+    "conditions": [],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-RARE-000259",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000260",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0031",
     "essentials": [
       "zinc"
     ],

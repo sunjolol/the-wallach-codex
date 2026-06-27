@@ -9275,6 +9275,146 @@
       "extracted_at": "2026-06-27T03:06:43+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000258",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "xenon"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach notes that xenon binds to mammalian hemoglobin and myoglobin, producing an anesthetic effect.",
+      "verbatim": "Xenon binds to mammalian hemoglobin and myoglobin producing an anesthetic effect.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 413,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 965955
+      },
+      "dose": null,
+      "tags": [
+        "xenon",
+        "noble-gas",
+        "anesthetic",
+        "hemoglobin",
+        "myoglobin"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T03:19:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000259",
+      "kind": "mechanism",
+      "essentials": [
+        "yttrium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports that yttrium, a 'heavy' rare earth, enhances normal cell growth and doubles the life span of laboratory species.",
+      "verbatim": "Yttrium enhances normal cell growth and doubles the life span of laboratory species.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 413,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 966364
+      },
+      "dose": null,
+      "tags": [
+        "yttrium",
+        "rare-earth",
+        "lifespan",
+        "longevity",
+        "cell-growth"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T03:19:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000260",
+      "kind": "mechanism",
+      "essentials": [
+        "yttrium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports that yttrium readily crosses the placenta — exposure of pregnant mice to yttrium leads to rapid placental transfer, with 14 percent of ingested yttrium detectable in the newborn mice.",
+      "verbatim": "Exposure of pregnant mice to yttrium leads to rapid placental transfer, 14% of ingested Y can be detected in newborn mice.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 413,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 966449
+      },
+      "dose": null,
+      "tags": [
+        "yttrium",
+        "rare-earth",
+        "placental-transfer",
+        "pregnancy",
+        "kinetics"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T03:19:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000261",
+      "kind": "mechanism",
+      "essentials": [
+        "ytterbium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports that ytterbium readily crosses the placenta — exposure of pregnant mice leads to rapid placental transfer, with 14 percent of ingested ytterbium detectable in the newborn mice.",
+      "verbatim": "Exposure of pregnant mice leads to rapid placental transfer, 14% of ingested Yb can be detected in newborn mice.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 413,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 967126
+      },
+      "dose": null,
+      "tags": [
+        "ytterbium",
+        "rare-earth",
+        "placental-transfer",
+        "pregnancy",
+        "kinetics"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T03:19:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

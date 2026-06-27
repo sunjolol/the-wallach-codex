@@ -30045,9 +30045,7 @@ Xe - Xenon is found in igneous rocks
 at 0.00003 ppm; sea water at 0.000052
 ppm.
 
-Xenon binds to mammalian hemoglo-
-bin and myoglobin producing an anesthetic
-affect.
+Xenon binds to mammalian hemoglobin and myoglobin producing an anesthetic effect.
 
 Y - Yttrium is a “heavy” Rare Earth
 found in igneous rocks at 33 ppm; shale at
@@ -30059,12 +30057,7 @@ to 0.2 ppm; land animals at 0.04 ppm
 (found in mammalian bone, teeth and
 liver).
 
-Yttrium enhances normal cell growth
-and doubles the life span of laboratory spe-
-cies. Exposure of pregnant mice to yttrium
-leads to rapid placental transfer, 14% of
-ingested Y can be detected in newborn
-mice.
+Yttrium enhances normal cell growth and doubles the life span of laboratory species. Exposure of pregnant mice to yttrium leads to rapid placental transfer, 14% of ingested Y can be detected in newborn mice.
 
 1. Zhang,W.E. et al : Effects of Traces
 of Rare Earth Elements on the Protozoan
@@ -30076,17 +30069,7 @@ liferation of Tetrahymena pyriformis by
 Trace Rare Earths. Biol. Trace Ele. Res. 7:95.
 1985.
 
-Yb- Ytterbium is a Rare Earth found
-in igneous rocks at 3 ppm; shale at 1.8 ppm;
-sandstone at 1.3 ppm; limeston at 0.43
-ppm; land plants at 0.0015 ppm; marine
-animals at 0.02 ppm; land animals at
-0.00012 ppm (accumulates up to 1.3 ppm
-in bone, teeth and liver). Exposure of preg-
-
-nant mice leads to rapid placental transfer,
-14% of ingested Yb can be detected in new-
-born mice.
+Yb- Ytterbium is a Rare Earth found in igneous rocks at 3 ppm; shale at 1.8 ppm; sandstone at 1.3 ppm; limeston at 0.43 ppm; land plants at 0.0015 ppm; marine animals at 0.02 ppm; land animals at 0.00012 ppm (accumulates up to 1.3 ppm in bone, teeth and liver). Exposure of pregnant mice leads to rapid placental transfer, 14% of ingested Yb can be detected in newborn mice.
 
 ZN - Zinc is found in igneous rocks at
 70 ppm; shale at 95 ppm; sandstone at 16

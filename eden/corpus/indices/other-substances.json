@@ -151,5 +151,18 @@
     "books_cited": [
       "rare-earths"
     ]
+  },
+  "xenon": {
+    "display_name": "Xenon",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000258"
+      ]
+    },
+    "conditions_treated": [],
+    "books_cited": [
+      "rare-earths"
+    ]
   }
 }
