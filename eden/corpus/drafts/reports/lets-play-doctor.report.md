@@ -1,118 +1,121 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_7 claim(s) drafted 2026-06-27T22:34:14+00:00. Review then run corpus_seal.py to promote._
+_6 claim(s) drafted 2026-06-27T22:39:41+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: deficiency_sign×4, toxicity_sign×3
+Kinds: deficiency_sign×4, toxicity_sign×2
 
-### WAL-CLM-LETS-000023 · deficiency_sign
-- **essentials:** phosphorus · **conditions:** anorexia, anxiety, pica · **symptoms:** apprehension, bone_pain, dyspnea, fatigue, irritability, numbness, paresthesia, tremors, weakness, weight_loss
-- **claim:** Wallach lists the signs of phosphorus deficiency: anorexia (loss of appetite), anxiety, apprehension, bone pain, dyspnea (labored breathing), fatigue, irritability, numbness, paresthesias (numbness and tingling), pica, tremulousness, weakness, and weight loss.
-- **verbatim** (offset 89961): “PHOSPHORUS DEFICIENCY
+### WAL-CLM-LETS-000030 · deficiency_sign
+- **essentials:** selenium · **conditions:** cataracts, cancer, cystic_fibrosis, heart_attack, keshan_disease, muscular_dystrophy, liver_cirrhosis, infertility · **symptoms:** retarded_growth, lowered_immunity, pancreatic_atrophy
+- **claim:** Wallach lists the signs of selenium deficiency: cataracts, increased cancer risk, cystic fibrosis, growth retardation, "heart attack", impaired immunity, Keshan disease (myocardial fibrosis), muscular dystrophy, pancreatic atrophy and fibrosis (cystic fibrosis), liver cirrhosis, and sterility in males.
+- **verbatim** (offset 91321): “SELENIUM DEFICIENCY
+cataracts
+cancer risk
+cystic fibrosis
+growth retardation
+"heart attack"
+impaired immunity
+Keshan Disease (myocardial
+fibrosis)
+muscular dystrophy
+pancreatic atrophy & fibrosis
+(cystic fibrosis)
+liver cirrhosis
+sterility in males”
+
+### WAL-CLM-LETS-000031 · toxicity_sign
+- **essentials:** selenium · **conditions:** alopecia, arthritis, kidney_disease, liver_disease · **symptoms:** brittle_nails, garlic_breath, metallic_taste
+- **claim:** Wallach lists the signs of selenium toxicity (excess): hair loss (alopecia), arthritis, brittle nails, garlic breath, metallic taste, kidney dysfunction, and liver dysfunction.
+- **verbatim** (offset 91570): “SELENIUM TOXICITY
+alopecia
+arthritis
+brittle nails
+garlic breath
+metallic taste
+kidney dysfunction
+liver dysfunction”
+
+### WAL-CLM-LETS-000032 · deficiency_sign
+- **essentials:** sodium · **conditions:** anorexia, depression, dermatitis, hypotension, ageusia · **symptoms:** abdominal_cramps, ataxia, mental_confusion, emotional_instability, dizziness, fatigue, flatulence, hallucinations, headache, illusions, lowered_immunity, lethargy, poor_memory, muscle_weakness, nausea, vomiting, convulsions, weight_loss
+- **claim:** Wallach lists the signs of sodium deficiency: abdominal cramps, anorexia (loss of appetite), ataxia (loss of coordination), confusion, crying jags, depression, dermatosis (skin disease), dizziness, fatigue, flatulence, hallucinations, headaches, low blood pressure, illusions, infections, lethargy, memory loss, muscular weakness, nausea and vomiting, seizures, taste loss, and weight loss.
+- **verbatim** (offset 91687): “SODIUM DEFICIENCY
+abdominal cramps
 anorexia
-anxiety
-apprehension
-bone pain
-dyspnea
-fatigue
-irritability
-numbness
-paresthesias
-pica
-tremulousness
-weakness
-weight loss”
-
-### WAL-CLM-LETS-000024 · toxicity_sign
-- **essentials:** phosphorus · **conditions:** malabsorption, osteoporosis, arthritis, hyperparathyroidism · **symptoms:** loose_teeth, tooth_loss, weight_loss
-- **claim:** Wallach lists the signs of phosphorus toxicity (excess): calcium malabsorption, loose teeth, osteoporosis and arthritis, secondary hyperparathyroidism, tooth loss, and weight loss.
-- **verbatim** (offset 90114): “PHOSPHORUS TOXICITY
-calcium malabsorption
-loose teeth
-osteoporosis / arthritis
-secondary hyperparathyroidism
-tooth loss
-weight loss”
-
-### WAL-CLM-LETS-000025 · deficiency_sign
-- **essentials:** potassium · **conditions:** acne, depression, edema, glucose_intolerance, high_cholesterol, hypotension, insomnia · **symptoms:** irregular_heartbeat, cognitive_impairment, constipation, ecg_changes, fatigue, retarded_growth, hyperreflexia, muscle_weakness, nervousness, palpitations, polydipsia, proteinuria, respiratory_distress, salt_retention, rapid_pulse, dry_skin
-- **claim:** Wallach lists the signs of potassium deficiency: acne, arrhythmia, cognitive impairment, constipation, depression, electrocardiogram (ECG) changes, edema (swelling), fatigue, glucose intolerance, growth retardation, high cholesterol, hyperreflexia (overactive reflexes), low blood pressure, insomnia, muscle weakness, nervousness, palpitations, polydipsia (excessive thirst), proteinuria (protein in the urine), respiratory distress, salt retention, a rapid heart rate (tachycardia), and xerosis (abnormally dry skin).
-- **verbatim** (offset 90246): “POTASSIUM DEFICIENCY
-acne
-arrhythmia
-cognitive impairment
-constipation
+ataxia
+confusion
+crying jags
 depression
-ECG changes
+dermatosis
+dizziness
+fatigue
+flatulence
+hallucinations
+headaches
+hypotension
+illusions
+infections
+lethargy
+memory loss
+muscular weakness
+nausea & vomiting
+seizures
+taste loss
+weight loss”
+
+### WAL-CLM-LETS-000033 · toxicity_sign
+- **essentials:** sodium · **conditions:** anorexia, congestive_heart_failure, edema, hyperactivity, hypertension, renal_failure · **symptoms:** cognitive_impairment, hypertonia, irritability, polydipsia, polyuria, convulsions, tremors, weight_gain
+- **claim:** Wallach lists the signs of sodium toxicity (excess): anorexia (loss of appetite), cognitive dysfunction, congestive heart failure, edema (swelling, especially on low-protein diets), hyperactivity, high blood pressure, hypertonia (increased muscle tone), irritability, polydipsia (excessive thirst), polyuria (excessive urination), renal (kidney) failure, seizures, tremors, and weight gain.
+- **verbatim** (offset 91958): “SODIUM TOXICITY
+anorexia
+cognitive dysfunction
+congestive heart failure
+edema (especially low
+protein diets)
+hyperactivity
+hypertension”
+
+### WAL-CLM-LETS-000034 · deficiency_sign
+- **essentials:** vitamin-b1 · **conditions:** anorexia, dementia, depression, edema · **symptoms:** mental_confusion, constipation, ataxia, dyspnea, dyspepsia, fatigue, irritability, poor_memory, muscle_atrophy, nervousness, numbness, pain_hypersensitivity, palpitations, sonophobia, weakness
+- **claim:** Wallach lists the signs of thiamine (vitamin B-1) deficiency: anorexia (loss of appetite), brain atrophy (senility), confusion, constipation, coordination impairment, depression, dyspnea (labored breathing), gastrointestinal upset, edema, fatigue, irritability, memory loss, muscle atrophy, nervousness, numbness of the hands and feet, pain hypersensitivity, palpitations, sonophobia (sound sensitivity), and weakness.
+- **verbatim** (offset 92250): “VITAMIN B-1 DEFICIENCY
+anorexia
+brain atrophy (senility)
+confusion
+constipation
+coordination impairment
+depression
+dyspnea (labored breathing)
+G I upset
 edema
 fatigue
-glucose intolerance
-growth retardation
-hypercholesterolemia
-hyperreflexia
-hypotension
-insomnia
-muscle weakness
+irritability
+memory loss
+muscle atrophy
 nervousness
+numbness hands and feet
+pain hypersensitivity
 palpitations
-polydipsia
-proteinuria
-respiratory distress
-"salt" retention
-tachycardia (rapid heart rate)
-xerosis”
-
-### WAL-CLM-LETS-000026 · toxicity_sign
-- **essentials:** potassium · **conditions:** cardiac_arrest · **symptoms:** cognitive_impairment, dysarthria, dysphasia, weakness
-- **claim:** Wallach lists the signs of potassium toxicity (excess): cardiac arrest, cognitive impairment, dysarthria (slurred speech), dysphasia (impaired language), and weakness.
-- **verbatim** (offset 90590): “POTASSIUM TOXICITY
-cardiac arrest
-cognitive impairment
-dysarthria
-dysphasia
+sonophobia
 weakness”
 
-### WAL-CLM-LETS-000027 · deficiency_sign
-- **essentials:** vitamin-b6 · **conditions:** acne, alopecia, anemia, anorexia, arthritis, conjunctivitis, depression, stomatitis · **symptoms:** nausea, cheilosis, dizziness, facial_oiliness, fatigue, geographic_tongue, impaired_wound_healing, irritability, nervousness, neurologic_symptoms, convulsions, retarded_growth, weakness
-- **claim:** Wallach lists the signs of pyridoxine (vitamin B-6) deficiency: acne, hair loss (alopecia), anemia, anorexia (loss of appetite) and nausea, arthritis, cheilosis (cracked lip corners), conjunctivitis, depression, dizziness, facial oiliness, fatigue, geographic tongue, impaired wound healing, irritability, nervousness, neurologic symptoms, seizures, stomatitis (mouth inflammation), stunted growth, and weakness.
-- **verbatim** (offset 90675): “PYRIDOXINE (B-6) DEFICIENCY
-acne
-alopecia
+### WAL-CLM-LETS-000035 · deficiency_sign
+- **essentials:** vitamin-b12 · **conditions:** achlorhydria, anemia, birth_defects, depression, psychosis · **symptoms:** constipation, dizziness, dyspnea, fatigue, dyspepsia, geographic_tongue, headache, irritability, emotional_instability, numbness, palpitations, spinal_cord_demyelination
+- **claim:** Wallach lists the signs of vitamin B-12 (cobalamin) deficiency: achlorhydria (absent stomach acid), anemia, birth defects, constipation, depression, dizziness, dyspnea (labored breathing), fatigue, gastrointestinal upset, geographic tongue, headache, irritability, moodiness, numbness, palpitations, psychosis, and spinal cord degeneration.
+- **verbatim** (offset 92548): “VITAMIN B-12 DEFICIENCY
+achlorhydria
 anemia
-anorexia & nausea
-arthritis
-cheilosis
-conjunctivitis
+birth defects
+constipation
 depression
 dizziness
-facial oiliness
+dyspnea (labored breathing)
 fatigue
+G I upset
 geographic tongue
-impaired wound healing
-irritability”
-
-### WAL-CLM-LETS-000028 · toxicity_sign
-- **essentials:** vitamin-b6 · **conditions:** — · **symptoms:** electric_shock_sensations, paresthesia
-- **claim:** Wallach lists the signs of pyridoxine (vitamin B-6) toxicity (excess): "electric shock" sensations and paresthesia (numbness and tingling).
-- **verbatim** (offset 91021): “PYRIDOXINE TOXICITY
-"electric shock" sensations
-paresthesia
-RIBOFLAVIN (B-2) DEFICIENCY”
-
-### WAL-CLM-LETS-000029 · deficiency_sign
-- **essentials:** vitamin-b2 · **conditions:** alopecia, cataracts, depression, dermatitis, photophobia · **symptoms:** blurred_vision, cheilosis, dizziness, eye_irritation, geographic_tongue, retarded_growth, pancreatic_atrophy
-- **claim:** Wallach lists the signs of riboflavin (vitamin B-2) deficiency: hair loss (alopecia), blurred vision, cataracts, cheilosis (cracked lip corners), depression, dermatitis (drying, greasy, scaling), dizziness, eye symptoms (itching, burning, redness), geographic tongue, growth retardation, pancreatic atrophy and fibrosis, and photophobia (light sensitivity).
-- **verbatim** (offset 91081): “RIBOFLAVIN (B-2) DEFICIENCY
-alopecia
-blurred vision
-cataracts
-cheilosis
-depression
-dermatitis (drying, greasy,
-scaling)
-dizziness
-eyes (itching, burning, red)
-geographic tongue
-growth retardation
-pancreatic atrophy and fibrosis
-photophobia”
+headache
+irritability
+moodiness
+numbness
+palpitations
+psychosis
+spinal cord degeneration”
 

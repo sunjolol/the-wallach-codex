@@ -29,7 +29,7 @@
         "page": 71,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 131246
+        "char_offset": 131245
       },
       "dose": null,
       "tags": [
@@ -60,7 +60,7 @@
         "page": 71,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 131481
+        "char_offset": 131480
       },
       "dose": null,
       "tags": [
@@ -1301,6 +1301,307 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-27T22:34:14+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000030",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cataracts",
+        "cancer",
+        "cystic_fibrosis",
+        "heart_attack",
+        "keshan_disease",
+        "muscular_dystrophy",
+        "liver_cirrhosis",
+        "infertility"
+      ],
+      "symptoms": [
+        "retarded_growth",
+        "lowered_immunity",
+        "pancreatic_atrophy"
+      ],
+      "claim_text": "Wallach lists the signs of selenium deficiency: cataracts, increased cancer risk, cystic fibrosis, growth retardation, \"heart attack\", impaired immunity, Keshan disease (myocardial fibrosis), muscular dystrophy, pancreatic atrophy and fibrosis (cystic fibrosis), liver cirrhosis, and sterility in males.",
+      "verbatim": "SELENIUM DEFICIENCY\ncataracts\ncancer risk\ncystic fibrosis\ngrowth retardation\n\"heart attack\"\nimpaired immunity\nKeshan Disease (myocardial\nfibrosis)\nmuscular dystrophy\npancreatic atrophy & fibrosis\n(cystic fibrosis)\nliver cirrhosis\nsterility in males",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 48,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 91321
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map",
+        "xref:WAL-CLM-RARE-000227",
+        "xref:WAL-CLM-RARE-000269"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:39:41+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000031",
+      "kind": "toxicity_sign",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "alopecia",
+        "arthritis",
+        "kidney_disease",
+        "liver_disease"
+      ],
+      "symptoms": [
+        "brittle_nails",
+        "garlic_breath",
+        "metallic_taste"
+      ],
+      "claim_text": "Wallach lists the signs of selenium toxicity (excess): hair loss (alopecia), arthritis, brittle nails, garlic breath, metallic taste, kidney dysfunction, and liver dysfunction.",
+      "verbatim": "SELENIUM TOXICITY\nalopecia\narthritis\nbrittle nails\ngarlic breath\nmetallic taste\nkidney dysfunction\nliver dysfunction",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 48,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 91570
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "toxicity-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:39:41+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000032",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "sodium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anorexia",
+        "depression",
+        "dermatitis",
+        "hypotension",
+        "ageusia"
+      ],
+      "symptoms": [
+        "abdominal_cramps",
+        "ataxia",
+        "mental_confusion",
+        "emotional_instability",
+        "dizziness",
+        "fatigue",
+        "flatulence",
+        "hallucinations",
+        "headache",
+        "illusions",
+        "lowered_immunity",
+        "lethargy",
+        "poor_memory",
+        "muscle_weakness",
+        "nausea",
+        "vomiting",
+        "convulsions",
+        "weight_loss"
+      ],
+      "claim_text": "Wallach lists the signs of sodium deficiency: abdominal cramps, anorexia (loss of appetite), ataxia (loss of coordination), confusion, crying jags, depression, dermatosis (skin disease), dizziness, fatigue, flatulence, hallucinations, headaches, low blood pressure, illusions, infections, lethargy, memory loss, muscular weakness, nausea and vomiting, seizures, taste loss, and weight loss.",
+      "verbatim": "SODIUM DEFICIENCY\nabdominal cramps\nanorexia\nataxia\nconfusion\ncrying jags\ndepression\ndermatosis\ndizziness\nfatigue\nflatulence\nhallucinations\nheadaches\nhypotension\nillusions\ninfections\nlethargy\nmemory loss\nmuscular weakness\nnausea & vomiting\nseizures\ntaste loss\nweight loss",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 48,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 91687
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map",
+        "xref:WAL-CLM-RARE-000189"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:39:41+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000033",
+      "kind": "toxicity_sign",
+      "essentials": [
+        "sodium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anorexia",
+        "congestive_heart_failure",
+        "edema",
+        "hyperactivity",
+        "hypertension",
+        "renal_failure"
+      ],
+      "symptoms": [
+        "cognitive_impairment",
+        "hypertonia",
+        "irritability",
+        "polydipsia",
+        "polyuria",
+        "convulsions",
+        "tremors",
+        "weight_gain"
+      ],
+      "claim_text": "Wallach lists the signs of sodium toxicity (excess): anorexia (loss of appetite), cognitive dysfunction, congestive heart failure, edema (swelling, especially on low-protein diets), hyperactivity, high blood pressure, hypertonia (increased muscle tone), irritability, polydipsia (excessive thirst), polyuria (excessive urination), renal (kidney) failure, seizures, tremors, and weight gain.",
+      "verbatim": "SODIUM TOXICITY\nanorexia\ncognitive dysfunction\ncongestive heart failure\nedema (especially low\nprotein diets)\nhyperactivity\nhypertension",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 48,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 91958
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "toxicity-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:39:41+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000034",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-b1"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anorexia",
+        "dementia",
+        "depression",
+        "edema"
+      ],
+      "symptoms": [
+        "mental_confusion",
+        "constipation",
+        "ataxia",
+        "dyspnea",
+        "dyspepsia",
+        "fatigue",
+        "irritability",
+        "poor_memory",
+        "muscle_atrophy",
+        "nervousness",
+        "numbness",
+        "pain_hypersensitivity",
+        "palpitations",
+        "sonophobia",
+        "weakness"
+      ],
+      "claim_text": "Wallach lists the signs of thiamine (vitamin B-1) deficiency: anorexia (loss of appetite), brain atrophy (senility), confusion, constipation, coordination impairment, depression, dyspnea (labored breathing), gastrointestinal upset, edema, fatigue, irritability, memory loss, muscle atrophy, nervousness, numbness of the hands and feet, pain hypersensitivity, palpitations, sonophobia (sound sensitivity), and weakness.",
+      "verbatim": "VITAMIN B-1 DEFICIENCY\nanorexia\nbrain atrophy (senility)\nconfusion\nconstipation\ncoordination impairment\ndepression\ndyspnea (labored breathing)\nG I upset\nedema\nfatigue\nirritability\nmemory loss\nmuscle atrophy\nnervousness\nnumbness hands and feet\npain hypersensitivity\npalpitations\nsonophobia\nweakness",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 49,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 92250
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map",
+        "xref:WAL-CLM-RARE-000233",
+        "xref:WAL-CLM-DDDL-000043"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:39:41+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000035",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-b12"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "achlorhydria",
+        "anemia",
+        "birth_defects",
+        "depression",
+        "psychosis"
+      ],
+      "symptoms": [
+        "constipation",
+        "dizziness",
+        "dyspnea",
+        "fatigue",
+        "dyspepsia",
+        "geographic_tongue",
+        "headache",
+        "irritability",
+        "emotional_instability",
+        "numbness",
+        "palpitations",
+        "spinal_cord_demyelination"
+      ],
+      "claim_text": "Wallach lists the signs of vitamin B-12 (cobalamin) deficiency: achlorhydria (absent stomach acid), anemia, birth defects, constipation, depression, dizziness, dyspnea (labored breathing), fatigue, gastrointestinal upset, geographic tongue, headache, irritability, moodiness, numbness, palpitations, psychosis, and spinal cord degeneration.",
+      "verbatim": "VITAMIN B-12 DEFICIENCY\nachlorhydria\nanemia\nbirth defects\nconstipation\ndepression\ndizziness\ndyspnea (labored breathing)\nfatigue\nG I upset\ngeographic tongue\nheadache\nirritability\nmoodiness\nnumbness\npalpitations\npsychosis\nspinal cord degeneration",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 49,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 92548
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map",
+        "xref:WAL-CLM-RARE-000238"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:39:41+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

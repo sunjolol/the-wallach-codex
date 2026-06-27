@@ -129,9 +129,10 @@
     "display_name": "Sodium",
     "canon_slug": "sodium",
     "category": "mineral",
-    "claim_count": 10,
+    "claim_count": 12,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-LETS-000032",
         "WAL-CLM-RARE-000189"
       ],
       "definition": [
@@ -150,14 +151,118 @@
       ],
       "protocol": [
         "WAL-CLM-RARE-000190"
+      ],
+      "toxicity_sign": [
+        "WAL-CLM-LETS-000033"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "abdominal_cramps",
+        "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "ataxia",
+        "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "convulsions",
+        "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "dizziness",
+        "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "emotional_instability",
+        "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "fatigue",
+        "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "flatulence",
+        "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "hallucinations",
+        "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "headache",
+        "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "illusions",
+        "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "lethargy",
+        "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "lowered_immunity",
+        "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "mental_confusion",
+        "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "muscle_weakness",
+        "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "nausea",
+        "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "poor_memory",
+        "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "vomiting",
+        "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "weight_loss",
+        "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
       "addisons_disease",
+      "ageusia",
+      "anorexia",
       "blind_rage",
+      "congestive_heart_failure",
+      "depression",
+      "dermatitis",
+      "edema",
       "explosive_outbursts",
       "heat_stroke",
+      "hyperactivity",
+      "hypertension",
+      "hypotension",
+      "renal_failure",
       "violent_behavior",
       "water_intoxication"
     ],
@@ -172,6 +277,7 @@
       "zinc"
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1722,11 +1828,12 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 31,
+    "claim_count": 33,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
         "WAL-CLM-DDDL-000006",
+        "WAL-CLM-LETS-000030",
         "WAL-CLM-RARE-000227",
         "WAL-CLM-RARE-000269",
         "WAL-CLM-RARE-000270",
@@ -1768,6 +1875,9 @@
       ],
       "quote": [
         "WAL-CLM-RARE-000228"
+      ],
+      "toxicity_sign": [
+        "WAL-CLM-LETS-000031"
       ]
     },
     "deficiency_signs": [
@@ -1780,10 +1890,26 @@
         "sign": "liver_spots",
         "claim_id": "WAL-CLM-DDDL-000006",
         "confidence": "high"
+      },
+      {
+        "sign": "lowered_immunity",
+        "claim_id": "WAL-CLM-LETS-000030",
+        "confidence": "high"
+      },
+      {
+        "sign": "pancreatic_atrophy",
+        "claim_id": "WAL-CLM-LETS-000030",
+        "confidence": "high"
+      },
+      {
+        "sign": "retarded_growth",
+        "claim_id": "WAL-CLM-LETS-000030",
+        "confidence": "high"
       }
     ],
     "conditions_treated": [
       "adrenoleukodystrophy",
+      "alopecia",
       "als",
       "alzheimers",
       "anemia",
@@ -1806,7 +1932,9 @@
       "hypertension",
       "infertility",
       "keshan_disease",
+      "kidney_disease",
       "liver_cirrhosis",
+      "liver_disease",
       "miscarriage",
       "multiple_sclerosis",
       "muscular_dystrophy",
@@ -1844,6 +1972,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -2958,10 +3087,11 @@
     "display_name": "Thiamine",
     "canon_slug": "vitamin-b1",
     "category": "vitamin",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000043",
+        "WAL-CLM-LETS-000034",
         "WAL-CLM-RARE-000233"
       ],
       "protocol": [
@@ -2970,8 +3100,38 @@
     },
     "deficiency_signs": [
       {
+        "sign": "ataxia",
+        "claim_id": "WAL-CLM-LETS-000034",
+        "confidence": "high"
+      },
+      {
+        "sign": "constipation",
+        "claim_id": "WAL-CLM-LETS-000034",
+        "confidence": "high"
+      },
+      {
+        "sign": "dyspepsia",
+        "claim_id": "WAL-CLM-LETS-000034",
+        "confidence": "high"
+      },
+      {
+        "sign": "dyspnea",
+        "claim_id": "WAL-CLM-LETS-000034",
+        "confidence": "high"
+      },
+      {
         "sign": "emotional_instability",
         "claim_id": "WAL-CLM-RARE-000233",
+        "confidence": "high"
+      },
+      {
+        "sign": "fatigue",
+        "claim_id": "WAL-CLM-LETS-000034",
+        "confidence": "high"
+      },
+      {
+        "sign": "irritability",
+        "claim_id": "WAL-CLM-LETS-000034",
         "confidence": "high"
       },
       {
@@ -2986,12 +3146,42 @@
       },
       {
         "sign": "mental_confusion",
+        "claim_id": "WAL-CLM-LETS-000034",
+        "confidence": "high"
+      },
+      {
+        "sign": "mental_confusion",
         "claim_id": "WAL-CLM-RARE-000233",
+        "confidence": "high"
+      },
+      {
+        "sign": "muscle_atrophy",
+        "claim_id": "WAL-CLM-LETS-000034",
         "confidence": "high"
       },
       {
         "sign": "muscle_weakness",
         "claim_id": "WAL-CLM-RARE-000233",
+        "confidence": "high"
+      },
+      {
+        "sign": "nervousness",
+        "claim_id": "WAL-CLM-LETS-000034",
+        "confidence": "high"
+      },
+      {
+        "sign": "numbness",
+        "claim_id": "WAL-CLM-LETS-000034",
+        "confidence": "high"
+      },
+      {
+        "sign": "pain_hypersensitivity",
+        "claim_id": "WAL-CLM-LETS-000034",
+        "confidence": "high"
+      },
+      {
+        "sign": "palpitations",
+        "claim_id": "WAL-CLM-LETS-000034",
         "confidence": "high"
       },
       {
@@ -3001,15 +3191,32 @@
       },
       {
         "sign": "poor_memory",
+        "claim_id": "WAL-CLM-LETS-000034",
+        "confidence": "high"
+      },
+      {
+        "sign": "poor_memory",
         "claim_id": "WAL-CLM-RARE-000233",
+        "confidence": "high"
+      },
+      {
+        "sign": "sonophobia",
+        "claim_id": "WAL-CLM-LETS-000034",
+        "confidence": "high"
+      },
+      {
+        "sign": "weakness",
+        "claim_id": "WAL-CLM-LETS-000034",
         "confidence": "high"
       }
     ],
     "conditions_treated": [
+      "anorexia",
       "beriberi",
       "congestive_heart_failure",
       "dementia",
       "depression",
+      "edema",
       "wernicke_korsakoff_syndrome"
     ],
     "interacts_with": [
@@ -3025,6 +3232,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -3580,9 +3788,10 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-LETS-000035",
         "WAL-CLM-RARE-000238"
       ],
       "dose": [
@@ -3606,18 +3815,83 @@
     },
     "deficiency_signs": [
       {
+        "sign": "constipation",
+        "claim_id": "WAL-CLM-LETS-000035",
+        "confidence": "high"
+      },
+      {
+        "sign": "dizziness",
+        "claim_id": "WAL-CLM-LETS-000035",
+        "confidence": "high"
+      },
+      {
+        "sign": "dyspepsia",
+        "claim_id": "WAL-CLM-LETS-000035",
+        "confidence": "high"
+      },
+      {
+        "sign": "dyspnea",
+        "claim_id": "WAL-CLM-LETS-000035",
+        "confidence": "high"
+      },
+      {
+        "sign": "emotional_instability",
+        "claim_id": "WAL-CLM-LETS-000035",
+        "confidence": "high"
+      },
+      {
+        "sign": "fatigue",
+        "claim_id": "WAL-CLM-LETS-000035",
+        "confidence": "high"
+      },
+      {
+        "sign": "geographic_tongue",
+        "claim_id": "WAL-CLM-LETS-000035",
+        "confidence": "high"
+      },
+      {
+        "sign": "headache",
+        "claim_id": "WAL-CLM-LETS-000035",
+        "confidence": "high"
+      },
+      {
+        "sign": "irritability",
+        "claim_id": "WAL-CLM-LETS-000035",
+        "confidence": "high"
+      },
+      {
+        "sign": "numbness",
+        "claim_id": "WAL-CLM-LETS-000035",
+        "confidence": "high"
+      },
+      {
+        "sign": "palpitations",
+        "claim_id": "WAL-CLM-LETS-000035",
+        "confidence": "high"
+      },
+      {
+        "sign": "spinal_cord_demyelination",
+        "claim_id": "WAL-CLM-LETS-000035",
+        "confidence": "high"
+      },
+      {
         "sign": "spinal_cord_demyelination",
         "claim_id": "WAL-CLM-RARE-000238",
         "confidence": "high"
       }
     ],
     "conditions_treated": [
+      "achlorhydria",
+      "anemia",
       "aphthous_stomatitis",
       "bells_palsy",
+      "birth_defects",
       "canker_sores",
+      "depression",
       "diabetes",
       "peripheral_neuropathy",
-      "pernicious_anemia"
+      "pernicious_anemia",
+      "psychosis"
     ],
     "interacts_with": [
       "calcium",
@@ -3633,6 +3907,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
