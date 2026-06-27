@@ -1360,14 +1360,17 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 23,
+    "claim_count": 26,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
         "WAL-CLM-DDDL-000042",
         "WAL-CLM-DDDL-000077",
         "WAL-CLM-DDDL-000079",
-        "WAL-CLM-RARE-000042"
+        "WAL-CLM-RARE-000042",
+        "WAL-CLM-RARE-000262",
+        "WAL-CLM-RARE-000263",
+        "WAL-CLM-RARE-000264"
       ],
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000083",
@@ -1414,6 +1417,10 @@
       }
     ],
     "conditions_treated": [
+      "acrodermatitis_enteropathica",
+      "ageusia",
+      "alopecia",
+      "anemia",
       "aneurysm",
       "anorexia",
       "anosmia",
@@ -1422,19 +1429,26 @@
       "benign_prostatic_hyperplasia",
       "birth_defects",
       "blind_rage",
+      "bulimia",
       "cancer",
       "canker_sores",
       "cardiomyopathy",
       "cataracts",
+      "cleft_lip",
       "cleft_palate",
       "cradle_cap",
       "cystic_fibrosis",
+      "depression",
       "diabetes",
+      "diarrhea",
       "down_syndrome",
       "explosive_outbursts",
+      "heart_defects",
       "hypertension",
+      "hypogonadism",
       "infertility",
       "osteoporosis",
+      "paranoia",
       "spina_bifida",
       "violent_behavior"
     ],

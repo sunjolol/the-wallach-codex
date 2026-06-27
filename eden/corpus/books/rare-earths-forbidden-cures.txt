@@ -30079,43 +30079,21 @@ ppm; limestone at 20 ppm; fresh water at
 plants at 100 ppm; marine animals at 6 to
 1,500 ppm; land animals at 160 ppm (ac-
 
-Table 11-24. Congenital Birth defects
-associated with Zinc Deficiency.
-
-Down's Syndrome
-
+Table 11-24. Congenital Birth defects associated with Zinc Deficiency.
+Down’s Syndrome
 Cleft lip
-
 Cleft palate
-
-Brain defects (dorsal herniation,
-hydroencephaloceol
-
-Micro- or anopthalmia (small or
-absent eyes)
-
+Brain defects (dorsal herniation, hydroencephalocele)
+Micro- or anophthalmia (small or absent eyes)
 Micro- or agnathia
-
 Spina bifida
-
 clubbed limbs
-
-Syndactyly (webbed toes
-
-and fingers)
-
-Diaphragmatic hernias
-
-(hiatal hernia)
-
-Umbilical; hernias
-
+Syndactyly (webbed toes and fingers)
+Diaphragmatic hernias (hiatal hernia)
+Umbilical hernias
 Heart defects
-
 lung defects
-
 Urogenital
-
 413
 
 Fig. 11-22 Atresia ani (child born with no anal opening).
@@ -30138,57 +30116,29 @@ Fig. 11-26 Child with Celiac disease and secondary zinc deficiency
 
 417
 
-Table 11-25. Symptoms and Diseases
-of Zinc Deficiency
-
-Pica (geophagia, wool eating,
-
-hair eating, etc.)
-
+Table 11-25. Symptoms and Diseases of Zinc Deficiency
+Pica (geophagia, wool eating, hair eating, etc.)
 Loss of sense of smell
-
 Loss of sense of taste
-
 Infertility
-
 Failure of wounds and ulcers to heal
 Immune status failure
-
 Poor growth (short stature)
-
 High infant mortality
-
-Hypogonadism (small poorly functioning
-ovaries and testes)
-
+Hypogonadism (small poorly functioning ovaries and testes)
 Remains in a prepuberty state
-
 Anemia
-
 Alopecia (hair loss)
-
-Acrodermatitis enteropathica
-(Parakeratosis in pigs and calves)
+Acrodermatitis enteropathica (Parakeratosis in pigs and calves)
 “Frizzy” hair
-
 Diarrhea
-
 Depression
-
 Paranoia
-
 Oral and perioral dermatitis
-
 Weight loss (anorexia nervosa)
-
-Benign prostatic hypertrophy
-
-(prostate enlargement)
-
-Severe body odor (“smelly tennis shoe”
-syndrome)
-
-* Anorexia & Bullemia
+Benign prostatic hypertrophy (prostate enlargement)
+Severe body odor (“smelly tennis shoe” syndrome)
+Anorexia & Bulimia
 
 cumulates in mammalian kidney, prostate
 and eye).

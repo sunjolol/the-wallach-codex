@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_102 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_103 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-26 23:53 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 54 — Zn/Zinc finale pt1: deficiency TABLES 11-24 (birth defects) + 11-25 (symptoms/diseases, split pt1/2 for the 500-char ceiling). 3 claims RARE-262..264. +9 cond slugs. 4 Luneth-ruled book-typo fixes. kv 94->96, corpus 358, board 30/30, probe green.
+  ↳ Zinc's specific deficiency tables (never extracted; only generic DDDL-039 existed). T11-24 = congenital birth defects; T11-25 = symptoms/diseases (~675 chars > 500 limit -> split parts 1/2, Table-11-9 precedent). Both read word-level high-DPI (skipped the graphic medical figure pages 435-438). +9 condition slugs (conditions 177). Luneth ruled 4 book-print artifact fixes (book prints them, .txt faithful): anopthalmia->anophthalmia, hydroencephaloceol->hydroencephalocele + close paren, 'Umbilical; hernias'->'Umbilical hernias', Bullemia->Bulimia. Applied via .txt edit + resnap --fix {262,264} (healed 2, 0 broken) + finalize empty + reseal. NEXT = Zn finale pt2 (metalloenzymes/body-content/timeline/sweat-athletes) then Zr -> catalog COMPLETE.
 
 ## 2026-06-26 23:24 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 53 — W/Xe/Y/Yb (p412-413). 4 claims RARE-258..261: Xenon anesthetic stance (other_substances), Yttrium lifespan-doubler (#6) + placental-transfer, Ytterbium placental-transfer. W/Tungsten geology-only skip. kv 93->94, corpus 355, board 30/30, probe green.

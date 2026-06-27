@@ -9415,6 +9415,131 @@
       "extracted_at": "2026-06-27T03:19:43+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000262",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "birth_defects",
+        "down_syndrome",
+        "cleft_lip",
+        "cleft_palate",
+        "spina_bifida",
+        "heart_defects"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach's Table 11-24 lists the congenital birth defects associated with zinc deficiency: Down's Syndrome, cleft lip, cleft palate, brain defects (dorsal herniation, hydroencephalocele), micro- or anophthalmia (small or absent eyes), micro- or agnathia (small or absent jaw), spina bifida, clubbed limbs, syndactyly (webbed toes and fingers), diaphragmatic (hiatal) hernias, umbilical hernias, heart defects, lung defects, and urogenital defects.",
+      "verbatim": "Table 11-24. Congenital Birth defects associated with Zinc Deficiency.\nDown’s Syndrome\nCleft lip\nCleft palate\nBrain defects (dorsal herniation, hydroencephalocele)\nMicro- or anophthalmia (small or absent eyes)\nMicro- or agnathia\nSpina bifida\nclubbed limbs\nSyndactyly (webbed toes and fingers)\nDiaphragmatic hernias (hiatal hernia)\nUmbilical hernias\nHeart defects\nlung defects\nUrogenital",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 413,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 967525
+      },
+      "dose": null,
+      "tags": [
+        "zinc",
+        "deficiency",
+        "birth-defects",
+        "congenital",
+        "down-syndrome"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T03:34:05+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000263",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anosmia",
+        "ageusia",
+        "infertility",
+        "hypogonadism",
+        "anemia"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach's Table 11-25 lists the symptoms and diseases of zinc deficiency (part 1 of 2): pica (the eating of non-food substances — geophagia/earth-eating, wool eating, hair eating), loss of the sense of smell, loss of the sense of taste, infertility, failure of wounds and ulcers to heal, immune-status failure, poor growth (short stature), high infant mortality, hypogonadism (small, poorly functioning ovaries and testes), remaining in a prepuberty state, and anemia.",
+      "verbatim": "Table 11-25. Symptoms and Diseases of Zinc Deficiency\nPica (geophagia, wool eating, hair eating, etc.)\nLoss of sense of smell\nLoss of sense of taste\nInfertility\nFailure of wounds and ulcers to heal\nImmune status failure\nPoor growth (short stature)\nHigh infant mortality\nHypogonadism (small poorly functioning ovaries and testes)\nRemains in a prepuberty state\nAnemia",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 417,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 968209
+      },
+      "dose": null,
+      "tags": [
+        "zinc",
+        "deficiency",
+        "symptoms",
+        "table-11-25"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T03:34:05+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000264",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "alopecia",
+        "acrodermatitis_enteropathica",
+        "diarrhea",
+        "depression",
+        "paranoia",
+        "benign_prostatic_hyperplasia",
+        "anorexia",
+        "bulimia"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach's Table 11-25 lists the symptoms and diseases of zinc deficiency (part 2 of 2): alopecia (hair loss), acrodermatitis enteropathica (parakeratosis in pigs and calves), 'frizzy' hair, diarrhea, depression, paranoia, oral and perioral dermatitis, weight loss (anorexia nervosa), benign prostatic hypertrophy (prostate enlargement), severe body odor ('smelly tennis shoe' syndrome), and anorexia and bulimia.",
+      "verbatim": "Alopecia (hair loss)\nAcrodermatitis enteropathica (Parakeratosis in pigs and calves)\n“Frizzy” hair\nDiarrhea\nDepression\nParanoia\nOral and perioral dermatitis\nWeight loss (anorexia nervosa)\nBenign prostatic hypertrophy (prostate enlargement)\nSevere body odor (“smelly tennis shoe” syndrome)\nAnorexia & Bulimia",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 417,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 968575
+      },
+      "dose": null,
+      "tags": [
+        "zinc",
+        "deficiency",
+        "symptoms",
+        "table-11-25"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T03:34:05+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
