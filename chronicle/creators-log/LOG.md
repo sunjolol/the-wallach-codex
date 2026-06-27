@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_113 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_114 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-27 16:44 UTC-05:00 · round-close · eden/corpus
+Let's Play Doctor batch 1 (first LPD seal — shard created). 7 claims: 2 Ch8 dose-philosophy + Table 6-1 pt1 (Biotin/Calcium/Chromium deficiency + Calcium/Chromium TOXICITY — first toxicity_sign claims sealed). corpus 380->387, conditions 182->188, kv 105->106, board 30/30.
+  ↳ Table 6-1 mapped from fitz-55 render (ground truth). Luneth-ruled map-everything granularity: every symptom slug-linked, synonyms consolidated. Colloidal-98% dropped as RARE-061 dup (xref convention). +6 conditions + ~10 symptom slugs. finalize all snapped -> seal -> embed -> build -> invariants 30/30 -> knowledge probe PASS. NEXT = Table 6-1 pt2 (Copper..Iron) + rest of table + Fig 8-1 + Materia Medica.
 
 ## 2026-06-27 16:23 UTC-05:00 · design-decision · eden+dashboard
 Added toxicity_sign claim-kind end-to-end (LPD Table 6-1 maps nutrient EXCESS signs, not just deficiency). Luneth-ruled new kind. Plumbed corpus_extract KINDS + corpus_derive role-map + knowledge-corpus.ts ordering + SCHEMA.md. build/invariants 30/30/probe green.

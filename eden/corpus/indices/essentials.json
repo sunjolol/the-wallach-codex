@@ -483,10 +483,11 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 37,
+    "claim_count": 39,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
+        "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000275"
       ],
       "definition": [
@@ -537,12 +538,72 @@
         "WAL-CLM-RARE-000284",
         "WAL-CLM-RARE-000285",
         "WAL-CLM-RARE-000286"
+      ],
+      "toxicity_sign": [
+        "WAL-CLM-LETS-000005"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "brittle_nails",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high"
+      },
+      {
+        "sign": "cognitive_impairment",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high"
+      },
+      {
+        "sign": "delusions",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high"
+      },
+      {
+        "sign": "irritability",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high"
+      },
+      {
+        "sign": "muscle_cramps",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high"
+      },
+      {
+        "sign": "nervousness",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high"
+      },
+      {
+        "sign": "neuromuscular_excitability",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high"
+      },
+      {
+        "sign": "numbness",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high"
+      },
+      {
+        "sign": "palpitations",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high"
+      },
+      {
+        "sign": "paresthesia",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high"
+      },
+      {
+        "sign": "retarded_growth",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
       "aneurysm",
       "angina",
+      "anorexia",
       "anxiety",
       "arthritis",
       "bells_palsy",
@@ -559,9 +620,13 @@
       "dementia",
       "depression",
       "diabetes",
+      "eczema",
+      "hyperactivity",
       "hypertension",
       "insomnia",
+      "kidney_disease",
       "kidney_stones",
+      "liver_disease",
       "malabsorption",
       "menopause",
       "muscle_cramps",
@@ -569,10 +634,16 @@
       "osteomalacia",
       "osteoporosis",
       "panic_attacks",
+      "peptic_ulcers",
+      "periodontal_disease",
+      "pica",
       "premenstrual_syndrome",
+      "psychosis",
+      "rickets",
       "spinal_stenosis",
       "tetany",
       "tinnitus",
+      "tooth_decay",
       "trigeminal_neuralgia"
     ],
     "interacts_with": [
@@ -602,6 +673,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -684,10 +756,11 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 26,
+    "claim_count": 28,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
+        "WAL-CLM-LETS-000006",
         "WAL-CLM-RARE-000039",
         "WAL-CLM-RARE-000042",
         "WAL-CLM-RARE-000275"
@@ -727,6 +800,9 @@
         "WAL-CLM-RARE-000278",
         "WAL-CLM-RARE-000280",
         "WAL-CLM-RARE-000282"
+      ],
+      "toxicity_sign": [
+        "WAL-CLM-LETS-000007"
       ]
     },
     "deficiency_signs": [
@@ -736,8 +812,23 @@
         "confidence": "high"
       },
       {
+        "sign": "fatigue",
+        "claim_id": "WAL-CLM-LETS-000006",
+        "confidence": "high"
+      },
+      {
         "sign": "geographic_tongue",
         "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high"
+      },
+      {
+        "sign": "retarded_growth",
+        "claim_id": "WAL-CLM-LETS-000006",
+        "confidence": "high"
+      },
+      {
+        "sign": "shortened_lifespan",
+        "claim_id": "WAL-CLM-LETS-000006",
         "confidence": "high"
       }
     ],
@@ -758,8 +849,10 @@
       "deafness",
       "dementia",
       "depression",
+      "dermatitis",
       "diabetes",
       "explosive_outbursts",
+      "high_cholesterol",
       "hyperactivity",
       "hyperinsulinemia",
       "hyperirritability",
@@ -767,9 +860,12 @@
       "hypoglycemia",
       "infertility",
       "insomnia",
+      "kidney_disease",
       "learning_disabilities",
+      "liver_disease",
       "osteoporosis",
       "panic_attacks",
+      "peptic_ulcers",
       "peripheral_neuropathy",
       "schizophrenia",
       "violent_behavior"
@@ -797,6 +893,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -3092,13 +3189,24 @@
     "display_name": "Biotin",
     "canon_slug": "biotin",
     "category": "vitamin",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-LETS-000003",
         "WAL-CLM-RARE-000240"
       ]
     },
     "deficiency_signs": [
+      {
+        "sign": "dry_skin",
+        "claim_id": "WAL-CLM-LETS-000003",
+        "confidence": "high"
+      },
+      {
+        "sign": "fatigue",
+        "claim_id": "WAL-CLM-LETS-000003",
+        "confidence": "high"
+      },
       {
         "sign": "gray_hair",
         "claim_id": "WAL-CLM-RARE-000240",
@@ -3110,8 +3218,28 @@
         "confidence": "high"
       },
       {
+        "sign": "muscle_weakness",
+        "claim_id": "WAL-CLM-LETS-000003",
+        "confidence": "high"
+      },
+      {
+        "sign": "myalgia",
+        "claim_id": "WAL-CLM-LETS-000003",
+        "confidence": "high"
+      },
+      {
+        "sign": "nausea",
+        "claim_id": "WAL-CLM-LETS-000003",
+        "confidence": "high"
+      },
+      {
         "sign": "paresthesia",
         "claim_id": "WAL-CLM-RARE-000240",
+        "confidence": "high"
+      },
+      {
+        "sign": "smooth_tongue",
+        "claim_id": "WAL-CLM-LETS-000003",
         "confidence": "high"
       },
       {
@@ -3121,12 +3249,19 @@
       }
     ],
     "conditions_treated": [
+      "alopecia",
+      "anemia",
+      "anorexia",
       "blepharitis",
       "depression",
-      "eczema"
+      "diabetes",
+      "eczema",
+      "high_cholesterol",
+      "insomnia"
     ],
     "interacts_with": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },

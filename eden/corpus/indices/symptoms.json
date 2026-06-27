@@ -54,10 +54,31 @@
       "rare-earths"
     ]
   },
-  "ataxia": {
-    "display_name": "Ataxia",
+  "aphasia": {
+    "display_name": "Aphasia",
     "claim_count": 1,
     "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000005",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "ataxia": {
+    "display_name": "Ataxia",
+    "claim_count": 2,
+    "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000005",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "vitamin-b6",
         "claim_id": "WAL-CLM-RARE-000237",
@@ -66,6 +87,7 @@
       }
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -122,8 +144,14 @@
   },
   "brittle_nails": {
     "display_name": "Brittle Nails",
-    "claim_count": 2,
+    "claim_count": 3,
     "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000150",
@@ -138,6 +166,7 @@
       }
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -169,6 +198,21 @@
     ],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "cognitive_impairment": {
+    "display_name": "Cognitive Impairment",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "cold_intolerance": {
@@ -243,6 +287,21 @@
       "rare-earths"
     ]
   },
+  "delusions": {
+    "display_name": "Delusions",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "depression": {
     "display_name": "Depression",
     "claim_count": 1,
@@ -292,6 +351,21 @@
     ],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "dry_skin": {
+    "display_name": "Dry Skin",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "biotin",
+        "claim_id": "WAL-CLM-LETS-000003",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "easy_bruising": {
@@ -382,10 +456,37 @@
       "rare-earths"
     ]
   },
-  "fatigue": {
-    "display_name": "Fatigue",
+  "fat_intolerance": {
+    "display_name": "Fat Intolerance",
     "claim_count": 1,
     "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000005",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "fatigue": {
+    "display_name": "Fatigue",
+    "claim_count": 3,
+    "likely_deficiencies": [
+      {
+        "essential": "biotin",
+        "claim_id": "WAL-CLM-LETS-000003",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "chromium",
+        "claim_id": "WAL-CLM-LETS-000006",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000150",
@@ -394,6 +495,7 @@
       }
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -593,16 +695,36 @@
   },
   "irregular_heartbeat": {
     "display_name": "Irregular Heartbeat",
-    "claim_count": 1,
-    "likely_deficiencies": [],
+    "claim_count": 2,
+    "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000005",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
   "irritability": {
     "display_name": "Irritability",
-    "claim_count": 1,
+    "claim_count": 3,
     "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000005",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000151",
@@ -611,6 +733,7 @@
       }
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -839,8 +962,14 @@
   },
   "muscle_cramps": {
     "display_name": "Muscle Cramps",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "potassium",
         "claim_id": "WAL-CLM-RARE-000188",
@@ -855,6 +984,7 @@
       }
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -875,8 +1005,20 @@
   },
   "muscle_weakness": {
     "display_name": "Muscle Weakness",
-    "claim_count": 4,
+    "claim_count": 6,
     "likely_deficiencies": [
+      {
+        "essential": "biotin",
+        "claim_id": "WAL-CLM-LETS-000003",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000005",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000151",
@@ -903,6 +1045,7 @@
       }
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -929,8 +1072,14 @@
   },
   "myalgia": {
     "display_name": "Myalgia",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
+      {
+        "essential": "biotin",
+        "claim_id": "WAL-CLM-LETS-000003",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "vitamin-e",
         "claim_id": "WAL-CLM-RARE-000231",
@@ -939,13 +1088,20 @@
       }
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
   "nausea": {
     "display_name": "Nausea",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
+      {
+        "essential": "biotin",
+        "claim_id": "WAL-CLM-LETS-000003",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "vitamin-b6",
         "claim_id": "WAL-CLM-RARE-000237",
@@ -954,13 +1110,20 @@
       }
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
   "nervousness": {
     "display_name": "Nervousness",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000151",
@@ -969,7 +1132,53 @@
       }
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "neuromuscular_excitability": {
+    "display_name": "Neuromuscular Excitability",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "numbness": {
+    "display_name": "Numbness",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "palpitations": {
+    "display_name": "Palpitations",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "paralysis": {
@@ -989,16 +1198,23 @@
   },
   "paresthesia": {
     "display_name": "Paresthesia",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "biotin",
         "claim_id": "WAL-CLM-RARE-000240",
         "confidence": "high",
         "appears_in_books": 1
+      },
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high",
+        "appears_in_books": 1
       }
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1074,8 +1290,14 @@
   },
   "poor_memory": {
     "display_name": "Poor Memory",
-    "claim_count": 2,
+    "claim_count": 3,
     "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000005",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000150",
@@ -1090,6 +1312,7 @@
       }
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1227,8 +1450,26 @@
   },
   "retarded_growth": {
     "display_name": "Retarded Growth",
-    "claim_count": 1,
+    "claim_count": 4,
     "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000005",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "chromium",
+        "claim_id": "WAL-CLM-LETS-000006",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "manganese",
         "claim_id": "WAL-CLM-RARE-000176",
@@ -1237,6 +1478,7 @@
       }
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1263,8 +1505,14 @@
   },
   "shortened_lifespan": {
     "display_name": "Shortened Lifespan",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
+      {
+        "essential": "chromium",
+        "claim_id": "WAL-CLM-LETS-000006",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "lithium",
         "claim_id": "WAL-CLM-RARE-000163",
@@ -1273,6 +1521,7 @@
       }
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1319,6 +1568,21 @@
     ],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "smooth_tongue": {
+    "display_name": "Smooth Tongue",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "biotin",
+        "claim_id": "WAL-CLM-LETS-000003",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "spinal_cord_demyelination": {

@@ -134,17 +134,20 @@
   },
   "alopecia": {
     "display_name": "Alopecia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-LETS-000003",
         "WAL-CLM-RARE-000264"
       ]
     },
     "essentials_involved": [
+      "biotin",
       "zinc"
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -193,11 +196,12 @@
   },
   "anemia": {
     "display_name": "Anemia",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
         "WAL-CLM-DDDL-000020",
+        "WAL-CLM-LETS-000003",
         "WAL-CLM-RARE-000193",
         "WAL-CLM-RARE-000231",
         "WAL-CLM-RARE-000234",
@@ -217,6 +221,7 @@
       ]
     },
     "essentials_involved": [
+      "biotin",
       "chromium",
       "copper",
       "iron",
@@ -234,6 +239,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -311,19 +317,25 @@
   },
   "anorexia": {
     "display_name": "Anorexia",
-    "claim_count": 5,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000268"
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000079",
+        "WAL-CLM-LETS-000003",
         "WAL-CLM-RARE-000172",
         "WAL-CLM-RARE-000235",
         "WAL-CLM-RARE-000264"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-LETS-000005"
       ]
     },
     "essentials_involved": [
+      "biotin",
+      "calcium",
       "lithium",
       "magnesium",
       "vitamin-b3",
@@ -332,6 +344,7 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -355,8 +368,11 @@
   },
   "anxiety": {
     "display_name": "Anxiety",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-LETS-000006"
+      ],
       "protocols": [
         "WAL-CLM-DDDL-000078",
         "WAL-CLM-RARE-000276",
@@ -375,6 +391,7 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -415,7 +432,7 @@
   },
   "arteriosclerosis": {
     "display_name": "Arteriosclerosis",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000082"
@@ -425,6 +442,9 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-RARE-000172"
+      ],
+      "definitions": [
+        "WAL-CLM-LETS-000001"
       ],
       "protocols": [
         "WAL-CLM-RARE-000202"
@@ -438,12 +458,13 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 15,
+    "claim_count": 17,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
@@ -451,12 +472,14 @@
       "deficiency_signs": [
         "WAL-CLM-DDDL-000012",
         "WAL-CLM-DDDL-000032",
+        "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000011",
         "WAL-CLM-RARE-000223",
         "WAL-CLM-RARE-000230",
         "WAL-CLM-RARE-000275"
       ],
       "definitions": [
+        "WAL-CLM-LETS-000001",
         "WAL-CLM-RARE-000105",
         "WAL-CLM-RARE-000122"
       ],
@@ -495,6 +518,7 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -732,9 +756,10 @@
   },
   "bone_spurs": {
     "display_name": "Bone Spurs",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000275"
       ]
     },
@@ -752,6 +777,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -820,7 +846,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 26,
+    "claim_count": 27,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -841,6 +867,9 @@
         "WAL-CLM-RARE-000241",
         "WAL-CLM-RARE-000270",
         "WAL-CLM-RARE-000275"
+      ],
+      "definitions": [
+        "WAL-CLM-LETS-000001"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -888,6 +917,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1407,7 +1437,7 @@
   },
   "cystic_fibrosis": {
     "display_name": "Cystic Fibrosis",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000004",
@@ -1418,6 +1448,7 @@
         "WAL-CLM-RARE-000269"
       ],
       "definitions": [
+        "WAL-CLM-LETS-000001",
         "WAL-CLM-RARE-000049"
       ]
     },
@@ -1430,6 +1461,7 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1478,10 +1510,13 @@
   },
   "dementia": {
     "display_name": "Dementia",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000235"
+      ],
+      "definitions": [
+        "WAL-CLM-LETS-000001"
       ],
       "protocols": [
         "WAL-CLM-RARE-000282"
@@ -1501,6 +1536,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1522,12 +1558,14 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 12,
+    "claim_count": 15,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000161"
       ],
       "deficiency_signs": [
+        "WAL-CLM-LETS-000003",
+        "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000163",
         "WAL-CLM-RARE-000172",
         "WAL-CLM-RARE-000233",
@@ -1545,6 +1583,9 @@
       ],
       "protocols": [
         "WAL-CLM-RARE-000278"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-LETS-000005"
       ]
     },
     "essentials_involved": [
@@ -1561,21 +1602,26 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
   "dermatitis": {
     "display_name": "Dermatitis",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000193",
         "WAL-CLM-RARE-000229",
         "WAL-CLM-RARE-000235",
         "WAL-CLM-RARE-000236"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-LETS-000007"
       ]
     },
     "essentials_involved": [
+      "chromium",
       "nickel",
       "vitamin-a",
       "vitamin-b3",
@@ -1583,12 +1629,13 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
   "diabetes": {
     "display_name": "Diabetes",
-    "claim_count": 18,
+    "claim_count": 20,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-DDDL-000008"
@@ -1604,6 +1651,8 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000017",
+        "WAL-CLM-LETS-000003",
+        "WAL-CLM-LETS-000006",
         "WAL-CLM-RARE-000257",
         "WAL-CLM-RARE-000275"
       ],
@@ -1628,6 +1677,7 @@
       ]
     },
     "essentials_involved": [
+      "biotin",
       "boron",
       "calcium",
       "chromium",
@@ -1645,6 +1695,7 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1689,24 +1740,27 @@
   },
   "eczema": {
     "display_name": "Eczema",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000111"
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000065",
+        "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000240"
       ]
     },
     "essentials_involved": [
       "biotin",
+      "calcium",
       "omega-3",
       "omega-6"
     ],
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1925,10 +1979,13 @@
   },
   "heart_attack": {
     "display_name": "Heart Attack",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000030"
+      ],
+      "definitions": [
+        "WAL-CLM-LETS-000001"
       ]
     },
     "essentials_involved": [
@@ -1936,7 +1993,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "lets-play-doctor"
     ]
   },
   "heart_defects": {
@@ -2009,12 +2067,14 @@
   },
   "high_cholesterol": {
     "display_name": "High Cholesterol",
-    "claim_count": 4,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000256"
       ],
       "deficiency_signs": [
+        "WAL-CLM-LETS-000003",
+        "WAL-CLM-LETS-000006",
         "WAL-CLM-RARE-000257"
       ],
       "definitions": [
@@ -2025,12 +2085,15 @@
       ]
     },
     "essentials_involved": [
+      "biotin",
+      "chromium",
       "copper",
       "silica",
       "vanadium"
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -2085,9 +2148,10 @@
   },
   "hyperactivity": {
     "display_name": "Hyperactivity",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000163"
       ],
       "definitions": [
@@ -2098,6 +2162,7 @@
       ]
     },
     "essentials_involved": [
+      "calcium",
       "chromium",
       "lithium"
     ],
@@ -2105,6 +2170,7 @@
       "lead"
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -2154,12 +2220,13 @@
   },
   "hypertension": {
     "display_name": "Hypertension",
-    "claim_count": 6,
+    "claim_count": 8,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000107"
       ],
       "deficiency_signs": [
+        "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000275"
       ],
       "definitions": [
@@ -2171,6 +2238,9 @@
       ],
       "protocols": [
         "WAL-CLM-RARE-000286"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-LETS-000005"
       ]
     },
     "essentials_involved": [
@@ -2190,6 +2260,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -2211,13 +2282,14 @@
   },
   "hypoglycemia": {
     "display_name": "Hypoglycemia",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000254"
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000017",
+        "WAL-CLM-LETS-000006",
         "WAL-CLM-RARE-000257"
       ],
       "definitions": [
@@ -2236,6 +2308,7 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -2373,8 +2446,12 @@
   },
   "insomnia": {
     "display_name": "Insomnia",
-    "claim_count": 4,
+    "claim_count": 6,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-LETS-000003",
+        "WAL-CLM-LETS-000004"
+      ],
       "definitions": [
         "WAL-CLM-RARE-000105"
       ],
@@ -2385,6 +2462,7 @@
       ]
     },
     "essentials_involved": [
+      "biotin",
       "calcium",
       "chromium",
       "lithium",
@@ -2394,6 +2472,7 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -2474,6 +2553,24 @@
     "books_cited": [
       "dddl-3e-2011",
       "rare-earths"
+    ]
+  },
+  "kidney_disease": {
+    "display_name": "Kidney Disease",
+    "claim_count": 2,
+    "claims_by_role": {
+      "toxicity_signs": [
+        "WAL-CLM-LETS-000005",
+        "WAL-CLM-LETS-000007"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "chromium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "kidney_stones": {
@@ -2609,6 +2706,24 @@
     "books_cited": [
       "dddl-3e-2011",
       "rare-earths"
+    ]
+  },
+  "liver_disease": {
+    "display_name": "Liver Disease",
+    "claim_count": 2,
+    "claims_by_role": {
+      "toxicity_signs": [
+        "WAL-CLM-LETS-000005",
+        "WAL-CLM-LETS-000007"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "chromium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "low_libido": {
@@ -2832,7 +2947,7 @@
   },
   "muscular_dystrophy": {
     "display_name": "Muscular Dystrophy",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000071",
@@ -2844,6 +2959,7 @@
         "WAL-CLM-RARE-000269"
       ],
       "definitions": [
+        "WAL-CLM-LETS-000001",
         "WAL-CLM-RARE-000049"
       ],
       "prognosis": [
@@ -2861,6 +2977,7 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -2933,9 +3050,10 @@
   },
   "osteomalacia": {
     "display_name": "Osteomalacia",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000230"
       ],
       "prevalence": [
@@ -2949,12 +3067,13 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 17,
+    "claim_count": 19,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052",
@@ -2966,12 +3085,14 @@
       "deficiency_signs": [
         "WAL-CLM-DDDL-000012",
         "WAL-CLM-DDDL-000032",
+        "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000011",
         "WAL-CLM-RARE-000230",
         "WAL-CLM-RARE-000232",
         "WAL-CLM-RARE-000275"
       ],
       "definitions": [
+        "WAL-CLM-LETS-000001",
         "WAL-CLM-RARE-000105"
       ],
       "diagnostics": [
@@ -3014,6 +3135,7 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -3158,19 +3280,43 @@
   },
   "peptic_ulcers": {
     "display_name": "Peptic Ulcers",
-    "claim_count": 2,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000101"
       ],
       "protocols": [
         "WAL-CLM-RARE-000102"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-LETS-000005",
+        "WAL-CLM-LETS-000007"
       ]
     },
-    "essentials_involved": [],
+    "essentials_involved": [
+      "calcium",
+      "chromium"
+    ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "periodontal_disease": {
+    "display_name": "Periodontal Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-LETS-000004"
+      ]
+    },
+    "essentials_involved": [
+      "calcium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "peripheral_neuropathy": {
@@ -3235,7 +3381,7 @@
   },
   "pica": {
     "display_name": "Pica",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-RARE-000036"
@@ -3245,15 +3391,20 @@
         "WAL-CLM-RARE-000037",
         "WAL-CLM-RARE-000040",
         "WAL-CLM-RARE-000211"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-LETS-000004"
       ]
     },
     "essentials_involved": [
+      "calcium",
       "iron"
     ],
     "other_substances_involved": [
       "lead"
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -3271,6 +3422,36 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "psychosis": {
+    "display_name": "Psychosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "toxicity_signs": [
+        "WAL-CLM-LETS-000005"
+      ]
+    },
+    "essentials_involved": [
+      "calcium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "pyorrhea": {
+    "display_name": "Pyorrhea",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-LETS-000001"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "repetitive_motion_syndrome": {
@@ -3335,17 +3516,20 @@
   },
   "rickets": {
     "display_name": "Rickets",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000230"
       ]
     },
     "essentials_involved": [
+      "calcium",
       "vitamin-d"
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -3544,9 +3728,10 @@
   },
   "tetany": {
     "display_name": "Tetany",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000172"
       ],
       "definitions": [
@@ -3559,6 +3744,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -3626,6 +3812,22 @@
     "books_cited": [
       "dddl-3e-2011",
       "rare-earths"
+    ]
+  },
+  "tooth_decay": {
+    "display_name": "Tooth Decay",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-LETS-000004"
+      ]
+    },
+    "essentials_involved": [
+      "calcium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "tourette_syndrome": {

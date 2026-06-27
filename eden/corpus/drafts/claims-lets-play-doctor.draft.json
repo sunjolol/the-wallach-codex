@@ -1,0 +1,311 @@
+{
+  "schema_version": 1,
+  "book_id": "lets-play-doctor",
+  "knowledge_version": null,
+  "claims": [
+    {
+      "id": "WAL-CLM-LETS-000001",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "arthritis",
+        "osteoporosis",
+        "arteriosclerosis",
+        "dementia",
+        "muscular_dystrophy",
+        "cystic_fibrosis",
+        "pyorrhea",
+        "heart_attack",
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach holds that taking vitamins and minerals only at Recommended Daily Allowance (RDA) levels is better than nothing but will not prevent serious degenerative diseases — among them arthritis, osteoporosis, arteriosclerosis, senile dementia, muscular dystrophy, cystic fibrosis, pyorrhea (gum disease), heart attack and cancer.",
+      "verbatim": "Food supplements at RDA\nlevels are better than nothing but will not\nprevent serious disease (i.e., arthritis,\nosteoporosis, arteriosclerosis, senile dementia,\nmuscular dystrophy, cystic fibrosis, pyorrhea,\nheart attack, cancer, etc.).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "8",
+        "page": 71,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 131246
+      },
+      "dose": null,
+      "tags": [
+        "rda-inadequacy",
+        "supplement-philosophy",
+        "xref:WAL-CLM-RARE-000075"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T21:43:04+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000002",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach distinguishes \"preventive doses\" of vitamins and minerals — fairly well established, and considerably higher than the Recommended Daily Allowance (RDA) but below the \"megavitamin\" range — from megavitamin levels, which he reserves for extraordinary situations and specific diseases.",
+      "verbatim": "\"Preventive doses\" of vitamin\nandminerals are fairly well established (Table\n8-1). These are considerably higher than\nRDAs but not in the \"megavitamin\" range.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "8",
+        "page": 71,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 131481
+      },
+      "dose": null,
+      "tags": [
+        "dose-tiers",
+        "preventive-dose"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T21:43:04+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000003",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "biotin"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "alopecia",
+        "anemia",
+        "anorexia",
+        "depression",
+        "high_cholesterol",
+        "diabetes",
+        "insomnia"
+      ],
+      "symptoms": [
+        "nausea",
+        "fatigue",
+        "myalgia",
+        "muscle_weakness",
+        "dry_skin",
+        "smooth_tongue"
+      ],
+      "claim_text": "Wallach lists the signs of biotin deficiency: hair loss (alopecia), anemia, loss of appetite with nausea, depression, fatigue, high cholesterol, high blood sugar (diabetes), insomnia, muscle pain, muscle weakness, dry greyish skin, and a pale smooth tongue.",
+      "verbatim": "BIOTIN DEFICIENCY\nalopecia\nanemia\nanorexia and nausea\ndepression\nfatigue\nhypercholesterolemia\nhyperglycemia (diabetes)\ninsomnia\nmuscle pain\nmuscle weakness\ndry, greyish skin\npale smooth tongue",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 44,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 86219
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T21:43:04+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000004",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "arthritis",
+        "bone_spurs",
+        "depression",
+        "eczema",
+        "hyperactivity",
+        "hypertension",
+        "insomnia",
+        "osteomalacia",
+        "osteoporosis",
+        "periodontal_disease",
+        "pica",
+        "rickets",
+        "tetany",
+        "tooth_decay"
+      ],
+      "symptoms": [
+        "brittle_nails",
+        "cognitive_impairment",
+        "delusions",
+        "irritability",
+        "numbness",
+        "muscle_cramps",
+        "nervousness",
+        "neuromuscular_excitability",
+        "palpitations",
+        "paresthesia",
+        "retarded_growth"
+      ],
+      "claim_text": "Wallach lists the signs of calcium deficiency: arthritis, bone spurs, brittle fingernails, cognitive impairment, delusions, depression, eczema, hyperactivity, high blood pressure, insomnia, irritability, limb numbness, muscle cramps, nervousness, neuromuscular excitability, osteomalacia, osteoporosis, heart palpitations, paresthesia (numbness and tingling), periodontal (gum) disease, pica, rickets, retarded growth, tetany, and tooth decay.",
+      "verbatim": "CALCIUM DEFICIENCY\narthritis\nbone spurs\nbrittle fingernails\ncognitive impairment\ndelusions\ndepression\neczema\nhyperactivity\nhypertension\ninsomnia\nirritability\nlimb numbness\nmuscle cramps\nnervousness\nneuromuscular excitability\nosteomalacia\nosteoporosis\npalpitations\nparesthesia\nperiodontal disease\npica (eating lead paint)\nrickets\nretarded growth\ntetany\ntooth decay",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 44,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 86412
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T21:43:04+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000005",
+      "kind": "toxicity_sign",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anorexia",
+        "depression",
+        "psychosis",
+        "hypertension",
+        "kidney_disease",
+        "liver_disease",
+        "peptic_ulcers"
+      ],
+      "symptoms": [
+        "aphasia",
+        "ataxia",
+        "irritability",
+        "poor_memory",
+        "muscle_weakness",
+        "irregular_heartbeat",
+        "fat_intolerance",
+        "retarded_growth"
+      ],
+      "claim_text": "Wallach lists the signs of calcium toxicity (excess): anorexia, aphasia (loss of speech), ataxia (loss of coordination), depression, irritability, memory loss, muscle weakness, psychosis, arrhythmias, fat intolerance, gastric ulcers, growth retardation, high blood pressure, kidney disease, and liver impairment.",
+      "verbatim": "CALCIUM TOXICITY\nanorexia\naphasia\nataxia\ndepression\nirritability\nmemory loss\nmuscle weakness\npsychosis\narrhythmias\nfat intolerance\ngastric ulcers\ngrowth retardation\nhypertension\nkidney disease\nliver impairment",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 44,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 86776
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "toxicity-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T21:43:04+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000006",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "chromium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anxiety",
+        "hypoglycemia",
+        "diabetes",
+        "high_cholesterol"
+      ],
+      "symptoms": [
+        "fatigue",
+        "retarded_growth",
+        "shortened_lifespan"
+      ],
+      "claim_text": "Wallach lists the signs of chromium deficiency: anxiety, fatigue, hypoglycemia (low blood sugar), diabetes, retarded growth with a shortened lifespan, and high cholesterol.",
+      "verbatim": "CHROMIUM DEFICIENCY\nanxiety\nfatigue\nhypoglycemia\ndiabetes\nretarded growth / short life span\nhypercholesterolemia",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 44,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 86986
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T21:43:04+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000007",
+      "kind": "toxicity_sign",
+      "essentials": [
+        "chromium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "dermatitis",
+        "peptic_ulcers",
+        "kidney_disease",
+        "liver_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach lists the signs of chromium toxicity (excess): dermatitis, gastrointestinal ulcers, kidney dysfunction, and liver dysfunction.",
+      "verbatim": "CHROMIUM TOXICITY\ndermatitis\nG I ulcers\nkidney dysfunction\nliver dysfunction",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 44,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 87099
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "toxicity-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T21:43:04+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    }
+  ]
+}
