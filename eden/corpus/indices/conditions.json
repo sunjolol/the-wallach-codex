@@ -355,15 +355,18 @@
   },
   "anxiety": {
     "display_name": "Anxiety",
-    "claim_count": 1,
+    "claim_count": 3,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-DDDL-000078"
+        "WAL-CLM-DDDL-000078",
+        "WAL-CLM-RARE-000276",
+        "WAL-CLM-RARE-000277"
       ]
     },
     "essentials_involved": [
       "calcium",
       "chromium",
+      "lithium",
       "magnesium",
       "vanadium",
       "vitamin-b3",
@@ -371,7 +374,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "aphthous_stomatitis": {
@@ -439,7 +443,7 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 14,
+    "claim_count": 15,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
@@ -465,7 +469,8 @@
       ],
       "protocols": [
         "WAL-CLM-DDDL-000051",
-        "WAL-CLM-RARE-000096"
+        "WAL-CLM-RARE-000096",
+        "WAL-CLM-RARE-000279"
       ]
     },
     "essentials_involved": [
@@ -476,6 +481,7 @@
       "germanium",
       "gold",
       "iron",
+      "lithium",
       "magnesium",
       "phosphorus",
       "selenium",
@@ -1472,13 +1478,25 @@
   },
   "dementia": {
     "display_name": "Dementia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000235"
+      ],
+      "protocols": [
+        "WAL-CLM-RARE-000282"
       ]
     },
     "essentials_involved": [
+      "calcium",
+      "chromium",
+      "gallium",
+      "germanium",
+      "lithium",
+      "oxygen",
+      "selenium",
+      "vanadium",
+      "vitamin-b1",
       "vitamin-b3"
     ],
     "other_substances_involved": [],
@@ -1504,7 +1522,7 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000161"
@@ -1524,13 +1542,18 @@
       "prevalence": [
         "WAL-CLM-RARE-000160",
         "WAL-CLM-RARE-000162"
+      ],
+      "protocols": [
+        "WAL-CLM-RARE-000278"
       ]
     },
     "essentials_involved": [
       "biotin",
+      "calcium",
       "chromium",
       "lithium",
       "magnesium",
+      "vanadium",
       "vitamin-b1",
       "vitamin-b5",
       "vitamin-b6",
@@ -1565,7 +1588,7 @@
   },
   "diabetes": {
     "display_name": "Diabetes",
-    "claim_count": 17,
+    "claim_count": 18,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-DDDL-000008"
@@ -1597,7 +1620,8 @@
       ],
       "protocols": [
         "WAL-CLM-DDDL-000048",
-        "WAL-CLM-DDDL-000049"
+        "WAL-CLM-DDDL-000049",
+        "WAL-CLM-RARE-000280"
       ],
       "quotes": [
         "WAL-CLM-DDDL-000047"
@@ -2130,7 +2154,7 @@
   },
   "hypertension": {
     "display_name": "Hypertension",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000107"
@@ -2144,6 +2168,9 @@
       "interactions": [
         "WAL-CLM-RARE-000086",
         "WAL-CLM-RARE-000206"
+      ],
+      "protocols": [
+        "WAL-CLM-RARE-000286"
       ]
     },
     "essentials_involved": [
@@ -2152,11 +2179,13 @@
       "chromium",
       "copper",
       "magnesium",
+      "omega-3",
       "phosphorus",
       "selenium",
       "sulfur",
       "tin",
       "vanadium",
+      "vitamin-b6",
       "zinc"
     ],
     "other_substances_involved": [],
@@ -2344,18 +2373,22 @@
   },
   "insomnia": {
     "display_name": "Insomnia",
-    "claim_count": 2,
+    "claim_count": 4,
     "claims_by_role": {
       "definitions": [
         "WAL-CLM-RARE-000105"
       ],
       "protocols": [
-        "WAL-CLM-DDDL-000075"
+        "WAL-CLM-DDDL-000075",
+        "WAL-CLM-RARE-000276",
+        "WAL-CLM-RARE-000277"
       ]
     },
     "essentials_involved": [
       "calcium",
       "chromium",
+      "lithium",
+      "magnesium",
       "vanadium"
     ],
     "other_substances_involved": [],
@@ -2776,19 +2809,25 @@
   },
   "muscle_cramps": {
     "display_name": "Muscle Cramps",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000074"
+      ],
+      "protocols": [
+        "WAL-CLM-RARE-000284"
       ]
     },
     "essentials_involved": [
+      "boron",
       "calcium",
+      "lithium",
       "magnesium"
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "muscular_dystrophy": {

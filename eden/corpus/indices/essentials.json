@@ -78,7 +78,7 @@
     "display_name": "Oxygen",
     "canon_slug": "oxygen",
     "category": "mineral",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-RARE-000195"
@@ -95,7 +95,8 @@
         "WAL-CLM-RARE-000203"
       ],
       "protocol": [
-        "WAL-CLM-RARE-000202"
+        "WAL-CLM-RARE-000202",
+        "WAL-CLM-RARE-000282"
       ]
     },
     "deficiency_signs": [],
@@ -104,11 +105,22 @@
       "asthma",
       "cancer",
       "circulatory_disease",
+      "dementia",
       "emphysema",
       "gangrene",
       "stroke"
     ],
-    "interacts_with": [],
+    "interacts_with": [
+      "calcium",
+      "chromium",
+      "gallium",
+      "germanium",
+      "lithium",
+      "selenium",
+      "vanadium",
+      "vitamin-b1",
+      "vitamin-b3"
+    ],
     "books_cited": [
       "rare-earths"
     ]
@@ -167,7 +179,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 22,
+    "claim_count": 30,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -201,7 +213,15 @@
         "WAL-CLM-DDDL-000078",
         "WAL-CLM-DDDL-000086",
         "WAL-CLM-DDDL-000088",
-        "WAL-CLM-DDDL-000092"
+        "WAL-CLM-DDDL-000092",
+        "WAL-CLM-RARE-000276",
+        "WAL-CLM-RARE-000277",
+        "WAL-CLM-RARE-000278",
+        "WAL-CLM-RARE-000279",
+        "WAL-CLM-RARE-000281",
+        "WAL-CLM-RARE-000283",
+        "WAL-CLM-RARE-000284",
+        "WAL-CLM-RARE-000286"
       ]
     },
     "deficiency_signs": [
@@ -256,6 +276,7 @@
       "depression",
       "diabetes",
       "hypertension",
+      "insomnia",
       "kidney_stones",
       "malabsorption",
       "menopause",
@@ -272,7 +293,9 @@
       "chromium",
       "copper",
       "iron",
+      "lithium",
       "manganese",
+      "omega-3",
       "potassium",
       "selenium",
       "sulfur",
@@ -281,6 +304,7 @@
       "vitamin-b12",
       "vitamin-b3",
       "vitamin-b6",
+      "vitamin-e",
       "zinc"
     ],
     "books_cited": [
@@ -459,7 +483,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 28,
+    "claim_count": 37,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -503,7 +527,16 @@
         "WAL-CLM-DDDL-000078",
         "WAL-CLM-DDDL-000086",
         "WAL-CLM-DDDL-000088",
-        "WAL-CLM-DDDL-000092"
+        "WAL-CLM-DDDL-000092",
+        "WAL-CLM-RARE-000276",
+        "WAL-CLM-RARE-000277",
+        "WAL-CLM-RARE-000278",
+        "WAL-CLM-RARE-000279",
+        "WAL-CLM-RARE-000281",
+        "WAL-CLM-RARE-000282",
+        "WAL-CLM-RARE-000284",
+        "WAL-CLM-RARE-000285",
+        "WAL-CLM-RARE-000286"
       ]
     },
     "deficiency_signs": [],
@@ -523,6 +556,8 @@
       "celiac_disease",
       "colorectal_cancer",
       "deafness",
+      "dementia",
+      "depression",
       "diabetes",
       "hypertension",
       "insomnia",
@@ -544,8 +579,13 @@
       "boron",
       "chromium",
       "copper",
+      "gallium",
+      "germanium",
       "iron",
+      "lithium",
       "magnesium",
+      "omega-3",
+      "oxygen",
       "phosphorus",
       "potassium",
       "selenium",
@@ -554,6 +594,7 @@
       "sulfur",
       "tin",
       "vanadium",
+      "vitamin-b1",
       "vitamin-b12",
       "vitamin-b3",
       "vitamin-b6",
@@ -568,7 +609,7 @@
     "display_name": "Boron",
     "canon_slug": "boron",
     "category": "mineral",
-    "claim_count": 3,
+    "claim_count": 5,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000275"
@@ -576,6 +617,10 @@
       "mechanism": [
         "WAL-CLM-RARE-000098",
         "WAL-CLM-RARE-000099"
+      ],
+      "protocol": [
+        "WAL-CLM-RARE-000279",
+        "WAL-CLM-RARE-000284"
       ]
     },
     "deficiency_signs": [],
@@ -589,12 +634,14 @@
       "deafness",
       "diabetes",
       "hypertension",
+      "muscle_cramps",
       "osteoporosis"
     ],
     "interacts_with": [
       "calcium",
       "chromium",
       "copper",
+      "lithium",
       "magnesium",
       "selenium",
       "sulfur",
@@ -637,7 +684,7 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 21,
+    "claim_count": 26,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -674,7 +721,12 @@
       "protocol": [
         "WAL-CLM-DDDL-000048",
         "WAL-CLM-DDDL-000075",
-        "WAL-CLM-DDDL-000078"
+        "WAL-CLM-DDDL-000078",
+        "WAL-CLM-RARE-000276",
+        "WAL-CLM-RARE-000277",
+        "WAL-CLM-RARE-000278",
+        "WAL-CLM-RARE-000280",
+        "WAL-CLM-RARE-000282"
       ]
     },
     "deficiency_signs": [
@@ -704,6 +756,7 @@
       "coronary_artery_disease",
       "criminal_behavior",
       "deafness",
+      "dementia",
       "depression",
       "diabetes",
       "explosive_outbursts",
@@ -725,15 +778,19 @@
       "boron",
       "calcium",
       "copper",
+      "gallium",
+      "germanium",
       "iodine",
       "iron",
       "lithium",
       "magnesium",
+      "oxygen",
       "selenium",
       "sodium",
       "sulfur",
       "tin",
       "vanadium",
+      "vitamin-b1",
       "vitamin-b3",
       "vitamin-b6",
       "zinc"
@@ -747,7 +804,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 21,
+    "claim_count": 23,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
@@ -782,7 +839,9 @@
         "WAL-CLM-RARE-000149"
       ],
       "protocol": [
-        "WAL-CLM-DDDL-000049"
+        "WAL-CLM-DDDL-000049",
+        "WAL-CLM-RARE-000279",
+        "WAL-CLM-RARE-000281"
       ]
     },
     "deficiency_signs": [
@@ -852,7 +911,7 @@
     "display_name": "Germanium",
     "canon_slug": "germanium",
     "category": "mineral",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000012",
@@ -866,7 +925,8 @@
         "WAL-CLM-RARE-000013"
       ],
       "protocol": [
-        "WAL-CLM-DDDL-000070"
+        "WAL-CLM-DDDL-000070",
+        "WAL-CLM-RARE-000282"
       ]
     },
     "deficiency_signs": [
@@ -884,13 +944,22 @@
     "conditions_treated": [
       "arthritis",
       "cancer",
+      "dementia",
       "infertility",
       "osteoporosis"
     ],
     "interacts_with": [
       "arginine",
+      "calcium",
+      "chromium",
+      "gallium",
+      "lithium",
+      "oxygen",
       "selenium",
+      "vanadium",
       "vitamin-a",
+      "vitamin-b1",
+      "vitamin-b3",
       "zinc"
     ],
     "books_cited": [
@@ -1068,7 +1137,7 @@
     "display_name": "Manganese",
     "canon_slug": "manganese",
     "category": "mineral",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000175"
@@ -1087,6 +1156,9 @@
       ],
       "prevalence": [
         "WAL-CLM-RARE-000177"
+      ],
+      "protocol": [
+        "WAL-CLM-RARE-000283"
       ]
     },
     "deficiency_signs": [
@@ -1132,7 +1204,10 @@
       "tmj"
     ],
     "interacts_with": [
-      "magnesium"
+      "magnesium",
+      "omega-3",
+      "selenium",
+      "vitamin-e"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -1174,7 +1249,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 27,
+    "claim_count": 31,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -1212,7 +1287,11 @@
         "WAL-CLM-DDDL-000070",
         "WAL-CLM-DDDL-000073",
         "WAL-CLM-DDDL-000081",
-        "WAL-CLM-DDDL-000085"
+        "WAL-CLM-DDDL-000085",
+        "WAL-CLM-RARE-000279",
+        "WAL-CLM-RARE-000281",
+        "WAL-CLM-RARE-000282",
+        "WAL-CLM-RARE-000283"
       ],
       "quote": [
         "WAL-CLM-RARE-000228"
@@ -1247,6 +1326,7 @@
       "cor_pulmonale",
       "cystic_fibrosis",
       "deafness",
+      "dementia",
       "diabetes",
       "heart_attack",
       "hiv_aids",
@@ -1272,13 +1352,20 @@
       "calcium",
       "chromium",
       "copper",
+      "gallium",
       "germanium",
+      "lithium",
       "magnesium",
+      "manganese",
+      "omega-3",
+      "oxygen",
       "sulfur",
       "tin",
       "vanadium",
       "vitamin-a",
+      "vitamin-b1",
       "vitamin-b2",
+      "vitamin-b3",
       "vitamin-e",
       "zinc"
     ],
@@ -1360,7 +1447,7 @@
     "display_name": "Vanadium",
     "canon_slug": "vanadium",
     "category": "mineral",
-    "claim_count": 22,
+    "claim_count": 27,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -1393,7 +1480,12 @@
       "protocol": [
         "WAL-CLM-DDDL-000048",
         "WAL-CLM-DDDL-000075",
-        "WAL-CLM-DDDL-000078"
+        "WAL-CLM-DDDL-000078",
+        "WAL-CLM-RARE-000276",
+        "WAL-CLM-RARE-000277",
+        "WAL-CLM-RARE-000278",
+        "WAL-CLM-RARE-000280",
+        "WAL-CLM-RARE-000282"
       ],
       "quote": [
         "WAL-CLM-DDDL-000047"
@@ -1424,6 +1516,8 @@
       "cataracts",
       "coronary_artery_disease",
       "deafness",
+      "dementia",
+      "depression",
       "diabetes",
       "explosive_outbursts",
       "high_cholesterol",
@@ -1445,13 +1539,17 @@
       "calcium",
       "chromium",
       "copper",
+      "gallium",
+      "germanium",
       "iron",
       "lithium",
       "magnesium",
+      "oxygen",
       "selenium",
       "sodium",
       "sulfur",
       "tin",
+      "vitamin-b1",
       "vitamin-b3",
       "vitamin-b6",
       "zinc"
@@ -1465,7 +1563,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 31,
+    "claim_count": 32,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -1506,7 +1604,8 @@
         "WAL-CLM-DDDL-000070",
         "WAL-CLM-DDDL-000080",
         "WAL-CLM-DDDL-000085",
-        "WAL-CLM-RARE-000045"
+        "WAL-CLM-RARE-000045",
+        "WAL-CLM-RARE-000280"
       ]
     },
     "deficiency_signs": [
@@ -1810,17 +1909,31 @@
     "display_name": "Gallium",
     "canon_slug": "gallium",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-RARE-000132"
+      ],
+      "protocol": [
+        "WAL-CLM-RARE-000282"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [
-      "brain_cancer"
+      "brain_cancer",
+      "dementia"
     ],
-    "interacts_with": [],
+    "interacts_with": [
+      "calcium",
+      "chromium",
+      "germanium",
+      "lithium",
+      "oxygen",
+      "selenium",
+      "vanadium",
+      "vitamin-b1",
+      "vitamin-b3"
+    ],
     "books_cited": [
       "rare-earths"
     ]
@@ -1883,7 +1996,7 @@
     "display_name": "Lithium",
     "canon_slug": "lithium",
     "category": "mineral",
-    "claim_count": 14,
+    "claim_count": 21,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000079",
@@ -1912,6 +2025,15 @@
       ],
       "prevalence": [
         "WAL-CLM-RARE-000160"
+      ],
+      "protocol": [
+        "WAL-CLM-RARE-000276",
+        "WAL-CLM-RARE-000277",
+        "WAL-CLM-RARE-000278",
+        "WAL-CLM-RARE-000279",
+        "WAL-CLM-RARE-000282",
+        "WAL-CLM-RARE-000284",
+        "WAL-CLM-RARE-000285"
       ]
     },
     "deficiency_signs": [
@@ -1949,21 +2071,35 @@
     "conditions_treated": [
       "adhd",
       "anorexia",
+      "anxiety",
+      "arthritis",
       "bipolar_disorder",
       "blind_rage",
       "criminal_behavior",
+      "dementia",
       "depression",
       "explosive_outbursts",
       "hyperactivity",
       "infertility",
+      "insomnia",
+      "muscle_cramps",
       "violent_behavior"
     ],
     "interacts_with": [
+      "boron",
+      "calcium",
       "chromium",
       "copper",
+      "gallium",
+      "germanium",
+      "magnesium",
+      "oxygen",
+      "selenium",
       "sodium",
       "vanadium",
+      "vitamin-b1",
       "vitamin-b12",
+      "vitamin-b3",
       "zinc"
     ],
     "books_cited": [
@@ -2349,11 +2485,14 @@
     "display_name": "Thiamine",
     "canon_slug": "vitamin-b1",
     "category": "vitamin",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000043",
         "WAL-CLM-RARE-000233"
+      ],
+      "protocol": [
+        "WAL-CLM-RARE-000282"
       ]
     },
     "deficiency_signs": [
@@ -2396,10 +2535,21 @@
     "conditions_treated": [
       "beriberi",
       "congestive_heart_failure",
+      "dementia",
       "depression",
       "wernicke_korsakoff_syndrome"
     ],
-    "interacts_with": [],
+    "interacts_with": [
+      "calcium",
+      "chromium",
+      "gallium",
+      "germanium",
+      "lithium",
+      "oxygen",
+      "selenium",
+      "vanadium",
+      "vitamin-b3"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "rare-earths"
@@ -2451,14 +2601,15 @@
     "display_name": "Niacin",
     "canon_slug": "vitamin-b3",
     "category": "vitamin",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000235"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000049",
-        "WAL-CLM-DDDL-000078"
+        "WAL-CLM-DDDL-000078",
+        "WAL-CLM-RARE-000282"
       ]
     },
     "deficiency_signs": [
@@ -2486,8 +2637,14 @@
       "calcium",
       "chromium",
       "copper",
+      "gallium",
+      "germanium",
+      "lithium",
       "magnesium",
+      "oxygen",
+      "selenium",
       "vanadium",
+      "vitamin-b1",
       "vitamin-b12",
       "vitamin-b6",
       "zinc"
@@ -2547,14 +2704,15 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000237"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000055",
-        "WAL-CLM-DDDL-000078"
+        "WAL-CLM-DDDL-000078",
+        "WAL-CLM-RARE-000286"
       ]
     },
     "deficiency_signs": [
@@ -2584,6 +2742,7 @@
       "cradle_cap",
       "depression",
       "hyperirritability",
+      "hypertension",
       "panic_attacks",
       "peripheral_neuropathy",
       "seborrheic_dermatitis",
@@ -2593,6 +2752,7 @@
       "calcium",
       "chromium",
       "magnesium",
+      "omega-3",
       "vanadium",
       "vitamin-b3",
       "zinc"
@@ -2810,7 +2970,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -2823,7 +2983,8 @@
         "WAL-CLM-DDDL-000072"
       ],
       "protocol": [
-        "WAL-CLM-DDDL-000073"
+        "WAL-CLM-DDDL-000073",
+        "WAL-CLM-RARE-000283"
       ]
     },
     "deficiency_signs": [
@@ -2870,6 +3031,9 @@
       "muscular_dystrophy"
     ],
     "interacts_with": [
+      "magnesium",
+      "manganese",
+      "omega-3",
       "selenium",
       "vitamin-b2",
       "vitamin-k",
@@ -3233,7 +3397,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 6,
+    "claim_count": 8,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065"
@@ -3246,14 +3410,25 @@
         "WAL-CLM-DDDL-000064",
         "WAL-CLM-RARE-000110",
         "WAL-CLM-RARE-000111"
+      ],
+      "protocol": [
+        "WAL-CLM-RARE-000283",
+        "WAL-CLM-RARE-000286"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [
-      "eczema"
+      "eczema",
+      "hypertension"
     ],
     "interacts_with": [
-      "omega-6"
+      "calcium",
+      "magnesium",
+      "manganese",
+      "omega-6",
+      "selenium",
+      "vitamin-b6",
+      "vitamin-e"
     ],
     "books_cited": [
       "dddl-3e-2011",
