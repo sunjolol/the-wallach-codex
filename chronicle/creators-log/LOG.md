@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_103 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_104 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-27 00:16 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 55 — Zn/Zinc finale pt2: functions. 4 claims RARE-265..268 (metalloenzymes, body content 1.4-2.3g, essentiality timeline, sweat->athletes). ZINC COMPLETE (7 claims b54+b55). Luneth-ruled Zine->Zinc + spacial->spatial. kv 96->98, corpus 362, board 30/30.
+  ↳ NEW angles beyond DDDL-037/038/040: specific metalloenzymes (carbonic anhydrase/alk phosphatase/lactic DH/carboxypeptidase + RNA polymerase/thymidine kinase), body reserves, late-essentiality timeline (bread mold 100yr/rats 50yr/humans 20yr), sweat-loss athletes-at-risk. Skipped DDDL dups. Luneth fixes: Zine->Zinc (obvious, not in verbatim) + spacial->spatial (context=geometric, in RARE-265 verbatim via resnap --fix). Deferred 2 reference-section Zine typos to the .txt cleanup pass. SESSION 7 WRAP (batches 50-55, corpus 340->362). NEXT fresh genesis = Zr/Zirconium ONLY -> catalog COMPLETE.
 
 ## 2026-06-26 23:53 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 54 — Zn/Zinc finale pt1: deficiency TABLES 11-24 (birth defects) + 11-25 (symptoms/diseases, split pt1/2 for the 500-char ceiling). 3 claims RARE-262..264. +9 cond slugs. 4 Luneth-ruled book-typo fixes. kv 94->96, corpus 358, board 30/30, probe green.

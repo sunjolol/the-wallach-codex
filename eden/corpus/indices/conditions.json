@@ -283,8 +283,11 @@
   },
   "anorexia": {
     "display_name": "Anorexia",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000268"
+      ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000079",
         "WAL-CLM-RARE-000172",

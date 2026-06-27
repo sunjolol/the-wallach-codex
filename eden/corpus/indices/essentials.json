@@ -1360,7 +1360,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 26,
+    "claim_count": 30,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -1388,7 +1388,11 @@
         "WAL-CLM-RARE-000044",
         "WAL-CLM-RARE-000046",
         "WAL-CLM-RARE-000094",
-        "WAL-CLM-RARE-000192"
+        "WAL-CLM-RARE-000192",
+        "WAL-CLM-RARE-000265",
+        "WAL-CLM-RARE-000266",
+        "WAL-CLM-RARE-000267",
+        "WAL-CLM-RARE-000268"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000049",

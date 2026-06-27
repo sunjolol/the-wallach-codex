@@ -9540,6 +9540,144 @@
       "extracted_at": "2026-06-27T03:34:05+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000265",
+      "kind": "mechanism",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports that no fewer than 70 metalloenzymes require zinc to function — including carbonic anhydrase, alkaline phosphatase, lactic dehydrogenase, and carboxypeptidase. Zinc helps bind enzymes to their substrates by maintaining the correct spatial and configurational relationships, and some enzymes bind zinc so tightly that they keep functioning even during severe zinc depletion. Zinc is also required by the DNA-dependent RNA polymerase and thymidine kinase.",
+      "verbatim": "There are no less than 70 metalloenzymes that require Zn to function, these include carbonic anhydrase, alkaline phosphatase, lactic dehydrogenase and carboxypeptidase. Zinc helps to bind enzymes to substrates by maintaining spatial and configurational relationships. Some enzymes bind Zn so tightly that even during severe Zn depletion they can still function.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 418,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 969451
+      },
+      "dose": null,
+      "tags": [
+        "zinc",
+        "metalloenzymes",
+        "carbonic-anhydrase",
+        "enzyme-cofactor",
+        "zinc-fingers"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T03:57:15+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000266",
+      "kind": "mechanism",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports that the adult human body contains 1.4 to 2.3 grams of zinc, with the greatest reserves in the liver, pancreas, kidney, bone, and skeletal muscles, and lesser amounts in the eye, prostate gland, semen, skin, hair, fingernails, and toenails.",
+      "verbatim": "There is 1.4 to 2.3 grams of Zn in the adult human. The liver, pancreas, kidney, bone and skeletal muscles have the greatest reserves of Zn, lesser amounts are found in the eye, prostate gland, semen, skin, hair, fingernails and toenails.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 418,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 969211
+      },
+      "dose": null,
+      "tags": [
+        "zinc",
+        "body-content",
+        "reserves",
+        "distribution"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T03:57:15+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000267",
+      "kind": "mechanism",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach notes the late recognition of zinc's essentiality: it was known to be essential for bread mold 100 years ago, for rats 50 years ago, and for humans only 20 years ago.",
+      "verbatim": "Zinc was known to be essential for bread mold 100 years ago, essential for rats 50 years ago and for humans only 20 years ago.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 417,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 968935
+      },
+      "dose": null,
+      "tags": [
+        "zinc",
+        "essentiality",
+        "history"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T03:57:15+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000268",
+      "kind": "mechanism",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anorexia"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach reports that heavy losses of zinc occur in sweat, so unsupplemented athletes are particularly at risk for zinc deficiency — manifesting as anorexia nervosa, muscle weakness, pica, and similar signs.",
+      "verbatim": "Heavy losses of Zn occurs in sweat, therefore unsupplemented athletes are particularly at risk for Zn deficiency (i.e.- anorexia nervosa, muscle weakness, pica, etc.).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 418,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 970222
+      },
+      "dose": null,
+      "tags": [
+        "zinc",
+        "sweat",
+        "athletes",
+        "deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T03:57:15+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
