@@ -1,121 +1,140 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_6 claim(s) drafted 2026-06-27T22:39:41+00:00. Review then run corpus_seal.py to promote._
+_9 claim(s) drafted 2026-06-27T22:45:52+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: deficiency_sign×4, toxicity_sign×2
+Kinds: deficiency_sign×7, toxicity_sign×2
 
-### WAL-CLM-LETS-000030 · deficiency_sign
-- **essentials:** selenium · **conditions:** cataracts, cancer, cystic_fibrosis, heart_attack, keshan_disease, muscular_dystrophy, liver_cirrhosis, infertility · **symptoms:** retarded_growth, lowered_immunity, pancreatic_atrophy
-- **claim:** Wallach lists the signs of selenium deficiency: cataracts, increased cancer risk, cystic fibrosis, growth retardation, "heart attack", impaired immunity, Keshan disease (myocardial fibrosis), muscular dystrophy, pancreatic atrophy and fibrosis (cystic fibrosis), liver cirrhosis, and sterility in males.
-- **verbatim** (offset 91321): “SELENIUM DEFICIENCY
-cataracts
-cancer risk
-cystic fibrosis
-growth retardation
-"heart attack"
-impaired immunity
-Keshan Disease (myocardial
-fibrosis)
-muscular dystrophy
-pancreatic atrophy & fibrosis
-(cystic fibrosis)
-liver cirrhosis
-sterility in males”
-
-### WAL-CLM-LETS-000031 · toxicity_sign
-- **essentials:** selenium · **conditions:** alopecia, arthritis, kidney_disease, liver_disease · **symptoms:** brittle_nails, garlic_breath, metallic_taste
-- **claim:** Wallach lists the signs of selenium toxicity (excess): hair loss (alopecia), arthritis, brittle nails, garlic breath, metallic taste, kidney dysfunction, and liver dysfunction.
-- **verbatim** (offset 91570): “SELENIUM TOXICITY
-alopecia
-arthritis
-brittle nails
-garlic breath
-metallic taste
-kidney dysfunction
-liver dysfunction”
-
-### WAL-CLM-LETS-000032 · deficiency_sign
-- **essentials:** sodium · **conditions:** anorexia, depression, dermatitis, hypotension, ageusia · **symptoms:** abdominal_cramps, ataxia, mental_confusion, emotional_instability, dizziness, fatigue, flatulence, hallucinations, headache, illusions, lowered_immunity, lethargy, poor_memory, muscle_weakness, nausea, vomiting, convulsions, weight_loss
-- **claim:** Wallach lists the signs of sodium deficiency: abdominal cramps, anorexia (loss of appetite), ataxia (loss of coordination), confusion, crying jags, depression, dermatosis (skin disease), dizziness, fatigue, flatulence, hallucinations, headaches, low blood pressure, illusions, infections, lethargy, memory loss, muscular weakness, nausea and vomiting, seizures, taste loss, and weight loss.
-- **verbatim** (offset 91687): “SODIUM DEFICIENCY
-abdominal cramps
-anorexia
-ataxia
-confusion
-crying jags
-depression
-dermatosis
-dizziness
+### WAL-CLM-LETS-000036 · deficiency_sign
+- **essentials:** vitamin-a · **conditions:** acne, anosmia, birth_defects, alopecia, infertility, insomnia, night_blindness, xerophthalmia · **symptoms:** dry_hair, fatigue, retarded_growth, hyperkeratosis, lowered_immunity, weight_loss, dry_skin
+- **claim:** Wallach lists the signs of vitamin A deficiency: acne, anosmia (loss of smell), birth defects, dry hair and hair loss (alopecia), fatigue, growth retardation, hyperkeratosis (thickened rough skin), infections, infertility, insomnia, night blindness, weight loss, xerophthalmia (dry eyes), and xerosis (abnormally dry skin).
+- **verbatim** (offset 92793): “VITAMIN A DEFICIENCY
+acne
+anosmia (loss of smell)
+birth defects
+dry hair/alopecia
 fatigue
-flatulence
-hallucinations
-headaches
-hypotension
-illusions
+growth retardation
+hyperkeratosis
 infections
-lethargy
-memory loss
-muscular weakness
+infertility
+insomnia
+night blindness
+weight loss
+xerophthalmia
+xerosis”
+
+### WAL-CLM-LETS-000037 · toxicity_sign
+- **essentials:** vitamin-a · **conditions:** alopecia, amenorrhea, hydrocephalus · **symptoms:** abdominal_pain, cheilosis, dyspepsia, hepatomegaly, irritability, joint_pain, nausea, vomiting, pruritus, splenomegaly, weight_loss
+- **claim:** Wallach lists the signs of vitamin A toxicity (excess): abdominal pain, hair loss (alopecia), amenorrhea (absent menstruation), cheilosis (cracked lip corners), gastrointestinal upset, hepatomegaly (enlarged liver), hydrocephalus, irritability, joint pain, nausea and vomiting, pruritus (itching), splenomegaly (enlarged spleen), and weight loss.
+- **verbatim** (offset 92999): “VITAMIN A TOXICITY
+abdominal pain
+alopecia
+amenorrhea
+cheilosis
+G I upset
+hepatomegaly
+hydrocephalus
+irritability
+joint pain
 nausea & vomiting
-seizures
-taste loss
+pruritis
+splenomegaly
 weight loss”
 
-### WAL-CLM-LETS-000033 · toxicity_sign
-- **essentials:** sodium · **conditions:** anorexia, congestive_heart_failure, edema, hyperactivity, hypertension, renal_failure · **symptoms:** cognitive_impairment, hypertonia, irritability, polydipsia, polyuria, convulsions, tremors, weight_gain
-- **claim:** Wallach lists the signs of sodium toxicity (excess): anorexia (loss of appetite), cognitive dysfunction, congestive heart failure, edema (swelling, especially on low-protein diets), hyperactivity, high blood pressure, hypertonia (increased muscle tone), irritability, polydipsia (excessive thirst), polyuria (excessive urination), renal (kidney) failure, seizures, tremors, and weight gain.
-- **verbatim** (offset 91958): “SODIUM TOXICITY
-anorexia
-cognitive dysfunction
-congestive heart failure
-edema (especially low
-protein diets)
-hyperactivity
-hypertension”
-
-### WAL-CLM-LETS-000034 · deficiency_sign
-- **essentials:** vitamin-b1 · **conditions:** anorexia, dementia, depression, edema · **symptoms:** mental_confusion, constipation, ataxia, dyspnea, dyspepsia, fatigue, irritability, poor_memory, muscle_atrophy, nervousness, numbness, pain_hypersensitivity, palpitations, sonophobia, weakness
-- **claim:** Wallach lists the signs of thiamine (vitamin B-1) deficiency: anorexia (loss of appetite), brain atrophy (senility), confusion, constipation, coordination impairment, depression, dyspnea (labored breathing), gastrointestinal upset, edema, fatigue, irritability, memory loss, muscle atrophy, nervousness, numbness of the hands and feet, pain hypersensitivity, palpitations, sonophobia (sound sensitivity), and weakness.
-- **verbatim** (offset 92250): “VITAMIN B-1 DEFICIENCY
-anorexia
-brain atrophy (senility)
-confusion
-constipation
-coordination impairment
-depression
-dyspnea (labored breathing)
-G I upset
-edema
-fatigue
+### WAL-CLM-LETS-000038 · deficiency_sign
+- **essentials:** vitamin-c · **conditions:** depression · **symptoms:** bleeding_gums, loose_teeth, fatigue, easy_bruising, impaired_wound_healing, irritability, joint_pain
+- **claim:** Wallach lists the signs of vitamin C deficiency: bleeding gums and loose teeth, depression with malaise and tiredness, easy bruising, impaired wound healing, irritability, and joint pain.
+- **verbatim** (offset 93176): “VITAMIN C DEFICIENCY
+bleeding gums/loose teeth
+49
+TABLE 6-1 . Nutrient Deficiency / Toxicity Flow Chart (Continued)
+depression/malaise/tiredness
+easy bruising
+impaired wound healing
 irritability
-memory loss
-muscle atrophy
+joint pain”
+
+### WAL-CLM-LETS-000039 · deficiency_sign
+- **essentials:** vitamin-d · **conditions:** diarrhea, insomnia, myopia, osteomalacia, rickets · **symptoms:** burning_mouth, burning_throat, nervousness
+- **claim:** Wallach lists the signs of vitamin D deficiency: burning in the mouth, burning in the throat, diarrhea, insomnia, myopia (nearsightedness), nervousness, osteomalacia (softening of the bones), and rickets.
+- **verbatim** (offset 93382): “VITAMIN D DEFICIENCY
+burning in mouth
+burning in throat
+diarrhea
+insomnia
+myopia
 nervousness
-numbness hands and feet
-pain hypersensitivity
-palpitations
-sonophobia
-weakness”
+osteomalacia
+rickets”
 
-### WAL-CLM-LETS-000035 · deficiency_sign
-- **essentials:** vitamin-b12 · **conditions:** achlorhydria, anemia, birth_defects, depression, psychosis · **symptoms:** constipation, dizziness, dyspnea, fatigue, dyspepsia, geographic_tongue, headache, irritability, emotional_instability, numbness, palpitations, spinal_cord_demyelination
-- **claim:** Wallach lists the signs of vitamin B-12 (cobalamin) deficiency: achlorhydria (absent stomach acid), anemia, birth defects, constipation, depression, dizziness, dyspnea (labored breathing), fatigue, gastrointestinal upset, geographic tongue, headache, irritability, moodiness, numbness, palpitations, psychosis, and spinal cord degeneration.
-- **verbatim** (offset 92548): “VITAMIN B-12 DEFICIENCY
-achlorhydria
-anemia
+### WAL-CLM-LETS-000040 · toxicity_sign
+- **essentials:** vitamin-d · **conditions:** arteriosclerosis, liver_disease · **symptoms:** ectopic_calcification
+- **claim:** Wallach lists the signs of vitamin D toxicity (excess): angiotoxicity (calcification of the blood vessels), arteriosclerosis (angiotoxicity), liver dysfunction, and "malignant" (soft-tissue) calcification.
+- **verbatim** (offset 93496): “VITAMIN D TOXICITY
+angiotoxicity (calcification)
+arteriosclerosis (angiotoxicity)
+liver dysfunction
+"malignant" calcification”
+
+### WAL-CLM-LETS-000041 · deficiency_sign
+- **essentials:** vitamin-e · **conditions:** alopecia, dermatitis, infertility, malabsorption, muscular_dystrophy · **symptoms:** areflexia, gait_disturbance, ophthalmoplegia, proprioception_problems, rbc_fragility, vibratory_sense_dysfunction
+- **claim:** Wallach lists the signs of vitamin E deficiency: hair loss (alopecia), areflexia (absent reflexes), dermatitis, gait disturbances, infertility, malabsorption, muscular dystrophy, ophthalmoplegia (paralysis of the eye muscles), proprioception problems (impaired position sense), red blood cell (RBC) fragility, and vibratory sense dysfunction.
+- **verbatim** (offset 93622): “VITAMIN E DEFICIENCY
+alopecia
+areflexia
+dermatitis
+gait disturbances
+infertility
+malabsorption
+muscular dystrophy
+ophthalmoplegia
+proprioception problems
+RBC fragility
+vibratory sense dysfunction”
+
+### WAL-CLM-LETS-000042 · deficiency_sign
+- **essentials:** vitamin-k · **conditions:** osteoporosis · **symptoms:** prolonged_clotting_time
+- **claim:** Wallach lists the signs of vitamin K deficiency: poor (prolonged) clotting time and osteoporosis.
+- **verbatim** (offset 93818): “VITAMIN K DEFICIENCY
+poor clotting time
+osteoporosis.
+VANADIUM DEFICIENCY”
+
+### WAL-CLM-LETS-000043 · deficiency_sign
+- **essentials:** vanadium · **conditions:** diabetes, hypoglycemia · **symptoms:** —
+- **claim:** Wallach lists the signs of vanadium deficiency: diabetes and hypoglycemia (low blood sugar).
+- **verbatim** (offset 93872): “VANADIUM DEFICIENCY
+diabetes
+hypoglycemia
+ZINC DEFICIENCY
+acne”
+
+### WAL-CLM-LETS-000044 · deficiency_sign
+- **essentials:** zinc · **conditions:** acne, alopecia, anorexia, birth_defects, depression, eczema, high_cholesterol, ageusia, impotence, infertility, malabsorption, paranoia · **symptoms:** apathy, brittle_nails, fatigue, retarded_growth, impaired_wound_healing, irritability, lethargy, poor_memory, delayed_puberty, white_spots_on_nails
+- **claim:** Wallach lists the signs of zinc deficiency: acne, hair loss (alopecia), anorexia (loss of appetite), apathy, birth defects, brittle nails, depression, eczema, fatigue, growth retardation, high cholesterol, hypogeusia (loss of the sensation of taste), impaired wound healing, impotence, infertility, irritability, lethargy, malabsorption, memory loss, paranoia, sexual immaturity, sterility, and white spots on the nails.
+- **verbatim** (offset 93914): “ZINC DEFICIENCY
+acne
+alopecia
+anorexia
+apathy
 birth defects
-constipation
+brittle nails
 depression
-dizziness
-dyspnea (labored breathing)
+eczema
 fatigue
-G I upset
-geographic tongue
-headache
+growth retardation
+hypercholesterolemia
+hypogeusia (loss of
+sensation of taste)
+impaired wound healing
+impotence
+infertility
 irritability
-moodiness
-numbness
-palpitations
-psychosis
-spinal cord degeneration”
+lethargy
+malabsorption
+memory loss
+paranoia
+sexual immaturity
+sterility
+white spots on nails”
 

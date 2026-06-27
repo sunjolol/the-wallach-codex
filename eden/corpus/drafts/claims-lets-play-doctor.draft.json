@@ -1604,6 +1604,399 @@
       "extracted_at": "2026-06-27T22:39:41+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000036",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-a"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "acne",
+        "anosmia",
+        "birth_defects",
+        "alopecia",
+        "infertility",
+        "insomnia",
+        "night_blindness",
+        "xerophthalmia"
+      ],
+      "symptoms": [
+        "dry_hair",
+        "fatigue",
+        "retarded_growth",
+        "hyperkeratosis",
+        "lowered_immunity",
+        "weight_loss",
+        "dry_skin"
+      ],
+      "claim_text": "Wallach lists the signs of vitamin A deficiency: acne, anosmia (loss of smell), birth defects, dry hair and hair loss (alopecia), fatigue, growth retardation, hyperkeratosis (thickened rough skin), infections, infertility, insomnia, night blindness, weight loss, xerophthalmia (dry eyes), and xerosis (abnormally dry skin).",
+      "verbatim": "VITAMIN A DEFICIENCY\nacne\nanosmia (loss of smell)\nbirth defects\ndry hair/alopecia\nfatigue\ngrowth retardation\nhyperkeratosis\ninfections\ninfertility\ninsomnia\nnight blindness\nweight loss\nxerophthalmia\nxerosis",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 49,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 92793
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:45:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000037",
+      "kind": "toxicity_sign",
+      "essentials": [
+        "vitamin-a"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "alopecia",
+        "amenorrhea",
+        "hydrocephalus"
+      ],
+      "symptoms": [
+        "abdominal_pain",
+        "cheilosis",
+        "dyspepsia",
+        "hepatomegaly",
+        "irritability",
+        "joint_pain",
+        "nausea",
+        "vomiting",
+        "pruritus",
+        "splenomegaly",
+        "weight_loss"
+      ],
+      "claim_text": "Wallach lists the signs of vitamin A toxicity (excess): abdominal pain, hair loss (alopecia), amenorrhea (absent menstruation), cheilosis (cracked lip corners), gastrointestinal upset, hepatomegaly (enlarged liver), hydrocephalus, irritability, joint pain, nausea and vomiting, pruritus (itching), splenomegaly (enlarged spleen), and weight loss.",
+      "verbatim": "VITAMIN A TOXICITY\nabdominal pain\nalopecia\namenorrhea\ncheilosis\nG I upset\nhepatomegaly\nhydrocephalus\nirritability\njoint pain\nnausea & vomiting\npruritis\nsplenomegaly\nweight loss",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 49,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 92999
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "toxicity-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:45:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000038",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-c"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "depression"
+      ],
+      "symptoms": [
+        "bleeding_gums",
+        "loose_teeth",
+        "fatigue",
+        "easy_bruising",
+        "impaired_wound_healing",
+        "irritability",
+        "joint_pain"
+      ],
+      "claim_text": "Wallach lists the signs of vitamin C deficiency: bleeding gums and loose teeth, depression with malaise and tiredness, easy bruising, impaired wound healing, irritability, and joint pain.",
+      "verbatim": "VITAMIN C DEFICIENCY\nbleeding gums/loose teeth\n49\nTABLE 6-1 . Nutrient Deficiency / Toxicity Flow Chart (Continued)\ndepression/malaise/tiredness\neasy bruising\nimpaired wound healing\nirritability\njoint pain",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 49,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 93176
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:45:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000039",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-d"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "diarrhea",
+        "insomnia",
+        "myopia",
+        "osteomalacia",
+        "rickets"
+      ],
+      "symptoms": [
+        "burning_mouth",
+        "burning_throat",
+        "nervousness"
+      ],
+      "claim_text": "Wallach lists the signs of vitamin D deficiency: burning in the mouth, burning in the throat, diarrhea, insomnia, myopia (nearsightedness), nervousness, osteomalacia (softening of the bones), and rickets.",
+      "verbatim": "VITAMIN D DEFICIENCY\nburning in mouth\nburning in throat\ndiarrhea\ninsomnia\nmyopia\nnervousness\nosteomalacia\nrickets",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 50,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 93382
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:45:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000040",
+      "kind": "toxicity_sign",
+      "essentials": [
+        "vitamin-d"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "arteriosclerosis",
+        "liver_disease"
+      ],
+      "symptoms": [
+        "ectopic_calcification"
+      ],
+      "claim_text": "Wallach lists the signs of vitamin D toxicity (excess): angiotoxicity (calcification of the blood vessels), arteriosclerosis (angiotoxicity), liver dysfunction, and \"malignant\" (soft-tissue) calcification.",
+      "verbatim": "VITAMIN D TOXICITY\nangiotoxicity (calcification)\narteriosclerosis (angiotoxicity)\nliver dysfunction\n\"malignant\" calcification",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 50,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 93496
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "toxicity-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:45:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000041",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-e"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "alopecia",
+        "dermatitis",
+        "infertility",
+        "malabsorption",
+        "muscular_dystrophy"
+      ],
+      "symptoms": [
+        "areflexia",
+        "gait_disturbance",
+        "ophthalmoplegia",
+        "proprioception_problems",
+        "rbc_fragility",
+        "vibratory_sense_dysfunction"
+      ],
+      "claim_text": "Wallach lists the signs of vitamin E deficiency: hair loss (alopecia), areflexia (absent reflexes), dermatitis, gait disturbances, infertility, malabsorption, muscular dystrophy, ophthalmoplegia (paralysis of the eye muscles), proprioception problems (impaired position sense), red blood cell (RBC) fragility, and vibratory sense dysfunction.",
+      "verbatim": "VITAMIN E DEFICIENCY\nalopecia\nareflexia\ndermatitis\ngait disturbances\ninfertility\nmalabsorption\nmuscular dystrophy\nophthalmoplegia\nproprioception problems\nRBC fragility\nvibratory sense dysfunction",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 50,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 93622
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:45:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000042",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-k"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "osteoporosis"
+      ],
+      "symptoms": [
+        "prolonged_clotting_time"
+      ],
+      "claim_text": "Wallach lists the signs of vitamin K deficiency: poor (prolonged) clotting time and osteoporosis.",
+      "verbatim": "VITAMIN K DEFICIENCY\npoor clotting time\nosteoporosis.\nVANADIUM DEFICIENCY",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 50,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 93818
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:45:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000043",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "diabetes",
+        "hypoglycemia"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach lists the signs of vanadium deficiency: diabetes and hypoglycemia (low blood sugar).",
+      "verbatim": "VANADIUM DEFICIENCY\ndiabetes\nhypoglycemia\nZINC DEFICIENCY\nacne",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 50,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 93872
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map",
+        "xref:WAL-CLM-RARE-000257"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:45:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000044",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "acne",
+        "alopecia",
+        "anorexia",
+        "birth_defects",
+        "depression",
+        "eczema",
+        "high_cholesterol",
+        "ageusia",
+        "impotence",
+        "infertility",
+        "malabsorption",
+        "paranoia"
+      ],
+      "symptoms": [
+        "apathy",
+        "brittle_nails",
+        "fatigue",
+        "retarded_growth",
+        "impaired_wound_healing",
+        "irritability",
+        "lethargy",
+        "poor_memory",
+        "delayed_puberty",
+        "white_spots_on_nails"
+      ],
+      "claim_text": "Wallach lists the signs of zinc deficiency: acne, hair loss (alopecia), anorexia (loss of appetite), apathy, birth defects, brittle nails, depression, eczema, fatigue, growth retardation, high cholesterol, hypogeusia (loss of the sensation of taste), impaired wound healing, impotence, infertility, irritability, lethargy, malabsorption, memory loss, paranoia, sexual immaturity, sterility, and white spots on the nails.",
+      "verbatim": "ZINC DEFICIENCY\nacne\nalopecia\nanorexia\napathy\nbirth defects\nbrittle nails\ndepression\neczema\nfatigue\ngrowth retardation\nhypercholesterolemia\nhypogeusia (loss of\nsensation of taste)\nimpaired wound healing\nimpotence\ninfertility\nirritability\nlethargy\nmalabsorption\nmemory loss\nparanoia\nsexual immaturity\nsterility\nwhite spots on nails",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 50,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 93914
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map",
+        "xref:WAL-CLM-RARE-000263",
+        "xref:WAL-CLM-RARE-000264"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:45:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

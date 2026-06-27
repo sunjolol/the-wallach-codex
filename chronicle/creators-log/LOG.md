@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_118 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_119 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-27 17:46 UTC-05:00 · milestone · eden/corpus
+✅ TABLE 6-1 COMPLETE — LPD batch 6 (Vitamin A..Zinc): 9 claims LETS-036..044. The whole Nutrient Deficiency/Toxicity Flow Chart (~30 nutrients × def/tox) is now mapped (LETS-003..044). corpus 415→424, conditions 200→204, kv 111.
+  ↳ Vit A def+TOX, Vit C def, Vit D def+TOX, Vit E def, Vit K def, Vanadium def, Zinc def. .txt fix would→wound (Vit C, same-length, render-confirmed). VITAMIN C def page-break-split with <60-char first part → verbatim spans page furniture (header-first, faithful complete cell; LETS-015 precedent). Vit K (53) + Vanadium (41) extended down to next headers for the 60-char floor. pruritis kept faithful in verbatim, pruritus in claim_text. xrefs: Vanadium→RARE-257, Zinc→RARE-263+264. +4 conditions +14 symptoms. seal kv111→embed→build→invariants 30/30→knowledge probe PASS (conditions 204). Table 6-1 done across batches 1-6.
 
 ## 2026-06-27 17:40 UTC-05:00 · round-close · eden/corpus
 LPD batch 5 — Table 6-1 pt5 (Selenium..B-12): 6 claims LETS-030..035 (4 def + 2 tox). Fixed 2 OCR B-vitamin headers (B-l→B-1, B-l 2→B-12) via safe_write→resnap (0 broken). xref'd Se/Na/B1/B12 to existing claims. corpus 409→415, conditions 198→200, kv 110.

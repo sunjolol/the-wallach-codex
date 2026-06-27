@@ -846,6 +846,28 @@
   {
     "id": "CG-0031",
     "essentials": [
+      "vitamin-k"
+    ],
+    "conditions": [
+      "osteoporosis"
+    ],
+    "kind": "deficiency_sign",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-LETS-000042",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000232",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0032",
+    "essentials": [
       "yttrium"
     ],
     "conditions": [],
@@ -864,7 +886,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0032",
+    "id": "CG-0033",
     "essentials": [
       "zinc"
     ],

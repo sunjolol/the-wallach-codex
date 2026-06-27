@@ -2049,10 +2049,11 @@
     "display_name": "Vanadium",
     "canon_slug": "vanadium",
     "category": "mineral",
-    "claim_count": 27,
+    "claim_count": 28,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
+        "WAL-CLM-LETS-000043",
         "WAL-CLM-RARE-000039",
         "WAL-CLM-RARE-000042",
         "WAL-CLM-RARE-000257",
@@ -2158,6 +2159,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -2165,13 +2167,14 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 32,
+    "claim_count": 33,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
         "WAL-CLM-DDDL-000042",
         "WAL-CLM-DDDL-000077",
         "WAL-CLM-DDDL-000079",
+        "WAL-CLM-LETS-000044",
         "WAL-CLM-RARE-000042",
         "WAL-CLM-RARE-000262",
         "WAL-CLM-RARE-000263",
@@ -2217,17 +2220,68 @@
         "confidence": "high"
       },
       {
+        "sign": "apathy",
+        "claim_id": "WAL-CLM-LETS-000044",
+        "confidence": "high"
+      },
+      {
+        "sign": "brittle_nails",
+        "claim_id": "WAL-CLM-LETS-000044",
+        "confidence": "high"
+      },
+      {
+        "sign": "delayed_puberty",
+        "claim_id": "WAL-CLM-LETS-000044",
+        "confidence": "high"
+      },
+      {
+        "sign": "fatigue",
+        "claim_id": "WAL-CLM-LETS-000044",
+        "confidence": "high"
+      },
+      {
         "sign": "geographic_tongue",
         "claim_id": "WAL-CLM-RARE-000042",
+        "confidence": "high"
+      },
+      {
+        "sign": "impaired_wound_healing",
+        "claim_id": "WAL-CLM-LETS-000044",
+        "confidence": "high"
+      },
+      {
+        "sign": "irritability",
+        "claim_id": "WAL-CLM-LETS-000044",
+        "confidence": "high"
+      },
+      {
+        "sign": "lethargy",
+        "claim_id": "WAL-CLM-LETS-000044",
         "confidence": "high"
       },
       {
         "sign": "loss_of_smell",
         "claim_id": "WAL-CLM-DDDL-000077",
         "confidence": "high"
+      },
+      {
+        "sign": "poor_memory",
+        "claim_id": "WAL-CLM-LETS-000044",
+        "confidence": "high"
+      },
+      {
+        "sign": "retarded_growth",
+        "claim_id": "WAL-CLM-LETS-000044",
+        "confidence": "high"
+      },
+      {
+        "sign": "white_spots_on_nails",
+        "claim_id": "WAL-CLM-LETS-000044",
+        "confidence": "high"
       }
     ],
     "conditions_treated": [
+      "acne",
       "acrodermatitis_enteropathica",
       "ageusia",
       "alopecia",
@@ -2255,11 +2309,15 @@
       "diabetes",
       "diarrhea",
       "down_syndrome",
+      "eczema",
       "explosive_outbursts",
       "heart_defects",
+      "high_cholesterol",
       "hypertension",
       "hypogonadism",
+      "impotence",
       "infertility",
+      "malabsorption",
       "osteoporosis",
       "paranoia",
       "spina_bifida",
@@ -2292,6 +2350,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -3033,19 +3092,48 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 5,
+    "claim_count": 7,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
+        "WAL-CLM-LETS-000036",
         "WAL-CLM-RARE-000229"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000056",
         "WAL-CLM-DDDL-000070",
         "WAL-CLM-DDDL-000085"
+      ],
+      "toxicity_sign": [
+        "WAL-CLM-LETS-000037"
       ]
     },
     "deficiency_signs": [
+      {
+        "sign": "dry_hair",
+        "claim_id": "WAL-CLM-LETS-000036",
+        "confidence": "high"
+      },
+      {
+        "sign": "dry_skin",
+        "claim_id": "WAL-CLM-LETS-000036",
+        "confidence": "high"
+      },
+      {
+        "sign": "fatigue",
+        "claim_id": "WAL-CLM-LETS-000036",
+        "confidence": "high"
+      },
+      {
+        "sign": "hyperkeratosis",
+        "claim_id": "WAL-CLM-LETS-000036",
+        "confidence": "high"
+      },
+      {
+        "sign": "lowered_immunity",
+        "claim_id": "WAL-CLM-LETS-000036",
+        "confidence": "high"
+      },
       {
         "sign": "lowered_immunity",
         "claim_id": "WAL-CLM-RARE-000229",
@@ -3055,10 +3143,23 @@
         "sign": "poor_growth",
         "claim_id": "WAL-CLM-RARE-000229",
         "confidence": "high"
+      },
+      {
+        "sign": "retarded_growth",
+        "claim_id": "WAL-CLM-LETS-000036",
+        "confidence": "high"
+      },
+      {
+        "sign": "weight_loss",
+        "claim_id": "WAL-CLM-LETS-000036",
+        "confidence": "high"
       }
     ],
     "conditions_treated": [
       "acne",
+      "alopecia",
+      "amenorrhea",
+      "anosmia",
       "benign_prostatic_hyperplasia",
       "birth_defects",
       "blindness",
@@ -3066,8 +3167,10 @@
       "conjunctivitis",
       "corneal_ulcers",
       "dermatitis",
+      "hydrocephalus",
       "ichthyosis",
       "infertility",
+      "insomnia",
       "keratitis",
       "night_blindness",
       "xerophthalmia"
@@ -3080,6 +3183,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -3915,9 +4019,10 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-LETS-000038",
         "WAL-CLM-RARE-000241"
       ],
       "interaction": [
@@ -3930,7 +4035,42 @@
     "deficiency_signs": [
       {
         "sign": "bleeding_gums",
+        "claim_id": "WAL-CLM-LETS-000038",
+        "confidence": "high"
+      },
+      {
+        "sign": "bleeding_gums",
         "claim_id": "WAL-CLM-RARE-000241",
+        "confidence": "high"
+      },
+      {
+        "sign": "easy_bruising",
+        "claim_id": "WAL-CLM-LETS-000038",
+        "confidence": "high"
+      },
+      {
+        "sign": "fatigue",
+        "claim_id": "WAL-CLM-LETS-000038",
+        "confidence": "high"
+      },
+      {
+        "sign": "impaired_wound_healing",
+        "claim_id": "WAL-CLM-LETS-000038",
+        "confidence": "high"
+      },
+      {
+        "sign": "irritability",
+        "claim_id": "WAL-CLM-LETS-000038",
+        "confidence": "high"
+      },
+      {
+        "sign": "joint_pain",
+        "claim_id": "WAL-CLM-LETS-000038",
+        "confidence": "high"
+      },
+      {
+        "sign": "loose_teeth",
+        "claim_id": "WAL-CLM-LETS-000038",
         "confidence": "high"
       },
       {
@@ -3958,6 +4098,7 @@
       "anemia",
       "cancer",
       "common_cold",
+      "depression",
       "scurvy"
     ],
     "interacts_with": [
@@ -3965,6 +4106,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -3972,16 +4114,20 @@
     "display_name": "Cholecalciferol",
     "canon_slug": "vitamin-d",
     "category": "vitamin",
-    "claim_count": 3,
+    "claim_count": 5,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000083"
       ],
       "deficiency_sign": [
+        "WAL-CLM-LETS-000039",
         "WAL-CLM-RARE-000230"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000068"
+      ],
+      "toxicity_sign": [
+        "WAL-CLM-LETS-000040"
       ]
     },
     "deficiency_signs": [
@@ -3991,8 +4137,23 @@
         "confidence": "high"
       },
       {
+        "sign": "burning_mouth",
+        "claim_id": "WAL-CLM-LETS-000039",
+        "confidence": "high"
+      },
+      {
+        "sign": "burning_throat",
+        "claim_id": "WAL-CLM-LETS-000039",
+        "confidence": "high"
+      },
+      {
         "sign": "knock_knees",
         "claim_id": "WAL-CLM-RARE-000230",
+        "confidence": "high"
+      },
+      {
+        "sign": "nervousness",
+        "claim_id": "WAL-CLM-LETS-000039",
         "confidence": "high"
       },
       {
@@ -4004,7 +4165,11 @@
     "conditions_treated": [
       "arteriosclerosis",
       "arthritis",
+      "diarrhea",
+      "insomnia",
+      "liver_disease",
       "menopause",
+      "myopia",
       "osteomalacia",
       "osteoporosis",
       "restless_leg_syndrome",
@@ -4013,6 +4178,7 @@
     "interacts_with": [],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -4020,10 +4186,11 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
+        "WAL-CLM-LETS-000041",
         "WAL-CLM-RARE-000231"
       ],
       "mechanism": [
@@ -4044,8 +4211,18 @@
         "confidence": "high"
       },
       {
+        "sign": "areflexia",
+        "claim_id": "WAL-CLM-LETS-000041",
+        "confidence": "high"
+      },
+      {
         "sign": "easy_bruising",
         "claim_id": "WAL-CLM-DDDL-000089",
+        "confidence": "high"
+      },
+      {
+        "sign": "gait_disturbance",
+        "claim_id": "WAL-CLM-LETS-000041",
         "confidence": "high"
       },
       {
@@ -4067,17 +4244,40 @@
         "sign": "myalgia",
         "claim_id": "WAL-CLM-RARE-000231",
         "confidence": "high"
+      },
+      {
+        "sign": "ophthalmoplegia",
+        "claim_id": "WAL-CLM-LETS-000041",
+        "confidence": "high"
+      },
+      {
+        "sign": "proprioception_problems",
+        "claim_id": "WAL-CLM-LETS-000041",
+        "confidence": "high"
+      },
+      {
+        "sign": "rbc_fragility",
+        "claim_id": "WAL-CLM-LETS-000041",
+        "confidence": "high"
+      },
+      {
+        "sign": "vibratory_sense_dysfunction",
+        "claim_id": "WAL-CLM-LETS-000041",
+        "confidence": "high"
       }
     ],
     "conditions_treated": [
+      "alopecia",
       "alzheimers",
       "anemia",
       "cancer",
       "cystic_fibrosis",
+      "dermatitis",
       "fibrocystic_breast_disease",
       "infertility",
       "ischemic_heart_disease",
       "keshan_disease",
+      "malabsorption",
       "muscular_dystrophy"
     ],
     "interacts_with": [
@@ -4091,6 +4291,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -4098,10 +4299,11 @@
     "display_name": "Menaquinone",
     "canon_slug": "vitamin-k",
     "category": "vitamin",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
+        "WAL-CLM-LETS-000042",
         "WAL-CLM-RARE-000232"
       ]
     },
@@ -4123,6 +4325,11 @@
       },
       {
         "sign": "prolonged_clotting_time",
+        "claim_id": "WAL-CLM-LETS-000042",
+        "confidence": "high"
+      },
+      {
+        "sign": "prolonged_clotting_time",
         "claim_id": "WAL-CLM-RARE-000232",
         "confidence": "high"
       }
@@ -4135,6 +4342,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
