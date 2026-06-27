@@ -17,17 +17,21 @@
   },
   "acne": {
     "display_name": "Acne",
-    "claim_count": 2,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000011",
+        "WAL-CLM-LETS-000025",
+        "WAL-CLM-LETS-000027",
         "WAL-CLM-RARE-000229"
       ]
     },
     "essentials_involved": [
       "omega-3",
       "omega-6",
-      "vitamin-a"
+      "potassium",
+      "vitamin-a",
+      "vitamin-b6"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -138,7 +142,7 @@
   },
   "alopecia": {
     "display_name": "Alopecia",
-    "claim_count": 6,
+    "claim_count": 8,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000003",
@@ -146,6 +150,8 @@
         "WAL-CLM-LETS-000011",
         "WAL-CLM-LETS-000012",
         "WAL-CLM-LETS-000021",
+        "WAL-CLM-LETS-000027",
+        "WAL-CLM-LETS-000029",
         "WAL-CLM-RARE-000264"
       ]
     },
@@ -155,7 +161,9 @@
       "inositol",
       "omega-3",
       "omega-6",
+      "vitamin-b2",
       "vitamin-b5",
+      "vitamin-b6",
       "zinc"
     ],
     "other_substances_involved": [],
@@ -209,7 +217,7 @@
   },
   "anemia": {
     "display_name": "Anemia",
-    "claim_count": 16,
+    "claim_count": 17,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
@@ -218,6 +226,7 @@
         "WAL-CLM-LETS-000008",
         "WAL-CLM-LETS-000010",
         "WAL-CLM-LETS-000014",
+        "WAL-CLM-LETS-000027",
         "WAL-CLM-RARE-000193",
         "WAL-CLM-RARE-000231",
         "WAL-CLM-RARE-000234",
@@ -245,6 +254,7 @@
       "selenium",
       "vanadium",
       "vitamin-b2",
+      "vitamin-b6",
       "vitamin-b9",
       "vitamin-c",
       "vitamin-e",
@@ -338,7 +348,7 @@
   },
   "anorexia": {
     "display_name": "Anorexia",
-    "claim_count": 13,
+    "claim_count": 15,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000268"
@@ -350,6 +360,8 @@
         "WAL-CLM-LETS-000011",
         "WAL-CLM-LETS-000014",
         "WAL-CLM-LETS-000019",
+        "WAL-CLM-LETS-000023",
+        "WAL-CLM-LETS-000027",
         "WAL-CLM-RARE-000172",
         "WAL-CLM-RARE-000235",
         "WAL-CLM-RARE-000264"
@@ -369,7 +381,9 @@
       "manganese",
       "omega-3",
       "omega-6",
+      "phosphorus",
       "vitamin-b3",
+      "vitamin-b6",
       "vitamin-b9",
       "zinc"
     ],
@@ -400,11 +414,12 @@
   },
   "anxiety": {
     "display_name": "Anxiety",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000006",
-        "WAL-CLM-LETS-000016"
+        "WAL-CLM-LETS-000016",
+        "WAL-CLM-LETS-000023"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000078",
@@ -417,6 +432,7 @@
       "chromium",
       "lithium",
       "magnesium",
+      "phosphorus",
       "vanadium",
       "vitamin-b3",
       "vitamin-b6"
@@ -497,7 +513,7 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 19,
+    "claim_count": 21,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
@@ -508,6 +524,7 @@
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000008",
         "WAL-CLM-LETS-000011",
+        "WAL-CLM-LETS-000027",
         "WAL-CLM-RARE-000011",
         "WAL-CLM-RARE-000223",
         "WAL-CLM-RARE-000230",
@@ -529,6 +546,9 @@
         "WAL-CLM-DDDL-000051",
         "WAL-CLM-RARE-000096",
         "WAL-CLM-RARE-000279"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-LETS-000024"
       ]
     },
     "essentials_involved": [
@@ -549,6 +569,7 @@
       "sulfur",
       "tin",
       "vanadium",
+      "vitamin-b6",
       "vitamin-d",
       "zinc"
     ],
@@ -1018,6 +1039,22 @@
       "lets-play-doctor"
     ]
   },
+  "cardiac_arrest": {
+    "display_name": "Cardiac Arrest",
+    "claim_count": 1,
+    "claims_by_role": {
+      "toxicity_signs": [
+        "WAL-CLM-LETS-000026"
+      ]
+    },
+    "essentials_involved": [
+      "potassium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "cardiac_failure": {
     "display_name": "Cardiac Failure",
     "claim_count": 1,
@@ -1126,9 +1163,10 @@
   },
   "cataracts": {
     "display_name": "Cataracts",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-LETS-000029",
         "WAL-CLM-RARE-000227",
         "WAL-CLM-RARE-000275"
       ],
@@ -1146,10 +1184,12 @@
       "sulfur",
       "tin",
       "vanadium",
+      "vitamin-b2",
       "zinc"
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1385,17 +1425,20 @@
   },
   "conjunctivitis": {
     "display_name": "Conjunctivitis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-LETS-000027",
         "WAL-CLM-RARE-000229"
       ]
     },
     "essentials_involved": [
-      "vitamin-a"
+      "vitamin-a",
+      "vitamin-b6"
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1627,7 +1670,7 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 22,
+    "claim_count": 25,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000161"
@@ -1641,6 +1684,9 @@
         "WAL-CLM-LETS-000019",
         "WAL-CLM-LETS-000021",
         "WAL-CLM-LETS-000022",
+        "WAL-CLM-LETS-000025",
+        "WAL-CLM-LETS-000027",
+        "WAL-CLM-LETS-000029",
         "WAL-CLM-RARE-000163",
         "WAL-CLM-RARE-000172",
         "WAL-CLM-RARE-000233",
@@ -1672,8 +1718,10 @@
       "iron",
       "lithium",
       "magnesium",
+      "potassium",
       "vanadium",
       "vitamin-b1",
+      "vitamin-b2",
       "vitamin-b3",
       "vitamin-b5",
       "vitamin-b6",
@@ -1689,11 +1737,12 @@
   },
   "dermatitis": {
     "display_name": "Dermatitis",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000008",
         "WAL-CLM-LETS-000019",
+        "WAL-CLM-LETS-000029",
         "WAL-CLM-RARE-000193",
         "WAL-CLM-RARE-000229",
         "WAL-CLM-RARE-000235",
@@ -1708,6 +1757,7 @@
       "copper",
       "nickel",
       "vitamin-a",
+      "vitamin-b2",
       "vitamin-b3",
       "vitamin-b5"
     ],
@@ -1867,17 +1917,20 @@
   },
   "edema": {
     "display_name": "Edema",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-LETS-000025",
         "WAL-CLM-RARE-000185"
       ]
     },
     "essentials_involved": [
-      "nitrogen"
+      "nitrogen",
+      "potassium"
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -2009,6 +2062,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "glucose_intolerance": {
+    "display_name": "Glucose Intolerance",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-LETS-000025"
+      ]
+    },
+    "essentials_involved": [
+      "potassium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "goiter": {
@@ -2191,7 +2260,7 @@
   },
   "high_cholesterol": {
     "display_name": "High Cholesterol",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000256"
@@ -2202,6 +2271,7 @@
         "WAL-CLM-LETS-000008",
         "WAL-CLM-LETS-000012",
         "WAL-CLM-LETS-000017",
+        "WAL-CLM-LETS-000025",
         "WAL-CLM-RARE-000257"
       ],
       "definitions": [
@@ -2217,6 +2287,7 @@
       "copper",
       "inositol",
       "manganese",
+      "potassium",
       "silica",
       "vanadium"
     ],
@@ -2347,6 +2418,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "hyperparathyroidism": {
+    "display_name": "Hyperparathyroidism",
+    "claim_count": 1,
+    "claims_by_role": {
+      "toxicity_signs": [
+        "WAL-CLM-LETS-000024"
+      ]
+    },
+    "essentials_involved": [
+      "phosphorus"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "hypertension": {
@@ -2495,15 +2582,17 @@
   },
   "hypotension": {
     "display_name": "Hypotension",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000016",
-        "WAL-CLM-LETS-000021"
+        "WAL-CLM-LETS-000021",
+        "WAL-CLM-LETS-000025"
       ]
     },
     "essentials_involved": [
       "magnesium",
+      "potassium",
       "vitamin-b5"
     ],
     "other_substances_involved": [],
@@ -2603,7 +2692,7 @@
   },
   "insomnia": {
     "display_name": "Insomnia",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000003",
@@ -2611,7 +2700,8 @@
         "WAL-CLM-LETS-000010",
         "WAL-CLM-LETS-000016",
         "WAL-CLM-LETS-000019",
-        "WAL-CLM-LETS-000021"
+        "WAL-CLM-LETS-000021",
+        "WAL-CLM-LETS-000025"
       ],
       "definitions": [
         "WAL-CLM-RARE-000105"
@@ -2628,6 +2718,7 @@
       "chromium",
       "lithium",
       "magnesium",
+      "potassium",
       "vanadium",
       "vitamin-b3",
       "vitamin-b5",
@@ -2952,18 +3043,23 @@
   },
   "malabsorption": {
     "display_name": "Malabsorption",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "diagnostics": [
         "WAL-CLM-RARE-000082"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-LETS-000024"
       ]
     },
     "essentials_involved": [
       "calcium",
-      "magnesium"
+      "magnesium",
+      "phosphorus"
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -3246,7 +3342,7 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 19,
+    "claim_count": 20,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052",
@@ -3286,6 +3382,9 @@
       ],
       "quotes": [
         "WAL-CLM-DDDL-000059"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-LETS-000024"
       ]
     },
     "essentials_involved": [
@@ -3545,9 +3644,10 @@
   },
   "photophobia": {
     "display_name": "Photophobia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-LETS-000029",
         "WAL-CLM-RARE-000234"
       ]
     },
@@ -3556,12 +3656,13 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
   "pica": {
     "display_name": "Pica",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-RARE-000036"
@@ -3574,12 +3675,14 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-LETS-000004",
-        "WAL-CLM-LETS-000014"
+        "WAL-CLM-LETS-000014",
+        "WAL-CLM-LETS-000023"
       ]
     },
     "essentials_involved": [
       "calcium",
-      "iron"
+      "iron",
+      "phosphorus"
     ],
     "other_substances_involved": [
       "lead"
@@ -3910,6 +4013,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "stomatitis": {
+    "display_name": "Stomatitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-LETS-000027"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b6"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "stroke": {

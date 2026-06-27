@@ -1,113 +1,118 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_7 claim(s) drafted 2026-06-27T22:25:01+00:00. Review then run corpus_seal.py to promote._
+_7 claim(s) drafted 2026-06-27T22:34:14+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: deficiency_sign×5, toxicity_sign×2
+Kinds: deficiency_sign×4, toxicity_sign×3
 
-### WAL-CLM-LETS-000016 · deficiency_sign
-- **essentials:** magnesium · **conditions:** anxiety, birth_defects, depression, hyperactivity, hypotension, insomnia, sids · **symptoms:** mental_confusion, irritability, restlessness, sonophobia, hypothermia, myalgia, tremors, muscle_weakness, nervousness, neuromuscular_excitability, convulsions, rapid_pulse, palpitations
-- **claim:** Wallach lists the signs of magnesium deficiency: anxiety, confusion, irritability and restlessness; birth defects; depression; hyperactivity and sonophobia (sound sensitivity); low blood pressure; hypothermia (low body temperature); insomnia; muscle pain, muscle tremors and muscle weakness; nervousness and neuromuscular irritability; sudden infant death syndrome (SIDS); seizures; and a rapid heartbeat with palpitations.
-- **verbatim** (offset 88716): “MAGNESIUM DEFICIENCY
-anxiety/confusion/irritability/
-restlessness
-birth defects
-depression
-hyperactivity/sonophobia
-hypotension
-hypothermia
-insomnia
-muscle pain/muscle tremors/
-muscle weakness
-nervousness/neuromuscular
-irritability
-SIDS
-seizures
-tachycardia/palpitations”
-
-### WAL-CLM-LETS-000017 · deficiency_sign
-- **essentials:** manganese · **conditions:** atherosclerosis, high_cholesterol, hypoglycemia, tinnitus · **symptoms:** ataxia, dizziness, hearing_loss, muscle_atrophy, pancreatic_atrophy
-- **claim:** Wallach lists the signs of manganese deficiency: ataxia (loss of coordination), atherosclerosis, dizziness, hearing loss, high cholesterol, hypoglycemia (low blood sugar), muscle atrophy, pancreatic atrophy, and tinnitus (ringing in the ears).
-- **verbatim** (offset 88987): “MANGANESE DEFICIENCY
-ataxia
-atherosclerosis
-dizziness
-hearing loss
-hypercholesterolemia
-hypoglycemia
-muscle therapy
-pancreatic atrophy
-tinnitus”
-
-### WAL-CLM-LETS-000018 · toxicity_sign
-- **essentials:** manganese · **conditions:** anorexia, parkinsonism · **symptoms:** cognitive_impairment, poor_memory
-- **claim:** Wallach lists the signs of manganese toxicity (excess): anorexia (loss of appetite), impaired judgement, Parkinsonism (a Parkinson's-like movement disorder), and memory loss.
-- **verbatim** (offset 89131): “MANGANESE TOXICITY
+### WAL-CLM-LETS-000023 · deficiency_sign
+- **essentials:** phosphorus · **conditions:** anorexia, anxiety, pica · **symptoms:** apprehension, bone_pain, dyspnea, fatigue, irritability, numbness, paresthesia, tremors, weakness, weight_loss
+- **claim:** Wallach lists the signs of phosphorus deficiency: anorexia (loss of appetite), anxiety, apprehension, bone pain, dyspnea (labored breathing), fatigue, irritability, numbness, paresthesias (numbness and tingling), pica, tremulousness, weakness, and weight loss.
+- **verbatim** (offset 89961): “PHOSPHORUS DEFICIENCY
 anorexia
-impaired judgement
-Parkinsonism
-memory loss”
-
-### WAL-CLM-LETS-000019 · deficiency_sign
-- **essentials:** vitamin-b3 · **conditions:** anorexia, canker_sores, depression, dermatitis, diarrhea, insomnia, eczema · **symptoms:** nausea, mental_confusion, emotional_instability, fatigue, halitosis, headache, dyspepsia, irritability, limb_pain, poor_memory, muscle_weakness, skin_eruptions
-- **claim:** Wallach lists the signs of niacin (vitamin B-3) deficiency: anorexia (loss of appetite) and nausea, canker sores, confusion, depression, dermatitis (including a localized scaly, dark-pigmented dermatitis), diarrhea, crying jags and emotional lability, fatigue, halitosis (bad breath), headache, dyspepsia (indigestion), insomnia, irritability, limb pains, memory loss, muscular weakness, and skin eruptions with eczema.
-- **verbatim** (offset 89203): “NIACIN DEFICIENCY
-anorexia & nausea
-canker sores
-confusion
-depression
-dermatitis
-localized scaly,
-dark pigmented
-dermatitis
-diarrhea
-crying jags, emotional
+anxiety
+apprehension
+bone pain
+dyspnea
 fatigue
-halitosis (bad breath)
-headache
-dyspepsia
-insomnia
 irritability
-limb pains
-memory loss
-muscular weakness
-skin eruptions/eczema”
+numbness
+paresthesias
+pica
+tremulousness
+weakness
+weight loss”
 
-### WAL-CLM-LETS-000020 · toxicity_sign
-- **essentials:** vitamin-b3 · **conditions:** liver_disease · **symptoms:** flushing
-- **claim:** Wallach lists the signs of niacin (vitamin B-3) toxicity (excess): the characteristic niacin "flush" (skin flushing) and liver impairment.
-- **verbatim** (offset 89494): “NIACIN TOXICITY
-niacin "flush"
-liver impairment
-PANTOTHENIC ACID
-(B-5) DEFICIENCY”
+### WAL-CLM-LETS-000024 · toxicity_sign
+- **essentials:** phosphorus · **conditions:** malabsorption, osteoporosis, arthritis, hyperparathyroidism · **symptoms:** loose_teeth, tooth_loss, weight_loss
+- **claim:** Wallach lists the signs of phosphorus toxicity (excess): calcium malabsorption, loose teeth, osteoporosis and arthritis, secondary hyperparathyroidism, tooth loss, and weight loss.
+- **verbatim** (offset 90114): “PHOSPHORUS TOXICITY
+calcium malabsorption
+loose teeth
+osteoporosis / arthritis
+secondary hyperparathyroidism
+tooth loss
+weight loss”
 
-### WAL-CLM-LETS-000021 · deficiency_sign
-- **essentials:** vitamin-b5 · **conditions:** alopecia, depression, eczema, hypotension, insomnia · **symptoms:** abdominal_pain, burning_feet, ataxia, fainting, fatigue, lowered_immunity, muscle_cramps, nausea, vomiting, nervousness, rapid_pulse, weakness
-- **claim:** Wallach lists the signs of pantothenic acid (vitamin B-5) deficiency: abdominal pain, hair loss (alopecia), burning feet, coordination impairment, depression, eczema, faintness, fatigue, low blood pressure, infections, insomnia, muscle spasms, nausea and vomiting, nervousness, a rapid heartbeat (tachycardia), and weakness.
-- **verbatim** (offset 89542): “PANTOTHENIC ACID
-(B-5) DEFICIENCY
-abdominal pain
-alopecia
-burning feet
-coordination impairment
-depression
-eczema
-faintness
-fatigue
-hypotension
-infections
-insomnia
-muscle spasms
-nausea & vomiting”
-
-### WAL-CLM-LETS-000022 · deficiency_sign
-- **essentials:** — · **conditions:** depression · **symptoms:** constipation, headache, irritability, dyspepsia, fatigue, gray_hair
-- **claim:** Wallach lists the signs of para-aminobenzoic acid (PABA) deficiency: constipation; depression, headache and irritability; gastrointestinal disorders; fatigue; and graying hair.
-- **verbatim** (offset 89839): “PARA AMINOBENZOIC ACID (PABA)
-DEFICIENCY
+### WAL-CLM-LETS-000025 · deficiency_sign
+- **essentials:** potassium · **conditions:** acne, depression, edema, glucose_intolerance, high_cholesterol, hypotension, insomnia · **symptoms:** irregular_heartbeat, cognitive_impairment, constipation, ecg_changes, fatigue, retarded_growth, hyperreflexia, muscle_weakness, nervousness, palpitations, polydipsia, proteinuria, respiratory_distress, salt_retention, rapid_pulse, dry_skin
+- **claim:** Wallach lists the signs of potassium deficiency: acne, arrhythmia, cognitive impairment, constipation, depression, electrocardiogram (ECG) changes, edema (swelling), fatigue, glucose intolerance, growth retardation, high cholesterol, hyperreflexia (overactive reflexes), low blood pressure, insomnia, muscle weakness, nervousness, palpitations, polydipsia (excessive thirst), proteinuria (protein in the urine), respiratory distress, salt retention, a rapid heart rate (tachycardia), and xerosis (abnormally dry skin).
+- **verbatim** (offset 90246): “POTASSIUM DEFICIENCY
+acne
+arrhythmia
+cognitive impairment
 constipation
-depression/headache/irritability
-G I disorders
+depression
+ECG changes
+edema
 fatigue
-graying hair”
+glucose intolerance
+growth retardation
+hypercholesterolemia
+hyperreflexia
+hypotension
+insomnia
+muscle weakness
+nervousness
+palpitations
+polydipsia
+proteinuria
+respiratory distress
+"salt" retention
+tachycardia (rapid heart rate)
+xerosis”
+
+### WAL-CLM-LETS-000026 · toxicity_sign
+- **essentials:** potassium · **conditions:** cardiac_arrest · **symptoms:** cognitive_impairment, dysarthria, dysphasia, weakness
+- **claim:** Wallach lists the signs of potassium toxicity (excess): cardiac arrest, cognitive impairment, dysarthria (slurred speech), dysphasia (impaired language), and weakness.
+- **verbatim** (offset 90590): “POTASSIUM TOXICITY
+cardiac arrest
+cognitive impairment
+dysarthria
+dysphasia
+weakness”
+
+### WAL-CLM-LETS-000027 · deficiency_sign
+- **essentials:** vitamin-b6 · **conditions:** acne, alopecia, anemia, anorexia, arthritis, conjunctivitis, depression, stomatitis · **symptoms:** nausea, cheilosis, dizziness, facial_oiliness, fatigue, geographic_tongue, impaired_wound_healing, irritability, nervousness, neurologic_symptoms, convulsions, retarded_growth, weakness
+- **claim:** Wallach lists the signs of pyridoxine (vitamin B-6) deficiency: acne, hair loss (alopecia), anemia, anorexia (loss of appetite) and nausea, arthritis, cheilosis (cracked lip corners), conjunctivitis, depression, dizziness, facial oiliness, fatigue, geographic tongue, impaired wound healing, irritability, nervousness, neurologic symptoms, seizures, stomatitis (mouth inflammation), stunted growth, and weakness.
+- **verbatim** (offset 90675): “PYRIDOXINE (B-6) DEFICIENCY
+acne
+alopecia
+anemia
+anorexia & nausea
+arthritis
+cheilosis
+conjunctivitis
+depression
+dizziness
+facial oiliness
+fatigue
+geographic tongue
+impaired wound healing
+irritability”
+
+### WAL-CLM-LETS-000028 · toxicity_sign
+- **essentials:** vitamin-b6 · **conditions:** — · **symptoms:** electric_shock_sensations, paresthesia
+- **claim:** Wallach lists the signs of pyridoxine (vitamin B-6) toxicity (excess): "electric shock" sensations and paresthesia (numbness and tingling).
+- **verbatim** (offset 91021): “PYRIDOXINE TOXICITY
+"electric shock" sensations
+paresthesia
+RIBOFLAVIN (B-2) DEFICIENCY”
+
+### WAL-CLM-LETS-000029 · deficiency_sign
+- **essentials:** vitamin-b2 · **conditions:** alopecia, cataracts, depression, dermatitis, photophobia · **symptoms:** blurred_vision, cheilosis, dizziness, eye_irritation, geographic_tongue, retarded_growth, pancreatic_atrophy
+- **claim:** Wallach lists the signs of riboflavin (vitamin B-2) deficiency: hair loss (alopecia), blurred vision, cataracts, cheilosis (cracked lip corners), depression, dermatitis (drying, greasy, scaling), dizziness, eye symptoms (itching, burning, redness), geographic tongue, growth retardation, pancreatic atrophy and fibrosis, and photophobia (light sensitivity).
+- **verbatim** (offset 91081): “RIBOFLAVIN (B-2) DEFICIENCY
+alopecia
+blurred vision
+cataracts
+cheilosis
+depression
+dermatitis (drying, greasy,
+scaling)
+dizziness
+eyes (itching, burning, red)
+geographic tongue
+growth retardation
+pancreatic atrophy and fibrosis
+photophobia”
 

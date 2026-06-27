@@ -2349,7 +2349,7 @@ osteoporosis / arthritis
 secondary hyperparathyroidism
 tooth loss
 weight loss
-POTASSRJM DEFICIENCY
+POTASSIUM DEFICIENCY
 acne
 arrhythmia
 cognitive impairment
@@ -2373,7 +2373,7 @@ respiratory distress
 "salt" retention
 tachycardia (rapid heart rate)
 xerosis
-POTASSRJM TOXICITY
+POTASSIUM TOXICITY
 cardiac arrest
 cognitive impairment
 dysarthria
@@ -2402,7 +2402,7 @@ seizures
 stomatitis
 stunted growth
 weakness
-PYRTDOXINE TOXICITY
+PYRIDOXINE TOXICITY
 "electric shock" sensations
 paresthesia
 RIBOFLAVIN (B-2) DEFICIENCY

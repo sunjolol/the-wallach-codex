@@ -387,9 +387,10 @@
     "display_name": "Phosphorus",
     "canon_slug": "phosphorus",
     "category": "mineral",
-    "claim_count": 8,
+    "claim_count": 10,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-LETS-000023",
         "WAL-CLM-RARE-000208"
       ],
       "definition": [
@@ -406,20 +407,80 @@
       "mechanism": [
         "WAL-CLM-DDDL-000052",
         "WAL-CLM-RARE-000209"
+      ],
+      "toxicity_sign": [
+        "WAL-CLM-LETS-000024"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "apprehension",
+        "claim_id": "WAL-CLM-LETS-000023",
+        "confidence": "high"
+      },
+      {
+        "sign": "bone_pain",
+        "claim_id": "WAL-CLM-LETS-000023",
+        "confidence": "high"
+      },
+      {
+        "sign": "dyspnea",
+        "claim_id": "WAL-CLM-LETS-000023",
+        "confidence": "high"
+      },
+      {
+        "sign": "fatigue",
+        "claim_id": "WAL-CLM-LETS-000023",
+        "confidence": "high"
+      },
+      {
+        "sign": "irritability",
+        "claim_id": "WAL-CLM-LETS-000023",
+        "confidence": "high"
+      },
+      {
+        "sign": "numbness",
+        "claim_id": "WAL-CLM-LETS-000023",
+        "confidence": "high"
+      },
+      {
+        "sign": "paresthesia",
+        "claim_id": "WAL-CLM-LETS-000023",
+        "confidence": "high"
+      },
+      {
+        "sign": "tremors",
+        "claim_id": "WAL-CLM-LETS-000023",
+        "confidence": "high"
+      },
+      {
+        "sign": "weakness",
+        "claim_id": "WAL-CLM-LETS-000023",
+        "confidence": "high"
+      },
+      {
+        "sign": "weight_loss",
+        "claim_id": "WAL-CLM-LETS-000023",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
+      "anorexia",
+      "anxiety",
       "arthritis",
+      "hyperparathyroidism",
       "hypertension",
       "hypophosphatemia",
-      "osteoporosis"
+      "malabsorption",
+      "osteoporosis",
+      "pica"
     ],
     "interacts_with": [
       "calcium"
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -501,9 +562,10 @@
     "display_name": "Potassium",
     "canon_slug": "potassium",
     "category": "mineral",
-    "claim_count": 9,
+    "claim_count": 11,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-LETS-000025",
         "WAL-CLM-RARE-000155"
       ],
       "definition": [
@@ -521,24 +583,115 @@
       "mechanism": [
         "WAL-CLM-RARE-000153",
         "WAL-CLM-RARE-000188"
+      ],
+      "toxicity_sign": [
+        "WAL-CLM-LETS-000026"
       ]
     },
     "deficiency_signs": [
+      {
+        "sign": "cognitive_impairment",
+        "claim_id": "WAL-CLM-LETS-000025",
+        "confidence": "high"
+      },
+      {
+        "sign": "constipation",
+        "claim_id": "WAL-CLM-LETS-000025",
+        "confidence": "high"
+      },
+      {
+        "sign": "dry_skin",
+        "claim_id": "WAL-CLM-LETS-000025",
+        "confidence": "high"
+      },
+      {
+        "sign": "ecg_changes",
+        "claim_id": "WAL-CLM-LETS-000025",
+        "confidence": "high"
+      },
+      {
+        "sign": "fatigue",
+        "claim_id": "WAL-CLM-LETS-000025",
+        "confidence": "high"
+      },
+      {
+        "sign": "hyperreflexia",
+        "claim_id": "WAL-CLM-LETS-000025",
+        "confidence": "high"
+      },
+      {
+        "sign": "irregular_heartbeat",
+        "claim_id": "WAL-CLM-LETS-000025",
+        "confidence": "high"
+      },
       {
         "sign": "mental_apathy",
         "claim_id": "WAL-CLM-RARE-000155",
         "confidence": "high"
       },
       {
+        "sign": "muscle_weakness",
+        "claim_id": "WAL-CLM-LETS-000025",
+        "confidence": "high"
+      },
+      {
         "sign": "muscular_weakness",
         "claim_id": "WAL-CLM-RARE-000155",
+        "confidence": "high"
+      },
+      {
+        "sign": "nervousness",
+        "claim_id": "WAL-CLM-LETS-000025",
+        "confidence": "high"
+      },
+      {
+        "sign": "palpitations",
+        "claim_id": "WAL-CLM-LETS-000025",
+        "confidence": "high"
+      },
+      {
+        "sign": "polydipsia",
+        "claim_id": "WAL-CLM-LETS-000025",
+        "confidence": "high"
+      },
+      {
+        "sign": "proteinuria",
+        "claim_id": "WAL-CLM-LETS-000025",
+        "confidence": "high"
+      },
+      {
+        "sign": "rapid_pulse",
+        "claim_id": "WAL-CLM-LETS-000025",
+        "confidence": "high"
+      },
+      {
+        "sign": "respiratory_distress",
+        "claim_id": "WAL-CLM-LETS-000025",
+        "confidence": "high"
+      },
+      {
+        "sign": "retarded_growth",
+        "claim_id": "WAL-CLM-LETS-000025",
+        "confidence": "high"
+      },
+      {
+        "sign": "salt_retention",
+        "claim_id": "WAL-CLM-LETS-000025",
         "confidence": "high"
       }
     ],
     "conditions_treated": [
+      "acne",
       "addisons_disease",
+      "cardiac_arrest",
       "cardiac_failure",
-      "hypokalemia"
+      "depression",
+      "edema",
+      "glucose_intolerance",
+      "high_cholesterol",
+      "hypokalemia",
+      "hypotension",
+      "insomnia"
     ],
     "interacts_with": [
       "calcium",
@@ -547,6 +700,7 @@
       "sodium"
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -2878,9 +3032,10 @@
     "display_name": "Riboflavin",
     "canon_slug": "vitamin-b2",
     "category": "vitamin",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-LETS-000029",
         "WAL-CLM-RARE-000234"
       ],
       "mechanism": [
@@ -2888,6 +3043,31 @@
       ]
     },
     "deficiency_signs": [
+      {
+        "sign": "blurred_vision",
+        "claim_id": "WAL-CLM-LETS-000029",
+        "confidence": "high"
+      },
+      {
+        "sign": "cheilosis",
+        "claim_id": "WAL-CLM-LETS-000029",
+        "confidence": "high"
+      },
+      {
+        "sign": "dizziness",
+        "claim_id": "WAL-CLM-LETS-000029",
+        "confidence": "high"
+      },
+      {
+        "sign": "eye_irritation",
+        "claim_id": "WAL-CLM-LETS-000029",
+        "confidence": "high"
+      },
+      {
+        "sign": "geographic_tongue",
+        "claim_id": "WAL-CLM-LETS-000029",
+        "confidence": "high"
+      },
       {
         "sign": "geographic_tongue",
         "claim_id": "WAL-CLM-RARE-000234",
@@ -2897,12 +3077,26 @@
         "sign": "magenta_tongue",
         "claim_id": "WAL-CLM-RARE-000234",
         "confidence": "high"
+      },
+      {
+        "sign": "pancreatic_atrophy",
+        "claim_id": "WAL-CLM-LETS-000029",
+        "confidence": "high"
+      },
+      {
+        "sign": "retarded_growth",
+        "claim_id": "WAL-CLM-LETS-000029",
+        "confidence": "high"
       }
     ],
     "conditions_treated": [
+      "alopecia",
       "anemia",
       "angular_stomatitis",
+      "cataracts",
       "cystic_fibrosis",
+      "depression",
+      "dermatitis",
       "peripheral_neuropathy",
       "photophobia",
       "seborrheic_dermatitis"
@@ -2913,6 +3107,7 @@
       "zinc"
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -3160,15 +3355,19 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 4,
+    "claim_count": 6,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-LETS-000027",
         "WAL-CLM-RARE-000237"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000055",
         "WAL-CLM-DDDL-000078",
         "WAL-CLM-RARE-000286"
+      ],
+      "toxicity_sign": [
+        "WAL-CLM-LETS-000028"
       ]
     },
     "deficiency_signs": [
@@ -3178,8 +3377,53 @@
         "confidence": "high"
       },
       {
+        "sign": "cheilosis",
+        "claim_id": "WAL-CLM-LETS-000027",
+        "confidence": "high"
+      },
+      {
+        "sign": "convulsions",
+        "claim_id": "WAL-CLM-LETS-000027",
+        "confidence": "high"
+      },
+      {
         "sign": "convulsions",
         "claim_id": "WAL-CLM-RARE-000237",
+        "confidence": "high"
+      },
+      {
+        "sign": "dizziness",
+        "claim_id": "WAL-CLM-LETS-000027",
+        "confidence": "high"
+      },
+      {
+        "sign": "facial_oiliness",
+        "claim_id": "WAL-CLM-LETS-000027",
+        "confidence": "high"
+      },
+      {
+        "sign": "fatigue",
+        "claim_id": "WAL-CLM-LETS-000027",
+        "confidence": "high"
+      },
+      {
+        "sign": "geographic_tongue",
+        "claim_id": "WAL-CLM-LETS-000027",
+        "confidence": "high"
+      },
+      {
+        "sign": "impaired_wound_healing",
+        "claim_id": "WAL-CLM-LETS-000027",
+        "confidence": "high"
+      },
+      {
+        "sign": "irritability",
+        "claim_id": "WAL-CLM-LETS-000027",
+        "confidence": "high"
+      },
+      {
+        "sign": "nausea",
+        "claim_id": "WAL-CLM-LETS-000027",
         "confidence": "high"
       },
       {
@@ -3188,13 +3432,39 @@
         "confidence": "high"
       },
       {
+        "sign": "nervousness",
+        "claim_id": "WAL-CLM-LETS-000027",
+        "confidence": "high"
+      },
+      {
+        "sign": "neurologic_symptoms",
+        "claim_id": "WAL-CLM-LETS-000027",
+        "confidence": "high"
+      },
+      {
+        "sign": "retarded_growth",
+        "claim_id": "WAL-CLM-LETS-000027",
+        "confidence": "high"
+      },
+      {
         "sign": "vomiting",
         "claim_id": "WAL-CLM-RARE-000237",
+        "confidence": "high"
+      },
+      {
+        "sign": "weakness",
+        "claim_id": "WAL-CLM-LETS-000027",
         "confidence": "high"
       }
     ],
     "conditions_treated": [
+      "acne",
+      "alopecia",
+      "anemia",
+      "anorexia",
       "anxiety",
+      "arthritis",
+      "conjunctivitis",
       "cradle_cap",
       "depression",
       "hyperirritability",
@@ -3202,6 +3472,7 @@
       "panic_attacks",
       "peripheral_neuropathy",
       "seborrheic_dermatitis",
+      "stomatitis",
       "tourette_syndrome"
     ],
     "interacts_with": [
@@ -3215,6 +3486,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },

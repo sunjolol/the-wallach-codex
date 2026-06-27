@@ -983,6 +983,326 @@
       "extracted_at": "2026-06-27T22:25:01+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000023",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "phosphorus"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anorexia",
+        "anxiety",
+        "pica"
+      ],
+      "symptoms": [
+        "apprehension",
+        "bone_pain",
+        "dyspnea",
+        "fatigue",
+        "irritability",
+        "numbness",
+        "paresthesia",
+        "tremors",
+        "weakness",
+        "weight_loss"
+      ],
+      "claim_text": "Wallach lists the signs of phosphorus deficiency: anorexia (loss of appetite), anxiety, apprehension, bone pain, dyspnea (labored breathing), fatigue, irritability, numbness, paresthesias (numbness and tingling), pica, tremulousness, weakness, and weight loss.",
+      "verbatim": "PHOSPHORUS DEFICIENCY\nanorexia\nanxiety\napprehension\nbone pain\ndyspnea\nfatigue\nirritability\nnumbness\nparesthesias\npica\ntremulousness\nweakness\nweight loss",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 47,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 89961
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:34:14+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000024",
+      "kind": "toxicity_sign",
+      "essentials": [
+        "phosphorus"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "malabsorption",
+        "osteoporosis",
+        "arthritis",
+        "hyperparathyroidism"
+      ],
+      "symptoms": [
+        "loose_teeth",
+        "tooth_loss",
+        "weight_loss"
+      ],
+      "claim_text": "Wallach lists the signs of phosphorus toxicity (excess): calcium malabsorption, loose teeth, osteoporosis and arthritis, secondary hyperparathyroidism, tooth loss, and weight loss.",
+      "verbatim": "PHOSPHORUS TOXICITY\ncalcium malabsorption\nloose teeth\nosteoporosis / arthritis\nsecondary hyperparathyroidism\ntooth loss\nweight loss",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 47,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 90114
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "toxicity-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:34:14+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000025",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "potassium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "acne",
+        "depression",
+        "edema",
+        "glucose_intolerance",
+        "high_cholesterol",
+        "hypotension",
+        "insomnia"
+      ],
+      "symptoms": [
+        "irregular_heartbeat",
+        "cognitive_impairment",
+        "constipation",
+        "ecg_changes",
+        "fatigue",
+        "retarded_growth",
+        "hyperreflexia",
+        "muscle_weakness",
+        "nervousness",
+        "palpitations",
+        "polydipsia",
+        "proteinuria",
+        "respiratory_distress",
+        "salt_retention",
+        "rapid_pulse",
+        "dry_skin"
+      ],
+      "claim_text": "Wallach lists the signs of potassium deficiency: acne, arrhythmia, cognitive impairment, constipation, depression, electrocardiogram (ECG) changes, edema (swelling), fatigue, glucose intolerance, growth retardation, high cholesterol, hyperreflexia (overactive reflexes), low blood pressure, insomnia, muscle weakness, nervousness, palpitations, polydipsia (excessive thirst), proteinuria (protein in the urine), respiratory distress, salt retention, a rapid heart rate (tachycardia), and xerosis (abnormally dry skin).",
+      "verbatim": "POTASSIUM DEFICIENCY\nacne\narrhythmia\ncognitive impairment\nconstipation\ndepression\nECG changes\nedema\nfatigue\nglucose intolerance\ngrowth retardation\nhypercholesterolemia\nhyperreflexia\nhypotension\ninsomnia\nmuscle weakness\nnervousness\npalpitations\npolydipsia\nproteinuria\nrespiratory distress\n\"salt\" retention\ntachycardia (rapid heart rate)\nxerosis",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 47,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 90246
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:34:14+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000026",
+      "kind": "toxicity_sign",
+      "essentials": [
+        "potassium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cardiac_arrest"
+      ],
+      "symptoms": [
+        "cognitive_impairment",
+        "dysarthria",
+        "dysphasia",
+        "weakness"
+      ],
+      "claim_text": "Wallach lists the signs of potassium toxicity (excess): cardiac arrest, cognitive impairment, dysarthria (slurred speech), dysphasia (impaired language), and weakness.",
+      "verbatim": "POTASSIUM TOXICITY\ncardiac arrest\ncognitive impairment\ndysarthria\ndysphasia\nweakness",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 47,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 90590
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "toxicity-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:34:14+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000027",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-b6"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "acne",
+        "alopecia",
+        "anemia",
+        "anorexia",
+        "arthritis",
+        "conjunctivitis",
+        "depression",
+        "stomatitis"
+      ],
+      "symptoms": [
+        "nausea",
+        "cheilosis",
+        "dizziness",
+        "facial_oiliness",
+        "fatigue",
+        "geographic_tongue",
+        "impaired_wound_healing",
+        "irritability",
+        "nervousness",
+        "neurologic_symptoms",
+        "convulsions",
+        "retarded_growth",
+        "weakness"
+      ],
+      "claim_text": "Wallach lists the signs of pyridoxine (vitamin B-6) deficiency: acne, hair loss (alopecia), anemia, anorexia (loss of appetite) and nausea, arthritis, cheilosis (cracked lip corners), conjunctivitis, depression, dizziness, facial oiliness, fatigue, geographic tongue, impaired wound healing, irritability, nervousness, neurologic symptoms, seizures, stomatitis (mouth inflammation), stunted growth, and weakness.",
+      "verbatim": "PYRIDOXINE (B-6) DEFICIENCY\nacne\nalopecia\nanemia\nanorexia & nausea\narthritis\ncheilosis\nconjunctivitis\ndepression\ndizziness\nfacial oiliness\nfatigue\ngeographic tongue\nimpaired wound healing\nirritability",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 47,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 90675
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:34:14+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000028",
+      "kind": "toxicity_sign",
+      "essentials": [
+        "vitamin-b6"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [
+        "electric_shock_sensations",
+        "paresthesia"
+      ],
+      "claim_text": "Wallach lists the signs of pyridoxine (vitamin B-6) toxicity (excess): \"electric shock\" sensations and paresthesia (numbness and tingling).",
+      "verbatim": "PYRIDOXINE TOXICITY\n\"electric shock\" sensations\nparesthesia\nRIBOFLAVIN (B-2) DEFICIENCY",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 48,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 91021
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "toxicity-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:34:14+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000029",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-b2"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "alopecia",
+        "cataracts",
+        "depression",
+        "dermatitis",
+        "photophobia"
+      ],
+      "symptoms": [
+        "blurred_vision",
+        "cheilosis",
+        "dizziness",
+        "eye_irritation",
+        "geographic_tongue",
+        "retarded_growth",
+        "pancreatic_atrophy"
+      ],
+      "claim_text": "Wallach lists the signs of riboflavin (vitamin B-2) deficiency: hair loss (alopecia), blurred vision, cataracts, cheilosis (cracked lip corners), depression, dermatitis (drying, greasy, scaling), dizziness, eye symptoms (itching, burning, redness), geographic tongue, growth retardation, pancreatic atrophy and fibrosis, and photophobia (light sensitivity).",
+      "verbatim": "RIBOFLAVIN (B-2) DEFICIENCY\nalopecia\nblurred vision\ncataracts\ncheilosis\ndepression\ndermatitis (drying, greasy,\nscaling)\ndizziness\neyes (itching, burning, red)\ngeographic tongue\ngrowth retardation\npancreatic atrophy and fibrosis\nphotophobia",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 48,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 91081
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T22:34:14+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
