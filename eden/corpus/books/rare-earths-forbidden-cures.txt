@@ -9708,7 +9708,7 @@ inherent evil.
 “I believe human nature spurts out
 freaks,” he said. “These two were freaks who
 just found each other.” One of them, Robert,
-Was worse than the other, he said, but togeth-
+was worse than the other, he said, but togeth-
 er a deadly combination.
 
 Others see the crime as a symptom of a
@@ -27501,7 +27501,7 @@ plants at 0.2 ppm; land animals at 1.7 ppm
 (highest concentrations found in liver, kid-
 ney, heart, and skeletal muscle).
 
-Selenium is the most efficient antioxident (anti-peroxidant) and is found at the subcellular level in the glutathione peroxidase enzyme system and metallo amino acids (selenomethionine, etc.). Selenium prevents cellular and subcellular lipids and fats from being peroxidized which literally means it prevents body fats from going rancid (seen externally as “age spots” or “liver spots” - this brown gold peroxidized lipid is known as ceroid lipofuscin).
+Selenium is the most efficient antioxidant (anti-peroxidant) and is found at the subcellular level in the glutathione peroxidase enzyme system and metallo amino acids (selenomethionine, etc.). Selenium prevents cellular and subcellular lipids and fats from being peroxidized which literally means it prevents body fats from going rancid (seen externally as “age spots” or “liver spots” - this brown gold peroxidized lipid is known as ceroid lipofuscin).
 
 Selenium also functions to protect cellular and organelle bi-lipid layer membranes from oxidative damage - the cover illustration is an electron photomicrograph of a selenium deficient rhesus monkey liver mitochondria magnified 126,000 times. The inner membrane of the mitochondria (made up of enzymes and RNA) has precipitated out of the normal structure to become a nonfunctioning organic crystalloid. This type of damage seen through the standard light microscope is called “age pigment”.
 High intakes of vegetable oils including
@@ -29572,7 +29572,7 @@ and is found in igneous rocks at 0.48 ppm;
 shales at 0.28 ppm; sandstone at 0.3 ppm;
 limestone at 0.065 ppm; land plants at
 0.0015 ppm and land animals at 0.00004
-PRD
+ppm
 
 Thulium supplementation enhances the growth of normal cells and has doubled the life spans of laboratory species.
 
@@ -29600,13 +29600,13 @@ especially in alkaline soils); marine plants
 41
 
 at 2 ppm; land plants at 1.6 ppm (accumu-
-lated by the fungus Arnanita muscaria);
+lated by the fungus Amanita muscaria);
 marine animals at 0.14 to 2 ppm; land ani-
 mals at 0.15 ppm.
 
 Metallic vanadium (vanadyl sulfate) is absorbed from the intestinal tract very poorly at only 0.1 to 1.0 %; vanadium chelates at 40 % and plant derived colloidals at up to 98 %.
 
-Vanadium was proven to be an essential trace mineral in 1971. Vanadium stimulates glucose (blood sugar) oxidation and transport in fat cells and glycogen (animal starch) synthesis in liver and muscle, and inhibits liver gluconeogenisis (production of glucose from fat) and absorption of glucose from the gut. Vanadium enhances the stimulating effect of insulin on DNA synthesis. Despite low serum insulin, the blood glucose levels of diabetic rats fed vanadium Was the same as normal controls.
+Vanadium was proven to be an essential trace mineral in 1971. Vanadium stimulates glucose (blood sugar) oxidation and transport in fat cells and glycogen (animal starch) synthesis in liver and muscle, and inhibits liver gluconeogenisis (production of glucose from fat) and absorption of glucose from the gut. Vanadium enhances the stimulating effect of insulin on DNA synthesis. Despite low serum insulin, the blood glucose levels of diabetic rats fed vanadium was the same as normal controls.
 
 Vanadium appears to function like in-
 sulin by altering cell membrane function for
@@ -29701,7 +29701,7 @@ liferation of Tetrahymena pyriformis by
 Trace Rare Earths. Biol. Trace Ele. Res. 7:95.
 1985.
 
-Yb- Ytterbium is a Rare Earth found in igneous rocks at 3 ppm; shale at 1.8 ppm; sandstone at 1.3 ppm; limeston at 0.43 ppm; land plants at 0.0015 ppm; marine animals at 0.02 ppm; land animals at 0.00012 ppm (accumulates up to 1.3 ppm in bone, teeth and liver). Exposure of pregnant mice leads to rapid placental transfer, 14% of ingested Yb can be detected in newborn mice.
+Yb- Ytterbium is a Rare Earth found in igneous rocks at 3 ppm; shale at 1.8 ppm; sandstone at 1.3 ppm; limestone at 0.43 ppm; land plants at 0.0015 ppm; marine animals at 0.02 ppm; land animals at 0.00012 ppm (accumulates up to 1.3 ppm in bone, teeth and liver). Exposure of pregnant mice leads to rapid placental transfer, 14% of ingested Yb can be detected in newborn mice.
 
 ZN - Zinc is found in igneous rocks at
 70 ppm; shale at 95 ppm; sandstone at 16
@@ -29783,7 +29783,7 @@ There are no less than 70 metalloenzymes that require Zn to function, these incl
 
 Excesses of copper and iron and high phytate diets (vegans) will reduce availability of dietary zinc. Heavy losses of Zn occurs in sweat, therefore unsupplemented athletes are particularly at risk for Zn deficiency (i.e.- anorexia nervosa, muscle weakness, pica, etc.).
 
-1. Beardsley, D.W. and Farbes,R.M.:
+1. Beardsley, D.W. and Forbes,R.M.:
 Growth and Chemical Studies of Zinc De-
 ficiency in the Baby Pig. J.An.Science.
 1957.p.1038.
@@ -36057,7 +36057,7 @@ Hoekstra, W.O.: Biochemical Function of Selenium
 and It’s Relation to Vitamin E. Fed. Proc.
 34:2083.1975.
 
-Hove, E.,et al.: Further Studies on Zine Deficiency
+Hove, E.,et al.: Further Studies on Zinc Deficiency
 in Rats. Am.]. Physiol. 124:750.1938.
 
 Howard, Sir Albert.: The Soil and Health: A Study of
@@ -36181,7 +36181,7 @@ Lewis, P.K. et al.: The Effect of Certain Nutritional
 Factors Including Calcium, Phosphorus and Zinc
 on Parakeratosis in Swine.J An.Sci.15:741. 1956
 
-Likuski, H.J.A. and Farbes, R.M.: Mineral Utilization
+Likuski, H.J.A. and Forbes, R.M.: Mineral Utilization
 in the Rat IV. Effects of Calcium and Phytic Acid on
 the Utilization of Dietary Zinc. J.Nut. 85:230.1965.
 
@@ -36610,7 +36610,7 @@ Spontaneous Mulberry Heart Disease. Am.}.Vet.Res.
 38:2077 - 2080.1977.
 
 Vohra, P. and Kratzer, F.H.: Influence of Various
-Chelating Agents on the Availability of Zine. J. Nutr.
+Chelating Agents on the Availability of Zinc. J. Nutr.
 82:249-256., February,1964.
 
 Walford, R.L.: The Immunological Theory of Aging.

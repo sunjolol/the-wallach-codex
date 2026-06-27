@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_110 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_111 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-27 14:18 UTC-05:00 · round-close · eden/corpus
+Phase γ.3 batch 62 — .txt-cleanup pass A: 10 non-surfaced OCR-typo fixes in rare-earths.txt (antioxident/PRD→ppm/Arnanita→Amanita/limeston/Farbes→Forbes×2/Zine→Zinc×2/2 prose Was-caps). NO new claims; corpus 380, kv 103→104, board 30/30.
+  ↳ Pure book-text hygiene, no claim verbatim cited any edit (resnap 0 BROKEN / 8 relocated). Luneth ruled Farbes→Forbes (verifiable real R.M. Forbes papers) + sweep-all-Was. The Was-sweep surfaced 5 NON-errors kept faithful: 'Muresan (7-7), Was.' = Washington team abbrev; 4 obituary headlines in title-case. Transactional safe_rewrite (count==1 asserts) → resnap → draft synced ←shard → seal → embed → build → invariants 30/30 → knowledge probe PASS. NEXT = batch B Table 3-1 de-interleave.
 
 ## 2026-06-27 13:41 UTC-05:00 · round-close · eden/corpus
 Phase γ.3 b61 — Deferral 2 final: Ch.9 Table 9-1 drug→mineral-replacement map → 11 claims RARE-276..286, one per drug category. Rebuilt the campaign's most entangled region (3-page two-column table interleaved with narrative). DEFERRALS 1 & 2 COMPLETE. kv 103, corpus 380.
