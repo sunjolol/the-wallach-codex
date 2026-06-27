@@ -9017,6 +9017,75 @@
       "extracted_at": "2026-06-27T00:59:39+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000251",
+      "kind": "mechanism",
+      "essentials": [
+        "thulium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports that thulium, a 'heavy' rare earth, enhances the growth of normal cells and has doubled the life spans of laboratory species.",
+      "verbatim": "Thulium supplementation enhances the growth of normal cells and has doubled the life spans of laboratory species.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 411,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 962045
+      },
+      "dose": null,
+      "tags": [
+        "thulium",
+        "rare-earth",
+        "lifespan",
+        "longevity",
+        "cell-growth"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T01:10:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000252",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "thallium"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach notes that thallium accumulates in the mammalian kidney and is highly toxic to mammals, including humans.",
+      "verbatim": "land animals at 0.4 ppm (accumulates in the mammalian kidney and is highly toxic to mammals including man).",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 411,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 961733
+      },
+      "dose": null,
+      "tags": [
+        "thallium",
+        "toxic-metal",
+        "toxicity",
+        "kidney"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T01:10:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

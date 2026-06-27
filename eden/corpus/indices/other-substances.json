@@ -138,5 +138,18 @@
     "books_cited": [
       "dddl-3e-2011"
     ]
+  },
+  "thallium": {
+    "display_name": "Thallium",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000252"
+      ]
+    },
+    "conditions_treated": [],
+    "books_cited": [
+      "rare-earths"
+    ]
   }
 }

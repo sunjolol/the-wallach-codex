@@ -29933,13 +29933,7 @@ ppm (accumulates in plankton); land plants
 at 1 ppm; marine animals at 0.2 to 20 ppm
 and Jand animals at 0.2ppm.
 
-TI - Thallium is found in igneous rocks
-at 0.45 ppm; shale at 1.4 ppm; sandstone
-at 0.82 ppm; limestone at 0.05 ppm; sea
-water at 0.00001 ppm; soils at 0.1 ppm; land
-animals at 0.4 ppm (accumulates in the
-mammalian kidney and is highly toxic to
-mammals including man).
+TI - Thallium is found in igneous rocks at 0.45 ppm; shale at 1.4 ppm; sandstone at 0.82 ppm; limestone at 0.05 ppm; sea water at 0.00001 ppm; soils at 0.1 ppm; land animals at 0.4 ppm (accumulates in the mammalian kidney and is highly toxic to mammals including man).
 
 TM- Thulium isa “heavy” Rare Earth
 and is found in igneous rocks at 0.48 ppm;
@@ -29948,9 +29942,7 @@ limestone at 0.065 ppm; land plants at
 0.0015 ppm and land animals at 0.00004
 PRD
 
-Thulium supplementation enhances the
-growth of normal cells and has doubled the
-life spans of laboratory species.
+Thulium supplementation enhances the growth of normal cells and has doubled the life spans of laboratory species.
 
 U- uranium is found in igneous rocks
 at 2,7 ppm; shale at 3.7 ppm; sandstone
