@@ -306,6 +306,363 @@
       "extracted_at": "2026-06-27T21:43:04+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000008",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "alopecia",
+        "anemia",
+        "aneurysm",
+        "criminal_behavior",
+        "depression",
+        "dermatitis",
+        "diarrhea",
+        "arthritis",
+        "high_cholesterol",
+        "respiratory_disease",
+        "liver_cirrhosis",
+        "shwachman_syndrome"
+      ],
+      "symptoms": [
+        "fatigue",
+        "hemorrhage",
+        "weakness",
+        "fragile_bones"
+      ],
+      "claim_text": "Wallach lists the signs of copper deficiency: hair loss (alopecia), microcytic anemia, aneurysm and cerebral hemorrhage, criminal behavior, depression, dermatosis, diarrhea, fatigue, fragile bones and arthritis, high cholesterol, otosis (\"lipping\" of the epiphyseal growth plates), respiratory disease, weakness with liver cirrhosis, and Shwachman's syndrome.",
+      "verbatim": "COPPER DEFICIENCY\nalopecia\nanemia (microcytic)\naneutysm / cerebral hemorrage\ncriminal behavior\ndepression\ndermatosis\ndiarrhea\nfatigue\nfragile bones / arthritis\nhypercholesterolemia",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 44,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 87176
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T21:54:59+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000009",
+      "kind": "toxicity_sign",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "depression"
+      ],
+      "symptoms": [
+        "irritability",
+        "joint_pain",
+        "myalgia",
+        "nervousness"
+      ],
+      "claim_text": "Wallach lists the signs of copper toxicity (excess): depression, irritability, joint pain, muscle pain, and nervousness.",
+      "verbatim": "COPPER TOXICITY\ndepression\nirritability\njoint pain\nmuscle pain\nnervousness",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 45,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 87534
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "toxicity-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T21:54:59+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000010",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-b9"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anemia",
+        "anorexia",
+        "birth_defects",
+        "spina_bifida",
+        "diarrhea",
+        "insomnia",
+        "paranoia",
+        "vitiligo"
+      ],
+      "symptoms": [
+        "apathy",
+        "dyspepsia",
+        "fatigue",
+        "geographic_tongue",
+        "retarded_growth",
+        "headache",
+        "poor_memory",
+        "weakness"
+      ],
+      "claim_text": "Wallach lists the signs of folic acid (vitamin B-9) deficiency: megaloblastic anemia, anorexia, apathy, birth defects (spina bifida, hydroencephalocele), gastrointestinal upset and diarrhea, dyspepsia (indigestion), fatigue, geographic tongue, growth retardation, headache, insomnia, memory loss, paranoia, vitiligo, and weakness.",
+      "verbatim": "FOLIC ACID DEFICIENCY\nanemia (megaloblastic)\nanorexia\napathy\nbirth defects (spina bifida,\nhydroencephalocoele)\nG I upsets/diarrhea\ndyspepsia\nfatigue\ngeographic tongue\ngrowth retardation\nheadache\ninsomnia\nmemory loss\nparanoia\nvitaligo\nweakness",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 45,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 87609
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T21:54:59+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000011",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "omega-3",
+        "omega-6"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "acne",
+        "alopecia",
+        "arthritis",
+        "diarrhea",
+        "eczema",
+        "fatty_liver",
+        "gallstones",
+        "infertility",
+        "kidney_disease",
+        "cystic_fibrosis",
+        "anorexia"
+      ],
+      "symptoms": [
+        "dry_hair",
+        "retarded_growth",
+        "impaired_wound_healing",
+        "lowered_immunity",
+        "dry_skin",
+        "endocrine_dysfunction"
+      ],
+      "claim_text": "Wallach lists the signs of essential fatty acid (omega-3 and omega-6) deficiency: acne, hair loss (alopecia), arthritis, atrophy of the endocrine glands, diarrhea, dry brittle hair, eczema, endocrine dysfunction, fatty degeneration of the liver, gallstones, growth retardation, immunologic dysfunction, impaired wound healing, infertility, kidney dysfunction, a positive sweat test (as in cystic fibrosis and anorexia nervosa), and xerosis (abnormally dry skin).",
+      "verbatim": "ESSENTIAL FATTY ACID DEFICIENCY\nacne\nalopecia\narthritis\natrophy of endocrine glands\ndiarrhea\ndry brittle hair\neczema\nendocrine dysfunction\nfatty degeneration of the liver\ngall stones\ngrowth retardation\nimmunologic dysfunction\nimpaired wound healing\ninfertility\nkidney dysfunction\npositive sweat test (cystic\nfibrosis, anorexia nervosa,\netc.)\nxerosis",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 45,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 87852
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T21:54:59+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000012",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "inositol"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "alopecia",
+        "eczema",
+        "high_cholesterol"
+      ],
+      "symptoms": [
+        "constipation"
+      ],
+      "claim_text": "Wallach lists the signs of inositol deficiency: hair loss (alopecia), constipation, eczema, and high cholesterol.",
+      "verbatim": "INOSITOL DEFICIENCY\nalopecia\nconstipation\neczema\nhypercholesterolemia",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 45,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 88202
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T21:54:59+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000013",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "goiter",
+        "hypothyroidism"
+      ],
+      "symptoms": [
+        "fatigue",
+        "low_basal_temperature",
+        "weight_gain"
+      ],
+      "claim_text": "Wallach lists the signs of iodine deficiency: goiter, fatigue, hypothyroidism (low thyroid function), low basal body temperature, and weight gain.",
+      "verbatim": "IODINE DEFICIENCY\ngoiter\nfatigue\nhypothyroidism\nlow basal body temperature\nweight gain",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 45,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 88272
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T21:54:59+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000014",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "iron"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anemia",
+        "angular_stomatitis",
+        "anorexia",
+        "depression",
+        "pica"
+      ],
+      "symptoms": [
+        "brittle_nails",
+        "mental_confusion",
+        "constipation",
+        "dizziness",
+        "dysphagia",
+        "fatigue",
+        "fragile_bones",
+        "retarded_growth",
+        "headache",
+        "irritability",
+        "palpitations",
+        "dyspepsia"
+      ],
+      "claim_text": "Wallach lists the signs of iron deficiency: microcytic anemia, angular stomatitis (cracked mouth corners), anorexia, brittle nails, confusion, constipation, depression, dizziness, dysphagia (difficulty swallowing), fatigue, fragile bones, gastrointestinal upset, growth retardation, headaches, ice eating (pica), irritability, and heart palpitations.",
+      "verbatim": "IRON DEFICIENCY\nanemia (microcytic)\nangular stomatitis\nanorexia\nbrittle nails\nconfusion\nconstipation\ndepression\ndizziness\ndysphagia\nfatigue\nfragile bones\nG I upset\ngrowth retardation\nheadaches\nice eating (pica)\nirritability\npalpitations",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 45,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 88359
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "deficiency-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T21:54:59+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000015",
+      "kind": "toxicity_sign",
+      "essentials": [
+        "iron"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anorexia"
+      ],
+      "symptoms": [
+        "dizziness",
+        "fatigue",
+        "headache"
+      ],
+      "claim_text": "Wallach lists the signs of iron toxicity (excess): anorexia, dizziness, fatigue, and headaches.",
+      "verbatim": "Nutrient Deficiency / Toxicity Flow Chart (Continued)\nIRON TOXICITY\nanorexia\ndizziness\nfatigue\nheadaches",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 46,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 88611
+      },
+      "dose": null,
+      "tags": [
+        "table-6-1",
+        "toxicity-map"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T21:54:59+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

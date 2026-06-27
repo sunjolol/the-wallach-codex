@@ -901,13 +901,14 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 23,
+    "claim_count": 25,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
       ],
       "deficiency_sign": [
         "WAL-CLM-DDDL-000003",
+        "WAL-CLM-LETS-000008",
         "WAL-CLM-RARE-000141",
         "WAL-CLM-RARE-000275"
       ],
@@ -939,16 +940,40 @@
         "WAL-CLM-DDDL-000049",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281"
+      ],
+      "toxicity_sign": [
+        "WAL-CLM-LETS-000009"
       ]
     },
     "deficiency_signs": [
       {
+        "sign": "fatigue",
+        "claim_id": "WAL-CLM-LETS-000008",
+        "confidence": "high"
+      },
+      {
+        "sign": "fragile_bones",
+        "claim_id": "WAL-CLM-LETS-000008",
+        "confidence": "high"
+      },
+      {
         "sign": "gray_hair",
         "claim_id": "WAL-CLM-DDDL-000003",
+        "confidence": "high"
+      },
+      {
+        "sign": "hemorrhage",
+        "claim_id": "WAL-CLM-LETS-000008",
+        "confidence": "high"
+      },
+      {
+        "sign": "weakness",
+        "claim_id": "WAL-CLM-LETS-000008",
         "confidence": "high"
       }
     ],
     "conditions_treated": [
+      "alopecia",
       "anemia",
       "aneurysm",
       "arthritis",
@@ -962,7 +987,10 @@
       "congenital_ataxia",
       "criminal_behavior",
       "deafness",
+      "depression",
+      "dermatitis",
       "diabetes",
+      "diarrhea",
       "explosive_outbursts",
       "goiter",
       "gout",
@@ -976,7 +1004,9 @@
       "menkes_disease",
       "neutropenia",
       "osteoporosis",
+      "respiratory_disease",
       "schizophrenia",
+      "shwachman_syndrome",
       "thyroid_disease",
       "varicose_veins",
       "violent_behavior"
@@ -1001,6 +1031,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1068,14 +1099,15 @@
     "display_name": "Iron",
     "canon_slug": "iron",
     "category": "mineral",
-    "claim_count": 13,
+    "claim_count": 15,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000022"
       ],
       "deficiency_sign": [
         "WAL-CLM-DDDL-000019",
-        "WAL-CLM-DDDL-000020"
+        "WAL-CLM-DDDL-000020",
+        "WAL-CLM-LETS-000014"
       ],
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000081",
@@ -1094,20 +1126,86 @@
       ],
       "protocol": [
         "WAL-CLM-DDDL-000080"
+      ],
+      "toxicity_sign": [
+        "WAL-CLM-LETS-000015"
       ]
     },
     "deficiency_signs": [
       {
+        "sign": "brittle_nails",
+        "claim_id": "WAL-CLM-LETS-000014",
+        "confidence": "high"
+      },
+      {
+        "sign": "constipation",
+        "claim_id": "WAL-CLM-LETS-000014",
+        "confidence": "high"
+      },
+      {
+        "sign": "dizziness",
+        "claim_id": "WAL-CLM-LETS-000014",
+        "confidence": "high"
+      },
+      {
+        "sign": "dyspepsia",
+        "claim_id": "WAL-CLM-LETS-000014",
+        "confidence": "high"
+      },
+      {
+        "sign": "dysphagia",
+        "claim_id": "WAL-CLM-LETS-000014",
+        "confidence": "high"
+      },
+      {
+        "sign": "fatigue",
+        "claim_id": "WAL-CLM-LETS-000014",
+        "confidence": "high"
+      },
+      {
+        "sign": "fragile_bones",
+        "claim_id": "WAL-CLM-LETS-000014",
+        "confidence": "high"
+      },
+      {
+        "sign": "headache",
+        "claim_id": "WAL-CLM-LETS-000014",
+        "confidence": "high"
+      },
+      {
+        "sign": "irritability",
+        "claim_id": "WAL-CLM-LETS-000014",
+        "confidence": "high"
+      },
+      {
+        "sign": "mental_confusion",
+        "claim_id": "WAL-CLM-LETS-000014",
+        "confidence": "high"
+      },
+      {
+        "sign": "palpitations",
+        "claim_id": "WAL-CLM-LETS-000014",
+        "confidence": "high"
+      },
+      {
         "sign": "pica",
         "claim_id": "WAL-CLM-DDDL-000019",
+        "confidence": "high"
+      },
+      {
+        "sign": "retarded_growth",
+        "claim_id": "WAL-CLM-LETS-000014",
         "confidence": "high"
       }
     ],
     "conditions_treated": [
       "anemia",
+      "angular_stomatitis",
+      "anorexia",
       "aphthous_stomatitis",
       "arthritis",
       "canker_sores",
+      "depression",
       "diabetes",
       "heart_failure",
       "liver_cirrhosis",
@@ -1129,6 +1227,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1136,9 +1235,10 @@
     "display_name": "Iodine",
     "canon_slug": "iodine",
     "category": "mineral",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-LETS-000013",
         "WAL-CLM-RARE-000150"
       ],
       "definition": [
@@ -1188,12 +1288,22 @@
       },
       {
         "sign": "fatigue",
+        "claim_id": "WAL-CLM-LETS-000013",
+        "confidence": "high"
+      },
+      {
+        "sign": "fatigue",
         "claim_id": "WAL-CLM-RARE-000150",
         "confidence": "high"
       },
       {
         "sign": "hair_loss",
         "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high"
+      },
+      {
+        "sign": "low_basal_temperature",
+        "claim_id": "WAL-CLM-LETS-000013",
         "confidence": "high"
       },
       {
@@ -1204,6 +1314,11 @@
       {
         "sign": "poor_memory",
         "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high"
+      },
+      {
+        "sign": "weight_gain",
+        "claim_id": "WAL-CLM-LETS-000013",
         "confidence": "high"
       },
       {
@@ -1227,6 +1342,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -2863,10 +2979,11 @@
     "display_name": "Folate",
     "canon_slug": "vitamin-b9",
     "category": "vitamin",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000042",
+        "WAL-CLM-LETS-000010",
         "WAL-CLM-RARE-000239"
       ],
       "protocol": [
@@ -2875,18 +2992,63 @@
     },
     "deficiency_signs": [
       {
+        "sign": "apathy",
+        "claim_id": "WAL-CLM-LETS-000010",
+        "confidence": "high"
+      },
+      {
+        "sign": "dyspepsia",
+        "claim_id": "WAL-CLM-LETS-000010",
+        "confidence": "high"
+      },
+      {
+        "sign": "fatigue",
+        "claim_id": "WAL-CLM-LETS-000010",
+        "confidence": "high"
+      },
+      {
+        "sign": "geographic_tongue",
+        "claim_id": "WAL-CLM-LETS-000010",
+        "confidence": "high"
+      },
+      {
+        "sign": "headache",
+        "claim_id": "WAL-CLM-LETS-000010",
+        "confidence": "high"
+      },
+      {
         "sign": "poor_growth",
         "claim_id": "WAL-CLM-RARE-000239",
+        "confidence": "high"
+      },
+      {
+        "sign": "poor_memory",
+        "claim_id": "WAL-CLM-LETS-000010",
+        "confidence": "high"
+      },
+      {
+        "sign": "retarded_growth",
+        "claim_id": "WAL-CLM-LETS-000010",
+        "confidence": "high"
+      },
+      {
+        "sign": "weakness",
+        "claim_id": "WAL-CLM-LETS-000010",
         "confidence": "high"
       }
     ],
     "conditions_treated": [
       "anemia",
+      "anorexia",
       "aphthous_stomatitis",
       "birth_defects",
       "canker_sores",
       "cleft_palate",
-      "spina_bifida"
+      "diarrhea",
+      "insomnia",
+      "paranoia",
+      "spina_bifida",
+      "vitiligo"
     ],
     "interacts_with": [
       "iron",
@@ -2895,6 +3057,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -3297,12 +3460,28 @@
     "display_name": "Inositol",
     "canon_slug": "inositol",
     "category": "vitamin",
-    "claim_count": 0,
-    "claims_by_kind": {},
-    "deficiency_signs": [],
-    "conditions_treated": [],
+    "claim_count": 1,
+    "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-LETS-000012"
+      ]
+    },
+    "deficiency_signs": [
+      {
+        "sign": "constipation",
+        "claim_id": "WAL-CLM-LETS-000012",
+        "confidence": "high"
+      }
+    ],
+    "conditions_treated": [
+      "alopecia",
+      "eczema",
+      "high_cholesterol"
+    ],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "lets-play-doctor"
+    ]
   },
   "flavonoids": {
     "display_name": "Flavonoids",
@@ -3532,10 +3711,11 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_kind": {
       "deficiency_sign": [
-        "WAL-CLM-DDDL-000065"
+        "WAL-CLM-DDDL-000065",
+        "WAL-CLM-LETS-000011"
       ],
       "definition": [
         "WAL-CLM-DDDL-000063",
@@ -3551,10 +3731,51 @@
         "WAL-CLM-RARE-000286"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "dry_hair",
+        "claim_id": "WAL-CLM-LETS-000011",
+        "confidence": "high"
+      },
+      {
+        "sign": "dry_skin",
+        "claim_id": "WAL-CLM-LETS-000011",
+        "confidence": "high"
+      },
+      {
+        "sign": "endocrine_dysfunction",
+        "claim_id": "WAL-CLM-LETS-000011",
+        "confidence": "high"
+      },
+      {
+        "sign": "impaired_wound_healing",
+        "claim_id": "WAL-CLM-LETS-000011",
+        "confidence": "high"
+      },
+      {
+        "sign": "lowered_immunity",
+        "claim_id": "WAL-CLM-LETS-000011",
+        "confidence": "high"
+      },
+      {
+        "sign": "retarded_growth",
+        "claim_id": "WAL-CLM-LETS-000011",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
+      "acne",
+      "alopecia",
+      "anorexia",
+      "arthritis",
+      "cystic_fibrosis",
+      "diarrhea",
       "eczema",
-      "hypertension"
+      "fatty_liver",
+      "gallstones",
+      "hypertension",
+      "infertility",
+      "kidney_disease"
     ],
     "interacts_with": [
       "calcium",
@@ -3567,6 +3788,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -3574,10 +3796,11 @@
     "display_name": "Omega-6",
     "canon_slug": "omega-6",
     "category": "fatty_acid",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "deficiency_sign": [
-        "WAL-CLM-DDDL-000065"
+        "WAL-CLM-DDDL-000065",
+        "WAL-CLM-LETS-000011"
       ],
       "definition": [
         "WAL-CLM-DDDL-000063",
@@ -3589,15 +3812,57 @@
         "WAL-CLM-RARE-000111"
       ]
     },
-    "deficiency_signs": [],
+    "deficiency_signs": [
+      {
+        "sign": "dry_hair",
+        "claim_id": "WAL-CLM-LETS-000011",
+        "confidence": "high"
+      },
+      {
+        "sign": "dry_skin",
+        "claim_id": "WAL-CLM-LETS-000011",
+        "confidence": "high"
+      },
+      {
+        "sign": "endocrine_dysfunction",
+        "claim_id": "WAL-CLM-LETS-000011",
+        "confidence": "high"
+      },
+      {
+        "sign": "impaired_wound_healing",
+        "claim_id": "WAL-CLM-LETS-000011",
+        "confidence": "high"
+      },
+      {
+        "sign": "lowered_immunity",
+        "claim_id": "WAL-CLM-LETS-000011",
+        "confidence": "high"
+      },
+      {
+        "sign": "retarded_growth",
+        "claim_id": "WAL-CLM-LETS-000011",
+        "confidence": "high"
+      }
+    ],
     "conditions_treated": [
-      "eczema"
+      "acne",
+      "alopecia",
+      "anorexia",
+      "arthritis",
+      "cystic_fibrosis",
+      "diarrhea",
+      "eczema",
+      "fatty_liver",
+      "gallstones",
+      "infertility",
+      "kidney_disease"
     ],
     "interacts_with": [
       "omega-3"
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   }

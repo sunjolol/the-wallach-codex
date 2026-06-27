@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_114 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_115 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-27 16:56 UTC-05:00 · round-close · eden/corpus
+Let's Play Doctor batch 2 — Table 6-1 pt2 (Copper..Iron): 8 claims (6 deficiency + 2 toxicity). corpus 387->395, conditions 188->192, kv 107, board 30/30.
+  ↳ Copper(d+t), Folic acid(=vitamin-b9), EFA(->omega-3+omega-6, no single EFA canon slug), Inositol, Iodine, Iron(d+t). Lessons: .txt linear order disambiguates nutrient ownership (render 2-col layout misled me on copper vs EFA); short toxicity cells (Iron tox=50 chars) need running-header padding for the 60-char verbatim floor. OCR quirks faithful in verbatim, corrected in claim_text. FLAG pt3: Manganese 'muscle therapy' looks garbled, verify at render. NEXT = Table 6-1 pt3 (Magnesium/Manganese/Niacin/Pantothenic), fix garbled headers.
 
 ## 2026-06-27 16:44 UTC-05:00 · round-close · eden/corpus
 Let's Play Doctor batch 1 (first LPD seal — shard created). 7 claims: 2 Ch8 dose-philosophy + Table 6-1 pt1 (Biotin/Calcium/Chromium deficiency + Calcium/Chromium TOXICITY — first toxicity_sign claims sealed). corpus 380->387, conditions 182->188, kv 105->106, board 30/30.
