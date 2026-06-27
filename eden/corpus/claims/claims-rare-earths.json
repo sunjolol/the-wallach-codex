@@ -8875,6 +8875,148 @@
       "extracted_at": "2026-06-26T07:28:39+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000247",
+      "kind": "mechanism",
+      "essentials": [
+        "samarium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports that samarium, a 'light' rare earth, enhances normal cell proliferation and doubles the life span of laboratory species.",
+      "verbatim": "Samarium enhances normal cell proliferation and doubles the life span of laboratory species.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 410,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 957763
+      },
+      "dose": null,
+      "tags": [
+        "samarium",
+        "rare-earth",
+        "lifespan",
+        "longevity",
+        "cell-growth"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T00:59:39+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000248",
+      "kind": "mechanism",
+      "essentials": [
+        "tin"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports that tin — once dismissed as mere environmental contamination of tissue — was shown by Schwarz's careful studies to accelerate growth in rats and to meet the standards for an essential trace element (formally demonstrated in 1970); as a member of the fourth main chemical group, tin shares chemical and physical properties with carbon, silica, germanium and lead.",
+      "verbatim": "Originally the presence of tin in tissue was attributed to environmental contamination; however, careful and detailed studies by Schwarz demonstrated that tin produced an acceleration of growth in rats and further met the standards for an essential trace element.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 410,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 958257
+      },
+      "dose": null,
+      "tags": [
+        "tin",
+        "essentiality",
+        "trace-element",
+        "schwarz",
+        "growth"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T00:59:39+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000249",
+      "kind": "mechanism",
+      "essentials": [
+        "tin"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach reports that tin exerts a strong induction effect on the enzyme heme oxygenase, enhancing the breakdown of heme in the kidney, and cites evidence that tin has cancer-prevention properties.",
+      "verbatim": "Tin has been shown to exert a strong induction effect on the enzyme heme oxygenase, enhancing heme breakdown in the kidney. There is also evidence for tin having cancer prevention properties.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 410,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 958950
+      },
+      "dose": null,
+      "tags": [
+        "tin",
+        "heme-oxygenase",
+        "enzyme",
+        "cancer-prevention",
+        "kidney"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T00:59:39+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000250",
+      "kind": "mechanism",
+      "essentials": [
+        "strontium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach distinguishes natural strontium — which can replace calcium in many organisms and shows considerable evidence of essentiality in mammals including humans — from strontium-90, the man-made product of atomic-fission explosions and the great biohazard fear of the Cold War, which does not occur in nature.",
+      "verbatim": "Strontium 90, the man made product of fission atomic explosions and the greatest biohazard fear during the cold war, does not occur in nature.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 411,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 960296
+      },
+      "dose": null,
+      "tags": [
+        "strontium",
+        "strontium-90",
+        "radioactive",
+        "calcium",
+        "essentiality"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T00:59:39+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

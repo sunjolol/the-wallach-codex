@@ -1,30 +1,26 @@
 # Extraction report — rare-earths (Rare Earths: Forbidden Cures)
 
-_3 claim(s) drafted 2026-06-26T07:28:39+00:00. Review then run corpus_seal.py to promote._
+_4 claim(s) drafted 2026-06-27T00:59:39+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: deficiency_sign×1, dose×1, mechanism×1
+Kinds: mechanism×4
 
-### WAL-CLM-RARE-000244 · mechanism
-- **essentials:** silica · **conditions:** — · **symptoms:** —
-- **claim:** Wallach says silicon (silica) supplementation increases the collagen in growing bone by 100%, and that tissue levels of silicon decrease with age in people and laboratory animals who are not supplemented.
-- **verbatim** (offset 956734): “Silicon supplementation increases the
-collagen in growing bone by 100 %. Tissue
-levels of Si decrease with aging in
-unsupplemented humans and laboratory
-species.”
+### WAL-CLM-RARE-000247 · mechanism
+- **essentials:** samarium · **conditions:** — · **symptoms:** —
+- **claim:** Wallach reports that samarium, a 'light' rare earth, enhances normal cell proliferation and doubles the life span of laboratory species.
+- **verbatim** (offset 957763): “Samarium enhances normal cell proliferation and doubles the life span of laboratory species.”
 
-### WAL-CLM-RARE-000245 · deficiency_sign
-- **essentials:** silica · **conditions:** cardiovascular_disease · **symptoms:** dry_hair, brittle_nails, poor_skin
-- **claim:** Wallach states that silica deficiency is characterized by dry brittle hair, brittle finger and toe nails, poor skin quality, poor calcium utilization, and arterial disease.
-- **verbatim** (offset 956896): “Silica deficiency is characterized
-by dry brittle hair, brittle finger and toe nails,
-poor skin quality, poor calcium utilization
-and arterial disease.”
+### WAL-CLM-RARE-000248 · mechanism
+- **essentials:** tin · **conditions:** — · **symptoms:** —
+- **claim:** Wallach reports that tin — once dismissed as mere environmental contamination of tissue — was shown by Schwarz's careful studies to accelerate growth in rats and to meet the standards for an essential trace element (formally demonstrated in 1970); as a member of the fourth main chemical group, tin shares chemical and physical properties with carbon, silica, germanium and lead.
+- **verbatim** (offset 958257): “Originally the presence of tin in tissue was attributed to environmental contamination; however, careful and detailed studies by Schwarz demonstrated that tin produced an acceleration of growth in rats and further met the standards for an essential trace element.”
 
-### WAL-CLM-RARE-000246 · dose
-- **essentials:** silica · **conditions:** high_cholesterol · **symptoms:** —
-- **dose:** {'amount': '200-500', 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': None}
-- **claim:** Wallach notes that high-fiber diets contain a lot of silicon, which leads many investigators to think silicon helps lower cholesterol; he gives a recommended silicon intake of 200 to 500 mg per day.
-- **verbatim** (offset 957048): “High fiber diets contain lots of Si which leads many investigators to think that Si helps to lower cholesterol. The recommended intake of Si ranges
-from 200 to 500 mg/day.”
+### WAL-CLM-RARE-000249 · mechanism
+- **essentials:** tin · **conditions:** cancer · **symptoms:** —
+- **claim:** Wallach reports that tin exerts a strong induction effect on the enzyme heme oxygenase, enhancing the breakdown of heme in the kidney, and cites evidence that tin has cancer-prevention properties.
+- **verbatim** (offset 958950): “Tin has been shown to exert a strong induction effect on the enzyme heme oxygenase, enhancing heme breakdown in the kidney. There is also evidence for tin having cancer prevention properties.”
+
+### WAL-CLM-RARE-000250 · mechanism
+- **essentials:** strontium · **conditions:** — · **symptoms:** —
+- **claim:** Wallach distinguishes natural strontium — which can replace calcium in many organisms and shows considerable evidence of essentiality in mammals including humans — from strontium-90, the man-made product of atomic-fission explosions and the great biohazard fear of the Cold War, which does not occur in nature.
+- **verbatim** (offset 960296): “Strontium 90, the man made product of fission atomic explosions and the greatest biohazard fear during the cold war, does not occur in nature.”
 

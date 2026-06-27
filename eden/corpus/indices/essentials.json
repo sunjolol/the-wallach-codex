@@ -1240,13 +1240,14 @@
     "display_name": "Strontium",
     "canon_slug": "strontium",
     "category": "mineral",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000032"
       ],
       "mechanism": [
-        "WAL-CLM-DDDL-000033"
+        "WAL-CLM-DDDL-000033",
+        "WAL-CLM-RARE-000250"
       ]
     },
     "deficiency_signs": [],
@@ -1258,7 +1259,8 @@
       "calcium"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "vanadium": {
@@ -1984,21 +1986,31 @@
     "display_name": "Samarium",
     "canon_slug": "samarium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-RARE-000247"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "tin": {
     "display_name": "Tin",
     "canon_slug": "tin",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 3,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000031"
+      ],
+      "mechanism": [
+        "WAL-CLM-RARE-000248",
+        "WAL-CLM-RARE-000249"
       ]
     },
     "deficiency_signs": [
@@ -2014,11 +2026,13 @@
       }
     ],
     "conditions_treated": [
+      "cancer",
       "male_pattern_baldness"
     ],
     "interacts_with": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "tantalum": {

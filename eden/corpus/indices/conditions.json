@@ -681,7 +681,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 23,
+    "claim_count": 24,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -690,7 +690,8 @@
         "WAL-CLM-RARE-000134",
         "WAL-CLM-RARE-000197",
         "WAL-CLM-RARE-000198",
-        "WAL-CLM-RARE-000218"
+        "WAL-CLM-RARE-000218",
+        "WAL-CLM-RARE-000249"
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000012",
@@ -727,6 +728,7 @@
       "germanium",
       "oxygen",
       "selenium",
+      "tin",
       "tyrosine",
       "vanadium",
       "vitamin-a",
