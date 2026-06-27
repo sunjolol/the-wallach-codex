@@ -1,6 +1,17 @@
 # Next chunk — operating system CLEANED → continue **Phase 2** surfaces
 
-## LATEST (2026-06-27 SESSION 7 — Phase γ.3 catalog Sm/Sn/Sr → Tm/Tl → V → W/Xe/Y/Yb → Zn/Zinc COMPLETE (batches 50-55); NEXT = Zr/Zirconium ONLY → then per-element CATALOG COMPLETE · kv 90→98 · RARE 246→268 (corpus 362) · conditions 166→177 · board 30/30 · knowledge probe green · ALL PUSHED)
+## LATEST (2026-06-27 SESSION 8 — Phase γ.3 Zr/Zirconium = stated GEOLOGY-ONLY skip → ✅ PER-ELEMENT CATALOG COMPLETE (A→Zr, the campaign's core motivation); NEXT = STANDING DEFERRALS · corpus 362 · conditions 177 · kv 98 · board 30/30 · knowledge probe green · ALL PUSHED)
+
+**SESSION 2026-06-27 (SESSION 8) — fresh `genesis` boot. Closed the per-element Rare Earths catalog: Zr/Zirconium (the last entry) READ + confirmed GEOLOGY-ONLY (pure ppm abundance distribution, book p420; the 2 other Zr mentions in the book = industrial/taxonomic context, NOT stances; the adjacent general "Rare Earths doubled lifespan" line is COLLECTIVE, not Zr-specific → a Zr claim would violate §00.A). Zr is canon-90 yet has no claim — "canon ≠ claim exists" (as with Ti/Ho/Lu/Nb/Dy/Er/Gd/Hf). STATED SKIP, no claim, NO corpus write (board unchanged 30/30, corpus 362, kv 98). ✅ THE PER-ELEMENT CATALOG IS COMPLETE — A→Zr every entry extracted / DDDL-covered / READ-confirmed-geology, none silently skipped. This was the campaign's original core motivation. Logged (build-log b56 + Creator's Log milestone lg_mqwaw7v6_hle804) + committed + pushed.**
+
+**⚠⚠ NEXT — the per-element catalog is DONE; move to the STANDING DEFERRALS (ask Luneth which first):**
+- **Raw-OCR tables not yet extracted:** Schrauzer/Li crime tables 11-5/11-16/11-17; Table 11-20 (N/protein chemical-scores); Se Table 11-23.
+- **Other-chapter companions:** Ch.3 Senate-Doc-264 companion + Table 7-8 (disease→deficiency map, Ch.7 p169); Ch.9 Pill Mills + Table 9-1 (20-drug list).
+- **The other in-housed books (still entirely unmined):** Let's Play Doctor / Epigenetics / Immortality (has a richer Zr mineralogy/history section pp~? + much more) / It's All In Your Head.
+- **A .txt-LEVEL OCR-cleanup pass** for non-surfaced garble (antioxident; "Arnanita"→Amanita p412; "PRD"→ppm p411 Tm; "Was"→was p412; reference-section "Zine"→Zinc ×2 ~lines 36428/36981 + Farbes/etal citation garble; "limeston" p413 Yb; chemical-formula commas beyond the 3 fixed).
+METHOD unchanged: READ before skipping → per-batch reflow→resnap→finalize→seal→embed→build→invariants→knowledge-probe → STOP for Luneth's review → round-close. Corpus = 362 (DDDL 94 + RARE 268), conditions 177, kv=98.
+
+## (SUPERSEDED 2026-06-27 SESSION 8 above — catalog CLOSED at Zr/Zirconium = geology-only skip; per-element catalog COMPLETE) LATEST (2026-06-27 SESSION 7 — Phase γ.3 catalog Sm/Sn/Sr → Tm/Tl → V → W/Xe/Y/Yb → Zn/Zinc COMPLETE (batches 50-55); NEXT = Zr/Zirconium ONLY → then per-element CATALOG COMPLETE · kv 90→98 · RARE 246→268 (corpus 362) · conditions 166→177 · board 30/30 · knowledge probe green · ALL PUSHED)
 
 **SESSION 2026-06-26/27 (SESSION 7) — fresh `genesis` boot; 6 round-close batches (50-55) shipped + pushed to origin/master. Corpus 340→362 (+22 claims), conditions 166→177, kv 90→98. Resumed the per-element catalog at Sm/Samarium and ran it to Zn/Zinc COMPLETE — only Zr/Zirconium remains. Method unchanged: enumerate `found in igneous` → READ before skipping → state every skip → per-batch reflow→resnap→finalize→seal→embed→build→invariants→knowledge-probe → STOP for Luneth's review → round-close.**
 
