@@ -239,11 +239,14 @@
   },
   "aneurysm": {
     "display_name": "Aneurysm",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000004",
         "WAL-CLM-RARE-000120"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000275"
       ],
       "definitions": [
         "WAL-CLM-RARE-000122"
@@ -256,9 +259,15 @@
       ]
     },
     "essentials_involved": [
+      "boron",
       "calcium",
+      "chromium",
       "copper",
+      "magnesium",
       "selenium",
+      "sulfur",
+      "tin",
+      "vanadium",
       "zinc"
     ],
     "other_substances_involved": [],
@@ -430,7 +439,7 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
@@ -440,7 +449,8 @@
         "WAL-CLM-DDDL-000032",
         "WAL-CLM-RARE-000011",
         "WAL-CLM-RARE-000223",
-        "WAL-CLM-RARE-000230"
+        "WAL-CLM-RARE-000230",
+        "WAL-CLM-RARE-000275"
       ],
       "definitions": [
         "WAL-CLM-RARE-000105",
@@ -459,6 +469,7 @@
       ]
     },
     "essentials_involved": [
+      "boron",
       "calcium",
       "chromium",
       "copper",
@@ -470,6 +481,7 @@
       "selenium",
       "strontium",
       "sulfur",
+      "tin",
       "vanadium",
       "vitamin-d",
       "zinc"
@@ -712,6 +724,31 @@
       "dddl-3e-2011"
     ]
   },
+  "bone_spurs": {
+    "display_name": "Bone Spurs",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000275"
+      ]
+    },
+    "essentials_involved": [
+      "boron",
+      "calcium",
+      "chromium",
+      "copper",
+      "magnesium",
+      "selenium",
+      "sulfur",
+      "tin",
+      "vanadium",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "brain_cancer": {
     "display_name": "Brain Cancer",
     "claim_count": 1,
@@ -777,7 +814,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 25,
+    "claim_count": 26,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -796,7 +833,8 @@
         "WAL-CLM-RARE-000229",
         "WAL-CLM-RARE-000231",
         "WAL-CLM-RARE-000241",
-        "WAL-CLM-RARE-000270"
+        "WAL-CLM-RARE-000270",
+        "WAL-CLM-RARE-000275"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -819,12 +857,16 @@
     },
     "essentials_involved": [
       "arginine",
+      "boron",
       "calcium",
       "cesium",
+      "chromium",
       "copper",
       "germanium",
+      "magnesium",
       "oxygen",
       "selenium",
+      "sulfur",
       "tin",
       "tyrosine",
       "vanadium",
@@ -896,7 +938,7 @@
   },
   "cardiomyopathy": {
     "display_name": "Cardiomyopathy",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010"
@@ -904,7 +946,8 @@
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
         "WAL-CLM-RARE-000227",
-        "WAL-CLM-RARE-000269"
+        "WAL-CLM-RARE-000269",
+        "WAL-CLM-RARE-000275"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -915,9 +958,15 @@
       ]
     },
     "essentials_involved": [
+      "boron",
       "calcium",
+      "chromium",
       "copper",
+      "magnesium",
       "selenium",
+      "sulfur",
+      "tin",
+      "vanadium",
       "zinc"
     ],
     "other_substances_involved": [],
@@ -979,19 +1028,26 @@
   },
   "cataracts": {
     "display_name": "Cataracts",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-RARE-000227"
+        "WAL-CLM-RARE-000227",
+        "WAL-CLM-RARE-000275"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
       ]
     },
     "essentials_involved": [
+      "boron",
       "calcium",
+      "chromium",
       "copper",
+      "magnesium",
       "selenium",
+      "sulfur",
+      "tin",
+      "vanadium",
       "zinc"
     ],
     "other_substances_involved": [],
@@ -1389,14 +1445,25 @@
   },
   "deafness": {
     "display_name": "Deafness",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-RARE-000176"
+        "WAL-CLM-RARE-000176",
+        "WAL-CLM-RARE-000275"
       ]
     },
     "essentials_involved": [
-      "manganese"
+      "boron",
+      "calcium",
+      "chromium",
+      "copper",
+      "magnesium",
+      "manganese",
+      "selenium",
+      "sulfur",
+      "tin",
+      "vanadium",
+      "zinc"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1498,7 +1565,7 @@
   },
   "diabetes": {
     "display_name": "Diabetes",
-    "claim_count": 16,
+    "claim_count": 17,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-DDDL-000008"
@@ -1514,7 +1581,8 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000017",
-        "WAL-CLM-RARE-000257"
+        "WAL-CLM-RARE-000257",
+        "WAL-CLM-RARE-000275"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
@@ -1536,9 +1604,15 @@
       ]
     },
     "essentials_involved": [
+      "boron",
+      "calcium",
       "chromium",
       "copper",
       "iron",
+      "magnesium",
+      "selenium",
+      "sulfur",
+      "tin",
       "vanadium",
       "vitamin-b12",
       "vitamin-b3",
@@ -2056,10 +2130,13 @@
   },
   "hypertension": {
     "display_name": "Hypertension",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000107"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000275"
       ],
       "definitions": [
         "WAL-CLM-RARE-000105"
@@ -2070,10 +2147,16 @@
       ]
     },
     "essentials_involved": [
+      "boron",
       "calcium",
+      "chromium",
       "copper",
+      "magnesium",
       "phosphorus",
       "selenium",
+      "sulfur",
+      "tin",
+      "vanadium",
       "zinc"
     ],
     "other_substances_involved": [],
@@ -2832,7 +2915,7 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 16,
+    "claim_count": 17,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052",
@@ -2846,7 +2929,8 @@
         "WAL-CLM-DDDL-000032",
         "WAL-CLM-RARE-000011",
         "WAL-CLM-RARE-000230",
-        "WAL-CLM-RARE-000232"
+        "WAL-CLM-RARE-000232",
+        "WAL-CLM-RARE-000275"
       ],
       "definitions": [
         "WAL-CLM-RARE-000105"
@@ -2874,12 +2958,16 @@
     "essentials_involved": [
       "boron",
       "calcium",
+      "chromium",
       "copper",
       "germanium",
       "magnesium",
       "phosphorus",
       "selenium",
       "strontium",
+      "sulfur",
+      "tin",
+      "vanadium",
       "vitamin-d",
       "vitamin-k",
       "zinc"

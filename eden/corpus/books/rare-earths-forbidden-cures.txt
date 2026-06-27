@@ -14419,19 +14419,17 @@ Se eer ae
 
 168
 
-Disease Deficiemcy
-
-Osteoporosis Ca, Mg, B, Cu, S
-Arthritis (Ankylosing spondylitis) . Ca, Mg. B, Cu, $
-Hypertension .
-
-Bone spurs, heel spurs, Ca deposits .
-
-Diabetes...
-Aneurysms
-Cardiomyopathy
-Cataracts...
-Deafness ...
+Table 7-8. Common Degenerative Diseases of Humans and Their Cause.
+Osteoporosis: Ca, Mg, B, Cu, S
+Arthritis (Ankylosing spondylitis): Ca, Mg, B, Cu, S
+Hypertension: Ca, Mg, B
+Bone spurs, heel spurs, Ca deposits: Ca, Mg, B
+Cancer: Se
+Diabetes: Cr, Va, Zn
+Aneurysms: Cu
+Cardiomyopathy: Se
+Cataracts: Se
+Deafness: Sn
 
 169
 

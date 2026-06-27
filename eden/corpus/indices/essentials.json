@@ -167,11 +167,12 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 21,
+    "claim_count": 22,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
-        "WAL-CLM-RARE-000172"
+        "WAL-CLM-RARE-000172",
+        "WAL-CLM-RARE-000275"
       ],
       "definition": [
         "WAL-CLM-RARE-000168",
@@ -236,6 +237,7 @@
       }
     ],
     "conditions_treated": [
+      "aneurysm",
       "angina",
       "anorexia",
       "anxiety",
@@ -244,9 +246,16 @@
       "asthma",
       "bells_palsy",
       "bladder_stones",
+      "bone_spurs",
+      "cancer",
+      "cardiomyopathy",
       "cardiovascular_disease",
+      "cataracts",
       "celiac_disease",
+      "deafness",
       "depression",
+      "diabetes",
+      "hypertension",
       "kidney_stones",
       "malabsorption",
       "menopause",
@@ -265,6 +274,9 @@
       "iron",
       "manganese",
       "potassium",
+      "selenium",
+      "sulfur",
+      "tin",
       "vanadium",
       "vitamin-b12",
       "vitamin-b3",
@@ -320,10 +332,11 @@
     "display_name": "Sulfur",
     "canon_slug": "sulfur",
     "category": "mineral",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "deficiency_sign": [
-        "WAL-CLM-RARE-000223"
+        "WAL-CLM-RARE-000223",
+        "WAL-CLM-RARE-000275"
       ],
       "definition": [
         "WAL-CLM-RARE-000219"
@@ -336,12 +349,31 @@
     },
     "deficiency_signs": [],
     "conditions_treated": [
+      "aneurysm",
       "arthritis",
+      "bone_spurs",
+      "cancer",
+      "cardiomyopathy",
+      "cataracts",
       "collagen_disease",
+      "deafness",
+      "diabetes",
+      "hypertension",
       "lupus",
+      "osteoporosis",
       "sickle_cell_anemia"
     ],
-    "interacts_with": [],
+    "interacts_with": [
+      "boron",
+      "calcium",
+      "chromium",
+      "copper",
+      "magnesium",
+      "selenium",
+      "tin",
+      "vanadium",
+      "zinc"
+    ],
     "books_cited": [
       "rare-earths"
     ]
@@ -427,10 +459,11 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 27,
+    "claim_count": 28,
     "claims_by_kind": {
       "deficiency_sign": [
-        "WAL-CLM-DDDL-000074"
+        "WAL-CLM-DDDL-000074",
+        "WAL-CLM-RARE-000275"
       ],
       "definition": [
         "WAL-CLM-RARE-000105"
@@ -482,12 +515,15 @@
       "bells_palsy",
       "birth_defects",
       "bladder_stones",
+      "bone_spurs",
       "cancer",
       "cardiomyopathy",
       "cardiovascular_disease",
       "cataracts",
       "celiac_disease",
       "colorectal_cancer",
+      "deafness",
+      "diabetes",
       "hypertension",
       "insomnia",
       "kidney_stones",
@@ -515,6 +551,8 @@
       "selenium",
       "sodium",
       "strontium",
+      "sulfur",
+      "tin",
       "vanadium",
       "vitamin-b12",
       "vitamin-b3",
@@ -530,8 +568,11 @@
     "display_name": "Boron",
     "canon_slug": "boron",
     "category": "mineral",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-RARE-000275"
+      ],
       "mechanism": [
         "WAL-CLM-RARE-000098",
         "WAL-CLM-RARE-000099"
@@ -539,11 +580,27 @@
     },
     "deficiency_signs": [],
     "conditions_treated": [
+      "aneurysm",
+      "arthritis",
+      "bone_spurs",
+      "cancer",
+      "cardiomyopathy",
+      "cataracts",
+      "deafness",
+      "diabetes",
+      "hypertension",
       "osteoporosis"
     ],
     "interacts_with": [
       "calcium",
-      "magnesium"
+      "chromium",
+      "copper",
+      "magnesium",
+      "selenium",
+      "sulfur",
+      "tin",
+      "vanadium",
+      "zinc"
     ],
     "books_cited": [
       "rare-earths"
@@ -580,12 +637,13 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 20,
+    "claim_count": 21,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
         "WAL-CLM-RARE-000039",
-        "WAL-CLM-RARE-000042"
+        "WAL-CLM-RARE-000042",
+        "WAL-CLM-RARE-000275"
       ],
       "definition": [
         "WAL-CLM-RARE-000116"
@@ -634,35 +692,47 @@
     "conditions_treated": [
       "adhd",
       "anemia",
+      "aneurysm",
       "anxiety",
       "arthritis",
       "bipolar_disorder",
       "blind_rage",
+      "bone_spurs",
+      "cancer",
+      "cardiomyopathy",
+      "cataracts",
       "coronary_artery_disease",
       "criminal_behavior",
+      "deafness",
       "depression",
       "diabetes",
       "explosive_outbursts",
       "hyperactivity",
       "hyperinsulinemia",
       "hyperirritability",
+      "hypertension",
       "hypoglycemia",
       "infertility",
       "insomnia",
       "learning_disabilities",
+      "osteoporosis",
       "panic_attacks",
       "peripheral_neuropathy",
       "schizophrenia",
       "violent_behavior"
     ],
     "interacts_with": [
+      "boron",
       "calcium",
       "copper",
       "iodine",
       "iron",
       "lithium",
       "magnesium",
+      "selenium",
       "sodium",
+      "sulfur",
+      "tin",
       "vanadium",
       "vitamin-b3",
       "vitamin-b6",
@@ -677,14 +747,15 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 20,
+    "claim_count": 21,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
       ],
       "deficiency_sign": [
         "WAL-CLM-DDDL-000003",
-        "WAL-CLM-RARE-000141"
+        "WAL-CLM-RARE-000141",
+        "WAL-CLM-RARE-000275"
       ],
       "definition": [
         "WAL-CLM-RARE-000122"
@@ -727,12 +798,14 @@
       "arthritis",
       "birth_defects",
       "blind_rage",
+      "bone_spurs",
       "cancer",
       "cardiomyopathy",
       "cataracts",
       "cerebral_palsy",
       "congenital_ataxia",
       "criminal_behavior",
+      "deafness",
       "diabetes",
       "explosive_outbursts",
       "goiter",
@@ -753,6 +826,7 @@
       "violent_behavior"
     ],
     "interacts_with": [
+      "boron",
       "calcium",
       "chromium",
       "iodine",
@@ -762,6 +836,8 @@
       "molybdenum",
       "selenium",
       "sodium",
+      "sulfur",
+      "tin",
       "vanadium",
       "vitamin-b12",
       "vitamin-b3",
@@ -1098,14 +1174,15 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 26,
+    "claim_count": 27,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
         "WAL-CLM-DDDL-000006",
         "WAL-CLM-RARE-000227",
         "WAL-CLM-RARE-000269",
-        "WAL-CLM-RARE-000270"
+        "WAL-CLM-RARE-000270",
+        "WAL-CLM-RARE-000275"
       ],
       "dose": [
         "WAL-CLM-RARE-000048"
@@ -1163,11 +1240,14 @@
       "arthritis",
       "benign_prostatic_hyperplasia",
       "birth_defects",
+      "bone_spurs",
       "cancer",
       "cardiomyopathy",
       "cataracts",
       "cor_pulmonale",
       "cystic_fibrosis",
+      "deafness",
+      "diabetes",
       "heart_attack",
       "hiv_aids",
       "hypertension",
@@ -1188,9 +1268,15 @@
     "interacts_with": [
       "arginine",
       "arsenic",
+      "boron",
       "calcium",
+      "chromium",
       "copper",
       "germanium",
+      "magnesium",
+      "sulfur",
+      "tin",
+      "vanadium",
       "vitamin-a",
       "vitamin-b2",
       "vitamin-e",
@@ -1274,13 +1360,14 @@
     "display_name": "Vanadium",
     "canon_slug": "vanadium",
     "category": "mineral",
-    "claim_count": 21,
+    "claim_count": 22,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
         "WAL-CLM-RARE-000039",
         "WAL-CLM-RARE-000042",
-        "WAL-CLM-RARE-000257"
+        "WAL-CLM-RARE-000257",
+        "WAL-CLM-RARE-000275"
       ],
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000081",
@@ -1326,34 +1413,45 @@
     ],
     "conditions_treated": [
       "anemia",
+      "aneurysm",
       "anxiety",
       "arthritis",
       "blind_rage",
+      "bone_spurs",
       "cancer",
+      "cardiomyopathy",
       "cardiovascular_disease",
+      "cataracts",
       "coronary_artery_disease",
+      "deafness",
       "diabetes",
       "explosive_outbursts",
       "high_cholesterol",
       "high_triglycerides",
       "hyperinsulinemia",
       "hyperirritability",
+      "hypertension",
       "hypoglycemia",
       "infertility",
       "insomnia",
       "obesity",
+      "osteoporosis",
       "panic_attacks",
       "schizophrenia",
       "violent_behavior"
     ],
     "interacts_with": [
+      "boron",
       "calcium",
       "chromium",
       "copper",
       "iron",
       "lithium",
       "magnesium",
+      "selenium",
       "sodium",
+      "sulfur",
+      "tin",
       "vitamin-b3",
       "vitamin-b6",
       "zinc"
@@ -1367,7 +1465,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 30,
+    "claim_count": 31,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -1377,7 +1475,8 @@
         "WAL-CLM-RARE-000042",
         "WAL-CLM-RARE-000262",
         "WAL-CLM-RARE-000263",
-        "WAL-CLM-RARE-000264"
+        "WAL-CLM-RARE-000264",
+        "WAL-CLM-RARE-000275"
       ],
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000083",
@@ -1440,6 +1539,7 @@
       "benign_prostatic_hyperplasia",
       "birth_defects",
       "blind_rage",
+      "bone_spurs",
       "bulimia",
       "cancer",
       "canker_sores",
@@ -1449,6 +1549,7 @@
       "cleft_palate",
       "cradle_cap",
       "cystic_fibrosis",
+      "deafness",
       "depression",
       "diabetes",
       "diarrhea",
@@ -1466,6 +1567,7 @@
     "interacts_with": [
       "arginine",
       "arsenic",
+      "boron",
       "calcium",
       "chromium",
       "copper",
@@ -1476,6 +1578,8 @@
       "nickel",
       "selenium",
       "sodium",
+      "sulfur",
+      "tin",
       "vanadium",
       "vitamin-a",
       "vitamin-b12",
@@ -2039,10 +2143,11 @@
     "display_name": "Tin",
     "canon_slug": "tin",
     "category": "mineral",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "deficiency_sign": [
-        "WAL-CLM-DDDL-000031"
+        "WAL-CLM-DDDL-000031",
+        "WAL-CLM-RARE-000275"
       ],
       "mechanism": [
         "WAL-CLM-RARE-000248",
@@ -2062,10 +2167,29 @@
       }
     ],
     "conditions_treated": [
+      "aneurysm",
+      "arthritis",
+      "bone_spurs",
       "cancer",
-      "male_pattern_baldness"
+      "cardiomyopathy",
+      "cataracts",
+      "deafness",
+      "diabetes",
+      "hypertension",
+      "male_pattern_baldness",
+      "osteoporosis"
     ],
-    "interacts_with": [],
+    "interacts_with": [
+      "boron",
+      "calcium",
+      "chromium",
+      "copper",
+      "magnesium",
+      "selenium",
+      "sulfur",
+      "vanadium",
+      "zinc"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "rare-earths"
