@@ -1098,12 +1098,14 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 24,
+    "claim_count": 26,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
         "WAL-CLM-DDDL-000006",
-        "WAL-CLM-RARE-000227"
+        "WAL-CLM-RARE-000227",
+        "WAL-CLM-RARE-000269",
+        "WAL-CLM-RARE-000270"
       ],
       "dose": [
         "WAL-CLM-RARE-000048"
@@ -1152,6 +1154,7 @@
       }
     ],
     "conditions_treated": [
+      "adrenoleukodystrophy",
       "als",
       "alzheimers",
       "anemia",
@@ -1166,6 +1169,7 @@
       "cor_pulmonale",
       "cystic_fibrosis",
       "heart_attack",
+      "hiv_aids",
       "hypertension",
       "infertility",
       "keshan_disease",
@@ -1174,7 +1178,10 @@
       "multiple_sclerosis",
       "muscular_dystrophy",
       "osteoporosis",
+      "pancreatitis",
       "parkinsons_disease",
+      "scoliosis",
+      "sickle_cell_anemia",
       "sids",
       "white_muscle_disease"
     ],

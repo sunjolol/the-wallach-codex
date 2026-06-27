@@ -84,6 +84,22 @@
       "rare-earths"
     ]
   },
+  "adrenoleukodystrophy": {
+    "display_name": "Adrenoleukodystrophy",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000270"
+      ]
+    },
+    "essentials_involved": [
+      "selenium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "ageusia": {
     "display_name": "Ageusia",
     "claim_count": 1,
@@ -134,10 +150,11 @@
   },
   "als": {
     "display_name": "Als",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-RARE-000227"
+        "WAL-CLM-RARE-000227",
+        "WAL-CLM-RARE-000270"
       ],
       "interactions": [
         "WAL-CLM-RARE-000087"
@@ -153,13 +170,14 @@
   },
   "alzheimers": {
     "display_name": "Alzheimers",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
         "WAL-CLM-RARE-000227",
         "WAL-CLM-RARE-000231",
-        "WAL-CLM-RARE-000242"
+        "WAL-CLM-RARE-000242",
+        "WAL-CLM-RARE-000270"
       ]
     },
     "essentials_involved": [
@@ -175,7 +193,7 @@
   },
   "anemia": {
     "display_name": "Anemia",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
@@ -185,7 +203,8 @@
         "WAL-CLM-RARE-000234",
         "WAL-CLM-RARE-000239",
         "WAL-CLM-RARE-000241",
-        "WAL-CLM-RARE-000263"
+        "WAL-CLM-RARE-000263",
+        "WAL-CLM-RARE-000269"
       ],
       "definitions": [
         "WAL-CLM-RARE-000122"
@@ -758,7 +777,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 24,
+    "claim_count": 25,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -776,7 +795,8 @@
         "WAL-CLM-RARE-000227",
         "WAL-CLM-RARE-000229",
         "WAL-CLM-RARE-000231",
-        "WAL-CLM-RARE-000241"
+        "WAL-CLM-RARE-000241",
+        "WAL-CLM-RARE-000270"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -876,14 +896,15 @@
   },
   "cardiomyopathy": {
     "display_name": "Cardiomyopathy",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010"
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
-        "WAL-CLM-RARE-000227"
+        "WAL-CLM-RARE-000227",
+        "WAL-CLM-RARE-000269"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -1324,14 +1345,15 @@
   },
   "cystic_fibrosis": {
     "display_name": "Cystic Fibrosis",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000004",
         "WAL-CLM-RARE-000010"
       ],
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005"
+        "WAL-CLM-DDDL-000005",
+        "WAL-CLM-RARE-000269"
       ],
       "definitions": [
         "WAL-CLM-RARE-000049"
@@ -1930,6 +1952,23 @@
       "rare-earths"
     ]
   },
+  "hiv_aids": {
+    "display_name": "Hiv Aids",
+    "claim_count": 2,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000269",
+        "WAL-CLM-RARE-000270"
+      ]
+    },
+    "essentials_involved": [
+      "selenium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "huntingtons_disease": {
     "display_name": "Huntingtons Disease",
     "claim_count": 1,
@@ -2178,7 +2217,7 @@
   },
   "infertility": {
     "display_name": "Infertility",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
@@ -2188,7 +2227,8 @@
         "WAL-CLM-RARE-000229",
         "WAL-CLM-RARE-000231",
         "WAL-CLM-RARE-000257",
-        "WAL-CLM-RARE-000263"
+        "WAL-CLM-RARE-000263",
+        "WAL-CLM-RARE-000270"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
@@ -2295,10 +2335,13 @@
   },
   "keshan_disease": {
     "display_name": "Keshan Disease",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000071"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000269"
       ],
       "doses": [
         "WAL-CLM-RARE-000048"
@@ -2424,7 +2467,7 @@
   },
   "liver_cirrhosis": {
     "display_name": "Liver Cirrhosis",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010"
@@ -2434,7 +2477,8 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
-        "WAL-CLM-RARE-000227"
+        "WAL-CLM-RARE-000227",
+        "WAL-CLM-RARE-000269"
       ],
       "definitions": [
         "WAL-CLM-RARE-000122"
@@ -2629,10 +2673,11 @@
   },
   "multiple_sclerosis": {
     "display_name": "Multiple Sclerosis",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-RARE-000227"
+        "WAL-CLM-RARE-000227",
+        "WAL-CLM-RARE-000269"
       ],
       "interactions": [
         "WAL-CLM-RARE-000087"
@@ -2665,7 +2710,7 @@
   },
   "muscular_dystrophy": {
     "display_name": "Muscular Dystrophy",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000071",
@@ -2673,7 +2718,8 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
-        "WAL-CLM-RARE-000231"
+        "WAL-CLM-RARE-000231",
+        "WAL-CLM-RARE-000269"
       ],
       "definitions": [
         "WAL-CLM-RARE-000049"
@@ -2874,6 +2920,22 @@
       "dddl-3e-2011"
     ]
   },
+  "pancreatitis": {
+    "display_name": "Pancreatitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000270"
+      ]
+    },
+    "essentials_involved": [
+      "selenium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "panic_attacks": {
     "display_name": "Panic Attacks",
     "claim_count": 2,
@@ -2933,10 +2995,11 @@
   },
   "parkinsons_disease": {
     "display_name": "Parkinsons Disease",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-RARE-000227"
+        "WAL-CLM-RARE-000227",
+        "WAL-CLM-RARE-000270"
       ],
       "interactions": [
         "WAL-CLM-RARE-000087"
@@ -3198,6 +3261,22 @@
       "rare-earths"
     ]
   },
+  "scoliosis": {
+    "display_name": "Scoliosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000269"
+      ]
+    },
+    "essentials_involved": [
+      "selenium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
   "scurvy": {
     "display_name": "Scurvy",
     "claim_count": 1,
@@ -3234,13 +3313,15 @@
   },
   "sickle_cell_anemia": {
     "display_name": "Sickle Cell Anemia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-RARE-000223"
+        "WAL-CLM-RARE-000223",
+        "WAL-CLM-RARE-000270"
       ]
     },
     "essentials_involved": [
+      "selenium",
       "sulfur"
     ],
     "other_substances_involved": [],
@@ -3250,10 +3331,11 @@
   },
   "sids": {
     "display_name": "Sids",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005"
+        "WAL-CLM-DDDL-000005",
+        "WAL-CLM-RARE-000270"
       ]
     },
     "essentials_involved": [
@@ -3261,7 +3343,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "spina_bifida": {
@@ -3581,10 +3664,11 @@
   },
   "white_muscle_disease": {
     "display_name": "White Muscle Disease",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005"
+        "WAL-CLM-DDDL-000005",
+        "WAL-CLM-RARE-000269"
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000007"
@@ -3595,7 +3679,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "rare-earths"
     ]
   },
   "xerophthalmia": {
