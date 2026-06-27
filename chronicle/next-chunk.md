@@ -1,6 +1,6 @@
 # Next chunk — operating system CLEANED → continue **Phase 2** surfaces
 
-## LATEST (2026-06-27 SESSION 10 — LET'S PLAY DOCTOR Table 6-1 ✅ COMPLETE (batches 3-6 sealed; the WHOLE Nutrient Deficiency/Toxicity Flow Chart mapped, LETS-003..044) · corpus 424 · conditions 204 · kv 111 · board 30/30 · knowledge probe green · ALL PUSHED)
+## LATEST (2026-06-27 SESSION 10 — LET'S PLAY DOCTOR Table 6-1 ✅ COMPLETE (Table 6-1 + Fig 8-1 + dose-safety scan all done; batches 3-8 sealed, LETS-003..077) · corpus 457 · conditions 204 · kv 114 · board 30/30 · knowledge probe green · ALL PUSHED)
 
 **SESSION 2026-06-27 (SESSION 10) — fresh `genesis` boot; resumed the Let's Play Doctor campaign at Table 6-1 pt3 and drove it to ✅ COMPLETION in 4 round-close batches (b3-b6), all pushed to origin/master. Corpus 395→424 (+29 LPD claims LETS-016..044), conditions 192→204, kv 107→111. Cadence honored (drove batches, no per-batch sign-off; ONE STOP — the "muscle therapy" uncertain-term ruling via AskUserQuestion).**
 
@@ -15,12 +15,15 @@
 - **VERBATIM 60-CHAR FLOOR — downward extension:** for a sub-60 cell, extend the verbatim DOWN into the NEXT section header (contiguous bytes, clean delimiter) — used for Niacin-tox, Pyridoxine-tox, Vit K, Vanadium. For a page-break-split cell whose clean first-part is itself <60 (Vit C), span the page furniture faithfully (header-first; LETS-015 Iron-tox precedent for furniture-in-verbatim).
 - **xref convention:** Table 6-1 sign-lists xref'd to the matching RARE/DDDL element claims where they echo (Mn/Se/Na/B1/B12/Vanadium/Zinc).
 
-**⚠⚠ NEXT (continue / SESSION 11) — Table 6-1 DONE, move to:**
-1. **Fig 8-1 Base Line Supplement dose table** (fitz 84 / p73; .txt rows at L3680+, e.g. "MAGNESIUM 350 mg 1,000 mg 1,000 mg"). ~30 per-nutrient dose claims (kind=dose). ⚠ UNITS OCR-MANGLED: the .txt prints "meg" for BOTH mg AND mcg (SELENIUM "200 meg", VITAMIN B-12 "3 meg", VANADIUM "500 meg", VITAMIN K "70 meg") — MUST render-verify EACH unit at fitz 84 (render saved scratchpad/lpd_f84.png). RDA column is conventional → §00.A SKIP; capture only Wallach's "True Supplement Need" + "Pharmacologic Daily Dose" columns. ⚠ LIKELY NEEDS A LUNETH RULING (ambiguous mg-vs-mcg rows + dose-claim shape: one dose claim per nutrient carrying both columns, or one per column?).
-2. **Ch5 calcium diamonds** (blood-normal-masks-deficiency; muscle-cramps/eye-twitches = Ca-deficiency sign) + **Ch6 cases** (psychiatric illness really food-allergy + hypoglycemia).
-3. **Ch7 Healing Arts scan** (L2620; diamond-scan modalities).
-4. **Ch10 MATERIA MEDICA** (L4051-11583, ~7500 lines — the operational GOLD, condition-by-condition protocols, full depth, MANY batches).
-5. Ch9 OB/GYN (L3709) + Ch11-13 (light).
+**SHIPPED SESSION 10 (continued) — Fig 8-1 + dose-safety scan (commits: 0816d7e b7-b8 · 648d2d6 scan):**
+- **b7-b8** (0816d7e): 33 kind=dose claims LETS-045..077 = Fig 8-1 Base Line Supplement dose table COMPLETE (every nutrient Biotin..Zinc). Luneth-ruled format (AskUserQuestion): per-nutrient dose claim, dose object = "True Supplement Need" daily target, claim_text BOTH columns (True Need + 30-Day Pharmacologic), RDA skipped (§00.A). Fixed 11 .txt rows "meg"→mcg/mg + the CRITICAL folic-acid "15 to 20 gm"→"15 to 20 mg" (grams ≈ 1000× overdose; Luneth: keeping faithful "could cause death"). Phosphorus 0.0 = no supplement; fluoride→other_substances (osteoporosis caveat); Vit A beta-carotene; niacin time-release. Verbatim 60-floor = row+next-row span. Process lesson: seal-then-append violated then recovered (seal after EVERY batch before next finalize).
+- **dose-safety scan** (648d2d6): Luneth-mandated scan of ALL 457 claims. Fixed DDDL "zinc at 15 gm"→"15 mg" ×2 (death-risk OCR unit error, render + parallel-protocol verified) + 126 DDDL "meg"→mcg (all verified mcg trace nutrients; 10 claim verbatims healed via resnap --fix). Tryptophan "10 grams" + ~13 other grams tokens verified LEGIT (body content / gram-dosed nutrients) and KEPT. Re-scan clean: 0 "meg", 0 zinc-grams in claims. NEW POLICY [[dose-misprint-safety-mandate]]: dangerous dose misprints MUST be corrected (even in the verbatim, via .txt fix), NEVER kept faithful; render-verify every dose unit.
+
+**⚠⚠ NEXT (continue / SESSION 11) — Table 6-1 ✅ + Fig 8-1 ✅ + dose-safety scan ✅ ALL DONE. Move to:**
+1. **Ch5 calcium diamonds** (blood-normal-masks-deficiency; muscle-cramps/eye-twitches = Ca-deficiency sign) + **Ch6 cases** (psychiatric illness really food-allergy + hypoglycemia). Locate pages by TEXT SEARCH; render via a scratchpad fitz script (fitz = printed + 11 for LPD).
+2. **Ch7 Healing Arts scan** (L2620; diamond-scan modalities).
+3. **Ch10 MATERIA MEDICA** (L4051-11583, ~7500 lines — the operational GOLD, condition-by-condition protocols, full depth, MANY batches). ⚠ "meg" is PERVASIVE in Ch10 protocol doses (all = mcg) — fix each to mcg at extraction (dose-safety mandate); watch any "gm" that should be mg (zinc/etc.).
+4. Ch9 OB/GYN (L3709) + Ch11-13 (light).
 (Conventions + ★ GOLD-STANDARD RECIPE + SCAFFOLD reminders UNCHANGED — see the SESSION 9 section below.)
 
 ## (SUPERSEDED 2026-06-27 SESSION 10 above — Table 6-1 COMPLETE; LPD 15→44 claims; corpus 395→424, conditions 192→204, kv 107→111) LATEST (2026-06-27 SESSION 9 — LET'S PLAY DOCTOR campaign UNDERWAY (batches 1-2 sealed; Table 6-1 ~1/3 done, Biotin..Iron) + .txt-cleanup pass DONE; conventions LOCKED + toxicity_sign kind ADDED · corpus 395 · conditions 192 · kv 107 · board 30/30 · knowledge probe green · ALL PUSHED)
