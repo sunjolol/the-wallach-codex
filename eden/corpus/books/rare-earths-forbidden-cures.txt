@@ -4214,21 +4214,22 @@ man-kind has placed more value on ma-
 
 Table 3-1 .Known Accumulator Organisms
 
-Club mosses or lycophytes
-
-Brown algae & coelenterates
-
-Brown algae & sponges
-
-Brown algae, sponges, coelenterates
-and molluscs
-
-Protozoa, sponges, coelenterates, echi
-noderms, molluscs and vertebrates
-Soft coelenterates
-
-Annelids, orthropods and molluscs
-Vertebrates
+Al: Club mosses or lycophytes
+As: Brown algae & coelenterates
+B: Brown algae & sponges
+Br: Brown algae, sponges, coelenterates and molluscs
+Ca: Protozoa, sponges, coelenterates, echinoderms, molluscs and vertebrates
+Cl: Soft coelenterates
+Cu: Annelids, orthropods and molluscs
+F: Vertebrates
+Fe: Bacteria, plankton and horse tails
+I: Diatoms, brown algae, sponges, coelenterates and marine annelids
+Mn: Ferns and marine crustaceans
+Na: Soft coelenterates
+Si: Horse tails, diatoms, protozoa and sponges
+V: Ascidians
+Y: Ferns
+Zn: Coelenterates
 
 chines, futures, stocks and bonds, hospi-
 tals, space travel, light weight metals for jet
@@ -4254,22 +4255,6 @@ are brought into proper mineral balance ? “
 Tot is a carrot - that one is about as good as
 another as far as nourishment is concerned?
 But it isn’t; one carrot may look and taste
-
-Bacteria, plankton and horse tails
-Diatoms, brown algae, sponges,
-coelenterates and marine annelids
-Ferns and marine crustaceans
-Soft ceolenterates
-
-Horse tails, diatoms, protozoa
-and sponges
-
-Ascidians
-
-Ferns
-
-Coelenterates
-
 like another and yet be lacking in the par-
 ticular mineral element which our system
 requires and which carrots are supposed to

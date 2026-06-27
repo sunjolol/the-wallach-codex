@@ -307,7 +307,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 402262
+        "char_offset": 402309
       },
       "dose": null,
       "tags": [
@@ -346,7 +346,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811308
+        "char_offset": 811355
       },
       "dose": null,
       "tags": [
@@ -377,7 +377,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811510
+        "char_offset": 811557
       },
       "dose": {
         "amount": "50-100",
@@ -415,7 +415,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 811072
+        "char_offset": 811119
       },
       "dose": null,
       "tags": [
@@ -448,7 +448,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 766046
+        "char_offset": 766093
       },
       "dose": {
         "amount": "250-400",
@@ -488,7 +488,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 392640
+        "char_offset": 392687
       },
       "dose": null,
       "tags": [
@@ -520,7 +520,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 393417
+        "char_offset": 393464
       },
       "dose": null,
       "tags": [
@@ -551,7 +551,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 473795
+        "char_offset": 473842
       },
       "dose": null,
       "tags": [
@@ -581,7 +581,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 474413
+        "char_offset": 474460
       },
       "dose": null,
       "tags": [
@@ -1058,7 +1058,7 @@
         "page": "44",
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 161659
+        "char_offset": 161706
       },
       "dose": null,
       "tags": [
@@ -1089,7 +1089,7 @@
         "page": "52",
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 191449
+        "char_offset": 191496
       },
       "dose": null,
       "tags": [
@@ -1123,7 +1123,7 @@
         "page": "54",
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 195604
+        "char_offset": 195651
       },
       "dose": null,
       "tags": [
@@ -1157,7 +1157,7 @@
         "page": "54",
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 196261
+        "char_offset": 196308
       },
       "dose": null,
       "tags": [
@@ -1193,7 +1193,7 @@
         "page": "56",
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 202575
+        "char_offset": 202622
       },
       "dose": null,
       "tags": [
@@ -1227,7 +1227,7 @@
         "page": "57",
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 205428
+        "char_offset": 205475
       },
       "dose": null,
       "tags": [
@@ -1261,7 +1261,7 @@
         "page": "57",
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 206074
+        "char_offset": 206121
       },
       "dose": null,
       "tags": [
@@ -1295,7 +1295,7 @@
         "page": "57",
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 206208
+        "char_offset": 206255
       },
       "dose": null,
       "tags": [
@@ -1332,7 +1332,7 @@
         "page": 97,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 311612
+        "char_offset": 311659
       },
       "dose": null,
       "tags": [
@@ -1372,7 +1372,7 @@
         "page": 103,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 321964
+        "char_offset": 322011
       },
       "dose": null,
       "tags": [
@@ -1407,7 +1407,7 @@
         "page": 99,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 316067
+        "char_offset": 316114
       },
       "dose": null,
       "tags": [
@@ -1442,7 +1442,7 @@
         "page": 141,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 408165
+        "char_offset": 408212
       },
       "dose": null,
       "tags": [
@@ -1478,7 +1478,7 @@
         "page": 141,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 408900
+        "char_offset": 408947
       },
       "dose": null,
       "tags": [
@@ -1512,7 +1512,7 @@
         "page": 141,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 410629
+        "char_offset": 410676
       },
       "dose": null,
       "tags": [
@@ -1546,7 +1546,7 @@
         "page": 141,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 409133
+        "char_offset": 409180
       },
       "dose": null,
       "tags": [
@@ -1582,7 +1582,7 @@
         "page": 152,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 430920
+        "char_offset": 430967
       },
       "dose": {
         "amount": 1,
@@ -1625,7 +1625,7 @@
         "page": 149,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 423114
+        "char_offset": 423161
       },
       "dose": null,
       "tags": [
@@ -1662,7 +1662,7 @@
         "page": 153,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 432633
+        "char_offset": 432680
       },
       "dose": null,
       "tags": [
@@ -1698,7 +1698,7 @@
         "page": 153,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 433992
+        "char_offset": 434039
       },
       "dose": null,
       "tags": [
@@ -1730,7 +1730,7 @@
         "page": 161,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 457645
+        "char_offset": 457692
       },
       "dose": null,
       "tags": [
@@ -1761,7 +1761,7 @@
         "page": 163,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 460182
+        "char_offset": 460229
       },
       "dose": null,
       "tags": [
@@ -1792,7 +1792,7 @@
         "page": 163,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 462349
+        "char_offset": 462396
       },
       "dose": null,
       "tags": [
@@ -1824,7 +1824,7 @@
         "page": 165,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 465144
+        "char_offset": 465191
       },
       "dose": null,
       "tags": [
@@ -1855,7 +1855,7 @@
         "page": 167,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 469973
+        "char_offset": 470020
       },
       "dose": null,
       "tags": [
@@ -1886,7 +1886,7 @@
         "page": 171,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 474110
+        "char_offset": 474157
       },
       "dose": null,
       "tags": [
@@ -1918,7 +1918,7 @@
         "page": 171,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 474891
+        "char_offset": 474938
       },
       "dose": null,
       "tags": [
@@ -1949,7 +1949,7 @@
         "page": 212,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 561750
+        "char_offset": 561797
       },
       "dose": null,
       "tags": [
@@ -1981,7 +1981,7 @@
         "page": 212,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 562474
+        "char_offset": 562521
       },
       "dose": null,
       "tags": [
@@ -2013,7 +2013,7 @@
         "page": 213,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 562698
+        "char_offset": 562745
       },
       "dose": null,
       "tags": [
@@ -2044,7 +2044,7 @@
         "page": 213,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 562839
+        "char_offset": 562886
       },
       "dose": null,
       "tags": [
@@ -2076,7 +2076,7 @@
         "page": 186,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 506249
+        "char_offset": 506296
       },
       "dose": null,
       "tags": [
@@ -2108,7 +2108,7 @@
         "page": 215,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 564712
+        "char_offset": 564759
       },
       "dose": null,
       "tags": [
@@ -2140,7 +2140,7 @@
         "page": 226,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 586500
+        "char_offset": 586547
       },
       "dose": null,
       "tags": [
@@ -2173,7 +2173,7 @@
         "page": 226,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 587903
+        "char_offset": 587950
       },
       "dose": null,
       "tags": [
@@ -2205,7 +2205,7 @@
         "page": 226,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 588159
+        "char_offset": 588206
       },
       "dose": null,
       "tags": [
@@ -2237,7 +2237,7 @@
         "page": 226,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 588988
+        "char_offset": 589035
       },
       "dose": null,
       "tags": [
@@ -2269,7 +2269,7 @@
         "page": 251,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 646730
+        "char_offset": 646777
       },
       "dose": null,
       "tags": [
@@ -2301,7 +2301,7 @@
         "page": 251,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 647154
+        "char_offset": 647201
       },
       "dose": null,
       "tags": [
@@ -2333,7 +2333,7 @@
         "page": 252,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 649003
+        "char_offset": 649050
       },
       "dose": null,
       "tags": [
@@ -2365,7 +2365,7 @@
         "page": 253,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 651897
+        "char_offset": 651944
       },
       "dose": null,
       "tags": [
@@ -2397,7 +2397,7 @@
         "page": 253,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 652887
+        "char_offset": 652934
       },
       "dose": null,
       "tags": [
@@ -2433,7 +2433,7 @@
         "page": 270,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 681608
+        "char_offset": 681655
       },
       "dose": null,
       "tags": [
@@ -2465,7 +2465,7 @@
         "page": 270,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 681829
+        "char_offset": 681876
       },
       "dose": null,
       "tags": [
@@ -2496,7 +2496,7 @@
         "page": 270,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 682085
+        "char_offset": 682132
       },
       "dose": null,
       "tags": [
@@ -2533,7 +2533,7 @@
         "page": 272,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 689563
+        "char_offset": 689610
       },
       "dose": null,
       "tags": [
@@ -2564,7 +2564,7 @@
         "page": 272,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 689864
+        "char_offset": 689911
       },
       "dose": null,
       "tags": [
@@ -2600,7 +2600,7 @@
         "page": 270,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 684483
+        "char_offset": 684530
       },
       "dose": null,
       "tags": [
@@ -2631,7 +2631,7 @@
         "page": 274,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 696384
+        "char_offset": 696431
       },
       "dose": null,
       "tags": [
@@ -2673,7 +2673,7 @@
         "page": 275,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 699593
+        "char_offset": 699640
       },
       "dose": null,
       "tags": [
@@ -2714,7 +2714,7 @@
         "page": 275,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 700063
+        "char_offset": 700110
       },
       "dose": null,
       "tags": [
@@ -2753,7 +2753,7 @@
         "page": 275,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 700645
+        "char_offset": 700692
       },
       "dose": null,
       "tags": [
@@ -2788,7 +2788,7 @@
         "page": 276,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 700964
+        "char_offset": 701011
       },
       "dose": null,
       "tags": [
@@ -2821,7 +2821,7 @@
         "page": 276,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 701543
+        "char_offset": 701590
       },
       "dose": null,
       "tags": [
@@ -2867,7 +2867,7 @@
         "page": 276,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 703759
+        "char_offset": 703806
       },
       "dose": null,
       "tags": [
@@ -2903,7 +2903,7 @@
         "page": 279,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 705257
+        "char_offset": 705304
       },
       "dose": null,
       "tags": [
@@ -2935,7 +2935,7 @@
         "page": 279,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 706249
+        "char_offset": 706296
       },
       "dose": null,
       "tags": [
@@ -2967,7 +2967,7 @@
         "page": 279,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 707323
+        "char_offset": 707370
       },
       "dose": null,
       "tags": [
@@ -3003,7 +3003,7 @@
         "page": 282,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 711629
+        "char_offset": 711676
       },
       "dose": {
         "amount": 400,
@@ -3044,7 +3044,7 @@
         "page": 282,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 712614
+        "char_offset": 712661
       },
       "dose": null,
       "tags": [
@@ -3079,7 +3079,7 @@
         "page": 281,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 711001
+        "char_offset": 711048
       },
       "dose": null,
       "tags": [
@@ -3113,7 +3113,7 @@
         "page": 282,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 713410
+        "char_offset": 713457
       },
       "dose": null,
       "tags": [
@@ -3149,7 +3149,7 @@
         "page": 285,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 720541
+        "char_offset": 720588
       },
       "dose": null,
       "tags": [
@@ -3184,7 +3184,7 @@
         "page": 285,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 721420
+        "char_offset": 721467
       },
       "dose": null,
       "tags": [
@@ -3221,7 +3221,7 @@
         "page": 287,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 723025
+        "char_offset": 723072
       },
       "dose": {
         "amount": "10/25/50",
@@ -3262,7 +3262,7 @@
         "page": 287,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 723324
+        "char_offset": 723371
       },
       "dose": null,
       "tags": [
@@ -3298,7 +3298,7 @@
         "page": 287,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 724087
+        "char_offset": 724134
       },
       "dose": null,
       "tags": [
@@ -3337,7 +3337,7 @@
         "page": 287,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 725325
+        "char_offset": 725372
       },
       "dose": null,
       "tags": [
@@ -3372,7 +3372,7 @@
         "page": 288,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 726091
+        "char_offset": 726138
       },
       "dose": null,
       "tags": [
@@ -3406,7 +3406,7 @@
         "page": 288,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 726882
+        "char_offset": 726929
       },
       "dose": null,
       "tags": [
@@ -3441,7 +3441,7 @@
         "page": 288,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 728233
+        "char_offset": 728280
       },
       "dose": null,
       "tags": [
@@ -3476,7 +3476,7 @@
         "page": 288,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 728737
+        "char_offset": 728784
       },
       "dose": null,
       "tags": [
@@ -3510,7 +3510,7 @@
         "page": 293,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 738883
+        "char_offset": 738930
       },
       "dose": null,
       "tags": [
@@ -3555,7 +3555,7 @@
         "page": 296,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 743939
+        "char_offset": 743986
       },
       "dose": null,
       "tags": [
@@ -3590,7 +3590,7 @@
         "page": 298,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 748484
+        "char_offset": 748531
       },
       "dose": null,
       "tags": [
@@ -3627,7 +3627,7 @@
         "page": 298,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 750154
+        "char_offset": 750201
       },
       "dose": null,
       "tags": [
@@ -3664,7 +3664,7 @@
         "page": 299,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 751289
+        "char_offset": 751336
       },
       "dose": null,
       "tags": [
@@ -3699,7 +3699,7 @@
         "page": 291,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 733378
+        "char_offset": 733425
       },
       "dose": null,
       "tags": [
@@ -3735,7 +3735,7 @@
         "page": 291,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 733863
+        "char_offset": 733910
       },
       "dose": null,
       "tags": [
@@ -3773,7 +3773,7 @@
         "page": 291,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 734106
+        "char_offset": 734153
       },
       "dose": null,
       "tags": [
@@ -3810,7 +3810,7 @@
         "page": 304,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 759037
+        "char_offset": 759084
       },
       "dose": null,
       "tags": [
@@ -3845,7 +3845,7 @@
         "page": 304,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 759552
+        "char_offset": 759599
       },
       "dose": null,
       "tags": [
@@ -3881,7 +3881,7 @@
         "page": 305,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 760924
+        "char_offset": 760971
       },
       "dose": null,
       "tags": [
@@ -3919,7 +3919,7 @@
         "page": 306,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 765663
+        "char_offset": 765710
       },
       "dose": null,
       "tags": [
@@ -3971,7 +3971,7 @@
         "page": 306,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 766901
+        "char_offset": 766948
       },
       "dose": null,
       "tags": [
@@ -4008,7 +4008,7 @@
         "page": 307,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 768400
+        "char_offset": 768447
       },
       "dose": null,
       "tags": [
@@ -4045,7 +4045,7 @@
         "page": 307,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 769406
+        "char_offset": 769453
       },
       "dose": null,
       "tags": [
@@ -4080,7 +4080,7 @@
         "page": 315,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 778811
+        "char_offset": 778858
       },
       "dose": null,
       "tags": [
@@ -4117,7 +4117,7 @@
         "page": 315,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 780034
+        "char_offset": 780081
       },
       "dose": null,
       "tags": [
@@ -4152,7 +4152,7 @@
         "page": 316,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 782076
+        "char_offset": 782123
       },
       "dose": null,
       "tags": [
@@ -4205,7 +4205,7 @@
         "page": 315,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 778932
+        "char_offset": 778979
       },
       "dose": null,
       "tags": [
@@ -4244,7 +4244,7 @@
         "page": 315,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 779645
+        "char_offset": 779692
       },
       "dose": null,
       "tags": [
@@ -4279,7 +4279,7 @@
         "page": 314,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 775889
+        "char_offset": 775936
       },
       "dose": null,
       "tags": [
@@ -4317,7 +4317,7 @@
         "page": 314,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 777314
+        "char_offset": 777361
       },
       "dose": null,
       "tags": [
@@ -4392,7 +4392,7 @@
         "page": 99,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 315740
+        "char_offset": 315787
       },
       "dose": null,
       "tags": [
@@ -4434,7 +4434,7 @@
         "page": 114,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 357045
+        "char_offset": 357092
       },
       "dose": null,
       "tags": [
@@ -4478,7 +4478,7 @@
         "page": 275,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 699486
+        "char_offset": 699533
       },
       "dose": null,
       "tags": [
@@ -4512,7 +4512,7 @@
         "page": 329,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 800491
+        "char_offset": 800538
       },
       "dose": null,
       "tags": [
@@ -4547,7 +4547,7 @@
         "page": 329,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 800782
+        "char_offset": 800829
       },
       "dose": null,
       "tags": [
@@ -4584,7 +4584,7 @@
         "page": 330,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 802699
+        "char_offset": 802746
       },
       "dose": null,
       "tags": [
@@ -4621,7 +4621,7 @@
         "page": 329,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 797573
+        "char_offset": 797620
       },
       "dose": null,
       "tags": [
@@ -4661,7 +4661,7 @@
         "page": 329,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 798890
+        "char_offset": 798937
       },
       "dose": null,
       "tags": [
@@ -4699,7 +4699,7 @@
         "page": 335,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 812730
+        "char_offset": 812777
       },
       "dose": null,
       "tags": [
@@ -4737,7 +4737,7 @@
         "page": 336,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 814706
+        "char_offset": 814753
       },
       "dose": null,
       "tags": [
@@ -4774,7 +4774,7 @@
         "page": 337,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 816865
+        "char_offset": 816912
       },
       "dose": null,
       "tags": [
@@ -4809,7 +4809,7 @@
         "page": 337,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 817753
+        "char_offset": 817800
       },
       "dose": null,
       "tags": [
@@ -4844,7 +4844,7 @@
         "page": 337,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 818294
+        "char_offset": 818341
       },
       "dose": null,
       "tags": [
@@ -4879,7 +4879,7 @@
         "page": 327,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 792783
+        "char_offset": 792830
       },
       "dose": null,
       "tags": [
@@ -4916,7 +4916,7 @@
         "page": 327,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 791325
+        "char_offset": 791372
       },
       "dose": null,
       "tags": [
@@ -4951,7 +4951,7 @@
         "page": 327,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 791755
+        "char_offset": 791802
       },
       "dose": null,
       "tags": [
@@ -4986,7 +4986,7 @@
         "page": 304,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 758647
+        "char_offset": 758694
       },
       "dose": null,
       "tags": [
@@ -5020,7 +5020,7 @@
         "page": 341,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 826104
+        "char_offset": 826151
       },
       "dose": null,
       "tags": [
@@ -5053,7 +5053,7 @@
         "page": 343,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 827478
+        "char_offset": 827525
       },
       "dose": null,
       "tags": [
@@ -5086,7 +5086,7 @@
         "page": 341,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 826473
+        "char_offset": 826520
       },
       "dose": null,
       "tags": [
@@ -5123,7 +5123,7 @@
         "page": 341,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 826678
+        "char_offset": 826725
       },
       "dose": null,
       "tags": [
@@ -5159,7 +5159,7 @@
         "page": 343,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 828241
+        "char_offset": 828288
       },
       "dose": null,
       "tags": [
@@ -5196,7 +5196,7 @@
         "page": 343,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 827169
+        "char_offset": 827216
       },
       "dose": null,
       "tags": [
@@ -5245,7 +5245,7 @@
         "page": 343,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 827649
+        "char_offset": 827696
       },
       "dose": null,
       "tags": [
@@ -5294,7 +5294,7 @@
         "page": 343,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 827964
+        "char_offset": 828011
       },
       "dose": null,
       "tags": [
@@ -5328,7 +5328,7 @@
         "page": 343,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 829132
+        "char_offset": 829179
       },
       "dose": null,
       "tags": [
@@ -5364,7 +5364,7 @@
         "page": 344,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 829478
+        "char_offset": 829525
       },
       "dose": null,
       "tags": [
@@ -5399,7 +5399,7 @@
         "page": 344,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 829695
+        "char_offset": 829742
       },
       "dose": null,
       "tags": [
@@ -5439,7 +5439,7 @@
         "page": 344,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 829879
+        "char_offset": 829926
       },
       "dose": null,
       "tags": [
@@ -5473,7 +5473,7 @@
         "page": 344,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 830013
+        "char_offset": 830060
       },
       "dose": null,
       "tags": [
@@ -5512,7 +5512,7 @@
         "page": 344,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 830713
+        "char_offset": 830760
       },
       "dose": null,
       "tags": [
@@ -5546,7 +5546,7 @@
         "page": 344,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 830990
+        "char_offset": 831037
       },
       "dose": null,
       "tags": [
@@ -5580,7 +5580,7 @@
         "page": 344,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 830296
+        "char_offset": 830343
       },
       "dose": null,
       "tags": [
@@ -5615,7 +5615,7 @@
         "page": 344,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 831470
+        "char_offset": 831517
       },
       "dose": null,
       "tags": [
@@ -5651,7 +5651,7 @@
         "page": 344,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 832142
+        "char_offset": 832189
       },
       "dose": null,
       "tags": [
@@ -5686,7 +5686,7 @@
         "page": 350,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 840183
+        "char_offset": 840230
       },
       "dose": null,
       "tags": [
@@ -5733,7 +5733,7 @@
         "page": 350,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 840519
+        "char_offset": 840566
       },
       "dose": null,
       "tags": [
@@ -5769,7 +5769,7 @@
         "page": 350,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 840849
+        "char_offset": 840896
       },
       "dose": null,
       "tags": [
@@ -5807,7 +5807,7 @@
         "page": 350,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 841541
+        "char_offset": 841588
       },
       "dose": null,
       "tags": [
@@ -5841,7 +5841,7 @@
         "page": 350,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 841696
+        "char_offset": 841743
       },
       "dose": null,
       "tags": [
@@ -5877,7 +5877,7 @@
         "page": 350,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 841840
+        "char_offset": 841887
       },
       "dose": null,
       "tags": [
@@ -5911,7 +5911,7 @@
         "page": 350,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 843072
+        "char_offset": 843119
       },
       "dose": null,
       "tags": [
@@ -5946,7 +5946,7 @@
         "page": 351,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 843250
+        "char_offset": 843297
       },
       "dose": null,
       "tags": [
@@ -5982,7 +5982,7 @@
         "page": 351,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 843828
+        "char_offset": 843875
       },
       "dose": null,
       "tags": [
@@ -6017,7 +6017,7 @@
         "page": 351,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 844064
+        "char_offset": 844111
       },
       "dose": null,
       "tags": [
@@ -6067,7 +6067,7 @@
         "page": 351,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 844438
+        "char_offset": 844485
       },
       "dose": null,
       "tags": [
@@ -6103,7 +6103,7 @@
         "page": 351,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 844725
+        "char_offset": 844772
       },
       "dose": null,
       "tags": [
@@ -6137,7 +6137,7 @@
         "page": 351,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 845457
+        "char_offset": 845504
       },
       "dose": null,
       "tags": [
@@ -6175,7 +6175,7 @@
         "page": 351,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 845840
+        "char_offset": 845887
       },
       "dose": null,
       "tags": [
@@ -6228,7 +6228,7 @@
         "page": 352,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 846739
+        "char_offset": 846786
       },
       "dose": null,
       "tags": [
@@ -6267,7 +6267,7 @@
         "page": 352,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 846390
+        "char_offset": 846437
       },
       "dose": null,
       "tags": [
@@ -6304,7 +6304,7 @@
         "page": 352,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 848038
+        "char_offset": 848085
       },
       "dose": null,
       "tags": [
@@ -6339,7 +6339,7 @@
         "page": 352,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 848851
+        "char_offset": 848898
       },
       "dose": null,
       "tags": [
@@ -6372,7 +6372,7 @@
         "page": 352,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 849081
+        "char_offset": 849128
       },
       "dose": null,
       "tags": [
@@ -6408,7 +6408,7 @@
         "page": 352,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 849195
+        "char_offset": 849242
       },
       "dose": null,
       "tags": [
@@ -6442,7 +6442,7 @@
         "page": 353,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 849643
+        "char_offset": 849690
       },
       "dose": null,
       "tags": [
@@ -6477,7 +6477,7 @@
         "page": 353,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 849880
+        "char_offset": 849927
       },
       "dose": null,
       "tags": [
@@ -6512,7 +6512,7 @@
         "page": 354,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 851676
+        "char_offset": 851723
       },
       "dose": null,
       "tags": [
@@ -6554,7 +6554,7 @@
         "page": 354,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 852170
+        "char_offset": 852217
       },
       "dose": null,
       "tags": [
@@ -6588,7 +6588,7 @@
         "page": 354,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 853237
+        "char_offset": 853284
       },
       "dose": null,
       "tags": [
@@ -6624,7 +6624,7 @@
         "page": 354,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 853424
+        "char_offset": 853471
       },
       "dose": null,
       "tags": [
@@ -6667,7 +6667,7 @@
         "page": 355,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 854286
+        "char_offset": 854333
       },
       "dose": null,
       "tags": [
@@ -6705,7 +6705,7 @@
         "page": 355,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 854766
+        "char_offset": 854813
       },
       "dose": null,
       "tags": [
@@ -6740,7 +6740,7 @@
         "page": 355,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 854945
+        "char_offset": 854992
       },
       "dose": null,
       "tags": [
@@ -6774,7 +6774,7 @@
         "page": 356,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 855494
+        "char_offset": 855541
       },
       "dose": null,
       "tags": [
@@ -6810,7 +6810,7 @@
         "page": 356,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 856412
+        "char_offset": 856459
       },
       "dose": null,
       "tags": [
@@ -6854,7 +6854,7 @@
         "page": 356,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 856069
+        "char_offset": 856116
       },
       "dose": null,
       "tags": [
@@ -6890,7 +6890,7 @@
         "page": 356,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 856524
+        "char_offset": 856571
       },
       "dose": null,
       "tags": [
@@ -6924,7 +6924,7 @@
         "page": 358,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 858673
+        "char_offset": 858720
       },
       "dose": null,
       "tags": [
@@ -6957,7 +6957,7 @@
         "page": 358,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 859678
+        "char_offset": 859725
       },
       "dose": null,
       "tags": [
@@ -6992,7 +6992,7 @@
         "page": 363,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 865990
+        "char_offset": 866037
       },
       "dose": null,
       "tags": [
@@ -7027,7 +7027,7 @@
         "page": 363,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 867847
+        "char_offset": 867894
       },
       "dose": null,
       "tags": [
@@ -7061,7 +7061,7 @@
         "page": 363,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 868851
+        "char_offset": 868898
       },
       "dose": null,
       "tags": [
@@ -7095,7 +7095,7 @@
         "page": 372,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 885891
+        "char_offset": 885938
       },
       "dose": null,
       "tags": [
@@ -7129,7 +7129,7 @@
         "page": 372,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 885246
+        "char_offset": 885293
       },
       "dose": null,
       "tags": [
@@ -7171,7 +7171,7 @@
         "page": 372,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 886187
+        "char_offset": 886234
       },
       "dose": null,
       "tags": [
@@ -7208,7 +7208,7 @@
         "page": 372,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 886913
+        "char_offset": 886960
       },
       "dose": null,
       "tags": [
@@ -7243,7 +7243,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 888208
+        "char_offset": 888255
       },
       "dose": null,
       "tags": [
@@ -7277,7 +7277,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 888562
+        "char_offset": 888609
       },
       "dose": null,
       "tags": [
@@ -7318,7 +7318,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 889221
+        "char_offset": 889268
       },
       "dose": null,
       "tags": [
@@ -7353,7 +7353,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 889743
+        "char_offset": 889790
       },
       "dose": {
         "amount": "1,000-1,500",
@@ -7395,7 +7395,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 890209
+        "char_offset": 890256
       },
       "dose": null,
       "tags": [
@@ -7431,7 +7431,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 890498
+        "char_offset": 890545
       },
       "dose": null,
       "tags": [
@@ -7465,7 +7465,7 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 890910
+        "char_offset": 890957
       },
       "dose": null,
       "tags": [
@@ -7502,7 +7502,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 893686
+        "char_offset": 893733
       },
       "dose": null,
       "tags": [
@@ -7539,7 +7539,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 894082
+        "char_offset": 894129
       },
       "dose": null,
       "tags": [
@@ -7577,7 +7577,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 894300
+        "char_offset": 894347
       },
       "dose": null,
       "tags": [
@@ -7614,7 +7614,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 894614
+        "char_offset": 894661
       },
       "dose": null,
       "tags": [
@@ -7653,7 +7653,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 894970
+        "char_offset": 895017
       },
       "dose": null,
       "tags": [
@@ -7688,7 +7688,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 895950
+        "char_offset": 895997
       },
       "dose": null,
       "tags": [
@@ -7723,7 +7723,7 @@
         "page": 376,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 897323
+        "char_offset": 897370
       },
       "dose": null,
       "tags": [
@@ -7758,7 +7758,7 @@
         "page": 376,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 897890
+        "char_offset": 897937
       },
       "dose": null,
       "tags": [
@@ -7793,7 +7793,7 @@
         "page": 376,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 899020
+        "char_offset": 899067
       },
       "dose": null,
       "tags": [
@@ -7828,7 +7828,7 @@
         "page": 377,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 900913
+        "char_offset": 900960
       },
       "dose": null,
       "tags": [
@@ -7863,7 +7863,7 @@
         "page": 377,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 901085
+        "char_offset": 901132
       },
       "dose": null,
       "tags": [
@@ -7898,7 +7898,7 @@
         "page": 377,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 901241
+        "char_offset": 901288
       },
       "dose": null,
       "tags": [
@@ -7939,7 +7939,7 @@
         "page": 377,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 901585
+        "char_offset": 901632
       },
       "dose": null,
       "tags": [
@@ -7977,7 +7977,7 @@
         "page": 378,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 902044
+        "char_offset": 902091
       },
       "dose": null,
       "tags": [
@@ -8012,7 +8012,7 @@
         "page": 378,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 903131
+        "char_offset": 903178
       },
       "dose": null,
       "tags": [
@@ -8048,7 +8048,7 @@
         "page": 378,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 903393
+        "char_offset": 903440
       },
       "dose": null,
       "tags": [
@@ -8092,7 +8092,7 @@
         "page": 382,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 907739
+        "char_offset": 907786
       },
       "dose": null,
       "tags": [
@@ -8132,7 +8132,7 @@
         "page": 382,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 908103
+        "char_offset": 908150
       },
       "dose": null,
       "tags": [
@@ -8181,7 +8181,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 740125
+        "char_offset": 740172
       },
       "dose": null,
       "tags": [
@@ -8223,7 +8223,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 740437
+        "char_offset": 740484
       },
       "dose": null,
       "tags": [
@@ -8269,7 +8269,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 740663
+        "char_offset": 740710
       },
       "dose": null,
       "tags": [
@@ -8307,7 +8307,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 740955
+        "char_offset": 741002
       },
       "dose": null,
       "tags": [
@@ -8352,7 +8352,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 741077
+        "char_offset": 741124
       },
       "dose": null,
       "tags": [
@@ -8393,7 +8393,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 741303
+        "char_offset": 741350
       },
       "dose": null,
       "tags": [
@@ -8433,7 +8433,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 741614
+        "char_offset": 741661
       },
       "dose": null,
       "tags": [
@@ -8474,7 +8474,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 741801
+        "char_offset": 741848
       },
       "dose": null,
       "tags": [
@@ -8517,7 +8517,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 741946
+        "char_offset": 741993
       },
       "dose": null,
       "tags": [
@@ -8554,7 +8554,7 @@
         "page": 295,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 742177
+        "char_offset": 742224
       },
       "dose": null,
       "tags": [
@@ -8592,7 +8592,7 @@
         "page": 296,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 742370
+        "char_offset": 742417
       },
       "dose": null,
       "tags": [
@@ -8633,7 +8633,7 @@
         "page": 296,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 742450
+        "char_offset": 742497
       },
       "dose": null,
       "tags": [
@@ -8675,7 +8675,7 @@
         "page": 296,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 742568
+        "char_offset": 742615
       },
       "dose": null,
       "tags": [
@@ -8714,7 +8714,7 @@
         "page": 296,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 742792
+        "char_offset": 742839
       },
       "dose": null,
       "tags": [
@@ -8749,7 +8749,7 @@
         "page": 296,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 742964
+        "char_offset": 743011
       },
       "dose": null,
       "tags": [
@@ -8781,7 +8781,7 @@
         "page": 409,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 953544
+        "char_offset": 953591
       },
       "dose": null,
       "tags": [
@@ -8820,7 +8820,7 @@
         "page": 409,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 953706
+        "char_offset": 953753
       },
       "dose": null,
       "tags": [
@@ -8854,7 +8854,7 @@
         "page": 409,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 953858
+        "char_offset": 953905
       },
       "dose": {
         "amount": "200-500",
@@ -8894,7 +8894,7 @@
         "page": 410,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 954573
+        "char_offset": 954620
       },
       "dose": null,
       "tags": [
@@ -8929,7 +8929,7 @@
         "page": 410,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 955067
+        "char_offset": 955114
       },
       "dose": null,
       "tags": [
@@ -8966,7 +8966,7 @@
         "page": 410,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 955760
+        "char_offset": 955807
       },
       "dose": null,
       "tags": [
@@ -9001,7 +9001,7 @@
         "page": 411,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 957106
+        "char_offset": 957153
       },
       "dose": null,
       "tags": [
@@ -9036,7 +9036,7 @@
         "page": 411,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 958855
+        "char_offset": 958902
       },
       "dose": null,
       "tags": [
@@ -9071,7 +9071,7 @@
         "page": 411,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 958543
+        "char_offset": 958590
       },
       "dose": null,
       "tags": [
@@ -9105,7 +9105,7 @@
         "page": 412,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 959874
+        "char_offset": 959921
       },
       "dose": null,
       "tags": [
@@ -9143,7 +9143,7 @@
         "page": 412,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 960115
+        "char_offset": 960162
       },
       "dose": null,
       "tags": [
@@ -9178,7 +9178,7 @@
         "page": 412,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 961440
+        "char_offset": 961487
       },
       "dose": null,
       "tags": [
@@ -9215,7 +9215,7 @@
         "page": 412,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 961285
+        "char_offset": 961332
       },
       "dose": null,
       "tags": [
@@ -9259,7 +9259,7 @@
         "page": 412,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 961919
+        "char_offset": 961966
       },
       "dose": null,
       "tags": [
@@ -9294,7 +9294,7 @@
         "page": 413,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 962764
+        "char_offset": 962811
       },
       "dose": null,
       "tags": [
@@ -9329,7 +9329,7 @@
         "page": 413,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 963173
+        "char_offset": 963220
       },
       "dose": null,
       "tags": [
@@ -9364,7 +9364,7 @@
         "page": 413,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 963258
+        "char_offset": 963305
       },
       "dose": null,
       "tags": [
@@ -9399,7 +9399,7 @@
         "page": 413,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 963936
+        "char_offset": 963983
       },
       "dose": null,
       "tags": [
@@ -9441,7 +9441,7 @@
         "page": 413,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 964335
+        "char_offset": 964382
       },
       "dose": null,
       "tags": [
@@ -9482,7 +9482,7 @@
         "page": 417,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 965019
+        "char_offset": 965066
       },
       "dose": null,
       "tags": [
@@ -9525,7 +9525,7 @@
         "page": 417,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 965385
+        "char_offset": 965432
       },
       "dose": null,
       "tags": [
@@ -9559,7 +9559,7 @@
         "page": 418,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 966261
+        "char_offset": 966308
       },
       "dose": null,
       "tags": [
@@ -9594,7 +9594,7 @@
         "page": 418,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 966021
+        "char_offset": 966068
       },
       "dose": null,
       "tags": [
@@ -9628,7 +9628,7 @@
         "page": 417,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 965745
+        "char_offset": 965792
       },
       "dose": null,
       "tags": [
@@ -9663,7 +9663,7 @@
         "page": 418,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 967032
+        "char_offset": 967079
       },
       "dose": null,
       "tags": [
@@ -9708,7 +9708,7 @@
         "page": 378,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 903975
+        "char_offset": 904022
       },
       "dose": null,
       "tags": [
@@ -9753,7 +9753,7 @@
         "page": 378,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 904415
+        "char_offset": 904462
       },
       "dose": null,
       "tags": [
@@ -9785,7 +9785,7 @@
         "page": 42,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 160038
+        "char_offset": 160312
       },
       "dose": null,
       "tags": [
@@ -9816,7 +9816,7 @@
         "page": 42,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 161080
+        "char_offset": 161127
       },
       "dose": null,
       "tags": [
@@ -9847,7 +9847,7 @@
         "page": 42,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 161264
+        "char_offset": 161311
       },
       "dose": null,
       "tags": [
@@ -9878,7 +9878,7 @@
         "page": 44,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 163427
+        "char_offset": 163474
       },
       "dose": null,
       "tags": [
@@ -9931,7 +9931,7 @@
         "page": 169,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 473277
+        "char_offset": 473324
       },
       "dose": null,
       "tags": [
@@ -9970,7 +9970,7 @@
         "page": 233,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 599305
+        "char_offset": 599352
       },
       "dose": null,
       "tags": [
@@ -10010,7 +10010,7 @@
         "page": 233,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 599677
+        "char_offset": 599724
       },
       "dose": null,
       "tags": [
@@ -10049,7 +10049,7 @@
         "page": 233,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 599987
+        "char_offset": 600034
       },
       "dose": null,
       "tags": [
@@ -10089,7 +10089,7 @@
         "page": 233,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 600184
+        "char_offset": 600231
       },
       "dose": null,
       "tags": [
@@ -10126,7 +10126,7 @@
         "page": 233,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 600403
+        "char_offset": 600450
       },
       "dose": null,
       "tags": [
@@ -10162,7 +10162,7 @@
         "page": 233,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 600625
+        "char_offset": 600672
       },
       "dose": null,
       "tags": [
@@ -10206,7 +10206,7 @@
         "page": 233,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 600995
+        "char_offset": 601042
       },
       "dose": null,
       "tags": [
@@ -10243,7 +10243,7 @@
         "page": 233,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 601164
+        "char_offset": 601211
       },
       "dose": null,
       "tags": [
@@ -10281,7 +10281,7 @@
         "page": 233,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 601339
+        "char_offset": 601386
       },
       "dose": null,
       "tags": [
@@ -10317,7 +10317,7 @@
         "page": 233,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 601728
+        "char_offset": 601775
       },
       "dose": null,
       "tags": [
@@ -10355,7 +10355,7 @@
         "page": 233,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 601890
+        "char_offset": 601937
       },
       "dose": null,
       "tags": [

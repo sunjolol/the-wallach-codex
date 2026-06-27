@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_111 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_112 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-27 14:32 UTC-05:00 · round-close · eden/corpus
+Phase γ.3 batch 63 — .txt-cleanup B: Table 3-1 (Accumulator Organisms) de-interleave. Restored OCR-scattered 2-column element→organism table as one clean 16-row block (16 element labels re-added from p43 render); rejoined 2 broken sentences. NO new claims; corpus 380, kv 104→105.
+  ↳ Deferred from b59. OCR splayed the table's organism names into 2 blocks spliced mid-sentence and dropped all 16 element symbols. Reconstructed from 400-DPI p43 ground truth via anchor-sliced assertion-guarded script (0 BROKEN, RARE-271 byte-identical). Fixed echinoderms + coelenterates OCR typos; kept 'orthropods' faithful (book's spelling, Group-D flagged). resnap 262 relocated/0 BROKEN → seal → embed → build → invariants 30/30 → knowledge probe PASS. ✅ .txt-cleanup pass complete (b62+b63). NEXT = an unmined in-housed book.
 
 ## 2026-06-27 14:18 UTC-05:00 · round-close · eden/corpus
 Phase γ.3 batch 62 — .txt-cleanup pass A: 10 non-surfaced OCR-typo fixes in rare-earths.txt (antioxident/PRD→ppm/Arnanita→Amanita/limeston/Farbes→Forbes×2/Zine→Zinc×2/2 prose Was-caps). NO new claims; corpus 380, kv 103→104, board 30/30.
