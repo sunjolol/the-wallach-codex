@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_121 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_122 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-27 18:58 UTC-05:00 · design-decision · genesis/plan
+PRE-SHIP SAFETY SWEEP = a MANDATORY Phase-4 beta gate (plan §8.12), parallel to the legal/copyright sweep: before beta, auto-flag + MANUALLY review every iffy dose/directive (100% fool-proof) with a committed sign-off. Luneth can't self-audit dosages. Resurface at final testing.
+  ↳ Luneth's directive after the Fig 8-1 folic-acid + DDDL zinc grams-overdose catches. Scope: every displayable claim with a dose/quantity/toxicity/contraindication/directive a user could act on to harm (not just kind=dose). Method seed = the 2026-06-27 dose-safety scan: automated flagging (OCR units, dose-object sanity, cross-corpus outliers, unit allowlist) → render source cross-check (char_offset+book text) → human review of every flag → Luneth sign-off → chronicle/safety-sweep-<date>.md. Full detail genesis §8.12 + dose-misprint-safety-mandate memory. SESSION 10 wrap: Table 6-1 + Fig 8-1 + dose-safety scan all shipped (corpus 457, kv 114); handoff rolled; ready for fresh genesis.
 
 ## 2026-06-27 18:37 UTC-05:00 · milestone · eden/corpus
 ✅ Corpus-wide DOSE-SAFETY SCAN (Luneth-mandated) complete. Caught + fixed DDDL 'zinc at 15 gm'→'15 mg' (×2, death-risk OCR unit error) and 126 DDDL 'meg'→mcg (10 claim verbatims). All 457 claims re-scanned: 0 meg, 0 zinc-grams remain. kv 114.

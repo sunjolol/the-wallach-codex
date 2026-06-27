@@ -412,6 +412,24 @@ A short `SECURITY.md` pointing at a contact email or GitHub Issues. For a static
 
 A separate static landing page (could be the same repo's `index.html` if the dashboard is at `/app/`) with schema.org markup, OG tags, meta description, sitemap.xml. The landing page does the marketing; the dashboard does the work.
 
+### 8.12 — Pre-ship safety sweep (MANDATORY beta gate)
+
+**Luneth said (2026-06-27):** *"I personally do not know Wallach's teachings inside and out enough, nor do I know proper dosages enough to audit this once we're finished and ready to ship. I will need some help scanning all of the claims to ensure safety. So just like we're doing a legal sweep at the end, we need to do a safety sweep as well to ensure there are no risks of danger happening through the app. And whatever method we use must be 100% fool-proof (the how can be figured out later but it's important we leave no doubt and basically find and manually review every iffy claim at the end)."*
+
+**Why this exists (a hard gate, equal in weight to the legal/TOS/disclaimer sweep §8.1–8.3 and the copyright scrub §8.4):** the app displays Wallach's dosages and health directives. A single OCR/transcription misprint in a dose can be lethal if a user follows it — proven TWICE during the build: Let's Play Doctor Fig 8-1 folic-acid "15 to 20 gm" (grams ≈ 1000× overdose; should be mg) and Dead Doctors Don't Lie "zinc at 15 gm t.i.d." (grams, lethal; should be mg). Both were caught only because a dubious value happened to be noticed and render-verified. Before the beta ships to the public, EVERY such risk must be found and manually reviewed — no doubt left.
+
+**Scope:** every claim the app can display that carries a dose, quantity, toxicity threshold, contraindication, or any directive a user could act on to their harm — not just `kind=dose`, also mechanism/protocol/deficiency/toxicity claims whose text contains numbers+units, and any advice dangerous if mis-stated.
+
+**The 100%-fool-proof requirement (Luneth):** the method must leave NO doubt. Design intent = AUTOMATICALLY FLAG every iffy claim (so none is silently missed) → then MANUALLY REVIEW each flagged claim against the rendered Wallach source. Automation narrows the field; human verification clears each one; nothing ships unreviewed.
+
+**Proposed approach (Phase 4 — the "how" is TBD, refine at sweep time; this is the seed):**
+1. **Automated flagging pass** — the seed already exists: the 2026-06-27 dose-safety scan (see chronicle/build-log + the dose-misprint-safety-mandate memory). Flag ALL claims for: (a) ambiguous/garbled OCR units ("meg", "gm"/"grams" near a digit, bare numbers with no unit); (b) dose-object sanity (amount/unit implausible for the nutrient — a trace mineral in grams, an absurd IU); (c) cross-corpus outliers (a nutrient's dose far outside the range of its other claims); (d) any unit outside an allowlist {mg, mcg, IU, g}. Every hit → a review queue.
+2. **Source cross-check** — for each flagged claim, render the Wallach source page (the corpus stores `char_offset` + book text, so the §00.A render-verify method used all build long applies) and read the printed value.
+3. **Manual review of EVERY flagged claim** (plus a representative check of un-flagged dose claims) by a competent reviewer. Because Luneth cannot self-audit Wallach's dosages, this step needs help — a domain reviewer and/or Claude cross-checking each claim against the rendered source, with Luneth signing off the final list.
+4. **Sign-off artifact** — a committed `chronicle/safety-sweep-<date>.md` recording every claim reviewed, its verdict (safe / corrected / removed), and the reviewer, so the sweep is auditable and the beta can be declared safety-cleared.
+
+**Architectural note (keep during the build, so the sweep stays a content audit not a re-engineering job — same principle as §8.4):** every dose stays a structured object `{amount, unit, …}`; every claim keeps its `char_offset` + source book; and dose misprints are corrected the moment they are found, never carried forward (the dose-misprint-safety-mandate already binds this during the build).
+
 ---
 
 ## §9 — Per-phase exit criteria (consolidated checklist)
