@@ -3532,7 +3532,7 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 21,
+    "claim_count": 22,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052",
@@ -3557,6 +3557,9 @@
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000082"
+      ],
+      "doses": [
+        "WAL-CLM-LETS-000051"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086",
@@ -3595,7 +3598,9 @@
       "vitamin-k",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "fluoride"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",

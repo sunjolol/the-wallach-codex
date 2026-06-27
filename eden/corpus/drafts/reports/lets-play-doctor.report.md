@@ -1,140 +1,129 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_9 claim(s) drafted 2026-06-27T22:45:52+00:00. Review then run corpus_seal.py to promote._
+_17 claim(s) drafted 2026-06-27T23:24:54+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: deficiency_sign×7, toxicity_sign×2
+Kinds: dose×17
 
-### WAL-CLM-LETS-000036 · deficiency_sign
-- **essentials:** vitamin-a · **conditions:** acne, anosmia, birth_defects, alopecia, infertility, insomnia, night_blindness, xerophthalmia · **symptoms:** dry_hair, fatigue, retarded_growth, hyperkeratosis, lowered_immunity, weight_loss, dry_skin
-- **claim:** Wallach lists the signs of vitamin A deficiency: acne, anosmia (loss of smell), birth defects, dry hair and hair loss (alopecia), fatigue, growth retardation, hyperkeratosis (thickened rough skin), infections, infertility, insomnia, night blindness, weight loss, xerophthalmia (dry eyes), and xerosis (abnormally dry skin).
-- **verbatim** (offset 92793): “VITAMIN A DEFICIENCY
-acne
-anosmia (loss of smell)
-birth defects
-dry hair/alopecia
-fatigue
-growth retardation
-hyperkeratosis
-infections
-infertility
-insomnia
-night blindness
-weight loss
-xerophthalmia
-xerosis”
+### WAL-CLM-LETS-000061 · dose
+- **essentials:** phosphorus · **conditions:** — · **symptoms:** —
+- **dose:** {'amount': 0, 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
+- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach lists phosphorus's True Supplement Need and 30-day pharmacologic daily dose both as 0.0 — that is, he recommends no supplemental phosphorus (the ordinary diet already supplies more than enough).
+- **verbatim** (offset 134861): “PHOSPHORUS 800 mg 0.0 0.0
+POTASSIUM 1,875 mg 5,500 mg 5,500 mg”
 
-### WAL-CLM-LETS-000037 · toxicity_sign
-- **essentials:** vitamin-a · **conditions:** alopecia, amenorrhea, hydrocephalus · **symptoms:** abdominal_pain, cheilosis, dyspepsia, hepatomegaly, irritability, joint_pain, nausea, vomiting, pruritus, splenomegaly, weight_loss
-- **claim:** Wallach lists the signs of vitamin A toxicity (excess): abdominal pain, hair loss (alopecia), amenorrhea (absent menstruation), cheilosis (cracked lip corners), gastrointestinal upset, hepatomegaly (enlarged liver), hydrocephalus, irritability, joint pain, nausea and vomiting, pruritus (itching), splenomegaly (enlarged spleen), and weight loss.
-- **verbatim** (offset 92999): “VITAMIN A TOXICITY
-abdominal pain
-alopecia
-amenorrhea
-cheilosis
-G I upset
-hepatomegaly
-hydrocephalus
-irritability
-joint pain
-nausea & vomiting
-pruritis
-splenomegaly
-weight loss”
+### WAL-CLM-LETS-000062 · dose
+- **essentials:** potassium · **conditions:** — · **symptoms:** —
+- **dose:** {'amount': 5500, 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
+- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives potassium a True Supplement Need (daily maintenance target) of 5,500 mg and a 30-day pharmacologic daily dose of 5,500 mg.
+- **verbatim** (offset 134887): “POTASSIUM 1,875 mg 5,500 mg 5,500 mg
+PYRIDOXINE 2.2 mg 50 mg 200 to 500 mg”
 
-### WAL-CLM-LETS-000038 · deficiency_sign
-- **essentials:** vitamin-c · **conditions:** depression · **symptoms:** bleeding_gums, loose_teeth, fatigue, easy_bruising, impaired_wound_healing, irritability, joint_pain
-- **claim:** Wallach lists the signs of vitamin C deficiency: bleeding gums and loose teeth, depression with malaise and tiredness, easy bruising, impaired wound healing, irritability, and joint pain.
-- **verbatim** (offset 93176): “VITAMIN C DEFICIENCY
-bleeding gums/loose teeth
-49
-TABLE 6-1 . Nutrient Deficiency / Toxicity Flow Chart (Continued)
-depression/malaise/tiredness
-easy bruising
-impaired wound healing
-irritability
-joint pain”
+### WAL-CLM-LETS-000063 · dose
+- **essentials:** vitamin-b6 · **conditions:** — · **symptoms:** —
+- **dose:** {'amount': 50, 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
+- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives pyridoxine (vitamin B-6) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 200 to 500 mg.
+- **verbatim** (offset 134924): “PYRIDOXINE 2.2 mg 50 mg 200 to 500 mg
+RIBOFLAVIN 1.6 mg 50 mg 200 to 500 mg”
 
-### WAL-CLM-LETS-000039 · deficiency_sign
-- **essentials:** vitamin-d · **conditions:** diarrhea, insomnia, myopia, osteomalacia, rickets · **symptoms:** burning_mouth, burning_throat, nervousness
-- **claim:** Wallach lists the signs of vitamin D deficiency: burning in the mouth, burning in the throat, diarrhea, insomnia, myopia (nearsightedness), nervousness, osteomalacia (softening of the bones), and rickets.
-- **verbatim** (offset 93382): “VITAMIN D DEFICIENCY
-burning in mouth
-burning in throat
-diarrhea
-insomnia
-myopia
-nervousness
-osteomalacia
-rickets”
+### WAL-CLM-LETS-000064 · dose
+- **essentials:** vitamin-b2 · **conditions:** — · **symptoms:** —
+- **dose:** {'amount': 50, 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
+- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives riboflavin (vitamin B-2) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 200 to 500 mg.
+- **verbatim** (offset 134962): “RIBOFLAVIN 1.6 mg 50 mg 200 to 500 mg
+SELENIUM ? 200 mcg 500 to 3,000 mcg”
 
-### WAL-CLM-LETS-000040 · toxicity_sign
-- **essentials:** vitamin-d · **conditions:** arteriosclerosis, liver_disease · **symptoms:** ectopic_calcification
-- **claim:** Wallach lists the signs of vitamin D toxicity (excess): angiotoxicity (calcification of the blood vessels), arteriosclerosis (angiotoxicity), liver dysfunction, and "malignant" (soft-tissue) calcification.
-- **verbatim** (offset 93496): “VITAMIN D TOXICITY
-angiotoxicity (calcification)
-arteriosclerosis (angiotoxicity)
-liver dysfunction
-"malignant" calcification”
+### WAL-CLM-LETS-000065 · dose
+- **essentials:** selenium · **conditions:** — · **symptoms:** —
+- **dose:** {'amount': 200, 'unit': 'mcg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
+- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives selenium a True Supplement Need (daily maintenance target) of 200 mcg and a 30-day pharmacologic daily dose of 500 to 3,000 mcg.
+- **verbatim** (offset 135000): “SELENIUM ? 200 mcg 500 to 3,000 mcg
+SODIUM 1,100 mg 3,300 mg 300 to 3,000 mg”
 
-### WAL-CLM-LETS-000041 · deficiency_sign
-- **essentials:** vitamin-e · **conditions:** alopecia, dermatitis, infertility, malabsorption, muscular_dystrophy · **symptoms:** areflexia, gait_disturbance, ophthalmoplegia, proprioception_problems, rbc_fragility, vibratory_sense_dysfunction
-- **claim:** Wallach lists the signs of vitamin E deficiency: hair loss (alopecia), areflexia (absent reflexes), dermatitis, gait disturbances, infertility, malabsorption, muscular dystrophy, ophthalmoplegia (paralysis of the eye muscles), proprioception problems (impaired position sense), red blood cell (RBC) fragility, and vibratory sense dysfunction.
-- **verbatim** (offset 93622): “VITAMIN E DEFICIENCY
-alopecia
-areflexia
-dermatitis
-gait disturbances
-infertility
-malabsorption
-muscular dystrophy
-ophthalmoplegia
-proprioception problems
-RBC fragility
-vibratory sense dysfunction”
+### WAL-CLM-LETS-000066 · dose
+- **essentials:** sodium · **conditions:** — · **symptoms:** —
+- **dose:** {'amount': 3300, 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
+- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives sodium a True Supplement Need (daily maintenance target) of 3,300 mg and a 30-day pharmacologic daily dose of 300 to 3,000 mg.
+- **verbatim** (offset 135036): “SODIUM 1,100 mg 3,300 mg 300 to 3,000 mg
+SULPHUR ? 500 mg 1,000 mg”
 
-### WAL-CLM-LETS-000042 · deficiency_sign
-- **essentials:** vitamin-k · **conditions:** osteoporosis · **symptoms:** prolonged_clotting_time
-- **claim:** Wallach lists the signs of vitamin K deficiency: poor (prolonged) clotting time and osteoporosis.
-- **verbatim** (offset 93818): “VITAMIN K DEFICIENCY
-poor clotting time
-osteoporosis.
-VANADIUM DEFICIENCY”
+### WAL-CLM-LETS-000067 · dose
+- **essentials:** sulfur · **conditions:** — · **symptoms:** —
+- **dose:** {'amount': 500, 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
+- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives sulphur (sulfur) a True Supplement Need (daily maintenance target) of 500 mg and a 30-day pharmacologic daily dose of 1,000 mg.
+- **verbatim** (offset 135077): “SULPHUR ? 500 mg 1,000 mg
+THIAMINE 1.4 mg 50 mg 200 to 500 mg”
 
-### WAL-CLM-LETS-000043 · deficiency_sign
-- **essentials:** vanadium · **conditions:** diabetes, hypoglycemia · **symptoms:** —
-- **claim:** Wallach lists the signs of vanadium deficiency: diabetes and hypoglycemia (low blood sugar).
-- **verbatim** (offset 93872): “VANADIUM DEFICIENCY
-diabetes
-hypoglycemia
-ZINC DEFICIENCY
-acne”
+### WAL-CLM-LETS-000068 · dose
+- **essentials:** vitamin-b1 · **conditions:** — · **symptoms:** —
+- **dose:** {'amount': 50, 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
+- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives thiamine (vitamin B-1) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 200 to 500 mg.
+- **verbatim** (offset 135103): “THIAMINE 1.4 mg 50 mg 200 to 500 mg
+TIN ? 500 mcg 1000 mcg
+VANADIUM ? 500 mcg 2 - 5 mg”
 
-### WAL-CLM-LETS-000044 · deficiency_sign
-- **essentials:** zinc · **conditions:** acne, alopecia, anorexia, birth_defects, depression, eczema, high_cholesterol, ageusia, impotence, infertility, malabsorption, paranoia · **symptoms:** apathy, brittle_nails, fatigue, retarded_growth, impaired_wound_healing, irritability, lethargy, poor_memory, delayed_puberty, white_spots_on_nails
-- **claim:** Wallach lists the signs of zinc deficiency: acne, hair loss (alopecia), anorexia (loss of appetite), apathy, birth defects, brittle nails, depression, eczema, fatigue, growth retardation, high cholesterol, hypogeusia (loss of the sensation of taste), impaired wound healing, impotence, infertility, irritability, lethargy, malabsorption, memory loss, paranoia, sexual immaturity, sterility, and white spots on the nails.
-- **verbatim** (offset 93914): “ZINC DEFICIENCY
-acne
-alopecia
-anorexia
-apathy
-birth defects
-brittle nails
-depression
-eczema
-fatigue
-growth retardation
-hypercholesterolemia
-hypogeusia (loss of
-sensation of taste)
-impaired wound healing
-impotence
-infertility
-irritability
-lethargy
-malabsorption
-memory loss
-paranoia
-sexual immaturity
-sterility
-white spots on nails”
+### WAL-CLM-LETS-000069 · dose
+- **essentials:** tin · **conditions:** — · **symptoms:** —
+- **dose:** {'amount': 500, 'unit': 'mcg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
+- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives tin a True Supplement Need (daily maintenance target) of 500 mcg and a 30-day pharmacologic daily dose of 1,000 mcg.
+- **verbatim** (offset 135139): “TIN ? 500 mcg 1000 mcg
+VANADIUM ? 500 mcg 2 - 5 mg
+VITAMIN A 5,000 IU 20,000 IU - 300,000 IU”
+
+### WAL-CLM-LETS-000070 · dose
+- **essentials:** vanadium · **conditions:** — · **symptoms:** —
+- **dose:** {'amount': 500, 'unit': 'mcg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
+- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vanadium a True Supplement Need (daily maintenance target) of 500 mcg and a 30-day pharmacologic daily dose of 2 to 5 mg.
+- **verbatim** (offset 135162): “VANADIUM ? 500 mcg 2 - 5 mg
+VITAMIN A 5,000 IU 20,000 IU - 300,000 IU”
+
+### WAL-CLM-LETS-000071 · dose
+- **essentials:** vitamin-a · **conditions:** — · **symptoms:** —
+- **dose:** {'amount': 20000, 'unit': 'IU', 'period': 'daily', 'form': 'beta carotene', 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
+- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vitamin A a True Supplement Need (daily maintenance target) of 20,000 IU and a 30-day pharmacologic daily dose of 20,000 to 300,000 IU, taken as beta-carotene.
+- **verbatim** (offset 135190): “VITAMIN A 5,000 IU 20,000 IU - 300,000 IU
+(beta carotene)
+VITAMIN B-12 3 mcg 200 mcg 1,000 mcg”
+
+### WAL-CLM-LETS-000072 · dose
+- **essentials:** vitamin-b12 · **conditions:** — · **symptoms:** —
+- **dose:** {'amount': 200, 'unit': 'mcg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
+- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vitamin B-12 a True Supplement Need (daily maintenance target) of 200 mcg and a 30-day pharmacologic daily dose of 1,000 mcg.
+- **verbatim** (offset 135248): “VITAMIN B-12 3 mcg 200 mcg 1,000 mcg
+VITAMIN C 60 mg 1,000 mg 10,000 mg”
+
+### WAL-CLM-LETS-000073 · dose
+- **essentials:** vitamin-c · **conditions:** — · **symptoms:** —
+- **dose:** {'amount': 1000, 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
+- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vitamin C a True Supplement Need (daily maintenance target) of 1,000 mg and a 30-day pharmacologic daily dose of 10,000 mg.
+- **verbatim** (offset 135285): “VITAMIN C 60 mg 1,000 mg 10,000 mg
+VITAMIN D 400 IU 275 IU 1,000 IU”
+
+### WAL-CLM-LETS-000074 · dose
+- **essentials:** vitamin-d · **conditions:** — · **symptoms:** —
+- **dose:** {'amount': 275, 'unit': 'IU', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
+- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vitamin D a True Supplement Need (daily maintenance target) of 275 IU and a 30-day pharmacologic daily dose of 1,000 IU.
+- **verbatim** (offset 135320): “VITAMIN D 400 IU 275 IU 1,000 IU
+VITAMIN E 15 IU 400 IU 1,200 IU”
+
+### WAL-CLM-LETS-000075 · dose
+- **essentials:** vitamin-e · **conditions:** — · **symptoms:** —
+- **dose:** {'amount': 400, 'unit': 'IU', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
+- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vitamin E a True Supplement Need (daily maintenance target) of 400 IU and a 30-day pharmacologic daily dose of 1,200 IU.
+- **verbatim** (offset 135353): “VITAMIN E 15 IU 400 IU 1,200 IU
+VITAMIN K 70 mcg 140 mcg 140 mcg”
+
+### WAL-CLM-LETS-000076 · dose
+- **essentials:** vitamin-k · **conditions:** — · **symptoms:** —
+- **dose:** {'amount': 140, 'unit': 'mcg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
+- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vitamin K a True Supplement Need (daily maintenance target) of 140 mcg and a 30-day pharmacologic daily dose of 140 mcg.
+- **verbatim** (offset 135385): “VITAMIN K 70 mcg 140 mcg 140 mcg
+ZINC 15 mg 25 mg 150 mg
+* The most efficient way to get mineral supplements is in the plant derived colloidal liquid form.”
+
+### WAL-CLM-LETS-000077 · dose
+- **essentials:** zinc · **conditions:** — · **symptoms:** —
+- **dose:** {'amount': 25, 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
+- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives zinc a True Supplement Need (daily maintenance target) of 25 mg and a 30-day pharmacologic daily dose of 150 mg. He notes the most efficient way to take minerals is the plant-derived colloidal liquid form.
+- **verbatim** (offset 135418): “ZINC 15 mg 25 mg 150 mg
+* The most efficient way to get mineral supplements is in the plant derived colloidal liquid form.”
 

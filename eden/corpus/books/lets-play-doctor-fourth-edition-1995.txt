@@ -3666,20 +3666,20 @@ prevent this!!!
 FIG. 8-1 : Base Line Nutritional Supplement Program For Adults*
 Nutrient RDA True Supplement 30-Day Pharma-
 Need cologic Daily Dose
-BIOTIN 200 meg 200 meg 500 to 3,000 meg
-CALCIUM 800 meg 2,000 mg 2,000 to 5,000 mg
+BIOTIN 200 mcg 200 mcg 500 to 3,000 mcg
+CALCIUM 800 mg 2,000 mg 2,000 to 5,000 mg
 CHLORIDE 1,700 mg 2,500 mg 500 to 2,500 mg
 CHOLINE 150 mg 600 mg 500 to 1,000 mg
-CHROMIUM 50 meg 200 meg 300 to 600 meg
+CHROMIUM 50 mcg 200 mcg 300 to 600 mcg
 COPPER 2 mg 3 to 4 mg 4 to 6 mg
 FLUORIDE 1.5 mg 1.5 mg 20 mg **
-FOLIC ACID 400 meg 1,000 meg 15 to 20 gm
+FOLIC ACID 400 mcg 1,000 mcg 15 to 20 mg
 INOSITOL 75 mg 90 mg 500 to 2,000 mg
-IODINE 150 meg 250 meg 1,000 meg
+IODINE 150 mcg 250 mcg 1,000 mcg
 IRON 18 mg 45 mg 50 to 100 mg
 MAGNESIUM 350 mg 1,000 mg 1,000 mg
 MANGANESE 2.5 mg 5 mg 2 to 50 mg
-MOLYBDENUM 15 meg 500 meg 1,000 meg
+MOLYBDENUM 15 mcg 500 mcg 1,000 mcg
 NIACIN 18 mg 50 mg 2,000 to 6,000 mg
 (time release)
 PANTOTHENIC ACID ...4 mg 50 mg 300 to 1,000 mg
@@ -3688,19 +3688,19 @@ PHOSPHORUS 800 mg 0.0 0.0
 POTASSIUM 1,875 mg 5,500 mg 5,500 mg
 PYRIDOXINE 2.2 mg 50 mg 200 to 500 mg
 RIBOFLAVIN 1.6 mg 50 mg 200 to 500 mg
-SELENIUM ? 200 meg 500 to 3,000 meg
+SELENIUM ? 200 mcg 500 to 3,000 mcg
 SODIUM 1,100 mg 3,300 mg 300 to 3,000 mg
 SULPHUR ? 500 mg 1,000 mg
 THIAMINE 1.4 mg 50 mg 200 to 500 mg
-TIN ? 500 meg 1000 meg
-VANADIUM ? 500 meg 2 - 5 mg
+TIN ? 500 mcg 1000 mcg
+VANADIUM ? 500 mcg 2 - 5 mg
 VITAMIN A 5,000 IU 20,000 IU - 300,000 IU
 (beta carotene)
-VITAMIN B-12 3 meg 200 meg 1,000 meg
+VITAMIN B-12 3 mcg 200 mcg 1,000 mcg
 VITAMIN C 60 mg 1,000 mg 10,000 mg
 VITAMIN D 400 IU 275 IU 1,000 IU
 VITAMIN E 15 IU 400 IU 1,200 IU
-VITAMIN K 70 meg 140 meg 140 meg
+VITAMIN K 70 mcg 140 mcg 140 mcg
 ZINC 15 mg 25 mg 150 mg
 * The most efficient way to get mineral supplements is in the plant derived colloidal liquid form.
 ** Use this level only with a prescription for osteoporosis.
