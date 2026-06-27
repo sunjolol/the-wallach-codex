@@ -830,10 +830,14 @@
   },
   "cardiovascular_disease": {
     "display_name": "Cardiovascular Disease",
-    "claim_count": 2,
+    "claim_count": 4,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000256"
+      ],
       "deficiency_signs": [
-        "WAL-CLM-RARE-000245"
+        "WAL-CLM-RARE-000245",
+        "WAL-CLM-RARE-000257"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000076"
@@ -842,7 +846,8 @@
     "essentials_involved": [
       "calcium",
       "magnesium",
-      "silica"
+      "silica",
+      "vanadium"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1374,7 +1379,7 @@
   },
   "diabetes": {
     "display_name": "Diabetes",
-    "claim_count": 14,
+    "claim_count": 16,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-DDDL-000008"
@@ -1382,13 +1387,15 @@
       "causes": [
         "WAL-CLM-DDDL-000010",
         "WAL-CLM-DDDL-000034",
-        "WAL-CLM-RARE-000118"
+        "WAL-CLM-RARE-000118",
+        "WAL-CLM-RARE-000254"
       ],
       "contraindications": [
         "WAL-CLM-DDDL-000022"
       ],
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000017"
+        "WAL-CLM-DDDL-000017",
+        "WAL-CLM-RARE-000257"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
@@ -1750,8 +1757,14 @@
   },
   "high_cholesterol": {
     "display_name": "High Cholesterol",
-    "claim_count": 2,
+    "claim_count": 4,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000256"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000257"
+      ],
       "definitions": [
         "WAL-CLM-RARE-000122"
       ],
@@ -1761,7 +1774,24 @@
     },
     "essentials_involved": [
       "copper",
-      "silica"
+      "silica",
+      "vanadium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "high_triglycerides": {
+    "display_name": "High Triglycerides",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000257"
+      ]
+    },
+    "essentials_involved": [
+      "vanadium"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1811,14 +1841,18 @@
   },
   "hyperinsulinemia": {
     "display_name": "Hyperinsulinemia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000257"
+      ],
       "definitions": [
         "WAL-CLM-RARE-000116"
       ]
     },
     "essentials_involved": [
-      "chromium"
+      "chromium",
+      "vanadium"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1894,10 +1928,14 @@
   },
   "hypoglycemia": {
     "display_name": "Hypoglycemia",
-    "claim_count": 4,
+    "claim_count": 6,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-RARE-000254"
+      ],
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000017"
+        "WAL-CLM-DDDL-000017",
+        "WAL-CLM-RARE-000257"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116",
@@ -1992,7 +2030,7 @@
   },
   "infertility": {
     "display_name": "Infertility",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
@@ -2000,7 +2038,8 @@
         "WAL-CLM-RARE-000176",
         "WAL-CLM-RARE-000185",
         "WAL-CLM-RARE-000229",
-        "WAL-CLM-RARE-000231"
+        "WAL-CLM-RARE-000231",
+        "WAL-CLM-RARE-000257"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
@@ -2020,6 +2059,7 @@
       "manganese",
       "nitrogen",
       "selenium",
+      "vanadium",
       "vitamin-a",
       "vitamin-e",
       "zinc"
@@ -2533,6 +2573,22 @@
     },
     "essentials_involved": [
       "vitamin-a"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "rare-earths"
+    ]
+  },
+  "obesity": {
+    "display_name": "Obesity",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000257"
+      ]
+    },
+    "essentials_involved": [
+      "vanadium"
     ],
     "other_substances_involved": [],
     "books_cited": [

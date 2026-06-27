@@ -1267,12 +1267,13 @@
     "display_name": "Vanadium",
     "canon_slug": "vanadium",
     "category": "mineral",
-    "claim_count": 16,
+    "claim_count": 21,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
         "WAL-CLM-RARE-000039",
-        "WAL-CLM-RARE-000042"
+        "WAL-CLM-RARE-000042",
+        "WAL-CLM-RARE-000257"
       ],
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000081",
@@ -1283,7 +1284,11 @@
         "WAL-CLM-DDDL-000036",
         "WAL-CLM-RARE-000043",
         "WAL-CLM-RARE-000127",
-        "WAL-CLM-RARE-000128"
+        "WAL-CLM-RARE-000128",
+        "WAL-CLM-RARE-000253",
+        "WAL-CLM-RARE-000254",
+        "WAL-CLM-RARE-000255",
+        "WAL-CLM-RARE-000256"
       ],
       "personal_anecdote": [
         "WAL-CLM-DDDL-000008"
@@ -1318,12 +1323,18 @@
       "arthritis",
       "blind_rage",
       "cancer",
+      "cardiovascular_disease",
       "coronary_artery_disease",
       "diabetes",
       "explosive_outbursts",
+      "high_cholesterol",
+      "high_triglycerides",
+      "hyperinsulinemia",
       "hyperirritability",
       "hypoglycemia",
+      "infertility",
       "insomnia",
+      "obesity",
       "panic_attacks",
       "schizophrenia",
       "violent_behavior"

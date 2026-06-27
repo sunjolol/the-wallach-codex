@@ -9086,6 +9086,195 @@
       "extracted_at": "2026-06-27T01:10:19+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000253",
+      "kind": "mechanism",
+      "essentials": [
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports that vanadium was proven an essential trace mineral in 1971, and that its absorption depends heavily on form — metallic vanadium (vanadyl sulfate) is taken up from the intestinal tract very poorly (only 0.1 to 1.0 percent), vanadium chelates at 40 percent, and plant-derived colloidal vanadium at up to 98 percent.",
+      "verbatim": "Metallic vanadium (vanadyl sulfate) is absorbed from the intestinal tract very poorly at only 0.1 to 1.0 %; vanadium chelates at 40 % and plant derived colloidals at up to 98 %.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 412,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 963065
+      },
+      "dose": null,
+      "tags": [
+        "vanadium",
+        "essentiality",
+        "bioavailability",
+        "colloidal",
+        "vanadyl-sulfate"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T03:06:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000254",
+      "kind": "mechanism",
+      "essentials": [
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "diabetes",
+        "hypoglycemia"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach reports that vanadium stimulates glucose (blood sugar) oxidation and transport in fat cells and glycogen (animal starch) synthesis in the liver and muscle, while inhibiting liver gluconeogenesis (the production of glucose from fat) and the absorption of glucose from the gut.",
+      "verbatim": "Vanadium stimulates glucose (blood sugar) oxidation and transport in fat cells and glycogen (animal starch) synthesis in liver and muscle, and inhibits liver gluconeogenisis (production of glucose from fat) and absorption of glucose from the gut.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 412,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 963306
+      },
+      "dose": null,
+      "tags": [
+        "vanadium",
+        "glucose-metabolism",
+        "glycogen",
+        "gluconeogenesis",
+        "insulin"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T03:06:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000255",
+      "kind": "mechanism",
+      "essentials": [
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports that vanadium initiates an increase in the contractile force of heart muscle, known as the 'inotropic effect.'",
+      "verbatim": "Vanadium initiates an increase in the contractile force of heart muscle known as the “inotropic effect.”",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 412,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 964631
+      },
+      "dose": null,
+      "tags": [
+        "vanadium",
+        "heart",
+        "inotropic",
+        "cardiac-contractility"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T03:06:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000256",
+      "kind": "mechanism",
+      "essentials": [
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "high_cholesterol",
+        "cardiovascular_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach reports that vanadium inhibits cholesterol synthesis in animals and humans, which is followed by decreased plasma cholesterol levels and reduced aortic cholesterol.",
+      "verbatim": "Vanadium inhibits cholesterol synthesis in animals and humans; this is followed by decreased plasma levels of cholesterol and reduced aortic cholesterol.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 412,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 964476
+      },
+      "dose": null,
+      "tags": [
+        "vanadium",
+        "cholesterol",
+        "plasma-cholesterol",
+        "aortic",
+        "lipids"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T03:06:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000257",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "infertility",
+        "high_cholesterol",
+        "high_triglycerides",
+        "hypoglycemia",
+        "hyperinsulinemia",
+        "diabetes",
+        "cardiovascular_disease",
+        "obesity"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach lists the clinical diseases associated with vanadium deficiency: slow growth, increased infant mortality, infertility, elevated cholesterol, elevated triglycerides, hypoglycemia, hyperinsulinemia, diabetes, cardiovascular disease, and obesity.",
+      "verbatim": "Clinical diseases associated with Vanadium deficiency include:\nSlow growth\nIncreased infant mortality\nInfertility\nElevated cholesterol\nElevated triglycerides\nHypoglycemia\nHyperinsulinemia\nDiabetes\nCardiovascular disease\nObesity",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 11",
+        "page": 412,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 965110
+      },
+      "dose": null,
+      "tags": [
+        "vanadium",
+        "deficiency",
+        "diabetes",
+        "obesity",
+        "cardiovascular"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-27T03:06:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

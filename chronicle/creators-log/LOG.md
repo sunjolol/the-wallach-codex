@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_100 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_101 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-26 23:11 UTC-04:00 · round-close · eden/corpus
+Phase γ.3 batch 52 — V/Vanadium (p412). 5 claims RARE-253..257, NEW angles only: bioavailability+1971 essentiality, glucose/glycogen metabolism, inotropic effect, cholesterol-synthesis inhibition, deficiency disease-list. kv 92->93, corpus 351, board 30/30, probe green.
+  ↳ Extracted only NEW vanadium angles, skipping DDDL-034/035/036/047 dups (insulin-mimetic, diabetes-elimination+economics+ethnic-foods, anticarcinogenic, Vancouver quote). Word-level fidelity (high-DPI p412): book prints 'essential trace MINERAL' not element (kept), book's own misspelling 'gluconeogenisis' kept faithful in verbatim / summary uses correct spelling, 'colloidals at up to 98%' confirmed (at was margin-clipped). Deficiency list stored Table-style (intro+items single-newline). +obesity +high_triglycerides slugs (conditions 168). Reflow 5 paragraphs, resnap 0 broken, Luneth approved all 5. NEXT = W/Xe/Y/Yb then Zn/Zinc (big canon finale) then Zr.
 
 ## 2026-06-26 22:57 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 51 — Rare Earths tail Ta->U (p411). 2 claims RARE-251..252: Thulium lifespan-doubler (5th) + Thallium toxicity stance. 7 stated geology/radioactive skips incl Ti/Titanium (canon, no claim anywhere). kv 91->92, corpus 346, board 30/30, probe green.

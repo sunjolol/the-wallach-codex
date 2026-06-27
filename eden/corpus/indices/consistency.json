@@ -775,6 +775,26 @@
   {
     "id": "CG-0029",
     "essentials": [
+      "vanadium"
+    ],
+    "conditions": [],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-RARE-000253",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000255",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0030",
+    "essentials": [
       "zinc"
     ],
     "conditions": [],
