@@ -2485,6 +2485,72 @@
       "lets-play-doctor"
     ]
   },
+  "chicken_pox": {
+    "display_name": "Chicken Pox",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000215"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "caladryl"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "chiggers": {
+    "display_name": "Chiggers",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000216"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "flea-collar",
+      "nail-polish",
+      "poultry-dusting-powder"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "chilblains": {
+    "display_name": "Chilblains",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000218"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "chills": {
+    "display_name": "Chills",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000217"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "willow"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "chondrodystrophy": {
     "display_name": "Chondrodystrophy",
     "claim_count": 1,
@@ -3267,6 +3333,31 @@
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "elevated_cholesterol": {
+    "display_name": "Elevated Cholesterol",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000219"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "chromium",
+      "magnesium",
+      "omega-3",
+      "selenium",
+      "vitamin-b3",
+      "vitamin-c"
+    ],
+    "other_substances_involved": [
+      "evening-primrose",
+      "oat-bran"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "emphysema": {
@@ -5525,6 +5616,24 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "shingles": {
+    "display_name": "Shingles",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000215"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "caladryl"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "shwachman_syndrome": {

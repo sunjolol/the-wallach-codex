@@ -8668,6 +8668,188 @@
       "extracted_at": "2026-06-28T18:56:23+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000215",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-e"
+      ],
+      "other_substances": [
+        "caladryl"
+      ],
+      "conditions": [
+        "chicken_pox",
+        "shingles"
+      ],
+      "symptoms": [],
+      "claim_text": "Chicken pox (varicella) is an acute viral disease in children and a chronic, painful one in adults as shingles (herpes zoster), marked by clear vesicles surrounded by a small red zone on the upper torso. Wallach's treatment in children is mainly symptomatic: Caladryl lotion applied topically, oatmeal baths, and vitamin E oil applied directly to each vesicle or papule. The illness runs 7-20 days regardless of therapy.",
+      "verbatim": "Treatment of chicken pox in children is prima-\nrily symptomatic and includes Caladryl lotion\ntopically, oatmeal baths and vitamin E oil\napplied directly to each vesicle or papule.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 230121
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:03:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000216",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "flea-collar",
+        "poultry-dusting-powder",
+        "nail-polish"
+      ],
+      "conditions": [
+        "chiggers"
+      ],
+      "symptoms": [],
+      "claim_text": "Chiggers (mites) are tiny arthropods that burrow into the skin and cause severe itching. They can be repelled while walking in woods or meadows by placing pet flea collars around the ankles, waist, and wrists, or by dusting poultry powder into socks and at the belt line. Once they have established themselves, Wallach's treatment is covering each burrow opening with clear nail polish, which literally smothers them.",
+      "verbatim": "Treatment of chiggers once they establish\nthemselves is limited to covering each burrow\nopening with clear nail polish which literally\nsmothers them.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 230714
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:03:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000217",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "willow"
+      ],
+      "conditions": [
+        "chills"
+      ],
+      "symptoms": [],
+      "claim_text": "Chills accompany the flu and other viral infections — the patient sweats, shakes, and trembles, unable to feel warm even when bundled up. Wallach's treatment is wearing warmups with a hooded sweatshirt to cover the neck and head, homeopathy, acupuncture, and herbs including willow (Salix alba).",
+      "verbatim": "Treatment for chills includes wearing warmups\nwith a hooded sweatshirt to cover the neck\nand head, homeopathy, acupuncture and\nherbs to include willow (Salix alba).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 231047
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:03:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000218",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "chilblains"
+      ],
+      "symptoms": [],
+      "claim_text": "Chilblains (hypothermia) is the lowering of body or limb temperature to subnormal levels long enough to approach frostbite, with severe numbness and possible loss of function; prevention is dressing properly for the weather. Wallach's treatment is rapid warming in warm water and/or warm enemas, and electric blankets if available (placed underneath as well as on top).",
+      "verbatim": "Treatment includes rapid warming in warm\nwater and/or warm enemas, electric blankets\nif available (underneath as well as on top).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 231523
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:03:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000219",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "omega-3",
+        "vitamin-b3",
+        "calcium",
+        "magnesium",
+        "chromium",
+        "selenium"
+      ],
+      "other_substances": [
+        "oat-bran",
+        "evening-primrose"
+      ],
+      "conditions": [
+        "elevated_cholesterol"
+      ],
+      "symptoms": [],
+      "claim_text": "Elevated cholesterol (above 200 mg per 100 ml of blood) is a risk marker for cardiovascular disease, diabetes, and liver disease, with causes including low-fiber diets, excess vitamin D, essential-fatty-acid deficiency, refined sugar and flour, and poor exercise (Wallach cautions that LOW cholesterol can be as dangerous as high). Treatment is regular exercise, the base-line supplement program, one to two heaping tablespoons of oat bran or protein fiber in juice or vitamin C to bowel tolerance, essential fatty acids at 5 grams three times daily, niacin (vitamin B-3) at 450 mg twice daily as time-release tablets, calcium and magnesium at 2,000 mg and 1,000 mg per day, chromium at 75 micrograms three times daily, selenium at 100 micrograms three times daily, evening primrose (Oenothera biennis), and a liver flush.",
+      "verbatim": "Treatment for elevated cholesterol includes\nregular exercise, base line supplement pro-\ngram, one to two heaping tablespoons of oat\nbran or protein fiber in an eight oz. glass of\njuice or vitamin C to bowel tolerance, essential\nfatty acids at 5 gm t.i.d., niacin at 450 mg b.i.d.\nas time release tablets, calcium and magne-\nsium at 2,000 mg and 1,000 mg per\nday,chromium at 75 mcgt.i.d., selenium at 100\nmcg t.i.d.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 232217
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:03:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

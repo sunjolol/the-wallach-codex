@@ -349,14 +349,17 @@
   },
   "caladryl": {
     "display_name": "Caladryl",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000156"
+        "WAL-CLM-LETS-000156",
+        "WAL-CLM-LETS-000215"
       ]
     },
     "conditions_treated": [
-      "bee_stings"
+      "bee_stings",
+      "chicken_pox",
+      "shingles"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -851,6 +854,21 @@
       "lets-play-doctor"
     ]
   },
+  "evening-primrose": {
+    "display_name": "Evening Primrose",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000219"
+      ]
+    },
+    "conditions_treated": [
+      "elevated_cholesterol"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "evening-primrose-oil": {
     "display_name": "Evening Primrose Oil",
     "claim_count": 2,
@@ -879,6 +897,21 @@
     },
     "conditions_treated": [
       "acne"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "flea-collar": {
+    "display_name": "Flea Collar",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000216"
+      ]
+    },
+    "conditions_treated": [
+      "chiggers"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1538,6 +1571,21 @@
       "lets-play-doctor"
     ]
   },
+  "nail-polish": {
+    "display_name": "Nail Polish",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000216"
+      ]
+    },
+    "conditions_treated": [
+      "chiggers"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "nitroglycerine": {
     "display_name": "Nitroglycerine",
     "claim_count": 1,
@@ -1548,6 +1596,21 @@
     },
     "conditions_treated": [
       "angina"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "oat-bran": {
+    "display_name": "Oat Bran",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000219"
+      ]
+    },
+    "conditions_treated": [
+      "elevated_cholesterol"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1722,6 +1785,21 @@
     "conditions_treated": [
       "arthritis",
       "rheumatoid_arthritis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "poultry-dusting-powder": {
+    "display_name": "Poultry Dusting Powder",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000216"
+      ]
+    },
+    "conditions_treated": [
+      "chiggers"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2205,6 +2283,21 @@
     },
     "conditions_treated": [
       "catarrh"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "willow": {
+    "display_name": "Willow",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000217"
+      ]
+    },
+    "conditions_treated": [
+      "chills"
     ],
     "books_cited": [
       "lets-play-doctor"
