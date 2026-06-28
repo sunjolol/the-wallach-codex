@@ -559,7 +559,7 @@
   },
   "anemia": {
     "display_name": "Anemia",
-    "claim_count": 18,
+    "claim_count": 19,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
@@ -586,6 +586,9 @@
       ],
       "prognosis": [
         "WAL-CLM-RARE-000213"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000137"
       ]
     },
     "essentials_involved": [
@@ -594,10 +597,12 @@
       "copper",
       "iron",
       "nickel",
+      "omega-3",
       "selenium",
       "vanadium",
       "vitamin-b12",
       "vitamin-b2",
+      "vitamin-b5",
       "vitamin-b6",
       "vitamin-b9",
       "vitamin-c",
@@ -605,7 +610,11 @@
       "zinc"
     ],
     "other_substances_involved": [
-      "lead"
+      "betaine-hcl",
+      "lead",
+      "liver-extract",
+      "marsh-marigold",
+      "sweet-cicely"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -615,7 +624,7 @@
   },
   "aneurysm": {
     "display_name": "Aneurysm",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000004",
@@ -633,6 +642,9 @@
       ],
       "prognosis": [
         "WAL-CLM-RARE-000077"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000138"
       ]
     },
     "essentials_involved": [
@@ -656,19 +668,28 @@
   },
   "angina": {
     "display_name": "Angina",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-DDDL-000076"
+        "WAL-CLM-DDDL-000076",
+        "WAL-CLM-LETS-000139"
       ]
     },
     "essentials_involved": [
       "calcium",
-      "magnesium"
+      "magnesium",
+      "omega-3",
+      "vitamin-d"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "edta-chelation",
+      "hawthorn",
+      "hydrogen-peroxide",
+      "nitroglycerine"
+    ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "lets-play-doctor"
     ]
   },
   "angular_stomatitis": {
@@ -692,7 +713,7 @@
   },
   "anorexia": {
     "display_name": "Anorexia",
-    "claim_count": 19,
+    "claim_count": 20,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000268"
@@ -712,6 +733,9 @@
         "WAL-CLM-RARE-000172",
         "WAL-CLM-RARE-000235",
         "WAL-CLM-RARE-000264"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000140"
       ],
       "toxicity_signs": [
         "WAL-CLM-LETS-000005",
@@ -737,21 +761,52 @@
       "vitamin-b9",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "buckbean",
+      "calamus",
+      "centaury",
+      "gentian",
+      "pancreatic-enzymes"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",
       "rare-earths"
     ]
   },
+  "anorexia_nervosa": {
+    "display_name": "Anorexia Nervosa",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000140"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "buckbean",
+      "calamus",
+      "centaury",
+      "gentian",
+      "pancreatic-enzymes"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "anosmia": {
     "display_name": "Anosmia",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000077",
         "WAL-CLM-LETS-000036",
         "WAL-CLM-RARE-000263"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000141"
       ]
     },
     "essentials_involved": [
@@ -767,7 +822,7 @@
   },
   "anxiety": {
     "display_name": "Anxiety",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000006",
@@ -776,6 +831,7 @@
       ],
       "protocols": [
         "WAL-CLM-DDDL-000078",
+        "WAL-CLM-LETS-000142",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277"
       ]
@@ -786,11 +842,18 @@
       "lithium",
       "magnesium",
       "phosphorus",
+      "tryptophan",
       "vanadium",
+      "vitamin-b1",
+      "vitamin-b2",
       "vitamin-b3",
+      "vitamin-b5",
       "vitamin-b6"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "valerian"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",
@@ -799,10 +862,11 @@
   },
   "aphthous_stomatitis": {
     "display_name": "Aphthous Stomatitis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-DDDL-000080"
+        "WAL-CLM-DDDL-000080",
+        "WAL-CLM-LETS-000143"
       ]
     },
     "essentials_involved": [
@@ -813,23 +877,28 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "lets-play-doctor"
     ]
   },
   "arsenic_toxicity": {
     "display_name": "Arsenic Toxicity",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-DDDL-000081"
+        "WAL-CLM-DDDL-000081",
+        "WAL-CLM-LETS-000144"
       ]
     },
     "essentials_involved": [
       "selenium"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "edta-chelation"
+    ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "lets-play-doctor"
     ]
   },
   "arteriosclerosis": {

@@ -840,6 +840,28 @@
   {
     "id": "CG-0031",
     "essentials": [
+      "selenium"
+    ],
+    "conditions": [
+      "arsenic_toxicity"
+    ],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000081",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000144",
+        "book": "lets-play-doctor"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0032",
+    "essentials": [
       "silver"
     ],
     "conditions": [],
@@ -858,7 +880,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0032",
+    "id": "CG-0033",
     "essentials": [
       "silver"
     ],
@@ -878,7 +900,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0033",
+    "id": "CG-0034",
     "essentials": [
       "sodium"
     ],
@@ -900,7 +922,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0034",
+    "id": "CG-0035",
     "essentials": [
       "sulfur"
     ],
@@ -924,7 +946,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0035",
+    "id": "CG-0036",
     "essentials": [
       "vanadium"
     ],
@@ -944,7 +966,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0036",
+    "id": "CG-0037",
     "essentials": [
       "vitamin-k"
     ],
@@ -966,7 +988,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0037",
+    "id": "CG-0038",
     "essentials": [
       "yttrium"
     ],
@@ -986,7 +1008,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0038",
+    "id": "CG-0039",
     "essentials": [
       "zinc"
     ],

@@ -1,97 +1,83 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_10 claim(s) drafted 2026-06-28T16:26:23+00:00. Review then run corpus_seal.py to promote._
+_8 claim(s) drafted 2026-06-28T16:33:57+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: diagnostic_pattern×1, protocol×9
+Kinds: protocol×8
 
-### WAL-CLM-LETS-000127 · protocol
-- **essentials:** calcium, magnesium, vitamin-b6, chromium, omega-3, flavonoids, phenylalanine · **conditions:** alcoholism · **symptoms:** —
-- **claim:** For alcoholism (which Wallach views as an addictive food allergy complicated by hypoglycemia and vitamin/mineral malnutrition), he prescribes rotation elimination diets and hypoglycemia diets plus baseline supplements: calcium 2000 mg and magnesium 1000 mg per day; essential fatty acids 5 mg three times daily; vitamin B-6 100 mg twice daily; chromium 250 mcg per day (essential to solve the hypoglycemia); bioflavonoids (catechin) 1 gram per day; and amino acids such as DL-phenylalanine.
-- **verbatim** (offset 165394): “Calcium (2000 mg) and
-magnesium (1000 mg) per day; essential fatty
-acids 5 mg t.i.d. and B-6 100 mg b.i.d.; chro-
-mium 250 mcg/day is essential to solve the
-hypoglycemia problem; bioflavonoids (cat-
-echin) 1 gram/day and amino acids (i.e., DL-
-phenylananine).”
+### WAL-CLM-LETS-000137 · protocol
+- **essentials:** iron, vitamin-b12, vitamin-b9, copper, zinc, vitamin-b2, vitamin-b5, vitamin-b6, vitamin-c, vitamin-e, selenium, omega-3 · **conditions:** anemia · **symptoms:** —
+- **claim:** For anemia (a lack of blood from hemorrhage, infection, and/or nutritional deficiencies), Wallach's program is betaine hydrochloride 75-200 mg three times daily 15-20 minutes before meals (to assure B-12 absorption); liver extract orally or by intramuscular injection; iron 20 mg; vitamin B-12 1000 mcg per day for 20 days; folic acid 15 mg for 20 days; copper 2 mg; zinc 50 mg three times daily; vitamin B-2 50 mg twice daily; vitamin B-5 50 mg three times daily; vitamin B-6 50 mg twice daily for 20 days; vitamin C to bowel tolerance; vitamin E 800-1200 IU per day; selenium 500 mcg per day; and essential fatty acids 5 grams three times daily; with herbs sweet cicely (Myrrhis odorata) and marsh marigold (Caltha palustris).
+- **verbatim** (offset 171794): “Betaine
+HC1 orally at 75-200 mg t.i.d. 15-20 minutes
+before meals is required to assure absorption
+of B-12; liver extract orally or IM; nutritional
+support with iron 20 mg; B-12 1000 mcg per
+day for 20 days; folic acid 15 mg for 20 days;”
 
-### WAL-CLM-LETS-000128 · protocol
-- **essentials:** vitamin-c, vitamin-a, zinc, omega-3, flavonoids · **conditions:** allergies · **symptoms:** urticaria, headache, tachycardia, palpitations
-- **claim:** For allergies (caused by foods, inhalants such as pollens and molds, or chemicals, and diagnosed by the pulse test, diet diary/challenge, and cytotoxic test), Wallach's approach is avoidance first, then autoimmune urine therapy (filtered urine given subcutaneously) plus: vitamin C to bowel tolerance; bioflavonoids (rutin, catechin, quercetin); vitamin A 300,000 IU per day as beta carotene; zinc 50 mg three times daily; essential fatty acids 1 tablespoon twice daily; and rotation diets.
-- **verbatim** (offset 166441): “bioflavonoids (rutin, catechin, quercetin);
-300,000 IU of vitamin A as beta carotene per
-day; zinc 50 mg t.i.d., essential fatty acids 1
-tbsp. b.i.d., rotation diets.”
+### WAL-CLM-LETS-000138 · protocol
+- **essentials:** copper · **conditions:** aneurysm · **symptoms:** —
+- **claim:** Wallach states that aneurysms (a bubble or balloon in an artery wall that can press on organs or burst, causing sudden death by hemorrhage) are most frequently caused by copper deficiency, which weakens the elastic fibers. Copper supplementation cannot cure or repair an existing aneurysm but can prevent them at 2-4 mg per day (ensuring absorption); surgery is required for existing aneurysms.
+- **verbatim** (offset 172681): “copper supplementation
+cannot "cure" or repair an aneurysm but can
+prevent them at the rate of 2-4 mg/day (be sure
+you are absorbing).”
 
-### WAL-CLM-LETS-000129 · diagnostic_pattern
-- **essentials:** — · **conditions:** allergies · **symptoms:** allergic_shiners
-- **claim:** Allergic shiners -- the purplish-black discolorations under the lower eyelids -- are a reliable diagnostic sign of allergies; they appear within minutes of ingesting or inhaling an allergen and can take 12 hours to three days to fade after avoidance. Wallach notes their diagnostic value (for example in a hyperactive child, heart disease, or cancer); avoidance of the allergen is the only 'cure.'
-- **verbatim** (offset 166932): “are a good diagnostic tool (i.e. , allergic shiners
-in a hyperactive child, heart disease, cancer,
-etc.). Avoidance of the allergen or allergens is
-the only "cure" for allergic shiners.”
+### WAL-CLM-LETS-000139 · protocol
+- **essentials:** calcium, magnesium, omega-3, vitamin-d · **conditions:** angina · **symptoms:** —
+- **claim:** For angina (sharp chest pain from arterial disease reducing the heart's oxygen supply), Wallach favors chelation -- intravenous with hydrogen peroxide and calcium EDTA, or oral with vitamin/mineral supplements -- over coronary bypass surgery. Avoid sugar, caffeine, and cigarette smoke; walk 30 minutes daily; calcium 2000 mg per day and magnesium 800 mg per day; essential fatty acids; and reduce vitamin D intake from sun and supplements. Nitroglycerine sublingual capsules and time-release patches relieve symptoms; English hawthorn (Crataegus oxyacantha) is specific for angina by increasing coronary blood flow. Lifestyle changes and supplementation can reverse cardiovascular disease.
+- **verbatim** (offset 173944): “English hawthorn (Crataegus oxyacantha) is
+specific for angina by increasing the blood
+flow through coronary arteries. Lifestyle
+changes and supplementation can reverse
+cardiovascular disease!”
 
-### WAL-CLM-LETS-000130 · protocol
-- **essentials:** germanium, choline, vitamin-b1, vitamin-e · **conditions:** alzheimers · **symptoms:** —
-- **claim:** For Alzheimer's disease (progressive memory loss with later difficulties in arousal and motor function), Wallach advises avoiding aluminum (cookware, deodorants, soft drinks, and juices in aluminum cans) and a treatment of: germanium 5 ml intramuscularly every other day for 24 days, then oral germanium 150 mg twice daily; hydergine 6-12 mg per day; piracetam/choline 1.6 grams four times daily; vasopressin (Diapid) one whiff per nostril four times daily; centrophenoxine (Lucidril) 6.2-8.0 grams per day; lecithin (phosphatidyl choline) 2,500 mg three times daily; baseline supplements including colloidal minerals; betaine hydrochloride and pancreatic enzymes 75-200 mg three times daily; oral and intravenous hydrogen peroxide; vitamin B-1 200 mg three times daily; vitamin E 1200 IU daily; and intravenous chelation.
-- **verbatim** (offset 167370): “should include germanium IM 5 ml of stan-
-dard solution every other day for 24 days
-followed by oral germanium at 150 mg b.i.d.”
+### WAL-CLM-LETS-000140 · protocol
+- **essentials:** — · **conditions:** anorexia, anorexia_nervosa · **symptoms:** —
+- **claim:** For anorexia (appetite loss from stress, malnutrition, shock, or injury) -- and anorexia nervosa, which Wallach views not as a psychiatric disease but as a manifestation of a severe food allergy (found via elimination diets and pulse tests) -- treatment includes betaine hydrochloride and pancreatic enzymes 150-250 mg per day three times daily, plus baseline supplements. Herbs are excellent appetite stimulants taken before meals: buckbean or marsh trefoil (Menyanthes trifoliata), centaury (Centaurium umbellatum), sweet flag or calamus (Acorus calamus), and yellow gentian (Gentiana lutea). For anorexia nervosa, autoimmune urine therapy is indicated.
+- **verbatim** (offset 174569): “Treatment should include betaine HC1 and
+pancreatic enzymes at a rate of 150-250 mg/
+day t.i.d. (don't forget the baseline vitamin/
+mineral supplement). Herbs are excellent
+appetite stimulants: buckbean or marsh trefoil
+(Menyanthes trifoliata); centaury (Centaurium
+umbellatum); sweet flag or calamus (Acorus
+calamus); yellow gentian (Gentiana lutea)”
 
-### WAL-CLM-LETS-000131 · protocol
-- **essentials:** tin, omega-3, zinc · **conditions:** alopecia · **symptoms:** —
-- **claim:** For alopecia (hair loss -- male or female pattern baldness, or alopecia universalis), Wallach notes Minoxidil and Retin-A creams help some pattern baldness if used early and maintained, and that colloidal tin deficiency causes male pattern baldness in lab animals (Wallach himself regrew considerable hair using plant-derived liquid colloidal tin). Alopecia with eczema is often an essential fatty acid deficiency, responding to intravenous interlipids and/or oral flaxseed oil 1 tablespoon twice daily, zinc 50 mg three times daily, elimination of wheat and cow's milk, and betaine hydrochloride plus pancreatic enzymes 75-200 mg three times daily before meals.
-- **verbatim** (offset 168608): “Alopecia that occurs with
-eczema is often caused by essential fatty acid
-deficiency and will respond to IV interlipids
-and/ or oral flaxseed oil at the rate of 1 tbsp.
-b.i.d.; zinc at 50 mg t.i.d. Elimination of wheat
-and cow's milk from the diet will increase the
-rate of recovery. Betaine HC1 and pancreatic
-enzymes at 75-200 mg t.i.d. 15-20 minutes
-before meals are a must.”
+### WAL-CLM-LETS-000141 · protocol
+- **essentials:** zinc · **conditions:** anosmia · **symptoms:** —
+- **dose:** {'amount': 50, 'unit': 'mg', 'period': 'three times daily', 'form': None, 'duration': None, 'for_condition': 'anosmia'}
+- **claim:** Anosmia (loss of smell) can be temporary (from colds or rhinitis) but chronic loss results from a zinc deficiency (zinc will not help if the cause is injury, stroke, or tumor). Wallach finds zinc 50 mg three times daily very effective in returning the sense of smell.
+- **verbatim** (offset 175175): “Chronic loss of the
+sense of smell is the result of a zinc deficiency.
+In the case of injury, stroke or tumor, zinc will
+not be effective.
+Zinc supplement at the rate of 50 mg t.i.d. is
+very effective in returning the sense of smell.”
 
-### WAL-CLM-LETS-000132 · protocol
-- **essentials:** vitamin-b12 · **conditions:** amblyopia · **symptoms:** —
-- **dose:** {'amount': 1000, 'unit': 'mcg', 'period': 'daily', 'form': 'intramuscular injection', 'duration': '20,000 mcg total', 'for_condition': 'amblyopia'}
-- **claim:** Amblyopia (a type of blindness) can be caused by vitamin B-12 deficiency or tobacco smoking. Wallach's protocol is vitamin B-12 intramuscularly at 1000 mcg per day for a total of 20,000 mcg, which usually effects a 'cure,' along with avoiding tobacco smoke.
-- **verbatim** (offset 169022): “caused by B-12 deficiency or tobacco smok-
-ing. B-12 IM at a rate of 1000 mcg/day for a
-total of 20,000 mcg usually effects a”
+### WAL-CLM-LETS-000142 · protocol
+- **essentials:** chromium, vitamin-b6, vitamin-b3, vitamin-b1, vitamin-b2, vitamin-b5, tryptophan, calcium, magnesium · **conditions:** anxiety · **symptoms:** —
+- **claim:** For anxiety (panic attacks, affecting women about twice as often as men), Wallach traces the base cause to a food allergy or a severe reactive hypoglycemic 'crash and burn' glucose curve (use a pulse test and six-hour glucose tolerance test). Treatment: avoid caffeine and sugar in all forms; chromium 200-300 mcg per day; vitamin B-6 100 mg three times daily; vitamin B-3 450 mg three times daily as time-release tablets; vitamins B-1, B-2, and B-5 at 50 mg three times daily; L-tryptophan 10 grams three times daily; calcium 2000 mg per day and magnesium 800 mg per day; betaine hydrochloride 100-250 mg three times daily before meals; and herbs such as valerian (Valeriana officinalis).
+- **verbatim** (offset 175934): “Treatment should include avoidance of caf-
+feine and sugar in all forms (fruit, juices, etc.):
+chromium 200-300 mcg/ day; B-6 100 mg
+t.i.d.; B-3 450 mg t.i.d. as time-release tablets;
+B-l,B-2, and B-5 at the rate of 50 mg t.i.d.; L-
+tryptophan 10 grams t.i.d.; calcium 2000 mg/
+day and magnesium at 800 mg/day.”
 
-### WAL-CLM-LETS-000133 · protocol
-- **essentials:** — · **conditions:** amebiasis · **symptoms:** —
-- **claim:** For amebiasis (amoebic dysentery caused by Entamoeba histolytica, diagnosed by finding the parasite in 3-6 stool samples), Wallach's treatment is symptomatic to relieve diarrhea and limit protein and electrolyte loss, with metronidazole as the drug of choice: 750 mg orally three times daily for 10 days in adults, and 12-17 mg per day three times daily orally in children.
-- **verbatim** (offset 169695): “Metronidazole at the rate of 750
-mg orally t.i.d. for 10 days for adults and 12-17
-mg/day t.i.d. orally for children”
+### WAL-CLM-LETS-000143 · protocol
+- **essentials:** vitamin-b9, vitamin-b12, iron, zinc · **conditions:** aphthous_stomatitis · **symptoms:** —
+- **claim:** For aphthous stomatitis (canker sores), often a symptom of food sensitivities or allergies, Wallach recommends identifying offending foods via an elimination/rotation diet or pulse test (gluten-free diets are frequently effective), with folic acid 5 mg three times daily, vitamin B-12 1000 mcg per day, iron 15 mg per day, and zinc 50 mg three times daily as effective adjuncts to avoidance diets.
+- **verbatim** (offset 176571): “Folic acid at 5 mg t.i.d.; B-12 at 1000 mcg/day;
+iron at 15 mg/day; zinc at 50 mg t.i.d. are
+effective adjuncts to avoidance diets.”
 
-### WAL-CLM-LETS-000134 · protocol
-- **essentials:** zinc, omega-3 · **conditions:** amenorrhea · **symptoms:** —
-- **claim:** For amenorrhea (absence or stopping of menstrual periods -- often from low body fat in athletes, dieters, and anorexics, where a 10-15 pound weight gain can restart the cycle), Wallach recommends zinc 50 mg three times daily to bring on the period, essential fatty acids as flaxseed oil 1 tablespoon three times daily, and herbal stimulants: saffron (Crocus sativus) as a tea, black cohosh or squawroot (Cimicifuga racemosa) as a fluid extract, and marigold (Calendula officinalis).
-- **verbatim** (offset 170238): “increased levels of zinc at a rate of 50 mg
-t.i.d. will result in onset of the "period." Essen-
-tial fatty acids are very useful in the form of
-flaxseed oil at the rate of 1 tbsp. t.i.d. Herbal
-stimulus can be effected with saffron (Crocus
-sativus) as a tea, black cohosh or squawroot
-(Cimicifuga racemosa) as a fluid extract and
-marigold (Calendula officinalis).”
-
-### WAL-CLM-LETS-000135 · protocol
-- **essentials:** — · **conditions:** anaphylaxis · **symptoms:** —
-- **claim:** Anaphylaxis is an explosive allergic reaction (from hives to respiratory distress and vascular collapse) that can follow exposure to foods (e.g., shellfish), insect stings (e.g., bee stings), or drugs (e.g., penicillin), usually within 1-15 minutes. Avoidance is the best prevention; Wallach states that immediate injection of adrenaline (epinephrine) from a 'bee sting' kit is the treatment of choice and is often lifesaving.
-- **verbatim** (offset 170980): “Immediate injection with adrenaline (epineph-
-rine) from a "bee sting" kit is the treatment of
-choice and, in many cases, will be lifesaving.”
-
-### WAL-CLM-LETS-000136 · protocol
-- **essentials:** — · **conditions:** anal_abscess · **symptoms:** —
-- **claim:** Anal abscess and anal fissures are caused by constipation and passing large hard stools, often alongside hemorrhoids, producing painful red swellings near the anal opening. Wallach's approach: open them with a blade or by soaking in hot sitz baths of 3% boric acid; apply a poultice of echinacea (Echinacea angustifolia) directly to disinfect and bring the abscess to a point so it can be opened; then flush the opened abscess with 3% hydrogen peroxide to clean out the pus and disinfect the wound.
-- **verbatim** (offset 171344): “These
-may be opened with a blade or by soaking in
-hot sitz baths of 3% boric acid. A poultice of
-echinacea (Echinacea angustifolia) may be
-applied directly to the abscess to disinfect and
-help to bring it to a "point" so it can be opened.”
+### WAL-CLM-LETS-000144 · protocol
+- **essentials:** selenium · **conditions:** arsenic_toxicity · **symptoms:** —
+- **claim:** Arsenic toxicity (often from herbicide and slug-poison pollution; best detected by hair analysis) causes wide-ranging symptoms including hair loss, constipation, confusion, delayed healing, dermatitis, diarrhea, drowsiness, edema, fatigue, gastrointestinal complaints, headache, burning and tingling, muscle pain, neuropathy, numbness, itching, seizures, stomatitis, and weakness. Wallach's treatment: avoid oils (they promote arsenic absorption), identify and eliminate the source, intravenous chelation, and oral colloidal selenium to remove the body's arsenic load.
+- **verbatim** (offset 177142): “Avoid oils during treatment as they promote
+absorption of arsenic; identify source of ar-
+senic and eliminate it; IV chelation is very
+effective in removing the body load of arsenic
+as is the oral use of colloidal selenium.”
 

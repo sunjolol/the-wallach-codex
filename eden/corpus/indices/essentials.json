@@ -288,7 +288,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 33,
+    "claim_count": 35,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -326,6 +326,8 @@
         "WAL-CLM-DDDL-000088",
         "WAL-CLM-DDDL-000092",
         "WAL-CLM-LETS-000127",
+        "WAL-CLM-LETS-000139",
+        "WAL-CLM-LETS-000142",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -484,10 +486,15 @@
       "selenium",
       "sulfur",
       "tin",
+      "tryptophan",
       "vanadium",
+      "vitamin-b1",
       "vitamin-b12",
+      "vitamin-b2",
       "vitamin-b3",
+      "vitamin-b5",
       "vitamin-b6",
+      "vitamin-d",
       "vitamin-e",
       "zinc"
     ],
@@ -832,7 +839,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 43,
+    "claim_count": 45,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -884,6 +891,8 @@
         "WAL-CLM-DDDL-000088",
         "WAL-CLM-DDDL-000092",
         "WAL-CLM-LETS-000127",
+        "WAL-CLM-LETS-000139",
+        "WAL-CLM-LETS-000142",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1022,11 +1031,15 @@
       "strontium",
       "sulfur",
       "tin",
+      "tryptophan",
       "vanadium",
       "vitamin-b1",
       "vitamin-b12",
+      "vitamin-b2",
       "vitamin-b3",
+      "vitamin-b5",
       "vitamin-b6",
+      "vitamin-d",
       "zinc"
     ],
     "books_cited": [
@@ -1114,7 +1127,7 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 31,
+    "claim_count": 32,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -1158,6 +1171,7 @@
         "WAL-CLM-DDDL-000078",
         "WAL-CLM-LETS-000125",
         "WAL-CLM-LETS-000127",
+        "WAL-CLM-LETS-000142",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1253,9 +1267,12 @@
       "sodium",
       "sulfur",
       "tin",
+      "tryptophan",
       "vanadium",
       "vitamin-b1",
+      "vitamin-b2",
       "vitamin-b3",
+      "vitamin-b5",
       "vitamin-b6",
       "zinc"
     ],
@@ -1269,7 +1286,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 26,
+    "claim_count": 28,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
@@ -1309,6 +1326,8 @@
       ],
       "protocol": [
         "WAL-CLM-DDDL-000049",
+        "WAL-CLM-LETS-000137",
+        "WAL-CLM-LETS-000138",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281"
       ],
@@ -1391,13 +1410,20 @@
       "lithium",
       "magnesium",
       "molybdenum",
+      "omega-3",
       "selenium",
       "sodium",
       "sulfur",
       "tin",
       "vanadium",
       "vitamin-b12",
+      "vitamin-b2",
       "vitamin-b3",
+      "vitamin-b5",
+      "vitamin-b6",
+      "vitamin-b9",
+      "vitamin-c",
+      "vitamin-e",
       "zinc"
     ],
     "books_cited": [
@@ -1475,7 +1501,7 @@
     "display_name": "Iron",
     "canon_slug": "iron",
     "category": "mineral",
-    "claim_count": 16,
+    "claim_count": 18,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000022"
@@ -1504,7 +1530,9 @@
         "WAL-CLM-RARE-000192"
       ],
       "protocol": [
-        "WAL-CLM-DDDL-000080"
+        "WAL-CLM-DDDL-000080",
+        "WAL-CLM-LETS-000137",
+        "WAL-CLM-LETS-000143"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000015"
@@ -1598,10 +1626,16 @@
       "iodine",
       "magnesium",
       "nickel",
+      "omega-3",
+      "selenium",
       "vanadium",
       "vitamin-b12",
+      "vitamin-b2",
+      "vitamin-b5",
+      "vitamin-b6",
       "vitamin-b9",
       "vitamin-c",
+      "vitamin-e",
       "zinc"
     ],
     "books_cited": [
@@ -1882,7 +1916,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 35,
+    "claim_count": 37,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -1924,6 +1958,8 @@
         "WAL-CLM-DDDL-000081",
         "WAL-CLM-DDDL-000085",
         "WAL-CLM-LETS-000126",
+        "WAL-CLM-LETS-000137",
+        "WAL-CLM-LETS-000144",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2012,6 +2048,7 @@
       "copper",
       "gallium",
       "germanium",
+      "iron",
       "lithium",
       "magnesium",
       "manganese",
@@ -2022,8 +2059,12 @@
       "vanadium",
       "vitamin-a",
       "vitamin-b1",
+      "vitamin-b12",
       "vitamin-b2",
       "vitamin-b3",
+      "vitamin-b5",
+      "vitamin-b6",
+      "vitamin-b9",
       "vitamin-c",
       "vitamin-e",
       "zinc"
@@ -2231,7 +2272,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 40,
+    "claim_count": 43,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2282,6 +2323,9 @@
         "WAL-CLM-LETS-000128",
         "WAL-CLM-LETS-000131",
         "WAL-CLM-LETS-000134",
+        "WAL-CLM-LETS-000137",
+        "WAL-CLM-LETS-000141",
+        "WAL-CLM-LETS-000143",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -2423,6 +2467,7 @@
       "vitamin-b12",
       "vitamin-b2",
       "vitamin-b3",
+      "vitamin-b5",
       "vitamin-b6",
       "vitamin-b9",
       "vitamin-c",
@@ -3293,7 +3338,7 @@
     "display_name": "Thiamine",
     "canon_slug": "vitamin-b1",
     "category": "vitamin",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000043",
@@ -3305,6 +3350,7 @@
       ],
       "protocol": [
         "WAL-CLM-LETS-000130",
+        "WAL-CLM-LETS-000142",
         "WAL-CLM-RARE-000282"
       ]
     },
@@ -3423,6 +3469,7 @@
     "conditions_treated": [
       "alzheimers",
       "anorexia",
+      "anxiety",
       "beriberi",
       "congestive_heart_failure",
       "dementia",
@@ -3437,10 +3484,15 @@
       "gallium",
       "germanium",
       "lithium",
+      "magnesium",
       "oxygen",
       "selenium",
+      "tryptophan",
       "vanadium",
+      "vitamin-b2",
       "vitamin-b3",
+      "vitamin-b5",
+      "vitamin-b6",
       "vitamin-e"
     ],
     "books_cited": [
@@ -3453,7 +3505,7 @@
     "display_name": "Riboflavin",
     "canon_slug": "vitamin-b2",
     "category": "vitamin",
-    "claim_count": 4,
+    "claim_count": 6,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000029",
@@ -3464,6 +3516,10 @@
       ],
       "mechanism": [
         "WAL-CLM-RARE-000010"
+      ],
+      "protocol": [
+        "WAL-CLM-LETS-000137",
+        "WAL-CLM-LETS-000142"
       ]
     },
     "deficiency_signs": [
@@ -3517,6 +3573,7 @@
       "alopecia",
       "anemia",
       "angular_stomatitis",
+      "anxiety",
       "cataracts",
       "cystic_fibrosis",
       "depression",
@@ -3526,7 +3583,21 @@
       "seborrheic_dermatitis"
     ],
     "interacts_with": [
+      "calcium",
+      "chromium",
+      "copper",
+      "iron",
+      "magnesium",
+      "omega-3",
       "selenium",
+      "tryptophan",
+      "vitamin-b1",
+      "vitamin-b12",
+      "vitamin-b3",
+      "vitamin-b5",
+      "vitamin-b6",
+      "vitamin-b9",
+      "vitamin-c",
       "vitamin-e",
       "zinc"
     ],
@@ -3539,7 +3610,7 @@
     "display_name": "Niacin",
     "canon_slug": "vitamin-b3",
     "category": "vitamin",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000019",
@@ -3551,6 +3622,7 @@
       "protocol": [
         "WAL-CLM-DDDL-000049",
         "WAL-CLM-DDDL-000078",
+        "WAL-CLM-LETS-000142",
         "WAL-CLM-RARE-000282"
       ],
       "toxicity_sign": [
@@ -3654,9 +3726,12 @@
       "magnesium",
       "oxygen",
       "selenium",
+      "tryptophan",
       "vanadium",
       "vitamin-b1",
       "vitamin-b12",
+      "vitamin-b2",
+      "vitamin-b5",
       "vitamin-b6",
       "zinc"
     ],
@@ -3670,7 +3745,7 @@
     "display_name": "Pantothenic Acid",
     "canon_slug": "vitamin-b5",
     "category": "vitamin",
-    "claim_count": 3,
+    "claim_count": 5,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000021",
@@ -3678,6 +3753,10 @@
       ],
       "dose": [
         "WAL-CLM-LETS-000060"
+      ],
+      "protocol": [
+        "WAL-CLM-LETS-000137",
+        "WAL-CLM-LETS-000142"
       ]
     },
     "deficiency_signs": [
@@ -3769,13 +3848,33 @@
     ],
     "conditions_treated": [
       "alopecia",
+      "anemia",
+      "anxiety",
       "depression",
       "dermatitis",
       "eczema",
       "hypotension",
       "insomnia"
     ],
-    "interacts_with": [],
+    "interacts_with": [
+      "calcium",
+      "chromium",
+      "copper",
+      "iron",
+      "magnesium",
+      "omega-3",
+      "selenium",
+      "tryptophan",
+      "vitamin-b1",
+      "vitamin-b12",
+      "vitamin-b2",
+      "vitamin-b3",
+      "vitamin-b6",
+      "vitamin-b9",
+      "vitamin-c",
+      "vitamin-e",
+      "zinc"
+    ],
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
@@ -3785,7 +3884,7 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 10,
+    "claim_count": 12,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000027",
@@ -3800,6 +3899,8 @@
         "WAL-CLM-LETS-000120",
         "WAL-CLM-LETS-000123",
         "WAL-CLM-LETS-000127",
+        "WAL-CLM-LETS-000137",
+        "WAL-CLM-LETS-000142",
         "WAL-CLM-RARE-000286"
       ],
       "toxicity_sign": [
@@ -3917,13 +4018,23 @@
       "calcium",
       "choline",
       "chromium",
+      "copper",
       "flavonoids",
+      "iron",
       "magnesium",
       "omega-3",
       "phenylalanine",
+      "selenium",
+      "tryptophan",
       "vanadium",
       "vitamin-a",
+      "vitamin-b1",
+      "vitamin-b12",
+      "vitamin-b2",
       "vitamin-b3",
+      "vitamin-b5",
+      "vitamin-b9",
+      "vitamin-c",
       "vitamin-e",
       "zinc"
     ],
@@ -3937,7 +4048,7 @@
     "display_name": "Folate",
     "canon_slug": "vitamin-b9",
     "category": "vitamin",
-    "claim_count": 5,
+    "claim_count": 7,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000042",
@@ -3948,7 +4059,9 @@
         "WAL-CLM-LETS-000052"
       ],
       "protocol": [
-        "WAL-CLM-DDDL-000080"
+        "WAL-CLM-DDDL-000080",
+        "WAL-CLM-LETS-000137",
+        "WAL-CLM-LETS-000143"
       ]
     },
     "deficiency_signs": [
@@ -4012,8 +4125,16 @@
       "vitiligo"
     ],
     "interacts_with": [
+      "copper",
       "iron",
+      "omega-3",
+      "selenium",
       "vitamin-b12",
+      "vitamin-b2",
+      "vitamin-b5",
+      "vitamin-b6",
+      "vitamin-c",
+      "vitamin-e",
       "zinc"
     ],
     "books_cited": [
@@ -4026,7 +4147,7 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 14,
+    "claim_count": 16,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000035",
@@ -4050,7 +4171,9 @@
         "WAL-CLM-DDDL-000049",
         "WAL-CLM-DDDL-000080",
         "WAL-CLM-DDDL-000086",
-        "WAL-CLM-LETS-000132"
+        "WAL-CLM-LETS-000132",
+        "WAL-CLM-LETS-000137",
+        "WAL-CLM-LETS-000143"
       ]
     },
     "deficiency_signs": [
@@ -4142,8 +4265,15 @@
       "lithium",
       "magnesium",
       "nickel",
+      "omega-3",
+      "selenium",
+      "vitamin-b2",
       "vitamin-b3",
+      "vitamin-b5",
+      "vitamin-b6",
       "vitamin-b9",
+      "vitamin-c",
+      "vitamin-e",
       "zinc"
     ],
     "books_cited": [
@@ -4156,7 +4286,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -4174,7 +4304,8 @@
         "WAL-CLM-LETS-000119",
         "WAL-CLM-LETS-000124",
         "WAL-CLM-LETS-000126",
-        "WAL-CLM-LETS-000128"
+        "WAL-CLM-LETS-000128",
+        "WAL-CLM-LETS-000137"
       ]
     },
     "deficiency_signs": [
@@ -4252,11 +4383,17 @@
       "scurvy"
     ],
     "interacts_with": [
+      "copper",
       "flavonoids",
       "iron",
       "omega-3",
       "selenium",
       "vitamin-a",
+      "vitamin-b12",
+      "vitamin-b2",
+      "vitamin-b5",
+      "vitamin-b6",
+      "vitamin-b9",
       "vitamin-e",
       "zinc"
     ],
@@ -4270,7 +4407,7 @@
     "display_name": "Cholecalciferol",
     "canon_slug": "vitamin-d",
     "category": "vitamin",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000083"
@@ -4284,6 +4421,9 @@
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000068"
+      ],
+      "protocol": [
+        "WAL-CLM-LETS-000139"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000040"
@@ -4322,6 +4462,7 @@
       }
     ],
     "conditions_treated": [
+      "angina",
       "arteriosclerosis",
       "arthritis",
       "diarrhea",
@@ -4334,7 +4475,11 @@
       "restless_leg_syndrome",
       "rickets"
     ],
-    "interacts_with": [],
+    "interacts_with": [
+      "calcium",
+      "magnesium",
+      "omega-3"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",
@@ -4345,7 +4490,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -4366,6 +4511,7 @@
         "WAL-CLM-LETS-000123",
         "WAL-CLM-LETS-000126",
         "WAL-CLM-LETS-000130",
+        "WAL-CLM-LETS-000137",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -4449,15 +4595,20 @@
     ],
     "interacts_with": [
       "choline",
+      "copper",
       "germanium",
+      "iron",
       "magnesium",
       "manganese",
       "omega-3",
       "selenium",
       "vitamin-a",
       "vitamin-b1",
+      "vitamin-b12",
       "vitamin-b2",
+      "vitamin-b5",
       "vitamin-b6",
+      "vitamin-b9",
       "vitamin-c",
       "vitamin-k",
       "zinc"
@@ -4876,20 +5027,34 @@
     "display_name": "Tryptophan",
     "canon_slug": "tryptophan",
     "category": "amino_acid",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-DDDL-000067"
+      ],
+      "protocol": [
+        "WAL-CLM-LETS-000142"
       ]
     },
     "deficiency_signs": [],
-    "conditions_treated": [],
+    "conditions_treated": [
+      "anxiety"
+    ],
     "interacts_with": [
+      "calcium",
+      "chromium",
+      "magnesium",
       "methionine",
-      "phenylalanine"
+      "phenylalanine",
+      "vitamin-b1",
+      "vitamin-b2",
+      "vitamin-b3",
+      "vitamin-b5",
+      "vitamin-b6"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "lets-play-doctor"
     ]
   },
   "tyrosine": {
@@ -4935,7 +5100,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 15,
+    "claim_count": 17,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -4957,6 +5122,8 @@
         "WAL-CLM-LETS-000128",
         "WAL-CLM-LETS-000131",
         "WAL-CLM-LETS-000134",
+        "WAL-CLM-LETS-000137",
+        "WAL-CLM-LETS-000139",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -4999,6 +5166,8 @@
       "allergies",
       "alopecia",
       "amenorrhea",
+      "anemia",
+      "angina",
       "anorexia",
       "arthritis",
       "cystic_fibrosis",
@@ -5014,7 +5183,9 @@
     "interacts_with": [
       "calcium",
       "chromium",
+      "copper",
       "flavonoids",
+      "iron",
       "magnesium",
       "manganese",
       "omega-6",
@@ -5023,8 +5194,13 @@
       "tin",
       "vanadium",
       "vitamin-a",
+      "vitamin-b12",
+      "vitamin-b2",
+      "vitamin-b5",
       "vitamin-b6",
+      "vitamin-b9",
       "vitamin-c",
+      "vitamin-d",
       "vitamin-e",
       "zinc"
     ],

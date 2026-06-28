@@ -48,20 +48,27 @@
   },
   "betaine-hcl": {
     "display_name": "Betaine Hcl",
-    "claim_count": 4,
+    "claim_count": 7,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
         "WAL-CLM-LETS-000123",
         "WAL-CLM-LETS-000130",
-        "WAL-CLM-LETS-000131"
+        "WAL-CLM-LETS-000131",
+        "WAL-CLM-LETS-000137",
+        "WAL-CLM-LETS-000140",
+        "WAL-CLM-LETS-000142"
       ]
     },
     "conditions_treated": [
       "achlorhydria",
       "acne",
       "alopecia",
-      "alzheimers"
+      "alzheimers",
+      "anemia",
+      "anorexia",
+      "anorexia_nervosa",
+      "anxiety"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -112,6 +119,22 @@
       "lets-play-doctor"
     ]
   },
+  "buckbean": {
+    "display_name": "Buckbean",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000140"
+      ]
+    },
+    "conditions_treated": [
+      "anorexia",
+      "anorexia_nervosa"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "cadmium": {
     "display_name": "Cadmium",
     "claim_count": 1,
@@ -123,6 +146,22 @@
     "conditions_treated": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "calamus": {
+    "display_name": "Calamus",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000140"
+      ]
+    },
+    "conditions_treated": [
+      "anorexia",
+      "anorexia_nervosa"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "catechin": {
@@ -137,6 +176,22 @@
     "conditions_treated": [
       "alcoholism",
       "allergies"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "centaury": {
+    "display_name": "Centaury",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000140"
+      ]
+    },
+    "conditions_treated": [
+      "anorexia",
+      "anorexia_nervosa"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -216,6 +271,23 @@
     "conditions_treated": [
       "abscess",
       "anal_abscess"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "edta-chelation": {
+    "display_name": "Edta Chelation",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000139",
+        "WAL-CLM-LETS-000144"
+      ]
+    },
+    "conditions_treated": [
+      "angina",
+      "arsenic_toxicity"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -308,14 +380,17 @@
   },
   "gentian": {
     "display_name": "Gentian",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000122"
+        "WAL-CLM-LETS-000122",
+        "WAL-CLM-LETS-000140"
       ]
     },
     "conditions_treated": [
-      "achlorhydria"
+      "achlorhydria",
+      "anorexia",
+      "anorexia_nervosa"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -331,6 +406,21 @@
     },
     "conditions_treated": [
       "aids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "hawthorn": {
+    "display_name": "Hawthorn",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000139"
+      ]
+    },
+    "conditions_treated": [
+      "angina"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -368,18 +458,20 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
         "WAL-CLM-LETS-000119",
-        "WAL-CLM-LETS-000136"
+        "WAL-CLM-LETS-000136",
+        "WAL-CLM-LETS-000139"
       ]
     },
     "conditions_treated": [
       "abrasions",
       "abscess",
-      "anal_abscess"
+      "anal_abscess",
+      "angina"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -488,6 +580,21 @@
       "lets-play-doctor"
     ]
   },
+  "liver-extract": {
+    "display_name": "Liver Extract",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000137"
+      ]
+    },
+    "conditions_treated": [
+      "anemia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "marigold": {
     "display_name": "Marigold",
     "claim_count": 1,
@@ -498,6 +605,21 @@
     },
     "conditions_treated": [
       "amenorrhea"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "marsh-marigold": {
+    "display_name": "Marsh Marigold",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000137"
+      ]
+    },
+    "conditions_treated": [
+      "anemia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -550,6 +672,21 @@
       "lets-play-doctor"
     ]
   },
+  "nitroglycerine": {
+    "display_name": "Nitroglycerine",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000139"
+      ]
+    },
+    "conditions_treated": [
+      "angina"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "paba": {
     "display_name": "Paba",
     "claim_count": 1,
@@ -567,18 +704,21 @@
   },
   "pancreatic-enzymes": {
     "display_name": "Pancreatic Enzymes",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000123",
         "WAL-CLM-LETS-000130",
-        "WAL-CLM-LETS-000131"
+        "WAL-CLM-LETS-000131",
+        "WAL-CLM-LETS-000140"
       ]
     },
     "conditions_treated": [
       "acne",
       "alopecia",
-      "alzheimers"
+      "alzheimers",
+      "anorexia",
+      "anorexia_nervosa"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -751,6 +891,21 @@
       "lets-play-doctor"
     ]
   },
+  "sweet-cicely": {
+    "display_name": "Sweet Cicely",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000137"
+      ]
+    },
+    "conditions_treated": [
+      "anemia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "taurine": {
     "display_name": "Taurine",
     "claim_count": 2,
@@ -796,6 +951,21 @@
     },
     "conditions_treated": [
       "aids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "valerian": {
+    "display_name": "Valerian",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000142"
+      ]
+    },
+    "conditions_treated": [
+      "anxiety"
     ],
     "books_cited": [
       "lets-play-doctor"

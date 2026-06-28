@@ -4568,13 +4568,13 @@ tions and/or nutritional deficiencies. Betaine
 HC1 orally at 75-200 mg t.i.d. 15-20 minutes
 before meals is required to assure absorption
 of B-12; liver extract orally or IM; nutritional
-support with iron 20 mg; B-12 1000 meg per
+support with iron 20 mg; B-12 1000 mcg per
 day for 20 days; folic acid 15 mg for 20 days;
 84
 copper 2 mg; zinc 50 mg t.i.d.; B-2 50 mgb.i.d.;
 B-5 50 mg t.i.d.; B-6 50 mg b.i.d. for 20 days;
 vitamin C to bowel tolerance; Vitamin E 800-
-1200 IU per day; selenium 500 meg/day; and
+1200 IU per day; selenium 500 mcg/day; and
 essential fatty acids at a rate of 5 gram t.i.d.
 Herbs including sweet cicely (Mymhis odorata)
 and marsh marigold (Coltha palustris).
@@ -4664,7 +4664,7 @@ perplexing situation. Do a pulse test to elimi-
 nate allergies and a six-hour GTT.
 Treatment should include avoidance of caf-
 feine and sugar in all forms (fruit, juices, etc.):
-chromium 200-300 meg/ day; B-6 100 mg
+chromium 200-300 mcg/ day; B-6 100 mg
 t.i.d.; B-3 450 mg t.i.d. as time-release tablets;
 B-l,B-2, and B-5 at the rate of 50 mg t.i.d.; L-
 tryptophan 10 grams t.i.d.; calcium 2000 mg/
@@ -4677,7 +4677,7 @@ often a symptom of food sensitivities or aller-
 gies. An elimination/ rotation diet or a pulse
 test can identify the offending foods - gluten
 free diets are frequently effective.
-Folic acid at 5 mg t.i.d.; B-12 at 1000 meg/day;
+Folic acid at 5 mg t.i.d.; B-12 at 1000 mcg/day;
 iron at 15 mg/day; zinc at 50 mg t.i.d. are
 effective adjuncts to avoidance diets.
 ARSENIC TOXICITY: is a frequent result of

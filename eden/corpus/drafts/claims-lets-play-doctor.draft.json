@@ -5577,6 +5577,331 @@
       "extracted_at": "2026-06-28T16:26:23+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000137",
+      "kind": "protocol",
+      "essentials": [
+        "iron",
+        "vitamin-b12",
+        "vitamin-b9",
+        "copper",
+        "zinc",
+        "vitamin-b2",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-c",
+        "vitamin-e",
+        "selenium",
+        "omega-3"
+      ],
+      "other_substances": [
+        "betaine-hcl",
+        "liver-extract",
+        "sweet-cicely",
+        "marsh-marigold"
+      ],
+      "conditions": [
+        "anemia"
+      ],
+      "symptoms": [],
+      "claim_text": "For anemia (a lack of blood from hemorrhage, infection, and/or nutritional deficiencies), Wallach's program is betaine hydrochloride 75-200 mg three times daily 15-20 minutes before meals (to assure B-12 absorption); liver extract orally or by intramuscular injection; iron 20 mg; vitamin B-12 1000 mcg per day for 20 days; folic acid 15 mg for 20 days; copper 2 mg; zinc 50 mg three times daily; vitamin B-2 50 mg twice daily; vitamin B-5 50 mg three times daily; vitamin B-6 50 mg twice daily for 20 days; vitamin C to bowel tolerance; vitamin E 800-1200 IU per day; selenium 500 mcg per day; and essential fatty acids 5 grams three times daily; with herbs sweet cicely (Myrrhis odorata) and marsh marigold (Caltha palustris).",
+      "verbatim": "Betaine\nHC1 orally at 75-200 mg t.i.d. 15-20 minutes\nbefore meals is required to assure absorption\nof B-12; liver extract orally or IM; nutritional\nsupport with iron 20 mg; B-12 1000 mcg per\nday for 20 days; folic acid 15 mg for 20 days;",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 171794
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T16:33:57+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000138",
+      "kind": "protocol",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "aneurysm"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach states that aneurysms (a bubble or balloon in an artery wall that can press on organs or burst, causing sudden death by hemorrhage) are most frequently caused by copper deficiency, which weakens the elastic fibers. Copper supplementation cannot cure or repair an existing aneurysm but can prevent them at 2-4 mg per day (ensuring absorption); surgery is required for existing aneurysms.",
+      "verbatim": "copper supplementation\ncannot \"cure\" or repair an aneurysm but can\nprevent them at the rate of 2-4 mg/day (be sure\nyou are absorbing).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 172681
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T16:33:57+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000139",
+      "kind": "protocol",
+      "essentials": [
+        "calcium",
+        "magnesium",
+        "omega-3",
+        "vitamin-d"
+      ],
+      "other_substances": [
+        "edta-chelation",
+        "hydrogen-peroxide",
+        "nitroglycerine",
+        "hawthorn"
+      ],
+      "conditions": [
+        "angina"
+      ],
+      "symptoms": [],
+      "claim_text": "For angina (sharp chest pain from arterial disease reducing the heart's oxygen supply), Wallach favors chelation -- intravenous with hydrogen peroxide and calcium EDTA, or oral with vitamin/mineral supplements -- over coronary bypass surgery. Avoid sugar, caffeine, and cigarette smoke; walk 30 minutes daily; calcium 2000 mg per day and magnesium 800 mg per day; essential fatty acids; and reduce vitamin D intake from sun and supplements. Nitroglycerine sublingual capsules and time-release patches relieve symptoms; English hawthorn (Crataegus oxyacantha) is specific for angina by increasing coronary blood flow. Lifestyle changes and supplementation can reverse cardiovascular disease.",
+      "verbatim": "English hawthorn (Crataegus oxyacantha) is\nspecific for angina by increasing the blood\nflow through coronary arteries. Lifestyle\nchanges and supplementation can reverse\ncardiovascular disease!",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 173944
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T16:33:57+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000140",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "buckbean",
+        "centaury",
+        "calamus",
+        "gentian"
+      ],
+      "conditions": [
+        "anorexia",
+        "anorexia_nervosa"
+      ],
+      "symptoms": [],
+      "claim_text": "For anorexia (appetite loss from stress, malnutrition, shock, or injury) -- and anorexia nervosa, which Wallach views not as a psychiatric disease but as a manifestation of a severe food allergy (found via elimination diets and pulse tests) -- treatment includes betaine hydrochloride and pancreatic enzymes 150-250 mg per day three times daily, plus baseline supplements. Herbs are excellent appetite stimulants taken before meals: buckbean or marsh trefoil (Menyanthes trifoliata), centaury (Centaurium umbellatum), sweet flag or calamus (Acorus calamus), and yellow gentian (Gentiana lutea). For anorexia nervosa, autoimmune urine therapy is indicated.",
+      "verbatim": "Treatment should include betaine HC1 and\npancreatic enzymes at a rate of 150-250 mg/\nday t.i.d. (don't forget the baseline vitamin/\nmineral supplement). Herbs are excellent\nappetite stimulants: buckbean or marsh trefoil\n(Menyanthes trifoliata); centaury (Centaurium\numbellatum); sweet flag or calamus (Acorus\ncalamus); yellow gentian (Gentiana lutea)",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 174569
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T16:33:57+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000141",
+      "kind": "protocol",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anosmia"
+      ],
+      "symptoms": [],
+      "claim_text": "Anosmia (loss of smell) can be temporary (from colds or rhinitis) but chronic loss results from a zinc deficiency (zinc will not help if the cause is injury, stroke, or tumor). Wallach finds zinc 50 mg three times daily very effective in returning the sense of smell.",
+      "verbatim": "Chronic loss of the\nsense of smell is the result of a zinc deficiency.\nIn the case of injury, stroke or tumor, zinc will\nnot be effective.\nZinc supplement at the rate of 50 mg t.i.d. is\nvery effective in returning the sense of smell.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 175175
+      },
+      "dose": {
+        "amount": 50,
+        "unit": "mg",
+        "period": "three times daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "anosmia"
+      },
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T16:33:57+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000142",
+      "kind": "protocol",
+      "essentials": [
+        "chromium",
+        "vitamin-b6",
+        "vitamin-b3",
+        "vitamin-b1",
+        "vitamin-b2",
+        "vitamin-b5",
+        "tryptophan",
+        "calcium",
+        "magnesium"
+      ],
+      "other_substances": [
+        "betaine-hcl",
+        "valerian"
+      ],
+      "conditions": [
+        "anxiety"
+      ],
+      "symptoms": [],
+      "claim_text": "For anxiety (panic attacks, affecting women about twice as often as men), Wallach traces the base cause to a food allergy or a severe reactive hypoglycemic 'crash and burn' glucose curve (use a pulse test and six-hour glucose tolerance test). Treatment: avoid caffeine and sugar in all forms; chromium 200-300 mcg per day; vitamin B-6 100 mg three times daily; vitamin B-3 450 mg three times daily as time-release tablets; vitamins B-1, B-2, and B-5 at 50 mg three times daily; L-tryptophan 10 grams three times daily; calcium 2000 mg per day and magnesium 800 mg per day; betaine hydrochloride 100-250 mg three times daily before meals; and herbs such as valerian (Valeriana officinalis).",
+      "verbatim": "Treatment should include avoidance of caf-\nfeine and sugar in all forms (fruit, juices, etc.):\nchromium 200-300 mcg/ day; B-6 100 mg\nt.i.d.; B-3 450 mg t.i.d. as time-release tablets;\nB-l,B-2, and B-5 at the rate of 50 mg t.i.d.; L-\ntryptophan 10 grams t.i.d.; calcium 2000 mg/\nday and magnesium at 800 mg/day.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 175934
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T16:33:57+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000143",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b9",
+        "vitamin-b12",
+        "iron",
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "aphthous_stomatitis"
+      ],
+      "symptoms": [],
+      "claim_text": "For aphthous stomatitis (canker sores), often a symptom of food sensitivities or allergies, Wallach recommends identifying offending foods via an elimination/rotation diet or pulse test (gluten-free diets are frequently effective), with folic acid 5 mg three times daily, vitamin B-12 1000 mcg per day, iron 15 mg per day, and zinc 50 mg three times daily as effective adjuncts to avoidance diets.",
+      "verbatim": "Folic acid at 5 mg t.i.d.; B-12 at 1000 mcg/day;\niron at 15 mg/day; zinc at 50 mg t.i.d. are\neffective adjuncts to avoidance diets.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 176571
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T16:33:57+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000144",
+      "kind": "protocol",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [
+        "edta-chelation"
+      ],
+      "conditions": [
+        "arsenic_toxicity"
+      ],
+      "symptoms": [],
+      "claim_text": "Arsenic toxicity (often from herbicide and slug-poison pollution; best detected by hair analysis) causes wide-ranging symptoms including hair loss, constipation, confusion, delayed healing, dermatitis, diarrhea, drowsiness, edema, fatigue, gastrointestinal complaints, headache, burning and tingling, muscle pain, neuropathy, numbness, itching, seizures, stomatitis, and weakness. Wallach's treatment: avoid oils (they promote arsenic absorption), identify and eliminate the source, intravenous chelation, and oral colloidal selenium to remove the body's arsenic load.",
+      "verbatim": "Avoid oils during treatment as they promote\nabsorption of arsenic; identify source of ar-\nsenic and eliminate it; IV chelation is very\neffective in removing the body load of arsenic\nas is the oral use of colloidal selenium.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 177142
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T16:33:57+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
