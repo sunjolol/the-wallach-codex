@@ -657,7 +657,7 @@
     "display_name": "Sulfur",
     "canon_slug": "sulfur",
     "category": "mineral",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000223",
@@ -673,6 +673,9 @@
         "WAL-CLM-RARE-000220",
         "WAL-CLM-RARE-000221",
         "WAL-CLM-RARE-000222"
+      ],
+      "protocol": [
+        "WAL-CLM-LETS-000276"
       ]
     },
     "deficiency_signs": [],
@@ -680,6 +683,7 @@
       "aneurysm",
       "arthritis",
       "bone_spurs",
+      "brittle_nails",
       "cancer",
       "cardiomyopathy",
       "cataracts",
@@ -696,7 +700,9 @@
       "calcium",
       "chromium",
       "copper",
+      "iron",
       "magnesium",
+      "omega-3",
       "selenium",
       "tin",
       "vanadium",
@@ -909,7 +915,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 65,
+    "claim_count": 66,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -983,6 +989,7 @@
         "WAL-CLM-LETS-000258",
         "WAL-CLM-LETS-000266",
         "WAL-CLM-LETS-000267",
+        "WAL-CLM-LETS-000276",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1661,7 +1668,7 @@
     "display_name": "Iron",
     "canon_slug": "iron",
     "category": "mineral",
-    "claim_count": 20,
+    "claim_count": 21,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000022"
@@ -1694,7 +1701,8 @@
         "WAL-CLM-LETS-000137",
         "WAL-CLM-LETS-000143",
         "WAL-CLM-LETS-000171",
-        "WAL-CLM-LETS-000244"
+        "WAL-CLM-LETS-000244",
+        "WAL-CLM-LETS-000276"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000015"
@@ -1794,6 +1802,7 @@
       "phenylalanine",
       "potassium",
       "selenium",
+      "sulfur",
       "tryptophan",
       "tyrosine",
       "vanadium",
@@ -1817,7 +1826,7 @@
     "display_name": "Iodine",
     "canon_slug": "iodine",
     "category": "mineral",
-    "claim_count": 14,
+    "claim_count": 15,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000013",
@@ -1846,6 +1855,9 @@
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000024"
+      ],
+      "protocol": [
+        "WAL-CLM-LETS-000275"
       ]
     },
     "deficiency_signs": [
@@ -1911,6 +1923,7 @@
       }
     ],
     "conditions_treated": [
+      "fibrocystic_breast_disease",
       "goiter",
       "graves_disease",
       "hashimotos_disease",
@@ -1921,7 +1934,11 @@
       "chromium",
       "copper",
       "iron",
-      "tyrosine"
+      "omega-3",
+      "selenium",
+      "tyrosine",
+      "vitamin-a",
+      "vitamin-e"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -2095,7 +2112,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 51,
+    "claim_count": 53,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2153,6 +2170,8 @@
         "WAL-CLM-LETS-000234",
         "WAL-CLM-LETS-000238",
         "WAL-CLM-LETS-000240",
+        "WAL-CLM-LETS-000273",
+        "WAL-CLM-LETS-000275",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2220,6 +2239,7 @@
       "dementia",
       "diabetes",
       "elevated_cholesterol",
+      "fibrocystic_breast_disease",
       "heart_attack",
       "hiv_aids",
       "hypertension",
@@ -2254,6 +2274,7 @@
       "gallium",
       "germanium",
       "inositol",
+      "iodine",
       "iron",
       "lithium",
       "magnesium",
@@ -2495,7 +2516,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 68,
+    "claim_count": 69,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2574,6 +2595,7 @@
         "WAL-CLM-LETS-000254",
         "WAL-CLM-LETS-000262",
         "WAL-CLM-LETS-000267",
+        "WAL-CLM-LETS-000276",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -3515,7 +3537,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 24,
+    "claim_count": 25,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -3544,7 +3566,8 @@
         "WAL-CLM-LETS-000242",
         "WAL-CLM-LETS-000245",
         "WAL-CLM-LETS-000254",
-        "WAL-CLM-LETS-000262"
+        "WAL-CLM-LETS-000262",
+        "WAL-CLM-LETS-000275"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000037"
@@ -3622,6 +3645,7 @@
       "dermatitis",
       "dry_skin",
       "eczema",
+      "fibrocystic_breast_disease",
       "hydrocephalus",
       "ichthyosis",
       "infertility",
@@ -3637,6 +3661,7 @@
       "chromium",
       "flavonoids",
       "germanium",
+      "iodine",
       "lysine",
       "magnesium",
       "omega-3",
@@ -5031,7 +5056,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 38,
+    "claim_count": 39,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -5079,6 +5104,7 @@
         "WAL-CLM-LETS-000258",
         "WAL-CLM-LETS-000261",
         "WAL-CLM-LETS-000262",
+        "WAL-CLM-LETS-000275",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -5200,6 +5226,7 @@
       "flavonoids",
       "germanium",
       "inositol",
+      "iodine",
       "iron",
       "lysine",
       "magnesium",
@@ -5871,7 +5898,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 42,
+    "claim_count": 45,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -5920,6 +5947,9 @@
         "WAL-CLM-LETS-000258",
         "WAL-CLM-LETS-000262",
         "WAL-CLM-LETS-000267",
+        "WAL-CLM-LETS-000273",
+        "WAL-CLM-LETS-000275",
+        "WAL-CLM-LETS-000276",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -6008,6 +6038,7 @@
       "chromium",
       "copper",
       "flavonoids",
+      "iodine",
       "iron",
       "lithium",
       "magnesium",
@@ -6016,6 +6047,7 @@
       "phenylalanine",
       "potassium",
       "selenium",
+      "sulfur",
       "tin",
       "tryptophan",
       "tyrosine",

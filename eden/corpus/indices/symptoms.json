@@ -293,11 +293,17 @@
   },
   "brittle_nails": {
     "display_name": "Brittle Nails",
-    "claim_count": 6,
+    "claim_count": 7,
     "likely_deficiencies": [
       {
         "essential": "calcium",
         "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000276",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -314,6 +320,18 @@
         "appears_in_books": 1
       },
       {
+        "essential": "iron",
+        "claim_id": "WAL-CLM-LETS-000276",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "omega-3",
+        "claim_id": "WAL-CLM-LETS-000276",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
         "essential": "selenium",
         "claim_id": "WAL-CLM-LETS-000031",
         "confidence": "high",
@@ -326,8 +344,20 @@
         "appears_in_books": 1
       },
       {
+        "essential": "sulfur",
+        "claim_id": "WAL-CLM-LETS-000276",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
         "essential": "zinc",
         "claim_id": "WAL-CLM-LETS-000044",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "zinc",
+        "claim_id": "WAL-CLM-LETS-000276",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -1203,7 +1233,7 @@
   },
   "fatigue": {
     "display_name": "Fatigue",
-    "claim_count": 21,
+    "claim_count": 22,
     "likely_deficiencies": [
       {
         "essential": "biotin",
@@ -4213,11 +4243,41 @@
   },
   "white_spots_on_nails": {
     "display_name": "White Spots On Nails",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000276",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "iron",
+        "claim_id": "WAL-CLM-LETS-000276",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "omega-3",
+        "claim_id": "WAL-CLM-LETS-000276",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "sulfur",
+        "claim_id": "WAL-CLM-LETS-000276",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "zinc",
         "claim_id": "WAL-CLM-LETS-000044",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "zinc",
+        "claim_id": "WAL-CLM-LETS-000276",
         "confidence": "high",
         "appears_in_books": 1
       }

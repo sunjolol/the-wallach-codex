@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_165 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_166 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 18:24 UTC-05:00 · round-close · knowledge/corpus
+Ch10 Materia Medica b37 — FAILURE TO THRIVE→FINGERNAILS (F's pt1), 7 protocol claims LETS-270..276. 2 render-verified meg→mcg fixes (FIBROCYSTIC iodine 200/selenium 500). seal kv147→148, claims 649→656, conditions 299→302. Board 31/31, probe PASS.
+  ↳ FAILURE TO THRIVE, FARTING(flatulence), FATIGUE(chronic_fatigue), FERTILITY(infertility — checked, not charged), FEVER, FIBROCYSTIC BREAST DISEASE, FINGERNAILS(brittle_nails). New conds: failure_to_thrive, flatulence, fever. Pipeline fix_txt→resnap(0 broken)→finalize→seal→embed→build→invariants(31/31)→render_probe_knowledge(0 errors). Honesty: boot-time accidental --help re-seal kv147→148 restored to HEAD before work; this batch is the real bump. NEXT b38 = FITS/FLATULENCE/FLU/FOOD ALLERGIES (the F's).
 
 ## 2026-06-28 18:00 UTC-05:00 · session-end · chronicle
 SESSION 17 wrap — Ch10 b30-b36 (7 batches): CONGESTED LUNGS→EYE REDNESS. ★ C-tail + ENTIRE D + ENTIRE E sections COMPLETE. 42 claims (LETS-228..269), corpus 607→649, conditions 269→299, kv147. 2 search-only rulings + herb-action grouping. board 31/31 throughout. NEXT=F's (b37).

@@ -1822,16 +1822,18 @@
   },
   "brittle_nails": {
     "display_name": "Brittle Nails",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000171"
+        "WAL-CLM-LETS-000171",
+        "WAL-CLM-LETS-000276"
       ]
     },
     "essentials_involved": [
       "calcium",
       "iron",
       "omega-3",
+      "sulfur",
       "vitamin-e",
       "zinc"
     ],
@@ -2612,17 +2614,27 @@
   },
   "chronic_fatigue": {
     "display_name": "Chronic Fatigue",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000157"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000272"
       ]
     },
     "essentials_involved": [
       "lanthanum"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "american-ginseng",
+      "calamus",
+      "lavender",
+      "pasque-flower",
+      "rosemary"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -4180,6 +4192,22 @@
       "lets-play-doctor"
     ]
   },
+  "failure_to_thrive": {
+    "display_name": "Failure To Thrive",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000270"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "colloidal-minerals"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "fatty_liver": {
     "display_name": "Fatty Liver",
     "claim_count": 2,
@@ -4200,25 +4228,72 @@
       "rare-earths"
     ]
   },
+  "fever": {
+    "display_name": "Fever",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000274"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "acetaminophen",
+      "aspirin",
+      "cinchona",
+      "european-holly",
+      "feverfew",
+      "ibuprofen",
+      "meadowsweet",
+      "mugwort",
+      "sea-buckthorn",
+      "white-willow"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "fibrocystic_breast_disease": {
     "display_name": "Fibrocystic Breast Disease",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000231"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000169"
+        "WAL-CLM-LETS-000169",
+        "WAL-CLM-LETS-000275"
       ]
     },
     "essentials_involved": [
+      "iodine",
       "omega-3",
+      "selenium",
+      "vitamin-a",
       "vitamin-e"
     ],
     "other_substances_involved": [],
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "flatulence": {
+    "display_name": "Flatulence",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000271"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "pancreatic-enzymes",
+      "urine-therapy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "food_allergy": {
@@ -4908,7 +4983,7 @@
   },
   "infertility": {
     "display_name": "Infertility",
-    "claim_count": 17,
+    "claim_count": 18,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
@@ -4933,7 +5008,8 @@
         "WAL-CLM-DDDL-000069"
       ],
       "protocols": [
-        "WAL-CLM-DDDL-000070"
+        "WAL-CLM-DDDL-000070",
+        "WAL-CLM-LETS-000273"
       ]
     },
     "essentials_involved": [
@@ -4951,7 +5027,10 @@
       "vitamin-e",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "pancreatic-enzymes"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",

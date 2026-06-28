@@ -7454,8 +7454,8 @@ feine, coffee, black tea, ice tea, carbonated soft
 drinks with caffeine, chocolate, sugar, etc.),
 vitamin E at 800-1,200 IU/day, vitamin A at
 300,000 IU/day as beta carotene, essential
-fatty acids at 5 gm t.i.d. , iodine at 200 meg/day,
-selenium at 500 meg/day.
+fatty acids at 5 gm t.i.d. , iodine at 200 mcg/day,
+selenium at 500 mcg/day.
 FINGERNAILS (white spots, ridges,
 brittle): are good barometers of absorption
 and nutritional status. Bluish fingernails indi-

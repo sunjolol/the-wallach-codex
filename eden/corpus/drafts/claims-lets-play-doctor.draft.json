@@ -10869,6 +10869,280 @@
       "extracted_at": "2026-06-28T22:48:02+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000270",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "colloidal-minerals"
+      ],
+      "conditions": [
+        "failure_to_thrive"
+      ],
+      "symptoms": [],
+      "claim_text": "Failure to thrive is a term for an infant that falls below expected growth rates. Wallach says celiac disease and/or other food allergies and cystic fibrosis should be considered the most common causes. He recommends plant-derived colloidal minerals as being of great value here, because most of these children are severely depleted in trace minerals and rare earths.",
+      "verbatim": "Celiac disease and/or other food\nallergies and cystic fibrosis should be consid-\nered as the most common cause. Plant derived\ncolloidal minerals are of great value here as\nmost of these children are severely depleted in\ntrace minerals and rare earths.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 294919
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:22:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000271",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "urine-therapy"
+      ],
+      "conditions": [
+        "flatulence"
+      ],
+      "symptoms": [],
+      "claim_text": "Farting (bowel gas) is usually caused by digested but poorly absorbed food reaching the colon and being fermented by bowel organisms; foods such as beans, garlic, and onions are notorious for producing it, and food allergies can cause celiac-disease-type changes in the small intestine that lead to malabsorption. Wallach's treatment for pathological amounts of unpleasant bowel gas includes avoiding the offending foods; betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day, 15-20 minutes before meals; and autoimmune urine therapy where food allergies have caused celiac-disease-type changes.",
+      "verbatim": "Treatment for pathological amounts of un-\npleasant bowel gas includes the avoidance of\noffending foods, betaine HC1 and pancreatic\nenzymes at 75-200 mg t.i.d. 15-20 minutes\nbefore meals and autoimmune urine therapy",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 295504
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:22:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000272",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "american-ginseng",
+        "lavender",
+        "rosemary",
+        "calamus",
+        "pasque-flower"
+      ],
+      "conditions": [
+        "chronic_fatigue"
+      ],
+      "symptoms": [
+        "fatigue"
+      ],
+      "claim_text": "Fatigue (including chronic fatigue syndrome, candidiasis, Epstein-Barr virus, cytomegalovirus, human herpes 6 virus, human B-lymphotrophic virus, food allergies, hypoglycemia, diabetes, anemia, and malnutrition) is, in Wallach's words, the disease of the 80s. He says treatment should be specific to the underlying disease as described in the appropriate section; in addition, herbs may be of value, including American ginseng (Panax quinquefolius), lavender (Lavandula angustifolia), rosemary (Rosmarinus officinalis), sweet flag (Acorus calamus), and pasque flower (Anemone pulsatilla).",
+      "verbatim": "Treatment should be specific as described in\nappropriate section; in addition, herbs may be\nof value including American ginseng (Panax\nquinquefolius), lavender (Lavandula\naugustifolia), rosemary (Rosmarinus\nofficinalis), sweet flag (Acorns calamus) and\npasque flower (Anemone pulsatilla).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 296069
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:22:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000273",
+      "kind": "protocol",
+      "essentials": [
+        "selenium",
+        "omega-3"
+      ],
+      "other_substances": [
+        "betaine-hcl",
+        "pancreatic-enzymes"
+      ],
+      "conditions": [
+        "infertility"
+      ],
+      "symptoms": [],
+      "claim_text": "Fertility problems not caused by physical blockage of egg or sperm transport are usually the result of some form of malnutrition — either overt (such as diet fads) or secondary to food allergies and/or malabsorption; Wallach notes that slim women with less than 20% body fat do not ovulate regularly, and distinguishes usually-reversible infertility from usually-permanent sterility, advising hair analysis and a pulse test. His treatment for this form of infertility includes the baseline nutritional supplement; special attention to selenium deficiency in male infertility; betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day before meals; correcting quality protein intake to a minimum of 80 grams a day (he notes the Recommended Dietary Allowance is only 40 grams a day); and essential fatty acids at 5 grams three times a day.",
+      "verbatim": "Treatment of this form of infertility includes\nthe base line nutritional supplement, pay spe-\ncial attention to selenium deficiency in male\ninfertility, betaine HC1 and pancreatic en2ymes\nat 75-200 mg t.i.d. before meals, correc-tion of\nquality protein intake to a minimum of 80 gm/\nday (the RDA is only 40 gm/day) and essential\nfatty acids at 5 gm t.i.d.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 296903
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:22:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000274",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "aspirin",
+        "acetaminophen",
+        "ibuprofen",
+        "feverfew",
+        "meadowsweet",
+        "sea-buckthorn",
+        "european-holly",
+        "white-willow",
+        "mugwort",
+        "cinchona"
+      ],
+      "conditions": [
+        "fever"
+      ],
+      "symptoms": [],
+      "claim_text": "Fever (elevated temperature; normal is 98.6 F) is part of the body's defense mechanism, since many enzymes, antibodies, and white-blood-cell responses are more efficient at slightly elevated temperatures; Wallach says daytime fever is not bad in itself but should be reduced at night to allow comfortable sleep, and that infants with high fevers of 104 F or above may have convulsions that must be reduced quickly by immersion in tepid water. His treatment of fever can include commercial products such as aspirin, acetaminophen (Tylenol), and ibuprofen (Nuprin); ice packs on the forehead; running cool water over the wrists; cool baths; and herbs including feverfew (Chrysanthemum parthenium), meadowsweet (Filipendula ulmaria), sea buckthorn (Hippophae rhamnoides), European holly (Ilex aquifolium), white willow (Salix alba), mugwort (Artemisia vulgaris), and cinchona bark (Cinchona succirubra). He stresses these are symptomatic treatments — the basic disease process (cold, flu, pneumonia, cancer, etc.) must also be dealt with forthrightly.",
+      "verbatim": "Treatment of fever can include a number of\ncommercial products including aspirin, tylenol\nNuprin, etc., ice packs on the forehead, mn-\nning cool water over the wrists, cool baths and\nherbs to include feverfew (Chrysanthemum\nparthenium), meadow-sweet (Filipendula\nulmaria), sea buckthorn (Hippophae\nrhamnoides), European holly (Ilex\naquifolium), white willow (Salix alba),\nmugwort (Artemisia vulgaris) and cinchona\nbark (Cinchona succimbra).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 297693
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:22:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000275",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-e",
+        "vitamin-a",
+        "omega-3",
+        "iodine",
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "fibrocystic_breast_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Fibrocystic breast disease is cosmetically unpleasant and often painful during peak estrogen production, with cysts varying from pea-size to grape-size or occasionally larger; Wallach says prevention and treatment are the same course of action. His treatment includes avoiding methyl xanthines (caffeine, coffee, black tea, iced tea, caffeinated carbonated soft drinks, chocolate, sugar, etc.), vitamin E at 800-1,200 international units a day, vitamin A at 300,000 international units a day as beta carotene, essential fatty acids at 5 grams three times a day, iodine at 200 micrograms a day, and selenium at 500 micrograms a day.",
+      "verbatim": "Treatment of fibrocystic breast disease in-\ncludes avoiding methyl xanthines (i.e., caf-\nfeine, coffee, black tea, ice tea, carbonated soft\ndrinks with caffeine, chocolate, sugar, etc.),\nvitamin E at 800-1,200 IU/day, vitamin A at\n300,000 IU/day as beta carotene, essential\nfatty acids at 5 gm t.i.d. , iodine at 200 mcg/day,\nselenium at 500 mcg/day.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 298535
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:22:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000276",
+      "kind": "protocol",
+      "essentials": [
+        "zinc",
+        "iron",
+        "calcium",
+        "sulfur",
+        "omega-3"
+      ],
+      "other_substances": [
+        "gelatin",
+        "betaine-hcl",
+        "pancreatic-enzymes"
+      ],
+      "conditions": [
+        "brittle_nails"
+      ],
+      "symptoms": [
+        "white_spots_on_nails",
+        "brittle_nails"
+      ],
+      "claim_text": "Fingernails are good barometers of absorption and nutritional status. Wallach reads the signs as: bluish fingernails indicate chronic lung conditions (not enough oxygen), white spots indicate zinc deficiency, ridges can indicate iron and/or calcium deficiency, and brittle nails indicate sulfur amino acid deficiencies — and he stresses not to forget the baseline nutritional supplements. His treatment of fingernail problems should include gelatin (diabetic Jello or Knox gelatin) — especially important for anyone who has been vegetarian for any length of time — essential fatty acids at 5 grams three times a day, and betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day before meals.",
+      "verbatim": "Bluish fingernails indi-\ncate chronic lung conditions (i.e., not enough\noxygen), white spots indicate zinc deficiency,\nridges can indicate iron and/or calcium defi-\nciency and brittle nails indicates sulfur amino\nacid deficiencies.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 298988
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:22:10+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
