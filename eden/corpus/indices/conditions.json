@@ -288,6 +288,30 @@
       "lets-play-doctor"
     ]
   },
+  "alcoholism": {
+    "display_name": "Alcoholism",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000127"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "chromium",
+      "flavonoids",
+      "magnesium",
+      "omega-3",
+      "phenylalanine",
+      "vitamin-b6"
+    ],
+    "other_substances_involved": [
+      "catechin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "alkalosis": {
     "display_name": "Alkalosis",
     "claim_count": 1,
@@ -304,9 +328,36 @@
       "rare-earths"
     ]
   },
+  "allergies": {
+    "display_name": "Allergies",
+    "claim_count": 2,
+    "claims_by_role": {
+      "diagnostics": [
+        "WAL-CLM-LETS-000129"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000128"
+      ]
+    },
+    "essentials_involved": [
+      "flavonoids",
+      "omega-3",
+      "vitamin-a",
+      "vitamin-c",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "catechin",
+      "quercetin",
+      "rutin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "alopecia": {
     "display_name": "Alopecia",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000003",
@@ -321,6 +372,9 @@
         "WAL-CLM-LETS-000044",
         "WAL-CLM-RARE-000264"
       ],
+      "protocols": [
+        "WAL-CLM-LETS-000131"
+      ],
       "toxicity_signs": [
         "WAL-CLM-LETS-000031",
         "WAL-CLM-LETS-000037"
@@ -333,6 +387,7 @@
       "omega-3",
       "omega-6",
       "selenium",
+      "tin",
       "vitamin-a",
       "vitamin-b2",
       "vitamin-b5",
@@ -340,7 +395,13 @@
       "vitamin-e",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "interlipids",
+      "minoxidil",
+      "pancreatic-enzymes",
+      "retin-a"
+    ],
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
@@ -368,7 +429,7 @@
   },
   "alzheimers": {
     "display_name": "Alzheimers",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
@@ -376,31 +437,122 @@
         "WAL-CLM-RARE-000231",
         "WAL-CLM-RARE-000242",
         "WAL-CLM-RARE-000270"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000130"
       ]
     },
     "essentials_involved": [
       "choline",
+      "germanium",
       "selenium",
+      "vitamin-b1",
       "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "centrophenoxine",
+      "colloidal-minerals",
+      "hydergine",
+      "lecithin",
+      "pancreatic-enzymes",
+      "piracetam",
+      "vasopressin"
+    ],
+    "books_cited": [
+      "dddl-3e-2011",
+      "lets-play-doctor",
+      "rare-earths"
+    ]
+  },
+  "amblyopia": {
+    "display_name": "Amblyopia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000132"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b12"
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011",
-      "rare-earths"
+      "lets-play-doctor"
+    ]
+  },
+  "amebiasis": {
+    "display_name": "Amebiasis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000133"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "metronidazole"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "amenorrhea": {
     "display_name": "Amenorrhea",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000134"
+      ],
       "toxicity_signs": [
         "WAL-CLM-LETS-000037"
       ]
     },
     "essentials_involved": [
-      "vitamin-a"
+      "omega-3",
+      "vitamin-a",
+      "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "black-cohosh",
+      "marigold",
+      "saffron",
+      "squawroot"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "anal_abscess": {
+    "display_name": "Anal Abscess",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000136"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "boric-acid",
+      "echinacea",
+      "hydrogen-peroxide"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "anaphylaxis": {
+    "display_name": "Anaphylaxis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000135"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "epinephrine"
+    ],
     "books_cited": [
       "lets-play-doctor"
     ]

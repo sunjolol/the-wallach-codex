@@ -59,7 +59,7 @@
   },
   "allergic_shiners": {
     "display_name": "Allergic Shiners",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "chromium",
@@ -87,6 +87,7 @@
       }
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1549,8 +1550,14 @@
   },
   "headache": {
     "display_name": "Headache",
-    "claim_count": 7,
+    "claim_count": 8,
     "likely_deficiencies": [
+      {
+        "essential": "flavonoids",
+        "claim_id": "WAL-CLM-LETS-000128",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "iron",
         "claim_id": "WAL-CLM-LETS-000014",
@@ -1564,8 +1571,20 @@
         "appears_in_books": 1
       },
       {
+        "essential": "omega-3",
+        "claim_id": "WAL-CLM-LETS-000128",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
         "essential": "sodium",
         "claim_id": "WAL-CLM-LETS-000032",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-a",
+        "claim_id": "WAL-CLM-LETS-000128",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -1584,6 +1603,18 @@
       {
         "essential": "vitamin-b9",
         "claim_id": "WAL-CLM-LETS-000010",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-c",
+        "claim_id": "WAL-CLM-LETS-000128",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "zinc",
+        "claim_id": "WAL-CLM-LETS-000128",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -2771,11 +2802,17 @@
   },
   "palpitations": {
     "display_name": "Palpitations",
-    "claim_count": 6,
+    "claim_count": 7,
     "likely_deficiencies": [
       {
         "essential": "calcium",
         "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "flavonoids",
+        "claim_id": "WAL-CLM-LETS-000128",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -2792,8 +2829,20 @@
         "appears_in_books": 1
       },
       {
+        "essential": "omega-3",
+        "claim_id": "WAL-CLM-LETS-000128",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
         "essential": "potassium",
         "claim_id": "WAL-CLM-LETS-000025",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-a",
+        "claim_id": "WAL-CLM-LETS-000128",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -2806,6 +2855,18 @@
       {
         "essential": "vitamin-b12",
         "claim_id": "WAL-CLM-LETS-000035",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-c",
+        "claim_id": "WAL-CLM-LETS-000128",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "zinc",
+        "claim_id": "WAL-CLM-LETS-000128",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -3593,6 +3654,45 @@
       "lets-play-doctor"
     ]
   },
+  "tachycardia": {
+    "display_name": "Tachycardia",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "flavonoids",
+        "claim_id": "WAL-CLM-LETS-000128",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "omega-3",
+        "claim_id": "WAL-CLM-LETS-000128",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-a",
+        "claim_id": "WAL-CLM-LETS-000128",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-c",
+        "claim_id": "WAL-CLM-LETS-000128",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "zinc",
+        "claim_id": "WAL-CLM-LETS-000128",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "testicular_atrophy": {
     "display_name": "Testicular Atrophy",
     "claim_count": 1,
@@ -3655,6 +3755,45 @@
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "urticaria": {
+    "display_name": "Urticaria",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "flavonoids",
+        "claim_id": "WAL-CLM-LETS-000128",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "omega-3",
+        "claim_id": "WAL-CLM-LETS-000128",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-a",
+        "claim_id": "WAL-CLM-LETS-000128",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-c",
+        "claim_id": "WAL-CLM-LETS-000128",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "zinc",
+        "claim_id": "WAL-CLM-LETS-000128",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "vibratory_sense_dysfunction": {

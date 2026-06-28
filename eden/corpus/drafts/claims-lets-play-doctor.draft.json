@@ -5181,6 +5181,402 @@
       "extracted_at": "2026-06-28T16:04:25+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000127",
+      "kind": "protocol",
+      "essentials": [
+        "calcium",
+        "magnesium",
+        "vitamin-b6",
+        "chromium",
+        "omega-3",
+        "flavonoids",
+        "phenylalanine"
+      ],
+      "other_substances": [
+        "catechin"
+      ],
+      "conditions": [
+        "alcoholism"
+      ],
+      "symptoms": [],
+      "claim_text": "For alcoholism (which Wallach views as an addictive food allergy complicated by hypoglycemia and vitamin/mineral malnutrition), he prescribes rotation elimination diets and hypoglycemia diets plus baseline supplements: calcium 2000 mg and magnesium 1000 mg per day; essential fatty acids 5 mg three times daily; vitamin B-6 100 mg twice daily; chromium 250 mcg per day (essential to solve the hypoglycemia); bioflavonoids (catechin) 1 gram per day; and amino acids such as DL-phenylalanine.",
+      "verbatim": "Calcium (2000 mg) and\nmagnesium (1000 mg) per day; essential fatty\nacids 5 mg t.i.d. and B-6 100 mg b.i.d.; chro-\nmium 250 mcg/day is essential to solve the\nhypoglycemia problem; bioflavonoids (cat-\nechin) 1 gram/day and amino acids (i.e., DL-\nphenylananine).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 165394
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T16:26:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000128",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "vitamin-a",
+        "zinc",
+        "omega-3",
+        "flavonoids"
+      ],
+      "other_substances": [
+        "rutin",
+        "catechin",
+        "quercetin"
+      ],
+      "conditions": [
+        "allergies"
+      ],
+      "symptoms": [
+        "urticaria",
+        "headache",
+        "tachycardia",
+        "palpitations"
+      ],
+      "claim_text": "For allergies (caused by foods, inhalants such as pollens and molds, or chemicals, and diagnosed by the pulse test, diet diary/challenge, and cytotoxic test), Wallach's approach is avoidance first, then autoimmune urine therapy (filtered urine given subcutaneously) plus: vitamin C to bowel tolerance; bioflavonoids (rutin, catechin, quercetin); vitamin A 300,000 IU per day as beta carotene; zinc 50 mg three times daily; essential fatty acids 1 tablespoon twice daily; and rotation diets.",
+      "verbatim": "bioflavonoids (rutin, catechin, quercetin);\n300,000 IU of vitamin A as beta carotene per\nday; zinc 50 mg t.i.d., essential fatty acids 1\ntbsp. b.i.d., rotation diets.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 166441
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T16:26:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000129",
+      "kind": "diagnostic_pattern",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "allergies"
+      ],
+      "symptoms": [
+        "allergic_shiners"
+      ],
+      "claim_text": "Allergic shiners -- the purplish-black discolorations under the lower eyelids -- are a reliable diagnostic sign of allergies; they appear within minutes of ingesting or inhaling an allergen and can take 12 hours to three days to fade after avoidance. Wallach notes their diagnostic value (for example in a hyperactive child, heart disease, or cancer); avoidance of the allergen is the only 'cure.'",
+      "verbatim": "are a good diagnostic tool (i.e. , allergic shiners\nin a hyperactive child, heart disease, cancer,\netc.). Avoidance of the allergen or allergens is\nthe only \"cure\" for allergic shiners.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 166932
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T16:26:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000130",
+      "kind": "protocol",
+      "essentials": [
+        "germanium",
+        "choline",
+        "vitamin-b1",
+        "vitamin-e"
+      ],
+      "other_substances": [
+        "hydergine",
+        "piracetam",
+        "vasopressin",
+        "centrophenoxine",
+        "lecithin",
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "colloidal-minerals"
+      ],
+      "conditions": [
+        "alzheimers"
+      ],
+      "symptoms": [],
+      "claim_text": "For Alzheimer's disease (progressive memory loss with later difficulties in arousal and motor function), Wallach advises avoiding aluminum (cookware, deodorants, soft drinks, and juices in aluminum cans) and a treatment of: germanium 5 ml intramuscularly every other day for 24 days, then oral germanium 150 mg twice daily; hydergine 6-12 mg per day; piracetam/choline 1.6 grams four times daily; vasopressin (Diapid) one whiff per nostril four times daily; centrophenoxine (Lucidril) 6.2-8.0 grams per day; lecithin (phosphatidyl choline) 2,500 mg three times daily; baseline supplements including colloidal minerals; betaine hydrochloride and pancreatic enzymes 75-200 mg three times daily; oral and intravenous hydrogen peroxide; vitamin B-1 200 mg three times daily; vitamin E 1200 IU daily; and intravenous chelation.",
+      "verbatim": "should include germanium IM 5 ml of stan-\ndard solution every other day for 24 days\nfollowed by oral germanium at 150 mg b.i.d.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 167370
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T16:26:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000131",
+      "kind": "protocol",
+      "essentials": [
+        "tin",
+        "omega-3",
+        "zinc"
+      ],
+      "other_substances": [
+        "interlipids",
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "minoxidil",
+        "retin-a"
+      ],
+      "conditions": [
+        "alopecia"
+      ],
+      "symptoms": [],
+      "claim_text": "For alopecia (hair loss -- male or female pattern baldness, or alopecia universalis), Wallach notes Minoxidil and Retin-A creams help some pattern baldness if used early and maintained, and that colloidal tin deficiency causes male pattern baldness in lab animals (Wallach himself regrew considerable hair using plant-derived liquid colloidal tin). Alopecia with eczema is often an essential fatty acid deficiency, responding to intravenous interlipids and/or oral flaxseed oil 1 tablespoon twice daily, zinc 50 mg three times daily, elimination of wheat and cow's milk, and betaine hydrochloride plus pancreatic enzymes 75-200 mg three times daily before meals.",
+      "verbatim": "Alopecia that occurs with\neczema is often caused by essential fatty acid\ndeficiency and will respond to IV interlipids\nand/ or oral flaxseed oil at the rate of 1 tbsp.\nb.i.d.; zinc at 50 mg t.i.d. Elimination of wheat\nand cow's milk from the diet will increase the\nrate of recovery. Betaine HC1 and pancreatic\nenzymes at 75-200 mg t.i.d. 15-20 minutes\nbefore meals are a must.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 168608
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T16:26:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000132",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b12"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "amblyopia"
+      ],
+      "symptoms": [],
+      "claim_text": "Amblyopia (a type of blindness) can be caused by vitamin B-12 deficiency or tobacco smoking. Wallach's protocol is vitamin B-12 intramuscularly at 1000 mcg per day for a total of 20,000 mcg, which usually effects a 'cure,' along with avoiding tobacco smoke.",
+      "verbatim": "caused by B-12 deficiency or tobacco smok-\ning. B-12 IM at a rate of 1000 mcg/day for a\ntotal of 20,000 mcg usually effects a",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 169022
+      },
+      "dose": {
+        "amount": 1000,
+        "unit": "mcg",
+        "period": "daily",
+        "form": "intramuscular injection",
+        "duration": "20,000 mcg total",
+        "for_condition": "amblyopia"
+      },
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T16:26:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000133",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "metronidazole"
+      ],
+      "conditions": [
+        "amebiasis"
+      ],
+      "symptoms": [],
+      "claim_text": "For amebiasis (amoebic dysentery caused by Entamoeba histolytica, diagnosed by finding the parasite in 3-6 stool samples), Wallach's treatment is symptomatic to relieve diarrhea and limit protein and electrolyte loss, with metronidazole as the drug of choice: 750 mg orally three times daily for 10 days in adults, and 12-17 mg per day three times daily orally in children.",
+      "verbatim": "Metronidazole at the rate of 750\nmg orally t.i.d. for 10 days for adults and 12-17\nmg/day t.i.d. orally for children",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 169695
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T16:26:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000134",
+      "kind": "protocol",
+      "essentials": [
+        "zinc",
+        "omega-3"
+      ],
+      "other_substances": [
+        "saffron",
+        "black-cohosh",
+        "squawroot",
+        "marigold"
+      ],
+      "conditions": [
+        "amenorrhea"
+      ],
+      "symptoms": [],
+      "claim_text": "For amenorrhea (absence or stopping of menstrual periods -- often from low body fat in athletes, dieters, and anorexics, where a 10-15 pound weight gain can restart the cycle), Wallach recommends zinc 50 mg three times daily to bring on the period, essential fatty acids as flaxseed oil 1 tablespoon three times daily, and herbal stimulants: saffron (Crocus sativus) as a tea, black cohosh or squawroot (Cimicifuga racemosa) as a fluid extract, and marigold (Calendula officinalis).",
+      "verbatim": "increased levels of zinc at a rate of 50 mg\nt.i.d. will result in onset of the \"period.\" Essen-\ntial fatty acids are very useful in the form of\nflaxseed oil at the rate of 1 tbsp. t.i.d. Herbal\nstimulus can be effected with saffron (Crocus\nsativus) as a tea, black cohosh or squawroot\n(Cimicifuga racemosa) as a fluid extract and\nmarigold (Calendula officinalis).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 170238
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T16:26:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000135",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "epinephrine"
+      ],
+      "conditions": [
+        "anaphylaxis"
+      ],
+      "symptoms": [],
+      "claim_text": "Anaphylaxis is an explosive allergic reaction (from hives to respiratory distress and vascular collapse) that can follow exposure to foods (e.g., shellfish), insect stings (e.g., bee stings), or drugs (e.g., penicillin), usually within 1-15 minutes. Avoidance is the best prevention; Wallach states that immediate injection of adrenaline (epinephrine) from a 'bee sting' kit is the treatment of choice and is often lifesaving.",
+      "verbatim": "Immediate injection with adrenaline (epineph-\nrine) from a \"bee sting\" kit is the treatment of\nchoice and, in many cases, will be lifesaving.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 170980
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T16:26:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000136",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "boric-acid",
+        "echinacea",
+        "hydrogen-peroxide"
+      ],
+      "conditions": [
+        "anal_abscess"
+      ],
+      "symptoms": [],
+      "claim_text": "Anal abscess and anal fissures are caused by constipation and passing large hard stools, often alongside hemorrhoids, producing painful red swellings near the anal opening. Wallach's approach: open them with a blade or by soaking in hot sitz baths of 3% boric acid; apply a poultice of echinacea (Echinacea angustifolia) directly to disinfect and bring the abscess to a point so it can be opened; then flush the opened abscess with 3% hydrogen peroxide to clean out the pus and disinfect the wound.",
+      "verbatim": "These\nmay be opened with a blade or by soaking in\nhot sitz baths of 3% boric acid. A poultice of\nechinacea (Echinacea angustifolia) may be\napplied directly to the abscess to disinfect and\nhelp to bring it to a \"point\" so it can be opened.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 171344
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T16:26:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

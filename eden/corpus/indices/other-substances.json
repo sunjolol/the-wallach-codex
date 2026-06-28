@@ -48,16 +48,20 @@
   },
   "betaine-hcl": {
     "display_name": "Betaine Hcl",
-    "claim_count": 2,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
-        "WAL-CLM-LETS-000123"
+        "WAL-CLM-LETS-000123",
+        "WAL-CLM-LETS-000130",
+        "WAL-CLM-LETS-000131"
       ]
     },
     "conditions_treated": [
       "achlorhydria",
-      "acne"
+      "acne",
+      "alopecia",
+      "alzheimers"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -76,16 +80,33 @@
       "rare-earths"
     ]
   },
-  "boric-acid": {
-    "display_name": "Boric Acid",
+  "black-cohosh": {
+    "display_name": "Black Cohosh",
     "claim_count": 1,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000119"
+        "WAL-CLM-LETS-000134"
       ]
     },
     "conditions_treated": [
-      "abscess"
+      "amenorrhea"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "boric-acid": {
+    "display_name": "Boric Acid",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000119",
+        "WAL-CLM-LETS-000136"
+      ]
+    },
+    "conditions_treated": [
+      "abscess",
+      "anal_abscess"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -104,16 +125,50 @@
       "rare-earths"
     ]
   },
-  "colloidal-minerals": {
-    "display_name": "Colloidal Minerals",
-    "claim_count": 1,
+  "catechin": {
+    "display_name": "Catechin",
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000122"
+        "WAL-CLM-LETS-000127",
+        "WAL-CLM-LETS-000128"
       ]
     },
     "conditions_treated": [
-      "achlorhydria"
+      "alcoholism",
+      "allergies"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "centrophenoxine": {
+    "display_name": "Centrophenoxine",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000130"
+      ]
+    },
+    "conditions_treated": [
+      "alzheimers"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "colloidal-minerals": {
+    "display_name": "Colloidal Minerals",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000122",
+        "WAL-CLM-LETS-000130"
+      ]
+    },
+    "conditions_treated": [
+      "achlorhydria",
+      "alzheimers"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -151,14 +206,31 @@
   },
   "echinacea": {
     "display_name": "Echinacea",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000119"
+        "WAL-CLM-LETS-000119",
+        "WAL-CLM-LETS-000136"
       ]
     },
     "conditions_treated": [
-      "abscess"
+      "abscess",
+      "anal_abscess"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "epinephrine": {
+    "display_name": "Epinephrine",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000135"
+      ]
+    },
+    "conditions_treated": [
+      "anaphylaxis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -264,6 +336,21 @@
       "lets-play-doctor"
     ]
   },
+  "hydergine": {
+    "display_name": "Hydergine",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000130"
+      ]
+    },
+    "conditions_treated": [
+      "alzheimers"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "hydrazine-sulfate": {
     "display_name": "Hydrazine Sulfate",
     "claim_count": 1,
@@ -281,16 +368,33 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
-        "WAL-CLM-LETS-000119"
+        "WAL-CLM-LETS-000119",
+        "WAL-CLM-LETS-000136"
       ]
     },
     "conditions_treated": [
       "abrasions",
-      "abscess"
+      "abscess",
+      "anal_abscess"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "interlipids": {
+    "display_name": "Interlipids",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000131"
+      ]
+    },
+    "conditions_treated": [
+      "alopecia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -354,6 +458,21 @@
       "rare-earths"
     ]
   },
+  "lecithin": {
+    "display_name": "Lecithin",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000130"
+      ]
+    },
+    "conditions_treated": [
+      "alzheimers"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "levamisol": {
     "display_name": "Levamisol",
     "claim_count": 1,
@@ -364,6 +483,21 @@
     },
     "conditions_treated": [
       "aids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "marigold": {
+    "display_name": "Marigold",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000134"
+      ]
+    },
+    "conditions_treated": [
+      "amenorrhea"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -386,6 +520,36 @@
       "rare-earths"
     ]
   },
+  "metronidazole": {
+    "display_name": "Metronidazole",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000133"
+      ]
+    },
+    "conditions_treated": [
+      "amebiasis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "minoxidil": {
+    "display_name": "Minoxidil",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000131"
+      ]
+    },
+    "conditions_treated": [
+      "alopecia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "paba": {
     "display_name": "Paba",
     "claim_count": 1,
@@ -403,14 +567,18 @@
   },
   "pancreatic-enzymes": {
     "display_name": "Pancreatic Enzymes",
-    "claim_count": 1,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000123"
+        "WAL-CLM-LETS-000123",
+        "WAL-CLM-LETS-000130",
+        "WAL-CLM-LETS-000131"
       ]
     },
     "conditions_treated": [
-      "acne"
+      "acne",
+      "alopecia",
+      "alzheimers"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -426,6 +594,21 @@
     },
     "conditions_treated": [
       "absence_attacks"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "piracetam": {
+    "display_name": "Piracetam",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000130"
+      ]
+    },
+    "conditions_treated": [
+      "alzheimers"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -448,6 +631,21 @@
       "lets-play-doctor"
     ]
   },
+  "quercetin": {
+    "display_name": "Quercetin",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000128"
+      ]
+    },
+    "conditions_treated": [
+      "allergies"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "radon": {
     "display_name": "Radon",
     "claim_count": 1,
@@ -461,6 +659,21 @@
     ],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "retin-a": {
+    "display_name": "Retin A",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000131"
+      ]
+    },
+    "conditions_treated": [
+      "alopecia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "ribavirin": {
@@ -478,6 +691,36 @@
       "lets-play-doctor"
     ]
   },
+  "rutin": {
+    "display_name": "Rutin",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000128"
+      ]
+    },
+    "conditions_treated": [
+      "allergies"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "saffron": {
+    "display_name": "Saffron",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000134"
+      ]
+    },
+    "conditions_treated": [
+      "amenorrhea"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "sagebrush": {
     "display_name": "Sagebrush",
     "claim_count": 1,
@@ -488,6 +731,21 @@
     },
     "conditions_treated": [
       "abscess"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "squawroot": {
+    "display_name": "Squawroot",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000134"
+      ]
+    },
+    "conditions_treated": [
+      "amenorrhea"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -538,6 +796,21 @@
     },
     "conditions_treated": [
       "aids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "vasopressin": {
+    "display_name": "Vasopressin",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000130"
+      ]
+    },
+    "conditions_treated": [
+      "alzheimers"
     ],
     "books_cited": [
       "lets-play-doctor"

@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_143 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_144 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 11:27 UTC-05:00 · round-close · knowledge/corpus
+Ch10 Materia Medica b17: 10 claims LETS-127..136 (ALCOHOLISM->ANAL ABSCESS; 9 protocol + 1 diagnostic ALLERGIC SHINERS). +6 conditions->223. 4 dose-safety .txt fixes; zoom-verified germanium 24 days + EFA 5mg-kept-faithful. kv126->127, claims 506->516, board 31/31, probe PASS.
+  ↳ AMBLYOPIA gets first Ch10 structured dose (B-12 1000 mcg/day IM). Render-first p83-84 with 600-DPI crops. betaine HC1 + phenylananine kept faithful (final sweep).
 
 ## 2026-06-28 11:08 UTC-05:00 · round-close · knowledge/corpus
 Ch10 Materia Medica b16: 9 tier-1 protocol claims LETS-118..126 (ABRASIONS->AIDS), one-per-condition model (Luneth-locked). +7 conditions; 2 dose-safety meg->mcg fixes. kv125->126, claims 497->506, board 31/31, knowledge probe PASS.
