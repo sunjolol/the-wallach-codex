@@ -8932,6 +8932,246 @@
       "extracted_at": "2026-06-28T19:18:01+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000222",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "vitamin-e",
+        "chromium",
+        "selenium",
+        "vitamin-b6"
+      ],
+      "other_substances": [
+        "edta-chelation",
+        "hydrogen-peroxide",
+        "ginseng",
+        "cayenne"
+      ],
+      "conditions": [
+        "intermittent_claudication"
+      ],
+      "symptoms": [],
+      "claim_text": "Intermittent claudication is cramping of the leg muscles after exercise from poor blood supply, almost always due to arteriosclerosis of the femoral and popliteal arteries (the pedal pulses are often weak or absent). Wallach's treatment is the base-line nutritional supplements, EDTA chelation therapy, intravenous hydrogen peroxide, vitamin C to bowel tolerance, vitamin E at 800-1,200 international units per day, chromium at 75-200 micrograms three times daily, selenium at 100-500 micrograms three times daily, vitamin B-6 at 100 mg twice daily, hydrotherapy, reflexology, massage, light exercise (walking, swimming), and herbs including ginseng (Panax spp.) and cayenne pepper (Capsicum minimum).",
+      "verbatim": "Treatment of intermittent claudication includes\nthe base line nutritional supplements, EDTA\nchelation therapy, IV hydrogen peroxide, vi-\ntamin C to bowel tolerance, vitamin E at 800-\n1,200 IU per day, chromium at 75-200 mcg\nt.i.d., selenium at 100-500 mcg t.i.d., B-6 at 100\nmg b.i.d., hydrotherapy, reflexology, massage\nand light exer-cise (i.e., walking, swimming,\netc.) and herbs including ginseng (Panax spp.)\nand cayenne pepper (Capsicum minimum).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 235919
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:23:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000223",
+      "kind": "protocol",
+      "essentials": [
+        "calcium",
+        "magnesium"
+      ],
+      "other_substances": [
+        "estrogen-patch",
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "ladys-mantle",
+        "motherwort",
+        "st-johns-wort"
+      ],
+      "conditions": [
+        "menopause"
+      ],
+      "symptoms": [],
+      "claim_text": "Menopause (the climacteric) is the natural cessation of ovarian function and menstruation, usually between ages 45-55, with hot flashes, sweating, nervousness, fatigue, depression, and insomnia when the adrenals and liver produce insufficient estrogen; osteoporosis is a common result of poorly managed menopause. Wallach frames it as needing support rather than treatment: transdermal estrogen patches (oral estrogens should NOT be taken with progesterone, which raises cancer-induction risk), a monthly liver flush, the base-line supplement program, calcium and magnesium at 2,000 mg and 1,000 mg per day, betaine hydrochloride and pancreatic enzymes at 75-200 mg three times daily before meals, and herbs including Lady's mantle (Alchemilla vulgaris), motherwort (Leonurus cardiaca), and St. John's wort (Hypericum perforatum).",
+      "verbatim": "Transdermal es-\ntrogen \"patches\" can be applied to the back or\nchest for a time release of hormones, oral\nestrogens should not be accompanied by pro-\ngesterone as they increase the cancer induc-\ntion risk; liver flush at least once per month,\nbase line supplement program, calcium and\nmagnesium at 2,000 mg and 1 ,000 mg per day\nand herbs to include Lady's mantle (Alchemilla\nvulgaris), motherwort (Leo nurus cardiaca)\nand St. John's wort (Hypericum perforatum).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 237314
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:23:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000224",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "flavonoids"
+      ],
+      "other_substances": [
+        "urine-therapy",
+        "blood-therapy"
+      ],
+      "conditions": [
+        "cluster_headaches"
+      ],
+      "symptoms": [],
+      "claim_text": "Cluster (histamine) headaches are related to allergic reactions and may occur alone or with other conditions including Chronic Fatigue Syndrome; the one-sided headache that comes on suddenly with debilitating pain is diagnostic. Triggers include foods and inhalant allergens (cigarette smoke, perfume, house dust). Wallach's treatment is the base-line supplement program, vitamin C to bowel tolerance, bioflavonoids at 150 mg three times daily, autoimmune urine and blood therapy, and avoidance or rotation of environmental and food allergens (tracked with pulse testing and a diet diary).",
+      "verbatim": "Treatment includes the use of the base line\nsupplement program, vitamin C to bowel\ntolerance, bioflavonoids at 150 mg t.i.d., auto-\nimmune urine and blood therapy and avoid-\nance of environ-mental allergens, avoidance\nor rotation of food allergens.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 238544
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:23:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000225",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "flavonoids",
+        "potassium"
+      ],
+      "other_substances": [
+        "garlic",
+        "echinacea",
+        "elderberry",
+        "white-willow"
+      ],
+      "conditions": [
+        "colds"
+      ],
+      "symptoms": [],
+      "claim_text": "The common cold (nasal catarrh, coryza) is caused by more than 100 different viruses (so no vaccine exists) and lasts 7-14 days regardless of therapy. Wallach's treatment is vitamin C to bowel tolerance, bioflavonoids at 150 mg three times daily, garlic gelatin capsules at 10 mg three times daily, the base-line supplement program, chicken rice soup (for protein to replace mucus losses, plus electrolytes — especially potassium), bed rest, avoiding chills, homeopathy, and a long list of herbs including European elder (Sambucus nigra), purple coneflower (Echinacea angustifolia), white willow (Salix alba), and cayenne pepper.",
+      "verbatim": "Treatment of the \"common cold\" should in-\nclude vitamin C to bowel tolerance,\nbioflavonoids at 150 mg t.i.d., garlic gelatin\ncapsules at 10 mg t.i.d., base line supplement\nprogram, chicken rice soup (proven by\nHarvard to be \"best cold therapy\") for protein\n(to replace that lost in the mucus — yes, mucus\nis protein similar to egg white) and electrolytes\n(especially potassium), bed rest, avoid chills,",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 239308
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:23:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000226",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b6"
+      ],
+      "other_substances": [
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "flaxseed-oil",
+        "dill"
+      ],
+      "conditions": [
+        "colic"
+      ],
+      "symptoms": [],
+      "claim_text": "Colic (severe belly pain) can be initiated by food allergies, low stomach acid (hypochlorhydria), and fermentation of unabsorbed nutrients producing painful gas — the 'belch, burp and bloat' syndrome (especially in babies). Wallach's treatment in adults is the base-line supplement program, betaine hydrochloride and pancreatic enzymes at 75-200 mg each three times daily 15 minutes before meals, and pulse testing for food allergies. In babies: pulse testing and diet diaries, pancreatic enzymes at 75-200 mg three times daily before meals, one to two drops of flaxseed oil after each meal, and vitamin B-6 at 10 mg twice daily; older children and adults may also use herbs such as dill (Peucedanum graveolens).",
+      "verbatim": "The treatment for colic in adults includes the\nbase line supplement program, betaine hy-\ndrochloride and pancreatic enzymes at 75-200\nmg each t.i.d. 15 minutes before meals, pulse\ntesting to determine presence of food aller-\ngies. In babies, pulse testing and diet diaries to\ndetermine offending foods, pancreatic en-\nzymes at 75-200 mg t.i.d. before meals (en-\nzymes may be constipating), one to two drops\nof flaxseed oil after each meal and B-6 at 10 mg\nb.i.d.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 241165
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:23:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000227",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "hydrogen-peroxide",
+        "aloe-vera",
+        "urine-therapy",
+        "blood-therapy"
+      ],
+      "conditions": [
+        "colitis"
+      ],
+      "symptoms": [],
+      "claim_text": "Colitis is an inflammation of the colon from stress, food allergies, infections, or low-fiber diets, with cramping, diarrhea (sometimes alternating with constipation), bloody mucus, and forms such as ulcerative colitis and diverticulitis. Wallach's treatment is cathartics or antidiarrheals as needed, high-fiber meals (potato, well-cooked oat bran, multi-grain breads) while avoiding raw carrots, peanuts, and corn the first week, pulse testing and a rotation diet plus autoimmune urine and blood therapy for food allergies, at least eight glasses of water daily and four to six cups of green leafy vegetables (preferably steamed), oral hydrogen peroxide (as SuperOxy Plus) 1 ounce twice daily, and aloe powder (Aloe vera) at 65-300 mg per day.",
+      "verbatim": "drink a minimum of eight glasses of\nwater each day as well as four to six cups full\nof green leafy vegetables (i.e., spinach, cab-\nbage, etc.) preferably steamed or cooked at\nthe start of therapy, oral hydrogen peroxide\n(as SuperOxy Plus) 1 oz. b.i.d. and aloe pow-\nder (Aloe vera) at 65-300 mg per day.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 242332
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:23:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

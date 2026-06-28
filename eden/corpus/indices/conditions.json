@@ -2696,6 +2696,89 @@
       "rare-earths"
     ]
   },
+  "cluster_headaches": {
+    "display_name": "Cluster Headaches",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000224"
+      ]
+    },
+    "essentials_involved": [
+      "flavonoids",
+      "vitamin-c"
+    ],
+    "other_substances_involved": [
+      "blood-therapy",
+      "urine-therapy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "colds": {
+    "display_name": "Colds",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000225"
+      ]
+    },
+    "essentials_involved": [
+      "flavonoids",
+      "potassium",
+      "vitamin-c"
+    ],
+    "other_substances_involved": [
+      "echinacea",
+      "elderberry",
+      "garlic",
+      "white-willow"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "colic": {
+    "display_name": "Colic",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000226"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b6"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "dill",
+      "flaxseed-oil",
+      "pancreatic-enzymes"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "colitis": {
+    "display_name": "Colitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000227"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "aloe-vera",
+      "blood-therapy",
+      "hydrogen-peroxide",
+      "urine-therapy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "collagen_disease": {
     "display_name": "Collagen Disease",
     "claim_count": 1,
@@ -4283,6 +4366,31 @@
       "rare-earths"
     ]
   },
+  "intermittent_claudication": {
+    "display_name": "Intermittent Claudication",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000222"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "selenium",
+      "vitamin-b6",
+      "vitamin-c",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "cayenne",
+      "edta-chelation",
+      "ginseng",
+      "hydrogen-peroxide"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "ischemic_heart_disease": {
     "display_name": "Ischemic Heart Disease",
     "claim_count": 1,
@@ -4688,7 +4796,7 @@
   },
   "menopause": {
     "display_name": "Menopause",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000068",
@@ -4698,7 +4806,8 @@
         "WAL-CLM-DDDL-000091"
       ],
       "protocols": [
-        "WAL-CLM-DDDL-000092"
+        "WAL-CLM-DDDL-000092",
+        "WAL-CLM-LETS-000223"
       ]
     },
     "essentials_involved": [
@@ -4706,9 +4815,17 @@
       "magnesium",
       "vitamin-d"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "estrogen-patch",
+      "ladys-mantle",
+      "motherwort",
+      "pancreatic-enzymes",
+      "st-johns-wort"
+    ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "lets-play-doctor"
     ]
   },
   "migraine": {

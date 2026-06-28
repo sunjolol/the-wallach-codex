@@ -72,18 +72,20 @@
   },
   "aloe-vera": {
     "display_name": "Aloe Vera",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000154",
         "WAL-CLM-LETS-000164",
-        "WAL-CLM-LETS-000175"
+        "WAL-CLM-LETS-000175",
+        "WAL-CLM-LETS-000227"
       ]
     },
     "conditions_treated": [
       "bedsores",
       "bleeding_gums",
-      "burns"
+      "burns",
+      "colitis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -217,7 +219,7 @@
   },
   "betaine-hcl": {
     "display_name": "Betaine Hcl",
-    "claim_count": 11,
+    "claim_count": 13,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -230,7 +232,9 @@
         "WAL-CLM-LETS-000147",
         "WAL-CLM-LETS-000165",
         "WAL-CLM-LETS-000171",
-        "WAL-CLM-LETS-000172"
+        "WAL-CLM-LETS-000172",
+        "WAL-CLM-LETS-000223",
+        "WAL-CLM-LETS-000226"
       ]
     },
     "conditions_treated": [
@@ -246,7 +250,9 @@
       "atopic_asthma",
       "bloating",
       "brittle_nails",
-      "bronchitis"
+      "bronchitis",
+      "colic",
+      "menopause"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -282,18 +288,22 @@
   },
   "blood-therapy": {
     "display_name": "Blood Therapy",
-    "claim_count": 3,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000201",
         "WAL-CLM-LETS-000203",
-        "WAL-CLM-LETS-000221"
+        "WAL-CLM-LETS-000221",
+        "WAL-CLM-LETS-000224",
+        "WAL-CLM-LETS-000227"
       ]
     },
     "conditions_treated": [
       "candidiasis",
       "cardiac_arrhythmia",
-      "chronic_fatigue_syndrome"
+      "chronic_fatigue_syndrome",
+      "cluster_headaches",
+      "colitis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -432,6 +442,21 @@
     "conditions_treated": [
       "alcoholism",
       "allergies"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "cayenne": {
+    "display_name": "Cayenne",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000222"
+      ]
+    },
+    "conditions_treated": [
+      "intermittent_claudication"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -723,6 +748,21 @@
       "lets-play-doctor"
     ]
   },
+  "dill": {
+    "display_name": "Dill",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000226"
+      ]
+    },
+    "conditions_treated": [
+      "colic"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "dimethyl-glycine": {
     "display_name": "Dimethyl Glycine",
     "claim_count": 1,
@@ -783,18 +823,20 @@
   },
   "echinacea": {
     "display_name": "Echinacea",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000119",
         "WAL-CLM-LETS-000136",
-        "WAL-CLM-LETS-000167"
+        "WAL-CLM-LETS-000167",
+        "WAL-CLM-LETS-000225"
       ]
     },
     "conditions_treated": [
       "abscess",
       "anal_abscess",
-      "boils"
+      "boils",
+      "colds"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -802,14 +844,15 @@
   },
   "edta-chelation": {
     "display_name": "Edta Chelation",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000139",
         "WAL-CLM-LETS-000144",
         "WAL-CLM-LETS-000145",
         "WAL-CLM-LETS-000146",
-        "WAL-CLM-LETS-000211"
+        "WAL-CLM-LETS-000211",
+        "WAL-CLM-LETS-000222"
       ]
     },
     "conditions_treated": [
@@ -818,7 +861,23 @@
       "arteriosclerosis",
       "arthritis",
       "cerebrovascular_disease",
+      "intermittent_claudication",
       "rheumatoid_arthritis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "elderberry": {
+    "display_name": "Elderberry",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000225"
+      ]
+    },
+    "conditions_treated": [
+      "colds"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -836,6 +895,21 @@
     "conditions_treated": [
       "anaphylaxis",
       "bee_stings"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "estrogen-patch": {
+    "display_name": "Estrogen Patch",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000223"
+      ]
+    },
+    "conditions_treated": [
+      "menopause"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -895,14 +969,16 @@
   },
   "flaxseed-oil": {
     "display_name": "Flaxseed Oil",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000123"
+        "WAL-CLM-LETS-000123",
+        "WAL-CLM-LETS-000226"
       ]
     },
     "conditions_treated": [
-      "acne"
+      "acne",
+      "colic"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -950,19 +1026,21 @@
   },
   "garlic": {
     "display_name": "Garlic",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000126",
         "WAL-CLM-LETS-000145",
-        "WAL-CLM-LETS-000147"
+        "WAL-CLM-LETS-000147",
+        "WAL-CLM-LETS-000225"
       ]
     },
     "conditions_treated": [
       "aids",
       "arteriosclerosis",
       "asthma",
-      "atopic_asthma"
+      "atopic_asthma",
+      "colds"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -998,6 +1076,21 @@
       "achlorhydria",
       "anorexia",
       "anorexia_nervosa"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "ginseng": {
+    "display_name": "Ginseng",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000222"
+      ]
+    },
+    "conditions_treated": [
+      "intermittent_claudication"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1160,7 +1253,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 16,
+    "claim_count": 18,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
@@ -1178,7 +1271,9 @@
         "WAL-CLM-LETS-000177",
         "WAL-CLM-LETS-000201",
         "WAL-CLM-LETS-000211",
-        "WAL-CLM-LETS-000221"
+        "WAL-CLM-LETS-000221",
+        "WAL-CLM-LETS-000222",
+        "WAL-CLM-LETS-000227"
       ]
     },
     "conditions_treated": [
@@ -1197,7 +1292,9 @@
       "candidiasis",
       "cerebrovascular_disease",
       "chronic_fatigue_syndrome",
+      "colitis",
       "dental_calculus",
+      "intermittent_claudication",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -1322,6 +1419,21 @@
     },
     "conditions_treated": [
       "candidiasis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "ladys-mantle": {
+    "display_name": "Ladys Mantle",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000223"
+      ]
+    },
+    "conditions_treated": [
+      "menopause"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1581,6 +1693,21 @@
       "lets-play-doctor"
     ]
   },
+  "motherwort": {
+    "display_name": "Motherwort",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000223"
+      ]
+    },
+    "conditions_treated": [
+      "menopause"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "mullein": {
     "display_name": "Mullein",
     "claim_count": 1,
@@ -1674,7 +1801,7 @@
   },
   "pancreatic-enzymes": {
     "display_name": "Pancreatic Enzymes",
-    "claim_count": 8,
+    "claim_count": 10,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000123",
@@ -1684,7 +1811,9 @@
         "WAL-CLM-LETS-000147",
         "WAL-CLM-LETS-000165",
         "WAL-CLM-LETS-000171",
-        "WAL-CLM-LETS-000173"
+        "WAL-CLM-LETS-000173",
+        "WAL-CLM-LETS-000223",
+        "WAL-CLM-LETS-000226"
       ]
     },
     "conditions_treated": [
@@ -1697,7 +1826,9 @@
       "atopic_asthma",
       "bloating",
       "brittle_nails",
-      "bruises"
+      "bruises",
+      "colic",
+      "menopause"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2091,6 +2222,21 @@
       "lets-play-doctor"
     ]
   },
+  "st-johns-wort": {
+    "display_name": "St Johns Wort",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000223"
+      ]
+    },
+    "conditions_treated": [
+      "menopause"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "sweet-cicely": {
     "display_name": "Sweet Cicely",
     "claim_count": 1,
@@ -2206,18 +2352,22 @@
   },
   "urine-therapy": {
     "display_name": "Urine Therapy",
-    "claim_count": 3,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000201",
         "WAL-CLM-LETS-000203",
-        "WAL-CLM-LETS-000221"
+        "WAL-CLM-LETS-000221",
+        "WAL-CLM-LETS-000224",
+        "WAL-CLM-LETS-000227"
       ]
     },
     "conditions_treated": [
       "candidiasis",
       "cardiac_arrhythmia",
-      "chronic_fatigue_syndrome"
+      "chronic_fatigue_syndrome",
+      "cluster_headaches",
+      "colitis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2282,6 +2432,21 @@
     "conditions_treated": [
       "athletes_foot",
       "burns"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "white-willow": {
+    "display_name": "White Willow",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000225"
+      ]
+    },
+    "conditions_treated": [
+      "colds"
     ],
     "books_cited": [
       "lets-play-doctor"
