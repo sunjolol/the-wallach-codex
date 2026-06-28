@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_146 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_147 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 11:50 UTC-05:00 · note · chronicle/session-close
+SESSION 14 pause: Ch10 Materia Medica mining underway (batches 1-4, ABRASIONS->AUTISM, 34 protocol claims, kv129/531 claims/229 conditions, board 31/31). Handoff rolled to SESSION 14. NEXT=BACKACHE/p89 (watch p89-90 scramble; lines shifted -68). Recommending genesis reboot.
+  ↳ Ch10 Model A locked; source-layer doctrine clarified. b19 restored the scrambled p87-88 region. Paused at a clean boundary to avoid rushing a dose-critical scramble-restoration. 3 memories banked.
 
 ## 2026-06-28 11:45 UTC-05:00 · round-close · knowledge/corpus
 Ch10 Materia Medica b19: 7 protocol claims (ARTERIOSCLEROSIS->AUTISM), +5 conditions->229. MAJOR render-first drop-restoration: a 2-col OCR scramble on p87-88 dropped the arthritis table+treatment + asthma intro -> restored L4739-4832. kv128->129, claims 524->531, board 31/31.
