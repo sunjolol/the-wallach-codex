@@ -1,91 +1,70 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_8 claim(s) drafted 2026-06-28T13:06:15+00:00. Review then run corpus_seal.py to promote._
+_6 claim(s) drafted 2026-06-28T13:17:23+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×4, mechanism×4
+Kinds: definition×4, mechanism×2
 
-### WAL-CLM-LETS-000104 · definition
+### WAL-CLM-LETS-000112 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach describes herbal medicine as an ancient system of medicine that uses plants to prevent and cure disease. He notes that Traditional Chinese medicine, Ayurvedic medicine, American Indian medicine, American folk medicine, Eclectic medicine, and naturopathic medicine all have strong roots in herbal medicine, and traces its history back to the Chinese (large pharmacopeias around 3000 BC), the Persians (plants used medicinally some 6,000 years ago), the Assyrian king Asurbipal (a list of 250 plant drugs around 2500 BC), and Nicholas Culpeper's 'Complete Herbal' (1653).
-- **verbatim** (offset 110738): “Herbal medicine is an ancient system
-of medicine that uses plants to prevent and
-cure disease. Traditional Chinese medicine,
-ayurvedic medicine, American Indian medi-
-cine, American folk medicine, Eclectic medi-
-cine and naturopathic medicine all have strong
-roots in herbal medicine.”
+- **claim:** Wallach describes homeopathy as a widely practiced medical art with two basic principles: (1) 'let like be cured by like' and (2) the principle of 'minimum dose.' Agents (herbs, chemicals, etc.) that produce certain symptoms in normal healthy people ('proving') are then used to cure diseases that produce those same 'proved' symptoms. (Scope note: homeopathy is a homeopathy-class system using highly diluted preparations; included here as Wallach's descriptive account of the modality, not as a dosing protocol.)
+- **verbatim** (offset 112158): “Homeopathy is a widely practiced
+medical art that has two basic principles:
+1) "let like be cured by like"
+2) principle of "minimum dose"
+Agents (herbs, chemicals, etc.) produce cer-
+tain symptoms in normal healthy humans
+("proved") - these agents are then used to cure
+diseases that produce the "proved" symp-
+toms.”
 
-### WAL-CLM-LETS-000105 · mechanism
+### WAL-CLM-LETS-000113 · mechanism
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach notes that even today more than thirty percent of 'orthodox' pharmaceuticals are derived from herbal compounds (for example digitalis and foxglove, and vincristine, a cancer therapy from the Madagascar periwinkle). He cites the seventeenth-century 'Doctrine of Signatures' (the theory that a plant or plant part resembling a human organ was a 'God-given clue' to its medicinal value) and says herbal medicines have the advantages of relative safety and thousands of years of experience.
-- **verbatim** (offset 111299): “Even today, more than
-thirty percent of today's "orthodox" pharma-
-ceuticals are derived from herbal compounds
-(i.e., digitalis, foxglove, and vincristine - a CA
-therapy from the Madagascar periwinkle).”
+- **claim:** Wallach recounts that Dr. Samuel Hahnemann, a physician from Leipzig, Germany, 'proved' that Cinchona bark (a malaria cure of the day) gave malaria-like symptoms to healthy people, and went on to 'prove' hundreds of medications and substances. Hahnemann found that very often the more dilute the preparation, the more dramatic the clinical effect — a long-controversial observation that Wallach notes a 1988 article in Nature magazine supported. Homeopathic dilutions are expressed as 'potencies' on decimal/centesimal scales (e.g. 1X/2X, 1C/2C, with European 1D/2D designations); at high dilutions (about 12C or 24X) not a single molecule of the original substance is likely to remain (Avogadro's Law).
+- **verbatim** (offset 112475): “Dr. Samuel Hahnemann, a physician
+from Leipzig, Germany, "proved" that Cin-
+chona bark (a malaria cure of the day) gave
+malaria symptoms to healthy people.
+Hahnemann went on to "prove" hundreds of
+medications and substances.”
 
-### WAL-CLM-LETS-000106 · definition
+### WAL-CLM-LETS-000114 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach describes hydrotherapy as a healing art that began in Roman times and is widely used today by all forms of healing arts, including 'orthodox' medicine. Medicinal baths take many forms — from sitz baths for hemorrhoids and whirlpool for muscle injuries to mineral baths for arthritis — and insurance companies will often pay for some form of hydrotherapy if it is prescribed by a licensed physician of any healing art.
-- **verbatim** (offset 113864): “Hydrotherapy began in Roman times
-and is widely used today by all forms of
-healing arts including "orthodox" medicine.
-The medicinal baths take many forms from
-"sitz" baths for hemorrhoids, whirlpool for
-muscle injuries to mineral baths for arthritis.
-Many times insurance companies will pay for
-some form of hydrotherapy if it is prescribed
-by a licensed physician of any healing art.”
+- **claim:** Wallach describes naturopathy, practiced by naturopathic physicians (N.D.), as distinguished by its underlying principle — FIRST DO NO HARM. Naturopathic medicine recognizes the body's inherent healing ability and emphasizes the prevention of disease. Its scope of practice varies by state but, as taught, covers the full practice of medicine except major surgery and most prescription ('legend'/allopathic) drugs — including natural hygiene, botanical (herbal) medicine, physical medicine (hydrotherapy, heat, cold, manipulation), homeopathy, counseling, gynecology/obstetrics (natural childbirth), minor surgery, public health, immunization, and laboratory/clinical diagnosis. Wallach notes it is claimed Hippocrates was the father of modern naturopathic medicine since he was an herbalist.
+- **verbatim** (offset 126799): “Naturopathy is practiced by
+naturopathic physicians (N.D.). What distin-
+guishes naturopathic medicine is that its "prac-
+tice" emerges from its underlying principle -
+FIRST DO NO HARM. Naturopathic medicine
+recognizes an inherent healing ability of the
+body. Naturopathic physicians emphasize
+the prevention of disease.”
 
-### WAL-CLM-LETS-000107 · mechanism
-- **essentials:** — · **conditions:** arthritis, hemorrhoids, edema, food_allergy, liver_disease, heavy_metal_toxicity, infected_wounds · **symptoms:** constipation
-- **claim:** Wallach lists the forms hydrotherapy takes and what each is used for: cold bath reduces swelling; hot bath relieves soreness and improves circulation for chronic diseases and injuries; mineral bath for chronic disease such as arthritis; steam bath to detoxify heavy metals; sitz bath for hemorrhoids; epsom salt bath produces sweating, relieves edema and soreness, and cleans infected wounds; water fast for detoxification of food allergies (and as a prelude to diagnosing them); colonic irrigation for constipation and to detoxify patients with any chronic disease or liver ailment (infectious hepatitis being an exception); and 'knipping' — walking or jogging in knee-deep lake or ocean water to stimulate circulation and the immune system.
-- **verbatim** (offset 114293): “1) cold bath - reduces swelling
-2) hot bath - relieves soreness
-and improves circulation for
-chronic diseases and injuries
-3) mineral bath - for chronic
-disease - i.e., arthritis
-4) steam bath - detox heavy metals
-5) sitz bath - hemorrhoids
-6) epsom salt bath - produces”
+### WAL-CLM-LETS-000115 · definition
+- **essentials:** — · **conditions:** tuberculosis · **symptoms:** —
+- **claim:** Wallach recounts that macrobiotics originated in Japan in 1946, created by George Ohsawa, who developed the healing art to heal himself of tuberculosis (which he did) before opening a macrobiotic healing center in Hiyoshi, Japan, teaching from 1946 to 1952 and then taking a world lecture tour (Africa, India, Europe, the United States). Ohsawa taught a philosophy of life and eating habits meant to unify people through health practices.
+- **verbatim** (offset 124038): “Macrobiotics originated in Japan in
+1946. George Ohsawa created this healing art
+to heal himself of tuberculosis (which he
+did!!); after curing himself, he opened up a
+macrobiotic healing center in Hiyoshi, Japan”
 
-### WAL-CLM-LETS-000108 · definition
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach describes negative ion therapy as the use of negatively charged air particles to prevent and cure disease. Sources include 'negative ion generators' for home and office and spending time in forests, mountains, and at the seashore for 'free' supplies. Pure outside air holds about 300-1,000 negatively charged ions per cubic meter (higher at the beach), while air-conditioned office or classroom air typically has only 150-500. He notes that excessive levels of positive ions in the air produce anxiety, depression, and restlessness.
-- **verbatim** (offset 128455): “Negative ion therapy is the use of
-negatively charged air particles to prevent and
-cure disease. Sources of negative ions include
-"negative ion generators" for home and office
-use and frequenting forests, mountains and
-seashores for "free" supplies.”
+### WAL-CLM-LETS-000116 · mechanism
+- **essentials:** — · **conditions:** food_allergy, diabetes, celiac_disease · **symptoms:** —
+- **claim:** Wallach explains that macrobiotics is based on wholesome behavior and eating habits, with macrobiotic philosophy maintaining that all disease and illness is caused by an imbalance of 'yin' (feminine; drinks, fruit, sweet/sour/hot flavors, green/blue/purple) and 'yang' (masculine; meat, cereals, some vegetables, hard/dense, orange/yellow). The macrobiotic diet (popularly the 'brown rice' diet) has many reported successes with food allergies, emotional problems, chronic diseases such as diabetes, and increased health benefit for individuals with grain sensitivity (celiac disease) when wheat is eliminated and grains rebuilt to trace minerals, vitamins, and essential fatty acids.
+- **verbatim** (offset 124484): “Macrobiotics is based on wholesome
+behavior and eating habits. Macrobiotic phi-
+losophy maintains that all disease and illness
+is caused by an imbalance of "yin" and "yang"”
 
-### WAL-CLM-LETS-000109 · mechanism
-- **essentials:** — · **conditions:** asthma, respiratory_disease, cystic_fibrosis, allergies · **symptoms:** —
-- **claim:** Wallach lists six effects of negative ions: they (1) reduce heart rate and blood pressure, (2) increase respiratory volume, (3) increase ciliary beat in the respiratory epithelium, (4) increase the efficiency of the endocrine glands, (5) normalize brain rhythm, and (6) reverse the effects of positive ions. He says negative ion generators are particularly good for patients with inhalant allergies, asthma, respiratory disease, and cystic fibrosis, with two to four treatments per day of 45 minutes each (or overnight use) being typical.
-- **verbatim** (offset 128999): “Negative ions 1) reduce heart rate and
-BP, 2) increase respiratory volume, 3) increase
-ciliary beat in respiratory epithelium, 4) in-
-crease efficiency of endocrine glands, 5) nor-
-malize brain rhythm, 6) reverse effects of
-positive ions.”
-
-### WAL-CLM-LETS-000110 · definition
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach describes urine therapy as a method of improving a patient's immune system by injecting the patient's own urine back into him. He says the basis is the same principle the 'modern' allergist uses when injecting allergens to 'treat' allergies, that the technique is simple and can be done at home or via a naturopathic physician (N.D.), chiropractor (D.C.), or osteopath (D.O.), and that medical-doctor allergists used the technique for 50 years until pharmaceutical companies found they could make money with prepared allergens.
-- **verbatim** (offset 131638): “Urine therapy is a method of improv-
-ing the patients immune system by injecting
-his own urine back into him. The basis of the
-therapy is exactly the same as the "modern"
-allergist uses when he injects allergens into the
-patient to "treat" allergies.”
-
-### WAL-CLM-LETS-000111 · mechanism
-- **essentials:** — · **conditions:** allergies, asthma, migraine, arthritis, cancer · **symptoms:** —
-- **claim:** Wallach explains how urine therapy is performed: the patient's urine is centrifuged and then filtered through a 'millipore' filter to remove any cells and bacteria, after which five to ten milliliters are injected subcutaneously (any burning can be eliminated by adding procaine to the filtered urine). He states the urine injection technique is very useful for allergies, asthma, migraine headache, and arthritis, and that a nonspecific increase in immune capacity has been recorded in cancer patients given urine therapy.
-- **verbatim** (offset 132514): “The urine injection technique is very
-useful for allergies, asthma, migraine head-
-ache and arthritis. A nonspecific increase in
-immune capacity has been recorded in cancer
-patients given urine therapy.”
+### WAL-CLM-LETS-000117 · definition
+- **essentials:** — · **conditions:** common_cold, alcoholism, osteoarthritis, schizophrenia, depression, food_allergy · **symptoms:** —
+- **claim:** Wallach describes megavitamin therapy as one of the major friction points between 'orthodox' medical philosophy and the alternative healing arts. The 'megavitamin theory' was created in 1968 and became the center of what Dr. Linus Pauling (a double Nobel Prize winner) called 'orthomolecular medicine'; Dr. Abram Hoffer then created 'orthomolecular psychiatry.' Pauling and Hoffer used vitamins at 'pharmacologic' or 'therapeutic' ('mega') levels for a variety of conditions — including colds, alcoholism, hyperactivity, drug addiction, osteoarthritis, neuritis, schizophrenia, depression, various psychoses, and food allergies — with what they reported as excellent results, while the orthodox community declined to endorse the approach. (Note: these are Pauling and Hoffer's orthomolecular megadose protocols, presented here as Wallach's descriptive account of the modality — they are not Wallach's own dosing targets, and the specific megadoses are not surfaced as recommendations.)
+- **verbatim** (offset 125604): “Megavitamin therapy is one of the
+major friction points between "orthodox"
+medical philosophy and alternative healing
+arts. The "megavitamin theory" was created in
+1968 and was the center of what Dr. Linus
+Pauling (double Nobel Prize winner) called
+"orthomolecular medicine." Dr. Abram Hoffer
+then created "orthomolecular psychiatry."”
 
