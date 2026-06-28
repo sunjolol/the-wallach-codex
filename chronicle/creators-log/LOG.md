@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_128 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_129 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-27 22:44 UTC-05:00 · session-end · eden/corpus
+SESSION 11 close — Ch5/Ch6 diamonds + Ch7 SEARCH-CORPUS PIVOT (light therapy + structural modalities, LETS-078..092). Locked source-correction, search-corpus, spiritual-vs-mystical, proactive-partner + render-first/restore-dropped method. corpus 472, kv 119.
+  ↳ Arc of SESSION 11: (1) b9 Ch5/Ch6 prose diamonds. (2) source-correction policy ruled+codified. (3) b10 Ch7 macrobiotic/celiac diamond + initial over-skip. (4) MAJOR: SEARCH-CORPUS PIVOT — corpus has a 2nd consumer (offline LLM search); capture Wallach modality/general-guidance; case-by-case inclusion; spiritual-vs-mystical axis; proactive-partner mandate. (5) b11/b11b light therapy in full + benefit/condition pill format + completeness check. (6) b12 hands-on/structural modalities. (7) search-preview widget. (8) discovered OCR DROPS whole sections on table/figure pages (p53) -> render-first/restore method ruled+codified; spot-check confirmed Table 6-1/Fig 8-1 complete; aromatherapy added. Board 30/30 throughout, all pushed. NEXT: b13 render-first (restore p53; color/faith/ayurvedic/aromatherapy), then b14/b15, then Ch10.
 
 ## 2026-06-27 22:09 UTC-05:00 · round-close · eden/corpus
 LPD b12 — Ch7 search corpus, hands-on/structural: chiropractic (def+mech), osteopathy, reflexology, Rolfing. 5 claims LETS-088..092, search-topic + benefit tags. Fixed 4 glued-word OCR errors (clean-as-we-touch).
