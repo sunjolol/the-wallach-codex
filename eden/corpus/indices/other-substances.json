@@ -168,6 +168,21 @@
       "lets-play-doctor"
     ]
   },
+  "amino-acids": {
+    "display_name": "Amino Acids",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000253"
+      ]
+    },
+    "conditions_treated": [
+      "dropsy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "anise": {
     "display_name": "Anise",
     "claim_count": 1,
@@ -245,6 +260,19 @@
       "lets-play-doctor"
     ]
   },
+  "asparagus": {
+    "display_name": "Asparagus",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-LETS-000250"
+      ]
+    },
+    "conditions_treated": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "b-complex": {
     "display_name": "B Complex",
     "claim_count": 4,
@@ -276,6 +304,21 @@
     },
     "conditions_treated": [
       "diarrhea"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "bayberry": {
+    "display_name": "Bayberry",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000252"
+      ]
+    },
+    "conditions_treated": [
+      "vaginitis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -482,6 +525,32 @@
       "lets-play-doctor"
     ]
   },
+  "broom": {
+    "display_name": "Broom",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-LETS-000250"
+      ]
+    },
+    "conditions_treated": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "broom-corn": {
+    "display_name": "Broom Corn",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-LETS-000250"
+      ]
+    },
+    "conditions_treated": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "buckbean": {
     "display_name": "Buckbean",
     "claim_count": 1,
@@ -547,14 +616,16 @@
   },
   "canadian-fleabane": {
     "display_name": "Canadian Fleabane",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000246"
+        "WAL-CLM-LETS-000246",
+        "WAL-CLM-LETS-000253"
       ]
     },
     "conditions_treated": [
-      "diabetes"
+      "diabetes",
+      "dropsy"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -841,6 +912,21 @@
       "lets-play-doctor"
     ]
   },
+  "colonics": {
+    "display_name": "Colonics",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000251"
+      ]
+    },
+    "conditions_treated": [
+      "diverticulitis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "coltsfoot": {
     "display_name": "Coltsfoot",
     "claim_count": 1,
@@ -995,19 +1081,21 @@
   },
   "dietary-fiber": {
     "display_name": "Dietary Fiber",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000231",
         "WAL-CLM-LETS-000238",
         "WAL-CLM-LETS-000248",
-        "WAL-CLM-LETS-000249"
+        "WAL-CLM-LETS-000249",
+        "WAL-CLM-LETS-000251"
       ]
     },
     "conditions_treated": [
       "constipation",
       "crohns_disease",
       "diarrhea",
+      "diverticulitis",
       "weight_loss"
     ],
     "books_cited": [
@@ -1346,14 +1434,16 @@
   },
   "foxglove": {
     "display_name": "Foxglove",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000229"
+        "WAL-CLM-LETS-000229",
+        "WAL-CLM-LETS-000253"
       ]
     },
     "conditions_treated": [
-      "congestive_heart_failure"
+      "congestive_heart_failure",
+      "dropsy"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1415,17 +1505,19 @@
   },
   "gentian": {
     "display_name": "Gentian",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
-        "WAL-CLM-LETS-000140"
+        "WAL-CLM-LETS-000140",
+        "WAL-CLM-LETS-000255"
       ]
     },
     "conditions_treated": [
       "achlorhydria",
       "anorexia",
-      "anorexia_nervosa"
+      "anorexia_nervosa",
+      "dumping_syndrome"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1527,16 +1619,18 @@
   },
   "hawthorn": {
     "display_name": "Hawthorn",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000139",
-        "WAL-CLM-LETS-000229"
+        "WAL-CLM-LETS-000229",
+        "WAL-CLM-LETS-000253"
       ]
     },
     "conditions_treated": [
       "angina",
-      "congestive_heart_failure"
+      "congestive_heart_failure",
+      "dropsy"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1624,7 +1718,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 21,
+    "claim_count": 22,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
@@ -1647,7 +1741,8 @@
         "WAL-CLM-LETS-000227",
         "WAL-CLM-LETS-000230",
         "WAL-CLM-LETS-000234",
-        "WAL-CLM-LETS-000239"
+        "WAL-CLM-LETS-000239",
+        "WAL-CLM-LETS-000252"
       ]
     },
     "conditions_treated": [
@@ -1672,7 +1767,8 @@
       "cuts",
       "dental_calculus",
       "intermittent_claudication",
-      "rheumatoid_arthritis"
+      "rheumatoid_arthritis",
+      "vaginitis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1820,6 +1916,21 @@
       "lets-play-doctor"
     ]
   },
+  "kidney-bean": {
+    "display_name": "Kidney Bean",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000253"
+      ]
+    },
+    "conditions_treated": [
+      "dropsy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "krypton": {
     "display_name": "Krypton",
     "claim_count": 1,
@@ -1835,14 +1946,16 @@
   },
   "lactobacillus-acidophilus": {
     "display_name": "Lactobacillus Acidophilus",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000201"
+        "WAL-CLM-LETS-000201",
+        "WAL-CLM-LETS-000252"
       ]
     },
     "conditions_treated": [
-      "candidiasis"
+      "candidiasis",
+      "vaginitis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1974,14 +2087,16 @@
   },
   "lily-of-the-valley": {
     "display_name": "Lily Of The Valley",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000229"
+        "WAL-CLM-LETS-000229",
+        "WAL-CLM-LETS-000253"
       ]
     },
     "conditions_treated": [
-      "congestive_heart_failure"
+      "congestive_heart_failure",
+      "dropsy"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2204,6 +2319,21 @@
       "lets-play-doctor"
     ]
   },
+  "nettle": {
+    "display_name": "Nettle",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000253"
+      ]
+    },
+    "conditions_treated": [
+      "dropsy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "nitroglycerine": {
     "display_name": "Nitroglycerine",
     "claim_count": 1,
@@ -2358,14 +2488,31 @@
   },
   "parsley": {
     "display_name": "Parsley",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000153"
+        "WAL-CLM-LETS-000153",
+        "WAL-CLM-LETS-000253"
       ]
     },
     "conditions_treated": [
-      "bad_breath"
+      "bad_breath",
+      "dropsy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "pectin": {
+    "display_name": "Pectin",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000255"
+      ]
+    },
+    "conditions_treated": [
+      "dumping_syndrome"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2549,14 +2696,16 @@
   },
   "prickly-restharrow": {
     "display_name": "Prickly Restharrow",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000241"
+        "WAL-CLM-LETS-000241",
+        "WAL-CLM-LETS-000253"
       ]
     },
     "conditions_treated": [
-      "cystitis"
+      "cystitis",
+      "dropsy"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2791,6 +2940,21 @@
     },
     "conditions_treated": [
       "motion_sickness"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "scotch-broom": {
+    "display_name": "Scotch Broom",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000253"
+      ]
+    },
+    "conditions_treated": [
+      "dropsy"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3117,18 +3281,20 @@
   },
   "vinegar": {
     "display_name": "Vinegar",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000149",
         "WAL-CLM-LETS-000175",
-        "WAL-CLM-LETS-000242"
+        "WAL-CLM-LETS-000242",
+        "WAL-CLM-LETS-000252"
       ]
     },
     "conditions_treated": [
       "athletes_foot",
       "burns",
-      "dandruff"
+      "dandruff",
+      "vaginitis"
     ],
     "books_cited": [
       "lets-play-doctor"

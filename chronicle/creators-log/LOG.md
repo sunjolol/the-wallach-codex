@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_161 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_162 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 17:27 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b34: DIURETIC herbs→DUMPING SYNDROME — 6 claims (LETS-250..255: 1 grouped definition + 5 protocol). ★ Herb-action one-liners ruled ONE grouped definition claim (Luneth). Zero meg→mcg (.txt unchanged). kv144, claims 635, conditions 285, board 31/31.
+  ↳ DIURETIC-herbs grouped (broom-corn/asparagus/broom, definition, conds=[], herb-action tag), diverticulitis (colonics/fiber), douche→vaginitis (vinegar/H2O2/bayberry/lactobacillus), dropsy/edema (IV amino acids + 9 herbs incl foxglove DANGEROUS), dry_skin (flaxseed 5 gm/B-6/zinc/E/A 300k; 'dry skin means EFA'), dumping_syndrome (gentian bitters/folic 3-5 mg/pectin). NO dose fixes — all render-verified mg/IU/gm/units. finalize (no resnap, book unchanged)→seal kv143→144→embed(285 conds)→build→invariants 31/31→probe PASS 0 err. NEXT b35 = DYS- cluster (DYSENTERY/DYSLEXIA[mental,document]/DYSMENORRHEA/DYSPEPSIA).
 
 ## 2026-06-28 16:47 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b33: DIABETES→DIETING — 4 protocol claims (LETS-246..249). DIABETES = Wallach's chromium/vanadium signature thesis (titration 25→50 mcg + B-12 1,000 mcg). 4 render-verified meg→mcg. kv143, claims 629, conditions 280, board 31/31.

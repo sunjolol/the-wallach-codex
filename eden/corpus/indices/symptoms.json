@@ -991,7 +991,7 @@
   },
   "edema": {
     "display_name": "Edema",
-    "claim_count": 2,
+    "claim_count": 3,
     "likely_deficiencies": [
       {
         "essential": "selenium",

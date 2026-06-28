@@ -3661,6 +3661,23 @@
       "lets-play-doctor"
     ]
   },
+  "diverticulitis": {
+    "display_name": "Diverticulitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000251"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "colonics",
+      "dietary-fiber"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "down_syndrome": {
     "display_name": "Down Syndrome",
     "claim_count": 4,
@@ -3682,6 +3699,70 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "dropsy": {
+    "display_name": "Dropsy",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000253"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "amino-acids",
+      "canadian-fleabane",
+      "foxglove",
+      "hawthorn",
+      "kidney-bean",
+      "lily-of-the-valley",
+      "nettle",
+      "parsley",
+      "prickly-restharrow",
+      "scotch-broom"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "dry_skin": {
+    "display_name": "Dry Skin",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000254"
+      ]
+    },
+    "essentials_involved": [
+      "omega-3",
+      "vitamin-a",
+      "vitamin-b6",
+      "vitamin-e",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "dumping_syndrome": {
+    "display_name": "Dumping Syndrome",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000255"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b9"
+    ],
+    "other_substances_involved": [
+      "gentian",
+      "pectin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "eczema": {
@@ -6452,6 +6533,25 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "vaginitis": {
+    "display_name": "Vaginitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000252"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "bayberry",
+      "hydrogen-peroxide",
+      "lactobacillus-acidophilus",
+      "vinegar"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "varicose_veins": {
