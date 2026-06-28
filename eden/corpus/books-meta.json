@@ -49,9 +49,9 @@
         "Ma Lan"
       ],
       "file": "eden/corpus/books/lets-play-doctor-fourth-edition-1995.txt",
-      "content_sha256": "9006964111b30af19304d28ee33e1a5a98b2c9142b169bb7fb516a199616e478",
-      "content_bytes": 509775,
-      "line_count": 13006,
+      "content_sha256": "24ba9613425faa5701be666c55c2d4e540ea67d056da83d87e427af1f2eb5ce6",
+      "content_bytes": 515096,
+      "line_count": 13142,
       "hash_basis": "lf_normalized_utf8",
       "locator_scheme": "chapter_page",
       "ocr_confidence_band": "n/a",

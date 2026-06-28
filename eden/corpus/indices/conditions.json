@@ -33,7 +33,7 @@
   },
   "acne": {
     "display_name": "Acne",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000011",
@@ -42,6 +42,9 @@
         "WAL-CLM-LETS-000036",
         "WAL-CLM-LETS-000044",
         "WAL-CLM-RARE-000229"
+      ],
+      "definitions": [
+        "WAL-CLM-LETS-000093"
       ]
     },
     "essentials_involved": [
@@ -2640,9 +2643,10 @@
   },
   "hypertension": {
     "display_name": "Hypertension",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-LETS-000094",
         "WAL-CLM-RARE-000107"
       ],
       "deficiency_signs": [
