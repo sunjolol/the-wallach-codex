@@ -2583,6 +2583,28 @@
       "rare-earths"
     ]
   },
+  "chorea": {
+    "display_name": "Chorea",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000220"
+      ]
+    },
+    "essentials_involved": [
+      "choline",
+      "omega-3",
+      "selenium",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "b-complex",
+      "lecithin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "chronic_fatigue": {
     "display_name": "Chronic Fatigue",
     "claim_count": 1,
@@ -2597,6 +2619,30 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "chronic_fatigue_syndrome": {
+    "display_name": "Chronic Fatigue Syndrome",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000221"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "germanium"
+    ],
+    "other_substances_involved": [
+      "blood-therapy",
+      "dmso",
+      "hydrogen-peroxide",
+      "isoprinosine",
+      "ribavirin",
+      "urine-therapy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "circulatory_disease": {

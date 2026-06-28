@@ -5912,7 +5912,7 @@ tranquilization.
 We recommend the base line supplement
 program, essential fatty acids at 5 gm t.i.d., B-
 complex at 100 mg b.i.d. each, vitamin E at
-800-12,000 IU/day, selenium at 500 mg/day,
+800-12,000 IU/day, selenium at 500 mcg/day,
 lecithin at 2,500 mg t.i.d. and choline at 500
 mg/day. Pulse testing for food allergies and
 hair analysis to monitor absorption is essen-
@@ -5942,7 +5942,7 @@ drops per oz in aloe juice) 1 oz. b.i.d., do pulse
 test for food allergies, do six-hour GTT for
 hypoglycemia, eliminate caffeine, eliminate
 refined sugar, avoid any food allergens, treat
-hypoglycemia with chromium at 75 to 200 mg
+hypoglycemia with chromium at 75 to 200 mcg
 t.i.d., employ autoimmune urine and blood
 therapies, detoxify with liver flushes and
 colonics (especially for the first two weeks of

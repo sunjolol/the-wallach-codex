@@ -1,51 +1,31 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_5 claim(s) drafted 2026-06-28T19:03:48+00:00. Review then run corpus_seal.py to promote._
+_2 claim(s) drafted 2026-06-28T19:18:01+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: protocol×5
+Kinds: protocol×2
 
-### WAL-CLM-LETS-000215 · protocol
-- **essentials:** vitamin-e · **conditions:** chicken_pox, shingles · **symptoms:** —
-- **claim:** Chicken pox (varicella) is an acute viral disease in children and a chronic, painful one in adults as shingles (herpes zoster), marked by clear vesicles surrounded by a small red zone on the upper torso. Wallach's treatment in children is mainly symptomatic: Caladryl lotion applied topically, oatmeal baths, and vitamin E oil applied directly to each vesicle or papule. The illness runs 7-20 days regardless of therapy.
-- **verbatim** (offset 230121): “Treatment of chicken pox in children is prima-
-rily symptomatic and includes Caladryl lotion
-topically, oatmeal baths and vitamin E oil
-applied directly to each vesicle or papule.”
+### WAL-CLM-LETS-000220 · protocol
+- **essentials:** omega-3, vitamin-e, selenium, choline · **conditions:** chorea · **symptoms:** —
+- **claim:** Chorea is marked by uncontrolled jerky or crampy movements, often with mood changes, hesitant speech, facial grimaces, a 'prancing' gait, and difficulty swallowing; though conventionally called a genetic disease, Wallach disputes this (onset is typically age 30-55 and he has seen it in teenagers), pointing instead to organic degeneration of the frontal cerebral cortex. He recommends the base-line supplement program, essential fatty acids at 5 grams three times daily, a B-complex at 100 mg twice daily each, vitamin E at 800-12,000 international units per day, selenium at 500 micrograms per day, lecithin at 2,500 mg three times daily, and choline at 500 mg per day, with pulse testing for food allergies and hair analysis to monitor absorption. (The book prints this selenium dose as '500 mg'; micrograms is the safe intended unit — it matches every other selenium dose in the text, and 500 mg would be toxic.)
+- **verbatim** (offset 233520): “We recommend the base line supplement
+program, essential fatty acids at 5 gm t.i.d., B-
+complex at 100 mg b.i.d. each, vitamin E at
+800-12,000 IU/day, selenium at 500 mcg/day,
+lecithin at 2,500 mg t.i.d. and choline at 500
+mg/day.”
 
-### WAL-CLM-LETS-000216 · protocol
-- **essentials:** — · **conditions:** chiggers · **symptoms:** —
-- **claim:** Chiggers (mites) are tiny arthropods that burrow into the skin and cause severe itching. They can be repelled while walking in woods or meadows by placing pet flea collars around the ankles, waist, and wrists, or by dusting poultry powder into socks and at the belt line. Once they have established themselves, Wallach's treatment is covering each burrow opening with clear nail polish, which literally smothers them.
-- **verbatim** (offset 230714): “Treatment of chiggers once they establish
-themselves is limited to covering each burrow
-opening with clear nail polish which literally
-smothers them.”
-
-### WAL-CLM-LETS-000217 · protocol
-- **essentials:** — · **conditions:** chills · **symptoms:** —
-- **claim:** Chills accompany the flu and other viral infections — the patient sweats, shakes, and trembles, unable to feel warm even when bundled up. Wallach's treatment is wearing warmups with a hooded sweatshirt to cover the neck and head, homeopathy, acupuncture, and herbs including willow (Salix alba).
-- **verbatim** (offset 231047): “Treatment for chills includes wearing warmups
-with a hooded sweatshirt to cover the neck
-and head, homeopathy, acupuncture and
-herbs to include willow (Salix alba).”
-
-### WAL-CLM-LETS-000218 · protocol
-- **essentials:** — · **conditions:** chilblains · **symptoms:** —
-- **claim:** Chilblains (hypothermia) is the lowering of body or limb temperature to subnormal levels long enough to approach frostbite, with severe numbness and possible loss of function; prevention is dressing properly for the weather. Wallach's treatment is rapid warming in warm water and/or warm enemas, and electric blankets if available (placed underneath as well as on top).
-- **verbatim** (offset 231523): “Treatment includes rapid warming in warm
-water and/or warm enemas, electric blankets
-if available (underneath as well as on top).”
-
-### WAL-CLM-LETS-000219 · protocol
-- **essentials:** vitamin-c, omega-3, vitamin-b3, calcium, magnesium, chromium, selenium · **conditions:** elevated_cholesterol · **symptoms:** —
-- **claim:** Elevated cholesterol (above 200 mg per 100 ml of blood) is a risk marker for cardiovascular disease, diabetes, and liver disease, with causes including low-fiber diets, excess vitamin D, essential-fatty-acid deficiency, refined sugar and flour, and poor exercise (Wallach cautions that LOW cholesterol can be as dangerous as high). Treatment is regular exercise, the base-line supplement program, one to two heaping tablespoons of oat bran or protein fiber in juice or vitamin C to bowel tolerance, essential fatty acids at 5 grams three times daily, niacin (vitamin B-3) at 450 mg twice daily as time-release tablets, calcium and magnesium at 2,000 mg and 1,000 mg per day, chromium at 75 micrograms three times daily, selenium at 100 micrograms three times daily, evening primrose (Oenothera biennis), and a liver flush.
-- **verbatim** (offset 232217): “Treatment for elevated cholesterol includes
-regular exercise, base line supplement pro-
-gram, one to two heaping tablespoons of oat
-bran or protein fiber in an eight oz. glass of
-juice or vitamin C to bowel tolerance, essential
-fatty acids at 5 gm t.i.d., niacin at 450 mg b.i.d.
-as time release tablets, calcium and magne-
-sium at 2,000 mg and 1,000 mg per
-day,chromium at 75 mcgt.i.d., selenium at 100
-mcg t.i.d.”
+### WAL-CLM-LETS-000221 · protocol
+- **essentials:** germanium, chromium · **conditions:** chronic_fatigue_syndrome · **symptoms:** —
+- **claim:** Chronic Fatigue Syndrome is, by its name, a complex of symptoms with multiple causes — Wallach says affected patients have two or more of candidiasis, Epstein-Barr virus, human B-lymphotropic virus, cytomegalovirus, food allergies, and low blood sugar — producing moodiness, aches, depression, gastrointestinal upset, and intense fatigue. Treatment should include intravenous hydrogen peroxide in a dimethyl sulfoxide (DMSO) and 5% dextrose solution, intravenous nutrition, intramuscular germanium, the base-line supplement program, oral hydrogen peroxide (20 drops per ounce in aloe juice) 1 ounce twice daily, pulse testing and a six-hour glucose tolerance test, eliminating caffeine and refined sugar, avoiding food allergens, treating low blood sugar with chromium at 75 to 200 micrograms three times daily, autoimmune urine and blood therapies, liver flushes and colonics, and the antivirals Isoprinosine (500 mg three times daily) and Ribavirin (250-1,200 mg per day). (The book prints this chromium dose as '75 to 200 mg'; micrograms is the safe intended unit, as chromium is dosed in micrograms throughout the text and 200 mg would be toxic.)
+- **verbatim** (offset 234521): “Treatment for Chronic Fatigue Syndrome
+should include IV hydrogen peroxide in a
+solution of DMSO and 5% dextrose, IV nutri-
+tion, IM germanium, base line nutritional
+supplement program, hydrogen peroxide ( 20
+drops per oz in aloe juice) 1 oz. b.i.d., do pulse
+test for food allergies, do six-hour GTT for
+hypoglycemia, eliminate caffeine, eliminate
+refined sugar, avoid any food allergens, treat
+hypoglycemia with chromium at 75 to 200 mcg
+t.i.d.”
 

@@ -8850,6 +8850,88 @@
       "extracted_at": "2026-06-28T19:03:48+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000220",
+      "kind": "protocol",
+      "essentials": [
+        "omega-3",
+        "vitamin-e",
+        "selenium",
+        "choline"
+      ],
+      "other_substances": [
+        "b-complex",
+        "lecithin"
+      ],
+      "conditions": [
+        "chorea"
+      ],
+      "symptoms": [],
+      "claim_text": "Chorea is marked by uncontrolled jerky or crampy movements, often with mood changes, hesitant speech, facial grimaces, a 'prancing' gait, and difficulty swallowing; though conventionally called a genetic disease, Wallach disputes this (onset is typically age 30-55 and he has seen it in teenagers), pointing instead to organic degeneration of the frontal cerebral cortex. He recommends the base-line supplement program, essential fatty acids at 5 grams three times daily, a B-complex at 100 mg twice daily each, vitamin E at 800-12,000 international units per day, selenium at 500 micrograms per day, lecithin at 2,500 mg three times daily, and choline at 500 mg per day, with pulse testing for food allergies and hair analysis to monitor absorption. (The book prints this selenium dose as '500 mg'; micrograms is the safe intended unit — it matches every other selenium dose in the text, and 500 mg would be toxic.)",
+      "verbatim": "We recommend the base line supplement\nprogram, essential fatty acids at 5 gm t.i.d., B-\ncomplex at 100 mg b.i.d. each, vitamin E at\n800-12,000 IU/day, selenium at 500 mcg/day,\nlecithin at 2,500 mg t.i.d. and choline at 500\nmg/day.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 233520
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:18:01+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000221",
+      "kind": "protocol",
+      "essentials": [
+        "germanium",
+        "chromium"
+      ],
+      "other_substances": [
+        "hydrogen-peroxide",
+        "dmso",
+        "urine-therapy",
+        "blood-therapy",
+        "isoprinosine",
+        "ribavirin"
+      ],
+      "conditions": [
+        "chronic_fatigue_syndrome"
+      ],
+      "symptoms": [],
+      "claim_text": "Chronic Fatigue Syndrome is, by its name, a complex of symptoms with multiple causes — Wallach says affected patients have two or more of candidiasis, Epstein-Barr virus, human B-lymphotropic virus, cytomegalovirus, food allergies, and low blood sugar — producing moodiness, aches, depression, gastrointestinal upset, and intense fatigue. Treatment should include intravenous hydrogen peroxide in a dimethyl sulfoxide (DMSO) and 5% dextrose solution, intravenous nutrition, intramuscular germanium, the base-line supplement program, oral hydrogen peroxide (20 drops per ounce in aloe juice) 1 ounce twice daily, pulse testing and a six-hour glucose tolerance test, eliminating caffeine and refined sugar, avoiding food allergens, treating low blood sugar with chromium at 75 to 200 micrograms three times daily, autoimmune urine and blood therapies, liver flushes and colonics, and the antivirals Isoprinosine (500 mg three times daily) and Ribavirin (250-1,200 mg per day). (The book prints this chromium dose as '75 to 200 mg'; micrograms is the safe intended unit, as chromium is dosed in micrograms throughout the text and 200 mg would be toxic.)",
+      "verbatim": "Treatment for Chronic Fatigue Syndrome\nshould include IV hydrogen peroxide in a\nsolution of DMSO and 5% dextrose, IV nutri-\ntion, IM germanium, base line nutritional\nsupplement program, hydrogen peroxide ( 20\ndrops per oz in aloe juice) 1 oz. b.i.d., do pulse\ntest for food allergies, do six-hour GTT for\nhypoglycemia, eliminate caffeine, eliminate\nrefined sugar, avoid any food allergens, treat\nhypoglycemia with chromium at 75 to 200 mcg\nt.i.d.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 234521
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:18:01+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
