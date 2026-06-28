@@ -1,80 +1,75 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_7 claim(s) drafted 2026-06-28T22:36:19+00:00. Review then run corpus_seal.py to promote._
+_7 claim(s) drafted 2026-06-28T22:48:02+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: protocol×7
+Kinds: definition×1, protocol×6
 
-### WAL-CLM-LETS-000256 · protocol
-- **essentials:** — · **conditions:** dysentery · **symptoms:** —
-- **claim:** Dysentery is a watery, projectile diarrhea with cramping, urgency, and electrolyte-loss exhaustion, caused by too rich a diet (wine, lobster, creamy desserts), improperly stored food with bacterial overgrowth, food poisoning, or food allergies such as celiac disease; prevention is careful food storage, hygiene, and preparation. For a schedule that can't be altered, Wallach suggests commercial products such as Pepto-Bismol or Kaopectate, plus weak black tea, rice water, lime water, chicken broth or bouillon (or athletic 'thirst quenchers') to replace electrolytes, and herbs such as Irish moss (Chondrus crispus) and common ivy (Hedera helix) to quiet the runaway colon.
-- **verbatim** (offset 278213): “Weak
-black tea, rice water, lime water, chicken
-broth or bouillon to replace electrolytes (an-
-other good source are the athletic "thirst
-quenchers." Herbs such as Irish moss
-(Chondrus crispus) and common ivy (Hedera
-helix) are of great benefit in quieting the run
-away colon!!!”
+### WAL-CLM-LETS-000263 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach treats premature ejaculation as a normal, preventable, and curable issue with basic physical causes — a mental state of high expectation, infrequency of sex, and too much friction — rather than the 'mental block' or 'guilt' the orthodox sexologist invokes. His approach has three parts: be very open and comfortable with each other's bodies (time spent together unclothed, showers, massages, until nakedness is unremarkable); have frequent sex, which requires effort and romance from both partners; and ensure proper lubrication (natural arousal, or a water-soluble gel such as K-Y Jelly, inserting slowly and letting the partner relax). Ginseng (Panax spp.) and herb combinations (Zumba) are noted as tonifying agents for potency.
+- **verbatim** (offset 286106): “The true basics of prema-
+ture ejaculation (it happens to all men given
+the classic circumstances) include a mental
+state of high expectation, infrequency of sex
+and too much friction.”
 
-### WAL-CLM-LETS-000257 · protocol
-- **essentials:** — · **conditions:** dyslexia, hyperactivity · **symptoms:** —
-- **claim:** Dyslexia (learning disorder, hyperactivity) is a complex syndrome rather than a specific disease; while some children have true organic brain injury, Wallach holds that as many as 80% of 'dyslexic' kids are really suffering from food allergies and/or sugar sensitivity (sugar acting like a drug), and are too often put on drugs like Ritalin or shunted into special education. He recounts his own youngest son — written off as 'learning disabled' at age six — being cured in two weeks by eliminating sugar, milk, wheat, and corn. His treatment: digestive enzymes and betaine HCl to prevent progression, the Feingold Diet as a starting point (though not a complete shield), and aggressively pursued rotation and allergy-elimination diets plus autoimmune urine therapy, after identifying food allergies (pulse test, elimination diets, diet diaries).
-- **verbatim** (offset 280251): “Digestive enzymes and betaine HCl
-are essential to prevent progression of the
-problem as well as aid in onset of symptoms.
-The "Feingold Diet" is a good place to start”
+### WAL-CLM-LETS-000264 · protocol
+- **essentials:** — · **conditions:** electric_shock · **symptoms:** —
+- **claim:** Electric shock can be fatal, even from 110-volt home outlets (toddlers with bobby pins or keys, appliances falling into the bathtub, electrical repairs without shutting the breakers); electricity kills by disrupting the heart's electrical signals into fibrillation (quivering rather than beating) and paralyzing the breathing muscles. Wallach's treatment is to shut off the source of electricity or break the electrical contact with the patient, then re-establish the basic functions of life with CPR (cardiopulmonary resuscitation) and oxygen — and have someone call 911 for emergency help.
+- **verbatim** (offset 289170): “Treatment of electric shock includes shutting
+off the source of electricity or breaking the
+electrical contact with the patient and reestab-
+lishing the basic functions of life with CPR
+(cardio pulmonary resuscitation) and oxygen.”
 
-### WAL-CLM-LETS-000258 · protocol
-- **essentials:** vitamin-b3, vitamin-b6, calcium, magnesium, vitamin-e, omega-3 · **conditions:** dysmenorrhea · **symptoms:** —
-- **claim:** Dysmenorrhea (menstrual pain) is common in Western women — so common it is often considered part of PMS — and can be debilitating; the basic problem is abnormal prostaglandin metabolism, which commercial products mask without addressing. Wallach's treatment is vitamins B-3 and B-6 at 50-100 mg three times daily, calcium and magnesium at 2,000 and 1,000 mg per day, vitamin E at 800-1,200 IU per day, and essential fatty acids at 5 gm three times daily, plus the base-line supplements and avoiding caffeine; blue cohosh (Caulophyllum thalictroides) and black cohosh (Cimicifuga racemosa) are the ideal natural herbs for the pain.
-- **verbatim** (offset 281277): “Treatment includes B-3 and B-6 at 50-100 mg
-t.i.d., calcium and magnesium at 2,000 and
-1,000 mg/day, vitamin E at 800-1,200 IU/day,
-essential fatty acids at 5 gm t.i.d.”
+### WAL-CLM-LETS-000265 · protocol
+- **essentials:** — · **conditions:** vomiting · **symptoms:** —
+- **claim:** Emesis (vomiting) may signal overeating, cancer, excess alcohol, poisoning, food poisoning, food allergies, or infection; in infants, vomiting with lethargy and fever can be an ominous sign of meningitis, and 'coffee-grounds' vomiting (old blood) signals a bleeding ulcer or stomach cancer needing emergency help. Wallach's treatment is to not eat for several hours, suck ice, and drink small amounts of peppermint tea, chicken or beef bouillon, or athletic fluid/electrolyte replacers; for severe stomach irritation, Pepto-Bismol or Kaopectate (preferably liquid) coats the stomach. To induce vomiting after a non-corrosive poisoning, ipecac syrup (1 tablespoon for children, 2 for adults) is given with a large amount of water, repeated in 15 minutes if needed.
+- **verbatim** (offset 290214): “Treatment ofvomiting can be simply to not eat
+for several hours, suck ice, drink small amounts
+of peppermint tea, drink small amounts of
+chicken or beef bouillon.”
 
-### WAL-CLM-LETS-000259 · protocol
-- **essentials:** — · **conditions:** dyspepsia · **symptoms:** —
-- **claim:** Dyspepsia (poor digestion, indigestion) — belching, bloating, burping, and 'acid stomach' — is probably the most common and most costly Western 'disease,' and Wallach notes its real driver is often too little stomach acid (which decreases with age), not too much. Prevention is reduced stress, exercise, healthful diet habits, reasonable food volumes, and regular digestive aids. His treatment is 75-200 mg betaine HCl and pancreatic enzymes three times daily 15-30 minutes before each meal; antacids are only a temporary emergency fix (regular use eventually harms you); and herbal remedies include papaya (Carica papaya), common barberry (Berberis vulgaris), and bitters such as gentian (Gentiana lutea), with a glass of wine or several oz of vinegar before meals sometimes helpful.
-- **verbatim** (offset 282383): “Treatment of dyspepsia includes supplemen-
-tation of 75-200 mg betaine HCl and pancre-
-atic enzymes t.i.d. 15-30 minutes before each
-meal (the "acid" is not acid enough and is
-burped up with bacterially generated gas),
-"antacids" are a good "temporary fix" in an
-emergency (regular use will eventually dam-
-age you), herbal preventions and remedies
-include papaya (Carica papaya), common
-barberry (Berberis vulgaris) and bitters such
-as gentian (Gentiana lutea).”
+### WAL-CLM-LETS-000266 · protocol
+- **essentials:** calcium, magnesium · **conditions:** enuresis, bedwetting · **symptoms:** —
+- **claim:** Enuresis (bedwetting) in children, Wallach argues, is not the 'genetic'/'passive-aggressive'/'antisocial' problem the orthodox pediatrician or psychiatrist describes, but the result of food allergies (sugar, milk) and/or severe reactive hypoglycemia, complicated by calcium/magnesium deficiency — the same picture as hyperactivity. Diagnose with a pulse test and a six-hour glucose tolerance test. His treatment is eliminating the offending foods and eliminating sugar (including sweet grape and apple juices) from bedtime treats, digestive aids (betaine HCl and pancreatic enzymes) at 75-200 mg three times daily 15-20 minutes before meals, calcium and magnesium at 2,000 and 1,000 mg, plus the base-line supplement program and colloidal minerals.
+- **verbatim** (offset 291701): “Treatment of enuresis includes eliminating
+the offending foods for food allergies, elimi-
+nating sugar (including sweet juices, i.e., grape
+and apple) from bedtime treats, digestive aids
+(i.e., betaine HC1 and pancreatic enzymes) at
+75-200 mg t.i.d. 15-20 minutes before meals,
+calcium and magnesium at 2,000 mg and
+1,000 mg;”
 
-### WAL-CLM-LETS-000260 · protocol
-- **essentials:** — · **conditions:** earache, tonsillitis · **symptoms:** —
-- **claim:** Earaches (ear infections), tonsillitis, sinusitis, and bronchitis are related in cause, prevention, and cure, and Wallach says cow's-milk allergy is the most frequent common denominator — mimicking strep throat so well that doctors often prescribe penicillin over the phone or surgically place ear tubes. Simply avoiding cow's milk and milk products prevents most chronic earaches and tonsillitis. His treatment is avoidance of milk products and sugar, treating fever and discomfort with demulcents and antipyretics (such as willow, Salix alba), hydrogen peroxide eardrops and/or mullein oil drops (Verbascum thapsus), and treating it as any allergy including autoimmune urine therapy; true strep throat does require penicillin.
-- **verbatim** (offset 283497): “Treatment of milk allergy "earaches" and ton-
-sillitis includes avoidance of milk and milk
-products, avoidance of sugar, treat fever and
-discomfort with demulcents and antipyretics
-(i.e., willow, Salix alba), hydrogen peroxide
-eardrops and/or mullein oil drops (Verbascum
-thapsus).”
+### WAL-CLM-LETS-000267 · protocol
+- **essentials:** vitamin-b6, calcium, magnesium, vitamin-b9, vitamin-b12, manganese, zinc, omega-3, choline · **conditions:** epilepsy · **symptoms:** seizures
+- **claim:** Epilepsy (fits, convulsions) is categorized by severity — petite mal (a brief blank stare or dizziness) and grand mal (a spectacular convulsive attack with stiffening, falling, teeth-gnashing, and jerking, which can be fatal if the patient inhales vomit or hits the head). The orthodox drugs (phenytoin, phenobarbital, primidone) stop symptomatic convulsions but have dramatic side effects (uncontrolled eye movements, weakness, arthritis and osteoporosis, rashes, anemia, learning disabilities, hyperactivity). Wallach holds that vitamin B-6 alone at 50-100 mg three times daily will frequently 'cure' epilepsy (long-term use can cause some facial/hand numbness and tingling), and that calcium and magnesium at 2,000 and 1,000 mg per day, folic acid at 15-25 mg per day, and vitamin B-12 at 1,000 mcg per day by intramuscular injection can also be curative, along with manganese at 50 mg per day, zinc at 50 mg three times daily, essential fatty acids at 5 gm three times daily, choline at 4 gm per day, taurine at 500 mg three times daily, and dimethyl glycine at 100 mg twice daily.
+- **verbatim** (offset 293212): “Vitamin B-6 alone will fre-
+quently "cure" epilepsy at 50-100 mg t.i.d.
+(long term administration can cause some
+numb-ness and tingling in the face or hands),
+calcium magnesium at 2,000 and 1,000 mg/
+day, folic acid at 15-25 mg/day and B-12 at
+1,000 mcg/day IM can also be curative, man-
+ganese at 50 mg/day, zinc at 50 mg t.i.d.,”
 
-### WAL-CLM-LETS-000261 · protocol
-- **essentials:** vitamin-c, vitamin-k, vitamin-e · **conditions:** ecchymosis · **symptoms:** easy_bruising
-- **claim:** Ecchymosis (easy bruising) is very common, especially in women and children on low-fiber, low-fruit, and low-vegetable diets (fast foods, lots of coffee, tea, and soft drinks). Wallach's treatment is alfalfa tablets at 4-6 twice daily, vitamin C to bowel tolerance, vitamin K at 15 mg per day, vitamin E at 800-1,200 IU per day, and four to six cups of green vegetables each day.
-- **verbatim** (offset 284075): “Treatment includes alfalfa tablets at 4-6 b.i.d.,
-vitamin C to bowel tolerance, vitamin K at 15
-mg/day, vitamin E at 800-1 ,200 IU/day and 4-
-6 cups of green vegetables each day.”
+### WAL-CLM-LETS-000268 · protocol
+- **essentials:** — · **conditions:** exophthalmos · **symptoms:** —
+- **claim:** Exophthalmos (bug eyes) is a prominent protrusion of the eyes from any of several causes, including hyperthyroidism, a tumor (especially if only one eye is affected), or glaucoma. Wallach's approach is that treatment is specific to the cause, so a blood test for thyroid function, a glaucoma exam, and consideration of a brain or eye (orbital) tumor are indicated.
+- **verbatim** (offset 293668): “EXOPHTHALMOS (bug eyes): is a promi-
+nent protrusion ofthe eyes from any ofseveral
+causes including hyperthyroidism, tumor (es-
+pecially if only one eye is affected) or glau-
+coma.”
 
-### WAL-CLM-LETS-000262 · protocol
-- **essentials:** vitamin-b9, omega-3, vitamin-a, zinc, vitamin-c, vitamin-e · **conditions:** eczema, psoriasis · **symptoms:** —
-- **claim:** Eczema (here grouped with atopic dermatitis and psoriasis) is a dry, patchy scale on localized skin (ears, nose, joints, breasts), usually from food allergies — especially cow's milk, wheat, and soy — with the same damage occurring in the intestinal lining, leading to malabsorption, lowered immune status, and chronic degenerative disease. Wallach's treatment is avoidance of offending foods, autoimmune urine therapy, betaine HCl and pancreatic enzymes at 75-200 mg three times daily before meals, folic acid at 3-5 mg per day, essential fatty acids at 5 mg three times daily, vitamin A at 300,000 IU per day as beta carotene, zinc at 50 mg three times daily, vitamin C to bowel tolerance, and vitamin E at 800-1,200 IU per day; topical herbs include aloe vera, wild strawberry, araroba, Labrador tea, comfrey, English walnut, European snakeroot, flaxseed/linseed oil, German chamomile, great burdock, high mallow, hound's tongue, marigold, oak, and pansy, and Dermese (orally, by injection, or topically) gives great results.
-- **verbatim** (offset 284715): “Treatment includes avoidance of offending
-foods, autoimmune urine therapy, betaine
-HCl and pancreatic enzymes at 75-200 mg
-t.i.d. before meals each day, folic acid at 3-5
-mg/day, essential fatty acids at 5 mg t.i.d.,
-vitamin A at 300,000 IU/day as beta carotene,
-zinc at 50 mg t.i.d., vitamin C at bowel toler-
-ance and vitamin E at 800-1200 IU/day”
+### WAL-CLM-LETS-000269 · protocol
+- **essentials:** — · **conditions:** eye_redness, sty · **symptoms:** —
+- **claim:** Eye redness (sties, pink eye) can be caused by dust, pollen allergies, bright sunshine, overwork, irritants (cigarette smoke), staying up late, infection, or a foreign body. Wallach says eye treatment should be taken seriously: infection can be treated with ophthalmic ointments of boric acid or neomycin, commercial eye drops such as Visine work well for simple irritation, and pulling the upper eyelid outward and over the lower lid induces enough tear flow to wash out small foreign bodies. Herbs for eye washes include eyebright (Euphrasia rostkoviana), fennel (Foeniculum vulgare), German chamomile (Matricaria chamomilla), oak (Quercus robur), pasque flower (Pulsatilla vulgaris), and cornflower (Centaurea cyanus).
+- **verbatim** (offset 294581): “herbs can be used for eye washes including
+eyebright (Euphrasia rostkoviana), fennel
+(Foeniculum vulgare), German chamomile
+(Matricaria chamomilla), oak (Quercusrobur),
+pasque flower (Pulsatilla vulgaris) and corn-
+flower (Centaurea cyanus).”
 

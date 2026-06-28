@@ -3615,11 +3615,23 @@
   },
   "seizures": {
     "display_name": "Seizures",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "calcium",
         "claim_id": "WAL-CLM-LETS-000233",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000267",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "choline",
+        "claim_id": "WAL-CLM-LETS-000267",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -3636,8 +3648,50 @@
         "appears_in_books": 1
       },
       {
+        "essential": "magnesium",
+        "claim_id": "WAL-CLM-LETS-000267",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "manganese",
+        "claim_id": "WAL-CLM-LETS-000267",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "omega-3",
+        "claim_id": "WAL-CLM-LETS-000267",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-b12",
+        "claim_id": "WAL-CLM-LETS-000267",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
         "essential": "vitamin-b6",
         "claim_id": "WAL-CLM-LETS-000233",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-b6",
+        "claim_id": "WAL-CLM-LETS-000267",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-b9",
+        "claim_id": "WAL-CLM-LETS-000267",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "zinc",
+        "claim_id": "WAL-CLM-LETS-000267",
         "confidence": "high",
         "appears_in_books": 1
       }

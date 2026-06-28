@@ -1265,10 +1265,11 @@
   },
   "bedwetting": {
     "display_name": "Bedwetting",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000155"
+        "WAL-CLM-LETS-000155",
+        "WAL-CLM-LETS-000266"
       ]
     },
     "essentials_involved": [
@@ -1278,7 +1279,11 @@
       "vanadium"
     ],
     "other_substances_involved": [
-      "cranberry"
+      "betaine-hcl",
+      "colloidal-minerals",
+      "cranberry",
+      "pancreatic-enzymes",
+      "pulse-test"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3982,6 +3987,20 @@
       "rare-earths"
     ]
   },
+  "electric_shock": {
+    "display_name": "Electric Shock",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000264"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "elevated_cholesterol": {
     "display_name": "Elevated Cholesterol",
     "claim_count": 1,
@@ -4039,27 +4058,72 @@
       "rare-earths"
     ]
   },
-  "epilepsy": {
-    "display_name": "Epilepsy",
+  "enuresis": {
+    "display_name": "Enuresis",
     "claim_count": 1,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000233"
+        "WAL-CLM-LETS-000266"
       ]
     },
     "essentials_involved": [
       "calcium",
+      "magnesium"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "colloidal-minerals",
+      "pancreatic-enzymes",
+      "pulse-test"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "epilepsy": {
+    "display_name": "Epilepsy",
+    "claim_count": 2,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000233",
+        "WAL-CLM-LETS-000267"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "choline",
       "chromium",
       "magnesium",
-      "vitamin-b6"
+      "manganese",
+      "omega-3",
+      "vitamin-b12",
+      "vitamin-b6",
+      "vitamin-b9",
+      "zinc"
     ],
     "other_substances_involved": [
       "catnip",
+      "dimethyl-glycine",
       "peony",
       "pulse-test",
       "skullcap",
+      "taurine",
       "urine-therapy"
     ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "exophthalmos": {
+    "display_name": "Exophthalmos",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000268"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -4091,6 +4155,29 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "eye_redness": {
+    "display_name": "Eye Redness",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000269"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "boric-acid",
+      "cornflower",
+      "eyebright",
+      "fennel",
+      "german-chamomile",
+      "neomycin",
+      "oak",
+      "pasque-flower"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "fatty_liver": {
@@ -6538,6 +6625,29 @@
       "rare-earths"
     ]
   },
+  "sty": {
+    "display_name": "Sty",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000269"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "boric-acid",
+      "cornflower",
+      "eyebright",
+      "fennel",
+      "german-chamomile",
+      "neomycin",
+      "oak",
+      "pasque-flower"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "tardive_dyskinesia": {
     "display_name": "Tardive Dyskinesia",
     "claim_count": 1,
@@ -6842,6 +6952,25 @@
       "vitamin-b9"
     ],
     "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "vomiting": {
+    "display_name": "Vomiting",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000265"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "ipecac",
+      "kaopectate",
+      "peppermint",
+      "pepto-bismol"
+    ],
     "books_cited": [
       "lets-play-doctor"
     ]

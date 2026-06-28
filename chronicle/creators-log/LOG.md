@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_163 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_164 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 17:49 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b36: EJACULATION→EYE REDNESS — E's COMPLETE. 7 claims (LETS-263..269: 1 search-only + 6 protocol). EJACULATION ruled SEARCH-ONLY (Luneth). EPILEPSY folic 15-25 mg verified safe-mg (not gm misprint). 1 meg→mcg (B-12). kv147, claims 649, conditions 299, board 31/31.
+  ↳ ejaculation (search-only/sexual-health, captured 100%), electric_shock (CPR/oxygen/911), vomiting (peppermint/bouillon/ipecac), enuresis+bedwetting (food-allergy/hypoglycemia/Ca-Mg; betaine 75-200 mg, Ca/Mg), epilepsy (B-6 50-100 mg cure, folic 15-25 mg [mg not gm-verified], B-12 1000 mcg IM, manganese/zinc/EFA/choline 4gm/taurine/DMG), exophthalmos (dx workup), eye_redness+sty (boric/neomycin/Visine + 6 herbs). 1 meg→mcg (epilepsy B-12). NOTE: taurine non-canon→other_substances; finalize rejected it after resnap+seal bumped kv146 (B-12 fix alone), re-ran to kv147 — harmless double-bump, verify PASS both. fix→resnap 0 broken→finalize→seal→embed(299)→build→invariants 31/31→probe PASS 0 err. NEXT b37 = F's (FAILURE TO THRIVE/FARTING/FATIGUE/FERTILITY).
 
 ## 2026-06-28 17:37 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b35: DYSENTERY→ECZEMA — 7 protocol claims (LETS-256..262). DYSLEXIA+hyperactivity documented (Wallach's son anecdote). Zero meg→mcg (.txt unchanged). Stopped before EJACULATION (sexual content → ask Luneth b36). kv145, claims 642, conditions 293, board 31/31.
