@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_127 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_128 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-27 22:09 UTC-05:00 · round-close · eden/corpus
+LPD b12 — Ch7 search corpus, hands-on/structural: chiropractic (def+mech), osteopathy, reflexology, Rolfing. 5 claims LETS-088..092, search-topic + benefit tags. Fixed 4 glued-word OCR errors (clean-as-we-touch).
+  ↳ Search-corpus modality claims. Chiropractic: drug/surgery-free, subluxation theory, 50-state licensure, 4 treatment goals, Palmer 1895 + 1987 AMA antitrust win. Osteopathy: Andrew Still, mechanical-breakdown theory, most D.O.s now orthodox. Reflexology: foot/hand organ-zones, compression massage. Rolfing: deep connective-tissue work, Ida Rolf, height gain. Fixed therapythat/allthree/Rolfwho/showpatients -> resnap 40 relocated 0 broken. seal kv119, embed 472, build OK, invariants 30/30, probe PASS.
 
 ## 2026-06-27 21:55 UTC-05:00 · round-close · eden/corpus
 LPD b11b — benefit: tags on light-therapy claims (LETS-084..087) so search can pill every stated benefit; + completeness check: Light therapy section fully captured, NO Wallach 'red light->energy' stance (not added), UV/sunlight elsewhere is Ch10 condition-protocols for later.

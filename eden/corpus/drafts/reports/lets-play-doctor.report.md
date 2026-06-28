@@ -1,53 +1,58 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_4 claim(s) drafted 2026-06-28T02:41:27+00:00. Review then run corpus_seal.py to promote._
+_5 claim(s) drafted 2026-06-28T03:08:21+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×1, mechanism×3
+Kinds: definition×4, mechanism×1
 
-### WAL-CLM-LETS-000084 · mechanism
-- **essentials:** vitamin-d · **conditions:** vaginitis, ringworm, athletes_foot, eczema · **symptoms:** sore_throat
-- **claim:** Wallach describes ultraviolet (UV) light therapy as stimulating vitamin D production and the immune system, and as a treatment for sore throats, vaginitis (vaginal inflammation), ringworm, athlete's foot (tinea pedis), and eczema.
-- **verbatim** (offset 117256): “Light therapy uses ultra violet light to
-stimulate vitamin D production, stimulate the
-immune system, treat sore throats, treat
-vaginitis, treat ring-worm, athletes foot and
-eczema.”
+### WAL-CLM-LETS-000088 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach describes chiropractic as a physical, drug-free and surgery-free form of medicine. Its philosophy holds that many diseases — especially physical discomfort and many visceral (internal-organ) malfunctions — are caused by "subluxations" (partial misalignments) of the vertebral joints pressing on spinal nerves. He notes chiropractic is the most accepted alternative therapy in the Western world, licensed in all 50 U.S. states with comprehensive insurance and Medicare coverage.
+- **verbatim** (offset 99787): “Chiropractic is a physical form ofmedi-
+cine that heals without the use of drugs or
+surgery. Chiropractic philosophy believes
+that many diseases, especially physical dis-
+comfort and many visceral malfunctions are
+caused by "subluxations" of vertebral joints
+pressing on spinal nerves.”
 
-### WAL-CLM-LETS-000085 · mechanism
-- **essentials:** — · **conditions:** chronic_wounds, bedsores, arthritis · **symptoms:** —
-- **claim:** Wallach explains infrared light as a LOCAL immune stimulant: cover the area with cloth, cut a 1 cm hole over an acupuncture / trigger point, and shine infrared on it (a standard heat lamp works) until the point reddens. This draws an influx of white blood cells and antibodies, so any chronic process in the area benefits from the local immune surge — giving excellent results in chronic wounds, bedsores, and arthritis.
-- **verbatim** (offset 117438): “Infra red light is used as an immune
-stimulant - this is accomplished by covering
-the area of interest with cloth and making a
-1cm hole over an acupuncture or trigger
-"point." Infra red light is then directed to the
-hole in the cloth and allowed to redden the
-"point." This produces an "acute" stimulation
-to the "point" which causes an influx of WBCs
-and antibodies - any chronic process in the
-area will benefit from this local immune surge!!!”
+### WAL-CLM-LETS-000089 · mechanism
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach lists chiropractic's four treatment goals: (1) restore normal posture; (2) restore optimal function to the spinal and pelvic joints; (3) correct visceral (internal-organ) malfunction by relieving pressure on spinal nerves; and (4) relieve pain by "reducing" subluxations. Spinal manipulation is ancient (Egyptians, Hindus, Chinese, Babylonians, Assyrians) and reached the West in 1895 when Daniel D. Palmer reportedly cured his janitor's deafness with neck manipulation; in 1987 chiropractors won a landmark U.S. antitrust case against the American Medical Association (AMA).
+- **verbatim** (offset 100736): “The treatment goal of
+chiropractic is to:
+1) restore normal posture
+2) restore optimal function to
+spinal and pelvic joints
+3) correct visceral malfunction
+by relieving pressure on spinal
+nerves
+4) relieve pain by "reducing"
+subluxations”
 
-### WAL-CLM-LETS-000086 · mechanism
-- **essentials:** vitamin-d · **conditions:** skin_diseases, arthritis · **symptoms:** —
-- **claim:** Wallach notes ultraviolet (UV) light is germicidal, stimulates vitamin D production, and has healing effects for a variety of skin diseases and arthritis; therapeutic UV is "cool" and produces no local heat. CAUTION: UV can burn the eyes — wear protective goggles or avoid looking directly at the therapy lamp tube.
-- **verbatim** (offset 118013): “Ultra violet light is germicidal, stimulates
-the production of vitamin D and has "healing"
-effects for a variety of skin diseases and arthri-
-tis. The nice thing about the ultra violet light
-used for therapy is that it is "cool" and does not
-produce local heat. CAUTION IS REQUIRED
-TO PREVENT BURNING OF YOUR EYES -
-wear protective goggles or avoid looking di-
-rectly at the therapy lamp tube!!!”
+### WAL-CLM-LETS-000090 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach describes osteopathy as a manipulation-based healing art (of body and spine) developed over 100 years ago by Andrew Still — an engineer who, after losing all three of his children to orthodox medicine during a meningitis outbreak, concluded that disease results from a mechanical breakdown of the body. He notes most modern Doctors of Osteopathy (D.O.s) are now hard to distinguish from M.D.s in the orthodox "burn, cut and poison" approach, though a few offer chelation therapy instead of rushing into bypass surgery.
+- **verbatim** (offset 124129): “Osteopathy originated as a type of ma-
+nipulation of body and spine to heal disease.
+This healing art was developed over 1 00 years
+ago by Andrew Still (an engineer) after all three
+of his children died at the hands of "orthodox"
+medicine during a meningitis outbreak.”
 
-### WAL-CLM-LETS-000087 · definition
-- **essentials:** vitamin-d · **conditions:** — · **symptoms:** —
-- **claim:** Wallach details the ultraviolet (UV) therapy spectrum: visible light is only about five percent of the total output of UV therapy lamps; the UV ray spectrum ranges between 500 and 3,100 Angstrom units, and 2,537 Angstrom units is the peak intensity — the level that produces the germicidal, erythemic (skin-reddening), and vitamin-D-producing effects.
-- **verbatim** (offset 118409): “Visible light is only five percent of the
-total spectrum produced by ultra violet therapy
-lamps. The ultra violet ray spectrum ranges
-between 500 and 3100 Angstrom units - 2537
-Angstrom units is the "peak" intensity and is
-the level that produces the germicidal,
-erythemic and vitamin D producing effects.”
+### WAL-CLM-LETS-000091 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach describes reflexology as an ancient Chinese and East Indian diagnostic and treatment system in which the soles of the feet and palms of the hands carry "zones" or "points" that represent the visceral (internal) organs and systems. Treatment is 10-30 minutes of compression massage with the thumb or index finger; it works particularly well for physiological or functional disease, and the practitioner searches the foot or hand for "crystals" or "nodules" to work out.
+- **verbatim** (offset 124892): “Reflexology is an ancient Chinese and
+east Indian diagnostic and treatment system.
+The soles of the feet and palms of the hands
+are covered with "zones" or "points" that rep-
+resent visceral organs and systems”
+
+### WAL-CLM-LETS-000092 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach describes Rolfing (structural integration) as a deep body-massage therapy — named after Ida Rolf, a biological-chemistry graduate of Barnard College (1920) — used to break down pathological connective tissue. Before-and-after photos track posture; treatments are very uncomfortable but most patients feel the gains are worth it, and releasing the muscles, ligaments and connective tissue makes patients half an inch to one inch taller.
+- **verbatim** (offset 125448): “Rolfing is a "body therapy" (structural
+integration) and was named after Ida Rolf who
+was a graduate of biological chemistry from
+Barnard College, New York in 1920.”
 

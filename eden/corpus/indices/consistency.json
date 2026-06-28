@@ -10,6 +10,22 @@
         "book": "lets-play-doctor"
       },
       {
+        "claim_id": "WAL-CLM-LETS-000088",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000090",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000091",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000092",
+        "book": "lets-play-doctor"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000001",
         "book": "rare-earths"
       },
@@ -135,7 +151,7 @@
       }
     ],
     "books_repeating": 2,
-    "claim_count": 32
+    "claim_count": 36
   },
   {
     "id": "CG-0002",
@@ -143,6 +159,10 @@
     "conditions": [],
     "kind": "mechanism",
     "repetitions": [
+      {
+        "claim_id": "WAL-CLM-LETS-000089",
+        "book": "lets-play-doctor"
+      },
       {
         "claim_id": "WAL-CLM-RARE-000002",
         "book": "rare-earths"
@@ -212,8 +232,8 @@
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 1,
-    "claim_count": 17
+    "books_repeating": 2,
+    "claim_count": 18
   },
   {
     "id": "CG-0003",
