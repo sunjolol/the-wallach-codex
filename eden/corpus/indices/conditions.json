@@ -1479,19 +1479,89 @@
   },
   "bladder_stones": {
     "display_name": "Bladder Stones",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000087"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000161"
       ]
     },
     "essentials_involved": [
       "calcium",
       "magnesium"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "cranberry",
+      "dandelion",
+      "khella",
+      "licorice",
+      "madder",
+      "prednisone",
+      "rupturewort"
+    ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "lets-play-doctor"
+    ]
+  },
+  "bleeding": {
+    "display_name": "Bleeding",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000162"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "plantain"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "bleeding_bowels": {
+    "display_name": "Bleeding Bowels",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000163"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-c"
+    ],
+    "other_substances_involved": [
+      "alfalfa",
+      "mullein"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "bleeding_gums": {
+    "display_name": "Bleeding Gums",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000164"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium",
+      "vitamin-c",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "aloe-vera",
+      "alpine-ragwort",
+      "hydrogen-peroxide"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "blepharitis": {
@@ -1558,13 +1628,103 @@
       "dddl-3e-2011"
     ]
   },
+  "bloating": {
+    "display_name": "Bloating",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000165"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "colloidal-minerals",
+      "hydrogen-peroxide",
+      "pancreatic-enzymes"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "body_odor": {
+    "display_name": "Body Odor",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000166"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "alfalfa",
+      "colloidal-minerals",
+      "hydrogen-peroxide"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "boils": {
+    "display_name": "Boils",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000167"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a",
+      "vitamin-c",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "antibiotic-ointment",
+      "boric-acid",
+      "echinacea",
+      "hydrogen-peroxide",
+      "sand-sagebrush"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "bone_pain": {
+    "display_name": "Bone Pain",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000168"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium",
+      "vitamin-c",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "colloidal-minerals",
+      "comfrey"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "bone_spurs": {
     "display_name": "Bone Spurs",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000275"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000168"
       ]
     },
     "essentials_involved": [
@@ -1577,9 +1737,14 @@
       "sulfur",
       "tin",
       "vanadium",
+      "vitamin-c",
+      "vitamin-e",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "colloidal-minerals",
+      "comfrey"
+    ],
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
@@ -1614,6 +1779,64 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "breast_cysts": {
+    "display_name": "Breast Cysts",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000169"
+      ]
+    },
+    "essentials_involved": [
+      "omega-3",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "breast_tenderness": {
+    "display_name": "Breast Tenderness",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000170"
+      ]
+    },
+    "essentials_involved": [
+      "omega-3",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "brittle_nails": {
+    "display_name": "Brittle Nails",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000171"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "iron",
+      "omega-3",
+      "vitamin-e",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "gelatin",
+      "pancreatic-enzymes"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "bulimia": {
@@ -2806,17 +3029,22 @@
   },
   "fibrocystic_breast_disease": {
     "display_name": "Fibrocystic Breast Disease",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000231"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000169"
       ]
     },
     "essentials_involved": [
+      "omega-3",
       "vitamin-e"
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -3703,7 +3931,7 @@
   },
   "kidney_stones": {
     "display_name": "Kidney Stones",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000087"
@@ -3712,16 +3940,26 @@
         "WAL-CLM-RARE-000105"
       ],
       "protocols": [
-        "WAL-CLM-DDDL-000088"
+        "WAL-CLM-DDDL-000088",
+        "WAL-CLM-LETS-000161"
       ]
     },
     "essentials_involved": [
       "calcium",
       "magnesium"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "cranberry",
+      "dandelion",
+      "khella",
+      "licorice",
+      "madder",
+      "prednisone",
+      "rupturewort"
+    ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },

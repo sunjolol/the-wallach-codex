@@ -288,7 +288,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 41,
+    "claim_count": 45,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -334,6 +334,10 @@
         "WAL-CLM-LETS-000152",
         "WAL-CLM-LETS-000155",
         "WAL-CLM-LETS-000158",
+        "WAL-CLM-LETS-000161",
+        "WAL-CLM-LETS-000164",
+        "WAL-CLM-LETS-000166",
+        "WAL-CLM-LETS-000168",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -457,6 +461,9 @@
       "bells_palsy",
       "birth_defects",
       "bladder_stones",
+      "bleeding_gums",
+      "body_odor",
+      "bone_pain",
       "bone_spurs",
       "cancer",
       "cardiomyopathy",
@@ -851,7 +858,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 50,
+    "claim_count": 55,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -910,6 +917,11 @@
         "WAL-CLM-LETS-000152",
         "WAL-CLM-LETS-000155",
         "WAL-CLM-LETS-000158",
+        "WAL-CLM-LETS-000161",
+        "WAL-CLM-LETS-000164",
+        "WAL-CLM-LETS-000166",
+        "WAL-CLM-LETS-000168",
+        "WAL-CLM-LETS-000171",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -994,7 +1006,11 @@
       "bells_palsy",
       "birth_defects",
       "bladder_stones",
+      "bleeding_gums",
+      "body_odor",
+      "bone_pain",
       "bone_spurs",
+      "brittle_nails",
       "cancer",
       "cardiomyopathy",
       "cardiovascular_disease",
@@ -1536,7 +1552,7 @@
     "display_name": "Iron",
     "canon_slug": "iron",
     "category": "mineral",
-    "claim_count": 18,
+    "claim_count": 19,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000022"
@@ -1567,7 +1583,8 @@
       "protocol": [
         "WAL-CLM-DDDL-000080",
         "WAL-CLM-LETS-000137",
-        "WAL-CLM-LETS-000143"
+        "WAL-CLM-LETS-000143",
+        "WAL-CLM-LETS-000171"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000015"
@@ -1646,6 +1663,7 @@
       "anorexia",
       "aphthous_stomatitis",
       "arthritis",
+      "brittle_nails",
       "canker_sores",
       "depression",
       "diabetes",
@@ -2321,7 +2339,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 48,
+    "claim_count": 51,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2380,6 +2398,9 @@
         "WAL-CLM-LETS-000150",
         "WAL-CLM-LETS-000153",
         "WAL-CLM-LETS-000157",
+        "WAL-CLM-LETS-000166",
+        "WAL-CLM-LETS-000167",
+        "WAL-CLM-LETS-000171",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -2472,7 +2493,10 @@
       "benign_prostatic_hyperplasia",
       "birth_defects",
       "blind_rage",
+      "body_odor",
+      "boils",
       "bone_spurs",
+      "brittle_nails",
       "bulimia",
       "cancer",
       "canker_sores",
@@ -3291,7 +3315,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 14,
+    "claim_count": 15,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -3310,7 +3334,8 @@
         "WAL-CLM-LETS-000128",
         "WAL-CLM-LETS-000149",
         "WAL-CLM-LETS-000150",
-        "WAL-CLM-LETS-000157"
+        "WAL-CLM-LETS-000157",
+        "WAL-CLM-LETS-000167"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000037"
@@ -3375,6 +3400,7 @@
       "benign_prostatic_hyperplasia",
       "birth_defects",
       "blindness",
+      "boils",
       "cancer",
       "conjunctivitis",
       "corneal_ulcers",
@@ -4386,7 +4412,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 15,
+    "claim_count": 19,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -4409,7 +4435,11 @@
         "WAL-CLM-LETS-000145",
         "WAL-CLM-LETS-000146",
         "WAL-CLM-LETS-000150",
-        "WAL-CLM-LETS-000157"
+        "WAL-CLM-LETS-000157",
+        "WAL-CLM-LETS-000163",
+        "WAL-CLM-LETS-000164",
+        "WAL-CLM-LETS-000167",
+        "WAL-CLM-LETS-000168"
       ]
     },
     "deficiency_signs": [
@@ -4485,6 +4515,11 @@
       "arthritis",
       "autoimmune_disorders",
       "benign_prostatic_hyperplasia",
+      "bleeding_bowels",
+      "bleeding_gums",
+      "boils",
+      "bone_pain",
+      "bone_spurs",
       "cancer",
       "common_cold",
       "depression",
@@ -4602,7 +4637,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 16,
+    "claim_count": 21,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -4628,6 +4663,11 @@
         "WAL-CLM-LETS-000148",
         "WAL-CLM-LETS-000150",
         "WAL-CLM-LETS-000154",
+        "WAL-CLM-LETS-000164",
+        "WAL-CLM-LETS-000168",
+        "WAL-CLM-LETS-000169",
+        "WAL-CLM-LETS-000170",
+        "WAL-CLM-LETS-000171",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -4703,6 +4743,12 @@
       "atopic_dermatitis",
       "autoimmune_disorders",
       "bedsores",
+      "bleeding_gums",
+      "bone_pain",
+      "bone_spurs",
+      "breast_cysts",
+      "breast_tenderness",
+      "brittle_nails",
       "cancer",
       "cystic_fibrosis",
       "dermatitis",
@@ -5242,7 +5288,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 24,
+    "claim_count": 27,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -5273,6 +5319,9 @@
         "WAL-CLM-LETS-000157",
         "WAL-CLM-LETS-000158",
         "WAL-CLM-LETS-000159",
+        "WAL-CLM-LETS-000169",
+        "WAL-CLM-LETS-000170",
+        "WAL-CLM-LETS-000171",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -5327,11 +5376,15 @@
       "bells_palsy",
       "benign_prostatic_hyperplasia",
       "bipolar_disorder",
+      "breast_cysts",
+      "breast_tenderness",
+      "brittle_nails",
       "cystic_fibrosis",
       "diarrhea",
       "disagreeable_attitude",
       "eczema",
       "fatty_liver",
+      "fibrocystic_breast_disease",
       "gallstones",
       "hypertension",
       "infertility",

@@ -1,95 +1,118 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_9 claim(s) drafted 2026-06-28T17:08:57+00:00. Review then run corpus_seal.py to promote._
+_11 claim(s) drafted 2026-06-28T17:18:54+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: protocol×9
+Kinds: protocol×11
 
-### WAL-CLM-LETS-000152 · protocol
-- **essentials:** calcium, magnesium · **conditions:** backache · **symptoms:** —
-- **claim:** Backache is usually a muscle strain or a vertebral subluxation (misalignment of vertebrae) from a fall, accident, or improper lifting; a severe case of constipation can also cause one. Wallach reports that plant-derived colloidal minerals help prevent and reverse back problems without surgery. Prevention: proper lifting technique (straight back, bend the knees), strengthening exercises, a high-fiber diet, eight glasses of water daily, and good nutrition including calcium 2000 mg and magnesium 800 mg. Treatment includes massage, chiropractic, hydrotherapy, and poultices of comfrey (Symphytum officinale) and arnica (Arnica montana).
-- **verbatim** (offset 185855): “Treatment includes massage, chiropractic,
-hydrotherapy and poultices of herbs includ-
-ing comfrey (Symphytum officinale) and ar-
-nica (Arnica montana).”
+### WAL-CLM-LETS-000161 · protocol
+- **essentials:** calcium, magnesium · **conditions:** bladder_stones, kidney_stones · **symptoms:** —
+- **claim:** Bladder stones (kidney stones, cystic calculi) are ironically caused by a calcium- and/or magnesium-deficient diet -- the minerals in the stones leach from your own bones. Blood in the urine plus pain or colic signal stones; an obstructing stone can require strong pain control. Wallach's treatment: an anti-inflammatory such as licorice (Glycyrrhiza glabra) to reduce swelling so the stone can pass (prednisone for 3 days if that is not enough); calcium and magnesium at 2000 mg and 1000 mg to stop calcium loss from the bones; reduced meat intake to correct the dietary calcium/phosphorus ratio; the herbs dandelion (Taraxacum officinale), khella (Ammi visnaga), madder tea (Rubia tinctorium), and rupturewort tea (Herniaria glabra); and unsweetened cranberry juice to acidify the urine.
+- **verbatim** (offset 194201): “Calcium and magnesium at 2,000 mg
+and 1 ,000 mg is imperative to stop calcium loss
+from the bones; reduce meat intake (go more
+toward the vegetarian scale) to get your di-
+etary calcium/ phosphorus ratio in order; herbs
+including dandelion (Taraxacum officinale),
+khella (Ammi visnaga), madder tea (Rubia
+tinctorium) and rupturewort tea (Hernia
+glabra) ; unsweetened cranberry juice to acidify
+the urine.”
 
-### WAL-CLM-LETS-000153 · protocol
-- **essentials:** zinc · **conditions:** bad_breath · **symptoms:** —
-- **dose:** {'amount': 50, 'unit': 'mg', 'period': 'three times daily', 'form': None, 'duration': None, 'for_condition': 'bad_breath'}
-- **claim:** Bad breath can be handled with basic care: a good anti-tartar toothpaste, a hydrogen peroxide tooth gel, flossing on awakening and after meals, a hydrogen peroxide mouthwash, and parsley after each meal. Wallach also recommends zinc at 50 mg three times daily.
-- **verbatim** (offset 186052): “Use a good anti-tartar toothpaste, hydro-
-gen peroxide tooth gel, floss upon awakening
-and after meals, use a hydrogen peroxide
-mouthwash; parsley may be used after each
-meal; zinc at 50 mg t.i.d.”
+### WAL-CLM-LETS-000162 · protocol
+- **essentials:** — · **conditions:** bleeding · **symptoms:** —
+- **claim:** Superficial bleeding from wounds is easily controlled with direct pressure using a sterile gauze sponge or a bandage. Bleeding in the stool or coughing up blood, by contrast, can signal serious disease (stomach ulcers, ulcerative colitis, colon or lung cancer) and needs proper diagnosis. Regardless of cause, superficial bleeding may be treated with poultices of plantain (Plantago major).
+- **verbatim** (offset 195208): “Regardless of the cause superficial bleeding
+may be treated with poultices of plantain
+(Plantago major).”
 
-### WAL-CLM-LETS-000154 · protocol
-- **essentials:** vitamin-e · **conditions:** bedsores · **symptoms:** —
-- **claim:** Bedsores result from the pressure of body weight in areas of poor circulation, usually over bony prominences. Massage, sponge baths, and ultraviolet light are good preventive measures. Topical treatments include zinc oxide ointment, aloe vera ointment, vitamin E oil, and DMSO (dimethyl sulfoxide); eucalyptus (Eucalyptus globulus), wild carrot (Daucus carota), and comfrey (Symphytum officinale) can be applied topically and in poultices to encourage granulation tissue formation and healing.
-- **verbatim** (offset 186522): “Topical applications can include
-zinc oxide ointment, aloe vera ointment, vita-
-min E oil and DMSO; eucalyptus (Eucalyptus
-globulus), wild carrot, (Daucus carota)and
-comfrey (Symphytum officinale) may all be
-used topically and/or in poultices to encour-
-age granulation tissue formation and healing.”
+### WAL-CLM-LETS-000163 · protocol
+- **essentials:** vitamin-c · **conditions:** bleeding_bowels · **symptoms:** —
+- **dose:** {'amount': 1000, 'unit': 'mg', 'period': 'three times daily', 'form': 'time-release tablets', 'duration': None, 'for_condition': 'bleeding_bowels'}
+- **claim:** Bleeding bowels can be part of irritable bowel syndrome, chronic diarrhea, intestinal catarrh, or hemorrhoids, but bowel cancer, amoebic dysentery, and parasites must also be considered. Wallach's treatment for the bleeding bowel is mullein (Verbascum thapsus), vitamin C at 1000 mg three times daily as time-release tablets, alfalfa, and specific therapy per the diagnosis.
+- **verbatim** (offset 195737): “Treatment for the bleeding bowel should in-
+clude mullein (Verbascum thapsus), vitamin
+C at 1,000 mg t.i.d. as time release tablets,
+alfalfa and specific therapy per diagnosis.”
 
-### WAL-CLM-LETS-000155 · protocol
-- **essentials:** chromium, vanadium, calcium, magnesium · **conditions:** bedwetting · **symptoms:** —
-- **claim:** Bedwetting is a complex syndrome of children and teenagers that can stem from food sensitivities or hypoglycemia (low blood sugar); pulse tests and elimination diet diaries help identify triggers. Wallach's treatment is chromium and vanadium at 50-150 mcg/day, cranberry juice 4 oz twice daily, and calcium/magnesium (2000 mg/800 mg), along with avoidance of sugar, simple sugars (honey, sweet juices, fruit), and allergenic foods (milk and sugar being the most common).
-- **verbatim** (offset 187131): “Treatment includes chromium and vanadium
-at 50-150 mcg/day, cranberry juice 4 oz. b.i.d.
-and calcium/magnesium (2000 mg/800 mg).”
+### WAL-CLM-LETS-000164 · protocol
+- **essentials:** vitamin-c, vitamin-e, calcium, magnesium · **conditions:** bleeding_gums · **symptoms:** —
+- **claim:** Bleeding gums are an early warning for vitamin C deficiency (scurvy), calcium deficiency or a bad calcium/phosphorus ratio (osteoporosis with receding gums from underlying bone loss), or vitamin E deficiency. Wallach's treatment is vitamin C to bowel tolerance, vitamin E at 800 IU/day, a corrected dietary calcium/phosphorus ratio with supplemental calcium/magnesium at 2000 mg and 800 mg, and herbal mouthwashes with alpine ragwort (Senecio fuchsii) and with aloe/hydrogen peroxide.
+- **verbatim** (offset 196169): “Treatment should include vitamin C to bowel
+tolerance, vitamin E at 800 IU/day, correct
+dietary calcium/ phosphorus ratio with supple-
+mental calcium/magnesium at 2,000 mg and
+800 mg, herbal therapy including mouthwash
+with alpine ragwort (Senecio fuchsii) and
+mouthwash with aloe/hydrogen peroxide.”
 
-### WAL-CLM-LETS-000156 · protocol
-- **essentials:** — · **conditions:** bee_stings · **symptoms:** —
-- **claim:** A bee sting injects bee venom and is painful; pain gels, DMSO (dimethyl sulfoxide), or Caladryl lotion relieve the pain effectively. Some people become allergic to bee venom, in which case a sting can trigger a life-threatening anaphylactic shock. For individuals deemed sensitive, treatment is limited to adrenaline (epinephrine) from a bee-sting kit, and prevention to avoiding stings.
-- **verbatim** (offset 187774): “Treatment for individuals deemed sensitive to
-bee stings is limited to the use of adrenaline
-(epinephrine) from a "bee sting"kit.”
+### WAL-CLM-LETS-000165 · protocol
+- **essentials:** — · **conditions:** bloating · **symptoms:** —
+- **claim:** Gastric bloating is the accumulation of gas in the stomach: when hypochlorhydria (low stomach acid) sets in, bacteria from the small intestine migrate up and ferment carbohydrates and sugars into gas. Wallach's treatment for 'bloat, belch and burp' is oral hydrogen peroxide (20 drops per oz) at 1 oz twice daily, colloidal minerals, and betaine hydrochloride with pancreatic enzymes at 75-200 mg three times daily, 15 minutes before meals.
+- **verbatim** (offset 196830): “Treatment of "bloat, belch and burp" includes
+oral hydrogen peroxide ( 20 drops/ oz) at 1 oz.
+b.i.d., colloidal minerals and betaine HC1 and
+pancreatic enzymes at 75-200 mg t.i.d. 15
+minutes before meals.”
 
-### WAL-CLM-LETS-000157 · protocol
-- **essentials:** zinc, omega-3, vitamin-a, vitamin-c, selenium · **conditions:** benign_prostatic_hyperplasia · **symptoms:** —
-- **claim:** Benign prostatic hyperplasia (enlargement of the prostate gland) is the most common infirmity of aging in men; the enlarging gland squeezes the bladder neck, producing urinary frequency and urgency. Wallach's protocol is zinc at 50 mg three times daily, essential fatty acids as flaxseed oil 1 tablespoon three times daily, a high-fiber diet including pumpkin seeds and alfalfa, vitamin A as beta carotene 300,000 IU/day, vitamin C to bowel tolerance, chlorophyll (best from alfalfa), the amino acids glycine, alanine, and glutamic acid at 5 grams each daily for 90 days, hydrogen peroxide (20 drops per oz of aloe juice) 1 oz twice daily, cranberry juice 2 pints/day, saw palmetto (Serenoa serrulata), and selenium 250 mcg three times daily.
-- **verbatim** (offset 188892): “Benign prostatic hypertrophy is treated with
-zinc at 50 mg t.i.d., essential fatty acids as
-flaxseed oil at 1 tbsp. t.i.d., high fiber diets
-including pumpkin seeds and alfalfa, 300,000
-IU vitamin A as beta carotene per day, vitamin
-C to bowel tolerance, chlorophyll (best source
-is alfalfa), amino acids (glycine, alanine and
-glutamic acid) at five grams each daily for 90
-days”
+### WAL-CLM-LETS-000166 · protocol
+- **essentials:** zinc, calcium, magnesium · **conditions:** body_odor · **symptoms:** —
+- **claim:** Body odor and foot odor can occur in anyone, especially teenagers and older people. Wallach's treatment is zinc at 50 mg three times daily, calcium/magnesium at 2000 mg and 800 mg, plant-derived colloidal minerals at 1 oz per 100 pounds of body weight, plenty of green leafy vegetables and alfalfa, and baths and deodorants with hydrogen peroxide.
+- **verbatim** (offset 197120): “Treatment includes zinc at 50 mg t.i.d., cal-
+cium/magnesium at 2,000 mg and 800 mg,
+plant derived colloidal minerals at 1 oz per 100
+pounds; lots of green leafy vegetables, alfalfa,
+and baths and deodorants with hydrogen
+peroxide.”
 
-### WAL-CLM-LETS-000158 · protocol
-- **essentials:** vitamin-b12, calcium, magnesium, omega-3 · **conditions:** bells_palsy · **symptoms:** —
-- **claim:** Bell's palsy is the sudden drooping of one side of the face from inflammation or compression of the facial nerve (the 7th cranial nerve); it is often mistaken for a stroke because of its sudden onset, with numbness and partial or total loss of muscle control on the affected side. Treated properly, there can be up to an 80% chance of significant recovery. Wallach's treatment is vitamin B-12 at 1000 mcg/day for a total of 20,000 mcg, calcium/magnesium at 2000 mg and 800 mg per day, essential fatty acids at 5 grams three times daily, and American ginseng (Panax quinquefolius); colloidal minerals are also useful.
-- **verbatim** (offset 189905): “Treatment is B-12 at 1000 mcg/day for a total
-of 20,000 mcg; calcium/ magnesium at 2,000
-mg and 800 mg per day; essential fatty acids at
-5 gm t.i.d. and American ginseng (Panax
-quinquefolius). Colloidal minerals are useful.”
+### WAL-CLM-LETS-000167 · protocol
+- **essentials:** vitamin-c, vitamin-a, zinc · **conditions:** boils · **symptoms:** —
+- **claim:** Boils (carbuncles, abscesses) are usually a staph infection of the skin and hair follicles, often at a site of irritation such as the collar line; the tender pus-filled boil can be brought to a head with poultices of 3% boric acid and opened with a blade. Wallach's treatment is flushing the boil with sand sagebrush (Artemisia filifolia), echinacea (Echinacea angustifolia), and/or hydrogen peroxide; vitamin C to bowel tolerance; vitamin A at 300,000 IU/day as beta carotene; and zinc 50 mg three times daily, with antibiotic ointment if new boils appear until the vitamins and minerals take effect.
+- **verbatim** (offset 197647): “Treatment includes flushing the boil with sand
+sagebrush (Artemisia fififolia), enchinacea
+(Echinaca angustifolia) and/or hydrogen per-
+oxide; vitamin C at bowel tolerance, vitamin A
+at 300,000 IU/day as beta carotene, zinc 50 mg
+t.i.d.”
 
-### WAL-CLM-LETS-000159 · protocol
-- **essentials:** chromium, vanadium, omega-3, vitamin-b3, vitamin-b1, vitamin-b5, vitamin-b6, choline, phenylalanine, lithium · **conditions:** bipolar_disorder · **symptoms:** —
-- **claim:** Wallach regards bipolar disorder (mania / manic depression) as largely a descriptive label, estimating that as many as 90% of non-drug-dependent patients are treatable at home; food allergies, environmental sensitivities, hypoglycemia, and hyperglycemia are the major factors, identified with a pulse test, diet diary, rotation elimination diet, and a six-hour glucose tolerance test (recording emotions and behavior throughout, since the numbers alone are not revealing). Treatment includes chromium and vanadium at 500 mcg four times daily; autoimmune urine therapy for five to eight treatments; avoidance of offending foods, sugar, caffeine, and environmental allergens; essential fatty acids at 5 grams three times daily; time-release niacin (vitamin B-3) at 450 mg four times daily; vitamins B-1, B-5, and B-6 each at 100 mg twice daily; DL-phenylalanine at 5 grams twice daily; choline at 250 mg twice daily; and plant-derived colloidal minerals that contain lithium.
-- **verbatim** (offset 191451): “Treatment should include chromium and va-
-nadium at 500 mcg q.i.d.; autoimmune urine
-therapy for five to eight treatments; rotation or
-avoidance of offendingfoods; avoidance of
-sugar, caffeine, environmental allergens; es-
-sential fatty acids at 5 gm t.i.d. ; niacin (B-3) 450
-mg. q.i.d. in time release tablets; B-l, B-5, B-6
-each at 100 mg b.i.d.; DL-phenylalanine at 5
-gms b.i.d. and choline at 250 mg b.i.d. Plant
-derived colloidal minerals that contain lithium
-may be useful.”
+### WAL-CLM-LETS-000168 · protocol
+- **essentials:** vitamin-c, vitamin-e, magnesium, calcium · **conditions:** bone_pain, bone_spurs · **symptoms:** —
+- **claim:** Bone pain and spurs can be immobilizing; bone pain may be 'growing pains' at the joints or where tendons insert into bone (where spurs form), but persistent pain warrants x-rays to rule out fracture, arthritis, or bone cancer. Wallach's treatment is vitamin C to bowel tolerance; vitamin E at 800-1200 IU/day; magnesium at 500 mg three times daily for as long as one to two years; a corrected calcium/phosphorus ratio with calcium at 2000 mg/day; reduced meat intake; and the herb comfrey (Symphytum officinale). Plant-derived colloidal minerals have reversed spurs and calcium deposits without surgery by remodeling the bone.
+- **verbatim** (offset 198456): “Treatment of bone pain and "spurs" includes
+vitamin C to bowel tolerance, vitamin E at 800-
+1, 200 IU/day; magnesiumat 500 mgt.i.d.foras
+long as one to two years; correct the calcium/
+phosphorus ratio with calcium at 2,000 mg/
+day, reduce meat intake; herbs including com-
+frey (Symphytum officinale). Plant derived
+colloidal minerals have reversed spurs and
+calcium deposits without surgery by remodel-
+ing the bone.”
 
-### WAL-CLM-LETS-000160 · protocol
-- **essentials:** — · **conditions:** birth_defects · **symptoms:** —
-- **claim:** Wallach calls birth defects a national crime, holding that more than 98% result from preconception and early-pregnancy malnutrition of the embryo -- by the time a doctor confirms the pregnancy, the organs and tissues have already formed. Prevention requires more than prenatal vitamins started in the second month: conscious attention to preconception vitamins and colloidal minerals and avoidance of alcohol, especially for teenage and middle-aged mothers-to-be. Do a home pregnancy test as soon as pregnancy is suspected and, if not already taking supplements, start immediately.
-- **verbatim** (offset 192977): “Conscious atten-
-tion to preconception vitamins and colloidal
-minerals and avoidance of alcohol is espe-
-cially important to teenage and middle age
-mothers-to-be”
+### WAL-CLM-LETS-000169 · protocol
+- **essentials:** omega-3, vitamin-e · **conditions:** breast_cysts, fibrocystic_breast_disease · **symptoms:** —
+- **claim:** Breast cysts (fibrocystic breast disease) are painful but benign, with normal breast tissue overgrown by scar tissue and multiple cysts. Prevention and treatment center on avoiding methyl xanthines (caffeine, coffee, tea, chocolate). Wallach's treatment is elimination of methyl xanthines from the diet, essential fatty acids at 5 grams three times daily, and vitamin E at 800-1200 IU per day.
+- **verbatim** (offset 199183): “Treatment includes elimination of methyl
+xanthines from the diet, essential fatty acids 5
+gm t.i.d. and vitamin E at 800-1 ,200 IU per day.”
+
+### WAL-CLM-LETS-000170 · protocol
+- **essentials:** vitamin-e, omega-3 · **conditions:** breast_tenderness · **symptoms:** —
+- **claim:** Breast tenderness is a common symptom of premenstrual syndrome (PMS) and early pregnancy; PMS tenderness is cyclical, while pregnancy tenderness comes with missed periods and a positive pregnancy test. Wallach's treatment is vitamin E applied topically and essential fatty acids taken orally at 5 grams three times daily, avoiding methyl xanthines, plus the baseline supplements.
+- **verbatim** (offset 199533): “Treatment includes vitamin E topically and
+essential fatty acids orally at 5 gm t.i.d., avoid
+methyl xanthines and remember the base line
+supplements.”
+
+### WAL-CLM-LETS-000171 · protocol
+- **essentials:** omega-3, vitamin-e, calcium, iron, zinc · **conditions:** brittle_nails · **symptoms:** —
+- **claim:** Brittle nails are common in teenagers, pregnant women, and people with food allergies; the causes are malabsorption or deficiencies of essential fatty acids, amino acids (low-protein vegetarian diets), calcium, iron, or zinc. Wallach's treatment is addressing food allergies (use the pulse test) to improve absorption, gelatin (unflavored and unsweetened, or diabetic brands), essential fatty acids at 5 grams three times daily, vitamin E at 800-1200 IU/day, the baseline supplementation, and betaine hydrochloride with pancreatic enzymes at 75-200 mg each three times daily, 15 minutes before meals.
+- **verbatim** (offset 199956): “Treatment of brittle nails includes dealing with
+food allergies (use the pulse test - it's cheap
+and accurate) to improve absorption, gelatin
+(unflavored and unsweetened or diabetic
+brands), essential fatty acids at 5 gm t.i.d.,
+vitamin E at 800-1,200 IU/day, the base line
+supplementation, and betaine HC1 and pan-
+creatic enzymes at 75-200 mg each t.i.d. 15
+minutes before meals.”
 

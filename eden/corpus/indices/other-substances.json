@@ -33,16 +33,20 @@
   },
   "alfalfa": {
     "display_name": "Alfalfa",
-    "claim_count": 2,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
-        "WAL-CLM-LETS-000157"
+        "WAL-CLM-LETS-000157",
+        "WAL-CLM-LETS-000163",
+        "WAL-CLM-LETS-000166"
       ]
     },
     "conditions_treated": [
       "arthritis",
       "benign_prostatic_hyperplasia",
+      "bleeding_bowels",
+      "body_odor",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -66,14 +70,31 @@
   },
   "aloe-vera": {
     "display_name": "Aloe Vera",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000154"
+        "WAL-CLM-LETS-000154",
+        "WAL-CLM-LETS-000164"
       ]
     },
     "conditions_treated": [
-      "bedsores"
+      "bedsores",
+      "bleeding_gums"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "alpine-ragwort": {
+    "display_name": "Alpine Ragwort",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000164"
+      ]
+    },
+    "conditions_treated": [
+      "bleeding_gums"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -89,6 +110,21 @@
     },
     "conditions_treated": [
       "bells_palsy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "antibiotic-ointment": {
+    "display_name": "Antibiotic Ointment",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000167"
+      ]
+    },
+    "conditions_treated": [
+      "boils"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -156,7 +192,7 @@
   },
   "betaine-hcl": {
     "display_name": "Betaine Hcl",
-    "claim_count": 8,
+    "claim_count": 10,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -166,7 +202,9 @@
         "WAL-CLM-LETS-000137",
         "WAL-CLM-LETS-000140",
         "WAL-CLM-LETS-000142",
-        "WAL-CLM-LETS-000147"
+        "WAL-CLM-LETS-000147",
+        "WAL-CLM-LETS-000165",
+        "WAL-CLM-LETS-000171"
       ]
     },
     "conditions_treated": [
@@ -179,7 +217,9 @@
       "anorexia_nervosa",
       "anxiety",
       "asthma",
-      "atopic_asthma"
+      "atopic_asthma",
+      "bloating",
+      "brittle_nails"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -215,18 +255,20 @@
   },
   "boric-acid": {
     "display_name": "Boric Acid",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000119",
         "WAL-CLM-LETS-000136",
-        "WAL-CLM-LETS-000149"
+        "WAL-CLM-LETS-000149",
+        "WAL-CLM-LETS-000167"
       ]
     },
     "conditions_treated": [
       "abscess",
       "anal_abscess",
-      "athletes_foot"
+      "athletes_foot",
+      "boils"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -389,7 +431,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 9,
+    "claim_count": 12,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -400,7 +442,10 @@
         "WAL-CLM-LETS-000152",
         "WAL-CLM-LETS-000158",
         "WAL-CLM-LETS-000159",
-        "WAL-CLM-LETS-000160"
+        "WAL-CLM-LETS-000160",
+        "WAL-CLM-LETS-000165",
+        "WAL-CLM-LETS-000166",
+        "WAL-CLM-LETS-000168"
       ]
     },
     "conditions_treated": [
@@ -414,6 +459,10 @@
       "bells_palsy",
       "bipolar_disorder",
       "birth_defects",
+      "bloating",
+      "body_odor",
+      "bone_pain",
+      "bone_spurs",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -422,18 +471,21 @@
   },
   "comfrey": {
     "display_name": "Comfrey",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
         "WAL-CLM-LETS-000152",
-        "WAL-CLM-LETS-000154"
+        "WAL-CLM-LETS-000154",
+        "WAL-CLM-LETS-000168"
       ]
     },
     "conditions_treated": [
       "abrasions",
       "backache",
-      "bedsores"
+      "bedsores",
+      "bone_pain",
+      "bone_spurs"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -441,16 +493,35 @@
   },
   "cranberry": {
     "display_name": "Cranberry",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000155",
-        "WAL-CLM-LETS-000157"
+        "WAL-CLM-LETS-000157",
+        "WAL-CLM-LETS-000161"
       ]
     },
     "conditions_treated": [
       "bedwetting",
-      "benign_prostatic_hyperplasia"
+      "benign_prostatic_hyperplasia",
+      "bladder_stones",
+      "kidney_stones"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "dandelion": {
+    "display_name": "Dandelion",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000161"
+      ]
+    },
+    "conditions_treated": [
+      "bladder_stones",
+      "kidney_stones"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -508,16 +579,18 @@
   },
   "echinacea": {
     "display_name": "Echinacea",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000119",
-        "WAL-CLM-LETS-000136"
+        "WAL-CLM-LETS-000136",
+        "WAL-CLM-LETS-000167"
       ]
     },
     "conditions_treated": [
       "abscess",
-      "anal_abscess"
+      "anal_abscess",
+      "boils"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -655,6 +728,21 @@
       "lets-play-doctor"
     ]
   },
+  "gelatin": {
+    "display_name": "Gelatin",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000171"
+      ]
+    },
+    "conditions_treated": [
+      "brittle_nails"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "gentian": {
     "display_name": "Gentian",
     "claim_count": 2,
@@ -781,7 +869,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 8,
+    "claim_count": 12,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
@@ -791,7 +879,11 @@
         "WAL-CLM-LETS-000145",
         "WAL-CLM-LETS-000146",
         "WAL-CLM-LETS-000153",
-        "WAL-CLM-LETS-000157"
+        "WAL-CLM-LETS-000157",
+        "WAL-CLM-LETS-000164",
+        "WAL-CLM-LETS-000165",
+        "WAL-CLM-LETS-000166",
+        "WAL-CLM-LETS-000167"
       ]
     },
     "conditions_treated": [
@@ -803,6 +895,10 @@
       "arthritis",
       "bad_breath",
       "benign_prostatic_hyperplasia",
+      "bleeding_gums",
+      "bloating",
+      "body_odor",
+      "boils",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -853,6 +949,22 @@
     "conditions_treated": [
       "asthma",
       "atopic_asthma"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "khella": {
+    "display_name": "Khella",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000161"
+      ]
+    },
+    "conditions_treated": [
+      "bladder_stones",
+      "kidney_stones"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -949,14 +1061,17 @@
   },
   "licorice": {
     "display_name": "Licorice",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000146"
+        "WAL-CLM-LETS-000146",
+        "WAL-CLM-LETS-000161"
       ]
     },
     "conditions_treated": [
       "arthritis",
+      "bladder_stones",
+      "kidney_stones",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -973,6 +1088,22 @@
     },
     "conditions_treated": [
       "anemia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "madder": {
+    "display_name": "Madder",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000161"
+      ]
+    },
+    "conditions_treated": [
+      "bladder_stones",
+      "kidney_stones"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1070,6 +1201,21 @@
       "lets-play-doctor"
     ]
   },
+  "mullein": {
+    "display_name": "Mullein",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000163"
+      ]
+    },
+    "conditions_treated": [
+      "bleeding_bowels"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "nitroglycerine": {
     "display_name": "Nitroglycerine",
     "claim_count": 1,
@@ -1118,14 +1264,16 @@
   },
   "pancreatic-enzymes": {
     "display_name": "Pancreatic Enzymes",
-    "claim_count": 5,
+    "claim_count": 7,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000123",
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000131",
         "WAL-CLM-LETS-000140",
-        "WAL-CLM-LETS-000147"
+        "WAL-CLM-LETS-000147",
+        "WAL-CLM-LETS-000165",
+        "WAL-CLM-LETS-000171"
       ]
     },
     "conditions_treated": [
@@ -1135,7 +1283,9 @@
       "anorexia",
       "anorexia_nervosa",
       "asthma",
-      "atopic_asthma"
+      "atopic_asthma",
+      "bloating",
+      "brittle_nails"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1188,15 +1338,17 @@
   },
   "plantain": {
     "display_name": "Plantain",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
-        "WAL-CLM-LETS-000125"
+        "WAL-CLM-LETS-000125",
+        "WAL-CLM-LETS-000162"
       ]
     },
     "conditions_treated": [
       "abrasions",
+      "bleeding",
       "disagreeable_attitude"
     ],
     "books_cited": [
@@ -1214,6 +1366,22 @@
     "conditions_treated": [
       "arthritis",
       "rheumatoid_arthritis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "prednisone": {
+    "display_name": "Prednisone",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000161"
+      ]
+    },
+    "conditions_treated": [
+      "bladder_stones",
+      "kidney_stones"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1309,6 +1477,22 @@
       "lets-play-doctor"
     ]
   },
+  "rupturewort": {
+    "display_name": "Rupturewort",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000161"
+      ]
+    },
+    "conditions_treated": [
+      "bladder_stones",
+      "kidney_stones"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "rutin": {
     "display_name": "Rutin",
     "claim_count": 1,
@@ -1349,6 +1533,21 @@
     },
     "conditions_treated": [
       "abscess"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "sand-sagebrush": {
+    "display_name": "Sand Sagebrush",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000167"
+      ]
+    },
+    "conditions_treated": [
+      "boils"
     ],
     "books_cited": [
       "lets-play-doctor"

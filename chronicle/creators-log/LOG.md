@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_148 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_149 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 12:20 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b21 BLADDER STONES→BRITTLE NAILS: 11 protocol claims (LETS-161..171). Clean single-flow pages, no drops/scrambles. FIRST Ch10 batch with ZERO meg→mcg fixes (doses render-verified mg/IU). 5 same-length header .txt fixes. seal kv131, claims 551, board 31/31.
+  ↳ RENDER-FIRST p91-93 (fitz=printed+11) word-read; no dropped sections, no column scrambles. BRONCHIAL ASTHMA bare '(see asthma)' xref skipped. BLEEDING BOWELS = structured single dose (vitamin C 1000 mg tid time-release). Header .txt fixes (render-verified, same length, resnap 0/0): BLEEDEVG→BLEEDING x2, BODLS→BOILS, BONE PALN→BONE PAIN, BRITTLE NABLS→BRITTLE NAILS. Faithful-in-verbatim/clean-in-claim_text: enchinacea/Echinaca→echinacea/Echinacea, fififolia→filifolia, Hernia glabra→Herniaria glabra, betaine HC1→betaine hydrochloride (pervasive class, final sweep). bone_pain also tagged bone_spurs; breast_cysts also fibrocystic_breast_disease; bladder_stones also kidney_stones. corpus_verify PASS; build 1115 KB; invariants 31/31 0-new; knowledge probe PASS 244 conditions.
 
 ## 2026-06-28 12:12 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b20 BACKACHE→BIRTH DEFECTS: 9 protocol claims (LETS-152..160). Feared p89-90 column scramble was a FALSE ALARM — book prints BPH before BELL'S, .txt faithful. 5 render-verified meg→mcg + 2 orthographic .txt fixes. seal kv130, claims 540, board 31/31, probe green.
