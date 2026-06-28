@@ -19,9 +19,10 @@ views/ → state/ → core/   (one-way, never the reverse)
 3. `tsconfig.json` enables `exactOptionalPropertyTypes`, `noPropertyAccessFromIndexSignature`, `noImplicitOverride`. Respect them.
 
 ## Code style
-1. **No prose-as-comments.** JSDoc only, starred-block (`/** ... */`). Narrative belongs in commits, build-log, contradictions.
-2. Single source of truth — if a value appears in two places, one is wrong.
-3. Pure functions in `state/` and `core/` where possible. Side effects live in `main.ts` boot wiring and `views/*` DOM handlers.
+1. **Comments = the truthful WHY/decision audit-trail for future human + AI reviewers.** Comment non-obvious logic, trade-offs, and gotchas with WHY the solution is correct — not WHAT the code literally does (that is noise). A comment that lies or has drifted out of sync with the code is a defect *worse than no comment* (it deceives a less-expert reader and wastes an auditor's time): fix or delete it whenever you touch that code. JSDoc starred-blocks (`/** ... */`) for exported/API surfaces; inline `//` is fine for local rationale + section dividers. Flag uncertainty LOUDLY (`// NOTE:` / `// FIXME:`), never silent over-confidence.
+2. **No user-facing educational prose inline** — it lives in the segregated content store (Eden corpus / `assets/data`) and is referenced by views (enforced for content blobs by the `views_state_no_inline_data` invariant). Session narrative belongs in commits + build-log, not code. (Comment *truthfulness* is not machine-checkable — it is review discipline, kept cheap by this structure + the round-close logging audit-trail.)
+3. Single source of truth — if a value appears in two places, one is wrong.
+4. Pure functions in `state/` and `core/` where possible. Side effects live in `main.ts` boot wiring and `views/*` DOM handlers.
 
 ## Lint
 - **Never `eslint --fix`** on source files. See `.claude/rules/write-discipline.md`.

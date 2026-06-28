@@ -18,7 +18,7 @@ A personal health framework shipping as an offline app — production-grade wher
 7. **Graceful degradation.** When one component fails, the rest keeps working — optional features wrapped with safe fallbacks.
 8. **Bounded inputs.** Every input field has explicit length limits, format validation, and a rejection path. Default cap 10,000 chars unless the field needs more.
 9. **Reversibility.** Every destructive operation is reversible or requires explicit confirmation. Autonomous operations use check-then-act.
-10. **Self-documenting structure.** File layout reveals architecture; naming reveals behavior; comments explain WHY, not WHAT (JSDoc only — see `typescript.md`).
+10. **Self-documenting + auditable structure.** File layout reveals architecture; naming reveals behavior; comments carry the truthful WHY/decision trail for future auditors (not WHAT-noise; a drifted or lying comment is a defect). User-facing educational prose stays in the segregated content store, never inline. Detail: `typescript.md`.
 11. **Truth-anchored invariants.** Every check pins to an external truth source that can't itself drift (committed hashes, deterministic recomputation, primary-source files, low-level `os.read` bypassing the text cache). Stale-to-stale equality is not truth. When two surfaces share the same write primitive, treat them as one surface and find an independent anchor.
 
 ## How to use

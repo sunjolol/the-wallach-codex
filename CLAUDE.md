@@ -30,7 +30,7 @@ Every numeric claim, every health assertion, every recommendation traces to a Wa
 **§00.B — Engineering standard of an elite open-source maintainer (99 / 100).**
 Three operational consequences (detail: `.claude/rules/engineering-doctrine.md`):
 
-1. **Code stays pristine.** No prose-as-comments. JSDoc only, starred-block. Narrative belongs in `chronicle/build-log.md`, commit messages, and `chronicle/contradictions/`.
+1. **Code stays pristine + auditable.** Comments are the truthful WHY/decision audit-trail for future human + AI reviewers — explain non-obvious logic + trade-offs, never WHAT-restating noise, and never let a comment lie or drift from the code (a stale/false comment is a defect worse than none). Surface uncertainty LOUDLY, never silent over-confidence. User-facing educational prose lives in the segregated content store (Eden corpus / `assets/data`), never inline. Session narrative belongs in `chronicle/build-log.md` + commit messages. Detail: `.claude/rules/typescript.md`.
 2. **Discipline lives in tooling, not in promises.** Every rule that can be enforced by a hook, a lint rule, or an invariant *is*.
 3. **No canonical data in views.** Data lives behind Zod schemas in `eden/` and `dashboard/assets/data/`. Views are pure renderers.
 
