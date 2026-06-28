@@ -3595,7 +3595,9 @@
         "healing-arts",
         "light-therapy",
         "search-topic:light-therapy",
-        "ultraviolet"
+        "ultraviolet",
+        "benefit:vitamin-d-production",
+        "benefit:immune-stimulation"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -3632,7 +3634,9 @@
         "healing-arts",
         "light-therapy",
         "search-topic:light-therapy",
-        "infrared"
+        "infrared",
+        "benefit:immune-stimulation",
+        "benefit:wound-healing"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -3671,7 +3675,9 @@
         "light-therapy",
         "search-topic:light-therapy",
         "ultraviolet",
-        "safety"
+        "safety",
+        "benefit:germicidal",
+        "benefit:vitamin-d-production"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -3706,7 +3712,9 @@
         "healing-arts",
         "light-therapy",
         "search-topic:light-therapy",
-        "spectrum"
+        "spectrum",
+        "benefit:germicidal",
+        "benefit:vitamin-d-production"
       ],
       "confidence": "high",
       "review_state": "draft",
