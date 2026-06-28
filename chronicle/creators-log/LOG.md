@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_123 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_124 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-27 20:09 UTC-05:00 · design-decision · eden/corpus
+SOURCE-CORRECTION POLICY (Luneth-ruled): correct the book .txt sources — fix all clear OCR errors + obvious typos (render-verified, orthographic-only, never semantic). Extract-first / clean-as-we-touch + final per-book sweep. LPD measured ~98% clean (not 'pervasive').
+  ↳ Luneth ruled the scanned-book .txt sources should be actively CORRECTED, not kept byte-faithful to OCR garble. Rationale: typos != wrong (the publisher/transcription erred, not Wallach's wisdom); cleaning restores signal without altering meaning; the clean standardized transcript is both an offering to the world (copyright-gated) and his durable personal resource. RULES: fix all CLEAR errors (spelling/spacing/punctuation/OCR-restoration), render-verified against the page image, ORTHOGRAPHIC-ONLY (never meaning); line-wrap hyphens stay (faithful typesetting); ambiguous intended words still get a Luneth ruling; dangerous dose misprints remain a mandatory fix. SEQUENCING (Luneth chose): extract-first, clean-as-we-touch — mine Ch7->Ch10 now, fixing each rendered page's clear errors as we go; a final per-book sweep closes the gap. DATA: OCR audit of LPD .txt = ~98% clean (~2.0% of lines flagged) -> hand-fix not re-OCR; triage each remaining book with the audit first. PROVENANCE: PDF = original-of-record (backup) + git history = every correction; refined transcripts exported as a deliverable at the end. Corrects my earlier 'pervasively garbled' overstatement. Codified in memory [[source-correction-policy]] + handoff.
 
 ## 2026-06-27 19:44 UTC-05:00 · round-close · eden/corpus
 LPD batch 9 — Ch5 calcium diamonds + Ch6 psychiatric-misdiagnosis cases. 5 claims LETS-078..082 (4 diagnostic_pattern + 1 prevalence), shard 77->82. Blood-calcium-masks-deficiency, six-hour GTT, psychiatry-as-food-allergy/hypoglycemia, 1986 55%-malnutrition study.
