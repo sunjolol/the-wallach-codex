@@ -1269,8 +1269,11 @@
   },
   "celiac_disease": {
     "display_name": "Celiac Disease",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000083"
+      ],
       "diagnostics": [
         "WAL-CLM-RARE-000082"
       ]
@@ -1281,6 +1284,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -3235,8 +3239,11 @@
   },
   "malabsorption": {
     "display_name": "Malabsorption",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000083"
+      ],
       "deficiency_signs": [
         "WAL-CLM-LETS-000041",
         "WAL-CLM-LETS-000044"

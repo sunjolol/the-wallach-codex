@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_124 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_125 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-27 20:17 UTC-05:00 · round-close · eden/corpus
+LPD batch 10 — Ch7 Healing Arts scan: 1 diamond + stated skip. LETS-083 (mechanism): macrobiotic diet 'cures' = inadvertent gluten elimination resolving celiac → restored mineral/vitamin/EFA absorption. Ch7 survey skipped; Pauling/Hoffer megavitamin doses barred by §00.A.
+  ↳ Read all of Ch7 (L2619-3505, ~18 modalities). Ch7 is a healing-arts survey that doesn't fit the essentials->condition model -> stated skip (READ-confirmed). §00.A: megavitamin-therapy doses are Pauling/Hoffer (non-allowlist) -> not extracted. One genuine Wallach diamond: LETS-083 mechanism p66 = macrobiotic 'brown rice' diet successes explained by inadvertent gluten elimination resolving undiagnosed celiac disease -> gut resumes absorbing trace minerals/vitamins/EFAs (malabsorption thesis). conditions celiac_disease+malabsorption, xref RARE-082. FIRST application of source-correction-policy: render-verified p66 (fitz 77) -> fixed .txt 'gulten'->'gluten' (same-length) via safe_write -> resnap --write (hash 9c60f5af->5fb4295a, 0 broken) -> finalize -> seal kv116. Gates: build OK, invariants 30/30 (0 new reds), knowledge probe PASS. corpus 462->463, conditions 210.
 
 ## 2026-06-27 20:09 UTC-05:00 · design-decision · eden/corpus
 SOURCE-CORRECTION POLICY (Luneth-ruled): correct the book .txt sources — fix all clear OCR errors + obvious typos (render-verified, orthographic-only, never semantic). Extract-first / clean-as-we-touch + final per-book sweep. LPD measured ~98% clean (not 'pervasive').

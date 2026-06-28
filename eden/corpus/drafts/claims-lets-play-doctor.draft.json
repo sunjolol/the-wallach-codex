@@ -3523,6 +3523,44 @@
       "extracted_at": "2026-06-28T00:41:55+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000083",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "celiac_disease",
+        "malabsorption"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach explains that the reported successes of the macrobiotic (\"brown rice\") diet are largely due to inadvertent gluten elimination: people who unknowingly have gluten sensitivity (celiac disease) benefit when they remove wheat from the diet, because their gut then begins to absorb the trace minerals, vitamins, and essential fatty acids it had been failing to take up. In his framework the diet's value is nutritional (resolving malabsorption), not the yin/yang theory behind it.",
+      "verbatim": "An explanation for in-\ncreased health from the macrobiotic program\nis that individuals who are not aware that they\nhave gluten sensitivity (celiac disease) get\nbenefit from eliminating wheat from their diet\nand begin to absorb trace minerals, vitamins\nand essential fatty acids.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "7",
+        "page": 66,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 119764
+      },
+      "dose": null,
+      "tags": [
+        "ch7",
+        "macrobiotics",
+        "celiac",
+        "malabsorption",
+        "gluten",
+        "healing-arts",
+        "xref:WAL-CLM-RARE-000082"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T01:16:13+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
