@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_166 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_167 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 18:37 UTC-05:00 · round-close · knowledge/corpus
+Ch10 Materia Medica b38 — FITS→FRECKLES (F's pt2), 6 protocol claims LETS-277..282. 3 render-verified meg→mcg fixes (FOOD ALLERGIES selenium 200/chromium 50-200, FRECKLES selenium 200-500). seal kv148→149, claims 656→662, conditions 302→305. Board 31/31, probe PASS.
+  ↳ FITS(convulsions — mullein tea, not bare xref), FLATULENCE, FLU(influenza — big antiviral+herb protocol), FOOD ALLERGIES(food_allergy — Coca pulse test + full supp protocol), FRACTURES, FRECKLES. New conds: influenza, fractures, freckles. Slug reuse elderberry/isoprinosine; english-mandrake≠american-mandrake. Pipeline fix_txt→resnap(0 broken)→finalize→seal→embed→build→invariants(31/31)→render_probe_knowledge(0 errors). NEXT b39 = the G's (GALLBLADDER/GEOGRAPHIC TONGUE/GINGIVITIS/GLAUCOMA).
 
 ## 2026-06-28 18:24 UTC-05:00 · round-close · knowledge/corpus
 Ch10 Materia Medica b37 — FAILURE TO THRIVE→FINGERNAILS (F's pt1), 7 protocol claims LETS-270..276. 2 render-verified meg→mcg fixes (FIBROCYSTIC iodine 200/selenium 500). seal kv147→148, claims 649→656, conditions 299→302. Board 31/31, probe PASS.

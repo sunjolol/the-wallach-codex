@@ -2973,10 +2973,11 @@
   },
   "convulsions": {
     "display_name": "Convulsions",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000233"
+        "WAL-CLM-LETS-000233",
+        "WAL-CLM-LETS-000277"
       ]
     },
     "essentials_involved": [
@@ -2987,6 +2988,7 @@
     ],
     "other_substances_involved": [
       "catnip",
+      "mullein",
       "peony",
       "pulse-test",
       "skullcap",
@@ -4280,16 +4282,24 @@
   },
   "flatulence": {
     "display_name": "Flatulence",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000271"
+        "WAL-CLM-LETS-000271",
+        "WAL-CLM-LETS-000278"
       ]
     },
     "essentials_involved": [],
     "other_substances_involved": [
+      "angelica",
+      "anise",
       "betaine-hcl",
+      "caraway",
+      "digestive-enzymes",
+      "dill",
+      "fennel",
       "pancreatic-enzymes",
+      "pepper",
       "urine-therapy"
     ],
     "books_cited": [
@@ -4298,14 +4308,76 @@
   },
   "food_allergy": {
     "display_name": "Food Allergy",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "diagnostics": [
         "WAL-CLM-LETS-000081"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000280"
       ]
     },
-    "essentials_involved": [],
-    "other_substances_involved": [],
+    "essentials_involved": [
+      "chromium",
+      "flavonoids",
+      "omega-3",
+      "selenium",
+      "vitamin-a",
+      "vitamin-c",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "adrenal-cortical-extract",
+      "betaine-hcl",
+      "hydrogen-peroxide",
+      "pancreatic-enzymes",
+      "pulse-test",
+      "urine-therapy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "fractures": {
+    "display_name": "Fractures",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000281"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "colloidal-minerals",
+      "comfrey",
+      "pancreatic-enzymes"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "freckles": {
+    "display_name": "Freckles",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000282"
+      ]
+    },
+    "essentials_involved": [
+      "omega-3",
+      "selenium",
+      "vitamin-a",
+      "vitamin-c",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "english-mandrake"
+    ],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -5035,6 +5107,44 @@
       "dddl-3e-2011",
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "influenza": {
+    "display_name": "Influenza",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000279"
+      ]
+    },
+    "essentials_involved": [
+      "flavonoids",
+      "vitamin-a",
+      "vitamin-c",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "adrenal-cortical-extract",
+      "bearded-usnea",
+      "broad-leaved-lime",
+      "cinchona",
+      "dog-rose",
+      "echinacea",
+      "elderberry",
+      "eucalyptus",
+      "european-holly",
+      "fluviatol",
+      "goldenseal",
+      "hemp-agrimony",
+      "isoprinosine",
+      "meadowsweet",
+      "ribavirin",
+      "sea-buckthorn",
+      "white-willow",
+      "wormwood"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "insomnia": {

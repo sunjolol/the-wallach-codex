@@ -11143,6 +11143,266 @@
       "extracted_at": "2026-06-28T23:22:10+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000277",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "mullein"
+      ],
+      "conditions": [
+        "convulsions"
+      ],
+      "symptoms": [],
+      "claim_text": "Fits (a lay term for seizures; Wallach cross-references epilepsy) can be caused by a variety of problems including epilepsy, high fever in children, and certain poisons. For poisoning he advises calling your local poison center hotline — keep the number taped to your phone, especially if you have small children. In addition to the medications used for epilepsy, he says you may consider mullein tea (Verbascum thapsus).",
+      "verbatim": "FITS (see epilepsy): can be caused by a\nvariety of problems including epilepsy, high\nfever in children and certain poisons. See\nepilepsy. You may wish to call your local\npoison center \"hotline\" for poisoning - keep\nthe telephone number taped on your tele-\nphone, especially if you have small children.\nIn addition to the medica-tions indicated for\nepilepsy, you may consider mullein tea\n(Verbascum thapsus).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 299565
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:36:21+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000278",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "digestive-enzymes",
+        "urine-therapy",
+        "angelica",
+        "anise",
+        "caraway",
+        "dill",
+        "fennel",
+        "pepper"
+      ],
+      "conditions": [
+        "flatulence"
+      ],
+      "symptoms": [],
+      "claim_text": "Flatulence (bowel gas, colic, farting) is a signal that unabsorbed foods — especially proteins — are reaching the colon, where they are fermented by colon organisms; Wallach advises a pulse test to check for allergies causing celiac-type changes in the small intestine. His treatment includes digestive enzymes at 75-200 milligrams three times a day, 15-20 minutes before meals; avoiding and/or rotating offending food allergens; autoimmune urine therapy; and herbs including angelica (Angelica archangelica), anise (Pimpinella anisum), caraway (Carum carvi), dill (Anethum graveolens), fennel (Foeniculum vulgare), and pepper (Piper nigrum).",
+      "verbatim": "Treatment of flatulence includes digestive\nenzymes at 75-200 mg t.i.d. 15-20 minutes\nbefore meals, avoidance and/or rotation of\noffending food allergens, autoimmune urine\ntherapy and herbs including angelica (An-\ngelica archangelica), anise (Pimpinella\nanisum), caraway (Canimcarvi), dill (Anethum\ngraveolens), fennel (Foeniculumvulgare)and\npepper (Piper nigrum).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 300253
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:36:21+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000279",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "vitamin-a",
+        "flavonoids",
+        "zinc"
+      ],
+      "other_substances": [
+        "ribavirin",
+        "isoprinosine",
+        "fluviatol",
+        "echinacea",
+        "goldenseal",
+        "adrenal-cortical-extract",
+        "wormwood",
+        "cinchona",
+        "eucalyptus",
+        "hemp-agrimony",
+        "meadowsweet",
+        "sea-buckthorn",
+        "european-holly",
+        "dog-rose",
+        "white-willow",
+        "elderberry",
+        "broad-leaved-lime",
+        "bearded-usnea"
+      ],
+      "conditions": [
+        "influenza"
+      ],
+      "symptoms": [],
+      "claim_text": "Flu (influenza, grip) is a potentially fatal viral disease; infants and elderly citizens are most susceptible if poorly nourished, immune-compromised, or with serious respiratory ailments, and Wallach considers flu vaccination very questionable. His treatment includes antiviral agents such as ribavirin at 1-2 tablets four times a day and/or isoprinosine at 1 capsule twice a day, with Fluviatol another good choice at 2 tablets four times a day (he warns pregnant women to avoid these because they can potentially cause birth defects); protection against secondary bacterial pneumonia with echinacea (Echinacea angustifolia) or golden seal (Hydrastis canadensis); plenty of fluids; vitamin C to bowel tolerance (1,000-milligram time-release tablets hourly if already having diarrhea); vitamin A at 300,000 international units a day as beta carotene; bioflavonoids at 150-300 milligrams a day; zinc at 50 milligrams three times a day; adrenal cortical extract; and herbs including wormwood, cinchona bark, eucalyptus, hemp agrimony, meadowsweet, sea buckthorn, European holly, dog rose, white willow, European elder, broad-leafed lime, and bearded usnea.",
+      "verbatim": "Treatment for the flu includes antiviral agents\nsuch as Ribavirin at 1-2 tablets q.i.d. and/or\nIsoprinosin at 1 capsule b.i.d.; Fluviatol is\nanother good choice at 2 tablets q.i.d. (preg-\nnant women should avoid these products\nbecause they potentially can cause birth de-\nfects), you will also want to include some\nprotection against secondary bacterial pneu-\nmonia (i.e., Staphylococcus or Pneumococ-\ncus) such as echinacea (Echinacea angustifolia)\nor golden seal (Hydrastis canadensis)",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 301566
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:36:21+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000280",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "vitamin-a",
+        "flavonoids",
+        "zinc",
+        "omega-3",
+        "selenium",
+        "chromium"
+      ],
+      "other_substances": [
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "adrenal-cortical-extract",
+        "urine-therapy",
+        "hydrogen-peroxide",
+        "pulse-test"
+      ],
+      "conditions": [
+        "food_allergy"
+      ],
+      "symptoms": [],
+      "claim_text": "Food allergies (sensitivities) are a concern for everyone, because the celiac-disease-type changes they cause in the intestines prevent absorption of essential nutrients; Wallach says anyone with a chronic disease (cancer, diabetes, arthritis, heart disease) and/or emotional problems (hypoglycemia, depression, neurosis, schizophrenia, hyperactivity, paranoia) has food allergies, identifiable by the Coca pulse test and a diet diary. His treatment includes religious use of hypoallergenic baseline nutritional supplements (no corn, wheat, soy, egg, or milk); avoiding vaccinations of egg, blood, or beef origin; vitamin C to bowel tolerance; vitamin A at 300,000 international units a day as beta carotene; bioflavonoids at 150-300 milligrams a day; zinc at 50 milligrams three times a day; essential fatty acids at 5 grams three times a day; selenium at 200 micrograms three times a day; chromium at 50-200 micrograms three times a day; betaine hydrochloride and pancreatic enzymes at 75-500 milligrams three times a day before meals; adrenal cortical extract; autoimmune urine therapy; five-day rotation diets; and avoidance of offending foods (intestinal repair takes up to 90 days, and intravenous hydrogen peroxide speeds healing).",
+      "verbatim": "Treatment of food allergies includes religious\nuse of the base line nutritional supplements\n(be sure to use hypoallergenic supplements -\n- no corn, wheat, soy, egg or milk), avoid\nvaccinations that have egg, blood or beef\norigins; vitamin C to bowel tolerance levels,\nvitamin A at 300,000 IU/day as beta carotene,\nbioflavonoids at 150-300 mg/day, zinc at 50\nmg t.i.d., essential fatty acids at 5 gm t.i.d.,\nseleniumat 200 mcg t.i.d. , chromium at 50-200\nmcg t.i.d., betaine HC1 and pancreatic en-",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 305768
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:36:21+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000281",
+      "kind": "protocol",
+      "essentials": [
+        "calcium",
+        "magnesium"
+      ],
+      "other_substances": [
+        "colloidal-minerals",
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "comfrey"
+      ],
+      "conditions": [
+        "fractures"
+      ],
+      "symptoms": [],
+      "claim_text": "Fractures (broken bones) can result from malnutrition (calcium/magnesium deficiency, improper calcium/phosphorus ratio, osteoporosis) or severe trauma; Wallach says good mineral status in the bones prevents most 'spontaneous' fractures and fractures from simple falls. He calls the baseline nutritional supplements — including calcium and magnesium at 2,000 milligrams and 1,000 milligrams per day, plant-derived colloidal minerals, and digestive aids (betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day before meals) — an almost sure guarantee against non-trauma fractures, especially in post-menopausal women. Comfrey (Symphytum officinale), taken orally and applied over the injury site, speeds healing and reduces pain and swelling.",
+      "verbatim": "calcium and magnesium at 2,000 mg\nand 1,000 mg per day, plant derived colloidal\nminerals and digestive aids (i.e., betaine HC1\nand pancreatic enzymes at 75-200 mg t.i.d.\nbefore meals) is an almost sure guarantee\nagainst nontrauma fractures especially in post-",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 307408
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:36:21+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000282",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-e",
+        "selenium",
+        "vitamin-c",
+        "vitamin-a",
+        "omega-3"
+      ],
+      "other_substances": [
+        "english-mandrake"
+      ],
+      "conditions": [
+        "freckles"
+      ],
+      "symptoms": [
+        "liver_spots"
+      ],
+      "claim_text": "Freckles are caused by melanin pigment responding to sunlight in fair-skinned people; 'liver spots' in middle-aged and older people are caused by ceroid pigment building up in the skin from peroxidation of fats (free-radical damage) and are a more ominous sign than freckles. Wallach says freckles can be prevented or reduced by religious use of sunscreens. His treatment of freckles and liver spots includes vitamin E at 800-1,200 international units a day, selenium at 200-500 micrograms three times a day, vitamin C to bowel tolerance, vitamin A at 300,000 international units a day as beta carotene, essential fatty acids at 5 grams three times a day, and the herb English mandrake (Tamus communis) applied topically on the spots twice a day.",
+      "verbatim": "Treatment of freckles and \"liver spots\" in-\ncludes the use of vitamin E at 800-1,200 I U/\nday, selenium at 200-500 mcg t.i.d., vitamin C\nto bowel tolerance, vitamin A at 300,000 IU/\nday as beta carotene, essential fatty acids at 5\ngm t.i.d. and the herb, English mandrake\n(Tamus communis) topically on the spots",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 308307
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:36:21+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

@@ -2141,11 +2141,41 @@
   },
   "liver_spots": {
     "display_name": "Liver Spots",
-    "claim_count": 2,
+    "claim_count": 3,
     "likely_deficiencies": [
+      {
+        "essential": "omega-3",
+        "claim_id": "WAL-CLM-LETS-000282",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "selenium",
         "claim_id": "WAL-CLM-DDDL-000006",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "selenium",
+        "claim_id": "WAL-CLM-LETS-000282",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-a",
+        "claim_id": "WAL-CLM-LETS-000282",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-c",
+        "claim_id": "WAL-CLM-LETS-000282",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-e",
+        "claim_id": "WAL-CLM-LETS-000282",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -2158,6 +2188,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },

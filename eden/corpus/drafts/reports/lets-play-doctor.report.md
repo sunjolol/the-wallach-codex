@@ -1,85 +1,84 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_7 claim(s) drafted 2026-06-28T23:22:10+00:00. Review then run corpus_seal.py to promote._
+_6 claim(s) drafted 2026-06-28T23:36:21+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: protocol×7
+Kinds: protocol×6
 
-### WAL-CLM-LETS-000270 · protocol
-- **essentials:** — · **conditions:** failure_to_thrive · **symptoms:** —
-- **claim:** Failure to thrive is a term for an infant that falls below expected growth rates. Wallach says celiac disease and/or other food allergies and cystic fibrosis should be considered the most common causes. He recommends plant-derived colloidal minerals as being of great value here, because most of these children are severely depleted in trace minerals and rare earths.
-- **verbatim** (offset 294919): “Celiac disease and/or other food
-allergies and cystic fibrosis should be consid-
-ered as the most common cause. Plant derived
-colloidal minerals are of great value here as
-most of these children are severely depleted in
-trace minerals and rare earths.”
+### WAL-CLM-LETS-000277 · protocol
+- **essentials:** — · **conditions:** convulsions · **symptoms:** —
+- **claim:** Fits (a lay term for seizures; Wallach cross-references epilepsy) can be caused by a variety of problems including epilepsy, high fever in children, and certain poisons. For poisoning he advises calling your local poison center hotline — keep the number taped to your phone, especially if you have small children. In addition to the medications used for epilepsy, he says you may consider mullein tea (Verbascum thapsus).
+- **verbatim** (offset 299565): “FITS (see epilepsy): can be caused by a
+variety of problems including epilepsy, high
+fever in children and certain poisons. See
+epilepsy. You may wish to call your local
+poison center "hotline" for poisoning - keep
+the telephone number taped on your tele-
+phone, especially if you have small children.
+In addition to the medica-tions indicated for
+epilepsy, you may consider mullein tea
+(Verbascum thapsus).”
 
-### WAL-CLM-LETS-000271 · protocol
+### WAL-CLM-LETS-000278 · protocol
 - **essentials:** — · **conditions:** flatulence · **symptoms:** —
-- **claim:** Farting (bowel gas) is usually caused by digested but poorly absorbed food reaching the colon and being fermented by bowel organisms; foods such as beans, garlic, and onions are notorious for producing it, and food allergies can cause celiac-disease-type changes in the small intestine that lead to malabsorption. Wallach's treatment for pathological amounts of unpleasant bowel gas includes avoiding the offending foods; betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day, 15-20 minutes before meals; and autoimmune urine therapy where food allergies have caused celiac-disease-type changes.
-- **verbatim** (offset 295504): “Treatment for pathological amounts of un-
-pleasant bowel gas includes the avoidance of
-offending foods, betaine HC1 and pancreatic
+- **claim:** Flatulence (bowel gas, colic, farting) is a signal that unabsorbed foods — especially proteins — are reaching the colon, where they are fermented by colon organisms; Wallach advises a pulse test to check for allergies causing celiac-type changes in the small intestine. His treatment includes digestive enzymes at 75-200 milligrams three times a day, 15-20 minutes before meals; avoiding and/or rotating offending food allergens; autoimmune urine therapy; and herbs including angelica (Angelica archangelica), anise (Pimpinella anisum), caraway (Carum carvi), dill (Anethum graveolens), fennel (Foeniculum vulgare), and pepper (Piper nigrum).
+- **verbatim** (offset 300253): “Treatment of flatulence includes digestive
 enzymes at 75-200 mg t.i.d. 15-20 minutes
-before meals and autoimmune urine therapy”
+before meals, avoidance and/or rotation of
+offending food allergens, autoimmune urine
+therapy and herbs including angelica (An-
+gelica archangelica), anise (Pimpinella
+anisum), caraway (Canimcarvi), dill (Anethum
+graveolens), fennel (Foeniculumvulgare)and
+pepper (Piper nigrum).”
 
-### WAL-CLM-LETS-000272 · protocol
-- **essentials:** — · **conditions:** chronic_fatigue · **symptoms:** fatigue
-- **claim:** Fatigue (including chronic fatigue syndrome, candidiasis, Epstein-Barr virus, cytomegalovirus, human herpes 6 virus, human B-lymphotrophic virus, food allergies, hypoglycemia, diabetes, anemia, and malnutrition) is, in Wallach's words, the disease of the 80s. He says treatment should be specific to the underlying disease as described in the appropriate section; in addition, herbs may be of value, including American ginseng (Panax quinquefolius), lavender (Lavandula angustifolia), rosemary (Rosmarinus officinalis), sweet flag (Acorus calamus), and pasque flower (Anemone pulsatilla).
-- **verbatim** (offset 296069): “Treatment should be specific as described in
-appropriate section; in addition, herbs may be
-of value including American ginseng (Panax
-quinquefolius), lavender (Lavandula
-augustifolia), rosemary (Rosmarinus
-officinalis), sweet flag (Acorns calamus) and
-pasque flower (Anemone pulsatilla).”
+### WAL-CLM-LETS-000279 · protocol
+- **essentials:** vitamin-c, vitamin-a, flavonoids, zinc · **conditions:** influenza · **symptoms:** —
+- **claim:** Flu (influenza, grip) is a potentially fatal viral disease; infants and elderly citizens are most susceptible if poorly nourished, immune-compromised, or with serious respiratory ailments, and Wallach considers flu vaccination very questionable. His treatment includes antiviral agents such as ribavirin at 1-2 tablets four times a day and/or isoprinosine at 1 capsule twice a day, with Fluviatol another good choice at 2 tablets four times a day (he warns pregnant women to avoid these because they can potentially cause birth defects); protection against secondary bacterial pneumonia with echinacea (Echinacea angustifolia) or golden seal (Hydrastis canadensis); plenty of fluids; vitamin C to bowel tolerance (1,000-milligram time-release tablets hourly if already having diarrhea); vitamin A at 300,000 international units a day as beta carotene; bioflavonoids at 150-300 milligrams a day; zinc at 50 milligrams three times a day; adrenal cortical extract; and herbs including wormwood, cinchona bark, eucalyptus, hemp agrimony, meadowsweet, sea buckthorn, European holly, dog rose, white willow, European elder, broad-leafed lime, and bearded usnea.
+- **verbatim** (offset 301566): “Treatment for the flu includes antiviral agents
+such as Ribavirin at 1-2 tablets q.i.d. and/or
+Isoprinosin at 1 capsule b.i.d.; Fluviatol is
+another good choice at 2 tablets q.i.d. (preg-
+nant women should avoid these products
+because they potentially can cause birth de-
+fects), you will also want to include some
+protection against secondary bacterial pneu-
+monia (i.e., Staphylococcus or Pneumococ-
+cus) such as echinacea (Echinacea angustifolia)
+or golden seal (Hydrastis canadensis)”
 
-### WAL-CLM-LETS-000273 · protocol
-- **essentials:** selenium, omega-3 · **conditions:** infertility · **symptoms:** —
-- **claim:** Fertility problems not caused by physical blockage of egg or sperm transport are usually the result of some form of malnutrition — either overt (such as diet fads) or secondary to food allergies and/or malabsorption; Wallach notes that slim women with less than 20% body fat do not ovulate regularly, and distinguishes usually-reversible infertility from usually-permanent sterility, advising hair analysis and a pulse test. His treatment for this form of infertility includes the baseline nutritional supplement; special attention to selenium deficiency in male infertility; betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day before meals; correcting quality protein intake to a minimum of 80 grams a day (he notes the Recommended Dietary Allowance is only 40 grams a day); and essential fatty acids at 5 grams three times a day.
-- **verbatim** (offset 296903): “Treatment of this form of infertility includes
-the base line nutritional supplement, pay spe-
-cial attention to selenium deficiency in male
-infertility, betaine HC1 and pancreatic en2ymes
-at 75-200 mg t.i.d. before meals, correc-tion of
-quality protein intake to a minimum of 80 gm/
-day (the RDA is only 40 gm/day) and essential
-fatty acids at 5 gm t.i.d.”
+### WAL-CLM-LETS-000280 · protocol
+- **essentials:** vitamin-c, vitamin-a, flavonoids, zinc, omega-3, selenium, chromium · **conditions:** food_allergy · **symptoms:** —
+- **claim:** Food allergies (sensitivities) are a concern for everyone, because the celiac-disease-type changes they cause in the intestines prevent absorption of essential nutrients; Wallach says anyone with a chronic disease (cancer, diabetes, arthritis, heart disease) and/or emotional problems (hypoglycemia, depression, neurosis, schizophrenia, hyperactivity, paranoia) has food allergies, identifiable by the Coca pulse test and a diet diary. His treatment includes religious use of hypoallergenic baseline nutritional supplements (no corn, wheat, soy, egg, or milk); avoiding vaccinations of egg, blood, or beef origin; vitamin C to bowel tolerance; vitamin A at 300,000 international units a day as beta carotene; bioflavonoids at 150-300 milligrams a day; zinc at 50 milligrams three times a day; essential fatty acids at 5 grams three times a day; selenium at 200 micrograms three times a day; chromium at 50-200 micrograms three times a day; betaine hydrochloride and pancreatic enzymes at 75-500 milligrams three times a day before meals; adrenal cortical extract; autoimmune urine therapy; five-day rotation diets; and avoidance of offending foods (intestinal repair takes up to 90 days, and intravenous hydrogen peroxide speeds healing).
+- **verbatim** (offset 305768): “Treatment of food allergies includes religious
+use of the base line nutritional supplements
+(be sure to use hypoallergenic supplements -
+- no corn, wheat, soy, egg or milk), avoid
+vaccinations that have egg, blood or beef
+origins; vitamin C to bowel tolerance levels,
+vitamin A at 300,000 IU/day as beta carotene,
+bioflavonoids at 150-300 mg/day, zinc at 50
+mg t.i.d., essential fatty acids at 5 gm t.i.d.,
+seleniumat 200 mcg t.i.d. , chromium at 50-200
+mcg t.i.d., betaine HC1 and pancreatic en-”
 
-### WAL-CLM-LETS-000274 · protocol
-- **essentials:** — · **conditions:** fever · **symptoms:** —
-- **claim:** Fever (elevated temperature; normal is 98.6 F) is part of the body's defense mechanism, since many enzymes, antibodies, and white-blood-cell responses are more efficient at slightly elevated temperatures; Wallach says daytime fever is not bad in itself but should be reduced at night to allow comfortable sleep, and that infants with high fevers of 104 F or above may have convulsions that must be reduced quickly by immersion in tepid water. His treatment of fever can include commercial products such as aspirin, acetaminophen (Tylenol), and ibuprofen (Nuprin); ice packs on the forehead; running cool water over the wrists; cool baths; and herbs including feverfew (Chrysanthemum parthenium), meadowsweet (Filipendula ulmaria), sea buckthorn (Hippophae rhamnoides), European holly (Ilex aquifolium), white willow (Salix alba), mugwort (Artemisia vulgaris), and cinchona bark (Cinchona succirubra). He stresses these are symptomatic treatments — the basic disease process (cold, flu, pneumonia, cancer, etc.) must also be dealt with forthrightly.
-- **verbatim** (offset 297693): “Treatment of fever can include a number of
-commercial products including aspirin, tylenol
-Nuprin, etc., ice packs on the forehead, mn-
-ning cool water over the wrists, cool baths and
-herbs to include feverfew (Chrysanthemum
-parthenium), meadow-sweet (Filipendula
-ulmaria), sea buckthorn (Hippophae
-rhamnoides), European holly (Ilex
-aquifolium), white willow (Salix alba),
-mugwort (Artemisia vulgaris) and cinchona
-bark (Cinchona succimbra).”
+### WAL-CLM-LETS-000281 · protocol
+- **essentials:** calcium, magnesium · **conditions:** fractures · **symptoms:** —
+- **claim:** Fractures (broken bones) can result from malnutrition (calcium/magnesium deficiency, improper calcium/phosphorus ratio, osteoporosis) or severe trauma; Wallach says good mineral status in the bones prevents most 'spontaneous' fractures and fractures from simple falls. He calls the baseline nutritional supplements — including calcium and magnesium at 2,000 milligrams and 1,000 milligrams per day, plant-derived colloidal minerals, and digestive aids (betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day before meals) — an almost sure guarantee against non-trauma fractures, especially in post-menopausal women. Comfrey (Symphytum officinale), taken orally and applied over the injury site, speeds healing and reduces pain and swelling.
+- **verbatim** (offset 307408): “calcium and magnesium at 2,000 mg
+and 1,000 mg per day, plant derived colloidal
+minerals and digestive aids (i.e., betaine HC1
+and pancreatic enzymes at 75-200 mg t.i.d.
+before meals) is an almost sure guarantee
+against nontrauma fractures especially in post-”
 
-### WAL-CLM-LETS-000275 · protocol
-- **essentials:** vitamin-e, vitamin-a, omega-3, iodine, selenium · **conditions:** fibrocystic_breast_disease · **symptoms:** —
-- **claim:** Fibrocystic breast disease is cosmetically unpleasant and often painful during peak estrogen production, with cysts varying from pea-size to grape-size or occasionally larger; Wallach says prevention and treatment are the same course of action. His treatment includes avoiding methyl xanthines (caffeine, coffee, black tea, iced tea, caffeinated carbonated soft drinks, chocolate, sugar, etc.), vitamin E at 800-1,200 international units a day, vitamin A at 300,000 international units a day as beta carotene, essential fatty acids at 5 grams three times a day, iodine at 200 micrograms a day, and selenium at 500 micrograms a day.
-- **verbatim** (offset 298535): “Treatment of fibrocystic breast disease in-
-cludes avoiding methyl xanthines (i.e., caf-
-feine, coffee, black tea, ice tea, carbonated soft
-drinks with caffeine, chocolate, sugar, etc.),
-vitamin E at 800-1,200 IU/day, vitamin A at
-300,000 IU/day as beta carotene, essential
-fatty acids at 5 gm t.i.d. , iodine at 200 mcg/day,
-selenium at 500 mcg/day.”
-
-### WAL-CLM-LETS-000276 · protocol
-- **essentials:** zinc, iron, calcium, sulfur, omega-3 · **conditions:** brittle_nails · **symptoms:** white_spots_on_nails, brittle_nails
-- **claim:** Fingernails are good barometers of absorption and nutritional status. Wallach reads the signs as: bluish fingernails indicate chronic lung conditions (not enough oxygen), white spots indicate zinc deficiency, ridges can indicate iron and/or calcium deficiency, and brittle nails indicate sulfur amino acid deficiencies — and he stresses not to forget the baseline nutritional supplements. His treatment of fingernail problems should include gelatin (diabetic Jello or Knox gelatin) — especially important for anyone who has been vegetarian for any length of time — essential fatty acids at 5 grams three times a day, and betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day before meals.
-- **verbatim** (offset 298988): “Bluish fingernails indi-
-cate chronic lung conditions (i.e., not enough
-oxygen), white spots indicate zinc deficiency,
-ridges can indicate iron and/or calcium defi-
-ciency and brittle nails indicates sulfur amino
-acid deficiencies.”
+### WAL-CLM-LETS-000282 · protocol
+- **essentials:** vitamin-e, selenium, vitamin-c, vitamin-a, omega-3 · **conditions:** freckles · **symptoms:** liver_spots
+- **claim:** Freckles are caused by melanin pigment responding to sunlight in fair-skinned people; 'liver spots' in middle-aged and older people are caused by ceroid pigment building up in the skin from peroxidation of fats (free-radical damage) and are a more ominous sign than freckles. Wallach says freckles can be prevented or reduced by religious use of sunscreens. His treatment of freckles and liver spots includes vitamin E at 800-1,200 international units a day, selenium at 200-500 micrograms three times a day, vitamin C to bowel tolerance, vitamin A at 300,000 international units a day as beta carotene, essential fatty acids at 5 grams three times a day, and the herb English mandrake (Tamus communis) applied topically on the spots twice a day.
+- **verbatim** (offset 308307): “Treatment of freckles and "liver spots" in-
+cludes the use of vitamin E at 800-1,200 I U/
+day, selenium at 200-500 mcg t.i.d., vitamin C
+to bowel tolerance, vitamin A at 300,000 IU/
+day as beta carotene, essential fatty acids at 5
+gm t.i.d. and the herb, English mandrake
+(Tamus communis) topically on the spots”
 
