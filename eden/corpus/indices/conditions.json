@@ -3765,9 +3765,131 @@
       "lets-play-doctor"
     ]
   },
+  "dysentery": {
+    "display_name": "Dysentery",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000256"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "common-ivy",
+      "irish-moss",
+      "kaopectate",
+      "pepto-bismol"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "dyslexia": {
+    "display_name": "Dyslexia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000257"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "digestive-enzymes",
+      "pulse-test",
+      "urine-therapy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "dysmenorrhea": {
+    "display_name": "Dysmenorrhea",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000258"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium",
+      "omega-3",
+      "vitamin-b3",
+      "vitamin-b6",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "black-cohosh",
+      "blue-cohosh"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "dyspepsia": {
+    "display_name": "Dyspepsia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000259"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "barberry",
+      "betaine-hcl",
+      "gentian",
+      "pancreatic-enzymes",
+      "papaya",
+      "vinegar"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "earache": {
+    "display_name": "Earache",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000260"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "hydrogen-peroxide",
+      "mullein",
+      "urine-therapy",
+      "willow"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "ecchymosis": {
+    "display_name": "Ecchymosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000261"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-c",
+      "vitamin-e",
+      "vitamin-k"
+    ],
+    "other_substances_involved": [
+      "alfalfa"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "eczema": {
     "display_name": "Eczema",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000111"
@@ -3784,7 +3906,8 @@
       ],
       "protocols": [
         "WAL-CLM-LETS-000148",
-        "WAL-CLM-LETS-000245"
+        "WAL-CLM-LETS-000245",
+        "WAL-CLM-LETS-000262"
       ]
     },
     "essentials_involved": [
@@ -3797,16 +3920,36 @@
       "vitamin-a",
       "vitamin-b3",
       "vitamin-b5",
+      "vitamin-b9",
+      "vitamin-c",
       "vitamin-e",
       "zinc"
     ],
     "other_substances_involved": [
+      "aloe-vera",
+      "araroba",
       "betaine-hcl",
+      "burdock",
       "colloidal-minerals",
+      "comfrey",
+      "dermese",
       "digestive-enzymes",
+      "english-walnut",
+      "european-snakeroot",
+      "german-chamomile",
+      "high-mallow",
+      "hounds-tongue",
       "interlipids",
+      "labrador-tea",
+      "linseed-oil",
+      "marigold",
+      "oak",
       "paba",
-      "pulse-test"
+      "pancreatic-enzymes",
+      "pansy",
+      "pulse-test",
+      "urine-therapy",
+      "wild-strawberry"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -4343,7 +4486,7 @@
   },
   "hyperactivity": {
     "display_name": "Hyperactivity",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000004",
@@ -4359,6 +4502,9 @@
       "prognosis": [
         "WAL-CLM-RARE-000215"
       ],
+      "protocols": [
+        "WAL-CLM-LETS-000257"
+      ],
       "toxicity_signs": [
         "WAL-CLM-LETS-000033"
       ]
@@ -4371,7 +4517,11 @@
       "sodium"
     ],
     "other_substances_involved": [
-      "lead"
+      "betaine-hcl",
+      "digestive-enzymes",
+      "lead",
+      "pulse-test",
+      "urine-therapy"
     ],
     "books_cited": [
       "lets-play-doctor",
@@ -5921,6 +6071,47 @@
       "rare-earths"
     ]
   },
+  "psoriasis": {
+    "display_name": "Psoriasis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000262"
+      ]
+    },
+    "essentials_involved": [
+      "omega-3",
+      "vitamin-a",
+      "vitamin-b9",
+      "vitamin-c",
+      "vitamin-e",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "aloe-vera",
+      "araroba",
+      "betaine-hcl",
+      "burdock",
+      "comfrey",
+      "dermese",
+      "english-walnut",
+      "european-snakeroot",
+      "german-chamomile",
+      "high-mallow",
+      "hounds-tongue",
+      "labrador-tea",
+      "linseed-oil",
+      "marigold",
+      "oak",
+      "pancreatic-enzymes",
+      "pansy",
+      "urine-therapy",
+      "wild-strawberry"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "psychosis": {
     "display_name": "Psychosis",
     "claim_count": 3,
@@ -6454,6 +6645,25 @@
     "books_cited": [
       "dddl-3e-2011",
       "rare-earths"
+    ]
+  },
+  "tonsillitis": {
+    "display_name": "Tonsillitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000260"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "hydrogen-peroxide",
+      "mullein",
+      "urine-therapy",
+      "willow"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "tooth_decay": {

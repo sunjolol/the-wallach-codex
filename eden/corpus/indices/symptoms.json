@@ -919,11 +919,17 @@
   },
   "easy_bruising": {
     "display_name": "Easy Bruising",
-    "claim_count": 3,
+    "claim_count": 4,
     "likely_deficiencies": [
       {
         "essential": "vitamin-c",
         "claim_id": "WAL-CLM-LETS-000038",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-c",
+        "claim_id": "WAL-CLM-LETS-000261",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -934,8 +940,20 @@
         "appears_in_books": 1
       },
       {
+        "essential": "vitamin-e",
+        "claim_id": "WAL-CLM-LETS-000261",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
         "essential": "vitamin-k",
         "claim_id": "WAL-CLM-DDDL-000089",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-k",
+        "claim_id": "WAL-CLM-LETS-000261",
         "confidence": "high",
         "appears_in_books": 1
       },

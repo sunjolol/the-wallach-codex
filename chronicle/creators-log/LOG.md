@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_162 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_163 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 17:37 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b35: DYSENTERY→ECZEMA — 7 protocol claims (LETS-256..262). DYSLEXIA+hyperactivity documented (Wallach's son anecdote). Zero meg→mcg (.txt unchanged). Stopped before EJACULATION (sexual content → ask Luneth b36). kv145, claims 642, conditions 293, board 31/31.
+  ↳ dysentery (Pepto/Kaopectate+electrolytes+Irish moss/ivy), dyslexia+hyperactivity (80% food-allergy/sugar; digestive enzymes/betaine/Feingold; son cured 2 wks), dysmenorrhea (B-3/B-6 50-100 mg, Ca/Mg, vit E, EFA 5 gm, blue/black cohosh), dyspepsia (betaine 75-200 mg, papaya/barberry/gentian; low-stomach-acid thesis), earache+tonsillitis (milk allergy; willow/H2O2/mullein), ecchymosis (alfalfa, vit C, vit K 15 mg, vit E), eczema+psoriasis (betaine/folic/EFA 5mg/vit A 300k/zinc + 15 topical herbs+Dermese). All doses render-verified mg/IU/gm; vit K 15 mg + EFA 5 mg kept faithful (non-dangerous). finalize (no resnap)→seal kv144→145→embed(293)→build→invariants 31/31→probe PASS 0 err. NEXT b36 = EJACULATION (ASK Luneth) + EMPHYSEMA/ENDOMETRIOSIS/EPILEPSY.
 
 ## 2026-06-28 17:27 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b34: DIURETIC herbs→DUMPING SYNDROME — 6 claims (LETS-250..255: 1 grouped definition + 5 protocol). ★ Herb-action one-liners ruled ONE grouped definition claim (Luneth). Zero meg→mcg (.txt unchanged). kv144, claims 635, conditions 285, board 31/31.

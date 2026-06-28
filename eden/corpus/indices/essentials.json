@@ -288,7 +288,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 55,
+    "claim_count": 56,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -348,6 +348,7 @@
         "WAL-CLM-LETS-000238",
         "WAL-CLM-LETS-000243",
         "WAL-CLM-LETS-000244",
+        "WAL-CLM-LETS-000258",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -490,6 +491,7 @@
       "dental_calculus",
       "depression",
       "diabetes",
+      "dysmenorrhea",
       "elevated_cholesterol",
       "epilepsy",
       "hyperactivity",
@@ -904,7 +906,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 62,
+    "claim_count": 63,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -975,6 +977,7 @@
         "WAL-CLM-LETS-000233",
         "WAL-CLM-LETS-000238",
         "WAL-CLM-LETS-000244",
+        "WAL-CLM-LETS-000258",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1078,6 +1081,7 @@
       "dementia",
       "depression",
       "diabetes",
+      "dysmenorrhea",
       "eczema",
       "elevated_cholesterol",
       "epilepsy",
@@ -2475,7 +2479,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 66,
+    "claim_count": 67,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2552,6 +2556,7 @@
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000247",
         "WAL-CLM-LETS-000254",
+        "WAL-CLM-LETS-000262",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -2684,6 +2689,7 @@
       "malabsorption",
       "osteoporosis",
       "paranoia",
+      "psoriasis",
       "rheumatoid_arthritis",
       "seborrheic_dermatitis",
       "spina_bifida",
@@ -3490,7 +3496,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 23,
+    "claim_count": 24,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -3518,7 +3524,8 @@
         "WAL-CLM-LETS-000238",
         "WAL-CLM-LETS-000242",
         "WAL-CLM-LETS-000245",
-        "WAL-CLM-LETS-000254"
+        "WAL-CLM-LETS-000254",
+        "WAL-CLM-LETS-000262"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000037"
@@ -3602,6 +3609,7 @@
       "insomnia",
       "keratitis",
       "night_blindness",
+      "psoriasis",
       "xerophthalmia"
     ],
     "interacts_with": [
@@ -3939,7 +3947,7 @@
     "display_name": "Niacin",
     "canon_slug": "vitamin-b3",
     "category": "vitamin",
-    "claim_count": 14,
+    "claim_count": 15,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000019",
@@ -3958,6 +3966,7 @@
         "WAL-CLM-LETS-000207",
         "WAL-CLM-LETS-000219",
         "WAL-CLM-LETS-000243",
+        "WAL-CLM-LETS-000258",
         "WAL-CLM-RARE-000282"
       ],
       "toxicity_sign": [
@@ -4049,6 +4058,7 @@
       "dermatitis",
       "diabetes",
       "diarrhea",
+      "dysmenorrhea",
       "eczema",
       "elevated_cholesterol",
       "insomnia",
@@ -4248,7 +4258,7 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 30,
+    "claim_count": 31,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000027",
@@ -4283,6 +4293,7 @@
         "WAL-CLM-LETS-000244",
         "WAL-CLM-LETS-000247",
         "WAL-CLM-LETS-000254",
+        "WAL-CLM-LETS-000258",
         "WAL-CLM-RARE-000286"
       ],
       "toxicity_sign": [
@@ -4402,6 +4413,7 @@
       "depression",
       "diaper_rash",
       "dry_skin",
+      "dysmenorrhea",
       "epilepsy",
       "hyperirritability",
       "hypertension",
@@ -4453,7 +4465,7 @@
     "display_name": "Folate",
     "canon_slug": "vitamin-b9",
     "category": "vitamin",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000042",
@@ -4469,7 +4481,8 @@
         "WAL-CLM-LETS-000143",
         "WAL-CLM-LETS-000238",
         "WAL-CLM-LETS-000243",
-        "WAL-CLM-LETS-000255"
+        "WAL-CLM-LETS-000255",
+        "WAL-CLM-LETS-000262"
       ]
     },
     "deficiency_signs": [
@@ -4530,8 +4543,10 @@
       "dementia",
       "diarrhea",
       "dumping_syndrome",
+      "eczema",
       "insomnia",
       "paranoia",
+      "psoriasis",
       "spina_bifida",
       "vitiligo"
     ],
@@ -4720,7 +4735,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 32,
+    "claim_count": 34,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -4760,7 +4775,9 @@
         "WAL-CLM-LETS-000225",
         "WAL-CLM-LETS-000238",
         "WAL-CLM-LETS-000243",
-        "WAL-CLM-LETS-000244"
+        "WAL-CLM-LETS-000244",
+        "WAL-CLM-LETS-000261",
+        "WAL-CLM-LETS-000262"
       ]
     },
     "deficiency_signs": [
@@ -4854,8 +4871,11 @@
       "crohns_disease",
       "dementia",
       "depression",
+      "ecchymosis",
+      "eczema",
       "elevated_cholesterol",
       "intermittent_claudication",
+      "psoriasis",
       "rheumatoid_arthritis",
       "scurvy"
     ],
@@ -4887,6 +4907,7 @@
       "vitamin-b6",
       "vitamin-b9",
       "vitamin-e",
+      "vitamin-k",
       "zinc"
     ],
     "books_cited": [
@@ -4982,7 +5003,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 35,
+    "claim_count": 38,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -5027,6 +5048,9 @@
         "WAL-CLM-LETS-000243",
         "WAL-CLM-LETS-000247",
         "WAL-CLM-LETS-000254",
+        "WAL-CLM-LETS-000258",
+        "WAL-CLM-LETS-000261",
+        "WAL-CLM-LETS-000262",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -5124,6 +5148,8 @@
       "dermatitis",
       "diaper_rash",
       "dry_skin",
+      "dysmenorrhea",
+      "ecchymosis",
       "eczema",
       "fibrocystic_breast_disease",
       "infertility",
@@ -5132,6 +5158,7 @@
       "keshan_disease",
       "malabsorption",
       "muscular_dystrophy",
+      "psoriasis",
       "rheumatoid_arthritis",
       "shingles"
     ],
@@ -5173,7 +5200,7 @@
     "display_name": "Menaquinone",
     "canon_slug": "vitamin-k",
     "category": "vitamin",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -5182,6 +5209,9 @@
       ],
       "dose": [
         "WAL-CLM-LETS-000076"
+      ],
+      "protocol": [
+        "WAL-CLM-LETS-000261"
       ]
     },
     "deficiency_signs": [
@@ -5212,9 +5242,11 @@
       }
     ],
     "conditions_treated": [
+      "ecchymosis",
       "osteoporosis"
     ],
     "interacts_with": [
+      "vitamin-c",
       "vitamin-e"
     ],
     "books_cited": [
@@ -5806,7 +5838,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 39,
+    "claim_count": 41,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -5852,6 +5884,8 @@
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000249",
         "WAL-CLM-LETS-000254",
+        "WAL-CLM-LETS-000258",
+        "WAL-CLM-LETS-000262",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -5921,6 +5955,7 @@
       "diarrhea",
       "disagreeable_attitude",
       "dry_skin",
+      "dysmenorrhea",
       "eczema",
       "elevated_cholesterol",
       "fatty_liver",
@@ -5929,6 +5964,7 @@
       "hypertension",
       "infertility",
       "kidney_disease",
+      "psoriasis",
       "weight_loss"
     ],
     "interacts_with": [
