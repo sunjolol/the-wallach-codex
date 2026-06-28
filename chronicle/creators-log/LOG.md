@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_164 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_165 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 18:00 UTC-05:00 · session-end · chronicle
+SESSION 17 wrap — Ch10 b30-b36 (7 batches): CONGESTED LUNGS→EYE REDNESS. ★ C-tail + ENTIRE D + ENTIRE E sections COMPLETE. 42 claims (LETS-228..269), corpus 607→649, conditions 269→299, kv147. 2 search-only rulings + herb-action grouping. board 31/31 throughout. NEXT=F's (b37).
+  ↳ All 7 batches round-closed + pushed (11fa9d0/ab6a99d/45e8df0/a76f884/fd1d558/5231877/c500d0c). 14 render-verified meg→mcg fixes, ZERO new dangerous misprints. Signature theses captured: cystic fibrosis (selenium deficiency, b31), diabetes (chromium/vanadium titration, b33). Editorial rulings: CONTRACEPTION+EJACULATION=search-only; herb-action one-liners=grouped definition claim. Lesson: taurine not canon-essential. Handoff rolled to SESSION 17 in next-chunk.md; Luneth re-genesis next session.
 
 ## 2026-06-28 17:49 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b36: EJACULATION→EYE REDNESS — E's COMPLETE. 7 claims (LETS-263..269: 1 search-only + 6 protocol). EJACULATION ruled SEARCH-ONLY (Luneth). EPILEPSY folic 15-25 mg verified safe-mg (not gm misprint). 1 meg→mcg (B-12). kv147, claims 649, conditions 299, board 31/31.
