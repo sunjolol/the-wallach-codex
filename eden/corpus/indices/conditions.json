@@ -3494,7 +3494,7 @@
   },
   "diabetes": {
     "display_name": "Diabetes",
-    "claim_count": 22,
+    "claim_count": 23,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-DDDL-000008"
@@ -3531,6 +3531,7 @@
       "protocols": [
         "WAL-CLM-DDDL-000048",
         "WAL-CLM-DDDL-000049",
+        "WAL-CLM-LETS-000246",
         "WAL-CLM-RARE-000280"
       ],
       "quotes": [
@@ -3543,8 +3544,10 @@
       "calcium",
       "chromium",
       "copper",
+      "flavonoids",
       "iron",
       "magnesium",
+      "omega-3",
       "selenium",
       "sulfur",
       "tin",
@@ -3553,16 +3556,50 @@
       "vitamin-b3",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "b-complex",
+      "betaine-hcl",
+      "canadian-fleabane",
+      "digestive-enzymes",
+      "glutathione",
+      "jaborandi",
+      "jerusalem-artichoke",
+      "lecithin",
+      "licorice",
+      "quercetin",
+      "yarrow"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",
       "rare-earths"
     ]
   },
+  "diaper_rash": {
+    "display_name": "Diaper Rash",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000247"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b6",
+      "vitamin-e",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "aloe-vera",
+      "colloidal-minerals",
+      "pulse-test"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "diarrhea": {
     "display_name": "Diarrhea",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000008",
@@ -3571,6 +3608,9 @@
         "WAL-CLM-LETS-000019",
         "WAL-CLM-LETS-000039",
         "WAL-CLM-RARE-000264"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000248"
       ]
     },
     "essentials_involved": [
@@ -3582,7 +3622,20 @@
       "vitamin-d",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "american-blackberry",
+      "barley",
+      "black-currant",
+      "charcoal",
+      "clove-root",
+      "dietary-fiber",
+      "hounds-tongue",
+      "kaopectate",
+      "ladys-mantle",
+      "pepto-bismol",
+      "tormentil",
+      "whortleberry"
+    ],
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
@@ -6497,6 +6550,28 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "weight_loss": {
+    "display_name": "Weight Loss",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000249"
+      ]
+    },
+    "essentials_involved": [
+      "omega-3"
+    ],
+    "other_substances_involved": [
+      "colloidal-minerals",
+      "dietary-fiber",
+      "oat-bran",
+      "pulse-test",
+      "thyroid"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "wernicke_korsakoff_syndrome": {

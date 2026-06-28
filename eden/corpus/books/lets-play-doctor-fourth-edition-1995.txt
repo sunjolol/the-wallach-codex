@@ -6722,15 +6722,15 @@ tes. Blood of the diabetic is also typical in that
 the lipids and cholesterol are elevated as well
 as the sugar.
 Treatment of diabetes should include chro-
-mium and Vanadium at 25 meg/day in the
+mium and Vanadium at 25 mcg/day in the
 initial stages to prevent "insulin shock" (sud-
 den dropping of blood sugar because of a
 relative insulin overdose). Keep checking
 urine blood sugar before and after meals, as
 the blood sugar level drops and you can
 reduce your insulin one or two units per day,
-go up to 25 meg b.i.d., then t.i.d. ; then go to 50
-meg b.i.d. , etc. You will also need to deal with
+go up to 25 mcg b.i.d., then t.i.d. ; then go to 50
+mcg b.i.d. , etc. You will also need to deal with
 food allergies that cause celiac-type intestinal
 lesions (i.e., wheat gluten, cow's milk, soya,
 etc.) and supplement with betaine HC1 and
@@ -6741,7 +6741,7 @@ Treatment of diabetes should also include
 zinc at 50 mg t.i.d., B-complex at 50 mg t.i.d.
 (be sure to include niacin which is part of the
 GTF "glucose tolerance factor"), essential fatty
-acids at 5 gm t.i.d., B-12 at 1,000 meg/day,
+acids at 5 gm t.i.d., B-12 at 1,000 mcg/day,
 bioflavonoids includingquercetin at 150 mg/
 day, copper at 2-3 mg/day, lecithin at 2,500 mg
 t.i.d. and glutathione at 100 mg/day.

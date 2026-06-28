@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_160 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_161 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 16:47 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b33: DIABETES→DIETING — 4 protocol claims (LETS-246..249). DIABETES = Wallach's chromium/vanadium signature thesis (titration 25→50 mcg + B-12 1,000 mcg). 4 render-verified meg→mcg. kv143, claims 629, conditions 280, board 31/31.
+  ↳ diabetes (chromium+vanadium 25 mcg/day→25 bid→tid→50 bid titration to avoid insulin shock; betaine/digestive enzymes, zinc, B-complex+niacin GTF, EFA 5 gm, B-12 1000 mcg, quercetin, copper, lecithin, glutathione; herbs), diaper_rash (B-6 5-25 mg, zinc 5-15 mg, vit E/aloe topical), diarrhea (Pepto/Kaopectate/charcoal/fiber + 8 herbs), weight_loss (DIETING 10-habit lifestyle: caffeine/water/allergy-hypoglycemia-thyroid dx/meal schedule/exercise/fiber/flaxseed 5 gm/thyroid 3 gr). 4 meg→mcg (diabetes) zoom-confirmed; diaper/dieting zero meg. fix→resnap 0 broken→finalize→seal kv142→143→embed(280)→build→invariants 31/31→probe PASS 0 err. NEXT b34 = DIURETIC one-liners + DIVERTICULITIS/DOUCHE/DROPSY/DRY SKIN/DUMPING.
 
 ## 2026-06-28 16:06 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b32: DANDRUFF→DERMATITIS — 4 protocol claims (LETS-242..245). DEMENTIA 16-supplement nootropic protocol (split across CF tables+figures). DEPRESSION documented (behavioral/mental). 2 render-verified meg→mcg (depression). kv142, claims 625, conditions 278, board 31/31.
