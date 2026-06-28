@@ -4184,7 +4184,7 @@
     "display_name": "Cholecalciferol",
     "canon_slug": "vitamin-d",
     "category": "vitamin",
-    "claim_count": 9,
+    "claim_count": 6,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000083"
@@ -4193,16 +4193,11 @@
         "WAL-CLM-LETS-000039",
         "WAL-CLM-RARE-000230"
       ],
-      "definition": [
-        "WAL-CLM-LETS-000087"
-      ],
       "dose": [
         "WAL-CLM-LETS-000074"
       ],
       "mechanism": [
-        "WAL-CLM-DDDL-000068",
-        "WAL-CLM-LETS-000084",
-        "WAL-CLM-LETS-000086"
+        "WAL-CLM-DDDL-000068"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000040"
@@ -4243,9 +4238,7 @@
     "conditions_treated": [
       "arteriosclerosis",
       "arthritis",
-      "athletes_foot",
       "diarrhea",
-      "eczema",
       "insomnia",
       "liver_disease",
       "menopause",
@@ -4253,10 +4246,7 @@
       "osteomalacia",
       "osteoporosis",
       "restless_leg_syndrome",
-      "rickets",
-      "ringworm",
-      "skin_diseases",
-      "vaginitis"
+      "rickets"
     ],
     "interacts_with": [],
     "books_cited": [

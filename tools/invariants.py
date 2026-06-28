@@ -1718,6 +1718,62 @@ def check_corpus_embed_synced():
     return False, "corpus-embed.json is STALE — run `python eden/tools/corpus_embed.py`"
 
 
+def check_search_only_indices_excluded():
+    """Tier-2 / "search-only" claims (the Ch7 modality survey: color/light therapy,
+    aromatherapy, faith-healing, Schuessler, Bach, chiropractic, etc.) feed ONLY the
+    offline search feature. They must NEVER appear in the operational 90-essentials
+    indices (conditions / symptoms / essentials / other-substances / consistency) that
+    drive the Knowledge-drawer tabs -- wiring a modality name-drop ("blue light -> jaundice")
+    into the conditions tab reads as AI slop and dilutes Wallach's solid-cure doctrine,
+    the credibility core of the app. corpus_derive excludes any claim tagged `search-only`;
+    THIS is the independent semantic guard, truth-anchored on the claim tag + the sealed
+    index claim references (not on derive's own logic). See memory:
+    search-vs-operational-index-separation."""
+    import json as _json
+    claims_dir = ROOT / "eden" / "corpus" / "claims"
+    idx_dir = ROOT / "eden" / "corpus" / "indices"
+    if not claims_dir.exists() or not idx_dir.exists():
+        return True, "eden/corpus not installed (bootstrap-guard)"
+    search_ids = set()
+    for shard in claims_dir.glob("claims-*.json"):
+        for c in _json.loads(shard.read_text(encoding="utf-8")).get("claims", []):
+            if "search-only" in c.get("tags", []):
+                search_ids.add(c["id"])
+    if not search_ids:
+        return True, "no search-only (tier-2) claims present"
+    referenced = set()
+
+    def _idx(name):
+        f = idx_dir / name
+        return _json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+
+    for _slug, e in _idx("conditions.json").items():
+        for ids in e.get("claims_by_role", {}).values():
+            referenced.update(ids)
+    for _slug, e in _idx("symptoms.json").items():
+        for d in e.get("likely_deficiencies", []):
+            referenced.add(d.get("claim_id"))
+    for _slug, e in _idx("essentials.json").items():
+        for ids in e.get("claims_by_kind", {}).values():
+            referenced.update(ids)
+        for d in e.get("deficiency_signs", []):
+            referenced.add(d.get("claim_id"))
+    for _slug, e in _idx("other-substances.json").items():
+        for ids in e.get("claims_by_kind", {}).values():
+            referenced.update(ids)
+    for grp in _idx("consistency.json") if isinstance(_idx("consistency.json"), list) else []:
+        for rep in grp.get("repetitions", []):
+            referenced.add(rep.get("claim_id"))
+
+    leak = sorted(search_ids & referenced)
+    if leak:
+        return False, (f"{len(leak)} search-only (tier-2) claim(s) leaked into the operational "
+                       f"indices: {leak[:5]}{' ...' if len(leak) > 5 else ''} -- modality/search content "
+                       f"must stay OUT of the conditions/symptoms/essentials tabs (tag `search-only` + "
+                       f"re-seal so corpus_derive excludes them)")
+    return True, f"all {len(search_ids)} search-only (tier-2) claim(s) correctly excluded from operational indices"
+
+
 def check_graphics_integrity():
     """Phase alpha — the sacred hand-made graphics (eden/graphics) must match their
     sealed manifest. Delegates to eden/tools/graphics_verify.py: 0 = sealed & healthy,
@@ -1967,6 +2023,14 @@ INVARIANTS = [
         truth_anchor="json.loads(dashboard/assets/data/corpus-embed.json) == eden/tools/corpus_embed.py::build_embed() over the sealed indices + claim shards",
         severity="warning",
         lesson_ref="Wallach Knowledge Revamp Phase epsilon (2026-06-24) — the offline file:// dashboard inlines the sealed claim graph at build; this catches a stale build or hand-edit that would make the in-app Essential/Condition deep-dive lie",
+    ),
+    Invariant(
+        name="search_only_indices_excluded",
+        description="tier-2 'search-only' claims (Ch7 modality survey: color/light therapy, aromatherapy, faith-healing, etc.) never appear in the operational conditions/symptoms/essentials/other-substances indices that drive the Knowledge-drawer tabs -- they feed the offline search feature ONLY",
+        check_fn=check_search_only_indices_excluded,
+        truth_anchor="claim `search-only` tag (eden/corpus/claims/*) vs claim ids referenced by the sealed indices (eden/corpus/indices/*); independent of corpus_derive's own filter",
+        severity="critical",
+        lesson_ref="Wallach SESSION 12 (2026-06-28) — Luneth: baking modality name-drops (color->jaundice) into the conditions tab reads as AI slop + dilutes the 90-essentials solid-cure doctrine; tier-1 doctrine vs tier-2 search-only must stay separated (memory search-vs-operational-index-separation)",
     ),
     Invariant(
         name="graphics_integrity",

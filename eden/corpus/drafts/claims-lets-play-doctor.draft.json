@@ -3553,7 +3553,8 @@
         "malabsorption",
         "gluten",
         "healing-arts",
-        "xref:WAL-CLM-RARE-000082"
+        "xref:WAL-CLM-RARE-000082",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -3597,7 +3598,8 @@
         "search-topic:light-therapy",
         "ultraviolet",
         "benefit:vitamin-d-production",
-        "benefit:immune-stimulation"
+        "benefit:immune-stimulation",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -3636,7 +3638,8 @@
         "search-topic:light-therapy",
         "infrared",
         "benefit:immune-stimulation",
-        "benefit:wound-healing"
+        "benefit:wound-healing",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -3677,7 +3680,8 @@
         "ultraviolet",
         "safety",
         "benefit:germicidal",
-        "benefit:vitamin-d-production"
+        "benefit:vitamin-d-production",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -3714,7 +3718,8 @@
         "search-topic:light-therapy",
         "spectrum",
         "benefit:germicidal",
-        "benefit:vitamin-d-production"
+        "benefit:vitamin-d-production",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -3748,7 +3753,8 @@
         "chiropractic",
         "search-topic:chiropractic",
         "benefit:drug-free",
-        "benefit:surgery-free"
+        "benefit:surgery-free",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -3782,7 +3788,8 @@
         "chiropractic",
         "search-topic:chiropractic",
         "benefit:pain-relief",
-        "benefit:posture"
+        "benefit:posture",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -3814,7 +3821,8 @@
         "ch7",
         "healing-arts",
         "osteopathy",
-        "search-topic:osteopathy"
+        "search-topic:osteopathy",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -3846,7 +3854,8 @@
         "ch7",
         "healing-arts",
         "reflexology",
-        "search-topic:reflexology"
+        "search-topic:reflexology",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -3879,7 +3888,8 @@
         "healing-arts",
         "rolfing",
         "search-topic:rolfing",
-        "benefit:posture"
+        "benefit:posture",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -3916,7 +3926,8 @@
         "search-topic:aromatherapy",
         "benefit:antimicrobial",
         "benefit:skin-treatment",
-        "benefit:hormone-like"
+        "benefit:hormone-like",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -3956,7 +3967,8 @@
         "benefit:antispasmodic",
         "benefit:blood-pressure-reduction",
         "benefit:expectorant",
-        "benefit:estrogenic"
+        "benefit:estrogenic",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -3988,7 +4000,8 @@
         "ch7",
         "healing-arts",
         "ayurvedic",
-        "search-topic:ayurvedic-medicine"
+        "search-topic:ayurvedic-medicine",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -4021,7 +4034,8 @@
         "healing-arts",
         "ayurvedic",
         "search-topic:ayurvedic-medicine",
-        "benefit:diet-based-healing"
+        "benefit:diet-based-healing",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -4057,7 +4071,8 @@
         "cell-salts",
         "search-topic:schuessler-cell-salts",
         "homeopathy-class",
-        "scope-note"
+        "scope-note",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -4092,7 +4107,8 @@
         "search-topic:bach-flower-remedies",
         "homeopathy-class",
         "scope-note",
-        "benefit:emotional-balance"
+        "benefit:emotional-balance",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -4124,7 +4140,8 @@
         "ch7",
         "healing-arts",
         "color-therapy",
-        "search-topic:color-therapy"
+        "search-topic:color-therapy",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -4188,7 +4205,8 @@
         "color-orange",
         "color-green",
         "benefit:wound-healing",
-        "benefit:blood-pressure-regulation"
+        "benefit:blood-pressure-regulation",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -4220,7 +4238,8 @@
         "ch7",
         "healing-arts",
         "color-therapy",
-        "search-topic:color-therapy"
+        "search-topic:color-therapy",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -4254,7 +4273,8 @@
         "faith-healing",
         "laying-on-of-hands",
         "search-topic:faith-healing",
-        "christian-positive"
+        "christian-positive",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -4289,7 +4309,8 @@
         "christian-science",
         "therapeutic-touch",
         "search-topic:faith-healing",
-        "christian-positive"
+        "christian-positive",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",

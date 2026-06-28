@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_131 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_132 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 07:50 UTC-05:00 · incident · eden/corpus+tools
+CORRECTION (Luneth): tier-1 vs tier-2 split. Ch7 modality conditions (color->jaundice) leaked into the conditions tab = slop diluting the 90-essentials doctrine. Fixed: 21 modality claims tagged search-only, derive excludes them, +invariant guard. conditions 223->210, kv123.
+  ↳ The conditions/symptoms/essentials tabs are TIER-1 ONLY (solid mathable Wallach cures, stated clearly/repeatedly). Modality name-drops / once-off mentions = TIER-2 = search-only, kept on the claims for the future search feature + a future manual promotion review (with a 'not main doctrine, needs further research' disclaimer), but NOT in the main tabs. Fix: (1) tag 21 Ch7 claims LETS-083..103 search-only; (2) corpus_derive filters search-only from all operational indices (verify check #8 re-derives same fn); (3) new critical invariant search_only_indices_excluded (30->31), negative-tested. Re-seal kv123: conditions 223->210 (13 orphans gone), symptoms 159->156, vitamin-d 9->6 (light-therapy detached); shared conditions stay via tier-1 but detach from modality claims. Sunlight note: UV light-therapy is modality (search-only), but a clear Wallach SUNLIGHT statement stays in main UX when it appears (Ch10). Board 31/31, knowledge probe PASS (210 conditions). LESSON: never wire new things into the main 90-essentials UX without running it past Luneth first.
 
 ## 2026-06-28 07:16 UTC-05:00 · round-close · eden/corpus
 LPD b13b — Ch7 COLOR THERAPY (search goldmine) + FAITH-HEALING. 5 claims LETS-099..103: per-color effects MAP (18 conditions + 4 symptoms) + 6 techniques + laying-on-of-hands (Christian-positive). +7 cond +2 sym. kv121->122, corpus 478->483, board 30/30.

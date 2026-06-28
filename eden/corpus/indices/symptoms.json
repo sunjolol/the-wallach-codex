@@ -494,7 +494,7 @@
   },
   "constipation": {
     "display_name": "Constipation",
-    "claim_count": 8,
+    "claim_count": 7,
     "likely_deficiencies": [
       {
         "essential": "inositol",
@@ -1279,14 +1279,6 @@
       "rare-earths"
     ]
   },
-  "fever": {
-    "display_name": "Fever",
-    "claim_count": 1,
-    "likely_deficiencies": [],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
   "flatulence": {
     "display_name": "Flatulence",
     "claim_count": 1,
@@ -1795,14 +1787,6 @@
         "appears_in_books": 1
       }
     ],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
-  "inflammation": {
-    "display_name": "Inflammation",
-    "claim_count": 1,
-    "likely_deficiencies": [],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -2847,7 +2831,7 @@
   },
   "paralysis": {
     "display_name": "Paralysis",
-    "claim_count": 2,
+    "claim_count": 1,
     "likely_deficiencies": [
       {
         "essential": "vitamin-b1",
@@ -2857,7 +2841,6 @@
       }
     ],
     "books_cited": [
-      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -3553,21 +3536,6 @@
       {
         "essential": "vitamin-b1",
         "claim_id": "WAL-CLM-LETS-000034",
-        "confidence": "high",
-        "appears_in_books": 1
-      }
-    ],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
-  "sore_throat": {
-    "display_name": "Sore Throat",
-    "claim_count": 1,
-    "likely_deficiencies": [
-      {
-        "essential": "vitamin-d",
-        "claim_id": "WAL-CLM-LETS-000084",
         "confidence": "high",
         "appears_in_books": 1
       }
