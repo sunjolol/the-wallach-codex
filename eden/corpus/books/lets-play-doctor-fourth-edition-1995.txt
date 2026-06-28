@@ -3154,7 +3154,7 @@ some form of hydrotherapy if it is prescribed
 by a licensed physician of any healing art.
 Hydrotherapy takes many forms includ-
 ing:
-1 cold bath - reduces swelling
+1) cold bath - reduces swelling
 2) hot bath - relieves soreness
 and improves circulation for
 chronic diseases and injuries
