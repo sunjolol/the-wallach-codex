@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_145 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_146 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 11:45 UTC-05:00 · round-close · knowledge/corpus
+Ch10 Materia Medica b19: 7 protocol claims (ARTERIOSCLEROSIS->AUTISM), +5 conditions->229. MAJOR render-first drop-restoration: a 2-col OCR scramble on p87-88 dropped the arthritis table+treatment + asthma intro -> restored L4739-4832. kv128->129, claims 524->531, board 31/31.
+  ↳ Restored region re-transcribed clean from 600-DPI zooms (+2137 bytes); resnap 0 broken (no sealed claim pointed past it). Dose-verified Ca/P table + arthritis/asthma protocols. 2nd-consumer search completeness restored.
 
 ## 2026-06-28 11:34 UTC-05:00 · round-close · knowledge/corpus
 Ch10 Materia Medica b18: 8 protocol claims LETS-137..144 (ANEMIA->ARSENIC TOXICITY). +1 condition (anorexia_nervosa)->224. ANOSMIA dosed (zinc 50mg tid); ANEMIA = 12 essentials. 4 dose-safety meg->mcg fixes. kv127->128, claims 516->524, board 31/31, probe PASS.

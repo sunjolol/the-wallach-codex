@@ -16,6 +16,22 @@
       "lets-play-doctor"
     ]
   },
+  "alfalfa": {
+    "display_name": "Alfalfa",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000146"
+      ]
+    },
+    "conditions_treated": [
+      "arthritis",
+      "rheumatoid_arthritis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "aloe": {
     "display_name": "Aloe",
     "claim_count": 1,
@@ -46,9 +62,39 @@
       "rare-earths"
     ]
   },
+  "artichoke": {
+    "display_name": "Artichoke",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000145"
+      ]
+    },
+    "conditions_treated": [
+      "arteriosclerosis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "bears-garlic": {
+    "display_name": "Bears Garlic",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000145"
+      ]
+    },
+    "conditions_treated": [
+      "arteriosclerosis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "betaine-hcl": {
     "display_name": "Betaine Hcl",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -57,7 +103,8 @@
         "WAL-CLM-LETS-000131",
         "WAL-CLM-LETS-000137",
         "WAL-CLM-LETS-000140",
-        "WAL-CLM-LETS-000142"
+        "WAL-CLM-LETS-000142",
+        "WAL-CLM-LETS-000147"
       ]
     },
     "conditions_treated": [
@@ -68,7 +115,9 @@
       "anemia",
       "anorexia",
       "anorexia_nervosa",
-      "anxiety"
+      "anxiety",
+      "asthma",
+      "atopic_asthma"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -104,16 +153,18 @@
   },
   "boric-acid": {
     "display_name": "Boric Acid",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000119",
-        "WAL-CLM-LETS-000136"
+        "WAL-CLM-LETS-000136",
+        "WAL-CLM-LETS-000149"
       ]
     },
     "conditions_treated": [
       "abscess",
-      "anal_abscess"
+      "anal_abscess",
+      "athletes_foot"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -159,6 +210,22 @@
     "conditions_treated": [
       "anorexia",
       "anorexia_nervosa"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "cartilage": {
+    "display_name": "Cartilage",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000146"
+      ]
+    },
+    "conditions_treated": [
+      "arthritis",
+      "rheumatoid_arthritis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -212,18 +279,42 @@
       "lets-play-doctor"
     ]
   },
+  "chondroitin": {
+    "display_name": "Chondroitin",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000146"
+      ]
+    },
+    "conditions_treated": [
+      "arthritis",
+      "rheumatoid_arthritis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 2,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
-        "WAL-CLM-LETS-000130"
+        "WAL-CLM-LETS-000130",
+        "WAL-CLM-LETS-000145",
+        "WAL-CLM-LETS-000146",
+        "WAL-CLM-LETS-000147"
       ]
     },
     "conditions_treated": [
       "achlorhydria",
-      "alzheimers"
+      "alzheimers",
+      "arteriosclerosis",
+      "arthritis",
+      "asthma",
+      "atopic_asthma",
+      "rheumatoid_arthritis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -244,6 +335,21 @@
       "lets-play-doctor"
     ]
   },
+  "desenex": {
+    "display_name": "Desenex",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000149"
+      ]
+    },
+    "conditions_treated": [
+      "athletes_foot"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "dimethyl-glycine": {
     "display_name": "Dimethyl Glycine",
     "claim_count": 1,
@@ -254,6 +360,22 @@
     },
     "conditions_treated": [
       "absence_attacks"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "dmso": {
+    "display_name": "Dmso",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000146"
+      ]
+    },
+    "conditions_treated": [
+      "arthritis",
+      "rheumatoid_arthritis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -278,16 +400,21 @@
   },
   "edta-chelation": {
     "display_name": "Edta Chelation",
-    "claim_count": 2,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000139",
-        "WAL-CLM-LETS-000144"
+        "WAL-CLM-LETS-000144",
+        "WAL-CLM-LETS-000145",
+        "WAL-CLM-LETS-000146"
       ]
     },
     "conditions_treated": [
       "angina",
-      "arsenic_toxicity"
+      "arsenic_toxicity",
+      "arteriosclerosis",
+      "arthritis",
+      "rheumatoid_arthritis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -310,14 +437,17 @@
   },
   "evening-primrose-oil": {
     "display_name": "Evening Primrose Oil",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000126"
+        "WAL-CLM-LETS-000126",
+        "WAL-CLM-LETS-000147"
       ]
     },
     "conditions_treated": [
-      "aids"
+      "aids",
+      "asthma",
+      "atopic_asthma"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -365,14 +495,19 @@
   },
   "garlic": {
     "display_name": "Garlic",
-    "claim_count": 1,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000126"
+        "WAL-CLM-LETS-000126",
+        "WAL-CLM-LETS-000145",
+        "WAL-CLM-LETS-000147"
       ]
     },
     "conditions_treated": [
-      "aids"
+      "aids",
+      "arteriosclerosis",
+      "asthma",
+      "atopic_asthma"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -426,6 +561,22 @@
       "lets-play-doctor"
     ]
   },
+  "honeysuckle": {
+    "display_name": "Honeysuckle",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000147"
+      ]
+    },
+    "conditions_treated": [
+      "asthma",
+      "atopic_asthma"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "hydergine": {
     "display_name": "Hydergine",
     "claim_count": 1,
@@ -458,20 +609,25 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 4,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
         "WAL-CLM-LETS-000119",
         "WAL-CLM-LETS-000136",
-        "WAL-CLM-LETS-000139"
+        "WAL-CLM-LETS-000139",
+        "WAL-CLM-LETS-000145",
+        "WAL-CLM-LETS-000146"
       ]
     },
     "conditions_treated": [
       "abrasions",
       "abscess",
       "anal_abscess",
-      "angina"
+      "angina",
+      "arteriosclerosis",
+      "arthritis",
+      "rheumatoid_arthritis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -479,14 +635,17 @@
   },
   "interlipids": {
     "display_name": "Interlipids",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000131"
+        "WAL-CLM-LETS-000131",
+        "WAL-CLM-LETS-000148"
       ]
     },
     "conditions_treated": [
-      "alopecia"
+      "alopecia",
+      "atopic_dermatitis",
+      "eczema"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -502,6 +661,22 @@
     },
     "conditions_treated": [
       "aids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "jaborandi": {
+    "display_name": "Jaborandi",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000147"
+      ]
+    },
+    "conditions_treated": [
+      "asthma",
+      "atopic_asthma"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -565,6 +740,22 @@
       "lets-play-doctor"
     ]
   },
+  "leeks": {
+    "display_name": "Leeks",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000147"
+      ]
+    },
+    "conditions_treated": [
+      "asthma",
+      "atopic_asthma"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "levamisol": {
     "display_name": "Levamisol",
     "claim_count": 1,
@@ -575,6 +766,22 @@
     },
     "conditions_treated": [
       "aids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "licorice": {
+    "display_name": "Licorice",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000146"
+      ]
+    },
+    "conditions_treated": [
+      "arthritis",
+      "rheumatoid_arthritis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -672,6 +879,21 @@
       "lets-play-doctor"
     ]
   },
+  "mistletoe": {
+    "display_name": "Mistletoe",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000145"
+      ]
+    },
+    "conditions_treated": [
+      "arteriosclerosis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "nitroglycerine": {
     "display_name": "Nitroglycerine",
     "claim_count": 1,
@@ -682,6 +904,22 @@
     },
     "conditions_treated": [
       "angina"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "ox-bile": {
+    "display_name": "Ox Bile",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000147"
+      ]
+    },
+    "conditions_treated": [
+      "asthma",
+      "atopic_asthma"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -704,13 +942,14 @@
   },
   "pancreatic-enzymes": {
     "display_name": "Pancreatic Enzymes",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000123",
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000131",
-        "WAL-CLM-LETS-000140"
+        "WAL-CLM-LETS-000140",
+        "WAL-CLM-LETS-000147"
       ]
     },
     "conditions_treated": [
@@ -718,7 +957,9 @@
       "alopecia",
       "alzheimers",
       "anorexia",
-      "anorexia_nervosa"
+      "anorexia_nervosa",
+      "asthma",
+      "atopic_asthma"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -766,6 +1007,22 @@
     "conditions_treated": [
       "abrasions",
       "disagreeable_attitude"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "poison-ivy": {
+    "display_name": "Poison Ivy",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000146"
+      ]
+    },
+    "conditions_treated": [
+      "arthritis",
+      "rheumatoid_arthritis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -928,6 +1185,22 @@
       "lets-play-doctor"
     ]
   },
+  "tetracycline": {
+    "display_name": "Tetracycline",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000146"
+      ]
+    },
+    "conditions_treated": [
+      "arthritis",
+      "rheumatoid_arthritis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "thallium": {
     "display_name": "Thallium",
     "claim_count": 1,
@@ -943,14 +1216,16 @@
   },
   "thymus": {
     "display_name": "Thymus",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000126"
+        "WAL-CLM-LETS-000126",
+        "WAL-CLM-LETS-000150"
       ]
     },
     "conditions_treated": [
-      "aids"
+      "aids",
+      "autoimmune_disorders"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -981,6 +1256,21 @@
     },
     "conditions_treated": [
       "alzheimers"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "vinegar": {
+    "display_name": "Vinegar",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000149"
+      ]
+    },
+    "conditions_treated": [
+      "athletes_foot"
     ],
     "books_cited": [
       "lets-play-doctor"

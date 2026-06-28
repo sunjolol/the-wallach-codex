@@ -903,7 +903,7 @@
   },
   "arteriosclerosis": {
     "display_name": "Arteriosclerosis",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000082"
@@ -918,6 +918,7 @@
         "WAL-CLM-LETS-000001"
       ],
       "protocols": [
+        "WAL-CLM-LETS-000145",
         "WAL-CLM-RARE-000202"
       ],
       "toxicity_signs": [
@@ -926,10 +927,20 @@
     },
     "essentials_involved": [
       "magnesium",
+      "omega-3",
       "oxygen",
+      "vitamin-c",
       "vitamin-d"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "artichoke",
+      "bears-garlic",
+      "colloidal-minerals",
+      "edta-chelation",
+      "garlic",
+      "hydrogen-peroxide",
+      "mistletoe"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",
@@ -938,7 +949,7 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 22,
+    "claim_count": 23,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
@@ -969,6 +980,7 @@
       ],
       "protocols": [
         "WAL-CLM-DDDL-000051",
+        "WAL-CLM-LETS-000146",
         "WAL-CLM-RARE-000096",
         "WAL-CLM-RARE-000279"
       ],
@@ -995,11 +1007,25 @@
       "sulfur",
       "tin",
       "vanadium",
+      "vitamin-b3",
       "vitamin-b6",
+      "vitamin-c",
       "vitamin-d",
+      "vitamin-e",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "alfalfa",
+      "cartilage",
+      "chondroitin",
+      "colloidal-minerals",
+      "dmso",
+      "edta-chelation",
+      "hydrogen-peroxide",
+      "licorice",
+      "poison-ivy",
+      "tetracycline"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",
@@ -1008,7 +1034,7 @@
   },
   "asthma": {
     "display_name": "Asthma",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000053"
@@ -1019,17 +1045,30 @@
         "WAL-CLM-RARE-000176"
       ],
       "protocols": [
+        "WAL-CLM-LETS-000147",
         "WAL-CLM-RARE-000202"
       ]
     },
     "essentials_involved": [
       "magnesium",
       "manganese",
+      "omega-3",
       "oxygen"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "colloidal-minerals",
+      "evening-primrose-oil",
+      "garlic",
+      "honeysuckle",
+      "jaborandi",
+      "leeks",
+      "ox-bile",
+      "pancreatic-enzymes"
+    ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1045,6 +1084,118 @@
       "manganese"
     ],
     "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "athletes_foot": {
+    "display_name": "Athletes Foot",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000149"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a",
+      "vitamin-b6",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "boric-acid",
+      "desenex",
+      "vinegar"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "atopic_asthma": {
+    "display_name": "Atopic Asthma",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000147"
+      ]
+    },
+    "essentials_involved": [
+      "magnesium",
+      "manganese",
+      "omega-3"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "colloidal-minerals",
+      "evening-primrose-oil",
+      "garlic",
+      "honeysuckle",
+      "jaborandi",
+      "leeks",
+      "ox-bile",
+      "pancreatic-enzymes"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "atopic_dermatitis": {
+    "display_name": "Atopic Dermatitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000148"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "omega-3",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "interlipids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "autism": {
+    "display_name": "Autism",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000151"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "chromium",
+      "magnesium",
+      "vitamin-b6"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "autoimmune_disorders": {
+    "display_name": "Autoimmune Disorders",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000150"
+      ]
+    },
+    "essentials_involved": [
+      "omega-3",
+      "selenium",
+      "vitamin-a",
+      "vitamin-c",
+      "vitamin-e",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "thymus"
+    ],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -2366,7 +2517,7 @@
   },
   "eczema": {
     "display_name": "Eczema",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000111"
@@ -2380,19 +2531,26 @@
         "WAL-CLM-LETS-000021",
         "WAL-CLM-LETS-000044",
         "WAL-CLM-RARE-000240"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000148"
       ]
     },
     "essentials_involved": [
       "biotin",
       "calcium",
+      "chromium",
       "inositol",
       "omega-3",
       "omega-6",
       "vitamin-b3",
       "vitamin-b5",
+      "vitamin-e",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "interlipids"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",
@@ -4501,21 +4659,43 @@
   },
   "rheumatoid_arthritis": {
     "display_name": "Rheumatoid Arthritis",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000050"
       ],
       "protocols": [
+        "WAL-CLM-LETS-000146",
         "WAL-CLM-RARE-000096"
       ]
     },
     "essentials_involved": [
-      "gold"
+      "calcium",
+      "copper",
+      "gold",
+      "magnesium",
+      "selenium",
+      "vitamin-b3",
+      "vitamin-b6",
+      "vitamin-c",
+      "vitamin-e",
+      "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "alfalfa",
+      "cartilage",
+      "chondroitin",
+      "colloidal-minerals",
+      "dmso",
+      "edta-chelation",
+      "hydrogen-peroxide",
+      "licorice",
+      "poison-ivy",
+      "tetracycline"
+    ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
