@@ -10,13 +10,15 @@ at every session start.
 
 ```
 chronicle/
-  build-log.md             ← active · pre-write contract surface (every dashboard/ write logged here)
+  build-log.md             ← active · pre-write contract surface (every chunk close logged here)
   next-chunk.md            ← active · rolling session hand-off pointer (what's done, what's next)
   creators-log/            ← active · the SACRED, append-only Creator's Log (log.jsonl + generated LOG.md + README)
   CHANGELOG.md             ← active · version-by-version narrative
   domain-glossary.md       ← active · shared vocabulary for the health/framework domain
   worked-example-chunk.md  ← reference · a fully-worked round-close example
   contradictions/          ← active · prime-directive conflict reports + §17 incident logs
+  proposals/               ← active · design proposals (e.g. the Wallach knowledge-revamp — the proposal of record)
+  wallach-fringe-excluded.md ← reference · index of Wallach fringe content excluded from the app
   versions/                ← historical · every prior system-prompt version, archived in full
   evals/                   ← historical · prompt-vs-prompt answer comparisons
   README.md                ← this file

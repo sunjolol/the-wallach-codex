@@ -51,8 +51,11 @@ Top-level folders, one line each:
   (`core/ → state/ → views/`), bundled `dist/main.js`, the sealed
   `design-system.css`, vendored Tesseract OCR, and v3 mockup references under
   `components/`.
-- **`eden/`** — the sealed canonical source. Every Wallach/Youngevity number,
-  label, and claim originates here; hash-anchored, user-only-writable once sealed.
+- **`eden/`** — the sealed canonical source, in three wings: the Youngevity
+  product catalog (`eden-catalog.json`), the **`corpus/`** Wallach claim graph
+  (his books → extracted, hash-anchored claims + derived indices), and the
+  hand-made `graphics/`. Every Wallach/Youngevity number, label, and claim
+  originates here; hash-anchored, user-only-writable once sealed.
 - **`schemas/`** — JSON Schemas that validate the data files at load.
 - **`knowledge/`** — Wallach corpus + general health/educational reference
   (cleaned transcripts, book extracts, manifests, research images).
@@ -68,10 +71,6 @@ Top-level folders, one line each:
   `contradictions/`, `evals/`.
 - **`tools/`** — `build.mjs`, `invariants.py`, `safe_write.py`, the enforcement
   `hooks/`, and the headless render probes.
-- **`outputs/`** — generated health-reference documents (framework summary,
-  protocol drafts, research briefs, medical red-flag / escalation rules).
-- **`sessions/`** — cross-session working notes (session log, open questions,
-  follow-ups).
 - **`genesis/`** — the session boot system + the archived Cowork → Claude-Code handoff: the pre-handoff conversation
   and the active build plan.
 - **`.claude/`** — Claude Code settings + the enforcement-hook wiring

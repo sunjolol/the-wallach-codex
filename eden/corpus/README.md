@@ -60,8 +60,10 @@ isn't there. This is what survives a 4-year-unattended re-OCR.
 | Tool | Who | Does |
 |---|---|---|
 | `corpus_extract.py` | agent | deterministic draft scaffolding (chunking, dose regex, char_offset) → `drafts/` |
-| `corpus_derive.py` | agent | `claims/*` → `indices/*` (pure, deterministic) |
-| `corpus_verify.py` | agent (read-only) | the 10 integrity checks; truth-anchored on book bytes; cannot lie |
+| `corpus_derive.py` | agent | `claims/*` → `indices/*` (pure, deterministic; excludes `search-only` tier-2 claims from the operational indices) |
+| `corpus_resnap.py` | agent | after a sealed book `.txt` is corrected, relocate every claim's `char_offset` + recompute the book `content_sha256` anchor (locator-only; no claim content changes) |
+| `corpus_embed.py` | agent | build the dashboard's embedded corpus JSON from the sealed shards (Zod-validated at load) |
+| `corpus_verify.py` | agent (read-only) | the 11 integrity checks; truth-anchored on book bytes; cannot lie |
 | `corpus_seal.py` | **user only** | promote drafts → claims, derive indices, recompute golden hashes, bump version |
 | `graphics_seal.py` | **user only** | seal the graphics manifest |
 | `graphics_verify.py` | agent (read-only) | each graphic's bytes match its manifest hash |
@@ -75,9 +77,9 @@ allowlist — it sorts passages; the *book* is always the source.
 Every canonical file has a `*.golden.sha256` sibling. The §17 `pre_write_guard` hook
 auto-blocks any path with a golden sibling, so sealed files are user-only-writer for
 free; `drafts/` (no siblings) stays agent-writable. `pre_bash_guard` already bans bash
-writes into `eden/`. Three invariants enforce integrity at every round-close:
+writes into `eden/`. Four invariants enforce integrity at every round-close:
 `corpus_integrity`, `corpus_runtime_purity` (dashboard makes no LLM/network call),
-`graphics_integrity`.
+`graphics_integrity`, and `search_only_indices_excluded` (tier-2 `search-only` claims never leak into the operational indices).
 
 **Bootstrap:** until `corpus_seal.py` runs, there are no golden hashes and
 `corpus_verify` reports BOOTSTRAP (the invariants pass green, mirroring `eden_hash_integrity`).

@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_138 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_139 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 09:49 UTC-05:00 · note · docs/front-facing
+Front-facing accuracy pass: reconciled 8 structural docs (root README + eden/corpus/tools/chronicle READMEs + claims/indices sub-READMEs + STYLE-GUIDE) to the live structure; verified 6 others already accurate. Docs-only, board 31/31. STOPPED for Luneth's review before Ch10.
+  ↳ FIXES: root README dropped gitignored outputs/+sessions/ + expanded eden/ to 3 wings; eden/README retitled + added three-wings table (was catalog-only); eden/corpus/README added corpus_resnap+corpus_embed, 10->11 checks, 3->4 invariants; tools/README added genesis.py+style_diff.js+journey/profile probes, 92->90 essentials, '4 books'->Wallach books; chronicle/README added proposals/+wallach-fringe-excluded.md; STYLE-GUIDE removed dead tacitus ref + fixed font tree (5 .woff2 -> 7 .ttf families); claims/README + indices/README de-staled the 'empty until Phase X' language (corpus now 3 sealed books / 5 live indices). Verified-accurate without change: transcripts/README, fonts/README, drafts/README, creators-log/README, eden/corpus/SCHEMA (kind enum sums to 497), eden/SCHEMA. NOTE flagged to Luneth: CLAUDE.md still says '5 in-housed TTF families' (now 7) — left for his call since CLAUDE.md is the operating contract.
 
 ## 2026-06-28 09:24 UTC-05:00 · incident · governance/meta-audit
 Meta-audit found the 3-day-audit fix INCOMPLETE: 5 more live surfaces (logging-doctrine.md + 4 memory files) still carried the pruned JSDoc-only rule; 3 load every session. All fixed + marked pruned; repo+memory re-grep = zero survivors; genesis proves the next session sees it.

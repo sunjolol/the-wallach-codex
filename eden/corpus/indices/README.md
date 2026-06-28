@@ -4,11 +4,11 @@ Derived, sealed indices over `../claims/*`. **Never hand-edited** — regenerate
 `corpus_derive.py` and byte-compared by `corpus_verify.py` (check #8), so an index
 can never silently drift from the claims it summarizes.
 
-Planned (Phase δ):
+Generated (one per index, each with a `*.golden.sha256` sibling):
 - `essentials.json` — per-essential index (90 entries, point into claims by id)
 - `other-substances.json` — Wallach-emphasized non-essentials (germanium framing, etc.), partitioned
 - `conditions.json` — condition → cause + protocol + dose + prognosis
 - `symptoms.json` — symptom → likely-deficiency
 - `consistency.json` — cross-book repetition / evolution / contradiction graph
 
-Empty until the claim graph exists.
+All five are live, each a pure derivation of the sealed claim shards.

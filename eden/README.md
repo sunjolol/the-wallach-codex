@@ -1,12 +1,24 @@
-# Eden — Sealed Catalog Architecture
+# Eden — the sealed canonical source
 
 _Created 2026-06-20. The architectural surface where the recommendation system is locked down by design._
 
 ## What Eden is
 
-Eden is the **single sealed source of truth** for every product the recommendation system can surface across the entire dashboard. It's a closed garden: data flows IN only by user-controlled manual edits to the catalog file, data flows OUT to recommendations and read surfaces, and user inputs (Scanner, manual additions) live in a strictly parallel namespace that the recommendation engine can never read.
+Eden is the **single sealed source of truth** for everything the dashboard treats as canonical. It's a closed garden: data flows IN only by user-controlled edits, flows OUT to read surfaces, and user inputs (Scanner, manual additions) live in a strictly parallel namespace the canon can never read.
 
 Naming is intentional. "Eden" captures the architectural posture: pristine, sealed, can't be poisoned, manually tended.
+
+### The three wings
+
+Eden has grown into three sealed wings, all under one hash-anchored, user-only-writer discipline (each canonical file carries a `*.golden.sha256` sibling; the §17 `pre_write_guard` hook auto-blocks any path that has one):
+
+| Wing | Home | Contents | Documented in |
+|---|---|---|---|
+| **1 — Catalog** | `eden/eden-catalog.json` (+ derived embeds in `eden/derived/`) | the Youngevity product catalog the recommendation engine surfaces | **this file** |
+| **2 — Corpus** | `eden/corpus/` | the Wallach claim graph — his books → extracted, sealed claims + the indices derived from them | `eden/corpus/README.md` |
+| **3 — Graphics** | `eden/graphics/` | the sacred hand-made nutrient/food graphics + their sealed manifest | `eden/corpus/README.md` (shared sealing posture) |
+
+The rest of this file documents **Wing 1 (the product catalog)**; the corpus wing has its own README with full detail.
 
 ## The Eden invariants — what makes the garden hold
 

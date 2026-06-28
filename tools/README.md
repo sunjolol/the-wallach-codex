@@ -22,11 +22,15 @@ through bash.
 | `render_probe_ocr.js` | Scanner OCR path (no WASM load). |
 | `render_probe_adopt.js` | Scanner → adopt → Coverage cascade. |
 | `render_probe_knowledge.js` | Knowledge drawer + product vault. |
+| `render_probe_journey.js` | Journey drawer. |
+| `render_probe_profile.js` | Profile panel. |
+| `style_diff.js` | Computed-style diff of a live surface vs its v3 mockup — prints only the `getComputedStyle` deltas (the "measure, don't eyeball" visual gate). |
 
 ## Discipline core
 
 | File | What it does |
 |---|---|
+| `genesis.py` | The session-boot ritual — prints the scoreboard (invariants · build parity · last Creator's Log entry · `build-log.md` tail) + the live `chronicle/next-chunk.md` hand-off. Triggered by typing `genesis` at session start. |
 | `safe_write.py` | The §17 atomic-verify write primitive (`replace`/`append`/`rewrite`/`check`). Every project-file write routes through it; direct write tools are hook-blocked. |
 | `invariants.py` | The integrity gate — runs the invariant manifest. Round-close blocks on any NEW red beyond `.claude/invariant-baseline.json`. |
 | `creators_log.py` | CLI writer for the sacred, append-only Creator's Log (`chronicle/creators-log/log.jsonl` + generated `LOG.md`): `append`/`verify`/`digest`/`list`. No delete path by design. |
@@ -47,8 +51,8 @@ user in one end pass).
 | `build_ingredients_embed.py` | Reads the master list → a slim per-ingredient lookup embedded for the dashboard's ingredient-education layer. |
 | `build_ingredients_quickref.py` | Builds the ingredients quick-reference for non-essential ingredients (botanicals, amino acids, blend components, fatty acids) the essentials dataset doesn't cover. |
 | `build_regimen_label_lookup.py` | Builds the regimen ↔ label lookup the Regimen "Full edit" Label-Check form consults by product name. |
-| `build_wallach_stance_candidates.py` | Queries `corpus_search.py` for each of the 92 essentials → a hand-review sidecar of candidate Wallach stance citations (§00.A educational layer). |
-| `extract_corpus_index.py` | Builds the Wallach topic index from the 4 books (conditions/protocols, deficiency → symptom claims). |
+| `build_wallach_stance_candidates.py` | Queries `corpus_search.py` for each of the 90 essentials → a hand-review sidecar of candidate Wallach stance citations (§00.A educational layer). |
+| `extract_corpus_index.py` | Builds the Wallach topic index from the Wallach books (conditions/protocols, deficiency → symptom claims). |
 | `extract_deficiency_map.py` | Builds the nutrient ↔ symptom deficiency map from the corpus (Rare Earths + DDDL element entries + LPD condition entries). |
 | `corpus_search.py` | Indexed keyword retrieval across the Wallach corpus (books + transcripts) — a pipeline dependency. See below. |
 

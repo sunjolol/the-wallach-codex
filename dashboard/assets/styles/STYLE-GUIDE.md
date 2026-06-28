@@ -196,18 +196,19 @@ dashboard/assets/styles/
 dashboard/assets/fonts/
 ├── README.md                         # font procurement instructions
 ├── LICENSE.md                        # SIL OFL 1.1 + per-family attribution
-├── PlayfairDisplay-VariableFont_wght.woff2
-├── Merriweather-VariableFont_*.woff2
-├── CrimsonPro-VariableFont_wght.woff2
-├── SpaceGrotesk-VariableFont_wght.woff2
-└── JetBrainsMono-VariableFont_wght.woff2
+├── PlayfairDisplay-VariableFont_wght.ttf      (+ -Italic)   ┐ 5 original
+├── Merriweather-VariableFont_opsz,wdth,wght.ttf (+ -Italic) │ editorial
+├── CrimsonPro-VariableFont_wght.ttf           (+ -Italic)   │ families
+├── SpaceGrotesk-VariableFont_wght.ttf                       │
+├── JetBrainsMono-VariableFont_wght.ttf                      ┘
+├── ChakraPetch-{Regular,SemiBold,Bold}.ttf    ┐ 2 added in the
+└── BrunoAce-Regular.ttf                        ┘ v3.2 type pivot
+# in-housed as .ttf (design-system.css prefers .woff2, falls back to .ttf)
 
 tools/invariants.py                   # 3 paired daily invariants:
                                       #   check_no_external_style_resources
                                       #   check_design_system_hash_integrity
                                       #   check_design_system_write_protection
-
-tacitus/feature-flags.json            # design_system_enforcement: "warn" | "error"
 ```
 
 ---
