@@ -1,106 +1,77 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_11 claim(s) drafted 2026-06-28T18:01:56+00:00. Review then run corpus_seal.py to promote._
+_7 claim(s) drafted 2026-06-28T18:47:09+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: mechanism×11
+Kinds: protocol×7
 
-### WAL-CLM-LETS-000190 · mechanism
-- **essentials:** — · **conditions:** cancer · **symptoms:** —
-- **claim:** Wallach stresses that single-mode cancer programs are absurd and lists many adjunctive therapies, of which hydrogen peroxide stands out. Orthodox medicine used intravenous hydrogen peroxide (H2O2) back in the 1800s, so there is a long history with no bad side effects, plus evidence that raising blood oxygen helps fight cancer (cancer dislikes elevated oxygen levels).
-- **verbatim** (offset 212153): “There are many adjunctive therapies for
-cancer programs (remember it is absurd to use
-single mode programs!!) amongst which hy-
-drogen peroxide stands out. "Orthodox" medi-
-cine used H202 IV in the 1800s so there is lots
-of history with no bad side effects as well as
-lots of positive evidence that increasing oxy-
-gen in the blood has beneficial effects in your
-fight against cancer (remember cancer
-doesn't like elevated oxygen levels).”
+### WAL-CLM-LETS-000201 · protocol
+- **essentials:** germanium · **conditions:** candidiasis · **symptoms:** —
+- **claim:** Candidiasis is an overgrowth of the yeast Candida albicans — normally a harmless resident of the intestine — that turns parasitic when long-term antibiotics kill the competing gut bacteria, eventually spilling into the bloodstream. Wallach's treatment addresses food allergies, low blood sugar, and any concurrent infection, then attacks the yeast directly: oral hydrogen peroxide (1 ounce twice daily, mixed with aloe vera to make it palatable) and intravenous hydrogen peroxide in a dimethyl sulfoxide (DMSO) and 5% dextrose solution to kill the systemic infestation, with germanium taken orally and by intramuscular injection to drive oxygen into the cells (Candida dislikes oxygen). Re-seeding the gut with Lactobacillus acidophilus and autoimmune urine and blood therapies round out the program.
+- **verbatim** (offset 217273): “Hydrogen peroxide in a DMSO
+and 5% dextrose solution should be adminis-
+tered IV to kill the systemic infestation (it takes
+10-12 infusions to get the desired effect).
+Germanium orally and IM is a good adjunctive
+therapy as it helps get oxygen into the cells
+(remember C. albicans doesn't like oxygen)
+making the general environment unattractive
+to the parasite.”
 
-### WAL-CLM-LETS-000191 · mechanism
-- **essentials:** — · **conditions:** cancer · **symptoms:** —
-- **claim:** Coenzyme Q-10 (CoQ-10) increases the immune-fighting ability of your phagocytes and increases the efficiency of tissue detoxification, making it a useful adjunct in cancer programs.
-- **verbatim** (offset 212595): “CO Q-10 increases the immune fighting
-ability of your phagocytes as well as increases
-the efficiency of tissue detoxification.”
+### WAL-CLM-LETS-000202 · protocol
+- **essentials:** zinc, lysine, vitamin-e, vitamin-a · **conditions:** canker_sores · **symptoms:** —
+- **claim:** Canker sores (also called cold sores, fever blisters, or aphthous stomatitis) can be triggered by stress, food allergies, and certain nutrient deficiencies, and appear only on the movable lining of the lips and cheeks. Wallach's treatment is avoidance of food allergens plus zinc at 50 mg three times daily, lysine at 1,500 mg per day, vitamin E at 800-1,200 international units per day, a B-complex at 50 mg of each three times daily, and vitamin A at 300,000 international units per day taken as beta carotene.
+- **verbatim** (offset 218574): “Treatment should include avoidance of aller-
+gens, zinc at 50 mg t.i.d., lysine at 1,500 mg/
+day, vitamin E at 800-1,200 IU/day, B-com-
+plex at 50 mg each t.i.d. and vitamin A at
+300,000 IU/day as beta carotene.”
 
-### WAL-CLM-LETS-000192 · mechanism
-- **essentials:** — · **conditions:** cancer, leukemia · **symptoms:** —
-- **claim:** DMSO (dimethyl sulfoxide) is useful in the treatment of leukemia because it causes the maturation of the 'premature' white blood cells of leukemia.
-- **verbatim** (offset 212722): “DMSO is useful for the treatment of
-LEUKEMIA in that it causes the maturation of
-the "premature" WBCsof leukemia.”
+### WAL-CLM-LETS-000203 · protocol
+- **essentials:** chromium, selenium, magnesium, potassium, vitamin-b1, vitamin-b3, vitamin-b6 · **conditions:** cardiac_arrhythmia · **symptoms:** —
+- **claim:** An irregular heartbeat (cardiac arrhythmia), once organic heart disease is ruled out, is often driven by food allergies and low blood sugar — the classic example being the 'Chinese restaurant syndrome' from sensitivity to monosodium glutamate (MSG). Wallach links it to deficiencies of vitamins B-1, B-3, and B-6, chromium, selenium, magnesium, and potassium (plus carnitine and coenzyme Q-10). Treatment is avoidance of known allergens, autoimmune urine and blood therapies, chromium at 50-100 micrograms three times daily, a B-complex at 50 mg three times daily, selenium at 100-300 micrograms three times daily, magnesium at 1,000 mg per day, potassium at 500 mg three times daily, plant-derived colloidal minerals, and carnitine and coenzyme Q-10 per label.
+- **verbatim** (offset 219585): “Treatment ofcardiac arrythmia includes avoid-
+ance of known allergens, autoimmune urine
+and blood therapies, chromium at 50-100 mcg
+t.i.d., B-complex at 50 mg t.i.d., selenium at
+100-300 mcg t.i.d., magnesium at 1,000 mg/
+day, potassium at 500 mg t.i.d., plant derived
+colloidal minerals, carnitine and CO Q-10 per
+label.”
 
-### WAL-CLM-LETS-000193 · mechanism
-- **essentials:** — · **conditions:** cancer · **symptoms:** —
-- **claim:** Thymus extracts are useful to enhance thymus-gland function and, through it, the immune system, supporting the body's defenses in cancer programs.
-- **verbatim** (offset 212836): “Thymus extracts are useful to enhance
-the thymus gland function and thus the im-
-mune system.”
+### WAL-CLM-LETS-000204 · protocol
+- **essentials:** selenium, vitamin-e, omega-3 · **conditions:** cardiomyopathy · **symptoms:** —
+- **claim:** Cardiomyopathy (Keshan disease, or muscular dystrophy of the heart) is recognized by the World Health Organization as a selenium-deficiency disease, and is the kind of heart failure that makes a patient a transplant candidate in conventional medicine — yet Wallach notes about $1 per month of selenium would prevent it. It is the same disease veterinarians call 'mulberry heart' in pigs and 'white muscle disease' in livestock, eliminated in animals with selenium. Treatment of early cardiomyopathy is selenium at 350 micrograms three times daily or 1,000 micrograms by intramuscular injection, plant-derived colloidal selenium, vitamin E at 1,200 international units per day, and essential fatty acids at 5 grams three times daily.
+- **verbatim** (offset 221195): “The treatment of early cardiomyopathy in-
+cludes selenium at 350 mcg t.i.d. or 1,000 mcg
+IM, plant derived colloidal selenium, vitamin
+E at 1,200 IU/day and essential fatty acids at 5
+gm t.i.d.”
 
-### WAL-CLM-LETS-000194 · mechanism
-- **essentials:** — · **conditions:** cancer · **symptoms:** —
-- **claim:** Autoimmune urine and autoimmune blood therapies enhance the body's defense systems against foreign substances, including cancer proteins, in much the same way that allergy shots work against pollen allergies.
-- **verbatim** (offset 212930): “Autoimmune urine and autoimmune
-blood therapies enhance the bodies defense
-systems against foreign substances including
-cancer proteins in much the same way the
-"allergy shots" do against pollen allergies.”
+### WAL-CLM-LETS-000205 · protocol
+- **essentials:** vitamin-b6, zinc · **conditions:** carpal_tunnel_syndrome · **symptoms:** —
+- **claim:** Carpal tunnel syndrome is compression of the median nerve at the wrist by the shrinking circular wrist ligament, causing radiating pain in the palm and wrist. Rather than the conventional wrist surgery, Wallach's treatment is vitamin B-6 at 75 mg three times daily, zinc at 50 mg three times daily, and cartilage at 5 mg three times daily.
+- **verbatim** (offset 222033): “Treatment includes B-6 at 75 mg t.i.d., zinc at
+50 mg t.i.d. and cartilage at 5 mg t.i.d.”
 
-### WAL-CLM-LETS-000195 · mechanism
-- **essentials:** — · **conditions:** cancer, liver_cancer · **symptoms:** —
-- **claim:** Carbamide (urea) is in keeping with autoimmune urine therapy and is, per Wallach, particularly effective for liver cancer.
-- **verbatim** (offset 213136): “Carbamide (urea) is in keeping with
-the autoimmune urine therapy. Carbamide is
-particularly effective for LIVER CANCER.”
+### WAL-CLM-LETS-000206 · protocol
+- **essentials:** — · **conditions:** motion_sickness · **symptoms:** —
+- **claim:** Motion sickness (carsickness, sea sickness, air sickness) arises when repetitive angular and linear movement occur together, producing nausea and vomiting. Wallach offers no nutrient protocol here; prevention is the use of scopolamine transdermal patches (worn behind the ear) or Dramamine, both available at the pharmacy without a prescription.
+- **verbatim** (offset 222575): “Prevention of motion sickness includes the
+use of scopolamine transdermal patches (can
+be worn behind the ear) or Dramamine (both
+medications can be purchased at the phar-
+macy without a prescription).”
 
-### WAL-CLM-LETS-000196 · mechanism
-- **essentials:** vitamin-a, vitamin-e · **conditions:** cancer, carcinoma · **symptoms:** —
-- **claim:** Beta carotene taken with vitamin E can be taken at as much as a 600,000 IU vitamin A equivalent, which Wallach says is of significant benefit in cancer therapy programs, especially for carcinomas. The vitamin A so provided also helps the thymus gland produce antibodies and makes laetrile more effective.
-- **verbatim** (offset 213256): “Beta carotene taken with vitamin E can
-be taken at as much as 600,000 IU vitamin A
-equivalent!!! This will be of significant benefit
-in cancer therapy programs especially CARCI-
-NOMAS. The vitamin A thus provided will
-also help the thymus gland produce antibod-
-ies and make laetrile more effective.”
-
-### WAL-CLM-LETS-000197 · mechanism
-- **essentials:** selenium · **conditions:** cancer · **symptoms:** —
-- **claim:** Selenium is a trace mineral intensively investigated as both a cancer preventive and a therapeutic nutrient; Wallach considers 1000-3000 mcg/day the proper therapy dose, and notes plant-derived colloidal selenium is 98% absorbable.
-- **verbatim** (offset 213556): “Selenium is a trace mineral that has
-been investigated very intensively as a cancer
-preventative and as therapeutic nutrition,
-1,000-3,000 mcg/day is considered to be the
-proper therapy dose. Plant derived colloidal
-selenium is 98% absorbable.”
-
-### WAL-CLM-LETS-000198 · mechanism
-- **essentials:** — · **conditions:** cancer · **symptoms:** —
-- **claim:** Shark cartilage and shark liver oil contain substances that stop the formation of the new capillaries that feed metastatic cancer growths (antiangiogenesis).
-- **verbatim** (offset 213800): “Shark cartilage and shark liver oil
-contain substances that stop the formation
-of capillaries that feed new metastatic
-growths of cancer.”
-
-### WAL-CLM-LETS-000199 · mechanism
-- **essentials:** — · **conditions:** cancer · **symptoms:** —
-- **claim:** Chemotherapy given in 'micro-doses' alongside alternative therapies, or delivered into the arterial blood supply of the cancer-infested tissue or organ, can substantially reduce the negative side effects of chemotherapy.
-- **verbatim** (offset 213938): “Chemotherapy in "micro-doses" in con-
-junction with alternative therapies or chemo-
-therapy into the arterial blood supply of the
-cancer infested tissue or organ can sub-
-stantially reduce the negative side effects of
-chemotherapy.”
-
-### WAL-CLM-LETS-000200 · mechanism
-- **essentials:** — · **conditions:** cancer · **symptoms:** —
-- **claim:** Intravenous infusions with total nutrition, especially in the early phases of alternative therapy, give the body much-needed raw material to rebuild normal tissue and replenish the ravaged immune system; this should include vitamins, minerals, amino acids, essential fatty acids, and electrolytes. Cancer patients are well established to have poor digestion and absorption, probably from long-term food-allergy (celiac-type) changes in the gut.
-- **verbatim** (offset 214170): “Intravenous infusions with total nutri-
-tion, especially in the early phases of alterna-
-tive therapy are very useful in providing your
-body with much needed raw material for
-rebuilding normal tissue as well as replenish-
-ing the ravaged immune system.”
+### WAL-CLM-LETS-000207 · protocol
+- **essentials:** vitamin-e, vitamin-c, vitamin-b1, vitamin-b2, vitamin-b3, vitamin-b5, vitamin-b6, inositol, selenium, zinc, flavonoids, arginine, cysteine, chromium · **conditions:** cataracts · **symptoms:** —
+- **claim:** A cataract is a clouding of the eye's lens that blocks light from reaching the retina and is the most common cause of blindness in older people. Wallach's treatment is the base-line vitamin/mineral supplement plus vitamin E at 400 international units per day, vitamin C to bowel tolerance, vitamins B-1, B-2, B-3, B-5 and B-6 at 50 mg twice daily, inositol at 150 mg per day, selenium at 250 micrograms per day, zinc at 25 mg three times daily, bioflavonoids at 300 mg, glycine at 200 mg, l-glutamine at 200 mg, l-arginine at 300 mg per day, l-cysteine at 400 mg per day, and glutathione at 40 mg per day; if diabetes or low blood sugar is present, add chromium at 50 micrograms three times daily.
+- **verbatim** (offset 223193): “Treatment of cataracts includes the base line
+vitamin/mineral supplement plus vitamin E at
+400 IU/day, vitamin C to bowel tolerance, B-
+1 , B-2, B-3, B-5 and B-6 at 50 mg b.i.d. , inositol
+at 150 mg/day, selenium at 250 mcg/day, zinc
+at 25 mgt.i.d., bioflavonoids at 300mg, glycine
+at 200 mg, 1-glutamine at 200 mg, 1-arginine at
+300 mg/day, 1-cysteine at 400 mg/day and
+glutathione at 40 mg/day.”
 

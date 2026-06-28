@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_152 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_153 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 13:50 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b25: CANDIDIASIS→CATARACTS — 7 tier-1 protocol claims (LETS-201..207). 6 render-verified meg→mcg dose fixes. conditions 249→251 (+cardiac_arrhythmia +motion_sickness). kv134→135, 580→587 claims. Board 31/31, knowledge probe green.
+  ↳ Back to TIER-1 after the CANCER deep-dive. Entries: candidiasis, canker_sores, cardiac_arrhythmia, cardiomyopathy, carpal_tunnel_syndrome, motion_sickness (CARSICKNESS, Rx/OTC-only), cataracts; CARBUNCLES xref skipped. Render-first p97-100 (fitz=printed+11), 600-DPI zoom confirmed book prints mcg for all 6 selenium/chromium doses. Pipeline: fix_txt(5 transactional) -> resnap 0 broken -> finalize -> seal -> embed -> build -> invariants 31/31 -> probe PASS. NEXT b26 = CATARRH/p99+.
 
 ## 2026-06-28 13:02 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b24 ★ CANCER deep-dive 2/2 → CANCER SECTION COMPLETE: 11 search-only adjunctive-therapy claims (LETS-190..200). 1 render-verified selenium meg→mcg fix. seal kv134, claims 580, conditions 249 (unchanged), search-only 58, board 31/31, probe green.

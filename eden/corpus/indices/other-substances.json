@@ -181,6 +181,23 @@
       "lets-play-doctor"
     ]
   },
+  "b-complex": {
+    "display_name": "B Complex",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000202",
+        "WAL-CLM-LETS-000203"
+      ]
+    },
+    "conditions_treated": [
+      "canker_sores",
+      "cardiac_arrhythmia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "bears-garlic": {
     "display_name": "Bears Garlic",
     "claim_count": 1,
@@ -256,6 +273,23 @@
     },
     "conditions_treated": [
       "amenorrhea"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "blood-therapy": {
+    "display_name": "Blood Therapy",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000201",
+        "WAL-CLM-LETS-000203"
+      ]
+    },
+    "conditions_treated": [
+      "candidiasis",
+      "cardiac_arrhythmia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -342,18 +376,35 @@
       "lets-play-doctor"
     ]
   },
+  "carnitine": {
+    "display_name": "Carnitine",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000203"
+      ]
+    },
+    "conditions_treated": [
+      "cardiac_arrhythmia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "cartilage": {
     "display_name": "Cartilage",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
-        "WAL-CLM-LETS-000176"
+        "WAL-CLM-LETS-000176",
+        "WAL-CLM-LETS-000205"
       ]
     },
     "conditions_treated": [
       "arthritis",
       "bursitis",
+      "carpal_tunnel_syndrome",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -441,7 +492,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -456,7 +507,8 @@
         "WAL-CLM-LETS-000165",
         "WAL-CLM-LETS-000166",
         "WAL-CLM-LETS-000168",
-        "WAL-CLM-LETS-000176"
+        "WAL-CLM-LETS-000176",
+        "WAL-CLM-LETS-000203"
       ]
     },
     "conditions_treated": [
@@ -475,7 +527,23 @@
       "bone_pain",
       "bone_spurs",
       "bursitis",
+      "cardiac_arrhythmia",
       "rheumatoid_arthritis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "colloidal-selenium": {
+    "display_name": "Colloidal Selenium",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000204"
+      ]
+    },
+    "conditions_treated": [
+      "cardiomyopathy"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -513,6 +581,21 @@
       "bedsores",
       "bone_pain",
       "bone_spurs"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "coq10": {
+    "display_name": "Coq10",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000203"
+      ]
+    },
+    "conditions_treated": [
+      "cardiac_arrhythmia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -616,14 +699,15 @@
   },
   "dmso": {
     "display_name": "Dmso",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
         "WAL-CLM-LETS-000154",
         "WAL-CLM-LETS-000156",
         "WAL-CLM-LETS-000173",
-        "WAL-CLM-LETS-000176"
+        "WAL-CLM-LETS-000176",
+        "WAL-CLM-LETS-000201"
       ]
     },
     "conditions_treated": [
@@ -632,7 +716,23 @@
       "bee_stings",
       "bruises",
       "bursitis",
+      "candidiasis",
       "rheumatoid_arthritis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "dramamine": {
+    "display_name": "Dramamine",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000206"
+      ]
+    },
+    "conditions_treated": [
+      "motion_sickness"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -843,16 +943,48 @@
       "lets-play-doctor"
     ]
   },
-  "glycine": {
-    "display_name": "Glycine",
+  "glutamine": {
+    "display_name": "Glutamine",
     "claim_count": 1,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000157"
+        "WAL-CLM-LETS-000207"
       ]
     },
     "conditions_treated": [
-      "benign_prostatic_hyperplasia"
+      "cataracts"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "glutathione": {
+    "display_name": "Glutathione",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000207"
+      ]
+    },
+    "conditions_treated": [
+      "cataracts"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "glycine": {
+    "display_name": "Glycine",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000157",
+        "WAL-CLM-LETS-000207"
+      ]
+    },
+    "conditions_treated": [
+      "benign_prostatic_hyperplasia",
+      "cataracts"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -951,7 +1083,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
@@ -966,7 +1098,8 @@
         "WAL-CLM-LETS-000165",
         "WAL-CLM-LETS-000166",
         "WAL-CLM-LETS-000167",
-        "WAL-CLM-LETS-000177"
+        "WAL-CLM-LETS-000177",
+        "WAL-CLM-LETS-000201"
       ]
     },
     "conditions_treated": [
@@ -982,6 +1115,7 @@
       "bloating",
       "body_odor",
       "boils",
+      "candidiasis",
       "dental_calculus",
       "rheumatoid_arthritis"
     ],
@@ -1080,6 +1214,21 @@
     "conditions_treated": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "lactobacillus-acidophilus": {
+    "display_name": "Lactobacillus Acidophilus",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000201"
+      ]
+    },
+    "conditions_treated": [
+      "candidiasis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "lead": {
@@ -1703,6 +1852,21 @@
       "lets-play-doctor"
     ]
   },
+  "scopolamine": {
+    "display_name": "Scopolamine",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000206"
+      ]
+    },
+    "conditions_treated": [
+      "motion_sickness"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "slippery-elm": {
     "display_name": "Slippery Elm",
     "claim_count": 1,
@@ -1826,6 +1990,23 @@
     "conditions_treated": [
       "aids",
       "autoimmune_disorders"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "urine-therapy": {
+    "display_name": "Urine Therapy",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000201",
+        "WAL-CLM-LETS-000203"
+      ]
+    },
+    "conditions_treated": [
+      "candidiasis",
+      "cardiac_arrhythmia"
     ],
     "books_cited": [
       "lets-play-doctor"

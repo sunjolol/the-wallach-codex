@@ -2062,39 +2062,56 @@
   },
   "candidiasis": {
     "display_name": "Candidiasis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000157"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000201"
       ]
     },
     "essentials_involved": [
+      "germanium",
       "lanthanum"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "blood-therapy",
+      "dmso",
+      "hydrogen-peroxide",
+      "lactobacillus-acidophilus",
+      "urine-therapy"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
   "canker_sores": {
     "display_name": "Canker Sores",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000019"
       ],
       "protocols": [
-        "WAL-CLM-DDDL-000080"
+        "WAL-CLM-DDDL-000080",
+        "WAL-CLM-LETS-000202"
       ]
     },
     "essentials_involved": [
       "iron",
+      "lysine",
+      "vitamin-a",
       "vitamin-b12",
       "vitamin-b3",
       "vitamin-b9",
+      "vitamin-e",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "b-complex"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor"
@@ -2112,6 +2129,35 @@
       "potassium"
     ],
     "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "cardiac_arrhythmia": {
+    "display_name": "Cardiac Arrhythmia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000203"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "magnesium",
+      "potassium",
+      "selenium",
+      "vitamin-b1",
+      "vitamin-b3",
+      "vitamin-b6"
+    ],
+    "other_substances_involved": [
+      "b-complex",
+      "blood-therapy",
+      "carnitine",
+      "colloidal-minerals",
+      "coq10",
+      "urine-therapy"
+    ],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -2134,7 +2180,7 @@
   },
   "cardiomyopathy": {
     "display_name": "Cardiomyopathy",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010"
@@ -2151,6 +2197,9 @@
       "prognosis": [
         "WAL-CLM-DDDL-000007",
         "WAL-CLM-RARE-000077"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000204"
       ]
     },
     "essentials_involved": [
@@ -2159,15 +2208,20 @@
       "chromium",
       "copper",
       "magnesium",
+      "omega-3",
       "selenium",
       "sulfur",
       "tin",
       "vanadium",
+      "vitamin-e",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "colloidal-selenium"
+    ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -2200,7 +2254,7 @@
   },
   "carpal_tunnel_syndrome": {
     "display_name": "Carpal Tunnel Syndrome",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000178"
@@ -2211,20 +2265,28 @@
       ],
       "prevalence": [
         "WAL-CLM-RARE-000177"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000205"
       ]
     },
     "essentials_involved": [
-      "manganese"
+      "manganese",
+      "vitamin-b6",
+      "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "cartilage"
+    ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
   "cataracts": {
     "display_name": "Cataracts",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000029",
@@ -2234,22 +2296,39 @@
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000207"
       ]
     },
     "essentials_involved": [
+      "arginine",
       "boron",
       "calcium",
       "chromium",
       "copper",
+      "cysteine",
+      "flavonoids",
+      "inositol",
       "magnesium",
       "selenium",
       "sulfur",
       "tin",
       "vanadium",
+      "vitamin-b1",
       "vitamin-b2",
+      "vitamin-b3",
+      "vitamin-b5",
+      "vitamin-b6",
+      "vitamin-c",
+      "vitamin-e",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "glutamine",
+      "glutathione",
+      "glycine"
+    ],
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
@@ -4443,6 +4522,23 @@
     "books_cited": [
       "dddl-3e-2011",
       "rare-earths"
+    ]
+  },
+  "motion_sickness": {
+    "display_name": "Motion Sickness",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000206"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "dramamine",
+      "scopolamine"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "multiple_sclerosis": {
