@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_122 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_123 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-27 19:44 UTC-05:00 · round-close · eden/corpus
+LPD batch 9 — Ch5 calcium diamonds + Ch6 psychiatric-misdiagnosis cases. 5 claims LETS-078..082 (4 diagnostic_pattern + 1 prevalence), shard 77->82. Blood-calcium-masks-deficiency, six-hour GTT, psychiatry-as-food-allergy/hypoglycemia, 1986 55%-malnutrition study.
+  ↳ First LPD prose-diamond batch (Ch2-7 diamond-scan). A1 p34: cramps+eye-twitches signal Ca deficiency while blood Ca reads normal; cell depletion (->convulsions) precedes blood drop. A2 p32: homeostatic masking -> spontaneous fractures from osteoporosis yet normal blood Ca, most are Ca-deficient. A3 p31: fasting sugar misses most diabetes/hypoglycemia, six-hour GTT required. B1 p42: psychiatry's diseases really PMS/hypoglycemia/food-allergy/deficiency -> 2 cured case histories (32yo woman milk-allergic+hypoglycemic 7yr institutionalized, cured 3wk; 42yo actor prediabetic+hypoglycemic+milk-allergic, well 1mo) - core dashboard value, not fringe. B2 p43: 1986 study, 55% of chronic hospital patients overtly malnourished. NO .txt edits - render-confirmed (fitz=printed+11) the book prints correctly where OCR garbled; pervasive LPD OCR (nonnal/veiy/conect/nile) deferred to a dedicated cleanup pass. +6 conditions (204->210) +5 symptoms (151->156). Gates: finalize 5 snapped -> seal kv115 -> embed 462 claims -> build OK -> invariants 30/30 (0 new reds) -> knowledge probe PASS. corpus 457->462.
 
 ## 2026-06-27 18:58 UTC-05:00 · design-decision · genesis/plan
 PRE-SHIP SAFETY SWEEP = a MANDATORY Phase-4 beta gate (plan §8.12), parallel to the legal/copyright sweep: before beta, auto-flag + MANUALLY review every iffy dose/directive (100% fool-proof) with a committed sign-off. Luneth can't self-audit dosages. Resurface at final testing.

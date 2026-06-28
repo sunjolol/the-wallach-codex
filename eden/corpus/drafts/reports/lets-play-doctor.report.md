@@ -1,129 +1,62 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_17 claim(s) drafted 2026-06-27T23:24:54+00:00. Review then run corpus_seal.py to promote._
+_5 claim(s) drafted 2026-06-28T00:41:55+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: dose×17
+Kinds: diagnostic_pattern×4, prevalence×1
 
-### WAL-CLM-LETS-000061 · dose
-- **essentials:** phosphorus · **conditions:** — · **symptoms:** —
-- **dose:** {'amount': 0, 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
-- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach lists phosphorus's True Supplement Need and 30-day pharmacologic daily dose both as 0.0 — that is, he recommends no supplemental phosphorus (the ordinary diet already supplies more than enough).
-- **verbatim** (offset 134861): “PHOSPHORUS 800 mg 0.0 0.0
-POTASSIUM 1,875 mg 5,500 mg 5,500 mg”
+### WAL-CLM-LETS-000078 · diagnostic_pattern
+- **essentials:** calcium · **conditions:** — · **symptoms:** muscle_cramps, eye_twitches, convulsions
+- **claim:** Wallach teaches that muscle cramps and twitches — including eyelid (eye) twitches — are signs of calcium deficiency even when the blood calcium reading stays within the "normal" range. He explains that calcium is depleted from the cells (severely enough to cause life-threatening convulsions) before blood calcium levels ever fall, so a normal blood calcium does not rule out deficiency. Calcium's reference range is 9–10.8 mg per 100 ml.
+- **verbatim** (offset 69139): “Muscle cramps and twitches
+(eye twitches) are signals of calcium defi-
+ciency (although the blood calcium will be in
+the "normal" range). Serious life threatening
+convulsions from low cell levels of calcium
+will occur before low blood levels show up.
+The normal range is 9-10.8 mg %.”
 
-### WAL-CLM-LETS-000062 · dose
-- **essentials:** potassium · **conditions:** — · **symptoms:** —
-- **dose:** {'amount': 5500, 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
-- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives potassium a True Supplement Need (daily maintenance target) of 5,500 mg and a 30-day pharmacologic daily dose of 5,500 mg.
-- **verbatim** (offset 134887): “POTASSIUM 1,875 mg 5,500 mg 5,500 mg
-PYRIDOXINE 2.2 mg 50 mg 200 to 500 mg”
+### WAL-CLM-LETS-000079 · diagnostic_pattern
+- **essentials:** calcium · **conditions:** osteoporosis · **symptoms:** convulsions
+- **claim:** Wallach warns that most blood values are held within a narrow range by homeostatic mechanisms, so a person can be seriously ill yet show a "normal" blood test. Calcium is his prime example: someone can be suffering spontaneous fractures from raging osteoporosis while their blood calcium still reads normal. He states that in a typical audience of 1,000 or more people virtually all will have a "normal" blood calcium (a below-normal level would itself cause convulsions) yet most of them are calcium deficient.
+- **verbatim** (offset 60266): “calcium; you can be having "spontaneous"
+fractures from a raging osteoporosis and your
+blood calcium will always be in the nonnal
+range. This fact is so definite that I often tell an
+audience of 1000 or more people that I would
+bet everything I own that they all have a
+"normal" blood calcium (if it were below nor-
+mal, they would be having convulsions!!) yet,
+most of them are calcium deficient.”
 
-### WAL-CLM-LETS-000063 · dose
-- **essentials:** vitamin-b6 · **conditions:** — · **symptoms:** —
-- **dose:** {'amount': 50, 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
-- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives pyridoxine (vitamin B-6) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 200 to 500 mg.
-- **verbatim** (offset 134924): “PYRIDOXINE 2.2 mg 50 mg 200 to 500 mg
-RIBOFLAVIN 1.6 mg 50 mg 200 to 500 mg”
+### WAL-CLM-LETS-000080 · diagnostic_pattern
+- **essentials:** — · **conditions:** hypoglycemia, diabetes · **symptoms:** —
+- **claim:** Wallach teaches that a single fasting blood-sugar reading cannot detect most cases of diabetes or hypoglycemia; a six-hour glucose tolerance test (GTT) is required to reveal them. He notes conventional ("orthodox") doctors avoid the six-hour GTT — and often do not recognize hypoglycemia as a real condition at all — so they fail to test for it.
+- **verbatim** (offset 57224): “The simple fasting blood
+sugar alone cannot detect most cases of diabe-
+tes or hypoglycemia yet the"orthodox" doctor
+will continue to avoid the six-hour GTT be-
+cause they don't know how to use it - they
+also do not believe in "hypoglycemia" so it is
+understandable why they don't test for it.”
 
-### WAL-CLM-LETS-000064 · dose
-- **essentials:** vitamin-b2 · **conditions:** — · **symptoms:** —
-- **dose:** {'amount': 50, 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
-- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives riboflavin (vitamin B-2) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 200 to 500 mg.
-- **verbatim** (offset 134962): “RIBOFLAVIN 1.6 mg 50 mg 200 to 500 mg
-SELENIUM ? 200 mcg 500 to 3,000 mcg”
+### WAL-CLM-LETS-000081 · diagnostic_pattern
+- **essentials:** — · **conditions:** depression, bipolar_disorder, psychosis, paranoia, hyperactivity, hypoglycemia, food_allergy, milk_allergy, pms, neurosis, prediabetes · **symptoms:** mania, hysteria, hallucinations, catatonia, night_terrors
+- **claim:** Wallach argues that psychiatry's named "diseases" are really symptoms — mania, depression, hysteria, paranoia, hyperactivity — that mask a treatable underlying cause: premenstrual syndrome (PMS), hypoglycemia, food allergies or sensitivities, and nutrient deficiencies. He gives two case histories. A 32-year-old woman institutionalized seven years for "neurosis" / "depression" turned out to be severely allergic to cow's milk and hypoglycemic, and recovered in three weeks on milk avoidance plus hypoglycemia therapy. A 42-year-old actor with manic depression, paranoia, psychosis, hallucinations, catatonia and night terrors was found to be a severe prediabetic, "crash-and-burn" hypoglycemic, and milk-allergic, and was well within a month on avoidance of sugar and cow's milk plus hypoglycemia treatment.
+- **verbatim** (offset 82457): “The most blatant offenders are the
+"psychiatrists." The "diseases" they "treat" are
+really symptoms that they try to manage (i.e.,
+mania, depression, hysteria, paranoia, hyper-
+activity, etc.) rather than understanding the
+basic nature of the disease (i.e., PMS,
+hypoglycemia, food allergies or sensitivities,
+nutrient deficiencies, etc.).”
 
-### WAL-CLM-LETS-000065 · dose
-- **essentials:** selenium · **conditions:** — · **symptoms:** —
-- **dose:** {'amount': 200, 'unit': 'mcg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
-- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives selenium a True Supplement Need (daily maintenance target) of 200 mcg and a 30-day pharmacologic daily dose of 500 to 3,000 mcg.
-- **verbatim** (offset 135000): “SELENIUM ? 200 mcg 500 to 3,000 mcg
-SODIUM 1,100 mg 3,300 mg 300 to 3,000 mg”
-
-### WAL-CLM-LETS-000066 · dose
-- **essentials:** sodium · **conditions:** — · **symptoms:** —
-- **dose:** {'amount': 3300, 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
-- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives sodium a True Supplement Need (daily maintenance target) of 3,300 mg and a 30-day pharmacologic daily dose of 300 to 3,000 mg.
-- **verbatim** (offset 135036): “SODIUM 1,100 mg 3,300 mg 300 to 3,000 mg
-SULPHUR ? 500 mg 1,000 mg”
-
-### WAL-CLM-LETS-000067 · dose
-- **essentials:** sulfur · **conditions:** — · **symptoms:** —
-- **dose:** {'amount': 500, 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
-- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives sulphur (sulfur) a True Supplement Need (daily maintenance target) of 500 mg and a 30-day pharmacologic daily dose of 1,000 mg.
-- **verbatim** (offset 135077): “SULPHUR ? 500 mg 1,000 mg
-THIAMINE 1.4 mg 50 mg 200 to 500 mg”
-
-### WAL-CLM-LETS-000068 · dose
-- **essentials:** vitamin-b1 · **conditions:** — · **symptoms:** —
-- **dose:** {'amount': 50, 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
-- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives thiamine (vitamin B-1) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 200 to 500 mg.
-- **verbatim** (offset 135103): “THIAMINE 1.4 mg 50 mg 200 to 500 mg
-TIN ? 500 mcg 1000 mcg
-VANADIUM ? 500 mcg 2 - 5 mg”
-
-### WAL-CLM-LETS-000069 · dose
-- **essentials:** tin · **conditions:** — · **symptoms:** —
-- **dose:** {'amount': 500, 'unit': 'mcg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
-- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives tin a True Supplement Need (daily maintenance target) of 500 mcg and a 30-day pharmacologic daily dose of 1,000 mcg.
-- **verbatim** (offset 135139): “TIN ? 500 mcg 1000 mcg
-VANADIUM ? 500 mcg 2 - 5 mg
-VITAMIN A 5,000 IU 20,000 IU - 300,000 IU”
-
-### WAL-CLM-LETS-000070 · dose
-- **essentials:** vanadium · **conditions:** — · **symptoms:** —
-- **dose:** {'amount': 500, 'unit': 'mcg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
-- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vanadium a True Supplement Need (daily maintenance target) of 500 mcg and a 30-day pharmacologic daily dose of 2 to 5 mg.
-- **verbatim** (offset 135162): “VANADIUM ? 500 mcg 2 - 5 mg
-VITAMIN A 5,000 IU 20,000 IU - 300,000 IU”
-
-### WAL-CLM-LETS-000071 · dose
-- **essentials:** vitamin-a · **conditions:** — · **symptoms:** —
-- **dose:** {'amount': 20000, 'unit': 'IU', 'period': 'daily', 'form': 'beta carotene', 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
-- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vitamin A a True Supplement Need (daily maintenance target) of 20,000 IU and a 30-day pharmacologic daily dose of 20,000 to 300,000 IU, taken as beta-carotene.
-- **verbatim** (offset 135190): “VITAMIN A 5,000 IU 20,000 IU - 300,000 IU
-(beta carotene)
-VITAMIN B-12 3 mcg 200 mcg 1,000 mcg”
-
-### WAL-CLM-LETS-000072 · dose
-- **essentials:** vitamin-b12 · **conditions:** — · **symptoms:** —
-- **dose:** {'amount': 200, 'unit': 'mcg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
-- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vitamin B-12 a True Supplement Need (daily maintenance target) of 200 mcg and a 30-day pharmacologic daily dose of 1,000 mcg.
-- **verbatim** (offset 135248): “VITAMIN B-12 3 mcg 200 mcg 1,000 mcg
-VITAMIN C 60 mg 1,000 mg 10,000 mg”
-
-### WAL-CLM-LETS-000073 · dose
-- **essentials:** vitamin-c · **conditions:** — · **symptoms:** —
-- **dose:** {'amount': 1000, 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
-- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vitamin C a True Supplement Need (daily maintenance target) of 1,000 mg and a 30-day pharmacologic daily dose of 10,000 mg.
-- **verbatim** (offset 135285): “VITAMIN C 60 mg 1,000 mg 10,000 mg
-VITAMIN D 400 IU 275 IU 1,000 IU”
-
-### WAL-CLM-LETS-000074 · dose
-- **essentials:** vitamin-d · **conditions:** — · **symptoms:** —
-- **dose:** {'amount': 275, 'unit': 'IU', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
-- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vitamin D a True Supplement Need (daily maintenance target) of 275 IU and a 30-day pharmacologic daily dose of 1,000 IU.
-- **verbatim** (offset 135320): “VITAMIN D 400 IU 275 IU 1,000 IU
-VITAMIN E 15 IU 400 IU 1,200 IU”
-
-### WAL-CLM-LETS-000075 · dose
-- **essentials:** vitamin-e · **conditions:** — · **symptoms:** —
-- **dose:** {'amount': 400, 'unit': 'IU', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
-- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vitamin E a True Supplement Need (daily maintenance target) of 400 IU and a 30-day pharmacologic daily dose of 1,200 IU.
-- **verbatim** (offset 135353): “VITAMIN E 15 IU 400 IU 1,200 IU
-VITAMIN K 70 mcg 140 mcg 140 mcg”
-
-### WAL-CLM-LETS-000076 · dose
-- **essentials:** vitamin-k · **conditions:** — · **symptoms:** —
-- **dose:** {'amount': 140, 'unit': 'mcg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
-- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vitamin K a True Supplement Need (daily maintenance target) of 140 mcg and a 30-day pharmacologic daily dose of 140 mcg.
-- **verbatim** (offset 135385): “VITAMIN K 70 mcg 140 mcg 140 mcg
-ZINC 15 mg 25 mg 150 mg
-* The most efficient way to get mineral supplements is in the plant derived colloidal liquid form.”
-
-### WAL-CLM-LETS-000077 · dose
-- **essentials:** zinc · **conditions:** — · **symptoms:** —
-- **dose:** {'amount': 25, 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'base-line supplement program (true supplement need)'}
-- **claim:** In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives zinc a True Supplement Need (daily maintenance target) of 25 mg and a 30-day pharmacologic daily dose of 150 mg. He notes the most efficient way to take minerals is the plant-derived colloidal liquid form.
-- **verbatim** (offset 135418): “ZINC 15 mg 25 mg 150 mg
-* The most efficient way to get mineral supplements is in the plant derived colloidal liquid form.”
+### WAL-CLM-LETS-000082 · prevalence
+- **essentials:** — · **conditions:** malnutrition · **symptoms:** —
+- **claim:** Wallach cites a 1986 study of chronic hospital patients in which 55% suffered from some form of overt malnutrition severe enough that conventional ("orthodox") medicine recognized it — evidence, he argues, of how widespread and serious nutritional deficiency is.
+- **verbatim** (offset 85960): “one 1986 study of chronic hospi-
+tal patients showed that 55% suffered from
+some form of overt malnutrition that "ortho-
+dox" medicine recognized (if "they" recog-
+nized it, you know it was serious!!!)”
 

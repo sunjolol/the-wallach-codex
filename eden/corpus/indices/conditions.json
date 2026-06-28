@@ -757,7 +757,7 @@
   },
   "bipolar_disorder": {
     "display_name": "Bipolar Disorder",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000161"
@@ -768,6 +768,9 @@
       "definitions": [
         "WAL-CLM-RARE-000029",
         "WAL-CLM-RARE-000116"
+      ],
+      "diagnostics": [
+        "WAL-CLM-LETS-000081"
       ]
     },
     "essentials_involved": [
@@ -776,6 +779,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1747,7 +1751,7 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 30,
+    "claim_count": 31,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000161"
@@ -1779,6 +1783,9 @@
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
+      ],
+      "diagnostics": [
+        "WAL-CLM-LETS-000081"
       ],
       "prevalence": [
         "WAL-CLM-RARE-000160",
@@ -1858,7 +1865,7 @@
   },
   "diabetes": {
     "display_name": "Diabetes",
-    "claim_count": 21,
+    "claim_count": 22,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-DDDL-000008"
@@ -1884,6 +1891,7 @@
         "WAL-CLM-RARE-000116"
       ],
       "diagnostics": [
+        "WAL-CLM-LETS-000080",
         "WAL-CLM-RARE-000081"
       ],
       "prognosis": [
@@ -2129,6 +2137,20 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "food_allergy": {
+    "display_name": "Food Allergy",
+    "claim_count": 1,
+    "claims_by_role": {
+      "diagnostics": [
+        "WAL-CLM-LETS-000081"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "gallstones": {
@@ -2469,7 +2491,7 @@
   },
   "hyperactivity": {
     "display_name": "Hyperactivity",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000004",
@@ -2478,6 +2500,9 @@
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
+      ],
+      "diagnostics": [
+        "WAL-CLM-LETS-000081"
       ],
       "prognosis": [
         "WAL-CLM-RARE-000215"
@@ -2627,7 +2652,7 @@
   },
   "hypoglycemia": {
     "display_name": "Hypoglycemia",
-    "claim_count": 9,
+    "claim_count": 11,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000254"
@@ -2642,6 +2667,10 @@
       "definitions": [
         "WAL-CLM-RARE-000116",
         "WAL-CLM-RARE-000122"
+      ],
+      "diagnostics": [
+        "WAL-CLM-LETS-000080",
+        "WAL-CLM-LETS-000081"
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000046"
@@ -3248,6 +3277,20 @@
       "dddl-3e-2011"
     ]
   },
+  "malnutrition": {
+    "display_name": "Malnutrition",
+    "claim_count": 1,
+    "claims_by_role": {
+      "prevalence": [
+        "WAL-CLM-LETS-000082"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "menkes_disease": {
     "display_name": "Menkes Disease",
     "claim_count": 1,
@@ -3303,6 +3346,20 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "milk_allergy": {
+    "display_name": "Milk Allergy",
+    "claim_count": 1,
+    "claims_by_role": {
+      "diagnostics": [
+        "WAL-CLM-LETS-000081"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "minamata_disease": {
@@ -3437,6 +3494,20 @@
       "lets-play-doctor"
     ]
   },
+  "neurosis": {
+    "display_name": "Neurosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "diagnostics": [
+        "WAL-CLM-LETS-000081"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "neutropenia": {
     "display_name": "Neutropenia",
     "claim_count": 1,
@@ -3532,7 +3603,7 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 22,
+    "claim_count": 23,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052",
@@ -3556,6 +3627,7 @@
         "WAL-CLM-RARE-000105"
       ],
       "diagnostics": [
+        "WAL-CLM-LETS-000079",
         "WAL-CLM-RARE-000082"
       ],
       "doses": [
@@ -3680,12 +3752,15 @@
   },
   "paranoia": {
     "display_name": "Paranoia",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000010",
         "WAL-CLM-LETS-000044",
         "WAL-CLM-RARE-000264"
+      ],
+      "diagnostics": [
+        "WAL-CLM-LETS-000081"
       ]
     },
     "essentials_involved": [
@@ -3889,6 +3964,34 @@
       "rare-earths"
     ]
   },
+  "pms": {
+    "display_name": "Pms",
+    "claim_count": 1,
+    "claims_by_role": {
+      "diagnostics": [
+        "WAL-CLM-LETS-000081"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "prediabetes": {
+    "display_name": "Prediabetes",
+    "claim_count": 1,
+    "claims_by_role": {
+      "diagnostics": [
+        "WAL-CLM-LETS-000081"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "premenstrual_syndrome": {
     "display_name": "Premenstrual Syndrome",
     "claim_count": 1,
@@ -3907,10 +4010,13 @@
   },
   "psychosis": {
     "display_name": "Psychosis",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000035"
+      ],
+      "diagnostics": [
+        "WAL-CLM-LETS-000081"
       ],
       "toxicity_signs": [
         "WAL-CLM-LETS-000005"

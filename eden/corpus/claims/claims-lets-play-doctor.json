@@ -3320,6 +3320,209 @@
       "extracted_at": "2026-06-27T23:24:54+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000078",
+      "kind": "diagnostic_pattern",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [
+        "muscle_cramps",
+        "eye_twitches",
+        "convulsions"
+      ],
+      "claim_text": "Wallach teaches that muscle cramps and twitches — including eyelid (eye) twitches — are signs of calcium deficiency even when the blood calcium reading stays within the \"normal\" range. He explains that calcium is depleted from the cells (severely enough to cause life-threatening convulsions) before blood calcium levels ever fall, so a normal blood calcium does not rule out deficiency. Calcium's reference range is 9–10.8 mg per 100 ml.",
+      "verbatim": "Muscle cramps and twitches\n(eye twitches) are signals of calcium defi-\nciency (although the blood calcium will be in\nthe \"normal\" range). Serious life threatening\nconvulsions from low cell levels of calcium\nwill occur before low blood levels show up.\nThe normal range is 9-10.8 mg %.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "5",
+        "page": 34,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 69139
+      },
+      "dose": null,
+      "tags": [
+        "ch5",
+        "calcium",
+        "calcium-masking",
+        "diagnostic-diamond",
+        "lab-shorthand",
+        "xref:WAL-CLM-DDDL-000074",
+        "xref:WAL-CLM-LETS-000004"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T00:41:55+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000079",
+      "kind": "diagnostic_pattern",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "osteoporosis"
+      ],
+      "symptoms": [
+        "convulsions"
+      ],
+      "claim_text": "Wallach warns that most blood values are held within a narrow range by homeostatic mechanisms, so a person can be seriously ill yet show a \"normal\" blood test. Calcium is his prime example: someone can be suffering spontaneous fractures from raging osteoporosis while their blood calcium still reads normal. He states that in a typical audience of 1,000 or more people virtually all will have a \"normal\" blood calcium (a below-normal level would itself cause convulsions) yet most of them are calcium deficient.",
+      "verbatim": "calcium; you can be having \"spontaneous\"\nfractures from a raging osteoporosis and your\nblood calcium will always be in the nonnal\nrange. This fact is so definite that I often tell an\naudience of 1000 or more people that I would\nbet everything I own that they all have a\n\"normal\" blood calcium (if it were below nor-\nmal, they would be having convulsions!!) yet,\nmost of them are calcium deficient.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "5",
+        "page": 32,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 60266
+      },
+      "dose": null,
+      "tags": [
+        "ch5",
+        "calcium",
+        "calcium-masking",
+        "diagnostic-diamond",
+        "homeostasis",
+        "xref:WAL-CLM-LETS-000004"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T00:41:55+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000080",
+      "kind": "diagnostic_pattern",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "hypoglycemia",
+        "diabetes"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach teaches that a single fasting blood-sugar reading cannot detect most cases of diabetes or hypoglycemia; a six-hour glucose tolerance test (GTT) is required to reveal them. He notes conventional (\"orthodox\") doctors avoid the six-hour GTT — and often do not recognize hypoglycemia as a real condition at all — so they fail to test for it.",
+      "verbatim": "The simple fasting blood\nsugar alone cannot detect most cases of diabe-\ntes or hypoglycemia yet the\"orthodox\" doctor\nwill continue to avoid the six-hour GTT be-\ncause they don't know how to use it - they\nalso do not believe in \"hypoglycemia\" so it is\nunderstandable why they don't test for it.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "5",
+        "page": 31,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 57224
+      },
+      "dose": null,
+      "tags": [
+        "ch5",
+        "six-hour-gtt",
+        "diagnostic-diamond",
+        "hypoglycemia",
+        "blood-sugar"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T00:41:55+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000081",
+      "kind": "diagnostic_pattern",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "depression",
+        "bipolar_disorder",
+        "psychosis",
+        "paranoia",
+        "hyperactivity",
+        "hypoglycemia",
+        "food_allergy",
+        "milk_allergy",
+        "pms",
+        "neurosis",
+        "prediabetes"
+      ],
+      "symptoms": [
+        "mania",
+        "hysteria",
+        "hallucinations",
+        "catatonia",
+        "night_terrors"
+      ],
+      "claim_text": "Wallach argues that psychiatry's named \"diseases\" are really symptoms — mania, depression, hysteria, paranoia, hyperactivity — that mask a treatable underlying cause: premenstrual syndrome (PMS), hypoglycemia, food allergies or sensitivities, and nutrient deficiencies. He gives two case histories. A 32-year-old woman institutionalized seven years for \"neurosis\" / \"depression\" turned out to be severely allergic to cow's milk and hypoglycemic, and recovered in three weeks on milk avoidance plus hypoglycemia therapy. A 42-year-old actor with manic depression, paranoia, psychosis, hallucinations, catatonia and night terrors was found to be a severe prediabetic, \"crash-and-burn\" hypoglycemic, and milk-allergic, and was well within a month on avoidance of sugar and cow's milk plus hypoglycemia treatment.",
+      "verbatim": "The most blatant offenders are the\n\"psychiatrists.\" The \"diseases\" they \"treat\" are\nreally symptoms that they try to manage (i.e.,\nmania, depression, hysteria, paranoia, hyper-\nactivity, etc.) rather than understanding the\nbasic nature of the disease (i.e., PMS,\nhypoglycemia, food allergies or sensitivities,\nnutrient deficiencies, etc.).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 42,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 82457
+      },
+      "dose": null,
+      "tags": [
+        "ch6",
+        "psychiatric-misdiagnosis",
+        "food-allergy",
+        "hypoglycemia",
+        "case-history",
+        "behavioral-mental"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T00:41:55+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000082",
+      "kind": "prevalence",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "malnutrition"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach cites a 1986 study of chronic hospital patients in which 55% suffered from some form of overt malnutrition severe enough that conventional (\"orthodox\") medicine recognized it — evidence, he argues, of how widespread and serious nutritional deficiency is.",
+      "verbatim": "one 1986 study of chronic hospi-\ntal patients showed that 55% suffered from\nsome form of overt malnutrition that \"ortho-\ndox\" medicine recognized (if \"they\" recog-\nnized it, you know it was serious!!!)",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "6",
+        "page": 43,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 85960
+      },
+      "dose": null,
+      "tags": [
+        "ch6",
+        "prevalence",
+        "malnutrition",
+        "hospital-study-1986"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T00:41:55+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

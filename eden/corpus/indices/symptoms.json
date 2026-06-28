@@ -403,6 +403,14 @@
       "rare-earths"
     ]
   },
+  "catatonia": {
+    "display_name": "Catatonia",
+    "claim_count": 1,
+    "likely_deficiencies": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "cheilosis": {
     "display_name": "Cheilosis",
     "claim_count": 3,
@@ -532,8 +540,20 @@
   },
   "convulsions": {
     "display_name": "Convulsions",
-    "claim_count": 7,
+    "claim_count": 9,
     "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000078",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000079",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "magnesium",
         "claim_id": "WAL-CLM-LETS-000016",
@@ -1068,6 +1088,21 @@
       "lets-play-doctor"
     ]
   },
+  "eye_twitches": {
+    "display_name": "Eye Twitches",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000078",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "facial_oiliness": {
     "display_name": "Facial Oiliness",
     "claim_count": 1,
@@ -1472,7 +1507,7 @@
   },
   "hallucinations": {
     "display_name": "Hallucinations",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "sodium",
@@ -1690,6 +1725,14 @@
         "appears_in_books": 1
       }
     ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "hysteria": {
+    "display_name": "Hysteria",
+    "claim_count": 1,
+    "likely_deficiencies": [],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -2206,6 +2249,14 @@
       "rare-earths"
     ]
   },
+  "mania": {
+    "display_name": "Mania",
+    "claim_count": 1,
+    "likely_deficiencies": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "mental_apathy": {
     "display_name": "Mental Apathy",
     "claim_count": 1,
@@ -2305,11 +2356,17 @@
   },
   "muscle_cramps": {
     "display_name": "Muscle Cramps",
-    "claim_count": 3,
+    "claim_count": 4,
     "likely_deficiencies": [
       {
         "essential": "calcium",
         "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000078",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -2625,6 +2682,14 @@
         "appears_in_books": 1
       }
     ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "night_terrors": {
+    "display_name": "Night Terrors",
+    "claim_count": 1,
+    "likely_deficiencies": [],
     "books_cited": [
       "lets-play-doctor"
     ]
