@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_134 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_135 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 08:29 UTC-05:00 · session-end · chronicle/session-close
+SESSION 12 CLOSE — Ch7 search-corpus COMPLETE + tier-1/tier-2 model established (machine-enforced). 25 claims LETS-093..117 (b13/b13b/b13c/b14/b15). kv119->125, corpus 472->497, conditions 210 (held). Board 30->31/31. NEXT (genesis) = Ch10 Materia Medica (tier-1).
+  ↳ Shipped: b13 render-first restoration of dropped p53/54 prose + aromatherapy/Ayurvedic/Schuessler/Bach; b13b color-therapy goldmine + faith-healing; b13c CORRECTION (tier separation); b14 herbal/hydro/negative-ion/urine; b15 homeopathy/naturopathy/macrobiotics/megavitamin. All 19 Ch7 modalities mined, all tier-2/search-only. Durable actionable outcomes: NEW critical invariant search_only_indices_excluded (negative-tested) + corpus_derive search-only filter; memories search-vs-operational-index-separation, ask-wallach-search-vision, actionable-not-prose, editing-sealed-corpus-claims (resnap->finalize->seal order), wallach-corpus-revamp (de-prosed+current); next-chunk.md opens with a 7-point STANDING METHOD RULES checklist. Standards reaffirmed (Luneth): modern SWE+architecture, NO prose-in-code, prose only in logs+front-facing, promote lessons to machine guards. Pushed: f8d7a31, cb6ed5d, 67bc9a4, 12d8a1a, 36231f6.
 
 ## 2026-06-28 08:19 UTC-05:00 · milestone · eden/corpus
 LPD b15 + Ch7 COMPLETE — homeopathy/naturopathy/macrobiotics/megavitamin. 6 claims LETS-112..117, all tier-2/search-only. Ch7 healing-arts survey fully mined (19 modalities, LETS-083..117). megavitamin = stance only (§00.A). kv124->125, corpus 491->497, conditions 210 unchanged.
