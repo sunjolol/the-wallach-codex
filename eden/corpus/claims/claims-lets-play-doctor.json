@@ -7708,6 +7708,410 @@
       "extracted_at": "2026-06-28T17:57:16+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000190",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "hydrogen-peroxide"
+      ],
+      "conditions": [
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach stresses that single-mode cancer programs are absurd and lists many adjunctive therapies, of which hydrogen peroxide stands out. Orthodox medicine used intravenous hydrogen peroxide (H2O2) back in the 1800s, so there is a long history with no bad side effects, plus evidence that raising blood oxygen helps fight cancer (cancer dislikes elevated oxygen levels).",
+      "verbatim": "There are many adjunctive therapies for\ncancer programs (remember it is absurd to use\nsingle mode programs!!) amongst which hy-\ndrogen peroxide stands out. \"Orthodox\" medi-\ncine used H202 IV in the 1800s so there is lots\nof history with no bad side effects as well as\nlots of positive evidence that increasing oxy-\ngen in the blood has beneficial effects in your\nfight against cancer (remember cancer\ndoesn't like elevated oxygen levels).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 212153
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10",
+        "search-only",
+        "search-topic:cancer"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T18:01:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000191",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "coq10"
+      ],
+      "conditions": [
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Coenzyme Q-10 (CoQ-10) increases the immune-fighting ability of your phagocytes and increases the efficiency of tissue detoxification, making it a useful adjunct in cancer programs.",
+      "verbatim": "CO Q-10 increases the immune fighting\nability of your phagocytes as well as increases\nthe efficiency of tissue detoxification.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 212595
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10",
+        "search-only",
+        "search-topic:cancer"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T18:01:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000192",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "dmso"
+      ],
+      "conditions": [
+        "cancer",
+        "leukemia"
+      ],
+      "symptoms": [],
+      "claim_text": "DMSO (dimethyl sulfoxide) is useful in the treatment of leukemia because it causes the maturation of the 'premature' white blood cells of leukemia.",
+      "verbatim": "DMSO is useful for the treatment of\nLEUKEMIA in that it causes the maturation of\nthe \"premature\" WBCsof leukemia.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 212722
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10",
+        "search-only",
+        "search-topic:cancer"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T18:01:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000193",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "thymus-extract"
+      ],
+      "conditions": [
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Thymus extracts are useful to enhance thymus-gland function and, through it, the immune system, supporting the body's defenses in cancer programs.",
+      "verbatim": "Thymus extracts are useful to enhance\nthe thymus gland function and thus the im-\nmune system.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 212836
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10",
+        "search-only",
+        "search-topic:cancer"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T18:01:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000194",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "urine-therapy",
+        "blood-therapy"
+      ],
+      "conditions": [
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Autoimmune urine and autoimmune blood therapies enhance the body's defense systems against foreign substances, including cancer proteins, in much the same way that allergy shots work against pollen allergies.",
+      "verbatim": "Autoimmune urine and autoimmune\nblood therapies enhance the bodies defense\nsystems against foreign substances including\ncancer proteins in much the same way the\n\"allergy shots\" do against pollen allergies.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 212930
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10",
+        "search-only",
+        "search-topic:cancer"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T18:01:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000195",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "carbamide"
+      ],
+      "conditions": [
+        "cancer",
+        "liver_cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Carbamide (urea) is in keeping with autoimmune urine therapy and is, per Wallach, particularly effective for liver cancer.",
+      "verbatim": "Carbamide (urea) is in keeping with\nthe autoimmune urine therapy. Carbamide is\nparticularly effective for LIVER CANCER.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 213136
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10",
+        "search-only",
+        "search-topic:cancer"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T18:01:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000196",
+      "kind": "mechanism",
+      "essentials": [
+        "vitamin-a",
+        "vitamin-e"
+      ],
+      "other_substances": [
+        "beta-carotene"
+      ],
+      "conditions": [
+        "cancer",
+        "carcinoma"
+      ],
+      "symptoms": [],
+      "claim_text": "Beta carotene taken with vitamin E can be taken at as much as a 600,000 IU vitamin A equivalent, which Wallach says is of significant benefit in cancer therapy programs, especially for carcinomas. The vitamin A so provided also helps the thymus gland produce antibodies and makes laetrile more effective.",
+      "verbatim": "Beta carotene taken with vitamin E can\nbe taken at as much as 600,000 IU vitamin A\nequivalent!!! This will be of significant benefit\nin cancer therapy programs especially CARCI-\nNOMAS. The vitamin A thus provided will\nalso help the thymus gland produce antibod-\nies and make laetrile more effective.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 213256
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10",
+        "search-only",
+        "search-topic:cancer"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T18:01:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000197",
+      "kind": "mechanism",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Selenium is a trace mineral intensively investigated as both a cancer preventive and a therapeutic nutrient; Wallach considers 1000-3000 mcg/day the proper therapy dose, and notes plant-derived colloidal selenium is 98% absorbable.",
+      "verbatim": "Selenium is a trace mineral that has\nbeen investigated very intensively as a cancer\npreventative and as therapeutic nutrition,\n1,000-3,000 mcg/day is considered to be the\nproper therapy dose. Plant derived colloidal\nselenium is 98% absorbable.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 213556
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10",
+        "search-only",
+        "search-topic:cancer"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T18:01:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000198",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "shark-cartilage",
+        "shark-liver-oil"
+      ],
+      "conditions": [
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Shark cartilage and shark liver oil contain substances that stop the formation of the new capillaries that feed metastatic cancer growths (antiangiogenesis).",
+      "verbatim": "Shark cartilage and shark liver oil\ncontain substances that stop the formation\nof capillaries that feed new metastatic\ngrowths of cancer.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 213800
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10",
+        "search-only",
+        "search-topic:cancer"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T18:01:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000199",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "chemotherapy"
+      ],
+      "conditions": [
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Chemotherapy given in 'micro-doses' alongside alternative therapies, or delivered into the arterial blood supply of the cancer-infested tissue or organ, can substantially reduce the negative side effects of chemotherapy.",
+      "verbatim": "Chemotherapy in \"micro-doses\" in con-\njunction with alternative therapies or chemo-\ntherapy into the arterial blood supply of the\ncancer infested tissue or organ can sub-\nstantially reduce the negative side effects of\nchemotherapy.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 213938
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10",
+        "search-only",
+        "search-topic:cancer"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T18:01:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000200",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "iv-nutrition"
+      ],
+      "conditions": [
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Intravenous infusions with total nutrition, especially in the early phases of alternative therapy, give the body much-needed raw material to rebuild normal tissue and replenish the ravaged immune system; this should include vitamins, minerals, amino acids, essential fatty acids, and electrolytes. Cancer patients are well established to have poor digestion and absorption, probably from long-term food-allergy (celiac-type) changes in the gut.",
+      "verbatim": "Intravenous infusions with total nutri-\ntion, especially in the early phases of alterna-\ntive therapy are very useful in providing your\nbody with much needed raw material for\nrebuilding normal tissue as well as replenish-\ning the ravaged immune system.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 214170
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10",
+        "search-only",
+        "search-topic:cancer"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T18:01:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
