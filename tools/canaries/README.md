@@ -1,4 +1,4 @@
-# Canary probes — Round 74
+# Canary probes
 
 Files in this directory are **overwritten on every `tools/invariants.py` run** (the `safe_write_canary` check). They
 exist to verify that the write surfaces (`safe_write`, etc.) actually persist

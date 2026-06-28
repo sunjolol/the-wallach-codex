@@ -117,7 +117,7 @@ dashboard/                                  ← the app
 ├── dashboard.html                          ← slim shell
 ├── assets/
 │   ├── styles/{design-system.css,*.golden.sha256,dashboard.css}
-│   ├── fonts/                              ← 5 in-housed TTF families (SIL OFL 1.1)
+│   ├── fonts/                              ← 7 in-housed TTF families (SIL OFL 1.1)
 │   ├── data/{*.json,fixtures/}             ← Zod-validated at load · ?fixture=1 only
 │   ├── vendor/tesseract/                   ← 22 MB offline OCR (gitignored)
 │   └── js/{src/{core,state,views}/, dist/main.js}  ← dist GENERATED

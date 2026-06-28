@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_139 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_140 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 09:59 UTC-05:00 · note · docs/front-facing
+Full-coverage docs pass part 2: deep-read every remaining structural doc + CLAUDE.md/REVIEW.md. Fixed 3 (CLAUDE.md 5->7 TTF families; REVIEW.md dropped the obsolete 91-element-array exemption; canary Round 74); 14 verified accurate. Clean-slate sweep = clean. board 31/31.
+  ↳ Completes the front-facing accuracy work (commit 856a8a2 was part 1). FULL coverage now: every README/SCHEMA/guide in the repo (node_modules excluded) read + reconciled. Part-2 fixes: CLAUDE.md layout '5 in-housed TTF families'->7 (v3.2 added ChakraPetch+BrunoAce); REVIEW.md removed 'do not flag the 91-element views/coverage.ts arrays' — verified the cleanup landed (views_state_no_inline_data passes clean / not baseline-tolerated; coverage.ts 0 large arrays), so the exemption would now mask a real regression; tools/canaries/README dropped stale 'Round 74'. Deep-read + accurate-no-change: wallach-refresh/README, eden/SCHEMA, eden/corpus/SCHEMA+drafts/README, labels/README (3 fixtures), design-wisdom README(28 refs)+learnings+applications, fringe-knowledge/README, youngevity catalog-ingest, chronicle/evals+creators-log READMEs, fonts/README, transcripts/README. Final sweep clean (only the intentional Tacitus-retired glossary note). Scope note: content/data .md files (why-layer, ingredients-master, triage, doctrine docs) are corpus content, not structure docs — governed by the source rule + end-pass, not re-audited here.
 
 ## 2026-06-28 09:49 UTC-05:00 · note · docs/front-facing
 Front-facing accuracy pass: reconciled 8 structural docs (root README + eden/corpus/tools/chronicle READMEs + claims/indices sub-READMEs + STYLE-GUIDE) to the live structure; verified 6 others already accurate. Docs-only, board 31/31. STOPPED for Luneth's review before Ch10.

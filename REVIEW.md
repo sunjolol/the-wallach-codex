@@ -24,7 +24,6 @@ Style, naming, formatting, refactoring suggestions, comment wording, JSDoc impro
 - Anything CI already enforces: prettier formatting, basic lint, type errors.
 - Generated files (`dashboard/assets/js/dist/main.js`, `assets/vendor/tesseract/`).
 - Historical entries in `chronicle/contradictions/` or `chronicle/CHANGELOG.md`.
-- The 91-element arrays still in `views/coverage.ts` until the cleanup chunk lands — that violation is known, scheduled, and the new tooling exists to keep it from recurring.
 
 ## Always check before declaring done
 

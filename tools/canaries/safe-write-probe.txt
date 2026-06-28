@@ -1,1 +1,1 @@
-safe-write-canary 2026-06-28T14:48:17+00:00 nonce=6baf298d29cc578c
+safe-write-canary 2026-06-28T14:58:03+00:00 nonce=4ee10c2417e5131b
