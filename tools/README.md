@@ -52,8 +52,6 @@ user in one end pass).
 | `build_ingredients_quickref.py` | Builds the ingredients quick-reference for non-essential ingredients (botanicals, amino acids, blend components, fatty acids) the essentials dataset doesn't cover. |
 | `build_regimen_label_lookup.py` | Builds the regimen ↔ label lookup the Regimen "Full edit" Label-Check form consults by product name. |
 | `build_wallach_stance_candidates.py` | Queries `corpus_search.py` for each of the 90 essentials → a hand-review sidecar of candidate Wallach stance citations (§00.A educational layer). |
-| `extract_corpus_index.py` | Builds the Wallach topic index from the Wallach books (conditions/protocols, deficiency → symptom claims). |
-| `extract_deficiency_map.py` | Builds the nutrient ↔ symptom deficiency map from the corpus (Rare Earths + DDDL element entries + LPD condition entries). |
 | `corpus_search.py` | Indexed keyword retrieval across the Wallach corpus (books + transcripts) — a pipeline dependency. See below. |
 
 ## corpus_search.py
