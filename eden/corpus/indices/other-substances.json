@@ -297,20 +297,22 @@
   },
   "boric-acid": {
     "display_name": "Boric Acid",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000119",
         "WAL-CLM-LETS-000136",
         "WAL-CLM-LETS-000149",
-        "WAL-CLM-LETS-000167"
+        "WAL-CLM-LETS-000167",
+        "WAL-CLM-LETS-000213"
       ]
     },
     "conditions_treated": [
       "abscess",
       "anal_abscess",
       "athletes_foot",
-      "boils"
+      "boils",
+      "chalazion"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -446,14 +448,16 @@
   },
   "centrophenoxine": {
     "display_name": "Centrophenoxine",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000130"
+        "WAL-CLM-LETS-000130",
+        "WAL-CLM-LETS-000211"
       ]
     },
     "conditions_treated": [
-      "alzheimers"
+      "alzheimers",
+      "cerebrovascular_disease"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -586,6 +590,21 @@
       "lets-play-doctor"
     ]
   },
+  "contac": {
+    "display_name": "Contac",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000208"
+      ]
+    },
+    "conditions_treated": [
+      "catarrh"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "coq10": {
     "display_name": "Coq10",
     "claim_count": 1,
@@ -631,6 +650,21 @@
       "benign_prostatic_hyperplasia",
       "bladder_stones",
       "kidney_stones"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "cucumber": {
+    "display_name": "Cucumber",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000208"
+      ]
+    },
+    "conditions_treated": [
+      "catarrh"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -759,13 +793,14 @@
   },
   "edta-chelation": {
     "display_name": "Edta Chelation",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000139",
         "WAL-CLM-LETS-000144",
         "WAL-CLM-LETS-000145",
-        "WAL-CLM-LETS-000146"
+        "WAL-CLM-LETS-000146",
+        "WAL-CLM-LETS-000211"
       ]
     },
     "conditions_treated": [
@@ -773,6 +808,7 @@
       "arsenic_toxicity",
       "arteriosclerosis",
       "arthritis",
+      "cerebrovascular_disease",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -1053,14 +1089,16 @@
   },
   "hydergine": {
     "display_name": "Hydergine",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000130"
+        "WAL-CLM-LETS-000130",
+        "WAL-CLM-LETS-000211"
       ]
     },
     "conditions_treated": [
-      "alzheimers"
+      "alzheimers",
+      "cerebrovascular_disease"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1083,7 +1121,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 14,
+    "claim_count": 15,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
@@ -1099,7 +1137,8 @@
         "WAL-CLM-LETS-000166",
         "WAL-CLM-LETS-000167",
         "WAL-CLM-LETS-000177",
-        "WAL-CLM-LETS-000201"
+        "WAL-CLM-LETS-000201",
+        "WAL-CLM-LETS-000211"
       ]
     },
     "conditions_treated": [
@@ -1116,6 +1155,7 @@
       "body_odor",
       "boils",
       "candidiasis",
+      "cerebrovascular_disease",
       "dental_calculus",
       "rheumatoid_arthritis"
     ],
@@ -1263,14 +1303,16 @@
   },
   "lecithin": {
     "display_name": "Lecithin",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000130"
+        "WAL-CLM-LETS-000130",
+        "WAL-CLM-LETS-000211"
       ]
     },
     "conditions_treated": [
-      "alzheimers"
+      "alzheimers",
+      "cerebrovascular_disease"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1336,6 +1378,36 @@
     },
     "conditions_treated": [
       "anemia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "lucidril": {
+    "display_name": "Lucidril",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000211"
+      ]
+    },
+    "conditions_treated": [
+      "cerebrovascular_disease"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "lugols-solution": {
+    "display_name": "Lugols Solution",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000212"
+      ]
+    },
+    "conditions_treated": [
+      "cervical_dysplasia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1590,14 +1662,16 @@
   },
   "piracetam": {
     "display_name": "Piracetam",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000130"
+        "WAL-CLM-LETS-000130",
+        "WAL-CLM-LETS-000211"
       ]
     },
     "conditions_treated": [
-      "alzheimers"
+      "alzheimers",
+      "cerebrovascular_disease"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1679,6 +1753,21 @@
     },
     "conditions_treated": [
       "birth_defects"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "pulse-test": {
+    "display_name": "Pulse Test",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000209"
+      ]
+    },
+    "conditions_treated": [
+      "celiac_disease"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1978,6 +2067,21 @@
       "rare-earths"
     ]
   },
+  "thyme": {
+    "display_name": "Thyme",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000208"
+      ]
+    },
+    "conditions_treated": [
+      "catarrh"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "thymus": {
     "display_name": "Thymus",
     "claim_count": 2,
@@ -2029,14 +2133,31 @@
   },
   "vasopressin": {
     "display_name": "Vasopressin",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000130"
+        "WAL-CLM-LETS-000130",
+        "WAL-CLM-LETS-000211"
       ]
     },
     "conditions_treated": [
-      "alzheimers"
+      "alzheimers",
+      "cerebrovascular_disease"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "vervain": {
+    "display_name": "Vervain",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000208"
+      ]
+    },
+    "conditions_treated": [
+      "catarrh"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2069,6 +2190,21 @@
     },
     "conditions_treated": [
       "bedsores"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "wild-cherry": {
+    "display_name": "Wild Cherry",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000208"
+      ]
+    },
+    "conditions_treated": [
+      "catarrh"
     ],
     "books_cited": [
       "lets-play-doctor"

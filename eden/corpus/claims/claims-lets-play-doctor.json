@@ -8399,6 +8399,275 @@
       "extracted_at": "2026-06-28T18:47:09+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000208",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "contac",
+        "vervain",
+        "cucumber",
+        "wild-cherry",
+        "thyme"
+      ],
+      "conditions": [
+        "catarrh"
+      ],
+      "symptoms": [],
+      "claim_text": "Catarrh is the mucus that comes with a wide range of nasal, throat, tracheal, and bronchial infections or irritations (and underlies croup and whooping cough). Wallach's treatment is steam at bedtime to break up the mucus and allow sleep, with a drying agent such as Contac if steam is not enough and sleep is urgently needed. Homeopathy can work well when a complete case is taken, and useful herbs include vervain or wild hyssop (Verbena officinalis), cucumber (Cucumis sativa), wild cherry (Prunis serotina), and thyme (Thymus vulgaris).",
+      "verbatim": "Homeopathy can work quite well if a com-\nplete case is collected (see homeopathy) as\nthere are many variables to be considered.\nHerbs that can be effective include vervain or\nwild hyssop (Verbena officinalis), cucumber\n(Cucumis sativa), wild cherry (Prunis serotina)\nand thyme (Thymus vulgaris).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 224048
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T18:56:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000209",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "pulse-test"
+      ],
+      "conditions": [
+        "celiac_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Celiac disease is a loss of the small-intestine villi and scarring of the supporting tissue that can destroy up to 70% (and by age 45-50 up to 90%) of the absorptive surface, classically from a wheat-gluten sensitivity — though cow's-milk albumen and soy protein cause the same damage. Wallach calls it the basic cause of many diseases through malabsorption (diabetes from chromium and vanadium, cancer from zinc, vitamin A and selenium, and muscular dystrophy and cystic fibrosis from selenium). Diagnosis and treatment use the pulse test for allergies and then eliminating or rotating the offending allergen (especially wheat, cow's milk, and soy); it takes about 90 days to repair the injured gut.",
+      "verbatim": "Diagnosis and treatment of celiac disease in-\ncludes using the pulse test for allergies (i.e.,\nwhole wheat is great unless your allergic to\nit!!!) especially wheat, cow's milk and soy\nproducts and eliminating and/or rotating the\noffending allergen - it takes 90 days to repair\nthe injured gut which means there is great\nhope if you take the effort to see if, in fact, you\nare sensitive to wheat, cow's milk or soy.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 225655
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T18:56:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000210",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "zinc",
+        "vitamin-b6"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cerebral_palsy"
+      ],
+      "symptoms": [],
+      "claim_text": "Cerebral palsy (here called cerebropalsy) is a birth defect of the cerebellum, the body's fine-motor coordinator. Wallach attributes it to a preconception deficiency of zinc and vitamin B-6 in the mother (possibly from celiac-disease-driven copper/zinc malabsorption). Because the damage occurred to the fetus during brain formation, there is no treatment after birth — the value is in preconception nutrition to prevent it.",
+      "verbatim": "CEREBROPALSY: is a birth defect which\naffects the cerebellum, the finemotor coordi-\nnator of the body. The cause is a preconcep-\ntion deficiency of zinc and B-6 (perhaps celiac\ndisease was the base cause of copper / zinc\nmalabsorption in the mother). There is no\ntreatment since the damage occurred to the\nfetus during the formation of the brain.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 226070
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T18:56:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000211",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "vitamin-e",
+        "omega-3",
+        "selenium",
+        "choline"
+      ],
+      "other_substances": [
+        "edta-chelation",
+        "hydrogen-peroxide",
+        "centrophenoxine",
+        "hydergine",
+        "vasopressin",
+        "lucidril",
+        "piracetam",
+        "lecithin"
+      ],
+      "conditions": [
+        "cerebrovascular_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Cerebrovascular disease (senile dementia) is a 'hardening' of the middle cerebral artery that starves the brain of oxygen, causing memory loss and senile changes; risk factors include elevated cholesterol and excess vitamin D (which is toxic to blood vessels), so prevention caps vitamin D at 400 international units per day. Treatment includes EDTA chelation to remove plaque, intravenous hydrogen peroxide for oxygen, vitamin C to bowel tolerance, avoiding alcohol, vitamin E at 800-1,200 international units per day, essential fatty acids at 5 mg three times daily, selenium at 1,000 micrograms per day, and the nootropics centrophenoxine, hydergine, vasopressin (DIAPID) at 12-16 units/day, Lucidril, piracetam, choline at 9 grams per day, and lecithin.",
+      "verbatim": "Treatment ofcerebrovascular disease includes\nEDTA chelation therapy to help remove\nplaque, hydrogen peroxide IV to increase\noxygen, vitamin C to bowel tolerance, avoid\nalcohol, vitamin E at 800-1,200 IU/day, essen-\ntial fatty acids at 5 mg t.i.d., selenium at 1,000\nmcg/day, centrophenoxine at 1 ,000-2,000 mg/\nday, hydergine at 4.5-9.0 mg/day",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 227495
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T18:56:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000212",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-a",
+        "zinc"
+      ],
+      "other_substances": [
+        "lugols-solution"
+      ],
+      "conditions": [
+        "cervical_dysplasia"
+      ],
+      "symptoms": [],
+      "claim_text": "Cervical dysplasia is a precancerous change in the surface cells of the uterine cervix that Wallach identifies as a manifestation of chronic vitamin A deficiency, diagnosed by Pap smear or biopsy. Treatment is painting the affected surface with Lugol's Solution (an iodine preparation) plus oral beta carotene equivalent to 300,000 international units of vitamin A per day, oral zinc at 50 mg three times daily, and the base-line nutritional supplement.",
+      "verbatim": "Treatment ofcervical dysplasia is accomplished\nby painting the affected surface with Lugol's\nSolution (an iodine preparation) and oral\nsupplementation ofbeta carotene at an equiva-\nlent of 300,000 IU ofvitamin A per day and oral\nzinc at 50 mg t.i.d. Don't forget the base line\nnutritional supplement here.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 228477
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T18:56:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000213",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-a",
+        "zinc"
+      ],
+      "other_substances": [
+        "boric-acid"
+      ],
+      "conditions": [
+        "chalazion"
+      ],
+      "symptoms": [],
+      "claim_text": "A chalazion is a slow-growing, pea-sized mass in the eyelid caused by plugged meibomian glands (easily confused with a sty early on). Wallach's treatment is vitamin A at 300,000 international units per day as beta carotene, zinc at 50 mg three times daily, and warm poultices of 3% boric acid on the closed lid (boric acid ophthalmic ointment is available without prescription).",
+      "verbatim": "Treatment of chalazions include vitamin A at\n300,000 IU per day as beta carotene, zinc at 50\nmg t.i.d. and warm poultices of 3% boric acid\non the closed lid.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 229028
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T18:56:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000214",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b2"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cheilosis"
+      ],
+      "symptoms": [],
+      "claim_text": "Cheilosis (angular stomatitis) is the result of a vitamin B-2 (riboflavin) deficiency, showing up as cracks at the corners of the mouth, nasolabial folds, and a 'geographic' tongue. Wallach's treatment is identifying food allergies and supplementing vitamin B-2 at 75 mg three times daily.",
+      "verbatim": "Treatment of cheilosis includes identification\nof food allergies and supplementation with B-\n2 at 75 mg t.i.d.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 229470
+      },
+      "dose": {
+        "amount": 75,
+        "unit": "mg",
+        "period": "three times daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "cheilosis"
+      },
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T18:56:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

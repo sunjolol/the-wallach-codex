@@ -2334,40 +2334,155 @@
       "rare-earths"
     ]
   },
+  "catarrh": {
+    "display_name": "Catarrh",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000208"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "contac",
+      "cucumber",
+      "thyme",
+      "vervain",
+      "wild-cherry"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "celiac_disease": {
     "display_name": "Celiac Disease",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "diagnostics": [
         "WAL-CLM-RARE-000082"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000209"
       ]
     },
     "essentials_involved": [
       "calcium",
       "magnesium"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "pulse-test"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
   "cerebral_palsy": {
     "display_name": "Cerebral Palsy",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000123"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-LETS-000210"
       ],
       "definitions": [
         "WAL-CLM-RARE-000122"
       ]
     },
     "essentials_involved": [
-      "copper"
+      "copper",
+      "vitamin-b6",
+      "zinc"
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "cerebrovascular_disease": {
+    "display_name": "Cerebrovascular Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000211"
+      ]
+    },
+    "essentials_involved": [
+      "choline",
+      "omega-3",
+      "selenium",
+      "vitamin-c",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "centrophenoxine",
+      "edta-chelation",
+      "hydergine",
+      "hydrogen-peroxide",
+      "lecithin",
+      "lucidril",
+      "piracetam",
+      "vasopressin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "cervical_dysplasia": {
+    "display_name": "Cervical Dysplasia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000212"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "lugols-solution"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "chalazion": {
+    "display_name": "Chalazion",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000213"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "boric-acid"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "cheilosis": {
+    "display_name": "Cheilosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000214"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b2"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "chondrodystrophy": {
