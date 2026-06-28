@@ -3222,6 +3222,31 @@
       "rare-earths"
     ]
   },
+  "dandruff": {
+    "display_name": "Dandruff",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000242"
+      ]
+    },
+    "essentials_involved": [
+      "omega-3",
+      "vitamin-a",
+      "vitamin-b6",
+      "vitamin-e",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "colloidal-minerals",
+      "flaxseed-oil",
+      "paba",
+      "vinegar"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "deafness": {
     "display_name": "Deafness",
     "claim_count": 2,
@@ -3251,7 +3276,7 @@
   },
   "dementia": {
     "display_name": "Dementia",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000034",
@@ -3261,22 +3286,39 @@
         "WAL-CLM-LETS-000001"
       ],
       "protocols": [
+        "WAL-CLM-LETS-000243",
         "WAL-CLM-RARE-000282"
       ]
     },
     "essentials_involved": [
       "calcium",
+      "choline",
       "chromium",
+      "copper",
       "gallium",
       "germanium",
       "lithium",
+      "magnesium",
       "oxygen",
       "selenium",
       "vanadium",
       "vitamin-b1",
-      "vitamin-b3"
+      "vitamin-b3",
+      "vitamin-b6",
+      "vitamin-b9",
+      "vitamin-c",
+      "vitamin-e",
+      "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "centrophenoxine",
+      "hydergine",
+      "lecithin",
+      "pancreatic-enzymes",
+      "piracetam",
+      "vasopressin"
+    ],
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
@@ -3318,7 +3360,7 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 31,
+    "claim_count": 32,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000161"
@@ -3359,6 +3401,7 @@
         "WAL-CLM-RARE-000162"
       ],
       "protocols": [
+        "WAL-CLM-LETS-000244",
         "WAL-CLM-RARE-000278"
       ],
       "toxicity_signs": [
@@ -3374,8 +3417,12 @@
       "iron",
       "lithium",
       "magnesium",
+      "omega-3",
+      "phenylalanine",
       "potassium",
       "sodium",
+      "tryptophan",
+      "tyrosine",
       "vanadium",
       "vitamin-b1",
       "vitamin-b12",
@@ -3387,7 +3434,11 @@
       "zinc"
     ],
     "other_substances_involved": [
-      "paba"
+      "blood-therapy",
+      "colloidal-minerals",
+      "paba",
+      "pulse-test",
+      "urine-therapy"
     ],
     "books_cited": [
       "lets-play-doctor",
@@ -3396,7 +3447,7 @@
   },
   "dermatitis": {
     "display_name": "Dermatitis",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000008",
@@ -3409,6 +3460,9 @@
         "WAL-CLM-RARE-000235",
         "WAL-CLM-RARE-000236"
       ],
+      "protocols": [
+        "WAL-CLM-LETS-000245"
+      ],
       "toxicity_signs": [
         "WAL-CLM-LETS-000007"
       ]
@@ -3417,14 +3471,22 @@
       "chromium",
       "copper",
       "nickel",
+      "omega-3",
       "sodium",
       "vitamin-a",
       "vitamin-b2",
       "vitamin-b3",
       "vitamin-b5",
-      "vitamin-e"
+      "vitamin-e",
+      "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "colloidal-minerals",
+      "digestive-enzymes",
+      "paba",
+      "pulse-test"
+    ],
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
@@ -3571,7 +3633,7 @@
   },
   "eczema": {
     "display_name": "Eczema",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000111"
@@ -3587,7 +3649,8 @@
         "WAL-CLM-RARE-000240"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000148"
+        "WAL-CLM-LETS-000148",
+        "WAL-CLM-LETS-000245"
       ]
     },
     "essentials_involved": [
@@ -3597,13 +3660,19 @@
       "inositol",
       "omega-3",
       "omega-6",
+      "vitamin-a",
       "vitamin-b3",
       "vitamin-b5",
       "vitamin-e",
       "zinc"
     ],
     "other_substances_involved": [
-      "interlipids"
+      "betaine-hcl",
+      "colloidal-minerals",
+      "digestive-enzymes",
+      "interlipids",
+      "paba",
+      "pulse-test"
     ],
     "books_cited": [
       "dddl-3e-2011",

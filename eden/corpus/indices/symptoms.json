@@ -2327,6 +2327,75 @@
       "lets-play-doctor"
     ]
   },
+  "memory_loss": {
+    "display_name": "Memory Loss",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "choline",
+        "claim_id": "WAL-CLM-LETS-000243",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "copper",
+        "claim_id": "WAL-CLM-LETS-000243",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "magnesium",
+        "claim_id": "WAL-CLM-LETS-000243",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-b1",
+        "claim_id": "WAL-CLM-LETS-000243",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-b3",
+        "claim_id": "WAL-CLM-LETS-000243",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-b6",
+        "claim_id": "WAL-CLM-LETS-000243",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-b9",
+        "claim_id": "WAL-CLM-LETS-000243",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-c",
+        "claim_id": "WAL-CLM-LETS-000243",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-e",
+        "claim_id": "WAL-CLM-LETS-000243",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "zinc",
+        "claim_id": "WAL-CLM-LETS-000243",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "mental_apathy": {
     "display_name": "Mental Apathy",
     "claim_count": 1,

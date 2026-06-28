@@ -279,7 +279,7 @@
   },
   "betaine-hcl": {
     "display_name": "Betaine Hcl",
-    "claim_count": 13,
+    "claim_count": 15,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -294,7 +294,9 @@
         "WAL-CLM-LETS-000171",
         "WAL-CLM-LETS-000172",
         "WAL-CLM-LETS-000223",
-        "WAL-CLM-LETS-000226"
+        "WAL-CLM-LETS-000226",
+        "WAL-CLM-LETS-000243",
+        "WAL-CLM-LETS-000245"
       ]
     },
     "conditions_treated": [
@@ -312,6 +314,9 @@
       "brittle_nails",
       "bronchitis",
       "colic",
+      "dementia",
+      "dermatitis",
+      "eczema",
       "menopause"
     ],
     "books_cited": [
@@ -378,14 +383,15 @@
   },
   "blood-therapy": {
     "display_name": "Blood Therapy",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000201",
         "WAL-CLM-LETS-000203",
         "WAL-CLM-LETS-000221",
         "WAL-CLM-LETS-000224",
-        "WAL-CLM-LETS-000227"
+        "WAL-CLM-LETS-000227",
+        "WAL-CLM-LETS-000244"
       ]
     },
     "conditions_treated": [
@@ -393,7 +399,8 @@
       "cardiac_arrhythmia",
       "chronic_fatigue_syndrome",
       "cluster_headaches",
-      "colitis"
+      "colitis",
+      "depression"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -618,16 +625,18 @@
   },
   "centrophenoxine": {
     "display_name": "Centrophenoxine",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
-        "WAL-CLM-LETS-000211"
+        "WAL-CLM-LETS-000211",
+        "WAL-CLM-LETS-000243"
       ]
     },
     "conditions_treated": [
       "alzheimers",
-      "cerebrovascular_disease"
+      "cerebrovascular_disease",
+      "dementia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -666,7 +675,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 15,
+    "claim_count": 18,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -683,7 +692,10 @@
         "WAL-CLM-LETS-000168",
         "WAL-CLM-LETS-000176",
         "WAL-CLM-LETS-000203",
-        "WAL-CLM-LETS-000240"
+        "WAL-CLM-LETS-000240",
+        "WAL-CLM-LETS-000242",
+        "WAL-CLM-LETS-000244",
+        "WAL-CLM-LETS-000245"
       ]
     },
     "conditions_treated": [
@@ -704,6 +716,10 @@
       "bursitis",
       "cardiac_arrhythmia",
       "cystic_fibrosis",
+      "dandruff",
+      "depression",
+      "dermatitis",
+      "eczema",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -896,14 +912,17 @@
   },
   "digestive-enzymes": {
     "display_name": "Digestive Enzymes",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000172"
+        "WAL-CLM-LETS-000172",
+        "WAL-CLM-LETS-000245"
       ]
     },
     "conditions_treated": [
-      "bronchitis"
+      "bronchitis",
+      "dermatitis",
+      "eczema"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1160,18 +1179,20 @@
   },
   "flaxseed-oil": {
     "display_name": "Flaxseed Oil",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000123",
         "WAL-CLM-LETS-000226",
-        "WAL-CLM-LETS-000240"
+        "WAL-CLM-LETS-000240",
+        "WAL-CLM-LETS-000242"
       ]
     },
     "conditions_treated": [
       "acne",
       "colic",
-      "cystic_fibrosis"
+      "cystic_fibrosis",
+      "dandruff"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1446,16 +1467,18 @@
   },
   "hydergine": {
     "display_name": "Hydergine",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
-        "WAL-CLM-LETS-000211"
+        "WAL-CLM-LETS-000211",
+        "WAL-CLM-LETS-000243"
       ]
     },
     "conditions_treated": [
       "alzheimers",
-      "cerebrovascular_disease"
+      "cerebrovascular_disease",
+      "dementia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1717,18 +1740,20 @@
   },
   "lecithin": {
     "display_name": "Lecithin",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000211",
-        "WAL-CLM-LETS-000220"
+        "WAL-CLM-LETS-000220",
+        "WAL-CLM-LETS-000243"
       ]
     },
     "conditions_treated": [
       "alzheimers",
       "cerebrovascular_disease",
-      "chorea"
+      "chorea",
+      "dementia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2096,14 +2121,21 @@
   },
   "paba": {
     "display_name": "Paba",
-    "claim_count": 1,
+    "claim_count": 3,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000022"
+      ],
+      "protocol": [
+        "WAL-CLM-LETS-000242",
+        "WAL-CLM-LETS-000245"
       ]
     },
     "conditions_treated": [
-      "depression"
+      "dandruff",
+      "depression",
+      "dermatitis",
+      "eczema"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2111,7 +2143,7 @@
   },
   "pancreatic-enzymes": {
     "display_name": "Pancreatic Enzymes",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000123",
@@ -2123,7 +2155,8 @@
         "WAL-CLM-LETS-000171",
         "WAL-CLM-LETS-000173",
         "WAL-CLM-LETS-000223",
-        "WAL-CLM-LETS-000226"
+        "WAL-CLM-LETS-000226",
+        "WAL-CLM-LETS-000243"
       ]
     },
     "conditions_treated": [
@@ -2138,6 +2171,7 @@
       "brittle_nails",
       "bruises",
       "colic",
+      "dementia",
       "menopause"
     ],
     "books_cited": [
@@ -2222,16 +2256,18 @@
   },
   "piracetam": {
     "display_name": "Piracetam",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
-        "WAL-CLM-LETS-000211"
+        "WAL-CLM-LETS-000211",
+        "WAL-CLM-LETS-000243"
       ]
     },
     "conditions_treated": [
       "alzheimers",
-      "cerebrovascular_disease"
+      "cerebrovascular_disease",
+      "dementia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2365,18 +2401,23 @@
   },
   "pulse-test": {
     "display_name": "Pulse Test",
-    "claim_count": 3,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000209",
         "WAL-CLM-LETS-000233",
-        "WAL-CLM-LETS-000237"
+        "WAL-CLM-LETS-000237",
+        "WAL-CLM-LETS-000244",
+        "WAL-CLM-LETS-000245"
       ]
     },
     "conditions_treated": [
       "celiac_disease",
       "convulsions",
       "cradle_cap",
+      "depression",
+      "dermatitis",
+      "eczema",
       "epilepsy",
       "seborrheic_dermatitis"
     ],
@@ -2779,7 +2820,7 @@
   },
   "urine-therapy": {
     "display_name": "Urine Therapy",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000201",
@@ -2790,7 +2831,8 @@
         "WAL-CLM-LETS-000231",
         "WAL-CLM-LETS-000233",
         "WAL-CLM-LETS-000235",
-        "WAL-CLM-LETS-000238"
+        "WAL-CLM-LETS-000238",
+        "WAL-CLM-LETS-000244"
       ]
     },
     "conditions_treated": [
@@ -2803,6 +2845,7 @@
       "convulsions",
       "cough",
       "crohns_disease",
+      "depression",
       "epilepsy"
     ],
     "books_cited": [
@@ -2826,16 +2869,18 @@
   },
   "vasopressin": {
     "display_name": "Vasopressin",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
-        "WAL-CLM-LETS-000211"
+        "WAL-CLM-LETS-000211",
+        "WAL-CLM-LETS-000243"
       ]
     },
     "conditions_treated": [
       "alzheimers",
-      "cerebrovascular_disease"
+      "cerebrovascular_disease",
+      "dementia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2858,16 +2903,18 @@
   },
   "vinegar": {
     "display_name": "Vinegar",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000149",
-        "WAL-CLM-LETS-000175"
+        "WAL-CLM-LETS-000175",
+        "WAL-CLM-LETS-000242"
       ]
     },
     "conditions_treated": [
       "athletes_foot",
-      "burns"
+      "burns",
+      "dandruff"
     ],
     "books_cited": [
       "lets-play-doctor"

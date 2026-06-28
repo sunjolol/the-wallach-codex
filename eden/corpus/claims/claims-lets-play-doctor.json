@@ -9713,6 +9713,199 @@
       "extracted_at": "2026-06-28T20:25:42+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000242",
+      "kind": "protocol",
+      "essentials": [
+        "omega-3",
+        "vitamin-e",
+        "vitamin-b6",
+        "vitamin-a",
+        "zinc"
+      ],
+      "other_substances": [
+        "vinegar",
+        "flaxseed-oil",
+        "paba",
+        "colloidal-minerals"
+      ],
+      "conditions": [
+        "dandruff"
+      ],
+      "symptoms": [],
+      "claim_text": "Dandruff is a scaling or flaking of the scalp's surface cells caused by one or more nutritional deficiencies, with or without itching. Wallach's treatment is washing the hair in vinegar to remove the loose scales, plus oral flaxseed oil at 5 gm three times daily, PABA at 100 mg per day, vitamin E at 800-1,200 IU per day, vitamin B-6 at 50 mg three times daily, 300,000 IU vitamin A as beta carotene, zinc at 50 mg three times daily, and colloidal minerals.",
+      "verbatim": "Treatment of dandruff includes washing the\nhair in vinegar to remove all of the loose\nscales. Oral supplementation with flaxseed\noil at 5 gm t.i.d., PABA at 100 mg/day, vitamin\nE at 800-1,200 IU/day, B-6 at 50 mg t.i.d.,\n300,000 IU vitamin A as beta carotene and zinc\nat 50 mg t.i.d. and colloidal minerals are rec-\nommended.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 259937
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T21:05:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000243",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b1",
+        "vitamin-b6",
+        "vitamin-b3",
+        "vitamin-b9",
+        "choline",
+        "vitamin-e",
+        "vitamin-c",
+        "copper",
+        "magnesium",
+        "zinc"
+      ],
+      "other_substances": [
+        "lecithin",
+        "hydergine",
+        "vasopressin",
+        "centrophenoxine",
+        "piracetam",
+        "betaine-hcl",
+        "pancreatic-enzymes"
+      ],
+      "conditions": [
+        "dementia"
+      ],
+      "symptoms": [
+        "memory_loss"
+      ],
+      "claim_text": "Dementia (memory loss, as in senility) is a common symptom but not a true result of aging — Wallach attributes it to nutritional deficiencies and alcoholism, and says memory-enhancing drugs such as hydergine and piracetam help prevent it when added to good nutrition. He advises avoiding metallic aluminum (deodorants, cooking utensils) and checking for food allergies and hypoglycemia. His treatment is vitamin B-1 at 100 mg three times daily, B-6 at 50 mg three times daily, B-3 at 450 mg four times daily (time release), folic acid at 3-5 mg per day, choline at 500-1,000 mg per day, lecithin at 2,500 mg twice daily, vitamin E at 800-1,200 IU per day, vitamin C to bowel tolerance, copper at 2-3 mg per day, magnesium at 1,000 mg per day, zinc at 50 mg three times daily, hydergine at 9 mg per day, vasopressin (Diapid) at 12-16 units per day, centrophenoxine (Lucidril) at 4.4-8.0 gm per day, Piracetam at 2.4-4.8 mg per day, and betaine HCl and pancreatic enzymes at 75-200 mg three times daily 15-20 minutes before meals.",
+      "verbatim": "Treatment of dementia includes B-l at 100 mg\nt.i.d., B-6 at 50 mg t.i.d., B-3 at 450 mg q.i.d.\n(time release), folic acid at 3-5 mg/day, cho-\nline at 500-1,000 mg/day, lecithin at 2,500 mg\nb.i.d., vitamin E at 800-1 ,200 IU/day, vitamin C\nto bowel tolerance, copper at 2-3 mg/day,\nmagnesium at 1,000 mg/clay, zinc at 50 mg\nt.i.d., hydergine at 9 mg/day, vasopressin\n(Diapid) at 12-16 units/day, centrophenoxine\n(Lucidril) at 4.4-8.0 gm/day",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 260998
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T21:05:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000244",
+      "kind": "protocol",
+      "essentials": [
+        "chromium",
+        "vanadium",
+        "iron",
+        "vitamin-b6",
+        "vitamin-b2",
+        "vitamin-b1",
+        "vitamin-b12",
+        "vitamin-c",
+        "calcium",
+        "magnesium",
+        "potassium",
+        "omega-3",
+        "phenylalanine",
+        "tryptophan",
+        "tyrosine",
+        "lithium"
+      ],
+      "other_substances": [
+        "pulse-test",
+        "urine-therapy",
+        "blood-therapy",
+        "colloidal-minerals"
+      ],
+      "conditions": [
+        "depression"
+      ],
+      "symptoms": [],
+      "claim_text": "Depression (including manic depression) is extremely common; Wallach holds that food allergies, hypoglycemia, and PMS (premenstrual syndrome) account for about 90% of diagnosed depression — factors conventional psychiatrists rarely test for. Before costly therapy he advises a pulse test and a six-hour glucose tolerance test (watching for allergic shiners at the peak of depression) and avoiding caffeine; spontaneous crying, thoughts of suicide, and hopelessness are common, and it may be cyclic as in PMS. His treatment addresses food allergies (avoidance, rotation, autoimmune urine and blood therapies) and hypoglycemia (hypoglycemia diet and chromium/vanadium at 50-200 mcg three times daily), plus the base-line supplement program, iron at 45 mg per day, vitamins B-6, B-2, and B-1 at 50 mg three times daily, vitamin B-12 at 1,000 mcg per day, vitamin C to bowel tolerance, calcium and magnesium at 2,000 and 1,000 mg per day, potassium at 250 mg four times daily, essential fatty acids at 5 gm three times daily, and dl-phenylalanine, l-tryptophan, and l-tyrosine at 2 gm three times daily each; plant-derived colloidal minerals with lithium can be useful.",
+      "verbatim": "chromium/vanadium supplementation\nat 50-200 mcg t.i.d.; base line\nsupplementprogram, iron at 45 mg/day, B-6,\nB-2, B-l at 50 mg t.i.d., B-l 2 at 1,000 mcg/day,\nvitamin C to bowel tolerance, calcium and\nmagnesium at 2,000 mg and 1,000 mg/day,\npotassium at 250 mg q.i.d. , essential fatty acids\nat 5 gm t.i.d. and dl-phenylalanine, 1-trypto-\nphane and 1-tyrosine at 2 gm t.i.d. each.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 263442
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T21:05:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000245",
+      "kind": "protocol",
+      "essentials": [
+        "omega-3",
+        "vitamin-a",
+        "zinc"
+      ],
+      "other_substances": [
+        "paba",
+        "betaine-hcl",
+        "digestive-enzymes",
+        "pulse-test",
+        "colloidal-minerals"
+      ],
+      "conditions": [
+        "dermatitis",
+        "eczema"
+      ],
+      "symptoms": [],
+      "claim_text": "Dermatitis (atopic dermatitis, eczema, and dermatitis herpetiformis) is a common skin disease that Wallach says is treated incorrectly with cortisone or prednisone creams; about 97% of these patients have wheat-gluten food allergies and many are sensitive to cow's milk, with the same lesions occurring in the small-intestine lining and causing serious, immune-depleting malabsorption (a precursor to diabetes, cancer, arthritis, and birth defects). His treatment for all three forms is a gluten-free and cow's-milk-free diet, a pulse test on frequently eaten foods, essential fatty acids at 5 gm four times daily, PABA at 200 mg four times daily, betaine HCl and digestive enzymes at 75-200 mg each three times daily before meals, vitamin A at 300,000 IU per day as beta carotene, zinc at 50 mg three times daily, and colloidal minerals on top of the base-line supplement program; healing the intestinal lesions takes 60-90 days.",
+      "verbatim": "Treatment of all three of the above manifesta-\ntions of dermatitis should include a gluten free\nand cow's milk free diet. It is also pmdent to\ndo a \"pulse test\" on frequently consumed\nfoods to determine if they are also affecting\nyou. The supplementation of essential fatty\nacids are 5 gm q. i. d. ,PABA at 200 mg q.i.d. and",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 265247
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T21:05:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
