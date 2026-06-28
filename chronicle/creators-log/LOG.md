@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_136 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_137 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 09:12 UTC-05:00 · note · governance/handoff
+Reconciled residual drift from the 3-day-audit fix (6043e67): the live handoff (next-chunk.md rule 7) still carried the pruned phantom JSDoc-only/zero-prose letter. Rewrote to the codified truthful-WHY-comments spirit. Found at genesis verifying the audit was durably codified.
+  ↳ 6043e67 pruned the phantom rule in CLAUDE.md/typescript.md/engineering-doctrine.md + reconciled the memory, but missed chronicle/next-chunk.md rule 7 — the one file that loads into every fresh session, so the stale copy would re-poison the future. Fixed via safe_write replace; board 31/31; handoff-only, no code/corpus change. Verification answer to Luneth: the audit WAS logged properly + codified durably; this single surface was the only miss.
 
 ## 2026-06-28 09:03 UTC-05:00 · design-decision · governance/audit
 3-day audit vs SESSION-12 rules: corpus CLEAN (no real issues; EFA flag = false positive). DOCTRINE FIX: pruned the phantom JSDoc-only/no-comments rule (135 unenforced) -> codified the SPIRIT: truthful WHY comments required, lies/drift/WHAT-noise banned, user-prose segregated.
