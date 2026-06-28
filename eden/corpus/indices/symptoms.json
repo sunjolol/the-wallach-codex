@@ -3544,6 +3544,21 @@
       "lets-play-doctor"
     ]
   },
+  "sore_throat": {
+    "display_name": "Sore Throat",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "vitamin-d",
+        "claim_id": "WAL-CLM-LETS-000084",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "spinal_cord_demyelination": {
     "display_name": "Spinal Cord Demyelination",
     "claim_count": 2,

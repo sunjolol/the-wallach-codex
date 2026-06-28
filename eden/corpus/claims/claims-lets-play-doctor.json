@@ -3561,6 +3561,159 @@
       "extracted_at": "2026-06-28T01:16:13+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000084",
+      "kind": "mechanism",
+      "essentials": [
+        "vitamin-d"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "vaginitis",
+        "ringworm",
+        "athletes_foot",
+        "eczema"
+      ],
+      "symptoms": [
+        "sore_throat"
+      ],
+      "claim_text": "Wallach describes ultraviolet (UV) light therapy as stimulating vitamin D production and the immune system, and as a treatment for sore throats, vaginitis (vaginal inflammation), ringworm, athlete's foot (tinea pedis), and eczema.",
+      "verbatim": "Light therapy uses ultra violet light to\nstimulate vitamin D production, stimulate the\nimmune system, treat sore throats, treat\nvaginitis, treat ring-worm, athletes foot and\neczema.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "7",
+        "page": 66,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 117256
+      },
+      "dose": null,
+      "tags": [
+        "ch7",
+        "healing-arts",
+        "light-therapy",
+        "search-topic:light-therapy",
+        "ultraviolet"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T02:41:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000085",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "chronic_wounds",
+        "bedsores",
+        "arthritis"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach explains infrared light as a LOCAL immune stimulant: cover the area with cloth, cut a 1 cm hole over an acupuncture / trigger point, and shine infrared on it (a standard heat lamp works) until the point reddens. This draws an influx of white blood cells and antibodies, so any chronic process in the area benefits from the local immune surge — giving excellent results in chronic wounds, bedsores, and arthritis.",
+      "verbatim": "Infra red light is used as an immune\nstimulant - this is accomplished by covering\nthe area of interest with cloth and making a\n1cm hole over an acupuncture or trigger\n\"point.\" Infra red light is then directed to the\nhole in the cloth and allowed to redden the\n\"point.\" This produces an \"acute\" stimulation\nto the \"point\" which causes an influx of WBCs\nand antibodies - any chronic process in the\narea will benefit from this local immune surge!!!",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "7",
+        "page": 66,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 117438
+      },
+      "dose": null,
+      "tags": [
+        "ch7",
+        "healing-arts",
+        "light-therapy",
+        "search-topic:light-therapy",
+        "infrared"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T02:41:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000086",
+      "kind": "mechanism",
+      "essentials": [
+        "vitamin-d"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "skin_diseases",
+        "arthritis"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach notes ultraviolet (UV) light is germicidal, stimulates vitamin D production, and has healing effects for a variety of skin diseases and arthritis; therapeutic UV is \"cool\" and produces no local heat. CAUTION: UV can burn the eyes — wear protective goggles or avoid looking directly at the therapy lamp tube.",
+      "verbatim": "Ultra violet light is germicidal, stimulates\nthe production of vitamin D and has \"healing\"\neffects for a variety of skin diseases and arthri-\ntis. The nice thing about the ultra violet light\nused for therapy is that it is \"cool\" and does not\nproduce local heat. CAUTION IS REQUIRED\nTO PREVENT BURNING OF YOUR EYES -\nwear protective goggles or avoid looking di-\nrectly at the therapy lamp tube!!!",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "7",
+        "page": 66,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 118013
+      },
+      "dose": null,
+      "tags": [
+        "ch7",
+        "healing-arts",
+        "light-therapy",
+        "search-topic:light-therapy",
+        "ultraviolet",
+        "safety"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T02:41:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000087",
+      "kind": "definition",
+      "essentials": [
+        "vitamin-d"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach details the ultraviolet (UV) therapy spectrum: visible light is only about five percent of the total output of UV therapy lamps; the UV ray spectrum ranges between 500 and 3,100 Angstrom units, and 2,537 Angstrom units is the peak intensity — the level that produces the germicidal, erythemic (skin-reddening), and vitamin-D-producing effects.",
+      "verbatim": "Visible light is only five percent of the\ntotal spectrum produced by ultra violet therapy\nlamps. The ultra violet ray spectrum ranges\nbetween 500 and 3100 Angstrom units - 2537\nAngstrom units is the \"peak\" intensity and is\nthe level that produces the germicidal,\nerythemic and vitamin D producing effects.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "7",
+        "page": 66,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 118409
+      },
+      "dose": null,
+      "tags": [
+        "ch7",
+        "healing-arts",
+        "light-therapy",
+        "search-topic:light-therapy",
+        "spectrum"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T02:41:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

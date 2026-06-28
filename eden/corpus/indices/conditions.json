@@ -576,10 +576,12 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 22,
+    "claim_count": 24,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-DDDL-000052"
+        "WAL-CLM-DDDL-000052",
+        "WAL-CLM-LETS-000085",
+        "WAL-CLM-LETS-000086"
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000012",
@@ -682,6 +684,36 @@
     "essentials_involved": [
       "manganese"
     ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "athletes_foot": {
+    "display_name": "Athletes Foot",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000084"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-d"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "bedsores": {
+    "display_name": "Bedsores",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000085"
+      ]
+    },
+    "essentials_involved": [],
     "other_substances_involved": [],
     "books_cited": [
       "lets-play-doctor"
@@ -1355,6 +1387,20 @@
       "rare-earths"
     ]
   },
+  "chronic_wounds": {
+    "display_name": "Chronic Wounds",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000085"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "circulatory_disease": {
     "display_name": "Circulatory Disease",
     "claim_count": 1,
@@ -1988,9 +2034,10 @@
   },
   "eczema": {
     "display_name": "Eczema",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-LETS-000084",
         "WAL-CLM-RARE-000111"
       ],
       "deficiency_signs": [
@@ -2012,6 +2059,7 @@
       "omega-6",
       "vitamin-b3",
       "vitamin-b5",
+      "vitamin-d",
       "zinc"
     ],
     "other_substances_involved": [],
@@ -4164,6 +4212,22 @@
       "rare-earths"
     ]
   },
+  "ringworm": {
+    "display_name": "Ringworm",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000084"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-d"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "schistosomiasis": {
     "display_name": "Schistosomiasis",
     "claim_count": 1,
@@ -4306,6 +4370,22 @@
       "dddl-3e-2011",
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "skin_diseases": {
+    "display_name": "Skin Diseases",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000086"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-d"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "spina_bifida": {
@@ -4564,6 +4644,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "vaginitis": {
+    "display_name": "Vaginitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000084"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-d"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "varicose_veins": {
