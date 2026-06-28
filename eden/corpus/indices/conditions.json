@@ -477,8 +477,11 @@
   },
   "anxiety": {
     "display_name": "Anxiety",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000100"
+      ],
       "deficiency_signs": [
         "WAL-CLM-LETS-000006",
         "WAL-CLM-LETS-000016",
@@ -579,12 +582,13 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 24,
+    "claim_count": 25,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052",
         "WAL-CLM-LETS-000085",
-        "WAL-CLM-LETS-000086"
+        "WAL-CLM-LETS-000086",
+        "WAL-CLM-LETS-000100"
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000012",
@@ -939,6 +943,20 @@
       "dddl-3e-2011"
     ]
   },
+  "boils": {
+    "display_name": "Boils",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000100"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "bone_spurs": {
     "display_name": "Bone Spurs",
     "claim_count": 2,
@@ -984,8 +1002,11 @@
   },
   "breast_cancer": {
     "display_name": "Breast Cancer",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000100"
+      ],
       "contraindications": [
         "WAL-CLM-DDDL-000061",
         "WAL-CLM-DDDL-000091"
@@ -994,7 +1015,8 @@
     "essentials_involved": [],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "lets-play-doctor"
     ]
   },
   "bulimia": {
@@ -1015,8 +1037,11 @@
   },
   "burns": {
     "display_name": "Burns",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000100"
+      ],
       "definitions": [
         "WAL-CLM-RARE-000112"
       ]
@@ -1026,6 +1051,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1455,6 +1481,20 @@
       "rare-earths"
     ]
   },
+  "colic": {
+    "display_name": "Colic",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000100"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "collagen_disease": {
     "display_name": "Collagen Disease",
     "claim_count": 1,
@@ -1493,10 +1533,11 @@
   },
   "common_cold": {
     "display_name": "Common Cold",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-DDDL-000093"
+        "WAL-CLM-DDDL-000093",
+        "WAL-CLM-LETS-000100"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000094"
@@ -1507,7 +1548,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "lets-play-doctor"
     ]
   },
   "congenital_ataxia": {
@@ -1674,6 +1716,20 @@
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "cuts": {
+    "display_name": "Cuts",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000100"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "cystic_fibrosis": {
@@ -1918,7 +1974,7 @@
   },
   "diabetes": {
     "display_name": "Diabetes",
-    "claim_count": 22,
+    "claim_count": 23,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-DDDL-000008"
@@ -1926,6 +1982,7 @@
       "causes": [
         "WAL-CLM-DDDL-000010",
         "WAL-CLM-DDDL-000034",
+        "WAL-CLM-LETS-000100",
         "WAL-CLM-RARE-000118",
         "WAL-CLM-RARE-000254"
       ],
@@ -2033,6 +2090,20 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "dysentery": {
+    "display_name": "Dysentery",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000100"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "eczema": {
@@ -2210,8 +2281,11 @@
   },
   "gallstones": {
     "display_name": "Gallstones",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000100"
+      ],
       "deficiency_signs": [
         "WAL-CLM-LETS-000011"
       ]
@@ -2643,10 +2717,11 @@
   },
   "hypertension": {
     "display_name": "Hypertension",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-LETS-000094",
+        "WAL-CLM-LETS-000100",
         "WAL-CLM-RARE-000107"
       ],
       "deficiency_signs": [
@@ -2795,8 +2870,11 @@
   },
   "hypotension": {
     "display_name": "Hypotension",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000100"
+      ],
       "deficiency_signs": [
         "WAL-CLM-LETS-000016",
         "WAL-CLM-LETS-000021",
@@ -2925,6 +3003,20 @@
       "rare-earths"
     ]
   },
+  "influenza": {
+    "display_name": "Influenza",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000100"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "insomnia": {
     "display_name": "Insomnia",
     "claim_count": 13,
@@ -2984,6 +3076,20 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "jaundice": {
+    "display_name": "Jaundice",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000100"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "kawasaki_disease": {
@@ -3078,10 +3184,11 @@
   },
   "kidney_stones": {
     "display_name": "Kidney Stones",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-DDDL-000087"
+        "WAL-CLM-DDDL-000087",
+        "WAL-CLM-LETS-000100"
       ],
       "definitions": [
         "WAL-CLM-RARE-000105"
@@ -3097,6 +3204,7 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -3890,9 +3998,10 @@
   },
   "peptic_ulcers": {
     "display_name": "Peptic Ulcers",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-LETS-000100",
         "WAL-CLM-RARE-000101"
       ],
       "protocols": [
@@ -4476,6 +4585,20 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "teething": {
+    "display_name": "Teething",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000100"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "tetany": {

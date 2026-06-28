@@ -494,7 +494,7 @@
   },
   "constipation": {
     "display_name": "Constipation",
-    "claim_count": 7,
+    "claim_count": 8,
     "likely_deficiencies": [
       {
         "essential": "inositol",
@@ -1279,6 +1279,14 @@
       "rare-earths"
     ]
   },
+  "fever": {
+    "display_name": "Fever",
+    "claim_count": 1,
+    "likely_deficiencies": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "flatulence": {
     "display_name": "Flatulence",
     "claim_count": 1,
@@ -1787,6 +1795,14 @@
         "appears_in_books": 1
       }
     ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "inflammation": {
+    "display_name": "Inflammation",
+    "claim_count": 1,
+    "likely_deficiencies": [],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -2831,7 +2847,7 @@
   },
   "paralysis": {
     "display_name": "Paralysis",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "vitamin-b1",
@@ -2841,6 +2857,7 @@
       }
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },

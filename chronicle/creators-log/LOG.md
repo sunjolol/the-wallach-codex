@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_130 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_131 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 07:16 UTC-05:00 · round-close · eden/corpus
+LPD b13b — Ch7 COLOR THERAPY (search goldmine) + FAITH-HEALING. 5 claims LETS-099..103: per-color effects MAP (18 conditions + 4 symptoms) + 6 techniques + laying-on-of-hands (Christian-positive). +7 cond +2 sym. kv121->122, corpus 478->483, board 30/30.
+  ↳ Color therapy: def (Greek Healing Temples, Heliopolis; another form of light therapy) + the per-color effects map (the goldmine — Blue/Red/Yellow/Violet/Orange/Green each → conditions, all pillable) + 6 techniques (Kilner screen, tissue colors, solar-chrome salt bags, food colors, rainbow healing, color breathing). Faith-healing/laying-on-of-hands (Christian-positive INCLUDE): human mediates healing, positive-thinking-as-prayer (Schuller), 20-60% placebo recovery; Christian Science (Mary Baker Eddy), Kirlian aura, therapeutic touch. +7 conditions (teething/boils/dysentery/colic/jaundice/cuts/influenza) +2 symptoms (fever/inflammation), all humanize-clean. NO .txt edits (p58/59 typos pre-fixed in b13) → finalize→seal (no resnap). Board 30/30, knowledge probe PASS (223 conditions). Luneth loves the direction; banked the Ask Wallach search vision.
 
 ## 2026-06-28 07:01 UTC-05:00 · round-close · eden/corpus
 LPD b13 — Ch7 RENDER-FIRST restoration + p53/54 modalities. 6 claims LETS-093..098 (aromatherapy ×2, Ayurvedic ×2, Schuessler, Bach). Restored entire dropped p53/54 prose; Luneth ruled Bach+Schuessler Include. kv119→121, corpus 472→478.
