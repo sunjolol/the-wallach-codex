@@ -4384,17 +4384,40 @@
   },
   "gallstones": {
     "display_name": "Gallstones",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000011"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000283"
       ]
     },
     "essentials_involved": [
       "omega-3",
-      "omega-6"
+      "omega-6",
+      "selenium",
+      "vitamin-c",
+      "vitamin-e"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "agrimony",
+      "artichoke",
+      "blessed-thistle",
+      "celandine",
+      "chicory",
+      "dandelion",
+      "dietary-fiber",
+      "fumitory",
+      "horehound",
+      "lecithin",
+      "licorice",
+      "olive-oil",
+      "peppermint",
+      "sweet-coltsfoot",
+      "taurine",
+      "wormwood"
+    ],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -4415,6 +4438,80 @@
       "rare-earths"
     ]
   },
+  "geographic_tongue": {
+    "display_name": "Geographic Tongue",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000284"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b12",
+      "vitamin-b2",
+      "vitamin-b3",
+      "vitamin-b5",
+      "vitamin-b6",
+      "vitamin-b9",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "b-complex",
+      "betaine-hcl",
+      "pancreatic-enzymes",
+      "urine-therapy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "gingivitis": {
+    "display_name": "Gingivitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000285"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium",
+      "vitamin-c"
+    ],
+    "other_substances_involved": [
+      "arnica",
+      "bilberry",
+      "colloidal-minerals",
+      "german-chamomile",
+      "high-mallow",
+      "hydrogen-peroxide",
+      "tormentil"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "glaucoma": {
+    "display_name": "Glaucoma",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000286"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-c"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "pilocarpine",
+      "pulse-test",
+      "rutin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "glucose_intolerance": {
     "display_name": "Glucose Intolerance",
     "claim_count": 1,
@@ -4433,7 +4530,7 @@
   },
   "goiter": {
     "display_name": "Goiter",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000147",
@@ -4453,6 +4550,9 @@
       "prevalence": [
         "WAL-CLM-DDDL-000024"
       ],
+      "protocols": [
+        "WAL-CLM-LETS-000287"
+      ],
       "quotes": [
         "WAL-CLM-DDDL-000066"
       ]
@@ -4464,7 +4564,9 @@
       "tyrosine"
     ],
     "other_substances_involved": [
-      "taurine"
+      "kelp",
+      "taurine",
+      "thyroid"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -4474,18 +4576,29 @@
   },
   "gout": {
     "display_name": "Gout",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "contraindications": [
         "WAL-CLM-RARE-000181"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000288"
       ]
     },
     "essentials_involved": [
       "copper",
-      "molybdenum"
+      "molybdenum",
+      "vitamin-b9"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "cherries",
+      "colchicine",
+      "gout-weed",
+      "prednisone",
+      "saffron"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -4503,6 +4616,29 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "growing_pains": {
+    "display_name": "Growing Pains",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000289"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium",
+      "selenium",
+      "vitamin-c",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "pancreatic-enzymes"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "hashimotos_disease": {
@@ -6195,16 +6331,29 @@
   },
   "periodontal_disease": {
     "display_name": "Periodontal Disease",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000004"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000285"
       ]
     },
     "essentials_involved": [
-      "calcium"
+      "calcium",
+      "magnesium",
+      "vitamin-c"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "arnica",
+      "bilberry",
+      "colloidal-minerals",
+      "german-chamomile",
+      "high-mallow",
+      "hydrogen-peroxide",
+      "tormentil"
+    ],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -6429,14 +6578,19 @@
   },
   "pyorrhea": {
     "display_name": "Pyorrhea",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "definitions": [
         "WAL-CLM-LETS-000001"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000290"
       ]
     },
     "essentials_involved": [],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "white-pond-lily"
+    ],
     "books_cited": [
       "lets-play-doctor"
     ]

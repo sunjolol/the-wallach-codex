@@ -7703,7 +7703,7 @@ make sure you are having 2-3 bowel move-
 ments per day), lecithin at 2,500 mg t.i.d.,
 essential fatty acids at 5 gm t.i.d., vitamin E at
 800-1,200 IU per day, vitamin C to bowel
-tolerance, selenium at 200 meg t.i.d., and
+tolerance, selenium at 200 mcg t.i.d., and
 taurine at 500 mg t.i.d. Virgin olive oil in eight
 oz. of grapefruit or lemon juice will help to
 flush liver; herbs include acrimony ( Agrimonia
@@ -7825,7 +7825,7 @@ Treatment of goiter includes the removal of all
 goitrogens from the diet (read labels to ex-
 127
 elude nitrates and nitrite), supplement iodine
-at 250 meg/day and thyroid USP at 2-5 grains
+at 250 mcg/day and thyroid USP at 2-5 grains
 each morning, kelp is a good natural source of
 iodine.
 GOUT (gouty arthritis): is caused by depos-
@@ -7859,7 +7859,7 @@ cium, magnesium, selenium, vitamin E and
 vitamin C.
 Treatment of growing pains includes calcium
 and magnesium at 2,000 mg and 1 ,000 mg per
-day, selenium at 50-200 meg b.i.d. and betaine
+day, selenium at 50-200 mcg b.i.d. and betaine
 HC1 and pancreatic" enzymes at 75-200 mg
 t.i.d. before meals.
 GUMS (sore, pyorrhea): see gingivitis. You

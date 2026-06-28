@@ -11403,6 +11403,341 @@
       "extracted_at": "2026-06-28T23:36:21+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000283",
+      "kind": "protocol",
+      "essentials": [
+        "omega-3",
+        "vitamin-e",
+        "vitamin-c",
+        "selenium"
+      ],
+      "other_substances": [
+        "dietary-fiber",
+        "lecithin",
+        "taurine",
+        "olive-oil",
+        "licorice",
+        "agrimony",
+        "blessed-thistle",
+        "fumitory",
+        "horehound",
+        "peppermint",
+        "wormwood",
+        "artichoke",
+        "sweet-coltsfoot",
+        "celandine",
+        "chicory",
+        "dandelion"
+      ],
+      "conditions": [
+        "gallstones"
+      ],
+      "symptoms": [],
+      "claim_text": "Gallbladder disease (gall stones) is generally caused by liver problems with fat and cholesterol metabolism; gallstones are made of cholesterol and fat that later calcify, and Wallach notes eggs precipitate 93% of gallbladder attacks, followed by onions and pork. For prevention he uses glycyrrhizin (a licorice extract) plus the baseline supplement with 5 grams of essential fatty acids three times a day. His treatment of gallbladder disease and gallstones includes high-fiber diets (aim for 2-3 bowel movements a day), lecithin at 2,500 milligrams three times a day, essential fatty acids at 5 grams three times a day, vitamin E at 800-1,200 international units a day, vitamin C to bowel tolerance, selenium at 200 micrograms three times a day, and taurine at 500 milligrams three times a day; virgin olive oil in grapefruit or lemon juice helps flush the liver, and herbs include agrimony, blessed thistle, fumitory, horehound, licorice, peppermint, wormwood, artichoke, sweet coltsfoot, celandine, chicory, and dandelion.",
+      "verbatim": "Treatment of gallbladder disease and gall-\nstones includes the use of high fiber diets (i.e.\nmake sure you are having 2-3 bowel move-\nments per day), lecithin at 2,500 mg t.i.d.,\nessential fatty acids at 5 gm t.i.d., vitamin E at\n800-1,200 IU per day, vitamin C to bowel\ntolerance, selenium at 200 mcg t.i.d., and\ntaurine at 500 mg t.i.d.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 309329
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:46:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000284",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b3",
+        "vitamin-b2",
+        "vitamin-b6",
+        "vitamin-b5",
+        "vitamin-b12",
+        "vitamin-b9",
+        "zinc"
+      ],
+      "other_substances": [
+        "urine-therapy",
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "b-complex"
+      ],
+      "conditions": [
+        "geographic_tongue"
+      ],
+      "symptoms": [],
+      "claim_text": "Geographic tongue (benign migratory glossitis), like allergic 'shiners,' is a red flag that you are not absorbing vitamin B-3, B-2, B-6, B-5, B-12, folic acid, or zinc — usually from malabsorption due to celiac-disease-like changes in the small intestine; it shows as irregular denuded areas on the top and sides of the tongue. Wallach's treatment includes avoiding any offending food allergens, autoimmune urine therapy, zinc at 50 milligrams three times a day, betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day before meals, B-complex intramuscularly in the early stages of therapy, and getting on the baseline supplement program.",
+      "verbatim": "Treatment of geographic tongue includes\navoidance of any offending food allergens,\nautoimmuneurinetherapy,zincat50mgt.i.d.,\nbetaine HC1 and pancreatic enzymes at 75-200\nmg t.i.d. before meals, B-complex IM in the\nearly stages of therapy, be sure to get on the\nbase line supplement program.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 310662
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:46:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000285",
+      "kind": "protocol",
+      "essentials": [
+        "calcium",
+        "magnesium",
+        "vitamin-c"
+      ],
+      "other_substances": [
+        "colloidal-minerals",
+        "hydrogen-peroxide",
+        "arnica",
+        "bilberry",
+        "german-chamomile",
+        "high-mallow",
+        "tormentil"
+      ],
+      "conditions": [
+        "gingivitis",
+        "periodontal_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Gingivitis (periodontal disease, receding gums) is, in Wallach's view, totally preventable and frequently curable with nutrition; he says the real cause is that the alveolar bone supporting the tooth root dissolves from a calcium deficiency and/or a phosphorus excess (too much meat and phosphate soft drinks) — so think of it as osteoporosis of the jaw. His treatment corrects the calcium/phosphorus ratio to 2 calcium : 1 phosphorus (most American diets run 15-20 phosphorus to 1 calcium) by supplementing calcium at 2,000 milligrams and magnesium at 1,000 milligrams three times a day with meals until the teeth tighten and gums calm down (then cut back to 2,000 milligrams a day); plant-derived colloidal minerals; the magnesium prevents kidney stones from the heavy calcium; rinsing with hydrogen peroxide tooth gel; vitamin C to bowel tolerance; and mouthwash herbs including arnica, bilberry, German chamomile, high mallow, and tormentil bloodroot.",
+      "verbatim": "Treatment of gingivitis includes the correction\nof the calcium phosphoms ratio in the diet\n(consider gingivitis as an osteoporosis of the\njaw). The correct calcium/phosphoms ratio is\n2 calcium/1 phosphoms (most American diets\nare 15-20 phosphoms for 1 calcium) and it is\nimpossible to achieve without supplementa-\ntion of calcium and consciously reducing the\nphosphorus intake (i.e., give up soft drinks,\nreduce meat intake, etc.). Calcium at 2,000 mg\nand magnesium at 1,000 mg t.i.d. with meals",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 313193
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:46:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000286",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c"
+      ],
+      "other_substances": [
+        "betaine-hcl",
+        "rutin",
+        "pulse-test",
+        "pilocarpine"
+      ],
+      "conditions": [
+        "glaucoma"
+      ],
+      "symptoms": [],
+      "claim_text": "Glaucoma is caused by increased pressure inside the eye that changes its shape and obstructs the normal flow of fluid; Wallach says food allergies are among the most common causes of increased eye pressure, so a pulse test is warranted. He notes orthodox treatment is limited to a prescription of pilocarpine 4% every 15 minutes, surgery, or cortisone. His approach is to do pulse testing and eliminate foods you are sensitive to, betaine hydrochloride at 75-200 milligrams three times a day before meals, vitamin C to bowel tolerance, rutin at 20-50 milligrams three times a day, and the baseline nutritional supplement.",
+      "verbatim": "Treatment of glaucoma by the \"orthodox\"\ndoctor is limited to a prescription of pilo-\ncarpine 4% every 15 minutes, surgery or cor-\ntisone. You must do pulse testing and elimi-\nnate foods you are sensitive to, betaine HC1 at\n75-200 mg t.i.d. before meals, vitamin C\ntobowel tolerance, nitin at 20-50 mg t.i.d. , and\nthe base line nutritional supplement.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 312841
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:46:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000287",
+      "kind": "protocol",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [
+        "thyroid",
+        "kelp"
+      ],
+      "conditions": [
+        "goiter"
+      ],
+      "symptoms": [],
+      "claim_text": "Goiter (colloid goiter) is caused by a simple iodine deficiency; Wallach warns that nitrates are goitrogenic (they stimulate goiter formation) and are found in luncheon meats, hot dogs, sausages, prepared meat products, and fertilizer-contaminated well water — and are carcinogenic as well. The deficient thyroid gland can enlarge 50-100 times its normal size. His treatment includes removing all goitrogens from the diet (read labels to exclude nitrates and nitrite), supplementing iodine at 250 micrograms a day and thyroid USP at 2-5 grains each morning, with kelp a good natural source of iodine.",
+      "verbatim": "supplement iodine\nat 250 mcg/day and thyroid USP at 2-5 grains\neach morning, kelp is a good natural source of\niodine.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 314821
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:46:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000288",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b9"
+      ],
+      "other_substances": [
+        "cherries",
+        "gout-weed",
+        "saffron",
+        "colchicine",
+        "prednisone"
+      ],
+      "conditions": [
+        "gout"
+      ],
+      "symptoms": [],
+      "claim_text": "Gout (gouty arthritis) is caused by deposits of uric-acid crystals in the joints and surrounding tissues — classically the great toe of each foot — and chronic untreated cases can develop kidney disease and uric-acid kidney stones; elevated blood uric acid (above 7 milligrams per 100 milliliters of serum) with sudden tender joints is a red flag. Wallach's treatment should include avoiding alcohol, organ meats, seafood, lentils, beans, peas, and fructose sources; folic acid at 10-75 milligrams a day; cherries and cherry juice; and herbs including gout weed (Aegopodium podagraria) and saffron/autumn crocus (Colchicum autumnale). He notes orthodox doctors use colchicine almost exclusively, adding prednisone for inflammation.",
+      "verbatim": "Treatment for gout should include an avoid-\nance of alcohol, organ meats, sea food, lentils,\nbeans, peas and fmctose sources, folic acid at\n10-75 mg/day,chemes and cherry juice, herbs\nincluding gout weed (Aegopodium\npodagraria) and saffron (Colchicium\nautumnale). The \"orthodox\" doctors use colch-\nicine almost exclusively as the treatment of\nchoice, but add prednisone for inflammation.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 315395
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:46:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000289",
+      "kind": "protocol",
+      "essentials": [
+        "calcium",
+        "magnesium",
+        "selenium",
+        "vitamin-e",
+        "vitamin-c"
+      ],
+      "other_substances": [
+        "betaine-hcl",
+        "pancreatic-enzymes"
+      ],
+      "conditions": [
+        "growing_pains"
+      ],
+      "symptoms": [],
+      "claim_text": "Growing pains are common in American children but, Wallach says, totally unnecessary and a red flag for one or more nutritional deficiencies. Prevention is a baseline nutritional supplement rich in calcium, magnesium, selenium, vitamin E, and vitamin C. His treatment of growing pains includes calcium and magnesium at 2,000 milligrams and 1,000 milligrams per day, selenium at 50-200 micrograms twice a day, and betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day before meals.",
+      "verbatim": "Treatment of growing pains includes calcium\nand magnesium at 2,000 mg and 1 ,000 mg per\nday, selenium at 50-200 mcg b.i.d. and betaine\nHC1 and pancreatic\" enzymes at 75-200 mg\nt.i.d. before meals.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 316190
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:46:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000290",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "white-pond-lily"
+      ],
+      "conditions": [
+        "pyorrhea"
+      ],
+      "symptoms": [],
+      "claim_text": "Gums (sore gums, pyorrhea) are addressed under gingivitis; in addition, Wallach says you may wish to rinse the mouth with a tea made from the root of the white pond lily (Nymphaea odorata).",
+      "verbatim": "GUMS (sore, pyorrhea): see gingivitis. You\nmay also wish to rinse mouth with a tea from\nthe root of the white pond lily (Nymphae\nodorata).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 316387
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T23:46:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
