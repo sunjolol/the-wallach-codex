@@ -1839,6 +1839,78 @@
       "lets-play-doctor"
     ]
   },
+  "bronchitis": {
+    "display_name": "Bronchitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000172"
+      ]
+    },
+    "essentials_involved": [
+      "omega-3",
+      "vitamin-a",
+      "vitamin-c",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "coltsfoot",
+      "cowslip",
+      "digestive-enzymes",
+      "eucalyptus",
+      "hollyhock",
+      "irish-moss",
+      "pansy",
+      "pleurisy-root",
+      "slippery-elm"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "bruises": {
+    "display_name": "Bruises",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000173"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-c",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "arnica",
+      "dmso",
+      "marigold",
+      "pancreatic-enzymes",
+      "sweet-clover",
+      "witch-hazel"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "bruxism": {
+    "display_name": "Bruxism",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000174"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium",
+      "vitamin-b6"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "bulimia": {
     "display_name": "Bulimia",
     "claim_count": 1,
@@ -1857,18 +1929,57 @@
   },
   "burns": {
     "display_name": "Burns",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "definitions": [
         "WAL-CLM-RARE-000112"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000175"
       ]
     },
     "essentials_involved": [
-      "cerium"
+      "cerium",
+      "vitamin-c",
+      "vitamin-e"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "aloe-vera",
+      "vinegar",
+      "zinc-oxide"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "bursitis": {
+    "display_name": "Bursitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000176"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "flavonoids",
+      "magnesium",
+      "vitamin-b12",
+      "vitamin-c",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "alfalfa",
+      "cartilage",
+      "colloidal-minerals",
+      "dmso",
+      "eucalyptus",
+      "gelatin",
+      "rutin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "cancer": {
@@ -2608,6 +2719,24 @@
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "dental_calculus": {
+    "display_name": "Dental Calculus",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000177"
+      ]
+    },
+    "essentials_involved": [
+      "magnesium"
+    ],
+    "other_substances_involved": [
+      "hydrogen-peroxide"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "dental_fluorosis": {

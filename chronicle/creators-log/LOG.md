@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_149 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_150 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 12:39 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b22 BRONCHITIS→CALCULUS: 6 protocol claims (LETS-172..177). Stopped cleanly before the big CANCER section (own batch 8). 1 render-verified meg→mcg fix (BURSITIS B-12), uniquely anchored — bare string is 4x book-wide. seal kv132, claims 557, board 31/31, probe green.
+  ↳ RENDER-FIRST p93-94 (fitz=printed+11) + zoom; clean single-flow pages, no drops/scrambles. CANCER (p94-98) = main protocol + ~10 named agents (HYDRAZINE SULFATE/CESIUM CHLORIDE/LAETRILE/GERMANIUM/CLODRONATE/FLUTAMIDE/HOXEY/LEVAMISOL/POLYERGA) → dedicated batch 8. BURSITIS meg→mcg anchored on 'Oral support includes B-12 at 1,000 meg/day' (count==1); 3 other identical strings are later un-mined entries → their own batches. No garbled headers. Faithful-in-verbatim/clean-in-claim_text: Asclepias tuberose→tuberosa, Hamaelis→Hamamelis, Metilotus→Melilotus, catanh→catarrh, bums→burns, toothbnish→toothbrush, betaine HC1→betaine hydrochloride (final sweep). bioflavonoids→flavonoids essential, rutin→other. fix_txt_b22 transactional; resnap b1286238 0/0; corpus_verify PASS; build 1126 KB; invariants 31/31 0-new; probe PASS 249 conditions.
 
 ## 2026-06-28 12:20 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b21 BLADDER STONES→BRITTLE NAILS: 11 protocol claims (LETS-161..171). Clean single-flow pages, no drops/scrambles. FIRST Ch10 batch with ZERO meg→mcg fixes (doses render-verified mg/IU). 5 same-length header .txt fixes. seal kv131, claims 551, board 31/31.

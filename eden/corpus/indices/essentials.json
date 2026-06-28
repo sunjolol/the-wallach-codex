@@ -288,7 +288,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 45,
+    "claim_count": 48,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -338,6 +338,9 @@
         "WAL-CLM-LETS-000164",
         "WAL-CLM-LETS-000166",
         "WAL-CLM-LETS-000168",
+        "WAL-CLM-LETS-000174",
+        "WAL-CLM-LETS-000176",
+        "WAL-CLM-LETS-000177",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -465,12 +468,15 @@
       "body_odor",
       "bone_pain",
       "bone_spurs",
+      "bruxism",
+      "bursitis",
       "cancer",
       "cardiomyopathy",
       "cardiovascular_disease",
       "cataracts",
       "celiac_disease",
       "deafness",
+      "dental_calculus",
       "depression",
       "diabetes",
       "hyperactivity",
@@ -858,7 +864,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 55,
+    "claim_count": 57,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -922,6 +928,8 @@
         "WAL-CLM-LETS-000166",
         "WAL-CLM-LETS-000168",
         "WAL-CLM-LETS-000171",
+        "WAL-CLM-LETS-000174",
+        "WAL-CLM-LETS-000176",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1011,6 +1019,8 @@
       "bone_pain",
       "bone_spurs",
       "brittle_nails",
+      "bruxism",
+      "bursitis",
       "cancer",
       "cardiomyopathy",
       "cardiovascular_disease",
@@ -2339,7 +2349,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 51,
+    "claim_count": 52,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2401,6 +2411,7 @@
         "WAL-CLM-LETS-000166",
         "WAL-CLM-LETS-000167",
         "WAL-CLM-LETS-000171",
+        "WAL-CLM-LETS-000172",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -2497,6 +2508,7 @@
       "boils",
       "bone_spurs",
       "brittle_nails",
+      "bronchitis",
       "bulimia",
       "cancer",
       "canker_sores",
@@ -3315,7 +3327,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 15,
+    "claim_count": 16,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -3335,7 +3347,8 @@
         "WAL-CLM-LETS-000149",
         "WAL-CLM-LETS-000150",
         "WAL-CLM-LETS-000157",
-        "WAL-CLM-LETS-000167"
+        "WAL-CLM-LETS-000167",
+        "WAL-CLM-LETS-000172"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000037"
@@ -3401,6 +3414,7 @@
       "birth_defects",
       "blindness",
       "boils",
+      "bronchitis",
       "cancer",
       "conjunctivitis",
       "corneal_ulcers",
@@ -4000,7 +4014,7 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 16,
+    "claim_count": 17,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000027",
@@ -4021,6 +4035,7 @@
         "WAL-CLM-LETS-000149",
         "WAL-CLM-LETS-000151",
         "WAL-CLM-LETS-000159",
+        "WAL-CLM-LETS-000174",
         "WAL-CLM-RARE-000286"
       ],
       "toxicity_sign": [
@@ -4126,6 +4141,7 @@
       "athletes_foot",
       "autism",
       "bipolar_disorder",
+      "bruxism",
       "conjunctivitis",
       "cradle_cap",
       "depression",
@@ -4272,7 +4288,7 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 17,
+    "claim_count": 18,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000035",
@@ -4299,7 +4315,8 @@
         "WAL-CLM-LETS-000132",
         "WAL-CLM-LETS-000137",
         "WAL-CLM-LETS-000143",
-        "WAL-CLM-LETS-000158"
+        "WAL-CLM-LETS-000158",
+        "WAL-CLM-LETS-000176"
       ]
     },
     "deficiency_signs": [
@@ -4376,6 +4393,7 @@
       "aphthous_stomatitis",
       "bells_palsy",
       "birth_defects",
+      "bursitis",
       "canker_sores",
       "depression",
       "diabetes",
@@ -4387,6 +4405,7 @@
       "calcium",
       "cobalt",
       "copper",
+      "flavonoids",
       "iron",
       "lithium",
       "magnesium",
@@ -4412,7 +4431,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 19,
+    "claim_count": 23,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -4439,7 +4458,11 @@
         "WAL-CLM-LETS-000163",
         "WAL-CLM-LETS-000164",
         "WAL-CLM-LETS-000167",
-        "WAL-CLM-LETS-000168"
+        "WAL-CLM-LETS-000168",
+        "WAL-CLM-LETS-000172",
+        "WAL-CLM-LETS-000173",
+        "WAL-CLM-LETS-000175",
+        "WAL-CLM-LETS-000176"
       ]
     },
     "deficiency_signs": [
@@ -4520,6 +4543,10 @@
       "boils",
       "bone_pain",
       "bone_spurs",
+      "bronchitis",
+      "bruises",
+      "burns",
+      "bursitis",
       "cancer",
       "common_cold",
       "depression",
@@ -4637,7 +4664,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 21,
+    "claim_count": 24,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -4668,6 +4695,9 @@
         "WAL-CLM-LETS-000169",
         "WAL-CLM-LETS-000170",
         "WAL-CLM-LETS-000171",
+        "WAL-CLM-LETS-000173",
+        "WAL-CLM-LETS-000175",
+        "WAL-CLM-LETS-000176",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -4749,6 +4779,9 @@
       "breast_cysts",
       "breast_tenderness",
       "brittle_nails",
+      "bruises",
+      "burns",
+      "bursitis",
       "cancer",
       "cystic_fibrosis",
       "dermatitis",
@@ -4766,6 +4799,7 @@
       "choline",
       "chromium",
       "copper",
+      "flavonoids",
       "germanium",
       "iron",
       "magnesium",
@@ -5012,14 +5046,15 @@
     "display_name": "Flavonoids",
     "canon_slug": "flavonoids",
     "category": "vitamin",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000243"
       ],
       "protocol": [
         "WAL-CLM-LETS-000127",
-        "WAL-CLM-LETS-000128"
+        "WAL-CLM-LETS-000128",
+        "WAL-CLM-LETS-000176"
       ]
     },
     "deficiency_signs": [
@@ -5036,7 +5071,8 @@
     ],
     "conditions_treated": [
       "alcoholism",
-      "allergies"
+      "allergies",
+      "bursitis"
     ],
     "interacts_with": [
       "calcium",
@@ -5045,8 +5081,10 @@
       "omega-3",
       "phenylalanine",
       "vitamin-a",
+      "vitamin-b12",
       "vitamin-b6",
       "vitamin-c",
+      "vitamin-e",
       "zinc"
     ],
     "books_cited": [
@@ -5288,7 +5326,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 27,
+    "claim_count": 28,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -5322,6 +5360,7 @@
         "WAL-CLM-LETS-000169",
         "WAL-CLM-LETS-000170",
         "WAL-CLM-LETS-000171",
+        "WAL-CLM-LETS-000172",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -5379,6 +5418,7 @@
       "breast_cysts",
       "breast_tenderness",
       "brittle_nails",
+      "bronchitis",
       "cystic_fibrosis",
       "diarrhea",
       "disagreeable_attitude",

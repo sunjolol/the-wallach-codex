@@ -7006,6 +7006,254 @@
       "extracted_at": "2026-06-28T17:18:54+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000172",
+      "kind": "protocol",
+      "essentials": [
+        "omega-3",
+        "vitamin-c",
+        "vitamin-a",
+        "zinc"
+      ],
+      "other_substances": [
+        "betaine-hcl",
+        "digestive-enzymes",
+        "slippery-elm",
+        "coltsfoot",
+        "cowslip",
+        "eucalyptus",
+        "irish-moss",
+        "pansy",
+        "pleurisy-root",
+        "hollyhock"
+      ],
+      "conditions": [
+        "bronchitis"
+      ],
+      "symptoms": [],
+      "claim_text": "Bronchitis (grippe, catarrh, chest colds) can be caused by viral or bacterial infection and is aggravated by food and inhalant allergies and by fatty-acid deficiency; if it persists past 5-10 days, consider cystic fibrosis in children and lung cancer in adults. Wallach's treatment is steam vaporizers at night, essential fatty acids at 5 grams three times daily, digestive enzymes and betaine hydrochloride at 75-200 mg each, vitamin C to bowel tolerance, vitamin A at 300,000 IU as beta carotene, zinc at 50 mg three times daily, and herbs including slippery elm (Ulmus fulva), coltsfoot (Tussilago farfara), cowslip (Primula veris), eucalyptus (Eucalyptus globulus) as a chest rub or in the vaporizer, Irish moss (Chondrus crispus), pansy (Viola tricolor), pleurisy root (Asclepias tuberosa), and hollyhock (Althaea rosea).",
+      "verbatim": "Treatment includes steam vaporizers at night,\nessential fatty acids at 5 gm t.i.d., digestive\nenzymes and betaine HC1 at 75-200 mg each,\nvitamin C to bowel tolerance, vitamin A at\n300,000 IU as beta carotene, zinc at 50 mg t.i.d.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 200739
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T17:38:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000173",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "vitamin-e"
+      ],
+      "other_substances": [
+        "pancreatic-enzymes",
+        "dmso",
+        "arnica",
+        "marigold",
+        "witch-hazel",
+        "sweet-clover"
+      ],
+      "conditions": [
+        "bruises"
+      ],
+      "symptoms": [],
+      "claim_text": "Bruises are blood released into surrounding tissue when a bump or blow ruptures blood vessels; capillary fragility can come from vitamin C or vitamin E deficiency. Wallach's treatment is vitamin C to bowel tolerance, vitamin E at 800-1200 IU per day, pancreatic enzymes at 200 mg three times daily between meals (so the enzymes reach the bloodstream and dissolve blood clots), topical DMSO and pain gel, and herbs including arnica (Arnica montana), marigold (Calendula officinalis), witch hazel (Hamamelis virginiana), and yellow sweet clover (Melilotus officinalis).",
+      "verbatim": "Treatment includes vitamin C to bowel toler-\nance, vitamin E at 800-1,200 IU per day, pan-\ncreatic enzymes at 200 mg t.i.d. between meals\n(so the enzymes get into your bloodstream\nand dissolve blood clots), DMSO topically,\npain gel and herbs including arnica (Arnica\nmontana), marigold (Calendula officinalis),\nwitch hazel (Hamaelis virginiana) and yellow\nsweet clover (Metilotus officinalis).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 201510
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T17:38:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000174",
+      "kind": "protocol",
+      "essentials": [
+        "calcium",
+        "magnesium",
+        "vitamin-b6"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "bruxism"
+      ],
+      "symptoms": [],
+      "claim_text": "Bruxism (teeth grinding) is the clenching or grinding of teeth, usually during sleep, often unnoticed until the dental enamel wears down. It can result from food allergies (milk and wheat are common offenders), hypoglycemia, or deficiencies of calcium, magnesium, and/or vitamin B-6. Wallach's treatment is avoidance or rotation of offending foods and elimination of sugar (especially before bed), calcium and magnesium at 2000 mg and 1000 mg per day, and vitamin B-6 at 50 mg three times daily.",
+      "verbatim": "Treatment includes avoidance or rotation of\noffending food and elimination of sugar from\nthe diet especially before bed. Calcium and\nmagnesium at 2,000 mg and 1 ,000 mg per day\nand B-6 at 50 mg t.i.d.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 202345
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T17:38:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000175",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "vitamin-e"
+      ],
+      "other_substances": [
+        "zinc-oxide",
+        "aloe-vera",
+        "vinegar"
+      ],
+      "conditions": [
+        "burns"
+      ],
+      "symptoms": [],
+      "claim_text": "Burns result from contact with radiant (sun) or thermal heat; sunburn is prevented with sunscreen, and the nose may need zinc oxide ointment. First-degree burns (red, painful surface) are treated with dilute white vinegar covering the surface twice daily and locally applied aloe vera or vitamin E oil. Second-degree burns (blistering into the second skin layer) are bathed with vitamin E oil or covered with zinc oxide, with vitamin C to bowel tolerance. Third- and fourth-degree burns (skin loss and charring) require professional care to prevent infection and fluid loss and may need plastic surgery.",
+      "verbatim": "1st degree - red, painful surfaceburns from\n\"sunburn,\" steam, etc. Dilute white vinegar 1 :\nwith water and cover burn surface twice daily,\naloe vera or vitamin E oil applied locally.\n2nd degree - some degree of damage into the\nsecond layer of skin with blisters. Bath the\nburn area with vitamin E oil or cover with zinc\noxide. Supplementation of vitamin C to bowel\ntolerance will be of value.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 202777
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T17:38:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000176",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b12",
+        "vitamin-c",
+        "vitamin-e",
+        "calcium",
+        "magnesium",
+        "flavonoids"
+      ],
+      "other_substances": [
+        "dmso",
+        "eucalyptus",
+        "rutin",
+        "gelatin",
+        "cartilage",
+        "alfalfa",
+        "colloidal-minerals"
+      ],
+      "conditions": [
+        "bursitis"
+      ],
+      "symptoms": [],
+      "claim_text": "Bursitis is inflammation of the bursal sacs that cushion tendons where they pass over joints (shoulder, 'housemaid's knee,' 'miner's elbow,' bunions), often flaring after overwork of an out-of-shape joint. Wallach's treatment is topical pain gels, DMSO, or eucalyptus liniments to increase circulation and remove the swelling that causes the pain; orally, vitamin B-12 at 1000 mcg/day, vitamin C to bowel tolerance, bioflavonoids 1200 mg/day, rutin 50 mg three times daily, vitamin E at 800-1200 IU/day, calcium and magnesium at 2000 mg and 1000 mg per day, gelatin, cartilage 5 grams three times daily, and alfalfa, plus plant-derived colloidal minerals.",
+      "verbatim": "Oral support includes B-12 at 1,000 mcg/day,\nvitamin C to bowel tolerance, bioflavonoids\n1,200 mg/day, rutin 50 mg t.i.d., vitamin E at\n800-1,200 IU/day, calcium and magnesium at\n2,000 mg and 1,000 mg per day respectively,\ngelatin, cartilage 5 gm t.i.d. and alfalfa. Be sure\nto include plant derived colloidal minerals in\nyour bursitis program.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 203931
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T17:38:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000177",
+      "kind": "protocol",
+      "essentials": [
+        "magnesium"
+      ],
+      "other_substances": [
+        "hydrogen-peroxide"
+      ],
+      "conditions": [
+        "dental_calculus"
+      ],
+      "symptoms": [],
+      "claim_text": "Dental calculus (tartar) is a buildup of calcium carbonate on the tooth at the gum line; the calcium comes from the patient's own bones being lost into the saliva, so it signals a need for more magnesium to hold calcium in the bones and correction of a poor dietary calcium/phosphorus ratio (reduce red meat and soft drinks). Wallach's treatment is flossing, using a dental pick to remove hardened tartar plates, a firm toothbrush, and hydrogen peroxide tooth gels and tartar-control toothpaste.",
+      "verbatim": "Treatment of tartar includes flossing, use a\n\"dental pick\" that you can purchase from a\npharmacy to pop off large \"plates\" of hard-\nened tartar from the back of and between\nteeth, use a firm toothbnish and hydrogen\nperoxide tooth gels and tartar control tooth-\npaste.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 204914
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T17:38:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
