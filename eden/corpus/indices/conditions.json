@@ -1200,9 +1200,111 @@
       "lets-play-doctor"
     ]
   },
+  "backache": {
+    "display_name": "Backache",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000152"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium"
+    ],
+    "other_substances_involved": [
+      "arnica",
+      "colloidal-minerals",
+      "comfrey"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "bad_breath": {
+    "display_name": "Bad Breath",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000153"
+      ]
+    },
+    "essentials_involved": [
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "hydrogen-peroxide",
+      "parsley"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "bedsores": {
+    "display_name": "Bedsores",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000154"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "aloe-vera",
+      "comfrey",
+      "dmso",
+      "eucalyptus",
+      "wild-carrot",
+      "zinc-oxide"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "bedwetting": {
+    "display_name": "Bedwetting",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000155"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "chromium",
+      "magnesium",
+      "vanadium"
+    ],
+    "other_substances_involved": [
+      "cranberry"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "bee_stings": {
+    "display_name": "Bee Stings",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000156"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "caladryl",
+      "dmso",
+      "epinephrine"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "bells_palsy": {
     "display_name": "Bells Palsy",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "definitions": [
         "WAL-CLM-RARE-000105"
@@ -1211,23 +1313,29 @@
         "WAL-CLM-DDDL-000009"
       ],
       "protocols": [
-        "WAL-CLM-DDDL-000086"
+        "WAL-CLM-DDDL-000086",
+        "WAL-CLM-LETS-000158"
       ]
     },
     "essentials_involved": [
       "calcium",
       "magnesium",
+      "omega-3",
       "vitamin-b12"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "american-ginseng",
+      "colloidal-minerals"
+    ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
   "benign_prostatic_hyperplasia": {
     "display_name": "Benign Prostatic Hyperplasia",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000084"
@@ -1236,17 +1344,31 @@
         "WAL-CLM-RARE-000264"
       ],
       "protocols": [
-        "WAL-CLM-DDDL-000085"
+        "WAL-CLM-DDDL-000085",
+        "WAL-CLM-LETS-000157"
       ]
     },
     "essentials_involved": [
+      "omega-3",
       "selenium",
       "vitamin-a",
+      "vitamin-c",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "alanine",
+      "alfalfa",
+      "chlorophyll",
+      "cranberry",
+      "glutamic-acid",
+      "glycine",
+      "hydrogen-peroxide",
+      "pumpkin-seeds",
+      "saw-palmetto"
+    ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1270,7 +1392,7 @@
   },
   "bipolar_disorder": {
     "display_name": "Bipolar Disorder",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000161"
@@ -1284,13 +1406,26 @@
       ],
       "diagnostics": [
         "WAL-CLM-LETS-000081"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000159"
       ]
     },
     "essentials_involved": [
+      "choline",
       "chromium",
-      "lithium"
+      "lithium",
+      "omega-3",
+      "phenylalanine",
+      "vanadium",
+      "vitamin-b1",
+      "vitamin-b3",
+      "vitamin-b5",
+      "vitamin-b6"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "colloidal-minerals"
+    ],
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
@@ -1298,7 +1433,7 @@
   },
   "birth_defects": {
     "display_name": "Birth Defects",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000015",
@@ -1317,6 +1452,9 @@
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000160"
       ]
     },
     "essentials_involved": [
@@ -1329,7 +1467,10 @@
       "vitamin-b9",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "colloidal-minerals",
+      "prenatal-vitamins"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",

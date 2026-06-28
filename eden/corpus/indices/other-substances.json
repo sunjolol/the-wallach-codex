@@ -16,16 +16,33 @@
       "lets-play-doctor"
     ]
   },
-  "alfalfa": {
-    "display_name": "Alfalfa",
+  "alanine": {
+    "display_name": "Alanine",
     "claim_count": 1,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000146"
+        "WAL-CLM-LETS-000157"
+      ]
+    },
+    "conditions_treated": [
+      "benign_prostatic_hyperplasia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "alfalfa": {
+    "display_name": "Alfalfa",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000146",
+        "WAL-CLM-LETS-000157"
       ]
     },
     "conditions_treated": [
       "arthritis",
+      "benign_prostatic_hyperplasia",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -47,6 +64,36 @@
       "lets-play-doctor"
     ]
   },
+  "aloe-vera": {
+    "display_name": "Aloe Vera",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000154"
+      ]
+    },
+    "conditions_treated": [
+      "bedsores"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "american-ginseng": {
+    "display_name": "American Ginseng",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000158"
+      ]
+    },
+    "conditions_treated": [
+      "bells_palsy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "antimony": {
     "display_name": "Antimony",
     "claim_count": 1,
@@ -60,6 +107,21 @@
     ],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "arnica": {
+    "display_name": "Arnica",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000152"
+      ]
+    },
+    "conditions_treated": [
+      "backache"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "artichoke": {
@@ -199,6 +261,21 @@
       "rare-earths"
     ]
   },
+  "caladryl": {
+    "display_name": "Caladryl",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000156"
+      ]
+    },
+    "conditions_treated": [
+      "bee_stings"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "calamus": {
     "display_name": "Calamus",
     "claim_count": 1,
@@ -279,6 +356,21 @@
       "lets-play-doctor"
     ]
   },
+  "chlorophyll": {
+    "display_name": "Chlorophyll",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000157"
+      ]
+    },
+    "conditions_treated": [
+      "benign_prostatic_hyperplasia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "chondroitin": {
     "display_name": "Chondroitin",
     "claim_count": 1,
@@ -297,14 +389,18 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 5,
+    "claim_count": 9,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000145",
         "WAL-CLM-LETS-000146",
-        "WAL-CLM-LETS-000147"
+        "WAL-CLM-LETS-000147",
+        "WAL-CLM-LETS-000152",
+        "WAL-CLM-LETS-000158",
+        "WAL-CLM-LETS-000159",
+        "WAL-CLM-LETS-000160"
       ]
     },
     "conditions_treated": [
@@ -314,6 +410,10 @@
       "arthritis",
       "asthma",
       "atopic_asthma",
+      "backache",
+      "bells_palsy",
+      "bipolar_disorder",
+      "birth_defects",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -322,14 +422,35 @@
   },
   "comfrey": {
     "display_name": "Comfrey",
-    "claim_count": 1,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000118"
+        "WAL-CLM-LETS-000118",
+        "WAL-CLM-LETS-000152",
+        "WAL-CLM-LETS-000154"
       ]
     },
     "conditions_treated": [
-      "abrasions"
+      "abrasions",
+      "backache",
+      "bedsores"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "cranberry": {
+    "display_name": "Cranberry",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000155",
+        "WAL-CLM-LETS-000157"
+      ]
+    },
+    "conditions_treated": [
+      "bedwetting",
+      "benign_prostatic_hyperplasia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -367,14 +488,18 @@
   },
   "dmso": {
     "display_name": "Dmso",
-    "claim_count": 1,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000146"
+        "WAL-CLM-LETS-000146",
+        "WAL-CLM-LETS-000154",
+        "WAL-CLM-LETS-000156"
       ]
     },
     "conditions_treated": [
       "arthritis",
+      "bedsores",
+      "bee_stings",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -422,14 +547,31 @@
   },
   "epinephrine": {
     "display_name": "Epinephrine",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000135"
+        "WAL-CLM-LETS-000135",
+        "WAL-CLM-LETS-000156"
       ]
     },
     "conditions_treated": [
-      "anaphylaxis"
+      "anaphylaxis",
+      "bee_stings"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "eucalyptus": {
+    "display_name": "Eucalyptus",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000154"
+      ]
+    },
+    "conditions_treated": [
+      "bedsores"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -531,6 +673,36 @@
       "lets-play-doctor"
     ]
   },
+  "glutamic-acid": {
+    "display_name": "Glutamic Acid",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000157"
+      ]
+    },
+    "conditions_treated": [
+      "benign_prostatic_hyperplasia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "glycine": {
+    "display_name": "Glycine",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000157"
+      ]
+    },
+    "conditions_treated": [
+      "benign_prostatic_hyperplasia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "goldenseal": {
     "display_name": "Goldenseal",
     "claim_count": 1,
@@ -609,7 +781,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 6,
+    "claim_count": 8,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
@@ -617,7 +789,9 @@
         "WAL-CLM-LETS-000136",
         "WAL-CLM-LETS-000139",
         "WAL-CLM-LETS-000145",
-        "WAL-CLM-LETS-000146"
+        "WAL-CLM-LETS-000146",
+        "WAL-CLM-LETS-000153",
+        "WAL-CLM-LETS-000157"
       ]
     },
     "conditions_treated": [
@@ -627,6 +801,8 @@
       "angina",
       "arteriosclerosis",
       "arthritis",
+      "bad_breath",
+      "benign_prostatic_hyperplasia",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -965,6 +1141,21 @@
       "lets-play-doctor"
     ]
   },
+  "parsley": {
+    "display_name": "Parsley",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000153"
+      ]
+    },
+    "conditions_treated": [
+      "bad_breath"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "phosphatidylcholine": {
     "display_name": "Phosphatidylcholine",
     "claim_count": 1,
@@ -1023,6 +1214,36 @@
     "conditions_treated": [
       "arthritis",
       "rheumatoid_arthritis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "prenatal-vitamins": {
+    "display_name": "Prenatal Vitamins",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000160"
+      ]
+    },
+    "conditions_treated": [
+      "birth_defects"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "pumpkin-seeds": {
+    "display_name": "Pumpkin Seeds",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000157"
+      ]
+    },
+    "conditions_treated": [
+      "benign_prostatic_hyperplasia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1128,6 +1349,21 @@
     },
     "conditions_treated": [
       "abscess"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "saw-palmetto": {
+    "display_name": "Saw Palmetto",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000157"
+      ]
+    },
+    "conditions_treated": [
+      "benign_prostatic_hyperplasia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1276,6 +1512,21 @@
       "lets-play-doctor"
     ]
   },
+  "wild-carrot": {
+    "display_name": "Wild Carrot",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000154"
+      ]
+    },
+    "conditions_treated": [
+      "bedsores"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "xenon": {
     "display_name": "Xenon",
     "claim_count": 1,
@@ -1287,6 +1538,21 @@
     "conditions_treated": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "zinc-oxide": {
+    "display_name": "Zinc Oxide",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000154"
+      ]
+    },
+    "conditions_treated": [
+      "bedsores"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   }
 }

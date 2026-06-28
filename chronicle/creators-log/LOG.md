@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_147 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_148 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 12:12 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b20 BACKACHE→BIRTH DEFECTS: 9 protocol claims (LETS-152..160). Feared p89-90 column scramble was a FALSE ALARM — book prints BPH before BELL'S, .txt faithful. 5 render-verified meg→mcg + 2 orthographic .txt fixes. seal kv130, claims 540, board 31/31, probe green.
+  ↳ RENDER-FIRST p88-90 (fitz=printed+11) + 6 zoom crops confirmed left-col-then-right-col reading order on both pages; no drop, no scramble (the .txt order BENIGN PROSTATIC HYPERPLASIA→BELL'S faithfully mirrors the book's own out-of-alpha printing). BALDNESS bare 'see ALOPECIA' xref skipped (ALOPECIA protocol already carries colloidal tin). BAD BREATH = structured single dose (zinc 50 mg tid). Dose-safety meg→mcg fixes (render-verified, same length): BEDWETTING 50-150, BPH selenium 250 (anchored away from a later 250 meg), BELL'S B-12 1000+20,000, BIPOLAR 500. Orthographic: BD*TH DEFECTS→BIRTH DEFECTS, wild canot→carrot. Faithful-in-verbatim/clean-in-claim_text: Sarenoa→Serenoa, B-l→B-1 (final sweep). B-12 kept mcg per AMBLYOPIA precedent. Transactional fix script (assert-all-then-one-rewrite); resnap 0 reloc/0 broken; corpus_verify PASS; build 1098 KB; invariants 31/31 0-new; knowledge probe PASS 234 conditions.
 
 ## 2026-06-28 11:50 UTC-05:00 · note · chronicle/session-close
 SESSION 14 pause: Ch10 Materia Medica mining underway (batches 1-4, ABRASIONS->AUTISM, 34 protocol claims, kv129/531 claims/229 conditions, board 31/31). Handoff rolled to SESSION 14. NEXT=BACKACHE/p89 (watch p89-90 scramble; lines shifted -68). Recommending genesis reboot.

@@ -1,50 +1,95 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_7 claim(s) drafted 2026-06-28T16:44:40+00:00. Review then run corpus_seal.py to promote._
+_9 claim(s) drafted 2026-06-28T17:08:57+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: protocol×7
+Kinds: protocol×9
 
-### WAL-CLM-LETS-000145 · protocol
-- **essentials:** vitamin-c, omega-3 · **conditions:** arteriosclerosis · **symptoms:** —
-- **claim:** For arteriosclerosis (hardening of the arteries from fibrosis of the smooth muscle in elastic-artery walls), Wallach highlights that vitamin D is made from cholesterol and that vitamin D toxicity is angiotoxic -- its target tissue is the elastic arteries, producing the fibrosis and calcification that drive the disease. Symptoms include angina, headaches, memory loss, breathlessness, and leg cramps (claudication) early, with stroke and heart attack late. Treatment: intravenous chelation with EDTA and hydrogen peroxide, or oral chelation, plus vitamin/mineral supplements including plant-derived colloidal minerals; vitamin C to bowel tolerance; exercise; high-fiber, low-animal-fat diets tending toward vegetarian; essential fatty acids as salmon oil and flaxseed oil 5 grams three times daily; and herbs such as artichoke (Cynara scolymus), bear's garlic (Allium ursinum), European mistletoe (Viscum album), and garlic (Allium sativum).
-- **verbatim** (offset 178519): “Treatment includes IV chelation with EDTA
-and H202, oral chelation, oral supplementa-
-tion with vitamin/mineral supplements that
-include plant derived colloidal minerals. In
-addition to the baseline nutritional supple-
-ments, vitamin C to bowel tolerance; exercise
-(to increase the caliber of your arteries); high
-fiber diets that tend towards vegetarian diets
-low in animal fat; essential fatty acids includ-
-ing salmon oil and flaxseed oil 5 gm t.i.d.”
+### WAL-CLM-LETS-000152 · protocol
+- **essentials:** calcium, magnesium · **conditions:** backache · **symptoms:** —
+- **claim:** Backache is usually a muscle strain or a vertebral subluxation (misalignment of vertebrae) from a fall, accident, or improper lifting; a severe case of constipation can also cause one. Wallach reports that plant-derived colloidal minerals help prevent and reverse back problems without surgery. Prevention: proper lifting technique (straight back, bend the knees), strengthening exercises, a high-fiber diet, eight glasses of water daily, and good nutrition including calcium 2000 mg and magnesium 800 mg. Treatment includes massage, chiropractic, hydrotherapy, and poultices of comfrey (Symphytum officinale) and arnica (Arnica montana).
+- **verbatim** (offset 185855): “Treatment includes massage, chiropractic,
+hydrotherapy and poultices of herbs includ-
+ing comfrey (Symphytum officinale) and ar-
+nica (Arnica montana).”
 
-### WAL-CLM-LETS-000146 · protocol
-- **essentials:** calcium, magnesium, vitamin-c, vitamin-b6, vitamin-b3, vitamin-e, copper, selenium, zinc · **conditions:** arthritis, rheumatoid_arthritis · **symptoms:** —
-- **claim:** Wallach calls arthritis a complex of nutritional deficiencies (with rheumatoid arthritis driven by chronic Mycoplasma infection), not an unknown disease. He stresses a dietary calcium/phosphorus ratio of 2:1 (hard to reach unsupplemented; meat-heavy diets worsen calcium loss). Treatment: calcium 2000 mg/day (more if eating meat 2-3x/day); magnesium 800-1000 mg/day; cartilage or chondroitin sulfate 1000 mg three times daily; for rheumatoid arthritis add tetracycline 250 mg four times daily or hydrogen peroxide for the Mycoplasma; intravenous chelation with EDTA and hydrogen peroxide; vitamin C to bowel tolerance; vitamin B-6 100 mg twice daily; vitamin B-3 450 mg twice daily as time-release capsules; vitamin E 1000 IU/day; copper 2 mg/day (a copper bracelet may help); selenium 300 mcg/day; zinc 50 mg three times daily; and plant-derived colloidal minerals. Rotation elimination diets, autoimmune urine therapy, topical DMSO/pain gels, and herbs (licorice, poison ivy, alfalfa) are useful adjuncts.
-- **verbatim** (offset 180652): “Treatment of arthritis should include calcium at 2000 mg/day and more if you eat meat two or three times per day; magnesium at 800-1000 mg/day; cartilage or chondroitin sulfate at 1000 mg t.i.d.; for rheumatoid arthritis, add tetracycline at 250 mg q.i.d. or H2O2 to deal with the Mycoplasma. IV chelation with EDTA and H2O2 is very helpful! Vitamin C to bowel tolerance, B-6 100 mg b.i.d.; B-3 450 mg b.i.d. as time-release capsules. Vitamin E at 1000 IU/day.”
+### WAL-CLM-LETS-000153 · protocol
+- **essentials:** zinc · **conditions:** bad_breath · **symptoms:** —
+- **dose:** {'amount': 50, 'unit': 'mg', 'period': 'three times daily', 'form': None, 'duration': None, 'for_condition': 'bad_breath'}
+- **claim:** Bad breath can be handled with basic care: a good anti-tartar toothpaste, a hydrogen peroxide tooth gel, flossing on awakening and after meals, a hydrogen peroxide mouthwash, and parsley after each meal. Wallach also recommends zinc at 50 mg three times daily.
+- **verbatim** (offset 186052): “Use a good anti-tartar toothpaste, hydro-
+gen peroxide tooth gel, floss upon awakening
+and after meals, use a hydrogen peroxide
+mouthwash; parsley may be used after each
+meal; zinc at 50 mg t.i.d.”
 
-### WAL-CLM-LETS-000147 · protocol
-- **essentials:** omega-3, manganese, magnesium · **conditions:** asthma, atopic_asthma · **symptoms:** —
-- **claim:** Wallach describes asthma as a respiratory disease of sudden bronchial closure by spasmodic muscles; atopic asthma also features eczema. He frames it as a malabsorption disease with essential fatty acid, manganese, and magnesium deficiencies. Treatment: betaine hydrochloride, pancreatic enzymes, and ox bile at 75-200 mg each three times daily before meals; autoimmune urine therapy; essential fatty acids 5 grams three times daily; and colloidal mineral suspensions containing magnesium and manganese. Useful herbs (with caution if plant-allergic): honeysuckle (Lonicera caprifolium), jaborandi (Pilocarpus jaborandi), leeks (Allium porrum), garlic (Allium sativum), and evening primrose oil (Oenothera biennis).
-- **verbatim** (offset 182070): “Treatment should include betaine HCl, pancreatic enzymes and ox bile at 75-200 mg each t.i.d. before meals. Autoimmune urine therapy; essential fatty acids at 5 gm t.i.d. and colloidal mineral suspensions that contain magnesium and manganese.”
+### WAL-CLM-LETS-000154 · protocol
+- **essentials:** vitamin-e · **conditions:** bedsores · **symptoms:** —
+- **claim:** Bedsores result from the pressure of body weight in areas of poor circulation, usually over bony prominences. Massage, sponge baths, and ultraviolet light are good preventive measures. Topical treatments include zinc oxide ointment, aloe vera ointment, vitamin E oil, and DMSO (dimethyl sulfoxide); eucalyptus (Eucalyptus globulus), wild carrot (Daucus carota), and comfrey (Symphytum officinale) can be applied topically and in poultices to encourage granulation tissue formation and healing.
+- **verbatim** (offset 186522): “Topical applications can include
+zinc oxide ointment, aloe vera ointment, vita-
+min E oil and DMSO; eucalyptus (Eucalyptus
+globulus), wild carrot, (Daucus carota)and
+comfrey (Symphytum officinale) may all be
+used topically and/or in poultices to encour-
+age granulation tissue formation and healing.”
 
-### WAL-CLM-LETS-000148 · protocol
-- **essentials:** omega-3, vitamin-e, chromium · **conditions:** atopic_dermatitis, eczema · **symptoms:** —
-- **claim:** Wallach places atopic dermatitis (eczema) within the 'atopic' syndrome (with asthma, hair loss, and lowered immunity) -- a malabsorption of essential fatty acids, often with chromium malabsorption causing PMS-like symptoms, hypoglycemia, or diabetes, usually from a celiac-type change in the small-intestine lining rather than dietary lack. Treatment: a rotation elimination diet (a pulse test usually reveals cow's milk, wheat, or soy as culprits); autoimmune therapy; essential fatty acids as flaxseed oil 1 tablespoon twice daily; and vitamin E 1000 IU/day. If malabsorption is severe, the fatty acids may be given as intravenous interlipids.
-- **verbatim** (offset 183233): “Treatment should include a rotation elimination diet (usually a pulse test will reveal cow's milk, wheat or soy products to be the culprits); autoimmune therapy is very useful; supplementation should include essential fatty acids as flaxseed oil at 1 tbsp. b.i.d., vitamin E at 1000 IU/day. If malabsorption is a major problem, the fatty acids may be taken as interlipids IV.”
+### WAL-CLM-LETS-000155 · protocol
+- **essentials:** chromium, vanadium, calcium, magnesium · **conditions:** bedwetting · **symptoms:** —
+- **claim:** Bedwetting is a complex syndrome of children and teenagers that can stem from food sensitivities or hypoglycemia (low blood sugar); pulse tests and elimination diet diaries help identify triggers. Wallach's treatment is chromium and vanadium at 50-150 mcg/day, cranberry juice 4 oz twice daily, and calcium/magnesium (2000 mg/800 mg), along with avoidance of sugar, simple sugars (honey, sweet juices, fruit), and allergenic foods (milk and sugar being the most common).
+- **verbatim** (offset 187131): “Treatment includes chromium and vanadium
+at 50-150 mcg/day, cranberry juice 4 oz. b.i.d.
+and calcium/magnesium (2000 mg/800 mg).”
 
-### WAL-CLM-LETS-000149 · protocol
-- **essentials:** zinc, vitamin-a, vitamin-b6 · **conditions:** athletes_foot · **symptoms:** —
-- **claim:** Athlete's foot is actually a form of ringworm caused by the fungus Tinea pedis. Wallach's treatment: hydrotherapy in baths of 3% boric acid alternating with vinegar baths; zinc 50 mg three times daily; vitamin A 300,000 units per day as beta carotene; and vitamin B-6 100 mg twice daily. Commercial antifungal creams, sprays, and powders (he prefers Desenex) are also available.
-- **verbatim** (offset 183692): “Treatment includes hydrotherapy in baths of 3% boric acid alternating with vinegar baths. Supplements include zinc at 50 mg t.i.d., 300,000 units of vitamin A/day as beta carotene and B-6 at 100 mg b.i.d.”
+### WAL-CLM-LETS-000156 · protocol
+- **essentials:** — · **conditions:** bee_stings · **symptoms:** —
+- **claim:** A bee sting injects bee venom and is painful; pain gels, DMSO (dimethyl sulfoxide), or Caladryl lotion relieve the pain effectively. Some people become allergic to bee venom, in which case a sting can trigger a life-threatening anaphylactic shock. For individuals deemed sensitive, treatment is limited to adrenaline (epinephrine) from a bee-sting kit, and prevention to avoiding stings.
+- **verbatim** (offset 187774): “Treatment for individuals deemed sensitive to
+bee stings is limited to the use of adrenaline
+(epinephrine) from a "bee sting"kit.”
 
-### WAL-CLM-LETS-000150 · protocol
-- **essentials:** omega-3, vitamin-e, vitamin-a, vitamin-c, zinc, selenium · **conditions:** autoimmune_disorders · **symptoms:** —
-- **claim:** Wallach holds that autoimmune disorders of all kinds (from kidney disease to rheumatoid arthritis) are helped by nutritional support, with the autoimmune aspect a secondary event rather than the cause. Program: essential fatty acids taken alternately as salmon oil and flaxseed oil 5 grams three times daily; vitamin E 1000 IU/day; vitamin A 300,000 IU as beta carotene; vitamin C to bowel tolerance; zinc 50 mg three times daily; selenium 300-1000 mcg/day; and injectable thymus 2-5 cc/day.
-- **verbatim** (offset 184248): “Essential fatty acids are of great value and may be taken alternately as salmon oil and flaxseed oil at the rate of 5 grams t.i.d.; vitamin E at 1000 IU/day; 300,000 IU of vitamin A as beta carotene; vitamin C to bowel tolerance; zinc at 50 mg t.i.d.; and selenium at 300-1000 mcg/day. Injectable thymus at 2-5 cc/day is very useful.”
+### WAL-CLM-LETS-000157 · protocol
+- **essentials:** zinc, omega-3, vitamin-a, vitamin-c, selenium · **conditions:** benign_prostatic_hyperplasia · **symptoms:** —
+- **claim:** Benign prostatic hyperplasia (enlargement of the prostate gland) is the most common infirmity of aging in men; the enlarging gland squeezes the bladder neck, producing urinary frequency and urgency. Wallach's protocol is zinc at 50 mg three times daily, essential fatty acids as flaxseed oil 1 tablespoon three times daily, a high-fiber diet including pumpkin seeds and alfalfa, vitamin A as beta carotene 300,000 IU/day, vitamin C to bowel tolerance, chlorophyll (best from alfalfa), the amino acids glycine, alanine, and glutamic acid at 5 grams each daily for 90 days, hydrogen peroxide (20 drops per oz of aloe juice) 1 oz twice daily, cranberry juice 2 pints/day, saw palmetto (Serenoa serrulata), and selenium 250 mcg three times daily.
+- **verbatim** (offset 188892): “Benign prostatic hypertrophy is treated with
+zinc at 50 mg t.i.d., essential fatty acids as
+flaxseed oil at 1 tbsp. t.i.d., high fiber diets
+including pumpkin seeds and alfalfa, 300,000
+IU vitamin A as beta carotene per day, vitamin
+C to bowel tolerance, chlorophyll (best source
+is alfalfa), amino acids (glycine, alanine and
+glutamic acid) at five grams each daily for 90
+days”
 
-### WAL-CLM-LETS-000151 · protocol
-- **essentials:** calcium, magnesium, vitamin-b6, chromium · **conditions:** autism · **symptoms:** —
-- **claim:** Wallach characterizes autism by resistance to change, repetitive acts, and learning/speech disorders, markedly aggravated by concurrent food allergies and hypoglycemia (each must be addressed separately). Treatment: avoid sugar and food allergens; calcium and magnesium at double the baseline supplement rate; vitamin B-6 at five times the RDA for weight and age; chromium for the hypoglycemia; and autoimmune urine therapy.
-- **verbatim** (offset 184904): “Treatment should include avoidance of sugar and food allergens; supplementation should include calcium and magnesium at double the supplement rate; B-6 at five times the RDA for weight and age; and chromium for the hypoglycemia; autoimmune urine therapy can be very useful.”
+### WAL-CLM-LETS-000158 · protocol
+- **essentials:** vitamin-b12, calcium, magnesium, omega-3 · **conditions:** bells_palsy · **symptoms:** —
+- **claim:** Bell's palsy is the sudden drooping of one side of the face from inflammation or compression of the facial nerve (the 7th cranial nerve); it is often mistaken for a stroke because of its sudden onset, with numbness and partial or total loss of muscle control on the affected side. Treated properly, there can be up to an 80% chance of significant recovery. Wallach's treatment is vitamin B-12 at 1000 mcg/day for a total of 20,000 mcg, calcium/magnesium at 2000 mg and 800 mg per day, essential fatty acids at 5 grams three times daily, and American ginseng (Panax quinquefolius); colloidal minerals are also useful.
+- **verbatim** (offset 189905): “Treatment is B-12 at 1000 mcg/day for a total
+of 20,000 mcg; calcium/ magnesium at 2,000
+mg and 800 mg per day; essential fatty acids at
+5 gm t.i.d. and American ginseng (Panax
+quinquefolius). Colloidal minerals are useful.”
+
+### WAL-CLM-LETS-000159 · protocol
+- **essentials:** chromium, vanadium, omega-3, vitamin-b3, vitamin-b1, vitamin-b5, vitamin-b6, choline, phenylalanine, lithium · **conditions:** bipolar_disorder · **symptoms:** —
+- **claim:** Wallach regards bipolar disorder (mania / manic depression) as largely a descriptive label, estimating that as many as 90% of non-drug-dependent patients are treatable at home; food allergies, environmental sensitivities, hypoglycemia, and hyperglycemia are the major factors, identified with a pulse test, diet diary, rotation elimination diet, and a six-hour glucose tolerance test (recording emotions and behavior throughout, since the numbers alone are not revealing). Treatment includes chromium and vanadium at 500 mcg four times daily; autoimmune urine therapy for five to eight treatments; avoidance of offending foods, sugar, caffeine, and environmental allergens; essential fatty acids at 5 grams three times daily; time-release niacin (vitamin B-3) at 450 mg four times daily; vitamins B-1, B-5, and B-6 each at 100 mg twice daily; DL-phenylalanine at 5 grams twice daily; choline at 250 mg twice daily; and plant-derived colloidal minerals that contain lithium.
+- **verbatim** (offset 191451): “Treatment should include chromium and va-
+nadium at 500 mcg q.i.d.; autoimmune urine
+therapy for five to eight treatments; rotation or
+avoidance of offendingfoods; avoidance of
+sugar, caffeine, environmental allergens; es-
+sential fatty acids at 5 gm t.i.d. ; niacin (B-3) 450
+mg. q.i.d. in time release tablets; B-l, B-5, B-6
+each at 100 mg b.i.d.; DL-phenylalanine at 5
+gms b.i.d. and choline at 250 mg b.i.d. Plant
+derived colloidal minerals that contain lithium
+may be useful.”
+
+### WAL-CLM-LETS-000160 · protocol
+- **essentials:** — · **conditions:** birth_defects · **symptoms:** —
+- **claim:** Wallach calls birth defects a national crime, holding that more than 98% result from preconception and early-pregnancy malnutrition of the embryo -- by the time a doctor confirms the pregnancy, the organs and tissues have already formed. Prevention requires more than prenatal vitamins started in the second month: conscious attention to preconception vitamins and colloidal minerals and avoidance of alcohol, especially for teenage and middle-aged mothers-to-be. Do a home pregnancy test as soon as pregnancy is suspected and, if not already taking supplements, start immediately.
+- **verbatim** (offset 192977): “Conscious atten-
+tion to preconception vitamins and colloidal
+minerals and avoidance of alcohol is espe-
+cially important to teenage and middle age
+mothers-to-be”
 
