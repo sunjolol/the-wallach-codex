@@ -989,6 +989,33 @@
       "lets-play-doctor"
     ]
   },
+  "edema": {
+    "display_name": "Edema",
+    "claim_count": 2,
+    "likely_deficiencies": [
+      {
+        "essential": "selenium",
+        "claim_id": "WAL-CLM-LETS-000229",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "selenium",
+        "claim_id": "WAL-CLM-LETS-000234",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-b1",
+        "claim_id": "WAL-CLM-LETS-000229",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "electric_shock_sensations": {
     "display_name": "Electric Shock Sensations",
     "claim_count": 1,
@@ -3491,6 +3518,39 @@
       {
         "essential": "potassium",
         "claim_id": "WAL-CLM-LETS-000025",
+        "confidence": "high",
+        "appears_in_books": 1
+      }
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "seizures": {
+    "display_name": "Seizures",
+    "claim_count": 1,
+    "likely_deficiencies": [
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000233",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "chromium",
+        "claim_id": "WAL-CLM-LETS-000233",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "magnesium",
+        "claim_id": "WAL-CLM-LETS-000233",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-b6",
+        "claim_id": "WAL-CLM-LETS-000233",
         "confidence": "high",
         "appears_in_books": 1
       }

@@ -288,7 +288,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 51,
+    "claim_count": 52,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -344,6 +344,7 @@
         "WAL-CLM-LETS-000203",
         "WAL-CLM-LETS-000219",
         "WAL-CLM-LETS-000223",
+        "WAL-CLM-LETS-000233",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -479,11 +480,13 @@
       "cardiovascular_disease",
       "cataracts",
       "celiac_disease",
+      "convulsions",
       "deafness",
       "dental_calculus",
       "depression",
       "diabetes",
       "elevated_cholesterol",
+      "epilepsy",
       "hyperactivity",
       "hypertension",
       "hypotension",
@@ -882,7 +885,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 59,
+    "claim_count": 60,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -950,6 +953,7 @@
         "WAL-CLM-LETS-000176",
         "WAL-CLM-LETS-000219",
         "WAL-CLM-LETS-000223",
+        "WAL-CLM-LETS-000233",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1047,12 +1051,14 @@
       "cataracts",
       "celiac_disease",
       "colorectal_cancer",
+      "convulsions",
       "deafness",
       "dementia",
       "depression",
       "diabetes",
       "eczema",
       "elevated_cholesterol",
+      "epilepsy",
       "hyperactivity",
       "hypertension",
       "insomnia",
@@ -1197,7 +1203,7 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 41,
+    "claim_count": 42,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -1251,6 +1257,7 @@
         "WAL-CLM-LETS-000219",
         "WAL-CLM-LETS-000221",
         "WAL-CLM-LETS-000222",
+        "WAL-CLM-LETS-000233",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1306,6 +1313,7 @@
       "cardiomyopathy",
       "cataracts",
       "chronic_fatigue_syndrome",
+      "convulsions",
       "coronary_artery_disease",
       "criminal_behavior",
       "deafness",
@@ -1316,6 +1324,7 @@
       "disagreeable_attitude",
       "eczema",
       "elevated_cholesterol",
+      "epilepsy",
       "explosive_outbursts",
       "high_cholesterol",
       "hyperactivity",
@@ -2020,7 +2029,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 47,
+    "claim_count": 49,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2074,6 +2083,8 @@
         "WAL-CLM-LETS-000219",
         "WAL-CLM-LETS-000220",
         "WAL-CLM-LETS-000222",
+        "WAL-CLM-LETS-000229",
+        "WAL-CLM-LETS-000234",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2133,6 +2144,7 @@
       "cataracts",
       "cerebrovascular_disease",
       "chorea",
+      "congestive_heart_failure",
       "cor_pulmonale",
       "cystic_fibrosis",
       "deafness",
@@ -3525,7 +3537,7 @@
     "display_name": "Thiamine",
     "canon_slug": "vitamin-b1",
     "category": "vitamin",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000043",
@@ -3541,6 +3553,7 @@
         "WAL-CLM-LETS-000159",
         "WAL-CLM-LETS-000203",
         "WAL-CLM-LETS-000207",
+        "WAL-CLM-LETS-000229",
         "WAL-CLM-RARE-000282"
       ]
     },
@@ -4126,7 +4139,7 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 23,
+    "claim_count": 24,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000027",
@@ -4154,6 +4167,7 @@
         "WAL-CLM-LETS-000207",
         "WAL-CLM-LETS-000222",
         "WAL-CLM-LETS-000226",
+        "WAL-CLM-LETS-000233",
         "WAL-CLM-RARE-000286"
       ],
       "toxicity_sign": [
@@ -4266,8 +4280,10 @@
       "cerebral_palsy",
       "colic",
       "conjunctivitis",
+      "convulsions",
       "cradle_cap",
       "depression",
+      "epilepsy",
       "hyperirritability",
       "hypertension",
       "intermittent_claudication",

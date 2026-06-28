@@ -2856,23 +2856,47 @@
       "rare-earths"
     ]
   },
+  "congested_lungs": {
+    "display_name": "Congested Lungs",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000228"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "pennyroyal"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "congestive_heart_failure": {
     "display_name": "Congestive Heart Failure",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000043",
         "WAL-CLM-RARE-000233"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000229"
       ],
       "toxicity_signs": [
         "WAL-CLM-LETS-000033"
       ]
     },
     "essentials_involved": [
+      "selenium",
       "sodium",
       "vitamin-b1"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "foxglove",
+      "hawthorn",
+      "lily-of-the-valley"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",
@@ -2881,37 +2905,98 @@
   },
   "conjunctivitis": {
     "display_name": "Conjunctivitis",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000027",
         "WAL-CLM-RARE-000229"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000230"
       ]
     },
     "essentials_involved": [
       "vitamin-a",
       "vitamin-b6"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "boric-acid",
+      "hydrogen-peroxide"
+    ],
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
     ]
   },
-  "cor_pulmonale": {
-    "display_name": "Cor Pulmonale",
+  "constipation": {
+    "display_name": "Constipation",
     "claim_count": 1,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-DDDL-000054"
+        "WAL-CLM-LETS-000231"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "alder-buckthorn",
+      "american-mandrake",
+      "blackroot",
+      "cascara-sagrada",
+      "castor-oil",
+      "dietary-fiber",
+      "flaxseed",
+      "olive-oil",
+      "psyllium",
+      "senna",
+      "urine-therapy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "convulsions": {
+    "display_name": "Convulsions",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000233"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "chromium",
+      "magnesium",
+      "vitamin-b6"
+    ],
+    "other_substances_involved": [
+      "catnip",
+      "peony",
+      "pulse-test",
+      "skullcap",
+      "urine-therapy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "cor_pulmonale": {
+    "display_name": "Cor Pulmonale",
+    "claim_count": 2,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-DDDL-000054",
+        "WAL-CLM-LETS-000234"
       ]
     },
     "essentials_involved": [
       "selenium"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "hydrogen-peroxide"
+    ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "lets-play-doctor"
     ]
   },
   "corneal_ulcers": {
@@ -2951,6 +3036,30 @@
     "books_cited": [
       "dddl-3e-2011",
       "rare-earths"
+    ]
+  },
+  "cough": {
+    "display_name": "Cough",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000235"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "anise",
+      "comfrey",
+      "english-plantain",
+      "licorice",
+      "mullein",
+      "onion",
+      "sweet-chestnut",
+      "thyme",
+      "urine-therapy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "cradle_cap": {
@@ -3519,6 +3628,31 @@
     ],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "epilepsy": {
+    "display_name": "Epilepsy",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000233"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "chromium",
+      "magnesium",
+      "vitamin-b6"
+    ],
+    "other_substances_involved": [
+      "catnip",
+      "peony",
+      "pulse-test",
+      "skullcap",
+      "urine-therapy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "explosive_outbursts": {

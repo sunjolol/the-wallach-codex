@@ -9172,6 +9172,318 @@
       "extracted_at": "2026-06-28T19:23:43+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000228",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "pennyroyal"
+      ],
+      "conditions": [
+        "congested_lungs"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach treats congested lungs (with bronchitis) with homeopathy, acupuncture, hydrotherapy including a steam sauna, massage, and herbs including pennyroyal (Mentha pulegium) taken as a concentrated tea.",
+      "verbatim": "CONGESTED LUNGS (with bronchitis):\ncan be treated with homeopathy, acupunc-\nture, hydrotherapy to include a steam sauna,\nmassage, and herbs including penny royal\n(Mentha pulegium) as concentrated tea.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 242636
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:52:45+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000229",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b1",
+        "selenium"
+      ],
+      "other_substances": [
+        "lily-of-the-valley",
+        "foxglove",
+        "hawthorn"
+      ],
+      "conditions": [
+        "congestive_heart_failure"
+      ],
+      "symptoms": [
+        "edema"
+      ],
+      "claim_text": "Congestive heart failure can be caused by lung disease, high blood pressure, and nutritional deficiencies including vitamin B-1 and selenium, and usually shows a rapid irregular heartbeat and edema (tissue-water swelling, or “dropsy”) in the legs and/or abdomen. Wallach's two standout herbs — even used by orthodox doctors — are lily of the valley (Convallaria megalis) and foxglove (Digitalis purpura), taken as whole-leaf preparations or fluid extracts; foxglove is potentially dangerous, so use commercially prepared sources and get advice on doses. English hawthorn (Crataegus oxyacantha) helps regulate heart rhythm and treat the dropsy of congestive heart failure but may not be strong enough in severe or advanced cases. The precipitating cause should be identified and dealt with aggressively.",
+      "verbatim": "Two\nmedications stand out in their efficacy (these\nherbs are even used by the \"orthodox\" doctors\n): 1) Lily of the valley (Convallaria megalis)\nand 2) foxglove (Digitalis purpura). These\ntwo herbs can be taken as whole leaf prepara-\ntions or fluid extracts (foxglove is potentially\ndangerous so you should get commercially\nprepared sources and advice on doses).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 243099
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:52:45+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000230",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "hydrogen-peroxide",
+        "boric-acid"
+      ],
+      "conditions": [
+        "conjunctivitis"
+      ],
+      "symptoms": [],
+      "claim_text": "Conjunctivitis is an inflammation of the membrane lining the inner eyelids and covering the white of the eye, triggered by dust, allergens (such as pollens), foreign bodies including eyelashes, and microorganisms (bacteria and viruses). Wallach's treatment uses commercial eye washes (hydrogen peroxide eye drops) and/or boric acid ophthalmic ointment as appropriate; pulling the upper lid over the lower lid by grasping the eyelash, then lifting out and down, induces tear flow to wash the eye and flush foreign bodies.",
+      "verbatim": "Treatment of conjunctivitis includes using\ncommercial eye washes (hydrogen peroxide\neye drops) and/or boric acid ophthalmic oint-\nment as appropriate.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 244046
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:52:45+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000231",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "dietary-fiber",
+        "urine-therapy",
+        "castor-oil",
+        "olive-oil",
+        "blackroot",
+        "american-mandrake",
+        "alder-buckthorn",
+        "cascara-sagrada",
+        "flaxseed",
+        "senna",
+        "psyllium"
+      ],
+      "conditions": [
+        "constipation"
+      ],
+      "symptoms": [],
+      "claim_text": "Constipation — fewer than two to three bowel movements per day — is uncomfortable and a significant cancer risk factor; food allergies (test with the pulse test) and milk products including cheese can cause it. Wallach's treatment is eight to ten glasses of water per day, fiber/protein at 1 tablespoon in 8 ounces of juice twice daily, a rotation/elimination diet with autoimmune urine therapy for allergies, four to six cups of vegetables per day, 30 minutes of exercise per day, homeopathy, and herbs including castor oil (Ricinus communis), olive oil (Olea europaea), blackroot (Leptandra virginica), American mandrake (Podophyllum peltatum), alder buckthorn (Rhamnus frangula), cascara sagrada (Rhamnus purshiana), flaxseed or oil (Linum usitatissimum), senna (Cassia angustifolia), and psyllium (Plantago psyllium).",
+      "verbatim": "Treatment of constipation includes eight to\nten glasses of water per day, fiber/protein at 1\ntbsp. in 8 oz. of juice b.i.d., rotation/elimina-\ntion diet and autoimmune urine therapy for\nallergies, four to six cups of vegetables per\nday, exercise for 30 minutes per day, home-\nopathy and herbs including castor oil (Rincinus\ncommunis), olive oil (Olea europaea),\nblackroot F(Leptondra virginica), American\nmandrake (Podophyllum peltatum), alder\nbuckthorn (Rhamnus frangula)",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 244800
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:52:45+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000232",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach frames contraception as historically fraught — noting that midwives who knew contraception and abortion herbs were once branded “witches” and burned at the stake — and argues that, with population pressures, AIDS, and teen pregnancies, contraception cannot be ignored. He divides it into abstinence, barriers, hormones (the least desirable because of side effects), intrauterine devices (IUDs — “be careful here,” citing the Dalkon Shield), and surgery (vasectomy or tying the fallopian tubes). He considers the “rhythm” method unsafe outside of marriage because of the AIDS risk and because few couples have the consistent self-control it requires, and he states bluntly that sex outside of marriage is “Russian roulette” and that anal sex is especially dangerous.",
+      "verbatim": "Contraception is divided into abstinence, bar-\nriers, hormones (this is the least desirable from\nthe standpoint of side effects), IUDs (intrauter-\nine devices - be careful here - remember the\nDelcon Shield!!!), and surgery (vasectomy or\ntying the fallopian tubes). The \"rhythm\"\nmethod cannot be considered a safe form of\ncontraception outside of the mamage be-\ncause of the AIDS risk and few couples have\nthe consistent self-control necessary to pre-\nvent pregnancies.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 245989
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10",
+        "search-only",
+        "search-topic:contraception"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:52:45+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000233",
+      "kind": "protocol",
+      "essentials": [
+        "calcium",
+        "magnesium",
+        "vitamin-b6",
+        "chromium"
+      ],
+      "other_substances": [
+        "pulse-test",
+        "urine-therapy",
+        "peony",
+        "catnip",
+        "skullcap"
+      ],
+      "conditions": [
+        "convulsions",
+        "epilepsy"
+      ],
+      "symptoms": [
+        "seizures"
+      ],
+      "claim_text": "Convulsions (seizures, fits) are uncontrolled body movements from an electrical malfunction of the brain; high fevers of 104–105°F often cause them in children, and epilepsy is a form diagnosed by abnormal brain waves on an EEG (electroencephalogram). The orthodox approach is Dilantin and/or phenobarbital. For non-temperature-induced convulsions, Wallach's approach is a pulse test to check whether allergies are a factor, then avoiding the offending foods or chemicals, a five-day rotation diet, and autoimmune urine therapy; supplements of value include calcium and magnesium at 2,000 and 1,000 mg, vitamin B-6 at 100 mg twice daily, and chromium at 75–100 mcg three times daily, plus herbs including peony (Paeonia officinalis), catnip (Nepeta cataria), and skullcap (Scutellaria lateriflora). Chiropractic and acupuncture can be of great value.",
+      "verbatim": "supplements\nof value include calcium and magnesium at\n2,000 and 1,000 mg, B-6 at 100 mg b.i.d.,\nchromium at 75-100 mcg t.i.d. and herbs to\ninclude peony (Paeonia officinalia), catnip\n(Nepeta cataria) andskullcap (Scutellaria\nlateriflora).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 247338
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:52:45+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000234",
+      "kind": "protocol",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [
+        "hydrogen-peroxide"
+      ],
+      "conditions": [
+        "cor_pulmonale"
+      ],
+      "symptoms": [
+        "edema"
+      ],
+      "claim_text": "Cor pulmonale is enlargement of the right ventricle of the heart caused by severe, chronic lung disease (such as asthma, cystic fibrosis, or bronchiectasis), usually with a rapid pulse, palpitations, and edema of the head, neck, and lungs (which can be fatal), sometimes angina, and “clubbing” of the fingers and toenails with bluish (cyanotic) nail beds; X-ray diagnoses it easily. Wallach's treatment is to resolve the precipitating lung disease, plus oxygen, intravenous hydrogen peroxide, and selenium at 500–1,000 mcg per day.",
+      "verbatim": "Treatment of cor pulmonale includes resolv-\ning the precipitating lung disease and oxygen,\nIV hydrogen peroxide and selenium at 500-\n1,000 mcg per day.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 248147
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:52:45+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000235",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "urine-therapy",
+        "anise",
+        "english-plantain",
+        "licorice",
+        "mullein",
+        "thyme",
+        "onion",
+        "sweet-chestnut",
+        "comfrey"
+      ],
+      "conditions": [
+        "cough"
+      ],
+      "symptoms": [],
+      "claim_text": "Coughs (catarrh, asthma, chest complaints) can be caused by minor throat irritations including allergies (such as milk), viral infections, and chemical irritations; because milk allergy can also raise temperature, don't rule it out when a fever is present — use the pulse test. Wallach's treatment is avoiding any allergen or irritant, autoimmune urine therapy (if allergic), steam vaporizers at night for sleep, and herbs including anise (Pimpinella anisum), English plantain (Plantago lanceolata), licorice (Glycyrrhiza glabra), mullein (Verbascum densiflorum), thyme (Thymus vulgaris), onion (Allium cepa), sweet chestnut (Castanea vesca), and comfrey (Symphytum officinale).",
+      "verbatim": "Treatment should include avoidance of any\nallergen or irritant, autoimmune urine therapy\n(if allergic), steam vaporizers at night for sleep,\nand herbs to include anise (Pimpinella\nanismum), English plantain (Plantago\nlanceolata), licorice (Glycyrrhizaglabra), mul-\nlein (Verbascum densi-florum), thyme (Thy-\nmus vulgaris), onion (Alliumcepa), sweet\nchestnut (Castanea vesca) and comfrey\n(Symphytum officinale).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 248675
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T19:52:45+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
