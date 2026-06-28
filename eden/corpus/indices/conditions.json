@@ -3064,19 +3064,23 @@
   },
   "cradle_cap": {
     "display_name": "Cradle Cap",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-DDDL-000055"
+        "WAL-CLM-DDDL-000055",
+        "WAL-CLM-LETS-000237"
       ]
     },
     "essentials_involved": [
       "vitamin-b6",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "pulse-test"
+    ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "lets-play-doctor"
     ]
   },
   "criminal_behavior": {
@@ -3109,9 +3113,52 @@
       "rare-earths"
     ]
   },
+  "crohns_disease": {
+    "display_name": "Crohns Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000238"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "chromium",
+      "magnesium",
+      "selenium",
+      "vitamin-a",
+      "vitamin-b12",
+      "vitamin-b9",
+      "vitamin-c",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "dietary-fiber",
+      "urine-therapy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "cuts": {
+    "display_name": "Cuts",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000239"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "hydrogen-peroxide"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "cystic_fibrosis": {
     "display_name": "Cystic Fibrosis",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000004",
@@ -3126,6 +3173,9 @@
       "definitions": [
         "WAL-CLM-LETS-000001",
         "WAL-CLM-RARE-000049"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000240"
       ]
     },
     "essentials_involved": [
@@ -3136,7 +3186,10 @@
       "vitamin-e",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "colloidal-minerals",
+      "flaxseed-oil"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",
@@ -3145,17 +3198,27 @@
   },
   "cystitis": {
     "display_name": "Cystitis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
+        "WAL-CLM-LETS-000241",
         "WAL-CLM-RARE-000136"
       ]
     },
     "essentials_involved": [
       "hydrogen"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "bearberry",
+      "birch",
+      "cranberry",
+      "juniper",
+      "lovage",
+      "prickly-restharrow",
+      "rupturewort"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -5678,6 +5741,22 @@
       "lets-play-doctor"
     ]
   },
+  "pubic_lice": {
+    "display_name": "Pubic Lice",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000236"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "gamma-benzene-hexachloride"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "pyorrhea": {
     "display_name": "Pyorrhea",
     "claim_count": 1,
@@ -5899,19 +5978,26 @@
   },
   "seborrheic_dermatitis": {
     "display_name": "Seborrheic Dermatitis",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000234",
         "WAL-CLM-RARE-000237"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000237"
       ]
     },
     "essentials_involved": [
       "vitamin-b2",
-      "vitamin-b6"
+      "vitamin-b6",
+      "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "pulse-test"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },

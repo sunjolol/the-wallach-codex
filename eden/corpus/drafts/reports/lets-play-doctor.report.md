@@ -1,99 +1,68 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_8 claim(s) drafted 2026-06-28T19:52:45+00:00. Review then run corpus_seal.py to promote._
+_6 claim(s) drafted 2026-06-28T20:25:42+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×1, protocol×7
+Kinds: protocol×6
 
-### WAL-CLM-LETS-000228 · protocol
-- **essentials:** — · **conditions:** congested_lungs · **symptoms:** —
-- **claim:** Wallach treats congested lungs (with bronchitis) with homeopathy, acupuncture, hydrotherapy including a steam sauna, massage, and herbs including pennyroyal (Mentha pulegium) taken as a concentrated tea.
-- **verbatim** (offset 242636): “CONGESTED LUNGS (with bronchitis):
-can be treated with homeopathy, acupunc-
-ture, hydrotherapy to include a steam sauna,
-massage, and herbs including penny royal
-(Mentha pulegium) as concentrated tea.”
+### WAL-CLM-LETS-000236 · protocol
+- **essentials:** — · **conditions:** pubic_lice · **symptoms:** —
+- **claim:** “Crabs” (pubic lice, Phthirus pubis) are transmitted mainly by sexual contact and cause a great deal of pubic and anal itching; the lice are large but hard to see, and dark “specks” of their droppings often show up in white underwear. Wallach's treatment is a specially formulated shampoo containing 1% gamma benzene hexachloride, plus direct removal of any visible crabs.
+- **verbatim** (offset 249444): “Treatment should include specially formu-
+lated shampoos containing 1% gamma ben-
+zene hexachloride and direct removal of any
+visual "crabs."”
 
-### WAL-CLM-LETS-000229 · protocol
-- **essentials:** vitamin-b1, selenium · **conditions:** congestive_heart_failure · **symptoms:** edema
-- **claim:** Congestive heart failure can be caused by lung disease, high blood pressure, and nutritional deficiencies including vitamin B-1 and selenium, and usually shows a rapid irregular heartbeat and edema (tissue-water swelling, or “dropsy”) in the legs and/or abdomen. Wallach's two standout herbs — even used by orthodox doctors — are lily of the valley (Convallaria megalis) and foxglove (Digitalis purpura), taken as whole-leaf preparations or fluid extracts; foxglove is potentially dangerous, so use commercially prepared sources and get advice on doses. English hawthorn (Crataegus oxyacantha) helps regulate heart rhythm and treat the dropsy of congestive heart failure but may not be strong enough in severe or advanced cases. The precipitating cause should be identified and dealt with aggressively.
-- **verbatim** (offset 243099): “Two
-medications stand out in their efficacy (these
-herbs are even used by the "orthodox" doctors
-): 1) Lily of the valley (Convallaria megalis)
-and 2) foxglove (Digitalis purpura). These
-two herbs can be taken as whole leaf prepara-
-tions or fluid extracts (foxglove is potentially
-dangerous so you should get commercially
-prepared sources and advice on doses).”
+### WAL-CLM-LETS-000237 · protocol
+- **essentials:** vitamin-b6, zinc · **conditions:** cradle_cap, seborrheic_dermatitis · **symptoms:** —
+- **claim:** Cradle cap (seborrheic dermatitis of infants) can appear as early as one month of age as a greasy, thick crust on the scalp, behind the ears, and on the face. Wallach's treatment is regular shampooing to loosen the greasy scale, vitamin B-6 at 10-25 mg per day, and zinc at 15-25 mg per day; because food allergies can contribute, do a pulse test.
+- **verbatim** (offset 249768): “Treatment ofcradle cap includes shampooing
+regularly to loosen die greasy scale, B-6 at 10-
+25 mg per day and zinc at 15-25 mg per day.”
 
-### WAL-CLM-LETS-000230 · protocol
-- **essentials:** — · **conditions:** conjunctivitis · **symptoms:** —
-- **claim:** Conjunctivitis is an inflammation of the membrane lining the inner eyelids and covering the white of the eye, triggered by dust, allergens (such as pollens), foreign bodies including eyelashes, and microorganisms (bacteria and viruses). Wallach's treatment uses commercial eye washes (hydrogen peroxide eye drops) and/or boric acid ophthalmic ointment as appropriate; pulling the upper lid over the lower lid by grasping the eyelash, then lifting out and down, induces tear flow to wash the eye and flush foreign bodies.
-- **verbatim** (offset 244046): “Treatment of conjunctivitis includes using
-commercial eye washes (hydrogen peroxide
-eye drops) and/or boric acid ophthalmic oint-
-ment as appropriate.”
+### WAL-CLM-LETS-000238 · protocol
+- **essentials:** vitamin-b9, vitamin-a, vitamin-b12, vitamin-c, calcium, magnesium, selenium, chromium, zinc · **conditions:** crohns_disease · **symptoms:** —
+- **claim:** Crohn's disease (regional enteritis) is a chronic infiltration of defensive white blood cells and macrophages into the terminal ileum; Wallach attributes it largely to food allergy (such as milk) rather than to the orthodox cortisone-and-surgery approach, noting that rigorous allergen avoidance can prevent acute attacks and reverse the changes to normal. His treatment is a high-fiber diet (pulse-test first to avoid a fiber you are allergic to), folic acid at 5-10 mg three times daily, vitamin A at 300,000 IU per day as beta carotene, vitamin B-12 at 1,000 mcg per day (best by injection in this disease), vitamin C to bowel tolerance, calcium and magnesium at 2,000 and 1,000 mg per day, selenium at 300 mcg three times daily, chromium at 75 mcg three times daily, and zinc at 50 mg three times daily, plus the base-line supplement program and autoimmune urine therapy.
+- **verbatim** (offset 250985): “folic
+acid at 5-10 mg t.i.d., vitamin A at 300,000 IU/
+day as beta carotene, B-12 at 1,000 mcg/day
+(best by injection in this disease), vitamin C to
+bowel tolerance if it can be tolerated. Calcium
+and magnesium at 2,000 and 1 ,000 mg per day
+(don't forget the base line supplement pro-
+gram here), selenium at 300 mcg t.i.d., chro-
+mium at 75 mcg t.i.d. and zinc at 50 mg t.i.d.”
 
-### WAL-CLM-LETS-000231 · protocol
-- **essentials:** — · **conditions:** constipation · **symptoms:** —
-- **claim:** Constipation — fewer than two to three bowel movements per day — is uncomfortable and a significant cancer risk factor; food allergies (test with the pulse test) and milk products including cheese can cause it. Wallach's treatment is eight to ten glasses of water per day, fiber/protein at 1 tablespoon in 8 ounces of juice twice daily, a rotation/elimination diet with autoimmune urine therapy for allergies, four to six cups of vegetables per day, 30 minutes of exercise per day, homeopathy, and herbs including castor oil (Ricinus communis), olive oil (Olea europaea), blackroot (Leptandra virginica), American mandrake (Podophyllum peltatum), alder buckthorn (Rhamnus frangula), cascara sagrada (Rhamnus purshiana), flaxseed or oil (Linum usitatissimum), senna (Cassia angustifolia), and psyllium (Plantago psyllium).
-- **verbatim** (offset 244800): “Treatment of constipation includes eight to
-ten glasses of water per day, fiber/protein at 1
-tbsp. in 8 oz. of juice b.i.d., rotation/elimina-
-tion diet and autoimmune urine therapy for
-allergies, four to six cups of vegetables per
-day, exercise for 30 minutes per day, home-
-opathy and herbs including castor oil (Rincinus
-communis), olive oil (Olea europaea),
-blackroot F(Leptondra virginica), American
-mandrake (Podophyllum peltatum), alder
-buckthorn (Rhamnus frangula)”
+### WAL-CLM-LETS-000239 · protocol
+- **essentials:** — · **conditions:** cuts · **symptoms:** —
+- **claim:** Cuts (lacerations) from paper, glass, metal, knives, and tools — except deep facial wounds — can usually be handled at home without stitches. Wallach's approach is to clean superficial cuts with soap and water and close the edges with butterfly bandages or wound strips (which scar less than sutures); cuts contaminated with dirt should be washed with soap and water, then flushed well with 3% hydrogen peroxide to “bubble” out the microscopic dirt that harbors microorganisms, and closed with a drainage site left open for any infection. Bleeding is controlled with pressure bandages; a spurting cut artery may need pressure with a sterile gauze square, or a tourniquet for a large arm or leg artery until professional help is reached.
+- **verbatim** (offset 251851): “Cuts contaminated with dirt (resulting from
+falls on gravel, concrete, wood or soil) need to
+be washed with soap and water to remove
+gross dirt and debris. The second step for
+contaminated wounds is to flush well with 3%
+hydrogen peroxide to "bubble" out the micro-
+scopic dirt that harbor micro-organisms.”
 
-### WAL-CLM-LETS-000232 · definition
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach frames contraception as historically fraught — noting that midwives who knew contraception and abortion herbs were once branded “witches” and burned at the stake — and argues that, with population pressures, AIDS, and teen pregnancies, contraception cannot be ignored. He divides it into abstinence, barriers, hormones (the least desirable because of side effects), intrauterine devices (IUDs — “be careful here,” citing the Dalkon Shield), and surgery (vasectomy or tying the fallopian tubes). He considers the “rhythm” method unsafe outside of marriage because of the AIDS risk and because few couples have the consistent self-control it requires, and he states bluntly that sex outside of marriage is “Russian roulette” and that anal sex is especially dangerous.
-- **verbatim** (offset 245989): “Contraception is divided into abstinence, bar-
-riers, hormones (this is the least desirable from
-the standpoint of side effects), IUDs (intrauter-
-ine devices - be careful here - remember the
-Delcon Shield!!!), and surgery (vasectomy or
-tying the fallopian tubes). The "rhythm"
-method cannot be considered a safe form of
-contraception outside of the mamage be-
-cause of the AIDS risk and few couples have
-the consistent self-control necessary to pre-
-vent pregnancies.”
+### WAL-CLM-LETS-000240 · protocol
+- **essentials:** selenium, omega-3 · **conditions:** cystic_fibrosis · **symptoms:** —
+- **claim:** Cystic fibrosis (mucoviscidosis) is, in Wallach's view, a preventable and (in early stages) curable disease caused by a congenital selenium deficiency — a finding he first made in laboratory animals and reproduced across species — with the positive “sweat test” resulting from an essential-fatty-acid deficiency rather than a genetic defect. Prevention is ensuring adequate selenium and essential fatty acids before conception and during pregnancy and nursing: about 200 mcg selenium per day and 5 grams of flaxseed oil three times daily. Treatment is to start the infant as early as possible with selenium by intramuscular injection at 10-25 mcg per day, plant-derived colloidal minerals orally thereafter, and 5 grams of flaxseed oil orally three times daily; most importantly, any wheat, cow's-milk, or soy allergy (malabsorption) must be corrected or treatment is only minimally effective. Older patients are managed with intravenous essential fatty acids and intramuscular selenium plus the base-line supplement program.
+- **verbatim** (offset 257010): “Treatment of CF is very basic - treat the infant
+as early as possible with selenium IM at 10-25
+mcg per day. Plant derived colloidal minerals
+may be used orally thereafter. Provide 5 gm of
+flaxseed oil orally t.i.d.”
 
-### WAL-CLM-LETS-000233 · protocol
-- **essentials:** calcium, magnesium, vitamin-b6, chromium · **conditions:** convulsions, epilepsy · **symptoms:** seizures
-- **claim:** Convulsions (seizures, fits) are uncontrolled body movements from an electrical malfunction of the brain; high fevers of 104–105°F often cause them in children, and epilepsy is a form diagnosed by abnormal brain waves on an EEG (electroencephalogram). The orthodox approach is Dilantin and/or phenobarbital. For non-temperature-induced convulsions, Wallach's approach is a pulse test to check whether allergies are a factor, then avoiding the offending foods or chemicals, a five-day rotation diet, and autoimmune urine therapy; supplements of value include calcium and magnesium at 2,000 and 1,000 mg, vitamin B-6 at 100 mg twice daily, and chromium at 75–100 mcg three times daily, plus herbs including peony (Paeonia officinalis), catnip (Nepeta cataria), and skullcap (Scutellaria lateriflora). Chiropractic and acupuncture can be of great value.
-- **verbatim** (offset 247338): “supplements
-of value include calcium and magnesium at
-2,000 and 1,000 mg, B-6 at 100 mg b.i.d.,
-chromium at 75-100 mcg t.i.d. and herbs to
-include peony (Paeonia officinalia), catnip
-(Nepeta cataria) andskullcap (Scutellaria
-lateriflora).”
-
-### WAL-CLM-LETS-000234 · protocol
-- **essentials:** selenium · **conditions:** cor_pulmonale · **symptoms:** edema
-- **claim:** Cor pulmonale is enlargement of the right ventricle of the heart caused by severe, chronic lung disease (such as asthma, cystic fibrosis, or bronchiectasis), usually with a rapid pulse, palpitations, and edema of the head, neck, and lungs (which can be fatal), sometimes angina, and “clubbing” of the fingers and toenails with bluish (cyanotic) nail beds; X-ray diagnoses it easily. Wallach's treatment is to resolve the precipitating lung disease, plus oxygen, intravenous hydrogen peroxide, and selenium at 500–1,000 mcg per day.
-- **verbatim** (offset 248147): “Treatment of cor pulmonale includes resolv-
-ing the precipitating lung disease and oxygen,
-IV hydrogen peroxide and selenium at 500-
-1,000 mcg per day.”
-
-### WAL-CLM-LETS-000235 · protocol
-- **essentials:** — · **conditions:** cough · **symptoms:** —
-- **claim:** Coughs (catarrh, asthma, chest complaints) can be caused by minor throat irritations including allergies (such as milk), viral infections, and chemical irritations; because milk allergy can also raise temperature, don't rule it out when a fever is present — use the pulse test. Wallach's treatment is avoiding any allergen or irritant, autoimmune urine therapy (if allergic), steam vaporizers at night for sleep, and herbs including anise (Pimpinella anisum), English plantain (Plantago lanceolata), licorice (Glycyrrhiza glabra), mullein (Verbascum densiflorum), thyme (Thymus vulgaris), onion (Allium cepa), sweet chestnut (Castanea vesca), and comfrey (Symphytum officinale).
-- **verbatim** (offset 248675): “Treatment should include avoidance of any
-allergen or irritant, autoimmune urine therapy
-(if allergic), steam vaporizers at night for sleep,
-and herbs to include anise (Pimpinella
-anismum), English plantain (Plantago
-lanceolata), licorice (Glycyrrhizaglabra), mul-
-lein (Verbascum densi-florum), thyme (Thy-
-mus vulgaris), onion (Alliumcepa), sweet
-chestnut (Castanea vesca) and comfrey
-(Symphytum officinale).”
+### WAL-CLM-LETS-000241 · protocol
+- **essentials:** — · **conditions:** cystitis · **symptoms:** —
+- **claim:** Cystitis (bladder infection) is a common urinary bladder infection in women, with causes including low immune status, improper hygiene after bowel movements, too-tight pantyhose, and frequent sexual activity (the “honeymoon disease”); symptoms are frequency, urgency, and burning on urination, and a urine dipstick shows a positive nitrate test and many white blood cells. Wallach's treatment is to acidify the urine by drinking one to two quarts of cranberry juice the first day, then one quart per day, plus herbs including bearberry (Arctostaphylos uva-ursi), birch (Betula pendula, B. pubescens), juniper (Juniperus communis), lovage (Levisticum officinale), prickly restharrow (Ononis spinosa), and rupturewort (Herniaria glabra).
+- **verbatim** (offset 259289): “Treatment of cystitis consists of acidifying the
+urine by consuming one to two quarts of
+cranberry juice per day for the first day then
+reducing the intake to one quart per day; herbs
+are very useful and include bearberry
+(Arctostaphylos uva-ursi), birch (Betula
+pendula, B. pubescens), juniper (Junipems
+communis), lovage (Levisticum officinale),
+prickly restharrow (Ononis spinosa) and rup-
+ture wort (Herniaria glabra).”
 

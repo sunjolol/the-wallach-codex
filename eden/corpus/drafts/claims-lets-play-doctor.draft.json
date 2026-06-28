@@ -9484,6 +9484,235 @@
       "extracted_at": "2026-06-28T19:52:45+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000236",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "gamma-benzene-hexachloride"
+      ],
+      "conditions": [
+        "pubic_lice"
+      ],
+      "symptoms": [],
+      "claim_text": "“Crabs” (pubic lice, Phthirus pubis) are transmitted mainly by sexual contact and cause a great deal of pubic and anal itching; the lice are large but hard to see, and dark “specks” of their droppings often show up in white underwear. Wallach's treatment is a specially formulated shampoo containing 1% gamma benzene hexachloride, plus direct removal of any visible crabs.",
+      "verbatim": "Treatment should include specially formu-\nlated shampoos containing 1% gamma ben-\nzene hexachloride and direct removal of any\nvisual \"crabs.\"",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 249444
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T20:25:42+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000237",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b6",
+        "zinc"
+      ],
+      "other_substances": [
+        "pulse-test"
+      ],
+      "conditions": [
+        "cradle_cap",
+        "seborrheic_dermatitis"
+      ],
+      "symptoms": [],
+      "claim_text": "Cradle cap (seborrheic dermatitis of infants) can appear as early as one month of age as a greasy, thick crust on the scalp, behind the ears, and on the face. Wallach's treatment is regular shampooing to loosen the greasy scale, vitamin B-6 at 10-25 mg per day, and zinc at 15-25 mg per day; because food allergies can contribute, do a pulse test.",
+      "verbatim": "Treatment ofcradle cap includes shampooing\nregularly to loosen die greasy scale, B-6 at 10-\n25 mg per day and zinc at 15-25 mg per day.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 249768
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T20:25:42+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000238",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b9",
+        "vitamin-a",
+        "vitamin-b12",
+        "vitamin-c",
+        "calcium",
+        "magnesium",
+        "selenium",
+        "chromium",
+        "zinc"
+      ],
+      "other_substances": [
+        "dietary-fiber",
+        "urine-therapy"
+      ],
+      "conditions": [
+        "crohns_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Crohn's disease (regional enteritis) is a chronic infiltration of defensive white blood cells and macrophages into the terminal ileum; Wallach attributes it largely to food allergy (such as milk) rather than to the orthodox cortisone-and-surgery approach, noting that rigorous allergen avoidance can prevent acute attacks and reverse the changes to normal. His treatment is a high-fiber diet (pulse-test first to avoid a fiber you are allergic to), folic acid at 5-10 mg three times daily, vitamin A at 300,000 IU per day as beta carotene, vitamin B-12 at 1,000 mcg per day (best by injection in this disease), vitamin C to bowel tolerance, calcium and magnesium at 2,000 and 1,000 mg per day, selenium at 300 mcg three times daily, chromium at 75 mcg three times daily, and zinc at 50 mg three times daily, plus the base-line supplement program and autoimmune urine therapy.",
+      "verbatim": "folic\nacid at 5-10 mg t.i.d., vitamin A at 300,000 IU/\nday as beta carotene, B-12 at 1,000 mcg/day\n(best by injection in this disease), vitamin C to\nbowel tolerance if it can be tolerated. Calcium\nand magnesium at 2,000 and 1 ,000 mg per day\n(don't forget the base line supplement pro-\ngram here), selenium at 300 mcg t.i.d., chro-\nmium at 75 mcg t.i.d. and zinc at 50 mg t.i.d.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 250985
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T20:25:42+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000239",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "hydrogen-peroxide"
+      ],
+      "conditions": [
+        "cuts"
+      ],
+      "symptoms": [],
+      "claim_text": "Cuts (lacerations) from paper, glass, metal, knives, and tools — except deep facial wounds — can usually be handled at home without stitches. Wallach's approach is to clean superficial cuts with soap and water and close the edges with butterfly bandages or wound strips (which scar less than sutures); cuts contaminated with dirt should be washed with soap and water, then flushed well with 3% hydrogen peroxide to “bubble” out the microscopic dirt that harbors microorganisms, and closed with a drainage site left open for any infection. Bleeding is controlled with pressure bandages; a spurting cut artery may need pressure with a sterile gauze square, or a tourniquet for a large arm or leg artery until professional help is reached.",
+      "verbatim": "Cuts contaminated with dirt (resulting from\nfalls on gravel, concrete, wood or soil) need to\nbe washed with soap and water to remove\ngross dirt and debris. The second step for\ncontaminated wounds is to flush well with 3%\nhydrogen peroxide to \"bubble\" out the micro-\nscopic dirt that harbor micro-organisms.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 251851
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T20:25:42+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000240",
+      "kind": "protocol",
+      "essentials": [
+        "selenium",
+        "omega-3"
+      ],
+      "other_substances": [
+        "colloidal-minerals",
+        "flaxseed-oil"
+      ],
+      "conditions": [
+        "cystic_fibrosis"
+      ],
+      "symptoms": [],
+      "claim_text": "Cystic fibrosis (mucoviscidosis) is, in Wallach's view, a preventable and (in early stages) curable disease caused by a congenital selenium deficiency — a finding he first made in laboratory animals and reproduced across species — with the positive “sweat test” resulting from an essential-fatty-acid deficiency rather than a genetic defect. Prevention is ensuring adequate selenium and essential fatty acids before conception and during pregnancy and nursing: about 200 mcg selenium per day and 5 grams of flaxseed oil three times daily. Treatment is to start the infant as early as possible with selenium by intramuscular injection at 10-25 mcg per day, plant-derived colloidal minerals orally thereafter, and 5 grams of flaxseed oil orally three times daily; most importantly, any wheat, cow's-milk, or soy allergy (malabsorption) must be corrected or treatment is only minimally effective. Older patients are managed with intravenous essential fatty acids and intramuscular selenium plus the base-line supplement program.",
+      "verbatim": "Treatment of CF is very basic - treat the infant\nas early as possible with selenium IM at 10-25\nmcg per day. Plant derived colloidal minerals\nmay be used orally thereafter. Provide 5 gm of\nflaxseed oil orally t.i.d.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 257010
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T20:25:42+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000241",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "cranberry",
+        "bearberry",
+        "birch",
+        "juniper",
+        "lovage",
+        "prickly-restharrow",
+        "rupturewort"
+      ],
+      "conditions": [
+        "cystitis"
+      ],
+      "symptoms": [],
+      "claim_text": "Cystitis (bladder infection) is a common urinary bladder infection in women, with causes including low immune status, improper hygiene after bowel movements, too-tight pantyhose, and frequent sexual activity (the “honeymoon disease”); symptoms are frequency, urgency, and burning on urination, and a urine dipstick shows a positive nitrate test and many white blood cells. Wallach's treatment is to acidify the urine by drinking one to two quarts of cranberry juice the first day, then one quart per day, plus herbs including bearberry (Arctostaphylos uva-ursi), birch (Betula pendula, B. pubescens), juniper (Juniperus communis), lovage (Levisticum officinale), prickly restharrow (Ononis spinosa), and rupturewort (Herniaria glabra).",
+      "verbatim": "Treatment of cystitis consists of acidifying the\nurine by consuming one to two quarts of\ncranberry juice per day for the first day then\nreducing the intake to one quart per day; herbs\nare very useful and include bearberry\n(Arctostaphylos uva-ursi), birch (Betula\npendula, B. pubescens), juniper (Junipems\ncommunis), lovage (Levisticum officinale),\nprickly restharrow (Ononis spinosa) and rup-\nture wort (Herniaria glabra).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 259289
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-28T20:25:42+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

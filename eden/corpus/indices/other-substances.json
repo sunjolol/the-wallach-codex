@@ -247,6 +247,21 @@
       "lets-play-doctor"
     ]
   },
+  "bearberry": {
+    "display_name": "Bearberry",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000241"
+      ]
+    },
+    "conditions_treated": [
+      "cystitis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "bears-garlic": {
     "display_name": "Bears Garlic",
     "claim_count": 1,
@@ -298,6 +313,21 @@
       "bronchitis",
       "colic",
       "menopause"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "birch": {
+    "display_name": "Birch",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000241"
+      ]
+    },
+    "conditions_treated": [
+      "cystitis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -636,7 +666,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 14,
+    "claim_count": 15,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -652,7 +682,8 @@
         "WAL-CLM-LETS-000166",
         "WAL-CLM-LETS-000168",
         "WAL-CLM-LETS-000176",
-        "WAL-CLM-LETS-000203"
+        "WAL-CLM-LETS-000203",
+        "WAL-CLM-LETS-000240"
       ]
     },
     "conditions_treated": [
@@ -672,6 +703,7 @@
       "bone_spurs",
       "bursitis",
       "cardiac_arrhythmia",
+      "cystic_fibrosis",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -779,18 +811,20 @@
   },
   "cranberry": {
     "display_name": "Cranberry",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000155",
         "WAL-CLM-LETS-000157",
-        "WAL-CLM-LETS-000161"
+        "WAL-CLM-LETS-000161",
+        "WAL-CLM-LETS-000241"
       ]
     },
     "conditions_treated": [
       "bedwetting",
       "benign_prostatic_hyperplasia",
       "bladder_stones",
+      "cystitis",
       "kidney_stones"
     ],
     "books_cited": [
@@ -845,14 +879,16 @@
   },
   "dietary-fiber": {
     "display_name": "Dietary Fiber",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000231"
+        "WAL-CLM-LETS-000231",
+        "WAL-CLM-LETS-000238"
       ]
     },
     "conditions_treated": [
-      "constipation"
+      "constipation",
+      "crohns_disease"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1124,16 +1160,18 @@
   },
   "flaxseed-oil": {
     "display_name": "Flaxseed Oil",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000123",
-        "WAL-CLM-LETS-000226"
+        "WAL-CLM-LETS-000226",
+        "WAL-CLM-LETS-000240"
       ]
     },
     "conditions_treated": [
       "acne",
-      "colic"
+      "colic",
+      "cystic_fibrosis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1189,6 +1227,21 @@
     },
     "conditions_treated": [
       "congestive_heart_failure"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "gamma-benzene-hexachloride": {
+    "display_name": "Gamma Benzene Hexachloride",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000236"
+      ]
+    },
+    "conditions_treated": [
+      "pubic_lice"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1425,7 +1478,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 20,
+    "claim_count": 21,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
@@ -1447,7 +1500,8 @@
         "WAL-CLM-LETS-000222",
         "WAL-CLM-LETS-000227",
         "WAL-CLM-LETS-000230",
-        "WAL-CLM-LETS-000234"
+        "WAL-CLM-LETS-000234",
+        "WAL-CLM-LETS-000239"
       ]
     },
     "conditions_treated": [
@@ -1469,6 +1523,7 @@
       "colitis",
       "conjunctivitis",
       "cor_pulmonale",
+      "cuts",
       "dental_calculus",
       "intermittent_claudication",
       "rheumatoid_arthritis"
@@ -1551,6 +1606,21 @@
     "conditions_treated": [
       "asthma",
       "atopic_asthma"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "juniper": {
+    "display_name": "Juniper",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000241"
+      ]
+    },
+    "conditions_treated": [
+      "cystitis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1741,6 +1811,21 @@
     },
     "conditions_treated": [
       "anemia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "lovage": {
+    "display_name": "Lovage",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000241"
+      ]
+    },
+    "conditions_treated": [
+      "cystitis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2248,6 +2333,21 @@
       "lets-play-doctor"
     ]
   },
+  "prickly-restharrow": {
+    "display_name": "Prickly Restharrow",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000241"
+      ]
+    },
+    "conditions_treated": [
+      "cystitis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "psyllium": {
     "display_name": "Psyllium",
     "claim_count": 1,
@@ -2265,17 +2365,20 @@
   },
   "pulse-test": {
     "display_name": "Pulse Test",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000209",
-        "WAL-CLM-LETS-000233"
+        "WAL-CLM-LETS-000233",
+        "WAL-CLM-LETS-000237"
       ]
     },
     "conditions_treated": [
       "celiac_disease",
       "convulsions",
-      "epilepsy"
+      "cradle_cap",
+      "epilepsy",
+      "seborrheic_dermatitis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2360,14 +2463,16 @@
   },
   "rupturewort": {
     "display_name": "Rupturewort",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000161"
+        "WAL-CLM-LETS-000161",
+        "WAL-CLM-LETS-000241"
       ]
     },
     "conditions_treated": [
       "bladder_stones",
+      "cystitis",
       "kidney_stones"
     ],
     "books_cited": [
@@ -2674,7 +2779,7 @@
   },
   "urine-therapy": {
     "display_name": "Urine Therapy",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000201",
@@ -2684,7 +2789,8 @@
         "WAL-CLM-LETS-000227",
         "WAL-CLM-LETS-000231",
         "WAL-CLM-LETS-000233",
-        "WAL-CLM-LETS-000235"
+        "WAL-CLM-LETS-000235",
+        "WAL-CLM-LETS-000238"
       ]
     },
     "conditions_treated": [
@@ -2696,6 +2802,7 @@
       "constipation",
       "convulsions",
       "cough",
+      "crohns_disease",
       "epilepsy"
     ],
     "books_cited": [
