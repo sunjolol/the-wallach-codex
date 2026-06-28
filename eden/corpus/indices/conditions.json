@@ -1,16 +1,100 @@
 {
+  "abrasions": {
+    "display_name": "Abrasions",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000118"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-c"
+    ],
+    "other_substances_involved": [
+      "aloe",
+      "comfrey",
+      "hydrogen-peroxide",
+      "plantain"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "abscess": {
+    "display_name": "Abscess",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000119"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-c"
+    ],
+    "other_substances_involved": [
+      "boric-acid",
+      "echinacea",
+      "hydrogen-peroxide",
+      "sagebrush"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "absence_attacks": {
+    "display_name": "Absence Attacks",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000120"
+      ]
+    },
+    "essentials_involved": [
+      "choline",
+      "vitamin-b6"
+    ],
+    "other_substances_involved": [
+      "dimethyl-glycine",
+      "phosphatidylcholine",
+      "taurine"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "achalasia": {
+    "display_name": "Achalasia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000121"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "achlorhydria": {
     "display_name": "Achlorhydria",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000035"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000122"
       ]
     },
     "essentials_involved": [
       "vitamin-b12"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "colloidal-minerals",
+      "gentian"
+    ],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -33,7 +117,7 @@
   },
   "acne": {
     "display_name": "Acne",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000011",
@@ -42,6 +126,9 @@
         "WAL-CLM-LETS-000036",
         "WAL-CLM-LETS-000044",
         "WAL-CLM-RARE-000229"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000123"
       ]
     },
     "essentials_involved": [
@@ -50,9 +137,14 @@
       "potassium",
       "vitamin-a",
       "vitamin-b6",
+      "vitamin-e",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "flaxseed-oil",
+      "pancreatic-enzymes"
+    ],
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
@@ -111,6 +203,25 @@
       "rare-earths"
     ]
   },
+  "adrenal_exhaustion": {
+    "display_name": "Adrenal Exhaustion",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000124"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-c",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "adrenal-cortical-extract"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "adrenoleukodystrophy": {
     "display_name": "Adrenoleukodystrophy",
     "claim_count": 1,
@@ -145,6 +256,36 @@
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "aids": {
+    "display_name": "Aids",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000126"
+      ]
+    },
+    "essentials_involved": [
+      "selenium",
+      "vitamin-a",
+      "vitamin-c",
+      "vitamin-e",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "adrenal-cortical-extract",
+      "evening-primrose-oil",
+      "garlic",
+      "goldenseal",
+      "hydrazine-sulfate",
+      "isoprinosin",
+      "levamisol",
+      "ribavirin",
+      "thymus"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "alkalosis": {
@@ -1957,6 +2098,26 @@
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "disagreeable_attitude": {
+    "display_name": "Disagreeable Attitude",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000125"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "omega-3",
+      "vanadium"
+    ],
+    "other_substances_involved": [
+      "plantain"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "down_syndrome": {

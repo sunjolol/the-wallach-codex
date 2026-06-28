@@ -1157,7 +1157,7 @@
   },
   "fatigue": {
     "display_name": "Fatigue",
-    "claim_count": 20,
+    "claim_count": 21,
     "likely_deficiencies": [
       {
         "essential": "biotin",
@@ -1268,8 +1268,20 @@
         "appears_in_books": 1
       },
       {
+        "essential": "vitamin-c",
+        "claim_id": "WAL-CLM-LETS-000124",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
         "essential": "zinc",
         "claim_id": "WAL-CLM-LETS-000044",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "zinc",
+        "claim_id": "WAL-CLM-LETS-000124",
         "confidence": "high",
         "appears_in_books": 1
       }

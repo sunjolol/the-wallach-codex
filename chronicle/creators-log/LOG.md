@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_142 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_143 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 11:08 UTC-05:00 · round-close · knowledge/corpus
+Ch10 Materia Medica b16: 9 tier-1 protocol claims LETS-118..126 (ABRASIONS->AIDS), one-per-condition model (Luneth-locked). +7 conditions; 2 dose-safety meg->mcg fixes. kv125->126, claims 497->506, board 31/31, knowledge probe PASS.
+  ↳ First batch of the Ch10 alphabetical condition-treatment chapter. Model A: one kind=protocol claim per condition, essentials[]=canon supps, other_substances[]=herbs/Rx, full protocol in claim_text, verbatim=exact book span. All entries tier-1 (incl. herbal-only/lifestyle-only); none search-only. Render-first dose verification of printed p80-83. Source-layer doctrine clarified: Wallach drives recommended/target amounts (never RDV); Youngevity manual entries drive composition only.
 
 ## 2026-06-28 10:30 UTC-05:00 · note · cleanup/obsolete-files+comments
 Entire-chain cleanup (Luneth: TRULY clean slate). Part A: untracked 24 __pycache__ .pyc + removed 2 dead pre-Eden tools (extract_corpus_index/deficiency_map). Part B comments: audited CLEAN, no edits (§00.B already met). 1 tesseract-tracking item flagged for Luneth. board 31/31.

@@ -1,4 +1,36 @@
 {
+  "adrenal-cortical-extract": {
+    "display_name": "Adrenal Cortical Extract",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000124",
+        "WAL-CLM-LETS-000126"
+      ]
+    },
+    "conditions_treated": [
+      "adrenal_exhaustion",
+      "aids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "aloe": {
+    "display_name": "Aloe",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000118"
+      ]
+    },
+    "conditions_treated": [
+      "abrasions"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "antimony": {
     "display_name": "Antimony",
     "claim_count": 1,
@@ -14,6 +46,23 @@
       "rare-earths"
     ]
   },
+  "betaine-hcl": {
+    "display_name": "Betaine Hcl",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000122",
+        "WAL-CLM-LETS-000123"
+      ]
+    },
+    "conditions_treated": [
+      "achlorhydria",
+      "acne"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "bismuth": {
     "display_name": "Bismuth",
     "claim_count": 1,
@@ -27,6 +76,21 @@
       "rare-earths"
     ]
   },
+  "boric-acid": {
+    "display_name": "Boric Acid",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000119"
+      ]
+    },
+    "conditions_treated": [
+      "abscess"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "cadmium": {
     "display_name": "Cadmium",
     "claim_count": 1,
@@ -38,6 +102,96 @@
     "conditions_treated": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "colloidal-minerals": {
+    "display_name": "Colloidal Minerals",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000122"
+      ]
+    },
+    "conditions_treated": [
+      "achlorhydria"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "comfrey": {
+    "display_name": "Comfrey",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000118"
+      ]
+    },
+    "conditions_treated": [
+      "abrasions"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "dimethyl-glycine": {
+    "display_name": "Dimethyl Glycine",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000120"
+      ]
+    },
+    "conditions_treated": [
+      "absence_attacks"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "echinacea": {
+    "display_name": "Echinacea",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000119"
+      ]
+    },
+    "conditions_treated": [
+      "abscess"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "evening-primrose-oil": {
+    "display_name": "Evening Primrose Oil",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000126"
+      ]
+    },
+    "conditions_treated": [
+      "aids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "flaxseed-oil": {
+    "display_name": "Flaxseed Oil",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000123"
+      ]
+    },
+    "conditions_treated": [
+      "acne"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "fluoride": {
@@ -63,6 +217,98 @@
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "garlic": {
+    "display_name": "Garlic",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000126"
+      ]
+    },
+    "conditions_treated": [
+      "aids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "gentian": {
+    "display_name": "Gentian",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000122"
+      ]
+    },
+    "conditions_treated": [
+      "achlorhydria"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "goldenseal": {
+    "display_name": "Goldenseal",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000126"
+      ]
+    },
+    "conditions_treated": [
+      "aids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "hydrazine-sulfate": {
+    "display_name": "Hydrazine Sulfate",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000126"
+      ]
+    },
+    "conditions_treated": [
+      "aids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "hydrogen-peroxide": {
+    "display_name": "Hydrogen Peroxide",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000118",
+        "WAL-CLM-LETS-000119"
+      ]
+    },
+    "conditions_treated": [
+      "abrasions",
+      "abscess"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "isoprinosin": {
+    "display_name": "Isoprinosin",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000126"
+      ]
+    },
+    "conditions_treated": [
+      "aids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "krypton": {
@@ -108,6 +354,21 @@
       "rare-earths"
     ]
   },
+  "levamisol": {
+    "display_name": "Levamisol",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000126"
+      ]
+    },
+    "conditions_treated": [
+      "aids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "mercury": {
     "display_name": "Mercury",
     "claim_count": 3,
@@ -140,6 +401,53 @@
       "lets-play-doctor"
     ]
   },
+  "pancreatic-enzymes": {
+    "display_name": "Pancreatic Enzymes",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000123"
+      ]
+    },
+    "conditions_treated": [
+      "acne"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "phosphatidylcholine": {
+    "display_name": "Phosphatidylcholine",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000120"
+      ]
+    },
+    "conditions_treated": [
+      "absence_attacks"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "plantain": {
+    "display_name": "Plantain",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000118",
+        "WAL-CLM-LETS-000125"
+      ]
+    },
+    "conditions_treated": [
+      "abrasions",
+      "disagreeable_attitude"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "radon": {
     "display_name": "Radon",
     "claim_count": 1,
@@ -155,21 +463,56 @@
       "rare-earths"
     ]
   },
-  "taurine": {
-    "display_name": "Taurine",
+  "ribavirin": {
+    "display_name": "Ribavirin",
     "claim_count": 1,
     "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000126"
+      ]
+    },
+    "conditions_treated": [
+      "aids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "sagebrush": {
+    "display_name": "Sagebrush",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000119"
+      ]
+    },
+    "conditions_treated": [
+      "abscess"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "taurine": {
+    "display_name": "Taurine",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000120"
+      ],
       "quote": [
         "WAL-CLM-DDDL-000066"
       ]
     },
     "conditions_treated": [
+      "absence_attacks",
       "cancer",
       "goiter",
       "macular_degeneration"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "lets-play-doctor"
     ]
   },
   "thallium": {
@@ -183,6 +526,21 @@
     "conditions_treated": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "thymus": {
+    "display_name": "Thymus",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000126"
+      ]
+    },
+    "conditions_treated": [
+      "aids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "xenon": {
