@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_178 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_179 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 22:19 UTC-05:00 · session-end · chronicle
+SESSION 19 WRAPPED — Ch10 Materia Medica, 7 batches b42-b48 (HOARSENESS→LIFE EXPECTANCY): H/I/J/K complete + L's through p144. LETS-303..347, 45 claims. corpus 682→727, conditions 319→353, kv 152→159. 5 editorial rulings, 1 dangerous misprint caught. NEXT=b49.
+  ↳ Resumed at HOARSENESS (SESSION-18 NEXT) and drove 7 round-close batches, all pushed. Completed the H, I, J, and K sections; mined the L's through LIFE EXPECTANCY (printed p132-144). 45 claims LETS-303..347 (39 tier-1 + 6 search-only). corpus 682->727, conditions 319->353, kv 152->159, search-only 60->64, board 31/31 throughout, knowledge probe green. 22 dose-unit fixes (21 meg->mcg + 1 DANGEROUS gm->mg [INFERTILITY zinc 50 gm, corrected in verbatim]) + 8 OCR header/structure fixes. 5 editorial rulings (Luneth/AskUserQuestion): IMMUNIZATION + MELANOMA + LEUKEMIA + LIFE EXPECTANCY -> search-only; LABOR -> tier-1. Banked memory [[amino-acids-are-canon-essentials]] after the b44 valine seal-gate catch + git-revert recovery. Rolled next-chunk.md handoff to SESSION 20 / NEXT=b49 (LIVER DISEASE onward). Clean tree, ready for fresh genesis.
 
 ## 2026-06-28 22:11 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b48 — LEGIONNAIRES'→LIFE EXPECTANCY, 7 claims (4 tier-1 + 3 search-only). Luneth ruled MELANOMA+LEUKEMIA + LIFE EXPECTANCY search-only. 2 meg→mcg + vit-V→A + LEGIONNAIRES' OCR dedup. kv158→159, claims 720→727, conditions 347→353, search-only 61→64, board 31/31.
