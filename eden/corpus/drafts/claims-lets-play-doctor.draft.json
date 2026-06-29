@@ -17336,6 +17336,235 @@
       "extracted_at": "2026-06-29T17:03:45+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000434",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "flax",
+        "garden-sage",
+        "german-chamomile",
+        "marjoram",
+        "marshmallow",
+        "rosemary",
+        "eucalyptus",
+        "myrtle",
+        "lobelia"
+      ],
+      "conditions": [
+        "sore_throat"
+      ],
+      "symptoms": [],
+      "claim_text": "Sore throat can be caused by a variety of viral and bacterial diseases; bacterial diseases (such as Streptococcus Group A) tend to produce a higher fever than sore throats caused by viral disease (such as upper respiratory infection, cold viruses, or flu). Treatment should include antibiotics as necessary for chronic Strep throat, plus herbs including flax (Linum usitatissimum), garden sage (Salvia officinalis), German chamomile (Matricaria chamomilla), marjoram (Origanum vulgare), marsh-mallow (Althaea officinalis), rosemary (Rosmarinus officinalis), eucalyptus (Eucalyptus globulus), myrtle (Myrica cerifera), and lobelia (Lobelia inflata).",
+      "verbatim": "Treatment of sore throats should include anti-\nbiotics as necessary for chronic Strep throat\nand herbs including flax (Linum usitatissimum),\ngarden sage (Salvia officinalis), German cha-\nmomile (Matricaria chamomilla), marjoram\n(Origanum vulgare), marsh-mallow (Althaea\nofficinalis), rosemary (Rosmarinus officinalis),\neucalyptus (Eucalyptus globulus), myrtle\n(Myrica cerifera) and lobelia (Lobelia inflata).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 168,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 455645
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T17:20:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000435",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "cartilage",
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "dmso",
+        "arnica",
+        "comfrey"
+      ],
+      "conditions": [
+        "sprain"
+      ],
+      "symptoms": [],
+      "claim_text": "A sprain is a painful stretching of the ligaments of the joints, caused by lifting, sudden stops or turns, or trauma; these injuries can be temporarily debilitating and locally painful. Treatment should include ice to reduce swelling as immediate first aid, wrapping with an Ace bandage for support (fingers may be taped to the adjoining fingers for added support), cartilage at 5 grams three times a day, betaine hydrochloride (betaine HCl) and pancreatic enzymes at 75-200 mg three times a day between meals, topical dimethyl sulfoxide (DMSO) and pain gels, and herbs including arnica (Arnica montana) and comfrey (Symphytum officinale).",
+      "verbatim": "Treatment of sprains include ice to reduce\nswelling as immediate first aid, wrap with an\nAce bandage for support; fingers may be\ntaped to the adjoining fingers for added sup-\nport; take cartilage at 5 gm t.i.d., betaine HC1\nand pancreatic enzymes at 75-200 mg t.i.d. in\nbetween meals; DMSO topically, pain gels\ntopically, and herbs including arnica (Arnica\nmontana) and comfrey (Symphytum\nofficinale).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 169,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 456272
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T17:20:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000436",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "sunflower"
+      ],
+      "conditions": [
+        "spider_bite"
+      ],
+      "symptoms": [],
+      "claim_text": "A spider bite produces swelling, local fever, and itching; brown recluse spider bites produce ulceration and require surgical removal. Treatment for spider bites should include soaking the bite wound in a bath prepared from 8-10 sunflowers (Helianthus annus) soaked for 30 minutes.",
+      "verbatim": "Treatment for spider bites should include soak-\ning bite wound in a bath prepared from 8-10\nsunflowers\n(Helianthus annus) soaked for 30 minutes.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 169,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 456809
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T17:20:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000437",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "dmso",
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "arnica",
+        "comfrey",
+        "lavender"
+      ],
+      "conditions": [
+        "strain"
+      ],
+      "symptoms": [],
+      "claim_text": "A strain is more severe than a sprain and is characterized by torn ligaments and a torn joint capsule with bleeding and swelling — a very painful joint trauma that frequently requires a cast, similar to a fracture, to immobilize and rest the injured joint. Emergency treatment should include ice to reduce swelling, dimethyl sulfoxide (DMSO), pain gels, betaine hydrochloride (betaine HCl) and pancreatic enzymes at 75-200 mg three times a day between meals, and herbs including arnica (Arnica montana), comfrey (Symphytum officinale), and lavender (Lavandula spp.). A cast and crutches are appropriate to provide support and rest.",
+      "verbatim": "Treatment ofstrains should include ice, DMSO,\npain gels, betaine HCl and pancreatic en-\nzymes at 75-200 mg t.i.d. between meals and\nherbs including arnica (Arnica montana), com-\nfrey (Symphytum officinale) and lavender\n(Lavandula spp.). A cast and crutches are\nappropriate to provide support and rest.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 169,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 457285
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T17:20:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000438",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "zinc"
+      ],
+      "other_substances": [
+        "adrenal-cortical-extract"
+      ],
+      "conditions": [
+        "stress"
+      ],
+      "symptoms": [],
+      "claim_text": "Stress is the body's reaction to stressors (such as overwork, money problems, or marriage problems). The adrenals in particular suffer from stress, lowering the immune system's ability to protect against infection and cancer and disturbing the entire endocrine system, including energy management (blood sugar, blood pressure, thyroid). Treatment should include relaxation, subliminal distress audio tapes, sublingual adrenal cortical extract (ACE) drops at 5-10 drops three times a day, vitamin C to bowel tolerance, zinc at 50 mg three times a day, and learning to compartmentalize one's time across about 20 projects spanning work, family, and hobbies.",
+      "verbatim": "Treatment of stress should include relaxation,\nsubliminal distress audio tapes, sublingual\nACE drops at 5-10 drops t.i.d., vitamin C to\nbowel tolerance, zinc at 50 mg t.i.d.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 169,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 458002
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T17:20:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000439",
+      "kind": "protocol",
+      "essentials": [
+        "omega-3"
+      ],
+      "other_substances": [
+        "edta-chelation",
+        "hydrogen-peroxide",
+        "colloidal-minerals"
+      ],
+      "conditions": [
+        "stroke"
+      ],
+      "symptoms": [],
+      "claim_text": "A stroke (cerebrovascular accident) is the result of a blood clot or tumor blocking an artery supplying the brain, causing local brain tissue death from lack of oxygen and nourishment. If the damaged area is small enough and not in a vital area, the brain will reroute its functions to unused portions through a relearning and compensation process. Treatment should include EDTA chelation and intravenous hydrogen peroxide as soon as possible, essential fatty acids at 5 grams three times a day, exercise, and the baseline nutritional supplement program including plant-derived colloidal minerals.",
+      "verbatim": "Treatment of stroke should include EDTA\nchelation and IV hydrogen peroxide as soon\nas possible, essential fatty acids at 5 gm t.i.d.,\nexercise and the base line nutritional supple-\nment program to include plant derived colloi-\ndal minerals.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 169,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 458744
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T17:20:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

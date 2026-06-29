@@ -2733,7 +2733,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 100,
+    "claim_count": 101,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2844,6 +2844,7 @@
         "WAL-CLM-LETS-000430",
         "WAL-CLM-LETS-000431",
         "WAL-CLM-LETS-000433",
+        "WAL-CLM-LETS-000438",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -3016,6 +3017,7 @@
       "seborrheic_dermatitis",
       "shingles",
       "spina_bifida",
+      "stress",
       "umbilical_hernia",
       "violent_behavior",
       "xerophthalmia"
@@ -5248,7 +5250,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 66,
+    "claim_count": 67,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -5322,7 +5324,8 @@
         "WAL-CLM-LETS-000404",
         "WAL-CLM-LETS-000410",
         "WAL-CLM-LETS-000417",
-        "WAL-CLM-LETS-000428"
+        "WAL-CLM-LETS-000428",
+        "WAL-CLM-LETS-000438"
       ]
     },
     "deficiency_signs": [
@@ -5459,6 +5462,7 @@
       "rheumatoid_arthritis",
       "scurvy",
       "shingles",
+      "stress",
       "stroke",
       "varicose_veins"
     ],
@@ -6649,7 +6653,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 76,
+    "claim_count": 77,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -6732,6 +6736,7 @@
         "WAL-CLM-LETS-000430",
         "WAL-CLM-LETS-000431",
         "WAL-CLM-LETS-000433",
+        "WAL-CLM-LETS-000439",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -6851,6 +6856,7 @@
       "rheumatoid_arthritis",
       "schizophrenia",
       "seborrheic_dermatitis",
+      "stroke",
       "varicose_veins",
       "weight_loss"
     ],

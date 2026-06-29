@@ -9537,6 +9537,46 @@
       "rare-earths"
     ]
   },
+  "sore_throat": {
+    "display_name": "Sore Throat",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000434"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "eucalyptus",
+      "flax",
+      "garden-sage",
+      "german-chamomile",
+      "lobelia",
+      "marjoram",
+      "marshmallow",
+      "myrtle",
+      "rosemary"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "spider_bite": {
+    "display_name": "Spider Bite",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000436"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "sunflower"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "spina_bifida": {
     "display_name": "Spina Bifida",
     "claim_count": 5,
@@ -9580,6 +9620,27 @@
       "dddl-3e-2011"
     ]
   },
+  "sprain": {
+    "display_name": "Sprain",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000435"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "arnica",
+      "betaine-hcl",
+      "cartilage",
+      "comfrey",
+      "dmso",
+      "pancreatic-enzymes"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "stomatitis": {
     "display_name": "Stomatitis",
     "claim_count": 1,
@@ -9596,16 +9657,58 @@
       "lets-play-doctor"
     ]
   },
+  "strain": {
+    "display_name": "Strain",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000437"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "arnica",
+      "betaine-hcl",
+      "comfrey",
+      "dmso",
+      "lavender",
+      "pancreatic-enzymes"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "stress": {
+    "display_name": "Stress",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000438"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-c",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "adrenal-cortical-extract"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "stroke": {
     "display_name": "Stroke",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "protocols": [
         "WAL-CLM-LETS-000317",
+        "WAL-CLM-LETS-000439",
         "WAL-CLM-RARE-000202"
       ]
     },
     "essentials_involved": [
+      "omega-3",
       "oxygen",
       "selenium",
       "vitamin-a",
@@ -9614,6 +9717,7 @@
     ],
     "other_substances_involved": [
       "betaine-hcl",
+      "colloidal-minerals",
       "edta-chelation",
       "hydrogen-peroxide",
       "pancreatic-enzymes"

@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 201 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 202 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-29 12:24 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b67: SORE THROAT→STROKE (p168-169), LETS-434..439, 6 tier-1 protocol claims. corpus 813→819, conds 417→422, kv 178. NO .txt edit; ACE='adrenal cortical extract' catch; STOMACH DISORDERS xref skip. Board 31/31.
+  ↳ 6 conditions: sore_throat/sprain/spider_bite/strain/stress NEW, stroke REUSED (now its own dedicated protocol alongside infarction LETS-317). No dose-unit fix needed — all doses explicit/standard (cartilage & EFA 5 gm, betaine/enzymes 75-200 mg, ACE 5-10 drops, vit C bowel-tolerance, zinc 50 mg); both p168+p169 rendered at 300 DPI, no 2-column scramble (txt order matches columns), zero misprints, no ambiguous 'meg' (the last book 'selenium meg' is at L11294 in TACHYCARDIA = next batch). KEY SLUG CATCH: in this book 'ACE' = adrenal cortical extract (confirmed vs LETS-126), NOT vitamins A/C/E -> STRESS mapped to other_substance adrenal-cortical-extract. New other-subs: marjoram/myrtle/lobelia. Generic 'antibiotics' kept prose-only. HONESTY: the seal fired via an accidental corpus_seal.py --help (these scripts run main on --help per the standing warning) — but sealing was the intended next step and corpus_verify PASSED, so the result is a correct intended seal, not a spurious bump. Gates: build OK (1605.8 KB), invariants 31/31 (0 new reds), render_probe_knowledge PASS (0 page errors, conds rowCount 422). NEXT b68 = SWEAT TEST / SWIMMERS EAR / SYPHILIS [STD with real protocol = tier-1; watch the charged homosexual-males epidemiology line] / TACHYCARDIA [fix the LAST book selenium meg->mcg at L11294] / TAPEWORMS.
 
 ## 2026-06-29 12:08 UTC-05:00 · session-end · chronicle
 SESSION 23 WRAPPED — Ch10, 4 batches b63-b66 (RACHITIC ROSARY→SKIN AILMENTS): R COMPLETE + S's to SKIN AILMENTS. LETS-413..433, 21 claims. corpus 792→813, conds 405→417, kv 173→177. 3 meg→mcg + 1 dangerous zinc gm→mg; RAPE+STD skipped; sulfur misfire recovered. board 31/31.
@@ -801,7 +805,3 @@ Codified the two-layer logging model + the Creator's Log sacred covenant (append
 ## 2026-06-23 03:09 UTC · session-end · meta
 Session checkpoint: cleanup A-C4 + logging-doctrine codified + Phase-2 L1 (Creator's-Log mirror, board 21/21). Handoff refreshed. Next: L2 Profile boot-merge → Journey J1-J4 → Palette.
   ↳ 9 commits pushed c2826e9..(this). Every chunk build>test>log>committed. Creator's Log now CLI-fireable; this is a session-end entry through the live tool.
-
-## 2026-06-23 03:05 UTC · round-close · tools
-Phase 2 L1 shipped: Creator's-Log file-mirror + creators_log_well_formed invariant (board 20→21). Round-close step 5 is now CLI-fireable — this entry is the proof.
-  ↳ Files: tools/creators_log.py, chronicle/creators-log.jsonl, tools/invariants.py. Verified: creators_log verify 1/1 clean; invariants 21/21. Next: L2 Profile boot-merge, then Journey J1-J4.
