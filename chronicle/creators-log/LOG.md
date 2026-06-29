@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_200 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_Showing the most recent 200 of 201 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-29 12:08 UTC-05:00 · session-end · chronicle
+SESSION 23 WRAPPED — Ch10, 4 batches b63-b66 (RACHITIC ROSARY→SKIN AILMENTS): R COMPLETE + S's to SKIN AILMENTS. LETS-413..433, 21 claims. corpus 792→813, conds 405→417, kv 173→177. 3 meg→mcg + 1 dangerous zinc gm→mg; RAPE+STD skipped; sulfur misfire recovered. board 31/31.
 
 ## 2026-06-29 12:05 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b66: SEBACEOUS CYST→SKIN AILMENTS (p167-168) — LETS-429..433, 5 tier-1: sebaceous_cyst/seborrheic_dermatitis/keratosis/shingles[2nd]/dermatitis. ★★ 1 DANGEROUS gm→mg (zinc 50 gm→mg, verified vs sibling). STD skipped (xref). kv177, claims 813, conds 417, board 31/31.
@@ -802,7 +805,3 @@ Session checkpoint: cleanup A-C4 + logging-doctrine codified + Phase-2 L1 (Creat
 ## 2026-06-23 03:05 UTC · round-close · tools
 Phase 2 L1 shipped: Creator's-Log file-mirror + creators_log_well_formed invariant (board 20→21). Round-close step 5 is now CLI-fireable — this entry is the proof.
   ↳ Files: tools/creators_log.py, chronicle/creators-log.jsonl, tools/invariants.py. Verified: creators_log verify 1/1 clean; invariants 21/21. Next: L2 Profile boot-merge, then Journey J1-J4.
-
-## 2026-06-23 03:04 UTC · milestone · tools
-Creator's Log file-mirror created — chronicle/creators-log.jsonl + tools/creators_log.py make round-close step 5 CLI-fireable; the §00 audit trail now lives in the repo as a committed teaching record
-  ↳ In-app log() (state/log.ts) stays localStorage-only until the Phase-2 boot-merge (L2) embeds these entries into the Profile panel. Writes route through safe_write (§17). Validated by the new creators_log_well_formed invariant.
