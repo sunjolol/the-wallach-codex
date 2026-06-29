@@ -288,7 +288,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 76,
+    "claim_count": 78,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -369,6 +369,8 @@
         "WAL-CLM-LETS-000415",
         "WAL-CLM-LETS-000419",
         "WAL-CLM-LETS-000420",
+        "WAL-CLM-LETS-000426",
+        "WAL-CLM-LETS-000427",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -545,6 +547,8 @@
       "raynauds_disease",
       "rheumatoid_arthritis",
       "rickets",
+      "sciatica",
+      "scoliosis",
       "sids",
       "tetany",
       "vertigo"
@@ -959,7 +963,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 86,
+    "claim_count": 88,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1054,6 +1058,8 @@
         "WAL-CLM-LETS-000415",
         "WAL-CLM-LETS-000419",
         "WAL-CLM-LETS-000420",
+        "WAL-CLM-LETS-000426",
+        "WAL-CLM-LETS-000427",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1196,6 +1202,8 @@
       "raynauds_disease",
       "rheumatoid_arthritis",
       "rickets",
+      "sciatica",
+      "scoliosis",
       "spinal_stenosis",
       "tetany",
       "tinnitus",
@@ -2256,7 +2264,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 82,
+    "claim_count": 83,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2345,6 +2353,7 @@
         "WAL-CLM-LETS-000409",
         "WAL-CLM-LETS-000417",
         "WAL-CLM-LETS-000419",
+        "WAL-CLM-LETS-000427",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -5224,7 +5233,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 65,
+    "claim_count": 66,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -5297,7 +5306,8 @@
         "WAL-CLM-LETS-000399",
         "WAL-CLM-LETS-000404",
         "WAL-CLM-LETS-000410",
-        "WAL-CLM-LETS-000417"
+        "WAL-CLM-LETS-000417",
+        "WAL-CLM-LETS-000428"
       ]
     },
     "deficiency_signs": [
@@ -5566,7 +5576,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 61,
+    "claim_count": 62,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -5637,6 +5647,7 @@
         "WAL-CLM-LETS-000409",
         "WAL-CLM-LETS-000415",
         "WAL-CLM-LETS-000421",
+        "WAL-CLM-LETS-000427",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -5769,6 +5780,7 @@
       "raynauds_disease",
       "rheumatoid_arthritis",
       "ringworm",
+      "scoliosis",
       "shingles",
       "stroke",
       "varicose_veins"

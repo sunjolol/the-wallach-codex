@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_198 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_199 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-29 11:55 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b65: SCABIES→SCURVY (S's pt 1, p166-167) — LETS-424..428, 5 tier-1 protocol: scabies/scarlatina/sciatica/scoliosis/scurvy. 1 meg→mcg (scoliosis selenium). ★ seal misfire recovered (sulfur=canon → dropped, git-revert+redo). kv176, claims 808, conds 416, board 31/31.
 
 ## 2026-06-29 11:44 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b64: RHEUMATIC FEVER→ROSEOLA = ★ R SECTION COMPLETE (p165-166) — LETS-418..423, 6 tier-1 protocol: rheumatic_fever/RA[2nd,Mycoplasma]/rickets[2nd]/ringworm/RMSF/roseola. 1 meg→mcg (RA selenium). kv175, claims 803, conds 413, board 31/31.

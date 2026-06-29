@@ -9245,6 +9245,40 @@
       "lets-play-doctor"
     ]
   },
+  "scabies": {
+    "display_name": "Scabies",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000424"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "benzyl-benzoate",
+      "lindane",
+      "poke"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "scarlatina": {
+    "display_name": "Scarlatina",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000425"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "penicillin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "schistosomiasis": {
     "display_name": "Schistosomiasis",
     "claim_count": 1,
@@ -9294,35 +9328,69 @@
       "rare-earths"
     ]
   },
-  "scoliosis": {
-    "display_name": "Scoliosis",
+  "sciatica": {
+    "display_name": "Sciatica",
     "claim_count": 1,
     "claims_by_role": {
-      "deficiency_signs": [
-        "WAL-CLM-RARE-000269"
+      "protocols": [
+        "WAL-CLM-LETS-000426"
       ]
     },
     "essentials_involved": [
-      "selenium"
+      "calcium",
+      "magnesium"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "colloidal-minerals"
+    ],
     "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "scoliosis": {
+    "display_name": "Scoliosis",
+    "claim_count": 2,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000269"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000427"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium",
+      "selenium",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "colloidal-minerals"
+    ],
+    "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
   "scurvy": {
     "display_name": "Scurvy",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000241"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000428"
       ]
     },
     "essentials_involved": [
       "vitamin-c"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "dog-rose"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },

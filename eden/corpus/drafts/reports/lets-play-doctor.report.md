@@ -1,68 +1,54 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_6 claim(s) drafted 2026-06-29T16:42:40+00:00. Review then run corpus_seal.py to promote._
+_5 claim(s) drafted 2026-06-29T16:54:00+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: protocol×6
+Kinds: protocol×5
 
-### WAL-CLM-LETS-000418 · protocol
-- **essentials:** — · **conditions:** rheumatic_fever · **symptoms:** —
-- **claim:** Rheumatic fever is caused by a Streptococcus Group A infection (usually starting as a 'strep throat') and is marked by arthritis, skin rash, fever, heart-valve inflammation, and brain signs (chorea); the residual heart-valve damage is the most dangerous consequence of untreated disease, and diagnosis rests on the typical symptoms plus positive Group A Streptococcus cultures. Treatment early in the course prevents the heart damage and should include aspirin for joint pain and sulfadiazine orally at 500-1,000 mg per day for 1-2 years, or penicillin G or V orally at 250,000 units twice a day for two years.
-- **verbatim** (offset 443257): “Treatment of rheumatic fever early in the
-course of the disease will prevent the heart
-damage. Treatment should include aspirin for
-joint pain and sulfadiazine orally at 500-1,000
-mg/day for 1 -2 years or penicillin G or V orally
-at 250,000 u. b.i.d. for two years.”
+### WAL-CLM-LETS-000424 · protocol
+- **essentials:** — · **conditions:** scabies · **symptoms:** —
+- **claim:** Scabies ('itch') is caused by an almost microscopic mite (Sarcoptes scabiei) that burrows into the skin; it is very contagious person-to-person, and the original infestation usually comes from an infected animal or contaminated animal bedding. Treatment includes total-body application of 1% gamma benzene hexachloride (lindane) or 25% benzyl benzoate cream in adults, and 5-10% sulfur ointment in infants to avoid potential neurotoxicity; poke (Phytolacca decandra) may be used topically as a natural alternative.
+- **verbatim** (offset 449249): “Treatment of scabies includes total body ap-
+plication of 1% gamma benzene hexachlo-
+ride, 25% benzyl benzoate cream in adults and
+5-10% sulfur ointment in infants to avoid po-
+tential neurotoxicity; poke (Phytolacca
+decandra) may be used topically as a natural
+alternative.”
 
-### WAL-CLM-LETS-000419 · protocol
-- **essentials:** selenium, copper, vitamin-b6, calcium, magnesium, omega-3, histidine · **conditions:** rheumatoid_arthritis · **symptoms:** —
-- **claim:** Wallach holds that rheumatoid arthritis is not primarily an immune-system disease but is initially caused by infection with a Mycoplasma (PPLO, a pleuropneumonia-like organism) that causes an upper-respiratory infection and then attacks the joint membranes of the fingers and toes, and later the larger joints — a cause he says has been recognized and eliminated in veterinary medicine. Orthodox treatment (aspirin, gold shots, steroids) only relieves symptoms, though he notes 75% of patients improve in the first year with no treatment at all. Treatment should include specific treatment for Mycoplasma/PPLO (Tylosin, tetracyclines, etc.) for six months to one year, intravenous and/or oral hydrogen peroxide, chelation, acupuncture, enterically coated bromelain at 40 mg four times a day, autoimmune urine therapy, dimethyl sulfoxide (DMSO), L-histidine at 1,000 mg three times a day, essential fatty acids at 5 grams three times a day, calcium and magnesium at 2,000 mg and 1,000 mg per day, selenium at 500-1,000 mcg per day, copper at 2-4 mg per day, B-6 at 100 mg three times a day, cartilage at 5 grams three times a day, hydrotherapy, and herbs (topical camphor, black mustard, dandelion, devil's claw, juniper, stinging nettle, sweet vernal grass), plus plant-derived colloidal minerals.
-- **verbatim** (offset 444887): “Treatment of rheumatoid arthritis should in-
-clude specific treatment for Mycoplasma
-(PPLO) (i.e., Tylosin, tetracyclines, etc.), for
-six months to one year, IV and/or oral hydro-
-gen peroxide, chelation, acupuncture,
-enterically coated bromeliad at 40 mg q.i.d.,
-autoimmune urine therapy, DMSO, 1-histi-
-dine at 1,000 mg t.i.d., essential fatty acids at 5
-gm t.i.d., calcium and magnesium at 2,000 mg
-and 1,000 mg per day, selenium at 500-1,000
-mcg per day”
+### WAL-CLM-LETS-000425 · protocol
+- **essentials:** — · **conditions:** scarlatina · **symptoms:** —
+- **claim:** Scarlatina (scarlet fever) is caused by a Streptococcus Group A throat infection; the organism releases a toxin that produces a rash most common on the belly, sides, and skin folds, plus a red pulpy 'strawberry' tongue, with fever common in the early stages. Aggressive treatment is recommended to prevent death or rheumatic fever, and diagnosis rests on the characteristic lesions plus positive Group A Streptococcus throat cultures. Treatment of scarlatina is oral penicillin V at 250 mg four times a day for 10-14 days.
+- **verbatim** (offset 450091): “Treatment of scarlatina is oral peni-cillin V at
+250 mg q.i.d. for 10-14 days.”
 
-### WAL-CLM-LETS-000420 · protocol
-- **essentials:** vitamin-d, calcium, magnesium · **conditions:** rickets · **symptoms:** —
-- **claim:** Rickets is caused by a deficiency of vitamin D and is marked by stunted growth, joint pain, and deformed long bones (bow legs, dropped wrists, 'sickle shins,' barrel chest, rachitic rosary). Treatment includes supplementation with vitamin D at 400 IU orally, calcium and magnesium at 2,000 mg and 1,000 mg per day, and exposure to sunshine for 30 minutes per day; advanced cases will require orthotic correction and, in some cases, orthopedic surgery.
-- **verbatim** (offset 446004): “Treatment ofrickets includes supple-mentation
-with vitamin D at 400 IUorally, calcium and
-magnesium at 2,000 mg and 1 ,000 mg per day,
-and exposure to sunshine for 30 minutes per
-day.”
+### WAL-CLM-LETS-000426 · protocol
+- **essentials:** calcium, magnesium · **conditions:** sciatica · **symptoms:** —
+- **claim:** Sciatica (low back pain radiating down the buttocks and legs) can be caused by subluxations of the lumbar vertebrae, thinning of a lumbar intervertebral disc, or even a thick wallet in one back pocket; in its most severe form it may result from a ruptured intervertebral disc. Treatment should include hydrotherapy, chiropractic, acupuncture, inversion-gravity therapy, calcium and magnesium at 2,000 mg and 1,000 mg per day, and the baseline nutritional supplement program including plant-derived colloidal minerals.
+- **verbatim** (offset 450508): “Treatment of sciatica should include hydro-
+therapy, chiropractic, acupuncture, inversion-
+gravity therapy, calcium and magnesium at
+2,000 mg per day and 1, 000 mgperday and the
+baseline nutritional supplement program to
+include plant derived colloidal minerals”
 
-### WAL-CLM-LETS-000421 · protocol
-- **essentials:** vitamin-a, zinc, vitamin-e · **conditions:** ringworm · **symptoms:** —
-- **claim:** Ringworm is caused by fungi (most often Microsporum/Tinea capitis or Trichophyton/Tinea cruris, 'jock itch') that invade the skin, nails, and hair, producing the characteristic circular lesions; cats, rabbits, and children are the most common sources, and diagnosis is by the typical lesions, fungal culture, and a positive Wood's lamp test (Microsporum lesions fluoresce a bright pastel green). Treatment should include Griseofulvin orally at 250 mg four times a day for four months, vitamin A at 25,000-300,000 IU per day as beta carotene, zinc at 50 mg three times a day, vitamin E at 800-1,200 IU per day, ultraviolet light directly to the lesion for up to six minutes per day, and topical herbs including plantain (Plantago major) and castor oil (Ricinus communis).
-- **verbatim** (offset 446760): “Treatment of ringworm should include
-Griseofulvin orally at 250 mg q.i.d. for four
-months, vitamin A at 25,000-300,000 IU/day as
-beta carotene, zinc at 50 mg t.i.d., vitamin E at
-800-1,200 IU/day, ultra violet light directly to
-lesion for up to six minutes per day, and herbs
-topically including plantain (Plantgo major)
-and castor oil (Ricinus communis).”
+### WAL-CLM-LETS-000427 · protocol
+- **essentials:** vitamin-e, selenium, calcium, magnesium · **conditions:** scoliosis · **symptoms:** —
+- **claim:** Scoliosis (curvature of the spine) occurs in preteens and teens (80% in girls) during rapid growth; it may be benign or herald early muscular dystrophy, and Wallach attributes it to one set of spinal muscles being stronger than the other from muscle degeneration, with celiac-type intestinal damage and malabsorption as a possible cause. Treatment in the early stages can give a complete cure, while failure to aggressively supplement leads to persistent damage requiring back braces and surgery. Treatment should include avoidance of offending food allergens, vitamin E at 800-1,200 IU per day, selenium at 500-1,000 mcg per day, calcium and magnesium at 2,000 mg and 1,000 mg per day, and the baseline supplement program including plant-derived colloidal minerals; chiropractic can be very useful for the associated back-muscle spasms.
+- **verbatim** (offset 451540): “Treatment of scoliosis in the early stages will
+result in a complete cure; failure to aggres-
+sively take supplements will result in persis-
+tent damage requiring back braces and sur-
+gery. Treatment should include avoidance of
+offending food allergens, vitamin E at 800-
+1,200 IU per day, selenium at 500-1,000 mcg
+per day, calcium and magnesium at 2,000 mg
+and 1 ,000 mg per day”
 
-### WAL-CLM-LETS-000422 · protocol
-- **essentials:** — · **conditions:** rocky_mountain_spotted_fever · **symptoms:** —
-- **claim:** Rocky Mountain spotted fever (tick fever) is caused by a rickettsia (Rickettsia rickettsii) transmitted by the bite of an infected tick (wood, dog, or lone-star tick); it occurs May through October during tick season, mostly along the Eastern seaboard, and affects small children with access to wooded areas (often via the family dog). Symptoms follow 7-12 days after a bite — headaches, chills, weakness, muscle pain, fever, dry cough, and a skin rash starting on the wrists, ankles, palms, soles, and forearms then spreading. Wallach warns: do NOT wait for a positive blood test before starting treatment, as death may occur as quickly as 4-10 days after symptoms appear. Treatment should include tetracycline at 500 mg four times a day orally, or intravenously if the patient cannot swallow capsules, plus supportive intravenous fluids and electrolytes.
-- **verbatim** (offset 448240): “Treatment of RMSF should include tetracy-
-cline at 500 mg q.i.d. orally or IV if the patient
-can't swallow capsules. Supportive treatment
-with rv fluids and electrolytes is essential to
-rapid and full recovery.”
-
-### WAL-CLM-LETS-000423 · protocol
-- **essentials:** — · **conditions:** roseola · **symptoms:** —
-- **claim:** Roseola is an acute viral disease of infants and toddlers marked by high fever (up to 105 F) and a rash that predominates on the belly and chest and lightly on the face and limbs; convulsions may occur during the high-fever periods, and after 3-4 days the child feels completely well even though the rash persists. Treatment is directed to reducing the fever sufficiently to prevent convulsions, plus topical poultices on the rash (see measles).
-- **verbatim** (offset 448854): “Treatment of roseola is directed to reducing
-the fever sufficiently to prevent convulsions
-and topical poultices on the rash (see measles).”
+### WAL-CLM-LETS-000428 · protocol
+- **essentials:** vitamin-c · **conditions:** scurvy · **symptoms:** —
+- **claim:** Scurvy (bleeding gums) is caused by a vitamin C deficiency and may occur concurrently with gingivitis. Treatment should include vitamin C to bowel tolerance, increased intake of green leafy vegetables and fruit, and herbs including dog rose (Rosa canina).
+- **verbatim** (offset 452228): “Treatment of scurvy should include vitamin C
+to bowel tolerance, increase green leafy veg-
+etables and fruit intake, and herbs including
+dog rose (Rosa canina).”
 
