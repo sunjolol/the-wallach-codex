@@ -160,6 +160,10 @@
     "kind": "mechanism",
     "repetitions": [
       {
+        "claim_id": "WAL-CLM-IAIYH-000015",
+        "book": "iaiyh"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000002",
         "book": "rare-earths"
       },
@@ -228,8 +232,8 @@
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 1,
-    "claim_count": 17
+    "books_repeating": 2,
+    "claim_count": 18
   },
   {
     "id": "CG-0003",

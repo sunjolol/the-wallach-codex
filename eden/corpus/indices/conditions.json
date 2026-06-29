@@ -868,8 +868,11 @@
   },
   "anosmia": {
     "display_name": "Anosmia",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000005"
+      ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000077",
         "WAL-CLM-LETS-000036",
@@ -886,6 +889,7 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "iaiyh",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -1228,6 +1232,21 @@
       "lets-play-doctor"
     ]
   },
+  "atrial_fibrillation": {
+    "display_name": "Atrial Fibrillation",
+    "claim_count": 2,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000014",
+        "WAL-CLM-IAIYH-000017"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "iaiyh"
+    ]
+  },
   "autism": {
     "display_name": "Autism",
     "claim_count": 1,
@@ -1379,8 +1398,11 @@
   },
   "bells_palsy": {
     "display_name": "Bells Palsy",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000011"
+      ],
       "definitions": [
         "WAL-CLM-RARE-000105"
       ],
@@ -1413,6 +1435,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "iaiyh",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -2360,9 +2383,10 @@
   },
   "carpal_tunnel_syndrome": {
     "display_name": "Carpal Tunnel Syndrome",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-IAIYH-000017",
         "WAL-CLM-RARE-000178"
       ],
       "deficiency_signs": [
@@ -2391,6 +2415,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "iaiyh",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -2764,6 +2789,20 @@
     ],
     "books_cited": [
       "lets-play-doctor"
+    ]
+  },
+  "chronic_obstructive_pulmonary_disease": {
+    "display_name": "Chronic Obstructive Pulmonary Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000014"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "iaiyh"
     ]
   },
   "circulatory_disease": {
@@ -3399,8 +3438,11 @@
   },
   "deafness": {
     "display_name": "Deafness",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000012"
+      ],
       "deficiency_signs": [
         "WAL-CLM-RARE-000176",
         "WAL-CLM-RARE-000275"
@@ -3427,6 +3469,7 @@
       "pulse-test"
     ],
     "books_cited": [
+      "iaiyh",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -3815,6 +3858,20 @@
       "rare-earths"
     ]
   },
+  "diplopia": {
+    "display_name": "Diplopia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000008"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "iaiyh"
+    ]
+  },
   "disagreeable_attitude": {
     "display_name": "Disagreeable Attitude",
     "claim_count": 1,
@@ -4063,6 +4120,20 @@
     ],
     "books_cited": [
       "lets-play-doctor"
+    ]
+  },
+  "dysphagia": {
+    "display_name": "Dysphagia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000013"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "iaiyh"
     ]
   },
   "earache": {
@@ -4345,6 +4416,20 @@
       "lets-play-doctor"
     ]
   },
+  "erbs_palsy": {
+    "display_name": "Erbs Palsy",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000017"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "iaiyh"
+    ]
+  },
   "erectile_dysfunction": {
     "display_name": "Erectile Dysfunction",
     "claim_count": 1,
@@ -4518,6 +4603,20 @@
       "rare-earths"
     ]
   },
+  "fibromyalgia": {
+    "display_name": "Fibromyalgia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000017"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "iaiyh"
+    ]
+  },
   "flatulence": {
     "display_name": "Flatulence",
     "claim_count": 2,
@@ -4674,6 +4773,20 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "gastroparesis": {
+    "display_name": "Gastroparesis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000014"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "iaiyh"
     ]
   },
   "geographic_tongue": {
@@ -6933,8 +7046,11 @@
   },
   "lupus": {
     "display_name": "Lupus",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000017"
+      ],
       "deficiency_signs": [
         "WAL-CLM-RARE-000223"
       ],
@@ -6954,6 +7070,7 @@
       "urine-therapy"
     ],
     "books_cited": [
+      "iaiyh",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -7116,6 +7233,20 @@
     ],
     "books_cited": [
       "lets-play-doctor"
+    ]
+  },
+  "menieres_disease": {
+    "display_name": "Menieres Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000012"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "iaiyh"
     ]
   },
   "meningitis": {
@@ -7864,6 +7995,20 @@
     ],
     "books_cited": [
       "lets-play-doctor"
+    ]
+  },
+  "optic_nerve_atrophy": {
+    "display_name": "Optic Nerve Atrophy",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000006"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "iaiyh"
     ]
   },
   "organic_brain_syndrome": {
@@ -8898,6 +9043,20 @@
       "lets-play-doctor"
     ]
   },
+  "ptosis": {
+    "display_name": "Ptosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000007"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "iaiyh"
+    ]
+  },
   "pubic_lice": {
     "display_name": "Pubic Lice",
     "claim_count": 1,
@@ -9407,8 +9566,11 @@
   },
   "sciatica": {
     "display_name": "Sciatica",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000017"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000426"
       ]
@@ -9421,6 +9583,7 @@
       "colloidal-minerals"
     ],
     "books_cited": [
+      "iaiyh",
       "lets-play-doctor"
     ]
   },
@@ -9717,6 +9880,20 @@
     "other_substances_involved": [],
     "books_cited": [
       "lets-play-doctor"
+    ]
+  },
+  "strabismus": {
+    "display_name": "Strabismus",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000010"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "iaiyh"
     ]
   },
   "strain": {
@@ -10087,8 +10264,11 @@
   },
   "tinnitus": {
     "display_name": "Tinnitus",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000012"
+      ],
       "deficiency_signs": [
         "WAL-CLM-LETS-000017"
       ],
@@ -10115,6 +10295,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "iaiyh",
       "lets-play-doctor"
     ]
   },
@@ -10134,6 +10315,20 @@
     "books_cited": [
       "dddl-3e-2011",
       "rare-earths"
+    ]
+  },
+  "tongue_atrophy": {
+    "display_name": "Tongue Atrophy",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000016"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "iaiyh"
     ]
   },
   "tonsillitis": {
@@ -10285,10 +10480,11 @@
   },
   "trigeminal_neuralgia": {
     "display_name": "Trigeminal Neuralgia",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-IAIYH-000003"
+        "WAL-CLM-IAIYH-000003",
+        "WAL-CLM-IAIYH-000009"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000009"
@@ -10429,8 +10625,11 @@
   },
   "vertigo": {
     "display_name": "Vertigo",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000012"
+      ],
       "deficiency_signs": [
         "WAL-CLM-RARE-000172"
       ],
@@ -10445,6 +10644,7 @@
       "pepper"
     ],
     "books_cited": [
+      "iaiyh",
       "lets-play-doctor",
       "rare-earths"
     ]
