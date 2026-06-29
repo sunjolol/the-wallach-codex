@@ -2187,7 +2187,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 73,
+    "claim_count": 75,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2267,6 +2267,8 @@
         "WAL-CLM-LETS-000350",
         "WAL-CLM-LETS-000356",
         "WAL-CLM-LETS-000357",
+        "WAL-CLM-LETS-000361",
+        "WAL-CLM-LETS-000365",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2344,6 +2346,7 @@
       "gallstones",
       "growing_pains",
       "heart_attack",
+      "heavy_metal_toxicity",
       "hepatitis",
       "hiv_aids",
       "hypertension",
@@ -2365,6 +2368,7 @@
       "lupus",
       "memory_loss",
       "menorrhagia",
+      "mercury_poisoning",
       "miscarriage",
       "multiple_sclerosis",
       "muscular_dystrophy",
@@ -2637,7 +2641,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 86,
+    "claim_count": 87,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2734,6 +2738,7 @@
         "WAL-CLM-LETS-000328",
         "WAL-CLM-LETS-000329",
         "WAL-CLM-LETS-000359",
+        "WAL-CLM-LETS-000365",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -2881,6 +2886,7 @@
       "keratosis",
       "malabsorption",
       "meningocele",
+      "miscarriage",
       "osteoporosis",
       "paranoia",
       "pruritus",
@@ -3699,7 +3705,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 41,
+    "claim_count": 42,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -3745,7 +3751,8 @@
         "WAL-CLM-LETS-000329",
         "WAL-CLM-LETS-000332",
         "WAL-CLM-LETS-000348",
-        "WAL-CLM-LETS-000359"
+        "WAL-CLM-LETS-000359",
+        "WAL-CLM-LETS-000365"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000037"
@@ -3847,6 +3854,7 @@
       "liver_cirrhosis",
       "liver_disease",
       "meningocele",
+      "miscarriage",
       "night_blindness",
       "pruritus",
       "psoriasis",
@@ -4735,7 +4743,7 @@
     "display_name": "Folate",
     "canon_slug": "vitamin-b9",
     "category": "vitamin",
-    "claim_count": 18,
+    "claim_count": 19,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000042",
@@ -4759,7 +4767,8 @@
         "WAL-CLM-LETS-000298",
         "WAL-CLM-LETS-000323",
         "WAL-CLM-LETS-000348",
-        "WAL-CLM-LETS-000359"
+        "WAL-CLM-LETS-000359",
+        "WAL-CLM-LETS-000365"
       ]
     },
     "deficiency_signs": [
@@ -4831,6 +4840,7 @@
       "liver_cirrhosis",
       "liver_disease",
       "meningocele",
+      "miscarriage",
       "paranoia",
       "psoriasis",
       "spina_bifida",
@@ -5041,7 +5051,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 56,
+    "claim_count": 57,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -5105,7 +5115,8 @@
         "WAL-CLM-LETS-000320",
         "WAL-CLM-LETS-000325",
         "WAL-CLM-LETS-000340",
-        "WAL-CLM-LETS-000348"
+        "WAL-CLM-LETS-000348",
+        "WAL-CLM-LETS-000364"
       ]
     },
     "deficiency_signs": [
@@ -5226,6 +5237,7 @@
       "lead_poisoning",
       "liver_cirrhosis",
       "liver_disease",
+      "migraine",
       "periodontal_disease",
       "plumbism",
       "psoriasis",
@@ -5861,7 +5873,7 @@
     "display_name": "Flavonoids",
     "canon_slug": "flavonoids",
     "category": "vitamin",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000243"
@@ -5878,7 +5890,8 @@
         "WAL-CLM-LETS-000280",
         "WAL-CLM-LETS-000292",
         "WAL-CLM-LETS-000299",
-        "WAL-CLM-LETS-000320"
+        "WAL-CLM-LETS-000320",
+        "WAL-CLM-LETS-000364"
       ]
     },
     "deficiency_signs": [
@@ -5906,7 +5919,8 @@
       "hay_fever",
       "herpes_simplex",
       "inflammation",
-      "influenza"
+      "influenza",
+      "migraine"
     ],
     "interacts_with": [
       "arginine",

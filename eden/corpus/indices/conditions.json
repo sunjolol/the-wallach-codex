@@ -3827,6 +3827,22 @@
       "lets-play-doctor"
     ]
   },
+  "drug_addiction": {
+    "display_name": "Drug Addiction",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000363"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "methadone"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "dry_skin": {
     "display_name": "Dry Skin",
     "claim_count": 1,
@@ -4971,6 +4987,26 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "heavy_metal_toxicity": {
+    "display_name": "Heavy Metal Toxicity",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000361"
+      ]
+    },
+    "essentials_involved": [
+      "selenium"
+    ],
+    "other_substances_involved": [
+      "colloidal-minerals",
+      "edta-chelation",
+      "sauna"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "hemorrhoids": {
@@ -7064,19 +7100,49 @@
       "lets-play-doctor"
     ]
   },
-  "migraine": {
-    "display_name": "Migraine",
+  "mercury_poisoning": {
+    "display_name": "Mercury Poisoning",
     "claim_count": 1,
     "claims_by_role": {
-      "deficiency_signs": [
-        "WAL-CLM-RARE-000172"
+      "protocols": [
+        "WAL-CLM-LETS-000361"
       ]
     },
     "essentials_involved": [
-      "magnesium"
+      "selenium"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "colloidal-minerals",
+      "edta-chelation",
+      "sauna"
+    ],
     "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "migraine": {
+    "display_name": "Migraine",
+    "claim_count": 2,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000172"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000364"
+      ]
+    },
+    "essentials_involved": [
+      "flavonoids",
+      "magnesium",
+      "vitamin-c"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "pancreatic-enzymes",
+      "urine-therapy"
+    ],
+    "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -7112,20 +7178,31 @@
   },
   "miscarriage": {
     "display_name": "Miscarriage",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
         "WAL-CLM-RARE-000176"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000365"
       ]
     },
     "essentials_involved": [
       "manganese",
-      "selenium"
+      "selenium",
+      "vitamin-a",
+      "vitamin-b9",
+      "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "alfalfa",
+      "blue-cohosh",
+      "cramp-bark"
+    ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -7305,6 +7382,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "opiate_withdrawal": {
+    "display_name": "Opiate Withdrawal",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000363"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "methadone"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "osteoarthritis": {

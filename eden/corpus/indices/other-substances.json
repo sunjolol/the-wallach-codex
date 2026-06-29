@@ -95,7 +95,7 @@
   },
   "alfalfa": {
     "display_name": "Alfalfa",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
@@ -104,7 +104,8 @@
         "WAL-CLM-LETS-000166",
         "WAL-CLM-LETS-000176",
         "WAL-CLM-LETS-000261",
-        "WAL-CLM-LETS-000295"
+        "WAL-CLM-LETS-000295",
+        "WAL-CLM-LETS-000365"
       ]
     },
     "conditions_treated": [
@@ -116,6 +117,7 @@
       "cardiovascular_disease",
       "ecchymosis",
       "heart_attack",
+      "miscarriage",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -542,7 +544,7 @@
   },
   "betaine-hcl": {
     "display_name": "Betaine Hcl",
-    "claim_count": 39,
+    "claim_count": 40,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -583,7 +585,8 @@
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000321",
         "WAL-CLM-LETS-000323",
-        "WAL-CLM-LETS-000333"
+        "WAL-CLM-LETS-000333",
+        "WAL-CLM-LETS-000364"
       ]
     },
     "conditions_treated": [
@@ -630,6 +633,7 @@
       "irritable_bowel_syndrome",
       "korsakoffs_syndrome",
       "menopause",
+      "migraine",
       "psoriasis",
       "stroke"
     ],
@@ -835,13 +839,14 @@
   },
   "blue-cohosh": {
     "display_name": "Blue Cohosh",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000258",
         "WAL-CLM-LETS-000310",
         "WAL-CLM-LETS-000335",
-        "WAL-CLM-LETS-000357"
+        "WAL-CLM-LETS-000357",
+        "WAL-CLM-LETS-000365"
       ]
     },
     "conditions_treated": [
@@ -849,7 +854,8 @@
       "dysmenorrhea",
       "hysteria",
       "labor",
-      "menorrhagia"
+      "menorrhagia",
+      "miscarriage"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1443,7 +1449,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 33,
+    "claim_count": 34,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-LETS-000352"
@@ -1480,7 +1486,8 @@
         "WAL-CLM-LETS-000322",
         "WAL-CLM-LETS-000340",
         "WAL-CLM-LETS-000348",
-        "WAL-CLM-LETS-000350"
+        "WAL-CLM-LETS-000350",
+        "WAL-CLM-LETS-000361"
       ]
     },
     "conditions_treated": [
@@ -1512,6 +1519,7 @@
       "failure_to_thrive",
       "fractures",
       "gingivitis",
+      "heavy_metal_toxicity",
       "hypertension",
       "immune_depression",
       "impotence",
@@ -1522,6 +1530,7 @@
       "liver_disease",
       "lupus",
       "malnutrition",
+      "mercury_poisoning",
       "periodontal_disease",
       "plumbism",
       "rheumatoid_arthritis",
@@ -1723,13 +1732,15 @@
   },
   "cramp-bark": {
     "display_name": "Cramp Bark",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000349"
+        "WAL-CLM-LETS-000349",
+        "WAL-CLM-LETS-000365"
       ]
     },
     "conditions_treated": [
+      "miscarriage",
       "tetanus"
     ],
     "books_cited": [
@@ -2037,7 +2048,7 @@
   },
   "edta-chelation": {
     "display_name": "Edta Chelation",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000139",
@@ -2051,7 +2062,8 @@
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000340",
         "WAL-CLM-LETS-000348",
-        "WAL-CLM-LETS-000350"
+        "WAL-CLM-LETS-000350",
+        "WAL-CLM-LETS-000361"
       ]
     },
     "conditions_treated": [
@@ -2062,6 +2074,7 @@
       "cardiovascular_disease",
       "cerebrovascular_disease",
       "heart_attack",
+      "heavy_metal_toxicity",
       "hypertension",
       "infarction",
       "intermittent_claudication",
@@ -2069,6 +2082,7 @@
       "liver_cirrhosis",
       "liver_disease",
       "lupus",
+      "mercury_poisoning",
       "plumbism",
       "rheumatoid_arthritis",
       "stroke"
@@ -3854,6 +3868,22 @@
       "rare-earths"
     ]
   },
+  "methadone": {
+    "display_name": "Methadone",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000363"
+      ]
+    },
+    "conditions_treated": [
+      "drug_addiction",
+      "opiate_withdrawal"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "metronidazole": {
     "display_name": "Metronidazole",
     "claim_count": 1,
@@ -4237,7 +4267,7 @@
   },
   "pancreatic-enzymes": {
     "display_name": "Pancreatic Enzymes",
-    "claim_count": 32,
+    "claim_count": 33,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000123",
@@ -4271,7 +4301,8 @@
         "WAL-CLM-LETS-000320",
         "WAL-CLM-LETS-000321",
         "WAL-CLM-LETS-000323",
-        "WAL-CLM-LETS-000333"
+        "WAL-CLM-LETS-000333",
+        "WAL-CLM-LETS-000364"
       ]
     },
     "conditions_treated": [
@@ -4311,6 +4342,7 @@
       "irritable_bowel_syndrome",
       "korsakoffs_syndrome",
       "menopause",
+      "migraine",
       "psoriasis",
       "stroke"
     ],
@@ -5033,6 +5065,22 @@
       "lets-play-doctor"
     ]
   },
+  "sauna": {
+    "display_name": "Sauna",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000361"
+      ]
+    },
+    "conditions_treated": [
+      "heavy_metal_toxicity",
+      "mercury_poisoning"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "saw-palmetto": {
     "display_name": "Saw Palmetto",
     "claim_count": 3,
@@ -5560,7 +5608,7 @@
   },
   "urine-therapy": {
     "display_name": "Urine Therapy",
-    "claim_count": 20,
+    "claim_count": 21,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000201",
@@ -5582,7 +5630,8 @@
         "WAL-CLM-LETS-000284",
         "WAL-CLM-LETS-000292",
         "WAL-CLM-LETS-000293",
-        "WAL-CLM-LETS-000350"
+        "WAL-CLM-LETS-000350",
+        "WAL-CLM-LETS-000364"
       ]
     },
     "conditions_treated": [
@@ -5607,6 +5656,7 @@
       "headache",
       "hyperactivity",
       "lupus",
+      "migraine",
       "psoriasis",
       "tonsillitis"
     ],

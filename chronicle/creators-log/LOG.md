@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_182 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_183 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 23:15 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b52 — MERCURY POISONING→MISCARRIAGE. 5 claims LETS-361..365: mercury_poisoning, METABOLIC THERAPY(★Luneth search-only), drug_addiction/opiate_withdrawal(methadone), migraine, miscarriage. 0 dose fixes, no resnap. kv163, 745 claims, conditions 364→368, board 31/31.
+  ↳ Materia Medica the M's pt 3 (printed p149, render-first, clean 2-col). MERCURY: amalgam fillings + CaEDTA chelation + sauna + selenium colloidal minerals. METABOLIC THERAPY ruled SEARCH-ONLY by Luneth (AskUserQuestion) — modality definition (homeopathy/acupuncture/etc.), conditions=[], search-topic:metabolic-therapy, separation rule; search-only 64→65. METHADONE: 20 mg + double baseline nutrition 30 days. MIGRAINE: food-allergy thesis + betaine/enzymes + vit C + bioflavonoids. MISCARRIAGE: vit A/zinc/folic/selenium + baseline 6mo pre-conception + cramp bark/blue cohosh/alfalfa. No .txt edit. Pipeline: finalize→seal kv163→verify PASS→embed→build→invariants 31/31→knowledge probe PASS. Standing: MALNUTRITION+MENINGITIS reorders owed in final sweep.
 
 ## 2026-06-28 23:04 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b51 — MENARCHE→MENKES. 4 protocol LETS-357..360: dysmenorrhea/menorrhagia/amenorrhea, meningitis(emergency), meningocele/spina_bifida/anencephaly, menkes(copper). 1 meg→mcg. kv162, 740 claims, conditions 359→364, board 31/31.
