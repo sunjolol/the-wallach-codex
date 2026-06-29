@@ -5076,6 +5076,24 @@
       "rare-earths"
     ]
   },
+  "hoarseness": {
+    "display_name": "Hoarseness",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000303"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "chickweed",
+      "hedge-mustard",
+      "slippery-elm"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "huntingtons_disease": {
     "display_name": "Huntingtons Disease",
     "claim_count": 1,
@@ -5108,9 +5126,25 @@
       "lets-play-doctor"
     ]
   },
+  "hyperacidity": {
+    "display_name": "Hyperacidity",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000304"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "fennel"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "hyperactivity": {
     "display_name": "Hyperactivity",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000004",
@@ -5127,7 +5161,8 @@
         "WAL-CLM-RARE-000215"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000257"
+        "WAL-CLM-LETS-000257",
+        "WAL-CLM-LETS-000305"
       ],
       "toxicity_signs": [
         "WAL-CLM-LETS-000033"
@@ -5141,9 +5176,11 @@
       "sodium"
     ],
     "other_substances_involved": [
+      "b-complex",
       "betaine-hcl",
       "digestive-enzymes",
       "lead",
+      "pancreatic-enzymes",
       "pulse-test",
       "urine-therapy"
     ],
@@ -5196,6 +5233,26 @@
       "rare-earths"
     ]
   },
+  "hyperkinesis": {
+    "display_name": "Hyperkinesis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000305"
+      ]
+    },
+    "essentials_involved": [
+      "chromium"
+    ],
+    "other_substances_involved": [
+      "b-complex",
+      "betaine-hcl",
+      "pancreatic-enzymes"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "hyperparathyroidism": {
     "display_name": "Hyperparathyroidism",
     "claim_count": 1,
@@ -5214,7 +5271,7 @@
   },
   "hypertension": {
     "display_name": "Hypertension",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000107"
@@ -5231,6 +5288,7 @@
         "WAL-CLM-RARE-000206"
       ],
       "protocols": [
+        "WAL-CLM-LETS-000306",
         "WAL-CLM-RARE-000286"
       ],
       "toxicity_signs": [
@@ -5254,7 +5312,17 @@
       "vitamin-b6",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "colloidal-minerals",
+      "coq10",
+      "edta-chelation",
+      "garlic",
+      "hawthorn",
+      "hydrogen-peroxide",
+      "lecithin",
+      "olive",
+      "rauwolfia"
+    ],
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
@@ -5278,7 +5346,7 @@
   },
   "hypoglycemia": {
     "display_name": "Hypoglycemia",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000254"
@@ -5300,15 +5368,24 @@
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000046"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000307"
       ]
     },
     "essentials_involved": [
       "chromium",
       "copper",
       "manganese",
-      "vanadium"
+      "vanadium",
+      "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "adrenal-cortical-extract",
+      "b-complex",
+      "betaine-hcl",
+      "pancreatic-enzymes"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",
@@ -5365,29 +5442,40 @@
   },
   "hypotension": {
     "display_name": "Hypotension",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000016",
         "WAL-CLM-LETS-000021",
         "WAL-CLM-LETS-000025",
         "WAL-CLM-LETS-000032"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000308"
       ]
     },
     "essentials_involved": [
       "magnesium",
       "potassium",
       "sodium",
-      "vitamin-b5"
+      "vitamin-b5",
+      "vitamin-c",
+      "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "adrenal-cortical-extract",
+      "ginseng",
+      "rosemary",
+      "spring-adonis",
+      "thyroid"
+    ],
     "books_cited": [
       "lets-play-doctor"
     ]
   },
   "hypothyroidism": {
     "display_name": "Hypothyroidism",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000023"
@@ -5398,17 +5486,49 @@
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000024"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000309"
       ]
     },
     "essentials_involved": [
       "iodine",
       "tyrosine"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "kelp",
+      "quercus-marine",
+      "thyroid"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "hysteria": {
+    "display_name": "Hysteria",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000310"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "omega-3",
+      "vitamin-b3",
+      "vitamin-b6"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "black-hellebore",
+      "blue-cohosh",
+      "mistletoe",
+      "pancreatic-enzymes"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "ichthyosis": {
@@ -5761,6 +5881,24 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "laryngitis": {
+    "display_name": "Laryngitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000303"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "chickweed",
+      "hedge-mustard",
+      "slippery-elm"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "lead_poisoning": {

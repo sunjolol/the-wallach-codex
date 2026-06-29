@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_171 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_172 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 19:59 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b42 — HOARSENESS→HYSTERIA (the H section COMPLETE), 8 tier-1 protocol claims LETS-303..310. 5 render-verified meg→mcg fixes, 0 dangerous misprints; 3 behavioral conds documented. kv152→153, claims 682→690, conditions 319→324, board 31/31.
+  ↳ Let's Play Doctor Ch10 Materia Medica, the H's pt 3 (printed p132-134), completing the entire H section. Conditions: hoarseness+laryngitis (herbal demulcents), hyperacidity (xref dyspepsia + fennel tea), hyperactivity+hyperkinesis (behavioral; food-allergy/Feingold/betaine/B-complex/chromium 25-100 mcg), hypertension (CALCIUM-DEFICIENT DIETS = MAJOR CAUSE; colloidal minerals + EDTA/H2O2/flax/garlic/CO-Q10/lecithin/hawthorn-rauwolfia-olive), hypoglycemia (behavioral; Cr/V magic bullets 50-200 mcg, insulin start 25 mcg), hypotension (vit C/zinc/ACE/thyroid/ginseng), hypothyroidism (thyroid 3-9 grains + kelp + iodine 250-500 mcg), hysteria+melancholia (behavioral; EFA/chromium/B-3/B-6). 5 transactional meg->mcg .txt fixes all 600-DPI zoom-confirmed mcg in print (chromium x3, vanadium, iodine). RENDER-FIRST p132-134. resnap 0 reloc/0 broken; corpus_verify PASS; embed+build OK; render_probe_knowledge PASS 0 errors. NEXT b43 = the I's; watch IMMUNIZATION (opinion->ask) + IMPOTENCE (sexual, likely tier-1).
 
 ## 2026-06-28 19:31 UTC-05:00 · session-end · chronicle
 SESSION 18 WRAPPED — Ch10 Materia Medica, 5 batches b37-b41 (FAILURE TO THRIVE→HICCOUGHS): whole F + G sections + H's through HICCOUGHS. LETS-270..302 (33 claims, crossed LETS-300). corpus 649→682, conditions 299→319, kv 147→152. Board 31/31, all pushed. Ready for fresh genesis.

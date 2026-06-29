@@ -12222,6 +12222,324 @@
       "extracted_at": "2026-06-29T00:27:53+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000303",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "slippery-elm",
+        "chickweed",
+        "hedge-mustard"
+      ],
+      "conditions": [
+        "hoarseness",
+        "laryngitis"
+      ],
+      "symptoms": [],
+      "claim_text": "Hoarseness (laryngitis) — loss or roughening of the voice — can be caused by overuse such as yelling at a football game, or by many of the cold and upper-respiratory viruses. Wallach's treatment uses demulcent (soothing, coating) herbs taken as a liquid extract: slippery elm (Ulmus fulva) in lemon and honey, chickweed (Stellaria media), and the 'singer's plant' or hedge mustard (Sisymbrium officinale).",
+      "verbatim": "Treatment of hoarseness includes use of\ndemulcents such asslippery elm (Ulmusfulva)\nin lemon and honey, chickweed (Stella me-\ndia) and the \"singer's plant\" or hedge mustard\n(Sisymbrium officinale) as a liquid extract.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 329236
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T00:57:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000304",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "fennel"
+      ],
+      "conditions": [
+        "hyperacidity"
+      ],
+      "symptoms": [],
+      "claim_text": "Hyperacidity (excess stomach acid and gas) is handled the same way as dyspepsia — see Wallach's dyspepsia/heartburn protocol — and for symptomatic relief he recommends fennel tea (Foeniculum vulgare).",
+      "verbatim": "HYPERACIDITY (stomach acid, gas): see\ndyspepsia. Treat with fennel tea (Foeniculum\nvulgare).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 329454
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T00:57:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000305",
+      "kind": "protocol",
+      "essentials": [
+        "chromium"
+      ],
+      "other_substances": [
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "b-complex"
+      ],
+      "conditions": [
+        "hyperactivity",
+        "hyperkinesis"
+      ],
+      "symptoms": [],
+      "claim_text": "Hyperactivity (hyperkinesis) is a greatly speeded-up, repetitive activity level with an attention span under a minute that is disruptive and often self-destructive and creates a learning disability. Wallach holds that food allergies, food sensitivities, and hypoglycemia (low blood sugar) cause 95% or more of cases, so pulse testing for allergies and a six-hour glucose tolerance test are essential. Treatment requires strict adherence to a rotation-and-avoidance diet based on the test results, plus the baseline nutritional program; betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times daily before meals; the Feingold diet (avoid sugar, additives, food colors); intramuscular or intravenous B-complex at 50 milligrams each per day; chromium at 25-100 micrograms three times daily; and autoimmune urine therapy.",
+      "verbatim": "Treatment of hyperactivity and hyperkinesis\nrequires absolute adherence to a rotation and\navoidance diet based on the results of the\nallergy testing and six-hour GTT; betaine HCl\nand pancreatic enzymes at 75-200 mg t.i.d.\nbefore meals; Feingold diet (i.e., avoid sugar,\nadditives, food colors, etc.); IM or IV B-com-\nplex at 50 mg each per day; chromium at 25-\n100 mcg t.i.d. and autoimmune urine therapy.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 330451
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T00:57:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000306",
+      "kind": "protocol",
+      "essentials": [
+        "calcium",
+        "omega-3"
+      ],
+      "other_substances": [
+        "colloidal-minerals",
+        "garlic",
+        "lecithin",
+        "coq10",
+        "hawthorn",
+        "rauwolfia",
+        "olive",
+        "hydrogen-peroxide",
+        "edta-chelation"
+      ],
+      "conditions": [
+        "hypertension"
+      ],
+      "symptoms": [],
+      "claim_text": "Hypertension (high blood pressure) is blood pressure above 140/90 millimeters of mercury and can stem from many causes including nervousness, arteriosclerosis, kidney disease, endocrine disorders, and food allergies — and Wallach stresses that calcium-deficient diets are a major cause. Work-up includes a pulse test for offending foods and a hair analysis for heavy metals (lead, arsenic, cadmium, mercury). Treatment: calcium (especially plant-derived colloidal minerals, which are 98% absorbable) plus the baseline supplements; a high-fiber, rotation/avoidance, low-fat, vegetarian-leaning diet; avoid sugar and refined flour, caffeine, and more than 400 international units of vitamin D; autoimmune urine therapy; EDTA chelation and hydrogen-peroxide infusions; flaxseed oil at 5 grams three times daily; garlic; reduce red meat; 4-6 cups of vegetables and eight glasses of water daily; coenzyme Q10 at 60 milligrams per day; lecithin at 2,500 milligrams three times daily; and herbs European hawthorn (Crataegus oxyacantha), rauwolfia (Rauwolfia serpentina), and olive (Olea europaea). Weight loss can drop elevated blood pressure dramatically.",
+      "verbatim": "Treatment of hypertension includes calcium\n(particularly useful is the plant derived colloi-\ndal minerals which are 98 % absorbable)",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 331785
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T00:57:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000307",
+      "kind": "protocol",
+      "essentials": [
+        "chromium",
+        "vanadium",
+        "zinc"
+      ],
+      "other_substances": [
+        "b-complex",
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "adrenal-cortical-extract"
+      ],
+      "conditions": [
+        "hypoglycemia"
+      ],
+      "symptoms": [],
+      "claim_text": "Hypoglycemia (low blood sugar) is, in Wallach's view, almost always caused by food allergies that produce celiac-type intestinal changes and malabsorption of chromium and vanadium, and/or a high intake of purified sugar and refined flour that increases urinary chromium loss by up to 300%; untreated, it frequently develops into diabetes. Its symptoms are highly variable and include emotional ones (hyperactivity, paranoia, schizophrenia, memory loss, irritability, hallucinations, depression, manic-depression, dyslexia), sleepiness, fatigue, heart palpitations, sweating, inability to think through simple problems, explosive anger, and catatonia. Diagnosis requires a six-hour glucose tolerance test — a fasting blood sugar alone misses it in 98% of cases. Treatment: a high-protein (preferably animal) diet; chromium and vanadium — the 'magic bullets' — at 50-200 micrograms three times daily with meals (those on insulin should start at 25 micrograms three times daily to prevent a sudden blood-sugar dip); B-complex at 50 milligrams each three times daily; avoid alcohol; zinc at 25 milligrams three times daily; betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times daily before meals; resolve food allergies by avoidance, rotation diets, and autoimmune urine therapy; and adrenal cortical extract with adrenal support.",
+      "verbatim": "for treatment of hypoglycemia at 50-200 mcg\nt.i.d. with meals - THOSE INDIVIDUALS ON\nINSULIN SHOULD START CHROMIUM /\nVANADIUM THERAPY AT 25 mcg t.i.d. TO\nPREVENTA SUDDEN DIP IN BLOOD SUGAR;\nB-complex at 50 mg each t.i.d., avoid alcohol\n(alcohol is a simple carbohydrate); zinc at 25\nmg t.i.d., and betaine HCl and pancreatic\nenzymes at 75-200 mg t.i.d. before meals;",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 336009
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T00:57:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000308",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "zinc"
+      ],
+      "other_substances": [
+        "adrenal-cortical-extract",
+        "thyroid",
+        "ginseng",
+        "rosemary",
+        "spring-adonis"
+      ],
+      "conditions": [
+        "hypotension"
+      ],
+      "symptoms": [],
+      "claim_text": "Hypotension (low blood pressure) can be caused by prescribed drugs, heart disease, kidney disease, low blood sugar, food allergies, dehydration, adrenal exhaustion, and hypothyroidism — the underlying cause must be addressed. Symptoms include low energy, dizziness on standing up quickly, fainting, blurred vision, palpitations, difficulty solving simple problems, and slurred speech. Treatment: resolve the original problem; vitamin C to bowel tolerance; zinc at 50 milligrams three times daily; adrenal cortical extract (sublingual, intramuscular, or intravenous); thyroid at 3-9 grains in the morning (too much causes rapid heart rate and hand tremor — find the overdose level, then back off one grain); eight glasses of water daily; acupuncture, homeopathy, reflexology; and herbs ginseng (Panax ginseng, P. quinquefolius), rosemary (Rosmarinus officinalis), and spring adonis (Adonis vernalis).",
+      "verbatim": "Treatment of hypotension includes resolving\nthe original problem, vitamin C to bowel tol-\nerance, zinc at 50 mg t.i.d., ACE (adrenal\ncortical extract) sublingual, IM or IV, thyroid at\n3-9 grains in the morning",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 337039
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T00:57:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000309",
+      "kind": "protocol",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [
+        "thyroid",
+        "kelp",
+        "quercus-marine"
+      ],
+      "conditions": [
+        "hypothyroidism"
+      ],
+      "symptoms": [],
+      "claim_text": "Hypothyroid (low thyroid) states often do not produce a goiter (thyroid enlargement) but instead cause obesity, fatigue, disinterest, low blood pressure, and water retention (edema); diagnose with a basal body temperature test — an underarm temperature below 98°F on waking indicates low thyroid. Treatment: thyroid at 3-9 grains each morning (excess causes rapid heart rate and arm tremor — increase to the overdose level, then back off one grain); kelp; an iodine supplement at 250-500 micrograms per day; and the herb quercus marine (Fucus vesiculosis).",
+      "verbatim": "Treatment of hypothyroidism includes thy-\nroid at 3-9 grains each morning (excess will\ncause increase in heart rate and shaking of the\nextended arm); increase dosage to OD then\nback off one grain; kelp and iodine supple-\nment at 250-500 mcg per day and herbs to\ninclude quercus marine (Fucus vesiculosis).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 337914
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T00:57:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000310",
+      "kind": "protocol",
+      "essentials": [
+        "omega-3",
+        "chromium",
+        "vitamin-b3",
+        "vitamin-b6"
+      ],
+      "other_substances": [
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "black-hellebore",
+        "blue-cohosh",
+        "mistletoe"
+      ],
+      "conditions": [
+        "hysteria"
+      ],
+      "symptoms": [],
+      "claim_text": "Hysteria (melancholia) is, in Wallach's framing, a symptomatic diagnosis that can result from premenstrual syndrome, food allergies, prescribed and illegal drugs, alcoholism, and hypoglycemia. Work-up: test for food allergies (pulse test), hypoglycemia (six-hour glucose tolerance test), and premenstrual syndrome (a daily diary), and review any medications. Treatment: avoid offending (allergenic) foods; rotation diets; autoimmune urine therapy; essential fatty acids at 5 grams three times daily with meals; chromium at 50-200 micrograms three times daily with meals; betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times daily before meals; acupuncture and homeopathy; herbs black hellebore (Helleborus niger), blue cohosh (Caulophyllum thalictroides), and mistletoe (Viscum album); vitamin B-3 at 450 milligrams three times daily (time-release); and vitamin B-6 at 150-300 milligrams three times daily (take for thirty days, then a 14-day break to avoid side effects).",
+      "verbatim": "Treatment of hysteria includes avoidance of\noffending foods that you might be allergic to,\nrotation diets, autoimmune urine therapy, es-\nsential fatty acids at 5 gm t.i.d. with meals,\nchromium at 50-200 mcg t.i.d. with meals,\nbetaine HCl and pancreatic enzymes at 75-200\nmg t.i.d. before meals, acupuncture, home-\nopathy and herbs including black hellebore\n(Helle-bores niger) blue cohosh (Caulophyl-\nlum thalictroides), mistletoe (Viscum album)",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 338686
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T00:57:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

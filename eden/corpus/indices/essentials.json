@@ -922,7 +922,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 69,
+    "claim_count": 70,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1000,6 +1000,7 @@
         "WAL-CLM-LETS-000281",
         "WAL-CLM-LETS-000285",
         "WAL-CLM-LETS-000289",
+        "WAL-CLM-LETS-000306",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1260,7 +1261,7 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 47,
+    "claim_count": 50,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -1320,6 +1321,9 @@
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000280",
         "WAL-CLM-LETS-000293",
+        "WAL-CLM-LETS-000305",
+        "WAL-CLM-LETS-000307",
+        "WAL-CLM-LETS-000310",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1395,8 +1399,10 @@
       "hyperactivity",
       "hyperinsulinemia",
       "hyperirritability",
+      "hyperkinesis",
       "hypertension",
       "hypoglycemia",
+      "hysteria",
       "infertility",
       "insomnia",
       "intermittent_claudication",
@@ -1848,7 +1854,7 @@
     "display_name": "Iodine",
     "canon_slug": "iodine",
     "category": "mineral",
-    "claim_count": 16,
+    "claim_count": 17,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000013",
@@ -1880,7 +1886,8 @@
       ],
       "protocol": [
         "WAL-CLM-LETS-000275",
-        "WAL-CLM-LETS-000287"
+        "WAL-CLM-LETS-000287",
+        "WAL-CLM-LETS-000309"
       ]
     },
     "deficiency_signs": [
@@ -2413,7 +2420,7 @@
     "display_name": "Vanadium",
     "canon_slug": "vanadium",
     "category": "mineral",
-    "claim_count": 34,
+    "claim_count": 35,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -2456,6 +2463,7 @@
         "WAL-CLM-LETS-000159",
         "WAL-CLM-LETS-000244",
         "WAL-CLM-LETS-000246",
+        "WAL-CLM-LETS-000307",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -2553,7 +2561,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 74,
+    "claim_count": 76,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2638,6 +2646,8 @@
         "WAL-CLM-LETS-000284",
         "WAL-CLM-LETS-000299",
         "WAL-CLM-LETS-000300",
+        "WAL-CLM-LETS-000307",
+        "WAL-CLM-LETS-000308",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -2769,7 +2779,9 @@
       "herpes_simplex",
       "high_cholesterol",
       "hypertension",
+      "hypoglycemia",
       "hypogonadism",
+      "hypotension",
       "impotence",
       "infertility",
       "influenza",
@@ -4049,7 +4061,7 @@
     "display_name": "Niacin",
     "canon_slug": "vitamin-b3",
     "category": "vitamin",
-    "claim_count": 17,
+    "claim_count": 18,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000019",
@@ -4071,6 +4083,7 @@
         "WAL-CLM-LETS-000258",
         "WAL-CLM-LETS-000284",
         "WAL-CLM-LETS-000293",
+        "WAL-CLM-LETS-000310",
         "WAL-CLM-RARE-000282"
       ],
       "toxicity_sign": [
@@ -4167,6 +4180,7 @@
       "elevated_cholesterol",
       "geographic_tongue",
       "headache",
+      "hysteria",
       "insomnia",
       "liver_disease",
       "panic_attacks",
@@ -4366,7 +4380,7 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 34,
+    "claim_count": 35,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000027",
@@ -4405,6 +4419,7 @@
         "WAL-CLM-LETS-000267",
         "WAL-CLM-LETS-000284",
         "WAL-CLM-LETS-000293",
+        "WAL-CLM-LETS-000310",
         "WAL-CLM-RARE-000286"
       ],
       "toxicity_sign": [
@@ -4530,6 +4545,7 @@
       "headache",
       "hyperirritability",
       "hypertension",
+      "hysteria",
       "intermittent_claudication",
       "panic_attacks",
       "peripheral_neuropathy",
@@ -4870,7 +4886,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 46,
+    "claim_count": 47,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -4924,7 +4940,8 @@
         "WAL-CLM-LETS-000293",
         "WAL-CLM-LETS-000298",
         "WAL-CLM-LETS-000299",
-        "WAL-CLM-LETS-000300"
+        "WAL-CLM-LETS-000300",
+        "WAL-CLM-LETS-000308"
       ]
     },
     "deficiency_signs": [
@@ -5032,6 +5049,7 @@
       "headache",
       "hepatitis",
       "herpes_simplex",
+      "hypotension",
       "influenza",
       "intermittent_claudication",
       "periodontal_disease",
@@ -6037,7 +6055,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 51,
+    "claim_count": 53,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -6095,6 +6113,8 @@
         "WAL-CLM-LETS-000291",
         "WAL-CLM-LETS-000293",
         "WAL-CLM-LETS-000295",
+        "WAL-CLM-LETS-000306",
+        "WAL-CLM-LETS-000310",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -6178,6 +6198,7 @@
       "headache",
       "heart_attack",
       "hypertension",
+      "hysteria",
       "infertility",
       "kidney_disease",
       "psoriasis",

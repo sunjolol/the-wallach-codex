@@ -18,19 +18,23 @@
   },
   "adrenal-cortical-extract": {
     "display_name": "Adrenal Cortical Extract",
-    "claim_count": 4,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000124",
         "WAL-CLM-LETS-000126",
         "WAL-CLM-LETS-000279",
-        "WAL-CLM-LETS-000280"
+        "WAL-CLM-LETS-000280",
+        "WAL-CLM-LETS-000307",
+        "WAL-CLM-LETS-000308"
       ]
     },
     "conditions_treated": [
       "adrenal_exhaustion",
       "aids",
       "food_allergy",
+      "hypoglycemia",
+      "hypotension",
       "influenza"
     ],
     "books_cited": [
@@ -380,14 +384,16 @@
   },
   "b-complex": {
     "display_name": "B Complex",
-    "claim_count": 5,
+    "claim_count": 7,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000202",
         "WAL-CLM-LETS-000203",
         "WAL-CLM-LETS-000220",
         "WAL-CLM-LETS-000246",
-        "WAL-CLM-LETS-000284"
+        "WAL-CLM-LETS-000284",
+        "WAL-CLM-LETS-000305",
+        "WAL-CLM-LETS-000307"
       ]
     },
     "conditions_treated": [
@@ -395,7 +401,10 @@
       "cardiac_arrhythmia",
       "chorea",
       "diabetes",
-      "geographic_tongue"
+      "geographic_tongue",
+      "hyperactivity",
+      "hyperkinesis",
+      "hypoglycemia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -508,7 +517,7 @@
   },
   "betaine-hcl": {
     "display_name": "Betaine Hcl",
-    "claim_count": 31,
+    "claim_count": 34,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -541,7 +550,10 @@
         "WAL-CLM-LETS-000289",
         "WAL-CLM-LETS-000293",
         "WAL-CLM-LETS-000295",
-        "WAL-CLM-LETS-000296"
+        "WAL-CLM-LETS-000296",
+        "WAL-CLM-LETS-000305",
+        "WAL-CLM-LETS-000307",
+        "WAL-CLM-LETS-000310"
       ]
     },
     "conditions_treated": [
@@ -578,6 +590,9 @@
       "heart_attack",
       "heartburn",
       "hyperactivity",
+      "hyperkinesis",
+      "hypoglycemia",
+      "hysteria",
       "infertility",
       "menopause",
       "psoriasis"
@@ -662,6 +677,21 @@
       "lets-play-doctor"
     ]
   },
+  "black-hellebore": {
+    "display_name": "Black Hellebore",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000310"
+      ]
+    },
+    "conditions_treated": [
+      "hysteria"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "black-walnut": {
     "display_name": "Black Walnut",
     "claim_count": 1,
@@ -735,14 +765,16 @@
   },
   "blue-cohosh": {
     "display_name": "Blue Cohosh",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000258"
+        "WAL-CLM-LETS-000258",
+        "WAL-CLM-LETS-000310"
       ]
     },
     "conditions_treated": [
-      "dysmenorrhea"
+      "dysmenorrhea",
+      "hysteria"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1125,6 +1157,22 @@
       "lets-play-doctor"
     ]
   },
+  "chickweed": {
+    "display_name": "Chickweed",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000303"
+      ]
+    },
+    "conditions_treated": [
+      "hoarseness",
+      "laryngitis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "chicory": {
     "display_name": "Chicory",
     "claim_count": 2,
@@ -1222,7 +1270,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 24,
+    "claim_count": 25,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -1248,7 +1296,8 @@
         "WAL-CLM-LETS-000266",
         "WAL-CLM-LETS-000270",
         "WAL-CLM-LETS-000281",
-        "WAL-CLM-LETS-000285"
+        "WAL-CLM-LETS-000285",
+        "WAL-CLM-LETS-000306"
       ]
     },
     "conditions_treated": [
@@ -1279,6 +1328,7 @@
       "failure_to_thrive",
       "fractures",
       "gingivitis",
+      "hypertension",
       "periodontal_disease",
       "rheumatoid_arthritis",
       "weight_loss"
@@ -1395,14 +1445,16 @@
   },
   "coq10": {
     "display_name": "Coq10",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000203"
+        "WAL-CLM-LETS-000203",
+        "WAL-CLM-LETS-000306"
       ]
     },
     "conditions_treated": [
-      "cardiac_arrhythmia"
+      "cardiac_arrhythmia",
+      "hypertension"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1698,7 +1750,7 @@
   },
   "edta-chelation": {
     "display_name": "Edta Chelation",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000139",
@@ -1707,7 +1759,8 @@
         "WAL-CLM-LETS-000146",
         "WAL-CLM-LETS-000211",
         "WAL-CLM-LETS-000222",
-        "WAL-CLM-LETS-000295"
+        "WAL-CLM-LETS-000295",
+        "WAL-CLM-LETS-000306"
       ]
     },
     "conditions_treated": [
@@ -1718,6 +1771,7 @@
       "cardiovascular_disease",
       "cerebrovascular_disease",
       "heart_attack",
+      "hypertension",
       "intermittent_claudication",
       "rheumatoid_arthritis"
     ],
@@ -1925,16 +1979,18 @@
   },
   "fennel": {
     "display_name": "Fennel",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000269",
-        "WAL-CLM-LETS-000278"
+        "WAL-CLM-LETS-000278",
+        "WAL-CLM-LETS-000304"
       ]
     },
     "conditions_treated": [
       "eye_redness",
       "flatulence",
+      "hyperacidity",
       "sty"
     ],
     "books_cited": [
@@ -2120,13 +2176,14 @@
   },
   "garlic": {
     "display_name": "Garlic",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000126",
         "WAL-CLM-LETS-000145",
         "WAL-CLM-LETS-000147",
-        "WAL-CLM-LETS-000225"
+        "WAL-CLM-LETS-000225",
+        "WAL-CLM-LETS-000306"
       ]
     },
     "conditions_treated": [
@@ -2134,7 +2191,8 @@
       "arteriosclerosis",
       "asthma",
       "atopic_asthma",
-      "colds"
+      "colds",
+      "hypertension"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2208,13 +2266,15 @@
   },
   "ginseng": {
     "display_name": "Ginseng",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000222"
+        "WAL-CLM-LETS-000222",
+        "WAL-CLM-LETS-000308"
       ]
     },
     "conditions_treated": [
+      "hypotension",
       "intermittent_claudication"
     ],
     "books_cited": [
@@ -2319,18 +2379,36 @@
   },
   "hawthorn": {
     "display_name": "Hawthorn",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000139",
         "WAL-CLM-LETS-000229",
-        "WAL-CLM-LETS-000253"
+        "WAL-CLM-LETS-000253",
+        "WAL-CLM-LETS-000306"
       ]
     },
     "conditions_treated": [
       "angina",
       "congestive_heart_failure",
-      "dropsy"
+      "dropsy",
+      "hypertension"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "hedge-mustard": {
+    "display_name": "Hedge Mustard",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000303"
+      ]
+    },
+    "conditions_treated": [
+      "hoarseness",
+      "laryngitis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2485,7 +2563,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 27,
+    "claim_count": 28,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
@@ -2514,7 +2592,8 @@
         "WAL-CLM-LETS-000280",
         "WAL-CLM-LETS-000285",
         "WAL-CLM-LETS-000294",
-        "WAL-CLM-LETS-000295"
+        "WAL-CLM-LETS-000295",
+        "WAL-CLM-LETS-000306"
       ]
     },
     "conditions_treated": [
@@ -2544,6 +2623,7 @@
       "food_allergy",
       "gingivitis",
       "heart_attack",
+      "hypertension",
       "intermittent_claudication",
       "periodontal_disease",
       "rheumatoid_arthritis",
@@ -2729,14 +2809,16 @@
   },
   "kelp": {
     "display_name": "Kelp",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000287"
+        "WAL-CLM-LETS-000287",
+        "WAL-CLM-LETS-000309"
       ]
     },
     "conditions_treated": [
-      "goiter"
+      "goiter",
+      "hypothyroidism"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2885,7 +2967,7 @@
   },
   "lecithin": {
     "display_name": "Lecithin",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
@@ -2893,7 +2975,8 @@
         "WAL-CLM-LETS-000220",
         "WAL-CLM-LETS-000243",
         "WAL-CLM-LETS-000246",
-        "WAL-CLM-LETS-000283"
+        "WAL-CLM-LETS-000283",
+        "WAL-CLM-LETS-000306"
       ]
     },
     "conditions_treated": [
@@ -2902,7 +2985,8 @@
       "chorea",
       "dementia",
       "diabetes",
-      "gallstones"
+      "gallstones",
+      "hypertension"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3178,14 +3262,16 @@
   },
   "mistletoe": {
     "display_name": "Mistletoe",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000145"
+        "WAL-CLM-LETS-000145",
+        "WAL-CLM-LETS-000310"
       ]
     },
     "conditions_treated": [
-      "arteriosclerosis"
+      "arteriosclerosis",
+      "hysteria"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3345,6 +3431,21 @@
       "lets-play-doctor"
     ]
   },
+  "olive": {
+    "display_name": "Olive",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000306"
+      ]
+    },
+    "conditions_treated": [
+      "hypertension"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "olive-oil": {
     "display_name": "Olive Oil",
     "claim_count": 2,
@@ -3417,7 +3518,7 @@
   },
   "pancreatic-enzymes": {
     "display_name": "Pancreatic Enzymes",
-    "claim_count": 23,
+    "claim_count": 26,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000123",
@@ -3442,7 +3543,10 @@
         "WAL-CLM-LETS-000284",
         "WAL-CLM-LETS-000289",
         "WAL-CLM-LETS-000295",
-        "WAL-CLM-LETS-000296"
+        "WAL-CLM-LETS-000296",
+        "WAL-CLM-LETS-000305",
+        "WAL-CLM-LETS-000307",
+        "WAL-CLM-LETS-000310"
       ]
     },
     "conditions_treated": [
@@ -3470,6 +3574,10 @@
       "growing_pains",
       "heart_attack",
       "heartburn",
+      "hyperactivity",
+      "hyperkinesis",
+      "hypoglycemia",
+      "hysteria",
       "infertility",
       "menopause",
       "psoriasis"
@@ -3900,6 +4008,21 @@
       "lets-play-doctor"
     ]
   },
+  "quercus-marine": {
+    "display_name": "Quercus Marine",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000309"
+      ]
+    },
+    "conditions_treated": [
+      "hypothyroidism"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "radon": {
     "display_name": "Radon",
     "claim_count": 1,
@@ -3913,6 +4036,21 @@
     ],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "rauwolfia": {
+    "display_name": "Rauwolfia",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000306"
+      ]
+    },
+    "conditions_treated": [
+      "hypertension"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "retin-a": {
@@ -3956,14 +4094,16 @@
   },
   "rosemary": {
     "display_name": "Rosemary",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000272"
+        "WAL-CLM-LETS-000272",
+        "WAL-CLM-LETS-000308"
       ]
     },
     "conditions_treated": [
-      "chronic_fatigue"
+      "chronic_fatigue",
+      "hypotension"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4165,14 +4305,17 @@
   },
   "slippery-elm": {
     "display_name": "Slippery Elm",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000172"
+        "WAL-CLM-LETS-000172",
+        "WAL-CLM-LETS-000303"
       ]
     },
     "conditions_treated": [
-      "bronchitis"
+      "bronchitis",
+      "hoarseness",
+      "laryngitis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4188,6 +4331,21 @@
     },
     "conditions_treated": [
       "hemorrhoids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "spring-adonis": {
+    "display_name": "Spring Adonis",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000308"
+      ]
+    },
+    "conditions_treated": [
+      "hypotension"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4374,15 +4532,19 @@
   },
   "thyroid": {
     "display_name": "Thyroid",
-    "claim_count": 2,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000249",
-        "WAL-CLM-LETS-000287"
+        "WAL-CLM-LETS-000287",
+        "WAL-CLM-LETS-000308",
+        "WAL-CLM-LETS-000309"
       ]
     },
     "conditions_treated": [
       "goiter",
+      "hypotension",
+      "hypothyroidism",
       "weight_loss"
     ],
     "books_cited": [
