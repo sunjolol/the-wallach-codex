@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_183 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_184 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 23:29 UTC-05:00 · session-end · chronicle
+SESSION 20 WRAPPED — Ch10 Materia Medica, 4 batches b49-b52 (LIVER DISEASE→MISCARRIAGE): L section done + M's pt 1-3. 18 claims LETS-348..365, corpus 727→745, conditions→368, kv163. Rulings: rubella tier-1, METABOLIC THERAPY search-only. Board 31/31. NEXT=b53.
+  ↳ 4 round-close batches, all pushed (51259b3 b49 · 1529584 b50 · d07dbc9 b51 · dc40efc b52). Completed the L section (LIVER DISEASE→LYME) + the M's pt 1-3 (MALNUTRITION→MISCARRIAGE), printed p144-149. 6 render-verified meg→mcg fixes, all length-preserving, ZERO dangerous misprints. 2 editorial rulings (rubella→tier-1 vaccine-stance-in-claim_text; METABOLIC THERAPY→search-only modality definition). 2 two-column OCR scrambles (MALNUTRITION, MENINGITIS) reassembled in claim_text with physical .txt reorders deferred to the final sweep. Handoff rolled to NEXT=b53 (MITRAL VALVE PROLAPSE onward). All gates green throughout (build · invariants 31/31 · knowledge probe 0 errors).
 
 ## 2026-06-28 23:15 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b52 — MERCURY POISONING→MISCARRIAGE. 5 claims LETS-361..365: mercury_poisoning, METABOLIC THERAPY(★Luneth search-only), drug_addiction/opiate_withdrawal(methadone), migraine, miscarriage. 0 dose fixes, no resnap. kv163, 745 claims, conditions 364→368, board 31/31.
