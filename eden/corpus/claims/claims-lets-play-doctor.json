@@ -15042,6 +15042,211 @@
       "extracted_at": "2026-06-29T05:18:01+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000375",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "contac",
+        "cayenne",
+        "eucalyptus",
+        "german-chamomile",
+        "scotch-pine"
+      ],
+      "conditions": [
+        "nasal_catarrh"
+      ],
+      "symptoms": [],
+      "claim_text": "Nasal catarrh (a runny or stuffy nose) can be caused by a wide variety of upper-respiratory viral infections. Wallach's treatment is the over-the-counter decongestant Contac (one capsule every 12 hours) plus the herbs cayenne pepper (Capsicum minimum), eucalyptus (Eucalyptus globulus), German chamomile (Matricaria chamomilla) and scotch pine (Pinus sylvestris).",
+      "verbatim": "Treatment includes Contac at 1 q 12 h, cay-\nenne pepper (Capsicum minimum), eucalyp-\ntus (Eucalyptus globulus), German chamo-\nmile (Matricaria chamomilla) and scotch pine\n(Pinus sylvestris).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 153,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 402419
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T05:29:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000376",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "pepto-bismol",
+        "kaopectate",
+        "artichoke",
+        "avens",
+        "peppermint"
+      ],
+      "conditions": [],
+      "symptoms": [
+        "nausea"
+      ],
+      "claim_text": "Nausea can be caused by a wide range of diseases and syndromes — from nutritional deficiencies, pregnancy and hepatitis to food allergies and cancer — so Wallach advises that recurring nausea warrants a detailed investigation. For symptom relief he suggests the over-the-counter remedies Pepto-Bismol and Kaopectate, plus the herbs artichoke (Cynara scolymus), avens (Geum urbanum) and peppermint (Mentha piperita).",
+      "verbatim": "Treatment ofnausea can include Pepto Bismol\nKaopectate, and herbs to include artichoke\n(Cynara scolymus), avens (Geum urbanum)\nand peppermint (Mentha piperita).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 153,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 402851
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T05:29:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000377",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b1",
+        "iron"
+      ],
+      "other_substances": [
+        "hawthorn",
+        "hops",
+        "lavender",
+        "motherwort",
+        "valerian"
+      ],
+      "conditions": [
+        "nervous_heart"
+      ],
+      "symptoms": [
+        "palpitations"
+      ],
+      "claim_text": "Nervous heart (a rapid beat or palpitations when nervous) tends to be common in senior citizens. Wallach says many of these cardiac symptoms result from vitamin B-1 (thiamine, the beri-beri vitamin) deficiency, anemia and a deficiency of stomach acid; do a pulse test to check whether food allergies contribute. His treatment is vitamin B-1 at 100 milligrams three times a day, iron at 45-100 milligrams, an improved general diet and the baseline nutritional supplement program, plus the herbs hawthorn (Crataegus oxyacantha), hops (Humulus lupulus), lavender (Lavandula angustifolia), motherwort (Leonurus cardiaca) and valerian (Valeriana officinalis); avoid offending food allergens and use rotation diets.",
+      "verbatim": "NERVOUS HEART (rapid beat or palpita-\ntions when nervous): tends to be common\nin senior citizens. Many of these cardiac\nsymptoms are the result of B-l (Beri-Beri)\ndeficiencies, anemia and deficiencies of stom-\nach acid.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 153,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 403012
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T05:29:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000378",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "balm",
+        "bitter-orange",
+        "sweet-woodruff",
+        "wild-celery",
+        "lily-of-the-valley"
+      ],
+      "conditions": [
+        "nervous_tension"
+      ],
+      "symptoms": [],
+      "claim_text": "Nervous tension (nervous headaches) is usually brought on by tension and overwork, and a food allergy may be a trigger, so do a pulse test. Wallach's treatment is to avoid sugar, caffeine and food allergens and to reduce stress and tension, along with exercise, homeopathy, acupuncture, color therapy and subliminal relaxation tapes, plus the herbs balm (Melissa officinalis), bitter orange (Citrus aurantium), sweet woodruff (Galium odoratum), wild celery (Apium graveolens) and lily-of-the-valley (Convallaria majalis).",
+      "verbatim": "Treatment includes avoidance of sugar, caf-\nfeine, food allergens, avoidance and/or re-\nduction of stress and tension; exercise, home-\nopathy, acupuncture, color therapy, sublimi-\nnal relaxation tapes and herbs including balm\n(Melissa officinalis), bitter orange (Citnis\naurantium), sweet woodruff (Gallium\nodoraturm), wild celery (Apium graveolens)\nand lily-of-the valley (Convallaria magalis).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 153,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 403889
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T05:29:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000379",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b12",
+        "omega-3",
+        "calcium",
+        "magnesium"
+      ],
+      "other_substances": [
+        "b-complex",
+        "isoprinosine",
+        "ribavirin",
+        "lavender",
+        "oats",
+        "rosemary",
+        "st-johns-wort",
+        "white-willow"
+      ],
+      "conditions": [
+        "neuralgia",
+        "bells_palsy",
+        "neuropathy"
+      ],
+      "symptoms": [],
+      "claim_text": "Neuralgia (which includes Bell's palsy and neuropathy) is an irritation of a nerve that can stem from many causes — trauma; nutritional deficiencies (vitamin B-12, folic acid, vitamin B-1, vitamin B-6); infections (herpes, shingles); alcoholism; diabetes; and multiple sclerosis. Treatment requires addressing every underlying condition and should also include a B-complex at 50 milligrams three times a day, vitamin B-12 at 1,000 micrograms a day, essential fatty acids as EPA at 5 grams three times a day and flaxseed oil at one tablespoon twice a day, calcium and magnesium at 2,000 and 1,000 milligrams a day, and — for viral neuralgias such as herpes and shingles — the antivirals Isoprinosine at 500-1,500 milligrams a day and Ribavirin at 250-1,500 milligrams a day, plus acupuncture and the herbs lavender (Lavandula angustifolia), oats (Avena sativa), rosemary (Rosmarinus officinalis), St. John's wort (Hypericum perforatum) and white willow (Salix alba).",
+      "verbatim": "an irritation of a nerve which can be caused by\nmany diseases rangingfrom trauma, nutritional\ndeficiencies (i.e., B-12, folic acid, B-l, B-6,\netc.), infections (i.e., herpes, shingles, etc.),\nalcoholism, diabetes, MS, etc.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 153,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 404326
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T05:29:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

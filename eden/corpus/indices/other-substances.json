@@ -356,11 +356,12 @@
   },
   "artichoke": {
     "display_name": "Artichoke",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000145",
-        "WAL-CLM-LETS-000283"
+        "WAL-CLM-LETS-000283",
+        "WAL-CLM-LETS-000376"
       ]
     },
     "conditions_treated": [
@@ -401,9 +402,22 @@
       "lets-play-doctor"
     ]
   },
+  "avens": {
+    "display_name": "Avens",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000376"
+      ]
+    },
+    "conditions_treated": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "b-complex": {
     "display_name": "B Complex",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000202",
@@ -415,11 +429,13 @@
         "WAL-CLM-LETS-000307",
         "WAL-CLM-LETS-000348",
         "WAL-CLM-LETS-000356",
-        "WAL-CLM-LETS-000369"
+        "WAL-CLM-LETS-000369",
+        "WAL-CLM-LETS-000379"
       ]
     },
     "conditions_treated": [
       "alzheimers",
+      "bells_palsy",
       "canker_sores",
       "cardiac_arrhythmia",
       "chorea",
@@ -433,7 +449,9 @@
       "liver_cirrhosis",
       "liver_disease",
       "memory_loss",
-      "morning_sickness"
+      "morning_sickness",
+      "neuralgia",
+      "neuropathy"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -441,14 +459,16 @@
   },
   "balm": {
     "display_name": "Balm",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000293"
+        "WAL-CLM-LETS-000293",
+        "WAL-CLM-LETS-000378"
       ]
     },
     "conditions_treated": [
-      "headache"
+      "headache",
+      "nervous_tension"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -707,6 +727,21 @@
     "conditions_treated": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "bitter-orange": {
+    "display_name": "Bitter Orange",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000378"
+      ]
+    },
+    "conditions_treated": [
+      "nervous_tension"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "black-caraway": {
@@ -1245,14 +1280,16 @@
   },
   "cayenne": {
     "display_name": "Cayenne",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000222"
+        "WAL-CLM-LETS-000222",
+        "WAL-CLM-LETS-000375"
       ]
     },
     "conditions_treated": [
-      "intermittent_claudication"
+      "intermittent_claudication",
+      "nasal_catarrh"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1678,16 +1715,18 @@
   },
   "contac": {
     "display_name": "Contac",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000208",
-        "WAL-CLM-LETS-000292"
+        "WAL-CLM-LETS-000292",
+        "WAL-CLM-LETS-000375"
       ]
     },
     "conditions_treated": [
       "catarrh",
-      "hay_fever"
+      "hay_fever",
+      "nasal_catarrh"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2248,14 +2287,15 @@
   },
   "eucalyptus": {
     "display_name": "Eucalyptus",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000154",
         "WAL-CLM-LETS-000172",
         "WAL-CLM-LETS-000176",
         "WAL-CLM-LETS-000279",
-        "WAL-CLM-LETS-000338"
+        "WAL-CLM-LETS-000338",
+        "WAL-CLM-LETS-000375"
       ]
     },
     "conditions_treated": [
@@ -2263,7 +2303,8 @@
       "bronchitis",
       "bursitis",
       "influenza",
-      "laryngitis"
+      "laryngitis",
+      "nasal_catarrh"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2692,13 +2733,14 @@
   },
   "german-chamomile": {
     "display_name": "German Chamomile",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000262",
         "WAL-CLM-LETS-000269",
         "WAL-CLM-LETS-000285",
-        "WAL-CLM-LETS-000297"
+        "WAL-CLM-LETS-000297",
+        "WAL-CLM-LETS-000375"
       ]
     },
     "conditions_treated": [
@@ -2706,6 +2748,7 @@
       "eye_redness",
       "gingivitis",
       "hemorrhoids",
+      "nasal_catarrh",
       "periodontal_disease",
       "psoriasis",
       "sty"
@@ -2878,14 +2921,15 @@
   },
   "hawthorn": {
     "display_name": "Hawthorn",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000139",
         "WAL-CLM-LETS-000229",
         "WAL-CLM-LETS-000253",
         "WAL-CLM-LETS-000306",
-        "WAL-CLM-LETS-000366"
+        "WAL-CLM-LETS-000366",
+        "WAL-CLM-LETS-000377"
       ]
     },
     "conditions_treated": [
@@ -2893,7 +2937,8 @@
       "congestive_heart_failure",
       "dropsy",
       "hypertension",
-      "mitral_valve_prolapse"
+      "mitral_valve_prolapse",
+      "nervous_heart"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2987,14 +3032,16 @@
   },
   "hops": {
     "display_name": "Hops",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000322"
+        "WAL-CLM-LETS-000322",
+        "WAL-CLM-LETS-000377"
       ]
     },
     "conditions_treated": [
-      "insomnia"
+      "insomnia",
+      "nervous_heart"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3289,7 +3336,7 @@
   },
   "isoprinosine": {
     "display_name": "Isoprinosine",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000221",
@@ -3297,16 +3344,20 @@
         "WAL-CLM-LETS-000299",
         "WAL-CLM-LETS-000300",
         "WAL-CLM-LETS-000318",
-        "WAL-CLM-LETS-000338"
+        "WAL-CLM-LETS-000338",
+        "WAL-CLM-LETS-000379"
       ]
     },
     "conditions_treated": [
+      "bells_palsy",
       "chronic_fatigue_syndrome",
       "cold_sores",
       "herpes_simplex",
       "infection",
       "influenza",
       "laryngitis",
+      "neuralgia",
+      "neuropathy",
       "shingles"
     ],
     "books_cited": [
@@ -3384,13 +3435,14 @@
   },
   "kaopectate": {
     "display_name": "Kaopectate",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000248",
         "WAL-CLM-LETS-000256",
         "WAL-CLM-LETS-000265",
-        "WAL-CLM-LETS-000321"
+        "WAL-CLM-LETS-000321",
+        "WAL-CLM-LETS-000376"
       ]
     },
     "conditions_treated": [
@@ -3553,16 +3605,22 @@
   },
   "lavender": {
     "display_name": "Lavender",
-    "claim_count": 2,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000272",
-        "WAL-CLM-LETS-000293"
+        "WAL-CLM-LETS-000293",
+        "WAL-CLM-LETS-000377",
+        "WAL-CLM-LETS-000379"
       ]
     },
     "conditions_treated": [
+      "bells_palsy",
       "chronic_fatigue",
-      "headache"
+      "headache",
+      "nervous_heart",
+      "neuralgia",
+      "neuropathy"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3704,16 +3762,18 @@
   },
   "lily-of-the-valley": {
     "display_name": "Lily Of The Valley",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000229",
-        "WAL-CLM-LETS-000253"
+        "WAL-CLM-LETS-000253",
+        "WAL-CLM-LETS-000378"
       ]
     },
     "conditions_treated": [
       "congestive_heart_failure",
-      "dropsy"
+      "dropsy",
+      "nervous_tension"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4054,14 +4114,16 @@
   },
   "motherwort": {
     "display_name": "Motherwort",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000223"
+        "WAL-CLM-LETS-000223",
+        "WAL-CLM-LETS-000377"
       ]
     },
     "conditions_treated": [
-      "menopause"
+      "menopause",
+      "nervous_heart"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4222,6 +4284,23 @@
       "elevated_cholesterol",
       "hemorrhoids",
       "weight_loss"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "oats": {
+    "display_name": "Oats",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000379"
+      ]
+    },
+    "conditions_treated": [
+      "bells_palsy",
+      "neuralgia",
+      "neuropathy"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4608,13 +4687,14 @@
   },
   "peppermint": {
     "display_name": "Peppermint",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000265",
         "WAL-CLM-LETS-000283",
         "WAL-CLM-LETS-000296",
-        "WAL-CLM-LETS-000321"
+        "WAL-CLM-LETS-000321",
+        "WAL-CLM-LETS-000376"
       ]
     },
     "conditions_treated": [
@@ -4630,13 +4710,14 @@
   },
   "pepto-bismol": {
     "display_name": "Pepto Bismol",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000248",
         "WAL-CLM-LETS-000256",
         "WAL-CLM-LETS-000265",
-        "WAL-CLM-LETS-000321"
+        "WAL-CLM-LETS-000321",
+        "WAL-CLM-LETS-000376"
       ]
     },
     "conditions_treated": [
@@ -5005,7 +5086,7 @@
   },
   "ribavirin": {
     "display_name": "Ribavirin",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000126",
@@ -5014,17 +5095,21 @@
         "WAL-CLM-LETS-000299",
         "WAL-CLM-LETS-000300",
         "WAL-CLM-LETS-000318",
-        "WAL-CLM-LETS-000338"
+        "WAL-CLM-LETS-000338",
+        "WAL-CLM-LETS-000379"
       ]
     },
     "conditions_treated": [
       "aids",
+      "bells_palsy",
       "chronic_fatigue_syndrome",
       "cold_sores",
       "herpes_simplex",
       "infection",
       "influenza",
       "laryngitis",
+      "neuralgia",
+      "neuropathy",
       "shingles"
     ],
     "books_cited": [
@@ -5033,16 +5118,20 @@
   },
   "rosemary": {
     "display_name": "Rosemary",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000272",
-        "WAL-CLM-LETS-000308"
+        "WAL-CLM-LETS-000308",
+        "WAL-CLM-LETS-000379"
       ]
     },
     "conditions_treated": [
+      "bells_palsy",
       "chronic_fatigue",
-      "hypotension"
+      "hypotension",
+      "neuralgia",
+      "neuropathy"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5211,6 +5300,21 @@
     },
     "conditions_treated": [
       "dropsy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "scotch-pine": {
+    "display_name": "Scotch Pine",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000375"
+      ]
+    },
+    "conditions_treated": [
+      "nasal_catarrh"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5397,18 +5501,22 @@
   },
   "st-johns-wort": {
     "display_name": "St Johns Wort",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000223",
-        "WAL-CLM-LETS-000357"
+        "WAL-CLM-LETS-000357",
+        "WAL-CLM-LETS-000379"
       ]
     },
     "conditions_treated": [
       "amenorrhea",
+      "bells_palsy",
       "dysmenorrhea",
       "menopause",
-      "menorrhagia"
+      "menorrhagia",
+      "neuralgia",
+      "neuropathy"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5499,6 +5607,21 @@
     },
     "conditions_treated": [
       "gallstones"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "sweet-woodruff": {
+    "display_name": "Sweet Woodruff",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000378"
+      ]
+    },
+    "conditions_treated": [
+      "nervous_tension"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5767,18 +5890,20 @@
   },
   "valerian": {
     "display_name": "Valerian",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000142",
         "WAL-CLM-LETS-000293",
-        "WAL-CLM-LETS-000322"
+        "WAL-CLM-LETS-000322",
+        "WAL-CLM-LETS-000377"
       ]
     },
     "conditions_treated": [
       "anxiety",
       "headache",
-      "insomnia"
+      "insomnia",
+      "nervous_heart"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5881,20 +6006,24 @@
   },
   "white-willow": {
     "display_name": "White Willow",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000225",
         "WAL-CLM-LETS-000274",
         "WAL-CLM-LETS-000279",
-        "WAL-CLM-LETS-000293"
+        "WAL-CLM-LETS-000293",
+        "WAL-CLM-LETS-000379"
       ]
     },
     "conditions_treated": [
+      "bells_palsy",
       "colds",
       "fever",
       "headache",
-      "influenza"
+      "influenza",
+      "neuralgia",
+      "neuropathy"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5925,6 +6054,21 @@
     },
     "conditions_treated": [
       "bedsores"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "wild-celery": {
+    "display_name": "Wild Celery",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000378"
+      ]
+    },
+    "conditions_treated": [
+      "nervous_tension"
     ],
     "books_cited": [
       "lets-play-doctor"

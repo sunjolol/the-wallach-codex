@@ -1358,7 +1358,7 @@
   },
   "bells_palsy": {
     "display_name": "Bells Palsy",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "definitions": [
         "WAL-CLM-RARE-000105"
@@ -1368,7 +1368,8 @@
       ],
       "protocols": [
         "WAL-CLM-DDDL-000086",
-        "WAL-CLM-LETS-000158"
+        "WAL-CLM-LETS-000158",
+        "WAL-CLM-LETS-000379"
       ]
     },
     "essentials_involved": [
@@ -1379,7 +1380,15 @@
     ],
     "other_substances_involved": [
       "american-ginseng",
-      "colloidal-minerals"
+      "b-complex",
+      "colloidal-minerals",
+      "isoprinosine",
+      "lavender",
+      "oats",
+      "ribavirin",
+      "rosemary",
+      "st-johns-wort",
+      "white-willow"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -7441,6 +7450,125 @@
       "vitamin-d"
     ],
     "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "nasal_catarrh": {
+    "display_name": "Nasal Catarrh",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000375"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "cayenne",
+      "contac",
+      "eucalyptus",
+      "german-chamomile",
+      "scotch-pine"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "nervous_heart": {
+    "display_name": "Nervous Heart",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000377"
+      ]
+    },
+    "essentials_involved": [
+      "iron",
+      "vitamin-b1"
+    ],
+    "other_substances_involved": [
+      "hawthorn",
+      "hops",
+      "lavender",
+      "motherwort",
+      "valerian"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "nervous_tension": {
+    "display_name": "Nervous Tension",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000378"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "balm",
+      "bitter-orange",
+      "lily-of-the-valley",
+      "sweet-woodruff",
+      "wild-celery"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "neuralgia": {
+    "display_name": "Neuralgia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000379"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium",
+      "omega-3",
+      "vitamin-b12"
+    ],
+    "other_substances_involved": [
+      "b-complex",
+      "isoprinosine",
+      "lavender",
+      "oats",
+      "ribavirin",
+      "rosemary",
+      "st-johns-wort",
+      "white-willow"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "neuropathy": {
+    "display_name": "Neuropathy",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000379"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium",
+      "omega-3",
+      "vitamin-b12"
+    ],
+    "other_substances_involved": [
+      "b-complex",
+      "isoprinosine",
+      "lavender",
+      "oats",
+      "ribavirin",
+      "rosemary",
+      "st-johns-wort",
+      "white-willow"
+    ],
     "books_cited": [
       "lets-play-doctor"
     ]

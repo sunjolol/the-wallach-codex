@@ -2754,7 +2754,7 @@
   },
   "nausea": {
     "display_name": "Nausea",
-    "claim_count": 7,
+    "claim_count": 8,
     "likely_deficiencies": [
       {
         "essential": "biotin",
@@ -2977,7 +2977,7 @@
   },
   "palpitations": {
     "display_name": "Palpitations",
-    "claim_count": 7,
+    "claim_count": 8,
     "likely_deficiencies": [
       {
         "essential": "calcium",
@@ -2994,6 +2994,12 @@
       {
         "essential": "iron",
         "claim_id": "WAL-CLM-LETS-000014",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "iron",
+        "claim_id": "WAL-CLM-LETS-000377",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -3024,6 +3030,12 @@
       {
         "essential": "vitamin-b1",
         "claim_id": "WAL-CLM-LETS-000034",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-b1",
+        "claim_id": "WAL-CLM-LETS-000377",
         "confidence": "high",
         "appears_in_books": 1
       },

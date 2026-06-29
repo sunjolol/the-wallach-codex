@@ -1,54 +1,55 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_5 claim(s) drafted 2026-06-29T05:18:01+00:00. Review then run corpus_seal.py to promote._
+_5 claim(s) drafted 2026-06-29T05:29:52+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×1, protocol×4
+Kinds: protocol×5
 
-### WAL-CLM-LETS-000370 · definition
-- **essentials:** vitamin-b1 · **conditions:** — · **symptoms:** —
-- **claim:** Mosquitoes can be kept out of the home with screen windows and doors and electric 'zapper' lights placed 15-25 yards from the back door (the violet light draws mosquitoes away from the house). Wallach notes mosquitoes carry serious human diseases — meningitis and encephalitis in North America; malaria, yellow fever, meningitis and encephalitis in South America. Beyond over-the-counter flying-insect sprays, he says the herb pennyroyal (Mentha pulegium) oil rubbed on the skin and vitamin B-1 (thiamine) at 500 milligrams a day will also help repel mosquitoes.
-- **verbatim** (offset 395165): “There are numerous OTC flying
-insect sprays, herbs like pennyroyal (Mentha
-pulegium) oil nibbed on the skin and vitamins
-such as B-l at 500 mg/day will also "repel"
-mosquitoes.”
+### WAL-CLM-LETS-000375 · protocol
+- **essentials:** — · **conditions:** nasal_catarrh · **symptoms:** —
+- **claim:** Nasal catarrh (a runny or stuffy nose) can be caused by a wide variety of upper-respiratory viral infections. Wallach's treatment is the over-the-counter decongestant Contac (one capsule every 12 hours) plus the herbs cayenne pepper (Capsicum minimum), eucalyptus (Eucalyptus globulus), German chamomile (Matricaria chamomilla) and scotch pine (Pinus sylvestris).
+- **verbatim** (offset 402419): “Treatment includes Contac at 1 q 12 h, cay-
+enne pepper (Capsicum minimum), eucalyp-
+tus (Eucalyptus globulus), German chamo-
+mile (Matricaria chamomilla) and scotch pine
+(Pinus sylvestris).”
 
-### WAL-CLM-LETS-000371 · protocol
-- **essentials:** omega-3, phenylalanine · **conditions:** multiple_sclerosis, als · **symptoms:** —
-- **claim:** Multiple sclerosis (MS) is a progressive disease of the central nervous system marked by scattered zones of demyelination (loss of the fatty insulating layer on nerves). Symptoms start between ages 20 and 40 — usually tingling or numbness in the arms or legs (a 'stocking and glove' pattern) — and progress to weakness, clumsiness, visual and balance problems, dizziness and bladder-control trouble; intention tremor, nystagmus and 'scanning' speech form Charcot's triad. Wallach links MS to mercury (he cross-references mercury poisoning) and to the loss of cholesterol-rich myelin. He criticizes the orthodox cortisone/prednisone approach and instead recommends: avoid animal fats; a high intake of fish oil (cod liver or salmon oil) at 5 grams three times a day and flaxseed oil at one tablespoon twice a day (said to raise survival by 50 percent); removal of mercury (amalgam) fillings; calcium 2-aminoethylphosphate (CaEAP) one dose four times a day; octacosanol two capsules three times a day; daily snake-venom injections; D-phenylalanine at 500 milligrams three times a day; betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day; avoidance of known food allergens with rotation diets; and avoiding vitamin C supplements (using green vegetables and juices as a natural source instead). Wallach says the same regimen has also worked for amyotrophic lateral sclerosis (ALS, or Lou Gehrig's disease).
-- **verbatim** (offset 396950): “Treatment should include removal of mercury
-fillings, the use of CaEAP at 1 q.i.d., .,
-octocosanol at two capsules t.i.d., and snake
-venom injections daily, d-phenylalanine at
-500 mg t.i.d., betaine HC1 and pancreatic en-
-zymes at 75-200 mg t.i.d.”
+### WAL-CLM-LETS-000376 · protocol
+- **essentials:** — · **conditions:** — · **symptoms:** nausea
+- **claim:** Nausea can be caused by a wide range of diseases and syndromes — from nutritional deficiencies, pregnancy and hepatitis to food allergies and cancer — so Wallach advises that recurring nausea warrants a detailed investigation. For symptom relief he suggests the over-the-counter remedies Pepto-Bismol and Kaopectate, plus the herbs artichoke (Cynara scolymus), avens (Geum urbanum) and peppermint (Mentha piperita).
+- **verbatim** (offset 402851): “Treatment ofnausea can include Pepto Bismol
+Kaopectate, and herbs to include artichoke
+(Cynara scolymus), avens (Geum urbanum)
+and peppermint (Mentha piperita).”
 
-### WAL-CLM-LETS-000372 · protocol
-- **essentials:** — · **conditions:** mumps · **symptoms:** —
-- **claim:** Mumps is a contagious viral disease that causes painful enlargement of the salivary glands, especially the parotids; the virus is highly aggressive and is present in saliva up to six days before illness is felt. Symptoms include fever (up to 104°F), chills, and tender, shiny, swollen skin over the salivary glands in front of and below the ear. In about 20 percent of adult males it causes a painful testicular infection, and testicular atrophy may follow (though hormone production and fertility are rarely affected). Wallach's treatment is symptomatic: pain relief (codeine, acetaminophen/Tylenol, aspirin), bed rest, a liquid diet (chicken rice soup, sugarless Jello, Gatorade, juices) and the herb mullein (Verbascum thapsus) for symptom relief.
-- **verbatim** (offset 398123): “Treatment of mumps is symptomatic includ-
-ing pain relief (i.e., codeine, tylenol, aspirin,
-etc.), bed rest, liquid diet including chicken
-rice soup, sugarlessJello, Gatorade, juices and
-herbs for symptomatic treatment including
-mullein (Verbascum thapsus).”
+### WAL-CLM-LETS-000377 · protocol
+- **essentials:** vitamin-b1, iron · **conditions:** nervous_heart · **symptoms:** palpitations
+- **claim:** Nervous heart (a rapid beat or palpitations when nervous) tends to be common in senior citizens. Wallach says many of these cardiac symptoms result from vitamin B-1 (thiamine, the beri-beri vitamin) deficiency, anemia and a deficiency of stomach acid; do a pulse test to check whether food allergies contribute. His treatment is vitamin B-1 at 100 milligrams three times a day, iron at 45-100 milligrams, an improved general diet and the baseline nutritional supplement program, plus the herbs hawthorn (Crataegus oxyacantha), hops (Humulus lupulus), lavender (Lavandula angustifolia), motherwort (Leonurus cardiaca) and valerian (Valeriana officinalis); avoid offending food allergens and use rotation diets.
+- **verbatim** (offset 403012): “NERVOUS HEART (rapid beat or palpita-
+tions when nervous): tends to be common
+in senior citizens. Many of these cardiac
+symptoms are the result of B-l (Beri-Beri)
+deficiencies, anemia and deficiencies of stom-
+ach acid.”
 
-### WAL-CLM-LETS-000373 · protocol
-- **essentials:** selenium, vitamin-e, methionine, cysteine, omega-3, choline · **conditions:** muscular_dystrophy, keshan_disease · **symptoms:** —
-- **claim:** Muscular dystrophy (MD) is, in Wallach's view, a preventable selenium-deficiency disease — he points out it has been eliminated in livestock ('white muscle disease') by giving selenium to pregnant females and fast-growing young animals. Adequate selenium in preconception women maintains pregnancy and prevents all forms of MD (Duchenne, Erb, Leyden-Moebius, Landouzy-Dejerine, Becker's and Gowers), and he adds Keshan disease (a selenium-deficiency heart-muscle dystrophy) to the list. Food-allergy-driven celiac-type changes in the small intestine are a common cause of the tissue selenium deficiency, so do a pulse test. He says giving selenium and vitamin E by intramuscular or intravenous injection at the very first symptoms can arrest or cure the disease. Treatment of MD and/or Keshan disease: selenium orally (as plant-derived colloidal minerals), intravenously or intramuscularly at 50-1,000 micrograms a day (by weight); vitamin E intramuscularly at 80 milligrams a day; selenium orally at 250-1,000 micrograms a day; vitamin E 800-1,200 (orally); sulfur amino acids (a complete amino-acid infusion intravenously, plus free amino acids orally) and sugarless Jello; essential fatty acids at 5 grams three times a day; avoid food allergens; keep fat under 20 percent of daily calories; choline as soy lecithin at 10-20 grams a day; and avoid exercise for the first month of treatment to protect compromised muscle.
-- **verbatim** (offset 400772): “Treatment of MD and/or Keshan disease in-
-cludes the use of selenium orally (plant de-
-rived colloidal minerals), IV or IM at 50-1,000
-mcg per day (based on weight), vitamin E IM
-at 80 mg per day, selenium orally at 250-1 ,000
-mcg per day, vitamin E 800-1, 200 orally”
+### WAL-CLM-LETS-000378 · protocol
+- **essentials:** — · **conditions:** nervous_tension · **symptoms:** —
+- **claim:** Nervous tension (nervous headaches) is usually brought on by tension and overwork, and a food allergy may be a trigger, so do a pulse test. Wallach's treatment is to avoid sugar, caffeine and food allergens and to reduce stress and tension, along with exercise, homeopathy, acupuncture, color therapy and subliminal relaxation tapes, plus the herbs balm (Melissa officinalis), bitter orange (Citrus aurantium), sweet woodruff (Galium odoratum), wild celery (Apium graveolens) and lily-of-the-valley (Convallaria majalis).
+- **verbatim** (offset 403889): “Treatment includes avoidance of sugar, caf-
+feine, food allergens, avoidance and/or re-
+duction of stress and tension; exercise, home-
+opathy, acupuncture, color therapy, sublimi-
+nal relaxation tapes and herbs including balm
+(Melissa officinalis), bitter orange (Citnis
+aurantium), sweet woodruff (Gallium
+odoraturm), wild celery (Apium graveolens)
+and lily-of-the valley (Convallaria magalis).”
 
-### WAL-CLM-LETS-000374 · protocol
-- **essentials:** calcium, magnesium, potassium, selenium, vitamin-e · **conditions:** muscle_cramps · **symptoms:** —
-- **claim:** Muscle cramps (charley horse) are a 'mini' convulsion in the muscle caused by deficiencies of calcium, magnesium, potassium, selenium and/or vitamin E. They range from a subtle eyelid twitch or muscle flutter (fasciculations) in the arms or legs to hard cramps of the feet, calves, back and neck. Prevention is the baseline nutritional supplement program; do a pulse test for food allergies that can cause celiac-type changes and malabsorption, and a hair analysis to check mineral status. Treatment can include liquid colloidal calcium, magnesium and potassium, plus betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day before meals.
-- **verbatim** (offset 401546): “MUSCLE CRAMPS (Charley horse): are a
-"mini" convulsion that is taking place in the
-muscle as a result of deficiencies of calcium,
-magnesium, potassium, selenium and/orvita-
-min E.”
+### WAL-CLM-LETS-000379 · protocol
+- **essentials:** vitamin-b12, omega-3, calcium, magnesium · **conditions:** neuralgia, bells_palsy, neuropathy · **symptoms:** —
+- **claim:** Neuralgia (which includes Bell's palsy and neuropathy) is an irritation of a nerve that can stem from many causes — trauma; nutritional deficiencies (vitamin B-12, folic acid, vitamin B-1, vitamin B-6); infections (herpes, shingles); alcoholism; diabetes; and multiple sclerosis. Treatment requires addressing every underlying condition and should also include a B-complex at 50 milligrams three times a day, vitamin B-12 at 1,000 micrograms a day, essential fatty acids as EPA at 5 grams three times a day and flaxseed oil at one tablespoon twice a day, calcium and magnesium at 2,000 and 1,000 milligrams a day, and — for viral neuralgias such as herpes and shingles — the antivirals Isoprinosine at 500-1,500 milligrams a day and Ribavirin at 250-1,500 milligrams a day, plus acupuncture and the herbs lavender (Lavandula angustifolia), oats (Avena sativa), rosemary (Rosmarinus officinalis), St. John's wort (Hypericum perforatum) and white willow (Salix alba).
+- **verbatim** (offset 404326): “an irritation of a nerve which can be caused by
+many diseases rangingfrom trauma, nutritional
+deficiencies (i.e., B-12, folic acid, B-l, B-6,
+etc.), infections (i.e., herpes, shingles, etc.),
+alcoholism, diabetes, MS, etc.”
 

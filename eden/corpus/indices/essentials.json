@@ -288,7 +288,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 66,
+    "claim_count": 67,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -359,6 +359,7 @@
         "WAL-CLM-LETS-000332",
         "WAL-CLM-LETS-000366",
         "WAL-CLM-LETS-000374",
+        "WAL-CLM-LETS-000379",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -522,6 +523,8 @@
       "migraine",
       "mitral_valve_prolapse",
       "muscle_cramps",
+      "neuralgia",
+      "neuropathy",
       "osteoporosis",
       "panic_attacks",
       "periodontal_disease",
@@ -936,7 +939,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 75,
+    "claim_count": 76,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1020,6 +1023,7 @@
         "WAL-CLM-LETS-000326",
         "WAL-CLM-LETS-000332",
         "WAL-CLM-LETS-000374",
+        "WAL-CLM-LETS-000379",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1143,6 +1147,8 @@
       "malabsorption",
       "menopause",
       "muscle_cramps",
+      "neuralgia",
+      "neuropathy",
       "osteoarthritis",
       "osteomalacia",
       "osteoporosis",
@@ -1742,7 +1748,7 @@
     "display_name": "Iron",
     "canon_slug": "iron",
     "category": "mineral",
-    "claim_count": 22,
+    "claim_count": 23,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000022"
@@ -1777,7 +1783,8 @@
         "WAL-CLM-LETS-000171",
         "WAL-CLM-LETS-000244",
         "WAL-CLM-LETS-000276",
-        "WAL-CLM-LETS-000357"
+        "WAL-CLM-LETS-000357",
+        "WAL-CLM-LETS-000377"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000015"
@@ -1865,6 +1872,7 @@
       "heart_failure",
       "liver_cirrhosis",
       "menorrhagia",
+      "nervous_heart",
       "pica",
       "schizophrenia"
     ],
@@ -3906,7 +3914,7 @@
     "display_name": "Thiamine",
     "canon_slug": "vitamin-b1",
     "category": "vitamin",
-    "claim_count": 14,
+    "claim_count": 15,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000043",
@@ -3926,6 +3934,7 @@
         "WAL-CLM-LETS-000243",
         "WAL-CLM-LETS-000244",
         "WAL-CLM-LETS-000333",
+        "WAL-CLM-LETS-000377",
         "WAL-CLM-RARE-000282"
       ]
     },
@@ -4054,6 +4063,7 @@
       "depression",
       "edema",
       "korsakoffs_syndrome",
+      "nervous_heart",
       "wernicke_korsakoff_syndrome"
     ],
     "interacts_with": [
@@ -4896,7 +4906,7 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 27,
+    "claim_count": 28,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000035",
@@ -4933,7 +4943,8 @@
         "WAL-CLM-LETS-000298",
         "WAL-CLM-LETS-000300",
         "WAL-CLM-LETS-000348",
-        "WAL-CLM-LETS-000359"
+        "WAL-CLM-LETS-000359",
+        "WAL-CLM-LETS-000379"
       ]
     },
     "deficiency_signs": [
@@ -5022,6 +5033,8 @@
       "liver_cirrhosis",
       "liver_disease",
       "meningocele",
+      "neuralgia",
+      "neuropathy",
       "peripheral_neuropathy",
       "pernicious_anemia",
       "psychosis",
@@ -6371,7 +6384,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 64,
+    "claim_count": 65,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -6442,6 +6455,7 @@
         "WAL-CLM-LETS-000369",
         "WAL-CLM-LETS-000371",
         "WAL-CLM-LETS-000373",
+        "WAL-CLM-LETS-000379",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -6541,6 +6555,8 @@
       "morning_sickness",
       "multiple_sclerosis",
       "muscular_dystrophy",
+      "neuralgia",
+      "neuropathy",
       "pruritus",
       "psoriasis",
       "weight_loss"
