@@ -45,14 +45,16 @@
   },
   "agrimony": {
     "display_name": "Agrimony",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000283"
+        "WAL-CLM-LETS-000283",
+        "WAL-CLM-LETS-000325"
       ]
     },
     "conditions_treated": [
-      "gallstones"
+      "gallstones",
+      "jaundice"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1043,18 +1045,20 @@
   },
   "cartilage": {
     "display_name": "Cartilage",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
         "WAL-CLM-LETS-000176",
-        "WAL-CLM-LETS-000205"
+        "WAL-CLM-LETS-000205",
+        "WAL-CLM-LETS-000326"
       ]
     },
     "conditions_treated": [
       "arthritis",
       "bursitis",
       "carpal_tunnel_syndrome",
+      "joint_pain",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -1143,14 +1147,16 @@
   },
   "celandine": {
     "display_name": "Celandine",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000283"
+        "WAL-CLM-LETS-000283",
+        "WAL-CLM-LETS-000325"
       ]
     },
     "conditions_treated": [
-      "gallstones"
+      "gallstones",
+      "jaundice"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1249,6 +1255,21 @@
     "conditions_treated": [
       "gallstones",
       "hepatitis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "chionanthus": {
+    "display_name": "Chionanthus",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000325"
+      ]
+    },
+    "conditions_treated": [
+      "jaundice"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1746,7 +1767,7 @@
   },
   "dmso": {
     "display_name": "Dmso",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
@@ -1756,7 +1777,8 @@
         "WAL-CLM-LETS-000176",
         "WAL-CLM-LETS-000201",
         "WAL-CLM-LETS-000221",
-        "WAL-CLM-LETS-000320"
+        "WAL-CLM-LETS-000320",
+        "WAL-CLM-LETS-000326"
       ]
     },
     "conditions_treated": [
@@ -1768,6 +1790,7 @@
       "candidiasis",
       "chronic_fatigue_syndrome",
       "inflammation",
+      "joint_pain",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -2295,19 +2318,21 @@
   },
   "gelatin": {
     "display_name": "Gelatin",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000171",
         "WAL-CLM-LETS-000176",
         "WAL-CLM-LETS-000276",
-        "WAL-CLM-LETS-000291"
+        "WAL-CLM-LETS-000291",
+        "WAL-CLM-LETS-000326"
       ]
     },
     "conditions_treated": [
       "brittle_nails",
       "bursitis",
-      "hangnails"
+      "hangnails",
+      "joint_pain"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3192,7 +3217,7 @@
   },
   "licorice": {
     "display_name": "Licorice",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
@@ -3200,7 +3225,8 @@
         "WAL-CLM-LETS-000235",
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000283",
-        "WAL-CLM-LETS-000298"
+        "WAL-CLM-LETS-000298",
+        "WAL-CLM-LETS-000325"
       ]
     },
     "conditions_treated": [
@@ -3210,6 +3236,7 @@
       "diabetes",
       "gallstones",
       "hepatitis",
+      "jaundice",
       "kidney_stones",
       "rheumatoid_arthritis"
     ],
@@ -3649,16 +3676,18 @@
   },
   "olive-oil": {
     "display_name": "Olive Oil",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000231",
-        "WAL-CLM-LETS-000283"
+        "WAL-CLM-LETS-000283",
+        "WAL-CLM-LETS-000325"
       ]
     },
     "conditions_treated": [
       "constipation",
-      "gallstones"
+      "gallstones",
+      "jaundice"
     ],
     "books_cited": [
       "lets-play-doctor"

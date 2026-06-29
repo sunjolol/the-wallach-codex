@@ -1,74 +1,84 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_6 claim(s) drafted 2026-06-29T01:30:07+00:00. Review then run corpus_seal.py to promote._
+_6 claim(s) drafted 2026-06-29T02:16:08+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: protocol×6
+Kinds: definition×1, protocol×5
 
-### WAL-CLM-LETS-000319 · protocol
-- **essentials:** omega-3, zinc, selenium, vitamin-a, germanium · **conditions:** infertility · **symptoms:** —
-- **claim:** This is Wallach's dedicated infertility entry (distinct from his fertility entry): he holds that infertility — a curable inability to have children — is usually caused by a nutritional deficiency, and reports curing several hundred cases by simple supplementation of vitamins, minerals, and digestive aids; food allergies can impair absorption through celiac-type intestinal changes. Treatment: the baseline nutritional program with plant-derived colloidal minerals; resolve food allergies by avoidance and rotation diets; a high-protein diet (up to 200 grams per day); essential fatty acids at 5 grams three times daily; L-arginine at 500 milligrams three times daily; zinc at 50 milligrams three times daily; selenium at 250 micrograms per day; vitamin A at 100,000 international units per day for 30 days, then 25,000; germanium at 50 milligrams per day; acupuncture; and herbs ginseng (Panax ginseng), leek (Allium porrum), and garlic (Allium sativum). (The book misprints the zinc dose as '50 gm'; 50 grams is toxic and every other zinc dose is in milligrams, so it is shown here as 50 milligrams.)
-- **verbatim** (offset 348836): “Treatment of infertility should include the
-base line nutritional program (include plant
-derived colloidal minerals) , resolve food al-
-lergies by avoidance and rotation diets, eat
-high protein diets (up to 200 gm/day), essen-
-tial fatty acids at 5 gm t.i.d., 1-arginine at 500
-mg t.i.d., zinc at 50 mg t.i.d., selenium at 250
-mcg/day,”
+### WAL-CLM-LETS-000325 · protocol
+- **essentials:** vitamin-c, vitamin-a, selenium, vitamin-e · **conditions:** jaundice · **symptoms:** —
+- **claim:** Jaundice (icterus, yellow eyes) can be caused by blockage of the bile-duct system in the liver (gallstones, tumor, hepatitis) and/or destruction of red blood cells (Rh factor, blood parasites, malaria); diagnosis is critical. Examining the whites of the eyes (sclera) reveals true jaundice by a yellow coloration — which is absent when the skin is yellow from high beta-carotene intake; blood tests differentiate obstruction (bilirubin above 2.0-2.5 milligrams percent) from red-blood-cell destruction. Treatment: exposure to ultraviolet light to speed elimination; a liver flush (three days of apple juice, then a cup of olive oil and a cup of lemon juice); vitamin C to bowel tolerance; vitamin A at 300,000 international units per day as beta carotene; selenium at 500-1,000 micrograms per day; vitamin E at 800-1,200 international units per day; and herbs licorice (Glycyrrhiza glabra), agrimony (Agrimonia eupatoria), celandine (Chelidonium majus), and chionanthus (Chionanthus virginica).
+- **verbatim** (offset 354200): “Treatment of jaundice includes exposure to
+ultra violet light to speed up elimination, liver
+flush (three days of apple juice followed by a
+cup of olive oil and a cup of lemon juice),
+vitamin C to bowel tolerance, vitamin A at
+300,000 IU/day as beta carotene, selenium at
+500-1 ,000 mcg/day, vitamin E at 800-1 ,200 IU/
+day, and herbs including licorice (Glycyrrhiza
+glabra), agrimony (Agrimonia eupatoria),
+celadine (Chelidonium majus), chionanthus
+(Chionanthus virginica).”
 
-### WAL-CLM-LETS-000320 · protocol
-- **essentials:** vitamin-c, vitamin-e, zinc, omega-3, flavonoids, phenylalanine · **conditions:** inflammation · **symptoms:** —
-- **claim:** Inflammation can result from injury, arthritis, infection, or cancer; its signs include swelling, tenderness, discharges, edema, fever, and allergies. Treatment: DMSO; autoimmune urine therapy; oral proteolytic enzymes (chymotrypsin, pancreatic enzymes, bromelain, trypsin); vitamin C to bowel tolerance; vitamin E at 800-1,200 international units per day; zinc at 50 milligrams three times daily; essential fatty acids at 5 grams three times daily; bioflavonoids at 150 milligrams per day; quercetin at 100 milligrams per day; D-phenylalanine, L-tryptophane, and DL-valine each at 1.5 grams per day; acupuncture; and herbs camphor (Cinnamomum camphora), comfrey (Symphytum officinale), and feverfew (Chrysanthemum parthenium).
-- **verbatim** (offset 349542): “Treatment of inflammation include DMSO,
-autoimmune urine therapy, proteolytic en-
-zymes orally (i.e., chymotrypsin, pancreatic
-enzymes, bromelin, trypsin), vitamin C to
-bowel tolerance,vitamin E at 800-1,200 IU/
-day, zinc at 50 mg t.i.d.”
+### WAL-CLM-LETS-000326 · protocol
+- **essentials:** calcium, magnesium, copper, vitamin-b6 · **conditions:** joint_pain · **symptoms:** —
+- **claim:** Joint pain can be caused by many disease processes — arthritis, osteoporosis, rickets, gout, obesity — as well as nutritional deficiencies (calcium, magnesium, sulfur, sulfur-bearing amino acids, copper) and food allergies/sensitivities. Treatment: correct any overt or underlying disease; calcium and magnesium at 2,000 and 1,000 milligrams per day; cartilage at 5 grams three times daily; unsweetened gelatin once per day; copper at 2-5 milligrams per day (a copper bracelet can be of great value); vitamin B-6 at 100 milligrams three times daily; mineral-bath hydrotherapy; and ultraviolet light exposure for 1-6 minutes. Symptomatic relief: pain gels, DMSO, acupuncture, and chiropractic (especially useful for spine, rib, and pelvic subluxations). Plant-derived colloidal minerals provide an exceptional, 98%-absorbable mineral source.
+- **verbatim** (offset 354943): “Treatment ofjoint pain includes the correction
+of any overt or underlying disease, calcium
+and magnesium at 2,000 and 1,000 mg per
+day, cartilage at 5 gm t.i.d., gelatin
+(unsweetened) once per day, copper at 2-5
+mg/day (a copper bracelet can be of great
+value), B-6 at 100 mg t.i.d., mineral bath hy-
+drotherapy and ultra violet light exposure at 1 -
+6 minutes,”
 
-### WAL-CLM-LETS-000321 · protocol
-- **essentials:** vitamin-e, selenium, calcium, magnesium · **conditions:** indigestion, dyspepsia · **symptoms:** —
-- **claim:** Indigestion (dyspepsia — belching, burping, bloating) occurs with aging, stress, and overeating; Wallach attributes much of it to the stomach losing its ability to make hydrochloric acid starting around age 35, with food allergies contributing (use a pulse test to identify them). Treatment: Kaopectate or Pepto-Bismol for acute diarrhea; betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times daily before meals; mint tea to calm the stomach; English bitters (Gentiana lutea) before each meal; vitamin E at 800-1,200 international units per day; selenium at 500 micrograms per day; calcium and magnesium at 2,000 and 1,000 milligrams per day; acupuncture; homeopathy; and herbs including balm, bitter orange, celandine, fennel, hops, masterwort, peppermint, wormwood, yarrow, and marshmallow.
-- **verbatim** (offset 350439): “Treatment of indigestion should include
-Kaopectate or Pepto Bismol for acute diar-
-rhea, betaine HCl and pancreatic enzymes at
-75-200 mg t.i.d. before meals, mint tea as
-needed to calm stomach, English bitters
-(Gentiana lutea) before each meal, vitamin E
-at 800- 1 ,200 IU/day, selenium at 500 mcg/day,”
+### WAL-CLM-LETS-000327 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Kegel's exercise is a way to condition the voluntary muscles of the pelvic floor in both males and females. It is useful for prenatal conditioning of the pelvic, vaginal, and urethral muscles and for urinary incontinence and urgency. To perform it, tighten the pelvic-floor muscles as if trying to stop a bowel movement; you can also add the variation of stopping your urine stream at will. Wallach suggests doing several hundred each day.
+- **verbatim** (offset 355650): “KEGEL'S EXERCISE: is a great way to condi-
+tion the voluntary muscles of the pelvic floor
+in both males and females. This exercise is
+useful for prenatal conditioning of the pelvic
+muscles, vaginal muscles, urethral muscles in
+both male and female for urinary inconti-
+nence and urgency. To perform the Kegel's
+exercise you tighten the muscles of the pelvic
+floor as if you were trying stop a bowel move-
+ment;”
 
-### WAL-CLM-LETS-000322 · protocol
-- **essentials:** calcium, chromium, phenylalanine, vitamin-b3, inositol · **conditions:** insomnia · **symptoms:** —
-- **claim:** Insomnia (inability to sleep) can be caused by stress, excitement, drugs (including caffeine in coffee, cola, and chocolate), prescription medications, food allergies, and hypoglycemia — use a pulse test and six-hour glucose tolerance test. Treatment: avoid caffeine and offending food allergens; calcium (especially plant-derived colloidal calcium); chromium at 25-200 micrograms three times daily; acupuncture; homeopathy; DL-phenylalanine at 250 milligrams three times daily; L-tryptophan at 1,000 milligrams three times daily; inositol at 500 milligrams per day; niacinamide at 1,000 milligrams at bedtime; herbs valerian (Valeriana officinalis), passion flower (Passiflora incarnata), hops (Humulus lupulus), and California poppy (Eschscholzia californica); and vitamin B-3 (niacin) at 450 milligrams three times daily (time-release); plus the baseline nutrition program.
-- **verbatim** (offset 351431): “Treatment for insomnia includes avoidance of
-caffeine and offending food allergens, cal-
-cium (especially plant derived colloidal cal-
-cium), chromium at 25-200 mcg t.i.d., acu-
-puncture, homeopathy, dl-phenylalanine at
-250 mg t.i.d., 1-tryptophan at 1,000 mg t.i.d.,
-inositol at 500 mg/day, niacinamide at 1,000
-mg at bedtime,”
+### WAL-CLM-LETS-000328 · protocol
+- **essentials:** vitamin-a, zinc · **conditions:** keratomalacia, xerophthalmia · **symptoms:** —
+- **claim:** Keratomalacia (xerophthalmia) is a hazy, dry cornea (the clear domed bulge at the front of the eye) that becomes ulcerated — a sign of vitamin A deficiency. Symptoms include extreme dryness of the eyes with blinking to keep them moist, conjunctivitis, night blindness, and fat-like spots (Bitot's spots) on the white of the eyeball; untreated, it can cause permanent blindness. Treatment: vitamin A at 25,000 international units (children) to 300,000 international units (adults) per day as beta carotene, zinc at 10-50 milligrams three times daily, and increasing animal protein to 120 grams per day (chicken, fish, eggs, milk, lamb, pork, or beef), plus the baseline nutritional program.
+- **verbatim** (offset 356189): “KERATOMALACIA(xerophthalmia): is rec-
+ognized as a hazy dry cornea (the domed clear
+bulge on the front of the eye) that becomes
+ulcerated. Symptoms include extreme dry-
+ness of the eyes with blinking in attempts to
+keep the eyes moist, conjunctivitis, and night
+blindness. Fat-like spots (Bitots spots) can be
+found on the "white" of the eye ball.
+Untreatedkeratomalacia can result in perma-
+nent blindness.”
 
-### WAL-CLM-LETS-000323 · protocol
-- **essentials:** vitamin-b9 · **conditions:** irritable_bowel_syndrome · **symptoms:** —
-- **claim:** Irritable bowel syndrome alternates between constipation and diarrhea; Wallach holds that food allergies are the most frequent cause, producing celiac-like small-intestine damage (edema, ulceration, catarrhal inflammation), and that the orthodox approach (low-fiber diets, cortisone, Tagamet) is wrong — a pulse test is extremely useful for finding the individual cause. Treatment: a high-fiber diet; 4-6 cups of fruit and vegetables per day; eliminate caffeine, sugar, and offending foods identified by pulse test (wheat, milk, soy); betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times daily before meals; folic acid at 5-25 milligrams per day; a gluten-free diet; eight glasses of water per day; the baseline nutrition program; and the herb marshmallow (Althaea officinalis).
-- **verbatim** (offset 352500): “Treatment of irritable bowel syndrome should
-include high fiber diets, 4-6 cups of fruit and
-vegetables per day, eliminate caffeine, sugar
-and offending foods based on the pulse test
-(i.e., wheat, milk, soy), betaine HCl and pan-
-creatic enzymes at 75-200 mg t.i.d. before
-meals, folic acid at 5-25 mg/day, gluten free
-diet and eight glasses of water each day.”
+### WAL-CLM-LETS-000329 · protocol
+- **essentials:** vitamin-a, zinc · **conditions:** keratosis · **symptoms:** —
+- **claim:** Keratosis is a 'goose-bump'-like keratin buildup in the openings of the hair follicles — pinhead-sized plugs found mostly on the backs of the arms, the thighs, and the buttocks. Orthodox doctors claim no treatment is necessary, but Wallach holds it is in fact a symptom of chronic vitamin A deficiency. Treatment: vitamin A at 25,000 international units (children) to 300,000 international units (adults) per day as beta carotene, zinc at 10-50 milligrams three times daily, and increasing protein to 120 grams per day, plus the baseline nutrition program.
+- **verbatim** (offset 357232): “Treatment of keratosis includes vitamin A at
+25,000 IU (kids) to 300,000 IU (adults) per day
+as beta carotene, zinc at 10-50 mg. t.i.d., in-
+crease protein at 120 gms per day and don't
+forget the base line nutrition program.”
 
-### WAL-CLM-LETS-000324 · protocol
-- **essentials:** omega-3, zinc, vitamin-a · **conditions:** itching, pruritus · **symptoms:** —
-- **claim:** Itching (pruritus) can be caused by dry skin, contact with irritants, and contact or food allergies; pulse and challenge tests identify the allergens and irritants, and resolving the basic problem is essential. Symptomatic treatment: topical Caladryl, aloe vera (Aloe species), salt rubs, dilute vinegar (50%), and herbal-compress washes (see dermatitis). Oral treatment: flaxseed oil at 5 grams three times daily; zinc at 50 milligrams three times daily; vitamin A at 300,000 international units per day as beta carotene; plus the baseline nutritional program.
-- **verbatim** (offset 353221): “Treatment (symptomatic) of itching includes
-the use oftopical applications ofCaladryl , aloe
-vera (Aloe spp). , salt nibs, dilute vinegar (50%),
-and washes with herbal compresses (see
-derma-titis). Oral treatment should include 5
-gm flaxseed oil t.i.d., zinc 50 mgt.i.d., vitamin
-A at 300,000 IU/day as beta carotene.”
+### WAL-CLM-LETS-000330 · protocol
+- **essentials:** — · **conditions:** kernicterus · **symptoms:** —
+- **claim:** Kernicterus is the deposition of bile pigments into the brain of a newborn after a prolonged elevation of bilirubin (bile pigments produced from red-blood-cell breakdown); its symptoms mimic cerebral palsy — lethargy, poor feeding, vomiting, incoordination, seizures, and death. Prevention and treatment: frequent feeding of the infant to reduce absorption of bile pigments, and exposure to blue and ultraviolet light to photo-oxidize the bilirubin (a transient lactose intolerance can accompany light therapy in infants, causing diarrhea, but this does not appear to have any permanent consequences).
+- **verbatim** (offset 357749): “Prevention and
+treatment ofkernicterus includes frequent feed-
+ing of the infant to reduce absorption of bile
+pigments, exposure to blue and ultra violet
+light to photo-oxidize bilirubin (a transient
+lactose intolerance is associated with light
+therapy in infants that results in diarrhea — this
+does not appear to have any permanent con-
+sequences).”
 

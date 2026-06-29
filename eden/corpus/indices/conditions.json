@@ -6028,6 +6028,54 @@
       "lets-play-doctor"
     ]
   },
+  "jaundice": {
+    "display_name": "Jaundice",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000325"
+      ]
+    },
+    "essentials_involved": [
+      "selenium",
+      "vitamin-a",
+      "vitamin-c",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "agrimony",
+      "celandine",
+      "chionanthus",
+      "licorice",
+      "olive-oil"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "joint_pain": {
+    "display_name": "Joint Pain",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000326"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "copper",
+      "magnesium",
+      "vitamin-b6"
+    ],
+    "other_substances_involved": [
+      "cartilage",
+      "dmso",
+      "gelatin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "kawasaki_disease": {
     "display_name": "Kawasaki Disease",
     "claim_count": 3,
@@ -6062,6 +6110,54 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "keratomalacia": {
+    "display_name": "Keratomalacia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000328"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "keratosis": {
+    "display_name": "Keratosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000329"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "kernicterus": {
+    "display_name": "Kernicterus",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000330"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "keshan_disease": {
@@ -8110,15 +8206,19 @@
   },
   "xerophthalmia": {
     "display_name": "Xerophthalmia",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000036",
         "WAL-CLM-RARE-000229"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000328"
       ]
     },
     "essentials_involved": [
-      "vitamin-a"
+      "vitamin-a",
+      "zinc"
     ],
     "other_substances_involved": [],
     "books_cited": [
