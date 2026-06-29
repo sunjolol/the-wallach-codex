@@ -409,7 +409,7 @@
   },
   "als": {
     "display_name": "Als",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000227",
@@ -417,13 +417,25 @@
       ],
       "interactions": [
         "WAL-CLM-RARE-000087"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000371"
       ]
     },
     "essentials_involved": [
+      "omega-3",
+      "phenylalanine",
       "selenium"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "caeap",
+      "octacosanol",
+      "pancreatic-enzymes",
+      "snake-venom"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -6252,7 +6264,7 @@
   },
   "keshan_disease": {
     "display_name": "Keshan Disease",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000071"
@@ -6265,14 +6277,21 @@
         "WAL-CLM-RARE-000048"
       ],
       "protocols": [
-        "WAL-CLM-DDDL-000073"
+        "WAL-CLM-DDDL-000073",
+        "WAL-CLM-LETS-000373"
       ]
     },
     "essentials_involved": [
+      "choline",
+      "cysteine",
+      "methionine",
+      "omega-3",
       "selenium",
       "vitamin-e"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "colloidal-minerals"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",
@@ -7287,7 +7306,7 @@
   },
   "multiple_sclerosis": {
     "display_name": "Multiple Sclerosis",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000227",
@@ -7295,24 +7314,53 @@
       ],
       "interactions": [
         "WAL-CLM-RARE-000087"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000371"
       ]
     },
     "essentials_involved": [
+      "omega-3",
+      "phenylalanine",
       "selenium"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "caeap",
+      "octacosanol",
+      "pancreatic-enzymes",
+      "snake-venom"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "mumps": {
+    "display_name": "Mumps",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000372"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "mullein"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "muscle_cramps": {
     "display_name": "Muscle Cramps",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000074"
       ],
       "protocols": [
+        "WAL-CLM-LETS-000374",
         "WAL-CLM-RARE-000284"
       ]
     },
@@ -7320,17 +7368,25 @@
       "boron",
       "calcium",
       "lithium",
-      "magnesium"
+      "magnesium",
+      "potassium",
+      "selenium",
+      "vitamin-e"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "colloidal-minerals",
+      "pancreatic-enzymes"
+    ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
   "muscular_dystrophy": {
     "display_name": "Muscular Dystrophy",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000071",
@@ -7352,14 +7408,21 @@
         "WAL-CLM-DDDL-000072"
       ],
       "protocols": [
-        "WAL-CLM-DDDL-000073"
+        "WAL-CLM-DDDL-000073",
+        "WAL-CLM-LETS-000373"
       ]
     },
     "essentials_involved": [
+      "choline",
+      "cysteine",
+      "methionine",
+      "omega-3",
       "selenium",
       "vitamin-e"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "colloidal-minerals"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",

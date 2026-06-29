@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_185 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_186 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-29 00:20 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b54 (Materia Medica, ★M SECTION COMPLETE, p151-153): 5 claims LETS-370..374 — MOSQUITOES (search-only), multiple_sclerosis, mumps, muscular_dystrophy, muscle_cramps. 2 meg→mcg MD selenium fixes + corrected b53 pages 149→150. corpus 749→754, kv 165, board 31/31.
+  ↳ MOSQUITOES→MUSCLE CRAMPS completes the M's. MOSQUITOES ruled SEARCH-ONLY by Luneth (pest-control guidance; B-1 500 mg/day repellent + pennyroyal; search-topic:mosquito-repellent). multiple_sclerosis+als: mercury-filling removal + fish/flaxseed oil + CaEAP + octacosanol + snake venom + D-phenylalanine 500 mg + betaine/enzymes; avoid vit C. mumps: symptomatic + mullein. muscular_dystrophy+keshan_disease: selenium-deficiency thesis; selenium IV/IM 50-1,000 mcg + oral 250-1,000 mcg + vit E + EFA + choline. muscle_cramps: Ca/Mg/K/Se/E deficiency + colloidal minerals + betaine/enzymes. 2 meg→mcg MD selenium fixes (600-DPI verified, fix_txt→resnap). NEW other-subs caeap/octacosanol/snake-venom; mumps new cond; MS/MD/als/keshan/muscle_cramps reused. HONESTY: b53 mitral/monckebergs/down_syndrome page 149→150 corrected pre-seal (book index=p150); page-locator audit deferred to final sweep. Pipeline green: seal kv165, embed 754 claims/372 conds, build 1482.6KB, invariants 31/31, render_probe_knowledge PASS.
 
 ## 2026-06-29 00:03 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b53 (Materia Medica, the M's, p149-150): 4 tier-1 protocol claims LETS-366..369 — mitral_valve_prolapse, monckebergs_arteriosclerosis, down_syndrome (Mongolism), morning_sickness. 2 render-verified meg→mcg selenium fixes. corpus 745→749, kv 163→164, board 31/31.

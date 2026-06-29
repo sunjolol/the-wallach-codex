@@ -288,7 +288,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 65,
+    "claim_count": 66,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -358,6 +358,7 @@
         "WAL-CLM-LETS-000326",
         "WAL-CLM-LETS-000332",
         "WAL-CLM-LETS-000366",
+        "WAL-CLM-LETS-000374",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -762,7 +763,7 @@
     "display_name": "Potassium",
     "canon_slug": "potassium",
     "category": "mineral",
-    "claim_count": 15,
+    "claim_count": 16,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000025",
@@ -788,7 +789,8 @@
       "protocol": [
         "WAL-CLM-LETS-000203",
         "WAL-CLM-LETS-000225",
-        "WAL-CLM-LETS-000244"
+        "WAL-CLM-LETS-000244",
+        "WAL-CLM-LETS-000374"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000026"
@@ -899,7 +901,8 @@
       "high_cholesterol",
       "hypokalemia",
       "hypotension",
-      "insomnia"
+      "insomnia",
+      "muscle_cramps"
     ],
     "interacts_with": [
       "calcium",
@@ -921,7 +924,8 @@
       "vitamin-b2",
       "vitamin-b3",
       "vitamin-b6",
-      "vitamin-c"
+      "vitamin-c",
+      "vitamin-e"
     ],
     "books_cited": [
       "lets-play-doctor",
@@ -932,7 +936,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 74,
+    "claim_count": 75,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1015,6 +1019,7 @@
         "WAL-CLM-LETS-000322",
         "WAL-CLM-LETS-000326",
         "WAL-CLM-LETS-000332",
+        "WAL-CLM-LETS-000374",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -2189,7 +2194,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 77,
+    "claim_count": 79,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2273,6 +2278,8 @@
         "WAL-CLM-LETS-000365",
         "WAL-CLM-LETS-000366",
         "WAL-CLM-LETS-000367",
+        "WAL-CLM-LETS-000373",
+        "WAL-CLM-LETS-000374",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2377,6 +2384,7 @@
       "mitral_valve_prolapse",
       "monckebergs_arteriosclerosis",
       "multiple_sclerosis",
+      "muscle_cramps",
       "muscular_dystrophy",
       "osteoporosis",
       "pancreatitis",
@@ -2407,6 +2415,7 @@
       "lithium",
       "magnesium",
       "manganese",
+      "methionine",
       "omega-3",
       "oxygen",
       "potassium",
@@ -5384,7 +5393,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 52,
+    "claim_count": 54,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -5446,6 +5455,8 @@
         "WAL-CLM-LETS-000325",
         "WAL-CLM-LETS-000356",
         "WAL-CLM-LETS-000357",
+        "WAL-CLM-LETS-000373",
+        "WAL-CLM-LETS-000374",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -5568,6 +5579,7 @@
       "malabsorption",
       "memory_loss",
       "menorrhagia",
+      "muscle_cramps",
       "muscular_dystrophy",
       "psoriasis",
       "rheumatoid_arthritis",
@@ -5589,8 +5601,10 @@
       "lysine",
       "magnesium",
       "manganese",
+      "methionine",
       "omega-3",
       "phenylalanine",
+      "potassium",
       "selenium",
       "tryptophan",
       "valine",
@@ -5758,7 +5772,7 @@
     "display_name": "Choline",
     "canon_slug": "choline",
     "category": "vitamin",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000242"
@@ -5775,7 +5789,8 @@
         "WAL-CLM-LETS-000243",
         "WAL-CLM-LETS-000267",
         "WAL-CLM-LETS-000293",
-        "WAL-CLM-LETS-000356"
+        "WAL-CLM-LETS-000356",
+        "WAL-CLM-LETS-000373"
       ]
     },
     "deficiency_signs": [
@@ -5796,18 +5811,22 @@
       "fatty_liver",
       "headache",
       "huntingtons_disease",
+      "keshan_disease",
       "korsakoffs_syndrome",
       "memory_loss",
+      "muscular_dystrophy",
       "tardive_dyskinesia"
     ],
     "interacts_with": [
       "calcium",
       "chromium",
       "copper",
+      "cysteine",
       "germanium",
       "lithium",
       "magnesium",
       "manganese",
+      "methionine",
       "omega-3",
       "phenylalanine",
       "selenium",
@@ -6016,21 +6035,27 @@
     "display_name": "Cysteine",
     "canon_slug": "cysteine",
     "category": "amino_acid",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000207"
+        "WAL-CLM-LETS-000207",
+        "WAL-CLM-LETS-000373"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [
-      "cataracts"
+      "cataracts",
+      "keshan_disease",
+      "muscular_dystrophy"
     ],
     "interacts_with": [
       "arginine",
+      "choline",
       "chromium",
       "flavonoids",
       "inositol",
+      "methionine",
+      "omega-3",
       "selenium",
       "vitamin-b1",
       "vitamin-b2",
@@ -6116,27 +6141,39 @@
     "display_name": "Methionine",
     "canon_slug": "methionine",
     "category": "amino_acid",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-DDDL-000067"
+      ],
+      "protocol": [
+        "WAL-CLM-LETS-000373"
       ]
     },
     "deficiency_signs": [],
-    "conditions_treated": [],
+    "conditions_treated": [
+      "keshan_disease",
+      "muscular_dystrophy"
+    ],
     "interacts_with": [
+      "choline",
+      "cysteine",
+      "omega-3",
       "phenylalanine",
-      "tryptophan"
+      "selenium",
+      "tryptophan",
+      "vitamin-e"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "lets-play-doctor"
     ]
   },
   "phenylalanine": {
     "display_name": "Phenylalanine",
     "canon_slug": "phenylalanine",
     "category": "amino_acid",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-DDDL-000067"
@@ -6146,16 +6183,19 @@
         "WAL-CLM-LETS-000159",
         "WAL-CLM-LETS-000244",
         "WAL-CLM-LETS-000320",
-        "WAL-CLM-LETS-000322"
+        "WAL-CLM-LETS-000322",
+        "WAL-CLM-LETS-000371"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [
       "alcoholism",
+      "als",
       "bipolar_disorder",
       "depression",
       "inflammation",
-      "insomnia"
+      "insomnia",
+      "multiple_sclerosis"
     ],
     "interacts_with": [
       "calcium",
@@ -6331,7 +6371,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 62,
+    "claim_count": 64,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -6400,6 +6440,8 @@
         "WAL-CLM-LETS-000357",
         "WAL-CLM-LETS-000366",
         "WAL-CLM-LETS-000369",
+        "WAL-CLM-LETS-000371",
+        "WAL-CLM-LETS-000373",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -6441,6 +6483,7 @@
       "alcoholism",
       "allergies",
       "alopecia",
+      "als",
       "amenorrhea",
       "anemia",
       "angina",
@@ -6488,6 +6531,7 @@
       "infertility",
       "inflammation",
       "itching",
+      "keshan_disease",
       "kidney_disease",
       "liver_cirrhosis",
       "liver_disease",
@@ -6495,6 +6539,8 @@
       "menorrhagia",
       "mitral_valve_prolapse",
       "morning_sickness",
+      "multiple_sclerosis",
+      "muscular_dystrophy",
       "pruritus",
       "psoriasis",
       "weight_loss"
@@ -6505,6 +6551,7 @@
       "choline",
       "chromium",
       "copper",
+      "cysteine",
       "flavonoids",
       "germanium",
       "iodine",
@@ -6512,6 +6559,7 @@
       "lithium",
       "magnesium",
       "manganese",
+      "methionine",
       "omega-6",
       "phenylalanine",
       "potassium",

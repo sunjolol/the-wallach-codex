@@ -546,7 +546,7 @@
   },
   "betaine-hcl": {
     "display_name": "Betaine Hcl",
-    "claim_count": 40,
+    "claim_count": 42,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -588,13 +588,16 @@
         "WAL-CLM-LETS-000321",
         "WAL-CLM-LETS-000323",
         "WAL-CLM-LETS-000333",
-        "WAL-CLM-LETS-000364"
+        "WAL-CLM-LETS-000364",
+        "WAL-CLM-LETS-000371",
+        "WAL-CLM-LETS-000374"
       ]
     },
     "conditions_treated": [
       "achlorhydria",
       "acne",
       "alopecia",
+      "als",
       "alzheimers",
       "anemia",
       "anorexia",
@@ -636,6 +639,8 @@
       "korsakoffs_syndrome",
       "menopause",
       "migraine",
+      "multiple_sclerosis",
+      "muscle_cramps",
       "psoriasis",
       "stroke"
     ],
@@ -992,6 +997,22 @@
     "conditions_treated": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "caeap": {
+    "display_name": "Caeap",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000371"
+      ]
+    },
+    "conditions_treated": [
+      "als",
+      "multiple_sclerosis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "cajuput": {
@@ -1451,7 +1472,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 34,
+    "claim_count": 36,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-LETS-000352"
@@ -1489,7 +1510,9 @@
         "WAL-CLM-LETS-000340",
         "WAL-CLM-LETS-000348",
         "WAL-CLM-LETS-000350",
-        "WAL-CLM-LETS-000361"
+        "WAL-CLM-LETS-000361",
+        "WAL-CLM-LETS-000373",
+        "WAL-CLM-LETS-000374"
       ]
     },
     "conditions_treated": [
@@ -1527,12 +1550,15 @@
       "impotence",
       "infertility",
       "insomnia",
+      "keshan_disease",
       "lead_poisoning",
       "liver_cirrhosis",
       "liver_disease",
       "lupus",
       "malnutrition",
       "mercury_poisoning",
+      "muscle_cramps",
+      "muscular_dystrophy",
       "periodontal_disease",
       "plumbism",
       "rheumatoid_arthritis",
@@ -4061,13 +4087,14 @@
   },
   "mullein": {
     "display_name": "Mullein",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000163",
         "WAL-CLM-LETS-000235",
         "WAL-CLM-LETS-000260",
-        "WAL-CLM-LETS-000277"
+        "WAL-CLM-LETS-000277",
+        "WAL-CLM-LETS-000372"
       ]
     },
     "conditions_treated": [
@@ -4075,6 +4102,7 @@
       "convulsions",
       "cough",
       "earache",
+      "mumps",
       "tonsillitis"
     ],
     "books_cited": [
@@ -4199,6 +4227,22 @@
       "lets-play-doctor"
     ]
   },
+  "octacosanol": {
+    "display_name": "Octacosanol",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000371"
+      ]
+    },
+    "conditions_treated": [
+      "als",
+      "multiple_sclerosis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "olive": {
     "display_name": "Olive",
     "claim_count": 1,
@@ -4303,7 +4347,7 @@
   },
   "pancreatic-enzymes": {
     "display_name": "Pancreatic Enzymes",
-    "claim_count": 33,
+    "claim_count": 35,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000123",
@@ -4338,12 +4382,15 @@
         "WAL-CLM-LETS-000321",
         "WAL-CLM-LETS-000323",
         "WAL-CLM-LETS-000333",
-        "WAL-CLM-LETS-000364"
+        "WAL-CLM-LETS-000364",
+        "WAL-CLM-LETS-000371",
+        "WAL-CLM-LETS-000374"
       ]
     },
     "conditions_treated": [
       "acne",
       "alopecia",
+      "als",
       "alzheimers",
       "anorexia",
       "anorexia_nervosa",
@@ -4379,6 +4426,8 @@
       "korsakoffs_syndrome",
       "menopause",
       "migraine",
+      "multiple_sclerosis",
+      "muscle_cramps",
       "psoriasis",
       "stroke"
     ],
@@ -5278,6 +5327,22 @@
     },
     "conditions_treated": [
       "hemorrhoids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "snake-venom": {
+    "display_name": "Snake Venom",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000371"
+      ]
+    },
+    "conditions_treated": [
+      "als",
+      "multiple_sclerosis"
     ],
     "books_cited": [
       "lets-play-doctor"
