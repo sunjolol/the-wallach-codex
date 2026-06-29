@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_168 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_169 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 19:15 UTC-05:00 · round-close · knowledge/corpus
+Ch10 Materia Medica b40 — HANGNAILS→HEARTBURN (the H's pt1), 6 protocol claims LETS-291..296. 3 render-verified meg→mcg fixes (HEADACHES chromium 50-200, HEART DISEASE selenium 500+1,000). seal kv150→151, claims 670→676, conditions 309→313. Board 31/31, probe PASS.
+  ↳ HANGNAILS, HAY FEVER, HEADACHES, HEARING LOSS(deafness), HEART DISEASE(cardiovascular+heart_attack — full prevention+EDTA-chelation treatment), HEARTBURN. HEART DISEASE 'meg/clay' OCR: dose-unit meg→mcg fixed, clay→day deferred to sweep. New conds hangnails/hay_fever/headache/heartburn. Pipeline fix_txt→resnap(0 broken)→finalize→seal→embed→build→invariants(31/31)→render_probe_knowledge(0 errors). NEXT b41 = HEMORRHOIDS/HEPATITIS/HERPES(tier-1)/HIATAL HERNIA.
 
 ## 2026-06-28 18:47 UTC-05:00 · round-close · knowledge/corpus
 Ch10 Materia Medica b39 — GALLBLADDER→GUMS (the G's), 8 protocol claims LETS-283..290. 3 render-verified meg→mcg fixes (GALLBLADDER selenium 200, GOITER iodine 250, GROWING PAINS selenium 50-200). seal kv149→150, claims 662→670, conditions 305→309. Board 31/31, probe PASS.

@@ -2234,7 +2234,7 @@
   },
   "cardiovascular_disease": {
     "display_name": "Cardiovascular Disease",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000256"
@@ -2244,18 +2244,31 @@
         "WAL-CLM-RARE-000257"
       ],
       "protocols": [
-        "WAL-CLM-DDDL-000076"
+        "WAL-CLM-DDDL-000076",
+        "WAL-CLM-LETS-000295"
       ]
     },
     "essentials_involved": [
       "calcium",
       "magnesium",
+      "omega-3",
+      "selenium",
       "silica",
-      "vanadium"
+      "vanadium",
+      "vitamin-e"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "alfalfa",
+      "betaine-hcl",
+      "edta-chelation",
+      "flaxseed-oil",
+      "hydrogen-peroxide",
+      "nitroglycerine",
+      "pancreatic-enzymes"
+    ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -3268,11 +3281,14 @@
   },
   "deafness": {
     "display_name": "Deafness",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000176",
         "WAL-CLM-RARE-000275"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000294"
       ]
     },
     "essentials_involved": [
@@ -3288,8 +3304,12 @@
       "vanadium",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "hydrogen-peroxide",
+      "pulse-test"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -4641,6 +4661,27 @@
       "lets-play-doctor"
     ]
   },
+  "hangnails": {
+    "display_name": "Hangnails",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000291"
+      ]
+    },
+    "essentials_involved": [
+      "omega-3",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "aloe-vera",
+      "flaxseed-oil",
+      "gelatin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "hashimotos_disease": {
     "display_name": "Hashimotos Disease",
     "claim_count": 1,
@@ -4657,9 +4698,66 @@
       "rare-earths"
     ]
   },
+  "hay_fever": {
+    "display_name": "Hay Fever",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000292"
+      ]
+    },
+    "essentials_involved": [
+      "flavonoids",
+      "vitamin-c"
+    ],
+    "other_substances_involved": [
+      "contac",
+      "rutin",
+      "urine-therapy"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "headache": {
+    "display_name": "Headache",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000293"
+      ]
+    },
+    "essentials_involved": [
+      "choline",
+      "chromium",
+      "omega-3",
+      "vitamin-b3",
+      "vitamin-b6",
+      "vitamin-c"
+    ],
+    "other_substances_involved": [
+      "acetaminophen",
+      "aspirin",
+      "balm",
+      "betaine-hcl",
+      "cowslip",
+      "feverfew",
+      "flaxseed-oil",
+      "fleabane",
+      "ibuprofen",
+      "lavender",
+      "meadowsweet",
+      "urine-therapy",
+      "valerian",
+      "white-willow"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "heart_attack": {
     "display_name": "Heart Attack",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000030"
@@ -4669,12 +4767,25 @@
       ],
       "definitions": [
         "WAL-CLM-LETS-000001"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000295"
       ]
     },
     "essentials_involved": [
-      "selenium"
+      "omega-3",
+      "selenium",
+      "vitamin-e"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "alfalfa",
+      "betaine-hcl",
+      "edta-chelation",
+      "flaxseed-oil",
+      "hydrogen-peroxide",
+      "nitroglycerine",
+      "pancreatic-enzymes"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor"
@@ -4710,6 +4821,25 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "heartburn": {
+    "display_name": "Heartburn",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000296"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "angelica",
+      "betaine-hcl",
+      "pancreatic-enzymes",
+      "peppermint"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "heat_stroke": {
