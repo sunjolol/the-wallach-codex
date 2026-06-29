@@ -603,7 +603,7 @@
   },
   "betaine-hcl": {
     "display_name": "Betaine Hcl",
-    "claim_count": 48,
+    "claim_count": 49,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -653,7 +653,8 @@
         "WAL-CLM-LETS-000390",
         "WAL-CLM-LETS-000391",
         "WAL-CLM-LETS-000396",
-        "WAL-CLM-LETS-000398"
+        "WAL-CLM-LETS-000398",
+        "WAL-CLM-LETS-000409"
       ]
     },
     "conditions_treated": [
@@ -1514,6 +1515,21 @@
     },
     "conditions_treated": [
       "jaundice"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "chloramphenicol": {
+    "display_name": "Chloramphenicol",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000408"
+      ]
+    },
+    "conditions_treated": [
+      "q_fever"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3903,7 +3919,7 @@
   },
   "lecithin": {
     "display_name": "Lecithin",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
@@ -3913,7 +3929,8 @@
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000283",
         "WAL-CLM-LETS-000306",
-        "WAL-CLM-LETS-000333"
+        "WAL-CLM-LETS-000333",
+        "WAL-CLM-LETS-000409"
       ]
     },
     "conditions_treated": [
@@ -3924,7 +3941,8 @@
       "diabetes",
       "gallstones",
       "hypertension",
-      "korsakoffs_syndrome"
+      "korsakoffs_syndrome",
+      "psoriasis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4735,7 +4753,7 @@
   },
   "pancreatic-enzymes": {
     "display_name": "Pancreatic Enzymes",
-    "claim_count": 41,
+    "claim_count": 42,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000123",
@@ -4778,7 +4796,8 @@
         "WAL-CLM-LETS-000390",
         "WAL-CLM-LETS-000391",
         "WAL-CLM-LETS-000396",
-        "WAL-CLM-LETS-000398"
+        "WAL-CLM-LETS-000398",
+        "WAL-CLM-LETS-000409"
       ]
     },
     "conditions_treated": [
@@ -4967,19 +4986,22 @@
   },
   "penicillin": {
     "display_name": "Penicillin",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000314",
         "WAL-CLM-LETS-000338",
         "WAL-CLM-LETS-000349",
-        "WAL-CLM-LETS-000351"
+        "WAL-CLM-LETS-000351",
+        "WAL-CLM-LETS-000410"
       ]
     },
     "conditions_treated": [
       "impetigo",
       "laryngitis",
       "lyme_disease",
+      "peritonsillar_abscess",
+      "quinsy",
       "tetanus"
     ],
     "books_cited": [
@@ -5924,6 +5946,22 @@
       "lets-play-doctor"
     ]
   },
+  "streptomycin": {
+    "display_name": "Streptomycin",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000411"
+      ]
+    },
+    "conditions_treated": [
+      "rabbit_fever",
+      "tularemia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "sunflower": {
     "display_name": "Sunflower",
     "claim_count": 1,
@@ -6108,7 +6146,7 @@
   },
   "tetracycline": {
     "display_name": "Tetracycline",
-    "claim_count": 6,
+    "claim_count": 8,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
@@ -6116,7 +6154,9 @@
         "WAL-CLM-LETS-000343",
         "WAL-CLM-LETS-000349",
         "WAL-CLM-LETS-000351",
-        "WAL-CLM-LETS-000389"
+        "WAL-CLM-LETS-000389",
+        "WAL-CLM-LETS-000408",
+        "WAL-CLM-LETS-000411"
       ]
     },
     "conditions_treated": [
@@ -6125,8 +6165,11 @@
       "leptospirosis",
       "lyme_disease",
       "ornithosis",
+      "q_fever",
+      "rabbit_fever",
       "rheumatoid_arthritis",
       "tetanus",
+      "tularemia",
       "weils_disease"
     ],
     "books_cited": [

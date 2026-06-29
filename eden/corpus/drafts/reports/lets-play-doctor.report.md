@@ -1,62 +1,55 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_5 claim(s) drafted 2026-06-29T15:25:58+00:00. Review then run corpus_seal.py to promote._
+_5 claim(s) drafted 2026-06-29T15:31:42+00:00. Review then run corpus_seal.py to promote._
 
 Kinds: protocol×5
 
-### WAL-CLM-LETS-000403 · protocol
-- **essentials:** — · **conditions:** poison_ivy · **symptoms:** —
-- **claim:** Poison ivy causes a contact papular dermatitis (a raised, bumpy skin rash) that produces a severe itch. Treatment of poison ivy dermatitis includes the topical application of Caladryl and aloe vera, plus poultices of Solomon's seal (Polygonatum multiflorum), goldenseal (Hydrastis canadensis), and plantain (Plantago major).
-- **verbatim** (offset 430288): “Treatment of poison ivy dermatitis includes
-topical application ofCaladryl, aloe vera, poul-
-tices of Solomon's seal (Polygonatum
-multiflorum), golden seal (Hydrastis
-canadensis) and plantain (Plantago major).”
+### WAL-CLM-LETS-000408 · protocol
+- **essentials:** — · **conditions:** q_fever · **symptoms:** —
+- **claim:** Q fever is an acute rickettsial disease caused by Coxiella burnetii, marked by sudden onset, fever, headache, weakness, and pneumonitis (lung inflammation). It has a worldwide distribution and is kept endemic in domestic animals — sheep, goats, and cattle are the primary reservoirs for human infection, which spreads through bites from the infected tick (Dermacentor andersoni) and from drinking infected raw milk; diagnosis is by a positive blood test. Treatment should include tetracycline by mouth at 250 milligrams every 4 hours (chloramphenicol may be used in small children to avoid the tooth discoloration tetracycline can cause).
+- **verbatim** (offset 434634): “Treatment of Q fever should include tetracy-
+cline orally at 250 mg q 4 h (Chloramphenicol
+may be used in small children to prevent
+discoloration of permanent teeth by tetracy-
+cline).”
 
-### WAL-CLM-LETS-000404 · protocol
-- **essentials:** vitamin-c, vitamin-e · **conditions:** poor_circulation · **symptoms:** —
-- **claim:** Poor circulation can be caused by cardiovascular disease, low thyroid function, and vitamin E deficiency; its symptoms include cold hands and feet and numb, tingling fingers and toes. Treatment includes EDTA chelation, intravenous hydrogen peroxide, vitamin C to bowel tolerance, vitamin E at 800-1,200 IU per day, massage, hydrotherapy, acupuncture, and herbs including ginkgo (Ginkgo biloba), hawthorn (Crataegus oxyacantha), horsetail (Equisetum arvense), lavender (Lavandula angustifolia), lily-of-the-valley (Convallaria majalis), rosemary (Rosmarinus officinalis), scotch pine (Pinus sylvestris), and cayenne pepper (Capsicum minimum).
-- **verbatim** (offset 430670): “Treatment of poor circulation includes EDTA
-chelation, hydrogen peroxide IV, vitamin C to
-bowel tolerance, vitamin E at 800-1,200 IU/
-day, massage, hydro-therapy, acupuncture
-and herbs in-cluding ginkgo (Ginkgo biloba),
-hawthorn (Crataegus oxyacantha), horsetail
-(Equisetum arvense), lavender (Lavandula
-angustifolia), lily-of-the-valley (Convallaria
-majalis), rosemaiy (Rosmarinus officinalis),
-scotch pine (Pinus sylvestris) and cayenne
-pepper (Capsicum minimum).”
+### WAL-CLM-LETS-000409 · protocol
+- **essentials:** vitamin-b9, vitamin-a, vitamin-e, zinc, copper, selenium, omega-3 · **conditions:** psoriasis · **symptoms:** —
+- **claim:** Psoriasis is a cosmetically disfiguring dermatitis ('the heartbreak of psoriasis'), marked by dry, sharply demarcated, silvery scaling plaques that appear mainly behind the joints (elbows and knees), on the scalp, and behind the ears. Wallach attributes it to celiac-type changes in the intestines that cause malabsorption of essential nutrients, and advises a pulse test to identify specific food allergens. Treatment should include avoiding offending food allergens, rotation diets, folic acid at 15-25 milligrams per day, vitamin A at 300,000 IU per day as beta carotene, lecithin at 2,500 milligrams three times a day with meals, flaxseed oil at one tablespoon twice a day, vitamin E at 800-1,200 IU per day, zinc at 50 milligrams three times a day, copper at 2 milligrams per day, selenium at 500-1,000 micrograms per day, and betaine hydrochloride and pancreatic enzymes at 75-200 milligrams per day. Topical herbal washes and topical vitamin A & D creams are of palliative value.
+- **verbatim** (offset 434068): “Treatment of psoriasis should include avoid-
+ance of offending food allergens, rotation
+diets, folic acid at 1 5-25 mg per day, vitamin A
+at 300,000 IUper day as beta carotene, lecithin
+at 2,500 mg t.i.d. with meals, flaxseed oil at one
+tbsp. bid., vitamin E at 800-1 ,200 IU per day,
+zinc at 50 mg t.i.d., copper at 2 mg per day,
+selenium at 500-1,000 mcg per day and be-
+taine HC1 and pancreatic enzymes at 75-200
+mg per day.”
 
-### WAL-CLM-LETS-000405 · protocol
-- **essentials:** — · **conditions:** post_partum_hemorrhage · **symptoms:** —
-- **claim:** Post-partum hemorrhage (bleeding after childbirth) results from an atonic uterus that fails to contract hard enough or long enough, letting the open blood vessels leak (occasionally a retained piece of afterbirth in the uterine lining is the source). Treatment should include firm digital pressure on the fundus of the uterus to stimulate contraction; the use of ergot (Claviceps purpurea) orally at 10-20 minims, or by injection, will add sufficient contraction power.
-- **verbatim** (offset 431424): “Treatment of post paitum hemorrhage should
-include firm digital pressure on the fundus of
-the uterus to stimulate contraction; the use of
-ergot (Claviceps purpurea) orally at 10-20
-minims or by injection will add sufficient con-
-traction power.”
+### WAL-CLM-LETS-000410 · protocol
+- **essentials:** vitamin-a, zinc, vitamin-c · **conditions:** quinsy, peritonsillar_abscess · **symptoms:** —
+- **claim:** Quinsy (peritonsillar abscess) is an infection of the tonsil, between the tonsil and the pharyngeal constrictor muscle. It is rare in children but common in young adults. The 'orthodox' ear-nose-and-throat doctor will want to do a tonsillectomy — Wallach urges patients to save their tonsils and refuse it. Treatment should include vitamin A at 300,000 IU per day as beta carotene, zinc at 50 milligrams three times a day, vitamin C to bowel tolerance, gargles with herbal washes, and penicillin G or V at 250 milligrams every 6 hours for 12-14 days.
+- **verbatim** (offset 435107): “Treatment should include vitamin A at 300,000
+IUper day as beta carotene, zinc at 50 mg t.i.d.,
+vitamin C to bowel tolerance, gargles with
+herbal washes, penicillin G or V at 250 mg q 6
+h for 12-14 days.”
 
-### WAL-CLM-LETS-000406 · protocol
-- **essentials:** — · **conditions:** labor · **symptoms:** —
-- **claim:** Pregnancy labor can be enhanced, Wallach says, by the use of herbs including raspberry (Rubus idaeus) and blue cohosh (Caulophyllum thalictroides).
-- **verbatim** (offset 431694): “can be en
-hanced by the use of herbs including rasp-
-berry (Rubus idaeus) and blue cohosh
-(Caulophyllum thalictroides).”
+### WAL-CLM-LETS-000411 · protocol
+- **essentials:** — · **conditions:** tularemia, rabbit_fever · **symptoms:** —
+- **claim:** Rabbit fever (tularemia) is caused by the bacterium Francisella tularensis, contracted by skinning and dressing infected rabbits or ground squirrels (87 percent of cases). It first appears as a local ulceration at the infection site, then goes systemic into a typhoid-like illness with diarrhea and pneumonia, with high fever and recurring chills and drenching sweats; sputum cultures are highly infectious, so labs should be warned. Treatment of tularemia is with streptomycin intramuscularly at 500 milligrams every 12 hours until the temperature drops into the normal range, then tetracycline by mouth at 250 milligrams four times a day for 10-12 days.
+- **verbatim** (offset 436116): “Treatment of tularemia is with streptomycin
+IM at 500 mg q 12 h until temperature drops
+into the normal range; then give tetracycline
+orally at 250 mg q.i.d. for 10-12 days.”
 
-### WAL-CLM-LETS-000407 · protocol
-- **essentials:** vitamin-b6 · **conditions:** pregnancy_toxemia, preeclampsia, eclampsia · **symptoms:** —
-- **claim:** Pregnancy toxemia (eclampsia) is, in Wallach's view, the result of the low-protein, low-salt diets women were put on to limit weight gain in pregnancy. Pre-eclampsia symptoms include sudden weight gain (fluid accumulation from low blood protein), high blood pressure, and albuminuria (protein in the urine); eclampsia adds convulsions and/or coma, and both characteristically occur after the 20th week of pregnancy. Against the orthodox approach (hospitalize, watch for convulsions, then give barbiturates), treatment of pre-eclampsia should include a high-animal-protein meal plan (150 grams or more, versus the RDA — Recommended Dietary Allowance — of 40 grams), not restricting salt, vitamin B-6 at 100 milligrams per day (dropping to 50 milligrams at birth if you plan to breast-feed, since high B-6 levels reduce breast-milk production), the baseline nutritional supplement program, and 10-12 glasses of water and/or juice per day, especially in the warm summer months.
-- **verbatim** (offset 432622): “Treatment of preeclampsia should include a
-high animal protein meal plan (150 gm or
-more whereas the RDA is 40 gm), do not
-restrict salt, B-6 at 100 mg per day (drop to 50
-mg per at parturition (birth) if you plan to
-breast freed as high levels of B-6 will reduce
-production of breast milk), base line nutri-
-tional supplement program and 10-12 glasses
-of water and/or juice per day, especially in
-thewarm summer months.”
+### WAL-CLM-LETS-000412 · protocol
+- **essentials:** — · **conditions:** rabies · **symptoms:** —
+- **claim:** Rabies (hydrophobia) is a highly dangerous viral disease transmitted through the blood, tissue (including transplanted corneas, livers, kidneys, or hearts), urine, or saliva of infected animals or people. Besides bites from rabid bats, foxes, skunks, and unvaccinated dogs, Wallach notes many fatal cases follow tissue transplants, because rabies in humans is a progressive paralytic disease often misdiagnosed as stroke. He also points out the incubation period is about fourteen days, so if a biting pet has been healthy for three weeks or more, rabies is an impossible diagnosis. Treatment should be started quickly if it is to succeed, and includes the well-known 'rabies shots' every day for ten days plus respiratory support in a hospital setting; high-risk research personnel can get preventive vaccination.
+- **verbatim** (offset 437307): “Treatment of rabies should be insti-
+tuted quickly if success can be anticipated;
+treatment includes the well known "rabies
+shots" every day for ten days and respiratory
+support in a hospital setting.”
 

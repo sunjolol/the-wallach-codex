@@ -1541,7 +1541,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 34,
+    "claim_count": 35,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
@@ -1589,6 +1589,7 @@
         "WAL-CLM-LETS-000326",
         "WAL-CLM-LETS-000360",
         "WAL-CLM-LETS-000399",
+        "WAL-CLM-LETS-000409",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281"
       ],
@@ -1659,6 +1660,7 @@
       "neutropenia",
       "osteoporosis",
       "phlebitis",
+      "psoriasis",
       "respiratory_disease",
       "rheumatoid_arthritis",
       "schizophrenia",
@@ -1684,6 +1686,7 @@
       "sulfur",
       "tin",
       "vanadium",
+      "vitamin-a",
       "vitamin-b1",
       "vitamin-b12",
       "vitamin-b2",
@@ -2238,7 +2241,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 79,
+    "claim_count": 80,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2324,6 +2327,7 @@
         "WAL-CLM-LETS-000367",
         "WAL-CLM-LETS-000373",
         "WAL-CLM-LETS-000374",
+        "WAL-CLM-LETS-000409",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2434,6 +2438,7 @@
       "pancreatitis",
       "parkinsons_disease",
       "plumbism",
+      "psoriasis",
       "rheumatoid_arthritis",
       "scoliosis",
       "sickle_cell_anemia",
@@ -2700,7 +2705,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 94,
+    "claim_count": 96,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2805,6 +2810,8 @@
         "WAL-CLM-LETS-000388",
         "WAL-CLM-LETS-000398",
         "WAL-CLM-LETS-000401",
+        "WAL-CLM-LETS-000409",
+        "WAL-CLM-LETS-000410",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -2964,11 +2971,13 @@
       "paranoia",
       "pellagra",
       "periodontal_disease",
+      "peritonsillar_abscess",
       "pilonidal_cyst",
       "premenstrual_syndrome",
       "pruritus",
       "psoriasis",
       "pyorrhea",
+      "quinsy",
       "rheumatoid_arthritis",
       "schizophrenia",
       "seborrheic_dermatitis",
@@ -3785,7 +3794,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 47,
+    "claim_count": 49,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -3837,7 +3846,9 @@
         "WAL-CLM-LETS-000387",
         "WAL-CLM-LETS-000398",
         "WAL-CLM-LETS-000401",
-        "WAL-CLM-LETS-000402"
+        "WAL-CLM-LETS-000402",
+        "WAL-CLM-LETS-000409",
+        "WAL-CLM-LETS-000410"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000037"
@@ -3944,11 +3955,13 @@
       "night_blindness",
       "omphalocele",
       "periodontal_disease",
+      "peritonsillar_abscess",
       "pilonidal_cyst",
       "premenstrual_syndrome",
       "pruritus",
       "psoriasis",
       "pyorrhea",
+      "quinsy",
       "spina_bifida",
       "stroke",
       "umbilical_hernia",
@@ -3958,6 +3971,7 @@
       "arginine",
       "calcium",
       "chromium",
+      "copper",
       "flavonoids",
       "germanium",
       "iodine",
@@ -4867,7 +4881,7 @@
     "display_name": "Folate",
     "canon_slug": "vitamin-b9",
     "category": "vitamin",
-    "claim_count": 20,
+    "claim_count": 21,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000042",
@@ -4893,7 +4907,8 @@
         "WAL-CLM-LETS-000348",
         "WAL-CLM-LETS-000359",
         "WAL-CLM-LETS-000365",
-        "WAL-CLM-LETS-000401"
+        "WAL-CLM-LETS-000401",
+        "WAL-CLM-LETS-000409"
       ]
     },
     "deficiency_signs": [
@@ -5182,7 +5197,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 63,
+    "claim_count": 64,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -5253,7 +5268,8 @@
         "WAL-CLM-LETS-000394",
         "WAL-CLM-LETS-000398",
         "WAL-CLM-LETS-000399",
-        "WAL-CLM-LETS-000404"
+        "WAL-CLM-LETS-000404",
+        "WAL-CLM-LETS-000410"
       ]
     },
     "deficiency_signs": [
@@ -5379,11 +5395,13 @@
       "nosebleeds",
       "palpitations",
       "periodontal_disease",
+      "peritonsillar_abscess",
       "phlebitis",
       "plumbism",
       "poor_circulation",
       "psoriasis",
       "pyorrhea",
+      "quinsy",
       "rheumatoid_arthritis",
       "scurvy",
       "shingles",
@@ -5517,7 +5535,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 58,
+    "claim_count": 59,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -5585,6 +5603,7 @@
         "WAL-CLM-LETS-000399",
         "WAL-CLM-LETS-000402",
         "WAL-CLM-LETS-000404",
+        "WAL-CLM-LETS-000409",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -6536,7 +6555,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 70,
+    "claim_count": 71,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -6613,6 +6632,7 @@
         "WAL-CLM-LETS-000396",
         "WAL-CLM-LETS-000399",
         "WAL-CLM-LETS-000402",
+        "WAL-CLM-LETS-000409",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]

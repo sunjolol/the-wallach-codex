@@ -8408,6 +8408,26 @@
       "rare-earths"
     ]
   },
+  "peritonsillar_abscess": {
+    "display_name": "Peritonsillar Abscess",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000410"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a",
+      "vitamin-c",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "penicillin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "pernicious_anemia": {
     "display_name": "Pernicious Anemia",
     "claim_count": 2,
@@ -8735,14 +8755,17 @@
   },
   "psoriasis": {
     "display_name": "Psoriasis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000262"
+        "WAL-CLM-LETS-000262",
+        "WAL-CLM-LETS-000409"
       ]
     },
     "essentials_involved": [
+      "copper",
       "omega-3",
+      "selenium",
       "vitamin-a",
       "vitamin-b9",
       "vitamin-c",
@@ -8762,6 +8785,7 @@
       "high-mallow",
       "hounds-tongue",
       "labrador-tea",
+      "lecithin",
       "linseed-oil",
       "marigold",
       "oak",
@@ -8839,6 +8863,74 @@
       "pancreatic-enzymes",
       "white-pond-lily"
     ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "q_fever": {
+    "display_name": "Q Fever",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000408"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "chloramphenicol",
+      "tetracycline"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "quinsy": {
+    "display_name": "Quinsy",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000410"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a",
+      "vitamin-c",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "penicillin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "rabbit_fever": {
+    "display_name": "Rabbit Fever",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000411"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "streptomycin",
+      "tetracycline"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "rabies": {
+    "display_name": "Rabies",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000412"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -9479,6 +9571,23 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "tularemia": {
+    "display_name": "Tularemia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000411"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "streptomycin",
+      "tetracycline"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "umbilical_hernia": {
