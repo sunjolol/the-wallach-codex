@@ -5270,17 +5270,27 @@
   },
   "high_triglycerides": {
     "display_name": "High Triglycerides",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000257"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000457"
       ]
     },
     "essentials_involved": [
-      "vanadium"
+      "chromium",
+      "omega-3",
+      "selenium",
+      "vanadium",
+      "vitamin-c"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "colloidal-minerals"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -8354,12 +8364,13 @@
   },
   "peptic_ulcers": {
     "display_name": "Peptic Ulcers",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000101"
       ],
       "protocols": [
+        "WAL-CLM-LETS-000458",
         "WAL-CLM-RARE-000102"
       ],
       "toxicity_signs": [
@@ -8369,9 +8380,16 @@
     },
     "essentials_involved": [
       "calcium",
-      "chromium"
+      "chromium",
+      "flavonoids",
+      "vitamin-a",
+      "vitamin-b6",
+      "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "alfalfa",
+      "glutamine"
+    ],
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
@@ -10213,6 +10231,22 @@
       "lets-play-doctor"
     ]
   },
+  "toxoplasmosis": {
+    "display_name": "Toxoplasmosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000456"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "trisulfapyrimidine"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "trigeminal_neuralgia": {
     "display_name": "Trigeminal Neuralgia",
     "claim_count": 1,
@@ -10296,18 +10330,22 @@
   },
   "vaginitis": {
     "display_name": "Vaginitis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000252"
+        "WAL-CLM-LETS-000252",
+        "WAL-CLM-LETS-000459"
       ]
     },
     "essentials_involved": [],
     "other_substances_involved": [
       "bayberry",
+      "blue-cohosh",
       "hydrogen-peroxide",
       "lactobacillus-acidophilus",
-      "vinegar"
+      "myrtle",
+      "vinegar",
+      "yogurt"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -10315,26 +10353,31 @@
   },
   "varicose_veins": {
     "display_name": "Varicose Veins",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "definitions": [
         "WAL-CLM-RARE-000122"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000399"
+        "WAL-CLM-LETS-000399",
+        "WAL-CLM-LETS-000460"
       ]
     },
     "essentials_involved": [
       "copper",
+      "flavonoids",
       "omega-3",
       "vitamin-c",
-      "vitamin-e"
+      "vitamin-e",
+      "zinc"
     ],
     "other_substances_involved": [
       "arnica",
       "b-complex",
       "cascara-sagrada",
       "comfrey",
+      "dmso",
+      "marigold",
       "nutritional-fiber",
       "rue",
       "yellow-sweet-clover"

@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 205 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 206 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-29 13:05 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b71: TOXOPLASMOSIS→VARICOSE VEINS (p173-174), LETS-456..460, 5 protocol claims. corpus 835→840, conds 434→435, kv 182. 2 meg→mcg (TRIGLYCERIDES chromium+selenium); VARICOSE copper 2 mg verified clean. b72 next COMPLETES Ch10. Board 31/31.
+  ↳ 5 protocol claims: toxoplasmosis NEW (cat parasite, pregnancy birth-defect danger; trisulfapyrimidine); high_triglycerides/peptic_ulcers/vaginitis/varicose_veins REUSED. DOSE: 2 render-verified meg->mcg (TRIGLYCERIDES chromium L11546 + selenium L11547; 600-DPI zoom confirmed 'mcg'; unique targets; resnap book hash 646ff205->e76bd560, 0 relocated, LF bytes 517193 unchanged). VARICOSE VEINS copper '2 mg' render-verified correct (NOT the b60 phlebitis 'copper 2 gm' misprint class). Skipped bare xrefs ULCERATIVE COLITIS + URTICARIA. bioflavonoids -> canon slug 'flavonoids'. New other-subs trisulfapyrimidine + yogurt. FLAGGED for end-pass: peptic_ulcer (1 claim) vs peptic_ulcers (6) slug split -- joined the dominant plural, consolidate the singleton later. Gates: build OK (1642.7 KB), invariants 31/31 (0 new reds), render_probe_knowledge PASS (0 page errors, conds rowCount 435). NEXT b72 = VERTIGO/VITILIGO[last megs->mcg L11612]/WARTS/WHITE SPOTS/WORMS/WOUNDS = COMPLETES CHAPTER 10 (then Ch9 OB/GYN + Ch11-13 + other in-housed books); skip WEIGHT LOSS + ZIT'S xrefs.
 
 ## 2026-06-29 12:58 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b70: TINNITUS→TOXIC SHOCK (p172), LETS-451..455, 5 protocol. corpus 830→835, conds 431→434, kv 181. 2 meg→mcg (TONSILLITIS+TORTICOLLIS); ★ TONSILLITIS 'vit C...beta carotene' = book typo → claim_text vit A, verbatim faithful (flagged). Board 31/31.
@@ -801,7 +805,3 @@ README audit: purged retired-system references (tacitus/cura/vision/aegis/brain)
 ## 2026-06-23 04:23 UTC · round-close · tools
 Chunk H: hardened the sacred ledger per the Opus-4.8 audit — closed 3 enforcement gaps (4a digest spoof, 5a delete-guard dir hole, 5b silent committed-deletion + silent fail-open). All re-proven; board 23/23.
   ↳ 4a: validate_entry rejects newline summaries + render_digest escapes a leading #/> and flattens newlines so the human digest can't be made to show a fake entry (the jsonl was already injection-proof — json.dumps escaping, proven). 5a: pre_bash_guard now blocks the whole chronicle/creators-log dir + any child + 'rm -rf chronicle' + a dir mv, while non-sacred deletes still pass. 5b: a COMMITTED deletion (ledger gone from HEAD with prior history) is now a hard RED 'SACRED LEDGER REMOVED FROM HEAD'; git-unavailable now prints a loud UNVERIFIED warning but stays fail-open per Luneth's 'visible warning, not blocking' choice. Verified: invariants 23/23, verify 6/0, digest byte-identical, build OK 290.9 KB, every fix re-proven against real code (incl. the real append_only on an isolated temp git repo). The req-3 truthfulness ceiling stands by design — next feature (L2 dashboard Creator's Log) is Luneth's visual truth-verification layer; then navigability archive-tree.
-
-## 2026-06-23 03:41 UTC · invariant-pass · tools
-Teeth-test PROVEN: creators_log_append_only catches both deletion (truncate 5→1) and mutation of committed entries; git restores; board 23/23. The sacred-log guarantee is structural, not aspirational.
-  ↳ Simulated 'delete entries for efficiency' via safe_write truncate → invariant fired RED 'SACRED LEDGER TRUNCATED'; in-place edit → 'SACRED LEDGER MUTATED at entry 1'; git checkout restored. try/finally guaranteed recovery.

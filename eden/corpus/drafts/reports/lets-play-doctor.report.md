@@ -1,67 +1,60 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_5 claim(s) drafted 2026-06-29T17:57:24+00:00. Review then run corpus_seal.py to promote._
+_5 claim(s) drafted 2026-06-29T18:04:04+00:00. Review then run corpus_seal.py to promote._
 
 Kinds: protocol×5
 
-### WAL-CLM-LETS-000451 · protocol
-- **essentials:** zinc, tin, omega-3, vitamin-a, calcium, magnesium · **conditions:** tinnitus · **symptoms:** —
-- **claim:** Tinnitus (ringing or buzzing in the ear) has a variety of causes including lead, aluminum, and mercury toxicity, nutritional deficiencies, food allergies, and/or hypoglycemia; do the necessary laboratory work (pulse test, six-hour glucose tolerance test, hair analysis) to make a specific diagnosis. Treatment should include treating the underlying disease, avoiding offending food allergens, autoimmune urine therapy, avoiding sugar and refined foods, zinc at 50 mg three times a day, tin from plant-derived colloidal minerals, essential fatty acids at 5 grams three times a day, vitamin A at 300,000 IU per day as beta carotene, calcium and magnesium at 2,000 and 1,000 mg per day, and betaine hydrochloride (betaine HCl) and pancreatic enzymes at 75-200 mg three times a day 15 minutes before meals.
-- **verbatim** (offset 467036): “Treatment of tinnitus should include the treat-
-ment of the underlying disease, avoid offend-
-ing food allergens, autoimmune urine therapy,
-avoid sugar and all refined foods, zinc at 50 mg
-t.i.d., tin from plant derived colloidal minerals,
-essential fatty acids at 5 gm t.i.d., vitamin A at
-300,000 IU per day as beta carotene, calcium
-and magnesium at 2,000 and 1 ,000 mg per day
-and betaine HCl and pancreatic enzymes at
-75-200 mg t.i.d. 15 minutes before meals.”
+### WAL-CLM-LETS-000456 · protocol
+- **essentials:** — · **conditions:** toxoplasmosis · **symptoms:** —
+- **claim:** Toxoplasmosis (cat coccidia) is caused by an intermediate stage of a house-cat intestinal protozoa (Isospora bigemina; the human stage was originally named Toxoplasma gondii). It is acquired by inhaling or swallowing dust from contaminated 'kitty litter' boxes or outdoor sand piles, or from eating rare beef, and is of particular danger to pregnant women because infection causes birth defects in the fetus (brain defects, blindness, mental retardation); adult symptoms can mimic the flu. Prevention in pregnant women involves avoiding cats just before and during pregnancy and eating well-cooked meats. Treatment should include trisulfapyrimidine orally at 25 mg (1 mg/kg for children) daily for four weeks.
+- **verbatim** (offset 471145): “Treatment of "toxoplasmosis" should include
+trisulfapyrimidine orally at 25 mg (1 mg/kg for
+kids) daily for four weeks.”
 
-### WAL-CLM-LETS-000452 · protocol
-- **essentials:** vitamin-c, vitamin-a, zinc, selenium · **conditions:** tonsillitis · **symptoms:** —
-- **claim:** Tonsillitis is an inflamed sore throat caused by viruses or Streptococcus organisms. Treatment should include hydrogen peroxide mouthwash and gargle, vitamin C to bowel tolerance, vitamin A at 25,000-300,000 IU per day as beta carotene, zinc at 50 mg three times a day, selenium at 25-1,000 mcg per day, and herbs including green hellebore (Veratrum viride), marshmallow (Althaea officinalis), flaxseed (Linum usitatissimum), German chamomile (Matricaria chamomilla), marjoram (Origanum vulgare), and garden sage (Salvia officinalis).
-- **verbatim** (offset 467675): “Treatment of tonsillitis should include hydro-
-gen peroxide mouthwash and gargle, vitamin
-C to bowel tolerance, vitamin C at 25,000-
-300,000 IU per day as beta carotene, zinc at 50
-mg t.i.d., selenium at 25-1,000 mcg per day,
-herbs to include green hellebore (Verataim
-viride), marshmallow (Althaea
-officinalis), flaxseed (Linum usitatissimum),
-German chamomile (Matricaria chamomilla),
-marjoram (Origanum vulgare) garden sage
-(Salvia officinalis).”
+### WAL-CLM-LETS-000457 · protocol
+- **essentials:** omega-3, chromium, selenium, vitamin-c · **conditions:** high_triglycerides · **symptoms:** —
+- **claim:** Elevated triglycerides can be a sign of diabetes as well as liver problems, and are a high risk factor for cardiovascular disease and stroke; do a six-hour glucose tolerance test, full blood chemistry, and a pulse test for food allergies. Treatment should include moderate exercise (walking), avoiding sugar and refined foods, eliminating red meat, a high-fiber raw-foods diet, essential fatty acids at 5 grams three times a day, chromium at 100-200 mcg three times a day, selenium at 500-1,000 mcg per day, plant-derived colloidal minerals, vitamin C to bowel tolerance, and the baseline nutritional supplement program.
+- **verbatim** (offset 471535): “Treatment of elevated triglycerides should
+include moderate exercise (walking), avoid-
+ance of sugar, avoidance of refined
+foods.essential fatty acids at 5 gm t.i.d., high
+fiber and raw foods diet, eliminate red meat,
+chromium at 100-200 mcg t.i.d., selenium at
+500- 1 ,000 mcg per day, plant derived colloidal
+minerals, vitamin C to bowel tolerance and die
+base line nutritional supplement program.”
 
-### WAL-CLM-LETS-000453 · protocol
-- **essentials:** — · **conditions:** toothache, tooth_decay · **symptoms:** —
-- **claim:** Toothache is usually caused by cavities (caries) stimulated to pain by sweets or cold or hot drinks. Treatment of caries and toothache should include filling the tooth with enamel amalgams, avoiding stimuli that initiate pain, acupuncture, and herbs including pennyroyal (Mentha pulegium), lavender (Lavandula spp.), and gelsemium (Gelsemium nitidum), with over-the-counter analgesics (aspirin, Tylenol, Tylenol-3) as necessary.
-- **verbatim** (offset 468233): “Treatment of caries and toothache should
-include filling of the tooth with enamel amal-
-gams, avoid stimuli that initiates pain, acu-
-puncture and herbs to include penny royal
-(Mentha pulegium), lavender (Lavandula
-spp.), gelsemium (Gelsemium nitidum), as
-necessary OTCanalgesics(i.e., aspirin, tylenol,
-tylenol-3).”
+### WAL-CLM-LETS-000458 · protocol
+- **essentials:** vitamin-b6, vitamin-a, zinc, flavonoids · **conditions:** peptic_ulcers · **symptoms:** —
+- **claim:** Gastric (stomach) ulcers are usually brought on by decompensation from chronic stress (the adrenals give out); prevention should include stress-reduction systems (hobbies, projects, exercise). Treatment should include alfalfa (Medicago sativa) for its 'vitamin U' factor, bioflavonoids at 1,000 mg four times a day, vitamin B-6 at 100 mg three times a day, vitamin A at 300,000 IU per day as beta carotene, zinc at 20 mg three times a day, glutamine at 400 mg four times a day, avoiding alcohol, sugar, and refined foods, and a high-nutrition fiber diet; antibiotics are preferred over surgery. Any sign of 'coffee grounds' vomiting signals a hemorrhaging ulcer — get to an emergency room immediately.
+- **verbatim** (offset 472131): “Treatment of gastric ulcers should include
+alfalfa (Medicago sadva), for its "vitamin U"
+factor, bioflavonoids at 1,000 mg q.i.d., B-6 at
+100 mg t.i.d., vitamin A at 300,000 IU per day
+as beta carotene, zinc at 20 mg t.i.d., glutamine
+at 400 mg q.i.d.”
 
-### WAL-CLM-LETS-000454 · protocol
-- **essentials:** calcium, magnesium, selenium, vitamin-e · **conditions:** torticollis · **symptoms:** —
-- **claim:** Spasmodic torticollis (wryneck) is caused by spasms of the neck muscles and/or subluxations of the cervical vertebrae, and may result from whiplash injuries, calcium deficiencies, and/or muscular dystrophy. Treatment should include chiropractic, massage therapy, hydrotherapy, acupuncture, calcium and magnesium at 2,000 and 1,000 mg per day, selenium at 500-1,000 mcg per day, and vitamin E at 800-1,200 IU per day.
-- **verbatim** (offset 468771): “Treatment of torticollis should include
-chiropractic, massage therapy, hydro-therapy,
-acupuncture, calcium and magnesium at 2,000
-and 1,000 mg per day,selenium at 500-1,000
-mcg per day and vitamin E at 800-1 ,200 IU per
-day.”
+### WAL-CLM-LETS-000459 · protocol
+- **essentials:** — · **conditions:** vaginitis · **symptoms:** —
+- **claim:** Vaginitis (vaginal discharge) can be caused by a great variety of diseases — non-ventilated panty-hose, parasites (Trichomonas vaginalis), yeast infections (Candida albicans), venereal disease (gonorrhea, syphilis), etc. — so diagnosis of the specific underlying disease (history, vaginal cultures) is essential to correct therapy. For nonspecific vaginitis, treatment may include hydrogen peroxide douches twice weekly, vinegar douches (two tablespoons per pint of warm water), yogurt douches, and herbs including myrtle (Myrica cerifera) and blue cohosh (Caulophyllum thalictroides).
+- **verbatim** (offset 473159): “Treatment of vaginitis should include specific
+therapy following diagnostic procedures (see
+specific diseases). For nonspecific vaginitis
+you may use hydrogen peroxide douches
+twice weekly, vinegar douches (two tbsp./
+pint of warm water), yogurt douches and
+herbs to include myrtle (Myrica cerifera) and
+blue cohosh (Caulophyllum thalictroides).”
 
-### WAL-CLM-LETS-000455 · protocol
-- **essentials:** — · **conditions:** toxic_shock_syndrome · **symptoms:** —
-- **claim:** Toxic shock syndrome (TSS) is caused by an exotoxin produced by a Staphylococcus organism, similar to that of Staph food poisoning. About 15% of those affected are men; the rest are young women aged 13-32. It is precipitated by improper use of vaginal tampons (a single tampon used longer than four hours creates an ideal environment for Staphylococcus growth) and is marked by high fever, sudden onset, vomiting, diarrhea, confusion, skin rash, headache, and sore throat with rapid deterioration and death within 48 hours. Prevention is best: avoid prolonged use of individual tampons and avoid food poisoning through proper food handling. Treatment is a medical emergency requiring rapid emergency-room care; it should include intravenous fluids and electrolytes plus penicillin to kill the Staphylococcus.
-- **verbatim** (offset 469759): “Treatment of toxic shock syndrome is a medi-
-cal emergency requiring rapid emergency
-room care - DO NOT LET THEM MAKE YOU
-WAIT IN THE HALL. Treatment should in-
-clude IV fluids and electrolytes, as well as
-penicillin to kill the Staphylococcus.”
+### WAL-CLM-LETS-000460 · protocol
+- **essentials:** vitamin-c, vitamin-e, zinc, copper, flavonoids · **conditions:** varicose_veins · **symptoms:** —
+- **claim:** Varicose veins are thought to be caused by constipation and constant vertical posture; copper deficiency may also contribute. Treatment should include vitamin C to bowel tolerance, vitamin E at 800-1,200 IU per day, zinc at 50 mg three times a day, bioflavonoids at 600 mg three times a day, DMSO, hydrotherapy, copper at 2 mg per day (try a copper bracelet), and herbs including marigold (Calendula officinalis) applied topically, rue (Ruta graveolens), and yellow sweet clover (Melilotus officinalis).
+- **verbatim** (offset 473646): “Treatment of varicose veins should include
+vitamin C to bowel tolerance, vitamin E at 800-
+1,200 IU per day, zinc at 50 mg t.i.d.,
+bioflavonoids at 600 mg t.i.d., DMSO, hydro-
+therapy, copper at 2 mg per day (tiy a copper
+bracelet) and herbs including marigold (Calen-
+dula officinalis) topically, aie (Ruta graveolens),
+yellow sweet clover (Uelilotus officinalis).”
 

@@ -122,7 +122,7 @@
   },
   "alfalfa": {
     "display_name": "Alfalfa",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
@@ -134,7 +134,8 @@
         "WAL-CLM-LETS-000295",
         "WAL-CLM-LETS-000365",
         "WAL-CLM-LETS-000382",
-        "WAL-CLM-LETS-000397"
+        "WAL-CLM-LETS-000397",
+        "WAL-CLM-LETS-000458"
       ]
     },
     "conditions_treated": [
@@ -149,6 +150,7 @@
       "miscarriage",
       "nosebleeds",
       "peptic_ulcer",
+      "peptic_ulcers",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -1003,7 +1005,7 @@
   },
   "blue-cohosh": {
     "display_name": "Blue Cohosh",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000258",
@@ -1012,7 +1014,8 @@
         "WAL-CLM-LETS-000357",
         "WAL-CLM-LETS-000365",
         "WAL-CLM-LETS-000402",
-        "WAL-CLM-LETS-000406"
+        "WAL-CLM-LETS-000406",
+        "WAL-CLM-LETS-000459"
       ]
     },
     "conditions_treated": [
@@ -1022,7 +1025,8 @@
       "labor",
       "menorrhagia",
       "miscarriage",
-      "premenstrual_syndrome"
+      "premenstrual_syndrome",
+      "vaginitis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1708,7 +1712,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 49,
+    "claim_count": 50,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-LETS-000352"
@@ -1761,7 +1765,8 @@
         "WAL-CLM-LETS-000427",
         "WAL-CLM-LETS-000439",
         "WAL-CLM-LETS-000448",
-        "WAL-CLM-LETS-000451"
+        "WAL-CLM-LETS-000451",
+        "WAL-CLM-LETS-000457"
       ]
     },
     "conditions_treated": [
@@ -1795,6 +1800,7 @@
       "fractures",
       "gingivitis",
       "heavy_metal_toxicity",
+      "high_triglycerides",
       "hypertension",
       "immune_depression",
       "impotence",
@@ -2278,7 +2284,7 @@
   },
   "dmso": {
     "display_name": "Dmso",
-    "claim_count": 14,
+    "claim_count": 15,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
@@ -2294,7 +2300,8 @@
         "WAL-CLM-LETS-000414",
         "WAL-CLM-LETS-000419",
         "WAL-CLM-LETS-000435",
-        "WAL-CLM-LETS-000437"
+        "WAL-CLM-LETS-000437",
+        "WAL-CLM-LETS-000460"
       ]
     },
     "conditions_treated": [
@@ -2311,7 +2318,8 @@
       "radial_nerve_palsy",
       "rheumatoid_arthritis",
       "sprain",
-      "strain"
+      "strain",
+      "varicose_veins"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3224,14 +3232,16 @@
   },
   "glutamine": {
     "display_name": "Glutamine",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000207"
+        "WAL-CLM-LETS-000207",
+        "WAL-CLM-LETS-000458"
       ]
     },
     "conditions_treated": [
-      "cataracts"
+      "cataracts",
+      "peptic_ulcers"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3617,7 +3627,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 44,
+    "claim_count": 45,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
@@ -3663,7 +3673,8 @@
         "WAL-CLM-LETS-000439",
         "WAL-CLM-LETS-000441",
         "WAL-CLM-LETS-000450",
-        "WAL-CLM-LETS-000452"
+        "WAL-CLM-LETS-000452",
+        "WAL-CLM-LETS-000459"
       ]
     },
     "conditions_treated": [
@@ -4449,13 +4460,14 @@
   },
   "marigold": {
     "display_name": "Marigold",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000134",
         "WAL-CLM-LETS-000173",
         "WAL-CLM-LETS-000262",
-        "WAL-CLM-LETS-000353"
+        "WAL-CLM-LETS-000353",
+        "WAL-CLM-LETS-000460"
       ]
     },
     "conditions_treated": [
@@ -4463,7 +4475,8 @@
       "bruises",
       "eczema",
       "measles",
-      "psoriasis"
+      "psoriasis",
+      "varicose_veins"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4767,14 +4780,16 @@
   },
   "myrtle": {
     "display_name": "Myrtle",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000434"
+        "WAL-CLM-LETS-000434",
+        "WAL-CLM-LETS-000459"
       ]
     },
     "conditions_treated": [
-      "sore_throat"
+      "sore_throat",
+      "vaginitis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5941,10 +5956,11 @@
   },
   "rue": {
     "display_name": "Rue",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000399"
+        "WAL-CLM-LETS-000399",
+        "WAL-CLM-LETS-000460"
       ]
     },
     "conditions_treated": [
@@ -6763,6 +6779,21 @@
       "lets-play-doctor"
     ]
   },
+  "trisulfapyrimidine": {
+    "display_name": "Trisulfapyrimidine",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000456"
+      ]
+    },
+    "conditions_treated": [
+      "toxoplasmosis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "tylosin": {
     "display_name": "Tylosin",
     "claim_count": 1,
@@ -6901,7 +6932,7 @@
   },
   "vinegar": {
     "display_name": "Vinegar",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000149",
@@ -6909,7 +6940,8 @@
         "WAL-CLM-LETS-000242",
         "WAL-CLM-LETS-000252",
         "WAL-CLM-LETS-000259",
-        "WAL-CLM-LETS-000345"
+        "WAL-CLM-LETS-000345",
+        "WAL-CLM-LETS-000459"
       ]
     },
     "conditions_treated": [
@@ -7180,15 +7212,31 @@
   },
   "yellow-sweet-clover": {
     "display_name": "Yellow Sweet Clover",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000399"
+        "WAL-CLM-LETS-000399",
+        "WAL-CLM-LETS-000460"
       ]
     },
     "conditions_treated": [
       "phlebitis",
       "varicose_veins"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "yogurt": {
+    "display_name": "Yogurt",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000459"
+      ]
+    },
+    "conditions_treated": [
+      "vaginitis"
     ],
     "books_cited": [
       "lets-play-doctor"
