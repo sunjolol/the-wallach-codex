@@ -2070,6 +2070,21 @@
       "lets-play-doctor"
     ]
   },
+  "erythromycin": {
+    "display_name": "Erythromycin",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000341"
+      ]
+    },
+    "conditions_treated": [
+      "legionnaires_disease"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "estrogen-patch": {
     "display_name": "Estrogen Patch",
     "claim_count": 1,
@@ -2258,6 +2273,22 @@
       "lets-play-doctor"
     ]
   },
+  "field-larkspur": {
+    "display_name": "Field Larkspur",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000346"
+      ]
+    },
+    "conditions_treated": [
+      "lice",
+      "pediculosis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "flaxseed": {
     "display_name": "Flaxseed",
     "claim_count": 2,
@@ -2408,13 +2439,16 @@
   },
   "gamma-benzene-hexachloride": {
     "display_name": "Gamma Benzene Hexachloride",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000236"
+        "WAL-CLM-LETS-000236",
+        "WAL-CLM-LETS-000346"
       ]
     },
     "conditions_treated": [
+      "lice",
+      "pediculosis",
       "pubic_lice"
     ],
     "books_cited": [
@@ -2917,7 +2951,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 31,
+    "claim_count": 32,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
@@ -2950,7 +2984,8 @@
         "WAL-CLM-LETS-000306",
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000318",
-        "WAL-CLM-LETS-000333"
+        "WAL-CLM-LETS-000333",
+        "WAL-CLM-LETS-000345"
       ]
     },
     "conditions_treated": [
@@ -2985,6 +3020,7 @@
       "infection",
       "intermittent_claudication",
       "korsakoffs_syndrome",
+      "leukorrhea",
       "periodontal_disease",
       "rheumatoid_arthritis",
       "stroke",
@@ -3273,14 +3309,17 @@
   },
   "labrador-tea": {
     "display_name": "Labrador Tea",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000262"
+        "WAL-CLM-LETS-000262",
+        "WAL-CLM-LETS-000346"
       ]
     },
     "conditions_treated": [
       "eczema",
+      "lice",
+      "pediculosis",
       "psoriasis"
     ],
     "books_cited": [
@@ -4005,6 +4044,21 @@
     "conditions_treated": [
       "asthma",
       "atopic_asthma"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "oxytetracycline": {
+    "display_name": "Oxytetracycline",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000345"
+      ]
+    },
+    "conditions_treated": [
+      "leukorrhea"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5132,17 +5186,20 @@
   },
   "tetracycline": {
     "display_name": "Tetracycline",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
-        "WAL-CLM-LETS-000338"
+        "WAL-CLM-LETS-000338",
+        "WAL-CLM-LETS-000343"
       ]
     },
     "conditions_treated": [
       "arthritis",
       "laryngitis",
-      "rheumatoid_arthritis"
+      "leptospirosis",
+      "rheumatoid_arthritis",
+      "weils_disease"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5229,6 +5286,21 @@
       "diarrhea",
       "gingivitis",
       "periodontal_disease"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "triple-sulfonamide": {
+    "display_name": "Triple Sulfonamide",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000345"
+      ]
+    },
+    "conditions_treated": [
+      "leukorrhea"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5345,14 +5417,15 @@
   },
   "vinegar": {
     "display_name": "Vinegar",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000149",
         "WAL-CLM-LETS-000175",
         "WAL-CLM-LETS-000242",
         "WAL-CLM-LETS-000252",
-        "WAL-CLM-LETS-000259"
+        "WAL-CLM-LETS-000259",
+        "WAL-CLM-LETS-000345"
       ]
     },
     "conditions_treated": [
@@ -5360,6 +5433,7 @@
       "burns",
       "dandruff",
       "dyspepsia",
+      "leukorrhea",
       "vaginitis"
     ],
     "books_cited": [

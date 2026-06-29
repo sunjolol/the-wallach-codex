@@ -13744,6 +13744,270 @@
       "extracted_at": "2026-06-29T02:57:33+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000341",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "erythromycin"
+      ],
+      "conditions": [
+        "legionnaires_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Legionnaires' disease is caused by infection with Legionella pneumophila; it is characterized by pneumonia, high fever, slow heart rate, dry cough, chills, pleuritis, and diarrhea. A relatively new disease (discovered in 1976), it is fatal in 80% of untreated cases and is diagnosed by growing the organism on charcoal-yeast extract from sputum; immunosuppressed patients (those on chemotherapy, transplant patients, AIDS patients) are most susceptible. Treatment is specific: erythromycin at 500 milligrams to 1 gram orally or intravenously every 6 hours for three weeks.",
+      "verbatim": "Treatment of Legionnaires' disease is specific\nwith erythromycin at 500 mg to 1 gm orally or\nIV q 6 H for three weeks.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 367734
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T03:09:47+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000342",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "vitamin-a",
+        "selenium"
+      ],
+      "other_substances": [
+        "carcelim"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Lentigo-maligna melanoma (a skin cancer) originates from Hutchinson's freckle on sun-exposed areas (face, neck, anus, torso) — large flat tan or brown lesions with darker spots, slow-growing (about ten years to invade the deep skin layers). Treatment can include excision biopsy or complete surgical removal; for facial tumors a cream such as Carcelim (requiring 30 days of application) may be preferable. Wallach also recommends vitamin C to bowel tolerance, vitamin A at 300,000 international units per day as beta carotene, selenium at 1,000 micrograms per day, and a #40 sunscreen to prevent new cancers, plus the baseline nutritional program. (Captured for the search corpus as deep-dive cancer content; foundational cancer coverage already exists via the essentials and deficiency claims.)",
+      "verbatim": "Treatment of L-M melanoma can include exci-\nsion biopsy or complete surgical removal;\nfrequently these tumors are on the face and a\ncream such as Carcelim may be more desir-\nable. Carcelim requires 30 days of application\nto remove the melanoma. Take vitamin C to\nbowel tolerance, vitamin A at 300,000 IU/day\nas beta carotene, selenium at 1,000 mcg per\nday and use a #40 sunscreen to prevent new\ncancers.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 368220
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10",
+        "search-only",
+        "search-topic:cancer"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T03:09:47+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000343",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "tetracycline"
+      ],
+      "conditions": [
+        "leptospirosis",
+        "weils_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Leptospirosis (Weil's disease, infectious jaundice) is an infectious disease caused by Leptospira, a spirochete bacterium carried by dogs, rats, and various wild animals; people are infected through urine-contaminated water or cuts while skinning or butchering infected animals. Symptoms include anemia, jaundice, proteinuria, hematuria, and occasionally aseptic meningitis, with fever and chills consistent; diagnosis needs blood tests or urine cultures. Treatment with antibiotics is most effective if started within four days of onset — tetracycline at 500 milligrams four times daily is effective.",
+      "verbatim": "Treatment with antibiotics is most effective if\ninstituted within four days of onset. Tetracy-\ncline at 500 mg q.i.d. is effective.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 369178
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T03:09:47+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000344",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "selenium",
+        "vitamin-a",
+        "germanium"
+      ],
+      "other_substances": [
+        "laetrile",
+        "hydrogen-peroxide",
+        "dmso",
+        "onco-tox",
+        "shark-liver-extract",
+        "hydrazine-sulfate",
+        "cesium-chloride",
+        "polyerga",
+        "carbamide"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Leukemia (blood cancer) is a cancer of the blood-forming tissues of the bone marrow; no exact cause is proven, though viruses, radiation, and chemicals such as benzene are implicated. It produces a defect in white-blood-cell maturation, flooding the circulation with immature white cells; diagnosis comes from a blood test showing anemia, low platelets, increased lymphoblasts, and an elevated total white-cell count, and symptoms include weakness, joint pain, anemia, enlarged lymph nodes, and an enlarged spleen. Wallach's treatment includes Laetrile, hydrogen peroxide, intravenous DMSO (said to mature the immature cells), Onco-Tox, shark liver extract, hydrazine sulfate, cesium chloride, polyerga, germanium, carbamide, and as needed micro-dose chemotherapy, intravenous amino acids, vitamin C to bowel tolerance, selenium at 500-1,000 micrograms per day, and vitamin A at 300,000 international units as beta carotene. (Captured for the search corpus as deep-dive cancer content with several controversial alternative agents; foundational coverage already exists via the essentials and deficiency claims.)",
+      "verbatim": "Treatment includes Laetrile, hydrogen perox-\nide, DMSO (matures the immature cells in the\ncirculation) IV, Onco-Tox, shark liver extract,\nhydrazine sulfate, cesium chloride, polyerga,\ngermanium, carbamide and, as needed, mi-\ncro-dose chemotherapy, amino acids IV, vita-\nmin C to bowel tolerance, selenium at 500-\n1 ,000 mcg per day, and vitamin A at 300,000 IU\nas beta carotene.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 369852
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10",
+        "search-only",
+        "search-topic:cancer"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T03:09:47+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000345",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "triple-sulfonamide",
+        "oxytetracycline",
+        "vinegar",
+        "hydrogen-peroxide"
+      ],
+      "conditions": [
+        "leukorrhea"
+      ],
+      "symptoms": [],
+      "claim_text": "Leukorrhea (vaginal discharge) is a nonspecific vaginal discharge containing mucus and white blood cells, occasionally blood-tinged; it can be caused by Candida albicans, Hemophilus vaginalis, Streptococcus, Staphylococcus (the organism behind toxic-shock syndrome with incorrectly used tampons), or Neisseria gonorrhoeae. Specific diagnosis requires culture and/or microscopy of the discharge. Treatment targets the causative organism: vaginal triple-sulfonamide creams, oxytetracycline vaginal suppositories, vinegar douches (30 milliliters per pint of water), and 1.5% hydrogen peroxide (as Oxy-Toddy); gonorrhea also requires systemic antibiotics. Wallach notes that any venereal disease must be reported to the Public Health Department.",
+      "verbatim": "Treatment of leukorrhea should include spe-\ncific treatment for the causative organism (i.e.,\nvaginal application of triple sulfonamide\ncreams, oxytetracycline vaginal supposito-\nries, vaginal douches with vinegar 30 ml/pint\nof water, 1.5 % H202 as Oxy Toddy). Gonor-\nrhea will require systemic antibiotics as well\n(please note that any venereal disease must be\nreported to the Public Health Department).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 370709
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T03:09:47+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000346",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "labrador-tea",
+        "field-larkspur",
+        "gamma-benzene-hexachloride"
+      ],
+      "conditions": [
+        "lice",
+        "pediculosis"
+      ],
+      "symptoms": [],
+      "claim_text": "Lice (pediculosis) can infest the head (Pediculus humanus capitis), body (P. h. corporis), and pubic area (Phthirius pubis); the eggs (nits) are white, oval, seed-like objects attached to the base of the hairs, and adult lice can be seen scuttling through the hair. Itching and irritated skin are the most common symptoms, and diagnosis depends on finding adult lice or nits. Treatment: a hair wash of Labrador tea (Ledum latifolium) or field larkspur (Delphinium consolida), and a special fine-toothed comb to 'harvest' the nits, done daily for fourteen days to break the lice life cycle. For stubborn cases, 1% gamma benzene hexachloride as a shampoo daily for two days, reapplied in ten days (avoid prolonged use, as it can cause genital skin irritation, especially in males).",
+      "verbatim": "Treatment of lice includes the use of\nLabordor tea (Ledum latifolium) or field\nlarkspur (Delphinium consolida) as a hair\nwash, use a special fine toothed comb to\n\"harvest\" the \"nits;\" treatment should be done\ndaily for fourteen days to break the life cycle of\nthe lice.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 371543
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T03:09:47+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000347",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [
+        "colloidal-minerals",
+        "betaine-hcl",
+        "pancreatic-enzymes"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach holds that the potential lifespan for humans is 120-130 years, yet insurance actuary tables put the average at only 72 for males and 78 for females — a 40-50 year gap to work toward. He says home water-filtration systems, air filters and conditioners, and the baseline nutrition program can each add years, and that digestive aids (betaine hydrochloride and pancreatic enzymes) add another ten — about twenty added years when pursued actively. He attributes the Hunza secret of longevity (averaging 100 years, up to 140) to the daily consumption of plant-derived colloidal minerals, and warns that exercise alone — without attention to food allergies, digestive aids, the baseline program, colloidal minerals, and avoiding pollutants — will only shorten life. He also notes that 40% of hospital patients are there because of iatrogenic (doctor-caused) disease. (Captured for the search corpus as Wallach's general longevity guidance.)",
+      "verbatim": "LIFE EXPECTANCY (life span): potential\nfor man is 120-130 years, yet the average life\nspan based on insurance actuary tables is\nonly 72 for males and 78 for females. This\nleaves a 40-50 year differential that we can\nwork towards with hopeful expectations.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 372046
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10",
+        "search-only",
+        "search-topic:longevity"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T03:09:47+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

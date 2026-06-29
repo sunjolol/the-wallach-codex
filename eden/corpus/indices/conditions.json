@@ -6495,6 +6495,75 @@
       "rare-earths"
     ]
   },
+  "legionnaires_disease": {
+    "display_name": "Legionnaires Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000341"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "erythromycin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "leptospirosis": {
+    "display_name": "Leptospirosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000343"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "tetracycline"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "leukorrhea": {
+    "display_name": "Leukorrhea",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000345"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "hydrogen-peroxide",
+      "oxytetracycline",
+      "triple-sulfonamide",
+      "vinegar"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "lice": {
+    "display_name": "Lice",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000346"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "field-larkspur",
+      "gamma-benzene-hexachloride",
+      "labrador-tea"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "liver_cancer": {
     "display_name": "Liver Cancer",
     "claim_count": 1,
@@ -7223,6 +7292,24 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "pediculosis": {
+    "display_name": "Pediculosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000346"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "field-larkspur",
+      "gamma-benzene-hexachloride",
+      "labrador-tea"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "pellagra": {
@@ -8347,6 +8434,22 @@
       "oat-bran",
       "pulse-test",
       "thyroid"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "weils_disease": {
+    "display_name": "Weils Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000343"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "tetracycline"
     ],
     "books_cited": [
       "lets-play-doctor"
