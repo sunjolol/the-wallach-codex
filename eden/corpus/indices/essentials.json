@@ -288,7 +288,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 74,
+    "claim_count": 76,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -367,6 +367,8 @@
         "WAL-CLM-LETS-000398",
         "WAL-CLM-LETS-000413",
         "WAL-CLM-LETS-000415",
+        "WAL-CLM-LETS-000419",
+        "WAL-CLM-LETS-000420",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -554,6 +556,7 @@
       "chromium",
       "copper",
       "flavonoids",
+      "histidine",
       "iron",
       "lithium",
       "lysine",
@@ -956,7 +959,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 84,
+    "claim_count": 86,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1049,6 +1052,8 @@
         "WAL-CLM-LETS-000402",
         "WAL-CLM-LETS-000413",
         "WAL-CLM-LETS-000415",
+        "WAL-CLM-LETS-000419",
+        "WAL-CLM-LETS-000420",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1205,6 +1210,7 @@
       "flavonoids",
       "gallium",
       "germanium",
+      "histidine",
       "inositol",
       "iron",
       "lithium",
@@ -1548,7 +1554,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 35,
+    "claim_count": 36,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
@@ -1597,6 +1603,7 @@
         "WAL-CLM-LETS-000360",
         "WAL-CLM-LETS-000399",
         "WAL-CLM-LETS-000409",
+        "WAL-CLM-LETS-000419",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281"
       ],
@@ -1682,6 +1689,7 @@
       "choline",
       "chromium",
       "flavonoids",
+      "histidine",
       "iodine",
       "iron",
       "lithium",
@@ -2248,7 +2256,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 81,
+    "claim_count": 82,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2336,6 +2344,7 @@
         "WAL-CLM-LETS-000374",
         "WAL-CLM-LETS-000409",
         "WAL-CLM-LETS-000417",
+        "WAL-CLM-LETS-000419",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2467,6 +2476,7 @@
       "flavonoids",
       "gallium",
       "germanium",
+      "histidine",
       "inositol",
       "iodine",
       "iron",
@@ -2714,7 +2724,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 96,
+    "claim_count": 97,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2821,6 +2831,7 @@
         "WAL-CLM-LETS-000401",
         "WAL-CLM-LETS-000409",
         "WAL-CLM-LETS-000410",
+        "WAL-CLM-LETS-000421",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -2988,6 +2999,7 @@
       "pyorrhea",
       "quinsy",
       "rheumatoid_arthritis",
+      "ringworm",
       "schizophrenia",
       "seborrheic_dermatitis",
       "shingles",
@@ -3803,7 +3815,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 49,
+    "claim_count": 50,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -3857,7 +3869,8 @@
         "WAL-CLM-LETS-000401",
         "WAL-CLM-LETS-000402",
         "WAL-CLM-LETS-000409",
-        "WAL-CLM-LETS-000410"
+        "WAL-CLM-LETS-000410",
+        "WAL-CLM-LETS-000421"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000037"
@@ -3971,6 +3984,7 @@
       "psoriasis",
       "pyorrhea",
       "quinsy",
+      "ringworm",
       "spina_bifida",
       "stroke",
       "umbilical_hernia",
@@ -4656,7 +4670,7 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 42,
+    "claim_count": 43,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000027",
@@ -4703,6 +4717,7 @@
         "WAL-CLM-LETS-000396",
         "WAL-CLM-LETS-000402",
         "WAL-CLM-LETS-000407",
+        "WAL-CLM-LETS-000419",
         "WAL-CLM-RARE-000286"
       ],
       "toxicity_sign": [
@@ -4854,6 +4869,7 @@
       "copper",
       "cysteine",
       "flavonoids",
+      "histidine",
       "inositol",
       "iron",
       "leucine",
@@ -5465,7 +5481,7 @@
     "display_name": "Cholecalciferol",
     "canon_slug": "vitamin-d",
     "category": "vitamin",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000083"
@@ -5482,7 +5498,8 @@
       ],
       "protocol": [
         "WAL-CLM-LETS-000139",
-        "WAL-CLM-LETS-000413"
+        "WAL-CLM-LETS-000413",
+        "WAL-CLM-LETS-000420"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000040"
@@ -5549,7 +5566,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 60,
+    "claim_count": 61,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -5619,6 +5636,7 @@
         "WAL-CLM-LETS-000404",
         "WAL-CLM-LETS-000409",
         "WAL-CLM-LETS-000415",
+        "WAL-CLM-LETS-000421",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -5750,6 +5768,7 @@
       "psoriasis",
       "raynauds_disease",
       "rheumatoid_arthritis",
+      "ringworm",
       "shingles",
       "stroke",
       "varicose_veins"
@@ -6246,12 +6265,27 @@
     "display_name": "Histidine",
     "canon_slug": "histidine",
     "category": "amino_acid",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000419"
+      ]
+    },
     "deficiency_signs": [],
-    "conditions_treated": [],
-    "interacts_with": [],
-    "books_cited": []
+    "conditions_treated": [
+      "rheumatoid_arthritis"
+    ],
+    "interacts_with": [
+      "calcium",
+      "copper",
+      "magnesium",
+      "omega-3",
+      "selenium",
+      "vitamin-b6"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
   },
   "isoleucine": {
     "display_name": "Isoleucine",
@@ -6573,7 +6607,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 72,
+    "claim_count": 73,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -6652,6 +6686,7 @@
         "WAL-CLM-LETS-000402",
         "WAL-CLM-LETS-000409",
         "WAL-CLM-LETS-000415",
+        "WAL-CLM-LETS-000419",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -6767,6 +6802,7 @@
       "pruritus",
       "psoriasis",
       "raynauds_disease",
+      "rheumatoid_arthritis",
       "schizophrenia",
       "varicose_veins",
       "weight_loss"
@@ -6780,6 +6816,7 @@
       "cysteine",
       "flavonoids",
       "germanium",
+      "histidine",
       "iodine",
       "iron",
       "leucine",

@@ -1,55 +1,68 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_5 claim(s) drafted 2026-06-29T16:33:37+00:00. Review then run corpus_seal.py to promote._
+_6 claim(s) drafted 2026-06-29T16:42:40+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: protocol×5
+Kinds: protocol×6
 
-### WAL-CLM-LETS-000413 · protocol
+### WAL-CLM-LETS-000418 · protocol
+- **essentials:** — · **conditions:** rheumatic_fever · **symptoms:** —
+- **claim:** Rheumatic fever is caused by a Streptococcus Group A infection (usually starting as a 'strep throat') and is marked by arthritis, skin rash, fever, heart-valve inflammation, and brain signs (chorea); the residual heart-valve damage is the most dangerous consequence of untreated disease, and diagnosis rests on the typical symptoms plus positive Group A Streptococcus cultures. Treatment early in the course prevents the heart damage and should include aspirin for joint pain and sulfadiazine orally at 500-1,000 mg per day for 1-2 years, or penicillin G or V orally at 250,000 units twice a day for two years.
+- **verbatim** (offset 443257): “Treatment of rheumatic fever early in the
+course of the disease will prevent the heart
+damage. Treatment should include aspirin for
+joint pain and sulfadiazine orally at 500-1,000
+mg/day for 1 -2 years or penicillin G or V orally
+at 250,000 u. b.i.d. for two years.”
+
+### WAL-CLM-LETS-000419 · protocol
+- **essentials:** selenium, copper, vitamin-b6, calcium, magnesium, omega-3, histidine · **conditions:** rheumatoid_arthritis · **symptoms:** —
+- **claim:** Wallach holds that rheumatoid arthritis is not primarily an immune-system disease but is initially caused by infection with a Mycoplasma (PPLO, a pleuropneumonia-like organism) that causes an upper-respiratory infection and then attacks the joint membranes of the fingers and toes, and later the larger joints — a cause he says has been recognized and eliminated in veterinary medicine. Orthodox treatment (aspirin, gold shots, steroids) only relieves symptoms, though he notes 75% of patients improve in the first year with no treatment at all. Treatment should include specific treatment for Mycoplasma/PPLO (Tylosin, tetracyclines, etc.) for six months to one year, intravenous and/or oral hydrogen peroxide, chelation, acupuncture, enterically coated bromelain at 40 mg four times a day, autoimmune urine therapy, dimethyl sulfoxide (DMSO), L-histidine at 1,000 mg three times a day, essential fatty acids at 5 grams three times a day, calcium and magnesium at 2,000 mg and 1,000 mg per day, selenium at 500-1,000 mcg per day, copper at 2-4 mg per day, B-6 at 100 mg three times a day, cartilage at 5 grams three times a day, hydrotherapy, and herbs (topical camphor, black mustard, dandelion, devil's claw, juniper, stinging nettle, sweet vernal grass), plus plant-derived colloidal minerals.
+- **verbatim** (offset 444887): “Treatment of rheumatoid arthritis should in-
+clude specific treatment for Mycoplasma
+(PPLO) (i.e., Tylosin, tetracyclines, etc.), for
+six months to one year, IV and/or oral hydro-
+gen peroxide, chelation, acupuncture,
+enterically coated bromeliad at 40 mg q.i.d.,
+autoimmune urine therapy, DMSO, 1-histi-
+dine at 1,000 mg t.i.d., essential fatty acids at 5
+gm t.i.d., calcium and magnesium at 2,000 mg
+and 1,000 mg per day, selenium at 500-1,000
+mcg per day”
+
+### WAL-CLM-LETS-000420 · protocol
 - **essentials:** vitamin-d, calcium, magnesium · **conditions:** rickets · **symptoms:** —
-- **claim:** Rachitic rosary is the bead-like swelling at the junction of the ribs and rib cartilage, seen almost exclusively in small children kept indoors without an oral source of vitamin D; it is easily felt on examination. Wallach treats it as a sign of rickets (vitamin D deficiency). Treatment should include oral vitamin D at 400-1,000 IU per day plus the baseline nutritional supplement program including calcium and magnesium; once the abnormal bony changes normalize, drop the vitamin D dose to 250-400 IU per day, and afford daily sun exposure for at least 30 minutes.
-- **verbatim** (offset 437767): “Treatment of the rachitic "rosary" should in-
-clude oral vitamin D at 400-1,000 IU per day
-and the base line nutritional supplement pro-
-gram including calcium and magnesium. Af-
-ter the abnormal bony changes become nor-
-mal, the vitamin D dose should be dropped to
-250-400 IU per day; afford daily exposure to
-sun for at least 30 minutes.”
+- **claim:** Rickets is caused by a deficiency of vitamin D and is marked by stunted growth, joint pain, and deformed long bones (bow legs, dropped wrists, 'sickle shins,' barrel chest, rachitic rosary). Treatment includes supplementation with vitamin D at 400 IU orally, calcium and magnesium at 2,000 mg and 1,000 mg per day, and exposure to sunshine for 30 minutes per day; advanced cases will require orthotic correction and, in some cases, orthopedic surgery.
+- **verbatim** (offset 446004): “Treatment ofrickets includes supple-mentation
+with vitamin D at 400 IUorally, calcium and
+magnesium at 2,000 mg and 1 ,000 mg per day,
+and exposure to sunshine for 30 minutes per
+day.”
 
-### WAL-CLM-LETS-000414 · protocol
-- **essentials:** — · **conditions:** radial_nerve_palsy · **symptoms:** —
-- **claim:** Radial nerve palsy ('Saturday night palsy') results from compressing the radial nerve against the humerus — classically by draping the arm over the back of a hard-backed chair for an extended period during a drunken stupor or deep sleep — producing a wrist 'drop,' weakness extending the wrist and fingers, and sometimes a loss of sensory function between the first and second fingers. Treatment should include a B-complex 50 three times a day, topical dimethyl sulfoxide (DMSO), acupuncture, and hydrotherapy.
-- **verbatim** (offset 438561): “Treatment of radial palsy should include B-
-complex 50 t.i.d., topical DMSO, acupuncture
-and hydrotherapy.”
+### WAL-CLM-LETS-000421 · protocol
+- **essentials:** vitamin-a, zinc, vitamin-e · **conditions:** ringworm · **symptoms:** —
+- **claim:** Ringworm is caused by fungi (most often Microsporum/Tinea capitis or Trichophyton/Tinea cruris, 'jock itch') that invade the skin, nails, and hair, producing the characteristic circular lesions; cats, rabbits, and children are the most common sources, and diagnosis is by the typical lesions, fungal culture, and a positive Wood's lamp test (Microsporum lesions fluoresce a bright pastel green). Treatment should include Griseofulvin orally at 250 mg four times a day for four months, vitamin A at 25,000-300,000 IU per day as beta carotene, zinc at 50 mg three times a day, vitamin E at 800-1,200 IU per day, ultraviolet light directly to the lesion for up to six minutes per day, and topical herbs including plantain (Plantago major) and castor oil (Ricinus communis).
+- **verbatim** (offset 446760): “Treatment of ringworm should include
+Griseofulvin orally at 250 mg q.i.d. for four
+months, vitamin A at 25,000-300,000 IU/day as
+beta carotene, zinc at 50 mg t.i.d., vitamin E at
+800-1,200 IU/day, ultra violet light directly to
+lesion for up to six minutes per day, and herbs
+topically including plantain (Plantgo major)
+and castor oil (Ricinus communis).”
 
-### WAL-CLM-LETS-000415 · protocol
-- **essentials:** calcium, magnesium, vitamin-e, omega-3, tryptophan · **conditions:** raynauds_disease · **symptoms:** numbness
-- **claim:** Raynaud's disease is marked by tingling and numbness in the fingers (and sometimes the nose and tongue) caused by spasms of the small arteries; the orthodox approach is to cut sympathetic nerves and give anesthetics and tranquilizers. Wallach notes food allergies can be the precipitating factor when arteries are the target tissue (do a pulse test), and to rule out thoracic inlet syndrome. Treatment should include calcium and magnesium at 2,000 mg and 1,000 mg per day, avoiding offending food allergens and caffeine (coffee, tea, soft drinks, chocolate), vitamin E at 800-1,200 IU per day, essential fatty acids at 5 grams three times a day, L-tryptophan at 500 mg three times a day, acupuncture, chiropractic, and circulation-boosting herbs such as cayenne pepper (Capsicum minimum).
-- **verbatim** (offset 440922): “Treatment of Raynaud's disease should in-
-clude calcium and magnesium at2,000 mg per
-day and 1,000 mg per day, avoid offending
-food allergens, avoid caffeine (i.e. , coffee, tea,
-soft drinks, chocolate, etc.), vitamin E at 800-
-1,200 IU per day, essential fatty acids at 5 gm
-t.i.d., 1-tryptophane at 500 mg t.i.d., acupunc-
-ture, chiropractic and herbs to increase circu-
-lation such as cayenne pepper (Capsicum
-minimum).”
+### WAL-CLM-LETS-000422 · protocol
+- **essentials:** — · **conditions:** rocky_mountain_spotted_fever · **symptoms:** —
+- **claim:** Rocky Mountain spotted fever (tick fever) is caused by a rickettsia (Rickettsia rickettsii) transmitted by the bite of an infected tick (wood, dog, or lone-star tick); it occurs May through October during tick season, mostly along the Eastern seaboard, and affects small children with access to wooded areas (often via the family dog). Symptoms follow 7-12 days after a bite — headaches, chills, weakness, muscle pain, fever, dry cough, and a skin rash starting on the wrists, ankles, palms, soles, and forearms then spreading. Wallach warns: do NOT wait for a positive blood test before starting treatment, as death may occur as quickly as 4-10 days after symptoms appear. Treatment should include tetracycline at 500 mg four times a day orally, or intravenously if the patient cannot swallow capsules, plus supportive intravenous fluids and electrolytes.
+- **verbatim** (offset 448240): “Treatment of RMSF should include tetracy-
+cline at 500 mg q.i.d. orally or IV if the patient
+can't swallow capsules. Supportive treatment
+with rv fluids and electrolytes is essential to
+rapid and full recovery.”
 
-### WAL-CLM-LETS-000416 · protocol
-- **essentials:** — · **conditions:** rectal_itching · **symptoms:** —
-- **claim:** Rectal itching can be caused by candidiasis, food allergies, hemorrhoids, crabs, fleas, or pinworms; Wallach advises a pulse test for food allergies, a self/blood/skin test for candidiasis, the Scotch-tape test to identify pinworm eggs, and a mirror to self-examine the anal folds for fleas or hemorrhoids. Treatment can be palliated with a variety of herbal washes (see hemorrhoids), Preparation H, sitz baths with herbal washes and/or hydrogen peroxide, and specific treatments for the underlying parasites.
-- **verbatim** (offset 441771): “Treatment of rectal itching can be palliated
-with a variety of herbal washes (see hemor-
-rhoids), Preparation H, sitz baths with herbal
-washes and/or hydrogen peroxide, specific
-treatments for parasites.”
-
-### WAL-CLM-LETS-000417 · protocol
-- **essentials:** vitamin-c, vitamin-b12, selenium · **conditions:** reyes_syndrome · **symptoms:** —
-- **claim:** Reye's syndrome occurs most often in young teens, usually in fall and winter, and is thought to be caused by consuming aflatoxin (a toxin of the grain mold Aspergillus flavus); it is marked by pneumonitis, nausea and vomiting, a sudden change in mental status to deep depression, amnesia, agitation progressing to coma and convulsions, fixed dilated pupils, and death in 42-80% of cases. Treatment includes barbiturate anesthesia to lower intracranial pressure, intravenous fluids and electrolytes, pulmonary support, exchange transfusions, and dialysis, plus vitamin C intravenously at 5-10 grams per day, B-complex and B-12 intravenously or intramuscularly, and selenium intramuscularly or intravenously at 250-500 mcg per day.
-- **verbatim** (offset 442722): “Vitamin C IV at 5-10 gms per day, B-complex
-and B-12 IV or IM, selenium IM or IV at 250-
-500 mcg per day.”
+### WAL-CLM-LETS-000423 · protocol
+- **essentials:** — · **conditions:** roseola · **symptoms:** —
+- **claim:** Roseola is an acute viral disease of infants and toddlers marked by high fever (up to 105 F) and a rash that predominates on the belly and chest and lightly on the face and limbs; convulsions may occur during the high-fever periods, and after 3-4 days the child feels completely well even though the rash persists. Treatment is directed to reducing the fever sufficiently to prevent convulsions, plus topical poultices on the rash (see measles).
+- **verbatim** (offset 448854): “Treatment of roseola is directed to reducing
+the fever sufficiently to prevent convulsions
+and topical poultices on the rash (see measles).”
 

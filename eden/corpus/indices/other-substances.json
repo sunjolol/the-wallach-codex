@@ -416,13 +416,14 @@
   },
   "aspirin": {
     "display_name": "Aspirin",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000274",
         "WAL-CLM-LETS-000293",
         "WAL-CLM-LETS-000392",
-        "WAL-CLM-LETS-000393"
+        "WAL-CLM-LETS-000393",
+        "WAL-CLM-LETS-000418"
       ]
     },
     "conditions_treated": [
@@ -430,7 +431,8 @@
       "fever",
       "headache",
       "otitis",
-      "pain"
+      "pain",
+      "rheumatic_fever"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -874,6 +876,21 @@
       "lets-play-doctor"
     ]
   },
+  "black-mustard": {
+    "display_name": "Black Mustard",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000419"
+      ]
+    },
+    "conditions_treated": [
+      "rheumatoid_arthritis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "black-walnut": {
     "display_name": "Black Walnut",
     "claim_count": 1,
@@ -1021,14 +1038,16 @@
   },
   "bromelain": {
     "display_name": "Bromelain",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000320"
+        "WAL-CLM-LETS-000320",
+        "WAL-CLM-LETS-000419"
       ]
     },
     "conditions_treated": [
-      "inflammation"
+      "inflammation",
+      "rheumatoid_arthritis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1211,14 +1230,16 @@
   },
   "camphor": {
     "display_name": "Camphor",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000320"
+        "WAL-CLM-LETS-000320",
+        "WAL-CLM-LETS-000419"
       ]
     },
     "conditions_treated": [
-      "inflammation"
+      "inflammation",
+      "rheumatoid_arthritis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1278,13 +1299,14 @@
   },
   "cartilage": {
     "display_name": "Cartilage",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
         "WAL-CLM-LETS-000176",
         "WAL-CLM-LETS-000205",
-        "WAL-CLM-LETS-000326"
+        "WAL-CLM-LETS-000326",
+        "WAL-CLM-LETS-000419"
       ]
     },
     "conditions_treated": [
@@ -1321,14 +1343,16 @@
   },
   "castor-oil": {
     "display_name": "Castor Oil",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000231"
+        "WAL-CLM-LETS-000231",
+        "WAL-CLM-LETS-000421"
       ]
     },
     "conditions_treated": [
-      "constipation"
+      "constipation",
+      "ringworm"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1638,7 +1662,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 43,
+    "claim_count": 44,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-LETS-000352"
@@ -1685,7 +1709,8 @@
         "WAL-CLM-LETS-000393",
         "WAL-CLM-LETS-000398",
         "WAL-CLM-LETS-000400",
-        "WAL-CLM-LETS-000402"
+        "WAL-CLM-LETS-000402",
+        "WAL-CLM-LETS-000419"
       ]
     },
     "conditions_treated": [
@@ -2021,13 +2046,14 @@
   },
   "dandelion": {
     "display_name": "Dandelion",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000161",
         "WAL-CLM-LETS-000283",
         "WAL-CLM-LETS-000298",
-        "WAL-CLM-LETS-000332"
+        "WAL-CLM-LETS-000332",
+        "WAL-CLM-LETS-000419"
       ]
     },
     "conditions_treated": [
@@ -2035,7 +2061,8 @@
       "gallstones",
       "hepatitis",
       "kidney_disease",
-      "kidney_stones"
+      "kidney_stones",
+      "rheumatoid_arthritis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2067,6 +2094,21 @@
     },
     "conditions_treated": [
       "athletes_foot"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "devils-claw": {
+    "display_name": "Devils Claw",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000419"
+      ]
+    },
+    "conditions_treated": [
+      "rheumatoid_arthritis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2160,7 +2202,7 @@
   },
   "dmso": {
     "display_name": "Dmso",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
@@ -2173,7 +2215,8 @@
         "WAL-CLM-LETS-000320",
         "WAL-CLM-LETS-000326",
         "WAL-CLM-LETS-000393",
-        "WAL-CLM-LETS-000414"
+        "WAL-CLM-LETS-000414",
+        "WAL-CLM-LETS-000419"
       ]
     },
     "conditions_treated": [
@@ -3164,6 +3207,21 @@
       "lets-play-doctor"
     ]
   },
+  "griseofulvin": {
+    "display_name": "Griseofulvin",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000421"
+      ]
+    },
+    "conditions_treated": [
+      "ringworm"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "hawthorn": {
     "display_name": "Hawthorn",
     "claim_count": 8,
@@ -3404,7 +3462,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 38,
+    "claim_count": 39,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
@@ -3444,7 +3502,8 @@
         "WAL-CLM-LETS-000394",
         "WAL-CLM-LETS-000398",
         "WAL-CLM-LETS-000404",
-        "WAL-CLM-LETS-000416"
+        "WAL-CLM-LETS-000416",
+        "WAL-CLM-LETS-000419"
       ]
     },
     "conditions_treated": [
@@ -3678,19 +3737,21 @@
   },
   "juniper": {
     "display_name": "Juniper",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-LETS-000339"
       ],
       "protocol": [
         "WAL-CLM-LETS-000241",
-        "WAL-CLM-LETS-000297"
+        "WAL-CLM-LETS-000297",
+        "WAL-CLM-LETS-000419"
       ]
     },
     "conditions_treated": [
       "cystitis",
-      "hemorrhoids"
+      "hemorrhoids",
+      "rheumatoid_arthritis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4491,14 +4552,16 @@
   },
   "nettle": {
     "display_name": "Nettle",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000253"
+        "WAL-CLM-LETS-000253",
+        "WAL-CLM-LETS-000419"
       ]
     },
     "conditions_treated": [
-      "dropsy"
+      "dropsy",
+      "rheumatoid_arthritis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4996,14 +5059,15 @@
   },
   "penicillin": {
     "display_name": "Penicillin",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000314",
         "WAL-CLM-LETS-000338",
         "WAL-CLM-LETS-000349",
         "WAL-CLM-LETS-000351",
-        "WAL-CLM-LETS-000410"
+        "WAL-CLM-LETS-000410",
+        "WAL-CLM-LETS-000418"
       ]
     },
     "conditions_treated": [
@@ -5012,6 +5076,7 @@
       "lyme_disease",
       "peritonsillar_abscess",
       "quinsy",
+      "rheumatic_fever",
       "tetanus"
     ],
     "books_cited": [
@@ -5180,7 +5245,7 @@
   },
   "plantain": {
     "display_name": "Plantain",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
@@ -5188,7 +5253,8 @@
         "WAL-CLM-LETS-000162",
         "WAL-CLM-LETS-000297",
         "WAL-CLM-LETS-000401",
-        "WAL-CLM-LETS-000403"
+        "WAL-CLM-LETS-000403",
+        "WAL-CLM-LETS-000421"
       ]
     },
     "conditions_treated": [
@@ -5197,7 +5263,8 @@
       "disagreeable_attitude",
       "hemorrhoids",
       "pilonidal_cyst",
-      "poison_ivy"
+      "poison_ivy",
+      "ringworm"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5972,6 +6039,21 @@
       "lets-play-doctor"
     ]
   },
+  "sulfadiazine": {
+    "display_name": "Sulfadiazine",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000418"
+      ]
+    },
+    "conditions_treated": [
+      "rheumatic_fever"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "sunflower": {
     "display_name": "Sunflower",
     "claim_count": 1,
@@ -6057,6 +6139,21 @@
     },
     "conditions_treated": [
       "gallstones"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "sweet-vernal-grass": {
+    "display_name": "Sweet Vernal Grass",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000419"
+      ]
+    },
+    "conditions_treated": [
+      "rheumatoid_arthritis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -6156,7 +6253,7 @@
   },
   "tetracycline": {
     "display_name": "Tetracycline",
-    "claim_count": 8,
+    "claim_count": 10,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
@@ -6166,7 +6263,9 @@
         "WAL-CLM-LETS-000351",
         "WAL-CLM-LETS-000389",
         "WAL-CLM-LETS-000408",
-        "WAL-CLM-LETS-000411"
+        "WAL-CLM-LETS-000411",
+        "WAL-CLM-LETS-000419",
+        "WAL-CLM-LETS-000422"
       ]
     },
     "conditions_treated": [
@@ -6178,6 +6277,7 @@
       "q_fever",
       "rabbit_fever",
       "rheumatoid_arthritis",
+      "rocky_mountain_spotted_fever",
       "tetanus",
       "tularemia",
       "weils_disease"
@@ -6299,6 +6399,21 @@
     },
     "conditions_treated": [
       "leukorrhea"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "tylosin": {
+    "display_name": "Tylosin",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000419"
+      ]
+    },
+    "conditions_treated": [
+      "rheumatoid_arthritis"
     ],
     "books_cited": [
       "lets-play-doctor"

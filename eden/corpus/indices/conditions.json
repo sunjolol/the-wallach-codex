@@ -9082,15 +9082,34 @@
       "lets-play-doctor"
     ]
   },
+  "rheumatic_fever": {
+    "display_name": "Rheumatic Fever",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000418"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "aspirin",
+      "penicillin",
+      "sulfadiazine"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "rheumatoid_arthritis": {
     "display_name": "Rheumatoid Arthritis",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000050"
       ],
       "protocols": [
         "WAL-CLM-LETS-000146",
+        "WAL-CLM-LETS-000419",
         "WAL-CLM-RARE-000096"
       ]
     },
@@ -9098,7 +9117,9 @@
       "calcium",
       "copper",
       "gold",
+      "histidine",
       "magnesium",
+      "omega-3",
       "selenium",
       "vitamin-b3",
       "vitamin-b6",
@@ -9108,15 +9129,24 @@
     ],
     "other_substances_involved": [
       "alfalfa",
+      "black-mustard",
+      "bromelain",
+      "camphor",
       "cartilage",
       "chondroitin",
       "colloidal-minerals",
+      "dandelion",
+      "devils-claw",
       "dmso",
       "edta-chelation",
       "hydrogen-peroxide",
+      "juniper",
       "licorice",
+      "nettle",
       "poison-ivy",
-      "tetracycline"
+      "sweet-vernal-grass",
+      "tetracycline",
+      "tylosin"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -9126,7 +9156,7 @@
   },
   "rickets": {
     "display_name": "Rickets",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000004",
@@ -9134,7 +9164,8 @@
         "WAL-CLM-RARE-000230"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000413"
+        "WAL-CLM-LETS-000413",
+        "WAL-CLM-LETS-000420"
       ]
     },
     "essentials_involved": [
@@ -9146,6 +9177,58 @@
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "ringworm": {
+    "display_name": "Ringworm",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000421"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a",
+      "vitamin-e",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "castor-oil",
+      "griseofulvin",
+      "plantain"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "rocky_mountain_spotted_fever": {
+    "display_name": "Rocky Mountain Spotted Fever",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000422"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "tetracycline"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "roseola": {
+    "display_name": "Roseola",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000423"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "rubella": {
