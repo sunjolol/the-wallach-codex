@@ -1571,7 +1571,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 37,
+    "claim_count": 38,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
@@ -1622,6 +1622,7 @@
         "WAL-CLM-LETS-000409",
         "WAL-CLM-LETS-000419",
         "WAL-CLM-LETS-000460",
+        "WAL-CLM-LETS-000462",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281"
       ],
@@ -1699,7 +1700,8 @@
       "shwachman_syndrome",
       "thyroid_disease",
       "varicose_veins",
-      "violent_behavior"
+      "violent_behavior",
+      "vitiligo"
     ],
     "interacts_with": [
       "boron",
@@ -1714,6 +1716,7 @@
       "magnesium",
       "molybdenum",
       "omega-3",
+      "phenylalanine",
       "selenium",
       "sodium",
       "sulfur",
@@ -2757,7 +2760,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 107,
+    "claim_count": 109,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2875,6 +2878,8 @@
         "WAL-CLM-LETS-000452",
         "WAL-CLM-LETS-000458",
         "WAL-CLM-LETS-000460",
+        "WAL-CLM-LETS-000462",
+        "WAL-CLM-LETS-000464",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -3057,6 +3062,8 @@
       "umbilical_hernia",
       "varicose_veins",
       "violent_behavior",
+      "vitiligo",
+      "white_spots_fingernails",
       "xerophthalmia"
     ],
     "interacts_with": [
@@ -3870,7 +3877,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 57,
+    "claim_count": 58,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -3932,7 +3939,8 @@
         "WAL-CLM-LETS-000450",
         "WAL-CLM-LETS-000451",
         "WAL-CLM-LETS-000452",
-        "WAL-CLM-LETS-000458"
+        "WAL-CLM-LETS-000458",
+        "WAL-CLM-LETS-000462"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000037"
@@ -4056,6 +4064,7 @@
       "tinnitus",
       "tonsillitis",
       "umbilical_hernia",
+      "vitiligo",
       "xerophthalmia"
     ],
     "interacts_with": [
@@ -4070,6 +4079,7 @@
       "lysine",
       "magnesium",
       "omega-3",
+      "phenylalanine",
       "selenium",
       "tin",
       "vitamin-b12",
@@ -4989,7 +4999,7 @@
     "display_name": "Folate",
     "canon_slug": "vitamin-b9",
     "category": "vitamin",
-    "claim_count": 22,
+    "claim_count": 23,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000042",
@@ -5017,7 +5027,8 @@
         "WAL-CLM-LETS-000365",
         "WAL-CLM-LETS-000401",
         "WAL-CLM-LETS-000409",
-        "WAL-CLM-LETS-000430"
+        "WAL-CLM-LETS-000430",
+        "WAL-CLM-LETS-000462"
       ]
     },
     "deficiency_signs": [
@@ -5109,6 +5120,7 @@
       "magnesium",
       "manganese",
       "omega-3",
+      "phenylalanine",
       "selenium",
       "vitamin-a",
       "vitamin-b1",
@@ -5131,7 +5143,7 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 30,
+    "claim_count": 31,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000035",
@@ -5171,7 +5183,8 @@
         "WAL-CLM-LETS-000359",
         "WAL-CLM-LETS-000379",
         "WAL-CLM-LETS-000383",
-        "WAL-CLM-LETS-000417"
+        "WAL-CLM-LETS-000417",
+        "WAL-CLM-LETS-000462"
       ]
     },
     "deficiency_signs": [
@@ -5268,7 +5281,8 @@
       "psychosis",
       "reyes_syndrome",
       "shingles",
-      "spina_bifida"
+      "spina_bifida",
+      "vitiligo"
     ],
     "interacts_with": [
       "calcium",
@@ -6527,7 +6541,7 @@
     "display_name": "Phenylalanine",
     "canon_slug": "phenylalanine",
     "category": "amino_acid",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-DDDL-000067"
@@ -6539,7 +6553,8 @@
         "WAL-CLM-LETS-000320",
         "WAL-CLM-LETS-000322",
         "WAL-CLM-LETS-000371",
-        "WAL-CLM-LETS-000396"
+        "WAL-CLM-LETS-000396",
+        "WAL-CLM-LETS-000462"
       ]
     },
     "deficiency_signs": [],
@@ -6551,12 +6566,14 @@
       "inflammation",
       "insomnia",
       "multiple_sclerosis",
-      "parkinsonism"
+      "parkinsonism",
+      "vitiligo"
     ],
     "interacts_with": [
       "calcium",
       "choline",
       "chromium",
+      "copper",
       "flavonoids",
       "inositol",
       "iron",
@@ -6570,12 +6587,14 @@
       "tyrosine",
       "valine",
       "vanadium",
+      "vitamin-a",
       "vitamin-b1",
       "vitamin-b12",
       "vitamin-b2",
       "vitamin-b3",
       "vitamin-b5",
       "vitamin-b6",
+      "vitamin-b9",
       "vitamin-c",
       "vitamin-e",
       "zinc"

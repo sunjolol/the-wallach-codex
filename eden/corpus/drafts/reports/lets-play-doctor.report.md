@@ -1,60 +1,65 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_5 claim(s) drafted 2026-06-29T18:04:04+00:00. Review then run corpus_seal.py to promote._
+_6 claim(s) drafted 2026-06-29T18:08:52+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: protocol×5
+Kinds: protocol×6
 
-### WAL-CLM-LETS-000456 · protocol
-- **essentials:** — · **conditions:** toxoplasmosis · **symptoms:** —
-- **claim:** Toxoplasmosis (cat coccidia) is caused by an intermediate stage of a house-cat intestinal protozoa (Isospora bigemina; the human stage was originally named Toxoplasma gondii). It is acquired by inhaling or swallowing dust from contaminated 'kitty litter' boxes or outdoor sand piles, or from eating rare beef, and is of particular danger to pregnant women because infection causes birth defects in the fetus (brain defects, blindness, mental retardation); adult symptoms can mimic the flu. Prevention in pregnant women involves avoiding cats just before and during pregnancy and eating well-cooked meats. Treatment should include trisulfapyrimidine orally at 25 mg (1 mg/kg for children) daily for four weeks.
-- **verbatim** (offset 471145): “Treatment of "toxoplasmosis" should include
-trisulfapyrimidine orally at 25 mg (1 mg/kg for
-kids) daily for four weeks.”
+### WAL-CLM-LETS-000461 · protocol
+- **essentials:** — · **conditions:** vertigo, motion_sickness · **symptoms:** —
+- **claim:** Vertigo (dizziness, car sickness, motion sickness) is addressed under car sickness; in addition, take powdered peppercorns (Piper nigrum).
+- **verbatim** (offset 474012): “VERTIGO (dizziness, car sickness, mo-
+tion sickness): see car sickness. Take pow-
+dered peppercorns (Piper nignim).”
 
-### WAL-CLM-LETS-000457 · protocol
-- **essentials:** omega-3, chromium, selenium, vitamin-c · **conditions:** high_triglycerides · **symptoms:** —
-- **claim:** Elevated triglycerides can be a sign of diabetes as well as liver problems, and are a high risk factor for cardiovascular disease and stroke; do a six-hour glucose tolerance test, full blood chemistry, and a pulse test for food allergies. Treatment should include moderate exercise (walking), avoiding sugar and refined foods, eliminating red meat, a high-fiber raw-foods diet, essential fatty acids at 5 grams three times a day, chromium at 100-200 mcg three times a day, selenium at 500-1,000 mcg per day, plant-derived colloidal minerals, vitamin C to bowel tolerance, and the baseline nutritional supplement program.
-- **verbatim** (offset 471535): “Treatment of elevated triglycerides should
-include moderate exercise (walking), avoid-
-ance of sugar, avoidance of refined
-foods.essential fatty acids at 5 gm t.i.d., high
-fiber and raw foods diet, eliminate red meat,
-chromium at 100-200 mcg t.i.d., selenium at
-500- 1 ,000 mcg per day, plant derived colloidal
-minerals, vitamin C to bowel tolerance and die
-base line nutritional supplement program.”
+### WAL-CLM-LETS-000462 · protocol
+- **essentials:** phenylalanine, copper, vitamin-a, zinc, vitamin-b12, vitamin-b9 · **conditions:** vitiligo · **symptoms:** —
+- **claim:** Vitiligo (loss of skin color) is a loss of skin pigment, especially noticeable in dark- or black-skinned people. Treatment should include extracts of placenta, live cell therapy, PABA (para-aminobenzoic acid) at 100 mg four times a day, phenylalanine at 50 mg/kg per day, copper at 2 mg per day (and a copper bracelet), vitamin A at 300,000 IU per day as beta carotene, zinc at 50 mg three times a day, vitamin B-12 at 2,000 mcg per day, folic acid at 1 mg per day, and the baseline nutritional supplementation program including plant-derived colloidal minerals.
+- **verbatim** (offset 474228): “Treatment of vitiligo should include extracts
+of placenta, live cell therapy, PABA at 100 mg
+q.i.d., phenylalanine at 50mg/kg/day, copper
+at 2 mg per day, copper bracelet, vitamin A at
+300,000 IU pr day as beta carotene, zinc at 50
+mg t.i.d., Vitamin B - 12 at 2000 mcgs per day,
+folic acid 1 mg per day and the base line
+nutritional supplementation program to in-
+clude plant derived colloidal minerals.”
 
-### WAL-CLM-LETS-000458 · protocol
-- **essentials:** vitamin-b6, vitamin-a, zinc, flavonoids · **conditions:** peptic_ulcers · **symptoms:** —
-- **claim:** Gastric (stomach) ulcers are usually brought on by decompensation from chronic stress (the adrenals give out); prevention should include stress-reduction systems (hobbies, projects, exercise). Treatment should include alfalfa (Medicago sativa) for its 'vitamin U' factor, bioflavonoids at 1,000 mg four times a day, vitamin B-6 at 100 mg three times a day, vitamin A at 300,000 IU per day as beta carotene, zinc at 20 mg three times a day, glutamine at 400 mg four times a day, avoiding alcohol, sugar, and refined foods, and a high-nutrition fiber diet; antibiotics are preferred over surgery. Any sign of 'coffee grounds' vomiting signals a hemorrhaging ulcer — get to an emergency room immediately.
-- **verbatim** (offset 472131): “Treatment of gastric ulcers should include
-alfalfa (Medicago sadva), for its "vitamin U"
-factor, bioflavonoids at 1,000 mg q.i.d., B-6 at
-100 mg t.i.d., vitamin A at 300,000 IU per day
-as beta carotene, zinc at 20 mg t.i.d., glutamine
-at 400 mg q.i.d.”
+### WAL-CLM-LETS-000463 · protocol
+- **essentials:** — · **conditions:** warts · **symptoms:** —
+- **claim:** Warts (papillomas) are contagious viral benign skin tumors — common warts (verrucae vulgaris), plantar warts (on the sole of the foot), and venereal warts (condylomata acuminata, found on the vulva and penis). Treatment should include topical application of cashew nut (Anacardium occidentale), oil of yellow cedar (Thuja occidentalis), and milkweed juice; commercial wart-removal kits from the pharmacy employ salicylic acid topically.
+- **verbatim** (offset 474845): “Treatment of warts should include topical
+application of cashew nut (Anacardium
+occidentale), oil of yellow cedar (Thuja
+occidentalis) and milk-weed juice. There are
+commercial wart removal kits available from
+your pharmacy that employ salacylic acid
+topically.”
 
-### WAL-CLM-LETS-000459 · protocol
-- **essentials:** — · **conditions:** vaginitis · **symptoms:** —
-- **claim:** Vaginitis (vaginal discharge) can be caused by a great variety of diseases — non-ventilated panty-hose, parasites (Trichomonas vaginalis), yeast infections (Candida albicans), venereal disease (gonorrhea, syphilis), etc. — so diagnosis of the specific underlying disease (history, vaginal cultures) is essential to correct therapy. For nonspecific vaginitis, treatment may include hydrogen peroxide douches twice weekly, vinegar douches (two tablespoons per pint of warm water), yogurt douches, and herbs including myrtle (Myrica cerifera) and blue cohosh (Caulophyllum thalictroides).
-- **verbatim** (offset 473159): “Treatment of vaginitis should include specific
-therapy following diagnostic procedures (see
-specific diseases). For nonspecific vaginitis
-you may use hydrogen peroxide douches
-twice weekly, vinegar douches (two tbsp./
-pint of warm water), yogurt douches and
-herbs to include myrtle (Myrica cerifera) and
-blue cohosh (Caulophyllum thalictroides).”
+### WAL-CLM-LETS-000464 · protocol
+- **essentials:** zinc · **conditions:** white_spots_fingernails · **symptoms:** —
+- **claim:** White spots on the fingernails are caused by zinc deficiency. Treatment should include zinc at 50 mg three times a day and the baseline nutritional program including plant-derived colloidal minerals.
+- **verbatim** (offset 475130): “WHITE SPOTS, FINGERNAILS: are caused
+by zinc deficiency.
+Treatment should include zinc at 50 mg t.i.d.;
+take the base line nutritional program to in-
+clude plant derived colloidal minerals.”
 
-### WAL-CLM-LETS-000460 · protocol
-- **essentials:** vitamin-c, vitamin-e, zinc, copper, flavonoids · **conditions:** varicose_veins · **symptoms:** —
-- **claim:** Varicose veins are thought to be caused by constipation and constant vertical posture; copper deficiency may also contribute. Treatment should include vitamin C to bowel tolerance, vitamin E at 800-1,200 IU per day, zinc at 50 mg three times a day, bioflavonoids at 600 mg three times a day, DMSO, hydrotherapy, copper at 2 mg per day (try a copper bracelet), and herbs including marigold (Calendula officinalis) applied topically, rue (Ruta graveolens), and yellow sweet clover (Melilotus officinalis).
-- **verbatim** (offset 473646): “Treatment of varicose veins should include
-vitamin C to bowel tolerance, vitamin E at 800-
-1,200 IU per day, zinc at 50 mg t.i.d.,
-bioflavonoids at 600 mg t.i.d., DMSO, hydro-
-therapy, copper at 2 mg per day (tiy a copper
-bracelet) and herbs including marigold (Calen-
-dula officinalis) topically, aie (Ruta graveolens),
-yellow sweet clover (Uelilotus officinalis).”
+### WAL-CLM-LETS-000465 · protocol
+- **essentials:** — · **conditions:** parasites · **symptoms:** —
+- **claim:** Worms (parasites) are addressed under parasites. Treatment may include wormwood (Artemisia absinthium) and butternut (Juglans cinerea); Levamisol is a good veterinary 'wormer' that can be used very effectively in humans with minimal to no side effects.
+- **verbatim** (offset 475353): “Treatment may include wormwood (Artemi-
+sia absinthium), and butternut (Juglans
+cinerea). Levamisol is a good veterinary”
+
+### WAL-CLM-LETS-000466 · protocol
+- **essentials:** — · **conditions:** wounds · **symptoms:** —
+- **claim:** Wounds (chronic ulcers) can be treated topically with herbs including euphorbia (Chamaesyce spp.), cliff rose (Allionia coccinea), arnica (Arnica montana), snake root (Aristolochia clematitis), German chamomile (Matricaria chamomilla), marigold (Calendula officinalis), snake root (Sanicula europaea), and witch hazel (Hamamelis virginiana).
+- **verbatim** (offset 475564): “WOUNDS (chronic ulcers): treat topically
+with herbs including euphorbia (Chamaesyce
+spp.), cliff rose (Allionia coccinea), arnica
+(Arnica montana), snake root (Aristolochia
+clematitis), German chamomile (Matricaria
+chamomilla), marigold (Calendula officinalis),
+snake root (Sanicula europaea) and witch
+hazel (Hamamelis virginiana)”
 

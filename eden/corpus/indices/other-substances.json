@@ -369,9 +369,24 @@
       "lets-play-doctor"
     ]
   },
+  "aristolochia": {
+    "display_name": "Aristolochia",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000466"
+      ]
+    },
+    "conditions_treated": [
+      "wounds"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "arnica": {
     "display_name": "Arnica",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000152",
@@ -379,7 +394,8 @@
         "WAL-CLM-LETS-000285",
         "WAL-CLM-LETS-000399",
         "WAL-CLM-LETS-000435",
-        "WAL-CLM-LETS-000437"
+        "WAL-CLM-LETS-000437",
+        "WAL-CLM-LETS-000466"
       ]
     },
     "conditions_treated": [
@@ -390,7 +406,8 @@
       "phlebitis",
       "sprain",
       "strain",
-      "varicose_veins"
+      "varicose_veins",
+      "wounds"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1154,6 +1171,21 @@
       "lets-play-doctor"
     ]
   },
+  "butternut": {
+    "display_name": "Butternut",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000465"
+      ]
+    },
+    "conditions_treated": [
+      "parasites"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "cabbage-juice": {
     "display_name": "Cabbage Juice",
     "claim_count": 1,
@@ -1381,6 +1413,21 @@
       "constipation",
       "phlebitis",
       "varicose_veins"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "cashew-nut": {
+    "display_name": "Cashew Nut",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000463"
+      ]
+    },
+    "conditions_treated": [
+      "warts"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1663,6 +1710,21 @@
       "lets-play-doctor"
     ]
   },
+  "cliff-rose": {
+    "display_name": "Cliff Rose",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000466"
+      ]
+    },
+    "conditions_treated": [
+      "wounds"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "clove-root": {
     "display_name": "Clove Root",
     "claim_count": 1,
@@ -1712,7 +1774,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 50,
+    "claim_count": 52,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-LETS-000352"
@@ -1766,7 +1828,9 @@
         "WAL-CLM-LETS-000439",
         "WAL-CLM-LETS-000448",
         "WAL-CLM-LETS-000451",
-        "WAL-CLM-LETS-000457"
+        "WAL-CLM-LETS-000457",
+        "WAL-CLM-LETS-000462",
+        "WAL-CLM-LETS-000464"
       ]
     },
     "conditions_treated": [
@@ -1829,7 +1893,9 @@
       "stroke",
       "testicular_atrophy",
       "tinnitus",
-      "weight_loss"
+      "vitiligo",
+      "weight_loss",
+      "white_spots_fingernails"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2636,6 +2702,21 @@
       "lets-play-doctor"
     ]
   },
+  "euphorbia": {
+    "display_name": "Euphorbia",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000466"
+      ]
+    },
+    "conditions_treated": [
+      "wounds"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "european-holly": {
     "display_name": "European Holly",
     "claim_count": 2,
@@ -2655,15 +2736,17 @@
   },
   "european-snakeroot": {
     "display_name": "European Snakeroot",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000262"
+        "WAL-CLM-LETS-000262",
+        "WAL-CLM-LETS-000466"
       ]
     },
     "conditions_treated": [
       "eczema",
-      "psoriasis"
+      "psoriasis",
+      "wounds"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3104,7 +3187,7 @@
   },
   "german-chamomile": {
     "display_name": "German Chamomile",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000262",
@@ -3115,7 +3198,8 @@
         "WAL-CLM-LETS-000397",
         "WAL-CLM-LETS-000434",
         "WAL-CLM-LETS-000447",
-        "WAL-CLM-LETS-000452"
+        "WAL-CLM-LETS-000452",
+        "WAL-CLM-LETS-000466"
       ]
     },
     "conditions_treated": [
@@ -3130,7 +3214,8 @@
       "sore_throat",
       "sty",
       "teething",
-      "tonsillitis"
+      "tonsillitis",
+      "wounds"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4239,14 +4324,16 @@
   },
   "levamisol": {
     "display_name": "Levamisol",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000126"
+        "WAL-CLM-LETS-000126",
+        "WAL-CLM-LETS-000465"
       ]
     },
     "conditions_treated": [
-      "aids"
+      "aids",
+      "parasites"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4460,14 +4547,15 @@
   },
   "marigold": {
     "display_name": "Marigold",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000134",
         "WAL-CLM-LETS-000173",
         "WAL-CLM-LETS-000262",
         "WAL-CLM-LETS-000353",
-        "WAL-CLM-LETS-000460"
+        "WAL-CLM-LETS-000460",
+        "WAL-CLM-LETS-000466"
       ]
     },
     "conditions_treated": [
@@ -4476,7 +4564,8 @@
       "eczema",
       "measles",
       "psoriasis",
-      "varicose_veins"
+      "varicose_veins",
+      "wounds"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4653,13 +4742,18 @@
   },
   "milkweed": {
     "display_name": "Milkweed",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-LETS-000336"
+      ],
+      "protocol": [
+        "WAL-CLM-LETS-000463"
       ]
     },
-    "conditions_treated": [],
+    "conditions_treated": [
+      "warts"
+    ],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -5102,21 +5196,23 @@
   },
   "paba": {
     "display_name": "Paba",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000022"
       ],
       "protocol": [
         "WAL-CLM-LETS-000242",
-        "WAL-CLM-LETS-000245"
+        "WAL-CLM-LETS-000245",
+        "WAL-CLM-LETS-000462"
       ]
     },
     "conditions_treated": [
       "dandruff",
       "depression",
       "dermatitis",
-      "eczema"
+      "eczema",
+      "vitiligo"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5431,14 +5527,17 @@
   },
   "pepper": {
     "display_name": "Pepper",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000278"
+        "WAL-CLM-LETS-000278",
+        "WAL-CLM-LETS-000461"
       ]
     },
     "conditions_treated": [
-      "flatulence"
+      "flatulence",
+      "motion_sickness",
+      "vertigo"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5555,6 +5654,21 @@
       "dementia",
       "korsakoffs_syndrome",
       "memory_loss"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "placenta-extract": {
+    "display_name": "Placenta Extract",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000462"
+      ]
+    },
+    "conditions_treated": [
+      "vitiligo"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -6037,6 +6151,21 @@
     },
     "conditions_treated": [
       "abscess"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "salicylic-acid": {
+    "display_name": "Salicylic Acid",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000463"
+      ]
+    },
+    "conditions_treated": [
+      "warts"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -7139,16 +7268,18 @@
   },
   "witch-hazel": {
     "display_name": "Witch Hazel",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000173",
-        "WAL-CLM-LETS-000297"
+        "WAL-CLM-LETS-000297",
+        "WAL-CLM-LETS-000466"
       ]
     },
     "conditions_treated": [
       "bruises",
-      "hemorrhoids"
+      "hemorrhoids",
+      "wounds"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -7156,19 +7287,21 @@
   },
   "wormwood": {
     "display_name": "Wormwood",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000279",
         "WAL-CLM-LETS-000283",
-        "WAL-CLM-LETS-000321"
+        "WAL-CLM-LETS-000321",
+        "WAL-CLM-LETS-000465"
       ]
     },
     "conditions_treated": [
       "dyspepsia",
       "gallstones",
       "indigestion",
-      "influenza"
+      "influenza",
+      "parasites"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -7205,6 +7338,21 @@
       "hemorrhoids",
       "measles",
       "menorrhagia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "yellow-cedar": {
+    "display_name": "Yellow Cedar",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000463"
+      ]
+    },
+    "conditions_treated": [
+      "warts"
     ],
     "books_cited": [
       "lets-play-doctor"

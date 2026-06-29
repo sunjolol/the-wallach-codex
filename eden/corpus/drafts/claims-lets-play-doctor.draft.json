@@ -18365,6 +18365,234 @@
       "extracted_at": "2026-06-29T18:04:04+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000461",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "pepper"
+      ],
+      "conditions": [
+        "vertigo",
+        "motion_sickness"
+      ],
+      "symptoms": [],
+      "claim_text": "Vertigo (dizziness, car sickness, motion sickness) is addressed under car sickness; in addition, take powdered peppercorns (Piper nigrum).",
+      "verbatim": "VERTIGO (dizziness, car sickness, mo-\ntion sickness): see car sickness. Take pow-\ndered peppercorns (Piper nignim).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 174,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 474012
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T18:08:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000462",
+      "kind": "protocol",
+      "essentials": [
+        "phenylalanine",
+        "copper",
+        "vitamin-a",
+        "zinc",
+        "vitamin-b12",
+        "vitamin-b9"
+      ],
+      "other_substances": [
+        "placenta-extract",
+        "paba",
+        "colloidal-minerals"
+      ],
+      "conditions": [
+        "vitiligo"
+      ],
+      "symptoms": [],
+      "claim_text": "Vitiligo (loss of skin color) is a loss of skin pigment, especially noticeable in dark- or black-skinned people. Treatment should include extracts of placenta, live cell therapy, PABA (para-aminobenzoic acid) at 100 mg four times a day, phenylalanine at 50 mg/kg per day, copper at 2 mg per day (and a copper bracelet), vitamin A at 300,000 IU per day as beta carotene, zinc at 50 mg three times a day, vitamin B-12 at 2,000 mcg per day, folic acid at 1 mg per day, and the baseline nutritional supplementation program including plant-derived colloidal minerals.",
+      "verbatim": "Treatment of vitiligo should include extracts\nof placenta, live cell therapy, PABA at 100 mg\nq.i.d., phenylalanine at 50mg/kg/day, copper\nat 2 mg per day, copper bracelet, vitamin A at\n300,000 IU pr day as beta carotene, zinc at 50\nmg t.i.d., Vitamin B - 12 at 2000 mcgs per day,\nfolic acid 1 mg per day and the base line\nnutritional supplementation program to in-\nclude plant derived colloidal minerals.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 174,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 474228
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T18:08:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000463",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "cashew-nut",
+        "yellow-cedar",
+        "milkweed",
+        "salicylic-acid"
+      ],
+      "conditions": [
+        "warts"
+      ],
+      "symptoms": [],
+      "claim_text": "Warts (papillomas) are contagious viral benign skin tumors — common warts (verrucae vulgaris), plantar warts (on the sole of the foot), and venereal warts (condylomata acuminata, found on the vulva and penis). Treatment should include topical application of cashew nut (Anacardium occidentale), oil of yellow cedar (Thuja occidentalis), and milkweed juice; commercial wart-removal kits from the pharmacy employ salicylic acid topically.",
+      "verbatim": "Treatment of warts should include topical\napplication of cashew nut (Anacardium\noccidentale), oil of yellow cedar (Thuja\noccidentalis) and milk-weed juice. There are\ncommercial wart removal kits available from\nyour pharmacy that employ salacylic acid\ntopically.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 174,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 474845
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T18:08:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000464",
+      "kind": "protocol",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [
+        "colloidal-minerals"
+      ],
+      "conditions": [
+        "white_spots_fingernails"
+      ],
+      "symptoms": [],
+      "claim_text": "White spots on the fingernails are caused by zinc deficiency. Treatment should include zinc at 50 mg three times a day and the baseline nutritional program including plant-derived colloidal minerals.",
+      "verbatim": "WHITE SPOTS, FINGERNAILS: are caused\nby zinc deficiency.\nTreatment should include zinc at 50 mg t.i.d.;\ntake the base line nutritional program to in-\nclude plant derived colloidal minerals.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 174,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 475130
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T18:08:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000465",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "wormwood",
+        "butternut",
+        "levamisol"
+      ],
+      "conditions": [
+        "parasites"
+      ],
+      "symptoms": [],
+      "claim_text": "Worms (parasites) are addressed under parasites. Treatment may include wormwood (Artemisia absinthium) and butternut (Juglans cinerea); Levamisol is a good veterinary 'wormer' that can be used very effectively in humans with minimal to no side effects.",
+      "verbatim": "Treatment may include wormwood (Artemi-\nsia absinthium), and butternut (Juglans\ncinerea). Levamisol is a good veterinary",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 174,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 475353
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T18:08:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000466",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "euphorbia",
+        "cliff-rose",
+        "arnica",
+        "aristolochia",
+        "german-chamomile",
+        "marigold",
+        "european-snakeroot",
+        "witch-hazel"
+      ],
+      "conditions": [
+        "wounds"
+      ],
+      "symptoms": [],
+      "claim_text": "Wounds (chronic ulcers) can be treated topically with herbs including euphorbia (Chamaesyce spp.), cliff rose (Allionia coccinea), arnica (Arnica montana), snake root (Aristolochia clematitis), German chamomile (Matricaria chamomilla), marigold (Calendula officinalis), snake root (Sanicula europaea), and witch hazel (Hamamelis virginiana).",
+      "verbatim": "WOUNDS (chronic ulcers): treat topically\nwith herbs including euphorbia (Chamaesyce\nspp.), cliff rose (Allionia coccinea), arnica\n(Arnica montana), snake root (Aristolochia\nclematitis), German chamomile (Matricaria\nchamomilla), marigold (Calendula officinalis),\nsnake root (Sanicula europaea) and witch\nhazel (Hamamelis virginiana)",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 174,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 475564
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T18:08:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

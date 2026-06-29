@@ -7407,15 +7407,17 @@
   },
   "motion_sickness": {
     "display_name": "Motion Sickness",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000206"
+        "WAL-CLM-LETS-000206",
+        "WAL-CLM-LETS-000461"
       ]
     },
     "essentials_involved": [],
     "other_substances_involved": [
       "dramamine",
+      "pepper",
       "scopolamine"
     ],
     "books_cited": [
@@ -8224,20 +8226,24 @@
   },
   "parasites": {
     "display_name": "Parasites",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000395"
+        "WAL-CLM-LETS-000395",
+        "WAL-CLM-LETS-000465"
       ]
     },
     "essentials_involved": [],
     "other_substances_involved": [
+      "butternut",
       "garlic",
+      "levamisol",
       "metronidazole",
       "niclosamide",
       "peach",
       "pyrantel-pamoate",
-      "walnut"
+      "walnut",
+      "wormwood"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -10389,17 +10395,23 @@
   },
   "vertigo": {
     "display_name": "Vertigo",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000172"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000461"
       ]
     },
     "essentials_involved": [
       "magnesium"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "pepper"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -10439,16 +10451,28 @@
   },
   "vitiligo": {
     "display_name": "Vitiligo",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000010"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000462"
       ]
     },
     "essentials_involved": [
-      "vitamin-b9"
+      "copper",
+      "phenylalanine",
+      "vitamin-a",
+      "vitamin-b12",
+      "vitamin-b9",
+      "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "colloidal-minerals",
+      "paba",
+      "placenta-extract"
+    ],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -10467,6 +10491,25 @@
       "kaopectate",
       "peppermint",
       "pepto-bismol"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "warts": {
+    "display_name": "Warts",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000463"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "cashew-nut",
+      "milkweed",
+      "salicylic-acid",
+      "yellow-cedar"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -10561,6 +10604,47 @@
     "books_cited": [
       "dddl-3e-2011",
       "rare-earths"
+    ]
+  },
+  "white_spots_fingernails": {
+    "display_name": "White Spots Fingernails",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000464"
+      ]
+    },
+    "essentials_involved": [
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "colloidal-minerals"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "wounds": {
+    "display_name": "Wounds",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000466"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "aristolochia",
+      "arnica",
+      "cliff-rose",
+      "euphorbia",
+      "european-snakeroot",
+      "german-chamomile",
+      "marigold",
+      "witch-hazel"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "xerophthalmia": {
