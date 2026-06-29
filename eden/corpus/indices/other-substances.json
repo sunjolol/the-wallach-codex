@@ -403,7 +403,7 @@
   },
   "b-complex": {
     "display_name": "B Complex",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000202",
@@ -414,7 +414,8 @@
         "WAL-CLM-LETS-000305",
         "WAL-CLM-LETS-000307",
         "WAL-CLM-LETS-000348",
-        "WAL-CLM-LETS-000356"
+        "WAL-CLM-LETS-000356",
+        "WAL-CLM-LETS-000369"
       ]
     },
     "conditions_treated": [
@@ -431,7 +432,8 @@
       "korsakoffs_syndrome",
       "liver_cirrhosis",
       "liver_disease",
-      "memory_loss"
+      "memory_loss",
+      "morning_sickness"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1988,6 +1990,21 @@
       "lets-play-doctor"
     ]
   },
+  "dogwood": {
+    "display_name": "Dogwood",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000369"
+      ]
+    },
+    "conditions_treated": [
+      "morning_sickness"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "dramamine": {
     "display_name": "Dramamine",
     "claim_count": 1,
@@ -2048,7 +2065,7 @@
   },
   "edta-chelation": {
     "display_name": "Edta Chelation",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000139",
@@ -2063,7 +2080,8 @@
         "WAL-CLM-LETS-000340",
         "WAL-CLM-LETS-000348",
         "WAL-CLM-LETS-000350",
-        "WAL-CLM-LETS-000361"
+        "WAL-CLM-LETS-000361",
+        "WAL-CLM-LETS-000367"
       ]
     },
     "conditions_treated": [
@@ -2083,6 +2101,7 @@
       "liver_disease",
       "lupus",
       "mercury_poisoning",
+      "monckebergs_arteriosclerosis",
       "plumbism",
       "rheumatoid_arthritis",
       "stroke"
@@ -2833,20 +2852,22 @@
   },
   "hawthorn": {
     "display_name": "Hawthorn",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000139",
         "WAL-CLM-LETS-000229",
         "WAL-CLM-LETS-000253",
-        "WAL-CLM-LETS-000306"
+        "WAL-CLM-LETS-000306",
+        "WAL-CLM-LETS-000366"
       ]
     },
     "conditions_treated": [
       "angina",
       "congestive_heart_failure",
       "dropsy",
-      "hypertension"
+      "hypertension",
+      "mitral_valve_prolapse"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3968,6 +3989,21 @@
     },
     "conditions_treated": [
       "alopecia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "mint": {
+    "display_name": "Mint",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000369"
+      ]
+    },
+    "conditions_treated": [
+      "morning_sickness"
     ],
     "books_cited": [
       "lets-play-doctor"

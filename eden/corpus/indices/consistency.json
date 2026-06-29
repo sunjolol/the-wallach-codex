@@ -1123,5 +1123,27 @@
     ],
     "books_repeating": 2,
     "claim_count": 6
+  },
+  {
+    "id": "CG-0043",
+    "essentials": [
+      "zinc"
+    ],
+    "conditions": [
+      "down_syndrome"
+    ],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-LETS-000368",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000045",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
   }
 ]

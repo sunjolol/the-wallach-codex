@@ -288,7 +288,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 64,
+    "claim_count": 65,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -357,6 +357,7 @@
         "WAL-CLM-LETS-000321",
         "WAL-CLM-LETS-000326",
         "WAL-CLM-LETS-000332",
+        "WAL-CLM-LETS-000366",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -518,6 +519,7 @@
       "malabsorption",
       "menopause",
       "migraine",
+      "mitral_valve_prolapse",
       "muscle_cramps",
       "osteoporosis",
       "panic_attacks",
@@ -2187,7 +2189,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 75,
+    "claim_count": 77,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2269,6 +2271,8 @@
         "WAL-CLM-LETS-000357",
         "WAL-CLM-LETS-000361",
         "WAL-CLM-LETS-000365",
+        "WAL-CLM-LETS-000366",
+        "WAL-CLM-LETS-000367",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2370,6 +2374,8 @@
       "menorrhagia",
       "mercury_poisoning",
       "miscarriage",
+      "mitral_valve_prolapse",
+      "monckebergs_arteriosclerosis",
       "multiple_sclerosis",
       "muscular_dystrophy",
       "osteoporosis",
@@ -2641,7 +2647,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 87,
+    "claim_count": 88,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2739,6 +2745,7 @@
         "WAL-CLM-LETS-000329",
         "WAL-CLM-LETS-000359",
         "WAL-CLM-LETS-000365",
+        "WAL-CLM-LETS-000368",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -4522,7 +4529,7 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 37,
+    "claim_count": 38,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000027",
@@ -4564,6 +4571,7 @@
         "WAL-CLM-LETS-000310",
         "WAL-CLM-LETS-000326",
         "WAL-CLM-LETS-000332",
+        "WAL-CLM-LETS-000369",
         "WAL-CLM-RARE-000286"
       ],
       "toxicity_sign": [
@@ -4694,6 +4702,7 @@
       "joint_pain",
       "kidney_disease",
       "kidney_stones",
+      "morning_sickness",
       "panic_attacks",
       "peripheral_neuropathy",
       "rheumatoid_arthritis",
@@ -5051,7 +5060,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 57,
+    "claim_count": 58,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -5116,7 +5125,8 @@
         "WAL-CLM-LETS-000325",
         "WAL-CLM-LETS-000340",
         "WAL-CLM-LETS-000348",
-        "WAL-CLM-LETS-000364"
+        "WAL-CLM-LETS-000364",
+        "WAL-CLM-LETS-000367"
       ]
     },
     "deficiency_signs": [
@@ -5238,6 +5248,7 @@
       "liver_cirrhosis",
       "liver_disease",
       "migraine",
+      "monckebergs_arteriosclerosis",
       "periodontal_disease",
       "plumbism",
       "psoriasis",
@@ -6320,7 +6331,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 60,
+    "claim_count": 62,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -6387,6 +6398,8 @@
         "WAL-CLM-LETS-000348",
         "WAL-CLM-LETS-000350",
         "WAL-CLM-LETS-000357",
+        "WAL-CLM-LETS-000366",
+        "WAL-CLM-LETS-000369",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -6480,6 +6493,8 @@
       "liver_disease",
       "lupus",
       "menorrhagia",
+      "mitral_valve_prolapse",
+      "morning_sickness",
       "pruritus",
       "psoriasis",
       "weight_loss"

@@ -3781,7 +3781,7 @@
   },
   "down_syndrome": {
     "display_name": "Down Syndrome",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000016",
@@ -3791,6 +3791,7 @@
         "WAL-CLM-RARE-000262"
       ],
       "protocols": [
+        "WAL-CLM-LETS-000368",
         "WAL-CLM-RARE-000045"
       ]
     },
@@ -3799,6 +3800,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -7204,6 +7206,66 @@
       "dddl-3e-2011",
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "mitral_valve_prolapse": {
+    "display_name": "Mitral Valve Prolapse",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000366"
+      ]
+    },
+    "essentials_involved": [
+      "magnesium",
+      "omega-3",
+      "selenium"
+    ],
+    "other_substances_involved": [
+      "hawthorn"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "monckebergs_arteriosclerosis": {
+    "display_name": "Monckebergs Arteriosclerosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000367"
+      ]
+    },
+    "essentials_involved": [
+      "selenium",
+      "vitamin-c"
+    ],
+    "other_substances_involved": [
+      "edta-chelation"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "morning_sickness": {
+    "display_name": "Morning Sickness",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000369"
+      ]
+    },
+    "essentials_involved": [
+      "omega-3",
+      "vitamin-b6"
+    ],
+    "other_substances_involved": [
+      "b-complex",
+      "dogwood",
+      "mint"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "motion_sickness": {

@@ -14698,6 +14698,154 @@
       "extracted_at": "2026-06-29T04:14:04+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000366",
+      "kind": "protocol",
+      "essentials": [
+        "selenium",
+        "magnesium",
+        "omega-3"
+      ],
+      "other_substances": [
+        "hawthorn"
+      ],
+      "conditions": [
+        "mitral_valve_prolapse"
+      ],
+      "symptoms": [],
+      "claim_text": "Mitral valve prolapse is a common, progressive change in the left atrioventricular (mitral) valve and the surrounding heart tissue. Most people have no symptoms; some have non-anginal chest pain, palpitations, fatigue and/or breathing problems, and a late systolic heart murmur is sometimes heard during squatting exercises. If you have no symptoms, your activities need not be restricted. Wallach's treatment is selenium at 500 to 1,000 micrograms a day, magnesium at 1,000 milligrams three times a day, salmon oil (a source of omega-3 essential fatty acids) at 1 to 5 grams three times a day and the herb hawthorne (Crataegus oxyacantha), in addition to the baseline nutritional supplement program. He says you can expect significant improvement in 30 to 60 days.",
+      "verbatim": "Treatment of mitral valve prolapse should\ninclude selenium at 500-1 ,000 mcg/day, mag-\nnesium at 1,000 mg t.i.d. and salmon oil at 1-\n5 gm t.i.d. and hawthorne (Crataegus\noxyacantha).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 149,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 391879
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T05:00:38+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000367",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "selenium"
+      ],
+      "other_substances": [
+        "edta-chelation"
+      ],
+      "conditions": [
+        "monckebergs_arteriosclerosis"
+      ],
+      "symptoms": [],
+      "claim_text": "Monckeberg's arteriosclerosis is a circular calcification of the media — the middle muscular/elastic layer — of the small arteries. Wallach says this disease is caused by excess vitamin D (hypervitaminosis D), and its symptoms include high blood pressure (hypertension) and angina. His treatment is EDTA chelation, vitamin C to bowel tolerance, selenium at 500 to 1,000 micrograms a day and the baseline nutritional supplement program.",
+      "verbatim": "Treatment of Monkeberg's arterio sclerosis\nshould include EDTA chelation, vitamin C to\nbowel tolerance, selenium at 500-1,000 mcg\nper day and the base line nutritional supple-\nment program.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 149,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 392399
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T05:00:38+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000368",
+      "kind": "protocol",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "down_syndrome"
+      ],
+      "symptoms": [],
+      "claim_text": "Mongolism (Down's syndrome) is a birth defect that Wallach attributes to a zinc deficiency in the earliest moments of conception (he notes one third of the extra chromosome comes from the father). Orthodox doctors instead view it as a chromosomal defect whose risk rises with the mother's age. Newborns are 'floppy', lacking muscle tone; physical and mental maturation is delayed (average intelligence quotient, or IQ, around 50), with a small domed-forehead head, a flattened nose bridge, slanted eyes with epicanthal folds, and Brushfield's spots around the iris. Prevention: follow the baseline nutritional supplement program for 90 days before attempting conception and use the pulse test to find and eliminate the food allergies that block zinc absorption. Treatment: zinc at 50 milligrams three times a day plus the baseline program, again using the pulse test to identify and avoid offending foods. Wallach says you can expect the intelligence quotient to rise by 15 to 20 points and physical features to improve as long as the program is followed; stopping it loses all the gains.",
+      "verbatim": "MONGOLISM (Down's syndrome): is a\nbirth defect caused by a zinc deficiency in the\nearliest moments of conception (one third of\nthe extra chromosome comes from the pater-\nnal parent).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 149,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 392589
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T05:00:38+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000369",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b6",
+        "omega-3"
+      ],
+      "other_substances": [
+        "b-complex",
+        "dogwood",
+        "mint"
+      ],
+      "conditions": [
+        "morning_sickness"
+      ],
+      "symptoms": [],
+      "claim_text": "Morning sickness is the nausea that occurs in the first three months of pregnancy as progesterone levels rise. Wallach says eating a complex-carbohydrate or protein snack on awakening relieves much of the nausea. He also suggests herbal teas of dogwood (Cornus sericea) and mint (Mentha sativa); vitamin B-6 together with a B-complex at 25 milligrams three times a day; essential fatty acids (omega-3) at 1,000 milligrams three times a day; and the baseline nutritional supplement program.",
+      "verbatim": "Having\na complex carbohydrate or protein snack upon\nawakening will relieve much of the nausea;\nherbal tea such as dogwood(Cornus sericea)\nand mint (Mentha sativa); B-6 and B-complex\nat 25 mg t.i.d., essential fatty acids at 1,000 mg\nt.i.d. and the base line nutritional supplement.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 150,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 394379
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T05:00:38+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

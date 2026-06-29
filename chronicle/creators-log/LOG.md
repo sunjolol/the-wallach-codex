@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_184 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_185 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-29 00:03 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b53 (Materia Medica, the M's, p149-150): 4 tier-1 protocol claims LETS-366..369 — mitral_valve_prolapse, monckebergs_arteriosclerosis, down_syndrome (Mongolism), morning_sickness. 2 render-verified meg→mcg selenium fixes. corpus 745→749, kv 163→164, board 31/31.
+  ↳ MITRAL VALVE PROLAPSE→MORNING SICKNESS. mitral_valve_prolapse: selenium 500-1,000 mcg/day + magnesium 1,000 mg t.i.d. + salmon oil(omega-3) 1-5 gm + hawthorne. monckebergs_arteriosclerosis: hypervitaminosis-D cause; EDTA chelation + vit C + selenium 500-1,000 mcg/day. down_syndrome(MONGOLISM): zinc-deficiency-at-conception thesis; baseline 90d pre-conception, zinc 50 mg t.i.d., IQ +15-20; reused cross-book slug. morning_sickness: snack on waking + dogwood/mint tea + B-6/B-complex 25 mg + EFA(omega-3) 1,000 mg. 2 meg→mcg selenium fixes (600-DPI verified, length-preserving, fix_txt→resnap). dogwood+mint NEW other-subs. No editorial STOP (birth-defect w/ protocol = tier-1). Pipeline green: seal kv164, embed 749 claims/371 conds, build 1472.3KB, invariants 31/31, render_probe_knowledge PASS.
 
 ## 2026-06-28 23:29 UTC-05:00 · session-end · chronicle
 SESSION 20 WRAPPED — Ch10 Materia Medica, 4 batches b49-b52 (LIVER DISEASE→MISCARRIAGE): L section done + M's pt 1-3. 18 claims LETS-348..365, corpus 727→745, conditions→368, kv163. Rulings: rubella tier-1, METABOLIC THERAPY search-only. Board 31/31. NEXT=b53.
