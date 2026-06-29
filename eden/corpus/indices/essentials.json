@@ -2178,7 +2178,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 69,
+    "claim_count": 71,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2254,6 +2254,8 @@
         "WAL-CLM-LETS-000325",
         "WAL-CLM-LETS-000334",
         "WAL-CLM-LETS-000340",
+        "WAL-CLM-LETS-000348",
+        "WAL-CLM-LETS-000350",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2346,6 +2348,7 @@
       "lead_poisoning",
       "liver_cirrhosis",
       "liver_disease",
+      "lupus",
       "miscarriage",
       "multiple_sclerosis",
       "muscular_dystrophy",
@@ -3677,7 +3680,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 39,
+    "claim_count": 40,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -3721,7 +3724,8 @@
         "WAL-CLM-LETS-000325",
         "WAL-CLM-LETS-000328",
         "WAL-CLM-LETS-000329",
-        "WAL-CLM-LETS-000332"
+        "WAL-CLM-LETS-000332",
+        "WAL-CLM-LETS-000348"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000037"
@@ -3819,6 +3823,8 @@
       "keratosis",
       "kidney_disease",
       "kidney_stones",
+      "liver_cirrhosis",
+      "liver_disease",
       "night_blindness",
       "pruritus",
       "psoriasis",
@@ -4706,7 +4712,7 @@
     "display_name": "Folate",
     "canon_slug": "vitamin-b9",
     "category": "vitamin",
-    "claim_count": 16,
+    "claim_count": 17,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000042",
@@ -4728,7 +4734,8 @@
         "WAL-CLM-LETS-000284",
         "WAL-CLM-LETS-000288",
         "WAL-CLM-LETS-000298",
-        "WAL-CLM-LETS-000323"
+        "WAL-CLM-LETS-000323",
+        "WAL-CLM-LETS-000348"
       ]
     },
     "deficiency_signs": [
@@ -4796,6 +4803,8 @@
       "hepatitis",
       "insomnia",
       "irritable_bowel_syndrome",
+      "liver_cirrhosis",
+      "liver_disease",
       "paranoia",
       "psoriasis",
       "spina_bifida",
@@ -4833,7 +4842,7 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 25,
+    "claim_count": 26,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000035",
@@ -4868,7 +4877,8 @@
         "WAL-CLM-LETS-000267",
         "WAL-CLM-LETS-000284",
         "WAL-CLM-LETS-000298",
-        "WAL-CLM-LETS-000300"
+        "WAL-CLM-LETS-000300",
+        "WAL-CLM-LETS-000348"
       ]
     },
     "deficiency_signs": [
@@ -4953,6 +4963,8 @@
       "epilepsy",
       "geographic_tongue",
       "hepatitis",
+      "liver_cirrhosis",
+      "liver_disease",
       "peripheral_neuropathy",
       "pernicious_anemia",
       "psychosis",
@@ -4999,7 +5011,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 55,
+    "claim_count": 56,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -5062,7 +5074,8 @@
         "WAL-CLM-LETS-000318",
         "WAL-CLM-LETS-000320",
         "WAL-CLM-LETS-000325",
-        "WAL-CLM-LETS-000340"
+        "WAL-CLM-LETS-000340",
+        "WAL-CLM-LETS-000348"
       ]
     },
     "deficiency_signs": [
@@ -5181,6 +5194,8 @@
       "intermittent_claudication",
       "jaundice",
       "lead_poisoning",
+      "liver_cirrhosis",
+      "liver_disease",
       "periodontal_disease",
       "plumbism",
       "psoriasis",
@@ -6252,7 +6267,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 57,
+    "claim_count": 59,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -6316,6 +6331,8 @@
         "WAL-CLM-LETS-000319",
         "WAL-CLM-LETS-000320",
         "WAL-CLM-LETS-000324",
+        "WAL-CLM-LETS-000348",
+        "WAL-CLM-LETS-000350",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -6405,6 +6422,9 @@
       "inflammation",
       "itching",
       "kidney_disease",
+      "liver_cirrhosis",
+      "liver_disease",
+      "lupus",
       "pruritus",
       "psoriasis",
       "weight_loss"

@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_179 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_180 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 22:42 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b49 — LIVER DISEASE→LYME (L section COMPLETE). 4 tier-1 protocol LETS-348..351: liver_disease+cirrhosis, tetanus(lockjaw), lupus(SLE), lyme_disease; LYMPHOMA xref skipped. 3 meg→mcg fixes. kv159→160, 731 claims, conditions 353→355, board 31/31.
+  ↳ Materia Medica the L's pt 3 (printed p144-146, render-first). LIVER DISEASE: chelation+IV amino acids/interlipids+vit C/A 300k IU+B-complex+selenium 500-1,000 mcg+B-12 1,000 mcg+folic 15-25 mg+EFA 1 gm+herbs. LOCKJAW/tetanus: prevention(squeeze/H2O2/cramp bark)+antitoxin/penicillin/tetracycline. LUPUS/SLE: real autoimmune tier-1; pulse-test+urine therapy+chelation+EFA 5 gm+selenium 500-1,000 mcg+carnitine. LYME: tetracycline/penicillin. 3 render-verified meg→mcg (p145 600-DPI), all length-preserving; folic 15-25 mg + EFA gm render-confirmed faithful; ZERO dangerous misprints. M's begin with a 2-col scramble = stopped for b50. Pipeline: fix_txt→resnap(0 broken)→finalize→seal kv160→corpus_verify PASS→embed→build→invariants 31/31→knowledge probe PASS.
 
 ## 2026-06-28 22:19 UTC-05:00 · session-end · chronicle
 SESSION 19 WRAPPED — Ch10 Materia Medica, 7 batches b42-b48 (HOARSENESS→LIFE EXPECTANCY): H/I/J/K complete + L's through p144. LETS-303..347, 45 claims. corpus 682→727, conditions 319→353, kv 152→159. 5 editorial rulings, 1 dangerous misprint caught. NEXT=b49.

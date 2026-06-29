@@ -9233,8 +9233,8 @@ tion with complete IV supplementation in-
 cluding amino acids and interlipids, vita-
 minCtobowel tolerance , vitamin A at 300 ,000
 IU per day as beta carotene, B-complex at 100
-mg each t.i.d., selenium at 500-1,000 meg per
-day, B-12 at 1,000 meg per day, folic acid at 15-
+mg each t.i.d., selenium at 500-1,000 mcg per
+day, B-12 at 1,000 mcg per day, folic acid at 15-
 25 mg per day, essential fatty acids (both
 salmon oil and flaxseed oil) at 1 gm t.i.d. and
 herbs including tamarac (Larix americana),
@@ -9300,7 +9300,7 @@ allergic foods, autoimmune urine therapy,
 chelation with total nutrition for 15-25 infu-
 sions, essential fatty acids (salmon oil and
 flaxseed oil) at 5 gm t.i.d., selenium at 500-
-1,000 meg per day, B-carnitine at 500 mg pet-
+1,000 mcg per day, B-carnitine at 500 mg pet-
 day, AVOID BEEF, DAIRY AND ALFALFA.
 Consume daily doses of plant derived colloi-
 dal minerals.

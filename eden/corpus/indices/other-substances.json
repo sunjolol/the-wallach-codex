@@ -232,14 +232,17 @@
   },
   "amino-acids": {
     "display_name": "Amino Acids",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000253"
+        "WAL-CLM-LETS-000253",
+        "WAL-CLM-LETS-000348"
       ]
     },
     "conditions_treated": [
-      "dropsy"
+      "dropsy",
+      "liver_cirrhosis",
+      "liver_disease"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -394,7 +397,7 @@
   },
   "b-complex": {
     "display_name": "B Complex",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000202",
@@ -403,7 +406,8 @@
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000284",
         "WAL-CLM-LETS-000305",
-        "WAL-CLM-LETS-000307"
+        "WAL-CLM-LETS-000307",
+        "WAL-CLM-LETS-000348"
       ]
     },
     "conditions_treated": [
@@ -414,7 +418,9 @@
       "geographic_tongue",
       "hyperactivity",
       "hyperkinesis",
-      "hypoglycemia"
+      "hypoglycemia",
+      "liver_cirrhosis",
+      "liver_disease"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1070,14 +1076,16 @@
   },
   "carnitine": {
     "display_name": "Carnitine",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000203"
+        "WAL-CLM-LETS-000203",
+        "WAL-CLM-LETS-000350"
       ]
     },
     "conditions_treated": [
-      "cardiac_arrhythmia"
+      "cardiac_arrhythmia",
+      "lupus"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1400,7 +1408,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 30,
+    "claim_count": 32,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -1432,7 +1440,9 @@
         "WAL-CLM-LETS-000315",
         "WAL-CLM-LETS-000319",
         "WAL-CLM-LETS-000322",
-        "WAL-CLM-LETS-000340"
+        "WAL-CLM-LETS-000340",
+        "WAL-CLM-LETS-000348",
+        "WAL-CLM-LETS-000350"
       ]
     },
     "conditions_treated": [
@@ -1470,6 +1480,9 @@
       "infertility",
       "insomnia",
       "lead_poisoning",
+      "liver_cirrhosis",
+      "liver_disease",
+      "lupus",
       "periodontal_disease",
       "plumbism",
       "rheumatoid_arthritis",
@@ -1649,6 +1662,21 @@
     "conditions_treated": [
       "bronchitis",
       "headache"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "cramp-bark": {
+    "display_name": "Cramp Bark",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000349"
+      ]
+    },
+    "conditions_treated": [
+      "tetanus"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1955,7 +1983,7 @@
   },
   "edta-chelation": {
     "display_name": "Edta Chelation",
-    "claim_count": 10,
+    "claim_count": 12,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000139",
@@ -1967,7 +1995,9 @@
         "WAL-CLM-LETS-000295",
         "WAL-CLM-LETS-000306",
         "WAL-CLM-LETS-000317",
-        "WAL-CLM-LETS-000340"
+        "WAL-CLM-LETS-000340",
+        "WAL-CLM-LETS-000348",
+        "WAL-CLM-LETS-000350"
       ]
     },
     "conditions_treated": [
@@ -1982,6 +2012,9 @@
       "infarction",
       "intermittent_claudication",
       "lead_poisoning",
+      "liver_cirrhosis",
+      "liver_disease",
+      "lupus",
       "plumbism",
       "rheumatoid_arthritis",
       "stroke"
@@ -2769,14 +2802,17 @@
   },
   "hemp-agrimony": {
     "display_name": "Hemp Agrimony",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000279"
+        "WAL-CLM-LETS-000279",
+        "WAL-CLM-LETS-000348"
       ]
     },
     "conditions_treated": [
-      "influenza"
+      "influenza",
+      "liver_cirrhosis",
+      "liver_disease"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2951,7 +2987,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 32,
+    "claim_count": 33,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
@@ -2985,7 +3021,8 @@
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000318",
         "WAL-CLM-LETS-000333",
-        "WAL-CLM-LETS-000345"
+        "WAL-CLM-LETS-000345",
+        "WAL-CLM-LETS-000349"
       ]
     },
     "conditions_treated": [
@@ -3024,6 +3061,7 @@
       "periodontal_disease",
       "rheumatoid_arthritis",
       "stroke",
+      "tetanus",
       "tonsillitis",
       "vaginitis"
     ],
@@ -3066,17 +3104,20 @@
   },
   "interlipids": {
     "display_name": "Interlipids",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000131",
-        "WAL-CLM-LETS-000148"
+        "WAL-CLM-LETS-000148",
+        "WAL-CLM-LETS-000348"
       ]
     },
     "conditions_treated": [
       "alopecia",
       "atopic_dermatitis",
-      "eczema"
+      "eczema",
+      "liver_cirrhosis",
+      "liver_disease"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3766,6 +3807,22 @@
       "lets-play-doctor"
     ]
   },
+  "milk-thistle": {
+    "display_name": "Milk Thistle",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000348"
+      ]
+    },
+    "conditions_treated": [
+      "liver_cirrhosis",
+      "liver_disease"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "milkweed": {
     "display_name": "Milkweed",
     "claim_count": 1,
@@ -4204,19 +4261,22 @@
   },
   "parsley": {
     "display_name": "Parsley",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000153",
         "WAL-CLM-LETS-000253",
-        "WAL-CLM-LETS-000332"
+        "WAL-CLM-LETS-000332",
+        "WAL-CLM-LETS-000348"
       ]
     },
     "conditions_treated": [
       "bad_breath",
       "dropsy",
       "kidney_disease",
-      "kidney_stones"
+      "kidney_stones",
+      "liver_cirrhosis",
+      "liver_disease"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4272,16 +4332,20 @@
   },
   "penicillin": {
     "display_name": "Penicillin",
-    "claim_count": 2,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000314",
-        "WAL-CLM-LETS-000338"
+        "WAL-CLM-LETS-000338",
+        "WAL-CLM-LETS-000349",
+        "WAL-CLM-LETS-000351"
       ]
     },
     "conditions_treated": [
       "impetigo",
-      "laryngitis"
+      "laryngitis",
+      "lyme_disease",
+      "tetanus"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5142,6 +5206,22 @@
       "lets-play-doctor"
     ]
   },
+  "tamarac": {
+    "display_name": "Tamarac",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000348"
+      ]
+    },
+    "conditions_treated": [
+      "liver_cirrhosis",
+      "liver_disease"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "taurine": {
     "display_name": "Taurine",
     "claim_count": 4,
@@ -5184,21 +5264,40 @@
       "lets-play-doctor"
     ]
   },
+  "tetanus-antitoxin": {
+    "display_name": "Tetanus Antitoxin",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000349"
+      ]
+    },
+    "conditions_treated": [
+      "tetanus"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "tetracycline": {
     "display_name": "Tetracycline",
-    "claim_count": 3,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
         "WAL-CLM-LETS-000338",
-        "WAL-CLM-LETS-000343"
+        "WAL-CLM-LETS-000343",
+        "WAL-CLM-LETS-000349",
+        "WAL-CLM-LETS-000351"
       ]
     },
     "conditions_treated": [
       "arthritis",
       "laryngitis",
       "leptospirosis",
+      "lyme_disease",
       "rheumatoid_arthritis",
+      "tetanus",
       "weils_disease"
     ],
     "books_cited": [
@@ -5308,7 +5407,7 @@
   },
   "urine-therapy": {
     "display_name": "Urine Therapy",
-    "claim_count": 19,
+    "claim_count": 20,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000201",
@@ -5329,7 +5428,8 @@
         "WAL-CLM-LETS-000280",
         "WAL-CLM-LETS-000284",
         "WAL-CLM-LETS-000292",
-        "WAL-CLM-LETS-000293"
+        "WAL-CLM-LETS-000293",
+        "WAL-CLM-LETS-000350"
       ]
     },
     "conditions_treated": [
@@ -5353,6 +5453,7 @@
       "hay_fever",
       "headache",
       "hyperactivity",
+      "lupus",
       "psoriasis",
       "tonsillitis"
     ],

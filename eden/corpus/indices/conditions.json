@@ -6582,7 +6582,7 @@
   },
   "liver_cirrhosis": {
     "display_name": "Liver Cirrhosis",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010"
@@ -6599,14 +6599,32 @@
       ],
       "definitions": [
         "WAL-CLM-RARE-000122"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000348"
       ]
     },
     "essentials_involved": [
       "copper",
       "iron",
-      "selenium"
+      "omega-3",
+      "selenium",
+      "vitamin-a",
+      "vitamin-b12",
+      "vitamin-b9",
+      "vitamin-c"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "amino-acids",
+      "b-complex",
+      "colloidal-minerals",
+      "edta-chelation",
+      "hemp-agrimony",
+      "interlipids",
+      "milk-thistle",
+      "parsley",
+      "tamarac"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",
@@ -6615,8 +6633,11 @@
   },
   "liver_disease": {
     "display_name": "Liver Disease",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000348"
+      ],
       "toxicity_signs": [
         "WAL-CLM-LETS-000005",
         "WAL-CLM-LETS-000007",
@@ -6628,11 +6649,26 @@
     "essentials_involved": [
       "calcium",
       "chromium",
+      "omega-3",
       "selenium",
+      "vitamin-a",
+      "vitamin-b12",
       "vitamin-b3",
+      "vitamin-b9",
+      "vitamin-c",
       "vitamin-d"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "amino-acids",
+      "b-complex",
+      "colloidal-minerals",
+      "edta-chelation",
+      "hemp-agrimony",
+      "interlipids",
+      "milk-thistle",
+      "parsley",
+      "tamarac"
+    ],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -6655,18 +6691,46 @@
   },
   "lupus": {
     "display_name": "Lupus",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000223"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000350"
       ]
     },
     "essentials_involved": [
+      "omega-3",
+      "selenium",
       "sulfur"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "carnitine",
+      "colloidal-minerals",
+      "edta-chelation",
+      "urine-therapy"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "lyme_disease": {
+    "display_name": "Lyme Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000351"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "penicillin",
+      "tetracycline"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "macular_degeneration": {
@@ -8088,6 +8152,26 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "tetanus": {
+    "display_name": "Tetanus",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000349"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "cramp-bark",
+      "hydrogen-peroxide",
+      "penicillin",
+      "tetanus-antitoxin",
+      "tetracycline"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "tetany": {
