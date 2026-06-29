@@ -6189,12 +6189,47 @@
       "rare-earths"
     ]
   },
+  "ketoacidosis": {
+    "display_name": "Ketoacidosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000331"
+      ]
+    },
+    "essentials_involved": [
+      "chromium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "ketosis": {
+    "display_name": "Ketosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000331"
+      ]
+    },
+    "essentials_involved": [
+      "chromium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "kidney_disease": {
     "display_name": "Kidney Disease",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000011"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000332"
       ],
       "toxicity_signs": [
         "WAL-CLM-LETS-000005",
@@ -6205,18 +6240,32 @@
     "essentials_involved": [
       "calcium",
       "chromium",
+      "lysine",
+      "magnesium",
       "omega-3",
       "omega-6",
-      "selenium"
+      "selenium",
+      "vitamin-a",
+      "vitamin-b6"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "cranberry",
+      "dandelion",
+      "dwarf-elder",
+      "glutamic-acid",
+      "goldenrod",
+      "horsetail",
+      "java-tea",
+      "mugwort",
+      "parsley"
+    ],
     "books_cited": [
       "lets-play-doctor"
     ]
   },
   "kidney_stones": {
     "display_name": "Kidney Stones",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000087"
@@ -6226,19 +6275,30 @@
       ],
       "protocols": [
         "WAL-CLM-DDDL-000088",
-        "WAL-CLM-LETS-000161"
+        "WAL-CLM-LETS-000161",
+        "WAL-CLM-LETS-000332"
       ]
     },
     "essentials_involved": [
       "calcium",
-      "magnesium"
+      "lysine",
+      "magnesium",
+      "vitamin-a",
+      "vitamin-b6"
     ],
     "other_substances_involved": [
       "cranberry",
       "dandelion",
+      "dwarf-elder",
+      "glutamic-acid",
+      "goldenrod",
+      "horsetail",
+      "java-tea",
       "khella",
       "licorice",
       "madder",
+      "mugwort",
+      "parsley",
       "prednisone",
       "rupturewort"
     ],
@@ -6248,19 +6308,52 @@
       "rare-earths"
     ]
   },
-  "kwashiorkor": {
-    "display_name": "Kwashiorkor",
+  "korsakoffs_syndrome": {
+    "display_name": "Korsakoffs Syndrome",
     "claim_count": 1,
     "claims_by_role": {
-      "deficiency_signs": [
-        "WAL-CLM-RARE-000185"
+      "protocols": [
+        "WAL-CLM-LETS-000333"
       ]
     },
     "essentials_involved": [
-      "nitrogen"
+      "chromium",
+      "vanadium",
+      "vitamin-b1"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "centrophenoxine",
+      "hydergine",
+      "hydrogen-peroxide",
+      "lecithin",
+      "pancreatic-enzymes",
+      "piracetam",
+      "vasopressin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "kwashiorkor": {
+    "display_name": "Kwashiorkor",
+    "claim_count": 2,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000185"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000334"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "nitrogen",
+      "selenium"
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },

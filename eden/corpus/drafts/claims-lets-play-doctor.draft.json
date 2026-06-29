@@ -13347,6 +13347,170 @@
       "extracted_at": "2026-06-29T02:16:08+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000331",
+      "kind": "protocol",
+      "essentials": [
+        "chromium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "ketoacidosis",
+        "ketosis"
+      ],
+      "symptoms": [],
+      "claim_text": "Ketoacidosis (ketosis) results from a low glucose supply to the liver, which forces it to metabolize fat — producing 'ketone bodies' (acetoacetic acid, beta-hydroxybutyric acid, and acetone). It occurs in diabetes, alcoholism, hypoglycemia, and starvation. Signs include acetone-smelling breath, nausea and vomiting, air hunger, confusion or coma, extreme thirst, and weight loss; a positive urine 'dipstick' for ketone bodies confirms it. Treatment: resolve the basic disease process (diabetes, hypoglycemia, alcoholism, starvation), increase complex-carbohydrate intake, chromium at 50-200 micrograms three times daily, and the baseline nutritional program.",
+      "verbatim": "Treatment of ketosis includes resolving the\nbasic disease process (i.e., diabetes,\nhypoglycemia, alcoholism, starvation, etc.),\nincreas-ing the complex carbohydrate intake,\nchromium at 50-200 mcg t.i.d. and the base\nline nutritional program.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 358594
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T02:41:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000332",
+      "kind": "protocol",
+      "essentials": [
+        "calcium",
+        "magnesium",
+        "vitamin-a",
+        "vitamin-b6",
+        "lysine"
+      ],
+      "other_substances": [
+        "glutamic-acid",
+        "dandelion",
+        "dwarf-elder",
+        "goldenrod",
+        "java-tea",
+        "parsley",
+        "horsetail",
+        "mugwort",
+        "cranberry"
+      ],
+      "conditions": [
+        "kidney_disease",
+        "kidney_stones"
+      ],
+      "symptoms": [],
+      "claim_text": "Kidney disease (kidney stones) can be caused by infections, toxins, nutritional excesses (hypervitaminosis D) and deficiencies (vitamin A, selenium, zinc), and can be secondary to cardiovascular disease or diabetes. Contrary to orthodox belief, Wallach holds that kidney stones are caused by calcium AND magnesium deficiencies — which deplete calcium from the bones, the actual source of stone calcium — not by too much calcium; excess vitamin D (suntanning, fish oil, supplements) alongside a calcium deficiency accelerates the depletion. Check for cadmium toxicity with a hair analysis. Treatment: calcium and magnesium at 2,000 and 1,000 milligrams per day, reduce phosphorus intake, vitamin A at 25,000-300,000 international units per day as beta carotene, vitamin B-6 at 50 milligrams three times daily, lysine and glutamic acid, and herbs (dandelion, dwarf elder, goldenrod, Java tea, parsley, horsetail, mugwort, cranberry juice). Chelation helps; an acute stone blockage may require morphine for pain and prednisone for three days to reduce ureter inflammation, and a 'lithotripter' (ultrasound) can shatter stones without surgery.",
+      "verbatim": "Treatment of kidney disease and kidney stones\nshould includesupplementation of calcium\nand magnesium at 2,000 mg and 1 ,000 mg per\nday, reduction of your phosphorus intake,\nadequate vitamin A nutriture at 25 ,000-300,000\nIU vitamin A per day as beta carotene, B-6 at\n50 mgt.i.d. .lysine and glutamic acid and herbs\nincluding dandelion (Taraxacum officinale),",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 359781
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T02:41:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000333",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b1",
+        "chromium",
+        "vanadium"
+      ],
+      "other_substances": [
+        "lecithin",
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "hydrogen-peroxide",
+        "hydergine",
+        "vasopressin",
+        "centrophenoxine",
+        "piracetam"
+      ],
+      "conditions": [
+        "korsakoffs_syndrome"
+      ],
+      "symptoms": [],
+      "claim_text": "Korsakoff's syndrome (recent memory loss, false Alzheimer's disease) is an inability to record new memory — the patient can still perform detailed tasks learned before onset but cannot learn the simplest new tasks; confabulation (inventing imaginary experiences to fill the gaps) is characteristic. It can result from a blow to the head (good chance of recovery) or from chronic alcoholism and vitamin B-1 deficiency (harder to treat). Treatment: chelation, hydrogen peroxide intravenously, vitamin B-1 at 100 milligrams three times daily, lecithin at 2,500 milligrams three times daily, avoid alcohol and sugar, chromium/vanadium at 50-200 micrograms three times daily, betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times daily before meals, hydergine at 4.5-9 milligrams per day, vasopressin (Diapid) at 12-16 units per day as a nasal spray, centrophenoxine at 4.4-8.0 grams per day, and piracetam (Dinagen) at 1.6-4.8 grams per day.",
+      "verbatim": "Treatment of Korsakoff's syndrome includes\nchelation, hydrogen peroxide IV, vitamin B-l\nat 100 mg t.i.d., lecithin at 2,500 mg. t.i.d.,\navoid alcohol, avoid sugar, chromium/vana-\ndium at 50-200 mcg t.i.d., betaine HCl and\npancreatic enzymes at 75-200 mg t.i.d. before\nmeals; hydergine at 4.5-9 mg/day, vasopres-\nsin (Diapid) at 12-16 units per day as a nasal\nspray, centrophenoxine at 4.4-8.0 gm per day\nand piracetam (Dinagen) at 1.6-4.8 gm per\nday.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 361624
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T02:41:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000334",
+      "kind": "protocol",
+      "essentials": [
+        "selenium",
+        "chromium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "kwashiorkor"
+      ],
+      "symptoms": [],
+      "claim_text": "Kwashiorkor (protein starvation) is thought of as a disease of starving African children — protein/calorie starvation marked by a distended, bloated belly and edema ('dropsy'), because low blood-protein levels cannot hold water in the blood vessels so it leaks out. Wallach notes the same thing happens to unschooled dieters, cancer patients, vegans, and fruitarians who take in less than optimal amounts of complete protein. Treatment: adequate complete animal protein (greater than 120 grams per day), a calorie intake of 3,000 calories per day, selenium at 200 micrograms per day, and chromium at 50-200 micrograms three times daily, plus the baseline nutritional supplementation.",
+      "verbatim": "Treatment of Kwashiorkor includes adequate\nintake ofcomplete animal protein (i.e. ,\ngreater\nthan 1 20 gms per day), a calorie intake of 3,000\ncalories per day, selenium at 200 mcg per day\nand chromium at 50-200 mcg t.i.d.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 362605
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T02:41:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

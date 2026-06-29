@@ -288,7 +288,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 63,
+    "claim_count": 64,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -356,6 +356,7 @@
         "WAL-CLM-LETS-000289",
         "WAL-CLM-LETS-000321",
         "WAL-CLM-LETS-000326",
+        "WAL-CLM-LETS-000332",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -512,6 +513,7 @@
       "indigestion",
       "insomnia",
       "joint_pain",
+      "kidney_disease",
       "kidney_stones",
       "malabsorption",
       "menopause",
@@ -534,6 +536,7 @@
       "flavonoids",
       "iron",
       "lithium",
+      "lysine",
       "manganese",
       "omega-3",
       "phenylalanine",
@@ -927,7 +930,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 73,
+    "claim_count": 74,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1009,6 +1012,7 @@
         "WAL-CLM-LETS-000321",
         "WAL-CLM-LETS-000322",
         "WAL-CLM-LETS-000326",
+        "WAL-CLM-LETS-000332",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1160,6 +1164,7 @@
       "inositol",
       "iron",
       "lithium",
+      "lysine",
       "magnesium",
       "manganese",
       "omega-3",
@@ -1273,7 +1278,7 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 52,
+    "claim_count": 55,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -1338,6 +1343,9 @@
         "WAL-CLM-LETS-000310",
         "WAL-CLM-LETS-000316",
         "WAL-CLM-LETS-000322",
+        "WAL-CLM-LETS-000331",
+        "WAL-CLM-LETS-000333",
+        "WAL-CLM-LETS-000334",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1421,7 +1429,11 @@
       "infertility",
       "insomnia",
       "intermittent_claudication",
+      "ketoacidosis",
+      "ketosis",
       "kidney_disease",
+      "korsakoffs_syndrome",
+      "kwashiorkor",
       "learning_disabilities",
       "liver_disease",
       "osteoporosis",
@@ -2166,7 +2178,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 67,
+    "claim_count": 68,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2240,6 +2252,7 @@
         "WAL-CLM-LETS-000319",
         "WAL-CLM-LETS-000321",
         "WAL-CLM-LETS-000325",
+        "WAL-CLM-LETS-000334",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2328,6 +2341,7 @@
       "jaundice",
       "keshan_disease",
       "kidney_disease",
+      "kwashiorkor",
       "liver_cirrhosis",
       "liver_disease",
       "miscarriage",
@@ -2458,7 +2472,7 @@
     "display_name": "Vanadium",
     "canon_slug": "vanadium",
     "category": "mineral",
-    "claim_count": 35,
+    "claim_count": 36,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -2502,6 +2516,7 @@
         "WAL-CLM-LETS-000244",
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000307",
+        "WAL-CLM-LETS-000333",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -2552,6 +2567,7 @@
       "hypoglycemia",
       "infertility",
       "insomnia",
+      "korsakoffs_syndrome",
       "obesity",
       "osteoporosis",
       "panic_attacks",
@@ -3658,7 +3674,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 38,
+    "claim_count": 39,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -3701,7 +3717,8 @@
         "WAL-CLM-LETS-000324",
         "WAL-CLM-LETS-000325",
         "WAL-CLM-LETS-000328",
-        "WAL-CLM-LETS-000329"
+        "WAL-CLM-LETS-000329",
+        "WAL-CLM-LETS-000332"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000037"
@@ -3797,6 +3814,8 @@
       "keratitis",
       "keratomalacia",
       "keratosis",
+      "kidney_disease",
+      "kidney_stones",
       "night_blindness",
       "pruritus",
       "psoriasis",
@@ -3831,7 +3850,7 @@
     "display_name": "Thiamine",
     "canon_slug": "vitamin-b1",
     "category": "vitamin",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000043",
@@ -3850,6 +3869,7 @@
         "WAL-CLM-LETS-000229",
         "WAL-CLM-LETS-000243",
         "WAL-CLM-LETS-000244",
+        "WAL-CLM-LETS-000333",
         "WAL-CLM-RARE-000282"
       ]
     },
@@ -3977,6 +3997,7 @@
       "dementia",
       "depression",
       "edema",
+      "korsakoffs_syndrome",
       "wernicke_korsakoff_syndrome"
     ],
     "interacts_with": [
@@ -4461,7 +4482,7 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 36,
+    "claim_count": 37,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000027",
@@ -4502,6 +4523,7 @@
         "WAL-CLM-LETS-000293",
         "WAL-CLM-LETS-000310",
         "WAL-CLM-LETS-000326",
+        "WAL-CLM-LETS-000332",
         "WAL-CLM-RARE-000286"
       ],
       "toxicity_sign": [
@@ -4630,6 +4652,8 @@
       "hysteria",
       "intermittent_claudication",
       "joint_pain",
+      "kidney_disease",
+      "kidney_stones",
       "panic_attacks",
       "peripheral_neuropathy",
       "rheumatoid_arthritis",
@@ -4648,6 +4672,7 @@
       "inositol",
       "iron",
       "lithium",
+      "lysine",
       "magnesium",
       "manganese",
       "omega-3",
@@ -5972,22 +5997,28 @@
     "display_name": "Lysine",
     "canon_slug": "lysine",
     "category": "amino_acid",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000202",
-        "WAL-CLM-LETS-000299"
+        "WAL-CLM-LETS-000299",
+        "WAL-CLM-LETS-000332"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [
       "canker_sores",
       "cold_sores",
-      "herpes_simplex"
+      "herpes_simplex",
+      "kidney_disease",
+      "kidney_stones"
     ],
     "interacts_with": [
+      "calcium",
       "flavonoids",
+      "magnesium",
       "vitamin-a",
+      "vitamin-b6",
       "vitamin-c",
       "vitamin-e",
       "zinc"

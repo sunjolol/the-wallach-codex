@@ -1,84 +1,53 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_6 claim(s) drafted 2026-06-29T02:16:08+00:00. Review then run corpus_seal.py to promote._
+_4 claim(s) drafted 2026-06-29T02:41:19+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×1, protocol×5
+Kinds: protocol×4
 
-### WAL-CLM-LETS-000325 · protocol
-- **essentials:** vitamin-c, vitamin-a, selenium, vitamin-e · **conditions:** jaundice · **symptoms:** —
-- **claim:** Jaundice (icterus, yellow eyes) can be caused by blockage of the bile-duct system in the liver (gallstones, tumor, hepatitis) and/or destruction of red blood cells (Rh factor, blood parasites, malaria); diagnosis is critical. Examining the whites of the eyes (sclera) reveals true jaundice by a yellow coloration — which is absent when the skin is yellow from high beta-carotene intake; blood tests differentiate obstruction (bilirubin above 2.0-2.5 milligrams percent) from red-blood-cell destruction. Treatment: exposure to ultraviolet light to speed elimination; a liver flush (three days of apple juice, then a cup of olive oil and a cup of lemon juice); vitamin C to bowel tolerance; vitamin A at 300,000 international units per day as beta carotene; selenium at 500-1,000 micrograms per day; vitamin E at 800-1,200 international units per day; and herbs licorice (Glycyrrhiza glabra), agrimony (Agrimonia eupatoria), celandine (Chelidonium majus), and chionanthus (Chionanthus virginica).
-- **verbatim** (offset 354200): “Treatment of jaundice includes exposure to
-ultra violet light to speed up elimination, liver
-flush (three days of apple juice followed by a
-cup of olive oil and a cup of lemon juice),
-vitamin C to bowel tolerance, vitamin A at
-300,000 IU/day as beta carotene, selenium at
-500-1 ,000 mcg/day, vitamin E at 800-1 ,200 IU/
-day, and herbs including licorice (Glycyrrhiza
-glabra), agrimony (Agrimonia eupatoria),
-celadine (Chelidonium majus), chionanthus
-(Chionanthus virginica).”
+### WAL-CLM-LETS-000331 · protocol
+- **essentials:** chromium · **conditions:** ketoacidosis, ketosis · **symptoms:** —
+- **claim:** Ketoacidosis (ketosis) results from a low glucose supply to the liver, which forces it to metabolize fat — producing 'ketone bodies' (acetoacetic acid, beta-hydroxybutyric acid, and acetone). It occurs in diabetes, alcoholism, hypoglycemia, and starvation. Signs include acetone-smelling breath, nausea and vomiting, air hunger, confusion or coma, extreme thirst, and weight loss; a positive urine 'dipstick' for ketone bodies confirms it. Treatment: resolve the basic disease process (diabetes, hypoglycemia, alcoholism, starvation), increase complex-carbohydrate intake, chromium at 50-200 micrograms three times daily, and the baseline nutritional program.
+- **verbatim** (offset 358594): “Treatment of ketosis includes resolving the
+basic disease process (i.e., diabetes,
+hypoglycemia, alcoholism, starvation, etc.),
+increas-ing the complex carbohydrate intake,
+chromium at 50-200 mcg t.i.d. and the base
+line nutritional program.”
 
-### WAL-CLM-LETS-000326 · protocol
-- **essentials:** calcium, magnesium, copper, vitamin-b6 · **conditions:** joint_pain · **symptoms:** —
-- **claim:** Joint pain can be caused by many disease processes — arthritis, osteoporosis, rickets, gout, obesity — as well as nutritional deficiencies (calcium, magnesium, sulfur, sulfur-bearing amino acids, copper) and food allergies/sensitivities. Treatment: correct any overt or underlying disease; calcium and magnesium at 2,000 and 1,000 milligrams per day; cartilage at 5 grams three times daily; unsweetened gelatin once per day; copper at 2-5 milligrams per day (a copper bracelet can be of great value); vitamin B-6 at 100 milligrams three times daily; mineral-bath hydrotherapy; and ultraviolet light exposure for 1-6 minutes. Symptomatic relief: pain gels, DMSO, acupuncture, and chiropractic (especially useful for spine, rib, and pelvic subluxations). Plant-derived colloidal minerals provide an exceptional, 98%-absorbable mineral source.
-- **verbatim** (offset 354943): “Treatment ofjoint pain includes the correction
-of any overt or underlying disease, calcium
-and magnesium at 2,000 and 1,000 mg per
-day, cartilage at 5 gm t.i.d., gelatin
-(unsweetened) once per day, copper at 2-5
-mg/day (a copper bracelet can be of great
-value), B-6 at 100 mg t.i.d., mineral bath hy-
-drotherapy and ultra violet light exposure at 1 -
-6 minutes,”
+### WAL-CLM-LETS-000332 · protocol
+- **essentials:** calcium, magnesium, vitamin-a, vitamin-b6, lysine · **conditions:** kidney_disease, kidney_stones · **symptoms:** —
+- **claim:** Kidney disease (kidney stones) can be caused by infections, toxins, nutritional excesses (hypervitaminosis D) and deficiencies (vitamin A, selenium, zinc), and can be secondary to cardiovascular disease or diabetes. Contrary to orthodox belief, Wallach holds that kidney stones are caused by calcium AND magnesium deficiencies — which deplete calcium from the bones, the actual source of stone calcium — not by too much calcium; excess vitamin D (suntanning, fish oil, supplements) alongside a calcium deficiency accelerates the depletion. Check for cadmium toxicity with a hair analysis. Treatment: calcium and magnesium at 2,000 and 1,000 milligrams per day, reduce phosphorus intake, vitamin A at 25,000-300,000 international units per day as beta carotene, vitamin B-6 at 50 milligrams three times daily, lysine and glutamic acid, and herbs (dandelion, dwarf elder, goldenrod, Java tea, parsley, horsetail, mugwort, cranberry juice). Chelation helps; an acute stone blockage may require morphine for pain and prednisone for three days to reduce ureter inflammation, and a 'lithotripter' (ultrasound) can shatter stones without surgery.
+- **verbatim** (offset 359781): “Treatment of kidney disease and kidney stones
+should includesupplementation of calcium
+and magnesium at 2,000 mg and 1 ,000 mg per
+day, reduction of your phosphorus intake,
+adequate vitamin A nutriture at 25 ,000-300,000
+IU vitamin A per day as beta carotene, B-6 at
+50 mgt.i.d. .lysine and glutamic acid and herbs
+including dandelion (Taraxacum officinale),”
 
-### WAL-CLM-LETS-000327 · definition
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Kegel's exercise is a way to condition the voluntary muscles of the pelvic floor in both males and females. It is useful for prenatal conditioning of the pelvic, vaginal, and urethral muscles and for urinary incontinence and urgency. To perform it, tighten the pelvic-floor muscles as if trying to stop a bowel movement; you can also add the variation of stopping your urine stream at will. Wallach suggests doing several hundred each day.
-- **verbatim** (offset 355650): “KEGEL'S EXERCISE: is a great way to condi-
-tion the voluntary muscles of the pelvic floor
-in both males and females. This exercise is
-useful for prenatal conditioning of the pelvic
-muscles, vaginal muscles, urethral muscles in
-both male and female for urinary inconti-
-nence and urgency. To perform the Kegel's
-exercise you tighten the muscles of the pelvic
-floor as if you were trying stop a bowel move-
-ment;”
+### WAL-CLM-LETS-000333 · protocol
+- **essentials:** vitamin-b1, chromium, vanadium · **conditions:** korsakoffs_syndrome · **symptoms:** —
+- **claim:** Korsakoff's syndrome (recent memory loss, false Alzheimer's disease) is an inability to record new memory — the patient can still perform detailed tasks learned before onset but cannot learn the simplest new tasks; confabulation (inventing imaginary experiences to fill the gaps) is characteristic. It can result from a blow to the head (good chance of recovery) or from chronic alcoholism and vitamin B-1 deficiency (harder to treat). Treatment: chelation, hydrogen peroxide intravenously, vitamin B-1 at 100 milligrams three times daily, lecithin at 2,500 milligrams three times daily, avoid alcohol and sugar, chromium/vanadium at 50-200 micrograms three times daily, betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times daily before meals, hydergine at 4.5-9 milligrams per day, vasopressin (Diapid) at 12-16 units per day as a nasal spray, centrophenoxine at 4.4-8.0 grams per day, and piracetam (Dinagen) at 1.6-4.8 grams per day.
+- **verbatim** (offset 361624): “Treatment of Korsakoff's syndrome includes
+chelation, hydrogen peroxide IV, vitamin B-l
+at 100 mg t.i.d., lecithin at 2,500 mg. t.i.d.,
+avoid alcohol, avoid sugar, chromium/vana-
+dium at 50-200 mcg t.i.d., betaine HCl and
+pancreatic enzymes at 75-200 mg t.i.d. before
+meals; hydergine at 4.5-9 mg/day, vasopres-
+sin (Diapid) at 12-16 units per day as a nasal
+spray, centrophenoxine at 4.4-8.0 gm per day
+and piracetam (Dinagen) at 1.6-4.8 gm per
+day.”
 
-### WAL-CLM-LETS-000328 · protocol
-- **essentials:** vitamin-a, zinc · **conditions:** keratomalacia, xerophthalmia · **symptoms:** —
-- **claim:** Keratomalacia (xerophthalmia) is a hazy, dry cornea (the clear domed bulge at the front of the eye) that becomes ulcerated — a sign of vitamin A deficiency. Symptoms include extreme dryness of the eyes with blinking to keep them moist, conjunctivitis, night blindness, and fat-like spots (Bitot's spots) on the white of the eyeball; untreated, it can cause permanent blindness. Treatment: vitamin A at 25,000 international units (children) to 300,000 international units (adults) per day as beta carotene, zinc at 10-50 milligrams three times daily, and increasing animal protein to 120 grams per day (chicken, fish, eggs, milk, lamb, pork, or beef), plus the baseline nutritional program.
-- **verbatim** (offset 356189): “KERATOMALACIA(xerophthalmia): is rec-
-ognized as a hazy dry cornea (the domed clear
-bulge on the front of the eye) that becomes
-ulcerated. Symptoms include extreme dry-
-ness of the eyes with blinking in attempts to
-keep the eyes moist, conjunctivitis, and night
-blindness. Fat-like spots (Bitots spots) can be
-found on the "white" of the eye ball.
-Untreatedkeratomalacia can result in perma-
-nent blindness.”
-
-### WAL-CLM-LETS-000329 · protocol
-- **essentials:** vitamin-a, zinc · **conditions:** keratosis · **symptoms:** —
-- **claim:** Keratosis is a 'goose-bump'-like keratin buildup in the openings of the hair follicles — pinhead-sized plugs found mostly on the backs of the arms, the thighs, and the buttocks. Orthodox doctors claim no treatment is necessary, but Wallach holds it is in fact a symptom of chronic vitamin A deficiency. Treatment: vitamin A at 25,000 international units (children) to 300,000 international units (adults) per day as beta carotene, zinc at 10-50 milligrams three times daily, and increasing protein to 120 grams per day, plus the baseline nutrition program.
-- **verbatim** (offset 357232): “Treatment of keratosis includes vitamin A at
-25,000 IU (kids) to 300,000 IU (adults) per day
-as beta carotene, zinc at 10-50 mg. t.i.d., in-
-crease protein at 120 gms per day and don't
-forget the base line nutrition program.”
-
-### WAL-CLM-LETS-000330 · protocol
-- **essentials:** — · **conditions:** kernicterus · **symptoms:** —
-- **claim:** Kernicterus is the deposition of bile pigments into the brain of a newborn after a prolonged elevation of bilirubin (bile pigments produced from red-blood-cell breakdown); its symptoms mimic cerebral palsy — lethargy, poor feeding, vomiting, incoordination, seizures, and death. Prevention and treatment: frequent feeding of the infant to reduce absorption of bile pigments, and exposure to blue and ultraviolet light to photo-oxidize the bilirubin (a transient lactose intolerance can accompany light therapy in infants, causing diarrhea, but this does not appear to have any permanent consequences).
-- **verbatim** (offset 357749): “Prevention and
-treatment ofkernicterus includes frequent feed-
-ing of the infant to reduce absorption of bile
-pigments, exposure to blue and ultra violet
-light to photo-oxidize bilirubin (a transient
-lactose intolerance is associated with light
-therapy in infants that results in diarrhea — this
-does not appear to have any permanent con-
-sequences).”
+### WAL-CLM-LETS-000334 · protocol
+- **essentials:** selenium, chromium · **conditions:** kwashiorkor · **symptoms:** —
+- **claim:** Kwashiorkor (protein starvation) is thought of as a disease of starving African children — protein/calorie starvation marked by a distended, bloated belly and edema ('dropsy'), because low blood-protein levels cannot hold water in the blood vessels so it leaks out. Wallach notes the same thing happens to unschooled dieters, cancer patients, vegans, and fruitarians who take in less than optimal amounts of complete protein. Treatment: adequate complete animal protein (greater than 120 grams per day), a calorie intake of 3,000 calories per day, selenium at 200 micrograms per day, and chromium at 50-200 micrograms three times daily, plus the baseline nutritional supplementation.
+- **verbatim** (offset 362605): “Treatment of Kwashiorkor includes adequate
+intake ofcomplete animal protein (i.e. ,
+greater
+than 1 20 gms per day), a calorie intake of 3,000
+calories per day, selenium at 200 mcg per day
+and chromium at 50-200 mcg t.i.d.”
 

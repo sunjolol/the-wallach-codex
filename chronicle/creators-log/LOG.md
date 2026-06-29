@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_175 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_176 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 21:42 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b46 — KETOACIDOSIS→KWASHIORKOR (K section COMPLETE), 4 tier-1 claims LETS-331..334. 4 render-verified meg→mcg fixes, 0 dangerous misprints. kv156→157, claims 710→714, conditions 340→343, board 31/31.
+  ↳ Let's Play Doctor Ch10, the rest of the K's (printed p140-141), completing the K section. Claims: ketoacidosis+ketosis, kidney_disease+kidney_stones (Wallach: stones from Ca AND Mg deficiency, not excess), korsakoffs_syndrome (memory/behavioral; B-1 + chromium/vanadium + nootropics hydergine/vasopressin/centrophenoxine/piracetam), kwashiorkor (protein starvation). 4 meg->mcg .txt fixes (chromium x2, chromium/vanadium, selenium) all 600-DPI zoom-confirmed. Kept faithful/cleaned-in-claim_text: KORSAKOFF B-l->B-1 (deferred OCR class). Reused kidney_disease/kidney_stones/kwashiorkor conds + nootropic slugs from DEMENTIA; glutamic-acid correctly other_substances (non-essential amino acid). RENDER-FIRST p140-141. resnap 0 reloc/0 broken; corpus_verify PASS; embed+build OK; probe PASS. NEXT b47 = the L's; LABOR has OB/GYN-economics opinion to assess (herbal protocol likely tier-1).
 
 ## 2026-06-28 21:17 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b45 — JAUNDICE→KERNICTERUS, 6 claims LETS-325..330 (5 protocol + 1 def KEGEL). 4 render-verified .txt fixes (JOUST→JOINT header + meg→mcg + 2 clay→day), 0 dangerous misprints. kv155→156, claims 704→710, conditions 335→340, board 31/31.

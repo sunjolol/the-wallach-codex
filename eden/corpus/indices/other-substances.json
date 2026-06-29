@@ -524,7 +524,7 @@
   },
   "betaine-hcl": {
     "display_name": "Betaine Hcl",
-    "claim_count": 38,
+    "claim_count": 39,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -564,7 +564,8 @@
         "WAL-CLM-LETS-000316",
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000321",
-        "WAL-CLM-LETS-000323"
+        "WAL-CLM-LETS-000323",
+        "WAL-CLM-LETS-000333"
       ]
     },
     "conditions_treated": [
@@ -609,6 +610,7 @@
       "infarction",
       "infertility",
       "irritable_bowel_syndrome",
+      "korsakoffs_syndrome",
       "menopause",
       "psoriasis",
       "stroke"
@@ -1180,18 +1182,20 @@
   },
   "centrophenoxine": {
     "display_name": "Centrophenoxine",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000211",
-        "WAL-CLM-LETS-000243"
+        "WAL-CLM-LETS-000243",
+        "WAL-CLM-LETS-000333"
       ]
     },
     "conditions_treated": [
       "alzheimers",
       "cerebrovascular_disease",
-      "dementia"
+      "dementia",
+      "korsakoffs_syndrome"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1593,13 +1597,14 @@
   },
   "cranberry": {
     "display_name": "Cranberry",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000155",
         "WAL-CLM-LETS-000157",
         "WAL-CLM-LETS-000161",
-        "WAL-CLM-LETS-000241"
+        "WAL-CLM-LETS-000241",
+        "WAL-CLM-LETS-000332"
       ]
     },
     "conditions_treated": [
@@ -1607,6 +1612,7 @@
       "benign_prostatic_hyperplasia",
       "bladder_stones",
       "cystitis",
+      "kidney_disease",
       "kidney_stones"
     ],
     "books_cited": [
@@ -1630,18 +1636,20 @@
   },
   "dandelion": {
     "display_name": "Dandelion",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000161",
         "WAL-CLM-LETS-000283",
-        "WAL-CLM-LETS-000298"
+        "WAL-CLM-LETS-000298",
+        "WAL-CLM-LETS-000332"
       ]
     },
     "conditions_treated": [
       "bladder_stones",
       "gallstones",
       "hepatitis",
+      "kidney_disease",
       "kidney_stones"
     ],
     "books_cited": [
@@ -1822,6 +1830,22 @@
     },
     "conditions_treated": [
       "motion_sickness"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "dwarf-elder": {
+    "display_name": "Dwarf Elder",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000332"
+      ]
+    },
+    "conditions_treated": [
+      "kidney_disease",
+      "kidney_stones"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2415,14 +2439,17 @@
   },
   "glutamic-acid": {
     "display_name": "Glutamic Acid",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000157"
+        "WAL-CLM-LETS-000157",
+        "WAL-CLM-LETS-000332"
       ]
     },
     "conditions_treated": [
-      "benign_prostatic_hyperplasia"
+      "benign_prostatic_hyperplasia",
+      "kidney_disease",
+      "kidney_stones"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2472,6 +2499,22 @@
     "conditions_treated": [
       "benign_prostatic_hyperplasia",
       "cataracts"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "goldenrod": {
+    "display_name": "Goldenrod",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000332"
+      ]
+    },
+    "conditions_treated": [
+      "kidney_disease",
+      "kidney_stones"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2660,6 +2703,22 @@
       "lets-play-doctor"
     ]
   },
+  "horsetail": {
+    "display_name": "Horsetail",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000332"
+      ]
+    },
+    "conditions_treated": [
+      "kidney_disease",
+      "kidney_stones"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "hounds-tongue": {
     "display_name": "Hounds Tongue",
     "claim_count": 2,
@@ -2680,18 +2739,20 @@
   },
   "hydergine": {
     "display_name": "Hydergine",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000211",
-        "WAL-CLM-LETS-000243"
+        "WAL-CLM-LETS-000243",
+        "WAL-CLM-LETS-000333"
       ]
     },
     "conditions_treated": [
       "alzheimers",
       "cerebrovascular_disease",
-      "dementia"
+      "dementia",
+      "korsakoffs_syndrome"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2714,7 +2775,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 30,
+    "claim_count": 31,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
@@ -2746,7 +2807,8 @@
         "WAL-CLM-LETS-000295",
         "WAL-CLM-LETS-000306",
         "WAL-CLM-LETS-000317",
-        "WAL-CLM-LETS-000318"
+        "WAL-CLM-LETS-000318",
+        "WAL-CLM-LETS-000333"
       ]
     },
     "conditions_treated": [
@@ -2780,6 +2842,7 @@
       "infarction",
       "infection",
       "intermittent_claudication",
+      "korsakoffs_syndrome",
       "periodontal_disease",
       "rheumatoid_arthritis",
       "stroke",
@@ -2925,6 +2988,22 @@
       "asthma",
       "atopic_asthma",
       "diabetes"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "java-tea": {
+    "display_name": "Java Tea",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000332"
+      ]
+    },
+    "conditions_treated": [
+      "kidney_disease",
+      "kidney_stones"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3144,7 +3223,7 @@
   },
   "lecithin": {
     "display_name": "Lecithin",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
@@ -3153,7 +3232,8 @@
         "WAL-CLM-LETS-000243",
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000283",
-        "WAL-CLM-LETS-000306"
+        "WAL-CLM-LETS-000306",
+        "WAL-CLM-LETS-000333"
       ]
     },
     "conditions_treated": [
@@ -3163,7 +3243,8 @@
       "dementia",
       "diabetes",
       "gallstones",
-      "hypertension"
+      "hypertension",
+      "korsakoffs_syndrome"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3506,14 +3587,17 @@
   },
   "mugwort": {
     "display_name": "Mugwort",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000274"
+        "WAL-CLM-LETS-000274",
+        "WAL-CLM-LETS-000332"
       ]
     },
     "conditions_treated": [
-      "fever"
+      "fever",
+      "kidney_disease",
+      "kidney_stones"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3748,7 +3832,7 @@
   },
   "pancreatic-enzymes": {
     "display_name": "Pancreatic Enzymes",
-    "claim_count": 31,
+    "claim_count": 32,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000123",
@@ -3781,7 +3865,8 @@
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000320",
         "WAL-CLM-LETS-000321",
-        "WAL-CLM-LETS-000323"
+        "WAL-CLM-LETS-000323",
+        "WAL-CLM-LETS-000333"
       ]
     },
     "conditions_treated": [
@@ -3819,6 +3904,7 @@
       "infertility",
       "inflammation",
       "irritable_bowel_syndrome",
+      "korsakoffs_syndrome",
       "menopause",
       "psoriasis",
       "stroke"
@@ -3862,16 +3948,19 @@
   },
   "parsley": {
     "display_name": "Parsley",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000153",
-        "WAL-CLM-LETS-000253"
+        "WAL-CLM-LETS-000253",
+        "WAL-CLM-LETS-000332"
       ]
     },
     "conditions_treated": [
       "bad_breath",
-      "dropsy"
+      "dropsy",
+      "kidney_disease",
+      "kidney_stones"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4062,18 +4151,20 @@
   },
   "piracetam": {
     "display_name": "Piracetam",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000211",
-        "WAL-CLM-LETS-000243"
+        "WAL-CLM-LETS-000243",
+        "WAL-CLM-LETS-000333"
       ]
     },
     "conditions_treated": [
       "alzheimers",
       "cerebrovascular_disease",
-      "dementia"
+      "dementia",
+      "korsakoffs_syndrome"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4962,18 +5053,20 @@
   },
   "vasopressin": {
     "display_name": "Vasopressin",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000211",
-        "WAL-CLM-LETS-000243"
+        "WAL-CLM-LETS-000243",
+        "WAL-CLM-LETS-000333"
       ]
     },
     "conditions_treated": [
       "alzheimers",
       "cerebrovascular_disease",
-      "dementia"
+      "dementia",
+      "korsakoffs_syndrome"
     ],
     "books_cited": [
       "lets-play-doctor"
