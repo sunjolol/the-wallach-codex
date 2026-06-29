@@ -1,67 +1,62 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_5 claim(s) drafted 2026-06-29T15:16:00+00:00. Review then run corpus_seal.py to promote._
+_5 claim(s) drafted 2026-06-29T15:25:58+00:00. Review then run corpus_seal.py to promote._
 
 Kinds: protocol×5
 
-### WAL-CLM-LETS-000398 · protocol
-- **essentials:** calcium, magnesium, vitamin-a, vitamin-c, zinc · **conditions:** periodontal_disease, gingivitis, pyorrhea · **symptoms:** —
-- **claim:** Periodontal disease (receding gums, pyorrhea, gingivitis) is blamed by 'orthodox' dentists on food particles packing between the teeth and gums, but Wallach says all forms are really the result of bone loss under the gums, which lets the gums recede — and he points out the veterinary profession eliminated it through nutrition (cows, horses, dogs, and cats do not floss, brush, or use fluoride mouthwash). Treatment should correct the dietary calcium-to-phosphorus ratio (give up phosphate-containing soft drinks, reduce red meat, reduce phytate intake from raw vegetables), supplement calcium at 2,000 milligrams and magnesium at 1,000 milligrams per day, follow the baseline nutritional supplement program with plant-derived colloidal minerals, vitamin A at 300,000 IU per day as beta carotene, vitamin C to bowel tolerance, zinc at 50 milligrams three times a day, betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day fifteen minutes before meals, avoid sugar, and use herbal and hydrogen-peroxide mouthwashes plus dental floss to keep the teeth clean.
-- **verbatim** (offset 427464): “Treatment of periodontal disease should in-
-clude a correction of the dietaiy calcium/
-phosphorus ratio (i.e., give up phosphate
-containing soft drinks, reduce red meat con-
-sumption, reduce phytate intake (raw vege-
-tables), supplement calcium at 2,000 mg per
-day and magnesium at 1,000 mg per day,
-remember the base line nutrition supplement
-program including plant derived colloidal
-minerals, vitamin A at 300,000 IU per day as
-beta carotene, vitamin C to bowel tolerance,
-zinc at 50 mg t.i.d.”
+### WAL-CLM-LETS-000403 · protocol
+- **essentials:** — · **conditions:** poison_ivy · **symptoms:** —
+- **claim:** Poison ivy causes a contact papular dermatitis (a raised, bumpy skin rash) that produces a severe itch. Treatment of poison ivy dermatitis includes the topical application of Caladryl and aloe vera, plus poultices of Solomon's seal (Polygonatum multiflorum), goldenseal (Hydrastis canadensis), and plantain (Plantago major).
+- **verbatim** (offset 430288): “Treatment of poison ivy dermatitis includes
+topical application ofCaladryl, aloe vera, poul-
+tices of Solomon's seal (Polygonatum
+multiflorum), golden seal (Hydrastis
+canadensis) and plantain (Plantago major).”
 
-### WAL-CLM-LETS-000399 · protocol
-- **essentials:** vitamin-e, vitamin-c, copper, omega-3 · **conditions:** phlebitis, varicose_veins · **symptoms:** —
-- **claim:** Phlebitis (varicose veins) is most common in the hemorrhoidal veins and the veins of the legs; constipation and a static, upright standing position are the primary causes. Treatment should include drinking eight glasses of water a day and two heaping tablespoons of nutritional fiber in a glass of water at bedtime, vitamin E at 800-1,200 IU per day, B-complex at 50 milligrams of each three times a day, vitamin C to bowel tolerance, copper at 2 milligrams per day, essential fatty acids at 5 grams three times a day, and herbs including arnica (Arnica montana), comfrey (Symphytum officinale), rue (Ruta graveolens), yellow sweet clover (Melilotus officinalis), and cascara sagrada (Rhamnus purshianus). [The book's printed 'copper at 2 gm' is corrected here to 2 mg — copper at 2 grams is toxic and is a clear typeset error for the standard 2 mg dose.]
-- **verbatim** (offset 426736): “at bedtime, vitamin E at 800-1,200 IU/day, B-
-complex at 50 mg each t.i.d., vitamin C to
-bowel tolerance, copper at 2 mg per day,
-essential fatty acids at 5 gm t.i.d., and herbs
-including arnica (Arnica montana), comfrey
-(Symphytumofficinale),rue(Rutagraveolens),
-yellow sweet clover (Melilotus officinalis) and
-cascara sagrada (Rhamnus purshianus).”
+### WAL-CLM-LETS-000404 · protocol
+- **essentials:** vitamin-c, vitamin-e · **conditions:** poor_circulation · **symptoms:** —
+- **claim:** Poor circulation can be caused by cardiovascular disease, low thyroid function, and vitamin E deficiency; its symptoms include cold hands and feet and numb, tingling fingers and toes. Treatment includes EDTA chelation, intravenous hydrogen peroxide, vitamin C to bowel tolerance, vitamin E at 800-1,200 IU per day, massage, hydrotherapy, acupuncture, and herbs including ginkgo (Ginkgo biloba), hawthorn (Crataegus oxyacantha), horsetail (Equisetum arvense), lavender (Lavandula angustifolia), lily-of-the-valley (Convallaria majalis), rosemary (Rosmarinus officinalis), scotch pine (Pinus sylvestris), and cayenne pepper (Capsicum minimum).
+- **verbatim** (offset 430670): “Treatment of poor circulation includes EDTA
+chelation, hydrogen peroxide IV, vitamin C to
+bowel tolerance, vitamin E at 800-1,200 IU/
+day, massage, hydro-therapy, acupuncture
+and herbs in-cluding ginkgo (Ginkgo biloba),
+hawthorn (Crataegus oxyacantha), horsetail
+(Equisetum arvense), lavender (Lavandula
+angustifolia), lily-of-the-valley (Convallaria
+majalis), rosemaiy (Rosmarinus officinalis),
+scotch pine (Pinus sylvestris) and cayenne
+pepper (Capsicum minimum).”
 
-### WAL-CLM-LETS-000400 · protocol
-- **essentials:** — · **conditions:** pica · **symptoms:** —
-- **claim:** Pica (craving dirt or paint) is a symptom of one or more nutritional deficiencies: adults often crave ice, while children eat dirt and/or paint — the latter extremely dangerous because many paints contain lead or cadmium. A hair analysis is invaluable for assessing the patient's mineral status, and a pulse test helps determine whether a celiac-type malabsorption problem exists. Treatment should include the baseline nutritional program with plant-derived colloidal minerals; EDTA chelation therapy may be necessary if a hair analysis shows elevated levels of lead or cadmium.
-- **verbatim** (offset 428452): “Treatment for pica should include the base
-line nutritional program including plant de-
-rived colloidal minerals; EDTA chelation
-therapy may be necessary if hair analysis
-shows elevated levels of lead or cadmium.”
+### WAL-CLM-LETS-000405 · protocol
+- **essentials:** — · **conditions:** post_partum_hemorrhage · **symptoms:** —
+- **claim:** Post-partum hemorrhage (bleeding after childbirth) results from an atonic uterus that fails to contract hard enough or long enough, letting the open blood vessels leak (occasionally a retained piece of afterbirth in the uterine lining is the source). Treatment should include firm digital pressure on the fundus of the uterus to stimulate contraction; the use of ergot (Claviceps purpurea) orally at 10-20 minims, or by injection, will add sufficient contraction power.
+- **verbatim** (offset 431424): “Treatment of post paitum hemorrhage should
+include firm digital pressure on the fundus of
+the uterus to stimulate contraction; the use of
+ergot (Claviceps purpurea) orally at 10-20
+minims or by injection will add sufficient con-
+traction power.”
 
-### WAL-CLM-LETS-000401 · protocol
-- **essentials:** zinc, vitamin-a, vitamin-b9 · **conditions:** pilonidal_cyst · **symptoms:** —
-- **claim:** A pilonidal cyst is a midline congenital defect in the sacral area (lower back, near the tailbone), which Wallach links to a deficiency of zinc, vitamin A, or folic acid. The pit often contains hair and the tract is usually symptom-free unless it becomes plugged and turns into a cyst. Treatment should include a poultice of plantain (Plantago major) and comfrey (Symphytum officinale), or boric acid, twice a day until the cyst opens up; on rare occasions surgical opening of the cyst is required, needing only local anesthesia and a scalpel blade for this relatively minor surgery.
-- **verbatim** (offset 428920): “Treatment of the pilonidal cyst should include
-a poultice of plantain (Plantago major), com-
-frey (Symphytum officinale) orboricacidb.i.d.
-until cyst opens up; on rare occasions surgical
-opening of the cyst is required; local anesthe-
-sia and a scalpel blade are all that is required
-for this relatively minor surgery.”
+### WAL-CLM-LETS-000406 · protocol
+- **essentials:** — · **conditions:** labor · **symptoms:** —
+- **claim:** Pregnancy labor can be enhanced, Wallach says, by the use of herbs including raspberry (Rubus idaeus) and blue cohosh (Caulophyllum thalictroides).
+- **verbatim** (offset 431694): “can be en
+hanced by the use of herbs including rasp-
+berry (Rubus idaeus) and blue cohosh
+(Caulophyllum thalictroides).”
 
-### WAL-CLM-LETS-000402 · protocol
-- **essentials:** vitamin-b6, omega-3, vitamin-a, vitamin-e, calcium · **conditions:** premenstrual_syndrome · **symptoms:** —
-- **claim:** Premenstrual syndrome (PMS) has a long history in 'orthodox' medicine — the word derives from 'hysteria,' and the historical treatment was hysterectomy (removing the ovaries and uterus 'cured' the cyclical emotional symptoms but caused an abrupt menopause). It is now known that a deficiency of essential fatty acids, working together with the woman's cyclical hormone patterns, produces the classic PMS picture of fragile emotions, irrational behavior, mania, depression, and debilitating pelvic cramps. Treatment includes vitamin B-6 at 100 milligrams, essential fatty acids three times a day, vitamin A at 300,000 IU per day as beta carotene during the last 14 days of the cycle, vitamin E at 800-1,200 IU per day, calcium (especially from plant-derived colloidal sources), and herbs including mistletoe (Viscum album), black cohosh (Cimicifuga racemosa), and blue cohosh (Caulophyllum thalictroides).
-- **verbatim** (offset 429829): “Treatment of PMS includes 100 mg B-6 q 4 d,
-essential fatty acids at 5 mg t.i.d., vitamin A at
-300,000 IU per day as beta carotene during the
-last 14 days of the cycle, vitamin E at 800-1,200
-IU/day, calcium (especially plant derived col-
-loidal sources) and herbs including mistletoe
-(Viscum album), black cohosh (Cimicifuga
-racemosa) and blue cohosh (Caulophyllus
-thalictroides).”
+### WAL-CLM-LETS-000407 · protocol
+- **essentials:** vitamin-b6 · **conditions:** pregnancy_toxemia, preeclampsia, eclampsia · **symptoms:** —
+- **claim:** Pregnancy toxemia (eclampsia) is, in Wallach's view, the result of the low-protein, low-salt diets women were put on to limit weight gain in pregnancy. Pre-eclampsia symptoms include sudden weight gain (fluid accumulation from low blood protein), high blood pressure, and albuminuria (protein in the urine); eclampsia adds convulsions and/or coma, and both characteristically occur after the 20th week of pregnancy. Against the orthodox approach (hospitalize, watch for convulsions, then give barbiturates), treatment of pre-eclampsia should include a high-animal-protein meal plan (150 grams or more, versus the RDA — Recommended Dietary Allowance — of 40 grams), not restricting salt, vitamin B-6 at 100 milligrams per day (dropping to 50 milligrams at birth if you plan to breast-feed, since high B-6 levels reduce breast-milk production), the baseline nutritional supplement program, and 10-12 glasses of water and/or juice per day, especially in the warm summer months.
+- **verbatim** (offset 432622): “Treatment of preeclampsia should include a
+high animal protein meal plan (150 gm or
+more whereas the RDA is 40 gm), do not
+restrict salt, B-6 at 100 mg per day (drop to 50
+mg per at parturition (birth) if you plan to
+breast freed as high levels of B-6 will reduce
+production of breast milk), base line nutri-
+tional supplement program and 10-12 glasses
+of water and/or juice per day, especially in
+thewarm summer months.”
 

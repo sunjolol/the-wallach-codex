@@ -4086,6 +4086,22 @@
       "lets-play-doctor"
     ]
   },
+  "eclampsia": {
+    "display_name": "Eclampsia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000407"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b6"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "eczema": {
     "display_name": "Eczema",
     "claim_count": 12,
@@ -6528,10 +6544,11 @@
   },
   "labor": {
     "display_name": "Labor",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000335"
+        "WAL-CLM-LETS-000335",
+        "WAL-CLM-LETS-000406"
       ]
     },
     "essentials_involved": [],
@@ -8550,6 +8567,70 @@
       "lets-play-doctor"
     ]
   },
+  "poison_ivy": {
+    "display_name": "Poison Ivy",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000403"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "aloe-vera",
+      "caladryl",
+      "goldenseal",
+      "plantain",
+      "solomons-seal"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "poor_circulation": {
+    "display_name": "Poor Circulation",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000404"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-c",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "cayenne",
+      "edta",
+      "ginkgo",
+      "hawthorn",
+      "horsetail",
+      "hydrogen-peroxide",
+      "lavender",
+      "lily-of-the-valley",
+      "rosemary",
+      "scotch-pine"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "post_partum_hemorrhage": {
+    "display_name": "Post Partum Hemorrhage",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000405"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "ergot"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "prediabetes": {
     "display_name": "Prediabetes",
     "claim_count": 1,
@@ -8559,6 +8640,38 @@
       ]
     },
     "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "preeclampsia": {
+    "display_name": "Preeclampsia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000407"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b6"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "pregnancy_toxemia": {
+    "display_name": "Pregnancy Toxemia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000407"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b6"
+    ],
     "other_substances_involved": [],
     "books_cited": [
       "lets-play-doctor"

@@ -4633,7 +4633,7 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 41,
+    "claim_count": 42,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000027",
@@ -4679,6 +4679,7 @@
         "WAL-CLM-LETS-000383",
         "WAL-CLM-LETS-000396",
         "WAL-CLM-LETS-000402",
+        "WAL-CLM-LETS-000407",
         "WAL-CLM-RARE-000286"
       ],
       "toxicity_sign": [
@@ -4799,6 +4800,7 @@
       "diaper_rash",
       "dry_skin",
       "dysmenorrhea",
+      "eclampsia",
       "epilepsy",
       "geographic_tongue",
       "headache",
@@ -4813,6 +4815,8 @@
       "panic_attacks",
       "parkinsonism",
       "peripheral_neuropathy",
+      "preeclampsia",
+      "pregnancy_toxemia",
       "premenstrual_syndrome",
       "rheumatoid_arthritis",
       "seborrheic_dermatitis",
@@ -5178,7 +5182,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 62,
+    "claim_count": 63,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -5248,7 +5252,8 @@
         "WAL-CLM-LETS-000382",
         "WAL-CLM-LETS-000394",
         "WAL-CLM-LETS-000398",
-        "WAL-CLM-LETS-000399"
+        "WAL-CLM-LETS-000399",
+        "WAL-CLM-LETS-000404"
       ]
     },
     "deficiency_signs": [
@@ -5376,6 +5381,7 @@
       "periodontal_disease",
       "phlebitis",
       "plumbism",
+      "poor_circulation",
       "psoriasis",
       "pyorrhea",
       "rheumatoid_arthritis",
@@ -5511,7 +5517,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 57,
+    "claim_count": 58,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -5578,6 +5584,7 @@
         "WAL-CLM-LETS-000382",
         "WAL-CLM-LETS-000399",
         "WAL-CLM-LETS-000402",
+        "WAL-CLM-LETS-000404",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -5704,6 +5711,7 @@
       "muscular_dystrophy",
       "nosebleeds",
       "phlebitis",
+      "poor_circulation",
       "premenstrual_syndrome",
       "psoriasis",
       "rheumatoid_arthritis",

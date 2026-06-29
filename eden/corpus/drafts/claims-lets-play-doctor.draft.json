@@ -16169,6 +16169,195 @@
       "extracted_at": "2026-06-29T15:16:00+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000403",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "caladryl",
+        "aloe-vera",
+        "solomons-seal",
+        "goldenseal",
+        "plantain"
+      ],
+      "conditions": [
+        "poison_ivy"
+      ],
+      "symptoms": [],
+      "claim_text": "Poison ivy causes a contact papular dermatitis (a raised, bumpy skin rash) that produces a severe itch. Treatment of poison ivy dermatitis includes the topical application of Caladryl and aloe vera, plus poultices of Solomon's seal (Polygonatum multiflorum), goldenseal (Hydrastis canadensis), and plantain (Plantago major).",
+      "verbatim": "Treatment of poison ivy dermatitis includes\ntopical application ofCaladryl, aloe vera, poul-\ntices of Solomon's seal (Polygonatum\nmultiflorum), golden seal (Hydrastis\ncanadensis) and plantain (Plantago major).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 161,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 430288
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T15:25:58+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000404",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "vitamin-e"
+      ],
+      "other_substances": [
+        "edta",
+        "hydrogen-peroxide",
+        "ginkgo",
+        "hawthorn",
+        "horsetail",
+        "lavender",
+        "lily-of-the-valley",
+        "rosemary",
+        "scotch-pine",
+        "cayenne"
+      ],
+      "conditions": [
+        "poor_circulation"
+      ],
+      "symptoms": [],
+      "claim_text": "Poor circulation can be caused by cardiovascular disease, low thyroid function, and vitamin E deficiency; its symptoms include cold hands and feet and numb, tingling fingers and toes. Treatment includes EDTA chelation, intravenous hydrogen peroxide, vitamin C to bowel tolerance, vitamin E at 800-1,200 IU per day, massage, hydrotherapy, acupuncture, and herbs including ginkgo (Ginkgo biloba), hawthorn (Crataegus oxyacantha), horsetail (Equisetum arvense), lavender (Lavandula angustifolia), lily-of-the-valley (Convallaria majalis), rosemary (Rosmarinus officinalis), scotch pine (Pinus sylvestris), and cayenne pepper (Capsicum minimum).",
+      "verbatim": "Treatment of poor circulation includes EDTA\nchelation, hydrogen peroxide IV, vitamin C to\nbowel tolerance, vitamin E at 800-1,200 IU/\nday, massage, hydro-therapy, acupuncture\nand herbs in-cluding ginkgo (Ginkgo biloba),\nhawthorn (Crataegus oxyacantha), horsetail\n(Equisetum arvense), lavender (Lavandula\nangustifolia), lily-of-the-valley (Convallaria\nmajalis), rosemaiy (Rosmarinus officinalis),\nscotch pine (Pinus sylvestris) and cayenne\npepper (Capsicum minimum).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 161,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 430670
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T15:25:58+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000405",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "ergot"
+      ],
+      "conditions": [
+        "post_partum_hemorrhage"
+      ],
+      "symptoms": [],
+      "claim_text": "Post-partum hemorrhage (bleeding after childbirth) results from an atonic uterus that fails to contract hard enough or long enough, letting the open blood vessels leak (occasionally a retained piece of afterbirth in the uterine lining is the source). Treatment should include firm digital pressure on the fundus of the uterus to stimulate contraction; the use of ergot (Claviceps purpurea) orally at 10-20 minims, or by injection, will add sufficient contraction power.",
+      "verbatim": "Treatment of post paitum hemorrhage should\ninclude firm digital pressure on the fundus of\nthe uterus to stimulate contraction; the use of\nergot (Claviceps purpurea) orally at 10-20\nminims or by injection will add sufficient con-\ntraction power.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 161,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 431424
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T15:25:58+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000406",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "raspberry",
+        "blue-cohosh"
+      ],
+      "conditions": [
+        "labor"
+      ],
+      "symptoms": [],
+      "claim_text": "Pregnancy labor can be enhanced, Wallach says, by the use of herbs including raspberry (Rubus idaeus) and blue cohosh (Caulophyllum thalictroides).",
+      "verbatim": "can be en\nhanced by the use of herbs including rasp-\nberry (Rubus idaeus) and blue cohosh\n(Caulophyllum thalictroides).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 161,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 431694
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T15:25:58+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000407",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b6"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "pregnancy_toxemia",
+        "preeclampsia",
+        "eclampsia"
+      ],
+      "symptoms": [],
+      "claim_text": "Pregnancy toxemia (eclampsia) is, in Wallach's view, the result of the low-protein, low-salt diets women were put on to limit weight gain in pregnancy. Pre-eclampsia symptoms include sudden weight gain (fluid accumulation from low blood protein), high blood pressure, and albuminuria (protein in the urine); eclampsia adds convulsions and/or coma, and both characteristically occur after the 20th week of pregnancy. Against the orthodox approach (hospitalize, watch for convulsions, then give barbiturates), treatment of pre-eclampsia should include a high-animal-protein meal plan (150 grams or more, versus the RDA — Recommended Dietary Allowance — of 40 grams), not restricting salt, vitamin B-6 at 100 milligrams per day (dropping to 50 milligrams at birth if you plan to breast-feed, since high B-6 levels reduce breast-milk production), the baseline nutritional supplement program, and 10-12 glasses of water and/or juice per day, especially in the warm summer months.",
+      "verbatim": "Treatment of preeclampsia should include a\nhigh animal protein meal plan (150 gm or\nmore whereas the RDA is 40 gm), do not\nrestrict salt, B-6 at 100 mg per day (drop to 50\nmg per at parturition (birth) if you plan to\nbreast freed as high levels of B-6 will reduce\nproduction of breast milk), base line nutri-\ntional supplement program and 10-12 glasses\nof water and/or juice per day, especially in\nthewarm summer months.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 161,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 432622
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T15:25:58+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
