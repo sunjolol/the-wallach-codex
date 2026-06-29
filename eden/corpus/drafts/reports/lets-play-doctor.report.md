@@ -1,46 +1,66 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_5 claim(s) drafted 2026-06-29T17:35:09+00:00. Review then run corpus_seal.py to promote._
+_6 claim(s) drafted 2026-06-29T17:42:28+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×1, protocol×4
+Kinds: definition×1, protocol×5
 
-### WAL-CLM-LETS-000440 · definition
-- **essentials:** — · **conditions:** cystic_fibrosis · **symptoms:** —
-- **claim:** The sweat test is a nonspecific test that measures the amount of electrolytes (sodium, chlorides, and potassium) in sweat. It was originally meant to be a specific genetic test for cystic fibrosis, but today it is found to be positive in 17 different conditions, including food allergies, starvation, kwashiorkor, and celiac disease. The mechanism is related to essential fatty acid deficiencies and the resulting lack of certain prostaglandins (short-lived, hormone-like substances) that control sweat electrolyte levels.
-- **verbatim** (offset 459324): “The mechanism is related to essen-
-tial fatty acid deficiencies and thus the lack of
-certain prostaglandins (short lived hormone -
-- like substances) which control sweat electro-
-lyte levels.”
+### WAL-CLM-LETS-000445 · protocol
+- **essentials:** vitamin-b3, vitamin-b6, omega-3, manganese, vitamin-e · **conditions:** tardive_dyskinesia · **symptoms:** —
+- **claim:** Tardive dyskinesia (spasms of the facial muscles) is on the increase as a side effect of heavy tranquilizer (phenothiazine) usage. Treatment should include discontinuing the inducing drugs, vitamin B-3 (niacin) at 450 mg three times a day as time-release tablets, phosphatidyl choline at 30 grams per day, vitamin B-6 at 200 mg four times a day, essential fatty acids at 5 grams three times a day, manganese at 10-15 mg per day, and vitamin E at 800-1,200 IU per day.
+- **verbatim** (offset 462879): “Treatment of tardive dyskinesia should in-
+clude the discontinuation ofthe inducing drugs,
+B-3 at 450 mg t.i.d. as time release tablets,
+phosphatidyl choline at 30 gm per day, B-6 at
+200 mgq.i.d., essential fatty acids at 5 gm t.i.d.,
+manganese at 10-15 mg per day, vitamin E at
+800-1,200 IU per day.”
 
-### WAL-CLM-LETS-000441 · protocol
-- **essentials:** — · **conditions:** swimmers_ear · **symptoms:** —
-- **claim:** Swimmer's ear is usually caused by Candida albicans growing in the external ear canal, with constant dampness during the summer swimming season thought to be the underlying cause. Treatment includes hydrogen peroxide ear drops and/or Nystatin ear drops.
-- **verbatim** (offset 459697): “Treatment for swimmers ear include hydro-
-gen peroxide ear drops and/or Nystatin ear
-drops.”
+### WAL-CLM-LETS-000446 · definition
+- **essentials:** — · **conditions:** teeth_discoloration · **symptoms:** —
+- **claim:** Teeth discoloration with reduced enamel thickness is a common side effect of prolonged administration of tetracyclines during the second half of pregnancy or during early tooth development; affected teeth become brown or gray and fluoresce orange-green under ultraviolet light. Prevention is key; cosmetic capping is necessary if permanent teeth are affected.
+- **verbatim** (offset 463217): “with reduced enamel thickness is a common
+side effect of prolonged administration of
+tetracyclines during the second half of preg-
+nancy or during early tooth development”
 
-### WAL-CLM-LETS-000442 · protocol
-- **essentials:** — · **conditions:** syphilis · **symptoms:** —
-- **claim:** Syphilis is a sexually transmitted disease caused by the spirochete Treponema pallidum; it has been associated with AIDS (in one study, 90% of AIDS patients among homosexual males also had syphilis). It is marked by active infection alternating with years of spontaneous remission. Symptoms include a primary lesion or chancre sore (on the penis, vulva, lips, or tongue) that may persist 3-4 months, skin rashes appearing after 3-4 months, and herpes-like sores; the disease can infect any organ, and tertiary syphilis occurs 10-25 years after the original infection. Diagnosis is made from a positive blood VDRL test. Treatment is specific in all stages: penicillin G at 2.4 million units intramuscularly, with a second treatment 10-14 days later. Like AIDS, syphilis is a reportable disease to the Public Health Service.
-- **verbatim** (offset 460549): “Treatment for syphilis is specific in all stages
-with penicillin G at 2.4 million u IM with a
-second treatment 10-14 days later.”
+### WAL-CLM-LETS-000447 · protocol
+- **essentials:** — · **conditions:** teething · **symptoms:** —
+- **claim:** Teething can be uncomfortable for infant and parents, with painful local swellings, sudden fever, irritability, and diarrhea (especially irritating with severe diaper rash). Treatment includes acetaminophen (Tylenol) or aspirin drops (following label directions) and herbs including German chamomile (Matricaria chamomilla) in teaspoon doses as needed.
+- **verbatim** (offset 463764): “Treatment of teething includes tylenol or aspi-
+rin drops (follow label directions) and herbs
+including German chamomile (Matricaria
+chamomilla) as teaspoon doses as needed.”
 
-### WAL-CLM-LETS-000443 · protocol
-- **essentials:** selenium, vitamin-b1, vitamin-b3 · **conditions:** tachycardia · **symptoms:** —
-- **claim:** Tachycardia (rapid heartbeat) can be caused by 'nervous heart,' hyperthyroidism, food allergies, hypoglycemia, nutritional deficiencies (such as vitamin B-1, vitamin B-3, and selenium), poisons, and organic heart disease — a classic example being a reaction to monosodium glutamate ('Chinese Restaurant Syndrome'). Treatment should include identifying and treating the underlying cause, plus acupuncture, selenium at 500-1,000 mcg per day, vitamin B-1 (thiamine) at 100 mg three times a day, vitamin B-3 (niacin) at 450 mg three times a day as time-release tablets, subliminal relaxation tapes, and herbs including English hawthorn (Crataegus oxyacantha), hops (Humulus lupulus), lavender (Lavandula angustifolia), motherwort (Leonurus cardiaca), valerian (Valeriana officinalis), and lily-of-the-valley (Convallaria majalis).
-- **verbatim** (offset 461082): “Treatment of tachycardia should include the
-identification and treatment of the underlying
-cause (see labora-tory and diagnostic section;
-acu-puncture, selenium at 500-1,000 mcg per
-day, B-l at 100 mg t.i.d., B-3 at 450 mg t.i.d. as
-time release tablets”
+### WAL-CLM-LETS-000448 · protocol
+- **essentials:** zinc · **conditions:** testicular_atrophy · **symptoms:** —
+- **claim:** Testicular atrophy is not uncommon in aging men or following an episode of mumps, and may result in decreased sexual drive and feminization. Treatment should include zinc at 50 mg three times a day, plant-derived colloidal minerals, and an herbal combination of testosterone (Zumba), ginseng (Panax ginseng), and saw palmetto (Serenoa serrulata).
+- **verbatim** (offset 464095): “Treatment of testicular atrophy should in-
+clude zinc at 50 mg t.i.d., plant derived colloi-
+dal minerals, an herbal combination mixed
+with testosterone (Zumba), ginseng (Panax
+ginseng) and saw palmetto (Sarenoa serrulata).”
 
-### WAL-CLM-LETS-000444 · protocol
-- **essentials:** — · **conditions:** tapeworms · **symptoms:** —
-- **claim:** Tapeworms (cestodes) can live in the intestines without noticeable problems in a well-nourished person, but can cause wasting weight loss and anemia; they are contracted by eating contaminated watercress, raw fish, raw beef, or raw pork. Diagnosis may be made by seeing rice-like moving segments on the stool or eggs on microscopic examination. Treatment requires a single dose of niclosamide at 2 grams taken with a glass of water; recheck the stool in 3-6 months for reinfestation and retreat if needed. Helpful herbs include garlic (Allium sativum) and male fern (Dryopteris filix-mas); pretreating with a teaspoon of castor oil in the morning before treatment increases efficiency. Prevention relates to thoroughly cooking fish and meat and washing vegetables.
-- **verbatim** (offset 462347): “Treatment of tapeworms requires the use of a
-single dose of niclosamide at 2 gm taken with
-a glass of water.”
+### WAL-CLM-LETS-000449 · protocol
+- **essentials:** — · **conditions:** thallium_poisoning, heavy_metal_toxicity · **symptoms:** —
+- **claim:** Thallium poisoning can occur accidentally when small children get into pesticides containing thallium salts; it can be rapidly fatal if not treated promptly. Symptoms include bloody vomiting and diarrhea, oral irritation with severe salivation, tremors, facial palsy, and hair loss within 3-4 weeks in survivors. Treatment should include contacting poison control centers; syrup of ipecac to induce vomiting at 15-30 ml (1-2 tablespoons) for children and adults, followed by several pints of water until vomiting occurs; one tablespoon of activated charcoal in a glass of water; and diazepam to control convulsions. Chelation therapy is of no value for thallium poisoning.
+- **verbatim** (offset 464673): “Treatment for thallium poisoning should in-
+clude contact with poison control centers;
+syrup of ipecac to induce vomiting at 15-30 ml
+(1-2 tbsp.) for children and adults; follow with
+several pints of water until vomiting occurs,
+one tbsp. activated charcoal in a glass of water,
+control convulsions diazepam. Chelation
+therapy is of no value for thallium poisoning.”
+
+### WAL-CLM-LETS-000450 · protocol
+- **essentials:** vitamin-c, selenium, vitamin-e, vitamin-a, zinc · **conditions:** thrush, candidiasis · **symptoms:** —
+- **claim:** Thrush (oral candidiasis) is an oral yeast infection caused by Candida albicans, marked by creamy white patches that can be scraped off with a tongue depressor; Candida becomes pathogenic when host defenses are lost (malnutrition, chemotherapy, AIDS) or competing intestinal organisms are killed by antibiotic therapy. Treatment includes oral washes and gargling with hydrogen peroxide (small infants unable to gargle may have topical Nystatin applied to the lesions), plus addressing the underlying condition. Vitamin C to bowel tolerance, selenium at 25-1,000 mcg per day, vitamin E at 800-1,200 IU per day, vitamin A at 25,000-300,000 IU per day as beta carotene, and zinc at 50 mg three times a day are of great value in restoring immune status; after extended antibiotic therapy, Lactobacillus acidophilus (ten capsules twice a day between meals for ten days each month) restores the normal colon count.
+- **verbatim** (offset 465639): “Treatment of thrush includes the use of oral
+washes and gargling with hydrogen peroxide;
+small infants unable to gargle may have to
+have topical Nystatin applied to the lesions.
+The underlying condition must also be dealt
+with to allow you to defend yourself against
+reinfection. Vitamin C to bowel tolerance,
+selenium at 25-1,000 mcg per day”
 

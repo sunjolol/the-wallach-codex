@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 203 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 204 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-29 12:43 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b69: TARDIVE DYSKINESIA→THRUSH (all p171), LETS-445..450, 6 claims (1 def + 5 protocol). corpus 824→830, conds 426→431, kv 180. 1 meg→mcg fix (THRUSH selenium); TESTICULAR ATROPHY tier-1; tardive_dyskinesia gains its first protocol. Board 31/31.
+  ↳ 6 claims: tardive_dyskinesia REUSED (was a RARE-242 choline-deficiency deficiency_sign -> now its first protocol; phosphatidyl choline 30 gm is the treatment, render-verified genuine megadose), teeth_discoloration (NEW, DEFINITION — tetracycline staining, prevention only), teething/testicular_atrophy/thallium_poisoning/thrush NEW conds (+ heavy_metal_toxicity & candidiasis cross-tagged). TESTICULAR ATROPHY = tier-1 (reproductive condition with a real protocol, per IMPOTENCE/oligospermia precedent). DOSE: 1 render-verified meg->mcg — THRUSH selenium L11405 (600-DPI zoom confirmed printed 'mcg'); 'selenium at 25-1,000 meg per' recurs 2x so used unique trailing context 'meg per day, vitamin E' -> hit only L11405; resnap (book hash 984267be->2ee4c57b, 0 relocated, LF bytes 517193 unchanged); L11450 TONSILLITIS 'meg' left for b70. New other-sub diazepam; tetracycline kept prose-only (causative agent). Gates: build OK (1624.4 KB), invariants 31/31 (0 new reds), render_probe_knowledge PASS (0 page errors, conds rowCount 431). NEXT b70 = TINNITUS / TONSILLITIS [meg->mcg L11450 + VERIFY suspected vit-C-vs-vit-A beta-carotene OCR-meaning error by render] / TOOTHACHE / SPASMODIC TORTICOLLIS [meg->mcg L11477-78] / TOXIC SHOCK SYNDROME; TIREDNESS = bare xref skip.
 
 ## 2026-06-29 12:36 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b68: SWEAT TEST→TAPEWORMS (p169-170), LETS-440..444, 5 claims (1 def + 4 protocol). corpus 819→824, conds 422→426, kv 179. 1 meg→mcg fix (TACHYCARDIA, last-meg handoff claim corrected); SYPHILIS tier-1 clinical+faithful (Luneth). Board 31/31.
@@ -801,7 +805,3 @@ Teeth-test PROVEN: creators_log_append_only catches both deletion (truncate 5→
 ## 2026-06-23 03:39 UTC · milestone · tools
 Sacred Creator's Log: moved to chronicle/creators-log/ (log.jsonl + generated LOG.md + README) and added the covenant's teeth — git-anchored append-only invariant, digest-sync invariant, shell delete-guard, and a never-skip round-close hard-block. Board 21→23.
   ↳ The append-only invariant makes deleting committed entries un-shippable; the firing-check makes a skipped round-close entry un-closeable. Tightened the delete-guard after a self-inflicted prose false-positive (good stress test).
-
-## 2026-06-23 03:25 UTC · design-decision · tools
-Codified the two-layer logging model + the Creator's Log sacred covenant (append-only, never deleted even under broad delete-authorization, always truthful/complete, fires per-chunk). Audit found sacredness + never-skip not yet machine-enforced.
-  ↳ Doctrine in .claude/rules/logging-doctrine.md. 3 enforcement guards proposed (git-anchored append-only invariant, round-close firing check, boundary delete-guard) pending Luneth's approval of the ledger file/folder structure.

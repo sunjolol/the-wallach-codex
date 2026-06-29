@@ -2100,7 +2100,7 @@
     "display_name": "Manganese",
     "canon_slug": "manganese",
     "category": "mineral",
-    "claim_count": 15,
+    "claim_count": 16,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000175"
@@ -2128,6 +2128,7 @@
         "WAL-CLM-LETS-000147",
         "WAL-CLM-LETS-000267",
         "WAL-CLM-LETS-000294",
+        "WAL-CLM-LETS-000445",
         "WAL-CLM-RARE-000283"
       ],
       "toxicity_sign": [
@@ -2205,6 +2206,7 @@
       "parkinsonism",
       "repetitive_motion_syndrome",
       "schizophrenia",
+      "tardive_dyskinesia",
       "tinnitus",
       "tmj"
     ],
@@ -2216,6 +2218,7 @@
       "selenium",
       "tin",
       "vitamin-b12",
+      "vitamin-b3",
       "vitamin-b6",
       "vitamin-b9",
       "vitamin-e",
@@ -2264,7 +2267,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 84,
+    "claim_count": 85,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2355,6 +2358,7 @@
         "WAL-CLM-LETS-000419",
         "WAL-CLM-LETS-000427",
         "WAL-CLM-LETS-000443",
+        "WAL-CLM-LETS-000450",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2410,6 +2414,7 @@
       "birth_defects",
       "bone_spurs",
       "cancer",
+      "candidiasis",
       "cardiac_arrhythmia",
       "cardiomyopathy",
       "cardiovascular_disease",
@@ -2473,6 +2478,7 @@
       "sids",
       "stroke",
       "tachycardia",
+      "thrush",
       "white_muscle_disease"
     ],
     "interacts_with": [
@@ -2735,7 +2741,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 101,
+    "claim_count": 103,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2847,6 +2853,8 @@
         "WAL-CLM-LETS-000431",
         "WAL-CLM-LETS-000433",
         "WAL-CLM-LETS-000438",
+        "WAL-CLM-LETS-000448",
+        "WAL-CLM-LETS-000450",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -2948,6 +2956,7 @@
       "bronchitis",
       "bulimia",
       "cancer",
+      "candidiasis",
       "canker_sores",
       "cardiomyopathy",
       "carpal_tunnel_syndrome",
@@ -3020,6 +3029,8 @@
       "shingles",
       "spina_bifida",
       "stress",
+      "testicular_atrophy",
+      "thrush",
       "umbilical_hernia",
       "violent_behavior",
       "xerophthalmia"
@@ -3832,7 +3843,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 53,
+    "claim_count": 54,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -3890,7 +3901,8 @@
         "WAL-CLM-LETS-000421",
         "WAL-CLM-LETS-000430",
         "WAL-CLM-LETS-000431",
-        "WAL-CLM-LETS-000433"
+        "WAL-CLM-LETS-000433",
+        "WAL-CLM-LETS-000450"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000037"
@@ -3959,6 +3971,7 @@
       "boils",
       "bronchitis",
       "cancer",
+      "candidiasis",
       "canker_sores",
       "cervical_dysplasia",
       "chalazion",
@@ -4008,6 +4021,7 @@
       "seborrheic_dermatitis",
       "spina_bifida",
       "stroke",
+      "thrush",
       "umbilical_hernia",
       "xerophthalmia"
     ],
@@ -4363,7 +4377,7 @@
     "display_name": "Niacin",
     "canon_slug": "vitamin-b3",
     "category": "vitamin",
-    "claim_count": 22,
+    "claim_count": 23,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000019",
@@ -4390,6 +4404,7 @@
         "WAL-CLM-LETS-000388",
         "WAL-CLM-LETS-000394",
         "WAL-CLM-LETS-000443",
+        "WAL-CLM-LETS-000445",
         "WAL-CLM-RARE-000282"
       ],
       "toxicity_sign": [
@@ -4501,7 +4516,8 @@
       "premenstrual_syndrome",
       "rheumatoid_arthritis",
       "schizophrenia",
-      "tachycardia"
+      "tachycardia",
+      "tardive_dyskinesia"
     ],
     "interacts_with": [
       "arginine",
@@ -4516,6 +4532,7 @@
       "inositol",
       "lithium",
       "magnesium",
+      "manganese",
       "omega-3",
       "oxygen",
       "phenylalanine",
@@ -4696,7 +4713,7 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 44,
+    "claim_count": 45,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000027",
@@ -4745,6 +4762,7 @@
         "WAL-CLM-LETS-000407",
         "WAL-CLM-LETS-000419",
         "WAL-CLM-LETS-000430",
+        "WAL-CLM-LETS-000445",
         "WAL-CLM-RARE-000286"
       ],
       "toxicity_sign": [
@@ -4886,6 +4904,7 @@
       "rheumatoid_arthritis",
       "seborrheic_dermatitis",
       "stomatitis",
+      "tardive_dyskinesia",
       "tourette_syndrome"
     ],
     "interacts_with": [
@@ -5256,7 +5275,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 67,
+    "claim_count": 68,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -5331,7 +5350,8 @@
         "WAL-CLM-LETS-000410",
         "WAL-CLM-LETS-000417",
         "WAL-CLM-LETS-000428",
-        "WAL-CLM-LETS-000438"
+        "WAL-CLM-LETS-000438",
+        "WAL-CLM-LETS-000450"
       ]
     },
     "deficiency_signs": [
@@ -5417,6 +5437,7 @@
       "burns",
       "bursitis",
       "cancer",
+      "candidiasis",
       "cataracts",
       "cerebrovascular_disease",
       "cluster_headaches",
@@ -5470,6 +5491,7 @@
       "shingles",
       "stress",
       "stroke",
+      "thrush",
       "varicose_veins"
     ],
     "interacts_with": [
@@ -5601,7 +5623,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 63,
+    "claim_count": 65,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -5674,6 +5696,8 @@
         "WAL-CLM-LETS-000421",
         "WAL-CLM-LETS-000427",
         "WAL-CLM-LETS-000430",
+        "WAL-CLM-LETS-000445",
+        "WAL-CLM-LETS-000450",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -5760,6 +5784,7 @@
       "burns",
       "bursitis",
       "cancer",
+      "candidiasis",
       "canker_sores",
       "cardiomyopathy",
       "cardiovascular_disease",
@@ -5810,6 +5835,8 @@
       "seborrheic_dermatitis",
       "shingles",
       "stroke",
+      "tardive_dyskinesia",
+      "thrush",
       "varicose_veins"
     ],
     "interacts_with": [
@@ -6659,7 +6686,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 77,
+    "claim_count": 78,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -6743,6 +6770,7 @@
         "WAL-CLM-LETS-000431",
         "WAL-CLM-LETS-000433",
         "WAL-CLM-LETS-000439",
+        "WAL-CLM-LETS-000445",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -6863,6 +6891,7 @@
       "schizophrenia",
       "seborrheic_dermatitis",
       "stroke",
+      "tardive_dyskinesia",
       "varicose_veins",
       "weight_loss"
     ],

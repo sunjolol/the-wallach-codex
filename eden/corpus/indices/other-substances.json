@@ -1,13 +1,14 @@
 {
   "acetaminophen": {
     "display_name": "Acetaminophen",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000274",
         "WAL-CLM-LETS-000293",
         "WAL-CLM-LETS-000392",
-        "WAL-CLM-LETS-000393"
+        "WAL-CLM-LETS-000393",
+        "WAL-CLM-LETS-000447"
       ]
     },
     "conditions_treated": [
@@ -15,7 +16,8 @@
       "fever",
       "headache",
       "otitis",
-      "pain"
+      "pain",
+      "teething"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -422,14 +424,15 @@
   },
   "aspirin": {
     "display_name": "Aspirin",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000274",
         "WAL-CLM-LETS-000293",
         "WAL-CLM-LETS-000392",
         "WAL-CLM-LETS-000393",
-        "WAL-CLM-LETS-000418"
+        "WAL-CLM-LETS-000418",
+        "WAL-CLM-LETS-000447"
       ]
     },
     "conditions_treated": [
@@ -438,7 +441,8 @@
       "headache",
       "otitis",
       "pain",
-      "rheumatic_fever"
+      "rheumatic_fever",
+      "teething"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1503,14 +1507,17 @@
   },
   "charcoal": {
     "display_name": "Charcoal",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000248"
+        "WAL-CLM-LETS-000248",
+        "WAL-CLM-LETS-000449"
       ]
     },
     "conditions_treated": [
-      "diarrhea"
+      "diarrhea",
+      "heavy_metal_toxicity",
+      "thallium_poisoning"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1693,7 +1700,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 47,
+    "claim_count": 48,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-LETS-000352"
@@ -1744,7 +1751,8 @@
         "WAL-CLM-LETS-000419",
         "WAL-CLM-LETS-000426",
         "WAL-CLM-LETS-000427",
-        "WAL-CLM-LETS-000439"
+        "WAL-CLM-LETS-000439",
+        "WAL-CLM-LETS-000448"
       ]
     },
     "conditions_treated": [
@@ -1804,6 +1812,7 @@
       "sciatica",
       "scoliosis",
       "stroke",
+      "testicular_atrophy",
       "weight_loss"
     ],
     "books_cited": [
@@ -2150,6 +2159,22 @@
     },
     "conditions_treated": [
       "rheumatoid_arthritis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "diazepam": {
+    "display_name": "Diazepam",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000449"
+      ]
+    },
+    "conditions_treated": [
+      "heavy_metal_toxicity",
+      "thallium_poisoning"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3041,7 +3066,7 @@
   },
   "german-chamomile": {
     "display_name": "German Chamomile",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000262",
@@ -3050,7 +3075,8 @@
         "WAL-CLM-LETS-000297",
         "WAL-CLM-LETS-000375",
         "WAL-CLM-LETS-000397",
-        "WAL-CLM-LETS-000434"
+        "WAL-CLM-LETS-000434",
+        "WAL-CLM-LETS-000447"
       ]
     },
     "conditions_treated": [
@@ -3063,7 +3089,8 @@
       "periodontal_disease",
       "psoriasis",
       "sore_throat",
-      "sty"
+      "sty",
+      "teething"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3086,7 +3113,7 @@
   },
   "ginseng": {
     "display_name": "Ginseng",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000222",
@@ -3096,7 +3123,8 @@
         "WAL-CLM-LETS-000315",
         "WAL-CLM-LETS-000316",
         "WAL-CLM-LETS-000319",
-        "WAL-CLM-LETS-000386"
+        "WAL-CLM-LETS-000386",
+        "WAL-CLM-LETS-000448"
       ]
     },
     "conditions_treated": [
@@ -3107,7 +3135,8 @@
       "incontinence",
       "infertility",
       "intermittent_claudication",
-      "oligospermia"
+      "oligospermia",
+      "testicular_atrophy"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3541,7 +3570,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 42,
+    "claim_count": 43,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
@@ -3585,7 +3614,8 @@
         "WAL-CLM-LETS-000419",
         "WAL-CLM-LETS-000429",
         "WAL-CLM-LETS-000439",
-        "WAL-CLM-LETS-000441"
+        "WAL-CLM-LETS-000441",
+        "WAL-CLM-LETS-000450"
       ]
     },
     "conditions_treated": [
@@ -3632,6 +3662,7 @@
       "stroke",
       "swimmers_ear",
       "tetanus",
+      "thrush",
       "tonsillitis",
       "vaginitis"
     ],
@@ -3695,13 +3726,16 @@
   },
   "ipecac": {
     "display_name": "Ipecac",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000265"
+        "WAL-CLM-LETS-000265",
+        "WAL-CLM-LETS-000449"
       ]
     },
     "conditions_treated": [
+      "heavy_metal_toxicity",
+      "thallium_poisoning",
       "vomiting"
     ],
     "books_cited": [
@@ -3965,17 +3999,19 @@
   },
   "lactobacillus-acidophilus": {
     "display_name": "Lactobacillus Acidophilus",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000201",
         "WAL-CLM-LETS-000252",
-        "WAL-CLM-LETS-000382"
+        "WAL-CLM-LETS-000382",
+        "WAL-CLM-LETS-000450"
       ]
     },
     "conditions_treated": [
       "candidiasis",
       "nosebleeds",
+      "thrush",
       "vaginitis"
     ],
     "books_cited": [
@@ -4825,14 +4861,17 @@
   },
   "nystatin": {
     "display_name": "Nystatin",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000441"
+        "WAL-CLM-LETS-000441",
+        "WAL-CLM-LETS-000450"
       ]
     },
     "conditions_treated": [
-      "swimmers_ear"
+      "candidiasis",
+      "swimmers_ear",
+      "thrush"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5376,14 +5415,16 @@
   },
   "phosphatidylcholine": {
     "display_name": "Phosphatidylcholine",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000120"
+        "WAL-CLM-LETS-000120",
+        "WAL-CLM-LETS-000445"
       ]
     },
     "conditions_treated": [
-      "absence_attacks"
+      "absence_attacks",
+      "tardive_dyskinesia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5974,19 +6015,21 @@
   },
   "saw-palmetto": {
     "display_name": "Saw Palmetto",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000157",
         "WAL-CLM-LETS-000315",
-        "WAL-CLM-LETS-000316"
+        "WAL-CLM-LETS-000316",
+        "WAL-CLM-LETS-000448"
       ]
     },
     "conditions_treated": [
       "benign_prostatic_hyperplasia",
       "erectile_dysfunction",
       "impotence",
-      "incontinence"
+      "incontinence",
+      "testicular_atrophy"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -6474,15 +6517,17 @@
   },
   "testosterone": {
     "display_name": "Testosterone",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000315"
+        "WAL-CLM-LETS-000315",
+        "WAL-CLM-LETS-000448"
       ]
     },
     "conditions_treated": [
       "erectile_dysfunction",
-      "impotence"
+      "impotence",
+      "testicular_atrophy"
     ],
     "books_cited": [
       "lets-play-doctor"

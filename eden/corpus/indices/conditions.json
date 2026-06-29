@@ -2146,24 +2146,31 @@
   },
   "candidiasis": {
     "display_name": "Candidiasis",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000157"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000201"
+        "WAL-CLM-LETS-000201",
+        "WAL-CLM-LETS-000450"
       ]
     },
     "essentials_involved": [
       "germanium",
-      "lanthanum"
+      "lanthanum",
+      "selenium",
+      "vitamin-a",
+      "vitamin-c",
+      "vitamin-e",
+      "zinc"
     ],
     "other_substances_involved": [
       "blood-therapy",
       "dmso",
       "hydrogen-peroxide",
       "lactobacillus-acidophilus",
+      "nystatin",
       "urine-therapy"
     ],
     "books_cited": [
@@ -5081,18 +5088,22 @@
   },
   "heavy_metal_toxicity": {
     "display_name": "Heavy Metal Toxicity",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000361"
+        "WAL-CLM-LETS-000361",
+        "WAL-CLM-LETS-000449"
       ]
     },
     "essentials_involved": [
       "selenium"
     ],
     "other_substances_involved": [
+      "charcoal",
       "colloidal-minerals",
+      "diazepam",
       "edta-chelation",
+      "ipecac",
       "sauna"
     ],
     "books_cited": [
@@ -9830,18 +9841,82 @@
   },
   "tardive_dyskinesia": {
     "display_name": "Tardive Dyskinesia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000242"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000445"
       ]
     },
     "essentials_involved": [
-      "choline"
+      "choline",
+      "manganese",
+      "omega-3",
+      "vitamin-b3",
+      "vitamin-b6",
+      "vitamin-e"
     ],
+    "other_substances_involved": [
+      "phosphatidylcholine"
+    ],
+    "books_cited": [
+      "lets-play-doctor",
+      "rare-earths"
+    ]
+  },
+  "teeth_discoloration": {
+    "display_name": "Teeth Discoloration",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-LETS-000446"
+      ]
+    },
+    "essentials_involved": [],
     "other_substances_involved": [],
     "books_cited": [
-      "rare-earths"
+      "lets-play-doctor"
+    ]
+  },
+  "teething": {
+    "display_name": "Teething",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000447"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "acetaminophen",
+      "aspirin",
+      "german-chamomile"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "testicular_atrophy": {
+    "display_name": "Testicular Atrophy",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000448"
+      ]
+    },
+    "essentials_involved": [
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "colloidal-minerals",
+      "ginseng",
+      "saw-palmetto",
+      "testosterone"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "tetanus": {
@@ -9884,6 +9959,48 @@
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "thallium_poisoning": {
+    "display_name": "Thallium Poisoning",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000449"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "charcoal",
+      "diazepam",
+      "ipecac"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "thrush": {
+    "display_name": "Thrush",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000450"
+      ]
+    },
+    "essentials_involved": [
+      "selenium",
+      "vitamin-a",
+      "vitamin-c",
+      "vitamin-e",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "hydrogen-peroxide",
+      "lactobacillus-acidophilus",
+      "nystatin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "thyroid_cancer": {
