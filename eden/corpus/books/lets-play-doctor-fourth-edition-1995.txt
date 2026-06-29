@@ -9027,7 +9027,7 @@ at 500-1,500 mg per day or Ribavirin at 250-
 1 ,500 mg per day (pregnant women should
 avoid these drugs as they are teratogenic in lab
 animals).
-LAXATTVE: includes many OTC preparations
+LAXATIVE: includes many OTC preparations
 such as Ex-Lax and Milk of Magnesia and
 herbs including senna (Cassia aqutifolia), flax-
 seed or flaxseed oil (Linum ustatissimum),
@@ -9035,7 +9035,7 @@ alder buckthorn (Rhamnus fragula), cascara
 sagrada (Rhamnus purshiana), juniper
 (Juniperus communis) and manna ash
 (Fraxinus ornus).
-LEAD POISOMNG (plumbism): can cause
+LEAD POISONING (plumbism): can cause
 a wide variety of symptoms and syndromes
 including learning disabilities, kidney disease
 stunted bone growth, headaches and gastroi-

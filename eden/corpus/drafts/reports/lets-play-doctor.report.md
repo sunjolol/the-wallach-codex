@@ -1,53 +1,71 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_4 claim(s) drafted 2026-06-29T02:41:19+00:00. Review then run corpus_seal.py to promote._
+_6 claim(s) drafted 2026-06-29T02:57:33+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: protocol×4
+Kinds: definition×2, protocol×4
 
-### WAL-CLM-LETS-000331 · protocol
-- **essentials:** chromium · **conditions:** ketoacidosis, ketosis · **symptoms:** —
-- **claim:** Ketoacidosis (ketosis) results from a low glucose supply to the liver, which forces it to metabolize fat — producing 'ketone bodies' (acetoacetic acid, beta-hydroxybutyric acid, and acetone). It occurs in diabetes, alcoholism, hypoglycemia, and starvation. Signs include acetone-smelling breath, nausea and vomiting, air hunger, confusion or coma, extreme thirst, and weight loss; a positive urine 'dipstick' for ketone bodies confirms it. Treatment: resolve the basic disease process (diabetes, hypoglycemia, alcoholism, starvation), increase complex-carbohydrate intake, chromium at 50-200 micrograms three times daily, and the baseline nutritional program.
-- **verbatim** (offset 358594): “Treatment of ketosis includes resolving the
-basic disease process (i.e., diabetes,
-hypoglycemia, alcoholism, starvation, etc.),
-increas-ing the complex carbohydrate intake,
-chromium at 50-200 mcg t.i.d. and the base
-line nutritional program.”
+### WAL-CLM-LETS-000335 · protocol
+- **essentials:** — · **conditions:** labor · **symptoms:** —
+- **claim:** Labor can be made easier and assisted by herbs — blue cohosh (Caulophyllum thalictroides) and raspberry tea (Rubus idaeus); corn ergot (Ustilago maydis) can be used orally or intramuscularly to stop postpartum hemorrhage. Training classes such as Lamaze help the mother relax during contractions and train a coach to assist and recognize potential trouble. Wallach also states his opinion that home births are safer than hospital births, and notes the hospital caesarian-section rate of 35%, observing that vaginal births earn the obstetrician about $800-$1,200 while caesarian sections earn about $2,500 — his editorial commentary on cost incentives, not a medical claim.
+- **verbatim** (offset 362827): “LABOR (induce): can be made easier and
+assisted by herbs including blue cohosh
+(Caulophyllus thalictroides) and raspberry tea
+(Rubus idaeus), corn ergot (Ustilago maydis)
+can be used to stop postpartum hemorrhage
+(orally or IM).”
 
-### WAL-CLM-LETS-000332 · protocol
-- **essentials:** calcium, magnesium, vitamin-a, vitamin-b6, lysine · **conditions:** kidney_disease, kidney_stones · **symptoms:** —
-- **claim:** Kidney disease (kidney stones) can be caused by infections, toxins, nutritional excesses (hypervitaminosis D) and deficiencies (vitamin A, selenium, zinc), and can be secondary to cardiovascular disease or diabetes. Contrary to orthodox belief, Wallach holds that kidney stones are caused by calcium AND magnesium deficiencies — which deplete calcium from the bones, the actual source of stone calcium — not by too much calcium; excess vitamin D (suntanning, fish oil, supplements) alongside a calcium deficiency accelerates the depletion. Check for cadmium toxicity with a hair analysis. Treatment: calcium and magnesium at 2,000 and 1,000 milligrams per day, reduce phosphorus intake, vitamin A at 25,000-300,000 international units per day as beta carotene, vitamin B-6 at 50 milligrams three times daily, lysine and glutamic acid, and herbs (dandelion, dwarf elder, goldenrod, Java tea, parsley, horsetail, mugwort, cranberry juice). Chelation helps; an acute stone blockage may require morphine for pain and prednisone for three days to reduce ureter inflammation, and a 'lithotripter' (ultrasound) can shatter stones without surgery.
-- **verbatim** (offset 359781): “Treatment of kidney disease and kidney stones
-should includesupplementation of calcium
-and magnesium at 2,000 mg and 1 ,000 mg per
-day, reduction of your phosphorus intake,
-adequate vitamin A nutriture at 25 ,000-300,000
-IU vitamin A per day as beta carotene, B-6 at
-50 mgt.i.d. .lysine and glutamic acid and herbs
-including dandelion (Taraxacum officinale),”
+### WAL-CLM-LETS-000336 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Lactation (breast-milk production) can be induced or enhanced with herbs — milkweed (Asclepias galioides), caraway (Carum carvi), fenugreek (Trigonella foenum-graecum), and goat's rue (Galega officinalis). Conversely, lactation can be reduced, and the breast pain of engorgement relieved, with goldenrod (Solidago petradoria).
+- **verbatim** (offset 363453): “LACTATION (induce): can be induced or
+enhanced with herbs including milkweed
+(Asclepias galioides), caraway (Camm carvi),
+fenugreek (Trigonella foenum-graecum) and
+goat's rue (Galega officinalis).”
 
-### WAL-CLM-LETS-000333 · protocol
-- **essentials:** vitamin-b1, chromium, vanadium · **conditions:** korsakoffs_syndrome · **symptoms:** —
-- **claim:** Korsakoff's syndrome (recent memory loss, false Alzheimer's disease) is an inability to record new memory — the patient can still perform detailed tasks learned before onset but cannot learn the simplest new tasks; confabulation (inventing imaginary experiences to fill the gaps) is characteristic. It can result from a blow to the head (good chance of recovery) or from chronic alcoholism and vitamin B-1 deficiency (harder to treat). Treatment: chelation, hydrogen peroxide intravenously, vitamin B-1 at 100 milligrams three times daily, lecithin at 2,500 milligrams three times daily, avoid alcohol and sugar, chromium/vanadium at 50-200 micrograms three times daily, betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times daily before meals, hydergine at 4.5-9 milligrams per day, vasopressin (Diapid) at 12-16 units per day as a nasal spray, centrophenoxine at 4.4-8.0 grams per day, and piracetam (Dinagen) at 1.6-4.8 grams per day.
-- **verbatim** (offset 361624): “Treatment of Korsakoff's syndrome includes
-chelation, hydrogen peroxide IV, vitamin B-l
-at 100 mg t.i.d., lecithin at 2,500 mg. t.i.d.,
-avoid alcohol, avoid sugar, chromium/vana-
-dium at 50-200 mcg t.i.d., betaine HCl and
-pancreatic enzymes at 75-200 mg t.i.d. before
-meals; hydergine at 4.5-9 mg/day, vasopres-
-sin (Diapid) at 12-16 units per day as a nasal
-spray, centrophenoxine at 4.4-8.0 gm per day
-and piracetam (Dinagen) at 1.6-4.8 gm per
-day.”
+### WAL-CLM-LETS-000337 · protocol
+- **essentials:** — · **conditions:** lactase_deficiency, lactose_intolerance · **symptoms:** —
+- **claim:** Lactase deficiency (cow's-milk sensitivity) is a carbohydrate intolerance caused by a deficiency of lactase, the enzyme needed to break milk sugar (lactose) into glucose and galactose; it is marked by bloating, diarrhea, and violent abdominal cramps after consuming cow's milk and cow's-milk products. Wallach cites prevalences of about 20% in adults of Northwest European origin, 75% in adults of all other ethnic groups, 90% of Orientals, and 75% of Blacks and American Indians, with the ability to digest lactose gradually lost between ages 10 and 20. Treatment: avoid lactose-containing foods and/or predigest the lactose by adding lactase enzyme to milk-containing foods.
+- **verbatim** (offset 364391): “Treatment of lactose intolerance includes
+avoidance of lactose containing foods and/or
+predigestion of lactose by adding lactase to
+milk containing foods.”
 
-### WAL-CLM-LETS-000334 · protocol
-- **essentials:** selenium, chromium · **conditions:** kwashiorkor · **symptoms:** —
-- **claim:** Kwashiorkor (protein starvation) is thought of as a disease of starving African children — protein/calorie starvation marked by a distended, bloated belly and edema ('dropsy'), because low blood-protein levels cannot hold water in the blood vessels so it leaks out. Wallach notes the same thing happens to unschooled dieters, cancer patients, vegans, and fruitarians who take in less than optimal amounts of complete protein. Treatment: adequate complete animal protein (greater than 120 grams per day), a calorie intake of 3,000 calories per day, selenium at 200 micrograms per day, and chromium at 50-200 micrograms three times daily, plus the baseline nutritional supplementation.
-- **verbatim** (offset 362605): “Treatment of Kwashiorkor includes adequate
-intake ofcomplete animal protein (i.e. ,
-greater
-than 1 20 gms per day), a calorie intake of 3,000
-calories per day, selenium at 200 mcg per day
-and chromium at 50-200 mcg t.i.d.”
+### WAL-CLM-LETS-000338 · protocol
+- **essentials:** — · **conditions:** laryngitis · **symptoms:** —
+- **claim:** Laryngitis (loss of voice) can be caused by bacterial or viral infections and extreme overuse of the vocal cords (e.g., yelling at a football or hockey game); frequently the temperature is not elevated and voice loss is the only symptom. A 'Strep' throat cause can be dangerous and lead to rheumatic fever or meningitis if not treated. Treatment: penicillin or tetracycline for Strep throat at 250 milligrams orally every 6 hours for 10-12 days, voice rest, honey/lemon preparations, and herbs including cajuput (Melaleuca leucadendron), sunflower (Helianthus annuus), pine oils (Pinus sylvestris), black caraway (Pimpinella saxifraga), garden sage (Salvia officinalis), high mallow (Malva sylvestris), wild ginger (Asarum europaeum), and eucalyptus (Eucalyptus globulus). Viral laryngitis may be treated with Isoprinosine at 500-1,500 milligrams per day or Ribavirin at 250-1,500 milligrams per day (pregnant women should avoid these drugs — they are teratogenic in lab animals).
+- **verbatim** (offset 365031): “Treatment of laryngitis can include penicillin
+or tetracyclines for "Strep" throat at 250 mg
+orally q 6 h for 10-12 days, voice rest, honey/
+lemon preparations and herbs including
+cajuput (Melaleuca leucadendron), sunflower
+(Helianthus annus), pine oils (Pinnus
+sylvestris), black caraway (Pimpinella
+saxifraga), garden sage (Salvia officinalis), high
+mallow (Malva sylvestris), wildginger(Asanim
+europium), eucalyptus (Eucalyptus globulus).”
+
+### WAL-CLM-LETS-000339 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Laxatives include many over-the-counter preparations such as Ex-Lax and Milk of Magnesia, and herbs including senna (Cassia acutifolia), flaxseed or flaxseed oil (Linum usitatissimum), alder buckthorn (Rhamnus frangula), cascara sagrada (Rhamnus purshiana), juniper (Juniperus communis), and manna ash (Fraxinus ornus).
+- **verbatim** (offset 365667): “LAXATIVE: includes many OTC preparations
+such as Ex-Lax and Milk of Magnesia and
+herbs including senna (Cassia aqutifolia), flax-
+seed or flaxseed oil (Linum ustatissimum),
+alder buckthorn (Rhamnus fragula), cascara
+sagrada (Rhamnus purshiana), juniper
+(Juniperus communis) and manna ash
+(Fraxinus ornus).”
+
+### WAL-CLM-LETS-000340 · protocol
+- **essentials:** vitamin-c, selenium · **conditions:** lead_poisoning, plumbism · **symptoms:** —
+- **claim:** Lead poisoning (plumbism) can cause a wide variety of symptoms — learning disabilities, kidney disease, stunted bone growth, headaches, and gastrointestinal disease; often the lead is eaten because of 'pica', a compulsive eating of unusual things driven by mineral deficiencies. Sources include paint chips, window caulking, pottery glaze, lead-arsenate garden sprays, leaded-fuel pollution, smoke from burning batteries, and lead-insulated wire; diagnose via hair analysis (chronic cases) or blood (sudden, acute cases). Treatment: vitamin C to bowel tolerance; chelation with calcium EDTA at 10-25 infusions and/or oral D-penicillamine; and the baseline supplement program with plant-derived colloidal minerals, because chelation depletes the body's mineral stores (selenium is of particular value).
+- **verbatim** (offset 366619): “Treatment of lead poisoning includes vitamin
+C to bowel tolerance.chelation with calcium
+EDTA at 10-25 infusions and/or oral D-peni-
+cillamine. Don't forget the base line nutri-
+tional supplement program containing plant
+derived colloidal minerals because the chela-
+tion process will tend to deplete body stores of
+minerals ( selenium is of particular value).”
 

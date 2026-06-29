@@ -2178,7 +2178,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 68,
+    "claim_count": 69,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2253,6 +2253,7 @@
         "WAL-CLM-LETS-000321",
         "WAL-CLM-LETS-000325",
         "WAL-CLM-LETS-000334",
+        "WAL-CLM-LETS-000340",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2342,6 +2343,7 @@
       "keshan_disease",
       "kidney_disease",
       "kwashiorkor",
+      "lead_poisoning",
       "liver_cirrhosis",
       "liver_disease",
       "miscarriage",
@@ -2350,6 +2352,7 @@
       "osteoporosis",
       "pancreatitis",
       "parkinsons_disease",
+      "plumbism",
       "rheumatoid_arthritis",
       "scoliosis",
       "sickle_cell_anemia",
@@ -4996,7 +4999,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 54,
+    "claim_count": 55,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -5058,7 +5061,8 @@
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000318",
         "WAL-CLM-LETS-000320",
-        "WAL-CLM-LETS-000325"
+        "WAL-CLM-LETS-000325",
+        "WAL-CLM-LETS-000340"
       ]
     },
     "deficiency_signs": [
@@ -5176,7 +5180,9 @@
       "influenza",
       "intermittent_claudication",
       "jaundice",
+      "lead_poisoning",
       "periodontal_disease",
+      "plumbism",
       "psoriasis",
       "rheumatoid_arthritis",
       "scurvy",

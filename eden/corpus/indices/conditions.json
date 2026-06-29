@@ -6357,19 +6357,82 @@
       "rare-earths"
     ]
   },
-  "laryngitis": {
-    "display_name": "Laryngitis",
+  "labor": {
+    "display_name": "Labor",
     "claim_count": 1,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000303"
+        "WAL-CLM-LETS-000335"
       ]
     },
     "essentials_involved": [],
     "other_substances_involved": [
+      "blue-cohosh",
+      "corn-ergot",
+      "raspberry"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "lactase_deficiency": {
+    "display_name": "Lactase Deficiency",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000337"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "lactase"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "lactose_intolerance": {
+    "display_name": "Lactose Intolerance",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000337"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "lactase"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "laryngitis": {
+    "display_name": "Laryngitis",
+    "claim_count": 2,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000303",
+        "WAL-CLM-LETS-000338"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "black-caraway",
+      "cajuput",
       "chickweed",
+      "eucalyptus",
+      "garden-sage",
       "hedge-mustard",
-      "slippery-elm"
+      "high-mallow",
+      "isoprinosine",
+      "penicillin",
+      "pine-oil",
+      "ribavirin",
+      "slippery-elm",
+      "sunflower",
+      "tetracycline",
+      "wild-ginger"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -6377,7 +6440,7 @@
   },
   "lead_poisoning": {
     "display_name": "Lead Poisoning",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000211"
@@ -6390,14 +6453,22 @@
         "WAL-CLM-RARE-000215"
       ],
       "protocols": [
+        "WAL-CLM-LETS-000340",
         "WAL-CLM-RARE-000214"
       ]
     },
-    "essentials_involved": [],
+    "essentials_involved": [
+      "selenium",
+      "vitamin-c"
+    ],
     "other_substances_involved": [
+      "colloidal-minerals",
+      "d-penicillamine",
+      "edta-chelation",
       "lead"
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -7316,6 +7387,27 @@
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "plumbism": {
+    "display_name": "Plumbism",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000340"
+      ]
+    },
+    "essentials_involved": [
+      "selenium",
+      "vitamin-c"
+    ],
+    "other_substances_involved": [
+      "colloidal-minerals",
+      "d-penicillamine",
+      "edta-chelation"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "pms": {
