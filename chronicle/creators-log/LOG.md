@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 211 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 212 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-29 14:54 UTC-05:00 · milestone · knowledge/corpus
+SESSION 26 b75 - It's All In Your Head (2020, newest book): re-OCR cleanup pre-mining. Restored OCR-blank page-34 glossopharyngeal Wallach's Words + page-12 disease table + skull caption from screenshots; 2 figure markers; rebuilt all 16 headers. Resnap+seal kv186, board 31/31.
+  ↳ iaiyh.txt 1289->1185 lines. Recovered via vision-read of source screenshots 739-772 (C:/Users/Light/Desktop/claude/books), more accurate than Tesseract. Headers #7 Facial/#10 Vagus/#13 Hypoglossal were missing entirely; #1/2/4/5/6/8/11 garbled. Third-party 'General Overview' (Medscape/Merck/Healthline per book's own refs) kept in faithful transcript, will be EXCLUDED from claims per 00.A. 0 claims yet; per-section mining next. Priority newest-first: 2020 > Epigenetics 2014 > Immortality 2008.
 
 ## 2026-06-29 14:09 UTC-05:00 · session-end · chronicle
 SESSION 25 WRAPPED — b73-b74 (Ch9 + Ch11-13): ★★★ LET'S PLAY DOCTOR BOOK COMPLETE (15 search-only claims LETS-467..481, all narrative→SEARCH-ONLY by Luneth ruling). corpus 846→861, conditions 438 (untouched), kv 183→185, board 31/31. NEXT=other in-housed books, audit first.
@@ -801,7 +805,3 @@ Journey J2 — views/journey.ts 4-tab drawer renderer + LOG EVENT/check-in forms
 ## 2026-06-23 06:44 UTC · milestone · genesis
 Genesis boot system shipped: typing 'genesis' now runs tools/genesis.py — a one-command session boot (banner + scoreboard + the live pass-off) that hands a fresh session past depth instantly + ends with an action question. Renamed sunjo/ → genesis/.
   ↳ Formalizes the per-session catch-up rather than reinventing it: chronicle/next-chunk.md stays the SINGLE live rolling pass-off (no parallel file); genesis.py reads it + runs the integrity scoreboard (invariants), build-parity, last Creator's Log entry, build-log tail, and prints the next-chunk LATEST→NEXT-ORDER block, closing with a cue to ask 'resume X or redirect?'. sunjo/ → genesis/ via git mv (history preserved): the folder now houses the boot system + the archived original Cowork pass-off (01/02); genesis/README documents the two-pass-off model. CLAUDE.md Genesis section rewritten (net -1 line, 195/200) to point at the command + mandate the action question; all LIVE sunjo path refs → genesis/ (history left truthful). Mechanically safe (no tool/hook/invariant referenced sunjo). Verified: genesis.py boots cleanly; invariants 25/25. Next: Journey J2.
-
-## 2026-06-23 06:17 UTC · round-close · journey
-Journey J1 shipped: the state engine. Replaced the throwing scaffold with a real §31 events ledger + private check-ins + a ±7-day cross-ref walker, all Zod-validated. No fake seed — fills from real activity. Board 25/25; engine functionally smoke-tested.
-  ↳ First of ~4 Journey chunks (J1 engine → J2 view → J3 wiring → J4 probe). New core/schemas/journey.ts (EventKind/JourneyEvent/Checkin + storage shapes, types inferred). state/journey.ts: listEvents(sinceISO?)/listCheckins() read via getValidated; logEvent()/logCheckin() are the only §31 writers to wallachJourneyEvents_v1/wallachJourneyCheckins_v1 (auto id, FIFO cap 5000, emit journey:changed); crossRefForCheckin() = the ±7-day local correlation walker (check-ins stay private, never exported). core/events.ts: journey:event-logged → journey:changed {reason}. Verified: tsc strict + esbuild OK; invariants 25/25; esbuild-bundled functional smoke vs a localStorage shim PASS (persistence, newest-first, sinceISO, cross-ref include/exclude, corrupt-LS-empty). No render probe yet (pure state; view verified at J4). Next: J2 the 4-tab drawer view.
