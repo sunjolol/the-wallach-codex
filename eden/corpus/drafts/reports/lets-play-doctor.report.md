@@ -1,102 +1,74 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_8 claim(s) drafted 2026-06-29T01:14:07+00:00. Review then run corpus_seal.py to promote._
+_6 claim(s) drafted 2026-06-29T01:30:07+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×1, protocol×7
+Kinds: protocol×6
 
-### WAL-CLM-LETS-000311 · protocol
-- **essentials:** vitamin-c, zinc, vitamin-a, germanium, selenium · **conditions:** immune_depression · **symptoms:** —
-- **claim:** Immune depression (immune exhaustion) is caused by a chronic process — unrelenting stress, chronic allergies, or chronic infections — that exhausts the immune system so it can no longer protect against invaders such as Epstein-Barr virus, candidiasis, food allergies, arthritis, and cancer; 'anergy' is a state of exhaustion so deep that diagnostic skin tests fail to react even with overwhelming disease. Wallach notes that cortisone, prednisone, and chemotherapy themselves cause immune depression. Treatment of the depressed immune system: vitamin C to bowel tolerance; zinc at 50 milligrams three times daily; vitamin A at 300,000 international units per day as beta carotene; adrenal cortical extract (sublingual, intramuscular, or intravenous); germanium at 50 milligrams orally or intramuscularly daily; acupuncture; homeopathy; ginseng (Panax ginseng); selenium at 1,000 micrograms per day; and plant-derived colloidal minerals.
-- **verbatim** (offset 339886): “Treatment of a depressed immune system
-includes vitamin C to bowel tolerance, zinc at
-50 mg t.i.d., vitamin A at 300,000 IU/day as
-beta carotene, ACE (adrenal cortical extract)
-sublingual, IM or EV, germanium at 50 mg
-orally or IM daily, acupuncture, homeopathy,
-herbs to include ginseng (Panax ginseng),
-selenium at 1,000 mcg/day and plant derived
-colloidal minerals.”
+### WAL-CLM-LETS-000319 · protocol
+- **essentials:** omega-3, zinc, selenium, vitamin-a, germanium · **conditions:** infertility · **symptoms:** —
+- **claim:** This is Wallach's dedicated infertility entry (distinct from his fertility entry): he holds that infertility — a curable inability to have children — is usually caused by a nutritional deficiency, and reports curing several hundred cases by simple supplementation of vitamins, minerals, and digestive aids; food allergies can impair absorption through celiac-type intestinal changes. Treatment: the baseline nutritional program with plant-derived colloidal minerals; resolve food allergies by avoidance and rotation diets; a high-protein diet (up to 200 grams per day); essential fatty acids at 5 grams three times daily; L-arginine at 500 milligrams three times daily; zinc at 50 milligrams three times daily; selenium at 250 micrograms per day; vitamin A at 100,000 international units per day for 30 days, then 25,000; germanium at 50 milligrams per day; acupuncture; and herbs ginseng (Panax ginseng), leek (Allium porrum), and garlic (Allium sativum). (The book misprints the zinc dose as '50 gm'; 50 grams is toxic and every other zinc dose is in milligrams, so it is shown here as 50 milligrams.)
+- **verbatim** (offset 348836): “Treatment of infertility should include the
+base line nutritional program (include plant
+derived colloidal minerals) , resolve food al-
+lergies by avoidance and rotation diets, eat
+high protein diets (up to 200 gm/day), essen-
+tial fatty acids at 5 gm t.i.d., 1-arginine at 500
+mg t.i.d., zinc at 50 mg t.i.d., selenium at 250
+mcg/day,”
 
-### WAL-CLM-LETS-000312 · definition
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** In this entry Wallach frames immunization (vaccination) as, in his words, 'perhaps the greatest interface between government and freedom of choice' in personal health care. He objects to compulsory school-entry vaccination mandates and to states treating refusal as grounds for a child-abuse charge, defends the religious exemption, and asserts that some experts believe certain vaccination programs have carried catastrophic diseases. This is captured for the search corpus as Wallach's political/editorial opinion — it is commentary, not a deficiency-treatment protocol, so it does not appear in the operational condition indices.
-- **verbatim** (offset 340255): “IMMUNIZATION (vaccination): is perhaps
-the greatest interface between government
-and freedom of choice in your own health
-care!!!”
+### WAL-CLM-LETS-000320 · protocol
+- **essentials:** vitamin-c, vitamin-e, zinc, omega-3, flavonoids, phenylalanine · **conditions:** inflammation · **symptoms:** —
+- **claim:** Inflammation can result from injury, arthritis, infection, or cancer; its signs include swelling, tenderness, discharges, edema, fever, and allergies. Treatment: DMSO; autoimmune urine therapy; oral proteolytic enzymes (chymotrypsin, pancreatic enzymes, bromelain, trypsin); vitamin C to bowel tolerance; vitamin E at 800-1,200 international units per day; zinc at 50 milligrams three times daily; essential fatty acids at 5 grams three times daily; bioflavonoids at 150 milligrams per day; quercetin at 100 milligrams per day; D-phenylalanine, L-tryptophane, and DL-valine each at 1.5 grams per day; acupuncture; and herbs camphor (Cinnamomum camphora), comfrey (Symphytum officinale), and feverfew (Chrysanthemum parthenium).
+- **verbatim** (offset 349542): “Treatment of inflammation include DMSO,
+autoimmune urine therapy, proteolytic en-
+zymes orally (i.e., chymotrypsin, pancreatic
+enzymes, bromelin, trypsin), vitamin C to
+bowel tolerance,vitamin E at 800-1,200 IU/
+day, zinc at 50 mg t.i.d.”
 
-### WAL-CLM-LETS-000313 · protocol
-- **essentials:** vitamin-c, vitamin-a, zinc, germanium, selenium · **conditions:** — · **symptoms:** —
-- **claim:** Immunotherapy, in Wallach's sense, should be designed to strengthen the immune system's ability to cope with all invaders — unlike orthodox 'immunotherapy' (chemotherapy and cortisone), which actually depresses immunity. The need for it includes cancer, arthritis, food allergies, multiple sclerosis, lupus (systemic lupus erythematosus), and amyotrophic lateral sclerosis (Lou Gehrig's disease). Treatment: Immu-Stim intramuscularly or 2 capsules twice daily; sublingual allergens for allergies; autoimmune urine therapy; avoidance and rotation diets for food allergens; vitamin C to bowel tolerance; vitamin A at 300,000 international units per day as beta carotene; zinc at 50 milligrams three times daily; germanium at 50 milligrams per day orally or intramuscularly; selenium at 1,000 micrograms per day orally, intravenously, or intramuscularly; acupuncture; and ginseng (Panax ginseng).
-- **verbatim** (offset 341704): “Treatment to provide immunotherapy includes
-Immu-Stim IM or capsules at 2 b.i.d., sublin-
-gual allergens for allergies, autoimmune urine
-therapy, avoidance of food allergens, rotation
-diets, vitamin C to bowel tolerance, vitamin A
-at 300,000 IU/day as beta carotene, zinc at 50
-mg t.i.d., germanium at 50 mg/day orally or
-IM, selenium at 1 ,000 mcg/day orally, IV or IM,
-acupuncture, and herbs to include ginseng
-(Panax ginseng).”
+### WAL-CLM-LETS-000321 · protocol
+- **essentials:** vitamin-e, selenium, calcium, magnesium · **conditions:** indigestion, dyspepsia · **symptoms:** —
+- **claim:** Indigestion (dyspepsia — belching, burping, bloating) occurs with aging, stress, and overeating; Wallach attributes much of it to the stomach losing its ability to make hydrochloric acid starting around age 35, with food allergies contributing (use a pulse test to identify them). Treatment: Kaopectate or Pepto-Bismol for acute diarrhea; betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times daily before meals; mint tea to calm the stomach; English bitters (Gentiana lutea) before each meal; vitamin E at 800-1,200 international units per day; selenium at 500 micrograms per day; calcium and magnesium at 2,000 and 1,000 milligrams per day; acupuncture; homeopathy; and herbs including balm, bitter orange, celandine, fennel, hops, masterwort, peppermint, wormwood, yarrow, and marshmallow.
+- **verbatim** (offset 350439): “Treatment of indigestion should include
+Kaopectate or Pepto Bismol for acute diar-
+rhea, betaine HCl and pancreatic enzymes at
+75-200 mg t.i.d. before meals, mint tea as
+needed to calm stomach, English bitters
+(Gentiana lutea) before each meal, vitamin E
+at 800- 1 ,200 IU/day, selenium at 500 mcg/day,”
 
-### WAL-CLM-LETS-000314 · protocol
-- **essentials:** vitamin-c, vitamin-a, zinc · **conditions:** impetigo · **symptoms:** —
-- **claim:** Impetigo (ecthyma) is a form of dermatitis in children — blisters filled with straw-colored fluid or pus, or skin ulcers, mainly on the face, arms, and legs. Wallach holds it is more than a simple Streptococcus infection: it is an early sign of immune depression (often from food allergies to milk, wheat, or soy) that lets normal skin organisms flourish unchecked; untreated it can cause deep tissue and lymph-node infection. Treatment: topical washes with boric acid and herbs such as comfrey (Symphytum officinale), echinacea (Echinacea angustifolia), and goldenseal (Hydrastis canadensis); topical or systemic penicillin may be needed for facial impetigo to prevent scarring; vitamin C to bowel tolerance; vitamin A 25,000-300,000 international units per day as beta carotene; zinc at 25-30 milligrams three times daily; avoidance or rotation diets for food allergies; autoimmune urine therapy; and increased animal protein (eggs, chicken, fish).
-- **verbatim** (offset 343024): “Treatment ofimpetigo includes topical washes
-with boric acid and herbs such as comfrey
-(Symphytum officinale), echinacea (Echinacea
-angustifolia) and golden seal (Hydrastis
-canadensis), topical or systemic penicillin may
-be necessary in cases where impetigo occurs
-on the face to prevent scaring, vitamin C to
-bowel tolerance, vitamin A 25,000-300,000
-IU/day as beta caro-tene, zinc at 25-30 mg”
+### WAL-CLM-LETS-000322 · protocol
+- **essentials:** calcium, chromium, phenylalanine, vitamin-b3, inositol · **conditions:** insomnia · **symptoms:** —
+- **claim:** Insomnia (inability to sleep) can be caused by stress, excitement, drugs (including caffeine in coffee, cola, and chocolate), prescription medications, food allergies, and hypoglycemia — use a pulse test and six-hour glucose tolerance test. Treatment: avoid caffeine and offending food allergens; calcium (especially plant-derived colloidal calcium); chromium at 25-200 micrograms three times daily; acupuncture; homeopathy; DL-phenylalanine at 250 milligrams three times daily; L-tryptophan at 1,000 milligrams three times daily; inositol at 500 milligrams per day; niacinamide at 1,000 milligrams at bedtime; herbs valerian (Valeriana officinalis), passion flower (Passiflora incarnata), hops (Humulus lupulus), and California poppy (Eschscholzia californica); and vitamin B-3 (niacin) at 450 milligrams three times daily (time-release); plus the baseline nutrition program.
+- **verbatim** (offset 351431): “Treatment for insomnia includes avoidance of
+caffeine and offending food allergens, cal-
+cium (especially plant derived colloidal cal-
+cium), chromium at 25-200 mcg t.i.d., acu-
+puncture, homeopathy, dl-phenylalanine at
+250 mg t.i.d., 1-tryptophan at 1,000 mg t.i.d.,
+inositol at 500 mg/day, niacinamide at 1,000
+mg at bedtime,”
 
-### WAL-CLM-LETS-000315 · protocol
-- **essentials:** — · **conditions:** impotence, erectile_dysfunction · **symptoms:** —
-- **claim:** Impotence (inability to have an erection) can stem from many causes — an unstimulating or domineering partner, guilt, malnutrition, hypothyroidism, low blood pressure, adrenal exhaustion, hypoglycemia, or post-surgical (prostate) damage — and resolving any associated problem first is key. Treatment: relaxation, spending time with your mate, and setting up romantic situations; acupuncture; homeopathy; herbs including ginseng (Panax ginseng), nux vomica (Strychnos nux vomica), sarsaparilla (Smilax officinalis), saw palmetto (Serenoa serrulata), and Zumba; oral testosterone (glandular food supplements plus testosterone intramuscularly); and the baseline nutrition program with plant-derived colloidal minerals. Wallach also recommends the Masters-and-Johnson sensate-focus technique as a self-help approach: Step 1 nongenital pleasuring (massage, reflexology), Step 2 genital pleasuring (foreplay), and Step 3 nondemand lovemaking (neither partner expecting to reach a climax).
-- **verbatim** (offset 344318): “others!!!!), acupuncture, homeopathy and
-herbs to include ginseng (Panax ginseng),
-nuxvomica(Strychnosnux vomica), sarsapilla
-(Smilax officinalis), saw palmetto (Serenoa
-serrulata), Zumba, oral testosterone (i.e., glan-
-dular food supplements and testosterone IM)”
+### WAL-CLM-LETS-000323 · protocol
+- **essentials:** vitamin-b9 · **conditions:** irritable_bowel_syndrome · **symptoms:** —
+- **claim:** Irritable bowel syndrome alternates between constipation and diarrhea; Wallach holds that food allergies are the most frequent cause, producing celiac-like small-intestine damage (edema, ulceration, catarrhal inflammation), and that the orthodox approach (low-fiber diets, cortisone, Tagamet) is wrong — a pulse test is extremely useful for finding the individual cause. Treatment: a high-fiber diet; 4-6 cups of fruit and vegetables per day; eliminate caffeine, sugar, and offending foods identified by pulse test (wheat, milk, soy); betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times daily before meals; folic acid at 5-25 milligrams per day; a gluten-free diet; eight glasses of water per day; the baseline nutrition program; and the herb marshmallow (Althaea officinalis).
+- **verbatim** (offset 352500): “Treatment of irritable bowel syndrome should
+include high fiber diets, 4-6 cups of fruit and
+vegetables per day, eliminate caffeine, sugar
+and offending foods based on the pulse test
+(i.e., wheat, milk, soy), betaine HCl and pan-
+creatic enzymes at 75-200 mg t.i.d. before
+meals, folic acid at 5-25 mg/day, gluten free
+diet and eight glasses of water each day.”
 
-### WAL-CLM-LETS-000316 · protocol
-- **essentials:** omega-3, selenium, vitamin-e, chromium · **conditions:** incontinence · **symptoms:** —
-- **claim:** Incontinence (inability to control the bowels or bladder) can be caused by many diseases (benign prostatic hyperplasia, muscular dystrophy, multiple sclerosis, cancer, amyotrophic lateral sclerosis, stroke), injury (including surgery and obstetrical procedures), food allergies, and hypoglycemia — correcting the underlying disease or injury is a must. Treatment: Kegel's exercises (contracting the pelvic floor as if to stop a bowel movement) about 250-500 per day; essential fatty acids at 5 grams three times daily; selenium at 500 micrograms per day; vitamin E at 800-1,200 international units per day; betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times daily before meals; avoidance and rotation diets for offending food allergens; chromium at 25-200 micrograms per day; and herbs saw palmetto (Serenoa serrulata) and ginseng (Panax ginseng).
-- **verbatim** (offset 345486): “Treatment of incontinence should include
-Kegel's exercises (i.e. , con-tracting the floor of
-the pelvis as if trying to stop a bowel move-
-ment) at about 250-500/day, essential fatty
-acids at 5 gm t.i.d., selenium at 500 mcg/day,
-vitamin E at 800-1,200 IU/day, betaine HC1
-and pancreatic enzymes at 75-200 mg t.i.d.
-before meals, avoidance and rotation diets of
-offending food allergens, chromium at 25-200
-mcg/day”
-
-### WAL-CLM-LETS-000317 · protocol
-- **essentials:** vitamin-c, vitamin-e, selenium, vitamin-a · **conditions:** infarction, stroke, heart_attack · **symptoms:** —
-- **claim:** Infarction is the death of an area of tissue because its blood supply was cut off by a plug or thrombus (a blood clot, or a clump of tumor or bacterial cells); in vital areas of the heart or brain a stroke or heart attack can be fatal, and Wallach stresses prevention is always better than trying to repair after the fact. Treatment and repair of infarction: vitamin C to bowel tolerance; vitamin E at 800-1,200 international units per day; selenium at 500-1,000 micrograms per day orally or intramuscularly; vitamin A at 300,000 international units per day as beta carotene; chelation with EDTA; hydrogen peroxide intravenously; and betaine hydrochloride and pancreatic enzymes at 200-500 milligrams three times daily, 15 minutes before meals. If clumps of bacteria are involved (as in rheumatic fever), antibiotics (penicillin or tetracycline) are required.
-- **verbatim** (offset 346812): “Treatment and repair of infarction should in-
-clude vitamin C to bowel tolerance, vitamin E
-at 800-1,200 IU/day, selenium at 500-1,000
-mcg/day orally or IM, vitamin A at 300,000 IU/
-day as beta carotene, chelation with EDTA,
-hydrogen peroxide IV, betaine HC1 and pan-
-creatic enzymes at 200-500 mg t.i.d. 15 min-
-utes before meals”
-
-### WAL-CLM-LETS-000318 · protocol
-- **essentials:** vitamin-c, vitamin-a, zinc, selenium · **conditions:** infection · **symptoms:** —
-- **claim:** Infection (invasion of tissues by bacteria, viruses, or fungus) is caused by two factors: an infective 'dose' of organisms and a low state of resistance in the host. The baseline nutrient program supplies the macro- and micro-elements needed to maintain and repair the immune system; pulse-test for food allergies and use reasonable precautions around contagious illness. Treatment: echinacea (Echinacea angustifolia), goldenseal (Hydrastis canadensis), garlic (Allium sativum), vitamin C to bowel tolerance, vitamin A at 300,000 international units per day as beta carotene, zinc at 50 milligrams three times daily, selenium at 500-1,000 micrograms per day, Immu-Stim (intramuscular or 2 capsules twice daily), Isoprinosine at 100-300 milligrams per day, Ribavirin, and hydrogen peroxide in a 250-milliliter infusion over four hours; antibiotics and antifungal medications are sometimes necessary in lifesaving situations.
-- **verbatim** (offset 347986): “Treatment of infections should include the use
-of echinacea (Echinacea angustifolia), golden
-seal (Hydrastis canadensis), garlic (Allium
-sativum), vitamin C to bowel tolerance, vita-
-min A at 300,000 IU/day as beta carotene, zinc
-at 50 mg t.i.d. , selenium at 500-1 ,000 mcg/day,
-Immu-Stim IM or orally 2 capsules b.i.d.,
-Isoprinosin at 100-300 mg/day, Ribavirin,”
+### WAL-CLM-LETS-000324 · protocol
+- **essentials:** omega-3, zinc, vitamin-a · **conditions:** itching, pruritus · **symptoms:** —
+- **claim:** Itching (pruritus) can be caused by dry skin, contact with irritants, and contact or food allergies; pulse and challenge tests identify the allergens and irritants, and resolving the basic problem is essential. Symptomatic treatment: topical Caladryl, aloe vera (Aloe species), salt rubs, dilute vinegar (50%), and herbal-compress washes (see dermatitis). Oral treatment: flaxseed oil at 5 grams three times daily; zinc at 50 milligrams three times daily; vitamin A at 300,000 international units per day as beta carotene; plus the baseline nutritional program.
+- **verbatim** (offset 353221): “Treatment (symptomatic) of itching includes
+the use oftopical applications ofCaladryl , aloe
+vera (Aloe spp). , salt nibs, dilute vinegar (50%),
+and washes with herbal compresses (see
+derma-titis). Oral treatment should include 5
+gm flaxseed oil t.i.d., zinc 50 mgt.i.d., vitamin
+A at 300,000 IU/day as beta carotene.”
 

@@ -3891,20 +3891,32 @@
   },
   "dyspepsia": {
     "display_name": "Dyspepsia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000259"
+        "WAL-CLM-LETS-000259",
+        "WAL-CLM-LETS-000321"
       ]
     },
-    "essentials_involved": [],
+    "essentials_involved": [
+      "calcium",
+      "magnesium",
+      "selenium",
+      "vitamin-e"
+    ],
     "other_substances_involved": [
       "barberry",
       "betaine-hcl",
+      "fennel",
       "gentian",
+      "kaopectate",
+      "marshmallow",
       "pancreatic-enzymes",
       "papaya",
-      "vinegar"
+      "peppermint",
+      "pepto-bismol",
+      "vinegar",
+      "wormwood"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5669,6 +5681,35 @@
       "lets-play-doctor"
     ]
   },
+  "indigestion": {
+    "display_name": "Indigestion",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000321"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium",
+      "selenium",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "fennel",
+      "gentian",
+      "kaopectate",
+      "marshmallow",
+      "pancreatic-enzymes",
+      "peppermint",
+      "pepto-bismol",
+      "wormwood"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "infarction": {
     "display_name": "Infarction",
     "claim_count": 1,
@@ -5722,7 +5763,7 @@
   },
   "infertility": {
     "display_name": "Infertility",
-    "claim_count": 18,
+    "claim_count": 19,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
@@ -5748,7 +5789,8 @@
       ],
       "protocols": [
         "WAL-CLM-DDDL-000070",
-        "WAL-CLM-LETS-000273"
+        "WAL-CLM-LETS-000273",
+        "WAL-CLM-LETS-000319"
       ]
     },
     "essentials_involved": [
@@ -5768,12 +5810,47 @@
     ],
     "other_substances_involved": [
       "betaine-hcl",
+      "colloidal-minerals",
+      "garlic",
+      "ginseng",
+      "leek",
       "pancreatic-enzymes"
     ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "inflammation": {
+    "display_name": "Inflammation",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000320"
+      ]
+    },
+    "essentials_involved": [
+      "flavonoids",
+      "omega-3",
+      "phenylalanine",
+      "tryptophan",
+      "valine",
+      "vitamin-c",
+      "vitamin-e",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "bromelain",
+      "camphor",
+      "comfrey",
+      "dmso",
+      "feverfew",
+      "pancreatic-enzymes",
+      "quercetin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "influenza": {
@@ -5816,7 +5893,7 @@
   },
   "insomnia": {
     "display_name": "Insomnia",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000003",
@@ -5834,6 +5911,7 @@
       ],
       "protocols": [
         "WAL-CLM-DDDL-000075",
+        "WAL-CLM-LETS-000322",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277"
       ]
@@ -5842,9 +5920,12 @@
       "biotin",
       "calcium",
       "chromium",
+      "inositol",
       "lithium",
       "magnesium",
+      "phenylalanine",
       "potassium",
+      "tryptophan",
       "vanadium",
       "vitamin-a",
       "vitamin-b3",
@@ -5852,7 +5933,13 @@
       "vitamin-b9",
       "vitamin-d"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "california-poppy",
+      "colloidal-minerals",
+      "hops",
+      "passion-flower",
+      "valerian"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor",
@@ -5884,6 +5971,26 @@
       "lets-play-doctor"
     ]
   },
+  "irritable_bowel_syndrome": {
+    "display_name": "Irritable Bowel Syndrome",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000323"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b9"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "marshmallow",
+      "pancreatic-enzymes"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "ischemic_heart_disease": {
     "display_name": "Ischemic Heart Disease",
     "claim_count": 1,
@@ -5898,6 +6005,27 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "itching": {
+    "display_name": "Itching",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000324"
+      ]
+    },
+    "essentials_involved": [
+      "omega-3",
+      "vitamin-a",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "aloe-vera",
+      "caladryl"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "kawasaki_disease": {
@@ -7043,6 +7171,27 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "pruritus": {
+    "display_name": "Pruritus",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000324"
+      ]
+    },
+    "essentials_involved": [
+      "omega-3",
+      "vitamin-a",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "aloe-vera",
+      "caladryl"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "psoriasis": {

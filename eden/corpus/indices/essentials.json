@@ -288,7 +288,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 61,
+    "claim_count": 62,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -354,6 +354,7 @@
         "WAL-CLM-LETS-000281",
         "WAL-CLM-LETS-000285",
         "WAL-CLM-LETS-000289",
+        "WAL-CLM-LETS-000321",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -497,6 +498,7 @@
       "depression",
       "diabetes",
       "dysmenorrhea",
+      "dyspepsia",
       "elevated_cholesterol",
       "enuresis",
       "epilepsy",
@@ -506,6 +508,7 @@
       "hyperactivity",
       "hypertension",
       "hypotension",
+      "indigestion",
       "insomnia",
       "kidney_stones",
       "malabsorption",
@@ -922,7 +925,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 70,
+    "claim_count": 72,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1001,6 +1004,8 @@
         "WAL-CLM-LETS-000285",
         "WAL-CLM-LETS-000289",
         "WAL-CLM-LETS-000306",
+        "WAL-CLM-LETS-000321",
+        "WAL-CLM-LETS-000322",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1105,6 +1110,7 @@
       "depression",
       "diabetes",
       "dysmenorrhea",
+      "dyspepsia",
       "eczema",
       "elevated_cholesterol",
       "enuresis",
@@ -1114,6 +1120,7 @@
       "growing_pains",
       "hyperactivity",
       "hypertension",
+      "indigestion",
       "insomnia",
       "kidney_disease",
       "kidney_stones",
@@ -1146,6 +1153,7 @@
       "flavonoids",
       "gallium",
       "germanium",
+      "inositol",
       "iron",
       "lithium",
       "magnesium",
@@ -1261,7 +1269,7 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 51,
+    "claim_count": 52,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -1325,6 +1333,7 @@
         "WAL-CLM-LETS-000307",
         "WAL-CLM-LETS-000310",
         "WAL-CLM-LETS-000316",
+        "WAL-CLM-LETS-000322",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1624,7 +1633,7 @@
     "display_name": "Germanium",
     "canon_slug": "germanium",
     "category": "mineral",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000012",
@@ -1645,6 +1654,7 @@
         "WAL-CLM-LETS-000298",
         "WAL-CLM-LETS-000311",
         "WAL-CLM-LETS-000313",
+        "WAL-CLM-LETS-000319",
         "WAL-CLM-RARE-000282"
       ]
     },
@@ -1679,6 +1689,7 @@
       "chromium",
       "gallium",
       "lithium",
+      "omega-3",
       "oxygen",
       "selenium",
       "vanadium",
@@ -2149,7 +2160,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 64,
+    "claim_count": 66,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2220,6 +2231,8 @@
         "WAL-CLM-LETS-000316",
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000318",
+        "WAL-CLM-LETS-000319",
+        "WAL-CLM-LETS-000321",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2287,6 +2300,7 @@
       "deafness",
       "dementia",
       "diabetes",
+      "dyspepsia",
       "elevated_cholesterol",
       "fibrocystic_breast_disease",
       "food_allergy",
@@ -2299,6 +2313,7 @@
       "hypertension",
       "immune_depression",
       "incontinence",
+      "indigestion",
       "infarction",
       "infection",
       "infertility",
@@ -2576,7 +2591,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 80,
+    "claim_count": 83,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2667,6 +2682,9 @@
         "WAL-CLM-LETS-000313",
         "WAL-CLM-LETS-000314",
         "WAL-CLM-LETS-000318",
+        "WAL-CLM-LETS-000319",
+        "WAL-CLM-LETS-000320",
+        "WAL-CLM-LETS-000324",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -2806,10 +2824,13 @@
       "impotence",
       "infection",
       "infertility",
+      "inflammation",
       "influenza",
+      "itching",
       "malabsorption",
       "osteoporosis",
       "paranoia",
+      "pruritus",
       "psoriasis",
       "rheumatoid_arthritis",
       "seborrheic_dermatitis",
@@ -2836,10 +2857,13 @@
       "manganese",
       "nickel",
       "omega-3",
+      "phenylalanine",
       "selenium",
       "sodium",
       "sulfur",
       "tin",
+      "tryptophan",
+      "valine",
       "vanadium",
       "vitamin-a",
       "vitamin-b1",
@@ -3621,7 +3645,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 33,
+    "claim_count": 35,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -3659,7 +3683,9 @@
         "WAL-CLM-LETS-000313",
         "WAL-CLM-LETS-000314",
         "WAL-CLM-LETS-000317",
-        "WAL-CLM-LETS-000318"
+        "WAL-CLM-LETS-000318",
+        "WAL-CLM-LETS-000319",
+        "WAL-CLM-LETS-000324"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000037"
@@ -3750,8 +3776,10 @@
       "infertility",
       "influenza",
       "insomnia",
+      "itching",
       "keratitis",
       "night_blindness",
+      "pruritus",
       "psoriasis",
       "stroke",
       "xerophthalmia"
@@ -4094,7 +4122,7 @@
     "display_name": "Niacin",
     "canon_slug": "vitamin-b3",
     "category": "vitamin",
-    "claim_count": 18,
+    "claim_count": 19,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000019",
@@ -4117,6 +4145,7 @@
         "WAL-CLM-LETS-000284",
         "WAL-CLM-LETS-000293",
         "WAL-CLM-LETS-000310",
+        "WAL-CLM-LETS-000322",
         "WAL-CLM-RARE-000282"
       ],
       "toxicity_sign": [
@@ -4628,7 +4657,7 @@
     "display_name": "Folate",
     "canon_slug": "vitamin-b9",
     "category": "vitamin",
-    "claim_count": 15,
+    "claim_count": 16,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000042",
@@ -4649,7 +4678,8 @@
         "WAL-CLM-LETS-000267",
         "WAL-CLM-LETS-000284",
         "WAL-CLM-LETS-000288",
-        "WAL-CLM-LETS-000298"
+        "WAL-CLM-LETS-000298",
+        "WAL-CLM-LETS-000323"
       ]
     },
     "deficiency_signs": [
@@ -4716,6 +4746,7 @@
       "gout",
       "hepatitis",
       "insomnia",
+      "irritable_bowel_syndrome",
       "paranoia",
       "psoriasis",
       "spina_bifida",
@@ -4919,7 +4950,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 52,
+    "claim_count": 53,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -4979,7 +5010,8 @@
         "WAL-CLM-LETS-000313",
         "WAL-CLM-LETS-000314",
         "WAL-CLM-LETS-000317",
-        "WAL-CLM-LETS-000318"
+        "WAL-CLM-LETS-000318",
+        "WAL-CLM-LETS-000320"
       ]
     },
     "deficiency_signs": [
@@ -5093,6 +5125,7 @@
       "impetigo",
       "infarction",
       "infection",
+      "inflammation",
       "influenza",
       "intermittent_claudication",
       "periodontal_disease",
@@ -5122,6 +5155,7 @@
       "selenium",
       "tryptophan",
       "tyrosine",
+      "valine",
       "vanadium",
       "vitamin-a",
       "vitamin-b1",
@@ -5228,7 +5262,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 47,
+    "claim_count": 49,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -5285,6 +5319,8 @@
         "WAL-CLM-LETS-000300",
         "WAL-CLM-LETS-000316",
         "WAL-CLM-LETS-000317",
+        "WAL-CLM-LETS-000320",
+        "WAL-CLM-LETS-000321",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -5384,6 +5420,7 @@
       "diaper_rash",
       "dry_skin",
       "dysmenorrhea",
+      "dyspepsia",
       "ecchymosis",
       "eczema",
       "fibrocystic_breast_disease",
@@ -5393,8 +5430,10 @@
       "hangnails",
       "heart_attack",
       "incontinence",
+      "indigestion",
       "infarction",
       "infertility",
+      "inflammation",
       "intermittent_claudication",
       "ischemic_heart_disease",
       "keshan_disease",
@@ -5421,7 +5460,10 @@
       "magnesium",
       "manganese",
       "omega-3",
+      "phenylalanine",
       "selenium",
+      "tryptophan",
+      "valine",
       "vitamin-a",
       "vitamin-b1",
       "vitamin-b12",
@@ -5656,7 +5698,7 @@
     "display_name": "Inositol",
     "canon_slug": "inositol",
     "category": "vitamin",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000012"
@@ -5665,7 +5707,8 @@
         "WAL-CLM-LETS-000053"
       ],
       "protocol": [
-        "WAL-CLM-LETS-000207"
+        "WAL-CLM-LETS-000207",
+        "WAL-CLM-LETS-000322"
       ]
     },
     "deficiency_signs": [
@@ -5679,14 +5722,18 @@
       "alopecia",
       "cataracts",
       "eczema",
-      "high_cholesterol"
+      "high_cholesterol",
+      "insomnia"
     ],
     "interacts_with": [
       "arginine",
+      "calcium",
       "chromium",
       "cysteine",
       "flavonoids",
+      "phenylalanine",
       "selenium",
+      "tryptophan",
       "vitamin-b1",
       "vitamin-b2",
       "vitamin-b3",
@@ -5704,7 +5751,7 @@
     "display_name": "Flavonoids",
     "canon_slug": "flavonoids",
     "category": "vitamin",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000243"
@@ -5720,7 +5767,8 @@
         "WAL-CLM-LETS-000279",
         "WAL-CLM-LETS-000280",
         "WAL-CLM-LETS-000292",
-        "WAL-CLM-LETS-000299"
+        "WAL-CLM-LETS-000299",
+        "WAL-CLM-LETS-000320"
       ]
     },
     "deficiency_signs": [
@@ -5747,6 +5795,7 @@
       "food_allergy",
       "hay_fever",
       "herpes_simplex",
+      "inflammation",
       "influenza"
     ],
     "interacts_with": [
@@ -5762,6 +5811,8 @@
       "phenylalanine",
       "potassium",
       "selenium",
+      "tryptophan",
+      "valine",
       "vanadium",
       "vitamin-a",
       "vitamin-b1",
@@ -5783,11 +5834,12 @@
     "display_name": "Arginine",
     "canon_slug": "arginine",
     "category": "amino_acid",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-DDDL-000070",
-        "WAL-CLM-LETS-000207"
+        "WAL-CLM-LETS-000207",
+        "WAL-CLM-LETS-000319"
       ],
       "quote": [
         "WAL-CLM-DDDL-000066"
@@ -5807,6 +5859,7 @@
       "flavonoids",
       "germanium",
       "inositol",
+      "omega-3",
       "selenium",
       "tyrosine",
       "vitamin-a",
@@ -5942,7 +5995,7 @@
     "display_name": "Phenylalanine",
     "canon_slug": "phenylalanine",
     "category": "amino_acid",
-    "claim_count": 4,
+    "claim_count": 6,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-DDDL-000067"
@@ -5950,20 +6003,25 @@
       "protocol": [
         "WAL-CLM-LETS-000127",
         "WAL-CLM-LETS-000159",
-        "WAL-CLM-LETS-000244"
+        "WAL-CLM-LETS-000244",
+        "WAL-CLM-LETS-000320",
+        "WAL-CLM-LETS-000322"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [
       "alcoholism",
       "bipolar_disorder",
-      "depression"
+      "depression",
+      "inflammation",
+      "insomnia"
     ],
     "interacts_with": [
       "calcium",
       "choline",
       "chromium",
       "flavonoids",
+      "inositol",
       "iron",
       "lithium",
       "magnesium",
@@ -5972,6 +6030,7 @@
       "potassium",
       "tryptophan",
       "tyrosine",
+      "valine",
       "vanadium",
       "vitamin-b1",
       "vitamin-b12",
@@ -5979,7 +6038,9 @@
       "vitamin-b3",
       "vitamin-b5",
       "vitamin-b6",
-      "vitamin-c"
+      "vitamin-c",
+      "vitamin-e",
+      "zinc"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -6001,24 +6062,30 @@
     "display_name": "Tryptophan",
     "canon_slug": "tryptophan",
     "category": "amino_acid",
-    "claim_count": 3,
+    "claim_count": 5,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-DDDL-000067"
       ],
       "protocol": [
         "WAL-CLM-LETS-000142",
-        "WAL-CLM-LETS-000244"
+        "WAL-CLM-LETS-000244",
+        "WAL-CLM-LETS-000320",
+        "WAL-CLM-LETS-000322"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [
       "anxiety",
-      "depression"
+      "depression",
+      "inflammation",
+      "insomnia"
     ],
     "interacts_with": [
       "calcium",
       "chromium",
+      "flavonoids",
+      "inositol",
       "iron",
       "lithium",
       "magnesium",
@@ -6027,6 +6094,7 @@
       "phenylalanine",
       "potassium",
       "tyrosine",
+      "valine",
       "vanadium",
       "vitamin-b1",
       "vitamin-b12",
@@ -6034,7 +6102,9 @@
       "vitamin-b3",
       "vitamin-b5",
       "vitamin-b6",
-      "vitamin-c"
+      "vitamin-c",
+      "vitamin-e",
+      "zinc"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -6093,18 +6163,34 @@
     "display_name": "Valine",
     "canon_slug": "valine",
     "category": "amino_acid",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000320"
+      ]
+    },
     "deficiency_signs": [],
-    "conditions_treated": [],
-    "interacts_with": [],
-    "books_cited": []
+    "conditions_treated": [
+      "inflammation"
+    ],
+    "interacts_with": [
+      "flavonoids",
+      "omega-3",
+      "phenylalanine",
+      "tryptophan",
+      "vitamin-c",
+      "vitamin-e",
+      "zinc"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
   },
   "omega-3": {
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 54,
+    "claim_count": 57,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -6165,6 +6251,9 @@
         "WAL-CLM-LETS-000306",
         "WAL-CLM-LETS-000310",
         "WAL-CLM-LETS-000316",
+        "WAL-CLM-LETS-000319",
+        "WAL-CLM-LETS-000320",
+        "WAL-CLM-LETS-000324",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -6251,16 +6340,21 @@
       "hysteria",
       "incontinence",
       "infertility",
+      "inflammation",
+      "itching",
       "kidney_disease",
+      "pruritus",
       "psoriasis",
       "weight_loss"
     ],
     "interacts_with": [
+      "arginine",
       "calcium",
       "choline",
       "chromium",
       "copper",
       "flavonoids",
+      "germanium",
       "iodine",
       "iron",
       "lithium",
@@ -6274,6 +6368,7 @@
       "tin",
       "tryptophan",
       "tyrosine",
+      "valine",
       "vanadium",
       "vitamin-a",
       "vitamin-b1",

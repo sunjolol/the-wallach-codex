@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_173 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_174 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 20:36 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b44 — INFERTILITY→ITCHING (I section COMPLETE), 6 tier-1 claims LETS-319..324. Fixed DANGEROUS zinc 50 gm→mg book misprint + 3 meg→mcg. Seal gate caught amino-acids-are-canon (valine); recovered. kv154→155, claims 698→704, conditions 330→335, board 31/31.
+  ↳ Let's Play Doctor Ch10, the I's pt 2 (printed p137-139), completing the entire I section (IMMUNE DEPRESSION->ITCHING across b43+b44). Claims: infertility (2nd dedicated entry, reused slug), inflammation, indigestion+dyspepsia, insomnia, irritable_bowel_syndrome, itching+pruritus. ★ DANGEROUS MISPRINT: book prints 'zinc at 50 gm t.i.d.' in INFERTILITY (50 g zinc toxic); 600-DPI confirmed; corrected to 50 mg IN THE VERBATIM per dose-misprint-safety-mandate (every other zinc dose + ITCHING's zinc 50 mg on the same spread are mg). Plus 3 meg->mcg. ★ SLUG LESSON: amino acids (arginine/tryptophan/valine/phenylalanine) ARE canon essentials; first seal mis-slugged valine/l-tryptophan/l-arginine into other_substances -> corpus_verify #4 overlap FAILED at the seal gate. Recovered: fixed draft (->essentials, canon slugs), git-reverted polluted shard/indices/kv to b43, re-sealed clean. Inositol also canon. RENDER-FIRST p137-139. NEXT b45 = the J's (JAUNDICE/JOINT PAIN) + K's (KEGEL/KERATOMALACIA/KERATOSIS); JOUST->JOINT header OCR fix expected.
 
 ## 2026-06-28 20:16 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b43 — IMMUNE DEPRESSION→INFECTION (the I's pt 1), 8 claims LETS-311..318 (7 tier-1 + IMMUNIZATION ruled SEARCH-ONLY). 6 meg→mcg + 1 OCR header fix, 0 dangerous misprints. kv153→154, claims 690→698, conditions 324→330, board 31/31.
