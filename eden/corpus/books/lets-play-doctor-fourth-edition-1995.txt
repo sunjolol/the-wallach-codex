@@ -8426,7 +8426,7 @@ beta carotene, ACE (adrenal cortical extract)
 sublingual, IM or EV, germanium at 50 mg
 orally or IM daily, acupuncture, homeopathy,
 herbs to include ginseng (Panax ginseng),
-selenium at 1,000 meg/day and plant derived
+selenium at 1,000 mcg/day and plant derived
 colloidal minerals.
 IMMUNIZATION (vaccination): is perhaps
 the greatest interface between government
@@ -8470,7 +8470,7 @@ therapy, avoidance of food allergens, rotation
 diets, vitamin C to bowel tolerance, vitamin A
 at 300,000 IU/day as beta carotene, zinc at 50
 mg t.i.d., germanium at 50 mg/day orally or
-IM, selenium at 1 ,000 meg/day orally, IV or IM,
+IM, selenium at 1 ,000 mcg/day orally, IV or IM,
 acupuncture, and herbs to include ginseng
 (Panax ginseng).
 IMPETIGO (ecthyma): is a form ofdermatitis
@@ -8542,7 +8542,7 @@ massage, reflexology, etc.); Step 2) genital
 pleasuring (i.e., genital foreplay); and Step 3)
 nondemand lovemaking (i.e. , neither the "guy"
 or the "doll" expects to be brought to a climax).
-EVCONTEVENCE (inability to controlbow-
+INCONTINENCE (inability to controlbow-
 els or bladder): can be caused by a wide
 variety of diseases (i.e., benign prostatic
 hyperplasia, MD, MS, cancer, ALS, stroke,
@@ -8554,12 +8554,12 @@ Treatment of incontinence should include
 Kegel's exercises (i.e. , con-tracting the floor of
 the pelvis as if trying to stop a bowel move-
 ment) at about 250-500/day, essential fatty
-acids at 5 gm t.i.d., selenium at 500 meg/day,
+acids at 5 gm t.i.d., selenium at 500 mcg/day,
 vitamin E at 800-1,200 IU/day, betaine HC1
 and pancreatic enzymes at 75-200 mg t.i.d.
 before meals, avoidance and rotation diets of
 offending food allergens, chromium at 25-200
-meg/day, and herbs to include saw palmetto
+mcg/day, and herbs to include saw palmetto
 (Serenoa seirulata) and ginseng (Panax gin-
 seng).
 INFARCTION (cerebral-stroke; heart-
@@ -8584,7 +8584,7 @@ repair a "stroke" or "heart attack."
 Treatment and repair of infarction should in-
 clude vitamin C to bowel tolerance, vitamin E
 at 800-1,200 IU/day, selenium at 500-1,000
-meg/day orally or IM, vitamin A at 300,000 IU/
+mcg/day orally or IM, vitamin A at 300,000 IU/
 day as beta carotene, chelation with EDTA,
 hydrogen peroxide IV, betaine HC1 and pan-
 creatic enzymes at 200-500 mg t.i.d. 15 min-
@@ -8613,7 +8613,7 @@ of echinacea (Echinacea angustifolia), golden
 seal (Hydrastis canadensis), garlic (Allium
 sativum), vitamin C to bowel tolerance, vita-
 min A at 300,000 IU/day as beta carotene, zinc
-at 50 mg t.i.d. , selenium at 500-1 ,000 meg/day,
+at 50 mg t.i.d. , selenium at 500-1 ,000 mcg/day,
 Immu-Stim IM or orally 2 capsules b.i.d.,
 Isoprinosin at 100-300 mg/day, Ribavirin,
 H202 in 250 ml infusion over four hours;

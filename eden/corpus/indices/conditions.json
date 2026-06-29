@@ -4171,6 +4171,27 @@
       "lets-play-doctor"
     ]
   },
+  "erectile_dysfunction": {
+    "display_name": "Erectile Dysfunction",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000315"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "colloidal-minerals",
+      "ginseng",
+      "nux-vomica",
+      "sarsaparilla",
+      "saw-palmetto",
+      "testosterone"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "exophthalmos": {
     "display_name": "Exophthalmos",
     "claim_count": 1,
@@ -4780,7 +4801,7 @@
   },
   "heart_attack": {
     "display_name": "Heart Attack",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000030"
@@ -4792,12 +4813,15 @@
         "WAL-CLM-LETS-000001"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000295"
+        "WAL-CLM-LETS-000295",
+        "WAL-CLM-LETS-000317"
       ]
     },
     "essentials_involved": [
       "omega-3",
       "selenium",
+      "vitamin-a",
+      "vitamin-c",
       "vitamin-e"
     ],
     "other_substances_involved": [
@@ -5547,18 +5571,151 @@
       "rare-earths"
     ]
   },
+  "immune_depression": {
+    "display_name": "Immune Depression",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000311"
+      ]
+    },
+    "essentials_involved": [
+      "germanium",
+      "selenium",
+      "vitamin-a",
+      "vitamin-c",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "adrenal-cortical-extract",
+      "colloidal-minerals",
+      "ginseng"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "impetigo": {
+    "display_name": "Impetigo",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000314"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a",
+      "vitamin-c",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "boric-acid",
+      "comfrey",
+      "echinacea",
+      "goldenseal",
+      "penicillin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "impotence": {
     "display_name": "Impotence",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000044"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000315"
       ]
     },
     "essentials_involved": [
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "colloidal-minerals",
+      "ginseng",
+      "nux-vomica",
+      "sarsaparilla",
+      "saw-palmetto",
+      "testosterone"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "incontinence": {
+    "display_name": "Incontinence",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000316"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "omega-3",
+      "selenium",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "ginseng",
+      "pancreatic-enzymes",
+      "saw-palmetto"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "infarction": {
+    "display_name": "Infarction",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000317"
+      ]
+    },
+    "essentials_involved": [
+      "selenium",
+      "vitamin-a",
+      "vitamin-c",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "edta-chelation",
+      "hydrogen-peroxide",
+      "pancreatic-enzymes"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "infection": {
+    "display_name": "Infection",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000318"
+      ]
+    },
+    "essentials_involved": [
+      "selenium",
+      "vitamin-a",
+      "vitamin-c",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "echinacea",
+      "garlic",
+      "goldenseal",
+      "hydrogen-peroxide",
+      "immu-stim",
+      "isoprinosine",
+      "ribavirin"
+    ],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -7352,17 +7509,28 @@
   },
   "stroke": {
     "display_name": "Stroke",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
+        "WAL-CLM-LETS-000317",
         "WAL-CLM-RARE-000202"
       ]
     },
     "essentials_involved": [
-      "oxygen"
+      "oxygen",
+      "selenium",
+      "vitamin-a",
+      "vitamin-c",
+      "vitamin-e"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "edta-chelation",
+      "hydrogen-peroxide",
+      "pancreatic-enzymes"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },

@@ -1261,7 +1261,7 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 50,
+    "claim_count": 51,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -1324,6 +1324,7 @@
         "WAL-CLM-LETS-000305",
         "WAL-CLM-LETS-000307",
         "WAL-CLM-LETS-000310",
+        "WAL-CLM-LETS-000316",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1403,6 +1404,7 @@
       "hypertension",
       "hypoglycemia",
       "hysteria",
+      "incontinence",
       "infertility",
       "insomnia",
       "intermittent_claudication",
@@ -1622,7 +1624,7 @@
     "display_name": "Germanium",
     "canon_slug": "germanium",
     "category": "mineral",
-    "claim_count": 11,
+    "claim_count": 13,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000012",
@@ -1641,6 +1643,8 @@
         "WAL-CLM-LETS-000201",
         "WAL-CLM-LETS-000221",
         "WAL-CLM-LETS-000298",
+        "WAL-CLM-LETS-000311",
+        "WAL-CLM-LETS-000313",
         "WAL-CLM-RARE-000282"
       ]
     },
@@ -1664,6 +1668,7 @@
       "chronic_fatigue_syndrome",
       "dementia",
       "hepatitis",
+      "immune_depression",
       "infertility",
       "osteoporosis"
     ],
@@ -2144,7 +2149,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 59,
+    "claim_count": 64,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2210,6 +2215,11 @@
         "WAL-CLM-LETS-000289",
         "WAL-CLM-LETS-000295",
         "WAL-CLM-LETS-000298",
+        "WAL-CLM-LETS-000311",
+        "WAL-CLM-LETS-000313",
+        "WAL-CLM-LETS-000316",
+        "WAL-CLM-LETS-000317",
+        "WAL-CLM-LETS-000318",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2287,6 +2297,10 @@
       "hepatitis",
       "hiv_aids",
       "hypertension",
+      "immune_depression",
+      "incontinence",
+      "infarction",
+      "infection",
       "infertility",
       "intermittent_claudication",
       "keshan_disease",
@@ -2303,6 +2317,7 @@
       "scoliosis",
       "sickle_cell_anemia",
       "sids",
+      "stroke",
       "white_muscle_disease"
     ],
     "interacts_with": [
@@ -2561,7 +2576,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 76,
+    "claim_count": 80,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2648,6 +2663,10 @@
         "WAL-CLM-LETS-000300",
         "WAL-CLM-LETS-000307",
         "WAL-CLM-LETS-000308",
+        "WAL-CLM-LETS-000311",
+        "WAL-CLM-LETS-000313",
+        "WAL-CLM-LETS-000314",
+        "WAL-CLM-LETS-000318",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -2782,7 +2801,10 @@
       "hypoglycemia",
       "hypogonadism",
       "hypotension",
+      "immune_depression",
+      "impetigo",
       "impotence",
+      "infection",
       "infertility",
       "influenza",
       "malabsorption",
@@ -3599,7 +3621,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 28,
+    "claim_count": 33,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -3632,7 +3654,12 @@
         "WAL-CLM-LETS-000275",
         "WAL-CLM-LETS-000279",
         "WAL-CLM-LETS-000280",
-        "WAL-CLM-LETS-000282"
+        "WAL-CLM-LETS-000282",
+        "WAL-CLM-LETS-000311",
+        "WAL-CLM-LETS-000313",
+        "WAL-CLM-LETS-000314",
+        "WAL-CLM-LETS-000317",
+        "WAL-CLM-LETS-000318"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000037"
@@ -3713,14 +3740,20 @@
       "fibrocystic_breast_disease",
       "food_allergy",
       "freckles",
+      "heart_attack",
       "hydrocephalus",
       "ichthyosis",
+      "immune_depression",
+      "impetigo",
+      "infarction",
+      "infection",
       "infertility",
       "influenza",
       "insomnia",
       "keratitis",
       "night_blindness",
       "psoriasis",
+      "stroke",
       "xerophthalmia"
     ],
     "interacts_with": [
@@ -4886,7 +4919,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 47,
+    "claim_count": 52,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -4941,7 +4974,12 @@
         "WAL-CLM-LETS-000298",
         "WAL-CLM-LETS-000299",
         "WAL-CLM-LETS-000300",
-        "WAL-CLM-LETS-000308"
+        "WAL-CLM-LETS-000308",
+        "WAL-CLM-LETS-000311",
+        "WAL-CLM-LETS-000313",
+        "WAL-CLM-LETS-000314",
+        "WAL-CLM-LETS-000317",
+        "WAL-CLM-LETS-000318"
       ]
     },
     "deficiency_signs": [
@@ -5047,16 +5085,22 @@
       "growing_pains",
       "hay_fever",
       "headache",
+      "heart_attack",
       "hepatitis",
       "herpes_simplex",
       "hypotension",
+      "immune_depression",
+      "impetigo",
+      "infarction",
+      "infection",
       "influenza",
       "intermittent_claudication",
       "periodontal_disease",
       "psoriasis",
       "rheumatoid_arthritis",
       "scurvy",
-      "shingles"
+      "shingles",
+      "stroke"
     ],
     "interacts_with": [
       "arginine",
@@ -5184,7 +5228,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 45,
+    "claim_count": 47,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -5239,6 +5283,8 @@
         "WAL-CLM-LETS-000291",
         "WAL-CLM-LETS-000295",
         "WAL-CLM-LETS-000300",
+        "WAL-CLM-LETS-000316",
+        "WAL-CLM-LETS-000317",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -5346,6 +5392,8 @@
       "growing_pains",
       "hangnails",
       "heart_attack",
+      "incontinence",
+      "infarction",
       "infertility",
       "intermittent_claudication",
       "ischemic_heart_disease",
@@ -5354,7 +5402,8 @@
       "muscular_dystrophy",
       "psoriasis",
       "rheumatoid_arthritis",
-      "shingles"
+      "shingles",
+      "stroke"
     ],
     "interacts_with": [
       "arginine",
@@ -6055,7 +6104,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 53,
+    "claim_count": 54,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -6115,6 +6164,7 @@
         "WAL-CLM-LETS-000295",
         "WAL-CLM-LETS-000306",
         "WAL-CLM-LETS-000310",
+        "WAL-CLM-LETS-000316",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -6199,6 +6249,7 @@
       "heart_attack",
       "hypertension",
       "hysteria",
+      "incontinence",
       "infertility",
       "kidney_disease",
       "psoriasis",

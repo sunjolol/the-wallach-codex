@@ -12540,6 +12540,332 @@
       "extracted_at": "2026-06-29T00:57:37+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000311",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "zinc",
+        "vitamin-a",
+        "germanium",
+        "selenium"
+      ],
+      "other_substances": [
+        "adrenal-cortical-extract",
+        "ginseng",
+        "colloidal-minerals"
+      ],
+      "conditions": [
+        "immune_depression"
+      ],
+      "symptoms": [],
+      "claim_text": "Immune depression (immune exhaustion) is caused by a chronic process — unrelenting stress, chronic allergies, or chronic infections — that exhausts the immune system so it can no longer protect against invaders such as Epstein-Barr virus, candidiasis, food allergies, arthritis, and cancer; 'anergy' is a state of exhaustion so deep that diagnostic skin tests fail to react even with overwhelming disease. Wallach notes that cortisone, prednisone, and chemotherapy themselves cause immune depression. Treatment of the depressed immune system: vitamin C to bowel tolerance; zinc at 50 milligrams three times daily; vitamin A at 300,000 international units per day as beta carotene; adrenal cortical extract (sublingual, intramuscular, or intravenous); germanium at 50 milligrams orally or intramuscularly daily; acupuncture; homeopathy; ginseng (Panax ginseng); selenium at 1,000 micrograms per day; and plant-derived colloidal minerals.",
+      "verbatim": "Treatment of a depressed immune system\nincludes vitamin C to bowel tolerance, zinc at\n50 mg t.i.d., vitamin A at 300,000 IU/day as\nbeta carotene, ACE (adrenal cortical extract)\nsublingual, IM or EV, germanium at 50 mg\norally or IM daily, acupuncture, homeopathy,\nherbs to include ginseng (Panax ginseng),\nselenium at 1,000 mcg/day and plant derived\ncolloidal minerals.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 339886
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T01:14:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000312",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In this entry Wallach frames immunization (vaccination) as, in his words, 'perhaps the greatest interface between government and freedom of choice' in personal health care. He objects to compulsory school-entry vaccination mandates and to states treating refusal as grounds for a child-abuse charge, defends the religious exemption, and asserts that some experts believe certain vaccination programs have carried catastrophic diseases. This is captured for the search corpus as Wallach's political/editorial opinion — it is commentary, not a deficiency-treatment protocol, so it does not appear in the operational condition indices.",
+      "verbatim": "IMMUNIZATION (vaccination): is perhaps\nthe greatest interface between government\nand freedom of choice in your own health\ncare!!!",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 340255
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10",
+        "search-only",
+        "search-topic:vaccination"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T01:14:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000313",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "vitamin-a",
+        "zinc",
+        "germanium",
+        "selenium"
+      ],
+      "other_substances": [
+        "immu-stim",
+        "ginseng"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Immunotherapy, in Wallach's sense, should be designed to strengthen the immune system's ability to cope with all invaders — unlike orthodox 'immunotherapy' (chemotherapy and cortisone), which actually depresses immunity. The need for it includes cancer, arthritis, food allergies, multiple sclerosis, lupus (systemic lupus erythematosus), and amyotrophic lateral sclerosis (Lou Gehrig's disease). Treatment: Immu-Stim intramuscularly or 2 capsules twice daily; sublingual allergens for allergies; autoimmune urine therapy; avoidance and rotation diets for food allergens; vitamin C to bowel tolerance; vitamin A at 300,000 international units per day as beta carotene; zinc at 50 milligrams three times daily; germanium at 50 milligrams per day orally or intramuscularly; selenium at 1,000 micrograms per day orally, intravenously, or intramuscularly; acupuncture; and ginseng (Panax ginseng).",
+      "verbatim": "Treatment to provide immunotherapy includes\nImmu-Stim IM or capsules at 2 b.i.d., sublin-\ngual allergens for allergies, autoimmune urine\ntherapy, avoidance of food allergens, rotation\ndiets, vitamin C to bowel tolerance, vitamin A\nat 300,000 IU/day as beta carotene, zinc at 50\nmg t.i.d., germanium at 50 mg/day orally or\nIM, selenium at 1 ,000 mcg/day orally, IV or IM,\nacupuncture, and herbs to include ginseng\n(Panax ginseng).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 341704
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T01:14:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000314",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "vitamin-a",
+        "zinc"
+      ],
+      "other_substances": [
+        "boric-acid",
+        "comfrey",
+        "echinacea",
+        "goldenseal",
+        "penicillin"
+      ],
+      "conditions": [
+        "impetigo"
+      ],
+      "symptoms": [],
+      "claim_text": "Impetigo (ecthyma) is a form of dermatitis in children — blisters filled with straw-colored fluid or pus, or skin ulcers, mainly on the face, arms, and legs. Wallach holds it is more than a simple Streptococcus infection: it is an early sign of immune depression (often from food allergies to milk, wheat, or soy) that lets normal skin organisms flourish unchecked; untreated it can cause deep tissue and lymph-node infection. Treatment: topical washes with boric acid and herbs such as comfrey (Symphytum officinale), echinacea (Echinacea angustifolia), and goldenseal (Hydrastis canadensis); topical or systemic penicillin may be needed for facial impetigo to prevent scarring; vitamin C to bowel tolerance; vitamin A 25,000-300,000 international units per day as beta carotene; zinc at 25-30 milligrams three times daily; avoidance or rotation diets for food allergies; autoimmune urine therapy; and increased animal protein (eggs, chicken, fish).",
+      "verbatim": "Treatment ofimpetigo includes topical washes\nwith boric acid and herbs such as comfrey\n(Symphytum officinale), echinacea (Echinacea\nangustifolia) and golden seal (Hydrastis\ncanadensis), topical or systemic penicillin may\nbe necessary in cases where impetigo occurs\non the face to prevent scaring, vitamin C to\nbowel tolerance, vitamin A 25,000-300,000\nIU/day as beta caro-tene, zinc at 25-30 mg",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 343024
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T01:14:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000315",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "ginseng",
+        "nux-vomica",
+        "sarsaparilla",
+        "saw-palmetto",
+        "testosterone",
+        "colloidal-minerals"
+      ],
+      "conditions": [
+        "impotence",
+        "erectile_dysfunction"
+      ],
+      "symptoms": [],
+      "claim_text": "Impotence (inability to have an erection) can stem from many causes — an unstimulating or domineering partner, guilt, malnutrition, hypothyroidism, low blood pressure, adrenal exhaustion, hypoglycemia, or post-surgical (prostate) damage — and resolving any associated problem first is key. Treatment: relaxation, spending time with your mate, and setting up romantic situations; acupuncture; homeopathy; herbs including ginseng (Panax ginseng), nux vomica (Strychnos nux vomica), sarsaparilla (Smilax officinalis), saw palmetto (Serenoa serrulata), and Zumba; oral testosterone (glandular food supplements plus testosterone intramuscularly); and the baseline nutrition program with plant-derived colloidal minerals. Wallach also recommends the Masters-and-Johnson sensate-focus technique as a self-help approach: Step 1 nongenital pleasuring (massage, reflexology), Step 2 genital pleasuring (foreplay), and Step 3 nondemand lovemaking (neither partner expecting to reach a climax).",
+      "verbatim": "others!!!!), acupuncture, homeopathy and\nherbs to include ginseng (Panax ginseng),\nnuxvomica(Strychnosnux vomica), sarsapilla\n(Smilax officinalis), saw palmetto (Serenoa\nserrulata), Zumba, oral testosterone (i.e., glan-\ndular food supplements and testosterone IM)",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 344318
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T01:14:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000316",
+      "kind": "protocol",
+      "essentials": [
+        "omega-3",
+        "selenium",
+        "vitamin-e",
+        "chromium"
+      ],
+      "other_substances": [
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "saw-palmetto",
+        "ginseng"
+      ],
+      "conditions": [
+        "incontinence"
+      ],
+      "symptoms": [],
+      "claim_text": "Incontinence (inability to control the bowels or bladder) can be caused by many diseases (benign prostatic hyperplasia, muscular dystrophy, multiple sclerosis, cancer, amyotrophic lateral sclerosis, stroke), injury (including surgery and obstetrical procedures), food allergies, and hypoglycemia — correcting the underlying disease or injury is a must. Treatment: Kegel's exercises (contracting the pelvic floor as if to stop a bowel movement) about 250-500 per day; essential fatty acids at 5 grams three times daily; selenium at 500 micrograms per day; vitamin E at 800-1,200 international units per day; betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times daily before meals; avoidance and rotation diets for offending food allergens; chromium at 25-200 micrograms per day; and herbs saw palmetto (Serenoa serrulata) and ginseng (Panax ginseng).",
+      "verbatim": "Treatment of incontinence should include\nKegel's exercises (i.e. , con-tracting the floor of\nthe pelvis as if trying to stop a bowel move-\nment) at about 250-500/day, essential fatty\nacids at 5 gm t.i.d., selenium at 500 mcg/day,\nvitamin E at 800-1,200 IU/day, betaine HC1\nand pancreatic enzymes at 75-200 mg t.i.d.\nbefore meals, avoidance and rotation diets of\noffending food allergens, chromium at 25-200\nmcg/day",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 345486
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T01:14:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000317",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "vitamin-e",
+        "selenium",
+        "vitamin-a"
+      ],
+      "other_substances": [
+        "edta-chelation",
+        "hydrogen-peroxide",
+        "betaine-hcl",
+        "pancreatic-enzymes"
+      ],
+      "conditions": [
+        "infarction",
+        "stroke",
+        "heart_attack"
+      ],
+      "symptoms": [],
+      "claim_text": "Infarction is the death of an area of tissue because its blood supply was cut off by a plug or thrombus (a blood clot, or a clump of tumor or bacterial cells); in vital areas of the heart or brain a stroke or heart attack can be fatal, and Wallach stresses prevention is always better than trying to repair after the fact. Treatment and repair of infarction: vitamin C to bowel tolerance; vitamin E at 800-1,200 international units per day; selenium at 500-1,000 micrograms per day orally or intramuscularly; vitamin A at 300,000 international units per day as beta carotene; chelation with EDTA; hydrogen peroxide intravenously; and betaine hydrochloride and pancreatic enzymes at 200-500 milligrams three times daily, 15 minutes before meals. If clumps of bacteria are involved (as in rheumatic fever), antibiotics (penicillin or tetracycline) are required.",
+      "verbatim": "Treatment and repair of infarction should in-\nclude vitamin C to bowel tolerance, vitamin E\nat 800-1,200 IU/day, selenium at 500-1,000\nmcg/day orally or IM, vitamin A at 300,000 IU/\nday as beta carotene, chelation with EDTA,\nhydrogen peroxide IV, betaine HC1 and pan-\ncreatic enzymes at 200-500 mg t.i.d. 15 min-\nutes before meals",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 346812
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T01:14:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000318",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "vitamin-a",
+        "zinc",
+        "selenium"
+      ],
+      "other_substances": [
+        "echinacea",
+        "goldenseal",
+        "garlic",
+        "immu-stim",
+        "isoprinosine",
+        "ribavirin",
+        "hydrogen-peroxide"
+      ],
+      "conditions": [
+        "infection"
+      ],
+      "symptoms": [],
+      "claim_text": "Infection (invasion of tissues by bacteria, viruses, or fungus) is caused by two factors: an infective 'dose' of organisms and a low state of resistance in the host. The baseline nutrient program supplies the macro- and micro-elements needed to maintain and repair the immune system; pulse-test for food allergies and use reasonable precautions around contagious illness. Treatment: echinacea (Echinacea angustifolia), goldenseal (Hydrastis canadensis), garlic (Allium sativum), vitamin C to bowel tolerance, vitamin A at 300,000 international units per day as beta carotene, zinc at 50 milligrams three times daily, selenium at 500-1,000 micrograms per day, Immu-Stim (intramuscular or 2 capsules twice daily), Isoprinosine at 100-300 milligrams per day, Ribavirin, and hydrogen peroxide in a 250-milliliter infusion over four hours; antibiotics and antifungal medications are sometimes necessary in lifesaving situations.",
+      "verbatim": "Treatment of infections should include the use\nof echinacea (Echinacea angustifolia), golden\nseal (Hydrastis canadensis), garlic (Allium\nsativum), vitamin C to bowel tolerance, vita-\nmin A at 300,000 IU/day as beta carotene, zinc\nat 50 mg t.i.d. , selenium at 500-1 ,000 mcg/day,\nImmu-Stim IM or orally 2 capsules b.i.d.,\nIsoprinosin at 100-300 mg/day, Ribavirin,",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 347986
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T01:14:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_172 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_173 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-28 20:16 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b43 — IMMUNE DEPRESSION→INFECTION (the I's pt 1), 8 claims LETS-311..318 (7 tier-1 + IMMUNIZATION ruled SEARCH-ONLY). 6 meg→mcg + 1 OCR header fix, 0 dangerous misprints. kv153→154, claims 690→698, conditions 324→330, board 31/31.
+  ↳ Let's Play Doctor Ch10 Materia Medica, the I's pt 1 (printed p135-137). Tier-1: immune_depression, immunotherapy, impetigo, impotence+erectile_dysfunction (sexual-health medical condition per FERTILITY/HERPES precedent), incontinence, infarction+stroke+heart_attack, infection. SEARCH-ONLY: IMMUNIZATION/vaccination (kind=definition, conds=[], search-topic:vaccination) — ruled by Luneth via AskUserQuestion as political/opinion commentary, not a deficiency protocol; captured faithfully + neutrally framed as his opinion; matches CONTRACEPTION/EJACULATION precedent; correctly excluded from operational tabs (search_only 60->61). 6 transactional meg->mcg .txt fixes (selenium x5 + chromium x1) all 600-DPI zoom-confirmed mcg; INCONTINENCE header OCR garble fixed (book prints it). Kept faithful/cleaned-in-claim_text: book-printed 'IM or EV'->IV deferred to final sweep, Zumba kept verbatim (unidentified term). RENDER-FIRST p135-137. resnap 0 reloc/0 broken; corpus_verify PASS; embed+build OK; render_probe_knowledge PASS 0 errors. NEXT b44 = INFERTILITY (reuse existing slug) + INFLAMMATION/INDIGESTION/INSOMNIA/IBS/ITCHING.
 
 ## 2026-06-28 19:59 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b42 — HOARSENESS→HYSTERIA (the H section COMPLETE), 8 tier-1 protocol claims LETS-303..310. 5 render-verified meg→mcg fixes, 0 dangerous misprints; 3 behavioral conds documented. kv152→153, claims 682→690, conditions 319→324, board 31/31.
