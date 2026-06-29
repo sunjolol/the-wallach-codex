@@ -2914,7 +2914,7 @@
   },
   "numbness": {
     "display_name": "Numbness",
-    "claim_count": 5,
+    "claim_count": 6,
     "likely_deficiencies": [
       {
         "essential": "calcium",
@@ -2929,14 +2929,38 @@
         "appears_in_books": 1
       },
       {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000415",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
         "essential": "magnesium",
         "claim_id": "WAL-CLM-LETS-000383",
         "confidence": "high",
         "appears_in_books": 1
       },
       {
+        "essential": "magnesium",
+        "claim_id": "WAL-CLM-LETS-000415",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "omega-3",
+        "claim_id": "WAL-CLM-LETS-000415",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
         "essential": "phosphorus",
         "claim_id": "WAL-CLM-LETS-000023",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "tryptophan",
+        "claim_id": "WAL-CLM-LETS-000415",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -2961,6 +2985,12 @@
       {
         "essential": "vitamin-b6",
         "claim_id": "WAL-CLM-LETS-000383",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-e",
+        "claim_id": "WAL-CLM-LETS-000415",
         "confidence": "high",
         "appears_in_books": 1
       },

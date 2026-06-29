@@ -451,7 +451,7 @@
   },
   "b-complex": {
     "display_name": "B Complex",
-    "claim_count": 12,
+    "claim_count": 14,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000202",
@@ -465,7 +465,9 @@
         "WAL-CLM-LETS-000356",
         "WAL-CLM-LETS-000369",
         "WAL-CLM-LETS-000379",
-        "WAL-CLM-LETS-000399"
+        "WAL-CLM-LETS-000399",
+        "WAL-CLM-LETS-000414",
+        "WAL-CLM-LETS-000417"
       ]
     },
     "conditions_treated": [
@@ -488,6 +490,8 @@
       "neuralgia",
       "neuropathy",
       "phlebitis",
+      "radial_nerve_palsy",
+      "reyes_syndrome",
       "varicose_veins"
     ],
     "books_cited": [
@@ -1367,18 +1371,20 @@
   },
   "cayenne": {
     "display_name": "Cayenne",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000222",
         "WAL-CLM-LETS-000375",
-        "WAL-CLM-LETS-000404"
+        "WAL-CLM-LETS-000404",
+        "WAL-CLM-LETS-000415"
       ]
     },
     "conditions_treated": [
       "intermittent_claudication",
       "nasal_catarrh",
-      "poor_circulation"
+      "poor_circulation",
+      "raynauds_disease"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2154,7 +2160,7 @@
   },
   "dmso": {
     "display_name": "Dmso",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
@@ -2166,7 +2172,8 @@
         "WAL-CLM-LETS-000221",
         "WAL-CLM-LETS-000320",
         "WAL-CLM-LETS-000326",
-        "WAL-CLM-LETS-000393"
+        "WAL-CLM-LETS-000393",
+        "WAL-CLM-LETS-000414"
       ]
     },
     "conditions_treated": [
@@ -2180,6 +2187,7 @@
       "inflammation",
       "joint_pain",
       "pain",
+      "radial_nerve_palsy",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -3396,7 +3404,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 37,
+    "claim_count": 38,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
@@ -3435,7 +3443,8 @@
         "WAL-CLM-LETS-000392",
         "WAL-CLM-LETS-000394",
         "WAL-CLM-LETS-000398",
-        "WAL-CLM-LETS-000404"
+        "WAL-CLM-LETS-000404",
+        "WAL-CLM-LETS-000416"
       ]
     },
     "conditions_treated": [
@@ -3476,6 +3485,7 @@
       "periodontal_disease",
       "poor_circulation",
       "pyorrhea",
+      "rectal_itching",
       "rheumatoid_arthritis",
       "stroke",
       "tetanus",

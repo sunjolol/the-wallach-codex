@@ -10851,7 +10851,7 @@ support, exchange transfusions and dialysis.
 164
 Vitamin C IV at 5-10 gms per day, B-complex
 and B-12 IV or IM, selenium IM or IV at 250-
-500 meg per day.
+500 mcg per day.
 RHEUMATIC FEVER: is caused by Strepto-
 coccus Group A infection (usually starts as a
 "strep throat"). Rheumatic fever is character-

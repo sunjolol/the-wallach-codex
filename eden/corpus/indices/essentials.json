@@ -288,7 +288,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 72,
+    "claim_count": 74,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -365,6 +365,8 @@
         "WAL-CLM-LETS-000390",
         "WAL-CLM-LETS-000391",
         "WAL-CLM-LETS-000398",
+        "WAL-CLM-LETS-000413",
+        "WAL-CLM-LETS-000415",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -538,7 +540,9 @@
       "panic_attacks",
       "periodontal_disease",
       "pyorrhea",
+      "raynauds_disease",
       "rheumatoid_arthritis",
+      "rickets",
       "sids",
       "tetany",
       "vertigo"
@@ -952,7 +956,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 82,
+    "claim_count": 84,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1043,6 +1047,8 @@
         "WAL-CLM-LETS-000391",
         "WAL-CLM-LETS-000398",
         "WAL-CLM-LETS-000402",
+        "WAL-CLM-LETS-000413",
+        "WAL-CLM-LETS-000415",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1182,6 +1188,7 @@
       "premenstrual_syndrome",
       "psychosis",
       "pyorrhea",
+      "raynauds_disease",
       "rheumatoid_arthritis",
       "rickets",
       "spinal_stenosis",
@@ -2241,7 +2248,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 80,
+    "claim_count": 81,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2328,6 +2335,7 @@
         "WAL-CLM-LETS-000373",
         "WAL-CLM-LETS-000374",
         "WAL-CLM-LETS-000409",
+        "WAL-CLM-LETS-000417",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2439,6 +2447,7 @@
       "parkinsons_disease",
       "plumbism",
       "psoriasis",
+      "reyes_syndrome",
       "rheumatoid_arthritis",
       "scoliosis",
       "sickle_cell_anemia",
@@ -5019,7 +5028,7 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 29,
+    "claim_count": 30,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000035",
@@ -5058,7 +5067,8 @@
         "WAL-CLM-LETS-000348",
         "WAL-CLM-LETS-000359",
         "WAL-CLM-LETS-000379",
-        "WAL-CLM-LETS-000383"
+        "WAL-CLM-LETS-000383",
+        "WAL-CLM-LETS-000417"
       ]
     },
     "deficiency_signs": [
@@ -5153,6 +5163,7 @@
       "peripheral_neuropathy",
       "pernicious_anemia",
       "psychosis",
+      "reyes_syndrome",
       "shingles",
       "spina_bifida"
     ],
@@ -5197,7 +5208,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 64,
+    "claim_count": 65,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -5269,7 +5280,8 @@
         "WAL-CLM-LETS-000398",
         "WAL-CLM-LETS-000399",
         "WAL-CLM-LETS-000404",
-        "WAL-CLM-LETS-000410"
+        "WAL-CLM-LETS-000410",
+        "WAL-CLM-LETS-000417"
       ]
     },
     "deficiency_signs": [
@@ -5402,6 +5414,7 @@
       "psoriasis",
       "pyorrhea",
       "quinsy",
+      "reyes_syndrome",
       "rheumatoid_arthritis",
       "scurvy",
       "shingles",
@@ -5452,7 +5465,7 @@
     "display_name": "Cholecalciferol",
     "canon_slug": "vitamin-d",
     "category": "vitamin",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000083"
@@ -5468,7 +5481,8 @@
         "WAL-CLM-DDDL-000068"
       ],
       "protocol": [
-        "WAL-CLM-LETS-000139"
+        "WAL-CLM-LETS-000139",
+        "WAL-CLM-LETS-000413"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000040"
@@ -5535,7 +5549,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 59,
+    "claim_count": 60,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -5604,6 +5618,7 @@
         "WAL-CLM-LETS-000402",
         "WAL-CLM-LETS-000404",
         "WAL-CLM-LETS-000409",
+        "WAL-CLM-LETS-000415",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -5733,6 +5748,7 @@
       "poor_circulation",
       "premenstrual_syndrome",
       "psoriasis",
+      "raynauds_disease",
       "rheumatoid_arthritis",
       "shingles",
       "stroke",
@@ -6423,7 +6439,7 @@
     "display_name": "Tryptophan",
     "canon_slug": "tryptophan",
     "category": "amino_acid",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-DDDL-000067"
@@ -6432,7 +6448,8 @@
         "WAL-CLM-LETS-000142",
         "WAL-CLM-LETS-000244",
         "WAL-CLM-LETS-000320",
-        "WAL-CLM-LETS-000322"
+        "WAL-CLM-LETS-000322",
+        "WAL-CLM-LETS-000415"
       ]
     },
     "deficiency_signs": [],
@@ -6440,7 +6457,8 @@
       "anxiety",
       "depression",
       "inflammation",
-      "insomnia"
+      "insomnia",
+      "raynauds_disease"
     ],
     "interacts_with": [
       "calcium",
@@ -6555,7 +6573,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 71,
+    "claim_count": 72,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -6633,6 +6651,7 @@
         "WAL-CLM-LETS-000399",
         "WAL-CLM-LETS-000402",
         "WAL-CLM-LETS-000409",
+        "WAL-CLM-LETS-000415",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -6747,6 +6766,7 @@
       "premenstrual_syndrome",
       "pruritus",
       "psoriasis",
+      "raynauds_disease",
       "schizophrenia",
       "varicose_veins",
       "weight_loss"

@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_196 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_197 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-29 11:36 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b63: RACHITIC ROSARY→REYE'S (R's pt 1, p163-164) — LETS-413..417, 5 tier-1 protocol: rickets/radial_nerve_palsy/raynauds/rectal_itching/reyes. 1 meg→mcg (reyes selenium). ★ RAPE skipped (Luneth: out of app scope). kv174, claims 797, conds 409, board 31/31.
 
 ## 2026-06-29 10:37 UTC-05:00 · session-end · chronicle
 SESSION 22 WRAPPED — Ch10 Materia Medica, 5 batches b58-b62 (ORGANIC BRAIN SYNDROME→RABIES): O complete + entire P section + Q's + first R's. LETS-388..412, 25 claims. corpus 767→792, conds 383→405, kv 168→173. 3 meg→mcg + 1 dangerous copper gm→mg fix; 2 scrambles. board 31/31.

@@ -8935,6 +8935,61 @@
       "lets-play-doctor"
     ]
   },
+  "radial_nerve_palsy": {
+    "display_name": "Radial Nerve Palsy",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000414"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "b-complex",
+      "dmso"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "raynauds_disease": {
+    "display_name": "Raynauds Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000415"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium",
+      "omega-3",
+      "tryptophan",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "cayenne"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "rectal_itching": {
+    "display_name": "Rectal Itching",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000416"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "hydrogen-peroxide"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "renal_failure": {
     "display_name": "Renal Failure",
     "claim_count": 1,
@@ -9007,6 +9062,26 @@
       "rare-earths"
     ]
   },
+  "reyes_syndrome": {
+    "display_name": "Reyes Syndrome",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000417"
+      ]
+    },
+    "essentials_involved": [
+      "selenium",
+      "vitamin-b12",
+      "vitamin-c"
+    ],
+    "other_substances_involved": [
+      "b-complex"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "rheumatoid_arthritis": {
     "display_name": "Rheumatoid Arthritis",
     "claim_count": 3,
@@ -9051,16 +9126,20 @@
   },
   "rickets": {
     "display_name": "Rickets",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000039",
         "WAL-CLM-RARE-000230"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000413"
       ]
     },
     "essentials_involved": [
       "calcium",
+      "magnesium",
       "vitamin-d"
     ],
     "other_substances_involved": [],

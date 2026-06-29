@@ -16544,6 +16544,191 @@
       "extracted_at": "2026-06-29T15:31:42+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000413",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-d",
+        "calcium",
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "rickets"
+      ],
+      "symptoms": [],
+      "claim_text": "Rachitic rosary is the bead-like swelling at the junction of the ribs and rib cartilage, seen almost exclusively in small children kept indoors without an oral source of vitamin D; it is easily felt on examination. Wallach treats it as a sign of rickets (vitamin D deficiency). Treatment should include oral vitamin D at 400-1,000 IU per day plus the baseline nutritional supplement program including calcium and magnesium; once the abnormal bony changes normalize, drop the vitamin D dose to 250-400 IU per day, and afford daily sun exposure for at least 30 minutes.",
+      "verbatim": "Treatment of the rachitic \"rosary\" should in-\nclude oral vitamin D at 400-1,000 IU per day\nand the base line nutritional supplement pro-\ngram including calcium and magnesium. Af-\nter the abnormal bony changes become nor-\nmal, the vitamin D dose should be dropped to\n250-400 IU per day; afford daily exposure to\nsun for at least 30 minutes.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 163,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 437767
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T16:33:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000414",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "b-complex",
+        "dmso"
+      ],
+      "conditions": [
+        "radial_nerve_palsy"
+      ],
+      "symptoms": [],
+      "claim_text": "Radial nerve palsy ('Saturday night palsy') results from compressing the radial nerve against the humerus — classically by draping the arm over the back of a hard-backed chair for an extended period during a drunken stupor or deep sleep — producing a wrist 'drop,' weakness extending the wrist and fingers, and sometimes a loss of sensory function between the first and second fingers. Treatment should include a B-complex 50 three times a day, topical dimethyl sulfoxide (DMSO), acupuncture, and hydrotherapy.",
+      "verbatim": "Treatment of radial palsy should include B-\ncomplex 50 t.i.d., topical DMSO, acupuncture\nand hydrotherapy.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 163,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 438561
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T16:33:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000415",
+      "kind": "protocol",
+      "essentials": [
+        "calcium",
+        "magnesium",
+        "vitamin-e",
+        "omega-3",
+        "tryptophan"
+      ],
+      "other_substances": [
+        "cayenne"
+      ],
+      "conditions": [
+        "raynauds_disease"
+      ],
+      "symptoms": [
+        "numbness"
+      ],
+      "claim_text": "Raynaud's disease is marked by tingling and numbness in the fingers (and sometimes the nose and tongue) caused by spasms of the small arteries; the orthodox approach is to cut sympathetic nerves and give anesthetics and tranquilizers. Wallach notes food allergies can be the precipitating factor when arteries are the target tissue (do a pulse test), and to rule out thoracic inlet syndrome. Treatment should include calcium and magnesium at 2,000 mg and 1,000 mg per day, avoiding offending food allergens and caffeine (coffee, tea, soft drinks, chocolate), vitamin E at 800-1,200 IU per day, essential fatty acids at 5 grams three times a day, L-tryptophan at 500 mg three times a day, acupuncture, chiropractic, and circulation-boosting herbs such as cayenne pepper (Capsicum minimum).",
+      "verbatim": "Treatment of Raynaud's disease should in-\nclude calcium and magnesium at2,000 mg per\nday and 1,000 mg per day, avoid offending\nfood allergens, avoid caffeine (i.e. , coffee, tea,\nsoft drinks, chocolate, etc.), vitamin E at 800-\n1,200 IU per day, essential fatty acids at 5 gm\nt.i.d., 1-tryptophane at 500 mg t.i.d., acupunc-\nture, chiropractic and herbs to increase circu-\nlation such as cayenne pepper (Capsicum\nminimum).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 164,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 440922
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T16:33:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000416",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "hydrogen-peroxide"
+      ],
+      "conditions": [
+        "rectal_itching"
+      ],
+      "symptoms": [],
+      "claim_text": "Rectal itching can be caused by candidiasis, food allergies, hemorrhoids, crabs, fleas, or pinworms; Wallach advises a pulse test for food allergies, a self/blood/skin test for candidiasis, the Scotch-tape test to identify pinworm eggs, and a mirror to self-examine the anal folds for fleas or hemorrhoids. Treatment can be palliated with a variety of herbal washes (see hemorrhoids), Preparation H, sitz baths with herbal washes and/or hydrogen peroxide, and specific treatments for the underlying parasites.",
+      "verbatim": "Treatment of rectal itching can be palliated\nwith a variety of herbal washes (see hemor-\nrhoids), Preparation H, sitz baths with herbal\nwashes and/or hydrogen peroxide, specific\ntreatments for parasites.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 164,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 441771
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T16:33:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000417",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "vitamin-b12",
+        "selenium"
+      ],
+      "other_substances": [
+        "b-complex"
+      ],
+      "conditions": [
+        "reyes_syndrome"
+      ],
+      "symptoms": [],
+      "claim_text": "Reye's syndrome occurs most often in young teens, usually in fall and winter, and is thought to be caused by consuming aflatoxin (a toxin of the grain mold Aspergillus flavus); it is marked by pneumonitis, nausea and vomiting, a sudden change in mental status to deep depression, amnesia, agitation progressing to coma and convulsions, fixed dilated pupils, and death in 42-80% of cases. Treatment includes barbiturate anesthesia to lower intracranial pressure, intravenous fluids and electrolytes, pulmonary support, exchange transfusions, and dialysis, plus vitamin C intravenously at 5-10 grams per day, B-complex and B-12 intravenously or intramuscularly, and selenium intramuscularly or intravenously at 250-500 mcg per day.",
+      "verbatim": "Vitamin C IV at 5-10 gms per day, B-complex\nand B-12 IV or IM, selenium IM or IV at 250-\n500 mcg per day.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 164,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 442722
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T16:33:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
