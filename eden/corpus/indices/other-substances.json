@@ -397,7 +397,7 @@
   },
   "b-complex": {
     "display_name": "B Complex",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000202",
@@ -407,20 +407,25 @@
         "WAL-CLM-LETS-000284",
         "WAL-CLM-LETS-000305",
         "WAL-CLM-LETS-000307",
-        "WAL-CLM-LETS-000348"
+        "WAL-CLM-LETS-000348",
+        "WAL-CLM-LETS-000356"
       ]
     },
     "conditions_treated": [
+      "alzheimers",
       "canker_sores",
       "cardiac_arrhythmia",
       "chorea",
+      "dementia",
       "diabetes",
       "geographic_tongue",
       "hyperactivity",
       "hyperkinesis",
       "hypoglycemia",
+      "korsakoffs_syndrome",
       "liver_cirrhosis",
-      "liver_disease"
+      "liver_disease",
+      "memory_loss"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -972,18 +977,20 @@
   },
   "caladryl": {
     "display_name": "Caladryl",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000156",
         "WAL-CLM-LETS-000215",
-        "WAL-CLM-LETS-000324"
+        "WAL-CLM-LETS-000324",
+        "WAL-CLM-LETS-000353"
       ]
     },
     "conditions_treated": [
       "bee_stings",
       "chicken_pox",
       "itching",
+      "measles",
       "pruritus",
       "shingles"
     ],
@@ -1231,20 +1238,22 @@
   },
   "centrophenoxine": {
     "display_name": "Centrophenoxine",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000211",
         "WAL-CLM-LETS-000243",
-        "WAL-CLM-LETS-000333"
+        "WAL-CLM-LETS-000333",
+        "WAL-CLM-LETS-000356"
       ]
     },
     "conditions_treated": [
       "alzheimers",
       "cerebrovascular_disease",
       "dementia",
-      "korsakoffs_syndrome"
+      "korsakoffs_syndrome",
+      "memory_loss"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1408,8 +1417,11 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 32,
+    "claim_count": 33,
     "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-LETS-000352"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000122",
         "WAL-CLM-LETS-000130",
@@ -1483,6 +1495,7 @@
       "liver_cirrhosis",
       "liver_disease",
       "lupus",
+      "malnutrition",
       "periodontal_disease",
       "plumbism",
       "rheumatoid_arthritis",
@@ -1532,6 +1545,21 @@
     },
     "conditions_treated": [
       "bronchitis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "columbine": {
+    "display_name": "Columbine",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000353"
+      ]
+    },
+    "conditions_treated": [
+      "measles"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2951,20 +2979,22 @@
   },
   "hydergine": {
     "display_name": "Hydergine",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000211",
         "WAL-CLM-LETS-000243",
-        "WAL-CLM-LETS-000333"
+        "WAL-CLM-LETS-000333",
+        "WAL-CLM-LETS-000356"
       ]
     },
     "conditions_treated": [
       "alzheimers",
       "cerebrovascular_disease",
       "dementia",
-      "korsakoffs_syndrome"
+      "korsakoffs_syndrome",
+      "memory_loss"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3692,18 +3722,20 @@
   },
   "marigold": {
     "display_name": "Marigold",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000134",
         "WAL-CLM-LETS-000173",
-        "WAL-CLM-LETS-000262"
+        "WAL-CLM-LETS-000262",
+        "WAL-CLM-LETS-000353"
       ]
     },
     "conditions_treated": [
       "amenorrhea",
       "bruises",
       "eczema",
+      "measles",
       "psoriasis"
     ],
     "books_cited": [
@@ -4488,20 +4520,22 @@
   },
   "piracetam": {
     "display_name": "Piracetam",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000211",
         "WAL-CLM-LETS-000243",
-        "WAL-CLM-LETS-000333"
+        "WAL-CLM-LETS-000333",
+        "WAL-CLM-LETS-000356"
       ]
     },
     "conditions_treated": [
       "alzheimers",
       "cerebrovascular_disease",
       "dementia",
-      "korsakoffs_syndrome"
+      "korsakoffs_syndrome",
+      "memory_loss"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4530,14 +4564,16 @@
   },
   "pleurisy-root": {
     "display_name": "Pleurisy Root",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000172"
+        "WAL-CLM-LETS-000172",
+        "WAL-CLM-LETS-000353"
       ]
     },
     "conditions_treated": [
-      "bronchitis"
+      "bronchitis",
+      "measles"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5146,6 +5182,21 @@
       "lets-play-doctor"
     ]
   },
+  "sunscreen": {
+    "display_name": "Sunscreen",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000355"
+      ]
+    },
+    "conditions_treated": [
+      "melasma"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "sweet-chestnut": {
     "display_name": "Sweet Chestnut",
     "claim_count": 1,
@@ -5482,20 +5533,22 @@
   },
   "vasopressin": {
     "display_name": "Vasopressin",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000211",
         "WAL-CLM-LETS-000243",
-        "WAL-CLM-LETS-000333"
+        "WAL-CLM-LETS-000333",
+        "WAL-CLM-LETS-000356"
       ]
     },
     "conditions_treated": [
       "alzheimers",
       "cerebrovascular_disease",
       "dementia",
-      "korsakoffs_syndrome"
+      "korsakoffs_syndrome",
+      "memory_loss"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5723,16 +5776,18 @@
   },
   "yarrow": {
     "display_name": "Yarrow",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000246",
-        "WAL-CLM-LETS-000297"
+        "WAL-CLM-LETS-000297",
+        "WAL-CLM-LETS-000353"
       ]
     },
     "conditions_treated": [
       "diabetes",
-      "hemorrhoids"
+      "hemorrhoids",
+      "measles"
     ],
     "books_cited": [
       "lets-play-doctor"

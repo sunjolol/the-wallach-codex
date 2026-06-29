@@ -1278,7 +1278,7 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 55,
+    "claim_count": 56,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -1346,6 +1346,7 @@
         "WAL-CLM-LETS-000331",
         "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000334",
+        "WAL-CLM-LETS-000356",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1386,6 +1387,7 @@
     "conditions_treated": [
       "adhd",
       "alcoholism",
+      "alzheimers",
       "anemia",
       "aneurysm",
       "anxiety",
@@ -1436,6 +1438,7 @@
       "kwashiorkor",
       "learning_disabilities",
       "liver_disease",
+      "memory_loss",
       "osteoporosis",
       "panic_attacks",
       "peptic_ulcers",
@@ -2178,7 +2181,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 71,
+    "claim_count": 72,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2256,6 +2259,7 @@
         "WAL-CLM-LETS-000340",
         "WAL-CLM-LETS-000348",
         "WAL-CLM-LETS-000350",
+        "WAL-CLM-LETS-000356",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2344,11 +2348,13 @@
       "jaundice",
       "keshan_disease",
       "kidney_disease",
+      "korsakoffs_syndrome",
       "kwashiorkor",
       "lead_poisoning",
       "liver_cirrhosis",
       "liver_disease",
       "lupus",
+      "memory_loss",
       "miscarriage",
       "multiple_sclerosis",
       "muscular_dystrophy",
@@ -5331,7 +5337,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 50,
+    "claim_count": 51,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -5391,6 +5397,7 @@
         "WAL-CLM-LETS-000320",
         "WAL-CLM-LETS-000321",
         "WAL-CLM-LETS-000325",
+        "WAL-CLM-LETS-000356",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -5508,7 +5515,9 @@
       "ischemic_heart_disease",
       "jaundice",
       "keshan_disease",
+      "korsakoffs_syndrome",
       "malabsorption",
+      "memory_loss",
       "muscular_dystrophy",
       "psoriasis",
       "rheumatoid_arthritis",
@@ -5699,7 +5708,7 @@
     "display_name": "Choline",
     "canon_slug": "choline",
     "category": "vitamin",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000242"
@@ -5715,7 +5724,8 @@
         "WAL-CLM-LETS-000220",
         "WAL-CLM-LETS-000243",
         "WAL-CLM-LETS-000267",
-        "WAL-CLM-LETS-000293"
+        "WAL-CLM-LETS-000293",
+        "WAL-CLM-LETS-000356"
       ]
     },
     "deficiency_signs": [
@@ -5736,6 +5746,8 @@
       "fatty_liver",
       "headache",
       "huntingtons_disease",
+      "korsakoffs_syndrome",
+      "memory_loss",
       "tardive_dyskinesia"
     ],
     "interacts_with": [

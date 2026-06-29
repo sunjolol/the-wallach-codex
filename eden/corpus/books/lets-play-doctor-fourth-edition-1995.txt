@@ -9443,8 +9443,8 @@ rule out hypoglycemia.
 Treatment of memory loss should include
 avoidance of offending food allergens, avoid-
 ance of sugar, avoidance of alcohol, chro-
-mium at 25-200 meg t.i.d., selenium at 200-
-1,000 meg per day, vitamin E at 800-1,200 IU
+mium at 25-200 mcg t.i.d., selenium at 200-
+1,000 mcg per day, vitamin E at 800-1,200 IU
 per day, B-complex at 50 mg t.i.d., Diapid
 (vasopressin) at 12-16 U/day (this is a nasal
 spray), Lucidril (centrophenoxine) at 4.4-8.0

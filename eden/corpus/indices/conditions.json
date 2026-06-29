@@ -429,7 +429,7 @@
   },
   "alzheimers": {
     "display_name": "Alzheimers",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
@@ -439,17 +439,20 @@
         "WAL-CLM-RARE-000270"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000130"
+        "WAL-CLM-LETS-000130",
+        "WAL-CLM-LETS-000356"
       ]
     },
     "essentials_involved": [
       "choline",
+      "chromium",
       "germanium",
       "selenium",
       "vitamin-b1",
       "vitamin-e"
     ],
     "other_substances_involved": [
+      "b-complex",
       "betaine-hcl",
       "centrophenoxine",
       "colloidal-minerals",
@@ -3338,7 +3341,7 @@
   },
   "dementia": {
     "display_name": "Dementia",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000034",
@@ -3349,6 +3352,7 @@
       ],
       "protocols": [
         "WAL-CLM-LETS-000243",
+        "WAL-CLM-LETS-000356",
         "WAL-CLM-RARE-000282"
       ]
     },
@@ -3373,6 +3377,7 @@
       "zinc"
     ],
     "other_substances_involved": [
+      "b-complex",
       "betaine-hcl",
       "centrophenoxine",
       "hydergine",
@@ -6310,18 +6315,23 @@
   },
   "korsakoffs_syndrome": {
     "display_name": "Korsakoffs Syndrome",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000333"
+        "WAL-CLM-LETS-000333",
+        "WAL-CLM-LETS-000356"
       ]
     },
     "essentials_involved": [
+      "choline",
       "chromium",
+      "selenium",
       "vanadium",
-      "vitamin-b1"
+      "vitamin-b1",
+      "vitamin-e"
     ],
     "other_substances_involved": [
+      "b-complex",
       "betaine-hcl",
       "centrophenoxine",
       "hydergine",
@@ -6798,14 +6808,80 @@
   },
   "malnutrition": {
     "display_name": "Malnutrition",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-LETS-000352"
+      ],
       "prevalence": [
         "WAL-CLM-LETS-000082"
       ]
     },
     "essentials_involved": [],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "colloidal-minerals"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "measles": {
+    "display_name": "Measles",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000353"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "caladryl",
+      "columbine",
+      "marigold",
+      "pleurisy-root",
+      "yarrow"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "melasma": {
+    "display_name": "Melasma",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000355"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "sunscreen"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "memory_loss": {
+    "display_name": "Memory Loss",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000356"
+      ]
+    },
+    "essentials_involved": [
+      "choline",
+      "chromium",
+      "selenium",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "b-complex",
+      "centrophenoxine",
+      "hydergine",
+      "piracetam",
+      "vasopressin"
+    ],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -7857,6 +7933,20 @@
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "rubella": {
+    "display_name": "Rubella",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000354"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "schistosomiasis": {
