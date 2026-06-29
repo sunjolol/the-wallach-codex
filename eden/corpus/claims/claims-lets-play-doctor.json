@@ -15960,6 +15960,215 @@
       "extracted_at": "2026-06-29T15:08:08+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000398",
+      "kind": "protocol",
+      "essentials": [
+        "calcium",
+        "magnesium",
+        "vitamin-a",
+        "vitamin-c",
+        "zinc"
+      ],
+      "other_substances": [
+        "colloidal-minerals",
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "hydrogen-peroxide"
+      ],
+      "conditions": [
+        "periodontal_disease",
+        "gingivitis",
+        "pyorrhea"
+      ],
+      "symptoms": [],
+      "claim_text": "Periodontal disease (receding gums, pyorrhea, gingivitis) is blamed by 'orthodox' dentists on food particles packing between the teeth and gums, but Wallach says all forms are really the result of bone loss under the gums, which lets the gums recede — and he points out the veterinary profession eliminated it through nutrition (cows, horses, dogs, and cats do not floss, brush, or use fluoride mouthwash). Treatment should correct the dietary calcium-to-phosphorus ratio (give up phosphate-containing soft drinks, reduce red meat, reduce phytate intake from raw vegetables), supplement calcium at 2,000 milligrams and magnesium at 1,000 milligrams per day, follow the baseline nutritional supplement program with plant-derived colloidal minerals, vitamin A at 300,000 IU per day as beta carotene, vitamin C to bowel tolerance, zinc at 50 milligrams three times a day, betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day fifteen minutes before meals, avoid sugar, and use herbal and hydrogen-peroxide mouthwashes plus dental floss to keep the teeth clean.",
+      "verbatim": "Treatment of periodontal disease should in-\nclude a correction of the dietaiy calcium/\nphosphorus ratio (i.e., give up phosphate\ncontaining soft drinks, reduce red meat con-\nsumption, reduce phytate intake (raw vege-\ntables), supplement calcium at 2,000 mg per\nday and magnesium at 1,000 mg per day,\nremember the base line nutrition supplement\nprogram including plant derived colloidal\nminerals, vitamin A at 300,000 IU per day as\nbeta carotene, vitamin C to bowel tolerance,\nzinc at 50 mg t.i.d.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 159,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 427464
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T15:16:00+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000399",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-e",
+        "vitamin-c",
+        "copper",
+        "omega-3"
+      ],
+      "other_substances": [
+        "nutritional-fiber",
+        "b-complex",
+        "arnica",
+        "comfrey",
+        "rue",
+        "yellow-sweet-clover",
+        "cascara-sagrada"
+      ],
+      "conditions": [
+        "phlebitis",
+        "varicose_veins"
+      ],
+      "symptoms": [],
+      "claim_text": "Phlebitis (varicose veins) is most common in the hemorrhoidal veins and the veins of the legs; constipation and a static, upright standing position are the primary causes. Treatment should include drinking eight glasses of water a day and two heaping tablespoons of nutritional fiber in a glass of water at bedtime, vitamin E at 800-1,200 IU per day, B-complex at 50 milligrams of each three times a day, vitamin C to bowel tolerance, copper at 2 milligrams per day, essential fatty acids at 5 grams three times a day, and herbs including arnica (Arnica montana), comfrey (Symphytum officinale), rue (Ruta graveolens), yellow sweet clover (Melilotus officinalis), and cascara sagrada (Rhamnus purshianus). [The book's printed 'copper at 2 gm' is corrected here to 2 mg — copper at 2 grams is toxic and is a clear typeset error for the standard 2 mg dose.]",
+      "verbatim": "at bedtime, vitamin E at 800-1,200 IU/day, B-\ncomplex at 50 mg each t.i.d., vitamin C to\nbowel tolerance, copper at 2 mg per day,\nessential fatty acids at 5 gm t.i.d., and herbs\nincluding arnica (Arnica montana), comfrey\n(Symphytumofficinale),rue(Rutagraveolens),\nyellow sweet clover (Melilotus officinalis) and\ncascara sagrada (Rhamnus purshianus).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 160,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 426736
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T15:16:00+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000400",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "colloidal-minerals",
+        "edta"
+      ],
+      "conditions": [
+        "pica"
+      ],
+      "symptoms": [],
+      "claim_text": "Pica (craving dirt or paint) is a symptom of one or more nutritional deficiencies: adults often crave ice, while children eat dirt and/or paint — the latter extremely dangerous because many paints contain lead or cadmium. A hair analysis is invaluable for assessing the patient's mineral status, and a pulse test helps determine whether a celiac-type malabsorption problem exists. Treatment should include the baseline nutritional program with plant-derived colloidal minerals; EDTA chelation therapy may be necessary if a hair analysis shows elevated levels of lead or cadmium.",
+      "verbatim": "Treatment for pica should include the base\nline nutritional program including plant de-\nrived colloidal minerals; EDTA chelation\ntherapy may be necessary if hair analysis\nshows elevated levels of lead or cadmium.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 160,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 428452
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T15:16:00+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000401",
+      "kind": "protocol",
+      "essentials": [
+        "zinc",
+        "vitamin-a",
+        "vitamin-b9"
+      ],
+      "other_substances": [
+        "plantain",
+        "comfrey",
+        "boric-acid"
+      ],
+      "conditions": [
+        "pilonidal_cyst"
+      ],
+      "symptoms": [],
+      "claim_text": "A pilonidal cyst is a midline congenital defect in the sacral area (lower back, near the tailbone), which Wallach links to a deficiency of zinc, vitamin A, or folic acid. The pit often contains hair and the tract is usually symptom-free unless it becomes plugged and turns into a cyst. Treatment should include a poultice of plantain (Plantago major) and comfrey (Symphytum officinale), or boric acid, twice a day until the cyst opens up; on rare occasions surgical opening of the cyst is required, needing only local anesthesia and a scalpel blade for this relatively minor surgery.",
+      "verbatim": "Treatment of the pilonidal cyst should include\na poultice of plantain (Plantago major), com-\nfrey (Symphytum officinale) orboricacidb.i.d.\nuntil cyst opens up; on rare occasions surgical\nopening of the cyst is required; local anesthe-\nsia and a scalpel blade are all that is required\nfor this relatively minor surgery.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 160,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 428920
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T15:16:00+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000402",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b6",
+        "omega-3",
+        "vitamin-a",
+        "vitamin-e",
+        "calcium"
+      ],
+      "other_substances": [
+        "colloidal-minerals",
+        "mistletoe",
+        "black-cohosh",
+        "blue-cohosh"
+      ],
+      "conditions": [
+        "premenstrual_syndrome"
+      ],
+      "symptoms": [],
+      "claim_text": "Premenstrual syndrome (PMS) has a long history in 'orthodox' medicine — the word derives from 'hysteria,' and the historical treatment was hysterectomy (removing the ovaries and uterus 'cured' the cyclical emotional symptoms but caused an abrupt menopause). It is now known that a deficiency of essential fatty acids, working together with the woman's cyclical hormone patterns, produces the classic PMS picture of fragile emotions, irrational behavior, mania, depression, and debilitating pelvic cramps. Treatment includes vitamin B-6 at 100 milligrams, essential fatty acids three times a day, vitamin A at 300,000 IU per day as beta carotene during the last 14 days of the cycle, vitamin E at 800-1,200 IU per day, calcium (especially from plant-derived colloidal sources), and herbs including mistletoe (Viscum album), black cohosh (Cimicifuga racemosa), and blue cohosh (Caulophyllum thalictroides).",
+      "verbatim": "Treatment of PMS includes 100 mg B-6 q 4 d,\nessential fatty acids at 5 mg t.i.d., vitamin A at\n300,000 IU per day as beta carotene during the\nlast 14 days of the cycle, vitamin E at 800-1,200\nIU/day, calcium (especially plant derived col-\nloidal sources) and herbs including mistletoe\n(Viscum album), black cohosh (Cimicifuga\nracemosa) and blue cohosh (Caulophyllus\nthalictroides).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 160,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 429829
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T15:16:00+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

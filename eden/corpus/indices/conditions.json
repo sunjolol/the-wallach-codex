@@ -4668,24 +4668,29 @@
   },
   "gingivitis": {
     "display_name": "Gingivitis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000285"
+        "WAL-CLM-LETS-000285",
+        "WAL-CLM-LETS-000398"
       ]
     },
     "essentials_involved": [
       "calcium",
       "magnesium",
-      "vitamin-c"
+      "vitamin-a",
+      "vitamin-c",
+      "zinc"
     ],
     "other_substances_involved": [
       "arnica",
+      "betaine-hcl",
       "bilberry",
       "colloidal-minerals",
       "german-chamomile",
       "high-mallow",
       "hydrogen-peroxide",
+      "pancreatic-enzymes",
       "tormentil"
     ],
     "books_cited": [
@@ -8330,27 +8335,32 @@
   },
   "periodontal_disease": {
     "display_name": "Periodontal Disease",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000004"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000285"
+        "WAL-CLM-LETS-000285",
+        "WAL-CLM-LETS-000398"
       ]
     },
     "essentials_involved": [
       "calcium",
       "magnesium",
-      "vitamin-c"
+      "vitamin-a",
+      "vitamin-c",
+      "zinc"
     ],
     "other_substances_involved": [
       "arnica",
+      "betaine-hcl",
       "bilberry",
       "colloidal-minerals",
       "german-chamomile",
       "high-mallow",
       "hydrogen-peroxide",
+      "pancreatic-enzymes",
       "tormentil"
     ],
     "books_cited": [
@@ -8401,6 +8411,33 @@
       "rare-earths"
     ]
   },
+  "phlebitis": {
+    "display_name": "Phlebitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000399"
+      ]
+    },
+    "essentials_involved": [
+      "copper",
+      "omega-3",
+      "vitamin-c",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "arnica",
+      "b-complex",
+      "cascara-sagrada",
+      "comfrey",
+      "nutritional-fiber",
+      "rue",
+      "yellow-sweet-clover"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "photophobia": {
     "display_name": "Photophobia",
     "claim_count": 2,
@@ -8421,7 +8458,7 @@
   },
   "pica": {
     "display_name": "Pica",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-RARE-000036"
@@ -8436,6 +8473,9 @@
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000014",
         "WAL-CLM-LETS-000023"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000400"
       ]
     },
     "essentials_involved": [
@@ -8444,11 +8484,35 @@
       "phosphorus"
     ],
     "other_substances_involved": [
+      "colloidal-minerals",
+      "edta",
       "lead"
     ],
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "pilonidal_cyst": {
+    "display_name": "Pilonidal Cyst",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000401"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a",
+      "vitamin-b9",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "boric-acid",
+      "comfrey",
+      "plantain"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "plumbism": {
@@ -8502,24 +8566,32 @@
   },
   "premenstrual_syndrome": {
     "display_name": "Premenstrual Syndrome",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "definitions": [
         "WAL-CLM-RARE-000105"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000388"
+        "WAL-CLM-LETS-000388",
+        "WAL-CLM-LETS-000402"
       ]
     },
     "essentials_involved": [
       "calcium",
       "chromium",
       "omega-3",
+      "vitamin-a",
       "vitamin-b3",
+      "vitamin-b6",
+      "vitamin-e",
       "zinc"
     ],
     "other_substances_involved": [
       "betaine-hcl",
+      "black-cohosh",
+      "blue-cohosh",
+      "colloidal-minerals",
+      "mistletoe",
       "pancreatic-enzymes"
     ],
     "books_cited": [
@@ -8630,17 +8702,28 @@
   },
   "pyorrhea": {
     "display_name": "Pyorrhea",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "definitions": [
         "WAL-CLM-LETS-000001"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000290"
+        "WAL-CLM-LETS-000290",
+        "WAL-CLM-LETS-000398"
       ]
     },
-    "essentials_involved": [],
+    "essentials_involved": [
+      "calcium",
+      "magnesium",
+      "vitamin-a",
+      "vitamin-c",
+      "zinc"
+    ],
     "other_substances_involved": [
+      "betaine-hcl",
+      "colloidal-minerals",
+      "hydrogen-peroxide",
+      "pancreatic-enzymes",
       "white-pond-lily"
     ],
     "books_cited": [
@@ -9354,17 +9437,32 @@
   },
   "varicose_veins": {
     "display_name": "Varicose Veins",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "definitions": [
         "WAL-CLM-RARE-000122"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000399"
       ]
     },
     "essentials_involved": [
-      "copper"
+      "copper",
+      "omega-3",
+      "vitamin-c",
+      "vitamin-e"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "arnica",
+      "b-complex",
+      "cascara-sagrada",
+      "comfrey",
+      "nutritional-fiber",
+      "rue",
+      "yellow-sweet-clover"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
