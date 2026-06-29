@@ -11447,7 +11447,7 @@ Treatment of tonsillitis should include hydro-
 gen peroxide mouthwash and gargle, vitamin
 C to bowel tolerance, vitamin C at 25,000-
 300,000 IU per day as beta carotene, zinc at 50
-mg t.i.d., selenium at 25-1,000 meg per day,
+mg t.i.d., selenium at 25-1,000 mcg per day,
 herbs to include green hellebore (Verataim
 viride), marshmallow (Althaea
 officinalis), flaxseed (Linum usitatissimum),
@@ -11475,7 +11475,7 @@ Treatment of torticollis should include
 chiropractic, massage therapy, hydro-therapy,
 acupuncture, calcium and magnesium at 2,000
 and 1,000 mg per day,selenium at 500-1,000
-meg per day and vitamin E at 800-1 ,200 IU per
+mcg per day and vitamin E at 800-1 ,200 IU per
 day.
 TOXICSHOCKSYNDROME(TSS): iscaused
 by an exotoxin produced by a Staphylococcus

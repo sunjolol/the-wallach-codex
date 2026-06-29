@@ -10037,20 +10037,32 @@
   },
   "tinnitus": {
     "display_name": "Tinnitus",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000017"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000009"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000451"
       ]
     },
     "essentials_involved": [
       "calcium",
-      "manganese"
+      "magnesium",
+      "manganese",
+      "omega-3",
+      "tin",
+      "vitamin-a",
+      "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "colloidal-minerals",
+      "pancreatic-enzymes"
+    ],
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor"
@@ -10076,15 +10088,27 @@
   },
   "tonsillitis": {
     "display_name": "Tonsillitis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000260"
+        "WAL-CLM-LETS-000260",
+        "WAL-CLM-LETS-000452"
       ]
     },
-    "essentials_involved": [],
+    "essentials_involved": [
+      "selenium",
+      "vitamin-a",
+      "vitamin-c",
+      "zinc"
+    ],
     "other_substances_involved": [
+      "flaxseed",
+      "garden-sage",
+      "german-chamomile",
+      "green-hellebore",
       "hydrogen-peroxide",
+      "marjoram",
+      "marshmallow",
       "mullein",
       "urine-therapy",
       "willow"
@@ -10095,14 +10119,62 @@
   },
   "tooth_decay": {
     "display_name": "Tooth Decay",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000004"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000453"
       ]
     },
     "essentials_involved": [
       "calcium"
+    ],
+    "other_substances_involved": [
+      "acetaminophen",
+      "aspirin",
+      "gelsemium",
+      "lavender",
+      "pennyroyal"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "toothache": {
+    "display_name": "Toothache",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000453"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "acetaminophen",
+      "aspirin",
+      "gelsemium",
+      "lavender",
+      "pennyroyal"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "torticollis": {
+    "display_name": "Torticollis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000454"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium",
+      "selenium",
+      "vitamin-e"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -10123,6 +10195,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "toxic_shock_syndrome": {
+    "display_name": "Toxic Shock Syndrome",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000455"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "penicillin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "trigeminal_neuralgia": {

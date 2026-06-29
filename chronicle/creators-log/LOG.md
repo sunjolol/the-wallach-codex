@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 204 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 205 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-29 12:58 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b70: TINNITUS→TOXIC SHOCK (p172), LETS-451..455, 5 protocol. corpus 830→835, conds 431→434, kv 181. 2 meg→mcg (TONSILLITIS+TORTICOLLIS); ★ TONSILLITIS 'vit C...beta carotene' = book typo → claim_text vit A, verbatim faithful (flagged). Board 31/31.
+  ↳ 5 protocol claims: tinnitus REUSED (was DDDL-009/LETS-017 deficiency lists -> first protocol; tin from colloidal minerals, tin IS canon), tonsillitis REUSED (2nd protocol vs LETS-260), toothache NEW + tooth_decay REUSED, torticollis NEW, toxic_shock_syndrome NEW. DOSE: 2 render-verified meg->mcg (TONSILLITIS selenium L11450 + TORTICOLLIS selenium L11478; 600-DPI zoom confirmed printed 'mcg'; unique targets; resnap book hash 2ee4c57b->646ff205, 0 relocated, LF bytes 517193 unchanged). BOOK TYPO (render-confirmed it's in the PRINT, not OCR): TONSILLITIS prints 'vitamin C at 25,000-300,000 IU as beta carotene' = Wallach's own slip for vitamin A (beta carotene = vit-A precursor, dose matches, vit C already listed before). Per source-correction policy (semantic != orthographic) the .txt/verbatim stay byte-faithful; claim_text + index reflect vitamin A so coverage credits the right nutrient; NOT a dangerous misprint -> not corrected in verbatim. FLAGGED for Luneth's end-pass. New other-subs: green-hellebore (Veratrum viride, distinct from black-hellebore) + gelsemium. Gates: build OK (1633.9 KB), invariants 31/31 (0 new reds), render_probe_knowledge PASS (0 page errors, conds rowCount 434). NEXT b71 = TOXOPLASMOSIS / TRIGLYCERIDES [2 meg->mcg L11546-47] / gastric ULCER / ULCERATIVE COLITIS (xref skip) onward.
 
 ## 2026-06-29 12:43 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b69: TARDIVE DYSKINESIA→THRUSH (all p171), LETS-445..450, 6 claims (1 def + 5 protocol). corpus 824→830, conds 426→431, kv 180. 1 meg→mcg fix (THRUSH selenium); TESTICULAR ATROPHY tier-1; tardive_dyskinesia gains its first protocol. Board 31/31.
@@ -801,7 +805,3 @@ Chunk H: hardened the sacred ledger per the Opus-4.8 audit — closed 3 enforcem
 ## 2026-06-23 03:41 UTC · invariant-pass · tools
 Teeth-test PROVEN: creators_log_append_only catches both deletion (truncate 5→1) and mutation of committed entries; git restores; board 23/23. The sacred-log guarantee is structural, not aspirational.
   ↳ Simulated 'delete entries for efficiency' via safe_write truncate → invariant fired RED 'SACRED LEDGER TRUNCATED'; in-place edit → 'SACRED LEDGER MUTATED at entry 1'; git checkout restored. try/finally guaranteed recovery.
-
-## 2026-06-23 03:39 UTC · milestone · tools
-Sacred Creator's Log: moved to chronicle/creators-log/ (log.jsonl + generated LOG.md + README) and added the covenant's teeth — git-anchored append-only invariant, digest-sync invariant, shell delete-guard, and a never-skip round-close hard-block. Board 21→23.
-  ↳ The append-only invariant makes deleting committed entries un-shippable; the firing-check makes a skipped round-close entry un-closeable. Tightened the delete-guard after a self-inflicted prose false-positive (good stress test).

@@ -288,7 +288,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 78,
+    "claim_count": 80,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -371,6 +371,8 @@
         "WAL-CLM-LETS-000420",
         "WAL-CLM-LETS-000426",
         "WAL-CLM-LETS-000427",
+        "WAL-CLM-LETS-000451",
+        "WAL-CLM-LETS-000454",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -551,6 +553,8 @@
       "scoliosis",
       "sids",
       "tetany",
+      "tinnitus",
+      "torticollis",
       "vertigo"
     ],
     "interacts_with": [
@@ -963,7 +967,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 88,
+    "claim_count": 90,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1060,6 +1064,8 @@
         "WAL-CLM-LETS-000420",
         "WAL-CLM-LETS-000426",
         "WAL-CLM-LETS-000427",
+        "WAL-CLM-LETS-000451",
+        "WAL-CLM-LETS-000454",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1208,6 +1214,7 @@
       "tetany",
       "tinnitus",
       "tooth_decay",
+      "torticollis",
       "trigeminal_neuralgia"
     ],
     "interacts_with": [
@@ -2267,7 +2274,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 85,
+    "claim_count": 87,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2359,6 +2366,8 @@
         "WAL-CLM-LETS-000427",
         "WAL-CLM-LETS-000443",
         "WAL-CLM-LETS-000450",
+        "WAL-CLM-LETS-000452",
+        "WAL-CLM-LETS-000454",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2479,6 +2488,8 @@
       "stroke",
       "tachycardia",
       "thrush",
+      "tonsillitis",
+      "torticollis",
       "white_muscle_disease"
     ],
     "interacts_with": [
@@ -2741,7 +2752,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 103,
+    "claim_count": 105,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2855,6 +2866,8 @@
         "WAL-CLM-LETS-000438",
         "WAL-CLM-LETS-000448",
         "WAL-CLM-LETS-000450",
+        "WAL-CLM-LETS-000451",
+        "WAL-CLM-LETS-000452",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -3031,6 +3044,8 @@
       "stress",
       "testicular_atrophy",
       "thrush",
+      "tinnitus",
+      "tonsillitis",
       "umbilical_hernia",
       "violent_behavior",
       "xerophthalmia"
@@ -3680,7 +3695,7 @@
     "display_name": "Tin",
     "canon_slug": "tin",
     "category": "mineral",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000031",
@@ -3695,7 +3710,8 @@
       ],
       "protocol": [
         "WAL-CLM-LETS-000131",
-        "WAL-CLM-LETS-000294"
+        "WAL-CLM-LETS-000294",
+        "WAL-CLM-LETS-000451"
       ]
     },
     "deficiency_signs": [
@@ -3722,7 +3738,8 @@
       "diabetes",
       "hypertension",
       "male_pattern_baldness",
-      "osteoporosis"
+      "osteoporosis",
+      "tinnitus"
     ],
     "interacts_with": [
       "boron",
@@ -3735,6 +3752,7 @@
       "selenium",
       "sulfur",
       "vanadium",
+      "vitamin-a",
       "zinc"
     ],
     "books_cited": [
@@ -3843,7 +3861,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 54,
+    "claim_count": 56,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -3902,7 +3920,9 @@
         "WAL-CLM-LETS-000430",
         "WAL-CLM-LETS-000431",
         "WAL-CLM-LETS-000433",
-        "WAL-CLM-LETS-000450"
+        "WAL-CLM-LETS-000450",
+        "WAL-CLM-LETS-000451",
+        "WAL-CLM-LETS-000452"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000037"
@@ -4022,6 +4042,8 @@
       "spina_bifida",
       "stroke",
       "thrush",
+      "tinnitus",
+      "tonsillitis",
       "umbilical_hernia",
       "xerophthalmia"
     ],
@@ -4038,6 +4060,7 @@
       "magnesium",
       "omega-3",
       "selenium",
+      "tin",
       "vitamin-b12",
       "vitamin-b6",
       "vitamin-b9",
@@ -5275,7 +5298,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 68,
+    "claim_count": 69,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -5351,7 +5374,8 @@
         "WAL-CLM-LETS-000417",
         "WAL-CLM-LETS-000428",
         "WAL-CLM-LETS-000438",
-        "WAL-CLM-LETS-000450"
+        "WAL-CLM-LETS-000450",
+        "WAL-CLM-LETS-000452"
       ]
     },
     "deficiency_signs": [
@@ -5492,6 +5516,7 @@
       "stress",
       "stroke",
       "thrush",
+      "tonsillitis",
       "varicose_veins"
     ],
     "interacts_with": [
@@ -5623,7 +5648,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 65,
+    "claim_count": 66,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -5698,6 +5723,7 @@
         "WAL-CLM-LETS-000430",
         "WAL-CLM-LETS-000445",
         "WAL-CLM-LETS-000450",
+        "WAL-CLM-LETS-000454",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -5837,6 +5863,7 @@
       "stroke",
       "tardive_dyskinesia",
       "thrush",
+      "torticollis",
       "varicose_veins"
     ],
     "interacts_with": [
@@ -6686,7 +6713,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 78,
+    "claim_count": 79,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -6771,6 +6798,7 @@
         "WAL-CLM-LETS-000433",
         "WAL-CLM-LETS-000439",
         "WAL-CLM-LETS-000445",
+        "WAL-CLM-LETS-000451",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -6892,6 +6920,7 @@
       "seborrheic_dermatitis",
       "stroke",
       "tardive_dyskinesia",
+      "tinnitus",
       "varicose_veins",
       "weight_loss"
     ],
