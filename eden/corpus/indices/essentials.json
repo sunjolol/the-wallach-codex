@@ -288,7 +288,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 67,
+    "claim_count": 69,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -360,6 +360,8 @@
         "WAL-CLM-LETS-000366",
         "WAL-CLM-LETS-000374",
         "WAL-CLM-LETS-000379",
+        "WAL-CLM-LETS-000382",
+        "WAL-CLM-LETS-000383",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -493,6 +495,7 @@
       "cardiac_arrhythmia",
       "cardiomyopathy",
       "cardiovascular_disease",
+      "carpal_tunnel_syndrome",
       "cataracts",
       "celiac_disease",
       "convulsions",
@@ -525,6 +528,7 @@
       "muscle_cramps",
       "neuralgia",
       "neuropathy",
+      "nosebleeds",
       "osteoporosis",
       "panic_attacks",
       "periodontal_disease",
@@ -564,6 +568,7 @@
       "vitamin-c",
       "vitamin-d",
       "vitamin-e",
+      "vitamin-k",
       "zinc"
     ],
     "books_cited": [
@@ -939,7 +944,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 76,
+    "claim_count": 78,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1024,6 +1029,8 @@
         "WAL-CLM-LETS-000332",
         "WAL-CLM-LETS-000374",
         "WAL-CLM-LETS-000379",
+        "WAL-CLM-LETS-000382",
+        "WAL-CLM-LETS-000383",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1118,6 +1125,7 @@
       "cancer",
       "cardiomyopathy",
       "cardiovascular_disease",
+      "carpal_tunnel_syndrome",
       "cataracts",
       "celiac_disease",
       "colorectal_cancer",
@@ -1149,6 +1157,7 @@
       "muscle_cramps",
       "neuralgia",
       "neuropathy",
+      "nosebleeds",
       "osteoarthritis",
       "osteomalacia",
       "osteoporosis",
@@ -1204,6 +1213,7 @@
       "vitamin-c",
       "vitamin-d",
       "vitamin-e",
+      "vitamin-k",
       "zinc"
     ],
     "books_cited": [
@@ -1291,7 +1301,7 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 56,
+    "claim_count": 57,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -1360,6 +1370,7 @@
         "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000334",
         "WAL-CLM-LETS-000356",
+        "WAL-CLM-LETS-000381",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1452,6 +1463,7 @@
       "learning_disabilities",
       "liver_disease",
       "memory_loss",
+      "night_terrors",
       "osteoporosis",
       "panic_attacks",
       "peptic_ulcers",
@@ -2664,7 +2676,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 88,
+    "claim_count": 90,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2763,6 +2775,8 @@
         "WAL-CLM-LETS-000359",
         "WAL-CLM-LETS-000365",
         "WAL-CLM-LETS-000368",
+        "WAL-CLM-LETS-000380",
+        "WAL-CLM-LETS-000383",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -2911,6 +2925,7 @@
       "malabsorption",
       "meningocele",
       "miscarriage",
+      "night_blindness",
       "osteoporosis",
       "paranoia",
       "pruritus",
@@ -3729,7 +3744,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 42,
+    "claim_count": 43,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -3776,7 +3791,8 @@
         "WAL-CLM-LETS-000332",
         "WAL-CLM-LETS-000348",
         "WAL-CLM-LETS-000359",
-        "WAL-CLM-LETS-000365"
+        "WAL-CLM-LETS-000365",
+        "WAL-CLM-LETS-000380"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000037"
@@ -4548,7 +4564,7 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 38,
+    "claim_count": 39,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000027",
@@ -4591,6 +4607,7 @@
         "WAL-CLM-LETS-000326",
         "WAL-CLM-LETS-000332",
         "WAL-CLM-LETS-000369",
+        "WAL-CLM-LETS-000383",
         "WAL-CLM-RARE-000286"
       ],
       "toxicity_sign": [
@@ -4906,7 +4923,7 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 28,
+    "claim_count": 29,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000035",
@@ -4944,7 +4961,8 @@
         "WAL-CLM-LETS-000300",
         "WAL-CLM-LETS-000348",
         "WAL-CLM-LETS-000359",
-        "WAL-CLM-LETS-000379"
+        "WAL-CLM-LETS-000379",
+        "WAL-CLM-LETS-000383"
       ]
     },
     "deficiency_signs": [
@@ -5024,6 +5042,7 @@
       "birth_defects",
       "bursitis",
       "canker_sores",
+      "carpal_tunnel_syndrome",
       "crohns_disease",
       "depression",
       "diabetes",
@@ -5082,7 +5101,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 58,
+    "claim_count": 59,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -5148,7 +5167,8 @@
         "WAL-CLM-LETS-000340",
         "WAL-CLM-LETS-000348",
         "WAL-CLM-LETS-000364",
-        "WAL-CLM-LETS-000367"
+        "WAL-CLM-LETS-000367",
+        "WAL-CLM-LETS-000382"
       ]
     },
     "deficiency_signs": [
@@ -5271,6 +5291,7 @@
       "liver_disease",
       "migraine",
       "monckebergs_arteriosclerosis",
+      "nosebleeds",
       "periodontal_disease",
       "plumbism",
       "psoriasis",
@@ -5406,7 +5427,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 54,
+    "claim_count": 55,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -5470,6 +5491,7 @@
         "WAL-CLM-LETS-000357",
         "WAL-CLM-LETS-000373",
         "WAL-CLM-LETS-000374",
+        "WAL-CLM-LETS-000382",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -5594,6 +5616,7 @@
       "menorrhagia",
       "muscle_cramps",
       "muscular_dystrophy",
+      "nosebleeds",
       "psoriasis",
       "rheumatoid_arthritis",
       "shingles",
@@ -5643,7 +5666,7 @@
     "display_name": "Menaquinone",
     "canon_slug": "vitamin-k",
     "category": "vitamin",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -5654,7 +5677,8 @@
         "WAL-CLM-LETS-000076"
       ],
       "protocol": [
-        "WAL-CLM-LETS-000261"
+        "WAL-CLM-LETS-000261",
+        "WAL-CLM-LETS-000382"
       ]
     },
     "deficiency_signs": [
@@ -5686,9 +5710,12 @@
     ],
     "conditions_treated": [
       "ecchymosis",
+      "nosebleeds",
       "osteoporosis"
     ],
     "interacts_with": [
+      "calcium",
+      "magnesium",
       "vitamin-c",
       "vitamin-e"
     ],

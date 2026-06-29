@@ -2332,7 +2332,7 @@
   },
   "carpal_tunnel_syndrome": {
     "display_name": "Carpal Tunnel Syndrome",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000178"
@@ -2345,16 +2345,21 @@
         "WAL-CLM-RARE-000177"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000205"
+        "WAL-CLM-LETS-000205",
+        "WAL-CLM-LETS-000383"
       ]
     },
     "essentials_involved": [
+      "calcium",
+      "magnesium",
       "manganese",
+      "vitamin-b12",
       "vitamin-b6",
       "zinc"
     ],
     "other_substances_involved": [
-      "cartilage"
+      "cartilage",
+      "colloidal-minerals"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -7605,20 +7610,64 @@
   },
   "night_blindness": {
     "display_name": "Night Blindness",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000036",
         "WAL-CLM-RARE-000229"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000380"
       ]
     },
     "essentials_involved": [
-      "vitamin-a"
+      "vitamin-a",
+      "zinc"
     ],
     "other_substances_involved": [],
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "night_terrors": {
+    "display_name": "Night Terrors",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000381"
+      ]
+    },
+    "essentials_involved": [
+      "chromium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "nosebleeds": {
+    "display_name": "Nosebleeds",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000382"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium",
+      "vitamin-c",
+      "vitamin-e",
+      "vitamin-k"
+    ],
+    "other_substances_involved": [
+      "alfalfa",
+      "lactobacillus-acidophilus",
+      "toad-flax"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "obesity": {
@@ -9147,14 +9196,15 @@
   },
   "xerophthalmia": {
     "display_name": "Xerophthalmia",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000036",
         "WAL-CLM-RARE-000229"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000328"
+        "WAL-CLM-LETS-000328",
+        "WAL-CLM-LETS-000380"
       ]
     },
     "essentials_involved": [

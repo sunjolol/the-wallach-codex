@@ -95,7 +95,7 @@
   },
   "alfalfa": {
     "display_name": "Alfalfa",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
@@ -105,7 +105,8 @@
         "WAL-CLM-LETS-000176",
         "WAL-CLM-LETS-000261",
         "WAL-CLM-LETS-000295",
-        "WAL-CLM-LETS-000365"
+        "WAL-CLM-LETS-000365",
+        "WAL-CLM-LETS-000382"
       ]
     },
     "conditions_treated": [
@@ -118,6 +119,7 @@
       "ecchymosis",
       "heart_attack",
       "miscarriage",
+      "nosebleeds",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -1509,7 +1511,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 36,
+    "claim_count": 37,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-LETS-000352"
@@ -1549,7 +1551,8 @@
         "WAL-CLM-LETS-000350",
         "WAL-CLM-LETS-000361",
         "WAL-CLM-LETS-000373",
-        "WAL-CLM-LETS-000374"
+        "WAL-CLM-LETS-000374",
+        "WAL-CLM-LETS-000383"
       ]
     },
     "conditions_treated": [
@@ -1570,6 +1573,7 @@
       "bone_spurs",
       "bursitis",
       "cardiac_arrhythmia",
+      "carpal_tunnel_syndrome",
       "cystic_fibrosis",
       "dandruff",
       "depression",
@@ -3554,15 +3558,17 @@
   },
   "lactobacillus-acidophilus": {
     "display_name": "Lactobacillus Acidophilus",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000201",
-        "WAL-CLM-LETS-000252"
+        "WAL-CLM-LETS-000252",
+        "WAL-CLM-LETS-000382"
       ]
     },
     "conditions_treated": [
       "candidiasis",
+      "nosebleeds",
       "vaginitis"
     ],
     "books_cited": [
@@ -5792,6 +5798,21 @@
       "hypotension",
       "hypothyroidism",
       "weight_loss"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "toad-flax": {
+    "display_name": "Toad Flax",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000382"
+      ]
+    },
+    "conditions_treated": [
+      "nosebleeds"
     ],
     "books_cited": [
       "lets-play-doctor"

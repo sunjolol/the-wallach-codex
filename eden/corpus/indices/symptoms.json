@@ -2914,11 +2914,23 @@
   },
   "numbness": {
     "display_name": "Numbness",
-    "claim_count": 4,
+    "claim_count": 5,
     "likely_deficiencies": [
       {
         "essential": "calcium",
         "claim_id": "WAL-CLM-LETS-000004",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "calcium",
+        "claim_id": "WAL-CLM-LETS-000383",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "magnesium",
+        "claim_id": "WAL-CLM-LETS-000383",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -2937,6 +2949,24 @@
       {
         "essential": "vitamin-b12",
         "claim_id": "WAL-CLM-LETS-000035",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-b12",
+        "claim_id": "WAL-CLM-LETS-000383",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "vitamin-b6",
+        "claim_id": "WAL-CLM-LETS-000383",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "zinc",
+        "claim_id": "WAL-CLM-LETS-000383",
         "confidence": "high",
         "appears_in_books": 1
       }

@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_187 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_188 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-29 00:37 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b56 (Materia Medica, ★N SECTION COMPLETE, p154): 4 tier-1 protocol claims LETS-380..383 — night_blindness, night_terrors (behavioral), nosebleeds, carpal_tunnel_syndrome. 3 meg→mcg fixes (chromium + B-12 ×2). corpus 759→763, kv 167, conditions→379, board 31/31.
+  ↳ NIGHT BLINDNESS→NUMBNESS completes the N's (p154). night_blindness+xerophthalmia: vit A 25-300k IU as beta carotene + zinc 15-50 mg. night_terrors (behavioral, food-allergy/hypoglycemia; promoted symptom→condition): chromium 25-200 mcg + high protein + avoid sugar/caffeine; bedwetting link. nosebleeds: vit K/C deficiency; acidophilus (synthesizes vit K) + vit C + Ca/Mg + vit E + alfalfa + toad flax. carpal_tunnel_syndrome+numbness: B-12 1,000 mcg + B-6 200-300 mg + Ca/Mg + zinc + colloidal minerals; Tinel's sign. 3 meg→mcg (chromium + B-12 ×2, 600-DPI verified). NEW nosebleeds cond + toad-flax other-sub. Pages from book index. Pipeline green: seal kv167, embed 763 claims/379 conds, build 1499.0KB, invariants 31/31, render_probe_knowledge PASS.
 
 ## 2026-06-29 00:31 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b55 (Materia Medica, the N's pt 1, p153): 5 tier-1 protocol claims LETS-375..379 — nasal_catarrh, nausea (symptom), nervous_heart, nervous_tension, neuralgia+bells_palsy+neuropathy. 1 meg→mcg fix (NEURALGIA B-12). corpus 754→759, kv 166, conditions→377, board 31/31.
