@@ -608,7 +608,7 @@
   },
   "anemia": {
     "display_name": "Anemia",
-    "claim_count": 19,
+    "claim_count": 20,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
@@ -628,6 +628,7 @@
         "WAL-CLM-RARE-000269"
       ],
       "definitions": [
+        "WAL-CLM-IAIYH-000002",
         "WAL-CLM-RARE-000122"
       ],
       "diagnostics": [
@@ -667,6 +668,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "iaiyh",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -4703,8 +4705,11 @@
   },
   "gingivitis": {
     "display_name": "Gingivitis",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000003"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000285",
         "WAL-CLM-LETS-000398"
@@ -4729,6 +4734,7 @@
       "tormentil"
     ],
     "books_cited": [
+      "iaiyh",
       "lets-play-doctor"
     ]
   },
@@ -4942,8 +4948,11 @@
   },
   "headache": {
     "display_name": "Headache",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000003"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000293"
       ]
@@ -4973,6 +4982,7 @@
       "white-willow"
     ],
     "books_cited": [
+      "iaiyh",
       "lets-play-doctor"
     ]
   },
@@ -7960,10 +7970,11 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 24,
+    "claim_count": 27,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052",
+        "WAL-CLM-IAIYH-000001",
         "WAL-CLM-RARE-000099"
       ],
       "contraindications": [
@@ -7980,6 +7991,7 @@
         "WAL-CLM-RARE-000275"
       ],
       "definitions": [
+        "WAL-CLM-IAIYH-000002",
         "WAL-CLM-LETS-000001",
         "WAL-CLM-RARE-000105"
       ],
@@ -8002,6 +8014,7 @@
       ],
       "protocols": [
         "WAL-CLM-DDDL-000060",
+        "WAL-CLM-IAIYH-000004",
         "WAL-CLM-LETS-000391"
       ],
       "quotes": [
@@ -8036,6 +8049,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "iaiyh",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -8081,9 +8095,16 @@
   },
   "pagets_disease": {
     "display_name": "Pagets Disease",
-    "claim_count": 1,
+    "claim_count": 4,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000001"
+      ],
+      "definitions": [
+        "WAL-CLM-IAIYH-000002"
+      ],
       "protocols": [
+        "WAL-CLM-IAIYH-000004",
         "WAL-CLM-LETS-000390"
       ]
     },
@@ -8096,6 +8117,7 @@
       "pancreatic-enzymes"
     ],
     "books_cited": [
+      "iaiyh",
       "lets-play-doctor"
     ]
   },
@@ -8403,8 +8425,11 @@
   },
   "periodontal_disease": {
     "display_name": "Periodontal Disease",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000003"
+      ],
       "deficiency_signs": [
         "WAL-CLM-LETS-000004"
       ],
@@ -8432,6 +8457,7 @@
       "tormentil"
     ],
     "books_cited": [
+      "iaiyh",
       "lets-play-doctor"
     ]
   },
@@ -10143,8 +10169,11 @@
   },
   "tooth_decay": {
     "display_name": "Tooth Decay",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000003"
+      ],
       "deficiency_signs": [
         "WAL-CLM-LETS-000004"
       ],
@@ -10163,6 +10192,7 @@
       "pennyroyal"
     ],
     "books_cited": [
+      "iaiyh",
       "lets-play-doctor"
     ]
   },
@@ -10255,8 +10285,11 @@
   },
   "trigeminal_neuralgia": {
     "display_name": "Trigeminal Neuralgia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IAIYH-000003"
+      ],
       "prevalence": [
         "WAL-CLM-DDDL-000009"
       ]
@@ -10266,7 +10299,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "iaiyh"
     ]
   },
   "tularemia": {

@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "book_id": "iaiyh",
+  "knowledge_version": null,
+  "claims": [
+    {
+      "id": "WAL-CLM-IAIYH-000001",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "osteoporosis",
+        "pagets_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach teaches that the single common cause of the cranial-nerve and spinal-cord neuropathies behind as many as 25 different diseases is osteoporosis of the skull (which he also names Paget's Disease or Wallach's Fibrous Dysplasia). Nutritional deficiency drives a universal mineral loss and an over-production of bone matrix that fills the bony tunnels the nerves travel through, narrowing them and incarcerating (pinching) the nerve -- and he holds this is preventable and reversible. In his words: \"It turns out that the common cause of these neuropathies is osteoporosis of the skull which results in a universal mineral loss and an increase in bone matrix production. The bone matrix fills up the tunnels that the cranial nerves and spinal cord travel through, reducing the inside caliber of the tunnels which then produces an incarceration of the nerve.\"",
+      "verbatim": "It turns out that the common cause\nof these neuropathies is osteoporosis of the skull which results in a universal\nmineral loss and an increase in bone matrix production. The bone matrix fills up\nthe tunnels that the cranial nerves and spinal cord travel through, reducing the\ninside caliber of the tunnels which then produces an incarceration of the nerve.",
+      "locator": {
+        "book": "iaiyh",
+        "scheme": "screenshot",
+        "chapter": "Prologue",
+        "page": 9,
+        "screenshot": 746,
+        "kindle_location": null,
+        "char_offset": 12772
+      },
+      "dose": null,
+      "tags": [
+        "iaiyh",
+        "prologue",
+        "cranial-nerve-etiology"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T20:16:49+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IAIYH-000002",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "osteoporosis",
+        "pagets_disease",
+        "anemia"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach defines 'Wallach's Fibrous Dysplasia' as the replacement of normal bony architecture -- including the bone-marrow cavity -- with connective tissue, which in turn reduces the body's production of platelets, white blood cells, red blood cells, and the stem cells that make antibodies (impairing clotting, immune defense, and oxygen delivery). In his words: \"The Replacement of normal boney architecture, including the bone marrow cavity, with connective tissue. Resulting in reduced production of platelets, white blood cells, red blood cells, and stem cells that make antibodies.\"",
+      "verbatim": "The Replacement of normal boney architecture, including the bone\nmarrow cavity, with connective tissue. Resulting in reduced production\nof platelets, white blood cells, red blood cells, and stem cells that make\n\nantibodies.",
+      "locator": {
+        "book": "iaiyh",
+        "scheme": "screenshot",
+        "chapter": "Definition: Wallach's Fibrous Dysplasia",
+        "page": 13,
+        "screenshot": 749,
+        "kindle_location": null,
+        "char_offset": 15754
+      },
+      "dose": null,
+      "tags": [
+        "iaiyh",
+        "definition",
+        "wallachs-fibrous-dysplasia"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T20:16:49+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IAIYH-000003",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "periodontal_disease",
+        "gingivitis",
+        "trigeminal_neuralgia",
+        "headache",
+        "tooth_decay"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach holds that many common cranial and dental problems -- headaches, sinus trouble, tooth migration and tooth loss, receding gums, periodontal disease, jaw pain (trigeminal neuralgia), and even a change in the shape of the head (Hunter's syndrome) -- are not caused by poor flossing, brushing, or skipped dental visits, nor by autoimmune, familial, or genetic factors, but are in reality manifestations of osteoporosis of the skull. In his words: \"A wide variety of cranial (head aches, sinus, etc.) and dental issues, including tooth migration, tooth loss, receding gums, periodontal disease, jaw pain (trigeminal neuralgia), change in the shape of the head (Hunter's syndrome)...\"",
+      "verbatim": "A wide variety of cranial (head aches, sinus, etc.) and dental issues, including\n\ntooth migration, tooth loss, receding gums, periodontal disease, jaw pain\n(trigeminal neuralgia), change in the shape of the head (Hunter's syndrome)",
+      "locator": {
+        "book": "iaiyh",
+        "scheme": "screenshot",
+        "chapter": "1. The Skull",
+        "page": 14,
+        "screenshot": 750,
+        "kindle_location": null,
+        "char_offset": 16634
+      },
+      "dose": null,
+      "tags": [
+        "iaiyh",
+        "ch1-the-skull",
+        "skull-osteoporosis"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T20:16:49+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IAIYH-000004",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "osteoporosis",
+        "pagets_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach's prescribed solution: osteoporosis of the skull and spine (Wallach's Fibrous Dysplasia) is preventable and reversible by supplementing the full set of 90 essential nutrients -- 60 minerals, 16 vitamins, 12 amino acids, and 3 fatty acids -- dosed for bodyweight, and by protecting absorption through avoiding 'bad foods' and gluten (wheat, barley, rye, oats). In his words: \"Osteoporosis of the skull and spine, Wallach's Fibrous Dysplasia, are preventable, amenable, and reversible with supplementation with the 90 essential nutrients, 60 minerals, 16 vitamins, 12 amino acids, and 3 fatty acids appropriate for bodyweight. Absorption is essential and so avoiding the bad foods AND gluten (wheat, barley, rye, oats) is imperative to get maximum benefit.\"",
+      "verbatim": "Osteoporosis of the skull and spine, Wallach’s Fibrous Dysplasia, are\npreventable, amenable, and reversible with supplementation with the 90\nessential nutrients, 60 minerals, 16 vitamins, 12 amino acids, and 3 fatty acids\nappropriate for bodyweight. Absorption is essential and so avoiding the bad\nfoods AND gluten (wheat, barley, rye, oats) is imperative to get maximum\nbenefit.",
+      "locator": {
+        "book": "iaiyh",
+        "scheme": "screenshot",
+        "chapter": "15. The Solution",
+        "page": 46,
+        "screenshot": 767,
+        "kindle_location": null,
+        "char_offset": 40515
+      },
+      "dose": null,
+      "tags": [
+        "iaiyh",
+        "the-solution",
+        "90-essentials",
+        "gluten"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T20:16:49+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    }
+  ]
+}
