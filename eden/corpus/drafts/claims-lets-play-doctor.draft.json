@@ -15750,6 +15750,216 @@
       "extracted_at": "2026-06-29T14:59:56+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000393",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "aspirin",
+        "acetaminophen",
+        "codeine",
+        "dmso",
+        "colloidal-minerals",
+        "aconite",
+        "comfrey",
+        "chicory",
+        "english-mandrake"
+      ],
+      "conditions": [
+        "pain"
+      ],
+      "symptoms": [],
+      "claim_text": "Pain, Wallach says, is caused by any abnormal process that changes the architecture of bone or soft tissue — so repairing or correcting the underlying disease process usually eliminates the pain without an ongoing need for pain medication, and treatment must aggressively correct that root cause. Symptomatic relief may include TENS (transcutaneous electrical nerve stimulation, electronic pain masking), codeine, Tylenol-3, aspirin with codeine, aspirin, Tylenol (acetaminophen), DMSO (dimethyl sulfoxide), acupuncture, hydrotherapy, chiropractic, and herbs including aconite (Aconitum napellus), comfrey (Symphytum officinale), chicory (Cichorium intybus), and English mandrake (Tamus communis); and he adds, do not forget plant-derived colloidal minerals.",
+      "verbatim": "Treatment of pain may in-\nclude TENS (electronic pain masking), co-\ndeine, tylenol-3, aspirin with codeine, aspirin,\ntylenol, DMSO, acupuncture, hydrotherapy,\nchiropractic, and herbs including aconite\n(Aconitum napellus), comfrey (Symphytum\nofficinale), chicory (Cichorium intybus) and\nEnglish mandrake (Tamus communis).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 158,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 421580
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T15:08:08+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000394",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b1",
+        "vitamin-b3",
+        "vitamin-c"
+      ],
+      "other_substances": [
+        "edta",
+        "hydrogen-peroxide",
+        "hawthorn",
+        "lily-of-the-valley",
+        "hops",
+        "lavender",
+        "motherwort",
+        "valerian",
+        "foxglove"
+      ],
+      "conditions": [
+        "palpitations"
+      ],
+      "symptoms": [],
+      "claim_text": "Palpitations (irregular heartbeat) can come from organic heart disease (easily checked with an electrocardiogram, EKG/ECG), food allergies (such as Chinese Restaurant Syndrome, an allergy to MSG/monosodium glutamate), nutritional deficiencies (for example vitamin B-1, vitamin B-3, selenium, potassium), and/or hypoglycemia. Treatment should include EDTA chelation for cardiovascular disease, intravenous hydrogen peroxide, and avoiding caffeine, offending food allergens, sugar, and processed foods; vitamin B-1 at 100 milligrams three times a day, vitamin B-3 at 450 milligrams three times a day as time-release tablets, vitamin C to bowel tolerance, and the baseline nutritional supplement program; plus herbs including English hawthorn (Crataegus oxyacantha), lily-of-the-valley (Convallaria majalis), hops (Humulus lupulus), lavender (Lavandula angustifolia), motherwort (Leonurus cardiaca), valerian (Valeriana officinalis), and foxglove (Digitalis purpurea).",
+      "verbatim": "Treatment ofpalpitations should include EDTA\nchelation for cardio-vascular disease, IV hy-\ndrogen peroxide, avoid caffeine, avoid of-\nfending food allergens, avoid sugar and pro-\ncessed foods in all forms",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 158,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 422239
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T15:08:08+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000395",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "garlic",
+        "peach",
+        "walnut",
+        "pyrantel-pamoate",
+        "niclosamide",
+        "metronidazole"
+      ],
+      "conditions": [
+        "parasites"
+      ],
+      "symptoms": [],
+      "claim_text": "Parasites (worms) include roundworms (ascaris, hookworms, pinworms, whipworms), tapeworms, and microscopic single-celled organisms (amoeba, flagellates). Symptoms include diarrhea, abdominal pain, weight loss, anal itching, weakness, and — with tapeworm — vitamin B-12 deficiency. Diagnosis is by a microscopic fecal exam for most intestinal parasites, except pinworms, which need a scotch-tape test. Treatment includes garlic (Allium sativum), peach (Prunus persica), and walnut (Juglans nigra); for heavy infestations needing stronger medication, Wallach lists pyrantel pamoate (for roundworms), niclosamide (for tapeworms), and metronidazole (for protozoa).",
+      "verbatim": "Treatment for parasites includes garlic (Allium\nsativum), peach (Pamus persica) and walnut\n(Juglans nigra); with heavy infestations where\nstronger medication is required Pyrantel\npamoate (roundworms), Niclosamide (tape-\nworms) and Metronidazole (protozoa) should\nbe employed.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 159,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 423363
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T15:08:08+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000396",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b1",
+        "vitamin-b6",
+        "omega-3",
+        "leucine",
+        "methionine",
+        "tyrosine",
+        "phenylalanine"
+      ],
+      "other_substances": [
+        "octacosanol",
+        "neuro-gen",
+        "betaine-hcl",
+        "pancreatic-enzymes"
+      ],
+      "conditions": [
+        "parkinsonism"
+      ],
+      "symptoms": [],
+      "claim_text": "Parkinsonism (shaking palsy) is caused by degeneration of the basal ganglia of the brain; its symptoms are relentlessly progressive and include muscular rigidity, lack of purposeful movement, and a 'pill rolling' tremor of the thumb and index finger. The cause of true Parkinson's disease is unknown, but many things can cause Parkinsonism-like symptoms: certain drugs (phenothiazines, haloperidol, reserpine), carbon-monoxide poisoning, and excessive manganese supplementation. For drug-induced Parkinsonism, treatment should include eliminating the offending drug, then octacosanol at 300 micrograms three times a day, Neuro-Gen, leucine 10 grams a day, L-methionine 5 grams a day, essential fatty acids one tablespoon twice a day, L-tyrosine 100 milligrams a day, DL-phenylalanine 100 milligrams three times a day, vitamin B-1 at 200 milligrams three times a day, vitamin B-6 at 100 milligrams three times a day, betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day before meals, and the baseline nutritional supplement program. He warns that the standard L-Dopa and carbidopa aggravate and speed up Parkinson's in a significant number of cases and have no benefit in more than half.",
+      "verbatim": "octacosanol at 300 mcg t.i.d., Neuro-Gen,\nleucine lOgm/day, l-methionineat5gm/day,\nessential fatty acids at one tbsp. b.i.d., 1-\ntyrosine at 100 mg/day, dl-phenoalanine at\n100mgt.i.d.,B-lat200mgt.i.d.,B-6atl00mg\nt.i.d., betaine HC1 and pancreatic enzymes at\n75-200 mg t.i.d. before meals",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 159,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 424369
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T15:08:08+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000397",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "alfalfa",
+        "cabbage-juice",
+        "flax",
+        "german-chamomile",
+        "licorice"
+      ],
+      "conditions": [
+        "peptic_ulcer"
+      ],
+      "symptoms": [],
+      "claim_text": "Peptic ulcer (gastric ulcer) is thought to be caused by stress, a deficiency of 'vitamin U,' and/or dyspepsia (indigestion). Symptoms include burning stomach pain, dyspepsia, and weight loss; a 'coffee-ground' stool means the ulcer is bleeding and the patient is in imminent danger of bleeding to death — go to a hospital immediately. Treatment should include alfalfa (Medicago sativa), thought to be the richest source of 'vitamin U,' at ten tablets three times a day with meals, plus cabbage juice (Brassica oleracea), flax (Linum usitatissimum), German chamomile (Matricaria chamomilla), and licorice (Glycyrrhiza glabra).",
+      "verbatim": "Treatment of peptic ulcer should include al-\nfalfa (Medicago sativa) which is thought to be\nthe richest source of \"vitamin U\" at ten tablets\nt.i.d. with meals, cabbage juice (Brassica\noleracea), flax (Linum usitatissimum), Ger-\nman chamomile (Matricaria chamomilla) and\nlicorice (Glycyrrhiza glabra).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 159,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 425279
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T15:08:08+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

@@ -8038,6 +8038,58 @@
       "lets-play-doctor"
     ]
   },
+  "pain": {
+    "display_name": "Pain",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000393"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "acetaminophen",
+      "aconite",
+      "aspirin",
+      "chicory",
+      "codeine",
+      "colloidal-minerals",
+      "comfrey",
+      "dmso",
+      "english-mandrake"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "palpitations": {
+    "display_name": "Palpitations",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000394"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-b1",
+      "vitamin-b3",
+      "vitamin-c"
+    ],
+    "other_substances_involved": [
+      "edta",
+      "foxglove",
+      "hawthorn",
+      "hops",
+      "hydrogen-peroxide",
+      "lavender",
+      "lily-of-the-valley",
+      "motherwort",
+      "valerian"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "pancreatitis": {
     "display_name": "Pancreatitis",
     "claim_count": 1,
@@ -8111,21 +8163,57 @@
       "rare-earths"
     ]
   },
+  "parasites": {
+    "display_name": "Parasites",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000395"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "garlic",
+      "metronidazole",
+      "niclosamide",
+      "peach",
+      "pyrantel-pamoate",
+      "walnut"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "parkinsonism": {
     "display_name": "Parkinsonism",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "contraindications": [
         "WAL-CLM-RARE-000175"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000396"
       ],
       "toxicity_signs": [
         "WAL-CLM-LETS-000018"
       ]
     },
     "essentials_involved": [
-      "manganese"
+      "leucine",
+      "manganese",
+      "methionine",
+      "omega-3",
+      "phenylalanine",
+      "tyrosine",
+      "vitamin-b1",
+      "vitamin-b6"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "neuro-gen",
+      "octacosanol",
+      "pancreatic-enzymes"
+    ],
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
@@ -8193,6 +8281,26 @@
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "peptic_ulcer": {
+    "display_name": "Peptic Ulcer",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000397"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "alfalfa",
+      "cabbage-juice",
+      "flax",
+      "german-chamomile",
+      "licorice"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "peptic_ulcers": {

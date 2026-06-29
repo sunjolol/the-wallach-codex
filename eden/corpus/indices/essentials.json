@@ -3961,7 +3961,7 @@
     "display_name": "Thiamine",
     "canon_slug": "vitamin-b1",
     "category": "vitamin",
-    "claim_count": 15,
+    "claim_count": 17,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000043",
@@ -3982,6 +3982,8 @@
         "WAL-CLM-LETS-000244",
         "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000377",
+        "WAL-CLM-LETS-000394",
+        "WAL-CLM-LETS-000396",
         "WAL-CLM-RARE-000282"
       ]
     },
@@ -4111,6 +4113,8 @@
       "edema",
       "korsakoffs_syndrome",
       "nervous_heart",
+      "palpitations",
+      "parkinsonism",
       "wernicke_korsakoff_syndrome"
     ],
     "interacts_with": [
@@ -4125,8 +4129,10 @@
       "germanium",
       "inositol",
       "iron",
+      "leucine",
       "lithium",
       "magnesium",
+      "methionine",
       "omega-3",
       "oxygen",
       "phenylalanine",
@@ -4275,7 +4281,7 @@
     "display_name": "Niacin",
     "canon_slug": "vitamin-b3",
     "category": "vitamin",
-    "claim_count": 20,
+    "claim_count": 21,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000019",
@@ -4300,6 +4306,7 @@
         "WAL-CLM-LETS-000310",
         "WAL-CLM-LETS-000322",
         "WAL-CLM-LETS-000388",
+        "WAL-CLM-LETS-000394",
         "WAL-CLM-RARE-000282"
       ],
       "toxicity_sign": [
@@ -4404,6 +4411,7 @@
       "learning_disabilities",
       "liver_disease",
       "organic_brain_syndrome",
+      "palpitations",
       "panic_attacks",
       "paranoia",
       "pellagra",
@@ -4604,7 +4612,7 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 39,
+    "claim_count": 40,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000027",
@@ -4648,6 +4656,7 @@
         "WAL-CLM-LETS-000332",
         "WAL-CLM-LETS-000369",
         "WAL-CLM-LETS-000383",
+        "WAL-CLM-LETS-000396",
         "WAL-CLM-RARE-000286"
       ],
       "toxicity_sign": [
@@ -4780,6 +4789,7 @@
       "kidney_stones",
       "morning_sickness",
       "panic_attacks",
+      "parkinsonism",
       "peripheral_neuropathy",
       "rheumatoid_arthritis",
       "seborrheic_dermatitis",
@@ -4796,10 +4806,12 @@
       "flavonoids",
       "inositol",
       "iron",
+      "leucine",
       "lithium",
       "lysine",
       "magnesium",
       "manganese",
+      "methionine",
       "omega-3",
       "phenylalanine",
       "potassium",
@@ -5141,7 +5153,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 59,
+    "claim_count": 60,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000038",
@@ -5208,7 +5220,8 @@
         "WAL-CLM-LETS-000348",
         "WAL-CLM-LETS-000364",
         "WAL-CLM-LETS-000367",
-        "WAL-CLM-LETS-000382"
+        "WAL-CLM-LETS-000382",
+        "WAL-CLM-LETS-000394"
       ]
     },
     "deficiency_signs": [
@@ -5332,6 +5345,7 @@
       "migraine",
       "monckebergs_arteriosclerosis",
       "nosebleeds",
+      "palpitations",
       "periodontal_disease",
       "plumbism",
       "psoriasis",
@@ -6176,12 +6190,27 @@
     "display_name": "Leucine",
     "canon_slug": "leucine",
     "category": "amino_acid",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000396"
+      ]
+    },
     "deficiency_signs": [],
-    "conditions_treated": [],
-    "interacts_with": [],
-    "books_cited": []
+    "conditions_treated": [
+      "parkinsonism"
+    ],
+    "interacts_with": [
+      "methionine",
+      "omega-3",
+      "phenylalanine",
+      "tyrosine",
+      "vitamin-b1",
+      "vitamin-b6"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
   },
   "lysine": {
     "display_name": "Lysine",
@@ -6221,27 +6250,33 @@
     "display_name": "Methionine",
     "canon_slug": "methionine",
     "category": "amino_acid",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-DDDL-000067"
       ],
       "protocol": [
-        "WAL-CLM-LETS-000373"
+        "WAL-CLM-LETS-000373",
+        "WAL-CLM-LETS-000396"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [
       "keshan_disease",
-      "muscular_dystrophy"
+      "muscular_dystrophy",
+      "parkinsonism"
     ],
     "interacts_with": [
       "choline",
       "cysteine",
+      "leucine",
       "omega-3",
       "phenylalanine",
       "selenium",
       "tryptophan",
+      "tyrosine",
+      "vitamin-b1",
+      "vitamin-b6",
       "vitamin-e"
     ],
     "books_cited": [
@@ -6253,7 +6288,7 @@
     "display_name": "Phenylalanine",
     "canon_slug": "phenylalanine",
     "category": "amino_acid",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-DDDL-000067"
@@ -6264,7 +6299,8 @@
         "WAL-CLM-LETS-000244",
         "WAL-CLM-LETS-000320",
         "WAL-CLM-LETS-000322",
-        "WAL-CLM-LETS-000371"
+        "WAL-CLM-LETS-000371",
+        "WAL-CLM-LETS-000396"
       ]
     },
     "deficiency_signs": [],
@@ -6275,7 +6311,8 @@
       "depression",
       "inflammation",
       "insomnia",
-      "multiple_sclerosis"
+      "multiple_sclerosis",
+      "parkinsonism"
     ],
     "interacts_with": [
       "calcium",
@@ -6284,6 +6321,7 @@
       "flavonoids",
       "inositol",
       "iron",
+      "leucine",
       "lithium",
       "magnesium",
       "methionine",
@@ -6376,13 +6414,14 @@
     "display_name": "Tyrosine",
     "canon_slug": "tyrosine",
     "category": "amino_acid",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-DDDL-000023"
       ],
       "protocol": [
-        "WAL-CLM-LETS-000244"
+        "WAL-CLM-LETS-000244",
+        "WAL-CLM-LETS-000396"
       ],
       "quote": [
         "WAL-CLM-DDDL-000066"
@@ -6394,7 +6433,8 @@
       "depression",
       "goiter",
       "hypothyroidism",
-      "macular_degeneration"
+      "macular_degeneration",
+      "parkinsonism"
     ],
     "interacts_with": [
       "arginine",
@@ -6402,8 +6442,10 @@
       "chromium",
       "iodine",
       "iron",
+      "leucine",
       "lithium",
       "magnesium",
+      "methionine",
       "omega-3",
       "phenylalanine",
       "potassium",
@@ -6451,7 +6493,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 67,
+    "claim_count": 68,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -6525,6 +6567,7 @@
         "WAL-CLM-LETS-000379",
         "WAL-CLM-LETS-000384",
         "WAL-CLM-LETS-000388",
+        "WAL-CLM-LETS-000396",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -6633,6 +6676,7 @@
       "obesity",
       "organic_brain_syndrome",
       "paranoia",
+      "parkinsonism",
       "pellagra",
       "premenstrual_syndrome",
       "pruritus",
@@ -6651,6 +6695,7 @@
       "germanium",
       "iodine",
       "iron",
+      "leucine",
       "lithium",
       "magnesium",
       "manganese",
