@@ -170,14 +170,18 @@
   },
   "alpine-ragwort": {
     "display_name": "Alpine Ragwort",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000164"
+        "WAL-CLM-LETS-000164",
+        "WAL-CLM-LETS-000357"
       ]
     },
     "conditions_treated": [
-      "bleeding_gums"
+      "amenorrhea",
+      "bleeding_gums",
+      "dysmenorrhea",
+      "menorrhagia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -633,6 +637,23 @@
       "lets-play-doctor"
     ]
   },
+  "bethroot": {
+    "display_name": "Bethroot",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000357"
+      ]
+    },
+    "conditions_treated": [
+      "amenorrhea",
+      "dysmenorrhea",
+      "menorrhagia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "bilberry": {
     "display_name": "Bilberry",
     "claim_count": 1,
@@ -694,16 +715,18 @@
   },
   "black-cohosh": {
     "display_name": "Black Cohosh",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000134",
-        "WAL-CLM-LETS-000258"
+        "WAL-CLM-LETS-000258",
+        "WAL-CLM-LETS-000357"
       ]
     },
     "conditions_treated": [
       "amenorrhea",
-      "dysmenorrhea"
+      "dysmenorrhea",
+      "menorrhagia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -812,18 +835,21 @@
   },
   "blue-cohosh": {
     "display_name": "Blue Cohosh",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000258",
         "WAL-CLM-LETS-000310",
-        "WAL-CLM-LETS-000335"
+        "WAL-CLM-LETS-000335",
+        "WAL-CLM-LETS-000357"
       ]
     },
     "conditions_treated": [
+      "amenorrhea",
       "dysmenorrhea",
       "hysteria",
-      "labor"
+      "labor",
+      "menorrhagia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3430,6 +3456,23 @@
       "lets-play-doctor"
     ]
   },
+  "ladies-mantle": {
+    "display_name": "Ladies Mantle",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000357"
+      ]
+    },
+    "conditions_treated": [
+      "amenorrhea",
+      "dysmenorrhea",
+      "menorrhagia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "ladys-mantle": {
     "display_name": "Ladys Mantle",
     "claim_count": 2,
@@ -3821,6 +3864,23 @@
     },
     "conditions_treated": [
       "amebiasis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "midol": {
+    "display_name": "Midol",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000357"
+      ]
+    },
+    "conditions_treated": [
+      "amenorrhea",
+      "dysmenorrhea",
+      "menorrhagia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5058,6 +5118,23 @@
       "lets-play-doctor"
     ]
   },
+  "shepherds-purse": {
+    "display_name": "Shepherds Purse",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000357"
+      ]
+    },
+    "conditions_treated": [
+      "amenorrhea",
+      "dysmenorrhea",
+      "menorrhagia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "silver-weed": {
     "display_name": "Silver Weed",
     "claim_count": 1,
@@ -5122,6 +5199,23 @@
       "lets-play-doctor"
     ]
   },
+  "snapdragon": {
+    "display_name": "Snapdragon",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000357"
+      ]
+    },
+    "conditions_treated": [
+      "amenorrhea",
+      "dysmenorrhea",
+      "menorrhagia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "spring-adonis": {
     "display_name": "Spring Adonis",
     "claim_count": 1,
@@ -5154,14 +5248,18 @@
   },
   "st-johns-wort": {
     "display_name": "St Johns Wort",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000223"
+        "WAL-CLM-LETS-000223",
+        "WAL-CLM-LETS-000357"
       ]
     },
     "conditions_treated": [
-      "menopause"
+      "amenorrhea",
+      "dysmenorrhea",
+      "menopause",
+      "menorrhagia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5259,15 +5357,19 @@
   },
   "tamarac": {
     "display_name": "Tamarac",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000348"
+        "WAL-CLM-LETS-000348",
+        "WAL-CLM-LETS-000357"
       ]
     },
     "conditions_treated": [
+      "amenorrhea",
+      "dysmenorrhea",
       "liver_cirrhosis",
-      "liver_disease"
+      "liver_disease",
+      "menorrhagia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5594,6 +5696,23 @@
       "lets-play-doctor"
     ]
   },
+  "white-deadnettle": {
+    "display_name": "White Deadnettle",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000357"
+      ]
+    },
+    "conditions_treated": [
+      "amenorrhea",
+      "dysmenorrhea",
+      "menorrhagia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "white-pond-lily": {
     "display_name": "White Pond Lily",
     "claim_count": 1,
@@ -5776,18 +5895,22 @@
   },
   "yarrow": {
     "display_name": "Yarrow",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000297",
-        "WAL-CLM-LETS-000353"
+        "WAL-CLM-LETS-000353",
+        "WAL-CLM-LETS-000357"
       ]
     },
     "conditions_treated": [
+      "amenorrhea",
       "diabetes",
+      "dysmenorrhea",
       "hemorrhoids",
-      "measles"
+      "measles",
+      "menorrhagia"
     ],
     "books_cited": [
       "lets-play-doctor"

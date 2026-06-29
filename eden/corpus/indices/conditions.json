@@ -502,25 +502,40 @@
   },
   "amenorrhea": {
     "display_name": "Amenorrhea",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000134"
+        "WAL-CLM-LETS-000134",
+        "WAL-CLM-LETS-000357"
       ],
       "toxicity_signs": [
         "WAL-CLM-LETS-000037"
       ]
     },
     "essentials_involved": [
+      "iron",
       "omega-3",
+      "selenium",
       "vitamin-a",
+      "vitamin-e",
       "zinc"
     ],
     "other_substances_involved": [
+      "alpine-ragwort",
+      "bethroot",
       "black-cohosh",
+      "blue-cohosh",
+      "ladies-mantle",
       "marigold",
+      "midol",
       "saffron",
-      "squawroot"
+      "shepherds-purse",
+      "snapdragon",
+      "squawroot",
+      "st-johns-wort",
+      "tamarac",
+      "white-deadnettle",
+      "yarrow"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -623,6 +638,25 @@
       "dddl-3e-2011",
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "anencephaly": {
+    "display_name": "Anencephaly",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000359"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a",
+      "vitamin-b12",
+      "vitamin-b9",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "aneurysm": {
@@ -3872,23 +3906,36 @@
   },
   "dysmenorrhea": {
     "display_name": "Dysmenorrhea",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000258"
+        "WAL-CLM-LETS-000258",
+        "WAL-CLM-LETS-000357"
       ]
     },
     "essentials_involved": [
       "calcium",
+      "iron",
       "magnesium",
       "omega-3",
+      "selenium",
       "vitamin-b3",
       "vitamin-b6",
       "vitamin-e"
     ],
     "other_substances_involved": [
+      "alpine-ragwort",
+      "bethroot",
       "black-cohosh",
-      "blue-cohosh"
+      "blue-cohosh",
+      "ladies-mantle",
+      "midol",
+      "shepherds-purse",
+      "snapdragon",
+      "st-johns-wort",
+      "tamarac",
+      "white-deadnettle",
+      "yarrow"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -6886,6 +6933,39 @@
       "lets-play-doctor"
     ]
   },
+  "meningitis": {
+    "display_name": "Meningitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000358"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "meningocele": {
+    "display_name": "Meningocele",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000359"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a",
+      "vitamin-b12",
+      "vitamin-b9",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "menkes_disease": {
     "display_name": "Menkes Disease",
     "claim_count": 1,
@@ -6900,6 +6980,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "menkes_syndrome": {
+    "display_name": "Menkes Syndrome",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000360"
+      ]
+    },
+    "essentials_involved": [
+      "copper"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "menopause": {
@@ -6933,6 +7029,38 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor"
+    ]
+  },
+  "menorrhagia": {
+    "display_name": "Menorrhagia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000357"
+      ]
+    },
+    "essentials_involved": [
+      "iron",
+      "omega-3",
+      "selenium",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "alpine-ragwort",
+      "bethroot",
+      "black-cohosh",
+      "blue-cohosh",
+      "ladies-mantle",
+      "midol",
+      "shepherds-purse",
+      "snapdragon",
+      "st-johns-wort",
+      "tamarac",
+      "white-deadnettle",
+      "yarrow"
+    ],
+    "books_cited": [
       "lets-play-doctor"
     ]
   },
@@ -8126,16 +8254,21 @@
   },
   "spina_bifida": {
     "display_name": "Spina Bifida",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000042",
         "WAL-CLM-LETS-000010",
         "WAL-CLM-RARE-000239",
         "WAL-CLM-RARE-000262"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000359"
       ]
     },
     "essentials_involved": [
+      "vitamin-a",
+      "vitamin-b12",
       "vitamin-b9",
       "zinc"
     ],

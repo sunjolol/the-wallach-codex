@@ -1494,7 +1494,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 32,
+    "claim_count": 33,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
@@ -1540,6 +1540,7 @@
         "WAL-CLM-LETS-000243",
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000326",
+        "WAL-CLM-LETS-000360",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281"
       ],
@@ -1606,6 +1607,7 @@
       "learning_disabilities",
       "liver_cirrhosis",
       "menkes_disease",
+      "menkes_syndrome",
       "neutropenia",
       "osteoporosis",
       "respiratory_disease",
@@ -1733,7 +1735,7 @@
     "display_name": "Iron",
     "canon_slug": "iron",
     "category": "mineral",
-    "claim_count": 21,
+    "claim_count": 22,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000022"
@@ -1767,7 +1769,8 @@
         "WAL-CLM-LETS-000143",
         "WAL-CLM-LETS-000171",
         "WAL-CLM-LETS-000244",
-        "WAL-CLM-LETS-000276"
+        "WAL-CLM-LETS-000276",
+        "WAL-CLM-LETS-000357"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000015"
@@ -1841,6 +1844,7 @@
       }
     ],
     "conditions_treated": [
+      "amenorrhea",
       "anemia",
       "angular_stomatitis",
       "anorexia",
@@ -1850,8 +1854,10 @@
       "canker_sores",
       "depression",
       "diabetes",
+      "dysmenorrhea",
       "heart_failure",
       "liver_cirrhosis",
+      "menorrhagia",
       "pica",
       "schizophrenia"
     ],
@@ -2181,7 +2187,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 72,
+    "claim_count": 73,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2260,6 +2266,7 @@
         "WAL-CLM-LETS-000348",
         "WAL-CLM-LETS-000350",
         "WAL-CLM-LETS-000356",
+        "WAL-CLM-LETS-000357",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2305,6 +2312,7 @@
       "alopecia",
       "als",
       "alzheimers",
+      "amenorrhea",
       "anemia",
       "aneurysm",
       "arsenic_toxicity",
@@ -2327,6 +2335,7 @@
       "deafness",
       "dementia",
       "diabetes",
+      "dysmenorrhea",
       "dyspepsia",
       "elevated_cholesterol",
       "fibrocystic_breast_disease",
@@ -2355,6 +2364,7 @@
       "liver_disease",
       "lupus",
       "memory_loss",
+      "menorrhagia",
       "miscarriage",
       "multiple_sclerosis",
       "muscular_dystrophy",
@@ -2627,7 +2637,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 85,
+    "claim_count": 86,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2723,6 +2733,7 @@
         "WAL-CLM-LETS-000324",
         "WAL-CLM-LETS-000328",
         "WAL-CLM-LETS-000329",
+        "WAL-CLM-LETS-000359",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -2804,6 +2815,7 @@
       "alopecia",
       "amenorrhea",
       "anemia",
+      "anencephaly",
       "aneurysm",
       "anorexia",
       "anosmia",
@@ -2868,6 +2880,7 @@
       "keratomalacia",
       "keratosis",
       "malabsorption",
+      "meningocele",
       "osteoporosis",
       "paranoia",
       "pruritus",
@@ -3686,7 +3699,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 40,
+    "claim_count": 41,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -3731,7 +3744,8 @@
         "WAL-CLM-LETS-000328",
         "WAL-CLM-LETS-000329",
         "WAL-CLM-LETS-000332",
-        "WAL-CLM-LETS-000348"
+        "WAL-CLM-LETS-000348",
+        "WAL-CLM-LETS-000359"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000037"
@@ -3790,6 +3804,7 @@
       "allergies",
       "alopecia",
       "amenorrhea",
+      "anencephaly",
       "anosmia",
       "athletes_foot",
       "autoimmune_disorders",
@@ -3831,9 +3846,11 @@
       "kidney_stones",
       "liver_cirrhosis",
       "liver_disease",
+      "meningocele",
       "night_blindness",
       "pruritus",
       "psoriasis",
+      "spina_bifida",
       "stroke",
       "xerophthalmia"
     ],
@@ -4718,7 +4735,7 @@
     "display_name": "Folate",
     "canon_slug": "vitamin-b9",
     "category": "vitamin",
-    "claim_count": 17,
+    "claim_count": 18,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000042",
@@ -4741,7 +4758,8 @@
         "WAL-CLM-LETS-000288",
         "WAL-CLM-LETS-000298",
         "WAL-CLM-LETS-000323",
-        "WAL-CLM-LETS-000348"
+        "WAL-CLM-LETS-000348",
+        "WAL-CLM-LETS-000359"
       ]
     },
     "deficiency_signs": [
@@ -4793,6 +4811,7 @@
     ],
     "conditions_treated": [
       "anemia",
+      "anencephaly",
       "anorexia",
       "aphthous_stomatitis",
       "birth_defects",
@@ -4811,6 +4830,7 @@
       "irritable_bowel_syndrome",
       "liver_cirrhosis",
       "liver_disease",
+      "meningocele",
       "paranoia",
       "psoriasis",
       "spina_bifida",
@@ -4848,7 +4868,7 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 26,
+    "claim_count": 27,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000035",
@@ -4884,7 +4904,8 @@
         "WAL-CLM-LETS-000284",
         "WAL-CLM-LETS-000298",
         "WAL-CLM-LETS-000300",
-        "WAL-CLM-LETS-000348"
+        "WAL-CLM-LETS-000348",
+        "WAL-CLM-LETS-000359"
       ]
     },
     "deficiency_signs": [
@@ -4958,6 +4979,7 @@
       "achlorhydria",
       "amblyopia",
       "anemia",
+      "anencephaly",
       "aphthous_stomatitis",
       "bells_palsy",
       "birth_defects",
@@ -4971,10 +4993,12 @@
       "hepatitis",
       "liver_cirrhosis",
       "liver_disease",
+      "meningocele",
       "peripheral_neuropathy",
       "pernicious_anemia",
       "psychosis",
-      "shingles"
+      "shingles",
+      "spina_bifida"
     ],
     "interacts_with": [
       "calcium",
@@ -5337,7 +5361,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 51,
+    "claim_count": 52,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -5398,6 +5422,7 @@
         "WAL-CLM-LETS-000321",
         "WAL-CLM-LETS-000325",
         "WAL-CLM-LETS-000356",
+        "WAL-CLM-LETS-000357",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -5468,6 +5493,7 @@
       "aids",
       "alopecia",
       "alzheimers",
+      "amenorrhea",
       "anemia",
       "arthritis",
       "atopic_dermatitis",
@@ -5518,6 +5544,7 @@
       "korsakoffs_syndrome",
       "malabsorption",
       "memory_loss",
+      "menorrhagia",
       "muscular_dystrophy",
       "psoriasis",
       "rheumatoid_arthritis",
@@ -6279,7 +6306,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 59,
+    "claim_count": 60,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -6345,6 +6372,7 @@
         "WAL-CLM-LETS-000324",
         "WAL-CLM-LETS-000348",
         "WAL-CLM-LETS-000350",
+        "WAL-CLM-LETS-000357",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -6437,6 +6465,7 @@
       "liver_cirrhosis",
       "liver_disease",
       "lupus",
+      "menorrhagia",
       "pruritus",
       "psoriasis",
       "weight_loss"
