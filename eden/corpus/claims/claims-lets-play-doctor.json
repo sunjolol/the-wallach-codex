@@ -11990,6 +11990,238 @@
       "extracted_at": "2026-06-29T00:14:20+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000297",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "dietary-fiber",
+        "oat-bran",
+        "german-chamomile",
+        "silver-weed",
+        "smart-weed",
+        "witch-hazel",
+        "yarrow",
+        "juniper",
+        "horse-chestnut",
+        "plantain"
+      ],
+      "conditions": [
+        "hemorrhoids"
+      ],
+      "symptoms": [],
+      "claim_text": "Hemorrhoids (piles) are varicose veins in the rectum and anus that itch, bleed, become painful, and eventually clot (thrombose); Wallach says the primary cause is low-fiber diets, the resulting constipation, and lack of exercise, since the pressure of forcing out a constipated movement balloons the hemorrhoidal veins. Prevention and treatment center on high-fiber diets and exercise. His treatment includes high-fiber diets (you may add oat bran at two heaping tablespoons in eight ounces of juice or water before bed) to encourage two bowel movements a day, hydrotherapy (a Jacuzzi jet directed at the hemorrhoidal tissue) twice a day, commercial topical products (such as Preparation H), and topical washes or compresses of herbs including German chamomile, silver weed (Potentilla anserina), smart weed (Polygonum hydropiper), witch hazel, yarrow, juniper berries, horse chestnut, and plantain. He stresses surgery is rarely, if ever, necessary.",
+      "verbatim": "and topical washes and/\nor compresses of herbs including German\nchamomile (Matricaria chamomilla), silver\nweed (Potentilla anserina), smart weed\n(Polygonium hydropiper), witch hazel\n(Hamamelis virginiana), yarrow (Achillea\nmillefollium), juniper berries (Juniperus\ncommunis), horse chestnut (Aesculus\nhippocastanum) and plantain (Plantago ma-\njor).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 323212
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T00:27:53+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000298",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b12",
+        "vitamin-b9",
+        "vitamin-c",
+        "germanium",
+        "selenium"
+      ],
+      "other_substances": [
+        "catechin",
+        "licorice",
+        "chicory",
+        "dandelion"
+      ],
+      "conditions": [
+        "hepatitis"
+      ],
+      "symptoms": [],
+      "claim_text": "Hepatitis means any inflammation of the liver, but in daily use refers to three liver viruses: Hepatitis A (fecal-oral contamination), Hepatitis B (blood contamination via dirty needles; more severe, potentially fatal), and Hepatitis C (blood-transfusion-associated, causing chronic liver disease). Wallach stresses prevention through hand-washing and avoiding community needles. His treatment of hepatitis includes bed rest, plenty of fluids including chicken soup, avoiding sugar/fat/alcohol, vitamin B-12 at 1,000 micrograms a day, folic acid at 5-10 milligrams a day, catechin at 1.5 grams a day, vitamin C to bowel tolerance, herbs including licorice (Glycyrrhiza glabra), chicory (Cichorium intybus), and dandelion (Taraxacum officinale), germanium at 25-50 milligrams a day, selenium at 200-500 micrograms a day, and SuperOxy Plus at one ounce on awakening and retiring.",
+      "verbatim": "Treatment ofhepatitis includes bed rest, plenty\nof fluids including chicken soup, avoid sugar,\navoid fat, avoid alcohol, vitamin B-12 at 1,000\nmcg/day, folic acid at 5-10 mg/day,catechin at\n1.5 gm/day, vitamin C to bowel tolerance and\nherbs including licorice (Glycynhiza glabra),\nchicory (Chichorium intybus) and dandelion\n(Taraxacum officinale), germanium at 25-50\nmg/day, selenium at 200-500 mcg/day and\nSuperOxy Plus at one ounce on awakening\nand retiring.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 325510
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T00:27:53+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000299",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-c",
+        "flavonoids",
+        "zinc",
+        "lysine"
+      ],
+      "other_substances": [
+        "ribavirin",
+        "isoprinosine",
+        "black-walnut"
+      ],
+      "conditions": [
+        "herpes_simplex",
+        "cold_sores"
+      ],
+      "symptoms": [],
+      "claim_text": "Herpes simplex is a virus causing recurrent blisters and ulcers on the lips (Type I, cold sores) and genitals (Type II); it never fully clears (once infected, always infected) and the goal is long-term remission. Wallach's treatment includes ultraviolet light directly on the lesion for 1-6 minutes a day, avoiding high-arginine foods (chocolate, peanuts, nuts, seeds, grains), eating high-lysine foods (meat, potatoes, milk, yeast, fish, chicken, beans, eggs), vitamin C to bowel tolerance, bioflavonoids at 200 milligrams three times a day, zinc at 75 milligrams three times a day, L-lysine at 1-6 grams a day to effect then 500 milligrams a day for maintenance, ribavirin at 250-500 milligrams a day and isoprinosine at 500-1,500 milligrams a day (both to be avoided during pregnancy), and a topical herb compress with black walnut (Juglans nigra).",
+      "verbatim": "bioflavonoids at 200 mg t.i.d., zinc at 75 mg\nti.d., 1-Lysine at 1-6 gm/day to effect, then 500\nmg/day maintenance, Ribavirin at 250-500\nmg/day (do not take during pregnancy) and\nIsoprinosin at 500-1,500 mg/day (do not take\nduring pregnancy), and topical herb com-\npress with walnut (Juglans nigra).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 326716
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T00:27:53+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000300",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b12",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ],
+      "other_substances": [
+        "isoprinosine",
+        "ribavirin"
+      ],
+      "conditions": [
+        "shingles"
+      ],
+      "symptoms": [],
+      "claim_text": "Herpes zoster (shingles) is the resurfacing of a longstanding 'chicken pox' virus infection; the skin eruptions are extremely painful, sometimes requiring hospitalization, and follow the path of a nerve in a regular pattern. Wallach's treatment of choice for shingles is isoprinosine at 500-1,500 milligrams a day, ribavirin at 250-500 milligrams a day, vitamin B-12 at 1,000 micrograms a day, vitamin C to bowel tolerance, vitamin E at 800-1,200 international units a day, and zinc at 75 milligrams three times a day.",
+      "verbatim": "Treatment of choice for shingles is Isoprinosin\nat 500-1 ,500 mg/day, Ribavirin at 250-500 mg/\nday, vitamin B-12 at 1,000 mcg/day, vitamin C\nto bowel tolerance, vitamin E at 800-1,200 IU/\nday and zinc at 75 mg t.i.d.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 327444
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T00:27:53+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000301",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "hiatal_hernia"
+      ],
+      "symptoms": [],
+      "claim_text": "Hiatal hernia is usually a congenital birth defect (not genetic) but can also be caused by crushing the chest or abdomen, as in a car accident; gas, dyspepsia, reflux, and chest pain that mimics a heart attack are common symptoms, and Wallach notes more than 40% of the USA population has asymptomatic hiatal hernia by x-ray survey. Treatment is usually restricted to managing the gas and dyspepsia: small meals, and sleeping with the head of the bed elevated to prevent nighttime esophageal reflux. When there is a large defect in the diaphragm (paraesophageal hiatal hernia), surgical repair is recommended to prevent strangulation of portions of the stomach, intestine, or liver.",
+      "verbatim": "Treatment of hiatal hernia usually is restricted\nto treating the gas and dyspepsia. Small meals\nare suggested, sleeping with the head of your\nbed elevated often times prevents night-\nesophageal reflux while you sleep. When\nthere is a large defect in the diaphragm\n(paraesophageal hiatal hernia) surgical repair\nis recommended to prevent strangulation of\nportions of the stomach, intestine or liver.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 328011
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T00:27:53+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000302",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "hiccoughs"
+      ],
+      "symptoms": [],
+      "claim_text": "Hiccoughs are distracting and bothersome but rarely fatal — the result of spasmodic contractions of the diaphragm followed by a sudden closure of the glottis, sometimes started by swallowing hot or irritating substances. Wallach's treatment includes holding your breath (high blood carbon dioxide inhibits hiccoughs), drinking a large glass of water or orange or lemon juice slowly, applying pressure on the closed eyes with the heels of your hands, and applying digital pressure to the phrenic nerves just behind the sternoclavicular joint (where the collarbone joins the sternum).",
+      "verbatim": "Treatment ofhiccoughs includes holding your\nbreath as high levels of blood carbon dioxide\ninhibits hiccoughs, drink a large glass ofwater,\norange juice or lemon juice slowly, pressure\non the closed eyeswith the heels ofyou r hands\nand digital pressure applied to the phrenic\nnerves just behind the sternoclavicular joint\n(where your collarbone joins your sternum).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 328734
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T00:27:53+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

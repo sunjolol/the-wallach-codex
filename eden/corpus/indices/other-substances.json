@@ -662,6 +662,22 @@
       "lets-play-doctor"
     ]
   },
+  "black-walnut": {
+    "display_name": "Black Walnut",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000299"
+      ]
+    },
+    "conditions_treated": [
+      "cold_sores",
+      "herpes_simplex"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "blackroot": {
     "display_name": "Blackroot",
     "claim_count": 1,
@@ -981,16 +997,18 @@
   },
   "catechin": {
     "display_name": "Catechin",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000127",
-        "WAL-CLM-LETS-000128"
+        "WAL-CLM-LETS-000128",
+        "WAL-CLM-LETS-000298"
       ]
     },
     "conditions_treated": [
       "alcoholism",
-      "allergies"
+      "allergies",
+      "hepatitis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1109,14 +1127,16 @@
   },
   "chicory": {
     "display_name": "Chicory",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000283"
+        "WAL-CLM-LETS-000283",
+        "WAL-CLM-LETS-000298"
       ]
     },
     "conditions_treated": [
-      "gallstones"
+      "gallstones",
+      "hepatitis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1460,16 +1480,18 @@
   },
   "dandelion": {
     "display_name": "Dandelion",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000161",
-        "WAL-CLM-LETS-000283"
+        "WAL-CLM-LETS-000283",
+        "WAL-CLM-LETS-000298"
       ]
     },
     "conditions_treated": [
       "bladder_stones",
       "gallstones",
+      "hepatitis",
       "kidney_stones"
     ],
     "books_cited": [
@@ -1509,7 +1531,7 @@
   },
   "dietary-fiber": {
     "display_name": "Dietary Fiber",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000231",
@@ -1517,7 +1539,8 @@
         "WAL-CLM-LETS-000248",
         "WAL-CLM-LETS-000249",
         "WAL-CLM-LETS-000251",
-        "WAL-CLM-LETS-000283"
+        "WAL-CLM-LETS-000283",
+        "WAL-CLM-LETS-000297"
       ]
     },
     "conditions_treated": [
@@ -1526,6 +1549,7 @@
       "diarrhea",
       "diverticulitis",
       "gallstones",
+      "hemorrhoids",
       "weight_loss"
     ],
     "books_cited": [
@@ -2160,18 +2184,20 @@
   },
   "german-chamomile": {
     "display_name": "German Chamomile",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000262",
         "WAL-CLM-LETS-000269",
-        "WAL-CLM-LETS-000285"
+        "WAL-CLM-LETS-000285",
+        "WAL-CLM-LETS-000297"
       ]
     },
     "conditions_treated": [
       "eczema",
       "eye_redness",
       "gingivitis",
+      "hemorrhoids",
       "periodontal_disease",
       "psoriasis",
       "sty"
@@ -2390,6 +2416,21 @@
       "lets-play-doctor"
     ]
   },
+  "horse-chestnut": {
+    "display_name": "Horse Chestnut",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000297"
+      ]
+    },
+    "conditions_treated": [
+      "hemorrhoids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "hounds-tongue": {
     "display_name": "Hounds Tongue",
     "claim_count": 2,
@@ -2597,16 +2638,21 @@
   },
   "isoprinosine": {
     "display_name": "Isoprinosine",
-    "claim_count": 2,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000221",
-        "WAL-CLM-LETS-000279"
+        "WAL-CLM-LETS-000279",
+        "WAL-CLM-LETS-000299",
+        "WAL-CLM-LETS-000300"
       ]
     },
     "conditions_treated": [
       "chronic_fatigue_syndrome",
-      "influenza"
+      "cold_sores",
+      "herpes_simplex",
+      "influenza",
+      "shingles"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2647,14 +2693,16 @@
   },
   "juniper": {
     "display_name": "Juniper",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000241"
+        "WAL-CLM-LETS-000241",
+        "WAL-CLM-LETS-000297"
       ]
     },
     "conditions_treated": [
-      "cystitis"
+      "cystitis",
+      "hemorrhoids"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2893,14 +2941,15 @@
   },
   "licorice": {
     "display_name": "Licorice",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
         "WAL-CLM-LETS-000161",
         "WAL-CLM-LETS-000235",
         "WAL-CLM-LETS-000246",
-        "WAL-CLM-LETS-000283"
+        "WAL-CLM-LETS-000283",
+        "WAL-CLM-LETS-000298"
       ]
     },
     "conditions_treated": [
@@ -2909,6 +2958,7 @@
       "cough",
       "diabetes",
       "gallstones",
+      "hepatitis",
       "kidney_stones",
       "rheumatoid_arthritis"
     ],
@@ -3278,15 +3328,17 @@
   },
   "oat-bran": {
     "display_name": "Oat Bran",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000219",
-        "WAL-CLM-LETS-000249"
+        "WAL-CLM-LETS-000249",
+        "WAL-CLM-LETS-000297"
       ]
     },
     "conditions_treated": [
       "elevated_cholesterol",
+      "hemorrhoids",
       "weight_loss"
     ],
     "books_cited": [
@@ -3644,18 +3696,20 @@
   },
   "plantain": {
     "display_name": "Plantain",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
         "WAL-CLM-LETS-000125",
-        "WAL-CLM-LETS-000162"
+        "WAL-CLM-LETS-000162",
+        "WAL-CLM-LETS-000297"
       ]
     },
     "conditions_treated": [
       "abrasions",
       "bleeding",
-      "disagreeable_attitude"
+      "disagreeable_attitude",
+      "hemorrhoids"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3878,18 +3932,23 @@
   },
   "ribavirin": {
     "display_name": "Ribavirin",
-    "claim_count": 3,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000126",
         "WAL-CLM-LETS-000221",
-        "WAL-CLM-LETS-000279"
+        "WAL-CLM-LETS-000279",
+        "WAL-CLM-LETS-000299",
+        "WAL-CLM-LETS-000300"
       ]
     },
     "conditions_treated": [
       "aids",
       "chronic_fatigue_syndrome",
-      "influenza"
+      "cold_sores",
+      "herpes_simplex",
+      "influenza",
+      "shingles"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4073,6 +4132,21 @@
       "lets-play-doctor"
     ]
   },
+  "silver-weed": {
+    "display_name": "Silver Weed",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000297"
+      ]
+    },
+    "conditions_treated": [
+      "hemorrhoids"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "skullcap": {
     "display_name": "Skullcap",
     "claim_count": 1,
@@ -4099,6 +4173,21 @@
     },
     "conditions_treated": [
       "bronchitis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "smart-weed": {
+    "display_name": "Smart Weed",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000297"
+      ]
+    },
+    "conditions_treated": [
+      "hemorrhoids"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4563,14 +4652,16 @@
   },
   "witch-hazel": {
     "display_name": "Witch Hazel",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000173"
+        "WAL-CLM-LETS-000173",
+        "WAL-CLM-LETS-000297"
       ]
     },
     "conditions_treated": [
-      "bruises"
+      "bruises",
+      "hemorrhoids"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4608,14 +4699,16 @@
   },
   "yarrow": {
     "display_name": "Yarrow",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000246"
+        "WAL-CLM-LETS-000246",
+        "WAL-CLM-LETS-000297"
       ]
     },
     "conditions_treated": [
-      "diabetes"
+      "diabetes",
+      "hemorrhoids"
     ],
     "books_cited": [
       "lets-play-doctor"

@@ -2746,6 +2746,29 @@
       "lets-play-doctor"
     ]
   },
+  "cold_sores": {
+    "display_name": "Cold Sores",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000299"
+      ]
+    },
+    "essentials_involved": [
+      "flavonoids",
+      "lysine",
+      "vitamin-c",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "black-walnut",
+      "isoprinosine",
+      "ribavirin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "colds": {
     "display_name": "Colds",
     "claim_count": 1,
@@ -4862,6 +4885,56 @@
       "rare-earths"
     ]
   },
+  "hemorrhoids": {
+    "display_name": "Hemorrhoids",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000297"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "dietary-fiber",
+      "german-chamomile",
+      "horse-chestnut",
+      "juniper",
+      "oat-bran",
+      "plantain",
+      "silver-weed",
+      "smart-weed",
+      "witch-hazel",
+      "yarrow"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "hepatitis": {
+    "display_name": "Hepatitis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000298"
+      ]
+    },
+    "essentials_involved": [
+      "germanium",
+      "selenium",
+      "vitamin-b12",
+      "vitamin-b9",
+      "vitamin-c"
+    ],
+    "other_substances_involved": [
+      "catechin",
+      "chicory",
+      "dandelion",
+      "licorice"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "hernia": {
     "display_name": "Hernia",
     "claim_count": 1,
@@ -4876,6 +4949,57 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "herpes_simplex": {
+    "display_name": "Herpes Simplex",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000299"
+      ]
+    },
+    "essentials_involved": [
+      "flavonoids",
+      "lysine",
+      "vitamin-c",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "black-walnut",
+      "isoprinosine",
+      "ribavirin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "hiatal_hernia": {
+    "display_name": "Hiatal Hernia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000301"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "hiccoughs": {
+    "display_name": "Hiccoughs",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000302"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "high_cholesterol": {
@@ -6957,17 +7081,23 @@
   },
   "shingles": {
     "display_name": "Shingles",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000215"
+        "WAL-CLM-LETS-000215",
+        "WAL-CLM-LETS-000300"
       ]
     },
     "essentials_involved": [
-      "vitamin-e"
+      "vitamin-b12",
+      "vitamin-c",
+      "vitamin-e",
+      "zinc"
     ],
     "other_substances_involved": [
-      "caladryl"
+      "caladryl",
+      "isoprinosine",
+      "ribavirin"
     ],
     "books_cited": [
       "lets-play-doctor"
