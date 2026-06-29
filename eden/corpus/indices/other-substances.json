@@ -568,7 +568,7 @@
   },
   "betaine-hcl": {
     "display_name": "Betaine Hcl",
-    "claim_count": 42,
+    "claim_count": 43,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -612,7 +612,8 @@
         "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000364",
         "WAL-CLM-LETS-000371",
-        "WAL-CLM-LETS-000374"
+        "WAL-CLM-LETS-000374",
+        "WAL-CLM-LETS-000384"
       ]
     },
     "conditions_treated": [
@@ -663,6 +664,7 @@
       "migraine",
       "multiple_sclerosis",
       "muscle_cramps",
+      "obesity",
       "psoriasis",
       "stroke"
     ],
@@ -1511,7 +1513,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 37,
+    "claim_count": 38,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-LETS-000352"
@@ -1552,7 +1554,8 @@
         "WAL-CLM-LETS-000361",
         "WAL-CLM-LETS-000373",
         "WAL-CLM-LETS-000374",
-        "WAL-CLM-LETS-000383"
+        "WAL-CLM-LETS-000383",
+        "WAL-CLM-LETS-000384"
       ]
     },
     "conditions_treated": [
@@ -1600,6 +1603,7 @@
       "mercury_poisoning",
       "muscle_cramps",
       "muscular_dystrophy",
+      "obesity",
       "periodontal_disease",
       "plumbism",
       "rheumatoid_arthritis",
@@ -2763,7 +2767,7 @@
   },
   "ginseng": {
     "display_name": "Ginseng",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000222",
@@ -2772,7 +2776,8 @@
         "WAL-CLM-LETS-000313",
         "WAL-CLM-LETS-000315",
         "WAL-CLM-LETS-000316",
-        "WAL-CLM-LETS-000319"
+        "WAL-CLM-LETS-000319",
+        "WAL-CLM-LETS-000386"
       ]
     },
     "conditions_treated": [
@@ -2782,7 +2787,23 @@
       "impotence",
       "incontinence",
       "infertility",
-      "intermittent_claudication"
+      "intermittent_claudication",
+      "oligospermia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "glucomannan": {
+    "display_name": "Glucomannan",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000384"
+      ]
+    },
+    "conditions_treated": [
+      "obesity"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3462,16 +3483,18 @@
   },
   "kelp": {
     "display_name": "Kelp",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000287",
-        "WAL-CLM-LETS-000309"
+        "WAL-CLM-LETS-000309",
+        "WAL-CLM-LETS-000384"
       ]
     },
     "conditions_treated": [
       "goiter",
-      "hypothyroidism"
+      "hypothyroidism",
+      "obesity"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4241,6 +4264,21 @@
       "lets-play-doctor"
     ]
   },
+  "nutritional-fiber": {
+    "display_name": "Nutritional Fiber",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000384"
+      ]
+    },
+    "conditions_treated": [
+      "obesity"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "nux-vomica": {
     "display_name": "Nux Vomica",
     "claim_count": 1,
@@ -4432,7 +4470,7 @@
   },
   "pancreatic-enzymes": {
     "display_name": "Pancreatic Enzymes",
-    "claim_count": 35,
+    "claim_count": 36,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000123",
@@ -4469,7 +4507,8 @@
         "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000364",
         "WAL-CLM-LETS-000371",
-        "WAL-CLM-LETS-000374"
+        "WAL-CLM-LETS-000374",
+        "WAL-CLM-LETS-000384"
       ]
     },
     "conditions_treated": [
@@ -4513,6 +4552,7 @@
       "migraine",
       "multiple_sclerosis",
       "muscle_cramps",
+      "obesity",
       "psoriasis",
       "stroke"
     ],
@@ -5784,19 +5824,21 @@
   },
   "thyroid": {
     "display_name": "Thyroid",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000249",
         "WAL-CLM-LETS-000287",
         "WAL-CLM-LETS-000308",
-        "WAL-CLM-LETS-000309"
+        "WAL-CLM-LETS-000309",
+        "WAL-CLM-LETS-000384"
       ]
     },
     "conditions_treated": [
       "goiter",
       "hypotension",
       "hypothyroidism",
+      "obesity",
       "weight_loss"
     ],
     "books_cited": [
@@ -6244,6 +6286,21 @@
     "conditions_treated": [
       "bedsores",
       "burns"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "zumba": {
+    "display_name": "Zumba",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000386"
+      ]
+    },
+    "conditions_treated": [
+      "oligospermia"
     ],
     "books_cited": [
       "lets-play-doctor"

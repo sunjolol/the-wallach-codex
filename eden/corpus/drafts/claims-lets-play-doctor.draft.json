@@ -15401,6 +15401,152 @@
       "extracted_at": "2026-06-29T05:36:20+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000384",
+      "kind": "protocol",
+      "essentials": [
+        "omega-3",
+        "potassium"
+      ],
+      "other_substances": [
+        "colloidal-minerals",
+        "glucomannan",
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "thyroid",
+        "kelp",
+        "nutritional-fiber"
+      ],
+      "conditions": [
+        "obesity"
+      ],
+      "symptoms": [],
+      "claim_text": "Obesity (overweight) is, at its simplest, consuming and storing more calories than you use — but Wallach stresses it is not simple. Starvation backfires (the body conserves energy), so eat at least 1,000 calories a day for gradual, permanent loss, with moderate exercise (walking, tennis, golf, swimming, low-impact aerobics). He says 90 percent of obese people overeat and binge because empty-calorie diets trigger 'pica' — a nibbling driven by the body's search for trace minerals — so use colloidal minerals. Test for food allergies (pulse test) and do a six-hour glucose tolerance test for hypoglycemia or diabetes. His program: avoid food allergens, sugar (solid and liquid), caffeine and carbonated drinks (phosphates promote osteoporosis); drink filtered spring water, 8-10 glasses a day; use potassium salt with kelp; don't skip meals (large breakfast, moderate lunch with animal protein, light soup-and-salad dinner); salmon oil at 5 grams three times a day, flaxseed oil one tablespoon twice a day, two tablespoons of nutritional fiber before bed, glucomannan at 1 gram before meals, betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day before meals, and thyroid starting at 1-3 grains (adjust to avoid jitteriness; needing over six grains suggests celiac-type malabsorption). Herbal laxatives or diuretic teas and subliminal weight-loss tapes can also help.",
+      "verbatim": "salmon oil at 5gmt.i.d. with meals, flaxseed oil\nat one tbsp. b.i.d., two heaping tbsp. of nutri-\ntional fiber in an eight ounce glass of water\nbefore bed, glucomannan at 1 gm in eight\nounces of water one hour before meals, be-\ntaine HCl and pancreatic enzymes at 75-200\nmg t.i.d. 15 minutes before meals",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 155,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 410689
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T05:42:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000385",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "airway_obstruction"
+      ],
+      "symptoms": [],
+      "claim_text": "Obstruction of the airways (choking) is heralded by the 'universal choking sign' — both hands clutched at the throat and loss of speech; it happens often in restaurants (a 'restaurant coronary' mistaken for a heart attack). Prevention: don't talk while chewing and swallowing, especially meat and firm raw vegetables. Treatment: (1) put a finger into the back of the throat and manually remove the obstruction; (2) perform a Heimlich maneuver (stand behind the patient, lock your arms around them with hands just below the xiphoid cartilage and thrust sharply; for babies use hands only). If the obstruction cannot be cleared, Wallach describes an emergency tracheotomy as a last-resort lifesaving measure — a dead-center incision midway between the base of the larynx and the notch where the collarbones meet the breastbone, large enough for the empty barrel of a ballpoint pen to maintain airflow — followed by CPR (cardiopulmonary resuscitation) if the heart has also stopped.",
+      "verbatim": "Treatment of choking includes: 1) putting\nyour finger into the back of the throat and\nmanually removing the obstruction; 2) per-\nforming a \"Heimlich\" maneuver (standing\nbehind the patient, lock your arms around\nthem with hands locked just below the xi-\nphoid cartilage and suddenly thrust/squeeze;\nfor babies use hands only).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 155,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 412112
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T05:42:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000386",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "ginseng",
+        "zumba"
+      ],
+      "conditions": [
+        "oligospermia"
+      ],
+      "symptoms": [],
+      "claim_text": "Oligospermia (low sperm count) is usually the result of nutritional deficiencies and/or malabsorption syndromes; do a pulse test for food allergies and celiac-type changes. Infertility is the usual red flag that prompts a sperm-count check — on a semen sample under high power, healthy live sperm should be highly motile, moving in swirling waves. Wallach's treatment: avoid offending food allergens, double the baseline nutritional supplementation for 30-60 days, acupuncture, and herbs including ginseng (Panax ginseng) and herbal combinations such as Zumba.",
+      "verbatim": "Treatment for oligospermia includes avoid-\nance of offending food allergens, double the\nbase line nutritional supplementation for 30-\n60 days, acupuncture, and herbs including\nginseng (Panax ginseng) and herbal combina-\ntions such as Zumba.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 156,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 413729
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T05:42:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000387",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-a",
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "omphalocele",
+        "umbilical_hernia"
+      ],
+      "symptoms": [],
+      "claim_text": "Omphalocele (umbilical hernia) is a birth defect — a grape- to basketball-sized, peritoneum-lined skin sac at the navel that may contain fat and/or loops of intestine that can be pushed back into the abdomen. Wallach says it is a common birth defect caused by maternal (and therefore fetal) deficiencies of vitamin A and/or zinc. Treatment: surgery is needed if the hernial ring (the defect in the belly wall) is larger than a fingertip; if it is about a fingertip's diameter it can be healed at home without surgery by taping a golf-ball-sized ball of virgin wool firmly over the hernia and, three times a day, removing it, pushing the fat back in with the fingertip and rubbing the ring in a rotary motion for several minutes to irritate it — over weeks to months the defect fills in and heals.",
+      "verbatim": "OMPHALOCELE (umbilical hernia): is a\nbirth defect characterized by a grape to bas-\nketball sized skin sac in the \"belly button\" that\nis lined with peritoneum (membrane lining of\nthe abdominal cavity); the sac may contain fat\nand/or intestinal loops that can be pushed\nback into the abdominal cavity. This is a\ncommon birth defect that is caused by mater-\nnal deficiencies (and, thus, fetal deficiencies)\nof vitamin A and/or zinc.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 156,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 413970
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T05:42:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

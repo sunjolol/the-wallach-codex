@@ -288,6 +288,20 @@
       "lets-play-doctor"
     ]
   },
+  "airway_obstruction": {
+    "display_name": "Airway Obstruction",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000385"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "alcoholism": {
     "display_name": "Alcoholism",
     "claim_count": 1,
@@ -7672,18 +7686,66 @@
   },
   "obesity": {
     "display_name": "Obesity",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000257"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000384"
       ]
     },
     "essentials_involved": [
+      "omega-3",
+      "potassium",
       "vanadium"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "colloidal-minerals",
+      "glucomannan",
+      "kelp",
+      "nutritional-fiber",
+      "pancreatic-enzymes",
+      "thyroid"
+    ],
+    "books_cited": [
+      "lets-play-doctor",
+      "rare-earths"
+    ]
+  },
+  "oligospermia": {
+    "display_name": "Oligospermia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000386"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "ginseng",
+      "zumba"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "omphalocele": {
+    "display_name": "Omphalocele",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000387"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a",
+      "zinc"
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "rare-earths"
+      "lets-play-doctor"
     ]
   },
   "opiate_withdrawal": {
@@ -8950,6 +9012,23 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011"
+    ]
+  },
+  "umbilical_hernia": {
+    "display_name": "Umbilical Hernia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000387"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a",
+      "zinc"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "urinary_tract_infection": {
