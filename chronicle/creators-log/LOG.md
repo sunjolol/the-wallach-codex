@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_189 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
+_190 entries · deterministic render of log.jsonl · archive: [INDEX.md](INDEX.md)_
 
 ---
+
+## 2026-06-29 00:48 UTC-05:00 · session-end · chronicle
+SESSION 21 WRAPPED — Ch10 Materia Medica, 5 batches b53-b57 (MITRAL→OMPHALOCELE): M+N sections complete + the O's to OMPHALOCELE. LETS-366..387, 22 claims. corpus 745→767, conditions→383, kv→168. 8 meg→mcg fixes, 0 dangerous misprints. Handoff rolled to NEXT=b58.
+  ↳ SESSION 21 drove 5 round-close batches, all pushed (542338a b53, 19e9de2 b54, b963870 b55, 2b8f9c4 b56, 5c647de b57). Completed the M section (from MITRAL VALVE PROLAPSE), the ENTIRE N section, and the O's through OMPHALOCELE (printed p149-156). 1 editorial STOP: MOSQUITOES → SEARCH-ONLY. Honesty: caught + fixed a b53 page off-by-one (149→150) using the book's own INDEX as the page truth anchor; flagged a full page-locator audit for the final sweep. board 31/31 throughout, knowledge probe green. Handoff rolled forward: NEXT=b58 ORGANIC BRAIN SYNDROME (big behavioral entry, p156+). Recommend a fresh genesis reboot before b58.
 
 ## 2026-06-29 00:43 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b57 (Materia Medica, the O's pt 1, p155-156): 4 tier-1 protocol claims LETS-384..387 — obesity, airway_obstruction (choking first-aid), oligospermia, omphalocele (birth defect). ZERO meg→mcg (no .txt edit). corpus 763→767, kv 168, conditions→383, board 31/31.
