@@ -17144,6 +17144,198 @@
       "extracted_at": "2026-06-29T16:54:00+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000429",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "hydrogen-peroxide"
+      ],
+      "conditions": [
+        "sebaceous_cyst"
+      ],
+      "symptoms": [],
+      "claim_text": "A sebaceous cyst (wen, steatoma) is a slow-growing benign cystic skin 'tumor' containing sebaceous material, frequently found on the scalp (wen), ears, back, or scrotum; it ranges from pea- to golf-ball-sized, is firm (like a soft-shell egg), and painless. Treatment includes a 'stab' incision at the lowest edge of the cyst, evacuating the contents, and flushing with hydrogen peroxide; large cysts require removal of the cyst wall to prevent refilling, placing a sterile gauze drain in the empty cyst and gradually removing it over 7-10 days.",
+      "verbatim": "Treatment of a sebaceous cyst includes a\n\"stab\" incision at the lowest edge of the cyst;\nevacuate the contents; flush with hydrogen\nperoxide.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 167,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 452670
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T17:03:45+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000430",
+      "kind": "protocol",
+      "essentials": [
+        "biotin",
+        "vitamin-b9",
+        "vitamin-b6",
+        "vitamin-e",
+        "omega-3",
+        "vitamin-a",
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "seborrheic_dermatitis",
+        "dandruff"
+      ],
+      "symptoms": [],
+      "claim_text": "Seborrheic dermatitis (dandruff) is a scaling dermatitis of the scalp and face with normal sebum composition and amount; celiac-type intestinal lesions can be the underlying cause of a malabsorption syndrome. Treatment should include biotin at 100 mcg three times a day, folic acid at 15-25 mg per day, B-6 at 100 mg three times a day, vitamin E at 800-1,200 IU per day, essential fatty acids at 5 grams three times a day, vitamin A at 300,000 IU per day as beta carotene, zinc at 50 mg three times a day, and Selsun Blue shampoo topically.",
+      "verbatim": "Treatment of seborrheic dermatitis should in-\nclude biotin at 100 mcgt.i.d.,folicacidat 15-25\nmg per day, B-6 at 100 mg t.i.d., vitamin E at\n800-1,200 mg IU per day, essential fatty acids\nat 5 gm t.i.d., vitamin A at 300,000 IU per day\nas beta carotene, zinc at 50 mg t.i.d. and Selson\nBlue shampoo topically.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 168,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 453204
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T17:03:45+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000431",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-a",
+        "zinc",
+        "omega-3"
+      ],
+      "other_substances": [
+        "b-complex"
+      ],
+      "conditions": [
+        "keratosis"
+      ],
+      "symptoms": [],
+      "claim_text": "Shark skin (keratosis) is caused by a deficiency of vitamin A and zinc (usually from low-animal-protein diets) and is marked by cracks at the corners of the mouth (cheilosis), oral lesions often secondarily infected by Candida albicans (perleche), 'geographic' tongue, and hard granular plugs in the hair follicles that give a sandpaper-like surface. Treatment of shark skin and related skin problems should include B-complex at 50 mg three times a day, skin washes for dermatitis, vitamin A at 300,000 IU per day as beta carotene, zinc at 50 mg three times a day, and essential fatty acids at 5 grams three times a day.",
+      "verbatim": "Treatment of shark skin and related skin prob-\nlems should include B-complex at 50 mg t.i.d.\nand skin washes for dermatitis (see dermatitis),\nvitamin A at 300,000 IU per day as beta caro-\ntene, zinc at 50 mg t.i.d. and essential fatty\nacids at 5 gm t.i.d.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 168,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 454269
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T17:03:45+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000432",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "isoprinosine",
+        "sarsaparilla"
+      ],
+      "conditions": [
+        "shingles"
+      ],
+      "symptoms": [],
+      "claim_text": "Shingles (herpes zoster) is a chronic viral infection with the chicken pox virus, with symptoms including a very painful skin lesion. Treatment should include Isoprinosin at 500-1,500 mg per day, Dermese at 1 four times a day, and American sarsaparilla (Aralia nudicaulis) as a wash or poultice.",
+      "verbatim": "Treatment of shingles should include\nLsoprinosin at 500-1,500 mg per day and\nDermese at 1 q.i.d. and American sarsaparilla\n(Aralia nudicaulis) as a wash or poultice.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 168,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 454670
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T17:03:45+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000433",
+      "kind": "protocol",
+      "essentials": [
+        "omega-3",
+        "vitamin-a",
+        "zinc"
+      ],
+      "other_substances": [
+        "horsetail",
+        "pansy",
+        "quack-grass",
+        "soapwort",
+        "nettle",
+        "slippery-elm",
+        "globe-mallow"
+      ],
+      "conditions": [
+        "dermatitis"
+      ],
+      "symptoms": [],
+      "claim_text": "Skin ailments (dermatitis) are caused by a variety of diseases. Treatment of skin disease should include specific treatment for the underlying problem, homeopathy, essential fatty acids at 5 grams three times a day, vitamin A at 300,000 IU per day as beta carotene, zinc at 50 mg three times a day, and herbs including horsetail (Equisetum arvense), pansy (Viola tricolor), quack grass (Agropyron repens), soapwort (Saponaria officinalis), stinging nettle (Urtica dioica), slippery elm (Ulmus fulva), and globe mallow (Sphaeralcea spp.).",
+      "verbatim": "Treatment of skin disease should include spe-\ncific treatment for the underlying problem,\nhomeopathy, essential fatty acids at 5 gm t.i.d.,\nvitamin A at 300,000 IU per day as beta caro-\ntene, zinc at 50 mg t.i.d., essential fatty acids at\n5 gm t.i.d., and herbs including horsetail (Eq-\nuisetumarvense), pansy (Viola tricolor), Quack\ngrass (Agropyron repens), soap wort\n(Saponaria officinalis), stinging nettle (Urtica\ndioica), slippery elm (Ulmus fulva) and globe\nmallow (Sphaeralcea spp.).",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 168,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 454918
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T17:03:45+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

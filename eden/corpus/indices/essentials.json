@@ -2733,7 +2733,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 97,
+    "claim_count": 100,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2841,6 +2841,9 @@
         "WAL-CLM-LETS-000409",
         "WAL-CLM-LETS-000410",
         "WAL-CLM-LETS-000421",
+        "WAL-CLM-LETS-000430",
+        "WAL-CLM-LETS-000431",
+        "WAL-CLM-LETS-000433",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -3020,6 +3023,7 @@
     "interacts_with": [
       "arginine",
       "arsenic",
+      "biotin",
       "boron",
       "calcium",
       "choline",
@@ -3824,7 +3828,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 50,
+    "claim_count": 53,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -3879,7 +3883,10 @@
         "WAL-CLM-LETS-000402",
         "WAL-CLM-LETS-000409",
         "WAL-CLM-LETS-000410",
-        "WAL-CLM-LETS-000421"
+        "WAL-CLM-LETS-000421",
+        "WAL-CLM-LETS-000430",
+        "WAL-CLM-LETS-000431",
+        "WAL-CLM-LETS-000433"
       ],
       "toxicity_sign": [
         "WAL-CLM-LETS-000037"
@@ -3994,6 +4001,7 @@
       "pyorrhea",
       "quinsy",
       "ringworm",
+      "seborrheic_dermatitis",
       "spina_bifida",
       "stroke",
       "umbilical_hernia",
@@ -4001,6 +4009,7 @@
     ],
     "interacts_with": [
       "arginine",
+      "biotin",
       "calcium",
       "chromium",
       "copper",
@@ -4679,7 +4688,7 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 43,
+    "claim_count": 44,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000027",
@@ -4727,6 +4736,7 @@
         "WAL-CLM-LETS-000402",
         "WAL-CLM-LETS-000407",
         "WAL-CLM-LETS-000419",
+        "WAL-CLM-LETS-000430",
         "WAL-CLM-RARE-000286"
       ],
       "toxicity_sign": [
@@ -4872,6 +4882,7 @@
     ],
     "interacts_with": [
       "arginine",
+      "biotin",
       "calcium",
       "choline",
       "chromium",
@@ -4915,7 +4926,7 @@
     "display_name": "Folate",
     "canon_slug": "vitamin-b9",
     "category": "vitamin",
-    "claim_count": 21,
+    "claim_count": 22,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000042",
@@ -4942,7 +4953,8 @@
         "WAL-CLM-LETS-000359",
         "WAL-CLM-LETS-000365",
         "WAL-CLM-LETS-000401",
-        "WAL-CLM-LETS-000409"
+        "WAL-CLM-LETS-000409",
+        "WAL-CLM-LETS-000430"
       ]
     },
     "deficiency_signs": [
@@ -5001,6 +5013,7 @@
       "canker_sores",
       "cleft_palate",
       "crohns_disease",
+      "dandruff",
       "dementia",
       "diarrhea",
       "dumping_syndrome",
@@ -5018,10 +5031,12 @@
       "paranoia",
       "pilonidal_cyst",
       "psoriasis",
+      "seborrheic_dermatitis",
       "spina_bifida",
       "vitiligo"
     ],
     "interacts_with": [
+      "biotin",
       "calcium",
       "choline",
       "chromium",
@@ -5576,7 +5591,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 62,
+    "claim_count": 63,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -5648,6 +5663,7 @@
         "WAL-CLM-LETS-000415",
         "WAL-CLM-LETS-000421",
         "WAL-CLM-LETS-000427",
+        "WAL-CLM-LETS-000430",
         "WAL-CLM-RARE-000283"
       ]
     },
@@ -5781,12 +5797,14 @@
       "rheumatoid_arthritis",
       "ringworm",
       "scoliosis",
+      "seborrheic_dermatitis",
       "shingles",
       "stroke",
       "varicose_veins"
     ],
     "interacts_with": [
       "arginine",
+      "biotin",
       "calcium",
       "choline",
       "chromium",
@@ -5892,7 +5910,7 @@
     "display_name": "Biotin",
     "canon_slug": "biotin",
     "category": "vitamin",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000003",
@@ -5900,6 +5918,9 @@
       ],
       "dose": [
         "WAL-CLM-LETS-000045"
+      ],
+      "protocol": [
+        "WAL-CLM-LETS-000430"
       ]
     },
     "deficiency_signs": [
@@ -5959,13 +5980,22 @@
       "anemia",
       "anorexia",
       "blepharitis",
+      "dandruff",
       "depression",
       "diabetes",
       "eczema",
       "high_cholesterol",
-      "insomnia"
+      "insomnia",
+      "seborrheic_dermatitis"
     ],
-    "interacts_with": [],
+    "interacts_with": [
+      "omega-3",
+      "vitamin-a",
+      "vitamin-b6",
+      "vitamin-b9",
+      "vitamin-e",
+      "zinc"
+    ],
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
@@ -6619,7 +6649,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 73,
+    "claim_count": 76,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -6699,6 +6729,9 @@
         "WAL-CLM-LETS-000409",
         "WAL-CLM-LETS-000415",
         "WAL-CLM-LETS-000419",
+        "WAL-CLM-LETS-000430",
+        "WAL-CLM-LETS-000431",
+        "WAL-CLM-LETS-000433",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -6791,6 +6824,7 @@
       "infertility",
       "inflammation",
       "itching",
+      "keratosis",
       "keshan_disease",
       "kidney_disease",
       "learning_disabilities",
@@ -6816,11 +6850,13 @@
       "raynauds_disease",
       "rheumatoid_arthritis",
       "schizophrenia",
+      "seborrheic_dermatitis",
       "varicose_veins",
       "weight_loss"
     ],
     "interacts_with": [
       "arginine",
+      "biotin",
       "calcium",
       "choline",
       "chromium",

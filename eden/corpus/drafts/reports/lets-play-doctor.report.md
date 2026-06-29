@@ -1,54 +1,58 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_5 claim(s) drafted 2026-06-29T16:54:00+00:00. Review then run corpus_seal.py to promote._
+_5 claim(s) drafted 2026-06-29T17:03:45+00:00. Review then run corpus_seal.py to promote._
 
 Kinds: protocol×5
 
-### WAL-CLM-LETS-000424 · protocol
-- **essentials:** — · **conditions:** scabies · **symptoms:** —
-- **claim:** Scabies ('itch') is caused by an almost microscopic mite (Sarcoptes scabiei) that burrows into the skin; it is very contagious person-to-person, and the original infestation usually comes from an infected animal or contaminated animal bedding. Treatment includes total-body application of 1% gamma benzene hexachloride (lindane) or 25% benzyl benzoate cream in adults, and 5-10% sulfur ointment in infants to avoid potential neurotoxicity; poke (Phytolacca decandra) may be used topically as a natural alternative.
-- **verbatim** (offset 449249): “Treatment of scabies includes total body ap-
-plication of 1% gamma benzene hexachlo-
-ride, 25% benzyl benzoate cream in adults and
-5-10% sulfur ointment in infants to avoid po-
-tential neurotoxicity; poke (Phytolacca
-decandra) may be used topically as a natural
-alternative.”
+### WAL-CLM-LETS-000429 · protocol
+- **essentials:** — · **conditions:** sebaceous_cyst · **symptoms:** —
+- **claim:** A sebaceous cyst (wen, steatoma) is a slow-growing benign cystic skin 'tumor' containing sebaceous material, frequently found on the scalp (wen), ears, back, or scrotum; it ranges from pea- to golf-ball-sized, is firm (like a soft-shell egg), and painless. Treatment includes a 'stab' incision at the lowest edge of the cyst, evacuating the contents, and flushing with hydrogen peroxide; large cysts require removal of the cyst wall to prevent refilling, placing a sterile gauze drain in the empty cyst and gradually removing it over 7-10 days.
+- **verbatim** (offset 452670): “Treatment of a sebaceous cyst includes a
+"stab" incision at the lowest edge of the cyst;
+evacuate the contents; flush with hydrogen
+peroxide.”
 
-### WAL-CLM-LETS-000425 · protocol
-- **essentials:** — · **conditions:** scarlatina · **symptoms:** —
-- **claim:** Scarlatina (scarlet fever) is caused by a Streptococcus Group A throat infection; the organism releases a toxin that produces a rash most common on the belly, sides, and skin folds, plus a red pulpy 'strawberry' tongue, with fever common in the early stages. Aggressive treatment is recommended to prevent death or rheumatic fever, and diagnosis rests on the characteristic lesions plus positive Group A Streptococcus throat cultures. Treatment of scarlatina is oral penicillin V at 250 mg four times a day for 10-14 days.
-- **verbatim** (offset 450091): “Treatment of scarlatina is oral peni-cillin V at
-250 mg q.i.d. for 10-14 days.”
+### WAL-CLM-LETS-000430 · protocol
+- **essentials:** biotin, vitamin-b9, vitamin-b6, vitamin-e, omega-3, vitamin-a, zinc · **conditions:** seborrheic_dermatitis, dandruff · **symptoms:** —
+- **claim:** Seborrheic dermatitis (dandruff) is a scaling dermatitis of the scalp and face with normal sebum composition and amount; celiac-type intestinal lesions can be the underlying cause of a malabsorption syndrome. Treatment should include biotin at 100 mcg three times a day, folic acid at 15-25 mg per day, B-6 at 100 mg three times a day, vitamin E at 800-1,200 IU per day, essential fatty acids at 5 grams three times a day, vitamin A at 300,000 IU per day as beta carotene, zinc at 50 mg three times a day, and Selsun Blue shampoo topically.
+- **verbatim** (offset 453204): “Treatment of seborrheic dermatitis should in-
+clude biotin at 100 mcgt.i.d.,folicacidat 15-25
+mg per day, B-6 at 100 mg t.i.d., vitamin E at
+800-1,200 mg IU per day, essential fatty acids
+at 5 gm t.i.d., vitamin A at 300,000 IU per day
+as beta carotene, zinc at 50 mg t.i.d. and Selson
+Blue shampoo topically.”
 
-### WAL-CLM-LETS-000426 · protocol
-- **essentials:** calcium, magnesium · **conditions:** sciatica · **symptoms:** —
-- **claim:** Sciatica (low back pain radiating down the buttocks and legs) can be caused by subluxations of the lumbar vertebrae, thinning of a lumbar intervertebral disc, or even a thick wallet in one back pocket; in its most severe form it may result from a ruptured intervertebral disc. Treatment should include hydrotherapy, chiropractic, acupuncture, inversion-gravity therapy, calcium and magnesium at 2,000 mg and 1,000 mg per day, and the baseline nutritional supplement program including plant-derived colloidal minerals.
-- **verbatim** (offset 450508): “Treatment of sciatica should include hydro-
-therapy, chiropractic, acupuncture, inversion-
-gravity therapy, calcium and magnesium at
-2,000 mg per day and 1, 000 mgperday and the
-baseline nutritional supplement program to
-include plant derived colloidal minerals”
+### WAL-CLM-LETS-000431 · protocol
+- **essentials:** vitamin-a, zinc, omega-3 · **conditions:** keratosis · **symptoms:** —
+- **claim:** Shark skin (keratosis) is caused by a deficiency of vitamin A and zinc (usually from low-animal-protein diets) and is marked by cracks at the corners of the mouth (cheilosis), oral lesions often secondarily infected by Candida albicans (perleche), 'geographic' tongue, and hard granular plugs in the hair follicles that give a sandpaper-like surface. Treatment of shark skin and related skin problems should include B-complex at 50 mg three times a day, skin washes for dermatitis, vitamin A at 300,000 IU per day as beta carotene, zinc at 50 mg three times a day, and essential fatty acids at 5 grams three times a day.
+- **verbatim** (offset 454269): “Treatment of shark skin and related skin prob-
+lems should include B-complex at 50 mg t.i.d.
+and skin washes for dermatitis (see dermatitis),
+vitamin A at 300,000 IU per day as beta caro-
+tene, zinc at 50 mg t.i.d. and essential fatty
+acids at 5 gm t.i.d.”
 
-### WAL-CLM-LETS-000427 · protocol
-- **essentials:** vitamin-e, selenium, calcium, magnesium · **conditions:** scoliosis · **symptoms:** —
-- **claim:** Scoliosis (curvature of the spine) occurs in preteens and teens (80% in girls) during rapid growth; it may be benign or herald early muscular dystrophy, and Wallach attributes it to one set of spinal muscles being stronger than the other from muscle degeneration, with celiac-type intestinal damage and malabsorption as a possible cause. Treatment in the early stages can give a complete cure, while failure to aggressively supplement leads to persistent damage requiring back braces and surgery. Treatment should include avoidance of offending food allergens, vitamin E at 800-1,200 IU per day, selenium at 500-1,000 mcg per day, calcium and magnesium at 2,000 mg and 1,000 mg per day, and the baseline supplement program including plant-derived colloidal minerals; chiropractic can be very useful for the associated back-muscle spasms.
-- **verbatim** (offset 451540): “Treatment of scoliosis in the early stages will
-result in a complete cure; failure to aggres-
-sively take supplements will result in persis-
-tent damage requiring back braces and sur-
-gery. Treatment should include avoidance of
-offending food allergens, vitamin E at 800-
-1,200 IU per day, selenium at 500-1,000 mcg
-per day, calcium and magnesium at 2,000 mg
-and 1 ,000 mg per day”
+### WAL-CLM-LETS-000432 · protocol
+- **essentials:** — · **conditions:** shingles · **symptoms:** —
+- **claim:** Shingles (herpes zoster) is a chronic viral infection with the chicken pox virus, with symptoms including a very painful skin lesion. Treatment should include Isoprinosin at 500-1,500 mg per day, Dermese at 1 four times a day, and American sarsaparilla (Aralia nudicaulis) as a wash or poultice.
+- **verbatim** (offset 454670): “Treatment of shingles should include
+Lsoprinosin at 500-1,500 mg per day and
+Dermese at 1 q.i.d. and American sarsaparilla
+(Aralia nudicaulis) as a wash or poultice.”
 
-### WAL-CLM-LETS-000428 · protocol
-- **essentials:** vitamin-c · **conditions:** scurvy · **symptoms:** —
-- **claim:** Scurvy (bleeding gums) is caused by a vitamin C deficiency and may occur concurrently with gingivitis. Treatment should include vitamin C to bowel tolerance, increased intake of green leafy vegetables and fruit, and herbs including dog rose (Rosa canina).
-- **verbatim** (offset 452228): “Treatment of scurvy should include vitamin C
-to bowel tolerance, increase green leafy veg-
-etables and fruit intake, and herbs including
-dog rose (Rosa canina).”
+### WAL-CLM-LETS-000433 · protocol
+- **essentials:** omega-3, vitamin-a, zinc · **conditions:** dermatitis · **symptoms:** —
+- **claim:** Skin ailments (dermatitis) are caused by a variety of diseases. Treatment of skin disease should include specific treatment for the underlying problem, homeopathy, essential fatty acids at 5 grams three times a day, vitamin A at 300,000 IU per day as beta carotene, zinc at 50 mg three times a day, and herbs including horsetail (Equisetum arvense), pansy (Viola tricolor), quack grass (Agropyron repens), soapwort (Saponaria officinalis), stinging nettle (Urtica dioica), slippery elm (Ulmus fulva), and globe mallow (Sphaeralcea spp.).
+- **verbatim** (offset 454918): “Treatment of skin disease should include spe-
+cific treatment for the underlying problem,
+homeopathy, essential fatty acids at 5 gm t.i.d.,
+vitamin A at 300,000 IU per day as beta caro-
+tene, zinc at 50 mg t.i.d., essential fatty acids at
+5 gm t.i.d., and herbs including horsetail (Eq-
+uisetumarvense), pansy (Viola tricolor), Quack
+grass (Agropyron repens), soap wort
+(Saponaria officinalis), stinging nettle (Urtica
+dioica), slippery elm (Ulmus fulva) and globe
+mallow (Sphaeralcea spp.).”
 

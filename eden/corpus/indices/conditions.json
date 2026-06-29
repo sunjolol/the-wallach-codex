@@ -3361,16 +3361,19 @@
   },
   "dandruff": {
     "display_name": "Dandruff",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000242"
+        "WAL-CLM-LETS-000242",
+        "WAL-CLM-LETS-000430"
       ]
     },
     "essentials_involved": [
+      "biotin",
       "omega-3",
       "vitamin-a",
       "vitamin-b6",
+      "vitamin-b9",
       "vitamin-e",
       "zinc"
     ],
@@ -3598,7 +3601,7 @@
   },
   "dermatitis": {
     "display_name": "Dermatitis",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000008",
@@ -3612,7 +3615,8 @@
         "WAL-CLM-RARE-000236"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000245"
+        "WAL-CLM-LETS-000245",
+        "WAL-CLM-LETS-000433"
       ],
       "toxicity_signs": [
         "WAL-CLM-LETS-000007"
@@ -3635,8 +3639,15 @@
       "betaine-hcl",
       "colloidal-minerals",
       "digestive-enzymes",
+      "globe-mallow",
+      "horsetail",
+      "nettle",
       "paba",
-      "pulse-test"
+      "pansy",
+      "pulse-test",
+      "quack-grass",
+      "slippery-elm",
+      "soapwort"
     ],
     "books_cited": [
       "lets-play-doctor",
@@ -6304,17 +6315,21 @@
   },
   "keratosis": {
     "display_name": "Keratosis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000329"
+        "WAL-CLM-LETS-000329",
+        "WAL-CLM-LETS-000431"
       ]
     },
     "essentials_involved": [
+      "omega-3",
       "vitamin-a",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "b-complex"
+    ],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -9394,21 +9409,43 @@
       "rare-earths"
     ]
   },
+  "sebaceous_cyst": {
+    "display_name": "Sebaceous Cyst",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000429"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "hydrogen-peroxide"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "seborrheic_dermatitis": {
     "display_name": "Seborrheic Dermatitis",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000234",
         "WAL-CLM-RARE-000237"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000237"
+        "WAL-CLM-LETS-000237",
+        "WAL-CLM-LETS-000430"
       ]
     },
     "essentials_involved": [
+      "biotin",
+      "omega-3",
+      "vitamin-a",
       "vitamin-b2",
       "vitamin-b6",
+      "vitamin-b9",
+      "vitamin-e",
       "zinc"
     ],
     "other_substances_involved": [
@@ -9421,11 +9458,12 @@
   },
   "shingles": {
     "display_name": "Shingles",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "protocols": [
         "WAL-CLM-LETS-000215",
-        "WAL-CLM-LETS-000300"
+        "WAL-CLM-LETS-000300",
+        "WAL-CLM-LETS-000432"
       ]
     },
     "essentials_involved": [
@@ -9437,7 +9475,8 @@
     "other_substances_involved": [
       "caladryl",
       "isoprinosine",
-      "ribavirin"
+      "ribavirin",
+      "sarsaparilla"
     ],
     "books_cited": [
       "lets-play-doctor"
