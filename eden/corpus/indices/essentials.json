@@ -2264,7 +2264,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 83,
+    "claim_count": 84,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2354,6 +2354,7 @@
         "WAL-CLM-LETS-000417",
         "WAL-CLM-LETS-000419",
         "WAL-CLM-LETS-000427",
+        "WAL-CLM-LETS-000443",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
@@ -2471,6 +2472,7 @@
       "sickle_cell_anemia",
       "sids",
       "stroke",
+      "tachycardia",
       "white_muscle_disease"
     ],
     "interacts_with": [
@@ -4039,7 +4041,7 @@
     "display_name": "Thiamine",
     "canon_slug": "vitamin-b1",
     "category": "vitamin",
-    "claim_count": 17,
+    "claim_count": 18,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000043",
@@ -4062,6 +4064,7 @@
         "WAL-CLM-LETS-000377",
         "WAL-CLM-LETS-000394",
         "WAL-CLM-LETS-000396",
+        "WAL-CLM-LETS-000443",
         "WAL-CLM-RARE-000282"
       ]
     },
@@ -4193,6 +4196,7 @@
       "nervous_heart",
       "palpitations",
       "parkinsonism",
+      "tachycardia",
       "wernicke_korsakoff_syndrome"
     ],
     "interacts_with": [
@@ -4359,7 +4363,7 @@
     "display_name": "Niacin",
     "canon_slug": "vitamin-b3",
     "category": "vitamin",
-    "claim_count": 21,
+    "claim_count": 22,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000019",
@@ -4385,6 +4389,7 @@
         "WAL-CLM-LETS-000322",
         "WAL-CLM-LETS-000388",
         "WAL-CLM-LETS-000394",
+        "WAL-CLM-LETS-000443",
         "WAL-CLM-RARE-000282"
       ],
       "toxicity_sign": [
@@ -4495,7 +4500,8 @@
       "pellagra",
       "premenstrual_syndrome",
       "rheumatoid_arthritis",
-      "schizophrenia"
+      "schizophrenia",
+      "tachycardia"
     ],
     "interacts_with": [
       "arginine",

@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 202 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 203 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-29 12:36 UTC-05:00 · round-close · knowledge/corpus
+Ch10 b68: SWEAT TEST→TAPEWORMS (p169-170), LETS-440..444, 5 claims (1 def + 4 protocol). corpus 819→824, conds 422→426, kv 179. 1 meg→mcg fix (TACHYCARDIA, last-meg handoff claim corrected); SYPHILIS tier-1 clinical+faithful (Luneth). Board 31/31.
+  ↳ 5 claims: sweat_test (DEFINITION, tagged cystic_fibrosis — the CF diagnostic; verbatim = the EFA/prostaglandin mechanism sentence), swimmers_ear/syphilis/tachycardia/tapeworms NEW conds. SYPHILIS per Luneth's AskUserQuestion ruling = tier-1 clinical+faithful: the AIDS-association epidemiology (one study, 90% of AIDS patients among homosexual males) stated plainly/clinically in claim_text, verbatim byte-faithful (penicillin G 2.4M u IM). DOSE: 1 render-verified meg->mcg fix — TACHYCARDIA selenium L11294 (600-DPI zoom confirmed printed 'mcg'); unique target, length-preserving; fix_txt -> resnap (book hash 378f27e8->984267be, 0 relocated/healed/broken, LF bytes 517193 unchanged). HANDOFF CORRECTION (poison-the-future rule): the SESSION-23 pointer called L11294 'the LAST meg in the book' — FALSE; 6 more remain (L11405/L11450/L11478/L11546-47/L11612 in later T's = future batches, + L829 baseline table) -> corrected in the b69 NEXT pointer. New other-subs nystatin/male-fern; acupuncture/subliminal-tapes kept prose-only. Gates: build OK (1614.0 KB), invariants 31/31 (0 new reds), render_probe_knowledge PASS (0 page errors, conds rowCount 426). NEXT b69 = TARDIVE DYSKINESIA / TEETH DISCOLORATION / TEETHING / TESTICULAR ATROPHY / THALLIUM POISONING / THRUSH (the T's; expect several more selenium meg->mcg fixes).
 
 ## 2026-06-29 12:24 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b67: SORE THROAT→STROKE (p168-169), LETS-434..439, 6 tier-1 protocol claims. corpus 813→819, conds 417→422, kv 178. NO .txt edit; ACE='adrenal cortical extract' catch; STOMACH DISORDERS xref skip. Board 31/31.
@@ -801,7 +805,3 @@ Sacred Creator's Log: moved to chronicle/creators-log/ (log.jsonl + generated LO
 ## 2026-06-23 03:25 UTC · design-decision · tools
 Codified the two-layer logging model + the Creator's Log sacred covenant (append-only, never deleted even under broad delete-authorization, always truthful/complete, fires per-chunk). Audit found sacredness + never-skip not yet machine-enforced.
   ↳ Doctrine in .claude/rules/logging-doctrine.md. 3 enforcement guards proposed (git-anchored append-only invariant, round-close firing check, boundary delete-guard) pending Luneth's approval of the ledger file/folder structure.
-
-## 2026-06-23 03:09 UTC · session-end · meta
-Session checkpoint: cleanup A-C4 + logging-doctrine codified + Phase-2 L1 (Creator's-Log mirror, board 21/21). Handoff refreshed. Next: L2 Profile boot-merge → Journey J1-J4 → Palette.
-  ↳ 9 commits pushed c2826e9..(this). Every chunk build>test>log>committed. Creator's Log now CLI-fireable; this is a session-end entry through the live tool.

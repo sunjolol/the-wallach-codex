@@ -17565,6 +17565,187 @@
       "extracted_at": "2026-06-29T17:20:09+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000440",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "cystic_fibrosis"
+      ],
+      "symptoms": [],
+      "claim_text": "The sweat test is a nonspecific test that measures the amount of electrolytes (sodium, chlorides, and potassium) in sweat. It was originally meant to be a specific genetic test for cystic fibrosis, but today it is found to be positive in 17 different conditions, including food allergies, starvation, kwashiorkor, and celiac disease. The mechanism is related to essential fatty acid deficiencies and the resulting lack of certain prostaglandins (short-lived, hormone-like substances) that control sweat electrolyte levels.",
+      "verbatim": "The mechanism is related to essen-\ntial fatty acid deficiencies and thus the lack of\ncertain prostaglandins (short lived hormone -\n- like substances) which control sweat electro-\nlyte levels.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 169,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 459324
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T17:35:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000441",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "hydrogen-peroxide",
+        "nystatin"
+      ],
+      "conditions": [
+        "swimmers_ear"
+      ],
+      "symptoms": [],
+      "claim_text": "Swimmer's ear is usually caused by Candida albicans growing in the external ear canal, with constant dampness during the summer swimming season thought to be the underlying cause. Treatment includes hydrogen peroxide ear drops and/or Nystatin ear drops.",
+      "verbatim": "Treatment for swimmers ear include hydro-\ngen peroxide ear drops and/or Nystatin ear\ndrops.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 170,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 459697
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T17:35:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000442",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "penicillin"
+      ],
+      "conditions": [
+        "syphilis"
+      ],
+      "symptoms": [],
+      "claim_text": "Syphilis is a sexually transmitted disease caused by the spirochete Treponema pallidum; it has been associated with AIDS (in one study, 90% of AIDS patients among homosexual males also had syphilis). It is marked by active infection alternating with years of spontaneous remission. Symptoms include a primary lesion or chancre sore (on the penis, vulva, lips, or tongue) that may persist 3-4 months, skin rashes appearing after 3-4 months, and herpes-like sores; the disease can infect any organ, and tertiary syphilis occurs 10-25 years after the original infection. Diagnosis is made from a positive blood VDRL test. Treatment is specific in all stages: penicillin G at 2.4 million units intramuscularly, with a second treatment 10-14 days later. Like AIDS, syphilis is a reportable disease to the Public Health Service.",
+      "verbatim": "Treatment for syphilis is specific in all stages\nwith penicillin G at 2.4 million u IM with a\nsecond treatment 10-14 days later.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 170,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 460549
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T17:35:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000443",
+      "kind": "protocol",
+      "essentials": [
+        "selenium",
+        "vitamin-b1",
+        "vitamin-b3"
+      ],
+      "other_substances": [
+        "hawthorn",
+        "hops",
+        "lavender",
+        "motherwort",
+        "valerian",
+        "lily-of-the-valley"
+      ],
+      "conditions": [
+        "tachycardia"
+      ],
+      "symptoms": [],
+      "claim_text": "Tachycardia (rapid heartbeat) can be caused by 'nervous heart,' hyperthyroidism, food allergies, hypoglycemia, nutritional deficiencies (such as vitamin B-1, vitamin B-3, and selenium), poisons, and organic heart disease — a classic example being a reaction to monosodium glutamate ('Chinese Restaurant Syndrome'). Treatment should include identifying and treating the underlying cause, plus acupuncture, selenium at 500-1,000 mcg per day, vitamin B-1 (thiamine) at 100 mg three times a day, vitamin B-3 (niacin) at 450 mg three times a day as time-release tablets, subliminal relaxation tapes, and herbs including English hawthorn (Crataegus oxyacantha), hops (Humulus lupulus), lavender (Lavandula angustifolia), motherwort (Leonurus cardiaca), valerian (Valeriana officinalis), and lily-of-the-valley (Convallaria majalis).",
+      "verbatim": "Treatment of tachycardia should include the\nidentification and treatment of the underlying\ncause (see labora-tory and diagnostic section;\nacu-puncture, selenium at 500-1,000 mcg per\nday, B-l at 100 mg t.i.d., B-3 at 450 mg t.i.d. as\ntime release tablets",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 170,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 461082
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T17:35:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000444",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "niclosamide",
+        "garlic",
+        "male-fern",
+        "castor-oil"
+      ],
+      "conditions": [
+        "tapeworms"
+      ],
+      "symptoms": [],
+      "claim_text": "Tapeworms (cestodes) can live in the intestines without noticeable problems in a well-nourished person, but can cause wasting weight loss and anemia; they are contracted by eating contaminated watercress, raw fish, raw beef, or raw pork. Diagnosis may be made by seeing rice-like moving segments on the stool or eggs on microscopic examination. Treatment requires a single dose of niclosamide at 2 grams taken with a glass of water; recheck the stool in 3-6 months for reinfestation and retreat if needed. Helpful herbs include garlic (Allium sativum) and male fern (Dryopteris filix-mas); pretreating with a teaspoon of castor oil in the morning before treatment increases efficiency. Prevention relates to thoroughly cooking fish and meat and washing vegetables.",
+      "verbatim": "Treatment of tapeworms requires the use of a\nsingle dose of niclosamide at 2 gm taken with\na glass of water.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": "10",
+        "page": 170,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 462347
+      },
+      "dose": null,
+      "tags": [
+        "materia-medica",
+        "ch10"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-29T17:35:09+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

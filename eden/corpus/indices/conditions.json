@@ -3295,7 +3295,7 @@
   },
   "cystic_fibrosis": {
     "display_name": "Cystic Fibrosis",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000004",
@@ -3309,6 +3309,7 @@
       ],
       "definitions": [
         "WAL-CLM-LETS-000001",
+        "WAL-CLM-LETS-000440",
         "WAL-CLM-RARE-000049"
       ],
       "protocols": [
@@ -9745,6 +9746,83 @@
       "neomycin",
       "oak",
       "pasque-flower"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "swimmers_ear": {
+    "display_name": "Swimmers Ear",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000441"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "hydrogen-peroxide",
+      "nystatin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "syphilis": {
+    "display_name": "Syphilis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000442"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "penicillin"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "tachycardia": {
+    "display_name": "Tachycardia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000443"
+      ]
+    },
+    "essentials_involved": [
+      "selenium",
+      "vitamin-b1",
+      "vitamin-b3"
+    ],
+    "other_substances_involved": [
+      "hawthorn",
+      "hops",
+      "lavender",
+      "lily-of-the-valley",
+      "motherwort",
+      "valerian"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "tapeworms": {
+    "display_name": "Tapeworms",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000444"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "castor-oil",
+      "garlic",
+      "male-fern",
+      "niclosamide"
     ],
     "books_cited": [
       "lets-play-doctor"

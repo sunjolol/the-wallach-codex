@@ -1,70 +1,46 @@
 # Extraction report — lets-play-doctor (Let's Play Doctor)
 
-_6 claim(s) drafted 2026-06-29T17:20:09+00:00. Review then run corpus_seal.py to promote._
+_5 claim(s) drafted 2026-06-29T17:35:09+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: protocol×6
+Kinds: definition×1, protocol×4
 
-### WAL-CLM-LETS-000434 · protocol
-- **essentials:** — · **conditions:** sore_throat · **symptoms:** —
-- **claim:** Sore throat can be caused by a variety of viral and bacterial diseases; bacterial diseases (such as Streptococcus Group A) tend to produce a higher fever than sore throats caused by viral disease (such as upper respiratory infection, cold viruses, or flu). Treatment should include antibiotics as necessary for chronic Strep throat, plus herbs including flax (Linum usitatissimum), garden sage (Salvia officinalis), German chamomile (Matricaria chamomilla), marjoram (Origanum vulgare), marsh-mallow (Althaea officinalis), rosemary (Rosmarinus officinalis), eucalyptus (Eucalyptus globulus), myrtle (Myrica cerifera), and lobelia (Lobelia inflata).
-- **verbatim** (offset 455645): “Treatment of sore throats should include anti-
-biotics as necessary for chronic Strep throat
-and herbs including flax (Linum usitatissimum),
-garden sage (Salvia officinalis), German cha-
-momile (Matricaria chamomilla), marjoram
-(Origanum vulgare), marsh-mallow (Althaea
-officinalis), rosemary (Rosmarinus officinalis),
-eucalyptus (Eucalyptus globulus), myrtle
-(Myrica cerifera) and lobelia (Lobelia inflata).”
+### WAL-CLM-LETS-000440 · definition
+- **essentials:** — · **conditions:** cystic_fibrosis · **symptoms:** —
+- **claim:** The sweat test is a nonspecific test that measures the amount of electrolytes (sodium, chlorides, and potassium) in sweat. It was originally meant to be a specific genetic test for cystic fibrosis, but today it is found to be positive in 17 different conditions, including food allergies, starvation, kwashiorkor, and celiac disease. The mechanism is related to essential fatty acid deficiencies and the resulting lack of certain prostaglandins (short-lived, hormone-like substances) that control sweat electrolyte levels.
+- **verbatim** (offset 459324): “The mechanism is related to essen-
+tial fatty acid deficiencies and thus the lack of
+certain prostaglandins (short lived hormone -
+- like substances) which control sweat electro-
+lyte levels.”
 
-### WAL-CLM-LETS-000435 · protocol
-- **essentials:** — · **conditions:** sprain · **symptoms:** —
-- **claim:** A sprain is a painful stretching of the ligaments of the joints, caused by lifting, sudden stops or turns, or trauma; these injuries can be temporarily debilitating and locally painful. Treatment should include ice to reduce swelling as immediate first aid, wrapping with an Ace bandage for support (fingers may be taped to the adjoining fingers for added support), cartilage at 5 grams three times a day, betaine hydrochloride (betaine HCl) and pancreatic enzymes at 75-200 mg three times a day between meals, topical dimethyl sulfoxide (DMSO) and pain gels, and herbs including arnica (Arnica montana) and comfrey (Symphytum officinale).
-- **verbatim** (offset 456272): “Treatment of sprains include ice to reduce
-swelling as immediate first aid, wrap with an
-Ace bandage for support; fingers may be
-taped to the adjoining fingers for added sup-
-port; take cartilage at 5 gm t.i.d., betaine HC1
-and pancreatic enzymes at 75-200 mg t.i.d. in
-between meals; DMSO topically, pain gels
-topically, and herbs including arnica (Arnica
-montana) and comfrey (Symphytum
-officinale).”
+### WAL-CLM-LETS-000441 · protocol
+- **essentials:** — · **conditions:** swimmers_ear · **symptoms:** —
+- **claim:** Swimmer's ear is usually caused by Candida albicans growing in the external ear canal, with constant dampness during the summer swimming season thought to be the underlying cause. Treatment includes hydrogen peroxide ear drops and/or Nystatin ear drops.
+- **verbatim** (offset 459697): “Treatment for swimmers ear include hydro-
+gen peroxide ear drops and/or Nystatin ear
+drops.”
 
-### WAL-CLM-LETS-000436 · protocol
-- **essentials:** — · **conditions:** spider_bite · **symptoms:** —
-- **claim:** A spider bite produces swelling, local fever, and itching; brown recluse spider bites produce ulceration and require surgical removal. Treatment for spider bites should include soaking the bite wound in a bath prepared from 8-10 sunflowers (Helianthus annus) soaked for 30 minutes.
-- **verbatim** (offset 456809): “Treatment for spider bites should include soak-
-ing bite wound in a bath prepared from 8-10
-sunflowers
-(Helianthus annus) soaked for 30 minutes.”
+### WAL-CLM-LETS-000442 · protocol
+- **essentials:** — · **conditions:** syphilis · **symptoms:** —
+- **claim:** Syphilis is a sexually transmitted disease caused by the spirochete Treponema pallidum; it has been associated with AIDS (in one study, 90% of AIDS patients among homosexual males also had syphilis). It is marked by active infection alternating with years of spontaneous remission. Symptoms include a primary lesion or chancre sore (on the penis, vulva, lips, or tongue) that may persist 3-4 months, skin rashes appearing after 3-4 months, and herpes-like sores; the disease can infect any organ, and tertiary syphilis occurs 10-25 years after the original infection. Diagnosis is made from a positive blood VDRL test. Treatment is specific in all stages: penicillin G at 2.4 million units intramuscularly, with a second treatment 10-14 days later. Like AIDS, syphilis is a reportable disease to the Public Health Service.
+- **verbatim** (offset 460549): “Treatment for syphilis is specific in all stages
+with penicillin G at 2.4 million u IM with a
+second treatment 10-14 days later.”
 
-### WAL-CLM-LETS-000437 · protocol
-- **essentials:** — · **conditions:** strain · **symptoms:** —
-- **claim:** A strain is more severe than a sprain and is characterized by torn ligaments and a torn joint capsule with bleeding and swelling — a very painful joint trauma that frequently requires a cast, similar to a fracture, to immobilize and rest the injured joint. Emergency treatment should include ice to reduce swelling, dimethyl sulfoxide (DMSO), pain gels, betaine hydrochloride (betaine HCl) and pancreatic enzymes at 75-200 mg three times a day between meals, and herbs including arnica (Arnica montana), comfrey (Symphytum officinale), and lavender (Lavandula spp.). A cast and crutches are appropriate to provide support and rest.
-- **verbatim** (offset 457285): “Treatment ofstrains should include ice, DMSO,
-pain gels, betaine HCl and pancreatic en-
-zymes at 75-200 mg t.i.d. between meals and
-herbs including arnica (Arnica montana), com-
-frey (Symphytum officinale) and lavender
-(Lavandula spp.). A cast and crutches are
-appropriate to provide support and rest.”
+### WAL-CLM-LETS-000443 · protocol
+- **essentials:** selenium, vitamin-b1, vitamin-b3 · **conditions:** tachycardia · **symptoms:** —
+- **claim:** Tachycardia (rapid heartbeat) can be caused by 'nervous heart,' hyperthyroidism, food allergies, hypoglycemia, nutritional deficiencies (such as vitamin B-1, vitamin B-3, and selenium), poisons, and organic heart disease — a classic example being a reaction to monosodium glutamate ('Chinese Restaurant Syndrome'). Treatment should include identifying and treating the underlying cause, plus acupuncture, selenium at 500-1,000 mcg per day, vitamin B-1 (thiamine) at 100 mg three times a day, vitamin B-3 (niacin) at 450 mg three times a day as time-release tablets, subliminal relaxation tapes, and herbs including English hawthorn (Crataegus oxyacantha), hops (Humulus lupulus), lavender (Lavandula angustifolia), motherwort (Leonurus cardiaca), valerian (Valeriana officinalis), and lily-of-the-valley (Convallaria majalis).
+- **verbatim** (offset 461082): “Treatment of tachycardia should include the
+identification and treatment of the underlying
+cause (see labora-tory and diagnostic section;
+acu-puncture, selenium at 500-1,000 mcg per
+day, B-l at 100 mg t.i.d., B-3 at 450 mg t.i.d. as
+time release tablets”
 
-### WAL-CLM-LETS-000438 · protocol
-- **essentials:** vitamin-c, zinc · **conditions:** stress · **symptoms:** —
-- **claim:** Stress is the body's reaction to stressors (such as overwork, money problems, or marriage problems). The adrenals in particular suffer from stress, lowering the immune system's ability to protect against infection and cancer and disturbing the entire endocrine system, including energy management (blood sugar, blood pressure, thyroid). Treatment should include relaxation, subliminal distress audio tapes, sublingual adrenal cortical extract (ACE) drops at 5-10 drops three times a day, vitamin C to bowel tolerance, zinc at 50 mg three times a day, and learning to compartmentalize one's time across about 20 projects spanning work, family, and hobbies.
-- **verbatim** (offset 458002): “Treatment of stress should include relaxation,
-subliminal distress audio tapes, sublingual
-ACE drops at 5-10 drops t.i.d., vitamin C to
-bowel tolerance, zinc at 50 mg t.i.d.”
-
-### WAL-CLM-LETS-000439 · protocol
-- **essentials:** omega-3 · **conditions:** stroke · **symptoms:** —
-- **claim:** A stroke (cerebrovascular accident) is the result of a blood clot or tumor blocking an artery supplying the brain, causing local brain tissue death from lack of oxygen and nourishment. If the damaged area is small enough and not in a vital area, the brain will reroute its functions to unused portions through a relearning and compensation process. Treatment should include EDTA chelation and intravenous hydrogen peroxide as soon as possible, essential fatty acids at 5 grams three times a day, exercise, and the baseline nutritional supplement program including plant-derived colloidal minerals.
-- **verbatim** (offset 458744): “Treatment of stroke should include EDTA
-chelation and IV hydrogen peroxide as soon
-as possible, essential fatty acids at 5 gm t.i.d.,
-exercise and the base line nutritional supple-
-ment program to include plant derived colloi-
-dal minerals.”
+### WAL-CLM-LETS-000444 · protocol
+- **essentials:** — · **conditions:** tapeworms · **symptoms:** —
+- **claim:** Tapeworms (cestodes) can live in the intestines without noticeable problems in a well-nourished person, but can cause wasting weight loss and anemia; they are contracted by eating contaminated watercress, raw fish, raw beef, or raw pork. Diagnosis may be made by seeing rice-like moving segments on the stool or eggs on microscopic examination. Treatment requires a single dose of niclosamide at 2 grams taken with a glass of water; recheck the stool in 3-6 months for reinfestation and retreat if needed. Helpful herbs include garlic (Allium sativum) and male fern (Dryopteris filix-mas); pretreating with a teaspoon of castor oil in the morning before treatment increases efficiency. Prevention relates to thoroughly cooking fish and meat and washing vegetables.
+- **verbatim** (offset 462347): “Treatment of tapeworms requires the use of a
+single dose of niclosamide at 2 gm taken with
+a glass of water.”
 
