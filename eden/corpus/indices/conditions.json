@@ -304,10 +304,11 @@
   },
   "alcoholism": {
     "display_name": "Alcoholism",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000127"
+        "WAL-CLM-LETS-000127",
+        "WAL-CLM-LETS-000388"
       ]
     },
     "essentials_involved": [
@@ -317,10 +318,14 @@
       "magnesium",
       "omega-3",
       "phenylalanine",
-      "vitamin-b6"
+      "vitamin-b3",
+      "vitamin-b6",
+      "zinc"
     ],
     "other_substances_involved": [
-      "catechin"
+      "betaine-hcl",
+      "catechin",
+      "pancreatic-enzymes"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3415,7 +3420,7 @@
   },
   "dementia": {
     "display_name": "Dementia",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000034",
@@ -3427,6 +3432,7 @@
       "protocols": [
         "WAL-CLM-LETS-000243",
         "WAL-CLM-LETS-000356",
+        "WAL-CLM-LETS-000388",
         "WAL-CLM-RARE-000282"
       ]
     },
@@ -3439,6 +3445,7 @@
       "germanium",
       "lithium",
       "magnesium",
+      "omega-3",
       "oxygen",
       "selenium",
       "vanadium",
@@ -3501,7 +3508,7 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 32,
+    "claim_count": 33,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000161"
@@ -3543,6 +3550,7 @@
       ],
       "protocols": [
         "WAL-CLM-LETS-000244",
+        "WAL-CLM-LETS-000388",
         "WAL-CLM-RARE-000278"
       ],
       "toxicity_signs": [
@@ -3575,9 +3583,11 @@
       "zinc"
     ],
     "other_substances_involved": [
+      "betaine-hcl",
       "blood-therapy",
       "colloidal-minerals",
       "paba",
+      "pancreatic-enzymes",
       "pulse-test",
       "urine-therapy"
     ],
@@ -3635,7 +3645,7 @@
   },
   "diabetes": {
     "display_name": "Diabetes",
-    "claim_count": 23,
+    "claim_count": 24,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-DDDL-000008"
@@ -3673,6 +3683,7 @@
         "WAL-CLM-DDDL-000048",
         "WAL-CLM-DDDL-000049",
         "WAL-CLM-LETS-000246",
+        "WAL-CLM-LETS-000388",
         "WAL-CLM-RARE-000280"
       ],
       "quotes": [
@@ -3707,6 +3718,7 @@
       "jerusalem-artichoke",
       "lecithin",
       "licorice",
+      "pancreatic-enzymes",
       "quercetin",
       "yarrow"
     ],
@@ -4034,14 +4046,17 @@
   },
   "earache": {
     "display_name": "Earache",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000260"
+        "WAL-CLM-LETS-000260",
+        "WAL-CLM-LETS-000392"
       ]
     },
     "essentials_involved": [],
     "other_substances_involved": [
+      "acetaminophen",
+      "aspirin",
       "hydrogen-peroxide",
       "mullein",
       "urine-therapy",
@@ -5401,14 +5416,18 @@
   },
   "hyperkinesis": {
     "display_name": "Hyperkinesis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
-        "WAL-CLM-LETS-000305"
+        "WAL-CLM-LETS-000305",
+        "WAL-CLM-LETS-000388"
       ]
     },
     "essentials_involved": [
-      "chromium"
+      "chromium",
+      "omega-3",
+      "vitamin-b3",
+      "zinc"
     ],
     "other_substances_involved": [
       "b-complex",
@@ -5512,7 +5531,7 @@
   },
   "hypoglycemia": {
     "display_name": "Hypoglycemia",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000254"
@@ -5536,14 +5555,17 @@
         "WAL-CLM-DDDL-000046"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000307"
+        "WAL-CLM-LETS-000307",
+        "WAL-CLM-LETS-000388"
       ]
     },
     "essentials_involved": [
       "chromium",
       "copper",
       "manganese",
+      "omega-3",
       "vanadium",
+      "vitamin-b3",
       "zinc"
     ],
     "other_substances_involved": [
@@ -6616,7 +6638,7 @@
   },
   "learning_disabilities": {
     "display_name": "Learning Disabilities",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "definitions": [
         "WAL-CLM-RARE-000116",
@@ -6624,16 +6646,25 @@
       ],
       "prognosis": [
         "WAL-CLM-RARE-000215"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000388"
       ]
     },
     "essentials_involved": [
       "chromium",
-      "copper"
+      "copper",
+      "omega-3",
+      "vitamin-b3",
+      "zinc"
     ],
     "other_substances_involved": [
-      "lead"
+      "betaine-hcl",
+      "lead",
+      "pancreatic-enzymes"
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -7764,6 +7795,65 @@
       "lets-play-doctor"
     ]
   },
+  "organic_brain_syndrome": {
+    "display_name": "Organic Brain Syndrome",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000388"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "omega-3",
+      "vitamin-b3",
+      "zinc"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "pancreatic-enzymes"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "ornithosis": {
+    "display_name": "Ornithosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000389"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "codeine",
+      "tetracycline"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "osteitis_fibrosa": {
+    "display_name": "Osteitis Fibrosa",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000390"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "pancreatic-enzymes"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "osteoarthritis": {
     "display_name": "Osteoarthritis",
     "claim_count": 2,
@@ -7809,7 +7899,7 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 23,
+    "claim_count": 24,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052",
@@ -7850,7 +7940,8 @@
         "WAL-CLM-DDDL-000058"
       ],
       "protocols": [
-        "WAL-CLM-DDDL-000060"
+        "WAL-CLM-DDDL-000060",
+        "WAL-CLM-LETS-000391"
       ],
       "quotes": [
         "WAL-CLM-DDDL-000059"
@@ -7877,7 +7968,10 @@
       "zinc"
     ],
     "other_substances_involved": [
-      "fluoride"
+      "betaine-hcl",
+      "colloidal-minerals",
+      "fluoride",
+      "pancreatic-enzymes"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -7903,16 +7997,45 @@
   },
   "otitis": {
     "display_name": "Otitis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "prevalence": [
         "WAL-CLM-DDDL-000062"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000392"
       ]
     },
     "essentials_involved": [],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "acetaminophen",
+      "aspirin",
+      "hydrogen-peroxide",
+      "mullein"
+    ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "lets-play-doctor"
+    ]
+  },
+  "pagets_disease": {
+    "display_name": "Pagets Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000390"
+      ]
+    },
+    "essentials_involved": [
+      "calcium",
+      "magnesium"
+    ],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "pancreatic-enzymes"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "pancreatitis": {
@@ -7958,7 +8081,7 @@
   },
   "paranoia": {
     "display_name": "Paranoia",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000010",
@@ -7967,13 +8090,22 @@
       ],
       "diagnostics": [
         "WAL-CLM-LETS-000081"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000388"
       ]
     },
     "essentials_involved": [
+      "chromium",
+      "omega-3",
+      "vitamin-b3",
       "vitamin-b9",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "pancreatic-enzymes"
+    ],
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
@@ -8039,17 +8171,27 @@
   },
   "pellagra": {
     "display_name": "Pellagra",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000235"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000388"
       ]
     },
     "essentials_involved": [
-      "vitamin-b3"
+      "chromium",
+      "omega-3",
+      "vitamin-b3",
+      "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "pancreatic-enzymes"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -8252,17 +8394,28 @@
   },
   "premenstrual_syndrome": {
     "display_name": "Premenstrual Syndrome",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "definitions": [
         "WAL-CLM-RARE-000105"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000388"
       ]
     },
     "essentials_involved": [
-      "calcium"
+      "calcium",
+      "chromium",
+      "omega-3",
+      "vitamin-b3",
+      "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "pancreatic-enzymes"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -8552,13 +8705,16 @@
   },
   "schizophrenia": {
     "display_name": "Schizophrenia",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "contraindications": [
         "WAL-CLM-RARE-000175"
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000081"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000388"
       ]
     },
     "essentials_involved": [
@@ -8566,10 +8722,17 @@
       "copper",
       "iron",
       "manganese",
-      "vanadium"
+      "omega-3",
+      "vanadium",
+      "vitamin-b3",
+      "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "pancreatic-enzymes"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },

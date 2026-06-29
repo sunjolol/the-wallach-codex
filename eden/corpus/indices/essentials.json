@@ -288,7 +288,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 69,
+    "claim_count": 71,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -362,6 +362,8 @@
         "WAL-CLM-LETS-000379",
         "WAL-CLM-LETS-000382",
         "WAL-CLM-LETS-000383",
+        "WAL-CLM-LETS-000390",
+        "WAL-CLM-LETS-000391",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -529,7 +531,9 @@
       "neuralgia",
       "neuropathy",
       "nosebleeds",
+      "osteitis_fibrosa",
       "osteoporosis",
+      "pagets_disease",
       "panic_attacks",
       "periodontal_disease",
       "rheumatoid_arthritis",
@@ -946,7 +950,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 78,
+    "claim_count": 80,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1033,6 +1037,8 @@
         "WAL-CLM-LETS-000379",
         "WAL-CLM-LETS-000382",
         "WAL-CLM-LETS-000383",
+        "WAL-CLM-LETS-000390",
+        "WAL-CLM-LETS-000391",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1160,9 +1166,11 @@
       "neuralgia",
       "neuropathy",
       "nosebleeds",
+      "osteitis_fibrosa",
       "osteoarthritis",
       "osteomalacia",
       "osteoporosis",
+      "pagets_disease",
       "panic_attacks",
       "peptic_ulcers",
       "periodontal_disease",
@@ -1228,7 +1236,7 @@
     "display_name": "Boron",
     "canon_slug": "boron",
     "category": "mineral",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000275"
@@ -1238,6 +1246,7 @@
         "WAL-CLM-RARE-000099"
       ],
       "protocol": [
+        "WAL-CLM-LETS-000391",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000284"
       ]
@@ -1269,6 +1278,7 @@
       "zinc"
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1303,7 +1313,7 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 57,
+    "claim_count": 58,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -1373,6 +1383,7 @@
         "WAL-CLM-LETS-000334",
         "WAL-CLM-LETS-000356",
         "WAL-CLM-LETS-000381",
+        "WAL-CLM-LETS-000388",
         "WAL-CLM-RARE-000276",
         "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
@@ -1466,10 +1477,14 @@
       "liver_disease",
       "memory_loss",
       "night_terrors",
+      "organic_brain_syndrome",
       "osteoporosis",
       "panic_attacks",
+      "paranoia",
+      "pellagra",
       "peptic_ulcers",
       "peripheral_neuropathy",
+      "premenstrual_syndrome",
       "schizophrenia",
       "violent_behavior"
     ],
@@ -2678,7 +2693,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 91,
+    "claim_count": 92,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -2780,6 +2795,7 @@
         "WAL-CLM-LETS-000380",
         "WAL-CLM-LETS-000383",
         "WAL-CLM-LETS-000387",
+        "WAL-CLM-LETS-000388",
         "WAL-CLM-RARE-000045",
         "WAL-CLM-RARE-000280"
       ]
@@ -2857,6 +2873,7 @@
       "adrenal_exhaustion",
       "ageusia",
       "aids",
+      "alcoholism",
       "allergies",
       "alopecia",
       "amenorrhea",
@@ -2911,6 +2928,7 @@
       "heart_defects",
       "herpes_simplex",
       "high_cholesterol",
+      "hyperkinesis",
       "hypertension",
       "hypoglycemia",
       "hypogonadism",
@@ -2925,16 +2943,21 @@
       "itching",
       "keratomalacia",
       "keratosis",
+      "learning_disabilities",
       "malabsorption",
       "meningocele",
       "miscarriage",
       "night_blindness",
       "omphalocele",
+      "organic_brain_syndrome",
       "osteoporosis",
       "paranoia",
+      "pellagra",
+      "premenstrual_syndrome",
       "pruritus",
       "psoriasis",
       "rheumatoid_arthritis",
+      "schizophrenia",
       "seborrheic_dermatitis",
       "shingles",
       "spina_bifida",
@@ -4252,7 +4275,7 @@
     "display_name": "Niacin",
     "canon_slug": "vitamin-b3",
     "category": "vitamin",
-    "claim_count": 19,
+    "claim_count": 20,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000019",
@@ -4276,6 +4299,7 @@
         "WAL-CLM-LETS-000293",
         "WAL-CLM-LETS-000310",
         "WAL-CLM-LETS-000322",
+        "WAL-CLM-LETS-000388",
         "WAL-CLM-RARE-000282"
       ],
       "toxicity_sign": [
@@ -4355,6 +4379,7 @@
       }
     ],
     "conditions_treated": [
+      "alcoholism",
       "anorexia",
       "anxiety",
       "arthritis",
@@ -4372,12 +4397,19 @@
       "elevated_cholesterol",
       "geographic_tongue",
       "headache",
+      "hyperkinesis",
+      "hypoglycemia",
       "hysteria",
       "insomnia",
+      "learning_disabilities",
       "liver_disease",
+      "organic_brain_syndrome",
       "panic_attacks",
+      "paranoia",
       "pellagra",
-      "rheumatoid_arthritis"
+      "premenstrual_syndrome",
+      "rheumatoid_arthritis",
+      "schizophrenia"
     ],
     "interacts_with": [
       "arginine",
@@ -6419,7 +6451,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 66,
+    "claim_count": 67,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -6492,6 +6524,7 @@
         "WAL-CLM-LETS-000373",
         "WAL-CLM-LETS-000379",
         "WAL-CLM-LETS-000384",
+        "WAL-CLM-LETS-000388",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
       ]
@@ -6557,6 +6590,7 @@
       "chorea",
       "cystic_fibrosis",
       "dandruff",
+      "dementia",
       "depression",
       "dermatitis",
       "diabetes",
@@ -6575,7 +6609,9 @@
       "hangnails",
       "headache",
       "heart_attack",
+      "hyperkinesis",
       "hypertension",
+      "hypoglycemia",
       "hysteria",
       "incontinence",
       "infertility",
@@ -6583,6 +6619,7 @@
       "itching",
       "keshan_disease",
       "kidney_disease",
+      "learning_disabilities",
       "liver_cirrhosis",
       "liver_disease",
       "lupus",
@@ -6594,8 +6631,13 @@
       "neuralgia",
       "neuropathy",
       "obesity",
+      "organic_brain_syndrome",
+      "paranoia",
+      "pellagra",
+      "premenstrual_syndrome",
       "pruritus",
       "psoriasis",
+      "schizophrenia",
       "weight_loss"
     ],
     "interacts_with": [

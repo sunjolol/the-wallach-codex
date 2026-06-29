@@ -1,16 +1,19 @@
 {
   "acetaminophen": {
     "display_name": "Acetaminophen",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000274",
-        "WAL-CLM-LETS-000293"
+        "WAL-CLM-LETS-000293",
+        "WAL-CLM-LETS-000392"
       ]
     },
     "conditions_treated": [
+      "earache",
       "fever",
-      "headache"
+      "headache",
+      "otitis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -389,16 +392,19 @@
   },
   "aspirin": {
     "display_name": "Aspirin",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000274",
-        "WAL-CLM-LETS-000293"
+        "WAL-CLM-LETS-000293",
+        "WAL-CLM-LETS-000392"
       ]
     },
     "conditions_treated": [
+      "earache",
       "fever",
-      "headache"
+      "headache",
+      "otitis"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -568,7 +574,7 @@
   },
   "betaine-hcl": {
     "display_name": "Betaine Hcl",
-    "claim_count": 43,
+    "claim_count": 46,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -613,12 +619,16 @@
         "WAL-CLM-LETS-000364",
         "WAL-CLM-LETS-000371",
         "WAL-CLM-LETS-000374",
-        "WAL-CLM-LETS-000384"
+        "WAL-CLM-LETS-000384",
+        "WAL-CLM-LETS-000388",
+        "WAL-CLM-LETS-000390",
+        "WAL-CLM-LETS-000391"
       ]
     },
     "conditions_treated": [
       "achlorhydria",
       "acne",
+      "alcoholism",
       "alopecia",
       "als",
       "alzheimers",
@@ -635,6 +645,7 @@
       "cardiovascular_disease",
       "colic",
       "dementia",
+      "depression",
       "dermatitis",
       "diabetes",
       "dyslexia",
@@ -660,12 +671,21 @@
       "infertility",
       "irritable_bowel_syndrome",
       "korsakoffs_syndrome",
+      "learning_disabilities",
       "menopause",
       "migraine",
       "multiple_sclerosis",
       "muscle_cramps",
       "obesity",
+      "organic_brain_syndrome",
+      "osteitis_fibrosa",
+      "osteoporosis",
+      "pagets_disease",
+      "paranoia",
+      "pellagra",
+      "premenstrual_syndrome",
       "psoriasis",
+      "schizophrenia",
       "stroke"
     ],
     "books_cited": [
@@ -1496,6 +1516,21 @@
       "lets-play-doctor"
     ]
   },
+  "codeine": {
+    "display_name": "Codeine",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000389"
+      ]
+    },
+    "conditions_treated": [
+      "ornithosis"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "colchicine": {
     "display_name": "Colchicine",
     "claim_count": 1,
@@ -1513,7 +1548,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 38,
+    "claim_count": 39,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-LETS-000352"
@@ -1555,7 +1590,8 @@
         "WAL-CLM-LETS-000373",
         "WAL-CLM-LETS-000374",
         "WAL-CLM-LETS-000383",
-        "WAL-CLM-LETS-000384"
+        "WAL-CLM-LETS-000384",
+        "WAL-CLM-LETS-000391"
       ]
     },
     "conditions_treated": [
@@ -1604,6 +1640,7 @@
       "muscle_cramps",
       "muscular_dystrophy",
       "obesity",
+      "osteoporosis",
       "periodontal_disease",
       "plumbism",
       "rheumatoid_arthritis",
@@ -3176,7 +3213,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 33,
+    "claim_count": 34,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000118",
@@ -3211,7 +3248,8 @@
         "WAL-CLM-LETS-000318",
         "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000345",
-        "WAL-CLM-LETS-000349"
+        "WAL-CLM-LETS-000349",
+        "WAL-CLM-LETS-000392"
       ]
     },
     "conditions_treated": [
@@ -3247,6 +3285,7 @@
       "intermittent_claudication",
       "korsakoffs_syndrome",
       "leukorrhea",
+      "otitis",
       "periodontal_disease",
       "rheumatoid_arthritis",
       "stroke",
@@ -4178,14 +4217,15 @@
   },
   "mullein": {
     "display_name": "Mullein",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000163",
         "WAL-CLM-LETS-000235",
         "WAL-CLM-LETS-000260",
         "WAL-CLM-LETS-000277",
-        "WAL-CLM-LETS-000372"
+        "WAL-CLM-LETS-000372",
+        "WAL-CLM-LETS-000392"
       ]
     },
     "conditions_treated": [
@@ -4194,6 +4234,7 @@
       "cough",
       "earache",
       "mumps",
+      "otitis",
       "tonsillitis"
     ],
     "books_cited": [
@@ -4470,7 +4511,7 @@
   },
   "pancreatic-enzymes": {
     "display_name": "Pancreatic Enzymes",
-    "claim_count": 36,
+    "claim_count": 39,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000123",
@@ -4508,11 +4549,15 @@
         "WAL-CLM-LETS-000364",
         "WAL-CLM-LETS-000371",
         "WAL-CLM-LETS-000374",
-        "WAL-CLM-LETS-000384"
+        "WAL-CLM-LETS-000384",
+        "WAL-CLM-LETS-000388",
+        "WAL-CLM-LETS-000390",
+        "WAL-CLM-LETS-000391"
       ]
     },
     "conditions_treated": [
       "acne",
+      "alcoholism",
       "alopecia",
       "als",
       "alzheimers",
@@ -4527,6 +4572,8 @@
       "cardiovascular_disease",
       "colic",
       "dementia",
+      "depression",
+      "diabetes",
       "dyspepsia",
       "eczema",
       "enuresis",
@@ -4548,12 +4595,21 @@
       "inflammation",
       "irritable_bowel_syndrome",
       "korsakoffs_syndrome",
+      "learning_disabilities",
       "menopause",
       "migraine",
       "multiple_sclerosis",
       "muscle_cramps",
       "obesity",
+      "organic_brain_syndrome",
+      "osteitis_fibrosa",
+      "osteoporosis",
+      "pagets_disease",
+      "paranoia",
+      "pellagra",
+      "premenstrual_syndrome",
       "psoriasis",
+      "schizophrenia",
       "stroke"
     ],
     "books_cited": [
@@ -5752,14 +5808,15 @@
   },
   "tetracycline": {
     "display_name": "Tetracycline",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
         "WAL-CLM-LETS-000338",
         "WAL-CLM-LETS-000343",
         "WAL-CLM-LETS-000349",
-        "WAL-CLM-LETS-000351"
+        "WAL-CLM-LETS-000351",
+        "WAL-CLM-LETS-000389"
       ]
     },
     "conditions_treated": [
@@ -5767,6 +5824,7 @@
       "laryngitis",
       "leptospirosis",
       "lyme_disease",
+      "ornithosis",
       "rheumatoid_arthritis",
       "tetanus",
       "weils_disease"
