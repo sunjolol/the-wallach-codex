@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 221 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 222 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 16:26 UTC-05:00 · round-close · knowledge/corpus
+SESSION 28 b5 - Epigenetics Ch 18 water-soluble vitamins. EPIGEN-035..046 (+12 deficiency_sign): B1/B2/B3/B5/B6/B12/B9/C + biotin/choline/inositol/flavonoids, each function + deficiency list. kv195, claims 927, conditions 456 (0 new). Visual-verify owed before b6.
+  ↳ Comprehensive tier-1 batched per Luneth's ruling; all 12 map to existing conditions (no new). No .txt edits (clean list bodies cited, OCR-garbled headers left for the final sweep). Board 31/31 (0 NEW), search-only unchanged 98, probe green. The b4-fix synopsis auto-fires for newly-enriched conditions. Awaiting visual sign-off before b6 (amino acids + fatty acids).
 
 ## 2026-06-30 16:18 UTC-05:00 · design-decision · views/knowledge
 SESSION 28 b4-fix - Condition deep-view synopsis (Luneth UX): the deep view now opens with a condition-first sentence (e.g. 'Wallach links Uterine Fibroids to a deficiency of Vitamin D') before the nutrient breakdown. Familiar vitamin names, views-only. Visually verified.
@@ -801,7 +805,3 @@ Phase β.2: claim voice locked (neutral declarative, Luneth-approved) + dose kin
 ## 2026-06-24 13:14 UTC-04:00 · round-close · eden/corpus
 Phase β.1: DDDL extraction pipeline live + first 10 claims sealed (knowledge_version=4). corpus_extract.py finalize snaps agent-authored verbatims to exact book bytes; corpus_verify proves every verbatim is a real book substring. Board 29/29. Stop for format review.
   ↳ Agent-in-the-loop extraction proven end-to-end on DDDL: 10 claims across 6 kinds (deficiency_sign×3, mechanism×2, prevalence×2, prognosis, personal_anecdote, quote) — selenium/copper/calcium/chromium/vanadium deficiency-disease claims + the 1895-JAMA doctor-lifespan hook + plant-derived-colloidal-minerals framing. Pipeline: I author kind/slugs/claim_text/verbatim → corpus_extract.py finalize snaps verbatim to exact book bytes (whitespace-collapse + quote/dash fold + index map), assigns WAL-CLM ids + char_offset, validates essentials against the 90-canon → corpus_seal promotes → corpus_verify check #2 proves substrings. Fixed 2 bugs: seal counted claims pre-promotion (note said 0 for 10); finalize overwrote the draft (now merges the sealed shard for safe multi-batch). STOP for Luneth's claim format/quality review before extracting DDDL at volume.
-
-## 2026-06-24 12:58 UTC-04:00 · milestone · eden/corpus
-Wallach Knowledge Revamp Phase α: Eden gains Wing 2 (eden/corpus — 6 books in-housed + sealed 90-canon + claim-graph scaffold) and Wing 3 (eden/graphics — 5 sacred hand-made graphics). 6 seal/verify tools, 3 invariants. Board 29/29. Two-tier knowledge model live.
-  ↳ Reframe: Eden = all Tier-1 canonical Wallach truth (three wings: YGY catalog, corpus, graphics); knowledge/ = Tier-2 unsealed (transcripts-clean + design-wisdom). Engineering: claims sharded per book; verbatim is the durable anchor (PDF books lack reliable page markers); content hashes over LF-normalized text (clone-stable, .gitattributes eol=lf); agent-in-the-loop extraction (no LLM subsystem — determinism from seal+hash); corpus_verify.py is the single impl of 10 checks, the corpus_integrity invariant shells out to it. Sealed files protected free via <name>.json.golden.sha256 = pre_write_guard auto-block. Sealed knowledge_version=2 (re-sealed after an is_sealed naming-bug caught by the seal's own gate). Deviations from the approved proposal (improvements): no invariant-baseline entries (bootstrap returns green like eden_hash_integrity); deferred core/schemas/corpus.ts to Phase ε (avoid a dual schema source). Proposal: chronicle/proposals/wallach-knowledge-revamp.md. NEXT: Phase β DDDL extraction.

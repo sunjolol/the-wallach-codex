@@ -4135,10 +4135,11 @@
     "display_name": "Thiamine",
     "canon_slug": "vitamin-b1",
     "category": "vitamin",
-    "claim_count": 19,
+    "claim_count": 20,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000043",
+        "WAL-CLM-EPIGEN-000035",
         "WAL-CLM-LETS-000034",
         "WAL-CLM-RARE-000233"
       ],
@@ -4211,6 +4212,11 @@
       },
       {
         "sign": "mental_confusion",
+        "claim_id": "WAL-CLM-EPIGEN-000035",
+        "confidence": "high"
+      },
+      {
+        "sign": "mental_confusion",
         "claim_id": "WAL-CLM-LETS-000034",
         "confidence": "high"
       },
@@ -4227,6 +4233,16 @@
       {
         "sign": "muscle_weakness",
         "claim_id": "WAL-CLM-RARE-000233",
+        "confidence": "high"
+      },
+      {
+        "sign": "muscular_weakness",
+        "claim_id": "WAL-CLM-EPIGEN-000035",
+        "confidence": "high"
+      },
+      {
+        "sign": "nausea",
+        "claim_id": "WAL-CLM-EPIGEN-000035",
         "confidence": "high"
       },
       {
@@ -4247,6 +4263,11 @@
       {
         "sign": "palpitations",
         "claim_id": "WAL-CLM-LETS-000034",
+        "confidence": "high"
+      },
+      {
+        "sign": "paralysis",
+        "claim_id": "WAL-CLM-EPIGEN-000035",
         "confidence": "high"
       },
       {
@@ -4287,10 +4308,14 @@
       "dementia",
       "depression",
       "edema",
+      "fibromyalgia",
+      "hysteria",
       "korsakoffs_syndrome",
+      "multiple_sclerosis",
       "nervous_heart",
       "palpitations",
       "parkinsonism",
+      "peripheral_neuropathy",
       "tachycardia",
       "wernicke_korsakoff_syndrome"
     ],
@@ -4339,9 +4364,10 @@
     "display_name": "Riboflavin",
     "canon_slug": "vitamin-b2",
     "category": "vitamin",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000036",
         "WAL-CLM-LETS-000029",
         "WAL-CLM-RARE-000234"
       ],
@@ -4364,6 +4390,11 @@
       {
         "sign": "blurred_vision",
         "claim_id": "WAL-CLM-LETS-000029",
+        "confidence": "high"
+      },
+      {
+        "sign": "burning_mouth",
+        "claim_id": "WAL-CLM-EPIGEN-000036",
         "confidence": "high"
       },
       {
@@ -4393,6 +4424,11 @@
       },
       {
         "sign": "magenta_tongue",
+        "claim_id": "WAL-CLM-EPIGEN-000036",
+        "confidence": "high"
+      },
+      {
+        "sign": "magenta_tongue",
         "claim_id": "WAL-CLM-RARE-000234",
         "confidence": "high"
       },
@@ -4417,7 +4453,9 @@
       "cystic_fibrosis",
       "depression",
       "dermatitis",
+      "eye_redness",
       "geographic_tongue",
+      "neuropathy",
       "peripheral_neuropathy",
       "photophobia",
       "seborrheic_dermatitis"
@@ -4451,6 +4489,7 @@
       "zinc"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -4459,9 +4498,10 @@
     "display_name": "Niacin",
     "canon_slug": "vitamin-b3",
     "category": "vitamin",
-    "claim_count": 23,
+    "claim_count": 24,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000037",
         "WAL-CLM-LETS-000019",
         "WAL-CLM-RARE-000235"
       ],
@@ -4550,6 +4590,11 @@
         "confidence": "high"
       },
       {
+        "sign": "muscular_weakness",
+        "claim_id": "WAL-CLM-EPIGEN-000037",
+        "confidence": "high"
+      },
+      {
         "sign": "nausea",
         "claim_id": "WAL-CLM-LETS-000019",
         "confidence": "high"
@@ -4634,6 +4679,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -4642,9 +4688,10 @@
     "display_name": "Pantothenic Acid",
     "canon_slug": "vitamin-b5",
     "category": "vitamin",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000038",
         "WAL-CLM-LETS-000021",
         "WAL-CLM-RARE-000236"
       ],
@@ -4662,6 +4709,11 @@
     "deficiency_signs": [
       {
         "sign": "abdominal_pain",
+        "claim_id": "WAL-CLM-EPIGEN-000038",
+        "confidence": "high"
+      },
+      {
+        "sign": "abdominal_pain",
         "claim_id": "WAL-CLM-LETS-000021",
         "confidence": "high"
       },
@@ -4677,12 +4729,22 @@
       },
       {
         "sign": "burning_feet",
+        "claim_id": "WAL-CLM-EPIGEN-000038",
+        "confidence": "high"
+      },
+      {
+        "sign": "burning_feet",
         "claim_id": "WAL-CLM-LETS-000021",
         "confidence": "high"
       },
       {
         "sign": "burning_feet",
         "claim_id": "WAL-CLM-RARE-000236",
+        "confidence": "high"
+      },
+      {
+        "sign": "fainting",
+        "claim_id": "WAL-CLM-EPIGEN-000038",
         "confidence": "high"
       },
       {
@@ -4749,15 +4811,22 @@
     "conditions_treated": [
       "alopecia",
       "anemia",
+      "anorexia",
       "anxiety",
       "bipolar_disorder",
       "cataracts",
       "depression",
       "dermatitis",
+      "diarrhea",
+      "disagreeable_attitude",
       "eczema",
+      "flatulence",
       "geographic_tongue",
       "hypotension",
-      "insomnia"
+      "immune_depression",
+      "insomnia",
+      "muscle_cramps",
+      "tachycardia"
     ],
     "interacts_with": [
       "arginine",
@@ -4787,6 +4856,7 @@
       "zinc"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -4795,9 +4865,10 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 46,
+    "claim_count": 47,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000039",
         "WAL-CLM-LETS-000027",
         "WAL-CLM-LETS-000210",
         "WAL-CLM-RARE-000237"
@@ -4855,6 +4926,11 @@
     "deficiency_signs": [
       {
         "sign": "ataxia",
+        "claim_id": "WAL-CLM-EPIGEN-000039",
+        "confidence": "high"
+      },
+      {
+        "sign": "ataxia",
         "claim_id": "WAL-CLM-RARE-000237",
         "confidence": "high"
       },
@@ -4904,6 +4980,16 @@
         "confidence": "high"
       },
       {
+        "sign": "mental_confusion",
+        "claim_id": "WAL-CLM-EPIGEN-000039",
+        "confidence": "high"
+      },
+      {
+        "sign": "nausea",
+        "claim_id": "WAL-CLM-EPIGEN-000039",
+        "confidence": "high"
+      },
+      {
         "sign": "nausea",
         "claim_id": "WAL-CLM-LETS-000027",
         "confidence": "high"
@@ -4926,6 +5012,11 @@
       {
         "sign": "retarded_growth",
         "claim_id": "WAL-CLM-LETS-000027",
+        "confidence": "high"
+      },
+      {
+        "sign": "seizures",
+        "claim_id": "WAL-CLM-EPIGEN-000039",
         "confidence": "high"
       },
       {
@@ -4982,14 +5073,18 @@
       "parkinsonism",
       "peptic_ulcers",
       "peripheral_neuropathy",
+      "pms",
       "preeclampsia",
       "pregnancy_toxemia",
       "premenstrual_syndrome",
+      "pruritus",
       "rheumatoid_arthritis",
       "seborrheic_dermatitis",
       "stomatitis",
       "tardive_dyskinesia",
-      "tourette_syndrome"
+      "tmj",
+      "tourette_syndrome",
+      "vomiting"
     ],
     "interacts_with": [
       "arginine",
@@ -5029,6 +5124,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -5037,10 +5133,11 @@
     "display_name": "Folate",
     "canon_slug": "vitamin-b9",
     "category": "vitamin",
-    "claim_count": 23,
+    "claim_count": 24,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000042",
+        "WAL-CLM-EPIGEN-000041",
         "WAL-CLM-LETS-000010",
         "WAL-CLM-RARE-000239"
       ],
@@ -5096,6 +5193,11 @@
         "confidence": "high"
       },
       {
+        "sign": "irritability",
+        "claim_id": "WAL-CLM-EPIGEN-000041",
+        "confidence": "high"
+      },
+      {
         "sign": "poor_growth",
         "claim_id": "WAL-CLM-RARE-000239",
         "confidence": "high"
@@ -5122,6 +5224,7 @@
       "anorexia",
       "aphthous_stomatitis",
       "birth_defects",
+      "bleeding_gums",
       "canker_sores",
       "cleft_palate",
       "crohns_disease",
@@ -5131,6 +5234,7 @@
       "dumping_syndrome",
       "eczema",
       "epilepsy",
+      "failure_to_thrive",
       "geographic_tongue",
       "gout",
       "hepatitis",
@@ -5140,12 +5244,14 @@
       "liver_disease",
       "meningocele",
       "miscarriage",
+      "neural_tube_defects",
       "paranoia",
       "pilonidal_cyst",
       "psoriasis",
       "seborrheic_dermatitis",
       "spina_bifida",
-      "vitiligo"
+      "vitiligo",
+      "weight_loss"
     ],
     "interacts_with": [
       "biotin",
@@ -5173,6 +5279,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -5181,9 +5288,10 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 31,
+    "claim_count": 32,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000040",
         "WAL-CLM-LETS-000035",
         "WAL-CLM-RARE-000238"
       ],
@@ -5226,6 +5334,11 @@
       ]
     },
     "deficiency_signs": [
+      {
+        "sign": "behavioral_problems",
+        "claim_id": "WAL-CLM-EPIGEN-000040",
+        "confidence": "high"
+      },
       {
         "sign": "constipation",
         "claim_id": "WAL-CLM-LETS-000035",
@@ -5282,6 +5395,16 @@
         "confidence": "high"
       },
       {
+        "sign": "smooth_tongue",
+        "claim_id": "WAL-CLM-EPIGEN-000040",
+        "confidence": "high"
+      },
+      {
+        "sign": "spinal_cord_demyelination",
+        "claim_id": "WAL-CLM-EPIGEN-000040",
+        "confidence": "high"
+      },
+      {
         "sign": "spinal_cord_demyelination",
         "claim_id": "WAL-CLM-LETS-000035",
         "confidence": "high"
@@ -5289,6 +5412,11 @@
       {
         "sign": "spinal_cord_demyelination",
         "claim_id": "WAL-CLM-RARE-000238",
+        "confidence": "high"
+      },
+      {
+        "sign": "weakness",
+        "claim_id": "WAL-CLM-EPIGEN-000040",
         "confidence": "high"
       }
     ],
@@ -5304,6 +5432,7 @@
       "canker_sores",
       "carpal_tunnel_syndrome",
       "crohns_disease",
+      "dementia",
       "depression",
       "diabetes",
       "epilepsy",
@@ -5355,6 +5484,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -5363,9 +5493,10 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 71,
+    "claim_count": 72,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000043",
         "WAL-CLM-LETS-000038",
         "WAL-CLM-RARE-000241"
       ],
@@ -5457,6 +5588,11 @@
         "confidence": "high"
       },
       {
+        "sign": "dry_skin",
+        "claim_id": "WAL-CLM-EPIGEN-000043",
+        "confidence": "high"
+      },
+      {
         "sign": "easy_bruising",
         "claim_id": "WAL-CLM-LETS-000038",
         "confidence": "high"
@@ -5464,6 +5600,11 @@
       {
         "sign": "fatigue",
         "claim_id": "WAL-CLM-LETS-000038",
+        "confidence": "high"
+      },
+      {
+        "sign": "impaired_wound_healing",
+        "claim_id": "WAL-CLM-EPIGEN-000043",
         "confidence": "high"
       },
       {
@@ -5483,6 +5624,11 @@
       },
       {
         "sign": "loose_teeth",
+        "claim_id": "WAL-CLM-EPIGEN-000043",
+        "confidence": "high"
+      },
+      {
+        "sign": "loose_teeth",
         "claim_id": "WAL-CLM-LETS-000038",
         "confidence": "high"
       },
@@ -5498,7 +5644,17 @@
       },
       {
         "sign": "poor_growth",
+        "claim_id": "WAL-CLM-EPIGEN-000043",
+        "confidence": "high"
+      },
+      {
+        "sign": "poor_growth",
         "claim_id": "WAL-CLM-RARE-000241",
+        "confidence": "high"
+      },
+      {
+        "sign": "skin_hemorrhages",
+        "claim_id": "WAL-CLM-EPIGEN-000043",
         "confidence": "high"
       },
       {
@@ -5514,6 +5670,7 @@
       "aids",
       "allergies",
       "anemia",
+      "anorexia",
       "arteriosclerosis",
       "arthritis",
       "autoimmune_disorders",
@@ -5542,6 +5699,7 @@
       "eczema",
       "elevated_cholesterol",
       "food_allergy",
+      "fractures",
       "freckles",
       "gallstones",
       "gingivitis",
@@ -5562,6 +5720,7 @@
       "influenza",
       "intermittent_claudication",
       "jaundice",
+      "joint_pain",
       "lead_poisoning",
       "liver_cirrhosis",
       "liver_disease",
@@ -5623,6 +5782,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -6105,9 +6265,10 @@
     "display_name": "Biotin",
     "canon_slug": "biotin",
     "category": "vitamin",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000042",
         "WAL-CLM-LETS-000003",
         "WAL-CLM-RARE-000240"
       ],
@@ -6126,7 +6287,17 @@
       },
       {
         "sign": "fatigue",
+        "claim_id": "WAL-CLM-EPIGEN-000042",
+        "confidence": "high"
+      },
+      {
+        "sign": "fatigue",
         "claim_id": "WAL-CLM-LETS-000003",
+        "confidence": "high"
+      },
+      {
+        "sign": "gray_hair",
+        "claim_id": "WAL-CLM-EPIGEN-000042",
         "confidence": "high"
       },
       {
@@ -6140,8 +6311,18 @@
         "confidence": "high"
       },
       {
+        "sign": "hallucinations",
+        "claim_id": "WAL-CLM-EPIGEN-000042",
+        "confidence": "high"
+      },
+      {
         "sign": "muscle_weakness",
         "claim_id": "WAL-CLM-LETS-000003",
+        "confidence": "high"
+      },
+      {
+        "sign": "myalgia",
+        "claim_id": "WAL-CLM-EPIGEN-000042",
         "confidence": "high"
       },
       {
@@ -6155,6 +6336,16 @@
         "confidence": "high"
       },
       {
+        "sign": "pain_hypersensitivity",
+        "claim_id": "WAL-CLM-EPIGEN-000042",
+        "confidence": "high"
+      },
+      {
+        "sign": "paresthesia",
+        "claim_id": "WAL-CLM-EPIGEN-000042",
+        "confidence": "high"
+      },
+      {
         "sign": "paresthesia",
         "claim_id": "WAL-CLM-RARE-000240",
         "confidence": "high"
@@ -6162,6 +6353,11 @@
       {
         "sign": "smooth_tongue",
         "claim_id": "WAL-CLM-LETS-000003",
+        "confidence": "high"
+      },
+      {
+        "sign": "white_hair",
+        "claim_id": "WAL-CLM-EPIGEN-000042",
         "confidence": "high"
       },
       {
@@ -6177,11 +6373,14 @@
       "blepharitis",
       "dandruff",
       "depression",
+      "dermatitis",
       "diabetes",
       "eczema",
+      "fatty_liver",
       "high_cholesterol",
       "insomnia",
-      "seborrheic_dermatitis"
+      "seborrheic_dermatitis",
+      "weight_loss"
     ],
     "interacts_with": [
       "omega-3",
@@ -6192,6 +6391,7 @@
       "zinc"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -6200,9 +6400,10 @@
     "display_name": "Choline",
     "canon_slug": "choline",
     "category": "vitamin",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000044",
         "WAL-CLM-RARE-000242"
       ],
       "dose": [
@@ -6224,6 +6425,11 @@
     "deficiency_signs": [
       {
         "sign": "kidney_hemorrhage",
+        "claim_id": "WAL-CLM-EPIGEN-000044",
+        "confidence": "high"
+      },
+      {
+        "sign": "kidney_hemorrhage",
         "claim_id": "WAL-CLM-RARE-000242",
         "confidence": "high"
       }
@@ -6241,6 +6447,7 @@
       "huntingtons_disease",
       "keshan_disease",
       "korsakoffs_syndrome",
+      "liver_cirrhosis",
       "memory_loss",
       "muscular_dystrophy",
       "tardive_dyskinesia"
@@ -6270,6 +6477,7 @@
       "zinc"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -6278,9 +6486,10 @@
     "display_name": "Inositol",
     "canon_slug": "inositol",
     "category": "vitamin",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000045",
         "WAL-CLM-LETS-000012"
       ],
       "dose": [
@@ -6301,9 +6510,13 @@
     "conditions_treated": [
       "alopecia",
       "cataracts",
+      "diabetes",
       "eczema",
+      "fatty_liver",
       "high_cholesterol",
-      "insomnia"
+      "insomnia",
+      "peripheral_neuropathy",
+      "renal_failure"
     ],
     "interacts_with": [
       "arginine",
@@ -6324,6 +6537,7 @@
       "zinc"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -6331,9 +6545,10 @@
     "display_name": "Flavonoids",
     "canon_slug": "flavonoids",
     "category": "vitamin",
-    "claim_count": 16,
+    "claim_count": 17,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000046",
         "WAL-CLM-RARE-000243"
       ],
       "protocol": [
@@ -6357,6 +6572,11 @@
     "deficiency_signs": [
       {
         "sign": "capillary_hemorrhage",
+        "claim_id": "WAL-CLM-EPIGEN-000046",
+        "confidence": "high"
+      },
+      {
+        "sign": "capillary_hemorrhage",
         "claim_id": "WAL-CLM-RARE-000243",
         "confidence": "high"
       },
@@ -6364,12 +6584,19 @@
         "sign": "lowered_immunity",
         "claim_id": "WAL-CLM-RARE-000243",
         "confidence": "high"
+      },
+      {
+        "sign": "shortened_lifespan",
+        "claim_id": "WAL-CLM-EPIGEN-000046",
+        "confidence": "high"
       }
     ],
     "conditions_treated": [
       "alcoholism",
       "allergies",
+      "bruises",
       "bursitis",
+      "cancer",
       "cataracts",
       "cluster_headaches",
       "cold_sores",
@@ -6377,10 +6604,13 @@
       "diabetes",
       "food_allergy",
       "hay_fever",
+      "hemorrhoids",
       "herpes_simplex",
+      "immune_depression",
       "inflammation",
       "influenza",
       "migraine",
+      "nosebleeds",
       "peptic_ulcers",
       "varicose_veins"
     ],
@@ -6412,6 +6642,7 @@
       "zinc"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]

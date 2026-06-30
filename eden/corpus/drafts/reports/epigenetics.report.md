@@ -1,84 +1,214 @@
 # Extraction report — epigenetics (Epigenetics: The Death of the Genetic Theory of Disease Transmission)
 
-_8 claim(s) drafted 2026-06-30T20:28:17+00:00. Review then run corpus_seal.py to promote._
+_12 claim(s) drafted 2026-06-30T21:24:22+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: deficiency_sign×4, mechanism×2, prevalence×1, quote×1
+Kinds: deficiency_sign×12
 
-### WAL-CLM-EPIGEN-000027 · quote
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach attacks the 'Quackbuster' movement -- a private group of physicians who, he says, organized to destroy legitimate alternative-medicine competition to the medical monopoly. He names its founder Victor Herbert, MD (who titled it the Committee Against Medical Fraud), along with John Renner, MD, William Jarvis, MD, and Stephan Barret, MD. He rebuts their central claim -- voiced by Victor Herbert -- that healthy adults eating a varied diet already get all the vitamins and minerals they need, countering that you cannot guarantee optimal micro- and macro-nutrient intake even by 'eating well': the animal-feed industry adds the full mix of all 90 essential nutrients for maximum health, while an April 2012 Food Chemistry report found commercial baby foods contain less than 20% of an infant's minimum daily requirements of minerals and vitamins. In his words: 'False, dangerous and criminal advice is given to the American public by the ignorant group known as "Quack Busters," who are doctors who joined together to destroy legitimate alternative competition to the medical monopoly.'
-- **verbatim** (offset 1047258): “False, dangerous and criminal advice is given to the American public by the
-ignorant group known as “Quack Busters,” who are doctors who joined together
-to destroy legitimate alternative competition to the medical monopoly.”
+### WAL-CLM-EPIGEN-000035 · deficiency_sign
+- **essentials:** vitamin-b1 · **conditions:** anxiety, hysteria, depression, anorexia, fibromyalgia, beriberi, congestive_heart_failure, korsakoffs_syndrome, wernicke_korsakoff_syndrome, dementia, multiple_sclerosis, peripheral_neuropathy · **symptoms:** mental_confusion, nausea, muscular_weakness, paralysis
+- **claim:** Vitamin B1 (thiamine) is a cofactor for energy production and the metabolism of carbohydrates, protein, and fat; its deficiency especially disturbs carbohydrate metabolism in the brain (dementia) and heart (congestive heart failure). Wallach lists the health problems of thiamine deficiency: anxiety, hysteria, confusion, nausea, depression, mental confusion, loss of appetite (anorexia), muscular weakness, fibromyalgia, beriberi (muscle wasting, congestive heart failure, Korsakoff syndrome with dementia, and Wernicke-Korsakoff syndrome with dementia and multiple sclerosis), paralysis, and peripheral neuropathies. In his words: 'Thiamine (B,)-deficiency health problems include: Anxiety, hysteria, confusion; Nausea; Depression; Mental confusion.'
+- **verbatim** (offset 1082933): “Thiamine (B,)-deficiency health problems include:
 
-### WAL-CLM-EPIGEN-000028 · prevalence
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach cites a 1990 survey by Lucian Lepe, head of the Department of Public Health at Harvard Medical School, which sought the longest-living county in America so its healthcare practices could be copied nationwide. What Lepe found was that the longest-living counties clustered in the mid-west, upper mid-west, and plains states among people of Scandinavian heritage -- dairy farmers who cooked by poaching, stewing, roasting, grilling, and baking -- while the shortest-living counties were the old Confederate states and Indian reservations west of the Mississippi, where everything was fried, forming America's heart-attack, stroke, diabetes, obesity, and cancer belt. Because all counties had equal access to healthcare (even the uninsured, through Medicaid), Wallach concludes it was diet, not medical technology, that added or subtracted years of life -- underscored by Philadelphia County having the most doctors, hospitals, and health funding yet the worst health of any American county. In his words: 'What Lepe found, however, was that the counties with the longest-living people in America were clustered in the mid-west, the upper mid-west and the plains states. Their common heritage was Scandinavian.'
-- **verbatim** (offset 1050167): “What Lepe found, however, was that the counties with the longest-living
-people in America were clustered in the mid-west, the upper mid-west and the
-plains states. Their common heritage was Scandinavian.”
+Anxiety, hysteria, confusion
+Nausea
 
-### WAL-CLM-EPIGEN-000029 · mechanism
-- **essentials:** — · **conditions:** achlorhydria, malabsorption · **symptoms:** —
-- **claim:** Wallach explains that low stomach acid (hypochlorhydria) undermines digestion and nutrient absorption. The acid-manufacturing chief cells of the stomach make hydrochloric acid from sodium chloride (table salt), and that stomach acid is needed to keep the stomach environment sterile -- below a pH of 2.0, preventing the overgrowth of bacteria, viruses, yeast, and fungus, gastric fermentation, and reflux -- to activate the 'intrinsic factor' required for vitamin B12 absorption, to activate the protein-digesting enzyme pepsin, and to facilitate the absorption of minerals. When stomach acid is too low, the absorption of vitamin B12, proteins, and minerals fails. In his words: 'The raw material for the Chief Cells, the acid-manufacturing cells of the stomach, to make hydrochloric acid is NaCl, which is salt. Stomach acid is required to keep the stomach environment sterile and free of bacteria, viruses, yeast, and fungus.'
-- **verbatim** (offset 1054283): “The raw material for the Chief Cells, the acid-manufacturing cells of the
-stomach, to make hydrochloric acid is NaCl, which is salt. Stomach acid is
-required to keep the stomach environment sterile and free of bacteria, viruses,
-yeast, and fungus.”
+Depression
 
-### WAL-CLM-EPIGEN-000030 · mechanism
-- **essentials:** — · **conditions:** celiac_disease, diverticulitis, irritable_bowel_syndrome, colitis, crohns_disease, bloating, heartburn, malabsorption · **symptoms:** —
-- **claim:** Wallach frames gluten intolerance not as an allergy but as a 'contact enteritis' -- an irritant reaction of the small-grain proteins on the gut lining, analogous to the contact dermatitis poison ivy causes on skin (no one is allergic to poison ivy, yet nearly everyone is intolerant of it). The gastrointestinal damage from this gluten-contact enteritis includes celiac disease, diverticulitis, appendicitis, irritable bowel syndrome, inflammatory bowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease, gastritis, bloating, and reflux. The gradual, progressive loss of intestinal villi it causes produces malabsorption and, through it, a wide range of nutritional-deficiency diseases -- so the corrective action is to avoid gluten. In his words: 'The gastrointestinal damage that is produced by the gluten-contact enteritis includes celiac disease (wheat allergy that occurs concurrently with contact enteritis), diverticulitis, appendicitis, irritable bowel syndrome, inflammatory bowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease, gastritis, bloating, and reflux.'
-- **verbatim** (offset 1055683): “The gastrointestinal damage that is produced by the gluten-contact enteritis
-includes celiac disease (wheat allergy that occurs concurrently with contact
-enteritis), diverticulitis, appendicitis, irritable bowel syndrome, inflammatory
-bowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease,
-gastritis, bloating, and reflux.”
+Mental confusion”
 
-### WAL-CLM-EPIGEN-000031 · deficiency_sign
-- **essentials:** vitamin-a · **conditions:** night_blindness, conjunctivitis, xerophthalmia, keratomalacia, corneal_ulcers, infertility, birth_defects, depression, immune_depression, osteoporosis, osteoarthritis, osteomalacia, failure_to_thrive, acne, dermatitis, ichthyosis, cancer · **symptoms:** hyperkeratosis, dry_skin
-- **claim:** Vitamin A (retinol, with beta-carotene as its fat-soluble precursor) is required for vision and night vision, healthy skin and mucous membranes, bones and teeth, and it lowers the risk of epithelial cancers. Wallach lists the health problems of vitamin A deficiency: night blindness (nyctalopia), conjunctivitis, xerophthalmia, keratomalacia (keratoconus, corneal ulcers), infertility, birth defects, depression, a depressed immune system, osteopenia/osteoporosis/osteoarthritis/osteomalacia, failure to thrive with stunted growth, acne, dermatitis (dry skin, keratitis), hyperkeratosis ('goose flesh'), ichthyosis (shark skin, Darier's disease), and increased cancer risk. In his words: 'Vitamin A-deficiency health problems include: Night blindness (Nyctalopia), Conjunctivitis, Xerophthalmia, Keratomalacia (Keratoconus - corneal ulcers), Infertility, Birth defects.'
-- **verbatim** (offset 1068156): “Vitamin A-deficiency health problems include:
+### WAL-CLM-EPIGEN-000036 · deficiency_sign
+- **essentials:** vitamin-b2 · **conditions:** cheilosis, angular_stomatitis, seborrheic_dermatitis, geographic_tongue, photophobia, eye_redness, anemia, neuropathy · **symptoms:** burning_mouth, magenta_tongue
+- **claim:** Vitamin B2 (riboflavin) is a cofactor for the flavin coenzymes (flavin mononucleotide and flavin adenine dinucleotide) needed for oxidation-reduction and energy production, helps convert tryptophan to niacin, and maintains healthy skin, mucous membranes, the cornea, and nerve sheaths. Wallach lists the health problems of riboflavin deficiency: cheilosis (cracks at the corners of the mouth and nostrils), angular stomatitis, seborrheic dermatitis of the nasal folds, soreness and burning of the lips, mouth, and tongue, geographic and magenta tongue, photophobia, lacrimation (tearing), capillary injection of the cornea, anemia, and neuropathy. In his words: 'Riboflavin-deficiency health problems include: Chelosis (cracks at the corners of the mouth and nostrils); Angular stomatitis; Seborrheic dermatitis of the nasal folds; Soreness and burning of lips, mouth and tongue; Geographic tongue, magenta tongue; Photophobia.'
+- **verbatim** (offset 1084045): “Riboflavin-deficiency health problems include:
 
-Night blindness (Nyctalopia)
-Conjunctivitis
+Chelosis (cracks at the corners of the mouth and nostrils)
+Angular stomatitis
 
-Xerophthalmia
+Seborrheic dermatitis of the nasal folds
 
-Keratomalacia (Keratoconus — corneal ulcers)
-Infertility
+Soreness and burning of lips, mouth and tongue
+Geographic tongue, magenta tongue
 
-Birth defects”
+Photophobia”
 
-### WAL-CLM-EPIGEN-000032 · deficiency_sign
-- **essentials:** vitamin-d · **conditions:** tourette_syndrome, muscle_cramps, tetany, convulsions, rickets, restless_leg_syndrome, osteoporosis, periodontal_disease, arthritis, osteoarthritis, bone_spurs, kidney_stones, uterine_fibroids, cancer · **symptoms:** bow_legs, knock_knees, profuse_sweating
-- **claim:** Vitamin D is required for the absorption, metabolism, and proper deposition of calcium and phosphorus in the bones and teeth, and works hand-in-hand with parathyroid hormone. Wallach calls the modern universal vitamin D deficiency a 'physician-caused disease' -- a perfect storm created by medical advice to avoid the sun, wear sunblock and covering clothing, avoid dietary cholesterol (egg yolks, chicken skin, dairy, saturated fats), and skip vitamin-mineral supplements. He lists the health problems of vitamin D deficiency: facial tics and Tourette's syndrome, twitches and muscle cramps, tetany (full-body cramp) and convulsions, childhood rickets (rachitic rosary, bowed legs, knock-knees, pigeon chest), profuse sweating, restless leg syndrome, enlarged wrists, osteopenia/osteoporosis, periodontal disease, arthritis/osteoarthritis/degenerative 'bone-to-bone' arthritis, bone spurs, kidney stones, uterine fibroids, and a higher risk of cancer. In his words: 'Vitamin D-deficiency health problems include: Facial tics, Tourette's syndrome; Twitches, muscle cramps; Tetany (full body cramp), convulsions.'
-- **verbatim** (offset 1075065): “Vitamin D-deficiency health problems include:
+### WAL-CLM-EPIGEN-000037 · deficiency_sign
+- **essentials:** vitamin-b3 · **conditions:** pellagra, diarrhea, dermatitis, dementia, anorexia · **symptoms:** muscular_weakness
+- **claim:** Vitamin B3 (niacin) functions as part of the coenzymes nicotinamide adenine dinucleotide and nicotinamide adenine dinucleotide phosphate, which drive the oxidation-reduction reactions that release energy from carbohydrates, fats, and proteins. Wallach lists the health problems of niacin deficiency: pellagra, which includes the 'three Ds' (diarrhea, dermatitis, dementia), retardation, muscular weakness, loss of appetite (anorexia), 'beef tongue' (a swollen, sore, red tongue), skin pigmentation, and a scaly, itchy dermatitis. In his words: 'Vitamin B, (niacin) deficiency health problems include: Pellagra which includes the "three Ds" (diarrhea, dermatitis, dementia); Retardation; Muscular weakness; Anorexia; "Beef tongue" (swollen, sore, red tongue); Skin pigmentation; Sealy, itchy dermatitis.'
+- **verbatim** (offset 1087385): “Vitamin B, (niacin) deficiency health problems include:
 
-Facial tics, Tourette's syndrome
-Twitches, muscle cramps
-Tetany (full body cramp), convulsions”
+Pellagra which includes the “three Ds” (diarrhea, dermatitis, dementia)
+Retardation
+Muscular weakness
 
-### WAL-CLM-EPIGEN-000033 · deficiency_sign
-- **essentials:** vitamin-e · **conditions:** alzheimers, anemia, infertility, immune_depression, ischemic_heart_disease, fibrocystic_breast_disease, fibromyalgia, cystic_fibrosis, muscular_dystrophy, cardiomyopathy, cancer · **symptoms:** age_spots, liver_spots, muscle_weakness, myalgia
-- **claim:** Vitamin E is a group of antioxidant compounds (the alpha-tocopherols) that protect cell membranes from oxidative inflammation and red blood cells from rupture; in combination with the trace mineral selenium it lowers the risk of certain cancers, slows aging, preserves telomere length, and reduces the risk of Alzheimer's disease, hypertrophic cardiomyopathy, muscular dystrophy, and cystic fibrosis. Wallach lists the health problems of vitamin E deficiency: Alzheimer's disease, hemolytic anemia, infertility, a depressed immune system, age spots and liver spots, lipid peroxidation and cellulite, ischemic heart disease, fibrocystic breast disease, muscle weakness with myalgia and fibromyalgia, cystic fibrosis and muscular dystrophy and hypertrophic cardiomyopathy (each in conjunction with selenium deficiency), and increased cancer risk. In his words: 'Vitamin E-deficiency health problems include: Alzheimer's disease; Anemia (hemolytic); Infertility; Depressed immune system; Age spots, liver spots.'
-- **verbatim** (offset 1077409): “Vitamin E-deficiency health problems include:
+Anorexia
 
+“Beef tongue" (swollen, sore, red tongue)
+Skin pigmentation
 
-Alzheimer's disease
-Anemia (hemolytic)
+Sealy, itchy dermatitis”
 
-Infertility
+### WAL-CLM-EPIGEN-000038 · deficiency_sign
+- **essentials:** vitamin-b5 · **conditions:** dermatitis, muscle_cramps, anorexia, anemia, disagreeable_attitude, depression, insomnia, immune_depression, tachycardia, flatulence, diarrhea · **symptoms:** burning_feet, fainting, abdominal_pain
+- **claim:** Vitamin B5 (pantothenic acid) is a component of coenzyme A and of the acyl carrier protein of fatty-acid synthetase, essential for releasing energy from carbohydrates, building and breaking down fatty acids, and synthesizing sterols, steroid hormones, and acetylcholine. Wallach lists the health problems of pantothenic acid deficiency: dermatitis, burning feet, muscle cramps, loss of appetite (anorexia), anemia, a quarrelsome and sullen attitude, depression, insomnia, a depressed immune system, rapid heartbeat (tachycardia), fainting ('light headedness'), and gastrointestinal distress (gas, diarrhea, gut pain). In his words: 'Pantothenic acid-deficiency health problems include: Dermatitis; Burning feet; Muscle cramps; Anorexia; Anemia; Quarrelsome attitude; sullen; Depressed; Insomnia; Depressed immune system; Tachycardia.'
+- **verbatim** (offset 1089558): “Pantothenic acid-deficiency health problems include:
+
+Dermatitis
+
+Burning feet
+
+Muscle cramps
+
+Anorexia
+
+Anemia
+
+Quarrelsome attitude
+
+sullen
+
+Depressed
+
+Insomnia
 
 Depressed immune system
+Tachycardia”
 
-Age spots, liver spots”
+### WAL-CLM-EPIGEN-000039 · deficiency_sign
+- **essentials:** vitamin-b6 · **conditions:** depression, stomatitis, vomiting, pms, seborrheic_dermatitis, pruritus, carpal_tunnel_syndrome, tmj, peripheral_neuropathy, hyperirritability, tourette_syndrome, convulsions · **symptoms:** mental_confusion, nausea, ataxia, seizures
+- **claim:** Vitamin B6 (pyridoxine) is converted to pyridoxal phosphate, the coenzyme for transamination and other reactions in amino-acid, lipid, and nucleic-acid metabolism, and for glycogen phosphorylase. Wallach lists the health problems of pyridoxine deficiency: depression and mental confusion, inflammation and lesions of the oral mucous membranes, nausea, vomiting, premenstrual syndrome, seborrheic dermatitis, itchy scaly skin, carpal tunnel syndrome, temporomandibular joint problems, peripheral neuritis, ataxia (instability), hyperirritability, head tic (Tourette's syndrome), seizures, and convulsions. In his words: 'Pyridoxine (B,) deficiency health problems include: Depression, mental confusion; Inflammation of the oral mucus membranes; Nausea; Vomiting.'
+- **verbatim** (offset 1091681): “Pyridoxine (B,) deficiency health problems include:
 
-### WAL-CLM-EPIGEN-000034 · deficiency_sign
-- **essentials:** vitamin-k · **conditions:** ecchymosis, nosebleeds, bleeding_bowels, liver_disease, osteoporosis, fractures, osteoarthritis · **symptoms:** prolonged_clotting_time
-- **claim:** Vitamin K (menaquinone) is required by the liver to produce prothrombin and at least five other clotting proteins (factors VII, IX, and X, and proteins C and S) for proper blood clotting, and for the proper deposition of calcium in bones; about half of the body's requirement is produced by probiotic bacteria in the colon. Wallach lists the health problems of vitamin K deficiency: osteocalcin deficiency, extended clotting time, ecchymoses (bruising), epistaxis (nosebleeds), hematuria, gastrointestinal bleeding, liver disease, dysfunctional calcium absorption and deposition in the bones, osteoporosis with spontaneous fractures, and osteoarthritis. In his words: 'This vitamin, isolated in 1939, is a fat soluble vitamin that is required by the liver for the production of prothrombin and at least five other proteins (factors VII, IX, and X, and proteins C and S) and other biologically active substances essential for proper blood clotting and for the proper deposition of calcium in bones.'
-- **verbatim** (offset 1078165): “This vitamin, isolated in 1939, is a fat soluble vitamin that is required by the liver
-for the production of prothrombin and at least five other proteins (factors VII, IX,
-and X, and proteins C and S) and other biologically active substances essential
-for proper blood clotting and for the proper deposition of calcium in bones.”
+Depression, mental confusion
+
+Inflammation of the oral mucus membranes
+Nausea
+
+Vomiting”
+
+### WAL-CLM-EPIGEN-000040 · deficiency_sign
+- **essentials:** vitamin-b12 · **conditions:** pernicious_anemia, anemia, dementia, neuropathy, liver_disease · **symptoms:** behavioral_problems, spinal_cord_demyelination, smooth_tongue, weakness
+- **claim:** Vitamin B12 (cobalamin) works with folate to synthesize DNA and RNA, supports bone marrow and the production of myelin (the nerve-fiber insulation), and is required to release folate from its bound form -- so a B12 deficiency causes a folic-acid deficiency even when folate intake is optimal. Wallach notes the deficiency can be dietary or secondary to hypochlorhydria (low stomach acid), salt deficiency, or gluten intolerance, and lists its health problems: pernicious anemia (macrocytic, megaloblastic anemia), dementia, neuropsychiatric behavior, demyelination of the brain, spinal cord, optic nerve, and peripheral nerves, neuropathy, a sore tongue, general weakness, and liver disease. In his words: 'Pernicious anemia (macrocytic, megaloblastic anemia); Dementia; Neuropsychiatric behavior; Brain, spinal cord, optic nerve and peripheral nerve demyelination; Neuropathy; Sore tongue; General weakness; Liver disease.'
+- **verbatim** (offset 1095101): “Pernicious anemia (macrocytic, megaloblastic anemia)
+
+Dementia
+
+Neuropsychiatric behavior
+
+Brain, spinal cord, optic nerve and peripheral nerve demyelination
+Neuropathy
+
+Sore tongue
+
+General weakness
+
+Liver disease”
+
+### WAL-CLM-EPIGEN-000041 · deficiency_sign
+- **essentials:** vitamin-b9 · **conditions:** birth_defects, neural_tube_defects, spina_bifida, failure_to_thrive, anemia, diarrhea, bleeding_gums, weight_loss · **symptoms:** irritability
+- **claim:** Folic acid (folate, vitamin B9) is required for the synthesis of DNA, RNA, and red blood cells and works interdependently with vitamin B12; a deficiency of either produces a megaloblastic, macrocytic anemia. Wallach notes the deficiency arises from a diet lacking green leafy vegetables and from malabsorption (gluten intolerance, celiac disease, leaky gut syndrome, irritable bowel syndrome), and lists its health problems: impaired cell division, birth defects (neural tube defects such as spina bifida), failure to thrive, anemia, diarrhea, bleeding gums, weight loss, and irritability. In his words: 'The deficiency of folic can result from a diet lacking in green leafy vegetables and from malabsorption problems (such as gluten intolerance [includes bourbon, scotch and beer], celiac disease, leaky gut syndrome, IBS, etc.)'
+- **verbatim** (offset 1096607): “The deficiency of folic can result from a diet lacking in
+green leafy vegetables and from malabsorption problems (such as gluten
+intolerance [includes bourbon, scotch and beer], celiac disease, leaky gut”
+
+### WAL-CLM-EPIGEN-000042 · deficiency_sign
+- **essentials:** biotin · **conditions:** eczema, dermatitis, alopecia, fatty_liver, depression, blepharitis, anorexia, insomnia, weight_loss · **symptoms:** myalgia, fatigue, pain_hypersensitivity, paresthesia, gray_hair, white_hair, hallucinations
+- **claim:** Biotin (vitamin B7, or vitamin H) is required for glucose metabolism and the production of fatty acids; its conversion to the active coenzyme depends on magnesium and adenosine triphosphate. Wallach lists the health problems of biotin deficiency: eczema and dermatitis, alopecia (baldness), myalgia (muscle pain), fatigue, fatty liver, inborn errors of metabolism, depression, hyperesthesia and paresthesia, blepharitis, gray, silver, or white hair, loss of appetite (anorexia), insomnia, weight loss, and hallucinations. In his words: 'Biotin-deficiency health problems can result in: Eczema, dermatitis; Alopecia (baldness); Myalgia (muscle pain); Fatigue; Fatty liver; Inborn errors of metabolism; Depression; Hyperesthesia, paraesthesia; Blephritis; Gray, silver or white hair; Anorexia; Insomnia.'
+- **verbatim** (offset 1099088): “Biotin-deficiency health problems can result in:
+
+Eczema, dermatitis
+Alopecia (baldness)
+
+Myalgia (muscle pain)
+Fatigue
+
+Fatty liver
+
+Inborn errors of metabolism
+Depression
+
+Hyperesthesia, paraesthesia
+
+Blephritis
+Gray, silver or white hair
+Anorexia
+
+Insomnia.”
+
+### WAL-CLM-EPIGEN-000043 · deficiency_sign
+- **essentials:** vitamin-c · **conditions:** bleeding_gums, anorexia, cancer, scurvy, joint_pain, fractures, bruises · **symptoms:** loose_teeth, dry_skin, poor_growth, impaired_wound_healing, skin_hemorrhages
+- **claim:** Vitamin C (ascorbic acid) is a required cofactor for producing collagen, connective tissue, cartilage, bones, teeth, blood-vessel walls, and capillaries, and it increases the absorption of inorganic iron and supports white blood cells, immune responses, and wound healing. Wallach lists the health problems of vitamin C deficiency: bleeding gums, loose teeth, bruising, dry rough skin, loss of appetite (anorexia), poor growth, elevated cancer risk, slow wound healing, scurvy, skin hemorrhages, swollen joints (particularly the wrists and ankles), and rib and cartilage fractures. In his words: 'Vitamin C deficiency can result in: Bleeding gums; Loose teeth; Bruising; Dry rough skin; Anorexia; Poor growth; Elevated cancer risk; Slow wound healing; Scurvy; Skin hemorrhages; Swollen joints (particularly wrist and ankles); Rib and cartilage fractures.'
+- **verbatim** (offset 1102648): “Vitamin C deficiency can result in:
+
+Bleeding gums
+Loose teeth
+
+Bruising
+
+Dry rough skin
+
+Anorexia
+
+Poor growth
+
+Elevated cancer risk
+
+Slow wound healing
+
+Scurvy
+
+Skin hemorrhages
+
+Swollen joints (particularly wrist and ankles)
+Rib and cartilage fractures”
+
+### WAL-CLM-EPIGEN-000044 · deficiency_sign
+- **essentials:** choline · **conditions:** fatty_liver, liver_cirrhosis, alzheimers, dementia, tardive_dyskinesia, huntingtons_disease · **symptoms:** kidney_hemorrhage
+- **claim:** Choline is a major structural component of phosphatidylcholine (lecithin) -- essential to all cell membranes, plasma lipoproteins, and lung surfactant -- and, in the central nervous system, of sphingomyelin and the neurotransmitter acetylcholine. Wallach lists the health problems of choline deficiency: fatty liver, liver cirrhosis, kidney hemorrhage, Alzheimer's disease and dementia, tardive dyskinesia, and Huntington's disease. In his words: 'Choline deficiency can resutt in Fatty liver; Liver cirrhosis; Kidney hemorrhage; Alzheimer's disease, dementia; Tardive dyskinesia; Huntington's disease.'
+- **verbatim** (offset 1103896): “Fatty liver
+Liver cirrhosis,
+
+Kidney hemorrhage
+Alzheimer's disease, dementia
+Tardive dyskinesia
+Huntington's disease”
+
+### WAL-CLM-EPIGEN-000045 · deficiency_sign
+- **essentials:** inositol · **conditions:** fatty_liver, diabetes, peripheral_neuropathy, renal_failure · **symptoms:** —
+- **claim:** Inositol (myo-inositol) is a phospholipid component of cell biomembranes and a second messenger that mobilizes intracellular calcium for hormonal signaling, and it has a lipotrophic (fat-handling) role. Wallach lists the health problems of inositol deficiency: fat-metabolism problems, intestinal lipodystrophy, fatty liver, diabetes mellitus, diabetic neuropathy, slow nerve-conduction velocity, renal failure, and galactosemia. In his words: 'Fat metabolism problems; Intestinal lipodystrophy; Fatty liver; Diabetes mellitus; Diabetic neuropathy; Slow nerve conduction velocity; Renal failure.'
+- **verbatim** (offset 1104885): “Fat metabolism problems
+Intestinal lipodystrophy
+
+Fatty liver
+
+Diabetes mellitus
+
+Diabetic neuropathy
+
+Slow nerve conduction velocity
+Renal failure”
+
+### WAL-CLM-EPIGEN-000046 · deficiency_sign
+- **essentials:** flavonoids · **conditions:** hemorrhoids, varicose_veins, bruises, nosebleeds, cancer, inflammation, immune_depression · **symptoms:** capillary_hemorrhage, shortened_lifespan
+- **claim:** Flavonoids (bioflavonoids), once called vitamin P for their role in small-blood-vessel permeability, are antioxidant, anti-inflammatory plant compounds that support vascular and capillary function and lower cardiovascular-disease risk. Wallach lists the health problems of bioflavonoid deficiency: capillary hemorrhage, reduced immune capacity, widespread free-radical injury and inflammation, hemorrhoids, venous insufficiency, leg ulcers, bruising, nosebleeds, increased cancer risk, shortened lifespan, and reduced telomere length and viability. In his words: 'Bioflavonoid deficiency can result in: Capillary hemorrhage; Reduced immune capacity; Widespread free radical injury and inflammation; Hemorrhoids; Venous insufficiency; Leg ulcers; Bruising; Nosebleeds; Increased cancer risk; Shortened lifespan; Reduced telomere length and viability.'
+- **verbatim** (offset 1108393): “Bioflavonoid deficiency can result in:
+
+Capillary hemorrhage
+Reduced immune capacity
+
+Widespread free radical injury and inflammation
+Hemorrhoids
+
+Venous insufficiency
+
+Leg ulcers
+
+Bruising
+
+Nosebleeds
+
+Increased cancer risk
+
+Shortened lifespan
+
+Reduced telomere length and viability”
 
