@@ -1,65 +1,84 @@
 # Extraction report — epigenetics (Epigenetics: The Death of the Genetic Theory of Disease Transmission)
 
-_8 claim(s) drafted 2026-06-30T19:59:20+00:00. Review then run corpus_seal.py to promote._
+_8 claim(s) drafted 2026-06-30T20:28:17+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×1, mechanism×4, personal_anecdote×1, prevalence×1, quote×1
+Kinds: deficiency_sign×4, mechanism×2, prevalence×1, quote×1
 
-### WAL-CLM-EPIGEN-000019 · mechanism
-- **essentials:** — · **conditions:** homosexuality · **symptoms:** —
-- **claim:** Wallach presents homosexuality as a congenital, prenatal biological event rather than a learned behavior or lifestyle choice. He traces a historical shift in thinking: from regarding homosexuality as an emotional or environmental aberration created by improper role models or parenting, to a "choice of sexual preference," and finally to what he frames as a preventable congenital event caused by a deficiency of minerals and/or vitamins in early pregnancy. He calls this a "180 degree change in thinking" that followed the discovery of consistent physical differences in the brains of homosexual men, and holds that the orientation is set early in the formation of the embryonic brain. In his words: "The current focus on the 'gay' phenomena has moved from that of a learned behavior or a 'lifestyle choice' to that of a prenatal biological event, in other words, a preventable congenital event caused by a deficiency of minerals and or vitamins in early pregnancy."
-- **verbatim** (offset 1017191): “The current focus on the “gay” phenomena has moved from that of a learned
-behavior or a “lifestyle choice” to that of a prenatal biological event, in other
-words, a preventable congenital event caused by a deficiency of minerals and or
-vitamins in early pregnancy.”
+### WAL-CLM-EPIGEN-000027 · quote
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach attacks the 'Quackbuster' movement -- a private group of physicians who, he says, organized to destroy legitimate alternative-medicine competition to the medical monopoly. He names its founder Victor Herbert, MD (who titled it the Committee Against Medical Fraud), along with John Renner, MD, William Jarvis, MD, and Stephan Barret, MD. He rebuts their central claim -- voiced by Victor Herbert -- that healthy adults eating a varied diet already get all the vitamins and minerals they need, countering that you cannot guarantee optimal micro- and macro-nutrient intake even by 'eating well': the animal-feed industry adds the full mix of all 90 essential nutrients for maximum health, while an April 2012 Food Chemistry report found commercial baby foods contain less than 20% of an infant's minimum daily requirements of minerals and vitamins. In his words: 'False, dangerous and criminal advice is given to the American public by the ignorant group known as "Quack Busters," who are doctors who joined together to destroy legitimate alternative competition to the medical monopoly.'
+- **verbatim** (offset 1047258): “False, dangerous and criminal advice is given to the American public by the
+ignorant group known as “Quack Busters,” who are doctors who joined together
+to destroy legitimate alternative competition to the medical monopoly.”
 
-### WAL-CLM-EPIGEN-000020 · definition
-- **essentials:** — · **conditions:** intersex · **symptoms:** —
-- **claim:** Wallach defines "intersex" as the medical term for what was historically called hermaphroditism, and describes the classifications used: a female hermaphrodite may possess one testicle and one ovary; a male pseudo-hermaphrodite may have testicles and some female genitalia but lack ovaries; and a female pseudo-hermaphrodite may have ovaries and some male genital features but no testicles. He notes that a series of preventable embryologic congenital events can produce individuals who are asexual, neither male nor female, or both at once -- forming five commonly accepted classifications -- and adds that the variation is so wide that in 1969 Paul Guinet (Endocrine Clinic, Lyons, France) and Jacques Decount (Endocrine Clinic, Paris) listed 98 different types of true hermaphrodite. In his words: "In first discussing congenital events, 'intersex' is the medical term used to describe the term hermaphrodite. A female hermaphrodite might possess one testicle and one ovary, a male pseudo hermaphrodite could have testicles and some recognizable female genitalia but lack ovaries, and a female pseudo hermaphrodite may have ovaries and some noticeable features of male genitalia but no testicles."
-- **verbatim** (offset 1005324): “In first discussing congenital events, “intersex” is the medical term used
-to describe the term hermaphrodite. A female hermaphrodite might possess
-one testicle and one ovary, a male pseudo hermaphrodite could have testicles
-and some recognizable female genitalia but lack ovaries, and a female pseudo
-hermaphrodite may have ovaries and some noticeable features of male genitalia
-but no testicles.”
+### WAL-CLM-EPIGEN-000028 · prevalence
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach cites a 1990 survey by Lucian Lepe, head of the Department of Public Health at Harvard Medical School, which sought the longest-living county in America so its healthcare practices could be copied nationwide. What Lepe found was that the longest-living counties clustered in the mid-west, upper mid-west, and plains states among people of Scandinavian heritage -- dairy farmers who cooked by poaching, stewing, roasting, grilling, and baking -- while the shortest-living counties were the old Confederate states and Indian reservations west of the Mississippi, where everything was fried, forming America's heart-attack, stroke, diabetes, obesity, and cancer belt. Because all counties had equal access to healthcare (even the uninsured, through Medicaid), Wallach concludes it was diet, not medical technology, that added or subtracted years of life -- underscored by Philadelphia County having the most doctors, hospitals, and health funding yet the worst health of any American county. In his words: 'What Lepe found, however, was that the counties with the longest-living people in America were clustered in the mid-west, the upper mid-west and the plains states. Their common heritage was Scandinavian.'
+- **verbatim** (offset 1050167): “What Lepe found, however, was that the counties with the longest-living
+people in America were clustered in the mid-west, the upper mid-west and the
+plains states. Their common heritage was Scandinavian.”
 
-### WAL-CLM-EPIGEN-000021 · quote
-- **essentials:** — · **conditions:** intersex, homosexuality · **symptoms:** —
-- **claim:** In a historical and cultural survey, Wallach traces societal treatment of intersex and homosexual people across the centuries. He notes that the term "hermaphrodite" joins the Greek god Hermes and goddess Aphrodite; that Plato was the only recognized authority to surmise "three sexes (male, female, and hermaphrodite)" and gave the first interpretation of the origin of homosexual behavior; that in ancient times and as late as a 1600s Scottish case intersex people could be put to death (one hermaphrodite living as a woman was buried alive as a witch); and he cites the medical case literature -- Hugh H. Young's 1937 "Genital Abnormalities, Hermaphroditism and Related Adrenal Diseases" and the 1967 Dewhurst and Gordon work "The Intersexual Disorders." He also recounts how the high-profile sexual conversion of Christine Jorgenson, and the chromosome testing introduced at the 1972 Munich Olympic Games, brought the subject to public attention. In his words: "According to historians, Plato is the only recognized authority to have surmised that there were 'three sexes (male, female, and hermaphrodite).'"
-- **verbatim** (offset 1010149): “According to historians, Plato is the only recognized authority to have
-surmised that there were "three sexes (male, female, and hermaphrodite).””
+### WAL-CLM-EPIGEN-000029 · mechanism
+- **essentials:** — · **conditions:** achlorhydria, malabsorption · **symptoms:** —
+- **claim:** Wallach explains that low stomach acid (hypochlorhydria) undermines digestion and nutrient absorption. The acid-manufacturing chief cells of the stomach make hydrochloric acid from sodium chloride (table salt), and that stomach acid is needed to keep the stomach environment sterile -- below a pH of 2.0, preventing the overgrowth of bacteria, viruses, yeast, and fungus, gastric fermentation, and reflux -- to activate the 'intrinsic factor' required for vitamin B12 absorption, to activate the protein-digesting enzyme pepsin, and to facilitate the absorption of minerals. When stomach acid is too low, the absorption of vitamin B12, proteins, and minerals fails. In his words: 'The raw material for the Chief Cells, the acid-manufacturing cells of the stomach, to make hydrochloric acid is NaCl, which is salt. Stomach acid is required to keep the stomach environment sterile and free of bacteria, viruses, yeast, and fungus.'
+- **verbatim** (offset 1054283): “The raw material for the Chief Cells, the acid-manufacturing cells of the
+stomach, to make hydrochloric acid is NaCl, which is salt. Stomach acid is
+required to keep the stomach environment sterile and free of bacteria, viruses,
+yeast, and fungus.”
 
-### WAL-CLM-EPIGEN-000022 · mechanism
-- **essentials:** — · **conditions:** homosexuality · **symptoms:** —
-- **claim:** Wallach cites neuroanatomical research as evidence that homosexuality reflects a congenital difference in brain structure. He notes that in the 1970s German doctors found an area of the preoptic hypothalamus abnormal in homosexual men; that Simon LeVay's autopsy studies found the preoptic area of the hypothalamus (which Wallach describes as the center of sexual appetite and sex drive) smaller in homosexual than in heterosexual men; and that the anterior commissure (a nerve-fiber bundle connecting the brain's two sides) differs in size as well. He acknowledges a limitation -- some men in LeVay's study had died of acquired immunodeficiency syndrome (AIDS), which can damage brain cells -- but notes other brain regions were unaffected. He adds that Roger Gorski's 1978 work at the University of California, Los Angeles found a prenatal testosterone surge stabilizes these cell populations in males. Wallach attributes the differences to a congenital malformation or biochemical deficiency event -- ultimately a congenital deficiency of minerals. In his words: "In autopsy studies, LeVay found that an area in the brain of the pre-optic area of the hypothalamus (center of sexual appetite and sex drive) is smaller in homosexual men than it is in heterosexual men."
-- **verbatim** (offset 1018767): “In autopsy studies, LeVay found that an area in the brain of the pre-optic
-area of the hypothalamus (center of sexual appetite and sex drive) is smaller in
-homosexual men than it is in heterosexual men.”
+### WAL-CLM-EPIGEN-000030 · mechanism
+- **essentials:** — · **conditions:** celiac_disease, diverticulitis, irritable_bowel_syndrome, colitis, crohns_disease, bloating, heartburn, malabsorption · **symptoms:** —
+- **claim:** Wallach frames gluten intolerance not as an allergy but as a 'contact enteritis' -- an irritant reaction of the small-grain proteins on the gut lining, analogous to the contact dermatitis poison ivy causes on skin (no one is allergic to poison ivy, yet nearly everyone is intolerant of it). The gastrointestinal damage from this gluten-contact enteritis includes celiac disease, diverticulitis, appendicitis, irritable bowel syndrome, inflammatory bowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease, gastritis, bloating, and reflux. The gradual, progressive loss of intestinal villi it causes produces malabsorption and, through it, a wide range of nutritional-deficiency diseases -- so the corrective action is to avoid gluten. In his words: 'The gastrointestinal damage that is produced by the gluten-contact enteritis includes celiac disease (wheat allergy that occurs concurrently with contact enteritis), diverticulitis, appendicitis, irritable bowel syndrome, inflammatory bowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease, gastritis, bloating, and reflux.'
+- **verbatim** (offset 1055683): “The gastrointestinal damage that is produced by the gluten-contact enteritis
+includes celiac disease (wheat allergy that occurs concurrently with contact
+enteritis), diverticulitis, appendicitis, irritable bowel syndrome, inflammatory
+bowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease,
+gastritis, bloating, and reflux.”
 
-### WAL-CLM-EPIGEN-000023 · mechanism
-- **essentials:** — · **conditions:** homosexuality · **symptoms:** —
-- **claim:** Wallach argues that twin studies show homosexuality is congenital but not genetic. He cites Richard Pillard and Michael Bailey's finding that only 52 percent of the identical twins of homosexual men were themselves homosexual -- reasoning that a purely genetic trait would require 100 percent concordance -- with lower rates among fraternal and adopted brothers, and a parallel study of 147 homosexual women showing about 48 percent identical-twin concordance. He quotes geneticist Dean Hamer of the National Cancer Institute that "it is a mistake to think there is a gay gene," and concludes the consistent-but-incomplete twin concordance points to a congenital deficiency event during embryonic development rather than a genetic defect or a choice. In his words: "'It is a mistake to think there is a gay gene' says Dean Hamer, a geneticist at the National Cancer Institute."
-- **verbatim** (offset 1018476): ““It is a mistake to think there is a gay gene” says Dean Hamer, a geneticist at
-the National Cancer Institute.”
+### WAL-CLM-EPIGEN-000031 · deficiency_sign
+- **essentials:** vitamin-a · **conditions:** night_blindness, conjunctivitis, xerophthalmia, keratomalacia, corneal_ulcers, infertility, birth_defects, depression, immune_depression, osteoporosis, osteoarthritis, osteomalacia, failure_to_thrive, acne, dermatitis, ichthyosis, cancer · **symptoms:** hyperkeratosis, dry_skin
+- **claim:** Vitamin A (retinol, with beta-carotene as its fat-soluble precursor) is required for vision and night vision, healthy skin and mucous membranes, bones and teeth, and it lowers the risk of epithelial cancers. Wallach lists the health problems of vitamin A deficiency: night blindness (nyctalopia), conjunctivitis, xerophthalmia, keratomalacia (keratoconus, corneal ulcers), infertility, birth defects, depression, a depressed immune system, osteopenia/osteoporosis/osteoarthritis/osteomalacia, failure to thrive with stunted growth, acne, dermatitis (dry skin, keratitis), hyperkeratosis ('goose flesh'), ichthyosis (shark skin, Darier's disease), and increased cancer risk. In his words: 'Vitamin A-deficiency health problems include: Night blindness (Nyctalopia), Conjunctivitis, Xerophthalmia, Keratomalacia (Keratoconus - corneal ulcers), Infertility, Birth defects.'
+- **verbatim** (offset 1068156): “Vitamin A-deficiency health problems include:
 
-### WAL-CLM-EPIGEN-000024 · prevalence
-- **essentials:** — · **conditions:** homosexuality · **symptoms:** —
-- **claim:** Wallach reports prevalence figures for homosexuality and ties their rise to declining soil minerals. He cites the Alfred Kinsey Reports of the 1940s-50s (4 to 10 percent of the American population), psychiatrist Richard Pillard (4 percent of United States males and 2 to 3 percent of females), and overseas figures (possibly 25 percent in Great Britain in the 1990s). He argues the gradual increase in homosexuality in America and other industrialized nations parallels the gradual decrease in the mineral content of farm and range soils, and therefore of the food supply. He also notes that "gay" behavior occurs in animals kept in same-sex groups through puberty, similar to opportunistic behavior seen in prison. In his words: "The gradual increase in the percentage of gays in America and other industrialized nations of the world parallels the gradual decrease in the mineral content in our farm and range soils and therefore a decrease in the mineral content of our food supply."
-- **verbatim** (offset 1016783): “The gradual increase in the percentage of gays in America and other
-industrialized nations of the world parallels the gradual decrease in the mineral
-content in our farm and range soils and therefore a decrease in the mineral
-content of our food supply.”
+Night blindness (Nyctalopia)
+Conjunctivitis
 
-### WAL-CLM-EPIGEN-000025 · mechanism
-- **essentials:** — · **conditions:** intersex · **symptoms:** —
-- **claim:** Wallach draws on veterinary and animal evidence to support his thesis that intersex conditions arise from embryonic nutritional deficiency. He notes that veterinarians routinely see unusual sexual anatomy and congenital defects in animals resulting from embryonic nutritional deficiencies, and that every known congenital defect of the human sexual organs has been recorded in animals. He cites the "freemartin" -- an infertile, masculinized female calf born as the fraternal twin of a male (about 80 percent of cases in cattle) -- and observes that in litters competing for limited nutrition, the more limited the nutrition, the more numerous and severe the birth defects, so multiple-birth embryos (which compete for resources) show more congenital defects than single embryos. In his words: "Veterinarians have a lot of experience with normal animals that have unusual sexual anatomy and also abnormal congenital defects as a result of embryonic nutritional deficiencies."
-- **verbatim** (offset 1012240): “Veterinarians have a lot of experience with normal animals that have unusual
-sexual anatomy and also abnormal congenital defects as a result of embryonic
-nutritional deficiencies.”
+Xerophthalmia
 
-### WAL-CLM-EPIGEN-000026 · personal_anecdote
-- **essentials:** — · **conditions:** homosexuality · **symptoms:** —
-- **claim:** Wallach reports that, in his own interviews with hundreds of homosexual men and women, in every case the mother had been in nutritional distress during the pregnancy -- citing gluten intolerance (reducing absorption efficiency), alcoholism, low income with reduced access to healthy food, or failure to use prenatal vitamins and minerals. He adds that his survey found these individuals knew of their orientation between the ages of six and ten, which he takes as evidence that it is driven by a congenital event in brain development rather than a choice and therefore cannot be "prayed away" or "coached away." He concludes that the congenital hermaphrodite, the intersexual, and the homosexual embryo could all be prevented with complete preconception nutrition -- the 90 essential nutrients including minerals (zinc, manganese, magnesium, gallium, copper), vitamins (vitamin B12, folic acid, vitamin A), amino acids, and essential fatty acids. In his words: "Wallach has interviewed hundreds of gay men and women and found that in each case the mother of the gay male or female was in nutritional distress during their pregnancy."
-- **verbatim** (offset 1022525): “Wallach has interviewed hundreds of gay men and women and found that
-in each case the mother of the gay male or female was in nutritional distress
-during their pregnancy.”
+Keratomalacia (Keratoconus — corneal ulcers)
+Infertility
+
+Birth defects”
+
+### WAL-CLM-EPIGEN-000032 · deficiency_sign
+- **essentials:** vitamin-d · **conditions:** tourette_syndrome, muscle_cramps, tetany, convulsions, rickets, restless_leg_syndrome, osteoporosis, periodontal_disease, arthritis, osteoarthritis, bone_spurs, kidney_stones, uterine_fibroids, cancer · **symptoms:** bow_legs, knock_knees, profuse_sweating
+- **claim:** Vitamin D is required for the absorption, metabolism, and proper deposition of calcium and phosphorus in the bones and teeth, and works hand-in-hand with parathyroid hormone. Wallach calls the modern universal vitamin D deficiency a 'physician-caused disease' -- a perfect storm created by medical advice to avoid the sun, wear sunblock and covering clothing, avoid dietary cholesterol (egg yolks, chicken skin, dairy, saturated fats), and skip vitamin-mineral supplements. He lists the health problems of vitamin D deficiency: facial tics and Tourette's syndrome, twitches and muscle cramps, tetany (full-body cramp) and convulsions, childhood rickets (rachitic rosary, bowed legs, knock-knees, pigeon chest), profuse sweating, restless leg syndrome, enlarged wrists, osteopenia/osteoporosis, periodontal disease, arthritis/osteoarthritis/degenerative 'bone-to-bone' arthritis, bone spurs, kidney stones, uterine fibroids, and a higher risk of cancer. In his words: 'Vitamin D-deficiency health problems include: Facial tics, Tourette's syndrome; Twitches, muscle cramps; Tetany (full body cramp), convulsions.'
+- **verbatim** (offset 1075065): “Vitamin D-deficiency health problems include:
+
+Facial tics, Tourette's syndrome
+Twitches, muscle cramps
+Tetany (full body cramp), convulsions”
+
+### WAL-CLM-EPIGEN-000033 · deficiency_sign
+- **essentials:** vitamin-e · **conditions:** alzheimers, anemia, infertility, immune_depression, ischemic_heart_disease, fibrocystic_breast_disease, fibromyalgia, cystic_fibrosis, muscular_dystrophy, cardiomyopathy, cancer · **symptoms:** age_spots, liver_spots, muscle_weakness, myalgia
+- **claim:** Vitamin E is a group of antioxidant compounds (the alpha-tocopherols) that protect cell membranes from oxidative inflammation and red blood cells from rupture; in combination with the trace mineral selenium it lowers the risk of certain cancers, slows aging, preserves telomere length, and reduces the risk of Alzheimer's disease, hypertrophic cardiomyopathy, muscular dystrophy, and cystic fibrosis. Wallach lists the health problems of vitamin E deficiency: Alzheimer's disease, hemolytic anemia, infertility, a depressed immune system, age spots and liver spots, lipid peroxidation and cellulite, ischemic heart disease, fibrocystic breast disease, muscle weakness with myalgia and fibromyalgia, cystic fibrosis and muscular dystrophy and hypertrophic cardiomyopathy (each in conjunction with selenium deficiency), and increased cancer risk. In his words: 'Vitamin E-deficiency health problems include: Alzheimer's disease; Anemia (hemolytic); Infertility; Depressed immune system; Age spots, liver spots.'
+- **verbatim** (offset 1077409): “Vitamin E-deficiency health problems include:
+
+
+Alzheimer's disease
+Anemia (hemolytic)
+
+Infertility
+
+Depressed immune system
+
+Age spots, liver spots”
+
+### WAL-CLM-EPIGEN-000034 · deficiency_sign
+- **essentials:** vitamin-k · **conditions:** ecchymosis, nosebleeds, bleeding_bowels, liver_disease, osteoporosis, fractures, osteoarthritis · **symptoms:** prolonged_clotting_time
+- **claim:** Vitamin K (menaquinone) is required by the liver to produce prothrombin and at least five other clotting proteins (factors VII, IX, and X, and proteins C and S) for proper blood clotting, and for the proper deposition of calcium in bones; about half of the body's requirement is produced by probiotic bacteria in the colon. Wallach lists the health problems of vitamin K deficiency: osteocalcin deficiency, extended clotting time, ecchymoses (bruising), epistaxis (nosebleeds), hematuria, gastrointestinal bleeding, liver disease, dysfunctional calcium absorption and deposition in the bones, osteoporosis with spontaneous fractures, and osteoarthritis. In his words: 'This vitamin, isolated in 1939, is a fat soluble vitamin that is required by the liver for the production of prothrombin and at least five other proteins (factors VII, IX, and X, and proteins C and S) and other biologically active substances essential for proper blood clotting and for the proper deposition of calcium in bones.'
+- **verbatim** (offset 1078165): “This vitamin, isolated in 1939, is a fat soluble vitamin that is required by the liver
+for the production of prothrombin and at least five other proteins (factors VII, IX,
+and X, and proteins C and S) and other biologically active substances essential
+for proper blood clotting and for the proper deposition of calcium in bones.”
 

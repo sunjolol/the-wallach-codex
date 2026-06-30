@@ -3896,10 +3896,11 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 58,
+    "claim_count": 59,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
+        "WAL-CLM-EPIGEN-000031",
         "WAL-CLM-LETS-000036",
         "WAL-CLM-RARE-000229"
       ],
@@ -3973,12 +3974,22 @@
       },
       {
         "sign": "dry_skin",
+        "claim_id": "WAL-CLM-EPIGEN-000031",
+        "confidence": "high"
+      },
+      {
+        "sign": "dry_skin",
         "claim_id": "WAL-CLM-LETS-000036",
         "confidence": "high"
       },
       {
         "sign": "fatigue",
         "claim_id": "WAL-CLM-LETS-000036",
+        "confidence": "high"
+      },
+      {
+        "sign": "hyperkeratosis",
+        "claim_id": "WAL-CLM-EPIGEN-000031",
         "confidence": "high"
       },
       {
@@ -4036,9 +4047,11 @@
       "corneal_ulcers",
       "crohns_disease",
       "dandruff",
+      "depression",
       "dermatitis",
       "dry_skin",
       "eczema",
+      "failure_to_thrive",
       "fibrocystic_breast_disease",
       "food_allergy",
       "freckles",
@@ -4066,6 +4079,9 @@
       "miscarriage",
       "night_blindness",
       "omphalocele",
+      "osteoarthritis",
+      "osteomalacia",
+      "osteoporosis",
       "peptic_ulcers",
       "periodontal_disease",
       "peritonsillar_abscess",
@@ -4110,6 +4126,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -5614,12 +5631,13 @@
     "display_name": "Cholecalciferol",
     "canon_slug": "vitamin-d",
     "category": "vitamin",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000083"
       ],
       "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000032",
         "WAL-CLM-LETS-000039",
         "WAL-CLM-RARE-000230"
       ],
@@ -5641,6 +5659,11 @@
     "deficiency_signs": [
       {
         "sign": "bow_legs",
+        "claim_id": "WAL-CLM-EPIGEN-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "bow_legs",
         "claim_id": "WAL-CLM-RARE-000230",
         "confidence": "high"
       },
@@ -5656,12 +5679,22 @@
       },
       {
         "sign": "knock_knees",
+        "claim_id": "WAL-CLM-EPIGEN-000032",
+        "confidence": "high"
+      },
+      {
+        "sign": "knock_knees",
         "claim_id": "WAL-CLM-RARE-000230",
         "confidence": "high"
       },
       {
         "sign": "nervousness",
         "claim_id": "WAL-CLM-LETS-000039",
+        "confidence": "high"
+      },
+      {
+        "sign": "profuse_sweating",
+        "claim_id": "WAL-CLM-EPIGEN-000032",
         "confidence": "high"
       },
       {
@@ -5674,15 +5707,25 @@
       "angina",
       "arteriosclerosis",
       "arthritis",
+      "bone_spurs",
+      "cancer",
+      "convulsions",
       "diarrhea",
       "insomnia",
+      "kidney_stones",
       "liver_disease",
       "menopause",
+      "muscle_cramps",
       "myopia",
+      "osteoarthritis",
       "osteomalacia",
       "osteoporosis",
+      "periodontal_disease",
       "restless_leg_syndrome",
-      "rickets"
+      "rickets",
+      "tetany",
+      "tourette_syndrome",
+      "uterine_fibroids"
     ],
     "interacts_with": [
       "calcium",
@@ -5691,6 +5734,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -5699,10 +5743,11 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 67,
+    "claim_count": 68,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
+        "WAL-CLM-EPIGEN-000033",
         "WAL-CLM-LETS-000041",
         "WAL-CLM-RARE-000231"
       ],
@@ -5782,6 +5827,11 @@
     "deficiency_signs": [
       {
         "sign": "age_spots",
+        "claim_id": "WAL-CLM-EPIGEN-000033",
+        "confidence": "high"
+      },
+      {
+        "sign": "age_spots",
         "claim_id": "WAL-CLM-RARE-000231",
         "confidence": "high"
       },
@@ -5802,6 +5852,11 @@
       },
       {
         "sign": "liver_spots",
+        "claim_id": "WAL-CLM-EPIGEN-000033",
+        "confidence": "high"
+      },
+      {
+        "sign": "liver_spots",
         "claim_id": "WAL-CLM-RARE-000231",
         "confidence": "high"
       },
@@ -5812,7 +5867,17 @@
       },
       {
         "sign": "muscle_weakness",
+        "claim_id": "WAL-CLM-EPIGEN-000033",
+        "confidence": "high"
+      },
+      {
+        "sign": "muscle_weakness",
         "claim_id": "WAL-CLM-RARE-000231",
+        "confidence": "high"
+      },
+      {
+        "sign": "myalgia",
+        "claim_id": "WAL-CLM-EPIGEN-000033",
         "confidence": "high"
       },
       {
@@ -5881,11 +5946,13 @@
       "ecchymosis",
       "eczema",
       "fibrocystic_breast_disease",
+      "fibromyalgia",
       "freckles",
       "gallstones",
       "growing_pains",
       "hangnails",
       "heart_attack",
+      "immune_depression",
       "incontinence",
       "indigestion",
       "infarction",
@@ -5955,6 +6022,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -5963,10 +6031,11 @@
     "display_name": "Menaquinone",
     "canon_slug": "vitamin-k",
     "category": "vitamin",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
+        "WAL-CLM-EPIGEN-000034",
         "WAL-CLM-LETS-000042",
         "WAL-CLM-RARE-000232"
       ],
@@ -5996,6 +6065,11 @@
       },
       {
         "sign": "prolonged_clotting_time",
+        "claim_id": "WAL-CLM-EPIGEN-000034",
+        "confidence": "high"
+      },
+      {
+        "sign": "prolonged_clotting_time",
         "claim_id": "WAL-CLM-LETS-000042",
         "confidence": "high"
       },
@@ -6006,8 +6080,12 @@
       }
     ],
     "conditions_treated": [
+      "bleeding_bowels",
       "ecchymosis",
+      "fractures",
+      "liver_disease",
       "nosebleeds",
+      "osteoarthritis",
       "osteoporosis"
     ],
     "interacts_with": [
@@ -6018,6 +6096,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]

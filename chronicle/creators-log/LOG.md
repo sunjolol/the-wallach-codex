@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 219 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 220 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 15:30 UTC-05:00 · round-close · knowledge/corpus
+SESSION 28 b4 - Epigenetics Ch 18 opening + fat-soluble vitamins. EPIGEN-027..034 (+8): 2 search-only polemic + 2 tier-1 absorption (hypochlorhydria/gluten) + 4 deficiency_sign (vit A/D/E/K). kv194, claims 915, conditions 456 (+uterine_fibroids). VISUAL-VERIFY OWED before b5.
+  ↳ Ch 18 audited as a per-nutrient deficiency-sign encyclopedia (not 'disease protocols' as policy guessed); Luneth ruled comprehensive tier-1 batched + opening search-only / absorption tier-1 (AskUserQuestion). Board 31/31 (0 NEW), render probe green. Awaiting Conditions/Essentials-tab visual sign-off before b5 (water-soluble vitamins).
 
 ## 2026-06-30 15:03 UTC-05:00 · milestone · knowledge/corpus
 SESSION 28 b3 — cross-book homosexuality/intersex sweep (Luneth #1): Epigenetics Ch17 treatise 2→10 search-only claims (EPIGEN-019..026), faithful+neutral, stripped from operational indices (Conditions 455 unchanged). Older books skipped per Luneth; Harmer→Hamer fixed.
@@ -801,7 +805,3 @@ Wallach Knowledge Revamp Phase α: Eden gains Wing 2 (eden/corpus — 6 books in
 ## 2026-06-24 05:10 UTC-04:00 · round-close · coverage/essentials
 90-essentials correctness: Germanium replaces Fluoride in the 60 (Wallach 60-graphic, 4x-confirmed); Fluoride scrubbed pending corpus audit; count unified at 90 via essentialCount(); all names shown full; vitamin/amino tiles unified to mineral format + gap fixed.
   ↳ Files: essentials-targets.json, essentials-targets-data (embed+json), essentials-benefits-data, coverage-layout-data, state/coverage.ts (essentialCount helper), views/{coverage,scanner,regimen}, core/schemas/knowledge, workspace-coverage.css, render_probe_seeded. Verified: build OK, 26/26 invariants (embed-sync=91), 5 render probes green, 0 clipped names. Record: chronicle/contradictions/2026-06-24-germanium-replaces-fluoride.md. Open for corpus audit: Fluoride re-adjudication + hallucination provenance + Cysteine-vs-Taurine.
-
-## 2026-06-24 00:59 UTC-04:00 · round-close · knowledge
-Knowledge drawer SHIPPED to gold-standard: shared-chrome refactor + full kd-* styling + Essentials deep-dive + 90-essentials/Omega-9 reframe (§00.A confirmed) + drawer +100px. Board 26/26.
-  ↳ Lifted shared drawer chrome into drawer-shared.css (dual jd-*/kd- selectors, both mount-rooted = single source, no leak); kd-* tab-content rename closes the legacy .essential-tile collision. Essentials tab rebuilt layout-driven (all shown, real symbols, coverage-state colors from the same CoverageSnapshot classifier) + click-to-expand Wallach deep-dive (quote/citation + matchEssential vault chips). Omega-9 flagged essential:false in coverage-layout-data.json (single source) -> always 90; teal --bonus tile + on-click non-essential note, coverage math retained. Caught + fixed a */-in-CSS-comment that silently dropped the journey panel width:600 (probe caught 580px). Germanium (61st embed mineral, absent from layout) flagged for next-genesis reconciliation; all live 91/92 instances inventoried in next-chunk.md. Verified: build OK, invariants 26/26, knowledge/journey/coverage/seeded probes green, Luneth visually verified.
