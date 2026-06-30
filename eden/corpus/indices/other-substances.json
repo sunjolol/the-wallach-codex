@@ -857,14 +857,18 @@
   },
   "bismuth": {
     "display_name": "Bismuth",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-EPIGEN-000071"
+      ],
       "protocol": [
         "WAL-CLM-RARE-000285"
       ]
     },
     "conditions_treated": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },

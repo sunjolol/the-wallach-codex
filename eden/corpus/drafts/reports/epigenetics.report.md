@@ -1,65 +1,70 @@
 # Extraction report — epigenetics (Epigenetics: The Death of the Genetic Theory of Disease Transmission)
 
-_4 claim(s) drafted 2026-06-30T21:42:21+00:00. Review then run corpus_seal.py to promote._
+_10 claim(s) drafted 2026-06-30T22:35:27+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: deficiency_sign×3, mechanism×1
+Kinds: deficiency_sign×1, mechanism×8, toxicity_sign×1
 
-### WAL-CLM-EPIGEN-000060 · mechanism
+### WAL-CLM-EPIGEN-000064 · deficiency_sign
+- **essentials:** silver · **conditions:** — · **symptoms:** —
+- **claim:** Wallach reports that although silver is not required by any known biological system, many researchers consider it an essential element for its role as a systemic disinfectant and immune-system support. He cites it as a broad-spectrum antibacterial, antiviral, and antifungal agent that disables the enzymes microbes use for respiration, notes that humans can safely consume 400 milligrams of silver per day, and states that a silver 'deficiency' results in an impaired immune system with a higher rate of illness such as colds and influenza. Drawing on Dr. Robert Becker's The Body Electric, he adds that silver also stimulates the growth and repair of injured tissue.
+- **verbatim** (offset 1147784): “A silver “deficiency”
+results in an impaired immune system. In the Body Electric Dr. Robert Becker
+identified a relationship between low levels of tissue and dietary silver and the
+rate of illness (such as flu, colds, etc.)”
+
+### WAL-CLM-EPIGEN-000065 · mechanism
+- **essentials:** aluminum · **conditions:** — · **symptoms:** —
+- **claim:** Wallach identifies aluminum's known biological function as activating the enzyme succinic dehydrogenase and increasing newborn survival, and reports that Professor Gerhard Schrauzer (former chair of chemistry at the University of California, San Diego) argues it should be classed as an essential mineral for all vertebrates including humans. He stresses that aluminum is remarkably nontoxic at dietary levels -- far less toxic than heavy metals -- and that it competes with calcium absorption, so excess can reduce skeletal mineralization. He explicitly rejects the popular fear that aluminum causes Alzheimer's disease, citing the 1992 Oxford study (Frank Watt and colleagues, in Nature) that found identical brain-aluminum levels in Alzheimer's patients and controls, and the Alzheimer's Society's 2013 position that no causal link has been demonstrated.
+- **verbatim** (offset 1150029): “The known biological function of aluminum is to activate the enzyme succinic
+dehydrogenase; it increases the survival rate of the newborn”
+
+### WAL-CLM-EPIGEN-000066 · mechanism
+- **essentials:** arsenic · **conditions:** — · **symptoms:** —
+- **claim:** Wallach presents arsenic as an essential trace element -- required for survivability of the newborn and for neonatal growth -- not merely the notorious poison of popular reputation. He notes arsenic promotes growth in chicks and tadpoles, that in combination with choline it prevents perosis ('slipped tendon') in poultry, and that its role in human physiology lies in methyl-group metabolism and polyamine synthesis. He distinguishes organically-bound arsenic, which is far safer, from metallic arsenic, which is about 65 times more toxic, and recounts that low-dose arsenic trioxide is an approved, effective therapy for acute promyelocytic leukemia, a blood and bone-marrow cancer, with 'Fowler's solution' historically used for psoriasis.
+- **verbatim** (offset 1154650): “Arsenic promotes the growth rate of chicks at 90 to 120 ppm. The rate of
+growth and metamorphosis of tadpoles is enhanced by the presence of arsenic.”
+
+### WAL-CLM-EPIGEN-000067 · mechanism
+- **essentials:** gold · **conditions:** — · **symptoms:** —
+- **claim:** Wallach explains that elemental gold is biologically inert -- tasteless, unabsorbed, and passed unchanged in the feces with no nutritional value -- so the gold leaf in gourmet foods and liqueurs is purely decorative. Gold compounds (gold sodium thiomalate, aurothioglucose), by contrast, are given by conventional physicians as an add-on anti-inflammatory for rheumatoid arthritis: effective against active joint inflammation but not for advanced destructive disease, and anti-inflammatory rather than pain-relieving. He notes the standard intramuscular schedule (10 milligrams rising to 50 milligrams weekly to a one-gram total), warns it is contraindicated in liver, kidney, and blood disease and in lupus, and lists toxic reactions including itching, dermatitis, mouth inflammation, gastrointestinal upset, blood in the urine, aplastic anemia, and hepatitis.
+- **verbatim** (offset 1159762): “Gold has been reported only to be effective against active joint
+inflammation and is not usually helpful for advanced destructive rheumatoid
+arthritis,”
+
+### WAL-CLM-EPIGEN-000068 · mechanism
+- **essentials:** boron · **conditions:** — · **symptoms:** —
+- **claim:** Wallach classifies boron as an essential mineral for bone metabolism -- needed for the efficient use of calcium and magnesium and for the proper functioning of the ovaries, testes, and adrenal glands. He notes boron was only universally accepted as essential for humans around 1990, and that within eight days of boron supplementation women lost 40 percent less calcium, 33 percent less magnesium, and less phosphorus through their urine, while blood estradiol and testosterone in both men and women nearly doubled -- to levels comparable with estrogen-replacement therapy. He frames boron as central to maintaining bone and normal sex-hormone levels.
+- **verbatim** (offset 1163354): “Boron is essential for bone metabolism, including the efficient use of calcium
+and magnesium and for the proper functioning of the ovaries, testes”
+
+### WAL-CLM-EPIGEN-000069 · mechanism
+- **essentials:** barium · **conditions:** — · **symptoms:** —
+- **claim:** Wallach notes that barium's essentiality in mammals was established in 1949 (Rygh). Most naturally-occurring barium minerals (barite, witherite) are water-insoluble, and barium sulfate has very low toxicity together with high X-ray opacity -- which is why it serves as the contrast medium (the 'barium meal' and 'barium enema') for upper and lower gastrointestinal X-ray studies of the digestive system.
+- **verbatim** (offset 1165961): “Barium sulfate has a very low toxicity and relatively high density and has
+a high opacity to X-rays. It is used as a contrast media in X-ray imaging of
+the digestive system”
+
+### WAL-CLM-EPIGEN-000070 · toxicity_sign
+- **essentials:** beryllium · **conditions:** — · **symptoms:** —
+- **claim:** Although beryllium appears on Wallach's list of essential minerals, the stance he records here is a safety caution: pure powdered beryllium and its compounds must be handled with care because of the risk of acute beryllium disease or chemical pneumonitis (first reported in Europe in 1933 and in the United States in 1943), and chronic berylliosis resembles pulmonary sarcoidosis.
+- **verbatim** (offset 1167958): “Pure powdered beryllium and its compounds should be handled with care
+because of the potential for acute beryllium disease or chemical pneumonitis”
+
+### WAL-CLM-EPIGEN-000071 · mechanism
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach describes three basic forms of minerals and their very different bioavailability. Metallic minerals (eggshell, oyster shell, calcium carbonate, dolomite, antacids such as Rolaids and Tums, and the gluconate/carbonate/oxide forms in most tablets) are, despite claims to the contrary, only 8 to 12 percent absorbable by humans -- dropping to roughly 3 to 5 percent after age 35 to 40. Chelated minerals (created by the livestock industry in the 1960s, the mineral wrapped in an amino acid such as EDTA) absorb better, and colloidal minerals -- ultra-fine plant-derived particles suspended in liquid -- are the most usable, which is why he calls plant-derived colloidal minerals the most critical of the 90 essential nutrients. In his words: 'Metallic minerals, despite wild claims to the contrary, are only eight percent to twelve percent biologically available to all vertebrates, including humans; after attaining the age of 35 to 40 years the absorptive availability to humans is reduced to somewhere around three to five percent.'
-- **verbatim** (offset 1130414): “Metallic minerals, despite wild claims to the contrary, are only eight percent
-to twelve percent biologically available to all vertebrates, including humans; after
-attaining the age of 35 to 40 years the absorptive availability to humans is
+- **claim:** Wallach notes that bismuth (chemically resembling arsenic and antimony) is not on the essential-mineral list but has clear medicinal use: bismuth subsalicylate is the antidiarrheal active ingredient in 'Pink Bismuth' products such as Pepto-Bismol and the reformulated Kaopectate. He recounts that a combination of bismuth subsalicylate, bismuth subcitrate, and the antibiotic tetracycline -- used in pigs since 1952 -- was approved by the United States Food and Drug Administration in 1994 to cure human gastric ulcers, underscoring his point that the bacterium Helicobacter pylori, not stress, causes most stomach and peptic ulcers (the 1983 Marshall-Warren discovery).
+- **verbatim** (offset 1168997): “Bismuth subsalicylate is used as an antidiarrheal; it is the active ingredient
+in “Pink Bismuth” compounds such as Pepto-Bismol”
 
+### WAL-CLM-EPIGEN-000072 · mechanism
+- **essentials:** bromine · **conditions:** — · **symptoms:** —
+- **claim:** Wallach describes bromine as a halogen related to iodine, fluorine, and chlorine. Bromine compounds such as potassium bromide were used as sedatives through the 19th and 20th centuries, until the United States Food and Drug Administration pulled over-the-counter bromide sedatives such as Bromo-Seltzer from sale in 1975, and he notes that toxic reactions from a bromine overdose can resemble acne-like skin eruptions.
+- **verbatim** (offset 1170595): “Bromine compounds, such as potassium bromide, were used as sedatives in
+the 19th and 20th centuries.”
 
-reduced to somewhere around three to five percent.”
-
-### WAL-CLM-EPIGEN-000061 · deficiency_sign
-- **essentials:** calcium · **conditions:** osteoporosis, scoliosis, fractures, periodontal_disease, osteomalacia, arthritis, osteoarthritis, bone_spurs, kidney_stones, hyperparathyroidism, hypertension, insomnia, restless_leg_syndrome, atrial_fibrillation, muscle_cramps, tourette_syndrome, pms, sciatica, backache, neuropathy, bells_palsy, trigeminal_neuralgia, tetany, convulsions, panic_attacks, hyperirritability · **symptoms:** —
-- **claim:** Calcium is the most abundant mineral in the body, with about 99% in the bones and teeth (as hydroxyapatite) and the rest used as a cofactor for blood clotting, muscle contraction, and the heart's electrical conduction. Wallach states that, contrary to the medical belief that high calcium causes kidney stones, a high dietary calcium intake actually reduces the risk of nutritional secondary hyperparathyroidism, hypercalcemia, and kidney stones, and that no fewer than 147 deficiency diseases are attributed to calcium deficiency or imbalance. His Common Calcium-Deficiency Diseases include: osteoporosis (with kyphosis, scoliosis, Dowager's hump, lordosis, spontaneous fractures), receding gums, osteomalacia, myelosclerosis, arthritis, ankylosing spondylitis, bone spurs, kidney stones, nutritional secondary hyperparathyroidism, hypertension, insomnia, calcium deposits (vascular, restless leg, atrial fibrillation), cramps and twitches (Tourette's syndrome), premenstrual syndrome, low-back pain (sciatica), neuropathy (Bell's palsy, trigeminal neuralgia), tetany with convulsions, and panic attacks. In his words: 'There are no less than 147 different deficiency-diseases that are directly attributed to a calcium deficiency or imbalance.'
-- **verbatim** (offset 1188409): “There are no less than 147 different deficiency-diseases that are directly
-attributed to a calcium deficiency or imbalance.”
-
-### WAL-CLM-EPIGEN-000062 · deficiency_sign
-- **essentials:** chromium · **conditions:** hypoglycemia, reactive_hypoglycemia, bedwetting, prediabetes, diabetes, hyperinsulinemia, hyperactivity, learning_disabilities, adhd, hyperirritability, depression, bipolar_disorder, explosive_outbursts, peripheral_neuropathy, high_triglycerides, high_cholesterol, coronary_artery_disease, atherosclerosis, infertility, oligospermia · **symptoms:** reduced_growth, muscle_atrophy, shortened_lifespan
-- **claim:** Chromium activates the glucose tolerance factor and is essential to insulin function and blood-sugar control; Wallach notes a USDA spokesperson stated 90% of Americans are deficient, that dietary sugar loads raise urinary chromium loss by 300% for 12 hours, and that chromium-supplemented animals lived 33% longer. Chromium-deficiency diseases (aggravated by concurrent vanadium deficiency and dietary sugar) include: low blood sugar, reactive hypoglycemia, bed-wetting, pre-diabetes, type-2 diabetes, hyperinsulinemia, hyperactivity, learning disability, attention deficit disorder (ADD/ADHD), hyperirritability, depression, manic depression (bipolar disorder), 'Dr. Jekyll/Mr. Hyde' rages, impaired growth, peripheral neuropathy, negative nitrogen balance (protein/muscle loss), elevated triglycerides (over 200) and cholesterol (over 270), coronary artery disease, aortic cholesterol plaque, infertility (anovulation and low sperm count), and a shortened lifespan. In his words: 'Diseases and Symptoms of Chromium Deficiency: Low blood sugar; Reactive hypoglycemia; Bed wetting; Pre-diabetes; Diabetes (Type 2); Hyperinsulinemia; Hyperactivity; Learning disability; ADD/ADHD.'
-- **verbatim** (offset 1216899): “Diseases and Symptoms of Chromium Deficiency
-
-Low blood sugar
-Reactive hypoglycemia
-
-Bed wetting
-Pre-diabetes
-
-Diabetes (Type 2)
-
-Hyperinsulinemia
-
-Hyperactivity
-
-Learning disability
-
-ADD/ADHD”
-
-### WAL-CLM-EPIGEN-000063 · deficiency_sign
-- **essentials:** copper · **conditions:** ptosis, hernia, varicose_veins, hemorrhoids, aneurysm, kawasaki_disease, anemia, hypothyroidism, hyperthyroidism, arthritis, liver_cirrhosis, violent_behavior, blind_rage, explosive_outbursts, criminal_behavior, learning_disabilities, cerebral_palsy, congenital_ataxia, high_cholesterol, hypoglycemia, reactive_hypoglycemia, glucose_intolerance, neutropenia · **symptoms:** gray_hair, white_hair, dry_hair
-- **claim:** Copper is a universally important cofactor for hundreds of metalloenzymes -- required for the pigment melanin (hair and skin color), for lysyl oxidase that gives blood vessels, skin, and discs their tensile strength, and for oxygen handling in respiration; Wallach calls copper deficiency widespread and notes it underlies several diseases the medical community wrongly blames on prions or infection. Copper-deficiency diseases include: white/gray/silver and dry brittle hair, ptosis (sagging eyelids, skin, breasts, belly), hernias, varicose and spider veins (hemorrhoids), aneurysms, Kawasaki disease, Marfan's syndrome, anemia, hypo- and hyperthyroid, arthritis, ruptured and bulging discs, liver cirrhosis, violent/blind-rage/explosive/criminal behavior, learning disabilities, cerebral palsy with cerebellar hypoplasia (congenital ataxia), high cholesterol, iron-storage disease, reduced glucose tolerance (hypoglycemia, reactive hypoglycemia), and neutropenia. In his words: 'Diseases and Symptoms of Copper Deficiency: White hair, gray hair, silver hair; Dry brittle hair ("steely wool" in sheep); Enzootic ataxia in sheep; Mad cow disease (BSE cattle); Creutzfeldt-Jakob disease (BSE in humans); Ptosis (ie., sagging tissue -- eye lids, skin, breasts, belly, etc.); Hernias (congenital and acquired); Varicose veins/ spider veins (hemorrhoids); Aneurysms (aortic, cerebral, coronary, gastric, etc.).'
-- **verbatim** (offset 1221880): “Diseases and Symptoms of Copper Deficiency
-
-White hair, gray hair, silver hair
-
-Dry brittle hair (“steely wool” in sheep)
-
-Enzootic ataxia in sheep
-
-Mad cow disease (BSE cattle)
-
-Creutzfeldt-Jakob disease (BSE in humans)
-
-Ptosis (ie., sagging tissue—eye lids, skin, breasts, belly, etc.)
-Hernias (congenital and acquired)
-
-Varicose veins/ spider veins (hemorrhoids)
-
-Aneurysms (aortic, cerebral, coronary, gastric, etc.)”
+### WAL-CLM-EPIGEN-000073 · mechanism
+- **essentials:** carbon · **conditions:** — · **symptoms:** —
+- **claim:** Wallach notes that carbon -- one of the few elements known since antiquity -- functions as the essential structural atom for all organic molecules, including the genes themselves, and is present at very high concentrations in living tissue (around 454,000 parts per million in land plants and 465,000 in land animals, with roughly 280,000 in bone).
+- **verbatim** (offset 1171396): “Carbon
+functions as an essential structural atom for all organic molecules”
 

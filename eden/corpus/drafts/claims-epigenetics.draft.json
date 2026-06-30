@@ -2592,6 +2592,348 @@
       "extracted_at": "2026-06-30T21:42:21+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000064",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "silver"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach reports that although silver is not required by any known biological system, many researchers consider it an essential element for its role as a systemic disinfectant and immune-system support. He cites it as a broad-spectrum antibacterial, antiviral, and antifungal agent that disables the enzymes microbes use for respiration, notes that humans can safely consume 400 milligrams of silver per day, and states that a silver 'deficiency' results in an impaired immune system with a higher rate of illness such as colds and influenza. Drawing on Dr. Robert Becker's The Body Electric, he adds that silver also stimulates the growth and repair of injured tissue.",
+      "verbatim": "A silver “deficiency”\nresults in an impaired immune system. In the Body Electric Dr. Robert Becker\nidentified a relationship between low levels of tissue and dietary silver and the\nrate of illness (such as flu, colds, etc.)",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "18",
+        "page": null,
+        "screenshot": "597",
+        "kindle_location": null,
+        "char_offset": 1147784
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch18",
+        "deficiency-sign",
+        "minerals",
+        "silver"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T22:35:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000065",
+      "kind": "mechanism",
+      "essentials": [
+        "aluminum"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach identifies aluminum's known biological function as activating the enzyme succinic dehydrogenase and increasing newborn survival, and reports that Professor Gerhard Schrauzer (former chair of chemistry at the University of California, San Diego) argues it should be classed as an essential mineral for all vertebrates including humans. He stresses that aluminum is remarkably nontoxic at dietary levels -- far less toxic than heavy metals -- and that it competes with calcium absorption, so excess can reduce skeletal mineralization. He explicitly rejects the popular fear that aluminum causes Alzheimer's disease, citing the 1992 Oxford study (Frank Watt and colleagues, in Nature) that found identical brain-aluminum levels in Alzheimer's patients and controls, and the Alzheimer's Society's 2013 position that no causal link has been demonstrated.",
+      "verbatim": "The known biological function of aluminum is to activate the enzyme succinic\ndehydrogenase; it increases the survival rate of the newborn",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "18",
+        "page": null,
+        "screenshot": "598",
+        "kindle_location": null,
+        "char_offset": 1150029
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch18",
+        "minerals",
+        "aluminum"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T22:35:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000066",
+      "kind": "mechanism",
+      "essentials": [
+        "arsenic"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach presents arsenic as an essential trace element -- required for survivability of the newborn and for neonatal growth -- not merely the notorious poison of popular reputation. He notes arsenic promotes growth in chicks and tadpoles, that in combination with choline it prevents perosis ('slipped tendon') in poultry, and that its role in human physiology lies in methyl-group metabolism and polyamine synthesis. He distinguishes organically-bound arsenic, which is far safer, from metallic arsenic, which is about 65 times more toxic, and recounts that low-dose arsenic trioxide is an approved, effective therapy for acute promyelocytic leukemia, a blood and bone-marrow cancer, with 'Fowler's solution' historically used for psoriasis.",
+      "verbatim": "Arsenic promotes the growth rate of chicks at 90 to 120 ppm. The rate of\ngrowth and metamorphosis of tadpoles is enhanced by the presence of arsenic.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "18",
+        "page": null,
+        "screenshot": "600",
+        "kindle_location": null,
+        "char_offset": 1154650
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch18",
+        "minerals",
+        "arsenic"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T22:35:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000067",
+      "kind": "mechanism",
+      "essentials": [
+        "gold"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach explains that elemental gold is biologically inert -- tasteless, unabsorbed, and passed unchanged in the feces with no nutritional value -- so the gold leaf in gourmet foods and liqueurs is purely decorative. Gold compounds (gold sodium thiomalate, aurothioglucose), by contrast, are given by conventional physicians as an add-on anti-inflammatory for rheumatoid arthritis: effective against active joint inflammation but not for advanced destructive disease, and anti-inflammatory rather than pain-relieving. He notes the standard intramuscular schedule (10 milligrams rising to 50 milligrams weekly to a one-gram total), warns it is contraindicated in liver, kidney, and blood disease and in lupus, and lists toxic reactions including itching, dermatitis, mouth inflammation, gastrointestinal upset, blood in the urine, aplastic anemia, and hepatitis.",
+      "verbatim": "Gold has been reported only to be effective against active joint\ninflammation and is not usually helpful for advanced destructive rheumatoid\narthritis,",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "18",
+        "page": null,
+        "screenshot": "599",
+        "kindle_location": null,
+        "char_offset": 1159762
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch18",
+        "minerals",
+        "gold"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T22:35:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000068",
+      "kind": "mechanism",
+      "essentials": [
+        "boron"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach classifies boron as an essential mineral for bone metabolism -- needed for the efficient use of calcium and magnesium and for the proper functioning of the ovaries, testes, and adrenal glands. He notes boron was only universally accepted as essential for humans around 1990, and that within eight days of boron supplementation women lost 40 percent less calcium, 33 percent less magnesium, and less phosphorus through their urine, while blood estradiol and testosterone in both men and women nearly doubled -- to levels comparable with estrogen-replacement therapy. He frames boron as central to maintaining bone and normal sex-hormone levels.",
+      "verbatim": "Boron is essential for bone metabolism, including the efficient use of calcium\nand magnesium and for the proper functioning of the ovaries, testes",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "18",
+        "page": null,
+        "screenshot": "601",
+        "kindle_location": null,
+        "char_offset": 1163354
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch18",
+        "minerals",
+        "boron"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T22:35:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000069",
+      "kind": "mechanism",
+      "essentials": [
+        "barium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach notes that barium's essentiality in mammals was established in 1949 (Rygh). Most naturally-occurring barium minerals (barite, witherite) are water-insoluble, and barium sulfate has very low toxicity together with high X-ray opacity -- which is why it serves as the contrast medium (the 'barium meal' and 'barium enema') for upper and lower gastrointestinal X-ray studies of the digestive system.",
+      "verbatim": "Barium sulfate has a very low toxicity and relatively high density and has\na high opacity to X-rays. It is used as a contrast media in X-ray imaging of\nthe digestive system",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "18",
+        "page": null,
+        "screenshot": "602",
+        "kindle_location": null,
+        "char_offset": 1165961
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch18",
+        "minerals",
+        "barium"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T22:35:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000070",
+      "kind": "toxicity_sign",
+      "essentials": [
+        "beryllium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Although beryllium appears on Wallach's list of essential minerals, the stance he records here is a safety caution: pure powdered beryllium and its compounds must be handled with care because of the risk of acute beryllium disease or chemical pneumonitis (first reported in Europe in 1933 and in the United States in 1943), and chronic berylliosis resembles pulmonary sarcoidosis.",
+      "verbatim": "Pure powdered beryllium and its compounds should be handled with care\nbecause of the potential for acute beryllium disease or chemical pneumonitis",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "18",
+        "page": null,
+        "screenshot": "602",
+        "kindle_location": null,
+        "char_offset": 1167958
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch18",
+        "toxicity-sign",
+        "minerals",
+        "beryllium"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T22:35:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000071",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "bismuth"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach notes that bismuth (chemically resembling arsenic and antimony) is not on the essential-mineral list but has clear medicinal use: bismuth subsalicylate is the antidiarrheal active ingredient in 'Pink Bismuth' products such as Pepto-Bismol and the reformulated Kaopectate. He recounts that a combination of bismuth subsalicylate, bismuth subcitrate, and the antibiotic tetracycline -- used in pigs since 1952 -- was approved by the United States Food and Drug Administration in 1994 to cure human gastric ulcers, underscoring his point that the bacterium Helicobacter pylori, not stress, causes most stomach and peptic ulcers (the 1983 Marshall-Warren discovery).",
+      "verbatim": "Bismuth subsalicylate is used as an antidiarrheal; it is the active ingredient\nin “Pink Bismuth” compounds such as Pepto-Bismol",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "18",
+        "page": null,
+        "screenshot": "603",
+        "kindle_location": null,
+        "char_offset": 1168997
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch18",
+        "minerals",
+        "bismuth"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T22:35:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000072",
+      "kind": "mechanism",
+      "essentials": [
+        "bromine"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach describes bromine as a halogen related to iodine, fluorine, and chlorine. Bromine compounds such as potassium bromide were used as sedatives through the 19th and 20th centuries, until the United States Food and Drug Administration pulled over-the-counter bromide sedatives such as Bromo-Seltzer from sale in 1975, and he notes that toxic reactions from a bromine overdose can resemble acne-like skin eruptions.",
+      "verbatim": "Bromine compounds, such as potassium bromide, were used as sedatives in\nthe 19th and 20th centuries.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "18",
+        "page": null,
+        "screenshot": "603",
+        "kindle_location": null,
+        "char_offset": 1170595
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch18",
+        "minerals",
+        "bromine"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T22:35:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000073",
+      "kind": "mechanism",
+      "essentials": [
+        "carbon"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach notes that carbon -- one of the few elements known since antiquity -- functions as the essential structural atom for all organic molecules, including the genes themselves, and is present at very high concentrations in living tissue (around 454,000 parts per million in land plants and 465,000 in land animals, with roughly 280,000 in bone).",
+      "verbatim": "Carbon\nfunctions as an essential structural atom for all organic molecules",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "18",
+        "page": null,
+        "screenshot": "603",
+        "kindle_location": null,
+        "char_offset": 1171396
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch18",
+        "minerals",
+        "carbon"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T22:35:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

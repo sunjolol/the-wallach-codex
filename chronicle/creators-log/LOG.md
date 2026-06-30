@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 225 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 226 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 17:49 UTC-05:00 · round-close · knowledge/corpus
+SESSION 29 b1 — Epigenetics Ch 18 minerals A–C (Ag/Al/As/Au/B/Ba/Be/Bi/Br/C): EPIGEN-064..073 (+10 stance claims). Aluminum debunks the Alzheimer's myth, arsenic reframes the poison. 0 new conds. kv 198, claims 954, board 31/31. Luneth visual-verified.
+  ↳ Periodic-table deficiency encyclopedia, alphabetical batch. Dispositions: bare/inert/radioactive elements captured stance-only (Ac/Am/Ar/At skipped); cesium-chloride alt-cancer deferred to search-only. All canon minerals -> essentials[]; bismuth non-canon -> other_substances. conditions=[] (descriptive substance stances). Verified: finalize 10 verbatims snapped, seal kv 197->198, corpus_verify PASS, build OK, invariants 31/31, render_probe_knowledge PASS.
 
 ## 2026-06-30 16:53 UTC-05:00 · session-end · chronicle
 SESSION 28 b4-b7 WRAPPED - Epigenetics Ch 18 mined through minerals batch 1 + the condition-synopsis UX fix. 5 chunks pushed, +37 claims (EPIGEN-027..063), kv 193->197, claims 907->944, board 31/31 throughout. Handoff updated for SESSION 29 = the rest of the minerals.
@@ -801,7 +805,3 @@ Phase β.7: more DDDL disease entries — 55→62 claims (knowledge_version=10).
 ## 2026-06-24 13:53 UTC-04:00 · round-close · eden/corpus
 Phase β.6: DDDL disease-protocol chapters — 45→55 claims (knowledge_version=9). First condition→protocol+dose claims (diabetes, arthritis, asthma, cor pulmonale, cradle cap). 11 of 13 kinds. Board 29/29.
   ↳ From DDDL Appendix B alphabetical disease encyclopedia. Diabetes: chromium prevents/treats; vanadium-replaces-insulin quote; Cr+V 250 mcg/day + full regimen. Arthritis: nutritional-deficiency complex + RA=Mycoplasma; Ca 2000/Mg 800-1000 mg/day; Ca:P 2:1. Asthma: EFA/Mn/Mg malabsorption. Cor pulmonale: selenium 500-1000 mcg/day. Cradle cap: B6+zinc. protocol kind now heavy. Verbatims dodge OCR page-headers. NEXT: more disease entries + aminos/fatty-acids, then Phase γ.
-
-## 2026-06-24 13:43 UTC-04:00 · round-close · eden/corpus
-Phase β.5: DDDL vitamins batch — 40→45 claims sealed (knowledge_version=8). Minerals + vitamins now covered (A, B9, B1, B12). Board 29/29.
-  ↳ Vitamins scattered in DDDL (no element-style appendix); harvested clinic-deficiency narrative + B12/cobalt section. OCR lesson: page-headers inject mid-sentence + hyphen-at-linebreak words break the snapper — avoid spanning them. NEXT: aminos+fatty-acids, then disease-protocol chapters, then Phase γ.
