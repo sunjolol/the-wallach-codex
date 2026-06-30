@@ -37,6 +37,9 @@
 #drawer-knowledge-mount .kd-section-head::before { content: ''; width: 12px; height: 1px; background: var(--ds-accent); }
 #drawer-knowledge-mount .kd-section-head:first-child { margin-top: 0; }
 
+/* ─── SEARCH FILTER · rows/heads the live query hides (views/knowledge.ts) ─── */
+#drawer-knowledge-mount .kd-hidden { display: none !important; }
+
 /* ─── CORPUS · featured citation ─────────────────────────────────────────── */
 #drawer-knowledge-mount .kd-featured-citation {
   background: linear-gradient(135deg, var(--ds-ink) 0%, var(--ds-ink-medium) 100%);

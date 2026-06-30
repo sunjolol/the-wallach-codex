@@ -137,6 +137,33 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     };
   });
 
+  // 4d. Search — typing in the box narrows the active tab's rows (was an
+  //     unwired decorative input before this fix). Conditions tab is loaded.
+  await page.click('#drawer-knowledge-mount .kd-search-input');
+  await page.type('#drawer-knowledge-mount .kd-search-input', 'diabetes', { delay: 10 });
+  await wait(150);
+  const search = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const all = root ? [...root.querySelectorAll('.kd-condition-row')] : [];
+    const visible = all.filter(r => !r.classList.contains('kd-hidden'));
+    return {
+      total: all.length,
+      visible: visible.length,
+      hasDiabetes: visible.some(r => /diabetes/i.test(r.querySelector('.kd-condition-row__name')?.textContent || '')),
+      allMatch: visible.every(r => /diabetes/i.test(r.textContent || '')),
+    };
+  });
+  await page.evaluate(() => {
+    const i = document.querySelector('#drawer-knowledge-mount .kd-search-input');
+    if (i) { i.value = ''; i.dispatchEvent(new Event('input', { bubbles: true })); }
+  });
+  await wait(150);
+  const searchClear = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const all = root ? [...root.querySelectorAll('.kd-condition-row')] : [];
+    return { total: all.length, visible: all.filter(r => !r.classList.contains('kd-hidden')).length };
+  });
+
   // 5. Esc closes.
   await page.keyboard.press('Escape');
   await wait(200);
@@ -147,7 +174,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, corpus, products, essentials, deep, conditions, condDeep, afterEsc, afterK };
+  const out = { boot, afterClick, corpus, products, essentials, deep, conditions, condDeep, afterEsc, afterK, search, searchClear };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -173,6 +200,9 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['conditions: deep view opens (diabetes)', condDeep.shown === true],
     ['conditions: claims grouped by role', condDeep.groupCount >= 1 && condDeep.claimCount >= 1],
     ['conditions: claim cites the book', condDeep.firstCite === true],
+    ['search: typing narrows the rows', search.total > search.visible && search.visible >= 1],
+    ['search: only matches remain (diabetes)', search.hasDiabetes === true && search.allMatch === true],
+    ['search: clearing restores all rows', searchClear.visible === searchClear.total && searchClear.total === search.total],
     ['Esc closes drawer', afterEsc.open === false],
     ['bare K reopens drawer', afterK.open === true],
     ['no page errors', errs.length === 0],

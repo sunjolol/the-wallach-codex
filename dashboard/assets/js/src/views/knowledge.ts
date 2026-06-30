@@ -512,6 +512,84 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
     </footer>`;
 }
 
+// ─── Search (per-tab DOM filter) ──────────────────────────────
+
+/**
+ * Per active tab, the selector for the list items the search box filters. The
+ * tabs render different item shapes (book rows / essential tiles / condition
+ * rows / product rows / doctrine cards), so the query targets each by class.
+ */
+const KD_SEARCH_ITEM_SELECTOR: Record<Tab, string> = {
+  corpus: '.kd-book-row',
+  essentials: '.kd-essential-tile',
+  conditions: '.kd-condition-row',
+  products: '.kd-product-row',
+  doctrine: '.kd-doctrine-card',
+};
+
+/**
+ * Filter the active tab's rendered rows in-place against a query string.
+ *
+ * DOM-filter (toggle `.kd-hidden`) rather than re-render so an open deep-dive
+ * and the scroll position survive each keystroke. Match = case-insensitive
+ * substring over each item's visible textContent. A section head hides when
+ * every item beneath it (up to the next head) is filtered out; the cornerstone
+ * intro block hides while a query is active so only matches remain. A
+ * "no matches" line is injected when nothing survives. Returns the visible count.
+ */
+function applyKnowledgeSearch(body: HTMLElement, tab: Tab, rawQuery: string): number {
+  const query = rawQuery.trim().toLowerCase();
+  const active = query.length > 0;
+  const selector = KD_SEARCH_ITEM_SELECTOR[tab];
+
+  // Cornerstone/intro blocks are noise during an active search.
+  body.querySelectorAll<HTMLElement>('.kd-featured-citation').forEach((intro) => {
+    intro.classList.toggle('kd-hidden', active);
+  });
+
+  // Heads + items walked in document order (querySelectorAll flattens the
+  // essentials grid wrapper) so each head reflects only its own items' state.
+  let visible = 0;
+  let head: HTMLElement | null = null;
+  let headHasMatch = false;
+  const commitHead = (): void => {
+    if (head !== null) {
+      head.classList.toggle('kd-hidden', active && !headHasMatch);
+    }
+  };
+  body.querySelectorAll<HTMLElement>(`.kd-section-head, ${selector}`).forEach((node) => {
+    if (node.classList.contains('kd-section-head')) {
+      commitHead();
+      head = node;
+      headHasMatch = false;
+      return;
+    }
+    const match = !active || (node.textContent ?? '').toLowerCase().includes(query);
+    node.classList.toggle('kd-hidden', !match);
+    if (match) {
+      visible += 1;
+      headHasMatch = true;
+    }
+  });
+  commitHead();
+
+  // "No matches" affordance — injected/removed, never a re-render.
+  let empty = body.querySelector<HTMLElement>('.kd-search-empty');
+  if (active && visible === 0) {
+    if (empty === null) {
+      empty = document.createElement('div');
+      empty.className = 'kd-empty kd-search-empty';
+      body.appendChild(empty);
+    }
+    empty.textContent = `— nothing in ${tab} matches "${query}" —`;
+  }
+  else if (empty !== null) {
+    empty.remove();
+  }
+
+  return visible;
+}
+
 // ─── Mount ─────────────────────────────────────────────────────────────────
 
 export function mount(container: HTMLElement): DrawerHandle {
@@ -520,9 +598,22 @@ export function mount(container: HTMLElement): DrawerHandle {
   let activeTab: Tab = 'corpus';
   let selectedEssential: string | null = null;
   let selectedCondition: string | null = null;
+  let searchQuery = '';
 
   const render = (): void => {
     container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition);
+    // Re-apply the live query so a re-render (deep-dive open, regimen:changed)
+    // doesn't silently drop an in-progress filter.
+    if (searchQuery.length > 0) {
+      const input = container.querySelector<HTMLInputElement>('.kd-search-input');
+      if (input !== null) {
+        input.value = searchQuery;
+      }
+      const body = container.querySelector<HTMLElement>('.kd-body');
+      if (body !== null) {
+        applyKnowledgeSearch(body, activeTab, searchQuery);
+      }
+    }
   };
 
   const open = (): void => {
@@ -569,6 +660,7 @@ export function mount(container: HTMLElement): DrawerHandle {
         activeTab = next;
         selectedEssential = null;
         selectedCondition = null;
+        searchQuery = '';
         render();
       }
       return;
@@ -610,6 +702,21 @@ export function mount(container: HTMLElement): DrawerHandle {
     }
   };
   container.addEventListener('click', clickHandler);
+
+  // Live search — delegated so it survives the innerHTML re-render. Filters the
+  // active tab's rows in place (the box was rendered but unwired before).
+  const inputHandler = (ev: Event): void => {
+    const t = ev.target as HTMLElement | null;
+    if (t === null || !t.classList.contains('kd-search-input')) {
+      return;
+    }
+    searchQuery = (t as HTMLInputElement).value;
+    const body = container.querySelector<HTMLElement>('.kd-body');
+    if (body !== null) {
+      applyKnowledgeSearch(body, activeTab, searchQuery);
+    }
+  };
+  container.addEventListener('input', inputHandler);
 
   // Re-render if regimen changes (Products tab + Essentials status reflect it).
   onEvent('regimen:changed', () => {

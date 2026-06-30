@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 214 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 215 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 10:18 UTC-05:00 · round-close · views/knowledge
+Fixed the unwired Knowledge-drawer search: a delegated input listener → applyKnowledgeSearch DOM-filters the active tab's rows by substring (all 5 tabs; section heads auto-hide; no-results line; deep-dive survives). Build/invariants 31/31/probe green; Luneth visually verified.
+  ↳ kd-search-input was rendered but had no input handler in src (Luneth-found). Fix in views/knowledge.ts (applyKnowledgeSearch + delegated input listener + searchQuery state), drawer-knowledge.css (.kd-hidden), render_probe_knowledge.js (narrow+restore asserts). SESSION 27. The / focus kbd-hint left decorative (out of scope). NEXT: iaiyh batch 3.
 
 ## 2026-06-29 16:58 UTC-05:00 · milestone · knowledge/corpus
 SESSION 26 b77 - It's All In Your Head (2020) batch 2: 12 cranial nerves + spinal cord = 13 mechanism claims. Each nerve's Wallach's Words -> its disease via skull-osteoporosis nerve-incarceration. 12 NEW conditions + enriched. essentials[] empty. Seal kv188, board 31/31.
@@ -801,7 +805,3 @@ Coverage Phase 1 — shell now ~pixel-exact to v3.2 (Luneth verified). Fixed via
 ## 2026-06-23 11:39 UTC-04:00 · design-decision · discipline
 Codified the visual/human-verification gate (.claude/rules/visual-verification.md + CLAUDE.md row): for any page/visual/UX work Luneth is the test gate — build a chunk to 'done', STOP, he visually verifies, only then continue. Never chain past a STOP; certainty != truth.
   ↳ Luneth elevated the per-page build method to a non-negotiable rule. Automated gates (build/invariants/probes) prove only the functional layer; the subjective/visual layer can ONLY be verified by his eyes. The discipline: build in phases (respect resource usage) -> build to 'done' or one verifiable chunk -> STOP -> he visually verifies/course-corrects/adds/changes mind -> only then log + continue. Never advance past a STOP without his go-ahead; never claim he verified what he didn't; never treat agent-certainty as truth. This is build>test>log>repeat with Luneth as tester, and the guardrail that would have caught the unstyled-drawer drift. Documented as a behavioral discipline (like the source-rule turn-gap), not a Python invariant; the structural guarantee is that visual chunks END at a STOP by default. NEXT: Coverage as first gold-standard page.
-
-## 2026-06-23 11:25 UTC-04:00 · design-decision · tooling
-Creator's Log timestamps now store machine-LOCAL time (auto-follow ET->CT + DST) instead of UTC. _now_iso uses datetime.now().astimezone(); _fmt_ts derives the zone from the stored offset. Historical UTC entries stay UTC (immutable ledger).
-  ↳ Luneth flagged that log times read in UTC (an entry made at 10:31 EDT showed as 14:31 / 06:44), confusing against his local clock, and that he's moving ET->CT next week. Chose auto-follow-local over hard-pinning CT so it adapts to the move + DST with zero maintenance. Two-line change in tools/creators_log.py: _now_iso() now returns datetime.now().astimezone().isoformat() (local-aware, carries the offset); _fmt_ts() derives the zone label from the parsed offset (%Z) instead of hardcoding 'UTC'. The slice-based renderers (genesis last-log line, Profile panel formatTs) need no change — they read the stored wall-clock directly, so new entries show local automatically. The ~13 pre-change entries stored +00:00 stay UTC (the ledger is append-only/immutable; never rewriting history). This entry is the first stored in local time.
