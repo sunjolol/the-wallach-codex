@@ -1222,14 +1222,16 @@
   },
   "cadmium": {
     "display_name": "Cadmium",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "mechanism": [
+        "WAL-CLM-EPIGEN-000074",
         "WAL-CLM-RARE-000143"
       ]
     },
     "conditions_treated": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },

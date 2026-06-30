@@ -627,7 +627,7 @@
   },
   "anemia": {
     "display_name": "Anemia",
-    "claim_count": 27,
+    "claim_count": 28,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
@@ -639,6 +639,7 @@
         "WAL-CLM-EPIGEN-000041",
         "WAL-CLM-EPIGEN-000052",
         "WAL-CLM-EPIGEN-000063",
+        "WAL-CLM-EPIGEN-000077",
         "WAL-CLM-LETS-000003",
         "WAL-CLM-LETS-000008",
         "WAL-CLM-LETS-000010",
@@ -670,6 +671,7 @@
     "essentials_involved": [
       "biotin",
       "chromium",
+      "cobalt",
       "copper",
       "iron",
       "methionine",
@@ -2212,7 +2214,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 33,
+    "claim_count": 34,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -2253,6 +2255,7 @@
       "protocols": [
         "WAL-CLM-DDDL-000018",
         "WAL-CLM-DDDL-000056",
+        "WAL-CLM-EPIGEN-000078",
         "WAL-CLM-RARE-000125",
         "WAL-CLM-RARE-000202"
       ],
@@ -3134,12 +3137,13 @@
   },
   "colorectal_cancer": {
     "display_name": "Colorectal Cancer",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000108"
       ],
       "protocols": [
+        "WAL-CLM-EPIGEN-000078",
         "WAL-CLM-RARE-000125"
       ]
     },
@@ -3149,6 +3153,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -9231,13 +9236,14 @@
   },
   "pernicious_anemia": {
     "display_name": "Pernicious Anemia",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000115"
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000040",
+        "WAL-CLM-EPIGEN-000077",
         "WAL-CLM-RARE-000238"
       ]
     },

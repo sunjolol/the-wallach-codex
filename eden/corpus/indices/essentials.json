@@ -770,7 +770,7 @@
     "display_name": "Chloride",
     "canon_slug": "chloride",
     "category": "mineral",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-RARE-000026",
@@ -780,6 +780,7 @@
         "WAL-CLM-LETS-000047"
       ],
       "mechanism": [
+        "WAL-CLM-EPIGEN-000076",
         "WAL-CLM-RARE-000113"
       ]
     },
@@ -790,6 +791,7 @@
       "sodium"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -1335,8 +1337,11 @@
     "display_name": "Cobalt",
     "canon_slug": "cobalt",
     "category": "mineral",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000077"
+      ],
       "dose": [
         "WAL-CLM-RARE-000014"
       ],
@@ -1348,6 +1353,7 @@
     },
     "deficiency_signs": [],
     "conditions_treated": [
+      "anemia",
       "pernicious_anemia"
     ],
     "interacts_with": [
@@ -1355,6 +1361,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -3345,10 +3352,13 @@
     "display_name": "Cerium",
     "canon_slug": "cerium",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-RARE-000112"
+      ],
+      "mechanism": [
+        "WAL-CLM-EPIGEN-000075"
       ]
     },
     "deficiency_signs": [],
@@ -3357,6 +3367,7 @@
     ],
     "interacts_with": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -3364,10 +3375,11 @@
     "display_name": "Cesium",
     "canon_slug": "cesium",
     "category": "mineral",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-DDDL-000018",
+        "WAL-CLM-EPIGEN-000078",
         "WAL-CLM-RARE-000125"
       ]
     },
@@ -3379,6 +3391,7 @@
     "interacts_with": [],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "rare-earths"
     ]
   },

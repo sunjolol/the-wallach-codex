@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 226 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 227 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 18:23 UTC-05:00 · round-close · knowledge/corpus
+SESSION 29 b2 — Epigenetics Ch 18 minerals Cd→Co + Cesium, EPIGEN-074..078 (+5). ★ CANCER POLICY REVERSAL: cancer treatments TIER-1 by default (search-only only for 3rd-party-relayed); cesium-chloride promoted to tier-1 protocol. kv 200, claims 959, board 31/31.
+  ↳ Curium skipped (radioactive). Cobalt→pernicious_anemia/anemia; cesium→cancer/colorectal_cancer joining DDDL-018+RARE-125 (3 cross-book citations). Mineral scope ruled exhaustive multi-source. Triggered: re-audit of the LPD Ch10 CANCER deep-dive (LETS-178..200+342+344) item-by-item with Luneth before promoting. Verified: finalize 5 snapped, seal kv 198→199, cesium draft-edit + reseal kv 199→200, corpus_verify PASS, build OK, invariants 31/31, render_probe PASS.
 
 ## 2026-06-30 17:49 UTC-05:00 · round-close · knowledge/corpus
 SESSION 29 b1 — Epigenetics Ch 18 minerals A–C (Ag/Al/As/Au/B/Ba/Be/Bi/Br/C): EPIGEN-064..073 (+10 stance claims). Aluminum debunks the Alzheimer's myth, arsenic reframes the poison. 0 new conds. kv 198, claims 954, board 31/31. Luneth visual-verified.
@@ -801,7 +805,3 @@ Phase β.8+β.9: DDDL aminos/fatty-acids + more diseases — 62→75 claims (kno
 ## 2026-06-24 13:55 UTC-04:00 · round-close · eden/corpus
 Phase β.7: more DDDL disease entries — 55→62 claims (knowledge_version=10). Cancer (prevention + iconic survival quote), osteoporosis (HCl+Ca, estrogen/fluoride critique, estrogen contraindication), otitis (95% milk allergy). Board 29/29.
   ↳ 62 claims span minerals + vitamins + condition protocols / 11 of 13 kinds. Cancer-survival quote anchored on the clean sub-span to skip a mid-sentence page-header. NEXT: aminos/fatty-acids + remaining disease entries, then Phase γ the other 5 books, then Phase δ indices.
-
-## 2026-06-24 13:53 UTC-04:00 · round-close · eden/corpus
-Phase β.6: DDDL disease-protocol chapters — 45→55 claims (knowledge_version=9). First condition→protocol+dose claims (diabetes, arthritis, asthma, cor pulmonale, cradle cap). 11 of 13 kinds. Board 29/29.
-  ↳ From DDDL Appendix B alphabetical disease encyclopedia. Diabetes: chromium prevents/treats; vanadium-replaces-insulin quote; Cr+V 250 mcg/day + full regimen. Arthritis: nutritional-deficiency complex + RA=Mycoplasma; Ca 2000/Mg 800-1000 mg/day; Ca:P 2:1. Asthma: EFA/Mn/Mg malabsorption. Cor pulmonale: selenium 500-1000 mcg/day. Cradle cap: B6+zinc. protocol kind now heavy. Verbatims dodge OCR page-headers. NEXT: more disease entries + aminos/fatty-acids, then Phase γ.
