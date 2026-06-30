@@ -1173,7 +1173,7 @@
       "carpal_tunnel_syndrome",
       "cataracts",
       "celiac_disease",
-      "colorectal_cancer",
+      "colon_cancer",
       "convulsions",
       "crohns_disease",
       "deafness",
@@ -1814,7 +1814,7 @@
     "display_name": "Germanium",
     "canon_slug": "germanium",
     "category": "mineral",
-    "claim_count": 14,
+    "claim_count": 16,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000012",
@@ -1827,6 +1827,9 @@
       "food_source": [
         "WAL-CLM-RARE-000013"
       ],
+      "mechanism": [
+        "WAL-CLM-LETS-000183"
+      ],
       "protocol": [
         "WAL-CLM-DDDL-000070",
         "WAL-CLM-LETS-000130",
@@ -1836,6 +1839,7 @@
         "WAL-CLM-LETS-000311",
         "WAL-CLM-LETS-000313",
         "WAL-CLM-LETS-000319",
+        "WAL-CLM-LETS-000344",
         "WAL-CLM-RARE-000282"
       ]
     },
@@ -1861,6 +1865,7 @@
       "hepatitis",
       "immune_depression",
       "infertility",
+      "leukemia",
       "osteoporosis"
     ],
     "interacts_with": [
@@ -2352,7 +2357,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 92,
+    "claim_count": 96,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2377,6 +2382,7 @@
         "WAL-CLM-DDDL-000071",
         "WAL-CLM-EPIGEN-000004",
         "WAL-CLM-EPIGEN-000006",
+        "WAL-CLM-LETS-000197",
         "WAL-CLM-RARE-000004",
         "WAL-CLM-RARE-000010",
         "WAL-CLM-RARE-000050",
@@ -2403,6 +2409,7 @@
         "WAL-CLM-LETS-000146",
         "WAL-CLM-LETS-000150",
         "WAL-CLM-LETS-000157",
+        "WAL-CLM-LETS-000178",
         "WAL-CLM-LETS-000203",
         "WAL-CLM-LETS-000204",
         "WAL-CLM-LETS-000207",
@@ -2432,6 +2439,8 @@
         "WAL-CLM-LETS-000325",
         "WAL-CLM-LETS-000334",
         "WAL-CLM-LETS-000340",
+        "WAL-CLM-LETS-000342",
+        "WAL-CLM-LETS-000344",
         "WAL-CLM-LETS-000348",
         "WAL-CLM-LETS-000350",
         "WAL-CLM-LETS-000356",
@@ -2547,9 +2556,11 @@
       "korsakoffs_syndrome",
       "kwashiorkor",
       "lead_poisoning",
+      "leukemia",
       "liver_cirrhosis",
       "liver_disease",
       "lupus",
+      "melanoma",
       "memory_loss",
       "menorrhagia",
       "mercury_poisoning",
@@ -3386,7 +3397,7 @@
     "deficiency_signs": [],
     "conditions_treated": [
       "cancer",
-      "colorectal_cancer"
+      "colon_cancer"
     ],
     "interacts_with": [],
     "books_cited": [
@@ -3988,7 +3999,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 59,
+    "claim_count": 63,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -3998,6 +4009,9 @@
       ],
       "dose": [
         "WAL-CLM-LETS-000071"
+      ],
+      "mechanism": [
+        "WAL-CLM-LETS-000196"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000056",
@@ -4011,6 +4025,7 @@
         "WAL-CLM-LETS-000157",
         "WAL-CLM-LETS-000167",
         "WAL-CLM-LETS-000172",
+        "WAL-CLM-LETS-000178",
         "WAL-CLM-LETS-000202",
         "WAL-CLM-LETS-000212",
         "WAL-CLM-LETS-000213",
@@ -4034,6 +4049,8 @@
         "WAL-CLM-LETS-000328",
         "WAL-CLM-LETS-000329",
         "WAL-CLM-LETS-000332",
+        "WAL-CLM-LETS-000342",
+        "WAL-CLM-LETS-000344",
         "WAL-CLM-LETS-000348",
         "WAL-CLM-LETS-000359",
         "WAL-CLM-LETS-000365",
@@ -4133,6 +4150,7 @@
       "cancer",
       "candidiasis",
       "canker_sores",
+      "carcinoma",
       "cervical_dysplasia",
       "chalazion",
       "conjunctivitis",
@@ -4165,8 +4183,10 @@
       "keratosis",
       "kidney_disease",
       "kidney_stones",
+      "leukemia",
       "liver_cirrhosis",
       "liver_disease",
+      "melanoma",
       "meningocele",
       "miscarriage",
       "night_blindness",
@@ -5585,7 +5605,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 72,
+    "claim_count": 74,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000043",
@@ -5650,6 +5670,8 @@
         "WAL-CLM-LETS-000320",
         "WAL-CLM-LETS-000325",
         "WAL-CLM-LETS-000340",
+        "WAL-CLM-LETS-000342",
+        "WAL-CLM-LETS-000344",
         "WAL-CLM-LETS-000348",
         "WAL-CLM-LETS-000364",
         "WAL-CLM-LETS-000367",
@@ -5814,8 +5836,10 @@
       "jaundice",
       "joint_pain",
       "lead_poisoning",
+      "leukemia",
       "liver_cirrhosis",
       "liver_disease",
+      "melanoma",
       "migraine",
       "monckebergs_arteriosclerosis",
       "nosebleeds",
@@ -5995,7 +6019,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 68,
+    "claim_count": 69,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -6007,6 +6031,7 @@
         "WAL-CLM-LETS-000075"
       ],
       "mechanism": [
+        "WAL-CLM-LETS-000196",
         "WAL-CLM-RARE-000010"
       ],
       "prognosis": [
@@ -6181,6 +6206,7 @@
       "cancer",
       "candidiasis",
       "canker_sores",
+      "carcinoma",
       "cardiomyopathy",
       "cardiovascular_disease",
       "cataracts",
@@ -7230,7 +7256,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 82,
+    "claim_count": 83,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -7267,6 +7293,7 @@
         "WAL-CLM-LETS-000170",
         "WAL-CLM-LETS-000171",
         "WAL-CLM-LETS-000172",
+        "WAL-CLM-LETS-000178",
         "WAL-CLM-LETS-000204",
         "WAL-CLM-LETS-000211",
         "WAL-CLM-LETS-000219",
@@ -7384,6 +7411,7 @@
       "breast_tenderness",
       "brittle_nails",
       "bronchitis",
+      "cancer",
       "cardiomyopathy",
       "cardiovascular_disease",
       "cerebrovascular_disease",

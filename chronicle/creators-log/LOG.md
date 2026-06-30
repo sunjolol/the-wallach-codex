@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 227 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 228 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 18:42 UTC-05:00 · milestone · knowledge/corpus
+SESSION 29 CANCER BACK-FIX — promoted the LPD Ch10 cancer deep-dive (24 claims) from search-only → TIER-1 per the policy reversal; Luneth audited each. +12 cancer-subtype conditions surfaced; Cancer view 34→58. Harmonized colorectal_cancer→colon_cancer. kv 202, board 31/31.
+  ↳ Groups B (194 urine/blood) + C (color/urine modality surveys) kept search-only by Luneth's ruling. search-only 99→75; conditions 456→467. Verified: LPD draft-edit via safe_write, seal kv 200→201, colon harmonize across epigenetics+rare-earths, reseal kv 201→202, corpus_verify PASS, build OK, invariants 31/31, render_probe PASS. Policy-memory reconcile + reboot owed next.
 
 ## 2026-06-30 18:23 UTC-05:00 · round-close · knowledge/corpus
 SESSION 29 b2 — Epigenetics Ch 18 minerals Cd→Co + Cesium, EPIGEN-074..078 (+5). ★ CANCER POLICY REVERSAL: cancer treatments TIER-1 by default (search-only only for 3rd-party-relayed); cesium-chloride promoted to tier-1 protocol. kv 200, claims 959, board 31/31.
@@ -801,7 +805,3 @@ Phase β.10-β.12: DDDL disease-encyclopedia sweep — 75→94 claims (knowledge
 ## 2026-06-24 14:01 UTC-04:00 · round-close · eden/corpus
 Phase β.8+β.9: DDDL aminos/fatty-acids + more diseases — 62→75 claims (knowledge_version=12). ALL FOUR essential categories now covered; 12 of 13 kinds. Taurine adjudication evidence captured. Board 29/29.
   ↳ β.8 closed fatty acids (EFA def/prostaglandins/infant deficiency) + aminos (Wallach adds arginine/taurine/tyrosine→cancer/macular/goiter — taurine in other_substances + tagged for the Cysteine-Taurine canon audit; tryptophan/phenylalanine/methionine functions; cholesterol→vit-D/hormones). β.9: infertility, muscular dystrophy+Keshan (selenium), muscle cramps (Ca/Mg), insomnia. 75 claims span minerals+vitamins+aminos+fatty-acids + condition protocols. NEXT: remaining DDDL diseases, then Phase γ (Rare Earths next).
-
-## 2026-06-24 13:55 UTC-04:00 · round-close · eden/corpus
-Phase β.7: more DDDL disease entries — 55→62 claims (knowledge_version=10). Cancer (prevention + iconic survival quote), osteoporosis (HCl+Ca, estrogen/fluoride critique, estrogen contraindication), otitis (95% milk allergy). Board 29/29.
-  ↳ 62 claims span minerals + vitamins + condition protocols / 11 of 13 kinds. Cancer-survival quote anchored on the clean sub-span to skip a mid-sentence page-header. NEXT: aminos/fatty-acids + remaining disease entries, then Phase γ the other 5 books, then Phase δ indices.

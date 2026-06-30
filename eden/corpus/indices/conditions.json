@@ -1399,6 +1399,22 @@
       "lets-play-doctor"
     ]
   },
+  "basal_cell_carcinoma": {
+    "display_name": "Basal Cell Carcinoma",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000188"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "carcelim"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "bedsores": {
     "display_name": "Bedsores",
     "claim_count": 1,
@@ -1969,33 +1985,45 @@
   },
   "brain_cancer": {
     "display_name": "Brain Cancer",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-LETS-000187",
         "WAL-CLM-RARE-000132"
       ]
     },
     "essentials_involved": [
       "gallium"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "levamisole"
+    ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
   "breast_cancer": {
     "display_name": "Breast Cancer",
-    "claim_count": 2,
+    "claim_count": 4,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000184",
+        "WAL-CLM-LETS-000187"
+      ],
       "contraindications": [
         "WAL-CLM-DDDL-000061",
         "WAL-CLM-DDDL-000091"
       ]
     },
     "essentials_involved": [],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "clodronate",
+      "levamisole"
+    ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "lets-play-doctor"
     ]
   },
   "breast_cysts": {
@@ -2214,12 +2242,32 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 34,
+    "claim_count": 58,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
         "WAL-CLM-DDDL-000030",
         "WAL-CLM-DDDL-000036",
+        "WAL-CLM-LETS-000180",
+        "WAL-CLM-LETS-000181",
+        "WAL-CLM-LETS-000182",
+        "WAL-CLM-LETS-000183",
+        "WAL-CLM-LETS-000184",
+        "WAL-CLM-LETS-000185",
+        "WAL-CLM-LETS-000186",
+        "WAL-CLM-LETS-000187",
+        "WAL-CLM-LETS-000188",
+        "WAL-CLM-LETS-000189",
+        "WAL-CLM-LETS-000190",
+        "WAL-CLM-LETS-000191",
+        "WAL-CLM-LETS-000192",
+        "WAL-CLM-LETS-000193",
+        "WAL-CLM-LETS-000195",
+        "WAL-CLM-LETS-000196",
+        "WAL-CLM-LETS-000197",
+        "WAL-CLM-LETS-000198",
+        "WAL-CLM-LETS-000199",
+        "WAL-CLM-LETS-000200",
         "WAL-CLM-RARE-000134",
         "WAL-CLM-RARE-000197",
         "WAL-CLM-RARE-000198",
@@ -2248,6 +2296,9 @@
       "interactions": [
         "WAL-CLM-RARE-000086"
       ],
+      "prevalence": [
+        "WAL-CLM-LETS-000179"
+      ],
       "prognosis": [
         "WAL-CLM-RARE-000077",
         "WAL-CLM-RARE-000203"
@@ -2256,6 +2307,9 @@
         "WAL-CLM-DDDL-000018",
         "WAL-CLM-DDDL-000056",
         "WAL-CLM-EPIGEN-000078",
+        "WAL-CLM-LETS-000178",
+        "WAL-CLM-LETS-000342",
+        "WAL-CLM-LETS-000344",
         "WAL-CLM-RARE-000125",
         "WAL-CLM-RARE-000202"
       ],
@@ -2275,6 +2329,7 @@
       "flavonoids",
       "germanium",
       "magnesium",
+      "omega-3",
       "oxygen",
       "selenium",
       "sulfur",
@@ -2288,9 +2343,34 @@
       "zinc"
     ],
     "other_substances_involved": [
+      "alfalfa",
+      "beta-carotene",
+      "carbamide",
+      "carcelim",
+      "cesium-chloride",
+      "chemotherapy",
+      "clodronate",
+      "colloidal-minerals",
+      "coq10",
+      "dietary-fiber",
+      "dmso",
       "fluoride",
+      "flutamide",
+      "hoxey-herbal-formula",
+      "hydrazine-sulfate",
+      "hydrogen-peroxide",
+      "iv-nutrition",
+      "laetrile",
+      "levamisole",
+      "lhrh",
+      "onco-tox",
+      "polyerga",
       "radon",
-      "taurine"
+      "shark-cartilage",
+      "shark-liver-extract",
+      "shark-liver-oil",
+      "taurine",
+      "thymus-extract"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -2360,6 +2440,25 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "lets-play-doctor"
+    ]
+  },
+  "carcinoma": {
+    "display_name": "Carcinoma",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000196"
+      ]
+    },
+    "essentials_involved": [
+      "vitamin-a",
+      "vitamin-e"
+    ],
+    "other_substances_involved": [
+      "beta-carotene"
+    ],
+    "books_cited": [
       "lets-play-doctor"
     ]
   },
@@ -3135,11 +3234,13 @@
       "rare-earths"
     ]
   },
-  "colorectal_cancer": {
-    "display_name": "Colorectal Cancer",
-    "claim_count": 3,
+  "colon_cancer": {
+    "display_name": "Colon Cancer",
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-LETS-000181",
+        "WAL-CLM-LETS-000187",
         "WAL-CLM-RARE-000108"
       ],
       "protocols": [
@@ -3151,9 +3252,13 @@
       "calcium",
       "cesium"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "cesium-chloride",
+      "levamisole"
+    ],
     "books_cited": [
       "epigenetics",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -4707,6 +4812,22 @@
     ],
     "books_cited": [
       "epigenetics",
+      "lets-play-doctor"
+    ]
+  },
+  "esophageal_cancer": {
+    "display_name": "Esophageal Cancer",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000187"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "levamisole"
+    ],
+    "books_cited": [
       "lets-play-doctor"
     ]
   },
@@ -7336,6 +7457,38 @@
       "lets-play-doctor"
     ]
   },
+  "leukemia": {
+    "display_name": "Leukemia",
+    "claim_count": 2,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000192"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000344"
+      ]
+    },
+    "essentials_involved": [
+      "germanium",
+      "selenium",
+      "vitamin-a",
+      "vitamin-c"
+    ],
+    "other_substances_involved": [
+      "carbamide",
+      "cesium-chloride",
+      "dmso",
+      "hydrazine-sulfate",
+      "hydrogen-peroxide",
+      "laetrile",
+      "onco-tox",
+      "polyerga",
+      "shark-liver-extract"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "leukorrhea": {
     "display_name": "Leukorrhea",
     "claim_count": 1,
@@ -7375,17 +7528,22 @@
   },
   "liver_cancer": {
     "display_name": "Liver Cancer",
-    "claim_count": 1,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-LETS-000187",
+        "WAL-CLM-LETS-000195",
         "WAL-CLM-RARE-000134"
       ]
     },
     "essentials_involved": [],
     "other_substances_involved": [
-      "fluoride"
+      "carbamide",
+      "fluoride",
+      "levamisole"
     ],
     "books_cited": [
+      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -7506,6 +7664,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "lung_cancer": {
+    "display_name": "Lung Cancer",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000181"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "cesium-chloride"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "lupus": {
@@ -7658,6 +7832,29 @@
       "marigold",
       "pleurisy-root",
       "yarrow"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "melanoma": {
+    "display_name": "Melanoma",
+    "claim_count": 2,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000188"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000342"
+      ]
+    },
+    "essentials_involved": [
+      "selenium",
+      "vitamin-a",
+      "vitamin-c"
+    ],
+    "other_substances_involved": [
+      "carcelim"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -8885,6 +9082,22 @@
       "lets-play-doctor"
     ]
   },
+  "pancreatic_cancer": {
+    "display_name": "Pancreatic Cancer",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000187"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "levamisole"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "pancreatitis": {
     "display_name": "Pancreatitis",
     "claim_count": 1,
@@ -9557,6 +9770,25 @@
       "rare-earths"
     ]
   },
+  "prostate_cancer": {
+    "display_name": "Prostate Cancer",
+    "claim_count": 2,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000184",
+        "WAL-CLM-LETS-000185"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "clodronate",
+      "flutamide",
+      "lhrh"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "pruritus": {
     "display_name": "Pruritus",
     "claim_count": 2,
@@ -10133,6 +10365,22 @@
       "lets-play-doctor"
     ]
   },
+  "sarcoma": {
+    "display_name": "Sarcoma",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000181"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "cesium-chloride"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "scabies": {
     "display_name": "Scabies",
     "claim_count": 1,
@@ -10531,6 +10779,22 @@
       "lets-play-doctor"
     ]
   },
+  "stomach_cancer": {
+    "display_name": "Stomach Cancer",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000187"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "levamisole"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "stomatitis": {
     "display_name": "Stomatitis",
     "claim_count": 2,
@@ -10905,6 +11169,22 @@
       "charcoal",
       "diazepam",
       "ipecac"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "throat_cancer": {
+    "display_name": "Throat Cancer",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000187"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [
+      "levamisole"
     ],
     "books_cited": [
       "lets-play-doctor"

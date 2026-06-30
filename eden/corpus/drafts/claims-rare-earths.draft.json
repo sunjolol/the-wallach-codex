@@ -3652,7 +3652,7 @@
       ],
       "other_substances": [],
       "conditions": [
-        "colorectal_cancer"
+        "colon_cancer"
       ],
       "symptoms": [],
       "claim_text": "Wallach cites a 19-year observational study of 1,954 men in which the incidence of colorectal cancer increased 300% as calcium intake decreased from 160 to 24.9 mg per 100 kcal of diet.",
@@ -4305,7 +4305,7 @@
       "other_substances": [],
       "conditions": [
         "cancer",
-        "colorectal_cancer"
+        "colon_cancer"
       ],
       "symptoms": [],
       "claim_text": "Wallach reports cesium chloride is used in alternative cancer therapy as a 'high-pH therapy': as an alkaline mineral that behaves chemically like sodium, potassium, and rubidium, cesium enters the cancer cell and produces an alkaline environment. It has been recommended for all types of cancer including sarcomas, bronchogenic carcinoma, and colon cancer. (Supplemental potassium increases the rate of cesium excretion.)",

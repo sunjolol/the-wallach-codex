@@ -122,7 +122,7 @@
   },
   "alfalfa": {
     "display_name": "Alfalfa",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000146",
@@ -130,6 +130,7 @@
         "WAL-CLM-LETS-000163",
         "WAL-CLM-LETS-000166",
         "WAL-CLM-LETS-000176",
+        "WAL-CLM-LETS-000178",
         "WAL-CLM-LETS-000261",
         "WAL-CLM-LETS-000295",
         "WAL-CLM-LETS-000365",
@@ -144,6 +145,7 @@
       "bleeding_bowels",
       "body_odor",
       "bursitis",
+      "cancer",
       "cardiovascular_disease",
       "ecchymosis",
       "heart_attack",
@@ -669,6 +671,25 @@
     },
     "conditions_treated": [
       "scabies"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "beta-carotene": {
+    "display_name": "Beta Carotene",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000196"
+      ],
+      "protocol": [
+        "WAL-CLM-LETS-000178"
+      ]
+    },
+    "conditions_treated": [
+      "cancer",
+      "carcinoma"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1376,6 +1397,46 @@
       "lets-play-doctor"
     ]
   },
+  "carbamide": {
+    "display_name": "Carbamide",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000195"
+      ],
+      "protocol": [
+        "WAL-CLM-LETS-000344"
+      ]
+    },
+    "conditions_treated": [
+      "cancer",
+      "leukemia",
+      "liver_cancer"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "carcelim": {
+    "display_name": "Carcelim",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000188"
+      ],
+      "protocol": [
+        "WAL-CLM-LETS-000342"
+      ]
+    },
+    "conditions_treated": [
+      "basal_cell_carcinoma",
+      "cancer",
+      "melanoma"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "carnitine": {
     "display_name": "Carnitine",
     "claim_count": 2,
@@ -1585,6 +1646,28 @@
       "lets-play-doctor"
     ]
   },
+  "cesium-chloride": {
+    "display_name": "Cesium Chloride",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000181"
+      ],
+      "protocol": [
+        "WAL-CLM-LETS-000344"
+      ]
+    },
+    "conditions_treated": [
+      "cancer",
+      "colon_cancer",
+      "leukemia",
+      "lung_cancer",
+      "sarcoma"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "charcoal": {
     "display_name": "Charcoal",
     "claim_count": 2,
@@ -1598,6 +1681,21 @@
       "diarrhea",
       "heavy_metal_toxicity",
       "thallium_poisoning"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "chemotherapy": {
+    "display_name": "Chemotherapy",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000199"
+      ]
+    },
+    "conditions_treated": [
+      "cancer"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1746,6 +1844,23 @@
       "lets-play-doctor"
     ]
   },
+  "clodronate": {
+    "display_name": "Clodronate",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000184"
+      ]
+    },
+    "conditions_treated": [
+      "breast_cancer",
+      "cancer",
+      "prostate_cancer"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "clove-root": {
     "display_name": "Clove Root",
     "claim_count": 1,
@@ -1795,7 +1910,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 52,
+    "claim_count": 53,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-LETS-000352"
@@ -1814,6 +1929,7 @@
         "WAL-CLM-LETS-000166",
         "WAL-CLM-LETS-000168",
         "WAL-CLM-LETS-000176",
+        "WAL-CLM-LETS-000178",
         "WAL-CLM-LETS-000203",
         "WAL-CLM-LETS-000240",
         "WAL-CLM-LETS-000242",
@@ -1871,6 +1987,7 @@
       "bone_pain",
       "bone_spurs",
       "bursitis",
+      "cancer",
       "cardiac_arrhythmia",
       "carpal_tunnel_syndrome",
       "cystic_fibrosis",
@@ -2062,14 +2179,18 @@
   },
   "coq10": {
     "display_name": "Coq10",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000191"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000203",
         "WAL-CLM-LETS-000306"
       ]
     },
     "conditions_treated": [
+      "cancer",
       "cardiac_arrhythmia",
       "hypertension"
     ],
@@ -2285,9 +2406,10 @@
   },
   "dietary-fiber": {
     "display_name": "Dietary Fiber",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "protocol": [
+        "WAL-CLM-LETS-000178",
         "WAL-CLM-LETS-000231",
         "WAL-CLM-LETS-000238",
         "WAL-CLM-LETS-000248",
@@ -2298,6 +2420,7 @@
       ]
     },
     "conditions_treated": [
+      "cancer",
       "constipation",
       "crohns_disease",
       "diarrhea",
@@ -2371,8 +2494,11 @@
   },
   "dmso": {
     "display_name": "Dmso",
-    "claim_count": 15,
+    "claim_count": 17,
     "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000192"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000146",
         "WAL-CLM-LETS-000154",
@@ -2383,6 +2509,7 @@
         "WAL-CLM-LETS-000221",
         "WAL-CLM-LETS-000320",
         "WAL-CLM-LETS-000326",
+        "WAL-CLM-LETS-000344",
         "WAL-CLM-LETS-000393",
         "WAL-CLM-LETS-000414",
         "WAL-CLM-LETS-000419",
@@ -2397,10 +2524,12 @@
       "bee_stings",
       "bruises",
       "bursitis",
+      "cancer",
       "candidiasis",
       "chronic_fatigue_syndrome",
       "inflammation",
       "joint_pain",
+      "leukemia",
       "pain",
       "radial_nerve_palsy",
       "rheumatoid_arthritis",
@@ -3024,6 +3153,22 @@
     "books_cited": [
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "flutamide": {
+    "display_name": "Flutamide",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000185"
+      ]
+    },
+    "conditions_treated": [
+      "cancer",
+      "prostate_cancer"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "fluviatol": {
@@ -3693,6 +3838,21 @@
       "lets-play-doctor"
     ]
   },
+  "hoxey-herbal-formula": {
+    "display_name": "Hoxey Herbal Formula",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000186"
+      ]
+    },
+    "conditions_treated": [
+      "cancer"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "hydergine": {
     "display_name": "Hydergine",
     "claim_count": 5,
@@ -3718,14 +3878,20 @@
   },
   "hydrazine-sulfate": {
     "display_name": "Hydrazine Sulfate",
-    "claim_count": 1,
+    "claim_count": 3,
     "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000180"
+      ],
       "protocol": [
-        "WAL-CLM-LETS-000126"
+        "WAL-CLM-LETS-000126",
+        "WAL-CLM-LETS-000344"
       ]
     },
     "conditions_treated": [
-      "aids"
+      "aids",
+      "cancer",
+      "leukemia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3733,8 +3899,11 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 45,
+    "claim_count": 47,
     "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000190"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000118",
         "WAL-CLM-LETS-000119",
@@ -3767,6 +3936,7 @@
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000318",
         "WAL-CLM-LETS-000333",
+        "WAL-CLM-LETS-000344",
         "WAL-CLM-LETS-000345",
         "WAL-CLM-LETS-000349",
         "WAL-CLM-LETS-000392",
@@ -3796,6 +3966,7 @@
       "bloating",
       "body_odor",
       "boils",
+      "cancer",
       "candidiasis",
       "cardiovascular_disease",
       "cerebrovascular_disease",
@@ -3815,6 +3986,7 @@
       "infection",
       "intermittent_claudication",
       "korsakoffs_syndrome",
+      "leukemia",
       "leukorrhea",
       "otitis",
       "palpitations",
@@ -3965,6 +4137,21 @@
       "neuralgia",
       "neuropathy",
       "shingles"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "iv-nutrition": {
+    "display_name": "Iv Nutrition",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000200"
+      ]
+    },
+    "conditions_treated": [
+      "cancer"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -4217,6 +4404,25 @@
       "lets-play-doctor"
     ]
   },
+  "laetrile": {
+    "display_name": "Laetrile",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000182"
+      ],
+      "protocol": [
+        "WAL-CLM-LETS-000344"
+      ]
+    },
+    "conditions_treated": [
+      "cancer",
+      "leukemia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "lavender": {
     "display_name": "Lavender",
     "claim_count": 9,
@@ -4355,6 +4561,45 @@
     "conditions_treated": [
       "aids",
       "parasites"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "levamisole": {
+    "display_name": "Levamisole",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000187"
+      ]
+    },
+    "conditions_treated": [
+      "brain_cancer",
+      "breast_cancer",
+      "cancer",
+      "colon_cancer",
+      "esophageal_cancer",
+      "liver_cancer",
+      "pancreatic_cancer",
+      "stomach_cancer",
+      "throat_cancer"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "lhrh": {
+    "display_name": "Lhrh",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000185"
+      ]
+    },
+    "conditions_treated": [
+      "cancer",
+      "prostate_cancer"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5169,6 +5414,22 @@
       "lets-play-doctor"
     ]
   },
+  "onco-tox": {
+    "display_name": "Onco Tox",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000344"
+      ]
+    },
+    "conditions_treated": [
+      "cancer",
+      "leukemia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "onion": {
     "display_name": "Onion",
     "claim_count": 1,
@@ -5770,6 +6031,25 @@
       "lets-play-doctor"
     ]
   },
+  "polyerga": {
+    "display_name": "Polyerga",
+    "claim_count": 2,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000189"
+      ],
+      "protocol": [
+        "WAL-CLM-LETS-000344"
+      ]
+    },
+    "conditions_treated": [
+      "cancer",
+      "leukemia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "poultry-dusting-powder": {
     "display_name": "Poultry Dusting Powder",
     "claim_count": 1,
@@ -6345,6 +6625,52 @@
       "lets-play-doctor"
     ]
   },
+  "shark-cartilage": {
+    "display_name": "Shark Cartilage",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000198"
+      ]
+    },
+    "conditions_treated": [
+      "cancer"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "shark-liver-extract": {
+    "display_name": "Shark Liver Extract",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-LETS-000344"
+      ]
+    },
+    "conditions_treated": [
+      "cancer",
+      "leukemia"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "shark-liver-oil": {
+    "display_name": "Shark Liver Oil",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000198"
+      ]
+    },
+    "conditions_treated": [
+      "cancer"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
   "shepherds-purse": {
     "display_name": "Shepherds Purse",
     "claim_count": 1,
@@ -6858,6 +7184,21 @@
     "conditions_treated": [
       "aids",
       "autoimmune_disorders"
+    ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "thymus-extract": {
+    "display_name": "Thymus Extract",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000193"
+      ]
+    },
+    "conditions_treated": [
+      "cancer"
     ],
     "books_cited": [
       "lets-play-doctor"
