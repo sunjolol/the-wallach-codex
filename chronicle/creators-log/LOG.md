@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 216 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 217 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 12:22 UTC-05:00 · milestone · knowledge/corpus
+Epigenetics (2014) batch 1 [b1]: new 5th shard, EPIGEN-000001..009 (Ch17 genetic-diseases core). 7 tier-1 reframes (diabetes=Cr+V, CF/MD/Keshan=Se, Kawasaki=Cu) + 2 search-only (homosexuality/intersex, neutral, search-confined per Luneth). kv191, 881->890 claims.
+  ↳ Audit-first confirmed in-housing (hash exact-match) + full 32,141-line structure; tier-1 disease core = Ch17-18 only. Homosexuality/intersex built tier-1/neutral so Luneth could visual-verify, approved presentation, ruled search-only (not a condition). VERIFY: finalize->seal kv190->retag draft->reseal kv191->verify PASS->embed->build OK->invariants 31/31 (search_only 84->86)->knowledge probe PASS (conds 456->454, both topics absent from index).
 
 ## 2026-06-30 10:59 UTC-05:00 · milestone · knowledge/corpus
 iaiyh (2020) FULLY MINED — batch 3 = 3 search-only claims: The Solution cofactor + soil-depletion rationale (Edison wood-ashes, −37%/−77%) + Wallach credentials (Nobel nom, Klaus Schwarz/epigenetics, DSHEA). kv 189, claims 881; board 31/31, probe green. NEXT: Epigenetics 2014.
@@ -801,7 +805,3 @@ Journey J3+J4: mounted the J2 view (kills the last legacy teal; shared K+J regis
 ## 2026-06-23 18:07 UTC-04:00 · round-close · dashboard/legacy-css
 Sever-Safety: scoped all 24 legacy-dashboard.css leak vectors under :where(#legacy-workspace-host); moved the globals the shell was secretly inheriting into dashboard.css; new critical invariant legacy_css_contained makes the leak impossible. Luneth-verified.
   ↳ Audit (Luneth's 'total clean cut' ask) confirmed the legacy->v3 sever is clean at the markup level (one #legacy-workspace-host div, R2->R5 deletion schedule) but was leaky at the CSS level with no enforcement. The parked legacy stylesheet (loaded after the v3 design system) had 24 bare element/universal selectors (teal h2/h3/table, @media header, *, html/body) that bleed into the .app-* shell; only the 4 that already bit were hand-patched. Fix: :where(#legacy-workspace-host) scoping (zero added specificity -> legacy cascade preserved byte-for-byte) + html,body/body collapsed onto the host. Critical mid-chunk catch: the pixel-exact shell was silently riding on legacy's leaked star{box-sizing} + html,body font-smoothing (the sealed v3 token sheet scopes those to .ds-canvas only, which .app-shell doesn't use), so moved box-sizing/smoothing/line-height into dashboard.css. New critical invariant legacy_css_contained: deterministic re-parse, no bare element/star/non-var :root selector may ever exist; proven with a negative test. Verified 24->0 leak vectors, style_diff 4 live-better residuals only, invariants 26/26, render probes 0 errors.
-
-## 2026-06-23 13:35 UTC-04:00 · milestone · coverage
-Coverage Phase 1 — shell now ~pixel-exact to v3.2 (Luneth verified). Fixed via new tools/style_diff.js: legacy 15px root + bare header/footer selectors bleeding into the .app-* shell; in-housed the missing Chakra Petch/Bruno Ace fonts. Visual-match lesson codified.
-  ↳ First gold-standard surface phase under the visual-verification gate (build -> STOP -> Luneth verifies -> commit). An objective computed-style diff (new tools/style_diff.js, live shell vs the v3.2 mockup) drove it from ~50 diffs to 0 meaningful, replacing eyeballing. Two systemic root causes: (1) legacy-dashboard.css html,body{font-size:15px} shrank the whole rem UI to 93.75% -> removed, 16px root re-scales the entire coverage page; (2) legacy bare element selectors (header/footer/html,body) bled into the new .app-* shell (14px radius, teal shadow+border, a header::before veil over .app-topbar hiding its accents + fading the search, teal text) -> scoped to #legacy-workspace-host + doc-level overrides removed (grep [v3-contain]). Also in-housed the v3.2 fonts (Chakra Petch + Bruno Ace; wired but never procured -> @font-face 404 -> Space Grotesk fallback). Lesson codified in .claude/rules/visual-verification.md 'Getting to exact'. NEXT: finish Coverage hero/periodic/sidebar vs v3.2; CODEX dynamic version; alien-glyph cipher.

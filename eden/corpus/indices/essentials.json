@@ -1346,7 +1346,7 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 59,
+    "claim_count": 60,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -1388,6 +1388,7 @@
         "WAL-CLM-DDDL-000048",
         "WAL-CLM-DDDL-000075",
         "WAL-CLM-DDDL-000078",
+        "WAL-CLM-EPIGEN-000003",
         "WAL-CLM-LETS-000125",
         "WAL-CLM-LETS-000127",
         "WAL-CLM-LETS-000142",
@@ -1511,6 +1512,7 @@
       "learning_disabilities",
       "liver_disease",
       "memory_loss",
+      "narcolepsy",
       "night_terrors",
       "organic_brain_syndrome",
       "osteoporosis",
@@ -1520,6 +1522,7 @@
       "peptic_ulcers",
       "peripheral_neuropathy",
       "premenstrual_syndrome",
+      "reactive_hypoglycemia",
       "schizophrenia",
       "violent_behavior"
     ],
@@ -1563,6 +1566,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -1571,7 +1575,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 38,
+    "claim_count": 39,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
@@ -1611,6 +1615,7 @@
       ],
       "protocol": [
         "WAL-CLM-DDDL-000049",
+        "WAL-CLM-EPIGEN-000007",
         "WAL-CLM-LETS-000137",
         "WAL-CLM-LETS-000138",
         "WAL-CLM-LETS-000146",
@@ -1736,6 +1741,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -2280,7 +2286,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 88,
+    "claim_count": 91,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2303,6 +2309,8 @@
         "WAL-CLM-DDDL-000029",
         "WAL-CLM-DDDL-000030",
         "WAL-CLM-DDDL-000071",
+        "WAL-CLM-EPIGEN-000004",
+        "WAL-CLM-EPIGEN-000006",
         "WAL-CLM-RARE-000004",
         "WAL-CLM-RARE-000010",
         "WAL-CLM-RARE-000050",
@@ -2321,6 +2329,7 @@
         "WAL-CLM-DDDL-000073",
         "WAL-CLM-DDDL-000081",
         "WAL-CLM-DDDL-000085",
+        "WAL-CLM-EPIGEN-000005",
         "WAL-CLM-LETS-000126",
         "WAL-CLM-LETS-000137",
         "WAL-CLM-LETS-000144",
@@ -2494,6 +2503,7 @@
       "sickle_cell_anemia",
       "sids",
       "stroke",
+      "sudden_cardiac_death",
       "tachycardia",
       "thrush",
       "tonsillitis",
@@ -2540,6 +2550,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -2617,7 +2628,7 @@
     "display_name": "Vanadium",
     "canon_slug": "vanadium",
     "category": "mineral",
-    "claim_count": 36,
+    "claim_count": 37,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -2655,6 +2666,7 @@
         "WAL-CLM-DDDL-000048",
         "WAL-CLM-DDDL-000075",
         "WAL-CLM-DDDL-000078",
+        "WAL-CLM-EPIGEN-000003",
         "WAL-CLM-LETS-000125",
         "WAL-CLM-LETS-000155",
         "WAL-CLM-LETS-000159",
@@ -2713,9 +2725,11 @@
       "infertility",
       "insomnia",
       "korsakoffs_syndrome",
+      "narcolepsy",
       "obesity",
       "osteoporosis",
       "panic_attacks",
+      "reactive_hypoglycemia",
       "schizophrenia",
       "violent_behavior"
     ],
@@ -2752,6 +2766,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]

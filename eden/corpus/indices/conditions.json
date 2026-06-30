@@ -185,8 +185,11 @@
   },
   "adhd": {
     "display_name": "Adhd",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-EPIGEN-000002"
+      ],
       "deficiency_signs": [
         "WAL-CLM-RARE-000163"
       ],
@@ -200,6 +203,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -1249,8 +1253,11 @@
   },
   "autism": {
     "display_name": "Autism",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-EPIGEN-000002"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000151"
       ]
@@ -1263,6 +1270,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -1540,9 +1548,11 @@
   },
   "birth_defects": {
     "display_name": "Birth Defects",
-    "claim_count": 13,
+    "claim_count": 15,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-EPIGEN-000001",
+        "WAL-CLM-EPIGEN-000002",
         "WAL-CLM-RARE-000015",
         "WAL-CLM-RARE-000047"
       ],
@@ -1580,6 +1590,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -2296,10 +2307,11 @@
   },
   "cardiomyopathy": {
     "display_name": "Cardiomyopathy",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-DDDL-000010"
+        "WAL-CLM-DDDL-000010",
+        "WAL-CLM-EPIGEN-000006"
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
@@ -2337,6 +2349,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -2515,9 +2528,10 @@
   },
   "cerebral_palsy": {
     "display_name": "Cerebral Palsy",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-EPIGEN-000002",
         "WAL-CLM-RARE-000123"
       ],
       "deficiency_signs": [
@@ -2534,6 +2548,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -2839,8 +2854,11 @@
   },
   "cleft_palate": {
     "display_name": "Cleft Palate",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-EPIGEN-000002"
+      ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000042",
         "WAL-CLM-RARE-000262"
@@ -2853,6 +2871,7 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -3343,9 +3362,10 @@
   },
   "cystic_fibrosis": {
     "display_name": "Cystic Fibrosis",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-EPIGEN-000004",
         "WAL-CLM-RARE-000004",
         "WAL-CLM-RARE-000010"
       ],
@@ -3378,6 +3398,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -3709,7 +3730,7 @@
   },
   "diabetes": {
     "display_name": "Diabetes",
-    "claim_count": 24,
+    "claim_count": 25,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-DDDL-000008"
@@ -3746,6 +3767,7 @@
       "protocols": [
         "WAL-CLM-DDDL-000048",
         "WAL-CLM-DDDL-000049",
+        "WAL-CLM-EPIGEN-000003",
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000388",
         "WAL-CLM-RARE-000280"
@@ -3788,6 +3810,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -3911,9 +3934,10 @@
   },
   "down_syndrome": {
     "display_name": "Down Syndrome",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-EPIGEN-000002",
         "WAL-CLM-RARE-000016",
         "WAL-CLM-RARE-000044"
       ],
@@ -3930,6 +3954,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -4035,8 +4060,11 @@
   },
   "dyslexia": {
     "display_name": "Dyslexia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-EPIGEN-000002"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000257"
       ]
@@ -4049,6 +4077,7 @@
       "urine-therapy"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -5549,13 +5578,16 @@
   },
   "hyperinsulinemia": {
     "display_name": "Hyperinsulinemia",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000257"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
+      ],
+      "protocols": [
+        "WAL-CLM-EPIGEN-000003"
       ]
     },
     "essentials_involved": [
@@ -5564,6 +5596,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -5708,7 +5741,7 @@
   },
   "hypoglycemia": {
     "display_name": "Hypoglycemia",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000254"
@@ -5732,6 +5765,7 @@
         "WAL-CLM-DDDL-000046"
       ],
       "protocols": [
+        "WAL-CLM-EPIGEN-000003",
         "WAL-CLM-LETS-000307",
         "WAL-CLM-LETS-000388"
       ]
@@ -5753,6 +5787,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -6407,7 +6442,7 @@
   },
   "kawasaki_disease": {
     "display_name": "Kawasaki Disease",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000051"
@@ -6415,13 +6450,19 @@
       "definitions": [
         "WAL-CLM-RARE-000049",
         "WAL-CLM-RARE-000122"
+      ],
+      "protocols": [
+        "WAL-CLM-EPIGEN-000007"
       ]
     },
     "essentials_involved": [
       "copper"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "antibiotics"
+    ],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -6495,10 +6536,11 @@
   },
   "keshan_disease": {
     "display_name": "Keshan Disease",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-DDDL-000071"
+        "WAL-CLM-DDDL-000071",
+        "WAL-CLM-EPIGEN-000006"
       ],
       "deficiency_signs": [
         "WAL-CLM-LETS-000030",
@@ -6525,6 +6567,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -6820,8 +6863,11 @@
   },
   "learning_disabilities": {
     "display_name": "Learning Disabilities",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-EPIGEN-000002"
+      ],
       "definitions": [
         "WAL-CLM-RARE-000116",
         "WAL-CLM-RARE-000122"
@@ -6846,6 +6892,7 @@
       "pancreatic-enzymes"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -7647,7 +7694,7 @@
   },
   "muscular_dystrophy": {
     "display_name": "Muscular Dystrophy",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000071",
@@ -7670,6 +7717,7 @@
       ],
       "protocols": [
         "WAL-CLM-DDDL-000073",
+        "WAL-CLM-EPIGEN-000005",
         "WAL-CLM-LETS-000373"
       ]
     },
@@ -7686,6 +7734,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -7704,6 +7753,23 @@
     "other_substances_involved": [],
     "books_cited": [
       "lets-play-doctor"
+    ]
+  },
+  "narcolepsy": {
+    "display_name": "Narcolepsy",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-EPIGEN-000003"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "vanadium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "epigenetics"
     ]
   },
   "nasal_catarrh": {
@@ -7767,6 +7833,20 @@
     ],
     "books_cited": [
       "lets-play-doctor"
+    ]
+  },
+  "neural_tube_defects": {
+    "display_name": "Neural Tube Defects",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-EPIGEN-000002"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "epigenetics"
     ]
   },
   "neuralgia": {
@@ -9210,6 +9290,23 @@
       "lets-play-doctor"
     ]
   },
+  "reactive_hypoglycemia": {
+    "display_name": "Reactive Hypoglycemia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-EPIGEN-000003"
+      ]
+    },
+    "essentials_involved": [
+      "chromium",
+      "vanadium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "epigenetics"
+    ]
+  },
   "rectal_itching": {
     "display_name": "Rectal Itching",
     "claim_count": 1,
@@ -9987,6 +10084,22 @@
     ],
     "books_cited": [
       "lets-play-doctor"
+    ]
+  },
+  "sudden_cardiac_death": {
+    "display_name": "Sudden Cardiac Death",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-EPIGEN-000006"
+      ]
+    },
+    "essentials_involved": [
+      "selenium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "epigenetics"
     ]
   },
   "swimmers_ear": {

@@ -338,6 +338,21 @@
       "lets-play-doctor"
     ]
   },
+  "antibiotics": {
+    "display_name": "Antibiotics",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "protocol": [
+        "WAL-CLM-EPIGEN-000007"
+      ]
+    },
+    "conditions_treated": [
+      "kawasaki_disease"
+    ],
+    "books_cited": [
+      "epigenetics"
+    ]
+  },
   "antimony": {
     "display_name": "Antimony",
     "claim_count": 1,
