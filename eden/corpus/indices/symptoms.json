@@ -3200,7 +3200,7 @@
   },
   "pica": {
     "display_name": "Pica",
-    "claim_count": 2,
+    "claim_count": 3,
     "likely_deficiencies": [
       {
         "essential": "iron",
@@ -3211,6 +3211,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "rare-earths"
     ]
   },

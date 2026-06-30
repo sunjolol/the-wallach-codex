@@ -340,6 +340,336 @@
       "extracted_at": "2026-06-30T16:38:34+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000010",
+      "kind": "mechanism",
+      "essentials": [
+        "manganese"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "deafness"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach reframes congenital deafness as a nutritional-deficiency disease rather than a hereditary one: it is produced by a maternal manganese deficiency during pregnancy, and is therefore preventable with adequate preconception manganese. He makes the point while critiquing Alexander Graham Bell's belief in a 'genetics of deafness.' In Wallach's words: \"He devoted his efforts in his senior years to the 'genetics of deafness.' In fact, congenital deafness is produced by a maternal manganese deficiency.\"",
+      "verbatim": "He devoted his efforts in his senior years to the “genetics of deafness.” In fact,\ncongenital deafness is produced by a maternal manganese deficiency.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "Epigenetic Manifestations of Disease",
+        "page": 579,
+        "screenshot": 559,
+        "kindle_location": null,
+        "char_offset": 1023502
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch17",
+        "manganese",
+        "genetic-diseases-reframed",
+        "congenital"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T17:45:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000011",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "obesity"
+      ],
+      "symptoms": [
+        "pica"
+      ],
+      "claim_text": "Wallach rejects the genetic, lack-of-exercise, and overeating explanations for obesity and identifies it instead as a mineral-deficiency disease: the body's unmet mineral hunger manifests behaviorally as food cravings, binge eating, the 'munchies,' and pica (the eating of non-food items). The remedy is correcting the underlying mineral deficiency rather than relying on gastric bypass, calorie restriction, or willpower. He notes he and Ma first reviewed obesity in Rare Earths: Forbidden Cures (1994) and published their definitive findings in Hell's Kitchen (2006). In Wallach's words: \"Obesity is not a genetically-generated disease, not a result of lack of exercise, and not a disease that can be attributed soley to overeating. Obesity is in fact caused by a deficiency of minerals that universally manifests symptomatically as cravings, binge eating, munchies and pica!\"",
+      "verbatim": "Obesity is not a genetically-generated disease, not a result of lack of exercise,\nand not a disease that can be attributed soley to overeating. Obesity is in fact\ncaused by a deficiency of minerals that universally manifests symptomatically as\ncravings, binge eating, munchies and pica!",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "Epigenetic Manifestations of Disease",
+        "page": 581,
+        "screenshot": 560,
+        "kindle_location": null,
+        "char_offset": 1026065
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch17",
+        "minerals",
+        "genetic-diseases-reframed"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T17:45:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000012",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "dementia"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach frames dementia not as a single disease but as a minimum of four distinct nutritional diseases -- vascular dementia, Korsakoff's syndrome, Wernicke-Korsakoff's syndrome, and Alzheimer's disease -- each with its own deficiency basis and nutritional-therapy protocol; an individual may have some degree of two, three, or all four at the same time. In Wallach's words: \"Dementia manifests itself as a minimum of four different diseases. Sometimes, individuals will have some degree of two, three, or all four of the classic dementias at the same time.\"",
+      "verbatim": "Dementia manifests itself as a minimum of four different diseases. Sometimes,\nindividuals will have some degree of two, three, or all four of the classic\ndementias at the same time",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "Epigenetic Manifestations of Disease",
+        "page": 581,
+        "screenshot": 560,
+        "kindle_location": null,
+        "char_offset": 1026589
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch17",
+        "dementia",
+        "framework"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T17:45:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000013",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "vascular_dementia"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach's first of the four dementias: vascular dementia, which occurs when the cerebral arteries become obstructed by atherosclerosis and/or arteriosclerosis. He attributes the obstruction to inflammation of the arterial lining (intima) by the same forces that obstruct the coronary, ocular, and renal arteries -- low dietary antioxidant levels plus inflammatory foods (fried foods, processed meats, oils, and gluten). His nutritional-therapy approach: stop the ongoing inflammation with an elimination diet that avoids inflammatory foods, supplement with all 90 essential nutrients plus antioxidants, and provide significant vascular care. In Wallach's words: \"Vascular dementia occurs when the cerebral arteries become obstructed with atherosclerosis and/or arteriosclerosis. The cause of these obstructions is inflammation of the arterial lining (intima) by the same forces that also obstruct coronary, ocular, and renal arteries.\"",
+      "verbatim": "Vascular dementia occurs when the cerebral arteries become\nobstructed with atherosclerosis and/or arteriosclerosis. The cause of\nthese obstructions is inflammation of the arterial lining (intima) by the\nsame forces that also obstruct coronary, ocular, and renal arteries.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "Epigenetic Manifestations of Disease",
+        "page": 581,
+        "screenshot": 560,
+        "kindle_location": null,
+        "char_offset": 1026775
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch17",
+        "dementia",
+        "vascular",
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T17:45:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000014",
+      "kind": "protocol",
+      "essentials": [
+        "vitamin-b1"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "korsakoffs_syndrome"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach's second dementia: Korsakoff's syndrome, which he classifies as part of the BeriBeri (thiamine, or vitamin B1, deficiency) family of diseases. He holds it is reversible by eliminating sugar, fried foods, processed meats, oils, and gluten from the diet and following a supplement program providing all 90 essential nutrients with a special emphasis on thiamine (vitamin B1). In Wallach's words: \"The disease can be reversed by the elimination of sugar, fried foods, processed meats, oils, and gluten from the diet as well as a supplement program that provides all 90 essential nutrients with a special emphasis on the supplementation of thiamine...\"",
+      "verbatim": "The disease can be reversed by the\n\n\nelimination of sugar, fried foods, processed meats, oils, and gluten from\nthe diet as well as a supplement program that provides all 90 essential\nnutrients with a special emphasis on the supplementation of thiamine",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "Epigenetic Manifestations of Disease",
+        "page": 581,
+        "screenshot": 560,
+        "kindle_location": null,
+        "char_offset": 1027605
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch17",
+        "dementia",
+        "vitamin-b1",
+        "beriberi",
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T17:45:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000015",
+      "kind": "protocol",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "wernicke_korsakoff_syndrome",
+        "multiple_sclerosis"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach's third dementia: Wernicke-Korsakoff's syndrome (printed 'Wernecke-Korsakoff's'), which he describes as a two-part syndrome in which the patient is diagnosed with both Korsakoff's syndrome and multiple sclerosis (MS) simultaneously. He holds it is reversible by treating both: a dietary change to stop the ongoing inflammatory damage to the brain's myelin (as occurs in MS), the addition of 6-8 eggs per day to supply raw materials for myelin maintenance and repair, and a program of all 90 essential nutrients with special emphasis on antioxidants, including selenium. In Wallach's words: \"The disease syndrome can be reversed by dealing with both diseases. To stop the ongoing inflammatory damage to the myelin of the brain (that occurs in MS) with a dietary change, add 6-8 eggs per day to provide raw materials to help support maintenance and repair of the myelin and supplement with all 90 essential nutrients with a special emphasis on antioxidants, including selenium.\"",
+      "verbatim": "The disease syndrome can\nbe reversed by dealing with both diseases. To stop the ongoing\ninflammatory damage to the myelin of the brain (that occurs in MS)\nwith a dietary change, add 6-8 eggs per day to provide raw materials\nto help support maintenance and repair of the myelin and supplement\nwith all 90 essential nutrients with a special emphasis on antioxidants,\nincluding selenium.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "Epigenetic Manifestations of Disease",
+        "page": 581,
+        "screenshot": 560,
+        "kindle_location": null,
+        "char_offset": 1028045
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch17",
+        "dementia",
+        "multiple-sclerosis",
+        "selenium",
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T17:45:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000016",
+      "kind": "protocol",
+      "essentials": [
+        "omega-3"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "alzheimers"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach's fourth dementia: Alzheimer's disease, which he calls a 'physician-caused' disease -- produced by lowering the patient's dietary cholesterol and saturated fat, prescribing statin drugs, and directing patients to avoid vitamin and mineral supplements. His prevention/treatment protocol is the same anti-dementia regimen used for the other three dementias: no fried foods, no processed meats, no oils; 4-6 eggs per hundred pounds of body weight per day; avoidance of all statin drugs (he cites an April 2012 FDA warning that statin drugs increase the risk of dementia and type 2 diabetes); and DHA and EPA essential fatty acids (omega-3) to support production of the neurotransmitters of memory and cognition. He cites a Johns Hopkins randomized double-blind ten-year study, published in 2004 on nearly 5,000 people over age 65, showing that a special diet plus nutrient supplementation can reduce Alzheimer's risk by 78%. In Wallach's words: \"Prevention of Alzheimer's has been documented by a Johns Hopkins randomized and double blind study on almost 5,000 people over the age of 65. The ten-year study published in 2004 demonstrated clearly that the consumption of a special diet, avoidance of certain foods and the supplementation of nutrients can reduce the risk of Alzheimer's disease by 78%!\"",
+      "verbatim": "Prevention\nof Alzheimer's has been documented by a Johns Hopkins randomized\nand double blind study on almost 5,000 people over the age of 65.\nThe ten-year study published in 2004 demonstrated clearly that the\nconsumption of a special diet, avoidance of certain foods and the\nsupplementation of nutrients can reduce the risk of Alzheimer's disease\nby 78%!",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "Epigenetic Manifestations of Disease",
+        "page": 581,
+        "screenshot": 560,
+        "kindle_location": null,
+        "char_offset": 1028710
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch17",
+        "dementia",
+        "omega-3",
+        "statins",
+        "johns-hopkins",
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T17:45:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000017",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "birth_defects"
+      ],
+      "symptoms": [],
+      "claim_text": "Search-only framework narrative. Wallach surveys how congenital birth defects ('monsters') were understood across the centuries -- from Renaissance omens and divine-punishment interpretations (the 1512 Monster of Ravenna; Ambroise Pare's 1573 catalogue of supposed causes), through the great teratological collections (Willem Vrolik's cyclops/holoprosencephaly specimens), to the modern recognition of chemical and drug teratogens exemplified by the 1961 thalidomide ('seal-limb') limb-defect epidemic. His thesis throughout is that most such congenital and central-nervous-system defects are, at root, manifestations of a maternal nutritional deficiency during early embryonic development, and are therefore preventable. In Wallach's words: \"A catastrophic teratogenic event was reported in 1961. William McBride, an Australian physician, reported an uptick in the rate of babies born with congenitally deformed limbs. In just a few months, a German physician (Lenz), reported a series of similar births. Both doctors believed that the defects were caused by the use of a sedative (phtalimido-glutarimide) by the trade name Thalidomide (the third-best selling pharmaceutical in Europe).\"",
+      "verbatim": "A catastrophic teratogenic event was reported in 1961. William McBride,\nan Australian physician, reported an uptick in the rate of babies born with\ncongenitally deformed limbs. In just a few months, a German physician (Lenz),\nreported a series of similar births. Both doctors believed that the defects were\ncaused by the use of a sedative (phtalimido-glutarimide) by the trade name\nThalidomide (the third-best selling pharmaceutical in Europe).",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "Epigenetic Manifestations of Disease",
+        "page": 556,
+        "screenshot": 548,
+        "kindle_location": null,
+        "char_offset": 984939
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch17",
+        "search-only",
+        "search-topic:teratology",
+        "search-topic:birth-defects-history",
+        "congenital"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T17:45:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000018",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "birth_defects"
+      ],
+      "symptoms": [],
+      "claim_text": "Search-only framework narrative. In the chapter's closing section, 'Minerals: The Currency of Life,' Wallach argues that the modern faith in genetic mapping is the latest in a series of medical 'discoveries of the century' (after germ theory and virology) that draw enormous research funding yet have not cured cancer, diabetes, or Alzheimer's. He restates the framework's core claim: chromosomes and genes have second-by-second requirements for minerals, trace minerals, rare-earth metals, vitamins, amino acids, and essential fatty acids, and the most common cause of birth defects worldwide is overt clinical deficiency of one or more of the 90 essential nutrients in the mother-to-be before conception and through the first 90 days of pregnancy. He points to the animal industry -- which has effectively eliminated birth defects, infertility, and 'genetic' disease in livestock and pets purely through optimal preconception nutrition -- as proof of concept. In Wallach's words: \"However, the most common cause of birth defects in American babies and babies around the world are overt clinical deficiencies of one or more of the 90 essential nutrients of the mother-to-be and therefore of the embryo prior to conception and for the first 90 days of pregnancy!\"",
+      "verbatim": "However, the most common cause of birth defects in American babies and\nbabies around the world are overt clinical deficiencies of one or more of the\n90 essential nutrients of the mother-to-be and therefore of the embryo prior to\nconception and for the first 90 days of pregnancy!",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "Epigenetic Manifestations of Disease",
+        "page": 587,
+        "screenshot": 563,
+        "kindle_location": null,
+        "char_offset": 1038111
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch17",
+        "search-only",
+        "search-topic:preconception-nutrition",
+        "search-topic:genetic-theory",
+        "framework"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-06-30T17:45:56+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

@@ -2119,7 +2119,7 @@
     "display_name": "Manganese",
     "canon_slug": "manganese",
     "category": "mineral",
-    "claim_count": 16,
+    "claim_count": 17,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000175"
@@ -2138,6 +2138,7 @@
       "mechanism": [
         "WAL-CLM-DDDL-000027",
         "WAL-CLM-DDDL-000053",
+        "WAL-CLM-EPIGEN-000010",
         "WAL-CLM-RARE-000178"
       ],
       "prevalence": [
@@ -2245,6 +2246,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -2286,7 +2288,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 91,
+    "claim_count": 92,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2330,6 +2332,7 @@
         "WAL-CLM-DDDL-000081",
         "WAL-CLM-DDDL-000085",
         "WAL-CLM-EPIGEN-000005",
+        "WAL-CLM-EPIGEN-000015",
         "WAL-CLM-LETS-000126",
         "WAL-CLM-LETS-000137",
         "WAL-CLM-LETS-000144",
@@ -2508,6 +2511,7 @@
       "thrush",
       "tonsillitis",
       "torticollis",
+      "wernicke_korsakoff_syndrome",
       "white_muscle_disease"
     ],
     "interacts_with": [
@@ -4114,7 +4118,7 @@
     "display_name": "Thiamine",
     "canon_slug": "vitamin-b1",
     "category": "vitamin",
-    "claim_count": 18,
+    "claim_count": 19,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000043",
@@ -4125,6 +4129,7 @@
         "WAL-CLM-LETS-000068"
       ],
       "protocol": [
+        "WAL-CLM-EPIGEN-000014",
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000142",
         "WAL-CLM-LETS-000159",
@@ -4308,6 +4313,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -6768,7 +6774,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 80,
+    "claim_count": 81,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -6784,6 +6790,7 @@
         "WAL-CLM-RARE-000111"
       ],
       "protocol": [
+        "WAL-CLM-EPIGEN-000016",
         "WAL-CLM-LETS-000123",
         "WAL-CLM-LETS-000125",
         "WAL-CLM-LETS-000127",
@@ -6897,6 +6904,7 @@
       "allergies",
       "alopecia",
       "als",
+      "alzheimers",
       "amenorrhea",
       "anemia",
       "angina",
@@ -7024,6 +7032,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]

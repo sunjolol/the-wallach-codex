@@ -464,7 +464,7 @@
   },
   "alzheimers": {
     "display_name": "Alzheimers",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
@@ -474,6 +474,7 @@
         "WAL-CLM-RARE-000270"
       ],
       "protocols": [
+        "WAL-CLM-EPIGEN-000016",
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000356"
       ]
@@ -482,6 +483,7 @@
       "choline",
       "chromium",
       "germanium",
+      "omega-3",
       "selenium",
       "vitamin-b1",
       "vitamin-e"
@@ -499,6 +501,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -3459,9 +3462,10 @@
   },
   "deafness": {
     "display_name": "Deafness",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-EPIGEN-000010",
         "WAL-CLM-IAIYH-000012"
       ],
       "deficiency_signs": [
@@ -3490,6 +3494,7 @@
       "pulse-test"
     ],
     "books_cited": [
+      "epigenetics",
       "iaiyh",
       "lets-play-doctor",
       "rare-earths"
@@ -3497,13 +3502,14 @@
   },
   "dementia": {
     "display_name": "Dementia",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000034",
         "WAL-CLM-RARE-000235"
       ],
       "definitions": [
+        "WAL-CLM-EPIGEN-000012",
         "WAL-CLM-LETS-000001"
       ],
       "protocols": [
@@ -3545,6 +3551,7 @@
       "vasopressin"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -6693,9 +6700,10 @@
   },
   "korsakoffs_syndrome": {
     "display_name": "Korsakoffs Syndrome",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "protocols": [
+        "WAL-CLM-EPIGEN-000014",
         "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000356"
       ]
@@ -6720,6 +6728,7 @@
       "vasopressin"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -7614,7 +7623,7 @@
   },
   "multiple_sclerosis": {
     "display_name": "Multiple Sclerosis",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000227",
@@ -7624,6 +7633,7 @@
         "WAL-CLM-RARE-000087"
       ],
       "protocols": [
+        "WAL-CLM-EPIGEN-000015",
         "WAL-CLM-LETS-000371"
       ]
     },
@@ -7640,6 +7650,7 @@
       "snake-venom"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -7999,8 +8010,11 @@
   },
   "obesity": {
     "display_name": "Obesity",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-EPIGEN-000011"
+      ],
       "deficiency_signs": [
         "WAL-CLM-RARE-000257"
       ],
@@ -8023,6 +8037,7 @@
       "thyroid"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -10736,6 +10751,20 @@
       "rare-earths"
     ]
   },
+  "vascular_dementia": {
+    "display_name": "Vascular Dementia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-EPIGEN-000013"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "epigenetics"
+    ]
+  },
   "vertigo": {
     "display_name": "Vertigo",
     "claim_count": 3,
@@ -10918,17 +10947,22 @@
   },
   "wernicke_korsakoff_syndrome": {
     "display_name": "Wernicke Korsakoff Syndrome",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000233"
+      ],
+      "protocols": [
+        "WAL-CLM-EPIGEN-000015"
       ]
     },
     "essentials_involved": [
+      "selenium",
       "vitamin-b1"
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },

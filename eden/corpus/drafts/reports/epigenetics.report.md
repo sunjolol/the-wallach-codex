@@ -1,78 +1,85 @@
 # Extraction report — epigenetics (Epigenetics: The Death of the Genetic Theory of Disease Transmission)
 
-_9 claim(s) drafted 2026-06-30T16:38:34+00:00. Review then run corpus_seal.py to promote._
+_9 claim(s) drafted 2026-06-30T17:45:56+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: mechanism×6, protocol×3
+Kinds: definition×1, mechanism×4, protocol×4
 
-### WAL-CLM-EPIGEN-000001 · mechanism
+### WAL-CLM-EPIGEN-000010 · mechanism
+- **essentials:** manganese · **conditions:** deafness · **symptoms:** —
+- **claim:** Wallach reframes congenital deafness as a nutritional-deficiency disease rather than a hereditary one: it is produced by a maternal manganese deficiency during pregnancy, and is therefore preventable with adequate preconception manganese. He makes the point while critiquing Alexander Graham Bell's belief in a 'genetics of deafness.' In Wallach's words: "He devoted his efforts in his senior years to the 'genetics of deafness.' In fact, congenital deafness is produced by a maternal manganese deficiency."
+- **verbatim** (offset 1023502): “He devoted his efforts in his senior years to the “genetics of deafness.” In fact,
+congenital deafness is produced by a maternal manganese deficiency.”
+
+### WAL-CLM-EPIGEN-000011 · mechanism
+- **essentials:** — · **conditions:** obesity · **symptoms:** pica
+- **claim:** Wallach rejects the genetic, lack-of-exercise, and overeating explanations for obesity and identifies it instead as a mineral-deficiency disease: the body's unmet mineral hunger manifests behaviorally as food cravings, binge eating, the 'munchies,' and pica (the eating of non-food items). The remedy is correcting the underlying mineral deficiency rather than relying on gastric bypass, calorie restriction, or willpower. He notes he and Ma first reviewed obesity in Rare Earths: Forbidden Cures (1994) and published their definitive findings in Hell's Kitchen (2006). In Wallach's words: "Obesity is not a genetically-generated disease, not a result of lack of exercise, and not a disease that can be attributed soley to overeating. Obesity is in fact caused by a deficiency of minerals that universally manifests symptomatically as cravings, binge eating, munchies and pica!"
+- **verbatim** (offset 1026065): “Obesity is not a genetically-generated disease, not a result of lack of exercise,
+and not a disease that can be attributed soley to overeating. Obesity is in fact
+caused by a deficiency of minerals that universally manifests symptomatically as
+cravings, binge eating, munchies and pica!”
+
+### WAL-CLM-EPIGEN-000012 · definition
+- **essentials:** — · **conditions:** dementia · **symptoms:** —
+- **claim:** Wallach frames dementia not as a single disease but as a minimum of four distinct nutritional diseases -- vascular dementia, Korsakoff's syndrome, Wernicke-Korsakoff's syndrome, and Alzheimer's disease -- each with its own deficiency basis and nutritional-therapy protocol; an individual may have some degree of two, three, or all four at the same time. In Wallach's words: "Dementia manifests itself as a minimum of four different diseases. Sometimes, individuals will have some degree of two, three, or all four of the classic dementias at the same time."
+- **verbatim** (offset 1026589): “Dementia manifests itself as a minimum of four different diseases. Sometimes,
+individuals will have some degree of two, three, or all four of the classic
+dementias at the same time”
+
+### WAL-CLM-EPIGEN-000013 · protocol
+- **essentials:** — · **conditions:** vascular_dementia · **symptoms:** —
+- **claim:** Wallach's first of the four dementias: vascular dementia, which occurs when the cerebral arteries become obstructed by atherosclerosis and/or arteriosclerosis. He attributes the obstruction to inflammation of the arterial lining (intima) by the same forces that obstruct the coronary, ocular, and renal arteries -- low dietary antioxidant levels plus inflammatory foods (fried foods, processed meats, oils, and gluten). His nutritional-therapy approach: stop the ongoing inflammation with an elimination diet that avoids inflammatory foods, supplement with all 90 essential nutrients plus antioxidants, and provide significant vascular care. In Wallach's words: "Vascular dementia occurs when the cerebral arteries become obstructed with atherosclerosis and/or arteriosclerosis. The cause of these obstructions is inflammation of the arterial lining (intima) by the same forces that also obstruct coronary, ocular, and renal arteries."
+- **verbatim** (offset 1026775): “Vascular dementia occurs when the cerebral arteries become
+obstructed with atherosclerosis and/or arteriosclerosis. The cause of
+these obstructions is inflammation of the arterial lining (intima) by the
+same forces that also obstruct coronary, ocular, and renal arteries.”
+
+### WAL-CLM-EPIGEN-000014 · protocol
+- **essentials:** vitamin-b1 · **conditions:** korsakoffs_syndrome · **symptoms:** —
+- **claim:** Wallach's second dementia: Korsakoff's syndrome, which he classifies as part of the BeriBeri (thiamine, or vitamin B1, deficiency) family of diseases. He holds it is reversible by eliminating sugar, fried foods, processed meats, oils, and gluten from the diet and following a supplement program providing all 90 essential nutrients with a special emphasis on thiamine (vitamin B1). In Wallach's words: "The disease can be reversed by the elimination of sugar, fried foods, processed meats, oils, and gluten from the diet as well as a supplement program that provides all 90 essential nutrients with a special emphasis on the supplementation of thiamine..."
+- **verbatim** (offset 1027605): “The disease can be reversed by the
+
+
+elimination of sugar, fried foods, processed meats, oils, and gluten from
+the diet as well as a supplement program that provides all 90 essential
+nutrients with a special emphasis on the supplementation of thiamine”
+
+### WAL-CLM-EPIGEN-000015 · protocol
+- **essentials:** selenium · **conditions:** wernicke_korsakoff_syndrome, multiple_sclerosis · **symptoms:** —
+- **claim:** Wallach's third dementia: Wernicke-Korsakoff's syndrome (printed 'Wernecke-Korsakoff's'), which he describes as a two-part syndrome in which the patient is diagnosed with both Korsakoff's syndrome and multiple sclerosis (MS) simultaneously. He holds it is reversible by treating both: a dietary change to stop the ongoing inflammatory damage to the brain's myelin (as occurs in MS), the addition of 6-8 eggs per day to supply raw materials for myelin maintenance and repair, and a program of all 90 essential nutrients with special emphasis on antioxidants, including selenium. In Wallach's words: "The disease syndrome can be reversed by dealing with both diseases. To stop the ongoing inflammatory damage to the myelin of the brain (that occurs in MS) with a dietary change, add 6-8 eggs per day to provide raw materials to help support maintenance and repair of the myelin and supplement with all 90 essential nutrients with a special emphasis on antioxidants, including selenium."
+- **verbatim** (offset 1028045): “The disease syndrome can
+be reversed by dealing with both diseases. To stop the ongoing
+inflammatory damage to the myelin of the brain (that occurs in MS)
+with a dietary change, add 6-8 eggs per day to provide raw materials
+to help support maintenance and repair of the myelin and supplement
+with all 90 essential nutrients with a special emphasis on antioxidants,
+including selenium.”
+
+### WAL-CLM-EPIGEN-000016 · protocol
+- **essentials:** omega-3 · **conditions:** alzheimers · **symptoms:** —
+- **claim:** Wallach's fourth dementia: Alzheimer's disease, which he calls a 'physician-caused' disease -- produced by lowering the patient's dietary cholesterol and saturated fat, prescribing statin drugs, and directing patients to avoid vitamin and mineral supplements. His prevention/treatment protocol is the same anti-dementia regimen used for the other three dementias: no fried foods, no processed meats, no oils; 4-6 eggs per hundred pounds of body weight per day; avoidance of all statin drugs (he cites an April 2012 FDA warning that statin drugs increase the risk of dementia and type 2 diabetes); and DHA and EPA essential fatty acids (omega-3) to support production of the neurotransmitters of memory and cognition. He cites a Johns Hopkins randomized double-blind ten-year study, published in 2004 on nearly 5,000 people over age 65, showing that a special diet plus nutrient supplementation can reduce Alzheimer's risk by 78%. In Wallach's words: "Prevention of Alzheimer's has been documented by a Johns Hopkins randomized and double blind study on almost 5,000 people over the age of 65. The ten-year study published in 2004 demonstrated clearly that the consumption of a special diet, avoidance of certain foods and the supplementation of nutrients can reduce the risk of Alzheimer's disease by 78%!"
+- **verbatim** (offset 1028710): “Prevention
+of Alzheimer's has been documented by a Johns Hopkins randomized
+and double blind study on almost 5,000 people over the age of 65.
+The ten-year study published in 2004 demonstrated clearly that the
+consumption of a special diet, avoidance of certain foods and the
+supplementation of nutrients can reduce the risk of Alzheimer's disease
+by 78%!”
+
+### WAL-CLM-EPIGEN-000017 · mechanism
 - **essentials:** — · **conditions:** birth_defects · **symptoms:** —
-- **claim:** Wallach's epigenetic cornerstone: a healthy zygote and a properly functioning genome depend on the DNA having constant access to all 90 essential nutrients -- which he counts as 60 minerals, 16 vitamins, 12 amino acids, and 3 fatty acids -- each present in optimal amounts and in proper ratios to one another. The genes are not free-standing proteins that work in a vacuum; they require energy, raw materials, and on/off switching co-factors supplied by these nutrients. In his words: "To function properly, it is imperative for the DNA to constantly have access to all 90 essential nutrients (60 minerals, 16 vitamins, 12 amino acids and 3 fatty acids), and each one must be available in optimal amounts and in the proper ratios to each other."
-- **verbatim** (offset 970146): “To function properly, it is imperative for the DNA
-to constantly have access to all 90 essential nutrients (60 minerals, 16 vitamins,
-12 amino acids and 3 fatty acids), and each one must be available in optimal
-amounts and in the proper ratios to each other.”
+- **claim:** Search-only framework narrative. Wallach surveys how congenital birth defects ('monsters') were understood across the centuries -- from Renaissance omens and divine-punishment interpretations (the 1512 Monster of Ravenna; Ambroise Pare's 1573 catalogue of supposed causes), through the great teratological collections (Willem Vrolik's cyclops/holoprosencephaly specimens), to the modern recognition of chemical and drug teratogens exemplified by the 1961 thalidomide ('seal-limb') limb-defect epidemic. His thesis throughout is that most such congenital and central-nervous-system defects are, at root, manifestations of a maternal nutritional deficiency during early embryonic development, and are therefore preventable. In Wallach's words: "A catastrophic teratogenic event was reported in 1961. William McBride, an Australian physician, reported an uptick in the rate of babies born with congenitally deformed limbs. In just a few months, a German physician (Lenz), reported a series of similar births. Both doctors believed that the defects were caused by the use of a sedative (phtalimido-glutarimide) by the trade name Thalidomide (the third-best selling pharmaceutical in Europe)."
+- **verbatim** (offset 984939): “A catastrophic teratogenic event was reported in 1961. William McBride,
+an Australian physician, reported an uptick in the rate of babies born with
+congenitally deformed limbs. In just a few months, a German physician (Lenz),
+reported a series of similar births. Both doctors believed that the defects were
+caused by the use of a sedative (phtalimido-glutarimide) by the trade name
+Thalidomide (the third-best selling pharmaceutical in Europe).”
 
-### WAL-CLM-EPIGEN-000002 · mechanism
-- **essentials:** — · **conditions:** birth_defects, cerebral_palsy, down_syndrome, neural_tube_defects, cleft_palate, dyslexia, adhd, autism, learning_disabilities · **symptoms:** —
-- **claim:** Wallach holds that congenital events and birth defects of the central nervous system -- among them cerebral palsy, Down syndrome, neural tube defects, and cleft palate -- are for the most part manifestations of a maternal nutritional deficiency during a critical window of early embryonic development, and are therefore largely preventable with optimal preconception nutrition. He extends the same principle to behavioral, learning, and emotional defects such as dyslexia, attention-deficit/hyperactivity disorder, and autism. In his words: "Congenital events and birth defects of the central nervous system (those occurring in cerebral palsy, Down syndrome, hydroencephalaloceol, neural tube defects, gayness, etc.), for the most part are manifestations of a maternal nutritional deficiency during a certain point in time of early embryonic development."
-- **verbatim** (offset 986119): “Congenital events and birth defects of the central nervous system (those
-occurring in cerebral palsy, Down syndrome, hydroencephalaloceol, neural tube
-defects, gayness, etc.), for the most part are manifestations of a maternal
-nutritional deficiency during a certain point in time of early embryonic
-development.”
-
-### WAL-CLM-EPIGEN-000003 · protocol
-- **essentials:** chromium, vanadium · **conditions:** diabetes, hypoglycemia, reactive_hypoglycemia, narcolepsy, hyperinsulinemia · **symptoms:** —
-- **claim:** Wallach teaches that type 2 diabetes is not a genetically-transmitted disease but a simple mineral deficiency, and that supplementing the 90 essential nutrients along with chromium and vanadium on an otherwise good diet will prevent and cure hypoglycemia, reactive hypoglycemia (which he equates with narcolepsy), hyperinsulinemia, and type 2 diabetes. In his words: "Since 1958 it has been well documented that supplementation of the 90 essential nutrients along with chromium and vanadium to an otherwise perfect diet will prevent and cure hypoglycemia, reactive hypoglycemia (narcolepsy), hyperinsulinemia, and type 2 diabetes."
-- **verbatim** (offset 987906): “Since 1958 it has been well documented that supplementation of the 90
-essential nutrients along with chromium and vanadium to an otherwise perfect
-diet will prevent and cure hypoglycemia, reactive hypoglycemia (narcolepsy),
-hyperinsulinemia, and type 2 diabetes.”
-
-### WAL-CLM-EPIGEN-000004 · mechanism
-- **essentials:** selenium · **conditions:** cystic_fibrosis · **symptoms:** —
-- **claim:** Wallach identifies cystic fibrosis as a nutritional deficiency of the trace mineral selenium rather than a purely genetic disease -- a conclusion drawn from his 1977 discovery of cystic-fibrosis lesions in a selenium-deficient rhesus monkey -- and holds that it can be prevented, reversed, and cured with supplemental selenium. In his words: "As soon as Wallach revealed that CF was actually a nutritional deficiency of the trace-mineral selenium that could be prevented, reversed, and cured with supplemental selenium, he was summarily terminated from his position as a pathologist at the Yerkes facility in April of 1978."
-- **verbatim** (offset 991084): “As soon as
-Wallach revealed that CF was actually a nutritional deficiency of the trace-
-mineral selenium that could be prevented, reversed, and cured with supplemental
-selenium, he was summarily terminated from his position as a pathologist at the
-Yerkes facility in April of 1978.”
-
-### WAL-CLM-EPIGEN-000005 · protocol
-- **essentials:** selenium · **conditions:** muscular_dystrophy · **symptoms:** —
-- **claim:** Wallach teaches that muscular dystrophy is a simple selenium-deficiency disease -- paralleling the 'white muscle disease' eliminated in livestock by selenium supplementation -- and that it is preventable and curable with a gluten-free diet plus a supplement program built on the 90 essential nutrients featuring extra selenium. In his words: "...MD is a simple selenium-deficiency disease and totally preventable and curable with a gluten-free diet, a supplement program built on the 90 essential nutrients and featuring extra selenium supplementation..."
-- **verbatim** (offset 1000033): “MD
-is a simple selenium-deficiency disease and totally preventable and curable with
-a gluten-free diet, a supplement program built on the 90 essential nutrients and
-featuring extra selenium supplementation”
-
-### WAL-CLM-EPIGEN-000006 · mechanism
-- **essentials:** selenium · **conditions:** keshan_disease, cardiomyopathy, sudden_cardiac_death · **symptoms:** —
-- **claim:** Wallach holds that hypertrophic cardiomyopathy -- including the sudden cardiac death of athletes -- is Keshan disease, caused by a simple deficiency of the trace element selenium, and that supplementing a complete 90-nutrient program with extra selenium is protective. In his words: "In fact, hypertrophic cardiomyopathy, sudden heart death of athletes, is KSD and is caused by a simple deficiency of the trace element selenium. Supplement a complete 90 nutrient program with extra selenium and the athlete can live."
-- **verbatim** (offset 1003118): “In fact, hypertrophic cardiomyopathy,
-sudden heart death of athletes, is KSD and is caused by a simple deficiency
-of the trace element selenium. Supplement a complete 90 nutrient program
-with extra selenium and the athlete can live.”
-
-### WAL-CLM-EPIGEN-000007 · protocol
-- **essentials:** copper · **conditions:** kawasaki_disease · **symptoms:** —
-- **claim:** Wallach classifies Kawasaki disease not as a genetic disease but as a congenital copper deficiency -- copper being required to build and maintain the elastic fibers of arteries, so its lack produces a coronary-artery aneurysm -- compounded by a streptococcal infection of that aneurysm site, and holds it is totally preventable with preconception supplementation of all 90 essential nutrients plus additional copper and antibiotics. In his words: "Kawasaki Disease is totally preventable with a preconception supplementation of all 90 essential nutrients, additional copper, and antibiotics."
-- **verbatim** (offset 1004285): “Kawasaki Disease is totally preventable with a
-preconception supplementation of all 90 essential nutrients, additional copper,
-and antibiotics.”
-
-### WAL-CLM-EPIGEN-000008 · mechanism
-- **essentials:** — · **conditions:** homosexuality · **symptoms:** —
-- **claim:** Wallach presents homosexuality as a congenital condition rather than a lifestyle choice: he attributes it to congenital events during embryonic development -- specifically a hypoplasia (underdevelopment) of the preoptic hypothalamus -- that cause the brain's perception of gender to diverge from the genetic gender recorded in the chromosomes (the Barr body, or female X chromosome). He places these congenital events within his broader thesis that such embryonic aberrations are nutritionally influenced and preventable with proper preconception nutrition. In his words: "...the genetic gender based on the presence of Barr bodies (the female X chromosome) in blood smears do not always coincide with the brain's perception of gender because of concurrent congenital events relating to hypoplasia of the preoptic hypothalamus."
-- **verbatim** (offset 1007058): “the genetic gender based on the presence of Barr bodies (the
-female X chromosome) in blood smears do not always coincide with the
-brain's perception of gender because of concurrent congenital events relating to
-hypoplasia of the preoptic hypothalamus.”
-
-### WAL-CLM-EPIGEN-000009 · mechanism
-- **essentials:** — · **conditions:** intersex · **symptoms:** —
-- **claim:** Wallach presents intersex conditions (the medical term for what was historically called hermaphroditism) as congenital sexual-organ defects that are present at birth and are related to mineral or vitamin deficiencies of the embryo -- citing John Money of Johns Hopkins, who estimated intersex conditions occur in as many as four percent of births. He holds that the social and surgical problems of intersex individuals could be entirely avoided by providing a proper and complete preconception nutritional program for the embryo. In his words: "However, the social and surgical problems of intersexuals could be totally avoided by providing a proper and complete preconception nutritional program for the embryo."
-- **verbatim** (offset 1007626): “However, the social and surgical problems of intersexuals could be totally
-avoided by providing a proper and complete preconception nutritional program
-for the embryo.”
+### WAL-CLM-EPIGEN-000018 · mechanism
+- **essentials:** — · **conditions:** birth_defects · **symptoms:** —
+- **claim:** Search-only framework narrative. In the chapter's closing section, 'Minerals: The Currency of Life,' Wallach argues that the modern faith in genetic mapping is the latest in a series of medical 'discoveries of the century' (after germ theory and virology) that draw enormous research funding yet have not cured cancer, diabetes, or Alzheimer's. He restates the framework's core claim: chromosomes and genes have second-by-second requirements for minerals, trace minerals, rare-earth metals, vitamins, amino acids, and essential fatty acids, and the most common cause of birth defects worldwide is overt clinical deficiency of one or more of the 90 essential nutrients in the mother-to-be before conception and through the first 90 days of pregnancy. He points to the animal industry -- which has effectively eliminated birth defects, infertility, and 'genetic' disease in livestock and pets purely through optimal preconception nutrition -- as proof of concept. In Wallach's words: "However, the most common cause of birth defects in American babies and babies around the world are overt clinical deficiencies of one or more of the 90 essential nutrients of the mother-to-be and therefore of the embryo prior to conception and for the first 90 days of pregnancy!"
+- **verbatim** (offset 1038111): “However, the most common cause of birth defects in American babies and
+babies around the world are overt clinical deficiencies of one or more of the
+90 essential nutrients of the mother-to-be and therefore of the embryo prior to
+conception and for the first 90 days of pregnancy!”
 
