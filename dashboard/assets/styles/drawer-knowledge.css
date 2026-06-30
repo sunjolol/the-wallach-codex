@@ -767,3 +767,17 @@
 }
 /* condition deep view reuses .kd-essential-deep; it has no symbol row */
 #drawer-knowledge-mount .kd-condition-deep .kd-essential-deep__head { grid-template-columns: 1fr; }
+/* condition-first synopsis: the lead-in sentence that names the Wallach
+   nutrient link before the per-nutrient claim breakdown */
+#drawer-knowledge-mount .kd-condition-deep__synopsis {
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-sm);
+  line-height: 1.5;
+  color: var(--ds-ink);
+  font-weight: 600;
+  margin: 0 0 var(--ds-space-2);
+  padding: var(--ds-space-2) var(--ds-space-3);
+  background: var(--ds-tech-wash);
+  border-left: 2px solid var(--ds-tech);
+  border-radius: var(--ds-radius-sm);
+}

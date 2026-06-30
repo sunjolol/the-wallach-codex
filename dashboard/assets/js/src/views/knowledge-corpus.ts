@@ -153,7 +153,75 @@ function renderConditionRow(c: CorpusCondition, selectedSlug: string | null): st
     </div>`;
 }
 
-/** The deep view for one condition — claims grouped by role + essentials chips. */
+/**
+ * Familiar label for an essential in the Conditions view — the letter vitamins
+ * by the name a layperson recognizes ("Vitamin D", not the chemical display name
+ * "Cholecalciferol"); everything else (B-vitamins, minerals, amino acids, fatty
+ * acids) keeps its corpus display name, which is already the common name.
+ */
+function familiarEssentialName(slug: string): string {
+  const letter = /^vitamin-([a-z]\d*)$/.exec(slug)?.[1];
+  return letter !== undefined ? `Vitamin ${letter.toUpperCase()}` : essentialDisplayName(slug);
+}
+
+/**
+ * Distinct essential slugs named across the claims of the given role buckets —
+ * lets the synopsis quote only the nutrients of the role it summarizes (the
+ * deficiency CAUSE vs the treatment), never lumping the two together (§00.A).
+ */
+function essentialsInRoles(c: CorpusCondition, roleKeys: string[]): string[] {
+  const ids = roleKeys.flatMap(r => c.claims_by_role[r] ?? []);
+  const seen = new Set<string>();
+  for (const cl of resolveClaims(ids)) {
+    for (const e of cl.essentials) {
+      seen.add(e);
+    }
+  }
+  return [...seen];
+}
+
+/**
+ * Join familiar names as "A", "A and B", or "A, B and C" — capped at 4 with a
+ * trailing "among others" so a condition implicated by many nutrients (e.g.
+ * cancer) stays a sentence, not a wall.
+ */
+function joinEssentials(slugs: string[]): string {
+  const MAX = 4;
+  const names = slugs.slice(0, MAX).map(familiarEssentialName);
+  const tail = slugs.length > MAX ? ', among others' : '';
+  if (names.length <= 1) {
+    return names.join('') + tail;
+  }
+  const last = names[names.length - 1] ?? '';
+  return `${names.slice(0, -1).join(', ')} and ${last}${tail}`;
+}
+
+/**
+ * A condition-first lead-in that ties the condition to its nutrient(s) up front,
+ * so clicking a condition opens WITH the connection instead of dropping the
+ * reader mid-way into a nutrient's own write-up. Derived only from the
+ * condition's Wallach-sourced claim structure (§00.A) and faithful to the claim
+ * role it summarizes: a deficiency/cause role reads "linked to a deficiency of",
+ * a treatment-only role "the protocol centers on". Empty when neither a
+ * deficiency/cause nor a treatment nutrient is named for the condition (its
+ * claim text already leads with the condition, so no lead-in is needed).
+ */
+function conditionSynopsis(c: CorpusCondition): string {
+  const deficiency = essentialsInRoles(c, ['deficiency_signs', 'causes']);
+  if (deficiency.length > 0) {
+    return `Wallach links ${c.display_name} to a deficiency of ${joinEssentials(deficiency)}.`;
+  }
+  const treatment = essentialsInRoles(c, ['protocols', 'doses']);
+  if (treatment.length > 0) {
+    return `Wallach's protocol for ${c.display_name} centers on ${joinEssentials(treatment)}.`;
+  }
+  return '';
+}
+
+/**
+ * The deep view for one condition — a condition-first synopsis, then claims
+ * grouped by role + the essentials chips.
+ */
 function renderConditionDeep(slug: string): string {
   const c = getCondition(slug);
   if (c === null) {
@@ -168,8 +236,9 @@ function renderConditionDeep(slug: string): string {
         ${claimsHTML}
       </div>`;
   }).join('');
+  const synopsis = conditionSynopsis(c);
   const essChips = c.essentials_involved
-    .map(s => `<span class="kd-corpus__chip kd-corpus__chip--ess">${escHTML(essentialDisplayName(s))}</span>`)
+    .map(s => `<span class="kd-corpus__chip kd-corpus__chip--ess">${escHTML(familiarEssentialName(s))}</span>`)
     .join('');
   const books = c.books_cited.map(b => getBookLabel(b)).join(' · ');
 
@@ -182,6 +251,7 @@ function renderConditionDeep(slug: string): string {
           <div class="kd-essential-deep__cat">CONDITION · ${c.claim_count} CLAIM${c.claim_count === 1 ? '' : 'S'}</div>
         </div>
       </header>
+      ${synopsis.length > 0 ? `<p class="kd-condition-deep__synopsis">${escHTML(synopsis)}</p>` : ''}
       ${essChips.length > 0 ? `<div class="kd-corpus__sub">ADDRESSED BY</div><div class="kd-corpus__chips">${essChips}</div>` : ''}
       ${groupsHTML}
       <div class="kd-corpus__foot">SOURCE · ${escHTML(books)}</div>

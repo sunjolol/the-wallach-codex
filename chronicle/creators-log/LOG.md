@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 220 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 221 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 16:18 UTC-05:00 · design-decision · views/knowledge
+SESSION 28 b4-fix - Condition deep-view synopsis (Luneth UX): the deep view now opens with a condition-first sentence (e.g. 'Wallach links Uterine Fibroids to a deficiency of Vitamin D') before the nutrient breakdown. Familiar vitamin names, views-only. Visually verified.
+  ↳ Synopsis derived from the leading role's own essentials (deficiency->'linked to a deficiency of', treatment->'protocol centers on'), capped at 4. familiarEssentialName shows Vitamin D/B12 not Cholecalciferol/Cobalamin. faithful to claim role. eslint 0, build OK, invariants 31/31, probe green. Luneth: 'Looks good to me.'
 
 ## 2026-06-30 15:30 UTC-05:00 · round-close · knowledge/corpus
 SESSION 28 b4 - Epigenetics Ch 18 opening + fat-soluble vitamins. EPIGEN-027..034 (+8): 2 search-only polemic + 2 tier-1 absorption (hypochlorhydria/gluten) + 4 deficiency_sign (vit A/D/E/K). kv194, claims 915, conditions 456 (+uterine_fibroids). VISUAL-VERIFY OWED before b5.
@@ -801,7 +805,3 @@ Phase β.1: DDDL extraction pipeline live + first 10 claims sealed (knowledge_ve
 ## 2026-06-24 12:58 UTC-04:00 · milestone · eden/corpus
 Wallach Knowledge Revamp Phase α: Eden gains Wing 2 (eden/corpus — 6 books in-housed + sealed 90-canon + claim-graph scaffold) and Wing 3 (eden/graphics — 5 sacred hand-made graphics). 6 seal/verify tools, 3 invariants. Board 29/29. Two-tier knowledge model live.
   ↳ Reframe: Eden = all Tier-1 canonical Wallach truth (three wings: YGY catalog, corpus, graphics); knowledge/ = Tier-2 unsealed (transcripts-clean + design-wisdom). Engineering: claims sharded per book; verbatim is the durable anchor (PDF books lack reliable page markers); content hashes over LF-normalized text (clone-stable, .gitattributes eol=lf); agent-in-the-loop extraction (no LLM subsystem — determinism from seal+hash); corpus_verify.py is the single impl of 10 checks, the corpus_integrity invariant shells out to it. Sealed files protected free via <name>.json.golden.sha256 = pre_write_guard auto-block. Sealed knowledge_version=2 (re-sealed after an is_sealed naming-bug caught by the seal's own gate). Deviations from the approved proposal (improvements): no invariant-baseline entries (bootstrap returns green like eden_hash_integrity); deferred core/schemas/corpus.ts to Phase ε (avoid a dual schema source). Proposal: chronicle/proposals/wallach-knowledge-revamp.md. NEXT: Phase β DDDL extraction.
-
-## 2026-06-24 05:10 UTC-04:00 · round-close · coverage/essentials
-90-essentials correctness: Germanium replaces Fluoride in the 60 (Wallach 60-graphic, 4x-confirmed); Fluoride scrubbed pending corpus audit; count unified at 90 via essentialCount(); all names shown full; vitamin/amino tiles unified to mineral format + gap fixed.
-  ↳ Files: essentials-targets.json, essentials-targets-data (embed+json), essentials-benefits-data, coverage-layout-data, state/coverage.ts (essentialCount helper), views/{coverage,scanner,regimen}, core/schemas/knowledge, workspace-coverage.css, render_probe_seeded. Verified: build OK, 26/26 invariants (embed-sync=91), 5 render probes green, 0 clipped names. Record: chronicle/contradictions/2026-06-24-germanium-replaces-fluoride.md. Open for corpus audit: Fluoride re-adjudication + hallucination provenance + Cysteine-vs-Taurine.
