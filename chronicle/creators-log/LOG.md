@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 224 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 225 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 16:53 UTC-05:00 · session-end · chronicle
+SESSION 28 b4-b7 WRAPPED - Epigenetics Ch 18 mined through minerals batch 1 + the condition-synopsis UX fix. 5 chunks pushed, +37 claims (EPIGEN-027..063), kv 193->197, claims 907->944, board 31/31 throughout. Handoff updated for SESSION 29 = the rest of the minerals.
+  ↳ Closing for a fresh genesis. b4 opening+fat-soluble vitamins, b4-fix synopsis UX (auto-fires), b5 water-soluble vitamins, b6 amino acids+EFA (taurine non-canon->other_substances), b7 minerals batch 1 (forms search-only + calcium/chromium/copper). All visually verified by Luneth. next-chunk.md + epigenetics-mining-policy memory updated. NEXT: cobalt/iodine/selenium/zinc/etc. (cesium-cancer search-only) then Ch 19+ + final .txt sweep.
 
 ## 2026-06-30 16:43 UTC-05:00 · round-close · knowledge/corpus
 SESSION 28 b7 - Epigenetics Ch 18 minerals batch 1. EPIGEN-060..063 (+4): mineral-forms framework (search-only: metallic 8-12% vs colloidal) + calcium/chromium/copper deficiency_sign (rich tables). kv197, claims 944, conditions 456 (0 new), search-only 98->99. Visual-verify owed.
@@ -801,7 +805,3 @@ Phase β.6: DDDL disease-protocol chapters — 45→55 claims (knowledge_version
 ## 2026-06-24 13:43 UTC-04:00 · round-close · eden/corpus
 Phase β.5: DDDL vitamins batch — 40→45 claims sealed (knowledge_version=8). Minerals + vitamins now covered (A, B9, B1, B12). Board 29/29.
   ↳ Vitamins scattered in DDDL (no element-style appendix); harvested clinic-deficiency narrative + B12/cobalt section. OCR lesson: page-headers inject mid-sentence + hyphen-at-linebreak words break the snapper — avoid spanning them. NEXT: aminos+fatty-acids, then disease-protocol chapters, then Phase γ.
-
-## 2026-06-24 13:39 UTC-04:00 · round-close · eden/corpus
-Phase β.3+β.4: DDDL extraction at volume — 40 claims sealed (knowledge_version=7) across ~15 minerals from Appendix A (copper/selenium/chromium/vanadium/iron/iodine/zinc/tin/manganese/molybdenum/germanium/silver/cesium/strontium/calcium). 10 of 13 kinds in use. Board 29/29.
-  ↳ Three merge-batches: 14→28→40, ids contiguous WAL-CLM-DDDL-1..40, every verbatim proven an exact book substring. Added kinds interaction/contraindication/protocol. Highlights: tin→male-pattern baldness; vanadium-as-insulin (adult-onset diabetes); selenium glutathione-peroxidase + heart/cancer route; zinc 70 metalloenzymes; chromium 90%-deficient/33% lifespan; iron pica + ascorbate interaction; iodine+tyrosine→thyroxin; cesium high-pH cancer; manganese→carpal tunnel; germanium/silver doses. NEXT: DDDL vitamins+aminos + the disease-protocol chapters, then Phase γ.
