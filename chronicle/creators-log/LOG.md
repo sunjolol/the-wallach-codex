@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 215 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 216 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 10:59 UTC-05:00 · milestone · knowledge/corpus
+iaiyh (2020) FULLY MINED — batch 3 = 3 search-only claims: The Solution cofactor + soil-depletion rationale (Edison wood-ashes, −37%/−77%) + Wallach credentials (Nobel nom, Klaus Schwarz/epigenetics, DSHEA). kv 189, claims 881; board 31/31, probe green. NEXT: Epigenetics 2014.
+  ↳ WAL-CLM-IAIYH-000018..000020, all search-only (essentials[]/conditions[] empty). Dispositions ruled live by Luneth (AskUserQuestion): Solution rationale=2 claims, About-the-Author bio=1 claim. No .txt edits (b75 re-OCR already clean), no new conditions, no operational-index change → operationally invisible (Ask-Wallach search only). SESSION 27 b78.
 
 ## 2026-06-30 10:18 UTC-05:00 · round-close · views/knowledge
 Fixed the unwired Knowledge-drawer search: a delegated input listener → applyKnowledgeSearch DOM-filters the active tab's rows by substring (all 5 tabs; section heads auto-hide; no-results line; deep-dive survives). Build/invariants 31/31/probe green; Luneth visually verified.
@@ -801,7 +805,3 @@ Sever-Safety: scoped all 24 legacy-dashboard.css leak vectors under :where(#lega
 ## 2026-06-23 13:35 UTC-04:00 · milestone · coverage
 Coverage Phase 1 — shell now ~pixel-exact to v3.2 (Luneth verified). Fixed via new tools/style_diff.js: legacy 15px root + bare header/footer selectors bleeding into the .app-* shell; in-housed the missing Chakra Petch/Bruno Ace fonts. Visual-match lesson codified.
   ↳ First gold-standard surface phase under the visual-verification gate (build -> STOP -> Luneth verifies -> commit). An objective computed-style diff (new tools/style_diff.js, live shell vs the v3.2 mockup) drove it from ~50 diffs to 0 meaningful, replacing eyeballing. Two systemic root causes: (1) legacy-dashboard.css html,body{font-size:15px} shrank the whole rem UI to 93.75% -> removed, 16px root re-scales the entire coverage page; (2) legacy bare element selectors (header/footer/html,body) bled into the new .app-* shell (14px radius, teal shadow+border, a header::before veil over .app-topbar hiding its accents + fading the search, teal text) -> scoped to #legacy-workspace-host + doc-level overrides removed (grep [v3-contain]). Also in-housed the v3.2 fonts (Chakra Petch + Bruno Ace; wired but never procured -> @font-face 404 -> Space Grotesk fallback). Lesson codified in .claude/rules/visual-verification.md 'Getting to exact'. NEXT: finish Coverage hero/periodic/sidebar vs v3.2; CODEX dynamic version; alien-glyph cipher.
-
-## 2026-06-23 11:39 UTC-04:00 · design-decision · discipline
-Codified the visual/human-verification gate (.claude/rules/visual-verification.md + CLAUDE.md row): for any page/visual/UX work Luneth is the test gate — build a chunk to 'done', STOP, he visually verifies, only then continue. Never chain past a STOP; certainty != truth.
-  ↳ Luneth elevated the per-page build method to a non-negotiable rule. Automated gates (build/invariants/probes) prove only the functional layer; the subjective/visual layer can ONLY be verified by his eyes. The discipline: build in phases (respect resource usage) -> build to 'done' or one verifiable chunk -> STOP -> he visually verifies/course-corrects/adds/changes mind -> only then log + continue. Never advance past a STOP without his go-ahead; never claim he verified what he didn't; never treat agent-certainty as truth. This is build>test>log>repeat with Luneth as tester, and the guardrail that would have caught the unstyled-drawer drift. Documented as a behavioral discipline (like the source-rule turn-gap), not a Python invariant; the structural guarantee is that visual chunks END at a STOP by default. NEXT: Coverage as first gold-standard page.
