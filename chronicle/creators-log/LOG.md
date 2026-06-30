@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 223 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 224 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 16:43 UTC-05:00 · round-close · knowledge/corpus
+SESSION 28 b7 - Epigenetics Ch 18 minerals batch 1. EPIGEN-060..063 (+4): mineral-forms framework (search-only: metallic 8-12% vs colloidal) + calcium/chromium/copper deficiency_sign (rich tables). kv197, claims 944, conditions 456 (0 new), search-only 98->99. Visual-verify owed.
+  ↳ Minerals is the largest Ch 18 block (~60 elements, each with a deficiency table) — splitting across batches. Calcium (147 diseases: osteoporosis/arthritis/kidney stones/PMS/tetany/panic), chromium (glucose tolerance: diabetes/ADHD/bipolar), copper (prion-reframe: aneurysm/ptosis/cerebral palsy). No new conditions. Cesium-cancer noted for careful later handling. Board 31/31, probe green, synopsis auto-fires. Awaiting sign-off; b8 = cobalt/iodine/selenium/zinc/etc.
 
 ## 2026-06-30 16:34 UTC-05:00 · round-close · knowledge/corpus
 SESSION 28 b6 - Epigenetics Ch 18 amino acids + essential fatty acids. EPIGEN-047..059 (+13: 9 mechanism + 4 deficiency_sign): 11 canon amino acids + taurine (non-canon -> other_substances) + omega-3/omega-6. kv196, claims 940, conditions 456 (0 new). Visual-verify owed.
@@ -801,7 +805,3 @@ Phase β.5: DDDL vitamins batch — 40→45 claims sealed (knowledge_version=8).
 ## 2026-06-24 13:39 UTC-04:00 · round-close · eden/corpus
 Phase β.3+β.4: DDDL extraction at volume — 40 claims sealed (knowledge_version=7) across ~15 minerals from Appendix A (copper/selenium/chromium/vanadium/iron/iodine/zinc/tin/manganese/molybdenum/germanium/silver/cesium/strontium/calcium). 10 of 13 kinds in use. Board 29/29.
   ↳ Three merge-batches: 14→28→40, ids contiguous WAL-CLM-DDDL-1..40, every verbatim proven an exact book substring. Added kinds interaction/contraindication/protocol. Highlights: tin→male-pattern baldness; vanadium-as-insulin (adult-onset diabetes); selenium glutathione-peroxidase + heart/cancer route; zinc 70 metalloenzymes; chromium 90%-deficient/33% lifespan; iron pica + ascorbate interaction; iodine+tyrosine→thyroxin; cesium high-pH cancer; manganese→carpal tunnel; germanium/silver doses. NEXT: DDDL vitamins+aminos + the disease-protocol chapters, then Phase γ.
-
-## 2026-06-24 13:27 UTC-04:00 · round-close · eden/corpus
-Phase β.2: claim voice locked (neutral declarative, Luneth-approved) + dose kind added; DDDL re-sealed at 14 claims (knowledge_version=5, 7 kinds). Board 29/29.
-  ↳ Luneth ruled claim_text = neutral declarative (no 'Wallach asserts' prefix; attribution lives in verbatim + the all-Wallach corpus). Re-authored the 10 + added 4 incl. first dose claims (germanium 20-30 mg/day maintenance, silver 400 mg/day + mechanism, germanium deficiency). ids restart 1-14. corpus_verify PASS — all 14 verbatims exact book substrings. Granularity: keep faithful list-claims; Phase-δ derive explodes conditions[] into per-condition index entries. NEXT: continue DDDL at volume, then γ books, then δ indices.

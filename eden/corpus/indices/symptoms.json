@@ -809,8 +809,14 @@
   },
   "dry_hair": {
     "display_name": "Dry Hair",
-    "claim_count": 4,
+    "claim_count": 5,
     "likely_deficiencies": [
+      {
+        "essential": "copper",
+        "claim_id": "WAL-CLM-EPIGEN-000063",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "nickel",
         "claim_id": "WAL-CLM-RARE-000193",
@@ -843,6 +849,7 @@
       }
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -1615,7 +1622,7 @@
   },
   "gray_hair": {
     "display_name": "Gray Hair",
-    "claim_count": 4,
+    "claim_count": 5,
     "likely_deficiencies": [
       {
         "essential": "biotin",
@@ -1632,6 +1639,12 @@
       {
         "essential": "copper",
         "claim_id": "WAL-CLM-DDDL-000003",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "copper",
+        "claim_id": "WAL-CLM-EPIGEN-000063",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -2737,8 +2750,14 @@
   },
   "muscle_atrophy": {
     "display_name": "Muscle Atrophy",
-    "claim_count": 2,
+    "claim_count": 3,
     "likely_deficiencies": [
+      {
+        "essential": "chromium",
+        "claim_id": "WAL-CLM-EPIGEN-000062",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "manganese",
         "claim_id": "WAL-CLM-LETS-000017",
@@ -2753,6 +2772,7 @@
       }
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -3810,8 +3830,14 @@
   },
   "reduced_growth": {
     "display_name": "Reduced Growth",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
+      {
+        "essential": "chromium",
+        "claim_id": "WAL-CLM-EPIGEN-000062",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "lithium",
         "claim_id": "WAL-CLM-RARE-000163",
@@ -3820,6 +3846,7 @@
       }
     ],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -4115,8 +4142,14 @@
   },
   "shortened_lifespan": {
     "display_name": "Shortened Lifespan",
-    "claim_count": 3,
+    "claim_count": 4,
     "likely_deficiencies": [
+      {
+        "essential": "chromium",
+        "claim_id": "WAL-CLM-EPIGEN-000062",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "chromium",
         "claim_id": "WAL-CLM-LETS-000006",
@@ -4646,7 +4679,7 @@
   },
   "white_hair": {
     "display_name": "White Hair",
-    "claim_count": 3,
+    "claim_count": 4,
     "likely_deficiencies": [
       {
         "essential": "biotin",
@@ -4657,6 +4690,12 @@
       {
         "essential": "biotin",
         "claim_id": "WAL-CLM-RARE-000240",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "copper",
+        "claim_id": "WAL-CLM-EPIGEN-000063",
         "confidence": "high",
         "appears_in_books": 1
       }

@@ -967,10 +967,11 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 90,
+    "claim_count": 91,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
+        "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000275"
       ],
@@ -1144,6 +1145,7 @@
       "anorexia",
       "anxiety",
       "arthritis",
+      "atrial_fibrillation",
       "autism",
       "backache",
       "bedwetting",
@@ -1180,6 +1182,8 @@
       "gingivitis",
       "growing_pains",
       "hyperactivity",
+      "hyperirritability",
+      "hyperparathyroidism",
       "hypertension",
       "indigestion",
       "insomnia",
@@ -1202,10 +1206,12 @@
       "peptic_ulcers",
       "periodontal_disease",
       "pica",
+      "pms",
       "premenstrual_syndrome",
       "psychosis",
       "pyorrhea",
       "raynauds_disease",
+      "restless_leg_syndrome",
       "rheumatoid_arthritis",
       "rickets",
       "sciatica",
@@ -1215,6 +1221,7 @@
       "tinnitus",
       "tooth_decay",
       "torticollis",
+      "tourette_syndrome",
       "trigeminal_neuralgia"
     ],
     "interacts_with": [
@@ -1261,6 +1268,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -1346,10 +1354,11 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 60,
+    "claim_count": 61,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
+        "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-LETS-000006",
         "WAL-CLM-RARE-000039",
         "WAL-CLM-RARE-000042",
@@ -1446,8 +1455,23 @@
         "confidence": "high"
       },
       {
+        "sign": "muscle_atrophy",
+        "claim_id": "WAL-CLM-EPIGEN-000062",
+        "confidence": "high"
+      },
+      {
+        "sign": "reduced_growth",
+        "claim_id": "WAL-CLM-EPIGEN-000062",
+        "confidence": "high"
+      },
+      {
         "sign": "retarded_growth",
         "claim_id": "WAL-CLM-LETS-000006",
+        "confidence": "high"
+      },
+      {
+        "sign": "shortened_lifespan",
+        "claim_id": "WAL-CLM-EPIGEN-000062",
         "confidence": "high"
       },
       {
@@ -1464,6 +1488,7 @@
       "aneurysm",
       "anxiety",
       "arthritis",
+      "atherosclerosis",
       "atopic_dermatitis",
       "autism",
       "bedwetting",
@@ -1514,6 +1539,7 @@
       "memory_loss",
       "narcolepsy",
       "night_terrors",
+      "oligospermia",
       "organic_brain_syndrome",
       "osteoporosis",
       "panic_attacks",
@@ -1521,6 +1547,7 @@
       "pellagra",
       "peptic_ulcers",
       "peripheral_neuropathy",
+      "prediabetes",
       "premenstrual_syndrome",
       "reactive_hypoglycemia",
       "schizophrenia",
@@ -1575,13 +1602,14 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 39,
+    "claim_count": 40,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
       ],
       "deficiency_sign": [
         "WAL-CLM-DDDL-000003",
+        "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-LETS-000008",
         "WAL-CLM-RARE-000141",
         "WAL-CLM-RARE-000275"
@@ -1637,6 +1665,11 @@
     },
     "deficiency_signs": [
       {
+        "sign": "dry_hair",
+        "claim_id": "WAL-CLM-EPIGEN-000063",
+        "confidence": "high"
+      },
+      {
         "sign": "fatigue",
         "claim_id": "WAL-CLM-LETS-000008",
         "confidence": "high"
@@ -1652,6 +1685,11 @@
         "confidence": "high"
       },
       {
+        "sign": "gray_hair",
+        "claim_id": "WAL-CLM-EPIGEN-000063",
+        "confidence": "high"
+      },
+      {
         "sign": "hemorrhage",
         "claim_id": "WAL-CLM-LETS-000008",
         "confidence": "high"
@@ -1659,6 +1697,11 @@
       {
         "sign": "weakness",
         "claim_id": "WAL-CLM-LETS-000008",
+        "confidence": "high"
+      },
+      {
+        "sign": "white_hair",
+        "claim_id": "WAL-CLM-EPIGEN-000063",
         "confidence": "high"
       }
     ],
@@ -1683,12 +1726,16 @@
       "diabetes",
       "diarrhea",
       "explosive_outbursts",
+      "glucose_intolerance",
       "goiter",
       "gout",
+      "hemorrhoids",
       "hernia",
       "high_cholesterol",
       "hypertension",
+      "hyperthyroidism",
       "hypoglycemia",
+      "hypothyroidism",
       "joint_pain",
       "kawasaki_disease",
       "learning_disabilities",
@@ -1699,6 +1746,8 @@
       "osteoporosis",
       "phlebitis",
       "psoriasis",
+      "ptosis",
+      "reactive_hypoglycemia",
       "respiratory_disease",
       "rheumatoid_arthritis",
       "schizophrenia",
