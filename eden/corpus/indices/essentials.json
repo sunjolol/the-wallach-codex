@@ -6651,8 +6651,11 @@
     "display_name": "Arginine",
     "canon_slug": "arginine",
     "category": "amino_acid",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-EPIGEN-000047"
+      ],
       "protocol": [
         "WAL-CLM-DDDL-000070",
         "WAL-CLM-LETS-000207",
@@ -6666,9 +6669,12 @@
     "conditions_treated": [
       "cancer",
       "cataracts",
+      "erectile_dysfunction",
+      "fractures",
       "goiter",
       "infertility",
-      "macular_degeneration"
+      "macular_degeneration",
+      "wounds"
     ],
     "interacts_with": [
       "chromium",
@@ -6691,6 +6697,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -6737,8 +6744,11 @@
     "display_name": "Histidine",
     "canon_slug": "histidine",
     "category": "amino_acid",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-EPIGEN-000048"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000419"
       ]
@@ -6756,6 +6766,7 @@
       "vitamin-b6"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -6763,19 +6774,28 @@
     "display_name": "Isoleucine",
     "canon_slug": "isoleucine",
     "category": "amino_acid",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-EPIGEN-000049"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "epigenetics"
+    ]
   },
   "leucine": {
     "display_name": "Leucine",
     "canon_slug": "leucine",
     "category": "amino_acid",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-EPIGEN-000050"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000396"
       ]
@@ -6793,6 +6813,7 @@
       "vitamin-b6"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -6800,8 +6821,11 @@
     "display_name": "Lysine",
     "canon_slug": "lysine",
     "category": "amino_acid",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-EPIGEN-000051"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000202",
         "WAL-CLM-LETS-000299",
@@ -6810,11 +6834,14 @@
     },
     "deficiency_signs": [],
     "conditions_treated": [
+      "aneurysm",
       "canker_sores",
       "cold_sores",
+      "hemorrhoids",
       "herpes_simplex",
       "kidney_disease",
-      "kidney_stones"
+      "kidney_stones",
+      "varicose_veins"
     ],
     "interacts_with": [
       "calcium",
@@ -6827,6 +6854,7 @@
       "zinc"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -6834,8 +6862,11 @@
     "display_name": "Methionine",
     "canon_slug": "methionine",
     "category": "amino_acid",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000052"
+      ],
       "mechanism": [
         "WAL-CLM-DDDL-000067"
       ],
@@ -6846,9 +6877,12 @@
     },
     "deficiency_signs": [],
     "conditions_treated": [
+      "anemia",
+      "fatty_liver",
       "keshan_disease",
       "muscular_dystrophy",
-      "parkinsonism"
+      "parkinsonism",
+      "weight_loss"
     ],
     "interacts_with": [
       "choline",
@@ -6865,6 +6899,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -6872,10 +6907,11 @@
     "display_name": "Phenylalanine",
     "canon_slug": "phenylalanine",
     "category": "amino_acid",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_kind": {
       "mechanism": [
-        "WAL-CLM-DDDL-000067"
+        "WAL-CLM-DDDL-000067",
+        "WAL-CLM-EPIGEN-000053"
       ],
       "protocol": [
         "WAL-CLM-LETS-000127",
@@ -6932,6 +6968,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -6939,19 +6976,28 @@
     "display_name": "Threonine",
     "canon_slug": "threonine",
     "category": "amino_acid",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-EPIGEN-000055"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "epigenetics"
+    ]
   },
   "tryptophan": {
     "display_name": "Tryptophan",
     "canon_slug": "tryptophan",
     "category": "amino_acid",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000056"
+      ],
       "mechanism": [
         "WAL-CLM-DDDL-000067"
       ],
@@ -6998,6 +7044,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -7005,10 +7052,11 @@
     "display_name": "Tyrosine",
     "canon_slug": "tyrosine",
     "category": "amino_acid",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "mechanism": [
-        "WAL-CLM-DDDL-000023"
+        "WAL-CLM-DDDL-000023",
+        "WAL-CLM-EPIGEN-000057"
       ],
       "protocol": [
         "WAL-CLM-LETS-000244",
@@ -7025,7 +7073,8 @@
       "goiter",
       "hypothyroidism",
       "macular_degeneration",
-      "parkinsonism"
+      "parkinsonism",
+      "stress"
     ],
     "interacts_with": [
       "arginine",
@@ -7050,6 +7099,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -7057,8 +7107,11 @@
     "display_name": "Valine",
     "canon_slug": "valine",
     "category": "amino_acid",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-EPIGEN-000058"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000320"
       ]
@@ -7077,6 +7130,7 @@
       "zinc"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -7084,10 +7138,11 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 81,
+    "claim_count": 82,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
+        "WAL-CLM-EPIGEN-000059",
         "WAL-CLM-LETS-000011"
       ],
       "definition": [
@@ -7184,6 +7239,11 @@
       },
       {
         "sign": "dry_skin",
+        "claim_id": "WAL-CLM-EPIGEN-000059",
+        "confidence": "high"
+      },
+      {
+        "sign": "dry_skin",
         "claim_id": "WAL-CLM-LETS-000011",
         "confidence": "high"
       },
@@ -7236,6 +7296,7 @@
       "cardiovascular_disease",
       "cerebrovascular_disease",
       "chorea",
+      "cough",
       "cystic_fibrosis",
       "dandruff",
       "dementia",
@@ -7351,10 +7412,11 @@
     "display_name": "Omega-6",
     "canon_slug": "omega-6",
     "category": "fatty_acid",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
+        "WAL-CLM-EPIGEN-000059",
         "WAL-CLM-LETS-000011"
       ],
       "definition": [
@@ -7371,6 +7433,11 @@
       {
         "sign": "dry_hair",
         "claim_id": "WAL-CLM-LETS-000011",
+        "confidence": "high"
+      },
+      {
+        "sign": "dry_skin",
+        "claim_id": "WAL-CLM-EPIGEN-000059",
         "confidence": "high"
       },
       {
@@ -7404,19 +7471,27 @@
       "alopecia",
       "anorexia",
       "arthritis",
+      "asthma",
+      "bronchitis",
+      "cough",
       "cystic_fibrosis",
+      "depression",
+      "dermatitis",
       "diarrhea",
       "eczema",
       "fatty_liver",
       "gallstones",
       "infertility",
-      "kidney_disease"
+      "kidney_disease",
+      "psoriasis",
+      "stroke"
     ],
     "interacts_with": [
       "omega-3"
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]

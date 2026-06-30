@@ -6713,8 +6713,11 @@
   },
   "taurine": {
     "display_name": "Taurine",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000054"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000120",
         "WAL-CLM-LETS-000267",
@@ -6727,6 +6730,7 @@
     "conditions_treated": [
       "absence_attacks",
       "cancer",
+      "cataracts",
       "epilepsy",
       "gallstones",
       "goiter",
@@ -6734,6 +6738,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor"
     ]
   },

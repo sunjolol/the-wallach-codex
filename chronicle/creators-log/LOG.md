@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 222 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 223 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 16:34 UTC-05:00 · round-close · knowledge/corpus
+SESSION 28 b6 - Epigenetics Ch 18 amino acids + essential fatty acids. EPIGEN-047..059 (+13: 9 mechanism + 4 deficiency_sign): 11 canon amino acids + taurine (non-canon -> other_substances) + omega-3/omega-6. kv196, claims 940, conditions 456 (0 new). Visual-verify owed.
+  ↳ Amino acids are function/biochemistry-focused with scattered condition links (methionine->fatty liver/anemia; taurine->cataracts; lysine->varicose/hemorrhoids/aneurysm; tryptophan->depression; EFA->thrombosis/skin/respiratory/depression); pure-function ones (histidine/isoleucine/threonine/valine) capture the bare stance. taurine non-canon -> other_substances. Board 31/31, search-only 98, probe green. Synopsis auto-fires. Awaiting sign-off before b7 (minerals).
 
 ## 2026-06-30 16:26 UTC-05:00 · round-close · knowledge/corpus
 SESSION 28 b5 - Epigenetics Ch 18 water-soluble vitamins. EPIGEN-035..046 (+12 deficiency_sign): B1/B2/B3/B5/B6/B12/B9/C + biotin/choline/inositol/flavonoids, each function + deficiency list. kv195, claims 927, conditions 456 (0 new). Visual-verify owed before b6.
@@ -801,7 +805,3 @@ Phase β.3+β.4: DDDL extraction at volume — 40 claims sealed (knowledge_versi
 ## 2026-06-24 13:27 UTC-04:00 · round-close · eden/corpus
 Phase β.2: claim voice locked (neutral declarative, Luneth-approved) + dose kind added; DDDL re-sealed at 14 claims (knowledge_version=5, 7 kinds). Board 29/29.
   ↳ Luneth ruled claim_text = neutral declarative (no 'Wallach asserts' prefix; attribution lives in verbatim + the all-Wallach corpus). Re-authored the 10 + added 4 incl. first dose claims (germanium 20-30 mg/day maintenance, silver 400 mg/day + mechanism, germanium deficiency). ids restart 1-14. corpus_verify PASS — all 14 verbatims exact book substrings. Granularity: keep faithful list-claims; Phase-δ derive explodes conditions[] into per-condition index entries. NEXT: continue DDDL at volume, then γ books, then δ indices.
-
-## 2026-06-24 13:14 UTC-04:00 · round-close · eden/corpus
-Phase β.1: DDDL extraction pipeline live + first 10 claims sealed (knowledge_version=4). corpus_extract.py finalize snaps agent-authored verbatims to exact book bytes; corpus_verify proves every verbatim is a real book substring. Board 29/29. Stop for format review.
-  ↳ Agent-in-the-loop extraction proven end-to-end on DDDL: 10 claims across 6 kinds (deficiency_sign×3, mechanism×2, prevalence×2, prognosis, personal_anecdote, quote) — selenium/copper/calcium/chromium/vanadium deficiency-disease claims + the 1895-JAMA doctor-lifespan hook + plant-derived-colloidal-minerals framing. Pipeline: I author kind/slugs/claim_text/verbatim → corpus_extract.py finalize snaps verbatim to exact book bytes (whitespace-collapse + quote/dash fold + index map), assigns WAL-CLM ids + char_offset, validates essentials against the 90-canon → corpus_seal promotes → corpus_verify check #2 proves substrings. Fixed 2 bugs: seal counted claims pre-promotion (note said 0 for 10); finalize overwrote the draft (now merges the sealed shard for safe multi-batch). STOP for Luneth's claim format/quality review before extracting DDDL at volume.
