@@ -1281,16 +1281,13 @@
         "ecchymosis",
         "nosebleeds",
         "bleeding_bowels",
-        "liver_disease",
-        "osteoporosis",
-        "fractures",
-        "osteoarthritis"
+        "liver_disease"
       ],
       "symptoms": [
         "prolonged_clotting_time"
       ],
       "claim_text": "Vitamin K (menaquinone) is required by the liver to produce prothrombin and at least five other clotting proteins (factors VII, IX, and X, and proteins C and S) for proper blood clotting, and for the proper deposition of calcium in bones; about half of the body's requirement is produced by probiotic bacteria in the colon. Wallach lists the health problems of vitamin K deficiency: osteocalcin deficiency, extended clotting time, ecchymoses (bruising), epistaxis (nosebleeds), hematuria, gastrointestinal bleeding, liver disease, dysfunctional calcium absorption and deposition in the bones, osteoporosis with spontaneous fractures, and osteoarthritis. In his words: 'This vitamin, isolated in 1939, is a fat soluble vitamin that is required by the liver for the production of prothrombin and at least five other proteins (factors VII, IX, and X, and proteins C and S) and other biologically active substances essential for proper blood clotting and for the proper deposition of calcium in bones.'",
-      "verbatim": "This vitamin, isolated in 1939, is a fat soluble vitamin that is required by the liver\nfor the production of prothrombin and at least five other proteins (factors VII, IX,\nand X, and proteins C and S) and other biologically active substances essential\nfor proper blood clotting and for the proper deposition of calcium in bones.",
+      "verbatim": "K-deficiency health problems include:\n\nOsteocalcin deficiency\n\nExtended clotting time\n\nEcchymoses, epistaxis (nose bleeds), hematuria, Gl bleeding, etc.\nLiver disease",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -1298,7 +1295,7 @@
         "page": 612,
         "screenshot": 575,
         "kindle_location": null,
-        "char_offset": 1078165
+        "char_offset": 1079568
       },
       "dose": null,
       "tags": [
@@ -2468,14 +2465,11 @@
         "hyperirritability",
         "depression",
         "bipolar_disorder",
-        "explosive_outbursts",
         "peripheral_neuropathy",
         "high_triglycerides",
         "high_cholesterol",
         "coronary_artery_disease",
-        "atherosclerosis",
-        "infertility",
-        "oligospermia"
+        "infertility"
       ],
       "symptoms": [
         "reduced_growth",
@@ -2483,7 +2477,7 @@
         "shortened_lifespan"
       ],
       "claim_text": "Chromium activates the glucose tolerance factor and is essential to insulin function and blood-sugar control; Wallach notes a USDA spokesperson stated 90% of Americans are deficient, that dietary sugar loads raise urinary chromium loss by 300% for 12 hours, and that chromium-supplemented animals lived 33% longer. Chromium-deficiency diseases (aggravated by concurrent vanadium deficiency and dietary sugar) include: low blood sugar, reactive hypoglycemia, bed-wetting, pre-diabetes, type-2 diabetes, hyperinsulinemia, hyperactivity, learning disability, attention deficit disorder (ADD/ADHD), hyperirritability, depression, manic depression (bipolar disorder), 'Dr. Jekyll/Mr. Hyde' rages, impaired growth, peripheral neuropathy, negative nitrogen balance (protein/muscle loss), elevated triglycerides (over 200) and cholesterol (over 270), coronary artery disease, aortic cholesterol plaque, infertility (anovulation and low sperm count), and a shortened lifespan. In his words: 'Diseases and Symptoms of Chromium Deficiency: Low blood sugar; Reactive hypoglycemia; Bed wetting; Pre-diabetes; Diabetes (Type 2); Hyperinsulinemia; Hyperactivity; Learning disability; ADD/ADHD.'",
-      "verbatim": "Diseases and Symptoms of Chromium Deficiency\n\nLow blood sugar\nReactive hypoglycemia\n\nBed wetting\nPre-diabetes\n\nDiabetes (Type 2)\n\nHyperinsulinemia\n\nHyperactivity\n\nLearning disability\n\nADD/ADHD",
+      "verbatim": "Low blood sugar\nReactive hypoglycemia\n\nBed wetting\nPre-diabetes\n\nDiabetes (Type 2)\n\nHyperinsulinemia\n\nHyperactivity\n\nLearning disability\n\nADD/ADHD\n\nHyperirratability\n\nDepression\n\nManic depression\n\n“Bi-polar” disease\n\nDr. Jekyll/Mr. Hyde rages (\"Bad Seeds\")\nImpaired growth\n\nPeripheral neuropathy\n\nNegative nitrogen balance (protein/muscle loss)\nElevated blood triglycerides (> 200)\n\nElevated blood cholesterol (> 270)\n\nCoronary artery disease\n\nAortic cholesterol plaque\n\nInfertility",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -2491,7 +2485,7 @@
         "page": 695,
         "screenshot": 616,
         "kindle_location": null,
-        "char_offset": 1216899
+        "char_offset": 1216945
       },
       "dose": null,
       "tags": [

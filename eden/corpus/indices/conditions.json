@@ -1204,20 +1204,17 @@
   },
   "atherosclerosis": {
     "display_name": "Atherosclerosis",
-    "claim_count": 2,
+    "claim_count": 1,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-LETS-000017"
       ]
     },
     "essentials_involved": [
-      "chromium",
       "manganese"
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -4880,14 +4877,13 @@
   },
   "explosive_outbursts": {
     "display_name": "Explosive Outbursts",
-    "claim_count": 7,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000127",
         "WAL-CLM-RARE-000128"
       ],
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000063"
       ],
       "definitions": [
@@ -5127,10 +5123,9 @@
   },
   "fractures": {
     "display_name": "Fractures",
-    "claim_count": 4,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000034",
         "WAL-CLM-EPIGEN-000043",
         "WAL-CLM-EPIGEN-000061"
       ],
@@ -5141,8 +5136,7 @@
     "essentials_involved": [
       "calcium",
       "magnesium",
-      "vitamin-c",
-      "vitamin-k"
+      "vitamin-c"
     ],
     "other_substances_involved": [
       "betaine-hcl",
@@ -8709,24 +8703,18 @@
   },
   "oligospermia": {
     "display_name": "Oligospermia",
-    "claim_count": 2,
+    "claim_count": 1,
     "claims_by_role": {
-      "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000062"
-      ],
       "protocols": [
         "WAL-CLM-LETS-000386"
       ]
     },
-    "essentials_involved": [
-      "chromium"
-    ],
+    "essentials_involved": [],
     "other_substances_involved": [
       "ginseng",
       "zumba"
     ],
     "books_cited": [
-      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -8838,7 +8826,7 @@
   },
   "osteoarthritis": {
     "display_name": "Osteoarthritis",
-    "claim_count": 7,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000050"
@@ -8846,7 +8834,6 @@
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000031",
         "WAL-CLM-EPIGEN-000032",
-        "WAL-CLM-EPIGEN-000034",
         "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-EPIGEN-000086"
       ],
@@ -8858,8 +8845,7 @@
       "calcium",
       "germanium",
       "vitamin-a",
-      "vitamin-d",
-      "vitamin-k"
+      "vitamin-d"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -8897,7 +8883,7 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 31,
+    "claim_count": 30,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052",
@@ -8912,7 +8898,6 @@
         "WAL-CLM-DDDL-000032",
         "WAL-CLM-EPIGEN-000031",
         "WAL-CLM-EPIGEN-000032",
-        "WAL-CLM-EPIGEN-000034",
         "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000042",

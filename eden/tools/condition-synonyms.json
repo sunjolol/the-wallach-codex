@@ -62,5 +62,12 @@
   "eye_redness": ["capillary injection"],
   "bipolar_disorder": ["bi polar", "manic depression", "manic depressive", "bipolar"],
   "crohns_disease": ["crohn"],
-  "addisons_disease": ["addison"]
+  "addisons_disease": ["addison"],
+  "ecchymosis": ["ecchymoses", "ecchymosis"],
+  "nosebleeds": ["nose bleeds", "epistaxis"],
+  "bleeding_bowels": ["gl bleeding", "gi bleeding", "intestinal bleeding"],
+  "hyperirritability": ["hyperirratability", "hyper irritability"],
+  "bedwetting": ["bed wetting", "bedwetting", "enuresis"],
+  "prediabetes": ["pre diabetes", "prediabetes"],
+  "high_triglycerides": ["elevated blood triglycerides", "elevated triglycerides", "high triglycerides", "hypertriglyceridemia"]
 }

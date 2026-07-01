@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 239 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 240 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 06:49 UTC-05:00 · round-close · knowledge-drawer
+SESSION 32 b3 — EPIGEN verbatim-remediation: Vitamin K (bleeding cluster, page-marker split) + chromium (full deficiency list, 17 conditions) re-anchored to name every mapped condition; +8 synonyms. Violations 498->476 (EPIGEN 80->61), board 32/32, 0 NEW, probe PASS.
 
 ## 2026-07-01 06:39 UTC-05:00 · round-close · knowledge-drawer
 SESSION 32 b2 — EPIGEN verbatim-remediation: 15 more claims re-anchored to name every mapped condition; 4 orphans fixed (cretinism/ED/addisons/eye_redness); +8 synonyms (apostrophe-s: crohn/addison/wernecke). Violations 541->498, board 32/32, 0 NEW.
@@ -799,7 +802,3 @@ Fluoride re-adjudication CLOSED (Luneth ruling): Wallach's books are sole author
 ## 2026-06-24 19:46 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 3: Rare Earths Ch.2 (60-metals + lithium) + Ch.3 'Our Earth Is Anemic' opening, 5 claims (kv 21→22, RARE 27→32, 126 total). Used the PDF text layer + programmatic de-hyphenation to stay off image renders after the prior content-policy block. Luneth-approved.
   ↳ 5 claims WAL-CLM-RARE-000028..32: the foundational 60-of-75-metals-have-physiological-value + no-bodily-function-without-a-mineral-cofactor; Wallach's lithium-to-public-water + eliminate-fluoride recommendation; the Earth-is-anemic soil-depletion thesis; remineralizing farmland is technically possible but economically impossible; soil minerals are uneven (chocolate-swirl veins) so food alone is a mineral crap-shoot. Skipped the Ch.2 history-of-mineral-medicine survey (arsenic/mercury/lead/alchemy/Epsom) + salt-trade history as anecdote per claim-first. Reflow done programmatically (de-hyphenate + join lines) to preserve exact original characters incl. curly quotes; verified .txt against the PDF text layer (two independent OCRs). Left page-boundary header garble (CREED, physi-/cians split) for a later sweep. NEXT (Luneth ruling): close the fluoride re-adjudication — Wallach's books are now the sole authority (claim 29 = his anti-fluoride stance), scrub old pre-corpus fluoride remnants.
-
-## 2026-06-24 19:30 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 2: Rare Earths Ch.2 opening (Minerals: The Currency of Life) reflowed + 3 claims (kv 20→21, RARE 24→27, 121 total). Hit a content-policy block on a full-page image render (salt-slave-trade history) — worked around via the PDF text layer. Luneth-approved.
-  ↳ 3 new Ch.2 claims (WAL-CLM-RARE-000025..27): minerals a necessity since before recorded history (clays/salts/animal tissue/colloidal-mineral plants); anti-low-salt stance (sodium+chloride, the livestock salt block + snack-food craving); July 1993 East Coast heat-wave deaths attributed to physician-prescribed salt-free diets for BP/heart disease, survivors given IV saline (sodium+heat_stroke, aligns with existing claim 3). Salt-trade history (Via Salaria/Marco Polo/Chinese salt taxes/African caravans) skipped as anecdote per claim-first. INCIDENT + workaround: rendering the full p20 image tripped an image content classifier (the page's salt-as-money history mentions trading for 'brides or slaves' + p21 the African salt-slave trade) — pulled those pages from the PDF text layer instead (plain text, bypasses the image classifier), cross-checked against the .txt (two independent OCRs agreeing). Recorded in memory reading-and-correcting-scanned-pdfs for future sessions.

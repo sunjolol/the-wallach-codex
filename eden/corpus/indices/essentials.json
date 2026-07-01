@@ -1513,7 +1513,6 @@
       "aneurysm",
       "anxiety",
       "arthritis",
-      "atherosclerosis",
       "atopic_dermatitis",
       "autism",
       "bedwetting",
@@ -1564,7 +1563,6 @@
       "memory_loss",
       "narcolepsy",
       "night_terrors",
-      "oligospermia",
       "organic_brain_syndrome",
       "osteoporosis",
       "panic_attacks",
@@ -6488,10 +6486,8 @@
     "conditions_treated": [
       "bleeding_bowels",
       "ecchymosis",
-      "fractures",
       "liver_disease",
       "nosebleeds",
-      "osteoarthritis",
       "osteoporosis"
     ],
     "interacts_with": [
