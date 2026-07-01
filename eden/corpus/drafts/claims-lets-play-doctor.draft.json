@@ -5160,7 +5160,7 @@
       ],
       "symptoms": [],
       "claim_text": "For AIDS (acquired immune deficiency syndrome, thought to be caused by the HIV virus), Wallach stresses prevention as the 'magic bullet' (avoid intravenous recreational drugs, unsafe sex, and contaminated blood). Once contracted, he recommends a vigorous program of anti-viral medications (Ribavirin and Isoprinosin) and immune support (Levamisol, hydrazine sulfate), plus vitamin C to bowel tolerance, vitamin A 300,000 IU per day as beta carotene, zinc 50 mg three times daily, adrenal cortical extract (ACE) 10 drops three times daily sublingually, selenium 1000 mcg per day orally or by injection, vitamin E 1000 IU per day, herbs such as garlic, evening primrose oil, and goldenseal, and injectable thymus.",
-      "verbatim": "Vitamin C to bowel tolerance, 300,000 IU of\nvitamin A per day as beta carotene, 50 mg zinc\nt.i.d., ACE (adrenal cortical extract) 10 drops\nt.i.d. sublingual, selenium 1000 mcg/day orally",
+      "verbatim": "Once AIDS is contracted, a vigorous\nprogram ofanti-viral medicationsO.e., Ribavirin\nand Isoprinosin) and immune support\n(Levamisol , hydrazine sulfate) are indicated.\nVitamin C to bowel tolerance, 300,000 IU of\nvitamin A per day as beta carotene, 50 mg zinc\nt.i.d., ACE (adrenal cortical extract) 10 drops\nt.i.d. sublingual, selenium 1000 mcg/day orally",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -5168,7 +5168,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 164533
+        "char_offset": 164366
       },
       "dose": null,
       "tags": [
@@ -5283,7 +5283,7 @@
         "allergic_shiners"
       ],
       "claim_text": "Allergic shiners -- the purplish-black discolorations under the lower eyelids -- are a reliable diagnostic sign of allergies; they appear within minutes of ingesting or inhaling an allergen and can take 12 hours to three days to fade after avoidance. Wallach notes their diagnostic value (for example in a hyperactive child, heart disease, or cancer); avoidance of the allergen is the only 'cure.'",
-      "verbatim": "are a good diagnostic tool (i.e. , allergic shiners\nin a hyperactive child, heart disease, cancer,\netc.). Avoidance of the allergen or allergens is\nthe only \"cure\" for allergic shiners.",
+      "verbatim": "ALLERGIC SHINERS: are the purplish/ black\ndiscolorations under the lower eyelids of indi-\nviduals with allergies. They will appear within\nminutes of ingestion or inhalation of an aller-\ngen. Allergic shiners may take as much as 12\nhours to three days to disappear after avoid-\nance of allergenic substance. Allergic shiners\nare a good diagnostic tool (i.e. , allergic shiners\nin a hyperactive child, heart disease, cancer,\netc.). Avoidance of the allergen or allergens is\nthe only \"cure\"",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -5291,7 +5291,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 166932
+        "char_offset": 166608
       },
       "dose": null,
       "tags": [
@@ -5722,7 +5722,7 @@
       ],
       "symptoms": [],
       "claim_text": "For anorexia (appetite loss from stress, malnutrition, shock, or injury) -- and anorexia nervosa, which Wallach views not as a psychiatric disease but as a manifestation of a severe food allergy (found via elimination diets and pulse tests) -- treatment includes betaine hydrochloride and pancreatic enzymes 150-250 mg per day three times daily, plus baseline supplements. Herbs are excellent appetite stimulants taken before meals: buckbean or marsh trefoil (Menyanthes trifoliata), centaury (Centaurium umbellatum), sweet flag or calamus (Acorus calamus), and yellow gentian (Gentiana lutea). For anorexia nervosa, autoimmune urine therapy is indicated.",
-      "verbatim": "Treatment should include betaine HC1 and\npancreatic enzymes at a rate of 150-250 mg/\nday t.i.d. (don't forget the baseline vitamin/\nmineral supplement). Herbs are excellent\nappetite stimulants: buckbean or marsh trefoil\n(Menyanthes trifoliata); centaury (Centaurium\numbellatum); sweet flag or calamus (Acorus\ncalamus); yellow gentian (Gentiana lutea)",
+      "verbatim": "Treatment should include betaine HC1 and\npancreatic enzymes at a rate of 150-250 mg/\nday t.i.d. (don't forget the baseline vitamin/\nmineral supplement). Herbs are excellent\nappetite stimulants: buckbean or marsh trefoil\n(Menyanthes trifoliata); centaury (Centaurium\numbellatum); sweet flag or calamus (Acorus\ncalamus); yellow gentian (Gentiana lutea) -\nall of the herbal preparations should be taken\nbefore meals. In the case of ANOREXIA\nNERVOSA, autoimmune urine therapy",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -6182,7 +6182,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach characterizes autism by resistance to change, repetitive acts, and learning/speech disorders, markedly aggravated by concurrent food allergies and hypoglycemia (each must be addressed separately). Treatment: avoid sugar and food allergens; calcium and magnesium at double the baseline supplement rate; vitamin B-6 at five times the RDA for weight and age; chromium for the hypoglycemia; and autoimmune urine therapy.",
-      "verbatim": "Treatment should include avoidance of sugar and food allergens; supplementation should include calcium and magnesium at double the supplement rate; B-6 at five times the RDA for weight and age; and chromium for the hypoglycemia; autoimmune urine therapy can be very useful.",
+      "verbatim": "the presentation of autism. Each must be dealt with as a separate entity if real progress is to be made. (Don't forget the baseline vitamin/minerals.)\nTreatment should include avoidance of sugar and food allergens; supplementation should include calcium and magnesium at double the supplement rate; B-6 at five times the RDA for weight and age; and chromium for the hypoglycemia; autoimmune urine therapy can be very useful.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -6190,7 +6190,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 184904
+        "char_offset": 184753
       },
       "dose": null,
       "tags": [
@@ -6549,7 +6549,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach calls birth defects a national crime, holding that more than 98% result from preconception and early-pregnancy malnutrition of the embryo -- by the time a doctor confirms the pregnancy, the organs and tissues have already formed. Prevention requires more than prenatal vitamins started in the second month: conscious attention to preconception vitamins and colloidal minerals and avoidance of alcohol, especially for teenage and middle-aged mothers-to-be. Do a home pregnancy test as soon as pregnancy is suspected and, if not already taking supplements, start immediately.",
-      "verbatim": "Conscious atten-\ntion to preconception vitamins and colloidal\nminerals and avoidance of alcohol is espe-\ncially important to teenage and middle age\nmothers-to-be",
+      "verbatim": "Prevention of birth defects requires more than\n\"prenatal\" vitamins after the second month of\npregnancy when the \"orthodox\" doctor gives\nhis pronouncement \"you're pregnant\" - by\nthen the embryo has formed all organs and\ntissues (for better or worse!!). Conscious atten-\ntion to preconception vitamins and colloidal\nminerals and avoidance of alcohol is espe-\ncially important to teenage and middle age\nmothers-to-be",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -6557,7 +6557,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 192977
+        "char_offset": 192725
       },
       "dose": null,
       "tags": [
@@ -7815,7 +7815,7 @@
       ],
       "symptoms": [],
       "claim_text": "Thymus extracts are useful to enhance thymus-gland function and, through it, the immune system, supporting the body's defenses in cancer programs.",
-      "verbatim": "Thymus extracts are useful to enhance\nthe thymus gland function and thus the im-\nmune system.",
+      "verbatim": "Thymus extracts are useful to enhance\nthe thymus gland function and thus the im-\nmune system.\nAutoimmune urine and autoimmune\nblood therapies enhance the bodies defense\nsystems against foreign substances including\ncancer proteins",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -8068,7 +8068,7 @@
       ],
       "symptoms": [],
       "claim_text": "Intravenous infusions with total nutrition, especially in the early phases of alternative therapy, give the body much-needed raw material to rebuild normal tissue and replenish the ravaged immune system; this should include vitamins, minerals, amino acids, essential fatty acids, and electrolytes. Cancer patients are well established to have poor digestion and absorption, probably from long-term food-allergy (celiac-type) changes in the gut.",
-      "verbatim": "Intravenous infusions with total nutri-\ntion, especially in the early phases of alterna-\ntive therapy are very useful in providing your\nbody with much needed raw material for\nrebuilding normal tissue as well as replenish-\ning the ravaged immune system.",
+      "verbatim": "cancer infested tissue or organ can sub-\nstantially reduce the negative side effects of\nchemotherapy.\nIntravenous infusions with total nutri-\ntion, especially in the early phases of alterna-\ntive therapy are very useful in providing your\nbody with much needed raw material for\nrebuilding normal tissue as well as replenish-\ning the ravaged immune system.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -8076,7 +8076,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 214171
+        "char_offset": 214069
       },
       "dose": null,
       "tags": [
@@ -10147,7 +10147,7 @@
       ],
       "symptoms": [],
       "claim_text": "A douche is a useful feminine hygiene practice, especially with a history of discharges or infection; retention douches (done in a bathtub with the feet up on the sides to retain the fluid for 10-15 minutes) are particularly effective. Wallach suggests 4-8 oz of diluted vinegar (4 oz per pint of warm distilled water), 1.5% hydrogen peroxide (4-8 oz), bayberry myrtle (Myrica cerifera, one oz of powdered bark to a pint of water warmed to body temperature), or numerous commercial products; plain unsweetened yogurt or Superdolph capsules emptied into warm water (10-20 per 4 oz) can replant Lactobacillus acidophilus to normalize flora after vaginitis and/or antibiotic therapy.",
-      "verbatim": "Use 4-8 oz. of diluted vinegar (4 oz/pint of\nwarm distilled water, 1 1/2% hydrogen perox-\nide (4-8 oz.), bayberry myrtle (Myrica cerifera)\n(one oz. powdered bark to one pint water -\nwarm to body temperature), and numerous\ncommercial products.",
+      "verbatim": "Use 4-8 oz. of diluted vinegar (4 oz/pint of\nwarm distilled water, 1 1/2% hydrogen perox-\nide (4-8 oz.), bayberry myrtle (Myrica cerifera)\n(one oz. powdered bark to one pint water -\nwarm to body temperature), and numerous\ncommercial products. Plain unsweetened yo-\ngurt or Superdolph capsules emptied into\nwarm water (10-20 per 4 oz.) maybe used to\nreplant Lactobacillus acidophilus to normal-\nize flora after vaginitis",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -10342,7 +10342,7 @@
       ],
       "symptoms": [],
       "claim_text": "Dyslexia (learning disorder, hyperactivity) is a complex syndrome rather than a specific disease; while some children have true organic brain injury, Wallach holds that as many as 80% of 'dyslexic' kids are really suffering from food allergies and/or sugar sensitivity (sugar acting like a drug), and are too often put on drugs like Ritalin or shunted into special education. He recounts his own youngest son — written off as 'learning disabled' at age six — being cured in two weeks by eliminating sugar, milk, wheat, and corn. His treatment: digestive enzymes and betaine HCl to prevent progression, the Feingold Diet as a starting point (though not a complete shield), and aggressively pursued rotation and allergy-elimination diets plus autoimmune urine therapy, after identifying food allergies (pulse test, elimination diets, diet diaries).",
-      "verbatim": "Digestive enzymes and betaine HCl\nare essential to prevent progression of the\nproblem as well as aid in onset of symptoms.\nThe \"Feingold Diet\" is a good place to start",
+      "verbatim": "condemn a \"dyslexia\" child without investi-\ngating food allergies and sensitivities is equal\nto finding an innocent man \"guilty\" of murder\nand sentenced to life in prison - what a waste\nand what a tragedy!!!\nTreatment and prevention are closely inter-\ntwined. Digestive enzymes and betaine HCl\nare essential to prevent progression of the\nproblem as well as aid in onset of symptoms.\nThe \"Feingold Diet\" is a good place to start",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -10350,7 +10350,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 280253
+        "char_offset": 279993
       },
       "dose": null,
       "tags": [
@@ -10461,7 +10461,7 @@
       ],
       "symptoms": [],
       "claim_text": "Earaches (ear infections), tonsillitis, sinusitis, and bronchitis are related in cause, prevention, and cure, and Wallach says cow's-milk allergy is the most frequent common denominator — mimicking strep throat so well that doctors often prescribe penicillin over the phone or surgically place ear tubes. Simply avoiding cow's milk and milk products prevents most chronic earaches and tonsillitis. His treatment is avoidance of milk products and sugar, treating fever and discomfort with demulcents and antipyretics (such as willow, Salix alba), hydrogen peroxide eardrops and/or mullein oil drops (Verbascum thapsus), and treating it as any allergy including autoimmune urine therapy; true strep throat does require penicillin.",
-      "verbatim": "Treatment of milk allergy \"earaches\" and ton-\nsillitis includes avoidance of milk and milk\nproducts, avoidance of sugar, treat fever and\ndiscomfort with demulcents and antipyretics\n(i.e., willow, Salix alba), hydrogen peroxide\neardrops and/or mullein oil drops (Verbascum\nthapsus).",
+      "verbatim": "Simple avoidance of cow's milk and cow's\nmilk products willprevent chronic \"earaches\"\nand tonsillitis.\nTreatment of milk allergy \"earaches\" and ton-\nsillitis includes avoidance of milk and milk\nproducts, avoidance of sugar, treat fever and\ndiscomfort with demulcents and antipyretics\n(i.e., willow, Salix alba), hydrogen peroxide\neardrops and/or mullein oil drops (Verbascum\nthapsus).",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -10469,7 +10469,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 283499
+        "char_offset": 283396
       },
       "dose": null,
       "tags": [
@@ -12216,7 +12216,7 @@
       ],
       "symptoms": [],
       "claim_text": "Hoarseness (laryngitis) — loss or roughening of the voice — can be caused by overuse such as yelling at a football game, or by many of the cold and upper-respiratory viruses. Wallach's treatment uses demulcent (soothing, coating) herbs taken as a liquid extract: slippery elm (Ulmus fulva) in lemon and honey, chickweed (Stellaria media), and the 'singer's plant' or hedge mustard (Sisymbrium officinale).",
-      "verbatim": "Treatment of hoarseness includes use of\ndemulcents such asslippery elm (Ulmusfulva)\nin lemon and honey, chickweed (Stella me-\ndia) and the \"singer's plant\" or hedge mustard\n(Sisymbrium officinale) as a liquid extract.",
+      "verbatim": "HOARSENESS (laryngitis): can be caused\nby too much yelling as at a football game or\nfrom many of the cold and upper respiratory\nvinises.\nTreatment of hoarseness includes use of\ndemulcents such asslippery elm (Ulmusfulva)\nin lemon and honey, chickweed (Stella me-\ndia) and the \"singer's plant\" or hedge mustard\n(Sisymbrium officinale) as a liquid extract.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -12224,7 +12224,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 329243
+        "char_offset": 329106
       },
       "dose": null,
       "tags": [
@@ -12778,7 +12778,7 @@
       ],
       "symptoms": [],
       "claim_text": "Infarction is the death of an area of tissue because its blood supply was cut off by a plug or thrombus (a blood clot, or a clump of tumor or bacterial cells); in vital areas of the heart or brain a stroke or heart attack can be fatal, and Wallach stresses prevention is always better than trying to repair after the fact. Treatment and repair of infarction: vitamin C to bowel tolerance; vitamin E at 800-1,200 international units per day; selenium at 500-1,000 micrograms per day orally or intramuscularly; vitamin A at 300,000 international units per day as beta carotene; chelation with EDTA; hydrogen peroxide intravenously; and betaine hydrochloride and pancreatic enzymes at 200-500 milligrams three times daily, 15 minutes before meals. If clumps of bacteria are involved (as in rheumatic fever), antibiotics (penicillin or tetracycline) are required.",
-      "verbatim": "Treatment and repair of infarction should in-\nclude vitamin C to bowel tolerance, vitamin E\nat 800-1,200 IU/day, selenium at 500-1,000\nmcg/day orally or IM, vitamin A at 300,000 IU/\nday as beta carotene, chelation with EDTA,\nhydrogen peroxide IV, betaine HC1 and pan-\ncreatic enzymes at 200-500 mg t.i.d. 15 min-\nutes before meals",
+      "verbatim": "Prevention is always\ntetter than trying to \"come from behind\" and\nrepair a \"stroke\" or \"heart attack.\"\nTreatment and repair of infarction should in-\nclude vitamin C to bowel tolerance, vitamin E\nat 800-1,200 IU/day, selenium at 500-1,000\nmcg/day orally or IM, vitamin A at 300,000 IU/\nday as beta carotene, chelation with EDTA,\nhydrogen peroxide IV, betaine HC1 and pan-\ncreatic enzymes at 200-500 mg t.i.d. 15 min-\nutes before meals",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -12786,7 +12786,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 346826
+        "char_offset": 346723
       },
       "dose": null,
       "tags": [
@@ -14236,7 +14236,7 @@
       ],
       "symptoms": [],
       "claim_text": "German measles (rubella, three-day measles) is a contagious viral disease that causes mild symptoms in children, including swollen lymph nodes of the head and neck; its incubation is 14-21 days and overt symptoms may be absent in teenagers and adults. The typical rash appears first on the face and spreads quickly to the body and limbs with a general flush like scarlet fever; adults may have enlarged head and neck lymph nodes and adult males may have brief testicular pain. Wallach's treatment is the same symptomatic therapy used for ordinary (nine-day) measles. He states emphatically (in capitals) that rubella is a dangerous disease in pregnant women that can induce spontaneous abortions and birth defects, and gives his editorial opinion that rubella vaccines will cause similar birth defects and so should be avoided during pregnancy.",
-      "verbatim": "RU-\nBELLA IS A DANGEROUS DISEASE IN PREG-\nNANT WOMEN THAT CAN INDUCE SPON-\nTANEOUS ABORTIONS AND BIRTH DE-\nFECTS. VACCINES WILL CAUSE SIMILAR\nBIRTH DEFECTS AS THE DISEASE SO ARE\nTO BE AVOIDED DURING PREGNANCY.",
+      "verbatim": "RU-\nBELLA IS A DANGEROUS DISEASE IN PREG-\nNANT WOMEN THAT CAN INDUCE SPON-\nTANEOUS ABORTIONS AND BIRTH DE-\nFECTS. VACCINES WILL CAUSE SIMILAR\nBIRTH DEFECTS AS THE DISEASE SO ARE\nTO BE AVOIDED DURING PREGNANCY.\nTreatment for rubella is the same symptomatic\ntherapy as that used for the nine-day measles.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -15041,7 +15041,7 @@
       ],
       "symptoms": [],
       "claim_text": "Nasal catarrh (a runny or stuffy nose) can be caused by a wide variety of upper-respiratory viral infections. Wallach's treatment is the over-the-counter decongestant Contac (one capsule every 12 hours) plus the herbs cayenne pepper (Capsicum minimum), eucalyptus (Eucalyptus globulus), German chamomile (Matricaria chamomilla) and scotch pine (Pinus sylvestris).",
-      "verbatim": "Treatment includes Contac at 1 q 12 h, cay-\nenne pepper (Capsicum minimum), eucalyp-\ntus (Eucalyptus globulus), German chamo-\nmile (Matricaria chamomilla) and scotch pine\n(Pinus sylvestris).",
+      "verbatim": "NASAL CATARRH (runny nose, stuffy\nnose): can be caused by a wide variety of\nupper respiratory viral infections.\nTreatment includes Contac at 1 q 12 h, cay-\nenne pepper (Capsicum minimum), eucalyp-\ntus (Eucalyptus globulus), German chamo-\nmile (Matricaria chamomilla) and scotch pine\n(Pinus sylvestris).",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -15049,7 +15049,7 @@
         "page": 153,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 402450
+        "char_offset": 402338
       },
       "dose": null,
       "tags": [
@@ -15208,7 +15208,7 @@
       ],
       "symptoms": [],
       "claim_text": "Neuralgia (which includes Bell's palsy and neuropathy) is an irritation of a nerve that can stem from many causes — trauma; nutritional deficiencies (vitamin B-12, folic acid, vitamin B-1, vitamin B-6); infections (herpes, shingles); alcoholism; diabetes; and multiple sclerosis. Treatment requires addressing every underlying condition and should also include a B-complex at 50 milligrams three times a day, vitamin B-12 at 1,000 micrograms a day, essential fatty acids as EPA at 5 grams three times a day and flaxseed oil at one tablespoon twice a day, calcium and magnesium at 2,000 and 1,000 milligrams a day, and — for viral neuralgias such as herpes and shingles — the antivirals Isoprinosine at 500-1,500 milligrams a day and Ribavirin at 250-1,500 milligrams a day, plus acupuncture and the herbs lavender (Lavandula angustifolia), oats (Avena sativa), rosemary (Rosmarinus officinalis), St. John's wort (Hypericum perforatum) and white willow (Salix alba).",
-      "verbatim": "an irritation of a nerve which can be caused by\nmany diseases rangingfrom trauma, nutritional\ndeficiencies (i.e., B-12, folic acid, B-l, B-6,\netc.), infections (i.e., herpes, shingles, etc.),\nalcoholism, diabetes, MS, etc.",
+      "verbatim": "NEURALGIA (Bell's palsy, neuropathy): is\nan irritation of a nerve which can be caused by\nmany diseases rangingfrom trauma, nutritional\ndeficiencies (i.e., B-12, folic acid, B-l, B-6,\netc.), infections (i.e., herpes, shingles, etc.),\nalcoholism, diabetes, MS, etc.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -15216,7 +15216,7 @@
         "page": 153,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 404357
+        "char_offset": 404316
       },
       "dose": null,
       "tags": [
@@ -15883,7 +15883,7 @@
       ],
       "symptoms": [],
       "claim_text": "Parkinsonism (shaking palsy) is caused by degeneration of the basal ganglia of the brain; its symptoms are relentlessly progressive and include muscular rigidity, lack of purposeful movement, and a 'pill rolling' tremor of the thumb and index finger. The cause of true Parkinson's disease is unknown, but many things can cause Parkinsonism-like symptoms: certain drugs (phenothiazines, haloperidol, reserpine), carbon-monoxide poisoning, and excessive manganese supplementation. For drug-induced Parkinsonism, treatment should include eliminating the offending drug, then octacosanol at 300 micrograms three times a day, Neuro-Gen, leucine 10 grams a day, L-methionine 5 grams a day, essential fatty acids one tablespoon twice a day, L-tyrosine 100 milligrams a day, DL-phenylalanine 100 milligrams three times a day, vitamin B-1 at 200 milligrams three times a day, vitamin B-6 at 100 milligrams three times a day, betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day before meals, and the baseline nutritional supplement program. He warns that the standard L-Dopa and carbidopa aggravate and speed up Parkinson's in a significant number of cases and have no benefit in more than half.",
-      "verbatim": "octacosanol at 300 mcg t.i.d., Neuro-Gen,\nleucine lOgm/day, l-methionineat5gm/day,\nessential fatty acids at one tbsp. b.i.d., 1-\ntyrosine at 100 mg/day, dl-phenoalanine at\n100mg t.i.d.,B-lat200mg t.i.d.,B-6atl00mg\nt.i.d., betaine HC1 and pancreatic enzymes at\n75-200 mg t.i.d. before meals",
+      "verbatim": "Treatment of drug induced Parkinsonism\nshould include the elimination of the offend-\ning drug (\"orthodox\" neurologist will usually\nrecommend an additional dnig to deal with\nthe symptoms of the offending dmg), take\noctacosanol at 300 mcg t.i.d., Neuro-Gen,\nleucine lOgm/day, l-methionineat5gm/day,\nessential fatty acids at one tbsp. b.i.d., 1-\ntyrosine at 100 mg/day, dl-phenoalanine at\n100mg t.i.d.,B-lat200mg t.i.d.,B-6atl00mg\nt.i.d., betaine HC1 and pancreatic enzymes at\n75-200 mg t.i.d.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -15891,7 +15891,7 @@
         "page": 159,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 424402
+        "char_offset": 424188
       },
       "dose": null,
       "tags": [
@@ -16283,7 +16283,7 @@
       ],
       "symptoms": [],
       "claim_text": "Pregnancy labor can be enhanced, Wallach says, by the use of herbs including raspberry (Rubus idaeus) and blue cohosh (Caulophyllum thalictroides).",
-      "verbatim": "can be en\nhanced by the use of herbs including rasp-\nberry (Rubus idaeus) and blue cohosh\n(Caulophyllum thalictroides).",
+      "verbatim": "PREGNANCY LABOR (labor): can be en\nhanced by the use of herbs including rasp-\nberry (Rubus idaeus) and blue cohosh\n(Caulophyllum thalictroides).",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -16291,7 +16291,7 @@
         "page": 161,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 431733
+        "char_offset": 431708
       },
       "dose": null,
       "tags": [
@@ -16576,7 +16576,7 @@
       ],
       "symptoms": [],
       "claim_text": "Radial nerve palsy ('Saturday night palsy') results from compressing the radial nerve against the humerus — classically by draping the arm over the back of a hard-backed chair for an extended period during a drunken stupor or deep sleep — producing a wrist 'drop,' weakness extending the wrist and fingers, and sometimes a loss of sensory function between the first and second fingers. Treatment should include a B-complex 50 three times a day, topical dimethyl sulfoxide (DMSO), acupuncture, and hydrotherapy.",
-      "verbatim": "Treatment of radial palsy should include B-\ncomplex 50 t.i.d., topical DMSO, acupuncture\nand hydrotherapy.",
+      "verbatim": "Radial\nnerve palsy is charac-terized by a wrist \"drop\"\nand weak-ness in the ability to extend the wrist\nand fingers; sometimes there is a loss of sen-\nsory function between the first and second\nfingers.\nTreatment of radial palsy should include B-\ncomplex 50 t.i.d., topical DMSO, acupuncture\nand hydrotherapy.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -16584,7 +16584,7 @@
         "page": 163,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 438600
+        "char_offset": 438397
       },
       "dose": null,
       "tags": [
@@ -17779,7 +17779,7 @@
       ],
       "symptoms": [],
       "claim_text": "Teeth discoloration with reduced enamel thickness is a common side effect of prolonged administration of tetracyclines during the second half of pregnancy or during early tooth development; affected teeth become brown or gray and fluoresce orange-green under ultraviolet light. Prevention is key; cosmetic capping is necessary if permanent teeth are affected.",
-      "verbatim": "with reduced enamel thickness is a common\nside effect of prolonged administration of\ntetracyclines during the second half of preg-\nnancy or during early tooth development",
+      "verbatim": "TEETH DISCOLORATION (tetracyclines):\nwith reduced enamel thickness is a common\nside effect of prolonged administration of\ntetracyclines during the second half of preg-\nnancy or during early tooth development",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -17787,7 +17787,7 @@
         "page": 171,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 463257
+        "char_offset": 463220
       },
       "dose": null,
       "tags": [
@@ -18513,7 +18513,7 @@
       ],
       "symptoms": [],
       "claim_text": "Worms (parasites) are addressed under parasites. Treatment may include wormwood (Artemisia absinthium) and butternut (Juglans cinerea); Levamisol is a good veterinary 'wormer' that can be used very effectively in humans with minimal to no side effects.",
-      "verbatim": "Treatment may include wormwood (Artemi-\nsia absinthium), and butternut (Juglans\ncinerea). Levamisol is a good veterinary",
+      "verbatim": "WORMS (parasites): see parasites\nTreatment may include wormwood (Artemi-\nsia absinthium), and butternut (Juglans\ncinerea). Levamisol is a good veterinary",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -18521,7 +18521,7 @@
         "page": 174,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 475397
+        "char_offset": 475364
       },
       "dose": null,
       "tags": [

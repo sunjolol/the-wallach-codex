@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 265 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 266 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 18:46 UTC-05:00 · round-close · corpus
+SESSION 37 — LETS verbatim FINDABLE campaign, 3rd increment: 20 clean FINDABLE extends
+  ↳ Extended 20 LETS Ch10 materia-medica verbatims back to their ALL-CAPS section heading (or forward to the naming sentence) so each names its mapped condition. Total verbatim-names-condition violations 258->234, LETS 199->175, FINDABLE 88->64; orphans 67 (not up); resealed kv 230; board 32/32; render_probe_knowledge PASS. Claims: 126 aids, 140 anorexia(+nervosa), 151 autism, 160 birth_defects, 193+200 cancer, 252 vaginitis, 257 dyslexia(keep_unnamed hyperactivity), 260 earache/tonsillitis, 303 hoarseness/laryngitis, 317 infarction/stroke/heart_attack, 354 rubella, 375 nasal_catarrh, 379 neuralgia/bells_palsy/neuropathy, 396 parkinsonism, 406 labor, 414 radial_nerve_palsy, 446 teeth_discoloration, 465 parasites, 129 allergies. 129+396 got near-zero-loss end-trims to fit <=500.
 
 ## 2026-07-01 18:19 UTC-05:00 · session-end · session
 SESSION 36 CLOSE — anomaly-scan campaign COMPLETE (all reals fixed corpus-wide, 10 FPs baselined, touched verbatims cleaned) + LETS verbatim campaign STARTED (24 FINDABLE claims, 283->258). kv 229, board 32/32, clean tree. RESUME = continue FINDABLE extends then 138 NOT_FINDABLE.
@@ -782,7 +786,3 @@ Behavioral/mental-condition sweep (Luneth): audited 212 claims, fixed 3 (DDDL-00
 ## 2026-06-25 02:39 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 21 — Rare Earths Ch.11 catalog Co/Cobalt + Cr/Chromium (p305-307): 5 claims (RARE-114..118) + Luneth behavioral-condition correction, kv 48→51, corpus 212
   ↳ Cobalt+Chromium catalog. RARE-114 cobalt essentiality = vitamin B12 complex (single cobalt central atom; methyl-group transfer for DNA/RNA); RARE-115 B12/cobalt malabsorption -> pernicious anemia + demyelination; RARE-116 chromium = GTF + deficiency diseases; RARE-117 chromium absorption (50-100ug -> 0.25-0.5ug usable vs 25% chelated; sugar +300% loss); RARE-118 Anderson/USDA 90% of Americans Cr-deficient. Co dose dropped (dup of RARE-14). LUNETH CORRECTION (re-seal kv 50->51): behavioral/mental-health deficiency conditions are CORE dashboard value -> re-added hyperactivity/learning_disabilities/adhd/hyperirritability/depression/bipolar_disorder to RARE-116 + panic_attacks to RARE-105 (calcium). Only graphic crime 'Bad Seeds' stays fringe. New memory document-behavioral-mental-conditions. conditions 81->91. Board 30/30, build OK, knowledge probe green. Luneth-approved.
-
-## 2026-06-25 02:27 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 20 — Rare Earths Ch.11 catalog C/Carbon EFA + Ce + Cl (p291,304): 5 claims (RARE-109..113), kv 48→49, corpus 207
-  ↳ Held Carbon/EFA claims + Ce + Cl. RARE-109 only 2 of 3 PUFAs truly essential (arachidonic synthesized from linoleic); RARE-110 EFA -> prostaglandins (BP/heart/CNS); RARE-111 EFA deficiency infants poor growth/eczema/infection + animal atherosclerosis; RARE-112 cerium nitrate topical burn disinfectant; RARE-113 chloride essential, raw material for stomach HCl (pepsin/B12/mineral absorption). EFA maps to omega-3/omega-6. Cd skipped (toxic, thin); Co held (B12). conditions 80->81 (+eczema, burns). Board 30/30, build OK, knowledge probe green. Luneth-approved.
