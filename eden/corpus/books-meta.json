@@ -13,7 +13,7 @@
         "Ma Lan"
       ],
       "file": "eden/corpus/books/dddl-third-edition-2011.txt",
-      "content_sha256": "4e267b18c0a0c60d9a3465231fe2c679ebd96bf5bd97b8424c7d83ac26c886a2",
+      "content_sha256": "cb1423e9959bb4bf7665511aa5ba6b5ead2498962525c6255d9638ec695c2bfb",
       "content_bytes": 983514,
       "line_count": 14851,
       "hash_basis": "lf_normalized_utf8",
@@ -31,8 +31,8 @@
         "Ma Lan"
       ],
       "file": "eden/corpus/books/rare-earths-forbidden-cures.txt",
-      "content_sha256": "8ce299bac1a583e4e660563435b8602035f5168e165af933997083b957aa433a",
-      "content_bytes": 1179486,
+      "content_sha256": "0cd80e1a0721db31f04d3ce984467e7244821e963f98dadbfdc2c651df1ebb5d",
+      "content_bytes": 1179494,
       "line_count": 38042,
       "hash_basis": "lf_normalized_utf8",
       "locator_scheme": "chapter_page",
@@ -49,8 +49,8 @@
         "Ma Lan"
       ],
       "file": "eden/corpus/books/lets-play-doctor-fourth-edition-1995.txt",
-      "content_sha256": "bdbbd676df4b637e792e4f2f8767ada633b62838126f1b2d0319f671b2f0c119",
-      "content_bytes": 517226,
+      "content_sha256": "d6c2ccb274e7dae038f50adaf4ee799358b8e673c66b5ad5b1f6d725753550ff",
+      "content_bytes": 517239,
       "line_count": 13073,
       "hash_basis": "lf_normalized_utf8",
       "locator_scheme": "chapter_page",
@@ -68,7 +68,7 @@
         "Gerhard N. Schrauzer"
       ],
       "file": "eden/corpus/books/epigenetics.txt",
-      "content_sha256": "ee8556152eb9944684d74f556a82337a0d80ff0b05d9ea26f2bd74a605590289",
+      "content_sha256": "cc7ce4ed906fdab42793ee291784b1aa75b95e025c42564d5cc968dc6eaa1b8d",
       "content_bytes": 1558869,
       "line_count": 32096,
       "hash_basis": "lf_normalized_utf8",
