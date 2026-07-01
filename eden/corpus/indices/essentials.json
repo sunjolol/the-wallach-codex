@@ -3336,8 +3336,11 @@
     "display_name": "Beryllium",
     "canon_slug": "beryllium",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-RARE-000287"
+      ],
       "toxicity_sign": [
         "WAL-CLM-EPIGEN-000070"
       ]
@@ -3346,7 +3349,8 @@
     "conditions_treated": [],
     "interacts_with": [],
     "books_cited": [
-      "epigenetics"
+      "epigenetics",
+      "rare-earths"
     ]
   },
   "bromine": {
@@ -3419,34 +3423,38 @@
     "display_name": "Dysprosium",
     "canon_slug": "dysprosium",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "definition": [
-        "WAL-CLM-EPIGEN-000079"
+        "WAL-CLM-EPIGEN-000079",
+        "WAL-CLM-RARE-000288"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
     "books_cited": [
-      "epigenetics"
+      "epigenetics",
+      "rare-earths"
     ]
   },
   "erbium": {
     "display_name": "Erbium",
     "canon_slug": "erbium",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "definition": [
-        "WAL-CLM-EPIGEN-000080"
+        "WAL-CLM-EPIGEN-000080",
+        "WAL-CLM-RARE-000289"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
     "books_cited": [
-      "epigenetics"
+      "epigenetics",
+      "rare-earths"
     ]
   },
   "europium": {
@@ -3507,40 +3515,54 @@
     "display_name": "Gadolinium",
     "canon_slug": "gadolinium",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "definition": [
-        "WAL-CLM-EPIGEN-000085"
+        "WAL-CLM-EPIGEN-000085",
+        "WAL-CLM-RARE-000290"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
     "books_cited": [
-      "epigenetics"
+      "epigenetics",
+      "rare-earths"
     ]
   },
   "hafnium": {
     "display_name": "Hafnium",
     "canon_slug": "hafnium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-RARE-000291"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "holmium": {
     "display_name": "Holmium",
     "canon_slug": "holmium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-RARE-000292"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "lanthanum": {
     "display_name": "Lanthanum",
@@ -3696,23 +3718,35 @@
     "display_name": "Lutetium",
     "canon_slug": "lutetium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-RARE-000293"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "niobium": {
     "display_name": "Niobium",
     "canon_slug": "niobium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-RARE-000294"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "neodymium": {
     "display_name": "Neodymium",
@@ -3825,23 +3859,35 @@
     "display_name": "Rhenium",
     "canon_slug": "rhenium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-RARE-000295"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "scandium": {
     "display_name": "Scandium",
     "canon_slug": "scandium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-RARE-000296"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "samarium": {
     "display_name": "Samarium",
@@ -3934,34 +3980,52 @@
     "display_name": "Tantalum",
     "canon_slug": "tantalum",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-RARE-000297"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "terbium": {
     "display_name": "Terbium",
     "canon_slug": "terbium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-RARE-000298"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "titanium": {
     "display_name": "Titanium",
     "canon_slug": "titanium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-RARE-000299"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "thulium": {
     "display_name": "Thulium",
@@ -4019,12 +4083,18 @@
     "display_name": "Zirconium",
     "canon_slug": "zirconium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-RARE-000300"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "rare-earths"
+    ]
   },
   "vitamin-a": {
     "display_name": "Retinol",

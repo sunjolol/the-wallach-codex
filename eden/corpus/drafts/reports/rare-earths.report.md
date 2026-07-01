@@ -1,83 +1,136 @@
 # Extraction report — rare-earths (Rare Earths: Forbidden Cures)
 
-_11 claim(s) drafted 2026-06-27T17:55:49+00:00. Review then run corpus_seal.py to promote._
+_15 claim(s) drafted 2026-07-01T00:45:30+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: protocol×11
+Kinds: definition×15
 
-### WAL-CLM-RARE-000276 · protocol
-- **essentials:** calcium, magnesium, lithium, chromium, vanadium · **conditions:** insomnia, anxiety · **symptoms:** —
-- **claim:** Wallach's Table 9-1 lists tranquilizers and sleeping aids regarded as unsuitable for older patients (part 1 of 2) — Diazepam (Valium), Chlordiazepoxide (Librium), and Flurazepam (Dalmane), all addictive and/or too long-acting and prone to cause falls — with the mineral replacement to address the underlying need instead: calcium, magnesium, lithium, chromium, and vanadium (while avoiding sugar, natural and processed, and caffeine).
-- **verbatim** (offset 599305): “Tranquilizers & Sleeping Aids — Mineral Replacement: Ca, Mg, Li, Cr, Va (avoid sugar, natural and processed, and caffeine):
-Diazepam (Valium) - Tranquilizer. Addictive and too long-acting, causing drowsiness, confusion and falls.
-Chlordiazepoxide (Librium) - Tranquilizer. Too long-acting causes falls.
-Flurazepam (Dalmane), a sleeping aid. Too long-acting, causes falls.”
+### WAL-CLM-RARE-000287 · definition
+- **essentials:** beryllium · **conditions:** — · **symptoms:** —
+- **claim:** In Rare Earths: Forbidden Cures, Wallach catalogs beryllium among the 60-plus minerals of his periodic-table survey. His entry gives only its natural distribution -- 2 to 8 parts-per-million in igneous rocks, down to trace levels in sea water, and 0.0003 to 0.002 parts-per-million in the soft tissue of land animals (highest in volcanic-soil plants and brown algae) -- and records no specific deficiency disease here. The value is completeness: this is beryllium's Rare Earths appearance alongside the Epigenetics catalog (where Wallach adds a toxicity caution), confirming he counts it among the minerals present in living tissue.
+- **verbatim** (offset 726289): “Be - Beryllium is found in igneous rocks at 2 to 8 ppm; shale at 3 ppm; sandstone and limestone < 1.0 ppm; fresh water 0.001 ppm; sea water at 0.0000006 ppm; soil at 0.1 to 40 ppm”
 
-### WAL-CLM-RARE-000277 · protocol
-- **essentials:** calcium, magnesium, lithium, chromium, vanadium · **conditions:** insomnia, anxiety · **symptoms:** —
-- **claim:** Wallach's Table 9-1, tranquilizers/sleeping aids unsuitable for older patients (part 2 of 2) — Meprobamate (Miltown, Deprol, Equagesic, Equanil), Pentobarbital (Nembutal), and Secobarbital (Seconal) — with the same mineral replacement: calcium, magnesium, lithium, chromium, and vanadium.
-- **verbatim** (offset 599677): “Meprobamate (Miltown, Deprol, Equagesic, Equanil) - Tranquilizer, sometimes combined with an anti-depressant or pain reliever. Addictive, too long-acting, causes falls.
-Pentobarbital (Nembutol) - Sedative. Addictive, long-acting, can cause falls.
-Secobarbitol (Seconal). Addictive, long acting, causes falls.”
+### WAL-CLM-RARE-000288 · definition
+- **essentials:** dysprosium · **conditions:** — · **symptoms:** —
+- **claim:** In Rare Earths: Forbidden Cures, Wallach catalogs dysprosium -- a rare-earth metal -- in his periodic-table survey of the elements. His entry records only its natural distribution: 3 parts-per-million in igneous rocks, 4 to 6 in shale, and concentrations in terrestrial animals (about 0.01 parts-per-million) highest in the bones. He records no specific deficiency disease here; the value is completeness -- this is dysprosium's second sourced appearance alongside the Epigenetics catalog, confirming Wallach counts it among the rare-earth minerals of life. The individual rare earths get only sparse element-by-element treatment across his books.
+- **verbatim** (offset 792076): “Dy - Dysprosium, a RareEarth, is
+found in igneous rocks at 3 ppm; in shale
+at 4 to 6 ppm; sandstone at 7.2 ppm and
+limestone at 0.9 ppm. Concentrations in
+terrestrial animals (0.01 ppm) are highest
+in the bones.”
 
-### WAL-CLM-RARE-000278 · protocol
-- **essentials:** calcium, magnesium, lithium, chromium, vanadium · **conditions:** depression · **symptoms:** —
-- **claim:** Wallach's Table 9-1 lists the antidepressant Amitriptyline (Elavil, Endep, Etrafon, Limbitrol, Triavil) as unsuitable for older patients (stops urination, causes dizziness, drowsiness and falls), with the mineral replacement: calcium, magnesium, lithium, chromium, and vanadium.
-- **verbatim** (offset 599987): “Antidepressants — Mineral Replacement: Ca, Mg, Li, Cr, Va:
-Amitriptyline (Elavil, Endep, Etrafon, Limbitrol, Triavil). Stops the ability to urinate, causes dizziness and drowsiness, causes falls.”
+### WAL-CLM-RARE-000289 · definition
+- **essentials:** erbium · **conditions:** — · **symptoms:** —
+- **claim:** In Rare Earths: Forbidden Cures, Wallach catalogs erbium -- a rare-earth metal -- in his periodic-table survey. His entry records only its natural distribution: 2.8 parts-per-million in igneous rock, down to trace levels in sea water, accumulating up to 46 parts-per-million in land plants (Carya species) and, in land animals, primarily in bone. He records no specific deficiency disease here; the value is completeness -- this is erbium's second sourced appearance alongside the Epigenetics catalog, confirming Wallach counts it among the rare-earth minerals present in living tissue.
+- **verbatim** (offset 792289): “Er- Erbium, a RareEarth, is found in
+igneous rock at 2.8 ppm; shale at 1.9 ppm;
+sandstone at 1 ppm; limestone at 0.36 ppm;
+land plants up to 46 ppm in Carya spp.;
+marine animals at 0.02 to 0.04 ppm and
+land animals primarily in bone.”
 
-### WAL-CLM-RARE-000279 · protocol
-- **essentials:** calcium, magnesium, boron, copper, selenium, lithium · **conditions:** arthritis · **symptoms:** —
-- **claim:** Wallach's Table 9-1 lists arthritis drugs unsuitable for older patients — Indomethacin (Indocin; can cause confusion and headaches) and Phenylbutazone (Butazolidin; risk of bone-marrow toxicity) — with the mineral replacement: calcium, magnesium, boron, copper, selenium, lithium, plus chondroitin sulfate (Knox gelatin).
-- **verbatim** (offset 600184): “Arthritis Drugs — Mineral Replacement: Ca, Mg, B, Cu, Se, Li, chondroitin sulfate (Knox gelatin):
-Indomethacin (Indocin). Can cause confusion and headaches.
-Phenylbutazone (Butazolidin) - risk of bone marrow toxicity.”
+### WAL-CLM-RARE-000290 · definition
+- **essentials:** gadolinium · **conditions:** — · **symptoms:** —
+- **claim:** In Rare Earths: Forbidden Cures, Wallach catalogs gadolinium (the book spells it 'Gadolium') -- a rare-earth metal -- in his periodic-table survey. His entry records its natural distribution (5.4 parts-per-million in igneous rocks down to trace levels, up to 70 parts-per-million in land plants) and notes that land animals accumulate gadolinium in bone and liver very quickly after absorption. He records no specific deficiency disease here; the value is completeness -- this is gadolinium's second sourced appearance alongside the Epigenetics catalog, confirming Wallach counts it among the rare-earth minerals taken up by living tissue.
+- **verbatim** (offset 803132): “Gd - Gadolium, a RareEarth, is found
+in igneous rocks at 5.4 ppm; shales at 4.3
+ppm; sandstones at 2.6 ppm; limestones at
+0.7 ppm; land plants at up to 70 ppm by
+Carya spp.; marine animals at 0.06 ppm;
+land animals accumulate gadolium in bone
+and liver very quickly after absorption.”
 
-### WAL-CLM-RARE-000280 · protocol
-- **essentials:** chromium, vanadium, zinc · **conditions:** diabetes · **symptoms:** —
-- **claim:** Wallach's Table 9-1 lists the diabetes drug Chlorpropamide (Diabinese) as unsuitable for older patients (dangerous fluid retention, slow excretion), with the mineral replacement: chromium, vanadium, and zinc (no sugar).
-- **verbatim** (offset 600403): “Diabetes Drugs — Mineral Replacement: Cr, Va, Zn (no sugar, natural or processed):
-Chlorpropramide (Diabinase) - Can cause dangerous fluid retention, is excreted slowly; overdose requires long intensive treatment period.”
+### WAL-CLM-RARE-000291 · definition
+- **essentials:** hafnium · **conditions:** — · **symptoms:** —
+- **claim:** In Rare Earths: Forbidden Cures, Wallach catalogs hafnium -- a trace element -- in his periodic-table survey. His entry records only its natural distribution: 3 parts-per-million in igneous rocks, similar levels in shale and sandstone, down to 0.000008 parts-per-million in sea water, and 0.04 parts-per-million in land animals. He records no specific deficiency disease here; the value is completeness -- this is hafnium's second sourced appearance alongside the Epigenetics catalog, confirming Wallach counts it among the minerals present in living tissue.
+- **verbatim** (offset 814951): “Hf - Hafniumis found in igneous rocks
+at 3 ppm; shale at 2.8 ppm; sandstone at
+3.4 ppm; limestone at 0.3 ppm; sea water
+at 0.000008 ppm; soil at 3.0 ppm; marine
+plants at 0.4 ppm; land plants at 0.01 ppm;
+land animals at 0.04 ppm.”
 
-### WAL-CLM-RARE-000281 · protocol
-- **essentials:** calcium, magnesium, copper, selenium · **conditions:** — · **symptoms:** —
-- **claim:** Wallach's Table 9-1 lists pain relievers unsuitable for older patients — Propoxyphene (Darvon Compound, Darvocet, Wygesic) and Pentazocine (Talwin), both addictive, no more effective than aspirin, with more side effects than morphine and risk of seizures and heart complications — with the mineral replacement: calcium, magnesium, copper, and selenium.
-- **verbatim** (offset 600625): “Pain Relievers — Mineral Replacement: Ca, Mg, Cu, Se:
-Propoxyphene (Darvon Compound, Darvocet, Wygesic). Addictive, no more effective than aspirin, has more side effects than morphine, causes seizures and heart complications.
-Pentazocine (Talwin). Addictive, no more effective than aspirin, has more side effects than morphine, causes seizures and heart complications.”
+### WAL-CLM-RARE-000292 · definition
+- **essentials:** holmium · **conditions:** — · **symptoms:** —
+- **claim:** In Rare Earths: Forbidden Cures, Wallach catalogs holmium -- a rare-earth metal -- in his periodic-table survey. His entry records only its natural distribution: 1.2 parts-per-million in igneous rocks down to trace levels, up to 16 parts-per-million in land plants (Carya species), and 0.5 parts-per-million in land animals, concentrated in bone. He records no specific deficiency disease here; the value is completeness -- this is holmium's second sourced appearance alongside the Epigenetics catalog, confirming Wallach counts it among the rare-earth minerals taken up by living tissue.
+- **verbatim** (offset 825491): “HO- Holmium, a RareEarth, is found
+in igneous rocks at 1.2 ppm; in shale at 0.6
+ppm; sandstone at 0.51 ppm; limestone at
+0.17 ppm; land plants at 16 ppm in Carya”
 
-### WAL-CLM-RARE-000282 · protocol
-- **essentials:** gallium, germanium, selenium, calcium, oxygen, chromium, vanadium, lithium, vitamin-b1, vitamin-b3 · **conditions:** dementia · **symptoms:** —
-- **claim:** Wallach's Table 9-1 lists dementia treatments deemed not effective for older patients — Cyclandelate and Isoxsuprine — with the mineral replacement: gallium, germanium, selenium, calcium, oxygen, chromium, vanadium, lithium, vitamin B-1 (thiamine), and vitamin B-3 (niacin), with no sugar and no caffeine.
-- **verbatim** (offset 600995): “Dementia Treatments — Mineral Replacement: Ga, Ge, Se, Ca, O2, Cr, Va, Li, B-1, B-3 (no sugar, no caffeine):
-Cyclandelate - Not effective.
-Isoxsuprine - Not effective.”
+### WAL-CLM-RARE-000293 · definition
+- **essentials:** lutetium · **conditions:** — · **symptoms:** —
+- **claim:** In Rare Earths: Forbidden Cures, Wallach catalogs lutetium (the book spells it 'Lurecium') -- a rare-earth element -- in his periodic-table survey. His entry records only its natural distribution: 0.5 parts-per-million in igneous rocks down to trace levels, up to 4.5 parts-per-million in land plants, and, in land animals, 0.00012 parts-per-million in soft tissue and 0.08 in bone. He records no specific deficiency disease here; the value is completeness -- this is lutetium's second sourced appearance alongside the Epigenetics catalog, confirming Wallach counts it among the rare-earth minerals present in living tissue.
+- **verbatim** (offset 842384): “Lu- Lurecium, a Rare Earth, is found
+in igneous rocks at 0.5 ppm; shale at 0.33
+ppm; sandstone at 0.096 ppm; limestone
+at 0.067 ppm; land plants at up to 4.5 ppm
+by Carya spp.; marine animals at 0.003
+ppm; land animals at 0.00012 ppm in soft
+tissue and 0.08 ppm in bone.”
 
-### WAL-CLM-RARE-000283 · protocol
-- **essentials:** selenium, manganese, magnesium, vitamin-e, omega-3 · **conditions:** — · **symptoms:** —
-- **claim:** Wallach's Table 9-1 lists the blood thinner Dipyridamole (Persantine) as unsuitable for older patients (not shown effective except with artificial heart valves), with the mineral replacement: selenium, manganese, magnesium, vitamin E, and omega-3 oils.
-- **verbatim** (offset 601164): “Blood Thinners — Mineral Replacement: Se, Mn, Mg, Vit E, Omega 3 Oils:
-Dipyridamole (Persantine). Except in patients with artificial heart valves, not shown to be effective.”
+### WAL-CLM-RARE-000294 · definition
+- **essentials:** niobium · **conditions:** — · **symptoms:** —
+- **claim:** In Rare Earths: Forbidden Cures, Wallach catalogs niobium -- a trace element -- in his periodic-table survey. His entry records only its natural distribution: 20 parts-per-million in igneous rocks, 11 in shale, down to 0.00001 parts-per-million in sea water, with 0.3 parts-per-million in land plants. He records no specific deficiency disease here; the value is completeness -- this is niobium's second sourced appearance alongside the Epigenetics catalog, confirming Wallach counts it among the minerals present in living tissue.
+- **verbatim** (offset 855171): “limestone 0.3 ppm; sea
+water 0.00001 ppm; land plants 0.3 ppm
+and marine animals 0.001 ppm.”
 
-### WAL-CLM-RARE-000284 · protocol
-- **essentials:** calcium, magnesium, boron, lithium · **conditions:** muscle_cramps · **symptoms:** —
-- **claim:** Wallach's Table 9-1 lists muscle relaxants/spasm relievers unsuitable for older patients — Cyclobenzaprine (Flexeril), Orphenidrine (Norflex, Norgesic), Methocarbamol (Robaxin), and Carisoprodol (Soma), causing dizziness, drowsiness, fainting and falls — with the mineral replacement: calcium, magnesium, boron, and lithium.
-- **verbatim** (offset 601339): “Muscle Relaxants, Spasm Relievers — Mineral Replacement: Ca, Mg, B, Li:
-Cyclobenzaprine (Flexeril) - Causes dizziness, drowsiness, fainting, falls.
-Orphenidrine (Norflex, Norgesic) - Causes dizziness, drowsiness, fainting, falls.
-Methocarbamol (Roboxin) - Causes dizziness, drowsiness, falls.
-Carisoprodol (Soma) - Potential for nervous system toxicity is greater than potential benefit.”
+### WAL-CLM-RARE-000295 · definition
+- **essentials:** rhenium · **conditions:** — · **symptoms:** —
+- **claim:** In Rare Earths: Forbidden Cures, Wallach catalogs rhenium -- a trace element -- in his periodic-table survey. His entry records its natural distribution (0.005 parts-per-million in igneous rocks, trace levels in marine plants and animals) and notes that land animals accumulate rhenium in thyroid tissue. He records no specific deficiency disease here; the value is completeness -- this is rhenium's second sourced appearance alongside the Epigenetics catalog, confirming Wallach counts it among the minerals taken up by living tissue.
+- **verbatim** (offset 897522): “Re - Rhenium is found in igneous
+rocks at 0.005 ppm; marine plants at 0.014
+ppm; marine animals at 0.0005 to 0.006
+ppm; land animals accumulate Re in the
+thyroid tissue.”
 
-### WAL-CLM-RARE-000285 · protocol
-- **essentials:** calcium, lithium · **conditions:** — · **symptoms:** —
-- **claim:** Wallach's Table 9-1 lists the anti-nausea/anti-vomiting drug Trimethobenzamide (Tigan) as unsuitable for older patients (not very effective; causes drowsiness, dizziness and falls), with the mineral replacement: bismuth, calcium, and lithium.
-- **verbatim** (offset 601728): “Anti-Nausea Drugs, Anti-Vomiting Drugs — Mineral Replacement: Bi, Ca, Li:
-Trimethobenzamide (Tigan). Not very effective. Causes drowsiness, dizziness and falls.”
+### WAL-CLM-RARE-000296 · definition
+- **essentials:** scandium · **conditions:** — · **symptoms:** —
+- **claim:** In Rare Earths: Forbidden Cures, Wallach catalogs scandium -- a trace element -- in his periodic-table survey. His entry records its natural distribution (22 parts-per-million in igneous rock down to trace levels in sea water) and notes that in land animals it concentrates in the heart and bone. He records no specific deficiency disease here; the value is completeness -- this is scandium's second sourced appearance alongside the Epigenetics catalog, confirming Wallach counts it among the minerals taken up by living tissue.
+- **verbatim** (offset 902235): “Sc - Scandium is found in igneous rock
+at 22 ppm; shales 13 ppm; sandstone and
 
-### WAL-CLM-RARE-000286 · protocol
-- **essentials:** calcium, magnesium, omega-3, vitamin-b6 · **conditions:** hypertension · **symptoms:** —
-- **claim:** Wallach's Table 9-1 lists antihypertensive drugs unsuitable for older patients — Propranolol (Inderal), Methyldopa (Aldoril, Aldomet), and Reserpine (Regroton, Hydropres), causing mental/physical slowing or depression — with the mineral replacement: calcium, magnesium, omega-3, and vitamin B-6 (pyridoxine).
-- **verbatim** (offset 601890): “Antihypertensive — Mineral Replacement: Ca, Mg, Omega 3, B6:
-Propranolol (Inderal). Feeling slowed mentally and physically.
-Methyldopa (Aldoril, Aldomet). Feeling mentally and physically slowed.
-Reserpine (Regroton, Hydropres). Depression.”
+limestone at 1 ppm; sea water at 0.000004
+ppm; soils at 7 ppm;”
+
+### WAL-CLM-RARE-000297 · definition
+- **essentials:** tantalum · **conditions:** — · **symptoms:** —
+- **claim:** In Rare Earths: Forbidden Cures, Wallach catalogs tantalum -- a trace element -- in his periodic-table survey. His entry records its natural distribution (2 parts-per-million in igneous rocks down to trace levels) and notes that marine animals accumulate tantalum up to 410 parts-per-million. He records no specific deficiency disease here; the value is completeness -- this is tantalum's second sourced appearance alongside the Epigenetics catalog, confirming Wallach counts it among the minerals taken up by living organisms.
+- **verbatim** (offset 957297): “Ta - Tantalum is found in igneous rocks
+at 2 ppm; shale at 0.8 ppm; sandstone and
+limestone at 0.05 ppm; sea water at
+0.0000025 ppm;”
+
+### WAL-CLM-RARE-000298 · definition
+- **essentials:** terbium · **conditions:** — · **symptoms:** —
+- **claim:** In Rare Earths: Forbidden Cures, Wallach catalogs terbium -- a rare-earth metal -- in his periodic-table survey. His entry records only its natural distribution: 0.9 parts-per-million in igneous rock down to trace levels, 0.0015 in land plants, and 0.0004 parts-per-million in land animals, accumulating in bone. He records no specific deficiency disease here; the value is completeness -- this is terbium's second sourced appearance alongside the Epigenetics catalog, confirming Wallach counts it among the rare-earth minerals taken up by living tissue.
+- **verbatim** (offset 957475): “Tb -terbium is found in igneous rock
+at 0.9 ppm; shale at 0.58 ppm; sandstone
+at 0.41 ppm; limestone at 0.071 ppm; land
+plants at 0.0015 ppm; marine animals at
+0.006 to 0.01 ppm; land animals at 0.0004
+ppm (accumulates in mammalian bone).”
+
+### WAL-CLM-RARE-000299 · definition
+- **essentials:** titanium · **conditions:** — · **symptoms:** —
+- **claim:** In Rare Earths: Forbidden Cures, Wallach catalogs titanium -- a trace element -- in his periodic-table survey. His entry records only its natural distribution: 5,700 parts-per-million in igneous rocks, 5,000 in soils, down to 0.001 parts-per-million in sea water, accumulating in plankton (12 to 80 parts-per-million in marine plants) and 0.2 parts-per-million in land animals. He records no specific deficiency disease here; the value is completeness -- this is titanium's second sourced appearance alongside the Epigenetics catalog, confirming Wallach counts it among the minerals present in living tissue.
+- **verbatim** (offset 958247): “sea water at 0.001 ppm;
+soils at 5,000 ppm; marine plants at 12-80
+ppm (accumulates in plankton); land plants
+
+at 1 ppm; marine animals at 0.2 to 20 ppm”
+
+### WAL-CLM-RARE-000300 · definition
+- **essentials:** zirconium · **conditions:** — · **symptoms:** —
+- **claim:** In Rare Earths: Forbidden Cures, Wallach catalogs zirconium (the book's optical-character-recognition renders it 'ZY') -- a trace element -- in his periodic-table survey. His entry records only its natural distribution: 165 parts-per-million in igneous rocks, 220 in sandstone, 300 in soils, down to 0.000022 parts-per-million in sea water, and 0.3 parts-per-million in land animals. He records no specific deficiency disease here; the value is completeness -- this is zirconium's second sourced appearance alongside the Epigenetics catalog, confirming Wallach counts it among the minerals present in living tissue.
+- **verbatim** (offset 970613): “limestone at 19 ppm;
+fresh watre at 0.0026; sea water at 0.000022
+ppm; soils at 300 ppm; marine plants at 20
+ppm; land plants at 0.64 ppm;”
+
+### WAL-CLM-RARE-000301 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach documents the full mineral content of his own plant-derived colloidal mineral supplement in a spark-source mass-spectrographic analysis of Humic Shale (Table 10-5; Humic Shale is a plant-derived colloidal nutritional supplement produced under Consent Decree by the U.S. Department of Health and Human Services; WAL INC, Golden, Colorado). The suspended-solids concentration is 38 grams per liter, and the extract contains no less than 60 plant-derived colloidal minerals at about 98 percent bioavailability. Critically for the trace and rare-earth minerals, the analysis lists a concentration for every one of them (in parts-per-million unless noted): the rare earths tantalum 0.6, lutetium 0.05, ytterbium 2, thulium 0.02, erbium 0.1, holmium 0.1, dysprosium 0.5, terbium 0.1, gadolinium 0.1, europium 0.1, samarium 0.8, neodymium 0.8, praseodymium 0.4, cerium 4.0, lanthanum 2.0, scandium 0.1 and yttrium 4.0; the trace metals barium 0.3, cesium 0.1, tin 0.03, silver 0.2, niobium 0.02, zirconium 0.2, rubidium 0.8, gallium 0.1, titanium 1.0 and lithium 10.0; plus the major and minor minerals iron 43, zinc 47, manganese 36, nickel 30, copper 20, cobalt 9, selenium 0.9, germanium under 0.01, chromium 0.4, vanadium 0.1, iodine 0.1, bromine 0.2, boron 0.2, beryllium 0.1 and the bulk electrolytes at roughly 1 gram per liter. This table is direct evidence that Wallach's supplement delivers the complete mineral spectrum -- including every rare earth -- rather than the handful found in conventional multivitamins.
+- **verbatim** (offset 670255): “Humic Shale is a plant derived colloidal nutritional supplement produced under Consent Decree by the”
 

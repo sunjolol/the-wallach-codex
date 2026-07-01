@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 229 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 230 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 19:47 UTC-05:00 · round-close · knowledge/corpus
+SESSION 30 b2 — trace-mineral audit + back-fill. Found ~14 canon rare-earth/trace elements tossed from the Rare Earths encyclopedia + 2 never-captured composition/dose tables; all to tier-1 (+17). Dy/Er/Gd/Be now 2-source. kv 204, 985 claims. Board 31/31, probe green.
+  ↳ Luneth-directed audit: Rare Earths Ch11 encyclopedia had skipped beryllium/dysprosium/erbium/gadolinium/hafnium/holmium/lutetium/niobium/rhenium/scandium/tantalum/terbium/titanium/zirconium (the '2-3 words each' batch). Back-filled as 2nd-source distribution claims (RARE-287..300). Also captured Wallach's colloidal-mineral composition tables (Humic Shale Table 10-5 + Epigenetics) proving his supplement carries all 60 minerals incl. every rare earth, + his recommended daily-intake dose table (EPIGEN-088/089, RARE-301). Back-fill + forward pass converge to 2 sources per element. Visual-verify owed.
 
 ## 2026-06-30 19:21 UTC-05:00 · round-close · knowledge/corpus
 SESSION 30 b1 — Epigenetics Ch18 minerals Dy→H (+9: Dysprosium/Erbium/Europium/Fluorine/Iron/Gallium/Gadolinium/Germanium/Hydrogen). New policy: capture EVERY canon trace/rare mineral even thin/geology-only. Europium now 2-source. kv 203, claims 968. Board 31/31, probe green.
@@ -801,7 +805,3 @@ Phase ε.1 — sealed Wallach corpus surfaced in the Knowledge drawer: Essential
 ## 2026-06-24 14:25 UTC-04:00 · milestone · eden/corpus
 Phase δ: derived indices implemented + sealed (knowledge_version=16). 5 indices from 94 DDDL claims: essentials(90)/conditions(64)/symptoms(8)/other-substances(1)/consistency(1). verify check #8 (re-derive byte-compare) now active. Board 29/29.
   ↳ corpus_derive.py fully implemented (was stub) + deterministic. Pure top-level slug→entry maps so check #4 (other-substances ∩ canon = ∅) is real. Index layer can't drift from claims. NEXT: Phase ε surface in dashboard (Knowledge drawer Essential Deep-Dive + Condition view) — lands deferred core/schemas/corpus.ts + embed build + state/corpus.ts + probe — so Luneth can test.
-
-## 2026-06-24 14:14 UTC-04:00 · round-close · eden/corpus
-Phase β.10-β.12: DDDL disease-encyclopedia sweep — 75→94 claims (knowledge_version=15). ~25 common conditions (angina, BPH, kidney stones, Bell's palsy, menopause, colds, arteriosclerosis, anxiety, ...). Board 29/29.
-  ↳ Appendix B alphabetical encyclopedia (A-C range), common/high-value conditions only. Iconic: arteriosclerosis=magnesium-deficiency calcification + vit-D angiotoxicity; kidney stones from Ca/Mg deficiency ('stones come from your own bones'); BPH from zinc deficiency; menopause estrogen contraindication. 94 claims span all four essential categories + ~25 conditions / 12 of 13 kinds. SCOPE: encyclopedia long tail (~175 obscure entries) remains. DECISION: proceed to Phase δ/dashboard test, or grind full encyclopedia first.
