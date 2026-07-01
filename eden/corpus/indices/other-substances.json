@@ -3132,7 +3132,7 @@
   },
   "fluoride": {
     "display_name": "Fluoride",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "dose": [
         "WAL-CLM-LETS-000051"
@@ -3140,6 +3140,9 @@
       "mechanism": [
         "WAL-CLM-RARE-000133",
         "WAL-CLM-RARE-000134"
+      ],
+      "toxicity_sign": [
+        "WAL-CLM-EPIGEN-000082"
       ]
     },
     "conditions_treated": [
@@ -3151,6 +3154,7 @@
       "thyroid_cancer"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]

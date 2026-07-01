@@ -3,9 +3,10 @@
     "display_name": "Hydrogen",
     "canon_slug": "hydrogen",
     "category": "mineral",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "mechanism": [
+        "WAL-CLM-EPIGEN-000087",
         "WAL-CLM-RARE-000135"
       ],
       "protocol": [
@@ -21,6 +22,7 @@
     ],
     "interacts_with": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -1814,10 +1816,11 @@
     "display_name": "Germanium",
     "canon_slug": "germanium",
     "category": "mineral",
-    "claim_count": 16,
+    "claim_count": 17,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000012",
+        "WAL-CLM-EPIGEN-000086",
         "WAL-CLM-RARE-000011"
       ],
       "dose": [
@@ -1866,6 +1869,7 @@
       "immune_depression",
       "infertility",
       "leukemia",
+      "osteoarthritis",
       "osteoporosis"
     ],
     "interacts_with": [
@@ -1890,6 +1894,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -1898,7 +1903,7 @@
     "display_name": "Iron",
     "canon_slug": "iron",
     "category": "mineral",
-    "claim_count": 23,
+    "claim_count": 24,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000022"
@@ -1906,6 +1911,7 @@
       "deficiency_sign": [
         "WAL-CLM-DDDL-000019",
         "WAL-CLM-DDDL-000020",
+        "WAL-CLM-EPIGEN-000083",
         "WAL-CLM-LETS-000014"
       ],
       "diagnostic_pattern": [
@@ -2023,8 +2029,10 @@
       "liver_cirrhosis",
       "menorrhagia",
       "nervous_heart",
+      "obesity",
       "pica",
-      "schizophrenia"
+      "schizophrenia",
+      "tachycardia"
     ],
     "interacts_with": [
       "calcium",
@@ -2054,6 +2062,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -3410,31 +3419,44 @@
     "display_name": "Dysprosium",
     "canon_slug": "dysprosium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-EPIGEN-000079"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "epigenetics"
+    ]
   },
   "erbium": {
     "display_name": "Erbium",
     "canon_slug": "erbium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-EPIGEN-000080"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "epigenetics"
+    ]
   },
   "europium": {
     "display_name": "Europium",
     "canon_slug": "europium",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "mechanism": [
+        "WAL-CLM-EPIGEN-000081",
         "WAL-CLM-RARE-000140"
       ]
     },
@@ -3442,6 +3464,7 @@
     "conditions_treated": [],
     "interacts_with": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -3449,9 +3472,10 @@
     "display_name": "Gallium",
     "canon_slug": "gallium",
     "category": "mineral",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "mechanism": [
+        "WAL-CLM-EPIGEN-000084",
         "WAL-CLM-RARE-000132"
       ],
       "protocol": [
@@ -3475,6 +3499,7 @@
       "vitamin-b3"
     ],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -3482,12 +3507,18 @@
     "display_name": "Gadolinium",
     "canon_slug": "gadolinium",
     "category": "mineral",
-    "claim_count": 0,
-    "claims_by_kind": {},
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-EPIGEN-000085"
+      ]
+    },
     "deficiency_signs": [],
     "conditions_treated": [],
     "interacts_with": [],
-    "books_cited": []
+    "books_cited": [
+      "epigenetics"
+    ]
   },
   "hafnium": {
     "display_name": "Hafnium",

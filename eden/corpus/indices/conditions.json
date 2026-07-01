@@ -627,7 +627,7 @@
   },
   "anemia": {
     "display_name": "Anemia",
-    "claim_count": 28,
+    "claim_count": 29,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
@@ -640,6 +640,7 @@
         "WAL-CLM-EPIGEN-000052",
         "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-EPIGEN-000077",
+        "WAL-CLM-EPIGEN-000083",
         "WAL-CLM-LETS-000003",
         "WAL-CLM-LETS-000008",
         "WAL-CLM-LETS-000010",
@@ -1069,7 +1070,7 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 26,
+    "claim_count": 27,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
@@ -1080,6 +1081,7 @@
         "WAL-CLM-EPIGEN-000032",
         "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-EPIGEN-000063",
+        "WAL-CLM-EPIGEN-000086",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000008",
         "WAL-CLM-LETS-000011",
@@ -2242,7 +2244,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 58,
+    "claim_count": 59,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -2281,6 +2283,7 @@
         "WAL-CLM-EPIGEN-000033",
         "WAL-CLM-EPIGEN-000043",
         "WAL-CLM-EPIGEN-000046",
+        "WAL-CLM-EPIGEN-000086",
         "WAL-CLM-LETS-000030",
         "WAL-CLM-RARE-000011",
         "WAL-CLM-RARE-000227",
@@ -8653,12 +8656,13 @@
   },
   "obesity": {
     "display_name": "Obesity",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000011"
       ],
       "deficiency_signs": [
+        "WAL-CLM-EPIGEN-000083",
         "WAL-CLM-RARE-000257"
       ],
       "protocols": [
@@ -8666,6 +8670,7 @@
       ]
     },
     "essentials_involved": [
+      "iron",
       "omega-3",
       "potassium",
       "vanadium"
@@ -8816,7 +8821,7 @@
   },
   "osteoarthritis": {
     "display_name": "Osteoarthritis",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000050"
@@ -8825,7 +8830,8 @@
         "WAL-CLM-EPIGEN-000031",
         "WAL-CLM-EPIGEN-000032",
         "WAL-CLM-EPIGEN-000034",
-        "WAL-CLM-EPIGEN-000061"
+        "WAL-CLM-EPIGEN-000061",
+        "WAL-CLM-EPIGEN-000086"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000009"
@@ -8833,6 +8839,7 @@
     },
     "essentials_involved": [
       "calcium",
+      "germanium",
       "vitamin-a",
       "vitamin-d",
       "vitamin-k"
@@ -9519,7 +9526,7 @@
   },
   "pica": {
     "display_name": "Pica",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-RARE-000036"
@@ -9531,6 +9538,7 @@
         "WAL-CLM-RARE-000211"
       ],
       "deficiency_signs": [
+        "WAL-CLM-EPIGEN-000083",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000014",
         "WAL-CLM-LETS-000023"
@@ -9550,6 +9558,7 @@
       "lead"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -10981,16 +10990,18 @@
   },
   "tachycardia": {
     "display_name": "Tachycardia",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000038"
+        "WAL-CLM-EPIGEN-000038",
+        "WAL-CLM-EPIGEN-000083"
       ],
       "protocols": [
         "WAL-CLM-LETS-000443"
       ]
     },
     "essentials_involved": [
+      "iron",
       "selenium",
       "vitamin-b1",
       "vitamin-b3",

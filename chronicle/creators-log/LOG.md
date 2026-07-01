@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 228 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 229 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 19:21 UTC-05:00 · round-close · knowledge/corpus
+SESSION 30 b1 — Epigenetics Ch18 minerals Dy→H (+9: Dysprosium/Erbium/Europium/Fluorine/Iron/Gallium/Gadolinium/Germanium/Hydrogen). New policy: capture EVERY canon trace/rare mineral even thin/geology-only. Europium now 2-source. kv 203, claims 968. Board 31/31, probe green.
+  ↳ Luneth ruled one-claim-per-element for trace/rare minerals (completeness signals nothing missed). Fluorine dual-stance (essential + fluoridation-cancer) approved. Gallium mis-filed non-canon→other_sub, caught by seal gate #4, recovered via git-checkout revert + clean re-seal. Iron/Germanium enriched; Dy/Er/Gd = honest thin 'definition' claims. Visual-verify owed before b2 (Hf→La incl iodine-thyroid; then charged Lithium).
 
 ## 2026-06-30 18:42 UTC-05:00 · milestone · knowledge/corpus
 SESSION 29 CANCER BACK-FIX — promoted the LPD Ch10 cancer deep-dive (24 claims) from search-only → TIER-1 per the policy reversal; Luneth audited each. +12 cancer-subtype conditions surfaced; Cancer view 34→58. Harmonized colorectal_cancer→colon_cancer. kv 202, board 31/31.
@@ -801,7 +805,3 @@ Phase δ: derived indices implemented + sealed (knowledge_version=16). 5 indices
 ## 2026-06-24 14:14 UTC-04:00 · round-close · eden/corpus
 Phase β.10-β.12: DDDL disease-encyclopedia sweep — 75→94 claims (knowledge_version=15). ~25 common conditions (angina, BPH, kidney stones, Bell's palsy, menopause, colds, arteriosclerosis, anxiety, ...). Board 29/29.
   ↳ Appendix B alphabetical encyclopedia (A-C range), common/high-value conditions only. Iconic: arteriosclerosis=magnesium-deficiency calcification + vit-D angiotoxicity; kidney stones from Ca/Mg deficiency ('stones come from your own bones'); BPH from zinc deficiency; menopause estrogen contraindication. 94 claims span all four essential categories + ~25 conditions / 12 of 13 kinds. SCOPE: encyclopedia long tail (~175 obscure entries) remains. DECISION: proceed to Phase δ/dashboard test, or grind full encyclopedia first.
-
-## 2026-06-24 14:01 UTC-04:00 · round-close · eden/corpus
-Phase β.8+β.9: DDDL aminos/fatty-acids + more diseases — 62→75 claims (knowledge_version=12). ALL FOUR essential categories now covered; 12 of 13 kinds. Taurine adjudication evidence captured. Board 29/29.
-  ↳ β.8 closed fatty acids (EFA def/prostaglandins/infant deficiency) + aminos (Wallach adds arginine/taurine/tyrosine→cancer/macular/goiter — taurine in other_substances + tagged for the Cysteine-Taurine canon audit; tryptophan/phenylalanine/methionine functions; cholesterol→vit-D/hormones). β.9: infertility, muscular dystrophy+Keshan (selenium), muscle cramps (Ca/Mg), insomnia. 75 claims span minerals+vitamins+aminos+fatty-acids + condition protocols. NEXT: remaining DDDL diseases, then Phase γ (Rare Earths next).
