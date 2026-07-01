@@ -802,9 +802,10 @@
     "display_name": "Potassium",
     "canon_slug": "potassium",
     "category": "mineral",
-    "claim_count": 17,
+    "claim_count": 18,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000094",
         "WAL-CLM-LETS-000025",
         "WAL-CLM-RARE-000155"
       ],
@@ -969,6 +970,7 @@
       "vitamin-e"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -2071,9 +2073,10 @@
     "display_name": "Iodine",
     "canon_slug": "iodine",
     "category": "mineral",
-    "claim_count": 17,
+    "claim_count": 18,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000093",
         "WAL-CLM-LETS-000013",
         "WAL-CLM-RARE-000150"
       ],
@@ -2170,6 +2173,7 @@
       }
     ],
     "conditions_treated": [
+      "cretinism",
       "fibrocystic_breast_disease",
       "goiter",
       "graves_disease",
@@ -2189,6 +2193,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -3534,9 +3539,10 @@
     "display_name": "Hafnium",
     "canon_slug": "hafnium",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "definition": [
+        "WAL-CLM-EPIGEN-000090",
         "WAL-CLM-RARE-000291"
       ]
     },
@@ -3544,6 +3550,7 @@
     "conditions_treated": [],
     "interacts_with": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -3551,9 +3558,10 @@
     "display_name": "Holmium",
     "canon_slug": "holmium",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "definition": [
+        "WAL-CLM-EPIGEN-000092",
         "WAL-CLM-RARE-000292"
       ]
     },
@@ -3561,6 +3569,7 @@
     "conditions_treated": [],
     "interacts_with": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -3568,9 +3577,10 @@
     "display_name": "Lanthanum",
     "canon_slug": "lanthanum",
     "category": "mineral",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "mechanism": [
+        "WAL-CLM-EPIGEN-000095",
         "WAL-CLM-RARE-000157",
         "WAL-CLM-RARE-000158"
       ]
@@ -3582,6 +3592,7 @@
     ],
     "interacts_with": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },

@@ -4916,18 +4916,22 @@
   },
   "mercury": {
     "display_name": "Mercury",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-RARE-000137",
         "WAL-CLM-RARE-000138",
         "WAL-CLM-RARE-000139"
+      ],
+      "toxicity_sign": [
+        "WAL-CLM-EPIGEN-000091"
       ]
     },
     "conditions_treated": [
       "minamata_disease"
     ],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },

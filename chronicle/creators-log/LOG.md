@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 232 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 233 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 21:28 UTC-05:00 · round-close · knowledge/corpus
+SESSION 31 b1 — Epigenetics Ch18 minerals Hf→La (+6: Hafnium/Mercury[tox]/Holmium/Iodine/Potassium/Lanthanum). New condition Cretinism; iodine deficiency-only + potassium cond=[] (Luneth-ruled); Hf/Ho now 2-source. kv205 · claims 991 · 468 conditions · board 31/31.
+  ↳ WAL-CLM-EPIGEN-000090..095. Skipped In/Ir/Kr (non-canon inert); stopped before charged Lithium. Verbatims snapped to exact book bytes; render probe 0 errors.
 
 ## 2026-06-30 21:05 UTC-05:00 · design-decision · knowledge-drawer
 SESSION 30 Feature B — openable books in the Corpus tab. Clicking a book opens a browse of all its tier-1 claims, finally surfacing the composition/dose tables that had no essential/condition home. Added an embed tier field to hold back search-only. Luneth signed off.
@@ -801,7 +805,3 @@ Phase γ.2 — Rare Earths batch 2: 5 claims sealed (kv 18->19, 112 total). B12/
 ## 2026-06-24 16:41 UTC-04:00 · milestone · eden/corpus
 Phase γ.1 — Rare Earths first batch: 13 claims sealed (kv 17->18, 94->107 total). Thesis-heavy book #2 (minerals-as-currency, selenium->cystic-fibrosis discovery, soil depletion, longevity, germanium deficiency/dose/food). Luneth approved the format. Board 30/30, probe green.
   ↳ First extraction from book #2 (the flagship). 13 claims WAL-CLM-RARE-000001..13; definition x4, mechanism x5, deficiency_sign, dose, food_source, personal_anecdote. New index conditions cystic_fibrosis + heat_stroke. Every verbatim snapped to exact book bytes first pass, steered clear of OCR hazards. Luneth approved claim_text+verbatim as a copyright-scrub hedge + drift-detection + UX (memory claim-summary-verbatim-format). corpus_seal PASS kv=18; build OK; invariants 30/30; render_probe_knowledge PASS, 0 page errors.
-
-## 2026-06-24 16:21 UTC-04:00 · round-close · dashboard/knowledge
-Phase ε.2 — Conditions tab (64 conditions, role-grouped deep view w/ doses+citations); extracted corpus render helpers to views/knowledge-corpus.ts + fixed 2 switch-exhaustiveness errors; both view files lint-clean. Phase ε COMPLETE; board 30/30.
-  ↳ New Conditions tab over indices/conditions.json reuses the ε.1 claim/chip rendering; selectedCondition threaded through renderTab/renderShell/mount. Luneth-verified. Then the approved cleanup: extracted corpus+condition render helpers into a sibling view module (knowledge.ts 33.7KB->26KB, back under max-lines); required allowing intra-views imports in eslint-plugin-boundaries (one-way views->state->core flow unchanged); fixed the 2 pre-existing switch-exhaustiveness errors. Build OK, eslint 0 problems, invariants 30/30, probe PASS. next-chunk.md: gate passed -> resume extraction.

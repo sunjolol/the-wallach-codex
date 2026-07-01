@@ -2994,9 +2994,10 @@
   },
   "chronic_fatigue": {
     "display_name": "Chronic Fatigue",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-EPIGEN-000095",
         "WAL-CLM-RARE-000157"
       ],
       "protocols": [
@@ -3014,6 +3015,7 @@
       "rosemary"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -3557,6 +3559,22 @@
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor"
+    ]
+  },
+  "cretinism": {
+    "display_name": "Cretinism",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-EPIGEN-000093"
+      ]
+    },
+    "essentials_involved": [
+      "iodine"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "epigenetics"
     ]
   },
   "criminal_behavior": {
@@ -5335,7 +5353,7 @@
   },
   "goiter": {
     "display_name": "Goiter",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000147",
@@ -5343,6 +5361,7 @@
         "WAL-CLM-RARE-000149"
       ],
       "deficiency_signs": [
+        "WAL-CLM-EPIGEN-000093",
         "WAL-CLM-LETS-000013",
         "WAL-CLM-RARE-000150"
       ],
@@ -5375,6 +5394,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -5469,9 +5489,10 @@
   },
   "hashimotos_disease": {
     "display_name": "Hashimotos Disease",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-EPIGEN-000093",
         "WAL-CLM-RARE-000150"
       ]
     },
@@ -5480,6 +5501,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -6340,13 +6362,14 @@
   },
   "hypothyroidism": {
     "display_name": "Hypothyroidism",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000023"
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000063",
+        "WAL-CLM-EPIGEN-000093",
         "WAL-CLM-LETS-000013",
         "WAL-CLM-RARE-000150"
       ],
