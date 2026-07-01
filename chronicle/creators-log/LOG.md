@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 264 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 265 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 18:19 UTC-05:00 · session-end · session
+SESSION 36 CLOSE — anomaly-scan campaign COMPLETE (all reals fixed corpus-wide, 10 FPs baselined, touched verbatims cleaned) + LETS verbatim campaign STARTED (24 FINDABLE claims, 283->258). kv 229, board 32/32, clean tree. RESUME = continue FINDABLE extends then 138 NOT_FINDABLE.
 
 ## 2026-07-01 18:13 UTC-05:00 · round-close · corpus/lets
 SESSION 36 LETS verbatim campaign 2nd increment: 19 more FINDABLE claims extended to name their conditions (Ch10 heading pattern). violations 278->258 (LETS 219->199). Session total 24 claims, 283->258. seal kv 229, board 32/32, probe PASS.
@@ -783,7 +786,3 @@ Phase γ.3 batch 21 — Rare Earths Ch.11 catalog Co/Cobalt + Cr/Chromium (p305-
 ## 2026-06-25 02:27 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 20 — Rare Earths Ch.11 catalog C/Carbon EFA + Ce + Cl (p291,304): 5 claims (RARE-109..113), kv 48→49, corpus 207
   ↳ Held Carbon/EFA claims + Ce + Cl. RARE-109 only 2 of 3 PUFAs truly essential (arachidonic synthesized from linoleic); RARE-110 EFA -> prostaglandins (BP/heart/CNS); RARE-111 EFA deficiency infants poor growth/eczema/infection + animal atherosclerosis; RARE-112 cerium nitrate topical burn disinfectant; RARE-113 chloride essential, raw material for stomach HCl (pepsin/B12/mineral absorption). EFA maps to omega-3/omega-6. Cd skipped (toxic, thin); Co held (B12). conditions 80->81 (+eczema, burns). Board 30/30, build OK, knowledge probe green. Luneth-approved.
-
-## 2026-06-25 02:20 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 19 — Rare Earths Ch.11 catalog Ca/Calcium (p293-299): 5 claims (RARE-104..108), kv 47→48, corpus 202
-  ↳ Calcium (flagship element) catalog chunk. Reflowed only the Ca function lede (hyphen-breaks); other 4 verbatims snapped via collapser. RARE-104 calcium essential to all organisms + function; RARE-105 no fewer than 147 calcium-deficiency diseases (Table 11-10: osteoporosis→tetany); RARE-106 metallic Ca absorption <=10% vs organic colloidal far better; RARE-107 McCarron 1980 chronic calcium deficiency -> hypertension (58,218-nurse study, risk higher <800mg/day); RARE-108 colorectal cancer +300% as calcium fell 160->24.9 mg/100kcal (19-yr, 1,954 men). conditions 77->80 (+colorectal_cancer, premenstrual_syndrome, tetany). Board 30/30, build OK, knowledge probe green. Luneth-approved. DEFERRED: Tables 11-9/-10/-11 raw OCR.
