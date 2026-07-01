@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 244 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 245 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 08:38 UTC-05:00 · round-close · knowledge-drawer+corpus
+SESSION 33 b2 — RARE remediation begins: copper 000122 SPLIT to Wallach's real Table 11-13 list. Over-mapped summary (17 conds, 0 named) → part A 000122 (8, incl thyroid_disease orphan) + new 000302 (9). violations 413→396 (RARE 125→108), orphans 104→103, kv 216, board 32/32.
+  ↳ The RARE copper claim was a one-line summary carrying the whole deficiency table's 17 conditions, none named. Re-anchored to Wallach's actual copper-deficiency list (names all 17, incl thyroid_disease orphan via 'Hypo and hyper thyroid' + the Bad Seeds behavioral cluster spelled out). OCR Hemias->Hernias. Split at Liver cirrhosis: 000122 part A + new WAL-CLM-RARE-000302 part B; all 17 links preserved. Also spawned a task to merge the pms/premenstrual_syndrome duplicate slug. b1 (EPIGEN finish) visually verified by Luneth. Board 32/32, probe PASS. Next: chromium 000116 + calcium 000105 tables, then the ~59 remaining RARE claims.
 
 ## 2026-07-01 08:13 UTC-05:00 · round-close · knowledge-drawer+corpus
 SESSION 33 b1 — EPIGEN verbatim-remediation FINISHED (14→0). Full calcium-table + nitrogen-column + B6-OCR source reflows; 2 Luneth-approved splits (B6 000108, calcium 000109); iron/nitrogen re-anchor. violations 427→413, orphans 105→104, kv 215, claims 1005, board 32/32.
@@ -795,7 +799,3 @@ Session close — Phase γ.3 Rare Earths OCR-correction: 22 new claims (RARE 18�
 ## 2026-06-24 20:27 UTC-04:00 · design-decision · knowledge
 Rare Earths Ch.5 'Divine Hunger' ruled whole-chapter-to-fringe by Luneth: the cannibalism/vampire/werewolf-as-extreme-mineral-deficiency thesis is off-mission, kept OUT of corpus + dashboard, recorded in full for his study (knowledge/fringe-knowledge/).
   ↳ Wallach adds a 4th theory of cannibalism's origin — 'the ultimate extension of pica (bizarre cravings and behavior resulting from extreme mineral deficiencies)' — and applies it to Aztec cannibalism (soil depletion), Dracula/vampires (Vlad, Gilles de Rais, Bathory), werewolves (Windigo/Cree), and modern serial killers ('the vampires and werewolves of our time' — Maybrick/Jack-the-Ripper, Chikatilo, Gein, Hoyt), concluding depleted soils => rising pica => more serial killers 'at a geometric rate.' Luneth: 'VERY likely has some merit but so off the wall and not helpful... would only serve as a detriment for the average user.' Recorded faithfully (thesis verbatims + named examples; gory anecdotes summarized, not reproduced); read via PDF text layer only (graphic content). Cross-refs criminal-behavior.md (Gein/Hoyt also in Ch.6). No corpus change — book text retains Ch.5, no claims, kv stays 26.
-
-## 2026-06-24 20:21 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 6: Rare Earths end-of-Ch.4 deficiency-behavior cluster — 3 claims (kv 25→26, RARE 37→40, 134 total). Potassium/diuretics, chromium+vanadium craving signs, teen-pica. Luneth ruled Ch.5 'Divine Hunger' whole-chapter-to-fringe (next).
-  ↳ WAL-CLM-RARE-000038 (potassium deficiency uncommon from diet but common with diuretics for BP/weight loss — interaction), 000039 (the 'munchies' + alcohol + chocolate cravings = chromium and vanadium deficiency signs — deficiency_sign), 000040 (preteen/teen snack-food/drug/smoking/alcohol infatuation = pica from mineral deficiency — mechanism). Reflow fix: R2 had a spurious OCR blank line mid-sentence ('cravings for alcohol and' | 'candy cravings'); added a sentence-aware merge (join a paragraph into the prior when the prior doesn't end in .!?"). Luneth's Ch.5 ruling: the 'divine hunger' thesis (cannibalism/vampires/werewolves as mineral deficiency) is ABSOLUTELY out of the dashboard — likely has some merit but too off-the-wall + off-mission, a detriment to the average user; record the full Wallach stance in its own fringe-knowledge file for his later study. Next chunk does that (no corpus change — book text retains Ch.5; fringe doc only).

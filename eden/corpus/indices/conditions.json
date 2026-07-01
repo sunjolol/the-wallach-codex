@@ -647,6 +647,7 @@
         "WAL-CLM-LETS-000014",
         "WAL-CLM-LETS-000027",
         "WAL-CLM-LETS-000035",
+        "WAL-CLM-RARE-000122",
         "WAL-CLM-RARE-000193",
         "WAL-CLM-RARE-000231",
         "WAL-CLM-RARE-000234",
@@ -656,8 +657,7 @@
         "WAL-CLM-RARE-000269"
       ],
       "definitions": [
-        "WAL-CLM-IAIYH-000002",
-        "WAL-CLM-RARE-000122"
+        "WAL-CLM-IAIYH-000002"
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000081"
@@ -735,10 +735,8 @@
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-LETS-000008",
+        "WAL-CLM-RARE-000122",
         "WAL-CLM-RARE-000275"
-      ],
-      "definitions": [
-        "WAL-CLM-RARE-000122"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -1085,14 +1083,14 @@
         "WAL-CLM-LETS-000011",
         "WAL-CLM-LETS-000027",
         "WAL-CLM-RARE-000011",
+        "WAL-CLM-RARE-000122",
         "WAL-CLM-RARE-000223",
         "WAL-CLM-RARE-000230",
         "WAL-CLM-RARE-000275"
       ],
       "definitions": [
         "WAL-CLM-LETS-000001",
-        "WAL-CLM-RARE-000105",
-        "WAL-CLM-RARE-000122"
+        "WAL-CLM-RARE-000105"
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000081"
@@ -1816,11 +1814,11 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000107",
-        "WAL-CLM-RARE-000163"
+        "WAL-CLM-RARE-000163",
+        "WAL-CLM-RARE-000302"
       ],
       "definitions": [
-        "WAL-CLM-RARE-000116",
-        "WAL-CLM-RARE-000122"
+        "WAL-CLM-RARE-000116"
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000129"
@@ -2766,10 +2764,8 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000107",
-        "WAL-CLM-LETS-000210"
-      ],
-      "definitions": [
-        "WAL-CLM-RARE-000122"
+        "WAL-CLM-LETS-000210",
+        "WAL-CLM-RARE-000302"
       ]
     },
     "essentials_involved": [
@@ -3586,11 +3582,11 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000107",
-        "WAL-CLM-LETS-000008"
+        "WAL-CLM-LETS-000008",
+        "WAL-CLM-RARE-000302"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116",
-        "WAL-CLM-RARE-000122",
         "WAL-CLM-RARE-000126"
       ],
       "diagnostics": [
@@ -4877,11 +4873,11 @@
         "WAL-CLM-RARE-000128"
       ],
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000107"
+        "WAL-CLM-EPIGEN-000107",
+        "WAL-CLM-RARE-000302"
       ],
       "definitions": [
-        "WAL-CLM-RARE-000116",
-        "WAL-CLM-RARE-000122"
+        "WAL-CLM-RARE-000116"
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000129"
@@ -5752,9 +5748,7 @@
     "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000063"
-      ],
-      "definitions": [
+        "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-RARE-000122"
       ]
     },
@@ -5835,10 +5829,8 @@
         "WAL-CLM-LETS-000017",
         "WAL-CLM-LETS-000025",
         "WAL-CLM-LETS-000044",
-        "WAL-CLM-RARE-000257"
-      ],
-      "definitions": [
-        "WAL-CLM-RARE-000122"
+        "WAL-CLM-RARE-000257",
+        "WAL-CLM-RARE-000302"
       ],
       "doses": [
         "WAL-CLM-RARE-000246"
@@ -6205,11 +6197,11 @@
         "WAL-CLM-LETS-000006",
         "WAL-CLM-LETS-000017",
         "WAL-CLM-LETS-000043",
-        "WAL-CLM-RARE-000257"
+        "WAL-CLM-RARE-000257",
+        "WAL-CLM-RARE-000302"
       ],
       "definitions": [
-        "WAL-CLM-RARE-000116",
-        "WAL-CLM-RARE-000122"
+        "WAL-CLM-RARE-000116"
       ],
       "diagnostics": [
         "WAL-CLM-LETS-000080",
@@ -6939,11 +6931,11 @@
         "WAL-CLM-RARE-000051"
       ],
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000063"
+        "WAL-CLM-EPIGEN-000063",
+        "WAL-CLM-RARE-000122"
       ],
       "definitions": [
-        "WAL-CLM-RARE-000049",
-        "WAL-CLM-RARE-000122"
+        "WAL-CLM-RARE-000049"
       ],
       "protocols": [
         "WAL-CLM-EPIGEN-000007"
@@ -7377,11 +7369,11 @@
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
-        "WAL-CLM-EPIGEN-000107"
+        "WAL-CLM-EPIGEN-000107",
+        "WAL-CLM-RARE-000302"
       ],
       "definitions": [
-        "WAL-CLM-RARE-000116",
-        "WAL-CLM-RARE-000122"
+        "WAL-CLM-RARE-000116"
       ],
       "prognosis": [
         "WAL-CLM-RARE-000215"
@@ -7546,11 +7538,9 @@
         "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-LETS-000008",
         "WAL-CLM-LETS-000030",
+        "WAL-CLM-RARE-000122",
         "WAL-CLM-RARE-000227",
         "WAL-CLM-RARE-000269"
-      ],
-      "definitions": [
-        "WAL-CLM-RARE-000122"
       ],
       "protocols": [
         "WAL-CLM-LETS-000348"
@@ -8547,10 +8537,8 @@
     "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000107"
-      ],
-      "definitions": [
-        "WAL-CLM-RARE-000122"
+        "WAL-CLM-EPIGEN-000107",
+        "WAL-CLM-RARE-000302"
       ]
     },
     "essentials_involved": [
@@ -11204,7 +11192,7 @@
     "display_name": "Thyroid Disease",
     "claim_count": 1,
     "claims_by_role": {
-      "definitions": [
+      "deficiency_signs": [
         "WAL-CLM-RARE-000122"
       ]
     },
@@ -11579,9 +11567,7 @@
         "WAL-CLM-EPIGEN-000051"
       ],
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000063"
-      ],
-      "definitions": [
+        "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-RARE-000122"
       ],
       "protocols": [
@@ -11668,11 +11654,11 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000107",
-        "WAL-CLM-RARE-000163"
+        "WAL-CLM-RARE-000163",
+        "WAL-CLM-RARE-000302"
       ],
       "definitions": [
-        "WAL-CLM-RARE-000116",
-        "WAL-CLM-RARE-000122"
+        "WAL-CLM-RARE-000116"
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000129",

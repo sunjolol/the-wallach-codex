@@ -1624,7 +1624,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 41,
+    "claim_count": 42,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
@@ -1634,11 +1634,10 @@
         "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-EPIGEN-000107",
         "WAL-CLM-LETS-000008",
+        "WAL-CLM-RARE-000122",
         "WAL-CLM-RARE-000141",
-        "WAL-CLM-RARE-000275"
-      ],
-      "definition": [
-        "WAL-CLM-RARE-000122"
+        "WAL-CLM-RARE-000275",
+        "WAL-CLM-RARE-000302"
       ],
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000081",
