@@ -77,3 +77,16 @@ for the same reasons; this file carries the fuller "Divine Hunger" framing.
 
 _Locator: Rare Earths Ch.5, pp. 59–84 (PDF idx 80–105). Read via the PDF text layer only
 (graphic content not rendered as images). Appended to, never pruned._
+
+---
+
+## Cross-reference — Epigenetics (2014), Ch.18 "Lithium"
+
+The cannibalism-as-pica thesis recorded above from Rare Earths is **restated** in the later
+book Epigenetics, inside the Lithium entry. Wallach again adds cannibalism as a fourth
+category to the three standard anthropological theories, calling it "the ultimate extension
+of pica (bizarre cravings and behavior resulting from extreme mineral deficiencies, such as
+Fe, P, Li, Ca, etc)," and illustrates the over-population / food-collapse fear with the 1973
+film *Soylent Green*. No new thesis content beyond the Rare Earths "Divine Hunger" material;
+recorded 2026-07-01 so the second-book restatement is not lost. The non-graphic clinical
+lithium claim is sealed as WAL-CLM-EPIGEN-000096.

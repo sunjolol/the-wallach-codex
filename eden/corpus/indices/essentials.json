@@ -3600,10 +3600,11 @@
     "display_name": "Lithium",
     "canon_slug": "lithium",
     "category": "mineral",
-    "claim_count": 23,
+    "claim_count": 24,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000079",
+        "WAL-CLM-EPIGEN-000096",
         "WAL-CLM-RARE-000042",
         "WAL-CLM-RARE-000163"
       ],
@@ -3679,6 +3680,7 @@
       "anorexia",
       "anxiety",
       "arthritis",
+      "autism",
       "bipolar_disorder",
       "blind_rage",
       "criminal_behavior",
@@ -3721,6 +3723,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]

@@ -192,13 +192,14 @@
   },
   "adhd": {
     "display_name": "Adhd",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000002"
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
+        "WAL-CLM-EPIGEN-000096",
         "WAL-CLM-RARE-000163"
       ],
       "definitions": [
@@ -1313,10 +1314,13 @@
   },
   "autism": {
     "display_name": "Autism",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000002"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-EPIGEN-000096"
       ],
       "protocols": [
         "WAL-CLM-LETS-000151"
@@ -1325,6 +1329,7 @@
     "essentials_involved": [
       "calcium",
       "chromium",
+      "lithium",
       "magnesium",
       "vitamin-b6"
     ],
@@ -1597,13 +1602,14 @@
   },
   "bipolar_disorder": {
     "display_name": "Bipolar Disorder",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000161"
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
+        "WAL-CLM-EPIGEN-000096",
         "WAL-CLM-RARE-000163"
       ],
       "definitions": [
@@ -3891,7 +3897,7 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 42,
+    "claim_count": 43,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000053",
@@ -3906,6 +3912,7 @@
         "WAL-CLM-EPIGEN-000056",
         "WAL-CLM-EPIGEN-000059",
         "WAL-CLM-EPIGEN-000062",
+        "WAL-CLM-EPIGEN-000096",
         "WAL-CLM-LETS-000003",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000008",
@@ -5996,10 +6003,11 @@
   },
   "hyperactivity": {
     "display_name": "Hyperactivity",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
+        "WAL-CLM-EPIGEN-000096",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000016",
         "WAL-CLM-RARE-000163"

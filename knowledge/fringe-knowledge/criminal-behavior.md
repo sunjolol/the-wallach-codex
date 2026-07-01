@@ -115,3 +115,37 @@ pruned. The Preface + Ch.5 verbatims were migrated from the prior
 migration time); the Ch.5 mislabel ("Ch.6 'The Verdict'") was corrected on 2026-06-24
 against a direct read of the scanned PDF, and the real Ch.6 "The Bad Seeds" was added the
 same day._
+
+---
+
+## Epigenetics: The Death of the Genetic Theory (2014) — Ch.18 "Lithium"
+
+**Second-book restatement of the "Bad Seeds" crime thesis** (parallels the Rare Earths
+Ch.6 material above). The non-graphic clinical claim — lithium deficiency → depression /
+manic-depression / bipolar / autism / ADHD / hyperactivity, plus the Schrauzer Texas
+water-lithium study — was salvaged to the sealed corpus as **WAL-CLM-EPIGEN-000096**. Only
+the graphic case material stays here. Added 2026-07-01 (Luneth-approved); a candidate for a
+future uncensored edition of the app.
+
+- **"Human Behavioral Acts Resulting From Lithium Deficiency" list.** Wallach presents a
+  bulleted list attributing to lithium deficiency: mass murder (naming Austin TX, Waco TX,
+  Oklahoma, Columbine, Fort Hood, Virginia Tech, the "Batman theater" [Aurora], Sandy Hook,
+  the Boston Marathon, the Washington Navy Yard); serial killers (Jack the Ripper, the
+  Boston Strangler, Jeffrey Dahmer, the Green River Murderer, the "Michigan Old Man
+  Stabber," etc.); cannibalism; domestic violence; violent crime (arson, murder, rape,
+  assault, armed robbery); suicide (civilian, military, teenage); and suicide bombers.
+  **Summarized, not reproduced.**
+
+- **"Notorious Serial Killers (Vampires, Werewolves, and Cannibals)" figure.** A margin
+  figure lists dozens of named killers with diagnoses/dates (heavily OCR-scrambled in the
+  source screenshots). Not reproduced; noted for completeness.
+
+- **The Elias Abuelazam ("Old Man Stabber") anecdote.** Wallach recounts being approached
+  late at night in Grand Rapids, Michigan during Abuelazam's 2010 stabbing spree by a man
+  in the killer's vehicle who said, "Hey old man, hop in and I'll end your pain," to which
+  Wallach replied, "Hop out and I'll end your pain!" — the driver sped off. A personal
+  anecdote, off-mission, kept here.
+
+- **The crime-control framing.** As in Rare Earths, Wallach frames lithium supplementation
+  / water-lithium as a crime-control measure. The neutral scientific finding (the Schrauzer
+  study) is what was salvaged to the corpus; the crime framing stays here.

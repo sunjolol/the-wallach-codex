@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 233 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 234 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 21:55 UTC-05:00 · round-close · knowledge/corpus
+SESSION 31 b2 — Epigenetics Ch18 charged Lithium (EPIGEN-096 tier-1): Li deficiency → depression/bipolar/autism/ADHD/hyperactivity + Schrauzer water-Li study; autism mapped. Graphic killer/cannibalism list held OUT → fringe files (Luneth-approved). kv206 · claims 992 · 31/31.
+  ↳ Charged-content gate: Luneth approved conditions, kept Schrauzer stats in the tier-1 claim, approved both fringe additions (criminal-behavior.md + divine-hunger-cannibalism.md). search-only unchanged 75; render probe 0 errors.
 
 ## 2026-06-30 21:28 UTC-05:00 · round-close · knowledge/corpus
 SESSION 31 b1 — Epigenetics Ch18 minerals Hf→La (+6: Hafnium/Mercury[tox]/Holmium/Iodine/Potassium/Lanthanum). New condition Cretinism; iodine deficiency-only + potassium cond=[] (Luneth-ruled); Hf/Ho now 2-source. kv205 · claims 991 · 468 conditions · board 31/31.
@@ -801,7 +805,3 @@ Session close — editorial-fringe policy LOCKED: exclude Wallach content only i
 ## 2026-06-24 16:47 UTC-04:00 · milestone · eden/corpus
 Phase γ.2 — Rare Earths batch 2: 5 claims sealed (kv 18->19, 112 total). B12/cobalt dose; birth-defects-preventable + Down's-as-mineral-depletion (Ch7); species longevity ceiling (man 145) + 90-essentials premise (Ch8). Skipped Ch6 fringe crime claims. 30/30, probe green.
   ↳ WAL-CLM-RARE-000014..18; dose x1, mechanism x2, definition x2. New conditions birth_defects, down_syndrome. Per-element catalog is OCR-hyphenation-heavy so verbatims drawn from cleaner prose; editorial choice to skip Ch6 behavioral-crime claims (off-mission). Every verbatim exact on first pass. corpus_seal kv=19; build OK; invariants 30/30; probe PASS 0 errors. Rare Earths now 18 claims.
-
-## 2026-06-24 16:41 UTC-04:00 · milestone · eden/corpus
-Phase γ.1 — Rare Earths first batch: 13 claims sealed (kv 17->18, 94->107 total). Thesis-heavy book #2 (minerals-as-currency, selenium->cystic-fibrosis discovery, soil depletion, longevity, germanium deficiency/dose/food). Luneth approved the format. Board 30/30, probe green.
-  ↳ First extraction from book #2 (the flagship). 13 claims WAL-CLM-RARE-000001..13; definition x4, mechanism x5, deficiency_sign, dose, food_source, personal_anecdote. New index conditions cystic_fibrosis + heat_stroke. Every verbatim snapped to exact book bytes first pass, steered clear of OCR hazards. Luneth approved claim_text+verbatim as a copyright-scrub hedge + drift-detection + UX (memory claim-summary-verbatim-format). corpus_seal PASS kv=18; build OK; invariants 30/30; render_probe_knowledge PASS, 0 page errors.
