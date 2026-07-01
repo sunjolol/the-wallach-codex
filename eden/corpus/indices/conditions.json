@@ -1497,7 +1497,7 @@
         "WAL-CLM-IAIYH-000011"
       ],
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000061"
+        "WAL-CLM-EPIGEN-000109"
       ],
       "definitions": [
         "WAL-CLM-RARE-000105"
@@ -2624,8 +2624,8 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000026",
-        "WAL-CLM-EPIGEN-000039",
         "WAL-CLM-EPIGEN-000099",
+        "WAL-CLM-EPIGEN-000108",
         "WAL-CLM-RARE-000176"
       ],
       "prevalence": [
@@ -3416,9 +3416,9 @@
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000032",
-        "WAL-CLM-EPIGEN-000039",
         "WAL-CLM-EPIGEN-000098",
-        "WAL-CLM-EPIGEN-000099"
+        "WAL-CLM-EPIGEN-000099",
+        "WAL-CLM-EPIGEN-000108"
       ],
       "protocols": [
         "WAL-CLM-LETS-000233",
@@ -6057,8 +6057,8 @@
         "WAL-CLM-RARE-000127"
       ],
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000039",
         "WAL-CLM-EPIGEN-000062",
+        "WAL-CLM-EPIGEN-000108",
         "WAL-CLM-RARE-000237"
       ],
       "definitions": [
@@ -8500,7 +8500,7 @@
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000036",
         "WAL-CLM-EPIGEN-000040",
-        "WAL-CLM-EPIGEN-000061"
+        "WAL-CLM-EPIGEN-000109"
       ],
       "protocols": [
         "WAL-CLM-LETS-000379"
@@ -9092,7 +9092,7 @@
     "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000061"
+        "WAL-CLM-EPIGEN-000109"
       ],
       "definitions": [
         "WAL-CLM-RARE-000105"
@@ -9373,8 +9373,8 @@
     "claim_count": 6,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000039",
         "WAL-CLM-EPIGEN-000062",
+        "WAL-CLM-EPIGEN-000108",
         "WAL-CLM-RARE-000234",
         "WAL-CLM-RARE-000237",
         "WAL-CLM-RARE-000238"
@@ -9572,8 +9572,8 @@
     "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000039",
-        "WAL-CLM-EPIGEN-000061"
+        "WAL-CLM-EPIGEN-000061",
+        "WAL-CLM-EPIGEN-000108"
       ],
       "diagnostics": [
         "WAL-CLM-LETS-000081"
@@ -9764,7 +9764,7 @@
     "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000039"
+        "WAL-CLM-EPIGEN-000108"
       ],
       "protocols": [
         "WAL-CLM-LETS-000324"
@@ -10534,7 +10534,7 @@
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000036",
-        "WAL-CLM-EPIGEN-000039",
+        "WAL-CLM-EPIGEN-000108",
         "WAL-CLM-RARE-000234",
         "WAL-CLM-RARE-000237"
       ],
@@ -10951,18 +10951,16 @@
   },
   "tachycardia": {
     "display_name": "Tachycardia",
-    "claim_count": 3,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000038",
-        "WAL-CLM-EPIGEN-000083"
+        "WAL-CLM-EPIGEN-000038"
       ],
       "protocols": [
         "WAL-CLM-LETS-000443"
       ]
     },
     "essentials_involved": [
-      "iron",
       "selenium",
       "vitamin-b1",
       "vitamin-b3",
@@ -11261,8 +11259,8 @@
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000026",
-        "WAL-CLM-EPIGEN-000039",
         "WAL-CLM-EPIGEN-000099",
+        "WAL-CLM-EPIGEN-000108",
         "WAL-CLM-RARE-000176"
       ]
     },
@@ -11396,8 +11394,8 @@
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000032",
-        "WAL-CLM-EPIGEN-000039",
         "WAL-CLM-EPIGEN-000061",
+        "WAL-CLM-EPIGEN-000108",
         "WAL-CLM-RARE-000237"
       ]
     },
@@ -11453,7 +11451,7 @@
         "WAL-CLM-IAIYH-000009"
       ],
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000061"
+        "WAL-CLM-EPIGEN-000109"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000009"

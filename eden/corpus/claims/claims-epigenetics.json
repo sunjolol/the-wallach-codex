@@ -1504,16 +1504,7 @@
       "conditions": [
         "depression",
         "stomatitis",
-        "vomiting",
-        "pms",
-        "seborrheic_dermatitis",
-        "pruritus",
-        "carpal_tunnel_syndrome",
-        "tmj",
-        "peripheral_neuropathy",
-        "hyperirritability",
-        "tourette_syndrome",
-        "convulsions"
+        "vomiting"
       ],
       "symptoms": [
         "mental_confusion",
@@ -2391,15 +2382,11 @@
         "tourette_syndrome",
         "pms",
         "sciatica",
-        "backache",
-        "neuropathy",
-        "bells_palsy",
-        "trigeminal_neuralgia",
-        "panic_attacks"
+        "backache"
       ],
       "symptoms": [],
       "claim_text": "Calcium is the most abundant mineral in the body, with about 99% in the bones and teeth (as hydroxyapatite) and the rest used as a cofactor for blood clotting, muscle contraction, and the heart's electrical conduction. Wallach states that, contrary to the medical belief that high calcium causes kidney stones, a high dietary calcium intake actually reduces the risk of nutritional secondary hyperparathyroidism, hypercalcemia, and kidney stones, and that no fewer than 147 deficiency diseases are attributed to calcium deficiency or imbalance. His Common Calcium-Deficiency Diseases include: osteoporosis (with kyphosis, scoliosis, Dowager's hump, lordosis, spontaneous fractures), receding gums, osteomalacia, myelosclerosis, arthritis, ankylosing spondylitis, bone spurs, kidney stones, nutritional secondary hyperparathyroidism, hypertension, insomnia, calcium deposits (vascular, restless leg, atrial fibrillation), cramps and twitches (Tourette's syndrome), premenstrual syndrome, low-back pain (sciatica), neuropathy (Bell's palsy, trigeminal neuralgia), tetany with convulsions, and panic attacks. In his words: 'There are no less than 147 different deficiency-diseases that are directly attributed to a calcium deficiency or imbalance.'",
-      "verbatim": "Calcium deposits (vascular,\ntendons, ligaments, restless leg,\natrial-fibrillation, etc.)\n\nCramps & twitches (Tourette's\nsyndrome, foot, calf, hamstring,\neyelids, etc.)\n\nPMS (emotional & physical\nsymptoms)\n\nLow back (sciatica, spasm, disc,\netc.)\n\nNeuropathy (Bell’s palsy,\ntrigeminal neuralgia, sciatica,\nrestless leg, etc.)",
+      "verbatim": "Calcium deposits (vascular, tendons, ligaments, restless leg, atrial-fibrillation, etc.) : Same as osteoporosis\n\nCramps & twitches (Tourette's syndrome, foot, calf, hamstring, eyelids, etc.) : Same as osteoporosis\n\nPMS (emotional & physical symptoms) : Same as osteoporosis\n\nLow back (sciatica, spasm, disc, etc.) : Same as osteoporosis",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -2407,7 +2394,7 @@
         "page": 679,
         "screenshot": 608,
         "kindle_location": null,
-        "char_offset": 1189879
+        "char_offset": 1190019
       },
       "dose": null,
       "tags": [
@@ -2464,7 +2451,7 @@
         "page": 695,
         "screenshot": 616,
         "kindle_location": null,
-        "char_offset": 1216945
+        "char_offset": 1216933
       },
       "dose": null,
       "tags": [
@@ -2513,7 +2500,7 @@
         "page": 700,
         "screenshot": 618,
         "kindle_location": null,
-        "char_offset": 1222102
+        "char_offset": 1222090
       },
       "dose": null,
       "tags": [
@@ -2890,7 +2877,7 @@
         "page": null,
         "screenshot": "611",
         "kindle_location": null,
-        "char_offset": 1198717
+        "char_offset": 1198705
       },
       "dose": null,
       "tags": [
@@ -2924,7 +2911,7 @@
         "page": null,
         "screenshot": "611",
         "kindle_location": null,
-        "char_offset": 1199494
+        "char_offset": 1199482
       },
       "dose": null,
       "tags": [
@@ -2958,7 +2945,7 @@
         "page": null,
         "screenshot": "613",
         "kindle_location": null,
-        "char_offset": 1205067
+        "char_offset": 1205055
       },
       "dose": null,
       "tags": [
@@ -2995,7 +2982,7 @@
         "page": null,
         "screenshot": "615",
         "kindle_location": null,
-        "char_offset": 1212377
+        "char_offset": 1212365
       },
       "dose": null,
       "tags": [
@@ -3033,7 +3020,7 @@
         "page": null,
         "screenshot": "617",
         "kindle_location": null,
-        "char_offset": 1218412
+        "char_offset": 1218400
       },
       "dose": null,
       "tags": [
@@ -3071,7 +3058,7 @@
         "page": null,
         "screenshot": "619",
         "kindle_location": null,
-        "char_offset": 1227807
+        "char_offset": 1227795
       },
       "dose": null,
       "tags": [
@@ -3107,7 +3094,7 @@
         "page": null,
         "screenshot": "620",
         "kindle_location": null,
-        "char_offset": 1228631
+        "char_offset": 1228619
       },
       "dose": null,
       "tags": [
@@ -3143,7 +3130,7 @@
         "page": null,
         "screenshot": "620",
         "kindle_location": null,
-        "char_offset": 1229791
+        "char_offset": 1229779
       },
       "dose": null,
       "tags": [
@@ -3180,7 +3167,7 @@
         "page": null,
         "screenshot": "621",
         "kindle_location": null,
-        "char_offset": 1232462
+        "char_offset": 1232450
       },
       "dose": null,
       "tags": [
@@ -3209,12 +3196,11 @@
       "conditions": [
         "anemia",
         "pica",
-        "obesity",
-        "tachycardia"
+        "obesity"
       ],
       "symptoms": [],
       "claim_text": "Iron is an essential mineral; a healthy adult carries 3 to 5 grams, most of it in hemoglobin and myoglobin, where iron carries oxygen (iron is to hemoglobin what magnesium is to chlorophyll). Wallach stresses that pica -- obsessive cravings driving children and adults to eat ice (pagophagia), dirt (geophagia), lead-paint chips and high-calorie snack foods -- is a specific sign of iron deficiency, and that the snack-food form can cause weight gain and obesity. Iron deficiency arises from unsupplemented pregnancy, menstruation, chronic infection, hypochlorhydria (low stomach acid from salt-restricted diets or proton-pump inhibitors), chronic diarrhea, chronic bleeding, and impaired absorption from high-fat, high-phytate or gluten diets. Its symptoms include listlessness, fatigue, heart palpitations on exertion, rapid pulse (tachycardia), reduced cognition and memory, sore tongue, difficulty swallowing (dysphagia) and hypochromic microcytic anemia. Stomach hydrochloric acid and vitamin C aid absorption; heme iron from meat is about 10 percent absorbable versus 1 percent from plants (phytates bind it). He notes excess iron storage is usually caused by deficiencies of selenium, copper or zinc and is falsely blamed for liver cirrhosis, pancreatic fibrosis, hypertrophic cardiomyopathy and diabetes.",
-      "verbatim": "Experimental evidence shows very clearly that “pica” is a specific sign of\niron deficiency. Pica (obsessive cravings) can drive children and adults to eat ice\n{pagophagia), dirt (geophagia), lead paint chips, and high calorie snack foods\n(that can result in weight gain and obesity).",
+      "verbatim": "tongue, angular stomatitis, dysphagia (pica), hypochromic microcytic anemia,\nweight gain, obesity, etc.",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -3222,7 +3208,7 @@
         "page": null,
         "screenshot": "621",
         "kindle_location": null,
-        "char_offset": 1235973
+        "char_offset": 1236843
       },
       "dose": null,
       "tags": [
@@ -3259,7 +3245,7 @@
         "page": null,
         "screenshot": "622",
         "kindle_location": null,
-        "char_offset": 1238698
+        "char_offset": 1238686
       },
       "dose": null,
       "tags": [
@@ -3295,7 +3281,7 @@
         "page": null,
         "screenshot": "622",
         "kindle_location": null,
-        "char_offset": 1239205
+        "char_offset": 1239193
       },
       "dose": null,
       "tags": [
@@ -3335,7 +3321,7 @@
         "page": null,
         "screenshot": "623",
         "kindle_location": null,
-        "char_offset": 1241808
+        "char_offset": 1241796
       },
       "dose": null,
       "tags": [
@@ -3373,7 +3359,7 @@
         "page": null,
         "screenshot": "623",
         "kindle_location": null,
-        "char_offset": 1242602
+        "char_offset": 1242590
       },
       "dose": null,
       "tags": [
@@ -3407,7 +3393,7 @@
         "page": null,
         "screenshot": "675",
         "kindle_location": null,
-        "char_offset": 1414038
+        "char_offset": 1414024
       },
       "dose": null,
       "tags": [
@@ -3443,7 +3429,7 @@
         "page": null,
         "screenshot": "675",
         "kindle_location": null,
-        "char_offset": 1414484
+        "char_offset": 1414470
       },
       "dose": null,
       "tags": [
@@ -3481,7 +3467,7 @@
         "page": null,
         "screenshot": "624",
         "kindle_location": null,
-        "char_offset": 1245238
+        "char_offset": 1245226
       },
       "dose": null,
       "tags": [
@@ -3516,7 +3502,7 @@
         "page": null,
         "screenshot": "625",
         "kindle_location": null,
-        "char_offset": 1249243
+        "char_offset": 1249231
       },
       "dose": null,
       "tags": [
@@ -3552,7 +3538,7 @@
         "page": null,
         "screenshot": "626",
         "kindle_location": null,
-        "char_offset": 1250667
+        "char_offset": 1250655
       },
       "dose": null,
       "tags": [
@@ -3593,7 +3579,7 @@
         "page": null,
         "screenshot": "625",
         "kindle_location": null,
-        "char_offset": 1253430
+        "char_offset": 1253418
       },
       "dose": null,
       "tags": [
@@ -3630,7 +3616,7 @@
         "page": null,
         "screenshot": "627",
         "kindle_location": null,
-        "char_offset": 1255641
+        "char_offset": 1255629
       },
       "dose": null,
       "tags": [
@@ -3668,7 +3654,7 @@
         "page": null,
         "screenshot": "627",
         "kindle_location": null,
-        "char_offset": 1256560
+        "char_offset": 1256548
       },
       "dose": null,
       "tags": [
@@ -3710,7 +3696,7 @@
         "page": null,
         "screenshot": "629",
         "kindle_location": null,
-        "char_offset": 1262411
+        "char_offset": 1262399
       },
       "dose": null,
       "tags": [
@@ -3748,7 +3734,7 @@
         "page": null,
         "screenshot": "630",
         "kindle_location": null,
-        "char_offset": 1265318
+        "char_offset": 1265306
       },
       "dose": null,
       "tags": [
@@ -3792,7 +3778,7 @@
         "page": null,
         "screenshot": "631",
         "kindle_location": null,
-        "char_offset": 1267782
+        "char_offset": 1267770
       },
       "dose": null,
       "tags": [
@@ -3836,7 +3822,7 @@
         "page": null,
         "screenshot": "631",
         "kindle_location": null,
-        "char_offset": 1269085
+        "char_offset": 1269073
       },
       "dose": null,
       "tags": [
@@ -3872,7 +3858,7 @@
         "page": null,
         "screenshot": "632",
         "kindle_location": null,
-        "char_offset": 1272223
+        "char_offset": 1272211
       },
       "dose": null,
       "tags": [
@@ -3903,7 +3889,7 @@
       ],
       "symptoms": [],
       "claim_text": "Nitrogen is essential to life as a structural atom in protein, nucleic acids (RNA and DNA) and a wide variety of organic molecules. Dietary nitrogen, supplied as protein, furnishes the amino acids the body uses to repair worn-out tissue, build new tissue, form enzymes, hormones and other secretions, maintain the blood's osmotic and acid-base balance, transport minerals and vitamins, and make the immunoglobulins (antibodies). Wallach states that classic protein (nitrogen) deficiency results in infertility, poor growth, lowered immune status, edema, and Kwashiorkor -- the potbellied, thin children of third-world countries. Because the availability and usability of nitrogen differs greatly between foods, protein sources must be chosen with that in mind.",
-      "verbatim": "Classic protein deficiency results in infertility, poor growth, lowered immune",
+      "verbatim": "Classic protein deficiency results in infertility, poor growth, lowered immune status, edema, and Kwashiorkor (potbellied, thin children of third world countries)",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -3911,7 +3897,7 @@
         "page": null,
         "screenshot": "633",
         "kindle_location": null,
-        "char_offset": 1272592
+        "char_offset": 1272713
       },
       "dose": null,
       "tags": [
@@ -3950,7 +3936,7 @@
         "page": null,
         "screenshot": "634",
         "kindle_location": null,
-        "char_offset": 1276509
+        "char_offset": 1276495
       },
       "dose": null,
       "tags": [
@@ -3986,7 +3972,7 @@
         "page": null,
         "screenshot": "634",
         "kindle_location": null,
-        "char_offset": 1277272
+        "char_offset": 1277258
       },
       "dose": null,
       "tags": [
@@ -4021,7 +4007,7 @@
         "page": null,
         "screenshot": "634",
         "kindle_location": null,
-        "char_offset": 1277753
+        "char_offset": 1277739
       },
       "dose": null,
       "tags": [
@@ -4058,7 +4044,7 @@
         "page": null,
         "screenshot": "635",
         "kindle_location": null,
-        "char_offset": 1278760
+        "char_offset": 1278746
       },
       "dose": null,
       "tags": [
@@ -4143,7 +4129,7 @@
         "page": 700,
         "screenshot": 618,
         "kindle_location": null,
-        "char_offset": 1222557
+        "char_offset": 1222545
       },
       "dose": null,
       "tags": [
@@ -4156,6 +4142,91 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-07-01T12:14:47+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000108",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "vitamin-b6"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "pms",
+        "seborrheic_dermatitis",
+        "pruritus",
+        "carpal_tunnel_syndrome",
+        "tmj",
+        "peripheral_neuropathy",
+        "hyperirritability",
+        "tourette_syndrome",
+        "convulsions"
+      ],
+      "symptoms": [],
+      "claim_text": "A second cluster of vitamin B6 (pyridoxine) deficiency signs Wallach lists: premenstrual syndrome (PMS), seborrheic dermatitis (itchy, scaly skin), oral mucous membrane lesions, carpal tunnel syndrome, temporomandibular joint (TMJ) dysfunction, peripheral neuritis, ataxia, hyperirritability, head tics (Tourette's syndrome), and seizures or convulsions.",
+      "verbatim": "PMS\n\nSeborrheic dermatitis,\n\nItchy scaly skin\n\nOral mucus membrane lesions\nCarpal tunnel syndrome\n\nTMJ\n\nPeripheral neuritis\n\nAtaxia (instability)\n\nHyperirritability.\n\nHead tic (Tourette's syndrome)\nSeizures. Convulsions",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "Nutrition: The Death of the Genetic Theory of Disease Transmission",
+        "page": 622,
+        "screenshot": 580,
+        "kindle_location": null,
+        "char_offset": 1091884
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch18",
+        "deficiency-sign",
+        "water-soluble-vitamins",
+        "vitamin-b6"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-01T13:09:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000109",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "neuropathy",
+        "bells_palsy",
+        "trigeminal_neuralgia",
+        "panic_attacks"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach's calcium-deficiency disease table also lists neuropathy (including Bell's palsy and trigeminal neuralgia), tetany (whole-body cramping progressing to convulsions), and panic attacks with hyperirritability, each sharing the same nutrient-deficiency causes as calcium-deficiency osteoporosis.",
+      "verbatim": "Neuropathy (Bell’s palsy, trigeminal neuralgia, sciatica, restless leg, etc.) : Same as osteoporosis\n\nTetany (total body “cramp” or convulsion, NSH, etc.) : Same as osteoporosis\n\nPanic attack (hyperirritability) : Same as osteoporosis",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "Nutrition: The Death of the Genetic Theory of Disease Transmission",
+        "page": 681,
+        "screenshot": 609,
+        "kindle_location": null,
+        "char_offset": 1190357
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch18",
+        "deficiency-sign",
+        "minerals",
+        "calcium"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-01T13:09:37+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

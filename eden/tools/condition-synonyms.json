@@ -39,7 +39,7 @@
   "osteoarthritis": ["osteoarthritis", "degenerative arthritis", "degenerative joint"],
   "rheumatoid_arthritis": ["rheumatoid"],
   "seborrheic_dermatitis": ["seborrheic dermatitis", "seborrhea", "itchy scaly skin", "scaly skin"],
-  "pruritus": ["pruritus", "itching", "itchy skin"],
+  "pruritus": ["pruritus", "itching", "itchy skin", "itchy scaly skin"],
   "birth_defects": ["birth defect", "congenital defect", "congenital birth defect"],
   "learning_disabilities": ["learning disabilit", "learning disorder"],
   "coronary_artery_disease": ["coronary artery", "coronary heart", "coronary occlusion"],
@@ -71,5 +71,6 @@
   "prediabetes": ["pre diabetes", "prediabetes"],
   "high_triglycerides": ["elevated blood triglycerides", "elevated triglycerides", "high triglycerides", "hypertriglyceridemia"],
   "backache": ["low back", "lower back", "back pain"],
-  "explosive_outbursts": ["explosive behavior", "explosive outburst"]
+  "explosive_outbursts": ["explosive behavior", "explosive outburst"],
+  "panic_attacks": ["panic attack", "panic attacks"]
 }

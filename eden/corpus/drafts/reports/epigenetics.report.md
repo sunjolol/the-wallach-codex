@@ -1,20 +1,38 @@
 # Extraction report — epigenetics (Epigenetics: The Death of the Genetic Theory of Disease Transmission)
 
-_1 claim(s) drafted 2026-07-01T12:14:47+00:00. Review then run corpus_seal.py to promote._
+_2 claim(s) drafted 2026-07-01T13:09:37+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: deficiency_sign×1
+Kinds: deficiency_sign×2
 
-### WAL-CLM-EPIGEN-000107 · deficiency_sign
-- **essentials:** copper · **conditions:** violent_behavior, blind_rage, explosive_outbursts, criminal_behavior, learning_disabilities, cerebral_palsy, congenital_ataxia, high_cholesterol, hypoglycemia, reactive_hypoglycemia, neutropenia · **symptoms:** —
-- **claim:** Wallach holds that copper deficiency also drives a cluster of behavioral, neurological, and metabolic disorders. Among the copper-deficiency diseases he lists are violent behavior, blind rage, explosive behavior, and criminal behavior; learning disabilities; cerebral palsy and hypoplasia of the cerebellum (congenital ataxia); high blood cholesterol; reduced glucose tolerance (hypoglycemia and reactive hypoglycemia); and neutropenia. In his words: "Violent behavior, blind rage, explosive behavior, criminal behavior; Learning disabilities; Cerebral palsy and hypoplasia of the cerebellum (congenital ataxia); High blood cholesterol; Iron storage disease (hemosiderosis); Reduced glucose tolerance (hypoglycemia, reactive hypoglycemia); Neutropenia."
-- **verbatim** (offset 1222557): “Violent behavior, blind rage, explosive behavior, criminal behavior
-Learning disabilities
+### WAL-CLM-EPIGEN-000108 · deficiency_sign
+- **essentials:** vitamin-b6 · **conditions:** pms, seborrheic_dermatitis, pruritus, carpal_tunnel_syndrome, tmj, peripheral_neuropathy, hyperirritability, tourette_syndrome, convulsions · **symptoms:** —
+- **claim:** A second cluster of vitamin B6 (pyridoxine) deficiency signs Wallach lists: premenstrual syndrome (PMS), seborrheic dermatitis (itchy, scaly skin), oral mucous membrane lesions, carpal tunnel syndrome, temporomandibular joint (TMJ) dysfunction, peripheral neuritis, ataxia, hyperirritability, head tics (Tourette's syndrome), and seizures or convulsions.
+- **verbatim** (offset 1091884): “PMS
 
-Cerebral palsy and hypoplasia of the cerebellum (congenital ataxia)
-High blood cholesterol
+Seborrheic dermatitis,
 
-Iron storage disease (hemosiderosis)
+Itchy scaly skin
 
-Reduced glucose tolerance (hypoglycemia, reactive hypoglycemia)
-Neutropenia”
+Oral mucus membrane lesions
+Carpal tunnel syndrome
+
+TMJ
+
+Peripheral neuritis
+
+Ataxia (instability)
+
+Hyperirritability.
+
+Head tic (Tourette's syndrome)
+Seizures. Convulsions”
+
+### WAL-CLM-EPIGEN-000109 · deficiency_sign
+- **essentials:** calcium · **conditions:** neuropathy, bells_palsy, trigeminal_neuralgia, panic_attacks · **symptoms:** —
+- **claim:** Wallach's calcium-deficiency disease table also lists neuropathy (including Bell's palsy and trigeminal neuralgia), tetany (whole-body cramping progressing to convulsions), and panic attacks with hyperirritability, each sharing the same nutrient-deficiency causes as calcium-deficiency osteoporosis.
+- **verbatim** (offset 1190357): “Neuropathy (Bell’s palsy, trigeminal neuralgia, sciatica, restless leg, etc.) : Same as osteoporosis
+
+Tetany (total body “cramp” or convulsion, NSH, etc.) : Same as osteoporosis
+
+Panic attack (hyperirritability) : Same as osteoporosis”
 

@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 243 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 244 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 08:13 UTC-05:00 · round-close · knowledge-drawer+corpus
+SESSION 33 b1 — EPIGEN verbatim-remediation FINISHED (14→0). Full calcium-table + nitrogen-column + B6-OCR source reflows; 2 Luneth-approved splits (B6 000108, calcium 000109); iron/nitrogen re-anchor. violations 427→413, orphans 105→104, kv 215, claims 1005, board 32/32.
+  ↳ Cleared EPIGEN's last 14 verbatim-names-condition violations, all page-layout OCR artifacts. Source fixes to epigenetics.txt: B6 post-marker block OCR (T MJ/Siezures/ataxia reflow); nitrogen/molybdenum 2-column de-interleave; full reflow of the scrambled 2-column calcium-deficiency table to clean rows. resnap healed 000061. Splits: B6 000108 = post-marker deficiency cluster (9 conditions); calcium 000109 = table entries 16-18 (neuropathy/bells_palsy/trigeminal_neuralgia/panic_attacks, de-orphaning panic_attacks). iron 000083 re-anchored (anemia+pica+obesity, dropped tachycardia); nitrogen 000101 extended (infertility+edema+kwashiorkor). +2 synonyms. Board 32/32, render_probe_knowledge PASS. Visual sign-off pending. EPIGEN now fully clean; next book = RARE (125).
 
 ## 2026-07-01 07:16 UTC-05:00 · round-close · knowledge-drawer
 SESSION 32 b4c — copper SPLIT: orphans at both ends of a >500 list, split at Liver cirrhosis into 000063 (Ptosis..Liver cirrhosis) + new 000107 (Violent behavior..Neutropenia); all 6 copper orphans named. claims 1002->1003, EPIGEN 31->14, board 32/32, 0 NEW.
@@ -795,7 +799,3 @@ Rare Earths Ch.5 'Divine Hunger' ruled whole-chapter-to-fringe by Luneth: the ca
 ## 2026-06-24 20:21 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 6: Rare Earths end-of-Ch.4 deficiency-behavior cluster — 3 claims (kv 25→26, RARE 37→40, 134 total). Potassium/diuretics, chromium+vanadium craving signs, teen-pica. Luneth ruled Ch.5 'Divine Hunger' whole-chapter-to-fringe (next).
   ↳ WAL-CLM-RARE-000038 (potassium deficiency uncommon from diet but common with diuretics for BP/weight loss — interaction), 000039 (the 'munchies' + alcohol + chocolate cravings = chromium and vanadium deficiency signs — deficiency_sign), 000040 (preteen/teen snack-food/drug/smoking/alcohol infatuation = pica from mineral deficiency — mechanism). Reflow fix: R2 had a spurious OCR blank line mid-sentence ('cravings for alcohol and' | 'candy cravings'); added a sentence-aware merge (join a paragraph into the prior when the prior doesn't end in .!?"). Luneth's Ch.5 ruling: the 'divine hunger' thesis (cannibalism/vampires/werewolves as mineral deficiency) is ABSOLUTELY out of the dashboard — likely has some merit but too off-the-wall + off-mission, a detriment to the average user; record the full Wallach stance in its own fringe-knowledge file for his later study. Next chunk does that (no corpus change — book text retains Ch.5; fringe doc only).
-
-## 2026-06-24 20:12 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 5: Rare Earths Ch.4 pica/cravings — 3 claims (kv 24→25, RARE 34→37, 131 total; new condition 'pica'). Pica = the body craving missing minerals, incl. a controlled iron-vs-saline trial linking pica to iron deficiency. Luneth-approved.
-  ↳ WAL-CLM-RARE-000035 (pica/cribbing in domestic animals = a craving for minerals; mineral-starved animals eat supplements then self-regulate to maintenance), 000036 (geophagia/earth-eating = pica common in mineral-deficient pregnant humans; Wallach's own observation of a hundred pregnant Montana sheep eating clay; kind personal_anecdote), 000037 (iron deficiency drives pica; McDonald & Marshall 1964 controlled trial: 11 of 13 sand-eating children given iron lost their pica vs only 3 of 12 given saline — links the pica condition to the iron essential). Avoided the garbled hemoglobin values (OCR 'g%'->'9%') by choosing the clean controlled-trial verbatim. Left the colorful Queen Kekuiapoiwa pregnancy-craving anecdote in the book text but did not extract it. Ch.5 ahead (idx 80, the 'I ate his liver' chapter) is likely extreme-pica/fringe territory — will screen carefully.
