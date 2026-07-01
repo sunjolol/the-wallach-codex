@@ -1,6 +1,25 @@
 # Next chunk — operating system CLEANED → continue **Phase 2** surfaces
 
-## LATEST (2026-07-01 SESSION 35 — ✅ RARE verbatim campaign DONE 26→0 · search+highlight shipped · anomaly scanner built · finalize checklist created. RESUME = the confirmed anomaly-fix batch → opens the LETS verbatim pass.)
+## LATEST (2026-07-01 SESSION 36 — ✅ the CONFIRMED ANOMALY-FIX BATCH is DONE across all 3 books (LETS · DDDL · EPIGEN). All book reals cleared, 3 chunks PUSHED, board 32/32. ★ STOP-FOR-LUNETH: the anomaly-scan baseline decision — the pass-off's "baseline the 7 FPs" premise no longer holds.)
+
+**3 chunks PUSHED, board 32/32 throughout, clean tree:** `b0701d4` LETS (11 reals: Zumba→Zumbani ×4 +book index · Serenoa · Glycyrrhiza · echinacea/Echinacea · nux vomica (Strychnos nux vomica) · wild ginger (Asarum europaeum) · blackroot (Leptandra virginica) · of Caladryl ×2 · KERATOMALACIA ( · min C to bowel · + LETS-000448 claim_text reframe "for testosterone with ingredients including Zumbani") · `3c42781` DDDL (Tryptophane→Tryptophan verbatim table · Thiamin→Thiamine summary) · `6f0e7ca` EPIGEN (BeriBeri→Beriberi verbatim+book-index+summary · Bioflavonoid→Bioflavonoids deficiency heading).
+
+**PIPELINE per book (proven ×3):** safe_rewrite book .txt → `corpus_resnap --write --fix <fixes.json>` (case/space fixes auto-HEAL, letter changes need --fix) → `corpus_extract finalize --raw <empty>` (rebuild draft from resnapped shard) → edit draft claim_text → verify other drafts==shards → `corpus_seal` → `corpus_embed` → build → invariants → `render_probe_knowledge`. Scripts in scratchpad: {lets,dddl,epigen}_bookfix.py + _claimtext.py.
+
+**KEY STATE:** kv **224** · claims 1006 · conditions 466 · verbatim baseline 283 · board 32/32 · clean tree.
+
+**★★ RESUME HERE = the ANOMALY-SCAN BASELINE DECISION (needs Luneth's ruling).** Full scan after the reals = **20 findings** in 3 buckets:
+- **(A) the 7 confirmed FPs (Luneth-ruled "ignore, look fine")** = Mental · Urine ×2 · Retin · Magnesia · Galium · Valium · SuperOxy ×2 (9 findings, all legit: Milk of Magnesia, Galium odoratum, Diazepam/Valium, SuperOxy Plus, Maple Syrup Urine Disease, urine therapy, Retin-A).
+- **(B) reframed LETS-000448 «testosterone» hormone_as_herb** — now a detector-FP (the reframe made the text correct: "herbal combination for testosterone with ingredients…"). Baseline it.
+- **(C) 10 NEWLY-SURFACED un-triaged run-together OCR errors NOT in the confirmed batch** — LETS: ofMenke's · dogwood(Cornus · sugarlessJello · (Symphytumofficinale),rue(Rutagraveolens · OTCanalgesics(i.e · RARE: Diabetes(prediabetes/hypoglycemia · RareEarth ×4. Clear missing-space OCR errors, but NOT ruled. **DO NOT blanket-`anomaly_scan.py baseline`** — it allowlists ALL 20 incl bucket (C), hiding real errors. **Ask Luneth: fix (C) now (orthographic missing-space, same pipeline), THEN baseline only (A)+(B)?**
+
+**★ DEFERRED to the final per-book OCR sweep (finalize-checklist, NOT this batch):** adjacent orthographic OCR errors inside the LETS verbatims I touched but left faithful — fififolia→filifolia · Rincinus→Ricinus · Pinnus→Pinus · Helianthus annus→annuus · Chichorium→Cichorium · oftopical→of topical · salt nibs→salt rubs · ofhepatitis→of hepatitis · Bitots→Bitot's · Untreatedkeratomalacia. Plus DDDL-000043 verbatim "thiamin"/"vitamin Bl"(→B1) normalize question (only the capitalized summary token was in the confirmed batch).
+
+**★ THEN the main remaining corpus-truth work = the LETS verbatim-remediation pass** (224 `verbatim_names_mapped_conditions` violations, HYBRID method; `eden/tools/vb_apply.py` / `vb_orphans.py --sealed` / `vb_propose.py`), folding in `anomaly_scan.py report --book lets-play-doctor` per-book.
+
+**Live memory:** [[linguistic-logic-sweep]] · [[source-correction-policy]] · [[reading-and-correcting-scanned-pdfs]] · [[editing-sealed-corpus-claims]] · [[verbatim-must-name-mapped-condition]] · [[wallach-corpus-revamp]].
+
+## (SUPERSEDED 2026-07-01 SESSION 36 — the confirmed anomaly-fix batch this block prescribed is DONE across all 3 books [LETS b0701d4 · DDDL 3c42781 · EPIGEN 6f0e7ca], board 32/32, kv 224; see new LATEST above. Remaining = the baseline decision + the LETS verbatim pass.) ## LATEST (2026-07-01 SESSION 35 — ✅ RARE verbatim campaign DONE 26→0 · search+highlight shipped · anomaly scanner built · finalize checklist created. RESUME = the confirmed anomaly-fix batch → opens the LETS verbatim pass.)
 
 **4 chunks PUSHED, board 32/32 throughout, clean tree:** `8625cee` RARE verbatim-remediation COMPLETE (26→0) · `4a83958` content-aware Conditions search + live warm highlight · `3941664` anomaly_scan.py (linguistic/logic surfacer) · `593b9b2` finalize-checklist + source-integrity finding.
 
