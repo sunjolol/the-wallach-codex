@@ -43,7 +43,7 @@
   "birth_defects": ["birth defect", "congenital defect", "congenital birth defect"],
   "learning_disabilities": ["learning disabilit", "learning disorder"],
   "coronary_artery_disease": ["coronary artery", "coronary heart", "coronary occlusion"],
-  "cardiovascular_disease": ["cardiovascular", "heart disease"],
+  "cardiovascular_disease": ["cardiovascular", "heart disease", "arterial disease"],
   "aneurysm": ["aneurysm", "aneurism"],
   "atherosclerosis": ["atherosclerosis", "arteriosclerosis", "hardening of the arteries"],
   "malabsorption": ["malabsorption", "poor absorption", "impaired absorption"],
@@ -72,5 +72,14 @@
   "high_triglycerides": ["elevated blood triglycerides", "elevated triglycerides", "high triglycerides", "hypertriglyceridemia"],
   "backache": ["low back", "lower back", "back pain"],
   "explosive_outbursts": ["explosive behavior", "explosive outburst"],
-  "panic_attacks": ["panic attack", "panic attacks"]
+  "panic_attacks": ["panic attack", "panic attacks"],
+  "low_libido": ["loss of libido"],
+  "candidiasis": ["candida albicans", "candida"],
+  "hiv_aids": ["hiv infection"],
+  "urinary_tract_infection": ["bladder infection"],
+  "adrenoleukodystrophy": ["adrenoleucodystrophy"],
+  "hypokalemia": ["hypokalemic"],
+  "depression": ["depressed"],
+  "thyroid_cancer": ["thyroid follicular cell tumors"],
+  "menkes_syndrome": ["menke syndrome"]
 }

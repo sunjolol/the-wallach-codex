@@ -1650,7 +1650,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach holds that muscular dystrophy is a preventable selenium-deficiency disease: adequate selenium in the diets and supplements of preconception women is key to preventing muscular dystrophy in all its named forms (Duchenne, Erb, Leyden-Moebius, Landouzy-Dejerine, Becker's, Gowers), which he calls artificial classifications by the muscle group first affected. He notes the veterinary industry wiped out white muscle disease / mulberry heart disease with simple selenium supplementation.",
-      "verbatim": "Prevention is the name of the game with MD; the selenium levels in the diets and supplements of preconception women is important to the maintenance of pregnancy as well as the prevention of MD in all of its forms",
+      "verbatim": "muscular dystrophy would be\ntotally preventable but a whole medical\nspecialty would be wiped out!!!",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -1658,7 +1658,7 @@
         "page": 153,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 432680
+        "char_offset": 431492
       },
       "dose": null,
       "tags": [
@@ -3204,12 +3204,11 @@
       ],
       "other_substances": [],
       "conditions": [
-        "rheumatoid_arthritis",
         "arthritis"
       ],
       "symptoms": [],
       "claim_text": "Wallach documents the allopathic use of gold compounds (gold sodium thiomalate, aurothioglucose) as an add-on to aspirin for rheumatoid arthritis when extra pain relief is needed. Gold is not analgesic but may be anti-inflammatory — effective against active joint inflammation, though not for advanced destructive rheumatoid arthritis. Standard intramuscular (injected into a muscle) schedule: 10 mg week one, 25 mg week two, then 50 mg per week to a 1 gram total, then 50 mg every two to four weeks as maintenance; relapse is expected three to four months after withdrawal.",
-      "verbatim": "Standard doses are\ngiven IM at weekly intervals: 10 mg initially,\n25 mg second week and 50 mg per week\nuntil a total of 1 G has been administered\nthen the maintenance dose is reduced to\n50 mg every two to four weeks.",
+      "verbatim": "arthritis.\n\nGold is not analgesic but may have anti-\ninflammatory effects. Standard doses are\ngiven IM at weekly intervals: 10 mg initially,\n25 mg second week and 50 mg per week\nuntil a total of 1 G has been administered\nthen the maintenance dose is reduced to\n50 mg every two to four weeks.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -3217,7 +3216,7 @@
         "page": 287,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 723072
+        "char_offset": 722997
       },
       "dose": {
         "amount": "10/25/50",
@@ -4595,7 +4594,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach cites the cancer evidence against fluoridation: epidemiological studies by Yiamouyiannis and Burk (1977) prompted congressional hearings over a charge of 10,000 excess cancer deaths from fluoridated water, leading to mandated animal studies. The 1990 National Toxicology Program results showed increased precancerous oral-mucosa cells, oral squamous-cell carcinoma, a rare osteosarcoma at double the rate in males versus females, and increased thyroid follicular-cell tumors and liver cancer.",
-      "verbatim": "there was an increase in cancers of the oral mucus membranes (squamous cell carcinoma); a rare form of osteosarcoma appeared at double the rate in males as females",
+      "verbatim": "there was an increase in cancers of the oral mucus membranes (squamous cell carcinoma); a rare form of osteosarcoma appeared at double the rate in males as females; and there was an increase in thyroid follicular cell tumors and liver cancer (hepatocholangiocarcinoma).",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -4845,9 +4844,7 @@
         "copper"
       ],
       "other_substances": [],
-      "conditions": [
-        "menkes_disease"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach describes Menkes' Kinky Hair Syndrome — thought to be a sex-linked recessive defect of copper absorption — in which affected infants show retarded growth, defective keratin formation and loss of hair pigment, low body temperature, degeneration and fracture of aortic elastin (aneurysms), arthritis in the growth plate of long bones, and progressive mental deterioration (the brain is left free of the essential enzyme cytochrome c oxidase). Because metallic copper is poorly absorbed, copper injections are useful.",
       "verbatim": "The affected infants exhibit retarded growth, defective keratin formation and loss of hair pigment, low body temperature, degeneration and fracture of aortic elastin (aneurysms), arthritis in the growth plate of long bones,",
@@ -5130,7 +5127,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach cites island populations (Pisila, Polje, and Milahnici) with identical soil-iodine content but sharply different goiter rates: a severe copper deficiency in the soils of the high-goiter areas accounts for the difference, because copper is required to utilize iodine.",
-      "verbatim": "there is identical iodine content of the soil in all three locations; however, there is a severe copper deficiency in the soils of the north and the south (copper is required to utilize iodine).",
+      "verbatim": "Northern parts of the Adriatic Islands had more clinical goiter than the southern areas while the southwest was goiter-free (46% of the population of Pisila; 40% of the population of Polje and only 3% of the population of Milahnici); there is identical iodine content of the soil in all three locations; however, there is a severe copper deficiency in the soils of the north and the south (copper is required to utilize iodine).",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -5138,7 +5135,7 @@
         "page": 343,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 827217
+        "char_offset": 826983
       },
       "dose": null,
       "tags": [
@@ -5615,9 +5612,7 @@
       "kind": "prevalence",
       "essentials": [],
       "other_substances": [],
-      "conditions": [
-        "depression"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach notes Prozac, America's leading antidepressant, was introduced in 1987 and sales soared to $350 million by 1989 (more than was spent on all antidepressants two years earlier), with projections to top $1 billion by 1995 as allopathic doctors generated 650,000 prescriptions per month.",
       "verbatim": "Prozac, America’s “leading” antidepressant pharmaceutical was introduced in 1987, sales soared to $350 million in 1989, more than was spent on all antidepressants just two years earlier",
@@ -7461,7 +7456,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach gives blood-lead thresholds: the \"normal\" level is below 40 mcg/dl, while children with blood lead of 60–80 mcg/dl show vomiting, irritability, weight loss, muscular weakness, headache, abdominal pain, insomnia, and anorexia.",
-      "verbatim": "The “normal” blood lead level is below 40 ug/dl - children with blood lead above 60 to 80 ug/dl have symptoms of vomiting, irritability, weight loss, muscular weakness, headache, abdominal pain, insomnia and anorexia.",
+      "verbatim": "result in lead poisoning).\n\nThe “normal” blood lead level is below 40 ug/dl - children with blood lead above 60 to 80 ug/dl have symptoms of vomiting, irritability, weight loss, muscular weakness, headache, abdominal pain, insomnia and anorexia.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -7469,7 +7464,7 @@
         "page": 375,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 894130
+        "char_offset": 894102
       },
       "dose": null,
       "tags": [
@@ -7493,7 +7488,6 @@
         "lead"
       ],
       "conditions": [
-        "lead_poisoning",
         "anemia",
         "encephalopathy"
       ],
@@ -8304,7 +8298,6 @@
         "angular_stomatitis",
         "seborrheic_dermatitis",
         "anemia",
-        "peripheral_neuropathy",
         "photophobia"
       ],
       "symptoms": [
@@ -8466,8 +8459,7 @@
       ],
       "other_substances": [],
       "conditions": [
-        "pernicious_anemia",
-        "peripheral_neuropathy"
+        "pernicious_anemia"
       ],
       "symptoms": [
         "spinal_cord_demyelination"
@@ -9060,7 +9052,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach reports that vanadium stimulates glucose (blood sugar) oxidation and transport in fat cells and glycogen (animal starch) synthesis in the liver and muscle, while inhibiting liver gluconeogenesis (the production of glucose from fat) and the absorption of glucose from the gut.",
-      "verbatim": "Vanadium stimulates glucose (blood sugar) oxidation and transport in fat cells and glycogen (animal starch) synthesis in liver and muscle, and inhibits liver gluconeogenisis (production of glucose from fat) and absorption of glucose from the gut.",
+      "verbatim": "glucose tolerance problems (i.e. -\nhypoglycemia, hyperinsulinemia and dia-\nbetes) by making the cell membrane insulin\nreceptors more sensitive to insulin. Several\ncultures including American Indians, Hispan-\nics and Hawaiians have an increased rate of\ndiabetes",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -9068,7 +9060,7 @@
         "page": 412,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 960163
+        "char_offset": 960768
       },
       "dose": null,
       "tags": [
@@ -9126,10 +9118,7 @@
         "vanadium"
       ],
       "other_substances": [],
-      "conditions": [
-        "high_cholesterol",
-        "cardiovascular_disease"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach reports that vanadium inhibits cholesterol synthesis in animals and humans, which is followed by decreased plasma cholesterol levels and reduced aortic cholesterol.",
       "verbatim": "Vanadium inhibits cholesterol synthesis in animals and humans; this is followed by decreased plasma levels of cholesterol and reduced aortic cholesterol.",

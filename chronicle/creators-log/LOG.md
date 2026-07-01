@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 252 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 253 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 14:50 UTC-05:00 · round-close · corpus/knowledge-drawer
+SESSION 35 — RARE verbatim-remediation COMPLETE 26→0. Matcher stopword-both-sides fix (0 regressions) + 10 synonyms + 12 relocate/drop edits (Luneth-ruled: Menkes dup-slug merge, Prozac→depression drop). verbatim 313→283, orphans 101→92, kv 221, board 32/32, probe PASS.
 
 ## 2026-07-01 11:14 UTC-05:00 · round-close · chronicle + corpus (merge reconcile)
 SESSION 34 — merged the two b3-divergent branches (master RARE-tail + branch pms+tooling). Generated conflicts fixed by RE-SEAL; ledgers unioned, log.jsonl append-only prefix-preserved. kv 219, board 32/32; both sides verified (pms 5 claims; RARE 83→26; orphans 101).
@@ -795,7 +798,3 @@ Phase γ.3 batch 13 — Rare Earths Ch.11 conceptual foundation: 6 claims (RARE-
 ## 2026-06-24 22:58 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 12 — Rare Earths Ch.10 'Glacial Milk': 5 claims (colloidal-minerals=most-critical-of-90; Glacial Milk=glaciers grind 2-6in rock/yr; 60-72 vs 3-20 minerals; 5-12% absorbed by drinking but irrigation is the key; millennia→optimal health). kv 32→33, 167 claims.
   ↳ Mined Rare Earths Ch.10 'GLACIAL MILK: Plant derived colloidal minerals' (idx 272-285 / pp251-264), the deep version of the Ch.8 synthesis: RARE-000069 (of the 90 nutrients the MOST CRITICAL for the long-lived cultures are plant-derived colloidal minerals — p251), 000070 (Glacial Milk forms as glaciers grind 2-6 inches of parent rock/yr into rock flour — p251), 000071 (the cultures' Glacial Milk = 60-72 minerals vs only 3-20 in the thousands of other world glaciers — p252), 000072 (centenarians absorb only 5-12% of metallic colloids they DRINK; the key is IRRIGATION so plants convert metallic->organic colloidal — mechanism p253), 000073 (millennia of Glacial-Milk-irrigated terraces -> optimal health free of Western degenerative diseases — p253). Skipped the 98%-bioavailability restatement (already RARE-061). PIPELINE LESSON: -\n+ de-hyphenation over-merged 'long-\nlived'->'longlived' (NEW OCR error); added compound-restore {longlived->long-lived} + grep -c longlived=0 guard; earlier batches clean. resnap 0 broken, seal kv 32->33 (RARE 73, 167 claims), embed, build, invariants 30/30. No fringe. NEXT: Ch.11 'RARE EARTHS' (idx 286/p265) per-element catalog.
-
-## 2026-06-24 22:35 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 11 — Rare Earths Ch.9 'The Killing Fields': 5 iatrogenic claims (Harvard 1991 198k hospital deaths/yr; Wolfe 300k[/600k] > Vietnam's 56k; poly-pharmacy 25%+ over-65; 70% of doctors flunked Rx quiz; 20 no-no drugs to 6.6M seniors). kv 31→32, 162 claims.
-  ↳ Mined Rare Earths Ch.9 'THE KILLING FIELDS' + 'TILTING AT PILL MILLS' (idx 236-271 / pp215-250), the iatrogenic thesis that IS core Wallach/DDDL: RARE-000064 (1991 Harvard SPH study: 1.3M injuries + 198,000 deaths/yr in US hospitals from iatrogenic mishaps, 4-5x highways, 7-of-10 avoidable, ~33% negligence — prevalence p215), 000065 (Wolfe/Public Citizen: 300,000/yr hospital-negligence deaths [maybe 600,000] vs 56,000 in all of Vietnam — prevalence p226), 000066 (poly-pharmacy endangers 25%+ of over-65s, many drugs only countering another drug's side effects — mechanism p226), 000067 (70% of allopathic doctors flunked a 1994 Rx quiz; mis-prescribe to 25% of seniors per Jul-1994 NEJM — prevalence p226), 000068 (20 contraindicated-for-elderly drugs prescribed to 6.6M seniors/yr — prevalence p226). HARDENED reflow to heal hyphen/slash words split across page-break blank lines (regex -\n+ / /\n+; fixed mishaps). resnap 0 broken, seal kv 31->32 (RARE 68, 162 claims), embed, build, invariants 30/30. No fringe. Deferred: PILL MILLS drug-specifics + Table 9-1. NEXT: Ch.10 'Glacial Milk' (idx 272/p251).

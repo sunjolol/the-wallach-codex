@@ -68,8 +68,16 @@ def accepted_phrases(slug: str, display: str, syn: dict) -> list:
 
 
 def names(text_norm: str, slug: str, display: str, syn: dict) -> bool:
-    """True iff the normalized text contains the condition's name / a synonym."""
-    return any(p and p in text_norm for p in accepted_phrases(slug, display, syn))
+    """True iff the normalized text names the condition (name / synonym).
+
+    Compare against the STOPWORD-STRIPPED text (sig_phrase), not the raw normalized
+    text: accepted_phrases are themselves stopword-stripped, so matching raw text
+    makes a faithful phrase like "loss of libido" (sig "loss libido") fail against a
+    verbatim "loss of libido" -- the "of" exists only on one side. Stripping both
+    sides fixes that asymmetry (measured SESSION 35: 313->308 total, clears 5 legit
+    "loss-of-sense-of-X" links, 0 regressions)."""
+    text_sig = sig_phrase(text_norm)
+    return any(p and p in text_sig for p in accepted_phrases(slug, display, syn))
 
 
 def load_syn() -> dict:

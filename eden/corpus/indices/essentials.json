@@ -1750,7 +1750,6 @@
       "kawasaki_disease",
       "learning_disabilities",
       "liver_cirrhosis",
-      "menkes_disease",
       "menkes_syndrome",
       "neutropenia",
       "osteoporosis",
@@ -3295,8 +3294,7 @@
     },
     "deficiency_signs": [],
     "conditions_treated": [
-      "arthritis",
-      "rheumatoid_arthritis"
+      "arthritis"
     ],
     "interacts_with": [],
     "books_cited": [
@@ -4664,7 +4662,6 @@
       "eye_redness",
       "geographic_tongue",
       "neuropathy",
-      "peripheral_neuropathy",
       "photophobia",
       "seborrheic_dermatitis"
     ],
@@ -5649,7 +5646,6 @@
       "meningocele",
       "neuralgia",
       "neuropathy",
-      "peripheral_neuropathy",
       "pernicious_anemia",
       "psychosis",
       "reyes_syndrome",

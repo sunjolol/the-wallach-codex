@@ -2531,11 +2531,8 @@
   },
   "cardiovascular_disease": {
     "display_name": "Cardiovascular Disease",
-    "claim_count": 5,
+    "claim_count": 4,
     "claims_by_role": {
-      "causes": [
-        "WAL-CLM-RARE-000256"
-      ],
       "deficiency_signs": [
         "WAL-CLM-RARE-000245",
         "WAL-CLM-RARE-000257"
@@ -3827,7 +3824,7 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 39,
+    "claim_count": 38,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000161"
@@ -3869,8 +3866,7 @@
         "WAL-CLM-LETS-000081"
       ],
       "prevalence": [
-        "WAL-CLM-RARE-000160",
-        "WAL-CLM-RARE-000162"
+        "WAL-CLM-RARE-000160"
       ],
       "protocols": [
         "WAL-CLM-LETS-000244",
@@ -5733,11 +5729,8 @@
   },
   "high_cholesterol": {
     "display_name": "High Cholesterol",
-    "claim_count": 12,
+    "claim_count": 11,
     "claims_by_role": {
-      "causes": [
-        "WAL-CLM-RARE-000256"
-      ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000107",
@@ -7211,16 +7204,13 @@
   },
   "lead_poisoning": {
     "display_name": "Lead Poisoning",
-    "claim_count": 5,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000211"
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000212"
-      ],
-      "prognosis": [
-        "WAL-CLM-RARE-000213"
       ],
       "protocols": [
         "WAL-CLM-LETS-000340",
@@ -7794,22 +7784,6 @@
     "other_substances_involved": [],
     "books_cited": [
       "lets-play-doctor"
-    ]
-  },
-  "menkes_disease": {
-    "display_name": "Menkes Disease",
-    "claim_count": 1,
-    "claims_by_role": {
-      "deficiency_signs": [
-        "WAL-CLM-RARE-000141"
-      ]
-    },
-    "essentials_involved": [
-      "copper"
-    ],
-    "other_substances_involved": [],
-    "books_cited": [
-      "rare-earths"
     ]
   },
   "menkes_syndrome": {
@@ -9220,20 +9194,16 @@
   },
   "peripheral_neuropathy": {
     "display_name": "Peripheral Neuropathy",
-    "claim_count": 5,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000108",
-        "WAL-CLM-RARE-000234",
-        "WAL-CLM-RARE-000237",
-        "WAL-CLM-RARE-000238"
+        "WAL-CLM-RARE-000237"
       ]
     },
     "essentials_involved": [
       "chromium",
-      "vitamin-b12",
-      "vitamin-b2",
       "vitamin-b6"
     ],
     "other_substances_involved": [],
@@ -10018,21 +9988,19 @@
   },
   "rheumatoid_arthritis": {
     "display_name": "Rheumatoid Arthritis",
-    "claim_count": 4,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000050"
       ],
       "protocols": [
         "WAL-CLM-LETS-000146",
-        "WAL-CLM-LETS-000419",
-        "WAL-CLM-RARE-000096"
+        "WAL-CLM-LETS-000419"
       ]
     },
     "essentials_involved": [
       "calcium",
       "copper",
-      "gold",
       "histidine",
       "magnesium",
       "omega-3",
@@ -10066,8 +10034,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
-      "lets-play-doctor",
-      "rare-earths"
+      "lets-play-doctor"
     ]
   },
   "rickets": {
