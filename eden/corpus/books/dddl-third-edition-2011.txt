@@ -7404,7 +7404,7 @@ Lysine protein production
 Threonine protein production
 Leucine protein production
 Isoleucine protein production
-Tryptophane precursor of niacin and serotonin
+Tryptophan precursor of niacin and serotonin
 Phenylalanine precursor of thyroxin and epinephrine
 Methionine formation of choline and creatine phosphate
 Histidine formation of histamine
