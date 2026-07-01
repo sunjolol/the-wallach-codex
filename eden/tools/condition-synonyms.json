@@ -54,5 +54,13 @@
   "bruises": ["bruising", "bruise"],
   "huntingtons_disease": ["huntington"],
   "disagreeable_attitude": ["quarrelsome attitude", "quarrelsome", "sullen", "disagreeable"],
-  "blepharitis": ["blephritis"]
+  "blepharitis": ["blephritis"],
+  "keshan_disease": ["ksd", "keshan"],
+  "sudden_cardiac_death": ["sudden heart death", "sudden death", "sudden cardiac death"],
+  "wernicke_korsakoff_syndrome": ["wernecke korsakoff", "wernecke", "wernicke korsakoff"],
+  "cheilosis": ["chelosis", "cheilosis"],
+  "eye_redness": ["capillary injection"],
+  "bipolar_disorder": ["bi polar", "manic depression", "manic depressive", "bipolar"],
+  "crohns_disease": ["crohn"],
+  "addisons_disease": ["addison"]
 }

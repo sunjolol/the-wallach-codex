@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 238 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 239 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 06:39 UTC-05:00 · round-close · knowledge-drawer
+SESSION 32 b2 — EPIGEN verbatim-remediation: 15 more claims re-anchored to name every mapped condition; 4 orphans fixed (cretinism/ED/addisons/eye_redness); +8 synonyms (apostrophe-s: crohn/addison/wernecke). Violations 541->498, board 32/32, 0 NEW.
 
 ## 2026-07-01 06:19 UTC-05:00 · round-close · knowledge-drawer
 SESSION 32 b1 — EPIGEN verbatim-remediation starts. 15 vitamin/amino/mineral deficiency-list claims: verbatim extended to Wallach's own list so every mapped condition is NAMED (Hybrid; 0 orphans). +6 synonyms. Violations 601->541, board 32/32, probe PASS.
@@ -800,7 +803,3 @@ Phase γ.3 batch 3: Rare Earths Ch.2 (60-metals + lithium) + Ch.3 'Our Earth Is 
 ## 2026-06-24 19:30 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 2: Rare Earths Ch.2 opening (Minerals: The Currency of Life) reflowed + 3 claims (kv 20→21, RARE 24→27, 121 total). Hit a content-policy block on a full-page image render (salt-slave-trade history) — worked around via the PDF text layer. Luneth-approved.
   ↳ 3 new Ch.2 claims (WAL-CLM-RARE-000025..27): minerals a necessity since before recorded history (clays/salts/animal tissue/colloidal-mineral plants); anti-low-salt stance (sodium+chloride, the livestock salt block + snack-food craving); July 1993 East Coast heat-wave deaths attributed to physician-prescribed salt-free diets for BP/heart disease, survivors given IV saline (sodium+heat_stroke, aligns with existing claim 3). Salt-trade history (Via Salaria/Marco Polo/Chinese salt taxes/African caravans) skipped as anecdote per claim-first. INCIDENT + workaround: rendering the full p20 image tripped an image content classifier (the page's salt-as-money history mentions trading for 'brides or slaves' + p21 the African salt-slave trade) — pulled those pages from the PDF text layer instead (plain text, bypasses the image classifier), cross-checked against the .txt (two independent OCRs agreeing). Recorded in memory reading-and-correcting-scanned-pdfs for future sessions.
-
-## 2026-06-24 19:12 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 1: Rare Earths Preface (xvii-xix) reflowed + 6 thesis claims sealed (kv 19→20, RARE 18→24, 118 total). corpus_resnap healed 4/relocated 13/0 broken — the OCR-correction pipeline works end-to-end. Luneth-approved.
-  ↳ First real exercise of the full OCR-correction pipeline: render scanned PDF page -> read at high DPI -> safe_write reflow of the book text -> corpus_resnap (re-hash books-meta + heal/relocate existing claims) -> finalize new claims (verbatims snap to cleaned bytes) -> corpus_seal -> corpus_embed -> build -> invariants 30/30. 6 net-new Preface thesis claims (WAL-CLM-RARE-000019..24): population doubling-time collapse; 75.5y US lifespan=62% of 120-140y potential, 17th rank; no lifestyle movement extends lifespan; the 90 essentials no longer reliably in food; genetic engineering can't substitute for raw materials (Mercedes-without-oil); the 5+ ancient longevity cultures via plant-derived colloidal minerals. Process lesson: the Preface .txt OCR was high-quality; trust it as base, verify at high DPI, fix only genuine errors (one: Biosphere Il->II). Caught + corrected a gist-read error in my own fringe file (dead->steal records) — careful word-level reading matters. Criminal-behavior passages filed to knowledge/fringe-knowledge/, never front-facing.

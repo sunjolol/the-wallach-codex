@@ -172,6 +172,14 @@
     "kind": "mechanism",
     "repetitions": [
       {
+        "claim_id": "WAL-CLM-EPIGEN-000001",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000029",
+        "book": "epigenetics"
+      },
+      {
         "claim_id": "WAL-CLM-EPIGEN-000071",
         "book": "epigenetics"
       },
@@ -253,7 +261,7 @@
       }
     ],
     "books_repeating": 3,
-    "claim_count": 20
+    "claim_count": 22
   },
   {
     "id": "CG-0003",
@@ -368,10 +376,6 @@
     "kind": "mechanism",
     "repetitions": [
       {
-        "claim_id": "WAL-CLM-EPIGEN-000001",
-        "book": "epigenetics"
-      },
-      {
         "claim_id": "WAL-CLM-RARE-000015",
         "book": "rare-earths"
       },
@@ -380,8 +384,8 @@
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 2,
-    "claim_count": 3
+    "books_repeating": 1,
+    "claim_count": 2
   },
   {
     "id": "CG-0008",

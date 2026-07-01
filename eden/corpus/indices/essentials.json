@@ -4554,13 +4554,10 @@
       "depression",
       "edema",
       "fibromyalgia",
-      "hysteria",
       "korsakoffs_syndrome",
-      "multiple_sclerosis",
       "nervous_heart",
       "palpitations",
       "parkinsonism",
-      "peripheral_neuropathy",
       "tachycardia",
       "wernicke_korsakoff_syndrome"
     ],
@@ -6918,11 +6915,9 @@
       "cancer",
       "cataracts",
       "erectile_dysfunction",
-      "fractures",
       "goiter",
       "infertility",
-      "macular_degeneration",
-      "wounds"
+      "macular_degeneration"
     ],
     "interacts_with": [
       "chromium",

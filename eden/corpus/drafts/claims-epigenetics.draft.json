@@ -8,9 +8,7 @@
       "kind": "mechanism",
       "essentials": [],
       "other_substances": [],
-      "conditions": [
-        "birth_defects"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach's epigenetic cornerstone: a healthy zygote and a properly functioning genome depend on the DNA having constant access to all 90 essential nutrients -- which he counts as 60 minerals, 16 vitamins, 12 amino acids, and 3 fatty acids -- each present in optimal amounts and in proper ratios to one another. The genes are not free-standing proteins that work in a vacuum; they require energy, raw materials, and on/off switching co-factors supplied by these nutrients. In his words: \"To function properly, it is imperative for the DNA to constantly have access to all 90 essential nutrients (60 minerals, 16 vitamins, 12 amino acids and 3 fatty acids), and each one must be available in optimal amounts and in the proper ratios to each other.\"",
       "verbatim": "To function properly, it is imperative for the DNA\nto constantly have access to all 90 essential nutrients (60 minerals, 16 vitamins,\n12 amino acids and 3 fatty acids), and each one must be available in optimal\namounts and in the proper ratios to each other.",
@@ -132,7 +130,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach identifies cystic fibrosis as a nutritional deficiency of the trace mineral selenium rather than a purely genetic disease -- a conclusion drawn from his 1977 discovery of cystic-fibrosis lesions in a selenium-deficient rhesus monkey -- and holds that it can be prevented, reversed, and cured with supplemental selenium. In his words: \"As soon as Wallach revealed that CF was actually a nutritional deficiency of the trace-mineral selenium that could be prevented, reversed, and cured with supplemental selenium, he was summarily terminated from his position as a pathologist at the Yerkes facility in April of 1978.\"",
-      "verbatim": "As soon as\nWallach revealed that CF was actually a nutritional deficiency of the trace-\nmineral selenium that could be prevented, reversed, and cured with supplemental\nselenium, he was summarily terminated from his position as a pathologist at the\nYerkes facility in April of 1978.",
+      "verbatim": "Cystic fibrosis (CF) is an important, potentially fatal disease of animals and\nhumans, which was originally thought to be transmitted by a simple Mendelian\ngenetic defect limited to white populations of Central and Eastern European\norigin; today CF has been diagnosed in virtually all peoples of the earth",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -140,7 +138,7 @@
         "page": 560,
         "screenshot": 550,
         "kindle_location": null,
-        "char_offset": 991084
+        "char_offset": 990417
       },
       "dose": null,
       "tags": [
@@ -495,7 +493,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach's second dementia: Korsakoff's syndrome, which he classifies as part of the BeriBeri (thiamine, or vitamin B1, deficiency) family of diseases. He holds it is reversible by eliminating sugar, fried foods, processed meats, oils, and gluten from the diet and following a supplement program providing all 90 essential nutrients with a special emphasis on thiamine (vitamin B1). In Wallach's words: \"The disease can be reversed by the elimination of sugar, fried foods, processed meats, oils, and gluten from the diet as well as a supplement program that provides all 90 essential nutrients with a special emphasis on the supplementation of thiamine...\"",
-      "verbatim": "The disease can be reversed by the\n\n\nelimination of sugar, fried foods, processed meats, oils, and gluten from\nthe diet as well as a supplement program that provides all 90 essential\nnutrients with a special emphasis on the supplementation of thiamine",
+      "verbatim": "Korsakoff’s syndrome occurs as part of the BeriBeri (thiamine or vitamin\n\nB, deficiency) collection of diseases. The disease can be reversed by the\n\n\nelimination of sugar, fried foods, processed meats, oils, and gluten from\nthe diet as well as a supplement program that provides all 90 essential\nnutrients with a special emphasis on the supplementation of thiamine",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -503,7 +501,7 @@
         "page": 581,
         "screenshot": 560,
         "kindle_location": null,
-        "char_offset": 1027604
+        "char_offset": 1027491
       },
       "dose": null,
       "tags": [
@@ -534,7 +532,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach's third dementia: Wernicke-Korsakoff's syndrome (printed 'Wernecke-Korsakoff's'), which he describes as a two-part syndrome in which the patient is diagnosed with both Korsakoff's syndrome and multiple sclerosis (MS) simultaneously. He holds it is reversible by treating both: a dietary change to stop the ongoing inflammatory damage to the brain's myelin (as occurs in MS), the addition of 6-8 eggs per day to supply raw materials for myelin maintenance and repair, and a program of all 90 essential nutrients with special emphasis on antioxidants, including selenium. In Wallach's words: \"The disease syndrome can be reversed by dealing with both diseases. To stop the ongoing inflammatory damage to the myelin of the brain (that occurs in MS) with a dietary change, add 6-8 eggs per day to provide raw materials to help support maintenance and repair of the myelin and supplement with all 90 essential nutrients with a special emphasis on antioxidants, including selenium.\"",
-      "verbatim": "The disease syndrome can\nbe reversed by dealing with both diseases. To stop the ongoing\ninflammatory damage to the myelin of the brain (that occurs in MS)\nwith a dietary change, add 6-8 eggs per day to provide raw materials\nto help support maintenance and repair of the myelin and supplement\nwith all 90 essential nutrients with a special emphasis on antioxidants,\nincluding selenium.",
+      "verbatim": "Wernecke-Korsakoff's syndrome is a two-part disease syndrome in\n\nwhich the patient is diagnosed with both Korsakoff’s syndrome and\nmultiple sclerosis (MS) simultaneously",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -542,7 +540,7 @@
         "page": 581,
         "screenshot": 560,
         "kindle_location": null,
-        "char_offset": 1028044
+        "char_offset": 1027873
       },
       "dose": null,
       "tags": [
@@ -1043,10 +1041,7 @@
       "kind": "mechanism",
       "essentials": [],
       "other_substances": [],
-      "conditions": [
-        "achlorhydria",
-        "malabsorption"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach explains that low stomach acid (hypochlorhydria) undermines digestion and nutrient absorption. The acid-manufacturing chief cells of the stomach make hydrochloric acid from sodium chloride (table salt), and that stomach acid is needed to keep the stomach environment sterile -- below a pH of 2.0, preventing the overgrowth of bacteria, viruses, yeast, and fungus, gastric fermentation, and reflux -- to activate the 'intrinsic factor' required for vitamin B12 absorption, to activate the protein-digesting enzyme pepsin, and to facilitate the absorption of minerals. When stomach acid is too low, the absorption of vitamin B12, proteins, and minerals fails. In his words: 'The raw material for the Chief Cells, the acid-manufacturing cells of the stomach, to make hydrochloric acid is NaCl, which is salt. Stomach acid is required to keep the stomach environment sterile and free of bacteria, viruses, yeast, and fungus.'",
       "verbatim": "The raw material for the Chief Cells, the acid-manufacturing cells of the\nstomach, to make hydrochloric acid is NaCl, which is salt. Stomach acid is\nrequired to keep the stomach environment sterile and free of bacteria, viruses,\nyeast, and fungus.",
@@ -1086,12 +1081,11 @@
         "colitis",
         "crohns_disease",
         "bloating",
-        "heartburn",
         "malabsorption"
       ],
       "symptoms": [],
       "claim_text": "Wallach frames gluten intolerance not as an allergy but as a 'contact enteritis' -- an irritant reaction of the small-grain proteins on the gut lining, analogous to the contact dermatitis poison ivy causes on skin (no one is allergic to poison ivy, yet nearly everyone is intolerant of it). The gastrointestinal damage from this gluten-contact enteritis includes celiac disease, diverticulitis, appendicitis, irritable bowel syndrome, inflammatory bowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease, gastritis, bloating, and reflux. The gradual, progressive loss of intestinal villi it causes produces malabsorption and, through it, a wide range of nutritional-deficiency diseases -- so the corrective action is to avoid gluten. In his words: 'The gastrointestinal damage that is produced by the gluten-contact enteritis includes celiac disease (wheat allergy that occurs concurrently with contact enteritis), diverticulitis, appendicitis, irritable bowel syndrome, inflammatory bowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease, gastritis, bloating, and reflux.'",
-      "verbatim": "The gastrointestinal damage that is produced by the gluten-contact enteritis\nincludes celiac disease (wheat allergy that occurs concurrently with contact\nenteritis), diverticulitis, appendicitis, irritable bowel syndrome, inflammatory\nbowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease,\ngastritis, bloating, and reflux.",
+      "verbatim": "includes celiac disease (wheat allergy that occurs concurrently with contact\nenteritis), diverticulitis, appendicitis, irritable bowel syndrome, inflammatory\nbowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease,\ngastritis, bloating, and reflux.\n\nThe gradual and progressive loss of intestinal villi as a result of contact\nenteritis produces a kaleidoscope of nutritional-deficiency diseases as a result\nof malabsorption",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -1099,7 +1093,7 @@
         "page": 598,
         "screenshot": 568,
         "kindle_location": null,
-        "char_offset": 1055683
+        "char_offset": 1055760
       },
       "dose": null,
       "tags": [
@@ -1329,18 +1323,13 @@
       ],
       "other_substances": [],
       "conditions": [
-        "anxiety",
-        "hysteria",
-        "depression",
         "anorexia",
         "fibromyalgia",
         "beriberi",
         "congestive_heart_failure",
         "korsakoffs_syndrome",
         "wernicke_korsakoff_syndrome",
-        "dementia",
-        "multiple_sclerosis",
-        "peripheral_neuropathy"
+        "dementia"
       ],
       "symptoms": [
         "mental_confusion",
@@ -1349,7 +1338,7 @@
         "paralysis"
       ],
       "claim_text": "Vitamin B1 (thiamine) is a cofactor for energy production and the metabolism of carbohydrates, protein, and fat; its deficiency especially disturbs carbohydrate metabolism in the brain (dementia) and heart (congestive heart failure). Wallach lists the health problems of thiamine deficiency: anxiety, hysteria, confusion, nausea, depression, mental confusion, loss of appetite (anorexia), muscular weakness, fibromyalgia, beriberi (muscle wasting, congestive heart failure, Korsakoff syndrome with dementia, and Wernicke-Korsakoff syndrome with dementia and multiple sclerosis), paralysis, and peripheral neuropathies. In his words: 'Thiamine (B,)-deficiency health problems include: Anxiety, hysteria, confusion; Nausea; Depression; Mental confusion.'",
-      "verbatim": "Thiamine (B,)-deficiency health problems include:\n\nAnxiety, hysteria, confusion\nNausea\n\nDepression\n\nMental confusion",
+      "verbatim": "Anorexia\n\nMuscular weakness\n\nFibromyalgia\n\nBeriberi (muscle wasting, congestive heart failure, Korsakoff syndrome\n[dementia] and Wernicke-Korsakoff syndrome [dementia & MS])",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -1357,7 +1346,7 @@
         "page": 614,
         "screenshot": 576,
         "kindle_location": null,
-        "char_offset": 1082933
+        "char_offset": 1083112
       },
       "dose": null,
       "tags": [
@@ -1396,7 +1385,7 @@
         "magenta_tongue"
       ],
       "claim_text": "Vitamin B2 (riboflavin) is a cofactor for the flavin coenzymes (flavin mononucleotide and flavin adenine dinucleotide) needed for oxidation-reduction and energy production, helps convert tryptophan to niacin, and maintains healthy skin, mucous membranes, the cornea, and nerve sheaths. Wallach lists the health problems of riboflavin deficiency: cheilosis (cracks at the corners of the mouth and nostrils), angular stomatitis, seborrheic dermatitis of the nasal folds, soreness and burning of the lips, mouth, and tongue, geographic and magenta tongue, photophobia, lacrimation (tearing), capillary injection of the cornea, anemia, and neuropathy. In his words: 'Riboflavin-deficiency health problems include: Chelosis (cracks at the corners of the mouth and nostrils); Angular stomatitis; Seborrheic dermatitis of the nasal folds; Soreness and burning of lips, mouth and tongue; Geographic tongue, magenta tongue; Photophobia.'",
-      "verbatim": "Riboflavin-deficiency health problems include:\n\nChelosis (cracks at the corners of the mouth and nostrils)\nAngular stomatitis\n\nSeborrheic dermatitis of the nasal folds\n\nSoreness and burning of lips, mouth and tongue\nGeographic tongue, magenta tongue\n\nPhotophobia",
+      "verbatim": "Riboflavin-deficiency health problems include:\n\nChelosis (cracks at the corners of the mouth and nostrils)\nAngular stomatitis\n\nSeborrheic dermatitis of the nasal folds\n\nSoreness and burning of lips, mouth and tongue\nGeographic tongue, magenta tongue\n\nPhotophobia\n\nLacrimation (tearing)\nCapillary “injection” of cornea\nAnemia\n\nNeuropathy",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -1898,13 +1887,11 @@
       ],
       "other_substances": [],
       "conditions": [
-        "erectile_dysfunction",
-        "wounds",
-        "fractures"
+        "erectile_dysfunction"
       ],
       "symptoms": [],
       "claim_text": "Arginine is required for complete cell division, wound healing, the excretion of ammonia, immune support, and the synthesis of nitric oxide -- and supplementing it makes more adenosine triphosphate (cellular fuel) available. Wallach notes oral arginine reduces healing time after trauma (especially bone trauma), lowers blood pressure, and increases blood flow through obstructed blood vessels; an 8% arginine toothpaste relieves dental pain by depositing a calcium-phosphate dentin-like material, and arginine is commonly used (with proanthocyanidines or yohimbine) for erectile dysfunction. In his words: 'Arginine is required for complete and efficient cell division, wound healing, facilitating the biological use of and the excretion of ammonia, immune system support, and the availability of stored hormones. The oral supplementation of arginine is required for the synthesis of nitric oxide (NO), the reduction of healing time following trauma, and is particularly useful for bone trauma; it reduces blood pressure and increases blood flow through obstructed blood vessels.'",
-      "verbatim": "Arginine is required for complete and efficient cell division, wound healing,\nfacilitating the biological use of and the excretion of ammonia, immune system\nsupport, and the availability of stored hormones. The oral supplementation of\narginine is required for the synthesis of nitric oxide (NO), the reduction of healing\ntime following trauma, and is particularly useful for bone trauma; it reduces\nblood pressure and increases blood flow through obstructed blood vessels.",
+      "verbatim": "Arginine is commonly employed concurrently with proanthocyanidines or\nyohimbine for the relief of erectile dysfunction",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -1912,7 +1899,7 @@
         "page": 634,
         "screenshot": 586,
         "kindle_location": null,
-        "char_offset": 1110880
+        "char_offset": 1111580
       },
       "dose": null,
       "tags": [
@@ -3041,7 +3028,7 @@
       ],
       "symptoms": [],
       "claim_text": "Cobalt is essential because it is the metal at the center of vitamin B12 (cobalamin): a single cobalt atom sits in B12's tetrapyrrole ring, and the vitamin acts as a cofactor for transferring methyl groups -- with folic acid, choline, and methionine -- to build RNA and DNA, and for myelin formation and red-blood-cell synthesis. Wallach recounts that cobalt's essentiality was discovered when veterinarians found the fatal 'bush sickness' in Australian and New Zealand livestock (emaciation, listlessness, anorexia, microcytic anemia) could be cured by cobalt supplementation, and that pernicious anemia and demyelination of the spinal cord are the classic signs of B12/cobalt deficiency in humans -- common in vegans, after stomach or ileum surgery, and with hypochlorhydria (low stomach acid). He prefers 250 to 400 micrograms a day (above the 3-to-4 microgram conventional allowance), notes calcium is required for B12 to cross the intestinal wall, and warns that cobalt excess (20 to 30 milligrams a day) can drive erythropoiesis; cobalt is also a cofactor for thyroid-hormone production.",
-      "verbatim": "The discovery of the essentiality of cobalt came from veterinarians observing\na fatal disease called “bush sickness” in cattle and sheep from Australia and New\nZealand.",
+      "verbatim": "parasites (tapeworm), celiac disease, gluten intolerance, and other malabsorption\ndiseases. Pernicious anemia",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -3049,7 +3036,7 @@
         "page": null,
         "screenshot": "615",
         "kindle_location": null,
-        "char_offset": 1211559
+        "char_offset": 1212377
       },
       "dose": null,
       "tags": [
@@ -3079,7 +3066,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach notes that cesium is an alkaline mineral that behaves chemically like sodium, potassium, and rubidium, entering an ion-exchange complex with potassium (so extra dietary potassium speeds cesium's excretion). He records its use as a cancer treatment: cesium chloride is used as part of alternative cancer therapy, providing 'high pH therapy' by entering the cancer cell and producing an alkaline environment, and has been recommended for cancers including sarcomas, bronchiogenic carcinoma, and colon cancer.",
-      "verbatim": "Cesium chloride is used as part of alternative cancer therapy. Cesium provides\n“high pH therapy for cancer by entering the cancer cell and producing an alkaline\nenvironment.”",
+      "verbatim": "Cesium chloride is used as part of alternative cancer therapy. Cesium provides\n“high pH therapy for cancer by entering the cancer cell and producing an alkaline\nenvironment.” Cesium has been recommended for the treatment of many types\nof cancer including sarcomas, bronchiogenic carcinoma, and colon cancer",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -3639,7 +3626,7 @@
       ],
       "symptoms": [],
       "claim_text": "Iodine is an essential mineral concentrated in the thyroid gland; combined with the amino acid tyrosine it is manufactured into the thyroid hormone thyroxin, which regulates digestion, heart rate, body temperature, sweat-gland activity, the nervous and reproductive systems, general metabolism and body weight. Wallach argues iodine intake is usually low to begin with, and that as Americans restrict their salt intake on medical advice, physician-caused goiter and hypothyroidism have become epidemic; copper is a required cofactor for using iodine, so copper-poor soils also drive goiter. Low iodine and thyroid function produce hypothyroidism (Hashimoto's disease) -- fatigue, cold intolerance, weight gain, hair loss, depression, constipation, dry skin, poor memory, goiter, infertility, and congenital birth defects (cretinism in the newborn). He notes many foods act as goitrogens that interfere with thyroid function (dietary and waterborne nitrates, cruciferous vegetables, gluten intolerance) and that about 11 million Americans have an under- or over-active thyroid; the average American takes in only 170 to 250 micrograms of iodine per day, and metallic iodine is not toxic up to 2,000 micrograms per day.",
-      "verbatim": "since Americans have begun restricting their salt intake at their doctors\ninstruction, the rate of “allopath” caused goiter and hypothyroidism has become\nepidemic.",
+      "verbatim": "Symptoms of Hypothyroidism (Hashimoto's Disease)\n\nFatigue\nCold intolerance\n\nMuscle aches & pains\n\nHeavy or more frequent menstrual periods\nLow sex drive\n\nBrittle nails\n\nWeight gain\n\nHair loss\n\nMuscle cramps\n\nDepression\n\nConstipation\n\nElevated blood cholesterol\n\nPuffy face\n\nDry skin and hair\n\nInability to concentrate\n\nPoor memory\n\nGoiter\n\nInfertility\n\nCongenital birth defects (Cretinism)",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -3647,7 +3634,7 @@
         "page": null,
         "screenshot": "625",
         "kindle_location": null,
-        "char_offset": 1251635
+        "char_offset": 1253430
       },
       "dose": null,
       "tags": [
@@ -3752,13 +3739,11 @@
       "conditions": [
         "depression",
         "bipolar_disorder",
-        "autism",
-        "adhd",
-        "hyperactivity"
+        "autism"
       ],
       "symptoms": [],
       "claim_text": "Wallach presents lithium as an essential trace mineral for mental and behavioral health, not merely a pharmaceutical. He states that in humans, clinical depression, manic depression, 'bi-polar' disease and autism are hallmarks of lithium deficiency, and that hyperactivity, attention-deficit disorder (ADD) and attention-deficit/hyperactivity disorder (ADHD) belong to the same picture. Although psychiatrists describe depression and manic depression as rooted in negative feelings and self-recrimination, Wallach notes they nonetheless treat it successfully with the trace mineral lithium -- which to him shows the conditions are fundamentally a lithium deficiency, aggravated by high sugar or alcohol intake. He reports that the risk of clinical depression has nearly doubled with each generation since 1915 and that its age of onset keeps dropping. As supporting evidence he cites Dr. Gerhard Schrauzer (University of California, San Diego), whose study of 27 Texas counties (1978-1987) found that areas whose drinking water contained little or no lithium had significantly higher rates of suicide, homicide and drug-related arrests than counties with water-lithium levels of 70 to 170 micrograms per liter. He adds that normal individuals carry roughly 400 times more lithium in their hair than violent criminals do, that the U.S. Environmental Protection Agency (EPA) estimates a daily lithium intake of 650 to 3,100 micrograms (much of it metallic and poorly absorbed), and that lithium supplementation shifts serum vitamin B12 levels.",
-      "verbatim": "In humans, manic depression, clinical depression, “bi-polar” disease",
+      "verbatim": "In humans, manic depression, clinical depression, “bi-polar” disease\n\n\nautism are hallmarks of Li deficiency",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -3994,12 +3979,11 @@
       ],
       "other_substances": [],
       "conditions": [
-        "addisons_disease",
-        "water_intoxication"
+        "addisons_disease"
       ],
       "symptoms": [],
       "claim_text": "Sodium is one of the three indispensable electrolytes (with chloride and potassium); it makes up about two percent of the body's mineral content and, with chloride, is mainly extracellular. Together these electrolytes maintain normal water balance and distribution, osmotic equilibrium, acid-base balance, and muscular and nerve excitability, all under adrenal-cortex and pituitary hormonal control. Wallach explains that 'salt hunger' is one of the most basic cravings of animals and man, strongest in herbivores and human vegetarians because grains, vegetables and fruit contain little sodium chloride. Addison's disease (failure of the adrenal cortex) causes a loss of sodium and potassium retention with general weakness, muscle cramps, weight loss and a marked salt hunger, relieved by salt supplementation. Sodium-chloride deficiency arises mainly in hot weather or heavy exercise with profuse sweating; Wallach warns that 'water intoxication' killed infants fed low-sodium formulas -- their brains swelled from a simple sodium deficiency -- and that the treatment for sodium deficiency is water and salt, taken orally or as 0.9% intravenous saline.",
-      "verbatim": "“Water intoxication” occurred in infants fed\nlow Na formulas because of the allopathic doctor's paranoia about Na. Their\nbrains swelled causing death from a simple Na deficiency.",
+      "verbatim": "Addison's disease, a loss of\nfunction of the adrenal cortex, results in the loss of Na and K retention with\nclinical signs of general weakness, muscle cramps, weight loss and a marked “salt\nhunger.” The symptoms can be relieved with the supplementation of NaCl or by\nadministering adrenal cortical hormones",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -4007,7 +3991,7 @@
         "page": null,
         "screenshot": "634",
         "kindle_location": null,
-        "char_offset": 1277006
+        "char_offset": 1276509
       },
       "dose": null,
       "tags": [
