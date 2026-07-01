@@ -19026,7 +19026,7 @@ inflammation by creating an elimination diet that avoids inflammatory
 foods, supplementing with all 90 essential nutrients, antioxidants, and
 providing significant vascular care.
 
-2. Korsakoff’s syndrome occurs as part of the BeriBeri (thiamine or vitamin
+2. Korsakoff’s syndrome occurs as part of the Beriberi (thiamine or vitamin
 
 B, deficiency) collection of diseases. The disease can be reversed by the
 
@@ -20861,7 +20861,7 @@ cells
 
 9. Modifying the mechanisms of aging
 
-Bioflavonoid deficiency can result in:
+Bioflavonoids deficiency can result in:
 
 Capillary hemorrhage
 Reduced immune capacity
@@ -29933,7 +29933,7 @@ Bell, Alexander Graham, 358
 Bell’s palsy, 423
 
 Bemidji State University, 432
-BeriBeri, 189, 224, 492
+Beriberi, 189, 224, 492
 Berlin Papyrus 23, 90
 Bernard, Dr. Claude, 479
 Beryllina, 415

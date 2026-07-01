@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 258 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 259 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 16:59 UTC-05:00 · round-close · corpus/epigen
+SESSION 36 anomaly-fix (EPIGEN): BeriBeri->Beriberi (verbatim+index+summary) + Bioflavonoid->Bioflavonoids deficiency heading. seal kv 224, board 32/32, probe PASS, EPIGEN scan = 2 confirmed FPs only. All book reals now cleared.
 
 ## 2026-07-01 16:57 UTC-05:00 · round-close · corpus/dddl
 SESSION 36 anomaly-fix (DDDL): Tryptophane->Tryptophan (verbatim table) + Thiamin->Thiamine (DDDL-000043 summary). seal kv 223, board 32/32, probe PASS, DDDL scan 0 findings. Verbatim 'thiamin'/'Bl' left faithful + flagged.
@@ -789,7 +792,3 @@ Phase γ.3 batch 17 — Rare Earths Ch.11 catalog chunk 2 (As/Au/B): 6 claims (R
 ## 2026-06-25 01:02 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 16 — Rare Earths Ch.11 per-element catalog chunk 1 (Ac/Ag/Al): 4 claims (RARE-90..93). Silver ×3 (immune/400mg/deficiency; 650-organism antimicrobial; sulfadiazine in 70% of burn centers); aluminum ×1 (probably essential per Schrauzer). kv 38→40, RARE 89→93.
   ↳ The alphabetical per-element catalog BEGINS (idx 302+). OCR readable; only 1 reflow span (Al es-/sential). Ac skipped (geology only, not a canon essential). resnap 4 relocated/0 broken. NO fringe. Render probe green (run every batch now per the batch-15 dose lesson). Board 30/30, build OK. NEXT: catalog chunk 2 — As/Au/B/Ba… (idx 303+). Most catalog elements are canon essentials → richest region for per-mineral claims.
-
-## 2026-06-25 00:47 UTC-04:00 · round-close · eden/corpus
-RARE-48 dose normalized to CorpusDoseSchema keys (amount:1, unit:mg, period) - fixes the silently-dropped 'three times per week' cadence (formatDose reads period, not frequency). Monotonic re-seal kv 38->39. Board 30/30, build OK, knowledge probe green.
-  ↳ WAL-CLM-RARE-000048 (selenium / Keshan disease, RARE Ch.7 p152) carried non-schema dose keys (essential, frequency) plus a conflated amount '1 mg sodium selenite'. formatDose() in knowledge-corpus.ts reads `period`/`amount`/`unit` only, so it silently dropped the 'three times per week' cadence and rendered just '1 mg sodium selenite'. Re-keyed to the canonical CorpusDoseSchema set {amount:1, unit:'mg', period:'three times per week', form:'sodium selenite', duration:'3 years', for_condition:'keshan disease'}; dropped redundant `essential` (the claim's essentials[] already carries selenium); amount as number 1 per DDDL convention (numbers for clean single values, strings only for ranges). Faithful structural re-key of the SAME Wallach claim — no new source, no value change — so the §00.A three-confirm override is N/A; sealed-canonical sign-off obtained from Luneth via AskUserQuestion (proceed + number-amount + authorize-seal-once). Edited the DRAFT (unprotected working copy) so corpus_seal promoted it cleanly; pre-seal verified dddl draft == shard (promotion no-op) and rare-earths draft diff was exactly the 3-key swap. Pipeline: safe_write -> corpus_seal (kv 38->39, corpus_verify PASS) -> corpus_embed -> build -> invariants 30/30 -> render_probe_knowledge green (0 page errors). Renderer now emits '1 mg / three times per week'. Closes the batch-15 dose-guard follow-up (the scope decision that deliberately enforced null-or-object shape but NOT a key-subset, leaving this normalization as the data fix).
