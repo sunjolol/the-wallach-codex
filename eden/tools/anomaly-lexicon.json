@@ -1,0 +1,39 @@
+{
+  "_doc": "Curated domain lexicon for anomaly_scan.py. Terms Wallach's protocols actually use, so the scanner can (a) recognize a hormone mis-cast as an herb, (b) know which parenthetical genera are legit, (c) suggest a near-miss correction (Sarenoa->Serenoa, Zumba->Zumbani). NOT exhaustive; grows as review surfaces real terms. All lowercase; matching is case-folded.",
+  "hormones": [
+    "testosterone", "estrogen", "estradiol", "estriol", "progesterone", "insulin",
+    "glucagon", "thyroxine", "triiodothyronine", "cortisol", "hydrocortisone",
+    "cortisone", "aldosterone", "adrenaline", "epinephrine", "norepinephrine",
+    "melatonin", "dhea", "pregnenolone", "oxytocin", "prolactin", "somatotropin",
+    "calcitonin", "erythropoietin", "thyroid", "growth hormone"
+  ],
+  "herbs": [
+    "ginseng", "saw palmetto", "palmetto", "echinacea", "garlic", "ginger",
+    "turmeric", "ashwagandha", "tribulus", "damiana", "yohimbe", "muira puama",
+    "sarsaparilla", "sarsapilla", "nux vomica", "cayenne", "capsicum", "goldenseal",
+    "licorice", "milk thistle", "dandelion", "valerian", "chamomile", "peppermint",
+    "aloe", "ginkgo", "hawthorn", "black cohosh", "dong quai", "fenugreek", "maca",
+    "catuaba", "guarana", "kava", "feverfew", "comfrey", "slippery elm", "cascara",
+    "senna", "uva ursi", "buchu", "cranberry", "bilberry", "elderberry", "wild yam",
+    "red clover", "nettle", "burdock", "chaparral", "cat's claw", "astragalus",
+    "schisandra", "rhodiola", "gotu kola", "bacopa", "zumbani", "horny goat weed"
+  ],
+  "genera": [
+    "Panax", "Serenoa", "Smilax", "Strychnos", "Zingiber", "Echinacea", "Allium",
+    "Curcuma", "Withania", "Tribulus", "Turnera", "Pausinystalia", "Ptychopetalum",
+    "Lippia", "Mucuna", "Trigonella", "Eurycoma", "Vaccinium", "Silybum", "Taraxacum",
+    "Valeriana", "Matricaria", "Mentha", "Ginkgo", "Crataegus", "Cimicifuga",
+    "Angelica", "Hydrastis", "Glycyrrhiza", "Serrulata", "Capsicum", "Aloe"
+  ],
+  "nutrients": [
+    "vitamin", "calcium", "magnesium", "zinc", "selenium", "copper", "iron",
+    "manganese", "chromium", "potassium", "sodium", "iodine", "boron", "molybdenum",
+    "vanadium", "silica", "silicon", "sulfur", "phosphorus", "cobalt", "folate",
+    "folic", "biotin", "niacin", "riboflavin", "thiamine", "pyridoxine", "cobalamin",
+    "cholecalciferol", "tocopherol", "retinol", "ascorbic", "arginine", "lysine",
+    "tryptophan", "taurine", "carnitine", "glutamine", "methionine", "cysteine",
+    "tyrosine", "phenylalanine", "leucine", "isoleucine", "valine", "threonine",
+    "histidine", "glycine", "proline", "serine", "alanine", "inositol", "choline",
+    "omega", "flavonoids", "bioflavonoids", "carotene", "lutein", "lycopene"
+  ]
+}
