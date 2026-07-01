@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 261 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 262 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 17:44 UTC-05:00 · round-close · corpus/lets+rare
+SESSION 36: the 2 flagged fixes Luneth ruled — LETS-324 salt nibs->salt rubs + RARE Dr.Jykel->Dr. Jekyll (all 3 garbled Jekyll spellings per fix-everywhere doctrine, RARE-081+129). 3 verbatims healed. seal kv 227, board 32/32, 0 NEW.
 
 ## 2026-07-01 17:31 UTC-05:00 · round-close · corpus/all-books
 SESSION 36 adjacent-OCR cleanup (Luneth: stop deferring): fixed clear orthographic/name OCR errors in touched verbatims across 4 books (filifolia, Ricinus, Cichorium, mg t.i.d., Bitot's, annuus, Gadolinium, vitamin B1, etc.). 21 verbatims healed. seal kv 226, board 32/32, 0 NEW.
@@ -786,7 +789,3 @@ Phase γ.3 batch 18 — Rare Earths Ch.11 catalog Ba/Be/Bi/Br (p287-288): 4 clai
 ## 2026-06-25 01:49 UTC-04:00 · round-close · eden/corpus
 Abbreviation-audit follow-up (Luneth): reverted EFA + USDA to abbreviations (super common) in 6 DDDL claims, keeping all other expansions. Memory gained the common-knowledge exception. Refreshed handoff. kv 44→46. Session wrap: corpus 193, conditions 76, board 30/30, all pushed.
   ↳ Luneth: EFA and USDA should stay abbreviated (super common). Restored DDDL-15 (USDA) + DDDL-49/63/64/70/85 (EFA/EFAs) while keeping t.i.d./IU/BPH/CNS expansions. no-unexplained-abbreviations memory now lists the keep-abbreviated set (EFA/USDA/HIV/DNA/RNA/in-line MS-ALS/MD-credential). next-chunk.md handoff logs the full 2026-06-25 session (Ch.11 conceptual half + catalog A/B + audit + permission fix); NEXT = catalog Ba/Be/Bi/Br (idx 308+). Board 30/30, build OK, probe green.
-
-## 2026-06-25 01:38 UTC-04:00 · milestone · eden/corpus
-Corpus-wide abbreviation audit (Luneth mandate): spelled out non-obvious jargon in 31 claims across both shards; Wallach verbatims stay byte-faithful. kv 42→44. Also fixed recurring permission prompts: broad allowlist at defaultMode=default + stop cd-prefixing.
-  ↳ Scanned all 193 claim_texts/doses; 31 fixed via draft-edit→reseal (no verbatim/book change). t.i.d.→three times daily, EFA→essential fatty acids, IU→International Units, IM/IV→intramuscular/intravenous, MD→muscular dystrophy, BPH, SIDS, TMJ, CNS, HCl, RDA, NPK, KSD, USDA/UCLA/UCSD/EPA/ADA. Kept HIV/DNA/RNA + in-line MS/ALS + 'Dr. …, MD' credential (RARE-88). Permissions: settings.local.json had 779 dead exact-match entries + project-set bypassPermissions (not honored at startup); replaced with broad patterns (Luneth's 'known tools' scope). Memories: no-unexplained-abbreviations, permission-allowlist-setup. Board 30/30, probe green. NEXT: catalog Ba/Be/Bi/Br…

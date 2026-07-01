@@ -9,11 +9,11 @@ _Legend: `[ ]` open · `[x]` done · `[~]` in progress. Owner: **L** = Luneth's 
 ## 1 · Corpus truth & cleanup (the content must be RIGHT)
 
 - [~] **Verbatim-remediation campaign → 0** (`verbatim_names_mapped_conditions`). Done: EPIGEN, RARE. Remaining: LETS ~224 · DDDL ~40 · IAIYH ~21. (C→L)
-- [~] **Linguistic/logic sweep — Tier 1** (`anomaly_scan.py`, built SESSION 35). Run per-book, triage with L, correct confirmed errors, allowlist the rest. Memory [[linguistic-logic-sweep]]. (C→L)
+- [x] **Linguistic/logic sweep — Tier 1** (`anomaly_scan.py`) — DONE SESSION 36. All 6 books scanned; every confirmed real error fixed corpus-wide (source `.txt` + sealed verbatims); 10 true false-positives allowlisted in `eden/tools/anomaly-scan-baseline.json`. Memory [[linguistic-logic-sweep]]. (C→L)
 - [ ] **Linguistic/logic sweep — Tier 2 (offline-LLM pass)** over every claim's summary+verbatim ("does this parse? unknown term? contradiction?") — the heavy-interpretation layer, leans on the Ask-Wallach model. (C→L)
 - [ ] **Full dose-safety scan** — every dose/unit render-verified; dangerous misprints fixed even in verbatim. Memory [[dose-misprint-safety-mandate]]. (C→L)
 - [ ] **Final number/nutrient-total correction batch** — L fixes ALL nutrient totals / targets in one end pass; don't chase number-only discrepancies mid-stream. Memory [[numbers-corrected-at-end]]. (L)
-- [ ] **Final per-book `.txt` OCR sweep** — remaining typos + interleaved page-number lines (largely scriptable). Memory [[source-correction-policy]]. (C)
+- [~] **Final per-book `.txt` OCR sweep** — SESSION 36 fixed every clear orthographic error in the ~25 verbatims TOUCHED by the anomaly campaign (systematic, all 4 mined books). REMAINING: (a) typo audit of the ~980 verbatims NOT yet touched (the book-wide typo audit Luneth deferred here SESSION 36); (b) global comma-spacing pass (` ,`→`,` book-wide, scripted + reviewed); (c) interleaved page-number / running-header lines. Memory [[source-correction-policy]]. (C)
 - [ ] **Final per-book render-vs-`.txt` COMPLETENESS pass** — every table/figure/multi-column page (OCR silently DROPS sections). Risk order: DDDL first > LPD pre-Ch7 > RARE. (C)
 - [ ] **Duplicate-slug audit** — scan for condition slugs that are the same thing under two names (menkes_disease/menkes_syndrome merged SESSION 35; find the rest). (C→L)
 - [ ] **Finish mining remaining books** — LETS Ch10 completeness, then Immortality (2008), any other in-housed books. (C→L)
@@ -66,4 +66,4 @@ _All deferred under `.claude/rules/wild-west-mode.md` — read `genesis/02-clari
 
 ---
 
-_Last touched: SESSION 35 (2026-07-01). When you defer something new, append it here in the same chunk — that is the whole point of this file._
+_Last touched: SESSION 36 (2026-07-01). When you defer something new, append it here in the same chunk — that is the whole point of this file._
