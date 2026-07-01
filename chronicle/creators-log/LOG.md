@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 234 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 235 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 22:09 UTC-05:00 · round-close · knowledge/corpus
+SESSION 31 b3 — Epigenetics Ch18 minerals Lu→Ni (+9: Lu/Mg/Mn/Mo/N/Na/Nb/Nd/Ni). Mg/Mn/Na rich (asthma/carpal-tunnel/Addison's/Kwashiorkor enriched); excess-Mn parkinsonism kept descriptive; zero new conditions. Crossed 1,000. kv207 · claims 1001 · 468 cond · 31/31.
+  ↳ Skipped Ne/Np (non-canon). RDA figures dropped per §00.A. Lu/Nb/Nd now 2-source. Nitrogen verbatim fixed for column-interleaved OCR. render probe 0 errors.
 
 ## 2026-06-30 21:55 UTC-05:00 · round-close · knowledge/corpus
 SESSION 31 b2 — Epigenetics Ch18 charged Lithium (EPIGEN-096 tier-1): Li deficiency → depression/bipolar/autism/ADHD/hyperactivity + Schrauzer water-Li study; autism mapped. Graphic killer/cannibalism list held OUT → fringe files (Luneth-approved). kv206 · claims 992 · 31/31.
@@ -801,7 +805,3 @@ Phase γ.3 step 0 — built corpus_resnap.py, the safety tool that makes editing
 ## 2026-06-24 17:05 UTC-04:00 · design-decision · chronicle
 Session close — editorial-fringe policy LOCKED: exclude Wallach content only in extreme cases + run by Luneth every time; excluded fringe lives in chronicle/wallach-fringe-excluded.md, not the app. Next genesis: fix Rare Earths OCR from screenshots, then resume extraction.
   ↳ NEW chronicle/wallach-fringe-excluded.md catalog (first entries: RE Ch.6 crime claims + Ch.7 emotional-defects list). Memories saved: editorial-fringe-exclusion-policy, claim-summary-verbatim-format, citation-context-expansion. Corpus unchanged kv=19 (112 claims), board 30/30. Session shipped epsilon.1 + epsilon.2 (corpus surfaced in the Knowledge drawer) + gamma.1/gamma.2 (Rare Earths 18 claims). Next session: OCR fix from Luneth screenshots (incl. Wallach own table of the elements), then resume extraction.
-
-## 2026-06-24 16:47 UTC-04:00 · milestone · eden/corpus
-Phase γ.2 — Rare Earths batch 2: 5 claims sealed (kv 18->19, 112 total). B12/cobalt dose; birth-defects-preventable + Down's-as-mineral-depletion (Ch7); species longevity ceiling (man 145) + 90-essentials premise (Ch8). Skipped Ch6 fringe crime claims. 30/30, probe green.
-  ↳ WAL-CLM-RARE-000014..18; dose x1, mechanism x2, definition x2. New conditions birth_defects, down_syndrome. Per-element catalog is OCR-hyphenation-heavy so verbatims drawn from cleaner prose; editorial choice to skip Ch6 behavioral-crime claims (off-mission). Every verbatim exact on first pass. corpus_seal kv=19; build OK; invariants 30/30; probe PASS 0 errors. Rare Earths now 18 claims.

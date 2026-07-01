@@ -47,9 +47,10 @@
     "display_name": "Nitrogen",
     "canon_slug": "nitrogen",
     "category": "mineral",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000101",
         "WAL-CLM-RARE-000185"
       ],
       "definition": [
@@ -79,6 +80,7 @@
     ],
     "interacts_with": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -137,9 +139,10 @@
     "display_name": "Sodium",
     "canon_slug": "sodium",
     "category": "mineral",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000102",
         "WAL-CLM-LETS-000032",
         "WAL-CLM-RARE-000189"
       ],
@@ -288,6 +291,7 @@
       "zinc"
     ],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -296,10 +300,11 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 80,
+    "claim_count": 81,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
+        "WAL-CLM-EPIGEN-000098",
         "WAL-CLM-LETS-000016",
         "WAL-CLM-RARE-000172",
         "WAL-CLM-RARE-000275"
@@ -602,6 +607,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -2202,13 +2208,14 @@
     "display_name": "Manganese",
     "canon_slug": "manganese",
     "category": "mineral",
-    "claim_count": 17,
+    "claim_count": 18,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000175"
       ],
       "deficiency_sign": [
         "WAL-CLM-DDDL-000026",
+        "WAL-CLM-EPIGEN-000099",
         "WAL-CLM-LETS-000017",
         "WAL-CLM-RARE-000176"
       ],
@@ -2299,6 +2306,7 @@
       "chondrodystrophy",
       "chondromalacia",
       "congenital_ataxia",
+      "convulsions",
       "deafness",
       "epilepsy",
       "high_cholesterol",
@@ -2338,7 +2346,7 @@
     "display_name": "Molybdenum",
     "canon_slug": "molybdenum",
     "category": "mineral",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
@@ -2351,7 +2359,8 @@
         "WAL-CLM-RARE-000180"
       ],
       "mechanism": [
-        "WAL-CLM-DDDL-000028"
+        "WAL-CLM-DDDL-000028",
+        "WAL-CLM-EPIGEN-000100"
       ]
     },
     "deficiency_signs": [],
@@ -2363,6 +2372,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -3732,9 +3742,10 @@
     "display_name": "Lutetium",
     "canon_slug": "lutetium",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "definition": [
+        "WAL-CLM-EPIGEN-000097",
         "WAL-CLM-RARE-000293"
       ]
     },
@@ -3742,6 +3753,7 @@
     "conditions_treated": [],
     "interacts_with": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -3749,9 +3761,10 @@
     "display_name": "Niobium",
     "canon_slug": "niobium",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "definition": [
+        "WAL-CLM-EPIGEN-000103",
         "WAL-CLM-RARE-000294"
       ]
     },
@@ -3759,6 +3772,7 @@
     "conditions_treated": [],
     "interacts_with": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -3766,9 +3780,10 @@
     "display_name": "Neodymium",
     "canon_slug": "neodymium",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "mechanism": [
+        "WAL-CLM-EPIGEN-000104",
         "WAL-CLM-RARE-000191"
       ]
     },
@@ -3776,6 +3791,7 @@
     "conditions_treated": [],
     "interacts_with": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -3783,9 +3799,10 @@
     "display_name": "Nickel",
     "canon_slug": "nickel",
     "category": "mineral",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-EPIGEN-000105",
         "WAL-CLM-RARE-000193"
       ],
       "interaction": [
@@ -3832,6 +3849,7 @@
       "zinc"
     ],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
