@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 263 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 264 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 18:13 UTC-05:00 · round-close · corpus/lets
+SESSION 36 LETS verbatim campaign 2nd increment: 19 more FINDABLE claims extended to name their conditions (Ch10 heading pattern). violations 278->258 (LETS 219->199). Session total 24 claims, 283->258. seal kv 229, board 32/32, probe PASS.
 
 ## 2026-07-01 17:57 UTC-05:00 · round-close · corpus/lets
 SESSION 36: LETS verbatim campaign resumed. First increment — 5 claims extended to name their conditions (achlorhydria, adrenal_exhaustion, alcoholism, diabetes/hypoglycemia, absence_attacks). violations 283->278, LETS 224->219. seal kv 228, board 32/32, probe PASS.
@@ -784,7 +787,3 @@ Phase γ.3 batch 20 — Rare Earths Ch.11 catalog C/Carbon EFA + Ce + Cl (p291,3
 ## 2026-06-25 02:20 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 19 — Rare Earths Ch.11 catalog Ca/Calcium (p293-299): 5 claims (RARE-104..108), kv 47→48, corpus 202
   ↳ Calcium (flagship element) catalog chunk. Reflowed only the Ca function lede (hyphen-breaks); other 4 verbatims snapped via collapser. RARE-104 calcium essential to all organisms + function; RARE-105 no fewer than 147 calcium-deficiency diseases (Table 11-10: osteoporosis→tetany); RARE-106 metallic Ca absorption <=10% vs organic colloidal far better; RARE-107 McCarron 1980 chronic calcium deficiency -> hypertension (58,218-nurse study, risk higher <800mg/day); RARE-108 colorectal cancer +300% as calcium fell 160->24.9 mg/100kcal (19-yr, 1,954 men). conditions 77->80 (+colorectal_cancer, premenstrual_syndrome, tetany). Board 30/30, build OK, knowledge probe green. Luneth-approved. DEFERRED: Tables 11-9/-10/-11 raw OCR.
-
-## 2026-06-25 02:07 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 18 — Rare Earths Ch.11 catalog Ba/Be/Bi/Br (p287-288): 4 claims (RARE-100..103), kv 46→47, corpus 197
-  ↳ Per-element catalog chunk 3. Reflowed Ba-Br book region (de-hyphenated across 287->288 page break, sentence-aware column-break merge, dropped 287 marker); resnap 0 broken. RARE-100 barium thought essential to mammals (Rygh 1949); RARE-101 peptic ulcers caused by H. pylori not stress (Marshall/Warren 1983, 92%-vs-75% antibiotic-vs-placebo trial); RARE-102 ulcer Rx = tetracycline + anti-ulcer med + bismuth subsalicylate (Pepto-Bismol); RARE-103 bromine essentiality via brominated amino acids. Be skipped (pure geology); bismuth not canon -> filed under new peptic_ulcers condition (76->77). Board 30/30, build OK, knowledge probe green. Luneth-approved.

@@ -5556,7 +5556,7 @@
       ],
       "symptoms": [],
       "claim_text": "Anal abscess and anal fissures are caused by constipation and passing large hard stools, often alongside hemorrhoids, producing painful red swellings near the anal opening. Wallach's approach: open them with a blade or by soaking in hot sitz baths of 3% boric acid; apply a poultice of echinacea (Echinacea angustifolia) directly to disinfect and bring the abscess to a point so it can be opened; then flush the opened abscess with 3% hydrogen peroxide to clean out the pus and disinfect the wound.",
-      "verbatim": "These\nmay be opened with a blade or by soaking in\nhot sitz baths of 3% boric acid. A poultice of\nechinacea (Echinacea angustifolia) may be\napplied directly to the abscess to disinfect and\nhelp to bring it to a \"point\" so it can be opened.",
+      "verbatim": "ANAL ABSCESS: and anal fissures are caused\nby constipation and frequent passage of large\nhard stools; they may occur at the same time\nwith hemorrhoids. Painful red swellings at or\nnear the anal opening are characteristic. These\nmay be opened with a blade or by soaking in\nhot sitz baths of 3% boric acid. A poultice of\nechinacea (Echinacea angustifolia) may be\napplied directly to the abscess to disinfect and\nhelp to bring it to a \"point\" so it can be opened.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -5564,7 +5564,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 171344
+        "char_offset": 171122
       },
       "dose": null,
       "tags": [
@@ -5606,7 +5606,7 @@
       ],
       "symptoms": [],
       "claim_text": "For anemia (a lack of blood from hemorrhage, infection, and/or nutritional deficiencies), Wallach's program is betaine hydrochloride 75-200 mg three times daily 15-20 minutes before meals (to assure B-12 absorption); liver extract orally or by intramuscular injection; iron 20 mg; vitamin B-12 1000 mcg per day for 20 days; folic acid 15 mg for 20 days; copper 2 mg; zinc 50 mg three times daily; vitamin B-2 50 mg twice daily; vitamin B-5 50 mg three times daily; vitamin B-6 50 mg twice daily for 20 days; vitamin C to bowel tolerance; vitamin E 800-1200 IU per day; selenium 500 mcg per day; and essential fatty acids 5 grams three times daily; with herbs sweet cicely (Myrrhis odorata) and marsh marigold (Caltha palustris).",
-      "verbatim": "Betaine\nHC1 orally at 75-200 mg t.i.d. 15-20 minutes\nbefore meals is required to assure absorption\nof B-12; liver extract orally or IM; nutritional\nsupport with iron 20 mg; B-12 1000 mcg per\nday for 20 days; folic acid 15 mg for 20 days;",
+      "verbatim": "ANEMIA: is a lack of blood from many\npossible causes including hemonhage, infec-\ntions and/or nutritional deficiencies. Betaine\nHC1 orally at 75-200 mg t.i.d. 15-20 minutes\nbefore meals is required to assure absorption\nof B-12; liver extract orally or IM; nutritional\nsupport with iron 20 mg; B-12 1000 mcg per\nday for 20 days; folic acid 15 mg for 20 days;",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -5614,7 +5614,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 171794
+        "char_offset": 171674
       },
       "dose": null,
       "tags": [
@@ -5845,7 +5845,7 @@
       ],
       "symptoms": [],
       "claim_text": "For aphthous stomatitis (canker sores), often a symptom of food sensitivities or allergies, Wallach recommends identifying offending foods via an elimination/rotation diet or pulse test (gluten-free diets are frequently effective), with folic acid 5 mg three times daily, vitamin B-12 1000 mcg per day, iron 15 mg per day, and zinc 50 mg three times daily as effective adjuncts to avoidance diets.",
-      "verbatim": "Folic acid at 5 mg t.i.d.; B-12 at 1000 mcg/day;\niron at 15 mg/day; zinc at 50 mg t.i.d. are\neffective adjuncts to avoidance diets.",
+      "verbatim": "APHTHOUS STOMATITIS (canker sores): is\noften a symptom of food sensitivities or aller-\ngies. An elimination/ rotation diet or a pulse\ntest can identify the offending foods - gluten\nfree diets are frequently effective.\nFolic acid at 5 mg t.i.d.; B-12 at 1000 mcg/day;\niron at 15 mg/day; zinc at 50 mg t.i.d. are\neffective adjuncts to avoidance diets.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -5853,7 +5853,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 176571
+        "char_offset": 176353
       },
       "dose": null,
       "tags": [
@@ -6025,7 +6025,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach describes asthma as a respiratory disease of sudden bronchial closure by spasmodic muscles; atopic asthma also features eczema. He frames it as a malabsorption disease with essential fatty acid, manganese, and magnesium deficiencies. Treatment: betaine hydrochloride, pancreatic enzymes, and ox bile at 75-200 mg each three times daily before meals; autoimmune urine therapy; essential fatty acids 5 grams three times daily; and colloidal mineral suspensions containing magnesium and manganese. Useful herbs (with caution if plant-allergic): honeysuckle (Lonicera caprifolium), jaborandi (Pilocarpus jaborandi), leeks (Allium porrum), garlic (Allium sativum), and evening primrose oil (Oenothera biennis).",
-      "verbatim": "Treatment should include betaine HCl, pancreatic enzymes and ox bile at 75-200 mg each t.i.d. before meals. Autoimmune urine therapy; essential fatty acids at 5 gm t.i.d. and colloidal mineral suspensions that contain magnesium and manganese.",
+      "verbatim": "ATOPIC ASTHMA has eczema as a feature along with the respiratory disease. This is a disease of malabsorption with essential fatty acid deficiencies and deficiencies of manganese and magnesium.\nTreatment should include betaine HCl, pancreatic enzymes and ox bile at 75-200 mg each t.i.d. before meals. Autoimmune urine therapy; essential fatty acids at 5 gm t.i.d. and colloidal mineral suspensions that contain magnesium and manganese.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -6033,7 +6033,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 182070
+        "char_offset": 181877
       },
       "dose": null,
       "tags": [
@@ -6104,7 +6104,7 @@
       ],
       "symptoms": [],
       "claim_text": "Athlete's foot is actually a form of ringworm caused by the fungus Tinea pedis. Wallach's treatment: hydrotherapy in baths of 3% boric acid alternating with vinegar baths; zinc 50 mg three times daily; vitamin A 300,000 units per day as beta carotene; and vitamin B-6 100 mg twice daily. Commercial antifungal creams, sprays, and powders (he prefers Desenex) are also available.",
-      "verbatim": "Treatment includes hydrotherapy in baths of 3% boric acid alternating with vinegar baths. Supplements include zinc at 50 mg t.i.d., 300,000 units of vitamin A/day as beta carotene and B-6 at 100 mg b.i.d.",
+      "verbatim": "ATHLETES FOOT: is actually a form of \"ringworm\" caused by the fungus Tinea pedis. Treatment includes hydrotherapy in baths of 3% boric acid alternating with vinegar baths. Supplements include zinc at 50 mg t.i.d., 300,000 units of vitamin A/day as beta carotene and B-6 at 100 mg b.i.d.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -6112,7 +6112,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 183692
+        "char_offset": 183610
       },
       "dose": null,
       "tags": [
@@ -6258,7 +6258,7 @@
       ],
       "symptoms": [],
       "claim_text": "Bad breath can be handled with basic care: a good anti-tartar toothpaste, a hydrogen peroxide tooth gel, flossing on awakening and after meals, a hydrogen peroxide mouthwash, and parsley after each meal. Wallach also recommends zinc at 50 mg three times daily.",
-      "verbatim": "Use a good anti-tartar toothpaste, hydro-\ngen peroxide tooth gel, floss upon awakening\nand after meals, use a hydrogen peroxide\nmouthwash; parsley may be used after each\nmeal; zinc at 50 mg t.i.d.",
+      "verbatim": "BAD BREATH: can be dealt with by basic\ncare. Use a good anti-tartar toothpaste, hydro-\ngen peroxide tooth gel, floss upon awakening\nand after meals, use a hydrogen peroxide\nmouthwash; parsley may be used after each\nmeal; zinc at 50 mg t.i.d.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -6266,7 +6266,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 186052
+        "char_offset": 186007
       },
       "dose": {
         "amount": 50,
@@ -6306,7 +6306,7 @@
       ],
       "symptoms": [],
       "claim_text": "Bedsores result from the pressure of body weight in areas of poor circulation, usually over bony prominences. Massage, sponge baths, and ultraviolet light are good preventive measures. Topical treatments include zinc oxide ointment, aloe vera ointment, vitamin E oil, and DMSO (dimethyl sulfoxide); eucalyptus (Eucalyptus globulus), wild carrot (Daucus carota), and comfrey (Symphytum officinale) can be applied topically and in poultices to encourage granulation tissue formation and healing.",
-      "verbatim": "Topical applications can include\nzinc oxide ointment, aloe vera ointment, vita-\nmin E oil and DMSO; eucalyptus (Eucalyptus\nglobulus), wild carrot, (Daucus carota)and\ncomfrey (Symphytum officinale) may all be\nused topically and/or in poultices to encour-\nage granulation tissue formation and healing.",
+      "verbatim": "BEDSORES: result from pressure of body\nweight in areas of poor circulation - usually in\nareas of bony prominences. Massage, sponge\nbaths and ultra violet light are good preventive\ntherapies. Topical applications can include\nzinc oxide ointment, aloe vera ointment, vita-\nmin E oil and DMSO; eucalyptus (Eucalyptus\nglobulus), wild carrot, (Daucus carota)and\ncomfrey (Symphytum officinale) may all be\nused topically and/or in poultices to encour-\nage granulation tissue formation and healing.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -6314,7 +6314,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 186522
+        "char_offset": 186331
       },
       "dose": null,
       "tags": [
@@ -6789,7 +6789,7 @@
       ],
       "symptoms": [],
       "claim_text": "Body odor and foot odor can occur in anyone, especially teenagers and older people. Wallach's treatment is zinc at 50 mg three times daily, calcium/magnesium at 2000 mg and 800 mg, plant-derived colloidal minerals at 1 oz per 100 pounds of body weight, plenty of green leafy vegetables and alfalfa, and baths and deodorants with hydrogen peroxide.",
-      "verbatim": "Treatment includes zinc at 50 mg t.i.d., cal-\ncium/magnesium at 2,000 mg and 800 mg,\nplant derived colloidal minerals at 1 oz per 100\npounds; lots of green leafy vegetables, alfalfa,\nand baths and deodorants with hydrogen\nperoxide.",
+      "verbatim": "BODY ODOR (foot odor): can occur in any-\none, especially teenagers and older people.\nTreatment includes zinc at 50 mg t.i.d., cal-\ncium/magnesium at 2,000 mg and 800 mg,\nplant derived colloidal minerals at 1 oz per 100\npounds; lots of green leafy vegetables, alfalfa,\nand baths and deodorants with hydrogen\nperoxide.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -6797,7 +6797,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 197120
+        "char_offset": 197035
       },
       "dose": null,
       "tags": [
@@ -6831,7 +6831,7 @@
       ],
       "symptoms": [],
       "claim_text": "Boils (carbuncles, abscesses) are usually a staph infection of the skin and hair follicles, often at a site of irritation such as the collar line; the tender pus-filled boil can be brought to a head with poultices of 3% boric acid and opened with a blade. Wallach's treatment is flushing the boil with sand sagebrush (Artemisia filifolia), echinacea (Echinacea angustifolia), and/or hydrogen peroxide; vitamin C to bowel tolerance; vitamin A at 300,000 IU/day as beta carotene; and zinc 50 mg three times daily, with antibiotic ointment if new boils appear until the vitamins and minerals take effect.",
-      "verbatim": "Treatment includes flushing the boil with sand\nsagebrush (Artemisia filifolia), echinacea\n(Echinacea angustifolia) and/or hydrogen per-\noxide; vitamin C at bowel tolerance, vitamin A\nat 300,000 IU/day as beta carotene, zinc 50 mg\nt.i.d.",
+      "verbatim": "Boils can occur at a site of\nirritation - usually the neck near a collar line.\nThe tender pus filled \"boil\" can be brought to\na \"head\" by poultices of 3% boric acid and\nopened with a blade.\nTreatment includes flushing the boil with sand\nsagebrush (Artemisia filifolia), echinacea\n(Echinacea angustifolia) and/or hydrogen per-\noxide; vitamin C at bowel tolerance, vitamin A\nat 300,000 IU/day as beta carotene, zinc 50 mg\nt.i.d.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -6839,7 +6839,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 197647
+        "char_offset": 197457
       },
       "dose": null,
       "tags": [
@@ -6943,7 +6943,7 @@
       ],
       "symptoms": [],
       "claim_text": "Breast tenderness is a common symptom of premenstrual syndrome (PMS) and early pregnancy; PMS tenderness is cyclical, while pregnancy tenderness comes with missed periods and a positive pregnancy test. Wallach's treatment is vitamin E applied topically and essential fatty acids taken orally at 5 grams three times daily, avoiding methyl xanthines, plus the baseline supplements.",
-      "verbatim": "Treatment includes vitamin E topically and\nessential fatty acids orally at 5 gm t.i.d., avoid\nmethyl xanthines and remember the base line\nsupplements.",
+      "verbatim": "BREAST TENDERNESS (PMS): is a common\nsymptom of PMS and early pregnancy. The\ntenderness of PMS is cyclical and that of early\npregnancy will be associated with missed\nperiods and a positive home pregnancy test.\nTreatment includes vitamin E topically and\nessential fatty acids orally at 5 gm t.i.d., avoid\nmethyl xanthines and remember the base line\nsupplements.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -6951,7 +6951,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 199534
+        "char_offset": 199324
       },
       "dose": null,
       "tags": [
@@ -7033,7 +7033,7 @@
       ],
       "symptoms": [],
       "claim_text": "Bronchitis (grippe, catarrh, chest colds) can be caused by viral or bacterial infection and is aggravated by food and inhalant allergies and by fatty-acid deficiency; if it persists past 5-10 days, consider cystic fibrosis in children and lung cancer in adults. Wallach's treatment is steam vaporizers at night, essential fatty acids at 5 grams three times daily, digestive enzymes and betaine hydrochloride at 75-200 mg each, vitamin C to bowel tolerance, vitamin A at 300,000 IU as beta carotene, zinc at 50 mg three times daily, and herbs including slippery elm (Ulmus fulva), coltsfoot (Tussilago farfara), cowslip (Primula veris), eucalyptus (Eucalyptus globulus) as a chest rub or in the vaporizer, Irish moss (Chondrus crispus), pansy (Viola tricolor), pleurisy root (Asclepias tuberosa), and hollyhock (Althaea rosea).",
-      "verbatim": "Treatment includes steam vaporizers at night,\nessential fatty acids at 5 gm t.i.d., digestive\nenzymes and betaine HC1 at 75-200 mg each,\nvitamin C to bowel tolerance, vitamin A at\n300,000 IU as beta carotene, zinc at 50 mg t.i.d.",
+      "verbatim": "bronchitis persists after treatment for five to\nten days, consider cystic fibrosis in children\nand lung cancer in adults (x-rays will be nec-\nessary to determine chronic processes).\nTreatment includes steam vaporizers at night,\nessential fatty acids at 5 gm t.i.d., digestive\nenzymes and betaine HC1 at 75-200 mg each,\nvitamin C to bowel tolerance, vitamin A at\n300,000 IU as beta carotene, zinc at 50 mg t.i.d.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -7041,7 +7041,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 200740
+        "char_offset": 200558
       },
       "dose": null,
       "tags": [
@@ -8394,7 +8394,7 @@
       ],
       "symptoms": [],
       "claim_text": "Catarrh is the mucus that comes with a wide range of nasal, throat, tracheal, and bronchial infections or irritations (and underlies croup and whooping cough). Wallach's treatment is steam at bedtime to break up the mucus and allow sleep, with a drying agent such as Contac if steam is not enough and sleep is urgently needed. Homeopathy can work well when a complete case is taken, and useful herbs include vervain or wild hyssop (Verbena officinalis), cucumber (Cucumis sativa), wild cherry (Prunis serotina), and thyme (Thymus vulgaris).",
-      "verbatim": "Homeopathy can work quite well if a com-\nplete case is collected (see homeopathy) as\nthere are many variables to be considered.\nHerbs that can be effective include vervain or\nwild hyssop (Verbena officinalis), cucumber\n(Cucumis sativa), wild cherry (Prunis serotina)\nand thyme (Thymus vulgaris).",
+      "verbatim": "break up the catarrh (mucus) and\nallow peaceful sleep, if this does not work and\nsleep in an urgent need the use of drying\nagents such as Contac should be considered.\nHomeopathy can work quite well if a com-\nplete case is collected (see homeopathy) as\nthere are many variables to be considered.\nHerbs that can be effective include vervain or\nwild hyssop (Verbena officinalis), cucumber\n(Cucumis sativa), wild cherry (Prunis serotina)\nand thyme (Thymus vulgaris).",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -8402,7 +8402,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 224050
+        "char_offset": 223883
       },
       "dose": null,
       "tags": [
@@ -8847,7 +8847,7 @@
       ],
       "symptoms": [],
       "claim_text": "Chorea is marked by uncontrolled jerky or crampy movements, often with mood changes, hesitant speech, facial grimaces, a 'prancing' gait, and difficulty swallowing; though conventionally called a genetic disease, Wallach disputes this (onset is typically age 30-55 and he has seen it in teenagers), pointing instead to organic degeneration of the frontal cerebral cortex. He recommends the base-line supplement program, essential fatty acids at 5 grams three times daily, a B-complex at 100 mg twice daily each, vitamin E at 800-12,000 international units per day, selenium at 500 micrograms per day, lecithin at 2,500 mg three times daily, and choline at 500 mg per day, with pulse testing for food allergies and hair analysis to monitor absorption. (The book prints this selenium dose as '500 mg'; micrograms is the safe intended unit — it matches every other selenium dose in the text, and 500 mg would be toxic.)",
-      "verbatim": "We recommend the base line supplement\nprogram, essential fatty acids at 5 gm t.i.d., B-\ncomplex at 100 mg b.i.d. each, vitamin E at\n800-12,000 IU/day, selenium at 500 mcg/day,\nlecithin at 2,500 mg t.i.d. and choline at 500\nmg/day.",
+      "verbatim": "treatment for chorea is limited to sedation and\ntranquilization.\nWe recommend the base line supplement\nprogram, essential fatty acids at 5 gm t.i.d., B-\ncomplex at 100 mg b.i.d. each, vitamin E at\n800-12,000 IU/day, selenium at 500 mcg/day,\nlecithin at 2,500 mg t.i.d. and choline at 500\nmg/day.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -8855,7 +8855,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 233522
+        "char_offset": 233457
       },
       "dose": null,
       "tags": [
@@ -9513,7 +9513,7 @@
       ],
       "symptoms": [],
       "claim_text": "Cradle cap (seborrheic dermatitis of infants) can appear as early as one month of age as a greasy, thick crust on the scalp, behind the ears, and on the face. Wallach's treatment is regular shampooing to loosen the greasy scale, vitamin B-6 at 10-25 mg per day, and zinc at 15-25 mg per day; because food allergies can contribute, do a pulse test.",
-      "verbatim": "Treatment ofcradle cap includes shampooing\nregularly to loosen die greasy scale, B-6 at 10-\n25 mg per day and zinc at 15-25 mg per day.",
+      "verbatim": "\"CRADLE CAP\" (seborrheic dermatitis of\ninfants): can occur as early as one month of\nage in babies. Cradle cap appears as a greasy\nthick crust on the scalp, behind the ears and\nface.\nTreatment ofcradle cap includes shampooing\nregularly to loosen die greasy scale, B-6 at 10-\n25 mg per day and zinc at 15-25 mg per day.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -9521,7 +9521,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 249768
+        "char_offset": 249586
       },
       "dose": null,
       "tags": [
@@ -9955,7 +9955,7 @@
       ],
       "symptoms": [],
       "claim_text": "Diaper rash is common in babies and toddlers, due not only to infrequent changes but also to food allergies (wheat, cow's milk, soya, corn). Wallach advises a pulse test as new foods are introduced (and retesting the old ones), avoidance or rotation diets, vitamin B-6 at 5-25 mg three times daily, zinc at 5-15 mg twice daily, vitamin E oil and/or aloe vera applied topically, and plant-derived colloidal minerals.",
-      "verbatim": "Do a\npulse test on babies as you introduce them to\nnew foods (be sure to test the old ones, too),\nuse avoidance or rotation diet systems, B-6 at\n5-25 mg t.i.d.,zincat5-15mgb.i.d. and vitamin\nE oil and/or aloe vera topically.",
+      "verbatim": "DIAPER RASH: is all too frequent in babies\nand toddlers, not only because of infrequent\nchanges but also because of food allergies\n(i.e. , wheat, cow's milk, soya,corn, etc.). Do a\npulse test on babies as you introduce them to\nnew foods (be sure to test the old ones, too),\nuse avoidance or rotation diet systems, B-6 at\n5-25 mg t.i.d.,zincat5-15mgb.i.d. and vitamin\nE oil and/or aloe vera topically.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -9963,7 +9963,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 269534
+        "char_offset": 269358
       },
       "dose": null,
       "tags": [
@@ -10230,7 +10230,7 @@
       ],
       "symptoms": [],
       "claim_text": "Dry skin is common and, while cosmetically minor, signals a potentially serious essential-fatty-acid deficiency that can lead to cardiovascular disease (stroke, heart attack) — 'dry skin means essential fatty acids.' (But if you are taking more than 50,000-100,000 units of vitamin A, dry skin may instead signal early vitamin A overdose.) Wallach's treatment is flaxseed oil orally at 5 gm three times daily, vitamin B-6 at 50 mg three times daily, zinc at 50 mg three times daily, vitamin E at 800-1,200 IU per day, and — if you are not already over-supplementing vitamin A — vitamin A at 300,000 units per day as beta carotene.",
-      "verbatim": "Treatment of diy skin includes flaxseed oil\norally at 5 gm t.i.d., B-6 at 50 mg t.i.d., zinc at\n50 mg t.i.d. , vitamin E at 800-1 ,200 IU/day and\nif you are not supplementing vitamin A in\nexcess, use vitamin A at 300,000 units/day as\nbeta carotene.",
+      "verbatim": "dry skin may signal the early\nstages of vitamin A overdose.\nTreatment of diy skin includes flaxseed oil\norally at 5 gm t.i.d., B-6 at 50 mg t.i.d., zinc at\n50 mg t.i.d. , vitamin E at 800-1 ,200 IU/day and\nif you are not supplementing vitamin A in\nexcess, use vitamin A at 300,000 units/day as\nbeta carotene.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -10238,7 +10238,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 276498
+        "char_offset": 276438
       },
       "dose": null,
       "tags": [
@@ -10384,7 +10384,7 @@
       ],
       "symptoms": [],
       "claim_text": "Dysmenorrhea (menstrual pain) is common in Western women — so common it is often considered part of PMS — and can be debilitating; the basic problem is abnormal prostaglandin metabolism, which commercial products mask without addressing. Wallach's treatment is vitamins B-3 and B-6 at 50-100 mg three times daily, calcium and magnesium at 2,000 and 1,000 mg per day, vitamin E at 800-1,200 IU per day, and essential fatty acids at 5 gm three times daily, plus the base-line supplements and avoiding caffeine; blue cohosh (Caulophyllum thalictroides) and black cohosh (Cimicifuga racemosa) are the ideal natural herbs for the pain.",
-      "verbatim": "Treatment includes B-3 and B-6 at 50-100 mg\nt.i.d., calcium and magnesium at 2,000 and\n1,000 mg/day, vitamin E at 800-1,200 IU/day,\nessential fatty acids at 5 gm t.i.d.",
+      "verbatim": "dysmenorrhea is intense enough to be debili-\ntating. There are a number of excellent com-\nmercial products that will dampen the pain\nbut not deal with the basic problem - an\nabnormal prostaglandin metabolism.\nTreatment includes B-3 and B-6 at 50-100 mg\nt.i.d., calcium and magnesium at 2,000 and\n1,000 mg/day, vitamin E at 800-1,200 IU/day,\nessential fatty acids at 5 gm t.i.d.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -10392,7 +10392,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 281279
+        "char_offset": 281070
       },
       "dose": null,
       "tags": [
@@ -10501,7 +10501,7 @@
         "easy_bruising"
       ],
       "claim_text": "Ecchymosis (easy bruising) is very common, especially in women and children on low-fiber, low-fruit, and low-vegetable diets (fast foods, lots of coffee, tea, and soft drinks). Wallach's treatment is alfalfa tablets at 4-6 twice daily, vitamin C to bowel tolerance, vitamin K at 15 mg per day, vitamin E at 800-1,200 IU per day, and four to six cups of green vegetables each day.",
-      "verbatim": "Treatment includes alfalfa tablets at 4-6 b.i.d.,\nvitamin C to bowel tolerance, vitamin K at 15\nmg/day, vitamin E at 800-1 ,200 IU/day and 4-\n6 cups of green vegetables each day.",
+      "verbatim": "ECCHYMOSIS (easy bruising): is very com-\nmon, especially in women and children on\nlow fiber, low fruit and low vegetable diets\n(i.e., fast foods, lots of coffee, tea and soft\ndrinks).\nTreatment includes alfalfa tablets at 4-6 b.i.d.,\nvitamin C to bowel tolerance, vitamin K at 15\nmg/day, vitamin E at 800-1 ,200 IU/day and 4-\n6 cups of green vegetables each day.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -10509,7 +10509,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 284077
+        "char_offset": 283893
       },
       "dose": null,
       "tags": [
@@ -10860,7 +10860,7 @@
       ],
       "symptoms": [],
       "claim_text": "Failure to thrive is a term for an infant that falls below expected growth rates. Wallach says celiac disease and/or other food allergies and cystic fibrosis should be considered the most common causes. He recommends plant-derived colloidal minerals as being of great value here, because most of these children are severely depleted in trace minerals and rare earths.",
-      "verbatim": "Celiac disease and/or other food\nallergies and cystic fibrosis should be consid-\nered as the most common cause. Plant derived\ncolloidal minerals are of great value here as\nmost of these children are severely depleted in\ntrace minerals and rare earths.",
+      "verbatim": "FAILURE TO THRIVE: is a term used to\ndescribe an infant that falls below expected\ngrowth rates. Celiac disease and/or other food\nallergies and cystic fibrosis should be consid-\nered as the most common cause. Plant derived\ncolloidal minerals are of great value here as\nmost of these children are severely depleted in\ntrace minerals and rare earths.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -10868,7 +10868,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 294923
+        "char_offset": 294827
       },
       "dose": null,
       "tags": [
