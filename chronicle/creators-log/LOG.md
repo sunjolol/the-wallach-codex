@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 236 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 237 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 22:50 UTC-05:00 · milestone · tooling
+SESSION 31 step 1 — THE GUARD: verbatim_names_mapped_conditions invariant + audit tool + synonym map + baseline. Makes 'a quote under a condition must NAME it' a machine guard (601 baselined, blocks NEW). Board 31→32 green; negative test bites. Remediating the 601 next.
+  ↳ eden/tools/verbatim_audit.py + condition-synonyms.json + verbatim-audit-baseline.json (601 tolerated, 324 claims) + invariants.py. 259 FINDABLE + 342 NOT_FINDABLE; per book LETS 229/EPIGEN 177/RARE 132/DDDL 41/IAIYH 22.
 
 ## 2026-06-30 22:43 UTC-05:00 · design-decision · knowledge-drawer
 SESSION 31 FIX — Luneth caught 2 corpus-trust bugs: quotes under a condition didn't name it (unverifiable link), and the synopsis disagreed with the chips. Fixed issue-2 (role-labeled chip groups) + the carpal-tunnel/Mn case. 609 verbatim violations to remediate next. kv208.
@@ -801,7 +805,3 @@ Phase γ.3 batch 1: Rare Earths Preface (xvii-xix) reflowed + 6 thesis claims se
 ## 2026-06-24 18:51 UTC-04:00 · design-decision · knowledge
 Fringe containment zone established per Luneth's ruling: knowledge/fringe-knowledge/ with one file per category (criminal-behavior, social-emotional-defects) + README. Criminal-behavior content filed there, never front-facing, for his later manual review.
   ↳ Luneth ruled: anything linking minerals to criminal behavior goes in a dedicated criminal-behavior document (not front-facing); ALL fringe lives under knowledge/fringe-knowledge/ (NOT a new top-level dir), categorized, as a clean containment zone to decide later what (if anything) graduates to Eden. Migrated the prior chronicle/wallach-fringe-excluded.md (Ch.6 Ed Gein/Waneta Hoyt crime thesis -> criminal-behavior.md; Ch.7 'emotional defects/homosexuality' framing -> social-emotional-defects.md) faithfully; old path is now a redirect stub (excluded != deleted). Added 2 new Rare Earths Preface (p.xviii) criminal-behavior entries surfaced during batch-1 review. Memory editorial-fringe-exclusion-policy updated to the new location.
-
-## 2026-06-24 17:38 UTC-04:00 · milestone · eden/corpus
-Phase γ.3 step 0 — built corpus_resnap.py, the safety tool that makes editing sealed book TEXT safe (re-hash books-meta + relocate/heal/flag every claim verbatim+offset). Tested all paths. Starts the Rare Earths OCR-correction campaign.
-  ↳ Workflow flip this session: the user supplied the full scanned PDF; the agent can render any page via PyMuPDF and read it at full fidelity (prose AND dense tables, e.g. the periodic table), so no screenshots/page-feeding needed — agent drives front-to-back. Decisions locked with the user: canonical text format = de-hyphenate + reflow (feeds both verbatim-snapping and the future ±200-word context popup); periodic-table grids = clean marker + caption. Mechanics traced: corpus_seal seals books-meta but never re-hashes the book; finalize carries existing claims forward unchanged; corpus_verify check #6 (book hash) + #9 (offset) catch drift loudly. corpus_resnap fills the gap: skeleton (letters-only) match auto-heals reflow/hyphen/whitespace changes, refuses to guess on letter-changes (a fixed scan error inside a verbatim span) or ambiguous duplicates -> --fix path for manual re-author. Honest note: handoff overstated the periodic table as a custom nutrient graphic; it is the STANDARD periodic table of all 103 elements (Table 11-6) that frames the alphabetical-by-symbol element catalog.

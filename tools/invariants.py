@@ -1774,6 +1774,36 @@ def check_search_only_indices_excluded():
     return True, f"all {len(search_ids)} search-only (tier-2) claim(s) correctly excluded from operational indices"
 
 
+def check_verbatim_names_mapped_conditions():
+    """Luneth rule (SESSION 31, 2026-07-01): a Wallach quote shown under a condition
+    MUST name that condition (or a registered synonym) in the SHOWN verbatim text --
+    else the link is unverifiable (indistinguishable from a hallucination). This
+    guards against NEW/regressed violations while the measured 601-mapping backlog is
+    remediated: eden/tools/verbatim-audit-baseline.json allowlists the currently-known
+    violations, so ONLY new mappings whose verbatim does not name their condition fail.
+    The allowlist shrinks to {} as verbatims are extended / mappings dropped and the
+    baseline is regenerated. Truth-anchored on the sealed shard verbatims x the derived
+    conditions index (exactly what surfaces under a condition; search-only excluded),
+    matched name-or-synonym via eden/tools/condition-synonyms.json. The matcher +
+    baseline logic live in eden/tools/verbatim_audit.py. See memory
+    verbatim-must-name-mapped-condition."""
+    if not (ROOT / "eden" / "corpus" / "indices" / "conditions.json").exists():
+        return True, "eden/corpus not installed (bootstrap-guard)"
+    sys.path.insert(0, str(ROOT / "eden" / "tools"))
+    import verbatim_audit
+    new = verbatim_audit.new_violations()
+    tolerated = len(verbatim_audit.load_baseline())
+    if new:
+        sample = sorted(f"{cid}->{s}" for cid, s in new)[:5]
+        return False, (f"{len(new)} NEW verbatim-names-condition violation(s) — a claim maps a "
+                       f"condition its verbatim does not name: {sample}{' ...' if len(new) > 5 else ''} "
+                       f"(extend the verbatim to name the condition, or drop the mapping, then "
+                       f"`python eden/tools/verbatim_audit.py baseline`). memory: "
+                       f"verbatim-must-name-mapped-condition")
+    return True, (f"0 new verbatim-names-condition violations ({tolerated} known baselined, "
+                  f"shrinking as remediation runs)")
+
+
 def check_graphics_integrity():
     """Phase alpha — the sacred hand-made graphics (eden/graphics) must match their
     sealed manifest. Delegates to eden/tools/graphics_verify.py: 0 = sealed & healthy,
@@ -2031,6 +2061,14 @@ INVARIANTS = [
         truth_anchor="claim `search-only` tag (eden/corpus/claims/*) vs claim ids referenced by the sealed indices (eden/corpus/indices/*); independent of corpus_derive's own filter",
         severity="critical",
         lesson_ref="Wallach SESSION 12 (2026-06-28) — Luneth: baking modality name-drops (color->jaundice) into the conditions tab reads as AI slop + dilutes the 90-essentials solid-cure doctrine; tier-1 doctrine vs tier-2 search-only must stay separated (memory search-vs-operational-index-separation)",
+    ),
+    Invariant(
+        name="verbatim_names_mapped_conditions",
+        description="every claim shown under a condition names that condition (or a registered synonym) in its verbatim; NEW violations beyond the remediation baseline block the board",
+        check_fn=check_verbatim_names_mapped_conditions,
+        truth_anchor="sealed shard verbatims x derived conditions index (what surfaces under a condition), name-or-synonym via eden/tools/condition-synonyms.json; allowlist eden/tools/verbatim-audit-baseline.json",
+        severity="critical",
+        lesson_ref="SESSION 31 (2026-07-01) — Luneth: a quote shown under a condition must NAME it or the link is unverifiable; regressed because it was prose not a machine guard; memory verbatim-must-name-mapped-condition",
     ),
     Invariant(
         name="graphics_integrity",
