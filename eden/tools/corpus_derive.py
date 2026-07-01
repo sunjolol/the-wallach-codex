@@ -31,8 +31,20 @@ COND_ROLE = {
 }
 
 
+# Curated display-name overrides for slugs whose mechanical humanize() form is
+# wrong or user-hostile -- an initialism title-cased to nonsense ("pms" -> "Pms"),
+# or an unexplained abbreviation (memory: no-unexplained-abbreviations). humanize()
+# stays the deterministic default; this is the small, auditable exception list,
+# applied wherever a slug surfaces as a display name (conditions/other/symptoms).
+# Keep keys sorted.
+DISPLAY_OVERRIDES = {
+    "pms": "Premenstrual Syndrome (PMS)",
+}
+
+
 def humanize(slug: str) -> str:
-    return slug.replace("_", " ").replace("-", " ").title()
+    override = DISPLAY_OVERRIDES.get(slug)
+    return override if override is not None else slug.replace("_", " ").replace("-", " ").title()
 
 
 def _load_claims(shards):

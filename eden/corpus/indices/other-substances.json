@@ -815,7 +815,7 @@
       "parkinsonism",
       "pellagra",
       "periodontal_disease",
-      "premenstrual_syndrome",
+      "pms",
       "psoriasis",
       "pyorrhea",
       "schizophrenia",
@@ -938,7 +938,7 @@
       "amenorrhea",
       "dysmenorrhea",
       "menorrhagia",
-      "premenstrual_syndrome"
+      "pms"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1082,7 +1082,7 @@
       "labor",
       "menorrhagia",
       "miscarriage",
-      "premenstrual_syndrome",
+      "pms",
       "vaginitis"
     ],
     "books_cited": [
@@ -2023,7 +2023,7 @@
       "periodontal_disease",
       "pica",
       "plumbism",
-      "premenstrual_syndrome",
+      "pms",
       "pyorrhea",
       "rheumatoid_arthritis",
       "sciatica",
@@ -5075,7 +5075,7 @@
     "conditions_treated": [
       "arteriosclerosis",
       "hysteria",
-      "premenstrual_syndrome"
+      "pms"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5615,7 +5615,7 @@
       "parkinsonism",
       "pellagra",
       "periodontal_disease",
-      "premenstrual_syndrome",
+      "pms",
       "psoriasis",
       "pyorrhea",
       "schizophrenia",

@@ -9493,8 +9493,8 @@
     ]
   },
   "pms": {
-    "display_name": "Pms",
-    "claim_count": 3,
+    "display_name": "Premenstrual Syndrome (PMS)",
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000061",
@@ -9502,13 +9502,30 @@
       ],
       "diagnostics": [
         "WAL-CLM-LETS-000081"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000388",
+        "WAL-CLM-LETS-000402"
       ]
     },
     "essentials_involved": [
       "calcium",
-      "vitamin-b6"
+      "chromium",
+      "omega-3",
+      "vitamin-a",
+      "vitamin-b3",
+      "vitamin-b6",
+      "vitamin-e",
+      "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "betaine-hcl",
+      "black-cohosh",
+      "blue-cohosh",
+      "colloidal-minerals",
+      "mistletoe",
+      "pancreatic-enzymes"
+    ],
     "books_cited": [
       "epigenetics",
       "lets-play-doctor"
@@ -9626,37 +9643,6 @@
       "vitamin-b6"
     ],
     "other_substances_involved": [],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
-  "premenstrual_syndrome": {
-    "display_name": "Premenstrual Syndrome",
-    "claim_count": 2,
-    "claims_by_role": {
-      "protocols": [
-        "WAL-CLM-LETS-000388",
-        "WAL-CLM-LETS-000402"
-      ]
-    },
-    "essentials_involved": [
-      "calcium",
-      "chromium",
-      "omega-3",
-      "vitamin-a",
-      "vitamin-b3",
-      "vitamin-b6",
-      "vitamin-e",
-      "zinc"
-    ],
-    "other_substances_involved": [
-      "betaine-hcl",
-      "black-cohosh",
-      "blue-cohosh",
-      "colloidal-minerals",
-      "mistletoe",
-      "pancreatic-enzymes"
-    ],
     "books_cited": [
       "lets-play-doctor"
     ]
