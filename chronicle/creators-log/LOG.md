@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 262 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 263 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 17:57 UTC-05:00 · round-close · corpus/lets
+SESSION 36: LETS verbatim campaign resumed. First increment — 5 claims extended to name their conditions (achlorhydria, adrenal_exhaustion, alcoholism, diabetes/hypoglycemia, absence_attacks). violations 283->278, LETS 224->219. seal kv 228, board 32/32, probe PASS.
 
 ## 2026-07-01 17:44 UTC-05:00 · round-close · corpus/lets+rare
 SESSION 36: the 2 flagged fixes Luneth ruled — LETS-324 salt nibs->salt rubs + RARE Dr.Jykel->Dr. Jekyll (all 3 garbled Jekyll spellings per fix-everywhere doctrine, RARE-081+129). 3 verbatims healed. seal kv 227, board 32/32, 0 NEW.
@@ -785,7 +788,3 @@ Phase γ.3 batch 19 — Rare Earths Ch.11 catalog Ca/Calcium (p293-299): 5 claim
 ## 2026-06-25 02:07 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 18 — Rare Earths Ch.11 catalog Ba/Be/Bi/Br (p287-288): 4 claims (RARE-100..103), kv 46→47, corpus 197
   ↳ Per-element catalog chunk 3. Reflowed Ba-Br book region (de-hyphenated across 287->288 page break, sentence-aware column-break merge, dropped 287 marker); resnap 0 broken. RARE-100 barium thought essential to mammals (Rygh 1949); RARE-101 peptic ulcers caused by H. pylori not stress (Marshall/Warren 1983, 92%-vs-75% antibiotic-vs-placebo trial); RARE-102 ulcer Rx = tetracycline + anti-ulcer med + bismuth subsalicylate (Pepto-Bismol); RARE-103 bromine essentiality via brominated amino acids. Be skipped (pure geology); bismuth not canon -> filed under new peptic_ulcers condition (76->77). Board 30/30, build OK, knowledge probe green. Luneth-approved.
-
-## 2026-06-25 01:49 UTC-04:00 · round-close · eden/corpus
-Abbreviation-audit follow-up (Luneth): reverted EFA + USDA to abbreviations (super common) in 6 DDDL claims, keeping all other expansions. Memory gained the common-knowledge exception. Refreshed handoff. kv 44→46. Session wrap: corpus 193, conditions 76, board 30/30, all pushed.
-  ↳ Luneth: EFA and USDA should stay abbreviated (super common). Restored DDDL-15 (USDA) + DDDL-49/63/64/70/85 (EFA/EFAs) while keeping t.i.d./IU/BPH/CNS expansions. no-unexplained-abbreviations memory now lists the keep-abbreviated set (EFA/USDA/HIV/DNA/RNA/in-line MS-ALS/MD-credential). next-chunk.md handoff logs the full 2026-06-25 session (Ch.11 conceptual half + catalog A/B + audit + permission fix); NEXT = catalog Ba/Be/Bi/Br (idx 308+). Board 30/30, build OK, probe green.

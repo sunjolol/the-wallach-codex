@@ -3413,7 +3413,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach teaches that a single fasting blood-sugar reading cannot detect most cases of diabetes or hypoglycemia; a six-hour glucose tolerance test (GTT) is required to reveal them. He notes conventional (\"orthodox\") doctors avoid the six-hour GTT — and often do not recognize hypoglycemia as a real condition at all — so they fail to test for it.",
-      "verbatim": "The simple fasting blood\nsugar alone cannot detect most cases of diabe-\ntes or hypoglycemia yet the\"orthodox\" doctor\nwill continue to avoid the six-hour GTT be-\ncause they don't know how to use it - they\nalso do not believe in \"hypoglycemia\" so it is\nunderstandable why they don't test for it.",
+      "verbatim": "detect diabetes and hypoglycemia when used\nto perform a six-hour glucose tolerance test\n(six-hour GTT). The simple fasting blood\nsugar alone cannot detect most cases of diabe-\ntes or hypoglycemia yet the\"orthodox\" doctor\nwill continue to avoid the six-hour GTT be-\ncause they don't know how to use it - they\nalso do not believe in \"hypoglycemia\" so it is\nunderstandable why they don't test for it.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -3421,7 +3421,7 @@
         "page": 31,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 57224
+        "char_offset": 57120
       },
       "dose": null,
       "tags": [
@@ -4925,7 +4925,7 @@
       ],
       "symptoms": [],
       "claim_text": "For absence attacks (petit mal seizures, in which the patient briefly stops, rapidly blinks the eyes, then resumes activity), Wallach's protocol is choline 4 grams per day, taurine 500 mg three times daily, dimethyl glycine 100 mg twice daily, and phosphatidyl choline plus vitamin B-6 at 100-300 mg per day.",
-      "verbatim": "Treatment should include choline 4 gm/day;\ntaurine 500 mg t.i.d.; dimethyl glycine 100 mg\nb.i.d., phosphytidyl choline and B-6 100-300\nmg/day.",
+      "verbatim": "ABSENCE ATTACKS (petit mal): patient\nstops what he is doing and rapidly blinks eyes\nthen starts the activity again where he left off.\nTreatment should include choline 4 gm/day;\ntaurine 500 mg t.i.d.; dimethyl glycine 100 mg\nb.i.d., phosphytidyl choline and B-6 100-300\nmg/day.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -4933,7 +4933,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 159921
+        "char_offset": 159787
       },
       "dose": null,
       "tags": [
@@ -4993,7 +4993,7 @@
       ],
       "symptoms": [],
       "claim_text": "For achlorhydria (loss of stomach acid, common with aging and stress, affecting over 75% of people past age 50, and which untreated leads to vitamin B-12, calcium, and protein deficiencies plus new food allergies), Wallach's treatment is betaine hydrochloride (betaine HCl) 75-250 mg taken 15-20 minutes before each meal; in its absence, 1-2 oz of vinegar with English bitters (Gentian) before meals; plant-derived colloidal minerals also help the stomach produce acid.",
-      "verbatim": "Treatment includes supplementation of\nbetaine HC1 at the rate of 75-250 mg 15-20\nminutes before each meal. In the absence of\nbetaine HCl 1-2 oz. of vinegar with English",
+      "verbatim": "Failure to deal\nwith achlorhydria will result in B-12, calcium\nand protein deficiencies and the onset of new\nfood allergies as a result of absorption of\npartially digested polypeptides (relatively large\nprotein fragments).\nTreatment includes supplementation of\nbetaine HC1 at the rate of 75-250 mg 15-20\nminutes before each meal. In the absence of\nbetaine HCl 1-2 oz. of vinegar with English",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -5001,7 +5001,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 161203
+        "char_offset": 160980
       },
       "dose": null,
       "tags": [
@@ -5074,7 +5074,7 @@
         "fatigue"
       ],
       "claim_text": "For adrenal gland exhaustion (from stress, marked by fatigue and an inability to cope, and confirmed when the pulse fails to rise at least ten points on standing up from lying down), Wallach's treatment is adrenal cortical extract (ACE) -- ten drops of standard solution sublingually or 3-5 ml intravenously -- vitamin C to bowel tolerance, and zinc 25-50 mg three times daily, together with removing the stress.",
-      "verbatim": "(adrenal cortical extract) ten drops of a stan-\ndard solution sublingually or 3-5 ml IV; vita-\nmin C to bowel tolerance; and zinc 25-50 mg\nt.i.d.",
+      "verbatim": "Treatment ofadrenal exhaustion includes ACE\n(adrenal cortical extract) ten drops of a stan-\ndard solution sublingually or 3-5 ml IV; vita-\nmin C to bowel tolerance; and zinc 25-50 mg\nt.i.d.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -5082,7 +5082,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 162927
+        "char_offset": 162883
       },
       "dose": null,
       "tags": [
@@ -5202,7 +5202,7 @@
       ],
       "symptoms": [],
       "claim_text": "For alcoholism (which Wallach views as an addictive food allergy complicated by hypoglycemia and vitamin/mineral malnutrition), he prescribes rotation elimination diets and hypoglycemia diets plus baseline supplements: calcium 2000 mg and magnesium 1000 mg per day; essential fatty acids 5 mg three times daily; vitamin B-6 100 mg twice daily; chromium 250 mcg per day (essential to solve the hypoglycemia); bioflavonoids (catechin) 1 gram per day; and amino acids such as DL-phenylalanine.",
-      "verbatim": "Calcium (2000 mg) and\nmagnesium (1000 mg) per day; essential fatty\nacids 5 mg t.i.d. and B-6 100 mg b.i.d.; chro-\nmium 250 mcg/day is essential to solve the\nhypoglycemia problem; bioflavonoids (cat-\nechin) 1 gram/day and amino acids (i.e., DL-\nphenylananine).",
+      "verbatim": "ALCOHOLISM: considered to be an addic-\ntive allergy complicated by hypoglycemia and\nvitamin/mineral malnutrition. Rotation elimi-\nnation diets and hypoglycemia diets are es-\nsential. Don't forget the baseline vitamin/min-\neral supplements. Calcium (2000 mg) and\nmagnesium (1000 mg) per day; essential fatty\nacids 5 mg t.i.d. and B-6 100 mg b.i.d.; chro-\nmium 250 mcg/day is essential to solve the\nhypoglycemia problem; bioflavonoids (cat-\nechin) 1 gram/day and amino acids (i.e., DL-\nphenylananine).",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -5210,7 +5210,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 165394
+        "char_offset": 165154
       },
       "dose": null,
       "tags": [
