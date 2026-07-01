@@ -70,6 +70,10 @@ def _slim_claim(c: dict) -> dict:
         "conditions": c.get("conditions", []),
         "symptoms": c.get("symptoms", []),
         "confidence": c.get("confidence", "medium"),
+        # tier lets non-index surfaces (the book browser) distinguish tier-1
+        # operational claims from tier-2 search-only ones, which are stripped
+        # from the derived indices but still ride in the claims map.
+        "tier": 2 if "search-only" in c.get("tags", []) else 1,
     }
 
 

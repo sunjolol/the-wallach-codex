@@ -17,17 +17,22 @@
  */
 
 import type {
+  CorpusBook,
   CorpusClaim,
   CorpusCondition,
   CorpusEssential,
+  CorpusPlannedBook,
 } from '../core/schemas/index.js';
 import type { CoverageSnapshot, CoverageStatus, CoverageTile } from '../state/coverage.js';
 import {
   conditionDisplayName,
   essentialDisplayName,
   getBookLabel,
+  getClaimsForBook,
   getCondition,
+  listBooksWithId,
   listConditions,
+  listPlannedBooks,
   resolveClaims,
 } from '../state/corpus.js';
 
@@ -80,6 +85,44 @@ export function renderIntakeMeter(tile: CoverageTile | null, status: CoverageSta
       <div class="kd-meter__track"><span class="kd-meter__fill" style="width:${barPct}%"></span></div>
       <div class="kd-meter__cap">${pct}% OF WALLACH GOAL</div>
     </div>`;
+}
+
+// ─── Book browser (Corpus tab -> open a book -> all its tier-1 claims) ──────
+
+/**
+ * The full tier-1 claim list of one book, grouped by kind — the view behind a
+ * clicked Corpus-tab book row. This is the home for tier-1 claims that carry no
+ * essential/condition (e.g. the colloidal-composition + daily-intake tables),
+ * which therefore never surface on a tile. Tier-2 search-only claims are held
+ * back by getClaimsForBook. Reuses renderCorpusClaim so citations stay uniform.
+ */
+export function renderBookDeep(bookId: string): string {
+  const label = getBookLabel(bookId);
+  const claims = getClaimsForBook(bookId);
+  const closeBtn = '<button class="kd-book-deep__close" data-kd-action="book-close" title="Close (Esc)">×</button>';
+  const head = `
+    <div class="kd-book-deep__head">
+      <span class="kd-book-deep__eyebrow"><span class="pulse-dot"></span>FROM THE WALLACH CORPUS · ${escHTML(label)}</span>
+      <span class="kd-book-deep__count">${claims.length} CLAIM${claims.length === 1 ? '' : 'S'}</span>
+    </div>`;
+  if (claims.length === 0) {
+    return `<div class="kd-book-deep">${closeBtn}${head}<p class="kd-corpus__empty">— no sealed claims for this book yet —</p></div>`;
+  }
+  const byKind = new Map<string, CorpusClaim[]>();
+  for (const c of claims) {
+    const arr = byKind.get(c.kind) ?? [];
+    arr.push(c);
+    byKind.set(c.kind, arr);
+  }
+  const groupsHTML = [...byKind.keys()].sort(corpusKindOrder).map((kind) => {
+    const claimsHTML = (byKind.get(kind) ?? []).map(renderCorpusClaim).join('');
+    return `
+      <div class="kd-corpus__group">
+        <div class="kd-corpus__group-label">${escHTML(corpusKindLabel(kind))}</div>
+        ${claimsHTML}
+      </div>`;
+  }).join('');
+  return `<div class="kd-book-deep">${closeBtn}${head}<div class="kd-corpus">${groupsHTML}</div></div>`;
 }
 
 // ─── Corpus claim rendering (Essentials deep-dive) ─────────────────────────
@@ -317,4 +360,76 @@ export function renderConditionsTab(selectedSlug: string | null): string {
     ${deepHTML}
     <div class="kd-section-head">CONDITIONS · ${conditions.length} · WALLACH CORPUS</div>
     ${rowsHTML}`;
+}
+
+// ─── Corpus tab (book list + book browser) ─────────────────────────────────
+
+/** "WALLACH" / "WALLACH ET AL" — primary author surname + et-al marker. */
+function authorLabel(authors: string[] | undefined): string {
+  if (authors === undefined || authors.length === 0) {
+    return 'WALLACH';
+  }
+  const first = authors[0] ?? '';
+  const parts = first.trim().split(/\s+/);
+  const surname = parts.length > 0 ? (parts[parts.length - 1] ?? first) : first;
+  return authors.length > 1 ? `${surname.toUpperCase()} ET AL` : surname.toUpperCase();
+}
+
+/** The count cell: real claim total, or a muted 'queued' for un-mined in-housed books. */
+function bookCountHTML(n: number): string {
+  if (n > 0) {
+    return `${n}<small>claims</small>`;
+  }
+  return '<span class="kd-book-row__count--queued">⋯</span><small>queued</small>';
+}
+
+/** One in-housed book row — driven by books-meta + REAL per-book claim_count. */
+function renderBookRow(b: CorpusBook & { book_id: string }): string {
+  const ed = (b.edition !== undefined && b.edition !== null && b.edition.length > 0) ? `${escHTML(b.edition)} ED · ` : '';
+  const yr = (b.year !== undefined && b.year !== null) ? escHTML(String(b.year)) : '';
+  return `
+    <div class="kd-book-row" data-kd-book="${escHTML(b.book_id)}" role="button" tabindex="0">
+      <div class="kd-book-row__spine"><span>${escHTML(b.code ?? '')}</span></div>
+      <div class="kd-book-row__body">
+        <h4 class="kd-book-row__title">${escHTML(b.title)}</h4>
+        <div class="kd-book-row__meta">${escHTML(authorLabel(b.authors))} · ${ed}${yr}</div>
+      </div>
+      <div class="kd-book-row__count">${bookCountHTML(b.claim_count ?? 0)}</div>
+    </div>`;
+}
+
+/** One planned ('coming soon') book row — grayed/dashed, not yet in-housed. */
+function renderPlannedRow(b: CorpusPlannedBook): string {
+  return `
+    <div class="kd-book-row kd-book-row--planned">
+      <div class="kd-book-row__spine"><span>${escHTML(b.code ?? '')}</span></div>
+      <div class="kd-book-row__body">
+        <h4 class="kd-book-row__title">${escHTML(b.title)}</h4>
+        <div class="kd-book-row__meta">${escHTML(authorLabel(b.authors))} · COMING SOON</div>
+      </div>
+      <div class="kd-book-row__count kd-book-row__count--soon">—<small>soon</small></div>
+    </div>`;
+}
+
+export function renderCorpusTab(selectedBook: string | null): string {
+  if (selectedBook !== null) {
+    return renderBookDeep(selectedBook);
+  }
+  const books = listBooksWithId();
+  const planned = listPlannedBooks();
+  const totalClaims = books.reduce((s, b) => s + (b.claim_count ?? 0), 0);
+  const booksHTML = books.map(b => renderBookRow(b)).join('');
+  const plannedHTML = planned.length > 0
+    ? `<div class="kd-section-head">COMING SOON · ACQUIRING</div>${planned.map(p => renderPlannedRow(p)).join('')}`
+    : '';
+
+  return `
+    <div class="kd-featured-citation">
+      <div class="kd-featured-citation__eyebrow"><span class="pulse-dot"></span>SOURCE-RULE CORNERSTONE</div>
+      <p class="kd-featured-citation__quote">The body needs 60 minerals, 16 vitamins, 12 amino acids, and 2 essential fatty acids — 90 essentials total. Plant-derived minerals are the only delivery vehicle that the body absorbs as nature intended.</p>
+      <div class="kd-featured-citation__attr"><strong>Wallach</strong> · Dead Doctors Don\'t Lie · ch. 1 · paraphrase per primary corpus</div>
+    </div>
+    <div class="kd-section-head">PRIMARY CORPUS · WALLACH · ${books.length} BOOKS · ${totalClaims} CLAIMS</div>
+    ${booksHTML}
+    ${plannedHTML}`;
 }

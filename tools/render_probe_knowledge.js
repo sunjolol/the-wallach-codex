@@ -60,6 +60,18 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     };
   });
 
+  // 2c. Book browser -- a book row opens all its tier-1 claims (incl. the
+  //     composition/dose tables that carry no essential/condition), then closes.
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-book="rare-earths"]')?.click());
+  await wait(300);
+  const bookOpen = await page.evaluate(() => {
+    const bd = document.querySelector('#drawer-knowledge-mount .kd-book-deep');
+    const claims = bd ? [...bd.querySelectorAll('.kd-claim')] : [];
+    return { shown: bd !== null, claimCount: claims.length };
+  });
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-action="book-close"]')?.click());
+  await wait(200);
+
   // 3. Switch to the Products tab; read the vault count + the rendered names.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="products"]')?.click());
   await wait(300);
@@ -188,7 +200,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, corpus, products, essentials, deep, traceMeter, conditions, condDeep, afterEsc, afterK, search, searchClear };
+  const out = { boot, afterClick, corpus, bookOpen, products, essentials, deep, traceMeter, conditions, condDeep, afterEsc, afterK, search, searchClear };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -199,6 +211,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['corpus: DDDL shows a real claim count', corpus.dddlShowsClaims === true],
     ['corpus: no fabricated CITES/CHAPTERS', corpus.fakeCites === false],
     ['corpus: coming-soon books shown', corpus.plannedCount >= 1],
+    ['corpus: book row opens a claim browser (rare-earths)', bookOpen.shown === true && bookOpen.claimCount > 0],
     ['products vault non-empty', products.count > 0],
     ['product rows rendered', products.rowCount > 0],
     ['no unnamed product rows', products.anyUnnamed === false],

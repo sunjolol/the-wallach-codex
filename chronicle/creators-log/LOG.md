@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 231 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 232 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 21:05 UTC-05:00 · design-decision · knowledge-drawer
+SESSION 30 Feature B — openable books in the Corpus tab. Clicking a book opens a browse of all its tier-1 claims, finally surfacing the composition/dose tables that had no essential/condition home. Added an embed tier field to hold back search-only. Luneth signed off.
+  ↳ corpus_embed.py emits tier (1 operational / 2 search-only); getClaimsForBook returns tier-1 only; listBooksWithId pairs books with their id; knowledge-corpus.ts renderBookDeep + relocated corpus-tab renderers (fixed knowledge.ts line budget). Epigenetics opens 74 of 89 (15 search-only hidden), tables present; Immortality 0-claim graceful empty state. Probe +1 assertion, 31/31, build+lint clean. Next: resume Epigenetics forward pass Hf->La.
 
 ## 2026-06-30 20:47 UTC-05:00 · design-decision · knowledge-drawer
 SESSION 30 Feature A — intake-vs-Wallach-target meter in the essential deep-dive. Compact top-right: intake / goal + fill bar + '% OF WALLACH GOAL' when Wallach states a numeric target; covered/not-covered pill otherwise (no invented ratios). Luneth signed off.
@@ -801,7 +805,3 @@ Phase γ.1 — Rare Earths first batch: 13 claims sealed (kv 17->18, 94->107 tot
 ## 2026-06-24 16:21 UTC-04:00 · round-close · dashboard/knowledge
 Phase ε.2 — Conditions tab (64 conditions, role-grouped deep view w/ doses+citations); extracted corpus render helpers to views/knowledge-corpus.ts + fixed 2 switch-exhaustiveness errors; both view files lint-clean. Phase ε COMPLETE; board 30/30.
   ↳ New Conditions tab over indices/conditions.json reuses the ε.1 claim/chip rendering; selectedCondition threaded through renderTab/renderShell/mount. Luneth-verified. Then the approved cleanup: extracted corpus+condition render helpers into a sibling view module (knowledge.ts 33.7KB->26KB, back under max-lines); required allowing intra-views imports in eslint-plugin-boundaries (one-way views->state->core flow unchanged); fixed the 2 pre-existing switch-exhaustiveness errors. Build OK, eslint 0 problems, invariants 30/30, probe PASS. next-chunk.md: gate passed -> resume extraction.
-
-## 2026-06-24 15:53 UTC-04:00 · round-close · dashboard/knowledge
-Phase ε.1 — sealed Wallach corpus surfaced in the Knowledge drawer: Essential deep-dive claims (paraphrase+verbatim+cite) + data-driven Corpus tab (real claim counts, newest-first, coming-soon books). New embed/schema/reader + corpus_embed_synced (30/30); kv 16to17.
-  ↳ Deferred Phase-ε read path lands: corpus_embed.py → slim deterministic embed inlined via esbuild JSON import (file:// can't fetch); core/schemas/corpus.ts Zod boundary mirrors the REAL derive output (SCHEMA.md §4 corrected, §7 documents the embed); state/corpus.ts validated reader. Essential deep-dive shows each essential's claims grouped by kind with the exact book verbatim + citation (§00.A source made visible). Corpus tab de-faked: was a hard-coded BOOKS list with invented cite totals; now books-meta + REAL claim_count (DDDL=94, others queued), newest-first, + books-roadmap.json coming-soon set grayed. Luneth-verified the deep-dive; he caught the Corpus-tab fakery + the Immortality year (2017→2008, re-sealed kv 16→17). Build OK, invariants 30/30, knowledge+coverage+seeded probes green.

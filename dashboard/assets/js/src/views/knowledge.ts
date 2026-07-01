@@ -26,8 +26,6 @@
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import { on as onEvent } from '../core/events.js';
 import {
-  type CorpusBook,
-  type CorpusPlannedBook,
   CoverageLayoutSchema,
   type LayoutSection,
   type LayoutTile,
@@ -39,7 +37,6 @@ import {
   getEssentialByLayoutKey,
   listBooks,
   listConditions,
-  listPlannedBooks,
 } from '../state/corpus.js';
 import {
   type CoverageSnapshot,
@@ -48,7 +45,7 @@ import {
   getTargets,
   matchEssential,
 } from '../state/coverage.js';
-import { renderConditionsTab, renderCorpusForEssential, renderIntakeMeter, tileOf } from './knowledge-corpus.js';
+import { renderConditionsTab, renderCorpusForEssential, renderCorpusTab, renderIntakeMeter, tileOf } from './knowledge-corpus.js';
 
 export interface DrawerHandle {
   open: () => void;
@@ -285,73 +282,6 @@ function hexSerial(seed: number): string {
 
 // ─── Tab renderers ─────────────────────────────────────────────────────────
 
-/** "WALLACH" / "WALLACH ET AL" — primary author surname + et-al marker. */
-function authorLabel(authors: string[] | undefined): string {
-  if (authors === undefined || authors.length === 0) {
-    return 'WALLACH';
-  }
-  const first = authors[0] ?? '';
-  const parts = first.trim().split(/\s+/);
-  const surname = parts.length > 0 ? (parts[parts.length - 1] ?? first) : first;
-  return authors.length > 1 ? `${surname.toUpperCase()} ET AL` : surname.toUpperCase();
-}
-
-/** The count cell: real claim total, or a muted 'queued' for un-mined in-housed books. */
-function bookCountHTML(n: number): string {
-  if (n > 0) {
-    return `${n}<small>claims</small>`;
-  }
-  return '<span class="kd-book-row__count--queued">⋯</span><small>queued</small>';
-}
-
-/** One in-housed book row — driven by books-meta + REAL per-book claim_count. */
-function renderBookRow(b: CorpusBook): string {
-  const ed = (b.edition !== undefined && b.edition !== null && b.edition.length > 0) ? `${escHTML(b.edition)} ED · ` : '';
-  const yr = (b.year !== undefined && b.year !== null) ? escHTML(String(b.year)) : '';
-  return `
-    <div class="kd-book-row">
-      <div class="kd-book-row__spine"><span>${escHTML(b.code ?? '')}</span></div>
-      <div class="kd-book-row__body">
-        <h4 class="kd-book-row__title">${escHTML(b.title)}</h4>
-        <div class="kd-book-row__meta">${escHTML(authorLabel(b.authors))} · ${ed}${yr}</div>
-      </div>
-      <div class="kd-book-row__count">${bookCountHTML(b.claim_count ?? 0)}</div>
-    </div>`;
-}
-
-/** One planned ('coming soon') book row — grayed/dashed, not yet in-housed. */
-function renderPlannedRow(b: CorpusPlannedBook): string {
-  return `
-    <div class="kd-book-row kd-book-row--planned">
-      <div class="kd-book-row__spine"><span>${escHTML(b.code ?? '')}</span></div>
-      <div class="kd-book-row__body">
-        <h4 class="kd-book-row__title">${escHTML(b.title)}</h4>
-        <div class="kd-book-row__meta">${escHTML(authorLabel(b.authors))} · COMING SOON</div>
-      </div>
-      <div class="kd-book-row__count kd-book-row__count--soon">—<small>soon</small></div>
-    </div>`;
-}
-
-function renderCorpusTab(): string {
-  const books = listBooks();
-  const planned = listPlannedBooks();
-  const totalClaims = books.reduce((s, b) => s + (b.claim_count ?? 0), 0);
-  const booksHTML = books.map(b => renderBookRow(b)).join('');
-  const plannedHTML = planned.length > 0
-    ? `<div class="kd-section-head">COMING SOON · ACQUIRING</div>${planned.map(p => renderPlannedRow(p)).join('')}`
-    : '';
-
-  return `
-    <div class="kd-featured-citation">
-      <div class="kd-featured-citation__eyebrow"><span class="pulse-dot"></span>SOURCE-RULE CORNERSTONE</div>
-      <p class="kd-featured-citation__quote">The body needs 60 minerals, 16 vitamins, 12 amino acids, and 2 essential fatty acids — 90 essentials total. Plant-derived minerals are the only delivery vehicle that the body absorbs as nature intended.</p>
-      <div class="kd-featured-citation__attr"><strong>Wallach</strong> · Dead Doctors Don\'t Lie · ch. 1 · paraphrase per primary corpus</div>
-    </div>
-    <div class="kd-section-head">PRIMARY CORPUS · WALLACH · ${books.length} BOOKS · ${totalClaims} CLAIMS</div>
-    ${booksHTML}
-    ${plannedHTML}`;
-}
-
 function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): string {
   const e = ESS_BY_KEY.get(key);
   if (e === undefined) {
@@ -463,9 +393,9 @@ function renderDoctrineTab(): string {
     </div>`).join('');
 }
 
-function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null, selectedCondition: string | null): string {
+function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null, selectedCondition: string | null, selectedBook: string | null): string {
   switch (tab) {
-    case 'corpus': return renderCorpusTab();
+    case 'corpus': return renderCorpusTab(selectedBook);
     case 'essentials': return renderEssentialsTab(snapshot, selectedKey);
     case 'conditions': return renderConditionsTab(selectedCondition);
     case 'products': return renderProductsTab();
@@ -473,7 +403,7 @@ function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: str
   }
 }
 
-function renderShell(activeTab: Tab, selectedKey: string | null, selectedCondition: string | null): string {
+function renderShell(activeTab: Tab, selectedKey: string | null, selectedCondition: string | null, selectedBook: string | null): string {
   const snapshot = getOrCompute();
   const productsCount = readProducts().length;
   const tabs = [
@@ -505,7 +435,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
       <input class="kd-search-input" type="text" placeholder="SEARCH ${activeTab.toUpperCase()}…" />
       <span class="kd-search-kbd">/</span>
     </div>
-    <div class="kd-body">${renderTab(activeTab, snapshot, selectedKey, selectedCondition)}</div>
+    <div class="kd-body">${renderTab(activeTab, snapshot, selectedKey, selectedCondition, selectedBook)}</div>
     <footer class="kd-footer">
       <button class="kd-action" data-kd-action="pin"><span class="kd-action__glyph">⊕</span>PIN</button>
       <button class="kd-action" data-kd-action="share"><span class="kd-action__glyph">↗</span>SHARE</button>
@@ -601,10 +531,11 @@ export function mount(container: HTMLElement): DrawerHandle {
   let activeTab: Tab = 'corpus';
   let selectedEssential: string | null = null;
   let selectedCondition: string | null = null;
+  let selectedBook: string | null = null;
   let searchQuery = '';
 
   const render = (): void => {
-    container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition);
+    container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition, selectedBook);
     // Re-apply the live query so a re-render (deep-dive open, regimen:changed)
     // doesn't silently drop an in-progress filter.
     if (searchQuery.length > 0) {
@@ -635,6 +566,7 @@ export function mount(container: HTMLElement): DrawerHandle {
     isExpanded = false;
     selectedEssential = null;
     selectedCondition = null;
+    selectedBook = null;
     container.classList.remove('kd-open', 'kd-expanded');
     container.innerHTML = '';
   };
@@ -663,6 +595,7 @@ export function mount(container: HTMLElement): DrawerHandle {
         activeTab = next;
         selectedEssential = null;
         selectedCondition = null;
+        selectedBook = null;
         searchQuery = '';
         render();
       }
@@ -682,6 +615,13 @@ export function mount(container: HTMLElement): DrawerHandle {
       render();
       return;
     }
+    const bookEl = target.closest<HTMLElement>('[data-kd-book]');
+    if (bookEl !== null) {
+      const k = bookEl.getAttribute('data-kd-book');
+      selectedBook = (k !== null && k === selectedBook) ? null : k;
+      render();
+      return;
+    }
     const actionEl = target.closest<HTMLElement>('[data-kd-action]');
     if (actionEl !== null) {
       const action = actionEl.getAttribute('data-kd-action');
@@ -697,6 +637,10 @@ export function mount(container: HTMLElement): DrawerHandle {
       }
       else if (action === 'condition-close') {
         selectedCondition = null;
+        render();
+      }
+      else if (action === 'book-close') {
+        selectedBook = null;
         render();
       }
       else {

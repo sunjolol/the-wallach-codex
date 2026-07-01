@@ -39,6 +39,8 @@ export const CorpusClaimSchema = z.object({
   conditions: z.array(z.string()),
   symptoms: z.array(z.string()),
   confidence: z.string(),
+  /** 1 = operational (tier-1); 2 = search-only (tier-2, index-excluded). */
+  tier: z.number().optional(),
 }).passthrough();
 
 /** A deficiency-sign edge inside an essential entry. */

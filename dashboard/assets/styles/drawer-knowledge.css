@@ -831,3 +831,32 @@
   text-transform: uppercase;
   color: var(--ds-tech);
 }
+
+/* Book browser -- Corpus tab, a clicked book expands to all its tier-1 claims.
+   The home for tier-1 claims with no essential/condition (composition/dose
+   tables). Reuses the .kd-corpus claim styling; only the header differs. */
+#drawer-knowledge-mount .kd-book-deep { position: relative; padding-top: var(--ds-space-2); }
+#drawer-knowledge-mount .kd-book-deep__close {
+  position: absolute; top: 0; right: 0;
+  width: 30px; height: 30px; border: 0; cursor: pointer;
+  background: transparent; color: var(--ds-ink-soft);
+  font-size: 1.4rem; line-height: 1; border-radius: var(--ds-radius-sm, 6px);
+}
+#drawer-knowledge-mount .kd-book-deep__close:hover { background: var(--ds-paper-darker); color: var(--ds-ink); }
+#drawer-knowledge-mount .kd-book-deep__head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: var(--ds-space-3); padding: 0 40px var(--ds-space-3) 0;
+  border-bottom: 1px solid var(--ds-rule-soft); margin-bottom: var(--ds-space-3);
+}
+#drawer-knowledge-mount .kd-book-deep__eyebrow {
+  font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider); text-transform: uppercase;
+  color: var(--ds-tech); display: inline-flex; align-items: center; gap: 6px;
+}
+#drawer-knowledge-mount .kd-book-deep__count {
+  font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide, 0.04em); color: var(--ds-ink-soft); white-space: nowrap;
+}
+/* Book rows read as actionable now that a click opens them. */
+#drawer-knowledge-mount .kd-book-row[data-kd-book] { cursor: pointer; }
+#drawer-knowledge-mount .kd-book-row[data-kd-book]:hover { background: var(--ds-paper-darker); }
