@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 254 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 255 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 15:54 UTC-05:00 · milestone · eden/tools/anomaly_scan
+SESSION 35 — built anomaly_scan.py (linguistic/logic surfacer) after the Zumba→Zumbani catch. 3 detectors (hormone_as_herb, near_miss, run_together), review-queue only, never auto-fix. Full scan = 39 candidates: Zumba×4 + Sarenoa + ~10 NEW real errors.
 
 ## 2026-07-01 15:44 UTC-05:00 · round-close · views/knowledge-drawer
 SESSION 35 — content-aware Conditions search + live warm highlight. Per-row data-search blob (nutrients/symptoms/claim text) matched with the title so 'smell' finds Anosmia; live #ffe69c highlight (no SVG filter) on rows + deep-view. board 32/32, probe PASS.
@@ -793,7 +796,3 @@ Phase γ.3 batch 15 — Rare Earths Ch.11 toxic-metals/mercury half: 6 claims (R
 ## 2026-06-25 00:05 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 14 — Rare Earths Ch.11 hair-analysis half: 4 claims (RARE-80..83: hair-analysis premise/200×-blood, disease→hair-mineral patterns, interpretation caveats, Table 11-2 ideal ratios). kv 34→35, RARE 79→83, corpus 177, conditions 68→71.
   ↳ Cleaned pp273-275 (idx 294-296): reflowed 3 spans + hand-rebuilt the OCR-tangled pattern list + marked Table 11-2. resnap 4 relocated/0 broken. +3 condition slugs (schizophrenia, celiac_disease, malabsorption). FRINGE (Luneth ruling = cross-ref): the p275 pattern list repeats the Jekyll/Hyde crime shorthand — one-line cross-ref appended to criminal-behavior.md, kept out of corpus. Board 30/30, build OK, knowledge probe green. NEXT: Ch.11 batch 3 (toxic-metal substitution + lead/cadmium/mercury + dental amalgam + Dr. Todd colloidal study + 79/60 periodic-table intro, idx 297-301), then the alphabetical per-element catalog (idx 302+).
-
-## 2026-06-24 23:48 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 13 — Rare Earths Ch.11 conceptual foundation: 6 claims (RARE-74..79: colloidal/metallic absorption ratios, RDA critique, monk-bone soil-depletion, clinical-phase disease, 48hr-30day reversibility, compensated-phase signs). kv 33→34, RARE 73→79, corpus 173.
-  ↳ Cleaned pp265-272 (idx 286-293): reflowed P1/P3/P2 prose spans + marked the garbled element-concentration Table 11-1. Reflow de-hyphenation HARDENED to [A-Za-z]-$ so a line-final dash (i.e. -) is not eaten (caught by the pre-apply verbatim check). resnap 4 relocated/0 broken. +2 symptom slugs (irregular_heartbeat, white_hair). FRINGE (Luneth ruling = cross-ref): the decompensated-phase list restates the Bad-Seeds/crime + gay-behavior theses — cross-ref notes added to criminal-behavior.md + homosexuality-intersex.md, kept out of corpus. Board 30/30, build OK, knowledge probe green. NEXT: Ch.11 batch 2 (hair-analysis interp + Table 11-2 + toxic-metal substitution + Hg amalgam, idx 294-301), then the alphabetical per-element catalog (idx 302+).
