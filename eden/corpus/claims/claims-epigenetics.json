@@ -2496,22 +2496,8 @@
         "aneurysm",
         "kawasaki_disease",
         "anemia",
-        "hypothyroidism",
-        "hyperthyroidism",
         "arthritis",
-        "liver_cirrhosis",
-        "violent_behavior",
-        "blind_rage",
-        "explosive_outbursts",
-        "criminal_behavior",
-        "learning_disabilities",
-        "cerebral_palsy",
-        "congenital_ataxia",
-        "high_cholesterol",
-        "hypoglycemia",
-        "reactive_hypoglycemia",
-        "glucose_intolerance",
-        "neutropenia"
+        "liver_cirrhosis"
       ],
       "symptoms": [
         "gray_hair",
@@ -2519,7 +2505,7 @@
         "dry_hair"
       ],
       "claim_text": "Copper is a universally important cofactor for hundreds of metalloenzymes -- required for the pigment melanin (hair and skin color), for lysyl oxidase that gives blood vessels, skin, and discs their tensile strength, and for oxygen handling in respiration; Wallach calls copper deficiency widespread and notes it underlies several diseases the medical community wrongly blames on prions or infection. Copper-deficiency diseases include: white/gray/silver and dry brittle hair, ptosis (sagging eyelids, skin, breasts, belly), hernias, varicose and spider veins (hemorrhoids), aneurysms, Kawasaki disease, Marfan's syndrome, anemia, hypo- and hyperthyroid, arthritis, ruptured and bulging discs, liver cirrhosis, violent/blind-rage/explosive/criminal behavior, learning disabilities, cerebral palsy with cerebellar hypoplasia (congenital ataxia), high cholesterol, iron-storage disease, reduced glucose tolerance (hypoglycemia, reactive hypoglycemia), and neutropenia. In his words: 'Diseases and Symptoms of Copper Deficiency: White hair, gray hair, silver hair; Dry brittle hair (\"steely wool\" in sheep); Enzootic ataxia in sheep; Mad cow disease (BSE cattle); Creutzfeldt-Jakob disease (BSE in humans); Ptosis (ie., sagging tissue -- eye lids, skin, breasts, belly, etc.); Hernias (congenital and acquired); Varicose veins/ spider veins (hemorrhoids); Aneurysms (aortic, cerebral, coronary, gastric, etc.).'",
-      "verbatim": "Diseases and Symptoms of Copper Deficiency\n\nWhite hair, gray hair, silver hair\n\nDry brittle hair (“steely wool” in sheep)\n\nEnzootic ataxia in sheep\n\nMad cow disease (BSE cattle)\n\nCreutzfeldt-Jakob disease (BSE in humans)\n\nPtosis (ie., sagging tissue—eye lids, skin, breasts, belly, etc.)\nHernias (congenital and acquired)\n\nVaricose veins/ spider veins (hemorrhoids)\n\nAneurysms (aortic, cerebral, coronary, gastric, etc.)",
+      "verbatim": "Ptosis (ie., sagging tissue—eye lids, skin, breasts, belly, etc.)\nHernias (congenital and acquired)\n\nVaricose veins/ spider veins (hemorrhoids)\n\nAneurysms (aortic, cerebral, coronary, gastric, etc.)\n\nKawasaki Disease (congenital aneurysms with streptococcal infection)\nMarfan's syndrome\n\nAnemia (vegan and high milk diets)\n\nHypo and Hyper thyroid\n\nArthritis (especially when growth plate is involved)\n\nRuptured & bulging vertebral discs\n\nLiver cirrhosis",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -2527,7 +2513,7 @@
         "page": 700,
         "screenshot": 618,
         "kindle_location": null,
-        "char_offset": 1221880
+        "char_offset": 1222102
       },
       "dose": null,
       "tags": [
@@ -4124,6 +4110,52 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-07-01T12:11:01+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000107",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "violent_behavior",
+        "blind_rage",
+        "explosive_outbursts",
+        "criminal_behavior",
+        "learning_disabilities",
+        "cerebral_palsy",
+        "congenital_ataxia",
+        "high_cholesterol",
+        "hypoglycemia",
+        "reactive_hypoglycemia",
+        "neutropenia"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach holds that copper deficiency also drives a cluster of behavioral, neurological, and metabolic disorders. Among the copper-deficiency diseases he lists are violent behavior, blind rage, explosive behavior, and criminal behavior; learning disabilities; cerebral palsy and hypoplasia of the cerebellum (congenital ataxia); high blood cholesterol; reduced glucose tolerance (hypoglycemia and reactive hypoglycemia); and neutropenia. In his words: \"Violent behavior, blind rage, explosive behavior, criminal behavior; Learning disabilities; Cerebral palsy and hypoplasia of the cerebellum (congenital ataxia); High blood cholesterol; Iron storage disease (hemosiderosis); Reduced glucose tolerance (hypoglycemia, reactive hypoglycemia); Neutropenia.\"",
+      "verbatim": "Violent behavior, blind rage, explosive behavior, criminal behavior\nLearning disabilities\n\nCerebral palsy and hypoplasia of the cerebellum (congenital ataxia)\nHigh blood cholesterol\n\nIron storage disease (hemosiderosis)\n\nReduced glucose tolerance (hypoglycemia, reactive hypoglycemia)\nNeutropenia",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "Nutrition: The Death of the Genetic Theory of Disease Transmission",
+        "page": 700,
+        "screenshot": 618,
+        "kindle_location": null,
+        "char_offset": 1222557
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch18",
+        "minerals",
+        "copper"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-01T12:14:47+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

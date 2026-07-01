@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 242 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 243 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 07:16 UTC-05:00 · round-close · knowledge-drawer
+SESSION 32 b4c — copper SPLIT: orphans at both ends of a >500 list, split at Liver cirrhosis into 000063 (Ptosis..Liver cirrhosis) + new 000107 (Violent behavior..Neutropenia); all 6 copper orphans named. claims 1002->1003, EPIGEN 31->14, board 32/32, 0 NEW.
 
 ## 2026-07-01 07:12 UTC-05:00 · design-decision · knowledge-drawer
 SESSION 32 b4b — first claim SPLIT (Luneth-approved): dyslexia orphan gets naming claim EPIGEN-000106 from the Bad Seeds sentence, verbatim trimmed at 'ADD, ADHD, autism' to exclude 'congenital homosexuality'; dyslexia dropped from 000002. claims 1001->1002, 0 NEW.
@@ -796,7 +799,3 @@ Phase γ.3 batch 6: Rare Earths end-of-Ch.4 deficiency-behavior cluster — 3 cl
 ## 2026-06-24 20:12 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 5: Rare Earths Ch.4 pica/cravings — 3 claims (kv 24→25, RARE 34→37, 131 total; new condition 'pica'). Pica = the body craving missing minerals, incl. a controlled iron-vs-saline trial linking pica to iron deficiency. Luneth-approved.
   ↳ WAL-CLM-RARE-000035 (pica/cribbing in domestic animals = a craving for minerals; mineral-starved animals eat supplements then self-regulate to maintenance), 000036 (geophagia/earth-eating = pica common in mineral-deficient pregnant humans; Wallach's own observation of a hundred pregnant Montana sheep eating clay; kind personal_anecdote), 000037 (iron deficiency drives pica; McDonald & Marshall 1964 controlled trial: 11 of 13 sand-eating children given iron lost their pica vs only 3 of 12 given saline — links the pica condition to the iron essential). Avoided the garbled hemoglobin values (OCR 'g%'->'9%') by choosing the clean controlled-trial verbatim. Left the colorful Queen Kekuiapoiwa pregnancy-craving anecdote in the book text but did not extract it. Ch.5 ahead (idx 80, the 'I ate his liver' chapter) is likely extreme-pica/fringe territory — will screen carefully.
-
-## 2026-06-24 20:05 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 4: Rare Earths Ch.3 — the iconic Senate-Doc-264 minerals>vitamins quote + the soil-mining-by-cropping mechanism (2 claims, kv 23→24, RARE 32→34, 128 total). Text-layer-only nav to avoid the sensitive collapse news-clipping pages. Luneth-approved.
-  ↳ WAL-CLM-RARE-000033 (quote: 'Lacking vitamins, the system can make some use of minerals, but lacking minerals, vitamins are useless' — Wallach reproduces it in his US Senate Document 264 discussion) + 000034 (mechanism: NPK fertilizer replaces only 3 elements, cropping mines the soil's minerals in 5-10 years, irrigation speeds the leaching; after 100+ years => rising degenerative disease). The Ch.3 stretch between (idx 65-73) = soil-organism botany + a civilization-collapse-from-soil-depletion thesis shown via sensitive news clippings (Rwandan bloodbath, famine, cannibalism) — navigated via PDF text layer, NO image renders. Deferred the companion Senate-Doc quote + the '60 minerals from food' restatement to a later micro-batch.

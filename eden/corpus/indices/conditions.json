@@ -1815,7 +1815,7 @@
         "WAL-CLM-RARE-000128"
       ],
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000063",
+        "WAL-CLM-EPIGEN-000107",
         "WAL-CLM-RARE-000163"
       ],
       "definitions": [
@@ -2765,7 +2765,7 @@
         "WAL-CLM-RARE-000123"
       ],
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000063",
+        "WAL-CLM-EPIGEN-000107",
         "WAL-CLM-LETS-000210"
       ],
       "definitions": [
@@ -3292,8 +3292,8 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000026",
-        "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-EPIGEN-000099",
+        "WAL-CLM-EPIGEN-000107",
         "WAL-CLM-RARE-000176"
       ]
     },
@@ -3585,7 +3585,7 @@
         "WAL-CLM-RARE-000041"
       ],
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000063",
+        "WAL-CLM-EPIGEN-000107",
         "WAL-CLM-LETS-000008"
       ],
       "definitions": [
@@ -4877,7 +4877,7 @@
         "WAL-CLM-RARE-000128"
       ],
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000063"
+        "WAL-CLM-EPIGEN-000107"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116",
@@ -5322,20 +5322,17 @@
   },
   "glucose_intolerance": {
     "display_name": "Glucose Intolerance",
-    "claim_count": 2,
+    "claim_count": 1,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-LETS-000025"
       ]
     },
     "essentials_involved": [
-      "copper",
       "potassium"
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -5830,7 +5827,7 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
-        "WAL-CLM-EPIGEN-000063",
+        "WAL-CLM-EPIGEN-000107",
         "WAL-CLM-LETS-000003",
         "WAL-CLM-LETS-000006",
         "WAL-CLM-LETS-000008",
@@ -6180,22 +6177,17 @@
   },
   "hyperthyroidism": {
     "display_name": "Hyperthyroidism",
-    "claim_count": 2,
+    "claim_count": 1,
     "claims_by_role": {
-      "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000063"
-      ],
       "diagnostics": [
         "WAL-CLM-RARE-000151"
       ]
     },
     "essentials_involved": [
-      "copper",
       "iodine"
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "epigenetics",
       "rare-earths"
     ]
   },
@@ -6209,7 +6201,7 @@
       "deficiency_signs": [
         "WAL-CLM-DDDL-000017",
         "WAL-CLM-EPIGEN-000062",
-        "WAL-CLM-EPIGEN-000063",
+        "WAL-CLM-EPIGEN-000107",
         "WAL-CLM-LETS-000006",
         "WAL-CLM-LETS-000017",
         "WAL-CLM-LETS-000043",
@@ -6337,13 +6329,12 @@
   },
   "hypothyroidism": {
     "display_name": "Hypothyroidism",
-    "claim_count": 7,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000023"
       ],
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-EPIGEN-000093",
         "WAL-CLM-LETS-000013",
         "WAL-CLM-RARE-000150"
@@ -6356,7 +6347,6 @@
       ]
     },
     "essentials_involved": [
-      "copper",
       "iodine",
       "tyrosine"
     ],
@@ -7387,7 +7377,7 @@
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
-        "WAL-CLM-EPIGEN-000063"
+        "WAL-CLM-EPIGEN-000107"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116",
@@ -8557,7 +8547,7 @@
     "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000063"
+        "WAL-CLM-EPIGEN-000107"
       ],
       "definitions": [
         "WAL-CLM-RARE-000122"
@@ -10047,7 +10037,7 @@
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
-        "WAL-CLM-EPIGEN-000063"
+        "WAL-CLM-EPIGEN-000107"
       ],
       "protocols": [
         "WAL-CLM-EPIGEN-000003"
@@ -11679,7 +11669,7 @@
         "WAL-CLM-RARE-000128"
       ],
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000063",
+        "WAL-CLM-EPIGEN-000107",
         "WAL-CLM-RARE-000163"
       ],
       "definitions": [

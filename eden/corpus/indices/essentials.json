@@ -1623,7 +1623,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 40,
+    "claim_count": 41,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
@@ -1631,6 +1631,7 @@
       "deficiency_sign": [
         "WAL-CLM-DDDL-000003",
         "WAL-CLM-EPIGEN-000063",
+        "WAL-CLM-EPIGEN-000107",
         "WAL-CLM-LETS-000008",
         "WAL-CLM-RARE-000141",
         "WAL-CLM-RARE-000275"
@@ -1747,16 +1748,13 @@
       "diabetes",
       "diarrhea",
       "explosive_outbursts",
-      "glucose_intolerance",
       "goiter",
       "gout",
       "hemorrhoids",
       "hernia",
       "high_cholesterol",
       "hypertension",
-      "hyperthyroidism",
       "hypoglycemia",
-      "hypothyroidism",
       "joint_pain",
       "kawasaki_disease",
       "learning_disabilities",
