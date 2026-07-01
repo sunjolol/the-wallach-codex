@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 259 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 260 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 17:08 UTC-05:00 · milestone · corpus/lets+rare
+SESSION 36 anomaly campaign COMPLETE: bucket-C run-together fixes (LETS 5 + RARE 5: of Menke's, dogwood (Cornus, sugarless Jello, Symphytum/rue/Ruta, OTC analgesics, Diabetes (, Rare Earth x4) then baselined 10 true FPs. seal kv 225, board 32/32, scan 0 NEW.
 
 ## 2026-07-01 16:59 UTC-05:00 · round-close · corpus/epigen
 SESSION 36 anomaly-fix (EPIGEN): BeriBeri->Beriberi (verbatim+index+summary) + Bioflavonoid->Bioflavonoids deficiency heading. seal kv 224, board 32/32, probe PASS, EPIGEN scan = 2 confirmed FPs only. All book reals now cleared.
@@ -788,7 +791,3 @@ Corpus-wide abbreviation audit (Luneth mandate): spelled out non-obvious jargon 
 ## 2026-06-25 01:17 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 17 — Rare Earths Ch.11 catalog chunk 2 (As/Au/B): 6 claims (RARE-94..99) — arsenic ×2, gold ×2, boron ×2. kv 41→42, RARE 99, corpus 193. Post-finalize: spelled out all jargon abbreviations per the no-abbreviations mandate (Luneth review).
   ↳ Catalog chunk 2 (idx 304-308). Arsenic essential/methyl-group + 65× metallic-vs-organic toxicity; gold RA protocol+dose + contraindications; boron bone/endocrine essential + Ca/Mg retention + hormones. 3 reflow spans + 2 OCR letter-fixes (methyl-group restore, i.c.→i.e.). resnap 0 broken. No fringe. Luneth abbreviation fix (RA→rheumatoid arthritis, IM→intramuscular, GI→gastrointestinal, SLE→lupus); verbatim stays byte-faithful. New memory no-unexplained-abbreviations. Render probe green. Board 30/30. NEXT: chunk 3 — Ba/Be/Bi/Br… (idx 308+).
-
-## 2026-06-25 01:02 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 16 — Rare Earths Ch.11 per-element catalog chunk 1 (Ac/Ag/Al): 4 claims (RARE-90..93). Silver ×3 (immune/400mg/deficiency; 650-organism antimicrobial; sulfadiazine in 70% of burn centers); aluminum ×1 (probably essential per Schrauzer). kv 38→40, RARE 89→93.
-  ↳ The alphabetical per-element catalog BEGINS (idx 302+). OCR readable; only 1 reflow span (Al es-/sential). Ac skipped (geology only, not a canon essential). resnap 4 relocated/0 broken. NO fringe. Render probe green (run every batch now per the batch-15 dose lesson). Board 30/30, build OK. NEXT: catalog chunk 2 — As/Au/B/Ba… (idx 303+). Most catalog elements are canon essentials → richest region for per-mineral claims.

@@ -21578,7 +21578,7 @@ Arthritis - (osteoporosis/ hyperparathyroidism) - high Lead, Calcium and Phospho
 
 Anemia - low Iron, Copper, Selenium, Cobalt.
 
-Diabetes(prediabetes/hypoglycemia) - low Chromium, Vanadium, sodium, potassium, manganese, Zinc.
+Diabetes (prediabetes/hypoglycemia) - low Chromium, Vanadium, sodium, potassium, manganese, Zinc.
 
 If all of the mineral levels in the hair analysis are universally low it indicates maldigestion ( hypochlorhydria - low stomach acid) and/or malabsorption ( celiac disease - wheat gluten or cows milk albumen allergy).
 
@@ -24443,14 +24443,14 @@ disease and pellegra (niacin deficiency).
 Accumulations of copper in the cornea
 form Kayser-Fleischer rings.
 
-Dy - Dysprosium, a RareEarth, is
+Dy - Dysprosium, a Rare Earth, is
 found in igneous rocks at 3 ppm; in shale
 at 4 to 6 ppm; sandstone at 7.2 ppm and
 limestone at 0.9 ppm. Concentrations in
 terrestrial animals (0.01 ppm) are highest
 in the bones.
 
-Er- Erbium, a RareEarth, is found in
+Er- Erbium, a Rare Earth, is found in
 igneous rock at 2.8 ppm; shale at 1.9 ppm;
 sandstone at 1 ppm; limestone at 0.36 ppm;
 land plants up to 46 ppm in Carya spp.;
@@ -24782,7 +24782,7 @@ British research shows that supplemented diets of pregnant women reduces the rat
 tion in Human Brain Areas. Biol. Trace Ele.
 Research. 22:9.1989.
 
-Gd - Gadolium, a RareEarth, is found
+Gd - Gadolium, a Rare Earth, is found
 in igneous rocks at 5.4 ppm; shales at 4.3
 ppm; sandstones at 2.6 ppm; limestones at
 0.7 ppm; land plants at up to 70 ppm by
@@ -25555,7 +25555,7 @@ genital brain defects including cerebral
 
 palsy.
 
-HO- Holmium, a RareEarth, is found
+HO- Holmium, a Rare Earth, is found
 in igneous rocks at 1.2 ppm; in shale at 0.6
 ppm; sandstone at 0.51 ppm; limestone at
 0.17 ppm; land plants at 16 ppm in Carya

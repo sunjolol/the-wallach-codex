@@ -1,0 +1,55 @@
+{
+  "_doc": "Reviewed-OK allowlist for anomaly_scan.py — (detector, claim_id, term) tuples the report suppresses. Grows as Luneth clears false positives.",
+  "allowed": [
+    [
+      "hormone_as_herb",
+      "WAL-CLM-LETS-000448",
+      "testosterone"
+    ],
+    [
+      "near_miss",
+      "WAL-CLM-EPIGEN-000035",
+      "mental"
+    ],
+    [
+      "near_miss",
+      "WAL-CLM-EPIGEN-000050",
+      "urine"
+    ],
+    [
+      "near_miss",
+      "WAL-CLM-LETS-000110",
+      "urine"
+    ],
+    [
+      "near_miss",
+      "WAL-CLM-LETS-000131",
+      "retin"
+    ],
+    [
+      "near_miss",
+      "WAL-CLM-LETS-000339",
+      "magnesia"
+    ],
+    [
+      "near_miss",
+      "WAL-CLM-LETS-000378",
+      "galium"
+    ],
+    [
+      "near_miss",
+      "WAL-CLM-RARE-000276",
+      "valium"
+    ],
+    [
+      "run_together",
+      "WAL-CLM-LETS-000227",
+      "superoxy"
+    ],
+    [
+      "run_together",
+      "WAL-CLM-LETS-000298",
+      "superoxy"
+    ]
+  ]
+}
