@@ -5065,7 +5065,6 @@
       "diarrhea",
       "disagreeable_attitude",
       "eczema",
-      "flatulence",
       "geographic_tongue",
       "hypotension",
       "immune_depression",
@@ -6117,7 +6116,6 @@
       "arteriosclerosis",
       "arthritis",
       "bone_spurs",
-      "cancer",
       "convulsions",
       "diarrhea",
       "insomnia",
@@ -6766,7 +6764,6 @@
       "fatty_liver",
       "high_cholesterol",
       "insomnia",
-      "peripheral_neuropathy",
       "renal_failure"
     ],
     "interacts_with": [
@@ -7132,8 +7129,7 @@
       "fatty_liver",
       "keshan_disease",
       "muscular_dystrophy",
-      "parkinsonism",
-      "weight_loss"
+      "parkinsonism"
     ],
     "interacts_with": [
       "choline",

@@ -2257,7 +2257,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 59,
+    "claim_count": 58,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -2292,7 +2292,6 @@
       "deficiency_signs": [
         "WAL-CLM-DDDL-000012",
         "WAL-CLM-EPIGEN-000031",
-        "WAL-CLM-EPIGEN-000032",
         "WAL-CLM-EPIGEN-000033",
         "WAL-CLM-EPIGEN-000043",
         "WAL-CLM-EPIGEN-000046",
@@ -2354,7 +2353,6 @@
       "vanadium",
       "vitamin-a",
       "vitamin-c",
-      "vitamin-d",
       "vitamin-e",
       "zinc"
     ],
@@ -3912,16 +3910,14 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 44,
+    "claim_count": 42,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-EPIGEN-000053",
         "WAL-CLM-RARE-000161"
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000031",
         "WAL-CLM-EPIGEN-000035",
-        "WAL-CLM-EPIGEN-000038",
         "WAL-CLM-EPIGEN-000039",
         "WAL-CLM-EPIGEN-000042",
         "WAL-CLM-EPIGEN-000056",
@@ -5082,19 +5078,14 @@
   },
   "flatulence": {
     "display_name": "Flatulence",
-    "claim_count": 3,
+    "claim_count": 2,
     "claims_by_role": {
-      "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000038"
-      ],
       "protocols": [
         "WAL-CLM-LETS-000271",
         "WAL-CLM-LETS-000278"
       ]
     },
-    "essentials_involved": [
-      "vitamin-b5"
-    ],
+    "essentials_involved": [],
     "other_substances_involved": [
       "angelica",
       "anise",
@@ -5108,7 +5099,6 @@
       "urine-therapy"
     ],
     "books_cited": [
-      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -6800,12 +6790,11 @@
   },
   "insomnia": {
     "display_name": "Insomnia",
-    "claim_count": 18,
+    "claim_count": 17,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000038",
         "WAL-CLM-EPIGEN-000042",
-        "WAL-CLM-EPIGEN-000056",
         "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-LETS-000003",
         "WAL-CLM-LETS-000004",
@@ -9459,12 +9448,11 @@
   },
   "peripheral_neuropathy": {
     "display_name": "Peripheral Neuropathy",
-    "claim_count": 8,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000035",
         "WAL-CLM-EPIGEN-000039",
-        "WAL-CLM-EPIGEN-000045",
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-RARE-000234",
         "WAL-CLM-RARE-000237",
@@ -9476,7 +9464,6 @@
     },
     "essentials_involved": [
       "chromium",
-      "inositol",
       "vitamin-b1",
       "vitamin-b12",
       "vitamin-b2",
@@ -11671,13 +11658,12 @@
   },
   "varicose_veins": {
     "display_name": "Varicose Veins",
-    "claim_count": 6,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000051"
       ],
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000046",
         "WAL-CLM-EPIGEN-000063"
       ],
       "definitions": [
@@ -11884,12 +11870,11 @@
   },
   "weight_loss": {
     "display_name": "Weight Loss",
-    "claim_count": 4,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000041",
-        "WAL-CLM-EPIGEN-000042",
-        "WAL-CLM-EPIGEN-000052"
+        "WAL-CLM-EPIGEN-000042"
       ],
       "protocols": [
         "WAL-CLM-LETS-000249"
@@ -11897,7 +11882,6 @@
     },
     "essentials_involved": [
       "biotin",
-      "methionine",
       "omega-3",
       "vitamin-b9"
     ],

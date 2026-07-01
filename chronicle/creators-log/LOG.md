@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 237 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 238 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 06:19 UTC-05:00 · round-close · knowledge-drawer
+SESSION 32 b1 — EPIGEN verbatim-remediation starts. 15 vitamin/amino/mineral deficiency-list claims: verbatim extended to Wallach's own list so every mapped condition is NAMED (Hybrid; 0 orphans). +6 synonyms. Violations 601->541, board 32/32, probe PASS.
 
 ## 2026-06-30 22:50 UTC-05:00 · milestone · tooling
 SESSION 31 step 1 — THE GUARD: verbatim_names_mapped_conditions invariant + audit tool + synonym map + baseline. Makes 'a quote under a condition must NAME it' a machine guard (601 baselined, blocks NEW). Board 31→32 green; negative test bites. Remediating the 601 next.
@@ -801,7 +804,3 @@ Phase γ.3 batch 2: Rare Earths Ch.2 opening (Minerals: The Currency of Life) re
 ## 2026-06-24 19:12 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 1: Rare Earths Preface (xvii-xix) reflowed + 6 thesis claims sealed (kv 19→20, RARE 18→24, 118 total). corpus_resnap healed 4/relocated 13/0 broken — the OCR-correction pipeline works end-to-end. Luneth-approved.
   ↳ First real exercise of the full OCR-correction pipeline: render scanned PDF page -> read at high DPI -> safe_write reflow of the book text -> corpus_resnap (re-hash books-meta + heal/relocate existing claims) -> finalize new claims (verbatims snap to cleaned bytes) -> corpus_seal -> corpus_embed -> build -> invariants 30/30. 6 net-new Preface thesis claims (WAL-CLM-RARE-000019..24): population doubling-time collapse; 75.5y US lifespan=62% of 120-140y potential, 17th rank; no lifestyle movement extends lifespan; the 90 essentials no longer reliably in food; genetic engineering can't substitute for raw materials (Mercedes-without-oil); the 5+ ancient longevity cultures via plant-derived colloidal minerals. Process lesson: the Preface .txt OCR was high-quality; trust it as base, verify at high DPI, fix only genuine errors (one: Biosphere Il->II). Caught + corrected a gist-read error in my own fringe file (dead->steal records) — careful word-level reading matters. Criminal-behavior passages filed to knowledge/fringe-knowledge/, never front-facing.
-
-## 2026-06-24 18:51 UTC-04:00 · design-decision · knowledge
-Fringe containment zone established per Luneth's ruling: knowledge/fringe-knowledge/ with one file per category (criminal-behavior, social-emotional-defects) + README. Criminal-behavior content filed there, never front-facing, for his later manual review.
-  ↳ Luneth ruled: anything linking minerals to criminal behavior goes in a dedicated criminal-behavior document (not front-facing); ALL fringe lives under knowledge/fringe-knowledge/ (NOT a new top-level dir), categorized, as a clean containment zone to decide later what (if anything) graduates to Eden. Migrated the prior chronicle/wallach-fringe-excluded.md (Ch.6 Ed Gein/Waneta Hoyt crime thesis -> criminal-behavior.md; Ch.7 'emotional defects/homosexuality' framing -> social-emotional-defects.md) faithfully; old path is now a redirect stub (excluded != deleted). Added 2 new Rare Earths Preface (p.xviii) criminal-behavior entries surfaced during batch-1 review. Memory editorial-fringe-exclusion-policy updated to the new location.
