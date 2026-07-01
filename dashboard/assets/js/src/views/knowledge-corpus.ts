@@ -288,6 +288,21 @@ function joinEssentials(slugs: string[]): string {
 }
 
 /**
+ * One labeled chip row of essentials in the condition deep-view. Empty when the
+ * group has no members, so a condition with only a cause (or only a treatment)
+ * shows just the one relevant group.
+ */
+function essentialChipRow(label: string, slugs: string[]): string {
+  if (slugs.length === 0) {
+    return '';
+  }
+  const chips = slugs
+    .map(s => `<span class="kd-corpus__chip kd-corpus__chip--ess">${escHTML(familiarEssentialName(s))}</span>`)
+    .join('');
+  return `<div class="kd-corpus__sub">${escHTML(label)}</div><div class="kd-corpus__chips">${chips}</div>`;
+}
+
+/**
  * A condition-first lead-in that ties the condition to its nutrient(s) up front,
  * so clicking a condition opens WITH the connection instead of dropping the
  * reader mid-way into a nutrient's own write-up. Derived only from the
@@ -328,9 +343,18 @@ function renderConditionDeep(slug: string): string {
       </div>`;
   }).join('');
   const synopsis = conditionSynopsis(c);
-  const essChips = c.essentials_involved
-    .map(s => `<span class="kd-corpus__chip kd-corpus__chip--ess">${escHTML(familiarEssentialName(s))}</span>`)
-    .join('');
+  // Split the involved essentials by claim role so the synopsis (which quotes the
+  // deficiency CAUSE nutrients) always matches a labeled chip group — never a
+  // silent disagreement between the lead-in and the chips (Luneth 2026-07-01).
+  const causeEss = essentialsInRoles(c, ['deficiency_signs', 'causes']);
+  const treatEss = essentialsInRoles(c, ['protocols', 'doses']);
+  const primary = new Set([...causeEss, ...treatEss]);
+  const otherEss = c.essentials_involved.filter(s => !primary.has(s));
+  const chipRows = [
+    essentialChipRow('DEFICIENCY / CAUSE', causeEss),
+    essentialChipRow('TREATED WITH', treatEss),
+    essentialChipRow('ALSO CITED', otherEss),
+  ].join('');
   const books = c.books_cited.map(b => getBookLabel(b)).join(' · ');
 
   return `
@@ -343,7 +367,7 @@ function renderConditionDeep(slug: string): string {
         </div>
       </header>
       ${synopsis.length > 0 ? `<p class="kd-condition-deep__synopsis">${escHTML(synopsis)}</p>` : ''}
-      ${essChips.length > 0 ? `<div class="kd-corpus__sub">ADDRESSED BY</div><div class="kd-corpus__chips">${essChips}</div>` : ''}
+      ${chipRows}
       ${groupsHTML}
       <div class="kd-corpus__foot">SOURCE · ${escHTML(books)}</div>
     </div>`;

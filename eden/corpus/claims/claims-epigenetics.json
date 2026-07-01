@@ -3885,18 +3885,15 @@
         "congenital_ataxia",
         "deafness",
         "asthma",
-        "chondromalacia",
         "chondrodystrophy",
         "tmj",
         "repetitive_motion_syndrome",
         "carpal_tunnel_syndrome",
-        "convulsions",
-        "infertility",
-        "miscarriage"
+        "convulsions"
       ],
       "symptoms": [],
       "claim_text": "Manganese is essential to all known living organisms; it activates numerous enzyme systems (including those for glucose metabolism, energy production and the antioxidant superoxide dismutase) and is a constituent of many metalloenzymes, hormones and proteins. Wallach stresses its role in building the fragile ear bones and joint cartilage. He describes the deficiency diseases as very striking, ranging from severe congenital birth defects -- congenital ataxia, congenital deafness, chondromalacia, chondrodystrophy and 'slipped tendon' -- to asthma, convulsions, retarded growth, skeletal defects, infertility (failure to ovulate, testicular atrophy), stillbirths/miscarriages, loss of libido, and defects of chondroitin-sulfate metabolism that show up as joint problems: temporomandibular joint disorder (TMJ), repetitive motion syndrome and carpal tunnel syndrome. He argues most carpal tunnel and repetitive-motion cases are really manganese deficiency, not a purely mechanical injury. Separately, an EXCESS of manganese (from some water supplies or industrial exposure) can instead produce a Parkinson-like syndrome or a schizophrenia-like psychiatric disorder ('locura manganica').",
-      "verbatim": "Deficiency diseases of Mn are very striking, ranging from severe congenital\nbirth defects (such as congenital ataxia, deafness, chondrodystrophy, etc)",
+      "verbatim": "Deficiency diseases of Mn are very striking, ranging from severe congenital\nbirth defects (such as congenital ataxia, deafness, chondrodystrophy, etc),\nasthma, convulsions, retarded growth, skeletal defects, disruption of fat and\ncarbohydrate metabolism to joint problems in children and adults (tendon\nand ligament degeneration, TMJ, repetitive motion syndrome, carpal tunnel\nsyndrome, etc.)",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",

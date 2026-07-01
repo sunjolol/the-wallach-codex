@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 235 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 236 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 22:43 UTC-05:00 · design-decision · knowledge-drawer
+SESSION 31 FIX — Luneth caught 2 corpus-trust bugs: quotes under a condition didn't name it (unverifiable link), and the synopsis disagreed with the chips. Fixed issue-2 (role-labeled chip groups) + the carpal-tunnel/Mn case. 609 verbatim violations to remediate next. kv208.
+  ↳ Luneth ruled full-fix-now + name-or-synonym invariant + two chip groups (DEFICIENCY/CAUSE·TREATED WITH·ALSO CITED). Mineral-mining paused until the verbatim backlog clears. Banked to memory verbatim-must-name-mapped-condition.
 
 ## 2026-06-30 22:09 UTC-05:00 · round-close · knowledge/corpus
 SESSION 31 b3 — Epigenetics Ch18 minerals Lu→Ni (+9: Lu/Mg/Mn/Mo/N/Na/Nb/Nd/Ni). Mg/Mn/Na rich (asthma/carpal-tunnel/Addison's/Kwashiorkor enriched); excess-Mn parkinsonism kept descriptive; zero new conditions. Crossed 1,000. kv207 · claims 1001 · 468 cond · 31/31.
@@ -801,7 +805,3 @@ Fringe containment zone established per Luneth's ruling: knowledge/fringe-knowle
 ## 2026-06-24 17:38 UTC-04:00 · milestone · eden/corpus
 Phase γ.3 step 0 — built corpus_resnap.py, the safety tool that makes editing sealed book TEXT safe (re-hash books-meta + relocate/heal/flag every claim verbatim+offset). Tested all paths. Starts the Rare Earths OCR-correction campaign.
   ↳ Workflow flip this session: the user supplied the full scanned PDF; the agent can render any page via PyMuPDF and read it at full fidelity (prose AND dense tables, e.g. the periodic table), so no screenshots/page-feeding needed — agent drives front-to-back. Decisions locked with the user: canonical text format = de-hyphenate + reflow (feeds both verbatim-snapping and the future ±200-word context popup); periodic-table grids = clean marker + caption. Mechanics traced: corpus_seal seals books-meta but never re-hashes the book; finalize carries existing claims forward unchanged; corpus_verify check #6 (book hash) + #9 (offset) catch drift loudly. corpus_resnap fills the gap: skeleton (letters-only) match auto-heals reflow/hyphen/whitespace changes, refuses to guess on letter-changes (a fixed scan error inside a verbatim span) or ambiguous duplicates -> --fix path for manual re-author. Honest note: handoff overstated the periodic table as a custom nutrient graphic; it is the STANDARD periodic table of all 103 elements (Table 11-6) that frames the alphabetical-by-symbol element catalog.
-
-## 2026-06-24 17:05 UTC-04:00 · design-decision · chronicle
-Session close — editorial-fringe policy LOCKED: exclude Wallach content only in extreme cases + run by Luneth every time; excluded fringe lives in chronicle/wallach-fringe-excluded.md, not the app. Next genesis: fix Rare Earths OCR from screenshots, then resume extraction.
-  ↳ NEW chronicle/wallach-fringe-excluded.md catalog (first entries: RE Ch.6 crime claims + Ch.7 emotional-defects list). Memories saved: editorial-fringe-exclusion-policy, claim-summary-verbatim-format, citation-context-expansion. Corpus unchanged kv=19 (112 claims), board 30/30. Session shipped epsilon.1 + epsilon.2 (corpus surfaced in the Knowledge drawer) + gamma.1/gamma.2 (Rare Earths 18 claims). Next session: OCR fix from Luneth screenshots (incl. Wallach own table of the elements), then resume extraction.

@@ -2972,10 +2972,9 @@
   },
   "chondromalacia": {
     "display_name": "Chondromalacia",
-    "claim_count": 2,
+    "claim_count": 1,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000099",
         "WAL-CLM-RARE-000176"
       ]
     },
@@ -2984,7 +2983,6 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "epigenetics",
       "rare-earths"
     ]
   },
@@ -6663,14 +6661,13 @@
   },
   "infertility": {
     "display_name": "Infertility",
-    "claim_count": 24,
+    "claim_count": 23,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
         "WAL-CLM-EPIGEN-000031",
         "WAL-CLM-EPIGEN-000033",
         "WAL-CLM-EPIGEN-000062",
-        "WAL-CLM-EPIGEN-000099",
         "WAL-CLM-EPIGEN-000101",
         "WAL-CLM-LETS-000011",
         "WAL-CLM-LETS-000030",
@@ -8184,11 +8181,10 @@
   },
   "miscarriage": {
     "display_name": "Miscarriage",
-    "claim_count": 4,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
-        "WAL-CLM-EPIGEN-000099",
         "WAL-CLM-RARE-000176"
       ],
       "protocols": [
@@ -8209,7 +8205,6 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
-      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]

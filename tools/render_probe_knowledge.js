@@ -155,11 +155,21 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     const d = root ? root.querySelector('.kd-condition-deep') : null;
     const claims = d ? [...d.querySelectorAll('.kd-claim')] : [];
     const first = claims[0] || null;
+    const subs = d ? [...d.querySelectorAll('.kd-corpus__sub')].map(s => s.textContent.trim()) : [];
+    const synopsis = d ? (d.querySelector('.kd-condition-deep__synopsis')?.textContent || '') : '';
+    // The role-labeled chip groups must back the synopsis: a "deficiency of …"
+    // lead-in requires a DEFICIENCY / CAUSE group, a "centers on …" a TREATED WITH
+    // group — so the lead-in never disagrees with the chips (Luneth 2026-07-01).
+    const synopsisCoherent =
+      (!/deficiency of/.test(synopsis) || subs.some(s => /DEFICIENCY/.test(s))) &&
+      (!/centers on/.test(synopsis) || subs.some(s => /TREATED/.test(s)));
     return {
       shown: d !== null,
       claimCount: claims.length,
       groupCount: d ? d.querySelectorAll('.kd-corpus__group').length : 0,
       firstCite: first ? /DEAD DOCTORS|DDDL/i.test(first.querySelector('.kd-claim__cite')?.textContent || '') : false,
+      subLabels: subs,
+      synopsisCoherent,
     };
   });
 
@@ -229,6 +239,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['conditions: deep view opens (diabetes)', condDeep.shown === true],
     ['conditions: claims grouped by role', condDeep.groupCount >= 1 && condDeep.claimCount >= 1],
     ['conditions: claim cites the book', condDeep.firstCite === true],
+    ['conditions: synopsis backed by a labeled chip group', condDeep.synopsisCoherent === true],
     ['search: typing narrows the rows', search.total > search.visible && search.visible >= 1],
     ['search: only matches remain (diabetes)', search.hasDiabetes === true && search.allMatch === true],
     ['search: clearing restores all rows', searchClear.visible === searchClear.total && searchClear.total === search.total],
