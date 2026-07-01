@@ -65,8 +65,14 @@ def collect_indices():
     return out
 
 
-def run_checks():
-    """Returns (fails, infos, n_claims). fails non-empty => FAIL regardless of seal."""
+def run_checks(skip_index_derive_check=False):
+    """Returns (fails, infos, n_claims). fails non-empty => FAIL regardless of seal.
+
+    skip_index_derive_check: when True, omit check #8 (indices are a clean
+    derivation of claims/*). corpus_seal's PRE-gate passes this because the seal
+    re-derives every index in its next step, so a #8 mismatch there is EXPECTED
+    whenever corpus_derive.py changed or a draft edits a condition mapping; the
+    seal's FINAL gate (full run_checks) still enforces #8 on the re-derived result."""
     fails, infos = [], []
 
     # --- canon (always valid) ---
@@ -176,8 +182,9 @@ def run_checks():
         if missing:
             fails.append(f"[#1] {name}.json references {len(missing)} unknown claim id(s): {sorted(missing)[:3]}")
 
-    # #8 indices are an honest derivation (only when claims AND indices both exist)
-    if shards and indices:
+    # #8 indices are an honest derivation (only when claims AND indices both exist).
+    # Skipped by the seal PRE-gate (it re-derives next); the seal POST-gate re-checks.
+    if shards and indices and not skip_index_derive_check:
         try:
             sys.path.insert(0, str(ROOT / "eden" / "tools"))
             import corpus_derive

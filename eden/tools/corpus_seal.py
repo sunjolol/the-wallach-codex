@@ -52,8 +52,12 @@ def seal_one(p: Path) -> str:
 
 
 def main() -> int:
-    # 1. gate on always-valid checks
-    fails, _, n_claims = corpus_verify.run_checks()
+    # 1. gate on always-valid checks. Skip #8 (index-is-clean-derivation): step 3
+    # below re-derives every index from the promoted shards, so a #8 mismatch here is
+    # EXPECTED whenever corpus_derive.py changed or a draft edits a mapping. The FINAL
+    # gate (corpus_verify.main, full run_checks) re-checks #8 post-derive and refuses
+    # to report success on a genuinely bad derivation.
+    fails, _, n_claims = corpus_verify.run_checks(skip_index_derive_check=True)
     if fails:
         print("REFUSING to seal — integrity checks failed:")
         for f in fails:
