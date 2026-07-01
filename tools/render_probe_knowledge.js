@@ -173,20 +173,36 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     };
   });
 
-  // 4d. Search — typing in the box narrows the active tab's rows (was an
-  //     unwired decorative input before this fix). Conditions tab is loaded.
+  // 4d. Search — typing narrows the active tab's rows AND matches CONTENT, not
+  //     just the visible title: "smell" surfaces Anosmia (whose title lacks the
+  //     word) via its hidden data-search blob (nutrients/symptoms/claim text).
   await page.click('#drawer-knowledge-mount .kd-search-input');
-  await page.type('#drawer-knowledge-mount .kd-search-input', 'diabetes', { delay: 10 });
+  await page.type('#drawer-knowledge-mount .kd-search-input', 'smell', { delay: 10 });
   await wait(150);
   const search = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
     const all = root ? [...root.querySelectorAll('.kd-condition-row')] : [];
     const visible = all.filter(r => !r.classList.contains('kd-hidden'));
+    const anosmia = visible.find(r => r.getAttribute('data-kd-condition') === 'anosmia') || null;
     return {
       total: all.length,
       visible: visible.length,
-      hasDiabetes: visible.some(r => /diabetes/i.test(r.querySelector('.kd-condition-row__name')?.textContent || '')),
-      allMatch: visible.every(r => /diabetes/i.test(r.textContent || '')),
+      anosmiaVisible: anosmia !== null,
+      anosmiaTitleHasSmell: anosmia ? /smell/i.test(anosmia.querySelector('.kd-condition-row__name')?.textContent || '') : false,
+    };
+  });
+
+  // 4e. Live highlight — click into Anosmia (a CONTENT match) and confirm the
+  //     matched term is highlighted in its deep-view (warm <mark class="kd-search-hl">).
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-condition="anosmia"]')?.click());
+  await wait(150);
+  const highlight = await page.evaluate(() => {
+    const deep = document.querySelector('#drawer-knowledge-mount .kd-condition-deep');
+    const marks = deep ? [...deep.querySelectorAll('mark.kd-search-hl')] : [];
+    return {
+      deepShown: deep !== null,
+      markCount: marks.length,
+      allSmell: marks.length > 0 && marks.every(m => (m.textContent || '').toLowerCase() === 'smell'),
     };
   });
   await page.evaluate(() => {
@@ -210,7 +226,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, corpus, bookOpen, products, essentials, deep, traceMeter, conditions, condDeep, afterEsc, afterK, search, searchClear };
+  const out = { boot, afterClick, corpus, bookOpen, products, essentials, deep, traceMeter, conditions, condDeep, afterEsc, afterK, search, highlight, searchClear };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -241,7 +257,8 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['conditions: claim cites the book', condDeep.firstCite === true],
     ['conditions: synopsis backed by a labeled chip group', condDeep.synopsisCoherent === true],
     ['search: typing narrows the rows', search.total > search.visible && search.visible >= 1],
-    ['search: only matches remain (diabetes)', search.hasDiabetes === true && search.allMatch === true],
+    ['search: content match surfaces Anosmia (title lacks "smell")', search.anosmiaVisible === true && search.anosmiaTitleHasSmell === false],
+    ['search: deep-view live-highlights the matched term (smell)', highlight.deepShown === true && highlight.markCount >= 1 && highlight.allSmell === true],
     ['search: clearing restores all rows', searchClear.visible === searchClear.total && searchClear.total === search.total],
     ['Esc closes drawer', afterEsc.open === false],
     ['bare K reopens drawer', afterK.open === true],

@@ -230,12 +230,37 @@ function corpusRoleOrder(a: string, b: string): number {
   return ra !== rb ? ra - rb : (a < b ? -1 : a > b ? 1 : 0);
 }
 
+/**
+ * Lowercased keyword blob for a condition row's `data-search` attribute so the
+ * drawer search matches CONTENT — the nutrients involved, symptom names, and the
+ * claim summaries + Wallach verbatims — not just the display name. Capped at 2500
+ * chars so a many-claim condition (e.g. cancer) can't bloat the DOM. This is what
+ * makes "smell" surface Anosmia; the full free-text corpus search is a later
+ * ("Ask-Wallach") feature, but content-aware condition filtering ships now.
+ */
+function conditionSearchKeywords(c: CorpusCondition): string {
+  const parts: string[] = [c.display_name, c.slug.replace(/_/g, ' ')];
+  for (const e of c.essentials_involved) {
+    parts.push(essentialDisplayName(e), e.replace(/-/g, ' '));
+  }
+  for (const s of c.other_substances_involved) {
+    parts.push(s.replace(/_/g, ' '));
+  }
+  for (const cl of resolveClaims(Object.values(c.claims_by_role).flat())) {
+    parts.push(cl.claim_text, cl.verbatim);
+    for (const sym of cl.symptoms) {
+      parts.push(sym.replace(/_/g, ' '));
+    }
+  }
+  return parts.join(' ').toLowerCase().replace(/\s+/g, ' ').trim().slice(0, 2500);
+}
+
 /** One condition list row — click to expand the deep view. */
 function renderConditionRow(c: CorpusCondition, selectedSlug: string | null): string {
   const ess = c.essentials_involved.slice(0, 6).map(s => essentialDisplayName(s)).join(' · ');
   const cls = `kd-condition-row${c.slug === selectedSlug ? ' is-selected' : ''}`;
   return `
-    <div class="${cls}" data-kd-condition="${escHTML(c.slug)}" role="button" tabindex="0">
+    <div class="${cls}" data-kd-condition="${escHTML(c.slug)}" data-search="${escHTML(conditionSearchKeywords(c))}" role="button" tabindex="0">
       <div class="kd-condition-row__body">
         <h4 class="kd-condition-row__name">${escHTML(c.display_name)}</h4>
         <div class="kd-condition-row__meta">${ess.length > 0 ? escHTML(ess) : '— corpus entry —'}</div>

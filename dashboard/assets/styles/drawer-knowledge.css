@@ -860,3 +860,23 @@
 /* Book rows read as actionable now that a click opens them. */
 #drawer-knowledge-mount .kd-book-row[data-kd-book] { cursor: pointer; }
 #drawer-knowledge-mount .kd-book-row[data-kd-book]:hover { background: var(--ds-paper-darker); }
+
+/* ── Live search-term highlight ─────────────────────────────────────────────
+   Warm flat "marker swipe" on the matched query within the visible rows + open
+   deep-view (views/knowledge.ts::applyKnowledgeSearch). Deliberately NOT the
+   textured .ds-mark (SVG feTurbulence per mark) — this paints live across many
+   matches, so it stays a cheap flat background (no filter, no pseudo-elements)
+   to guarantee zero lag. ID-scoped so it wins over any .ds-canvas mark styling. */
+#drawer-knowledge-mount mark.kd-search-hl {
+  background-color: var(--ds-hl-warm, #ffe69c);
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 0.12em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  filter: none;
+}
+#drawer-knowledge-mount mark.kd-search-hl::before,
+#drawer-knowledge-mount mark.kd-search-hl::after {
+  content: none;
+}

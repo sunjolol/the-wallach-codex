@@ -46,6 +46,7 @@ import {
   matchEssential,
 } from '../state/coverage.js';
 import { renderConditionsTab, renderCorpusForEssential, renderCorpusTab, renderIntakeMeter, tileOf } from './knowledge-corpus.js';
+import { clearSearchHighlights, highlightMatchesIn } from './search-highlight.js';
 
 export interface DrawerHandle {
   open: () => void;
@@ -497,7 +498,11 @@ function applyKnowledgeSearch(body: HTMLElement, tab: Tab, rawQuery: string): nu
       headHasMatch = false;
       return;
     }
-    const match = !active || (node.textContent ?? '').toLowerCase().includes(query);
+    // Match visible text OR the row's hidden `data-search` keyword blob (condition
+    // rows carry synonyms/symptoms/claim text there, so content queries like
+    // "smell" -> Anosmia work; rows without the attr fall back to textContent only).
+    const hay = `${node.textContent ?? ''} ${node.dataset['search'] ?? ''}`;
+    const match = !active || hay.toLowerCase().includes(query);
     node.classList.toggle('kd-hidden', !match);
     if (match) {
       visible += 1;
@@ -518,6 +523,15 @@ function applyKnowledgeSearch(body: HTMLElement, tab: Tab, rawQuery: string): nu
   }
   else if (empty !== null) {
     empty.remove();
+  }
+
+  // Live search-term highlight — a warm swipe on matches within what's ON SCREEN
+  // (the visible rows + any open deep-view), never the hidden rows; gated to >=2
+  // chars so single letters don't paint the list. Pure text-wrap, no re-render.
+  clearSearchHighlights(body);
+  if (query.length >= 2) {
+    body.querySelectorAll<HTMLElement>(`${selector}:not(.kd-hidden), .kd-essential-deep, .kd-book-deep`)
+      .forEach(el => highlightMatchesIn(el, query));
   }
 
   return visible;

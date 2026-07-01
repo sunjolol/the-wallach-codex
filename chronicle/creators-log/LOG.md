@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 253 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 254 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 15:44 UTC-05:00 · round-close · views/knowledge-drawer
+SESSION 35 — content-aware Conditions search + live warm highlight. Per-row data-search blob (nutrients/symptoms/claim text) matched with the title so 'smell' finds Anosmia; live #ffe69c highlight (no SVG filter) on rows + deep-view. board 32/32, probe PASS.
 
 ## 2026-07-01 14:50 UTC-05:00 · round-close · corpus/knowledge-drawer
 SESSION 35 — RARE verbatim-remediation COMPLETE 26→0. Matcher stopword-both-sides fix (0 regressions) + 10 synonyms + 12 relocate/drop edits (Luneth-ruled: Menkes dup-slug merge, Prozac→depression drop). verbatim 313→283, orphans 101→92, kv 221, board 32/32, probe PASS.
@@ -794,7 +797,3 @@ Phase γ.3 batch 14 — Rare Earths Ch.11 hair-analysis half: 4 claims (RARE-80.
 ## 2026-06-24 23:48 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 13 — Rare Earths Ch.11 conceptual foundation: 6 claims (RARE-74..79: colloidal/metallic absorption ratios, RDA critique, monk-bone soil-depletion, clinical-phase disease, 48hr-30day reversibility, compensated-phase signs). kv 33→34, RARE 73→79, corpus 173.
   ↳ Cleaned pp265-272 (idx 286-293): reflowed P1/P3/P2 prose spans + marked the garbled element-concentration Table 11-1. Reflow de-hyphenation HARDENED to [A-Za-z]-$ so a line-final dash (i.e. -) is not eaten (caught by the pre-apply verbatim check). resnap 4 relocated/0 broken. +2 symptom slugs (irregular_heartbeat, white_hair). FRINGE (Luneth ruling = cross-ref): the decompensated-phase list restates the Bad-Seeds/crime + gay-behavior theses — cross-ref notes added to criminal-behavior.md + homosexuality-intersex.md, kept out of corpus. Board 30/30, build OK, knowledge probe green. NEXT: Ch.11 batch 2 (hair-analysis interp + Table 11-2 + toxic-metal substitution + Hg amalgam, idx 294-301), then the alphabetical per-element catalog (idx 302+).
-
-## 2026-06-24 22:58 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 12 — Rare Earths Ch.10 'Glacial Milk': 5 claims (colloidal-minerals=most-critical-of-90; Glacial Milk=glaciers grind 2-6in rock/yr; 60-72 vs 3-20 minerals; 5-12% absorbed by drinking but irrigation is the key; millennia→optimal health). kv 32→33, 167 claims.
-  ↳ Mined Rare Earths Ch.10 'GLACIAL MILK: Plant derived colloidal minerals' (idx 272-285 / pp251-264), the deep version of the Ch.8 synthesis: RARE-000069 (of the 90 nutrients the MOST CRITICAL for the long-lived cultures are plant-derived colloidal minerals — p251), 000070 (Glacial Milk forms as glaciers grind 2-6 inches of parent rock/yr into rock flour — p251), 000071 (the cultures' Glacial Milk = 60-72 minerals vs only 3-20 in the thousands of other world glaciers — p252), 000072 (centenarians absorb only 5-12% of metallic colloids they DRINK; the key is IRRIGATION so plants convert metallic->organic colloidal — mechanism p253), 000073 (millennia of Glacial-Milk-irrigated terraces -> optimal health free of Western degenerative diseases — p253). Skipped the 98%-bioavailability restatement (already RARE-061). PIPELINE LESSON: -\n+ de-hyphenation over-merged 'long-\nlived'->'longlived' (NEW OCR error); added compound-restore {longlived->long-lived} + grep -c longlived=0 guard; earlier batches clean. resnap 0 broken, seal kv 32->33 (RARE 73, 167 claims), embed, build, invariants 30/30. No fringe. NEXT: Ch.11 'RARE EARTHS' (idx 286/p265) per-element catalog.
