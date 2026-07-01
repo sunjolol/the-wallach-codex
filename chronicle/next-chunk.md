@@ -1,6 +1,35 @@
 # Next chunk — operating system CLEANED → continue **Phase 2** surfaces
 
-## LATEST (2026-07-01 SESSION 32 — ★★★ VERBATIM-REMEDIATION CAMPAIGN launched + EPIGEN driven 177→14. 6 chunks PUSHED [4d58e77 b1 · 77cc0ad b2 · ac3d5df b3 · d9193ec b4a · efb29b8 b4b · 820d2b4 b4c]. violations 601→427 · EPIGEN 177→14 · orphans 133→105 · claims 1001→1003 (2 splits) · kv 208→214 · board 32/32 GREEN throughout · clean tree. Luneth verified b1 visually + approved the Hybrid policy + the dyslexia split.)
+## LATEST (2026-07-01 SESSION 33 → ⚠ MERGE-FIRST handoff for SESSION 34 — two branches diverged at b3 [deaf299] and BOTH re-sealed the corpus; reconcile them BEFORE any new corpus work.)
+
+**⚠ THE SITUATION — two lines diverged at `deaf299` (Session 33 b3):**
+- **`master` → `7fdf4af`** = the verbatim-remediation campaign continued here: "Session 33 b4: RARE tail safe batch — 39 claims, 57 violations cleared." (pushed to origin/master).
+- **`claude/jolly-grothendieck-59b4e9` → `aef7b0e`** = a PARALLEL branch, 3 commits (pushed to origin):
+  - `ec3e1c5` — **pms consolidation**: merged condition slug `premenstrual_syndrome` → `pms` (its 2 claims LETS-000388/LETS-000402; RARE-000105 was already un-mapped in b3, prose-only). pms now 5 claims; human display "Premenstrual Syndrome (PMS)" via a NEW `corpus_derive.py` DISPLAY_OVERRIDES map; verbatim baseline 371→370 (LETS-402 became genuinely named); kv 217→218.
+  - `592e383` — **tooling**: `corpus_seal` PRE-gate now skips corpus_verify #8 (the seal re-derives anyway; the POST-gate still enforces it), so a `corpus_derive.py` change no longer needs the manual re-derive+regold bridge.
+  - `aef7b0e` — **tooling**: `vb_apply.py` + `vb_orphans.py` now resolve ROOT from `__file__` (were hardcoded to the MAIN checkout → operated on the wrong tree from a worktree; vb_apply WRITES). Memory [[worktree-hardcoded-tool-paths]].
+- Both branches are safe on origin. 18 files conflict, but almost all are GENERATED — resolve by RE-SEALING, not hand-merging. The CLAIM SHARDS DO NOT conflict (master touched `claims-rare-earths`, this branch touched `claims-lets-play-doctor` — git auto-merges each side-only).
+
+**★★ MERGE RECIPE — DO THIS FIRST (SESSION 34), before any new work:**
+0. Boot on THIS branch (`claude/jolly-grothendieck-59b4e9`); `git fetch origin`.
+1. `git merge origin/master`. Resolve each conflict class:
+   - **generated** (`eden/corpus/indices/*`, `corpus-embed.json`, `dist/main.js`, `knowledge-version.json`, every `*.golden.sha256`): take EITHER side (`git checkout --ours <f>`) — regenerated in step 2, the marker choice is irrelevant.
+   - **`eden/tools/verbatim-audit-baseline.json`**: take either — regenerated in step 3.
+   - **`chronicle/build-log.md`**: keep the UNION of both sides' appended lines (chronological — nothing dropped).
+   - **`chronicle/creators-log/log.jsonl`**: UNION both sides' new entries (append-only SACRED — none may be lost). Its derived `LOG.md`/`INDEX.md`/`digests/*`/`creators-log-embed.json`: take either, regenerated in step 4.
+   - **shards/drafts/`condition-synonyms.json`/book `.txt`**: should auto-merge (each side-only). If any conflicts, take the side that changed it; then confirm every draft==shard (LF-normalized).
+2. **RE-SEAL** (regenerates indices+goldens+kv deterministically from the merged shards): `PYTHONUTF8=1 python eden/tools/corpus_seal.py` (agent-runnable; the b4-fix means a derive change no longer blocks the pre-gate).
+3. **Regenerate the verbatim baseline** (folds both sessions' remediation into one allowlist): `PYTHONUTF8=1 python eden/tools/verbatim_audit.py report` (confirm NEW=0) → `... verbatim_audit.py baseline`.
+4. Regenerate ledger derivatives: `PYTHONUTF8=1 python tools/creators_log.py digest`. Then `PYTHONUTF8=1 python eden/tools/corpus_embed.py` → `node tools/build.mjs`.
+5. **VERIFY BOTH SIDES SURVIVED:** `PYTHONUTF8=1 python tools/invariants.py` → 32/32, 0 NEW. render_probe_knowledge PASS (puppeteer lives only in the MAIN checkout's node_modules — junction it into this worktree's `node_modules/puppeteer`, run, remove — see the pms session for the exact junction method). Spot-check: (a) MINE — pms condition = 5 claims + display "Premenstrual Syndrome (PMS)", no `premenstrual_syndrome`; corpus_derive has DISPLAY_OVERRIDES; corpus_seal pre-gate + vb tools carry the fixes. (b) MASTER — its RARE remediation is intact (violations reflect its 57 cleared; orphans NOT up).
+6. Commit the merge + push; then integrate into master (fast-forward / PR) so master is the single truth.
+7. **REWRITE this LATEST block** to the post-merge state (drop this handoff) so the next genesis boots clean.
+
+**★ THEN resume the real work = the VERBATIM-REMEDIATION CAMPAIGN** (why both sessions existed): drive `verbatim_names_mapped_conditions` → 0, order EPIGEN→RARE→LETS→DDDL→IAIYH. EPIGEN = DONE (0). RARE = in progress (this branch's b2/b3 + master's b4). After the merge, `verbatim_audit.py report` gives the true remaining count; continue RARE → then LETS (~227, mostly single-claim materia-medica orphans → extend the verbatim to name the section-heading condition) → DDDL → IAIYH. Policy/tooling UNCHANGED (HYBRID: extend / drop-if-sibling-covered / split-if-unique; `vb_apply`/`vb_orphans`/`vb_propose`; grow `condition-synonyms.json`). See the SESSION-32 block below + memory [[verbatim-must-name-mapped-condition]].
+
+**KEY STATE (pre-merge, THIS branch aef7b0e):** kv 218 · claims 1006 · conditions 467 · pms merged · verbatim baseline 370 · board 32/32. Master (7fdf4af) has its OWN post-b4 kv/counts; post-merge numbers settle after re-seal+baseline (steps 2-3). Live memory: [[verbatim-must-name-mapped-condition]] · [[worktree-hardcoded-tool-paths]] · [[editing-sealed-corpus-claims]] · [[wallach-corpus-revamp]] · [[cross-book-duplicate-table-skip]].
+
+## (SUPERSEDED 2026-07-01 SESSION 33 — EPIGEN verbatim-remediation FINISHED 14→0 [b1] + RARE remediation [this branch's b2 copper-split / b3 chromium+calcium un-map, and the OTHER session's "RARE tail 39 claims/57 violations" b4 on master 7fdf4af] + a PARALLEL pms-consolidation+tooling branch [ec3e1c5/592e383/aef7b0e]; the two lines DIVERGED at b3 and MUST be merged first — see new LATEST above.) ## LATEST (2026-07-01 SESSION 32 — ★★★ VERBATIM-REMEDIATION CAMPAIGN launched + EPIGEN driven 177→14. 6 chunks PUSHED [4d58e77 b1 · 77cc0ad b2 · ac3d5df b3 · d9193ec b4a · efb29b8 b4b · 820d2b4 b4c]. violations 601→427 · EPIGEN 177→14 · orphans 133→105 · claims 1001→1003 (2 splits) · kv 208→214 · board 32/32 GREEN throughout · clean tree. Luneth verified b1 visually + approved the Hybrid policy + the dyslexia split.)
 
 **THE CAMPAIGN:** drive the `verbatim_names_mapped_conditions` violations (baselined 601 at session start) → 0, BOOK ORDER EPIGEN → RARE → LETS → DDDL → IAIYH. A violation = a (claim→condition) mapping whose shown Wallach verbatim does NOT name that condition.
 
