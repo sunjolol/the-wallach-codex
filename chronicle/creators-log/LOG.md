@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 256 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 257 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 16:53 UTC-05:00 · round-close · corpus/lets
+SESSION 36 anomaly-fix batch (LETS): Luneth-confirmed OCR/author-error fixes — Zumba→Zumbani x4, Serenoa, Glycyrrhiza, echinacea, nux vomica (Strychnos), wild ginger (Asarum), Leptandra, of Caladryl + LETS-448 reframe. seal kv 222, board 32/32, 11 reals cleared.
 
 ## 2026-07-01 16:30 UTC-05:00 · session-end · session
 SESSION 35 CLOSE — RARE verbatim campaign DONE 26→0; shipped content-aware search + live highlight; built anomaly_scan.py (linguistic/logic surfacer, review-queue only); created finalize-checklist.md. 4 chunks pushed, board 32/32. NEXT: anomaly-fix batch then LETS pass.
@@ -791,7 +794,3 @@ RARE-48 dose normalized to CorpusDoseSchema keys (amount:1, unit:mg, period) - f
 ## 2026-06-25 00:36 UTC-04:00 · round-close · eden/corpus-pipeline
 Closed the malformed-dose defense-in-depth gap (batch-15 follow-up): a bare-string dose passed every Python gate yet broke the runtime Zod parse. corpus_extract.finalize + corpus_verify check #11 now refuse a non-null/non-object dose. 30/30 green; negative test proves it fires.
   ↳ The Knowledge-drawer empty-render incident (RARE-88, batch 15) had a bare-string dose that build, invariants (incl. corpus_embed_synced), and corpus_verify all passed, but Zod rejected the whole corpus-embed at runtime — only render_probe_knowledge caught it. Two Python layers now close the gap. (1) corpus_extract.finalize validates each raw claim's dose is None-or-dict and refuses the batch otherwise, matching its existing fail-fast kind/essentials checks: "raw[N]: dose must be null or an object {amount,unit,period,form,duration,for_condition}, got <type>". (2) corpus_verify adds check #11 — every claim's dose across all sealed shards must be null-or-object — so a bad dose can't survive a re-seal; the corpus_integrity invariant delegates to it. Docs synced: SCHEMA.md §6 (11 checks), verify docstring + invariants.py comment (10→11). Deliberately enforce SHAPE only, not a key-subset: sealed RARE-48 carries extra dose keys (essential/frequency) that Zod .passthrough() accepts, so a subset check would have falsely reddened corpus_integrity (29/30) — verify mirrors the runtime boundary and catches only the non-object class that actually breaks the drawer. Negative test passed: a string-dose raw batch with a real book verbatim → finalize refused with exactly the dose error, exit 1, nothing written. Board 30/30, build OK. Follow-up flagged + spawned as a task: normalize RARE-48's off-schema dose keys (essential/frequency, no unit/period) so the dashboard stops silently dropping its three-times-per-week cadence.
-
-## 2026-06-25 00:22 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 15 — Rare Earths Ch.11 toxic-metals/mercury half: 6 claims (RARE-84..89). Completes the Ch.11 conceptual half. kv 35→38, RARE 83→89, corpus 183, conditions 71→76. Render probe caught a string-dose Zod break (fixed to null).
-  ↳ Cleaned pp276-279 (idx 297-300): 6 reflow spans (sentence-aware merge added) + marked the 3 toxic-metal graphs + Periodic Table. resnap 4 relocated/0 broken. Claims: Se/Ca antidote toxic metals; lead 400k-tons/38M; cadmium→disease cascade; mercury amalgam→MS/ALS/Parkinson's; Dr. Todd colloidal unmask/reduce; 79-detected/60-essential. NO fringe. Two post-finalize re-seals: (1) RARE-88 claim_text made self-contained re: Dr. Gary Price Todd's protocol (Luneth note); (2) RARE-88 dose fixed string→null — a string dose made Zod reject the whole corpus-embed at runtime (empty drawer); build+invariants blind, render probe caught it. Flagged follow-up: Python dose-shape guard (§00.B). Board 30/30, build OK, probe green. NEXT: alphabetical per-element catalog (idx 302+).
