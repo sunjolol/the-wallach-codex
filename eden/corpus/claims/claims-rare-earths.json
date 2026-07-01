@@ -294,9 +294,7 @@
         "vitamin-e"
       ],
       "other_substances": [],
-      "conditions": [
-        "cystic_fibrosis"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach's theory holds that cystic fibrosis can be an acquired environmental disease produced by a deficiency of selenium, zinc, and riboflavin, and worsened by diets low in vitamin E and high in polyunsaturated fatty acids.",
       "verbatim": "an acquired environmental disease\nthat can be produced by a deficiency of selenium, zinc, and\nriboflavin and exacerbated by diets also low in vitamin E",
@@ -329,7 +327,6 @@
       ],
       "other_substances": [],
       "conditions": [
-        "arthritis",
         "osteoporosis",
         "cancer"
       ],
@@ -338,7 +335,7 @@
         "reduced_immune_status"
       ],
       "claim_text": "Germanium deficiency is typified by severely reduced immune status, arthritis, osteoporosis, low energy, and cancer.",
-      "verbatim": "Deficiencies of germanium are typified\nby severely reduced immune status,",
+      "verbatim": "Deficiencies of germanium are typified\nby severely reduced immune status, arthri-\n\ntis, osteoporosis, low energy and cancer.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -512,7 +509,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach attributes the higher trisomy (Down's syndrome) risk in older mothers to mineral depletion — a woman depleted of minerals by her mid-30s carries higher-risk embryos.",
-      "verbatim": "(the poor woman would be depleted\nof minerals by the time she was over 35 so\nthe last two or three embryos were at higher\nrisk for trisomy)",
+      "verbatim": "Down’s Syndrome.\n\nEven as you read this chapter, the\nallopathic medical doctor believes that the\n“trisomy” of Down’s Syndrome is a genetic\nor chromosomal defect that only manifests\nitself primarily in women over the age of\n35. Statistically the “over 35” rule of thumb\nwas true when women had eight to ten chil-\ndren (the poor woman would be depleted\nof minerals by the time she was over 35 so\nthe last two or three embryos were at higher\nrisk for trisomy).",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -520,7 +517,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 393464
+        "char_offset": 393147
       },
       "dose": null,
       "tags": [
@@ -859,7 +856,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach attributes the July 1993 East Coast heat-wave deaths to salt/sodium deficiency caused by physician-prescribed low- or no-salt diets for high blood pressure and heart disease; those successfully treated received intravenous (into a vein) saline.",
-      "verbatim": "The human tragedy of the heat wave of ’93 was a direct result of the allopathic doctors who put their charges (their patients) on reduced or salt free diets for high blood pressure or heart disease.",
+      "verbatim": "heat stroke that any boy scout could diagnose and recognize and remedy with water and salt); yes, a salt deficiency caused by the allopathic paranoia of salt.\n\nThe human tragedy of the heat wave of ’93 was a direct result of the allopathic doctors who put their charges (their patients) on reduced or salt free diets for high blood pressure or heart disease.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -867,7 +864,7 @@
         "page": "20",
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 82839
+        "char_offset": 82679
       },
       "dose": null,
       "tags": [
@@ -1115,7 +1112,7 @@
       ],
       "symptoms": [],
       "claim_text": "Pica in animals (\"cribbing\" — a horse or cow gnawing wood, fences, or feed boxes) is a craving for minerals; mineral-starved animals first eat large amounts of supplemental minerals, then self-regulate down to a maintenance level.",
-      "verbatim": "the animal really has a craving for minerals. Such mineral starved animals will at first eat large amounts of supplemental minerals until they are satisfied, then they will automatically reduce their level of consumption to a maintenance level.",
+      "verbatim": "pica in domestic animals. A good husbandryman knows when a horse (Fig. 4-1) or cow “cribs” (chews or gnaws on a wooden feed box, fence, hitching post or barn door), the animal really has a craving for minerals. Such mineral starved animals will at first eat large amounts of supplemental minerals until they are satisfied, then they will automatically reduce their level of consumption to a maintenance level.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -1123,7 +1120,7 @@
         "page": "54",
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 195651
+        "char_offset": 195486
       },
       "dose": null,
       "tags": [
@@ -1319,7 +1316,6 @@
       ],
       "other_substances": [],
       "conditions": [
-        "violent_behavior",
         "criminal_behavior"
       ],
       "symptoms": [],
@@ -1617,7 +1613,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach maintains that dozens of human \"genetic\" diseases can in fact be prevented — and in early stages reversed or \"cured\" — with minerals, naming cystic fibrosis, muscular dystrophy and Kawasaki Disease as prime examples.",
-      "verbatim": "There are literally dozens of human “genetic” diseases that can be prevented and in the early stages reversed or “cured” with minerals.",
+      "verbatim": "There are literally dozens of human “genetic” diseases that can be prevented and in the early stages reversed or “cured” with minerals. Three very good examples of “genetic” diseases that can be prevented are cystic fibrosis, muscular dystrophy and Kawasaki",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -2665,7 +2661,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach lists well-documented hair-analysis mineral patterns for disease: schizophrenia = high calcium, low iron, high copper; arthritis (osteoporosis/hyperparathyroidism) = high lead, calcium and phosphorus, low iron and copper; anemia = low iron, copper, selenium, cobalt; diabetes (prediabetes/hypoglycemia) = low chromium, vanadium, sodium, potassium, manganese and zinc.",
-      "verbatim": "Arthritis - (osteoporosis/ hyperparathyroidism) - high Lead, Calcium and Phosphorus; low Iron and Copper.\n\nAnemia - low Iron, Copper, Selenium, Cobalt.\n\nDiabetes(prediabetes/hypoglycemia) - low Chromium, Vanadium, sodium, potassium, manganese, Zinc.",
+      "verbatim": "Schizophrenia - high Ca; low Iron; high Copper.\n\nSociopath/violent (Dr.Jykel/Mr.Hyde rages) - low in copper, zinc, sodium, chromium, vanadium and lithium.\n\nArthritis - (osteoporosis/ hyperparathyroidism) - high Lead, Calcium and Phosphorus; low Iron and Copper.\n\nAnemia - low Iron, Copper, Selenium, Cobalt.\n\nDiabetes(prediabetes/hypoglycemia) - low Chromium, Vanadium, sodium, potassium, manganese, Zinc.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -2673,7 +2669,7 @@
         "page": 275,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 699640
+        "char_offset": 699484
       },
       "dose": null,
       "tags": [
@@ -2706,7 +2702,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach cautions that hair-mineral readings need interpretation: universally low levels indicate maldigestion (hypochlorhydria) and/or malabsorption (celiac disease); and paradoxically \"elevated\" calcium and magnesium can mean active depletion/shedding from bone — revealing very active osteoporosis with associated arthritis, periodontitis and a predilection for kidney stones — while elevated sodium/potassium/chloride signal essential-fatty-acid deficiency.",
-      "verbatim": "In some cases “elevated” hair level values represent actual depletion or shedding of minerals from body stores, i.e.- elevated calcium and magnesium levels reveal very active osteoporosis and associated arthritis, periodontitis and predilection for kidney stones.",
+      "verbatim": "malabsorption ( celiac disease - wheat gluten or cows milk albumen allergy).\n\nIn some cases “elevated” hair level values represent actual depletion or shedding of minerals from body stores, i.e.- elevated calcium and magnesium levels reveal very active osteoporosis and associated arthritis, periodontitis and predilection for kidney stones.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -2714,7 +2710,7 @@
         "page": 275,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 700110
+        "char_offset": 700032
       },
       "dose": null,
       "tags": [
@@ -2859,7 +2855,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach explains that cadmium (23 micrograms per pack of cigarettes; a major component of \"second hand\" smoke) interferes with zinc-, copper-, calcium- and selenium-dependent metalloenzymes, so cadmium-driven deficiency of those minerals produces a disease cascade: zinc loss → weakened immunity and birth defects; copper loss → skin wrinkles and aneurysms; calcium loss → hypertension, osteoporosis and arthritis; selenium loss → cataracts, cancer and cardiomyopathy/heart disease.",
-      "verbatim": "copper (deficiency increases loss of elastic fibers. therefore smokers have more skin wrinkles and aneurysms), calcium (deficiency results in hypertension, osteoporosis and arthritis) and selenium (deficiency increases the individuals risk of cataracts, cancer and cardiomyopathy heart disease).",
+      "verbatim": "birth defects in pregnant woman who smoke), copper (deficiency increases loss of elastic fibers. therefore smokers have more skin wrinkles and aneurysms), calcium (deficiency results in hypertension, osteoporosis and arthritis) and selenium (deficiency increases the individuals risk of cataracts, cancer and cardiomyopathy heart disease).",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -2867,7 +2863,7 @@
         "page": 276,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 703806
+        "char_offset": 703762
       },
       "dose": null,
       "tags": [
@@ -3324,9 +3320,7 @@
         "magnesium"
       ],
       "other_substances": [],
-      "conditions": [
-        "osteoporosis"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach reports that within eight days of boron supplementation, women lost 40% less calcium, 33% less magnesium, and less phosphorus through their urine; boron also doubled blood estradiol-17B to levels seen with estrogen-replacement therapy and nearly doubled testosterone — supporting bone maintenance and hormone balance.",
       "verbatim": "within eight days of supplementing boron women lost 40 percent less calcium, 33 percent less magnesium and less phosphorus through their urine.",
@@ -3433,7 +3427,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach gives the treatment of choice for ulcers as ten days to four weeks of tetracycline antibiotics, anti-ulcer medication, and bismuth subsalicylate — the active ingredient in Pepto-Bismol.",
-      "verbatim": "The treatment of choice for ulcers is ten days to four weeks on tetracycline antibiotics, anti-ulcer medication and bismuth subsalicylate - (the active ingredient in Pepto Bismol).",
+      "verbatim": "peptic ulcers -\"the proof is there,” according to Graham.\n\nThe treatment of choice for ulcers is ten days to four weeks on tetracycline antibiotics, anti-ulcer medication and bismuth subsalicylate - (the active ingredient in Pepto Bismol).",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -3441,7 +3435,7 @@
         "page": 288,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 728280
+        "char_offset": 728221
       },
       "dose": null,
       "tags": [
@@ -3641,9 +3635,7 @@
         "calcium"
       ],
       "other_substances": [],
-      "conditions": [
-        "colon_cancer"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach cites a 19-year observational study of 1,954 men in which the incidence of colorectal cancer increased 300% as calcium intake decreased from 160 to 24.9 mg per 100 kcal of diet.",
       "verbatim": "showed very clearly that the incidence of\ncolorectal cancer increased 300 % as the\ncalcium intake decreased",
@@ -3787,9 +3779,7 @@
         "cerium"
       ],
       "other_substances": [],
-      "conditions": [
-        "burns"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach notes that cerium — a Rare Earth element that accumulates in bone — has a medical use: cerium nitrate is used as a topical disinfectant for severe burn victims.",
       "verbatim": "Cerium nitrate is used as a topical disinfectant for severe burn victims.",
@@ -4010,7 +4000,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach cites Richard Anderson of the USDA stating that 90 percent of Americans are deficient in chromium, and reports that the impaired glucose tolerance of pregnancy reflects a chromium deficiency that often results in pregnancy-onset diabetes, and that one study found abnormal glucose tolerance in 77 percent of clinically 'normal' adults over the age of 70.",
-      "verbatim": "According to Richard Anderson, USDA, \"90 percent of Americans are deficient in chromium.\"",
+      "verbatim": "diabetes. One study demonstrated\nabnormal glucose tolerance in 77 percent\nof clinically “normal” adults over the age\nof 70. According to Richard Anderson, USDA, \"90 percent of Americans are deficient in chromium.\"",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -4018,7 +4008,7 @@
         "page": 307,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 769453
+        "char_offset": 769329
       },
       "dose": null,
       "tags": [
@@ -4195,8 +4185,7 @@
       ],
       "other_substances": [],
       "conditions": [
-        "cerebral_palsy",
-        "congenital_ataxia"
+        "cerebral_palsy"
       ],
       "symptoms": [],
       "claim_text": "Wallach traces congenital brain damage to copper deficiency in pregnancy: neonatal enzootic ataxia ('sway back') was recognized in 1937 as a copper deficiency in pregnant sheep, producing demyelination of the cerebellum and spinal cord, cavitation of cerebral white matter, nerve-cell death, and failure of myelin to form — changes identical to human cerebral palsy and hypoplasia of the cerebellum (congenital ataxia).",
@@ -4341,14 +4330,11 @@
       ],
       "other_substances": [],
       "conditions": [
-        "explosive_outbursts",
-        "blind_rage",
-        "violent_behavior",
-        "hyperirritability"
+        "explosive_outbursts"
       ],
       "symptoms": [],
       "claim_text": "Wallach explains the mechanism behind rage and explosive behavior: while awake, a brain low in fuel (blood sugar) becomes very irritable, explosively reactive, and can be vicious because the normal civilized social restraints fall away. Chromium and vanadium, which stabilize blood sugar, are the relevant nutrients.",
-      "verbatim": "the brain low in fuel is very irritable, explosively reactive and can be very vicious because there are no longer any civilized social restraints",
+      "verbatim": "the brain low in fuel is very irritable, explosively reactive and can be very vicious because there are no longer any civilized social restraints which translates into Dr. Jekyll and Mr.Hyde explosive behavior,",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -4383,11 +4369,7 @@
         "lithium"
       ],
       "other_substances": [],
-      "conditions": [
-        "explosive_outbursts",
-        "blind_rage",
-        "violent_behavior"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach attributes histories of explosive rage and aggressive behavior to chromium and vanadium deficiency (hypoglycemia), copper deficiency, or lithium deficiency — aggravated by a high-sugar diet.",
       "verbatim": "classic symptoms\nof chromium and vanadium deficiency\n(hypoglycemia), copper deficiency or a\nlithium deficiency aggravated by a high\nsugar diet",
@@ -4427,11 +4409,7 @@
         "lithium"
       ],
       "other_substances": [],
-      "conditions": [
-        "violent_behavior",
-        "blind_rage",
-        "explosive_outbursts"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach lists a hair-analysis mineral signature for a violent, explosive temperament: low hair levels of copper, zinc, sodium, chromium, vanadium, and lithium.",
       "verbatim": "Sociopath/violent (Dr.Jykel/Mr.Hyde rages) - low in copper, zinc, sodium, chromium, vanadium and lithium.",
@@ -4730,7 +4708,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach reports that the biological half-life of methylmercury in humans is 70 days versus 4 days for inorganic mercury, and that while the placenta blocks inorganic mercury it does NOT block methylmercury — which transfers easily to the fetus (congenital Minamata disease). Methylmercury is the form found in fish: rare fish-eaters carry 2-5 micrograms/kg, moderate consumers about 10 micrograms/kg, and high consumers of shark, tuna, or swordfish up to 400 micrograms/kg.",
-      "verbatim": "The placenta acts as\na barrier against the passage of inorganic\nmercury but not methyl mercury; methyl\nmercury transfers very easily to the fetus",
+      "verbatim": "The placenta acts as\na barrier against the passage of inorganic\nmercury but not methyl mercury; methyl\nmercury transfers very easily to the fetus\n(\"congenital\" Minamata",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -5677,9 +5655,6 @@
         "depression",
         "bipolar_disorder",
         "hyperactivity",
-        "adhd",
-        "violent_behavior",
-        "blind_rage",
         "infertility"
       ],
       "symptoms": [
@@ -5757,10 +5732,7 @@
         "lithium"
       ],
       "other_substances": [],
-      "conditions": [
-        "violent_behavior",
-        "criminal_behavior"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach reports that normal controls have almost 400 times more hair lithium than violent criminals (sampled from California, Florida, Texas, and Oregon).",
       "verbatim": "Normal controls showed almost 400 times more hair Li than do the violent criminal (Table 11-15, 11-16, 11-17) from California, Florida, Texas and Oregon.",
@@ -6011,8 +5983,7 @@
         "migraine",
         "tetany",
         "depression",
-        "vertigo",
-        "arteriosclerosis"
+        "vertigo"
       ],
       "symptoms": [
         "growth_failure",
@@ -6126,7 +6097,6 @@
       ],
       "other_substances": [],
       "conditions": [
-        "parkinsonism",
         "schizophrenia"
       ],
       "symptoms": [],
@@ -6223,7 +6193,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach reports repetitive stress injury / repetitive motion syndrome costs corporate America $20 billion a year and accounts for 56% of the 331,600 gradual-onset work-related illnesses; in 1991 orthopedic surgeons performed 100,000 carpal-tunnel operations at $4,000 each, with lost work, wages, and medical costs exceeding $29,000 per case.",
-      "verbatim": "Repetitive Stress Injury or Repetitive Motion Syndrome now costs corporate America $20 billion dollars per year and accounts for 56% of the 331,600 gradual onset work related illnesses.",
+      "verbatim": "Carpal Tunnel Syndrome) (Table 11-19).\n\nRepetitive Stress Injury or Repetitive Motion Syndrome now costs corporate America $20 billion dollars per year and accounts for 56% of the 331,600 gradual onset work related illnesses.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -6231,7 +6201,7 @@
         "page": 352,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 846438
+        "char_offset": 846398
       },
       "dose": null,
       "tags": [
@@ -6254,10 +6224,7 @@
         "manganese"
       ],
       "other_substances": [],
-      "conditions": [
-        "repetitive_motion_syndrome",
-        "carpal_tunnel_syndrome"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach's thesis: the epidemic of repetitive motion syndrome and carpal tunnel — and the millions of people wearing Velcro wrist, neck, elbow, finger, knee, back, and hip supports — are all manganese deficiencies (a condition observed in scribe-monks as early as 1717 by Bernardo Ramazzini, the father of occupational medicine); the allopathic profession would rather spend money than admit the body needs manganese.",
       "verbatim": "we see literally millions of people at work with Velcro wrist, neck, elbow, finger, knee, back and hip supports - all for manganese deficiencies!!! The allopathic medical profession would still prefer to spend your money than to admit that the human flesh needs Mn.",
@@ -6656,8 +6623,7 @@
       ],
       "other_substances": [],
       "conditions": [
-        "water_intoxication",
-        "heat_stroke"
+        "water_intoxication"
       ],
       "symptoms": [],
       "claim_text": "Wallach reports sodium-chloride deficiency occurs mainly in hot weather (e.g., the July 1993 heat wave) or heavy work in heat with heavy sweating; he also cites 'water intoxication' in infants fed low-sodium formula (from physicians' fear of sodium) — their brains swelled, causing death from a simple sodium deficiency.",
@@ -6948,7 +6914,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach argues the falling atmospheric oxygen has produced a relative anaerobic state in which pathogenic organisms, most of which are themselves anaerobic, flourish; he proposes the new anaerobic diseases that suddenly appeared in the 1980s and 1990s, such as HIV, Epstein-Barr virus, cytomegalovirus, Herpes II, Hanta virus, Candida, E. coli toxic shock, and flesh-eating Type A Streptococcus, had lain dormant for ages while higher oxygen levels held them in check and have now reactivated in an oxygen counter revolution.",
-      "verbatim": "Most pathogenic organisms (disease producing) are by themselves anaerobic and are “happier,” flourish and reproduce with more vigor in the absence of oxygen",
+      "verbatim": "Most pathogenic organisms (disease producing) are by themselves anaerobic and are “happier,” flourish and reproduce with more vigor in the absence of oxygen ( i.e.- gangrene organisms, type A Streptococcus, etc.) or are able to survive and grow in living cells weakened by low oxygen environments (i.e.- viruses, yeast, fungus, cancer,",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -7127,7 +7093,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach states that oxygen in the form of hydrogen peroxide has been used topically, intravenously, and orally since the Civil War, and for over 50 years in Europe as an alternative therapy for cancer, circulatory disease, arteriosclerosis, emphysema, asthma, and gangrene — and more recently for long-term stroke victims, whose dormant but living \"sleeping beauty\" cells around the stroke site can be reactivated when exposed to several atmospheres of oxygen in a hyperbaric chamber.",
-      "verbatim": "Oxygen in the form of hydrogen peroxide has been used topically, intravenously and orally since the Civil War, it has been used widely in Europe for over 50 years for alternative cancer therapies, circulatory disease, arteriosclerosis, emphysema, asthma, gangrene",
+      "verbatim": "Oxygen in the form of hydrogen peroxide has been used topically, intravenously and orally since the Civil War, it has been used widely in Europe for over 50 years for alternative cancer therapies, circulatory disease, arteriosclerosis, emphysema, asthma, gangrene and more recently as a therapy for long time stroke",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -7164,7 +7130,7 @@
       ],
       "symptoms": [],
       "claim_text": "Citing Dr. Renate Viebahn's book The Use of Ozone in Medicine — which references 22 peer-reviewed medical journal articles on ozone's therapeutic effect against cancer cells — Wallach describes a bell-shaped \"therapeutic window\" for ozone dosage of 20–100 µg/ml of blood: less is ineffective, while more can damage normal cells. He adds oxygen-therapy expert Ed McCabe's point that the rare cases where ozone seems to aggravate a condition trace to mineral-deficient diets, because a minerally deficient body lacks the functioning antioxidant-enzyme systems needed to use oxygen correctly.",
-      "verbatim": "There does appear to be a bell shaped curve or “therapeutic window” for the optimal dosage of ozone (20 to 100 u/ml of blood); anything less is ineffective - anything more can be damaging to normal cells.",
+      "verbatim": "cancer cells. There does appear to be a bell shaped curve or “therapeutic window” for the optimal dosage of ozone (20 to 100 u/ml of blood); anything less is ineffective - anything more can be damaging to normal cells.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -7172,7 +7138,7 @@
         "page": 372,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 886961
+        "char_offset": 886947
       },
       "dose": null,
       "tags": [
@@ -7603,7 +7569,6 @@
         "lead"
       ],
       "conditions": [
-        "lead_poisoning",
         "hyperactivity",
         "learning_disabilities"
       ],
@@ -7709,9 +7674,7 @@
       "other_substances": [
         "radon"
       ],
-      "conditions": [
-        "cancer"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach notes that all isotopes of radon are radioactive (half-life 54 seconds to 3.8 days) and that radon is carcinogenic and highly toxic when inhaled — a common household hazard that is odorless and colorless, so detecting it requires a test kit (which are generally available).",
       "verbatim": "Rn is carcinogenic and highly toxic when inhaled. Radon is a common household hazard, it is odorless and colorless; detection requires the use of a kit which are generally available.",
@@ -8088,7 +8051,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach quotes Dr. Gerhard N. Schrauzer (head of the Department of Chemistry, University of California, San Diego), who reviewed selenium's anti-cancer effects: selenium is increasingly recognized as a versatile anticarcinogenic agent whose protection cannot be attributed to glutathione peroxidase alone. It acts as a 'redox switch' on cellular growth factors, stimulates cellular respiration (more oxygen, less cancer), inhibits tumor-virus replication and oncogene activation, alters carcinogen metabolism and protects DNA from carcinogen-induced damage, accepts biogenic methyl groups, aids detoxification of metals, and is immunopotentiating.",
-      "verbatim": "Selenium is increasingly recognized as a versatile anticarcinogenic agent. Its protective functions cannot be solely attributed to the action of glutathione peroxidase. Instead, selenium appears to operate by several mechanisms, depending on dosage and chemical form of selenium and the nature of the carcinogenic stress.",
+      "verbatim": "cancer.\n\nIn a review of the anti-cancer effects of\n\nselenium Dr. Gerhard N. Schrauzer, head\nof the Department of Chemistry, UCSD\nstates:\n\nSelenium is increasingly recognized as a versatile anticarcinogenic agent. Its protective functions cannot be solely attributed to the action of glutathione peroxidase. Instead, selenium appears to operate by several mechanisms, depending on dosage and chemical form of selenium and the nature of the carcinogenic stress.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -8096,7 +8059,7 @@
         "page": 382,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 908151
+        "char_offset": 908013
       },
       "dose": null,
       "tags": [
@@ -8805,9 +8768,7 @@
         "silica"
       ],
       "other_substances": [],
-      "conditions": [
-        "high_cholesterol"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach notes that high-fiber diets contain a lot of silicon, which leads many investigators to think silicon helps lower cholesterol; he gives a recommended silicon intake of 200 to 500 mg per day.",
       "verbatim": "High fiber diets contain lots of Si which leads many investigators to think that Si helps to lower cholesterol. The recommended intake of Si ranges\nfrom 200 to 500 mg/day.",
@@ -9920,10 +9881,7 @@
         "vanadium"
       ],
       "other_substances": [],
-      "conditions": [
-        "insomnia",
-        "anxiety"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach's Table 9-1 lists tranquilizers and sleeping aids regarded as unsuitable for older patients (part 1 of 2) — Diazepam (Valium), Chlordiazepoxide (Librium), and Flurazepam (Dalmane), all addictive and/or too long-acting and prone to cause falls — with the mineral replacement to address the underlying need instead: calcium, magnesium, lithium, chromium, and vanadium (while avoiding sugar, natural and processed, and caffeine).",
       "verbatim": "Tranquilizers & Sleeping Aids — Mineral Replacement: Ca, Mg, Li, Cr, Va (avoid sugar, natural and processed, and caffeine):\nDiazepam (Valium) - Tranquilizer. Addictive and too long-acting, causing drowsiness, confusion and falls.\nChlordiazepoxide (Librium) - Tranquilizer. Too long-acting causes falls.\nFlurazepam (Dalmane), a sleeping aid. Too long-acting, causes falls.",
@@ -9960,10 +9918,7 @@
         "vanadium"
       ],
       "other_substances": [],
-      "conditions": [
-        "insomnia",
-        "anxiety"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach's Table 9-1, tranquilizers/sleeping aids unsuitable for older patients (part 2 of 2) — Meprobamate (Miltown, Deprol, Equagesic, Equanil), Pentobarbital (Nembutal), and Secobarbital (Seconal) — with the same mineral replacement: calcium, magnesium, lithium, chromium, and vanadium.",
       "verbatim": "Meprobamate (Miltown, Deprol, Equagesic, Equanil) - Tranquilizer, sometimes combined with an anti-depressant or pain reliever. Addictive, too long-acting, causes falls.\nPentobarbital (Nembutol) - Sedative. Addictive, long-acting, can cause falls.\nSecobarbitol (Seconal). Addictive, long acting, causes falls.",
@@ -10000,9 +9955,7 @@
         "vanadium"
       ],
       "other_substances": [],
-      "conditions": [
-        "depression"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach's Table 9-1 lists the antidepressant Amitriptyline (Elavil, Endep, Etrafon, Limbitrol, Triavil) as unsuitable for older patients (stops urination, causes dizziness, drowsiness and falls), with the mineral replacement: calcium, magnesium, lithium, chromium, and vanadium.",
       "verbatim": "Antidepressants — Mineral Replacement: Ca, Mg, Li, Cr, Va:\nAmitriptyline (Elavil, Endep, Etrafon, Limbitrol, Triavil). Stops the ability to urinate, causes dizziness and drowsiness, causes falls.",
@@ -10232,9 +10185,7 @@
         "lithium"
       ],
       "other_substances": [],
-      "conditions": [
-        "muscle_cramps"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach's Table 9-1 lists muscle relaxants/spasm relievers unsuitable for older patients — Cyclobenzaprine (Flexeril), Orphenidrine (Norflex, Norgesic), Methocarbamol (Robaxin), and Carisoprodol (Soma), causing dizziness, drowsiness, fainting and falls — with the mineral replacement: calcium, magnesium, boron, and lithium.",
       "verbatim": "Muscle Relaxants, Spasm Relievers — Mineral Replacement: Ca, Mg, B, Li:\nCyclobenzaprine (Flexeril) - Causes dizziness, drowsiness, fainting, falls.\nOrphenidrine (Norflex, Norgesic) - Causes dizziness, drowsiness, fainting, falls.\nMethocarbamol (Roboxin) - Causes dizziness, drowsiness, falls.\nCarisoprodol (Soma) - Potential for nervous system toxicity is greater than potential benefit.",
@@ -10306,9 +10257,7 @@
         "vitamin-b6"
       ],
       "other_substances": [],
-      "conditions": [
-        "hypertension"
-      ],
+      "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach's Table 9-1 lists antihypertensive drugs unsuitable for older patients — Propranolol (Inderal), Methyldopa (Aldoril, Aldomet), and Reserpine (Regroton, Hydropres), causing mental/physical slowing or depression — with the mineral replacement: calcium, magnesium, omega-3, and vitamin B-6 (pyridoxine).",
       "verbatim": "Antihypertensive — Mineral Replacement: Ca, Mg, Omega 3, B6:\nPropranolol (Inderal). Feeling slowed mentally and physically.\nMethyldopa (Aldoril, Aldomet). Feeling mentally and physically slowed.\nReserpine (Regroton, Hydropres). Depression.",

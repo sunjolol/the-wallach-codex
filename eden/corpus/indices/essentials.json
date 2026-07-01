@@ -266,18 +266,15 @@
       "addisons_disease",
       "ageusia",
       "anorexia",
-      "blind_rage",
       "congestive_heart_failure",
       "depression",
       "dermatitis",
       "edema",
-      "explosive_outbursts",
       "heat_stroke",
       "hyperactivity",
       "hypertension",
       "hypotension",
       "renal_failure",
-      "violent_behavior",
       "water_intoxication"
     ],
     "interacts_with": [
@@ -1184,7 +1181,6 @@
       "carpal_tunnel_syndrome",
       "cataracts",
       "celiac_disease",
-      "colon_cancer",
       "convulsions",
       "crohns_disease",
       "deafness",
@@ -1320,7 +1316,6 @@
       "deafness",
       "diabetes",
       "hypertension",
-      "muscle_cramps",
       "osteoporosis"
     ],
     "interacts_with": [
@@ -1515,7 +1510,6 @@
       "autism",
       "bedwetting",
       "bipolar_disorder",
-      "blind_rage",
       "bone_spurs",
       "cancer",
       "cardiac_arrhythmia",
@@ -1570,8 +1564,7 @@
       "pms",
       "prediabetes",
       "reactive_hypoglycemia",
-      "schizophrenia",
-      "violent_behavior"
+      "schizophrenia"
     ],
     "interacts_with": [
       "arginine",
@@ -2683,8 +2676,7 @@
       }
     ],
     "conditions_treated": [
-      "cardiovascular_disease",
-      "high_cholesterol"
+      "cardiovascular_disease"
     ],
     "interacts_with": [],
     "books_cited": [
@@ -2797,7 +2789,6 @@
       "arthritis",
       "bedwetting",
       "bipolar_disorder",
-      "blind_rage",
       "bone_spurs",
       "cancer",
       "cardiomyopathy",
@@ -2813,7 +2804,6 @@
       "high_cholesterol",
       "high_triglycerides",
       "hyperinsulinemia",
-      "hyperirritability",
       "hypertension",
       "hypoglycemia",
       "infertility",
@@ -2824,8 +2814,7 @@
       "osteoporosis",
       "panic_attacks",
       "reactive_hypoglycemia",
-      "schizophrenia",
-      "violent_behavior"
+      "schizophrenia"
     ],
     "interacts_with": [
       "boron",
@@ -3082,7 +3071,6 @@
       "bad_breath",
       "benign_prostatic_hyperplasia",
       "birth_defects",
-      "blind_rage",
       "body_odor",
       "boils",
       "bone_spurs",
@@ -3103,7 +3091,6 @@
       "cold_sores",
       "cradle_cap",
       "crohns_disease",
-      "cystic_fibrosis",
       "dandruff",
       "deafness",
       "dementia",
@@ -3116,7 +3103,6 @@
       "dry_skin",
       "eczema",
       "epilepsy",
-      "explosive_outbursts",
       "food_allergy",
       "geographic_tongue",
       "gingivitis",
@@ -3170,7 +3156,6 @@
       "tonsillitis",
       "umbilical_hernia",
       "varicose_veins",
-      "violent_behavior",
       "vitiligo",
       "white_spots_fingernails",
       "xerophthalmia"
@@ -3392,9 +3377,7 @@
       ]
     },
     "deficiency_signs": [],
-    "conditions_treated": [
-      "burns"
-    ],
+    "conditions_treated": [],
     "interacts_with": [],
     "books_cited": [
       "epigenetics",
@@ -3677,22 +3660,15 @@
       }
     ],
     "conditions_treated": [
-      "adhd",
       "anorexia",
-      "anxiety",
       "arthritis",
       "autism",
       "bipolar_disorder",
-      "blind_rage",
       "criminal_behavior",
       "dementia",
       "depression",
-      "explosive_outbursts",
       "hyperactivity",
-      "infertility",
-      "insomnia",
-      "muscle_cramps",
-      "violent_behavior"
+      "infertility"
     ],
     "interacts_with": [
       "boron",
@@ -4683,7 +4659,6 @@
       "anxiety",
       "cataracts",
       "cheilosis",
-      "cystic_fibrosis",
       "depression",
       "dermatitis",
       "eye_redness",
@@ -5295,7 +5270,6 @@
       "geographic_tongue",
       "headache",
       "hyperirritability",
-      "hypertension",
       "hysteria",
       "intermittent_claudication",
       "joint_pain",
