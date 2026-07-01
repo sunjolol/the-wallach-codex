@@ -192,8 +192,11 @@
   },
   "adhd": {
     "display_name": "Adhd",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-EPIGEN-000106"
+      ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-RARE-000163"
@@ -1307,8 +1310,11 @@
   },
   "autism": {
     "display_name": "Autism",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-EPIGEN-000106"
+      ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000096"
       ],
@@ -4400,7 +4406,7 @@
     "claim_count": 2,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-EPIGEN-000002"
+        "WAL-CLM-EPIGEN-000106"
       ],
       "protocols": [
         "WAL-CLM-LETS-000257"

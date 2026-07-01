@@ -44,8 +44,7 @@
         "birth_defects",
         "cerebral_palsy",
         "down_syndrome",
-        "neural_tube_defects",
-        "dyslexia"
+        "neural_tube_defects"
       ],
       "symptoms": [],
       "claim_text": "Wallach holds that congenital events and birth defects of the central nervous system -- among them cerebral palsy, Down syndrome, neural tube defects, and cleft palate -- are for the most part manifestations of a maternal nutritional deficiency during a critical window of early embryonic development, and are therefore largely preventable with optimal preconception nutrition. He extends the same principle to behavioral, learning, and emotional defects such as dyslexia, attention-deficit/hyperactivity disorder, and autism. In his words: \"Congenital events and birth defects of the central nervous system (those occurring in cerebral palsy, Down syndrome, hydroencephalaloceol, neural tube defects, gayness, etc.), for the most part are manifestations of a maternal nutritional deficiency during a certain point in time of early embryonic development.\"",
@@ -4088,6 +4087,43 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-07-01T03:08:14+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000106",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "dyslexia",
+        "adhd",
+        "autism"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach teaches that behavioral, learning, and emotional defects -- what he calls the \"Bad Seeds\" -- share the same origin as physical birth defects: a maternal nutritional deficiency during early embryonic development, and are therefore likewise preventable with optimal preconception nutrition. Among the examples he lists are dyslexia, attention-deficit disorder (ADD), attention-deficit/hyperactivity disorder (ADHD), and autism. In his words: \"Children without a conscience (sociopaths), violent behavior, dyslexia, retardation, fetal alcohol or drug syndrome, ADD, ADHD, autism.\"",
+      "verbatim": "Children without\na conscience (sociopaths), violent behavior, dyslexia, retardation, fetal alcohol\nor drug syndrome, ADD, ADHD, autism",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "Epigenetic Manifestations of Disease",
+        "page": 568,
+        "screenshot": 549,
+        "kindle_location": null,
+        "char_offset": 986875
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch17",
+        "congenital",
+        "preconception-nutrition",
+        "behavioral"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-01T12:11:01+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

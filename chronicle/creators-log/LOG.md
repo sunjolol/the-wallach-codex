@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 241 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 242 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 07:12 UTC-05:00 · design-decision · knowledge-drawer
+SESSION 32 b4b — first claim SPLIT (Luneth-approved): dyslexia orphan gets naming claim EPIGEN-000106 from the Bad Seeds sentence, verbatim trimmed at 'ADD, ADHD, autism' to exclude 'congenital homosexuality'; dyslexia dropped from 000002. claims 1001->1002, 0 NEW.
 
 ## 2026-07-01 07:07 UTC-05:00 · round-close · knowledge-drawer
 SESSION 32 b4a — EPIGEN: calcium re-anchored from the 147-diseases summary to its clean table sub-span (9 conditions, 3 orphans); CNS-defects dropped 4 sibling-covered; new applier keep_unnamed. Violations 476->445 (EPIGEN 61->32), board 32/32, 0 NEW.
@@ -797,7 +800,3 @@ Phase γ.3 batch 5: Rare Earths Ch.4 pica/cravings — 3 claims (kv 24→25, RAR
 ## 2026-06-24 20:05 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 4: Rare Earths Ch.3 — the iconic Senate-Doc-264 minerals>vitamins quote + the soil-mining-by-cropping mechanism (2 claims, kv 23→24, RARE 32→34, 128 total). Text-layer-only nav to avoid the sensitive collapse news-clipping pages. Luneth-approved.
   ↳ WAL-CLM-RARE-000033 (quote: 'Lacking vitamins, the system can make some use of minerals, but lacking minerals, vitamins are useless' — Wallach reproduces it in his US Senate Document 264 discussion) + 000034 (mechanism: NPK fertilizer replaces only 3 elements, cropping mines the soil's minerals in 5-10 years, irrigation speeds the leaching; after 100+ years => rising degenerative disease). The Ch.3 stretch between (idx 65-73) = soil-organism botany + a civilization-collapse-from-soil-depletion thesis shown via sensitive news clippings (Rwandan bloodbath, famine, cannibalism) — navigated via PDF text layer, NO image renders. Deferred the companion Senate-Doc quote + the '60 minerals from food' restatement to a later micro-batch.
-
-## 2026-06-24 19:57 UTC-04:00 · design-decision · eden/corpus
-Fluoride re-adjudication CLOSED (Luneth ruling): Wallach's books are sole authority. Removed the fluoride pending_adjudication + claim-29 stale tag; his anti-fluoride stance is now book claim WAL-CLM-RARE-000029. kv 22→23.
-  ↳ Luneth: 'Fluoride is no longer a pending item, whatever Wallach says from his books is what we go off of. Close the fluoride thing, no remnants of the old fluoride claims, only the new book files / single source of truth.' Done: removed fluoride-re-adjudication from essentials-canon.json (cysteine-vs-taurine remains open); dropped the fluoride-adjudication tag from claim 29 (synced shard + draft so seal-promotion wouldn't revert it); appended a RESOLUTION to chronicle/contradictions/2026-06-24-germanium-replaces-fluoride.md. Remnant audit: live app already fluoride-clean (coverage-layout-data.json = Germanium); other fluoride strings are Wallach source, chronicle history (incl. Creator's Log saga), or deprecated pre-Eden knowledge-layer (Phase η). next-chunk.md to update at session close.
