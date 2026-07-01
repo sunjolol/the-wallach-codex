@@ -192,11 +192,8 @@
   },
   "adhd": {
     "display_name": "Adhd",
-    "claim_count": 4,
+    "claim_count": 3,
     "claims_by_role": {
-      "causes": [
-        "WAL-CLM-EPIGEN-000002"
-      ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-RARE-000163"
@@ -1069,7 +1066,7 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 27,
+    "claim_count": 26,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052"
@@ -1078,7 +1075,6 @@
         "WAL-CLM-DDDL-000012",
         "WAL-CLM-DDDL-000032",
         "WAL-CLM-EPIGEN-000032",
-        "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-EPIGEN-000086",
         "WAL-CLM-LETS-000004",
@@ -1311,11 +1307,8 @@
   },
   "autism": {
     "display_name": "Autism",
-    "claim_count": 3,
+    "claim_count": 2,
     "claims_by_role": {
-      "causes": [
-        "WAL-CLM-EPIGEN-000002"
-      ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000096"
       ],
@@ -1950,11 +1943,10 @@
   },
   "bone_spurs": {
     "display_name": "Bone Spurs",
-    "claim_count": 5,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000032",
-        "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000275"
       ],
@@ -3095,11 +3087,8 @@
   },
   "cleft_palate": {
     "display_name": "Cleft Palate",
-    "claim_count": 3,
+    "claim_count": 2,
     "claims_by_role": {
-      "causes": [
-        "WAL-CLM-EPIGEN-000002"
-      ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000042",
         "WAL-CLM-RARE-000262"
@@ -3112,7 +3101,6 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
-      "epigenetics",
       "rare-earths"
     ]
   },
@@ -3418,12 +3406,11 @@
   },
   "convulsions": {
     "display_name": "Convulsions",
-    "claim_count": 7,
+    "claim_count": 6,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000032",
         "WAL-CLM-EPIGEN-000039",
-        "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-EPIGEN-000098",
         "WAL-CLM-EPIGEN-000099"
       ],
@@ -5123,11 +5110,10 @@
   },
   "fractures": {
     "display_name": "Fractures",
-    "claim_count": 3,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000043",
-        "WAL-CLM-EPIGEN-000061"
+        "WAL-CLM-EPIGEN-000043"
       ],
       "protocols": [
         "WAL-CLM-LETS-000281"
@@ -6062,14 +6048,13 @@
   },
   "hyperirritability": {
     "display_name": "Hyperirritability",
-    "claim_count": 6,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000127"
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000039",
-        "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-RARE-000237"
       ],
@@ -6078,7 +6063,6 @@
       ]
     },
     "essentials_involved": [
-      "calcium",
       "chromium",
       "vanadium",
       "vitamin-b6"
@@ -6115,34 +6099,28 @@
   },
   "hyperparathyroidism": {
     "display_name": "Hyperparathyroidism",
-    "claim_count": 2,
+    "claim_count": 1,
     "claims_by_role": {
-      "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000061"
-      ],
       "toxicity_signs": [
         "WAL-CLM-LETS-000024"
       ]
     },
     "essentials_involved": [
-      "calcium",
       "phosphorus"
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "epigenetics",
       "lets-play-doctor"
     ]
   },
   "hypertension": {
     "display_name": "Hypertension",
-    "claim_count": 11,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000107"
       ],
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000275"
       ],
@@ -6190,7 +6168,6 @@
       "rauwolfia"
     ],
     "books_cited": [
-      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -6761,12 +6738,11 @@
   },
   "insomnia": {
     "display_name": "Insomnia",
-    "claim_count": 17,
+    "claim_count": 16,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000038",
         "WAL-CLM-EPIGEN-000042",
-        "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-LETS-000003",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000010",
@@ -7174,14 +7150,13 @@
   },
   "kidney_stones": {
     "display_name": "Kidney Stones",
-    "claim_count": 7,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000087"
       ],
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000032",
-        "WAL-CLM-EPIGEN-000061"
+        "WAL-CLM-EPIGEN-000032"
       ],
       "definitions": [
         "WAL-CLM-RARE-000105"
@@ -7402,11 +7377,8 @@
   },
   "learning_disabilities": {
     "display_name": "Learning Disabilities",
-    "claim_count": 7,
+    "claim_count": 6,
     "claims_by_role": {
-      "causes": [
-        "WAL-CLM-EPIGEN-000002"
-      ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000063"
@@ -8299,13 +8271,12 @@
   },
   "muscle_cramps": {
     "display_name": "Muscle Cramps",
-    "claim_count": 6,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000074",
         "WAL-CLM-EPIGEN-000032",
-        "WAL-CLM-EPIGEN-000038",
-        "WAL-CLM-EPIGEN-000061"
+        "WAL-CLM-EPIGEN-000038"
       ],
       "protocols": [
         "WAL-CLM-LETS-000374",
@@ -8826,7 +8797,7 @@
   },
   "osteoarthritis": {
     "display_name": "Osteoarthritis",
-    "claim_count": 6,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000050"
@@ -8834,7 +8805,6 @@
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000031",
         "WAL-CLM-EPIGEN-000032",
-        "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-EPIGEN-000086"
       ],
       "prevalence": [
@@ -8855,11 +8825,10 @@
   },
   "osteomalacia": {
     "display_name": "Osteomalacia",
-    "claim_count": 6,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000031",
-        "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000039",
         "WAL-CLM-RARE-000230"
@@ -8883,7 +8852,7 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 30,
+    "claim_count": 29,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052",
@@ -8898,7 +8867,6 @@
         "WAL-CLM-DDDL-000032",
         "WAL-CLM-EPIGEN-000031",
         "WAL-CLM-EPIGEN-000032",
-        "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000042",
         "WAL-CLM-RARE-000011",
@@ -9365,14 +9333,13 @@
   },
   "periodontal_disease": {
     "display_name": "Periodontal Disease",
-    "claim_count": 6,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IAIYH-000003"
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000032",
-        "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-LETS-000004"
       ],
       "protocols": [
@@ -10502,10 +10469,9 @@
   },
   "scoliosis": {
     "display_name": "Scoliosis",
-    "claim_count": 3,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-RARE-000269"
       ],
       "protocols": [
@@ -10522,7 +10488,6 @@
       "colloidal-minerals"
     ],
     "books_cited": [
-      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -11143,11 +11108,10 @@
   },
   "tetany": {
     "display_name": "Tetany",
-    "claim_count": 6,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000032",
-        "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-EPIGEN-000098",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000172"

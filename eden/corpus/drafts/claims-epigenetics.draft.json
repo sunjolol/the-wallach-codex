@@ -45,11 +45,7 @@
         "cerebral_palsy",
         "down_syndrome",
         "neural_tube_defects",
-        "cleft_palate",
-        "dyslexia",
-        "adhd",
-        "autism",
-        "learning_disabilities"
+        "dyslexia"
       ],
       "symptoms": [],
       "claim_text": "Wallach holds that congenital events and birth defects of the central nervous system -- among them cerebral palsy, Down syndrome, neural tube defects, and cleft palate -- are for the most part manifestations of a maternal nutritional deficiency during a critical window of early embryonic development, and are therefore largely preventable with optimal preconception nutrition. He extends the same principle to behavioral, learning, and emotional defects such as dyslexia, attention-deficit/hyperactivity disorder, and autism. In his words: \"Congenital events and birth defects of the central nervous system (those occurring in cerebral palsy, Down syndrome, hydroencephalaloceol, neural tube defects, gayness, etc.), for the most part are manifestations of a maternal nutritional deficiency during a certain point in time of early embryonic development.\"",
@@ -2391,21 +2387,8 @@
       ],
       "other_substances": [],
       "conditions": [
-        "osteoporosis",
-        "scoliosis",
-        "fractures",
-        "periodontal_disease",
-        "osteomalacia",
-        "arthritis",
-        "osteoarthritis",
-        "bone_spurs",
-        "kidney_stones",
-        "hyperparathyroidism",
-        "hypertension",
-        "insomnia",
         "restless_leg_syndrome",
         "atrial_fibrillation",
-        "muscle_cramps",
         "tourette_syndrome",
         "pms",
         "sciatica",
@@ -2413,14 +2396,11 @@
         "neuropathy",
         "bells_palsy",
         "trigeminal_neuralgia",
-        "tetany",
-        "convulsions",
-        "panic_attacks",
-        "hyperirritability"
+        "panic_attacks"
       ],
       "symptoms": [],
       "claim_text": "Calcium is the most abundant mineral in the body, with about 99% in the bones and teeth (as hydroxyapatite) and the rest used as a cofactor for blood clotting, muscle contraction, and the heart's electrical conduction. Wallach states that, contrary to the medical belief that high calcium causes kidney stones, a high dietary calcium intake actually reduces the risk of nutritional secondary hyperparathyroidism, hypercalcemia, and kidney stones, and that no fewer than 147 deficiency diseases are attributed to calcium deficiency or imbalance. His Common Calcium-Deficiency Diseases include: osteoporosis (with kyphosis, scoliosis, Dowager's hump, lordosis, spontaneous fractures), receding gums, osteomalacia, myelosclerosis, arthritis, ankylosing spondylitis, bone spurs, kidney stones, nutritional secondary hyperparathyroidism, hypertension, insomnia, calcium deposits (vascular, restless leg, atrial fibrillation), cramps and twitches (Tourette's syndrome), premenstrual syndrome, low-back pain (sciatica), neuropathy (Bell's palsy, trigeminal neuralgia), tetany with convulsions, and panic attacks. In his words: 'There are no less than 147 different deficiency-diseases that are directly attributed to a calcium deficiency or imbalance.'",
-      "verbatim": "There are no less than 147 different deficiency-diseases that are directly\nattributed to a calcium deficiency or imbalance.",
+      "verbatim": "Calcium deposits (vascular,\ntendons, ligaments, restless leg,\natrial-fibrillation, etc.)\n\nCramps & twitches (Tourette's\nsyndrome, foot, calf, hamstring,\neyelids, etc.)\n\nPMS (emotional & physical\nsymptoms)\n\nLow back (sciatica, spasm, disc,\netc.)\n\nNeuropathy (Bell’s palsy,\ntrigeminal neuralgia, sciatica,\nrestless leg, etc.)",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -2428,7 +2408,7 @@
         "page": 679,
         "screenshot": 608,
         "kindle_location": null,
-        "char_offset": 1188409
+        "char_offset": 1189879
       },
       "dose": null,
       "tags": [

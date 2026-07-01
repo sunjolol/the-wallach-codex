@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 240 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 241 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 07:07 UTC-05:00 · round-close · knowledge-drawer
+SESSION 32 b4a — EPIGEN: calcium re-anchored from the 147-diseases summary to its clean table sub-span (9 conditions, 3 orphans); CNS-defects dropped 4 sibling-covered; new applier keep_unnamed. Violations 476->445 (EPIGEN 61->32), board 32/32, 0 NEW.
 
 ## 2026-07-01 06:49 UTC-05:00 · round-close · knowledge-drawer
 SESSION 32 b3 — EPIGEN verbatim-remediation: Vitamin K (bleeding cluster, page-marker split) + chromium (full deficiency list, 17 conditions) re-anchored to name every mapped condition; +8 synonyms. Violations 498->476 (EPIGEN 80->61), board 32/32, 0 NEW, probe PASS.
@@ -798,7 +801,3 @@ Phase γ.3 batch 4: Rare Earths Ch.3 — the iconic Senate-Doc-264 minerals>vita
 ## 2026-06-24 19:57 UTC-04:00 · design-decision · eden/corpus
 Fluoride re-adjudication CLOSED (Luneth ruling): Wallach's books are sole authority. Removed the fluoride pending_adjudication + claim-29 stale tag; his anti-fluoride stance is now book claim WAL-CLM-RARE-000029. kv 22→23.
   ↳ Luneth: 'Fluoride is no longer a pending item, whatever Wallach says from his books is what we go off of. Close the fluoride thing, no remnants of the old fluoride claims, only the new book files / single source of truth.' Done: removed fluoride-re-adjudication from essentials-canon.json (cysteine-vs-taurine remains open); dropped the fluoride-adjudication tag from claim 29 (synced shard + draft so seal-promotion wouldn't revert it); appended a RESOLUTION to chronicle/contradictions/2026-06-24-germanium-replaces-fluoride.md. Remnant audit: live app already fluoride-clean (coverage-layout-data.json = Germanium); other fluoride strings are Wallach source, chronicle history (incl. Creator's Log saga), or deprecated pre-Eden knowledge-layer (Phase η). next-chunk.md to update at session close.
-
-## 2026-06-24 19:46 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 3: Rare Earths Ch.2 (60-metals + lithium) + Ch.3 'Our Earth Is Anemic' opening, 5 claims (kv 21→22, RARE 27→32, 126 total). Used the PDF text layer + programmatic de-hyphenation to stay off image renders after the prior content-policy block. Luneth-approved.
-  ↳ 5 claims WAL-CLM-RARE-000028..32: the foundational 60-of-75-metals-have-physiological-value + no-bodily-function-without-a-mineral-cofactor; Wallach's lithium-to-public-water + eliminate-fluoride recommendation; the Earth-is-anemic soil-depletion thesis; remineralizing farmland is technically possible but economically impossible; soil minerals are uneven (chocolate-swirl veins) so food alone is a mineral crap-shoot. Skipped the Ch.2 history-of-mineral-medicine survey (arsenic/mercury/lead/alchemy/Epsom) + salt-trade history as anecdote per claim-first. Reflow done programmatically (de-hyphenate + join lines) to preserve exact original characters incl. curly quotes; verified .txt against the PDF text layer (two independent OCRs). Left page-boundary header garble (CREED, physi-/cians split) for a later sweep. NEXT (Luneth ruling): close the fluoride re-adjudication — Wallach's books are now the sole authority (claim 29 = his anti-fluoride stance), scrub old pre-corpus fluoride remnants.

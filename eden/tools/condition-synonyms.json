@@ -14,7 +14,7 @@
   "als": ["lou gehrig", "amyotrophic lateral sclerosis"],
   "alzheimers": ["alzheimer"],
   "parkinsons_disease": ["parkinson", "parkinsonian", "parkinsonism"],
-  "bells_palsy": ["bell palsy", "bells palsy", "facial nerve paralysis", "facial paralysis"],
+  "bells_palsy": ["bell palsy", "bells palsy", "bell", "facial nerve paralysis", "facial paralysis"],
   "korsakoffs_syndrome": ["korsakoff", "korsakoffs", "wernicke"],
   "graves_disease": ["graves", "grave s", "hyperthyroid"],
   "hashimotos_disease": ["hashimoto", "hashimotos"],
@@ -69,5 +69,7 @@
   "hyperirritability": ["hyperirratability", "hyper irritability"],
   "bedwetting": ["bed wetting", "bedwetting", "enuresis"],
   "prediabetes": ["pre diabetes", "prediabetes"],
-  "high_triglycerides": ["elevated blood triglycerides", "elevated triglycerides", "high triglycerides", "hypertriglyceridemia"]
+  "high_triglycerides": ["elevated blood triglycerides", "elevated triglycerides", "high triglycerides", "hypertriglyceridemia"],
+  "backache": ["low back", "lower back", "back pain"],
+  "explosive_outbursts": ["explosive behavior", "explosive outburst"]
 }
