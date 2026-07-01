@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 245 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 246 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 09:41 UTC-05:00 · round-close · knowledge-drawer+corpus
+SESSION 33 b3 — RARE: chromium 000116 + calcium 000105 un-mapped. Both over-mapped summary/definition claims (verbatims name no condition, 0 true orphans) → dropped all 16+9 to conditions=[]. violations 396→371 (RARE 108→83), kv 217, board 32/32.
+  ↳ Contrast with copper (b2): copper had a true orphan (thyroid_disease) forcing preserve-via-split. Chromium's 16 + calcium's 9 conditions are all named by proper same-nutrient deficiency claims (chromium by EPIGEN-000062; calcium osteoporosis by RARE-000082/086/275, bells_palsy/tetany by EPIGEN-000109/LETS-000004). So the fix is to un-do the over-mapping: 000116 stays the chromium/GTF definition, 000105 stays the '147 calcium diseases' prevalence stat, both conditions=[] (verbatim+claim_text intact). premenstrual_syndrome dropped here; global slug-merge deferred to spawned task. No source edit. Board 32/32, probe PASS. Next: the ~57 remaining RARE single-violation claims.
 
 ## 2026-07-01 08:38 UTC-05:00 · round-close · knowledge-drawer+corpus
 SESSION 33 b2 — RARE remediation begins: copper 000122 SPLIT to Wallach's real Table 11-13 list. Over-mapped summary (17 conds, 0 named) → part A 000122 (8, incl thyroid_disease orphan) + new 000302 (9). violations 413→396 (RARE 125→108), orphans 104→103, kv 216, board 32/32.
@@ -795,7 +799,3 @@ Phase γ.3 batch 7 — Rare Earths Ch.6 'The Bad Seeds' crime thesis ruled whole
 ## 2026-06-24 20:31 UTC-04:00 · session-end · chronicle
 Session close — Phase γ.3 Rare Earths OCR-correction: 22 new claims (RARE 18→40, kv 19→26), Preface–Ch.4 cleaned + mined, Ch.5 'Divine Hunger' whole-chapter fringe, fluoride adjudication closed. Built corpus_resnap + the fringe zone. Board 30/30, all pushed.
   ↳ Big session. Workflow unlock: agent reads the scanned Rare Earths PDF directly via PyMuPDF render→Read (no screenshots; fitz idx = printed+21) and the per-batch OCR-correction pipeline (reflow→corpus_resnap→finalize→seal→embed) safely edits sealed book text. Content-policy lesson: full-page image renders of graphic/sensitive pages trip an image classifier → use the PDF text layer for those + small crops only for innocuous verbatim checks. Shipped: corpus_resnap.py (d0bd8ca), fringe containment zone knowledge/fringe-knowledge/ (259a7d8), batches 1-6 across Preface + Ch.2-4 (fdce2f5/ab87001/0c895f9/52b2f9f/cc8c28f/761549f), fluoride closed (614f565), Ch.5 Divine Hunger fringe (c843d77). Handoff next-chunk.md refreshed; next session resumes front-to-back at Ch.6 'THE BAD SEEDS' (screen for fringe first), then the per-element catalog Ch.11-12 (OCR-roughest + richest). cysteine-vs-taurine is the only canon adjudication still open.
-
-## 2026-06-24 20:27 UTC-04:00 · design-decision · knowledge
-Rare Earths Ch.5 'Divine Hunger' ruled whole-chapter-to-fringe by Luneth: the cannibalism/vampire/werewolf-as-extreme-mineral-deficiency thesis is off-mission, kept OUT of corpus + dashboard, recorded in full for his study (knowledge/fringe-knowledge/).
-  ↳ Wallach adds a 4th theory of cannibalism's origin — 'the ultimate extension of pica (bizarre cravings and behavior resulting from extreme mineral deficiencies)' — and applies it to Aztec cannibalism (soil depletion), Dracula/vampires (Vlad, Gilles de Rais, Bathory), werewolves (Windigo/Cree), and modern serial killers ('the vampires and werewolves of our time' — Maybrick/Jack-the-Ripper, Chikatilo, Gein, Hoyt), concluding depleted soils => rising pica => more serial killers 'at a geometric rate.' Luneth: 'VERY likely has some merit but so off the wall and not helpful... would only serve as a detriment for the average user.' Recorded faithfully (thesis verbatims + named examples; gory anecdotes summarized, not reproduced); read via PDF text layer only (graphic content). Cross-refs criminal-behavior.md (Gein/Hoyt also in Ch.6). No corpus change — book text retains Ch.5, no claims, kv stays 26.
