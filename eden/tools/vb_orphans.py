@@ -15,7 +15,10 @@ import json
 import sys
 from pathlib import Path
 
-ROOT = Path(r"C:\Users\Light\Desktop\claude\health expert")
+# ROOT resolves from this file's location (eden/tools/<file> -> parents[2] = repo
+# root), so the tool operates on the tree it lives in -- including a git worktree.
+# (A hardcoded main-repo path silently read/WROTE the wrong tree from a worktree.)
+ROOT = Path(__file__).resolve().parents[2]
 AUDIT_DIR = ROOT / "eden" / "tools"
 sys.path.insert(0, str(AUDIT_DIR))
 import verbatim_audit as va  # noqa: E402
