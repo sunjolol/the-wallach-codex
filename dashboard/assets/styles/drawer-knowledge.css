@@ -781,3 +781,53 @@
   border-left: 2px solid var(--ds-tech);
   border-radius: var(--ds-radius-sm);
 }
+
+/* Intake-vs-Wallach-target meter -- compact deep-dive header readout (top-right).
+   Present only when Wallach states a numeric target; otherwise the status pill
+   alone stands (covered/not-covered), never an invented ratio. */
+#drawer-knowledge-mount .kd-essential-deep__readout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--ds-space-2);
+  min-width: 0;
+}
+#drawer-knowledge-mount .kd-meter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  min-width: 118px;
+  max-width: 172px;
+}
+#drawer-knowledge-mount .kd-meter__nums {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide, 0.04em);
+  color: var(--ds-ink-soft);
+  white-space: nowrap;
+}
+#drawer-knowledge-mount .kd-meter__nums strong { color: var(--ds-ink); font-weight: 700; }
+#drawer-knowledge-mount .kd-meter__track {
+  width: 100%;
+  height: 4px;
+  border-radius: var(--ds-radius-pill);
+  background: var(--ds-paper-darker);
+  overflow: hidden;
+}
+#drawer-knowledge-mount .kd-meter__fill {
+  display: block;
+  height: 100%;
+  border-radius: var(--ds-radius-pill);
+  background: var(--ds-ink-soft);
+  transition: width 0.35s ease;
+}
+#drawer-knowledge-mount .kd-meter--ok .kd-meter__fill { background: var(--ds-status-ok); }
+#drawer-knowledge-mount .kd-meter--warn .kd-meter__fill { background: var(--ds-status-warn-deep, #8a6d20); }
+#drawer-knowledge-mount .kd-meter__cap {
+  font-family: var(--ds-font-mono);
+  font-size: 9px;
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-tech);
+}

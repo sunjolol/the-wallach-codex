@@ -103,6 +103,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       shown: d !== null,
       hasPill: d ? d.querySelector('.kd-essential-deep__status-pill') !== null : false,
       hasName: d ? (d.querySelector('.kd-essential-deep__name')?.textContent || '').length > 0 : false,
+      meterText: d ? (d.querySelector('.kd-meter')?.textContent || '').replace(/\s+/g, ' ').trim() : '',
       corpusShown: corpus !== null,
       claimCount: claims.length,
       groupCount: corpus ? corpus.querySelectorAll('.kd-corpus__group').length : 0,
@@ -110,6 +111,19 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       firstText: first ? (first.querySelector('.kd-claim__text')?.textContent || '').length > 0 : false,
       firstVerbatim: first ? (first.querySelector('.kd-claim__verbatim')?.textContent || '').length > 0 : false,
       firstCite: first ? /DEAD DOCTORS|DDDL/i.test(first.querySelector('.kd-claim__cite')?.textContent || '') : false,
+    };
+  });
+
+  // 4a. Meter fallback -- a trace essential (no numeric Wallach target) shows the
+  //     covered/not-covered pill ONLY, never an invented ratio.
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-essential="Dysprosium"]')?.click());
+  await wait(200);
+  const traceMeter = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const d = root ? root.querySelector('.kd-essential-deep') : null;
+    return {
+      hasMeter: d ? d.querySelector('.kd-meter') !== null : null,
+      hasPill: d ? d.querySelector('.kd-essential-deep__status-pill') !== null : null,
     };
   });
 
@@ -174,7 +188,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, corpus, products, essentials, deep, conditions, condDeep, afterEsc, afterK, search, searchClear };
+  const out = { boot, afterClick, corpus, products, essentials, deep, traceMeter, conditions, condDeep, afterEsc, afterK, search, searchClear };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -196,6 +210,8 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['corpus: sealed claims present (Magnesium)', deep.claimCount > 0],
     ['corpus: claims grouped by kind', deep.groupCount > 0],
     ['corpus: claim shows paraphrase + verbatim + citation', deep.firstText && deep.firstVerbatim && deep.firstCite],
+    ['meter: numeric target shows intake-vs-goal (Magnesium)', /WALLACH GOAL/.test(deep.meterText)],
+    ['meter: trace element shows pill only, no meter (Dysprosium)', traceMeter.hasMeter === false && traceMeter.hasPill === true],
     ['conditions: list rendered', conditions.rowCount >= 1],
     ['conditions: deep view opens (diabetes)', condDeep.shown === true],
     ['conditions: claims grouped by role', condDeep.groupCount >= 1 && condDeep.claimCount >= 1],

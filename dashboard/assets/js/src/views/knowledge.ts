@@ -48,7 +48,7 @@ import {
   getTargets,
   matchEssential,
 } from '../state/coverage.js';
-import { renderConditionsTab, renderCorpusForEssential } from './knowledge-corpus.js';
+import { renderConditionsTab, renderCorpusForEssential, renderIntakeMeter, tileOf } from './knowledge-corpus.js';
 
 export interface DrawerHandle {
   open: () => void;
@@ -392,7 +392,10 @@ function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): st
             <div class="kd-essential-deep__cat">${escHTML(e.catLabel)}${e.ref !== '' ? ` · ${escHTML(e.ref)}` : ''}</div>
           </div>
         </div>
-        <span class="kd-essential-deep__status-pill ${statusPillClass(status)}">● ${statusLabel(status)}</span>
+        <div class="kd-essential-deep__readout">
+          <span class="kd-essential-deep__status-pill ${statusPillClass(status)}">● ${statusLabel(status)}</span>
+          ${renderIntakeMeter(tileOf(snapshot, key), status)}
+        </div>
       </header>
       ${e.essential ? '' : '<div class="kd-essential-deep__flag"><strong>NON-ESSENTIAL</strong> · the body can synthesize this, so it is not one of the 90. Shown for completeness — Youngevity includes it (Ultimate EFA Plus) for cardiovascular balance + optimal absorption.</div>'}
       ${wallachHTML}

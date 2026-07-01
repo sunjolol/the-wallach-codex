@@ -89,6 +89,18 @@ export interface CoverageTile {
   coveredBy: string[];
   /** Whether this tile is closed via the PDM aggregate-vehicle rule. */
   aggregateVehicle: boolean;
+  /**
+   * Numeric intake-vs-Wallach-target readout for the deep-dive meter, in the
+   * target's own display unit. `null` when the target is non-numeric (trace /
+   * dietary / collective) -- there Wallach states no number, so the covered/
+   * not-covered pill is the only honest readout and the view falls back to it.
+   */
+  intakeVsTarget: {
+    deliveredAmount: number;
+    targetLow: number;
+    targetHigh: number;
+    unit: string;
+  } | null;
 }
 
 export interface CoverageSnapshot {
@@ -196,6 +208,25 @@ function toMg(value: number, unit: string | undefined): { v: number; u: 'mg' | '
     return { v: value, u: 'iu' };
   }
   return { v: value, u: 'mg' };
+}
+
+/**
+ * Convert accumulated delivery (kept internally in mg or IU) back into the
+ * target's own display unit, so the deep-dive meter can show "intake / target"
+ * in the same unit Wallach stated (mcg, mg, g, IU) rather than a raw mg figure.
+ */
+function deliveredInUnit(d: Delivery, unit: string | undefined): number {
+  const u = (unit ?? 'mg').toLowerCase();
+  if (u === 'iu') {
+    return d.totalIU;
+  }
+  if (u === 'g') {
+    return d.totalMg / 1000;
+  }
+  if (u === 'mcg' || u === 'μg' || u === 'µg') {
+    return d.totalMg * 1000;
+  }
+  return d.totalMg;
 }
 
 function buildByName(targets: Essential[]): Map<string, Essential> {
@@ -418,6 +449,15 @@ export function recompute(): CoverageSnapshot {
     const t = target.success ? target.data : null;
     const d = delivery.get(entry.name) ?? EMPTY_DELIVERY;
     const status = classify(t, d);
+    let intakeVsTarget: CoverageTile['intakeVsTarget'] = null;
+    if (t !== null && typeof t.low === 'number' && t.low > 0) {
+      intakeVsTarget = {
+        deliveredAmount: deliveredInUnit(d, t.unit),
+        targetLow: t.low,
+        targetHigh: typeof t.high === 'number' ? t.high : t.low,
+        unit: t.unit ?? 'mg',
+      };
+    }
     return {
       tileId: buildTileId(entry.name),
       category: catFromTarget(entry.category),
@@ -428,6 +468,7 @@ export function recompute(): CoverageSnapshot {
       fillPercent: deliveryRatio(t, status, d),
       coveredBy: d.sources,
       aggregateVehicle: status === 'trace',
+      intakeVsTarget,
     };
   });
 

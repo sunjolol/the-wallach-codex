@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 230 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 231 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-06-30 20:47 UTC-05:00 · design-decision · knowledge-drawer
+SESSION 30 Feature A — intake-vs-Wallach-target meter in the essential deep-dive. Compact top-right: intake / goal + fill bar + '% OF WALLACH GOAL' when Wallach states a numeric target; covered/not-covered pill otherwise (no invented ratios). Luneth signed off.
+  ↳ Surfaces the coverage engine's already-computed intake (summed Youngevity regimen) vs target (Wallach targets DB) per essential. coverage.ts exposes intakeVsTarget on CoverageTile; render helpers in knowledge-corpus.ts (keeps knowledge.ts under 600-line budget). Verified: Magnesium 320/620mg 52% partial, Selenium 100/100mcg covered, Dysprosium trace=pill only. Probe +2 assertions, 31/31, build+lint clean. Fixes Luneth's 'can't verify per-mineral doses'. Next: Feature B openable books.
 
 ## 2026-06-30 19:47 UTC-05:00 · round-close · knowledge/corpus
 SESSION 30 b2 — trace-mineral audit + back-fill. Found ~14 canon rare-earth/trace elements tossed from the Rare Earths encyclopedia + 2 never-captured composition/dose tables; all to tier-1 (+17). Dy/Er/Gd/Be now 2-source. kv 204, 985 claims. Board 31/31, probe green.
@@ -801,7 +805,3 @@ Phase ε.2 — Conditions tab (64 conditions, role-grouped deep view w/ doses+ci
 ## 2026-06-24 15:53 UTC-04:00 · round-close · dashboard/knowledge
 Phase ε.1 — sealed Wallach corpus surfaced in the Knowledge drawer: Essential deep-dive claims (paraphrase+verbatim+cite) + data-driven Corpus tab (real claim counts, newest-first, coming-soon books). New embed/schema/reader + corpus_embed_synced (30/30); kv 16to17.
   ↳ Deferred Phase-ε read path lands: corpus_embed.py → slim deterministic embed inlined via esbuild JSON import (file:// can't fetch); core/schemas/corpus.ts Zod boundary mirrors the REAL derive output (SCHEMA.md §4 corrected, §7 documents the embed); state/corpus.ts validated reader. Essential deep-dive shows each essential's claims grouped by kind with the exact book verbatim + citation (§00.A source made visible). Corpus tab de-faked: was a hard-coded BOOKS list with invented cite totals; now books-meta + REAL claim_count (DDDL=94, others queued), newest-first, + books-roadmap.json coming-soon set grayed. Luneth-verified the deep-dive; he caught the Corpus-tab fakery + the Immortality year (2017→2008, re-sealed kv 16→17). Build OK, invariants 30/30, knowledge+coverage+seeded probes green.
-
-## 2026-06-24 14:25 UTC-04:00 · milestone · eden/corpus
-Phase δ: derived indices implemented + sealed (knowledge_version=16). 5 indices from 94 DDDL claims: essentials(90)/conditions(64)/symptoms(8)/other-substances(1)/consistency(1). verify check #8 (re-derive byte-compare) now active. Board 29/29.
-  ↳ corpus_derive.py fully implemented (was stub) + deterministic. Pure top-level slug→entry maps so check #4 (other-substances ∩ canon = ∅) is real. Index layer can't drift from claims. NEXT: Phase ε surface in dashboard (Knowledge drawer Essential Deep-Dive + Condition view) — lands deferred core/schemas/corpus.ts + embed build + state/corpus.ts + probe — so Luneth can test.

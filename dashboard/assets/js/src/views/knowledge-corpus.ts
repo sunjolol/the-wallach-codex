@@ -21,6 +21,7 @@ import type {
   CorpusCondition,
   CorpusEssential,
 } from '../core/schemas/index.js';
+import type { CoverageSnapshot, CoverageStatus, CoverageTile } from '../state/coverage.js';
 import {
   conditionDisplayName,
   essentialDisplayName,
@@ -32,6 +33,53 @@ import {
 
 function escHTML(s: unknown): string {
   return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', '\'': '&#39;' }[c] as string));
+}
+
+// ─── Intake-vs-target meter (essential deep-dive header) ────────────────────
+
+/** The live coverage tile for an essential (carries intake-vs-target + fill). */
+export function tileOf(snapshot: CoverageSnapshot | null, key: string): CoverageTile | null {
+  if (snapshot === null) {
+    return null;
+  }
+  return snapshot.tiles.find(t => t.name === key) ?? null;
+}
+
+/** Trim a dose number for display: whole above 100, one decimal below. */
+function fmtAmount(n: number): string {
+  if (!Number.isFinite(n)) {
+    return '0';
+  }
+  const rounded = n >= 100 ? Math.round(n) : Math.round(n * 10) / 10;
+  return String(rounded);
+}
+
+/**
+ * Compact intake-vs-Wallach-target meter, shown top-right of an essential
+ * deep-dive. Rendered ONLY when the essential carries a numeric Wallach target;
+ * otherwise returns '' and the caller keeps just the covered/not-covered pill
+ * (Wallach states no number, so a ratio would be invented — §00.A). Pure render
+ * over pre-computed coverage state.
+ */
+export function renderIntakeMeter(tile: CoverageTile | null, status: CoverageStatus): string {
+  if (tile === null || tile.intakeVsTarget === null) {
+    return '';
+  }
+  const { deliveredAmount, targetLow, targetHigh, unit } = tile.intakeVsTarget;
+  const pct = Math.round(tile.fillPercent * 100);
+  const barPct = Math.max(0, Math.min(100, pct));
+  const goal = targetLow === targetHigh
+    ? fmtAmount(targetLow)
+    : `${fmtAmount(targetLow)}–${fmtAmount(targetHigh)}`;
+  const tone = (status === 'covered' || status === 'trace')
+    ? 'kd-meter--ok'
+    : (status === 'partial' || status === 'gap' ? 'kd-meter--warn' : 'kd-meter--pending');
+  return `
+    <div class="kd-meter ${tone}">
+      <div class="kd-meter__nums"><strong>${escHTML(fmtAmount(deliveredAmount))}</strong> / ${escHTML(goal)} ${escHTML(unit)}</div>
+      <div class="kd-meter__track"><span class="kd-meter__fill" style="width:${barPct}%"></span></div>
+      <div class="kd-meter__cap">${pct}% OF WALLACH GOAL</div>
+    </div>`;
 }
 
 // ─── Corpus claim rendering (Essentials deep-dive) ─────────────────────────
