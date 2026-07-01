@@ -6,7 +6,7 @@
 
 **PIPELINE per book (proven ×3):** safe_rewrite book .txt → `corpus_resnap --write --fix <fixes.json>` (case/space fixes auto-HEAL, letter changes need --fix) → `corpus_extract finalize --raw <empty>` (rebuild draft from resnapped shard) → edit draft claim_text → verify other drafts==shards → `corpus_seal` → `corpus_embed` → build → invariants → `render_probe_knowledge`. Scripts in scratchpad: {lets,dddl,epigen}_bookfix.py + _claimtext.py.
 
-**KEY STATE:** kv **226** · claims 1006 · conditions 466 · verbatim baseline 283 · board 32/32 · clean tree.
+**KEY STATE:** kv **229** · claims 1006 · conditions 466 · verbatim baseline **258** (LETS 199 · DDDL 39 · IAIYH 20) · board 32/32 · clean tree.
 
 **✅ ANOMALY BASELINE DONE (Luneth ruled: fix C then baseline A+B).** Bucket-C (10 run-together OCR joins) FIXED in LETS+RARE `.txt`+verbatims [24ac253]; then `anomaly_scan.py baseline` allowlisted the 10 TRUE FPs (reframed-448 + Mental · Urine ×2 · Retin · Magnesia · Galium · Valium · SuperOxy ×2). `anomaly_scan.py report` = **0 NEW**; the scanner stays loud on anything new. Baseline: `eden/tools/anomaly-scan-baseline.json`. (Full 3-bucket triage detail preserved in commit 24ac253 + build-log.)
 
@@ -14,7 +14,7 @@
 
 **★ REMAINING OCR WORK (genuine batched job, finalize-checklist — the legit "sweep"):** the typo audit of the ~980 verbatims NOT touched this session + the COMPLETENESS pass (render every table/figure/multi-column page to catch OCR-dropped sections — [[source-correction-policy]]). This is real batched work (needs page rendering), not a copout deferral of already-found fixes.
 
-**★★ RESUME HERE = the LETS verbatim-remediation pass** (224 `verbatim_names_mapped_conditions` violations, HYBRID method; `eden/tools/vb_apply.py` / `vb_orphans.py --sealed` / `vb_propose.py`), folding in `anomaly_scan.py report --book lets-play-doctor` per-book.
+**★★ RESUME HERE = CONTINUE the LETS verbatim-remediation pass — IN PROGRESS.** SESSION 36 did 24 FINDABLE claims (283→258; commits 639489c + c3a36eb). Method: `vb_apply.py lets-play-doctor <spec.json> --write` with `{start,end}` anchors — extend the START back to the ALL-CAPS section heading / naming sentence (Ch10 pattern), KEEP treatment content, ≤500c; dry-run first (validates length + all-named), eyeball readability, apply, then seal → `verbatim_audit.py baseline` → board green. ★ ~62 FINDABLE remain (mechanical, same pattern). ★ Then the **138 NOT_FINDABLE** need Luneth's HYBRID rulings (extend-far / DROP if a sibling claim still names it / SPLIT). ★ Deferred trim/care FINDABLE cases (in build-log): over-500 spans (menopause 223 · crohns 238 · depression 244 — trim end) · naming outside audit window (congestive_heart_failure 229 · vaginitis 252 · chronic_fatigue 272) · page-number-in-span (goiter 287) · anchor quirk (tonsillitis 260) · garbled heading (amblyopia 132) · mineral symptom-lists (007/027/033) · cancer sub-cluster (178/191/192/193/200). OCR errors INSIDE spans (ofadrenal, phenylananine, diy skin) = the deferred book-wide typo audit, NOT this campaign.
 
 **Live memory:** [[linguistic-logic-sweep]] · [[source-correction-policy]] · [[reading-and-correcting-scanned-pdfs]] · [[editing-sealed-corpus-claims]] · [[verbatim-must-name-mapped-condition]] · [[wallach-corpus-revamp]].
 
