@@ -18,6 +18,7 @@ _Legend: `[ ]` open · `[x]` done · `[~]` in progress. Owner: **L** = Luneth's 
 - [ ] **Duplicate-slug audit** — scan for condition slugs that are the same thing under two names (menkes_disease/menkes_syndrome merged SESSION 35; find the rest). (C→L)
 - [ ] **Finish mining remaining books** — LETS Ch10 completeness, then Immortality (2008), any other in-housed books. (C→L)
 - [ ] **Fringe-knowledge disposition** — decide handling of `knowledge/fringe-knowledge/` (uncensored-edition candidate). Memory [[editorial-fringe-exclusion-policy]]. (L)
+- [ ] **Incomplete-description hunt (length rule)** — scan every claim summary+verbatim (and terse logs) for entries a 100–500-char extension would COMPLETE; extend past the 500 soft-limit when it serves truth/education (1200 hard cap), informing L per case. `verbatim_over_soft_limit` lists current >500s. Memory [[verbatim-length-rule]]. (C→L)
 
 ---
 

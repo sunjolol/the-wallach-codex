@@ -1821,6 +1821,33 @@ def check_graphics_integrity():
     return False, f"graphics integrity FAIL: {head}"
 
 
+def check_verbatim_over_soft_limit():
+    """Length rule (Luneth, 2026-07-01): completeness of truth/education OUTRANKS the
+    500-char verbatim limit. 500 is a SOFT threshold, not a truth-limiter — a verbatim
+    MAY exceed it when the full faithful excerpt needs the room, up to a 1200 HARD
+    ceiling (a load-time/file-size guard, enforced as critical by corpus_verify #2).
+    This check is the INFORM surface: it lists every 501-1200 verbatim each board run so
+    the (allowed) over-soft cases stay visible for Luneth's spot-check, never hidden.
+    Informational — never fails here (the hard ceiling is corpus_verify's job).
+    memory: verbatim-length-rule."""
+    claims_dir = ROOT / "eden" / "corpus" / "claims"
+    shards = sorted(claims_dir.glob("claims-*.json"))
+    if not shards:
+        return True, "eden/corpus not installed (bootstrap-guard)"
+    over = []
+    for sh in shards:
+        for c in json.loads(sh.read_text(encoding="utf-8")).get("claims", []):
+            n = len(c.get("verbatim", ""))
+            if n > 500:
+                over.append((c["id"], n))
+    if not over:
+        return True, "all verbatims <= soft-500"
+    over.sort(key=lambda t: -t[1])
+    sample = ", ".join(f"{cid}:{n}c" for cid, n in over[:6])
+    return True, (f"{len(over)} verbatim(s) over soft-500 (ALLOWED when completeness needs it; "
+                  f"listed for Luneth review): {sample}{' ...' if len(over) > 6 else ''}")
+
+
 INVARIANTS = [
     Invariant(
         name="safe_write_canary",
@@ -2069,6 +2096,14 @@ INVARIANTS = [
         truth_anchor="sealed shard verbatims x derived conditions index (what surfaces under a condition), name-or-synonym via eden/tools/condition-synonyms.json; allowlist eden/tools/verbatim-audit-baseline.json",
         severity="critical",
         lesson_ref="SESSION 31 (2026-07-01) — Luneth: a quote shown under a condition must NAME it or the link is unverifiable; regressed because it was prose not a machine guard; memory verbatim-must-name-mapped-condition",
+    ),
+    Invariant(
+        name="verbatim_over_soft_limit",
+        description="informational: lists every verbatim over the 500 soft-limit (up to the 1200 hard ceiling) so allowed over-length excerpts stay visible for review; never fails (hard ceiling is corpus_verify #2)",
+        check_fn=check_verbatim_over_soft_limit,
+        truth_anchor="sealed shard verbatim lengths",
+        severity="info",
+        lesson_ref="SESSION 37 (2026-07-01) — Luneth: completeness of truth/education outranks a char limit; the 500 cap is a load-time/file-size guard, exceed it when needed, but ALWAYS inform; memory verbatim-length-rule",
     ),
     Invariant(
         name="graphics_integrity",

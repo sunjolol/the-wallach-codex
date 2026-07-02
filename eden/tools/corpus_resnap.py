@@ -28,7 +28,7 @@ How a claim is re-located in the corrected text (in order)
     skeleton is ambiguous -> the tool writes nothing and lists it. Supply the
     corrected verbatim text via --fix to resolve, then re-run.
 
-Skeleton match is safe for 60-500 char verbatims: a 50+ char alphanumeric run
+Skeleton match is safe for 60-1200 char verbatims: a 50+ char alphanumeric run
 colliding twice in one book is astronomically unlikely, and a second occurrence
 is treated as BROKEN rather than guessed.
 
@@ -52,7 +52,7 @@ CORPUS = ROOT / "eden" / "corpus"
 CLAIMS_DIR = CORPUS / "claims"
 META_PATH = CORPUS / "books-meta.json"
 
-MIN_VB, MAX_VB = 60, 500
+MIN_VB, MAX_VB = 60, 1200
 
 
 def lf_text(p: Path) -> str:

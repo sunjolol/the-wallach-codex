@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 267 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 268 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 19:30 UTC-05:00 · design-decision · tools
+SESSION 37 — CODIFY verbatim/log length rule: completeness > 500-char limit (hard cap 1200, always inform)
+  ↳ Luneth forever-ruling (2026-07-01): 'WE DO NOT SACRIFICE TRUTH OR EDUCATION FOR A SILLY CHARACTER LIMIT.' The 500-char verbatim cap (and log-length limits) are load-time/file-size guards, NOT truth-limiters. Codified: (1) hard cap raised 500->1200 in corpus_verify #2 (critical), vb_apply, corpus_extract, corpus_resnap; 500 is now a SOFT report threshold. (2) NEW info-invariant verbatim_over_soft_limit lists every 501-1200 verbatim each board run = the persistent inform surface; vb_apply prints a per-claim NOTE. (3) memory verbatim-length-rule + finalize-checklist 'incomplete-description hunt' item. Spirit: exceed 500 WHEN NEEDED for completeness, stay concise by default, never bloat, and ALWAYS inform Luneth per over-limit case. Board 33/33 (new info check), 0 verbatims currently >500.
 
 ## 2026-07-01 19:13 UTC-05:00 · round-close · corpus
 SESSION 37 — Book-OCR bucket: 3 OCR fixes via resnap (203 arrythmia, 369/287 page-markers)
@@ -782,7 +786,3 @@ Phase γ.3 batch 23 — Rare Earths catalog Fe/Iron + Ga/Gallium + F/Fluorine (W
 ## 2026-06-25 03:12 UTC-04:00 · round-close · eden/corpus
 Batch 22 (Cu/Cr) + cesium enrichment + behavioral-rage policy update + fringe salvage: kv 52→55, corpus 223, conditions 91→103
   ↳ 3 parts: (1) Batch 22 RARE-119..124 copper new angles (function, aneurysm mechanism+epidemiology, gray-hair reversal, Table 11-13, congenital cerebral palsy) + Gary Evans chromium +33% lifespan. (2) Cesium enrichment RARE-125 (high-pH cancer therapy specifics). (3) POLICY UPDATE: generic behavioral conditions (violent_behavior/blind_rage/explosive_outbursts/criminal_behavior) now in-scope, not fringe - added to RARE-116/122; salvaged RARE-126 (Preface sociability), 127 (brain-low-fuel rage mechanism Cr/V), 128 (rage<-Cr/V/Cu/Li+sugar), 129 (hair signature low Cu/Zn/Na/Cr/V/Li); enriched RARE-41 (Schrauzer lithium-crime study). Strip only graphic prose (named killers). Memories + criminal-behavior.md fringe note updated. Luneth approved all 3 parts. Board 30/30, build OK, knowledge probe green.
-
-## 2026-06-25 02:45 UTC-04:00 · note · eden/corpus
-Behavioral/mental-condition sweep (Luneth): audited 212 claims, fixed 3 (DDDL-005 selenium+alzheimers, DDDL-078 +panic_attacks, RARE-029 lithium+bipolar_disorder), kv 51→52
-  ↳ Keyword-scanned all claim_texts+verbatims for behavioral/mental terms lacking the slug. 3 hits fixed via draft-edit->reseal: DDDL-005 selenium verbatim names encephalomalacia (Alzheimer's) + liver cirrhosis/anemia/infertility/miscarriages dropped to 'and more' -> restored + added alzheimers/anemia/liver_cirrhosis/infertility/miscarriage; DDDL-078 anxiety/panic protocol -> added panic_attacks; RARE-029 lithium names manic depression with empty conditions -> added bipolar_disorder. Table 11-9 vitamin-deficiency table (not yet extracted) flagged as a future behavioral goldmine. conditions 91->93. Board 30/30, build OK, knowledge probe green.

@@ -8,7 +8,7 @@ Edit spec (JSON): { claim_id: { "start": "...", "end": "...", "drop": [slugs] } 
   - drop: condition slugs to remove from the claim's conditions[] (mapping drop).
   - Either key optional (verbatim-only, or drop-only edit).
 
-Validates transactionally: length 60-500, exact substring, and that EVERY remaining
+Validates transactionally: length 60-1200 (500=soft report threshold), exact substring, and that EVERY remaining
 mapped condition is NAMED by the new verbatim (via verbatim_audit's matcher, so the
 same rule the invariant enforces). Writes nothing unless ALL claims pass (--write);
 default is dry-run.
@@ -72,9 +72,13 @@ for cid, ed in spec.items():
             errors.append(f"{cid}: end anchor not found after start: {ed['end']!r}")
             continue
         new_vb = txt[s: e + len(ed["end"])]
-        if not (60 <= len(new_vb) <= 500):
-            errors.append(f"{cid}: verbatim length {len(new_vb)} outside 60-500")
+        if not (60 <= len(new_vb) <= 1200):
+            errors.append(f"{cid}: verbatim length {len(new_vb)} outside 60-1200")
             continue
+        if len(new_vb) > 500:
+            # SOFT-500 exceeded: allowed when completeness needs it, but ALWAYS
+            # surfaced so Luneth can spot-check (length rule 2026-07-01).
+            print(f"  NOTE {cid}: verbatim {len(new_vb)}c > soft-500 (allowed; INFORM Luneth)")
         c["verbatim"] = new_vb
         c["locator"]["char_offset"] = s
     # drops

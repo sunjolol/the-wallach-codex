@@ -158,8 +158,8 @@ def cmd_finalize(args) -> int:
         if exact is None:
             errors.append(f"{ctx}: verbatim NOT found in book — '{vb_raw[:60]}...'")
             continue
-        if not (60 <= len(exact) <= 500):
-            errors.append(f"{ctx}: snapped verbatim length {len(exact)} outside 60-500")
+        if not (60 <= len(exact) <= 1200):
+            errors.append(f"{ctx}: snapped verbatim length {len(exact)} outside 60-1200")
             continue
         seq += 1
         claims.append({

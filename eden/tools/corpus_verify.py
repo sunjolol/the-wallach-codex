@@ -141,8 +141,8 @@ def run_checks(skip_index_derive_check=False):
             loc = c.get("locator", {}) or {}
             lbid = loc.get("book", bid)
             txt = book_text.get(lbid)
-            if not vb or len(vb) < 60 or len(vb) > 500:
-                fails.append(f"[#2] claim {cid} verbatim length {len(vb)} outside 60–500")
+            if not vb or len(vb) < 60 or len(vb) > 1200:
+                fails.append(f"[#2] claim {cid} verbatim length {len(vb)} outside 60–1200")
             elif txt is None:
                 fails.append(f"[#2] claim {cid} references unknown/unhashed book '{lbid}'")
             else:
