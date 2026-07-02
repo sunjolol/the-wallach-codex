@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 279 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 280 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-02 08:10 UTC-05:00 · round-close · corpus/lets
+LETS FINDABLE 128 (allergies) + 174 (bruxism) + 378 (nervous_tension) extended to full section headings; + botanical consistency sweep (Convallaria->majalis x3 incl 229/253; Citrus/Galium; Digitalis purpurea; Crataegus).
+  ↳ 128 166c->954c full ALLERGIES section (boweltolerance->bowel tolerance). 174 200c->638c full BRUXISM section (stripped page-no 93). 378 395c->567c full NERVOUS TENSION section (Citnis->Citrus aurantium, Gallium odoraturm->Galium odoratum, magalis->majalis). Consistency re-touch via resnap --fix: 229 megalis->majalis + Digitalis purpura->purpurea; 253 dropsy magalis->majalis + hawthome(Crataegusoxycanthus)->hawthorn(Crataegus oxyacantha) + PLANTIS->PLANT IS. FLAGGED faithful: hawthorne variant (book-wide, Luneth: leave), Erigeron canadense. safe_write x10 -> resnap --fix{229,253,378} (0 broken, 3 healed, 345 relocated) -> finalize -> vb_apply{128,174,378} -> seal kv237->238 -> embed. violations 206->203, FINDABLE 39->36, NEW=0, orphans 61->59, board 34/34, probe PASS.
 
 ## 2026-07-02 07:56 UTC-05:00 · round-close · corpus/lets
 LETS FINDABLE 229 (congestive_heart_failure) + 440 (cystic_fibrosis) remediated to name their conditions; Luneth per-claim rulings + visual sign-off.
@@ -782,7 +786,3 @@ Session 3 (2026-06-25 PM) wrap — Phase γ.3 catalog second half I→Na + Nb/Nd
 ## 2026-06-25 14:17 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 33 — Rare Earths catalog: Nd/Neodymium + Ni/Nickel, 4 claims (Nd lifespan-doubling; Ni metalloenzyme cofactor + Fe/Zn absorption, Table 11-21 deficiency symptoms, B12 interdependence). kv 70→71, corpus 288.
   ↳ Neodymium RARE-191: a 'light' rare earth proven to enhance normal cell growth and double the life spans of laboratory species (parallels La/Eu). Nickel RARE-192..194: functions as a cofactor for metalloenzymes and facilitates GI absorption of iron and zinc (<10% of metallic nickel absorbed, accumulates in RNA, deficiency first reported 1970); Table 11-21 nickel-deficiency symptoms in the rat (poor growth, lower hematocrit/anemia, depressed liver oxidative ability, high newborn mortality, rough/dry hair coat, dermatitis, delayed puberty, poor zinc absorption); nickel-B12 interdependence (optimal B12 needed for nickel function, B12 deficiency raises nickel need). READ + confirmed geology/radioactive (no claim): Nb/Niobium [canon], Ne/Neon, Np/Neptunium (radioactive). USA Today 'Did the dinosaurs suffocate' clipping skipped (O/Oxygen sidebar). OCR fixes: B,,→B12, ¢-bullets removed, RareEarth→Rare Earth. Gates: corpus_verify PASS (6 books), build OK, invariants 30/30, knowledge probe 0 errors. NEXT: O/Oxygen (a ~1100-line behemoth — fresh context).
-
-## 2026-06-25 14:10 UTC-04:00 · design-decision · chronicle/contradictions
-Logged Adictis→Adriatic as a PROVISIONAL, reversible editorial correction (Luneth not 100% sure it should be corrected; keep applying but keep findable/undoable).
-  ↳ Per Luneth's request: the Adictis→Adriatic correction (applied this session across 4 sealed Eden books in batch 25) is now recorded in chronicle/contradictions/2026-06-25-adictis-to-adriatic.md as ACTIVE + REVERSIBLE. Reason: 'Adictis' can't be found anywhere (strongly implies an OCR/print error for Adriatic, since the Pisila/Polje/Milahnici populations are Adriatic/Croatian), but Luneth isn't 100% certain — so we keep correcting it while making the change trivially findable and undoable. The record lists the 4 books changed (rare-earths, dddl, epigenetics, immortality), notes no claim verbatim/claim_text contains the word, and gives a 5-minute revert recipe (grep 'Adriatic Islands' → safe_write replace back → resnap → reseal). Memory reading-and-correcting-scanned-pdfs updated with the general lesson: log uncertain corrections as reversible decisions in chronicle/contradictions/. Doc-only change; board 30/30.
