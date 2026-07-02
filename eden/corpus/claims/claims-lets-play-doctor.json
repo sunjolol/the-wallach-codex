@@ -9217,7 +9217,7 @@
         "edema"
       ],
       "claim_text": "Congestive heart failure can be caused by lung disease, high blood pressure, and nutritional deficiencies including vitamin B-1 and selenium, and usually shows a rapid irregular heartbeat and edema (tissue-water swelling, or “dropsy”) in the legs and/or abdomen. Wallach's two standout herbs — even used by orthodox doctors — are lily of the valley (Convallaria megalis) and foxglove (Digitalis purpura), taken as whole-leaf preparations or fluid extracts; foxglove is potentially dangerous, so use commercially prepared sources and get advice on doses. English hawthorn (Crataegus oxyacantha) helps regulate heart rhythm and treat the dropsy of congestive heart failure but may not be strong enough in severe or advanced cases. The precipitating cause should be identified and dealt with aggressively.",
-      "verbatim": "Two\nmedications stand out in their efficacy (these\nherbs are even used by the \"orthodox\" doctors\n): 1) Lily of the valley (Convallaria megalis)\nand 2) foxglove (Digitalis purpura). These\ntwo herbs can be taken as whole leaf prepara-\ntions or fluid extracts (foxglove is potentially\ndangerous so you should get commercially\nprepared sources and advice on doses).",
+      "verbatim": "CONGESTIVE HEART FAILURE: can be\ncaused by lung disease, high blood pressure,\nnutritional deficiencies including B-1 and se-\nlenium. There is usually a rapid irregular heart\nbeat and edema (swelling from tissue water)\nin the legs and/or belly cavity (\"dropsy\"). Two\nmedications stand out in their efficacy (these\nherbs are even used by the \"orthodox\" doctors\n): 1) Lily of the valley (Convallaria megalis)\nand 2) foxglove (Digitalis purpura). These\ntwo herbs can be taken as whole leaf prepara-\ntions or fluid extracts (foxglove is potentially\ndangerous so you should get commercially\nprepared sources and advice on doses). En-\nglish hawthorne (Crataegus oxyacantha) is a\nuseful herb for regulating heart rhythm and\ntreating dropsy of congestive heart failure,\nhowever, may not be strong enough in severe\nor advanced cases. The precipitating cause of\nthe congestive heart failure should be identi-\nfied and dealt with aggressively.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -9225,7 +9225,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 242762
+        "char_offset": 242500
       },
       "dose": null,
       "tags": [
@@ -17578,7 +17578,7 @@
       ],
       "symptoms": [],
       "claim_text": "The sweat test is a nonspecific test that measures the amount of electrolytes (sodium, chlorides, and potassium) in sweat. It was originally meant to be a specific genetic test for cystic fibrosis, but today it is found to be positive in 17 different conditions, including food allergies, starvation, kwashiorkor, and celiac disease. The mechanism is related to essential fatty acid deficiencies and the resulting lack of certain prostaglandins (short-lived, hormone-like substances) that control sweat electrolyte levels.",
-      "verbatim": "The mechanism is related to essen-\ntial fatty acid deficiencies and thus the lack of\ncertain prostaglandins (short lived hormone -\n- like substances) which control sweat electro-\nlyte levels.",
+      "verbatim": "SWEAT TEST: a nonspecific test that mea-\nsures the amount of electrolytes (i.e., sodium,\nchlorides and potassium) in sweat; originally\nit was to be a specific genetic test for cystic\nfibrosis (CF); however, today it has been found\nto be positive in 17 different diseases, food\nallergies, starvation, kwashiorkor, celiac dis-\nease, etc. The mechanism is related to essen-\ntial fatty acid deficiencies and thus the lack of\ncertain prostaglandins (short lived hormone -\n- like substances) which control sweat electro-\nlyte levels.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -17586,7 +17586,7 @@
         "page": 169,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 459017
+        "char_offset": 458678
       },
       "dose": null,
       "tags": [
@@ -17621,7 +17621,7 @@
         "page": 170,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 459390
+        "char_offset": 459387
       },
       "dose": null,
       "tags": [
@@ -17655,7 +17655,7 @@
         "page": 170,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 460242
+        "char_offset": 460239
       },
       "dose": null,
       "tags": [
@@ -17698,7 +17698,7 @@
         "page": 170,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 460775
+        "char_offset": 460772
       },
       "dose": null,
       "tags": [
@@ -17735,7 +17735,7 @@
         "page": 170,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 462040
+        "char_offset": 462037
       },
       "dose": null,
       "tags": [
@@ -17775,7 +17775,7 @@
         "page": 171,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 462572
+        "char_offset": 462569
       },
       "dose": null,
       "tags": [
@@ -17807,7 +17807,7 @@
         "page": 171,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 462873
+        "char_offset": 462870
       },
       "dose": null,
       "tags": [
@@ -17843,7 +17843,7 @@
         "page": 171,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 463457
+        "char_offset": 463454
       },
       "dose": null,
       "tags": [
@@ -17882,7 +17882,7 @@
         "page": 171,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 463788
+        "char_offset": 463785
       },
       "dose": null,
       "tags": [
@@ -17919,7 +17919,7 @@
         "page": 171,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 464368
+        "char_offset": 464365
       },
       "dose": null,
       "tags": [
@@ -17962,7 +17962,7 @@
         "page": 171,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 465334
+        "char_offset": 465331
       },
       "dose": null,
       "tags": [
@@ -18005,7 +18005,7 @@
         "page": 172,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 466731
+        "char_offset": 466728
       },
       "dose": null,
       "tags": [
@@ -18050,7 +18050,7 @@
         "page": 172,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 467370
+        "char_offset": 467367
       },
       "dose": null,
       "tags": [
@@ -18089,7 +18089,7 @@
         "page": 172,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 467928
+        "char_offset": 467925
       },
       "dose": null,
       "tags": [
@@ -18126,7 +18126,7 @@
         "page": 172,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 468468
+        "char_offset": 468465
       },
       "dose": null,
       "tags": [
@@ -18160,7 +18160,7 @@
         "page": 172,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 469456
+        "char_offset": 469453
       },
       "dose": null,
       "tags": [
@@ -18194,7 +18194,7 @@
         "page": 173,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 470842
+        "char_offset": 470839
       },
       "dose": null,
       "tags": [
@@ -18233,7 +18233,7 @@
         "page": 173,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 471232
+        "char_offset": 471229
       },
       "dose": null,
       "tags": [
@@ -18273,7 +18273,7 @@
         "page": 173,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 471828
+        "char_offset": 471825
       },
       "dose": null,
       "tags": [
@@ -18311,7 +18311,7 @@
         "page": 174,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 472856
+        "char_offset": 472853
       },
       "dose": null,
       "tags": [
@@ -18354,7 +18354,7 @@
         "page": 174,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 473343
+        "char_offset": 473340
       },
       "dose": null,
       "tags": [
@@ -18389,7 +18389,7 @@
         "page": 174,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 473709
+        "char_offset": 473706
       },
       "dose": null,
       "tags": [
@@ -18432,7 +18432,7 @@
         "page": 174,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 473925
+        "char_offset": 473922
       },
       "dose": null,
       "tags": [
@@ -18469,7 +18469,7 @@
         "page": 174,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 474542
+        "char_offset": 474539
       },
       "dose": null,
       "tags": [
@@ -18505,7 +18505,7 @@
         "page": 174,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 474827
+        "char_offset": 474824
       },
       "dose": null,
       "tags": [
@@ -18541,7 +18541,7 @@
         "page": 174,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 475017
+        "char_offset": 475014
       },
       "dose": null,
       "tags": [
@@ -18582,7 +18582,7 @@
         "page": 174,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 475261
+        "char_offset": 475258
       },
       "dose": null,
       "tags": [
@@ -18811,7 +18811,7 @@
         "page": 176,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 479734
+        "char_offset": 479731
       },
       "dose": null,
       "tags": [
@@ -18843,7 +18843,7 @@
         "page": 176,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 478590
+        "char_offset": 478587
       },
       "dose": null,
       "tags": [
@@ -18875,7 +18875,7 @@
         "page": 176,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 479111
+        "char_offset": 479108
       },
       "dose": null,
       "tags": [
@@ -18907,7 +18907,7 @@
         "page": 179,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 483662
+        "char_offset": 483659
       },
       "dose": null,
       "tags": [
@@ -18939,7 +18939,7 @@
         "page": 179,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 485530
+        "char_offset": 485527
       },
       "dose": null,
       "tags": [
@@ -18971,7 +18971,7 @@
         "page": 180,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 489591
+        "char_offset": 489588
       },
       "dose": null,
       "tags": [
@@ -19003,7 +19003,7 @@
         "page": 182,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 490998
+        "char_offset": 490995
       },
       "dose": null,
       "tags": [
@@ -19035,7 +19035,7 @@
         "page": 182,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 491524
+        "char_offset": 491521
       },
       "dose": null,
       "tags": [
@@ -19067,7 +19067,7 @@
         "page": 182,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 494277
+        "char_offset": 494274
       },
       "dose": null,
       "tags": [

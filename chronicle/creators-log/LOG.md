@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 278 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 279 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-02 07:56 UTC-05:00 · round-close · corpus/lets
+LETS FINDABLE 229 (congestive_heart_failure) + 440 (cystic_fibrosis) remediated to name their conditions; Luneth per-claim rulings + visual sign-off.
+  ↳ 229: verbatim 361c->931c (Option B, full CONGESTIVE HEART FAILURE section, names condition 3x incl hawthorne + precipitating-cause; length-rule call). 440: cleaned OCR (169 page-no, teen->been, allergies.starvation) then 191c->527c full SWEAT TEST paragraph naming cystic fibrosis (CF). Book-OCR clean-as-touched: B-l->B-1 (CHF cell only). Pipeline safe_write x4 -> resnap (36 relocated 0 broken) -> finalize -> vb_apply -> seal kv236->237 -> embed. violations 208->206, FINDABLE 41->39, NEW=0, orphans steady 61, board 34/34, render_probe_knowledge PASS.
 
 ## 2026-07-02 07:28 UTC-05:00 · session-end · session
 SESSION 38 END: #3 umbrella taxonomy COMPLETE (a+b), #1a Table 6-1 cleanup + NEW dermatosis condition, otosis->exostosis, #4 book-OCR. 6 chunks pushed, board 34/34, kv236, violations 217->208. RESUME = LETS FINDABLE/#5 HYBRID rulings, to work through with Luneth.
@@ -782,7 +786,3 @@ Phase γ.3 batch 33 — Rare Earths catalog: Nd/Neodymium + Ni/Nickel, 4 claims 
 ## 2026-06-25 14:10 UTC-04:00 · design-decision · chronicle/contradictions
 Logged Adictis→Adriatic as a PROVISIONAL, reversible editorial correction (Luneth not 100% sure it should be corrected; keep applying but keep findable/undoable).
   ↳ Per Luneth's request: the Adictis→Adriatic correction (applied this session across 4 sealed Eden books in batch 25) is now recorded in chronicle/contradictions/2026-06-25-adictis-to-adriatic.md as ACTIVE + REVERSIBLE. Reason: 'Adictis' can't be found anywhere (strongly implies an OCR/print error for Adriatic, since the Pisila/Polje/Milahnici populations are Adriatic/Croatian), but Luneth isn't 100% certain — so we keep correcting it while making the change trivially findable and undoable. The record lists the 4 books changed (rare-earths, dddl, epigenetics, immortality), notes no claim verbatim/claim_text contains the word, and gives a 5-minute revert recipe (grep 'Adriatic Islands' → safe_write replace back → resnap → reseal). Memory reading-and-correcting-scanned-pdfs updated with the general lesson: log uncertain corrections as reversible decisions in chronicle/contradictions/. Doc-only change; board 30/30.
-
-## 2026-06-25 14:06 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 32 — Rare Earths catalog: Na/Sodium, 5 claims (salt-craving + Japanese high-salt longevity, Na/Cl/K electrolyte trio, Addison's disease, infant water-intoxication, Na-deficiency treatment). kv 69→70, corpus 284.
-  ↳ Sodium RARE-186..190 (catalog per-element angles; the anti-low-salt/heat-wave thesis was already RARE-026/027 from Ch.2): salt hunger as a basic craving (carnivores crave less since meat has NaCl; herbivores/vegetarians demand it since grains/veg/fruit lack it) with western intake 5-12 g/day vs Japanese 28 g/day who outlive Americans by 4 years; sodium/chloride/potassium as the three electrolytes (body content 2%/5%/3%, Na+Cl extracellular, K intracellular, 4 functions: water balance, osmotic equilibrium, acid-base, muscular irritability); Addison's disease (adrenal cortex failure) → loss of Na/K retention, weakness, muscle cramps, weight loss, salt hunger (relieved by NaCl or adrenal hormones); NaCl deficiency in hot weather/heavy work + infant water intoxication from low-Na formula (doctors' Na paranoia) → brain swelling → death; treatment = water + salt orally or IV 0.9% saline. OCR fixes: NaC]→NaCl, retension→retention; removed 355 page-marker + PRREREEED garble. Gates: corpus_verify PASS (6 books), build OK, invariants 30/30, knowledge probe 0 errors. NEXT: Nb/Niobium, Ne/Neon, Ni/Nickel, then O/Oxygen.
