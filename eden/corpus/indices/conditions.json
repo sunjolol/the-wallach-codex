@@ -3981,7 +3981,7 @@
   },
   "dermatitis": {
     "display_name": "Dermatitis",
-    "claim_count": 31,
+    "claim_count": 30,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000111"
@@ -3996,7 +3996,6 @@
         "WAL-CLM-EPIGEN-000059",
         "WAL-CLM-EPIGEN-000108",
         "WAL-CLM-LETS-000004",
-        "WAL-CLM-LETS-000008",
         "WAL-CLM-LETS-000011",
         "WAL-CLM-LETS-000012",
         "WAL-CLM-LETS-000019",
@@ -4027,7 +4026,6 @@
       "biotin",
       "calcium",
       "chromium",
-      "copper",
       "inositol",
       "nickel",
       "omega-3",
@@ -4061,6 +4059,22 @@
       "epigenetics",
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "dermatosis": {
+    "display_name": "Dermatosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-LETS-000008"
+      ]
+    },
+    "essentials_involved": [
+      "copper"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "lets-play-doctor"
     ]
   },
   "diabetes": {
@@ -7525,7 +7539,7 @@
   },
   "liver_disease": {
     "display_name": "Liver Disease",
-    "claim_count": 26,
+    "claim_count": 27,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -7545,6 +7559,7 @@
         "WAL-CLM-EPIGEN-000045",
         "WAL-CLM-EPIGEN-000052",
         "WAL-CLM-EPIGEN-000063",
+        "WAL-CLM-LETS-000008",
         "WAL-CLM-LETS-000011",
         "WAL-CLM-LETS-000030",
         "WAL-CLM-RARE-000122",

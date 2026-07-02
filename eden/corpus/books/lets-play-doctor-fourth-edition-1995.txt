@@ -2152,7 +2152,7 @@ liver dysfunction
 COPPER DEFICIENCY
 alopecia
 anemia (microcytic)
-aneutysm / cerebral hemorrage
+aneurysm / cerebral hemorrhage
 criminal behavior
 depression
 dermatosis
@@ -2160,13 +2160,11 @@ diarrhea
 fatigue
 fragile bones / arthritis
 hypercholesterolemia
-44
-TABLE 6-1 . Nutrient Deficiency / Toxicity Flow Chart (Continued)
 otosis ("lipping" of epiphyseal
 plates)
 respiratory disease
-weakness / liver cirritosis
-Swachman's syndrome
+weakness / liver cirrhosis
+Shwachman's syndrome
 COPPER TOXICITY
 depression
 irritability
@@ -2316,8 +2314,6 @@ infections
 insomnia
 muscle spasms
 nausea & vomiting
-46
-TABLE 6-1 . Nutrient Deficiency / Toxicity Flow Chart (Continued)
 nervousness
 tachycardia
 weakness
@@ -2394,8 +2390,6 @@ fatigue
 geographic tongue
 impaired wound healing
 irritability
-47
-TABLE 6-1 . Nutrient Deficiency / Toxicity Flow Chart (Continued)
 nervousness
 neurologic symptoms
 seizures
@@ -2472,8 +2466,6 @@ edema (especially low
 protein diets)
 hyperactivity
 hypertension
-48
-TABLE 6-1 . Nutrient Deficiency / Toxicity Flow Chart (Continued)
 hypertonia
 irritability
 polydipsia
@@ -2551,8 +2543,6 @@ splenomegaly
 weight loss
 VITAMIN C DEFICIENCY
 bleeding gums/loose teeth
-49
-TABLE 6-1 . Nutrient Deficiency / Toxicity Flow Chart (Continued)
 depression/malaise/tiredness
 easy bruising
 impaired wound healing
