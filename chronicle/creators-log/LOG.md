@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 286 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 287 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-02 12:08 UTC-05:00 · round-close · corpus/lets-play-doctor
+LETS FINDABLE 233 convulsions/epilepsy — Option B extend (verbatim→full CONVULSIONS section, names convulsions+epilepsy+seizures); 3 source fixes; kv 241→242; baseline 203→201.
+  ↳ Extended WAL-CLM-LETS-000233 verbatim to the full CONVULSIONS section heading→'be of great value here.' (1172c) so Wallach's own words name the mapped conditions. Book-source corrections inside the span (source-correction-policy): strip page-106 intrusion, Paeonia officinalia→officinalis, andskullcap→and skullcap. Pipeline: safe_write→resnap(--fix, 242 relocated 0 broken)→finalize→vb_apply Option B→seal(kv242,corpus_verify PASS)→embed→build→invariants 37/37→render_probe_knowledge PASS→verbatim_audit baseline (FINDABLE 36→35). Length 1172c>soft-500 allowed+logged (length rule). DISCOVERY: display does not rejoin OCR line-wrap hyphens (renders 'uncon- trolled'); LETS 267/481 claims un-reflowed vs other 4 books done — Luneth ruled commit 233 now, full LETS source de-hyphenation is the next chunk.
 
 ## 2026-07-02 11:36 UTC-05:00 · session-end · session
 SESSION 39 END — 11 chunks pushed, board 34→37/37, kv 236→241, clean tree. FINDABLE 229/440/128/174/378 shipped, then escalated into the TERM-GLOSS forever-standard (botanical + abbreviations + NEW glossary/tooltip UI), all machine-enforced. Front COMPLETE; FINDABLE resumes next.
@@ -782,7 +786,3 @@ Phase γ.3 batch 40 — Rare Earths S/Sulfur: 5 claims RARE-219..223 (definition
 ## 2026-06-25 16:38 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 39 — Rare Earths Re/Rh/Ru confirmed geology (no claim) + RARE-218 Rn/Radon (carcinogenic household hazard, other_substances=[radon]). kv 76→77, corpus 311→312, conditions 141, board 30/30, knowledge probe green.
   ↳ Re/Rhenium (canon yet geology-only — 'accumulates in thyroid tissue' = bioaccumulation, no function), Rh/Rhodium (0.001 ppm), Ru/Ruthenium (0.001 ppm + RuO4-toxic aside too short for a claim) all read + confirmed geology-only. RARE-218 Rn/Radon (toxic, non-canon → other_substances=[radon], cond=cancer, kind=mechanism): all isotopes radioactive (half-life 54 sec to 3.8 days); carcinogenic and highly toxic when inhaled; a common odorless/colorless household hazard requiring a detection kit. Rn paragraph reflowed (de-hyphenated). resnap 0 broken (all 217 prior claims upstream). Next: S/Sulfur as a dedicated batch 40 (rich canon, ~5 claims; structural sentence split by a firefighter-death news clipping on p377 that stays raw; several book typos kept faithful). Claim reviewed + approved by Luneth before commit.
-
-## 2026-06-25 16:19 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 38 — Rare Earths Pd→Rb: confirmed Pd/Pm/Po/Pt/Pu/Ra geology/radioactive (no claim) + 2 canon claims RARE-216 Pr (lifespan-doubling) + RARE-217 Rb (replaces K electrolyte function). kv 75→76, corpus 309→311, conditions 141, board 30/30, knowledge probe green.
-  ↳ Pd (accumulates liver/kidney), Pm (radioactive 2.6yr fission product), Po (2x10^-10 ppm), Pt (0.005 ppm), Pu (radioactive 24,000yr, nuclear), Ra (all isotopes radioactive) — all read + confirmed geology/radioactive, no claims. RARE-216 Pr/Praseodymium (canon): 'light' rare earth enhances proliferation of normal cell growth + doubles lab-species lifespan — mirrors the La/Nd/Eu lifespan claims (RARE-158/191/140), kind=mechanism. RARE-217 Rb/Rubidium (canon): replaces the electrolyte function of potassium in many species (bacteria/algae/fungi/echinoderms-starfish), kind=mechanism. Two tiny targeted reflows of the claim paragraphs (Pr newline-merge; Rb de-hyphenate 'inverte-brates'); resnap 0 broken (all 215 prior claims upstream). No new condition slugs. Claims reviewed + approved by Luneth before commit.
