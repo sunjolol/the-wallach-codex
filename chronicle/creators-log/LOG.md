@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 283 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 284 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-02 10:05 UTC-05:00 · milestone · glossary+tools
+Glossary/tooltip feature Phase 1: NEW glossary.json (132 plain-language medical-jargon definitions) + glossary_wellformed + jargon_terms_glossed invariants (coverage guard). Luneth chose glossary layer over inline-glossing pervasive jargon.
+  ↳ Definitions are general reference (no §00.A / no numbers; guard forbids digits). Full coverage of current -osis/-itis/-emia jargon; warning-invariant forces growth. Both negative-tested. board 35->37/37, build OK, probe PASS. NEXT Phase 2 = glossify render + tooltip UI -> visual sign-off gate.
 
 ## 2026-07-02 09:51 UTC-05:00 · round-close · corpus+tools
 Term-gloss ABBREVIATION pass: 15 expansions/14 claims (DMSO, PABA, GI, CEA, PSA, TCA, EPA-agency) + abbrev_require_explained enforcement (18 abbrevs). Luneth line: expand obscure, leave commonly-grasped, don't clutter.
@@ -782,7 +786,3 @@ Phase γ.3 batch 37 — Rare Earths Pa (confirmed geology/radioactive, no claim)
 ## 2026-06-25 15:56 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 36 — Rare Earths P/Phosphorus: 7 claims RARE-204..210 (definition x2, interaction x2, dose, deficiency_sign, mechanism). kv 73→74, corpus 297→304, conditions 138→139, board 30/30, knowledge probe green.
   ↳ Mined the P/Phosphorus per-element catalog entry (p373). Claims: (204) most-functions mineral, structural bones/teeth, nucleic acids/enzymes/ATP/RBC + B-complex coenzyme dependence; (205) body content — 2nd to Ca, 22%, ~800g/700g as apatite + blood buffer; (206) high-protein diets → elevated P → ↑Ca requirement → osteoporosis/arthritis/hypertension/loose_teeth + phytate binds Ca/Fe/Zn; (207) intake 1,000-1,500 mg/day + form-dependent absorption (metallic 3-5%, infants 8-12%, chelated 40-50%, colloidal 98%, Ca:P 1:1) — structured dose object populated and render-verified; (208) deficiency widespread/universal/fatal via ATP synthesis drop → neuromuscular/skeletal/blood/kidney; (209) hypophosphatemia causes (IV glucose/TPN, antacids, hyperparathyroidism, diabetic-acidosis mistreatment, diuretics, sweating, alcoholism); (210) vegetarians/vegans phytate → rarely P-deficient but always other mineral deficiencies (Ca/Cu/Cr/V/Li/Zn). Entry reflowed: de-hyphenated, '372' page footer dropped (it split 'important / essential mineral'), sentence-aware rejoin. resnap 0 broken. Ca:P 1:1 here (optimal absorption) vs DDDL-052's 2:1 (dietary ideal) = different contexts, both faithful. Faithful OCR oddities kept in verbatims (bloods's, icluding, 'V. Li', 'igneous.'); claim_texts cleaned. Next: Pa/Protoactinium (geology/radioactive — confirm no claim) then Pb/Lead (toxic). Claims reviewed + approved by Luneth before commit.
-
-## 2026-06-25 15:30 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 35 — Rare Earths O/Oxygen PART 2 (block 3, p372): 4 claims RARE-200..203 (singlet-O resolution; food-grade H2O2 therapy; oxygen/ozone therapy history+indications; ozone therapeutic window 20-100 µg/ml). kv 72→73, corpus 293→297, conditions 134→138, board 30/30.
-  ↳ Mined the final Oxygen block (oxygen-therapy mechanism, p372) flagged across last session's context-screening reset. Block-3 prose reflowed (de-hyphenated; dropped [reece]/PERRET OCR garble splitting the ozone-history paragraph; chemical equation kept as 2-line block). resnap 0 broken (all 199 prior claims upstream of the edit). Os/Osmium READ + confirmed geology-only (no claim); next real element = P/Phosphorus. 3 OCR/book discrepancies flagged OPEN and left .txt byte-faithful pending a ruling: .txt 'wml' vs book-printed 'u/ml' (=µg/ml, used in claim_text); book's own misspelling 'Vicbahn' vs real author Renate Viebahn (corrected in claim_text only); OCR 'peopk:' vs 'people'. None sit inside an extracted verbatim. Claims reviewed + approved by Luneth before commit.

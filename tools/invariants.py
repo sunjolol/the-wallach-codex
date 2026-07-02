@@ -1912,6 +1912,91 @@ def check_claim_text_term_gloss():
                   f"({len(abbrevs)} obscure abbreviations explained in-claim)")
 
 
+def check_glossary_wellformed():
+    """Glossary integrity (SESSION 39 Phase 1): dashboard/assets/data/glossary.json parses,
+    every entry has a non-empty term + plain definition + category, terms are unique, and NO
+    definition asserts a number/dose (the glossary is plain-language reference ONLY, never a
+    Wallach claim or target -- keeps it clear of the §00.A source rule). memory:
+    term-gloss-standard."""
+    p = ROOT / "dashboard" / "assets" / "data" / "glossary.json"
+    if not p.exists():
+        return True, "glossary.json not installed (bootstrap-guard)"
+    try:
+        g = json.loads(p.read_text(encoding="utf-8"))
+    except Exception as e:
+        return False, f"glossary.json does not parse: {e}"
+    terms = g.get("terms")
+    if not isinstance(terms, list) or not terms:
+        return False, "glossary.json has no 'terms' array"
+    seen = set()
+    problems = []
+    for t in terms:
+        name = (t.get("term") or "").strip()
+        if not name:
+            problems.append("entry with empty term")
+            continue
+        if name.lower() in seen:
+            problems.append(f"duplicate term {name!r}")
+        seen.add(name.lower())
+        if not (t.get("plain") or "").strip():
+            problems.append(f"{name}: empty definition")
+        if not (t.get("category") or "").strip():
+            problems.append(f"{name}: missing category")
+        if re.search(r"\d", t.get("plain", "")):
+            problems.append(f"{name}: definition has a digit (glossary must not assert numbers)")
+    if problems:
+        return False, f"{len(problems)} glossary problem(s): {'; '.join(problems[:6])}"
+    return True, f"glossary.json well-formed -- {len(terms)} plain-language definitions, no numeric assertions"
+
+
+_JARGON_SUFFIX = re.compile(
+    r"\b[a-z]{4,}(osis|itis|emia|aemia|uria|pathy|plasia|trophy|algia|ectomy|otomy|graphy|"
+    r"genic|lysis|stasis|sclerosis|megaly|penia|rrhea|rrhage|edema|oma|cele|plegia|otic)\b", re.I)
+# common words + botanical scientific-name fragments (Fucus vesiculosis, Aristolochia
+# clematitis) that match the suffix pattern but are NOT medical jargon to gloss
+_JARGON_SKIP = {
+    "diagnosis", "prognosis", "analysis", "emphasis", "osmosis", "symbiosis", "hypnosis",
+    "homeopathy", "naturopathy", "osteopathy", "macrobiotic", "probiotic", "antibiotic",
+    "hypoallergenic", "allergenic", "photography", "orthotic", "glucogenic", "ketogenic",
+    "proteinogenic", "pathogenic", "bronchogenic", "bronchiogenic", "glycolysis", "hemolysis",
+    "paralysis", "clematitis", "vesiculosis",
+}
+
+
+def check_jargon_terms_glossed():
+    """Term-gloss coverage guard (SESSION 39 Phase 1): every medical-jargon word (a latinate
+    -osis/-itis/-emia/... term, minus a small common-word + botanical-fragment skip list) that
+    appears in a front-facing claim_text SHOULD have a plain-language entry in glossary.json so
+    the tooltip layer can explain it. Surfaced as a warning every board run so coverage grows and
+    no un-glossed jargon is silently left behind (the heuristic can false-match a scientific name,
+    so this warns rather than hard-blocks). memory: term-gloss-standard, perfect-entry-no-deferral."""
+    gp = ROOT / "dashboard" / "assets" / "data" / "glossary.json"
+    claims_dir = ROOT / "eden" / "corpus" / "claims"
+    shards = sorted(claims_dir.glob("claims-*.json"))
+    if not shards or not gp.exists():
+        return True, "eden/corpus or glossary.json not installed (bootstrap-guard)"
+    g = json.loads(gp.read_text(encoding="utf-8"))
+    keys = set()
+    for t in g.get("terms", []):
+        keys.add(t["term"].lower())
+        for a in t.get("aliases", []):
+            keys.add(a.lower())
+    gaps = {}
+    for sh in shards:
+        for c in json.loads(sh.read_text(encoding="utf-8")).get("claims", []):
+            ct = c.get("claim_text") or ""
+            for m in _JARGON_SUFFIX.finditer(ct):
+                w = m.group(0).lower()
+                if w in _JARGON_SKIP or w in keys:
+                    continue
+                gaps.setdefault(w, c["id"])
+    if gaps:
+        sample = ", ".join(f"{w} ({cid})" for w, cid in list(gaps.items())[:6])
+        return False, (f"{len(gaps)} jargon term(s) in claim_text missing a glossary definition "
+                       f"(add to glossary.json): {sample}{' ...' if len(gaps) > 6 else ''}")
+    return True, f"all medical-jargon terms in claim_text have a glossary entry ({len(keys)} glossary keys)"
+
+
 INVARIANTS = [
     Invariant(
         name="safe_write_canary",
@@ -2192,6 +2277,22 @@ INVARIANTS = [
         truth_anchor="eden/tools/term-gloss-lexicon.json {defects, common_swaps} scanned against every sealed claim_text (+ verbatim for defects)",
         severity="critical",
         lesson_ref="SESSION 39 (2026-07-02) -- Luneth mandate: every reader-facing term gets a minimal common gloss (common-word-first) and source nomenclature defects get fixed; enforce so summaries never drift back into a fixed loop; memory term-gloss-standard + perfect-entry-no-deferral",
+    ),
+    Invariant(
+        name="glossary_wellformed",
+        description="dashboard/assets/data/glossary.json parses; every entry has term+plain+category; terms unique; NO definition asserts a number/dose (plain-language reference only)",
+        check_fn=check_glossary_wellformed,
+        truth_anchor="dashboard/assets/data/glossary.json structural scan",
+        severity="critical",
+        lesson_ref="SESSION 39 (2026-07-02) -- glossary/tooltip layer Phase 1; plain-language term definitions carry no §00.A obligation but must never assert a number; memory term-gloss-standard",
+    ),
+    Invariant(
+        name="jargon_terms_glossed",
+        description="every medical-jargon word (latinate -osis/-itis/-emia/... minus common-word + botanical-fragment skips) in a claim_text has a plain-language entry in glossary.json; warns to force coverage growth",
+        check_fn=check_jargon_terms_glossed,
+        truth_anchor="_JARGON_SUFFIX matches in every sealed claim_text vs glossary.json keys+aliases",
+        severity="warning",
+        lesson_ref="SESSION 39 (2026-07-02) -- Luneth 'nothing behind me': glossary coverage guard so no un-glossed jargon slips; warning (heuristic can false-match a scientific name); memory term-gloss-standard + perfect-entry-no-deferral",
     ),
 ]
 

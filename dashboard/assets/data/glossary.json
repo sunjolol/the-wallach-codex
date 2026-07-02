@@ -1,0 +1,732 @@
+{
+  "_doc": "Plain-language term glossary for the Knowledge drawer tooltip layer (SESSION 39). Each entry gives a SHORT, plain-language definition of a medical/technical term so no reader is left not understanding a word (memory: term-gloss-standard). These are GENERAL descriptive reference definitions (standard medical terminology), NOT Wallach health claims or numeric targets -- they carry no §00.A source obligation and must never assert a dose, target, or verdict. 'term' is matched case-insensitively on word boundaries; 'aliases' catch morphological variants. Seeded set; grows under the jargon_terms_glossed invariant guard.",
+  "terms": [
+    {
+      "term": "hypoglycemia",
+      "plain": "low blood sugar",
+      "category": "medical",
+      "aliases": [
+        "hypoglycemic"
+      ]
+    },
+    {
+      "term": "hyperglycemia",
+      "plain": "high blood sugar",
+      "category": "medical",
+      "aliases": [
+        "hyperglycemic"
+      ]
+    },
+    {
+      "term": "hyperinsulinemia",
+      "plain": "chronically high insulin levels in the blood",
+      "category": "medical"
+    },
+    {
+      "term": "osteoporosis",
+      "plain": "brittle, thinning bones from mineral loss",
+      "category": "medical",
+      "aliases": [
+        "osteoporotic"
+      ]
+    },
+    {
+      "term": "osteopenia",
+      "plain": "mild bone-mineral loss, a precursor to osteoporosis",
+      "category": "medical"
+    },
+    {
+      "term": "osteoarthritis",
+      "plain": "wear-and-tear arthritis from cartilage breakdown",
+      "category": "medical"
+    },
+    {
+      "term": "arthritis",
+      "plain": "joint inflammation causing pain and stiffness",
+      "category": "medical",
+      "aliases": [
+        "arthritic"
+      ]
+    },
+    {
+      "term": "fibrosis",
+      "plain": "scarring and thickening of tissue",
+      "category": "medical",
+      "aliases": [
+        "fibrotic"
+      ]
+    },
+    {
+      "term": "cirrhosis",
+      "plain": "severe, irreversible liver scarring",
+      "category": "medical",
+      "aliases": [
+        "cirrhotic"
+      ]
+    },
+    {
+      "term": "dermatitis",
+      "plain": "inflamed, itchy skin",
+      "category": "medical"
+    },
+    {
+      "term": "dermatosis",
+      "plain": "any skin disease or disorder",
+      "category": "medical"
+    },
+    {
+      "term": "cardiomyopathy",
+      "plain": "disease of the heart muscle",
+      "category": "medical"
+    },
+    {
+      "term": "neuropathy",
+      "plain": "nerve damage causing numbness, tingling, or pain",
+      "category": "medical",
+      "aliases": [
+        "neuropathic"
+      ]
+    },
+    {
+      "term": "neuralgia",
+      "plain": "sharp pain running along a nerve",
+      "category": "medical"
+    },
+    {
+      "term": "neuritis",
+      "plain": "inflammation of a nerve",
+      "category": "medical"
+    },
+    {
+      "term": "arteriosclerosis",
+      "plain": "hardening and thickening of artery walls",
+      "category": "medical"
+    },
+    {
+      "term": "atherosclerosis",
+      "plain": "artery narrowing from fatty plaque buildup",
+      "category": "medical"
+    },
+    {
+      "term": "sclerosis",
+      "plain": "abnormal hardening of tissue",
+      "category": "medical",
+      "aliases": [
+        "sclerotic"
+      ]
+    },
+    {
+      "term": "hemorrhage",
+      "plain": "heavy or uncontrolled bleeding",
+      "category": "medical",
+      "aliases": [
+        "hemorrhagic"
+      ]
+    },
+    {
+      "term": "thrombosis",
+      "plain": "a blood clot blocking a vessel",
+      "category": "medical",
+      "aliases": [
+        "thrombus",
+        "thrombotic"
+      ]
+    },
+    {
+      "term": "ischemia",
+      "plain": "reduced blood flow to tissue",
+      "category": "medical",
+      "aliases": [
+        "ischemic"
+      ]
+    },
+    {
+      "term": "edema",
+      "plain": "swelling from fluid buildup in tissue",
+      "category": "medical",
+      "aliases": [
+        "edematous"
+      ]
+    },
+    {
+      "term": "cyanosis",
+      "plain": "bluish skin from low blood oxygen",
+      "category": "medical"
+    },
+    {
+      "term": "cyanotic",
+      "plain": "bluish from low blood oxygen",
+      "category": "medical"
+    },
+    {
+      "term": "ecchymosis",
+      "plain": "a bruise; bleeding under the skin",
+      "category": "medical"
+    },
+    {
+      "term": "necrosis",
+      "plain": "death of body tissue",
+      "category": "medical",
+      "aliases": [
+        "necrotic"
+      ]
+    },
+    {
+      "term": "stomatitis",
+      "plain": "inflammation of the mouth",
+      "category": "medical"
+    },
+    {
+      "term": "gingivitis",
+      "plain": "gum inflammation",
+      "category": "medical"
+    },
+    {
+      "term": "gastritis",
+      "plain": "inflammation of the stomach lining",
+      "category": "medical"
+    },
+    {
+      "term": "enteritis",
+      "plain": "inflammation of the intestine",
+      "category": "medical"
+    },
+    {
+      "term": "gastroenteritis",
+      "plain": "inflammation of the stomach and intestines ('stomach flu')",
+      "category": "medical"
+    },
+    {
+      "term": "diverticulitis",
+      "plain": "inflammation of small pouches in the colon wall",
+      "category": "medical"
+    },
+    {
+      "term": "hepatitis",
+      "plain": "liver inflammation",
+      "category": "medical"
+    },
+    {
+      "term": "conjunctivitis",
+      "plain": "pink eye; inflammation of the eye's surface",
+      "category": "medical"
+    },
+    {
+      "term": "meningitis",
+      "plain": "inflammation of the membranes around the brain and spinal cord",
+      "category": "medical"
+    },
+    {
+      "term": "encephalitis",
+      "plain": "inflammation of the brain",
+      "category": "medical"
+    },
+    {
+      "term": "pneumonitis",
+      "plain": "inflammation of lung tissue",
+      "category": "medical"
+    },
+    {
+      "term": "prostaglandins",
+      "plain": "hormone-like substances that regulate inflammation and other body functions",
+      "category": "medical",
+      "aliases": [
+        "prostaglandin"
+      ]
+    },
+    {
+      "term": "steatohepatitis",
+      "plain": "fatty inflammation of the liver",
+      "category": "medical"
+    },
+    {
+      "term": "kyphosis",
+      "plain": "excessive outward curve of the upper spine (hunchback)",
+      "category": "medical"
+    },
+    {
+      "term": "lordosis",
+      "plain": "excessive inward curve of the lower spine (swayback)",
+      "category": "medical"
+    },
+    {
+      "term": "scoliosis",
+      "plain": "sideways curvature of the spine",
+      "category": "medical"
+    },
+    {
+      "term": "spondylitis",
+      "plain": "inflammation of the spinal joints",
+      "category": "medical"
+    },
+    {
+      "term": "exostosis",
+      "plain": "a benign bony outgrowth",
+      "category": "medical"
+    },
+    {
+      "term": "galactosemia",
+      "plain": "an inherited inability to digest the milk sugar galactose",
+      "category": "medical"
+    },
+    {
+      "term": "phenylketonuria",
+      "plain": "an inherited inability to process the amino acid phenylalanine",
+      "category": "medical"
+    },
+    {
+      "term": "mucoviscidosis",
+      "plain": "an older name for cystic fibrosis",
+      "category": "medical"
+    },
+    {
+      "term": "ophthalmoplegia",
+      "plain": "paralysis of the eye muscles",
+      "category": "medical"
+    },
+    {
+      "term": "cheilosis",
+      "plain": "cracking and inflammation at the corners of the mouth",
+      "category": "medical",
+      "aliases": [
+        "chelosis"
+      ]
+    },
+    {
+      "term": "ichthyosis",
+      "plain": "dry, scaly, fish-like skin",
+      "category": "medical"
+    },
+    {
+      "term": "hyperkeratosis",
+      "plain": "thickening of the skin's outer layer",
+      "category": "medical"
+    },
+    {
+      "term": "parakeratosis",
+      "plain": "abnormal skin-cell maturation causing scaling",
+      "category": "medical"
+    },
+    {
+      "term": "hydroencephalocele",
+      "plain": "a birth defect where brain tissue protrudes through the skull",
+      "category": "medical"
+    },
+    {
+      "term": "omphalocele",
+      "plain": "a birth defect where organs protrude through the navel",
+      "category": "medical"
+    },
+    {
+      "term": "meningocele",
+      "plain": "a birth defect where the spinal membranes protrude through the spine",
+      "category": "medical"
+    },
+    {
+      "term": "leukorrhea",
+      "plain": "a whitish vaginal discharge",
+      "category": "medical"
+    },
+    {
+      "term": "amenorrhea",
+      "plain": "absence of menstrual periods",
+      "category": "medical"
+    },
+    {
+      "term": "dysmenorrhea",
+      "plain": "painful menstrual periods",
+      "category": "medical"
+    },
+    {
+      "term": "iatrogenic",
+      "plain": "caused by medical treatment itself",
+      "category": "medical"
+    },
+    {
+      "term": "teratogenic",
+      "plain": "capable of causing birth defects",
+      "category": "medical"
+    },
+    {
+      "term": "goitrogenic",
+      "plain": "capable of causing goiter (thyroid enlargement)",
+      "category": "medical"
+    },
+    {
+      "term": "carcinogenic",
+      "plain": "capable of causing cancer",
+      "category": "medical",
+      "aliases": [
+        "anticarcinogenic"
+      ]
+    },
+    {
+      "term": "carcinoma",
+      "plain": "a cancer arising from skin or tissue-lining cells",
+      "category": "medical"
+    },
+    {
+      "term": "sarcoma",
+      "plain": "a cancer arising from bone, muscle, or connective tissue",
+      "category": "medical"
+    },
+    {
+      "term": "osteosarcoma",
+      "plain": "a bone cancer",
+      "category": "medical"
+    },
+    {
+      "term": "melanoma",
+      "plain": "a serious skin cancer from pigment cells",
+      "category": "medical"
+    },
+    {
+      "term": "leukemia",
+      "plain": "cancer of the blood and bone marrow",
+      "category": "medical"
+    },
+    {
+      "term": "metastasis",
+      "plain": "spread of cancer to distant parts of the body",
+      "category": "medical",
+      "aliases": [
+        "metastatic"
+      ]
+    },
+    {
+      "term": "neutropenia",
+      "plain": "an abnormally low count of infection-fighting white blood cells",
+      "category": "medical"
+    },
+    {
+      "term": "hyperplasia",
+      "plain": "tissue enlargement from an increased number of cells",
+      "category": "medical"
+    },
+    {
+      "term": "hypoplasia",
+      "plain": "underdevelopment of a tissue or organ",
+      "category": "medical"
+    },
+    {
+      "term": "hypertrophy",
+      "plain": "tissue enlargement from bigger cells",
+      "category": "medical",
+      "aliases": [
+        "hypertrophic"
+      ]
+    },
+    {
+      "term": "glaucoma",
+      "plain": "eye damage from high internal pressure, a cause of blindness",
+      "category": "medical"
+    },
+    {
+      "term": "psychosis",
+      "plain": "a mental state of losing touch with reality",
+      "category": "medical",
+      "aliases": [
+        "psychotic"
+      ]
+    },
+    {
+      "term": "neurosis",
+      "plain": "an older term for anxiety-driven mental distress",
+      "category": "medical",
+      "aliases": [
+        "neurotic"
+      ]
+    },
+    {
+      "term": "acidosis",
+      "plain": "too much acid in the body fluids",
+      "category": "medical"
+    },
+    {
+      "term": "alkalosis",
+      "plain": "too much alkali (base) in the body fluids",
+      "category": "medical"
+    },
+    {
+      "term": "ketoacidosis",
+      "plain": "dangerous acid buildup from unmanaged fat-burning, seen in diabetes",
+      "category": "medical"
+    },
+    {
+      "term": "hypervitaminosis",
+      "plain": "toxicity from an excess of vitamins",
+      "category": "medical"
+    },
+    {
+      "term": "fluorosis",
+      "plain": "tooth or bone damage from excess fluoride",
+      "category": "medical"
+    },
+    {
+      "term": "hemosiderosis",
+      "plain": "iron overload deposited in the tissues",
+      "category": "medical"
+    },
+    {
+      "term": "hypercalcemia",
+      "plain": "high calcium levels in the blood",
+      "category": "medical"
+    },
+    {
+      "term": "hypoproteinemia",
+      "plain": "low protein levels in the blood",
+      "category": "medical"
+    },
+    {
+      "term": "hypophosphatemia",
+      "plain": "low phosphate levels in the blood",
+      "category": "medical"
+    },
+    {
+      "term": "hematuria",
+      "plain": "blood in the urine",
+      "category": "medical"
+    },
+    {
+      "term": "proteinuria",
+      "plain": "protein leaking into the urine",
+      "category": "medical"
+    },
+    {
+      "term": "albuminuria",
+      "plain": "the blood protein albumin leaking into the urine",
+      "category": "medical"
+    },
+    {
+      "term": "tuberculosis",
+      "plain": "a contagious bacterial lung infection",
+      "category": "medical"
+    },
+    {
+      "term": "leptospirosis",
+      "plain": "a bacterial infection spread through animal urine",
+      "category": "medical"
+    },
+    {
+      "term": "toxoplasmosis",
+      "plain": "a parasite infection, especially risky in pregnancy",
+      "category": "medical"
+    },
+    {
+      "term": "psittacosis",
+      "plain": "a bird-borne bacterial lung infection",
+      "category": "medical",
+      "aliases": [
+        "ornithosis"
+      ]
+    },
+    {
+      "term": "tularemia",
+      "plain": "a bacterial infection from rabbits and rodents ('rabbit fever')",
+      "category": "medical"
+    },
+    {
+      "term": "pediculosis",
+      "plain": "a lice infestation",
+      "category": "medical"
+    },
+    {
+      "term": "halitosis",
+      "plain": "bad breath",
+      "category": "medical"
+    },
+    {
+      "term": "lipodystrophy",
+      "plain": "abnormal loss or redistribution of body fat",
+      "category": "medical"
+    },
+    {
+      "term": "chondrodystrophy",
+      "plain": "a disorder of cartilage growth, a form of dwarfism",
+      "category": "medical"
+    },
+    {
+      "term": "adrenoleukodystrophy",
+      "plain": "an inherited disorder that damages nerves and the adrenal glands",
+      "category": "medical"
+    },
+    {
+      "term": "sarcoidosis",
+      "plain": "an inflammatory disease that forms small nodules, often in the lungs",
+      "category": "medical"
+    },
+    {
+      "term": "berylliosis",
+      "plain": "lung disease from inhaling beryllium dust",
+      "category": "medical"
+    },
+    {
+      "term": "enzootic",
+      "plain": "a disease regularly present in an animal population",
+      "category": "medical"
+    },
+    {
+      "term": "acrodermatitis",
+      "plain": "inflamed skin on the hands and feet",
+      "category": "medical"
+    },
+    {
+      "term": "appendicitis",
+      "plain": "inflammation of the appendix",
+      "category": "medical"
+    },
+    {
+      "term": "blepharitis",
+      "plain": "inflammation of the eyelids",
+      "category": "medical",
+      "aliases": [
+        "blephritis"
+      ]
+    },
+    {
+      "term": "bronchitis",
+      "plain": "inflammation of the airways in the lungs",
+      "category": "medical"
+    },
+    {
+      "term": "bursitis",
+      "plain": "inflammation of a cushioning joint sac (bursa)",
+      "category": "medical"
+    },
+    {
+      "term": "cystitis",
+      "plain": "bladder inflammation",
+      "category": "medical"
+    },
+    {
+      "term": "encephalopathy",
+      "plain": "any disease or damage affecting brain function",
+      "category": "medical"
+    },
+    {
+      "term": "fibromyalgia",
+      "plain": "a condition of widespread muscle pain and fatigue",
+      "category": "medical"
+    },
+    {
+      "term": "glossitis",
+      "plain": "inflammation of the tongue",
+      "category": "medical"
+    },
+    {
+      "term": "gonorrhea",
+      "plain": "a sexually transmitted bacterial infection",
+      "category": "medical"
+    },
+    {
+      "term": "hepatomegaly",
+      "plain": "an enlarged liver",
+      "category": "medical"
+    },
+    {
+      "term": "hysterectomy",
+      "plain": "surgical removal of the uterus",
+      "category": "medical"
+    },
+    {
+      "term": "keratitis",
+      "plain": "inflammation of the cornea, the clear front of the eye",
+      "category": "medical"
+    },
+    {
+      "term": "keratosis",
+      "plain": "a horny thickening of the skin",
+      "category": "medical"
+    },
+    {
+      "term": "laryngitis",
+      "plain": "inflammation of the voice box",
+      "category": "medical"
+    },
+    {
+      "term": "myelosclerosis",
+      "plain": "hardening and scarring of the bone marrow",
+      "category": "medical"
+    },
+    {
+      "term": "osteitis",
+      "plain": "inflammation of bone",
+      "category": "medical"
+    },
+    {
+      "term": "osteosclerosis",
+      "plain": "abnormal hardening and thickening of bone",
+      "category": "medical"
+    },
+    {
+      "term": "pancreatitis",
+      "plain": "inflammation of the pancreas",
+      "category": "medical"
+    },
+    {
+      "term": "periodontitis",
+      "plain": "gum disease that damages the bone anchoring the teeth",
+      "category": "medical"
+    },
+    {
+      "term": "phlebitis",
+      "plain": "inflammation of a vein",
+      "category": "medical"
+    },
+    {
+      "term": "pleuritis",
+      "plain": "inflammation of the lung lining (pleurisy)",
+      "category": "medical"
+    },
+    {
+      "term": "polyuria",
+      "plain": "excessive urination",
+      "category": "medical"
+    },
+    {
+      "term": "rhinitis",
+      "plain": "inflammation of the nasal lining, causing a runny or stuffy nose",
+      "category": "medical"
+    },
+    {
+      "term": "sinusitis",
+      "plain": "inflammation of the sinuses",
+      "category": "medical"
+    },
+    {
+      "term": "splenomegaly",
+      "plain": "an enlarged spleen",
+      "category": "medical"
+    },
+    {
+      "term": "steatoma",
+      "plain": "a fatty cyst under the skin",
+      "category": "medical"
+    },
+    {
+      "term": "stenosis",
+      "plain": "abnormal narrowing of a passage or blood vessel",
+      "category": "medical"
+    },
+    {
+      "term": "tonsillectomy",
+      "plain": "surgical removal of the tonsils",
+      "category": "medical"
+    },
+    {
+      "term": "tonsillitis",
+      "plain": "inflammation of the tonsils",
+      "category": "medical"
+    },
+    {
+      "term": "tracheotomy",
+      "plain": "a surgical opening made into the windpipe",
+      "category": "medical"
+    },
+    {
+      "term": "vaginitis",
+      "plain": "inflammation of the vagina",
+      "category": "medical"
+    }
+  ]
+}
