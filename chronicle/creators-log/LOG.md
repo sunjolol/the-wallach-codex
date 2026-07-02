@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 282 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 283 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-02 09:51 UTC-05:00 · round-close · corpus+tools
+Term-gloss ABBREVIATION pass: 15 expansions/14 claims (DMSO, PABA, GI, CEA, PSA, TCA, EPA-agency) + abbrev_require_explained enforcement (18 abbrevs). Luneth line: expand obscure, leave commonly-grasped, don't clutter.
+  ↳ Close look caught EPA ambiguity (acid vs Environmental Protection Agency) + BSE/ALS already explained (mad cow/Lou Gehrig's). Extended claim_text_term_gloss invariant to require obscure abbrevs be spelled out in-claim; negative-tested. seal kv240->241, board 35/35, probe PASS. Remaining: non-abbreviation medical jargon.
 
 ## 2026-07-02 09:14 UTC-05:00 · round-close · corpus/rare+tools
 Term-gloss BOTANICAL sweep complete across all 5 books. Non-LETS books ~botanical-free; only RARE's bare genus Carya (hickory) glossed in 2 claims.
@@ -782,7 +786,3 @@ Phase γ.3 batch 36 — Rare Earths P/Phosphorus: 7 claims RARE-204..210 (defini
 ## 2026-06-25 15:30 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 35 — Rare Earths O/Oxygen PART 2 (block 3, p372): 4 claims RARE-200..203 (singlet-O resolution; food-grade H2O2 therapy; oxygen/ozone therapy history+indications; ozone therapeutic window 20-100 µg/ml). kv 72→73, corpus 293→297, conditions 134→138, board 30/30.
   ↳ Mined the final Oxygen block (oxygen-therapy mechanism, p372) flagged across last session's context-screening reset. Block-3 prose reflowed (de-hyphenated; dropped [reece]/PERRET OCR garble splitting the ozone-history paragraph; chemical equation kept as 2-line block). resnap 0 broken (all 199 prior claims upstream of the edit). Os/Osmium READ + confirmed geology-only (no claim); next real element = P/Phosphorus. 3 OCR/book discrepancies flagged OPEN and left .txt byte-faithful pending a ruling: .txt 'wml' vs book-printed 'u/ml' (=µg/ml, used in claim_text); book's own misspelling 'Vicbahn' vs real author Renate Viebahn (corrected in claim_text only); OCR 'peopk:' vs 'people'. None sit inside an extracted verbatim. Claims reviewed + approved by Luneth before commit.
-
-## 2026-06-25 15:11 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 34 — Rare Earths O/Oxygen part 1/2: 5 claims (RARE-195..199) — essentiality, atmospheric O2 decline, anaerobic-disease emergence, Warburg, neutrophil-catalase. Blocks 1-2 reflowed; clippings raw. kv 71→72, corpus 293, board 30/30, probe green.
-  ↳ O/Oxygen is the ~1,100-line behemoth, interleaved with ~7pp of E.coli/AIDS-obituary clippings + a full-page TB-sanatorium photo (p362). Rendering the photo + reading obituary spans pulled sensitive content into context, which the image classifier re-screened every turn -> intermittent 'request blocked' (tools still succeeded). Luneth-directed: ship batch 34 as a clean checkpoint, then re-genesis fresh to mine O part 2 (block 3 p372 = singlet-oxygen/H2O2/ozone therapy, ~4 claims fully enumerated in next-chunk so nothing is lost). Memory reading-and-correcting-scanned-pdfs updated (screen before rendering). Tooling trap logged: post_write_verify misparses a helper-script 'OK ... —' status line as a missing file path -> false corruption flag.

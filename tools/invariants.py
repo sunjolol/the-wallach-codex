@@ -1883,11 +1883,13 @@ def check_claim_text_term_gloss():
     lex = json.loads(lex_path.read_text(encoding="utf-8"))
     defects = lex.get("defects", {})
     swaps = lex.get("common_swaps", {})
+    abbrevs = lex.get("abbrev_require_explained", {})
     violations = []
     for sh in shards:
         for c in json.loads(sh.read_text(encoding="utf-8")).get("claims", []):
             ct = c.get("claim_text") or ""
             vb = c.get("verbatim") or ""
+            low = ct.lower()
             for k in defects:
                 if k in ct:
                     violations.append(f"{c['id']} claim_text:{k!r}")
@@ -1896,12 +1898,18 @@ def check_claim_text_term_gloss():
             for k in swaps:
                 if k in ct:
                     violations.append(f"{c['id']} claim_text:{k!r}")
+            # obscure abbreviation must be spelled out somewhere in the same summary
+            # (universally-grasped acronyms are intentionally not listed -> not enforced)
+            for ab, trigs in abbrevs.items():
+                if re.search(r"\b" + re.escape(ab) + r"\b", ct) and not any(t in low for t in trigs):
+                    violations.append(f"{c['id']} unexplained-abbr:{ab!r}")
     if violations:
         sample = "; ".join(violations[:8])
-        return False, (f"{len(violations)} term-gloss regression(s) (a defect/obscure form "
-                       f"reappeared): {sample}{' ...' if len(violations) > 8 else ''}")
-    return True, (f"claim_text term-gloss clean -- 0 of {len(defects) + len(swaps)} lexicon "
-                  f"forms present (defects also absent from verbatims)")
+        return False, (f"{len(violations)} term-gloss regression(s) (a defect/obscure form or "
+                       f"unexplained abbreviation reappeared): {sample}{' ...' if len(violations) > 8 else ''}")
+    n = len(defects) + len(swaps) + len(abbrevs)
+    return True, (f"claim_text term-gloss clean -- 0 issues across {n} lexicon rules "
+                  f"({len(abbrevs)} obscure abbreviations explained in-claim)")
 
 
 INVARIANTS = [
