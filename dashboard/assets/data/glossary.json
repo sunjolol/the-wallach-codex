@@ -727,6 +727,45 @@
       "term": "vaginitis",
       "plain": "inflammation of the vagina",
       "category": "medical"
+    },
+    {
+      "term": "mg%",
+      "plain": "milligrams per deciliter (mg/dL) -- a blood concentration: how much of a substance is dissolved in a tenth of a liter. Despite the percent sign, it is not a true percentage.",
+      "category": "unit",
+      "aliases": [
+        "mg %",
+        "mg percent",
+        "milligram percent",
+        "mg/100 ml",
+        "mg /100 ml"
+      ]
+    },
+    {
+      "term": "g%",
+      "plain": "grams per deciliter (g/dL) -- a blood concentration: grams of a substance dissolved in a tenth of a liter. Despite the percent sign, it is not a true percentage.",
+      "category": "unit",
+      "aliases": [
+        "g %",
+        "gm%",
+        "gm %",
+        "g percent",
+        "gm percent",
+        "gram percent"
+      ]
+    },
+    {
+      "term": "mEq/L",
+      "plain": "milliequivalents per liter -- an older laboratory measure of an electrolyte's concentration in the blood.",
+      "category": "unit",
+      "aliases": [
+        "meq/l",
+        "meq"
+      ]
+    },
+    {
+      "term": "cc",
+      "plain": "cubic centimeter -- a unit of volume equal to one milliliter (mL).",
+      "category": "unit"
     }
   ]
 }

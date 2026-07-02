@@ -20,7 +20,7 @@ import { type Glossary, GlossarySchema } from '../core/schemas/index.js';
 const EMPTY: Glossary = { terms: [] };
 
 interface GlossIndex {
-  /** Matches any glossary key on a word boundary (longest-first alternation). */
+  /** Matches any glossary key: word-start boundary + non-word-char end (longest-first). */
   re: RegExp | null;
   /** Lowercased term/alias → plain-language definition. */
   defByKey: Map<string, string>;
@@ -46,8 +46,12 @@ function index(): GlossIndex {
     }
     // Longest key first so the alternation prefers the most specific term.
     const keys = [...defByKey.keys()].sort((a, b) => b.length - a.length);
+    // Leading \b anchors the start; a trailing (?!\w), not \b, ends the match, so
+    // symbol-terminated unit keys ("mg%", "g%") also fire. For a word-ending key this is
+    // identical to \b; but after "%" a \b would backwards demand a following word char, so
+    // a "%"-key could otherwise never match. memory: term-gloss-standard (units layer).
     const re = keys.length > 0
-      ? new RegExp(`\\b(${keys.map(escapeRegExp).join('|')})\\b`, 'gi')
+      ? new RegExp(`\\b(${keys.map(escapeRegExp).join('|')})(?!\\w)`, 'gi')
       : null;
     cached = { re, defByKey };
   }

@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 296 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 297 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-02 18:12 UTC-05:00 · round-close · dashboard/knowledge
+SESSION 43: archaic-unit tooltip layer (mg%/g%/mEq/L/cc = per-deciliter, not a true %); summaries modernized (mg%→mg/dL, cc→mL); verbatims faithful+tooltipped; grains excluded; kv256, board 38/38, probe+unitGloss PASS. DDDL under-mined (94 claims) → flagged re-mine.
+  ↳ Reuses SESSION-39 glossary/tooltip. Matcher \b→(?!\w) for symbol-terminated units; digit-free defs keep glossary_wellformed/§00.A clean. Quote-sync confirmed sound to Luneth (verbatims stored+embedded; corpus_resnap propagates source fixes; corpus_verify #2 substring gate blocks drift). DDDL under-mine logged openly 2026-06-24 as a first-pass, not a lie; source PRISTINE so re-mine unblocked. finalize-checklist reconciled.
 
 ## 2026-07-02 17:07 UTC-05:00 · session-end · corpus
 SESSION 42 CLOSE: DDDL purified to PRISTINE (book #2) across 3 commits — spec (148+402 headers) + bullets (• x68) + reflow (45) + no-defer sweep. kv250->254, board 38/38, clean tree, pushed. NEXT = Immortality.
@@ -780,7 +784,3 @@ Phase γ.3 batch 50 — Rare Earths catalog Sm/Sn/Sr (p410-11). 4 claims RARE-24
 ## 2026-06-26 03:33 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 49 — catalog resumed at Si/Silica. 3 claims RARE-244..246 [silica] (canon, zero prior coverage): mechanism (+100% bone collagen), deficiency_sign (brittle hair/nails, arterial disease), dose (200-500 mg/day). Handoff refreshed. kv 89→90, corpus 340, board 30/30.
   ↳ Si/Silica = canon slug silica, ZERO prior claims (full entry new — verified not assumed; SESSION-5 handoff wrongly said Si had DDDL coverage). mechanism (supplementation→+100% growing-bone collagen; tissue Si declines with age unsupplemented); deficiency_sign (dry brittle hair, brittle finger/toe nails, poor skin, poor calcium utilization, arterial disease); dose (high-fiber→Si-rich→may lower cholesterol; 200-500 mg/day). Read word-level high-DPI p409. Claims 1+2 snapped raw; claim 3 de-hyphenation reflow (con-tain/investiga-tors/choles-terol.. → contain/investigators/cholesterol.; book single period, .txt OCR double-period). resnap 0 broken. Kept faithful: Cyoeraceae/Graineae + 100 % space. SESSION 6 WRAP (b44-49). next-chunk.md refreshed. NEXT = Sn/Tin.
-
-## 2026-06-26 03:07 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 48 — corpus-wide obvious-typo SWEEP (both shards). Hapax scan found more than catalogued. Applied 37 rules (A misspellings + B spacing + C formulas→digits); 30 verbatims fixed, resnap 0 broken. Group D deferred to book-verify. kv 88→89, corpus 337, board 30/30.
-  ↳ Hapax+targeted scan of all 337 verbatims. Luneth 4-way ruling: fix A(27 misspellings)/B(7 spacing)/C(3 formulas→plain digits), defer D(5 uncertain) to book-verification. 37 replacement rules across rare-earths.txt + dddl.txt; global per-token where unambiguous, context-scoped for risky (tisk for / somes enzymes). 30 claims corrected (28 RARE + 2 DDDL), resnap 0 broken. Examples: somes→some, Erythematosis→Erythematosus, Sicklecell→Sickle-cell, lipofucsin→lipofuscin(x5), athritis→arthritis, tinnitis→tinnitus, flouride→fluoride(x11), HYPER/HYPOTHYROISM fixed, tisk→risk; spacing (hemolysis)/Columbia University/2 to 7/Brussels sprouts; formulas As,O,→As2O3 (book-verified p285), B,,→B12(x3), (H,O)→(H2O). Precedent (batch 46): obvious typos corrected even in faithful verbatims. claim_texts unchanged, no new claims. NEXT = Group D verify then Si/Silica.

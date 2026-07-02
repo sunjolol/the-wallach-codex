@@ -176,6 +176,17 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     };
   });
 
+  // 4b-unit. Archaic-clinical-unit gloss -- the autoimmune_disorders claim carries
+  //     "cc" in Wallach's verbatim; it must render as a .gloss whose definition
+  //     explains the unit (units layer, memory: term-gloss-standard).
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-condition="autoimmune_disorders"]')?.click());
+  await wait(250);
+  const unitGloss = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const defs = root ? [...root.querySelectorAll('.gloss')].map(g => g.getAttribute('data-def') || '') : [];
+    return { hasUnit: defs.some(d => /cubic centimeter|milliliter/i.test(d)) };
+  });
+
   // 4c. Umbrella tip -- an UMBRELLA condition (cancer) shows the "broad category"
   //     note with dynamic subtype examples; the leaf above (diabetes) must NOT.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-condition="cancer"]')?.click());
@@ -243,7 +254,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, corpus, bookOpen, products, essentials, deep, traceMeter, conditions, condDeep, umbrellaTip, afterEsc, afterK, search, highlight, searchClear };
+  const out = { boot, afterClick, corpus, bookOpen, products, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, afterEsc, afterK, search, highlight, searchClear };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -275,6 +286,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['conditions: synopsis backed by a labeled chip group', condDeep.synopsisCoherent === true],
     ['conditions: leaf condition has NO umbrella tip (diabetes)', condDeep.hasUmbrellaTip === false],
     ['glossary: jargon terms decorated + defined + focusable', condDeep.glossCount > 0 && condDeep.glossSample !== null && !!condDeep.glossSample.def && condDeep.glossSample.hasTabindex === true],
+    ['glossary: archaic clinical unit (cc) glossed in a verbatim', unitGloss.hasUnit === true],
     ['conditions: umbrella shows broad-category tip w/ examples (cancer)', umbrellaTip.shown === true && umbrellaTip.hasExample === true],
     ['search: typing narrows the rows', search.total > search.visible && search.visible >= 1],
     ['search: content match surfaces Anosmia (title lacks "smell")', search.anosmiaVisible === true && search.anosmiaTitleHasSmell === false],
