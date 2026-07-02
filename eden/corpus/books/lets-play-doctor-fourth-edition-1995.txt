@@ -5580,7 +5580,7 @@ B-6, chromium, Selenium (i.e., Keshan Dis-
 ease, cysticfibrosis), magnesium, potassium,
 98
 carnitine and CO Q-10.
-Treatment ofcardiac arrythmia includes avoid-
+Treatment of cardiac arrhythmia includes avoid-
 ance of known allergens, autoimmune urine
 and blood therapies, chromium at 50-100 mcg
 t.i.d., B-complex at 50 mg t.i.d., selenium at
@@ -7823,8 +7823,7 @@ times its normal size; it is located just telow the
 larynx in the front of the neck.
 Treatment of goiter includes the removal of all
 goitrogens from the diet (read labels to ex-
-127
-elude nitrates and nitrite), supplement iodine
+clude nitrates and nitrite), supplement iodine
 at 250 mcg/day and thyroid USP at 2-5 grains
 each morning, kelp is a good natural source of
 iodine.
@@ -9708,7 +9707,6 @@ and an improvement in physical features as
 long as the program is followed; withdrawal
 from the program results in loss ofall the gains.
 MORNING SICKNESS: is a nausea that oc-
-150
 curs in the first three months of pregnancy
 because of rising progesterone levels. Having
 a complex carbohydrate or protein snack upon

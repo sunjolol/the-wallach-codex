@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 266 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 267 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 19:13 UTC-05:00 · round-close · corpus
+SESSION 37 — Book-OCR bucket: 3 OCR fixes via resnap (203 arrythmia, 369/287 page-markers)
+  ↳ Luneth-authorized book-OCR fixes to LETS .txt. 203: 'ofcardiac arrythmia'->'of cardiac arrhythmia' (missing space + missing h) — verbatim now names cardiac_arrhythmia with NO extend. 369 morning_sickness + 287 goiter: removed stray page-numbers (150, 127) that OCR had inserted mid-word into the section headings (oc-[150]-curs, ex-[127]-clude; also elude->clude), then vb_apply heading-extended each to name its condition. Pipeline: safe_write book -> corpus_resnap --write --fix (272 relocated, 1 healed, 0 broken) -> corpus_extract finalize (rebuild draft) -> vb_apply 369+287 -> reseal kv231 -> embed -> build -> invariants 32/32 -> render_probe_knowledge PASS. violations 234->231, LETS 175->172, orphans 67->65.
 
 ## 2026-07-01 18:46 UTC-05:00 · round-close · corpus
 SESSION 37 — LETS verbatim FINDABLE campaign, 3rd increment: 20 clean FINDABLE extends
@@ -782,7 +786,3 @@ Batch 22 (Cu/Cr) + cesium enrichment + behavioral-rage policy update + fringe sa
 ## 2026-06-25 02:45 UTC-04:00 · note · eden/corpus
 Behavioral/mental-condition sweep (Luneth): audited 212 claims, fixed 3 (DDDL-005 selenium+alzheimers, DDDL-078 +panic_attacks, RARE-029 lithium+bipolar_disorder), kv 51→52
   ↳ Keyword-scanned all claim_texts+verbatims for behavioral/mental terms lacking the slug. 3 hits fixed via draft-edit->reseal: DDDL-005 selenium verbatim names encephalomalacia (Alzheimer's) + liver cirrhosis/anemia/infertility/miscarriages dropped to 'and more' -> restored + added alzheimers/anemia/liver_cirrhosis/infertility/miscarriage; DDDL-078 anxiety/panic protocol -> added panic_attacks; RARE-029 lithium names manic depression with empty conditions -> added bipolar_disorder. Table 11-9 vitamin-deficiency table (not yet extracted) flagged as a future behavioral goldmine. conditions 91->93. Board 30/30, build OK, knowledge probe green.
-
-## 2026-06-25 02:39 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 21 — Rare Earths Ch.11 catalog Co/Cobalt + Cr/Chromium (p305-307): 5 claims (RARE-114..118) + Luneth behavioral-condition correction, kv 48→51, corpus 212
-  ↳ Cobalt+Chromium catalog. RARE-114 cobalt essentiality = vitamin B12 complex (single cobalt central atom; methyl-group transfer for DNA/RNA); RARE-115 B12/cobalt malabsorption -> pernicious anemia + demyelination; RARE-116 chromium = GTF + deficiency diseases; RARE-117 chromium absorption (50-100ug -> 0.25-0.5ug usable vs 25% chelated; sugar +300% loss); RARE-118 Anderson/USDA 90% of Americans Cr-deficient. Co dose dropped (dup of RARE-14). LUNETH CORRECTION (re-seal kv 50->51): behavioral/mental-health deficiency conditions are CORE dashboard value -> re-added hyperactivity/learning_disabilities/adhd/hyperirritability/depression/bipolar_disorder to RARE-116 + panic_attacks to RARE-105 (calcium). Only graphic crime 'Bad Seeds' stays fringe. New memory document-behavioral-mental-conditions. conditions 81->91. Board 30/30, build OK, knowledge probe green. Luneth-approved.
