@@ -24,7 +24,7 @@
   "cystic_fibrosis": ["cystic fibrosis", "mucoviscidosis"],
   "kidney_stones": ["kidney stones", "renal calculi", "renal stones", "nephrolithiasis"],
   "gallstones": ["gallstones", "gall stones", "biliary calculi"],
-  "peptic_ulcers": ["peptic ulcer", "gastric ulcer", "stomach ulcer", "duodenal ulcer"],
+  "peptic_ulcers": ["peptic ulcer", "gastric ulcer", "stomach ulcer", "duodenal ulcer", "g i ulcers", "gi ulcers", "gastrointestinal ulcer"],
   "high_blood_sugar": ["hyperglycemia", "high blood sugar"],
   "hypoglycemia": ["low blood sugar", "reactive hypoglycemia", "hypoglycemia"],
   "male_pattern_baldness": ["baldness", "hair loss", "alopecia", "balding"],

@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 269 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 270 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 20:26 UTC-05:00 · round-close · corpus
+SESSION 37 — table GI-ulcers synonym (007) + cancer-cluster book-OCR (178/191)
+  ↳ Table bucket started + cancer cluster continued. (1) peptic_ulcers synonym += 'g i ulcers'/'gi ulcers'/'gastrointestinal ulcer' -> clears 007 (chromium-toxicity cell's 'G I ulcers'), consistent with its existing gastric/stomach/duodenal synonyms; logical medical equivalence, surfaced to Luneth. (2) Cancer 178+191: removed stray page-markers 94/96 (resnap 298 relocated, 0 broken), then extended each to name cancer (178=558c, 191=266c). violations 220->218, LETS 161->159, FINDABLE 50->48, orphans 64. resealed kv233, board 33/33, render_probe_knowledge PASS. Deferred + flagged to Luneth: 192 cancer-drop (siblings cover it), dermatosis->dermatitis synonym, and the 6 'TABLE 6-1 Continued' captions splitting cells 008/027/033.
 
 ## 2026-07-01 20:16 UTC-05:00 · round-close · corpus
 SESSION 37 — FINDABLE full-extend sweep: 10 LETS claims extended past 500 (length rule in action)
@@ -782,7 +786,3 @@ Phase γ.3 batch 25 — Rare Earths catalog second-half start: Iodine (8 claims,
 ## 2026-06-25 03:42 UTC-04:00 · incident · eden/corpus
 Silent-skip audit (Luneth-mandated): catalog A→Hg fully re-checked; found+fixed Europium (+100% lifespan, CANON, silently skipped), Copper Menkes/serum, Cadmium; kv 57→59, corpus 237
   ↳ Trigger: Luneth flagged possible silent skipping of catalog elements. Enumerated every element entry via grep 'found in igneous' and cross-checked coverage. GAPS FIXED: RARE-140 europium +100% lab-species lifespan (CANON essential, had been skipped entirely); 141 copper Menkes Kinky Hair Syndrome; 142 copper serum-elevation + Kayser-Fleischer rings; 143 cadmium kidney/nematode function. Also batch 24 H/Hydrogen (135 pH/acid-base [canon], 136 cystitis/cranberry) + Hg/Mercury (137 methylmercury/Minamata, 138 amalgam->antibiotic-resistance, 139 occupational). corpus_verify #4 caught hydrogen mis-filed as other_substance (it is canon) -> fixed via git-checkout+reseal. Confirmed genuinely geology-only (read, not assumed): Be/Cm/Dy/Er/Fr/Gd/He/Hf/Ac (Dy/Er/Gd/Hf are canon but geology-only here). LESSON: enumerate+verify every entry; never skip on assumption. Second half I->Zr is not-yet-reached (next session). Board 30/30, build OK, knowledge probe green.
-
-## 2026-06-25 03:24 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 23 — Rare Earths catalog Fe/Iron + Ga/Gallium + F/Fluorine (Wallach anti-fluoride): 5 claims (RARE-130..134), kv 56→57, corpus 228
-  ↳ RARE-130 iron function/essentiality (hemoglobin/myoglobin, iron:hemoglobin::Mg:chlorophyll); 131 heme-meat 10% vs plant 1% absorption; 132 gallium brain-metalloenzyme + reduces brain cancer (lab animals + British pregnant-women study); 133 FLUORIDE toxicity thresholds (dental fluorosis 2-7ppm, osteosclerosis 8-20ppm, systemic 20-80mg/day); 134 FLUORIDE->cancer (Yiamouyiannis-Burk 1977 hearings; 1990 NTP study oral SCC/osteosarcoma/thyroid/liver). FLUORIDE per Luneth: Wallach said it -> include it; non-canon (germanium holds slot) so essentials=[] + fluoride in other_substances (future searchable-substance feature). Skipped duplicates: iron pica/symptoms/overload=DDDL; germanium=RARE-11/12/13; Fr/Gd geology; pro-fluoride news clipping. conditions 104->108. Board 30/30, build OK, knowledge probe green. Luneth-approved.
