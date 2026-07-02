@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 294 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 295 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-02 17:02 UTC-05:00 · round-close · corpus
+SESSION 42 cont2: DDDL hyphen-wrap reflow (45) + final no-defer sweep. Fixed every remaining real defect (puss/Gadolinium/HistoriaAnimalicem/comma-spaces/I-5/150mg); left 1 unverifiable lab value flagged. kv253->254, board 38/38, book_purity 0.
+  ↳ Added regex_replacements + hyphen_reflow (post-strip) to book_purify_apply.py. Rebuilt from original source. DDDL pristine with NO fixable defect baselined. NEXT = Immortality.
 
 ## 2026-07-02 16:46 UTC-05:00 · round-close · corpus
 SESSION 42 cont: DDDL bullet-markers FIXED (no-defer). 68 OCR bullets ( '(' x55 + '<' x12 + 1 wrapped ) -> '• '; 2 real parens trimmed. kv252->253, board 38/38, space_in_paren 0 (fixed not allowlisted).
@@ -780,7 +784,3 @@ Phase γ.3 batch 48 — corpus-wide obvious-typo SWEEP (both shards). Hapax scan
 ## 2026-06-26 02:45 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 47 — Table 11-9 PART 3 (p296): 5 claims RARE-239..243 (Folic/Biotin/Vit C/Choline/Bioflavonoids). De-interleave reflow, restored dropped labels, bleeing→bleeding; Inositol skipped. TABLE 11-9 COMPLETE. kv 87→88, corpus 337, conditions 166, board 30/30.
   ↳ PART 3 finishes Table 11-9 (15/16 vitamins; Inositol cell too short for the 60-char floor even with label, skipped, .txt keeps the row). De-interleaved two-column OCR reflow: re-paired labels with deficiency texts, RESTORED OCR-dropped Choline/Inositol/Bioflavonoids labels from the page render (more faithful), fixed obvious typo bleeing→bleeding (book typo, per the new ruling), dropped the - leader artifact. Verbatims = label\ntext (Luneth chose label-inclusion to clear the floor for short cells). Kept faithful: poor growth , (book space-before-comma, pending sweep) + Choline curly apostrophes. resnap 0 broken, 121 relocated. +5 conditions +6 symptoms. NEXT = corpus-wide obvious-typo sweep (Luneth directive), then Si/Silica.
-
-## 2026-06-26 02:25 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 46 — Table 11-9 PART 2 (water-soluble B1/B2/B3/B5/B6/B12, p295): 6 deficiency_sign claims RARE-233..238. NEW Luneth ruling: correct obvious typos (lips,mouth; chelosis→cheilosis) in verbatims. kv 85→87, corpus 332, conditions 161, board 30/30, probe green.
-  ↳ PART 2 = water-soluble B-complex, all 6 rows read word-level at high DPI. B3 confirmed "dementia and retardation" (last batch full-page misread as irritation — corrected). 4 targeted .txt edits: B1 de-hyphenate line-wrapped Wernicke-Korsakoff (reflow); B2 restore OCR-dropped open paren before "geographic" (fix-to-book); and a NEW Luneth ruling — VERY OBVIOUS typos get corrected in verbatims too: lips,mouth→lips, mouth and chelosis→cheilosis. PRECEDENT SHIFT: the .txt now intentionally departs from the books literal print for unambiguous typos (prior stance kept all book typos faithful). resnap 1 healed (RARE-234 --fix), 125 relocated, 0 broken. Behavioral goldmine: B1 mental-confusion/emotional-instability, B5 quarrelsome/sullen/depressed, B6 hyperirritability/Tourettes. +7 conditions +~13 symptoms. OPEN consistency Q (non-blocking): batch-44 kept-typos Sicklecell/somes/methionone/lipofucsin/Erythematosis same class. Next: PART 3 p296 (Folic acid/Biotin/C/Choline/Inositol/Bioflavonoids) finishes Table 11-9.

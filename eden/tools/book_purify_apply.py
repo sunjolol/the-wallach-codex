@@ -236,7 +236,11 @@ def transform(book_id: str):
     text, n_hdr = strip_header(text, spec.get("strip_running_header"))
     text, rstats = strip_running(text, spec.get("strip_running"))
     text, flog = apply_fuses(text, spec.get("line_fuses", []))
-    stats = {"n_hdr": n_hdr, "rstats": rstats, "flog": flog, "rxlog": rxlog}
+    # hyphen-wrap reflow runs LAST — it joins 'word-\nword' line-wraps (removing a
+    # newline), which would shift the line numbers strip_running depends on if run
+    # earlier. Same count-asserted literal find/repl as replacements.
+    text, hlog = apply_replacements(text, spec.get("hyphen_reflow", []))
+    stats = {"n_hdr": n_hdr, "rstats": rstats, "flog": flog, "rxlog": rxlog, "hlog": hlog}
     return spec, before, text, rlog, stats
 
 
@@ -253,6 +257,10 @@ def cmd_dry(args):
     if stats["flog"]:
         print(f"  line fuses ({len(stats['flog'])}):")
         for line in stats["flog"]:
+            print(line)
+    if stats["hlog"]:
+        print(f"  hyphen-wrap reflow ({len(stats['hlog'])}):")
+        for line in stats["hlog"]:
             print(line)
     if stats["n_hdr"]:
         print(f"  byte-equal header lines stripped: {stats['n_hdr']}  "

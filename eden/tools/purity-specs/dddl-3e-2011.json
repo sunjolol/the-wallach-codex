@@ -919,6 +919,60 @@
       "repl": "maintain life:\n• Hemoglobin",
       "expect": 1,
       "why": "wrapped first list bullet -> real bullet"
+    },
+    {
+      "find": "puss or dead",
+      "repl": "pus or dead",
+      "expect": 1,
+      "why": "typo puss->pus"
+    },
+    {
+      "find": "the puss and",
+      "repl": "the pus and",
+      "expect": 1,
+      "why": "typo puss->pus"
+    },
+    {
+      "find": "puss-filled",
+      "repl": "pus-filled",
+      "expect": 1,
+      "why": "typo puss->pus (non-wrapped instance)"
+    },
+    {
+      "find": "gadolium",
+      "repl": "gadolinium",
+      "expect": 1,
+      "why": "element Gd = Gadolinium (missing 'in')"
+    },
+    {
+      "find": "Gadolium",
+      "repl": "Gadolinium",
+      "expect": 1,
+      "why": "element Gd = Gadolinium (missing 'in')"
+    },
+    {
+      "find": "t.i.d. ,",
+      "repl": "t.i.d.,",
+      "expect": 1,
+      "why": "space before comma"
+    },
+    {
+      "find": "pm , Pacific",
+      "repl": "pm, Pacific",
+      "expect": 2,
+      "why": "space before comma"
+    },
+    {
+      "find": "and 1-5 at",
+      "repl": "and I-5 at",
+      "expect": 1,
+      "why": "Interstate I-5 (OCR I->1)"
+    },
+    {
+      "find": "150/mg",
+      "repl": "150 mg",
+      "expect": 1,
+      "why": "stray slash separator; value 150 preserved"
     }
   ],
   "regex_replacements": [
@@ -933,6 +987,12 @@
       "repl": "• ",
       "expect": 12,
       "why": "same bullet glyph OCR'd as '<' -> real bullet"
+    },
+    {
+      "pattern": "HistoriaAnimalicemVl\\S*",
+      "repl": "Historia Animalium (VI)",
+      "expect": 1,
+      "why": "Aristotle's Historia Animalium (book VI) — OCR run-together"
     }
   ],
   "strip_running": {
@@ -1020,6 +1080,278 @@
       "why": "page-break split 'correction'"
     }
   ],
+  "hyphen_reflow": [
+    {
+      "find": "AV-\nblock",
+      "repl": "AV-block",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "Bio-\norganic",
+      "repl": "Bioorganic",
+      "expect": 1,
+      "why": "reflow -> 'Bioorganic' (Luneth-ruled)"
+    },
+    {
+      "find": "Landouzy-\nDejerine",
+      "repl": "Landouzy-Dejerine",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "Ninety-\nnine",
+      "repl": "Ninety-nine",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "Ninety-\nseven",
+      "repl": "Ninety-seven",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "age-\nbeaters",
+      "repl": "Age Beaters",
+      "expect": 1,
+      "why": "reflow -> 'Age Beaters' (Luneth-ruled)"
+    },
+    {
+      "find": "all-\nknowing",
+      "repl": "all-knowing",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "anti-\npernicious",
+      "repl": "anti-pernicious",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "anti-\ntartar",
+      "repl": "anti-tartar",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "anti-\nterrorism",
+      "repl": "anti-terrorism",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "beta-\ncarotene",
+      "repl": "beta-carotene",
+      "expect": 3,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "bionic-\nparts",
+      "repl": "bionic parts",
+      "expect": 1,
+      "why": "reflow -> 'bionic parts' (Luneth-ruled)"
+    },
+    {
+      "find": "buy-\nout",
+      "repl": "buyout",
+      "expect": 1,
+      "why": "reflow -> 'buyout' (Luneth-ruled)"
+    },
+    {
+      "find": "co-\nauthor",
+      "repl": "co-author",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "criss-\ncross",
+      "repl": "criss-cross",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "five-\nmile",
+      "repl": "five-mile",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "forty-\nfive",
+      "repl": "forty-five",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "half-\nlife",
+      "repl": "half-life",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "inch-\nthick",
+      "repl": "inch-thick",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "life-\nthreatening",
+      "repl": "life-threatening",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "little-\nused",
+      "repl": "little-used",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "long-\nlived",
+      "repl": "long-lived",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "micro-\ndose",
+      "repl": "micro-dose",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "mid-\nway",
+      "repl": "midway",
+      "expect": 1,
+      "why": "reflow -> 'midway' (Luneth-ruled)"
+    },
+    {
+      "find": "milk-\ncontaining",
+      "repl": "milk-containing",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "nitrate-\ninduced",
+      "repl": "nitrate-induced",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "non-\nAlzheimer",
+      "repl": "non-Alzheimer",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "over-\nprescribed",
+      "repl": "over-prescribed",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "power-\npacked",
+      "repl": "power-packed",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "pre-\nfabricated",
+      "repl": "pre-fabricated",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "puss-\nfilled",
+      "repl": "pus-filled",
+      "expect": 1,
+      "why": "reflow -> 'pus-filled' (Luneth-ruled)"
+    },
+    {
+      "find": "quick-\nfrozen",
+      "repl": "quick-frozen",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "self-\ncontrol",
+      "repl": "self-control",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "self-\ndiscipline",
+      "repl": "self-discipline",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "seven-\nmonth",
+      "repl": "seven-month",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "six-\nhour",
+      "repl": "six-hour",
+      "expect": 2,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "six-\nmonth",
+      "repl": "six-month",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "soft-\nspoken",
+      "repl": "soft-spoken",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "the-\nmeadow",
+      "repl": "the-meadow",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "to-\nbe",
+      "repl": "to-be",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "vitamin-\nlike",
+      "repl": "vitamin-like",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "well-\ncooked",
+      "repl": "well-cooked",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "well-\ndemarcated",
+      "repl": "well-demarcated",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "year-\nold",
+      "repl": "year-old",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "zinc-\ndependent",
+      "repl": "zinc-dependent",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    }
+  ],
   "flags": [
     "ginko->ginkgo x2 + Ginko->Ginkgo x2 (Ginkgo biloba)",
     "annus->annuus x2 (Helianthus annuus)",
@@ -1036,12 +1368,14 @@
     "amino '1-'->'l-' family (L-form, x11 tokens): glutamine/arginine/cysteine/tyrosine/methionine/histidine/Lysine/Dopa/tryptophan",
     "H202->H2O2 x13 (hydrogen peroxide 0->O)",
     "'02'->O2, '03'->O3 (oxygen/ozone formula 0->O)",
+    "germanium '150/mg b.i.d.' -> '150 mg b.i.d.' (separator fix, value 150 unchanged)",
     "KEPT (book's hyphenation style, per policy): pre-occupied, pre-conception, pre-med, teen-agers, turn-arounds.",
     "KEPT as printed (valid variants / real terms): leukopenia, cyanocobalamine(x2), thiamin, crampy, keratinized, serosal, ionically(mineral solution ctx), cont.(=continued abbrev), salarium(Latin), sativa/officinale/etc epithets.",
     "'Beri beri' (x1, 'Bl (Beri beri)') left for your ruling: -> 'beriberi'? and the 'Bl'->'B1' vitamin-code OCR nearby.",
     "Bare numbers KEPT (possible table/ad content, not page numbers): '1982' (disease-incidence table L8656), '21' (back-matter ad L14663).",
-    "KEPT/allowlisted, ambiguous — left for your ruling: '1-5' (=Interstate I-5? 'junction of I-10 and 1-5'); '3-g percent' (=3.6%?); germanium '150/mg' (=150 mg?); 'HistoriaAnimalicemVl}' (=Aristotle 'Historia Animalium'); 'KiahSien' (=Kaihsien place); 'IFN(y)' (=IFN-gamma).",
+    "UNVERIFIABLE, left faithful + flagged (no clean DDDL scan exists — EPUB-PDF carries the same garble; dose/value-safety = do NOT guess): '3-g percent' hemoglobin range from Lanzkowsky 1959 ('ranged from 3-g percent to 10.9 percent, mean 7.89±2.64' — could be 3.0/3.6/'3 g'). Baselined pending your ruling or the original paper.",
+    "KEPT as printed (proper noun / notation): 'KiahSien' (Chinese place, Li Ching-Yuen); 'IFN(y)' (interferon-gamma notation).",
     "BULLET MARKERS FIXED (Luneth-ruled •): 68 deficiency-symptom-list bullets OCR'd as '( ' (x55) / '< ' (x12) / wrapped (x1) -> '• '; the 2 real non-bullet cases ('( chenopodiaceae', 'doctors )') trimmed as parens. The '< 0.1 ppm' comparison left intact.",
-    "48 hyphen-wrapped compounds (beta-\\ncarotene, life-\\nthreatening) allowlisted as reviewed_ok (IAIYH precedent). A full de-hyphenation reflow is optional polish — flag if you want it now."
+    "48 hyphen-wraps REFLOWED (Luneth-ruled SESSION 42, no-defer): joined word-\\nword; kept the hyphen for real compounds (life-threatening, beta-carotene, criss-cross); overrides = midway/Bioorganic/buyout/'bionic parts'/'Age Beaters'; caught the puss->pus typo (x4)."
   ]
 }
