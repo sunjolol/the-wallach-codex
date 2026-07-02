@@ -37,6 +37,7 @@ CORPUS = HERE.parent / "corpus"                    # eden/corpus
 ROOT = HERE.parent.parent                          # repo root
 SYN_PATH = HERE / "condition-synonyms.json"
 BASELINE_PATH = HERE / "verbatim-audit-baseline.json"
+TAX_PATH = HERE / "condition-taxonomy.json"
 
 # Words with no discriminating power for a condition name — dropped before match.
 STOP = {"disease", "diseases", "syndrome", "disorder", "the", "and", "of", "chronic",
@@ -77,7 +78,16 @@ def names(text_norm: str, slug: str, display: str, syn: dict) -> bool:
     sides fixes that asymmetry (measured SESSION 35: 313->308 total, clears 5 legit
     "loss-of-sense-of-X" links, 0 regressions)."""
     text_sig = sig_phrase(text_norm)
-    return any(p and p in text_sig for p in accepted_phrases(slug, display, syn))
+    if any(p and p in text_sig for p in accepted_phrases(slug, display, syn)):
+        return True
+    # Named-by-proxy (Luneth SESSION 37): an UMBRELLA condition is "named" when the
+    # verbatim names any registered CHILD subtype (leukemia -> cancer); child->parent
+    # only. The exact-condition-named rule stays the default; this is the logged
+    # exception, surfaced per mapping by the umbrella_proxy_named info-invariant.
+    for child in taxonomy().get(slug, []):
+        if any(p and p in text_sig for p in accepted_phrases(child, child.replace("_", " "), syn)):
+            return True
+    return False
 
 
 def load_syn() -> dict:
@@ -85,6 +95,53 @@ def load_syn() -> dict:
         return {}
     return {k: v for k, v in json.loads(SYN_PATH.read_text(encoding="utf-8")).items()
             if not k.startswith("_")}
+
+
+_TAXONOMY = None
+
+
+def load_taxonomy() -> dict:
+    if not TAX_PATH.exists():
+        return {}
+    return {k: v for k, v in json.loads(TAX_PATH.read_text(encoding="utf-8")).items()
+            if not k.startswith("_")}
+
+
+def taxonomy() -> dict:
+    """Cached umbrella->children map (read once)."""
+    global _TAXONOMY
+    if _TAXONOMY is None:
+        _TAXONOMY = load_taxonomy()
+    return _TAXONOMY
+
+
+def proxy_named_mappings():
+    """(claim_id, umbrella_slug, child_slug) for mappings an umbrella satisfies ONLY
+    by naming a child subtype (not the umbrella word) — the named-by-proxy decisions,
+    surfaced for human review by the umbrella_proxy_named invariant."""
+    syn = load_syn()
+    tax = taxonomy()
+    cond, claim_by_id, _ = _load_corpus()
+    out = []
+    for slug, cinfo in cond.items():
+        if not isinstance(cinfo, dict) or slug not in tax:
+            continue
+        disp = cinfo.get("display_name", slug)
+        ids = set()
+        for role_ids in (cinfo.get("claims_by_role") or {}).values():
+            ids.update(role_ids)
+        for cid in sorted(ids):
+            c = claim_by_id.get(cid)
+            if c is None:
+                continue
+            ts = sig_phrase(norm(c.get("verbatim", "")))
+            if any(pp and pp in ts for pp in accepted_phrases(slug, disp, syn)):
+                continue  # direct name — not a proxy
+            for child in tax[slug]:
+                if any(pp and pp in ts for pp in accepted_phrases(child, child.replace("_", " "), syn)):
+                    out.append((cid, slug, child))
+                    break
+    return sorted(out)
 
 
 def _load_corpus():

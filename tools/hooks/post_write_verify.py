@@ -31,8 +31,11 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-# safe_write prints e.g. "OK   chronicle/build-log.md — appended (52211 B on disk)"
-OK_LINE = re.compile(r"^OK\s+(.+?)\s+—", re.MULTILINE)
+# safe_write prints e.g. "OK   chronicle/build-log.md — appended (52211 B on disk)".
+# The (?!\[) guard skips invariants.py lines ("OK   [critical] name: … — …") that
+# share the em-dash shape but are NOT safe_write paths (else they parse as a bogus
+# path that then "vanished" — a false PostToolUse block, SESSION 37).
+OK_LINE = re.compile(r"^OK\s+(?!\[)(\S.*?)\s+—", re.MULTILINE)
 
 
 def _ok(note=""):

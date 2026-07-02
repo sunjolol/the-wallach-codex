@@ -1848,6 +1848,25 @@ def check_verbatim_over_soft_limit():
                   f"listed for Luneth review): {sample}{' ...' if len(over) > 6 else ''}")
 
 
+def check_umbrella_proxy_named():
+    """Umbrella named-by-proxy (Luneth SESSION 37): a broad 'library' condition (e.g.
+    cancer) is accepted as named when a claim's verbatim names a registered CHILD
+    subtype (e.g. leukemia) via eden/tools/condition-taxonomy.json — child->parent
+    only. The exact-condition-named rule stays the DEFAULT; this info check LISTS every
+    proxy-satisfied mapping each board run so a human eye stays on each umbrella
+    exception. Never fails. memory: condition-umbrella-taxonomy."""
+    if not (ROOT / "eden" / "corpus" / "indices" / "conditions.json").exists():
+        return True, "eden/corpus not installed (bootstrap-guard)"
+    sys.path.insert(0, str(ROOT / "eden" / "tools"))
+    import verbatim_audit
+    m = verbatim_audit.proxy_named_mappings()
+    if not m:
+        return True, "no umbrella proxy-named mappings"
+    sample = ", ".join(f"{cid}:{umb}<={child}" for cid, umb, child in m[:6])
+    return True, (f"{len(m)} umbrella mapping(s) named-by-proxy via a child subtype "
+                  f"(reviewed exceptions): {sample}{' ...' if len(m) > 6 else ''}")
+
+
 INVARIANTS = [
     Invariant(
         name="safe_write_canary",
@@ -2104,6 +2123,14 @@ INVARIANTS = [
         truth_anchor="sealed shard verbatim lengths",
         severity="info",
         lesson_ref="SESSION 37 (2026-07-01) — Luneth: completeness of truth/education outranks a char limit; the 500 cap is a load-time/file-size guard, exceed it when needed, but ALWAYS inform; memory verbatim-length-rule",
+    ),
+    Invariant(
+        name="umbrella_proxy_named",
+        description="informational: lists every umbrella condition accepted as named-by-proxy because the verbatim names a child subtype (leukemia->cancer) via condition-taxonomy.json; keeps a human eye on each exception; never fails",
+        check_fn=check_umbrella_proxy_named,
+        truth_anchor="condition-taxonomy.json x sealed shard verbatims x conditions index",
+        severity="info",
+        lesson_ref="SESSION 37 (2026-07-01) — Luneth: keep specific subtypes as own tags AND surface under the umbrella; make logical child->parent exceptions but notify per case; memory condition-umbrella-taxonomy",
     ),
     Invariant(
         name="graphics_integrity",
