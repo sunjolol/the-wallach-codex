@@ -1997,6 +1997,36 @@ def check_jargon_terms_glossed():
     return True, f"all medical-jargon terms in claim_text have a glossary entry ({len(keys)} glossary keys)"
 
 
+def check_book_source_clean():
+    """Every book marked 'pristine' in eden/tools/purity-status.json must scan to 0
+    unresolved defects (book_purity after its per-book baseline) — a purified source
+    .txt can never silently regress. raw/purifying books are listed informationally.
+    The Source-Purification campaign's 'never circle back to the same OCR' gate."""
+    sys.path.insert(0, str(ROOT / "eden" / "tools"))
+    import book_purity
+    status_path = ROOT / "eden" / "tools" / "purity-status.json"
+    if not status_path.exists():
+        return True, "no purity-status.json — purification campaign not started"
+    status = json.loads(status_path.read_text(encoding="utf-8")).get("books", {})
+    regressions, note = [], []
+    speller_ok = True
+    for book_id, st in status.items():
+        if st != "pristine":
+            note.append(f"{book_id}={st}")
+            continue
+        n, findings, sp = book_purity.unresolved(book_id)
+        speller_ok = speller_ok and sp
+        note.append(f"{book_id}=PRISTINE:{n}")
+        if n > 0:
+            dets = ", ".join(sorted({f["detector"] for f in findings}))
+            regressions.append(f"{book_id}: {n} unresolved ({dets})")
+    if regressions:
+        return False, "PRISTINE regression -- " + "; ".join(regressions)
+    pristine = [b for b, s in status.items() if s == "pristine"]
+    warn = "" if speller_ok else " [WARN: pyspellchecker unavailable -- spell detection skipped]"
+    return True, f"{len(pristine)} pristine book(s) at 0 unresolved - {', '.join(note)}{warn}"
+
+
 INVARIANTS = [
     Invariant(
         name="safe_write_canary",
@@ -2261,6 +2291,14 @@ INVARIANTS = [
         truth_anchor="condition-taxonomy.json x sealed shard verbatims x conditions index",
         severity="info",
         lesson_ref="SESSION 37 (2026-07-01) — Luneth: keep specific subtypes as own tags AND surface under the umbrella; make logical child->parent exceptions but notify per case; memory condition-umbrella-taxonomy",
+    ),
+    Invariant(
+        name="book_source_clean",
+        description="every source book marked 'pristine' in eden/tools/purity-status.json scans to 0 unresolved defects (book_purity.py after its per-book baseline) -- a purified book's .txt can never silently regress; raw/purifying books listed informationally",
+        check_fn=check_book_source_clean,
+        truth_anchor="deterministic re-scan of the sealed book .txt each run (book_purity detectors + per-book purity-baselines allowlist); no stale-to-stale comparison",
+        severity="critical",
+        lesson_ref="Source-Purification campaign (2026-07-02) -- Luneth: we kept circling back because source .txt fixes were deferred; purify each book to pristine FIRST then GUARD it so we never re-fight the same OCR; memory book-source-purification-campaign",
     ),
     Invariant(
         name="graphics_integrity",

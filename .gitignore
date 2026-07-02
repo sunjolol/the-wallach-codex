@@ -12,3 +12,6 @@ __pycache__/
 *.pyc
 *.payload.tmp
 dashboard/assets/vendor/tesseract/
+
+# Source book screenshots (copyrighted Wallach page scans) — local OCR-verification ONLY. NEVER publish.
+temporary/

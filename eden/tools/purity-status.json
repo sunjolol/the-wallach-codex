@@ -1,0 +1,11 @@
+{
+  "_doc": "Source-Purification campaign status per book. raw = untouched OCR backlog; purifying = in progress; pristine = book_purity scan at 0 unresolved and GUARDED by the book_source_clean invariant (may never regress above 0). Set to 'pristine' only after a full audited purification + Luneth sign-off.",
+  "books": {
+    "iaiyh": "pristine",
+    "dddl-3e-2011": "raw",
+    "immortality": "raw",
+    "epigenetics": "raw",
+    "lets-play-doctor": "raw",
+    "rare-earths": "raw"
+  }
+}

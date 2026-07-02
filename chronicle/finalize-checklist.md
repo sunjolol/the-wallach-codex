@@ -8,6 +8,8 @@ _Legend: `[ ]` open · `[x]` done · `[~]` in progress. Owner: **L** = Luneth's 
 
 ## 1 · Corpus truth & cleanup (the content must be RIGHT)
 
+> **★ SESSION 41 — THE INVERT:** these items are now executed by the **Source-Purification campaign** (purify each book's source `.txt` to PRISTINE FIRST, then mine), tracked in `chronicle/next-chunk.md` + memory `book-source-purification-campaign`. No longer a deferred "final sweep" — each book is purified in ONE audited pass (book_purity scan → spec → resnap → `book_source_clean` gate). Order: IAIYH ✅ PRISTINE → DDDL → Immortality → Epigenetics → LETS → Rare Earths. The dose-safety scan, book-wide typo audit, and render-vs-txt COMPLETENESS pass below are FOLDED INTO each book's purification, not a separate end-sweep.
+
 - [~] **Verbatim-remediation campaign → 0** (`verbatim_names_mapped_conditions`). Done: EPIGEN, RARE. Remaining: LETS ~224 · DDDL ~40 · IAIYH ~21. (C→L)
 - [x] **Linguistic/logic sweep — Tier 1** (`anomaly_scan.py`) — DONE SESSION 36. All 6 books scanned; every confirmed real error fixed corpus-wide (source `.txt` + sealed verbatims); 10 true false-positives allowlisted in `eden/tools/anomaly-scan-baseline.json`. Memory [[linguistic-logic-sweep]]. (C→L)
 - [ ] **Linguistic/logic sweep — Tier 2 (offline-LLM pass)** over every claim's summary+verbatim ("does this parse? unknown term? contradiction?") — the heavy-interpretation layer, leans on the Ask-Wallach model. (C→L)

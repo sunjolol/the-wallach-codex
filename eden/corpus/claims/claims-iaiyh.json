@@ -22,7 +22,7 @@
         "page": 9,
         "screenshot": 746,
         "kindle_location": null,
-        "char_offset": 12772
+        "char_offset": 12006
       },
       "dose": null,
       "tags": [
@@ -57,7 +57,7 @@
         "page": 13,
         "screenshot": 749,
         "kindle_location": null,
-        "char_offset": 15754
+        "char_offset": 14604
       },
       "dose": null,
       "tags": [
@@ -94,7 +94,7 @@
         "page": 14,
         "screenshot": 750,
         "kindle_location": null,
-        "char_offset": 16634
+        "char_offset": 15356
       },
       "dose": null,
       "tags": [
@@ -128,7 +128,7 @@
         "page": 46,
         "screenshot": 767,
         "kindle_location": null,
-        "char_offset": 40498
+        "char_offset": 37042
       },
       "dose": null,
       "tags": [
@@ -162,7 +162,7 @@
         "page": 16,
         "screenshot": 751,
         "kindle_location": null,
-        "char_offset": 18210
+        "char_offset": 16802
       },
       "dose": null,
       "tags": [
@@ -195,7 +195,7 @@
         "page": 18,
         "screenshot": 752,
         "kindle_location": null,
-        "char_offset": 20427
+        "char_offset": 18891
       },
       "dose": null,
       "tags": [
@@ -228,7 +228,7 @@
         "page": 20,
         "screenshot": 753,
         "kindle_location": null,
-        "char_offset": 21313
+        "char_offset": 19649
       },
       "dose": null,
       "tags": [
@@ -261,7 +261,7 @@
         "page": 22,
         "screenshot": 754,
         "kindle_location": null,
-        "char_offset": 22174
+        "char_offset": 20382
       },
       "dose": null,
       "tags": [
@@ -294,7 +294,7 @@
         "page": 24,
         "screenshot": 755,
         "kindle_location": null,
-        "char_offset": 24203
+        "char_offset": 22283
       },
       "dose": null,
       "tags": [
@@ -327,7 +327,7 @@
         "page": 26,
         "screenshot": 756,
         "kindle_location": null,
-        "char_offset": 25260
+        "char_offset": 23212
       },
       "dose": null,
       "tags": [
@@ -360,7 +360,7 @@
         "page": 29,
         "screenshot": 758,
         "kindle_location": null,
-        "char_offset": 28310
+        "char_offset": 26006
       },
       "dose": null,
       "tags": [
@@ -396,7 +396,7 @@
         "page": 32,
         "screenshot": 759,
         "kindle_location": null,
-        "char_offset": 29881
+        "char_offset": 27449
       },
       "dose": null,
       "tags": [
@@ -430,7 +430,7 @@
         "page": 34,
         "screenshot": 760,
         "kindle_location": null,
-        "char_offset": 30988
+        "char_offset": 28428
       },
       "dose": null,
       "tags": [
@@ -456,8 +456,8 @@
         "atrial_fibrillation"
       ],
       "symptoms": [],
-      "claim_text": "Wallach ties several major conditions to incarceration of the vagus (tenth cranial) nerve -- the longest cranial nerve, which carries signals to the heart, lungs, and digestive tract. When skull osteoporosis pinches it, he says it produces throat and esophageal problems, gastroparesis (the book spells it 'gastroperesis' -- a sluggish, bloated stomach with reflux and diarrhea), chronic obstructive pulmonary disease (COPD), atrial fibrillation (A-fib, an abnormal heart rhythm), and hiccups when the recurrent branch is involved. In his words: \"When the vagus nerve is incarcerated it will produce throat and esophageal issues, gastroperesis (bloating, reflux, diarrhea, etc.) COPD, A-fib, and hiccups if the recurrent branch is also involved.\"",
-      "verbatim": "When the vagus nerve is incarcerated it will produce throat and esophageal\nissues, gastroperesis (bloating, reflux, diarrhea, etc.) COPD, A-fib, and hiccups\nif the recurrent branch is also involved.",
+      "claim_text": "Wallach ties several major conditions to incarceration of the vagus (tenth cranial) nerve -- the longest cranial nerve, which carries signals to the heart, lungs, and digestive tract. When skull osteoporosis pinches it, he says it produces throat and esophageal problems, gastroparesis (a sluggish, bloated stomach with reflux and diarrhea), chronic obstructive pulmonary disease (COPD), atrial fibrillation (A-fib, an abnormal heart rhythm), and hiccups when the recurrent branch is involved. In his words: \"When the vagus nerve is incarcerated it will produce throat and esophageal issues, gastroparesis (bloating, reflux, diarrhea, etc.) COPD, A-fib, and hiccups if the recurrent branch is also involved.\"",
+      "verbatim": "When the vagus nerve is incarcerated it will produce throat and esophageal\nissues, gastroparesis (bloating, reflux, diarrhea, etc.) COPD, A-fib, and hiccups\nif the recurrent branch is also involved.",
       "locator": {
         "book": "iaiyh",
         "scheme": "screenshot",
@@ -465,7 +465,7 @@
         "page": 37,
         "screenshot": 762,
         "kindle_location": null,
-        "char_offset": 33720
+        "char_offset": 30904
       },
       "dose": null,
       "tags": [
@@ -496,7 +496,7 @@
         "page": 39,
         "screenshot": 763,
         "kindle_location": null,
-        "char_offset": 35601
+        "char_offset": 32657
       },
       "dose": null,
       "tags": [
@@ -529,7 +529,7 @@
         "page": 41,
         "screenshot": 764,
         "kindle_location": null,
-        "char_offset": 36543
+        "char_offset": 33471
       },
       "dose": null,
       "tags": [
@@ -567,7 +567,7 @@
         "page": 43,
         "screenshot": 765,
         "kindle_location": null,
-        "char_offset": 38150
+        "char_offset": 34950
       },
       "dose": null,
       "tags": [
@@ -598,7 +598,7 @@
         "page": 46,
         "screenshot": 767,
         "kindle_location": null,
-        "char_offset": 41371
+        "char_offset": 37915
       },
       "dose": null,
       "tags": [
@@ -630,7 +630,7 @@
         "page": 48,
         "screenshot": 768,
         "kindle_location": null,
-        "char_offset": 43298
+        "char_offset": 39714
       },
       "dose": null,
       "tags": [
@@ -662,7 +662,7 @@
         "page": 6,
         "screenshot": 744,
         "kindle_location": null,
-        "char_offset": 8992
+        "char_offset": 8482
       },
       "dose": null,
       "tags": [

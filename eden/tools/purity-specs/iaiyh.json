@@ -1,0 +1,29 @@
+{
+  "book": "iaiyh",
+  "_doc": "Source-purification spec for It's All In Your Head (2020). Audited 2026-07-02 with Luneth. Policy: correct all typos uniformly (incl. verbatims); OCR + author typos both fixed; keep book's hyphenation; whole-book pristine incl. bibliography.",
+  "strip_running_header": {
+    "text": "IT'S ALL IN YOUR HEAD!: HOW THE 12 CRANIAL NERVES IN YOUR HEAD EFFECT YOUR BODY'S HEALTH AND HOW TO FIX IT... WITHOUT A DOCTOR!",
+    "keep_lines": [8, 13]
+  },
+  "replacements": [
+    {"find": "Gastroperesis", "repl": "Gastroparesis", "expect": 1, "why": "typo; correct term gastroparesis (vagus->stomach, disease list)"},
+    {"find": "gastroperesis", "repl": "gastroparesis", "expect": 1, "why": "typo; correct term gastroparesis (mined verbatim IAIYH-000014)"},
+    {"find": "Hperparathyroidism", "repl": "Hyperparathyroidism", "expect": 1, "why": "dropped 'y' typo (bibliography citation)"},
+    {"find": "Crocodillians", "repl": "Crocodilians", "expect": 1, "why": "double-l typo (bibliography)"},
+    {"find": "Amotragus", "repl": "Ammotragus", "expect": 1, "why": "genus typo; Ammotragus lervia = aoudad (bibliography)"},
+    {"find": "Antverppiensia", "repl": "Antverpiensia", "expect": 1, "why": "double-p typo; journal Acta Zool. Pathol. Antverpiensia (Antwerp)"},
+    {"find": "text(based", "repl": "text (based", "expect": 1, "why": "missing space before paren (front matter)"},
+    {"find": "DSHEA1995", "repl": "DSHEA 1995", "expect": 1, "why": "missing space, letter glued to year (see flag re: 1994 vs 1995)"},
+    {"find": "JAVMA.151", "repl": "JAVMA. 151", "expect": 1, "why": "missing space after period (citation)"},
+    {"find": "889.1967.", "repl": "889. 1967.", "expect": 1, "why": "missing space after period (citation year)"},
+    {"find": "Med.2", "repl": "Med. 2", "expect": 1, "why": "missing space after period (citation)"},
+    {"find": "23.1971.", "repl": "23. 1971.", "expect": 1, "why": "missing space after period (citation year)"},
+    {"find": "1978.CJ", "repl": "1978. CJ", "expect": 1, "why": "missing space after period (citation)"},
+    {"find": "5, ,6", "repl": "5, 6", "expect": 1, "why": "doubled comma (image-credits page list)"}
+  ],
+  "flags": [
+    "L356 'syn-arthropodal (immobile) joints' -> likely 'synarthrodial'/'synarthrodal' (the term for immobile joints); semantic, unmined prose; CONFIRM before fixing.",
+    "L1037/1039 'rofessional,' x2 -> ambiguous OCR garble in a chapter-source citation list; intended word unclear; CONFIRM.",
+    "L180 DSHEA year: the Dietary Supplement Health & Education Act is factually 1994, book prints '1995'; space-fix applied, YEAR left as printed pending your linguistic-logic ruling."
+  ]
+}
