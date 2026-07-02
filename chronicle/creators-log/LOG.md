@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 288 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 289 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-02 13:29 UTC-05:00 · round-close · corpus/dose-typo
+Dose/typo pass: claim 396 Parkinsonism dose string source-verified (NO misprint) + HC1→HCl ×27 + botanical OCR (Carum carvi, Caulophyllum ×2) + tuberose→tuberosa author-fix. kv 244→246, board 37/37.
+  ↳ Rendered the scanned PDF page to confirm 396's dose values are all correct (no misprint); fixed OCR spacing/glyphs; Luneth ruled l-/dl- normalization + phenoalanine→phenylalanine. Swept HC1→HCl across 27 claims (25 LETS + DDDL 58/60, scan-confirmed). Botanical OCR: Canimcarvi→Carum carvi, Caulophyllus→Caulophyllum (335,402, book prints correct). Author-error (Luneth-ruled): tuberose→tuberosa (353). Comprehensive re-scan caught 2 gaps, fixed in a mini-batch; 0 residual across all books. Pipeline through seal (kv246) + invariants 37/37 + probe PASS.
 
 ## 2026-07-02 13:09 UTC-05:00 · round-close · corpus/lets-play-doctor
 LETS de-hyphenation reflow (450 in-verbatim wraps joined, 267 claims) + run-together sweep (40 fixes); Luneth caught 3 hard-hyphen mis-joins. kv 242→244, board 37/37, all verbatims render clean.
@@ -782,7 +786,3 @@ Phase γ.3 batch 42 — Rare Earths Se/Selenium PART 1: 2 NEW claims RARE-225..2
 ## 2026-06-25 17:05 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 41 — Rare Earths Sb/Antimony + Sc/Scandium: RARE-224 Sb (tartar emetic for schistosomiasis, other_substances=[antimony]); Sc confirmed geology-only. kv 78→79, corpus 317→318, conditions 144→145, board 30/30, knowledge probe green.
   ↳ Sc/Scandium read + confirmed geology-only (igneous 22 ppm, concentrates in mammalian heart and bone; canon-90 yet geology-only, same pattern as Re/Dy/Er/Gd/Hf/Ho/Lu/Nb). RARE-224 Sb/Antimony (toxic, non-canon → other_substances=[antimony], cond=schistosomiasis, kind=protocol): antimony potassium tartrate (tartar emetic) is still used today as the preferred treatment for blood flukes (schistosomiasis / bilharziasis). No book .txt edit this batch — the Sb claim sentence had no line-break hyphens, so its verbatim snapped from raw text; no resnap required. New condition slug schistosomiasis. Next: Se/Selenium as a dedicated rich batch (cross-check DDDL's heavy selenium coverage, extract only new Rare Earths angles). Claim reviewed + approved by Luneth before commit.
-
-## 2026-06-25 16:54 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 40 — Rare Earths S/Sulfur: 5 claims RARE-219..223 (definition, mechanism x3, deficiency_sign). kv 77→78, corpus 312→317, conditions 141→144, board 30/30, knowledge probe green.
-  ↳ Mined the rich S/Sulfur canon entry (p376-377). Claims: (219) structural atom in most proteins as sulfur amino acids cystine/cysteine/methionine + glutathione (cysteine tripeptide) essential to cellular reactions; (220) sulfhydryl group (reduced -SH cysteine / oxidized disulfide -S-S- cystine) → protein configuration + enzyme activity; (221) sulfur-containing proteins maintain life — hemoglobin, hormones (insulin, adrenal cortical), enzymes, antibodies; (222) sulfur in heparin (anticoagulant), chondroitin sulfate (cartilage/Knox gelatin), thiamine(B1)+biotin; arsenic toxicity via sulfhydryl binding; (223) deficiency → degenerative arthritis (cartilage/ligament/tendon), systemic lupus erythematosus, sickle-cell anemia, collagen diseases. The structural sentence is split by a firefighter-death news clipping (p377) left RAW — verbatims sit in the contiguous spans on either side, none crossing the clipping. 3 targeted reflows (S2/S3/S5 de-hyphenated); S1/S4 snapped from raw; resnap 0 broken. Faithful OCR/book typos kept in verbatims (somes, Systemic Lupus Erythematosis, Sicklecell); claim_texts clean. New condition slugs lupus/sickle_cell_anemia/collagen_disease. Claims reviewed + approved by Luneth before commit.
