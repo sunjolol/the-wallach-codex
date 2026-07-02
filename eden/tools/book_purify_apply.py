@@ -11,26 +11,42 @@ Safety by construction:
     with nothing written (a spec can never silently over/under-replace).
   * Running-header stripping removes only content lines byte-equal to the declared
     header text, except explicit keep_lines (the genuine title pages).
+  * The regex running-line stripper (`strip_running`) re-derives its target lines from
+    the declared patterns and asserts each family's expected drop/strip count — a
+    count mismatch aborts. Every stripped line is re-validated to look like a header.
   * Writes route through safe_write (§17); default is a DRY report.
 
 It also AUTO-DERIVES the resnap --fix map: for any sealed verbatim containing a
 `find`, it applies the same replacements to produce the corrected verbatim, so a
 letter-fix propagates to every mined span mechanically (the RARE/LETS multiplier).
 
-Spec shape:
+Spec shape (all sections optional; applied in this order — replacements, strip_header,
+strip_running, line_fuses):
 {
   "book": "iaiyh",
+  "replacements": [ {"find": "...", "repl": "...", "expect": 1, "word": false, "why": "..."} ],
   "strip_running_header": {"text": "<exact header line>", "keep_lines": [8, 13]},
-  "replacements": [ {"find": "...", "repl": "...", "expect": 1, "why": "..."} , ... ]
+  "strip_running": {                         # regex running-header/footer strip (DDDL-class)
+     "front_matter_end": 89,                 # never strip lines 1..N (title/copyright/TOC)
+     "keep_lines": [],                       # extra 1-based lines to never strip
+     "verso_pattern": "<regex matched at line start; prefix removed>",
+     "recto_pattern": "<regex with named groups t (title) + pg (page)>",
+     "recto_page_min": 13, "recto_page_max": 410,
+     "recto_allow_digit_titles": ["20/20"],  # titles that legitimately contain digits
+     "content_not_head": [12000, 12387],     # recto-shaped lines that are real content
+     "expect": {"verso_drop": 39, "verso_strip": 154, "recto_drop": 167}
+  },
+  "line_fuses": [ {"a": "reproduc", "b": "tion", "expect": 1, "why": "page-break split"} ]
 }
 
 CLI:
-  dry     --book <id>                    report the changes a spec would make
+  dry     --book <id>  [--flags]         report the changes a spec would make
   write   --book <id>                    apply to the book via safe_write
   fixmap  --book <id> --out <path>       write the resnap --fix map (broken verbatims)
 """
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -64,19 +80,32 @@ def book_path(book_id: str) -> Path:
     sys.exit(2)
 
 
+def _apply_one(text: str, r: dict) -> tuple[str, int]:
+    """Apply one replacement, honouring `word` (whole-word regex boundary — required
+    when the OCR form is a substring of a real word, e.g. 'develope' inside
+    'developed'). Asserts the exact `expect` count; aborts on mismatch."""
+    find, repl, expect, word = r["find"], r["repl"], r.get("expect"), r.get("word")
+    if word:
+        pat = re.compile(r"(?<![A-Za-z])" + re.escape(find) + r"(?![A-Za-z])")
+        n = len(pat.findall(text))
+    else:
+        n = text.count(find)
+    if expect is not None and n != expect:
+        print(f"ABORT — replacement count mismatch for {find!r}: found {n}, expected {expect}")
+        print(f"        ({r.get('why','')})")
+        sys.exit(1)
+    text = pat.sub(repl, text) if word else text.replace(find, repl)
+    return text, n
+
+
 def apply_replacements(text: str, replacements: list) -> tuple[str, list]:
-    """Apply each replacement, asserting its exact expected count. Returns (new_text,
-    log). Aborts the process on any count mismatch — nothing gets written."""
+    """Apply each replacement in order. Returns (new_text, log). Aborts on any count
+    mismatch — nothing gets written."""
     log = []
     for r in replacements:
-        find, repl, expect = r["find"], r["repl"], r.get("expect")
-        n = text.count(find)
-        if expect is not None and n != expect:
-            print(f"ABORT — replacement count mismatch for {find!r}: found {n}, expected {expect}")
-            print(f"        ({r.get('why','')})")
-            sys.exit(1)
-        text = text.replace(find, repl)
-        log.append(f"  {find!r} -> {repl!r}  ×{n}   [{r.get('why','')}]")
+        text, n = _apply_one(text, r)
+        w = " (word)" if r.get("word") else ""
+        log.append(f"  {r['find']!r} -> {r['repl']!r}  ×{n}{w}   [{r.get('why','')}]")
     return text, log
 
 
@@ -95,41 +124,149 @@ def strip_header(text: str, cfg: dict) -> tuple[str, int]:
     return "\n".join(out), removed
 
 
+def strip_running(text: str, cfg: dict) -> tuple[str, dict]:
+    """Regex running-header/footer strip for books whose header varies per page
+    (attached page numbers, per-chapter titles) so byte-equal strip_header can't
+    catch it. Two families:
+      * verso  — matched at line start; the matched prefix is REMOVED. If content
+                 trails on the same line (the next page's first words glued on by the
+                 OCR) that content is kept; otherwise the whole line is dropped.
+      * recto  — a '<chapter title> - <page>' line; the whole line is dropped after
+                 validating it looks like a head (page in range, title not prose).
+    Front-matter lines (<= front_matter_end) and keep_lines are never touched.
+    Each family's drop/strip counts are asserted against cfg['expect'] — a mismatch
+    aborts, so the strip can never silently over/under-remove."""
+    if not cfg:
+        return text, {}
+    fm_end = cfg.get("front_matter_end", 0)
+    keep = set(cfg.get("keep_lines", []))
+    verso = re.compile(cfg["verso_pattern"], re.I) if cfg.get("verso_pattern") else None
+    recto = re.compile(cfg["recto_pattern"]) if cfg.get("recto_pattern") else None
+    pg_min, pg_max = cfg.get("recto_page_min", 1), cfg.get("recto_page_max", 9999)
+    allow_digit = set(cfg.get("recto_allow_digit_titles", []))
+    not_head = set(cfg.get("content_not_head", []))
+    # explicit bare page/chapter-number lines to drop (isolated numbers the OCR left
+    # at page boundaries). Each is asserted to actually be a bare number before drop.
+    drop_nums = set(cfg.get("drop_line_numbers", []))
+    tail_prose = re.compile(r"\b(at|as|of|and|the|to|include|should|avoid)\s*$", re.I)
+
+    out, st = [], {"verso_drop": 0, "verso_strip": 0, "recto_drop": 0, "num_drop": 0, "bad": []}
+    for i, ln in enumerate(text.split("\n"), start=1):
+        if i <= fm_end or i in keep:
+            out.append(ln); continue
+        if i in drop_nums:
+            if not re.fullmatch(r"\s*\d{1,4}\s*", ln):
+                print(f"ABORT — drop_line_numbers L{i} is not a bare number: {ln.strip()!r}")
+                sys.exit(1)
+            st["num_drop"] += 1
+            continue
+        if verso:
+            mv = verso.match(ln)
+            if mv:
+                tail = ln[mv.end():].strip()
+                if tail:
+                    st["verso_strip"] += 1; out.append(tail)
+                else:
+                    st["verso_drop"] += 1
+                continue
+        if recto:
+            mr = recto.match(ln)
+            if mr and i not in not_head:
+                title, pg = mr.group("t").strip(), int(mr.group("pg"))
+                alpha = re.sub(r"[^A-Za-z]", "", title)
+                looks_head = (pg_min <= pg <= pg_max and len(alpha) >= 5
+                              and not re.search(r"\d", title)
+                              and not tail_prose.search(title))
+                if title in allow_digit:
+                    looks_head = pg_min <= pg <= pg_max
+                if looks_head:
+                    st["recto_drop"] += 1
+                    continue
+                st["bad"].append((i, ln.strip()))
+        out.append(ln)
+
+    exp = cfg.get("expect", {})
+    for k in ("verso_drop", "verso_strip", "recto_drop", "num_drop"):
+        if k in exp and exp[k] != st[k]:
+            print(f"ABORT — strip_running {k} count mismatch: got {st[k]}, expected {exp[k]}")
+            sys.exit(1)
+    return "\n".join(out), st
+
+
+def apply_fuses(text: str, fuses: list) -> tuple[str, list]:
+    """Join a word the OCR split across a stripped running-header line: 'a\\nb' -> 'ab'
+    (no space). Only for TRUE mid-word breaks (both halves lowercase fragments); a
+    two-word wrap is left to the newline->space of normal rendering. Count-asserted."""
+    log = []
+    for f in fuses:
+        needle = f"{f['a']}\n{f['b']}"
+        n = text.count(needle)
+        if f.get("expect") is not None and n != f["expect"]:
+            print(f"ABORT — fuse count mismatch for {needle!r}: found {n}, expected {f['expect']}")
+            sys.exit(1)
+        text = text.replace(needle, f["a"] + f["b"])
+        log.append(f"  {f['a']!r}+{f['b']!r} -> {f['a']+f['b']!r}  ×{n}   [{f.get('why','')}]")
+    return text, log
+
+
 def transform(book_id: str):
     spec = load_spec(book_id)
     text = lf_text(book_path(book_id))
     before = text
     text, rlog = apply_replacements(text, spec.get("replacements", []))
     text, n_hdr = strip_header(text, spec.get("strip_running_header"))
-    return spec, before, text, rlog, n_hdr
+    text, rstats = strip_running(text, spec.get("strip_running"))
+    text, flog = apply_fuses(text, spec.get("line_fuses", []))
+    stats = {"n_hdr": n_hdr, "rstats": rstats, "flog": flog}
+    return spec, before, text, rlog, stats
 
 
 def cmd_dry(args):
-    spec, before, after, rlog, n_hdr = transform(args.book)
+    spec, before, after, rlog, stats = transform(args.book)
     print(f"=== purify DRY — {args.book} ===")
     print(f"  replacements ({len(rlog)}):")
     for line in rlog:
         print(line)
-    print(f"  running-header lines stripped: {n_hdr}  (kept: {spec.get('strip_running_header',{}).get('keep_lines',[])})")
+    if stats["flog"]:
+        print(f"  line fuses ({len(stats['flog'])}):")
+        for line in stats["flog"]:
+            print(line)
+    if stats["n_hdr"]:
+        print(f"  byte-equal header lines stripped: {stats['n_hdr']}  "
+              f"(kept: {spec.get('strip_running_header',{}).get('keep_lines',[])})")
+    rs = stats["rstats"]
+    if rs:
+        print(f"  running-line strip: verso_drop={rs['verso_drop']} verso_strip={rs['verso_strip']} "
+              f"recto_drop={rs['recto_drop']} num_drop={rs['num_drop']}  "
+              f"(total {rs['verso_drop']+rs['verso_strip']+rs['recto_drop']+rs['num_drop']})")
+        if rs["bad"]:
+            print(f"  !! {len(rs['bad'])} dropped lines did NOT look like a header:")
+            for i, t in rs["bad"][:10]:
+                print(f"       L{i}: {t!r}")
     print(f"  size: {len(before)} -> {len(after)} chars  (Δ {len(after)-len(before)})")
     if args.flags and spec.get("flags"):
-        print("  FLAGGED for human ruling (NOT auto-applied):")
+        print(f"  FLAGGED for human ruling ({len(spec['flags'])}, NOT auto-applied):")
         for f in spec["flags"]:
             print(f"    - {f}")
 
 
 def cmd_write(args):
-    spec, before, after, rlog, n_hdr = transform(args.book)
+    spec, before, after, rlog, stats = transform(args.book)
     if after == before:
         print("no change — nothing to write")
         return
     n = safe_write.safe_rewrite(book_path(args.book), after)
+    rs = stats["rstats"]
+    strip_n = (rs.get("verso_drop", 0) + rs.get("verso_strip", 0) + rs.get("recto_drop", 0)
+               + rs.get("num_drop", 0)) if rs else 0
     print(f"OK wrote {book_path(args.book).relative_to(ROOT)} ({n} B) — "
-          f"{len(rlog)} replacement group(s), {n_hdr} header line(s) stripped")
+          f"{len(rlog)} replacement group(s), {stats['n_hdr']} byte-equal header line(s), "
+          f"{strip_n} running-line(s), {len(stats['flog'])} fuse(s)")
 
 
 def cmd_fixmap(args):
-    """Auto-derive {claim_id: corrected_verbatim} for verbatims touched by a `find`."""
+    """Auto-derive {claim_id: corrected_verbatim} for verbatims touched by a `find`.
+    Honours the `word` boundary flag so a whole-word fix propagates correctly."""
     spec = load_spec(args.book)
     reps = spec.get("replacements", [])
     shard = CLAIMS_DIR / f"claims-{args.book}.json"
@@ -139,8 +276,14 @@ def cmd_fixmap(args):
         vb = c.get("verbatim", "")
         new_vb = vb
         for r in reps:
-            if r["find"] in new_vb:
+            if r.get("word"):
+                pat = re.compile(r"(?<![A-Za-z])" + re.escape(r["find"]) + r"(?![A-Za-z])")
+                new_vb = pat.sub(r["repl"], new_vb)
+            elif r["find"] in new_vb:
                 new_vb = new_vb.replace(r["find"], r["repl"])
+        for f in spec.get("line_fuses", []):
+            # verbatims are stored reflowed (no embedded newline) — fuse the space form
+            new_vb = new_vb.replace(f"{f['a']} {f['b']}", f["a"] + f["b"])
         if new_vb != vb:
             fixmap[c["id"]] = new_vb
     out = Path(args.out)

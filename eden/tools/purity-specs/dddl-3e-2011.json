@@ -1,0 +1,1015 @@
+{
+  "book": "dddl-3e-2011",
+  "_doc": "Source-purification spec for Dead Doctors Don't Lie (3rd ed, 2011). Built SESSION 42. Policy [[correct-everything-uniformly]] + [[book-source-purification-campaign]]: fix all OCR/typos uniformly, strip running headers/footers, keep book hyphenation + title/TOC. Scientific-name and semantic calls are in 'flags' for Luneth's audit.",
+  "replacements": [
+    {
+      "find": "botde",
+      "repl": "bottle",
+      "expect": 7,
+      "word": true,
+      "why": "OCR ttl->td"
+    },
+    {
+      "find": "botdes",
+      "repl": "bottles",
+      "expect": 2,
+      "why": "OCR"
+    },
+    {
+      "find": "botties",
+      "repl": "bottles",
+      "expect": 2,
+      "why": "OCR"
+    },
+    {
+      "find": "botding",
+      "repl": "bottling",
+      "expect": 2,
+      "why": "OCR"
+    },
+    {
+      "find": "bottiing",
+      "repl": "bottling",
+      "expect": 3,
+      "why": "OCR"
+    },
+    {
+      "find": "litde",
+      "repl": "little",
+      "expect": 4,
+      "why": "OCR"
+    },
+    {
+      "find": "littie",
+      "repl": "little",
+      "expect": 3,
+      "why": "OCR"
+    },
+    {
+      "find": "direcdy",
+      "repl": "directly",
+      "expect": 3,
+      "word": true,
+      "why": "OCR"
+    },
+    {
+      "find": "indirecdy",
+      "repl": "indirectly",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "distincdy",
+      "repl": "distinctly",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "incorrecdy",
+      "repl": "incorrectly",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "frequentiy",
+      "repl": "frequently",
+      "expect": 6,
+      "why": "OCR"
+    },
+    {
+      "find": "frequendy",
+      "repl": "frequently",
+      "expect": 2,
+      "why": "OCR"
+    },
+    {
+      "find": "quiedy",
+      "repl": "quietly",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "tightiy",
+      "repl": "tightly",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "slighdy",
+      "repl": "slightly",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "currendy",
+      "repl": "currently",
+      "expect": 1,
+      "word": true,
+      "why": "OCR"
+    },
+    {
+      "find": "concurrendy",
+      "repl": "concurrently",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "significandy",
+      "repl": "significantly",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "sufficientiy",
+      "repl": "sufficiently",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "inherentiy",
+      "repl": "inherently",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "relentiessly",
+      "repl": "relentlessly",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "listiess",
+      "repl": "listless",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "unsightiy",
+      "repl": "unsightly",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "fruidess",
+      "repl": "fruitless",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "spodess",
+      "repl": "spotless",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "nighdy",
+      "repl": "nightly",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "recendy",
+      "repl": "recently",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "mantie",
+      "repl": "mantle",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "myrde",
+      "repl": "myrtle",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "myrtie",
+      "repl": "myrtle",
+      "expect": 2,
+      "why": "OCR"
+    },
+    {
+      "find": "nettie",
+      "repl": "nettle",
+      "expect": 2,
+      "why": "OCR"
+    },
+    {
+      "find": "cattie",
+      "repl": "cattle",
+      "expect": 2,
+      "why": "OCR"
+    },
+    {
+      "find": "turties",
+      "repl": "turtles",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "brittie",
+      "repl": "brittle",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "britde",
+      "repl": "brittle",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "gentie",
+      "repl": "gentle",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "battie",
+      "repl": "battle",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "batde",
+      "repl": "battle",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "setde",
+      "repl": "settle",
+      "expect": 1,
+      "word": true,
+      "why": "OCR"
+    },
+    {
+      "find": "setded",
+      "repl": "settled",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "setdement",
+      "repl": "settlement",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "settiement",
+      "repl": "settlement",
+      "expect": 1,
+      "word": true,
+      "why": "OCR"
+    },
+    {
+      "find": "settiements",
+      "repl": "settlements",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "entided",
+      "repl": "entitled",
+      "expect": 3,
+      "why": "OCR"
+    },
+    {
+      "find": "startied",
+      "repl": "startled",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "wresding",
+      "repl": "wrestling",
+      "expect": 2,
+      "why": "OCR"
+    },
+    {
+      "find": "caffiene",
+      "repl": "caffeine",
+      "expect": 11,
+      "why": "misspelling"
+    },
+    {
+      "find": "collogen",
+      "repl": "collagen",
+      "expect": 2,
+      "why": "OCR"
+    },
+    {
+      "find": "metastisis",
+      "repl": "metastasis",
+      "expect": 4,
+      "why": "misspelling"
+    },
+    {
+      "find": "tonsilitis",
+      "repl": "tonsillitis",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "fibrilation",
+      "repl": "fibrillation",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "arrythmia",
+      "repl": "arrhythmia",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "adominal",
+      "repl": "abdominal",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "nurishment",
+      "repl": "nourishment",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "respitory",
+      "repl": "respiratory",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "retension",
+      "repl": "retention",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "salacylic",
+      "repl": "salicylic",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "occured",
+      "repl": "occurred",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "occaisions",
+      "repl": "occasions",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "aquiring",
+      "repl": "acquiring",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "deficienciy",
+      "repl": "deficiency",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "hydroceole",
+      "repl": "hydrocele",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "hydrocephalis",
+      "repl": "hydrocephalus",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "higest",
+      "repl": "highest",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "hubub",
+      "repl": "hubbub",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "macropohages",
+      "repl": "macrophages",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "cephlopods",
+      "repl": "cephalopods",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "moluscs",
+      "repl": "molluscs",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "phorphyrin",
+      "repl": "porphyrin",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "origiinal",
+      "repl": "original",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "pharmacologilcal",
+      "repl": "pharmacological",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "intolerence",
+      "repl": "intolerance",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "calcarious",
+      "repl": "calcareous",
+      "expect": 2,
+      "why": "misspelling"
+    },
+    {
+      "find": "contaminents",
+      "repl": "contaminants",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "dandilion",
+      "repl": "dandelion",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "valarian",
+      "repl": "valerian",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "vumitory",
+      "repl": "fumitory",
+      "expect": 1,
+      "why": "OCR v/f"
+    },
+    {
+      "find": "variey",
+      "repl": "variety",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "enchinacea",
+      "repl": "echinacea",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "celadine",
+      "repl": "celandine",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "grappie",
+      "repl": "grapple",
+      "expect": 1,
+      "why": "OCR (grapple plant)"
+    },
+    {
+      "find": "uncoordination",
+      "repl": "incoordination",
+      "expect": 2,
+      "why": "misspelling"
+    },
+    {
+      "find": "pruritis",
+      "repl": "pruritus",
+      "expect": 4,
+      "why": "misspelling"
+    },
+    {
+      "find": "proplapse",
+      "repl": "prolapse",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "nonmalig-nant",
+      "repl": "nonmalignant",
+      "expect": 1,
+      "why": "spurious hyphen"
+    },
+    {
+      "find": "toxi-cologist",
+      "repl": "toxicologist",
+      "expect": 1,
+      "why": "spurious hyphen"
+    },
+    {
+      "find": "develope",
+      "repl": "develop",
+      "expect": 1,
+      "word": true,
+      "why": "archaic->modern"
+    },
+    {
+      "find": "Alche milla",
+      "repl": "Alchemilla",
+      "expect": 1,
+      "why": "OCR split genus"
+    },
+    {
+      "find": "contami nated",
+      "repl": "contaminated",
+      "expect": 1,
+      "why": "OCR split word"
+    },
+    {
+      "find": "Geumur-banum",
+      "repl": "Geum urbanum",
+      "expect": 1,
+      "why": "OCR mangled binomial"
+    },
+    {
+      "find": "Prunis",
+      "repl": "Prunus",
+      "expect": 1,
+      "why": "genus OCR"
+    },
+    {
+      "find": "Hamaelis",
+      "repl": "Hamamelis",
+      "expect": 1,
+      "why": "genus OCR"
+    },
+    {
+      "find": "Rincinus",
+      "repl": "Ricinus",
+      "expect": 1,
+      "why": "genus OCR"
+    },
+    {
+      "find": "Pinnus",
+      "repl": "Pinus",
+      "expect": 1,
+      "word": true,
+      "why": "genus OCR"
+    },
+    {
+      "find": "Quglans",
+      "repl": "Juglans",
+      "expect": 1,
+      "why": "genus OCR J->Qu"
+    },
+    {
+      "find": "Staphlococcus",
+      "repl": "Staphylococcus",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "Unversity",
+      "repl": "University",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "Sarenoa",
+      "repl": "Serenoa",
+      "expect": 2,
+      "why": "genus OCR"
+    },
+    {
+      "find": "Caulophyllus",
+      "repl": "Caulophyllum",
+      "expect": 2,
+      "why": "genus misspelling"
+    },
+    {
+      "find": "Helicobactor",
+      "repl": "Helicobacter",
+      "expect": 1,
+      "why": "OCR"
+    },
+    {
+      "find": "Echinaca",
+      "repl": "Echinacea",
+      "expect": 1,
+      "why": "genus misspelling"
+    },
+    {
+      "find": "Cinnamonum",
+      "repl": "Cinnamomum",
+      "expect": 2,
+      "why": "genus OCR"
+    },
+    {
+      "find": "Lactobicillus",
+      "repl": "Lactobacillus",
+      "expect": 1,
+      "why": "genus OCR"
+    },
+    {
+      "find": "Glyccerizin",
+      "repl": "Glycyrrhiza",
+      "expect": 1,
+      "why": "genus OCR"
+    },
+    {
+      "find": "Glycyrrhyza",
+      "repl": "Glycyrrhiza",
+      "expect": 1,
+      "why": "genus misspelling"
+    },
+    {
+      "find": "Pyoffhea",
+      "repl": "Pyorrhea",
+      "expect": 1,
+      "why": "OCR rr->ff"
+    },
+    {
+      "find": "Achloryhydria",
+      "repl": "Achlorhydria",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "Rremember",
+      "repl": "Remember",
+      "expect": 1,
+      "why": "OCR double-R"
+    },
+    {
+      "find": "phenylananine",
+      "repl": "phenylalanine",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "phenoalanine",
+      "repl": "phenylalanine",
+      "expect": 1,
+      "why": "book typo"
+    },
+    {
+      "find": "Monoxidil",
+      "repl": "Minoxidil",
+      "expect": 1,
+      "why": "misspelling"
+    },
+    {
+      "find": "ginko",
+      "repl": "ginkgo",
+      "expect": 2,
+      "why": "correct genus Ginkgo biloba"
+    },
+    {
+      "find": "Ginko",
+      "repl": "Ginkgo",
+      "expect": 2,
+      "why": "correct genus Ginkgo biloba"
+    },
+    {
+      "find": "annus",
+      "repl": "annuus",
+      "expect": 2,
+      "word": true,
+      "why": "Helianthus annuus (sunflower)"
+    },
+    {
+      "find": "carnii",
+      "repl": "carinii",
+      "expect": 1,
+      "why": "Pneumocystis carinii"
+    },
+    {
+      "find": "synovea",
+      "repl": "synoviae",
+      "expect": 2,
+      "why": "Mycoplasma synoviae"
+    },
+    {
+      "find": "magalis",
+      "repl": "majalis",
+      "expect": 3,
+      "word": true,
+      "why": "Convallaria majalis"
+    },
+    {
+      "find": "megalis",
+      "repl": "majalis",
+      "expect": 1,
+      "word": true,
+      "why": "Convallaria majalis"
+    },
+    {
+      "find": "mejalis",
+      "repl": "majalis",
+      "expect": 1,
+      "word": true,
+      "why": "Convallaria majalis"
+    },
+    {
+      "find": "Digitalis purpura",
+      "repl": "Digitalis purpurea",
+      "expect": 1,
+      "why": "foxglove epithet"
+    },
+    {
+      "find": "Hellebores niger",
+      "repl": "Helleborus niger",
+      "expect": 1,
+      "why": "correct genus Helleborus"
+    },
+    {
+      "find": "Zumba",
+      "repl": "Zumbani",
+      "expect": 4,
+      "why": "mangled testosterone herb (Lippia javanica); Luneth LETS precedent"
+    },
+    {
+      "find": "diverticulae",
+      "repl": "diverticula",
+      "expect": 1,
+      "why": "correct medical plural"
+    },
+    {
+      "find": "quincies",
+      "repl": "quinsies",
+      "expect": 1,
+      "why": "quinsy plural"
+    },
+    {
+      "find": "cyanocobabalamine",
+      "repl": "cyanocobalamin",
+      "expect": 1,
+      "why": "OCR extra 'ba'"
+    },
+    {
+      "find": "mysteine",
+      "repl": "cysteine",
+      "expect": 1,
+      "why": "sulfur amino acid (methionine/cysteine/cystine triad)"
+    },
+    {
+      "find": "cystene",
+      "repl": "cystine",
+      "expect": 1,
+      "why": "sulfur amino acid triad"
+    },
+    {
+      "find": "1-glutamine",
+      "repl": "l-glutamine",
+      "expect": 1,
+      "why": "l-form OCR 1->l"
+    },
+    {
+      "find": "1-arginine",
+      "repl": "l-arginine",
+      "expect": 2,
+      "why": "l-form OCR"
+    },
+    {
+      "find": "1-cysteine",
+      "repl": "l-cysteine",
+      "expect": 1,
+      "why": "l-form OCR"
+    },
+    {
+      "find": "1-tyrosine",
+      "repl": "l-tyrosine",
+      "expect": 2,
+      "why": "l-form OCR"
+    },
+    {
+      "find": "1-methionine",
+      "repl": "l-methionine",
+      "expect": 1,
+      "why": "l-form OCR"
+    },
+    {
+      "find": "1-histidine",
+      "repl": "l-histidine",
+      "expect": 1,
+      "why": "l-form OCR"
+    },
+    {
+      "find": "1-Lysine",
+      "repl": "l-Lysine",
+      "expect": 1,
+      "why": "l-form OCR"
+    },
+    {
+      "find": "1-Dopa",
+      "repl": "l-Dopa",
+      "expect": 1,
+      "why": "l-form OCR (L-Dopa)"
+    },
+    {
+      "find": "1-tryptophan",
+      "repl": "l-tryptophan",
+      "expect": 1,
+      "word": true,
+      "why": "l-form OCR"
+    },
+    {
+      "find": "1-tryptophane",
+      "repl": "l-tryptophan",
+      "expect": 1,
+      "why": "l-form OCR + phane->phan"
+    },
+    {
+      "find": "1-trypto-phane",
+      "repl": "l-tryptophan",
+      "expect": 1,
+      "why": "l-form OCR + hyphen-break + phane->phan"
+    },
+    {
+      "find": "H202",
+      "repl": "H2O2",
+      "expect": 13,
+      "why": "hydrogen peroxide O/0"
+    },
+    {
+      "find": "atmospheric 02",
+      "repl": "atmospheric O2",
+      "expect": 1,
+      "why": "oxygen O/0"
+    },
+    {
+      "find": "Ozone 03",
+      "repl": "Ozone O3",
+      "expect": 1,
+      "why": "ozone O/0"
+    },
+    {
+      "find": "120 -140years",
+      "repl": "120-140 years",
+      "expect": 1,
+      "why": "missing space + stray space"
+    },
+    {
+      "find": "B12IV",
+      "repl": "B12 IV",
+      "expect": 1,
+      "why": "missing space"
+    },
+    {
+      "find": "100.This",
+      "repl": "100. This",
+      "expect": 1,
+      "why": "missing space after period"
+    },
+    {
+      "find": "Athletes,2003",
+      "repl": "Athletes, 2003",
+      "expect": 1,
+      "why": "missing space after comma"
+    },
+    {
+      "find": "$l,200",
+      "repl": "$1,200",
+      "expect": 1,
+      "why": "l->1 in number"
+    },
+    {
+      "find": "L(SPANISH",
+      "repl": "L (SPANISH",
+      "expect": 1,
+      "why": "missing space"
+    }
+  ],
+  "strip_running": {
+    "front_matter_end": 89,
+    "verso_pattern": "^\\s*[J]?\\s*\\d{0,3}\\s*[-—]?\\s*DEAD DOCTORS DON.T (LIE|DE|UE|IE)\\b",
+    "recto_pattern": "^(?P<t>.{4,60}?)\\s*[-—]\\s*(?P<pg>\\d{2,3})\\s*$",
+    "recto_page_min": 13,
+    "recto_page_max": 410,
+    "recto_allow_digit_titles": [
+      "20/20"
+    ],
+    "content_not_head": [
+      12000,
+      12387
+    ],
+    "drop_line_numbers": [
+      229,
+      337,
+      362,
+      598,
+      623,
+      827,
+      851,
+      1035,
+      1059,
+      1349,
+      1374,
+      1880,
+      1906,
+      2144,
+      2168,
+      2341,
+      2365,
+      2566,
+      2591,
+      2994,
+      3018,
+      3393,
+      3417,
+      3609,
+      3855,
+      3881,
+      4239,
+      4262,
+      5104,
+      5128,
+      5529,
+      5553,
+      5780,
+      5803,
+      5949,
+      5974,
+      6433,
+      6458,
+      6692,
+      6716,
+      7109,
+      9257
+    ],
+    "expect": {
+      "verso_drop": 39,
+      "verso_strip": 154,
+      "recto_drop": 167,
+      "num_drop": 42
+    },
+    "why": "running header/footer strip: verso 'NN - DEAD DOCTORS DON'T LIE' + recto chapter/appendix heads + bare page numbers"
+  },
+  "line_fuses": [
+    {
+      "a": "reproduc",
+      "b": "tion",
+      "expect": 1,
+      "why": "page-break split 'reproduction'"
+    },
+    {
+      "a": "thalic",
+      "b": "troides",
+      "expect": 1,
+      "why": "page-break split 'thalictroides'"
+    },
+    {
+      "a": "correc",
+      "b": "tion",
+      "expect": 1,
+      "why": "page-break split 'correction'"
+    }
+  ],
+  "flags": [
+    "ginko->ginkgo x2 + Ginko->Ginkgo x2 (Ginkgo biloba)",
+    "annus->annuus x2 (Helianthus annuus)",
+    "carnii->carinii (Pneumocystis carinii)",
+    "synovea->synoviae x2 (Mycoplasma synoviae)",
+    "Convallaria epithet magalis/megalis/mejalis -> majalis (lily-of-the-valley)",
+    "Digitalis purpura->purpurea (foxglove; book also spells purpurea correctly elsewhere)",
+    "Hellebores niger->Helleborus niger",
+    "Zumba->Zumbani x4 (testosterone-herb combos; your SESSION-35 LETS ruling)",
+    "diverticulae->diverticula (medical plural)",
+    "quincies->quinsies (peritonsillar abscess plural)",
+    "cyanocobabalamine->cyanocobalamin (OCR)",
+    "'(methionine, mysteine, cystene)' -> 'cysteine, cystine' — confirm the triad",
+    "amino '1-'->'l-' family (L-form, x11 tokens): glutamine/arginine/cysteine/tyrosine/methionine/histidine/Lysine/Dopa/tryptophan",
+    "H202->H2O2 x13 (hydrogen peroxide 0->O)",
+    "'02'->O2, '03'->O3 (oxygen/ozone formula 0->O)",
+    "KEPT (book's hyphenation style, per policy): pre-occupied, pre-conception, pre-med, teen-agers, turn-arounds.",
+    "KEPT as printed (valid variants / real terms): leukopenia, cyanocobalamine(x2), thiamin, crampy, keratinized, serosal, ionically(mineral solution ctx), cont.(=continued abbrev), salarium(Latin), sativa/officinale/etc epithets.",
+    "'Beri beri' (x1, 'Bl (Beri beri)') left for your ruling: -> 'beriberi'? and the 'Bl'->'B1' vitamin-code OCR nearby.",
+    "Bare numbers KEPT (possible table/ad content, not page numbers): '1982' (disease-incidence table L8656), '21' (back-matter ad L14663).",
+    "KEPT/allowlisted, ambiguous — left for your ruling: '1-5' (=Interstate I-5? 'junction of I-10 and 1-5'); '3-g percent' (=3.6%?); germanium '150/mg' (=150 mg?); 'HistoriaAnimalicemVl}' (=Aristotle 'Historia Animalium'); 'KiahSien' (=Kaihsien place); 'IFN(y)' (=IFN-gamma).",
+    "The '( ' bullet markers (x57, deficiency-symptom lists e.g. '( Poor growth', '( Dermatitis') are OCR of a bullet glyph, allowlisted as-is. Convert '(' -> a real bullet, or leave? Your call.",
+    "48 hyphen-wrapped compounds (beta-\\ncarotene, life-\\nthreatening) allowlisted as reviewed_ok (IAIYH precedent). A full de-hyphenation reflow is optional polish — flag if you want it now."
+  ]
+}
