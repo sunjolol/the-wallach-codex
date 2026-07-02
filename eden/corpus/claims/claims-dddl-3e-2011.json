@@ -142,7 +142,9 @@
         "anemia",
         "liver_cirrhosis",
         "infertility",
-        "miscarriage"
+        "miscarriage",
+        "dementia",
+        "liver_disease"
       ],
       "symptoms": [],
       "claim_text": "Selenium deficiency causes infertility, miscarriages, cystic fibrosis of the pancreas, sudden infant death syndrome (SIDS), liver cirrhosis, white muscle disease, muscular dystrophy, anemia, encephalomalacia (Alzheimer's disease), cardiomyopathy, and mulberry heart disease.",
@@ -279,7 +281,8 @@
         "bells_palsy",
         "tinnitus",
         "trigeminal_neuralgia",
-        "spinal_stenosis"
+        "spinal_stenosis",
+        "arthritis"
       ],
       "symptoms": [],
       "claim_text": "Calcium deficiency alone can result in as many as 147 different diseases (osteoporosis, osteoarthritis, Bell's palsy, tinnitus, trigeminal neuralgia, spinal stenosis, and more).",
@@ -313,7 +316,8 @@
         "cardiomyopathy",
         "diabetes",
         "cancer",
-        "liver_cirrhosis"
+        "liver_cirrhosis",
+        "liver_disease"
       ],
       "symptoms": [],
       "claim_text": "In the clinical phase of trace-mineral deficiency, full-blown disease states appear: cardiomyopathy, diabetes, cancer, liver cirrhosis.",
@@ -709,7 +713,8 @@
       "conditions": [
         "liver_cirrhosis",
         "diabetes",
-        "heart_failure"
+        "heart_failure",
+        "liver_disease"
       ],
       "symptoms": [],
       "claim_text": "Excess iron can cause liver cirrhosis, pancreatic fibrosis, diabetes, and heart failure (largely by raising the need for selenium, copper, and zinc).",
@@ -1340,7 +1345,8 @@
       "other_substances": [],
       "conditions": [
         "spina_bifida",
-        "cleft_palate"
+        "cleft_palate",
+        "birth_defects"
       ],
       "symptoms": [],
       "claim_text": "Folic acid (or zinc) deficiency causes spina bifida and serious cleft palate in infants.",
@@ -1603,7 +1609,8 @@
       "other_substances": [],
       "conditions": [
         "osteoarthritis",
-        "rheumatoid_arthritis"
+        "rheumatoid_arthritis",
+        "arthritis"
       ],
       "symptoms": [],
       "claim_text": "Osteoarthritis and degenerative arthritis are a complex of nutritional deficiencies; rheumatoid arthritis's overt cause is chronic Mycoplasma infection.",
@@ -1974,7 +1981,8 @@
       "conditions": [
         "osteoporosis",
         "breast_cancer",
-        "uterine_cancer"
+        "uterine_cancer",
+        "cancer"
       ],
       "symptoms": [],
       "claim_text": "Estrogen may be contraindicated for osteoporosis due to a potential carcinogenic effect — it is known to cause breast and uterine cancer.",
@@ -2095,7 +2103,8 @@
       ],
       "other_substances": [],
       "conditions": [
-        "eczema"
+        "eczema",
+        "dermatitis"
       ],
       "symptoms": [],
       "claim_text": "Essential fatty acid deficiency in infants causes poor growth, eczema, and lowered resistance to infectious disease.",
@@ -2967,7 +2976,8 @@
       "conditions": [
         "menopause",
         "breast_cancer",
-        "uterine_cancer"
+        "uterine_cancer",
+        "cancer"
       ],
       "symptoms": [],
       "claim_text": "Estrogen supplements should not be used in menopause — they increase the breast and uterine cancer induction risk.",

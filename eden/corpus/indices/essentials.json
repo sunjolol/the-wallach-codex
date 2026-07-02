@@ -738,6 +738,7 @@
     },
     "deficiency_signs": [],
     "conditions_treated": [
+      "anemia",
       "aneurysm",
       "arthritis",
       "bone_spurs",
@@ -1186,6 +1187,7 @@
       "deafness",
       "dementia",
       "depression",
+      "dermatitis",
       "diabetes",
       "dysmenorrhea",
       "dyspepsia",
@@ -1750,6 +1752,7 @@
       "kawasaki_disease",
       "learning_disabilities",
       "liver_cirrhosis",
+      "liver_disease",
       "menkes_syndrome",
       "neutropenia",
       "osteoporosis",
@@ -1861,6 +1864,7 @@
       "immune_depression",
       "infertility",
       "leukemia",
+      "liver_disease",
       "osteoarthritis",
       "osteoporosis"
     ],
@@ -2019,6 +2023,7 @@
       "dysmenorrhea",
       "heart_failure",
       "liver_cirrhosis",
+      "liver_disease",
       "menorrhagia",
       "nervous_heart",
       "obesity",
@@ -2348,6 +2353,7 @@
     },
     "deficiency_signs": [],
     "conditions_treated": [
+      "arthritis",
       "gout"
     ],
     "interacts_with": [
@@ -3480,6 +3486,7 @@
     "deficiency_signs": [],
     "conditions_treated": [
       "brain_cancer",
+      "cancer",
       "dementia"
     ],
     "interacts_with": [
@@ -4238,6 +4245,7 @@
       "amenorrhea",
       "anencephaly",
       "anosmia",
+      "arthritis",
       "athletes_foot",
       "autoimmune_disorders",
       "benign_prostatic_hyperplasia",
@@ -5247,6 +5255,7 @@
       "athletes_foot",
       "autism",
       "bipolar_disorder",
+      "birth_defects",
       "bruxism",
       "cardiac_arrhythmia",
       "carpal_tunnel_syndrome",
@@ -5259,6 +5268,7 @@
       "dandruff",
       "dementia",
       "depression",
+      "dermatitis",
       "diaper_rash",
       "dry_skin",
       "dysmenorrhea",
@@ -5426,6 +5436,7 @@
       "anencephaly",
       "anorexia",
       "aphthous_stomatitis",
+      "arthritis",
       "birth_defects",
       "bleeding_gums",
       "canker_sores",
@@ -5433,6 +5444,7 @@
       "crohns_disease",
       "dandruff",
       "dementia",
+      "dermatitis",
       "diarrhea",
       "dumping_syndrome",
       "eczema",
@@ -6584,6 +6596,7 @@
       "fatty_liver",
       "high_cholesterol",
       "insomnia",
+      "liver_disease",
       "seborrheic_dermatitis",
       "weight_loss"
     ],
@@ -6653,6 +6666,7 @@
       "keshan_disease",
       "korsakoffs_syndrome",
       "liver_cirrhosis",
+      "liver_disease",
       "memory_loss",
       "muscular_dystrophy",
       "tardive_dyskinesia"
@@ -6715,11 +6729,13 @@
     "conditions_treated": [
       "alopecia",
       "cataracts",
+      "dermatitis",
       "diabetes",
       "eczema",
       "fatty_liver",
       "high_cholesterol",
       "insomnia",
+      "liver_disease",
       "renal_failure"
     ],
     "interacts_with": [
@@ -6957,6 +6973,7 @@
     },
     "deficiency_signs": [],
     "conditions_treated": [
+      "arthritis",
       "rheumatoid_arthritis"
     ],
     "interacts_with": [
@@ -7082,6 +7099,7 @@
       "anemia",
       "fatty_liver",
       "keshan_disease",
+      "liver_disease",
       "muscular_dystrophy",
       "parkinsonism"
     ],
@@ -7686,6 +7704,7 @@
       "gallstones",
       "infertility",
       "kidney_disease",
+      "liver_disease",
       "psoriasis",
       "stroke"
     ],

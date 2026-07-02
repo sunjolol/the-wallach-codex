@@ -505,7 +505,8 @@
       "essentials": [],
       "other_substances": [],
       "conditions": [
-        "down_syndrome"
+        "down_syndrome",
+        "birth_defects"
       ],
       "symptoms": [],
       "claim_text": "Wallach attributes the higher trisomy (Down's syndrome) risk in older mothers to mineral depletion — a woman depleted of minerals by her mid-30s carries higher-risk embryos.",
@@ -1426,7 +1427,8 @@
       ],
       "other_substances": [],
       "conditions": [
-        "down_syndrome"
+        "down_syndrome",
+        "birth_defects"
       ],
       "symptoms": [],
       "claim_text": "Wallach holds that Down's Syndrome is not genetic but is the result of a preconception zinc deficiency, which produces a chromosomal/DNA injury similar to radiation damage; he notes that nutritional studies have created Trisomy/Down's in animals and cell cultures at will via preconception zinc deficiency during sperm and egg formation.",
@@ -1462,7 +1464,8 @@
       ],
       "other_substances": [],
       "conditions": [
-        "down_syndrome"
+        "down_syndrome",
+        "birth_defects"
       ],
       "symptoms": [],
       "claim_text": "Wallach estimates that about $40 of supplements per month, taken before and during pregnancy, is enough to prevent Down's Syndrome — against a lifetime care cost he puts near a million dollars per patient.",
@@ -3742,7 +3745,8 @@
       ],
       "other_substances": [],
       "conditions": [
-        "eczema"
+        "eczema",
+        "dermatitis"
       ],
       "symptoms": [],
       "claim_text": "Wallach reports that essential fatty acid deficiency in human infants results in a poor growth rate, eczema, and lowered resistance to infectious diseases; in animals, essential fatty acid deficiency produces atherosclerosis (Fig. 11-2 shows it in a sheep's aorta and a pheasant's coronary arteries).",
@@ -3886,7 +3890,8 @@
       ],
       "other_substances": [],
       "conditions": [
-        "pernicious_anemia"
+        "pernicious_anemia",
+        "anemia"
       ],
       "symptoms": [],
       "claim_text": "Wallach states that in humans a failure to absorb vitamin B12/cobalt causes deficiency disease — from surgical removal of part of the stomach or the ileum, low stomach acid, parasites (tapeworm), celiac disease, or other malabsorption — and that pernicious anemia and demyelination of the spinal cord and large nerve trunks are classic signs of B12/cobalt deficiency. Vitamin B12 was isolated from liver extract in 1948 and shown to have anti-pernicious-anemia activity.",
@@ -4146,7 +4151,8 @@
         "arthritis",
         "liver_cirrhosis",
         "anemia",
-        "kawasaki_disease"
+        "kawasaki_disease",
+        "liver_disease"
       ],
       "symptoms": [],
       "claim_text": "Wallach's Table 11-13 lists copper-deficiency signs that appear in many forms, including: white, gray and dry brittle hair; ptosis (sagging tissue of eyelids, skin, breasts, stomach); congenital and acquired hernias; varicose veins; aneurysms (including cerebral artery blowouts); Kawasaki disease (congenital aneurysms with streptococcal infection); anemia (especially on vegan and high-milk diets); hypo- and hyperthyroid; arthritis; ruptured vertebral disc; and liver cirrhosis.",
@@ -4184,7 +4190,8 @@
       ],
       "other_substances": [],
       "conditions": [
-        "cerebral_palsy"
+        "cerebral_palsy",
+        "birth_defects"
       ],
       "symptoms": [],
       "claim_text": "Wallach traces congenital brain damage to copper deficiency in pregnancy: neonatal enzootic ataxia ('sway back') was recognized in 1937 as a copper deficiency in pregnant sheep, producing demyelination of the cerebellum and spinal cord, cavitation of cerebral white matter, nerve-cell death, and failure of myelin to form — changes identical to human cerebral palsy and hypoplasia of the cerebellum (congenital ataxia).",
@@ -4513,7 +4520,8 @@
       ],
       "other_substances": [],
       "conditions": [
-        "brain_cancer"
+        "brain_cancer",
+        "cancer"
       ],
       "symptoms": [],
       "claim_text": "Wallach reports gallium was claimed to be essential in 1938 and again in 1958, has specific metalloenzyme activity in the human brain, and has been reported to specifically reduce the rate of brain cancer in laboratory animals; he adds that British research shows supplemented diets in pregnant women reduce the rate of brain cancer in their children.",
@@ -4590,7 +4598,8 @@
         "cancer",
         "osteosarcoma",
         "thyroid_cancer",
-        "liver_cancer"
+        "liver_cancer",
+        "liver_disease"
       ],
       "symptoms": [],
       "claim_text": "Wallach cites the cancer evidence against fluoridation: epidemiological studies by Yiamouyiannis and Burk (1977) prompted congressional hearings over a charge of 10,000 excess cancer deaths from fluoridated water, leading to mandated animal studies. The 1990 National Toxicology Program results showed increased precancerous oral-mucosa cells, oral squamous-cell carcinoma, a rare osteosarcoma at double the rate in males versus females, and increased thyroid follicular-cell tumors and liver cancer.",
@@ -6322,7 +6331,8 @@
       ],
       "other_substances": [],
       "conditions": [
-        "gout"
+        "gout",
+        "arthritis"
       ],
       "symptoms": [],
       "claim_text": "Wallach reports molybdenum toxicity occurs at 10 mg per day, producing a gout-like disease and interfering with copper metabolism.",
@@ -7848,7 +7858,8 @@
         "arthritis",
         "lupus",
         "sickle_cell_anemia",
-        "collagen_disease"
+        "collagen_disease",
+        "anemia"
       ],
       "symptoms": [],
       "claim_text": "Wallach states that sulfur deficiency results in degenerative types of arthritis (with degeneration of cartilage, ligaments, and tendons), systemic lupus erythematosus, sickle-cell anemia, and various 'collagen diseases.'",
@@ -8001,7 +8012,9 @@
         "cardiomyopathy",
         "cataracts",
         "liver_cirrhosis",
-        "cancer"
+        "cancer",
+        "dementia",
+        "liver_disease"
       ],
       "symptoms": [],
       "claim_text": "Wallach lists the conditions that selenium deficiency produces in adults: reduced immune capacity, anemia, infertility, 'age spots' or 'liver spots,' myalgia, muscle weakness, multiple sclerosis, amyotrophic lateral sclerosis (Lou Gehrig's disease), Parkinson's disease, Alzheimer's disease, heart palpitations or irregular heartbeat, cardiomyopathy, hypertrophy (thickening) of the cardiac muscle, liver cirrhosis, cataracts, and cancer.",
@@ -8172,7 +8185,8 @@
         "muscular_dystrophy",
         "anemia",
         "cancer",
-        "alzheimers"
+        "alzheimers",
+        "dementia"
       ],
       "symptoms": [
         "lowered_immunity",
@@ -8298,7 +8312,8 @@
         "angular_stomatitis",
         "seborrheic_dermatitis",
         "anemia",
-        "photophobia"
+        "photophobia",
+        "dermatitis"
       ],
       "symptoms": [
         "geographic_tongue",
@@ -8420,7 +8435,8 @@
         "seborrheic_dermatitis",
         "peripheral_neuropathy",
         "hyperirritability",
-        "tourette_syndrome"
+        "tourette_syndrome",
+        "dermatitis"
       ],
       "symptoms": [
         "nausea",
@@ -8459,7 +8475,8 @@
       ],
       "other_substances": [],
       "conditions": [
-        "pernicious_anemia"
+        "pernicious_anemia",
+        "anemia"
       ],
       "symptoms": [
         "spinal_cord_demyelination"
@@ -8535,7 +8552,8 @@
       "conditions": [
         "eczema",
         "depression",
-        "blepharitis"
+        "blepharitis",
+        "dermatitis"
       ],
       "symptoms": [
         "hair_loss",
@@ -8619,7 +8637,9 @@
         "fatty_liver",
         "alzheimers",
         "tardive_dyskinesia",
-        "huntingtons_disease"
+        "huntingtons_disease",
+        "dementia",
+        "liver_disease"
       ],
       "symptoms": [
         "kidney_hemorrhage"
@@ -9610,7 +9630,8 @@
         "cardiomyopathy",
         "keshan_disease",
         "multiple_sclerosis",
-        "liver_cirrhosis"
+        "liver_cirrhosis",
+        "liver_disease"
       ],
       "symptoms": [],
       "claim_text": "Wallach's Table 11-23 lists the diseases of selenium deficiency (part 1 of 2): HIV/AIDS (human immunodeficiency virus / acquired immunodeficiency syndrome), anemia (red-blood-cell fragility), 'age spots' and 'liver spots,' fatigue, muscular weakness, myalgia (muscle pain and soreness), scoliosis, muscular dystrophy (including white muscle disease and stiff lamb disease), congenital cystic fibrosis, cardiomyopathy (Keshan disease, 'mulberry heart' disease), multiple sclerosis (associated with mercury poisoning), heart palpitations, irregular heartbeat, and liver cirrhosis.",
@@ -9655,7 +9676,9 @@
         "sids",
         "cancer",
         "sickle_cell_anemia",
-        "hiv_aids"
+        "hiv_aids",
+        "anemia",
+        "dementia"
       ],
       "symptoms": [],
       "claim_text": "Wallach's Table 11-23 lists the diseases of selenium deficiency (part 2 of 2): pancreatitis, pancreatic atrophy, amyotrophic lateral sclerosis (Lou Gehrig's disease, associated with mercury poisoning), Parkinson's disease (associated with mercury poisoning), Alzheimer's disease (associated with high vegetable-oil consumption), adrenoleukodystrophy (ALD, 'Lorenzo's Oil' syndrome), infertility, low birth weight, high infant mortality, sudden infant death syndrome (SIDS), cancer (associated with carcinogen contact and high vegetable-oil intake), clinical AIDS (human immunodeficiency virus infection), and sickle cell anemia.",
@@ -10829,7 +10852,8 @@
         "cerebral_palsy",
         "high_cholesterol",
         "hypoglycemia",
-        "neutropenia"
+        "neutropenia",
+        "birth_defects"
       ],
       "symptoms": [],
       "claim_text": "Wallach's copper-deficiency table continues with behavioral and metabolic signs: violent behavior, blind rage, explosive outbursts and criminal behavior; learning disabilities; cerebral palsy and hypoplasia of the cerebellum (congenital ataxia); high blood cholesterol; iron-storage disease (abnormal iron accumulation in the liver); reduced glucose tolerance (low blood sugar); and neutropenia.",

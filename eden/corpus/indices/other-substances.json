@@ -983,6 +983,7 @@
       ]
     },
     "conditions_treated": [
+      "arthritis",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -1146,6 +1147,7 @@
       ]
     },
     "conditions_treated": [
+      "arthritis",
       "inflammation",
       "rheumatoid_arthritis"
     ],
@@ -1355,6 +1357,7 @@
       ]
     },
     "conditions_treated": [
+      "arthritis",
       "inflammation",
       "rheumatoid_arthritis"
     ],
@@ -1411,7 +1414,8 @@
     "conditions_treated": [
       "cancer",
       "leukemia",
-      "liver_cancer"
+      "liver_cancer",
+      "liver_disease"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1547,7 +1551,8 @@
     "conditions_treated": [
       "alcoholism",
       "allergies",
-      "hepatitis"
+      "hepatitis",
+      "liver_disease"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -1710,6 +1715,7 @@
       ]
     },
     "conditions_treated": [
+      "arthritis",
       "gout"
     ],
     "books_cited": [
@@ -1745,6 +1751,7 @@
     "conditions_treated": [
       "gallstones",
       "hepatitis",
+      "liver_disease",
       "pain"
     ],
     "books_cited": [
@@ -1902,6 +1909,7 @@
       ]
     },
     "conditions_treated": [
+      "arthritis",
       "gout"
     ],
     "books_cited": [
@@ -2331,11 +2339,13 @@
       ]
     },
     "conditions_treated": [
+      "arthritis",
       "bladder_stones",
       "gallstones",
       "hepatitis",
       "kidney_disease",
       "kidney_stones",
+      "liver_disease",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -2382,6 +2392,7 @@
       ]
     },
     "conditions_treated": [
+      "arthritis",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -3149,6 +3160,7 @@
       "cancer",
       "dental_fluorosis",
       "liver_cancer",
+      "liver_disease",
       "osteoporosis",
       "osteosarcoma",
       "thyroid_cancer"
@@ -3600,6 +3612,7 @@
       ]
     },
     "conditions_treated": [
+      "arthritis",
       "gout"
     ],
     "books_cited": [
@@ -4224,6 +4237,7 @@
       ]
     },
     "conditions_treated": [
+      "arthritis",
       "cystitis",
       "hemorrhoids",
       "rheumatoid_arthritis"
@@ -4585,6 +4599,7 @@
       "colon_cancer",
       "esophageal_cancer",
       "liver_cancer",
+      "liver_disease",
       "pancreatic_cancer",
       "stomach_cancer",
       "throat_cancer"
@@ -4633,6 +4648,7 @@
       "hepatitis",
       "jaundice",
       "kidney_stones",
+      "liver_disease",
       "peptic_ulcer",
       "rheumatoid_arthritis"
     ],
@@ -5205,6 +5221,7 @@
       ]
     },
     "conditions_treated": [
+      "arthritis",
       "dermatitis",
       "dropsy",
       "rheumatoid_arthritis"
@@ -6083,6 +6100,7 @@
       ]
     },
     "conditions_treated": [
+      "arthritis",
       "bladder_stones",
       "gout",
       "kidney_stones"
@@ -6442,6 +6460,7 @@
     },
     "conditions_treated": [
       "amenorrhea",
+      "arthritis",
       "gout"
     ],
     "books_cited": [
@@ -7008,6 +7027,7 @@
       ]
     },
     "conditions_treated": [
+      "arthritis",
       "rheumatoid_arthritis"
     ],
     "books_cited": [
@@ -7305,6 +7325,7 @@
       ]
     },
     "conditions_treated": [
+      "arthritis",
       "rheumatoid_arthritis"
     ],
     "books_cited": [

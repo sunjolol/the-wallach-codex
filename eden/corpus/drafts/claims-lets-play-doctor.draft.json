@@ -142,7 +142,8 @@
         "pica",
         "rickets",
         "tetany",
-        "tooth_decay"
+        "tooth_decay",
+        "dermatitis"
       ],
       "symptoms": [
         "brittle_nails",
@@ -465,7 +466,9 @@
         "infertility",
         "kidney_disease",
         "cystic_fibrosis",
-        "anorexia"
+        "anorexia",
+        "liver_disease",
+        "dermatitis"
       ],
       "symptoms": [
         "dry_hair",
@@ -508,7 +511,8 @@
       "conditions": [
         "alopecia",
         "eczema",
-        "high_cholesterol"
+        "high_cholesterol",
+        "dermatitis"
       ],
       "symptoms": [
         "constipation"
@@ -904,7 +908,8 @@
         "depression",
         "eczema",
         "hypotension",
-        "insomnia"
+        "insomnia",
+        "dermatitis"
       ],
       "symptoms": [
         "abdominal_pain",
@@ -1319,7 +1324,8 @@
         "keshan_disease",
         "muscular_dystrophy",
         "liver_cirrhosis",
-        "infertility"
+        "infertility",
+        "liver_disease"
       ],
       "symptoms": [
         "retarded_growth",
@@ -1959,7 +1965,8 @@
         "impotence",
         "infertility",
         "malabsorption",
-        "paranoia"
+        "paranoia",
+        "dermatitis"
       ],
       "symptoms": [
         "apathy",
@@ -3574,7 +3581,8 @@
         "vaginitis",
         "ringworm",
         "athletes_foot",
-        "eczema"
+        "eczema",
+        "dermatitis"
       ],
       "symptoms": [
         "sore_throat"
@@ -4173,7 +4181,8 @@
         "peptic_ulcers",
         "common_cold",
         "influenza",
-        "breast_cancer"
+        "breast_cancer",
+        "cancer"
       ],
       "symptoms": [
         "fever",
@@ -7598,7 +7607,8 @@
         "esophageal_cancer",
         "stomach_cancer",
         "liver_cancer",
-        "pancreatic_cancer"
+        "pancreatic_cancer",
+        "liver_disease"
       ],
       "symptoms": [],
       "claim_text": "Levamisole is a newer product (actually a sheep wormer) that, per Wallach, has shown excellent results for cancer in general and specifically for colon, breast, brain, throat, esophagus, stomach, liver, and pancreatic cancer. He suggests it could be the cancer 'magic bullet' for the 1990s.",
@@ -7884,7 +7894,8 @@
       ],
       "conditions": [
         "cancer",
-        "liver_cancer"
+        "liver_cancer",
+        "liver_disease"
       ],
       "symptoms": [],
       "claim_text": "Carbamide (urea) is in keeping with autoimmune urine therapy and is, per Wallach, particularly effective for liver cancer.",
@@ -8459,7 +8470,8 @@
       ],
       "other_substances": [],
       "conditions": [
-        "cerebral_palsy"
+        "cerebral_palsy",
+        "birth_defects"
       ],
       "symptoms": [],
       "claim_text": "Cerebral palsy (here called cerebropalsy) is a birth defect of the cerebellum, the body's fine-motor coordinator. Wallach attributes it to a preconception deficiency of zinc and vitamin B-6 in the mother (possibly from celiac-disease-driven copper/zinc malabsorption). Because the damage occurred to the fetus during brain formation, there is no treatment after birth — the value is in preconception nutrition to prevent it.",
@@ -9509,7 +9521,8 @@
       ],
       "conditions": [
         "cradle_cap",
-        "seborrheic_dermatitis"
+        "seborrheic_dermatitis",
+        "dermatitis"
       ],
       "symptoms": [],
       "claim_text": "Cradle cap (seborrheic dermatitis of infants) can appear as early as one month of age as a greasy, thick crust on the scalp, behind the ears, and on the face. Wallach's treatment is regular shampooing to loosen the greasy scale, vitamin B-6 at 10-25 mg per day, and zinc at 15-25 mg per day; because food allergies can contribute, do a pulse test.",
@@ -11616,7 +11629,8 @@
         "prednisone"
       ],
       "conditions": [
-        "gout"
+        "gout",
+        "arthritis"
       ],
       "symptoms": [],
       "claim_text": "Gout (gouty arthritis) is caused by deposits of uric-acid crystals in the joints and surrounding tissues — classically the great toe of each foot — and chronic untreated cases can develop kidney disease and uric-acid kidney stones; elevated blood uric acid (above 7 milligrams per 100 milliliters of serum) with sudden tender joints is a red flag. Wallach's treatment should include avoiding alcohol, organ meats, seafood, lentils, beans, peas, and fructose sources; folic acid at 10-75 milligrams a day; cherries and cherry juice; and herbs including gout weed (Aegopodium podagraria) and saffron/autumn crocus (Colchicum autumnale). He notes orthodox doctors use colchicine almost exclusively, adding prednisone for inflammation.",
@@ -12029,7 +12043,8 @@
         "dandelion"
       ],
       "conditions": [
-        "hepatitis"
+        "hepatitis",
+        "liver_disease"
       ],
       "symptoms": [],
       "claim_text": "Hepatitis means any inflammation of the liver, but in daily use refers to three liver viruses: Hepatitis A (fecal-oral contamination), Hepatitis B (blood contamination via dirty needles; more severe, potentially fatal), and Hepatitis C (blood-transfusion-associated, causing chronic liver disease). Wallach stresses prevention through hand-washing and avoiding community needles. His treatment of hepatitis includes bed rest, plenty of fluids including chicken soup, avoiding sugar/fat/alcohol, vitamin B-12 at 1,000 micrograms a day, folic acid at 5-10 milligrams a day, catechin at 1.5 grams a day, vitamin C to bowel tolerance, herbs including licorice (Glycyrrhiza glabra), chicory (Cichorium intybus), and dandelion (Taraxacum officinale), germanium at 25-50 milligrams a day, selenium at 200-500 micrograms a day, and SuperOxy Plus at one ounce on awakening and retiring.",
@@ -14435,7 +14450,8 @@
       "conditions": [
         "meningocele",
         "spina_bifida",
-        "anencephaly"
+        "anencephaly",
+        "birth_defects"
       ],
       "symptoms": [],
       "claim_text": "Meningocele (severe anencephaly or spina bifida) is a severe birth defect in which the brain or spinal cord and its coverings (meninges) are exposed because the vertebrae form improperly. Wallach attributes it to a deficiency of folic acid, vitamin B-12, or zinc and vitamin A during early pregnancy — deficiencies that may stem from a poor diet and/or malabsorption in the mother. Severe cases may be debilitating or fatal. Treatment is limited to surgery, so he emphasizes that prevention — correcting these deficiencies before and during early pregnancy — is the goal.",
@@ -14764,7 +14780,8 @@
       ],
       "other_substances": [],
       "conditions": [
-        "down_syndrome"
+        "down_syndrome",
+        "birth_defects"
       ],
       "symptoms": [],
       "claim_text": "Mongolism (Down's syndrome) is a birth defect that Wallach attributes to a zinc deficiency in the earliest moments of conception (he notes one third of the extra chromosome comes from the father). Orthodox doctors instead view it as a chromosomal defect whose risk rises with the mother's age. Newborns are 'floppy', lacking muscle tone; physical and mental maturation is delayed (average intelligence quotient, or IQ, around 50), with a small domed-forehead head, a flattened nose bridge, slanted eyes with epicanthal folds, and Brushfield's spots around the iris. Prevention: follow the baseline nutritional supplement program for 90 days before attempting conception and use the pulse test to find and eliminate the food allergies that block zinc absorption. Treatment: zinc at 50 milligrams three times a day plus the baseline program, again using the pulse test to identify and avoid offending foods. Wallach says you can expect the intelligence quotient to rise by 15 to 20 points and physical features to improve as long as the program is followed; stopping it loses all the gains.",
@@ -16777,7 +16794,8 @@
         "sweet-vernal-grass"
       ],
       "conditions": [
-        "rheumatoid_arthritis"
+        "rheumatoid_arthritis",
+        "arthritis"
       ],
       "symptoms": [],
       "claim_text": "Wallach holds that rheumatoid arthritis is not primarily an immune-system disease but is initially caused by infection with a Mycoplasma (PPLO, a pleuropneumonia-like organism) that causes an upper-respiratory infection and then attacks the joint membranes of the fingers and toes, and later the larger joints — a cause he says has been recognized and eliminated in veterinary medicine. Orthodox treatment (aspirin, gold shots, steroids) only relieves symptoms, though he notes 75% of patients improve in the first year with no treatment at all. Treatment should include specific treatment for Mycoplasma/PPLO (Tylosin, tetracyclines, etc.) for six months to one year, intravenous and/or oral hydrogen peroxide, chelation, acupuncture, enterically coated bromelain at 40 mg four times a day, autoimmune urine therapy, dimethyl sulfoxide (DMSO), L-histidine at 1,000 mg three times a day, essential fatty acids at 5 grams three times a day, calcium and magnesium at 2,000 mg and 1,000 mg per day, selenium at 500-1,000 mcg per day, copper at 2-4 mg per day, B-6 at 100 mg three times a day, cartilage at 5 grams three times a day, hydrotherapy, and herbs (topical camphor, black mustard, dandelion, devil's claw, juniper, stinging nettle, sweet vernal grass), plus plant-derived colloidal minerals.",
@@ -17176,7 +17194,8 @@
       "other_substances": [],
       "conditions": [
         "seborrheic_dermatitis",
-        "dandruff"
+        "dandruff",
+        "dermatitis"
       ],
       "symptoms": [],
       "claim_text": "Seborrheic dermatitis (dandruff) is a scaling dermatitis of the scalp and face with normal sebum composition and amount; celiac-type intestinal lesions can be the underlying cause of a malabsorption syndrome. Treatment should include biotin at 100 mcg three times a day, folic acid at 15-25 mg per day, B-6 at 100 mg three times a day, vitamin E at 800-1,200 IU per day, essential fatty acids at 5 grams three times a day, vitamin A at 300,000 IU per day as beta carotene, zinc at 50 mg three times a day, and Selsun Blue shampoo topically.",

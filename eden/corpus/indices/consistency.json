@@ -1740,6 +1740,7 @@
       "zinc"
     ],
     "conditions": [
+      "birth_defects",
       "down_syndrome"
     ],
     "kind": "protocol",

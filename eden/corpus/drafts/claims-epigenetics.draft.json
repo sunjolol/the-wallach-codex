@@ -447,7 +447,8 @@
       "essentials": [],
       "other_substances": [],
       "conditions": [
-        "vascular_dementia"
+        "vascular_dementia",
+        "dementia"
       ],
       "symptoms": [],
       "claim_text": "Wallach's first of the four dementias: vascular dementia, which occurs when the cerebral arteries become obstructed by atherosclerosis and/or arteriosclerosis. He attributes the obstruction to inflammation of the arterial lining (intima) by the same forces that obstruct the coronary, ocular, and renal arteries -- low dietary antioxidant levels plus inflammatory foods (fried foods, processed meats, oils, and gluten). His nutritional-therapy approach: stop the ongoing inflammation with an elimination diet that avoids inflammatory foods, supplement with all 90 essential nutrients plus antioxidants, and provide significant vascular care. In Wallach's words: \"Vascular dementia occurs when the cerebral arteries become obstructed with atherosclerosis and/or arteriosclerosis. The cause of these obstructions is inflammation of the arterial lining (intima) by the same forces that also obstruct coronary, ocular, and renal arteries.\"",
@@ -561,7 +562,8 @@
       ],
       "other_substances": [],
       "conditions": [
-        "alzheimers"
+        "alzheimers",
+        "dementia"
       ],
       "symptoms": [],
       "claim_text": "Wallach's fourth dementia: Alzheimer's disease, which he calls a 'physician-caused' disease -- produced by lowering the patient's dietary cholesterol and saturated fat, prescribing statin drugs, and directing patients to avoid vitamin and mineral supplements. His prevention/treatment protocol is the same anti-dementia regimen used for the other three dementias: no fried foods, no processed meats, no oils; 4-6 eggs per hundred pounds of body weight per day; avoidance of all statin drugs (he cites an April 2012 FDA warning that statin drugs increase the risk of dementia and type 2 diabetes); and DHA and EPA essential fatty acids (omega-3) to support production of the neurotransmitters of memory and cognition. He cites a Johns Hopkins randomized double-blind ten-year study, published in 2004 on nearly 5,000 people over age 65, showing that a special diet plus nutrient supplementation can reduce Alzheimer's risk by 78%. In Wallach's words: \"Prevention of Alzheimer's has been documented by a Johns Hopkins randomized and double blind study on almost 5,000 people over the age of 65. The ten-year study published in 2004 demonstrated clearly that the consumption of a special diet, avoidance of certain foods and the supplementation of nutrients can reduce the risk of Alzheimer's disease by 78%!\"",
@@ -1128,7 +1130,8 @@
         "acne",
         "dermatitis",
         "ichthyosis",
-        "cancer"
+        "cancer",
+        "arthritis"
       ],
       "symptoms": [
         "hyperkeratosis",
@@ -1231,7 +1234,8 @@
         "cystic_fibrosis",
         "muscular_dystrophy",
         "cardiomyopathy",
-        "cancer"
+        "cancer",
+        "dementia"
       ],
       "symptoms": [
         "age_spots",
@@ -1370,7 +1374,8 @@
         "photophobia",
         "eye_redness",
         "anemia",
-        "neuropathy"
+        "neuropathy",
+        "dermatitis"
       ],
       "symptoms": [
         "burning_mouth",
@@ -1647,7 +1652,8 @@
         "blepharitis",
         "anorexia",
         "insomnia",
-        "weight_loss"
+        "weight_loss",
+        "liver_disease"
       ],
       "symptoms": [
         "myalgia",
@@ -1746,7 +1752,8 @@
         "alzheimers",
         "dementia",
         "tardive_dyskinesia",
-        "huntingtons_disease"
+        "huntingtons_disease",
+        "liver_disease"
       ],
       "symptoms": [
         "kidney_hemorrhage"
@@ -1787,7 +1794,8 @@
       "conditions": [
         "fatty_liver",
         "diabetes",
-        "renal_failure"
+        "renal_failure",
+        "liver_disease"
       ],
       "symptoms": [],
       "claim_text": "Inositol (myo-inositol) is a phospholipid component of cell biomembranes and a second messenger that mobilizes intracellular calcium for hormonal signaling, and it has a lipotrophic (fat-handling) role. Wallach lists the health problems of inositol deficiency: fat-metabolism problems, intestinal lipodystrophy, fatty liver, diabetes mellitus, diabetic neuropathy, slow nerve-conduction velocity, renal failure, and galactosemia. In his words: 'Fat metabolism problems; Intestinal lipodystrophy; Fatty liver; Diabetes mellitus; Diabetic neuropathy; Slow nerve conduction velocity; Renal failure.'",
@@ -2047,7 +2055,8 @@
       "other_substances": [],
       "conditions": [
         "fatty_liver",
-        "anemia"
+        "anemia",
+        "liver_disease"
       ],
       "symptoms": [],
       "claim_text": "Methionine is a sulfur-containing amino acid whose derivative S-adenosyl methionine serves as the body's main methyl donor, and it is an intermediate in the biosynthesis of cysteine, carnitine, taurine, lecithin, and phosphatidylcholine. Wallach reports that laboratory rats fed a methionine-free diet developed steatohepatitis (fatty liver disease), anemia, and lost two-thirds of their body weight over five weeks -- all of which were resolved by methionine supplementation. In his words: 'Laboratory rats fed a methionine-free diet developed steatohepatitis (fatty liver disease), anemia, and lost two thirds of their body weight over five weeks. Supplementation with methionine resolved all of the disease problems of the study group.'",
@@ -2484,7 +2493,8 @@
         "kawasaki_disease",
         "anemia",
         "arthritis",
-        "liver_cirrhosis"
+        "liver_cirrhosis",
+        "liver_disease"
       ],
       "symptoms": [
         "gray_hair",
@@ -4117,7 +4127,8 @@
         "high_cholesterol",
         "hypoglycemia",
         "reactive_hypoglycemia",
-        "neutropenia"
+        "neutropenia",
+        "birth_defects"
       ],
       "symptoms": [],
       "claim_text": "Wallach holds that copper deficiency also drives a cluster of behavioral, neurological, and metabolic disorders. Among the copper-deficiency diseases he lists are violent behavior, blind rage, explosive behavior, and criminal behavior; learning disabilities; cerebral palsy and hypoplasia of the cerebellum (congenital ataxia); high blood cholesterol; reduced glucose tolerance (hypoglycemia and reactive hypoglycemia); and neutropenia. In his words: \"Violent behavior, blind rage, explosive behavior, criminal behavior; Learning disabilities; Cerebral palsy and hypoplasia of the cerebellum (congenital ataxia); High blood cholesterol; Iron storage disease (hemosiderosis); Reduced glucose tolerance (hypoglycemia, reactive hypoglycemia); Neutropenia.\"",
@@ -4161,7 +4172,8 @@
         "peripheral_neuropathy",
         "hyperirritability",
         "tourette_syndrome",
-        "convulsions"
+        "convulsions",
+        "dermatitis"
       ],
       "symptoms": [],
       "claim_text": "A second cluster of vitamin B6 (pyridoxine) deficiency signs Wallach lists: premenstrual syndrome (PMS), seborrheic dermatitis (itchy, scaly skin), oral mucous membrane lesions, carpal tunnel syndrome, temporomandibular joint (TMJ) dysfunction, peripheral neuritis, ataxia, hyperirritability, head tics (Tourette's syndrome), and seizures or convulsions.",
