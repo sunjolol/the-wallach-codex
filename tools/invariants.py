@@ -1867,6 +1867,43 @@ def check_umbrella_proxy_named():
                   f"(reviewed exceptions): {sample}{' ...' if len(m) > 6 else ''}")
 
 
+def check_claim_text_term_gloss():
+    """Term-gloss standard (Luneth SESSION 39): front-facing claim_text must never carry a
+    garbled/obsolete botanical form (defects) or an obscure common name that has a simpler
+    approved alternative (common_swaps); defects must ALSO be absent from the sacred verbatim
+    (they are blatant book errors, fixed everywhere per Luneth's ruling). The reviewed
+    decisions are the single source of truth in eden/tools/term-gloss-lexicon.json; this check
+    enforces they never regress -- the machine guard against re-touching the same entry.
+    memory: term-gloss-standard, perfect-entry-no-deferral."""
+    lex_path = ROOT / "eden" / "tools" / "term-gloss-lexicon.json"
+    claims_dir = ROOT / "eden" / "corpus" / "claims"
+    shards = sorted(claims_dir.glob("claims-*.json"))
+    if not shards or not lex_path.exists():
+        return True, "eden/corpus or term-gloss lexicon not installed (bootstrap-guard)"
+    lex = json.loads(lex_path.read_text(encoding="utf-8"))
+    defects = lex.get("defects", {})
+    swaps = lex.get("common_swaps", {})
+    violations = []
+    for sh in shards:
+        for c in json.loads(sh.read_text(encoding="utf-8")).get("claims", []):
+            ct = c.get("claim_text") or ""
+            vb = c.get("verbatim") or ""
+            for k in defects:
+                if k in ct:
+                    violations.append(f"{c['id']} claim_text:{k!r}")
+                if k in vb:
+                    violations.append(f"{c['id']} verbatim:{k!r}")
+            for k in swaps:
+                if k in ct:
+                    violations.append(f"{c['id']} claim_text:{k!r}")
+    if violations:
+        sample = "; ".join(violations[:8])
+        return False, (f"{len(violations)} term-gloss regression(s) (a defect/obscure form "
+                       f"reappeared): {sample}{' ...' if len(violations) > 8 else ''}")
+    return True, (f"claim_text term-gloss clean -- 0 of {len(defects) + len(swaps)} lexicon "
+                  f"forms present (defects also absent from verbatims)")
+
+
 INVARIANTS = [
     Invariant(
         name="safe_write_canary",
@@ -2139,6 +2176,14 @@ INVARIANTS = [
         truth_anchor="eden/tools/graphics_verify.py — raw-byte sha256 of each image vs graphics-manifest.json; manifest vs golden",
         severity="critical",
         lesson_ref="Wallach Knowledge Revamp Phase alpha (2026-06-24) — Wing 3; Luneth's user-authored Wallach-derived graphics admitted Tier-1 by source-owner authority (proposal section 8)",
+    ),
+    Invariant(
+        name="claim_text_term_gloss",
+        description="front-facing claim_text carries no garbled/obsolete botanical form or obscure common name that has a simpler approved alternative (eden/tools/term-gloss-lexicon.json); listed defects are also absent from verbatims",
+        check_fn=check_claim_text_term_gloss,
+        truth_anchor="eden/tools/term-gloss-lexicon.json {defects, common_swaps} scanned against every sealed claim_text (+ verbatim for defects)",
+        severity="critical",
+        lesson_ref="SESSION 39 (2026-07-02) -- Luneth mandate: every reader-facing term gets a minimal common gloss (common-word-first) and source nomenclature defects get fixed; enforce so summaries never drift back into a fixed loop; memory term-gloss-standard + perfect-entry-no-deferral",
     ),
 ]
 

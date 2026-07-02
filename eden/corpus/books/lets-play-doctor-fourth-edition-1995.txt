@@ -6894,7 +6894,7 @@ particularly useful and may include foxglove
 THIS PLANT IS POTENTIALLY DANGEROUS,
 lily-of-the-valley (Convallaria majalis), English
 hawthorn (Crataegus oxyacantha), Canadian
-fleabane (Erigeron canadense), kidney bean
+fleabane (Erigeron canadensis), kidney bean
 (Phaseolus vulgaris), Scotch broom (Cystisus
 scoparius), parsley (Petroselinum crispum),
 prickly restharrow (Ononis Spinosa) and nettle
@@ -7895,7 +7895,7 @@ needed, choline at 150 mg/day, flaxseed oil at
 5 gm q.i.d., avoid simple carbohydrates, use
 proteins and amino acids for snacks, herbs
 including feverfew (Tanacetum parthenium),
-fleabane (Erigeron canadense), balm (Melissa
+fleabane (Erigeron canadensis), balm (Melissa
 officinalis), cowslip (Primula veris), lavender
 (Lavandula angustifolia), queen-of-the-
 meadow (Filipendula ulmaria), valarian
