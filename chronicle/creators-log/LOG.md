@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 287 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 288 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-02 13:09 UTC-05:00 · round-close · corpus/lets-play-doctor
+LETS de-hyphenation reflow (450 in-verbatim wraps joined, 267 claims) + run-together sweep (40 fixes); Luneth caught 3 hard-hyphen mis-joins. kv 242→244, board 37/37, all verbatims render clean.
+  ↳ De-hyphenated all in-verbatim OCR line-wraps across 267 LETS claims (in-span scope; 5 chemical keep-hyphens preserved). Luneth's longest-words audit caught 3 mis-joins (inversion-gravity, night-esophageal, per day) where both fragments were full words — restored hyphen/space. Then swept 33 word smashes + 4 Latin binomials + 3 dose spaces (all orthographic space/hyphen). Deferred dose-digit-tangled cases (claim 396, Carum carvi, Caulophyllum, tuberosa, HCl) to a careful dose/typo pass per the dose-misprint mandate. Pipeline: safe_write→resnap --fix (0 broken)→finalize→seal(kv244 corpus_verify PASS)→embed→build→invariants 37/37→render_probe_knowledge PASS→verbatim_audit baseline 201→198. Verified: 288 join-created words all real; zero nonsense long words remain in LETS.
 
 ## 2026-07-02 12:08 UTC-05:00 · round-close · corpus/lets-play-doctor
 LETS FINDABLE 233 convulsions/epilepsy — Option B extend (verbatim→full CONVULSIONS section, names convulsions+epilepsy+seizures); 3 source fixes; kv 241→242; baseline 203→201.
@@ -782,7 +786,3 @@ Phase γ.3 batch 41 — Rare Earths Sb/Antimony + Sc/Scandium: RARE-224 Sb (tart
 ## 2026-06-25 16:54 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 40 — Rare Earths S/Sulfur: 5 claims RARE-219..223 (definition, mechanism x3, deficiency_sign). kv 77→78, corpus 312→317, conditions 141→144, board 30/30, knowledge probe green.
   ↳ Mined the rich S/Sulfur canon entry (p376-377). Claims: (219) structural atom in most proteins as sulfur amino acids cystine/cysteine/methionine + glutathione (cysteine tripeptide) essential to cellular reactions; (220) sulfhydryl group (reduced -SH cysteine / oxidized disulfide -S-S- cystine) → protein configuration + enzyme activity; (221) sulfur-containing proteins maintain life — hemoglobin, hormones (insulin, adrenal cortical), enzymes, antibodies; (222) sulfur in heparin (anticoagulant), chondroitin sulfate (cartilage/Knox gelatin), thiamine(B1)+biotin; arsenic toxicity via sulfhydryl binding; (223) deficiency → degenerative arthritis (cartilage/ligament/tendon), systemic lupus erythematosus, sickle-cell anemia, collagen diseases. The structural sentence is split by a firefighter-death news clipping (p377) left RAW — verbatims sit in the contiguous spans on either side, none crossing the clipping. 3 targeted reflows (S2/S3/S5 de-hyphenated); S1/S4 snapped from raw; resnap 0 broken. Faithful OCR/book typos kept in verbatims (somes, Systemic Lupus Erythematosis, Sicklecell); claim_texts clean. New condition slugs lupus/sickle_cell_anemia/collagen_disease. Claims reviewed + approved by Luneth before commit.
-
-## 2026-06-25 16:38 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 39 — Rare Earths Re/Rh/Ru confirmed geology (no claim) + RARE-218 Rn/Radon (carcinogenic household hazard, other_substances=[radon]). kv 76→77, corpus 311→312, conditions 141, board 30/30, knowledge probe green.
-  ↳ Re/Rhenium (canon yet geology-only — 'accumulates in thyroid tissue' = bioaccumulation, no function), Rh/Rhodium (0.001 ppm), Ru/Ruthenium (0.001 ppm + RuO4-toxic aside too short for a claim) all read + confirmed geology-only. RARE-218 Rn/Radon (toxic, non-canon → other_substances=[radon], cond=cancer, kind=mechanism): all isotopes radioactive (half-life 54 sec to 3.8 days); carcinogenic and highly toxic when inhaled; a common odorless/colorless household hazard requiring a detection kit. Rn paragraph reflowed (de-hyphenated). resnap 0 broken (all 217 prior claims upstream). Next: S/Sulfur as a dedicated batch 40 (rich canon, ~5 claims; structural sentence split by a firefighter-death news clipping on p377 that stays raw; several book typos kept faithful). Claim reviewed + approved by Luneth before commit.
