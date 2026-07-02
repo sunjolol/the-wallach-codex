@@ -170,6 +170,21 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       firstCite: first ? /DEAD DOCTORS|DDDL/i.test(first.querySelector('.kd-claim__cite')?.textContent || '') : false,
       subLabels: subs,
       synopsisCoherent,
+      hasUmbrellaTip: !!(d && d.querySelector('.kd-condition-deep__umbrella-tip')),
+    };
+  });
+
+  // 4c. Umbrella tip -- an UMBRELLA condition (cancer) shows the "broad category"
+  //     note with dynamic subtype examples; the leaf above (diabetes) must NOT.
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-condition="cancer"]')?.click());
+  await wait(250);
+  const umbrellaTip = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const d = root ? root.querySelector('.kd-condition-deep') : null;
+    const tip = d ? d.querySelector('.kd-condition-deep__umbrella-tip') : null;
+    return {
+      shown: tip !== null,
+      hasExample: tip ? /Breast Cancer|Colon Cancer/.test(tip.textContent) : false,
     };
   });
 
@@ -226,7 +241,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, corpus, bookOpen, products, essentials, deep, traceMeter, conditions, condDeep, afterEsc, afterK, search, highlight, searchClear };
+  const out = { boot, afterClick, corpus, bookOpen, products, essentials, deep, traceMeter, conditions, condDeep, umbrellaTip, afterEsc, afterK, search, highlight, searchClear };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -256,6 +271,8 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['conditions: claims grouped by role', condDeep.groupCount >= 1 && condDeep.claimCount >= 1],
     ['conditions: claim cites the book', condDeep.firstCite === true],
     ['conditions: synopsis backed by a labeled chip group', condDeep.synopsisCoherent === true],
+    ['conditions: leaf condition has NO umbrella tip (diabetes)', condDeep.hasUmbrellaTip === false],
+    ['conditions: umbrella shows broad-category tip w/ examples (cancer)', umbrellaTip.shown === true && umbrellaTip.hasExample === true],
     ['search: typing narrows the rows', search.total > search.visible && search.visible >= 1],
     ['search: content match surfaces Anosmia (title lacks "smell")', search.anosmiaVisible === true && search.anosmiaTitleHasSmell === false],
     ['search: deep-view live-highlights the matched term (smell)', highlight.deepShown === true && highlight.markCount >= 1 && highlight.allSmell === true],

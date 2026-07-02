@@ -34,6 +34,7 @@ import {
   listConditions,
   listPlannedBooks,
   resolveClaims,
+  umbrellaChildren,
 } from '../state/corpus.js';
 
 function escHTML(s: unknown): string {
@@ -349,6 +350,21 @@ function conditionSynopsis(c: CorpusCondition): string {
   return '';
 }
 
+// An umbrella condition (cancer, dermatitis, ...) collects many subtypes; past this
+// many surfaced claims the list is long enough to warrant the "search your specific
+// type" tip. All 7 current umbrellas clear it; the gate future-proofs thin ones.
+const UMBRELLA_TIP_MIN_CLAIMS = 15;
+
+/**
+ * The "broad category" note shown atop an umbrella condition -- steers a user
+ * browsing e.g. Cancer toward their specific subtype, with two real examples.
+ */
+function renderUmbrellaTip(childDisplayNames: readonly string[]): string {
+  const examples = childDisplayNames.slice(0, 2).map(n => `<em>${escHTML(n)}</em>`).join(', ');
+  const eg = examples.length > 0 ? ` (e.g. ${examples})` : '';
+  return `<p class="kd-condition-deep__umbrella-tip"><strong>Broad category</strong> \u2014 this collects every subtype. Search your specific type for a focused view${eg}.</p>`;
+}
+
 /**
  * The deep view for one condition — a condition-first synopsis, then claims
  * grouped by role + the essentials chips.
@@ -381,6 +397,10 @@ function renderConditionDeep(slug: string): string {
     essentialChipRow('ALSO CITED', otherEss),
   ].join('');
   const books = c.books_cited.map(b => getBookLabel(b)).join(' · ');
+  const umbrellaKids = umbrellaChildren(c.slug);
+  const umbrellaTipHTML = (umbrellaKids.length > 0 && c.claim_count >= UMBRELLA_TIP_MIN_CLAIMS)
+    ? renderUmbrellaTip(umbrellaKids)
+    : '';
 
   return `
     <div class="kd-essential-deep kd-condition-deep">
@@ -391,6 +411,7 @@ function renderConditionDeep(slug: string): string {
           <div class="kd-essential-deep__cat">CONDITION · ${c.claim_count} CLAIM${c.claim_count === 1 ? '' : 'S'}</div>
         </div>
       </header>
+      ${umbrellaTipHTML}
       ${synopsis.length > 0 ? `<p class="kd-condition-deep__synopsis">${escHTML(synopsis)}</p>` : ''}
       ${chipRows}
       ${groupsHTML}

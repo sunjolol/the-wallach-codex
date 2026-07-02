@@ -33,6 +33,7 @@ const EMPTY_CORPUS: CorpusEmbed = {
   planned_books: [],
   essentials: {},
   conditions: {},
+  umbrellas: {},
   claims: {},
 };
 
@@ -116,6 +117,16 @@ export function getCondition(slug: string): CorpusCondition | null {
 /** All condition entries (insertion order = derived alphabetical). */
 export function listConditions(): CorpusCondition[] {
   return Object.values(corpus().conditions);
+}
+
+/**
+ * Example child-subtype display names for an UMBRELLA condition (e.g. 'cancer' ->
+ * ['Breast Cancer', 'Colon Cancer', ...]), most-cited subtype first. Empty array
+ * when the slug is not a registered umbrella. Drives the condition deep-view "broad
+ * category" tip; source is the taxonomy flowed into the embed by corpus_embed.py.
+ */
+export function umbrellaChildren(slug: string): string[] {
+  return corpus().umbrellas?.[slug] ?? [];
 }
 
 /** Display name for a condition slug, humanized fallback if absent from corpus. */

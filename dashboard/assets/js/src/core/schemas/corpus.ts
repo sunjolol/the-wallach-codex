@@ -101,6 +101,10 @@ export const CorpusEmbedSchema = z.object({
   planned_books: z.array(CorpusPlannedBookSchema),
   essentials: z.record(z.string(), CorpusEssentialSchema),
   conditions: z.record(z.string(), CorpusConditionSchema),
+  // Umbrella condition slug -> child-subtype DISPLAY names (most-cited first),
+  // derived from eden/tools/condition-taxonomy.json; drives the deep-view "broad
+  // category" tip. Optional so a pre-umbrella embed still parses (graceful degrade).
+  umbrellas: z.record(z.string(), z.array(z.string())).optional(),
   claims: z.record(z.string(), CorpusClaimSchema),
 }).passthrough();
 

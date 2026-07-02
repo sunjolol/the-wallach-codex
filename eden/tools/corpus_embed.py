@@ -36,6 +36,7 @@ ROOT = Path(__file__).resolve().parent.parent.parent
 CORPUS = ROOT / "eden" / "corpus"
 ROADMAP_PATH = CORPUS / "books-roadmap.json"
 EMBED_PATH = ROOT / "dashboard" / "assets" / "data" / "corpus-embed.json"
+TAX_PATH = ROOT / "eden" / "tools" / "condition-taxonomy.json"
 
 sys.path.insert(0, str(ROOT / "tools"))
 import safe_write  # noqa: E402
@@ -159,12 +160,28 @@ def build_embed() -> dict:
                 "code": book_code(p["title"]),
             })
 
+    # ---- umbrellas: umbrella condition -> child subtype DISPLAY names, ordered by
+    # child claim_count desc (most-cited first) so the Knowledge drawer's "broad
+    # category" tip shows the prominent example subtypes. Single source is
+    # eden/tools/condition-taxonomy.json (the same map the verbatim named-by-proxy
+    # rule uses); only children that exist as real conditions are carried.
+    umbrellas = {}
+    if TAX_PATH.exists():
+        tax = json.loads(TAX_PATH.read_text(encoding="utf-8"))
+        for umb, children in tax.items():
+            if umb.startswith("_"):
+                continue
+            present = [ch for ch in children if ch in cond_idx]
+            present.sort(key=lambda ch: -cond_idx[ch]["claim_count"])
+            umbrellas[umb] = [cond_idx[ch]["display_name"] for ch in present]
+
     return {
         "knowledge_version": version,
         "books": books,
         "planned_books": planned_books,
         "essentials": essentials,
         "conditions": conditions,
+        "umbrellas": umbrellas,
         "claims": claims,
     }
 

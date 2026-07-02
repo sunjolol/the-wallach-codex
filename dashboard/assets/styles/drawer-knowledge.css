@@ -781,6 +781,27 @@
   border-left: 2px solid var(--ds-tech);
   border-radius: var(--ds-radius-sm);
 }
+/* Umbrella "broad category" tip -- a QUIET note (muted ink + dim left-rule, no
+   filled wash) so it sits below the emphasized synopsis without competing. Shown
+   only on umbrella conditions (cancer, dermatitis, ...) to steer users to subtypes. */
+#drawer-knowledge-mount .kd-condition-deep__umbrella-tip {
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-xs);
+  line-height: 1.45;
+  color: var(--ds-ink-medium);
+  margin: 0 0 var(--ds-space-2);
+  padding: var(--ds-space-1) var(--ds-space-3);
+  border-left: 2px solid var(--ds-tech-dim);
+}
+#drawer-knowledge-mount .kd-condition-deep__umbrella-tip strong {
+  font-weight: 600;
+  color: var(--ds-ink);
+}
+#drawer-knowledge-mount .kd-condition-deep__umbrella-tip em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ds-tech);
+}
 
 /* Intake-vs-Wallach-target meter -- compact deep-dive header readout (top-right).
    Present only when Wallach states a numeric target; otherwise the status pill
