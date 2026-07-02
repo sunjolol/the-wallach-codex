@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 268 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 269 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-01 20:16 UTC-05:00 · round-close · corpus
+SESSION 37 — FINDABLE full-extend sweep: 10 LETS claims extended past 500 (length rule in action)
+  ↳ First use of the new length rule: 10 LETS FINDABLE claims extended to their full treatment paragraph, going past the old 500 cap (501-667c, hard cap 1200) so nothing was trimmed. 238 crohns 518, 244 depression 561, 134 amenorrhea 543, 150 autoimmune_disorders 576, 145 arteriosclerosis 667, 173 bruises 624, 223 menopause 619, 272 chronic_fatigue 551, 413 rickets 598, 430 dandruff 523 (also names seborrheic_dermatitis). All named, no page-markers in span; the verbatim_over_soft_limit info-invariant now lists all 10 for Luneth review. violations 231->221, LETS 172->162, FINDABLE 61->51, orphans 64. resealed kv232, board 33/33, render_probe_knowledge PASS.
 
 ## 2026-07-01 19:30 UTC-05:00 · design-decision · tools
 SESSION 37 — CODIFY verbatim/log length rule: completeness > 500-char limit (hard cap 1200, always inform)
@@ -782,7 +786,3 @@ Silent-skip audit (Luneth-mandated): catalog A→Hg fully re-checked; found+fixe
 ## 2026-06-25 03:24 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 23 — Rare Earths catalog Fe/Iron + Ga/Gallium + F/Fluorine (Wallach anti-fluoride): 5 claims (RARE-130..134), kv 56→57, corpus 228
   ↳ RARE-130 iron function/essentiality (hemoglobin/myoglobin, iron:hemoglobin::Mg:chlorophyll); 131 heme-meat 10% vs plant 1% absorption; 132 gallium brain-metalloenzyme + reduces brain cancer (lab animals + British pregnant-women study); 133 FLUORIDE toxicity thresholds (dental fluorosis 2-7ppm, osteosclerosis 8-20ppm, systemic 20-80mg/day); 134 FLUORIDE->cancer (Yiamouyiannis-Burk 1977 hearings; 1990 NTP study oral SCC/osteosarcoma/thyroid/liver). FLUORIDE per Luneth: Wallach said it -> include it; non-canon (germanium holds slot) so essentials=[] + fluoride in other_substances (future searchable-substance feature). Skipped duplicates: iron pica/symptoms/overload=DDDL; germanium=RARE-11/12/13; Fr/Gd geology; pro-fluoride news clipping. conditions 104->108. Board 30/30, build OK, knowledge probe green. Luneth-approved.
-
-## 2026-06-25 03:12 UTC-04:00 · round-close · eden/corpus
-Batch 22 (Cu/Cr) + cesium enrichment + behavioral-rage policy update + fringe salvage: kv 52→55, corpus 223, conditions 91→103
-  ↳ 3 parts: (1) Batch 22 RARE-119..124 copper new angles (function, aneurysm mechanism+epidemiology, gray-hair reversal, Table 11-13, congenital cerebral palsy) + Gary Evans chromium +33% lifespan. (2) Cesium enrichment RARE-125 (high-pH cancer therapy specifics). (3) POLICY UPDATE: generic behavioral conditions (violent_behavior/blind_rage/explosive_outbursts/criminal_behavior) now in-scope, not fringe - added to RARE-116/122; salvaged RARE-126 (Preface sociability), 127 (brain-low-fuel rage mechanism Cr/V), 128 (rage<-Cr/V/Cu/Li+sugar), 129 (hair signature low Cu/Zn/Na/Cr/V/Li); enriched RARE-41 (Schrauzer lithium-crime study). Strip only graphic prose (named killers). Memories + criminal-behavior.md fringe note updated. Luneth approved all 3 parts. Board 30/30, build OK, knowledge probe green.
