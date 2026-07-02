@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 289 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 290 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-02 13:37 UTC-05:00 · round-close · corpus/lets-play-doctor
+FINDABLE 295: extended to name heart_attack (655c); cardiovascular_disease kept as residual (unnameable under cap, sole holder). board 37/37, kv 247, baseline 196.
 
 ## 2026-07-02 13:29 UTC-05:00 · round-close · corpus/dose-typo
 Dose/typo pass: claim 396 Parkinsonism dose string source-verified (NO misprint) + HC1→HCl ×27 + botanical OCR (Carum carvi, Caulophyllum ×2) + tuberose→tuberosa author-fix. kv 244→246, board 37/37.
@@ -782,7 +785,3 @@ Phase γ.3 batch 43 — Se/Selenium PART 2: RARE-227 (adult deficiency → MS/AL
 ## 2026-06-25 17:21 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 42 — Rare Earths Se/Selenium PART 1: 2 NEW claims RARE-225..226 (ceroid-lipofuscin antioxidant; mitochondria/membrane crystalloid). Se = ~2000-line behemoth, heavily DDDL-covered. kv 79→80, corpus 318→320, conditions 145, board 30/30.
   ↳ Selenium has heavy existing coverage (13 DDDL + 7 RARE claims), so extracted ONLY new catalog angles from the p378 core-mechanism prose. RARE-225 (mechanism): most efficient antioxidant/anti-peroxidant in the glutathione peroxidase system + metallo amino acids (selenomethionine); prevents lipid/fat peroxidation → keeps body fats from going rancid → visible 'age/liver spots' = ceroid lipofuscin (NEW vs DDDL-006/029). RARE-226 (mechanism): protects cell+organelle bi-lipid-layer membranes; Se-deficient rhesus monkey liver mitochondria (126,000x) inner membrane (enzymes+RNA) precipitates to nonfunctioning crystalloid = 'age pigment' (NEW). Two targeted reflows (regions A/B); resnap 0 broken. Faithful book typos kept in verbatims (antioxident, anti-peroxident, ceroid lipofucsin). DEFERRED to Se PART 2: Table 11-23 deficiency-disease list, the Schrauzer (UCSD) anti-cancer selenium quote, age-stratified deficiency prose, a two-column OCR interleave on p379, plus Se-deficient-children photos (do NOT render) and an MD obituary clipping (raw). Approved by Luneth before commit.
-
-## 2026-06-25 17:05 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 41 — Rare Earths Sb/Antimony + Sc/Scandium: RARE-224 Sb (tartar emetic for schistosomiasis, other_substances=[antimony]); Sc confirmed geology-only. kv 78→79, corpus 317→318, conditions 144→145, board 30/30, knowledge probe green.
-  ↳ Sc/Scandium read + confirmed geology-only (igneous 22 ppm, concentrates in mammalian heart and bone; canon-90 yet geology-only, same pattern as Re/Dy/Er/Gd/Hf/Ho/Lu/Nb). RARE-224 Sb/Antimony (toxic, non-canon → other_substances=[antimony], cond=schistosomiasis, kind=protocol): antimony potassium tartrate (tartar emetic) is still used today as the preferred treatment for blood flukes (schistosomiasis / bilharziasis). No book .txt edit this batch — the Sb claim sentence had no line-break hyphens, so its verbatim snapped from raw text; no resnap required. New condition slug schistosomiasis. Next: Se/Selenium as a dedicated rich batch (cross-check DDDL's heavy selenium coverage, extract only new Rare Earths angles). Claim reviewed + approved by Luneth before commit.
