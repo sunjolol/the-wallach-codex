@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 293 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 294 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-02 16:46 UTC-05:00 · round-close · corpus
+SESSION 42 cont: DDDL bullet-markers FIXED (no-defer). 68 OCR bullets ( '(' x55 + '<' x12 + 1 wrapped ) -> '• '; 2 real parens trimmed. kv252->253, board 38/38, space_in_paren 0 (fixed not allowlisted).
+  ↳ Scanner missed the '<' bullet siblings (not parens). Added regex_replacements (count-asserted, context-scoped) to book_purify_apply.py. Rebuilt from original source so spec stays original->pristine. NEXT no-defer item = 48 hyphen-wrap compounds.
 
 ## 2026-07-02 16:29 UTC-05:00 · milestone · corpus
 SESSION 42: DDDL purified to PRISTINE (campaign book #2). 148 fixes + 402 running-header lines stripped + 3 fuses; kv250->252; board 38/38; book_purity 0 unresolved. Luneth-audited spec (22 flags).
@@ -780,7 +784,3 @@ Phase γ.3 batch 47 — Table 11-9 PART 3 (p296): 5 claims RARE-239..243 (Folic/
 ## 2026-06-26 02:25 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 46 — Table 11-9 PART 2 (water-soluble B1/B2/B3/B5/B6/B12, p295): 6 deficiency_sign claims RARE-233..238. NEW Luneth ruling: correct obvious typos (lips,mouth; chelosis→cheilosis) in verbatims. kv 85→87, corpus 332, conditions 161, board 30/30, probe green.
   ↳ PART 2 = water-soluble B-complex, all 6 rows read word-level at high DPI. B3 confirmed "dementia and retardation" (last batch full-page misread as irritation — corrected). 4 targeted .txt edits: B1 de-hyphenate line-wrapped Wernicke-Korsakoff (reflow); B2 restore OCR-dropped open paren before "geographic" (fix-to-book); and a NEW Luneth ruling — VERY OBVIOUS typos get corrected in verbatims too: lips,mouth→lips, mouth and chelosis→cheilosis. PRECEDENT SHIFT: the .txt now intentionally departs from the books literal print for unambiguous typos (prior stance kept all book typos faithful). resnap 1 healed (RARE-234 --fix), 125 relocated, 0 broken. Behavioral goldmine: B1 mental-confusion/emotional-instability, B5 quarrelsome/sullen/depressed, B6 hyperirritability/Tourettes. +7 conditions +~13 symptoms. OPEN consistency Q (non-blocking): batch-44 kept-typos Sicklecell/somes/methionone/lipofucsin/Erythematosis same class. Next: PART 3 p296 (Folic acid/Biotin/C/Choline/Inositol/Bioflavonoids) finishes Table 11-9.
-
-## 2026-06-26 02:12 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 45 — Table 11-9 vitamin-deficiency PART 1 (fat-soluble A/D/E/K, p295): 4 deficiency_sign claims RARE-229..232, one per vitamin. No .txt edit. Luneth reviewed+approved. kv 84→85, corpus 326, conditions 154, board 30/30, knowledge probe green.
-  ↳ Table 11-9 "Vitamins and the common result of their deficiencies" = 16-row two-column table mapping to all 16 canon vitamin slugs; mining one deficiency_sign claim per vitamin row (matches Table 11-18/19/21 pattern). PART 1 = fat-soluble A(retinol)/D/E(tocopherol)/K(menaquinone). All 4 rows read word-level at high DPI (p295); deficiency texts already byte-faithful in .txt so verbatims snapped from raw (no .txt edit / no resnap) — finalize folds curly quotes + keeps the book-faithful "(hemolysis) ," space. claim_text glosses medical jargon plainly. keratomalacia mapped to existing corneal_ulcers (book equates). +9 condition slugs, +6 symptom slugs. Pipeline: finalize --raw (4 snapped) → seal → embed → build → invariants 30/30 → render_probe_knowledge PASS. Next: PART 2 water-soluble B1/B2/B3/B5/B6/B12 (OCR to verify: B3 retardation-vs-irritation, B2 chelosis, B12 085 leader).

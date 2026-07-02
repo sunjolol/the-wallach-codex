@@ -109,6 +109,24 @@ def apply_replacements(text: str, replacements: list) -> tuple[str, list]:
     return text, log
 
 
+def apply_regex_replacements(text: str, rules: list) -> tuple[str, list]:
+    """Regex find+repl with an exact expect-count assertion — for context-scoped fixes
+    a literal find can't express. Instance: a bullet glyph OCR'd as '( ' or '< ' at a
+    list item -> '• ', where the lookahead 'followed by a Capital/quote' distinguishes
+    a bullet from a real paren ('( chenopodiaceae') or comparison ('< 0.1'). Aborts on
+    any count mismatch — nothing gets written."""
+    log = []
+    for r in rules:
+        pat = re.compile(r["pattern"])
+        n = len(pat.findall(text))
+        if r.get("expect") is not None and n != r["expect"]:
+            print(f"ABORT — regex_replacement count mismatch for {r['pattern']!r}: found {n}, expected {r['expect']}")
+            sys.exit(1)
+        text = pat.sub(r["repl"], text)
+        log.append(f"  /{r['pattern']}/ -> {r['repl']!r}  ×{n}   [{r.get('why','')}]")
+    return text, log
+
+
 def strip_header(text: str, cfg: dict) -> tuple[str, int]:
     """Drop content lines byte-equal to the running header, except keep_lines."""
     if not cfg:
@@ -214,10 +232,11 @@ def transform(book_id: str):
     text = lf_text(book_path(book_id))
     before = text
     text, rlog = apply_replacements(text, spec.get("replacements", []))
+    text, rxlog = apply_regex_replacements(text, spec.get("regex_replacements", []))
     text, n_hdr = strip_header(text, spec.get("strip_running_header"))
     text, rstats = strip_running(text, spec.get("strip_running"))
     text, flog = apply_fuses(text, spec.get("line_fuses", []))
-    stats = {"n_hdr": n_hdr, "rstats": rstats, "flog": flog}
+    stats = {"n_hdr": n_hdr, "rstats": rstats, "flog": flog, "rxlog": rxlog}
     return spec, before, text, rlog, stats
 
 
@@ -227,6 +246,10 @@ def cmd_dry(args):
     print(f"  replacements ({len(rlog)}):")
     for line in rlog:
         print(line)
+    if stats["rxlog"]:
+        print(f"  regex replacements ({len(stats['rxlog'])}):")
+        for line in stats["rxlog"]:
+            print(line)
     if stats["flog"]:
         print(f"  line fuses ({len(stats['flog'])}):")
         for line in stats["flog"]:
@@ -281,6 +304,8 @@ def cmd_fixmap(args):
                 new_vb = pat.sub(r["repl"], new_vb)
             elif r["find"] in new_vb:
                 new_vb = new_vb.replace(r["find"], r["repl"])
+        for r in spec.get("regex_replacements", []):
+            new_vb = re.compile(r["pattern"]).sub(r["repl"], new_vb)
         for f in spec.get("line_fuses", []):
             # verbatims are stored reflowed (no embedded newline) — fuse the space form
             new_vb = new_vb.replace(f"{f['a']} {f['b']}", f["a"] + f["b"])

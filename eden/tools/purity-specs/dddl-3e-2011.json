@@ -901,6 +901,38 @@
       "repl": "L (SPANISH",
       "expect": 1,
       "why": "missing space"
+    },
+    {
+      "find": "( chenopodiaceae",
+      "repl": "(chenopodiaceae",
+      "expect": 1,
+      "why": "real paren padding (not a bullet)"
+    },
+    {
+      "find": "doctors )",
+      "repl": "doctors)",
+      "expect": 1,
+      "why": "close-paren padding"
+    },
+    {
+      "find": "maintain life: (\nHemoglobin",
+      "repl": "maintain life:\n• Hemoglobin",
+      "expect": 1,
+      "why": "wrapped first list bullet -> real bullet"
+    }
+  ],
+  "regex_replacements": [
+    {
+      "pattern": "\\( (?=[A-Z“‘\\\"])",
+      "repl": "• ",
+      "expect": 55,
+      "why": "bullet glyph OCR'd as '(' -> real bullet (deficiency-symptom lists)"
+    },
+    {
+      "pattern": "< (?=[A-Z])",
+      "repl": "• ",
+      "expect": 12,
+      "why": "same bullet glyph OCR'd as '<' -> real bullet"
     }
   ],
   "strip_running": {
@@ -1009,7 +1041,7 @@
     "'Beri beri' (x1, 'Bl (Beri beri)') left for your ruling: -> 'beriberi'? and the 'Bl'->'B1' vitamin-code OCR nearby.",
     "Bare numbers KEPT (possible table/ad content, not page numbers): '1982' (disease-incidence table L8656), '21' (back-matter ad L14663).",
     "KEPT/allowlisted, ambiguous — left for your ruling: '1-5' (=Interstate I-5? 'junction of I-10 and 1-5'); '3-g percent' (=3.6%?); germanium '150/mg' (=150 mg?); 'HistoriaAnimalicemVl}' (=Aristotle 'Historia Animalium'); 'KiahSien' (=Kaihsien place); 'IFN(y)' (=IFN-gamma).",
-    "The '( ' bullet markers (x57, deficiency-symptom lists e.g. '( Poor growth', '( Dermatitis') are OCR of a bullet glyph, allowlisted as-is. Convert '(' -> a real bullet, or leave? Your call.",
+    "BULLET MARKERS FIXED (Luneth-ruled •): 68 deficiency-symptom-list bullets OCR'd as '( ' (x55) / '< ' (x12) / wrapped (x1) -> '• '; the 2 real non-bullet cases ('( chenopodiaceae', 'doctors )') trimmed as parens. The '< 0.1 ppm' comparison left intact.",
     "48 hyphen-wrapped compounds (beta-\\ncarotene, life-\\nthreatening) allowlisted as reviewed_ok (IAIYH precedent). A full de-hyphenation reflow is optional polish — flag if you want it now."
   ]
 }

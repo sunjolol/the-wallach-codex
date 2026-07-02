@@ -7087,7 +7087,7 @@ B—Boron is found in igneous rocks at 10 ppm, shale at 100 ppm,
 sandstone at 35 ppm, limestone at 20 ppm, fresh water at 0.013 ppm, sea
 water at 4.0 to 6.0 ppm, soil from 2.0 to 100 ppm (highest in saline and
 alkaline soils), marine plants 120 ppm (highest in brown algae), land plants
-at 150 ppm ( chenopodiaceae and plumboginaceae are indicator plant
+at 150 ppm (chenopodiaceae and plumboginaceae are indicator plant
 families), marine animals at 20 to 50 ppm, and land animals at 0.5 ppm.
 Boron is essential for bone metabolism including efficient use of calcium
 and magnesium and proper function of endocrine glands (i.e.— ovaries,
@@ -7663,23 +7663,23 @@ universally important cofactor for many hundreds of metalloenzymes.
 Copper deficiency is widespread and copper deficiency diseases are quite
 common.
 Copper Deficiency Symptoms and Diseases
-< White, grey, and silver hair
-( Dry brittle hair (“steely wool” in sheep)
-( Ptosis (sagging tissue—eye lids, “crow’s feet,” skin, breasts,
-stomach, etc.) ( Hernias (congenital and acquired) ( Varicose veins
-(including hemorrhoids) ( Spider veins
-( Aneurysms (cerebral artery, coronary artery, and large artery blowouts)
-( Kawasaki disease (congenital aneurysms with streptococcal infection)
-( Anemia (especially common in high milk and vegan diets)
-< Hypo and Hyperthyroid dysfunction
-( Arthritis (especially where bone growth plates are involved) ( Ruptured
+• White, grey, and silver hair
+• Dry brittle hair (“steely wool” in sheep)
+• Ptosis (sagging tissue—eye lids, “crow’s feet,” skin, breasts,
+stomach, etc.) • Hernias (congenital and acquired) • Varicose veins
+(including hemorrhoids) • Spider veins
+• Aneurysms (cerebral artery, coronary artery, and large artery blowouts)
+• Kawasaki disease (congenital aneurysms with streptococcal infection)
+• Anemia (especially common in high milk and vegan diets)
+• Hypo and Hyperthyroid dysfunction
+• Arthritis (especially where bone growth plates are involved) • Ruptured
 vertebral discs
-< Liver cirrhosis
-( Violent behavior, blind rage, explosive outbursts, and
-“criminal behavior” ( Learning disabilities
-( Cerebral palsy and hypoplasia of the cerebellum (congenital
-ataxia in sheep) ( High blood cholesterol ( Iron storage disease
-(hemosiderosis) ( Reduced carbohydrate tolerance ( Neutropenia (low
+• Liver cirrhosis
+• Violent behavior, blind rage, explosive outbursts, and
+“criminal behavior” • Learning disabilities
+• Cerebral palsy and hypoplasia of the cerebellum (congenital
+ataxia in sheep) • High blood cholesterol • Iron storage disease
+(hemosiderosis) • Reduced carbohydrate tolerance • Neutropenia (low
 neutrophil count) Copper is required in many physiological functions:
 RNA, DNA, Lysil oxidase cofactor, melanin production (hair and skin
 pigment), electron transfer for subcellular respiration, tensile strength of
@@ -8390,13 +8390,13 @@ serpentine), marine plants at 3 ppm, land plants at 3 ppm (accumulated by
 Alyssum bertalonii), marine animals at 0.4 to 25 ppm, and land animals at
 0.8 ppm (is found in RNA).
 Symptoms of Nickel Deficiency
-( Poor growth
-< Anemia
-< Depressed oxidative ability of the liver
-< Increased newborn mortality ( Rough/dry hair
-( Dermatitis
-( Delayed puberty
-( Poor zinc absorption
+• Poor growth
+• Anemia
+• Depressed oxidative ability of the liver
+• Increased newborn mortality • Rough/dry hair
+• Dermatitis
+• Delayed puberty
+• Poor zinc absorption
 Less than 10 percent of ingested metallic nickel is absorbed. Nickel
 deficiency was first reported in 1970. Nickel functions as a cofactor for
 metalloenzymes and facilitates gastrointestinal absorption of iron and zinc.
@@ -8691,9 +8691,9 @@ reduced form (-SH) in cysteine and in an oxidized form (-S-S-) as the
 double molecule cystine. This “sulfhydrl group” is important for the
 specific configuration of some structural proteins and for the biological
 activities of some enzymes (proteins that do work).
-Sulfur-containing proteins work in indirect ways to maintain life: (
-Hemoglobin
-( Hormones (insulin, adrenal cortical hormones) ( Enzymes ( Antibodies
+Sulfur-containing proteins work in indirect ways to maintain life:
+• Hemoglobin
+• Hormones (insulin, adrenal cortical hormones) • Enzymes • Antibodies
 Sulfur also occurs in carbohydrates such as heparin, an anticoagulant that is
 concentrated in the liver and other tissues, and chondroitin sulfate
 (cartilage, gelatin). The vitamins thiamine (Bl) and biotin have S bound in
@@ -8988,17 +8988,17 @@ rats 50 years ago, and essential for humans 20 years ago. Zinc deficiency
 produces a wide range of diseases including congenital birth defects and
 degenerative diseases of all age groups.
 Congenital Birth Defects Associated with Zinc Deficiency
-( Down’s Syndrome
-< Cleft lip
-( Cleft palate
-< Brain defects (dorsal herniation, hydroenchalocoel) ( Micro or
+• Down’s Syndrome
+• Cleft lip
+• Cleft palate
+• Brain defects (dorsal herniation, hydroenchalocoel) • Micro or
 anopthalmia (small or absent eyes)
-< Agnathia (small lower jaw) ( Spina bifida ( Clubbed limbs
-( Syndactyly (webbed toes and fingers) ( Polydactyly (extra limbs and
-digits) ( Atresia (failure to develop limbs, digits,organs, anal opening,etc.)
-( Hernias (hiatal, diaphragmatic, umbilical, inguinal, etc.) ( Heart defects (
+• Agnathia (small lower jaw) • Spina bifida • Clubbed limbs
+• Syndactyly (webbed toes and fingers) • Polydactyly (extra limbs and
+digits) • Atresia (failure to develop limbs, digits,organs, anal opening,etc.)
+• Hernias (hiatal, diaphragmatic, umbilical, inguinal, etc.) • Heart defects (
 Lung defects
-( Urogenital defects (horseshoe kidney, small kidney, intersex
+• Urogenital defects (horseshoe kidney, small kidney, intersex
 malformations of the male and female genitalia)
 There are 1.4 to 2.3 grams of Zn in the adult human. The liver, pancreas,
 kidney, bone, and skeletal muscles have the greatest reserves of Zn. Lesser
@@ -9020,29 +9020,29 @@ therefore unsupplemented athletes are particularly at risk for zinc deficiency
 with the following symptoms such as anorexia nervosa, muscle weakness,
 pica and cribbing, etc.
 Symptoms and Diseases of Zinc Deficiency
-( Pica/Cribbing (geophagia, wool eating, hair eating, etc.)
-( Loss of sense of smell
-( Loss of sense of taste
-( Infertility
-( Failure of wounds and ulcers to heal
-( Immune status failure
-( Poor growth (short stature)
-( High infant mortality
-( Hypogonadism (small poorly functioning ovaries and testes)
-( Perpetual prepubic state
-( Anemia
-< Alopecia (hair loss)
-( Acrodermatitis enteropathica (parakeratosis)
-( “Frizzy” hair
-( Diarrhea
-( Depression
-< Paranoia
-( Oral and perioral dermatitis
-< Weight loss (anorexia nervosa)
-( Benign prostatic hypertrophy (noncancerous prostatic
+• Pica/Cribbing (geophagia, wool eating, hair eating, etc.)
+• Loss of sense of smell
+• Loss of sense of taste
+• Infertility
+• Failure of wounds and ulcers to heal
+• Immune status failure
+• Poor growth (short stature)
+• High infant mortality
+• Hypogonadism (small poorly functioning ovaries and testes)
+• Perpetual prepubic state
+• Anemia
+• Alopecia (hair loss)
+• Acrodermatitis enteropathica (parakeratosis)
+• “Frizzy” hair
+• Diarrhea
+• Depression
+• Paranoia
+• Oral and perioral dermatitis
+• Weight loss (anorexia nervosa)
+• Benign prostatic hypertrophy (noncancerous prostatic
 enlargement)
-( Severe body odor (“smelly tennis shoe” syndrome)
-( Anorexia and Bulimia
+• Severe body odor (“smelly tennis shoe” syndrome)
+• Anorexia and Bulimia
 Zr—Zirconium is found in igneous rocks at 165 ppm, shale at 160 ppm,
 sandstone at 220 ppm, limestone at 19 ppm, fresh water at 0.0026 ppm,
 seawater at 0.000022 ppm, soils at 300 ppm, marine plants at 20 ppm, land
@@ -10500,7 +10500,7 @@ anemia, low blood protein, high blood pressure, nutritional deficiencies
 including Bl, iron, copper, and selenium. There is usually a rapid irregular
 heartbeat and edema (swelling from tissue water) in the legs and/or belly
 cavity (“dropsy”). Two natural medications stand out in their efficacy (these
-herbs are even used by the “orthodox” doctors ): 1) Lily of the valley
+herbs are even used by the “orthodox” doctors): 1) Lily of the valley
 (Convallaria majalis), and 2) foxglove (Digitalis purpurea). These two herbs
 can be taken as whole leaf preparations or fluid extracts. Note: Foxglove is
 potentially dangerous so you should
