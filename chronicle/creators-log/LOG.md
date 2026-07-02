@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 295 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 296 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-02 17:07 UTC-05:00 · session-end · corpus
+SESSION 42 CLOSE: DDDL purified to PRISTINE (book #2) across 3 commits — spec (148+402 headers) + bullets (• x68) + reflow (45) + no-defer sweep. kv250->254, board 38/38, clean tree, pushed. NEXT = Immortality.
+  ↳ No-defer mandate internalized: everything fixed except '3-g percent' (DDDL L2846, Lanzkowsky 1959 hemoglobin value, unverifiable — flagged). Tooling reusable for the 4 remaining books. Immortality next: grep variable running headers + bullet-glyph lists up front (scanner blind to both).
 
 ## 2026-07-02 17:02 UTC-05:00 · round-close · corpus
 SESSION 42 cont2: DDDL hyphen-wrap reflow (45) + final no-defer sweep. Fixed every remaining real defect (puss/Gadolinium/HistoriaAnimalicem/comma-spaces/I-5/150mg); left 1 unverifiable lab value flagged. kv253->254, board 38/38, book_purity 0.
@@ -780,7 +784,3 @@ Phase γ.3 batch 49 — catalog resumed at Si/Silica. 3 claims RARE-244..246 [si
 ## 2026-06-26 03:07 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 48 — corpus-wide obvious-typo SWEEP (both shards). Hapax scan found more than catalogued. Applied 37 rules (A misspellings + B spacing + C formulas→digits); 30 verbatims fixed, resnap 0 broken. Group D deferred to book-verify. kv 88→89, corpus 337, board 30/30.
   ↳ Hapax+targeted scan of all 337 verbatims. Luneth 4-way ruling: fix A(27 misspellings)/B(7 spacing)/C(3 formulas→plain digits), defer D(5 uncertain) to book-verification. 37 replacement rules across rare-earths.txt + dddl.txt; global per-token where unambiguous, context-scoped for risky (tisk for / somes enzymes). 30 claims corrected (28 RARE + 2 DDDL), resnap 0 broken. Examples: somes→some, Erythematosis→Erythematosus, Sicklecell→Sickle-cell, lipofucsin→lipofuscin(x5), athritis→arthritis, tinnitis→tinnitus, flouride→fluoride(x11), HYPER/HYPOTHYROISM fixed, tisk→risk; spacing (hemolysis)/Columbia University/2 to 7/Brussels sprouts; formulas As,O,→As2O3 (book-verified p285), B,,→B12(x3), (H,O)→(H2O). Precedent (batch 46): obvious typos corrected even in faithful verbatims. claim_texts unchanged, no new claims. NEXT = Group D verify then Si/Silica.
-
-## 2026-06-26 02:45 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 47 — Table 11-9 PART 3 (p296): 5 claims RARE-239..243 (Folic/Biotin/Vit C/Choline/Bioflavonoids). De-interleave reflow, restored dropped labels, bleeing→bleeding; Inositol skipped. TABLE 11-9 COMPLETE. kv 87→88, corpus 337, conditions 166, board 30/30.
-  ↳ PART 3 finishes Table 11-9 (15/16 vitamins; Inositol cell too short for the 60-char floor even with label, skipped, .txt keeps the row). De-interleaved two-column OCR reflow: re-paired labels with deficiency texts, RESTORED OCR-dropped Choline/Inositol/Bioflavonoids labels from the page render (more faithful), fixed obvious typo bleeing→bleeding (book typo, per the new ruling), dropped the - leader artifact. Verbatims = label\ntext (Luneth chose label-inclusion to clear the floor for short cells). Kept faithful: poor growth , (book space-before-comma, pending sweep) + Choline curly apostrophes. resnap 0 broken, 121 relocated. +5 conditions +6 symptoms. NEXT = corpus-wide obvious-typo sweep (Luneth directive), then Si/Silica.
