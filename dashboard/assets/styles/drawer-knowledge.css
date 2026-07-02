@@ -901,3 +901,34 @@
 #drawer-knowledge-mount mark.kd-search-hl::after {
   content: none;
 }
+
+/* ─── Glossary term tooltips (SESSION 39) ────────────────────────────────────
+   Dotted-underline glossary terms in claim summaries + Wallach verbatims; the
+   floating .gloss-tip is appended to <body> (so it escapes drawer clipping). */
+#drawer-knowledge-mount .gloss {
+  border-bottom: 1px dotted var(--ds-accent);
+  cursor: help;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+#drawer-knowledge-mount .gloss:hover,
+#drawer-knowledge-mount .gloss:focus-visible {
+  color: var(--ds-accent-deep);
+  border-bottom-color: var(--ds-accent-deep);
+  outline: none;
+}
+.gloss-tip {
+  position: absolute;
+  z-index: 2147483000;
+  max-width: 260px;
+  padding: var(--ds-space-2) var(--ds-space-3);
+  border-radius: var(--ds-radius-md);
+  border: 1px solid var(--ds-accent-deep);
+  background: var(--ds-ink);
+  color: var(--ds-paper-light);
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-sm);
+  line-height: 1.4;
+  box-shadow: var(--ds-elev-3);
+  pointer-events: none;
+}
+.gloss-tip[hidden] { display: none; }

@@ -171,6 +171,8 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       subLabels: subs,
       synopsisCoherent,
       hasUmbrellaTip: !!(d && d.querySelector('.kd-condition-deep__umbrella-tip')),
+      glossCount: root ? root.querySelectorAll('.gloss').length : 0,
+      glossSample: (() => { const g = root && root.querySelector('.gloss'); return g ? { word: g.textContent, def: g.getAttribute('data-def'), hasTabindex: g.getAttribute('tabindex') === '0' } : null; })(),
     };
   });
 
@@ -272,6 +274,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['conditions: claim cites the book', condDeep.firstCite === true],
     ['conditions: synopsis backed by a labeled chip group', condDeep.synopsisCoherent === true],
     ['conditions: leaf condition has NO umbrella tip (diabetes)', condDeep.hasUmbrellaTip === false],
+    ['glossary: jargon terms decorated + defined + focusable', condDeep.glossCount > 0 && condDeep.glossSample !== null && !!condDeep.glossSample.def && condDeep.glossSample.hasTabindex === true],
     ['conditions: umbrella shows broad-category tip w/ examples (cancer)', umbrellaTip.shown === true && umbrellaTip.hasExample === true],
     ['search: typing narrows the rows', search.total > search.visible && search.visible >= 1],
     ['search: content match surfaces Anosmia (title lacks "smell")', search.anosmiaVisible === true && search.anosmiaTitleHasSmell === false],

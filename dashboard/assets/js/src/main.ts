@@ -32,6 +32,7 @@ import * as paletteView from './views/palette.js';
 import * as profileView from './views/profile.js';
 import * as regimenView from './views/regimen.js';
 import * as scannerView from './views/scanner.js';
+import { initGlossTooltip } from './views/gloss-tooltip.js';
 
 /*
  * Reference all unused imports so they're held by the bundler (scaffolds
@@ -374,6 +375,7 @@ function bootstrap(): void {
   mountDrawers();
   wireDrawerKeys();
   wireJourneyAutoDerive();
+  initGlossTooltip();
 
   /*
    * Default landing: Coverage (the new view). Defer one tick so legacy JS
