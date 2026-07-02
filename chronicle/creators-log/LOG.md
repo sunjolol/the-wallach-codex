@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 297 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 298 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-02 18:34 UTC-05:00 · milestone · eden/tools
+SESSION 43: mine_batch.py — transactional batch claim-EDITOR (bulk fast path). Many field edits in ONE validate-then-write pass via safe_write (§17); seal ONCE per batch. Agent fields only; HARD-REJECTS verbatim/id. selftest 11/11 + real apply/revert PASS.
+  ↳ Complements corpus_extract finalize (bulk ADD). Fills the bulk-EDIT gap that needed N hand-staged safe_write calls + a seal each. Up-front validation (canon, kind, dose/list shapes, id-exists) fails fast before the seal cycle. Verbatim/id snap-owned (corpus_verify #2 gate intact). The 'bulk mode' Luneth approved. memory batch-mining-workflow.
 
 ## 2026-07-02 18:12 UTC-05:00 · round-close · dashboard/knowledge
 SESSION 43: archaic-unit tooltip layer (mg%/g%/mEq/L/cc = per-deciliter, not a true %); summaries modernized (mg%→mg/dL, cc→mL); verbatims faithful+tooltipped; grains excluded; kv256, board 38/38, probe+unitGloss PASS. DDDL under-mined (94 claims) → flagged re-mine.
@@ -780,7 +784,3 @@ Phase γ.3 batch 51 — Rare Earths tail Ta->U (p411). 2 claims RARE-251..252: T
 ## 2026-06-26 21:04 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 50 — Rare Earths catalog Sm/Sn/Sr (p410-11). 4 claims RARE-247..250: Samarium lifespan-doubler (surfaced between Si/Sn via READ-before-skip), Tin essentiality + heme-oxygenase/cancer, Strontium-90 distinction. kv 90->91, corpus 344, board 30/30, probe green.
   ↳ Sm/Samarium (canon, ZERO prior coverage) sits between Si and Sn; the handoff said resume at Sn but READ-before-skip surfaced it — fourth Rare-Earth lifespan-doubler matching Pr/Nd/Eu. Sn/Tin: essentiality (Schwarz 1970, 4th main group w/ C/Si/Ge/Pb) + heme-oxygenase induction + cancer-prevention evidence; tin deficiency signs SKIPPED as DDDL-031 dup. Sr/Strontium: only the NEW Sr-90 natural-vs-manmade distinction captured; essentiality+osteoporosis/arthritis SKIPPED as DDDL-032/033 dup. Reflow de-hyphenated 4 paragraphs; 1 book-verified OCR fix proliforation->proliferation. resnap 0 broken. Luneth reviewed+approved. NEXT: Ta/Tb/Tc/Te/Th geology -> Ti/Titanium -> Tl/Thallium -> Tm/Thulium (lifespan-doubler).
-
-## 2026-06-26 03:33 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 49 — catalog resumed at Si/Silica. 3 claims RARE-244..246 [silica] (canon, zero prior coverage): mechanism (+100% bone collagen), deficiency_sign (brittle hair/nails, arterial disease), dose (200-500 mg/day). Handoff refreshed. kv 89→90, corpus 340, board 30/30.
-  ↳ Si/Silica = canon slug silica, ZERO prior claims (full entry new — verified not assumed; SESSION-5 handoff wrongly said Si had DDDL coverage). mechanism (supplementation→+100% growing-bone collagen; tissue Si declines with age unsupplemented); deficiency_sign (dry brittle hair, brittle finger/toe nails, poor skin, poor calcium utilization, arterial disease); dose (high-fiber→Si-rich→may lower cholesterol; 200-500 mg/day). Read word-level high-DPI p409. Claims 1+2 snapped raw; claim 3 de-hyphenation reflow (con-tain/investiga-tors/choles-terol.. → contain/investigators/cholesterol.; book single period, .txt OCR double-period). resnap 0 broken. Kept faithful: Cyoeraceae/Graineae + 100 % space. SESSION 6 WRAP (b44-49). next-chunk.md refreshed. NEXT = Sn/Tin.
