@@ -7,9 +7,12 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 290 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 291 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-02 13:51 UTC-05:00 · round-close · corpus/lets-play-doctor
+FINDABLE 371: extended to name als (656c); multiple_sclerosis kept residual (MS-abbrev only, spelled-out beyond cap). De-hyphenated 2 in-span wraps. board 37/37, kv 248, baseline 195.
 
 ## 2026-07-02 13:37 UTC-05:00 · round-close · corpus/lets-play-doctor
 FINDABLE 295: extended to name heart_attack (655c); cardiovascular_disease kept as residual (unnameable under cap, sole holder). board 37/37, kv 247, baseline 196.
@@ -781,7 +784,3 @@ Phase γ.3 batch 44 — OCR clearing (Luneth-ruled "byte-match the book"): fixed
 ## 2026-06-25 18:45 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 43 — Se/Selenium PART 2: RARE-227 (adult deficiency → MS/ALS/Parkinson's/Alzheimer's/cancer) + RARE-228 (Schrauzer anti-cancer quote). Plus Luneth-ruled fix palpitaions→palpitations. kv 81→83, corpus 320→322. SESSION 5 WRAP (9 batches, +29 claims).
   ↳ Se PART 2 finishes selenium's new catalog content: RARE-227 deficiency_sign (adult Se deficiency neuro/degenerative links beyond DDDL-005 — MS, ALS, Parkinson's, Alzheimer's, cardiomyopathy, cardiac hypertrophy, cataracts, liver cirrhosis, cancer); RARE-228 quote (Dr. Gerhard Schrauzer, UC San Diego — Se a versatile anticarcinogen beyond glutathione peroxidase; redox switch; 'more oxygen less cancer'; inhibits tumor viruses/oncogenes; protects DNA; methyl-group acceptor; metal detox; immunopotentiating). Deferred/left-raw: Table 11-23, veg-oil two-column interleave (=DDDL-030), children/young-adult deficiency prose (=DDDL-005), Se-deficient-children figures (not rendered — screening) + MD obituary clipping. REFLOW HAZARD caught: a 'Fig. 11-20' digit-split would corrupt to 'Fig. 1120' and the letters-only skeleton guard is blind to digit-hyphen-digit — added targeted restore + guard; memory updated. TYPO FIX (Luneth-ruled): palpitaions→palpitations inside RARE-227's sealed verbatim — fixed .txt + draft, corpus_resnap --fix (FILE PATH) healed the shard + re-hashed book; hit the stale-draft-clobbers-resnap trap (corpus_verify #9: RARE-228 offset) and recovered via resnap + finalize --raw empty + reseal; memory updated with the exact sequence. kv 81→83 = Se-pt2 seal + 2 fix re-seals. SESSION 5 wrap: 9 batches, corpus 293→322 (RARE 199→228), conditions 134→145, kv 72→83, all pushed. Approved by Luneth before commit.
-
-## 2026-06-25 17:21 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 42 — Rare Earths Se/Selenium PART 1: 2 NEW claims RARE-225..226 (ceroid-lipofuscin antioxidant; mitochondria/membrane crystalloid). Se = ~2000-line behemoth, heavily DDDL-covered. kv 79→80, corpus 318→320, conditions 145, board 30/30.
-  ↳ Selenium has heavy existing coverage (13 DDDL + 7 RARE claims), so extracted ONLY new catalog angles from the p378 core-mechanism prose. RARE-225 (mechanism): most efficient antioxidant/anti-peroxidant in the glutathione peroxidase system + metallo amino acids (selenomethionine); prevents lipid/fat peroxidation → keeps body fats from going rancid → visible 'age/liver spots' = ceroid lipofuscin (NEW vs DDDL-006/029). RARE-226 (mechanism): protects cell+organelle bi-lipid-layer membranes; Se-deficient rhesus monkey liver mitochondria (126,000x) inner membrane (enzymes+RNA) precipitates to nonfunctioning crystalloid = 'age pigment' (NEW). Two targeted reflows (regions A/B); resnap 0 broken. Faithful book typos kept in verbatims (antioxident, anti-peroxident, ceroid lipofucsin). DEFERRED to Se PART 2: Table 11-23 deficiency-disease list, the Schrauzer (UCSD) anti-cancer selenium quote, age-stratified deficiency prose, a two-column OCR interleave on p379, plus Se-deficient-children photos (do NOT render) and an MD obituary clipping (raw). Approved by Luneth before commit.
