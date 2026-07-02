@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 281 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 282 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-02 09:14 UTC-05:00 · round-close · corpus/rare+tools
+Term-gloss BOTANICAL sweep complete across all 5 books. Non-LETS books ~botanical-free; only RARE's bare genus Carya (hickory) glossed in 2 claims.
+  ↳ DDDL/IAIYH/EPIGEN zero binomials; RARE: 'land plants (Carya species)'->'land plants (hickory, Carya species)' in 289/292. lexicon common_swaps 11->12. seal kv239->240. board 35/35, claim_text_term_gloss clean, probe PASS. Next front: non-botanical jargon/abbreviations.
 
 ## 2026-07-02 09:04 UTC-05:00 · milestone · corpus/lets+tools
 TERM-GLOSS STANDARD codified (Luneth mandate): every reader-facing term gets a minimal common gloss, common-word-first; fix nomenclature defects; stop whack-a-mole. NEW term-gloss-lexicon.json + claim_text_term_gloss invariant (#35). First sweep: 18 LETS claim_texts.
@@ -782,7 +786,3 @@ Phase γ.3 batch 35 — Rare Earths O/Oxygen PART 2 (block 3, p372): 4 claims RA
 ## 2026-06-25 15:11 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 34 — Rare Earths O/Oxygen part 1/2: 5 claims (RARE-195..199) — essentiality, atmospheric O2 decline, anaerobic-disease emergence, Warburg, neutrophil-catalase. Blocks 1-2 reflowed; clippings raw. kv 71→72, corpus 293, board 30/30, probe green.
   ↳ O/Oxygen is the ~1,100-line behemoth, interleaved with ~7pp of E.coli/AIDS-obituary clippings + a full-page TB-sanatorium photo (p362). Rendering the photo + reading obituary spans pulled sensitive content into context, which the image classifier re-screened every turn -> intermittent 'request blocked' (tools still succeeded). Luneth-directed: ship batch 34 as a clean checkpoint, then re-genesis fresh to mine O part 2 (block 3 p372 = singlet-oxygen/H2O2/ozone therapy, ~4 claims fully enumerated in next-chunk so nothing is lost). Memory reading-and-correcting-scanned-pdfs updated (screen before rendering). Tooling trap logged: post_write_verify misparses a helper-script 'OK ... —' status line as a missing file path -> false corruption flag.
-
-## 2026-06-25 14:19 UTC-04:00 · session-end · session
-Session 3 (2026-06-25 PM) wrap — Phase γ.3 catalog second half I→Na + Nb/Nd/Ne/Ni/Np mined; 9 batches; corpus 237→288 (+51), kv 59→71, conditions 114→134; all pushed. NEXT: O/Oxygen (behemoth).
-  ↳ Mined the per-element catalog second half front-to-back: I/Iodine, K/Potassium, La/Lanthanum, Kr/Krypton, Li/Lithium, Mg/Magnesium, Mn/Manganese, Mo/Molybdenum, N/Nitrogen, Na/Sodium, Nd/Neodymium, Ni/Nickel (RARE-144..194); Ho/In/Ir/Lu/Nb/Ne/Np read + confirmed geology/radioactive. Decisions locked: dose-unit standard (mg default, mcg if <1mg); Krypton→other_substances; 'Muscle Ties'=muscle knots (not a typo); Adictis→Adriatic logged reversible in chronicle/contradictions/. Tool fix: corpus_resnap re-hashes 0-claim books. Memories added: dose-unit-standard; reading-and-correcting updated (typo protocol + reversible-correction logging). Handoff (chronicle/next-chunk.md) updated to SESSION 3; SESSION 2 marked superseded. Deferred tasks kept active (Table 11-9 behavioral goldmine; Tables 11-10/-11/-13/-20 + Schrauzer tables; Ch.3 Senate-Doc + Table 7-8; Ch.9 pill-mill; other in-housed books). Every batch round-closed (build OK, invariants 30/30, knowledge probe 0 errors) + pushed. NEXT SESSION: O/Oxygen (~1,100 .txt lines).
