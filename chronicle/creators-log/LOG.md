@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 298 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 299 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-02 19:02 UTC-05:00 · design-decision · doctrine/logging
+SESSION-43 doctrine: logs now OPEN with a plain-language what+why line, THEN the complete technicals. Honesty OUTRANKS format — never pad. Doctrine-only (minimum force); firing-check + hard-cap DECLINED (log fires reliably, detail already uncapped).
+  ↳ Plain: Our logs had turned into walls of back-to-back jargon that Luneth (learning to code) couldn't easily follow. New standard: every entry starts with one plain-English line — what happened and why — THEN the technical detail underneath. The technical record stays complete; we just add a human layer on top. Truth beats format: never invent or pad that plain line to look compliant; a short honest entry is fine. Technical: logging-doctrine.md +rule 7 and reconciled the stale 'guards being hardened (pending)' bullet (append-only invariant LIVE; firing-check + content hard-cap DECLINED SESSION-43 — log fires reliably, detail uncapped). commits-and-rounds.md +plain-lead shapes. memory logging-mandate updated. Reconcile sweep clean. Doctrine-only, no tooling/schema change; reboot owed.
 
 ## 2026-07-02 18:34 UTC-05:00 · milestone · eden/tools
 SESSION 43: mine_batch.py — transactional batch claim-EDITOR (bulk fast path). Many field edits in ONE validate-then-write pass via safe_write (§17); seal ONCE per batch. Agent fields only; HARD-REJECTS verbatim/id. selftest 11/11 + real apply/revert PASS.
@@ -780,7 +784,3 @@ Phase γ.3 batch 52 — V/Vanadium (p412). 5 claims RARE-253..257, NEW angles on
 ## 2026-06-26 22:57 UTC-04:00 · round-close · eden/corpus
 Phase γ.3 batch 51 — Rare Earths tail Ta->U (p411). 2 claims RARE-251..252: Thulium lifespan-doubler (5th) + Thallium toxicity stance. 7 stated geology/radioactive skips incl Ti/Titanium (canon, no claim anywhere). kv 91->92, corpus 346, board 30/30, probe green.
   ↳ Tm/Thulium (canon): enhances normal-cell growth + doubled lab-species lifespans; 'life spans' plural verified high-DPI. Tl/Thallium (non-canon, other_substances): highly toxic to mammals incl man, accumulates in kidney. NEW LUNETH RULING: capture Wallach's stance on each substance even if thin (no mechanism/treatment) - bare stance is itself valuable (memory capture-thin-substance-stances). Skips (READ each): Ta/Tb (canon geology-only), Tc (radioactive/not-in-nature), Te/Th (geology), Ti/Titanium (canon BUT geology-only + zero DDDL coverage = no claim anywhere), U (radioactive). Reflow 2 paragraphs, resnap 0 broken. NEXT = V/Vanadium (heavily covered, cross-check for new angles) then W/Xe/Y/Yb/Zn/Zr.
-
-## 2026-06-26 21:04 UTC-04:00 · round-close · eden/corpus
-Phase γ.3 batch 50 — Rare Earths catalog Sm/Sn/Sr (p410-11). 4 claims RARE-247..250: Samarium lifespan-doubler (surfaced between Si/Sn via READ-before-skip), Tin essentiality + heme-oxygenase/cancer, Strontium-90 distinction. kv 90->91, corpus 344, board 30/30, probe green.
-  ↳ Sm/Samarium (canon, ZERO prior coverage) sits between Si and Sn; the handoff said resume at Sn but READ-before-skip surfaced it — fourth Rare-Earth lifespan-doubler matching Pr/Nd/Eu. Sn/Tin: essentiality (Schwarz 1970, 4th main group w/ C/Si/Ge/Pb) + heme-oxygenase induction + cancer-prevention evidence; tin deficiency signs SKIPPED as DDDL-031 dup. Sr/Strontium: only the NEW Sr-90 natural-vs-manmade distinction captured; essentiality+osteoporosis/arthritis SKIPPED as DDDL-032/033 dup. Reflow de-hyphenated 4 paragraphs; 1 book-verified OCR fix proliforation->proliferation. resnap 0 broken. Luneth reviewed+approved. NEXT: Ta/Tb/Tc/Te/Th geology -> Ti/Titanium -> Tl/Thallium -> Tm/Thulium (lifespan-doubler).

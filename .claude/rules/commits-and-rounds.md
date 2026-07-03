@@ -15,20 +15,29 @@ A chunk is not "shipped" until **all** of the following pass:
 
 `tools/hooks/stop_round_close.py` enforces 1, 2, 4 (hard-blocks a NEW invariant red). Steps 3, 5, 6 are session discipline.
 
+## Plain-language first (logging-doctrine rule 7)
+Every entry below — build-log line, commit body, Creator's Log `detail` — LEADS with a short plain-language "what changed + why, in human terms" (Luneth is learning to code; write it for him), THEN the complete technical specifics. The technicals stay whole (nothing is cut for brevity). **Honesty outranks format:** never pad or invent the plain lead to satisfy the shape — a short true one is fine, and if there is little to say plainly, the honest short version wins.
+
 ## Build-log entry shape
 
 Append one line to `chronicle/build-log.md` per chunk close:
 
 ```
-[YYYY-MM-DD HH:MM EDT] <surface> · <concern> · <file(s) touched> · <rationale>
+[YYYY-MM-DD HH:MM EDT] <surface> · <plain-language: what changed + why, for a non-expert> · <file(s) touched · technical specifics · verifications run + output> · <deferrals, if any>
 ```
 
 ## Commit shape
 
 - Subject: `<scope>: <imperative summary>` (e.g. `Chunk 6d: adopt scanned product → §31 saveRgManual → coverage`).
-- Body: link to the build-log line, list files touched, list verifications run + their output, list any deferred follow-ups.
+- Body: OPEN with a short plain-language paragraph — what changed and why, in human terms — THEN the technical record: link to the build-log line, files touched, verifications run + their output, any deferred follow-ups.
 - Trailer: `Co-authored-by: Claude Opus 4.8 <noreply@anthropic.com>`.
 - Use `git -C "<repo root>" commit -F <BOM-less message file>` to avoid Windows BOM issues.
+
+## Creator's Log entry shape
+
+`tools/creators_log.py append --surface <s> --kind <k> --summary <headline> --detail <body>`:
+- `summary` — a single-line plain-language HEADLINE (≤ 280 chars, hard cap; no newline).
+- `detail` — OPENS with the plain-language "what + why in human terms," THEN the complete technical specifics (uncapped — nothing truncated). Same rule-7 standard; honesty outranks format.
 
 ## Push cadence
 Push after every chunk. The private GitHub origin (`the-wallach-codex`) is the recovery anchor and the audit surface for the user.
