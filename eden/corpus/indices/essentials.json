@@ -789,9 +789,10 @@
     "display_name": "Chloride",
     "canon_slug": "chloride",
     "category": "mineral",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "definition": [
+        "WAL-CLM-IMMORT-000078",
         "WAL-CLM-RARE-000026",
         "WAL-CLM-RARE-000187"
       ],
@@ -811,6 +812,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]

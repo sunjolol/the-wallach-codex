@@ -2630,6 +2630,76 @@
       "extracted_at": "2026-07-03T20:53:49+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000077",
+      "kind": "toxicity_sign",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Cadmium is a non-essential heavy metal, and Wallach frames it mainly as a toxin. It accumulates in kidney tissue, and because tobacco concentrates it, both smokers and people around second-hand smoke inhale dangerous cadmium ashes. Its chemistry closely mimics zinc's — which is the crux of its toxicity: cadmium can replace zinc in zinc-dependent enzyme reactions, displacing the essential mineral. In his words: \"Cadmium functions in nature by stimulating the hatching of nematode (round worm) cysts. Cadmium-bound proteins have been isolated from molluscs and horse kidneys - cadmium is known for its ability to replace zinc in zinc dependent enzyme reactions.\"",
+      "verbatim": "Cadmium functions in nature by stimulating the\nhatching of nematode (round worm) cysts. Cadmium-bound\nproteins have been isolated from molluscs and horse kidneys\n- cadmium is known for its ability to replace zinc in zinc\ndependent enzyme reactions.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 124,
+        "screenshot": 75,
+        "kindle_location": null,
+        "char_offset": 223517
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "cadmium",
+        "toxicity",
+        "heavy-metal",
+        "zinc-antagonist",
+        "smoking"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T21:07:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000078",
+      "kind": "definition",
+      "essentials": [
+        "chloride"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Chlorine (as chloride) is essential to every living species. Wallach says it powers electrochemical and catalytic functions, activates numerous enzymes, and is the basic raw material the stomach uses to make stomach acid (hydrochloric acid, HCl) — which is required to activate protein digestion by the enzyme pepsin, to absorb vitamin B12 (by activating intrinsic factor), and to absorb minerals. Ordinary salt (sodium chloride, NaCl) is the universal source of chloride ions for all living things. In his words: \"Chlorine is essential for all living species’ electrochemical and catalytic functions, activates numerous enzymes, and is the basic raw material for our stomachs to make stomach acid (HCl) required to activate protein digestion by the enzyme pepsin, B12 absorption (intrinsic factor activation), and for absorption of minerals.\"",
+      "verbatim": "Chlorine\n\n\n \n\nis essential for all living species’ electrochemical and catalytic\nfunctions, activates numerous enzymes, and is the basic\nraw material for our stomachs to make stomach acid (HCl)\nrequired to activate protein digestion by the enzyme pepsin,\nB12 absorption (intrinsic factor activation), and for absorption\nof minerals.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 125,
+        "screenshot": 75,
+        "kindle_location": null,
+        "char_offset": 225255
+      },
+      "dose": null,
+      "tags": [
+        "chloride",
+        "chlorine",
+        "essential-mineral",
+        "stomach-acid",
+        "digestion",
+        "b12-absorption"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T21:07:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

@@ -5717,7 +5717,7 @@ with plant derived colloidal and chelated calcium.
 Cd-Cadmium is found in igneous rocks at 0.2 ppm,
 shale at 0.3 ppm, sandstone at 0.05 ppm, limestone at 0.035
 ppm, fresh water at 0.08 ppm, sea water at 0.00011 ppm, soils
-at 0.06 ppm, marine plants at 0.4 alu terrestrial plants at 0.6
+at 0.06 ppm, marine plants at 0.4 ppm, terrestrial plants at 0.6
 ppm, marine animals at 0.15 to 3.0 ppm and in land animals
 at 0.5 ppm (accumulates in kidney tissue).
 
@@ -5748,14 +5748,13 @@ a result, both
 ===== Screenshot (75) =====
  
 
-EEE
 smokers and victims of second hand smoke inhale dangerous
 cadmium ashes.
 
 Cadmium functions in nature by stimulating the
 hatching of nematode (round worm) cysts. Cadmium-bound
 proteins have been isolated from molluscs and horse kidneys
-- cadmium is known for its ability to replace zinc in zine
+- cadmium is known for its ability to replace zinc in zinc
 dependent enzyme reactions.
 
 Ce-Cerium, a rare earth, is found in igneous rock at
@@ -5795,9 +5794,9 @@ concentration is found in mammalian hair and skin. Chlorine
 
 is essential for all living species’ electrochemical and catalytic
 functions, activates numerous enzymes, and is the basic
-raw material for our stomachs to make stomach acid (HCI)
+raw material for our stomachs to make stomach acid (HCl)
 required to activate protein digestion by the enzyme pepsin,
-B,, absorption (intrinsic factor activation) , and for absorption
+B12 absorption (intrinsic factor activation), and for absorption
 of minerals. Salt (NaCl) is the universal source of chloride ions
 for all living things.
 
