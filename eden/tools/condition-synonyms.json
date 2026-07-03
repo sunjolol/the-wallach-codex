@@ -72,6 +72,8 @@
   "high_triglycerides": ["elevated blood triglycerides", "elevated triglycerides", "high triglycerides", "hypertriglyceridemia"],
   "backache": ["low back", "lower back", "back pain"],
   "explosive_outbursts": ["explosive behavior", "explosive outburst"],
+  "criminal_behavior": ["bad seed"],
+  "violent_behavior": ["jekyll"],
   "panic_attacks": ["panic attack", "panic attacks"],
   "low_libido": ["loss of libido"],
   "candidiasis": ["candida albicans", "candida"],

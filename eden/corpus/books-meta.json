@@ -85,8 +85,8 @@
         "Joel D. Wallach"
       ],
       "file": "eden/corpus/books/immortality.txt",
-      "content_sha256": "c83a48f0204415ac9c4e83dd52faf13d5efc9ec0517c79d2ea3611b4f6a810da",
-      "content_bytes": 800328,
+      "content_sha256": "4c3dd82d69bc274d0a3043985a31db4dfdee6df0b52551d740a844e62f3edef6",
+      "content_bytes": 800332,
       "line_count": 22805,
       "hash_basis": "lf_normalized_utf8",
       "locator_scheme": "screenshot",

@@ -992,7 +992,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 92,
+    "claim_count": 93,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1031,7 +1031,8 @@
         "WAL-CLM-RARE-000170"
       ],
       "prevalence": [
-        "WAL-CLM-DDDL-000009"
+        "WAL-CLM-DDDL-000009",
+        "WAL-CLM-IMMORT-000015"
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000058"
@@ -1292,6 +1293,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]

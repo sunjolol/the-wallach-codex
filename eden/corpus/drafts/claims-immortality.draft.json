@@ -440,6 +440,253 @@
       "extracted_at": "2026-07-03T06:19:15+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000014",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "How many minerals does the body actually need? Wallach's starting point: more than 79 elements and minerals have been detected in human and animal tissue, and simply being present in the tissue meets the first criterion for calling a substance an 'essential nutrient.' From there, he says thousands of studies support designating 60 of those 79 as truly essential - the mineral backbone of his '90 essential nutrients' framework (60 minerals, 16 vitamins, 12 amino acids, and 3 essential fatty acids). In his words: \"More than 79 elements and minerals have been detected in animal and human tissue (i.e. - blood, liver, muscle, brain, bones, connective tissue, etc.) in the 20th and 21st centuries. Their presence in human tissue fulfills the first criteria for designating an element or mineral an 'essential nutrient.' Literally thousands of additional studies provide support for designating 60 of these 79 elemental nutrients to be essential nutrients.\"",
+      "verbatim": "More than 79 elements and minerals have been detected\nin animal and human tissue (i.e. - blood, liver, muscle, brain,\nbones, connective tissue, etc.) in the 20th and 21st centuries. Their\npresence in human tissue fulfills the first criteria for designating\nan element or mineral an “essential nutrient.” Literally thousands\nof additional studies provide support for designating 60 of these\n79 elemental nutrients to be essential nutrients.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 84,
+        "screenshot": 55,
+        "kindle_location": null,
+        "char_offset": 152651
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "essential-nutrients",
+        "minerals",
+        "90-essentials"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T14:11:20+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000015",
+      "kind": "prevalence",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach's rule of thumb for how much a single missing mineral can cost you: on average about ten different deficiency diseases can arise from the absence of any one essential mineral - and calcium is his extreme case, capable of producing as many as 147 different diseases when the body is short of it. In his words: \"On the average there are ten deficiency diseases that can occur in the absence of each essential mineral, others, like calcium can produce as many as 147 different diseases when the body is deficient.\"",
+      "verbatim": "On the average there are ten deficiency diseases that\ncan occur in the absence of each essential mineral, others, like\ncalcium can produce as many as 147 different diseases when\nthe body is deficient.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 84,
+        "screenshot": 55,
+        "kindle_location": null,
+        "char_offset": 153747
+      },
+      "dose": null,
+      "tags": [
+        "calcium-147",
+        "minerals",
+        "deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T14:11:20+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000016",
+      "kind": "deficiency_sign",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "pica"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach describes cravings - pica (a compulsive craving for non-food items) and 'the munchies' - as the body's earliest warning sign of trace-mineral deficiency, and stresses that at this early stage it is fully reversible: restore the missing minerals and the cravings disappear. In his words: \"Pica, or the 'munchies' appear in a mild form in this early stage of deficiency. This phase of trace mineral deficiency returns to normal (including the elimination of the 'munchies') quickly following the return of an optimal intake.\"",
+      "verbatim": "Pica, or the “munchies” appear in a mild form\nin this early stage of deficiency. This phase of trace mineral\ndeficiency returns to normal (including the elimination of\nthe “munchies”) quickly following the return of an optimal\nintake.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 85,
+        "screenshot": 55,
+        "kindle_location": null,
+        "char_offset": 154467
+      },
+      "dose": null,
+      "tags": [
+        "pica",
+        "trace-minerals",
+        "deficiency-sign",
+        "cravings"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T14:11:20+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000017",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach maps trace-mineral deficiency as a four-stage progression that mostly hides from standard testing until it is advanced. Initial Depletion - the body quietly adjusts and tests still look normal; the only clue is 'lack of energy' plus mild cravings. Compensated Metabolic - specific biochemical functions falter (low blood sugar, irregular heartbeat, loss of hair color, mild weight gain) and cravings intensify into 'chocoholic' or 'cola addict' behavior. Decompensated - serious metabolic, cognitive, emotional, developmental and structural disorders appear. Clinical - full disease and even death; yet orthodox physicians rarely diagnose the mineral cause, and the cure is often simply replacing the specific missing element. In his words: \"Initial depletion of trace elements in animals and humans is characterized by changes only in the metabolism of the element itself in response to a suboptimal intake, the individual target tissue compensating so that no disturbance of biological structure or function are detectable by means of a test. However, the individual usually complains of 'lack of energy.'\"",
+      "verbatim": "Initial depletion of trace elements in animals and\nhumans is characterized by changes only in the metabolism\nof the element itself in response to a suboptimal intake, the\nindividual target tissue compensating so that no disturbance\nof biological structure or function are detectable by means of\na test. However, the individual usually complains of “lack of\n\nenergy.”",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 84,
+        "screenshot": 55,
+        "kindle_location": null,
+        "char_offset": 153974
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "trace-minerals",
+        "deficiency-progression",
+        "wallach-stance"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T14:11:20+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000018",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "learning_disabilities",
+        "adhd",
+        "autism",
+        "depression",
+        "bipolar_disorder",
+        "criminal_behavior",
+        "violent_behavior"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach ties trace-mineral deficiency to a broad spectrum of cognitive and emotional/behavioral problems - not just physical disease. On the cognitive side he lists learning disabilities, ADD, ADHD and autism; on the emotional side, depression, manic depression/bipolar, anxiety and panic attacks - extending at the extreme to explosive anger and the volatile 'Jekyll-and-Hyde' or 'bad seed' temperament he attributes to a mineral-starved nervous system. His point for the reader: mood and behavior problems many people never connect to nutrition may trace back to a correctable deficiency. In his words: \"...the metabolic (i.e. - pre-diabetes, significant weight gain, obesity), cognitive (i.e. - learning disabilities, ADD, ADHD, autism, etc.), emotional (i.e. - DR. Jekyll/Mr. Hyde, 'Bad Seeds,' depression, manic depression, bipolar...)\"",
+      "verbatim": "The decompensated phase of trace element deficiency is\ncharacterized by the appearance of serious clinical symptoms\nor defects in the metabolic (i.e. - pre-diabetes, significant weight\ngain, obesity), cognitive (i.e. - learning disabilities, ADD,\nADHD, autism, etc.), emotional (i.e. - DR. Jekyll/Mr. Hyde,\n“Bad Seeds,” depression, manic depression, bipolar",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 85,
+        "screenshot": 55,
+        "kindle_location": null,
+        "char_offset": 155460
+      },
+      "dose": null,
+      "tags": [
+        "trace-minerals",
+        "behavioral",
+        "mental-health",
+        "deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T14:11:20+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000019",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "cardiomyopathy",
+        "diabetes",
+        "aneurysm",
+        "arthritis",
+        "periodontal_disease",
+        "degenerative_disc_disease",
+        "cataracts",
+        "goiter",
+        "obesity"
+      ],
+      "symptoms": [],
+      "claim_text": "Left uncorrected, Wallach says trace-mineral deficiency finally reaches a 'clinical' stage of full-blown disease and even death - he lists cardiomyopathy (heart-muscle disease), diabetes, aneurysm (a bulging, weakened artery wall), arthritis, periodontal (gum) disease, degenerative disc disease, cataracts, goiter (a swollen thyroid) and morbid obesity among the endpoints. His hopeful counterpoint: orthodox physicians almost never trace these back to a missing mineral, yet the cure is often as simple as replacing the specific trace element. In his words: \"The clinical phase of trace mineral deficiency is characterized by the onset of full blown disease states and even death (i.e. - cardiomyopathy, diabetes, aneurysm, arthritis, periodontal disease, degenerative disc disease, cataracts, goiter, morbid obesity, etc.). For most trace mineral deficiencies in the clinical phase, correct diagnosis by the 'orthodox' physician is almost nonexistent; the cure, however, is accomplished simply by the replacement of the specific trace element.\"",
+      "verbatim": "The clinical phase of trace mineral deficiency is\ncharacterized by the onset of full blown disease states and\neven death (i.e. - cardiomyopathy, diabetes, aneurysm,\narthritis, periodontal disease, degenerative disc disease,\ncataracts, goiter, morbid obesity, etc.). For most trace\nmineral deficiencies in the clinical phase, correct diagnosis\nby the “orthodox” physician is almost nonexistent; the cure,\nhowever, is accomplished simply by the replacement of the\nspecific trace element.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 86,
+        "screenshot": 56,
+        "kindle_location": null,
+        "char_offset": 156511
+      },
+      "dose": null,
+      "tags": [
+        "trace-minerals",
+        "deficiency",
+        "clinical"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T14:11:20+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000020",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "homosexuality"
+      ],
+      "symptoms": [],
+      "claim_text": "For searchers looking for Wallach's position: among the developmental problems he attributes to nutritional deficiency during fetal development, he lists sexual orientation - 'gay orientation' - alongside dyslexia, spina bifida, neural tube defects, cleft lip and palate, heart defects, cerebral palsy and Down syndrome. Consistent with his other writing, he frames it as a preventable congenital event tied to maternal nutritional deficiency rather than a lifestyle choice. Presented faithfully and neutrally as his view. In his words: \"developmental (i.e. - dyslexia, gay orientation, spina bifida, neural tube defects, cleft lip, cleft palate, heart defects, cerebral palsy, Downs Syndrome, etc.)\"",
+      "verbatim": "developmental (i.e.\n- dyslexia, gay orientation, spina bifida, neural tube defects,\ncleft lip, cleft palate, heart defects, cerebral palsy, Downs\nSyndrome, etc.)",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 86,
+        "screenshot": 56,
+        "kindle_location": null,
+        "char_offset": 155904
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "search-topic:homosexuality",
+        "developmental",
+        "congenital",
+        "wallach-stance"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T14:11:20+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
