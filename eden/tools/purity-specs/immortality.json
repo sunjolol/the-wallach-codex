@@ -1,0 +1,393 @@
+{
+  "book": "immortality",
+  "_doc": "Source-purification spec for 'THE AGE BEATERS and Their Universal Currency for Immortality' (Wallach/Ma Lan). Built SESSION-43. Chunk A = running-header/footer strip + mechanical OCR categories; spell-suspects + digit_in_word verified against page scans come in later chunks. Book uses 2-page-spread screenshots (254 shots) so PRINTED page numbers run 1-481. The header is title-case 'Immortality' (scanner-blind, like DDDL's DEAD DOCTORS): verso '<n> Immortality', recto 'Immortality <n>', 9 OCR-doubled '<n> Immortality Immortality <m>', and 13 page-number-dropped bare 'Immortality'. The 47 bare-number lines are TABLE + INDEX data (verified against context) NOT footers, so drop_line_numbers stays empty. Front matter (title/copyright/TOC/roman-numbered intro, <=L609) is protected, keeping its 6 title 'Immortality' + 5 roman headers. [Chunk-A reflow: 61 entries / 66 findings. DEFERRED 1: Lao-Tzu (L18508) wraps across a stripped running header + messy blanks -> handle against post-strip residual.]",
+  "replacements": [],
+  "regex_replacements": [],
+  "strip_running": {
+    "front_matter_end": 609,
+    "verso_pattern": "^\\s*(?:\\d{1,3}\\s+Immortality(?:\\s+Immortality\\s+\\d{1,3}[\\]\\).]?)?|Immortality\\s*$)",
+    "recto_pattern": "^\\s*(?P<t>Immortality)\\s+(?P<pg>\\d{1,3})\\s*$",
+    "recto_page_min": 1,
+    "recto_page_max": 490,
+    "recto_allow_digit_titles": [],
+    "content_not_head": [],
+    "drop_line_numbers": [],
+    "expect": {
+      "verso_drop": 246,
+      "verso_strip": 0,
+      "recto_drop": 224,
+      "num_drop": 0
+    },
+    "why": "running-header strip: verso '<n> Immortality' (224 pure + 9 OCR-doubled 'N Immortality Immortality M' + 13 bare 'Immortality' page-number-dropped = 246 drop) + recto 'Immortality <n>' (224). No bare page-number footers (the 47 bare-number lines are table/index content, verified)."
+  },
+  "line_fuses": [],
+  "hyphen_reflow": [
+    {
+      "find": "un-\nsupplemented",
+      "repl": "unsupplemented",
+      "expect": 1,
+      "why": "reflow -> one word"
+    },
+    {
+      "find": "multi-\nphasic",
+      "repl": "multiphasic",
+      "expect": 1,
+      "why": "reflow -> one word"
+    },
+    {
+      "find": "PGC-\nlalpha",
+      "repl": "PGC-1alpha",
+      "expect": 1,
+      "why": "reflow keep-hyphen + OCR l->1 (gene PGC-1alpha)"
+    },
+    {
+      "find": "Molecu-\nlar",
+      "repl": "Molecular",
+      "expect": 1,
+      "why": "reflow -> one word"
+    },
+    {
+      "find": "Nutri-\nent",
+      "repl": "Nutrient",
+      "expect": 1,
+      "why": "reflow -> one word"
+    },
+    {
+      "find": "pollo-\nvegetarian",
+      "repl": "pollo-vegetarian",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "dizygotic-\ntwo",
+      "repl": "dizygotic—two",
+      "expect": 1,
+      "why": "reflow: em-dash parenthetical (Luneth-ruled) — 'dizygotic—two eggs/two sperm'"
+    },
+    {
+      "find": "Shangri-\nLa",
+      "repl": "Shangri-La",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "super-\nsupplemented",
+      "repl": "super-supplemented",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "mid-\nadulthood",
+      "repl": "mid-adulthood",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "super-\nactivated",
+      "repl": "super-activated",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "oxidant-\ninduced",
+      "repl": "oxidant-induced",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "Membrane-\nbound",
+      "repl": "Membrane-bound",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "super-\nheated",
+      "repl": "super-heated",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "self-\nproclaimed",
+      "repl": "self-proclaimed",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "rosy-\ncheeked",
+      "repl": "rosy-cheeked",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "fat-\nsoluble",
+      "repl": "fat-soluble",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "factor-\nsecreting",
+      "repl": "factor-secreting",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "alpha-\ncarboxyglutamic",
+      "repl": "alpha-carboxyglutamic",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "island-\ndwelling",
+      "repl": "island-dwelling",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "Szent-\nGyorgyi",
+      "repl": "Szent-Gyorgyi",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "ten-\nmillionth",
+      "repl": "ten-millionth",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "anti-\nmetabolite",
+      "repl": "anti-metabolite",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "non-\ntoxic",
+      "repl": "non-toxic",
+      "expect": 2,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "non-\nAlzheimer",
+      "repl": "non-Alzheimer",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "potassium-\nargon",
+      "repl": "potassium-argon",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "heat-\nresistant",
+      "repl": "heat-resistant",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "one-\nthousandth",
+      "repl": "one-thousandth",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "blue-\ngreen",
+      "repl": "blue-green",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "Louis-\nNicolas",
+      "repl": "Louis-Nicolas",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "sex-\nlinked",
+      "repl": "sex-linked",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "Kayser-\nFleischer",
+      "repl": "Kayser-Fleischer",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "goiter-\nfree",
+      "repl": "goiter-free",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "syrup-\nlike",
+      "repl": "syrup-like",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "half-\nlife",
+      "repl": "half-life",
+      "expect": 3,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "pre-\nColumbian",
+      "repl": "pre-Columbian",
+      "expect": 3,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "platinum-\niridium",
+      "repl": "platinum-iridium",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "oxidation-\nreduction",
+      "repl": "oxidation-reduction",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "Long-\nterm",
+      "repl": "Long-term",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "silvery-\nwhite",
+      "repl": "silvery-white",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "life-\ngiving",
+      "repl": "life-giving",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "city-\nstate",
+      "repl": "city-state",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "large-\nscale",
+      "repl": "large-scale",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "Slash-\nand",
+      "repl": "Slash-and",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "and-\nchar",
+      "repl": "and-char",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "mineral-\nrich",
+      "repl": "mineral-rich",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "mini-\nwars",
+      "repl": "mini-wars",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "Cro-\nMagnon",
+      "repl": "Cro-Magnon",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "New-\nYork",
+      "repl": "New-York",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "double-\nedged",
+      "repl": "double-edged",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "greenish-\nblue",
+      "repl": "greenish-blue",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "short-\nlived",
+      "repl": "short-lived",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "hand-\nto",
+      "repl": "hand-to",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "low-\ntide",
+      "repl": "low-tide",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "Anglo-\nSaxons",
+      "repl": "Anglo-Saxons",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "high-\ncalorie",
+      "repl": "high-calorie",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "tea-\nroom",
+      "repl": "tea-room",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "Seventh-\nday",
+      "repl": "Seventh-day",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "well-\nbalanced",
+      "repl": "well-balanced",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "best-\nselling",
+      "repl": "best-selling",
+      "expect": 1,
+      "why": "reflow (keep hyphen)"
+    },
+    {
+      "find": "Ni-\n\nCad",
+      "repl": "Ni-Cad",
+      "expect": 1,
+      "why": "reflow keep-hyphen across page-boundary blank line (nickel-cadmium)"
+    }
+  ],
+  "flags": []
+}
