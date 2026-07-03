@@ -86,6 +86,32 @@ def _build_log_pending():
     return bool(_porcelain("chronicle/build-log.md").strip())
 
 
+def _round_close_in_flight():
+    """A real round-close leaves the build-log or the Creator's Log dirty; chat and
+    status turns leave both clean, so this keeps the bundle gate silent off-ritual."""
+    return bool(_porcelain("chronicle/build-log.md", "chronicle/creators-log/log.jsonl").strip())
+
+
+def _bundle_stale():
+    """True iff the newest ledger entry is not yet inlined in the built bundle the
+    browser loads (dashboard/assets/js/dist/main.js). esbuild inlines the embed at
+    BUILD time and the file:// app cannot fetch() it at runtime, so a log append with
+    no rebuild leaves the in-app Profile log silently behind. Mirrors the
+    creators_log_bundle_synced invariant; fail-open on any read error."""
+    try:
+        jsonl = REPO_ROOT / "chronicle/creators-log/log.jsonl"
+        lines = [ln for ln in jsonl.read_text(encoding="utf-8").splitlines() if ln.strip()]
+        if not lines:
+            return False
+        newest_id = json.loads(lines[-1]).get("id", "")
+        if not newest_id:
+            return False
+        bundle = REPO_ROOT / "dashboard/assets/js/dist/main.js"
+        return newest_id not in bundle.read_text(encoding="utf-8", errors="replace")
+    except Exception:
+        return False
+
+
 def _tolerated():
     path = os.environ.get("STOP_ROUND_CLOSE_BASELINE") or str(BASELINE_FILE)
     try:
@@ -118,6 +144,23 @@ def main():
             "is sacred and must fire every round-close (.claude/rules/logging-doctrine.md). Fire one:\n"
             "  PYTHONUTF8=1 python tools/creators_log.py append --surface <s> --kind round-close "
             "--summary <\u2264280>\nthen commit both together."
+        )
+        return
+
+    # Bundle-freshness gate (2026-07-02 silent-staleness fix). A Creator's Log entry
+    # that fired but was never re-inlined into dist/main.js leaves the in-app Profile
+    # log silently stale — the file:// app inlines the embed at BUILD time, not at
+    # runtime. The rounds that hit this are doctrine/tooling closes with NO dashboard
+    # source change, exactly what the source-changes gate below waves through — so
+    # gate it here on any round-close in flight (build-log or ledger dirty).
+    if _round_close_in_flight() and _bundle_stale():
+        _block(
+            "ROUND NOT CLOSED — the Creator's Log fired but dist/main.js was not rebuilt, "
+            "so the in-app Profile log would silently OMIT the newest entries (the file:// "
+            "app inlines the embed at BUILD time; the entries are safe in the ledger but not "
+            "in the shipped bundle). Re-inline, then commit:\n"
+            "  node tools/build.mjs\n"
+            "Round-close order: append the Creator's Log entry, THEN build, THEN commit."
         )
         return
 

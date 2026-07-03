@@ -1541,6 +1541,37 @@ def check_creators_log_embed_synced():
     return False, "creators-log-embed.json is STALE — run `python tools/creators_log.py digest`"
 
 
+def check_creators_log_bundle_synced():
+    """The BUILT bundle the browser actually loads (dashboard/assets/js/dist/main.js)
+    must carry the CURRENT ledger. esbuild inlines creators-log-embed.json at BUILD
+    time (state/log.ts JSON import) and the offline file:// app cannot fetch() it at
+    runtime, so a log append not followed by `node tools/build.mjs` leaves the in-app
+    Profile log SILENTLY stale: the entries live in the ledger + the source embed
+    (embed_synced stays green) but never reach the shipped bundle. embed_synced proves
+    source==ledger; THIS proves the ARTIFACT the user loads matches. Anchor: the newest
+    ledger entry id must appear verbatim in the minified bundle. Fix: node tools/build.mjs."""
+    sys.path.insert(0, str(ROOT / "tools"))
+    import creators_log
+    bundle = ROOT / "dashboard/assets/js/dist/main.js"
+    if not bundle.exists():
+        return False, "dist/main.js missing — run `node tools/build.mjs`"
+    entries = creators_log.read_entries()
+    if not entries:
+        return True, "no ledger entries yet — nothing to embed"
+    newest = entries[-1]
+    newest_id = newest.get("id", "") if isinstance(newest, dict) else ""
+    if not newest_id:
+        return False, "newest ledger entry has no id — ledger malformed"
+    text = bundle.read_text(encoding="utf-8", errors="replace")
+    if newest_id in text:
+        return True, f"bundle carries the current ledger head ({newest_id})"
+    return False, (
+        f"dist/main.js is STALE — newest ledger entry {newest_id} "
+        f"({newest.get('ts', '?')}) is NOT in the built bundle; the in-app Profile log "
+        f"is missing the latest entries. Run `node tools/build.mjs`."
+    )
+
+
 def check_creators_log_archive_synced():
     """The navigable archive (chronicle/creators-log/INDEX.md + digests/YYYY-MM.md)
     must match what regenerates from the canonical ledger. Full-history human
@@ -2219,6 +2250,14 @@ INVARIANTS = [
         truth_anchor="json.loads(dashboard/assets/data/creators-log-embed.json) == tools/creators_log.py::read_entries() over chronicle/creators-log/log.jsonl",
         severity="warning",
         lesson_ref="Creator's Log L2 (dashboard boot-merge) — the file:// app inlines the ledger at build; this catches a stale build or hand-edit that would make the in-app Profile log lie",
+    ),
+    Invariant(
+        name="creators_log_bundle_synced",
+        description="the BUILT bundle the browser loads (dashboard/assets/js/dist/main.js) carries the CURRENT ledger head — esbuild inlines the embed at build, so a log append without a rebuild leaves the in-app Profile log silently stale",
+        check_fn=check_creators_log_bundle_synced,
+        truth_anchor="the newest chronicle/creators-log/log.jsonl entry id appears verbatim in dashboard/assets/js/dist/main.js (the esbuild-inlined artifact the file:// app actually loads) — checks the BUILT artifact, not a source-vs-source pair",
+        severity="critical",
+        lesson_ref="2026-07-02 silent-log-staleness incident — 3 round-close entries fired into the ledger + source embed but were never rebuilt into the bundle; embed_synced stayed green (source==ledger) while the Profile panel showed nothing past 17:07. §00.B #11: pin the check to the artifact the user loads, not a stale-to-stale source pair",
     ),
     Invariant(
         name="creators_log_archive_synced",
