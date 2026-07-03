@@ -30,7 +30,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 144746
+        "char_offset": 144714
       },
       "dose": null,
       "tags": [
@@ -41,6 +41,70 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-07-03T03:16:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000002",
+      "kind": "personal_anecdote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach's health framework is built on an unusually large base of comparative pathology. As a pathologist for a multi-institution research program - The Center for the Biology of Natural Systems, funded by the U.S. National Institutes of Health (NIH) along with several zoos and universities - he performed autopsies on a scale almost no one else has: more than 20,000 of them, spanning over 17,500 captive wild, laboratory, and domestic animals across more than 454 species, plus 3,000 humans for comparison. That vast cross-species record is what led him to his central claim - that creatures dying of so-called \"natural causes\" were really dying of nutritional deficiency diseases. In his words: \"As a comparative pathologist, I (Wallach) performed more than 20,000 autopsies of over 17,500 captive wild animals, laboratory species and domestic animals, of over 454 species and 3,000 humans for a comparison.\"",
+      "verbatim": "As a comparative pathologist, I (Wallach) performed\nmore than 20,000 autopsies of over 17,500 captive wild\nanimals, laboratory species and domestic animals, of over 454\nspecies and 3,000 humans for a comparison.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 50,
+        "screenshot": 38,
+        "kindle_location": null,
+        "char_offset": 97838
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "about-wallach",
+        "credentials",
+        "autopsy-evidence"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T04:55:00+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000003",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach's stance on carbohydrates and sugars: they are not essential nutrients. His reasoning is that the body can make all the carbohydrate and sugar it needs - for energy, upkeep, and structural repair - by breaking down and rebuilding fats and proteins inside the cell, so none has to come from the diet. This runs counter to the popular view of carbohydrates as a required food group. In his words: \"Contrary to popular belief, carbohydrates and sugars are not essential nutrients by anybody's standards, as we can make all of the carbohydrates and sugars we need for energy and maintenance and repair of structural components by breaking down and reconfiguring fats and proteins at the cellular level.\"",
+      "verbatim": "Contrary to popular belief, carbohydrates and sugars\nare not essential nutrients by anybody’s standards, as we\ncan make all of the carbohydrates and sugars we need for\nenergy and maintenance and repair of structural components\nby breaking down and reconfiguring fats and proteins at the\ncellular level.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 52,
+        "screenshot": 39,
+        "kindle_location": null,
+        "char_offset": 100572
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "carbohydrates",
+        "non-essential-nutrient",
+        "wallach-stance"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T04:55:00+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }
