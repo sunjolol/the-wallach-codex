@@ -8640,10 +8640,11 @@
   },
   "obesity": {
     "display_name": "Obesity",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-EPIGEN-000011"
+        "WAL-CLM-EPIGEN-000011",
+        "WAL-CLM-IMMORT-000012"
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000083",
@@ -8670,6 +8671,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -9718,20 +9720,24 @@
   },
   "prostate_cancer": {
     "display_name": "Prostate Cancer",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-IMMORT-000011",
         "WAL-CLM-LETS-000184",
         "WAL-CLM-LETS-000185"
       ]
     },
-    "essentials_involved": [],
+    "essentials_involved": [
+      "selenium"
+    ],
     "other_substances_involved": [
       "clodronate",
       "flutamide",
       "lhrh"
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor"
     ]
   },

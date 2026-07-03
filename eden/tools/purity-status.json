@@ -1,5 +1,6 @@
 {
   "_doc": "Source-Purification campaign status per book. raw = untouched OCR backlog; purifying = in progress; pristine = book_purity scan at 0 unresolved and GUARDED by the book_source_clean invariant (may never regress above 0). Set to 'pristine' only after a full audited purification + Luneth sign-off.",
+  "_pristine_caveat": "book_purity=0 is NECESSARY but NOT SUFFICIENT - the scanner is BLIND to subscript-comma OCR damage (B,->B6, CO,->CO2) and reading-order scrambles. Mining cleans only shown verbatims; the whole-book source-cosmetic cleanup is a SOMEDAY one-shot EXHAUSTIVE human scan-read of every page (owed, self-defining worklist). NEVER flip a book to 'pristine' on scan=0 alone - it needs that human exhaustive-read sign-off. (Luneth SESSION 43; memory: book-source-purification-campaign.)",
   "books": {
     "iaiyh": "pristine",
     "dddl-3e-2011": "pristine",

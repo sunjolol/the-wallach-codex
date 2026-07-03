@@ -3833,53 +3833,66 @@ yard gardens and wood ashes (plant minerals).
 
 ===== Screenshot (53) =====
 
- 
 
- 
+USDA Nutrient Data Base — vitamin & mineral levels in common foods, 1975 vs. 2004 (per 100 grams)
 
-80° __ Immortality) ee Immortality 81
-USDA Nutrient Data Base ; E ;
-Vitamin A (Int. units per 100 grams)
-Food 1975 2004 % change
-Apples 90 54 -40%
-Blueberries 100 54 -46%
-Iron (mg per 100 grams .
-(mg P B Onions 40 2. -95%
-aC C 41 0/
-Apples 0.3 0.12 -60% Bi ain 900 623 -31%
-: > 790 om lu 400%
-Blueberries 1.0 0.28 -72% ; . - 7 1.0 400
-KACO, A 0/
-Onions 0.5 0.19 -62% pe E ou eae pak.
-Tomatoes 0.5 0.45 -10% Pawperpies 60 12.0 -80%
-Carrots 0.7 0.30 -57% =e ~ a
-Spinach 34 27] 13% itamin (mg per 100 grams)
-Corn 0.7 0.52 -26%
-sherries / C 21 0/
-peas 19 1.47 23% Farekeiuues 14.0 D.7 -31%
-; oR 220 Onions 10.0 6.4 -36%
-Broccoli 1.1 0.73 33% é
-a a pan. arr S y 5.9 “9 %
-Kale 2.7 1.70 -37% Baw 8.0 : 4 6
-Strawberries 1.0 0.42 58% otatoes 20.0 11.4 43%
-Green beans 19.0 16.3 -14%
-Calcium (mg per 100 grams) Spinach 51.0 28.1 “45%
-Corn 12.0 6.8 -44%
-9 ccoli 3: 39:2 -21%
-Apples 7.0 6.0 -14% een ae a4 os
-Blueberries 15.0 6.0 -60% ele 186.0 ie ee
-Onions 27.0 22.0 -18% Strawberries 59.0 59.0 -0%
-Tomatoe 37.0 33 -11% ; a : é
-tote see 7 ae A simple barometer of the nutritional value of our diet
-Green beans 96.0 37.0 =92'/9 is to look at the health of immigrants. We can look at what
-Corn 3.0 2.0 -33% happens to people who leave their third world birth place
-PF peor j F
-Peas 26.0 25.0 4% and come to the U.S. for a new life. In a study published in
-Broccoli 103.0 47.0 54% the Journal of the American Medical Association, December 15,
-Kale 249.0 135.0 -469 2004, it was reported that, “The longer you live in America,
-j ath She the more likely you are to be obese.” (Remember - obesity is a
-Strawberries 21.0 16.0 -24% r Cee KS ee
+Vitamin A (International units per 100 grams)
+Food              1975     2004  % change
+Apples              90       54      -40%
+Blueberries        100       54      -46%
+Onions              40        2      -95%
+Tomatoes           900      623      -31%
+Corn               400      1.0     -400%
+Broccoli         2,500    660.0      -74%
+Strawberries        60     12.0      -80%
 
+Iron (mg per 100 grams)
+Food              1975     2004  % change
+Apples             0.3     0.12      -60%
+Blueberries        1.0     0.28      -72%
+Onions             0.5     0.19      -62%
+Tomatoes           0.5     0.45      -10%
+Carrots            0.7     0.30      -57%
+Spinach            3.1     2.71      -13%
+Corn               0.7     0.52      -26%
+Peas               1.9     1.47      -23%
+Broccoli           1.1     0.73      -33%
+Kale               2.7     1.70      -37%
+Strawberries       1.0     0.42      -58%
+
+Calcium (mg per 100 grams)
+Food              1975     2004  % change
+Apples             7.0      6.0      -14%
+Blueberries       15.0      6.0      -60%
+Onions            27.0     22.0      -18%
+Tomatoes          37.0     33.0      -11%
+Green beans       56.0     37.0      -33%
+Corn               3.0      2.0      -33%
+Peas              26.0     25.0       -4%
+Broccoli         103.0     47.0      -54%
+Kale             249.0    135.0      -46%
+Strawberries      21.0     16.0      -24%
+
+Vitamin C (mg per 100 grams)
+Food              1975     2004  % change
+Blueberries       14.0      9.7      -31%
+Onions            10.0      6.4      -36%
+Carrots            8.0      5.9      -26%
+Potatoes          20.0     11.4      -43%
+Green beans       19.0     16.3      -14%
+Spinach           51.0     28.1      -45%
+Corn              12.0      6.8      -44%
+Broccoli         113.0     89.2      -21%
+Kale             186.0    120.0      -35%
+Strawberries      59.0     59.0       -0%
+
+A simple barometer of the nutritional value of our diet
+is to look at the health of immigrants. We can look at what
+happens to people who leave their third world birth place
+and come to the U.S. for a new life. In a study published in
+the Journal of the American Medical Association, December 15,
+2004, it was reported that, “The longer you live in America,
+the more likely you are to be obese.” (Remember - obesity is a
 mineral deficiency disease - not a disease of excess)
 The study examined the obesity rates among
 
@@ -3909,7 +3922,7 @@ zinc, copper, manganese, chromium, molybdenum, iodine and
 selenium) and then only at minimal doses - an example was
 selenium for which he insisted the upper safe limit was 15 mcg
 (today the recommended safe limit for selenium is 200 to 1,000
-meg for an adult). Pauling died of prostate cancer at age 94-a
+mcg for an adult). Pauling died of prostate cancer at age 94 - a
 common result of a selenium deficiency.
 
 The essential role of trace elements in the support and
@@ -3941,7 +3954,7 @@ physiological sites at the cost of trace mineral reservoirs.
 
 Almost all trace elements function as catalysts for a
 cellular or sub-cellular enzyme system. Enzymes are simply
-proteins that do workand in their role as catalysts their function
+proteins that do work and in their role as catalysts their function
 ranges from that of a weak ionic (pH affects) modulator to
 highly specific metalloenzyme (“metallic finger”) functions
 for DNA and RNA.
@@ -3966,7 +3979,7 @@ The RDA (Recommended Daily Allowance) and
 RDI (Recommended Daily Intake) and other dietary
 recommendations for trace elements are conceived by the
 National Science Foundation to “meet the needs of practically
-all healthy people” - they are inreality not applicable for people
+all healthy people” - they are in reality not applicable for people
 with increased energy requirements, “health challenges” or
 full blown disease states.
 

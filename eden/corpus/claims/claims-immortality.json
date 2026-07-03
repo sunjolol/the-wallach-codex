@@ -305,6 +305,141 @@
       "extracted_at": "2026-07-03T05:13:15+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000010",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach corrects even Linus Pauling - the two-time Nobel laureate - on minerals. Pauling (author of The Nature of the Chemical Bond) treated minerals as secondary to vitamins, recommending only eight to eleven of them at minimal doses. His selenium advice is Wallach's example of how wrong this was: Pauling insisted selenium's safe upper limit was just 15 mcg, whereas today the recommended safe limit is 200 to 1,000 mcg for an adult. In his words: \"Linus Pauling, two time Nobel laureate, and author of the great work, The Nature of the Chemical Bond, relegated minerals to secondary importance to vitamins, recommending only eight to eleven minerals (calcium, magnesium, phosphorous, iron, zinc, copper, manganese, chromium, molybdenum, iodine and selenium) and then only at minimal doses - an example was selenium for which he insisted the upper safe limit was 15 mcg (today the recommended safe limit for selenium is 200 to 1,000 mcg for an adult).\"",
+      "verbatim": "Linus Pauling, two time Nobel laureate, and author of the\ngreat work, The Nature of the Chemical Bond, relegated minerals\nto secondary importance to vitamins, recommending only eight\nto eleven minerals (calcium, magnesium, phosphorous, iron,\nzinc, copper, manganese, chromium, molybdenum, iodine and\nselenium) and then only at minimal doses - an example was\nselenium for which he insisted the upper safe limit was 15 mcg\n(today the recommended safe limit for selenium is 200 to 1,000\nmcg for an adult).",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 82,
+        "screenshot": 54,
+        "kindle_location": null,
+        "char_offset": 149369
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "about-wallach",
+        "establishment-critique",
+        "selenium",
+        "minerals"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T06:19:15+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000011",
+      "kind": "mechanism",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "prostate_cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach links selenium deficiency to prostate cancer - and uses Pauling himself as the example: Pauling, who downplayed minerals, died of prostate cancer at age 94, which Wallach attributes to a selenium deficiency (selenium is strongly prostate-protective in his framework). In his words: \"Pauling died of prostate cancer at age 94 - a common result of a selenium deficiency.\"",
+      "verbatim": "Pauling died of prostate cancer at age 94 - a\ncommon result of a selenium deficiency.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 82,
+        "screenshot": 54,
+        "kindle_location": null,
+        "char_offset": 149872
+      },
+      "dose": null,
+      "tags": [
+        "selenium",
+        "cancer",
+        "prostate"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T06:19:15+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000012",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "obesity"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach reframes obesity as a mineral-deficiency disease - \"not a disease of excess.\" His evidence: a study in the Journal of the American Medical Association (December 15, 2004) found that the longer immigrants live in the US, the more likely they are to be obese, averaging about a 10-pound weight gain after 15 years. He calls this the \"Feedlot Syndrome\" - people placed on the mineral-depleted American \"four food group\" diet, having lost their traditional mineral-rich \"culinary\" and garden ashes, gain weight unless they consciously supplement with plant minerals. In his words: '“The longer you live in America, the more likely you are to be obese.” (Remember - obesity is a mineral deficiency disease - not a disease of excess)'",
+      "verbatim": "“The longer you live in America,\nthe more likely you are to be obese.” (Remember - obesity is a\nmineral deficiency disease - not a disease of excess)",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 81,
+        "screenshot": 53,
+        "kindle_location": null,
+        "char_offset": 148306
+      },
+      "dose": null,
+      "tags": [
+        "obesity",
+        "mineral-deficiency",
+        "feedlot-syndrome",
+        "plant-derived-colloidal-minerals"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T06:19:15+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000013",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "A central Wallach teaching: our food has been massively depleted of vitamins and minerals as farm soils were stripped. A USDA database comparing common foods between 1975 and 2004 shows dramatic losses - for example, broccoli lost 54% of its calcium and 74% of its vitamin A, onions lost 95% of their vitamin A, apples lost 60% of their iron, and kale lost 46% of its calcium. His conclusion: we can no longer get adequate minerals from food alone and must supplement, especially with plant-derived minerals (the \"culinary ashes\" of traditional diets). In his words: \"Only when one looks at a USDA data base that compares the level of vitamins and minerals in certain common foods between 1975 and 2004, do we truly understand how depleted our foods have become since we gave up the back yard gardens and wood ashes (plant minerals).\"",
+      "verbatim": "Only when one looks at a USDA data base that\ncompares the level of vitamins and minerals in certain common\nfoods between 1975 and 2004, do we truly understand how\ndepleted our foods have become since we gave up the back\nyard gardens and wood ashes (plant minerals).",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 79,
+        "screenshot": 52,
+        "kindle_location": null,
+        "char_offset": 145691
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "soil-depletion",
+        "food-depletion",
+        "supplementation",
+        "minerals"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T06:19:15+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

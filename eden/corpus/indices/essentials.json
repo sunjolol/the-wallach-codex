@@ -2392,7 +2392,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 97,
+    "claim_count": 98,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2418,6 +2418,7 @@
         "WAL-CLM-EPIGEN-000004",
         "WAL-CLM-EPIGEN-000006",
         "WAL-CLM-IMMORT-000001",
+        "WAL-CLM-IMMORT-000011",
         "WAL-CLM-LETS-000197",
         "WAL-CLM-RARE-000004",
         "WAL-CLM-RARE-000010",
@@ -2613,6 +2614,7 @@
       "parkinsons_disease",
       "pica",
       "plumbism",
+      "prostate_cancer",
       "psoriasis",
       "reyes_syndrome",
       "rheumatoid_arthritis",
