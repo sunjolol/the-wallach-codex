@@ -1304,10 +1304,14 @@
     "display_name": "Boron",
     "canon_slug": "boron",
     "category": "mineral",
-    "claim_count": 7,
+    "claim_count": 9,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000275"
+      ],
+      "definition": [
+        "WAL-CLM-IMMORT-000042",
+        "WAL-CLM-IMMORT-000043"
       ],
       "mechanism": [
         "WAL-CLM-EPIGEN-000068",
@@ -1347,6 +1351,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
