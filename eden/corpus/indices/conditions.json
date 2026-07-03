@@ -2264,7 +2264,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 60,
+    "claim_count": 61,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -2317,6 +2317,7 @@
         "WAL-CLM-RARE-000275"
       ],
       "definitions": [
+        "WAL-CLM-IMMORT-000058",
         "WAL-CLM-LETS-000001"
       ],
       "interactions": [
@@ -2400,6 +2401,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -5448,7 +5450,7 @@
   },
   "goiter": {
     "display_name": "Goiter",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000001",
@@ -5461,6 +5463,9 @@
         "WAL-CLM-EPIGEN-000093",
         "WAL-CLM-LETS-000013",
         "WAL-CLM-RARE-000150"
+      ],
+      "definitions": [
+        "WAL-CLM-IMMORT-000058"
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000151"
@@ -7844,8 +7849,11 @@
   },
   "macular_degeneration": {
     "display_name": "Macular Degeneration",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-IMMORT-000058"
+      ],
       "quotes": [
         "WAL-CLM-DDDL-000066"
       ]
@@ -7858,7 +7866,8 @@
       "taurine"
     ],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "immortality"
     ]
   },
   "malabsorption": {
@@ -9477,6 +9486,25 @@
       "iaiyh",
       "immortality",
       "lets-play-doctor"
+    ]
+  },
+  "peripheral_arterial_disease": {
+    "display_name": "Peripheral Arterial Disease",
+    "claim_count": 1,
+    "claims_by_role": {
+      "definitions": [
+        "WAL-CLM-IMMORT-000058"
+      ]
+    },
+    "essentials_involved": [
+      "arginine",
+      "tyrosine"
+    ],
+    "other_substances_involved": [
+      "taurine"
+    ],
+    "books_cited": [
+      "immortality"
     ]
   },
   "peripheral_neuropathy": {

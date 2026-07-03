@@ -1822,6 +1822,208 @@
       "extracted_at": "2026-07-03T17:24:55+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000055",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "What are proteins? Like carbohydrates and fats they contain carbon, hydrogen and oxygen, but proteins add nitrogen (about 16%, the 'amine' group), sometimes with phosphorus, iron, sulfur or cobalt. Their basic building block is the amino acid; amino acids link by 'peptide bonds' into long chains, and digestion breaks those bonds to free the individual amino acids again. Proteins are the most abundant carbon-based compound in the body - the main stuff of muscle and every cell - and enzymes (the workers that speed up the body's chemical reactions) are themselves proteins. In his words: \"Proteins are the fundamental structural components of the living cell (cytoplasm). They are essential parts of the cell nucleus and protoplasm. Proteins are the most abundant of all carbon containing organic compounds in the human body.\"",
+      "verbatim": "Proteins are the fundamental structural components\nof the living cell (cytoplasm). They are essential parts of the\ncell nucleus and protoplasm. Proteins are the most abundant\nof all carbon containing organic compounds in the human\nbody.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 114,
+        "screenshot": 70,
+        "kindle_location": null,
+        "char_offset": 206467
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "protein",
+        "definition"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T17:32:25+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000056",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Can you eat too much protein? Wallach's view: a healthy person can consume even 300 grams of protein a day - nearly three-quarters of a pound of meat - with no ill effects, as long as they do not have kidney or liver disease and they supplement properly with vitamins and minerals. In his words: \"An individual consuming protein at even 300 gm per day (almost 3/4 of a pound of meat a day) will have no adverse effects as long as they do not have kidney or liver disease and supplement properly with vitamins and minerals.\"",
+      "verbatim": "An individual consuming protein at even 300 gm per\nday (almost 3/4 of a pound of meat a day) will have no adverse\neffects as long as they do not have kidney or liver disease and\nsupplement properly with vitamins and minerals.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 114,
+        "screenshot": 70,
+        "kindle_location": null,
+        "char_offset": 206240
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "protein",
+        "high-protein",
+        "is-x-good-bad"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T17:32:25+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000057",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach's essential amino acids and what each does. Classically there are nine that must come from the diet because the body cannot make them, and Wallach would add three more - arginine, taurine and tyrosine. Their roles: valine, lysine, threonine, leucine and isoleucine build protein; tryptophan is the precursor of niacin (vitamin B3) and serotonin; phenylalanine makes thyroxine (a thyroid hormone) and epinephrine (adrenaline); methionine makes choline and creatine phosphate; histidine makes histamine; and the added three help prevent specific diseases (arginine, taurine, tyrosine - see the related claim). In his words: \"Classically there are nine essential amino acids that are required in the daily diet as they cannot be manufactured by the human body.\"",
+      "verbatim": "Classically there are nine essential amino acids that are\nrequired in the daily diet as they cannot be manufactured by\nthe human body.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 113,
+        "screenshot": 69,
+        "kindle_location": null,
+        "char_offset": 205051
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "amino-acids",
+        "essential-amino-acids",
+        "definition"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T17:32:25+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000058",
+      "kind": "definition",
+      "essentials": [
+        "arginine",
+        "tyrosine"
+      ],
+      "other_substances": [
+        "taurine"
+      ],
+      "conditions": [
+        "cancer",
+        "peripheral_arterial_disease",
+        "macular_degeneration",
+        "goiter"
+      ],
+      "symptoms": [],
+      "claim_text": "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid). In his words: \"To the classic list of essential amino acids, we would add arginine, taurine, and tyrosine. Over the long haul, these three amino acids help prevent certain specific diseases, respectively, these diseases are cancer and PAD, macular degeneration and goiter.\"",
+      "verbatim": "To the classic list of essential amino acids, we would\nadd arginine, taurine, and tyrosine. Over the long haul, these\nthree amino acids help prevent certain specific diseases,\nrespectively, these diseases are cancer and PAD, macular\ndegeneration and goiter.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 113,
+        "screenshot": 69,
+        "kindle_location": null,
+        "char_offset": 205379
+      },
+      "dose": null,
+      "tags": [
+        "arginine",
+        "taurine",
+        "tyrosine",
+        "amino-acids",
+        "essential-amino-acids"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T17:32:25+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000059",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "What are vitamins? Wallach defines them as a group of unrelated, carbon-based organic compounds the body needs in tiny daily amounts for specific chemical reactions - essential for normal growth, development, maintenance, health, longevity and life itself. They work mainly as coenzymes (helper molecules that switch enzymes on) and cannot be manufactured by the human body, yet they supply no calories and add no body mass. Getting optimal vitamins, he says, goes a long way toward preventing birth defects and many debilitating degenerative diseases. In his words: \"Vitamins are essential nutrients in that, they can not be manufactured by humans; they do not supply calories or contribute to body mass.\"",
+      "verbatim": "Vitamins are essential nutrients in that, they can not\nbe manufactured by humans; they do not supply calories or\ncontribute to body mass.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 114,
+        "screenshot": 70,
+        "kindle_location": null,
+        "char_offset": 207674
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "vitamins",
+        "definition"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T17:32:25+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000060",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach sorts vitamins into three classes. (1) Fat-soluble - A, D, E and K - work in fat metabolism and cannot be absorbed on a very low-fat diet; people who have had their gallbladder removed should take ox bile to supply the bile salts needed to absorb fats and fat-soluble vitamins. (2) Water-soluble - the ten B vitamins plus vitamin C - act as cofactors that help cells turn food into energy. (3) Flavanols - the bioflavonoids (polyphenols / epicatechins) - which he counts as a third vitamin category. Flavanols in dark chocolate, he notes, help keep capillaries strong, lower blood pressure and improve blood flow. In his words: \"Flavanols found in dark chocolate, participate in maintaining the strength of capillaries, lower blood pressure, improve blood flow via increased production of nitric acid (a molecule used by the vascular endothelium to signal the surrounding muscle to relax) and have vitamin C-like functions.\"",
+      "verbatim": "Flavanols found in dark chocolate, participate in\nmaintaining the strength of capillaries, lower blood pressure,\nimprove blood flow via increased production of nitric acid\n(a molecule used by the vascular endothelium to signal\nthe surrounding muscle to relax) and have vitamin C-like\nfunctions.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 115,
+        "screenshot": 70,
+        "kindle_location": null,
+        "char_offset": 208968
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "vitamins",
+        "flavanols",
+        "dark-chocolate",
+        "definition"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T17:32:25+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

@@ -6959,8 +6959,11 @@
     "display_name": "Arginine",
     "canon_slug": "arginine",
     "category": "amino_acid",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-IMMORT-000058"
+      ],
       "mechanism": [
         "WAL-CLM-EPIGEN-000047"
       ],
@@ -6980,7 +6983,8 @@
       "erectile_dysfunction",
       "goiter",
       "infertility",
-      "macular_degeneration"
+      "macular_degeneration",
+      "peripheral_arterial_disease"
     ],
     "interacts_with": [
       "chromium",
@@ -7004,6 +7008,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor"
     ]
   },
@@ -7359,8 +7364,11 @@
     "display_name": "Tyrosine",
     "canon_slug": "tyrosine",
     "category": "amino_acid",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-IMMORT-000058"
+      ],
       "mechanism": [
         "WAL-CLM-DDDL-000023",
         "WAL-CLM-EPIGEN-000057"
@@ -7381,6 +7389,7 @@
       "hypothyroidism",
       "macular_degeneration",
       "parkinsonism",
+      "peripheral_arterial_disease",
       "stress"
     ],
     "interacts_with": [
@@ -7407,6 +7416,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor"
     ]
   },

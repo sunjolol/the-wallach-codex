@@ -1,39 +1,56 @@
 # Extraction report — immortality (Immortality)
 
-_4 claim(s) drafted 2026-07-03T17:24:55+00:00. Review then run corpus_seal.py to promote._
+_6 claim(s) drafted 2026-07-03T17:32:25+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×4
+Kinds: definition×6
 
-### WAL-CLM-IMMORT-000051 · definition
+### WAL-CLM-IMMORT-000055 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** What are carbohydrates? Wallach explains that carbs and sugars are the body's convenient everyday fuel, but - importantly - they are NOT essential nutrients: the body can make all the carbohydrate it needs by reconfiguring proteins and fats. Plants build carbohydrates from carbon dioxide and water using sunlight (photosynthesis, which runs on chlorophyll, a magnesium/carbon ring). Carbohydrates are classified by size: single sugars (monosaccharides like glucose and fructose), double sugars (disaccharides like sucrose, maltose and lactose), and large chains (polysaccharides like starch, cellulose, fiber and glycogen). In his words: "While carbohydrates and sugars are convenient sources of fuel for energy, they are not essential nutrients as all living organisms can make them by reconfiguring proteins and fats."
-- **verbatim** (offset 199213): “While
-carbohydrates and sugars are convenient sources of fuel for
-energy, they are not essential nutrients as all living organisms
-can make them by reconfiguring proteins and fats.”
+- **claim:** What are proteins? Like carbohydrates and fats they contain carbon, hydrogen and oxygen, but proteins add nitrogen (about 16%, the 'amine' group), sometimes with phosphorus, iron, sulfur or cobalt. Their basic building block is the amino acid; amino acids link by 'peptide bonds' into long chains, and digestion breaks those bonds to free the individual amino acids again. Proteins are the most abundant carbon-based compound in the body - the main stuff of muscle and every cell - and enzymes (the workers that speed up the body's chemical reactions) are themselves proteins. In his words: "Proteins are the fundamental structural components of the living cell (cytoplasm). They are essential parts of the cell nucleus and protoplasm. Proteins are the most abundant of all carbon containing organic compounds in the human body."
+- **verbatim** (offset 206467): “Proteins are the fundamental structural components
+of the living cell (cytoplasm). They are essential parts of the
+cell nucleus and protoplasm. Proteins are the most abundant
+of all carbon containing organic compounds in the human
+body.”
 
-### WAL-CLM-IMMORT-000052 · definition
+### WAL-CLM-IMMORT-000056 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** A primer on fats: like carbohydrates, fats (lipids) are built from carbon, hydrogen and oxygen, but they don't dissolve in water and pack more energy - about 9 calories per gram versus 4.5 for carbohydrate or protein. The main form of fat is the triglyceride: a molecule of glycerol joined to fatty acids. Fatty acids are described three ways - chain length (short, medium or long, by the number of carbons), how 'saturated' they are with hydrogen (no double bonds = saturated; one = monounsaturated; several = polyunsaturated), and where the first double bond sits counting from the tail (the 'omega' number, e.g. omega-3, omega-6). In his words: "Triglycerides (the primary component of fats and oils) are composed of carbon, hydrogen, and oxygen. Structurally, they are esters of a trihydric alcohol (glycerol) and fatty acids."
-- **verbatim** (offset 201313): “Triglycerides (the primary component of fats and oils)
-are composed of carbon, hydrogen, and oxygen. Structurally,
-they are esters of a trihydric alcohol (glycerol) and fatty acids.”
+- **claim:** Can you eat too much protein? Wallach's view: a healthy person can consume even 300 grams of protein a day - nearly three-quarters of a pound of meat - with no ill effects, as long as they do not have kidney or liver disease and they supplement properly with vitamins and minerals. In his words: "An individual consuming protein at even 300 gm per day (almost 3/4 of a pound of meat a day) will have no adverse effects as long as they do not have kidney or liver disease and supplement properly with vitamins and minerals."
+- **verbatim** (offset 206240): “An individual consuming protein at even 300 gm per
+day (almost 3/4 of a pound of meat a day) will have no adverse
+effects as long as they do not have kidney or liver disease and
+supplement properly with vitamins and minerals.”
 
-### WAL-CLM-IMMORT-000053 · definition
-- **essentials:** omega-3, omega-6 · **conditions:** failure_to_thrive, learning_disabilities, convulsions, eczema, asthma, immune_depression · **symptoms:** —
-- **claim:** Essential fatty acids (EFA) are the fats the body cannot make for itself and so must get from food. Wallach names three polyunsaturated ones - linoleic, linolenic and arachidonic acid - and notes only two (linoleic and linolenic) are strictly essential, since the body can build arachidonic acid from linolenic; about 3% of daily calories should come from EFAs. They do vitamin-like jobs: carrying and processing fat, keeping cell membranes intact, lowering blood cholesterol, and serving as the raw material for prostaglandins that help regulate blood pressure, heart rate, blood-vessel and airway width, blood clotting, and brain and spinal-cord function. A shortage is especially damaging in infants. In his words: "EFA deficiency in human infants results in a poor growth rate, lowered IQ, seizures, learning disabilities, eczema, asthma, and a lowered resistance to infectious diseases."
-- **verbatim** (offset 203854): “EFA deficiency in human infants results in a poor growth rate,
-lowered IQ, seizures, learning disabilities, eczema, asthma,
-and a lowered resistance to infectious diseases.”
+### WAL-CLM-IMMORT-000057 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach's essential amino acids and what each does. Classically there are nine that must come from the diet because the body cannot make them, and Wallach would add three more - arginine, taurine and tyrosine. Their roles: valine, lysine, threonine, leucine and isoleucine build protein; tryptophan is the precursor of niacin (vitamin B3) and serotonin; phenylalanine makes thyroxine (a thyroid hormone) and epinephrine (adrenaline); methionine makes choline and creatine phosphate; histidine makes histamine; and the added three help prevent specific diseases (arginine, taurine, tyrosine - see the related claim). In his words: "Classically there are nine essential amino acids that are required in the daily diet as they cannot be manufactured by the human body."
+- **verbatim** (offset 205051): “Classically there are nine essential amino acids that are
+required in the daily diet as they cannot be manufactured by
+the human body.”
 
-### WAL-CLM-IMMORT-000054 · definition
-- **essentials:** — · **conditions:** menopause, low_libido · **symptoms:** —
-- **claim:** Is cholesterol bad for you? Wallach's answer is emphatically no - it is essential. It is a structural part of every cell membrane and of the myelin that insulates the brain and spinal cord, and it is the raw material the body uses to make vitamin D, bile acids (which digest fat), the adrenal stress hormones, and the sex hormones estrogen, progesterone and testosterone. Because of that hormone role, he warns that a cholesterol deficiency can make menopause miserable and can flatten sex drive in both men and women. In his words: "Cholesterol is an essential part of the structure of cell walls, brain and spinal cord (myelin), the raw material for the production of vitamin D in the human body, bile acids, adrenal cortical hormones, estrogens (a cholesterol deficiency makes menopause a living hell), progesterone, and testosterone (a cholesterol deficiency will turn hubby into a TV watching steer who is totally disinterested in sex)."
-- **verbatim** (offset 204142): “Cholesterol is an essential part of the structure of cell walls,
-brain and spinal cord (myelin), the raw material for the
-production of vitamin D in the human body, bile acids, adrenal
-cortical hormones, estrogens (a cholesterol deficiency makes
-menopause a living hell), progesterone, and testosterone (a
-cholesterol deficiency will turn hubby into a TV watching
-steer who is totally disinterested in sex).”
+### WAL-CLM-IMMORT-000058 · definition
+- **essentials:** arginine, tyrosine · **conditions:** cancer, peripheral_arterial_disease, macular_degeneration, goiter · **symptoms:** —
+- **claim:** Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid). In his words: "To the classic list of essential amino acids, we would add arginine, taurine, and tyrosine. Over the long haul, these three amino acids help prevent certain specific diseases, respectively, these diseases are cancer and PAD, macular degeneration and goiter."
+- **verbatim** (offset 205379): “To the classic list of essential amino acids, we would
+add arginine, taurine, and tyrosine. Over the long haul, these
+three amino acids help prevent certain specific diseases,
+respectively, these diseases are cancer and PAD, macular
+degeneration and goiter.”
+
+### WAL-CLM-IMMORT-000059 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** What are vitamins? Wallach defines them as a group of unrelated, carbon-based organic compounds the body needs in tiny daily amounts for specific chemical reactions - essential for normal growth, development, maintenance, health, longevity and life itself. They work mainly as coenzymes (helper molecules that switch enzymes on) and cannot be manufactured by the human body, yet they supply no calories and add no body mass. Getting optimal vitamins, he says, goes a long way toward preventing birth defects and many debilitating degenerative diseases. In his words: "Vitamins are essential nutrients in that, they can not be manufactured by humans; they do not supply calories or contribute to body mass."
+- **verbatim** (offset 207674): “Vitamins are essential nutrients in that, they can not
+be manufactured by humans; they do not supply calories or
+contribute to body mass.”
+
+### WAL-CLM-IMMORT-000060 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach sorts vitamins into three classes. (1) Fat-soluble - A, D, E and K - work in fat metabolism and cannot be absorbed on a very low-fat diet; people who have had their gallbladder removed should take ox bile to supply the bile salts needed to absorb fats and fat-soluble vitamins. (2) Water-soluble - the ten B vitamins plus vitamin C - act as cofactors that help cells turn food into energy. (3) Flavanols - the bioflavonoids (polyphenols / epicatechins) - which he counts as a third vitamin category. Flavanols in dark chocolate, he notes, help keep capillaries strong, lower blood pressure and improve blood flow. In his words: "Flavanols found in dark chocolate, participate in maintaining the strength of capillaries, lower blood pressure, improve blood flow via increased production of nitric acid (a molecule used by the vascular endothelium to signal the surrounding muscle to relax) and have vitamin C-like functions."
+- **verbatim** (offset 208968): “Flavanols found in dark chocolate, participate in
+maintaining the strength of capillaries, lower blood pressure,
+improve blood flow via increased production of nitric acid
+(a molecule used by the vascular endothelium to signal
+the surrounding muscle to relax) and have vitamin C-like
+functions.”
 

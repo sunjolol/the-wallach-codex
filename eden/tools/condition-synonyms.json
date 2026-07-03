@@ -44,6 +44,7 @@
   "learning_disabilities": ["learning disabilit", "learning disorder"],
   "convulsions": ["seizures", "seizure"],
   "failure_to_thrive": ["poor growth", "poor growth rate"],
+  "peripheral_arterial_disease": ["peripheral arterial disease", "peripheral artery disease", "PAD"],
   "coronary_artery_disease": ["coronary artery", "coronary heart", "coronary occlusion"],
   "cardiovascular_disease": ["cardiovascular", "heart disease", "arterial disease"],
   "aneurysm": ["aneurysm", "aneurism"],
