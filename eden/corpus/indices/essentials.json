@@ -3312,22 +3312,34 @@
     "display_name": "Arsenic",
     "canon_slug": "arsenic",
     "category": "mineral",
-    "claim_count": 3,
+    "claim_count": 6,
     "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-IMMORT-000037"
+      ],
+      "definition": [
+        "WAL-CLM-IMMORT-000036"
+      ],
       "mechanism": [
         "WAL-CLM-EPIGEN-000066",
+        "WAL-CLM-IMMORT-000038",
         "WAL-CLM-RARE-000094",
         "WAL-CLM-RARE-000095"
       ]
     },
     "deficiency_signs": [],
-    "conditions_treated": [],
+    "conditions_treated": [
+      "carpal_tunnel_syndrome",
+      "leukemia",
+      "tmj"
+    ],
     "interacts_with": [
       "selenium",
       "zinc"
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },
@@ -3335,10 +3347,13 @@
     "display_name": "Gold",
     "canon_slug": "gold",
     "category": "mineral",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000097"
+      ],
+      "definition": [
+        "WAL-CLM-IMMORT-000039"
       ],
       "mechanism": [
         "WAL-CLM-EPIGEN-000067"
@@ -3354,6 +3369,7 @@
     "interacts_with": [],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },

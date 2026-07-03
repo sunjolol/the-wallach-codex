@@ -2638,7 +2638,7 @@
   },
   "carpal_tunnel_syndrome": {
     "display_name": "Carpal Tunnel Syndrome",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IAIYH-000017"
@@ -2647,6 +2647,7 @@
         "WAL-CLM-DDDL-000026",
         "WAL-CLM-EPIGEN-000099",
         "WAL-CLM-EPIGEN-000108",
+        "WAL-CLM-IMMORT-000037",
         "WAL-CLM-RARE-000176"
       ],
       "prevalence": [
@@ -2658,6 +2659,7 @@
       ]
     },
     "essentials_involved": [
+      "arsenic",
       "calcium",
       "magnesium",
       "manganese",
@@ -2673,6 +2675,7 @@
       "dddl-3e-2011",
       "epigenetics",
       "iaiyh",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -7492,9 +7495,10 @@
   },
   "leukemia": {
     "display_name": "Leukemia",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-IMMORT-000038",
         "WAL-CLM-LETS-000192"
       ],
       "protocols": [
@@ -7502,6 +7506,7 @@
       ]
     },
     "essentials_involved": [
+      "arsenic",
       "germanium",
       "selenium",
       "vitamin-a",
@@ -7519,6 +7524,7 @@
       "shark-liver-extract"
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor"
     ]
   },
@@ -11296,16 +11302,18 @@
   },
   "tmj": {
     "display_name": "Tmj",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000026",
         "WAL-CLM-EPIGEN-000099",
         "WAL-CLM-EPIGEN-000108",
+        "WAL-CLM-IMMORT-000037",
         "WAL-CLM-RARE-000176"
       ]
     },
     "essentials_involved": [
+      "arsenic",
       "manganese",
       "vitamin-b6"
     ],
@@ -11313,6 +11321,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },

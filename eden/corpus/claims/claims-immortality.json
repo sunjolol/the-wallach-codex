@@ -904,7 +904,7 @@
         "page": 95,
         "screenshot": 60,
         "kindle_location": null,
-        "char_offset": 171848
+        "char_offset": 171851
       },
       "dose": null,
       "tags": [
@@ -938,7 +938,7 @@
         "page": 95,
         "screenshot": 60,
         "kindle_location": null,
-        "char_offset": 171123
+        "char_offset": 171126
       },
       "dose": null,
       "tags": [
@@ -973,7 +973,7 @@
         "page": 96,
         "screenshot": 61,
         "kindle_location": null,
-        "char_offset": 172387
+        "char_offset": 172390
       },
       "dose": null,
       "tags": [
@@ -1007,7 +1007,7 @@
         "page": 96,
         "screenshot": 61,
         "kindle_location": null,
-        "char_offset": 172995
+        "char_offset": 172998
       },
       "dose": null,
       "tags": [
@@ -1038,7 +1038,7 @@
         "page": 94,
         "screenshot": 60,
         "kindle_location": null,
-        "char_offset": 169351
+        "char_offset": 169354
       },
       "dose": null,
       "tags": [
@@ -1074,7 +1074,7 @@
         "page": 97,
         "screenshot": 61,
         "kindle_location": null,
-        "char_offset": 175084
+        "char_offset": 175087
       },
       "dose": null,
       "tags": [
@@ -1105,7 +1105,7 @@
         "page": 96,
         "screenshot": 61,
         "kindle_location": null,
-        "char_offset": 173339
+        "char_offset": 173342
       },
       "dose": null,
       "tags": [
@@ -1137,7 +1137,7 @@
         "page": 97,
         "screenshot": 61,
         "kindle_location": null,
-        "char_offset": 175595
+        "char_offset": 175598
       },
       "dose": null,
       "tags": [
@@ -1151,6 +1151,237 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-07-03T15:34:14+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000035",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Actinium is a naturally occurring (and radioactive) element that Wallach includes among those detected in living tissue. Beyond the physics - it is a metal that, like radium, glows in the dark, and its name comes from the Greek aktinos ('ray') - his biological note is speculative but intriguing: actinium accumulates in the bones and liver, where he suggests it may have some metabolic function. He also observes that plant roots readily absorb it, though little travels up into the plant. Presented for the curious; Wallach assigns it no specific health role. In his words: \"Actinium accumulates in and presumably has metabolic functions in the bones and liver.\"",
+      "verbatim": "Actinium accumulates in and presumably has metabolic\nfunctions in the bones and liver.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 92,
+        "screenshot": 59,
+        "kindle_location": null,
+        "char_offset": 167961
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "actinium",
+        "trace-element"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T16:02:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000036",
+      "kind": "definition",
+      "essentials": [
+        "arsenic"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Arsenic - yes, the infamous poison - is, in the right trace amounts, an essential nutrient in Wallach's framework, recognized as such since 1947. He notes it normally circulates in human blood (rising during menstruation and pregnancy), that trace amounts stimulate red-blood-cell production and speed growth in young animals, and that (paired with the B-vitamin choline) it fully prevents a tendon disorder in poultry - a reminder that the dose which heals sits far below the dose that harms. In his words: \"Arsenic was determined to be an essential nutrient in 1947; the French Academy first identified arsenic in dead human bodies in 1834.\"",
+      "verbatim": "Arsenic was determined to be an essential nutrient\nin 1947; the French Academy first identified arsenic in\ndead human bodies in 1834.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 99,
+        "screenshot": 62,
+        "kindle_location": null,
+        "char_offset": 180156
+      },
+      "dose": null,
+      "tags": [
+        "arsenic",
+        "essential-mineral"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T16:02:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000037",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "arsenic"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "carpal_tunnel_syndrome",
+        "tmj"
+      ],
+      "symptoms": [],
+      "claim_text": "A surprising deficiency link from Wallach: too little arsenic can surface as carpal tunnel syndrome, TMJ (temporomandibular joint, or jaw-joint, disorder), and other 'repetitive motion' type degenerative joint diseases - problems usually blamed on overuse rather than nutrition. He adds that trace amounts stimulate red-blood-cell production. In his words: \"Arsenic deficiency in humans results in a 'carpal tunnel syndrome,' 'TMJ,' and other 'repetitive motion' type degenerative joint diseases and minute traces stimulate the production of red blood cells.\"",
+      "verbatim": "Arsenic\ndeficiency in humans results in a “carpal tunnel syndrome,”\n“TMJ,” and other “repetitive motion” type degenerative joint\ndiseases and minute traces stimulate the production of red\nblood cells.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 100,
+        "screenshot": 63,
+        "kindle_location": null,
+        "char_offset": 180935
+      },
+      "dose": null,
+      "tags": [
+        "arsenic",
+        "deficiency",
+        "joint-health"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T16:02:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000038",
+      "kind": "mechanism",
+      "essentials": [
+        "arsenic"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "leukemia"
+      ],
+      "symptoms": [],
+      "claim_text": "Arsenic isn't merely tolerated by the body - Wallach cites it as a leukemia treatment. Per the Memorial Sloan-Kettering Cancer Center, arsenic infusions work better than any other drug for certain leukemias; in a study of 12 gravely ill patients with acute promyelocytic leukemia (APL), 11 went into remission within 12-39 days, and 8 were still in remission ten years later - results the lead researcher said appeared to exceed any single drug for APL. In his words: \"According to the Memorial Sloan-Kettering Cancer Center in New York, 'infusions of arsenic works better than any other drug for the treatment of certain types of leukemia.' Their study involved 12 seriously ill patients suffering from acute promyelocytic leukemia (APL).\"",
+      "verbatim": "According to the Memorial Sloan-Kettering Cancer\nCenter in New York, “infusions of arsenic works better than\nany other drug for the treatment of certain types of leukemia.”\nTheir study involved 12 seriously ill patients suffering from\nacute promyelocytic leukemia (APL).",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 100,
+        "screenshot": 63,
+        "kindle_location": null,
+        "char_offset": 181137
+      },
+      "dose": null,
+      "tags": [
+        "arsenic",
+        "cancer",
+        "leukemia"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T16:02:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000039",
+      "kind": "definition",
+      "essentials": [
+        "gold"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Gold is one of the 60 minerals Wallach counts as essential, and the biological clue he points to is where and how the body holds it: in the mammalian liver, gold occurs as a colloid - the same ultra-fine, absorbable particle state his framework says the body actually uses minerals in (as opposed to un-absorbable 'metallic' gold). He also notes gold concentrates in the horsetail plant (Equisetum arvense). Importantly, in this passage he documents gold's presence and colloidal form in the body rather than naming a specific gold-deficiency disease - so it is evidence that gold belongs among the essential, tissue-resident elements, not a stated function. In his words: \"...in mammalian liver gold forms a colloid.\"",
+      "verbatim": "marine animals at 0.0003 to 0.008 ppm, terrestrial\nanimals at 0.00023 ppm, and in mammalian liver gold forms a\ncolloid.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 101,
+        "screenshot": 63,
+        "kindle_location": null,
+        "char_offset": 183508
+      },
+      "dose": null,
+      "tags": [
+        "gold",
+        "essential-mineral",
+        "colloidal-minerals"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T16:02:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000040",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Does gold treat arthritis? Wallach's take is more cautionary than the mainstream - he is refining a common stance, not endorsing it. He acknowledges that orthodox physicians do give gold compounds (gold sodium thiomalate, aurothioglucose) as an add-on to aspirin for arthritis pain, but immediately qualifies it: gold has been reported effective ONLY against active joint inflammation, and is not usually helpful for advanced, destructive rheumatoid arthritis. So he is describing and limiting an existing orthodox therapy, not putting gold forward as a broad arthritis cure. In his words: \"Gold compounds ... are frequently administered by orthodox physicians as an add-on therapy with salicylates (aspirin) for arthritis when added pain relief is required. Gold has been reported only to be effective against active joint inflammation and is not usually helpful for treating advanced destructive rheumatoid arthritis.\"",
+      "verbatim": "Gold compounds (gold sodium thiomalate, gold\nthioglucose also known as aurothioglucose) are frequently\nadministered by orthodox physicians as an add-on therapy\nwith salicylates (aspirin) for arthritis when added pain relief\nis required. Gold has been reported only to be effective\nagainst active joint inflammation and is not usually helpful\nfor treating advanced destructive rheumatoid arthritis.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 102,
+        "screenshot": 64,
+        "kindle_location": null,
+        "char_offset": 185115
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "search-topic:gold-arthritis",
+        "gold",
+        "arthritis"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T16:02:19+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000041",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Separate from gold's nutritional role, Wallach notes a purely medical use of a radioactive form of gold: gold-198, a short-lived isotope (half-life 2.7 days, made by bombarding natural gold with neutrons in a reactor), is used to treat some forms of cancer. This is radiation therapy, not nutrition - included for reference. In his words: \"A radioactive isotope of gold with a short half-life of 2.7 days is used to treat some forms of cancer. Known as gold-198, it is easily produced by exposing natural gold to a beam of neutrons in a nuclear reactor.\"",
+      "verbatim": "A radioactive isotope of gold\nwith a short half-life of 2.7 days is used to treat some forms of\ncancer. Known as gold-198, it is easily produced by exposing\nnatural gold to a beam of neutrons in a nuclear reactor.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 102,
+        "screenshot": 64,
+        "kindle_location": null,
+        "char_offset": 184655
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "gold",
+        "gold-198",
+        "cancer"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T16:02:19+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }
