@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "book_id": "immortality",
+  "knowledge_version": null,
+  "claims": [
+    {
+      "id": "WAL-CLM-IMMORT-000001",
+      "kind": "mechanism",
+      "essentials": [
+        "iodine",
+        "selenium",
+        "phosphorus",
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "goiter",
+        "cardiomyopathy",
+        "keshan_disease",
+        "pica",
+        "enzootic_ataxia"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach documents that specific mineral deficiencies produced specific deficiency diseases in distinct geographic regions — each disease appeared wherever the local soil lacked that mineral. His examples: iodine deficiency caused goiter (a swollen thyroid) in communities far from the sea; selenium deficiency caused Keshan disease, a cardiomyopathy (disease of the heart muscle), in Keshan Province, China; phosphate deficiency caused pica (a compulsive craving to eat non-food substances) in South Africa; and copper deficiency caused enzootic ataxia (a copper-deficiency disorder of movement and coordination) in Australia. In his words: \"Iodine deficiency (goiter) occurred in communities living at a distance from the sea; Keshan disease (cardiomyopathy) caused by a selenium deficiency occurred in Keshan Province, China; phosphate deficiency (pica) was common in South Africa; copper deficiency (enzootic ataxia) was common in Australia, etc.\"",
+      "verbatim": "Iodine deficiency (goiter) occurred in\ncommunities living at a distance from the sea; Keshan disease\n(cardiomyopathy) caused by a selenium deficiency occurred\nin Keshan Province, China; phosphate deficiency (pica) was\ncommon in South Africa; copper deficiency (enzootic ataxia)\nwas common in Australia, etc.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 144746
+      },
+      "dose": null,
+      "tags": [
+        "deficiency",
+        "regional_disease"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T03:16:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    }
+  ]
+}

@@ -613,7 +613,7 @@
     "display_name": "Phosphorus",
     "canon_slug": "phosphorus",
     "category": "mineral",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-LETS-000023",
@@ -633,6 +633,7 @@
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000052",
+        "WAL-CLM-IMMORT-000001",
         "WAL-CLM-RARE-000209"
       ],
       "toxicity_sign": [
@@ -695,18 +696,26 @@
       "anorexia",
       "anxiety",
       "arthritis",
+      "cardiomyopathy",
+      "enzootic_ataxia",
+      "goiter",
       "hyperparathyroidism",
       "hypertension",
       "hypophosphatemia",
+      "keshan_disease",
       "malabsorption",
       "osteoporosis",
       "pica"
     ],
     "interacts_with": [
-      "calcium"
+      "calcium",
+      "copper",
+      "iodine",
+      "selenium"
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -1617,7 +1626,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 42,
+    "claim_count": 43,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
@@ -1647,6 +1656,7 @@
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000004",
+        "WAL-CLM-IMMORT-000001",
         "WAL-CLM-RARE-000051",
         "WAL-CLM-RARE-000119",
         "WAL-CLM-RARE-000120",
@@ -1740,6 +1750,7 @@
       "dermatosis",
       "diabetes",
       "diarrhea",
+      "enzootic_ataxia",
       "explosive_outbursts",
       "goiter",
       "gout",
@@ -1750,6 +1761,7 @@
       "hypoglycemia",
       "joint_pain",
       "kawasaki_disease",
+      "keshan_disease",
       "learning_disabilities",
       "liver_cirrhosis",
       "liver_disease",
@@ -1757,6 +1769,7 @@
       "neutropenia",
       "osteoporosis",
       "phlebitis",
+      "pica",
       "psoriasis",
       "ptosis",
       "reactive_hypoglycemia",
@@ -1783,6 +1796,7 @@
       "molybdenum",
       "omega-3",
       "phenylalanine",
+      "phosphorus",
       "selenium",
       "sodium",
       "sulfur",
@@ -1803,6 +1817,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -2067,7 +2082,7 @@
     "display_name": "Iodine",
     "canon_slug": "iodine",
     "category": "mineral",
-    "claim_count": 18,
+    "claim_count": 19,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000093",
@@ -2089,6 +2104,7 @@
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000023",
+        "WAL-CLM-IMMORT-000001",
         "WAL-CLM-RARE-000074",
         "WAL-CLM-RARE-000145",
         "WAL-CLM-RARE-000147",
@@ -2167,19 +2183,24 @@
       }
     ],
     "conditions_treated": [
+      "cardiomyopathy",
       "cretinism",
+      "enzootic_ataxia",
       "fibrocystic_breast_disease",
       "goiter",
       "graves_disease",
       "hashimotos_disease",
       "hyperthyroidism",
-      "hypothyroidism"
+      "hypothyroidism",
+      "keshan_disease",
+      "pica"
     ],
     "interacts_with": [
       "chromium",
       "copper",
       "iron",
       "omega-3",
+      "phosphorus",
       "selenium",
       "tyrosine",
       "vitamin-a",
@@ -2188,6 +2209,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -2370,7 +2392,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 96,
+    "claim_count": 97,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2395,6 +2417,7 @@
         "WAL-CLM-DDDL-000071",
         "WAL-CLM-EPIGEN-000004",
         "WAL-CLM-EPIGEN-000006",
+        "WAL-CLM-IMMORT-000001",
         "WAL-CLM-LETS-000197",
         "WAL-CLM-RARE-000004",
         "WAL-CLM-RARE-000010",
@@ -2545,10 +2568,12 @@
       "dysmenorrhea",
       "dyspepsia",
       "elevated_cholesterol",
+      "enzootic_ataxia",
       "fibrocystic_breast_disease",
       "food_allergy",
       "freckles",
       "gallstones",
+      "goiter",
       "growing_pains",
       "heart_attack",
       "heavy_metal_toxicity",
@@ -2586,6 +2611,7 @@
       "osteoporosis",
       "pancreatitis",
       "parkinsons_disease",
+      "pica",
       "plumbism",
       "psoriasis",
       "reyes_syndrome",
@@ -2624,6 +2650,7 @@
       "methionine",
       "omega-3",
       "oxygen",
+      "phosphorus",
       "potassium",
       "sulfur",
       "tin",
@@ -2643,6 +2670,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]

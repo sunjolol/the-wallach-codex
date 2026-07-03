@@ -2533,11 +2533,12 @@
   },
   "cardiomyopathy": {
     "display_name": "Cardiomyopathy",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
-        "WAL-CLM-EPIGEN-000006"
+        "WAL-CLM-EPIGEN-000006",
+        "WAL-CLM-IMMORT-000001"
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
@@ -2562,8 +2563,10 @@
       "calcium",
       "chromium",
       "copper",
+      "iodine",
       "magnesium",
       "omega-3",
+      "phosphorus",
       "selenium",
       "sulfur",
       "tin",
@@ -2577,6 +2580,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -4783,6 +4787,25 @@
       "lets-play-doctor"
     ]
   },
+  "enzootic_ataxia": {
+    "display_name": "Enzootic Ataxia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IMMORT-000001"
+      ]
+    },
+    "essentials_involved": [
+      "copper",
+      "iodine",
+      "phosphorus",
+      "selenium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "immortality"
+    ]
+  },
   "epilepsy": {
     "display_name": "Epilepsy",
     "claim_count": 2,
@@ -5348,9 +5371,10 @@
   },
   "goiter": {
     "display_name": "Goiter",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-IMMORT-000001",
         "WAL-CLM-RARE-000147",
         "WAL-CLM-RARE-000148",
         "WAL-CLM-RARE-000149"
@@ -5380,6 +5404,8 @@
       "arginine",
       "copper",
       "iodine",
+      "phosphorus",
+      "selenium",
       "tyrosine"
     ],
     "other_substances_involved": [
@@ -5390,6 +5416,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -6999,11 +7026,12 @@
   },
   "keshan_disease": {
     "display_name": "Keshan Disease",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000071",
-        "WAL-CLM-EPIGEN-000006"
+        "WAL-CLM-EPIGEN-000006",
+        "WAL-CLM-IMMORT-000001"
       ],
       "deficiency_signs": [
         "WAL-CLM-LETS-000030",
@@ -7019,9 +7047,12 @@
     },
     "essentials_involved": [
       "choline",
+      "copper",
       "cysteine",
+      "iodine",
       "methionine",
       "omega-3",
+      "phosphorus",
       "selenium",
       "vitamin-e"
     ],
@@ -7031,6 +7062,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -9440,12 +9472,13 @@
   },
   "pica": {
     "display_name": "Pica",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-RARE-000036"
       ],
       "causes": [
+        "WAL-CLM-IMMORT-000001",
         "WAL-CLM-RARE-000035",
         "WAL-CLM-RARE-000037",
         "WAL-CLM-RARE-000040",
@@ -9463,8 +9496,11 @@
     },
     "essentials_involved": [
       "calcium",
+      "copper",
+      "iodine",
       "iron",
-      "phosphorus"
+      "phosphorus",
+      "selenium"
     ],
     "other_substances_involved": [
       "colloidal-minerals",
@@ -9473,6 +9509,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
