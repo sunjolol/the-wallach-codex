@@ -2,7 +2,7 @@
   "_doc": "Condition-name synonyms for the verbatim_names_mapped_conditions rule. Key = condition slug; value = list of alternative phrasings Wallach uses in the book text so a faithful paraphrase link still verifies. Significant words of the display name + the slug tokens are ALWAYS accepted implicitly; list here only the DIFFERENT wordings. Grows as remediation surfaces more. Keep each phrase lowercase; matching is OCR-folded, punctuation-insensitive, all-words-present.",
   "homosexuality": ["gay", "gay behavior", "gay phenomena", "gay lifestyle", "homosexual"],
   "intersex": ["hermaphrodite", "hermaphroditism", "intersexual"],
-  "immune_depression": ["depressed immune", "depressed immune system", "lowered immune", "lowered immune status", "immune suppression", "immunosuppression", "reduced immunity", "reduced immune"],
+  "immune_depression": ["depressed immune", "depressed immune system", "lowered immune", "lowered immune status", "immune suppression", "immunosuppression", "reduced immunity", "reduced immune", "impaired immune"],
   "anosmia": ["loss of smell", "loss of the sense of smell", "lost sense of smell"],
   "ageusia": ["loss of taste", "loss of the sense of taste"],
   "benign_prostatic_hyperplasia": ["benign prostatic hypertrophy", "enlarged prostate", "prostate enlarges", "prostate enlargement", "prostate gland enlarges"],

@@ -1665,10 +1665,11 @@
   },
   "birth_defects": {
     "display_name": "Birth Defects",
-    "claim_count": 26,
+    "claim_count": 27,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000002",
+        "WAL-CLM-IMMORT-000032",
         "WAL-CLM-RARE-000015",
         "WAL-CLM-RARE-000016",
         "WAL-CLM-RARE-000044",
@@ -1703,6 +1704,7 @@
       ]
     },
     "essentials_involved": [
+      "aluminum",
       "calcium",
       "copper",
       "magnesium",
@@ -1720,6 +1722,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -3093,6 +3096,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "cirrhosis": {
+    "display_name": "Cirrhosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IMMORT-000032"
+      ]
+    },
+    "essentials_involved": [
+      "aluminum"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "immortality"
     ]
   },
   "cleft_lip": {
@@ -6445,8 +6464,11 @@
   },
   "immune_depression": {
     "display_name": "Immune Depression",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IMMORT-000027"
+      ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000031",
         "WAL-CLM-EPIGEN-000033",
@@ -6461,6 +6483,7 @@
       "flavonoids",
       "germanium",
       "selenium",
+      "silver",
       "vitamin-a",
       "vitamin-b5",
       "vitamin-c",
@@ -6474,6 +6497,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor"
     ]
   },
@@ -11890,13 +11914,18 @@
   },
   "wounds": {
     "display_name": "Wounds",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IMMORT-000029"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000466"
       ]
     },
-    "essentials_involved": [],
+    "essentials_involved": [
+      "silver"
+    ],
     "other_substances_involved": [
       "aristolochia",
       "arnica",
@@ -11908,6 +11937,7 @@
       "witch-hazel"
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor"
     ]
   },

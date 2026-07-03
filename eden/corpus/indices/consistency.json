@@ -1623,12 +1623,16 @@
         "book": "dddl-3e-2011"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000028",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000091",
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 2,
-    "claim_count": 2
+    "books_repeating": 3,
+    "claim_count": 3
   },
   {
     "id": "CG-0065",

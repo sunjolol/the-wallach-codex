@@ -3248,7 +3248,7 @@
     "display_name": "Silver",
     "canon_slug": "silver",
     "category": "mineral",
-    "claim_count": 6,
+    "claim_count": 10,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000064"
@@ -3262,15 +3262,25 @@
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000014",
+        "WAL-CLM-IMMORT-000027",
+        "WAL-CLM-IMMORT-000028",
+        "WAL-CLM-IMMORT-000029",
         "WAL-CLM-RARE-000091"
+      ],
+      "toxicity_sign": [
+        "WAL-CLM-IMMORT-000030"
       ]
     },
     "deficiency_signs": [],
-    "conditions_treated": [],
+    "conditions_treated": [
+      "immune_depression",
+      "wounds"
+    ],
     "interacts_with": [],
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },
@@ -3278,18 +3288,23 @@
     "display_name": "Aluminum",
     "canon_slug": "aluminum",
     "category": "mineral",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-EPIGEN-000065",
+        "WAL-CLM-IMMORT-000032",
         "WAL-CLM-RARE-000093"
       ]
     },
     "deficiency_signs": [],
-    "conditions_treated": [],
+    "conditions_treated": [
+      "birth_defects",
+      "cirrhosis"
+    ],
     "interacts_with": [],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },
