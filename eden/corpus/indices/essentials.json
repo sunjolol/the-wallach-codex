@@ -5105,7 +5105,7 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 48,
+    "claim_count": 49,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000039",
@@ -5116,6 +5116,9 @@
       ],
       "dose": [
         "WAL-CLM-LETS-000063"
+      ],
+      "mechanism": [
+        "WAL-CLM-IMMORT-000008"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000055",
@@ -5366,6 +5369,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]

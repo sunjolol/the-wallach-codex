@@ -8185,8 +8185,11 @@
   },
   "morning_sickness": {
     "display_name": "Morning Sickness",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IMMORT-000008"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000369"
       ]
@@ -8201,6 +8204,7 @@
       "mint"
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor"
     ]
   },

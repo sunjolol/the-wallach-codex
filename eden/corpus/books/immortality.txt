@@ -2899,13 +2899,10 @@ Essential Amino Acids
 There are 12 amino acids that are required by the body
 as protein building blocks, and because the body is unable to
 manufacture them, they are termed “essential amino acids.”
-If any of these “essential” amino acids are missing, from the
+If any of these “essential” amino acids are missing from the
 
 ===== Screenshot (42) =====
-ee ee ee —
-
 diet for any length of time, a specific, sometimes reversible
-
 disease will occur.
 
 Valine methionine’
@@ -2916,7 +2913,7 @@ Isoleucine Taurine
 Threonine Leucine
 
 Proteins can be broken down and used as a source of
-heat and energy. Proteins supply four kealories per gm, the
+heat and energy. Proteins supply four kcalories per gm, the
 same as using carbohydrate for fuel; however, the process is
 more biologically “ expensive” than burning carbohydrates for
 fuel (five percent of calories required to burn carbohydrates
@@ -2924,7 +2921,7 @@ and fat versus 30% calories to burn an equal amount of
 protein).
 
 * Selenium researcher, Dr. Gerhard Schrauzer, considers selenomethionine,
-the selenium analog of methionine the 13" essential amino acid.
+the selenium analog of methionine the 13th essential amino acid.
 
 Lipids
 
@@ -2999,15 +2996,15 @@ nerve cells.
 
 Cholesterol is found only in animal tissues, however,
 some similar sterols are found in plants. Ergosterol, a yeast
-sterol, is converted to vitamin D, when exposed to ultraviolet
+sterol, is converted to vitamin D2 when exposed to ultraviolet
 light. Cholesterol is converted by the intestinal mucosa
-to 7-dehydrocholesterol, the provitamin of vitamin D,,
+to 7-dehydrocholesterol, the provitamin of vitamin D3,
 cholecalciferol. This process is also carried out by the skin and
 other tissues, when exposed to ultraviolet light and sunlight.
 
 Essential Fatty Acids (EFA): Three polyunsaturated
 fatty acids, linoleic, linolenic and arachidonic acids, have
-essential fatty acid activity. Only linoleic and_ linolenic
+essential fatty acid activity. Only linoleic and linolenic
 fatty acids have been designated as essential fatty acids, as
 arachidonic acid can be synthesized from linoleic acid.
 
@@ -3038,7 +3035,7 @@ for optimal health, disease prevention and longevity, however,
 because the FDA ruled that the information was “inconclusive”
 it was deemed illegal to inform people that they could reduce
 their risk of stroke and coronary thrombosis sudden death by
-supplementing with omega-3 essential fatty acids. :
+supplementing with omega-3 essential fatty acids.
 
 To make a long story short, Wellness Lifestyles,
 Inc (Wallach) filed a petition for an Amended Health
@@ -3058,7 +3055,7 @@ diet. They are essential for metabolic processes within the
 cell and necessary for normal growth, maintenance and
 longevity. Deficiencies of many vitamins during pregnancy
 can result in catastrophic birth defects (neural tube defects,
-mental retardation, muscular dystrophy, cycstic fibrosis, cleft
+mental retardation, muscular dystrophy, cystic fibrosis, cleft
 lip, cleft palate, heart defects, etc.).
 
 Many vitamins act as coenzymes or a prosthetic group
@@ -3222,7 +3219,7 @@ seborrheic dermatitis, mucus membrane lesions, peripheral
 neuritis, ataxia, hyperacusis, hyperirritability, altered mobility
 and alertness, abnormal head movements and convulsions.
 
-Treatment of tuberculosis patients with Isonazid
+Treatment of tuberculosis patients with Isoniazid
 produces an antagonistic reaction against pyridoxine function
 which then results in the classical symptoms of deficiency.
 
@@ -3230,7 +3227,7 @@ which then results in the classical symptoms of deficiency.
 trimester of pregnancy is thought to be due to pyridoxine
 deficiency.
 
-Fifteento 20 percentof women taking oralcontraceptives
+Fifteen to 20 percent of women taking oral contraceptives
 show the symptoms of pyridoxine deficiency manifested by
 malaise, depression and glucose intolerance.
 
