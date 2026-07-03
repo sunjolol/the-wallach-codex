@@ -1803,6 +1803,22 @@
       "lets-play-doctor"
     ]
   },
+  "cholesterol": {
+    "display_name": "Cholesterol",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-IMMORT-000054"
+      ]
+    },
+    "conditions_treated": [
+      "low_libido",
+      "menopause"
+    ],
+    "books_cited": [
+      "immortality"
+    ]
+  },
   "chondroitin": {
     "display_name": "Chondroitin",
     "claim_count": 1,

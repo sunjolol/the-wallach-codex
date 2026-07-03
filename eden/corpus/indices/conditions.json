@@ -1182,7 +1182,7 @@
   },
   "asthma": {
     "display_name": "Asthma",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000053"
@@ -1194,6 +1194,9 @@
         "WAL-CLM-EPIGEN-000099",
         "WAL-CLM-RARE-000172",
         "WAL-CLM-RARE-000176"
+      ],
+      "definitions": [
+        "WAL-CLM-IMMORT-000053"
       ],
       "protocols": [
         "WAL-CLM-LETS-000147",
@@ -1221,6 +1224,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -3449,13 +3453,16 @@
   },
   "convulsions": {
     "display_name": "Convulsions",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000032",
         "WAL-CLM-EPIGEN-000098",
         "WAL-CLM-EPIGEN-000099",
         "WAL-CLM-EPIGEN-000108"
+      ],
+      "definitions": [
+        "WAL-CLM-IMMORT-000053"
       ],
       "protocols": [
         "WAL-CLM-LETS-000233",
@@ -3467,6 +3474,8 @@
       "chromium",
       "magnesium",
       "manganese",
+      "omega-3",
+      "omega-6",
       "vitamin-b6",
       "vitamin-d"
     ],
@@ -3480,6 +3489,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor"
     ]
   },
@@ -4653,7 +4663,7 @@
   },
   "eczema": {
     "display_name": "Eczema",
-    "claim_count": 14,
+    "claim_count": 15,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000111"
@@ -4669,6 +4679,9 @@
         "WAL-CLM-LETS-000021",
         "WAL-CLM-LETS-000044",
         "WAL-CLM-RARE-000240"
+      ],
+      "definitions": [
+        "WAL-CLM-IMMORT-000053"
       ],
       "protocols": [
         "WAL-CLM-LETS-000148",
@@ -4720,6 +4733,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -5022,17 +5036,22 @@
   },
   "failure_to_thrive": {
     "display_name": "Failure To Thrive",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000031",
         "WAL-CLM-EPIGEN-000041"
+      ],
+      "definitions": [
+        "WAL-CLM-IMMORT-000053"
       ],
       "protocols": [
         "WAL-CLM-LETS-000270"
       ]
     },
     "essentials_involved": [
+      "omega-3",
+      "omega-6",
       "vitamin-a",
       "vitamin-b9"
     ],
@@ -5041,6 +5060,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor"
     ]
   },
@@ -6467,7 +6487,7 @@
   },
   "immune_depression": {
     "display_name": "Immune Depression",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000027"
@@ -6478,6 +6498,9 @@
         "WAL-CLM-EPIGEN-000038",
         "WAL-CLM-EPIGEN-000046"
       ],
+      "definitions": [
+        "WAL-CLM-IMMORT-000053"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000311"
       ]
@@ -6485,6 +6508,8 @@
     "essentials_involved": [
       "flavonoids",
       "germanium",
+      "omega-3",
+      "omega-6",
       "selenium",
       "silver",
       "vitamin-a",
@@ -7425,7 +7450,7 @@
   },
   "learning_disabilities": {
     "display_name": "Learning Disabilities",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000018"
@@ -7434,6 +7459,9 @@
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000107",
         "WAL-CLM-RARE-000302"
+      ],
+      "definitions": [
+        "WAL-CLM-IMMORT-000053"
       ],
       "prognosis": [
         "WAL-CLM-RARE-000215"
@@ -7446,6 +7474,7 @@
       "chromium",
       "copper",
       "omega-3",
+      "omega-6",
       "vitamin-b3",
       "zinc"
     ],
@@ -7729,17 +7758,23 @@
   },
   "low_libido": {
     "display_name": "Low Libido",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000176"
+      ],
+      "definitions": [
+        "WAL-CLM-IMMORT-000054"
       ]
     },
     "essentials_involved": [
       "manganese"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "cholesterol"
+    ],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
@@ -8042,7 +8077,7 @@
   },
   "menopause": {
     "display_name": "Menopause",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000068",
@@ -8050,6 +8085,9 @@
       ],
       "contraindications": [
         "WAL-CLM-DDDL-000091"
+      ],
+      "definitions": [
+        "WAL-CLM-IMMORT-000054"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000092",
@@ -8063,6 +8101,7 @@
     ],
     "other_substances_involved": [
       "betaine-hcl",
+      "cholesterol",
       "estrogen-patch",
       "ladys-mantle",
       "motherwort",
@@ -8071,6 +8110,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "immortality",
       "lets-play-doctor"
     ]
   },
