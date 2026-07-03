@@ -3382,8 +3382,11 @@
     "display_name": "Barium",
     "canon_slug": "barium",
     "category": "mineral",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-IMMORT-000044"
+      ],
       "mechanism": [
         "WAL-CLM-EPIGEN-000069",
         "WAL-CLM-RARE-000100"
@@ -3394,6 +3397,7 @@
     "interacts_with": [],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },
@@ -3401,9 +3405,10 @@
     "display_name": "Beryllium",
     "canon_slug": "beryllium",
     "category": "mineral",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "definition": [
+        "WAL-CLM-IMMORT-000045",
         "WAL-CLM-RARE-000287"
       ],
       "toxicity_sign": [
@@ -3415,6 +3420,7 @@
     "interacts_with": [],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },
@@ -3422,8 +3428,11 @@
     "display_name": "Bromine",
     "canon_slug": "bromine",
     "category": "mineral",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-IMMORT-000047"
+      ],
       "mechanism": [
         "WAL-CLM-EPIGEN-000072",
         "WAL-CLM-RARE-000103"
@@ -3434,6 +3443,7 @@
     "interacts_with": [],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },
