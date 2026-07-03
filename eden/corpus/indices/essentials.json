@@ -996,7 +996,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 95,
+    "claim_count": 96,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1007,6 +1007,7 @@
       ],
       "definition": [
         "WAL-CLM-IMMORT-000022",
+        "WAL-CLM-IMMORT-000061",
         "WAL-CLM-RARE-000105"
       ],
       "diagnostic_pattern": [

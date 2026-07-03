@@ -742,12 +742,16 @@
         "book": "immortality"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000061",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000105",
         "book": "rare-earths"
       }
     ],
     "books_repeating": 2,
-    "claim_count": 2
+    "claim_count": 3
   },
   {
     "id": "CG-0024",
