@@ -4138,8 +4138,6 @@ last 4 days.
 
 Amounts of Metallic Calcium in a 1,000 mg Tablet
 
-Jb) EE
-
 Calcium Source Mg Available
 
 Calcium gluconate 90
@@ -4159,7 +4157,7 @@ new form of minerals.
 
 The original chelating agent use was calcium EDTA, a
 man-made amino acid that was created by the Germans just
-prior to WWI to antidote arsenic and lead exposure inchemical
+prior to WWI to antidote arsenic and lead exposure in chemical
 warfare attacks (calcium EDTA is used today for intravenous
 chelation therapy to open up obstructed arteries).
 
