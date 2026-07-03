@@ -842,7 +842,7 @@
   },
   "anorexia": {
     "display_name": "Anorexia",
-    "claim_count": 26,
+    "claim_count": 27,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000268"
@@ -855,6 +855,7 @@
         "WAL-CLM-EPIGEN-000042",
         "WAL-CLM-EPIGEN-000043",
         "WAL-CLM-EPIGEN-000098",
+        "WAL-CLM-IMMORT-000082",
         "WAL-CLM-LETS-000003",
         "WAL-CLM-LETS-000010",
         "WAL-CLM-LETS-000011",
@@ -882,6 +883,7 @@
     "essentials_involved": [
       "biotin",
       "calcium",
+      "cobalt",
       "iron",
       "lithium",
       "magnesium",
@@ -909,6 +911,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -1691,11 +1694,12 @@
   },
   "birth_defects": {
     "display_name": "Birth Defects",
-    "claim_count": 27,
+    "claim_count": 28,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000002",
         "WAL-CLM-IMMORT-000032",
+        "WAL-CLM-IMMORT-000080",
         "WAL-CLM-RARE-000015",
         "WAL-CLM-RARE-000016",
         "WAL-CLM-RARE-000044",
@@ -1732,6 +1736,7 @@
     "essentials_involved": [
       "aluminum",
       "calcium",
+      "cobalt",
       "copper",
       "magnesium",
       "selenium",
@@ -2287,6 +2292,22 @@
       "lets-play-doctor"
     ]
   },
+  "bush_sickness": {
+    "display_name": "Bush Sickness",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-IMMORT-000082"
+      ]
+    },
+    "essentials_involved": [
+      "cobalt"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "immortality"
+    ]
+  },
   "calcium_deposits": {
     "display_name": "Calcium Deposits",
     "claim_count": 2,
@@ -2807,11 +2828,14 @@
   },
   "celiac_disease": {
     "display_name": "Celiac Disease",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000030",
         "WAL-CLM-IMMORT-000068"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-IMMORT-000083"
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000082"
@@ -2822,6 +2846,7 @@
     },
     "essentials_involved": [
       "calcium",
+      "cobalt",
       "magnesium"
     ],
     "other_substances_involved": [
@@ -3992,6 +4017,22 @@
       "epigenetics",
       "lets-play-doctor",
       "rare-earths"
+    ]
+  },
+  "demyelination": {
+    "display_name": "Demyelination",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-IMMORT-000083"
+      ]
+    },
+    "essentials_involved": [
+      "cobalt"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "immortality"
     ]
   },
   "dental_calculus": {
@@ -6417,14 +6458,16 @@
   },
   "hypochlorhydria": {
     "display_name": "Hypochlorhydria",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-IMMORT-000068"
+        "WAL-CLM-IMMORT-000068",
+        "WAL-CLM-IMMORT-000081"
       ]
     },
     "essentials_involved": [
-      "calcium"
+      "calcium",
+      "cobalt"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -9847,7 +9890,7 @@
   },
   "pernicious_anemia": {
     "display_name": "Pernicious Anemia",
-    "claim_count": 4,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000115"
@@ -9855,6 +9898,8 @@
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000040",
         "WAL-CLM-EPIGEN-000077",
+        "WAL-CLM-IMMORT-000082",
+        "WAL-CLM-IMMORT-000083",
         "WAL-CLM-RARE-000238"
       ]
     },
@@ -9865,6 +9910,7 @@
     "other_substances_involved": [],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },

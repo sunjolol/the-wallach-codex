@@ -1400,16 +1400,24 @@
     "display_name": "Cobalt",
     "canon_slug": "cobalt",
     "category": "mineral",
-    "claim_count": 5,
+    "claim_count": 11,
     "claims_by_kind": {
       "deficiency_sign": [
-        "WAL-CLM-EPIGEN-000077"
+        "WAL-CLM-EPIGEN-000077",
+        "WAL-CLM-IMMORT-000082",
+        "WAL-CLM-IMMORT-000083"
+      ],
+      "definition": [
+        "WAL-CLM-IMMORT-000079"
       ],
       "dose": [
+        "WAL-CLM-IMMORT-000084",
         "WAL-CLM-RARE-000014"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000044",
+        "WAL-CLM-IMMORT-000080",
+        "WAL-CLM-IMMORT-000081",
         "WAL-CLM-RARE-000114",
         "WAL-CLM-RARE-000115"
       ]
@@ -1417,6 +1425,12 @@
     "deficiency_signs": [],
     "conditions_treated": [
       "anemia",
+      "anorexia",
+      "birth_defects",
+      "bush_sickness",
+      "celiac_disease",
+      "demyelination",
+      "hypochlorhydria",
       "pernicious_anemia"
     ],
     "interacts_with": [
@@ -1425,6 +1439,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },

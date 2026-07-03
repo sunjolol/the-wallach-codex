@@ -5858,54 +5858,49 @@ Cobalt is essential for all forms of life including blue-green algae, some bacte
 birds, reptiles, amphibians and mammals including man.
 Cobalt functions as a cofactor and an activator for enzymes,
 “fixes” nitrogen during amino acid production, and a single
-cobalt atom is the central metal component of vitamin B,,,
+cobalt atom is the central metal component of vitamin B12,
 which itself is a cofactor and activator (cobamide coenzymes)
 for several essential enzymes.
 
-B,, cobalt is chelated in a large tetrapyrrole ring
+B12 cobalt is chelated in a large tetrapyrrole ring
 similar to the porphyrin ring found in hemoglobin (iron) and
-chlorophyll (magnesium). The original B,, molecule isolated
+chlorophyll (magnesium). The original B12 molecule isolated
 in the laboratory contained a cyanide group, thus the name
-cy anocobalamine. There are several different cobalamine
-compounds that have B,, activity, with cyanocobalamine and
+cyanocobalamine. There are several different cobalamine
+compounds that have B12 activity, with cyanocobalamine and
 hydroxycobalamine being the most active.
 
-Vitamin B,, is a red crystalline substance that is water
+Vitamin B12 is a red crystalline substance that is water
 soluble. The red color is due to the cobalt atom in the molecule.
-Vitamin B,, is slowly deactivated by exposure to acid, alkali,
+Vitamin B12 is slowly deactivated by exposure to acid, alkali,
 light, and oxidizing or reducing substances. About 30% of
-B,, activity is lost during cooking (electric, gas, microwave,
+B12 activity is lost during cooking (electric, gas, microwave,
 wood, charcoal, etc.).
 
-In 1948 B,, isolated from liver extracts and
+In 1948 B12 was isolated from liver extracts and
 demonstrated anti-pernicious anemia activity. The essentiality
 of cobalt is unusual in that the requirement is for a cobalt
 
-was
-
-
- 
-
-complex known as cyanocobalamine or vitamin B,,. A pure
+complex known as cyanocobalamine or vitamin B12. A pure
 cobalt requirement is only found in some bacteria and algae
-and the need for B,, cobalt is thought by some to represent a
+and the need for B12 cobalt is thought by some to represent a
 symbiotic relationship between microbes which generate and
-manufacture B,, from elemental cobalt and vertebrates that
-require B..,.
+manufacture B12 from elemental cobalt and vertebrates that
+require B12.
 
 Ruminants (i.e. cows, sheep, goats, deer, antelope,
 buffalo, giraffe, etc.) can use elemental cobalt because the
-microbes anethice x and digesting plant material in their first
-stomach (rumen) convert elemental cobalt into vitamin B,,,
+microbes fermenting and digesting plant material in their first
+stomach (rumen) convert elemental cobalt into vitamin B12,
 which the animal then uses.
 
-Carnivores can get their B,, from their ruminant prey
+Carnivores can get their B12 from their ruminant prey
 by consuming stomach contents, liver, bone, and muscle from
 their kills.
 
 Poultry, lagomorphs (rabbits and hares), and rodents
 actively eat feces during the night (coprophagy) and in the
-process obtain vitamin B,, that has been manufactured by
+process obtain vitamin B12 that has been manufactured by
 intestinal microorganisms.
 
 Metallic cobalt itself is absorbed at the rate of 20 to
@@ -5914,33 +5909,32 @@ in the stomach and the stomach pH is 2.0 or less. Intrinsic
 factor is a mucoprotein enzyme known as Castle’s intrinsic
 factor and is part of normal stomach secretions. If a person
 has hypochlorhydria (low stomach acid- usually a NaCl
-deficiency) the intrinsic factor will not work and B,, cobalt is
-not absorbed - this is why doctors frequently give B,, shots
+deficiency) the intrinsic factor will not work and B12 cobalt is
+not absorbed - this is why doctors frequently give B12 shots
 to older people on salt restricted diets. Sublingual (under the
-tongue) and oral spray B,, is available. Plant derived cobalt is
+tongue) and oral spray B12 is available. Plant derived cobalt is
 very bioavailable; however, because of low salt diets and cobalt
-depleted soils, vegetarians frequently have B,, deficiencies.
+depleted soils, vegetarians frequently have B12 deficiencies.
 
-The B,, intrinsic factor complex is primarily absorbed in
+The B12 intrinsic factor complex is primarily absorbed in
 the terminal small intestine or ileum. Calcium is required for
-the B,, to cross from the intestine into the blood stream as well
-as an ‘active participation (active transport) by intestinal cells.
+the B12 to cross from the intestine into the blood stream as well
+as an active participation (active transport) by intestinal cells.
 Simple diffusion can account for only one to three percent of
 the vitamin’s absorption. There is an enterohepatic (intestine
 
 ===== Screenshot (77) =====
  
 
-ee
-direct to the liver) circulation of vitamin B,, that recycles B,,
+direct to the liver) circulation of vitamin B12 that recycles B12
 from bile and other intestinal secretions which explains why
-B,, deficiency in vegans may not appear for five to ten years
+B12 deficiency in vegans may not appear for five to ten years
 after giving up meat.
 
-The maximum storage level of B,, is 2mg which is slowly
-released to the bone marrow as needed. Excess intake of B,,
+The maximum storage level of B12 is 2 mg which is slowly
+released to the bone marrow as needed. Excess intake of B12
 above the body’s storage capacity is shed in the urine (expensive
-urine). Vitamin B,,/cobalt joins with folic acid, choline, and
+urine). Vitamin B12/cobalt joins with folic acid, choline, and
 the amino acid methionine to transfer single carbon groups
 (methyl groups) in the synthesis of the raw material to make
 RNA and the synthesis of DNA from RNA. DNA and RNA
@@ -5949,7 +5943,7 @@ of preconception nutrition to prevent birth defects. Growth,
 myelin formation (converts cholesterol into the insulating
 material myelin found around nerves in the brain, spinal
 cord, and large nerve trunks), and red blood cell synthesis are
-dependent on B,,. Cobalt is also required as a necessary cofactor
+dependent on B12. Cobalt is also required as a necessary cofactor
 for the production of the thyroid hormone thyroxin.
 
 The discovery of the essentiality of cobalt came from
@@ -5959,9 +5953,9 @@ sheep from Australia and New Zealand. It was observed that
 by cobalt supplements. Bush sickness was characterized by
 emaciation (unsupplemented vegans), dull stare, listless
 and starved look, pale mucus membranes, anorexia, and
-pernicious anemia (macrocytic/ hypochromic).
+pernicious anemia (macrocytic/hypochromic).
 
-In humans, a failure to absorb B,,/cobalt results in a
+In humans, a failure to absorb B12/cobalt results in a
 deficiency disease. This can result from a surgical removal
 of parts of the stomach (eliminates zones of intrinsic factor
 production), or surgical removal of the ileum portion of
@@ -5970,7 +5964,7 @@ the small bowel, small intestinal diverticulae, parasites
 rye, oats and cows milk albumen), and other malabsorption
 diseases. Pernicious anemia and demyelination of the spinal
 cord and large nerve trunks are classic diseases that are the
-result of B,,/cobalt deficiency.
+result of B12/cobalt deficiency.
 
 
  
@@ -5980,10 +5974,10 @@ deficiency in animals and people who eat crops grown from
 those soils; 0.11 ppm Co in the soil prevents and cures Co
 deficiency.
 
-The human RDA for B,,/cobalt is 3 to 4 mcg per day,
-however 250 to 400 meg gives a respectable safety margin.
+The human RDA for B12/cobalt is 3 to 4 mcg per day,
+however 250 to 400 mcg gives a respectable safety margin.
 Pregnant and nursing mothers should especially take care
-to supplement with the optimum levels of B,,. A baby being
+to supplement with the optimum levels of B12. A baby being
 nursed by a deficient mother has their congenital deficiency
 extended over a longer period of time, which can result in a
 serious and permanent form of nerve damage.
@@ -5991,7 +5985,7 @@ serious and permanent form of nerve damage.
 Cobalt excess in man (20 to 30 mg/day) may create an
 accelerated erythropoiesis (RBC -red blood cell- production)
 by stimulating an increased production of the kidney hormone
-erythropoiten.
+erythropoietin.
 
 Cr-Chromium is found in igneous rocks at 100 ppm,
 shale at 90 ppm, sandstone at 35 ppm, limestone at 11 ppm,
