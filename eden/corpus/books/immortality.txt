@@ -4270,7 +4270,7 @@ Each one of these classifications interacts with the
 others to give colloids their unique qualities. The interesting
 thing about colloids is that they remain heterogeneous, multiphasic and insoluble at different concentrations as long as a
 larger number if not all of the particles are within a range of
-sizes of colloids (1n to 100n) known as “nano-technology.”
+sizes of colloids (1nm to 100nm) known as “nano-technology.”
 
 The molecular groups or particles of the colloid solute
 carry a resultant electrical charge, generally the same sign
@@ -4319,10 +4319,7 @@ absorbed food and nutrients are absorbed into the human
 body by active transport rather than by a passive trip through
 a semi-permeable membrane.
 
-Colloidal mineral supplements
-colloids are found in four different forms:
-
-and commercial
+Colloidal mineral supplements and commercial colloids are found in four different forms:
 
 1. Unprotected colloids are made of bare “rock flour,”
 this is the form of inorganic colloids found in the sea bed
@@ -4333,16 +4330,13 @@ population of bacteria and fungi.
 
 2. The second type of mineral colloid is found in living
 systems of bacteria, fungi, green plants (food crops), animals
-and humans and is coated with a water-loving (hydrophyllic)
+and humans and is coated with a water-loving (hydrophilic)
 substance such as gelatin, albuminoids or collagen. This
 coating protects the now “organic mineral colloid” and allows
 it to be a crystalloid for absorption, storage and physiological
 uses and thus maximizing its bioavailability up to 98%.
 
-3. The third type of organic mineral colloids has a
-
-ee
-protective coating of carbon with a molecular chain length
+3. The third type of organic mineral colloids has a protective coating of carbon with a molecular chain length
 of 10 to 12 carbon atoms. This type of colloid is also found
 in bacteria, fungi, plants (including some forms of petrified
 wood), animals and humans and is thought to be the most
@@ -4350,7 +4344,7 @@ stable form of natural organic mineral colloid.
 
 4. The fourth type of mineral colloid is not found in
 nature, but rather is manufactured industrially by coating the
-metallic colloid with sulfated castor oil (lipophyllic or fat or
+metallic colloid with sulfated castor oil (lipophilic or fat or
 oil loving) to form commercial detergents.
 
 The following list of elements and minerals is presented
