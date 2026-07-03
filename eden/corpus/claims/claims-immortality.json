@@ -2205,6 +2205,431 @@
       "extracted_at": "2026-07-03T20:04:26+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000065",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Calcium is the most abundant mineral in the human body. The average man holds about 1,200 grams and the average woman about 1,000 grams — roughly 2% of adult body weight, and up to 39% of the body's total mineral reserves (the ash left after cremation). Ninety-nine percent of it sits in the bones and teeth; the remaining 1% circulates in blood, extracellular fluid and inside cells, where it acts as a cofactor and activator for numerous enzyme systems. In his words: \"Calcium is the most abundant mineral in the human body. The average male has 1,200 grams and the average female has 1,000 grams. Calcium makes up two percent of the adult body weight (water makes up 65 to 75%). Calcium also composes up to 39% of the total mineral reserves (ash after cremation). Ninety-nine percent of body calcium is found in bones and teeth. The other one percent is found in the blood, extracellular fluids, and within cells where it is a cofactor and activator for numerous enzyme systems.\"",
+      "verbatim": "Calcium is the most abundant mineral in the human\nbody. The average male has 1,200 grams and the average\nfemale has 1,000 grams. Calcium makes up two percent of the\nadult body weight (water makes up 65 to 75%). Calcium also\ncomposes up to 39% of the total mineral reserves (ash after\ncremation). Ninety-nine percent of body calcium is found in\nbones and teeth. The other one percent is found in the blood,\nextracellular fluids, and within cells where it is a cofactor and\nactivator for numerous enzyme systems.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 119,
+        "screenshot": 72,
+        "kindle_location": null,
+        "char_offset": 214742
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "calcium",
+        "distribution",
+        "physiology"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T20:53:49+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000066",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In bone, calcium is stored as hydroxyapatite salts (calcium phosphate plus calcium carbonate) laid down in a crystal lattice bound to a protein scaffold called the \"bone matrix.\" Wallach offers a simple kitchen demonstration of that matrix: soak a chicken \"drumstick\" bone in a quart of vinegar for two weeks and the acid leaches the calcium out, leaving the flexible protein framework behind. In his words: \"in a classic crystal structure bound to a protein framework called “bone matrix.” To extract the calcium from a bone and reveal the protein matrix, put a chicken “drumstick” bone in a quart of vinegar for two weeks and the calcium will be leached out of the bone leaving the protein matrix.\"",
+      "verbatim": "in a classic crystal structure bound to a protein framework\ncalled “bone matrix.”\n\nTo extract the calcium from a bone and reveal the\nprotein matrix, put a chicken “drumstick” bone in a quart of\nvinegar for two weeks and the calcium will be leached out of\nthe bone leaving the protein matrix.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 120,
+        "screenshot": 73,
+        "kindle_location": null,
+        "char_offset": 215402
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "calcium",
+        "bone-matrix",
+        "hydroxyapatite",
+        "demonstration"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T20:53:49+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000067",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Beyond its structural role, calcium is a working cofactor throughout the body. It is required to release energy from ATP (adenosine triphosphate) for muscle contraction, and it drives the blood-clotting cascade: ionized calcium triggers platelets to release thromboplastin and converts prothrombin to thrombin, which turns fibrinogen into fibrin — the protein web that traps red blood cells to form a clot. Calcium also governs transport across cell and organelle membranes, the release of neurotransmitters at synapses, the secretion and effects of hormones and enzymes, and the rate and strength of the heartbeat, muscle tone and nerve responsiveness. In his words: \"In addition to being a major structural mineral, Ca is also required as a cofactor for the release of energy from ATP for muscular contraction, and blood clotting. In the blood clotting process, ionized Ca stimulates the release of thromboplastin from platelets and converts prothrombin to thrombin. Thrombin helps to convert fibrinogen to fibrin, and fibrin is the protein web that traps red blood cells to create blood clots.\"",
+      "verbatim": "In addition to being a major structural mineral, Ca is also\nrequired as a cofactor for the release of energy from ATP for\nmuscular contraction, and blood clotting. In the blood clotting\nprocess, ionized Ca stimulates the release of thromboplastin\nfrom platelets and converts prothrombin to thrombin. Thrombin\nhelps to convert fibrinogen to fibrin, and fibrin is the protein\nweb that traps red blood cells to create blood clots.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 120,
+        "screenshot": 73,
+        "kindle_location": null,
+        "char_offset": 215886
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "calcium",
+        "clotting-cascade",
+        "cofactor",
+        "physiology"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T20:53:49+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000068",
+      "kind": "mechanism",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "celiac_disease",
+        "lactose_intolerance",
+        "hypochlorhydria"
+      ],
+      "symptoms": [],
+      "claim_text": "How well calcium is absorbed depends heavily on its form and the gut environment. It is taken up mainly in the duodenum while the contents are still acidic; once the intestine turns alkaline, absorption falls off. Plain metallic calcium may be only 1-3% absorbed, whereas an organically bound, plant-derived colloidal or water-soluble chelated form can reach up to 98%. Wallach lists the causes of a calcium deficiency as: too little vitamin D; low stomach acid (hypochlorhydria, which can follow a salt-restricted diet); lactose intolerance; celiac disease; a high-fat or low-protein diet; and heavy fiber and phytate intake. Phytic acid (in grain bran, oatmeal, whole wheat) and oxalic acid (in rhubarb, spinach, chard, mustard greens) each bind calcium into insoluble, unabsorbable salts, and excess sugar, carbonation and caffeine leach stored calcium from the bones. In his words: \"Causes of a calcium deficiency can include, a deficiency or lack of vitamin D; the lack of stomach acid or hypochlorhydria can result from a restricted NaCl (salt) intake; lactose intolerance; celiac disease; high fat diet; low protein diet; and a high fiber and phytate consumption.\"",
+      "verbatim": "Causes of a calcium deficiency can include, a\ndeficiency or lack of vitamin D; the lack of stomach acid\nor hypochlorhydria can result from a restricted NaCl (salt)\nintake; lactose intolerance; celiac disease; high fat diet; low\nprotein diet; and a high fiber and phytate consumption.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 121,
+        "screenshot": 73,
+        "kindle_location": null,
+        "char_offset": 217245
+      },
+      "dose": null,
+      "tags": [
+        "calcium",
+        "absorption",
+        "bioavailability",
+        "malabsorption",
+        "colloidal-minerals"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T20:53:49+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000069",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The body holds blood calcium within a tight range using two hormones. Parathormone (from the parathyroid glands) and calcitonin (from the thyroid) keep serum calcium at 8.5-10.5 mg/dL, largely by drawing on the calcium reserves in bone. Parathormone raises blood calcium — pulling it from bone, making the kidney retain more, and making the gut absorb more efficiently; when blood calcium climbs above 10.5 mg/dL from too much parathyroid activity, calcitonin reduces how much calcium is released from the bones. In his words: \"Under optimal conditions, parathormone secreted by the parathyroid gland and calcitonin secreted by the thyroid gland, maintain a serum calcium of 8.5 to 10.5 mg% by drawing on calcium reserves from the bones.\"",
+      "verbatim": "Under optimal conditions, parathormone secreted by\nthe parathyroid gland and calcitonin secreted by the thyroid\ngland, maintain a serum calcium of 8.5 to 10.5 mg% by drawing\non calcium reserves from the bones.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 121,
+        "screenshot": 73,
+        "kindle_location": null,
+        "char_offset": 218452
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "calcium",
+        "parathyroid",
+        "calcitonin",
+        "homeostasis"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T20:53:49+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000070",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Several common features of the modern diet quietly raise the body's calcium requirement — an increased calcium \"cost.\" Overloading on fiber, salt and phosphates (soft drinks) all force more calcium out: urinary calcium loss rose from 96 mg to 148 mg per day when food was heavily salted, and doubling phosphate intake raised urinary calcium output by 50%. Wallach argues the industrialized diet is chronically calcium-poor and phosphorus-rich, so the ideal calcium-to-phosphorus (Ca:P) ratio of 2:1 is impossible to hit by eating alone (you would have to eat 25 pounds of broccoli for every 16 oz T-bone steak); the only practical route is to avoid high-phosphorus foods and supplement with plant-derived colloidal and chelated calcium. In his words: \"Other nutrients that are commonly found in the American diet can aggravate the national calcium deficiency crisis. Diets rich with an overabundance of fiber, salt and phosphates (soft drinks) result in an increased calcium “cost.” In effect, these foods increase the dietary requirements for calcium. Urinary calcium loss increased from 96 mg per day to 148 mg per day when food was excessively salted. As phosphate intake is doubled, the output of urinary calcium increases by 50%.\"",
+      "verbatim": "Other nutrients that are commonly found in the\nAmerican diet can aggravate the national calcium deficiency\ncrisis. Diets rich with an overabundance of fiber, salt and\nphosphates (soft drinks) result in an increased calcium “cost.”\nIn effect, these foods increase the dietary requirements for\ncalcium. Urinary calcium loss increased from 96 mg per day\nto 148 mg per day when food was excessively salted. As\n\n\n \n\nphosphate intake is doubled, the output of urinary calcium\nincreases by 50%.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 118,
+        "screenshot": 72,
+        "kindle_location": null,
+        "char_offset": 212948
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "calcium",
+        "phosphorus",
+        "calcium-phosphorus-ratio",
+        "anti-nutrients"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T20:53:49+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000071",
+      "kind": "mechanism",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "hypertension"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach ties chronic calcium deficiency to high blood pressure. In 1980 McCarron and colleagues theorized that chronic calcium deficiency leads to hypertension, and more than 30 later studies supported it; serum ionized calcium runs consistently lower in people with untreated hypertension. The link is clearest in people taking in less than 500 mg of calcium a day. In salt-sensitive hypertension, a rise in blood pressure tracks with urinary calcium loss from excess salt on top of an existing calcium deficiency — and among Black and elderly white people with essential hypertension, low calcium and potassium (rather than high salt) drive the \"salt sensitivity.\" In a four-year study of 58,218 nurses, hypertension was more likely in women taking in less than 800 mg of calcium per day. In his words: \"In 1980, McCarron et al theorized that chronic calcium deficiency probably led to hypertension. More than 30 subsequent studies supported the original theory of calcium deficiency as the cause of hypertension. In addition, recent studies have shown that serum ionized calcium is consistently lower in humans with untreated hypertension.\"",
+      "verbatim": "In 1980, McCarron et al theorized that chronic calcium\ndeficiency probably led to hypertension. More than 30\nsubsequent studies supported the original theory of calcium\ndeficiency as the cause of hypertension. In addition, recent\nstudies have shown that serum ionized calcium is consistently\nlower in humans with untreated hypertension.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 121,
+        "screenshot": 73,
+        "kindle_location": null,
+        "char_offset": 218993
+      },
+      "dose": null,
+      "tags": [
+        "calcium",
+        "hypertension",
+        "mccarron",
+        "salt-sensitive",
+        "deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T20:53:49+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000072",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "kidney_stones",
+        "bone_spurs",
+        "heel_spurs",
+        "calcium_deposits",
+        "osteoporosis"
+      ],
+      "symptoms": [],
+      "claim_text": "When the body loses too much calcium in the urine — as happens in osteoporosis, an overactive parathyroid, or a diet heavy in phosphorus and phytates — that lost calcium precipitates into kidney stones, bone spurs and calcium deposits. Wallach says bone and heel spurs and calcium deposits reliably form at the insertion sites of tendons and ligaments during a raging, progressive osteoporosis, and that these spurs, deposits and the elevated blood calcium of hyperparathyroidism can be reversed and eliminated by supplementing with significant amounts of chelated and colloidal calcium. In his words: \"In cases of excess urine loss of calcium (osteoporosis, hyperactive parathyroid glands, excess dietary phosphorus and phytates, etc.), kidney stones, bone spurs and calcium deposits will develop. Bone and heel spurs and calcium deposits always develop at the sites of insertions of tendons and ligaments during a raging and progressive osteoporosis. Bone spurs, heel spurs, calcium deposits and the elevated blood calcium of hyperparathyroidism can be reversed and eliminated by supplementing with significant amounts of chelated and colloidal chelates of calcium.\"",
+      "verbatim": "In\ncases of excess urine loss of calcium (osteoporosis, hyperactive\nparathyroid glands, excess dietary phosphorus and phytates,\netc.), kidney stones, bone spurs and calcium deposits will\ndevelop.\n\nBone and heel spurs and calcium deposits always\ndevelop at the sites of insertions of tendons and ligaments\nduring a raging\nand progressive osteoporosis. Bone spurs,\nheel spurs, calcium deposits and the elevated blood calcium\nof hyperparathyroidism can be reversed and eliminated by\nsupplementing with significant amounts of chelated and\ncolloidal chelates of calcium.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 122,
+        "screenshot": 74,
+        "kindle_location": null,
+        "char_offset": 220346
+      },
+      "dose": null,
+      "tags": [
+        "calcium",
+        "deficiency",
+        "kidney-stones",
+        "bone-spurs",
+        "reversible",
+        "treatment"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T20:53:49+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000073",
+      "kind": "prognosis",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "secondary_hyperparathyroidism",
+        "hypercalcemia"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach warns that nutritional secondary hyperparathyroidism — driven by a raging calcium deficiency — raises blood calcium and makes the parathyroid glands enlarge as they strain to pull more calcium from the gut. Surgeons almost always mistake the enlarged (hypertrophied) glands for a \"tumor\" and recommend surgery; Wallach says supplementing with the right amounts of usable calcium resolves the problem rapidly and completely, and bluntly advises: DO NOT GET SURGERY. In his words: \"Nutritional secondary hyperparathyroidism, resulting from a raging calcium deficiency, produces a significant elevation in blood calcium levels. The parathyroid glands will attempt to compensate and will enlarge in an attempt to absorb more calcium from the gut. This scenario will almost always result in the surgeon calling the enlarged or hypertrophied parathyroid glands a “tumor” and they will recommend surgery. Supplementation with the appropriate amounts of usable calcium will result in a rapid and complete resolution of the problem - DO NOT GET SURGERY!\"",
+      "verbatim": "Nutritional secondary hyperparathyroidism, resulting\nfrom a raging calcium deficiency, produces a significant\nelevation in blood calcium levels. The parathyroid glands\nwill attempt to compensate and will enlarge in an attempt\nto absorb more calcium from the gut. This scenario will\nalmost always result in the surgeon calling the enlarged or\nhypertrophied parathyroid glands a “tumor” and they will\nrecommend surgery. Supplementation with the appropriate\namounts of usable calcium will result in a rapid and complete\nresolution of the problem - DO NOT GET SURGERY!",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 122,
+        "screenshot": 74,
+        "kindle_location": null,
+        "char_offset": 220913
+      },
+      "dose": null,
+      "tags": [
+        "calcium",
+        "secondary-hyperparathyroidism",
+        "avoid-surgery",
+        "treatment",
+        "deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T20:53:49+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000074",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach holds that there are no fewer than 147 deficiency diseases attributable to calcium deficiencies or imbalances, and that American diets across the board are critically deficient in calcium — so the only practical way to get enough is supplementation. He jabs at the researchers who studied the problem: instead of recommending effective calcium supplementation, they told people to eat five cups of broccoli a day (\"Try and get a kid to eat five cups of broccoli each day\"). In his words: \"There are no less than 147 deficiency diseases that can be attributed to calcium deficiencies or imbalances. The most recent clinical research clearly points out that the entire scope of American diets are critically deficient in calcium. The only practical way to obtain enough sufficient amounts of calcium is through supplementation.\"",
+      "verbatim": "There are no less than 147 deficiency diseases that can\nbe attributed to calcium deficiencies or imbalances. The most\nrecent clinical research clearly points out that the entire scope\nof American diets are critically deficient in calcium. The only\npractical way to obtain enough sufficient amounts of calcium\nis through supplementation.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 119,
+        "screenshot": 72,
+        "kindle_location": null,
+        "char_offset": 213437
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "calcium",
+        "supplementation",
+        "147-diseases",
+        "deficiency-thesis"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T20:53:49+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000075",
+      "kind": "personal_anecdote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "To make the point that calcium deficiency reaches even the famous and well-fed, Wallach lists public figures he says suffered an advanced degree of it: Pope John Paul II (fractured hip / osteoporosis), Elizabeth Taylor (osteoporosis / multiple hip-replacement surgeries), \"Bo\" Jackson (fractured hip / osteoporosis), and Bill Walton, a vegan of professional-basketball fame (osteoporosis, arthritis, fractures). In his words: \"Famous people who have suffered from an advanced degree of calcium deficiency include Pope John Paul II (fractured hip/ osteoporosis), Elizabeth Taylor (osteoporosis/ multiple hip replacement surgeries), “Bo” Jackson (fractured hip/osteoporosis), Bill Walton, a vegan of professional basketball fame (osteoporosis, arthritis, fractures), etc.\"",
+      "verbatim": "Famous people who have suffered from an advanced\ndegree of calcium deficiency include Pope John Paul II\n(fractured hip/ osteoporosis), Elizabeth Taylor (osteoporosis/\nmultiple hip replacement surgeries), “Bo” Jackson (fractured\nhip/osteoporosis), Bill Walton, a vegan of professional\nbasketball fame (osteoporosis, arthritis, fractures), etc.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 119,
+        "screenshot": 72,
+        "kindle_location": null,
+        "char_offset": 214398
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "calcium",
+        "anecdote",
+        "osteoporosis",
+        "celebrities"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T20:53:49+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000076",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "prolonged_clotting_time",
+        "arthritis",
+        "osteoporosis"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach says the most common calcium-deficiency diseases are easy to recognize, ranging from poor clotting time of the blood — noticed when you nick yourself shaving, because calcium is a cofactor in the clotting mechanism — through arthritis (which physicians treat with painkillers, anti-inflammatory drugs and surgery), to the dozens of variations of osteoporosis. In his words: \"The most common calcium deficiency diseases are easy to recognize and range from poor clotting time of the blood when you nick yourself shaving (calcium is a cofactor in the clotting mechanism), arthritis (which physicians treat with pain killers, anti-inflammatory drugs and surgery), to the dozens of variations of osteoporosis.\"",
+      "verbatim": "The most common calcium deficiency diseases are\neasy to recognize and range from poor clotting time of the\nblood when you nick yourself shaving (calcium is a cofactor\nin the clotting mechanism), arthritis (which physicians treat\nwith pain killers, anti-inflammatory drugs and surgery), to\nthe dozens of variations of osteoporosis.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 119,
+        "screenshot": 72,
+        "kindle_location": null,
+        "char_offset": 214066
+      },
+      "dose": null,
+      "tags": [
+        "calcium",
+        "deficiency",
+        "clotting",
+        "arthritis",
+        "osteoporosis"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T20:53:49+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

@@ -1084,7 +1084,7 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 31,
+    "claim_count": 32,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000050",
@@ -1101,6 +1101,7 @@
         "WAL-CLM-EPIGEN-000032",
         "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-EPIGEN-000086",
+        "WAL-CLM-IMMORT-000076",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000008",
         "WAL-CLM-LETS-000011",
@@ -1995,11 +1996,12 @@
   },
   "bone_spurs": {
     "display_name": "Bone Spurs",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000032",
         "WAL-CLM-IMMORT-000064",
+        "WAL-CLM-IMMORT-000072",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000275"
       ],
@@ -2287,10 +2289,11 @@
   },
   "calcium_deposits": {
     "display_name": "Calcium Deposits",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-IMMORT-000064"
+        "WAL-CLM-IMMORT-000064",
+        "WAL-CLM-IMMORT-000072"
       ]
     },
     "essentials_involved": [
@@ -2804,10 +2807,11 @@
   },
   "celiac_disease": {
     "display_name": "Celiac Disease",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-EPIGEN-000030"
+        "WAL-CLM-EPIGEN-000030",
+        "WAL-CLM-IMMORT-000068"
       ],
       "diagnostics": [
         "WAL-CLM-RARE-000082"
@@ -2825,6 +2829,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -5896,10 +5901,11 @@
   },
   "heel_spurs": {
     "display_name": "Heel Spurs",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-IMMORT-000064"
+        "WAL-CLM-IMMORT-000064",
+        "WAL-CLM-IMMORT-000072"
       ]
     },
     "essentials_involved": [
@@ -6237,10 +6243,13 @@
   },
   "hypercalcemia": {
     "display_name": "Hypercalcemia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-IMMORT-000064"
+      ],
+      "prognosis": [
+        "WAL-CLM-IMMORT-000073"
       ]
     },
     "essentials_involved": [
@@ -6335,9 +6344,10 @@
   },
   "hypertension": {
     "display_name": "Hypertension",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-IMMORT-000071",
         "WAL-CLM-RARE-000107"
       ],
       "deficiency_signs": [
@@ -6403,6 +6413,22 @@
     "other_substances_involved": [],
     "books_cited": [
       "rare-earths"
+    ]
+  },
+  "hypochlorhydria": {
+    "display_name": "Hypochlorhydria",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IMMORT-000068"
+      ]
+    },
+    "essentials_involved": [
+      "calcium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "immortality"
     ]
   },
   "hypoglycemia": {
@@ -7364,14 +7390,15 @@
   },
   "kidney_stones": {
     "display_name": "Kidney Stones",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000087"
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000032",
-        "WAL-CLM-IMMORT-000063"
+        "WAL-CLM-IMMORT-000063",
+        "WAL-CLM-IMMORT-000072"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000088",
@@ -7524,17 +7551,23 @@
   },
   "lactose_intolerance": {
     "display_name": "Lactose Intolerance",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IMMORT-000068"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000337"
       ]
     },
-    "essentials_involved": [],
+    "essentials_involved": [
+      "calcium"
+    ],
     "other_substances_involved": [
       "lactase"
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor"
     ]
   },
@@ -9246,7 +9279,7 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 28,
+    "claim_count": 30,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052",
@@ -9261,6 +9294,8 @@
         "WAL-CLM-EPIGEN-000031",
         "WAL-CLM-EPIGEN-000032",
         "WAL-CLM-IMMORT-000063",
+        "WAL-CLM-IMMORT-000072",
+        "WAL-CLM-IMMORT-000076",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000042",
         "WAL-CLM-RARE-000011",
@@ -10127,10 +10162,11 @@
   },
   "prolonged_clotting_time": {
     "display_name": "Prolonged Clotting Time",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-IMMORT-000064"
+        "WAL-CLM-IMMORT-000064",
+        "WAL-CLM-IMMORT-000076"
       ]
     },
     "essentials_involved": [
@@ -10983,10 +11019,13 @@
   },
   "secondary_hyperparathyroidism": {
     "display_name": "Secondary Hyperparathyroidism",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-IMMORT-000064"
+      ],
+      "prognosis": [
+        "WAL-CLM-IMMORT-000073"
       ]
     },
     "essentials_involved": [

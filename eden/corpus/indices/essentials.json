@@ -996,7 +996,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 98,
+    "claim_count": 103,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1004,6 +1004,8 @@
         "WAL-CLM-EPIGEN-000109",
         "WAL-CLM-IMMORT-000063",
         "WAL-CLM-IMMORT-000064",
+        "WAL-CLM-IMMORT-000072",
+        "WAL-CLM-IMMORT-000076",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000275"
       ],
@@ -1030,6 +1032,8 @@
         "WAL-CLM-DDDL-000052",
         "WAL-CLM-DDDL-000087",
         "WAL-CLM-IMMORT-000021",
+        "WAL-CLM-IMMORT-000068",
+        "WAL-CLM-IMMORT-000071",
         "WAL-CLM-RARE-000098",
         "WAL-CLM-RARE-000099",
         "WAL-CLM-RARE-000104",
@@ -1044,7 +1048,8 @@
         "WAL-CLM-IMMORT-000015"
       ],
       "prognosis": [
-        "WAL-CLM-DDDL-000058"
+        "WAL-CLM-DDDL-000058",
+        "WAL-CLM-IMMORT-000073"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000051",
@@ -1228,12 +1233,14 @@
       "hyperactivity",
       "hypercalcemia",
       "hypertension",
+      "hypochlorhydria",
       "indigestion",
       "insomnia",
       "joint_pain",
       "kidney_disease",
       "kidney_stones",
       "kyphosis",
+      "lactose_intolerance",
       "legg_perthes",
       "liver_disease",
       "lordosis",

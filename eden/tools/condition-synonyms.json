@@ -12,6 +12,8 @@
   "muscle_cramps": ["cramps", "muscle cramp", "leg cramps"],
   "muscle_twitches": ["twitches", "muscle twitch", "twitching"],
   "tinnitus": ["tinnitis", "ringing in the ears", "ringing in ears"],
+  "hypercalcemia": ["elevation in blood calcium", "elevated blood calcium", "high blood calcium"],
+  "prolonged_clotting_time": ["poor clotting time", "prolonged clotting", "poor blood clotting"],
   "menieres_disease": ["meneire's disease", "meniere's disease", "menieres", "meniere", "wallach's vertigo"],
   "high_cholesterol": ["elevated cholesterol", "high cholesterol", "hypercholesterolemia", "high blood cholesterol", "elevated blood cholesterol"],
   "hypertension": ["high blood pressure", "elevated blood pressure", "raised blood pressure"],
