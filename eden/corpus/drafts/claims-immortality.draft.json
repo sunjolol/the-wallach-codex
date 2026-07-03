@@ -1613,6 +1613,72 @@
       "extracted_at": "2026-07-03T16:40:16+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000049",
+      "kind": "definition",
+      "essentials": [
+        "carbon"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Carbon is the element most essential for life on Earth - Wallach calls it the center of the 'organic' world. Because carbon atoms link into long chains that form the backbone (spine) of almost every biological molecule, virtually all of the body's building blocks are carbon-based: carbohydrates, fats, amino acids, vitamins and enzymes. DNA itself is one such long carbon-chain molecule. In his words: \"Carbon functions as an essential structural element for all living organisms and organic molecules (i.e.- carbohydrates, fats, amino acids, vitamins, enzymes, etc.).\"",
+      "verbatim": "Carbon functions as an essential structural element for\nall living organisms and organic molecules (i.e.- carbohydrates,\nfats, amino acids, vitamins, enzymes, etc.).",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 109,
+        "screenshot": 67,
+        "kindle_location": null,
+        "char_offset": 198861
+      },
+      "dose": null,
+      "tags": [
+        "carbon",
+        "essential-element",
+        "structural"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T17:03:38+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000050",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Outside of nutrition, Wallach shares his personal view on climate. He is skeptical of blaming human activity for global warming - he calls humanity's share of the planet's biomass 'pitifully small' and argues that Ice Ages and warm periods have cycled naturally throughout Earth's history, so today's warming is part of that long-running cycle. His proposed remedy is simply to plant more trees, which pull carbon dioxide from the air and release oxygen and water. (Recorded as his own stance on a debated, non-health topic, outside the book's nutrition framework.) In his words: \"While many individuals and organizations, want to blame man's activities and pitifully small biomass for “global warming,” we must look to the past for the cycles of Ice Ages and “global warming” that have taken place over and over through the millennia to understand the cyclic nature of these events.\"",
+      "verbatim": "While many individuals and organizations, want to\nblame man’s activities and pitifully small biomass for “global\nwarming,” we must look to the past for the cycles of Ice Ages and\n“global warming” that have taken place over and over through\nthe millennia to understand the cyclic nature of these events.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 109,
+        "screenshot": 67,
+        "kindle_location": null,
+        "char_offset": 198371
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "search-topic:global-warming",
+        "carbon",
+        "carbon-dioxide",
+        "climate"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-03T17:03:38+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

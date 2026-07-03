@@ -30,8 +30,11 @@
     "display_name": "Carbon",
     "canon_slug": "carbon",
     "category": "mineral",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-IMMORT-000049"
+      ],
       "mechanism": [
         "WAL-CLM-EPIGEN-000073"
       ]
@@ -40,7 +43,8 @@
     "conditions_treated": [],
     "interacts_with": [],
     "books_cited": [
-      "epigenetics"
+      "epigenetics",
+      "immortality"
     ]
   },
   "nitrogen": {
