@@ -766,6 +766,27 @@
       "term": "cc",
       "plain": "cubic centimeter -- a unit of volume equal to one milliliter (mL).",
       "category": "unit"
+    },
+    {
+      "term": "tinnitus",
+      "plain": "ringing or buzzing in the ears",
+      "category": "medical",
+      "aliases": [
+        "tinnitis"
+      ]
+    },
+    {
+      "term": "osteofibrosis",
+      "plain": "replacement of normal bone with fibrous scar tissue",
+      "category": "medical"
+    },
+    {
+      "term": "myelofibrosis",
+      "plain": "scarring of the bone marrow that crowds out normal blood-cell production",
+      "category": "medical",
+      "aliases": [
+        "myelosclerosis"
+      ]
     }
   ]
 }
