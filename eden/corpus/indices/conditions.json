@@ -9392,34 +9392,15 @@
       "rare-earths"
     ]
   },
-  "peptic_ulcer": {
-    "display_name": "Peptic Ulcer",
-    "claim_count": 1,
-    "claims_by_role": {
-      "protocols": [
-        "WAL-CLM-LETS-000397"
-      ]
-    },
-    "essentials_involved": [],
-    "other_substances_involved": [
-      "alfalfa",
-      "cabbage-juice",
-      "flax",
-      "german-chamomile",
-      "licorice"
-    ],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
   "peptic_ulcers": {
     "display_name": "Peptic Ulcers",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000101"
       ],
       "protocols": [
+        "WAL-CLM-LETS-000397",
         "WAL-CLM-LETS-000458",
         "WAL-CLM-RARE-000102"
       ],
@@ -9438,7 +9419,11 @@
     ],
     "other_substances_involved": [
       "alfalfa",
-      "glutamine"
+      "cabbage-juice",
+      "flax",
+      "german-chamomile",
+      "glutamine",
+      "licorice"
     ],
     "books_cited": [
       "lets-play-doctor",

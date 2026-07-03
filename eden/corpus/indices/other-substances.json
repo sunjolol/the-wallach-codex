@@ -151,7 +151,6 @@
       "heart_attack",
       "miscarriage",
       "nosebleeds",
-      "peptic_ulcer",
       "peptic_ulcers",
       "rheumatoid_arthritis"
     ],
@@ -1237,7 +1236,7 @@
       ]
     },
     "conditions_treated": [
-      "peptic_ulcer"
+      "peptic_ulcers"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -3072,7 +3071,7 @@
       ]
     },
     "conditions_treated": [
-      "peptic_ulcer",
+      "peptic_ulcers",
       "sore_throat"
     ],
     "books_cited": [
@@ -3406,7 +3405,7 @@
       "gingivitis",
       "hemorrhoids",
       "nasal_catarrh",
-      "peptic_ulcer",
+      "peptic_ulcers",
       "periodontal_disease",
       "psoriasis",
       "sore_throat",
@@ -4665,7 +4664,7 @@
       "jaundice",
       "kidney_stones",
       "liver_disease",
-      "peptic_ulcer",
+      "peptic_ulcers",
       "rheumatoid_arthritis"
     ],
     "books_cited": [

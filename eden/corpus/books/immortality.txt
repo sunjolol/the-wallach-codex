@@ -5363,7 +5363,7 @@ vitamins and flavanol vitamins.
 
 Flavanols found in dark chocolate, participate in
 maintaining the strength of capillaries, lower blood pressure,
-improve blood flow via increased production of nitric acid
+improve blood flow via increased production of nitric oxide
 (a molecule used by the vascular endothelium to signal
 the surrounding muscle to relax) and have vitamin C-like
 functions.
