@@ -405,7 +405,8 @@
   ],
   "explosive_outbursts": [
     "explosive behavior",
-    "explosive outburst"
+    "explosive outburst",
+    "bad seeds"
   ],
   "criminal_behavior": [
     "bad seed"
@@ -522,5 +523,8 @@
   ],
   "minamata_disease": [
     "minamata disaster"
+  ],
+  "low_back_pain": [
+    "low back"
   ]
 }

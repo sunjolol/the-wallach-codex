@@ -22698,38 +22698,24 @@ Table 11-10. Common Calcium Deficiency Diseases.
 
 Disease Complicating factors
 
-Osteoporosis (kyphosis, Dowagers Hump, lordosis, Legg- Deficiencies of: Mg, B, Cu, S, Se,
-Perthe’s, spontaneous fractures) St, Ac, Fl; Excess of: Fl, P, Cd, fat.
-
-Receeding gums (osteoporosis of facial bones and jaw bone) Same as osteoporosis
-Osteomalacia (failure to mineralize the protein bone matrix) Same as osteoporosis (in children)
-Arthritis ( Degenerative, osteo, spondylitis) Same as osteoporosis
-Hypertension (High blood pressure) Same as osteoporosis
-Insomnia (inability to get restfull sleep) Same as osteoporosis
-Kidney stones Same as osteoporosis
-
-Bone spurs (heel spurs or anywhere tendons or ligaments attach Same as osteoporosis
-to the bone)
-
-Calcium deposits (anywhere tendons or ligaments attach to the Same as osteoporosis
-bone)
-
-Cramps and twitches (foot, calf, eye lids, hamstring muscles, etc.) Same as osteoporosis
-PMS (emotional and physical symptoms) Same as osteoporosis
-Low back (sciatica, muscle spasm, disc problems) Same as osteoporosis
-
-Bell's Palsy (drooping facial muscle because of strangulated facial Same as osteoporosis
-nerve)
-
-NSH (nutritional secondary hyperparathyroidism) pane abeiieners
-xcess of Vit. D al
-
-Osteofibrosis (enlargement of bones with fibrous scar tissue) Same as NSH
-
-Tetany (convulsions, usually in infants fed undiluted cows milk Same as NSH, excess P
-which contains more phosphorus than calcium)
-
-Panic attacks (hyperirritability) Same as osteoporosis
+Osteoporosis (kyphosis, Dowagers Hump, lordosis, Legg-Perthe's, spontaneous fractures)
+Receding gums (osteoporosis of facial bones and jaw bone)
+Osteomalacia (failure to mineralize the protein bone matrix)
+Arthritis (Degenerative, osteo, spondylitis)
+Hypertension (High blood pressure)
+Insomnia (inability to get restful sleep)
+Kidney stones
+Bone spurs (heel spurs or anywhere tendons or ligaments attach to the bone)
+Calcium deposits (anywhere tendons or ligaments attach to the bone)
+Cramps and twitches (foot, calf, eye lids, hamstring muscles, etc.)
+PMS (emotional and physical symptoms)
+Low back (sciatica, muscle spasm, disc problems)
+Bell's Palsy (drooping facial muscle because of strangulated facial nerve)
+NSH (nutritional secondary hyperparathyroidism)
+Osteofibrosis (enlargement of bones with fibrous scar tissue)
+Tetany (convulsions, usually in infants fed undiluted cows milk which contains more phosphorus than calcium)
+Panic attacks (hyperirritability)
+Complicating factors: deficiencies of Mg, B, Cu, S, Se, St, Ac, Fl and excess of Fl, P, Cd, fat, Vit. D.
 
 297
 
@@ -23465,41 +23451,24 @@ Table 11-12. Diseases and Symptoms
 of Chromium Deficiency.
 
 Low blood sugar
-* Prediabetes
-
-* Diabetes (ulcers/gangrene) (Fig. 11-6)
-* Hyperinsulinemia
-
-¢ Hyperactivity
-
-* Learning disabilities
-
+Prediabetes
+Diabetes (ulcers/gangrene)
+Hyperinsulinemia
+Hyperactivity
+Learning disabilities
 ADD/ADHD
-
-Hyperirratability
-
+Hyperirritability
 Depression
-
 Manic depression
-
-“Bi-polar” disesase
-
+“Bi-polar” disease
 Dr. Jekyll/Mr. Hyde rages ("Bad Seeds”)
 Impaired growth
-
 Peripheral neuropathy
-
-Negative nitrogen balance( protein loss)
-
-ee ec ee ew
-
+Negative nitrogen balance (protein loss)
 Elevated blood triglycerides
-
 Elevated blood cholesterol
-
 Coronary blood vessel disease
 Aortic cholesterol plaque
-
 Infertility and decreased sperm count
 Shortened life span
 

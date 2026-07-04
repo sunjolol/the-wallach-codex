@@ -1611,6 +1611,7 @@
       "chronic_fatigue_syndrome",
       "convulsions",
       "coronary_artery_disease",
+      "criminal_behavior",
       "crohns_disease",
       "deafness",
       "dementia",
@@ -1660,7 +1661,8 @@
       "pms",
       "prediabetes",
       "reactive_hypoglycemia",
-      "schizophrenia"
+      "schizophrenia",
+      "violent_behavior"
     ],
     "interacts_with": [
       "arginine",
