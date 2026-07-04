@@ -1,0 +1,4 @@
+{
+  "_comment": "Per-book allowlist for the mined_pages_clean gate. A gated finding on a mined page is resolved by EITHER fixing the source OR adding its signature here with a one-line human reason. Signature = detector|screenshot|term|context (from mined_page_audit.signature). Kept tiny by the tight gate scope; prefer FIXING over triaging.",
+  "_schema": "{ book_id: { signature: reason } }"
+}

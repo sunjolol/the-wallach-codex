@@ -137,6 +137,21 @@ def is_content(ln: str) -> bool:
     return not (RE_MARKER.match(ln) or RE_HEADERC.match(ln) or RE_FIGURE.match(ln))
 
 
+def is_marker_fragment(s: str) -> bool:
+    """A short line immediately after a page marker that carries no real >=4-letter
+    word and is not a bare page number -- i.e. failed running-header OCR garbage
+    ("eee", "Sei ee a"), never a legit heading or first sentence. Tight by design:
+    any >=4-letter word or a longer line escapes it, so false positives are ~nil."""
+    s = s.strip()
+    if not s or len(s) >= 15:
+        return False
+    if re.search(r"[A-Za-z]{4,}", s):
+        return False
+    if re.fullmatch(r"\d{1,4}", s):
+        return False
+    return True
+
+
 def scan(book_text: str):
     """Yield findings: dict(detector, disposition, line, col, term, context, note)."""
     lines = book_text.split("\n")
@@ -149,6 +164,16 @@ def scan(book_text: str):
     # so a reviewer can open the exact source page to verify a finding.
     markers = [(i, ln.strip().strip("= ").strip())
                for i, ln in enumerate(lines, start=1) if RE_MARKER.match(ln)]
+
+    # first non-blank content line after each marker -- where failed running-header
+    # OCR garbage lands (post_marker_fragment detector below keys on this set).
+    first_after_marker = set()
+    for _mln, _mtext in markers:
+        j = _mln  # 0-indexed line right after the 1-indexed marker line
+        while j < len(lines) and not lines[j].strip():
+            j += 1
+        if j < len(lines):
+            first_after_marker.add(j + 1)  # store 1-indexed line number
 
     def source_ref(line_no):
         ref = ""
@@ -231,6 +256,27 @@ def scan(book_text: str):
         if re.fullmatch(r"\s*\d{1,4}\s*", ln):
             findings.append(dict(detector="interleaved_num", disposition="REVIEW", line=i,
                                  term=ln.strip(), context=ln.strip(), note="stray page number?"))
+        # ── gibberish / OCR-garbage detectors (tight, ~zero FP): the classes that
+        #    keep landing on mined pages -- 3+ identical-letter runs and failed
+        #    running-header fragments. GATED on mined pages by the mined_pages_clean
+        #    invariant (see tools/invariants.py + mined_page_audit.py). (A bracket-for-
+        #    capital detector was tried and dropped: legit editorial brackets like
+        #    "[dementia]" are indistinguishable from OCR "[ron", so it was too FP-heavy;
+        #    the "[ron" class is forced clean by the verbatim snap gate anyway.) ──
+        for gm in re.finditer(r"[A-Za-z]{3,}", ln):
+            g = gm.group(0)
+            if not re.search(r"([a-z])\1\1", g):
+                continue
+            gl = g.lower()
+            if gl in COMMON_ABBR or re.fullmatch(r"[ivxlcdm]+", gl):
+                continue  # www + roman numerals (iii, viii) are not gibberish
+            findings.append(dict(detector="repeated_char", disposition="REVIEW", line=i,
+                                 term=g, context=ctx(i, gm.start(), gm.end()),
+                                 note="3+ identical consecutive letters -- OCR gibberish (delete?)"))
+        if i in first_after_marker and is_marker_fragment(ln):
+            findings.append(dict(detector="post_marker_fragment", disposition="REVIEW", line=i,
+                                 term=ln.strip(), context=ln.strip(),
+                                 note="short garbage line right after a page marker -- failed running-header OCR (delete?)"))
 
     # ---- spell flags (ranked by rarity across the book) ----
     if spell is not None:

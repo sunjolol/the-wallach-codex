@@ -2058,6 +2058,42 @@ def check_book_source_clean():
     return True, f"{len(pristine)} pristine book(s) at 0 unresolved - {', '.join(note)}{warn}"
 
 
+def check_mined_pages_clean():
+    """Mined-page cleanliness gate (SESSION 44). Every screenshot page carrying a
+    sealed claim, in a book that has entered the purification campaign (purity-status
+    purifying|pristine), must be free of high-confidence OCR defects in its source
+    .txt -- the tight, ~zero-false-positive classes: punctuation-spacing
+    (space_before_punct / space_in_paren) and gibberish (repeated_char /
+    post_marker_fragment, e.g. "eee", "Sei ee a"). This turns "clean the books as we
+    go" from an advisory memory into a machine gate: a chunk cannot close having left
+    detectable garbage on a page it mined -- prose is rationalizable, a red board is
+    not. FP-heavy classes (spell proper nouns, run-togethers, double_space table
+    alignment) are deliberately OUT of scope (whole-book pristine sweep); reading-order
+    scrambles no detector can catch stay covered by the paste cross-check. Genuine FPs
+    are triaged (with a reason) in eden/tools/mined-page-triage.json. Truth-anchored on
+    sealed claim locators x deterministic book_purity detectors. memory:
+    perfect-entry-no-deferral. Detail: eden/tools/mined_page_audit.py."""
+    if not (ROOT / "eden" / "tools" / "mined_page_audit.py").exists():
+        return True, "mined_page_audit.py not installed (bootstrap-guard)"
+    sys.path.insert(0, str(ROOT / "eden" / "tools"))
+    import mined_page_audit
+    books = mined_page_audit.all_books()
+    total = sum(len(v) for v in books.values())
+    if total:
+        parts = []
+        for b, fs in books.items():
+            if fs:
+                s = fs[0]
+                parts.append(f"{b}:{len(fs)} (e.g. Screenshot "
+                             f"{mined_page_audit._page_of(s.get('source',''))} "
+                             f"[{s['detector']}] {s['term']!r})")
+        return False, (f"{total} OCR defect(s) on MINED source pages -- fix the source (or triage a "
+                       f"genuine FP in mined-page-triage.json): {'; '.join(parts)} "
+                       f"(run: python eden/tools/mined_page_audit.py audit). memory: perfect-entry-no-deferral")
+    gated = ", ".join(sorted(mined_page_audit.gated_books())) or "(none)"
+    return True, f"all mined source pages clean across campaign books [{gated}] (tight gibberish+spacing gate)"
+
+
 INVARIANTS = [
     Invariant(
         name="safe_write_canary",
@@ -2338,6 +2374,14 @@ INVARIANTS = [
         truth_anchor="deterministic re-scan of the sealed book .txt each run (book_purity detectors + per-book purity-baselines allowlist); no stale-to-stale comparison",
         severity="critical",
         lesson_ref="Source-Purification campaign (2026-07-02) -- Luneth: we kept circling back because source .txt fixes were deferred; purify each book to pristine FIRST then GUARD it so we never re-fight the same OCR; memory book-source-purification-campaign",
+    ),
+    Invariant(
+        name="mined_pages_clean",
+        description="every screenshot page carrying a sealed claim (in a purifying/pristine campaign book) is free of high-confidence OCR defects in its source .txt (tight punctuation-spacing + gibberish classes); FP-heavy classes + reading-order scrambles are out of scope",
+        check_fn=check_mined_pages_clean,
+        truth_anchor="sealed claim locator.screenshot x deterministic book_purity detectors, re-scanned each run; genuine FPs triaged in eden/tools/mined-page-triage.json",
+        severity="critical",
+        lesson_ref="SESSION 44 (2026-07-04) -- Luneth: I keep catching you deferring OCR garbage on pages we just mined; advisory memories are rationalizable, so make it a red-board gate on the pages we actually touch; memory perfect-entry-no-deferral",
     ),
     Invariant(
         name="graphics_integrity",

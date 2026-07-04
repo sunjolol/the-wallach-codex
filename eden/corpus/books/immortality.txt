@@ -4211,7 +4211,7 @@ particles would fit into 0.01 cubic inch.
 ===== Screenshot (58) =====
  
 
-0 ee
+
 The “solution” part of a colloid provides a solid, gas or
 liquid medium in which the colloid particles are suspended.
 The suspended particles in a colloid can also be a solid, gas or
@@ -4224,10 +4224,10 @@ H. Freudlich classified solutions into three
 
 1. True solutions
 
-N
 
-. Colloidal solutions
-we ;
+
+2. Colloidal solutions
+
 3. Emulsions and suspensions
 
 The four part method of classifying solutions is as
@@ -4250,7 +4250,7 @@ dispersed colloid systems.” pn
 The exact point between molecular and the colloidal
 degrees of dispersion cannot be established because the
 transition from molecularly dispersed systems to coarsely
-dispersed systems is a continuum. ; ;
+dispersed systems is a continuum.
 
 
  
@@ -4592,7 +4592,7 @@ that is chemically inert, is colorless and odorless.
 In the year 2000, a group of Finnish researchers
 demonstrated that in spite of its lack of chemical reactivity it
 was possible to combine argon with fluorine and hydrogen
-and form fluorohydride, or HArF. .
+and form fluorohydride, or HArF.
 
 Argon, discovered in 1894 by the English physicist
 Lord Rayleigh and the Scottish chemist William Ramsay, was
@@ -5468,7 +5468,7 @@ Kidney stones
  
 
 
-Gat __ eae EE eee
+
 
 Bone spurs (heel spurs)
 
@@ -6014,7 +6014,7 @@ for decorative and protective coatings over other metals
  
 
 
-We Ue eee
+
 including brass (bathroom fixtures), bronze (jewelry) and
 steel (car bumpers). Chromium added to steel at the rate of
 18% produces “stainless steel.”
@@ -6093,7 +6093,7 @@ deficient in chromium.”
 ===== Screenshot (79) =====
  
 
-a Ee
+
 
 Gary Evans, Bemidji State University, Minnesota, very
 clearly showed an increased lifespan in laboratory animals
@@ -6189,7 +6189,7 @@ sarcomas, bronchiogenic carcinoma and colon cancer.
 
  
 
-a te ln i
+
 
 Cu-Copper is found in igneous rocks at 55 ppm, shale
 at 45 ppm, sandstone at 5 ppm, limestone at 4 ppm, fresh water
@@ -6467,7 +6467,7 @@ women.
  
 
 
-ee ecm
+
 
 F-Fluorine is found in igneous rocks at 625 ppm, in
 shale at 740 ppm, sandstone at 270 ppm, limestone at 330 ppm,
@@ -6587,7 +6587,7 @@ greatly determined by bacterial activity in the soil. It’s found
 in marine plants at 700 ppm (very high in plankton), terrestrial
 plants at 140 ppm, marine animals at 400 ppm (high in the
 blood of annelid worms, echinoderms, fish, and in the eggs of
-cephalad molluscs).
+cephalopod molluscs).
 
 Iron is the fourth most abundant element in the earth’s
 crust and is second only to aluminum as the most abundant
@@ -6691,7 +6691,7 @@ for those individuals consuming high fiber, high phytate diets
 
 “Excesses of iron can result in cirrhosis of the liver,
 fibrosis of the pancreas, diabetes and heart failure. These
-diseases are not the direct result of toxic affects of iron, but
+diseases are not the direct result of toxic effects of iron, but
 rather, the increased iron consumption produces an increased
 need for selenium, chromium, vanadium, copper, zinc, etc.
 
@@ -6765,7 +6765,7 @@ eka-silicon, had been predicted by Mendeleyev in his periodic
 table in 1871, however, it was not until 1886 that Clemens
 Winkler, a German scientist, isolated the silicon-like element
 germanium. Germanium is a poor conductor of electricity
-and therefore is relegated to a semi-conductor status. :
+and therefore is relegated to a semi-conductor status.
 
 The addition of small amounts of other elements such
 as arsenic, gallium, or antimony is called “doping” - this
