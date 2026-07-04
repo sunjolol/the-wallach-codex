@@ -192,14 +192,15 @@
   },
   "adhd": {
     "display_name": "Adhd",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000106",
         "WAL-CLM-IMMORT-000018"
       ],
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000062"
+        "WAL-CLM-EPIGEN-000062",
+        "WAL-CLM-IMMORT-000088"
       ]
     },
     "essentials_involved": [
@@ -967,9 +968,10 @@
   },
   "anxiety": {
     "display_name": "Anxiety",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-IMMORT-000088",
         "WAL-CLM-LETS-000006",
         "WAL-CLM-LETS-000016",
         "WAL-CLM-LETS-000023"
@@ -998,6 +1000,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "immortality",
       "lets-play-doctor"
     ]
   },
@@ -1254,17 +1257,20 @@
   },
   "atherosclerosis": {
     "display_name": "Atherosclerosis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-IMMORT-000088",
         "WAL-CLM-LETS-000017"
       ]
     },
     "essentials_involved": [
+      "chromium",
       "manganese"
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "immortality",
       "lets-play-doctor"
     ]
   },
@@ -1361,14 +1367,15 @@
   },
   "autism": {
     "display_name": "Autism",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000106",
         "WAL-CLM-IMMORT-000018"
       ],
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000096"
+        "WAL-CLM-EPIGEN-000096",
+        "WAL-CLM-IMMORT-000088"
       ],
       "protocols": [
         "WAL-CLM-LETS-000151"
@@ -1649,7 +1656,7 @@
   },
   "bipolar_disorder": {
     "display_name": "Bipolar Disorder",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000018",
@@ -1658,6 +1665,7 @@
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000096",
+        "WAL-CLM-IMMORT-000088",
         "WAL-CLM-RARE-000163"
       ],
       "definitions": [
@@ -1876,19 +1884,22 @@
   },
   "blind_rage": {
     "display_name": "Blind Rage",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000107",
+        "WAL-CLM-IMMORT-000088",
         "WAL-CLM-RARE-000302"
       ]
     },
     "essentials_involved": [
+      "chromium",
       "copper"
     ],
     "other_substances_involved": [],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },
@@ -3622,11 +3633,12 @@
   },
   "coronary_artery_disease": {
     "display_name": "Coronary Artery Disease",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000017",
-        "WAL-CLM-EPIGEN-000062"
+        "WAL-CLM-EPIGEN-000062",
+        "WAL-CLM-IMMORT-000088"
       ]
     },
     "essentials_involved": [
@@ -3636,7 +3648,8 @@
     "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
-      "epigenetics"
+      "epigenetics",
+      "immortality"
     ]
   },
   "cough": {
@@ -4071,7 +4084,7 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 39,
+    "claim_count": 40,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000018",
@@ -4086,6 +4099,7 @@
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000096",
         "WAL-CLM-EPIGEN-000098",
+        "WAL-CLM-IMMORT-000088",
         "WAL-CLM-LETS-000003",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000008",
@@ -4267,7 +4281,7 @@
   },
   "diabetes": {
     "display_name": "Diabetes",
-    "claim_count": 27,
+    "claim_count": 29,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-DDDL-000008"
@@ -4276,6 +4290,7 @@
         "WAL-CLM-DDDL-000010",
         "WAL-CLM-DDDL-000034",
         "WAL-CLM-IMMORT-000019",
+        "WAL-CLM-IMMORT-000089",
         "WAL-CLM-RARE-000118",
         "WAL-CLM-RARE-000254"
       ],
@@ -4286,6 +4301,7 @@
         "WAL-CLM-DDDL-000017",
         "WAL-CLM-EPIGEN-000045",
         "WAL-CLM-EPIGEN-000062",
+        "WAL-CLM-IMMORT-000088",
         "WAL-CLM-LETS-000003",
         "WAL-CLM-LETS-000006",
         "WAL-CLM-LETS-000043",
@@ -4914,31 +4930,6 @@
       "lets-play-doctor"
     ]
   },
-  "elevated_cholesterol": {
-    "display_name": "Elevated Cholesterol",
-    "claim_count": 1,
-    "claims_by_role": {
-      "protocols": [
-        "WAL-CLM-LETS-000219"
-      ]
-    },
-    "essentials_involved": [
-      "calcium",
-      "chromium",
-      "magnesium",
-      "omega-3",
-      "selenium",
-      "vitamin-b3",
-      "vitamin-c"
-    ],
-    "other_substances_involved": [
-      "evening-primrose",
-      "oat-bran"
-    ],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
   "emphysema": {
     "display_name": "Emphysema",
     "claim_count": 1,
@@ -5171,11 +5162,12 @@
   },
   "failure_to_thrive": {
     "display_name": "Failure To Thrive",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000031",
-        "WAL-CLM-EPIGEN-000041"
+        "WAL-CLM-EPIGEN-000041",
+        "WAL-CLM-IMMORT-000088"
       ],
       "definitions": [
         "WAL-CLM-IMMORT-000053"
@@ -5185,6 +5177,7 @@
       ]
     },
     "essentials_involved": [
+      "chromium",
       "omega-3",
       "omega-6",
       "vitamin-a",
@@ -5507,6 +5500,22 @@
     "books_cited": [
       "epigenetics",
       "lets-play-doctor"
+    ]
+  },
+  "gestational_diabetes": {
+    "display_name": "Gestational Diabetes",
+    "claim_count": 1,
+    "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IMMORT-000089"
+      ]
+    },
+    "essentials_involved": [
+      "chromium"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "immortality"
     ]
   },
   "gingivitis": {
@@ -6090,11 +6099,12 @@
   },
   "high_cholesterol": {
     "display_name": "High Cholesterol",
-    "claim_count": 11,
+    "claim_count": 13,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000107",
+        "WAL-CLM-IMMORT-000088",
         "WAL-CLM-LETS-000003",
         "WAL-CLM-LETS-000006",
         "WAL-CLM-LETS-000008",
@@ -6104,31 +6114,45 @@
         "WAL-CLM-LETS-000044",
         "WAL-CLM-RARE-000257",
         "WAL-CLM-RARE-000302"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000219"
       ]
     },
     "essentials_involved": [
       "biotin",
+      "calcium",
       "chromium",
       "copper",
       "inositol",
+      "magnesium",
       "manganese",
+      "omega-3",
       "potassium",
+      "selenium",
       "vanadium",
+      "vitamin-b3",
+      "vitamin-c",
       "zinc"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "evening-primrose",
+      "oat-bran"
+    ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
   },
   "high_triglycerides": {
     "display_name": "High Triglycerides",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
+        "WAL-CLM-IMMORT-000088",
         "WAL-CLM-RARE-000257"
       ],
       "protocols": [
@@ -6147,6 +6171,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -6238,10 +6263,11 @@
   },
   "hyperactivity": {
     "display_name": "Hyperactivity",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
+        "WAL-CLM-IMMORT-000088",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000016",
         "WAL-CLM-RARE-000163"
@@ -6278,6 +6304,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -6303,10 +6330,11 @@
   },
   "hyperinsulinemia": {
     "display_name": "Hyperinsulinemia",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
+        "WAL-CLM-IMMORT-000088",
         "WAL-CLM-RARE-000257"
       ],
       "protocols": [
@@ -6320,16 +6348,18 @@
     "other_substances_involved": [],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },
   "hyperirritability": {
     "display_name": "Hyperirritability",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000108",
+        "WAL-CLM-IMMORT-000088",
         "WAL-CLM-RARE-000237"
       ]
     },
@@ -6340,6 +6370,7 @@
     "other_substances_involved": [],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },
@@ -6476,7 +6507,7 @@
   },
   "hypoglycemia": {
     "display_name": "Hypoglycemia",
-    "claim_count": 15,
+    "claim_count": 16,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000254"
@@ -6485,6 +6516,7 @@
         "WAL-CLM-DDDL-000017",
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000107",
+        "WAL-CLM-IMMORT-000088",
         "WAL-CLM-LETS-000006",
         "WAL-CLM-LETS-000017",
         "WAL-CLM-LETS-000043",
@@ -6522,6 +6554,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -6885,7 +6918,7 @@
   },
   "infertility": {
     "display_name": "Infertility",
-    "claim_count": 22,
+    "claim_count": 23,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
@@ -6893,6 +6926,7 @@
         "WAL-CLM-EPIGEN-000033",
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000101",
+        "WAL-CLM-IMMORT-000088",
         "WAL-CLM-LETS-000011",
         "WAL-CLM-LETS-000030",
         "WAL-CLM-LETS-000036",
@@ -6942,6 +6976,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -7677,7 +7712,7 @@
   },
   "learning_disabilities": {
     "display_name": "Learning Disabilities",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000018"
@@ -7685,6 +7720,7 @@
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000107",
+        "WAL-CLM-IMMORT-000088",
         "WAL-CLM-RARE-000302"
       ],
       "definitions": [
@@ -8805,8 +8841,11 @@
   },
   "narcolepsy": {
     "display_name": "Narcolepsy",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-IMMORT-000088"
+      ],
       "protocols": [
         "WAL-CLM-EPIGEN-000003"
       ]
@@ -8817,7 +8856,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "epigenetics"
+      "epigenetics",
+      "immortality"
     ]
   },
   "nasal_catarrh": {
@@ -9069,7 +9109,7 @@
   },
   "obesity": {
     "display_name": "Obesity",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000011",
@@ -9078,6 +9118,7 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000083",
+        "WAL-CLM-IMMORT-000088",
         "WAL-CLM-RARE-000257"
       ],
       "protocols": [
@@ -9085,6 +9126,7 @@
       ]
     },
     "essentials_involved": [
+      "chromium",
       "iron",
       "omega-3",
       "potassium",
@@ -9108,18 +9150,24 @@
   },
   "oligospermia": {
     "display_name": "Oligospermia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-IMMORT-000088"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000386"
       ]
     },
-    "essentials_involved": [],
+    "essentials_involved": [
+      "chromium"
+    ],
     "other_substances_involved": [
       "ginseng",
       "zumba"
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor"
     ]
   },
@@ -9565,11 +9613,12 @@
   },
   "panic_attacks": {
     "display_name": "Panic Attacks",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000109",
-        "WAL-CLM-IMMORT-000064"
+        "WAL-CLM-IMMORT-000064",
+        "WAL-CLM-IMMORT-000088"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000078"
@@ -9847,12 +9896,13 @@
   },
   "peripheral_neuropathy": {
     "display_name": "Peripheral Neuropathy",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000108",
         "WAL-CLM-IMMORT-000063",
+        "WAL-CLM-IMMORT-000088",
         "WAL-CLM-RARE-000237"
       ]
     },
@@ -10156,10 +10206,11 @@
   },
   "prediabetes": {
     "display_name": "Prediabetes",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-EPIGEN-000062"
+        "WAL-CLM-EPIGEN-000062",
+        "WAL-CLM-IMMORT-000088"
       ],
       "diagnostics": [
         "WAL-CLM-LETS-000081"
@@ -10171,6 +10222,7 @@
     "other_substances_involved": [],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor"
     ]
   },

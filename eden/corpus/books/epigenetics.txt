@@ -22956,7 +22956,7 @@ with the Terracotta Army. The ancient bronze tips of crossbow bolts and swords
 found at the site had very little oxidation or corrosion because the bronze was
 deliberately coated with a thin layer of chromium oxide.
 
-Chromium activates phosphoglucosonetase and other enzymes and is tightly
+Chromium activates phosphoglucomutase and other enzymes and is tightly
 
 associated with GTF (glucose tolerance factor, a combination of chromium
 Ill, dinicotinic acid and glutathione). The reported plasma levels of chromium

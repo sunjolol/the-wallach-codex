@@ -7544,7 +7544,7 @@ water at 0.00005 ppm, soils at 5 to 3,000 ppm (highest in soils derived from
 basalt and serpentine), marine plants 1 ppm, land plants at 0.23 ppm,
 marine animals at 0.2 to 1.0 ppm, and in land animals at 0.075 ppm where it
 is found accumulated by RNA and insulin.
-Chromium activates phosphoglucosonetase and other enzymes and is
+Chromium activates phosphoglucomutase and other enzymes and is
 closely associated with GTF or glucose tolerance factor. GTF is a
 combination of chromium III, dinicotinic acid, and glutathione. The
 reported plasma levels of chromium in humans over the past 20 years has

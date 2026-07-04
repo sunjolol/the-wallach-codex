@@ -6033,9 +6033,9 @@ changes color depending on the light source - when seen in
 firelight it is a bright red, when seen in daylight it is a brilliant
 blue.
 
-Chromium activates phosphoglucosonetase and other
+Chromium activates phosphoglucomutase and other
 enzymes and is closely associated with glucose tolerance factor
-(GTE). Glucose tolerance factor is a combination of chromium
+(GTF). Glucose tolerance factor is a combination of chromium
 III, dinicotinic acid and glutathione. The reported plasma
 levels of chromium in humans over the past 20 years has
 ranged from 0.075 to 13 ng/ml. Concentrations of chromium
@@ -6097,16 +6097,13 @@ a Ee
 
 Gary Evans, Bemidji State University, Minnesota, very
 clearly showed an increased lifespan in laboratory animals
-by 33.3%,
+by 33.3%, when they were supplemented, with chromium.
 Prior to this study, gerontologist, led by Dr. Roy Walford,
 felt a Calorie Restricted diet was the only way to extend life
 past the expected average age. Deficiencies of chromium in
 humans are characterized by a wide variety of clinical diseases
 as well as a shortened life expectancy. The clinical diseases of
 chromium deficiency are aggravated by concurrent vanadium
-
-when they were supplemented, with chromium.
-
 deficiencies and increased sugar or alcohol intakes.
 
 Diseases and Symptoms of Chromium Deficiency

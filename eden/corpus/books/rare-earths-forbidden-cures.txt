@@ -23438,7 +23438,7 @@ ppm; marine animals 0.2-1.0 ppm; land ani-
 mals 0.075 ppm; accumulated by RNA and
 insulin.
 
-Chromium activates phosphoglucosonetase and other enzymes and is tightly associated with GTF (glucose tolerance factor - a combination of chromium
+Chromium activates phosphoglucomutase and other enzymes and is tightly associated with GTF (glucose tolerance factor - a combination of chromium
 
 306
 

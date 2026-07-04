@@ -2937,7 +2937,7 @@
       ]
     },
     "conditions_treated": [
-      "elevated_cholesterol"
+      "high_cholesterol"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -5377,8 +5377,8 @@
       ]
     },
     "conditions_treated": [
-      "elevated_cholesterol",
       "hemorrhoids",
+      "high_cholesterol",
       "weight_loss"
     ],
     "books_cited": [

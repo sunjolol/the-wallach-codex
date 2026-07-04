@@ -1,93 +1,126 @@
 # Extraction report — immortality (Immortality)
 
-_8 claim(s) drafted 2026-07-03T21:44:57+00:00. Review then run corpus_seal.py to promote._
+_7 claim(s) drafted 2026-07-04T08:43:32+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: deficiency_sign×2, definition×2, dose×1, mechanism×3
+Kinds: deficiency_sign×1, definition×2, mechanism×2, prevalence×1, prognosis×1
 
-### WAL-CLM-IMMORT-000079 · definition
-- **essentials:** cobalt · **conditions:** — · **symptoms:** —
-- **claim:** Cobalt is essential to every form of life — from blue-green algae, bacteria and fungi to plants, insects, and all the vertebrates including humans. It works as an enzyme cofactor and activator, helps "fix" nitrogen during amino-acid production, and — most importantly — a single cobalt atom sits at the center of vitamin B12, which is itself a cofactor and activator (the cobamide coenzymes) for several essential enzymes. In his words: "Cobalt functions as a cofactor and an activator for enzymes, “fixes” nitrogen during amino acid production, and a single cobalt atom is the central metal component of vitamin B12, which itself is a cofactor and activator (cobamide coenzymes) for several essential enzymes."
-- **verbatim** (offset 227831): “Cobalt is essential for all forms of life including blue-green algae, some bacteria and fungi, some plants, insects,
-birds, reptiles, amphibians and mammals including man.
-Cobalt functions as a cofactor and an activator for enzymes,
-“fixes” nitrogen during amino acid production, and a single
-cobalt atom is the central metal component of vitamin B12,
-which itself is a cofactor and activator (cobamide coenzymes)
-for several essential enzymes.”
+### WAL-CLM-IMMORT-000087 · definition
+- **essentials:** chromium · **conditions:** — · **symptoms:** —
+- **claim:** Chromium is a small but metabolically busy trace mineral. Wallach says it activates the enzyme phosphoglucomutase and others, and — most importantly — it is the working core of glucose tolerance factor (GTF), the compound that lets insulin do its job of controlling blood sugar. GTF is a complex of chromium in its trivalent (chromium-III) form, dinicotinic acid (a niacin / vitamin-B3 derivative), and glutathione (the body's main built-in antioxidant). The whole body holds only about 1.5 mg of chromium, and because hair concentrates it roughly ten times higher than blood does, hair analysis gives a more accurate read on tissue stores than a blood test. In his words: "Chromium activates phosphoglucomutase and other enzymes and is closely associated with glucose tolerance factor (GTF). Glucose tolerance factor is a combination of chromium III, dinicotinic acid and glutathione."
+- **verbatim** (offset 235939): “Chromium activates phosphoglucomutase and other
+enzymes and is closely associated with glucose tolerance factor
+(GTF). Glucose tolerance factor is a combination of chromium
+III, dinicotinic acid and glutathione.”
 
-### WAL-CLM-IMMORT-000080 · mechanism
-- **essentials:** cobalt · **conditions:** birth_defects · **symptoms:** —
-- **claim:** Vitamin B12 (and its cobalt) does some of the body's most fundamental work. Together with folic acid, choline and the amino acid methionine, it transfers single-carbon (methyl) groups used to build RNA and to make DNA from RNA — so it sits at the heart of gene function, which is why Wallach ties preconception nutrition to preventing birth defects. Growth, the formation of myelin (the insulating sheath — made by converting cholesterol — around nerves in the brain, spinal cord and large nerve trunks), and red-blood-cell production all depend on B12. Cobalt is also a required cofactor for making the thyroid hormone thyroxine. In his words: "Vitamin B12/cobalt joins with folic acid, choline, and the amino acid methionine to transfer single carbon groups (methyl groups) in the synthesis of the raw material to make RNA and the synthesis of DNA from RNA. DNA and RNA are directly involved in gene function; remember the concept of preconception nutrition to prevent birth defects. Growth, myelin formation (converts cholesterol into the insulating material myelin found around nerves in the brain, spinal cord, and large nerve trunks), and red blood cell synthesis are dependent on B12."
-- **verbatim** (offset 231618): “Vitamin B12/cobalt joins with folic acid, choline, and
-the amino acid methionine to transfer single carbon groups
-(methyl groups) in the synthesis of the raw material to make
-RNA and the synthesis of DNA from RNA. DNA and RNA
-are directly involved in gene function; remember the concept
-of preconception nutrition to prevent birth defects. Growth,
-myelin formation (converts cholesterol into the insulating
-material myelin found around nerves in the brain, spinal
-cord, and large nerve trunks), and red blood cell synthesis are
-dependent on B12.”
+### WAL-CLM-IMMORT-000088 · deficiency_sign
+- **essentials:** chromium · **conditions:** hypoglycemia, prediabetes, diabetes, hyperinsulinemia, narcolepsy, hyperactivity, learning_disabilities, adhd, autism, hyperirritability, depression, bipolar_disorder, anxiety, panic_attacks, blind_rage, failure_to_thrive, peripheral_neuropathy, high_triglycerides, high_cholesterol, coronary_artery_disease, atherosclerosis, infertility, oligospermia, obesity · **symptoms:** —
+- **claim:** Wallach's Immortality prints a table titled "Diseases and Symptoms of Chromium Deficiency" — the conditions and symptoms he attributes to a chronic shortage of chromium. Because chromium governs blood-sugar control (through glucose tolerance factor and insulin), most of the list is metabolic or neuro-behavioral: low blood sugar (hypoglycemia), prediabetes and adult-onset (type II) diabetes, excess insulin (hyperinsulinemia, which he links to narcolepsy), hyperactivity, learning disabilities, attention-deficit disorder (ADD/ADHD), autism, extreme irritability, depression, manic depression / bipolar disease, and anxiety and panic attacks — up to violent 'Dr. Jekyll and Mr. Hyde' rages. The rest are bodily: impaired growth, peripheral neuropathy (nerve damage), negative nitrogen balance (net loss of body protein), elevated triglycerides and cholesterol, coronary blood-vessel disease and aortic cholesterol plaque, infertility and decreased sperm count, obesity, and a shortened life span. In his words: "Diseases and Symptoms of Chromium Deficiency: Hypoglycemia (low blood sugar), Prediabetes (Metabolic Syndrome), Diabetes (adult onset, type II), Hyperinsulinemia (narcolepsy), Hyperactivity, Learning disabilities, ADD/ADHD, Autism, Hyperirritability, Depression, Manic depression, Bi-polar disease, Anxiety attacks, Panic attacks, Dr. Jekyll/Mr. Hyde rages ('Bad Seeds'), Impaired growth, Peripheral neuropathy, Negative nitrogen balance - protein loss, Elevated blood triglycerides (Metabolic Syndrome), Elevated cholesterol (Metabolic Syndrome), Coronary blood vessel disease, Aortic cholesterol plaque, Infertility, Decreased sperm count, Shortened life span, Obesity."
+- **verbatim** (offset 238802): “Diseases and Symptoms of Chromium Deficiency
 
-### WAL-CLM-IMMORT-000081 · mechanism
-- **essentials:** cobalt · **conditions:** hypochlorhydria · **symptoms:** —
-- **claim:** How well cobalt/B12 is absorbed depends on stomach acid and intrinsic factor. Metallic cobalt is absorbed at 20–26.2% only if intrinsic factor (Castle's factor, a mucoprotein in normal stomach secretions) is present and the stomach pH is 2.0 or lower. If a person has hypochlorhydria (low stomach acid — usually from a salt/NaCl deficiency), intrinsic factor fails and B12/cobalt isn't absorbed — which is why doctors often give B12 shots to older people on salt-restricted diets (sublingual and oral-spray B12 are alternatives). Plant-derived cobalt is highly bioavailable, but because of low-salt diets and cobalt-depleted soils, vegetarians frequently run B12 deficiencies. In his words: "If a person has hypochlorhydria (low stomach acid- usually a NaCl deficiency) the intrinsic factor will not work and B12 cobalt is not absorbed - this is why doctors frequently give B12 shots to older people on salt restricted diets. Sublingual (under the tongue) and oral spray B12 is available. Plant derived cobalt is very bioavailable; however, because of low salt diets and cobalt depleted soils, vegetarians frequently have B12 deficiencies."
-- **verbatim** (offset 230355): “If a person
-has hypochlorhydria (low stomach acid- usually a NaCl
-deficiency) the intrinsic factor will not work and B12 cobalt is
-not absorbed - this is why doctors frequently give B12 shots
-to older people on salt restricted diets. Sublingual (under the
-tongue) and oral spray B12 is available. Plant derived cobalt is
-very bioavailable; however, because of low salt diets and cobalt
-depleted soils, vegetarians frequently have B12 deficiencies.”
+Hypoglycemia (low blood sugar)
+Prediabetes (Metabolic Syndrome)
+Diabetes (adult onset, type II)
+Hyperinsulinemia (narcolepsy)
+Hyperactivity
 
-### WAL-CLM-IMMORT-000082 · deficiency_sign
-- **essentials:** cobalt · **conditions:** bush_sickness, anorexia, pernicious_anemia · **symptoms:** —
-- **claim:** Cobalt's essentiality was discovered through "bush sickness," a fatal disease of cattle and sheep in Australia and New Zealand that could be successfully treated and prevented with cobalt supplements. Bush sickness was marked by emaciation (Wallach likens it to unsupplemented vegans), a dull stare, a listless and starved look, pale mucous membranes, anorexia (loss of appetite), and pernicious anemia (a macrocytic/hypochromic anemia — large, pale red cells). In his words: "The discovery of the essentiality of cobalt came from observing a fatal disease (“bush sickness”) in cattle and sheep from Australia and New Zealand. It was observed that “bush sickness” could be successfully treated and prevented by cobalt supplements. Bush sickness was characterized by emaciation (unsupplemented vegans), dull stare, listless and starved look, pale mucus membranes, anorexia, and pernicious anemia (macrocytic/hypochromic)."
-- **verbatim** (offset 232265): “The discovery of the essentiality of cobalt came from
-observing a fatal disease (“bush sickness”) in cattle and
-sheep from Australia and New Zealand. It was observed that
-“bush sickness” could be successfully treated and prevented
-by cobalt supplements. Bush sickness was characterized by
-emaciation (unsupplemented vegans), dull stare, listless
-and starved look, pale mucus membranes, anorexia, and
-pernicious anemia (macrocytic/hypochromic).”
+Learning disabilities
+ADD/ADHD
 
-### WAL-CLM-IMMORT-000083 · deficiency_sign
-- **essentials:** cobalt · **conditions:** pernicious_anemia, demyelination, celiac_disease · **symptoms:** —
-- **claim:** In humans, failing to absorb B12/cobalt causes a deficiency disease. It can follow surgical removal of part of the stomach (which wipes out the zones that make intrinsic factor) or of the ileum, small-intestinal pouches (diverticulae), parasites (tapeworm), celiac disease (gluten/grain and cow's-milk-albumen allergy), and other malabsorption disorders. The classic results are pernicious anemia and demyelination — stripping of the myelin insulation — of the spinal cord and the large nerve trunks. In his words: "Pernicious anemia and demyelination of the spinal cord and large nerve trunks are classic diseases that are the result of B12/cobalt deficiency."
-- **verbatim** (offset 232710): “In humans, a failure to absorb B12/cobalt results in a
-deficiency disease. This can result from a surgical removal
-of parts of the stomach (eliminates zones of intrinsic factor
-production), or surgical removal of the ileum portion of
-the small bowel, small intestinal diverticulae, parasites
-(tapeworm), celiac disease (allergies to wheat gluten, barley,
-rye, oats and cows milk albumen), and other malabsorption
-diseases. Pernicious anemia and demyelination of the spinal
-cord and large nerve trunks are classic diseases that are the
-result of B12/cobalt deficiency.”
+Autism
 
-### WAL-CLM-IMMORT-000084 · dose
-- **essentials:** cobalt · **conditions:** — · **symptoms:** —
-- **claim:** Wallach gives the quantitative picture for cobalt/B12. In the soil, less than 0.07 ppm cobalt leaves crops (and the animals and people who eat them) deficient, while 0.11 ppm prevents and cures the deficiency. The official RDA for B12/cobalt is just 3–4 mcg per day, but Wallach recommends 250–400 mcg for a respectable safety margin, and urges pregnant and nursing mothers especially to supplement (a baby nursed by a deficient mother carries the congenital deficiency longer, risking serious, permanent nerve damage). At the other extreme, a cobalt excess in humans (20–30 mg/day) can over-stimulate red-blood-cell production (erythropoiesis) by raising the kidney hormone erythropoietin. In his words: "The human RDA for B12/cobalt is 3 to 4 mcg per day, however 250 to 400 mcg gives a respectable safety margin. Pregnant and nursing mothers should especially take care to supplement with the optimum levels of B12."
-- **verbatim** (offset 233465): “The human RDA for B12/cobalt is 3 to 4 mcg per day,
-however 250 to 400 mcg gives a respectable safety margin.
-Pregnant and nursing mothers should especially take care
-to supplement with the optimum levels of B12.”
+Hyperirritability
 
-### WAL-CLM-IMMORT-000085 · definition
+Depression
+
+Manic depression
+
+Bi-polar disease
+
+Anxiety attacks
+
+Panic attacks
+
+Dr. Jekyll/ Mr. Hyde rages (“Bad Seeds”)
+Impaired growth
+
+Peripheral neuropathy
+
+
+ 
+
+Negative nitrogen balance - protein loss
+
+Elevated blood triglycerides (Metabolic Syndrome)
+Elevated cholesterol (Metabolic Syndrome)
+Coronary blood vessel disease
+
+Aortic cholesterol plaque
+
+Infertility
+
+Decreased sperm count
+
+Shortened life span
+
+Obesity”
+
+### WAL-CLM-IMMORT-000089 · mechanism
+- **essentials:** chromium · **conditions:** diabetes, gestational_diabetes · **symptoms:** —
+- **claim:** Wallach ties chromium deficiency straight to the body's handling of blood sugar. Pregnant women run lower fasting plasma chromium than non-pregnant women, and the well-documented worsening of glucose tolerance during a 'normal' pregnancy reflects that deficiency — which, he says, often tips over into pregnancy-onset (gestational) diabetes. He frames it as widespread and worsening with age: one study found abnormal glucose tolerance in 77% of clinically 'normal' adults over 70, and he cites the USDA's Richard Anderson that 90% of all Americans are chromium-deficient. In his words: "The fasting level of plasma chromium is lower in pregnant women than in non-pregnant women. Increasing impairment of glucose tolerance in 'normal' pregnancy is well documented and reflects a chromium deficiency that oftentimes results in pregnancy onset diabetes... According to Richard Anderson of the USDA, 'Ninety percent of all Americans are deficient in chromium.'"
+- **verbatim** (offset 237699): “The fasting level of plasma chromium is lower in
+pregnant women than in non-pregnant women. Increasing
+impairment of glucose tolerance in “normal” pregnancy is
+well documented and reflects a chromium deficiency that
+oftentimes results in pregnancy onset diabetes. One study
+demonstrated abnormal glucose tolerance in 77% of clinically
+“normal” adults over the age of 70. According to Richard
+Anderson of the USDA, “Ninety percent of all Americans are
+deficient in chromium.””
+
+### WAL-CLM-IMMORT-000090 · prognosis
+- **essentials:** chromium · **conditions:** — · **symptoms:** —
+- **claim:** This is the book's headline chromium claim, fitting its anti-aging theme. Gary Evans of Bemidji State University (Minnesota) showed that simply supplementing chromium increased the lifespan of laboratory animals by 33.3% — a striking result, because until then the gerontologist Dr. Roy Walford and colleagues believed calorie restriction was the only proven way to extend life past the average. Wallach adds that chromium deficiency in humans brings a wide range of clinical diseases plus a shortened life expectancy, and that these are made worse by a simultaneous vanadium deficiency and by high sugar or alcohol intake. In his words: "Gary Evans, Bemidji State University, Minnesota, very clearly showed an increased lifespan in laboratory animals by 33.3%, when they were supplemented, with chromium... Deficiencies of chromium in humans are characterized by a wide variety of clinical diseases as well as a shortened life expectancy."
+- **verbatim** (offset 238212): “Gary Evans, Bemidji State University, Minnesota, very
+clearly showed an increased lifespan in laboratory animals
+by 33.3%, when they were supplemented, with chromium.
+Prior to this study, gerontologist, led by Dr. Roy Walford,
+felt a Calorie Restricted diet was the only way to extend life
+past the expected average age. Deficiencies of chromium in
+humans are characterized by a wide variety of clinical diseases
+as well as a shortened life expectancy. The clinical diseases of
+chromium deficiency are aggravated by concurrent vanadium
+deficiencies and increased sugar or alcohol intakes.”
+
+### WAL-CLM-IMMORT-000091 · mechanism
+- **essentials:** chromium · **conditions:** — · **symptoms:** —
+- **claim:** Wallach explains why chromium is both easy to lose and hard to absorb — his argument for supplementing it in a highly-absorbable form. Eating sugar (colas, fruit juices, honey, candy, table sugar, fructose) raises the rate at which chromium is flushed out in the urine by 300% for 12 hours. And ordinary inorganic chromium from food and water is poorly used: a typical 50-100 microgram (mcg) intake yields only 0.25-5 mcg the body can actually retain. Form is decisive — about 25% of chelated chromium is absorbed, versus up to 98% of colloidal chromium. He notes the chromium RDA (the government's Recommended Daily Allowance) is 50-200 mcg of usable chromium per day for adults. In his words: "...25% of chelated chromium is absorbed and up to 98% of colloidal chromium is absorbed. The chromium RDA for humans is a range of 50 to 200 ug of usable chromium per day for adults."
+- **verbatim** (offset 236716): “Dietary sugar
+loads (i.e. colas, apple juice, grape juice, honey, candy, table
+sugar, fructose, etc.) increase the natural rate of urinary Cr loss
+by 300% for 12 hours. The average intake of 50 to 100 ug of
+inorganic chromium from food and water supplies only 0.25
+to 5 ug of usable and retainable chromium. By contrast, 25%
+of chelated chromium is absorbed and up to 98% of colloidal
+
+
+ 
+
+chromium is absorbed. The chromium RDA for humans is a
+range of 50 to 200 ug of usable chromium per day for adults.”
+
+### WAL-CLM-IMMORT-000092 · prevalence
+- **essentials:** chromium · **conditions:** — · **symptoms:** —
+- **claim:** A recurring worry in the book: Americans' chromium status has been sliding for decades. Newborn animals and people carry more chromium per pound of body weight than older ones, and in anyone who doesn't supplement, tissue chromium steadily falls with age. Wallach flags a population-wide drop in average American blood chromium since 1948, tabulating mean levels in micrograms per liter (mcg/L) by year: 28 in cities and 1000 in rural areas in 1948, 13 in 1971, 10 in 1972, 4.7-5.1 in 1973, 0.73-1.6 in 1974, 0.16 in 1978, 0.43 in 1980, and 0.13 by 1985. In his words: "The concentration of chromium found in newborn animals and humans is higher per pound of body weight than it is in older individuals... Of greater concern has been the steady decline in the average American serum chromium since 1948."
+- **verbatim** (offset 237223): “The concentration of chromium found in newborn
+animals and humans is higher per pound of body weight
+than it is in older individuals. In fact, the chromium levels of
+unsupplemented human tissue, steadily decreases throughout
+life. Of greater concern has been the steady decline in the
+average American serum chromium since 1948.”
+
+### WAL-CLM-IMMORT-000093 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Some biochemistry of vitamin B12: its cobalt sits chelated in a large tetrapyrrole ring — the same ring family as the porphyrin ring that holds iron in hemoglobin and magnesium in chlorophyll. The first B12 molecule isolated in the lab carried a cyanide group, hence the name cyanocobalamine; several cobalamine forms have B12 activity, with cyanocobalamine and hydroxycobalamine the most active. B12 is a red, water-soluble crystalline substance (the red comes from the cobalt atom), slowly destroyed by acid, alkali, light and oxidizing/reducing agents — and about 30% of its activity is lost in cooking. It was isolated from liver extracts in 1948 and shown to have anti-pernicious-anemia activity. In his words: "B12 cobalt is chelated in a large tetrapyrrole ring similar to the porphyrin ring found in hemoglobin (iron) and chlorophyll (magnesium)."
-- **verbatim** (offset 228277): “B12 cobalt is chelated in a large tetrapyrrole ring
-similar to the porphyrin ring found in hemoglobin (iron) and
-chlorophyll (magnesium).”
-
-### WAL-CLM-IMMORT-000086 · mechanism
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach explains how animals actually get their B12 from elemental cobalt — a job done by microbes, not the animal itself. Ruminants (cows, sheep, goats, deer, antelope, buffalo, giraffe) rely on the microbes fermenting plant material in their first stomach (the rumen) to convert elemental cobalt into vitamin B12, which the animal then absorbs. Carnivores get their B12 secondhand by eating the stomach contents, liver, bone and muscle of their ruminant prey. And poultry, lagomorphs (rabbits and hares) and rodents eat feces at night (coprophagy) to recover the B12 their own gut microbes manufactured. In his words: "Ruminants (i.e. cows, sheep, goats, deer, antelope, buffalo, giraffe, etc.) can use elemental cobalt because the microbes fermenting and digesting plant material in their first stomach (rumen) convert elemental cobalt into vitamin B12, which the animal then uses."
-- **verbatim** (offset 229481): “Ruminants (i.e. cows, sheep, goats, deer, antelope,
-buffalo, giraffe, etc.) can use elemental cobalt because the
-microbes fermenting and digesting plant material in their first
-stomach (rumen) convert elemental cobalt into vitamin B12,
-which the animal then uses.”
+- **claim:** The element's backstory — and why it colors gemstones. Chromium was discovered by the French chemist Louis-Nicolas Vauquelin in 1797 and named from the Greek chroma, 'color,' because all its compounds are vividly colored (the pure metal itself, though, is a hard, brittle, silver-white). Added to steel at 18% it makes stainless steel, and its near-invisible corrosion-proof oxide layer makes it the bright plating on bathroom fixtures, jewelry and car bumpers. Trace chromium is what tints many gems: it makes rubies red (in corundum), emeralds green (in beryl), and gives alexandrite (in chrysoberyl) its famous color-shift — red in firelight, blue in daylight. In his words: "Chromium was discovered by French chemist Louis-Nicolas Vauquelin in 1797 and named from the Greek word chroma, which translates to 'color.'"
+- **verbatim** (offset 234463): “Chromium was discovered by French chemist Louis-Nicolas Vauquelin in 1797 and named from the Greek word
+chroma, which translates to “color.””
 
