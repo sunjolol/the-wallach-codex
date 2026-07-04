@@ -441,7 +441,8 @@
     "depressed"
   ],
   "thyroid_cancer": [
-    "thyroid follicular cell tumors"
+    "thyroid follicular cell tumors",
+    "thyroid follicular"
   ],
   "menkes_syndrome": [
     "menke syndrome",
@@ -495,5 +496,10 @@
   "mad_cow_disease": [
     "bovine spongiform encephalopathy",
     "bse"
+  ],
+  "oral_cancer": [
+    "oral mucus membranes",
+    "oral mucous membranes",
+    "squamous cell carcinoma"
   ]
 }

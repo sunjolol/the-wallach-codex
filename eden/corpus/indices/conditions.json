@@ -2371,7 +2371,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 62,
+    "claim_count": 63,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -2452,6 +2452,9 @@
         "WAL-CLM-DDDL-000057",
         "WAL-CLM-DDDL-000066",
         "WAL-CLM-RARE-000228"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000123"
       ]
     },
     "essentials_involved": [
@@ -4148,10 +4151,13 @@
   },
   "dental_fluorosis": {
     "display_name": "Dental Fluorosis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000133"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000121"
       ]
     },
     "essentials_involved": [],
@@ -4159,6 +4165,7 @@
       "fluoride"
     ],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
@@ -8029,12 +8036,15 @@
   },
   "liver_cancer": {
     "display_name": "Liver Cancer",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-LETS-000187",
         "WAL-CLM-LETS-000195",
         "WAL-CLM-RARE-000134"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000123"
       ]
     },
     "essentials_involved": [],
@@ -8044,6 +8054,7 @@
       "levamisole"
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -9406,6 +9417,20 @@
       "iaiyh"
     ]
   },
+  "oral_cancer": {
+    "display_name": "Oral Cancer",
+    "claim_count": 1,
+    "claims_by_role": {
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000123"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "immortality"
+    ]
+  },
   "organic_brain_syndrome": {
     "display_name": "Organic Brain Syndrome",
     "claim_count": 1,
@@ -9650,10 +9675,13 @@
   },
   "osteosarcoma": {
     "display_name": "Osteosarcoma",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000134"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000123"
       ]
     },
     "essentials_involved": [],
@@ -9661,7 +9689,22 @@
       "fluoride"
     ],
     "books_cited": [
+      "immortality",
       "rare-earths"
+    ]
+  },
+  "osteosclerosis": {
+    "display_name": "Osteosclerosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000121"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "immortality"
     ]
   },
   "otitis": {
@@ -11992,10 +12035,13 @@
   },
   "thyroid_cancer": {
     "display_name": "Thyroid Cancer",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000134"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000123"
       ]
     },
     "essentials_involved": [],
@@ -12003,6 +12049,7 @@
       "fluoride"
     ],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
@@ -12133,10 +12180,11 @@
   },
   "tooth_decay": {
     "display_name": "Tooth Decay",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-IAIYH-000003"
+        "WAL-CLM-IAIYH-000003",
+        "WAL-CLM-IMMORT-000119"
       ],
       "deficiency_signs": [
         "WAL-CLM-LETS-000004"
@@ -12157,6 +12205,7 @@
     ],
     "books_cited": [
       "iaiyh",
+      "immortality",
       "lets-play-doctor"
     ]
   },
