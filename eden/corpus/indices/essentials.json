@@ -1708,7 +1708,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 55,
+    "claim_count": 56,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
@@ -1752,6 +1752,7 @@
         "WAL-CLM-IMMORT-000103",
         "WAL-CLM-IMMORT-000107",
         "WAL-CLM-IMMORT-000108",
+        "WAL-CLM-IMMORT-000180",
         "WAL-CLM-RARE-000051",
         "WAL-CLM-RARE-000119",
         "WAL-CLM-RARE-000120",
@@ -2208,10 +2209,11 @@
     "display_name": "Iodine",
     "canon_slug": "iodine",
     "category": "mineral",
-    "claim_count": 19,
+    "claim_count": 25,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000093",
+        "WAL-CLM-IMMORT-000182",
         "WAL-CLM-LETS-000013",
         "WAL-CLM-RARE-000150"
       ],
@@ -2219,6 +2221,7 @@
         "WAL-CLM-RARE-000144"
       ],
       "diagnostic_pattern": [
+        "WAL-CLM-IMMORT-000183",
         "WAL-CLM-RARE-000151"
       ],
       "dose": [
@@ -2226,11 +2229,15 @@
         "WAL-CLM-RARE-000146"
       ],
       "interaction": [
-        "WAL-CLM-DDDL-000025"
+        "WAL-CLM-DDDL-000025",
+        "WAL-CLM-IMMORT-000184"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000023",
         "WAL-CLM-IMMORT-000001",
+        "WAL-CLM-IMMORT-000177",
+        "WAL-CLM-IMMORT-000179",
+        "WAL-CLM-IMMORT-000180",
         "WAL-CLM-RARE-000074",
         "WAL-CLM-RARE-000145",
         "WAL-CLM-RARE-000147",
@@ -2249,7 +2256,17 @@
     "deficiency_signs": [
       {
         "sign": "brittle_nails",
+        "claim_id": "WAL-CLM-IMMORT-000182",
+        "confidence": "high"
+      },
+      {
+        "sign": "brittle_nails",
         "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high"
+      },
+      {
+        "sign": "cold_intolerance",
+        "claim_id": "WAL-CLM-IMMORT-000182",
         "confidence": "high"
       },
       {
@@ -2259,12 +2276,32 @@
       },
       {
         "sign": "constipation",
+        "claim_id": "WAL-CLM-IMMORT-000182",
+        "confidence": "high"
+      },
+      {
+        "sign": "constipation",
         "claim_id": "WAL-CLM-RARE-000150",
         "confidence": "high"
       },
       {
         "sign": "depression",
+        "claim_id": "WAL-CLM-IMMORT-000182",
+        "confidence": "high"
+      },
+      {
+        "sign": "depression",
         "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high"
+      },
+      {
+        "sign": "dry_skin",
+        "claim_id": "WAL-CLM-IMMORT-000182",
+        "confidence": "high"
+      },
+      {
+        "sign": "fatigue",
+        "claim_id": "WAL-CLM-IMMORT-000182",
         "confidence": "high"
       },
       {
@@ -2279,6 +2316,11 @@
       },
       {
         "sign": "hair_loss",
+        "claim_id": "WAL-CLM-IMMORT-000182",
+        "confidence": "high"
+      },
+      {
+        "sign": "hair_loss",
         "claim_id": "WAL-CLM-RARE-000150",
         "confidence": "high"
       },
@@ -2289,12 +2331,32 @@
       },
       {
         "sign": "low_sex_drive",
+        "claim_id": "WAL-CLM-IMMORT-000182",
+        "confidence": "high"
+      },
+      {
+        "sign": "low_sex_drive",
         "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high"
+      },
+      {
+        "sign": "muscle_cramps",
+        "claim_id": "WAL-CLM-IMMORT-000182",
+        "confidence": "high"
+      },
+      {
+        "sign": "poor_memory",
+        "claim_id": "WAL-CLM-IMMORT-000182",
         "confidence": "high"
       },
       {
         "sign": "poor_memory",
         "claim_id": "WAL-CLM-RARE-000150",
+        "confidence": "high"
+      },
+      {
+        "sign": "weight_gain",
+        "claim_id": "WAL-CLM-IMMORT-000182",
         "confidence": "high"
       },
       {
@@ -2319,7 +2381,9 @@
       "hyperthyroidism",
       "hypothyroidism",
       "keshan_disease",
-      "pica"
+      "pica",
+      "thyroid_disease",
+      "wilsons_syndrome"
     ],
     "interacts_with": [
       "chromium",

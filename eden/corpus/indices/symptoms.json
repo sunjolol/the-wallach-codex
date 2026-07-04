@@ -328,7 +328,7 @@
   },
   "brittle_nails": {
     "display_name": "Brittle Nails",
-    "claim_count": 7,
+    "claim_count": 8,
     "likely_deficiencies": [
       {
         "essential": "calcium",
@@ -339,6 +339,12 @@
       {
         "essential": "calcium",
         "claim_id": "WAL-CLM-LETS-000276",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000182",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -398,6 +404,7 @@
       }
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -566,8 +573,14 @@
   },
   "cold_intolerance": {
     "display_name": "Cold Intolerance",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000182",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000150",
@@ -576,16 +589,23 @@
       }
     ],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
   "constipation": {
     "display_name": "Constipation",
-    "claim_count": 7,
+    "claim_count": 8,
     "likely_deficiencies": [
       {
         "essential": "inositol",
         "claim_id": "WAL-CLM-LETS-000012",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000182",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -621,6 +641,7 @@
       }
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -728,8 +749,14 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000182",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000150",
@@ -738,6 +765,7 @@
       }
     ],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
@@ -856,11 +884,17 @@
   },
   "dry_skin": {
     "display_name": "Dry Skin",
-    "claim_count": 7,
+    "claim_count": 8,
     "likely_deficiencies": [
       {
         "essential": "biotin",
         "claim_id": "WAL-CLM-LETS-000003",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000182",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -915,6 +949,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor"
     ]
   },
@@ -1224,8 +1259,14 @@
   },
   "exophthalmos": {
     "display_name": "Exophthalmos",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000183",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000151",
@@ -1234,6 +1275,7 @@
       }
     ],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
@@ -1328,7 +1370,7 @@
   },
   "fatigue": {
     "display_name": "Fatigue",
-    "claim_count": 24,
+    "claim_count": 25,
     "likely_deficiencies": [
       {
         "essential": "biotin",
@@ -1351,6 +1393,12 @@
       {
         "essential": "copper",
         "claim_id": "WAL-CLM-LETS-000008",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000182",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -1471,6 +1519,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -1673,11 +1722,17 @@
   },
   "hair_loss": {
     "display_name": "Hair Loss",
-    "claim_count": 4,
+    "claim_count": 5,
     "likely_deficiencies": [
       {
         "essential": "biotin",
         "claim_id": "WAL-CLM-RARE-000240",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000182",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -1696,6 +1751,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "immortality",
       "rare-earths"
     ]
   },
@@ -1738,8 +1794,14 @@
   },
   "hand_tremors": {
     "display_name": "Hand Tremors",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000183",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000151",
@@ -1748,6 +1810,7 @@
       }
     ],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
@@ -1850,8 +1913,14 @@
   },
   "heat_intolerance": {
     "display_name": "Heat Intolerance",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000183",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000151",
@@ -1860,6 +1929,7 @@
       }
     ],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
@@ -2053,8 +2123,14 @@
   },
   "insomnia": {
     "display_name": "Insomnia",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000183",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000151",
@@ -2063,6 +2139,7 @@
       }
     ],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
@@ -2090,7 +2167,7 @@
   },
   "irritability": {
     "display_name": "Irritability",
-    "claim_count": 17,
+    "claim_count": 18,
     "likely_deficiencies": [
       {
         "essential": "calcium",
@@ -2107,6 +2184,12 @@
       {
         "essential": "copper",
         "claim_id": "WAL-CLM-LETS-000009",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000183",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -2191,6 +2274,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -2477,8 +2561,14 @@
   },
   "low_sex_drive": {
     "display_name": "Low Sex Drive",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000182",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000150",
@@ -2487,6 +2577,7 @@
       }
     ],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
@@ -2778,7 +2869,7 @@
   },
   "muscle_cramps": {
     "display_name": "Muscle Cramps",
-    "claim_count": 4,
+    "claim_count": 5,
     "likely_deficiencies": [
       {
         "essential": "calcium",
@@ -2789,6 +2880,12 @@
       {
         "essential": "calcium",
         "claim_id": "WAL-CLM-LETS-000078",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000182",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -2812,6 +2909,7 @@
       }
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -2833,7 +2931,7 @@
   },
   "muscle_weakness": {
     "display_name": "Muscle Weakness",
-    "claim_count": 11,
+    "claim_count": 12,
     "likely_deficiencies": [
       {
         "essential": "biotin",
@@ -2844,6 +2942,12 @@
       {
         "essential": "calcium",
         "claim_id": "WAL-CLM-LETS-000005",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000183",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -2904,6 +3008,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -3056,7 +3161,7 @@
   },
   "nervousness": {
     "display_name": "Nervousness",
-    "claim_count": 9,
+    "claim_count": 10,
     "likely_deficiencies": [
       {
         "essential": "calcium",
@@ -3067,6 +3172,12 @@
       {
         "essential": "copper",
         "claim_id": "WAL-CLM-LETS-000009",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000183",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -3114,6 +3225,7 @@
       }
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -3585,11 +3697,17 @@
   },
   "poor_memory": {
     "display_name": "Poor Memory",
-    "claim_count": 9,
+    "claim_count": 10,
     "likely_deficiencies": [
       {
         "essential": "calcium",
         "claim_id": "WAL-CLM-LETS-000005",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000182",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -3643,6 +3761,7 @@
       }
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -3775,8 +3894,14 @@
   },
   "rapid_pulse": {
     "display_name": "Rapid Pulse",
-    "claim_count": 5,
+    "claim_count": 6,
     "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000183",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000151",
@@ -3809,6 +3934,7 @@
       }
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -4593,8 +4719,14 @@
   },
   "weight_gain": {
     "display_name": "Weight Gain",
-    "claim_count": 3,
+    "claim_count": 4,
     "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000182",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-LETS-000013",
@@ -4615,14 +4747,21 @@
       }
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
   },
   "weight_loss": {
     "display_name": "Weight Loss",
-    "claim_count": 7,
+    "claim_count": 8,
     "likely_deficiencies": [
+      {
+        "essential": "iodine",
+        "claim_id": "WAL-CLM-IMMORT-000183",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "iodine",
         "claim_id": "WAL-CLM-RARE-000151",
@@ -4673,6 +4812,7 @@
       }
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]

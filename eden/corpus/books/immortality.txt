@@ -7311,29 +7311,27 @@ at 0.17 ppm, terrestrial plants at 16 ppm (Carya spp.), marine
 animals at 0.005 to 0.01 ppm and terrestrial animals at 0.5 ppm
 in bone.
 
-In 1878, two noticed holmium’s
+In 1878, two Swiss chemists noticed holmium’s
 characteristic spectral lines, but could not identify them, so
-they referred to the unknown element as “element X.” In 1979,
+they referred to the unknown element as “element X.” In 1879,
 a Swedish chemist, Per Teodor Cleve isolated and identified
 the element and called it Holmia, Latin for his home town of
 Stockholm.
 
-Swiss chemists
-
 I-Iodine is found in igneous rocks at 0.5 ppm, shale at
 2.3 ppm, sandstone at 1.7 ppm, limestone at 1.2 ppm, fresh
-water at 0.002 ppm,sea water at 0.06 ppm, soil at 5 ppm,
+water at 0.002 ppm, sea water at 0.06 ppm, soil at 5 ppm,
 (strongly bound in humus- large areas of earth are known to be
 devoid of iodine), marine plants at 30 to 1,500 ppm; terrestrial
 plants at 0.42 ppm, marine animals at 1.0 to 150 ppm, and in
 terrestrial animals at 0.43 ppm (concentrates in the thyroid
 gland and hair).
 
-lodine is a violet-black solid that vaporizes to give a
+Iodine is a violet-black solid that vaporizes to give a
 violet gas. It is found in sea weed and brine wells, in the sea,
 in the form of inorganic salts and organic iodides. It is the
 heaviest element in the halogen family and is highly reactive.
-lodine was discovered in 1811 by Bernard Courtois, who
+Iodine was discovered in 1811 by Bernard Courtois, who
 noticed a purple vapor emanating from a sample of kelp
 
 
@@ -7348,7 +7346,7 @@ nitrate, mined in Chile. At one time Chile was one of the
 largest producers of iodine. Historically iodine was extracted
 from the ashes of burnt seaweed. The ocean contains large
 quantities of iodine which concentrates in various kinds of
-seaweed, including the giant kelp that grows of the coast of
+seaweed, including the giant kelp that grows off the coast of
 California. Iodine can also be recovered from the natural brines
 found in underground wells in Arkansas and Oklahoma.
 
@@ -7360,7 +7358,7 @@ of the skin.
 Because iodine kills bacteria, the military, campers and
 scouts use iodine tablets to “purify” water.
 
-lodine-131 is used by the medical trade to treat thyroid
+Iodine-131 is used by the medical trade to treat thyroid
 cancer and hyperthyroidism and iodine-125 along with an
 isotope of palladium is used to treat prostate cancer.
 
@@ -7374,7 +7372,7 @@ epidemic diseases.
 
 The average American takes in 170-250 mcg/day of
 elemental iodine. Humans lose considerable amounts of
-iodine in their sweat - a loss, of as much as 146 mcg/ day, with
+iodine in their sweat - a loss, of as much as 146 mcg/day, with
 only moderate exercise. Metallic iodine is not toxic with long
 term intakes of up to 2,000 mcg/day.
 
@@ -7483,13 +7481,11 @@ Goiter
  
 
 
-as =
-
 Many foods and food additives are known
 
-“soitrogens” because they interfere with the normal thyroid
+“goitrogens” because they interfere with the normal thyroid
 
-metabolism and produce thyroid disease. These substances:
+metabolism and produce thyroid disease. These substances
 
 include nitrates and nitrites (i.e. ham, bacon, sausage, bologna,
 salami, pastrami, pepperoni, jerky, deli-meats, etc.) and
@@ -7526,7 +7522,7 @@ and hydrochloric acids).
 
 Tennant named the new metal iridium after the Latin
 word, iris, which translates to “rainbow” because of the highly
-colored salts. .
+colored salts.
 
 asi
 

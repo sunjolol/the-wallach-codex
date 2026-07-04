@@ -2313,6 +2313,21 @@
       "lets-play-doctor"
     ]
   },
+  "cruciferous vegetables": {
+    "display_name": "Cruciferous Vegetables",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "interaction": [
+        "WAL-CLM-IMMORT-000184"
+      ]
+    },
+    "conditions_treated": [
+      "thyroid_disease"
+    ],
+    "books_cited": [
+      "immortality"
+    ]
+  },
   "cucumber": {
     "display_name": "Cucumber",
     "claim_count": 1,
@@ -5296,6 +5311,36 @@
     ],
     "books_cited": [
       "lets-play-doctor"
+    ]
+  },
+  "nitrates": {
+    "display_name": "Nitrates",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "interaction": [
+        "WAL-CLM-IMMORT-000184"
+      ]
+    },
+    "conditions_treated": [
+      "thyroid_disease"
+    ],
+    "books_cited": [
+      "immortality"
+    ]
+  },
+  "nitrites": {
+    "display_name": "Nitrites",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "interaction": [
+        "WAL-CLM-IMMORT-000184"
+      ]
+    },
+    "conditions_treated": [
+      "thyroid_disease"
+    ],
+    "books_cited": [
+      "immortality"
     ]
   },
   "nitroglycerine": {

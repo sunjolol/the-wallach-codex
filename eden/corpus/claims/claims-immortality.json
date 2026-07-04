@@ -6037,6 +6037,498 @@
       "extracted_at": "2026-07-04T15:15:27+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000172",
+      "kind": "definition",
+      "essentials": [
+        "holmium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Holmium — a soft, silvery rare-earth metal (one of the trace 'rare earth' elements the body carries in tiny amounts). Wallach notes it is scattered thinly through rocks, plants and animals, collecting mainly in bone in land animals, and recounts its discovery: in 1878 two Swiss chemists spotted its unique fingerprint in light (its 'spectral lines') but could not identify the element, so they called it 'element X'; in 1879 the Swedish chemist Per Teodor Cleve isolated it and named it Holmia, the Latin name for his home city of Stockholm.",
+      "verbatim": "Ho-Holmium, a rare earth, is found in igneous rocks at\n1.2 ppm, shale at 0.6 ppm, sandstone at 0.51 ppm, limestone\nat 0.17 ppm, terrestrial plants at 16 ppm (Carya spp.), marine\nanimals at 0.005 to 0.01 ppm and terrestrial animals at 0.5 ppm\nin bone.\n\nIn 1878, two Swiss chemists noticed holmium’s\ncharacteristic spectral lines, but could not identify them, so\nthey referred to the unknown element as “element X.” In 1879,\na Swedish chemist, Per Teodor Cleve isolated and identified\nthe element and called it Holmia, Latin for his home town of\nStockholm.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 158,
+        "screenshot": 92,
+        "kindle_location": null,
+        "char_offset": 287045
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "holmium",
+        "rare-earth",
+        "history",
+        "etymology"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T22:57:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000173",
+      "kind": "definition",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Where iodine is found in nature. Iodine is spread thinly through rocks, water, soil and living things, and Wallach lists typical concentrations (in parts per million, ppm). Notably, large areas of the earth's crust are essentially iodine-free because iodine binds tightly to humus (decayed organic matter in soil), while seaweeds and marine plants concentrate it enormously (up to 1,500 ppm). In land animals it collects mainly in the thyroid gland and the hair.",
+      "verbatim": "I-Iodine is found in igneous rocks at 0.5 ppm, shale at\n2.3 ppm, sandstone at 1.7 ppm, limestone at 1.2 ppm, fresh\nwater at 0.002 ppm, sea water at 0.06 ppm, soil at 5 ppm,\n(strongly bound in humus- large areas of earth are known to be\ndevoid of iodine), marine plants at 30 to 1,500 ppm; terrestrial\nplants at 0.42 ppm, marine animals at 1.0 to 150 ppm, and in\nterrestrial animals at 0.43 ppm (concentrates in the thyroid\ngland and hair).",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 158,
+        "screenshot": 92,
+        "kindle_location": null,
+        "char_offset": 287601
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "iodine",
+        "geology",
+        "halogen"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T22:57:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000174",
+      "kind": "definition",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "What iodine is, and how it was discovered. Iodine is a violet-black solid that turns straight into a violet gas when warmed (it 'sublimes'); it is the heaviest and one of the most reactive members of the halogen family (the salt-forming elements that also include chlorine and fluorine). It was discovered in 1811 by the Frenchman Bernard Courtois, who saw a purple vapor rise when he added sulfuric acid to kelp — the color gave it its name, from the Greek 'iodes,' meaning 'violet-colored.' A drop of iodine turns starch (as in potato or flour) deep blue, a classic chemistry test.",
+      "verbatim": "Iodine is a violet-black solid that vaporizes to give a\nviolet gas. It is found in sea weed and brine wells, in the sea,\nin the form of inorganic salts and organic iodides. It is the\nheaviest element in the halogen family and is highly reactive.\nIodine was discovered in 1811 by Bernard Courtois, who\nnoticed a purple vapor emanating from a sample of kelp\n\n\nto which he had added sulfuric acid. The color of the gas\ndetermined its name, translated from the Greek word iodes,\nmeaning “violet-colored.” A drop of iodine will turn starch a\ndeep blue (potato, flour, etc.).",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 158,
+        "screenshot": 92,
+        "kindle_location": null,
+        "char_offset": 288042
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "iodine",
+        "chemistry",
+        "discovery",
+        "etymology"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T22:57:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000175",
+      "kind": "definition",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Where commercial iodine comes from. Wallach explains that iodine is extracted from sodium iodate found in 'saltpeter' (potassium nitrate) mined in Chile — once the world's largest iodine producer — and historically from the ashes of burnt seaweed. The ocean holds huge amounts, concentrated by seaweeds like the giant kelp off the California coast, and iodine is also drawn from natural underground brines (salty groundwater) in Arkansas and Oklahoma.",
+      "verbatim": "Commercial quantities of iodine are extracted from\nsodium iodate, which is found in “saltpeter” or potassium\nnitrate, mined in Chile. At one time Chile was one of the\nlargest producers of iodine. Historically iodine was extracted\nfrom the ashes of burnt seaweed. The ocean contains large\nquantities of iodine which concentrates in various kinds of\nseaweed, including the giant kelp that grows off the coast of\nCalifornia. Iodine can also be recovered from the natural brines\nfound in underground wells in Arkansas and Oklahoma.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 159,
+        "screenshot": 92,
+        "kindle_location": null,
+        "char_offset": 288613
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "iodine",
+        "industrial",
+        "geography"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T22:57:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000176",
+      "kind": "definition",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Everyday and medical uses of iodine. Historically, iodine's most common use was as an alcohol tincture — a topical antiseptic for minor cuts and scrapes — and because it kills bacteria, the military, campers and scouts still use iodine tablets to purify drinking water. In medicine, radioactive iodine-131 is used to treat thyroid cancer and hyperthyroidism (an overactive thyroid), and iodine-125 (paired with a radioactive form of palladium) is used to treat prostate cancer. These radioisotope treatments are standard medical practice that Wallach is describing, not a Wallach protocol.",
+      "verbatim": "Historically, one of the most common uses of iodine\nwas in the form of an alcohol tincture, which was used as a\nwound antiseptic for treating minor lacerations and scrapes\nof the skin.\n\nBecause iodine kills bacteria, the military, campers and\nscouts use iodine tablets to “purify” water.\n\nIodine-131 is used by the medical trade to treat thyroid\ncancer and hyperthyroidism and iodine-125 along with an\nisotope of palladium is used to treat prostate cancer.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 159,
+        "screenshot": 92,
+        "kindle_location": null,
+        "char_offset": 289142
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "iodine",
+        "antiseptic",
+        "radioisotope",
+        "medical-use"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T22:57:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000177",
+      "kind": "mechanism",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "hypothyroidism",
+        "goiter"
+      ],
+      "symptoms": [],
+      "claim_text": "Iodine is essential, and running low on it is now common. Iodine is required by all vertebrates: the body combines it with the amino acid (protein building block) tyrosine to make thyroxin, the main thyroid hormone that sets the body's metabolic rate. Wallach warns that iodine intake is usually low to begin with, and because many Americans have cut back on salt (iodized salt is a major source) on their doctors' advice, hypothyroidism (an underactive thyroid) and goiter (a swollen thyroid gland) have become epidemic.",
+      "verbatim": "Iodine is known to be essential to red and brown\nalgae and all vertebrates. In combination with the amino acid\ntyrosine, iodine is manufactured into the thyroid hormone\nthyroxin. Iodine intake is typically low to begin with, but since\nAmericans have been restricting their salt intake at the advice\nof their doctors, hypothyroidism and goiter have become\nepidemic diseases.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 159,
+        "screenshot": 92,
+        "kindle_location": null,
+        "char_offset": 289600
+      },
+      "dose": null,
+      "tags": [
+        "iodine",
+        "thyroid",
+        "thyroxin",
+        "deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T22:57:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000178",
+      "kind": "definition",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "How much iodine people get, lose and can safely tolerate. The average American takes in 170–250 micrograms (mcg) of elemental iodine a day. The body loses a surprising amount through sweat — up to 146 mcg a day with only moderate exercise — which can deepen a shortfall. On the safety side, Wallach notes metallic iodine is not toxic even at long-term intakes up to 2,000 mcg a day, so there is a wide margin between a useful amount and a harmful one.",
+      "verbatim": "The average American takes in 170-250 mcg/day of\nelemental iodine. Humans lose considerable amounts of\niodine in their sweat - a loss, of as much as 146 mcg/day, with\nonly moderate exercise. Metallic iodine is not toxic with long\nterm intakes of up to 2,000 mcg/day.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 159,
+        "screenshot": 92,
+        "kindle_location": null,
+        "char_offset": 289975
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "iodine",
+        "intake",
+        "toxicity"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T22:57:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000179",
+      "kind": "mechanism",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "goiter"
+      ],
+      "symptoms": [],
+      "claim_text": "Even with plenty of iodine, certain foods can still cause goiter. Wallach points to Japanese people living on the sea coast who develop goiter (a swollen thyroid) despite a high daily iodine intake. In a feeding study, subjects given Chinese cabbage (bok choy), turnips, buckwheat, noodles, a fixed 2.0 mcg of iodine, or soybean all developed goiter — every group except the one fed seaweed. The lesson: certain foods (goitrogens) can block the body's use of iodine and trigger goiter even when iodine is abundant.",
+      "verbatim": "Goiter develops in Japanese living along the sea coast\ndespite high daily iodine consumption.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 159,
+        "screenshot": 92,
+        "kindle_location": null,
+        "char_offset": 290243
+      },
+      "dose": null,
+      "tags": [
+        "iodine",
+        "goiter",
+        "goitrogens",
+        "study"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T22:57:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000180",
+      "kind": "mechanism",
+      "essentials": [
+        "iodine",
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "goiter"
+      ],
+      "symptoms": [],
+      "claim_text": "Goiter can come from a copper shortage, not just an iodine shortage. Wallach cites island populations along the Adriatic where soil iodine was identical everywhere, yet goiter rates differed sharply — 46% of the people of Pisila and 40% of Polje were affected, but only 3% of Milahnici. The difference was a severe copper deficiency in the soils of the high-goiter areas. Copper is a cofactor (a required helper mineral) for the body to use iodine efficiently, so a copper shortage can produce goiter even when iodine is adequate.",
+      "verbatim": "Northern parts of the Adriatic Islands had more clinical\ngoiter than the southern areas while the southwest was goiter-free. Forty-six percent of the population of Pisila, 40% of the\npopulation of Polje, and only three percent of the population of\nMilahnici were affected. There is an identical iodine content of\nthe soil in all three locations. A severe copper deficiency in the\nsoils of the north and south cause the deficiency state because\ncopper is a cofactor required for the efficient utilization of\niodine.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 160,
+        "screenshot": 93,
+        "kindle_location": null,
+        "char_offset": 290557
+      },
+      "dose": null,
+      "tags": [
+        "iodine",
+        "copper",
+        "goiter",
+        "cofactor"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T22:57:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000181",
+      "kind": "definition",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "How common thyroid trouble is, and what the thyroid controls. Wallach notes that roughly one million Americans have either a hypothyroid (underactive) or hyperthyroid (overactive) thyroid condition. Thyroid hormones are wide-reaching regulators — they control digestion, heart rate, overall metabolism, body temperature, sweating, the nervous and reproductive systems, and body weight — which is why a struggling thyroid can cause such a broad mix of symptoms.",
+      "verbatim": "Some one million Americans have either a hypothyroid\n(low, under active) or a hyperthyroid (overactive) condition.\nThyroid hormones control and regulate digestion, heart rate,\nmetabolism, body temperature, sweat gland activity, nervous\nand reproductive systems and body weight.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 160,
+        "screenshot": 93,
+        "kindle_location": null,
+        "char_offset": 291073
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "iodine",
+        "thyroid",
+        "prevalence"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T22:57:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000182",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "hypothyroidism",
+        "hashimotos_disease",
+        "goiter",
+        "wilsons_syndrome"
+      ],
+      "symptoms": [
+        "fatigue",
+        "cold_intolerance",
+        "muscle_cramps",
+        "low_sex_drive",
+        "brittle_nails",
+        "weight_gain",
+        "hair_loss",
+        "depression",
+        "constipation",
+        "dry_skin",
+        "poor_memory"
+      ],
+      "claim_text": "Signs of an underactive thyroid (hypothyroidism). Wallach lists the symptoms of hypothyroidism — including Hashimoto's disease (an autoimmune thyroid condition) and Wilson's syndrome — as: fatigue, cold intolerance, muscle aches and pains, heavy or more frequent periods (dysmenorrhea), loss of libido (low sex drive), brittle nails, weight gain, hair loss, muscle cramps, depression, constipation, elevated blood cholesterol, puffy face, dry skin and hair, inability to concentrate, poor memory, and goiter.",
+      "verbatim": "Symptoms of Hypothyroidism\n\nHashimoto’s disease\n\nFatigue\n\nCold intolerance\n\nMuscle aches and pains\nHeavy or more frequent periods (dysmenorrhea)\nLoss of libido (low sex drive)\nBrittle nails\n\nWeight gain\n\nHair loss\n\nMuscle cramps\n\nDepression\n\nConstipation\n\n\nElevated blood cholesterol\nPuffy face\n\nDry skin and hair\nInability to concentrate\nPoor memory\n\nGoiter\n\nWilson’s syndrome",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 160,
+        "screenshot": 93,
+        "kindle_location": null,
+        "char_offset": 291352
+      },
+      "dose": null,
+      "tags": [
+        "iodine",
+        "hypothyroidism",
+        "thyroid",
+        "symptoms",
+        "deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T22:57:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000183",
+      "kind": "diagnostic_pattern",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "hyperthyroidism",
+        "graves_disease",
+        "goiter"
+      ],
+      "symptoms": [
+        "insomnia",
+        "heat_intolerance",
+        "hand_tremors",
+        "rapid_pulse",
+        "exophthalmos",
+        "weight_loss",
+        "muscle_weakness",
+        "irritability",
+        "nervousness"
+      ],
+      "claim_text": "Signs of an overactive thyroid (hyperthyroidism). Wallach lists the symptoms of hyperthyroidism — including Graves' disease (an autoimmune overactive-thyroid condition) — as: insomnia, heat intolerance, excessive sweating, lighter or less frequent periods (dysmenorrhea), hand tremors, rapid pulse, exophthalmos (bulging 'bug eyes'), weight loss, increased appetite, muscle weakness, frequent bowel movements, irritability, nervousness, and goiter.",
+      "verbatim": "Symptoms of Hyperthyroidism\n\n \n\nGrave's disease\n\nInsomnia\n\nHeat intolerance\n\nExcessive sweating\n\nLighter/less frequent periods (dysmenorrhea)\nHand tremors\n\nRapid pulse\n\nExophthalmos (“bug eyes,” Rodney Dangerfield eyes, etc.)\nWeight loss\n\nIncreased appetite\n\nMuscle weakness\n\nFrequent bowel movements\n\nIrritability\n\nNervousness\n\nGoiter",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 161,
+        "screenshot": 93,
+        "kindle_location": null,
+        "char_offset": 291742
+      },
+      "dose": null,
+      "tags": [
+        "iodine",
+        "hyperthyroidism",
+        "thyroid",
+        "symptoms",
+        "diagnostic"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T22:57:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000184",
+      "kind": "interaction",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [
+        "nitrates",
+        "nitrites",
+        "cruciferous vegetables"
+      ],
+      "conditions": [
+        "thyroid_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Specific foods that disrupt the thyroid ('goitrogens'). Wallach names the foods and additives that interfere with normal thyroid metabolism and produce thyroid disease. Two groups stand out: (1) nitrates and nitrites — the preservatives in processed and cured meats: ham, bacon, sausage, bologna, salami, pastrami, pepperoni, jerky and deli meats; and (2) cruciferous vegetables — broccoli, Brussels sprouts, cabbage and cauliflower. Knowing these specific culprits lets someone with thyroid trouble adjust their diet directly.",
+      "verbatim": "Many foods and food additives are known\n\n“goitrogens” because they interfere with the normal thyroid\n\nmetabolism and produce thyroid disease. These substances\n\ninclude nitrates and nitrites (i.e. ham, bacon, sausage, bologna,\nsalami, pastrami, pepperoni, jerky, deli-meats, etc.) and\ncruciferous vegetables (i.e. broccoli, Brussel sprouts, cabbage,\ncauliflower, etc.).",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 162,
+        "screenshot": 94,
+        "kindle_location": null,
+        "char_offset": 292111
+      },
+      "dose": null,
+      "tags": [
+        "iodine",
+        "goitrogens",
+        "thyroid",
+        "diet"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T22:57:48+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

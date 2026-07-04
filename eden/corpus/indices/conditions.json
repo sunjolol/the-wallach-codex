@@ -5819,17 +5819,21 @@
   },
   "goiter": {
     "display_name": "Goiter",
-    "claim_count": 14,
+    "claim_count": 19,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000001",
         "WAL-CLM-IMMORT-000019",
+        "WAL-CLM-IMMORT-000177",
+        "WAL-CLM-IMMORT-000179",
+        "WAL-CLM-IMMORT-000180",
         "WAL-CLM-RARE-000147",
         "WAL-CLM-RARE-000148",
         "WAL-CLM-RARE-000149"
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000093",
+        "WAL-CLM-IMMORT-000182",
         "WAL-CLM-LETS-000013",
         "WAL-CLM-RARE-000150"
       ],
@@ -5837,6 +5841,7 @@
         "WAL-CLM-IMMORT-000058"
       ],
       "diagnostics": [
+        "WAL-CLM-IMMORT-000183",
         "WAL-CLM-RARE-000151"
       ],
       "interactions": [
@@ -5903,9 +5908,10 @@
   },
   "graves_disease": {
     "display_name": "Graves Disease",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "diagnostics": [
+        "WAL-CLM-IMMORT-000183",
         "WAL-CLM-RARE-000151"
       ]
     },
@@ -5914,6 +5920,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
@@ -5979,10 +5986,11 @@
   },
   "hashimotos_disease": {
     "display_name": "Hashimotos Disease",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000093",
+        "WAL-CLM-IMMORT-000182",
         "WAL-CLM-RARE-000150"
       ]
     },
@@ -5992,6 +6000,7 @@
     "other_substances_involved": [],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },
@@ -6763,13 +6772,14 @@
   },
   "hyperthyroidism": {
     "display_name": "Hyperthyroidism",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-IMMORT-000099"
       ],
       "diagnostics": [
+        "WAL-CLM-IMMORT-000183",
         "WAL-CLM-RARE-000151"
       ]
     },
@@ -6944,14 +6954,16 @@
   },
   "hypothyroidism": {
     "display_name": "Hypothyroidism",
-    "claim_count": 7,
+    "claim_count": 9,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-DDDL-000023"
+        "WAL-CLM-DDDL-000023",
+        "WAL-CLM-IMMORT-000177"
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000093",
         "WAL-CLM-IMMORT-000099",
+        "WAL-CLM-IMMORT-000182",
         "WAL-CLM-LETS-000013",
         "WAL-CLM-RARE-000150"
       ],
@@ -12400,17 +12412,26 @@
   },
   "thyroid_disease": {
     "display_name": "Thyroid Disease",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000122"
+      ],
+      "interactions": [
+        "WAL-CLM-IMMORT-000184"
       ]
     },
     "essentials_involved": [
-      "copper"
+      "copper",
+      "iodine"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "cruciferous vegetables",
+      "nitrates",
+      "nitrites"
+    ],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
@@ -13107,6 +13128,22 @@
     ],
     "books_cited": [
       "lets-play-doctor"
+    ]
+  },
+  "wilsons_syndrome": {
+    "display_name": "Wilsons Syndrome",
+    "claim_count": 1,
+    "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-IMMORT-000182"
+      ]
+    },
+    "essentials_involved": [
+      "iodine"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "immortality"
     ]
   },
   "wounds": {

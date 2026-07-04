@@ -1990,7 +1990,7 @@ _JARGON_SKIP = {
     "homeopathy", "naturopathy", "osteopathy", "macrobiotic", "probiotic", "antibiotic",
     "hypoallergenic", "allergenic", "photography", "orthotic", "glucogenic", "ketogenic",
     "proteinogenic", "pathogenic", "bronchogenic", "bronchiogenic", "glycolysis", "hemolysis",
-    "paralysis", "clematitis", "vesiculosis",
+    "paralysis", "clematitis", "vesiculosis", "oklahoma",
 }
 
 

@@ -1039,6 +1039,29 @@
   {
     "id": "CG-0037",
     "essentials": [
+      "copper",
+      "iodine"
+    ],
+    "conditions": [
+      "goiter"
+    ],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-IMMORT-000180",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000149",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0038",
+    "essentials": [
       "dysprosium"
     ],
     "conditions": [],
@@ -1057,7 +1080,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0038",
+    "id": "CG-0039",
     "essentials": [
       "erbium"
     ],
@@ -1077,7 +1100,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0039",
+    "id": "CG-0040",
     "essentials": [
       "europium"
     ],
@@ -1097,7 +1120,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0040",
+    "id": "CG-0041",
     "essentials": [
       "gadolinium"
     ],
@@ -1117,7 +1140,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0041",
+    "id": "CG-0042",
     "essentials": [
       "germanium"
     ],
@@ -1141,7 +1164,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0042",
+    "id": "CG-0043",
     "essentials": [
       "germanium"
     ],
@@ -1161,7 +1184,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0043",
+    "id": "CG-0044",
     "essentials": [
       "hafnium"
     ],
@@ -1181,7 +1204,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0044",
+    "id": "CG-0045",
     "essentials": [
       "holmium"
     ],
@@ -1201,7 +1224,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0045",
+    "id": "CG-0046",
     "essentials": [
       "hydrogen"
     ],
@@ -1224,7 +1247,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0046",
+    "id": "CG-0047",
     "essentials": [
       "iodine"
     ],
@@ -1244,7 +1267,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0047",
+    "id": "CG-0048",
     "essentials": [
       "iodine"
     ],
@@ -1254,6 +1277,10 @@
     "kind": "mechanism",
     "repetitions": [
       {
+        "claim_id": "WAL-CLM-IMMORT-000179",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000147",
         "book": "rare-earths"
       },
@@ -1262,11 +1289,35 @@
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 1,
+    "books_repeating": 2,
+    "claim_count": 3
+  },
+  {
+    "id": "CG-0049",
+    "essentials": [
+      "iodine"
+    ],
+    "conditions": [
+      "goiter",
+      "graves_disease",
+      "hyperthyroidism"
+    ],
+    "kind": "diagnostic_pattern",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-IMMORT-000183",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000151",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 2,
     "claim_count": 2
   },
   {
-    "id": "CG-0048",
+    "id": "CG-0050",
     "essentials": [
       "iron"
     ],
@@ -1290,7 +1341,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0049",
+    "id": "CG-0051",
     "essentials": [
       "lutetium"
     ],
@@ -1310,7 +1361,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0050",
+    "id": "CG-0052",
     "essentials": [
       "magnesium"
     ],
@@ -1330,7 +1381,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0051",
+    "id": "CG-0053",
     "essentials": [
       "manganese"
     ],
@@ -1350,7 +1401,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0052",
+    "id": "CG-0054",
     "essentials": [
       "molybdenum"
     ],
@@ -1370,7 +1421,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0053",
+    "id": "CG-0055",
     "essentials": [
       "molybdenum"
     ],
@@ -1390,7 +1441,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0054",
+    "id": "CG-0056",
     "essentials": [
       "neodymium"
     ],
@@ -1410,7 +1461,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0055",
+    "id": "CG-0057",
     "essentials": [
       "niobium"
     ],
@@ -1430,7 +1481,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0056",
+    "id": "CG-0058",
     "essentials": [
       "nitrogen"
     ],
@@ -1450,7 +1501,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0057",
+    "id": "CG-0059",
     "essentials": [
       "nitrogen"
     ],
@@ -1474,7 +1525,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0058",
+    "id": "CG-0060",
     "essentials": [
       "omega-3",
       "omega-6"
@@ -1495,7 +1546,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0059",
+    "id": "CG-0061",
     "essentials": [
       "omega-3",
       "omega-6"
@@ -1516,7 +1567,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0060",
+    "id": "CG-0062",
     "essentials": [
       "oxygen"
     ],
@@ -1544,7 +1595,7 @@
     "claim_count": 4
   },
   {
-    "id": "CG-0061",
+    "id": "CG-0063",
     "essentials": [
       "oxygen"
     ],
@@ -1566,7 +1617,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0062",
+    "id": "CG-0064",
     "essentials": [
       "phosphorus"
     ],
@@ -1586,7 +1637,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0063",
+    "id": "CG-0065",
     "essentials": [
       "phosphorus"
     ],
@@ -1606,7 +1657,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0064",
+    "id": "CG-0066",
     "essentials": [
       "potassium"
     ],
@@ -1626,7 +1677,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0065",
+    "id": "CG-0067",
     "essentials": [
       "potassium"
     ],
@@ -1646,7 +1697,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0066",
+    "id": "CG-0068",
     "essentials": [
       "selenium"
     ],
@@ -1670,7 +1721,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0067",
+    "id": "CG-0069",
     "essentials": [
       "selenium"
     ],
@@ -1692,7 +1743,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0068",
+    "id": "CG-0070",
     "essentials": [
       "selenium"
     ],
@@ -1714,7 +1765,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0069",
+    "id": "CG-0071",
     "essentials": [
       "selenium"
     ],
@@ -1736,7 +1787,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0070",
+    "id": "CG-0072",
     "essentials": [
       "silver"
     ],
@@ -1756,7 +1807,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0071",
+    "id": "CG-0073",
     "essentials": [
       "silver"
     ],
@@ -1780,7 +1831,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0072",
+    "id": "CG-0074",
     "essentials": [
       "sodium"
     ],
@@ -1802,7 +1853,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0073",
+    "id": "CG-0075",
     "essentials": [
       "sulfur"
     ],
@@ -1826,7 +1877,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0074",
+    "id": "CG-0076",
     "essentials": [
       "vanadium"
     ],
@@ -1850,7 +1901,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0075",
+    "id": "CG-0077",
     "essentials": [
       "vitamin-k"
     ],
@@ -1872,7 +1923,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0076",
+    "id": "CG-0078",
     "essentials": [
       "yttrium"
     ],
@@ -1892,7 +1943,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0077",
+    "id": "CG-0079",
     "essentials": [
       "zinc"
     ],
@@ -1928,7 +1979,7 @@
     "claim_count": 6
   },
   {
-    "id": "CG-0078",
+    "id": "CG-0080",
     "essentials": [
       "zinc"
     ],

@@ -1,168 +1,212 @@
 # Extraction report — immortality (Immortality)
 
-_13 claim(s) drafted 2026-07-04T15:15:27+00:00. Review then run corpus_seal.py to promote._
+_13 claim(s) drafted 2026-07-04T22:57:48+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×2, diagnostic_pattern×1, interaction×1, mechanism×4, personal_anecdote×1, toxicity_sign×4
+Kinds: deficiency_sign×1, definition×7, diagnostic_pattern×1, interaction×1, mechanism×3
 
-### WAL-CLM-IMMORT-000159 · definition
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Mercury — the basics. Mercury (chemical symbol Hg) is the only metal that is liquid at ordinary room temperature — a very dense, heavy metal with a silvery-white sheen, which earned it the old common name 'quicksilver.' It is rarely found pure in nature; instead it occurs locked in a bright-red ore called cinnabar (also called vermillion), which is mostly mercury sulfide. The largest deposits are in Spain and Italy — Spain has mercury mines that have run continuously for over 2,000 years — and metallic mercury is extracted by heating the ore and condensing the vapor. In his words: "Mercury is the only metal that is liquid at room temperatures. It is an extremely dense metal, and therefore a heavy metal with a silvery-white color that has resulted in the common name of 'quicksilver.' Mercury is rarely found as a pure metal in nature, rather it is found bound in a bright red ore called cinnabar or vermillion. Cinnabar is primarily mercury sulfide and is found in large deposits in Spain and Italy. Spain has mercury mines that have been operating continuously for more than 2,000 years."
-- **verbatim** (offset 279060): “Mercury is the only
-metal that is liquid at room temperatures. It is an extremely
-dense metal, and therefore a heavy metal with a silvery-white
-color that has resulted in the common name of “quicksilver.”
+### WAL-CLM-IMMORT-000172 · definition
+- **essentials:** holmium · **conditions:** — · **symptoms:** —
+- **claim:** Holmium — a soft, silvery rare-earth metal (one of the trace 'rare earth' elements the body carries in tiny amounts). Wallach notes it is scattered thinly through rocks, plants and animals, collecting mainly in bone in land animals, and recounts its discovery: in 1878 two Swiss chemists spotted its unique fingerprint in light (its 'spectral lines') but could not identify the element, so they called it 'element X'; in 1879 the Swedish chemist Per Teodor Cleve isolated it and named it Holmia, the Latin name for his home city of Stockholm.
+- **verbatim** (offset 287045): “Ho-Holmium, a rare earth, is found in igneous rocks at
+1.2 ppm, shale at 0.6 ppm, sandstone at 0.51 ppm, limestone
+at 0.17 ppm, terrestrial plants at 16 ppm (Carya spp.), marine
+animals at 0.005 to 0.01 ppm and terrestrial animals at 0.5 ppm
+in bone.
 
-Mercury is rarely found as a pure metal in nature,
-rather it is found bound in a bright red ore called cinnabar
-or vermillion. Cinnabar is primarily mercury sulfide and is
-found in large deposits in Spain and Italy. Spain has mercury
-mines that have been operating continuously for more than
-2,000 years.”
+In 1878, two Swiss chemists noticed holmium’s
+characteristic spectral lines, but could not identify them, so
+they referred to the unknown element as “element X.” In 1879,
+a Swedish chemist, Per Teodor Cleve isolated and identified
+the element and called it Holmia, Latin for his home town of
+Stockholm.”
 
-### WAL-CLM-IMMORT-000160 · mechanism
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** How mercury poisons the body. Like other heavy metals, mercury is an accumulative poison — it builds up in the body and binds to enzymes, crippling their job as catalysts that drive the body's biological reactions. It is easily absorbed through the digestive (gastrointestinal) tract and can also pass straight through the skin (trans-dermal absorption). Mercury vapor is far more dangerous than the liquid metal: Wallach cites an estimate that the fumes from as little as a teaspoon of mercury can saturate a large room within a week and make it unsafe to work in. In his words: "Like many heavy metals, mercury is an accumulative poison that binds with enzymes in the body, producing a reduction or loss of function as a catalyst of biological functions. It is easily absorbed into the body through the gastrointestinal tract and can enter the body via trans-dermal routes. The vapor is considerably more dangerous than the elemental metal. It has been estimated that the vapors from the volume of mercury as small as a teaspoon can saturate a large room within a week and make it unsafe to work in."
-- **verbatim** (offset 279668): “Like many heavy metals, mercury is an accumulative
-poison that binds with enzymes in the body, producing
-a reduction or loss of function as a catalyst of biological
-functions. It is easily absorbed into the body through the
-gastrointestinal tract and can enter the body via trans-dermal
-routes. The vapor is considerably more dangerous than the
-elemental metal. It has been estimated that the vapors from
-the volume of mercury as small as a teaspoon can saturate a
-large room within a week and make it unsafe to work in.”
+### WAL-CLM-IMMORT-000173 · definition
+- **essentials:** iodine · **conditions:** — · **symptoms:** —
+- **claim:** Where iodine is found in nature. Iodine is spread thinly through rocks, water, soil and living things, and Wallach lists typical concentrations (in parts per million, ppm). Notably, large areas of the earth's crust are essentially iodine-free because iodine binds tightly to humus (decayed organic matter in soil), while seaweeds and marine plants concentrate it enormously (up to 1,500 ppm). In land animals it collects mainly in the thyroid gland and the hair.
+- **verbatim** (offset 287601): “I-Iodine is found in igneous rocks at 0.5 ppm, shale at
+2.3 ppm, sandstone at 1.7 ppm, limestone at 1.2 ppm, fresh
+water at 0.002 ppm, sea water at 0.06 ppm, soil at 5 ppm,
+(strongly bound in humus- large areas of earth are known to be
+devoid of iodine), marine plants at 30 to 1,500 ppm; terrestrial
+plants at 0.42 ppm, marine animals at 1.0 to 150 ppm, and in
+terrestrial animals at 0.43 ppm (concentrates in the thyroid
+gland and hair).”
 
-### WAL-CLM-IMMORT-000161 · personal_anecdote
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Mercury and the ancient quest for immortality. Fittingly for a book about immortality, Wallach recounts how the early Chinese alchemists insisted that regularly consuming mercury ('potable gold') was the path to eternal life — a deadly error. Mercury was known to the ancient Chinese and Egyptians (samples have been found in tombs dating to 1500 B.C.); its name comes from the planet Mercury, and its symbol Hg from the Latin hydragyrum, 'liquid silver.' The most famous victim was China's first emperor, Jing Shi Huang (210 B.C. — historically Qin Shi Huang), who inadvertently poisoned himself to death by drinking a mercury-spiked immortality elixir over many years. Before dying he grew paranoid ('mad as a hatter'), had much of his inner circle executed, and built the vast army of life-sized terra-cotta guards to accompany him through an intended thousand-year reign. In his words: "The first Chinese Emperor (210 B.C.), Jing Shi Huang, in a failed attempt to attain immortality, inadvertently killed himself by drinking several doses of a mercury spiked elixir over an extended period of time. Prior to his death, Jing became paranoid ('mad as a hatter'), had many of his loyal inner circle, advisors, scholars and academics executed and had hundreds of life sized terra cotta likenesses of his loyal palace guard constructed, painted and dressed to be with him throughout a thousand year reign."
-- **verbatim** (offset 280698): “The first Chinese Emperor (210 B.C.), Jing Shi Huang,
-in a failed attempt to attain immortality, inadvertently killed
-himself by drinking several doses of a mercury spiked elixir
-over an extended period of time.
+### WAL-CLM-IMMORT-000174 · definition
+- **essentials:** iodine · **conditions:** — · **symptoms:** —
+- **claim:** What iodine is, and how it was discovered. Iodine is a violet-black solid that turns straight into a violet gas when warmed (it 'sublimes'); it is the heaviest and one of the most reactive members of the halogen family (the salt-forming elements that also include chlorine and fluorine). It was discovered in 1811 by the Frenchman Bernard Courtois, who saw a purple vapor rise when he added sulfuric acid to kelp — the color gave it its name, from the Greek 'iodes,' meaning 'violet-colored.' A drop of iodine turns starch (as in potato or flour) deep blue, a classic chemistry test.
+- **verbatim** (offset 288042): “Iodine is a violet-black solid that vaporizes to give a
+violet gas. It is found in sea weed and brine wells, in the sea,
+in the form of inorganic salts and organic iodides. It is the
+heaviest element in the halogen family and is highly reactive.
+Iodine was discovered in 1811 by Bernard Courtois, who
+noticed a purple vapor emanating from a sample of kelp
 
-Prior to his death, Jing became paranoid (“mad as a
-hatter”), had many of his loyal inner circle, advisors, scholars
-and academics executed and had hundreds of life sized terra
-cotta likenesses of his loyal palace guard constructed, painted
-and dressed to be with him throughout a thousand year reign”
 
-### WAL-CLM-IMMORT-000162 · mechanism
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Where mercury exposure comes from. Wallach traces how mercury is concentrated in the environment by industry, mining, agriculture, dental amalgam fillings, and microorganisms that convert (methylate) it into methyl mercury in the sediments of rivers, lakes and oceans. The main industrial source is the chlor-alkali industry (chlorine and caustic-soda manufacturing); other human sources include electrical appliances, paint, dental amalgams, pharmaceuticals, vaccines, slimicides and algaecides (used by the paper and pulp industry), mercury seed-treatment fungicides (especially dangerous as methyl mercury), and the burning of fossil fuels. Historically, dentists exploited mercury's ability to dissolve other metals into alloys (amalgams) to make silver- and gold-mercury fillings for cavities (caries). Tellingly, mercury has been found in all tissues of accident victims whose only known exposure was their dental amalgam fillings. In his words: "Mercury is concentrated in the environment by industry, mining operations, agriculture, dental repairs (amalgams), and microorganisms that methylate mercury in the sediments at the bottoms of fresh water or salt water rivers, lakes, oceans and seas. Mercury has been detected in all tissues of accident victims, with no known mercury exposure except dental mercury amalgam fillings."
-- **verbatim** (offset 281271): “Mercury is concentrated in the environment by
-industry, mining operations, agriculture, dental repairs
-(amalgams), and microorganisms that methylate mercury
-in the sediments at the bottoms of fresh water or salt water
-rivers, lakes, oceans and seas. Mercury has been detected in all
-tissues of accident victims, with no known mercury exposure
-except dental mercury amalgam fillings.”
+to which he had added sulfuric acid. The color of the gas
+determined its name, translated from the Greek word iodes,
+meaning “violet-colored.” A drop of iodine will turn starch a
+deep blue (potato, flour, etc.).”
 
-### WAL-CLM-IMMORT-000163 · mechanism
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Methyl mercury, fish, and the unborn. In fish, mercury occurs as methyl mercury. Wallach gives typical body levels: people who rarely eat fish carry 2-5 micrograms per kilogram (µg/kg), moderate fish-eaters about 10 µg/kg, and heavy consumers — especially of shark, tuna or swordfish — up to 400 µg/kg. Methyl mercury is dangerously persistent: its biological half-life in humans is about 70 days, versus only 4 days for inorganic mercury. And while the placenta blocks inorganic mercury, it does NOT block methyl mercury — which crosses easily into the fetus, causing the 'congenital' form of Minamata disease seen in Japanese infants. In his words: "Mercury in fish is present as methyl mercury. People who rarely eat fish have low levels of mercury (2-5ug/kg); moderate fish consumers have 10 ug/kg; high fish consumers (especially if they eat shark, tuna, or swordfish) have higher values ranging up to 400 ug/kg."
-- **verbatim** (offset 281857): “Mercury in fish is present as methyl mercury. People
-who rarely eat fish have low levels of mercury (2-5ug/kg);
-moderate fish consumers have 10 ug/kg; high fish consumers
-(especially if they eat shark, tuna, or swordfish) have higher
-values ranging up to 400 ug/kg.”
+### WAL-CLM-IMMORT-000175 · definition
+- **essentials:** iodine · **conditions:** — · **symptoms:** —
+- **claim:** Where commercial iodine comes from. Wallach explains that iodine is extracted from sodium iodate found in 'saltpeter' (potassium nitrate) mined in Chile — once the world's largest iodine producer — and historically from the ashes of burnt seaweed. The ocean holds huge amounts, concentrated by seaweeds like the giant kelp off the California coast, and iodine is also drawn from natural underground brines (salty groundwater) in Arkansas and Oklahoma.
+- **verbatim** (offset 288613): “Commercial quantities of iodine are extracted from
+sodium iodate, which is found in “saltpeter” or potassium
+nitrate, mined in Chile. At one time Chile was one of the
+largest producers of iodine. Historically iodine was extracted
+from the ashes of burnt seaweed. The ocean contains large
+quantities of iodine which concentrates in various kinds of
+seaweed, including the giant kelp that grows off the coast of
+California. Iodine can also be recovered from the natural brines
+found in underground wells in Arkansas and Oklahoma.”
 
-### WAL-CLM-IMMORT-000164 · interaction
-- **essentials:** selenium · **conditions:** mercury_poisoning · **symptoms:** —
-- **claim:** Selenium is mercury's natural antidote. Wallach describes a mutual metabolic antagonism between mercury and selenium: each protects against poisoning by the other. Selenium supplements protect against mercury poisoning — specifically, selenium shields the human kidney from the tissue death (necrosis) that mercury causes, and guards against mercury crossing the placenta to the fetus. (Conversely, mercury protects against selenium poisoning.) The operational takeaway: selenium is the key nutrient defense against mercury toxicity. In his words: "The metabolic antagonism between mercury and selenium, results in the protection from selenium poisoning by mercury and protection against mercury poisoning by selenium supplements. Because a mutual antagonism between Hg and Se exists, Se protects the human kidney from necrosis (tissue death) by mercury poisoning and the placental transfer of mercury."
-- **verbatim** (offset 282979): “The metabolic antagonism between mercury and
-selenium, results in the protection from selenium poisoning
-by mercury and protection against mercury poisoning by
-selenium supplements. Because a mutual antagonism between
-Hg and Se exists, Se protects the human kidney from necrosis
-(tissue death) by mercury poisoning and the placental transfer
-of mercury.”
+### WAL-CLM-IMMORT-000176 · definition
+- **essentials:** iodine · **conditions:** — · **symptoms:** —
+- **claim:** Everyday and medical uses of iodine. Historically, iodine's most common use was as an alcohol tincture — a topical antiseptic for minor cuts and scrapes — and because it kills bacteria, the military, campers and scouts still use iodine tablets to purify drinking water. In medicine, radioactive iodine-131 is used to treat thyroid cancer and hyperthyroidism (an overactive thyroid), and iodine-125 (paired with a radioactive form of palladium) is used to treat prostate cancer. These radioisotope treatments are standard medical practice that Wallach is describing, not a Wallach protocol.
+- **verbatim** (offset 289142): “Historically, one of the most common uses of iodine
+was in the form of an alcohol tincture, which was used as a
+wound antiseptic for treating minor lacerations and scrapes
+of the skin.
 
-### WAL-CLM-IMMORT-000165 · mechanism
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Dental mercury and antibiotic resistance. Wallach cites a striking animal experiment: mercury vapor off-gassing from dental amalgam fillings raised the proportion of antibiotic-resistant bacteria in the gut from 9% to 70% in monkeys given mercury fillings — and the drug-resistant population fell back to 12% once the fillings were removed. In his words: "Mercury vapor off-gassing from dental amalgam has been shown to increase the percent of antibiotic resistant bacteria in the gut from nine percent to 70% in monkeys given dental mercury fillings. The drug resistant bacterial population dropped to 12% when the fillings were removed."
-- **verbatim** (offset 283333): “Mercury vapor off-gassing from dental amalgam
-has been shown to increase the percent of antibiotic resistant
-bacteria in the gut from nine percent to 70% in monkeys
-given dental mercury fillings. The drug resistant bacterial
-population dropped to 12% when the fillings were removed.”
+Because iodine kills bacteria, the military, campers and
+scouts use iodine tablets to “purify” water.
 
-### WAL-CLM-IMMORT-000166 · toxicity_sign
-- **essentials:** — · **conditions:** mercury_poisoning, alopecia, memory_loss · **symptoms:** —
-- **claim:** 'Mad as a hatter' — occupational mercury poisoning. The phrase comes from real mercury poisoning. During the Victorian era, 'hatters' who brushed mercuric-nitrate paste onto felt hats to stop mold routinely inhaled mercury vapor and developed serious problems — hair loss, loss of teeth, loss of memory, bizarre behavior and various forms of insanity — which is where the expression 'mad as a hatter' (from Alice in Wonderland) originates. Goldsmiths and mirror workers, who also worked with mercury, could suffer the same inhalation poisoning. In his words: "Mercury poisoning from inhalation of mercury vapors was reported during the Victorian Age in 'hatters' who used mercuric nitrate paste to prevent molds from growing on felt hats and as a result, commonly developed serious problems, including hair loss, loss of teeth, loss of memory, bizarre behavior and various forms of insanity, hence the expression 'mad as a hatter' from Alice in Wonderland."
-- **verbatim** (offset 283617): “Mercury poisoning from inhalation of mercury vapors
-was reported during the Victorian Age in “hatters” who used
-mercuric nitrate paste to prevent molds from growing on felt
-hats and as a result, commonly developed serious problems,
-including hair loss, loss of teeth, loss of memory, bizarre
-behavior and various forms of insanity, hence the expression
+Iodine-131 is used by the medical trade to treat thyroid
+cancer and hyperthyroidism and iodine-125 along with an
+isotope of palladium is used to treat prostate cancer.”
 
-“mad as a hatter” from Alice in Wonderland.”
+### WAL-CLM-IMMORT-000177 · mechanism
+- **essentials:** iodine · **conditions:** hypothyroidism, goiter · **symptoms:** —
+- **claim:** Iodine is essential, and running low on it is now common. Iodine is required by all vertebrates: the body combines it with the amino acid (protein building block) tyrosine to make thyroxin, the main thyroid hormone that sets the body's metabolic rate. Wallach warns that iodine intake is usually low to begin with, and because many Americans have cut back on salt (iodized salt is a major source) on their doctors' advice, hypothyroidism (an underactive thyroid) and goiter (a swollen thyroid gland) have become epidemic.
+- **verbatim** (offset 289600): “Iodine is known to be essential to red and brown
+algae and all vertebrates. In combination with the amino acid
+tyrosine, iodine is manufactured into the thyroid hormone
+thyroxin. Iodine intake is typically low to begin with, but since
+Americans have been restricting their salt intake at the advice
+of their doctors, hypothyroidism and goiter have become
+epidemic diseases.”
 
-### WAL-CLM-IMMORT-000167 · toxicity_sign
-- **essentials:** — · **conditions:** multiple_sclerosis, als, parkinsons_disease · **symptoms:** —
-- **claim:** Dental mercury linked to MS, ALS and Parkinson's. Wallach reports that in modern times both dentists and dental patients have developed high rates of several diseases believed related to mercury exposure — multiple sclerosis (MS), ALS (Lou Gehrig's disease) and Parkinson's disease — with which one depending on the part of the brain most affected. He notes actress Annette Funicello's multiple sclerosis, which is believed to have been caused by vapors from her dental mercury amalgams. In his words: "In modern times dentists and dental patients have developed high rates of several diseases thought to be related to mercury exposure including multiple sclerosis, ALS (Lou Gehrig's Disease) and Parkinson's Disease depending on what part of the brain was most severely affected. Annette Funicello contracted multiple sclerosis, which is believed to be caused by vapors from dental mercury amalgams."
-- **verbatim** (offset 284091): “In modern times dentists and dental patients have
-developed high rates of several diseases thought to be related
-to mercury exposure including multiple sclerosis, ALS (Lou
-Gehrig’s Disease) and Parkinson’s Disease depending on
-what part of the brain was most severely affected. Annette
-Funicello contracted multiple sclerosis, which is believed to
-be caused by vapors from dental mercury amalgams.”
+### WAL-CLM-IMMORT-000178 · definition
+- **essentials:** iodine · **conditions:** — · **symptoms:** —
+- **claim:** How much iodine people get, lose and can safely tolerate. The average American takes in 170–250 micrograms (mcg) of elemental iodine a day. The body loses a surprising amount through sweat — up to 146 mcg a day with only moderate exercise — which can deepen a shortfall. On the safety side, Wallach notes metallic iodine is not toxic even at long-term intakes up to 2,000 mcg a day, so there is a wide margin between a useful amount and a harmful one.
+- **verbatim** (offset 289975): “The average American takes in 170-250 mcg/day of
+elemental iodine. Humans lose considerable amounts of
+iodine in their sweat - a loss, of as much as 146 mcg/day, with
+only moderate exercise. Metallic iodine is not toxic with long
+term intakes of up to 2,000 mcg/day.”
 
-### WAL-CLM-IMMORT-000168 · diagnostic_pattern
-- **essentials:** — · **conditions:** mercury_poisoning, stomatitis, depression, vertigo, diarrhea · **symptoms:** —
-- **claim:** The signs of mercury poisoning. Wallach describes how direct mercury poisoning shows up mainly as neurological problems: tremors, vertigo (dizziness), irritability, moodiness (including suicidal feelings and depression), excess salivation, inflammation of the mouth (stomatitis) and diarrhea. The pattern depends on the form: inorganic mercury mainly attacks the liver and kidneys, while the more toxic alkyl (organic) mercury causes progressive loss of coordination, loss of vision, heart palpitations, loss of hearing and mental deterioration — the result of a toxic brain injury (neuroencephalopathy) that selectively damages the nerve cells of the cerebral and cerebellar cortex. In his words: "The manifestations of direct mercury poisoning are primarily neurological (i.e. tremors, vertigo, irritability, moodiness (suicidal, depression, etc.), salivation, inflammation of the mouth, stomatitis and diarrhea. Poisoning with inorganic mercury targets the liver and kidneys. Poisoning with the more toxic alkyl mercury results in progressive lack of coordination, loss of vision, heart palpitations, loss of hearing, and mental deterioration caused by a toxic neuroencephalopathy in which the neuronal cells of the cerebral and cerebellar cortex are selectively affected."
-- **verbatim** (offset 284490): “The manifestations of direct mercury poisoning are
+### WAL-CLM-IMMORT-000179 · mechanism
+- **essentials:** iodine · **conditions:** goiter · **symptoms:** —
+- **claim:** Even with plenty of iodine, certain foods can still cause goiter. Wallach points to Japanese people living on the sea coast who develop goiter (a swollen thyroid) despite a high daily iodine intake. In a feeding study, subjects given Chinese cabbage (bok choy), turnips, buckwheat, noodles, a fixed 2.0 mcg of iodine, or soybean all developed goiter — every group except the one fed seaweed. The lesson: certain foods (goitrogens) can block the body's use of iodine and trigger goiter even when iodine is abundant.
+- **verbatim** (offset 290243): “Goiter develops in Japanese living along the sea coast
+despite high daily iodine consumption.”
 
+### WAL-CLM-IMMORT-000180 · mechanism
+- **essentials:** iodine, copper · **conditions:** goiter · **symptoms:** —
+- **claim:** Goiter can come from a copper shortage, not just an iodine shortage. Wallach cites island populations along the Adriatic where soil iodine was identical everywhere, yet goiter rates differed sharply — 46% of the people of Pisila and 40% of Polje were affected, but only 3% of Milahnici. The difference was a severe copper deficiency in the soils of the high-goiter areas. Copper is a cofactor (a required helper mineral) for the body to use iodine efficiently, so a copper shortage can produce goiter even when iodine is adequate.
+- **verbatim** (offset 290557): “Northern parts of the Adriatic Islands had more clinical
+goiter than the southern areas while the southwest was goiter-free. Forty-six percent of the population of Pisila, 40% of the
+population of Polje, and only three percent of the population of
+Milahnici were affected. There is an identical iodine content of
+the soil in all three locations. A severe copper deficiency in the
+soils of the north and south cause the deficiency state because
+copper is a cofactor required for the efficient utilization of
+iodine.”
+
+### WAL-CLM-IMMORT-000181 · definition
+- **essentials:** iodine · **conditions:** — · **symptoms:** —
+- **claim:** How common thyroid trouble is, and what the thyroid controls. Wallach notes that roughly one million Americans have either a hypothyroid (underactive) or hyperthyroid (overactive) thyroid condition. Thyroid hormones are wide-reaching regulators — they control digestion, heart rate, overall metabolism, body temperature, sweating, the nervous and reproductive systems, and body weight — which is why a struggling thyroid can cause such a broad mix of symptoms.
+- **verbatim** (offset 291073): “Some one million Americans have either a hypothyroid
+(low, under active) or a hyperthyroid (overactive) condition.
+Thyroid hormones control and regulate digestion, heart rate,
+metabolism, body temperature, sweat gland activity, nervous
+and reproductive systems and body weight.”
+
+### WAL-CLM-IMMORT-000182 · deficiency_sign
+- **essentials:** iodine · **conditions:** hypothyroidism, hashimotos_disease, goiter, wilsons_syndrome · **symptoms:** fatigue, cold_intolerance, muscle_cramps, low_sex_drive, brittle_nails, weight_gain, hair_loss, depression, constipation, dry_skin, poor_memory
+- **claim:** Signs of an underactive thyroid (hypothyroidism). Wallach lists the symptoms of hypothyroidism — including Hashimoto's disease (an autoimmune thyroid condition) and Wilson's syndrome — as: fatigue, cold intolerance, muscle aches and pains, heavy or more frequent periods (dysmenorrhea), loss of libido (low sex drive), brittle nails, weight gain, hair loss, muscle cramps, depression, constipation, elevated blood cholesterol, puffy face, dry skin and hair, inability to concentrate, poor memory, and goiter.
+- **verbatim** (offset 291352): “Symptoms of Hypothyroidism
+
+Hashimoto’s disease
+
+Fatigue
+
+Cold intolerance
+
+Muscle aches and pains
+Heavy or more frequent periods (dysmenorrhea)
+Loss of libido (low sex drive)
+Brittle nails
+
+Weight gain
+
+Hair loss
+
+Muscle cramps
+
+Depression
+
+Constipation
+
+
+Elevated blood cholesterol
+Puffy face
+
+Dry skin and hair
+Inability to concentrate
+Poor memory
+
+Goiter
+
+Wilson’s syndrome”
+
+### WAL-CLM-IMMORT-000183 · diagnostic_pattern
+- **essentials:** iodine · **conditions:** hyperthyroidism, graves_disease, goiter · **symptoms:** insomnia, heat_intolerance, hand_tremors, rapid_pulse, exophthalmos, weight_loss, muscle_weakness, irritability, nervousness
+- **claim:** Signs of an overactive thyroid (hyperthyroidism). Wallach lists the symptoms of hyperthyroidism — including Graves' disease (an autoimmune overactive-thyroid condition) — as: insomnia, heat intolerance, excessive sweating, lighter or less frequent periods (dysmenorrhea), hand tremors, rapid pulse, exophthalmos (bulging 'bug eyes'), weight loss, increased appetite, muscle weakness, frequent bowel movements, irritability, nervousness, and goiter.
+- **verbatim** (offset 291742): “Symptoms of Hyperthyroidism
 
  
 
-primarily neurological (i.e. tremors, vertigo, irritability,
-moodiness (suicidal, depression, etc.), salivation, inflammation
-of the mouth, stomatitis and diarrhea.
+Grave's disease
 
-Poisoning with inorganic mercury targets the liver and
-kidneys. Poisoning with the more toxic alkyl mercury results
-in progressive lack of coordination, loss of vision, heart
-palpitations, loss of hearing, and mental deterioration caused
-by a toxic neuroencephalopathy in which the neuronal cells of
-the cerebral and cerebellar cortex are selectively affected.”
+Insomnia
 
-### WAL-CLM-IMMORT-000169 · toxicity_sign
-- **essentials:** — · **conditions:** minamata_disease, mental_retardation, cerebral_palsy, neural_tube_defects · **symptoms:** —
-- **claim:** The Minamata disaster (1962). In 1962, in the small fishing village of Minamata, Japan, a factory dumped mercury-contaminated waste water (effluent) straight into the bay. The mercury contaminated aquatic plants (kelp, algae) and bacteria, which were eaten by fish, which were eaten by the villagers — with disastrous results. The Minamata disaster was marked by a high rate of 'congenital' (fetal) damage: mental retardation, cerebral palsy, neural tube defects and high infant mortality. (The catastrophe led to the founding of the Center for the Biology of Natural Systems.) In his words: "The contaminated fish were eaten by the bay residents with disastrous results. The Minamata disaster was characterized by a high incidence of 'congenital' (damage to the fetus) mental retardation, cerebral palsy, neural tube defects and high rates of infant mortality."
-- **verbatim** (offset 285426): “The contaminated fish were eaten by the bay
-residents with disastrous results. The Minamata disaster was
-characterized by a high incidence of “congenital” (damage
-to the fetus) mental retardation, cerebral palsy, neural tube
-defects and high rates of infant mortality.”
+Heat intolerance
 
-### WAL-CLM-IMMORT-000170 · toxicity_sign
-- **essentials:** — · **conditions:** mental_retardation, neural_tube_defects, cerebral_palsy · **symptoms:** —
-- **claim:** The Iraq methyl-mercury mass poisoning. Wallach recounts a large-scale methyl mercury poisoning in Iraq, when many people ate bread made from seed grain treated with mercurial fungicide — and meat (liver and kidneys) from animals fed the same treated grain. The result of eating the mercury-contaminated grain was thousands of babies born mentally retarded, with a high rate of congenital brain defects including neural tube defects and cerebral palsy. In his words: "In Iraq, a large scale methyl mercury poisoning was reported when large numbers of people were fed bread made with mercurial fungicide treated seed grain and meat (liver and kidneys) from animals fed the treated grain. The result of consuming the mercury contaminated grains was thousands of babies born retarded and having a high incidence of congenital brain defects including neural tube defects and cerebral palsy."
-- **verbatim** (offset 286625): “In Iraq, a large scale methyl mercury poisoning was
-reported when large numbers of people were fed bread made
-with mercurial fungicide treated seed grain and meat (liver
-and kidneys) from animals fed the treated grain. The result of
-consuming the mercury contaminated grains was thousands
-of babies born retarded and having a high incidence of
-congenital brain defects including neural tube defects and
-cerebral palsy.”
+Excessive sweating
 
-### WAL-CLM-IMMORT-000171 · definition
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Do vaccines cause autism? — Wallach's full take on the mercury-vaccine-autism question. This is one of the most-asked health questions, and Wallach lays out both sides. THE HYPOTHESIS: some people believe autism is linked to the mercury-based preservative (a compound called thimerosal) once used in some childhood vaccines. WALLACH'S OWN SKEPTICISM: he points to a major hole in that theory — no other country, developing or industrialized, using the very same vaccines from the same manufacturers has reported the same complaints, rate of autism diagnosis, or lawsuits over a vaccine-autism link. THE NUMBERS he cites: reported autism in America rose from about 1 in 150,000 (1980) to a claimed 1 in 150 (2008); only about 10% of autistic children are born with it, while roughly 90% are born normal and develop it between ages two and six. THE OUTCOME: since 2006, most of the mercury preservatives have been removed from childhood vaccines in response to public concern and class-action lawsuits. Notably, Wallach does NOT flatly assert that vaccines cause autism — he presents the hypothesis alongside the international counter-evidence, leaving it an open question. In his words: "The cause of autism is thought by some to have a relationship to the mercury preservatives in some vaccines. It is of interest to note that none of the other countries (Third World or Industrialized) using the same vaccines and vaccine manufacturers have registered the same complaints, level of diagnosis or law suites regarding a relationship between autism and vaccinations. The rate of autism in America in 1980 was 1/150,000 and 2008 it is claimed to be 1/150. A few autistic babies (10%) are born with the disease, 90% are born normal and then develop it somewhere between the ages of two and six years of age." [Wallach continues that since 2006 much of the mercury preservative has been removed from childhood vaccines because of universal concerns and class-action lawsuits.]
-- **verbatim** (offset 285826): “The cause of autism is thought by some to have a
-relationship to the mercury preservatives in some vaccines.
+Lighter/less frequent periods (dysmenorrhea)
+Hand tremors
 
-It is of interest to note that none of the other countries (Third
-World or Industrialized) using the same vaccines and vaccine
-manufacturers have registered the same complaints, level
-of diagnosis or law suites regarding a relationship between
-autism and vaccinations.
+Rapid pulse
 
-The rate of autism in America in 1980 was 1/150,000 and
-2008 it is claimed to be 1/150. A few autistic babies (10%) are
-born with the disease, 90% are born normal and then develop
-it somewhere between the ages of two and six years of age.”
+Exophthalmos (“bug eyes,” Rodney Dangerfield eyes, etc.)
+Weight loss
+
+Increased appetite
+
+Muscle weakness
+
+Frequent bowel movements
+
+Irritability
+
+Nervousness
+
+Goiter”
+
+### WAL-CLM-IMMORT-000184 · interaction
+- **essentials:** iodine · **conditions:** thyroid_disease · **symptoms:** —
+- **claim:** Specific foods that disrupt the thyroid ('goitrogens'). Wallach names the foods and additives that interfere with normal thyroid metabolism and produce thyroid disease. Two groups stand out: (1) nitrates and nitrites — the preservatives in processed and cured meats: ham, bacon, sausage, bologna, salami, pastrami, pepperoni, jerky and deli meats; and (2) cruciferous vegetables — broccoli, Brussels sprouts, cabbage and cauliflower. Knowing these specific culprits lets someone with thyroid trouble adjust their diet directly.
+- **verbatim** (offset 292111): “Many foods and food additives are known
+
+“goitrogens” because they interfere with the normal thyroid
+
+metabolism and produce thyroid disease. These substances
+
+include nitrates and nitrites (i.e. ham, bacon, sausage, bologna,
+salami, pastrami, pepperoni, jerky, deli-meats, etc.) and
+cruciferous vegetables (i.e. broccoli, Brussel sprouts, cabbage,
+cauliflower, etc.).”
 
