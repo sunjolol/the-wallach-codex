@@ -455,5 +455,9 @@
   ],
   "gestational_diabetes": [
     "pregnancy onset diabetes"
+  ],
+  "lung_cancer": [
+    "bronchiogenic carcinoma",
+    "bronchogenic carcinoma"
   ]
 }

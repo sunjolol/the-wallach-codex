@@ -3537,23 +3537,30 @@
     "display_name": "Cesium",
     "canon_slug": "cesium",
     "category": "mineral",
-    "claim_count": 3,
+    "claim_count": 5,
     "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-IMMORT-000094"
+      ],
       "protocol": [
         "WAL-CLM-DDDL-000018",
         "WAL-CLM-EPIGEN-000078",
+        "WAL-CLM-IMMORT-000096",
         "WAL-CLM-RARE-000125"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [
       "cancer",
-      "colon_cancer"
+      "colon_cancer",
+      "lung_cancer",
+      "sarcoma"
     ],
     "interacts_with": [],
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },

@@ -6163,7 +6163,7 @@ ppm, sea water at 0.00005 ppm, soils at 0.3 to 25 ppm, marine
 plants at 0.07 ppm, terrestrial plants at 0.2 ppm, terrestrial
 animals at 0.064 ppm (highest concentrations in muscle).
 
-As an alkaline mineral, cesium behaves chemically ina
+As an alkaline mineral, cesium behaves chemically in a
 similar manner as sodium, potassium and rubidium. Cesium
 and potassium enter into a solute complex, which participates
 in ion antagonism, osmosis, permeability regulation, and
@@ -6181,7 +6181,7 @@ coesius (“sky blue”).
 Cesium chloride is used as part of alternative cancer
 therapy programs. Cesium provides “high pH therapy” for
 cancer by entering the cancer cell and producing an alkaline
-environment. Ithas been recommended for all cancers including
+environment. It has been recommended for all cancers including
 sarcomas, bronchiogenic carcinoma and colon cancer.
 
 ===== Screenshot (80) =====

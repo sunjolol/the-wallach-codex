@@ -2338,7 +2338,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 61,
+    "claim_count": 62,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -2408,6 +2408,7 @@
         "WAL-CLM-DDDL-000018",
         "WAL-CLM-DDDL-000056",
         "WAL-CLM-EPIGEN-000078",
+        "WAL-CLM-IMMORT-000096",
         "WAL-CLM-LETS-000178",
         "WAL-CLM-LETS-000342",
         "WAL-CLM-LETS-000344",
@@ -3366,7 +3367,7 @@
   },
   "colon_cancer": {
     "display_name": "Colon Cancer",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-LETS-000181",
@@ -3374,6 +3375,7 @@
       ],
       "protocols": [
         "WAL-CLM-EPIGEN-000078",
+        "WAL-CLM-IMMORT-000096",
         "WAL-CLM-RARE-000125"
       ]
     },
@@ -3386,6 +3388,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -8091,17 +8094,23 @@
   },
   "lung_cancer": {
     "display_name": "Lung Cancer",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-LETS-000181"
+      ],
+      "protocols": [
+        "WAL-CLM-IMMORT-000096"
       ]
     },
-    "essentials_involved": [],
+    "essentials_involved": [
+      "cesium"
+    ],
     "other_substances_involved": [
       "cesium-chloride"
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor"
     ]
   },
@@ -10890,17 +10899,23 @@
   },
   "sarcoma": {
     "display_name": "Sarcoma",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-LETS-000181"
+      ],
+      "protocols": [
+        "WAL-CLM-IMMORT-000096"
       ]
     },
-    "essentials_involved": [],
+    "essentials_involved": [
+      "cesium"
+    ],
     "other_substances_involved": [
       "cesium-chloride"
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor"
     ]
   },
