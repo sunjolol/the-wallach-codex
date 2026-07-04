@@ -412,7 +412,8 @@
     "bad seed"
   ],
   "violent_behavior": [
-    "jekyll"
+    "jekyll",
+    "violent criminal behavior"
   ],
   "panic_attacks": [
     "panic attack",
@@ -455,7 +456,8 @@
     "bad seeds"
   ],
   "oligospermia": [
-    "decreased sperm count"
+    "decreased sperm count",
+    "low sperm count"
   ],
   "gestational_diabetes": [
     "pregnancy onset diabetes"
@@ -475,7 +477,8 @@
   ],
   "hyperthyroidism": [
     "hyperthyroid",
-    "hypo hyperthyroid"
+    "hypo hyperthyroid",
+    "hyper thyroid"
   ],
   "degenerative_disc_disease": [
     "disc disease"
@@ -489,7 +492,8 @@
     "hemosiderosis"
   ],
   "glucose_intolerance": [
-    "reduced carbohydrate tolerance"
+    "reduced carbohydrate tolerance",
+    "reduced glucose tolerance"
   ],
   "leukopenia": [
     "leucopenia"
@@ -526,5 +530,16 @@
   ],
   "low_back_pain": [
     "low back"
+  ],
+  "parkinsonism": [
+    "parkinsonian syndrome",
+    "parkinsonian"
+  ],
+  "heartburn": [
+    "reflux"
+  ],
+  "miscarriage": [
+    "still births",
+    "miscarriages"
   ]
 }

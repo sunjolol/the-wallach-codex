@@ -1317,7 +1317,8 @@
       ],
       "other_substances": [],
       "conditions": [
-        "criminal_behavior"
+        "criminal_behavior",
+        "violent_behavior"
       ],
       "symptoms": [],
       "claim_text": "Lithium has measurable mood- and behavior-moderating effects even at the trace levels found in municipal drinking water. A study of 27 Texas counties (1978–1987) by Dr. Gerhard Schrauzer found significantly higher rates of suicide, homicide and rape in counties whose water contained little or no lithium than in those with water-lithium levels of 70–170 µg/L; Wallach argues lithium, not fluoride, belongs in community drinking water.",
@@ -3824,7 +3825,8 @@
         "rare-earth",
         "cerium-nitrate",
         "burns",
-        "topical-disinfectant"
+        "topical-disinfectant",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -6153,7 +6155,8 @@
       ],
       "other_substances": [],
       "conditions": [
-        "schizophrenia"
+        "schizophrenia",
+        "parkinsonism"
       ],
       "symptoms": [],
       "claim_text": "Wallach notes that excessive manganese — from certain community water supplies and industrial processes — can produce a Parkinsonian syndrome or a psychiatric disorder (locura manganica) resembling schizophrenia.",
@@ -9962,7 +9965,8 @@
       "tags": [
         "pill-mills",
         "drug-mineral-replacement",
-        "table-9-1"
+        "table-9-1",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -9999,7 +10003,8 @@
       "tags": [
         "pill-mills",
         "drug-mineral-replacement",
-        "table-9-1"
+        "table-9-1",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -10266,7 +10271,8 @@
       "tags": [
         "pill-mills",
         "drug-mineral-replacement",
-        "table-9-1"
+        "table-9-1",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",

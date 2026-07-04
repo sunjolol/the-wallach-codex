@@ -3207,9 +3207,10 @@
   },
   "chondromalacia": {
     "display_name": "Chondromalacia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-EPIGEN-000099",
         "WAL-CLM-RARE-000176"
       ]
     },
@@ -3218,6 +3219,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -5796,9 +5798,10 @@
   },
   "glucose_intolerance": {
     "display_name": "Glucose Intolerance",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-IMMORT-000099",
         "WAL-CLM-LETS-000025"
       ]
@@ -5809,6 +5812,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "epigenetics",
       "immortality",
       "lets-play-doctor"
     ]
@@ -6676,29 +6680,35 @@
   },
   "hyperparathyroidism": {
     "display_name": "Hyperparathyroidism",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-EPIGEN-000061"
+      ],
       "toxicity_signs": [
         "WAL-CLM-LETS-000024"
       ]
     },
     "essentials_involved": [
+      "calcium",
       "phosphorus"
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "epigenetics",
       "lets-play-doctor"
     ]
   },
   "hypertension": {
     "display_name": "Hypertension",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000071",
         "WAL-CLM-RARE-000107"
       ],
       "deficiency_signs": [
+        "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-IMMORT-000063",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000275"
@@ -6745,6 +6755,7 @@
       "rauwolfia"
     ],
     "books_cited": [
+      "epigenetics",
       "immortality",
       "lets-play-doctor",
       "rare-earths"
@@ -6752,9 +6763,10 @@
   },
   "hyperthyroidism": {
     "display_name": "Hyperthyroidism",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-IMMORT-000099"
       ],
       "diagnostics": [
@@ -6767,15 +6779,17 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "epigenetics",
       "immortality",
       "rare-earths"
     ]
   },
   "hypochlorhydria": {
     "display_name": "Hypochlorhydria",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-EPIGEN-000029",
         "WAL-CLM-IMMORT-000068",
         "WAL-CLM-IMMORT-000081"
       ]
@@ -6786,6 +6800,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "epigenetics",
       "immortality"
     ]
   },
@@ -8954,10 +8969,11 @@
   },
   "miscarriage": {
     "display_name": "Miscarriage",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
+        "WAL-CLM-EPIGEN-000099",
         "WAL-CLM-RARE-000176"
       ],
       "protocols": [
@@ -8978,6 +8994,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -9576,9 +9593,10 @@
   },
   "oligospermia": {
     "display_name": "Oligospermia",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-IMMORT-000088"
       ],
       "definitions": [
@@ -9596,6 +9614,7 @@
       "zumba"
     ],
     "books_cited": [
+      "epigenetics",
       "immortality",
       "lets-play-doctor",
       "rare-earths"
@@ -10190,8 +10209,11 @@
   },
   "parkinsonism": {
     "display_name": "Parkinsonism",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
+      "contraindications": [
+        "WAL-CLM-RARE-000175"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000396"
       ],
@@ -10216,7 +10238,8 @@
       "pancreatic-enzymes"
     ],
     "books_cited": [
-      "lets-play-doctor"
+      "lets-play-doctor",
+      "rare-earths"
     ]
   },
   "parkinsons_disease": {
@@ -12854,10 +12877,11 @@
   },
   "violent_behavior": {
     "display_name": "Violent Behavior",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000018",
+        "WAL-CLM-RARE-000041",
         "WAL-CLM-RARE-000127"
       ],
       "deficiency_signs": [
@@ -12963,9 +12987,10 @@
   },
   "water_intoxication": {
     "display_name": "Water Intoxication",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-EPIGEN-000102",
         "WAL-CLM-RARE-000189"
       ]
     },
@@ -12974,6 +12999,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },

@@ -315,7 +315,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 81,
+    "claim_count": 78,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -401,13 +401,10 @@
         "WAL-CLM-LETS-000427",
         "WAL-CLM-LETS-000451",
         "WAL-CLM-LETS-000454",
-        "WAL-CLM-RARE-000276",
-        "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000283",
-        "WAL-CLM-RARE-000284",
         "WAL-CLM-RARE-000286"
       ]
     },
@@ -1012,7 +1009,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 103,
+    "claim_count": 100,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1124,13 +1121,10 @@
         "WAL-CLM-LETS-000427",
         "WAL-CLM-LETS-000451",
         "WAL-CLM-LETS-000454",
-        "WAL-CLM-RARE-000276",
-        "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000282",
-        "WAL-CLM-RARE-000284",
         "WAL-CLM-RARE-000285",
         "WAL-CLM-RARE-000286"
       ],
@@ -1248,6 +1242,7 @@
       "high_cholesterol",
       "hyperactivity",
       "hypercalcemia",
+      "hyperparathyroidism",
       "hypertension",
       "hypochlorhydria",
       "indigestion",
@@ -1358,7 +1353,7 @@
     "display_name": "Boron",
     "canon_slug": "boron",
     "category": "mineral",
-    "claim_count": 9,
+    "claim_count": 8,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000275"
@@ -1374,8 +1369,7 @@
       ],
       "protocol": [
         "WAL-CLM-LETS-000391",
-        "WAL-CLM-RARE-000279",
-        "WAL-CLM-RARE-000284"
+        "WAL-CLM-RARE-000279"
       ]
     },
     "deficiency_signs": [],
@@ -1461,7 +1455,7 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 65,
+    "claim_count": 63,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -1539,8 +1533,6 @@
         "WAL-CLM-LETS-000381",
         "WAL-CLM-LETS-000388",
         "WAL-CLM-LETS-000457",
-        "WAL-CLM-RARE-000276",
-        "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
         "WAL-CLM-RARE-000280",
         "WAL-CLM-RARE-000282"
@@ -2884,7 +2876,7 @@
     "display_name": "Vanadium",
     "canon_slug": "vanadium",
     "category": "mineral",
-    "claim_count": 37,
+    "claim_count": 35,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -2930,8 +2922,6 @@
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000307",
         "WAL-CLM-LETS-000333",
-        "WAL-CLM-RARE-000276",
-        "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
         "WAL-CLM-RARE-000280",
         "WAL-CLM-RARE-000282"
@@ -3581,11 +3571,8 @@
     "display_name": "Cerium",
     "canon_slug": "cerium",
     "category": "mineral",
-    "claim_count": 2,
+    "claim_count": 1,
     "claims_by_kind": {
-      "definition": [
-        "WAL-CLM-RARE-000112"
-      ],
       "mechanism": [
         "WAL-CLM-EPIGEN-000075"
       ]
@@ -3594,8 +3581,7 @@
     "conditions_treated": [],
     "interacts_with": [],
     "books_cited": [
-      "epigenetics",
-      "rare-earths"
+      "epigenetics"
     ]
   },
   "cesium": {
@@ -3814,7 +3800,7 @@
     "display_name": "Lithium",
     "canon_slug": "lithium",
     "category": "mineral",
-    "claim_count": 24,
+    "claim_count": 21,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000079",
@@ -3848,12 +3834,9 @@
       "protocol": [
         "WAL-CLM-LETS-000159",
         "WAL-CLM-LETS-000244",
-        "WAL-CLM-RARE-000276",
-        "WAL-CLM-RARE-000277",
         "WAL-CLM-RARE-000278",
         "WAL-CLM-RARE-000279",
         "WAL-CLM-RARE-000282",
-        "WAL-CLM-RARE-000284",
         "WAL-CLM-RARE-000285"
       ]
     },

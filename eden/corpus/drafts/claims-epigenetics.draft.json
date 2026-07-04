@@ -1038,10 +1038,12 @@
       "kind": "mechanism",
       "essentials": [],
       "other_substances": [],
-      "conditions": [],
+      "conditions": [
+        "hypochlorhydria"
+      ],
       "symptoms": [],
       "claim_text": "Wallach explains that low stomach acid (hypochlorhydria) undermines digestion and nutrient absorption. The acid-manufacturing chief cells of the stomach make hydrochloric acid from sodium chloride (table salt), and that stomach acid is needed to keep the stomach environment sterile -- below a pH of 2.0, preventing the overgrowth of bacteria, viruses, yeast, and fungus, gastric fermentation, and reflux -- to activate the 'intrinsic factor' required for vitamin B12 absorption, to activate the protein-digesting enzyme pepsin, and to facilitate the absorption of minerals. When stomach acid is too low, the absorption of vitamin B12, proteins, and minerals fails. In his words: 'The raw material for the Chief Cells, the acid-manufacturing cells of the stomach, to make hydrochloric acid is NaCl, which is salt. Stomach acid is required to keep the stomach environment sterile and free of bacteria, viruses, yeast, and fungus.'",
-      "verbatim": "The raw material for the Chief Cells, the acid-manufacturing cells of the\nstomach, to make hydrochloric acid is NaCl, which is salt. Stomach acid is\nrequired to keep the stomach environment sterile and free of bacteria, viruses,\nyeast, and fungus.",
+      "verbatim": "There are two major issues that have to be considered to ensure optimal\nabsorption: hypochlorhydria (i.e,, low stomach acid levels) and gluten intolerance:\n\nHypochlorhydria\n\nThe raw material for the Chief Cells, the acid-manufacturing cells of the\nstomach, to make hydrochloric acid is NaCl, which is salt. Stomach acid is\nrequired to keep the stomach environment sterile and free of bacteria, viruses,\nyeast, and fungus.",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -1049,7 +1051,7 @@
         "page": 596,
         "screenshot": 567,
         "kindle_location": null,
-        "char_offset": 1054283
+        "char_offset": 1054109
       },
       "dose": null,
       "tags": [
@@ -2394,11 +2396,13 @@
         "sciatica",
         "backache",
         "muscle_cramps",
-        "osteoporosis"
+        "osteoporosis",
+        "hyperparathyroidism",
+        "hypertension"
       ],
       "symptoms": [],
       "claim_text": "Calcium is the most abundant mineral in the body, with about 99% in the bones and teeth (as hydroxyapatite) and the rest used as a cofactor for blood clotting, muscle contraction, and the heart's electrical conduction. Wallach states that, contrary to the medical belief that high calcium causes kidney stones, a high dietary calcium intake actually reduces the risk of nutritional secondary hyperparathyroidism, hypercalcemia, and kidney stones, and that no fewer than 147 deficiency diseases are attributed to calcium deficiency or imbalance. His Common Calcium-Deficiency Diseases include: osteoporosis (with kyphosis, scoliosis, Dowager's hump, lordosis, spontaneous fractures), receding gums, osteomalacia, myelosclerosis, arthritis, ankylosing spondylitis, bone spurs, kidney stones, nutritional secondary hyperparathyroidism, hypertension, insomnia, calcium deposits (vascular, restless leg, atrial fibrillation), cramps and twitches (Tourette's syndrome), premenstrual syndrome, low-back pain (sciatica), neuropathy (Bell's palsy, trigeminal neuralgia), tetany with convulsions, and panic attacks. In his words: 'There are no less than 147 different deficiency-diseases that are directly attributed to a calcium deficiency or imbalance.'",
-      "verbatim": "Calcium deposits (vascular, tendons, ligaments, restless leg, atrial-fibrillation, etc.) : Same as osteoporosis\n\nCramps & twitches (Tourette's syndrome, foot, calf, hamstring, eyelids, etc.) : Same as osteoporosis\n\nPMS (emotional & physical symptoms) : Same as osteoporosis\n\nLow back (sciatica, spasm, disc, etc.) : Same as osteoporosis",
+      "verbatim": "NSH (nutritional hyperparathyroidism) : Same as osteoporosis\n\nHypertension (high blood pressure) : Same as osteoporosis\n\nInsomnia (sleep apnea, snoring, etc.) : Same as osteoporosis\n\nCalcium deposits (vascular, tendons, ligaments, restless leg, atrial-fibrillation, etc.) : Same as osteoporosis\n\nCramps & twitches (Tourette's syndrome, foot, calf, hamstring, eyelids, etc.) : Same as osteoporosis\n\nPMS (emotional & physical symptoms) : Same as osteoporosis\n\nLow back (sciatica, spasm, disc, etc.) : Same as osteoporosis",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -2406,7 +2410,7 @@
         "page": 679,
         "screenshot": 608,
         "kindle_location": null,
-        "char_offset": 1190020
+        "char_offset": 1189837
       },
       "dose": null,
       "tags": [
@@ -2448,7 +2452,8 @@
         "high_cholesterol",
         "coronary_artery_disease",
         "infertility",
-        "atherosclerosis"
+        "atherosclerosis",
+        "oligospermia"
       ],
       "symptoms": [
         "reduced_growth",
@@ -2456,7 +2461,7 @@
         "shortened_lifespan"
       ],
       "claim_text": "Chromium activates the glucose tolerance factor and is essential to insulin function and blood-sugar control; Wallach notes a USDA spokesperson stated 90% of Americans are deficient, that dietary sugar loads raise urinary chromium loss by 300% for 12 hours, and that chromium-supplemented animals lived 33% longer. Chromium-deficiency diseases (aggravated by concurrent vanadium deficiency and dietary sugar) include: low blood sugar, reactive hypoglycemia, bed-wetting, pre-diabetes, type-2 diabetes, hyperinsulinemia, hyperactivity, learning disability, attention deficit disorder (ADD/ADHD), hyperirritability, depression, manic depression (bipolar disorder), 'Dr. Jekyll/Mr. Hyde' rages, impaired growth, peripheral neuropathy, negative nitrogen balance (protein/muscle loss), elevated triglycerides (over 200) and cholesterol (over 270), coronary artery disease, aortic cholesterol plaque, infertility (anovulation and low sperm count), and a shortened lifespan. In his words: 'Diseases and Symptoms of Chromium Deficiency: Low blood sugar; Reactive hypoglycemia; Bed wetting; Pre-diabetes; Diabetes (Type 2); Hyperinsulinemia; Hyperactivity; Learning disability; ADD/ADHD.'",
-      "verbatim": "Low blood sugar\nReactive hypoglycemia\n\nBed wetting\nPre-diabetes\n\nDiabetes (Type 2)\n\nHyperinsulinemia\n\nHyperactivity\n\nLearning disability\n\nADD/ADHD\n\nHyperirratability\n\nDepression\n\nManic depression\n\n“Bi-polar” disease\n\nDr. Jekyll/Mr. Hyde rages (\"Bad Seeds\")\nImpaired growth\n\nPeripheral neuropathy\n\nNegative nitrogen balance (protein/muscle loss)\nElevated blood triglycerides (> 200)\n\nElevated blood cholesterol (> 270)\n\nCoronary artery disease\n\nAortic cholesterol plaque\n\nInfertility",
+      "verbatim": "Low blood sugar\nReactive hypoglycemia\n\nBed wetting\nPre-diabetes\n\nDiabetes (Type 2)\n\nHyperinsulinemia\n\nHyperactivity\n\nLearning disability\n\nADD/ADHD\n\nHyperirratability\n\nDepression\n\nManic depression\n\n“Bi-polar” disease\n\nDr. Jekyll/Mr. Hyde rages (\"Bad Seeds\")\nImpaired growth\n\nPeripheral neuropathy\n\nNegative nitrogen balance (protein/muscle loss)\nElevated blood triglycerides (> 200)\n\nElevated blood cholesterol (> 270)\n\nCoronary artery disease\n\nAortic cholesterol plaque\n\nInfertility (anovulation and low sperm count)",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -2498,7 +2503,9 @@
         "anemia",
         "arthritis",
         "liver_cirrhosis",
-        "liver_disease"
+        "liver_disease",
+        "glucose_intolerance",
+        "hyperthyroidism"
       ],
       "symptoms": [
         "gray_hair",
@@ -2506,7 +2513,7 @@
         "dry_hair"
       ],
       "claim_text": "Copper is a universally important cofactor for hundreds of metalloenzymes -- required for the pigment melanin (hair and skin color), for lysyl oxidase that gives blood vessels, skin, and discs their tensile strength, and for oxygen handling in respiration; Wallach calls copper deficiency widespread and notes it underlies several diseases the medical community wrongly blames on prions or infection. Copper-deficiency diseases include: white/gray/silver and dry brittle hair, ptosis (sagging eyelids, skin, breasts, belly), hernias, varicose and spider veins (hemorrhoids), aneurysms, Kawasaki disease, Marfan's syndrome, anemia, hypo- and hyperthyroid, arthritis, ruptured and bulging discs, liver cirrhosis, violent/blind-rage/explosive/criminal behavior, learning disabilities, cerebral palsy with cerebellar hypoplasia (congenital ataxia), high cholesterol, iron-storage disease, reduced glucose tolerance (hypoglycemia, reactive hypoglycemia), and neutropenia. In his words: 'Diseases and Symptoms of Copper Deficiency: White hair, gray hair, silver hair; Dry brittle hair (\"steely wool\" in sheep); Enzootic ataxia in sheep; Mad cow disease (BSE cattle); Creutzfeldt-Jakob disease (BSE in humans); Ptosis (ie., sagging tissue -- eye lids, skin, breasts, belly, etc.); Hernias (congenital and acquired); Varicose veins/ spider veins (hemorrhoids); Aneurysms (aortic, cerebral, coronary, gastric, etc.).'",
-      "verbatim": "Ptosis (ie., sagging tissue—eye lids, skin, breasts, belly, etc.)\nHernias (congenital and acquired)\n\nVaricose veins/ spider veins (hemorrhoids)\n\nAneurysms (aortic, cerebral, coronary, gastric, etc.)\n\nKawasaki Disease (congenital aneurysms with streptococcal infection)\nMarfan's syndrome\n\nAnemia (vegan and high milk diets)\n\nHypo and Hyper thyroid\n\nArthritis (especially when growth plate is involved)\n\nRuptured & bulging vertebral discs\n\nLiver cirrhosis",
+      "verbatim": "Ptosis (ie., sagging tissue—eye lids, skin, breasts, belly, etc.)\nHernias (congenital and acquired)\n\nVaricose veins/ spider veins (hemorrhoids)\n\nAneurysms (aortic, cerebral, coronary, gastric, etc.)\n\nKawasaki Disease (congenital aneurysms with streptococcal infection)\nMarfan's syndrome\n\nAnemia (vegan and high milk diets)\n\nHypo and Hyper thyroid\n\nArthritis (especially when growth plate is involved)\n\nRuptured & bulging vertebral discs\n\nLiver cirrhosis\n\nViolent behavior, blind rage, explosive behavior, criminal behavior\nLearning disabilities\n\nCerebral palsy and hypoplasia of the cerebellum (congenital ataxia)\nHigh blood cholesterol\n\nIron storage disease (hemosiderosis)\n\nReduced glucose tolerance (hypoglycemia, reactive hypoglycemia)",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -3824,11 +3831,13 @@
         "tmj",
         "repetitive_motion_syndrome",
         "carpal_tunnel_syndrome",
-        "convulsions"
+        "convulsions",
+        "chondromalacia",
+        "miscarriage"
       ],
       "symptoms": [],
       "claim_text": "Manganese is essential to all known living organisms; it activates numerous enzyme systems (including those for glucose metabolism, energy production and the antioxidant superoxide dismutase) and is a constituent of many metalloenzymes, hormones and proteins. Wallach stresses its role in building the fragile ear bones and joint cartilage. He describes the deficiency diseases as very striking, ranging from severe congenital birth defects -- congenital ataxia, congenital deafness, chondromalacia, chondrodystrophy and 'slipped tendon' -- to asthma, convulsions, retarded growth, skeletal defects, infertility (failure to ovulate, testicular atrophy), stillbirths/miscarriages, loss of libido, and defects of chondroitin-sulfate metabolism that show up as joint problems: temporomandibular joint disorder (TMJ), repetitive motion syndrome and carpal tunnel syndrome. He argues most carpal tunnel and repetitive-motion cases are really manganese deficiency, not a purely mechanical injury. Separately, an EXCESS of manganese (from some water supplies or industrial exposure) can instead produce a Parkinson-like syndrome or a schizophrenia-like psychiatric disorder ('locura manganica').",
-      "verbatim": "Deficiency diseases of Mn are very striking, ranging from severe congenital\nbirth defects (such as congenital ataxia, deafness, chondrodystrophy, etc),\nasthma, convulsions, retarded growth, skeletal defects, disruption of fat and\ncarbohydrate metabolism to joint problems in children and adults (tendon\nand ligament degeneration, TMJ, repetitive motion syndrome, carpal tunnel\nsyndrome, etc.)",
+      "verbatim": "Congenital ataxia\nCongenital Deafness (malformation, hypoplasia, or aplasia of otolithes)\nAsthma\n\nChondromalacia\n\nChondrodystrophy\n\n“Slipped Tendon”\n\nDefects of chondroitin sulfate metabolism (tendons and ligaments)\nTMJ\n\nRepetitive Motion Syndrome\n\nCarpal Tunnel Syndrome\n\nConvulsions\n\nInfertility (.e., failure to ovulate, testicular atrophy)\n\nStill births (miscarriages)\n\nLoss of libido in both males and females\n\nRetarded growth rate\n\nShortened long bones",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -3836,7 +3845,7 @@
         "page": null,
         "screenshot": "631",
         "kindle_location": null,
-        "char_offset": 1269072
+        "char_offset": 1269562
       },
       "dose": null,
       "tags": [
@@ -3938,11 +3947,12 @@
       ],
       "other_substances": [],
       "conditions": [
-        "addisons_disease"
+        "addisons_disease",
+        "water_intoxication"
       ],
       "symptoms": [],
       "claim_text": "Sodium is one of the three indispensable electrolytes (with chloride and potassium); it makes up about two percent of the body's mineral content and, with chloride, is mainly extracellular. Together these electrolytes maintain normal water balance and distribution, osmotic equilibrium, acid-base balance, and muscular and nerve excitability, all under adrenal-cortex and pituitary hormonal control. Wallach explains that 'salt hunger' is one of the most basic cravings of animals and man, strongest in herbivores and human vegetarians because grains, vegetables and fruit contain little sodium chloride. Addison's disease (failure of the adrenal cortex) causes a loss of sodium and potassium retention with general weakness, muscle cramps, weight loss and a marked salt hunger, relieved by salt supplementation. Sodium-chloride deficiency arises mainly in hot weather or heavy exercise with profuse sweating; Wallach warns that 'water intoxication' killed infants fed low-sodium formulas -- their brains swelled from a simple sodium deficiency -- and that the treatment for sodium deficiency is water and salt, taken orally or as 0.9% intravenous saline.",
-      "verbatim": "Addison's disease, a loss of\nfunction of the adrenal cortex, results in the loss of Na and K retention with\nclinical signs of general weakness, muscle cramps, weight loss and a marked “salt\nhunger.” The symptoms can be relieved with the supplementation of NaCl or by\nadministering adrenal cortical hormones",
+      "verbatim": "Addison's disease, a loss of\nfunction of the adrenal cortex, results in the loss of Na and K retention with\nclinical signs of general weakness, muscle cramps, weight loss and a marked “salt\nhunger.” The symptoms can be relieved with the supplementation of NaCl or by\nadministering adrenal cortical hormones.\n\nDeficiencies of NaCl occur primarily in hot weather (the heat wave of July\n\n1993) or heavy work or exercise in a hot environment when large volumes of\nsweat are required for body cooling. “Water intoxication” occurred in infants fed\nlow Na formulas because of the allopathic doctor's paranoia about Na. Their\nbrains swelled causing death from a simple Na deficiency.",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
