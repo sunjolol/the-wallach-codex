@@ -807,6 +807,12 @@
       "plain": "a rare cancer arising from both liver cells and bile-duct cells",
       "category": "medical",
       "aliases": []
+    },
+    {
+      "term": "hydrolysis",
+      "plain": "a chemical reaction that splits a compound apart using water",
+      "category": "medical",
+      "aliases": []
     }
   ]
 }

@@ -1930,18 +1930,21 @@
     "display_name": "Germanium",
     "canon_slug": "germanium",
     "category": "mineral",
-    "claim_count": 17,
+    "claim_count": 20,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000012",
         "WAL-CLM-EPIGEN-000086",
+        "WAL-CLM-IMMORT-000139",
         "WAL-CLM-RARE-000011"
       ],
       "dose": [
         "WAL-CLM-DDDL-000011",
+        "WAL-CLM-IMMORT-000140",
         "WAL-CLM-RARE-000012"
       ],
       "food_source": [
+        "WAL-CLM-IMMORT-000145",
         "WAL-CLM-RARE-000013"
       ],
       "mechanism": [
@@ -2010,6 +2013,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]

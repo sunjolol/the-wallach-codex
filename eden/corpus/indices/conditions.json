@@ -1107,7 +1107,7 @@
   },
   "arthritis": {
     "display_name": "Arthritis",
-    "claim_count": 34,
+    "claim_count": 35,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000050",
@@ -1127,6 +1127,7 @@
         "WAL-CLM-EPIGEN-000086",
         "WAL-CLM-IMMORT-000076",
         "WAL-CLM-IMMORT-000099",
+        "WAL-CLM-IMMORT-000139",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000008",
         "WAL-CLM-LETS-000011",
@@ -2383,7 +2384,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 63,
+    "claim_count": 64,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -2426,6 +2427,7 @@
         "WAL-CLM-EPIGEN-000043",
         "WAL-CLM-EPIGEN-000046",
         "WAL-CLM-EPIGEN-000086",
+        "WAL-CLM-IMMORT-000139",
         "WAL-CLM-LETS-000030",
         "WAL-CLM-RARE-000011",
         "WAL-CLM-RARE-000227",
@@ -6890,7 +6892,7 @@
   },
   "immune_depression": {
     "display_name": "Immune Depression",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000027"
@@ -6899,7 +6901,8 @@
         "WAL-CLM-EPIGEN-000031",
         "WAL-CLM-EPIGEN-000033",
         "WAL-CLM-EPIGEN-000038",
-        "WAL-CLM-EPIGEN-000046"
+        "WAL-CLM-EPIGEN-000046",
+        "WAL-CLM-IMMORT-000139"
       ],
       "definitions": [
         "WAL-CLM-IMMORT-000053"
@@ -9619,7 +9622,7 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 30,
+    "claim_count": 31,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052",
@@ -9636,6 +9639,7 @@
         "WAL-CLM-IMMORT-000063",
         "WAL-CLM-IMMORT-000072",
         "WAL-CLM-IMMORT-000076",
+        "WAL-CLM-IMMORT-000139",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000042",
         "WAL-CLM-RARE-000011",

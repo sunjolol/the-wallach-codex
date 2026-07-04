@@ -6748,11 +6748,11 @@ its destructive properties. This isotope has the property of
 accumulating in certain cancers (melanoma) and is used to
 treat these cancers without damage to surrounding tissues.
 
-Gd-Gadolium, a rare earth, is found in igneous rocks
+Gd-Gadolinium, a rare earth, is found in igneous rocks
 at 5.4 ppm, shale at 4.3 ppm, sandstone at 2.6 ppm, limestone
 at 0.7 ppm, terrestrial plants (Carya spp.) can concentrate
-gadolium up to 70 ppm, and in marine animals at 0.06 ppm.
-Terrestrial animals accumulate gadolium in bone and liver
+gadolinium up to 70 ppm, and in marine animals at 0.06 ppm.
+Terrestrial animals accumulate gadolinium in bone and liver
 almost immediately after absorption.
 
 Ge-Germanium is found in igneous rocks at 5.4 ppm,
@@ -6775,7 +6775,7 @@ essentially become micro-computers.
 
 Symptoms of a typical germanium deficiency include
 reduced immune status, arthritis, osteoporosis, low energy,
-fatigue and cancer. -
+fatigue and cancer.
 
 Twenty to 30 mg per day is the recommended
 maintenance dose for germanium. Fifty to 100 mg per day
@@ -6802,14 +6802,13 @@ certain herbs to relatively high levels of germanium. Many of
 these herbs are germanium accumulator plants. Germanium
 is known to enhance the effectiveness of the immune
 system by stimulating the production of natural killer cells,
-lymphokines, such as IFN(y) interferon, macrophages, and T-
-suppresser cells.
+lymphokines, such as IFN(γ) interferon, macrophages, and T-suppressor cells.
 
 Asai synthesized Ge-132, carboxyethyl germanium
 sesquioxide, in 1967 by a hydrolysis reaction. This organic
 germanium structure forms a cubic structure with three
 negative oxygen ions at the base of a cubic triangle. As an
-organic or chelated form of germanium, GE-132 is absorbed
+organic or chelated form of germanium, Ge-132 is absorbed
 at the rate of 30% efficiency and the total intake is completely
 excreted in one week.
 
