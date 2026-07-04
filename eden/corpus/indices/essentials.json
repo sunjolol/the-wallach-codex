@@ -3636,11 +3636,14 @@
     "display_name": "Europium",
     "canon_slug": "europium",
     "category": "mineral",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-EPIGEN-000081",
         "WAL-CLM-RARE-000140"
+      ],
+      "prognosis": [
+        "WAL-CLM-IMMORT-000115"
       ]
     },
     "deficiency_signs": [],
@@ -3648,6 +3651,7 @@
     "interacts_with": [],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },
