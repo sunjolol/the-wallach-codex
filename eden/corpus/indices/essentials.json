@@ -2522,7 +2522,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 98,
+    "claim_count": 99,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2538,6 +2538,7 @@
         "WAL-CLM-RARE-000048"
       ],
       "interaction": [
+        "WAL-CLM-IMMORT-000164",
         "WAL-CLM-RARE-000084",
         "WAL-CLM-RARE-000086"
       ],

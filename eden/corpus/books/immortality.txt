@@ -7118,7 +7118,7 @@ Hg-Mercury is found in igneous rocks at 0.08 ppm,
 shale at 0.4 ppm, sandstone at 0.03 ppm, limestone at 0.04
 ppm, fresh water at 0.00008 ppm, sea water at 0.00003 ppm,
 soil at 0.03 to 0.8 ppm (lowest in the surface layers of the soil
-because it leaches to the subsoil and it also v olatilizes), marine
+because it leaches to the subsoil and it also volatilizes), marine
 plants at 0.03 ppm, terrestrial plants at 0.015 ppm (Arenaria
 setacia is an accumulator plant), terrestrial animals at 0.046
 ppm (accumulates in the brain, kidney, liver and bone) and
@@ -7151,14 +7151,11 @@ early Chinese alchemists insisted that the regular consumption
 of mercury or “potable gold” was the path to immortality.
 
 
-a
-oa
-
 Mercury was well known to the ancient Chinese and
 Egyptians, samples of the metal have been found in tombs
 dating back to 1500 B.C. Mercury takes its name from the
 planet Mercury and chemical symbol, Hg, from the Latin
-word hydragyrum, which translates to “liquid silver.
+word hydragyrum, which translates to “liquid silver.”
 
 The first Chinese Emperor (210 B.C.), Jing Shi Huang,
 in a failed attempt to attain immortality, inadvertently killed
@@ -7186,7 +7183,7 @@ to create silver-mercury and gold-mercury amalgams to fill
 caries (cavities in teeth).
 
 Mercury in fish is present as methyl mercury. People
-who rarely eat fish have low levels of mercury (2- 5ug/kg);
+who rarely eat fish have low levels of mercury (2-5ug/kg);
 moderate fish consumers have 10 ug/kg; high fish consumers
 (especially if they eat shark, tuna, or swordfish) have higher
 values ranging up to 400 ug/kg.
@@ -7209,7 +7206,7 @@ mercury. Methyl mercury transfers very easily to the fetus
 The main industrial source of mercury is the chloralkali
 industry. Additional sources of mercury that are associated
 with human activity include the manufacture of electrical
-appliances, paint, dentalamalgams, pharmaceuticals, vaccines,
+appliances, paint, dental amalgams, pharmaceuticals, vaccines,
 slimicides and algaecides (paper and pulp industries), seed
 treatments as agricultural fungicides - especially dangerous
 as methyl mercury, and burning of fossil fuels.
@@ -7250,7 +7247,7 @@ The manifestations of direct mercury poisoning are
  
 
 primarily neurological (i.e. tremors, vertigo, irritability,
-moodiness (suicidal, depression, etc.),salivation, inflammation
+moodiness (suicidal, depression, etc.), salivation, inflammation
 of the mouth, stomatitis and diarrhea.
 
 Poisoning with inorganic mercury targets the liver and
@@ -7297,7 +7294,6 @@ been removed from childhood vaccines because of universal
 ===== Screenshot (92) =====
  
 
-OR pr eed ene a
 concerns and class action law suites.
 
 In Iraq, a large scale methyl mercury poisoning was

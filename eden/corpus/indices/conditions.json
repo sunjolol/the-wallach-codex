@@ -400,7 +400,7 @@
   },
   "alopecia": {
     "display_name": "Alopecia",
-    "claim_count": 15,
+    "claim_count": 16,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000042",
@@ -420,6 +420,7 @@
         "WAL-CLM-LETS-000131"
       ],
       "toxicity_signs": [
+        "WAL-CLM-IMMORT-000166",
         "WAL-CLM-LETS-000031",
         "WAL-CLM-LETS-000037"
       ]
@@ -448,13 +449,14 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
   },
   "als": {
     "display_name": "Als",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000227",
@@ -465,6 +467,9 @@
       ],
       "protocols": [
         "WAL-CLM-LETS-000371"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000167"
       ]
     },
     "essentials_involved": [
@@ -480,6 +485,7 @@
       "snake-venom"
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -2962,7 +2968,7 @@
   },
   "cerebral_palsy": {
     "display_name": "Cerebral Palsy",
-    "claim_count": 8,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000002",
@@ -2975,6 +2981,10 @@
         "WAL-CLM-IMMORT-000099",
         "WAL-CLM-LETS-000210",
         "WAL-CLM-RARE-000302"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000169",
+        "WAL-CLM-IMMORT-000170"
       ]
     },
     "essentials_involved": [
@@ -4211,7 +4221,7 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 40,
+    "claim_count": 41,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000018",
@@ -4252,6 +4262,7 @@
         "WAL-CLM-RARE-000264"
       ],
       "diagnostics": [
+        "WAL-CLM-IMMORT-000168",
         "WAL-CLM-LETS-000081"
       ],
       "prevalence": [
@@ -4524,7 +4535,7 @@
   },
   "diarrhea": {
     "display_name": "Diarrhea",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000037",
@@ -4536,6 +4547,9 @@
         "WAL-CLM-LETS-000019",
         "WAL-CLM-LETS-000039",
         "WAL-CLM-RARE-000264"
+      ],
+      "diagnostics": [
+        "WAL-CLM-IMMORT-000168"
       ],
       "protocols": [
         "WAL-CLM-LETS-000248"
@@ -4567,6 +4581,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -8550,13 +8565,16 @@
   },
   "memory_loss": {
     "display_name": "Memory Loss",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-IMMORT-000131"
       ],
       "protocols": [
         "WAL-CLM-LETS-000356"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000166"
       ]
     },
     "essentials_involved": [
@@ -8722,12 +8740,36 @@
       "lets-play-doctor"
     ]
   },
+  "mental_retardation": {
+    "display_name": "Mental Retardation",
+    "claim_count": 2,
+    "claims_by_role": {
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000169",
+        "WAL-CLM-IMMORT-000170"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
+    "books_cited": [
+      "immortality"
+    ]
+  },
   "mercury_poisoning": {
     "display_name": "Mercury Poisoning",
-    "claim_count": 1,
+    "claim_count": 4,
     "claims_by_role": {
+      "diagnostics": [
+        "WAL-CLM-IMMORT-000168"
+      ],
+      "interactions": [
+        "WAL-CLM-IMMORT-000164"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000361"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000166"
       ]
     },
     "essentials_involved": [
@@ -8739,6 +8781,7 @@
       "sauna"
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor"
     ]
   },
@@ -8786,10 +8829,13 @@
   },
   "minamata_disease": {
     "display_name": "Minamata Disease",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000137"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000169"
       ]
     },
     "essentials_involved": [],
@@ -8797,6 +8843,7 @@
       "mercury"
     ],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
@@ -8915,7 +8962,7 @@
   },
   "multiple_sclerosis": {
     "display_name": "Multiple Sclerosis",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000227",
@@ -8927,6 +8974,9 @@
       "protocols": [
         "WAL-CLM-EPIGEN-000015",
         "WAL-CLM-LETS-000371"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000167"
       ]
     },
     "essentials_involved": [
@@ -8943,6 +8993,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -9180,13 +9231,17 @@
   },
   "neural_tube_defects": {
     "display_name": "Neural Tube Defects",
-    "claim_count": 2,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000002"
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000041"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000169",
+        "WAL-CLM-IMMORT-000170"
       ]
     },
     "essentials_involved": [
@@ -9194,7 +9249,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "epigenetics"
+      "epigenetics",
+      "immortality"
     ]
   },
   "neuralgia": {
@@ -10038,7 +10094,7 @@
   },
   "parkinsons_disease": {
     "display_name": "Parkinsons Disease",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000227",
@@ -10046,6 +10102,9 @@
       ],
       "interactions": [
         "WAL-CLM-RARE-000087"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000167"
       ]
     },
     "essentials_involved": [
@@ -10053,6 +10112,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
@@ -11696,11 +11756,14 @@
   },
   "stomatitis": {
     "display_name": "Stomatitis",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000039",
         "WAL-CLM-LETS-000027"
+      ],
+      "diagnostics": [
+        "WAL-CLM-IMMORT-000168"
       ]
     },
     "essentials_involved": [
@@ -11709,6 +11772,7 @@
     "other_substances_involved": [],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor"
     ]
   },
@@ -12603,7 +12667,7 @@
   },
   "vertigo": {
     "display_name": "Vertigo",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IAIYH-000012"
@@ -12612,6 +12676,9 @@
         "WAL-CLM-EPIGEN-000098",
         "WAL-CLM-IMMORT-000064",
         "WAL-CLM-RARE-000172"
+      ],
+      "diagnostics": [
+        "WAL-CLM-IMMORT-000168"
       ],
       "protocols": [
         "WAL-CLM-LETS-000461"

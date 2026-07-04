@@ -511,5 +511,16 @@
   "pancreatic_fibrosis": [
     "fibrosis of the pancreas",
     "pancreatic fibrosis"
+  ],
+  "alopecia": [
+    "hair loss"
+  ],
+  "mental_retardation": [
+    "retarded",
+    "mentally retarded",
+    "born retarded"
+  ],
+  "minamata_disease": [
+    "minamata disaster"
   ]
 }

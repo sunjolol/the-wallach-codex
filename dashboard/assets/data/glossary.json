@@ -813,6 +813,12 @@
       "plain": "a chemical reaction that splits a compound apart using water",
       "category": "medical",
       "aliases": []
+    },
+    {
+      "term": "neuroencephalopathy",
+      "plain": "brain damage caused by a toxin",
+      "category": "medical",
+      "aliases": []
     }
   ]
 }
