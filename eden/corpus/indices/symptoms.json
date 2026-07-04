@@ -2752,8 +2752,14 @@
   },
   "mental_apathy": {
     "display_name": "Mental Apathy",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
+      {
+        "essential": "potassium",
+        "claim_id": "WAL-CLM-IMMORT-000194",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
       {
         "essential": "potassium",
         "claim_id": "WAL-CLM-RARE-000155",
@@ -2762,6 +2768,7 @@
       }
     ],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
@@ -2931,7 +2938,7 @@
   },
   "muscle_weakness": {
     "display_name": "Muscle Weakness",
-    "claim_count": 12,
+    "claim_count": 13,
     "likely_deficiencies": [
       {
         "essential": "biotin",
@@ -2960,6 +2967,12 @@
       {
         "essential": "magnesium",
         "claim_id": "WAL-CLM-LETS-000016",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
+        "essential": "potassium",
+        "claim_id": "WAL-CLM-IMMORT-000194",
         "confidence": "high",
         "appears_in_books": 1
       },

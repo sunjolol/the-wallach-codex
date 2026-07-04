@@ -832,10 +832,11 @@
     "display_name": "Potassium",
     "canon_slug": "potassium",
     "category": "mineral",
-    "claim_count": 18,
+    "claim_count": 21,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000094",
+        "WAL-CLM-IMMORT-000194",
         "WAL-CLM-LETS-000025",
         "WAL-CLM-RARE-000155"
       ],
@@ -845,6 +846,7 @@
         "WAL-CLM-RARE-000187"
       ],
       "dose": [
+        "WAL-CLM-IMMORT-000193",
         "WAL-CLM-LETS-000062",
         "WAL-CLM-RARE-000154"
       ],
@@ -853,6 +855,7 @@
         "WAL-CLM-RARE-000156"
       ],
       "mechanism": [
+        "WAL-CLM-IMMORT-000192",
         "WAL-CLM-RARE-000153",
         "WAL-CLM-RARE-000188"
       ],
@@ -905,7 +908,17 @@
       },
       {
         "sign": "mental_apathy",
+        "claim_id": "WAL-CLM-IMMORT-000194",
+        "confidence": "high"
+      },
+      {
+        "sign": "mental_apathy",
         "claim_id": "WAL-CLM-RARE-000155",
+        "confidence": "high"
+      },
+      {
+        "sign": "muscle_weakness",
+        "claim_id": "WAL-CLM-IMMORT-000194",
         "confidence": "high"
       },
       {
@@ -1001,6 +1014,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]

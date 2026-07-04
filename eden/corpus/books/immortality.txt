@@ -7494,9 +7494,9 @@ cauliflower, etc.).
 
 In-Indium is found in igneous rocks at 0.05 to 1.0 ppm,
 
-terrestrial plants at 0.62 ppm, and terrestrial animals at 0.016;
+terrestrial plants at 0.62 ppm, and terrestrial animals at 0.016
 
-ppm. Indium isa rare, soft, bluish-white metal that is corrosion
+ppm. Indium is a rare, soft, bluish-white metal that is corrosion
 resistant. When it is vigorously rubbed against other metals it
 will leave small residues of itself; when bent rapidly, indium
 emits a bizarre “shrieking” noise. Commercial sources of
@@ -7524,11 +7524,6 @@ Tennant named the new metal iridium after the Latin
 word, iris, which translates to “rainbow” because of the highly
 colored salts.
 
-asi
-
-
- 
-
 K-Potassium is found in igneous rocks at 20,000 ppm,
 shale at 26,000 ppm, sandstone at 10,700 ppm, limestone at
 2,700 ppm, fresh water at 2.3 ppm, sea water at 380 ppm, soil
@@ -7540,7 +7535,7 @@ levels are found in soft tissue).
 
 Potassium is a silver-white metal with a characteristic
 putty or wax-like nature that is so soft that it can easily be cut
-witha knife. It is a member of the family of alkali metals along
+with a knife. It is a member of the family of alkali metals along
 with the elements lithium and sodium, and like them is never
 found as a pure metal in nature.
 
@@ -7594,7 +7589,7 @@ potash, from the early source of the element - wood ashes, the
 byproduct of daily living, that was produced by heating and
 cooking with wood.
 
-Potassium nitrate, KNO,, is an important compound
+Potassium nitrate, KNO3, is an important compound
 that has been used by many cultures for centuries. It is
 commonly called “saltpeter” or “rocksalt.” The name is taken
 from the Greek word petra, which translates to rock. It looks
@@ -7615,7 +7610,7 @@ of normal water balance, osmotic equilibrium and acid-base
 balance. Potassium participates with calcium in the regulation
 of neuromuscular activity.
 
-Potassiumis easily absorbed. Ninety percent of ingested
+Potassium is easily absorbed. Ninety percent of ingested
 potassium is excreted through the urine. Essentially there is
 no storage of potassium in the human body, thus requiring a
 significant daily intake of 5,000 mg.
@@ -7642,7 +7637,7 @@ element for all vertebrates.
 As none of the Noble gases had been discovered when
 Mendeleyev first constructed the periodic table in 1869, he
 made no provision for them in the original table. It was only
-the discovery of argon in 1894 that produced the need for anew
+the discovery of argon in 1894 that produced the need for a new
 column in the table. In 1898, the English chemist Sir William
 Ramsay isolated and identified krypton as a new element.
 He named it for the Greek word kryptos, which translates to
@@ -7654,7 +7649,7 @@ winner, Linus Pauling, who in 1933 used quantum mechanics
 to demonstrate that a molecule containing krypton and
 fluorine should be stable enough to exist. In 1966, Neil Bartlett
 of the University of British Columbia produced krypton
-fluoride (KrF,) as Pauling had predicted.
+fluoride (KrF2) as Pauling had predicted.
 
 La-Lanthanum is a “light” rare earth and is found in
 igneous rocks at 30 ppm, shale at 20 ppm, sandstone at 7.5

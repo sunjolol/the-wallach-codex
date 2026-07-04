@@ -1,212 +1,183 @@
 # Extraction report — immortality (Immortality)
 
-_13 claim(s) drafted 2026-07-04T22:57:48+00:00. Review then run corpus_seal.py to promote._
+_13 claim(s) drafted 2026-07-04T23:55:14+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: deficiency_sign×1, definition×7, diagnostic_pattern×1, interaction×1, mechanism×3
+Kinds: deficiency_sign×1, definition×10, dose×1, mechanism×1
 
-### WAL-CLM-IMMORT-000172 · definition
-- **essentials:** holmium · **conditions:** — · **symptoms:** —
-- **claim:** Holmium — a soft, silvery rare-earth metal (one of the trace 'rare earth' elements the body carries in tiny amounts). Wallach notes it is scattered thinly through rocks, plants and animals, collecting mainly in bone in land animals, and recounts its discovery: in 1878 two Swiss chemists spotted its unique fingerprint in light (its 'spectral lines') but could not identify the element, so they called it 'element X'; in 1879 the Swedish chemist Per Teodor Cleve isolated it and named it Holmia, the Latin name for his home city of Stockholm.
-- **verbatim** (offset 287045): “Ho-Holmium, a rare earth, is found in igneous rocks at
-1.2 ppm, shale at 0.6 ppm, sandstone at 0.51 ppm, limestone
-at 0.17 ppm, terrestrial plants at 16 ppm (Carya spp.), marine
-animals at 0.005 to 0.01 ppm and terrestrial animals at 0.5 ppm
-in bone.
+### WAL-CLM-IMMORT-000185 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Indium — a rare, soft, bluish-white metal. Wallach notes it resists corrosion, leaves a residue when rubbed on other metals, and emits a strange 'shrieking' noise when bent; commercially it is a byproduct of refining zinc. It was discovered in 1863 by the German chemist Ferdinand Reich while studying zinc ore, identified by the bright violet light it gives off under spectroscopic analysis (splitting its light into a color fingerprint), and named from the Latin 'indicum' meaning 'violet' or 'indigo.'
+- **verbatim** (offset 292481): “In-Indium is found in igneous rocks at 0.05 to 1.0 ppm,
 
-In 1878, two Swiss chemists noticed holmium’s
-characteristic spectral lines, but could not identify them, so
-they referred to the unknown element as “element X.” In 1879,
-a Swedish chemist, Per Teodor Cleve isolated and identified
-the element and called it Holmia, Latin for his home town of
-Stockholm.”
+terrestrial plants at 0.62 ppm, and terrestrial animals at 0.016
 
-### WAL-CLM-IMMORT-000173 · definition
-- **essentials:** iodine · **conditions:** — · **symptoms:** —
-- **claim:** Where iodine is found in nature. Iodine is spread thinly through rocks, water, soil and living things, and Wallach lists typical concentrations (in parts per million, ppm). Notably, large areas of the earth's crust are essentially iodine-free because iodine binds tightly to humus (decayed organic matter in soil), while seaweeds and marine plants concentrate it enormously (up to 1,500 ppm). In land animals it collects mainly in the thyroid gland and the hair.
-- **verbatim** (offset 287601): “I-Iodine is found in igneous rocks at 0.5 ppm, shale at
-2.3 ppm, sandstone at 1.7 ppm, limestone at 1.2 ppm, fresh
-water at 0.002 ppm, sea water at 0.06 ppm, soil at 5 ppm,
-(strongly bound in humus- large areas of earth are known to be
-devoid of iodine), marine plants at 30 to 1,500 ppm; terrestrial
-plants at 0.42 ppm, marine animals at 1.0 to 150 ppm, and in
-terrestrial animals at 0.43 ppm (concentrates in the thyroid
-gland and hair).”
+ppm. Indium is a rare, soft, bluish-white metal that is corrosion
+resistant. When it is vigorously rubbed against other metals it
+will leave small residues of itself; when bent rapidly, indium
+emits a bizarre “shrieking” noise. Commercial sources of
+indium are produced as a byproduct of refining zinc.
 
-### WAL-CLM-IMMORT-000174 · definition
-- **essentials:** iodine · **conditions:** — · **symptoms:** —
-- **claim:** What iodine is, and how it was discovered. Iodine is a violet-black solid that turns straight into a violet gas when warmed (it 'sublimes'); it is the heaviest and one of the most reactive members of the halogen family (the salt-forming elements that also include chlorine and fluorine). It was discovered in 1811 by the Frenchman Bernard Courtois, who saw a purple vapor rise when he added sulfuric acid to kelp — the color gave it its name, from the Greek 'iodes,' meaning 'violet-colored.' A drop of iodine turns starch (as in potato or flour) deep blue, a classic chemistry test.
-- **verbatim** (offset 288042): “Iodine is a violet-black solid that vaporizes to give a
-violet gas. It is found in sea weed and brine wells, in the sea,
-in the form of inorganic salts and organic iodides. It is the
-heaviest element in the halogen family and is highly reactive.
-Iodine was discovered in 1811 by Bernard Courtois, who
-noticed a purple vapor emanating from a sample of kelp
+Indium was discovered in 1863 by the German chemist
+Ferdinand Reich while studying zinc ore. It was identified by
+the bright violet light that it gave off during spectroscopic
+analysis. Its name is taken from the Latin word indicum, which
+translates to “violet” or “indigo.””
 
+### WAL-CLM-IMMORT-000186 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Iridium — one of the hardest and most corrosion-resistant metals known, a precious metal similar to platinum. It was discovered in 1803 by the English chemist Smithson Tennant, using the same process that led him to osmium: he isolated it from the residues left when platinum ores are treated with aqua regia (a nitric + hydrochloric acid mixture that dissolves gold and platinum). Tennant named it after the Latin 'iris' ('rainbow'), for the vividly colored salts it forms.
+- **verbatim** (offset 293184): “Ir-Iridium is found in igneous rocks at 0.001 ppm,
+terrestrial plants at 0.62 ppm and terrestrial animals at 0.00002
+ppm. Iridium is one of the hardest and most corrosion resistant
+metals known. It is considered a precious metal similar to
+platinum.
 
-to which he had added sulfuric acid. The color of the gas
-determined its name, translated from the Greek word iodes,
-meaning “violet-colored.” A drop of iodine will turn starch a
-deep blue (potato, flour, etc.).”
+The English chemist Smithson Tennant discovered
+iridium in 1803, using the same process that led him to the
+discovery of osmium; he isolated iridium from the residues of
+platinum ores he treated with aqua regia (a mixture of nitric
+and hydrochloric acids).
 
-### WAL-CLM-IMMORT-000175 · definition
-- **essentials:** iodine · **conditions:** — · **symptoms:** —
-- **claim:** Where commercial iodine comes from. Wallach explains that iodine is extracted from sodium iodate found in 'saltpeter' (potassium nitrate) mined in Chile — once the world's largest iodine producer — and historically from the ashes of burnt seaweed. The ocean holds huge amounts, concentrated by seaweeds like the giant kelp off the California coast, and iodine is also drawn from natural underground brines (salty groundwater) in Arkansas and Oklahoma.
-- **verbatim** (offset 288613): “Commercial quantities of iodine are extracted from
-sodium iodate, which is found in “saltpeter” or potassium
-nitrate, mined in Chile. At one time Chile was one of the
-largest producers of iodine. Historically iodine was extracted
-from the ashes of burnt seaweed. The ocean contains large
-quantities of iodine which concentrates in various kinds of
-seaweed, including the giant kelp that grows off the coast of
-California. Iodine can also be recovered from the natural brines
-found in underground wells in Arkansas and Oklahoma.”
+Tennant named the new metal iridium after the Latin
+word, iris, which translates to “rainbow” because of the highly
+colored salts.”
 
-### WAL-CLM-IMMORT-000176 · definition
-- **essentials:** iodine · **conditions:** — · **symptoms:** —
-- **claim:** Everyday and medical uses of iodine. Historically, iodine's most common use was as an alcohol tincture — a topical antiseptic for minor cuts and scrapes — and because it kills bacteria, the military, campers and scouts still use iodine tablets to purify drinking water. In medicine, radioactive iodine-131 is used to treat thyroid cancer and hyperthyroidism (an overactive thyroid), and iodine-125 (paired with a radioactive form of palladium) is used to treat prostate cancer. These radioisotope treatments are standard medical practice that Wallach is describing, not a Wallach protocol.
-- **verbatim** (offset 289142): “Historically, one of the most common uses of iodine
-was in the form of an alcohol tincture, which was used as a
-wound antiseptic for treating minor lacerations and scrapes
-of the skin.
+### WAL-CLM-IMMORT-000187 · definition
+- **essentials:** potassium · **conditions:** — · **symptoms:** —
+- **claim:** Where potassium is found in nature. Wallach lists typical concentrations (in parts per million, ppm) across rocks, water, soil, plants and animals — it is a major exchangeable cation (positively charged mineral) in all soils, especially alkaline ones, is concentrated heavily by marine plants (52,000 ppm), and in land animals collects highest in the soft tissue.
+- **verbatim** (offset 293825): “K-Potassium is found in igneous rocks at 20,000 ppm,
+shale at 26,000 ppm, sandstone at 10,700 ppm, limestone at
+2,700 ppm, fresh water at 2.3 ppm, sea water at 380 ppm, soil
+at 14,000 ppm (a major exchangeable cation in all soils, but
+in highest amounts in alkaline soils), marine plants at 52,000
+ppm, terrestrial plants at 14,000 ppm, marine animals at 5,000
+to 30,000 ppm, and terrestrial animals at 7,400 ppm (highest
+levels are found in soft tissue).”
 
-Because iodine kills bacteria, the military, campers and
-scouts use iodine tablets to “purify” water.
+### WAL-CLM-IMMORT-000188 · definition
+- **essentials:** potassium · **conditions:** — · **symptoms:** —
+- **claim:** What potassium is, chemically. It is a silver-white metal so soft it can be cut with a knife, and a member of the alkali-metal family alongside lithium and sodium — like them, it is so reactive it is never found as a pure metal in nature. It was first isolated by Sir Humphrey Davy in 1807 using electrolysis (passing an electric current to split it out of its compounds).
+- **verbatim** (offset 294282): “Potassium is a silver-white metal with a characteristic
+putty or wax-like nature that is so soft that it can easily be cut
+with a knife. It is a member of the family of alkali metals along
+with the elements lithium and sodium, and like them is never
+found as a pure metal in nature.”
 
-Iodine-131 is used by the medical trade to treat thyroid
-cancer and hyperthyroidism and iodine-125 along with an
-isotope of palladium is used to treat prostate cancer.”
+### WAL-CLM-IMMORT-000189 · definition
+- **essentials:** potassium · **conditions:** — · **symptoms:** —
+- **claim:** Potassium carries a natural radioactive isotope. Potassium-40 has a half-life of 1.25 billion years (the time for half of it to decay) and is used to date rocks — as it decays it becomes the noble gas argon, and measuring the argon has dated the oldest rocks on earth to 3.8 billion years. The human body holds about 140 grams of potassium, and since 0.012% of natural potassium is potassium-40, we each carry a small amount — a natural, life-long contributor to our background radiation.
+- **verbatim** (offset 294566): “A naturally occurring radioactive isotope of potassium
+is potassium-40, which has a half-life of 1.25 billion years.
+Potassium-40 is used to date rocks. When potassium-40
+decays, it becomes the noble gas argon. To determine the age
+of a rock, it is necessary to know how much argon is present
+in the rock. The oldest rocks on earth have been dated by this
+method as being 3.8 billion years old.
 
-### WAL-CLM-IMMORT-000177 · mechanism
-- **essentials:** iodine · **conditions:** hypothyroidism, goiter · **symptoms:** —
-- **claim:** Iodine is essential, and running low on it is now common. Iodine is required by all vertebrates: the body combines it with the amino acid (protein building block) tyrosine to make thyroxin, the main thyroid hormone that sets the body's metabolic rate. Wallach warns that iodine intake is usually low to begin with, and because many Americans have cut back on salt (iodized salt is a major source) on their doctors' advice, hypothyroidism (an underactive thyroid) and goiter (a swollen thyroid gland) have become epidemic.
-- **verbatim** (offset 289600): “Iodine is known to be essential to red and brown
-algae and all vertebrates. In combination with the amino acid
-tyrosine, iodine is manufactured into the thyroid hormone
-thyroxin. Iodine intake is typically low to begin with, but since
-Americans have been restricting their salt intake at the advice
-of their doctors, hypothyroidism and goiter have become
-epidemic diseases.”
+The human body contains approximately 140 grams of
+potassium and since the natural level of potassium-40 is 0.012
+percent, we all contain small amounts of this isotope - it is a
+natural and life-long contributor to our background radiation
+load.”
 
-### WAL-CLM-IMMORT-000178 · definition
-- **essentials:** iodine · **conditions:** — · **symptoms:** —
-- **claim:** How much iodine people get, lose and can safely tolerate. The average American takes in 170–250 micrograms (mcg) of elemental iodine a day. The body loses a surprising amount through sweat — up to 146 mcg a day with only moderate exercise — which can deepen a shortfall. On the safety side, Wallach notes metallic iodine is not toxic even at long-term intakes up to 2,000 mcg a day, so there is a wide margin between a useful amount and a harmful one.
-- **verbatim** (offset 289975): “The average American takes in 170-250 mcg/day of
-elemental iodine. Humans lose considerable amounts of
-iodine in their sweat - a loss, of as much as 146 mcg/day, with
-only moderate exercise. Metallic iodine is not toxic with long
-term intakes of up to 2,000 mcg/day.”
+### WAL-CLM-IMMORT-000190 · definition
+- **essentials:** potassium · **conditions:** — · **symptoms:** —
+- **claim:** Potassium, plants, and the origin of its name. Almost all mined potassium chloride goes to plant fertilizer, and plants were humans' early source of the mineral — wood and plants were burned to make a potassium-rich ash called 'potash,' which is where the name potassium comes from. Notably, potassium is essential for plant growth while sodium is not, so plants preferentially take up potassium and let dissolved sodium wash to the oceans. The first 'chemical fertilizer' (NPK — nitrogen, phosphorus, potassium) was formulated in the 1700s by the German chemist Liebig.
+- **verbatim** (offset 295831): “Almost all of the potassium chloride that is mined is
+used as plant fertilizer. In fact, plants (crops and trees) were
+the early source of essential minerals including potassium for
+humans. Wood and other plants were burned in pots or under
+pots to produce a potassium-rich ash (“potash”).
 
-### WAL-CLM-IMMORT-000179 · mechanism
-- **essentials:** iodine · **conditions:** goiter · **symptoms:** —
-- **claim:** Even with plenty of iodine, certain foods can still cause goiter. Wallach points to Japanese people living on the sea coast who develop goiter (a swollen thyroid) despite a high daily iodine intake. In a feeding study, subjects given Chinese cabbage (bok choy), turnips, buckwheat, noodles, a fixed 2.0 mcg of iodine, or soybean all developed goiter — every group except the one fed seaweed. The lesson: certain foods (goitrogens) can block the body's use of iodine and trigger goiter even when iodine is abundant.
-- **verbatim** (offset 290243): “Goiter develops in Japanese living along the sea coast
-despite high daily iodine consumption.”
+The original “chemical fertilizer,” first produced in the
+1700s by the German chemist Liebig, was made up of NPK
+(nitrogen, phosphorus and potassium) which he formulated
+after the ash he produced by burning bread and then analyzing
+the mineral content of the ash.
 
-### WAL-CLM-IMMORT-000180 · mechanism
-- **essentials:** iodine, copper · **conditions:** goiter · **symptoms:** —
-- **claim:** Goiter can come from a copper shortage, not just an iodine shortage. Wallach cites island populations along the Adriatic where soil iodine was identical everywhere, yet goiter rates differed sharply — 46% of the people of Pisila and 40% of Polje were affected, but only 3% of Milahnici. The difference was a severe copper deficiency in the soils of the high-goiter areas. Copper is a cofactor (a required helper mineral) for the body to use iodine efficiently, so a copper shortage can produce goiter even when iodine is adequate.
-- **verbatim** (offset 290557): “Northern parts of the Adriatic Islands had more clinical
-goiter than the southern areas while the southwest was goiter-free. Forty-six percent of the population of Pisila, 40% of the
-population of Polje, and only three percent of the population of
-Milahnici were affected. There is an identical iodine content of
-the soil in all three locations. A severe copper deficiency in the
-soils of the north and south cause the deficiency state because
-copper is a cofactor required for the efficient utilization of
-iodine.”
+The name, potassium, has its origin from the term
+potash, from the early source of the element - wood ashes, the
+byproduct of daily living, that was produced by heating and
+cooking with wood.”
 
-### WAL-CLM-IMMORT-000181 · definition
-- **essentials:** iodine · **conditions:** — · **symptoms:** —
-- **claim:** How common thyroid trouble is, and what the thyroid controls. Wallach notes that roughly one million Americans have either a hypothyroid (underactive) or hyperthyroid (overactive) thyroid condition. Thyroid hormones are wide-reaching regulators — they control digestion, heart rate, overall metabolism, body temperature, sweating, the nervous and reproductive systems, and body weight — which is why a struggling thyroid can cause such a broad mix of symptoms.
-- **verbatim** (offset 291073): “Some one million Americans have either a hypothyroid
-(low, under active) or a hyperthyroid (overactive) condition.
-Thyroid hormones control and regulate digestion, heart rate,
-metabolism, body temperature, sweat gland activity, nervous
-and reproductive systems and body weight.”
+### WAL-CLM-IMMORT-000191 · definition
+- **essentials:** potassium · **conditions:** — · **symptoms:** —
+- **claim:** Saltpeter — the historic potassium compound. Potassium nitrate (KNO3), commonly called 'saltpeter' or 'rocksalt' (from the Greek 'petra,' rock), looks and tastes like table salt and has been used for centuries as a preservative and fertilizer. It is also one of the three ingredients of gunpowder, along with charcoal and sulfur.
+- **verbatim** (offset 296580): “Potassium nitrate, KNO3, is an important compound
+that has been used by many cultures for centuries. It is
+commonly called “saltpeter” or “rocksalt.” The name is taken
+from the Greek word petra, which translates to rock. It looks
+like table salt and when dissolved in water, it tastes like salt.
 
-### WAL-CLM-IMMORT-000182 · deficiency_sign
-- **essentials:** iodine · **conditions:** hypothyroidism, hashimotos_disease, goiter, wilsons_syndrome · **symptoms:** fatigue, cold_intolerance, muscle_cramps, low_sex_drive, brittle_nails, weight_gain, hair_loss, depression, constipation, dry_skin, poor_memory
-- **claim:** Signs of an underactive thyroid (hypothyroidism). Wallach lists the symptoms of hypothyroidism — including Hashimoto's disease (an autoimmune thyroid condition) and Wilson's syndrome — as: fatigue, cold intolerance, muscle aches and pains, heavy or more frequent periods (dysmenorrhea), loss of libido (low sex drive), brittle nails, weight gain, hair loss, muscle cramps, depression, constipation, elevated blood cholesterol, puffy face, dry skin and hair, inability to concentrate, poor memory, and goiter.
-- **verbatim** (offset 291352): “Symptoms of Hypothyroidism
+Saltpeter is commonly used as a preservative and
+fertilizer. Gunpowder is a mixture of saltpeter, charcoal and
+sulfur.”
 
-Hashimoto’s disease
+### WAL-CLM-IMMORT-000192 · mechanism
+- **essentials:** potassium · **conditions:** — · **symptoms:** —
+- **claim:** What potassium does in the body. It is essential to all organisms and the major cation (positively charged mineral) inside the cell, driving a wide range of electrochemical and enzyme functions. Potassium makes up about 5% of the body's total mineral content and is the main mineral of the intracellular fluid (the fluid inside cells). Working with sodium — the other main 'electrolyte' — it maintains normal water balance, osmotic equilibrium (fluid balance across cell membranes), and acid-base (pH) balance; and working with calcium it regulates neuromuscular activity (nerve-and-muscle signaling).
+- **verbatim** (offset 296997): “Potassium is essential to all organisms and is the major
+cation in cell cytoplasm with a wide variety of electrochemical
+and catalytic functions for enzyme systems. Potassium
+constitutes five percent of the total mineral content of the
+body. It is the major cation of the intracellular fluid and there
+is a small amount in the extracellular fluid. With sodium, the
+other “electrolyte,” potassium participates in the maintenance
+of normal water balance, osmotic equilibrium and acid-base
+balance. Potassium participates with calcium in the regulation
+of neuromuscular activity.”
 
-Fatigue
+### WAL-CLM-IMMORT-000193 · dose
+- **essentials:** potassium · **conditions:** — · **symptoms:** —
+- **dose:** {'amount': '5,000', 'unit': 'mg', 'period': 'daily', 'form': None, 'duration': None, 'for_condition': 'daily maintenance intake (body stores no potassium)'}
+- **claim:** How much potassium the body needs daily. Potassium is easily absorbed, but about 90% of what you take in is excreted in the urine and the body stores essentially none — so it must be replaced constantly, requiring a significant daily intake of 5,000 mg (5 grams). This is Wallach's stated daily requirement for potassium.
+- **verbatim** (offset 297575): “Potassium is easily absorbed. Ninety percent of ingested
+potassium is excreted through the urine. Essentially there is
+no storage of potassium in the human body, thus requiring a
+significant daily intake of 5,000 mg.”
 
-Cold intolerance
+### WAL-CLM-IMMORT-000194 · deficiency_sign
+- **essentials:** potassium · **conditions:** hypokalemia, cardiac_failure · **symptoms:** muscle_weakness, mental_apathy
+- **claim:** Signs of a potassium deficiency. Muscular weakness and mental apathy (listlessness, lack of interest) are its features, and hypokalemic cardiac failure — heart failure from low potassium — is the most serious event. Wallach warns that potassium (and other minerals) is lost faster than normal through diuretics (both natural and prescribed water pills), water toxicity (over-drinking water), sweating, colds and flu, vomiting, and diarrhea.
+- **verbatim** (offset 297797): “Muscular weakness and mental apathy are features
+of a potassium deficiency. Hypokalemic cardiac failure is
+the most serious potassium deficiency event. Diuretics (both
+natural and prescribed), water toxicity (over drinking water),
+sweating, colds and flu, vomiting and diarrhea increase
+the rate of loss of all minerals, including potassium, when
+compared to the normal expected excretion rate.”
 
-Muscle aches and pains
-Heavy or more frequent periods (dysmenorrhea)
-Loss of libido (low sex drive)
-Brittle nails
+### WAL-CLM-IMMORT-000195 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Krypton — the noble gas of Superman fame. Famous as Superman's home planet and the source of 'kryptonite,' real krypton is a noble gas (an extremely unreactive element) that is totally harmless to humans. Notably, Wallach adds that krypton 'may in fact be an essential element for all vertebrates' — a speculative but intriguing note that even this inert gas could have a biological role.
+- **verbatim** (offset 298193): “Kr-Krypton is found in igneous rock at 0.0001 ppm
+and sea water at 0.0025 ppm. Krypton is legendary as the
+home planet of “Superman” and the source of the mineral
+“kryptonite” which had a crippling effect on “Superman.”
+In fact krypton in its natural elemental form is a noble gas,
+totally harmless to humans and may in fact be an essential
+element for all vertebrates.”
 
-Weight gain
+### WAL-CLM-IMMORT-000196 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** How krypton was discovered. When Mendeleyev built the first periodic table in 1869, no noble gases were yet known, so he left no place for them; the discovery of argon in 1894 forced a whole new column. In 1898 the English chemist Sir William Ramsay isolated and identified krypton, naming it from the Greek 'kryptos' meaning 'hidden.'
+- **verbatim** (offset 298564): “As none of the Noble gases had been discovered when
+Mendeleyev first constructed the periodic table in 1869, he
+made no provision for them in the original table. It was only
+the discovery of argon in 1894 that produced the need for a new
+column in the table. In 1898, the English chemist Sir William
+Ramsay isolated and identified krypton as a new element.
+He named it for the Greek word kryptos, which translates to
+“hidden.””
 
-Hair loss
-
-Muscle cramps
-
-Depression
-
-Constipation
-
-
-Elevated blood cholesterol
-Puffy face
-
-Dry skin and hair
-Inability to concentrate
-Poor memory
-
-Goiter
-
-Wilson’s syndrome”
-
-### WAL-CLM-IMMORT-000183 · diagnostic_pattern
-- **essentials:** iodine · **conditions:** hyperthyroidism, graves_disease, goiter · **symptoms:** insomnia, heat_intolerance, hand_tremors, rapid_pulse, exophthalmos, weight_loss, muscle_weakness, irritability, nervousness
-- **claim:** Signs of an overactive thyroid (hyperthyroidism). Wallach lists the symptoms of hyperthyroidism — including Graves' disease (an autoimmune overactive-thyroid condition) — as: insomnia, heat intolerance, excessive sweating, lighter or less frequent periods (dysmenorrhea), hand tremors, rapid pulse, exophthalmos (bulging 'bug eyes'), weight loss, increased appetite, muscle weakness, frequent bowel movements, irritability, nervousness, and goiter.
-- **verbatim** (offset 291742): “Symptoms of Hyperthyroidism
-
- 
-
-Grave's disease
-
-Insomnia
-
-Heat intolerance
-
-Excessive sweating
-
-Lighter/less frequent periods (dysmenorrhea)
-Hand tremors
-
-Rapid pulse
-
-Exophthalmos (“bug eyes,” Rodney Dangerfield eyes, etc.)
-Weight loss
-
-Increased appetite
-
-Muscle weakness
-
-Frequent bowel movements
-
-Irritability
-
-Nervousness
-
-Goiter”
-
-### WAL-CLM-IMMORT-000184 · interaction
-- **essentials:** iodine · **conditions:** thyroid_disease · **symptoms:** —
-- **claim:** Specific foods that disrupt the thyroid ('goitrogens'). Wallach names the foods and additives that interfere with normal thyroid metabolism and produce thyroid disease. Two groups stand out: (1) nitrates and nitrites — the preservatives in processed and cured meats: ham, bacon, sausage, bologna, salami, pastrami, pepperoni, jerky and deli meats; and (2) cruciferous vegetables — broccoli, Brussels sprouts, cabbage and cauliflower. Knowing these specific culprits lets someone with thyroid trouble adjust their diet directly.
-- **verbatim** (offset 292111): “Many foods and food additives are known
-
-“goitrogens” because they interfere with the normal thyroid
-
-metabolism and produce thyroid disease. These substances
-
-include nitrates and nitrites (i.e. ham, bacon, sausage, bologna,
-salami, pastrami, pepperoni, jerky, deli-meats, etc.) and
-cruciferous vegetables (i.e. broccoli, Brussel sprouts, cabbage,
-cauliflower, etc.).”
+### WAL-CLM-IMMORT-000197 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Krypton's supposed inertness, challenged and broken. Though noble gases were thought to form no compounds, the celebrated American chemist and two-time Nobel laureate Linus Pauling used quantum mechanics in 1933 to predict that a molecule of krypton and fluorine should be stable enough to exist. He was proven right in 1966 when Neil Bartlett of the University of British Columbia produced krypton fluoride (KrF2).
+- **verbatim** (offset 298992): “The chemical inertness of krypton was challenged by
+the celebrated American chemist and two time Nobel Prize
+winner, Linus Pauling, who in 1933 used quantum mechanics
+to demonstrate that a molecule containing krypton and
+fluorine should be stable enough to exist. In 1966, Neil Bartlett
+of the University of British Columbia produced krypton
+fluoride (KrF2) as Pauling had predicted.”
 

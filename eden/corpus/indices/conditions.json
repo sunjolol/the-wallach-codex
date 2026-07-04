@@ -2721,9 +2721,10 @@
   },
   "cardiac_failure": {
     "display_name": "Cardiac Failure",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-IMMORT-000194",
         "WAL-CLM-RARE-000155"
       ]
     },
@@ -2732,6 +2733,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
@@ -6889,9 +6891,10 @@
   },
   "hypokalemia": {
     "display_name": "Hypokalemia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-IMMORT-000194",
         "WAL-CLM-RARE-000155"
       ]
     },
@@ -6900,6 +6903,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
