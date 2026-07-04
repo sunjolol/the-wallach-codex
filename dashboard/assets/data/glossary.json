@@ -787,6 +787,20 @@
       "aliases": [
         "myelosclerosis"
       ]
+    },
+    {
+      "term": "chromatolysis",
+      "plain": "breakdown of the protein-making structures inside a damaged nerve cell",
+      "category": "medical",
+      "aliases": []
+    },
+    {
+      "term": "leukopenia",
+      "plain": "a low total white-blood-cell count",
+      "category": "medical",
+      "aliases": [
+        "leucopenia"
+      ]
     }
   ]
 }

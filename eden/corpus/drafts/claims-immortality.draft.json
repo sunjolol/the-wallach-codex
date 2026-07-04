@@ -3367,6 +3367,567 @@
       "extracted_at": "2026-07-04T09:09:16+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000097",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The element's name and history. Copper makes up only 0.007% of the earth's crust. Its name comes from the Latin cuprum, meaning 'from Cyprus' — the Romans mined their copper on the island of Cyprus. Copper was one of the first metals humanity used: copper jewelry from about 9000 B.C. has been found in Iraq. Because pure copper is soft, ancient peoples alloyed it with tin to make bronze, zinc to make brass, and nickel to make monel, producing harder metals for tools and weapons. In his words: \"Despite the common use of copper, it makes up only 0.007% of the earth's crust. Copper gets its name from the Latin word, cuprum, which translates to 'from Cyprus,' a reference to the fact that the Romans mined their copper from the island of Cyprus.\"",
+      "verbatim": "Despite the common use of copper, it makes up only\n0.007% of the earth’s crust. Copper gets its name from the\nLatin word, cuprum, which translates to “from Cyprus,” a\nreference to the fact that the Romans mined their copper from\nthe island of Cyprus.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 134,
+        "screenshot": 80,
+        "kindle_location": null,
+        "char_offset": 241365
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "copper",
+        "history",
+        "etymology"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T10:00:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000098",
+      "kind": "definition",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Copper is a genuine essential nutrient for every living thing. Wallach frames it as a universally important cofactor — a helper the body's enzymes need to work — for many hundreds of metalloenzymes (enzymes built around a metal atom). He stresses that copper deficiency is widespread and common, and that copper-deficiency diseases have a real impact on human populations. In his words: \"Copper is an essential nutrient for all living organisms and is a universally important cofactor for many hundreds of metalloenzymes. Copper deficiency is widespread and common and copper deficiency diseases have an important impact on human populations.\"",
+      "verbatim": "Copper is an essential nutrient for all living organisms\nand is a universally important cofactor for many hundreds\nof metalloenzymes. Copper deficiency is widespread and\ncommon and copper deficiency diseases have an important\nimpact on human populations.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 134,
+        "screenshot": 80,
+        "kindle_location": null,
+        "char_offset": 241920
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "essentiality",
+        "metalloenzymes"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T10:00:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000099",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "gray_hair",
+        "vitiligo",
+        "brittle_hair",
+        "ptosis",
+        "hernia",
+        "varicose_veins",
+        "hemorrhoids",
+        "spider_veins",
+        "aneurysm",
+        "kawasaki_disease",
+        "anemia",
+        "hypothyroidism",
+        "hyperthyroidism",
+        "arthritis",
+        "degenerative_disc_disease",
+        "liver_cirrhosis",
+        "blind_rage",
+        "learning_disabilities",
+        "adhd",
+        "autism",
+        "cerebral_palsy",
+        "cerebellar_hypoplasia",
+        "enzootic_ataxia",
+        "mad_cow_disease",
+        "creutzfeldt_jakob_disease",
+        "high_cholesterol",
+        "hemochromatosis",
+        "glucose_intolerance",
+        "neutropenia"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach prints a long table of the conditions he attributes to copper deficiency — many tied to copper's role in pigment, connective tissue and blood vessels. Hair and skin: white/grey/'silver' hair, vitiligo (loss of skin pigment), dry brittle hair. Sagging and weakened tissue: ptosis (drooping eyelids, 'crow's feet,' sagging skin/breasts/belly), hernias, varicose veins, hemorrhoids, spider veins, and aneurysms (rupture-prone weak spots in artery walls) — including Kawasaki disease (childhood aneurysms with streptococcal infection). Also anemia, hypo- and hyperthyroid dysfunction, arthritis, disc disease and liver cirrhosis. Neuro-behavioral: violent behavior / blind rage / 'criminal' behavior, learning disabilities (ADD, ADHD, some autism), cerebral palsy, and aplasia/hypoplasia (underdevelopment) of the cerebellum. Copper-deficiency brain diseases across species: enzootic ataxia in sheep, Mad Cow Disease in cattle, and Creutzfeldt-Jakob disease in humans. Plus elevated blood cholesterol (above 350), iron storage disease (hemosiderosis), reduced carbohydrate tolerance, and neutropenia (low neutrophil count). In his words: \"Copper deficiency Symptoms and Diseases: White, grey and 'silver' hair; Vitiligo; Dry brittle hair; Ptosis; Hernias; Varicose veins (including hemorrhoids); Spider veins; Aneurysms; Kawasaki disease; Anemia; Hypo and hyperthyroid dysfunction; Arthritis; Disc disease; Liver cirrhosis; Violent behavior, blind rage, explosive outbursts and 'criminal' behavior; Learning disabilities (ADD, ADHD, some forms of autism); Cerebral palsy, aplasia and hypoplasia of the cerebellum; Enzootic ataxia in sheep; Mad Cow Disease in cattle; Creutzfeldt-Jakob Disease; Elevated blood cholesterol (above 350); Iron storage disease (hemosiderosis); Reduced carbohydrate tolerance; Neutropenia.\"",
+      "verbatim": "Copper deficiency Symptoms and Diseases\nWhite, grey and “silver” hair\n\nVitiligo (loss of skin pigment)\n\nDry brittle hair (“steely wool” in sheep)\n\nPtosis (sagging tissue - eye lids, “crows feet,” skin, arm\n\n\n \n\nflappers, breasts, belly)\n\nHernias (congenital and acquired)\n\nVaricose veins (including hemorrhoids)\n\nSpider veins\n\nAneurysms (cerebral artery, coronary artery, aorta and large\nartery “blowouts”)\n\nKawasaki disease (congenital aneurysms with streptococcal\ninfections)\n\nAnemia (especially common in high milk and vegan diets)\n\nHypo and hyperthyroid dysfunction\n\nArthritis (especially where immature bone growth plates are\ninvolved)\n\nDisc disease (ruptured, bulging, degenerative)\n\nLiver cirrhosis\n\nViolent behavior, blind rage, explosive outbursts and\n“criminal” behavior\n\nLearning disabilities (ADD, ADHD, some forms of autism)\n\nCerebral palsy, aplasia and hypoplasia of the cerebellum\n\nEnzootic ataxia in sheep\n\nMad Cow Disease in cattle (same disease as enzootic\nataxia-sheep)\n\nCreutzfeldt-Jakob Disease (Humans-madcow disease)\n\nElevated blood cholesterol (above 350)\n\nIron storage disease (hemosiderosis)\n\nReduced carbohydrate tolerance\n\nNeutropenia (low neutrophil count)",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 134,
+        "screenshot": 80,
+        "kindle_location": null,
+        "char_offset": 242176
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "deficiency",
+        "deficiency-table",
+        "deficiency_sign"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T10:00:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000100",
+      "kind": "mechanism",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach lists the many jobs copper does inside cells and tissues. It's needed for RNA and DNA; for lysyl oxidase, the copper enzyme that cross-links and strengthens elastic fibers; for making melanin (the pigment of skin and hair); and for electron transport, the cell's energy-generating respiration chain. Through those elastic fibers copper gives tensile strength to skin, hair, wool (poor copper makes 'steely wool' in sheep), cartilage, tendons, ligaments, the vertebral discs and blood vessels. In his words: \"Copper is required for many subcellular and physiological functions: RNA, DNA, Lysyl oxidase (elastic fiber cofactor), melanin production (skin and hair), electron transport for subcellular respiration, tensile strength of elastic fibers in skin, hair, wool ('steely wool'), cartilage, tendons, ligaments, vertebral discs, blood vessels, etc.\"",
+      "verbatim": "Copper is required for many subcellular and\nphysiological functions: RNA, DNA, Lysyl oxidase (elastic\nfiber cofactor), melanin production (skin and hair), electron\ntransport for subcellular respiration, tensile strength of elastic\nfibers in skin, hair, wool (“steely wool”), cartilage, tendons,\nligaments, vertebral discs, blood vessels, etc.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 136,
+        "screenshot": 81,
+        "kindle_location": null,
+        "char_offset": 243395
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "lysyl-oxidase",
+        "melanin",
+        "functions"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T10:00:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000101",
+      "kind": "mechanism",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "enzootic_ataxia"
+      ],
+      "symptoms": [],
+      "claim_text": "One of the earliest proofs that copper deficiency causes neurological disease. In 1937, 'enzootic ataxia' in newborn lambs — also called sway back or lamkruis, a loss of muscle coordination — was recognized as a copper deficiency in pregnant sheep. Giving the ewes copper supplements prevented it. The disease was marked by demyelination (loss of the protective myelin sheath around nerves) in the cerebellum (the brain's coordination center) and the spinal cord. In his words: \"Neonatal 'enzootic ataxia' (sway back, lamkruis) was recognized as a clinical and disease entity in 1937 as a copper deficiency in pregnant sheep. Copper supplements prevented the syndrome, which was characterized by demyelination of the cerebellum and spinal cord.\"",
+      "verbatim": "Neonatal “enzootic ataxia” (sway back, lamkruis) was\nrecognized as a clinical and disease entity in 1937 as a copper\ndeficiency in pregnant sheep. Copper supplements prevented\nthe syndrome, which was characterized by demyelination of\nthe cerebellum and spinal cord.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 136,
+        "screenshot": 81,
+        "kindle_location": null,
+        "char_offset": 243739
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "enzootic-ataxia",
+        "demyelination"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T10:00:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000102",
+      "kind": "mechanism",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "mad_cow_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach classifies Mad Cow Disease — technically Bovine Spongiform Encephalopathy (BSE) — and its human counterpart, Creutzfeldt-Jakob disease, as copper-deficiency diseases. His evidence is the brain damage itself: the lesions of BSE closely resemble those of enzootic ataxia in sheep, a long-established copper-deficiency disease. In his words: \"The brain lesions of Bovine Spongiform Encephalopathy (BSE) appear to be similar to those of Enzootic Ataxia in sheep - a copper deficiency.\"",
+      "verbatim": "The brain lesions of Bovine Spongiform Encephalopathy\n(BSE) appear to be similar to those of Enzootic Ataxia in sheep\n- a copper deficiency.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 136,
+        "screenshot": 81,
+        "kindle_location": null,
+        "char_offset": 244394
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "mad-cow",
+        "bse",
+        "copper-deficiency"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T10:00:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000103",
+      "kind": "mechanism",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cerebral_palsy"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach extends the copper-deficiency argument to cerebral palsy. In sheep, copper deficiency produces a set of brain lesions — cavities or jelly-like damage in the cerebral white matter, chromatolysis (breakdown of nerve-cell structures), nerve-cell death, and myelin aplasia (myelin failing to form during fetal development). He says these congenital lesions are identical to the classic brain changes of human cerebral palsy. In his words: \"Cavitation or gelatinous lesions of the cerebral white matter, chromatolysis, nerve cell death and myelin aplasia (failure to form during embryonic development) were also identified as a copper deficiency disease in sheep - these congenital lesions are identical to those of the classical changes of human cerebral palsy.\"",
+      "verbatim": "Cavitation or gelatinous lesions of the cerebral white\nmatter, chromatolysis, nerve cell death and myelin aplasia\n(failure to form during embryonic development) were also\nidentified as a copper deficiency disease in sheep - these\ncongenital lesions are identical to those of the classical changes\nof human cerebral palsy.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 136,
+        "screenshot": 81,
+        "kindle_location": null,
+        "char_offset": 244536
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "cerebral-palsy",
+        "demyelination"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T10:00:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000104",
+      "kind": "personal_anecdote",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "aneurysm"
+      ],
+      "symptoms": [],
+      "claim_text": "To dramatize how common copper deficiency is, Wallach names famous people he says show its signs — mostly fatal aneurysms (weak arterial walls that balloon and burst, an elastin failure copper is meant to prevent): Albert Einstein (ruptured aortic aneurysm), Franklin D. Roosevelt (ruptured cerebral aneurysm), the nutritionist Paavo Airola (ruptured cerebral aneurysm), Conway Twitty and John Ritter (ruptured abdominal aortic aneurysms), and George and Barbara Bush (thyroid disease and white hair). He adds a striking autopsy statistic: 4 to 6 of every 100 Americans autopsied died of a ruptured aneurysm, and another 40% had aneurysms that had not yet ruptured. In his words: \"Famous people affected or dying of an obvious copper deficiency include: Albert Einstein (ruptured aortic aneurysm), Franklin D. Roosevelt (ruptured cerebral aneurysm), Paavo Airola (ruptured cerebral aneurysm), Conway Twitty (ruptured abdominal aortic aneurysm), John Ritter (ruptured abdominal aortic aneurysm), George and Barbara Bush (thyroid disease and white hair). Four to six out of every 100 Americans autopsied have died of a ruptured aneurysm; an additional 40% of Americans autopsied have aneurysms that have not ruptured.\"",
+      "verbatim": "Famous people affected or dying of an obvious copper\ndeficiency include: Albert Einstein (ruptured aortic aneurysm),\nFranklin D. Roosevelt (ruptured cerebral aneurysm), Paavo\nAirola (ruptured cerebral aneurysm), Conway Twitty\n(ruptured abdominal aortic aneurysm), John Ritter (ruptured\nabdominal aortic aneurysm), George and Barbara Bush\n(thyroid disease and white hair). Four to six out of every 100\nAmericans autopsied have died of a ruptured aneurysm; an\nadditional 40% of Americans autopsied have aneurysms that\n\n\n \n\nhave not ruptured.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 137,
+        "screenshot": 81,
+        "kindle_location": null,
+        "char_offset": 244859
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "aneurysm",
+        "famous-people",
+        "prevalence"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T10:00:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000105",
+      "kind": "dose",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach gives the body's copper content and daily needs. A well-nourished adult holds about 80–120 mg of copper total, concentrated in the brain, liver, heart and kidneys; bone and muscle hold lower percentages but, by sheer mass, store about half the body's copper. Newborns carry the highest concentrations. The daily copper requirement is highest per unit of body weight in the newborn — 0.08 mg per kilogram (mg/kg) — dropping to 0.04 mg/kg for toddlers and just 0.03 mg/kg for adults. In his words: \"The daily copper requirement for the newborn is 0.08 mg/kg; toddlers require 0.04 mg/kg; and adults only 0.03 mg/kg.\"",
+      "verbatim": "The daily copper requirement for the newborn is 0.08\nmg/kg; toddlers require 0.04 mg/kg; and adults only 0.03\nmg/kg.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 137,
+        "screenshot": 81,
+        "kindle_location": null,
+        "char_offset": 245763
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "dose",
+        "daily-requirement",
+        "body-content"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T10:00:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000106",
+      "kind": "prevalence",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Typical copper levels in the blood. Wallach gives average plasma copper as 87–153 (women) and 89–137 (men) — the book prints the unit as mg/dl, but for copper this is really micrograms per deciliter (µg/dL), the standard unit for plasma copper. About 90% of the copper in plasma travels bound to a carrier protein called ceruloplasmin. In his words: \"The average plasma copper levels of women ranges from 87 to 153 mg/dl; for men the range is 89 to 137 mg/dl. About 90% of the plasma copper is bound in a protein called ceruloplasmin.\"",
+      "verbatim": "The average plasma copper levels of women ranges\nfrom 87 to 153 mg/dl; for men the range is 89 to 137 mg/dl.\nAbout 90% of the plasma copper is bound in a protein called\nceruloplasmin.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 137,
+        "screenshot": 81,
+        "kindle_location": null,
+        "char_offset": 245881
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "copper",
+        "ceruloplasmin",
+        "plasma"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T10:00:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000107",
+      "kind": "mechanism",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "kawasaki_disease",
+        "cerebral_palsy",
+        "cerebellar_hypoplasia",
+        "spider_veins",
+        "varicose_veins",
+        "hemorrhoids",
+        "aneurysm"
+      ],
+      "symptoms": [],
+      "claim_text": "The mechanism behind copper's cardiovascular effects. Copper activates numerous 'cupro-enzymes' (copper-dependent enzymes) that build and maintain the heart and blood vessels. In a copper-deficient pregnancy this causes congenital defects of the heart and vessels (Kawasaki disease) and of the brain (cerebral palsy, plus atresia — failure to form — and hypoplasia, or underdevelopment, of the cerebellum). Copper deficiency also lowers the activity of lysyl oxidase, the enzyme that converts proelastin into elastin; with less elastin, the walls of veins and arteries lose tensile strength — producing spider veins, varicose veins, hemorrhoids and aneurysms. In his words: \"Copper functions as a cofactor and activator of numerous cupro-enzymes that are involved with the development and maintenance of the cardiovascular system. Deficiency of copper in the pregnant female results in congenital defects of the heart and vascular system (Kawasaki disease) and brain (cerebral palsy, atresia and hypoplasia of the cerebellum). Deficiency of copper also results in reduced lysyl oxidase activity causing a reduction in conversion of proelastin to elastin causing a decrease in the tensile strength of venous and arterial walls (spider veins, varicose veins, hemorrhoids and aneurysms).\"",
+      "verbatim": "Copper functions as a cofactor and activator of numerous\ncupro-enzymes that are involved with the development and\nmaintenance of the cardiovascular system. Deficiency of\ncopper in the pregnant female results in congenital defects of\nthe heart and vascular system (Kawasaki disease) and brain\n(cerebral palsy, atresia and hypoplasia of the cerebellum).\nDeficiency of copper also results in reduced lysyl oxidase\nactivity causing a reduction in conversion of proelastin to\nelastin causing a decrease in the tensile strength of venous\nand arterial walls (spider veins, varicose veins, hemorrhoids\nand aneurysms).",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 137,
+        "screenshot": 81,
+        "kindle_location": null,
+        "char_offset": 246066
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "lysyl-oxidase",
+        "elastin",
+        "cardiovascular"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T10:00:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000108",
+      "kind": "mechanism",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "arthritis",
+        "bone_spurs"
+      ],
+      "symptoms": [],
+      "claim_text": "Copper deficiency also weakens the body's structural framework — bone, connective tissue and muscle. Wallach says this can produce a specific childhood arthritis that forms bone spurs (bony overgrowths) in the growth plates, the zones of developing cartilage at the ends of a child's bones. In his words: \"Deficiency of copper also results in a reduced skeletal, connective tissue and muscular integrity which can produce a specific type of arthritis in children that forms bone spurs in the bone growth plates.\"",
+      "verbatim": "Deficiency of copper also results in a reduced skeletal,\nconnective tissue and muscular integrity which can produce\na specific type of arthritis in children that forms bone spurs in\nthe bone growth plates.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 137,
+        "screenshot": 81,
+        "kindle_location": null,
+        "char_offset": 246677
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "arthritis",
+        "bone-spurs"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T10:00:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000109",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "anemia",
+        "neutropenia",
+        "leukopenia",
+        "hemochromatosis"
+      ],
+      "symptoms": [],
+      "claim_text": "The earliest and most telling signs of copper deficiency, especially in infants. Too little copper causes myelin defects (poor nerve insulation), anemia, poorly-formed ('keratinized') hair, and loss of hair color. In a baby, the earliest laboratory signs are neutropenia (too few neutrophils, a type of white blood cell) and leukopenia (a low total white-cell count). Infants fed mainly cow's milk — which is low in copper — often develop copper-deficiency anemia and/or iron storage disease. In his words: \"Lack of copper can result in myelin defects, anemia, poor hair keratinization and loss of hair color. Neutropenia (reduced numbers of neutrophilic WBCs or white blood cells) and leucopenia (reduced total WBC count) are the earliest indications of a copper deficiency in an infant. Infants whose diets are primarily cow's milk frequently develop copper deficiency anemia and/or iron storage disease.\"",
+      "verbatim": "Lack of copper can result in myelin defects, anemia,\npoor hair keratinization and loss of hair color. Neutropenia\n(reduced numbers of neutrophilic WBCs or white blood cells)\nand leucopenia (reduced total WBC count) are the earliest\nindications of a copper deficiency in an infant. Infants whose\ndiets are primarily cow’s milk frequently develop copper\ndeficiency anemia and/or iron storage disease.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 137,
+        "screenshot": 81,
+        "kindle_location": null,
+        "char_offset": 246884
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "neutropenia",
+        "leukopenia",
+        "anemia",
+        "infant"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T10:00:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000110",
+      "kind": "definition",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "menkes_syndrome"
+      ],
+      "symptoms": [],
+      "claim_text": "Menkes' Kinky Hair Syndrome is the clearest genetic proof of copper's importance. Wallach describes it as a sex-linked recessive genetic defect (carried on the X chromosome) that blocks copper absorption. Affected infants show stunted growth, defective keratin in the hair (the 'kinky' hair), loss of hair pigment, low body temperature (from low thyroid function) and anemia, degeneration and fractures of the aortic elastin (aneurysms), arthritis in the growth plates of the long bones, and progressive mental deterioration — the last because the brain is left without cytochrome oxidase, a vital copper-dependent enzyme. Because copper can't be absorbed normally, treatment uses injected copper plus liver extract and a celiac-type diet. In his words: \"Menkes' Kinky Hair Syndrome is thought to be a sex-linked recessive genetic defect of copper absorption. The affected infants exhibit retarded growth, defective keratin formation of the hair, loss of hair pigment, low body temperature (low thyroid function, anemia), degeneration and fractures of aortic elastin (aneurysms), arthritis in the growth plates of long bones, and a progressive mental deterioration. Mental deterioration results from brain tissue being totally devoid of the essential copper dependent enzyme cytochrome oxidase.\"",
+      "verbatim": "Menkes’ Kinky Hair Syndrome is thought to be a sex-linked recessive genetic defect of copper absorption. The affected\ninfants exhibit retarded growth, defective keratin formation\nof the hair, loss of hair pigment, low body temperature (low\nthyroid function, anemia), degeneration and fractures of aortic\nelastin (aneurysms), arthritis in the growth plates of long bones,\nand a progressive mental deterioration. Mental deterioration\nresults from brain tissue being totally devoid of the essential\ncopper dependent enzyme cytochrome oxidase.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 138,
+        "screenshot": 82,
+        "kindle_location": null,
+        "char_offset": 247337
+      },
+      "dose": null,
+      "tags": [
+        "copper",
+        "menkes",
+        "cytochrome-oxidase",
+        "genetic"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T10:00:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000111",
+      "kind": "prevalence",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Some situations that raise blood copper. Serum and plasma copper roughly double (increase 100%) in pregnant women and in women taking oral contraceptives (the pill), and rise during acute infections, liver disease, and pellagra (the disease of niacin / vitamin-B3 deficiency). When copper accumulates in the cornea of the eye it forms visible Kayser-Fleischer rings — a classic sign of copper overload. In his words: \"Serum and plasma copper increases 100% in pregnant women and women using oral contraceptives. Serum copper levels are also elevated during acute infections, liver disease, and pellagra (niacin deficiency). Accumulations of copper in the cornea form Kayser-Fleischer Rings.\"",
+      "verbatim": "Serum and plasma copper increases 100% in pregnant\nwomen and women using oral contraceptives. Serum copper\nlevels are also elevated during acute infections, liver disease,\nand pellagra (niacin deficiency).\n\nAccumulations of copper in the cornea form Kayser-Fleischer Rings.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 138,
+        "screenshot": 82,
+        "kindle_location": null,
+        "char_offset": 248107
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "copper",
+        "ceruloplasmin",
+        "kayser-fleischer"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T10:00:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

@@ -444,7 +444,9 @@
     "thyroid follicular cell tumors"
   ],
   "menkes_syndrome": [
-    "menke syndrome"
+    "menke syndrome",
+    "menkes kinky hair syndrome",
+    "menkes"
   ],
   "blind_rage": [
     "dr. jekyll/mr. hyde rages",
@@ -459,5 +461,39 @@
   "lung_cancer": [
     "bronchiogenic carcinoma",
     "bronchogenic carcinoma"
+  ],
+  "gray_hair": [
+    "silver hair",
+    "grey hair",
+    "loss of hair color"
+  ],
+  "hypothyroidism": [
+    "hypo hyperthyroid",
+    "hypothyroid"
+  ],
+  "hyperthyroidism": [
+    "hyperthyroid",
+    "hypo hyperthyroid"
+  ],
+  "degenerative_disc_disease": [
+    "disc disease"
+  ],
+  "cerebellar_hypoplasia": [
+    "hypoplasia cerebellum",
+    "hypoplasia of the cerebellum"
+  ],
+  "hemochromatosis": [
+    "iron storage disease",
+    "hemosiderosis"
+  ],
+  "glucose_intolerance": [
+    "reduced carbohydrate tolerance"
+  ],
+  "leukopenia": [
+    "leucopenia"
+  ],
+  "mad_cow_disease": [
+    "bovine spongiform encephalopathy",
+    "bse"
   ]
 }

@@ -6228,8 +6228,6 @@ Vitiligo (loss of skin pigment)
 
 Dry brittle hair (“steely wool” in sheep)
 
-"
-
 Ptosis (sagging tissue - eye lids, “crows feet,” skin, arm
 
 
@@ -6270,9 +6268,9 @@ Cerebral palsy, aplasia and hypoplasia of the cerebellum
 Enzootic ataxia in sheep
 
 Mad Cow Disease in cattle (same disease as enzootic
-antoxia-sheep)
+ataxia-sheep)
 
-Krotzfeld-Jakob Disease (Humans-madcow disease)
+Creutzfeldt-Jakob Disease (Humans-madcow disease)
 
 Elevated blood cholesterol (above 350)
 
@@ -6299,15 +6297,15 @@ deficiency in pregnant sheep. Copper supplements prevented
 the syndrome, which was characterized by demyelination of
 the cerebellum and spinal cord.
 
-“Mad Cow Disease” and Krotzfeld-Jakob Disease in
+“Mad Cow Disease” and Creutzfeldt-Jakob Disease in
 humans, while thought by many, to be an infectious disease of
-cattle and humans thatis transmitted by “prions,” aneedle-like
+cattle and humans that is transmitted by “prions,” a needle-like
 protein crystalloid that is neither a bacteria, fungus or virus,
 has not been experimentally transmitted to any laboratory
 animal, livestock or humans.
 
-Efforts to transmit Mad Cow Disease have beena failure.
-The brain lesions of Bovine Spongioform Encephalopathy
+Efforts to transmit Mad Cow Disease have been a failure.
+The brain lesions of Bovine Spongiform Encephalopathy
 (BSE) appear to be similar to those of Enzootic Ataxia in sheep
 - a copper deficiency.
 
@@ -6319,9 +6317,9 @@ congenital lesions are identical to those of the classical changes
 of human cerebral palsy.
 
 Famous people affected or dying of an obvious copper
-deficiency include: Albert Einstein (ruptured aorticaneurysm),
+deficiency include: Albert Einstein (ruptured aortic aneurysm),
 Franklin D. Roosevelt (ruptured cerebral aneurysm), Paavo
-Airola (ruptured cerebral aneurysum), Conway Twitty
+Airola (ruptured cerebral aneurysm), Conway Twitty
 (ruptured abdominal aortic aneurysm), John Ritter (ruptured
 abdominal aortic aneurysm), George and Barbara Bush
 (thyroid disease and white hair). Four to six out of every 100
@@ -6349,14 +6347,14 @@ from 87 to 153 mg/dl; for men the range is 89 to 137 mg/dl.
 About 90% of the plasma copper is bound in a protein called
 ceruloplasmin.
 
-Copper functionsasacofactorandactivatorofnumerous
+Copper functions as a cofactor and activator of numerous
 cupro-enzymes that are involved with the development and
 maintenance of the cardiovascular system. Deficiency of
 copper in the pregnant female results in congenital defects of
 the heart and vascular system (Kawasaki disease) and brain
-(cerebral palsy, atrisia and hypoplasia of the cerebellum)).
+(cerebral palsy, atresia and hypoplasia of the cerebellum).
 Deficiency of copper also results in reduced lysyl oxidase
-activity causing a reduction in conversation of proelastin to
+activity causing a reduction in conversion of proelastin to
 elastin causing a decrease in the tensile strength of venous
 and arterial walls (spider veins, varicose veins, hemorrhoids
 and aneurysms).
@@ -6367,8 +6365,8 @@ a specific type of arthritis in children that forms bone spurs in
 the bone growth plates.
 
 Lack of copper can result in myelin defects, anemia,
-poor hair keratization and loss of hair color. Neutropenia
-(reduced numbers of neutrophillic WBCs or white blood cells)
+poor hair keratinization and loss of hair color. Neutropenia
+(reduced numbers of neutrophilic WBCs or white blood cells)
 and leucopenia (reduced total WBC count) are the earliest
 indications of a copper deficiency in an infant. Infants whose
 diets are primarily cow’s milk frequently develop copper
@@ -6379,7 +6377,7 @@ deficiency anemia and/or iron storage disease.
 
 ee ————————————E————
 
-Menkes’ Kinky Hair Syndrome is thought to be a sex-linked recessive genetic defect of copper absorption. Theaffected
+Menkes’ Kinky Hair Syndrome is thought to be a sex-linked recessive genetic defect of copper absorption. The affected
 infants exhibit retarded growth, defective keratin formation
 of the hair, loss of hair pigment, low body temperature (low
 thyroid function, anemia), degeneration and fractures of aortic
