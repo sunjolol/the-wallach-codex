@@ -501,5 +501,15 @@
     "oral mucus membranes",
     "oral mucous membranes",
     "squamous cell carcinoma"
+  ],
+  "memory_loss": [
+    "memory deficits",
+    "memory loss",
+    "poor memory",
+    "loss of memory"
+  ],
+  "pancreatic_fibrosis": [
+    "fibrosis of the pancreas",
+    "pancreatic fibrosis"
   ]
 }

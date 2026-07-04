@@ -2018,7 +2018,7 @@
     "display_name": "Iron",
     "canon_slug": "iron",
     "category": "mineral",
-    "claim_count": 24,
+    "claim_count": 28,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000022"
@@ -2027,6 +2027,8 @@
         "WAL-CLM-DDDL-000019",
         "WAL-CLM-DDDL-000020",
         "WAL-CLM-EPIGEN-000083",
+        "WAL-CLM-IMMORT-000129",
+        "WAL-CLM-IMMORT-000131",
         "WAL-CLM-LETS-000014"
       ],
       "diagnostic_pattern": [
@@ -2041,6 +2043,7 @@
         "WAL-CLM-DDDL-000040"
       ],
       "mechanism": [
+        "WAL-CLM-IMMORT-000126",
         "WAL-CLM-RARE-000037",
         "WAL-CLM-RARE-000074",
         "WAL-CLM-RARE-000130",
@@ -2058,6 +2061,7 @@
         "WAL-CLM-LETS-000377"
       ],
       "toxicity_sign": [
+        "WAL-CLM-IMMORT-000133",
         "WAL-CLM-LETS-000015"
       ]
     },
@@ -2129,6 +2133,7 @@
       }
     ],
     "conditions_treated": [
+      "alcoholism",
       "amenorrhea",
       "anemia",
       "angular_stomatitis",
@@ -2137,15 +2142,19 @@
       "arthritis",
       "brittle_nails",
       "canker_sores",
+      "cirrhosis",
       "depression",
       "diabetes",
       "dysmenorrhea",
+      "dysphagia",
       "heart_failure",
       "liver_cirrhosis",
       "liver_disease",
+      "memory_loss",
       "menorrhagia",
       "nervous_heart",
       "obesity",
+      "pancreatic_fibrosis",
       "pica",
       "schizophrenia"
     ],
@@ -2178,6 +2187,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -3659,11 +3669,14 @@
     "display_name": "Gallium",
     "canon_slug": "gallium",
     "category": "mineral",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-EPIGEN-000084",
         "WAL-CLM-RARE-000132"
+      ],
+      "prognosis": [
+        "WAL-CLM-IMMORT-000135"
       ],
       "protocol": [
         "WAL-CLM-RARE-000282"
@@ -3688,6 +3701,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },

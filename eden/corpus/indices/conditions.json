@@ -315,8 +315,11 @@
   },
   "alcoholism": {
     "display_name": "Alcoholism",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-IMMORT-000129"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000127",
         "WAL-CLM-LETS-000388"
@@ -326,6 +329,7 @@
       "calcium",
       "chromium",
       "flavonoids",
+      "iron",
       "magnesium",
       "omega-3",
       "phenylalanine",
@@ -339,6 +343,7 @@
       "pancreatic-enzymes"
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor"
     ]
   },
@@ -626,7 +631,7 @@
   },
   "anemia": {
     "display_name": "Anemia",
-    "claim_count": 36,
+    "claim_count": 37,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000115"
@@ -646,6 +651,7 @@
         "WAL-CLM-IMMORT-000064",
         "WAL-CLM-IMMORT-000099",
         "WAL-CLM-IMMORT-000109",
+        "WAL-CLM-IMMORT-000131",
         "WAL-CLM-LETS-000003",
         "WAL-CLM-LETS-000008",
         "WAL-CLM-LETS-000010",
@@ -815,10 +821,11 @@
   },
   "angular_stomatitis": {
     "display_name": "Angular Stomatitis",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000036",
+        "WAL-CLM-IMMORT-000131",
         "WAL-CLM-LETS-000014",
         "WAL-CLM-RARE-000234"
       ]
@@ -830,6 +837,7 @@
     "other_substances_involved": [],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -2070,11 +2078,14 @@
   },
   "brain_cancer": {
     "display_name": "Brain Cancer",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-LETS-000187",
         "WAL-CLM-RARE-000132"
+      ],
+      "prognosis": [
+        "WAL-CLM-IMMORT-000135"
       ]
     },
     "essentials_involved": [
@@ -2084,6 +2095,7 @@
       "levamisole"
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -3249,14 +3261,18 @@
   },
   "cirrhosis": {
     "display_name": "Cirrhosis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000032"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000133"
       ]
     },
     "essentials_involved": [
-      "aluminum"
+      "aluminum",
+      "iron"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -4368,7 +4384,7 @@
   },
   "diabetes": {
     "display_name": "Diabetes",
-    "claim_count": 29,
+    "claim_count": 30,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-DDDL-000008"
@@ -4414,6 +4430,9 @@
       ],
       "quotes": [
         "WAL-CLM-DDDL-000047"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000133"
       ]
     },
     "essentials_involved": [
@@ -4825,16 +4844,22 @@
   },
   "dysphagia": {
     "display_name": "Dysphagia",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IAIYH-000013"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-IMMORT-000131"
       ]
     },
-    "essentials_involved": [],
+    "essentials_involved": [
+      "iron"
+    ],
     "other_substances_involved": [],
     "books_cited": [
-      "iaiyh"
+      "iaiyh",
+      "immortality"
     ]
   },
   "earache": {
@@ -5985,10 +6010,13 @@
   },
   "heart_failure": {
     "display_name": "Heart Failure",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "contraindications": [
         "WAL-CLM-DDDL-000022"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000133"
       ]
     },
     "essentials_involved": [
@@ -5996,7 +6024,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011"
+      "dddl-3e-2011",
+      "immortality"
     ]
   },
   "heartburn": {
@@ -8496,8 +8525,11 @@
   },
   "memory_loss": {
     "display_name": "Memory Loss",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-IMMORT-000131"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000356"
       ]
@@ -8505,6 +8537,7 @@
     "essentials_involved": [
       "choline",
       "chromium",
+      "iron",
       "selenium",
       "vitamin-e"
     ],
@@ -8516,6 +8549,7 @@
       "vasopressin"
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor"
     ]
   },
@@ -9308,7 +9342,7 @@
   },
   "obesity": {
     "display_name": "Obesity",
-    "claim_count": 7,
+    "claim_count": 9,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000011",
@@ -9318,6 +9352,8 @@
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000083",
         "WAL-CLM-IMMORT-000088",
+        "WAL-CLM-IMMORT-000129",
+        "WAL-CLM-IMMORT-000131",
         "WAL-CLM-RARE-000257"
       ],
       "protocols": [
@@ -9826,6 +9862,22 @@
       "lets-play-doctor"
     ]
   },
+  "pancreatic_fibrosis": {
+    "display_name": "Pancreatic Fibrosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000133"
+      ]
+    },
+    "essentials_involved": [
+      "iron"
+    ],
+    "other_substances_involved": [],
+    "books_cited": [
+      "immortality"
+    ]
+  },
   "pancreatitis": {
     "display_name": "Pancreatitis",
     "claim_count": 1,
@@ -10244,7 +10296,7 @@
   },
   "pica": {
     "display_name": "Pica",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-RARE-000036"
@@ -10259,6 +10311,7 @@
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000083",
         "WAL-CLM-IMMORT-000016",
+        "WAL-CLM-IMMORT-000129",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000014",
         "WAL-CLM-LETS-000023"

@@ -6594,11 +6594,11 @@ crust and is second only to aluminum as the most abundant
 metal. The “core” or interior of the earth is theorized to be
 made up of magnetized, molten iron.
 
-[ron is rarely found in its pure form in nature, most iron
+Iron is rarely found in its pure form in nature, most iron
 ores are iron mixed with oxygen; two of the most important
 iron-containing minerals are hematite and magnetite.
 
-[ron was identified, as a useful metal, thousands of years
+Iron was identified, as a useful metal, thousands of years
 ago. The ability to extract iron from the red-brown ores was
 a milestone in human development - known as the Iron Age
 
@@ -6640,7 +6640,7 @@ of iron, the newborn infant has nearly double the amount of
 iron per kg than adults. Sixty to 70% of tissue iron is used as
 essential or functional iron, and 30 to 40% as storage iron.
 
-Essential ironis found as an integral part of hemoglobin,
+Essential iron is found as an integral part of hemoglobin,
 myoglobin (muscle oxygen storing pigments - particularly
 rich in deep diving animals such as whales, dolphins, walrus,
 seals, etc.), and subcellular respiratory enzymes involved
@@ -6653,35 +6653,31 @@ enzymes and metallo enzymes, respiratory pigments (iron
  
 
 
-eee
 is to hemoglobin what magnesium is to chlorophyll), and
 electron transfer for the subcellular utilization of oxygen.
 
-[Ironis stored in bone marrow and liver (i.e. hemosiderin
+Iron is stored in bone marrow and liver (i.e. hemosiderin
 and ferritin). Heme iron from meat is 10% available for
 absorption, while iron from fresh plant sources are only one
 percent available because of the endogenous phytates in the
 plant. Iron absorption takes place primarily in the duodenum
 where the intestinal environment is still acid.
 
-Experimental evidence very clearly that
+Experimental evidence shows very clearly that
 “pica” is a specific sign of iron deficiency. The pica behavior
 can drive children and adults to eat ice (pagophagia), dirt
 (geophagia), lead paint, excess food (“munchies,” obesity),
 alcohol (alcoholism) and sugar (sweet tooth).
 
 Iron deficiency can be the result of unsupplemented
-pregnancy,dysmenorrhea,chronicinfections, hy pochlorhydria
-(low stomach acid froma salt-restricted diet), chronic diarrhea,
+pregnancy, dysmenorrhea, chronic infections, hypochlorhydria
+(low stomach acid from a salt-restricted diet), chronic diarrhea,
 chronic bleeding (i.e. cancer, ulcers, parasites, blood thinners,
 nutritional deficiencies, etc.) and impaired absorption (i.e.
 high fat diets, high fiber diets, celiac disease, etc.).
 
 Symptoms of iron deficiency include listlessness,
 fatigue, heart palpitations on exertion, reduced cognition,
-
-shows
-
 memory deficits, sore tongue, angular stomatitis, dysphagia
 (poor appetite, pica, etc.), obesity and hypochromic microcytic
 anemia.
@@ -6697,7 +6693,7 @@ for those individuals consuming high fiber, high phytate diets
 fibrosis of the pancreas, diabetes and heart failure. These
 diseases are not the direct result of toxic affects of iron, but
 rather, the increased iron consumption produces an increased
-need for selenium, chromium, vanadium, copper, zinc, ete.
+need for selenium, chromium, vanadium, copper, zinc, etc.
 
 
 Fr-Francium is found only as radioactive isotopes. The
@@ -6734,7 +6730,7 @@ word for France.
 
 Gallium was claimed to be an essential element in 1938
 and again in 1958. Gallium has specific areas of metalloenzyme
-activity inthe human brainand has been reported to specifically
+activity in the human brain and has been reported to specifically
 reduce the rate of brain cancer in laboratory animals. British
 research has shown that diets, of pregnant women that are
 supplemented with gallium, significantly reduces the rate of
@@ -6746,7 +6742,6 @@ Gallium-67 was one of the first artificially produced
  
 
 
-Sei ee a
 radioactive isotopes to be used in medicine. Because of its
 short half-life (78 hours), it rapidly loses its radioactivity and
 its destructive properties. This isotope has the property of
