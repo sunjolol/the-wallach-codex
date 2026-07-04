@@ -2288,9 +2288,10 @@
   },
   "cranberry": {
     "display_name": "Cranberry",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
+        "WAL-CLM-IMMORT-000153",
         "WAL-CLM-LETS-000155",
         "WAL-CLM-LETS-000157",
         "WAL-CLM-LETS-000161",
@@ -2304,9 +2305,11 @@
       "bladder_stones",
       "cystitis",
       "kidney_disease",
-      "kidney_stones"
+      "kidney_stones",
+      "urinary_tract_infection"
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor"
     ]
   },
@@ -4037,6 +4040,24 @@
     ],
     "books_cited": [
       "lets-play-doctor"
+    ]
+  },
+  "hydrogenated vegetable oil": {
+    "display_name": "Hydrogenated Vegetable Oil",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "toxicity_sign": [
+        "WAL-CLM-IMMORT-000155"
+      ]
+    },
+    "conditions_treated": [
+      "arteriosclerosis",
+      "atherosclerosis",
+      "stroke",
+      "thrombosis"
+    ],
+    "books_cited": [
+      "immortality"
     ]
   },
   "ibuprofen": {
@@ -7304,6 +7325,24 @@
     ],
     "books_cited": [
       "lets-play-doctor"
+    ]
+  },
+  "trans fatty acids": {
+    "display_name": "Trans Fatty Acids",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "toxicity_sign": [
+        "WAL-CLM-IMMORT-000155"
+      ]
+    },
+    "conditions_treated": [
+      "arteriosclerosis",
+      "atherosclerosis",
+      "stroke",
+      "thrombosis"
+    ],
+    "books_cited": [
+      "immortality"
     ]
   },
   "triple-sulfonamide": {

@@ -101,10 +101,13 @@
   },
   "acidosis": {
     "display_name": "Acidosis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000135"
+      ],
+      "diagnostics": [
+        "WAL-CLM-IMMORT-000151"
       ]
     },
     "essentials_involved": [
@@ -112,6 +115,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
@@ -349,10 +353,13 @@
   },
   "alkalosis": {
     "display_name": "Alkalosis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000135"
+      ],
+      "diagnostics": [
+        "WAL-CLM-IMMORT-000151"
       ]
     },
     "essentials_involved": [
@@ -360,6 +367,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },
@@ -1064,7 +1072,7 @@
   },
   "arteriosclerosis": {
     "display_name": "Arteriosclerosis",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000082"
@@ -1080,10 +1088,12 @@
         "WAL-CLM-RARE-000202"
       ],
       "toxicity_signs": [
+        "WAL-CLM-IMMORT-000155",
         "WAL-CLM-LETS-000040"
       ]
     },
     "essentials_involved": [
+      "hydrogen",
       "magnesium",
       "omega-3",
       "oxygen",
@@ -1097,10 +1107,13 @@
       "edta-chelation",
       "garlic",
       "hydrogen-peroxide",
-      "mistletoe"
+      "hydrogenated vegetable oil",
+      "mistletoe",
+      "trans fatty acids"
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -1277,18 +1290,25 @@
   },
   "atherosclerosis": {
     "display_name": "Atherosclerosis",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-IMMORT-000088",
         "WAL-CLM-LETS-000017"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000155"
       ]
     },
     "essentials_involved": [
       "chromium",
+      "hydrogen",
       "manganese"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "hydrogenated vegetable oil",
+      "trans fatty acids"
+    ],
     "books_cited": [
       "immortality",
       "lets-play-doctor"
@@ -3935,9 +3955,10 @@
   },
   "cystitis": {
     "display_name": "Cystitis",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "protocols": [
+        "WAL-CLM-IMMORT-000153",
         "WAL-CLM-LETS-000241",
         "WAL-CLM-RARE-000136"
       ]
@@ -3955,6 +3976,7 @@
       "rupturewort"
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -11751,7 +11773,7 @@
   },
   "stroke": {
     "display_name": "Stroke",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000059"
@@ -11760,9 +11782,13 @@
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000439",
         "WAL-CLM-RARE-000202"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000155"
       ]
     },
     "essentials_involved": [
+      "hydrogen",
       "omega-3",
       "omega-6",
       "oxygen",
@@ -11776,10 +11802,13 @@
       "colloidal-minerals",
       "edta-chelation",
       "hydrogen-peroxide",
-      "pancreatic-enzymes"
+      "hydrogenated vegetable oil",
+      "pancreatic-enzymes",
+      "trans fatty acids"
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -12064,6 +12093,25 @@
     ],
     "books_cited": [
       "lets-play-doctor"
+    ]
+  },
+  "thrombosis": {
+    "display_name": "Thrombosis",
+    "claim_count": 1,
+    "claims_by_role": {
+      "toxicity_signs": [
+        "WAL-CLM-IMMORT-000155"
+      ]
+    },
+    "essentials_involved": [
+      "hydrogen"
+    ],
+    "other_substances_involved": [
+      "hydrogenated vegetable oil",
+      "trans fatty acids"
+    ],
+    "books_cited": [
+      "immortality"
     ]
   },
   "thrush": {
@@ -12422,17 +12470,21 @@
   },
   "urinary_tract_infection": {
     "display_name": "Urinary Tract Infection",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "protocols": [
+        "WAL-CLM-IMMORT-000153",
         "WAL-CLM-RARE-000136"
       ]
     },
     "essentials_involved": [
       "hydrogen"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "cranberry"
+    ],
     "books_cited": [
+      "immortality",
       "rare-earths"
     ]
   },

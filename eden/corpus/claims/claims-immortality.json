@@ -5164,6 +5164,331 @@
       "extracted_at": "2026-07-04T13:07:59+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000147",
+      "kind": "definition",
+      "essentials": [
+        "hydrogen"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "What hydrogen is. Hydrogen is the simplest atom — a single proton circled by a single electron — which is part of why it is the most abundant element in the universe: it dominates interstellar space and the stars, and makes up about 93% of all the atoms in existence. As a gas it is diatomic (two atoms bonded, H2), colorless, odorless, tasteless, and extremely flammable, burning with oxygen to form water (its name comes from the Greek hydro 'water' + genes 'creator'). In his words: \"Hydrogen is the most simple of all atoms, consisting of a single proton, its nucleus, which is circled by a single electron. Its simple and basic structure partially explains why hydrogen is the most abundant element in the universe. Enormous quantities of hydrogen gas is found in interstellar space, and is by far the most dominant element found in the stars. Hydrogen atoms make up a whopping 93% of all the atoms in the universe.\"",
+      "verbatim": "Hydrogen is the most simple of all atoms, consisting\nof a single proton, its nucleus, which is circled by a single\nelectron. Its simple and basic structure partially explains\nwhy hydrogen is the most abundant element in the universe.\nEnormous quantities of hydrogen gas is found in interstellar\nspace, and is by far the most dominant element found in the\nstars. Hydrogen atoms make up a whopping 93% of all the\natoms in the universe.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 148,
+        "screenshot": 87,
+        "kindle_location": null,
+        "char_offset": 266907
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "hydrogen",
+        "chemistry",
+        "about"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T13:36:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000148",
+      "kind": "personal_anecdote",
+      "essentials": [
+        "hydrogen"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Who discovered hydrogen — and how odd he was. Hydrogen's identification as an element is credited to the English chemist Henry Cavendish (1731-1810), who first produced the gas in 1766 by dropping zinc into hydrochloric acid and recognized the 'inflammable air' as a distinct element (he also accurately calculated the gravitational constant G and the mass of the Earth). Cavendish was famously eccentric: frugal, shy and stuttering, he never spoke directly to women, gave his female servants instructions by written note, and would fire any he saw as he walked through his house. In his words: \"Cavendish, a frugal, shy, stuttering and eccentric scientist, was the son of an extremely wealthy English aristocrat. Cavendish never spoke directly to women; he gave instructions to his female servants by handwritten letters, and would summarily fire them if they came into his line of sight as he walked through his laboratory or house. He spent little of his great fortune and spent his entire life buried in his laboratory 'in the pursuit of knowledge.'\"",
+      "verbatim": "Cavendish, a frugal, shy, stuttering and eccentric\nscientist, was the son of an extremely wealthy English\naristocrat. Cavendish never spoke directly to women; he gave\ninstructions to his female servants by handwritten letters,\nand would summarily fire them if they came into his line of\nsight as he walked through his laboratory or house. He spent\n\n\nlittle of his great fortune and spent his entire life buried in his\nlaboratory “in the pursuit of knowledge.”",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 149,
+        "screenshot": 87,
+        "kindle_location": null,
+        "char_offset": 268223
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "hydrogen",
+        "history",
+        "about"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T13:36:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000149",
+      "kind": "definition",
+      "essentials": [
+        "hydrogen"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Hydrogen, lifting power, and the Hindenburg. Hydrogen is lighter than air, so a hydrogen-filled balloon rises and drifts away — its low density gives it enormous lifting power, and it was once the main lift gas for manned balloons and blimps. That ended in 1937 when a spark from a grounded docking line set the hydrogen-filled German blimp Hindenburg on fire, prompting the airship industry to abandon flammable hydrogen and switch to non-flammable helium. In his words: \"Hydrogen was once the main lifting power for manned balloons and 'blimps.' A discharge spark from a grounded docking line set the hydrogen containing German blimp, Hindenburg, on fire in 1937, causing the 'lighter than air' airship industry to abandon the gas and switch to the non-flammable helium.\"",
+      "verbatim": "Hydrogen was once the main lifting power for\nmanned balloons and “blimps.” A discharge spark from a\ngrounded docking line set the hydrogen containing German\nblimp, Hindenburg, on fire in 1937, causing the “lighter than\nair” airship industry to abandon the gas and switch to the\nnon-flammable helium.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 149,
+        "screenshot": 87,
+        "kindle_location": null,
+        "char_offset": 269705
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "hydrogen",
+        "history",
+        "about"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T13:36:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000150",
+      "kind": "mechanism",
+      "essentials": [
+        "hydrogen"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Hydrogen and the body's acid-base balance. Seventy percent of the human body is water, and hydrogen is a major constituent of water and of all organic molecules. Wallach's key point: regulating the body's acid-base balance is, in fact, regulating the hydrogen-ion (H+) levels of the fluids inside and around cells. The body holds this acidity within a narrow range through complex self-regulating (homeostatic) mechanisms — the pH of healthy blood runs from 7.36 to 7.44. In his words: \"The regulation of the acid-base balance in the human body is in fact the regulation of the hydrogen ion (H+) levels of cellular and extracellular fluids. The acidity of the body is critically regulated within a narrow range by numerous and complex homeostatic mechanisms. The pH of healthy blood ranges from 7.36 to 7.44.\"",
+      "verbatim": "The regulation of the acid-base balance in the\nhuman body is in fact the regulation of the hydrogen ion (H+)\nlevels of cellular and extracellular fluids.\n\nThe acidity of the body is critically regulated within\na narrow range by numerous and complex homeostatic\nmechanisms. The pH of healthy blood ranges from 7.36 to 7.44.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 150,
+        "screenshot": 87,
+        "kindle_location": null,
+        "char_offset": 270189
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "hydrogen",
+        "acid-base",
+        "ph",
+        "mechanism"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T13:36:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000151",
+      "kind": "diagnostic_pattern",
+      "essentials": [
+        "hydrogen"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "acidosis",
+        "alkalosis"
+      ],
+      "symptoms": [],
+      "claim_text": "The blood-pH thresholds for acidosis and alkalosis. When blood pH falls below 7.30 the person is in acidosis (too acidic); when it rises above 7.44 they are in alkalosis (too alkaline); a blood pH below 6.8 or above 7.8 is rapidly fatal. Inside cells, pH runs 6.0 to 7.4. Rapid metabolism (as in an overactive thyroid, Graves' disease) or reduced blood flow (as in a heart attack) raises carbon-dioxide levels and so lowers pH — acidifying the blood. In his words: \"When the pH falls below 7.30, the patient has acidosis; when the blood pH rises above 7.44, the individual has alkalosis. Blood pH below 6.8 and above 7.8 is rapidly fatal. Intracellular pH ranges between 6.0 and 7.4. Rapid metabolism (hyperthyroid, Graves' disease) or decreased blood flow (heart attack) increases the carbon dioxide levels and therefore decreases pH or acidifies the blood.\"",
+      "verbatim": "When the pH falls below 7.30, the patient has acidosis; when\nthe blood pH rises above 7.44, the individual has alkalosis.\n\nBlood pH below 6.8 and above 7.8 is rapidly fatal.\nIntracellular pH ranges between 6.0 and 7.4. Rapid metabolism\n(hyperthyroid, Graves' disease) or decreased blood flow\n(heart attack) increases the carbon dioxide levels and therefore\ndecreases pH or acidifies the blood.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 150,
+        "screenshot": 88,
+        "kindle_location": null,
+        "char_offset": 270547
+      },
+      "dose": null,
+      "tags": [
+        "hydrogen",
+        "acid-base",
+        "ph",
+        "acidosis",
+        "alkalosis"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T13:36:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000152",
+      "kind": "mechanism",
+      "essentials": [
+        "hydrogen"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "How the body clears acid (hydrogen ions). Hydrogen ions come in two forms: volatile ones (carbonic acid) that the lungs breathe off as carbon dioxide and water, and non-volatile 'metabolic' ones made by normal metabolism or taken in as food. The body controls their level by dilution, chemical buffering (reacts in fractions of a second), breathing (minutes), and the kidneys (hours to days). The kidney excretes metabolic hydrogen ions in three forms: about 60% as ammonium, 40% as weak acids, and a trace as free hydrogen ions — and it is that free-ion amount that sets the urine's pH. In his words: \"Metabolic hydrogen ions must be excreted by the kidney in one of three forms: 60% as ammonium ions, 40% as weak acids, or trace amounts as free hydrogen ions. It is the amount of free hydrogen ions in the urine that determines the urine's pH.\"",
+      "verbatim": "Metabolic hydrogen ions must be excreted by the\nkidney in one of three forms: 60% as ammonium ions, 40% as\nweak acids, or trace amounts as free hydrogen ions. It is the\namount of free hydrogen ions in the urine that determines the\nurine’s pH.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 150,
+        "screenshot": 88,
+        "kindle_location": null,
+        "char_offset": 272195
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "hydrogen",
+        "acid-base",
+        "kidney",
+        "mechanism"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T13:36:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000153",
+      "kind": "protocol",
+      "essentials": [
+        "hydrogen"
+      ],
+      "other_substances": [
+        "cranberry"
+      ],
+      "conditions": [
+        "cystitis",
+        "urinary_tract_infection"
+      ],
+      "symptoms": [],
+      "claim_text": "A practical acid-base tip: cranberry juice for bladder infections. Acidifying the urine with unsweetened cranberry juice can often control bladder infections (cystitis). You can also acidify the urine and saliva by eating meat, or alkalinize them by eating vegetables. In his words: \"Acidifying the urine with unsweetened cranberry juice can often times control bladder infections (cystitis). Acidifying the urine and saliva can also be accomplished by consuming meat. Alkalinizing the urine and saliva can be accomplished by consuming vegetables.\"",
+      "verbatim": "Acidifying the urine with unsweetened cranberry juice\n\n\ncan often times control bladder infections (cystitis). Acidifying\nthe urine and saliva can also be accomplished by consuming\nmeat. Alkalinizing the urine and saliva can be accomplished\nby consuming vegetables.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 151,
+        "screenshot": 88,
+        "kindle_location": null,
+        "char_offset": 272439
+      },
+      "dose": null,
+      "tags": [
+        "hydrogen",
+        "acid-base",
+        "cystitis",
+        "protocol"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T13:36:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000154",
+      "kind": "definition",
+      "essentials": [
+        "hydrogen"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Hydrogen in living molecules. Beyond fueling industry as hydrocarbons (the long carbon-hydrogen chains of natural gas and oil), hydrogen is a significant part of the molecules that make up living things — carbohydrates, sugars, fats, proteins, enzymes, and the genetic molecules DNA and RNA. In his words: \"Hydrogen is also a significant part of the molecules that make up living organisms such as carbohydrate, sugar, fats, proteins, enzymes, DNA, RNA, etc.\"",
+      "verbatim": "Hydrogen is also a significant part of the molecules\nthat make up living organisms such as carbohydrate, sugar,\nfats, proteins, enzymes, DNA, RNA, etc.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 151,
+        "screenshot": 88,
+        "kindle_location": null,
+        "char_offset": 273230
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "hydrogen",
+        "biochemistry",
+        "about"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T13:36:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000155",
+      "kind": "toxicity_sign",
+      "essentials": [
+        "hydrogen"
+      ],
+      "other_substances": [
+        "trans fatty acids",
+        "hydrogenated vegetable oil"
+      ],
+      "conditions": [
+        "arteriosclerosis",
+        "atherosclerosis",
+        "stroke",
+        "thrombosis"
+      ],
+      "symptoms": [],
+      "claim_text": "Hydrogenation and trans fats — Wallach's warning. Commercial food-makers pump hydrogen gas into liquid vegetable oils ('hydrogenation') to harden them into margarine, creating trans fatty acids. Wallach's stance: hydrogenated and partially-hydrogenated oils, once sold by the medical trade as a safe butter substitute to PREVENT hardening of the arteries (arteriosclerosis), fatty-plaque buildup (atherosclerosis) and stroke, are now known to be a DIRECT CAUSE of those very diseases. Fried foods, super-heated carbohydrates (breads, French fries, croutons), margarines, cooking oils and trans fats produce the inflammation that damages the arterial lining (intima), leading to clogged and blocked arteries, blood clots, thrombosis and stroke. In his words: \"Hydrogenated and partially hydrogenated vegetable oils, once touted by the medical trade as a safe substitute for butter in the prevention of arteriosclerosis, atherosclerosis and stroke, are now known to be the direct cause of these diseases. The consumption of fried foods, super-heated carbohydrates (breads, French fries, croutons, etc.), margarines, cooking oils and trans fatty acids are now known to produce the 'inflammation' that damages the intima or arterial lining that produces clogged and blocked arteries, blood clots, thrombosis and stroke.\"",
+      "verbatim": "Hydrogenated and partially hydrogenated vegetable\noils, once touted by the medical trade as a safe substitute for\nbutter in the prevention of arteriosclerosis, atherosclerosis and\nstroke, are now known to be the direct cause of these diseases.\nThe consumption of fried foods, super-heated carbohydrates\n(breads, French fries, croutons, etc.), margarines, cooking\noils and trans fatty acids are now known to produce the\n“inflammation” that damages the intima or arterial lining\nthat produces clogged and blocked arteries, blood clots,\nthrombosis and stroke.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 151,
+        "screenshot": 88,
+        "kindle_location": null,
+        "char_offset": 273746
+      },
+      "dose": null,
+      "tags": [
+        "hydrogen",
+        "trans-fats",
+        "hydrogenation",
+        "arteries"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-04T13:36:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

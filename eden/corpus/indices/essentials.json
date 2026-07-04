@@ -3,26 +3,38 @@
     "display_name": "Hydrogen",
     "canon_slug": "hydrogen",
     "category": "mineral",
-    "claim_count": 3,
+    "claim_count": 6,
     "claims_by_kind": {
+      "diagnostic_pattern": [
+        "WAL-CLM-IMMORT-000151"
+      ],
       "mechanism": [
         "WAL-CLM-EPIGEN-000087",
         "WAL-CLM-RARE-000135"
       ],
       "protocol": [
+        "WAL-CLM-IMMORT-000153",
         "WAL-CLM-RARE-000136"
+      ],
+      "toxicity_sign": [
+        "WAL-CLM-IMMORT-000155"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [
       "acidosis",
       "alkalosis",
+      "arteriosclerosis",
+      "atherosclerosis",
       "cystitis",
+      "stroke",
+      "thrombosis",
       "urinary_tract_infection"
     ],
     "interacts_with": [],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },

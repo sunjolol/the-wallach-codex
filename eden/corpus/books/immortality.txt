@@ -6831,7 +6831,7 @@ ppm, fresh water at 111,000 ppm, sea water at 108,000 ppm,
  
 
 
-Sr. ae Eee
+
 soil at 600 to 24,000 ppm (in very acid soils it can become the
 major exchangeable cation), marine plants at 41,000 ppm,
 terrestrial plants at 55,000 ppm, marine animals at 52,000
@@ -6852,9 +6852,9 @@ of hydrogen gas in the earth’s atmosphere. Out of 100 million
 liters of atmospheric air, hydrogen would only make up 5
 liters!
 
-Hydrogen gasis typically a diatomic molecule, meaning
+Hydrogen gas is typically a diatomic molecule, meaning
 that a hydrogen molecule is made up of two hydrogen atoms
-(H,). Hydrogen gas is colorless, odorless and _ tasteless;
+(H2). Hydrogen gas is colorless, odorless and tasteless;
 however, hydrogen is extremely flammable.
 
 When hydrogen burns in air, it reacts violently with
@@ -6866,7 +6866,7 @@ is translated from the Greek words hydro (water) and genes
 The identification of hydrogen as an element is credited
 to the English chemist Henry Cavendish (1731-1810) after
 whom the Cambridge University’s Cavendish Laboratory
-was named. '
+was named.
 
 Cavendish, a frugal, shy, stuttering and eccentric
 scientist, was the son of an extremely wealthy English
@@ -6924,14 +6924,14 @@ mechanisms. The pH of healthy blood ranges from 7.36 to 7.44.
  
 
 
-Deeeee eee ee ee eee ee
+
 
 When the pH falls below 7.30, the patient has acidosis; when
 the blood pH rises above 7.44, the individual has alkalosis.
 
 Blood pH below 6.8 and above 7.8 is rapidly fatal.
 Intracellular pH ranges between 6.0 and 7.4. Rapid metabolism
-(hyperthyroid, Grave's disease) or decreased blood flow
+(hyperthyroid, Graves' disease) or decreased blood flow
 (heart attack) increases the carbon dioxide levels and therefore
 decreases pH or acidifies the blood. In contrast to the internal
 body, the pH of secretions and excretions can be more variable
@@ -6951,7 +6951,7 @@ by normal and abnormal metabolism. Large amounts of
 hydrogen ions may be generated and/or retained as part of a
 disease activity (i.e. emphysema, diabetes, anxiety or loss of
 chloride ions, NaCl [salt] deficiency, cystic fibrosis, Addison’s
-Disease, etc.). Fh.
+Disease, etc.).
 
 Hydrogen ion concentration (pH) is controlled by the
 body by means of dilution, buffering respiratory control of
@@ -6975,7 +6975,7 @@ the urine and saliva can also be accomplished by consuming
 meat. Alkalinizing the urine and saliva can be accomplished
 by consuming vegetables.
 
-Hydrogenis found inaninnumerablenumber of organic
+Hydrogen is found in an innumerable number of organic
 or carbon-containing compounds, and biological compounds
 found in living organisms. It is commonly combined directly
 with carbon in organic molecules (hydrocarbons).
