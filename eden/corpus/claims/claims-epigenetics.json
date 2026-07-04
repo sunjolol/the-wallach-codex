@@ -1466,7 +1466,8 @@
         "insomnia",
         "immune_depression",
         "tachycardia",
-        "diarrhea"
+        "diarrhea",
+        "depression"
       ],
       "symptoms": [
         "burning_feet",
@@ -2391,7 +2392,9 @@
         "tourette_syndrome",
         "pms",
         "sciatica",
-        "backache"
+        "backache",
+        "muscle_cramps",
+        "osteoporosis"
       ],
       "symptoms": [],
       "claim_text": "Calcium is the most abundant mineral in the body, with about 99% in the bones and teeth (as hydroxyapatite) and the rest used as a cofactor for blood clotting, muscle contraction, and the heart's electrical conduction. Wallach states that, contrary to the medical belief that high calcium causes kidney stones, a high dietary calcium intake actually reduces the risk of nutritional secondary hyperparathyroidism, hypercalcemia, and kidney stones, and that no fewer than 147 deficiency diseases are attributed to calcium deficiency or imbalance. His Common Calcium-Deficiency Diseases include: osteoporosis (with kyphosis, scoliosis, Dowager's hump, lordosis, spontaneous fractures), receding gums, osteomalacia, myelosclerosis, arthritis, ankylosing spondylitis, bone spurs, kidney stones, nutritional secondary hyperparathyroidism, hypertension, insomnia, calcium deposits (vascular, restless leg, atrial fibrillation), cramps and twitches (Tourette's syndrome), premenstrual syndrome, low-back pain (sciatica), neuropathy (Bell's palsy, trigeminal neuralgia), tetany with convulsions, and panic attacks. In his words: 'There are no less than 147 different deficiency-diseases that are directly attributed to a calcium deficiency or imbalance.'",
@@ -2444,7 +2447,8 @@
         "high_triglycerides",
         "high_cholesterol",
         "coronary_artery_disease",
-        "infertility"
+        "infertility",
+        "atherosclerosis"
       ],
       "symptoms": [
         "reduced_growth",

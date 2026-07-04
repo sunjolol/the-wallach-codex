@@ -1301,9 +1301,10 @@
   },
   "atherosclerosis": {
     "display_name": "Atherosclerosis",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "deficiency_signs": [
+        "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-IMMORT-000088",
         "WAL-CLM-LETS-000017"
       ],
@@ -1324,6 +1325,7 @@
       "trans fatty acids"
     ],
     "books_cited": [
+      "epigenetics",
       "immortality",
       "lets-play-doctor",
       "rare-earths"
@@ -1946,21 +1948,29 @@
   },
   "blind_rage": {
     "display_name": "Blind Rage",
-    "claim_count": 5,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000107",
         "WAL-CLM-IMMORT-000088",
         "WAL-CLM-IMMORT-000099",
+        "WAL-CLM-RARE-000163",
         "WAL-CLM-RARE-000302"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
+      ],
+      "diagnostics": [
+        "WAL-CLM-RARE-000129"
       ]
     },
     "essentials_involved": [
       "chromium",
-      "copper"
+      "copper",
+      "lithium",
+      "sodium",
+      "vanadium",
+      "zinc"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -4251,7 +4261,7 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 42,
+    "claim_count": 43,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000018",
@@ -4259,6 +4269,7 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000031",
+        "WAL-CLM-EPIGEN-000038",
         "WAL-CLM-EPIGEN-000039",
         "WAL-CLM-EPIGEN-000042",
         "WAL-CLM-EPIGEN-000056",
@@ -9110,12 +9121,13 @@
   },
   "muscle_cramps": {
     "display_name": "Muscle Cramps",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000074",
         "WAL-CLM-EPIGEN-000032",
         "WAL-CLM-EPIGEN-000038",
+        "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-IMMORT-000064"
       ],
       "definitions": [
@@ -9809,7 +9821,7 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 32,
+    "claim_count": 33,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052",
@@ -9823,6 +9835,7 @@
         "WAL-CLM-DDDL-000032",
         "WAL-CLM-EPIGEN-000031",
         "WAL-CLM-EPIGEN-000032",
+        "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-IMMORT-000063",
         "WAL-CLM-IMMORT-000072",
         "WAL-CLM-IMMORT-000076",
@@ -12841,22 +12854,31 @@
   },
   "violent_behavior": {
     "display_name": "Violent Behavior",
-    "claim_count": 4,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-IMMORT-000018"
+        "WAL-CLM-IMMORT-000018",
+        "WAL-CLM-RARE-000127"
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000107",
+        "WAL-CLM-RARE-000163",
         "WAL-CLM-RARE-000302"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
+      ],
+      "diagnostics": [
+        "WAL-CLM-RARE-000129"
       ]
     },
     "essentials_involved": [
       "chromium",
-      "copper"
+      "copper",
+      "lithium",
+      "sodium",
+      "vanadium",
+      "zinc"
     ],
     "other_substances_involved": [],
     "books_cited": [

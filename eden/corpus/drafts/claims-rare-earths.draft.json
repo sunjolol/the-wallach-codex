@@ -4382,7 +4382,8 @@
       ],
       "other_substances": [],
       "conditions": [
-        "explosive_outbursts"
+        "explosive_outbursts",
+        "violent_behavior"
       ],
       "symptoms": [],
       "claim_text": "Wallach explains the mechanism behind rage and explosive behavior: while awake, a brain low in fuel (blood sugar) becomes very irritable, explosively reactive, and can be vicious because the normal civilized social restraints fall away. Chromium and vanadium, which stabilize blood sugar, are the relevant nutrients.",
@@ -4461,7 +4462,10 @@
         "lithium"
       ],
       "other_substances": [],
-      "conditions": [],
+      "conditions": [
+        "blind_rage",
+        "violent_behavior"
+      ],
       "symptoms": [],
       "claim_text": "Wallach lists a hair-analysis mineral signature for a violent, explosive temperament: low hair levels of copper, zinc, sodium, chromium, vanadium, and lithium.",
       "verbatim": "Sociopath/violent (Dr. Jekyll/Mr. Hyde rages) - low in copper, zinc, sodium, chromium, vanadium and lithium.",
@@ -5705,7 +5709,9 @@
         "depression",
         "bipolar_disorder",
         "hyperactivity",
-        "infertility"
+        "infertility",
+        "blind_rage",
+        "violent_behavior"
       ],
       "symptoms": [
         "reproductive_failure",

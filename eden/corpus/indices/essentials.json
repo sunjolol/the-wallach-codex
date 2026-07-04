@@ -282,6 +282,7 @@
       "addisons_disease",
       "ageusia",
       "anorexia",
+      "blind_rage",
       "congestive_heart_failure",
       "depression",
       "dermatitis",
@@ -291,6 +292,7 @@
       "hypertension",
       "hypotension",
       "renal_failure",
+      "violent_behavior",
       "water_intoxication"
     ],
     "interacts_with": [
@@ -2957,6 +2959,7 @@
       "arthritis",
       "bedwetting",
       "bipolar_disorder",
+      "blind_rage",
       "bone_spurs",
       "cancer",
       "cardiomyopathy",
@@ -2982,7 +2985,8 @@
       "osteoporosis",
       "panic_attacks",
       "reactive_hypoglycemia",
-      "schizophrenia"
+      "schizophrenia",
+      "violent_behavior"
     ],
     "interacts_with": [
       "boron",
@@ -3239,6 +3243,7 @@
       "bad_breath",
       "benign_prostatic_hyperplasia",
       "birth_defects",
+      "blind_rage",
       "body_odor",
       "boils",
       "bone_spurs",
@@ -3324,6 +3329,7 @@
       "tonsillitis",
       "umbilical_hernia",
       "varicose_veins",
+      "violent_behavior",
       "vitiligo",
       "white_spots_fingernails",
       "xerophthalmia"
@@ -3888,11 +3894,13 @@
       "arthritis",
       "autism",
       "bipolar_disorder",
+      "blind_rage",
       "criminal_behavior",
       "dementia",
       "depression",
       "hyperactivity",
-      "infertility"
+      "infertility",
+      "violent_behavior"
     ],
     "interacts_with": [
       "boron",
