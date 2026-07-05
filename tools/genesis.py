@@ -93,8 +93,14 @@ def passoff():
     start = next((i for i, l in enumerate(lines) if l.startswith("## LATEST")), None)
     if start is None:
         return [l for l in lines[:14] if l.strip()]
-    end = next((i for i, l in enumerate(lines[start + 1:], start + 1) if l.startswith("**Status")), len(lines))
-    return [l for l in lines[start:end] if l.strip()]
+    # The current handoff is ONLY the first "## LATEST" block. Terminate at the next
+    # "## " heading (older SUPERSEDED/LATEST blocks pile up below it) — NOT at the lone
+    # legacy "**Status" anchor ~1200 lines down, which swallowed every accumulated
+    # history block into the boot dump (the 2026-07-04 "genesis printed 438 KB"
+    # incident: no "## " cap + next-chunk.md grew unbounded). Hard-cap the slice as
+    # defense-in-depth so a future structural change can never re-trigger a whole dump.
+    end = next((i for i, l in enumerate(lines[start + 1:], start + 1) if l.startswith("## ")), len(lines))
+    return [l for l in lines[start:end] if l.strip()][:40]
 
 
 def main():

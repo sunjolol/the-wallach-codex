@@ -1116,7 +1116,7 @@
         }
       },
       {
-        "name": "Vitamin K (Menaquinone = K2)",
+        "name": "Vitamin K (Phylloquinone)",
         "essential_per_wallach": true,
         "wallach_baseline_target": "~30 mcg/day clinical (DDDL capillary fragility)",
         "notes": "Wallach's canonical Vitamin K per Rare Earths = Menaquinone (K2 family), tied to osteocalcin → osteoporosis mechanism. 90-essentials graphic mislabels as K1 (phylloquinone). See boron-bone WHY-layer Q3 resolution. MK-7 = longest half-life K2 form (ProJoint FX uses this).",

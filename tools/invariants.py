@@ -1504,6 +1504,51 @@ def check_creators_log_append_only():
                   f"{len(working) - len(committed)} new")
 
 
+def check_build_log_append_only():
+    """chronicle/build-log.md hardened to append-only 2026-07-04 (Luneth) to close
+    the gap the sacred ledger already covers. The committed file
+    (`git show HEAD:chronicle/build-log.md`) must stay a line-PREFIX of the working
+    file — every committed line still present, in order, at the start. Blocks any
+    truncate / edit / reorder of past log content; APPENDS (new lines at the end)
+    always pass, so normal round-close logging is unaffected. New path (no history)
+    passes; git unavailable fails OPEN but LOUD. Truth anchor: git history. NOTE: a
+    deliberate future archival split moves old lines out and would trip this BY
+    DESIGN — that operation must re-anchor (commit the split) in the same patch."""
+    import subprocess
+    rel = "chronicle/build-log.md"
+    try:
+        r = subprocess.run(["git", "-C", str(ROOT), "show", f"HEAD:{rel}"],
+                           capture_output=True, text=True, timeout=15)
+    except Exception as e:
+        return True, (f"⚠ UNVERIFIED — git unavailable ({e}); the build-log append-only "
+                      f"anchor could NOT be checked this run (fail-open, not a silent pass)")
+    if r.returncode != 0:
+        try:
+            hist = subprocess.run(["git", "-C", str(ROOT), "log", "--oneline", "--", rel],
+                                  capture_output=True, text=True, timeout=15)
+            ever_committed = hist.returncode == 0 and bool(hist.stdout.strip())
+        except Exception:
+            ever_committed = False
+        if ever_committed:
+            return False, (f"BUILD-LOG REMOVED FROM HEAD — {rel} has committed history but "
+                           f"is absent from the current commit (a committed deletion). violated")
+        return True, "build-log not yet committed (new path) — nothing to anchor"
+    committed = [ln for ln in r.stdout.splitlines() if ln.strip()]
+    path = ROOT / rel
+    if not path.exists():
+        return False, f"BUILD-LOG DELETED — {rel} is committed but now missing"
+    working = [ln for ln in path.read_text(encoding="utf-8").splitlines() if ln.strip()]
+    if len(working) < len(committed):
+        return False, (f"BUILD-LOG TRUNCATED — {len(committed)} committed lines, "
+                       f"{len(working)} present (append-only violated)")
+    for i, cl in enumerate(committed):
+        if working[i] != cl:
+            return False, (f"BUILD-LOG MUTATED at line {i + 1} — a committed line was "
+                           f"edited or reordered (append-only violated)")
+    return True, (f"append-only intact — {len(committed)} committed lines preserved, "
+                  f"{len(working) - len(committed)} new")
+
+
 def check_creators_log_digest_synced():
     """LOG.md must equal the deterministic render of log.jsonl. It is a generated
     human view; drift means a hand-edit or a missed regeneration, which would let
@@ -2270,6 +2315,14 @@ INVARIANTS = [
         truth_anchor="git show HEAD:chronicle/creators-log/log.jsonl must be a line-prefix of the working file — git-committed history is the immutable anchor",
         severity="critical",
         lesson_ref="Creator's Log sacred covenant (logging-doctrine) — a broad delete authorization never includes the ledger; this is the git-anchored teeth that block any removal/mutation of a past entry at round-close",
+    ),
+    Invariant(
+        name="build_log_append_only",
+        description="chronicle/build-log.md is append-only — committed lines are never deleted, truncated, edited, or reordered (hardened 2026-07-04; appends always allowed)",
+        check_fn=check_build_log_append_only,
+        truth_anchor="git show HEAD:chronicle/build-log.md must be a line-prefix of the working file — git-committed history is the immutable anchor",
+        severity="critical",
+        lesson_ref="Luneth 2026-07-04: build-log had no append-only teeth (only §17 write-discipline), so a rewrite could silently truncate it. Mirrors creators_log_append_only so the public-teaching log layer is git-anchored too; a deliberate archival split must re-anchor in the same patch.",
     ),
     Invariant(
         name="creators_log_digest_synced",
