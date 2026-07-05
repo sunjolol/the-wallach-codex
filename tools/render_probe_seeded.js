@@ -6,10 +6,13 @@
 // This one seeds localStorage `lcRegimen_v1` with a known one-item regimen
 // BEFORE the dashboard boots, then asserts the live coverage classifier
 // (state/coverage.ts — the native port of legacy classifyLive/computeLiveCoverage)
-// lights up all three buckets correctly:
+// lights up every status bucket correctly against the WALLACH-ONLY targets
+// (Phase C2 poison purge — numeric targets are Wallach dose claims, not Youngevity):
 //
-//   Vitamin C  2000 mg  -> covered  (numeric, >= 0.95 * Wallach low)
-//   Boron         3 mg  -> partial  (numeric, ~43% of the 7 mg target)
+//   Vitamin C  2000 mg  -> covered  (numeric, >= 0.95 * Wallach low 1000 mg)
+//   Zinc         10 mg  -> partial  (numeric, 40% of the Wallach low 25 mg)
+//   Boron         3 mg  -> covered  (Wallach states NO boron maintenance target
+//                                    -> honest gap, covered-by-presence)
 //   Aluminum   0.05 mg  -> trace    (trace_pdm + a PDM vehicle in the source name)
 //
 // The seed item is named "Beyond Tangy Tangerine 2.5" so it matches the PDM
@@ -29,6 +32,7 @@ const SEED = { items: [{
   id: 9001,
   label: { name: 'Beyond Tangy Tangerine 2.5', nutrients: [
     { name: 'Vitamin C', amount: 2000, unit: 'mg' },
+    { name: 'Zinc', amount: 10, unit: 'mg' },
     { name: 'Boron', amount: 3, unit: 'mg' },
     { name: 'Aluminum', amount: 0.05, unit: 'mg' },
   ] },
@@ -69,7 +73,8 @@ const SEED = { items: [{
       seeded: !!localStorage.getItem('lcRegimen_v1'),
       coveredStat: (document.querySelector('.coverage-stat__num') || {}).textContent,
       covered: cls('covered'), partial: cls('partial'), trace: cls('trace'), gap: cls('gap'),
-      VitaminC: statusOf('ASCORBIC ACID'), Boron: statusOf('BORON'), Aluminum: statusOf('ALUMINUM'),
+      VitaminC: statusOf('ASCORBIC ACID'), Zinc: statusOf('ZINC'),
+      Boron: statusOf('BORON'), Aluminum: statusOf('ALUMINUM'),
     };
   });
 
@@ -79,8 +84,9 @@ const SEED = { items: [{
   const checks = [
     ['seeded localStorage', info.seeded === true],
     ['no seed error', info.seedErr === null],
-    ['Vitamin C covered', info.VitaminC === 'covered'],
-    ['Boron partial', info.Boron === 'partial'],
+    ['Vitamin C covered (>= 0.95 * Wallach 1000mg)', info.VitaminC === 'covered'],
+    ['Zinc partial (40% of Wallach 25mg)', info.Zinc === 'partial'],
+    ['Boron covered-by-presence (honest gap, no Wallach target)', info.Boron === 'covered'],
     ['Aluminum trace', info.Aluminum === 'trace'],
     ['coveredStat >= 2', Number(info.coveredStat) >= 2],
     ['no page errors', pageErrors.length === 0],
@@ -88,5 +94,5 @@ const SEED = { items: [{
   const failed = checks.filter(([, ok]) => !ok).map(([n]) => n);
   await browser.close();
   if (failed.length) { console.log('FAIL', JSON.stringify(failed)); process.exit(1); }
-  console.log('PASS · classifier lights covered + partial + trace correctly');
+  console.log('PASS · classifier lights covered + partial + covered-by-presence + trace correctly');
 })().catch(e => { console.log('PROBE_ERR', e.message); process.exit(1); });

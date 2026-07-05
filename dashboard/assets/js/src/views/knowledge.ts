@@ -297,12 +297,19 @@ function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): st
   const citation = stance?.citation;
   const products = vaultProductsFor(key);
 
+  // Phase C2 (2026-07-05): the "WALLACH SAYS" stance box is DROPPED for now. Its old
+  // data (knowledge/essentials-targets.json) carried lecture citations, Youngevity
+  // stances, and hand-typed cites (the poison this overhaul purges), so derived targets
+  // no longer ship a wallach_stance. Per Luneth, a per-essential stance is re-authored
+  // MANUALLY once every book is mined; this render (styling remembered) lights up the
+  // moment a target carries wallach_stance again. Until then it renders nothing — the
+  // clean sealed corpus claims below (corpusHTML) are the deep-dive's education.
   const wallachHTML = (summary !== undefined && summary.length > 0)
     ? `
       <div class="kd-essential-deep__sub">WALLACH SAYS</div>
       <p class="kd-essential-deep__body">${escHTML(summary)}</p>
       ${citation !== undefined ? `<div class="kd-essential-deep__source">CITED · <strong>${escHTML(citation)}</strong></div>` : ''}`
-    : '<div class="kd-essential-deep__sub">WALLACH SAYS</div><p class="kd-essential-deep__body">— no stance on file for this essential —</p>';
+    : '';
 
   const productsHTML = products.length > 0
     ? `

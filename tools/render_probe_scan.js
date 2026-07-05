@@ -5,10 +5,12 @@
 // Drives the native scan/verdict engine (state/scanner.ts, the port that
 // replaced window.lcScan's legacy bridge) through window.lcScan, asserting:
 //   - a hard-reject ingredient (HFCS) → verdict REJECT + an anti flag;
-//   - a Boron product → a positive gap-fill on Boron, a hormones_strength goal,
-//     and a SAVE verdict; logging it re-renders the view (parsed rows appear)
-//     and writes scan history.
-// Seeds an empty regimen (HBSP base hidden) so the Boron gap is the full target
+//   - a Zinc+Boron product → a positive gap-fill on Zinc (a real WALLACH target:
+//     25 mg, so 10 mg delivered ≈ 40%), a hormones_strength goal, and a SAVE
+//     verdict; logging it re-renders the view (parsed rows appear) + writes history.
+// Gap-fill is checked on Zinc, NOT Boron: post Phase-C2 poison purge, Boron has
+// NO Wallach maintenance target (honest gap) so it correctly yields no gap-fill.
+// Seeds an empty regimen (HBSP base hidden) so the Zinc gap is the full target
 // → deterministic gap-fill. Mirrors render_probe_seeded.js. Requires puppeteer.
 
 const path = require('path');
@@ -46,9 +48,11 @@ if (!pup) { console.log('NO_PUPPETEER (npm i -D puppeteer at repo root)'); proce
       { logToRecent: false },
     );
     const b = w.lcScan(
-      { name: 'Test Boron', servings: 1, nutrients: [{ name: 'Boron', amount: 10, unit: 'mg' }], ingredients: 'boron glycinate' },
+      { name: 'Test Multi', servings: 1,
+        nutrients: [{ name: 'Zinc', amount: 10, unit: 'mg' }, { name: 'Boron', amount: 10, unit: 'mg' }],
+        ingredients: 'zinc glycinate, boron glycinate' },
     );
-    const boron = b.gapFills.find(g => g.essential === 'Boron');
+    const zinc = b.gapFills.find(g => g.essential === 'Zinc');
     const mount = document.getElementById('workspace-scanner-mount');
     const parsedRows = mount ? mount.querySelectorAll('.parsed-row:not(.parsed-row--empty)').length : -1;
     let historyLen = 0;
@@ -56,7 +60,7 @@ if (!pup) { console.log('NO_PUPPETEER (npm i -D puppeteer at repo root)'); proce
     return {
       fn,
       aVerdict: a.verdict, aAnti: a.anti.length,
-      bVerdict: b.verdict, bGapFills: b.gapFills.length, boronPct: boron ? boron.gapFillPct : null, bGoals: b.goals,
+      bVerdict: b.verdict, bGapFills: b.gapFills.length, zincPct: zinc ? zinc.gapFillPct : null, bGoals: b.goals,
       parsedRows, historyLen,
     };
   });
@@ -68,8 +72,8 @@ if (!pup) { console.log('NO_PUPPETEER (npm i -D puppeteer at repo root)'); proce
     ['window.lcScan present', out.fn === true],
     ['HFCS → REJECT', out.aVerdict === 'REJECT'],
     ['HFCS anti flag', out.aAnti >= 1],
-    ['Boron → SAVE/ADD', out.bVerdict === 'SAVE' || out.bVerdict === 'ADD'],
-    ['Boron gap-fill present', out.bGapFills >= 1 && out.boronPct > 0],
+    ['Multi → SAVE/ADD', out.bVerdict === 'SAVE' || out.bVerdict === 'ADD'],
+    ['Zinc gap-fill present (real Wallach target)', out.bGapFills >= 1 && out.zincPct > 0],
     ['hormones_strength goal', Array.isArray(out.bGoals) && out.bGoals.includes('hormones_strength')],
     ['view re-rendered parsed rows', out.parsedRows >= 1],
     ['scan logged to history', out.historyLen >= 1],

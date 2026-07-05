@@ -26,5 +26,5 @@ eden/* → schemas/* → core/* → state/* → views/*
 
 ## Enforcement
 - Invariant `views_state_no_inline_data` — blocks literal arrays/objects > 10 elements in `views/` and `state/`.
-- Invariant `check_wallach_stance_source_rule` — every `wallach_stance` citation must reference an allowlisted primary.
+- Invariant `amounts_wallach_only` — every numeric coverage target in `essentials-targets-data.json` traces to a sealed Wallach dose claim via `source_claim_id` (R2 poison gate; replaced the retired `wallach_stance_source_rule` in Phase C2).
 - Invariant `eden_hash_integrity` + `eden_write_protection` — sealed corpus integrity.

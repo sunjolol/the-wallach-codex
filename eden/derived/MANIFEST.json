@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "_purpose": "The registry of every GENERATED data artifact + its ONE pure generator (Phase C / blueprint D2). The derived_artifacts_fresh invariant iterates this list: for each entry it re-runs the generator over the sealed pillars and compares to the on-disk artifact, so a hand-edit or a stale build of any listed artifact is un-shippable (R1). eden/tools/build_embeds.py iterates the same list to regenerate. GROWS as Phase C folds each embed into the pipeline (C2: essentials-targets-data; C3: the product embeds).",
+  "_purpose": "The registry of every GENERATED data artifact + its ONE pure generator (Phase C / blueprint D2). The derived_artifacts_fresh invariant iterates this list: for each entry it re-runs the generator over the sealed pillars and compares to the on-disk artifact, so a hand-edit or a stale build of any listed artifact is un-shippable (R1). eden/tools/build_embeds.py iterates the same list to regenerate. GROWS as Phase C folds each embed into the pipeline (C3: the product embeds).",
   "_contract": "Each generator module exposes build_fn() -> the artifact object (pure, no write; used by the freshness gate) and write_fn() -> regenerates the on-disk file via safe_write (used by build_embeds). compare='json' means the gate compares json.loads(disk) == build_fn(); 'text' means exact-text. inputs list the pillar paths the generator reads (documentation + future input-hash tracking).",
   "artifacts": [
     {
@@ -19,6 +19,20 @@
         "eden/catalog/conditions.json"
       ],
       "note": "Slim Wallach claim graph inlined into the bundle for the Knowledge drawer (esbuild JSON import in state/corpus.ts). Freshness was previously gated by the standalone corpus_embed_synced, now folded into derived_artifacts_fresh."
+    },
+    {
+      "artifact": "dashboard/assets/data/essentials-targets-data.json",
+      "generator": "eden/tools/targets_derive.py",
+      "build_fn": "build_data",
+      "write_fn": "write_data",
+      "compare": "json",
+      "inputs": [
+        "eden/corpus/essentials-canon.json",
+        "eden/corpus/claims/",
+        "eden/corpus/books-meta.json",
+        "knowledge/essentials-targets.json"
+      ],
+      "note": "The Coverage targets DB (state/coverage.ts esbuild JSON import). Numeric targets are Wallach-ONLY (R2), sourced from base-line supplement-program dose claims + carrying source_claim_id (gated by amounts_wallach_only). kind + wallach_stance are read TRANSITIONALLY from the hand-file knowledge/essentials-targets.json (NO amount is taken from it); Phase D moves the stance to the prose store, makes verbatim a claim pointer, and deletes that hand-file."
     }
   ]
 }

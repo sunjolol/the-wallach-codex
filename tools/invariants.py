@@ -292,304 +292,6 @@ def check_cross_platform_python():
     return True, "no cross-platform Python anti-patterns detected in tools/*.py"
 
 
-def check_wallach_stance_source_rule():
-    """Round 118 — Cura session #2 Survivor B: every wallach_stance.citation
-    in knowledge/essentials-targets.json must cite an allowlisted Wallach or
-    Youngevity primary source (same allowlist as the existing `source` field
-    check). Runs daily over the canonical file so the §00.A cornerstone is enforced
-    in-code — this invariant is now the sole in-code allowlist check (the
-    old dashboard_integrity co-writer was retired in the June-2026 cleanup).
-
-    Truth anchor: source-rule.md's allowlist markers, applied to the new
-    wallach_stance.citation schema field (Round 115 addition).
-
-    Severity: critical. Matches the source-rule cornerstone's ERROR-MODE
-    enforcement (Round 56). A non-allowlisted citation is a structural
-    breach of the cornerstone; loud failure is the right response.
-    """
-    canonical = ROOT / "knowledge/essentials-targets.json"
-    if not canonical.exists():
-        return False, "knowledge/essentials-targets.json missing"
-    try:
-        data = json.loads(canonical.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as e:
-        return False, f"essentials-targets.json parse failed: {e}"
-
-    # Allowlist markers — the canonical in-code home for the §00.A allowlist.
-    # (The old tools/dashboard_integrity.py co-writer was retired in the
-    # June-2026 cleanup, so this is now the single source.) If the allowlist
-    # grows, update it here and the note in .claude/rules/source-rule.md.
-    allowlist = [
-        "wallach", "dddl", "dead doctors don't lie", "let's play doctor",
-        "hell's kitchen", "rare earths", "wallach files", "rare earths and forbidden cures",
-        "youngevity", "beyond tangy tangerine", "btt", "ultimate", "majestic earth",
-        "healthy body start pak", "hbsp", "rebound fx", "slender fx", "reverse",
-        "plant derived", "plant-derived", "ma lan", "pig farm", "epidemics",
-    ]
-
-    def walk(obj, path=""):
-        """Yield (essential_name, stance) pairs found in nested category structure."""
-        if isinstance(obj, dict):
-            if "wallach_stance" in obj and isinstance(obj.get("wallach_stance"), dict):
-                yield path or obj.get("name", "<unnamed>"), obj["wallach_stance"]
-            for k, v in obj.items():
-                yield from walk(v, path=f"{path}.{k}" if path else k)
-        elif isinstance(obj, list):
-            for item in obj:
-                if isinstance(item, dict) and "name" in item:
-                    yield from walk(item, path=item["name"])
-                else:
-                    yield from walk(item, path=path)
-
-    n_stances = 0
-    fails = []
-    for name, stance in walk(data):
-        n_stances += 1
-        citation = (stance.get("citation") or "").lower()
-        if not citation:
-            fails.append(f"{name}: wallach_stance present but citation missing")
-            continue
-        if not any(marker in citation for marker in allowlist):
-            fails.append(
-                f"{name}: wallach_stance citation not allowlisted: "
-                f"'{stance.get('citation', '')[:80]}'"
-            )
-
-    if fails:
-        return False, f"{len(fails)} non-allowlisted stance citation(s): " + "; ".join(fails[:3])
-    if n_stances == 0:
-        return True, "no wallach_stance entries present yet (Phase 3 backfill not started)"
-    return True, f"all {n_stances} wallach_stance citation(s) cite allowlisted Wallach/Youngevity primary"
-
-
-def check_wallach_stance_embed_sync():
-    """Round 122 — verify every canonical `wallach_stance` field in
-    knowledge/essentials-targets.json is mirrored byte-equal in the
-    dashboard's essentials-targets-data embed for the matching essential.
-
-    The two surfaces are dual representations: the canonical is nested by
-    category (knowledge/essentials-targets.json), the embed is a flat
-    projection inside <script id="essentials-targets-data"> in
-    dashboard.html. Round 115 flagged the drift risk when adding the new
-    field; Round 122 ships the verifier as part of the data-landing patch
-    per §18.
-
-    Truth anchor: byte-equal comparison of the canonical entry's
-    wallach_stance dict against the matching embed entry's wallach_stance
-    dict. Normalized via json.dumps(sort_keys=True) so the comparison is
-    insensitive to dict-key order differences but strict on content.
-
-    Severity: warning. A drift here means the user sees one quote in the
-    dashboard while the canonical source carries a different (or absent)
-    quote — editorial inconsistency, not load-bearing correctness, but
-    a fresh-session catch-up reader would notice.
-    """
-    canonical_path = ROOT / "knowledge/essentials-targets.json"
-    dashboard_path = ROOT / "dashboard/dashboard.html"
-    if not canonical_path.exists():
-        return False, "knowledge/essentials-targets.json missing"
-    if not dashboard_path.exists():
-        return False, "dashboard/dashboard.html missing"
-
-    try:
-        canonical = json.loads(canonical_path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as e:
-        return False, f"essentials-targets.json parse failed: {e}"
-
-    # Collect canonical stances by essential name.
-    canonical_stances = {}
-    for cat in canonical.get("categories", {}).values():
-        if not isinstance(cat, list):
-            continue
-        for entry in cat:
-            if isinstance(entry, dict) and "wallach_stance" in entry:
-                canonical_stances[entry["name"]] = entry["wallach_stance"]
-
-    # Extract the embed block + parse.
-    dash_text = dashboard_path.read_text(encoding="utf-8")
-    m = re.search(
-        r'<script type="application/json" id="essentials-targets-data">(.*?)</script>',
-        dash_text,
-        re.DOTALL,
-    )
-    if not m:
-        return False, "essentials-targets-data embed block not found in dashboard.html"
-    try:
-        embed = json.loads(m.group(1))
-    except json.JSONDecodeError as e:
-        return False, f"essentials-targets-data embed parse failed: {e}"
-
-    embed_stances = {
-        e["name"]: e["wallach_stance"]
-        for e in embed.get("essentials", [])
-        if "wallach_stance" in e
-    }
-
-    # Compare the two surfaces.
-    canonical_names = set(canonical_stances.keys())
-    embed_names = set(embed_stances.keys())
-
-    only_canonical = canonical_names - embed_names
-    only_embed = embed_names - canonical_names
-
-    if only_canonical:
-        return False, (
-            f"{len(only_canonical)} stance(s) in canonical but missing from embed: "
-            + ", ".join(sorted(only_canonical)[:3])
-        )
-    if only_embed:
-        return False, (
-            f"{len(only_embed)} stance(s) in embed but missing from canonical: "
-            + ", ".join(sorted(only_embed)[:3])
-        )
-
-    # Byte-equal content comparison via sorted JSON serialization.
-    mismatches = []
-    for name in canonical_names:
-        c_dump = json.dumps(canonical_stances[name], sort_keys=True, ensure_ascii=False)
-        e_dump = json.dumps(embed_stances[name], sort_keys=True, ensure_ascii=False)
-        if c_dump != e_dump:
-            mismatches.append(name)
-    if mismatches:
-        return False, (
-            f"{len(mismatches)} stance content mismatch(es) between canonical and embed: "
-            + ", ".join(mismatches[:3])
-        )
-    n = len(canonical_names)
-    if n == 0:
-        return True, "no wallach_stance entries present yet (Phase 3 backfill not started)"
-    return True, f"all {n} wallach_stance entries byte-equal between canonical and dashboard embed"
-
-
-def check_wallach_stance_verbatim_in_book():
-    """SESSION 49 stance sweep — the §00.A faithfulness guard for the
-    educational stance layer.
-
-    Each wallach_stance carries `summary` (our modern-voice reading) and
-    `verbatim` (Wallach's exact words from `citation`). A non-null verbatim
-    MUST appear — after light normalization (case, unicode dashes/quotes,
-    de-hyphenated line breaks, collapsed whitespace, punctuation stripped) —
-    as a contiguous substring of the cited Eden book text. This is the
-    machine anchor that stops a synthesized/fabricated quote from being
-    presented as Wallach's words (the vit-K fabrication that motivated the
-    sweep: a modern-voice summary reads plausibly but is nobody's verbatim).
-
-    verbatim == null is allowed: Youngevity-label-only citations have no
-    quotable book prose, so the summary + citation stand alone. A non-null
-    verbatim whose citation resolves to NO Eden book fails loudly (a label
-    citation must use verbatim:null; a book citation must be verifiable).
-
-    Truth anchor: eden/corpus/books/*.txt (the sealed corpus), read fresh —
-    same standard as corpus_verify #2 (verbatim ⊆ book) for claims.
-    Severity: critical — the cornerstone's error-mode enforcement applied to
-    the educational layer.
-    """
-    import unicodedata
-    canonical = ROOT / "knowledge/essentials-targets.json"
-    if not canonical.exists():
-        return False, "knowledge/essentials-targets.json missing"
-    try:
-        data = json.loads(canonical.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as e:
-        return False, f"essentials-targets.json parse failed: {e}"
-
-    # citation-substring -> Eden book text. Name-based, matching how citations
-    # are written; a citation may match more than one (compound sources).
-    books = {
-        "rare earths": "eden/corpus/books/rare-earths-forbidden-cures.txt",
-        "dead doctors": "eden/corpus/books/dddl-third-edition-2011.txt",
-        "let's play doctor": "eden/corpus/books/lets-play-doctor-fourth-edition-1995.txt",
-        "lets play doctor": "eden/corpus/books/lets-play-doctor-fourth-edition-1995.txt",
-        "epigenetics": "eden/corpus/books/epigenetics.txt",
-        "immortality": "eden/corpus/books/immortality.txt",
-        "all in your head": "eden/corpus/books/iaiyh.txt",
-    }
-
-    def norm(s):
-        s = unicodedata.normalize("NFKD", s)
-        s = re.sub(r"-\s*\n\s*", "", s)   # heal line-break hyphenation (book side)
-        s = (s.replace("—", " ").replace("–", " ")
-               .replace("’", "'").replace("‘", "'")
-               .replace("“", '"').replace("”", '"'))
-        s = s.lower()
-        s = re.sub(r"[^a-z0-9 ]+", " ", s)
-        s = re.sub(r"\s+", " ", s).strip()
-        return s
-
-    norm_cache = {}
-
-    def norm_book(path):
-        if path not in norm_cache:
-            p = ROOT / path
-            norm_cache[path] = norm(p.read_text(encoding="utf-8")) if p.exists() else None
-        return norm_cache[path]
-
-    def walk(obj):
-        if isinstance(obj, dict):
-            if isinstance(obj.get("wallach_stance"), dict):
-                yield obj.get("name", "<unnamed>"), obj["wallach_stance"]
-            for v in obj.values():
-                yield from walk(v)
-        elif isinstance(obj, list):
-            for it in obj:
-                yield from walk(it)
-
-    n_checked = 0
-    n_null = 0
-    fails = []
-    for name, st in walk(data):
-        vb = st.get("verbatim")
-        if vb is None:
-            n_null += 1
-            continue
-        if not isinstance(vb, str) or not vb.strip():
-            fails.append(f"{name}: verbatim present but empty/non-string")
-            continue
-        citation = (st.get("citation") or "").lower()
-        paths = {p for key, p in books.items() if key in citation}
-        if not paths:
-            fails.append(
-                f"{name}: non-null verbatim but citation resolves to no Eden book "
-                f"(label-only citations must use verbatim:null): "
-                f"'{st.get('citation', '')[:60]}'"
-            )
-            continue
-        nvb = norm(vb)
-        found = False
-        for p in paths:
-            nb = norm_book(p)
-            if nb and nvb in nb:
-                found = True
-                break
-        if found:
-            n_checked += 1
-        else:
-            fails.append(
-                f"{name}: verbatim NOT found in cited book text "
-                f"(fabrication or mis-citation): '{vb[:60]}...'"
-            )
-
-    if fails:
-        return False, (
-            f"{len(fails)} stance verbatim faithfulness failure(s): "
-            + "; ".join(fails[:3])
-        )
-    total = n_checked + n_null
-    return True, (
-        f"all {total} stance verbatim(s) faithful: {n_checked} verified ⊆ cited book, "
-        f"{n_null} null (label-only / pending backfill)"
-    )
-
-
-# ---------------------------------------------------------------------------
-# Round 135 — Discipline invariants (lesson logging + raw-key surfacing +
-# cross-IIFE bare refs). Codified after the Round 135 meta-failure: lessons
-# were being recorded but not applied; raw keys were leaking through render
-# sites; cross-IIFE bare refs silently fell back to empty. The 30+ existing
-# invariants audit STRUCTURE; these three audit DISCIPLINE.
-# ---------------------------------------------------------------------------
-
-
 def check_no_native_dialogs():
     """Round 156 (filed Round 127) — Round 127 twice-burned design lesson:
     no native browser dialogs (prompt/confirm/alert) in dashboard.html.
@@ -1491,6 +1193,57 @@ def check_derived_artifacts_fresh():
     return True, f"all {checked} derived artifact(s) in sync with the sealed pillars"
 
 
+def check_amounts_wallach_only():
+    """Charter R2 / §00.A — every NUMERIC coverage target in
+    dashboard/assets/data/essentials-targets-data.json traces to a Wallach dose
+    claim. Each numeric target must carry a source_claim_id resolving to a sealed
+    corpus `dose` claim that maps the essential's slug. A numeric target with no
+    source_claim_id, or one pointing at a non-dose / wrong-essential claim, is a
+    Youngevity-or-fabricated amount = RED (the poison this overhaul purged).
+    Non-numeric (honest-gap / trace / dietary) targets carry no number and are
+    skipped. Truth-anchored on the sealed claim shards, recomputed each run."""
+    import json as _json
+    embed = ROOT / "dashboard" / "assets" / "data" / "essentials-targets-data.json"
+    canon_p = ROOT / "eden" / "corpus" / "essentials-canon.json"
+    claims_dir = ROOT / "eden" / "corpus" / "claims"
+    if not embed.exists() or not canon_p.exists() or not claims_dir.exists():
+        return True, "essentials-targets-data / corpus not installed (bootstrap-guard)"
+    try:
+        data = _json.loads(embed.read_text(encoding="utf-8"))
+    except Exception as e:
+        return False, f"essentials-targets-data.json not valid JSON: {e}"
+    canon = _json.loads(canon_p.read_text(encoding="utf-8"))["essentials"]
+    name2slug = {c["layout_key"]: c["slug"] for c in canon}
+    dose_claims = {}
+    for shard in claims_dir.glob("claims-*.json"):
+        for c in _json.loads(shard.read_text(encoding="utf-8")).get("claims", []):
+            if c.get("kind") == "dose":
+                dose_claims[c["id"]] = c
+    viol, numeric = [], 0
+    for e in data.get("essentials", []):
+        t = e.get("target") or {}
+        low = t.get("low")
+        if not isinstance(low, (int, float)):
+            continue
+        numeric += 1
+        name = e.get("name", "?")
+        scid = t.get("source_claim_id")
+        if not scid:
+            viol.append(f"{name}: numeric target {low}{t.get('unit', '')} with NO source_claim_id")
+            continue
+        claim = dose_claims.get(scid)
+        if claim is None:
+            viol.append(f"{name}: source_claim_id {scid} is not a sealed Wallach dose claim")
+            continue
+        slug = name2slug.get(name)
+        if slug is None or slug not in claim.get("essentials", []):
+            viol.append(f"{name}: dose claim {scid} does not map essential '{slug}'")
+    if viol:
+        return False, ("non-Wallach / unsourced amount(s) in essentials-targets-data (R2 poison): "
+                       + "; ".join(viol[:8]))
+    return True, f"all {numeric} numeric coverage target(s) trace to a Wallach dose claim (R2 clean)"
+
+
 def check_search_only_indices_excluded():
     """Tier-2 / "search-only" claims (the Ch7 modality survey: color/light therapy,
     aromatherapy, faith-healing, Schuessler, Bach, chiropractic, etc.) feed ONLY the
@@ -1886,30 +1639,6 @@ INVARIANTS = [
         lesson_ref="Round 74 Phase A — cp1252 crash on Windows + %-I strftime crash",
     ),
     Invariant(
-        name="wallach_stance_source_rule",
-        description="Every wallach_stance.citation in knowledge/essentials-targets.json cites an allowlisted Wallach/Youngevity primary source",
-        check_fn=check_wallach_stance_source_rule,
-        truth_anchor=".claude/rules/source-rule.md allowlist (in-code) applied to wallach_stance.citation in essentials-targets.json",
-        severity="critical",
-        lesson_ref="Round 118 / Cura session #2 Survivor B — Round 115's wallach_stance schema addition left check_source_rule's hard-coded scope behind; defense-in-depth pair for the dashboard_integrity extension shipping in the same patch.",
-    ),
-    Invariant(
-        name="wallach_stance_embed_sync",
-        description="Every wallach_stance in knowledge/essentials-targets.json is byte-equal in the dashboard's essentials-targets-data embed",
-        check_fn=check_wallach_stance_embed_sync,
-        truth_anchor="canonical wallach_stance dict ↔ embed wallach_stance dict, normalized via sort_keys=True JSON serialization",
-        severity="warning",
-        lesson_ref="Round 115 filed; Round 122 shipped per §18 same-patch promotion. Two-source-of-truth shape (canonical nested + dashboard flat embed) gains coverage at the new field.",
-    ),
-    Invariant(
-        name="wallach_stance_verbatim_in_book",
-        description="Every non-null wallach_stance.verbatim in essentials-targets.json appears (normalized) as a substring of the cited Eden book text",
-        check_fn=check_wallach_stance_verbatim_in_book,
-        truth_anchor="eden/corpus/books/*.txt (sealed corpus), de-hyphenated normalized substring match; same standard as corpus_verify #2 (verbatim ⊆ book) for claims",
-        severity="critical",
-        lesson_ref="SESSION 49 stance sweep — vit-K proved synthesized 'quotes' were presented as Wallach's words. Splitting the stance into summary (ours) + verbatim (his) and anchoring verbatim to the corpus makes fabrication un-shippable. Null verbatim (label-only sources) is allowed.",
-    ),
-    Invariant(
         name="no_native_dialogs",
         description="dashboard.html must not use native alert() / confirm() / prompt() — route through showLcModal / showQuietToast",
         check_fn=check_no_native_dialogs,
@@ -2060,6 +1789,14 @@ INVARIANTS = [
         truth_anchor="for each manifest artifact: json.loads(on-disk) == generator.build_fn() re-derived from the sealed pillars each run (no stale-to-stale compare)",
         severity="critical",
         lesson_ref="Blueprint Phase C / D2 (2026-07-05) — the ~200x hand-typed-citation drift that triggered the overhaul; one freshness gate over a manifest registry means no derived file can silently drift from the pillars. Replaces the standalone corpus_embed_synced (folded in). memory: overhaul-blueprint-active-plan",
+    ),
+    Invariant(
+        name="amounts_wallach_only",
+        description="every numeric coverage target in essentials-targets-data.json carries a source_claim_id resolving to a sealed Wallach dose claim that maps the essential (Charter R2 / §00.A) -- a Youngevity-sourced or unsourced amount is RED (the poison purge)",
+        check_fn=check_amounts_wallach_only,
+        truth_anchor="dashboard/assets/data/essentials-targets-data.json numeric targets x sealed corpus dose claims (eden/corpus/claims/*), joined by essentials-canon layout_key->slug, recomputed each run",
+        severity="critical",
+        lesson_ref="Blueprint Phase C / Charter R2 (2026-07-05) -- the poison purge: targets used to sum Youngevity Healthy Body Start Pak labels, letting Youngevity define recommended amounts; now every number is a Wallach dose claim carrying its source_claim_id. memory: wallach-drives-recommendations-youngevity-composition",
     ),
     Invariant(
         name="search_only_indices_excluded",
