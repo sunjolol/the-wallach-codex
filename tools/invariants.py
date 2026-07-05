@@ -1203,6 +1203,60 @@ def check_no_dead_legacy_paths():
     return True, f"no live reference to any severed pre-Eden legacy path ({len(FORBIDDEN)} tokens guarded)"
 
 
+def check_no_operating_doc_contradiction():
+    """No OPERATING DOC may present a structure the overhaul DELETED as if it were
+    live, nor point at a `.claude/rules/` file that no longer exists. Operating
+    docs = the steady-state contract a future session runs under: CLAUDE.md, every
+    .claude/rules/*.md, REVIEW.md. This extends no_dead_legacy_paths (which guards
+    LIVE CODE against severed pre-Eden paths) to the DOC surface for the overhaul's
+    own severances -- the deleted legacy dashboard (js/css/host) and the deleted
+    wild-west-mode rule. Two machine-checkable halves:
+      (1) forbidden-token scan -- an operating doc naming a deleted structure is a
+          stale pointer that would send a future reader to something that is gone;
+      (2) rule-file pointer resolution -- every `.claude/rules/<name>.md` an
+          operating doc cites must resolve on disk (a dangling rule pointer = a
+          deleted/renamed rule the doc never got reconciled to).
+    NOT covered (WISH per R7 -- do NOT sell it as guarded): the SEMANTIC half, a
+    doc that contradicts the Charter's SUBSTANCE without naming a deleted structure
+    (e.g. asserting a retired policy as current). That has no non-gaming machine
+    check; it rests on the Phase-A rules-audit discipline + review. Living/planning
+    docs that legitimately narrate the deletions in past/planning tense
+    (chronicle/*, the blueprint, genesis/*, next-chunk.md) are OUT of scope by
+    design -- scanning them would flag correct history. Truth anchor: operating-doc
+    bytes + os-level file existence, recomputed each run."""
+    forbidden = ["legacy-dashboard", "legacy-workspace-host", "wild-west-mode"]
+    rules_dir = ROOT / ".claude" / "rules"
+    docs = [ROOT / "CLAUDE.md", ROOT / "REVIEW.md"] + sorted(rules_dir.glob("*.md"))
+    rule_ref_re = re.compile(r"\.claude/rules/([A-Za-z0-9_-]+\.md)")
+    token_hits, dangling, scanned = [], [], 0
+    for path in docs:
+        if not path.exists():
+            continue
+        try:
+            text = path.read_text(encoding="utf-8")
+        except Exception:
+            continue
+        scanned += 1
+        rel = path.relative_to(ROOT).as_posix()
+        for tok in forbidden:
+            if tok in text:
+                token_hits.append(f"{rel}:{tok}")
+        for m in rule_ref_re.finditer(text):
+            if not (rules_dir / m.group(1)).exists():
+                dangling.append(f"{rel}->.claude/rules/{m.group(1)}")
+    problems = token_hits + dangling
+    if problems:
+        return False, (
+            f"{len(problems)} operating-doc contradiction(s) — a doc cites a "
+            f"deleted structure or a non-existent rule file: "
+            + "; ".join(problems[:6]) + (" ..." if len(problems) > 6 else "")
+        )
+    return True, (
+        f"{scanned} operating docs clean — no deleted-structure token "
+        f"({len(forbidden)} guarded), no dangling .claude/rules pointer"
+    )
+
+
 def check_creators_log_digest_synced():
     """LOG.md must equal the deterministic render of log.jsonl. It is a generated
     human view; drift means a hand-edit or a missed regeneration, which would let
@@ -1953,6 +2007,14 @@ INVARIANTS = [
         truth_anchor="git ls-files contents scanned each run; immutable history (chronicle/, genesis/, dist/, legacy-dashboard.js, the embedded Creator's-Log/versions blocks) allowlisted -- it records the past, it is not a live reference",
         severity="critical",
         lesson_ref="Luneth 2026-07-04 full pre-Eden sever: the old book PDFs + transcript scraper + ingredient/stance generators were still poisoning the system (even feeding stale book text into the live dashboard). This guard makes re-introduction impossible -- 'no chance of them ever being referenced again' turned into a machine check per §00.B.",
+    ),
+    Invariant(
+        name="no_operating_doc_contradiction",
+        description="no operating doc (CLAUDE.md, .claude/rules/*.md, REVIEW.md) names an overhaul-DELETED structure (legacy dashboard js/css/host, the wild-west-mode rule) as live, nor points at a non-existent .claude/rules/*.md; the semantic 'contradicts the Charter's substance' half is a labeled WISH resting on the rules-audit discipline (R7)",
+        check_fn=check_no_operating_doc_contradiction,
+        truth_anchor="operating-doc bytes + os-level existence of every cited .claude/rules/*.md, scanned each run; living/planning docs (chronicle/, the blueprint, genesis/, next-chunk) are OUT of scope -- they narrate the deletions in past/planning tense",
+        severity="critical",
+        lesson_ref="Blueprint S8 / Phase A governance audit (Charter R1/R7) -- the rules that guide the work rot too; after the legacy-dashboard sever + wild-west-mode deletion, a machine gate keeps any operating doc from silently pointing a future session at a structure that no longer exists. Extends no_dead_legacy_paths from live-code to the doc surface; the semantic Charter-contradiction half stays a labeled WISH (no non-gaming machine check yet).",
     ),
     Invariant(
         name="creators_log_digest_synced",
