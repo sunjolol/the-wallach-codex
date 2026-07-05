@@ -201,14 +201,52 @@ function formatDose(dose: CorpusClaim['dose']): string {
   return period.length > 0 ? `${head} / ${period}` : head;
 }
 
+/**
+ * True when a claim is a row of Wallach's Fig. 8-1 "Base Line Nutritional
+ * Supplement Program" dose table (Let's Play Doctor, ch. 8). Keyed off the dose
+ * atom's `for_condition`, which the derive step already projects into the embed.
+ * NOT the `dose-table` tag: that tag is overloaded (dddl uses it for prose
+ * maintenance doses like germanium) AND tags aren't projected into the embed, so
+ * `for_condition` is the precise, available signal. These verbatims are raw
+ * 4-column rows (Nutrient · RDA · True Supplement Need · 30-Day Pharmacologic)
+ * that read as an unlabeled run of numbers without their header — so the renderer
+ * surfaces the column legend and keeps the source line-breaks.
+ */
+const FIG_8_1_FOR_CONDITION = 'base-line supplement program (true supplement need)';
+function isFig81Row(claim: CorpusClaim): boolean {
+  return claim.dose?.for_condition === FIG_8_1_FOR_CONDITION;
+}
+
+/**
+ * The column legend for a Fig. 8-1 dose-table row — Wallach's OWN header names
+ * (book: "Nutrient · RDA · True Supplement Need · 30-Day Pharmacologic Daily
+ * Dose"). Pure static labels: no data crosses into the view here — it only names
+ * the columns of the faithful verbatim rendered directly below it (§00.A).
+ */
+function renderFig81Legend(): string {
+  return `
+      <div class="kd-claim__legend" role="note">
+        <span class="kd-claim__legend-eyebrow">Fig. 8-1 columns</span>
+        <span class="kd-claim__legend-cols">Nutrient · RDA · True Supplement Need · 30-Day Pharmacologic</span>
+      </div>`;
+}
+
 /** One corpus claim: paraphrase + optional dose + verbatim source + citation. */
 function renderCorpusClaim(claim: CorpusClaim): string {
   const dose = formatDose(claim.dose);
+  const isTable = isFig81Row(claim);
+  // Fig. 8-1 rows are raw table rows: keep the source line-breaks (CSS pre-line)
+  // so each nutrient stays its own row instead of mushing into one line, under the
+  // column legend. Every other verbatim collapses its hard-wraps to one clean line
+  // as before. The verbatim TEXT is untouched either way (§00.A faithful).
+  const verbatimHTML = isTable ? glossify(claim.verbatim) : glossify(collapseWS(claim.verbatim));
+  const verbatimCls = isTable ? 'kd-claim__verbatim kd-claim__verbatim--rows' : 'kd-claim__verbatim';
   return `
     <div class="kd-claim">
       <p class="kd-claim__text">${glossify(claim.claim_text)}</p>
       ${dose.length > 0 ? `<div class="kd-claim__dose">${escHTML(dose)}</div>` : ''}
-      <blockquote class="kd-claim__verbatim">${glossify(collapseWS(claim.verbatim))}</blockquote>
+      ${isTable ? renderFig81Legend() : ''}
+      <blockquote class="${verbatimCls}">${verbatimHTML}</blockquote>
       <div class="kd-claim__cite">CITED · ${escHTML(getBookLabel(claim.book))}</div>
     </div>`;
 }

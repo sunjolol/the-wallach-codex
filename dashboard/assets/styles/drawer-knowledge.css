@@ -651,6 +651,44 @@
   padding-left: var(--ds-space-3);
   border-left: 1px solid var(--ds-rule);
 }
+/* Fig. 8-1 dose-table rows (Let's Play Doctor base-line program): the verbatim is
+   a raw table row, so render it monospaced with its source line-breaks preserved
+   (pre-line collapses intra-row OCR spacing yet keeps each nutrient on its own
+   line) under the column legend. */
+#drawer-knowledge-mount .kd-claim__verbatim--rows {
+  font-family: var(--ds-font-mono);
+  font-style: normal;
+  font-size: var(--ds-text-sm);
+  line-height: 1.6;
+  white-space: pre-line;
+  color: var(--ds-ink);
+}
+#drawer-knowledge-mount .kd-claim__legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--ds-space-1) var(--ds-space-2);
+  margin-top: var(--ds-space-2);
+  padding: var(--ds-space-1) var(--ds-space-2);
+  background: var(--ds-accent-wash);
+  border-radius: var(--ds-radius-xs);
+}
+#drawer-knowledge-mount .kd-claim__legend-eyebrow {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ds-accent-deep);
+}
+#drawer-knowledge-mount .kd-claim__legend-cols {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ds-ink-soft);
+}
 #drawer-knowledge-mount .kd-claim__cite {
   font-family: var(--ds-font-mono);
   font-size: var(--ds-text-micro);
