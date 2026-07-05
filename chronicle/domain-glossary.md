@@ -77,8 +77,8 @@ Defined in `state/regimen.ts`; each emits a typed `regimen:changed` event:
 ## Discipline terms
 
 - **§00.A** — Wallach source-of-truth mandate (100/100): every numeric / health
-  claim cites a Wallach allowlist primary (`dddl · rbs · eps · ygy ·
-  wallach-lecture`).
+  claim cites a Wallach allowlist primary — BOOKS only (`dddl · rbs · eps ·
+  ygy`); no lectures/transcripts (Luneth 2026-07-05).
 - **§00.B** — Senior-dev coding standard (99/100): no inline canonical data in
   views, no `any`, layer boundaries held. Now invariant-enforced
   (`views_state_no_inline_data`), not lint-only.

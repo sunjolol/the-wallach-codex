@@ -13,7 +13,7 @@ The split that keeps the cornerstone intact:
 - **Product composition (the ingredient amounts a product contains) → Youngevity primary.** Composition feeds the coverage MATH (summing what the user's items deliver); it is never itself a target or recommended amount.
 
 ### Allowlist (a source is valid iff it is one of)
-1. **Wallach corpus primary** — a Wallach-authored/-delivered book (with year), transcript (with date), or protocol. Tokens: `dddl` (Dead Doctors Don't Lie) · `rbs` (Rare Earths: Forbidden Cures) · `eps` (Epigenetics) · `wallach-lecture` (lecture/transcript corpus). **The ONLY valid source for a recommended amount, dose, range, target, deficiency indicator, or health claim.**
+1. **Wallach corpus primary** — a Wallach-authored BOOK (with year), or a protocol within one. **BOOKS ONLY — no lectures/transcripts (Luneth 2026-07-05: "we are only using things Wallach has directly said in his books").** The 6 in-housed books: `dddl` (Dead Doctors Don't Lie) · `rbs` (Rare Earths: Forbidden Cures) · `eps` (Epigenetics) · `lets-play-doctor` · `immortality` · `iaiyh`. **The ONLY valid source for a recommended amount, dose, range, target, deficiency indicator, or health claim.** (The old `wallach-lecture` token is RETIRED — it was never used; all sealed claims are book-sourced.)
 2. **Youngevity primary — composition only** — a Youngevity product label, official `youngevity.com` product page, or official company statement. Token: `ygy`. Valid ONLY as a source of product composition (the ingredients + per-serving amounts a product contains). **NEVER a source for a recommended amount or daily target.**
 
 ### Retired (was allowlist #3 — now poison)

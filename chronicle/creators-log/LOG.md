@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 364 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 365 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-05 17:08 UTC-05:00 · design-decision · governance
+Books-only source policy codified (Luneth): retired the unused wallach-lecture token across source-rule/data-flow/CLAUDE.md §00.A/domain-glossary; corpus already 100% book-sourced. Phase-C handoff refreshed. Board 38/38.
+  ↳ [2026-07-05 17:07 CDT] governance (books-only policy + Phase-C handoff) · Plain: locked in Luneth's rule that the app only cites Wallach's BOOKS — no lectures or transcripts ever. This was already true in practice (all 1,203 sealed claims are book-sourced), so this just makes the written rules match reality and removes a stale "lectures allowed" token so nobody re-introduces one. Also refreshed the session handoff to show C1+C2 done and what's left. · Retired the unused `wallach-lecture` allowlist token across all 4 live surfaces (.claude/rules/source-rule.md, .claude/rules/data-flow.md, CLAUDE.md §00.A, chronicle/domain-glossary.md) — books-only (the 6 in-housed: dddl, rare-earths, lets-play-doctor, epigenetics, immortality, iaiyh). This is a TIGHTENING of the §00.A allowlist (removing a source type), explicitly directed by Luneth ("we are only using things Wallach has directly said in his books") with rationale stated — not a loosening, so the source-rule three-confirm override protocol (guards breaches) was not invoked; flagged transparently. Rewrote chronicle/next-chunk.md to the current state (C1 811b418, C2 d87b1d6 done; remaining = the sweep [Fig 8-1 verbatim legend + the MANDATORY full corpus audit before Phase G] + C3 product embeds). New memories: books-only-no-lectures, favor-newest-wallach-number, full-corpus-audit-before-phase-g, wallach-says-boxes-dropped-readd-post-mining. Verify: board 38/38 (no_operating_doc_contradiction green — no live doc asserts the retired token). · NOTE: boot files changed (CLAUDE.md §00.A + next-chunk.md) → reboot recommended before continuing to C3 (memory reboot-after-boot-file-changes).
 
 ## 2026-07-05 17:02 UTC-05:00 · round-close · dashboard/coverage
 Phase C2 — THE POISON PURGE: Coverage targets now derive from Wallach book dose claims (Youngevity amounts gone); amounts_wallach_only gate; WALLACH SAYS stance layer dropped; newest-number rule (Potassium=5000). Board 38/38, Luneth-verified vs LPD Fig 8-1.
@@ -780,7 +784,3 @@ Ch10 Materia Medica b38 — FITS→FRECKLES (F's pt2), 6 protocol claims LETS-27
 ## 2026-06-28 18:24 UTC-05:00 · round-close · knowledge/corpus
 Ch10 Materia Medica b37 — FAILURE TO THRIVE→FINGERNAILS (F's pt1), 7 protocol claims LETS-270..276. 2 render-verified meg→mcg fixes (FIBROCYSTIC iodine 200/selenium 500). seal kv147→148, claims 649→656, conditions 299→302. Board 31/31, probe PASS.
   ↳ FAILURE TO THRIVE, FARTING(flatulence), FATIGUE(chronic_fatigue), FERTILITY(infertility — checked, not charged), FEVER, FIBROCYSTIC BREAST DISEASE, FINGERNAILS(brittle_nails). New conds: failure_to_thrive, flatulence, fever. Pipeline fix_txt→resnap(0 broken)→finalize→seal→embed→build→invariants(31/31)→render_probe_knowledge(0 errors). Honesty: boot-time accidental --help re-seal kv147→148 restored to HEAD before work; this batch is the real bump. NEXT b38 = FITS/FLATULENCE/FLU/FOOD ALLERGIES (the F's).
-
-## 2026-06-28 18:00 UTC-05:00 · session-end · chronicle
-SESSION 17 wrap — Ch10 b30-b36 (7 batches): CONGESTED LUNGS→EYE REDNESS. ★ C-tail + ENTIRE D + ENTIRE E sections COMPLETE. 42 claims (LETS-228..269), corpus 607→649, conditions 269→299, kv147. 2 search-only rulings + herb-action grouping. board 31/31 throughout. NEXT=F's (b37).
-  ↳ All 7 batches round-closed + pushed (11fa9d0/ab6a99d/45e8df0/a76f884/fd1d558/5231877/c500d0c). 14 render-verified meg→mcg fixes, ZERO new dangerous misprints. Signature theses captured: cystic fibrosis (selenium deficiency, b31), diabetes (chromium/vanadium titration, b33). Editorial rulings: CONTRACEPTION+EJACULATION=search-only; herb-action one-liners=grouped definition claim. Lesson: taurine not canon-essential. Handoff rolled to SESSION 17 in next-chunk.md; Luneth re-genesis next session.

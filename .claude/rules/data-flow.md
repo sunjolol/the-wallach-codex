@@ -22,7 +22,7 @@ eden/* → schemas/* → core/* → state/* → views/*
 1. **Anti-fakery.** If a render needs data that does not exist yet, add it to `eden/` or `dashboard/assets/data/` behind a Zod schema. Never fake or stub a literal in the view.
 2. No literal array or object > 10 elements inside `views/` or `state/`. Move it to `assets/data/`.
 3. Numbers migrate verbatim. If a legacy literal disagrees with a target, port the literal faithfully — the user's end-pass corrects the data.
-4. Source rule (§00.A): every Wallach-attributable claim cites an allowlist primary (`dddl · rbs · eps · ygy · wallach-lecture`).
+4. Source rule (§00.A): every Wallach-attributable claim cites an allowlist primary — Wallach BOOKS only (`dddl · rbs · eps · lets-play-doctor · immortality · iaiyh`), plus `ygy` for Youngevity composition. No lectures/transcripts (Luneth 2026-07-05).
 
 ## Enforcement
 - Invariant `views_state_no_inline_data` — blocks literal arrays/objects > 10 elements in `views/` and `state/`.
