@@ -45,8 +45,8 @@ export const LayoutTileSchema = z.object({
    * Absent/true = one of the 90 essentials. `false` marks a nutrient the body
    * can synthesize — shown for completeness + coverage, but NOT counted toward
    * the 90 (e.g. Omega-9 / oleic, included by Youngevity for cardiovascular
-   * balance). Source: Wallach "The 90 Essential Nutrients" lecture corpus +
-   * the conditional-essentiality note on Omega-9 in essentials-benefits-data.
+   * balance). Source: the sealed essentials-canon (eden/corpus/essentials-canon.json),
+   * keyed to Wallach's 90-nutrients graphic (books-only; no lecture/embed source).
    */
   essential: z.boolean().optional(),
 });

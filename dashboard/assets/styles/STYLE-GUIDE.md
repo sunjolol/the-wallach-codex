@@ -226,8 +226,8 @@ tools/invariants.py                   # 3 paired daily invariants:
 ## Provenance
 
 - v3 calibration reference: `outputs/trace-minerals-popup-v3.html` (user-approved 2026-06-21)
-- Visual calibration anchor: `knowledge/design-wisdom/references/futuristic-tech-reference-empower-by-niteangel-depthcore.jpg`
-- Codepen reference library: `knowledge/design-wisdom/index.md` (28 captured references)
+- Visual calibration anchor: `dashboard/design-wisdom/references/futuristic-tech-reference-empower-by-niteangel-depthcore.jpg`
+- Codepen reference library: `dashboard/design-wisdom/index.md` (28 captured references)
 - Retired aesthetic: Frutiger Aero (teal palette) — see `memory/user-prefs/aesthetic.md` historical block
 
 ---
