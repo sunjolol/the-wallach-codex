@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "_doctrine": "The nutrient/ingredient vocabulary -- every ingredient a Youngevity product (Pillar 2, Phase F) or a Wallach claim references by ID. SUPERSETS the 90/91 canonical essentials (canon_slug -> essentials-canon) with the non-essential substances Wallach names (herbs, drugs, compounds, foods; canon_slug = null). Promoted 2026-07-05 (Phase B) from essentials-canon + the corpus other-substances index. A claim's other_substances[] slug must appear here (references_resolve gate). Hand-edited pillar: register a new substance here BEFORE mining a claim/product that references it. User is sole writer once sealed. canon_slug != null marks a canonical nutrient (the 90 essentials + the omega-9 91st); the essential-vs-conditional nuance lives in essentials-canon, not duplicated here (R3). The finer `class` taxonomy (herb / drug / compound / food / glandular ...) and product-only ingredients (fillers, carriers) are DEFERRED to Phase F, when the Youngevity products are hand-built and product grouping needs them. Non-canon display_name is the other-substances index display (humanize(slug)).",
-  "sealed_at": null,
+  "sealed_at": "2026-07-05T19:24:41+00:00",
   "counts": {
     "nutrients": 499,
     "canonical": 91,

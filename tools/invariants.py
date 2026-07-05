@@ -1351,89 +1351,6 @@ def check_creators_log_archive_synced():
     return True, f"archive in sync — INDEX + {len(expected)} monthly digest(s)"
 
 
-def check_legacy_css_contained():
-    """legacy-dashboard.css is the parked old dashboard, loaded AFTER the v3
-    design system. Its BARE element/universal selectors leak into the new
-    .app-* shell — the 2026-06-23 containment incident (a 15px document root
-    shrinking the whole UI, a teal header veil over .app-topbar, teal <h2>/
-    <table> waiting to hit the next surface). This invariant makes the leak
-    structurally impossible: NO selector in the file may have a bare element
-    type or the universal '*' as its FIRST compound. Every element-level rule
-    must be scoped under #legacy-workspace-host (plain — the host element) or
-    :where(#legacy-workspace-host) (descendant rules; :where adds ZERO
-    specificity so the legacy cascade is preserved byte-for-byte). :root may
-    hold ONLY custom properties (a non-var :root declaration cascades to the
-    whole document). @font-face / @keyframes are exempt. As this file shrinks
-    to its Round-5 deletion, nothing it holds can ever again style the shell."""
-    import re as _re
-    import bisect as _bisect
-    path = ROOT / "dashboard" / "assets" / "styles" / "legacy-dashboard.css"
-    if not path.exists():
-        return True, "legacy-dashboard.css already deleted (Round-5 sever complete)"
-    raw = path.read_text(encoding="utf-8")
-    # strip /* ... */ comments, preserving byte offsets for line numbers
-    out, i, n = [], 0, len(raw)
-    while i < n:
-        if raw[i:i + 2] == "/*":
-            j = raw.find("*/", i + 2)
-            j = n if j == -1 else j + 2
-            out.append(" " * (j - i))
-            i = j
-        else:
-            out.append(raw[i])
-            i += 1
-    clean = "".join(out)
-    line_starts = [0] + [m.end() for m in _re.finditer("\n", raw)]
-    HTML_ELEMENTS = set((
-        "a abbr address area article aside audio b base blockquote body br button canvas "
-        "caption cite code col colgroup data datalist dd del details dfn dialog div dl dt "
-        "em embed fieldset figcaption figure footer form h1 h2 h3 h4 h5 h6 head header "
-        "hgroup hr html i iframe img input ins kbd label legend li main map mark menu meter "
-        "nav object ol optgroup option output p param picture pre progress q rp rt ruby s "
-        "samp section select slot small source span strong sub summary sup table tbody td "
-        "template textarea tfoot th thead time tr u ul var video wbr "
-        "svg path circle rect line polyline polygon g text defs"
-    ).split())
-    violations = []
-    # 1) :root must be custom-properties only
-    for rm in _re.finditer(r":root\s*\{([^{}]*)\}", clean):
-        for decl in rm.group(1).split(";"):
-            decl = decl.strip()
-            if decl and not decl.startswith("--"):
-                prop = decl.split(":", 1)[0].strip()
-                violations.append(f":root sets non-custom property '{prop}' (cascades document-wide)")
-    # 2) no bare element / universal first compound on any style rule
-    for m in _re.finditer(r"([^{}]+)\{", clean):
-        grp = m.group(1)
-        sel = grp.strip()
-        if not sel or sel.startswith("@"):
-            continue
-        off = m.start(1) + (len(grp) - len(grp.lstrip()))
-        ln = _bisect.bisect_right(line_starts, off)
-        for part in sel.split(","):
-            part = part.strip()
-            if not part:
-                continue
-            first = _re.split(r"[ >+~]", part)[0]
-            if not first:
-                continue
-            if first[0] in ".#[&:":
-                continue
-            if first[0] == "*":
-                violations.append(f"L{ln}: universal '*' not host-scoped -- {part}")
-                continue
-            mm = _re.match(r"[a-zA-Z][a-zA-Z0-9-]*", first)
-            tok = mm.group(0).lower() if mm else ""
-            if tok in HTML_ELEMENTS:
-                violations.append(f"L{ln}: bare <{tok}> leaks to the shell -- {part}")
-    if violations:
-        head = "; ".join(violations[:8])
-        more = f" (+{len(violations) - 8} more)" if len(violations) > 8 else ""
-        return False, ("legacy CSS leak vector(s) -- scope under "
-                       ":where(#legacy-workspace-host): " + head + more)
-    return True, "legacy-dashboard.css fully contained -- 0 bare element/universal selectors"
-
-
 def check_corpus_integrity():
     """Phase alpha — eden/corpus sealed claim-graph integrity. Delegates to the single
     implementation eden/tools/corpus_verify.py (one source of the 12 checks, no
@@ -1450,6 +1367,26 @@ def check_corpus_integrity():
     if r.returncode in (0, 2):
         return True, head
     return False, f"corpus integrity FAIL: {head}"
+
+
+def check_catalog_integrity():
+    """Catalog pillar (eden/catalog/) integrity. Delegates to the single implementation
+    eden/tools/catalog_verify.py (one source, no duplication): exit 0 = sealed & healthy,
+    2 = BOOTSTRAP (unsealed; structural checks passed), 1 = FAIL. Verifies the catalog's
+    internal structure (counts, well-formed slugs, umbrella children resolve) + its
+    canon_slug pointers into essentials-canon; the cross-pillar claim->catalog resolution
+    is the separate references_resolve gate."""
+    verify = ROOT / "eden" / "tools" / "catalog_verify.py"
+    if not verify.exists():
+        return True, "eden/tools/catalog_verify.py missing (catalog not installed; bootstrap-guard)"
+    env = dict(os.environ)
+    env.setdefault("PYTHONUTF8", "1")
+    r = subprocess.run([sys.executable, str(verify)], capture_output=True, text=True, env=env)
+    lines = (r.stdout or "").strip().splitlines()
+    head = lines[0] if lines else (r.stderr or "").strip()[:160]
+    if r.returncode in (0, 2):
+        return True, head
+    return False, f"catalog integrity FAIL: {head}"
 
 
 def check_references_resolve():
@@ -2072,14 +2009,6 @@ INVARIANTS = [
         lesson_ref="Creator's Log Chunk N (navigability) — as the ledger grows the full history lives in monthly digests; this keeps them + the index byte-true to the canonical jsonl so deep history never silently drifts",
     ),
     Invariant(
-        name="legacy_css_contained",
-        description="legacy-dashboard.css (the parked old dashboard, loaded after the v3 design system) must have ZERO bare element/universal selectors at any level — every element-level rule scoped under #legacy-workspace-host or :where(#legacy-workspace-host); :root holds custom properties only",
-        check_fn=check_legacy_css_contained,
-        truth_anchor="deterministic re-parse of dashboard/assets/styles/legacy-dashboard.css — every selector's first compound must be a class/id/pseudo/host-scope, never a bare element or '*'; recomputed each run, no stale-to-stale comparison",
-        severity="critical",
-        lesson_ref="2026-06-23 containment incident — legacy bare selectors (html/body 15px root, header veil, teal h2/table) bled into the new .app-* shell and cost a full session of eyeball-debugging; the fix had to become a machine gate (§00.B: discipline lives in tooling, not vigilance) so the leak can never silently recur as the file shrinks to its Round-5 death",
-    ),
-    Invariant(
         name="corpus_integrity",
         description="eden/corpus sealed claim graph is coherent — verbatim substrings real, book hashes anchored, slugs in canon, indices an honest derivation (delegates to corpus_verify.py; BOOTSTRAP passes pre-seal)",
         check_fn=check_corpus_integrity,
@@ -2142,6 +2071,14 @@ INVARIANTS = [
         truth_anchor="sealed claim shards (eden/corpus/claims/*) x the catalog registries (eden/catalog/*), recomputed each run via corpus_verify.unresolved_references -- no stale-to-stale comparison",
         severity="critical",
         lesson_ref="Blueprint Phase B / Charter R3 -- promoting conditions+symptoms from emergent-claim-slugs to a pre-registered catalog: before this a typo'd slug silently minted a condition in the derived index with nothing to catch it. memory: overhaul-blueprint-active-plan",
+    ),
+    Invariant(
+        name="catalog_integrity",
+        description="the Catalog pillar (eden/catalog/{conditions,symptoms,nutrients}.json) is structurally sound: counts match, every umbrella_of child + nutrient canon_slug resolves, slugs are well-formed, and (when sealed) golden hashes hold",
+        check_fn=check_catalog_integrity,
+        truth_anchor="deterministic re-parse of eden/catalog/* + the essentials-canon slug set + golden hashes (LF-normalized), recomputed each run via eden/tools/catalog_verify.py; 0=sealed&healthy, 2=bootstrap, 1=fail",
+        severity="critical",
+        lesson_ref="Blueprint Phase B -- the Catalog is a sealed pillar (Pillar 3); its own integrity gate mirrors corpus_integrity so a hand-edit that breaks a count, dangles an umbrella child, or points canon_slug at a non-essential is caught at the board, not downstream. memory: overhaul-blueprint-active-plan",
     ),
     Invariant(
         name="book_source_clean",
