@@ -14,7 +14,7 @@
  *   3. Coverage workspace styles — .coverage-grid, .coverage-hero,
  *      .coverage-stat, .periodic, .tile, .essentials-* etc.
  *
- * Load order in dashboard.html: AFTER dashboard.css + legacy-dashboard.css
+ * Load order in dashboard.html: AFTER dashboard.css
  * so workspace styles win on the new coverage mount.
  * ═══════════════════════════════════════════════════════════════════════════ */
 

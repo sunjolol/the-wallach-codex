@@ -9,7 +9,7 @@
  *
  * Ported from dashboard/components/drawer-knowledge-v3-PROPOSAL.html. The mockup
  * uses generic .section-head / .book-row / .featured-citation / .essential-tile
- * / .product-row / .doctrine-card names that COLLIDE with legacy-dashboard.css
+ * / .product-row / .doctrine-card names that COLLIDE with the old dashboard styles (now removed)
  * (.essential-tile) + workspace-coverage.css (.essentials-grid); the live view
  * self-namespaces them as kd-* (mirroring Journey's jd-*) so no global can ever
  * leak in. Every selector is rooted at #drawer-knowledge-mount so nothing here

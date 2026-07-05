@@ -3,8 +3,8 @@
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * Turns a label image (data URL) into a ScanLabel the verdict engine can score.
- * Ported faithfully (Chunk 6c) from legacy-dashboard.js — the page no longer
- * loads legacy, so loadTesseract · preprocessImage · runOcr · the OCR fuzzy-
+ * Ported faithfully (Chunk 6c) from the pre-TS inline dashboard — the page no longer
+ * loads inline JS, so loadTesseract · preprocessImage · runOcr · the OCR fuzzy-
  * correction pass · parseOcrText · the lcScanImage orchestrator all live here.
  *
  * Pipeline (scanImage):

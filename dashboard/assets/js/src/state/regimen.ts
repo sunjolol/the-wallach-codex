@@ -177,12 +177,8 @@ declare global {
 }
 
 /**
- * Install window.* bridges so cross-IIFE legacy callers route through the
- * native implementations. Called from main.ts AFTER legacy-dashboard.js has
- * run (which sets up its own definitions). Our exposures OVERWRITE legacy.
- *
- * Bare-name calls inside legacy IIFEs still hit the IIFE-local legacy
- * definitions — intentional, preserves "re-theme don't rewrite logic".
+ * Install window.* bridges so DOM handlers and headless render-probes can reach
+ * the §31 chokepoint helpers (the migrated native implementations).
  */
 export function installBridges(): void {
   window.persistRegimen = persistRegimen;

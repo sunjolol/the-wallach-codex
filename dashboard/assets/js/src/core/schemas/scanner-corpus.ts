@@ -4,7 +4,7 @@
  *
  * Validates dashboard/assets/data/scanner-corpus-data.json — the Wallach
  * doctrine corpus the Scanner's verdict engine scores against. Migrated VERBATIM
- * (Chunk 6b) from legacy-dashboard.js (DIETARY_BASELINE · GOAL_KEYWORDS ·
+ * (Chunk 6b) from the pre-TS inline dashboard (DIETARY_BASELINE · GOAL_KEYWORDS ·
  * NUTRIENT_TO_GOAL_MAP · GOAL_DISPLAY_NAMES · ANTI_LIST · ANTI_LIST_NOTES ·
  * HARD_REJECT_TERMS · SERIOUS_ANTI). §00.A: every number + every "why" citation
  * is the legacy value unchanged — this schema narrows the shape, it does not

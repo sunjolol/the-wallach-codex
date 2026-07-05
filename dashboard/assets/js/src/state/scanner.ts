@@ -4,7 +4,7 @@
  *
  * Owns the Scanner surface's state: the scan-history FIFO + the native scoring
  * engine (Chunk 6b). The OCR → parse → verdict pipeline used to live in
- * legacy-dashboard.js (window.lcScan), but the page no longer loads legacy, so
+ * the pre-TS inline dashboard (window.lcScan), but the page no longer loads it, so
  * the math lives here now — a faithful port. Every NUMBER + every doctrine
  * string still comes from Luneth's corpus (scanner-corpus-data.json, migrated
  * verbatim) and the Wallach targets DB; §00.A holds, nothing is invented.

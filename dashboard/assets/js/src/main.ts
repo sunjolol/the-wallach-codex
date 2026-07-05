@@ -4,10 +4,7 @@
  *
  * Wires the shell. Mounts views. Sets up rail navigation.
  *
- * ROUND 2 — COVERAGE WORKSPACE IS LIVE.
- *   - Rail "Coverage" → new view in #workspace-coverage-mount
- *   - All other rail items → fall back to legacy #legacy-workspace-host with
- *     the appropriate legacy tab activated (subsequent rounds migrate each)
+ * Rail navigation mounts each workspace view into its own slot.
  *   - state/coverage.installRecomputeTrigger() runs once at boot so coverage
  *     stays in sync with regimen mutations.
  * ═══════════════════════════════════════════════════════════════════════════
@@ -49,47 +46,8 @@ interface MountedView {
   unmount: () => void;
 }
 
-/** Maps rail target → the legacy tab ID that should be active when not migrated. */
-const LEGACY_TAB_FOR: Record<WorkspaceTarget, string> = {
-  coverage: 'tab-stand',
-  regimen: 'tab-regimen',
-  scanner: 'tab-tools',
-  knowledge: 'tab-why',
-  journey: 'tab-journey',
-};
-
 /** Tracks each workspace's mount handle for unmount on switch-away. */
 const mounted: Partial<Record<WorkspaceTarget, MountedView>> = {};
-
-function getLegacyHost(): HTMLElement | null {
-  return document.getElementById('legacy-workspace-host');
-}
-
-function showLegacy(target: WorkspaceTarget): void {
-  const host = getLegacyHost();
-  if (host === null) {
-    return;
-  }
-  host.style.display = '';
-  // Switch the legacy inner tab if a legacy tab-switcher is available
-  const legacyTabId = LEGACY_TAB_FOR[target];
-  const w = window as Window & { showTab?: (id: string) => void };
-  if (typeof w.showTab === 'function') {
-    try {
-      w.showTab(legacyTabId);
-    }
-    catch (e) {
-      console.warn('[main] legacy showTab threw:', e);
-    }
-  }
-}
-
-function hideLegacy(): void {
-  const host = getLegacyHost();
-  if (host !== null) {
-    host.style.display = 'none';
-  }
-}
 
 function hideAllNewMounts(): void {
   for (const id of ['workspace-coverage-mount', 'workspace-regimen-mount', 'workspace-scanner-mount']) {
@@ -149,7 +107,6 @@ function navigateTo(target: WorkspaceTarget): void {
   hideAllNewMounts();
 
   if (target === 'coverage') {
-    hideLegacy();
     const mountEl = document.getElementById('workspace-coverage-mount');
     if (mountEl === null) {
       return;
@@ -162,7 +119,6 @@ function navigateTo(target: WorkspaceTarget): void {
   }
 
   if (target === 'regimen') {
-    hideLegacy();
     const mountEl = document.getElementById('workspace-regimen-mount');
     if (mountEl === null) {
       return;
@@ -175,7 +131,6 @@ function navigateTo(target: WorkspaceTarget): void {
   }
 
   if (target === 'scanner') {
-    hideLegacy();
     const mountEl = document.getElementById('workspace-scanner-mount');
     if (mountEl === null) {
       return;
@@ -187,8 +142,6 @@ function navigateTo(target: WorkspaceTarget): void {
     return;
   }
 
-  // Other workspaces fall back to legacy until their round lands.
-  showLegacy(target);
 }
 
 function wireRail(): void {

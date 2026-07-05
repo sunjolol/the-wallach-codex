@@ -14,10 +14,10 @@
  *   the Wallach targets DB, owned by Luneth. Read via getElementById +
  *   JSON.parse + Zod (same boundary discipline as views/knowledge.ts).
  *
- * LIVE CLASSIFIER (Chunk 2.2 — native reimpl of the legacy engine):
- *   A faithful port of legacy-dashboard.js `computeLiveCoverage()` +
+ * LIVE CLASSIFIER (Chunk 2.2 — native reimpl of the original engine):
+ *   A faithful port of the original `computeLiveCoverage()` +
  *   `classifyLive()` + `toMg()` + `matchToEssential()`. The page no longer
- *   loads legacy-dashboard.js, so the math lives here now — but every NUMBER
+ *   loads inline legacy JS, so the math lives here now — but every NUMBER
  *   still comes from Luneth's data (target.low/unit from the targets DB; nutrient
  *   amounts from regimen item labels). Nothing is invented; §00.A holds.
  *
