@@ -1436,7 +1436,7 @@ def check_legacy_css_contained():
 
 def check_corpus_integrity():
     """Phase alpha — eden/corpus sealed claim-graph integrity. Delegates to the single
-    implementation eden/tools/corpus_verify.py (one source of the 11 checks, no
+    implementation eden/tools/corpus_verify.py (one source of the 12 checks, no
     duplication): exit 0 = sealed & healthy, 2 = BOOTSTRAP (unsealed; always-valid
     checks passed), 1 = FAIL. Truth-anchored on book bytes + golden hashes."""
     verify = ROOT / "eden" / "tools" / "corpus_verify.py"
@@ -1450,6 +1450,28 @@ def check_corpus_integrity():
     if r.returncode in (0, 2):
         return True, head
     return False, f"corpus integrity FAIL: {head}"
+
+
+def check_references_resolve():
+    """Charter R3 -- references_resolve. Every condition/symptom slug a claim maps to MUST
+    be pre-registered in the Catalog pillar (eden/catalog/{conditions,symptoms}.json). This
+    closes the phantom-slug hole: before Phase B a typo'd slug ('diabtes') silently minted a
+    brand-new condition in the derived index with nothing to catch it. Delegates to the single
+    implementation eden/tools/corpus_verify.py::unresolved_references (one source, no
+    duplication). Skipped (pass) until the catalog is installed (bootstrap-safe). Truth-anchored
+    on the sealed claim shards x the catalog registries, recomputed each run."""
+    if not (ROOT / "eden" / "catalog" / "conditions.json").exists():
+        return True, "eden/catalog not installed (bootstrap-guard)"
+    sys.path.insert(0, str(ROOT / "eden" / "tools"))
+    import corpus_verify
+    unresolved = corpus_verify.unresolved_references()
+    if unresolved:
+        return False, (f"{len(unresolved)} claim slug(s) reference an UNREGISTERED "
+                       f"condition/symptom (add to eden/catalog/): {unresolved[0]}"
+                       f"{' ...' if len(unresolved) > 1 else ''}")
+    import catalog
+    return True, (f"all claim condition/symptom slugs resolve to the Catalog "
+                  f"({len(catalog.condition_slugs())} conditions, {len(catalog.symptom_slugs())} symptoms registered)")
 
 
 def check_corpus_runtime_purity():
@@ -1568,7 +1590,7 @@ def check_verbatim_names_mapped_conditions():
     The allowlist shrinks to {} as verbatims are extended / mappings dropped and the
     baseline is regenerated. Truth-anchored on the sealed shard verbatims x the derived
     conditions index (exactly what surfaces under a condition; search-only excluded),
-    matched name-or-synonym via eden/tools/condition-synonyms.json. The matcher +
+    matched name-or-synonym via the Catalog pillar (eden/catalog/conditions.json). The matcher +
     baseline logic live in eden/tools/verbatim_audit.py. See memory
     verbatim-must-name-mapped-condition."""
     if not (ROOT / "eden" / "corpus" / "indices" / "conditions.json").exists():
@@ -1635,7 +1657,7 @@ def check_verbatim_over_soft_limit():
 def check_umbrella_proxy_named():
     """Umbrella named-by-proxy (Luneth SESSION 37): a broad 'library' condition (e.g.
     cancer) is accepted as named when a claim's verbatim names a registered CHILD
-    subtype (e.g. leukemia) via eden/tools/condition-taxonomy.json — child->parent
+    subtype (e.g. leukemia) via the Catalog pillar (eden/catalog/conditions.json, umbrella_of) — child->parent
     only. The exact-condition-named rule stays the DEFAULT; this info check LISTS every
     proxy-satisfied mapping each board run so a human eye stays on each umbrella
     exception. Never fails. memory: condition-umbrella-taxonomy."""
@@ -2092,7 +2114,7 @@ INVARIANTS = [
         name="verbatim_names_mapped_conditions",
         description="every claim shown under a condition names that condition (or a registered synonym) in its verbatim; NEW violations beyond the remediation baseline block the board",
         check_fn=check_verbatim_names_mapped_conditions,
-        truth_anchor="sealed shard verbatims x derived conditions index (what surfaces under a condition), name-or-synonym via eden/tools/condition-synonyms.json; allowlist eden/tools/verbatim-audit-baseline.json",
+        truth_anchor="sealed shard verbatims x derived conditions index (what surfaces under a condition), name-or-synonym via the Catalog pillar (eden/catalog/conditions.json); allowlist eden/tools/verbatim-audit-baseline.json",
         severity="critical",
         lesson_ref="SESSION 31 (2026-07-01) — Luneth: a quote shown under a condition must NAME it or the link is unverifiable; regressed because it was prose not a machine guard; memory verbatim-must-name-mapped-condition",
     ),
@@ -2106,11 +2128,19 @@ INVARIANTS = [
     ),
     Invariant(
         name="umbrella_proxy_named",
-        description="informational: lists every umbrella condition accepted as named-by-proxy because the verbatim names a child subtype (leukemia->cancer) via condition-taxonomy.json; keeps a human eye on each exception; never fails",
+        description="informational: lists every umbrella condition accepted as named-by-proxy because the verbatim names a child subtype (leukemia->cancer) via the Catalog pillar (eden/catalog/conditions.json, umbrella_of); keeps a human eye on each exception; never fails",
         check_fn=check_umbrella_proxy_named,
-        truth_anchor="condition-taxonomy.json x sealed shard verbatims x conditions index",
+        truth_anchor="the Catalog pillar umbrella_of (eden/catalog/conditions.json) x sealed shard verbatims x conditions index",
         severity="info",
         lesson_ref="SESSION 37 (2026-07-01) — Luneth: keep specific subtypes as own tags AND surface under the umbrella; make logical child->parent exceptions but notify per case; memory condition-umbrella-taxonomy",
+    ),
+    Invariant(
+        name="references_resolve",
+        description="every condition/symptom slug a claim maps to is pre-registered in the Catalog pillar (eden/catalog/{conditions,symptoms}.json); an unregistered slug (typo / phantom condition) is RED -- closes the phantom-slug hole",
+        check_fn=check_references_resolve,
+        truth_anchor="sealed claim shards (eden/corpus/claims/*) x the catalog registries (eden/catalog/*), recomputed each run via corpus_verify.unresolved_references -- no stale-to-stale comparison",
+        severity="critical",
+        lesson_ref="Blueprint Phase B / Charter R3 -- promoting conditions+symptoms from emergent-claim-slugs to a pre-registered catalog: before this a typo'd slug silently minted a condition in the derived index with nothing to catch it. memory: overhaul-blueprint-active-plan",
     ),
     Invariant(
         name="book_source_clean",

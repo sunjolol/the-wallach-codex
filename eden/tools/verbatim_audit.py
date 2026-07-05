@@ -35,9 +35,9 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent            # eden/tools
 CORPUS = HERE.parent / "corpus"                    # eden/corpus
 ROOT = HERE.parent.parent                          # repo root
-SYN_PATH = HERE / "condition-synonyms.json"
 BASELINE_PATH = HERE / "verbatim-audit-baseline.json"
-TAX_PATH = HERE / "condition-taxonomy.json"
+sys.path.insert(0, str(HERE))
+import catalog  # noqa: E402  (Catalog pillar loader -- condition synonyms + taxonomy single-sourced)
 
 # Words with no discriminating power for a condition name — dropped before match.
 STOP = {"disease", "diseases", "syndrome", "disorder", "the", "and", "of", "chronic",
@@ -91,20 +91,17 @@ def names(text_norm: str, slug: str, display: str, syn: dict) -> bool:
 
 
 def load_syn() -> dict:
-    if not SYN_PATH.exists():
-        return {}
-    return {k: v for k, v in json.loads(SYN_PATH.read_text(encoding="utf-8")).items()
-            if not k.startswith("_")}
+    """Condition synonyms, single-sourced from the Catalog pillar (eden/catalog/
+    conditions.json) -- key = condition slug, value = alt phrasings Wallach uses."""
+    return catalog.condition_synonyms()
 
 
 _TAXONOMY = None
 
 
 def load_taxonomy() -> dict:
-    if not TAX_PATH.exists():
-        return {}
-    return {k: v for k, v in json.loads(TAX_PATH.read_text(encoding="utf-8")).items()
-            if not k.startswith("_")}
+    """Umbrella->children map, single-sourced from the Catalog pillar."""
+    return catalog.condition_taxonomy()
 
 
 def taxonomy() -> dict:

@@ -1,0 +1,2143 @@
+{
+  "schema_version": 1,
+  "_doctrine": "The pre-registered condition catalog -- the SINGLE home for each condition's identity (display_name), umbrella->subtype structure (umbrella_of), and Wallach's synonym phrasings. Promoted 2026-07-05 (Phase B) from the emergent derived index + eden/tools/{condition-taxonomy,condition-synonyms}.json + corpus_derive DISPLAY_OVERRIDES (all retired). A claim may reference a condition slug ONLY if it appears here (references_resolve gate) -- closing the phantom-slug hole where a typo silently minted a condition. Hand-edited pillar: register a NEW condition here BEFORE mining a claim that maps to it. User is sole writer once sealed. SYNONYM MATCHING is OCR-folded, punctuation-insensitive, all-words-present; significant words of display_name + slug tokens are accepted implicitly, so list only DIFFERENT wordings. UMBRELLA_OF children must be real condition slugs (child->parent only; naming 'cancer' does NOT name 'leukemia'). display_name for the search-only slugs absent from the operational index is humanize(slug).",
+  "sealed_at": null,
+  "counts": {
+    "conditions": 512,
+    "umbrellas": 7,
+    "with_synonyms": 118
+  },
+  "conditions": {
+    "abrasions": {
+      "display_name": "Abrasions"
+    },
+    "abscess": {
+      "display_name": "Abscess"
+    },
+    "absence_attacks": {
+      "display_name": "Absence Attacks"
+    },
+    "achalasia": {
+      "display_name": "Achalasia"
+    },
+    "achlorhydria": {
+      "display_name": "Achlorhydria"
+    },
+    "acidosis": {
+      "display_name": "Acidosis"
+    },
+    "acne": {
+      "display_name": "Acne"
+    },
+    "acrodermatitis_enteropathica": {
+      "display_name": "Acrodermatitis Enteropathica"
+    },
+    "addisons_disease": {
+      "display_name": "Addisons Disease",
+      "synonyms": [
+        "addison"
+      ]
+    },
+    "adhd": {
+      "display_name": "Adhd"
+    },
+    "adrenal_exhaustion": {
+      "display_name": "Adrenal Exhaustion"
+    },
+    "adrenoleukodystrophy": {
+      "display_name": "Adrenoleukodystrophy",
+      "synonyms": [
+        "adrenoleucodystrophy"
+      ]
+    },
+    "ageusia": {
+      "display_name": "Ageusia",
+      "synonyms": [
+        "loss of taste",
+        "loss of the sense of taste"
+      ]
+    },
+    "aids": {
+      "display_name": "Aids"
+    },
+    "airway_obstruction": {
+      "display_name": "Airway Obstruction"
+    },
+    "alcoholism": {
+      "display_name": "Alcoholism"
+    },
+    "alkalosis": {
+      "display_name": "Alkalosis"
+    },
+    "allergies": {
+      "display_name": "Allergies"
+    },
+    "alopecia": {
+      "display_name": "Alopecia",
+      "synonyms": [
+        "hair loss"
+      ]
+    },
+    "als": {
+      "display_name": "Als",
+      "synonyms": [
+        "lou gehrig",
+        "amyotrophic lateral sclerosis"
+      ]
+    },
+    "alzheimers": {
+      "display_name": "Alzheimers",
+      "synonyms": [
+        "alzheimer"
+      ]
+    },
+    "amblyopia": {
+      "display_name": "Amblyopia"
+    },
+    "amebiasis": {
+      "display_name": "Amebiasis"
+    },
+    "amenorrhea": {
+      "display_name": "Amenorrhea"
+    },
+    "anal_abscess": {
+      "display_name": "Anal Abscess"
+    },
+    "anaphylaxis": {
+      "display_name": "Anaphylaxis"
+    },
+    "anemia": {
+      "display_name": "Anemia",
+      "umbrella_of": [
+        "pernicious_anemia",
+        "sickle_cell_anemia"
+      ]
+    },
+    "anencephaly": {
+      "display_name": "Anencephaly"
+    },
+    "aneurysm": {
+      "display_name": "Aneurysm",
+      "synonyms": [
+        "aneurysm",
+        "aneurism"
+      ]
+    },
+    "angina": {
+      "display_name": "Angina"
+    },
+    "angular_stomatitis": {
+      "display_name": "Angular Stomatitis"
+    },
+    "ankylosing_spondylitis": {
+      "display_name": "Ankylosing Spondylitis"
+    },
+    "anorexia": {
+      "display_name": "Anorexia"
+    },
+    "anorexia_nervosa": {
+      "display_name": "Anorexia Nervosa"
+    },
+    "anosmia": {
+      "display_name": "Anosmia",
+      "synonyms": [
+        "loss of smell",
+        "loss of the sense of smell",
+        "lost sense of smell"
+      ]
+    },
+    "anxiety": {
+      "display_name": "Anxiety"
+    },
+    "aphthous_stomatitis": {
+      "display_name": "Aphthous Stomatitis"
+    },
+    "arsenic_toxicity": {
+      "display_name": "Arsenic Toxicity"
+    },
+    "arteriosclerosis": {
+      "display_name": "Arteriosclerosis"
+    },
+    "arthritis": {
+      "display_name": "Arthritis",
+      "synonyms": [
+        "arthritis",
+        "arthritic"
+      ],
+      "umbrella_of": [
+        "gout",
+        "osteoarthritis",
+        "rheumatoid_arthritis"
+      ]
+    },
+    "asthma": {
+      "display_name": "Asthma"
+    },
+    "atherosclerosis": {
+      "display_name": "Atherosclerosis",
+      "synonyms": [
+        "atherosclerosis",
+        "arteriosclerosis",
+        "hardening of the arteries",
+        "aortic cholesterol plaque"
+      ]
+    },
+    "athletes_foot": {
+      "display_name": "Athletes Foot"
+    },
+    "atopic_asthma": {
+      "display_name": "Atopic Asthma"
+    },
+    "atopic_dermatitis": {
+      "display_name": "Atopic Dermatitis"
+    },
+    "atrial_fibrillation": {
+      "display_name": "Atrial Fibrillation"
+    },
+    "autism": {
+      "display_name": "Autism"
+    },
+    "autoimmune_disorders": {
+      "display_name": "Autoimmune Disorders"
+    },
+    "backache": {
+      "display_name": "Backache",
+      "synonyms": [
+        "low back",
+        "lower back",
+        "back pain"
+      ]
+    },
+    "bad_breath": {
+      "display_name": "Bad Breath"
+    },
+    "basal_cell_carcinoma": {
+      "display_name": "Basal Cell Carcinoma"
+    },
+    "bedsores": {
+      "display_name": "Bedsores"
+    },
+    "bedwetting": {
+      "display_name": "Bedwetting",
+      "synonyms": [
+        "bed wetting",
+        "bedwetting",
+        "enuresis"
+      ]
+    },
+    "bee_stings": {
+      "display_name": "Bee Stings"
+    },
+    "bells_palsy": {
+      "display_name": "Bells Palsy",
+      "synonyms": [
+        "bell palsy",
+        "bells palsy",
+        "bell",
+        "facial nerve paralysis",
+        "facial paralysis"
+      ]
+    },
+    "benign_prostatic_hyperplasia": {
+      "display_name": "Benign Prostatic Hyperplasia",
+      "synonyms": [
+        "benign prostatic hypertrophy",
+        "enlarged prostate",
+        "prostate enlarges",
+        "prostate enlargement",
+        "prostate gland enlarges"
+      ]
+    },
+    "beriberi": {
+      "display_name": "Beriberi"
+    },
+    "bipolar_disorder": {
+      "display_name": "Bipolar Disorder",
+      "synonyms": [
+        "bi polar",
+        "manic depression",
+        "manic depressive",
+        "bipolar"
+      ]
+    },
+    "birth_defects": {
+      "display_name": "Birth Defects",
+      "synonyms": [
+        "birth defect",
+        "congenital defect",
+        "congenital birth defect"
+      ],
+      "umbrella_of": [
+        "cerebral_palsy",
+        "cleft_lip",
+        "cleft_palate",
+        "down_syndrome",
+        "heart_defects",
+        "neural_tube_defects",
+        "spina_bifida"
+      ]
+    },
+    "bladder_stones": {
+      "display_name": "Bladder Stones"
+    },
+    "bleeding": {
+      "display_name": "Bleeding"
+    },
+    "bleeding_bowels": {
+      "display_name": "Bleeding Bowels",
+      "synonyms": [
+        "gl bleeding",
+        "gi bleeding",
+        "intestinal bleeding"
+      ]
+    },
+    "bleeding_gums": {
+      "display_name": "Bleeding Gums"
+    },
+    "blepharitis": {
+      "display_name": "Blepharitis",
+      "synonyms": [
+        "blephritis"
+      ]
+    },
+    "blind_rage": {
+      "display_name": "Blind Rage",
+      "synonyms": [
+        "dr. jekyll/mr. hyde rages",
+        "bad seeds"
+      ]
+    },
+    "blindness": {
+      "display_name": "Blindness"
+    },
+    "bloating": {
+      "display_name": "Bloating"
+    },
+    "body_odor": {
+      "display_name": "Body Odor"
+    },
+    "boils": {
+      "display_name": "Boils"
+    },
+    "bone_pain": {
+      "display_name": "Bone Pain"
+    },
+    "bone_spurs": {
+      "display_name": "Bone Spurs"
+    },
+    "brain_cancer": {
+      "display_name": "Brain Cancer"
+    },
+    "breast_cancer": {
+      "display_name": "Breast Cancer"
+    },
+    "breast_cysts": {
+      "display_name": "Breast Cysts"
+    },
+    "breast_tenderness": {
+      "display_name": "Breast Tenderness"
+    },
+    "brittle_hair": {
+      "display_name": "Brittle Hair"
+    },
+    "brittle_nails": {
+      "display_name": "Brittle Nails"
+    },
+    "bronchitis": {
+      "display_name": "Bronchitis"
+    },
+    "bruises": {
+      "display_name": "Bruises",
+      "synonyms": [
+        "bruising",
+        "bruise"
+      ]
+    },
+    "bruxism": {
+      "display_name": "Bruxism"
+    },
+    "bulimia": {
+      "display_name": "Bulimia"
+    },
+    "burns": {
+      "display_name": "Burns"
+    },
+    "bursitis": {
+      "display_name": "Bursitis"
+    },
+    "bush_sickness": {
+      "display_name": "Bush Sickness"
+    },
+    "calcium_deposits": {
+      "display_name": "Calcium Deposits"
+    },
+    "cancer": {
+      "display_name": "Cancer",
+      "umbrella_of": [
+        "basal_cell_carcinoma",
+        "brain_cancer",
+        "breast_cancer",
+        "carcinoma",
+        "colon_cancer",
+        "esophageal_cancer",
+        "leukemia",
+        "liver_cancer",
+        "lung_cancer",
+        "melanoma",
+        "osteosarcoma",
+        "pancreatic_cancer",
+        "prostate_cancer",
+        "sarcoma",
+        "stomach_cancer",
+        "throat_cancer",
+        "thyroid_cancer",
+        "uterine_cancer"
+      ]
+    },
+    "candidiasis": {
+      "display_name": "Candidiasis",
+      "synonyms": [
+        "candida albicans",
+        "candida"
+      ]
+    },
+    "canker_sores": {
+      "display_name": "Canker Sores"
+    },
+    "carcinoma": {
+      "display_name": "Carcinoma"
+    },
+    "cardiac_arrest": {
+      "display_name": "Cardiac Arrest"
+    },
+    "cardiac_arrhythmia": {
+      "display_name": "Cardiac Arrhythmia"
+    },
+    "cardiac_failure": {
+      "display_name": "Cardiac Failure"
+    },
+    "cardiomyopathy": {
+      "display_name": "Cardiomyopathy",
+      "synonyms": [
+        "heart muscle disease",
+        "cardiomyopathy",
+        "keshan"
+      ]
+    },
+    "cardiovascular_disease": {
+      "display_name": "Cardiovascular Disease",
+      "synonyms": [
+        "cardiovascular",
+        "heart disease",
+        "arterial disease"
+      ]
+    },
+    "carpal_tunnel_syndrome": {
+      "display_name": "Carpal Tunnel Syndrome"
+    },
+    "cataracts": {
+      "display_name": "Cataracts"
+    },
+    "catarrh": {
+      "display_name": "Catarrh"
+    },
+    "celiac_disease": {
+      "display_name": "Celiac Disease"
+    },
+    "cerebellar_hypoplasia": {
+      "display_name": "Cerebellar Hypoplasia",
+      "synonyms": [
+        "hypoplasia cerebellum",
+        "hypoplasia of the cerebellum"
+      ]
+    },
+    "cerebral_palsy": {
+      "display_name": "Cerebral Palsy"
+    },
+    "cerebrovascular_disease": {
+      "display_name": "Cerebrovascular Disease"
+    },
+    "cervical_dysplasia": {
+      "display_name": "Cervical Dysplasia"
+    },
+    "chalazion": {
+      "display_name": "Chalazion"
+    },
+    "cheilosis": {
+      "display_name": "Cheilosis",
+      "synonyms": [
+        "chelosis",
+        "cheilosis"
+      ]
+    },
+    "chicken_pox": {
+      "display_name": "Chicken Pox"
+    },
+    "chiggers": {
+      "display_name": "Chiggers"
+    },
+    "chilblains": {
+      "display_name": "Chilblains"
+    },
+    "chills": {
+      "display_name": "Chills"
+    },
+    "chondrodystrophy": {
+      "display_name": "Chondrodystrophy"
+    },
+    "chondromalacia": {
+      "display_name": "Chondromalacia"
+    },
+    "chorea": {
+      "display_name": "Chorea"
+    },
+    "chronic_fatigue": {
+      "display_name": "Chronic Fatigue"
+    },
+    "chronic_fatigue_syndrome": {
+      "display_name": "Chronic Fatigue Syndrome"
+    },
+    "chronic_obstructive_pulmonary_disease": {
+      "display_name": "Chronic Obstructive Pulmonary Disease"
+    },
+    "chronic_wounds": {
+      "display_name": "Chronic Wounds"
+    },
+    "circulatory_disease": {
+      "display_name": "Circulatory Disease"
+    },
+    "cirrhosis": {
+      "display_name": "Cirrhosis"
+    },
+    "cleft_lip": {
+      "display_name": "Cleft Lip"
+    },
+    "cleft_palate": {
+      "display_name": "Cleft Palate"
+    },
+    "cluster_headaches": {
+      "display_name": "Cluster Headaches"
+    },
+    "cold_sores": {
+      "display_name": "Cold Sores"
+    },
+    "colds": {
+      "display_name": "Colds"
+    },
+    "colic": {
+      "display_name": "Colic"
+    },
+    "colitis": {
+      "display_name": "Colitis"
+    },
+    "collagen_disease": {
+      "display_name": "Collagen Disease"
+    },
+    "colon_cancer": {
+      "display_name": "Colon Cancer"
+    },
+    "common_cold": {
+      "display_name": "Common Cold"
+    },
+    "compression_fractures": {
+      "display_name": "Compression Fractures"
+    },
+    "congenital_ataxia": {
+      "display_name": "Congenital Ataxia"
+    },
+    "congested_lungs": {
+      "display_name": "Congested Lungs"
+    },
+    "congestive_heart_failure": {
+      "display_name": "Congestive Heart Failure"
+    },
+    "conjunctivitis": {
+      "display_name": "Conjunctivitis"
+    },
+    "constipation": {
+      "display_name": "Constipation"
+    },
+    "convulsions": {
+      "display_name": "Convulsions",
+      "synonyms": [
+        "seizures",
+        "seizure"
+      ]
+    },
+    "cor_pulmonale": {
+      "display_name": "Cor Pulmonale"
+    },
+    "corneal_ulcers": {
+      "display_name": "Corneal Ulcers"
+    },
+    "coronary_artery_disease": {
+      "display_name": "Coronary Artery Disease",
+      "synonyms": [
+        "coronary artery",
+        "coronary heart",
+        "coronary occlusion",
+        "coronary blood vessel disease"
+      ]
+    },
+    "cough": {
+      "display_name": "Cough"
+    },
+    "cradle_cap": {
+      "display_name": "Cradle Cap"
+    },
+    "cretinism": {
+      "display_name": "Cretinism",
+      "synonyms": [
+        "cretinism",
+        "cretin"
+      ]
+    },
+    "creutzfeldt_jakob_disease": {
+      "display_name": "Creutzfeldt Jakob Disease"
+    },
+    "criminal_behavior": {
+      "display_name": "Criminal Behavior",
+      "synonyms": [
+        "bad seed"
+      ]
+    },
+    "crohns_disease": {
+      "display_name": "Crohns Disease",
+      "synonyms": [
+        "crohn"
+      ]
+    },
+    "cuts": {
+      "display_name": "Cuts"
+    },
+    "cystic_fibrosis": {
+      "display_name": "Cystic Fibrosis",
+      "synonyms": [
+        "cystic fibrosis",
+        "mucoviscidosis"
+      ]
+    },
+    "cystitis": {
+      "display_name": "Cystitis"
+    },
+    "dandruff": {
+      "display_name": "Dandruff"
+    },
+    "deafness": {
+      "display_name": "Deafness"
+    },
+    "degenerative_arthritis": {
+      "display_name": "Degenerative Arthritis"
+    },
+    "degenerative_disc_disease": {
+      "display_name": "Degenerative Disc Disease",
+      "synonyms": [
+        "disc disease"
+      ]
+    },
+    "dementia": {
+      "display_name": "Dementia",
+      "umbrella_of": [
+        "alzheimers",
+        "vascular_dementia"
+      ]
+    },
+    "demyelination": {
+      "display_name": "Demyelination"
+    },
+    "dental_calculus": {
+      "display_name": "Dental Calculus"
+    },
+    "dental_fluorosis": {
+      "display_name": "Dental Fluorosis"
+    },
+    "depression": {
+      "display_name": "Depression",
+      "synonyms": [
+        "depressed"
+      ]
+    },
+    "dermatitis": {
+      "display_name": "Dermatitis",
+      "umbrella_of": [
+        "atopic_dermatitis",
+        "seborrheic_dermatitis",
+        "eczema"
+      ]
+    },
+    "dermatosis": {
+      "display_name": "Dermatosis"
+    },
+    "diabetes": {
+      "display_name": "Diabetes"
+    },
+    "diaper_rash": {
+      "display_name": "Diaper Rash"
+    },
+    "diarrhea": {
+      "display_name": "Diarrhea"
+    },
+    "diplopia": {
+      "display_name": "Diplopia"
+    },
+    "disagreeable_attitude": {
+      "display_name": "Disagreeable Attitude",
+      "synonyms": [
+        "quarrelsome attitude",
+        "quarrelsome",
+        "sullen",
+        "disagreeable"
+      ]
+    },
+    "diverticulitis": {
+      "display_name": "Diverticulitis"
+    },
+    "dowagers_hump": {
+      "display_name": "Dowagers Hump",
+      "synonyms": [
+        "dowager's hump",
+        "dowagers hump"
+      ]
+    },
+    "down_syndrome": {
+      "display_name": "Down Syndrome"
+    },
+    "dropsy": {
+      "display_name": "Dropsy"
+    },
+    "drug_addiction": {
+      "display_name": "Drug Addiction"
+    },
+    "dry_skin": {
+      "display_name": "Dry Skin"
+    },
+    "dumping_syndrome": {
+      "display_name": "Dumping Syndrome"
+    },
+    "dysentery": {
+      "display_name": "Dysentery"
+    },
+    "dyslexia": {
+      "display_name": "Dyslexia"
+    },
+    "dysmenorrhea": {
+      "display_name": "Dysmenorrhea"
+    },
+    "dyspepsia": {
+      "display_name": "Dyspepsia"
+    },
+    "dysphagia": {
+      "display_name": "Dysphagia"
+    },
+    "earache": {
+      "display_name": "Earache"
+    },
+    "ecchymosis": {
+      "display_name": "Ecchymosis",
+      "synonyms": [
+        "ecchymoses",
+        "ecchymosis"
+      ]
+    },
+    "eclampsia": {
+      "display_name": "Eclampsia"
+    },
+    "eczema": {
+      "display_name": "Eczema"
+    },
+    "edema": {
+      "display_name": "Edema"
+    },
+    "electric_shock": {
+      "display_name": "Electric Shock"
+    },
+    "emphysema": {
+      "display_name": "Emphysema"
+    },
+    "encephalopathy": {
+      "display_name": "Encephalopathy"
+    },
+    "enuresis": {
+      "display_name": "Enuresis"
+    },
+    "enzootic_ataxia": {
+      "display_name": "Enzootic Ataxia"
+    },
+    "epilepsy": {
+      "display_name": "Epilepsy"
+    },
+    "erbs_palsy": {
+      "display_name": "Erbs Palsy"
+    },
+    "erectile_dysfunction": {
+      "display_name": "Erectile Dysfunction"
+    },
+    "esophageal_cancer": {
+      "display_name": "Esophageal Cancer"
+    },
+    "exophthalmos": {
+      "display_name": "Exophthalmos"
+    },
+    "explosive_outbursts": {
+      "display_name": "Explosive Outbursts",
+      "synonyms": [
+        "explosive behavior",
+        "explosive outburst",
+        "bad seeds"
+      ]
+    },
+    "eye_redness": {
+      "display_name": "Eye Redness",
+      "synonyms": [
+        "capillary injection"
+      ]
+    },
+    "failure_to_thrive": {
+      "display_name": "Failure To Thrive",
+      "synonyms": [
+        "poor growth",
+        "poor growth rate",
+        "impaired growth"
+      ]
+    },
+    "fatty_liver": {
+      "display_name": "Fatty Liver"
+    },
+    "fever": {
+      "display_name": "Fever"
+    },
+    "fibrocystic_breast_disease": {
+      "display_name": "Fibrocystic Breast Disease"
+    },
+    "fibromyalgia": {
+      "display_name": "Fibromyalgia"
+    },
+    "flatulence": {
+      "display_name": "Flatulence"
+    },
+    "food_allergy": {
+      "display_name": "Food Allergy",
+      "synonyms": [
+        "food allergy",
+        "food allergies",
+        "food sensitivit"
+      ]
+    },
+    "fractures": {
+      "display_name": "Fractures"
+    },
+    "freckles": {
+      "display_name": "Freckles"
+    },
+    "gallstones": {
+      "display_name": "Gallstones",
+      "synonyms": [
+        "gallstones",
+        "gall stones",
+        "biliary calculi"
+      ]
+    },
+    "gangrene": {
+      "display_name": "Gangrene"
+    },
+    "gastroparesis": {
+      "display_name": "Gastroparesis"
+    },
+    "geographic_tongue": {
+      "display_name": "Geographic Tongue"
+    },
+    "gestational_diabetes": {
+      "display_name": "Gestational Diabetes",
+      "synonyms": [
+        "pregnancy onset diabetes"
+      ]
+    },
+    "gingivitis": {
+      "display_name": "Gingivitis"
+    },
+    "glaucoma": {
+      "display_name": "Glaucoma"
+    },
+    "glucose_intolerance": {
+      "display_name": "Glucose Intolerance",
+      "synonyms": [
+        "reduced carbohydrate tolerance",
+        "reduced glucose tolerance"
+      ]
+    },
+    "goiter": {
+      "display_name": "Goiter",
+      "synonyms": [
+        "goiter",
+        "goitre"
+      ]
+    },
+    "gout": {
+      "display_name": "Gout"
+    },
+    "graves_disease": {
+      "display_name": "Graves Disease",
+      "synonyms": [
+        "graves",
+        "grave s",
+        "hyperthyroid"
+      ]
+    },
+    "gray_hair": {
+      "display_name": "Gray Hair",
+      "synonyms": [
+        "silver hair",
+        "grey hair",
+        "loss of hair color"
+      ]
+    },
+    "growing_pains": {
+      "display_name": "Growing Pains"
+    },
+    "hangnails": {
+      "display_name": "Hangnails"
+    },
+    "hashimotos_disease": {
+      "display_name": "Hashimotos Disease",
+      "synonyms": [
+        "hashimoto",
+        "hashimotos"
+      ]
+    },
+    "hay_fever": {
+      "display_name": "Hay Fever"
+    },
+    "headache": {
+      "display_name": "Headache"
+    },
+    "heart_attack": {
+      "display_name": "Heart Attack"
+    },
+    "heart_defects": {
+      "display_name": "Heart Defects"
+    },
+    "heart_failure": {
+      "display_name": "Heart Failure"
+    },
+    "heartburn": {
+      "display_name": "Heartburn",
+      "synonyms": [
+        "reflux"
+      ]
+    },
+    "heat_stroke": {
+      "display_name": "Heat Stroke"
+    },
+    "heavy_metal_toxicity": {
+      "display_name": "Heavy Metal Toxicity"
+    },
+    "heel_spurs": {
+      "display_name": "Heel Spurs"
+    },
+    "hemochromatosis": {
+      "display_name": "Hemochromatosis",
+      "synonyms": [
+        "iron storage disease",
+        "hemosiderosis"
+      ]
+    },
+    "hemorrhoids": {
+      "display_name": "Hemorrhoids"
+    },
+    "hepatitis": {
+      "display_name": "Hepatitis"
+    },
+    "hernia": {
+      "display_name": "Hernia"
+    },
+    "herpes_simplex": {
+      "display_name": "Herpes Simplex"
+    },
+    "hiatal_hernia": {
+      "display_name": "Hiatal Hernia"
+    },
+    "hiccoughs": {
+      "display_name": "Hiccoughs"
+    },
+    "high_cholesterol": {
+      "display_name": "High Cholesterol",
+      "synonyms": [
+        "elevated cholesterol",
+        "high cholesterol",
+        "hypercholesterolemia",
+        "high blood cholesterol",
+        "elevated blood cholesterol"
+      ]
+    },
+    "high_triglycerides": {
+      "display_name": "High Triglycerides",
+      "synonyms": [
+        "elevated blood triglycerides",
+        "elevated triglycerides",
+        "high triglycerides",
+        "hypertriglyceridemia"
+      ]
+    },
+    "hiv_aids": {
+      "display_name": "Hiv Aids",
+      "synonyms": [
+        "hiv infection"
+      ]
+    },
+    "hoarseness": {
+      "display_name": "Hoarseness"
+    },
+    "homosexuality": {
+      "display_name": "Homosexuality",
+      "synonyms": [
+        "gay",
+        "gay behavior",
+        "gay phenomena",
+        "gay lifestyle",
+        "homosexual"
+      ]
+    },
+    "huntingtons_disease": {
+      "display_name": "Huntingtons Disease",
+      "synonyms": [
+        "huntington"
+      ]
+    },
+    "hydrocephalus": {
+      "display_name": "Hydrocephalus"
+    },
+    "hyperacidity": {
+      "display_name": "Hyperacidity"
+    },
+    "hyperactivity": {
+      "display_name": "Hyperactivity"
+    },
+    "hypercalcemia": {
+      "display_name": "Hypercalcemia",
+      "synonyms": [
+        "elevation in blood calcium",
+        "elevated blood calcium",
+        "high blood calcium"
+      ]
+    },
+    "hyperinsulinemia": {
+      "display_name": "Hyperinsulinemia"
+    },
+    "hyperirritability": {
+      "display_name": "Hyperirritability",
+      "synonyms": [
+        "hyperirratability",
+        "hyper irritability"
+      ]
+    },
+    "hyperkinesis": {
+      "display_name": "Hyperkinesis"
+    },
+    "hyperparathyroidism": {
+      "display_name": "Hyperparathyroidism"
+    },
+    "hypertension": {
+      "display_name": "Hypertension",
+      "synonyms": [
+        "high blood pressure",
+        "elevated blood pressure",
+        "raised blood pressure"
+      ]
+    },
+    "hyperthyroidism": {
+      "display_name": "Hyperthyroidism",
+      "synonyms": [
+        "hyperthyroid",
+        "hypo hyperthyroid",
+        "hyper thyroid"
+      ]
+    },
+    "hypochlorhydria": {
+      "display_name": "Hypochlorhydria"
+    },
+    "hypoglycemia": {
+      "display_name": "Hypoglycemia",
+      "synonyms": [
+        "low blood sugar",
+        "reactive hypoglycemia",
+        "hypoglycemia"
+      ]
+    },
+    "hypogonadism": {
+      "display_name": "Hypogonadism"
+    },
+    "hypokalemia": {
+      "display_name": "Hypokalemia",
+      "synonyms": [
+        "hypokalemic"
+      ]
+    },
+    "hypophosphatemia": {
+      "display_name": "Hypophosphatemia"
+    },
+    "hypotension": {
+      "display_name": "Hypotension",
+      "synonyms": [
+        "low blood pressure"
+      ]
+    },
+    "hypothyroidism": {
+      "display_name": "Hypothyroidism",
+      "synonyms": [
+        "hypo hyperthyroid",
+        "hypothyroid"
+      ]
+    },
+    "hysteria": {
+      "display_name": "Hysteria"
+    },
+    "ichthyosis": {
+      "display_name": "Ichthyosis"
+    },
+    "immune_depression": {
+      "display_name": "Immune Depression",
+      "synonyms": [
+        "depressed immune",
+        "depressed immune system",
+        "lowered immune",
+        "lowered immune status",
+        "immune suppression",
+        "immunosuppression",
+        "reduced immunity",
+        "reduced immune",
+        "impaired immune",
+        "lowered resistance to infectious",
+        "lowered resistance to infection"
+      ]
+    },
+    "impetigo": {
+      "display_name": "Impetigo"
+    },
+    "impotence": {
+      "display_name": "Impotence"
+    },
+    "incontinence": {
+      "display_name": "Incontinence"
+    },
+    "indigestion": {
+      "display_name": "Indigestion"
+    },
+    "infarction": {
+      "display_name": "Infarction"
+    },
+    "infected_wounds": {
+      "display_name": "Infected Wounds"
+    },
+    "infection": {
+      "display_name": "Infection"
+    },
+    "infertility": {
+      "display_name": "Infertility"
+    },
+    "inflammation": {
+      "display_name": "Inflammation"
+    },
+    "influenza": {
+      "display_name": "Influenza"
+    },
+    "insomnia": {
+      "display_name": "Insomnia",
+      "synonyms": [
+        "insomnia",
+        "sleeplessness",
+        "cannot sleep"
+      ]
+    },
+    "intermittent_claudication": {
+      "display_name": "Intermittent Claudication"
+    },
+    "intersex": {
+      "display_name": "Intersex",
+      "synonyms": [
+        "hermaphrodite",
+        "hermaphroditism",
+        "intersexual"
+      ]
+    },
+    "irritable_bowel_syndrome": {
+      "display_name": "Irritable Bowel Syndrome"
+    },
+    "ischemic_heart_disease": {
+      "display_name": "Ischemic Heart Disease"
+    },
+    "itching": {
+      "display_name": "Itching"
+    },
+    "jaundice": {
+      "display_name": "Jaundice"
+    },
+    "joint_pain": {
+      "display_name": "Joint Pain",
+      "synonyms": [
+        "swollen joints",
+        "joint swelling"
+      ]
+    },
+    "kawasaki_disease": {
+      "display_name": "Kawasaki Disease"
+    },
+    "keratitis": {
+      "display_name": "Keratitis"
+    },
+    "keratomalacia": {
+      "display_name": "Keratomalacia"
+    },
+    "keratosis": {
+      "display_name": "Keratosis"
+    },
+    "kernicterus": {
+      "display_name": "Kernicterus"
+    },
+    "keshan_disease": {
+      "display_name": "Keshan Disease",
+      "synonyms": [
+        "ksd",
+        "keshan"
+      ]
+    },
+    "ketoacidosis": {
+      "display_name": "Ketoacidosis"
+    },
+    "ketosis": {
+      "display_name": "Ketosis"
+    },
+    "kidney_disease": {
+      "display_name": "Kidney Disease"
+    },
+    "kidney_stones": {
+      "display_name": "Kidney Stones",
+      "synonyms": [
+        "kidney stones",
+        "renal calculi",
+        "renal stones",
+        "nephrolithiasis"
+      ]
+    },
+    "korsakoffs_syndrome": {
+      "display_name": "Korsakoffs Syndrome",
+      "synonyms": [
+        "korsakoff",
+        "korsakoffs",
+        "wernicke"
+      ]
+    },
+    "kwashiorkor": {
+      "display_name": "Kwashiorkor"
+    },
+    "kyphosis": {
+      "display_name": "Kyphosis"
+    },
+    "labor": {
+      "display_name": "Labor"
+    },
+    "lactase_deficiency": {
+      "display_name": "Lactase Deficiency"
+    },
+    "lactose_intolerance": {
+      "display_name": "Lactose Intolerance"
+    },
+    "laryngitis": {
+      "display_name": "Laryngitis"
+    },
+    "lead_poisoning": {
+      "display_name": "Lead Poisoning"
+    },
+    "learning_disabilities": {
+      "display_name": "Learning Disabilities",
+      "synonyms": [
+        "learning disabilit",
+        "learning disorder"
+      ]
+    },
+    "legg_perthes": {
+      "display_name": "Legg Perthes",
+      "synonyms": [
+        "legg-perthe's disease",
+        "legg perthes disease",
+        "legg calve perthes disease"
+      ]
+    },
+    "legionnaires_disease": {
+      "display_name": "Legionnaires Disease"
+    },
+    "leptospirosis": {
+      "display_name": "Leptospirosis"
+    },
+    "leukemia": {
+      "display_name": "Leukemia"
+    },
+    "leukopenia": {
+      "display_name": "Leukopenia",
+      "synonyms": [
+        "leucopenia"
+      ]
+    },
+    "leukorrhea": {
+      "display_name": "Leukorrhea"
+    },
+    "lice": {
+      "display_name": "Lice"
+    },
+    "liver_cancer": {
+      "display_name": "Liver Cancer"
+    },
+    "liver_cirrhosis": {
+      "display_name": "Liver Cirrhosis"
+    },
+    "liver_disease": {
+      "display_name": "Liver Disease",
+      "umbrella_of": [
+        "fatty_liver",
+        "hepatitis",
+        "liver_cancer",
+        "liver_cirrhosis"
+      ]
+    },
+    "lordosis": {
+      "display_name": "Lordosis"
+    },
+    "low_back_pain": {
+      "display_name": "Low Back Pain",
+      "synonyms": [
+        "low back"
+      ]
+    },
+    "low_libido": {
+      "display_name": "Low Libido",
+      "synonyms": [
+        "loss of libido",
+        "disinterested in sex"
+      ]
+    },
+    "lung_cancer": {
+      "display_name": "Lung Cancer",
+      "synonyms": [
+        "bronchiogenic carcinoma",
+        "bronchogenic carcinoma"
+      ]
+    },
+    "lupus": {
+      "display_name": "Lupus"
+    },
+    "lyme_disease": {
+      "display_name": "Lyme Disease"
+    },
+    "macular_degeneration": {
+      "display_name": "Macular Degeneration"
+    },
+    "mad_cow_disease": {
+      "display_name": "Mad Cow Disease",
+      "synonyms": [
+        "bovine spongiform encephalopathy",
+        "bse"
+      ]
+    },
+    "malabsorption": {
+      "display_name": "Malabsorption",
+      "synonyms": [
+        "malabsorption",
+        "poor absorption",
+        "impaired absorption"
+      ]
+    },
+    "male_pattern_baldness": {
+      "display_name": "Male Pattern Baldness",
+      "synonyms": [
+        "baldness",
+        "hair loss",
+        "alopecia",
+        "balding"
+      ]
+    },
+    "malnutrition": {
+      "display_name": "Malnutrition"
+    },
+    "measles": {
+      "display_name": "Measles"
+    },
+    "melanoma": {
+      "display_name": "Melanoma"
+    },
+    "melasma": {
+      "display_name": "Melasma"
+    },
+    "memory_loss": {
+      "display_name": "Memory Loss",
+      "synonyms": [
+        "memory deficits",
+        "memory loss",
+        "poor memory",
+        "loss of memory"
+      ]
+    },
+    "menieres_disease": {
+      "display_name": "Menieres Disease",
+      "synonyms": [
+        "meneire's disease",
+        "meniere's disease",
+        "menieres",
+        "meniere",
+        "wallach's vertigo"
+      ]
+    },
+    "meningitis": {
+      "display_name": "Meningitis"
+    },
+    "meningocele": {
+      "display_name": "Meningocele"
+    },
+    "menkes_syndrome": {
+      "display_name": "Menkes Syndrome",
+      "synonyms": [
+        "menke syndrome",
+        "menkes kinky hair syndrome",
+        "menkes"
+      ]
+    },
+    "menopause": {
+      "display_name": "Menopause",
+      "synonyms": [
+        "menopause",
+        "menopausal"
+      ]
+    },
+    "menorrhagia": {
+      "display_name": "Menorrhagia"
+    },
+    "mental_retardation": {
+      "display_name": "Mental Retardation",
+      "synonyms": [
+        "retarded",
+        "mentally retarded",
+        "born retarded"
+      ]
+    },
+    "mercury_poisoning": {
+      "display_name": "Mercury Poisoning"
+    },
+    "migraine": {
+      "display_name": "Migraine"
+    },
+    "milk_allergy": {
+      "display_name": "Milk Allergy"
+    },
+    "minamata_disease": {
+      "display_name": "Minamata Disease",
+      "synonyms": [
+        "minamata disaster"
+      ]
+    },
+    "miscarriage": {
+      "display_name": "Miscarriage",
+      "synonyms": [
+        "still births",
+        "miscarriages"
+      ]
+    },
+    "mitral_valve_prolapse": {
+      "display_name": "Mitral Valve Prolapse"
+    },
+    "monckebergs_arteriosclerosis": {
+      "display_name": "Monckebergs Arteriosclerosis"
+    },
+    "morning_sickness": {
+      "display_name": "Morning Sickness"
+    },
+    "motion_sickness": {
+      "display_name": "Motion Sickness"
+    },
+    "multiple_sclerosis": {
+      "display_name": "Multiple Sclerosis"
+    },
+    "mumps": {
+      "display_name": "Mumps"
+    },
+    "muscle_cramps": {
+      "display_name": "Muscle Cramps",
+      "synonyms": [
+        "cramps",
+        "muscle cramp",
+        "leg cramps"
+      ]
+    },
+    "muscle_twitches": {
+      "display_name": "Muscle Twitches",
+      "synonyms": [
+        "twitches",
+        "muscle twitch",
+        "twitching"
+      ]
+    },
+    "muscular_dystrophy": {
+      "display_name": "Muscular Dystrophy",
+      "synonyms": [
+        "muscular dystrophy",
+        "white muscle"
+      ]
+    },
+    "myelofibrosis": {
+      "display_name": "Myelofibrosis"
+    },
+    "myopia": {
+      "display_name": "Myopia"
+    },
+    "narcolepsy": {
+      "display_name": "Narcolepsy"
+    },
+    "nasal_catarrh": {
+      "display_name": "Nasal Catarrh"
+    },
+    "nervous_heart": {
+      "display_name": "Nervous Heart"
+    },
+    "nervous_tension": {
+      "display_name": "Nervous Tension"
+    },
+    "neural_tube_defects": {
+      "display_name": "Neural Tube Defects"
+    },
+    "neuralgia": {
+      "display_name": "Neuralgia"
+    },
+    "neuropathy": {
+      "display_name": "Neuropathy"
+    },
+    "neurosis": {
+      "display_name": "Neurosis"
+    },
+    "neutropenia": {
+      "display_name": "Neutropenia"
+    },
+    "night_blindness": {
+      "display_name": "Night Blindness"
+    },
+    "night_terrors": {
+      "display_name": "Night Terrors"
+    },
+    "nosebleeds": {
+      "display_name": "Nosebleeds",
+      "synonyms": [
+        "nose bleeds",
+        "epistaxis"
+      ]
+    },
+    "obesity": {
+      "display_name": "Obesity"
+    },
+    "oligospermia": {
+      "display_name": "Oligospermia",
+      "synonyms": [
+        "decreased sperm count",
+        "low sperm count"
+      ]
+    },
+    "omphalocele": {
+      "display_name": "Omphalocele"
+    },
+    "opiate_withdrawal": {
+      "display_name": "Opiate Withdrawal"
+    },
+    "optic_nerve_atrophy": {
+      "display_name": "Optic Nerve Atrophy"
+    },
+    "oral_cancer": {
+      "display_name": "Oral Cancer",
+      "synonyms": [
+        "oral mucus membranes",
+        "oral mucous membranes",
+        "squamous cell carcinoma"
+      ]
+    },
+    "organic_brain_syndrome": {
+      "display_name": "Organic Brain Syndrome"
+    },
+    "ornithosis": {
+      "display_name": "Ornithosis"
+    },
+    "osteitis_fibrosa": {
+      "display_name": "Osteitis Fibrosa"
+    },
+    "osteoarthritis": {
+      "display_name": "Osteoarthritis",
+      "synonyms": [
+        "osteoarthritis",
+        "degenerative arthritis",
+        "degenerative joint"
+      ]
+    },
+    "osteofibrosis": {
+      "display_name": "Osteofibrosis"
+    },
+    "osteomalacia": {
+      "display_name": "Osteomalacia"
+    },
+    "osteopenia": {
+      "display_name": "Osteopenia"
+    },
+    "osteoporosis": {
+      "display_name": "Osteoporosis"
+    },
+    "osteosarcoma": {
+      "display_name": "Osteosarcoma"
+    },
+    "osteosclerosis": {
+      "display_name": "Osteosclerosis"
+    },
+    "otitis": {
+      "display_name": "Otitis"
+    },
+    "pagets_disease": {
+      "display_name": "Pagets Disease"
+    },
+    "pain": {
+      "display_name": "Pain"
+    },
+    "palpitations": {
+      "display_name": "Palpitations"
+    },
+    "pancreatic_cancer": {
+      "display_name": "Pancreatic Cancer"
+    },
+    "pancreatic_fibrosis": {
+      "display_name": "Pancreatic Fibrosis",
+      "synonyms": [
+        "fibrosis of the pancreas",
+        "pancreatic fibrosis"
+      ]
+    },
+    "pancreatitis": {
+      "display_name": "Pancreatitis"
+    },
+    "panic_attacks": {
+      "display_name": "Panic Attacks",
+      "synonyms": [
+        "panic attack",
+        "panic attacks"
+      ]
+    },
+    "paranoia": {
+      "display_name": "Paranoia"
+    },
+    "parasites": {
+      "display_name": "Parasites"
+    },
+    "parkinsonism": {
+      "display_name": "Parkinsonism",
+      "synonyms": [
+        "parkinsonian syndrome",
+        "parkinsonian"
+      ]
+    },
+    "parkinsons_disease": {
+      "display_name": "Parkinsons Disease",
+      "synonyms": [
+        "parkinson",
+        "parkinsonian",
+        "parkinsonism"
+      ]
+    },
+    "pediculosis": {
+      "display_name": "Pediculosis"
+    },
+    "pellagra": {
+      "display_name": "Pellagra"
+    },
+    "peptic_ulcers": {
+      "display_name": "Peptic Ulcers",
+      "synonyms": [
+        "peptic ulcer",
+        "gastric ulcer",
+        "stomach ulcer",
+        "duodenal ulcer",
+        "g i ulcers",
+        "gi ulcers",
+        "gastrointestinal ulcer"
+      ]
+    },
+    "periodontal_disease": {
+      "display_name": "Periodontal Disease"
+    },
+    "peripheral_arterial_disease": {
+      "display_name": "Peripheral Arterial Disease",
+      "synonyms": [
+        "peripheral arterial disease",
+        "peripheral artery disease",
+        "PAD"
+      ]
+    },
+    "peripheral_neuropathy": {
+      "display_name": "Peripheral Neuropathy",
+      "synonyms": [
+        "peripheral neuritis",
+        "peripheral neuropathy",
+        "neuritis",
+        "peripheral neuropathies"
+      ]
+    },
+    "peritonsillar_abscess": {
+      "display_name": "Peritonsillar Abscess"
+    },
+    "pernicious_anemia": {
+      "display_name": "Pernicious Anemia"
+    },
+    "phlebitis": {
+      "display_name": "Phlebitis"
+    },
+    "photophobia": {
+      "display_name": "Photophobia"
+    },
+    "pica": {
+      "display_name": "Pica",
+      "synonyms": [
+        "pica",
+        "bizarre craving",
+        "bizarre cravings"
+      ]
+    },
+    "pilonidal_cyst": {
+      "display_name": "Pilonidal Cyst"
+    },
+    "plumbism": {
+      "display_name": "Plumbism"
+    },
+    "pms": {
+      "display_name": "Premenstrual Syndrome (PMS)",
+      "synonyms": [
+        "premenstrual",
+        "pre menstrual",
+        "premenstrual syndrome"
+      ]
+    },
+    "poison_ivy": {
+      "display_name": "Poison Ivy"
+    },
+    "poor_circulation": {
+      "display_name": "Poor Circulation"
+    },
+    "post_partum_hemorrhage": {
+      "display_name": "Post Partum Hemorrhage"
+    },
+    "prediabetes": {
+      "display_name": "Prediabetes",
+      "synonyms": [
+        "pre diabetes",
+        "prediabetes"
+      ]
+    },
+    "preeclampsia": {
+      "display_name": "Preeclampsia"
+    },
+    "pregnancy_toxemia": {
+      "display_name": "Pregnancy Toxemia"
+    },
+    "prolonged_clotting_time": {
+      "display_name": "Prolonged Clotting Time",
+      "synonyms": [
+        "poor clotting time",
+        "prolonged clotting",
+        "poor blood clotting"
+      ]
+    },
+    "prostate_cancer": {
+      "display_name": "Prostate Cancer"
+    },
+    "pruritus": {
+      "display_name": "Pruritus",
+      "synonyms": [
+        "pruritus",
+        "itching",
+        "itchy skin",
+        "itchy scaly skin"
+      ]
+    },
+    "psoriasis": {
+      "display_name": "Psoriasis"
+    },
+    "psychosis": {
+      "display_name": "Psychosis"
+    },
+    "ptosis": {
+      "display_name": "Ptosis"
+    },
+    "pubic_lice": {
+      "display_name": "Pubic Lice"
+    },
+    "pyorrhea": {
+      "display_name": "Pyorrhea"
+    },
+    "q_fever": {
+      "display_name": "Q Fever"
+    },
+    "quinsy": {
+      "display_name": "Quinsy"
+    },
+    "rabbit_fever": {
+      "display_name": "Rabbit Fever"
+    },
+    "rabies": {
+      "display_name": "Rabies"
+    },
+    "radial_nerve_palsy": {
+      "display_name": "Radial Nerve Palsy"
+    },
+    "raynauds_disease": {
+      "display_name": "Raynauds Disease"
+    },
+    "reactive_hypoglycemia": {
+      "display_name": "Reactive Hypoglycemia"
+    },
+    "receding_gums": {
+      "display_name": "Receding Gums"
+    },
+    "rectal_itching": {
+      "display_name": "Rectal Itching"
+    },
+    "renal_failure": {
+      "display_name": "Renal Failure"
+    },
+    "repetitive_motion_syndrome": {
+      "display_name": "Repetitive Motion Syndrome"
+    },
+    "respiratory_disease": {
+      "display_name": "Respiratory Disease"
+    },
+    "restless_leg_syndrome": {
+      "display_name": "Restless Leg Syndrome"
+    },
+    "reyes_syndrome": {
+      "display_name": "Reyes Syndrome"
+    },
+    "rheumatic_fever": {
+      "display_name": "Rheumatic Fever"
+    },
+    "rheumatoid_arthritis": {
+      "display_name": "Rheumatoid Arthritis",
+      "synonyms": [
+        "rheumatoid"
+      ]
+    },
+    "rickets": {
+      "display_name": "Rickets"
+    },
+    "ringworm": {
+      "display_name": "Ringworm"
+    },
+    "rocky_mountain_spotted_fever": {
+      "display_name": "Rocky Mountain Spotted Fever"
+    },
+    "roseola": {
+      "display_name": "Roseola"
+    },
+    "rubella": {
+      "display_name": "Rubella"
+    },
+    "sarcoma": {
+      "display_name": "Sarcoma"
+    },
+    "scabies": {
+      "display_name": "Scabies"
+    },
+    "scarlatina": {
+      "display_name": "Scarlatina"
+    },
+    "schistosomiasis": {
+      "display_name": "Schistosomiasis"
+    },
+    "schizophrenia": {
+      "display_name": "Schizophrenia"
+    },
+    "sciatica": {
+      "display_name": "Sciatica"
+    },
+    "scoliosis": {
+      "display_name": "Scoliosis"
+    },
+    "scurvy": {
+      "display_name": "Scurvy"
+    },
+    "sebaceous_cyst": {
+      "display_name": "Sebaceous Cyst"
+    },
+    "seborrheic_dermatitis": {
+      "display_name": "Seborrheic Dermatitis",
+      "synonyms": [
+        "seborrheic dermatitis",
+        "seborrhea",
+        "itchy scaly skin",
+        "scaly skin"
+      ]
+    },
+    "secondary_hyperparathyroidism": {
+      "display_name": "Secondary Hyperparathyroidism"
+    },
+    "shingles": {
+      "display_name": "Shingles"
+    },
+    "shwachman_syndrome": {
+      "display_name": "Shwachman Syndrome"
+    },
+    "sickle_cell_anemia": {
+      "display_name": "Sickle Cell Anemia"
+    },
+    "sids": {
+      "display_name": "Sids",
+      "synonyms": [
+        "sudden infant death",
+        "crib death",
+        "cot death"
+      ]
+    },
+    "skin_diseases": {
+      "display_name": "Skin Diseases"
+    },
+    "sore_throat": {
+      "display_name": "Sore Throat"
+    },
+    "spider_bite": {
+      "display_name": "Spider Bite"
+    },
+    "spider_veins": {
+      "display_name": "Spider Veins"
+    },
+    "spina_bifida": {
+      "display_name": "Spina Bifida"
+    },
+    "spinal_stenosis": {
+      "display_name": "Spinal Stenosis"
+    },
+    "spontaneous_fractures": {
+      "display_name": "Spontaneous Fractures"
+    },
+    "sprain": {
+      "display_name": "Sprain"
+    },
+    "stomach_cancer": {
+      "display_name": "Stomach Cancer"
+    },
+    "stomatitis": {
+      "display_name": "Stomatitis",
+      "synonyms": [
+        "oral mucus membrane",
+        "oral mucous membrane",
+        "mouth inflammation",
+        "stomatitis"
+      ]
+    },
+    "strabismus": {
+      "display_name": "Strabismus"
+    },
+    "strain": {
+      "display_name": "Strain"
+    },
+    "stress": {
+      "display_name": "Stress"
+    },
+    "stroke": {
+      "display_name": "Stroke"
+    },
+    "sty": {
+      "display_name": "Sty"
+    },
+    "sudden_cardiac_death": {
+      "display_name": "Sudden Cardiac Death",
+      "synonyms": [
+        "sudden heart death",
+        "sudden death",
+        "sudden cardiac death"
+      ]
+    },
+    "swimmers_ear": {
+      "display_name": "Swimmers Ear"
+    },
+    "syphilis": {
+      "display_name": "Syphilis"
+    },
+    "tachycardia": {
+      "display_name": "Tachycardia"
+    },
+    "tapeworms": {
+      "display_name": "Tapeworms"
+    },
+    "tardive_dyskinesia": {
+      "display_name": "Tardive Dyskinesia"
+    },
+    "teeth_discoloration": {
+      "display_name": "Teeth Discoloration"
+    },
+    "teething": {
+      "display_name": "Teething"
+    },
+    "testicular_atrophy": {
+      "display_name": "Testicular Atrophy"
+    },
+    "tetanus": {
+      "display_name": "Tetanus"
+    },
+    "tetany": {
+      "display_name": "Tetany"
+    },
+    "thallium_poisoning": {
+      "display_name": "Thallium Poisoning"
+    },
+    "throat_cancer": {
+      "display_name": "Throat Cancer"
+    },
+    "thrombosis": {
+      "display_name": "Thrombosis"
+    },
+    "thrush": {
+      "display_name": "Thrush"
+    },
+    "thyroid_cancer": {
+      "display_name": "Thyroid Cancer",
+      "synonyms": [
+        "thyroid follicular cell tumors",
+        "thyroid follicular"
+      ]
+    },
+    "thyroid_disease": {
+      "display_name": "Thyroid Disease"
+    },
+    "tinnitus": {
+      "display_name": "Tinnitus",
+      "synonyms": [
+        "tinnitis",
+        "ringing in the ears",
+        "ringing in ears"
+      ]
+    },
+    "tmj": {
+      "display_name": "Tmj",
+      "synonyms": [
+        "tmj",
+        "temporomandibular",
+        "temporo mandibular"
+      ]
+    },
+    "tongue_atrophy": {
+      "display_name": "Tongue Atrophy"
+    },
+    "tonsillitis": {
+      "display_name": "Tonsillitis"
+    },
+    "tooth_decay": {
+      "display_name": "Tooth Decay"
+    },
+    "toothache": {
+      "display_name": "Toothache"
+    },
+    "torticollis": {
+      "display_name": "Torticollis"
+    },
+    "tourette_syndrome": {
+      "display_name": "Tourette Syndrome",
+      "synonyms": [
+        "tourette",
+        "head tic",
+        "tics"
+      ]
+    },
+    "toxic_shock_syndrome": {
+      "display_name": "Toxic Shock Syndrome"
+    },
+    "toxoplasmosis": {
+      "display_name": "Toxoplasmosis"
+    },
+    "trigeminal_neuralgia": {
+      "display_name": "Trigeminal Neuralgia"
+    },
+    "tuberculosis": {
+      "display_name": "Tuberculosis"
+    },
+    "tularemia": {
+      "display_name": "Tularemia"
+    },
+    "umbilical_hernia": {
+      "display_name": "Umbilical Hernia"
+    },
+    "urinary_tract_infection": {
+      "display_name": "Urinary Tract Infection",
+      "synonyms": [
+        "bladder infection"
+      ]
+    },
+    "uterine_cancer": {
+      "display_name": "Uterine Cancer"
+    },
+    "uterine_fibroids": {
+      "display_name": "Uterine Fibroids"
+    },
+    "vaginitis": {
+      "display_name": "Vaginitis"
+    },
+    "varicose_veins": {
+      "display_name": "Varicose Veins"
+    },
+    "vascular_dementia": {
+      "display_name": "Vascular Dementia"
+    },
+    "vertigo": {
+      "display_name": "Vertigo"
+    },
+    "violent_behavior": {
+      "display_name": "Violent Behavior",
+      "synonyms": [
+        "jekyll",
+        "violent criminal behavior"
+      ]
+    },
+    "vitiligo": {
+      "display_name": "Vitiligo"
+    },
+    "vomiting": {
+      "display_name": "Vomiting"
+    },
+    "warts": {
+      "display_name": "Warts"
+    },
+    "water_intoxication": {
+      "display_name": "Water Intoxication"
+    },
+    "weight_loss": {
+      "display_name": "Weight Loss"
+    },
+    "weils_disease": {
+      "display_name": "Weils Disease"
+    },
+    "wernicke_korsakoff_syndrome": {
+      "display_name": "Wernicke Korsakoff Syndrome",
+      "synonyms": [
+        "wernecke korsakoff",
+        "wernecke",
+        "wernicke korsakoff"
+      ]
+    },
+    "white_muscle_disease": {
+      "display_name": "White Muscle Disease",
+      "synonyms": [
+        "white muscle"
+      ]
+    },
+    "white_spots_fingernails": {
+      "display_name": "White Spots Fingernails"
+    },
+    "wilsons_syndrome": {
+      "display_name": "Wilsons Syndrome",
+      "synonyms": [
+        "wilson syndrome",
+        "wilson s syndrome"
+      ]
+    },
+    "wounds": {
+      "display_name": "Wounds"
+    },
+    "xerophthalmia": {
+      "display_name": "Xerophthalmia"
+    }
+  }
+}

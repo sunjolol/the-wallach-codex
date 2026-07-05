@@ -11,12 +11,15 @@ a list — matching eden/corpus/SCHEMA.md and the verifier's check #4 (other-sub
 top-level keys must be disjoint from the 90-canon).
 """
 import json
+import sys
 from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 CORPUS = ROOT / "eden" / "corpus"
 CANON_PATH = CORPUS / "essentials-canon.json"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import catalog  # noqa: E402  (Catalog pillar: condition/symptom display names single-sourced)
 
 INDEX_NAMES = ["essentials", "other-substances", "conditions", "symptoms", "consistency"]
 
@@ -31,20 +34,13 @@ COND_ROLE = {
 }
 
 
-# Curated display-name overrides for slugs whose mechanical humanize() form is
-# wrong or user-hostile -- an initialism title-cased to nonsense ("pms" -> "Pms"),
-# or an unexplained abbreviation (memory: no-unexplained-abbreviations). humanize()
-# stays the deterministic default; this is the small, auditable exception list,
-# applied wherever a slug surfaces as a display name (conditions/other/symptoms).
-# Keep keys sorted.
-DISPLAY_OVERRIDES = {
-    "pms": "Premenstrual Syndrome (PMS)",
-}
-
-
 def humanize(slug: str) -> str:
-    override = DISPLAY_OVERRIDES.get(slug)
-    return override if override is not None else slug.replace("_", " ").replace("-", " ").title()
+    """Deterministic slug -> Title Case. Used for other-substances (not catalogued)
+    and as the fallback for any condition/symptom slug not yet registered in the
+    Catalog pillar. Curated condition/symptom display names live in the catalog
+    (single source, R3); e.g. "pms" -> "Premenstrual Syndrome (PMS)" is carried there,
+    not here."""
+    return slug.replace("_", " ").replace("-", " ").title()
 
 
 def _load_claims(shards):
@@ -116,7 +112,7 @@ def derive_indices(shards):
         for c in rel:
             roles.setdefault(COND_ROLE.get(c["kind"], c["kind"]), []).append(c["id"])
         conditions[slug] = {
-            "display_name": humanize(slug),
+            "display_name": catalog.condition_display(slug) or humanize(slug),
             "claim_count": len(rel),
             "claims_by_role": {k: sorted(v) for k, v in sorted(roles.items())},
             "essentials_involved": sorted({e for c in rel for e in c.get("essentials", [])}),
@@ -135,7 +131,7 @@ def derive_indices(shards):
             key=lambda d: (d["essential"], d["claim_id"]),
         )
         symptoms[slug] = {
-            "display_name": humanize(slug),
+            "display_name": catalog.symptom_display(slug) or humanize(slug),
             "claim_count": len(rel),
             "likely_deficiencies": likely,
             "books_cited": sorted({c["locator"]["book"] for c in rel}),

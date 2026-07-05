@@ -1,0 +1,502 @@
+{
+  "schema_version": 1,
+  "_doctrine": "The pre-registered symptom catalog -- the SINGLE home for each symptom's identity (display_name). Promoted 2026-07-05 (Phase B) from the emergent derived symptoms index. A claim may reference a symptom slug ONLY if it appears here (references_resolve gate). Hand-edited pillar: register a NEW symptom here BEFORE mining a claim that maps to it. User is sole writer once sealed. display_name for search-only slugs absent from the operational index is humanize(slug).",
+  "sealed_at": null,
+  "counts": {
+    "symptoms": 164
+  },
+  "symptoms": {
+    "abdominal_cramps": {
+      "display_name": "Abdominal Cramps"
+    },
+    "abdominal_pain": {
+      "display_name": "Abdominal Pain"
+    },
+    "age_spots": {
+      "display_name": "Age Spots"
+    },
+    "allergic_shiners": {
+      "display_name": "Allergic Shiners"
+    },
+    "apathy": {
+      "display_name": "Apathy"
+    },
+    "aphasia": {
+      "display_name": "Aphasia"
+    },
+    "apprehension": {
+      "display_name": "Apprehension"
+    },
+    "areflexia": {
+      "display_name": "Areflexia"
+    },
+    "ataxia": {
+      "display_name": "Ataxia"
+    },
+    "behavioral_problems": {
+      "display_name": "Behavioral Problems"
+    },
+    "bleeding_gums": {
+      "display_name": "Bleeding Gums"
+    },
+    "blurred_vision": {
+      "display_name": "Blurred Vision"
+    },
+    "bone_pain": {
+      "display_name": "Bone Pain"
+    },
+    "bow_legs": {
+      "display_name": "Bow Legs"
+    },
+    "brittle_nails": {
+      "display_name": "Brittle Nails"
+    },
+    "burning_feet": {
+      "display_name": "Burning Feet"
+    },
+    "burning_mouth": {
+      "display_name": "Burning Mouth"
+    },
+    "burning_throat": {
+      "display_name": "Burning Throat"
+    },
+    "capillary_hemorrhage": {
+      "display_name": "Capillary Hemorrhage"
+    },
+    "catatonia": {
+      "display_name": "Catatonia"
+    },
+    "cheilosis": {
+      "display_name": "Cheilosis"
+    },
+    "cognitive_impairment": {
+      "display_name": "Cognitive Impairment"
+    },
+    "cold_intolerance": {
+      "display_name": "Cold Intolerance"
+    },
+    "constipation": {
+      "display_name": "Constipation"
+    },
+    "convulsions": {
+      "display_name": "Convulsions"
+    },
+    "delayed_puberty": {
+      "display_name": "Delayed Puberty"
+    },
+    "delusions": {
+      "display_name": "Delusions"
+    },
+    "depression": {
+      "display_name": "Depression"
+    },
+    "diarrhea": {
+      "display_name": "Diarrhea"
+    },
+    "dizziness": {
+      "display_name": "Dizziness"
+    },
+    "dry_hair": {
+      "display_name": "Dry Hair"
+    },
+    "dry_skin": {
+      "display_name": "Dry Skin"
+    },
+    "dysarthria": {
+      "display_name": "Dysarthria"
+    },
+    "dyspepsia": {
+      "display_name": "Dyspepsia"
+    },
+    "dysphagia": {
+      "display_name": "Dysphagia"
+    },
+    "dysphasia": {
+      "display_name": "Dysphasia"
+    },
+    "dyspnea": {
+      "display_name": "Dyspnea"
+    },
+    "easy_bruising": {
+      "display_name": "Easy Bruising"
+    },
+    "ecg_changes": {
+      "display_name": "Ecg Changes"
+    },
+    "ectopic_calcification": {
+      "display_name": "Ectopic Calcification"
+    },
+    "edema": {
+      "display_name": "Edema"
+    },
+    "electric_shock_sensations": {
+      "display_name": "Electric Shock Sensations"
+    },
+    "emotional_instability": {
+      "display_name": "Emotional Instability"
+    },
+    "endocrine_dysfunction": {
+      "display_name": "Endocrine Dysfunction"
+    },
+    "exophthalmos": {
+      "display_name": "Exophthalmos"
+    },
+    "eye_irritation": {
+      "display_name": "Eye Irritation"
+    },
+    "eye_twitches": {
+      "display_name": "Eye Twitches"
+    },
+    "facial_oiliness": {
+      "display_name": "Facial Oiliness"
+    },
+    "fainting": {
+      "display_name": "Fainting"
+    },
+    "fat_intolerance": {
+      "display_name": "Fat Intolerance"
+    },
+    "fatigue": {
+      "display_name": "Fatigue"
+    },
+    "fever": {
+      "display_name": "Fever"
+    },
+    "flatulence": {
+      "display_name": "Flatulence"
+    },
+    "flushing": {
+      "display_name": "Flushing"
+    },
+    "fragile_bones": {
+      "display_name": "Fragile Bones"
+    },
+    "gait_disturbance": {
+      "display_name": "Gait Disturbance"
+    },
+    "garlic_breath": {
+      "display_name": "Garlic Breath"
+    },
+    "geographic_tongue": {
+      "display_name": "Geographic Tongue"
+    },
+    "gray_hair": {
+      "display_name": "Gray Hair"
+    },
+    "growth_failure": {
+      "display_name": "Growth Failure"
+    },
+    "hair_loss": {
+      "display_name": "Hair Loss"
+    },
+    "halitosis": {
+      "display_name": "Halitosis"
+    },
+    "hallucinations": {
+      "display_name": "Hallucinations"
+    },
+    "hand_tremors": {
+      "display_name": "Hand Tremors"
+    },
+    "headache": {
+      "display_name": "Headache"
+    },
+    "hearing_loss": {
+      "display_name": "Hearing Loss"
+    },
+    "heat_intolerance": {
+      "display_name": "Heat Intolerance"
+    },
+    "hemorrhage": {
+      "display_name": "Hemorrhage"
+    },
+    "hepatomegaly": {
+      "display_name": "Hepatomegaly"
+    },
+    "high_newborn_mortality": {
+      "display_name": "High Newborn Mortality"
+    },
+    "hyperkeratosis": {
+      "display_name": "Hyperkeratosis"
+    },
+    "hyperreflexia": {
+      "display_name": "Hyperreflexia"
+    },
+    "hypertonia": {
+      "display_name": "Hypertonia"
+    },
+    "hypothermia": {
+      "display_name": "Hypothermia"
+    },
+    "hysteria": {
+      "display_name": "Hysteria"
+    },
+    "illusions": {
+      "display_name": "Illusions"
+    },
+    "impaired_wound_healing": {
+      "display_name": "Impaired Wound Healing"
+    },
+    "inflammation": {
+      "display_name": "Inflammation"
+    },
+    "insomnia": {
+      "display_name": "Insomnia"
+    },
+    "irregular_heartbeat": {
+      "display_name": "Irregular Heartbeat"
+    },
+    "irritability": {
+      "display_name": "Irritability"
+    },
+    "joint_pain": {
+      "display_name": "Joint Pain"
+    },
+    "kidney_hemorrhage": {
+      "display_name": "Kidney Hemorrhage"
+    },
+    "knock_knees": {
+      "display_name": "Knock Knees"
+    },
+    "lethargy": {
+      "display_name": "Lethargy"
+    },
+    "limb_pain": {
+      "display_name": "Limb Pain"
+    },
+    "liver_spots": {
+      "display_name": "Liver Spots"
+    },
+    "loose_teeth": {
+      "display_name": "Loose Teeth"
+    },
+    "loss_of_appetite": {
+      "display_name": "Loss Of Appetite"
+    },
+    "loss_of_smell": {
+      "display_name": "Loss Of Smell"
+    },
+    "low_basal_temperature": {
+      "display_name": "Low Basal Temperature"
+    },
+    "low_energy": {
+      "display_name": "Low Energy"
+    },
+    "low_sex_drive": {
+      "display_name": "Low Sex Drive"
+    },
+    "lowered_immunity": {
+      "display_name": "Lowered Immunity"
+    },
+    "magenta_tongue": {
+      "display_name": "Magenta Tongue"
+    },
+    "mania": {
+      "display_name": "Mania"
+    },
+    "memory_loss": {
+      "display_name": "Memory Loss"
+    },
+    "mental_apathy": {
+      "display_name": "Mental Apathy"
+    },
+    "mental_confusion": {
+      "display_name": "Mental Confusion"
+    },
+    "metallic_taste": {
+      "display_name": "Metallic Taste"
+    },
+    "muscle_atrophy": {
+      "display_name": "Muscle Atrophy"
+    },
+    "muscle_cramps": {
+      "display_name": "Muscle Cramps"
+    },
+    "muscle_ties": {
+      "display_name": "Muscle Ties"
+    },
+    "muscle_weakness": {
+      "display_name": "Muscle Weakness"
+    },
+    "muscular_weakness": {
+      "display_name": "Muscular Weakness"
+    },
+    "myalgia": {
+      "display_name": "Myalgia"
+    },
+    "nausea": {
+      "display_name": "Nausea"
+    },
+    "nervousness": {
+      "display_name": "Nervousness"
+    },
+    "neurologic_symptoms": {
+      "display_name": "Neurologic Symptoms"
+    },
+    "neuromuscular_excitability": {
+      "display_name": "Neuromuscular Excitability"
+    },
+    "night_terrors": {
+      "display_name": "Night Terrors"
+    },
+    "numbness": {
+      "display_name": "Numbness"
+    },
+    "ophthalmoplegia": {
+      "display_name": "Ophthalmoplegia"
+    },
+    "pain_hypersensitivity": {
+      "display_name": "Pain Hypersensitivity"
+    },
+    "palpitations": {
+      "display_name": "Palpitations"
+    },
+    "pancreatic_atrophy": {
+      "display_name": "Pancreatic Atrophy"
+    },
+    "paralysis": {
+      "display_name": "Paralysis"
+    },
+    "paresthesia": {
+      "display_name": "Paresthesia"
+    },
+    "pica": {
+      "display_name": "Pica"
+    },
+    "polydipsia": {
+      "display_name": "Polydipsia"
+    },
+    "polyuria": {
+      "display_name": "Polyuria"
+    },
+    "poor_appetite": {
+      "display_name": "Poor Appetite"
+    },
+    "poor_growth": {
+      "display_name": "Poor Growth"
+    },
+    "poor_memory": {
+      "display_name": "Poor Memory"
+    },
+    "poor_skin": {
+      "display_name": "Poor Skin"
+    },
+    "poor_zinc_absorption": {
+      "display_name": "Poor Zinc Absorption"
+    },
+    "profuse_sweating": {
+      "display_name": "Profuse Sweating"
+    },
+    "prolonged_clotting_time": {
+      "display_name": "Prolonged Clotting Time"
+    },
+    "proprioception_problems": {
+      "display_name": "Proprioception Problems"
+    },
+    "proteinuria": {
+      "display_name": "Proteinuria"
+    },
+    "pruritus": {
+      "display_name": "Pruritus"
+    },
+    "rapid_pulse": {
+      "display_name": "Rapid Pulse"
+    },
+    "rbc_fragility": {
+      "display_name": "Rbc Fragility"
+    },
+    "reduced_growth": {
+      "display_name": "Reduced Growth"
+    },
+    "reduced_immune_status": {
+      "display_name": "Reduced Immune Status"
+    },
+    "reproductive_failure": {
+      "display_name": "Reproductive Failure"
+    },
+    "respiratory_distress": {
+      "display_name": "Respiratory Distress"
+    },
+    "restlessness": {
+      "display_name": "Restlessness"
+    },
+    "retarded_growth": {
+      "display_name": "Retarded Growth"
+    },
+    "salt_hunger": {
+      "display_name": "Salt Hunger"
+    },
+    "salt_retention": {
+      "display_name": "Salt Retention"
+    },
+    "seizures": {
+      "display_name": "Seizures"
+    },
+    "shortened_lifespan": {
+      "display_name": "Shortened Lifespan"
+    },
+    "shortened_long_bones": {
+      "display_name": "Shortened Long Bones"
+    },
+    "skin_eruptions": {
+      "display_name": "Skin Eruptions"
+    },
+    "skin_hemorrhages": {
+      "display_name": "Skin Hemorrhages"
+    },
+    "slipped_tendon": {
+      "display_name": "Slipped Tendon"
+    },
+    "smooth_tongue": {
+      "display_name": "Smooth Tongue"
+    },
+    "sonophobia": {
+      "display_name": "Sonophobia"
+    },
+    "sore_throat": {
+      "display_name": "Sore Throat"
+    },
+    "spinal_cord_demyelination": {
+      "display_name": "Spinal Cord Demyelination"
+    },
+    "splenomegaly": {
+      "display_name": "Splenomegaly"
+    },
+    "tachycardia": {
+      "display_name": "Tachycardia"
+    },
+    "testicular_atrophy": {
+      "display_name": "Testicular Atrophy"
+    },
+    "tooth_loss": {
+      "display_name": "Tooth Loss"
+    },
+    "tremors": {
+      "display_name": "Tremors"
+    },
+    "urticaria": {
+      "display_name": "Urticaria"
+    },
+    "vibratory_sense_dysfunction": {
+      "display_name": "Vibratory Sense Dysfunction"
+    },
+    "vomiting": {
+      "display_name": "Vomiting"
+    },
+    "weakness": {
+      "display_name": "Weakness"
+    },
+    "weight_gain": {
+      "display_name": "Weight Gain"
+    },
+    "weight_loss": {
+      "display_name": "Weight Loss"
+    },
+    "white_hair": {
+      "display_name": "White Hair"
+    },
+    "white_spots_on_nails": {
+      "display_name": "White Spots On Nails"
+    }
+  }
+}

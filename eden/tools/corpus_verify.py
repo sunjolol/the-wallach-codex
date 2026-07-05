@@ -2,7 +2,7 @@
 """corpus_verify.py — read-only integrity verifier for eden/corpus.
 
 Truth-anchored and deterministic: it only hashes files and tests substrings, so it
-cannot lie. The single implementation of the 11 corpus checks (the `corpus_integrity`
+cannot lie. The single implementation of the 12 corpus checks (the `corpus_integrity`
 invariant shells out to this file — one source, no duplication).
 
 All corpus text/JSON hashes are over LF-NORMALIZED UTF-8 content (clone/CRLF-stable).
@@ -62,6 +62,33 @@ def collect_indices():
             p = INDICES_DIR / f"{name}.json"
             if p.exists():
                 out[name] = p
+    return out
+
+
+def unresolved_references():
+    """references_resolve (Charter R3): claim condition/symptom slugs NOT registered in
+    the Catalog pillar (eden/catalog/{conditions,symptoms}.json). Returns [] when the
+    catalog is absent (bootstrap-safe) or clean. Single source, called by both run_checks
+    (#12) and the named references_resolve invariant."""
+    if not (ROOT / "eden" / "catalog" / "conditions.json").exists():
+        return []
+    sys.path.insert(0, str(ROOT / "eden" / "tools"))
+    import catalog as _catalog
+    cond_ok, symp_ok = _catalog.condition_slugs(), _catalog.symptom_slugs()
+    out = []
+    for shard in collect_claim_shards():
+        try:
+            data = load_json(shard)
+        except json.JSONDecodeError:
+            continue  # parse errors are reported by run_checks
+        for c in data.get("claims", []):
+            cid = c.get("id")
+            for slug in c.get("conditions", []):
+                if slug not in cond_ok:
+                    out.append(f"claim {cid} references unregistered condition '{slug}'")
+            for slug in c.get("symptoms", []):
+                if slug not in symp_ok:
+                    out.append(f"claim {cid} references unregistered symptom '{slug}'")
     return out
 
 
@@ -161,6 +188,10 @@ def run_checks(skip_index_derive_check=False):
             dose = c.get("dose")
             if dose is not None and not isinstance(dose, dict):
                 fails.append(f"[#11] claim {cid} dose must be null or an object, got {type(dose).__name__}")
+
+    # #12 references_resolve (Catalog pillar, Phase B): every claim condition/symptom
+    # slug must be pre-registered in eden/catalog/{conditions,symptoms}.json.
+    fails += [f"[#12] {m} -- register it in eden/catalog/" for m in unresolved_references()]
 
     # --- indices (only if present) ---
     indices = collect_indices()
