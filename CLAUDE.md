@@ -126,9 +126,7 @@ dashboard/                                  ← the app
 
 eden/                                       ← sealed canonical source corpus
 schemas/                                    ← JSON Schemas (paired validators)
-knowledge/                                  ← general health + cleaned transcripts + book extracts
-transcripts/                                ← raw Wallach .en.vtt captions
-wallach-refresh/                            ← self-maintaining corpus ingest pipeline
+knowledge/                                  ← derived working data (products, targets, label lookup) + design-wisdom
 labels/                                     ← sample supplement-label JSON fixtures
 
 chronicle/                                  ← discipline ledger

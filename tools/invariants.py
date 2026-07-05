@@ -1549,6 +1549,57 @@ def check_build_log_append_only():
                   f"{len(working) - len(committed)} new")
 
 
+def check_no_dead_legacy_paths():
+    """No live code / data / active-doc may reference a pre-Eden legacy path
+    severed 2026-07-04 -- the old book PDFs, the transcript scraper, and the
+    ingredient/stance generators that fed off them. Eden is the single source of
+    truth; a re-reference is the exact contamination vector the sever eliminated
+    (the old chain even fed stale book text into the live dashboard). Immutable
+    history is allowlisted -- chronicle/, genesis/, generated dist/, the
+    to-be-retired legacy-dashboard.js, this file's own token list, and the
+    embedded Creator's-Log / versions blocks inside dashboard.html (past-tense
+    record, stripped before scanning). It records the past; it is not a live
+    reference. Truth anchor: git-tracked file contents, scanned each run."""
+    import subprocess
+    FORBIDDEN = ["wallach-books", "books-clean", "wallach-refresh", "transcripts-clean",
+                 "podcast-transcripts", "wallach-topic-notes", "youngevity-product-notes",
+                 "health-resources", "catalog-index", "corpus-index"]
+    ALLOW_PREFIXES = ("chronicle/", "genesis/",
+                      "dashboard/assets/data/creators-log",
+                      "dashboard/assets/data/versions-data.json",
+                      "dashboard/assets/js/dist/",
+                      "dashboard/assets/js/legacy-dashboard.js",
+                      "tools/invariants.py")
+    SKIP_EXT = (".png", ".jpg", ".jpeg", ".ttf", ".pdf", ".ico", ".bmp", ".gif", ".map")
+    embed_re = re.compile(
+        r'<script[^>]*id="(cl-data-[^"]*|creators-log-embed|versions-data)"[^>]*>.*?</script>',
+        re.DOTALL)
+    try:
+        r = subprocess.run(["git", "-C", str(ROOT), "ls-files"],
+                           capture_output=True, text=True, timeout=30)
+    except Exception as e:
+        return True, (f"⚠ UNVERIFIED — git unavailable ({e}); dead-legacy-path guard could "
+                      f"NOT run this pass (fail-open, not a silent green)")
+    hits = []
+    for rel in r.stdout.splitlines():
+        if not rel or rel.startswith(ALLOW_PREFIXES) or rel.endswith(SKIP_EXT):
+            continue
+        try:
+            text = (ROOT / rel).read_text(encoding="utf-8", errors="ignore")
+        except Exception:
+            continue
+        if rel == "dashboard/dashboard.html":
+            text = embed_re.sub("", text)  # drop the embedded Creator's-Log/versions history
+        for tok in FORBIDDEN:
+            if tok in text:
+                hits.append(f"{rel}:{tok}")
+                break
+    if hits:
+        return False, (f"{len(hits)} live file(s) RE-REFERENCE a severed pre-Eden path (poison "
+                       f"re-introduced): " + ", ".join(hits[:6]) + (" ..." if len(hits) > 6 else ""))
+    return True, f"no live reference to any severed pre-Eden legacy path ({len(FORBIDDEN)} tokens guarded)"
+
+
 def check_creators_log_digest_synced():
     """LOG.md must equal the deterministic render of log.jsonl. It is a generated
     human view; drift means a hand-edit or a missed regeneration, which would let
@@ -2323,6 +2374,14 @@ INVARIANTS = [
         truth_anchor="git show HEAD:chronicle/build-log.md must be a line-prefix of the working file — git-committed history is the immutable anchor",
         severity="critical",
         lesson_ref="Luneth 2026-07-04: build-log had no append-only teeth (only §17 write-discipline), so a rewrite could silently truncate it. Mirrors creators_log_append_only so the public-teaching log layer is git-anchored too; a deliberate archival split must re-anchor in the same patch.",
+    ),
+    Invariant(
+        name="no_dead_legacy_paths",
+        description="no live code/data/active-doc references a severed pre-Eden legacy path (wallach-books, books-clean, wallach-refresh, transcripts-clean, podcast-transcripts, wallach-topic-notes, youngevity-product-notes, health-resources, catalog-index, corpus-index)",
+        check_fn=check_no_dead_legacy_paths,
+        truth_anchor="git ls-files contents scanned each run; immutable history (chronicle/, genesis/, dist/, legacy-dashboard.js, the embedded Creator's-Log/versions blocks) allowlisted -- it records the past, it is not a live reference",
+        severity="critical",
+        lesson_ref="Luneth 2026-07-04 full pre-Eden sever: the old book PDFs + transcript scraper + ingredient/stance generators were still poisoning the system (even feeding stale book text into the live dashboard). This guard makes re-introduction impossible -- 'no chance of them ever being referenced again' turned into a machine check per §00.B.",
     ),
     Invariant(
         name="creators_log_digest_synced",

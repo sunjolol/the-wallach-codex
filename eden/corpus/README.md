@@ -15,7 +15,7 @@ It joins Wing 1 (`eden/eden-catalog.json`, the Youngevity product catalog) and W
 | Tier | Home | Posture | Contents |
 |---|---|---|---|
 | **Tier 1 — canonical** | `eden/` | Sealed · hash-anchored · user-only-writer · loud-fail on drift | books + claim graph + graphics + YGY catalog |
-| **Tier 2 — working** | `knowledge/` | Unsealed · agent-writable · advisory | `transcripts-clean/` (Sunday YouTube-scan feed), `design-wisdom/` |
+| **Tier 2 — working** | `knowledge/` | Unsealed · agent-writable · advisory | `design-wisdom/`, `fringe-knowledge/`, derived working data |
 
 Tier 2 is kept *out* of Eden precisely so it can never poison the canon. Anything that
 must be true lives here, in Tier 1.

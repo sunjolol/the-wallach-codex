@@ -47,34 +47,6 @@ user in one end pass).
 
 | File | What it does |
 |---|---|
-| `build_ingredients_master.py` | Builds `knowledge/ingredients-master.json` — the deduplicated, Wallach-cross-referenced master list of every ingredient across the Youngevity catalog. |
-| `build_ingredients_embed.py` | Reads the master list → a slim per-ingredient lookup embedded for the dashboard's ingredient-education layer. |
 | `build_ingredients_quickref.py` | Builds the ingredients quick-reference for non-essential ingredients (botanicals, amino acids, blend components, fatty acids) the essentials dataset doesn't cover. |
 | `build_regimen_label_lookup.py` | Builds the regimen ↔ label lookup the Regimen "Full edit" Label-Check form consults by product name. |
-| `build_wallach_stance_candidates.py` | Queries `corpus_search.py` for each of the 90 essentials → a hand-review sidecar of candidate Wallach stance citations (§00.A educational layer). |
-| `corpus_search.py` | Indexed keyword retrieval across the Wallach corpus (books + transcripts) — a pipeline dependency. See below. |
 
-## corpus_search.py
-
-Indexed retrieval across the Wallach corpus: reads actual passages from the
-cleaned books + transcripts instead of reasoning from memory.
-
-**Coverage:** the cleaned Wallach books under `knowledge/books-clean/` (each with
-a `.pages.json` / `.chapters.json` sidecar for citations) + the cleaned
-transcripts under `knowledge/transcripts-clean/`, filtered by the
-`knowledge/manifest.csv` tier.
-
-```bash
-python tools/corpus_search.py "boron"
-python tools/corpus_search.py "fluoride dose" --max 5 --context 3000
-python tools/corpus_search.py "vanadium chromium" --books-only
-python tools/corpus_search.py "selenium" --json
-```
-
-**Ranking:** structured data (dose / nutrient tables) first → tier (books before
-transcripts) → score (total hits + 5 × distinct-term coverage) → a per-source
-cap so one file can't crowd out the others.
-
-**Limits:** regex-only — no stemming, synonyms, or embeddings, so broaden terms
-yourself (`hypothyroid` won't find `thyroid`-only passages); section boundaries
-are paragraph-based; the manifest is authoritative for transcript tiers.

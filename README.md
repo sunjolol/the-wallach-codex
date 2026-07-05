@@ -58,11 +58,7 @@ Top-level folders, one line each:
   originates here; hash-anchored, user-only-writable once sealed.
 - **`schemas/`** — JSON Schemas that validate the data files at load.
 - **`knowledge/`** — Wallach corpus + general health/educational reference
-  (cleaned transcripts, book extracts, manifests, research images).
-- **`transcripts/`** — raw Wallach lecture/interview captions (`.en.vtt`); the
-  source `wallach-refresh/` ingests. See `transcripts/README.md`.
-- **`wallach-refresh/`** — the self-maintaining corpus pipeline (yt-dlp captions,
-  book + podcast ingest → `knowledge/`). See `wallach-refresh/README.md`.
+  (products, targets, indices, ingredient quick-reference, design-wisdom).
 - **`labels/`** — sample supplement-label JSON fixtures for Scanner testing. See
   `labels/README.md`.
 - **`chronicle/`** — the discipline ledger + audit trail: `build-log.md`,
@@ -79,6 +75,6 @@ Top-level folders, one line each:
 ## Sources & licensing note
 
 Nutrient targets and health assertions trace to the Wallach primary-source
-corpus (the Eden system). Reference book PDFs under `knowledge/wallach-books/`
+corpus (the Eden system). The Wallach book texts in `eden/corpus/books/`
 are the authors' copyrighted works, kept here only for the project's own
 reference — **this repository is private** and not for redistribution.

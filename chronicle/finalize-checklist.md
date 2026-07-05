@@ -51,7 +51,7 @@ _(No surface is signed-off at 100% yet. The Knowledge drawer is the most built-o
 
 _All deferred under `.claude/rules/wild-west-mode.md` — read `genesis/02-clarifications-and-plan.md` §8 for full scope, then DELETE wild-west-mode.md._
 
-- [ ] **Copyright scrub** — remove/gate the ~95 MB Wallach PDFs under `knowledge/wallach-books/` before the repo/app goes public. (L + C)
+- [x] **Copyright scrub (source PDFs)** — the ~95 MB Wallach source PDFs were deleted 2026-07-04; the copyrighted material remaining is the book texts under `eden/corpus/books/`, gated by the repo staying private. (L + C)
 - [ ] **TOS · Privacy Policy · Medical disclaimer.** (C→L)
 - [ ] **LICENSE choice.** (L)
 - [ ] **Attribution component.** (C)
