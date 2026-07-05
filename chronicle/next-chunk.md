@@ -26,4 +26,4 @@ Then: **D** collapse the rotten `knowledge/` layer → **E** per-surface finaliz
 
 **OLD BACKLOG (subsumed, not lost):** menaquinone→phylloquinone book correction + K1/K2 alert-box → Phase E/G · target-number-shift → Phase C · Immortality/DDDL re-mine → Phase G. The blueprint is authoritative.
 
-**SET UP FOR NEXT SESSION:** start fresh + run `genesis`. Next = **Phase C** (derivation pipeline + poison purge) — blueprint §3 + §7.
+**SET UP FOR NEXT SESSION:** start fresh + run `genesis`. C1 + C2 are DONE (see the Phase C block above). Next = finish the **Phase C sweep** — surface the Fig 8-1 dose-table column legend (RDA · True Supplement Need · Pharmacologic) in the Knowledge drawer so the headerless table rows read clearly (likely a VIEW fix; the verbatim stays faithful, no re-seal unless chosen) — then **C3** (fold the product embeds into `build_embeds` + migrate `regimen-label-lookup` to esbuild import + retire `eden_embeds_match_canonical`). ★ Do NOT forget the FULL corpus audit before Phase G.
