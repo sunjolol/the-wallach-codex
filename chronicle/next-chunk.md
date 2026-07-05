@@ -13,7 +13,7 @@ The project pivoted from whack-a-mole bug-fixing to a full structural overhaul a
 
 ## PHASE A REMAINING (governance reset — blueprint §8; finish BEFORE building pillars)
 ✓ **CHARTER PERMANENT HOME — DONE (2026-07-05).** Promoted R1–R9 to `.claude/rules/charter.md` (authoritative; each rule carries its gate + an honest LIVE/PARTIAL/WISH status per R7). Rewired CLAUDE.md's 3 Charter refs (§00.B line, glossary, +1 rules-table row) from "blueprint §1" to charter.md; added a permanent-home pointer atop blueprint §1 marking it the frozen design origin. Board 38/38.
-★ **74-MEMORY AUDIT** — the memory files (`C:\Users\Light\.claude\projects\C--Users-Light-Desktop-claude-health-expert\memory\`) encode OLD approaches (middle layer, stance sweep, Youngevity-targets). Audit against the blueprint; prune/mark-superseded the contradictions. ⚠ **Until done, recalled memories may contradict the new model — CLAUDE.md + the blueprint are authoritative.**
+✓ **74-MEMORY AUDIT — DONE (2026-07-05).** Audited all 75 memory files against the blueprint: **8 marked-superseded/updated** (references to the rotten middle layer, the SESSION-49 stance sweep, or Youngevity-driven targets — `wallach-stance-two-field-model`, `wallach-corpus-revamp`, `wallach-drives-recommendations-youngevity-composition`, `numbers-corrected-at-end`, `stop-the-leak-before-building`, `hooks-cwd-relative-trap`, `front-facing-human-first`, `overhaul-blueprint-active-plan`), **67 kept durable**, **0 deleted** (every stale one still carried a durable lesson → mark-superseded, never silent-drop). Reconciled the 3 stale `MEMORY.md` index hooks too (recall is description-driven), then re-grepped the memory dir to ZERO live survivors of the retired structures. CLAUDE.md + the blueprint remain authoritative for any older memory that slipped through.
 ★ `genesis/02-clarifications-and-plan.md` — mark SUPERSEDED by the blueprint (archive).
 ★ ADD `no_operating_doc_contradiction` gate — a scan that no operating doc contradicts the Charter / references a deleted structure (extends `no_dead_legacy_paths`).
 
@@ -23,6 +23,6 @@ Phase B Catalog pillar → **Phase C derivation pipeline (the poison purge: targ
 ## OLD BACKLOG (SESSION 48/49) — SUBSUMED, not lost
 menaquinone→phylloquinone book correction + K1/K2 alert-box → Phase E/G · target-number-shift → Phase C · archaic-rules audit → Phase A rules audit (above) · Immortality/DDDL re-mine → Phase G. The blueprint is authoritative.
 
-## IMMEDIATE NEXT TASK = the remaining Phase A governance items (any order; genesis will ask).
-Charter permanent home is DONE (above). Suggested next: the **74-memory audit** (larger; stale memories actively mislead until done — the ⚠ above). Also owed: genesis/02 supersede-archive + the `no_operating_doc_contradiction` gate (the last two are small).
-Board: 38/38 green. Charter-home chunk committed 2026-07-05 (build-log 11:46 CDT).
+## IMMEDIATE NEXT TASK = the last 2 Phase A governance items (either order; genesis will ask).
+Charter permanent home + the 74-memory audit are DONE (above). REMAINING Phase A: (1) `genesis/02-clarifications-and-plan.md` → mark SUPERSEDED by the blueprint + archive; (2) ADD the `no_operating_doc_contradiction` gate (a scan proving no operating doc contradicts the Charter / cites a deleted structure — extends `no_dead_legacy_paths`). Both small. Then Phase A is COMPLETE → Phase B (Catalog pillar).
+Board: 38/38 green. Memory-audit chunk committed 2026-07-05 (build-log below).
