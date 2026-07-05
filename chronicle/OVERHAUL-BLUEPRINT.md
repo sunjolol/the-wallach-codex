@@ -10,6 +10,8 @@ _Status legend: `[DRAFT]` written, awaiting Luneth verification · `[LOCKED]` ve
 
 ## Section 1 — THE CHARTER (the non-negotiable rules)  `[LOCKED 2026-07-05]`
 
+**Permanent home: `.claude/rules/charter.md`** (promoted 2026-07-05) — the maintained, authoritative Charter, carrying each rule's live gate-status (LIVE / PARTIAL / WISH) and surviving this blueprint's pruning. This section is the frozen design origin; if the two disagree, the rule file wins.
+
 Every rule names its **gate** — the code that proves it. A rule with no gate is labeled `WISH`, never sold as a guarantee (R7).
 
 | # | Rule | Gate (the proof) |

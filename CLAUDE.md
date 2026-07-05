@@ -28,7 +28,7 @@ Ranked. Every other rule yields to these. Behavioral rules under `.claude/rules/
 Every numeric target, dose, deficiency sign, and health claim traces to a Wallach allowlist primary: `dddl` · `rbs` · `eps` · `ygy` · `wallach-lecture`. **Wallach drives every recommended amount / dose / range; Youngevity products contribute composition only — NEVER a target** (no Youngevity-derived amounts; the old "two-role split" was poison and is retired). Book citations reference the sealed registry (`eden/corpus/books-meta.json`), never hand-typed. No outside source contradicts Wallach without explicit user review. Purpose: (a) one durable source of truth — the project's reason for existing; (b) legal defensibility — every claim attributable, not invented; (c) one consistent voice across surfaces. Sealed canonical data lives in the `eden/` pillars. Detail: `.claude/rules/source-rule.md`. Enforcement (per the blueprint): `amounts_wallach_only` + `citations_reference_registry`.
 
 **§00.B — Engineering standard of an elite open-source maintainer (99 / 100).**
-Operational consequences (detail: `.claude/rules/engineering-doctrine.md` + the Charter, blueprint §1):
+Operational consequences (detail: `.claude/rules/engineering-doctrine.md` + the Charter, `.claude/rules/charter.md` (blueprint §1 is the design origin)):
 
 1. **Two hand-edited sources, everything else generated.** Only the three sealed `eden/` pillars are hand-edited; every shipped artifact is derived from them and a freshness gate regenerates + byte-compares it, so drift can't ship. No canonical value lives in two hand-maintained places.
 2. **Codify, don't promise.** Every rule that can be a hook / lint / invariant *is* one, shipped in the same patch as the thing it governs. A rule with no gate is labeled a WISH, never sold as safe.
@@ -94,6 +94,7 @@ Read the matching file before the first write in that domain:
 | bash / python on the Windows host | `windows-host.md` |
 | any health number / dose / claim (§00.A) | `source-rule.md` |
 | proposing a new system, tool, or invariant (§00.B) | `engineering-doctrine.md` |
+| the Charter's enforceable rules (R1–R9) + their gate status | `charter.md` |
 | logging · history · what & why to record | `logging-doctrine.md` |
 | building/perfecting a page or any visual/UX surface | `visual-verification.md` |
 
@@ -152,7 +153,7 @@ tools/{build.mjs, invariants.py, safe_write.py, creators_log.py, render_probe*.j
 - **§00 / §17 / §31** — Prime directives · Write discipline · Chokepoint discipline.
 - **Pillar** — One of the three sealed, hand-edited data sources under `eden/`: Corpus · Products · Catalog. Everything else is generated from them.
 - **Generated artifact** — Any file derived from the pillars (all `assets/data/*.json`, indices, the bundle). Never hand-edited; a freshness gate proves it matches source.
-- **The Charter** — The R1–R9 enforceable rules + their machine gates (blueprint §1); a rule with no gate is a labeled WISH.
+- **The Charter** — The R1–R9 enforceable rules + their machine gates; permanent home `.claude/rules/charter.md` (blueprint §1 is the design origin). A rule with no gate is a labeled WISH.
 - **Sealed canonical** — File with a `*.golden.sha256` sibling. User-only writer.
 - **Eden** — The three sealed pillars under `eden/`. Every Wallach / Youngevity number originates here.
 - **Round / Chunk** — Closed unit of work that ends with the Round-close ritual.

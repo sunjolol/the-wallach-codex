@@ -12,7 +12,7 @@ The project pivoted from whack-a-mole bug-fixing to a full structural overhaul a
 - **Phase A rules audit** (`72d2d71`) — reconciled the 12 `.claude/rules/` + `REVIEW.md` to the Charter. Rewrote `source-rule.md` (two-role split RETIRED → Wallach drives every amount, Youngevity = composition only; pack-extrapolation-as-target → "Retired/poison"; Enforcement split CURRENT-vs-WISH per R7). Fixed `chokepoint-discipline.md` (lint = `no-restricted-globals` WARN; `regimen_state_mutation_routing` noted WISH, re-gated Phase C). DELETED `wild-west-mode.md` — legal/copyright pass deferred to END of build (now memory `legal-copyright-pass-at-end.md` + finalize-checklist §4). 8 other rule files clean; `data-flow.md` + `REVIEW.md` flagged accurate-today (doomed-invariant ref; five-vs-seven round-close), left for their retiring phase.
 
 ## PHASE A REMAINING (governance reset — blueprint §8; finish BEFORE building pillars)
-★ **CHARTER PERMANENT HOME** — R1–R9 live only in the temporary/living blueprint; promote them to a permanent rule file so they survive the blueprint's pruning. CLAUDE.md references it.
+✓ **CHARTER PERMANENT HOME — DONE (2026-07-05).** Promoted R1–R9 to `.claude/rules/charter.md` (authoritative; each rule carries its gate + an honest LIVE/PARTIAL/WISH status per R7). Rewired CLAUDE.md's 3 Charter refs (§00.B line, glossary, +1 rules-table row) from "blueprint §1" to charter.md; added a permanent-home pointer atop blueprint §1 marking it the frozen design origin. Board 38/38.
 ★ **74-MEMORY AUDIT** — the memory files (`C:\Users\Light\.claude\projects\C--Users-Light-Desktop-claude-health-expert\memory\`) encode OLD approaches (middle layer, stance sweep, Youngevity-targets). Audit against the blueprint; prune/mark-superseded the contradictions. ⚠ **Until done, recalled memories may contradict the new model — CLAUDE.md + the blueprint are authoritative.**
 ★ `genesis/02-clarifications-and-plan.md` — mark SUPERSEDED by the blueprint (archive).
 ★ ADD `no_operating_doc_contradiction` gate — a scan that no operating doc contradicts the Charter / references a deleted structure (extends `no_dead_legacy_paths`).
@@ -24,5 +24,5 @@ Phase B Catalog pillar → **Phase C derivation pipeline (the poison purge: targ
 menaquinone→phylloquinone book correction + K1/K2 alert-box → Phase E/G · target-number-shift → Phase C · archaic-rules audit → Phase A rules audit (above) · Immortality/DDDL re-mine → Phase G. The blueprint is authoritative.
 
 ## IMMEDIATE NEXT TASK = the remaining Phase A governance items (any order; genesis will ask).
-Suggested next: **Charter permanent home** (small, self-contained — promote R1–R9 out of the temporary/living blueprint so pruning can't lose them; CLAUDE.md already references "the Charter" as if it has one). Then the **74-memory audit** (larger; stale memories actively mislead until done — the ⚠ above). Also owed: genesis/02 supersede-archive + the `no_operating_doc_contradiction` gate.
-Board: 38/38 green. Tree clean after the rules-audit commit (`72d2d71`).
+Charter permanent home is DONE (above). Suggested next: the **74-memory audit** (larger; stale memories actively mislead until done — the ⚠ above). Also owed: genesis/02 supersede-archive + the `no_operating_doc_contradiction` gate (the last two are small).
+Board: 38/38 green. Charter-home chunk committed 2026-07-05 (build-log 11:46 CDT).

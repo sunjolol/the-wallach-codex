@@ -1,0 +1,35 @@
+# The Charter (R1–R9) — the non-negotiable enforceable rules
+
+_Read when proposing a new system / tool / invariant, closing a chunk, or auditing an operating file against the rules. This is the **permanent home** of the Charter — promoted here 2026-07-05 from `chronicle/OVERHAUL-BLUEPRINT.md` §1, which is temporary + living (pruned as phases land). **This file is authoritative;** the blueprint section is the frozen design origin. If the two ever disagree, this file wins._
+
+## Pattern
+A small, closed set of enforceable rules. Every rule names its **gate** — the code that proves it — and its current **status**, so a rule is never sold as safer than its enforcement. A rule whose full gate does not exist yet is labeled **WISH** (R7): documented honestly, resting on discipline + review until the gate lands, never presented as a guarantee.
+
+- **LIVE** — the gate runs in `tools/invariants.py` (or a hook) today.
+- **PARTIAL** — some coverage is live now; the rest is a WISH landing in a named phase.
+- **WISH** — the gate arrives in a later phase; until then the rule binds by discipline + review, labeled as such.
+
+## The rules
+
+| # | Rule | Gate (the proof) | Status |
+|---|---|---|---|
+| R1 | Only the two sources (Wallach Corpus, Youngevity Product DB) + the Catalog are hand-editable. Every shipped artifact is generated from them. | `derived_artifacts_fresh` — regenerate every manifest artifact from the sealed pillars, byte-compare to disk; the write-guard blocks edits to generated paths. | **PARTIAL.** LIVE: `corpus_embed_synced`, `dashboard_dist_fresh`, `eden_hash_integrity`, `corpus_integrity` (the corpus half). WISH: full `derived_artifacts_fresh` over ALL artifacts + the `eden/derived/MANIFEST.json` registry (Phase C). |
+| R2 | Wallach-only for every recommended amount / range / dose. Youngevity = composition only, never a target. | `amounts_wallach_only` — every amount carries a `source_claim_id` → a Wallach claim; a Youngevity-sourced amount = RED. One-time poison sweep across all kept files. | **WISH — Phase C.** Transitional live guard on the OLD layer only: `wallach_stance_source_rule` (retires with the rotten middle layer). |
+| R3 | One source per fact, referenced by ID. No canonical value hand-written twice. | `references_resolve` (every ID resolves to a catalog/registry entry) + `no_hand_duplicated_canonical` (derived copies only). | **PARTIAL.** LIVE: claim-mapping resolution via `corpus_integrity`. WISH: catalog-wide `references_resolve` (Phase B) + `no_hand_duplicated_canonical` (Phase D). |
+| R4 | Prose is contained: summaries / descriptions / alert-boxes / glosses live in ONE compartment, ID-attached, single-copy — never inline in code, never in a fact field. | `prose_contained` — prose only in designated prose fields; the scan fails if prose-shaped text appears in code or a fact field. | **PARTIAL.** LIVE: `views_state_no_inline_data` (blocks literal arrays/objects > 10 elements in `views/` + `state/`). WISH: full `prose_contained` (Phase D). |
+| R5 | The mining gate: a record cannot land unless it passes every structural check. | The `mine` pipeline — verbatim ⊆ source · citation ∈ registry · mappings ∈ catalog · prose-contained · units-sane · amount-has-Wallach-source. Fail → cannot seal → board RED. | **LIVE (corpus).** `corpus_integrity` + `mined_pages_clean` + `verbatim_names_mapped_conditions` + `book_source_clean` + `verbatim_over_soft_limit` + `umbrella_proxy_named` + the gloss gates (`claim_text_term_gloss`, `jargon_terms_glossed`, `glossary_wellformed`). WISH: extend to products (`products_verify`, Phase F). |
+| R6 | Logs are sacred + append-only. Deletion is structurally blocked; the only override is the 3-part ALL-CAPS ritual. BUILD → TEST → LOG → REPEAT is sacred. | `creators_log_append_only` + `build_log_append_only` (+ any new sacred log); the round-close + `stop_round_close.py` hook enforce the cycle. | **LIVE.** `creators_log_append_only`, `build_log_append_only`, `creators_log_{well_formed,digest_synced,embed_synced,bundle_synced,archive_synced}`. |
+| R7 | Codify, don't promise. Every enforceable rule ships its gate in the same patch. Unenforceable items are labeled WISH. | This Charter's own Status column; the future `charter_gates_present` meta-gate renders an empty gate cell as a visible WISH. | **PARTIAL.** LIVE by discipline + this Status column now. WISH: automated `charter_gates_present` (Phase C/D). |
+| R8 | No poison left behind. Everything kept is re-audited against R1–R6; violations are purged, not grandfathered. | The migration runs every preserved file through the gates; the board cannot go green with a violation present. | **WISH.** Enforced by the Phase C/D migration (each kept file re-passes the gates); no standalone invariant — it is the sum of R1–R6's gates applied to the surviving files. |
+| R9 | Refinements are codified too. A misfiring gate is fixed by re-codifying with proof — tighten the check, or add an auditable, versioned exception with a reason + a test. Never a silent loosening. | `exceptions_justified` — each baseline exception carries a reason + a test; an invariant fails on an unjustified exception. The refinement ships with the misfire it fixes (R9). | **WISH.** `.claude/invariant-baseline.json` is the exception store today; the reason+test-per-exception gate is not yet built (Phase C+). |
+
+## How to use
+- **Proposing a new system / tool / invariant (§00.B):** for each of R1–R9, name whether the change honors / stresses / violates it. A new rule that CAN be a gate ships its gate in the same patch (R7); if it cannot yet, label it WISH here — never sell it as safe.
+- **Closing a chunk:** R5 + R6's gates are part of the round-close board; a red R6 gate hard-blocks (`stop_round_close.py`).
+- **Auditing an operating file (blueprint §8 / Phase A):** every operating doc must agree with this table; a doc that contradicts the Charter or cites a deleted structure is a defect (the future `no_operating_doc_contradiction` gate).
+- **When a gate is WISH:** the rule still binds by discipline + review; the WISH label IS the honesty (R7), not a waiver.
+
+## Relationship to the rest
+- **CLAUDE.md §00** — the two prime directives (§00.A Wallach source-of-truth, §00.B engineering standard) sit ABOVE the Charter; R1–R9 are their enforceable operationalization.
+- **The enforcement table** — `chronicle/OVERHAUL-BLUEPRINT.md` §4 maps each failure mode → gate → severity → status. That table and this file track the same gates from two angles: §4 is the failure-mode view, this is the rule view. §4 lives in the temporary blueprint; when it is pruned, its durable content folds here.
+- **The domain rules** — `source-rule.md` (§00.A / R2 detail), `engineering-doctrine.md` (§00.B), `logging-doctrine.md` (R6), `data-flow.md` (R1 / R3 / R4), `write-discipline.md` (§17), `chokepoint-discipline.md` (§31) carry the per-domain HOW; this file is the enforceable-rule spine they hang from.
