@@ -28,7 +28,7 @@
         "wallach_stance": {
           "summary": "Wallach treats plant-sourced (organically bound colloidal) aluminum as an essential nutrient, distinct from metallic aluminum: the colloidal form shows no negative effect and appears essential to human nutrition.",
           "verbatim": "The aluminum found in plants is organically bound colloidal aluminum and appears not to have any negative affect and in fact appears to be an essential element in human nutrition.",
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Per-element stance drawn from the cited primary."
         }
       },
@@ -42,7 +42,7 @@
         "wallach_stance": {
           "summary": "Wallach holds arsenic is an essential trace element, long dismissed as merely toxic; it functions in methyl-group metabolism and polyamine synthesis, its activity tied to zinc, selenium, and several amino acids.",
           "verbatim": "Arsenic metabolism is affected by tissue and blood levels of zinc, selenium, arginine, choline, methionine, taurine, and quaniacetic acid, all of which affect methyl-group metabolism and polyamine synthesis which is the site of arsenic function in human physiology.",
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Per-element stance drawn from the cited primary."
         }
       },
@@ -56,7 +56,7 @@
         "wallach_stance": {
           "summary": "Wallach counts barium among the essential trace minerals, noting it was recognized as essential to mammals as early as 1949.",
           "verbatim": "Barium was considered essential to mammals in 1949.",
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Per-element stance drawn from the cited primary."
         }
       },
@@ -104,7 +104,7 @@
         "wallach_stance": {
           "summary": "Wallach treats bromine as an essential trace element that acts through brominated amino acids, citing strong evidence for its essentiality in mammals.",
           "verbatim": "Bromine functions in the form of brominated amino acids. There is strong evidence for Bromine's essentiality in mammals.",
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Per-element stance drawn from the cited primary."
         }
       },
@@ -171,7 +171,7 @@
         "wallach_stance": {
           "summary": "Wallach notes cesium is used in alternative cancer therapy as 'high-pH therapy' — entering the cancer cell and creating an alkaline environment.",
           "verbatim": "Cesium provides \"high ph therapy\" for cancer by entering the cancer cell and producing an alkaline environment.",
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Per-element stance drawn from the cited primary."
         }
       },
@@ -223,7 +223,7 @@
         "wallach_stance": {
           "summary": "Wallach identifies cobalt as an essential trace mineral: it activates enzymes, fixes nitrogen in amino-acid production, and forms the central atom of vitamin B12.",
           "verbatim": "Cobalt functions as a cofactor and activator for enzymes, fixes nitrogen during amino acid production, and a single cobalt atom is the central metal component of vitamin B12 which itself is a cofactor and activator (cobamide coenzymes) for several essential enzymes.",
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Per-element stance drawn from the cited primary."
         }
       },
@@ -290,7 +290,7 @@
         "wallach_stance": {
           "summary": "Wallach cites europium (a rare earth) among the essential trace minerals, noting it has doubled the lifespan of laboratory species.",
           "verbatim": "Europium has extended the life of laboratory species over their normal expected lifespan by 100 percent.",
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Per-element stance drawn from the cited primary."
         }
       },
@@ -304,7 +304,7 @@
         "wallach_stance": {
           "summary": "Wallach lists gadolinium among the essential trace minerals; his corpus notes only that it is rapidly absorbed and accumulated in the bone and liver of land animals, without an individual dose.",
           "verbatim": "Land animals accumulate gadolinium in bone and liver very quickly after absorption.",
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Per-element stance drawn from the cited primary."
         }
       },
@@ -318,7 +318,7 @@
         "wallach_stance": {
           "summary": "Wallach treats gallium as an essential trace element with metalloenzyme activity in the brain, citing reports that it reduced brain-cancer rates in laboratory animals.",
           "verbatim": "Gallium has specific areas of metalloenzyme activity in the human brain and has been reported to specifically reduce the rate of brain cancer in laboratory animals.",
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Per-element stance drawn from the cited primary."
         }
       },
@@ -327,12 +327,12 @@
         "essential_per_wallach": true,
         "wallach_baseline_target": "50 mg/day in immune protocols (DDDL)",
         "notes": "Specific immune-stimulation dose in DDDL. General trace via PDM otherwise.",
-        "source": "Dead Doctors Don't Lie (Wallach, 1999) immune protocols",
+        "source": "Dead Doctors Don't Lie (Wallach, 2011) immune protocols",
         "kind": "wallach",
         "wallach_stance": {
           "summary": "Germanium at 50 mg/day enhances immune function, oxygen delivery to tissues, and may have anti-tumor properties. Wallach cites germanium in immune-stimulation protocols for chronic infection and cancer-prevention contexts.",
           "verbatim": null,
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "from the immune-stimulation / cancer-prevention protocols"
         }
       },
@@ -440,7 +440,7 @@
         "wallach_stance": {
           "summary": "Wallach cites lanthanum (a rare earth) as a longevity-linked essential — doubling the lifespan of test organisms; he also holds that Candida 'steals' lanthanum, producing a chronic-fatigue-like exhaustion.",
           "verbatim": "The growth of the protozoa Blepherisma and Tetrahymena pyriformis is stimulated and their life span doubled by the presence of the rare earth lanthanum at concentrations of 0.32 ppm.",
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Per-element stance drawn from the cited primary."
         }
       },
@@ -454,7 +454,7 @@
         "wallach_stance": {
           "summary": "Wallach classes lithium as an essential trace mineral; deficiency causes reproductive failure, stunted growth, shortened lifespan, and behavioral problems, and it is used to treat depression and manic depression.",
           "verbatim": "Animal studies show that a deficiency of lithium results in reproductive failure, infertility, reduced growth rate, shortened life expectancy, and behavioral problems.",
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Per-element stance drawn from the cited primary."
         }
       },
@@ -516,12 +516,12 @@
           }
         ],
         "notes": "Carpal tunnel cofactor (with arsenic, choline) per DDDL.",
-        "source": "Let's Play Doctor (Wallach) baseline + Dead Doctors Don't Lie (1999)",
+        "source": "Let's Play Doctor (Wallach) baseline + Dead Doctors Don't Lie (2011)",
         "kind": "wallach",
         "wallach_stance": {
           "summary": "Manganese deficiency causes carpal tunnel syndrome, hearing loss, joint pain, lordosis, knee deformities, and impaired glucose tolerance. Manganese is a cofactor in dozens of metalloenzymes including superoxide dismutase, the body's primary antioxidant enzyme.",
           "verbatim": null,
-          "citation": "Let's Play Doctor (Wallach & Ma Lan); Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Let's Play Doctor (Wallach & Ma Lan); Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "from the carpal tunnel + joint pain treatment sections"
         }
       },
@@ -530,12 +530,12 @@
         "essential_per_wallach": true,
         "wallach_baseline_target": "trace via PDM (also in goiter prevention)",
         "notes": "Goiter prevention cofactor with iodine + Cu + tyrosine per DDDL.",
-        "source": "Youngevity ReVERSE!® label + Dead Doctors Don't Lie (Wallach, 1999)",
+        "source": "Youngevity ReVERSE!® label + Dead Doctors Don't Lie (Wallach, 2011)",
         "kind": "wallach",
         "wallach_stance": {
           "summary": "Molybdenum is a cofactor for xanthine oxidase, sulfite oxidase, and aldehyde oxidase — essential for sulfur amino acid metabolism and detoxification of sulfites. Wallach pairs molybdenum with iodine, copper, and tyrosine in goiter-prevention protocols.",
           "verbatim": null,
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "from the goiter-prevention cofactor stack"
         }
       },
@@ -549,7 +549,7 @@
         "wallach_stance": {
           "summary": "Wallach lists neodymium (a light rare earth) among the essential trace minerals, citing that it enhances normal cell growth and doubles the lifespan of laboratory species.",
           "verbatim": "Neodymium is a \"light rare earth\" proven to enhance normal cell growth and double the life span of laboratory species.",
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Per-element stance drawn from the cited primary."
         }
       },
@@ -563,7 +563,7 @@
         "wallach_stance": {
           "summary": "Wallach treats nickel as an essential trace mineral — a metalloenzyme cofactor that aids the absorption of iron and zinc; deficiency brings poor growth, anemia, and dermatitis.",
           "verbatim": "Nickel functions as a cofactor for metalloenzymes and facilitates gastrointestinal absorption of iron and zinc.",
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Per-element stance drawn from the cited primary."
         }
       },
@@ -695,7 +695,7 @@
         "wallach_stance": {
           "summary": "Wallach cites samarium (a rare earth) among the essential trace minerals, noting it enhances normal cell proliferation and doubles the lifespan of laboratory species.",
           "verbatim": "Samarium enhances normal cell proliferation and doubles the life span of laboratory species.",
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Per-element stance drawn from the cited primary."
         }
       },
@@ -764,12 +764,12 @@
         "essential_per_wallach": true,
         "wallach_baseline_target": "trace via PDM (also colloidal silver topical/antimicrobial)",
         "notes": "Topical antimicrobial use mentioned in DDDL.",
-        "source": "Youngevity Colloidal Silver label + Dead Doctors Don't Lie (Wallach, 1999)",
+        "source": "Youngevity Colloidal Silver label + Dead Doctors Don't Lie (Wallach, 2011)",
         "kind": "wallach",
         "wallach_stance": {
           "summary": "Colloidal silver acts as a topical and oral antimicrobial — Wallach mentions its use in Dead Doctors Don't Lie for wound care, ear infections, and broad-spectrum infection support. The colloidal form (rather than ionic silver salts) is what Wallach endorses.",
           "verbatim": null,
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "from the topical/antimicrobial uses section"
         }
       },
@@ -865,7 +865,7 @@
         "wallach_stance": {
           "summary": "Wallach lists thulium (a rare earth) among the essential trace minerals, citing that supplementation enhances normal cell growth and has doubled the lifespan of laboratory species.",
           "verbatim": "Thulium supplementation enhances the growth of normal cells and has doubled the life span of laboratory species.",
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Per-element stance drawn from the cited primary."
         }
       },
@@ -879,7 +879,7 @@
         "wallach_stance": {
           "summary": "Wallach holds tin is an essential trace element (per Schwarz, 1970) — once dismissed as contamination, it accelerates growth in animal studies and meets the standards for an essential trace element.",
           "verbatim": "Originally the presence of tin in tissue was attributed to environmental contamination; however, careful and detailed studies by Schwarz demonstrated that tin produced acceleration in growth in rats and further met the standards for an essential trace element.",
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Per-element stance drawn from the cited primary."
         }
       },
@@ -912,12 +912,12 @@
           }
         ],
         "notes": "Functions like insulin via cell-membrane receptor sensitization. Form matters massively (vanadyl sulfate 0.1-1% vs plant-derived colloidal 98%). See why-layer-blood-sugar.md.",
-        "source": "Youngevity Slender FX Sweet Eze label + Dead Doctors Don't Lie (Wallach, 1999)",
+        "source": "Youngevity Slender FX Sweet Eze label + Dead Doctors Don't Lie (Wallach, 2011)",
         "kind": "wallach",
         "wallach_stance": {
           "summary": "Vanadium at 250 mcg/day improves insulin sensitivity and blood glucose regulation. Wallach cites vanadium as one of the diabetes-prevention minerals alongside chromium — the two work as a pair in the glucose-metabolism cofactor stack.",
           "verbatim": null,
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "from the diabetes-prevention protocol"
         }
       },
@@ -945,7 +945,7 @@
         "wallach_stance": {
           "summary": "Wallach cites yttrium (a heavy rare earth) among the essential trace minerals, noting it enhances normal cell growth and doubles the lifespan of laboratory species.",
           "verbatim": "Yttrium enhances normal cell growth and doubles the life span of laboratory species.",
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Per-element stance drawn from the cited primary."
         }
       },
@@ -1115,7 +1115,7 @@
         "wallach_stance": {
           "summary": "Vitamin B12 (Cobalamin) deficiency causes pernicious anemia, peripheral neuritis, fatigue, depression, dementia, sore tongue, and tingling in the extremities. Wallach considers B12 supplementation non-negotiable for anyone over 50 due to declining intrinsic factor production.",
           "verbatim": null,
-          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), Table 11-9; Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Rare Earths & Forbidden Cures (Wallach & Ma Lan), Table 11-9; Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "from the water-soluble vitamins deficiency reference + Wallach's aging-cofactor framing"
         }
       },
@@ -1342,7 +1342,7 @@
         "wallach_stance": {
           "summary": "Wallach's operational framework treats the essential amino acids as dietary-default with clinical-lever supplementation for specific conditions. The Beyond Tangy Tangerine 2.5 amino blend provides baseline coverage of all essential aminos collectively; individual amino acid supplementation is reserved for the clinical levers (e.g., Lysine for herpes, Taurine for macular degeneration, Phenylalanine for joint pain).",
           "verbatim": null,
-          "citation": "Beyond Tangy Tangerine 2.5 amino blend label (Youngevity); Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Beyond Tangy Tangerine 2.5 amino blend label (Youngevity); Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Wallach-framework class stance for amino acids covered as a blend rather than individually supplemented"
         }
       },
@@ -1358,7 +1358,7 @@
         "wallach_stance": {
           "summary": "Wallach's operational framework treats the essential amino acids as dietary-default with clinical-lever supplementation for specific conditions. The Beyond Tangy Tangerine 2.5 amino blend provides baseline coverage of all essential aminos collectively; individual amino acid supplementation is reserved for the clinical levers (e.g., Lysine for herpes, Taurine for macular degeneration, Phenylalanine for joint pain).",
           "verbatim": null,
-          "citation": "Beyond Tangy Tangerine 2.5 amino blend label (Youngevity); Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Beyond Tangy Tangerine 2.5 amino blend label (Youngevity); Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Wallach-framework class stance for amino acids covered as a blend rather than individually supplemented"
         }
       },
@@ -1374,7 +1374,7 @@
         "wallach_stance": {
           "summary": "Wallach's operational framework treats the essential amino acids as dietary-default with clinical-lever supplementation for specific conditions. The Beyond Tangy Tangerine 2.5 amino blend provides baseline coverage of all essential aminos collectively; individual amino acid supplementation is reserved for the clinical levers (e.g., Lysine for herpes, Taurine for macular degeneration, Phenylalanine for joint pain).",
           "verbatim": null,
-          "citation": "Beyond Tangy Tangerine 2.5 amino blend label (Youngevity); Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Beyond Tangy Tangerine 2.5 amino blend label (Youngevity); Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Wallach-framework class stance for amino acids covered as a blend rather than individually supplemented"
         }
       },
@@ -1391,12 +1391,12 @@
         "notes": "Classic essential.",
         "tile_kind": "dietary_with_clinical_lever",
         "dietary_default": "via dietary protein",
-        "source": "Dead Doctors Don't Lie (Wallach, 1999) herpes protocol",
+        "source": "Dead Doctors Don't Lie (Wallach, 2011) herpes protocol",
         "kind": "dietary_with_clinical_lever",
         "wallach_stance": {
           "summary": "Lysine at 1-6 g/day is Wallach's primary clinical lever for herpes outbreak management — both Herpes I (cold sores) and Herpes II (genital). 500 mg/day maintenance; higher doses 'to effect' during acute outbreaks. Lysine competes with arginine for cellular uptake; high-arginine foods like nuts and chocolate trigger outbreaks for susceptible patients.",
           "verbatim": null,
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "from the herpes-treatment protocol"
         }
       },
@@ -1413,12 +1413,12 @@
         "notes": "Sulfur-bearing amino acid; part of Wallach's bone/joint sulfur arm.",
         "tile_kind": "dietary_with_clinical_lever",
         "dietary_default": "via dietary protein",
-        "source": "Dead Doctors Don't Lie (Wallach, 1999) macular degeneration",
+        "source": "Dead Doctors Don't Lie (Wallach, 2011) macular degeneration",
         "kind": "dietary_with_clinical_lever",
         "wallach_stance": {
           "summary": "Methionine is a sulfur-bearing amino acid essential for methylation reactions, joint cartilage synthesis, and liver detoxification. Wallach cites methionine in the macular degeneration cofactor stack and joint-health protocols.",
           "verbatim": null,
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "from the macular degeneration + joint cofactor protocols"
         }
       },
@@ -1439,12 +1439,12 @@
         "notes": "Classic essential.",
         "tile_kind": "dietary_with_clinical_lever",
         "dietary_default": "via dietary protein",
-        "source": "Dead Doctors Don't Lie (Wallach, 1999) joint-pain + vitiligo protocols",
+        "source": "Dead Doctors Don't Lie (Wallach, 2011) joint-pain + vitiligo protocols",
         "kind": "dietary_with_clinical_lever",
         "wallach_stance": {
           "summary": "Phenylalanine at 1.5 g three times daily (4.5 g/day total) is Wallach's joint-pain protocol; 50 mg per kg body weight is the vitiligo protocol. Phenylalanine is the precursor to tyrosine and the catecholamine neurotransmitters (dopamine, norepinephrine).",
           "verbatim": null,
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "from the joint-pain + vitiligo treatment protocols"
         }
       },
@@ -1466,12 +1466,12 @@
         "notes": "No dedicated YGY Ultimate Taurine SKU, but Taurine is present in: Rebound FX Citrus Punch (Powder & Stick Pack, 200 mg/serving), Ultimate Cardio Stx (120 mg/serving), and 3.0 Rise & Restore (within a 500 mg Energy & Metabolism Booster blend where L-taurine is the lead ingredient — likely ~300 mg actual). Multiple servings or stacking required to approach 1.5-5 g clinical range. NOTE: in products-db.json these are classified under non_essentials rather than nutrients, which is a data-hygiene bug (Taurine is one of Wallach's 90 essentials). The Pass 6 lookup parses both fields as of 2026-06-14.",
         "tile_kind": "dietary_with_clinical_lever",
         "dietary_default": "via diet (animal protein)",
-        "source": "Dead Doctors Don't Lie (Wallach, 1999) macular degeneration + general",
+        "source": "Dead Doctors Don't Lie (Wallach, 2011) macular degeneration + general",
         "kind": "dietary_with_clinical_lever",
         "wallach_stance": {
           "summary": "Taurine at 2-5 g/day is Wallach's macular degeneration protocol; 500 mg three times daily is general supplementation. Taurine is essential for bile acid conjugation, retinal function, cardiac muscle contractility, and neurotransmission. Cats famously cannot synthesize taurine and develop blindness without dietary intake — humans synthesize it but at insufficient rates under stress.",
           "verbatim": null,
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "from the macular degeneration treatment protocol"
         }
       },
@@ -1493,12 +1493,12 @@
         "notes": "Thyroid hormone precursor.",
         "tile_kind": "dietary_with_clinical_lever",
         "dietary_default": "via dietary protein",
-        "source": "Dead Doctors Don't Lie (Wallach, 1999) goiter + general",
+        "source": "Dead Doctors Don't Lie (Wallach, 2011) goiter + general",
         "kind": "dietary_with_clinical_lever",
         "wallach_stance": {
           "summary": "Tyrosine at 2 g three times daily (6 g/day) is Wallach's general protocol; specific use as a goiter-prevention cofactor with iodine, copper, and molybdenum. Tyrosine is the precursor to thyroid hormone (T3, T4), the catecholamine neurotransmitters, and melanin.",
           "verbatim": null,
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "from the goiter-prevention + general supplementation protocols"
         }
       },
@@ -1514,7 +1514,7 @@
         "wallach_stance": {
           "summary": "Wallach's operational framework treats the essential amino acids as dietary-default with clinical-lever supplementation for specific conditions. The Beyond Tangy Tangerine 2.5 amino blend provides baseline coverage of all essential aminos collectively; individual amino acid supplementation is reserved for the clinical levers (e.g., Lysine for herpes, Taurine for macular degeneration, Phenylalanine for joint pain).",
           "verbatim": null,
-          "citation": "Beyond Tangy Tangerine 2.5 amino blend label (Youngevity); Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Beyond Tangy Tangerine 2.5 amino blend label (Youngevity); Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Wallach-framework class stance for amino acids covered as a blend rather than individually supplemented"
         }
       },
@@ -1531,12 +1531,12 @@
         "notes": "Serotonin precursor. Classic essential.",
         "tile_kind": "dietary_with_clinical_lever",
         "dietary_default": "via dietary protein",
-        "source": "Dead Doctors Don't Lie (Wallach, 1999) anxiety/hypoglycemia protocol",
+        "source": "Dead Doctors Don't Lie (Wallach, 2011) anxiety/hypoglycemia protocol",
         "kind": "dietary_with_clinical_lever",
         "wallach_stance": {
           "summary": "Tryptophan is the precursor to serotonin and melatonin — Wallach's anxiety and hypoglycemia protocols use up to 10 g three times daily for severe cases. Standard maintenance is much lower; tryptophan was banned by the FDA in 1989 over a contamination incident but is now available again as 5-HTP and L-tryptophan.",
           "verbatim": null,
-          "citation": "Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "from the anxiety / hypoglycemia / serotonin-precursor protocols"
         }
       },
@@ -1552,7 +1552,7 @@
         "wallach_stance": {
           "summary": "Wallach's operational framework treats the essential amino acids as dietary-default with clinical-lever supplementation for specific conditions. The Beyond Tangy Tangerine 2.5 amino blend provides baseline coverage of all essential aminos collectively; individual amino acid supplementation is reserved for the clinical levers (e.g., Lysine for herpes, Taurine for macular degeneration, Phenylalanine for joint pain).",
           "verbatim": null,
-          "citation": "Beyond Tangy Tangerine 2.5 amino blend label (Youngevity); Dead Doctors Don't Lie (Wallach, 1999)",
+          "citation": "Beyond Tangy Tangerine 2.5 amino blend label (Youngevity); Dead Doctors Don't Lie (Wallach, 2011)",
           "context": "Wallach-framework class stance for amino acids covered as a blend rather than individually supplemented"
         }
       }
