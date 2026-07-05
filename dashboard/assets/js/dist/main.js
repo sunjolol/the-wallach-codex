@@ -7902,6 +7902,15606 @@
     };
   }
 
+  // assets/data/regimen-label-lookup.json
+  var regimen_label_lookup_default = {
+    _meta: {
+      purpose: "Per-product label vault keyed by canonical_name. Read by the Regimen Full-edit flow + the Knowledge Products tab. GENERATED from eden-catalog.json by eden/tools/products_embed.py \u2014 never hand-edited (R1). Inlined into the bundle via esbuild JSON import.",
+      source: "eden/eden-catalog.json",
+      generator: "eden/tools/products_embed.py",
+      eden_version: 1,
+      sealed_at: "2026-06-20T00:00:00Z",
+      product_count: 201
+    },
+    products: {
+      "18 Daily Super Fruit Blend": {
+        eden_id: "EDEN-LOCKED-18-daily-super-fruit-blend",
+        canonical_name: "18 Daily Super Fruit Blend",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY whole-food fruit capsule",
+        serving_size: "3 capsules",
+        servings_per_container: 30,
+        dose_text: "3 capsules daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Fruit Blend",
+            amount: 2010,
+            unit: "mg",
+            form: "proprietary blend (18 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "tomato",
+              "apple",
+              "grape",
+              "papaya",
+              "pineapple",
+              "bilberry",
+              "cranberry",
+              "mango",
+              "elderberry",
+              "baobab",
+              "orange",
+              "cherry",
+              "raspberry",
+              "blueberry",
+              "strawberry",
+              "tart cherry",
+              "banana",
+              "lemon \u2014 18 fruits"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "Provides you with the nutrients of 18 fruits and 20 vegetables including vitamins, minerals, and antioxidants.",
+        tagline: ""
+      },
+      "20 Daily Super Veggie Blend": {
+        eden_id: "EDEN-LOCKED-20-daily-super-veggie-blend",
+        canonical_name: "20 Daily Super Veggie Blend",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY whole-food vegetable capsule",
+        serving_size: "3 capsules",
+        servings_per_container: 30,
+        dose_text: "3 capsules daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Vegetable Blend",
+            amount: 2010,
+            unit: "mg",
+            form: "proprietary blend (21 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "spinach",
+              "carrot",
+              "garlic",
+              "kale",
+              "cauliflower",
+              "celery",
+              "red cabbage",
+              "alfalfa grass",
+              "broccoli",
+              "cayenne",
+              "green cabbage",
+              "sweet potato",
+              "white onion",
+              "red onion",
+              "mushroom blend [maitake",
+              "reishi",
+              "himematsutake/agaricus",
+              "turkey tail",
+              "shiitake",
+              "lion's mane",
+              "chaga] \u2014 20 vegetables"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "Provides you with the nutrients of 18 fruits and 20 vegetables including vitamins, minerals, and antioxidants.",
+        tagline: ""
+      },
+      "3.0 Restore": {
+        eden_id: "EDEN-LOCKED-3-0-restore",
+        canonical_name: "3.0 Restore",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY proprietary HOPE recovery/wellness blend",
+        serving_size: "1 scoop (8g)",
+        servings_per_container: 30,
+        dose_text: "1 scoop (8g) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 900,
+            unit: "mcg RAE",
+            form: "retinyl palmitate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 450,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 20,
+            unit: "mcg",
+            form: "vegan cholecalciferol (800 IU)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 15,
+            unit: "mg",
+            form: "d-alpha tocopherol acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 480,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 400,
+            unit: "mcg DFE",
+            form: "5-methyltetrahydrofolate",
+            alignment: "aligned"
+          },
+          {
+            name: "Chromium",
+            amount: 35,
+            unit: "mcg",
+            form: "chromium chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 200,
+            unit: "mg",
+            form: "magnesium citrate & chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 50,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Circulation Booster",
+            amount: 2e3,
+            unit: "mg",
+            form: "proprietary blend (14 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "beet",
+              "celery",
+              "carrot",
+              "turmeric",
+              "ginger",
+              "pomegranate",
+              "ginkgo",
+              "watermelon",
+              "grapes",
+              "spinach",
+              "tomato",
+              "cinnamon",
+              "banana",
+              "garlic"
+            ]
+          },
+          {
+            name: "Relaxation Support Matrix",
+            amount: 500,
+            unit: "mg",
+            form: "proprietary blend (6 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "L-theanine",
+              "ashwagandha [Sensoril]",
+              "chamomile",
+              "lemon balm",
+              "holy basil",
+              "passionflower"
+            ]
+          },
+          {
+            name: "Immunity Superfood Complex",
+            amount: 500,
+            unit: "mg",
+            form: "proprietary blend (16 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "goji",
+              "amla",
+              "acai",
+              "acerola",
+              "camu camu",
+              "strawberry",
+              "raspberry",
+              "mulberry",
+              "maqui",
+              "black berry",
+              "aronia",
+              "elderberry",
+              "blueberry",
+              "cranberry",
+              "bilberry",
+              "hawthorn"
+            ]
+          },
+          {
+            name: "Liver Detox Blend",
+            amount: 400,
+            unit: "mg",
+            form: "proprietary blend (8 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "L-glutathione",
+              "NAC",
+              "milk thistle 80% silymarin",
+              "DHM",
+              "bupleurum/chai hu",
+              "guarana",
+              "inositol hexanicotinate",
+              "kudzu 40% isoflavones"
+            ]
+          },
+          {
+            name: "Adaptogenic Hormonal Balance Aid",
+            amount: 250,
+            unit: "mg",
+            form: "proprietary blend (6 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "maca",
+              "American ginseng",
+              "panax ginseng",
+              "eleuthero",
+              "Korean red ginseng",
+              "schisandra"
+            ]
+          },
+          {
+            name: "Pre-Probiotic Blend",
+            amount: 100,
+            unit: "mg",
+            form: "proprietary blend (2 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "FOS",
+              "Bacillus coagulans 500M CFU"
+            ]
+          },
+          {
+            name: "Plant Derived Mineral Complex",
+            amount: 100,
+            unit: "mg",
+            form: "proprietary blend (2 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "sea algae minerals + fulvic acid \u2014 AQUAMIN-style",
+              "NOT humic shale"
+            ]
+          }
+        ],
+        features: [
+          "Dual system maximizes your body\u2019s absorption and use of essential nutrients throughout the day (Time Duration Nutrition)",
+          "Goes beyond baseline nutrition to help support your cognitive performance, mood, and so much more 3.0 Rise\u2122: Focuses on overall health, energy levels, cognitive performance, mood, and the immune system 3.0 Restore\u2122: Designed to support healthy hormonal responses, circulation, (https://youngevity.com/us_en/) mood, digestion, and overall health",
+          "Menu Autoship Cart",
+          "Start your day with refreshing Acai Pomegranate (Rise) and enjoy an afternoon boost with Raspberry Lemon (Restore)",
+          "Both blends are gluten-free and vegan-friendly",
+          "No artificial"
+        ],
+        what_it_does: "Provides baseline nutrition, plus targeted blends, to support overall health.",
+        tagline: ""
+      },
+      "3.0 Rise": {
+        eden_id: "EDEN-LOCKED-3-0-rise",
+        canonical_name: "3.0 Rise",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY proprietary HOPE energy/cognition blend",
+        serving_size: "1 scoop (7.6g)",
+        servings_per_container: 30,
+        dose_text: "1 scoop (7.6g) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 900,
+            unit: "mcg RAE",
+            form: "retinyl palmitate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 1e3,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 20,
+            unit: "mcg",
+            form: "vegan cholecalciferol (800 IU)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 15,
+            unit: "mg",
+            form: "d-alpha tocopherol acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 6,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 3.25,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 16,
+            unit: "mg NE",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 8.5,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 1e3,
+            unit: "mcg DFE",
+            form: "5-methyltetrahydrofolate calcium salt",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 480,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 75,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 25,
+            unit: "mg",
+            form: "pantothenic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 25,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          },
+          {
+            name: "Chromium",
+            amount: 35,
+            unit: "mcg",
+            form: "chromium chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 110,
+            unit: "mcg",
+            form: "selenomethionine",
+            alignment: "aligned"
+          },
+          {
+            name: "Phosphorus",
+            amount: 125,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          },
+          {
+            name: "Zinc",
+            amount: 11,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          },
+          {
+            name: "Sodium",
+            amount: 230,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 410,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Nootropic Cognitive Blend",
+            amount: 140,
+            unit: "mg",
+            form: "proprietary blend (4 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Brainberry/aronia",
+              "bilberry",
+              "bacopa monnieri",
+              "rhodiola"
+            ]
+          },
+          {
+            name: "Mood Wellness Blend",
+            amount: 100,
+            unit: "mg",
+            form: "proprietary blend (10 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "5HTP/griffonia",
+              "lion's mane",
+              "maitake",
+              "himematsutake",
+              "cordyceps",
+              "turkey tail",
+              "shiitake",
+              "zhu ling",
+              "chaga",
+              "meshima"
+            ]
+          },
+          {
+            name: "Phytonutrients Matrix",
+            amount: 500,
+            unit: "mg",
+            form: "proprietary blend (7 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "apple peel",
+              "grape seed",
+              "quercetin",
+              "resveratrol",
+              "alpha lipoic acid",
+              "pterostilbene",
+              "CoQ10"
+            ]
+          },
+          {
+            name: "Plant Derived Mineral Complex",
+            amount: 50,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "sea algae trace minerals + fulvic acid \u2014 AQUAMIN-style"
+            ]
+          },
+          {
+            name: "Cellular Drip Hydration Complex",
+            amount: 1800,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "potassium citrate",
+              "dipotassium phosphate",
+              "disodium phosphate",
+              "NaCl",
+              "zinc AA chelate"
+            ]
+          }
+        ],
+        features: [
+          "Dual system maximizes your body\u2019s absorption and use of essential nutrients throughout the day (Time Duration Nutrition)",
+          "Goes beyond baseline nutrition to help support your cognitive performance, mood, and so much more 3.0 Rise\u2122: Focuses on overall health, energy levels, cognitive performance, mood, and the immune system 3.0 Restore\u2122: Designed to support healthy hormonal responses, circulation, (https://youngevity.com/us_en/) mood, digestion, and overall health",
+          "Menu Autoship Cart",
+          "Start your day with refreshing Acai Pomegranate (Rise) and enjoy an afternoon boost with Raspberry Lemon (Restore)",
+          "Both blends are gluten-free and vegan-friendly",
+          "No artificial"
+        ],
+        what_it_does: "Provides baseline nutrition, plus targeted blends, to support overall health.",
+        tagline: ""
+      },
+      "ACT Energy Canister": {
+        eden_id: "EDEN-LOCKED-act-energy-canister",
+        canonical_name: "ACT Energy Canister",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY caffeine + electrolyte energy drink (canister)",
+        serving_size: "1 scoop (15g)",
+        servings_per_container: 30,
+        dose_text: "1 scoop (15g) daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 60,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 20,
+            unit: "mg",
+            form: "niacin (unspecified)",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 2,
+            unit: "mg",
+            form: "pyridoxine hydrochloride",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 6,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 395,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Caffeine",
+            amount: 120,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "green coffee + guarana"
+            ]
+          }
+        ],
+        features: [
+          "Enjoy a crash-free energy boost with 120 mg of natural caffeine",
+          "Provides vitamins, minerals, amino acids, electrolytes, and more to support sustained energy",
+          "Convenient powder sticks for on-the-go energy",
+          "A low-calorie, zero-sodium alternative to other energy drinks",
+          "Absolutely no artificial"
+        ],
+        what_it_does: "Provides natural caffeine and other nutrients for sustained energy support.",
+        tagline: ""
+      },
+      "ACT Energy Stick Pack": {
+        eden_id: "EDEN-LOCKED-act-energy-stick-pack",
+        canonical_name: "ACT Energy Stick Pack",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY caffeine + electrolyte energy drink (stick pack)",
+        serving_size: "1 stick (15g)",
+        servings_per_container: 30,
+        dose_text: "1 stick (15g) daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 60,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 20,
+            unit: "mg",
+            form: "niacin (unspecified)",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 2,
+            unit: "mg",
+            form: "pyridoxine hydrochloride",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 6,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 395,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Caffeine",
+            amount: 120,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "green coffee bean + guarana"
+            ]
+          }
+        ],
+        features: [
+          "Enjoy a crash-free energy boost with 120 mg of natural caffeine",
+          "Provides vitamins, minerals, amino acids, electrolytes, and more to support sustained energy",
+          "Convenient powder sticks for on-the-go energy",
+          "A low-calorie, zero-sodium alternative to other energy drinks",
+          "Absolutely no artificial"
+        ],
+        what_it_does: "Provides natural caffeine and other nutrients for sustained energy support.",
+        tagline: ""
+      },
+      ASAP: {
+        eden_id: "EDEN-LOCKED-asap",
+        canonical_name: "ASAP",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY men's libido/circulation drops",
+        serving_size: "0.75 ml",
+        servings_per_container: 80,
+        dose_text: "0.75 ml daily",
+        nutrients: [
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 15,
+            unit: "mg",
+            form: "niacin (unspecified)",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 10,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 100,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 500,
+            unit: "mg",
+            form: "proprietary blend (6 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "L-Arginine HCl",
+              "L-Carnitine",
+              "L-Glutamine",
+              "Tribulus terrestris",
+              "Epimedium",
+              "Resveratrol"
+            ]
+          }
+        ],
+        features: [
+          "ASAP contains a proprietary set of"
+        ],
+        what_it_does: "targets fat cells to be metabolized for energy use.",
+        tagline: ""
+      },
+      "Activate GLP-1": {
+        eden_id: "EDEN-LOCKED-activate-glp-1",
+        canonical_name: "Activate GLP-1",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY GLP-1 support stick (L-Arginine megadose)",
+        serving_size: "1 packet (8.4g)",
+        servings_per_container: 20,
+        dose_text: "1 packet (8.4g) daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 50,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Arginine",
+            amount: 4500,
+            unit: "mg",
+            form: "L-arginine Base"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Tart Cherry Powder",
+            amount: 250,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Resveratrol",
+            amount: 100,
+            unit: "mg",
+            form: "Polygonum cuspidatum",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Ancestral Supplements Grass Fed Beef Liver": {
+        eden_id: "EDEN-LOCKED-ancestral-supplements-grass-fed-beef-liver",
+        canonical_name: "Ancestral Supplements Grass Fed Beef Liver",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "Non-YGY food-form supplement",
+        serving_size: "6 capsules",
+        servings_per_container: 30,
+        dose_text: "6 capsules daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 4500,
+            unit: "mcg RAE",
+            form: "retinol (food-form)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 60,
+            unit: "mcg",
+            form: "food-form",
+            alignment: "aligned"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 250,
+            unit: "mcg",
+            form: "food-form folate",
+            alignment: "aligned"
+          },
+          {
+            name: "Copper",
+            amount: 7.5,
+            unit: "mg",
+            form: "food-form",
+            alignment: "aligned"
+          },
+          {
+            name: "Iron",
+            amount: 9,
+            unit: "mg",
+            form: "heme iron",
+            alignment: "aligned"
+          },
+          {
+            name: "Choline",
+            amount: 1500,
+            unit: "mg",
+            form: "food-form",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Apple Cider Vinegar Gummies": {
+        eden_id: "EDEN-LOCKED-apple-cider-vinegar-gummies",
+        canonical_name: "Apple Cider Vinegar Gummies",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY ACV gummy",
+        serving_size: "2 gummies",
+        servings_per_container: 30,
+        dose_text: "2 gummies daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Apple Cider Vinegar",
+            amount: 500,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Lion's Mane Mushroom",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Black Currant",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Includes 500 mg. of ACV with \u201Cthe mother\u201D in each serving",
+          "Antioxidant-rich black currant and Lion\u2019s Mane mushroom provide beneficial nutrients and vitamins",
+          "NEW and improved formula is gluten-free, vegan, allergen-free",
+          "NOW available year round",
+          "Sweetened with all-natural honey"
+        ],
+        what_it_does: "Supplies you with a daily serving of ACV, plus additional nutrients to support overall health.",
+        tagline: ""
+      },
+      "BE Trim Sticks (Mango or Pina Colada)": {
+        eden_id: "EDEN-LOCKED-be-trim-sticks-mango-or-pina-colada",
+        canonical_name: "BE Trim Sticks (Mango or Pina Colada)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY weight-loss caffeine stick pack",
+        serving_size: "1 stick (4.5-4.9 g)",
+        servings_per_container: 20,
+        dose_text: "1 stick (4.5-4.9 g) daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 7,
+            unit: "mg",
+            form: "ascorbic acid (Mango variant only)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 8,
+            unit: "mg NE",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 110,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Chromium",
+            amount: 18,
+            unit: "mcg",
+            form: "chromium polynicotinate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Caffeine",
+            amount: 28,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Antioxidant Energy Blend",
+            amount: 2853,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "cane sugar",
+              "fruit juice",
+              "green coffee"
+            ]
+          },
+          {
+            name: "Nitric Oxide Plant Pump Blend",
+            amount: 27,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "beet root",
+              "kale",
+              "red spinach"
+            ]
+          },
+          {
+            name: "Nootropic-Focus Blend",
+            amount: 642,
+            unit: "mg",
+            form: "proprietary blend (6 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Glycine",
+              "L-Tyrosine",
+              "L-Citrulline",
+              "BioPerine",
+              "Bitter Orange 30% P-Synephrine",
+              "Huperzine A"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "BTT 2.0 Powder Stick Pack": {
+        eden_id: "EDEN-LOCKED-btt-2-0-powder-stick-pack",
+        canonical_name: "BTT 2.0 Powder Stick Pack",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY foundational multi (powder stick pack \u2014 different formulation from tablets)",
+        serving_size: "1 stick pack (16g)",
+        servings_per_container: 30,
+        dose_text: "1 stick pack (16g) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 3e3,
+            unit: "mcg RAE",
+            form: "beta carotene",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 1250,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 25,
+            unit: "mcg",
+            form: "cholecalciferol (from algae, vegan)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 40,
+            unit: "mg",
+            form: "d-alpha tocopheryl acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 30,
+            unit: "mg",
+            form: "thiamine mononitrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 30,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 40,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 30,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 833,
+            unit: "mcg DFE",
+            form: "folic acid (500 mcg)",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 1e3,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 750,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 150,
+            unit: "mg",
+            form: "calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 120,
+            unit: "mg",
+            form: "citrate + gluconate",
+            alignment: "aligned"
+          },
+          {
+            name: "Iron",
+            amount: 1,
+            unit: "mg",
+            form: "ferrous gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 40,
+            unit: "mg",
+            form: "magnesium oxide + gluconate",
+            alignment: "misaligned"
+          },
+          {
+            name: "Zinc",
+            amount: 3,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 100,
+            unit: "mcg",
+            form: "selenomethionine",
+            alignment: "aligned"
+          },
+          {
+            name: "Copper",
+            amount: 1.5,
+            unit: "mg",
+            form: "copper gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Chromium",
+            amount: 200,
+            unit: "mcg",
+            form: "chromium amino acid chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 175,
+            unit: "mg",
+            form: "potassium gluconate + citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Boron",
+            amount: 1,
+            unit: "mg",
+            form: "boron citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin K (Menaquinone = K2)",
+            amount: 40,
+            unit: "mcg",
+            form: "menatetrenone (K2 MK-4)",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Organic Whole Food Blend",
+            amount: 5700,
+            unit: "mg",
+            form: "proprietary blend (12 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "massive food blend incl. amla",
+              "alfalfa",
+              "beet",
+              "celery",
+              "parsley",
+              "spinach",
+              "broccoli",
+              "cordyceps",
+              "neishi",
+              "lion's mane",
+              "nettle",
+              "etc"
+            ]
+          },
+          {
+            name: "Typical Organic Amino Acid Complex",
+            amount: 575,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "from brown rice: L-glutamic",
+              "leucine",
+              "etc"
+            ]
+          },
+          {
+            name: "Trace Mineral Blend",
+            amount: 300,
+            unit: "mg",
+            form: "proprietary blend (6 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "algas calcareas + hydrothermal mineral clay incl. boron",
+              "manganese",
+              "silica",
+              "strontium",
+              "vanadium",
+              "zinc \u2014 Aquamin family"
+            ]
+          },
+          {
+            name: "PuriGenic Multifaceted Free Radical Defense",
+            amount: 150,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "organic amla",
+              "grape seed",
+              "selenomethionine"
+            ]
+          },
+          {
+            name: "Vegan Glucosamine",
+            amount: 125,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "MSM",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Chondroitin Sulfate",
+            amount: 25,
+            unit: "mg",
+            form: "bovine",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Inositol",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Beet Root",
+            amount: 20,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "rich in DMG"
+            ]
+          },
+          {
+            name: "CoQ10",
+            amount: 3,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Essential vitamins, prebiotics, probiotics, amino acids, and enzymes support overall health from the inside out",
+          "Synergizing cofactors ensure maximum nutrient absorption and benefits",
+          "An unusually high 8,000 ORAC (antioxidant) score per serving",
+          "Gluten-free, sugar-free, shellfish-free, and non-GMO; no artificial flavors or colors added",
+          "Low glycemic design makes this a safe supplement for those who monitor blood sugar levels",
+          "Made for adults and children (see Recommended Use section for details)"
+        ],
+        what_it_does: "Provides the body with the essential nutrients needed for optimal health.",
+        tagline: ""
+      },
+      "BTT 2.0 Tablets": {
+        eden_id: "EDEN-LOCKED-btt-2-0-tablets",
+        canonical_name: "BTT 2.0 Tablets",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY foundational multi (tablet form, highest Zn + Boron)",
+        serving_size: "4 tablets",
+        servings_per_container: 30,
+        dose_text: "4 tablets daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 3e3,
+            unit: "mcg",
+            form: "retinyl palmitate + beta-carotene",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 1250,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 25,
+            unit: "mcg",
+            form: "cholecalciferol (1000 IU)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 40,
+            unit: "mg",
+            form: "d-alpha tocopheryl acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin K (Menaquinone = K2)",
+            amount: 40,
+            unit: "mcg",
+            form: "phylloquinone (K1)",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 30,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 30,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 40,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 30,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 835,
+            unit: "mcg DFE",
+            form: "5-methylfolate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 1e3,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 750,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 150,
+            unit: "mg",
+            form: "D-calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 180,
+            unit: "mg",
+            form: "calcium gluconate, dicalcium phosphate, calcium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Iron",
+            amount: 1,
+            unit: "mg",
+            form: "ferrous gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 40,
+            unit: "mg",
+            form: "magnesium gluconate + oxide",
+            alignment: "misaligned"
+          },
+          {
+            name: "Zinc",
+            amount: 30,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 100,
+            unit: "mcg",
+            form: "selenomethionine",
+            alignment: "aligned"
+          },
+          {
+            name: "Copper",
+            amount: 1.5,
+            unit: "mg",
+            form: "copper gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Chromium",
+            amount: 200,
+            unit: "mcg",
+            form: "chromium amino acid chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 90,
+            unit: "mg",
+            form: "potassium gluconate + citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Boron",
+            amount: 1,
+            unit: "mg",
+            form: "sodium borate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Whole Foods Blend",
+            amount: 620,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "32 fruits/veg/herbs"
+            ]
+          },
+          {
+            name: "Organic Amino Acids Complex",
+            amount: 100,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "from brown rice sprouts \u2014 17 AAs"
+            ]
+          },
+          {
+            name: "Trace Minerals",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Multifaceted Free Radical Defense System",
+            amount: 25,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "amla + grape seed"
+            ]
+          },
+          {
+            name: "Organic Beet Root Powder",
+            amount: 5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Glucosamine HCl",
+            amount: 125,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "MSM",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "PrePro Prebiotic and Probiotic Blend",
+            amount: 50,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "FOS",
+              "L. acidophilus",
+              "B. coagulans"
+            ]
+          },
+          {
+            name: "Trans-Resveratrol",
+            amount: 50,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Polygonum cuspidatum"
+            ]
+          },
+          {
+            name: "Chondroitin Sulfate",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Inositol",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "CoQ10",
+            amount: 3,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Essential vitamins, prebiotics, probiotics, amino acids, and enzymes support overall health from the inside out",
+          "Synergizing cofactors ensure maximum nutrient absorption and benefits",
+          "An unusually high 160,000 ORAC (antioxidant) score per serving",
+          "Gluten-free, sugar-free, shellfish-free, and non-GMO; no artificial flavors or colors added",
+          "Low glycemic design makes this a safe supplement for those who monitor blood sugar levels"
+        ],
+        what_it_does: "Provides the body with the essential nutrients needed for optimal health.",
+        tagline: ""
+      },
+      "BTT 2.5 Canister": {
+        eden_id: "EDEN-LOCKED-btt-2-5-canister",
+        canonical_name: "BTT 2.5 Canister",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY foundational mineral multi (newer powder form)",
+        serving_size: "2 scoops (15g)",
+        servings_per_container: 30,
+        dose_text: "2 scoops (15g) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 810,
+            unit: "mcg RAE",
+            form: "retinyl palmitate (46%) + beta-carotene (54%)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 1e3,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 18.8,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 100,
+            unit: "mg",
+            form: "d-alpha tocopheryl acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 30,
+            unit: "mg",
+            form: "thiamine mononitrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 30,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 40,
+            unit: "mg NE",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 30,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 400,
+            unit: "mcg DFE",
+            form: "calcium-L-5-methylfolate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 500,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 600,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 150,
+            unit: "mg",
+            form: "D-calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Choline",
+            amount: 25,
+            unit: "mg",
+            form: "choline bitartrate",
+            alignment: "partial"
+          },
+          {
+            name: "Calcium",
+            amount: 130,
+            unit: "mg",
+            form: "Ca gluconate/ascorbate/citrate",
+            alignment: "partial"
+          },
+          {
+            name: "Iron",
+            amount: 1,
+            unit: "mg",
+            form: "ferrous gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 20,
+            unit: "mg",
+            form: "Mg gluconate and oxide",
+            alignment: "partial"
+          },
+          {
+            name: "Zinc",
+            amount: 2,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 100,
+            unit: "mcg",
+            form: "selenomethionine",
+            alignment: "aligned"
+          },
+          {
+            name: "Copper",
+            amount: 1,
+            unit: "mg",
+            form: "copper gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Chromium",
+            amount: 200,
+            unit: "mcg",
+            form: "chromium chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 100,
+            unit: "mg",
+            form: "K gluconate and citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Boron",
+            amount: 1,
+            unit: "mg",
+            form: "boron citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin K (Menaquinone = K2)",
+            amount: 30,
+            unit: "mcg",
+            form: "menaquinone-7 (K2 MK-7)",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Whole Foods Blend",
+            amount: 500,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Plant Derived Mineral Complex",
+            amount: 300,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Glucosamine",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "MSM",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Chondroitin",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "K2 MK-7",
+            amount: 30,
+            unit: "mcg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Added beetroot for increased cardiovascular support",
+          "Methylfolate provides better absorption than folate(used in BTT 2.0 and 1.0)",
+          "An unusually high 8,000 ORAC (antioxidant) score per serving",
+          "Gluten-free, sugar-free, shellfish-free, and non-GMO; no artificial flavors or colors added",
+          "Low glycemic design makes this a safe supplement for those who monitor blood sugar levels",
+          "Made for adults and children (see Recommended Use section for details)"
+        ],
+        what_it_does: "Provides the body with the vitamins, prebiotics, probiotics, amino acids, and enzymes needed for optimal health.",
+        tagline: ""
+      },
+      "Beyond Hot Chocolate": {
+        eden_id: "EDEN-LOCKED-beyond-hot-chocolate",
+        canonical_name: "Beyond Hot Chocolate",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY adaptogenic hot chocolate",
+        serving_size: "1 scoop (12g)",
+        servings_per_container: 30,
+        dose_text: "1 scoop (12g) daily",
+        nutrients: [
+          {
+            name: "Iron",
+            amount: 1,
+            unit: "mg",
+            form: "from cocoa",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Reishi Mushroom Extract",
+            amount: 250,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Organic cocoa powder provides antioxidants, caffeine, and an irresistibly creamy texture*",
+          "Each serving delivers Reishi mushroom for immune, emotional, and overall health support*",
+          "Includes MCT to support energy production*",
+          "A low-calorie, low-sodium, low-sugar option",
+          "No artificial"
+        ],
+        what_it_does: "Provides an enhanced cup of hot cocoa that supports your overall health and happiness.",
+        tagline: ""
+      },
+      "Beyond Osteo FX Liquid": {
+        eden_id: "EDEN-LOCKED-beyond-osteo-fx-liquid",
+        canonical_name: "Beyond Osteo FX Liquid",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY bone / Sr / sulfur cluster (liquid)",
+        serving_size: "1 fl oz (30 mL)",
+        servings_per_container: 32,
+        dose_text: "1 fl oz (30 mL) daily",
+        nutrients: [
+          {
+            name: "Vitamin D3",
+            amount: 10,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 1200,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          },
+          {
+            name: "Phosphorus",
+            amount: 300,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          },
+          {
+            name: "Magnesium",
+            amount: 300,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 5,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          },
+          {
+            name: "Copper",
+            amount: 0.05,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          },
+          {
+            name: "Sulfur",
+            amount: 250,
+            unit: "mg",
+            form: "MSM",
+            alignment: "aligned"
+          },
+          {
+            name: "Strontium",
+            amount: 500,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          },
+          {
+            name: "Boron",
+            amount: 3,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Contains more than 77 organically-bound non-GMO trace minerals",
+          "Additional vitamins provided to bolster overall health",
+          "Gluten-free and shellfish-free",
+          "Yummy Tropical Vanilla flavor \u2013 enjoy alone or in a smoothie!",
+          "Made for adults and children (see Recommended Use section for details)"
+        ],
+        what_it_does: "Supplies calcium, trace minerals, and other nutrients that may help the body better absorb calcium.",
+        tagline: ""
+      },
+      "Beyond Osteo FX Powder": {
+        eden_id: "EDEN-LOCKED-beyond-osteo-fx-powder",
+        canonical_name: "Beyond Osteo FX Powder",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY bone / Sr / sulfur cluster",
+        serving_size: "1 scoop (12.8 g)",
+        servings_per_container: 30,
+        dose_text: "1 scoop (12.8 g) daily",
+        nutrients: [
+          {
+            name: "Vitamin D3",
+            amount: 25,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 1200,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          },
+          {
+            name: "Phosphorus",
+            amount: 600,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          },
+          {
+            name: "Magnesium",
+            amount: 300,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 5,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          },
+          {
+            name: "Copper",
+            amount: 0.1,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          },
+          {
+            name: "Sulfur",
+            amount: 250,
+            unit: "mg",
+            form: "MSM",
+            alignment: "aligned"
+          },
+          {
+            name: "Strontium",
+            amount: 500,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          },
+          {
+            name: "Boron",
+            amount: 1,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Contains more than 72 organically-bound non-GMO trace minerals",
+          "Additional vitamins provided to bolster overall health",
+          "Gluten-free and shellfish-free",
+          "Yummy Tropical Vanilla flavor \u2013 enjoy alone or in a smoothie!",
+          "Made for adults and children (see Recommended Use section for details)"
+        ],
+        what_it_does: "Supplies calcium, trace minerals, and other nutrients that can help the body better absorb calcium.",
+        tagline: ""
+      },
+      "Bio Calcium": {
+        eden_id: "EDEN-LOCKED-bio-calcium",
+        canonical_name: "Bio Calcium",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY bone calcium + cofactor capsule",
+        serving_size: "2 capsules",
+        servings_per_container: 60,
+        dose_text: "2 capsules daily",
+        nutrients: [
+          {
+            name: "Calcium",
+            amount: 225,
+            unit: "mg",
+            form: "calcium citrate + malate",
+            alignment: "aligned"
+          },
+          {
+            name: "Magnesium",
+            amount: 150,
+            unit: "mg",
+            form: "magnesium amino acid chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 2,
+            unit: "mg",
+            form: "gluconate + amino acid chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Copper",
+            amount: 0.4,
+            unit: "mg",
+            form: "copper amino acid chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Manganese",
+            amount: 1,
+            unit: "mg",
+            form: "manganese gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 99,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Boron",
+            amount: 1,
+            unit: "mg",
+            form: "boron amino acid chelate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Biometics Aloe Plus": {
+        eden_id: "EDEN-LOCKED-biometics-aloe-plus",
+        canonical_name: "Biometics Aloe Plus",
+        brand: "Biometics (Youngevity-owned)",
+        brand_tier: 1,
+        category: "Biometics aloe vera liquid",
+        serving_size: "1 tbsp (15 mL)",
+        servings_per_container: 30,
+        dose_text: "1 tbsp (15 mL) daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 60,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Sodium",
+            amount: 5,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 75,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "May be soothing to the digestive system, preparing the way for vitamins and nutrients to be absorbed efficiently.",
+          "Contains 100% of the U.S. Daily Values of Vitamin C",
+          "Using Biocellular Micellization\xAE, this patented process allows fat soluble nutrients found in Aloe Plus to be absorbed by the body quicker",
+          "Free of milk, soy, egg, peanuts, tree nuts, artificial flavors, starch, and yeast.",
+          "Key Ingredient/Benefits",
+          "Key Ingredient Benefits"
+        ],
+        what_it_does: "Serves as a liquid base for other Biometics products Provides you with soothing aloe vera Supports healthy digestion May help prepare digestive tract to ensure optimal nutrient absorption",
+        tagline: ""
+      },
+      "Biometics Bio-Alert (Choline Mega-Dose)": {
+        eden_id: "EDEN-LOCKED-biometics-bio-alert-choline-mega-dose",
+        canonical_name: "Biometics Bio-Alert (Choline Mega-Dose)",
+        brand: "Biometics (Youngevity-owned)",
+        brand_tier: 1,
+        category: "Biometics cognitive/wake liquid",
+        serving_size: "1 tbsp (15 mL)",
+        servings_per_container: 30,
+        dose_text: "1 tbsp (15 mL) daily",
+        nutrients: [
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 3,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 3.4,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 60,
+            unit: "mg NE",
+            form: "niacin + niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 5,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Choline",
+            amount: 1e3,
+            unit: "mg",
+            form: "choline dihydrogen citrate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Glycine",
+            amount: 150,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Targeted nutrients may help support a healthy memory, brain, and nervous system",
+          "Patented Biocellular Micellization\xAE process helps speed up the nutrient absorption process",
+          "Free of milk, soy, egg, peanuts, tree nuts, artificial flavors, starch, and yeast",
+          "Easy-to-drink liquid formula in fresh citrus flavor"
+        ],
+        what_it_does: "Provides targeted nutrients to promote optimal mental clarity, focus, energy, and more.",
+        tagline: ""
+      },
+      "Biometics Bio-Fuel": {
+        eden_id: "EDEN-LOCKED-biometics-bio-fuel",
+        canonical_name: "Biometics Bio-Fuel",
+        brand: "Biometics (Youngevity-owned)",
+        brand_tier: 1,
+        category: "Biometics liquid multivitamin",
+        serving_size: "1 tbsp (15 mL)",
+        servings_per_container: 30,
+        dose_text: "1 tbsp (15 mL) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 2250,
+            unit: "mcg RAE",
+            form: "50% beta-carotene + palmitate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 180,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 5,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 20,
+            unit: "mg",
+            form: "d-alpha tocopheryl acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 1.5,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 1.7,
+            unit: "mg",
+            form: "Riboflavin-5-Phosphate (R5P)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 20,
+            unit: "mg NE",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 2.5,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 400,
+            unit: "mcg DFE",
+            form: "folic acid",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 9,
+            unit: "mcg",
+            form: "cyanocobalamin (per Other Ingredients)",
+            alignment: "partial"
+          },
+          {
+            name: "Biotin",
+            amount: 150,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 10,
+            unit: "mg",
+            form: "D-pantothenol",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 15,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 100,
+            unit: "mcg",
+            form: "sodium selenite",
+            alignment: "partial"
+          },
+          {
+            name: "Copper",
+            amount: 0.5,
+            unit: "mg",
+            form: "copper gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Manganese",
+            amount: 1,
+            unit: "mg",
+            form: "manganese gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Chromium",
+            amount: 50,
+            unit: "mcg",
+            form: "chromium polynicotinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 40,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Contains 100% of the U.S. Daily Values of many essential vitamins and minerals",
+          "Grape Seed, Green Tea, and Ginkgo Biloba extracts deliver antioxidant and energy support9,10,11",
+          "Patented Biocellular Micellization\xAE process delivers up to 5 times better absorption",
+          "Dairy-free, sugar-free, and zero calories",
+          "Tasty Tropical Fruit flavor!",
+          "Key Ingredient/Benefits"
+        ],
+        what_it_does: "Provides essential vitamins, minerals, and additional high-antioxidant nutrients to help you support optimal health and energy.",
+        tagline: ""
+      },
+      "Biometics Bio-Nite": {
+        eden_id: "EDEN-LOCKED-biometics-bio-nite",
+        canonical_name: "Biometics Bio-Nite",
+        brand: "Biometics (Youngevity-owned)",
+        brand_tier: 1,
+        category: "Biometics (YGY brand) sleep liquid",
+        serving_size: "1/2 tsp (2 ml)",
+        servings_per_container: 30,
+        dose_text: "1/2 tsp (2 ml) daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Melatonin",
+            amount: 3,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Biometics Cal-Mag": {
+        eden_id: "EDEN-LOCKED-biometics-cal-mag",
+        canonical_name: "Biometics Cal-Mag",
+        brand: "Biometics (Youngevity-owned)",
+        brand_tier: 1,
+        category: "Biometics Ca+Mg drink",
+        serving_size: "1 scoop (20 g)",
+        servings_per_container: 30,
+        dose_text: "1 scoop (20 g) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 1200,
+            unit: "mcg",
+            form: "beta-carotene",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 60,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 10,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 1e3,
+            unit: "mg",
+            form: "calcium carbonate",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 400,
+            unit: "mg",
+            form: "magnesium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 15,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Provides calcium, magnesium, zinc, and vitamins A/C/D for optimal bone health",
+          "Formulated to increase absorption of key nutrients like calcium",
+          "Natural Orange flavor perfect for adding to a smoothie!"
+        ],
+        what_it_does: "Synergizes essential nutrients like calcium and magnesium, offering a myriad of health benefits while promoting maximum absorption in the body.",
+        tagline: ""
+      },
+      "Biometics Get-Go-N-Plus": {
+        eden_id: "EDEN-LOCKED-biometics-get-go-n-plus",
+        canonical_name: "Biometics Get-Go-N-Plus",
+        brand: "Biometics (Youngevity-owned)",
+        brand_tier: 1,
+        category: "Biometics (YGY brand) energy drink",
+        serving_size: "2 scoops (10g)",
+        servings_per_container: 30,
+        dose_text: "2 scoops (10g) daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 150,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 10,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 1.7,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 50,
+            unit: "mg",
+            form: "niacin + niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 10,
+            unit: "mg",
+            form: "pyridoxine HCl + pyridoxal-5-phosphate",
+            alignment: "aligned"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 400,
+            unit: "mcg",
+            form: "folic acid",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 6,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 10,
+            unit: "mg",
+            form: "D-calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 5,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Copper",
+            amount: 0.6,
+            unit: "mg",
+            form: "copper gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Tyrosine",
+            amount: 500,
+            unit: "mg",
+            form: "L-tyrosine"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Caffeine",
+            amount: 80,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Provides key vitamins, minerals, Tyrosine, and 80g of caffeine per serving",
+          "Delicious Natural Apple Cinnamon flavor!",
+          "Powder formula blends perfectly with water or juice",
+          "No artificial colors, flavors, or additives \u2013 we only give you what you need"
+        ],
+        what_it_does: "Provides targeted nutrients to support overall health, energy, and mood.",
+        tagline: ""
+      },
+      "Biometrics Flexicare": {
+        eden_id: "EDEN-LOCKED-biometrics-flexicare",
+        canonical_name: "Biometrics Flexicare",
+        brand: "Biometics (Youngevity-owned)",
+        brand_tier: 1,
+        category: "Biometics (YGY brand) joint liquid",
+        serving_size: "1 tbsp (15 ml)",
+        servings_per_container: 30,
+        dose_text: "1 tbsp (15 ml) daily",
+        nutrients: [
+          {
+            name: "Vitamin E",
+            amount: 14,
+            unit: "mg",
+            form: "d-alpha tocopheryl acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Sulfur",
+            amount: 200,
+            unit: "mg MSM equivalent",
+            form: "MSM",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Glucosamine Hydrochloride",
+            amount: 150,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Collagen Type I",
+            amount: 200,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Combines joint-supporting nutrients in a highly absorbable liquid formula",
+          "Contains 100% U.S. Daily Value of antioxidant-rich Vitamin E",
+          "Using Biocellular Micellization\xAE, this patented process allows fat soluble nutrients found in Flexi-Care Plus to be absorbed by the body quicker",
+          "Free of milk, soy, egg, peanuts, tree nuts, artificial flavors, starch, and yeast.",
+          "Key Ingredient/Benefits",
+          "Key Ingredient Benefit"
+        ],
+        what_it_does: "Supports healthy cartilage and connective tissue Supports flexibility and mobility Supports overall joint health",
+        tagline: ""
+      },
+      "Bliss Sleep Spray": {
+        eden_id: "EDEN-LOCKED-bliss-sleep-spray",
+        canonical_name: "Bliss Sleep Spray",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY herbal sleep oral spray",
+        serving_size: "4 sprays (0.5 mL)",
+        servings_per_container: 60,
+        dose_text: "4 sprays (0.5 mL) daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Bliss Proprietary Blend",
+            amount: 500,
+            unit: "mg",
+            form: "proprietary blend (2 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Cornsilk",
+              "Peppermint"
+            ]
+          }
+        ],
+        features: [
+          "Contains only plant-based natural extracts and"
+        ],
+        what_it_does: "Combines two powerful plant-derived extracts to promote stress relief and overall physical well-being.",
+        tagline: ""
+      },
+      "Bone Building Formula": {
+        eden_id: "EDEN-LOCKED-bone-building-formula",
+        canonical_name: "Bone Building Formula",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY bone capsule with humic-shale PDM",
+        serving_size: "5 capsules",
+        servings_per_container: 30,
+        dose_text: "5 capsules daily",
+        nutrients: [
+          {
+            name: "Vitamin D3",
+            amount: 10,
+            unit: "mcg",
+            form: "cholecalciferol (400 IU)",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 200,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 500,
+            unit: "mg",
+            form: "calcium carbonate + glycinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Magnesium",
+            amount: 200,
+            unit: "mg",
+            form: "magnesium oxide + glycinate",
+            alignment: "partial"
+          },
+          {
+            name: "Manganese",
+            amount: 1,
+            unit: "mg",
+            form: "manganese glycinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Boron",
+            amount: 0.5,
+            unit: "mg",
+            form: "boron amino acid chelate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Glucosamine HCl",
+            amount: 250,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Horsetail Herb",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Rose Hips",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "C-FX": {
+        eden_id: "EDEN-LOCKED-c-fx",
+        canonical_name: "C-FX",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY immune-C capsule + echinacea",
+        serving_size: "1 capsule",
+        servings_per_container: 90,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 500,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 50,
+            unit: "mg",
+            form: "calcium carbonate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Echinacea Herb",
+            amount: 40,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Echinacea Root",
+            amount: 10,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Cal Toddy Liquid": {
+        eden_id: "EDEN-LOCKED-cal-toddy-liquid",
+        canonical_name: "Cal Toddy Liquid",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY bone/calcium liquid (high-Mg variant)",
+        serving_size: "1 fl oz",
+        servings_per_container: 32,
+        dose_text: "1 fl oz daily",
+        nutrients: [
+          {
+            name: "Vitamin D3",
+            amount: 25,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 1200,
+            unit: "mg",
+            form: "tricalcium phosphate, calcium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Phosphorus",
+            amount: 300,
+            unit: "mg",
+            form: "tricalcium phosphate",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 600,
+            unit: "mg",
+            form: "magnesium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 15,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Copper",
+            amount: 0.5,
+            unit: "mg",
+            form: "copper gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Manganese",
+            amount: 2,
+            unit: "mg",
+            form: "manganese gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 100,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Boron",
+            amount: 1,
+            unit: "mg",
+            form: "boron amino acid chelate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Provides 1,200 mg calcium per serving, plus Vitamin D and mineral cofactors shown to promote calcium uptake7",
+          "Includes 77 trace mineral solids you can\u2019t necessarily get from food6",
+          "Highly absorbable liquid formula",
+          "No artificial flavors, colors, or preservatives; shellfish-free"
+        ],
+        what_it_does: "Synergizes essential nutrients like calcium and magnesium, offering a myriad of health benefits while promoting maximum absorption in the body.",
+        tagline: ""
+      },
+      "Cell Shield RTQ": {
+        eden_id: "EDEN-LOCKED-cell-shield-rtq",
+        canonical_name: "Cell Shield RTQ",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY antioxidant/anti-inflammatory capsule",
+        serving_size: "2 capsules",
+        servings_per_container: 30,
+        dose_text: "2 capsules daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 900,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Turmeric Root [95% curcuminoids + organic root powder]",
+              "Quercetin Dihydrate",
+              "Japanese Knotweed Extract [50% trans-resveratrol]"
+            ]
+          }
+        ],
+        features: [
+          "Provides multiple, concentrated sources of antioxidants to support cell health",
+          "Turmeric contains 95% curcuminoids, a much higher concentration than what\u2019s found in similar products",
+          "Capsules are convenient for daily use and travel",
+          "No artificial flavors, colors, or fillers \u2013 we only give you what you need"
+        ],
+        what_it_does: "Provides three highly bioavailable, effective antioxidants in capsule form.",
+        tagline: ""
+      },
+      "Cheri-Mins": {
+        eden_id: "EDEN-LOCKED-cheri-mins",
+        canonical_name: "Cheri-Mins",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY flavored Majestic Earth PDM (cherry)",
+        serving_size: "1 fl oz (2 tbsp)",
+        servings_per_container: 32,
+        dose_text: "1 fl oz (2 tbsp) daily",
+        nutrients: [
+          {
+            name: "Sodium",
+            amount: 5,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Majestic Earth Plant Derived Minerals",
+            amount: 600,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "humic shale \u2014 Wallach-aligned"
+            ]
+          }
+        ],
+        features: [
+          "Includes 19,000mg of plant mineral solids you can\u2019t necessarily get from food",
+          "Majestic Earth Plant Derived Minerals\u2122 are extracted from the untouched, ancient soils of a Utah mineral mine",
+          "Mineral complex helps support the immune system and overall health1",
+          "No artificial flavors, colors, or additives \u2013 we only give you what you need"
+        ],
+        what_it_does: "Provides a liquid nutritional supplement to help the body maintain optimal mineral levels.",
+        tagline: ""
+      },
+      "ChiYo3 Energy (Goji Juice)": {
+        eden_id: "EDEN-LOCKED-chiyo3-energy-goji-juice",
+        canonical_name: "ChiYo3 Energy (Goji Juice)",
+        brand: "ChiYo3",
+        brand_tier: 1,
+        category: "YGY goji juice + energy stack",
+        serving_size: "2 fl oz (60 mL)",
+        servings_per_container: 10,
+        dose_text: "2 fl oz (60 mL) daily",
+        nutrients: [
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 30,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 40,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 400,
+            unit: "mcg",
+            form: "folic acid",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 500,
+            unit: "mcg",
+            form: "cyanocobalamin",
+            alignment: "partial"
+          },
+          {
+            name: "Sodium",
+            amount: 20,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Pure superfruit Himalayan goji berry juice from our proprietary GoChi\xAE blend",
+          "Additional delicious juice concentrates from high-antioxidant fruits",
+          "Natural caffeine provides sustained, crash-free energy",
+          "Energizing amino acids and vitamins added for even more health benefits 10 bottles per pack"
+        ],
+        what_it_does: "Provides energizing vitamins, antioxidants, and natural caffeine in convenient on-the-go bottles.",
+        tagline: ""
+      },
+      "Citri-D Spray (6000 IU)": {
+        eden_id: "EDEN-LOCKED-citri-d-spray-6000-iu",
+        canonical_name: "Citri-D Spray (6000 IU)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY ultra-high-dose D3 oral spray",
+        serving_size: "0.90 mL (6 sprays)",
+        servings_per_container: 66,
+        dose_text: "0.90 mL (6 sprays) daily",
+        nutrients: [
+          {
+            name: "Vitamin D3",
+            amount: 150,
+            unit: "mcg",
+            form: "cholecalciferol (6000 IU)",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Provides more than the standard daily value of vitamin D3",
+          "Mist formula easy to carry and use on the go",
+          "No artificial flavors; gluten and dairy-free"
+        ],
+        what_it_does: "Provides vitamin D in liquid, mist form for daily use.",
+        tagline: ""
+      },
+      "Cleanse FX": {
+        eden_id: "EDEN-LOCKED-cleanse-fx",
+        canonical_name: "Cleanse FX",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY fiber + cleanse capsule",
+        serving_size: "2 capsules",
+        servings_per_container: 30,
+        dose_text: "2 capsules daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Flax Seed",
+            amount: 600,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Cape Aloe Leaf",
+            amount: 300,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Rhubarb Root",
+            amount: 300,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Marshmallow Root",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Slippery Elm Bark",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Triphala",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Collagen Peptides Hair, Skin & Nail Support": {
+        eden_id: "EDEN-LOCKED-collagen-peptides-hair-skin-nail-support",
+        canonical_name: "Collagen Peptides Hair, Skin & Nail Support",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY pro-line collagen + beauty actives",
+        serving_size: "1 scoop (8.38g)",
+        servings_per_container: 30,
+        dose_text: "1 scoop (8.38g) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 776,
+            unit: "mcg",
+            form: "vitamin A palmitate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin C",
+            amount: 200,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 110,
+            unit: "mg",
+            form: "d-alpha tocopheryl acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 20,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 2,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 405,
+            unit: "mcg DFE",
+            form: "folate (form unspecified)",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 250,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 1e4,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 6,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Collagen Blend",
+            amount: 5,
+            unit: "g",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Fish + Bovine Collagen Hydrolysate"
+            ]
+          },
+          {
+            name: "Betaine",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Enzyme Blend",
+            amount: 30,
+            unit: "mg",
+            form: "proprietary blend (4 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Protease 6.0",
+              "Protease 4.5",
+              "Bromelain",
+              "Serratiopeptidase"
+            ]
+          },
+          {
+            name: "Alpha Lipoic Acid",
+            amount: 30,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Antioxidant Blend",
+            amount: 28,
+            unit: "mg",
+            form: "proprietary blend (8 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Resveratrol",
+              "Grape Seed",
+              "Blueberry",
+              "Quercetin",
+              "Bilberry",
+              "Cherry",
+              "Prune",
+              "Raspberry"
+            ]
+          },
+          {
+            name: "Papain 50000 USP/MG",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Includes five main types of collagen (I, II, III, V, and X)",
+          "Collagen sourced from grass-fed beef, wild-caught fish, cage-free chicken, and eggshell membrane",
+          "Includes collagen-boosting enzymes that allow the body to better utilize the dosage6",
+          "Benefits synergize to support other body systems",
+          "Flavor-free formula perfect for blending with coffee, smoothies, juice, and other recipes"
+        ],
+        what_it_does: "Provides five main types of collagen to help you support overall health and connective tissues.",
+        tagline: ""
+      },
+      "Collagen Peptides Joint": {
+        eden_id: "EDEN-LOCKED-collagen-peptides-joint",
+        canonical_name: "Collagen Peptides Joint",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY pro-line collagen joint",
+        serving_size: "1 scoop (12g)",
+        servings_per_container: 30,
+        dose_text: "1 scoop (12g) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 500,
+            unit: "mcg",
+            form: "beta carotene (per Other Ingredients)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 56,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 35,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          },
+          {
+            name: "Sodium",
+            amount: 50,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Collagen Blend",
+            amount: 9.5,
+            unit: "g",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Bovine Collagen Hydrolysate + Fish Collagen + Chicken Collagen Peptides + Eggshell Membrane Collagen \u2014 4 types"
+            ]
+          },
+          {
+            name: "Turmeric Root Powder",
+            amount: 35,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Hyaluronic Acid",
+            amount: 10,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Collagen Enzymes Blend",
+            amount: 8,
+            unit: "mg",
+            form: "proprietary blend (2 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Fungal Protease",
+              "Serratiopeptidase"
+            ]
+          },
+          {
+            name: "Cherry powder",
+            amount: 6,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Cranberry Juice Powder",
+            amount: 6,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "MSM",
+            amount: 5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Glucosamine HCl",
+            amount: 5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Chondroitin Sulfate",
+            amount: 5,
+            unit: "mg",
+            form: "bovine",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Includes five main types of collagen (I, II, III, V, and X)",
+          "Collagen sourced from grass-fed beef, wild-caught fish, cage-free chicken, and eggshell membrane",
+          "Provides joint-supporting nutrients like hyaluronic acid, turmeric, MSM, and glucosamine",
+          "Includes collagen-boosting enzymes that allow the body to better utilize the dosage6",
+          "Benefits synergize to support other body systems",
+          "Natural Tropical Berry Flavor"
+        ],
+        what_it_does: "Provides five main types of collagen, plus other joint-supporting nutrients, in a great-tasting dietary supplement.",
+        tagline: ""
+      },
+      "Colloidal Silver (1/2 tsp)": {
+        eden_id: "EDEN-LOCKED-colloidal-silver-1-2-tsp",
+        canonical_name: "Colloidal Silver (1/2 tsp)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY colloidal silver liquid (lower-dose)",
+        serving_size: "1/2 tsp (2.5 ml)",
+        servings_per_container: 48,
+        dose_text: "1/2 tsp (2.5 ml) daily",
+        nutrients: [
+          {
+            name: "Silver",
+            amount: 13,
+            unit: "mcg",
+            form: "pure micro-fine silver in suspension",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Delivers 5ppm per dose of pure silver",
+          "Proprietary technology is used to produce smaller particles that are more effective at smaller doses"
+        ],
+        what_it_does: "Provides you with 5ppm of pure silver per dose.",
+        tagline: ""
+      },
+      "Colloidal Silver (4-dropper)": {
+        eden_id: "EDEN-LOCKED-colloidal-silver-4-dropper",
+        canonical_name: "Colloidal Silver (4-dropper)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY colloidal silver liquid (higher-dose)",
+        serving_size: "4 droppers (4 ml)",
+        servings_per_container: 30,
+        dose_text: "4 droppers (4 ml) daily",
+        nutrients: [
+          {
+            name: "Silver",
+            amount: 40,
+            unit: "mcg",
+            form: "colloidal silver",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [],
+        what_it_does: "Provides colloidal silver suspended in deionized water. What\u2019s included: One (1) Bottle of Colloidal Silver Warning: KEEP OUT OF REACH OF CHILDREN. If you are pregnant, nursing, or taking medications, consult your healthcare professional before using this product.",
+        tagline: ""
+      },
+      "Core AO": {
+        eden_id: "EDEN-LOCKED-core-ao",
+        canonical_name: "Core AO",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY immune support stick pack",
+        serving_size: "1 stick pack (4.2g)",
+        servings_per_container: 30,
+        dose_text: "1 stick pack (4.2g) daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 23,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 2,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 700,
+            unit: "mcg",
+            form: "zinc citrate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "M-DEFEND Proprietary Blend",
+            amount: 826,
+            unit: "mg",
+            form: "proprietary blend (8 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "elderberry",
+              "mangosteen",
+              "green tea EGCG",
+              "grape seed",
+              "astragalus",
+              "acai",
+              "bilberry",
+              "cranberry"
+            ]
+          },
+          {
+            name: "BioPerine Black Pepper Extract",
+            amount: 5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Provides key immune system-supporting vitamins and nutrients",
+          "A low-calorie, low-sugar way to enjoy the benefits of antioxidant-rich superfoods",
+          "Stik packs are convenient for use on-the-go",
+          "Delicious natural berry flavor"
+        ],
+        what_it_does: "Supports a healthy immune system with vitamins, antioxidant-rich extracts, and other nutrients.",
+        tagline: ""
+      },
+      "Cough Syrup": {
+        eden_id: "EDEN-LOCKED-cough-syrup",
+        canonical_name: "Cough Syrup",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY herbal cough syrup",
+        serving_size: "2 tsp (10 mL)",
+        servings_per_container: 12,
+        dose_text: "2 tsp (10 mL) daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Thyme Extract",
+            amount: 196,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Licorice Extract",
+            amount: 114,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Plantain Extract",
+            amount: 82,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Horse Chestnut Extract",
+            amount: 32,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Pine Extract",
+            amount: 20,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Essential Oil Blend",
+            amount: 12,
+            unit: "mg",
+            form: "proprietary blend (6 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Peppermint",
+              "Eucalyptus",
+              "Cajeput",
+              "Juniper",
+              "Wintergreen",
+              "Clove"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      DigestWel: {
+        eden_id: "EDEN-LOCKED-digestwel",
+        canonical_name: "DigestWel",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY digestive enzyme tablet (alternative to Ultimate Enzymes)",
+        serving_size: "1 tablet",
+        servings_per_container: 90,
+        dose_text: "1 tablet daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Digestive Enzyme Blend",
+            amount: 83,
+            unit: "mg",
+            form: "proprietary blend (7 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Protease",
+              "Acid-Stable Protease",
+              "Bromelain",
+              "Papain \u2014 protein; Lipase \u2014 fat; Amylase",
+              "Glucoamylase",
+              "Invertase",
+              "Maltase \u2014 carbs"
+            ]
+          }
+        ],
+        features: [
+          "Contains nine highly effective enzymes that cover a wide range of nutritional components",
+          "Chewable tablets allow the digestive process to be supported from the time of ingestion",
+          "Fresh Lemon Drop flavor with zero-calorie stevia provides diet-friendly sweetness",
+          "Vegan and non-GMO"
+        ],
+        what_it_does: "Provides a targeted blend of enzymes to ensure optimal digestive health.",
+        tagline: ""
+      },
+      ElectroFuel: {
+        eden_id: "EDEN-LOCKED-electrofuel",
+        canonical_name: "ElectroFuel",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY caffeine + B-complex energy stick",
+        serving_size: "1 stick pack (3.1g)",
+        servings_per_container: 30,
+        dose_text: "1 stick pack (3.1g) daily",
+        nutrients: [
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 22,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 2,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 7,
+            unit: "mcg",
+            form: "cyanocobalamin",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 10,
+            unit: "mg",
+            form: "calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Magnesium",
+            amount: 10,
+            unit: "mg",
+            form: "magnesium oxide",
+            alignment: "misaligned"
+          },
+          {
+            name: "Sodium",
+            amount: 100,
+            unit: "mg",
+            form: "sodium chloride",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 38,
+            unit: "mg",
+            form: "monopotassium phosphate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 130,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "caffeine from coffee bean",
+              "guarana",
+              "yerba mate"
+            ]
+          },
+          {
+            name: "BioPerine Black Pepper Extract",
+            amount: 5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Only natural caffeine, no jitters!",
+          "Provides electrolytes, vitamins, minerals, and other beneficial nutrients to support optimal health",
+          "Delicious Natural Raspberry mix is low-sugar",
+          "Convenient stick packs are perfect for energy on the go!"
+        ],
+        what_it_does: "Infused with nutrients, electrolytes, and natural (not synthetic) caffeine, ElectroFuel provides smooth, crash-free energy support.",
+        tagline: ""
+      },
+      "Elevate GLP-1 Shot": {
+        eden_id: "EDEN-LOCKED-elevate-glp-1-shot",
+        canonical_name: "Elevate GLP-1 Shot",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY GLP-1 postbiotic shot + EAAs",
+        serving_size: "1 shot (50 mL)",
+        servings_per_container: 10,
+        dose_text: "1 shot (50 mL) daily",
+        nutrients: [
+          {
+            name: "Sodium",
+            amount: 30,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "GLP-1 Support Formula",
+            amount: 1800,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "B. breve postbiotic + Rocket Apple Extract + ProBio-Kombu Black Tea"
+            ]
+          },
+          {
+            name: "Lepteam Ferment Powder",
+            amount: 330,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Pomegranate",
+              "Purslane",
+              "White Mulberry",
+              "Fennel",
+              "Bitter Melon"
+            ]
+          },
+          {
+            name: "EAA Proprietary Blend",
+            amount: 692,
+            unit: "mg",
+            form: "proprietary blend (10 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "9 essential amino acids \u2014 L-Phe",
+              "L-Leu",
+              "L-Lys",
+              "L-Val",
+              "L-Ile",
+              "L-Arg",
+              "L-Thr",
+              "L-Met",
+              "L-His",
+              "L-Trp"
+            ]
+          }
+        ],
+        features: [
+          "Each serving contains key postbiotics, probiotics, amino acids, and plant extracts",
+          "Nutrients synergize to support better appetite suppression1",
+          "Amino acids promote better satiety and muscle preservation during weight",
+          "Liquid formulation designed to maximize nutrient absorption and GLP-1 release2",
+          "Convenient liquid shots for daily use and life on the go",
+          "Delicious, natural apple flavor!"
+        ],
+        what_it_does: "Helps your body leverage the power of GLP-1 with a proprietary blend of key nutrients.",
+        tagline: ""
+      },
+      Fucoidz: {
+        eden_id: "EDEN-LOCKED-fucoidz",
+        canonical_name: "Fucoidz",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY fucoidan-based immune capsule",
+        serving_size: "2 capsules",
+        servings_per_container: 30,
+        dose_text: "2 capsules daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 250,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 5,
+            unit: "mg",
+            form: "zinc ascorbate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 500,
+            unit: "mg",
+            form: "proprietary blend (4 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "L-Lysine HCl",
+              "Astragalus",
+              "Elderberry",
+              "Olive Extract"
+            ]
+          },
+          {
+            name: "Fucoidans",
+            amount: 110,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Gluco-Gel Plus Liquid": {
+        eden_id: "EDEN-LOCKED-gluco-gel-plus-liquid",
+        canonical_name: "Gluco-Gel Plus Liquid",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY joint liquid",
+        serving_size: "1 fl oz (30 mL)",
+        servings_per_container: 32,
+        dose_text: "1 fl oz (30 mL) daily",
+        nutrients: [
+          {
+            name: "Sodium",
+            amount: 4,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 48,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Glucosamine HCl",
+            amount: 2e3,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Chondroitin Sulfate",
+            amount: 1200,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Proprietary Antioxidant Blend",
+            amount: 7004,
+            unit: "mg",
+            form: "proprietary blend (6 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "apple juice",
+              "a\xE7a\xED",
+              "mangosteen",
+              "pomegranate",
+              "cranberry",
+              "red grape"
+            ]
+          }
+        ],
+        features: [
+          "All natural, fruit-based liquid formula is easily absorbable and provides highly concentrated nutrients",
+          "Delicious fruit taste with minimal sugar and sodium content",
+          "No artificial flavors, colors, or fillers \u2013 we only give you what you need",
+          "Great addition to fruit juices, teas, and smoothies"
+        ],
+        what_it_does: "Provides antioxidants and other synergizing nutrients.",
+        tagline: ""
+      },
+      Glucogenix: {
+        eden_id: "EDEN-LOCKED-glucogenix",
+        canonical_name: "Glucogenix",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY blood-sugar tablet (broader formula than Sweet Eze)",
+        serving_size: "2 tablets",
+        servings_per_container: 30,
+        dose_text: "2 tablets daily",
+        nutrients: [
+          {
+            name: "Chromium",
+            amount: 70,
+            unit: "mcg",
+            form: "chromium polynicotinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vanadium",
+            amount: 200,
+            unit: "mcg",
+            form: "vanadium nicotinate amino acid chelate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Inulin",
+            amount: 500,
+            unit: "mg",
+            form: "chicory root",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "L-Aspartic Acid",
+            amount: 150,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Green Tea Extract",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Banaba Extract",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Rhodiola",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Gymnema",
+            amount: 40,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Calcareous Marine Algae",
+            amount: 15,
+            unit: "mg",
+            form: "Aquamin TG",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Alpha-Lipoic Acid",
+            amount: 10,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Bitter Melon",
+            amount: 10,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Clove Powder",
+            amount: 10,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Provides targeted holistic nutrition to support healthy blood sugars, weight, and more",
+          "Added prebiotic fiber provides additional digestion/immune support4,5",
+          "Convenient capsules easy to take with juice or water",
+          "No artificial"
+        ],
+        what_it_does: "Provides key minerals, botanicals, and antioxidants to provide premium, targeted metabolic support.",
+        tagline: ""
+      },
+      "Good Herbs Adrenal Health": {
+        eden_id: "EDEN-LOCKED-good-herbs-adrenal-health",
+        canonical_name: "Good Herbs Adrenal Health",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs herbal tincture",
+        serving_size: "2 mL",
+        servings_per_container: 60,
+        dose_text: "2 mL daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Extract Blend",
+            amount: 1900,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Chinese Licorice Root",
+              "Holy Basil",
+              "Royal Jelly"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Good Herbs Antioxidant Response": {
+        eden_id: "EDEN-LOCKED-good-herbs-antioxidant-response",
+        canonical_name: "Good Herbs Antioxidant Response",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs (YGY) herbal liquid extract",
+        serving_size: "2 mL (40 drops)",
+        servings_per_container: 60,
+        dose_text: "2 mL (40 drops) daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Extract Blend",
+            amount: 1900,
+            unit: "mg",
+            form: "proprietary blend (9 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Barberry Root",
+              "Bilberry",
+              "Ginger",
+              "Holy Basil",
+              "Oregano",
+              "Rosemary",
+              "Skullcap",
+              "Turmeric",
+              "White Willow Bark"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Good Herbs Bone & Tissue Support": {
+        eden_id: "EDEN-LOCKED-good-herbs-bone-tissue-support",
+        canonical_name: "Good Herbs Bone & Tissue Support",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs (YGY) herbal liquid extract",
+        serving_size: "2 mL (40 drops)",
+        servings_per_container: 60,
+        dose_text: "2 mL (40 drops) daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Extract Blend",
+            amount: 1900,
+            unit: "mg",
+            form: "proprietary blend (8 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "White Oak Bark",
+              "Oatstraw",
+              "Skullcap",
+              "Hydrangea Root",
+              "Marshmallow Root",
+              "Mullein Leaf",
+              "Wormwood",
+              "Lobelia"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Good Herbs Circulatory Formula": {
+        eden_id: "EDEN-LOCKED-good-herbs-circulatory-formula",
+        canonical_name: "Good Herbs Circulatory Formula",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs herbal tincture",
+        serving_size: "2 mL",
+        servings_per_container: 60,
+        dose_text: "2 mL daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Extract Blend",
+            amount: 1900,
+            unit: "mg",
+            form: "proprietary blend (7 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Chickweed",
+              "Flax Seed",
+              "Ginkgo Leaf",
+              "Gotu Kola",
+              "Holy Basil",
+              "Linden Flower",
+              "Stone Root"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Good Herbs Female Hormonal Support": {
+        eden_id: "EDEN-LOCKED-good-herbs-female-hormonal-support",
+        canonical_name: "Good Herbs Female Hormonal Support",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs (YGY) herbal liquid extract",
+        serving_size: "2 mL (40 drops)",
+        servings_per_container: 60,
+        dose_text: "2 mL (40 drops) daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Extract Blend",
+            amount: 1900,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Chaste Tree Berry",
+              "Wild Yam",
+              "Ashwagandha",
+              "Licorice Root",
+              "Turmeric Root"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Good Herbs GI Cleanse": {
+        eden_id: "EDEN-LOCKED-good-herbs-gi-cleanse",
+        canonical_name: "Good Herbs GI Cleanse",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs antiparasitic herbal tincture",
+        serving_size: "2 mL",
+        servings_per_container: 60,
+        dose_text: "2 mL daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Extract Blend",
+            amount: 1900,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Wormwood",
+              "Papaya Fruit",
+              "Pumpkin Seed",
+              "Black Walnut Hull",
+              "Cloves Bud"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Good Herbs Heart Support": {
+        eden_id: "EDEN-LOCKED-good-herbs-heart-support",
+        canonical_name: "Good Herbs Heart Support",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs (YGY) herbal liquid extract",
+        serving_size: "2 mL (40 drops)",
+        servings_per_container: 60,
+        dose_text: "2 mL (40 drops) daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Extract Blend",
+            amount: 1900,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Blessed Thistle",
+              "Motherwort",
+              "Hawthorn Berry+Leaf+Flower",
+              "Garlic",
+              "Cayenne Fruit"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Good Herbs Hypothalamus Support": {
+        eden_id: "EDEN-LOCKED-good-herbs-hypothalamus-support",
+        canonical_name: "Good Herbs Hypothalamus Support",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs (YGY) herbal liquid extract",
+        serving_size: "2 mL (40 drops)",
+        servings_per_container: 60,
+        dose_text: "2 mL (40 drops) daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Extract Blend",
+            amount: 1900,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Ashwagandha Root",
+              "Eleuthero Root",
+              "Bilberry",
+              "Rhodiola Root",
+              "Schizandra Fruit"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Good Herbs Immune Support": {
+        eden_id: "EDEN-LOCKED-good-herbs-immune-support",
+        canonical_name: "Good Herbs Immune Support",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs immune herbal tincture",
+        serving_size: "2 mL",
+        servings_per_container: 60,
+        dose_text: "2 mL daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Extract Blend",
+            amount: 1900,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Calendula Flower",
+              "Chaparral Leaf",
+              "Pau D'Arco Bark",
+              "Olive Leaf",
+              "Garlic Bud"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Good Herbs Kidney & Bladder Support": {
+        eden_id: "EDEN-LOCKED-good-herbs-kidney-bladder-support",
+        canonical_name: "Good Herbs Kidney & Bladder Support",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs herbal tincture",
+        serving_size: "2 mL (40 drops)",
+        servings_per_container: 60,
+        dose_text: "2 mL (40 drops) daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Extract Blend",
+            amount: 1900,
+            unit: "mg",
+            form: "proprietary blend (8 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Dandelion Root",
+              "Hydrangea Root",
+              "Uva Ursi Leaf",
+              "Cranberry",
+              "Buchu Leaf",
+              "Chamomile Flower",
+              "Juniper Berry",
+              "Parsley Leaf"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Good Herbs Liver & Gallbladder Health": {
+        eden_id: "EDEN-LOCKED-good-herbs-liver-gallbladder-health",
+        canonical_name: "Good Herbs Liver & Gallbladder Health",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs herbal tincture",
+        serving_size: "2 mL",
+        servings_per_container: 60,
+        dose_text: "2 mL daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Extract Blend",
+            amount: 1900,
+            unit: "mg",
+            form: "proprietary blend (7 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Bupleurum/chai hu",
+              "Burdock",
+              "Chicory",
+              "Milk Thistle Seed",
+              "Chinese Rhubarb Root",
+              "Turmeric",
+              "Yellow Dock Root"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Good Herbs Lymphatic Health": {
+        eden_id: "EDEN-LOCKED-good-herbs-lymphatic-health",
+        canonical_name: "Good Herbs Lymphatic Health",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs herbal tincture",
+        serving_size: "2 mL",
+        servings_per_container: 60,
+        dose_text: "2 mL daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Extract Blend",
+            amount: 1900,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Oregon Grape Root",
+              "Horse Chestnut Seed",
+              "Marshmallow Root",
+              "Blue Flag Root",
+              "Mullein Leaf"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Good Herbs Male Hormone Support": {
+        eden_id: "EDEN-LOCKED-good-herbs-male-hormone-support",
+        canonical_name: "Good Herbs Male Hormone Support",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs herbal tincture",
+        serving_size: "2 mL",
+        servings_per_container: 60,
+        dose_text: "2 mL daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Extract Blend",
+            amount: 1900,
+            unit: "mg",
+            form: "proprietary blend (8 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Dong Quai",
+              "Jujube Date",
+              "Astragalus",
+              "Blessed Thistle",
+              "Panax Ginseng",
+              "Lycium Berry",
+              "Rehmannia Root",
+              "Schisandra Berry"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Good Herbs Nerve Support": {
+        eden_id: "EDEN-LOCKED-good-herbs-nerve-support",
+        canonical_name: "Good Herbs Nerve Support",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs herbal tincture (sedative)",
+        serving_size: "2 mL",
+        servings_per_container: 60,
+        dose_text: "2 mL daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Extract Blend",
+            amount: 1900,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Skullcap",
+              "White Willow Bark",
+              "Blue Vervain",
+              "Hops Strobile",
+              "Valerian Root"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Good Herbs Pancreas Support": {
+        eden_id: "EDEN-LOCKED-good-herbs-pancreas-support",
+        canonical_name: "Good Herbs Pancreas Support",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs herbal tincture",
+        serving_size: "2 mL",
+        servings_per_container: 60,
+        dose_text: "2 mL daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Extract Blend",
+            amount: 1900,
+            unit: "mg",
+            form: "proprietary blend (4 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Bilberry",
+              "Bitter Melon",
+              "Gymnema",
+              "Hawthorn Berry"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Good Herbs Prostate Health": {
+        eden_id: "EDEN-LOCKED-good-herbs-prostate-health",
+        canonical_name: "Good Herbs Prostate Health",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs herbal tincture",
+        serving_size: "2 mL",
+        servings_per_container: 60,
+        dose_text: "2 mL daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Extract Blend",
+            amount: 1900,
+            unit: "mg",
+            form: "proprietary blend (6 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Buchu",
+              "Nettle Leaf",
+              "Saw Palmetto",
+              "Calendula",
+              "Cat's Claw",
+              "Shiitake"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Good Herbs Respiratory Support": {
+        eden_id: "EDEN-LOCKED-good-herbs-respiratory-support",
+        canonical_name: "Good Herbs Respiratory Support",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs herbal tincture",
+        serving_size: "2 mL",
+        servings_per_container: 60,
+        dose_text: "2 mL daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Extract Blend",
+            amount: 1900,
+            unit: "mg",
+            form: "proprietary blend (8 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Garlic",
+              "Mullein",
+              "Oatstraw",
+              "Blessed Thistle",
+              "Elecampagne Root",
+              "Marshmallow Root",
+              "Bugleweed",
+              "Yerba Santa"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Good Herbs Sinus & Allergy": {
+        eden_id: "EDEN-LOCKED-good-herbs-sinus-allergy",
+        canonical_name: "Good Herbs Sinus & Allergy",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs herbal tincture",
+        serving_size: "2 mL",
+        servings_per_container: 60,
+        dose_text: "2 mL daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Extract Blend",
+            amount: 1900,
+            unit: "mg",
+            form: "proprietary blend (7 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Horseradish",
+              "Bayberry Root Bark",
+              "Chickweed",
+              "Gentian",
+              "Goldenseal",
+              "Oregon Grape Root",
+              "Wood Betony"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Good Herbs Super Olive Health": {
+        eden_id: "EDEN-LOCKED-good-herbs-super-olive-health",
+        canonical_name: "Good Herbs Super Olive Health",
+        brand: "Good Herbs",
+        brand_tier: 2,
+        category: "Good Herbs single-herb tincture",
+        serving_size: "2 mL",
+        servings_per_container: 60,
+        dose_text: "2 mL daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Olive Leaf Extract",
+            amount: 1900,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Contains 500 mg of Olive Leaf Extract to support a healthy immune, digestive, circulatory and urinary system.",
+          "Wild-crafted or organically grown herbs.",
+          "Produced without heat or electrical machinery to maintain whole herbs without adulteration.",
+          "Main Ingredient/Benefit",
+          "Ingredient Benefit",
+          "Olive leaves contain a nutrient known as"
+        ],
+        what_it_does: "May support many aspects of health including a healthy immune system, digestive system and circulatory system.",
+        tagline: ""
+      },
+      "HGH Amino Acid Blend": {
+        eden_id: "EDEN-LOCKED-hgh-amino-acid-blend",
+        canonical_name: "HGH Amino Acid Blend",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY GH-precursor amino acid capsule",
+        serving_size: "6 capsules",
+        servings_per_container: 30,
+        dose_text: "6 capsules daily",
+        nutrients: [
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 6,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 60,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Iodine",
+            amount: 120,
+            unit: "mcg",
+            form: "potassium iodide",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 3,
+            unit: "mcg",
+            form: "selenium glycinate",
+            alignment: "partial"
+          },
+          {
+            name: "Manganese",
+            amount: 1.6,
+            unit: "mg",
+            form: "manganese glycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Chromium",
+            amount: 102,
+            unit: "mcg",
+            form: "chromium nicotinate glycinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Molybdenum",
+            amount: 9,
+            unit: "mcg",
+            form: "molybdenum glycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 128,
+            unit: "mg",
+            form: "potassium chloride",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary H.G.H. Amino Acid Blend",
+            amount: 1950,
+            unit: "mg",
+            form: "proprietary blend (7 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Ornithine",
+              "Lysine",
+              "Arginine",
+              "Glycine",
+              "Glutamine",
+              "Tyrosine",
+              "GABA"
+            ]
+          }
+        ],
+        features: [
+          "Proprietary blend of amino acids supports brain health and immune system function",
+          "Designed to help your body recover and repair itself overnight",
+          "Beneficial for adults of all ages",
+          "Easy-to-swallow capsules",
+          "Only includes what you need \u2013 no chemicals, flavorings, or other additives"
+        ],
+        what_it_does: "Supplements the important amino acids, vitamins, and minerals you need to feel your best.",
+        tagline: ""
+      },
+      "Harmony Drops (Sea Mineral Electrolytes)": {
+        eden_id: "EDEN-LOCKED-harmony-drops-sea-mineral-electrolytes",
+        canonical_name: "Harmony Drops (Sea Mineral Electrolytes)",
+        brand: "Harmony Drops",
+        brand_tier: 2,
+        category: "Sea-mineral electrolyte drops",
+        serving_size: "3 drops",
+        servings_per_container: 80,
+        dose_text: "3 drops daily",
+        nutrients: [
+          {
+            name: "Chloride",
+            amount: 5.8,
+            unit: "mg",
+            form: "from sea water",
+            alignment: "aligned"
+          },
+          {
+            name: "Magnesium",
+            amount: 2.1,
+            unit: "mg",
+            form: "from sea water",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 0.08,
+            unit: "mg",
+            form: "from sea water",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Herbal Rainforest": {
+        eden_id: "EDEN-LOCKED-herbal-rainforest",
+        canonical_name: "Herbal Rainforest",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY herbal blend liquid (relaxation / immune)",
+        serving_size: "1 fl oz (2 tbsp)",
+        servings_per_container: 32,
+        dose_text: "1 fl oz (2 tbsp) daily",
+        nutrients: [
+          {
+            name: "Potassium",
+            amount: 40,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 675,
+            unit: "IU",
+            form: "beta carotene",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Blend",
+            amount: 16,
+            unit: "mcg",
+            form: "proprietary blend (15 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "chamomile",
+              "echinacea",
+              "sarsaparilla",
+              "celery seed",
+              "alfalfa",
+              "dandelion",
+              "eleuthero/Siberian ginseng",
+              "horehound",
+              "licorice",
+              "ginkgo biloba",
+              "passion flower",
+              "thyme",
+              "saw palmetto",
+              "angelica",
+              "cascara sagrada"
+            ]
+          }
+        ],
+        features: [
+          "Herbal blend designed to support overall health and well-being",
+          "Includes plant-derived minerals you can\u2019t necessarily get from food",
+          "Provides essential vitamins to support health from the inside out",
+          "Made for adults and children (see Recommended Use section for details)",
+          "Low glycemic design makes this a safe supplement for those who monitor blood sugar levels",
+          "Gluten-free"
+        ],
+        what_it_does: "Provides the body with vitamins, minerals, and nutrient-rich botanicals.",
+        tagline: ""
+      },
+      "Immu-911": {
+        eden_id: "EDEN-LOCKED-immu-911",
+        canonical_name: "Immu-911",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY immune capsule (colostrum + mushrooms)",
+        serving_size: "1 capsule",
+        servings_per_container: 60,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 30,
+            unit: "mg",
+            form: "calcium ascorbate",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 1,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Colostrum",
+            amount: 200,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "20% gamma globulins"
+            ]
+          },
+          {
+            name: "Proprietary Botanical Blend",
+            amount: 153,
+            unit: "mg",
+            form: "proprietary blend (11 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Echinacea Purpurea",
+              "Astragalus",
+              "Pau D'Arco",
+              "Beta 1",
+              "3 Glucan",
+              "Cordyceps",
+              "Maitake",
+              "Shiitake",
+              "Split Gill",
+              "Tremella",
+              "Turkey Tail"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Integris CoQ10 + Vit E Succinate": {
+        eden_id: "EDEN-LOCKED-integris-coq10-vit-e-succinate",
+        canonical_name: "Integris CoQ10 + Vit E Succinate",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY CoQ10 capsule with Vit E succinate",
+        serving_size: "1 capsule",
+        servings_per_container: "varies",
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Vitamin E",
+            amount: 66,
+            unit: "mg",
+            form: "d-alpha tocopheryl succinate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Co-Enzyme Q10",
+            amount: 100,
+            unit: "mg",
+            form: "Ubiquinone",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "BioPerine",
+            amount: 5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Integris Probiotics": {
+        eden_id: "EDEN-LOCKED-integris-probiotics",
+        canonical_name: "Integris Probiotics",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY 10-strain probiotic caplet",
+        serving_size: "1 caplet",
+        servings_per_container: "varies",
+        dose_text: "1 caplet daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Probiotic Blend",
+            amount: 250,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "10 Billion CFU"
+            ]
+          },
+          {
+            name: "Fructo-oligosaccharides",
+            amount: 50,
+            unit: "mg",
+            form: "FOS",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Integris Vitamin K2": {
+        eden_id: "EDEN-LOCKED-integris-vitamin-k2",
+        canonical_name: "Integris Vitamin K2",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY single-vitamin K2 capsule",
+        serving_size: "1 vegetable capsule",
+        servings_per_container: 0,
+        dose_text: "1 vegetable capsule daily",
+        nutrients: [
+          {
+            name: "Vitamin K (Menaquinone = K2)",
+            amount: 100,
+            unit: "mcg",
+            form: "menaquinone-7 (MK-7)",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      Jointrestor: {
+        eden_id: "EDEN-LOCKED-jointrestor",
+        canonical_name: "Jointrestor",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY joint capsule with FruiteX-B calcium fructoborate",
+        serving_size: "1 capsule",
+        servings_per_container: "varies",
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 27,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Jointrestor Proprietary Joint-Health Formula",
+            amount: 587,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Glucosamine sulfate + FruiteX-B calcium fructoborate"
+            ]
+          },
+          {
+            name: "Proprietary Activity Inflammation-Health Formula",
+            amount: 134,
+            unit: "mg",
+            form: "proprietary blend (7 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "White Willow Bark 15% salicin",
+              "Bromelain 2400 GDU",
+              "Quercetin",
+              "Resveratrol from Polygonum",
+              "Myrrh",
+              "Yucca",
+              "Saffron"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Kid Sprinklz": {
+        eden_id: "EDEN-LOCKED-kid-sprinklz",
+        canonical_name: "Kid Sprinklz",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY kids multivitamin packet",
+        serving_size: "1 packet (2g)",
+        servings_per_container: 30,
+        dose_text: "1 packet (2g) daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 60,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 10,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 11,
+            unit: "mg",
+            form: "natural vitamin E acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 0.3,
+            unit: "mg",
+            form: "thiamine",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 0.34,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 10,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 1,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 667,
+            unit: "mcg DFE",
+            form: "folic acid",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 6,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 150,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 10,
+            unit: "mg",
+            form: "calcium lactate",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 2,
+            unit: "mg",
+            form: "zinc citrate",
+            alignment: "partial"
+          },
+          {
+            name: "Manganese",
+            amount: 0.25,
+            unit: "mg",
+            form: "manganese citrate",
+            alignment: "partial"
+          },
+          {
+            name: "Sodium",
+            amount: 15,
+            unit: "mg",
+            form: "sodium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 20,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Citrulline",
+            amount: 200,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Lactobacillus blend",
+            amount: 20,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "L. acidophilus",
+              "plantarum",
+              "rhamnosus",
+              "B. breve",
+              "lactis"
+            ]
+          }
+        ],
+        features: [
+          "Exclusive blend of vitamins, minerals and probiotics, specifically formulated for healthy growth",
+          "Combines foundational nutrition with a delicious, kid-friendly flavor",
+          "One billion guaranteed live probiotic cultures from five different strains",
+          "Natural sweetener that helps prevent cavities",
+          "Contains no gluten, dairy, sugar, or fat",
+          "Packets are convenient for life on the go"
+        ],
+        what_it_does: "Provides a tasty source of vitamins, minerals, and probiotics to support healthy growth and development.",
+        tagline: ""
+      },
+      "Kids Toddy Liquid": {
+        eden_id: "EDEN-LOCKED-kids-toddy-liquid",
+        canonical_name: "Kids Toddy Liquid",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY kids multivitamin liquid",
+        serving_size: "1 fl oz (29.57 mL)",
+        servings_per_container: 32,
+        dose_text: "1 fl oz (29.57 mL) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 750,
+            unit: "mcg RAE",
+            form: "palmitate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin C",
+            amount: 100,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 5,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 10,
+            unit: "mg",
+            form: "d-alpha tocopherol acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 2.5,
+            unit: "mg",
+            form: "thiamine mononitrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 2.5,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 10,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 2.5,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 333,
+            unit: "mcg DFE",
+            form: "folic acid (200 mcg)",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 7.5,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 20,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 10,
+            unit: "mg",
+            form: "calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Choline",
+            amount: 20,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          },
+          {
+            name: "Calcium",
+            amount: 10,
+            unit: "mg",
+            form: "calcium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Iron",
+            amount: 2,
+            unit: "mg",
+            form: "ferrous gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Iodine",
+            amount: 75,
+            unit: "mcg",
+            form: "potassium iodide",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 5,
+            unit: "mg",
+            form: "magnesium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 5,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 20,
+            unit: "mcg",
+            form: "L-selenium methionine",
+            alignment: "aligned"
+          },
+          {
+            name: "Copper",
+            amount: 0.75,
+            unit: "mg",
+            form: "copper gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Manganese",
+            amount: 1,
+            unit: "mg",
+            form: "manganese gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Chromium",
+            amount: 25,
+            unit: "mcg",
+            form: "chromium amino acid chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 10,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Inositol",
+            amount: 2,
+            unit: "mg",
+            form: "inositol",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Grape Seed Extract",
+            amount: 5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Phytonutrient blend",
+            amount: 11,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Outrageous Orange flavor is easy to enjoy alone, or mixed in with your child\u2019s favorite beverage",
+          "Dairy-free, wheat-free, and soy-free",
+          "No artificial flavorings",
+          "Made for kids ages 1-12 years old"
+        ],
+        what_it_does: "Provides an easy way for kids to get their daily dose of essential vitamins, minerals, and phytonutrients.",
+        tagline: ""
+      },
+      "Killer Biotic FX": {
+        eden_id: "EDEN-LOCKED-killer-biotic-fx",
+        canonical_name: "Killer Biotic FX",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY immune capsule (colostrum + mushrooms + herbs)",
+        serving_size: "1 capsule",
+        servings_per_container: 60,
+        dose_text: "1 capsule daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 360,
+            unit: "mg",
+            form: "proprietary blend (12 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Colostrum",
+              "Beta Sitosterol",
+              "Olive Leaf",
+              "Propolis",
+              "Cayenne",
+              "Garlic",
+              "Ginger",
+              "Cordyceps",
+              "Turkey Tail",
+              "Maitake",
+              "Reishi",
+              "Shiitake mushrooms"
+            ]
+          }
+        ],
+        features: [
+          "Provides a nature-derived, holistic option for supporting immune system health",
+          "Includes colostrum, bee propolis, and key mushroom extracts",
+          "Capsules are convenient for travel and daily use",
+          "No artificial flavors, colors, preservatives, or fillers \u2013 we only give you what you need"
+        ],
+        what_it_does: "Provides targeted nutrients and botanicals to promote optimal immune health.",
+        tagline: ""
+      },
+      "L'dara Wellness Tea (Energize)": {
+        eden_id: "EDEN-LOCKED-l-dara-wellness-tea-energize",
+        canonical_name: "L'dara Wellness Tea (Energize)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "L'dara CWG loose tea (energy)",
+        serving_size: "1 level tsp (8 oz brewed)",
+        servings_per_container: 28,
+        dose_text: "1 level tsp (8 oz brewed) daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "CWG Energize Herbal Blend",
+            amount: 2,
+            unit: "g",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Organic Green Yerba Mat\xE9",
+              "Organic Bancha Green Tea",
+              "Organic Ceylon Black Tea",
+              "Gynostemma/Jiaogulan",
+              "American Ginseng"
+            ]
+          }
+        ],
+        features: [
+          "Offers the benefits of increased energy without the disadvantages of energy drinks and soda."
+        ],
+        what_it_does: "provides gently invigorating support for long-lasting stamina.",
+        tagline: ""
+      },
+      "Life Balance Menopause Support": {
+        eden_id: "EDEN-LOCKED-life-balance-menopause-support",
+        canonical_name: "Life Balance Menopause Support",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY Life Balance (women's menopause)",
+        serving_size: "2 capsules",
+        servings_per_container: 30,
+        dose_text: "2 capsules daily",
+        nutrients: [
+          {
+            name: "Vitamin D3",
+            amount: 30,
+            unit: "mcg",
+            form: "cholecalciferol (1200 IU)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin K (Menaquinone = K2)",
+            amount: 10,
+            unit: "mcg",
+            form: "menaquinone",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 2.4,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 2.6,
+            unit: "mg",
+            form: "riboflavin sodium phosphate (R5P)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 3.4,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 680,
+            unit: "mcg DFE",
+            form: "folic acid",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 4.8,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 30,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 50,
+            unit: "mg",
+            form: "calcium carbonate",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 12,
+            unit: "mg",
+            form: "magnesium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Selenium",
+            amount: 50,
+            unit: "mcg",
+            form: "selenium glycinate",
+            alignment: "partial"
+          },
+          {
+            name: "Chromium",
+            amount: 200,
+            unit: "mcg",
+            form: "chromium picolinate",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 43,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Rhodiola Rosea Extract",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Chaste Tree Berry Extract",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Berberine HCl",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Ashwagandha Extract",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Alpha Lipoic Acid",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Cinnamon Bark Powder",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Menofelis Rhapontic Rhubarb Root",
+            amount: 4,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Provides targeted support with vitamins, minerals, essential fatty acids, and botanicals",
+          "Formulated to help support with key symptoms of menopause*",
+          "Part of our HOPE Complete Women's Health System",
+          "Capsules convenient for travel and life on the go",
+          "Gluten-free with no artificial"
+        ],
+        what_it_does: "Provides key nutrients to help you support a healthy, comfortable menopause journey.",
+        tagline: ""
+      },
+      "LifeFortify Flexeo Plus": {
+        eden_id: "EDEN-LOCKED-lifefortify-flexeo-plus",
+        canonical_name: "LifeFortify Flexeo Plus",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY LifeFortify joint liquid",
+        serving_size: "5 droppers (3.75 mL)",
+        servings_per_container: 32,
+        dose_text: "5 droppers (3.75 mL) daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 50,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin K (Menaquinone = K2)",
+            amount: 33.3,
+            unit: "mcg",
+            form: "phytonadione (K1)",
+            alignment: "misaligned"
+          },
+          {
+            name: "Zinc",
+            amount: 8.3,
+            unit: "mg",
+            form: "zinc citrate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Glucosamine HCl",
+            amount: 416.6,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "MSM",
+            amount: 416.6,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Ipriflavone",
+            amount: 83.3,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Targeted nutrient blend offers many potential health benefits",
+          "Key vitamins help support joints at the cellular level",
+          "Liquid formula makes it easy to add this supplement to your beverage of choice"
+        ],
+        what_it_does: "Provides a synergizing blend of vitamins, minerals, and other targeted nutrients.",
+        tagline: ""
+      },
+      "LifeFortify Recharge Recovery": {
+        eden_id: "EDEN-LOCKED-lifefortify-recharge-recovery",
+        canonical_name: "LifeFortify Recharge Recovery",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY LifeFortify liquid (adaptogenic recovery)",
+        serving_size: "2 fl oz (60 mL)",
+        servings_per_container: 8,
+        dose_text: "2 fl oz (60 mL) daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 240,
+            unit: "mg",
+            form: "calcium ascorbate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 12.5,
+            unit: "mcg",
+            form: "cholecalciferol (500 IU)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 3,
+            unit: "mg",
+            form: "thiamine mononitrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 3.4,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 40,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 10,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 400,
+            unit: "mcg",
+            form: "folic acid",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 30,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 500,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 20,
+            unit: "mg",
+            form: "magnesium gluconate-bound pantothenic acid",
+            alignment: "partial"
+          },
+          {
+            name: "Calcium",
+            amount: 150,
+            unit: "mg",
+            form: "calcium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Magnesium",
+            amount: 150,
+            unit: "mg",
+            form: "magnesium gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Zinc",
+            amount: 5,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Manganese",
+            amount: 1.25,
+            unit: "mg",
+            form: "manganese citrate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Complex",
+            amount: 420,
+            unit: "mg",
+            form: "proprietary blend (6 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Organic Aloe Vera",
+              "Ashwagandha",
+              "Lemon Balm",
+              "Bacopin/Bacopa",
+              "Elderberry",
+              "Astaxanthin"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "Delivers herbal extracts that deliver antioxidants, adaptogens, nootropic compounds to support your health.",
+        tagline: ""
+      },
+      "Liquid Gluco-Gel": {
+        eden_id: "EDEN-LOCKED-liquid-gluco-gel",
+        canonical_name: "Liquid Gluco-Gel",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY joint liquid (broader actives than Liquid Gluco-Gel Plus)",
+        serving_size: "1 fl oz (2 tbsp)",
+        servings_per_container: 32,
+        dose_text: "1 fl oz (2 tbsp) daily",
+        nutrients: [
+          {
+            name: "Sodium",
+            amount: 5,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Glucosamine HCl",
+            amount: 750,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "MSM",
+            amount: 400,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Chondroitin Sulfate",
+            amount: 200,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Cetylmyristoleate",
+            amount: 100,
+            unit: "mg",
+            form: "CMO",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Collagen Hydrolysate",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Targeted blend of research-backed joint and muscle-supporting nutrients",
+          "Liquid formula makes it easy to enjoy with or without food",
+          "No artificial fillers, colors, or sweeteners"
+        ],
+        what_it_does: "Provides research-backed, targeted nutrients for optimal joint and muscle support.",
+        tagline: ""
+      },
+      "LiverPrep (T2L)": {
+        eden_id: "EDEN-LOCKED-liverprep-t2l",
+        canonical_name: "LiverPrep (T2L)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "True2Life liver-prep megadose Vit C (cleanse component)",
+        serving_size: "1 bottle (49g - 4x 6 fl oz)",
+        servings_per_container: 1,
+        dose_text: "1 bottle (49g - 4x 6 fl oz) daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 2940,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Magnesium",
+            amount: 787.5,
+            unit: "mg",
+            form: "magnesium sulfate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 500,
+            unit: "mg",
+            form: "proprietary blend (4 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Yucca root",
+              "Artichoke 4:1",
+              "Dandelion 4:1",
+              "Milk Thistle Seed"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "MCT Collagen Creamer": {
+        eden_id: "EDEN-LOCKED-mct-collagen-creamer",
+        canonical_name: "MCT Collagen Creamer",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY collagen + MCT coffee creamer",
+        serving_size: "1 packet (8.5g)",
+        servings_per_container: 30,
+        dose_text: "1 packet (8.5g) daily",
+        nutrients: [
+          {
+            name: "Sodium",
+            amount: 55,
+            unit: "mg",
+            form: "sea salt",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Bovine Collagen Peptides",
+            amount: 3750,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "MCT",
+            amount: 1200,
+            unit: "mg",
+            form: "Medium Chain Triglycerides",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Contains collagen peptides for hair, skin, joint, and bone health support1,3,4",
+          "Gluten-free, dairy-free, soy-free, shellfish-free, and no added sugar",
+          "Includes MCT to support energy production5,6,7",
+          "Adds creamy Vanilla flavor to your beverage of choice",
+          "Enjoy 30 stick packs per package, convenient for life on the go"
+        ],
+        what_it_does: "Adds a nutritional boost of collagen and MCT to your favorite beverage.",
+        tagline: ""
+      },
+      "MSM Ultra Caplets": {
+        eden_id: "EDEN-LOCKED-msm-ultra-caplets",
+        canonical_name: "MSM Ultra Caplets",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY MSM + Vit C joint/sulfur tablet",
+        serving_size: "3 caplets",
+        servings_per_container: 60,
+        dose_text: "3 caplets daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 180,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Sulfur",
+            amount: 3e3,
+            unit: "mg MSM equivalent",
+            form: "MSM (methylsulfonylmethane)",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Citri-C Complex",
+            amount: 300,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "ascorbic acid",
+              "isoascorbic acid",
+              "orange bioflavonoids"
+            ]
+          }
+        ],
+        features: [
+          "Includes MSM, Vitamin C, and a proprietary nutrient blend",
+          "Provides bioavailable organic sulfur to support a healthy immune system and joints",
+          "Free of artificial flavors, colors, dairy, wheat, and preservatives",
+          "Caplets convenient for travel and daily use"
+        ],
+        what_it_does: "Provides targeted nutrition to support several body systems, with an emphasis on connective tissues.",
+        tagline: ""
+      },
+      "Majestic Earth Plant Derived Minerals Liquid": {
+        eden_id: "EDEN-LOCKED-majestic-earth-plant-derived-minerals-liquid",
+        canonical_name: "Majestic Earth Plant Derived Minerals Liquid",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY trace mineral foundation (humic shale)",
+        serving_size: "1 fl oz",
+        servings_per_container: 32,
+        dose_text: "1 fl oz daily",
+        nutrients: [
+          {
+            name: "Plant Derived Minerals",
+            amount: 600,
+            unit: "mg total PDM complex",
+            form: "humic shale colloidal minerals \u2014 ~77 trace minerals from prehistoric Utah soils (unquantified individually)",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Includes 19,000mg of colloidal plant mineral solids you can\u2019t necessarily get from food",
+          "Majestic Earth Plant Derived Minerals\u2122 are extracted from the untouched, ancient soils of a Utah mineral",
+          "Mineral complex helps support the immune system and overall health2",
+          "No additives or preservatives"
+        ],
+        what_it_does: "A daily nutritional supplement to help the body maintain proper mineral levels.",
+        tagline: ""
+      },
+      "Midnight Minerals": {
+        eden_id: "EDEN-LOCKED-midnight-minerals",
+        canonical_name: "Midnight Minerals",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY humic/fulvic acid capsule (peat bog clay)",
+        serving_size: "2 capsules",
+        servings_per_container: 30,
+        dose_text: "2 capsules daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Acerola Powder Extract",
+            amount: 100,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "organic plant-based Vit C source"
+            ]
+          },
+          {
+            name: "Peat Bog Clay",
+            amount: 150,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "supplying humic/fulvic acids"
+            ]
+          }
+        ],
+        features: [
+          "Provides key minerals, vitamins, and antioxidants for holistic immune support",
+          "Capsules are convenient for travel and easy to take",
+          "No artificial"
+        ],
+        what_it_does: "Provides a holistic option for supporting immune health.",
+        tagline: ""
+      },
+      "Multi-Collagen Peptides": {
+        eden_id: "EDEN-LOCKED-multi-collagen-peptides",
+        canonical_name: "Multi-Collagen Peptides",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY high-protein multi-collagen scoop",
+        serving_size: "2 scoops (21.2g)",
+        servings_per_container: 15,
+        dose_text: "2 scoops (21.2g) daily",
+        nutrients: [
+          {
+            name: "Sodium",
+            amount: 100,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Collagen Blend",
+            amount: 20,
+            unit: "g",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Hydrolyzed Grass-Fed + Fish + Chicken + Eggshell Membrane \u2014 Types I",
+              "II",
+              "III",
+              "V",
+              "X"
+            ]
+          },
+          {
+            name: "OPTIZIOME P3 Hydrolyzer",
+            amount: 200,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Fulvic Powder",
+            amount: 10,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Muscadine Grape Extract": {
+        eden_id: "EDEN-LOCKED-muscadine-grape-extract",
+        canonical_name: "Muscadine Grape Extract",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY antioxidant grape extract liquid",
+        serving_size: "1/2 fl oz (15 mL)",
+        servings_per_container: 64,
+        dose_text: "1/2 fl oz (15 mL) daily",
+        nutrients: [
+          {
+            name: "Calcium",
+            amount: 13,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 87,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Nature's Pearl Muscadine Caps": {
+        eden_id: "EDEN-LOCKED-nature-s-pearl-muscadine-caps",
+        canonical_name: "Nature's Pearl Muscadine Caps",
+        brand: "Nature's Pearl",
+        brand_tier: 2,
+        category: "Muscadine grape seed capsule (polyphenol)",
+        serving_size: "1 capsule",
+        servings_per_container: 60,
+        dose_text: "1 capsule daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Muscadine Grape Seed",
+            amount: 650,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "New and improved! 50+ BRIX reading - now 25% more concentrated!",
+          "Field to finish approach - planted, cultivated, harvested, and processed on one single farm",
+          "Superior glass packaging - physician preferred and better for the environment",
+          "Extracted from the whole fruit of the muscadine grape (including seeds and skins)",
+          "Made with over 100 naturally occurring phenolic compounds",
+          "No artificial"
+        ],
+        what_it_does: "Enhances drinks and smoothies with a high level of antioxidants, which are known to provide a number of health benefits.",
+        tagline: ""
+      },
+      "Neutonic Productivity Drink": {
+        eden_id: "EDEN-LOCKED-neutonic-productivity-drink",
+        canonical_name: "Neutonic Productivity Drink",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "Non-YGY nootropic / caffeinated beverage (per can)",
+        serving_size: "1 can",
+        servings_per_container: 0,
+        dose_text: "1 can daily",
+        nutrients: [
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 1.7,
+            unit: "mg",
+            form: "R5P (riboflavin-5-phosphate)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 200,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 200,
+            unit: "mcg",
+            form: "methylfolate",
+            alignment: "aligned"
+          },
+          {
+            name: "Choline",
+            amount: 500,
+            unit: "mg",
+            form: "citicoline (Cognizin)",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Rhodiola",
+            amount: 400,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "L-Theanine",
+            amount: 400,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Panax ginseng",
+            amount: 200,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Caffeine",
+            amount: 120,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "New Zealand BTT 2 Tablets": {
+        eden_id: "EDEN-LOCKED-new-zealand-btt-2-tablets",
+        canonical_name: "New Zealand BTT 2 Tablets",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY New Zealand BTT (lower-dose international variant)",
+        serving_size: "1 tablet",
+        servings_per_container: 120,
+        dose_text: "1 tablet daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 750,
+            unit: "mcg RAE",
+            form: "beta carotene + organic annatto extract",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 312.5,
+            unit: "mg",
+            form: "ascorbic acid + organic amla",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 6.3,
+            unit: "mcg",
+            form: "cholecalciferol (250 IU)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 10,
+            unit: "mg",
+            form: "d-alpha tocopherol acetate + annatto",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin K (Menaquinone = K2)",
+            amount: 10,
+            unit: "mcg",
+            form: "menatetrenone (K2 MK-4)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 7.5,
+            unit: "mg",
+            form: "thiamine mononitrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 7.5,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 10,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 7.5,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 125,
+            unit: "mcg",
+            form: "folic acid",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 50,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 187.5,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 37.5,
+            unit: "mg",
+            form: "calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 12.5,
+            unit: "mg",
+            form: "citrate + gluconate + Algas calcareas",
+            alignment: "partial"
+          },
+          {
+            name: "Iron",
+            amount: 0.25,
+            unit: "mg",
+            form: "ferrous gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 10,
+            unit: "mg",
+            form: "oxide + gluconate + Algas calcareas",
+            alignment: "partial"
+          },
+          {
+            name: "Zinc",
+            amount: 0.75,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 25,
+            unit: "mcg",
+            form: "selenomethionine",
+            alignment: "aligned"
+          },
+          {
+            name: "Copper",
+            amount: 0.375,
+            unit: "mg",
+            form: "copper bisglycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Chromium",
+            amount: 50,
+            unit: "mcg",
+            form: "chromium picolinate",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 21.87,
+            unit: "mg",
+            form: "citrate + gluconate",
+            alignment: "aligned"
+          },
+          {
+            name: "Boron",
+            amount: 0.25,
+            unit: "mg",
+            form: "sodium borate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Whole Foods",
+            amount: 200,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Organic Amino Acid Complex",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Trace Minerals",
+            amount: 12.5,
+            unit: "mg",
+            form: "from Algas calcareas",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "PuriGenic Free Radical Defense",
+            amount: 31.25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Beet Root",
+            amount: 1.25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Vegan Glucosamine HCl",
+            amount: 31.25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "MSM",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Trans-Resveratrol",
+            amount: 12.5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Chondroitin sulfate",
+            amount: 6.25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Inositol",
+            amount: 6.25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "CoQ10",
+            amount: 0.75,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Nightly Essense": {
+        eden_id: "EDEN-LOCKED-nightly-essense",
+        canonical_name: "Nightly Essense",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY nighttime probiotic + systemic enzymes",
+        serving_size: "2 capsules",
+        servings_per_container: 31,
+        dose_text: "2 capsules daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Probiotic Bacteria Blend",
+            amount: 700,
+            unit: "mg",
+            form: "proprietary blend (2 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "~17 strains: 4 Bifidobacterium + 12 Lactobacillus + S. thermophilus",
+              "mixed CFU totals"
+            ]
+          },
+          {
+            name: "Systemic Enzyme Blend",
+            amount: 700,
+            unit: "mg",
+            form: "proprietary blend (7 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Protease 200",
+              "000 HUT",
+              "Papain 2.4M FCC",
+              "Bromelain 2.4M FCC",
+              "Nattokinase 2000 FU",
+              "Seaprose S 20",
+              "000 U"
+            ]
+          },
+          {
+            name: "Rutin",
+            amount: 40,
+            unit: "mg",
+            form: "Sophora japonica",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Provides probiotics, plus antioxidants and enzymes in every capsule",
+          "Targeted"
+        ],
+        what_it_does: "Supports optimal GI tract health with probiotics, enzymes, and antioxidants.",
+        tagline: ""
+      },
+      "Ocutiv (Pro-line Eye)": {
+        eden_id: "EDEN-LOCKED-ocutiv-pro-line-eye",
+        canonical_name: "Ocutiv (Pro-line Eye)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY pro-line eye support (per WHY-layer-eyes.md anchor)",
+        serving_size: "1 capsule",
+        servings_per_container: 30,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 900,
+            unit: "mcg",
+            form: "beta-carotene",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 60,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 25,
+            unit: "mg",
+            form: "d-alpha tocopheryl succinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 5,
+            unit: "mg",
+            form: "zinc monomethionine",
+            alignment: "aligned"
+          },
+          {
+            name: "Selenium",
+            amount: 50,
+            unit: "mcg",
+            form: "selenomethionine",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Bilberry",
+            amount: 100,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "25% proanthocyanidins"
+            ]
+          },
+          {
+            name: "Grape Seed Extract",
+            amount: 50,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "95% proanthocyanidins"
+            ]
+          },
+          {
+            name: "Organic Whole Food Blend",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Organic Trace Mineral Complex",
+            amount: 25,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "AlgaeCal \u2014 NOT humic shale"
+            ]
+          },
+          {
+            name: "Lutein",
+            amount: 10,
+            unit: "mg",
+            form: "proprietary blend (2 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "FREE",
+              "from marigold \u2014 vs Vision FX's esters"
+            ]
+          },
+          {
+            name: "Lycopene",
+            amount: 3,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Zeaxanthin",
+            amount: 2,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Astaxanthin",
+            amount: 250,
+            unit: "mcg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "from Haematococcus pluvialis"
+            ]
+          }
+        ],
+        features: [
+          "Provides nutrients that may help fight age-related macular degeneration1,2,3 and support overall eye health",
+          "Organic whole foods add beneficial variety to your diet and support overall health",
+          "No artificial"
+        ],
+        what_it_does: "Provides key vitamins, minerals, and whole foods for targeted eye health support.",
+        tagline: ""
+      },
+      "Osteo Mag Liquid": {
+        eden_id: "EDEN-LOCKED-osteo-mag-liquid",
+        canonical_name: "Osteo Mag Liquid",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY bone/Mg liquid (broader trace minerals than Cal Toddy)",
+        serving_size: "1 tbsp (15 mL)",
+        servings_per_container: 64,
+        dose_text: "1 tbsp (15 mL) daily",
+        nutrients: [
+          {
+            name: "Vitamin D3",
+            amount: 25,
+            unit: "mcg",
+            form: "cholecalciferol (1000 IU)",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 600,
+            unit: "mg",
+            form: "calcium carbonate/orotate",
+            alignment: "aligned"
+          },
+          {
+            name: "Iron",
+            amount: 3,
+            unit: "mg",
+            form: "ferrous gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Iodine",
+            amount: 75,
+            unit: "mcg",
+            form: "potassium iodide",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 300,
+            unit: "mg",
+            form: "magnesium hydroxide",
+            alignment: "partial"
+          },
+          {
+            name: "Zinc",
+            amount: 2,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 100,
+            unit: "mcg",
+            form: "sodium selenite",
+            alignment: "partial"
+          },
+          {
+            name: "Manganese",
+            amount: 2,
+            unit: "mg",
+            form: "manganese gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Chromium",
+            amount: 100,
+            unit: "mcg",
+            form: "chromium chloride",
+            alignment: "misaligned"
+          },
+          {
+            name: "Molybdenum",
+            amount: 25,
+            unit: "mcg",
+            form: "sodium molybdate",
+            alignment: "partial"
+          },
+          {
+            name: "Chloride",
+            amount: 50,
+            unit: "mg",
+            form: "potassium chloride",
+            alignment: "aligned"
+          },
+          {
+            name: "Vanadium",
+            amount: 50,
+            unit: "mcg",
+            form: "vanadyl sulfate",
+            alignment: "misaligned"
+          },
+          {
+            name: "Silica",
+            amount: 1,
+            unit: "mg",
+            form: "silicon dioxide",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Glucosamine HCl",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Targeted vitamins and minerals synergize to support strong bones, joints, and so much more 200mg of Magnesium per serving provided to promote full body relaxation15",
+          "Can be safely taken before bed without breaking your fast or spiking your blood sugar",
+          "Convenient tablet form easy to swallow"
+        ],
+        what_it_does: "Supports muscle recovery, the nervous system, and healthy bones with key nutrients.",
+        tagline: ""
+      },
+      OsteoProCare: {
+        eden_id: "EDEN-LOCKED-osteoprocare",
+        canonical_name: "OsteoProCare",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY broad-spectrum bone+mineral liquid",
+        serving_size: "1 tbsp (15 mL)",
+        servings_per_container: 64,
+        dose_text: "1 tbsp (15 mL) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 750,
+            unit: "mcg RAE",
+            form: "beta-carotene + annatto",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 312.5,
+            unit: "mg",
+            form: "ascorbic acid + amla",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 6.3,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin K (Menaquinone = K2)",
+            amount: 10,
+            unit: "mcg",
+            form: "menatetrenone (K2 MK-4)",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 12.5,
+            unit: "mg",
+            form: "citrate + Algas calcareas",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 25,
+            unit: "mcg",
+            form: "selenomethionine",
+            alignment: "aligned"
+          },
+          {
+            name: "Boron",
+            amount: 0.25,
+            unit: "mg",
+            form: "sodium borate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [],
+        what_it_does: "Provides you with a powerful blend of vitamins and minerals to support healthy bones and joints.",
+        tagline: ""
+      },
+      "Oxy Body Cherry Berry": {
+        eden_id: "EDEN-LOCKED-oxy-body-cherry-berry",
+        canonical_name: "Oxy Body Cherry Berry",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY antioxidant + plant-derived minerals liquid",
+        serving_size: "1 fl oz (2 tbsp)",
+        servings_per_container: 32,
+        dose_text: "1 fl oz (2 tbsp) daily",
+        nutrients: [
+          {
+            name: "Potassium",
+            amount: 4,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 60,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Chromium",
+            amount: 12,
+            unit: "mcg",
+            form: "chromium amino acid chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 15,
+            unit: "mcg",
+            form: "L-selenomethionine",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 1.5,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Provides health benefits of aloe vera, \u201Cthe plant of immortality\u201D12 and other botanicals",
+          "Includes plant mineral solids you can\u2019t necessarily get from food",
+          "Packed with essential vitamins like vitamin C and zinc, which support the immune system1,2,7",
+          "Drink your nutrients with a tasty, convenient liquid formula"
+        ],
+        what_it_does: "Provides aloe vera, vitamins, minerals, and more to support overall health.",
+        tagline: ""
+      },
+      "Pau d'Arco Liquid Extract": {
+        eden_id: "EDEN-LOCKED-pau-d-arco-liquid-extract",
+        canonical_name: "Pau d'Arco Liquid Extract",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY immune/antifungal liquid extract",
+        serving_size: "1 dropper (~0.75 ml)",
+        servings_per_container: 80,
+        dose_text: "1 dropper (~0.75 ml) daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Pau d'Arco Liquid Extract",
+            amount: 720,
+            unit: "mg",
+            form: "Inner Bark",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Plant Shake": {
+        eden_id: "EDEN-LOCKED-plant-shake",
+        canonical_name: "Plant Shake",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY vegan protein shake",
+        serving_size: "1 scoop (33g)",
+        servings_per_container: 28,
+        dose_text: "1 scoop (33g) daily",
+        nutrients: [
+          {
+            name: "Calcium",
+            amount: 56,
+            unit: "mg",
+            form: "tricalcium phosphate",
+            alignment: "partial"
+          },
+          {
+            name: "Iron",
+            amount: 5,
+            unit: "mg",
+            form: "from pea/rice protein",
+            alignment: "partial"
+          },
+          {
+            name: "Zinc",
+            amount: 1,
+            unit: "mg",
+            form: "from plant protein",
+            alignment: "partial"
+          },
+          {
+            name: "Sodium",
+            amount: 280,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Super Fruit Antioxidant Blend",
+            amount: 146,
+            unit: "mg",
+            form: "proprietary blend (11 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "pomegranate",
+              "acai",
+              "acerola",
+              "amla",
+              "jabuticaba",
+              "cranberry",
+              "goji",
+              "mangosteen",
+              "maqui",
+              "strawberry",
+              "schisandra"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Pollen Burst (Standalone Tablet)": {
+        eden_id: "EDEN-LOCKED-pollen-burst-standalone-tablet",
+        canonical_name: "Pollen Burst (Standalone Tablet)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY pollen extract tablet (NOT 'Plus' line)",
+        serving_size: "1 tablet",
+        servings_per_container: 60,
+        dose_text: "1 tablet daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Pollen Extract Std",
+            amount: 68,
+            unit: "mg",
+            form: "Flower Pollen Extracts",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Antioxidant-rich proprietary blend of flower pollen, SOD, and green tea, which can help with cell protection",
+          "Natural caffeine promotes higher sustained energy levels (no crashing!)",
+          "Additional vitamins provided to bolster overall health",
+          "New Dragon Fruit flavor you'll love!",
+          "Stick packs perfect for life on the go"
+        ],
+        what_it_does: "Supports overall health and boosts energy with a blend of flower pollen extract, SOD, green tea extract, vitamins, and minerals.",
+        tagline: ""
+      },
+      "Pollen Burst Plus (Berry/Cassis)": {
+        eden_id: "EDEN-LOCKED-pollen-burst-plus-berry-cassis",
+        canonical_name: "Pollen Burst Plus (Berry/Cassis)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY pollen extract energy stick (berry/cassis flavor)",
+        serving_size: "1 packet (12 g)",
+        servings_per_container: 30,
+        dose_text: "1 packet (12 g) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 300,
+            unit: "mcg",
+            form: "beta-carotene",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 25,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 5,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 20,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 5,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 100,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 5,
+            unit: "mg",
+            form: "D-calcium pantothenate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Glucuronolactone",
+            amount: 600,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Caffeine",
+            amount: 75,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Inositol",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Proprietary Blend",
+            amount: 500,
+            unit: "mg",
+            form: "proprietary blend (4 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "GliSODin",
+              "Green Tea 45% EGCG",
+              "Pollen Extract G-40",
+              "Cassis/Blackcurrant Pigment Extract"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Pollen Burst Plus (Dragonfruit)": {
+        eden_id: "EDEN-LOCKED-pollen-burst-plus-dragonfruit",
+        canonical_name: "Pollen Burst Plus (Dragonfruit)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY pollen extract energy stick (dragonfruit flavor variant)",
+        serving_size: "1 packet (12.6 g)",
+        servings_per_container: 30,
+        dose_text: "1 packet (12.6 g) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 300,
+            unit: "mcg",
+            form: "beta-carotene",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 25,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 5,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 20,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 5,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 100,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 5,
+            unit: "mg",
+            form: "D-calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Sodium",
+            amount: 65,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Glucuronolactone",
+            amount: 600,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Caffeine",
+            amount: 75,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Inositol",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Proprietary Blend",
+            amount: 340,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Green Tea 45% EGCG",
+              "GliSODin",
+              "Pollen Extract G-40"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Pollen Burst Plus (Orange)": {
+        eden_id: "EDEN-LOCKED-pollen-burst-plus-orange",
+        canonical_name: "Pollen Burst Plus (Orange)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY pollen extract energy stick (orange flavor)",
+        serving_size: "1 packet (12 g)",
+        servings_per_container: 30,
+        dose_text: "1 packet (12 g) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 300,
+            unit: "mcg",
+            form: "beta-carotene",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 25,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 5,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 20,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 5,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 100,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 5,
+            unit: "mg",
+            form: "D-calcium pantothenate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Glucuronolactone",
+            amount: 600,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Caffeine",
+            amount: 75,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Inositol",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Proprietary Blend",
+            amount: 340,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Green Tea 45% EGCG",
+              "GliSODin",
+              "Pollen Extract G-40"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Pollen Burst Plus (Strawberry-Acai)": {
+        eden_id: "EDEN-LOCKED-pollen-burst-plus-strawberry-acai",
+        canonical_name: "Pollen Burst Plus (Strawberry-Acai)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY pollen extract + caffeine energy stick pack",
+        serving_size: "1 packet (12.6 g)",
+        servings_per_container: 30,
+        dose_text: "1 packet (12.6 g) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 300,
+            unit: "mcg",
+            form: "beta-carotene",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 25,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 5,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 20,
+            unit: "mg",
+            form: "niacin (unspecified)",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 5,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 100,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 5,
+            unit: "mg",
+            form: "D-calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Sodium",
+            amount: 50,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Glucuronolactone",
+            amount: 600,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Caffeine",
+            amount: 75,
+            unit: "mg",
+            form: "from coffee bean",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Inositol",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Proprietary Blend",
+            amount: 340,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Green Tea Extract 45% EGCG",
+              "GliSODin SOD/gliadin",
+              "Pollen Extract G-40"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Pollen Burst Plus Daily Liver Formula": {
+        eden_id: "EDEN-LOCKED-pollen-burst-plus-daily-liver-formula",
+        canonical_name: "Pollen Burst Plus Daily Liver Formula",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "Pure Joy (PJ) liver support tablet",
+        serving_size: "2 tablets",
+        servings_per_container: 30,
+        dose_text: "2 tablets daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 340,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Glutathione Yeast Extract",
+              "Aloe Vera Extract",
+              "Pollen Extract"
+            ]
+          }
+        ],
+        features: [
+          "Targeted blend of antioxidants provided to support optimal liver function and",
+          "Tablets easy to swallow and convenient for life on the go",
+          "Gluten-free, sugar-free, and caffeine-free",
+          "No artificial"
+        ],
+        what_it_does: "Provides targeted nutrients in every capsule for daily nutritional support.",
+        tagline: ""
+      },
+      "ProCardio FX (Pro-line Cardiovascular)": {
+        eden_id: "EDEN-LOCKED-procardio-fx-pro-line-cardiovascular",
+        canonical_name: "ProCardio FX (Pro-line Cardiovascular)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY pro-line cardiovascular softgel",
+        serving_size: "2 softgels",
+        servings_per_container: 30,
+        dose_text: "2 softgels daily",
+        nutrients: [
+          {
+            name: "Vitamin D3",
+            amount: 12.5,
+            unit: "mcg",
+            form: "cholecalciferol (500 IU)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 7,
+            unit: "mg",
+            form: "d-alpha tocopherol",
+            alignment: "aligned"
+          },
+          {
+            name: "Iodine",
+            amount: 50,
+            unit: "mcg",
+            form: "from kelp",
+            alignment: "aligned"
+          },
+          {
+            name: "Selenium",
+            amount: 50,
+            unit: "mcg",
+            form: "selenium yeast",
+            alignment: "partial"
+          },
+          {
+            name: "Omega-3 (alpha-linolenic + EPA/DHA in marine form)",
+            amount: 550,
+            unit: "mg",
+            form: "EPA 330 + DHA 220 (per 2 softgels from 1000mg fish oil)",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Turmeric Extract",
+            amount: 100,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "95% curcuminoids"
+            ]
+          },
+          {
+            name: "Resveratrol",
+            amount: 50,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "from Polygonum cuspidatum"
+            ]
+          },
+          {
+            name: "Quercetin Dihydrate",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "CoQ10",
+            amount: 20,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Garlic Oil Concentrate",
+            amount: 10,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "500:1"
+            ]
+          },
+          {
+            name: "BioPerine",
+            amount: 10,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Most heart health supplements contain only one ingredient known to support the cardiovascular system. ProCardio FX stands alone by combining 11 synergizing nutrients that target specific areas of cardiovascular health."
+        ],
+        what_it_does: "Supports healthy blood vessels to promote optimal blood flow, circulation, and energy production within the body.",
+        tagline: ""
+      },
+      "ProFemme (PJ400)": {
+        eden_id: "EDEN-LOCKED-profemme-pj400",
+        canonical_name: "ProFemme (PJ400)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "Pure Joy (PJ) female hormonal support tablet",
+        serving_size: "2 tablets",
+        servings_per_container: 30,
+        dose_text: "2 tablets daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 500,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Easy-to-swallow tablets",
+          "Designed specifically for women",
+          "Proprietary Blend is plant-based",
+          "Pollen extract may support non-hormonal mitigation of PMS/menopause symptoms"
+        ],
+        what_it_does: "Provides a plant-based, natural supplement to support women's health.",
+        tagline: ""
+      },
+      "ProJoba Omega (Fish Oil)": {
+        eden_id: "EDEN-LOCKED-projoba-omega-fish-oil",
+        canonical_name: "ProJoba Omega (Fish Oil)",
+        brand: "ProJoba",
+        brand_tier: 2,
+        category: "YGY ethyl-ester fish oil softgel",
+        serving_size: "1 softgel",
+        servings_per_container: 120,
+        dose_text: "1 softgel daily",
+        nutrients: [
+          {
+            name: "Omega-3 (alpha-linolenic + EPA/DHA in marine form)",
+            amount: 300,
+            unit: "mg",
+            form: "EPA 180 + DHA 120 ethyl ester (per softgel; from 1000mg fish oil)",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Provides an all-natural source of omega fatty acids our bodies can\u2019t produce on their own",
+          "Made with a natural marine lipid concentrate that contains valuable omega-3 fatty acids",
+          "Proprietary blend offers a powerful, all-natural daily supplement",
+          "Yeast and starch-free",
+          "Soft gels are easy to swallow"
+        ],
+        what_it_does: "Provides the right blend of essential fatty acids to promote good health, including targeted support for the heart.",
+        tagline: ""
+      },
+      "ProJoint FX": {
+        eden_id: "EDEN-LOCKED-projoint-fx",
+        canonical_name: "ProJoint FX",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY pro-line joint (most comprehensive joint SKU)",
+        serving_size: "3 capsules",
+        servings_per_container: 30,
+        dose_text: "3 capsules daily",
+        nutrients: [
+          {
+            name: "Vitamin D3",
+            amount: 18.5,
+            unit: "mcg",
+            form: "cholecalciferol (740 IU)",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 375,
+            unit: "mg",
+            form: "calcium carbonate",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 225,
+            unit: "mg",
+            form: "magnesium oxide",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin K (Menaquinone = K2)",
+            amount: 113,
+            unit: "mcg",
+            form: "menaquinone-7 (K2 MK-7)",
+            alignment: "aligned"
+          },
+          {
+            name: "Silica",
+            amount: 1.5,
+            unit: "mg",
+            form: "from Bamboo extract",
+            alignment: "aligned"
+          },
+          {
+            name: "Boron",
+            amount: 0.75,
+            unit: "mg",
+            form: "boron chelate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Trace Mineral Complex",
+            amount: 75,
+            unit: "mg",
+            form: "from red algae",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Provides collagen, MSM, calcium, vitamin D, trace minerals, and more in every capsule",
+          "Formulated to support both joint strength and comfort",
+          "High-antioxidant phytonutrients included for additional health benefits",
+          "Convenient capsules are easy to swallow and perfect for life on the go"
+        ],
+        what_it_does: "Provides 15 key joint-supporting nutrients for comprehensive nutritional support.",
+        tagline: ""
+      },
+      "ProstaTrol (PJ102)": {
+        eden_id: "EDEN-LOCKED-prostatrol-pj102",
+        canonical_name: "ProstaTrol (PJ102)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "Pure Joy (PJ) prostate support tablet",
+        serving_size: "2 tablets",
+        servings_per_container: 30,
+        dose_text: "2 tablets daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 500,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Pumpkin Spice Protein Shake": {
+        eden_id: "EDEN-LOCKED-pumpkin-spice-protein-shake",
+        canonical_name: "Pumpkin Spice Protein Shake",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY whey protein meal replacement",
+        serving_size: "1 packet (~38.5 g)",
+        servings_per_container: 15,
+        dose_text: "1 packet (~38.5 g) daily",
+        nutrients: [
+          {
+            name: "Calcium",
+            amount: 200,
+            unit: "mg",
+            form: "calcium caseinate",
+            alignment: "partial"
+          },
+          {
+            name: "Iron",
+            amount: 0.3,
+            unit: "mg",
+            form: "from whey",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 160,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Provides 24 grams of protein per serving",
+          "Whey protein promotes healthy muscle development and energy levels",
+          "Classic Pumpkin Spice flavor perfect for those with a sweet tooth",
+          "Convenient packets ideal for life on the go (https://youngevity.com/us_en/)",
+          "No caffeine or artificial"
+        ],
+        what_it_does: "Provides a high protein source to build, maintain, and recover lean muscle mass while burning fat.",
+        tagline: ""
+      },
+      "Purmeric (Turmeric)": {
+        eden_id: "EDEN-LOCKED-purmeric-turmeric",
+        canonical_name: "Purmeric (Turmeric)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY turmeric capsule",
+        serving_size: "2 capsules",
+        servings_per_container: 30,
+        dose_text: "2 capsules daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Organic Turmeric Rhizome Extract",
+            amount: 500,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "95% curcuminoids"
+            ]
+          },
+          {
+            name: "BioPerine Black Pepper Extract",
+            amount: 10,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Organic Turmeric and Black Pepper provide two high-quality sources of antioxidants",
+          "Contains 95% curcuminoids, a much higher concentration than what\u2019s found in similar products",
+          "Provides organic botanicals, which typically contain more phytonutrients than non-organic botanicals1,2,3",
+          "No artificial"
+        ],
+        what_it_does: "Provides turmeric and black pepper for synergizing antioxidant support.",
+        tagline: ""
+      },
+      "ReVERSE!\xAE": {
+        eden_id: "EDEN-LOCKED-reverse",
+        canonical_name: "ReVERSE!\xAE",
+        brand: "Tai Wellness (Wallach collab)",
+        brand_tier: 1,
+        category: "YGY MOST COMPREHENSIVE pro-line full-spectrum multi (Doctrine \xA73 anchor candidate)",
+        serving_size: "6 tablets + 2 softgels",
+        servings_per_container: 30,
+        dose_text: "6 tablets + 2 softgels daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 3e3,
+            unit: "mcg",
+            form: "beta-carotene",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 200,
+            unit: "mg",
+            form: "calcium ascorbate + sodium isoascorbate + citrus glycosyl flavones",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 25,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 134,
+            unit: "mg",
+            form: "natural d-alpha-tocopheryl succinate + mixed tocopherols + tocotrienols",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin K (Menaquinone = K2)",
+            amount: 45,
+            unit: "mcg",
+            form: "phylloquinone (K1)",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 50,
+            unit: "mg",
+            form: "thiamine mononitrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 50,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 50,
+            unit: "mg",
+            form: "niacin + niacinamide + inositol hexanicotinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 50,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 1333,
+            unit: "mcg DFE",
+            form: "folic acid (800 mcg)",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 100,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 300,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 50,
+            unit: "mg",
+            form: "D-calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 1200,
+            unit: "mg",
+            form: "calcium carbonate + hydroxyapatite + citrate + ascorbate",
+            alignment: "aligned"
+          },
+          {
+            name: "Phosphorus",
+            amount: 100,
+            unit: "mg",
+            form: "from hydroxyapatite",
+            alignment: "aligned"
+          },
+          {
+            name: "Iodine",
+            amount: 150,
+            unit: "mcg",
+            form: "from kelp",
+            alignment: "aligned"
+          },
+          {
+            name: "Magnesium",
+            amount: 400,
+            unit: "mg",
+            form: "magnesium oxide + citrate",
+            alignment: "partial"
+          },
+          {
+            name: "Zinc",
+            amount: 15,
+            unit: "mg",
+            form: "zinc citrate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 200,
+            unit: "mcg",
+            form: "selenium amino acid chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Copper",
+            amount: 2,
+            unit: "mg",
+            form: "copper gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Manganese",
+            amount: 2,
+            unit: "mg",
+            form: "manganese gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Chromium",
+            amount: 200,
+            unit: "mcg",
+            form: "chromium nicotinate glycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Molybdenum",
+            amount: 75,
+            unit: "mcg",
+            form: "molybdenum glycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 50,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Boron",
+            amount: 0.7,
+            unit: "mg",
+            form: "boron glycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vanadium",
+            amount: 50,
+            unit: "mcg",
+            form: "vanadium nicotinate glycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Omega-3 (alpha-linolenic + EPA/DHA in marine form)",
+            amount: 1200,
+            unit: "mg",
+            form: "EPA 720 + DHA 480 marine lipid (2 softgels)",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Glutathione Co-Factors with Vegetable Thiols",
+            amount: 450,
+            unit: "mg",
+            form: "proprietary blend (6 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "ALA",
+              "L-Glutamine",
+              "MSM",
+              "NAC",
+              "broccoli",
+              "garlic"
+            ]
+          },
+          {
+            name: "Bio-Active Polyphenol Complex",
+            amount: 100,
+            unit: "mg",
+            form: "proprietary blend (4 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Green Tea 98% polyphenols",
+              "Pomegranate 20% ellagitannins",
+              "Cocoa",
+              "Quercetin"
+            ]
+          },
+          {
+            name: "Res-V-Plex",
+            amount: 155,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Grape Seed OPC 95% + red grape skin + Japanese knotweed = 30 mg trans-resveratrol"
+            ]
+          },
+          {
+            name: "Spice of Life Antioxidant",
+            amount: 50,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Ginger 5% gingerols",
+              "Oregano",
+              "Cinnamon",
+              "Rosemary 6% rosmarinic",
+              "Turmeric 95% curcumin"
+            ]
+          },
+          {
+            name: "Balancing Adaptogen",
+            amount: 200,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Panax ginseng",
+              "astragalus",
+              "reishi",
+              "schizandra",
+              "shiitake"
+            ]
+          },
+          {
+            name: "Microencapsulated Probiotic",
+            amount: 850,
+            unit: "mg",
+            form: "B. coagulans 100M viable cells + prebiotic cellulose fiber",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "GoZanthene",
+            amount: 50,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "lipophilic goji fraction + marigold = 1500 mcg total carotenoids: zeaxanthin",
+              "lutein",
+              "lycopene"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Rebound FX (Can)": {
+        eden_id: "EDEN-LOCKED-rebound-fx-can",
+        canonical_name: "Rebound FX (Can)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY caffeinated energy can (highest sugar \u2014 older formulation)",
+        serving_size: "1 can (12 fl oz / 355 mL)",
+        servings_per_container: 1,
+        dose_text: "1 can (12 fl oz / 355 mL) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 3500,
+            unit: "IU",
+            form: "retinyl palmitate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin C",
+            amount: 350,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 70,
+            unit: "IU",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 70,
+            unit: "mg",
+            form: "DL-alpha tocopherol acetate",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 0.07,
+            unit: "mg",
+            form: "thiamin HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 0.07,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 14,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 1.4,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 285,
+            unit: "mcg",
+            form: "folic acid",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 17.5,
+            unit: "mcg",
+            form: "cyanocobalamin",
+            alignment: "partial"
+          },
+          {
+            name: "Biotin",
+            amount: 200,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 14,
+            unit: "mg",
+            form: "D-calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Sodium",
+            amount: 20,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 70,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 440,
+            unit: "mg",
+            form: "proprietary blend (7 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Taurine",
+              "Green Tea 50% caffeine",
+              "Trace Mineral Blend",
+              "Panax Ginseng",
+              "Glucuronolactone",
+              "Choline Bitartrate",
+              "Inositol"
+            ]
+          }
+        ],
+        features: [
+          "Includes vitamins, electrolytes, botanicals, and more for targeted exercise and recovery support",
+          "Contains less sugar and sodium than other leading sports/energy drinks",
+          "Endorsed and promoted by former NBA All-Star Theo Ratliff",
+          "Contains no artificial"
+        ],
+        what_it_does: "Provides antioxidants, electrolytes, and the necessary vitamins for exercise replenishment, hydration, and energy.",
+        tagline: ""
+      },
+      "Rebound FX Citrus Punch (Powder)": {
+        eden_id: "EDEN-LOCKED-rebound-fx-citrus-punch-powder",
+        canonical_name: "Rebound FX Citrus Punch (Powder)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY energy powder (cleaner than the can)",
+        serving_size: "2 scoops (12 g)",
+        servings_per_container: 30,
+        dose_text: "2 scoops (12 g) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 1500,
+            unit: "mcg RAE",
+            form: "retinyl palmitate + beta-carotene",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 500,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 2.5,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 67,
+            unit: "mg",
+            form: "d-alpha tocopherol acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 1.5,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 1.7,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 20,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 2,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 400,
+            unit: "mcg DFE",
+            form: "folic acid (235 mcg)",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 25,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 300,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 20,
+            unit: "mg",
+            form: "calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Choline",
+            amount: 15,
+            unit: "mg",
+            form: "choline bitartrate",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 100,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Taurine",
+            amount: 200,
+            unit: "mg",
+            form: "taurine"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Inositol",
+            amount: 20,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Ginseng Root Extract",
+            amount: 60,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Glucono Delta Lactone",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Plant Derived Minerals",
+            amount: 120,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Amino Acid Complex",
+            amount: 150,
+            unit: "mg",
+            form: "proprietary blend (7 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "18 AAs incl. lysine",
+              "methionine",
+              "threonine",
+              "valine",
+              "leucine",
+              "isoleucine",
+              "taurine precursors"
+            ]
+          }
+        ],
+        features: [
+          "Includes vitamins, amino acids, botanicals, and more for targeted exercise and recovery support",
+          "Contains less sugar and sodium than other leading sports/energy drinks",
+          "Endorsed and promoted by former NBA All-Star Theo Ratliff",
+          "Contains no artificial"
+        ],
+        what_it_does: "Provides antioxidants, natural herbs, and the necessary vitamins for exercise replenishment, hydration, and energy.",
+        tagline: ""
+      },
+      "Regulate GLP-1": {
+        eden_id: "EDEN-LOCKED-regulate-glp-1",
+        canonical_name: "Regulate GLP-1",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY high-fiber + blood-sugar support stick",
+        serving_size: "1 packet (10.3g)",
+        servings_per_container: 30,
+        dose_text: "1 packet (10.3g) daily",
+        nutrients: [
+          {
+            name: "Sodium",
+            amount: 20,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Prebiotic Fiber Blend",
+            amount: 8.5,
+            unit: "g",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Inulin",
+              "Acacia Fiber",
+              "Beet Fiber",
+              "Flaxseed",
+              "Chia Seed"
+            ]
+          },
+          {
+            name: "Blood Sugar Support Blend",
+            amount: 100,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Cinnamon",
+              "Bitter Melon",
+              "Gymnema Sylvestre 25% Gymnemic Acid"
+            ]
+          },
+          {
+            name: "Enzyme Blend",
+            amount: 100,
+            unit: "mg",
+            form: "proprietary blend (7 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Bromelain",
+              "Papain",
+              "Protease",
+              "Amylase",
+              "Cellulase",
+              "Lactase",
+              "Lipase"
+            ]
+          }
+        ],
+        features: [
+          "Each shot provides diverse prebiotic fibers, digestive enzymes, and a unique blend of botanicals",
+          "Probiotic included for microbiome support",
+          "Nutrients synergize to support a healthy metabolism and digestive system*",
+          "Convenient packets for nutrition on the go!",
+          "Delicious, natural orange flavor",
+          "No artificial"
+        ],
+        what_it_does: "Provides key nutrients to support your gut, promote healthy blood sugar levels, and promote healthy digestion.",
+        tagline: ""
+      },
+      "Rejuvenate Rewind Restore": {
+        eden_id: "EDEN-LOCKED-rejuvenate-rewind-restore",
+        canonical_name: "Rejuvenate Rewind Restore",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY senolytic / longevity capsule",
+        serving_size: "2 capsules",
+        servings_per_container: 30,
+        dose_text: "2 capsules daily",
+        nutrients: [
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 1.3,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 10,
+            unit: "mg",
+            form: "niacin (unspecified)",
+            alignment: "partial"
+          },
+          {
+            name: "Copper",
+            amount: 1,
+            unit: "mg",
+            form: "copper gluconate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Fisetin",
+            amount: 300,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Cotinus coggygria Scop"
+            ]
+          },
+          {
+            name: "Quercetin Dihydrate",
+            amount: 150,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "D-Ribose",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Coenzyme Q10",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "BioPerine",
+            amount: 5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Synergizing blend of key research-backed vitamins, minerals, antioxidants, and more",
+          "Promotes healthy energy, DNA repair, and cellular resilience*",
+          "Part of our HOPE Complete Women's Health System",
+          "Capsules convenient for travel and life on the go",
+          "No artificial"
+        ],
+        what_it_does: "Provides a synergizing blend of key nutrients to promote optimal cellular health and resilience.",
+        tagline: ""
+      },
+      RenuIQ: {
+        eden_id: "EDEN-LOCKED-renuiq",
+        canonical_name: "RenuIQ",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY nootropic recovery drink (pro-line cognitive)",
+        serving_size: "1 scoop (8g)",
+        servings_per_container: 30,
+        dose_text: "1 scoop (8g) daily",
+        nutrients: [
+          {
+            name: "Vitamin D3",
+            amount: 40,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 1.7,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 801,
+            unit: "mcg DFE",
+            form: "folic acid (471 mcg)",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 200,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Renu Proprietary Blend",
+            amount: 1540,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Pomegranate Fruit Powder",
+              "Bacopa monnieri",
+              "Grape Seed Extract 95% polyphenols",
+              "Rhodiola Root",
+              "Resveratrol"
+            ]
+          }
+        ],
+        features: [
+          "Provides targeted nutrients known to help support brain health",
+          "Proprietary blend features adaptogens, nootropics, and high-antioxidant phytonutrients",
+          "No artificial"
+        ],
+        what_it_does: "Provides a proprietary blend of adaptogens, vitamins, and phytonutrients to holistically support brain health.",
+        tagline: ""
+      },
+      "Sleep Eze": {
+        eden_id: "EDEN-LOCKED-sleep-eze",
+        canonical_name: "Sleep Eze",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY sleep capsule (melatonin + 5-HTP + GABA + herbals)",
+        serving_size: "1 capsule",
+        servings_per_container: 60,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 25,
+            unit: "mg NE",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 25,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Calcium",
+            amount: 25,
+            unit: "mg",
+            form: "calcium carbonate",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 50,
+            unit: "mg",
+            form: "magnesium oxide",
+            alignment: "misaligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 320,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Passion Flower",
+              "Valerian",
+              "Lemon Balm",
+              "Chamomile",
+              "Hops Strobile"
+            ]
+          },
+          {
+            name: "GABA",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Melatonin",
+            amount: 2.5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Made with a proprietary blend of herbs (passion flower, valerian, lemon balm, chamomile, and hops) and other natural substances to support healthy, restful sleep."
+        ],
+        what_it_does: "Provides a proprietary blend of herbs and other natural elements that support healthy sleep patterns.",
+        tagline: ""
+      },
+      "Sleep Gummy": {
+        eden_id: "EDEN-LOCKED-sleep-gummy",
+        canonical_name: "Sleep Gummy",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY sleep gummy",
+        serving_size: "1 gummy",
+        servings_per_container: 60,
+        dose_text: "1 gummy daily",
+        nutrients: [
+          {
+            name: "Magnesium",
+            amount: 2,
+            unit: "mg",
+            form: "magnesium citrate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 7300,
+            unit: "mcg",
+            form: "proprietary blend (4 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "GABA",
+              "Chamomile",
+              "L-Tryptophan",
+              "Melatonin Phytomelatonin from Hypericum perforatum/St. John's Wort"
+            ]
+          }
+        ],
+        features: [
+          "Proprietary blend designed to help support deep, restful sleep",
+          "Lower than average dose (344 mcg) of melatonin perfect for sensitive individuals",
+          "Synergizing"
+        ],
+        what_it_does: "Soothes the brain and body with a blend of botanicals, melatonin, and amino acids.",
+        tagline: ""
+      },
+      "Slender FX Keto Power Up": {
+        eden_id: "EDEN-LOCKED-slender-fx-keto-power-up",
+        canonical_name: "Slender FX Keto Power Up",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY keto-support capsule (caffeine + Cr)",
+        serving_size: "1 capsule",
+        servings_per_container: 60,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Iodine",
+            amount: 300,
+            unit: "mcg",
+            form: "potassium iodide",
+            alignment: "partial"
+          },
+          {
+            name: "Chromium",
+            amount: 60,
+            unit: "mcg",
+            form: "chromium nicotinate glycinate chelate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "KETO Power Up Proprietary Blend",
+            amount: 545.7,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Green Tea 95% phenols/70% catechins/45% EGCG",
+              "African Wild Mango Seed",
+              "Green Coffee Bean 50% chlorogenic",
+              "Cayenne Fruit",
+              "Bamboo Leaf"
+            ]
+          },
+          {
+            name: "Caffeine",
+            amount: 75,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Slender FX Meal Replacement Shake (French Vanilla)": {
+        eden_id: "EDEN-LOCKED-slender-fx-meal-replacement-shake-french-vanilla",
+        canonical_name: "Slender FX Meal Replacement Shake (French Vanilla)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY weight-loss / meal replacement shake",
+        serving_size: "1 scoop (32.5g)",
+        servings_per_container: 30,
+        dose_text: "1 scoop (32.5g) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 750,
+            unit: "mcg RAE",
+            form: "palmitate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin C",
+            amount: 30,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 25,
+            unit: "mcg",
+            form: "ergocalciferol/cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 10,
+            unit: "mg",
+            form: "d-alpha tocopheryl acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 0.75,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 0.85,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 10,
+            unit: "mg NE",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 1,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 333,
+            unit: "mcg DFE",
+            form: "folic acid",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 1e3,
+            unit: "mcg",
+            form: "cyanocobalamin",
+            alignment: "partial"
+          },
+          {
+            name: "Biotin",
+            amount: 150,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 5,
+            unit: "mg",
+            form: "calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Phosphorus",
+            amount: 200,
+            unit: "mg",
+            form: "dicalcium phosphate",
+            alignment: "partial"
+          },
+          {
+            name: "Iodine",
+            amount: 105,
+            unit: "mcg",
+            form: "potassium iodide",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 80,
+            unit: "mg",
+            form: "magnesium oxide",
+            alignment: "misaligned"
+          },
+          {
+            name: "Zinc",
+            amount: 7.5,
+            unit: "mg",
+            form: "zinc oxide",
+            alignment: "misaligned"
+          },
+          {
+            name: "Selenium",
+            amount: 21,
+            unit: "mcg",
+            form: "sodium selenite",
+            alignment: "partial"
+          },
+          {
+            name: "Manganese",
+            amount: 5,
+            unit: "mg",
+            form: "manganese sulfate",
+            alignment: "partial"
+          },
+          {
+            name: "Chromium",
+            amount: 18,
+            unit: "mcg",
+            form: "chromium chloride",
+            alignment: "misaligned"
+          },
+          {
+            name: "Molybdenum",
+            amount: 20,
+            unit: "mcg",
+            form: "sodium molybdate",
+            alignment: "partial"
+          },
+          {
+            name: "Choline",
+            amount: 10,
+            unit: "mg",
+            form: "choline bitartrate",
+            alignment: "partial"
+          },
+          {
+            name: "Calcium",
+            amount: 300,
+            unit: "mg",
+            form: "dicalcium phosphate",
+            alignment: "partial"
+          },
+          {
+            name: "Iron",
+            amount: 4.5,
+            unit: "mg",
+            form: "ferrous fumarate",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 140,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Provides a wide variety of vitamins, minerals, protein, antioxidants, and more in every scoop",
+          "Protein helps you feel full and fuels your muscles",
+          "Natural stimulants like green tea and eleuthero give you a jitter-free energy boost",
+          "No artificial"
+        ],
+        what_it_does: "Provides everything your body needs to support sustained energy levels and promote optimal health.",
+        tagline: ""
+      },
+      "Slender FX REV (Liquid Drops)": {
+        eden_id: "EDEN-LOCKED-slender-fx-rev-liquid-drops",
+        canonical_name: "Slender FX REV (Liquid Drops)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY weight management liquid drops",
+        serving_size: "1 dropper (0.75 mL)",
+        servings_per_container: 80,
+        dose_text: "1 dropper (0.75 mL) daily",
+        nutrients: [
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 16,
+            unit: "mg",
+            form: "niacin (unspecified)",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 10,
+            unit: "mg",
+            form: "pyridoxal-5-phosphate (P5P)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 100,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 707,
+            unit: "mg",
+            form: "proprietary blend (4 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Green Tea Leaf",
+              "African Mango Seed",
+              "Green Coffee Bean",
+              "CurCousin (Calebin A \u2014 curcumin derivative"
+            ]
+          }
+        ],
+        features: [
+          "B vitamins, antioxidant-rich botanicals, and curcumin provide targeted metabolic support",
+          "Premium, cutting-edge CurCousin\u2122 blend offers enhanced nutritional support",
+          "No artificial"
+        ],
+        what_it_does: "Provides key nutrients to help support a healthy metabolism and weight.",
+        tagline: ""
+      },
+      "Slender FX Sweet Eze": {
+        eden_id: "EDEN-LOCKED-slender-fx-sweet-eze",
+        canonical_name: "Slender FX Sweet Eze",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY blood-sugar support capsule",
+        serving_size: "1 capsule",
+        servings_per_container: 120,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Chromium",
+            amount: 100,
+            unit: "mcg",
+            form: "chromium nicotinate glycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vanadium",
+            amount: 200,
+            unit: "mcg",
+            form: "vanadium nicotinate glycinate chelate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Cinnamon Bark",
+            amount: 200,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "L-Aspartic Acid",
+            amount: 150,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Ginseng Root",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Gymnema Leaf Extract",
+            amount: 30,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Bitter Melon Fruit Extract",
+            amount: 10,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Jambolan Fruit Extract",
+            amount: 10,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "May naturally support healthy blood sugar levels",
+          "Supports a healthy metabolism",
+          "Includes chromium (which decreases naturally with age3) and vanadium",
+          "Provides time-tested botanicals like cinnamon and ginseng",
+          "Capsules are easy to swallow"
+        ],
+        what_it_does: "May help support the regulation of blood sugar levels with a blend of nutrient-rich botanicals.",
+        tagline: ""
+      },
+      SmartStiks: {
+        eden_id: "EDEN-LOCKED-smartstiks",
+        canonical_name: "SmartStiks",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY cognitive stick pack (lower caffeine than Neutonic)",
+        serving_size: "1 stick (4.5g)",
+        servings_per_container: 30,
+        dose_text: "1 stick (4.5g) daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Natural Caffeine",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "M-NOOT Proprietary Blend",
+            amount: 139,
+            unit: "mg",
+            form: "proprietary blend (6 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "L-Theanine",
+              "Bacopa monnieri",
+              "Ginkgo biloba",
+              "Panax ginseng",
+              "Inositol Nicotinate",
+              "Huperzine Extract"
+            ]
+          },
+          {
+            name: "BioPerine",
+            amount: 5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Convenient stick packaging makes it easy to enjoy on the go",
+          "Proprietary nootropic blend supports better clarity and focus",
+          "Natural caffeine provides an energy boost without the jitters",
+          "Low calorie and low sugar; gluten-free and non-GMO",
+          "Only natural"
+        ],
+        what_it_does: "Boosts energy levels and supports cognitive performance on the go.",
+        tagline: ""
+      },
+      "Soul Stiks": {
+        eden_id: "EDEN-LOCKED-soul-stiks",
+        canonical_name: "Soul Stiks",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY caffeine + electrolyte stick pack",
+        serving_size: "1 stick (2.7g)",
+        servings_per_container: 30,
+        dose_text: "1 stick (2.7g) daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 350,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 20,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Choline",
+            amount: 4,
+            unit: "mg",
+            form: "choline bitartrate",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 10,
+            unit: "mg",
+            form: "magnesium oxide",
+            alignment: "misaligned"
+          },
+          {
+            name: "Sodium",
+            amount: 100,
+            unit: "mg",
+            form: "sodium chloride",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 39,
+            unit: "mg",
+            form: "potassium phosphate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Caffeine",
+            amount: 15,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "low"
+            ]
+          },
+          {
+            name: "BioPerine",
+            amount: 5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Convenient stick packaging makes it easy to enjoy on the go",
+          "Botanicals, electrolytes, and more synergize for the ultimate mood boost",
+          "Natural caffeine provides an energy boost without the jitters",
+          "ZERO sugar and ZERO calories; vegan, gluten-free, and non-GMO",
+          "Only natural"
+        ],
+        what_it_does: "Provides all you need to help lift your spirits and energy levels on the go.",
+        tagline: ""
+      },
+      "Sta-Balanced": {
+        eden_id: "EDEN-LOCKED-sta-balanced",
+        canonical_name: "Sta-Balanced",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY men's libido/strength capsule",
+        serving_size: "1 capsule",
+        servings_per_container: 60,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 10,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 7.5,
+            unit: "mg",
+            form: "zinc aspartate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 35,
+            unit: "mcg",
+            form: "selenium aspartate",
+            alignment: "partial"
+          },
+          {
+            name: "Manganese",
+            amount: 1,
+            unit: "mg",
+            form: "manganese aspartate",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 10,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 440,
+            unit: "mg",
+            form: "proprietary blend (9 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Yohimbe 2%",
+              "Fenugreek 50% Fibers",
+              "Spirulina",
+              "Tribulus terrestris 40%",
+              "Oat Straw 4:1",
+              "Damiana",
+              "L-Arginine",
+              "Maca 0.6%",
+              "Ginkgo biloba 24%"
+            ]
+          }
+        ],
+        features: [
+          "May improve hormone balance in both men and women with proprietary blend of botanicals. Formulated specifically to support one's sexual performance and may increase blood flow to all areas of the body.",
+          "Main Ingredient/Benefit",
+          "Ingredient Benefit",
+          "Yohimbe Bark 2% Extracted from the bark of the African",
+          "Extract evergreen tree, it is believed to be effective in treating erectile dysfunction.[1]",
+          "Fenugreek Seeds Has been used in Chinese medicine for 50% Fibers thousands of years to treat many diseases, it may also help improve sexual function and testosterone production in men.[2]"
+        ],
+        what_it_does: "Delivers nutritional botanicals that may support healthy sexual function and healthy hormone function.",
+        tagline: ""
+      },
+      "Sta-Cardio": {
+        eden_id: "EDEN-LOCKED-sta-cardio",
+        canonical_name: "Sta-Cardio",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY cardiovascular capsule",
+        serving_size: "1 capsule",
+        servings_per_container: 60,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Vitamin E",
+            amount: 11,
+            unit: "mg",
+            form: "natural D-Alpha tocopheryl (15 IU)",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 1.5,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 2.5,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 2,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 200,
+            unit: "mcg DFE",
+            form: "folic acid",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 6,
+            unit: "mcg",
+            form: "cyanocobalamin",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Fish Oil",
+            amount: 38,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "L-Carnitine Tartrate",
+            amount: 20,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "CoQ10",
+            amount: 10,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Proprietary Blend",
+            amount: 300,
+            unit: "mg",
+            form: "proprietary blend (20 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Spirulina",
+              "Chlorella",
+              "Klamath Falls Blue Green Algae",
+              "Green Barley Grass",
+              "Alfalfa",
+              "Broccoli",
+              "Cauliflower",
+              "Brussel Sprouts",
+              "Spinach",
+              "Radish",
+              "Carrot",
+              "Beet",
+              "Tomato",
+              "Celery",
+              "Onion",
+              "Leek",
+              "Yellow Pepper",
+              "Garlic",
+              "Ginger",
+              "Cinnamon"
+            ]
+          }
+        ],
+        features: [
+          "Proprietary Blend specifically formulated to support heart health."
+        ],
+        what_it_does: "Helps nourish the body with organic enzymes amino acids, vitamins, and minerals that support heart health.",
+        tagline: ""
+      },
+      "Sta-Clear": {
+        eden_id: "EDEN-LOCKED-sta-clear",
+        canonical_name: "Sta-Clear",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY skin/detox capsule",
+        serving_size: "1 capsule",
+        servings_per_container: 60,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 750,
+            unit: "mcg",
+            form: "acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 12.5,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 12.5,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 12.5,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 12.5,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 12.5,
+            unit: "mg",
+            form: "calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 6.25,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 20,
+            unit: "mg",
+            form: "DL-alpha tocopherol acetate",
+            alignment: "misaligned"
+          },
+          {
+            name: "Zinc",
+            amount: 7.5,
+            unit: "mg",
+            form: "zinc oxide",
+            alignment: "misaligned"
+          },
+          {
+            name: "Potassium",
+            amount: 50,
+            unit: "mg",
+            form: "potassium chloride",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "L-Carnitine",
+            amount: 10,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "CoQ10",
+            amount: 5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Fish Oil",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Proprietary Blend",
+            amount: 450,
+            unit: "mg",
+            form: "proprietary blend (18 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Burdock",
+              "Dandelion",
+              "Yellow Dock",
+              "Citrus Bioflav",
+              "Spirulina",
+              "Bromelain",
+              "Papaya",
+              "White Willow",
+              "Oregon Grape",
+              "Goldenseal",
+              "Wolfberry",
+              "Celery",
+              "Carrot",
+              "Beet",
+              "Cranberry",
+              "Evening Primrose 60% Powder",
+              "Red Clover",
+              "Licorice"
+            ]
+          }
+        ],
+        features: [
+          "Proprietary, targeted blend specifically formulated to provide a wide spectrum of skin benefits from hydration to prevention of certain skin conditions."
+        ],
+        what_it_does: "Combines vitamins, minerals and nutrients to support overall skin health.",
+        tagline: ""
+      },
+      "Sta-Energized Plus": {
+        eden_id: "EDEN-LOCKED-sta-energized-plus",
+        canonical_name: "Sta-Energized Plus",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY caffeine + Cr capsule",
+        serving_size: "2 capsules",
+        servings_per_container: 120,
+        dose_text: "2 capsules daily",
+        nutrients: [
+          {
+            name: "Chromium",
+            amount: 200,
+            unit: "mcg",
+            form: "Cr polynicotinate + aspartate + picolinate (triple form)",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 300,
+            unit: "mg",
+            form: "proprietary blend (10 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Siberian Ginseng",
+              "Panax Ginseng",
+              "White Willow Bark 15%",
+              "Bee Pollen",
+              "Royal Jelly",
+              "Spirulina",
+              "Chlorella",
+              "Kelp",
+              "Cayenne",
+              "Beet Leaf"
+            ]
+          },
+          {
+            name: "Amino Acid Complex",
+            amount: 60,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "L-Carnitine",
+              "L-Arginine",
+              "DL-Methionine"
+            ]
+          }
+        ],
+        features: [
+          "Proprietary plant-based energy-and-metabolism-supporting formula",
+          "Guarana provides natural caffeine and antioxidant support2",
+          "Amino Acid Complex and Chromium added for additional nutritional support",
+          "Capsules easy to swallow and convenient for life on the go",
+          "No artificial"
+        ],
+        what_it_does: "Boosts your energy and fuels the systems that help you metabolize unwanted carbohydrates, build muscle mass, and burn fat.",
+        tagline: ""
+      },
+      "Sta-Restored": {
+        eden_id: "EDEN-LOCKED-sta-restored",
+        canonical_name: "Sta-Restored",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY joint/anti-inflammatory capsule",
+        serving_size: "1 capsule",
+        servings_per_container: 90,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Manganese",
+            amount: 1,
+            unit: "mg",
+            form: "manganese sulfate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Glucosamine Sulfate 2KCl",
+            amount: 250,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Proprietary Blend",
+            amount: 317,
+            unit: "mg",
+            form: "proprietary blend (9 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Shark Cartilage",
+              "White Willow 15%",
+              "Hydrolyzed Bovine Collagen",
+              "MSM",
+              "Bromelain",
+              "Sea Cucumber",
+              "Feverfew 0.9%",
+              "Boswellia serrata 65%",
+              "Ginger 5%"
+            ]
+          }
+        ],
+        features: [
+          "Proprietary blend specifically formulated to support bone and joint health."
+        ],
+        what_it_does: "Combines a proprietary blend of nutrients that provide several joint and bone benefits.",
+        tagline: ""
+      },
+      "Sta-Vital": {
+        eden_id: "EDEN-LOCKED-sta-vital",
+        canonical_name: "Sta-Vital",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY comprehensive multivitamin (alternative foundation)",
+        serving_size: "1 capsule",
+        servings_per_container: 60,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 2750,
+            unit: "mcg",
+            form: "palmitate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin C",
+            amount: 3,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 12.5,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 32,
+            unit: "mg",
+            form: "d-alpha tocopheryl succinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 12.5,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 12.5,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 25,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 12.5,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 200,
+            unit: "mcg DFE",
+            form: "folic acid",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 50,
+            unit: "mcg",
+            form: "B12 (form unspecified \u2014 likely methylcobalamin per YGY pattern)",
+            alignment: "partial"
+          },
+          {
+            name: "Biotin",
+            amount: 150,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 25,
+            unit: "mg",
+            form: "calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Choline",
+            amount: 12.5,
+            unit: "mg",
+            form: "choline bitartrate",
+            alignment: "partial"
+          },
+          {
+            name: "Calcium",
+            amount: 50,
+            unit: "mg",
+            form: "tricalcium phosphate",
+            alignment: "partial"
+          },
+          {
+            name: "Iodine",
+            amount: 75,
+            unit: "mcg",
+            form: "from kelp",
+            alignment: "aligned"
+          },
+          {
+            name: "Magnesium",
+            amount: 25,
+            unit: "mg",
+            form: "magnesium oxide",
+            alignment: "misaligned"
+          },
+          {
+            name: "Zinc",
+            amount: 7.5,
+            unit: "mg",
+            form: "zinc monomethionine",
+            alignment: "aligned"
+          },
+          {
+            name: "Selenium",
+            amount: 35,
+            unit: "mcg",
+            form: "selenomethionine",
+            alignment: "aligned"
+          },
+          {
+            name: "Copper",
+            amount: 1,
+            unit: "mg",
+            form: "amino acid chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Manganese",
+            amount: 1,
+            unit: "mg",
+            form: "amino acid chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Chromium",
+            amount: 60,
+            unit: "mcg",
+            form: "chromium polynicotinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Inositol",
+            amount: 12.5,
+            unit: "mg",
+            form: "inositol",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "PABA",
+            amount: 12.5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Fruit Blend",
+            amount: 200,
+            unit: "mg",
+            form: "proprietary blend (9 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Bilberry",
+              "Blueberry",
+              "Papaya",
+              "Raspberry",
+              "Strawberry",
+              "Cranberry",
+              "Citrus Bioflav",
+              "Hesperidin",
+              "Acerola"
+            ]
+          },
+          {
+            name: "Enzyme Blend",
+            amount: 37.5,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Betaine HCl",
+              "Bromelain",
+              "Papain"
+            ]
+          },
+          {
+            name: "Herbal Base",
+            amount: 40,
+            unit: "mg",
+            form: "proprietary blend (7 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Alfalfa",
+              "Quercetin",
+              "Cabbage",
+              "Parsley",
+              "Rice Bran",
+              "Rose Hips",
+              "Watercress"
+            ]
+          }
+        ],
+        features: [
+          "A proprietary blend of fruits, herbs and enzymes that include essential macronutrients."
+        ],
+        what_it_does: "combines essential fruits, herbs, enzymes, and minerals to support normal growth, function and health.",
+        tagline: ""
+      },
+      "Sta-Young": {
+        eden_id: "EDEN-LOCKED-sta-young",
+        canonical_name: "Sta-Young",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY antioxidant capsule",
+        serving_size: "1 capsule",
+        servings_per_container: 60,
+        dose_text: "1 capsule daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 500,
+            unit: "mg",
+            form: "proprietary blend (6 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Citrus Bioflavonoids",
+              "Hesperidin",
+              "Green Tea 50% Polyphenols",
+              "Grape Seed 95% OPCs",
+              "Astaxanthin 1%",
+              "Pine Bark 85%"
+            ]
+          }
+        ],
+        features: [
+          "Proprietary Blend exclusively formulated to promote longevity in the internal organs."
+        ],
+        what_it_does: "attaches to lipoproteins, travels into the bloodstream and delivers nutrients to vital organs.",
+        tagline: ""
+      },
+      "Strawberry Kiwi-Mins": {
+        eden_id: "EDEN-LOCKED-strawberry-kiwi-mins",
+        canonical_name: "Strawberry Kiwi-Mins",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY Plant Derived Minerals (humic shale, flavored variant)",
+        serving_size: "1 fl oz (2 tbsp)",
+        servings_per_container: 32,
+        dose_text: "1 fl oz (2 tbsp) daily",
+        nutrients: [
+          {
+            name: "Sodium",
+            amount: 5,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Majestic Earth Plant Derived Minerals",
+            amount: 600,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "humic shale \u2014 Wallach-aligned"
+            ]
+          }
+        ],
+        features: [
+          "Includes 19,000mg of plant mineral solids you can\u2019t necessarily get from food",
+          "Majestic Earth Plant Derived Minerals\u2122 are extracted from the untouched, ancient soils of a Utah mineral mine",
+          "Mineral complex helps support the immune system and overall health1",
+          "No artificial flavors, colors, or additives \u2013 we only give you what you need"
+        ],
+        what_it_does: "Provides a liquid nutritional supplement to help the body maintain optimal mineral levels.",
+        tagline: ""
+      },
+      "Super Cell Protector": {
+        eden_id: "EDEN-LOCKED-super-cell-protector",
+        canonical_name: "Super Cell Protector",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY microdose multi (homeopathic-level)",
+        serving_size: "3 capsules",
+        servings_per_container: 30,
+        dose_text: "3 capsules daily",
+        nutrients: [
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 55,
+            unit: "mcg",
+            form: "cyanocobalamin",
+            alignment: "partial"
+          },
+          {
+            name: "Calcium",
+            amount: 3.8,
+            unit: "mg",
+            form: "calcium glycinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Iron",
+            amount: 0.054,
+            unit: "mg",
+            form: "iron glycinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Iodine",
+            amount: 0.11,
+            unit: "mcg",
+            form: "potassium iodide",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 3,
+            unit: "mg",
+            form: "magnesium glycinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 0.0243,
+            unit: "mg",
+            form: "zinc glycinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Selenium",
+            amount: 2.7,
+            unit: "mcg",
+            form: "selenium glycinate",
+            alignment: "partial"
+          },
+          {
+            name: "Copper",
+            amount: 22e-4,
+            unit: "mg",
+            form: "copper glycinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Manganese",
+            amount: 0.0135,
+            unit: "mg",
+            form: "manganese glycinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Chromium",
+            amount: 10.8,
+            unit: "mcg",
+            form: "chromium glycinate",
+            alignment: "partial"
+          },
+          {
+            name: "Molybdenum",
+            amount: 0.8,
+            unit: "mcg",
+            form: "molybdenum glycinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 99,
+            unit: "mg",
+            form: "potassium iodide carrier",
+            alignment: "partial"
+          },
+          {
+            name: "Vanadium",
+            amount: 1.1,
+            unit: "mcg",
+            form: "vanadyl sulfate",
+            alignment: "misaligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Grape Seed Extract",
+            amount: 150,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "95% proanthocyanidins"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Super Greens Powder": {
+        eden_id: "EDEN-LOCKED-super-greens-powder",
+        canonical_name: "Super Greens Powder",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY super greens scoop (fiber + greens + probiotics)",
+        serving_size: "1 scoop (8.575g)",
+        servings_per_container: 30,
+        dose_text: "1 scoop (8.575g) daily",
+        nutrients: [
+          {
+            name: "Calcium",
+            amount: 33,
+            unit: "mg",
+            form: "from greens",
+            alignment: "aligned"
+          },
+          {
+            name: "Iron",
+            amount: 1,
+            unit: "mg",
+            form: "from greens",
+            alignment: "aligned"
+          },
+          {
+            name: "Sodium",
+            amount: 30,
+            unit: "mg",
+            form: "from greens",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "15+ beneficial whole fruits, vegetables, and botanicals in every scoop",
+          "Fiber, digestive enzymes, and probiotics provide targeted digestive and immune support",
+          "Whole foods add essential variety to your diet",
+          "Highly alkaline formula perfect for sensitive stomachs/balancing pH levels",
+          "A light, refreshing peppermint taste!"
+        ],
+        what_it_does: "Provides many of the essential nutrients lacking from our modern diets for healthier digestion, immune function, and pH levels.",
+        tagline: ""
+      },
+      "Survival Shield X-2 Iodine": {
+        eden_id: "EDEN-LOCKED-survival-shield-x-2-iodine",
+        canonical_name: "Survival Shield X-2 Iodine",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "Non-YGY nascent iodine (DISCONTINUED)",
+        serving_size: "3 drops",
+        servings_per_container: 0,
+        dose_text: "3 drops daily",
+        nutrients: [
+          {
+            name: "Iodine",
+            amount: 1800,
+            unit: "mcg",
+            form: "nascent iodine",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      Synaptiv: {
+        eden_id: "EDEN-LOCKED-synaptiv",
+        canonical_name: "Synaptiv",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY pro-line cognitive",
+        serving_size: "2 tablets",
+        servings_per_container: 30,
+        dose_text: "2 tablets daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 20,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 1.5,
+            unit: "mg",
+            form: "thiamine mononitrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 4,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 75,
+            unit: "mcg DFE",
+            form: "folic acid (46 mcg)",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 24,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 1.5,
+            unit: "mg",
+            form: "D-calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Choline",
+            amount: 12,
+            unit: "mg",
+            form: "from 30 mg choline bitartrate",
+            alignment: "partial"
+          },
+          {
+            name: "Calcium",
+            amount: 160,
+            unit: "mg",
+            form: "from dicalcium phosphate",
+            alignment: "partial"
+          },
+          {
+            name: "Zinc",
+            amount: 2.5,
+            unit: "mg",
+            form: "zinc citrate",
+            alignment: "partial"
+          },
+          {
+            name: "Inositol",
+            amount: 30,
+            unit: "mg",
+            form: "inositol",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Lemon balm extract",
+            amount: 300,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Botanical Antioxidant Blend",
+            amount: 75,
+            unit: "mg",
+            form: "proprietary blend (10 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "grape seed",
+              "blueberry",
+              "polygonum cuspidatum",
+              "quercetin",
+              "bilberry",
+              "cranberry",
+              "tart cherry",
+              "prune",
+              "raspberry",
+              "strawberry"
+            ]
+          },
+          {
+            name: "Brain Support Complex",
+            amount: 50,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "L-Glutamine",
+              "Ginkgo",
+              "Bacopa",
+              "phosphatidylserine-enriched lecithin",
+              "palm oil"
+            ]
+          },
+          {
+            name: "Huperzine-A",
+            amount: 50,
+            unit: "mcg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Provides essential brain-supporting vitamins, minerals, herbs, and more all in one capsule!",
+          "Offers high-ORAC botanicals for antioxidant support",
+          "Made to support short and long-term brain health concerns",
+          "Easy-to-swallow capsules"
+        ],
+        what_it_does: "Provides a variety of brain-supporting nutrients, including vitamins and antioxidants, for holistic support.",
+        tagline: ""
+      },
+      "TRIM Sticks (Kiwi-Strawberry M-THERMX)": {
+        eden_id: "EDEN-LOCKED-trim-sticks-kiwi-strawberry-m-thermx",
+        canonical_name: "TRIM Sticks (Kiwi-Strawberry M-THERMX)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY weight-loss caffeine stick pack (different SKU)",
+        serving_size: "1 stick (1.8 g)",
+        servings_per_container: 30,
+        dose_text: "1 stick (1.8 g) daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Caffeine",
+            amount: 104,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "high"
+            ]
+          },
+          {
+            name: "M-THERMX Proprietary Blend",
+            amount: 165,
+            unit: "mg",
+            form: "proprietary blend (4 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Green Tea",
+              "Oligonol",
+              "Theobromine",
+              "Niacinamide"
+            ]
+          },
+          {
+            name: "BioPerine",
+            amount: 5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Provides beneficial, energizing natural caffeine, antioxidants, and other targeted nutrients",
+          "Formulated with highly bioavailable, absorbable"
+        ],
+        what_it_does: "Provides targeted nutrients to help you suppress cravings, boost energy levels, and support a healthy metabolism.",
+        tagline: ""
+      },
+      "Tazza di Vita (Mushroom Coffee)": {
+        eden_id: "EDEN-LOCKED-tazza-di-vita-mushroom-coffee",
+        canonical_name: "Tazza di Vita (Mushroom Coffee)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY mushroom coffee stick pack",
+        serving_size: "1 stick (2.5g)",
+        servings_per_container: 30,
+        dose_text: "1 stick (2.5g) daily",
+        nutrients: [],
+        non_essentials_parsed: [],
+        features: [
+          "Proprietary blend of 10 beneficial mushrooms provided to boost immune system, mental clarity, and more",
+          "Includes creamy non-dairy creamer and natural sugar",
+          "Delicious, instant coffee packets easy to brew on-the-go",
+          "Enjoy it iced or hot 30-40 mg of caffeine per serving (less than a regular cup of coffee)",
+          "Gluten-free, vegan, allergen-free, and pesticide-free"
+        ],
+        what_it_does: "Supports an all-natural energy boost, uplifted mood, and improved clarity.",
+        tagline: ""
+      },
+      "Tazza di Vita Latte": {
+        eden_id: "EDEN-LOCKED-tazza-di-vita-latte",
+        canonical_name: "Tazza di Vita Latte",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY mushroom + MCT latte stick",
+        serving_size: "1 packet (10g)",
+        servings_per_container: 30,
+        dose_text: "1 packet (10g) daily",
+        nutrients: [
+          {
+            name: "Sodium",
+            amount: 10,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Total Meal Replacement Chocolate": {
+        eden_id: "EDEN-LOCKED-total-meal-replacement-chocolate",
+        canonical_name: "Total Meal Replacement Chocolate",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY TMR meal replacement shake",
+        serving_size: "2 scoops (46g)",
+        servings_per_container: 30,
+        dose_text: "2 scoops (46g) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 1276,
+            unit: "IU",
+            form: "Vitamin A palmitate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin C",
+            amount: 16,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 8.06,
+            unit: "IU",
+            form: "DL-alpha tocopheryl acetate",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 0.38,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 0.43,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 5,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 0.5,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 100,
+            unit: "mcg",
+            form: "folic acid",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 1.5,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 75,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 2.5,
+            unit: "mg",
+            form: "calcium D-pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 110,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          },
+          {
+            name: "Phosphorus",
+            amount: 140.16,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          },
+          {
+            name: "Iodine",
+            amount: 37.5,
+            unit: "mcg",
+            form: "potassium iodide",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 19.69,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          },
+          {
+            name: "Zinc",
+            amount: 3.75,
+            unit: "mg",
+            form: "zinc sulfate",
+            alignment: "misaligned"
+          },
+          {
+            name: "Copper",
+            amount: 0.5,
+            unit: "mg",
+            form: "copper (unspecified)",
+            alignment: "partial"
+          },
+          {
+            name: "Manganese",
+            amount: 0.5,
+            unit: "mg",
+            form: "manganese sulfate",
+            alignment: "partial"
+          },
+          {
+            name: "Chromium",
+            amount: 34,
+            unit: "mcg",
+            form: "chromium amino acid chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Sodium",
+            amount: 170,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 250,
+            unit: "mg",
+            form: "potassium iodide carrier + chloride",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Provides 24 grams of protein per serving",
+          "Whey protein and MCT promote healthy muscle development and energy levels",
+          "More than 20 essential vitamins, minerals, electrolytes, and more provided to support overall health",
+          "Chocolate flavor perfect for those with a sweet tooth",
+          "No added sugar, caffeine, or artificial"
+        ],
+        what_it_does: "Provides a high-protein source to build, maintain, and recover lean muscle mass while burning fat.",
+        tagline: ""
+      },
+      TruBoost: {
+        eden_id: "EDEN-LOCKED-truboost",
+        canonical_name: "TruBoost",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY adaptogen + holy basil drink",
+        serving_size: "1 bottle (4 oz)",
+        servings_per_container: 1,
+        dose_text: "1 bottle (4 oz) daily",
+        nutrients: [
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 6,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 600,
+            unit: "mcg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 1.8,
+            unit: "mcg",
+            form: "cyanocobalamin",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 3,
+            unit: "mg",
+            form: "calcium pantothenate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Organic Blend",
+            amount: 1.4,
+            unit: "g",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Krishna + Vana + Rama Tulsi/Holy Basil"
+            ]
+          },
+          {
+            name: "Potassium D-glucarate",
+            amount: 500,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Sensoril Ashwagandha",
+            amount: 125,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "Helps to boost mental clarity and energy naturally.",
+        tagline: ""
+      },
+      "True2Life Daily Digest": {
+        eden_id: "EDEN-LOCKED-true2life-daily-digest",
+        canonical_name: "True2Life Daily Digest",
+        brand: "True2Life",
+        brand_tier: 2,
+        category: "True2Life gut-system daily pack (4 capsules)",
+        serving_size: "1 packet (4 capsules)",
+        servings_per_container: 30,
+        dose_text: "1 packet (4 capsules) daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 90,
+            unit: "mg",
+            form: "ascorbic acid + ascorbyl palmitate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Vitamins and antioxidant-rich botanicals support a healthy liver",
+          "Amino acids and digestive enzymes support the intestinal lining and smooth digestion",
+          "Prebiotics and probiotics ensure a balanced microbiome",
+          "Capsule packets are perfect for life on the go",
+          "No synthetic"
+        ],
+        what_it_does: "Provides targeted nutrients to support digestive and metabolic health.",
+        tagline: ""
+      },
+      "True2Life LiverPure Kit (LiverClean component)": {
+        eden_id: "EDEN-LOCKED-true2life-liverpure-kit-liverclean-component",
+        canonical_name: "True2Life LiverPure Kit (LiverClean component)",
+        brand: "True2Life",
+        brand_tier: 2,
+        category: "True2Life liver-cleanse safflower oil",
+        serving_size: "1 bottle (4 fl oz / 118 mL)",
+        servings_per_container: 1,
+        dose_text: "1 bottle (4 fl oz / 118 mL) daily",
+        nutrients: [
+          {
+            name: "Vitamin E",
+            amount: 22,
+            unit: "mg",
+            form: "d-alpha tocopherol acetate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "A natural way to cleanse and reset!",
+          "Synergizes the power of Vitamin E, Vitamin C, and pure lemon juice to support liver health",
+          "Provides a high-quality source of targeted botanicals",
+          "Added antioxidants can help prevent oxidative stress"
+        ],
+        what_it_does: "Provides vitamins, lemon juice, and a proprietary blend of detoxifying botanicals to support the detoxification of your liver.",
+        tagline: ""
+      },
+      "True2Life TrueCleanse": {
+        eden_id: "EDEN-LOCKED-true2life-truecleanse",
+        canonical_name: "True2Life TrueCleanse",
+        brand: "True2Life",
+        brand_tier: 2,
+        category: "True2Life detox/cleanse stick pack",
+        serving_size: "1 packet (7.2g)",
+        servings_per_container: 30,
+        dose_text: "1 packet (7.2g) daily",
+        nutrients: [
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 4,
+            unit: "mg NE",
+            form: "niacin (unspecified)",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 5,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 15,
+            unit: "mcg",
+            form: "unspecified",
+            alignment: "partial"
+          },
+          {
+            name: "Sodium",
+            amount: 55,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 7215,
+            unit: "mg",
+            form: "proprietary blend (32 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Apple fiber",
+              "Fibersol 2",
+              "Inositol",
+              "Yellowdock",
+              "Alfalfa",
+              "Peppermint",
+              "Eleuthero",
+              "Pau d'Arco",
+              "Suma",
+              "Aloe Vera",
+              "Betaine HCl",
+              "Choline bitartrate",
+              "Cranberry",
+              "Green Coffee",
+              "Raspberry",
+              "Strawberry",
+              "Burdock",
+              "TrueZyme Enzyme blend",
+              "Licorice",
+              "Acerola",
+              "Beet",
+              "Guarana",
+              "Tri-calcium Phosphate",
+              "Papaya Seed",
+              "Ashwagandha",
+              "Blueberry",
+              "Fennel",
+              "L-Methionine",
+              "Green tea",
+              "Bilberry",
+              "Grape seed",
+              "Pomegranate"
+            ]
+          }
+        ],
+        features: [
+          "Provides a high-quality source of antioxidants, alkaline"
+        ],
+        what_it_does: "Provides antioxidants, vitamins, enzymes, and more to help support good health from the inside out.",
+        tagline: ""
+      },
+      "True2Life TrueZyme": {
+        eden_id: "EDEN-LOCKED-true2life-truezyme",
+        canonical_name: "True2Life TrueZyme",
+        brand: "True2Life",
+        brand_tier: 2,
+        category: "True2Life broad-spectrum digestive enzyme",
+        serving_size: "1 capsule",
+        servings_per_container: 60,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 40,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 2,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Magnesium",
+            amount: 2.33,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          },
+          {
+            name: "Chromium",
+            amount: 100,
+            unit: "mcg",
+            form: "chromium (unspecified)",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 3,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Probiotic Blend",
+            amount: 7.5,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "L. Acidophilus 3.75 + B. Longum 3.75 mg"
+            ]
+          },
+          {
+            name: "Proprietary Nutritional Blend",
+            amount: 326,
+            unit: "mg",
+            form: "proprietary blend (10 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "ALA",
+              "Alfalfa",
+              "Flax Seed",
+              "Gotu Kola 10% triterpenes",
+              "Marshmallow Root",
+              "Papaya Seed PE 4:1",
+              "Prickly Ash Bark",
+              "Spirulina",
+              "Spinach",
+              "Broccoli"
+            ]
+          },
+          {
+            name: "TrueZymes Proprietary Blend",
+            amount: 250,
+            unit: "mg",
+            form: "proprietary blend (17 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Protease",
+              "Lipase",
+              "Lactase",
+              "Catalase",
+              "Pectinase",
+              "Amylase",
+              "Hemicellulase",
+              "Bromelain",
+              "Papain",
+              "Xylanase",
+              "Acid Protease",
+              "Cellulase",
+              "alpha Galactosidase",
+              "Phytase",
+              "Beta Glucanase",
+              "Invertase",
+              "Maltase"
+            ]
+          }
+        ],
+        features: [
+          "Unique proprietary blend formulated to help you better absorb key nutrients",
+          "Enzymes and probiotics work together to support healthy digestion",
+          "Added vitamins, minerals, and targeted botanicals support digestive and overall health",
+          "Easy-to-swallow capsules"
+        ],
+        what_it_does: "Supports digestion, nutrient absorption, and liver health.",
+        tagline: ""
+      },
+      "US Body Balance": {
+        eden_id: "EDEN-LOCKED-us-body-balance",
+        canonical_name: "US Body Balance",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY aloe + seaweed wellness drink",
+        serving_size: "1/2 cup (120 mL)",
+        servings_per_container: 8,
+        dose_text: "1/2 cup (120 mL) daily",
+        nutrients: [
+          {
+            name: "Sodium",
+            amount: 36,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 80,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Balance of phytonutrients offers many potential health benefits*",
+          "Whole foods add essential variety to your diet",
+          "A light, sweet flavor in liquid form makes this supplement easy to take daily"
+        ],
+        what_it_does: "Provides a unique blend of beneficial botanicals, sea nutrients, minerals, and whole foods.",
+        tagline: ""
+      },
+      "Ultimate CM Cream (Topical Drug)": {
+        eden_id: "EDEN-LOCKED-ultimate-cm-cream-topical-drug",
+        canonical_name: "Ultimate CM Cream (Topical Drug)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY topical analgesic (DRUG product, not supplement)",
+        serving_size: "Topical application",
+        servings_per_container: "varies",
+        dose_text: "Topical application daily",
+        nutrients: [],
+        non_essentials_parsed: [],
+        features: [
+          "Proprietary blend includes menthol, fatty acids, botanicals, and plenty of moisture",
+          "Endorsed by Dallas Cowboy Legend Drew Pearson",
+          "Can be enjoyed as a cooling moisturizer or topical analgesic",
+          "Paraben-free and fragrance-free"
+        ],
+        what_it_does: "Provides a menthol-infused cream for a soothing topical analgesic.",
+        tagline: ""
+      },
+      "Ultimate CM Plus": {
+        eden_id: "EDEN-LOCKED-ultimate-cm-plus",
+        canonical_name: "Ultimate CM Plus",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY joint capsule (CMO + MSM)",
+        serving_size: "3 capsules",
+        servings_per_container: 30,
+        dose_text: "3 capsules daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 1100,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Cetyl Myristoleate Complex + MSM"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Ultimate Cal": {
+        eden_id: "EDEN-LOCKED-ultimate-cal",
+        canonical_name: "Ultimate Cal",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY bone-cluster Ca capsule (4 caps/day)",
+        serving_size: "2 capsules",
+        servings_per_container: 60,
+        dose_text: "2 capsules daily",
+        nutrients: [
+          {
+            name: "Vitamin D3",
+            amount: 12.5,
+            unit: "mcg",
+            form: "cholecalciferol (500 IU)",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 230,
+            unit: "mg",
+            form: "tricalcium phosphate + citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Magnesium",
+            amount: 40,
+            unit: "mg",
+            form: "magnesium bisglycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 3,
+            unit: "mg",
+            form: "zinc bisglycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 80,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Boron",
+            amount: 1.5,
+            unit: "mg",
+            form: "boroganic glycine",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Ultimate Cardio FX": {
+        eden_id: "EDEN-LOCKED-ultimate-cardio-fx",
+        canonical_name: "Ultimate Cardio FX",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY cardiovascular pro-line capsule",
+        serving_size: "2 capsules",
+        servings_per_container: 30,
+        dose_text: "2 capsules daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 120,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 20,
+            unit: "mg NE",
+            form: "inositol hexanicotinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 8,
+            unit: "mg",
+            form: "pyridoxal-5-phosphate (P5P)",
+            alignment: "aligned"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 1360,
+            unit: "mcg DFE",
+            form: "folic acid (824 mcg)",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 100,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Magnesium",
+            amount: 20,
+            unit: "mg",
+            form: "magnesium glycinate chelate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 690,
+            unit: "mg",
+            form: "proprietary blend (7 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Taurine",
+              "Garlic bulb",
+              "Acetyl-L-Carnitine",
+              "Ginkgo leaf",
+              "L-Arginine",
+              "Coenzyme Q10",
+              "Hawthorn Berry"
+            ]
+          }
+        ],
+        features: [
+          "Targeted nutrient blend supports optimal heart health at the cellular level*",
+          "Additional nutrients provide energy and antioxidant effects*",
+          "Capsules are easy to swallow and convenient for life on the go",
+          "No artificial"
+        ],
+        what_it_does: "Combines B vitamins and high-antioxidant botanicals known to support healthy cardiovascular function.",
+        tagline: ""
+      },
+      "Ultimate Cardio Stx": {
+        eden_id: "EDEN-LOCKED-ultimate-cardio-stx",
+        canonical_name: "Ultimate Cardio Stx",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY cardiovascular caffeine stick pack",
+        serving_size: "1 packet (17 g)",
+        servings_per_container: 30,
+        dose_text: "1 packet (17 g) daily",
+        nutrients: [
+          {
+            name: "Sodium",
+            amount: 18,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 395,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 60,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 100,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 2,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 6,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Boron",
+            amount: 2,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          },
+          {
+            name: "Arginine",
+            amount: 1e3,
+            unit: "mg",
+            form: "L-arginine"
+          },
+          {
+            name: "Taurine",
+            amount: 120,
+            unit: "mg",
+            form: "taurine"
+          },
+          {
+            name: "Tyrosine",
+            amount: 120,
+            unit: "mg",
+            form: "L-tyrosine"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Caffeine",
+            amount: 120,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "L-Citrulline",
+            amount: 500,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Proprietary Blend",
+            amount: 250,
+            unit: "mg",
+            form: "proprietary blend (7 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Cassis Pigment",
+              "Maca",
+              "Green Tea",
+              "Damiana",
+              "Panax Ginseng",
+              "Curcumin",
+              "Ginger"
+            ]
+          }
+        ],
+        features: [
+          "Natural caffeine and herbal stimulants provide a crash-free energy boost",
+          "Added nutrients support overall health, heart health, immune health, and healthy energy levels*",
+          "Included electrolytes ensure balanced hydration and optimal exercise performance",
+          "Delicious natural Mango & Passion Fruit Flavor!",
+          "Packets convenient for life on the go"
+        ],
+        what_it_does: "Supports optimal energy, heart, and immune health with a blend of B vitamins, amino acids, and herbal nutrients.",
+        tagline: ""
+      },
+      "Ultimate Classic Liquid": {
+        eden_id: "EDEN-LOCKED-ultimate-classic-liquid",
+        canonical_name: "Ultimate Classic Liquid",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY full-spectrum multi-liquid (higher mineral doses than UTT)",
+        serving_size: "1 fl oz (2 tbsp)",
+        servings_per_container: 32,
+        dose_text: "1 fl oz (2 tbsp) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 780,
+            unit: "mcg",
+            form: "beta-carotene + palmitate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 1e3,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 50,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 134,
+            unit: "mg",
+            form: "d-alpha tocopherol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin K (Menaquinone = K2)",
+            amount: 30,
+            unit: "mcg",
+            form: "phytonadione (K1)",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 30,
+            unit: "mg",
+            form: "thiamine mononitrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 30,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 30,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 30,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 400,
+            unit: "mcg",
+            form: "folic acid",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 500,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 300,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 150,
+            unit: "mg",
+            form: "D-calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Choline",
+            amount: 30,
+            unit: "mg",
+            form: "choline bitartrate",
+            alignment: "partial"
+          },
+          {
+            name: "Calcium",
+            amount: 600,
+            unit: "mg",
+            form: "tricalcium phosphate + citrate + gluconate",
+            alignment: "aligned"
+          },
+          {
+            name: "Iron",
+            amount: 4,
+            unit: "mg",
+            form: "ferrous gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Phosphorus",
+            amount: 80,
+            unit: "mg",
+            form: "tricalcium phosphate",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 300,
+            unit: "mg",
+            form: "magnesium citrate + gluconate",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 15,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 100,
+            unit: "mcg",
+            form: "L-selenium methionine",
+            alignment: "aligned"
+          },
+          {
+            name: "Copper",
+            amount: 1,
+            unit: "mg",
+            form: "copper gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Manganese",
+            amount: 5,
+            unit: "mg",
+            form: "manganese gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Chromium",
+            amount: 200,
+            unit: "mcg",
+            form: "chromium AA chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 100,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Inositol",
+            amount: 30,
+            unit: "mg",
+            form: "inositol",
+            alignment: "aligned"
+          },
+          {
+            name: "Boron",
+            amount: 1,
+            unit: "mg",
+            form: "boron AA chelate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Amino Acid Complex",
+            amount: 125,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Grape Seed",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "CoQ10",
+            amount: 5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "DMG",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "PABA",
+            amount: 30,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Citrus Bioflavonoids",
+            amount: 13,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "GDL",
+            amount: 150,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Plant Derived Minerals",
+            amount: 600,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "verify source \u2014 likely Majestic Earth humic shale per other UTT pattern"
+            ]
+          }
+        ],
+        features: [
+          "Provides more than 15 amino acids, 10 vitamins, 70 trace minerals, and more in every serving",
+          "Highly absorbable, easy-to-take liquid formula",
+          "No artificial flavors, additives, or colors \u2013 we only give you what you need",
+          "Main Ingredient/Benefits",
+          "INGREDIENT BENEFIT",
+          "Vitamin B12: Supports a healthy nervous system, DNA synthesis, and red blood cell creation.1"
+        ],
+        what_it_does: "Provides you with key amino acids, vitamins, minerals, antioxidants, and more to help you support your overall health.",
+        tagline: ""
+      },
+      "Ultimate Colon FX": {
+        eden_id: "EDEN-LOCKED-ultimate-colon-fx",
+        canonical_name: "Ultimate Colon FX",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY laxative herbal capsule",
+        serving_size: "1 capsule",
+        servings_per_container: 90,
+        dose_text: "1 capsule daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Herbal Proprietary Blend",
+            amount: 500,
+            unit: "mg",
+            form: "proprietary blend (7 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Cape Aloe",
+              "Cascara sagrada",
+              "Barberry",
+              "Ginger",
+              "Fennel",
+              "Senna",
+              "Cayenne"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Ultimate D-Stress": {
+        eden_id: "EDEN-LOCKED-ultimate-d-stress",
+        canonical_name: "Ultimate D-Stress",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY adrenal/stress support capsule",
+        serving_size: "4 capsules",
+        servings_per_container: 30,
+        dose_text: "4 capsules daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 1e3,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 50,
+            unit: "mg",
+            form: "thiamine hydrochloride",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 50,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 50,
+            unit: "mg",
+            form: "pyridoxine hydrochloride",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 500,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 1e3,
+            unit: "mg",
+            form: "calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 400,
+            unit: "mg",
+            form: "calcium carbonate",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 100,
+            unit: "mg",
+            form: "magnesium oxide",
+            alignment: "misaligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Adrenal Substance",
+            amount: 200,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Valerian Root Extract",
+            amount: 200,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Contains targeted vitamins, minerals, botanicals and more",
+          "Formulated to help prevent nutritional deficiency and soothe the body10",
+          "No artificial"
+        ],
+        what_it_does: "Provides you with targeted nutrients to support a healthy body and mental state.",
+        tagline: ""
+      },
+      "Ultimate Daily 180 Tablets": {
+        eden_id: "EDEN-LOCKED-ultimate-daily-180-tablets",
+        canonical_name: "Ultimate Daily 180 Tablets",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY foundational multivitamin (180-tablet variant)",
+        serving_size: "2 tablets",
+        servings_per_container: 90,
+        dose_text: "2 tablets daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 1200,
+            unit: "mcg RAE",
+            form: "beta-carotene",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 400,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 3.25,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 67,
+            unit: "mg",
+            form: "d-alpha tocopherol acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 20,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 75,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 20,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 20,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 250,
+            unit: "mcg DFE",
+            form: "folic acid (150 mcg)",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 40,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 20,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 30,
+            unit: "mg",
+            form: "D-calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 400,
+            unit: "mg",
+            form: "tricalcium phosphate",
+            alignment: "partial"
+          },
+          {
+            name: "Iron",
+            amount: 2,
+            unit: "mg",
+            form: "ferrous fumarate",
+            alignment: "partial"
+          },
+          {
+            name: "Iodine",
+            amount: 40,
+            unit: "mcg",
+            form: "ocean kelp",
+            alignment: "aligned"
+          },
+          {
+            name: "Magnesium",
+            amount: 100,
+            unit: "mg",
+            form: "magnesium AA chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Zinc",
+            amount: 4,
+            unit: "mg",
+            form: "zinc AA chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 60,
+            unit: "mcg",
+            form: "selenium AA chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Copper",
+            amount: 0.5,
+            unit: "mg",
+            form: "copper bisglycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Manganese",
+            amount: 2,
+            unit: "mg",
+            form: "manganese AA chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Chromium",
+            amount: 40,
+            unit: "mcg",
+            form: "chromium picolinate",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 30,
+            unit: "mg",
+            form: "potassium citrate monohydrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Methionine",
+            amount: 45,
+            unit: "mg",
+            form: "L-methionine"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "CoQ10",
+            amount: 6,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "L-Carnitine Tartrate",
+            amount: 15,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Inositol",
+            amount: 30,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "PABA",
+            amount: 45,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Includes more than 25 key vitamins, minerals, amino acids, and more in every serving",
+          "Tablets are convenient for travel and life on the go",
+          "No artificial colors, flavors, or additives \u2013 we only give you what you need"
+        ],
+        what_it_does: "Provides a wide assortment of essential nutrients to support overall health.",
+        tagline: ""
+      },
+      "Ultimate Daily Capsules": {
+        eden_id: "EDEN-LOCKED-ultimate-daily-capsules",
+        canonical_name: "Ultimate Daily Capsules",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY FULL-spectrum multivitamin capsule (2 caps, higher-dose alternative to Daily Classic)",
+        serving_size: "2 capsules",
+        servings_per_container: 90,
+        dose_text: "2 capsules daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 900,
+            unit: "mcg RAE",
+            form: "beta carotene (3000 IU)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 270,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 20,
+            unit: "mcg",
+            form: "cholecalciferol (800 IU)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 30,
+            unit: "mg",
+            form: "d-alpha tocopheryl acetate (44.8 IU)",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 18,
+            unit: "mg",
+            form: "thiamine hydrochloride",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 19.5,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 24,
+            unit: "mg NE",
+            form: "niacin + niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 25.5,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 800,
+            unit: "mcg DFE",
+            form: "folic acid (480 mcg)",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 24,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 30,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 15,
+            unit: "mg",
+            form: "calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 325,
+            unit: "mg",
+            form: "tricalcium phosphate",
+            alignment: "partial"
+          },
+          {
+            name: "Phosphorus",
+            amount: 175,
+            unit: "mg",
+            form: "tricalcium phosphate",
+            alignment: "partial"
+          },
+          {
+            name: "Iron",
+            amount: 3.6,
+            unit: "mg",
+            form: "ferrous bisglycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Iodine",
+            amount: 90,
+            unit: "mcg",
+            form: "potassium iodide",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 105,
+            unit: "mg",
+            form: "magnesium oxide",
+            alignment: "misaligned"
+          },
+          {
+            name: "Zinc",
+            amount: 3.3,
+            unit: "mg",
+            form: "zinc bisglycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Selenium",
+            amount: 55,
+            unit: "mcg",
+            form: "selenium bisglycinate complex",
+            alignment: "partial"
+          },
+          {
+            name: "Copper",
+            amount: 0.3,
+            unit: "mg",
+            form: "copper bisglycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Manganese",
+            amount: 2.3,
+            unit: "mg",
+            form: "manganese bisglycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Chromium",
+            amount: 35,
+            unit: "mcg",
+            form: "chromium nicotinate glycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 33,
+            unit: "mg",
+            form: "potassium chloride",
+            alignment: "partial"
+          },
+          {
+            name: "Chloride",
+            amount: 31,
+            unit: "mg",
+            form: "potassium chloride",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 95,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "L-Methionine",
+              "PABA",
+              "Inositol",
+              "Acetyl-L-Carnitine HCl",
+              "CoQ10"
+            ]
+          }
+        ],
+        features: [
+          "More than 20 key vitamins and minerals provided",
+          "Additional nutrients added to help support heart, immune, and nervous system health",
+          "No fillers or artificial"
+        ],
+        what_it_does: "Provides essential vitamins, minerals, and more to help support overall health.",
+        tagline: ""
+      },
+      "Ultimate Daily Classic": {
+        eden_id: "EDEN-LOCKED-ultimate-daily-classic",
+        canonical_name: "Ultimate Daily Classic",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY foundational tablet",
+        serving_size: "3 tablets",
+        servings_per_container: 30,
+        dose_text: "3 tablets daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 720,
+            unit: "mcg",
+            form: "natural beta-carotene",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 400,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 3,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 50,
+            unit: "mg",
+            form: "d-alpha-tocopheryl acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 20,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 20,
+            unit: "mg",
+            form: "riboflavin (form unspecified)",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 20,
+            unit: "mg",
+            form: "inositol hexanicotinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 20,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 250,
+            unit: "mcg DFE",
+            form: "calcium L-5-methyltetrahydrofolate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 40,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 20,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 30,
+            unit: "mg",
+            form: "D-calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 400,
+            unit: "mg",
+            form: "dicalcium phosphate, hydroxyapatite",
+            alignment: "partial"
+          },
+          {
+            name: "Iron",
+            amount: 2,
+            unit: "mg",
+            form: "ferrous fumarate",
+            alignment: "partial"
+          },
+          {
+            name: "Phosphorus",
+            amount: 250,
+            unit: "mg",
+            form: "dicalcium phosphate, hydroxyapatite",
+            alignment: "partial"
+          },
+          {
+            name: "Iodine",
+            amount: 40,
+            unit: "mcg",
+            form: "from kelp",
+            alignment: "aligned"
+          },
+          {
+            name: "Magnesium",
+            amount: 100,
+            unit: "mg",
+            form: "magnesium amino acid chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Zinc",
+            amount: 4,
+            unit: "mg",
+            form: "zinc bisglycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Selenium",
+            amount: 60,
+            unit: "mcg",
+            form: "selenium amino acid chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Copper",
+            amount: 0.8,
+            unit: "mg",
+            form: "copper bisglycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Manganese",
+            amount: 2,
+            unit: "mg",
+            form: "manganese bisglycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Chromium",
+            amount: 40,
+            unit: "mcg",
+            form: "chromium picolinate",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 120,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Inositol",
+            amount: 20,
+            unit: "mg",
+            form: "inositol",
+            alignment: "aligned"
+          },
+          {
+            name: "Methionine",
+            amount: 30,
+            unit: "mg",
+            form: "DL-methionine"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "L-Cysteine",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "PABA",
+            amount: 30,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Chondroitin sulfate sodium",
+            amount: 14,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Dimethylglycine",
+            amount: 14,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Ginkgo biloba leaf extract",
+            amount: 10,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "24% flavone glycosides / 6% terpene lactones"
+            ]
+          },
+          {
+            name: "L-Carnitine",
+            amount: 10,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "as L-carnitine tartrate"
+            ]
+          },
+          {
+            name: "Bilberry fruit extract",
+            amount: 8,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "25% proanthocyanidins"
+            ]
+          },
+          {
+            name: "CoQ10",
+            amount: 4,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Hawthorn berry",
+            amount: 4,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Made with a proprietary blend of carefully targeted vitamins and minerals",
+          "Designed with the PurityShieldTM safety system for maximum quality assurance",
+          "Ginkgo leaf11,12 and hawthorn berry9,10 promote healthy brain function and cardiovascular health",
+          "Chondroitin sulfate supports healthy bones and joints13",
+          "Easy-to-swallow tablets"
+        ],
+        what_it_does: "Provides a broad foundation for good health through vitamins, minerals, and antioxidant-rich botanicals.",
+        tagline: ""
+      },
+      "Ultimate Digest FX": {
+        eden_id: "EDEN-LOCKED-ultimate-digest-fx",
+        canonical_name: "Ultimate Digest FX",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY enzyme + probiotic + Aquamin Ca capsule",
+        serving_size: "3 capsules",
+        servings_per_container: 30,
+        dose_text: "3 capsules daily",
+        nutrients: [
+          {
+            name: "Calcium",
+            amount: 40,
+            unit: "mg",
+            form: "from Aquamin Seaweed",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Fungal Enzyme Blend",
+            amount: 310,
+            unit: "mg",
+            form: "proprietary blend (7 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Protease acid stable",
+              "Bromelain",
+              "Lipase",
+              "Amylase",
+              "Lactase",
+              "Cellulase",
+              "Glucoamylase"
+            ]
+          }
+        ],
+        features: [
+          "Pre and probiotics ensure a healthy microbiome, bolstering both your digestive and immune systems6,7",
+          "Digestive enzymes promote smooth, comfortable digestion5",
+          "Capsules are easy to swallow and convenient for life on the go",
+          "No artificial"
+        ],
+        what_it_does: "Provides key prebiotics, probiotics, and digestive enzymes in every capsule.",
+        tagline: ""
+      },
+      "Ultimate EFA (Flax-Dominant)": {
+        eden_id: "EDEN-LOCKED-ultimate-efa-flax-dominant",
+        canonical_name: "Ultimate EFA (Flax-Dominant)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY EFA softgel (flax-dominant variant \u2014 NOT EFA Plus)",
+        serving_size: "1 softgel",
+        servings_per_container: 60,
+        dose_text: "1 softgel daily",
+        nutrients: [
+          {
+            name: "Omega-3 (alpha-linolenic + EPA/DHA in marine form)",
+            amount: 463,
+            unit: "mg",
+            form: "ALA 447 + DHA 16 (NO EPA)",
+            alignment: "partial"
+          },
+          {
+            name: "Omega-6 (linoleic + GLA)",
+            amount: 114,
+            unit: "mg",
+            form: "Linoleic 110 + GLA 4",
+            alignment: "partial"
+          },
+          {
+            name: "Omega-9 (Arachidonic / Oleic)",
+            amount: 137,
+            unit: "mg",
+            form: "Oleic",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Provides an all-natural source of five omega fatty acids our bodies can\u2019t produce on their own",
+          "Product certified by International Fish Oil Standards, which regulates fish oil quality",
+          "Proprietary blend offers a powerful, all-natural daily supplement",
+          "Soft gels are easy to swallow"
+        ],
+        what_it_does: "Provides the right blend of essential fatty acids to promote overall good health, including targeted support for the heart.",
+        tagline: ""
+      },
+      "Ultimate EFA Plus": {
+        eden_id: "EDEN-LOCKED-ultimate-efa-plus",
+        canonical_name: "Ultimate EFA Plus",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY EFA softgel (marine + flax)",
+        serving_size: "1 softgel",
+        servings_per_container: 90,
+        dose_text: "1 softgel daily",
+        nutrients: [
+          {
+            name: "Omega-3 (alpha-linolenic + EPA/DHA in marine form)",
+            amount: 585,
+            unit: "mg",
+            form: "ALA 300 + EPA 171 + DHA 114 (per softgel)",
+            alignment: "aligned"
+          },
+          {
+            name: "Omega-6 (linoleic + GLA)",
+            amount: 122,
+            unit: "mg",
+            form: "Linoleic 103 + GLA 19 (per softgel)",
+            alignment: "aligned"
+          },
+          {
+            name: "Omega-9 (Arachidonic / Oleic)",
+            amount: 120,
+            unit: "mg",
+            form: "Oleic",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Provides an all-natural source of six omega fatty acids our bodies can\u2019t produce on their own",
+          "Product certified by International Fish Oil Standards, which regulates fish oil quality",
+          "Proprietary blend offers a powerful, all-natural daily supplement",
+          "Soft gels are easy to swallow"
+        ],
+        what_it_does: "Provides the right blend of essential fatty acids to promote overall good health, including targeted support for the heart.",
+        tagline: ""
+      },
+      "Ultimate Enzymes": {
+        eden_id: "EDEN-LOCKED-ultimate-enzymes",
+        canonical_name: "Ultimate Enzymes",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY digestive enzymes",
+        serving_size: "1 capsule",
+        servings_per_container: 120,
+        dose_text: "1 capsule daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Betaine HCl",
+            amount: 105,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Pancreatin 11X",
+            amount: 75,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Papain",
+            amount: 5.3,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Pepsin",
+            amount: 22.5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Bromelain",
+            amount: 30,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Ox Bile",
+            amount: 33,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Digestive enzyme blend formulated to support all aspects of digestion, including nutrient absorption",
+          "Betaine HCI and pepsin work together to naturally aid digestion6",
+          "Easy-to-swallow capsules 40-day supply (120 capsules) included with each bottle"
+        ],
+        what_it_does: "Provides essential enzymes to help with balanced digestion.",
+        tagline: ""
+      },
+      "Ultimate Flora FX": {
+        eden_id: "EDEN-LOCKED-ultimate-flora-fx",
+        canonical_name: "Ultimate Flora FX",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY probiotic capsule",
+        serving_size: "2 capsules",
+        servings_per_container: 30,
+        dose_text: "2 capsules daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "GDL",
+            amount: 1334,
+            unit: "mg",
+            form: "glucono delta lactone",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Proprietary 4 Billion CFU Probiotic Blend",
+            amount: 400,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Lactobacillus acidophilus",
+              "Bifidobacterium bifidum",
+              "Bifidobacterium infantis in tapioca maltodextrin base"
+            ]
+          }
+        ],
+        features: [
+          "Prebiotics and probiotics promote a balanced microbiome and healthy digestion 4 billion CFU blend provided for maximum health benefits",
+          "Capsules are convenient for travel and life on the go",
+          "No synthetic"
+        ],
+        what_it_does: "Pre-and-probiotics cultivate a healthy microbiome in the gut and aid digestion.",
+        tagline: ""
+      },
+      "Ultimate Gluco-Gel": {
+        eden_id: "EDEN-LOCKED-ultimate-gluco-gel",
+        canonical_name: "Ultimate Gluco-Gel",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY joint / cartilage",
+        serving_size: "2 capsules",
+        servings_per_container: 60,
+        dose_text: "2 capsules daily",
+        nutrients: [
+          {
+            name: "Manganese",
+            amount: 2,
+            unit: "mg",
+            form: "manganese sulfate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Gelatin",
+            amount: 500,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Glucosamine sulfate 2KCL",
+            amount: 500,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Contains gelatin, which provides protein and collagen for joint support"
+        ],
+        what_it_does: "Provides essential nutrients for healthy joints, cartilage, and bones.",
+        tagline: ""
+      },
+      "Ultimate Hair, Skin & Nails": {
+        eden_id: "EDEN-LOCKED-ultimate-hair-skin-nails",
+        canonical_name: "Ultimate Hair, Skin & Nails",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY beauty capsule (biotin megadose + MSM + silica)",
+        serving_size: "2 capsules",
+        servings_per_container: 30,
+        dose_text: "2 capsules daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 1500,
+            unit: "mcg RAE",
+            form: "retinyl acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin C",
+            amount: 120,
+            unit: "mg",
+            form: "calcium ascorbate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 2.5,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 5,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 5,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 20,
+            unit: "mg NE",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 10,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 340,
+            unit: "mcg DFE",
+            form: "folic acid",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 20,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 2e3,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 20,
+            unit: "mg",
+            form: "calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Sulfur",
+            amount: 700,
+            unit: "mg MSM equivalent",
+            form: "MSM (methylsulfonylmethane)",
+            alignment: "aligned"
+          },
+          {
+            name: "Silica",
+            amount: 80,
+            unit: "mg",
+            form: "silicon dioxide + bamboo + horsetail (mixed)",
+            alignment: "aligned"
+          },
+          {
+            name: "Choline",
+            amount: 20,
+            unit: "mg",
+            form: "choline bitartrate",
+            alignment: "partial"
+          },
+          {
+            name: "Inositol",
+            amount: 20,
+            unit: "mg",
+            form: "inositol",
+            alignment: "aligned"
+          },
+          {
+            name: "Methionine",
+            amount: 20,
+            unit: "mg",
+            form: "L-methionine"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "PABA",
+            amount: 20,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Provides key vitamins, minerals, amino acids, and botanicals to support healthy connective tissues",
+          "Nutrients may also help support healthy bones and joints",
+          "Capsules are convenient for travel and easy to take",
+          "No artificial"
+        ],
+        what_it_does: "Provides key nutrients to promote healthy hair, skin, and nails.",
+        tagline: ""
+      },
+      "Ultimate Hormone FX": {
+        eden_id: "EDEN-LOCKED-ultimate-hormone-fx",
+        canonical_name: "Ultimate Hormone FX",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY women's hormonal support",
+        serving_size: "1 capsule",
+        servings_per_container: 60,
+        dose_text: "1 capsule daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Saw Palmetto Fruit",
+            amount: 300,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Longjack Root Extract",
+            amount: 100,
+            unit: "mg",
+            form: "Tongkat Ali",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Fenugreek Seed Extract",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Blessed Thistle Herb",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "DHEA",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Motherwort Herb",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Helps balance hormones without added estrogen or testosterone",
+          "Designed for both men and women",
+          "Provides synergizing, high-quality botanicals",
+          "No chemicals, added sugar, or artificial flavors",
+          "Easy-to-swallow capsules"
+        ],
+        what_it_does: "Supports healthy hormone levels in men and women.",
+        tagline: ""
+      },
+      "Ultimate Iodine": {
+        eden_id: "EDEN-LOCKED-ultimate-iodine",
+        canonical_name: "Ultimate Iodine",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY iodine spray (only verified format currently)",
+        serving_size: "2 sprays (0.38 ml)",
+        servings_per_container: 80,
+        dose_text: "2 sprays (0.38 ml) daily",
+        nutrients: [
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 24,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Iodine",
+            amount: 300,
+            unit: "mcg",
+            form: "from sodium iodide",
+            alignment: "partial"
+          },
+          {
+            name: "Zinc",
+            amount: 55,
+            unit: "mcg",
+            form: "from zinc sulfate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 11,
+            unit: "mcg",
+            form: "from sodium selenate",
+            alignment: "partial"
+          },
+          {
+            name: "Copper",
+            amount: 180,
+            unit: "mcg",
+            form: "from cupric chloride",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [],
+        what_it_does: "combines a powerful, targeted formula of iodine and other essential vitamins and minerals, providing crucial thyroid support for better overall health.",
+        tagline: ""
+      },
+      "Ultimate King Calcium": {
+        eden_id: "EDEN-LOCKED-ultimate-king-calcium",
+        canonical_name: "Ultimate King Calcium",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY chewable bone+boron tablet",
+        serving_size: "3 chewable tablets",
+        servings_per_container: 30,
+        dose_text: "3 chewable tablets daily",
+        nutrients: [
+          {
+            name: "Vitamin D3",
+            amount: 10,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin K (Menaquinone = K2)",
+            amount: 40,
+            unit: "mcg",
+            form: "phylloquinone (K1)",
+            alignment: "misaligned"
+          },
+          {
+            name: "Calcium",
+            amount: 550,
+            unit: "mg",
+            form: "calcium carbonate + lactate + gluconate + AAC",
+            alignment: "aligned"
+          },
+          {
+            name: "Magnesium",
+            amount: 12,
+            unit: "mg",
+            form: "magnesium AAC",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 1.5,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 40,
+            unit: "mcg",
+            form: "L-selenomethionine",
+            alignment: "aligned"
+          },
+          {
+            name: "Boron",
+            amount: 1.8,
+            unit: "mg",
+            form: "boron amino acid chelate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Ultimate Memory FX": {
+        eden_id: "EDEN-LOCKED-ultimate-memory-fx",
+        canonical_name: "Ultimate Memory FX",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY standard cognitive (non-pro-line counterpart to Synaptiv)",
+        serving_size: "1 capsule",
+        servings_per_container: 60,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 1e4,
+            unit: "IU",
+            form: "beta carotene",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 500,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 25,
+            unit: "mg",
+            form: "thiamine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 25,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 25,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 25,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 800,
+            unit: "mcg",
+            form: "folic acid",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 50,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 300,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 25,
+            unit: "mg",
+            form: "calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Choline",
+            amount: 25,
+            unit: "mg",
+            form: "choline bitartrate",
+            alignment: "partial"
+          },
+          {
+            name: "Inositol",
+            amount: 25,
+            unit: "mg",
+            form: "inositol",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Ginkgo Leaf",
+            amount: 60,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "24% flavoneglycosides"
+            ]
+          },
+          {
+            name: "Periwinkle Herb",
+            amount: 40,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "vinca minor"
+            ]
+          },
+          {
+            name: "Lutein",
+            amount: 1,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Blends herbal supplements and all-natural vitamins to support cognitive functioning",
+          "Easy-to-swallow capsules",
+          "Only includes what you need \u2013 no chemicals, flavorings, or other additives"
+        ],
+        what_it_does: "Promotes overall brain health and memory retention with essential vitamins and other nutrients.",
+        tagline: ""
+      },
+      "Ultimate Microbiome": {
+        eden_id: "EDEN-LOCKED-ultimate-microbiome",
+        canonical_name: "Ultimate Microbiome",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY gut-health scoop (i26 egg + mushrooms + L-glutamine)",
+        serving_size: "1 scoop (8.7g)",
+        servings_per_container: 30,
+        dose_text: "1 scoop (8.7g) daily",
+        nutrients: [
+          {
+            name: "Sodium",
+            amount: 20,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "i26 Hyperimmune Egg Powder",
+            amount: 2.5,
+            unit: "g",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "L-Glutamine",
+            amount: 1.5,
+            unit: "g",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Reishi Mushroom",
+            amount: 750,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Lion's Mane",
+            amount: 500,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Cordyceps",
+            amount: 250,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Enzyme Blend",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Provides essential prebiotics, probiotics, digestive enzymes, adaptogens, and other gut-supporting nutrients in every scoop i26\xAE Hyperimmune Egg Powder delivers antibodies that target 26 specific, human-relevant pathogens, allowing probiotics to thrive2",
+          "Nutrient blend designed to help promote a healthy balance of good bacteria in the GI tract",
+          "Goes beyond digestion to support the immune system, metabolism, and other areas of health",
+          "Delicious natural Blueberry flavor, perfect for smoothies and shakes",
+          "Gluten-free; no additives, fillers, or artificial sweeteners \u2013 we only give you what you need"
+        ],
+        what_it_does: "Supports the digestive system and overall health with a blend of targeted nutrients.",
+        tagline: ""
+      },
+      "Ultimate Mineral Caps": {
+        eden_id: "EDEN-LOCKED-ultimate-mineral-caps",
+        canonical_name: "Ultimate Mineral Caps",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY trace mineral capsule (AQUAMIN-based)",
+        serving_size: "1 capsule",
+        servings_per_container: 64,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Calcium",
+            amount: 90,
+            unit: "mg",
+            form: "from Aquamin, seaweed",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Plant Derived Trace Minerals",
+            amount: 300,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "= ~1/2 fl oz Majestic Earth PDM equivalent per label note"
+            ]
+          },
+          {
+            name: "Aquamin Seaweed",
+            amount: 280,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "containing 72 trace minerals"
+            ]
+          }
+        ],
+        features: [
+          "Provides more than 100 key minerals from both land and sea",
+          "Capsules are convenient for travel and life on the go",
+          "No artificial"
+        ],
+        what_it_does: "Provides a wide array of essential minerals to support overall health.",
+        tagline: ""
+      },
+      "Ultimate Multi-EFA (Evening Primrose)": {
+        eden_id: "EDEN-LOCKED-ultimate-multi-efa-evening-primrose",
+        canonical_name: "Ultimate Multi-EFA (Evening Primrose)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY evening primrose oil softgel (GLA/Omega-6 dominant)",
+        serving_size: "1 softgel",
+        servings_per_container: 90,
+        dose_text: "1 softgel daily",
+        nutrients: [
+          {
+            name: "Omega-6 (linoleic + GLA)",
+            amount: 410,
+            unit: "mg",
+            form: "Linoleic 365 + GLA 45 (from 500mg evening primrose oil)",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Ultimate Niacin Plus": {
+        eden_id: "EDEN-LOCKED-ultimate-niacin-plus",
+        canonical_name: "Ultimate Niacin Plus",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY high-dose niacin + cardio herbs",
+        serving_size: "1 tablet",
+        servings_per_container: 60,
+        dose_text: "1 tablet daily",
+        nutrients: [
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 500,
+            unit: "mg",
+            form: "niacin (unspecified)",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 100,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Arjuna Bark Extract",
+              "Hawthorn Berry Extract",
+              "Nattokinase"
+            ]
+          }
+        ],
+        features: [
+          "500mg of niacin provided per serving",
+          "Targeted nutrients support cardiovascular health, and more",
+          "Tablets are convenient for travel and life on the go",
+          "No artificial flavors, colors, or additives \u2013 we only give you what you need"
+        ],
+        what_it_does: "Provides niacin and other targeted nutrients in tablet form.",
+        tagline: ""
+      },
+      "Ultimate Ocean's Gold": {
+        eden_id: "EDEN-LOCKED-ultimate-ocean-s-gold",
+        canonical_name: "Ultimate Ocean's Gold",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY iodine + seaweed mineral capsule (highest iodine)",
+        serving_size: "2 capsules",
+        servings_per_container: 30,
+        dose_text: "2 capsules daily",
+        nutrients: [
+          {
+            name: "Calcium",
+            amount: 250,
+            unit: "mg",
+            form: "Aquamin seaweed",
+            alignment: "partial"
+          },
+          {
+            name: "Iodine",
+            amount: 500,
+            unit: "mcg",
+            form: "potassium iodide",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Ocean's Gold Blend",
+            amount: 1205,
+            unit: "mg",
+            form: "proprietary blend (13 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Aquamin Seaweed Ca",
+              "Chlorella",
+              "Bladderwrack",
+              "Sodium Alginate",
+              "Spirulina",
+              "Irish Moss",
+              "Kelp",
+              "Dulse",
+              "Alaria",
+              "Laver",
+              "Nori",
+              "Sea Lettuce",
+              "Wakame"
+            ]
+          },
+          {
+            name: "CoEnzyme Q-10",
+            amount: 5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Targeted blend prioritizes heart and thyroid-supporting nutrients",
+          "Proprietary blend provides all-natural"
+        ],
+        what_it_does: "Supports a healthy thyroid, heart function, normal weight, limbic system, and hormone levels.",
+        tagline: ""
+      },
+      "Ultimate Osteo FX Liquid": {
+        eden_id: "EDEN-LOCKED-ultimate-osteo-fx-liquid",
+        canonical_name: "Ultimate Osteo FX Liquid",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY bone (older/different formulation vs Beyond Osteo FX)",
+        serving_size: "1 fl oz (2 tbsp)",
+        servings_per_container: 32,
+        dose_text: "1 fl oz (2 tbsp) daily",
+        nutrients: [
+          {
+            name: "Vitamin D3",
+            amount: 25,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 1200,
+            unit: "mg",
+            form: "tricalcium phosphate, calcium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Phosphorus",
+            amount: 300,
+            unit: "mg",
+            form: "tricalcium phosphate",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 200,
+            unit: "mg",
+            form: "magnesium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 5,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Boron",
+            amount: 1,
+            unit: "mg",
+            form: "boron amino acid chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Sulfur",
+            amount: 250,
+            unit: "mg",
+            form: "MSM (methylsulfonylmethane)",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Glucosamine HCl",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Ultimate Prost FX": {
+        eden_id: "EDEN-LOCKED-ultimate-prost-fx",
+        canonical_name: "Ultimate Prost FX",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY prostate capsule (saw palmetto + Zn + Se cofactors)",
+        serving_size: "1 capsule",
+        servings_per_container: 60,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Zinc",
+            amount: 5,
+            unit: "mg",
+            form: "zinc methionine",
+            alignment: "aligned"
+          },
+          {
+            name: "Selenium",
+            amount: 100,
+            unit: "mcg",
+            form: "selenium glycinate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Saw Palmetto Blend",
+            amount: 320,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "L-Alanine",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "L-Glycine",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Pumpkin Seed Extract",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Pygeum",
+            amount: 38,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Eleuthero",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Gamma Oryzanol",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Horsetail Extract",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Sarsaparilla Extract",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Ginkgo",
+            amount: 10,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Lycopene",
+            amount: 1,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Provides a variety of targeted nutrients to support a healthy prostate",
+          "Offers a holistic health alternative for addressing men\u2019s health",
+          "Capsules are convenient for travel and life on the go",
+          "No artificial"
+        ],
+        what_it_does: "Supports a healthy prostate with key botanicals, vitamins, and amino acids.",
+        tagline: ""
+      },
+      "Ultimate Selenium": {
+        eden_id: "EDEN-LOCKED-ultimate-selenium",
+        canonical_name: "Ultimate Selenium",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY blood-sugar + Se SKU",
+        serving_size: "1 capsule",
+        servings_per_container: 90,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 750,
+            unit: "mcg",
+            form: "beta-carotene",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 120,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 5,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 20,
+            unit: "mg",
+            form: "d-alpha tocopheryl acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Zinc",
+            amount: 5,
+            unit: "mg",
+            form: "zinc bisglycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Selenium",
+            amount: 100,
+            unit: "mcg",
+            form: "l-selenomethionine",
+            alignment: "aligned"
+          },
+          {
+            name: "Copper",
+            amount: 0.5,
+            unit: "mg",
+            form: "copper bisglycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Chromium",
+            amount: 100,
+            unit: "mcg",
+            form: "chromium nicotinate glycinate chelate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vanadium",
+            amount: null,
+            unit: "mcg",
+            form: "vanadium nicotinate glycinate chelate (HIDDEN \u2014 in prop blend, dose not disclosed)",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Provides selenium, which your body cannot produce on its own",
+          "Fruit extracts and amino acids provide extra immune system support",
+          "Added vitamins included to bolster overall health",
+          "Capsules are easy to swallow"
+        ],
+        what_it_does: "Supports overall health by providing selenium, vitamins, and nutrients.",
+        tagline: ""
+      },
+      "Ultimate Smart FX": {
+        eden_id: "EDEN-LOCKED-ultimate-smart-fx",
+        canonical_name: "Ultimate Smart FX",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY DHA-focused omega + astaxanthin softgel",
+        serving_size: "1 softgel",
+        servings_per_container: 60,
+        dose_text: "1 softgel daily",
+        nutrients: [
+          {
+            name: "Omega-3 (alpha-linolenic + EPA/DHA in marine form)",
+            amount: 280,
+            unit: "mg",
+            form: "EPA 50 + DHA 230 (per softgel)",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Provides an all-natural source of two omega fatty acids our bodies can\u2019t produce on their own",
+          "Product certified by International Fish Oil Standards, which regulates fish oil quality",
+          "Proprietary blend offers a powerful, all-natural daily supplement",
+          "Convenient soft gels are easy to swallow"
+        ],
+        what_it_does: "Provides the right blend of essential fatty acids to promote overall good health, including targeted support for the brain.",
+        tagline: ""
+      },
+      "Ultimate Tangy Tangerine Liquid (UTT)": {
+        eden_id: "EDEN-LOCKED-ultimate-tangy-tangerine-liquid-utt",
+        canonical_name: "Ultimate Tangy Tangerine Liquid (UTT)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY foundational full-spectrum multi-liquid (UTT)",
+        serving_size: "1 fl oz (2 tbsp)",
+        servings_per_container: 32,
+        dose_text: "1 fl oz (2 tbsp) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 3e3,
+            unit: "mcg RAE",
+            form: "50% beta-carotene + palmitate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 1e3,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 5,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 134,
+            unit: "mg",
+            form: "d-alpha tocopherol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin K (Menaquinone = K2)",
+            amount: 30,
+            unit: "mcg",
+            form: "phytonadione (K1)",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 30,
+            unit: "mg",
+            form: "thiamine mononitrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 30,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 40,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 30,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 400,
+            unit: "mcg DFE",
+            form: "folic acid (240 mcg)",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 500,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 600,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 150,
+            unit: "mg",
+            form: "D-calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 50,
+            unit: "mg",
+            form: "calcium gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Iron",
+            amount: 1,
+            unit: "mg",
+            form: "ferrous gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 20,
+            unit: "mg",
+            form: "magnesium gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Zinc",
+            amount: 2,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 100,
+            unit: "mcg",
+            form: "L-selenium methionine",
+            alignment: "aligned"
+          },
+          {
+            name: "Copper",
+            amount: 1,
+            unit: "mg",
+            form: "copper gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Chromium",
+            amount: 200,
+            unit: "mcg",
+            form: "chromium AA chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 100,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Choline",
+            amount: 25,
+            unit: "mg",
+            form: "choline bitartrate",
+            alignment: "partial"
+          },
+          {
+            name: "Boron",
+            amount: 1,
+            unit: "mg",
+            form: "boron AA chelate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Majestic Earth Plant Derived Minerals",
+            amount: 300,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "humic shale \u2014 Wallach-aligned"
+            ]
+          },
+          {
+            name: "Chondroitin Sulfate",
+            amount: 250,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Amino Acid Complex",
+            amount: 125,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Inositol",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "DMG",
+            amount: 20,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Grape Seed",
+            amount: 5,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "CoQ10",
+            amount: 3,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Essential vitamins, amino acids, and enzymes support overall health from the inside out",
+          "Synergizing cofactors ensure maximum nutrient absorption and benefits",
+          "An unusually high 5,745 ORAC (antioxidant) score per serving",
+          "Gluten-free, shellfish-free, and non-GMO; no artificial flavors or colors added",
+          "Low glycemic design makes this a safe supplement for those who monitor blood sugar levels",
+          "Made for adults and children (see Recommended Use section for details)"
+        ],
+        what_it_does: "Provides the body with the essential nutrients needed for optimal health.",
+        tagline: ""
+      },
+      "Ultimate Vision FX": {
+        eden_id: "EDEN-LOCKED-ultimate-vision-fx",
+        canonical_name: "Ultimate Vision FX",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY eye-support capsule (standard counterpart to Ocutiv pro-line)",
+        serving_size: "2 capsules",
+        servings_per_container: 30,
+        dose_text: "2 capsules daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 1500,
+            unit: "mcg RAE",
+            form: "beta carotene",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 240,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 40.2,
+            unit: "mg",
+            form: "d-alpha tocopheryl acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Zinc",
+            amount: 5,
+            unit: "mg",
+            form: "amino acid chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 70,
+            unit: "mcg",
+            form: "selenium from yeast",
+            alignment: "partial"
+          },
+          {
+            name: "Chromium",
+            amount: 50,
+            unit: "mcg",
+            form: "amino acid chelate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Lutein Esters",
+            amount: 8,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "CoEnzyme Q10",
+            amount: 4,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Provides a variety of high-quality, targeted vitamins, antioxidants, carotenoids, and minerals",
+          "Capsules convenient for travel and daily use",
+          "No artificial"
+        ],
+        what_it_does: "Provides a proprietary blend of time-tested nutrients like vitamin C, lutein, and coenzyme Q- 10.",
+        tagline: ""
+      },
+      "Ultimate Vitamin D3 2500 IU": {
+        eden_id: "EDEN-LOCKED-ultimate-vitamin-d3-2500-iu",
+        canonical_name: "Ultimate Vitamin D3 2500 IU",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY D3 single-vitamin capsule (mid-dose)",
+        serving_size: "1 capsule",
+        servings_per_container: 60,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Vitamin D3",
+            amount: 62.5,
+            unit: "mcg",
+            form: "cholecalciferol (2500 IU)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin K (Menaquinone = K2)",
+            amount: 45,
+            unit: "mcg",
+            form: "phytonadione (K1)",
+            alignment: "misaligned"
+          },
+          {
+            name: "Calcium",
+            amount: 30,
+            unit: "mg",
+            form: "from seaweed (Aquamin)",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Ultimate Vitamin D3 5000 IU": {
+        eden_id: "EDEN-LOCKED-ultimate-vitamin-d3-5000-iu",
+        canonical_name: "Ultimate Vitamin D3 5000 IU",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY D3 single-vitamin capsule (high dose)",
+        serving_size: "1 capsule",
+        servings_per_container: 60,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Vitamin D3",
+            amount: 125,
+            unit: "mcg",
+            form: "cholecalciferol (5000 IU)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin K (Menaquinone = K2)",
+            amount: 45,
+            unit: "mcg",
+            form: "phytonadione (K1)",
+            alignment: "misaligned"
+          },
+          {
+            name: "Calcium",
+            amount: 30,
+            unit: "mg",
+            form: "from seaweed (Aquamin)",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "Provides 2500IU of vitamin D per serving",
+          "Proprietary formula offers targeted support for bones, as well as overall health",
+          "Capsules are convenient for travel and life on the go"
+        ],
+        what_it_does: "Provides vitamin D, vitamin K, and calcium to help support a healthy immune system and healthy bones.",
+        tagline: ""
+      },
+      "Ultimate Zinc": {
+        eden_id: "EDEN-LOCKED-ultimate-zinc",
+        canonical_name: "Ultimate Zinc",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY zinc capsule",
+        serving_size: "1 capsule",
+        servings_per_container: 0,
+        dose_text: "1 capsule daily",
+        nutrients: [
+          {
+            name: "Zinc",
+            amount: 15,
+            unit: "mg",
+            form: "unspecified (verify form on label)",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [],
+        features: [
+          "\u2022 Our proprietary blend of antioxidant-rich herbs and essential oils, formulated to support a healthy immune system. \u2022 This liquid-based zinc supplement is easy-to-digest and more easily absorbed by the body."
+        ],
+        what_it_does: "combines zinc with a proprietary blend of antioxidant-rich herbs and essential oils to support a healthy immune system.",
+        tagline: ""
+      },
+      "Ultimate Zinc Drops": {
+        eden_id: "EDEN-LOCKED-ultimate-zinc-drops",
+        canonical_name: "Ultimate Zinc Drops",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY Zn + herbal antimicrobial drops",
+        serving_size: "1 dropper (0.75 mL)",
+        servings_per_container: 80,
+        dose_text: "1 dropper (0.75 mL) daily",
+        nutrients: [
+          {
+            name: "Zinc",
+            amount: 5,
+            unit: "mg",
+            form: "zinc sulfate",
+            alignment: "misaligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Herbal Blend",
+            amount: 33.3,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Thyme",
+              "Licorice",
+              "Plantain",
+              "Horse Chestnut",
+              "Pine Bark"
+            ]
+          },
+          {
+            name: "Proprietary Essential Oil Blend",
+            amount: 0.9,
+            unit: "mg",
+            form: "proprietary blend (6 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Peppermint",
+              "Eucalyptus",
+              "Cajeput",
+              "Juniper",
+              "Wintergreen",
+              "Clove"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Ultimate Zinc Immune Lozenge": {
+        eden_id: "EDEN-LOCKED-ultimate-zinc-immune-lozenge",
+        canonical_name: "Ultimate Zinc Immune Lozenge",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY Zn + D3 immune lozenge",
+        serving_size: "1 lozenge",
+        servings_per_container: 30,
+        dose_text: "1 lozenge daily",
+        nutrients: [
+          {
+            name: "Vitamin D3",
+            amount: 25,
+            unit: "mcg",
+            form: "cholecalciferol (1000 IU)",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 10,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 175,
+            unit: "mg",
+            form: "proprietary blend (4 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Cranberry",
+              "Elderberry",
+              "Olive Leaf",
+              "Astragalus"
+            ]
+          },
+          {
+            name: "Plant Derived Trace Minerals",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Ultra Body Toddy Liquid": {
+        eden_id: "EDEN-LOCKED-ultra-body-toddy-liquid",
+        canonical_name: "Ultra Body Toddy Liquid",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY full-spectrum multivitamin liquid (pro-line)",
+        serving_size: "1 fl oz (2 tbsp)",
+        servings_per_container: 32,
+        dose_text: "1 fl oz (2 tbsp) daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 780,
+            unit: "mcg",
+            form: "beta-carotene & palmitate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 1e3,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 50,
+            unit: "mcg",
+            form: "cholecalciferol",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 134,
+            unit: "mg",
+            form: "d-alpha tocopherol acetate",
+            alignment: "partial"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 25,
+            unit: "mg",
+            form: "thiamine mononitrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 25,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 25,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 40,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 400,
+            unit: "mcg",
+            form: "folic acid",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 200,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 300,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 100,
+            unit: "mg",
+            form: "D-calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Choline",
+            amount: 25,
+            unit: "mg",
+            form: "choline bitartrate",
+            alignment: "partial"
+          },
+          {
+            name: "Calcium",
+            amount: 300,
+            unit: "mg",
+            form: "tricalcium phosphate, calcium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Iron",
+            amount: 4,
+            unit: "mg",
+            form: "ferrous gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Phosphorus",
+            amount: 150,
+            unit: "mg",
+            form: "tricalcium phosphate",
+            alignment: "partial"
+          },
+          {
+            name: "Magnesium",
+            amount: 100,
+            unit: "mg",
+            form: "magnesium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 20,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 100,
+            unit: "mcg",
+            form: "L-selenium methionine",
+            alignment: "aligned"
+          },
+          {
+            name: "Copper",
+            amount: 1,
+            unit: "mg",
+            form: "copper gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Manganese",
+            amount: 5,
+            unit: "mg",
+            form: "manganese gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Chromium",
+            amount: 200,
+            unit: "mcg",
+            form: "chromium amino acid chelate",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 100,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Inositol",
+            amount: 25,
+            unit: "mg",
+            form: "inositol",
+            alignment: "aligned"
+          },
+          {
+            name: "Boron",
+            amount: 1,
+            unit: "mg",
+            form: "boron amino acid chelate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Majestic Earth Plant Derived Minerals",
+            amount: 300,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "humic shale \u2014 Wallach-aligned"
+            ]
+          },
+          {
+            name: "PABA",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Citrus Bioflavonoids",
+            amount: 100,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Dimethyl Glycine",
+            amount: 10,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Proprietary Blend Cell Shield",
+            amount: 200,
+            unit: "mg",
+            form: "proprietary blend (7 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "NAC",
+              "bilberry",
+              "milk thistle",
+              "CoQ10",
+              "quercetin",
+              "lycopene",
+              "grape seed"
+            ]
+          },
+          {
+            name: "Proprietary Blend of Amino Acids",
+            amount: 125,
+            unit: "mg",
+            form: "proprietary blend (18 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "from gelatin hydrolysate \u2014 glycine",
+              "arginine",
+              "valine",
+              "methionine",
+              "hydroxyproline",
+              "aspartic",
+              "phenylalanine",
+              "tyrosine",
+              "proline",
+              "serine",
+              "isoleucine",
+              "cysteine",
+              "glutamic",
+              "lysine",
+              "threonine",
+              "alanine",
+              "leucine",
+              "histidine"
+            ]
+          },
+          {
+            name: "Proprietary Blend of Phytonutrients",
+            amount: 25,
+            unit: "mg",
+            form: "proprietary blend (8 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "broccoli",
+              "banana",
+              "carrot",
+              "blueberry",
+              "sweet corn",
+              "cherry",
+              "spinach",
+              "peach"
+            ]
+          }
+        ],
+        features: [
+          "Over 100 key nutrients provided in every serving",
+          "Includes antioxidants, amino acids, vitamins, whole foods, and minerals",
+          "Liquid formula tastes great and pairs well with your morning juice",
+          "No artificial flavors, colors, or additives \u2013 we only give you what you need"
+        ],
+        what_it_does: "Provides a full spectrum of nutrition to support cell health and promote optimal overall health.",
+        tagline: ""
+      },
+      "ViaViente Fruit Juice": {
+        eden_id: "EDEN-LOCKED-viaviente-fruit-juice",
+        canonical_name: "ViaViente Fruit Juice",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY fruit juice + Ecuadorean trace minerals",
+        serving_size: "7.4 mL (1/2 tbsp)",
+        servings_per_container: 32,
+        dose_text: "7.4 mL (1/2 tbsp) daily",
+        nutrients: [
+          {
+            name: "Sodium",
+            amount: 3,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          },
+          {
+            name: "Potassium",
+            amount: 80,
+            unit: "mg",
+            form: "potassium citrate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Fruit Blend",
+            amount: 8300,
+            unit: "mg",
+            form: "proprietary blend (12 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Apple",
+              "Grape",
+              "Cranberry",
+              "Blueberry",
+              "Aloe Vera",
+              "Noni",
+              "Lycium/Goji",
+              "Elderberry",
+              "Bilberry",
+              "Pomegranate",
+              "Plum",
+              "Maca"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "VitalStart (Cardiovascular Stick Pack)": {
+        eden_id: "EDEN-LOCKED-vitalstart-cardiovascular-stick-pack",
+        canonical_name: "VitalStart (Cardiovascular Stick Pack)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY cardiovascular stick pack with citicoline",
+        serving_size: "1 stick (10g)",
+        servings_per_container: "varies",
+        dose_text: "1 stick (10g) daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 120,
+            unit: "mg",
+            form: "calcium ascorbate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin D3",
+            amount: 10,
+            unit: "mcg",
+            form: "cholecalciferol (400 IU)",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B1 (Thiamine)",
+            amount: 1.5,
+            unit: "mg",
+            form: "thiamin mononitrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 1.7,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 20,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 5,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 200,
+            unit: "mcg",
+            form: "folic acid",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 15,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Biotin",
+            amount: 250,
+            unit: "mcg",
+            form: "biotin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 10,
+            unit: "mg",
+            form: "calcium pantothenate",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 120,
+            unit: "mg",
+            form: "calcium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Magnesium",
+            amount: 120,
+            unit: "mg",
+            form: "magnesium gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Zinc",
+            amount: 4,
+            unit: "mg",
+            form: "zinc gluconate",
+            alignment: "partial"
+          },
+          {
+            name: "Manganese",
+            amount: 1,
+            unit: "mg",
+            form: "manganese citrate",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "ViNitrox",
+            amount: 500,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "grape + apple polyphenols"
+            ]
+          },
+          {
+            name: "AstraGin",
+            amount: 100,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "astragalus + panax notoginseng"
+            ]
+          },
+          {
+            name: "Astaxanthin",
+            amount: 12,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Proprietary Cardiovascular Formula",
+            amount: 5432,
+            unit: "mg",
+            form: "proprietary blend (10 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "L-Citrulline",
+              "Beetroot",
+              "L-Carnitine",
+              "Taurine",
+              "**Citicoline**",
+              "Citrin K",
+              "Luo Han Guo",
+              "uC3 Clear Curcumin",
+              "Saberry Amla",
+              "Pine Bark"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "Provides you with a blend of nutrients that may help boost energy, performance, endurance, and vitality.",
+        tagline: ""
+      },
+      "Vitalic (Immune Stick Pack)": {
+        eden_id: "EDEN-LOCKED-vitalic-immune-stick-pack",
+        canonical_name: "Vitalic (Immune Stick Pack)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY high-dose C + Zn immune stick",
+        serving_size: "1 stick (2.25 g)",
+        servings_per_container: 32,
+        dose_text: "1 stick (2.25 g) daily",
+        nutrients: [
+          {
+            name: "Vitamin C",
+            amount: 1e3,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 15,
+            unit: "mg",
+            form: "zinc citrate",
+            alignment: "partial"
+          },
+          {
+            name: "Sodium",
+            amount: 100,
+            unit: "mg",
+            form: "sodium bicarbonate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Antioxidant Blend",
+            amount: 147,
+            unit: "mg",
+            form: "proprietary blend (6 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Organic Acerola",
+              "Beet Juice",
+              "Bilberry",
+              "Black Currant",
+              "Elderberry",
+              "Quercetin"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Women's FX": {
+        eden_id: "EDEN-LOCKED-women-s-fx",
+        canonical_name: "Women's FX",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY women's hormonal liquid (menopause)",
+        serving_size: "1 fl oz (2 tbsp)",
+        servings_per_container: 32,
+        dose_text: "1 fl oz (2 tbsp) daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Trace Mineral Complex",
+            amount: 250,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Pomegranate Fruit Concentrate",
+            amount: 2,
+            unit: "g",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Blueberry Fruit Concentrate",
+            amount: 2,
+            unit: "g",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Black Cohosh Extract",
+            amount: 75,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Gamma Oryzanol",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Green Tea Leaf",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Soy Isoflavones",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Wild Yam Root",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Targeted blend of holistic nutrients formulated to support women\u2019s health concerns",
+          "Trace minerals included to help replenish the body\u2019s natural levels",
+          "Fruits and botanicals provide beneficial antioxidants and delicious natural flavors",
+          "No artificial sweeteners, flavors, or fillers here \u2013 we only give you what you",
+          "Enjoy this liquid supplement with your morning juice or a smoothie!"
+        ],
+        what_it_does: "Provides a targeted blend of plant-based nutrients to promote optimal health in women.",
+        tagline: ""
+      },
+      "Women's Hormonal Balancer": {
+        eden_id: "EDEN-LOCKED-women-s-hormonal-balancer",
+        canonical_name: "Women's Hormonal Balancer",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY women's hormonal capsule",
+        serving_size: "4 capsules",
+        servings_per_container: 30,
+        dose_text: "4 capsules daily",
+        nutrients: [
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 40,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Iodine",
+            amount: 40,
+            unit: "mcg",
+            form: "potassium iodide",
+            alignment: "partial"
+          },
+          {
+            name: "Potassium",
+            amount: 42.8,
+            unit: "mg",
+            form: "potassium chloride",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Hormonal Balancer Blend",
+            amount: 1590,
+            unit: "mg",
+            form: "proprietary blend (11 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Rice Bran",
+              "Gelatin",
+              "Dandelion",
+              "Dong Quai",
+              "Fenugreek",
+              "Maca",
+              "Passion Flower",
+              "Sarsaparilla",
+              "Saw Palmetto Berry",
+              "Wild Yam",
+              "Fennel"
+            ]
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "Women's Probiotic COMPLETE": {
+        eden_id: "EDEN-LOCKED-women-s-probiotic-complete",
+        canonical_name: "Women's Probiotic COMPLETE",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY 16-strain women's menopause probiotic",
+        serving_size: "1 capsule",
+        servings_per_container: 30,
+        dose_text: "1 capsule daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Menopause Probiotic Blend",
+            amount: 250,
+            unit: "mg",
+            form: "proprietary blend (2 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "35 Billion CFU",
+              "16 strains"
+            ]
+          },
+          {
+            name: "FOS",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Provides 35 billion CFU/16 strains of targeted probiotic strains, plus dietary",
+          "Formulated with clinically tested strains for vaginal and gut microbiome support*",
+          "Part of our HOPE Complete Women's Health System",
+          "Capsules convenient for travel and life on the go",
+          "Gluten-free with no artificial"
+        ],
+        what_it_does: "Provides probiotics and more to support digestive, immune, brain, and vaginal health.",
+        tagline: ""
+      },
+      "XeraFem (Pro-line Women's Hormonal)": {
+        eden_id: "EDEN-LOCKED-xerafem-pro-line-women-s-hormonal",
+        canonical_name: "XeraFem (Pro-line Women's Hormonal)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY pro-line women's hormonal support",
+        serving_size: "2 tablets",
+        servings_per_container: 30,
+        dose_text: "2 tablets daily",
+        nutrients: [
+          {
+            name: "Vitamin A (beta-carotene)",
+            amount: 750,
+            unit: "mcg RAE",
+            form: "beta-carotene",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin C",
+            amount: 30,
+            unit: "mg",
+            form: "ascorbic acid",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin E",
+            amount: 10,
+            unit: "mg",
+            form: "d-alpha tocopheryl succinate",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 10,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Calcium",
+            amount: 150,
+            unit: "mg",
+            form: "dicalcium phosphate + citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Magnesium",
+            amount: 50,
+            unit: "mg",
+            form: "magnesium citrate",
+            alignment: "aligned"
+          },
+          {
+            name: "Zinc",
+            amount: 15,
+            unit: "mg",
+            form: "zinc citrate",
+            alignment: "partial"
+          },
+          {
+            name: "Selenium",
+            amount: 35,
+            unit: "mcg",
+            form: "selenomethionine",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Maca Root",
+            amount: 200,
+            unit: "mg",
+            form: "proprietary blend (1 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "0.6% glucosinolates"
+            ]
+          },
+          {
+            name: "Imortalium Youth Complex",
+            amount: 150,
+            unit: "mg",
+            form: "proprietary blend (4 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Whole Food Blend",
+              "Telomere Support: L-glutamine/catalase/NAC/grape seed/L-glutathione/resveratrol",
+              "Melon juice/SOD",
+              "Fucoidan Sea Nutrient: fucoxanthin/kombu/nori/wakame"
+            ]
+          },
+          {
+            name: "Botanical Blend",
+            amount: 100,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Jujube",
+              "Citrus Bioflav",
+              "Sage"
+            ]
+          },
+          {
+            name: "Natural Vitality Factors",
+            amount: 100,
+            unit: "mg",
+            form: "proprietary blend (5 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Ginger",
+              "Dong Quai",
+              "Damiana",
+              "L-Arginine",
+              "L-Histidine"
+            ]
+          },
+          {
+            name: "Alpha Lipoic Acid",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Organic Flaxseed",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Contains 40+ key vitamins, minerals, amino acids, antioxidants, and more",
+          "Whole foods add beneficial variety to your diet",
+          "High-antioxidant blend with 2500 ORAC score",
+          "Convenient capsules easy to take with juice or water",
+          "No artificial"
+        ],
+        what_it_does: "Provides targeted nutrition to support women\u2019s health and hormonal needs.",
+        tagline: ""
+      },
+      XeraTest: {
+        eden_id: "EDEN-LOCKED-xeratest",
+        canonical_name: "XeraTest",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY men's hormonal (gated on labs)",
+        serving_size: "2 tablets",
+        servings_per_container: 0,
+        dose_text: "2 tablets daily",
+        nutrients: [
+          {
+            name: "Zinc",
+            amount: 30,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "partial"
+          },
+          {
+            name: "Boron",
+            amount: 3,
+            unit: "mg",
+            form: "unspecified",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Fenugreek",
+            amount: 300,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [
+          "Targeted nutrients provided holistic, hormone-free support for men\u2019s health",
+          "Plethora of antioxidants, vitamins, and minerals provides overall health benefits",
+          "No artificial"
+        ],
+        what_it_does: "Supports men\u2019s reproductive and hormonal health with key vitamins, minerals, and other nutrients.",
+        tagline: ""
+      },
+      "ZRadical Collagen": {
+        eden_id: "EDEN-LOCKED-zradical-collagen",
+        canonical_name: "ZRadical Collagen",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY ZRadical + collagen stick pack",
+        serving_size: "1 packet (9.1g)",
+        servings_per_container: 30,
+        dose_text: "1 packet (9.1g) daily",
+        nutrients: [
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 1.7,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 20,
+            unit: "mg NE",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 2,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 667,
+            unit: "mcg DFE",
+            form: "folic acid (400 mcg)",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 60,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 10,
+            unit: "mg",
+            form: "calcium pantothenate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Proprietary Blend",
+            amount: 890,
+            unit: "mg",
+            form: "proprietary blend (7 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Banana Fruit",
+              "Fucoidan Extract",
+              "Yumberry Juice",
+              "Dragon Fruit",
+              "Wolfberry Juice",
+              "Milk Thistle",
+              "Turmeric"
+            ]
+          },
+          {
+            name: "Collagen Peptides",
+            amount: 2e3,
+            unit: "mg",
+            form: "Bovine",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "ZRadical Powder Canister": {
+        eden_id: "EDEN-LOCKED-zradical-powder-canister",
+        canonical_name: "ZRadical Powder Canister",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY ZRadical (fucoidan) powder",
+        serving_size: "1 scoop (6.9g)",
+        servings_per_container: 30,
+        dose_text: "1 scoop (6.9g) daily",
+        nutrients: [
+          {
+            name: "Vitamin B2 (Riboflavin)",
+            amount: 1.7,
+            unit: "mg",
+            form: "riboflavin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B3 (Niacin)",
+            amount: 20,
+            unit: "mg",
+            form: "niacinamide",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B6 (Pyridoxine)",
+            amount: 2,
+            unit: "mg",
+            form: "pyridoxine HCl",
+            alignment: "partial"
+          },
+          {
+            name: "Folic Acid (Folate)",
+            amount: 680,
+            unit: "mcg DFE",
+            form: "folic acid",
+            alignment: "misaligned"
+          },
+          {
+            name: "Vitamin B12 (Cobalamin)",
+            amount: 60,
+            unit: "mcg",
+            form: "methylcobalamin",
+            alignment: "aligned"
+          },
+          {
+            name: "Vitamin B5 (Pantothenic Acid)",
+            amount: 10,
+            unit: "mg",
+            form: "calcium pantothenate",
+            alignment: "aligned"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Fucoidans",
+            amount: 50,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          },
+          {
+            name: "Fruit Blend",
+            amount: 840,
+            unit: "mg",
+            form: "proprietary blend (6 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "Banana puree",
+              "Dragon fruit",
+              "Wolfberry",
+              "Yumberry",
+              "Milk Thistle",
+              "Turmeric"
+            ]
+          }
+        ],
+        features: [
+          "Provides key vitamins, botanical extracts, and fucoidan all in one convenient supplement",
+          "Capsules are convenient to take and perfect for travel",
+          "No artificial colors, sweeteners, flavors, or fillers \u2013 we only give you what you need"
+        ],
+        what_it_does: "Provides targeted vitamins, botanical extracts, and fucoidan to support the immune system and more from the inside out.",
+        tagline: ""
+      },
+      "Zinc FX Lozenges": {
+        eden_id: "EDEN-LOCKED-zinc-fx-lozenges",
+        canonical_name: "Zinc FX Lozenges",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY Zn aspartate immune lozenge",
+        serving_size: "1 lozenge",
+        servings_per_container: 30,
+        dose_text: "1 lozenge daily",
+        nutrients: [
+          {
+            name: "Zinc",
+            amount: 10,
+            unit: "mg",
+            form: "zinc aspartate complex",
+            alignment: "partial"
+          }
+        ],
+        non_essentials_parsed: [
+          {
+            name: "Trace Mineral Blend",
+            amount: 25,
+            unit: "mg",
+            form: "non_essential (from label)",
+            alignment: "unknown",
+            category: "label_extra"
+          }
+        ],
+        features: [],
+        what_it_does: "",
+        tagline: ""
+      },
+      "i26 Egg Capsules": {
+        eden_id: "EDEN-LOCKED-i26-egg-capsules",
+        canonical_name: "i26 Egg Capsules",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY hyperimmune egg capsules (immune support)",
+        serving_size: "9 capsules",
+        servings_per_container: 15,
+        dose_text: "9 capsules daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "IgY Max Hyperimmune Egg Powder",
+            amount: 4500,
+            unit: "mg",
+            form: "proprietary blend (2 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "75mg cholesterol",
+              "2g protein"
+            ]
+          }
+        ],
+        features: [
+          "A patent-protected formula that supports gut health and a healthy inflammatory response i26\xAE is backed by 20 years of reputable research5",
+          "Egg Powder delivers antibodies that target 26 specific, human-relevant pathogens, allowing probiotics to thrive9",
+          "Certified non-GMO, Kosher, Halal, and self-affirmed GRAS; gluten and lactose",
+          "Capsules are easy to swallow and convenient for life on the go"
+        ],
+        what_it_does: "Provides i26\xAE Hyperimmune Egg Powder in capsule form to help support your digestive system and immune health.",
+        tagline: ""
+      },
+      "i26 Egg Powder": {
+        eden_id: "EDEN-LOCKED-i26-egg-powder",
+        canonical_name: "i26 Egg Powder",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY hyperimmune egg powder (immune support)",
+        serving_size: "1 scoop (4.5g)",
+        servings_per_container: 31,
+        dose_text: "1 scoop (4.5g) daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "IgY Max Hyperimmune Egg Powder",
+            amount: 4500,
+            unit: "mg",
+            form: "proprietary blend (2 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "cholesterol 75.6mg",
+              "2g protein"
+            ]
+          }
+        ],
+        features: [
+          "A patent-protected formula that supports gut health and a healthy inflammatory response i26\xAE is backed by 20 years of reputable research5",
+          "Egg powder delivers antibodies that target 26 specific, human-relevant pathogens, allowing probiotics to thrive9",
+          "Certified non-GMO, Kosher, Halal, and self-affirmed GRAS; gluten and lactose-free",
+          "Flavorless powder formula perfect for mixing with your favorite food or cold beverage"
+        ],
+        what_it_does: "Provides i26\xAE Hyperimmune Egg Powder to help support your digestive system and immune health.",
+        tagline: ""
+      },
+      "i26 Egg Tablets (Banana Coconut)": {
+        eden_id: "EDEN-LOCKED-i26-egg-tablets-banana-coconut",
+        canonical_name: "i26 Egg Tablets (Banana Coconut)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY hyperimmune egg tablets (banana coconut)",
+        serving_size: "3 tablets",
+        servings_per_container: 15,
+        dose_text: "3 tablets daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "IgY Max Hyperimmune Egg Powder",
+            amount: 4500,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "55 cal",
+              "2g protein",
+              "70mg cholesterol"
+            ]
+          }
+        ],
+        features: [
+          "A patent-protected formula that supports gut health and a healthy inflammatory response",
+          "IgY Max\xAE is backed by 20 years of reputable research5",
+          "I26\xAE delivers antibodies that target 26 specific, human-relevant pathogens, allowing probiotics to thrive9",
+          "Certified non-GMO, Kosher, Halal, and self-affirmed GRAS; gluten and lactose",
+          "Convenient, on-the-go chewables with a tasty banana coconut flavor"
+        ],
+        what_it_does: "Provides i26\xAE Hyperimmune Egg Powder to help support your digestive system and immune health.",
+        tagline: ""
+      },
+      "i26 Egg Tablets (French Vanilla)": {
+        eden_id: "EDEN-LOCKED-i26-egg-tablets-french-vanilla",
+        canonical_name: "i26 Egg Tablets (French Vanilla)",
+        brand: "Youngevity",
+        brand_tier: 1,
+        category: "YGY hyperimmune egg flavored tablets",
+        serving_size: "3 tablets",
+        servings_per_container: 15,
+        dose_text: "3 tablets daily",
+        nutrients: [],
+        non_essentials_parsed: [
+          {
+            name: "IgY Max Hyperimmune Egg Powder",
+            amount: 4500,
+            unit: "mg",
+            form: "proprietary blend (3 sub-ingredients)",
+            alignment: "unknown",
+            category: "blend_parent",
+            sub_ingredients: [
+              "55 cal",
+              "2g protein",
+              "70mg cholesterol"
+            ]
+          }
+        ],
+        features: [
+          "A patent-protected formula that supports gut health and a healthy inflammatory response i26\xAE is backed by 20 years of reputable research5",
+          "Egg powder delivers antibodies that target 26 specific, human-relevant pathogens, allowing probiotics to thrive9",
+          "Tasty new French Vanilla flavor!",
+          "Certified non-GMO, Kosher, Halal, and self-affirmed GRAS; gluten and lactose-"
+        ],
+        what_it_does: "Provides i26\xAE Hyperimmune Egg Powder to help support your digestive system and immune health.",
+        tagline: ""
+      }
+    }
+  };
+
   // assets/data/corpus-embed.json
   var corpus_embed_default = { books: { "dddl-3e-2011": { authors: ["Joel D. Wallach", "Ma Lan"], claim_count: 94, code: "DDDL", edition: "3rd", status: "active", title: "Dead Doctors Don't Lie", year: 2011 }, epigenetics: { authors: ["Joel D. Wallach", "Ma Lan", "Gerhard N. Schrauzer"], claim_count: 109, code: "EDGT", edition: "1st", status: "active", title: "Epigenetics: The Death of the Genetic Theory of Disease Transmission", year: 2014 }, iaiyh: { authors: ["Joel D. Wallach"], claim_count: 20, code: "IAYH", edition: "1st", status: "active", title: "It's All In Your Head", year: 2020 }, immortality: { authors: ["Joel D. Wallach"], claim_count: 197, code: "IMMO", edition: "1st", status: "active", title: "Immortality", year: 2008 }, "lets-play-doctor": { authors: ["Joel D. Wallach", "Ma Lan"], claim_count: 481, code: "LPD", edition: "4th", status: "active", title: "Let's Play Doctor", year: 1995 }, "rare-earths": { authors: ["Joel D. Wallach", "Ma Lan"], claim_count: 302, code: "REFC", edition: "1st", status: "active", title: "Rare Earths: Forbidden Cures", year: 1994 } }, claims: { "WAL-CLM-DDDL-000001": { book: "dddl-3e-2011", claim_text: "An 1895 Journal of the American Medical Association report found the average lifespan of doctors was just 55 years.", conditions: [], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-DDDL-000001", kind: "prevalence", other_substances: [], symptoms: [], tier: 1, verbatim: "what he discovered, in an 1895 edition of the Journal of the American\nMedical Association was that the average life of doctors was just 55 years." }, "WAL-CLM-DDDL-000002": { book: "dddl-3e-2011", claim_text: "The corrective action is supplementation with plant derived colloidal minerals.", conditions: [], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-DDDL-000002", kind: "quote", other_substances: [], symptoms: [], tier: 1, verbatim: "took positive\naction to enhance their own lives and the lives of others by supplementing\nwith plant derived colloidal minerals." }, "WAL-CLM-DDDL-000003": { book: "dddl-3e-2011", claim_text: "Copper deficiency in humans first presents as white, gray, or silver hair.", conditions: [], confidence: "high", dose: null, essentials: ["copper"], id: "WAL-CLM-DDDL-000003", kind: "deficiency_sign", other_substances: [], symptoms: ["gray_hair"], tier: 1, verbatim: "Copper deficiency in human beings presents itself first as white, gray, or\nsilver hair." }, "WAL-CLM-DDDL-000004": { book: "dddl-3e-2011", claim_text: "Copper is required to manufacture the heavy elastic fibers in arteries; copper deficiency causes aneurysms.", conditions: ["aneurysm"], confidence: "high", dose: null, essentials: ["copper"], id: "WAL-CLM-DDDL-000004", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "This has got to be\ndue to a copper deficiency, because copper is required to manufacture the\nheavy elastic fibers found in arteries." }, "WAL-CLM-DDDL-000005": { book: "dddl-3e-2011", claim_text: "Selenium deficiency causes infertility, miscarriages, cystic fibrosis of the pancreas, sudden infant death syndrome (SIDS), liver cirrhosis, white muscle disease, muscular dystrophy, anemia, encephalomalacia (Alzheimer's disease), cardiomyopathy, and mulberry heart disease.", conditions: ["cystic_fibrosis", "sids", "muscular_dystrophy", "cardiomyopathy", "white_muscle_disease", "alzheimers", "anemia", "liver_cirrhosis", "infertility", "miscarriage", "dementia", "liver_disease"], confidence: "high", dose: null, essentials: ["selenium"], id: "WAL-CLM-DDDL-000005", kind: "deficiency_sign", other_substances: [], symptoms: [], tier: 1, verbatim: "Selenium deficiency causes infertility,\nmiscarriages, cystic fibrosis of the pancreas, Sudden Infant Death\nSyndrome in animals, liver cirrhosis, stiff lamb disease, white muscle\ndisease, muscular dystrophy, anemias, encephalomalacia (Alzheimer\u2019s\ndisease), cardiomyopathy heart disease, and mulberry heart disease." }, "WAL-CLM-DDDL-000006": { book: "dddl-3e-2011", claim_text: "An early sign of selenium deficiency in older adults is the appearance of liver spots or age spots.", conditions: [], confidence: "high", dose: null, essentials: ["selenium"], id: "WAL-CLM-DDDL-000006", kind: "deficiency_sign", other_substances: [], symptoms: ["age_spots", "liver_spots"], tier: 1, verbatim: "Another early symptom of selenium deficiency in older humans is the\nappearance of \u201Cliver spots\u201D or \u201Cage spots.\u201D" }, "WAL-CLM-DDDL-000007": { book: "dddl-3e-2011", claim_text: "Selenium supplementation prevented, and in many cases reversed or cured, selenium-deficiency diseases in animals.", conditions: ["cardiomyopathy", "white_muscle_disease", "muscular_dystrophy"], confidence: "high", dose: null, essentials: ["selenium"], id: "WAL-CLM-DDDL-000007", kind: "prognosis", other_substances: [], symptoms: [], tier: 1, verbatim: "In each\ncase, selenium supplementation prevented the disease and in many cases\nreversed or cured existing diseases, which were all significant causes of\nanimal losses to the livestock industry." }, "WAL-CLM-DDDL-000008": { book: "dddl-3e-2011", claim_text: "Zoo marmosets and shrews died of diabetes attributed to chromium and vanadium deficiency (observed at autopsy).", conditions: ["diabetes"], confidence: "high", dose: null, essentials: ["chromium", "vanadium"], id: "WAL-CLM-DDDL-000008", kind: "personal_anecdote", other_substances: [], symptoms: [], tier: 1, verbatim: "I saw marmosets, alligators, and\nshrews that died of diabetes, a chromium and vanadium deficiency." }, "WAL-CLM-DDDL-000009": { book: "dddl-3e-2011", claim_text: "Calcium deficiency alone can result in as many as 147 different diseases (osteoporosis, osteoarthritis, Bell's palsy, tinnitus, trigeminal neuralgia, spinal stenosis, and more).", conditions: ["osteoporosis", "osteoarthritis", "osteomalacia", "bells_palsy", "tinnitus", "trigeminal_neuralgia", "spinal_stenosis", "arthritis"], confidence: "high", dose: null, essentials: ["calcium"], id: "WAL-CLM-DDDL-000009", kind: "prevalence", other_substances: [], symptoms: [], tier: 1, verbatim: "Calcium deficiency alone could result in as many as 147 different diseases\nranging from osteoporosis, osteoarthritis, osteomalacia, degenerative\narthritis, Bell\u2019s Palsy, tinnitus, trigeminal neuralgia, and spinal stenosis to\nname a few." }, "WAL-CLM-DDDL-000010": { book: "dddl-3e-2011", claim_text: "In the clinical phase of trace-mineral deficiency, full-blown disease states appear: cardiomyopathy, diabetes, cancer, liver cirrhosis.", conditions: ["cardiomyopathy", "diabetes", "cancer", "liver_cirrhosis", "liver_disease"], confidence: "medium", dose: null, essentials: [], id: "WAL-CLM-DDDL-000010", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "The clinical phase of trace mineral deficiencies is characterized by the onset\nof full-blown disease states and even death\u2014i.e., cardiomyopathy, diabetes,\ncancer, liver cirrhosis." }, "WAL-CLM-DDDL-000011": { book: "dddl-3e-2011", claim_text: "The recommended maintenance dose for germanium is 20\u201330 mg per day (50\u2013100 mg/day is used for serious illness requiring increased oxygenation).", conditions: [], confidence: "high", dose: { amount: "20-30", duration: null, for_condition: "maintenance", form: null, period: "daily", unit: "mg" }, essentials: ["germanium"], id: "WAL-CLM-DDDL-000011", kind: "dose", other_substances: [], symptoms: [], tier: 1, verbatim: "Twenty to 30 mg per day is the recommended maintenance dose for\ngermanium. Fifty to 100 mg per day doses are commonly used when an\nindividual has a serious illness that requires an increased oxygen level in\nthe body." }, "WAL-CLM-DDDL-000012": { book: "dddl-3e-2011", claim_text: "Germanium deficiency is typified by reduced immune status, arthritis, osteoporosis, low energy, and cancer.", conditions: ["arthritis", "osteoporosis", "cancer"], confidence: "high", dose: null, essentials: ["germanium"], id: "WAL-CLM-DDDL-000012", kind: "deficiency_sign", other_substances: [], symptoms: [], tier: 1, verbatim: "A severely reduced immune status, arthritis, osteoporosis, low energy, and\ncancer typify deficiencies of germanium." }, "WAL-CLM-DDDL-000013": { book: "dddl-3e-2011", claim_text: "Humans can consume 400 mg of silver per day; silver deficiency results in an impaired immune system.", conditions: [], confidence: "medium", dose: { amount: 400, duration: null, for_condition: null, form: null, period: "daily", unit: "mg" }, essentials: ["silver"], id: "WAL-CLM-DDDL-000013", kind: "dose", other_substances: [], symptoms: [], tier: 1, verbatim: "Humans can\nconsume 400 mg of silver per day. A silver \u201Cdeficiency\u201D results in an\nimpaired immune system." }, "WAL-CLM-DDDL-000014": { book: "dddl-3e-2011", claim_text: "Silver is antibacterial, antiviral, and antifungal, disabling enzymes that microorganisms use for respiration.", conditions: [], confidence: "medium", dose: null, essentials: ["silver"], id: "WAL-CLM-DDDL-000014", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "Silver is an anti-bacterial, anti-viral, anti-fungal, anti-metabolite that\ndisables specific enzymes that microorganisms use for respiration." }, "WAL-CLM-DDDL-000015": { book: "dddl-3e-2011", claim_text: "Per USDA researcher Richard Anderson, 90 percent of Americans are deficient in chromium.", conditions: [], confidence: "high", dose: null, essentials: ["chromium"], id: "WAL-CLM-DDDL-000015", kind: "prevalence", other_substances: [], symptoms: [], tier: 1, verbatim: "According to Richard Anderson, USDA, \u201CNinety percent of\nall Americans are deficient in chromium.\u201D" }, "WAL-CLM-DDDL-000016": { book: "dddl-3e-2011", claim_text: "Chromium supplementation increased laboratory-animal lifespan by 33.3 percent (Gary Evans, Bemidji State University).", conditions: [], confidence: "high", dose: null, essentials: ["chromium"], id: "WAL-CLM-DDDL-000016", kind: "prognosis", other_substances: [], symptoms: [], tier: 1, verbatim: "Gary Evans, Bemidji State University, Minnesota, very clearly showed an\nincreased life span in laboratory animals by 33.3 percent when they were\nsupplemented with chromium." }, "WAL-CLM-DDDL-000017": { book: "dddl-3e-2011", claim_text: "Chromium deficiency produces a wide range of clinical diseases (low blood sugar, type II diabetes, elevated triglycerides/cholesterol, coronary vessel disease, infertility) and a shortened lifespan, aggravated by concurrent vanadium deficiency.", conditions: ["hypoglycemia", "diabetes", "coronary_artery_disease"], confidence: "high", dose: null, essentials: ["chromium", "vanadium"], id: "WAL-CLM-DDDL-000017", kind: "deficiency_sign", other_substances: [], symptoms: [], tier: 1, verbatim: "Deficiencies of chromium in humans are\ncharacterized by a wide variety of clinical diseases as well as a shortened\nlife expectancy. The clinical diseases of chromium deficiency are\naggravated by concurrent vanadium deficiencies." }, "WAL-CLM-DDDL-000018": { book: "dddl-3e-2011", claim_text: "Cesium chloride is used in alternative cancer therapy ('high-pH therapy'), entering the cancer cell to produce an alkaline environment.", conditions: ["cancer"], confidence: "medium", dose: null, essentials: ["cesium"], id: "WAL-CLM-DDDL-000018", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Cesium chloride is used as part of alternative cancer therapy programs.\nCesium provides \u201Chigh ph therapy\u201D for cancer by entering the cancer cell\nand producing an alkaline environment." }, "WAL-CLM-DDDL-000019": { book: "dddl-3e-2011", claim_text: "Pica (a compulsion to eat ice, dirt, or lead paint) is a specific sign of iron deficiency.", conditions: [], confidence: "high", dose: null, essentials: ["iron"], id: "WAL-CLM-DDDL-000019", kind: "deficiency_sign", other_substances: [], symptoms: ["pica"], tier: 1, verbatim: "Experimental evidence shows very clearly that \u201Cpica\u201D is a specific sign of\niron deficiency. Pica can drive children and adults to eat ice (pagophagia),\ndirt (geophagia), or lead paint." }, "WAL-CLM-DDDL-000020": { book: "dddl-3e-2011", claim_text: "Iron deficiency symptoms include fatigue, heart palpitations on exertion, reduced cognition and memory, sore tongue, and hypochromic microcytic anemia.", conditions: ["anemia"], confidence: "high", dose: null, essentials: ["iron"], id: "WAL-CLM-DDDL-000020", kind: "deficiency_sign", other_substances: [], symptoms: [], tier: 1, verbatim: "Symptoms of iron deficiency\ninclude listlessness, fatigue, heart palpitations on exertion, reduced\ncognition, memory deficits, sore tongue, angular stomatitis dysphagia, and\nhypochromic microcytic anemia." }, "WAL-CLM-DDDL-000021": { book: "dddl-3e-2011", claim_text: "Ascorbic acid (vitamin C) increases iron absorption; clays and phytates decrease it.", conditions: [], confidence: "high", dose: null, essentials: ["iron", "vitamin-c"], id: "WAL-CLM-DDDL-000021", kind: "interaction", other_substances: [], symptoms: [], tier: 1, verbatim: "Ascorbic acid increases the absorption of iron;\nclays and phytates decrease the absorption of iron." }, "WAL-CLM-DDDL-000022": { book: "dddl-3e-2011", claim_text: "Excess iron can cause liver cirrhosis, pancreatic fibrosis, diabetes, and heart failure (largely by raising the need for selenium, copper, and zinc).", conditions: ["liver_cirrhosis", "diabetes", "heart_failure", "liver_disease"], confidence: "medium", dose: null, essentials: ["iron"], id: "WAL-CLM-DDDL-000022", kind: "contraindication", other_substances: [], symptoms: [], tier: 1, verbatim: "Excesses of iron can cause cirrhosis of the liver, fibrosis of the pancreas,\ndiabetes, and heart failure." }, "WAL-CLM-DDDL-000023": { book: "dddl-3e-2011", claim_text: "Iodine combines with the amino acid tyrosine to manufacture the thyroid hormone thyroxin.", conditions: ["hypothyroidism"], confidence: "high", dose: null, essentials: ["iodine", "tyrosine"], id: "WAL-CLM-DDDL-000023", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "In combination with the amino acid tyrosine,\niodine is manufactured into the thyroid hormone thyroxin." }, "WAL-CLM-DDDL-000024": { book: "dddl-3e-2011", claim_text: "Since Americans began restricting salt intake on doctors' advice, goiter and hypothyroidism have become epidemic (iodized salt was a key iodine source).", conditions: ["goiter", "hypothyroidism"], confidence: "high", dose: null, essentials: ["iodine"], id: "WAL-CLM-DDDL-000024", kind: "prevalence", other_substances: [], symptoms: [], tier: 1, verbatim: "Iodine intake is\nusually low to begin with, but since Americans have begun restricting their\nsalt intake at the advice of their doctors, goiter and hypothyroidism has\nbecome epidemic." }, "WAL-CLM-DDDL-000025": { book: "dddl-3e-2011", claim_text: "Copper is a required cofactor to utilize iodine; copper deficiency can drive an iodine-deficiency (goiter) state even where soil iodine is adequate.", conditions: ["goiter"], confidence: "medium", dose: null, essentials: ["iodine", "copper"], id: "WAL-CLM-DDDL-000025", kind: "interaction", other_substances: [], symptoms: [], tier: 1, verbatim: "A severe copper deficiency\nin the soils of the north and the south cause the deficiency state because\ncopper is a required cofactor to utilize iodine." }, "WAL-CLM-DDDL-000026": { book: "dddl-3e-2011", claim_text: "Manganese deficiency causes birth defects (congenital ataxia, deafness), asthma, convulsions, skeletal defects, and joint problems including temporomandibular joint (jaw) disorder, repetitive motion syndrome, and carpal tunnel syndrome.", conditions: ["carpal_tunnel_syndrome", "tmj", "asthma", "congenital_ataxia", "repetitive_motion_syndrome"], confidence: "high", dose: null, essentials: ["manganese"], id: "WAL-CLM-DDDL-000026", kind: "deficiency_sign", other_substances: [], symptoms: [], tier: 1, verbatim: "Deficiency diseases of Mn are very striking, ranging from severe birth\ndefects (congenital ataxia, deafness, chondrodystrophy), asthma,\nconvulsions, retarded growth, skeletal defects, disruption of fat and\ncarbohydrate metabolism to joint problems in children and adults (i.e. TMJ,\nRepetitive Motion Syndrome, Carpal Tunnel Syndrome)." }, "WAL-CLM-DDDL-000027": { book: "dddl-3e-2011", claim_text: "Manganese is structural to the three small ear bones and to joint cartilage.", conditions: [], confidence: "high", dose: null, essentials: ["manganese"], id: "WAL-CLM-DDDL-000027", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "Manganese is part of the developmental process and the structure\nof the three fragile ear bones and joint cartilage." }, "WAL-CLM-DDDL-000028": { book: "dddl-3e-2011", claim_text: "Molybdenum is an integral part of three essential enzymes: xanthine oxidase, aldehyde oxidase, and sulfite oxidase.", conditions: [], confidence: "high", dose: null, essentials: ["molybdenum"], id: "WAL-CLM-DDDL-000028", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "Molybdenum is known to be an integral part of no less\nthan three essential enzymes: Xanthine oxidase, Aldehyde oxidase, and\nSulfite oxidase." }, "WAL-CLM-DDDL-000029": { book: "dddl-3e-2011", claim_text: "Selenium is the most efficient antioxidant, working in the glutathione peroxidase enzyme system to keep body fats from going rancid.", conditions: [], confidence: "high", dose: null, essentials: ["selenium"], id: "WAL-CLM-DDDL-000029", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "Selenium is the most efficient antioxidant (anti-peroxidant).\nIt\u2019s used at the subcellular level in the glutathione peroxidase enzyme\nsystem and metalloamino acids (selenomethionine, etc.)." }, "WAL-CLM-DDDL-000030": { book: "dddl-3e-2011", claim_text: "High vegetable-oil intake combined with selenium deficiency is, per Wallach, the quickest route to heart attack and cancer.", conditions: ["heart_attack", "cancer"], confidence: "medium", dose: null, essentials: ["selenium"], id: "WAL-CLM-DDDL-000030", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "High intakes of vegetable oils,\nincluding salad dressing and cooking oils, concurrent with a selenium\ndeficiency is the quickest route to a heart attack and cancer." }, "WAL-CLM-DDDL-000031": { book: "dddl-3e-2011", claim_text: "Tin deficiency in rats produced poor growth, hearing loss, and bilateral (male-pattern) hair loss; Wallach links tin to male-pattern baldness and hearing loss.", conditions: ["male_pattern_baldness"], confidence: "high", dose: null, essentials: ["tin"], id: "WAL-CLM-DDDL-000031", kind: "deficiency_sign", other_substances: [], symptoms: ["hair_loss", "hearing_loss"], tier: 1, verbatim: "Rats fed tin at 17.0 ng/gm show poor growth, reduced feeding efficiency,\nhearing loss, and bilateral (male pattern) hair loss, while rats fed 1.99\n|ng/gm were physiologically and anatomically normal." }, "WAL-CLM-DDDL-000032": { book: "dddl-3e-2011", claim_text: "Strontium deficiency is associated with certain calcium- and boron-resistant forms of osteoporosis and arthritis.", conditions: ["osteoporosis", "arthritis"], confidence: "high", dose: null, essentials: ["strontium"], id: "WAL-CLM-DDDL-000032", kind: "deficiency_sign", other_substances: [], symptoms: [], tier: 1, verbatim: "Deficiencies of strontium are associated with certain types of Ca and boron\nresistant osteoporosis and arthritis." }, "WAL-CLM-DDDL-000033": { book: "dddl-3e-2011", claim_text: "Strontium can substitute for calcium in many organisms, including humans, and concentrates in bone.", conditions: [], confidence: "high", dose: null, essentials: ["strontium", "calcium"], id: "WAL-CLM-DDDL-000033", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "where it\u2019s most highly concentrated in mammalian bone. Strontium\ncan replace calcium in many organisms, including man." }, "WAL-CLM-DDDL-000034": { book: "dddl-3e-2011", claim_text: "Vanadium functions like insulin, making cell-membrane insulin receptors more sensitive and aiding glucose/carbohydrate intolerance.", conditions: ["diabetes"], confidence: "high", dose: null, essentials: ["vanadium"], id: "WAL-CLM-DDDL-000034", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "Vanadium appears to function\nlike insulin by altering cell membrane function for ion transport." }, "WAL-CLM-DDDL-000035": { book: "dddl-3e-2011", claim_text: "Vanadium supplementation can reduce or even eliminate most cases of adult-onset diabetes.", conditions: ["diabetes"], confidence: "high", dose: null, essentials: ["vanadium"], id: "WAL-CLM-DDDL-000035", kind: "prognosis", other_substances: [], symptoms: [], tier: 1, verbatim: "Vanadium supplementation can have a major positive\neconomic impact by reducing or even eliminating most cases of adult onset\ndiabetes." }, "WAL-CLM-DDDL-000036": { book: "dddl-3e-2011", claim_text: "Vanadium has anticarcinogenic properties; in mice it blocked induction of mammary tumor growth and reduced tumor incidence.", conditions: ["cancer"], confidence: "medium", dose: null, essentials: ["vanadium"], id: "WAL-CLM-DDDL-000036", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "Vanadium has known\nanticarcinogenic properties. Feeding 25 |ng of vanadium per gram of diet\nblocked induction of mouse mammary tumor growth." }, "WAL-CLM-DDDL-000037": { book: "dddl-3e-2011", claim_text: "At least 70 metalloenzymes require zinc as a functional cofactor.", conditions: [], confidence: "high", dose: null, essentials: ["zinc"], id: "WAL-CLM-DDDL-000037", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "There are no less than 70 metalloenzymes that require Zn as a\nfunctional cofactor." }, "WAL-CLM-DDDL-000038": { book: "dddl-3e-2011", claim_text: "Zinc is integral to the RNA molecule (the 'metallic fingers') and participates in cell division and DNA synthesis.", conditions: [], confidence: "high", dose: null, essentials: ["zinc"], id: "WAL-CLM-DDDL-000038", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "Zinc is also an integral part of the RNA molecule itself where Zinc\nprovides the \u201Cmetallic fingers\u201D and participates in cell division and\nsynthesis of DNA." }, "WAL-CLM-DDDL-000039": { book: "dddl-3e-2011", claim_text: "Zinc deficiency produces a wide range of diseases, including congenital birth defects and degenerative diseases across all age groups.", conditions: ["birth_defects"], confidence: "high", dose: null, essentials: ["zinc"], id: "WAL-CLM-DDDL-000039", kind: "deficiency_sign", other_substances: [], symptoms: [], tier: 1, verbatim: "Zinc deficiency\nproduces a wide range of diseases including congenital birth defects and\ndegenerative diseases of all age groups." }, "WAL-CLM-DDDL-000040": { book: "dddl-3e-2011", claim_text: "Excess dietary copper and iron, and high-phytate (vegan) diets, reduce the availability of dietary zinc.", conditions: [], confidence: "high", dose: null, essentials: ["zinc", "copper", "iron"], id: "WAL-CLM-DDDL-000040", kind: "interaction", other_substances: [], symptoms: [], tier: 1, verbatim: "Excesses of dietary copper and iron and high phytate diets (vegans) will\nreduce availability of dietary zinc." }, "WAL-CLM-DDDL-000041": { book: "dddl-3e-2011", claim_text: "Vitamin A deficiency in children causes keratitis, corneal ulcers, and blindness.", conditions: ["keratitis", "corneal_ulcers", "blindness"], confidence: "high", dose: null, essentials: ["vitamin-a"], id: "WAL-CLM-DDDL-000041", kind: "deficiency_sign", other_substances: [], symptoms: [], tier: 1, verbatim: "Vitamin A deficiencies in\nchildren caused keratitis, corneal ulcers, and blindness." }, "WAL-CLM-DDDL-000042": { book: "dddl-3e-2011", claim_text: "Folic acid (or zinc) deficiency causes spina bifida and serious cleft palate in infants.", conditions: ["spina_bifida", "cleft_palate", "birth_defects"], confidence: "high", dose: null, essentials: ["vitamin-b9", "zinc"], id: "WAL-CLM-DDDL-000042", kind: "deficiency_sign", other_substances: [], symptoms: [], tier: 1, verbatim: "Infants born with spina bifida and serious cleft palates as a result of folic\nacid or zinc deficiencies did not survive the primitive environment." }, "WAL-CLM-DDDL-000043": { book: "dddl-3e-2011", claim_text: "Thiamine (vitamin B1) deficiency causes beriberi with resulting congestive heart failure.", conditions: ["beriberi", "congestive_heart_failure"], confidence: "high", dose: null, essentials: ["vitamin-b1"], id: "WAL-CLM-DDDL-000043", kind: "deficiency_sign", other_substances: [], symptoms: [], tier: 1, verbatim: "Beriberi with resultant congestive\nheart failure was common, the result of a thiamin or vitamin B1 deficiency." }, "WAL-CLM-DDDL-000044": { book: "dddl-3e-2011", claim_text: "Vitamin B12 is a water-soluble red crystalline substance; its red color comes from the cobalt atom at its center.", conditions: [], confidence: "high", dose: null, essentials: ["vitamin-b12", "cobalt"], id: "WAL-CLM-DDDL-000044", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "Vitamin B12 is a red crystalline substance that is water soluble. The red\ncolor is due to the cobalt in the molecule." }, "WAL-CLM-DDDL-000045": { book: "dddl-3e-2011", claim_text: "About 30 percent of vitamin B12 activity is lost during cooking (electric, gas, or microwave).", conditions: [], confidence: "medium", dose: null, essentials: ["vitamin-b12"], id: "WAL-CLM-DDDL-000045", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "About 30 percent of B12 activity is lost during cooking\n(electric, gas, or microwave)." }, "WAL-CLM-DDDL-000046": { book: "dddl-3e-2011", claim_text: "Supplemental chromium prevents and treats both diabetes and hypoglycemia (known since 1958).", conditions: ["diabetes", "hypoglycemia"], confidence: "high", dose: null, essentials: ["chromium"], id: "WAL-CLM-DDDL-000046", kind: "prognosis", other_substances: [], symptoms: [], tier: 1, verbatim: "Since\n1958, it has been known that supplemental chromium will prevent and treat\ndiabetes as well as hypoglycemia." }, "WAL-CLM-DDDL-000047": { book: "dddl-3e-2011", claim_text: "A University of Vancouver medical school statement (1985): vanadium will replace insulin for adult-onset diabetics.", conditions: ["diabetes"], confidence: "high", dose: null, essentials: ["vanadium"], id: "WAL-CLM-DDDL-000047", kind: "quote", other_substances: [], symptoms: [], tier: 1, verbatim: "the medical school at the\nUniversity of Vancouver, BC, Canada stated that \u201Cvanadium will replace\ninsulin for adult onset diabetics.\u201D" }, "WAL-CLM-DDDL-000048": { book: "dddl-3e-2011", claim_text: "Diabetes treatment starts with chromium and vanadium at 250 mcg/day in the initial stages to prevent insulin shock.", conditions: ["diabetes"], confidence: "high", dose: { amount: 250, duration: null, for_condition: "diabetes", form: null, period: "daily", unit: "mcg" }, essentials: ["chromium", "vanadium"], id: "WAL-CLM-DDDL-000048", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Treatment of diabetes should include chromium and vanadium at 250\nmcg/day in the initial stages to prevent \u201Cinsulin shock\u201D" }, "WAL-CLM-DDDL-000049": { book: "dddl-3e-2011", claim_text: "The diabetes regimen also includes zinc 50 mg three times daily, B-complex 50 mg three times daily (with niacin), EFAs 5 g three times daily, B12 1,000 mcg/day, quercetin 150 mg/day, copper 2-3 mg/day, lecithin 2,500 mg three times daily, and glutathione 100 mg/day.", conditions: ["diabetes"], confidence: "high", dose: null, essentials: ["zinc", "vitamin-b3", "vitamin-b12", "copper"], id: "WAL-CLM-DDDL-000049", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Treatment of diabetes should also include zinc at 50 mg t.i.d., B-complex at\n50 mg t.i.d. (be sure to include niacin which is part of the GTF \u201Cglucose\ntolerance factor\u201D), essential fatty acids at 5 gm t.i.d., B12 at 1,000 mcg/day,\nbioflavonoids including quercetin at 150 mg/day, copper at 2-3 mg/day,\nlecithin at 2,500 mg t.i.d., and glutathione at 100 mg/day." }, "WAL-CLM-DDDL-000050": { book: "dddl-3e-2011", claim_text: "Osteoarthritis and degenerative arthritis are a complex of nutritional deficiencies; rheumatoid arthritis's overt cause is chronic Mycoplasma infection.", conditions: ["osteoarthritis", "rheumatoid_arthritis", "arthritis"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-DDDL-000050", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "osteoarthritis and degenerative arthritis are a complex of\nnutritional deficiencies. In the case of rheumatoid arthritis, a chronic\ninfection with a Mycoplasma spp. is the overt cause." }, "WAL-CLM-DDDL-000051": { book: "dddl-3e-2011", claim_text: "Arthritis treatment includes calcium at 2,000 mg/day (more if eating meat) plus magnesium at 800-1,000 mg/day.", conditions: ["arthritis"], confidence: "high", dose: null, essentials: ["calcium", "magnesium"], id: "WAL-CLM-DDDL-000051", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Treatment of arthritis should include calcium at 2000 mg/day and more if\nyou eat meat two or three times per day. Also take magnesium at 800-1000\nmg/day" }, "WAL-CLM-DDDL-000052": { book: "dddl-3e-2011", claim_text: "A dietary calcium:phosphorus ratio of 2:1 is ideal but impossible to attain on an unsupplemented diet; the more meat eaten, the more calcium supplementation needed.", conditions: ["arthritis", "osteoporosis"], confidence: "medium", dose: null, essentials: ["calcium", "phosphorus"], id: "WAL-CLM-DDDL-000052", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "A dietary calcium/phosphorus ratio of 2:1 is ideal yet impossible to attain in\nan unsupplemented diet." }, "WAL-CLM-DDDL-000053": { book: "dddl-3e-2011", claim_text: "Asthma is a malabsorption disease featuring essential fatty acid, manganese, and magnesium deficiencies.", conditions: ["asthma"], confidence: "high", dose: null, essentials: ["manganese", "magnesium"], id: "WAL-CLM-DDDL-000053", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "Asthma is a\ndisease of malabsorption with essential fatty acid deficiencies and\ndeficiencies of manganese and magnesium." }, "WAL-CLM-DDDL-000054": { book: "dddl-3e-2011", claim_text: "Cor pulmonale treatment includes resolving the lung disease plus oxygen, intravenous (into a vein) hydrogen peroxide, and selenium at 500-1,000 mcg/day for adults.", conditions: ["cor_pulmonale"], confidence: "high", dose: { amount: "500-1000", duration: null, for_condition: "cor_pulmonale", form: null, period: "daily", unit: "mcg" }, essentials: ["selenium"], id: "WAL-CLM-DDDL-000054", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Treatment of cor pulmonale includes resolving the precipitating lung\ndisease and oxygen, IV hydrogen peroxide, and selenium at 500-1,000 mcg\nper day for adults." }, "WAL-CLM-DDDL-000055": { book: "dddl-3e-2011", claim_text: "Cradle cap treatment includes regular shampooing plus B6 at 10-25 mg/day and zinc at 15-25 mg/day.", conditions: ["cradle_cap"], confidence: "high", dose: null, essentials: ["vitamin-b6", "zinc"], id: "WAL-CLM-DDDL-000055", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Treatment of cradle cap includes shampooing regularly to loosen the greasy\nscale, B6 at 10-25 mg per day, and zinc at 15-25 mg per day." }, "WAL-CLM-DDDL-000056": { book: "dddl-3e-2011", claim_text: "Cancer prevention includes beta-carotene at ~300,000 International Units/day (vitamin A equivalent) and selenium at 250-500 mcg/day, alongside a low-fat, high-fiber, fried-food-free diet.", conditions: ["cancer"], confidence: "high", dose: { amount: "250-500", duration: null, for_condition: "cancer prevention", form: "selenium", period: "daily", unit: "mcg" }, essentials: ["vitamin-a", "selenium"], id: "WAL-CLM-DDDL-000056", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Try to OD on beta-carotene\n(almost impossible\u2014first sign is dry skin) at about a vitamin A equivalent\nof 300,000 IU per day. Use selenium at 250 to 500 mcg per day." }, "WAL-CLM-DDDL-000057": { book: "dddl-3e-2011", claim_text: "Per the US government, the five-year cancer survival rate has not changed in 20 years despite new surgery/radiation/chemotherapy \u2014 untreated patients as a group survived longer.", conditions: ["cancer"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-DDDL-000057", kind: "quote", other_substances: [], symptoms: [], tier: 1, verbatim: "CHEMOTHERAPY\u2014IN FACT, UNTREATED\nPATIENTS, AS A GROUP, SURVIVED LONGER!" }, "WAL-CLM-DDDL-000058": { book: "dddl-3e-2011", claim_text: "Osteoporosis is easy to prevent and cure with proper supplementation of stomach acid (hydrochloric acid) and calcium.", conditions: ["osteoporosis"], confidence: "high", dose: null, essentials: ["calcium"], id: "WAL-CLM-DDDL-000058", kind: "prognosis", other_substances: [], symptoms: [], tier: 1, verbatim: "In our personal experience\nosteoporosis is easy to prevent and cure with proper supplementation of\nstomach acid (HCl) and calcium." }, "WAL-CLM-DDDL-000059": { book: "dddl-3e-2011", claim_text: "Estrogen and fluoride supplementation alone do not solve osteoporosis.", conditions: ["osteoporosis"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-DDDL-000059", kind: "quote", other_substances: [], symptoms: [], tier: 1, verbatim: "The big push by the \u201Corthodox\u201D\ndoctors is for estrogen and fluoride supplementation, yet these two\ncompounds alone do not solve the problem." }, "WAL-CLM-DDDL-000060": { book: "dddl-3e-2011", claim_text: "Osteoporosis treatment includes betaine hydrochloride and pancreatic enzymes (75-200 mg three times daily before meals) plus calcium and magnesium at 2,000 and 1,000 mg/day or more for the first 30 days.", conditions: ["osteoporosis"], confidence: "high", dose: null, essentials: ["calcium", "magnesium"], id: "WAL-CLM-DDDL-000060", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Treatment of osteoporosis should include betaine HCl and pancreatic\nenzymes at 75-200 mg t.i.d. 15 minutes before meals, and calcium and\nmagnesium at 2,000 mg and 1,000 mg per day or more for the first 30 days." }, "WAL-CLM-DDDL-000061": { book: "dddl-3e-2011", claim_text: "Estrogen may be contraindicated for osteoporosis due to a potential carcinogenic effect \u2014 it is known to cause breast and uterine cancer.", conditions: ["osteoporosis", "breast_cancer", "uterine_cancer", "cancer"], confidence: "medium", dose: null, essentials: [], id: "WAL-CLM-DDDL-000061", kind: "contraindication", other_substances: [], symptoms: [], tier: 1, verbatim: "Estrogen may be contraindicated because of the potential carcinogenic\neffect: it is known to cause breast and uterine cancer." }, "WAL-CLM-DDDL-000062": { book: "dddl-3e-2011", claim_text: "Per Wallach, 95 percent of all otitis (earaches) is the result of a milk allergy.", conditions: ["otitis"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-DDDL-000062", kind: "prevalence", other_substances: [], symptoms: [], tier: 1, verbatim: "In reality, 95 percent of all otitis (earaches) is the result of a milk allergy." }, "WAL-CLM-DDDL-000063": { book: "dddl-3e-2011", claim_text: "The essential fatty acids are linoleic, linolenic, and arachidonic acids; about 3% of total daily calorie intake should come from EFAs (linoleic and linolenic are strictly essential).", conditions: [], confidence: "high", dose: null, essentials: ["omega-3", "omega-6"], id: "WAL-CLM-DDDL-000063", kind: "definition", other_substances: [], symptoms: [], tier: 1, verbatim: "Three polyunsaturated fatty acids (linoleic, linolenic, and arachidonic acids)\nare known as essential fatty acids (EFA). Three percent of the total daily\ncalorie intake is required from EFA." }, "WAL-CLM-DDDL-000064": { book: "dddl-3e-2011", claim_text: "EFAs are the raw material the body uses to manufacture prostaglandins, which regulate blood pressure, heart rate, vascular and bronchial dilation, blood clotting, and central nervous system (CNS) function.", conditions: [], confidence: "high", dose: null, essentials: ["omega-3", "omega-6"], id: "WAL-CLM-DDDL-000064", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "EFA\u2019s are also the raw material for the human body to\nmanufacture prostaglandins that help regulate blood pressure, heart rate,\nvascular dilation, blood clotting, bronchial dilation, and central nervous\nsystem (brain and spinal cord) function." }, "WAL-CLM-DDDL-000065": { book: "dddl-3e-2011", claim_text: "Essential fatty acid deficiency in infants causes poor growth, eczema, and lowered resistance to infectious disease.", conditions: ["eczema", "dermatitis"], confidence: "high", dose: null, essentials: ["omega-3", "omega-6"], id: "WAL-CLM-DDDL-000065", kind: "deficiency_sign", other_substances: [], symptoms: [], tier: 1, verbatim: "EFA deficiency in human infants\nresults in a poor growth rate, eczema, and lowered resistance to infectious\ndiseases." }, "WAL-CLM-DDDL-000066": { book: "dddl-3e-2011", claim_text: "Wallach adds arginine, taurine, and tyrosine to the classic essential amino acids \u2014 over the long haul preventing cancer, macular degeneration, and goiter respectively.", conditions: ["cancer", "macular_degeneration", "goiter"], confidence: "high", dose: null, essentials: ["arginine", "tyrosine", "taurine"], id: "WAL-CLM-DDDL-000066", kind: "quote", other_substances: [], symptoms: [], tier: 1, verbatim: "To the classic list of essential amino\nacids, I would add arginine, taurine, and tyrosine. Over the long haul, these\nthree amino acids help prevent certain specific diseases. Respectively, those\ndiseases are cancer, macular degeneration, and goiter." }, "WAL-CLM-DDDL-000067": { book: "dddl-3e-2011", claim_text: "Tryptophan is a precursor of niacin and serotonin; phenylalanine of thyroxin and epinephrine; methionine forms choline and creatine phosphate.", conditions: [], confidence: "high", dose: null, essentials: ["tryptophan", "phenylalanine", "methionine"], id: "WAL-CLM-DDDL-000067", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "Tryptophan precursor of niacin and serotonin\nPhenylalanine precursor of thyroxin and epinephrine\nMethionine formation of choline and creatine phosphate" }, "WAL-CLM-DDDL-000068": { book: "dddl-3e-2011", claim_text: "Cholesterol is structural to cell walls and myelin and is the raw material for vitamin D, bile acids, and the steroid hormones (estrogen, progesterone, testosterone).", conditions: ["menopause"], confidence: "medium", dose: null, essentials: ["vitamin-d"], id: "WAL-CLM-DDDL-000068", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "Cholesterol is an essential part\nof the structure of cell walls, brain and spinal cord (myelin), the raw\nmaterial for the production of vitamin D in the human body, bile acids,\nadrenal cortical hormones, estrogen (a cholesterol deficiency makes\nmenopause a living hell), progesterone, and testosterone" }, "WAL-CLM-DDDL-000069": { book: "dddl-3e-2011", claim_text: "Infertility is usually caused by a nutritional deficiency; Wallach reports curing several hundred cases with supplementation of vitamins, minerals, trace minerals, and digestive aids.", conditions: ["infertility"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-DDDL-000069", kind: "prognosis", other_substances: [], symptoms: [], tier: 1, verbatim: "INFERTILITY (curable inability to have children) is usually caused by a\nnutritional deficiency of some nutrient. We have \u201Ccured\u201D several hundred\ncases of infertility by simple supplementation of vitamins, minerals, trace\nminerals, and digestive aids." }, "WAL-CLM-DDDL-000070": { book: "dddl-3e-2011", claim_text: "Infertility protocol: EFA 5 g three times daily, L-arginine 500 mg three times daily, zinc, selenium 250 mcg/day, vitamin A 100,000 International Units/day for 30 days then 25,000 International Units/day, and germanium 50 mg/day.", conditions: ["infertility"], confidence: "high", dose: null, essentials: ["arginine", "zinc", "selenium", "vitamin-a", "germanium"], id: "WAL-CLM-DDDL-000070", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "EFA at 5 gm t.i.d., l-arginine at 500 mg t.i.d., zinc at 15 mg t.i.d., selenium\nat 250 mcg/day, vitamin A at 100,000 IU/day for 30 days then drop to\n25,000 IU/day, germanium at 50 mg/day" }, "WAL-CLM-DDDL-000071": { book: "dddl-3e-2011", claim_text: "Selenium prevents muscular dystrophy in all its forms (and Keshan disease, heart muscular dystrophy); preconception selenium levels matter for both pregnancy maintenance and muscular-dystrophy prevention.", conditions: ["muscular_dystrophy", "keshan_disease"], confidence: "high", dose: null, essentials: ["selenium"], id: "WAL-CLM-DDDL-000071", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "The selenium levels in\npreconception women is important to the maintenance of pregnancy as well\nas the prevention of muscular dystrophy in all of its forms" }, "WAL-CLM-DDDL-000072": { book: "dddl-3e-2011", claim_text: "Given selenium and vitamin E (intramuscular [injected into a muscle] or intravenous [into a vein]) at the very first onset of symptoms, muscular dystrophy can be arrested or even cured.", conditions: ["muscular_dystrophy"], confidence: "high", dose: null, essentials: ["selenium", "vitamin-e"], id: "WAL-CLM-DDDL-000072", kind: "prognosis", other_substances: [], symptoms: [], tier: 1, verbatim: "If selenium and vitamin E were to\nbe given IM or IV at the very first onset of symptoms, the disease will be\narrested or maybe even \u201Ccured.\u201D" }, "WAL-CLM-DDDL-000073": { book: "dddl-3e-2011", claim_text: "Muscular dystrophy / Keshan disease treatment uses selenium (oral colloidal, intravenous or intramuscular) at 50-1,000 mcg/day by weight plus vitamin E intramuscular at 80 mg/day.", conditions: ["muscular_dystrophy", "keshan_disease"], confidence: "high", dose: { amount: "50-1000", duration: null, for_condition: "muscular dystrophy", form: "selenium", period: "daily", unit: "mcg" }, essentials: ["selenium", "vitamin-e"], id: "WAL-CLM-DDDL-000073", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Treatment of MD and/or Keshan disease includes the use of selenium orally\n(plant derived colloidal minerals), IV or IM at 50-1,000 mcg per day (based\non weight), vitamin E IM at 80 mg per day" }, "WAL-CLM-DDDL-000074": { book: "dddl-3e-2011", claim_text: "Muscle cramps (charley horse) are a mini-convulsion in the muscle resulting from deficiencies of calcium and magnesium.", conditions: ["muscle_cramps"], confidence: "high", dose: null, essentials: ["calcium", "magnesium"], id: "WAL-CLM-DDDL-000074", kind: "deficiency_sign", other_substances: [], symptoms: [], tier: 1, verbatim: "MUSCLE CRAMPS (Charley horse) are a \u201Cmini\u201D convulsion that is taking\nplace in the muscle as a result of deficiencies of calcium, magnesium" }, "WAL-CLM-DDDL-000075": { book: "dddl-3e-2011", claim_text: "Insomnia treatment includes avoiding caffeine and food allergens, calcium (especially plant-derived colloidal), and chromium + vanadium at 25-200 mcg three times daily.", conditions: ["insomnia"], confidence: "high", dose: null, essentials: ["calcium", "chromium", "vanadium"], id: "WAL-CLM-DDDL-000075", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Treatment for insomnia includes avoidance of caffeine and offending food allergens, calcium\n(especially plant derived colloidal calcium), chromium and vanadium at 25-200 mcg t.i.d." }, "WAL-CLM-DDDL-000076": { book: "dddl-3e-2011", claim_text: "For angina, calcium 2,000 mg/day, magnesium 800 mg/day, and essential fatty acids help prevent disease progression; lifestyle change and supplementation can reverse cardiovascular disease.", conditions: ["angina", "cardiovascular_disease"], confidence: "high", dose: null, essentials: ["calcium", "magnesium"], id: "WAL-CLM-DDDL-000076", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Calcium (2000 mg/day) and magnesium (800 mg/day) and essential fatty\nacids can help prevent progress of current disease" }, "WAL-CLM-DDDL-000077": { book: "dddl-3e-2011", claim_text: "Chronic loss of the sense of smell (anosmia) is most frequently the result of a zinc deficiency.", conditions: ["anosmia"], confidence: "high", dose: null, essentials: ["zinc"], id: "WAL-CLM-DDDL-000077", kind: "deficiency_sign", other_substances: [], symptoms: ["loss_of_smell"], tier: 1, verbatim: "Chronic loss of the sense of\nsmell is most frequently the result of a zinc deficiency." }, "WAL-CLM-DDDL-000078": { book: "dddl-3e-2011", claim_text: "Anxiety/panic treatment: avoid caffeine and sugar; chromium + vanadium 200-300 mcg/day, B6 100 mg three times daily, B3 450 mg three times daily, L-tryptophan, calcium 2,000 mg/day, magnesium 800 mg/day.", conditions: ["anxiety", "panic_attacks"], confidence: "high", dose: null, essentials: ["chromium", "vanadium", "vitamin-b6", "vitamin-b3", "calcium", "magnesium"], id: "WAL-CLM-DDDL-000078", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Take chromium and vanadium\n200-300 mcg/day, B6 100 mg t.i.d., B3 450 mg t.i.d. as time-release tablets,\nBl, B2, and B5 at the rate of 50 mg t.i.d., L-tryptophan 10 grams t.i.d.,\ncalcium 2000 mg/day, and magnesium at 800 mg/day." }, "WAL-CLM-DDDL-000079": { book: "dddl-3e-2011", claim_text: "Deficiencies of zinc and lithium are associated with anorexia.", conditions: ["anorexia"], confidence: "high", dose: null, essentials: ["zinc", "lithium"], id: "WAL-CLM-DDDL-000079", kind: "deficiency_sign", other_substances: [], symptoms: [], tier: 1, verbatim: "Deficiencies of zinc and lithium are associated with anorexia." }, "WAL-CLM-DDDL-000080": { book: "dddl-3e-2011", claim_text: "Canker sores (aphthous stomatitis): folic acid 5 mg three times daily, B12 1,000 mcg/day, iron 15 mg/day, and zinc 50 mg three times daily as adjuncts to allergen-avoidance diets.", conditions: ["canker_sores", "aphthous_stomatitis"], confidence: "high", dose: null, essentials: ["vitamin-b9", "vitamin-b12", "iron", "zinc"], id: "WAL-CLM-DDDL-000080", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Folic acid at 5 mg ti.d., B12 at 1000 mcg/day, iron at 15 mg/day and zinc at\n50 mg t.i.d. are effective adjuncts to avoidance diets." }, "WAL-CLM-DDDL-000081": { book: "dddl-3e-2011", claim_text: "For arsenic toxicity, intravenous (into a vein) chelation and oral colloidal/chelated selenium effectively remove the body's arsenic load.", conditions: ["arsenic_toxicity"], confidence: "high", dose: null, essentials: ["selenium"], id: "WAL-CLM-DDDL-000081", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "IV chelation is very effective in removing\nthe body load of arsenic, as is the oral use of colloidal or chelated selenium." }, "WAL-CLM-DDDL-000082": { book: "dddl-3e-2011", claim_text: "Magnesium deficiency produces malignant calcification of the elastic arteries and may be the cause of arteriosclerosis.", conditions: ["arteriosclerosis"], confidence: "high", dose: null, essentials: ["magnesium"], id: "WAL-CLM-DDDL-000082", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "Magnesium deficiencies produce \u201Cmalignant calcification\u201D of\nelastic arteries and are perhaps \u201Cthe cause\u201D of arteriosclerosis." }, "WAL-CLM-DDDL-000083": { book: "dddl-3e-2011", claim_text: "Vitamin D toxicity (angiotoxicity) targets the elastic arteries, causing fibrosis of the vascular smooth muscle and calcification of the vessel wall.", conditions: ["arteriosclerosis"], confidence: "medium", dose: null, essentials: ["vitamin-d"], id: "WAL-CLM-DDDL-000083", kind: "contraindication", other_substances: [], symptoms: [], tier: 1, verbatim: "The target tissue of vitamin D toxicity is the\nelastic arteries and the specific result is fibrosis of the vascular smooth\nmuscle and calcification of the blood vessel wall" }, "WAL-CLM-DDDL-000084": { book: "dddl-3e-2011", claim_text: "Age-related prostate enlargement (benign prostatic hyperplasia) is usually the result of a zinc deficiency.", conditions: ["benign_prostatic_hyperplasia"], confidence: "high", dose: null, essentials: ["zinc"], id: "WAL-CLM-DDDL-000084", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "As the prostate\nenlarges with age (usually the result of a zinc deficiency)" }, "WAL-CLM-DDDL-000085": { book: "dddl-3e-2011", claim_text: "Benign prostatic hyperplasia (enlarged prostate) treatment: zinc 50 mg three times daily, flaxseed-oil EFAs 9 g/day, high-fiber diet with pumpkin seeds, 300,000 International Units vitamin A as beta-carotene/day, and selenium 250 mcg three times daily.", conditions: ["benign_prostatic_hyperplasia"], confidence: "high", dose: null, essentials: ["zinc", "vitamin-a", "selenium"], id: "WAL-CLM-DDDL-000085", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Benign prostatic hypertrophy is treated with zinc at 50 mg t.i.d., essential\nfatty acids as flaxseed oil at 9 grams per day, high fiber diets including\npumpkin seeds and alfalfa, 300,000 IU vitamin A as beta carotene per day" }, "WAL-CLM-DDDL-000086": { book: "dddl-3e-2011", claim_text: "Bell's palsy treatment: B12 1,000 mcg/day to a total of 20,000 mcg, calcium/magnesium 2,000 and 800 mg/day, and essential fatty acids 5 g three times daily.", conditions: ["bells_palsy"], confidence: "high", dose: null, essentials: ["vitamin-b12", "calcium", "magnesium"], id: "WAL-CLM-DDDL-000086", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Treatment is B12 at 1000 mcg/day for a total of 20,000 mcg, calcium/\nmagnesium at 2,000 mg and 800 mg per day, essential fatty acids at 5 gm\nt.i.d." }, "WAL-CLM-DDDL-000087": { book: "dddl-3e-2011", claim_text: "Kidney/bladder stones are ironically caused by a calcium- and/or magnesium-deficient diet \u2014 the stone minerals come from your own bones.", conditions: ["kidney_stones", "bladder_stones"], confidence: "high", dose: null, essentials: ["calcium", "magnesium"], id: "WAL-CLM-DDDL-000087", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "BLADDER STONES (kidney stones, cystic calculi) are ironically caused\nby a calcium and/or a magnesium deficient diet" }, "WAL-CLM-DDDL-000088": { book: "dddl-3e-2011", claim_text: "For kidney stones, calcium and magnesium at 2,000 and 1,000 mg is imperative to stop calcium loss from the bones (plus reducing meat to fix the Ca:P ratio).", conditions: ["kidney_stones"], confidence: "high", dose: null, essentials: ["calcium", "magnesium"], id: "WAL-CLM-DDDL-000088", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Calcium and\nmagnesium at 2,000 mg and 1,000 mg is imperative to stop calcium loss\nfrom the bones." }, "WAL-CLM-DDDL-000089": { book: "dddl-3e-2011", claim_text: "Bleeding under the skin may indicate vitamin E or vitamin K deficiency (or excessive blood thinners).", conditions: [], confidence: "high", dose: null, essentials: ["vitamin-e", "vitamin-k"], id: "WAL-CLM-DDDL-000089", kind: "deficiency_sign", other_substances: [], symptoms: ["easy_bruising"], tier: 1, verbatim: "Bleeding under the skin may indicate vitamin E or vitamin K\ndeficiencies" }, "WAL-CLM-DDDL-000090": { book: "dddl-3e-2011", claim_text: "In a normal gradual menopause, the adrenals and liver increase female-hormone (estrogen) output to make up for lost ovarian function; insufficient output produces hot flashes and night sweats.", conditions: ["menopause"], confidence: "medium", dose: null, essentials: [], id: "WAL-CLM-DDDL-000090", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "the adrenals and liver increase their\noutput of female hormones (primarily estrogen) and make up the difference\nfrom the lost ovarian function." }, "WAL-CLM-DDDL-000091": { book: "dddl-3e-2011", claim_text: "Estrogen supplements should not be used in menopause \u2014 they increase the breast and uterine cancer induction risk.", conditions: ["menopause", "breast_cancer", "uterine_cancer", "cancer"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-DDDL-000091", kind: "contraindication", other_substances: [], symptoms: [], tier: 1, verbatim: "Estrogen supplements should not be used as\nthey increase the breast and uterine cancer induction risk." }, "WAL-CLM-DDDL-000092": { book: "dddl-3e-2011", claim_text: "Menopause support includes the baseline supplement program plus calcium and magnesium at 2,000 and 1,000 mg/day.", conditions: ["menopause"], confidence: "high", dose: null, essentials: ["calcium", "magnesium"], id: "WAL-CLM-DDDL-000092", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Use the base line supplement program, plus calcium and magnesium\nat 2,000 mg and 1,000 mg per day" }, "WAL-CLM-DDDL-000093": { book: "dddl-3e-2011", claim_text: "Colds are caused by more than 100 different viruses \u2014 which is why no vaccine has been made available.", conditions: ["common_cold"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-DDDL-000093", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "COLDS (nasal catarrh, coryza) are caused by more than 100 different\nviruses, this is why no vaccine has been made available." }, "WAL-CLM-DDDL-000094": { book: "dddl-3e-2011", claim_text: "Common-cold treatment: vitamin C to bowel tolerance, bioflavonoids 150 mg three times daily, garlic, the baseline supplement program, and chicken-rice soup.", conditions: ["common_cold"], confidence: "high", dose: null, essentials: ["vitamin-c"], id: "WAL-CLM-DDDL-000094", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Treatment of the \u201Ccommon cold\u201D should include vitamin C to bowel\ntolerance, bioflavonoids at 150 mg t.i.d., garlic, gelatin capsules t.i.d." }, "WAL-CLM-EPIGEN-000001": { book: "epigenetics", claim_text: `Wallach's epigenetic cornerstone: a healthy zygote and a properly functioning genome depend on the DNA having constant access to all 90 essential nutrients -- which he counts as 60 minerals, 16 vitamins, 12 amino acids, and 3 fatty acids -- each present in optimal amounts and in proper ratios to one another. The genes are not free-standing proteins that work in a vacuum; they require energy, raw materials, and on/off switching co-factors supplied by these nutrients. In his words: "To function properly, it is imperative for the DNA to constantly have access to all 90 essential nutrients (60 minerals, 16 vitamins, 12 amino acids and 3 fatty acids), and each one must be available in optimal amounts and in the proper ratios to each other."`, conditions: [], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000001", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "To function properly, it is imperative for the DNA\nto constantly have access to all 90 essential nutrients (60 minerals, 16 vitamins,\n12 amino acids and 3 fatty acids), and each one must be available in optimal\namounts and in the proper ratios to each other." }, "WAL-CLM-EPIGEN-000002": { book: "epigenetics", claim_text: 'Wallach holds that congenital events and birth defects of the central nervous system -- among them cerebral palsy, Down syndrome, neural tube defects, and cleft palate -- are for the most part manifestations of a maternal nutritional deficiency during a critical window of early embryonic development, and are therefore largely preventable with optimal preconception nutrition. He extends the same principle to behavioral, learning, and emotional defects such as dyslexia, attention-deficit/hyperactivity disorder, and autism. In his words: "Congenital events and birth defects of the central nervous system (those occurring in cerebral palsy, Down syndrome, hydroencephalaloceol, neural tube defects, gayness, etc.), for the most part are manifestations of a maternal nutritional deficiency during a certain point in time of early embryonic development."', conditions: ["birth_defects", "cerebral_palsy", "down_syndrome", "neural_tube_defects"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000002", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "Congenital events and birth defects of the central nervous system (those\noccurring in cerebral palsy, Down syndrome, hydroencephalaloceol, neural tube\ndefects, gayness, etc.), for the most part are manifestations of a maternal\nnutritional deficiency during a certain point in time of early embryonic\ndevelopment." }, "WAL-CLM-EPIGEN-000003": { book: "epigenetics", claim_text: 'Wallach teaches that type 2 diabetes is not a genetically-transmitted disease but a simple mineral deficiency, and that supplementing the 90 essential nutrients along with chromium and vanadium on an otherwise good diet will prevent and cure hypoglycemia, reactive hypoglycemia (which he equates with narcolepsy), hyperinsulinemia, and type 2 diabetes. In his words: "Since 1958 it has been well documented that supplementation of the 90 essential nutrients along with chromium and vanadium to an otherwise perfect diet will prevent and cure hypoglycemia, reactive hypoglycemia (narcolepsy), hyperinsulinemia, and type 2 diabetes."', conditions: ["diabetes", "hypoglycemia", "reactive_hypoglycemia", "narcolepsy", "hyperinsulinemia"], confidence: "high", dose: null, essentials: ["chromium", "vanadium"], id: "WAL-CLM-EPIGEN-000003", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Since 1958 it has been well documented that supplementation of the 90\nessential nutrients along with chromium and vanadium to an otherwise perfect\ndiet will prevent and cure hypoglycemia, reactive hypoglycemia (narcolepsy),\nhyperinsulinemia, and type 2 diabetes." }, "WAL-CLM-EPIGEN-000004": { book: "epigenetics", claim_text: 'Wallach identifies cystic fibrosis as a nutritional deficiency of the trace mineral selenium rather than a purely genetic disease -- a conclusion drawn from his 1977 discovery of cystic-fibrosis lesions in a selenium-deficient rhesus monkey -- and holds that it can be prevented, reversed, and cured with supplemental selenium. In his words: "As soon as Wallach revealed that CF was actually a nutritional deficiency of the trace-mineral selenium that could be prevented, reversed, and cured with supplemental selenium, he was summarily terminated from his position as a pathologist at the Yerkes facility in April of 1978."', conditions: ["cystic_fibrosis"], confidence: "high", dose: null, essentials: ["selenium"], id: "WAL-CLM-EPIGEN-000004", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "Cystic fibrosis (CF) is an important, potentially fatal disease of animals and\nhumans, which was originally thought to be transmitted by a simple Mendelian\ngenetic defect limited to white populations of Central and Eastern European\norigin; today CF has been diagnosed in virtually all peoples of the earth" }, "WAL-CLM-EPIGEN-000005": { book: "epigenetics", claim_text: `Wallach teaches that muscular dystrophy is a simple selenium-deficiency disease -- paralleling the 'white muscle disease' eliminated in livestock by selenium supplementation -- and that it is preventable and curable with a gluten-free diet plus a supplement program built on the 90 essential nutrients featuring extra selenium. In his words: "...MD is a simple selenium-deficiency disease and totally preventable and curable with a gluten-free diet, a supplement program built on the 90 essential nutrients and featuring extra selenium supplementation..."`, conditions: ["muscular_dystrophy"], confidence: "high", dose: null, essentials: ["selenium"], id: "WAL-CLM-EPIGEN-000005", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Muscular Dystrophy\n\nAffliction with Muscular dystrophy (MD) is another crime against the American\npeople by the medical doctors for reasons of money. If the total truth is that MD\nis a simple selenium-deficiency disease and totally preventable and curable with\na gluten-free diet, a supplement program built on the 90 essential nutrients and\nfeaturing extra selenium supplementation" }, "WAL-CLM-EPIGEN-000006": { book: "epigenetics", claim_text: 'Wallach holds that hypertrophic cardiomyopathy -- including the sudden cardiac death of athletes -- is Keshan disease, caused by a simple deficiency of the trace element selenium, and that supplementing a complete 90-nutrient program with extra selenium is protective. In his words: "In fact, hypertrophic cardiomyopathy, sudden heart death of athletes, is KSD and is caused by a simple deficiency of the trace element selenium. Supplement a complete 90 nutrient program with extra selenium and the athlete can live."', conditions: ["keshan_disease", "cardiomyopathy", "sudden_cardiac_death"], confidence: "high", dose: null, essentials: ["selenium"], id: "WAL-CLM-EPIGEN-000006", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "In fact, hypertrophic cardiomyopathy,\nsudden heart death of athletes, is KSD and is caused by a simple deficiency\nof the trace element selenium. Supplement a complete 90 nutrient program\nwith extra selenium and the athlete can live." }, "WAL-CLM-EPIGEN-000007": { book: "epigenetics", claim_text: 'Wallach classifies Kawasaki disease not as a genetic disease but as a congenital copper deficiency -- copper being required to build and maintain the elastic fibers of arteries, so its lack produces a coronary-artery aneurysm -- compounded by a streptococcal infection of that aneurysm site, and holds it is totally preventable with preconception supplementation of all 90 essential nutrients plus additional copper and antibiotics. In his words: "Kawasaki Disease is totally preventable with a preconception supplementation of all 90 essential nutrients, additional copper, and antibiotics."', conditions: ["kawasaki_disease"], confidence: "high", dose: null, essentials: ["copper"], id: "WAL-CLM-EPIGEN-000007", kind: "protocol", other_substances: ["antibiotics"], symptoms: [], tier: 1, verbatim: "Kawasaki Disease is totally preventable with a\npreconception supplementation of all 90 essential nutrients, additional copper,\nand antibiotics." }, "WAL-CLM-EPIGEN-000008": { book: "epigenetics", claim_text: `Wallach presents homosexuality as a congenital condition rather than a lifestyle choice: he attributes it to congenital events during embryonic development -- specifically a hypoplasia (underdevelopment) of the preoptic hypothalamus -- that cause the brain's perception of gender to diverge from the genetic gender recorded in the chromosomes (the Barr body, or female X chromosome). He places these congenital events within his broader thesis that such embryonic aberrations are nutritionally influenced and preventable with proper preconception nutrition. In his words: "...the genetic gender based on the presence of Barr bodies (the female X chromosome) in blood smears do not always coincide with the brain's perception of gender because of concurrent congenital events relating to hypoplasia of the preoptic hypothalamus."`, conditions: ["homosexuality"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000008", kind: "mechanism", other_substances: [], symptoms: [], tier: 2, verbatim: "the genetic gender based on the presence of Barr bodies (the\nfemale X chromosome) in blood smears do not always coincide with the\nbrain's perception of gender because of concurrent congenital events relating to\nhypoplasia of the preoptic hypothalamus." }, "WAL-CLM-EPIGEN-000009": { book: "epigenetics", claim_text: 'Wallach presents intersex conditions (the medical term for what was historically called hermaphroditism) as congenital sexual-organ defects that are present at birth and are related to mineral or vitamin deficiencies of the embryo -- citing John Money of Johns Hopkins, who estimated intersex conditions occur in as many as four percent of births. He holds that the social and surgical problems of intersex individuals could be entirely avoided by providing a proper and complete preconception nutritional program for the embryo. In his words: "However, the social and surgical problems of intersexuals could be totally avoided by providing a proper and complete preconception nutritional program for the embryo."', conditions: ["intersex"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000009", kind: "mechanism", other_substances: [], symptoms: [], tier: 2, verbatim: "However, the social and surgical problems of intersexuals could be totally\navoided by providing a proper and complete preconception nutritional program\nfor the embryo." }, "WAL-CLM-EPIGEN-000010": { book: "epigenetics", claim_text: `Wallach reframes congenital deafness as a nutritional-deficiency disease rather than a hereditary one: it is produced by a maternal manganese deficiency during pregnancy, and is therefore preventable with adequate preconception manganese. He makes the point while critiquing Alexander Graham Bell's belief in a 'genetics of deafness.' In Wallach's words: "He devoted his efforts in his senior years to the 'genetics of deafness.' In fact, congenital deafness is produced by a maternal manganese deficiency."`, conditions: ["deafness"], confidence: "high", dose: null, essentials: ["manganese"], id: "WAL-CLM-EPIGEN-000010", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "He devoted his efforts in his senior years to the \u201Cgenetics of deafness.\u201D In fact,\ncongenital deafness is produced by a maternal manganese deficiency." }, "WAL-CLM-EPIGEN-000011": { book: "epigenetics", claim_text: `Wallach rejects the genetic, lack-of-exercise, and overeating explanations for obesity and identifies it instead as a mineral-deficiency disease: the body's unmet mineral hunger manifests behaviorally as food cravings, binge eating, the 'munchies,' and pica (the eating of non-food items). The remedy is correcting the underlying mineral deficiency rather than relying on gastric bypass, calorie restriction, or willpower. He notes he and Ma first reviewed obesity in Rare Earths: Forbidden Cures (1994) and published their definitive findings in Hell's Kitchen (2006). In Wallach's words: "Obesity is not a genetically-generated disease, not a result of lack of exercise, and not a disease that can be attributed soley to overeating. Obesity is in fact caused by a deficiency of minerals that universally manifests symptomatically as cravings, binge eating, munchies and pica!"`, conditions: ["obesity"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000011", kind: "mechanism", other_substances: [], symptoms: ["pica"], tier: 1, verbatim: "Obesity is not a genetically-generated disease, not a result of lack of exercise,\nand not a disease that can be attributed soley to overeating. Obesity is in fact\ncaused by a deficiency of minerals that universally manifests symptomatically as\ncravings, binge eating, munchies and pica!" }, "WAL-CLM-EPIGEN-000012": { book: "epigenetics", claim_text: `Wallach frames dementia not as a single disease but as a minimum of four distinct nutritional diseases -- vascular dementia, Korsakoff's syndrome, Wernicke-Korsakoff's syndrome, and Alzheimer's disease -- each with its own deficiency basis and nutritional-therapy protocol; an individual may have some degree of two, three, or all four at the same time. In Wallach's words: "Dementia manifests itself as a minimum of four different diseases. Sometimes, individuals will have some degree of two, three, or all four of the classic dementias at the same time."`, conditions: ["dementia"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000012", kind: "definition", other_substances: [], symptoms: [], tier: 1, verbatim: "Dementia manifests itself as a minimum of four different diseases. Sometimes,\nindividuals will have some degree of two, three, or all four of the classic\ndementias at the same time" }, "WAL-CLM-EPIGEN-000013": { book: "epigenetics", claim_text: `Wallach's first of the four dementias: vascular dementia, which occurs when the cerebral arteries become obstructed by atherosclerosis and/or arteriosclerosis. He attributes the obstruction to inflammation of the arterial lining (intima) by the same forces that obstruct the coronary, ocular, and renal arteries -- low dietary antioxidant levels plus inflammatory foods (fried foods, processed meats, oils, and gluten). His nutritional-therapy approach: stop the ongoing inflammation with an elimination diet that avoids inflammatory foods, supplement with all 90 essential nutrients plus antioxidants, and provide significant vascular care. In Wallach's words: "Vascular dementia occurs when the cerebral arteries become obstructed with atherosclerosis and/or arteriosclerosis. The cause of these obstructions is inflammation of the arterial lining (intima) by the same forces that also obstruct coronary, ocular, and renal arteries."`, conditions: ["vascular_dementia", "dementia"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000013", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Vascular dementia occurs when the cerebral arteries become\nobstructed with atherosclerosis and/or arteriosclerosis. The cause of\nthese obstructions is inflammation of the arterial lining (intima) by the\nsame forces that also obstruct coronary, ocular, and renal arteries." }, "WAL-CLM-EPIGEN-000014": { book: "epigenetics", claim_text: `Wallach's second dementia: Korsakoff's syndrome, which he classifies as part of the Beriberi (thiamine, or vitamin B1, deficiency) family of diseases. He holds it is reversible by eliminating sugar, fried foods, processed meats, oils, and gluten from the diet and following a supplement program providing all 90 essential nutrients with a special emphasis on thiamine (vitamin B1). In Wallach's words: "The disease can be reversed by the elimination of sugar, fried foods, processed meats, oils, and gluten from the diet as well as a supplement program that provides all 90 essential nutrients with a special emphasis on the supplementation of thiamine..."`, conditions: ["korsakoffs_syndrome"], confidence: "high", dose: null, essentials: ["vitamin-b1"], id: "WAL-CLM-EPIGEN-000014", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Korsakoff\u2019s syndrome occurs as part of the Beriberi (thiamine or vitamin\n\nB1 deficiency) collection of diseases. The disease can be reversed by the\n\n\nelimination of sugar, fried foods, processed meats, oils, and gluten from\nthe diet as well as a supplement program that provides all 90 essential\nnutrients with a special emphasis on the supplementation of thiamine" }, "WAL-CLM-EPIGEN-000015": { book: "epigenetics", claim_text: `Wallach's third dementia: Wernicke-Korsakoff's syndrome (printed 'Wernecke-Korsakoff's'), which he describes as a two-part syndrome in which the patient is diagnosed with both Korsakoff's syndrome and multiple sclerosis (MS) simultaneously. He holds it is reversible by treating both: a dietary change to stop the ongoing inflammatory damage to the brain's myelin (as occurs in MS), the addition of 6-8 eggs per day to supply raw materials for myelin maintenance and repair, and a program of all 90 essential nutrients with special emphasis on antioxidants, including selenium. In Wallach's words: "The disease syndrome can be reversed by dealing with both diseases. To stop the ongoing inflammatory damage to the myelin of the brain (that occurs in MS) with a dietary change, add 6-8 eggs per day to provide raw materials to help support maintenance and repair of the myelin and supplement with all 90 essential nutrients with a special emphasis on antioxidants, including selenium."`, conditions: ["wernicke_korsakoff_syndrome", "multiple_sclerosis"], confidence: "high", dose: null, essentials: ["selenium"], id: "WAL-CLM-EPIGEN-000015", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Wernecke-Korsakoff's syndrome is a two-part disease syndrome in\n\nwhich the patient is diagnosed with both Korsakoff\u2019s syndrome and\nmultiple sclerosis (MS) simultaneously" }, "WAL-CLM-EPIGEN-000016": { book: "epigenetics", claim_text: `Wallach's fourth dementia: Alzheimer's disease, which he calls a 'physician-caused' disease -- produced by lowering the patient's dietary cholesterol and saturated fat, prescribing statin drugs, and directing patients to avoid vitamin and mineral supplements. His prevention/treatment protocol is the same anti-dementia regimen used for the other three dementias: no fried foods, no processed meats, no oils; 4-6 eggs per hundred pounds of body weight per day; avoidance of all statin drugs (he cites an April 2012 FDA warning that statin drugs increase the risk of dementia and type 2 diabetes); and DHA and EPA essential fatty acids (omega-3) to support production of the neurotransmitters of memory and cognition. He cites a Johns Hopkins randomized double-blind ten-year study, published in 2004 on nearly 5,000 people over age 65, showing that a special diet plus nutrient supplementation can reduce Alzheimer's risk by 78%. In Wallach's words: "Prevention of Alzheimer's has been documented by a Johns Hopkins randomized and double blind study on almost 5,000 people over the age of 65. The ten-year study published in 2004 demonstrated clearly that the consumption of a special diet, avoidance of certain foods and the supplementation of nutrients can reduce the risk of Alzheimer's disease by 78%!"`, conditions: ["alzheimers", "dementia"], confidence: "high", dose: null, essentials: ["omega-3"], id: "WAL-CLM-EPIGEN-000016", kind: "protocol", other_substances: [], symptoms: [], tier: 1, verbatim: "Prevention\nof Alzheimer's has been documented by a Johns Hopkins randomized\nand double blind study on almost 5,000 people over the age of 65.\nThe ten-year study published in 2004 demonstrated clearly that the\nconsumption of a special diet, avoidance of certain foods and the\nsupplementation of nutrients can reduce the risk of Alzheimer's disease\nby 78%!" }, "WAL-CLM-EPIGEN-000017": { book: "epigenetics", claim_text: `Search-only framework narrative. Wallach surveys how congenital birth defects ('monsters') were understood across the centuries -- from Renaissance omens and divine-punishment interpretations (the 1512 Monster of Ravenna; Ambroise Pare's 1573 catalogue of supposed causes), through the great teratological collections (Willem Vrolik's cyclops/holoprosencephaly specimens), to the modern recognition of chemical and drug teratogens exemplified by the 1961 thalidomide ('seal-limb') limb-defect epidemic. His thesis throughout is that most such congenital and central-nervous-system defects are, at root, manifestations of a maternal nutritional deficiency during early embryonic development, and are therefore preventable. In Wallach's words: "A catastrophic teratogenic event was reported in 1961. William McBride, an Australian physician, reported an uptick in the rate of babies born with congenitally deformed limbs. In just a few months, a German physician (Lenz), reported a series of similar births. Both doctors believed that the defects were caused by the use of a sedative (phtalimido-glutarimide) by the trade name Thalidomide (the third-best selling pharmaceutical in Europe)."`, conditions: ["birth_defects"], confidence: "medium", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000017", kind: "mechanism", other_substances: [], symptoms: [], tier: 2, verbatim: "A catastrophic teratogenic event was reported in 1961. William McBride,\nan Australian physician, reported an uptick in the rate of babies born with\ncongenitally deformed limbs. In just a few months, a German physician (Lenz),\nreported a series of similar births. Both doctors believed that the defects were\ncaused by the use of a sedative (phtalimido-glutarimide) by the trade name\nThalidomide (the third-best selling pharmaceutical in Europe)." }, "WAL-CLM-EPIGEN-000018": { book: "epigenetics", claim_text: `Search-only framework narrative. In the chapter's closing section, 'Minerals: The Currency of Life,' Wallach argues that the modern faith in genetic mapping is the latest in a series of medical 'discoveries of the century' (after germ theory and virology) that draw enormous research funding yet have not cured cancer, diabetes, or Alzheimer's. He restates the framework's core claim: chromosomes and genes have second-by-second requirements for minerals, trace minerals, rare-earth metals, vitamins, amino acids, and essential fatty acids, and the most common cause of birth defects worldwide is overt clinical deficiency of one or more of the 90 essential nutrients in the mother-to-be before conception and through the first 90 days of pregnancy. He points to the animal industry -- which has effectively eliminated birth defects, infertility, and 'genetic' disease in livestock and pets purely through optimal preconception nutrition -- as proof of concept. In Wallach's words: "However, the most common cause of birth defects in American babies and babies around the world are overt clinical deficiencies of one or more of the 90 essential nutrients of the mother-to-be and therefore of the embryo prior to conception and for the first 90 days of pregnancy!"`, conditions: ["birth_defects"], confidence: "medium", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000018", kind: "mechanism", other_substances: [], symptoms: [], tier: 2, verbatim: "However, the most common cause of birth defects in American babies and\nbabies around the world are overt clinical deficiencies of one or more of the\n90 essential nutrients of the mother-to-be and therefore of the embryo prior to\nconception and for the first 90 days of pregnancy!" }, "WAL-CLM-EPIGEN-000019": { book: "epigenetics", claim_text: `Wallach presents homosexuality as a congenital, prenatal biological event rather than a learned behavior or lifestyle choice. He traces a historical shift in thinking: from regarding homosexuality as an emotional or environmental aberration created by improper role models or parenting, to a "choice of sexual preference," and finally to what he frames as a preventable congenital event caused by a deficiency of minerals and/or vitamins in early pregnancy. He calls this a "180 degree change in thinking" that followed the discovery of consistent physical differences in the brains of homosexual men, and holds that the orientation is set early in the formation of the embryonic brain. In his words: "The current focus on the 'gay' phenomena has moved from that of a learned behavior or a 'lifestyle choice' to that of a prenatal biological event, in other words, a preventable congenital event caused by a deficiency of minerals and or vitamins in early pregnancy."`, conditions: ["homosexuality"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000019", kind: "mechanism", other_substances: [], symptoms: [], tier: 2, verbatim: "The current focus on the \u201Cgay\u201D phenomena has moved from that of a learned\nbehavior or a \u201Clifestyle choice\u201D to that of a prenatal biological event, in other\nwords, a preventable congenital event caused by a deficiency of minerals and or\nvitamins in early pregnancy." }, "WAL-CLM-EPIGEN-000020": { book: "epigenetics", claim_text: `Wallach defines "intersex" as the medical term for what was historically called hermaphroditism, and describes the classifications used: a female hermaphrodite may possess one testicle and one ovary; a male pseudo-hermaphrodite may have testicles and some female genitalia but lack ovaries; and a female pseudo-hermaphrodite may have ovaries and some male genital features but no testicles. He notes that a series of preventable embryologic congenital events can produce individuals who are asexual, neither male nor female, or both at once -- forming five commonly accepted classifications -- and adds that the variation is so wide that in 1969 Paul Guinet (Endocrine Clinic, Lyons, France) and Jacques Decount (Endocrine Clinic, Paris) listed 98 different types of true hermaphrodite. In his words: "In first discussing congenital events, 'intersex' is the medical term used to describe the term hermaphrodite. A female hermaphrodite might possess one testicle and one ovary, a male pseudo hermaphrodite could have testicles and some recognizable female genitalia but lack ovaries, and a female pseudo hermaphrodite may have ovaries and some noticeable features of male genitalia but no testicles."`, conditions: ["intersex"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000020", kind: "definition", other_substances: [], symptoms: [], tier: 2, verbatim: "In first discussing congenital events, \u201Cintersex\u201D is the medical term used\nto describe the term hermaphrodite. A female hermaphrodite might possess\none testicle and one ovary, a male pseudo hermaphrodite could have testicles\nand some recognizable female genitalia but lack ovaries, and a female pseudo\nhermaphrodite may have ovaries and some noticeable features of male genitalia\nbut no testicles." }, "WAL-CLM-EPIGEN-000021": { book: "epigenetics", claim_text: `In a historical and cultural survey, Wallach traces societal treatment of intersex and homosexual people across the centuries. He notes that the term "hermaphrodite" joins the Greek god Hermes and goddess Aphrodite; that Plato was the only recognized authority to surmise "three sexes (male, female, and hermaphrodite)" and gave the first interpretation of the origin of homosexual behavior; that in ancient times and as late as a 1600s Scottish case intersex people could be put to death (one hermaphrodite living as a woman was buried alive as a witch); and he cites the medical case literature -- Hugh H. Young's 1937 "Genital Abnormalities, Hermaphroditism and Related Adrenal Diseases" and the 1967 Dewhurst and Gordon work "The Intersexual Disorders." He also recounts how the high-profile sexual conversion of Christine Jorgenson, and the chromosome testing introduced at the 1972 Munich Olympic Games, brought the subject to public attention. In his words: "According to historians, Plato is the only recognized authority to have surmised that there were 'three sexes (male, female, and hermaphrodite).'"`, conditions: ["intersex", "homosexuality"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000021", kind: "quote", other_substances: [], symptoms: [], tier: 2, verbatim: 'According to historians, Plato is the only recognized authority to have\nsurmised that there were "three sexes (male, female, and hermaphrodite).\u201D' }, "WAL-CLM-EPIGEN-000022": { book: "epigenetics", claim_text: `Wallach cites neuroanatomical research as evidence that homosexuality reflects a congenital difference in brain structure. He notes that in the 1970s German doctors found an area of the preoptic hypothalamus abnormal in homosexual men; that Simon LeVay's autopsy studies found the preoptic area of the hypothalamus (which Wallach describes as the center of sexual appetite and sex drive) smaller in homosexual than in heterosexual men; and that the anterior commissure (a nerve-fiber bundle connecting the brain's two sides) differs in size as well. He acknowledges a limitation -- some men in LeVay's study had died of acquired immunodeficiency syndrome (AIDS), which can damage brain cells -- but notes other brain regions were unaffected. He adds that Roger Gorski's 1978 work at the University of California, Los Angeles found a prenatal testosterone surge stabilizes these cell populations in males. Wallach attributes the differences to a congenital malformation or biochemical deficiency event -- ultimately a congenital deficiency of minerals. In his words: "In autopsy studies, LeVay found that an area in the brain of the pre-optic area of the hypothalamus (center of sexual appetite and sex drive) is smaller in homosexual men than it is in heterosexual men."`, conditions: ["homosexuality"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000022", kind: "mechanism", other_substances: [], symptoms: [], tier: 2, verbatim: "In autopsy studies, LeVay found that an area in the brain of the pre-optic\narea of the hypothalamus (center of sexual appetite and sex drive) is smaller in\nhomosexual men than it is in heterosexual men." }, "WAL-CLM-EPIGEN-000023": { book: "epigenetics", claim_text: `Wallach argues that twin studies show homosexuality is congenital but not genetic. He cites Richard Pillard and Michael Bailey's finding that only 52 percent of the identical twins of homosexual men were themselves homosexual -- reasoning that a purely genetic trait would require 100 percent concordance -- with lower rates among fraternal and adopted brothers, and a parallel study of 147 homosexual women showing about 48 percent identical-twin concordance. He quotes geneticist Dean Hamer of the National Cancer Institute that "it is a mistake to think there is a gay gene," and concludes the consistent-but-incomplete twin concordance points to a congenital deficiency event during embryonic development rather than a genetic defect or a choice. In his words: "'It is a mistake to think there is a gay gene' says Dean Hamer, a geneticist at the National Cancer Institute."`, conditions: ["homosexuality"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000023", kind: "mechanism", other_substances: [], symptoms: [], tier: 2, verbatim: "\u201CIt is a mistake to think there is a gay gene\u201D says Dean Hamer, a geneticist at\nthe National Cancer Institute." }, "WAL-CLM-EPIGEN-000024": { book: "epigenetics", claim_text: 'Wallach reports prevalence figures for homosexuality and ties their rise to declining soil minerals. He cites the Alfred Kinsey Reports of the 1940s-50s (4 to 10 percent of the American population), psychiatrist Richard Pillard (4 percent of United States males and 2 to 3 percent of females), and overseas figures (possibly 25 percent in Great Britain in the 1990s). He argues the gradual increase in homosexuality in America and other industrialized nations parallels the gradual decrease in the mineral content of farm and range soils, and therefore of the food supply. He also notes that "gay" behavior occurs in animals kept in same-sex groups through puberty, similar to opportunistic behavior seen in prison. In his words: "The gradual increase in the percentage of gays in America and other industrialized nations of the world parallels the gradual decrease in the mineral content in our farm and range soils and therefore a decrease in the mineral content of our food supply."', conditions: ["homosexuality"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000024", kind: "prevalence", other_substances: [], symptoms: [], tier: 2, verbatim: "The gradual increase in the percentage of gays in America and other\nindustrialized nations of the world parallels the gradual decrease in the mineral\ncontent in our farm and range soils and therefore a decrease in the mineral\ncontent of our food supply." }, "WAL-CLM-EPIGEN-000025": { book: "epigenetics", claim_text: 'Wallach draws on veterinary and animal evidence to support his thesis that intersex conditions arise from embryonic nutritional deficiency. He notes that veterinarians routinely see unusual sexual anatomy and congenital defects in animals resulting from embryonic nutritional deficiencies, and that every known congenital defect of the human sexual organs has been recorded in animals. He cites the "freemartin" -- an infertile, masculinized female calf born as the fraternal twin of a male (about 80 percent of cases in cattle) -- and observes that in litters competing for limited nutrition, the more limited the nutrition, the more numerous and severe the birth defects, so multiple-birth embryos (which compete for resources) show more congenital defects than single embryos. In his words: "Veterinarians have a lot of experience with normal animals that have unusual sexual anatomy and also abnormal congenital defects as a result of embryonic nutritional deficiencies."', conditions: ["intersex"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000025", kind: "mechanism", other_substances: [], symptoms: [], tier: 2, verbatim: "Veterinarians have a lot of experience with normal animals that have unusual\nsexual anatomy and also abnormal congenital defects as a result of embryonic\nnutritional deficiencies." }, "WAL-CLM-EPIGEN-000026": { book: "epigenetics", claim_text: 'Wallach reports that, in his own interviews with hundreds of homosexual men and women, in every case the mother had been in nutritional distress during the pregnancy -- citing gluten intolerance (reducing absorption efficiency), alcoholism, low income with reduced access to healthy food, or failure to use prenatal vitamins and minerals. He adds that his survey found these individuals knew of their orientation between the ages of six and ten, which he takes as evidence that it is driven by a congenital event in brain development rather than a choice and therefore cannot be "prayed away" or "coached away." He concludes that the congenital hermaphrodite, the intersexual, and the homosexual embryo could all be prevented with complete preconception nutrition -- the 90 essential nutrients including minerals (zinc, manganese, magnesium, gallium, copper), vitamins (vitamin B12, folic acid, vitamin A), amino acids, and essential fatty acids. In his words: "Wallach has interviewed hundreds of gay men and women and found that in each case the mother of the gay male or female was in nutritional distress during their pregnancy."', conditions: ["homosexuality"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000026", kind: "personal_anecdote", other_substances: [], symptoms: [], tier: 2, verbatim: "Wallach has interviewed hundreds of gay men and women and found that\nin each case the mother of the gay male or female was in nutritional distress\nduring their pregnancy." }, "WAL-CLM-EPIGEN-000027": { book: "epigenetics", claim_text: `Wallach attacks the 'Quackbuster' movement -- a private group of physicians who, he says, organized to destroy legitimate alternative-medicine competition to the medical monopoly. He names its founder Victor Herbert, MD (who titled it the Committee Against Medical Fraud), along with John Renner, MD, William Jarvis, MD, and Stephan Barret, MD. He rebuts their central claim -- voiced by Victor Herbert -- that healthy adults eating a varied diet already get all the vitamins and minerals they need, countering that you cannot guarantee optimal micro- and macro-nutrient intake even by 'eating well': the animal-feed industry adds the full mix of all 90 essential nutrients for maximum health, while an April 2012 Food Chemistry report found commercial baby foods contain less than 20% of an infant's minimum daily requirements of minerals and vitamins. In his words: 'False, dangerous and criminal advice is given to the American public by the ignorant group known as "Quack Busters," who are doctors who joined together to destroy legitimate alternative competition to the medical monopoly.'`, conditions: [], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000027", kind: "quote", other_substances: [], symptoms: [], tier: 2, verbatim: "False, dangerous and criminal advice is given to the American public by the\nignorant group known as \u201CQuack Busters,\u201D who are doctors who joined together\nto destroy legitimate alternative competition to the medical monopoly." }, "WAL-CLM-EPIGEN-000028": { book: "epigenetics", claim_text: "Wallach cites a 1990 survey by Lucian Lepe, head of the Department of Public Health at Harvard Medical School, which sought the longest-living county in America so its healthcare practices could be copied nationwide. What Lepe found was that the longest-living counties clustered in the mid-west, upper mid-west, and plains states among people of Scandinavian heritage -- dairy farmers who cooked by poaching, stewing, roasting, grilling, and baking -- while the shortest-living counties were the old Confederate states and Indian reservations west of the Mississippi, where everything was fried, forming America's heart-attack, stroke, diabetes, obesity, and cancer belt. Because all counties had equal access to healthcare (even the uninsured, through Medicaid), Wallach concludes it was diet, not medical technology, that added or subtracted years of life -- underscored by Philadelphia County having the most doctors, hospitals, and health funding yet the worst health of any American county. In his words: 'What Lepe found, however, was that the counties with the longest-living people in America were clustered in the mid-west, the upper mid-west and the plains states. Their common heritage was Scandinavian.'", conditions: [], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000028", kind: "prevalence", other_substances: [], symptoms: [], tier: 2, verbatim: "What Lepe found, however, was that the counties with the longest-living\npeople in America were clustered in the mid-west, the upper mid-west and the\nplains states. Their common heritage was Scandinavian." }, "WAL-CLM-EPIGEN-000029": { book: "epigenetics", claim_text: "Wallach explains that low stomach acid (hypochlorhydria) undermines digestion and nutrient absorption. The acid-manufacturing chief cells of the stomach make hydrochloric acid from sodium chloride (table salt), and that stomach acid is needed to keep the stomach environment sterile -- below a pH of 2.0, preventing the overgrowth of bacteria, viruses, yeast, and fungus, gastric fermentation, and reflux -- to activate the 'intrinsic factor' required for vitamin B12 absorption, to activate the protein-digesting enzyme pepsin, and to facilitate the absorption of minerals. When stomach acid is too low, the absorption of vitamin B12, proteins, and minerals fails. In his words: 'The raw material for the Chief Cells, the acid-manufacturing cells of the stomach, to make hydrochloric acid is NaCl, which is salt. Stomach acid is required to keep the stomach environment sterile and free of bacteria, viruses, yeast, and fungus.'", conditions: ["hypochlorhydria"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000029", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "There are two major issues that have to be considered to ensure optimal\nabsorption: hypochlorhydria (i.e,, low stomach acid levels) and gluten intolerance:\n\nHypochlorhydria\n\nThe raw material for the Chief Cells, the acid-manufacturing cells of the\nstomach, to make hydrochloric acid is NaCl, which is salt. Stomach acid is\nrequired to keep the stomach environment sterile and free of bacteria, viruses,\nyeast, and fungus." }, "WAL-CLM-EPIGEN-000030": { book: "epigenetics", claim_text: "Wallach frames gluten intolerance not as an allergy but as a 'contact enteritis' -- an irritant reaction of the small-grain proteins on the gut lining, analogous to the contact dermatitis poison ivy causes on skin (no one is allergic to poison ivy, yet nearly everyone is intolerant of it). The gastrointestinal damage from this gluten-contact enteritis includes celiac disease, diverticulitis, appendicitis, irritable bowel syndrome, inflammatory bowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease, gastritis, bloating, and reflux. The gradual, progressive loss of intestinal villi it causes produces malabsorption and, through it, a wide range of nutritional-deficiency diseases -- so the corrective action is to avoid gluten. In his words: 'The gastrointestinal damage that is produced by the gluten-contact enteritis includes celiac disease (wheat allergy that occurs concurrently with contact enteritis), diverticulitis, appendicitis, irritable bowel syndrome, inflammatory bowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease, gastritis, bloating, and reflux.'", conditions: ["celiac_disease", "diverticulitis", "irritable_bowel_syndrome", "colitis", "crohns_disease", "bloating", "malabsorption"], confidence: "high", dose: null, essentials: [], id: "WAL-CLM-EPIGEN-000030", kind: "mechanism", other_substances: [], symptoms: [], tier: 1, verbatim: "includes celiac disease (wheat allergy that occurs concurrently with contact\nenteritis), diverticulitis, appendicitis, irritable bowel syndrome, inflammatory\nbowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease,\ngastritis, bloating, and reflux.\n\nThe gradual and progressive loss of intestinal villi as a result of contact\nenteritis produces a kaleidoscope of nutritional-deficiency diseases as a result\nof malabsorption" }, "WAL-CLM-EPIGEN-000031": { book: "epigenetics", claim_text: "Vitamin A (retinol, with beta-carotene as its fat-soluble precursor) is required for vision and night vision, healthy skin and mucous membranes, bones and teeth, and it lowers the risk of epithelial cancers. Wallach lists the health problems of vitamin A deficiency: night blindness (nyctalopia), conjunctivitis, xerophthalmia, keratomalacia (keratoconus, corneal ulcers), infertility, birth defects, depression, a depressed immune system, osteopenia/osteoporosis/osteoarthritis/osteomalacia, failure to thrive with stunted growth, acne, dermatitis (dry skin, keratitis), hyperkeratosis ('goose flesh'), ichthyosis (shark skin, Darier's disease), and increased cancer risk. In his words: 'Vitamin A-deficiency health problems include: Night blindness (Nyctalopia), Conjunctivitis, Xerophthalmia, Keratomalacia (Keratoconus - corneal ulcers), Infertility, Birth defects.'", conditions: ["night_blindness", "conjunctivitis", "xerophthalmia", "keratomalacia", "corneal_ulcers", "infertility", "birth_defects", "depression", "immune_depression", "osteoporosis", "osteoarthritis", "osteomalacia", "failure_to_thrive", "acne", "dermatitis", "ichthyosis", "cancer", "arthritis"], confidence: "high", dose: null, essentials: ["vitamin-a"], id: "WAL-CLM-EPIGEN-000031", kind: "deficiency_sign", other_substances: [], symptoms: ["hyperkeratosis", "dry_skin"], tier: 1, verbatim: "Vitamin A-deficiency health problems include:\n\nNight blindness (Nyctalopia)\nConjunctivitis\n\nXerophthalmia\n\nKeratomalacia (Keratoconus \u2014 corneal ulcers)\nInfertility\n\nBirth defects\n\nDepression\n\nDepressed immune system\n\nOsteopenia, osteoporosis, osteoarthritis, osteomalacia\nFailure to thrive, stunted growth\n\nAcne\n\nDermatitis (dry skin, keratitis, etc.)\n\nHyperkeratosis (\u201Cgoose flesh\u201D)\n\nIchthyosis (shark skin, Darier's disease, etc.)\n\nIncreased cancer" }, "WAL-CLM-EPIGEN-000032": { book: "epigenetics", claim_text: "Vitamin D is required for the absorption, metabolism, and proper deposition of calcium and phosphorus in the bones and teeth, and works hand-in-hand with parathyroid hormone. Wallach calls the modern universal vitamin D deficiency a 'physician-caused disease' -- a perfect storm created by medical advice to avoid the sun, wear sunblock and covering clothing, avoid dietary cholesterol (egg yolks, chicken skin, dairy, saturated fats), and skip vitamin-mineral supplements. He lists the health problems of vitamin D deficiency: facial tics and Tourette's syndrome, twitches and muscle cramps, tetany (full-body cramp) and convulsions, childhood rickets (rachitic rosary, bowed legs, knock-knees, pigeon chest), profuse sweating, restless leg syndrome, enlarged wrists, osteopenia/osteoporosis, periodontal disease, arthritis/osteoarthritis/degenerative 'bone-to-bone' arthritis, bone spurs, kidney stones, uterine fibroids, and a higher risk of cancer. In his words: 'Vitamin D-deficiency health problems include: Facial tics, Tourette's syndrome; Twitches, muscle cramps; Tetany (full body cramp), convulsions.'", conditions: ["tourette_syndrome", "muscle_cramps", "tetany", "convulsions", "rickets", "restless_leg_syndrome", "osteoporosis", "periodontal_disease", "arthritis", "osteoarthritis", "bone_spurs", "kidney_stones", "uterine_fibroids"], confidence: "high", dose: null, essentials: ["vitamin-d"], id: "WAL-CLM-EPIGEN-000032", kind: "deficiency_sign", other_substances: [], symptoms: ["bow_legs", "knock_knees", "profuse_sweating"], tier: 1, verbatim: `Facial tics, Tourette's syndrome
 Twitches, muscle cramps
@@ -9440,16 +25040,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
 
   // assets/js/src/views/knowledge.ts
   function readProducts() {
-    const el = document.getElementById("regimen-label-lookup");
-    if (el === null) {
-      return [];
-    }
-    let parsed;
-    try {
-      parsed = JSON.parse(el.textContent ?? "{}");
-    } catch {
-      return [];
-    }
+    const parsed = regimen_label_lookup_default;
     let root = parsed;
     if (parsed !== null && typeof parsed === "object" && "products" in parsed) {
       root = parsed.products;
@@ -10267,7 +25858,7 @@ Technical:
 - views/knowledge-corpus.ts \u2014 isFig81Row(claim) detects a base-line row via dose.for_condition === "base-line supplement program (true supplement need)", already projected into the embed; hits exactly the 33 Fig 8-1 rows (all lets-play-doctor). Deliberately NOT the \`dose-table\` tag: it is overloaded (dddl uses it for prose maintenance doses like germanium) and tags aren't projected into corpus-embed.json at all. renderFig81Legend() emits static column labels only (no numeric data crosses into the view \u2014 \xA700.A). renderCorpusClaim() gains a table branch: Fig 8-1 rows render glossify(verbatim) WITHOUT collapseWS (keeping source newlines) under the legend; every other claim collapses hard-wraps to one line exactly as before.
 - styles/drawer-knowledge.css \u2014 .kd-claim__verbatim--rows (JetBrains Mono, font-style normal, white-space: pre-line so intra-row OCR spacing collapses but the row newline breaks); .kd-claim__legend / __legend-eyebrow / __legend-cols (accent-wash caption box, mono micro labels).
 - Verification: node tools/build.mjs OK (tsc --noEmit + esbuild); eslint clean on knowledge-corpus.ts; invariants 38/38; render_probe_knowledge PASS, 0 page errors; headless live-DOM dump confirmed the legend on exactly 33 LETS claims, verbatim textContent byte-faithful ("...500 to 3,000 mcg\\nCALCIUM 800 mg..."), computed white-space=pre-line. Luneth visually signed off.
-- Deferred (Luneth): the two-row verbatim (each row quoted with the next) + residual formatting go to the end-of-build cleanup sweep. True column vertical-alignment intentionally not attempted \u2014 parsing ranges (e.g. "3 to 4 mg") to align columns could misalign and show a wrong dose (\xA700.A hazard); the legend decodes reading order safely instead.` }];
+- Deferred (Luneth): the two-row verbatim (each row quoted with the next) + residual formatting go to the end-of-build cleanup sweep. True column vertical-alignment intentionally not attempted \u2014 parsing ranges (e.g. "3 to 4 mg") to align columns could misalign and show a wrong dose (\xA700.A hazard); the legend decodes reading order safely instead.` }, { id: "lg_mr8ergwx_azggbx", ts: "2026-07-05T18:14:18.849102-05:00", surface: "dashboard/regimen+knowledge", kind: "round-close", summary: "Phase C3: product-vault embed (regimen-label-lookup) now generates deterministically from eden-catalog.json + loads via esbuild import (inline blocks deleted, -419 KB); retired the version-stamp eden_embeds_match_canonical for content-gating. Board 38->37.", detail: "The Regimen Full-edit product picker and the Knowledge Products tab read their 201-product vault from a 302 KB JSON block baked directly into dashboard.html, written by eden_build.py and guarded only by a weak check that the block's version NUMBER matched the catalog (it could pass even if the content had drifted). C3 pulls that data into the clean pipeline: a new generator derives it from the sealed product catalog, writes it to a data file, and the app imports that file the same way it already imports the Wallach corpus and the coverage targets. The old block is gone, plus a second 116 KB block (goal-recommendations-data) that nothing in the app was reading. Nothing looks different \u2014 the 201 products are byte-for-byte the same.\n\nTechnical:\n- NEW eden/tools/products_embed.py \u2014 build_embed() (pure) + write_embed() (safe_write \xA717) derive dashboard/assets/data/regimen-label-lookup.json from eden/eden-catalog.json. DETERMINISTIC: the artifact carries NO timestamp (the retired eden_build.py stamped generated_at, which is exactly why the old version-stamp gate existed) so derived_artifacts_fresh can content-compare a fresh re-derive to disk each run. TRANSITIONAL source eden-catalog.json; Phase F swaps to the Products pillar with no shape change (same pattern targets_derive uses).\n- eden/derived/MANIFEST.json \u2014 +1 artifact row; build_embeds.py now regenerates 3 artifacts and derived_artifacts_fresh content-gates all 3 ('all 3 derived artifact(s) in sync').\n- D1 migration: views/regimen.ts::readVault + views/knowledge.ts::readProducts replaced getElementById('regimen-label-lookup') + JSON.parse with `import regimenLabelLookup from '../../../data/regimen-label-lookup.json'` (esbuild JSON import, mirroring coverage-layout-data.json). Same ProductsLookupSchema + RegimenVaultEntry / ProductEntry per-entry validation.\n- dashboard.html: deleted the inline <script type=application/json id=regimen-label-lookup> (302 KB) and the DEAD id=goal-recommendations-data (116 KB, zero src/ consumers; Luneth approved deleting it now). Shed 419 KB; safe_write dashboard.html discipline checks passed.\n- RETIRED eden_embeds_match_canonical: removed the Invariant registration, check_eden_embeds_match_canonical, and trimmed the section comment (keeping a historical note). It was a version-STAMP gate over eden_build's embeds; the product embed is now content-gated by derived_artifacts_fresh (a real freshness proof). Board 38->37.\n- Fidelity proof: a standalone re-derive from eden-catalog.json produced products byte-equal to the old live inline block (201 products), so the migration changed the data SOURCE, not the data.\n- Verify: node tools/build.mjs OK (tsc --noEmit + esbuild); eslint clean on both views; invariants 37/37; render_probe_knowledge (Products vault real, 201), render_probe_adopt, render_probe_seeded, render_probe_scan all PASS with 0 page errors.\n- Deferrals: (a) main.js gzipped 704 KB exceeds the 250 KB budget, but that is PRE-EXISTING (corpus-embed.json ~1.6 MB dominates); moving the vault into the bundle is net-neutral on total shipped bytes (dashboard.html shed 419 KB) and is what D1 intends \u2014 the lazy-loaded chunk split is the blueprint's eventual mitigation. (b) the inline id=essentials-targets-data block (96 KB) is now dead (coverage.ts uses the esbuild import) \u2014 a C2 leftover, left for Phase D's wholesale inline-embed deletion. (c) eden_build.py, tools/build_regimen_label_lookup.py, and knowledge/products-db.json are now vestigial for this artifact and retire with eden-catalog.json in Phase D/F." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -10900,28 +26491,20 @@ Technical:
       return cachedVault;
     }
     const m = /* @__PURE__ */ new Map();
-    const el = typeof document === "undefined" ? null : document.getElementById("regimen-label-lookup");
-    if (el !== null) {
-      let parsed;
-      try {
-        parsed = JSON.parse(el.textContent ?? "{}");
-      } catch {
-        parsed = {};
-      }
-      let root = parsed;
-      if (parsed !== null && typeof parsed === "object" && "products" in parsed) {
-        root = parsed.products;
-      }
-      const rec = ProductsLookupSchema.safeParse(root);
-      if (rec.success) {
-        for (const value of Object.values(rec.data)) {
-          const candidates = Array.isArray(value) ? value : [value];
-          for (const candidate of candidates) {
-            const r = RegimenVaultEntrySchema.safeParse(candidate);
-            const nm = r.success ? r.data.canonical_name ?? r.data.name : void 0;
-            if (typeof nm === "string" && nm.length > 0 && r.success) {
-              m.set(nm.toLowerCase(), r.data);
-            }
+    const parsed = regimen_label_lookup_default;
+    let root = parsed;
+    if (parsed !== null && typeof parsed === "object" && "products" in parsed) {
+      root = parsed.products;
+    }
+    const rec = ProductsLookupSchema.safeParse(root);
+    if (rec.success) {
+      for (const value of Object.values(rec.data)) {
+        const candidates = Array.isArray(value) ? value : [value];
+        for (const candidate of candidates) {
+          const r = RegimenVaultEntrySchema.safeParse(candidate);
+          const nm = r.success ? r.data.canonical_name ?? r.data.name : void 0;
+          if (typeof nm === "string" && nm.length > 0 && r.success) {
+            m.set(nm.toLowerCase(), r.data);
           }
         }
       }

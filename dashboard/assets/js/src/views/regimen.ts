@@ -19,6 +19,7 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
+import regimenLabelLookup from '../../../data/regimen-label-lookup.json';
 import { on } from '../core/events.js';
 import {
   ProductsLookupSchema,
@@ -483,29 +484,22 @@ function readVault(): Map<string, RegimenVaultEntry> {
     return cachedVault;
   }
   const m = new Map<string, RegimenVaultEntry>();
-  const el = typeof document === 'undefined' ? null : document.getElementById('regimen-label-lookup');
-  if (el !== null) {
-    let parsed: unknown;
-    try {
-      parsed = JSON.parse(el.textContent ?? '{}');
-    }
-    catch {
-      parsed = {};
-    }
-    let root: unknown = parsed;
-    if (parsed !== null && typeof parsed === 'object' && 'products' in parsed) {
-      root = parsed.products;
-    }
-    const rec = ProductsLookupSchema.safeParse(root);
-    if (rec.success) {
-      for (const value of Object.values(rec.data)) {
-        const candidates = Array.isArray(value) ? value : [value];
-        for (const candidate of candidates) {
-          const r = RegimenVaultEntrySchema.safeParse(candidate);
-          const nm = r.success ? r.data.canonical_name ?? r.data.name : undefined;
-          if (typeof nm === 'string' && nm.length > 0 && r.success) {
-            m.set(nm.toLowerCase(), r.data);
-          }
+  // Product vault inlined via esbuild JSON import (Phase C3 / D1 — replaces the
+  // getElementById('regimen-label-lookup') read of the now-retired inline block).
+  const parsed: unknown = regimenLabelLookup;
+  let root: unknown = parsed;
+  if (parsed !== null && typeof parsed === 'object' && 'products' in parsed) {
+    root = parsed.products;
+  }
+  const rec = ProductsLookupSchema.safeParse(root);
+  if (rec.success) {
+    for (const value of Object.values(rec.data)) {
+      const candidates = Array.isArray(value) ? value : [value];
+      for (const candidate of candidates) {
+        const r = RegimenVaultEntrySchema.safeParse(candidate);
+        const nm = r.success ? r.data.canonical_name ?? r.data.name : undefined;
+        if (typeof nm === 'string' && nm.length > 0 && r.success) {
+          m.set(nm.toLowerCase(), r.data);
         }
       }
     }

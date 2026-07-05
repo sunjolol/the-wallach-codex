@@ -33,6 +33,17 @@
         "knowledge/essentials-targets.json"
       ],
       "note": "The Coverage targets DB (state/coverage.ts esbuild JSON import). Numeric targets are Wallach-ONLY (R2), sourced from base-line supplement-program dose claims + carrying source_claim_id (gated by amounts_wallach_only). kind + wallach_stance are read TRANSITIONALLY from the hand-file knowledge/essentials-targets.json (NO amount is taken from it); Phase D moves the stance to the prose store, makes verbatim a claim pointer, and deletes that hand-file."
+    },
+    {
+      "artifact": "dashboard/assets/data/regimen-label-lookup.json",
+      "generator": "eden/tools/products_embed.py",
+      "build_fn": "build_embed",
+      "write_fn": "write_embed",
+      "compare": "json",
+      "inputs": [
+        "eden/eden-catalog.json"
+      ],
+      "note": "The product-vault embed (regimen-label-lookup) read by views/regimen.ts (Full-edit) + views/knowledge.ts (Products tab) via esbuild JSON import. Phase C3 migrated it off the inline dashboard.html <script> block (D1) and retired the version-stamp eden_embeds_match_canonical (this content gate replaces it). TRANSITIONAL source eden/eden-catalog.json; Phase F swaps to the Products pillar. Deterministic (NO timestamp) so build_fn byte-compares to disk."
     }
   ]
 }

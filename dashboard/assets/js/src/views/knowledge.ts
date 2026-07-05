@@ -24,6 +24,7 @@
  */
 
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
+import regimenLabelLookup from '../../../data/regimen-label-lookup.json';
 import { on as onEvent } from '../core/events.js';
 import {
   CoverageLayoutSchema,
@@ -61,21 +62,12 @@ type Tab = 'corpus' | 'essentials' | 'conditions' | 'products' | 'doctrine';
 // ─── Data readers — Zod-validated at the parse boundary ───────────────────
 
 function readProducts(): ProductEntry[] {
-  const el = document.getElementById('regimen-label-lookup');
-  if (el === null) {
-    return [];
-  }
-  let parsed: unknown;
-  try {
-    parsed = JSON.parse(el.textContent ?? '{}');
-  }
-  catch {
-    return [];
-  }
-  // Mirror state regimen's readVault: the embed may wrap the map under a
-  // `products` key, and the vault keys its display name as `canonical_name`
-  // (not always `name`). Walk every value, resolve canonical_name ?? name,
-  // and dedup by lowercased name so the same product never lists twice.
+  // Product vault inlined via esbuild JSON import (Phase C3 / D1 — replaced the
+  // getElementById('regimen-label-lookup') read of the now-retired inline block).
+  // The artifact wraps the map under a `products` key, and the vault keys its
+  // display name as `canonical_name` (not always `name`); walk every value,
+  // resolve canonical_name ?? name, dedup by lowercased name below.
+  const parsed: unknown = regimenLabelLookup;
   let root: unknown = parsed;
   if (parsed !== null && typeof parsed === 'object' && 'products' in parsed) {
     root = parsed.products;

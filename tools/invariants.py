@@ -354,13 +354,13 @@ def check_no_native_dialogs():
 # ---------------------------------------------------------------------------
 # Eden — sealed catalog architecture (Round 157 / 2026-06-20)
 # ---------------------------------------------------------------------------
-# Two invariants that hold the sealed garden together:
-#   1. check_eden_hash_integrity — actual SHA-256 of eden-catalog.json must
-#      match the locked golden hash. Truth anchor: math (deterministic hash).
-#   2. check_eden_embeds_match_canonical — the three dashboard embeds
-#      (regimen-label-lookup, goal-recommendations-data, REGIMEN_BASE_DATA
-#      .recommended) must carry the same eden_version as the canonical
-#      catalog. Drift = loud failure.
+# The sealed-catalog integrity anchor:
+#   check_eden_hash_integrity — actual SHA-256 of eden-catalog.json must match
+#   the locked golden hash. Truth anchor: math (deterministic hash).
+# (The former check_eden_embeds_match_canonical — a version-STAMP gate over the
+#  dashboard embeds — was RETIRED in Phase C3: the product embed now derives
+#  through the manifest and is content-gated by derived_artifacts_fresh, a real
+#  freshness proof rather than a stamp.)
 def check_eden_hash_integrity():
     """Round 157 — Eden truth anchor. Computes SHA-256 of eden-catalog.json,
     compares against eden-catalog.golden.sha256. Identical = pass. Any drift
@@ -389,55 +389,6 @@ def check_eden_hash_integrity():
             f"OR revert the catalog change."
         )
     return True, f"Eden hash matches golden ({actual[:16]}...)"
-
-
-def check_eden_embeds_match_canonical():
-    """Round 157 — verifies dashboard.html\'s three Eden-derived embeds carry
-    the same eden_version as eden-catalog.json. Catches the case where the
-    catalog was updated but eden_build.py wasn\'t run to refresh the embeds."""
-    import re, json
-    catalog_path = ROOT / "eden" / "eden-catalog.json"
-    dashboard = ROOT / "dashboard" / "dashboard.html"
-    if not catalog_path.exists() or not dashboard.exists():
-        return True, "Eden or dashboard not installed (bootstrap-guard)"
-    try:
-        catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as e:
-        return False, f"eden-catalog.json parse error: {e}"
-    expected_version = catalog.get("eden_version")
-    if expected_version is None:
-        return True, "catalog has no eden_version yet (bootstrap-guard)"
-    html = dashboard.read_text(encoding="utf-8")
-    # Check the two JSON-embed blocks (REGIMEN_BASE_DATA is JS object literal,
-    # not a JSON embed; its eden version stamp lives on individual items)
-    drift = []
-    for block_id in ("regimen-label-lookup", "goal-recommendations-data"):
-        m = re.search(
-            r'<script\s+type="application/json"\s+id="' + re.escape(block_id) + r'"[^>]*>(.*?)</script>',
-            html, re.DOTALL,
-        )
-        if not m:
-            drift.append(f"embed '{block_id}' missing from dashboard.html")
-            continue
-        try:
-            embed = json.loads(m.group(1))
-        except json.JSONDecodeError:
-            drift.append(f"embed '{block_id}' is not valid JSON")
-            continue
-        # eden_version may live at top level OR inside _meta
-        embed_v = embed.get("eden_version")
-        if embed_v is None:
-            embed_v = (embed.get("_meta") or {}).get("eden_version")
-        if embed_v is None:
-            embed_v = embed.get("_eden_version")
-        if embed_v is None:
-            drift.append(f"embed '{block_id}' has no eden_version stamp (pre-Eden state — run eden_build.py)")
-            continue
-        if embed_v != expected_version:
-            drift.append(f"embed '{block_id}' eden_version {embed_v} != canonical {expected_version}")
-    if drift:
-        return False, "; ".join(drift)
-    return True, f"all 2 Eden-derived embeds carry eden_version {expected_version}"
 
 
 # ---------------------------------------------------------------------------
@@ -1653,14 +1604,6 @@ INVARIANTS = [
         truth_anchor="SHA-256 of eden/eden-catalog.json vs golden file",
         severity="critical",
         lesson_ref="Round 157 — Eden sealed-canonical pattern; math doesn't lie",
-    ),
-    Invariant(
-        name="eden_embeds_match_canonical",
-        description="dashboard Eden-derived embeds (regimen-label-lookup, goal-recommendations-data, REGIMEN_BASE_DATA.recommended) carry the current eden_version",
-        check_fn=check_eden_embeds_match_canonical,
-        truth_anchor="eden_version field on each embed cross-checked against eden-catalog.json",
-        severity="critical",
-        lesson_ref="Round 157 — every Eden-derived embed must report its source version; drift surfaces immediately",
     ),
     Invariant(
         name="no_external_style_resources",
