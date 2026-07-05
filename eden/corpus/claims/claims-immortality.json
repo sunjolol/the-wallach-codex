@@ -1923,11 +1923,10 @@
       "kind": "definition",
       "essentials": [
         "arginine",
-        "tyrosine"
-      ],
-      "other_substances": [
+        "tyrosine",
         "taurine"
       ],
+      "other_substances": [],
       "conditions": [
         "cancer",
         "peripheral_arterial_disease",

@@ -4238,6 +4238,12 @@
         "appears_in_books": 1
       },
       {
+        "essential": "taurine",
+        "claim_id": "WAL-CLM-LETS-000267",
+        "confidence": "high",
+        "appears_in_books": 1
+      },
+      {
         "essential": "vitamin-b12",
         "claim_id": "WAL-CLM-LETS-000267",
         "confidence": "high",

@@ -2124,10 +2124,10 @@
     {
       "id": "WAL-CLM-EPIGEN-000054",
       "kind": "deficiency_sign",
-      "essentials": [],
-      "other_substances": [
+      "essentials": [
         "taurine"
       ],
+      "other_substances": [],
       "conditions": [
         "cataracts"
       ],

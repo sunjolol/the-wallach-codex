@@ -51,12 +51,12 @@
     },
     "essentials_involved": [
       "choline",
+      "taurine",
       "vitamin-b6"
     ],
     "other_substances_involved": [
       "dimethyl-glycine",
-      "phosphatidylcholine",
-      "taurine"
+      "phosphatidylcholine"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2546,6 +2546,7 @@
       "oxygen",
       "selenium",
       "sulfur",
+      "taurine",
       "tin",
       "tyrosine",
       "vanadium",
@@ -2580,7 +2581,6 @@
       "shark-cartilage",
       "shark-liver-extract",
       "shark-liver-oil",
-      "taurine",
       "thymus-extract"
     ],
     "books_cited": [
@@ -2900,12 +2900,12 @@
       "calcium",
       "chromium",
       "copper",
-      "cysteine",
       "flavonoids",
       "inositol",
       "magnesium",
       "selenium",
       "sulfur",
+      "taurine",
       "tin",
       "vanadium",
       "vitamin-b1",
@@ -2918,10 +2918,10 @@
       "zinc"
     ],
     "other_substances_involved": [
+      "cysteine",
       "glutamine",
       "glutathione",
-      "glycine",
-      "taurine"
+      "glycine"
     ],
     "books_cited": [
       "epigenetics",
@@ -5229,6 +5229,7 @@
       "magnesium",
       "manganese",
       "omega-3",
+      "taurine",
       "vitamin-b12",
       "vitamin-b6",
       "vitamin-b9",
@@ -5240,7 +5241,6 @@
       "peony",
       "pulse-test",
       "skullcap",
-      "taurine",
       "urine-therapy"
     ],
     "books_cited": [
@@ -5635,6 +5635,7 @@
       "omega-3",
       "omega-6",
       "selenium",
+      "taurine",
       "vitamin-c",
       "vitamin-e"
     ],
@@ -5653,7 +5654,6 @@
       "olive-oil",
       "peppermint",
       "sweet-coltsfoot",
-      "taurine",
       "wormwood"
     ],
     "books_cited": [
@@ -5865,11 +5865,11 @@
       "iodine",
       "phosphorus",
       "selenium",
+      "taurine",
       "tyrosine"
     ],
     "other_substances_involved": [
       "kelp",
-      "taurine",
       "thyroid"
     ],
     "books_cited": [
@@ -7705,7 +7705,6 @@
     "essentials_involved": [
       "choline",
       "copper",
-      "cysteine",
       "iodine",
       "methionine",
       "omega-3",
@@ -7714,7 +7713,8 @@
       "vitamin-e"
     ],
     "other_substances_involved": [
-      "colloidal-minerals"
+      "colloidal-minerals",
+      "cysteine"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -8544,11 +8544,10 @@
     },
     "essentials_involved": [
       "arginine",
+      "taurine",
       "tyrosine"
     ],
-    "other_substances_involved": [
-      "taurine"
-    ],
+    "other_substances_involved": [],
     "books_cited": [
       "dddl-3e-2011",
       "immortality"
@@ -9240,14 +9239,14 @@
     },
     "essentials_involved": [
       "choline",
-      "cysteine",
       "methionine",
       "omega-3",
       "selenium",
       "vitamin-e"
     ],
     "other_substances_involved": [
-      "colloidal-minerals"
+      "colloidal-minerals",
+      "cysteine"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -10420,11 +10419,10 @@
     },
     "essentials_involved": [
       "arginine",
+      "taurine",
       "tyrosine"
     ],
-    "other_substances_involved": [
-      "taurine"
-    ],
+    "other_substances_involved": [],
     "books_cited": [
       "immortality"
     ]

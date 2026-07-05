@@ -12,7 +12,7 @@ Exit codes:
   0  SEALED & healthy — every check passed.
   1  FAIL — a real violation (drift, broken verbatim, bad slug, ...). Loud.
   2  BOOTSTRAP — not yet sealed (no golden hashes). The always-valid checks
-     (canon == 90, book content hashes match books-meta, any present claims/indices)
+     (canon has 90 essential entries, book content hashes match books-meta, any present claims/indices)
      still ran and passed; the seal-gated checks were skipped. Distinct from FAIL.
 
 The agent MAY run this. It never writes anything.
@@ -84,10 +84,13 @@ def run_checks(skip_index_derive_check=False):
         return [f"essentials-canon.json parse error: {e}"], infos, 0
     essentials = canon.get("essentials", [])
     canon_slugs = [e.get("slug") for e in essentials]
-    if len(essentials) != 90:
-        fails.append(f"canon has {len(essentials)} essentials, expected 90")
-    if canon.get("counts", {}).get("total") != 90:
-        fails.append(f"canon counts.total != 90: {canon.get('counts', {}).get('total')}")
+    # The 90 are the essential nutrients; non-essential extras (e.g. omega-9, "becomes
+    # essential if deficient in linoleic acid") ride along in the file but are NOT counted.
+    essential_entries = [e for e in essentials if e.get("essential") is not False]
+    if len(essential_entries) != 90:
+        fails.append(f"canon has {len(essential_entries)} essential entries, expected 90")
+    if canon.get("counts", {}).get("essential") != 90:
+        fails.append(f"canon counts.essential != 90: {canon.get('counts', {}).get('essential')}")
     if len(set(canon_slugs)) != len(canon_slugs):
         fails.append("canon slugs are not unique")
     canon_set = set(canon_slugs)

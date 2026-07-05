@@ -6,7 +6,7 @@ per-invocation approval. Like eden_seal.py, sealing is the human's act of
 ratifying corpus state as canonical.
 
 What it does, in order:
-  1. Refuses unless the always-valid checks pass (canon == 90, book hashes match).
+  1. Refuses unless the always-valid checks pass (90 essential entries, book hashes match).
   2. Promotes any drafts/claims-<book>.draft.json -> claims/claims-<book>.json.
   3. Derives indices/* from claims/* (corpus_derive.derive_indices).
   4. Bumps knowledge_version, stamps sealed_at, status -> "sealed".

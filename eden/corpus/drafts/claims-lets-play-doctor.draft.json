@@ -4923,10 +4923,10 @@
       "kind": "protocol",
       "essentials": [
         "choline",
-        "vitamin-b6"
+        "vitamin-b6",
+        "taurine"
       ],
       "other_substances": [
-        "taurine",
         "dimethyl-glycine",
         "phosphatidylcholine"
       ],
@@ -8355,13 +8355,13 @@
         "zinc",
         "flavonoids",
         "arginine",
-        "cysteine",
         "chromium"
       ],
       "other_substances": [
         "glycine",
         "glutamine",
-        "glutathione"
+        "glutathione",
+        "cysteine"
       ],
       "conditions": [
         "cataracts"
@@ -10753,10 +10753,10 @@
         "manganese",
         "zinc",
         "omega-3",
-        "choline"
+        "choline",
+        "taurine"
       ],
       "other_substances": [
-        "taurine",
         "dimethyl-glycine"
       ],
       "conditions": [
@@ -11403,12 +11403,12 @@
         "omega-3",
         "vitamin-e",
         "vitamin-c",
-        "selenium"
+        "selenium",
+        "taurine"
       ],
       "other_substances": [
         "dietary-fiber",
         "lecithin",
-        "taurine",
         "olive-oil",
         "licorice",
         "agrimony",
@@ -14966,12 +14966,12 @@
         "selenium",
         "vitamin-e",
         "methionine",
-        "cysteine",
         "omega-3",
         "choline"
       ],
       "other_substances": [
-        "colloidal-minerals"
+        "colloidal-minerals",
+        "cysteine"
       ],
       "conditions": [
         "muscular_dystrophy",

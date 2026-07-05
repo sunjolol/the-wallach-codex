@@ -6,17 +6,19 @@
     "minerals": 60,
     "vitamins": 16,
     "amino_acids": 12,
-    "fatty_acids": 2,
-    "total": 90
+    "fatty_acids": 3,
+    "total": 91,
+    "essential": 90
   },
   "pending_adjudications": [
     {
       "id": "cysteine-vs-taurine",
       "slot": "amino_acid",
       "question": "Wallach's 90-graphic shows Taurine; the layout shows Cysteine. Which is canon?",
-      "status": "open",
+      "status": "resolved",
       "resolve_in": "Phase δ corpus audit",
-      "affects_slug": "cysteine"
+      "affects_slug": "cysteine",
+      "resolution": "Taurine is canon per the 90-nutrients graphic (eden/graphics/90-nutrients-front.jpg), Luneth 2026-07-04. Cysteine is NOT one of the 90; it stays a real substance in other_substances where Wallach names it (e.g. LETS-000207 cataract protocol, l-cysteine 400 mg)."
     }
   ],
   "essentials": [
@@ -721,11 +723,11 @@
     },
     {
       "slug": "vitamin-k",
-      "display_name": "Menaquinone",
+      "display_name": "Phylloquinone",
       "category": "vitamin",
       "subtype": null,
       "letter": "K",
-      "layout_key": "Vitamin K (Menaquinone = K2)",
+      "layout_key": "Vitamin K (Phylloquinone)",
       "essential": true
     },
     {
@@ -774,15 +776,13 @@
       "essential": true
     },
     {
-      "slug": "cysteine",
-      "display_name": "Cysteine",
+      "slug": "taurine",
+      "display_name": "Taurine",
       "category": "amino_acid",
       "subtype": null,
-      "abbr": "Cys",
-      "layout_key": "Cysteine",
-      "essential": true,
-      "provisional": true,
-      "provisional_note": "Wallach's enumerated 90-graphic lists TAURINE in this amino slot; the live layout uses Cysteine. Unresolved until the Phase-δ corpus audit rules against the books. See pending_adjudications."
+      "abbr": "Tau",
+      "layout_key": "Taurine",
+      "essential": true
     },
     {
       "slug": "histidine",
@@ -889,6 +889,14 @@
       "subtype": null,
       "layout_key": "Omega-6 (linoleic + GLA)",
       "essential": true
+    },
+    {
+      "slug": "omega-9",
+      "display_name": "Omega-9",
+      "category": "fatty_acid",
+      "subtype": "conditional",
+      "layout_key": "Omega-9 (Arachidonic / Oleic)",
+      "essential": false
     }
   ]
 }
