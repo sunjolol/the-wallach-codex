@@ -8,10 +8,10 @@ The project pivoted from whack-a-mole bug-fixing to a full structural overhaul a
 - **Blueprint** (`9da6bc6`) — `OVERHAUL-BLUEPRINT.md` locked in full, 8 sections, Charter R1–R9, every section Luneth-verified.
 - **Phase A noise purge** (`20ac372`) — deleted `wallach-refresh/`, `corpus-changelog.md`, `genesis/01`, stray `dashboard/.git/`; moved `labels/`→`tests/scanner-labels/`.
 - **Phase A legacy sever** (`fca48c9`) — DELETED the entire legacy dashboard (js/css + `#legacy-workspace-host` DOM + `main.ts` fallback) + 5 legacy-IIFE invariants (board 43→38). App verified working across coverage/scanner/knowledge. Luneth: no deferral, gone for good.
-- **Phase A CLAUDE.md rewrite** (this session-close commit) — rewrote the operating contract to the pillar model + Wallach-only-amounts + the Charter. This is why we rebooted.
+- **Phase A CLAUDE.md rewrite** (`8de0a3e`) — rewrote the operating contract to the pillar model + Wallach-only-amounts + the Charter (the reboot trigger).
+- **Phase A rules audit** (`72d2d71`) — reconciled the 12 `.claude/rules/` + `REVIEW.md` to the Charter. Rewrote `source-rule.md` (two-role split RETIRED → Wallach drives every amount, Youngevity = composition only; pack-extrapolation-as-target → "Retired/poison"; Enforcement split CURRENT-vs-WISH per R7). Fixed `chokepoint-discipline.md` (lint = `no-restricted-globals` WARN; `regimen_state_mutation_routing` noted WISH, re-gated Phase C). DELETED `wild-west-mode.md` — legal/copyright pass deferred to END of build (now memory `legal-copyright-pass-at-end.md` + finalize-checklist §4). 8 other rule files clean; `data-flow.md` + `REVIEW.md` flagged accurate-today (doomed-invariant ref; five-vs-seven round-close), left for their retiring phase.
 
 ## PHASE A REMAINING (governance reset — blueprint §8; finish BEFORE building pillars)
-★ **RULES AUDIT** — reconcile the 12 `.claude/rules/` + `REVIEW.md` to the Charter/pillar model. **CRITICAL: `source-rule.md` still has the old "two-role split" (Youngevity drives targets) — it now CONTRADICTS the new §00.A (Wallach drives ALL amounts). Fix first or we ship a contradiction.** Also: `chokepoint-discipline.md` names the REMOVED `regimen_state_mutation_routing` invariant (§31 is now TS + ESLint enforced; re-gate in Phase C). `wild-west-mode.md` still active (Phases 1–3).
 ★ **CHARTER PERMANENT HOME** — R1–R9 live only in the temporary/living blueprint; promote them to a permanent rule file so they survive the blueprint's pruning. CLAUDE.md references it.
 ★ **74-MEMORY AUDIT** — the memory files (`C:\Users\Light\.claude\projects\C--Users-Light-Desktop-claude-health-expert\memory\`) encode OLD approaches (middle layer, stance sweep, Youngevity-targets). Audit against the blueprint; prune/mark-superseded the contradictions. ⚠ **Until done, recalled memories may contradict the new model — CLAUDE.md + the blueprint are authoritative.**
 ★ `genesis/02-clarifications-and-plan.md` — mark SUPERSEDED by the blueprint (archive).
@@ -23,5 +23,6 @@ Phase B Catalog pillar → **Phase C derivation pipeline (the poison purge: targ
 ## OLD BACKLOG (SESSION 48/49) — SUBSUMED, not lost
 menaquinone→phylloquinone book correction + K1/K2 alert-box → Phase E/G · target-number-shift → Phase C · archaic-rules audit → Phase A rules audit (above) · Immortality/DDDL re-mine → Phase G. The blueprint is authoritative.
 
-## IMMEDIATE NEXT TASK = the RULES AUDIT, starting with the `source-rule.md` two-role-split contradiction fix.
-Board: 38/38 green. Tree clean after the session-close commit.
+## IMMEDIATE NEXT TASK = the remaining Phase A governance items (any order; genesis will ask).
+Suggested next: **Charter permanent home** (small, self-contained — promote R1–R9 out of the temporary/living blueprint so pruning can't lose them; CLAUDE.md already references "the Charter" as if it has one). Then the **74-memory audit** (larger; stale memories actively mislead until done — the ⚠ above). Also owed: genesis/02 supersede-archive + the `no_operating_doc_contradiction` gate.
+Board: 38/38 green. Tree clean after the rules-audit commit (`72d2d71`).
