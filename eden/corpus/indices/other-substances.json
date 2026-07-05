@@ -2313,7 +2313,7 @@
       "lets-play-doctor"
     ]
   },
-  "cruciferous vegetables": {
+  "cruciferous-vegetables": {
     "display_name": "Cruciferous Vegetables",
     "claim_count": 1,
     "claims_by_kind": {
@@ -4075,7 +4075,7 @@
       "lets-play-doctor"
     ]
   },
-  "hydrogenated vegetable oil": {
+  "hydrogenated-vegetable-oil": {
     "display_name": "Hydrogenated Vegetable Oil",
     "claim_count": 1,
     "claims_by_kind": {
@@ -7354,7 +7354,7 @@
       "lets-play-doctor"
     ]
   },
-  "trans fatty acids": {
+  "trans-fatty-acids": {
     "display_name": "Trans Fatty Acids",
     "claim_count": 1,
     "claims_by_kind": {

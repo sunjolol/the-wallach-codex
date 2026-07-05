@@ -1520,7 +1520,7 @@
       "kind": "definition",
       "essentials": [],
       "other_substances": [
-        "bismuth subsalicylate"
+        "bismuth-subsalicylate"
       ],
       "conditions": [],
       "symptoms": [],
@@ -5454,8 +5454,8 @@
         "hydrogen"
       ],
       "other_substances": [
-        "trans fatty acids",
-        "hydrogenated vegetable oil"
+        "trans-fatty-acids",
+        "hydrogenated-vegetable-oil"
       ],
       "conditions": [
         "arteriosclerosis",
@@ -6498,7 +6498,7 @@
       "other_substances": [
         "nitrates",
         "nitrites",
-        "cruciferous vegetables"
+        "cruciferous-vegetables"
       ],
       "conditions": [
         "thyroid_disease"

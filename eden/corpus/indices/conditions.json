@@ -1117,9 +1117,9 @@
       "edta-chelation",
       "garlic",
       "hydrogen-peroxide",
-      "hydrogenated vegetable oil",
+      "hydrogenated-vegetable-oil",
       "mistletoe",
-      "trans fatty acids"
+      "trans-fatty-acids"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -1321,8 +1321,8 @@
       "manganese"
     ],
     "other_substances_involved": [
-      "hydrogenated vegetable oil",
-      "trans fatty acids"
+      "hydrogenated-vegetable-oil",
+      "trans-fatty-acids"
     ],
     "books_cited": [
       "epigenetics",
@@ -12053,9 +12053,9 @@
       "colloidal-minerals",
       "edta-chelation",
       "hydrogen-peroxide",
-      "hydrogenated vegetable oil",
+      "hydrogenated-vegetable-oil",
       "pancreatic-enzymes",
-      "trans fatty acids"
+      "trans-fatty-acids"
     ],
     "books_cited": [
       "epigenetics",
@@ -12361,8 +12361,8 @@
       "hydrogen"
     ],
     "other_substances_involved": [
-      "hydrogenated vegetable oil",
-      "trans fatty acids"
+      "hydrogenated-vegetable-oil",
+      "trans-fatty-acids"
     ],
     "books_cited": [
       "immortality"
@@ -12428,7 +12428,7 @@
       "iodine"
     ],
     "other_substances_involved": [
-      "cruciferous vegetables",
+      "cruciferous-vegetables",
       "nitrates",
       "nitrites"
     ],

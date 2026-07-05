@@ -75,6 +75,7 @@ def unresolved_references():
     sys.path.insert(0, str(ROOT / "eden" / "tools"))
     import catalog as _catalog
     cond_ok, symp_ok = _catalog.condition_slugs(), _catalog.symptom_slugs()
+    nutr_ok = _catalog.nutrient_slugs() if (ROOT / "eden" / "catalog" / "nutrients.json").exists() else None
     out = []
     for shard in collect_claim_shards():
         try:
@@ -89,6 +90,10 @@ def unresolved_references():
             for slug in c.get("symptoms", []):
                 if slug not in symp_ok:
                     out.append(f"claim {cid} references unregistered symptom '{slug}'")
+            if nutr_ok is not None:
+                for slug in c.get("other_substances", []):
+                    if slug not in nutr_ok:
+                        out.append(f"claim {cid} references unregistered substance '{slug}'")
     return out
 
 
@@ -189,9 +194,14 @@ def run_checks(skip_index_derive_check=False):
             if dose is not None and not isinstance(dose, dict):
                 fails.append(f"[#11] claim {cid} dose must be null or an object, got {type(dose).__name__}")
 
-    # #12 references_resolve (Catalog pillar, Phase B): every claim condition/symptom
-    # slug must be pre-registered in eden/catalog/{conditions,symptoms}.json.
-    fails += [f"[#12] {m} -- register it in eden/catalog/" for m in unresolved_references()]
+    # #12 references_resolve (Catalog pillar, Phase B): every claim condition/symptom/
+    # substance slug must be pre-registered in eden/catalog/{conditions,symptoms,nutrients}.json.
+    # Skipped by the seal PRE-gate (skip_index_derive_check) for the SAME reason as #8: a draft
+    # mapping edit / slug rename transiently mismatches the still-catalogued OLD shard state
+    # (the pre-gate runs BEFORE the draft is promoted). The seal FINAL gate (full run_checks)
+    # re-checks #12 against the promoted shards + the updated catalog and refuses on a real miss.
+    if not skip_index_derive_check:
+        fails += [f"[#12] {m} -- register it in eden/catalog/" for m in unresolved_references()]
 
     # --- indices (only if present) ---
     indices = collect_indices()

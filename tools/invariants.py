@@ -1470,8 +1470,9 @@ def check_references_resolve():
                        f"condition/symptom (add to eden/catalog/): {unresolved[0]}"
                        f"{' ...' if len(unresolved) > 1 else ''}")
     import catalog
-    return True, (f"all claim condition/symptom slugs resolve to the Catalog "
-                  f"({len(catalog.condition_slugs())} conditions, {len(catalog.symptom_slugs())} symptoms registered)")
+    return True, (f"all claim condition/symptom/substance slugs resolve to the Catalog "
+                  f"({len(catalog.condition_slugs())} conditions, {len(catalog.symptom_slugs())} symptoms, "
+                  f"{len(catalog.nutrient_slugs())} nutrients registered)")
 
 
 def check_corpus_runtime_purity():
@@ -2136,7 +2137,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="references_resolve",
-        description="every condition/symptom slug a claim maps to is pre-registered in the Catalog pillar (eden/catalog/{conditions,symptoms}.json); an unregistered slug (typo / phantom condition) is RED -- closes the phantom-slug hole",
+        description="every condition/symptom/substance slug a claim maps to is pre-registered in the Catalog pillar (eden/catalog/{conditions,symptoms,nutrients}.json); an unregistered slug (typo / phantom condition) is RED -- closes the phantom-slug hole",
         check_fn=check_references_resolve,
         truth_anchor="sealed claim shards (eden/corpus/claims/*) x the catalog registries (eden/catalog/*), recomputed each run via corpus_verify.unresolved_references -- no stale-to-stale comparison",
         severity="critical",

@@ -97,7 +97,7 @@ def derive_indices(shards):
     for slug in sorted({s for c in claims for s in c.get("other_substances", [])}):
         rel = [c for c in claims if slug in c.get("other_substances", [])]
         other[slug] = {
-            "display_name": humanize(slug),
+            "display_name": catalog.nutrient_display(slug) or humanize(slug),
             "claim_count": len(rel),
             "claims_by_kind": _by_kind(rel),
             "conditions_treated": sorted({x for c in rel for x in c.get("conditions", [])}),

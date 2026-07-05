@@ -6,7 +6,9 @@ registries both the Wallach Corpus and the Youngevity Product DB reference. Ever
 consumer that needs a condition/symptom display name, the umbrella->subtype map, or
 the synonym phrasings reads them HERE -- never from a private copy -- so no fact lives
 in two places (Charter R3). Promoted 2026-07-05 (Phase B) from the emergent derived
-indices + eden/tools/{condition-taxonomy,condition-synonyms}.json (retired).
+indices + eden/tools/{condition-taxonomy,condition-synonyms}.json (retired). The nutrient
+vocabulary (essentials + the non-essential substances Wallach names) is single-sourced here
+too, seeded from essentials-canon + the corpus other-substances.
 
 Loads are memoized once per process; the catalog is static during a derive/verify run.
 Every accessor degrades gracefully to empty/None if a catalog file is absent (bootstrap
@@ -19,9 +21,11 @@ HERE = Path(__file__).resolve().parent            # eden/tools
 CATALOG = HERE.parent / "catalog"                  # eden/catalog
 COND_PATH = CATALOG / "conditions.json"
 SYMP_PATH = CATALOG / "symptoms.json"
+NUTR_PATH = CATALOG / "nutrients.json"
 
 _COND = None
 _SYMP = None
+_NUTR = None
 
 
 def _conditions() -> dict:
@@ -56,6 +60,25 @@ def condition_display(slug: str):
 
 def symptom_display(slug: str):
     e = _symptoms().get(slug)
+    return e["display_name"] if e else None
+
+
+def _nutrients() -> dict:
+    """slug -> {display_name, canon_slug} (memoized). canon_slug points into
+    essentials-canon for the 91 canonical nutrients, or is null for the non-essential
+    substances Wallach names (herbs, drugs, compounds, foods)."""
+    global _NUTR
+    if _NUTR is None:
+        _NUTR = json.loads(NUTR_PATH.read_text(encoding="utf-8")).get("nutrients", {}) if NUTR_PATH.exists() else {}
+    return _NUTR
+
+
+def nutrient_slugs() -> set:
+    return set(_nutrients())
+
+
+def nutrient_display(slug: str):
+    e = _nutrients().get(slug)
     return e["display_name"] if e else None
 
 
