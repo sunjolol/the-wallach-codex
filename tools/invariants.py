@@ -461,6 +461,126 @@ def check_wallach_stance_embed_sync():
     return True, f"all {n} wallach_stance entries byte-equal between canonical and dashboard embed"
 
 
+def check_wallach_stance_verbatim_in_book():
+    """SESSION 49 stance sweep — the §00.A faithfulness guard for the
+    educational stance layer.
+
+    Each wallach_stance carries `summary` (our modern-voice reading) and
+    `verbatim` (Wallach's exact words from `citation`). A non-null verbatim
+    MUST appear — after light normalization (case, unicode dashes/quotes,
+    de-hyphenated line breaks, collapsed whitespace, punctuation stripped) —
+    as a contiguous substring of the cited Eden book text. This is the
+    machine anchor that stops a synthesized/fabricated quote from being
+    presented as Wallach's words (the vit-K fabrication that motivated the
+    sweep: a modern-voice summary reads plausibly but is nobody's verbatim).
+
+    verbatim == null is allowed: Youngevity-label-only citations have no
+    quotable book prose, so the summary + citation stand alone. A non-null
+    verbatim whose citation resolves to NO Eden book fails loudly (a label
+    citation must use verbatim:null; a book citation must be verifiable).
+
+    Truth anchor: eden/corpus/books/*.txt (the sealed corpus), read fresh —
+    same standard as corpus_verify #2 (verbatim ⊆ book) for claims.
+    Severity: critical — the cornerstone's error-mode enforcement applied to
+    the educational layer.
+    """
+    import unicodedata
+    canonical = ROOT / "knowledge/essentials-targets.json"
+    if not canonical.exists():
+        return False, "knowledge/essentials-targets.json missing"
+    try:
+        data = json.loads(canonical.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as e:
+        return False, f"essentials-targets.json parse failed: {e}"
+
+    # citation-substring -> Eden book text. Name-based, matching how citations
+    # are written; a citation may match more than one (compound sources).
+    books = {
+        "rare earths": "eden/corpus/books/rare-earths-forbidden-cures.txt",
+        "dead doctors": "eden/corpus/books/dddl-third-edition-2011.txt",
+        "let's play doctor": "eden/corpus/books/lets-play-doctor-fourth-edition-1995.txt",
+        "lets play doctor": "eden/corpus/books/lets-play-doctor-fourth-edition-1995.txt",
+        "epigenetics": "eden/corpus/books/epigenetics.txt",
+        "immortality": "eden/corpus/books/immortality.txt",
+        "all in your head": "eden/corpus/books/iaiyh.txt",
+    }
+
+    def norm(s):
+        s = unicodedata.normalize("NFKD", s)
+        s = re.sub(r"-\s*\n\s*", "", s)   # heal line-break hyphenation (book side)
+        s = (s.replace("—", " ").replace("–", " ")
+               .replace("’", "'").replace("‘", "'")
+               .replace("“", '"').replace("”", '"'))
+        s = s.lower()
+        s = re.sub(r"[^a-z0-9 ]+", " ", s)
+        s = re.sub(r"\s+", " ", s).strip()
+        return s
+
+    norm_cache = {}
+
+    def norm_book(path):
+        if path not in norm_cache:
+            p = ROOT / path
+            norm_cache[path] = norm(p.read_text(encoding="utf-8")) if p.exists() else None
+        return norm_cache[path]
+
+    def walk(obj):
+        if isinstance(obj, dict):
+            if isinstance(obj.get("wallach_stance"), dict):
+                yield obj.get("name", "<unnamed>"), obj["wallach_stance"]
+            for v in obj.values():
+                yield from walk(v)
+        elif isinstance(obj, list):
+            for it in obj:
+                yield from walk(it)
+
+    n_checked = 0
+    n_null = 0
+    fails = []
+    for name, st in walk(data):
+        vb = st.get("verbatim")
+        if vb is None:
+            n_null += 1
+            continue
+        if not isinstance(vb, str) or not vb.strip():
+            fails.append(f"{name}: verbatim present but empty/non-string")
+            continue
+        citation = (st.get("citation") or "").lower()
+        paths = {p for key, p in books.items() if key in citation}
+        if not paths:
+            fails.append(
+                f"{name}: non-null verbatim but citation resolves to no Eden book "
+                f"(label-only citations must use verbatim:null): "
+                f"'{st.get('citation', '')[:60]}'"
+            )
+            continue
+        nvb = norm(vb)
+        found = False
+        for p in paths:
+            nb = norm_book(p)
+            if nb and nvb in nb:
+                found = True
+                break
+        if found:
+            n_checked += 1
+        else:
+            fails.append(
+                f"{name}: verbatim NOT found in cited book text "
+                f"(fabrication or mis-citation): '{vb[:60]}...'"
+            )
+
+    if fails:
+        return False, (
+            f"{len(fails)} stance verbatim faithfulness failure(s): "
+            + "; ".join(fails[:3])
+        )
+    total = n_checked + n_null
+    return True, (
+        f"all {total} stance verbatim(s) faithful: {n_checked} verified ⊆ cited book, "
+        f"{n_null} null (label-only / pending backfill)"
+    )
+
+
 # ---------------------------------------------------------------------------
 # Round 135 — Discipline invariants (lesson logging + raw-key surfacing +
 # cross-IIFE bare refs). Codified after the Round 135 meta-failure: lessons
@@ -2254,6 +2374,14 @@ INVARIANTS = [
         truth_anchor="canonical wallach_stance dict ↔ embed wallach_stance dict, normalized via sort_keys=True JSON serialization",
         severity="warning",
         lesson_ref="Round 115 filed; Round 122 shipped per §18 same-patch promotion. Two-source-of-truth shape (canonical nested + dashboard flat embed) gains coverage at the new field.",
+    ),
+    Invariant(
+        name="wallach_stance_verbatim_in_book",
+        description="Every non-null wallach_stance.verbatim in essentials-targets.json appears (normalized) as a substring of the cited Eden book text",
+        check_fn=check_wallach_stance_verbatim_in_book,
+        truth_anchor="eden/corpus/books/*.txt (sealed corpus), de-hyphenated normalized substring match; same standard as corpus_verify #2 (verbatim ⊆ book) for claims",
+        severity="critical",
+        lesson_ref="SESSION 49 stance sweep — vit-K proved synthesized 'quotes' were presented as Wallach's words. Splitting the stance into summary (ours) + verbatim (his) and anchoring verbatim to the corpus makes fabrication un-shippable. Null verbatim (label-only sources) is allowed.",
     ),
     Invariant(
         name="raw_key_surfacing",

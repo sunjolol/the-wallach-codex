@@ -19,8 +19,13 @@ export const EssentialSchema = z.object({
   category: z.string(),
   target: z.unknown().optional(),
   wallach_stance: z.object({
-    stance: z.string().optional(),
-    quote: z.string().optional(),
+    // §00.A educational layer, two honest fields:
+    //   summary  — our modern-voice, plain-language reading of Wallach's position
+    //   verbatim — Wallach's exact words from `citation` (null when the cited
+    //              source is a Youngevity label with no quotable prose)
+    // The wallach_stance_verbatim_in_book invariant enforces verbatim ⊆ cited book.
+    summary: z.string().optional(),
+    verbatim: z.string().nullable().optional(),
     citation: z.string().optional(),
     context: z.string().optional(),
   }).optional(),

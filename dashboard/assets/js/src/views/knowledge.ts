@@ -293,14 +293,14 @@ function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): st
   const status = statusOf(snapshot, key);
   const target = getTargets().find(t => t.name === key);
   const stance = target?.wallach_stance;
-  const quote = stance?.quote ?? stance?.stance;
+  const summary = stance?.summary;
   const citation = stance?.citation;
   const products = vaultProductsFor(key);
 
-  const wallachHTML = (quote !== undefined && quote.length > 0)
+  const wallachHTML = (summary !== undefined && summary.length > 0)
     ? `
       <div class="kd-essential-deep__sub">WALLACH SAYS</div>
-      <p class="kd-essential-deep__body">${escHTML(quote)}</p>
+      <p class="kd-essential-deep__body">${escHTML(summary)}</p>
       ${citation !== undefined ? `<div class="kd-essential-deep__source">CITED · <strong>${escHTML(citation)}</strong></div>` : ''}`
     : '<div class="kd-essential-deep__sub">WALLACH SAYS</div><p class="kd-essential-deep__body">— no stance on file for this essential —</p>';
 

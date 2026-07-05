@@ -4545,8 +4545,13 @@
     category: external_exports.string(),
     target: external_exports.unknown().optional(),
     wallach_stance: external_exports.object({
-      stance: external_exports.string().optional(),
-      quote: external_exports.string().optional(),
+      // §00.A educational layer, two honest fields:
+      //   summary  — our modern-voice, plain-language reading of Wallach's position
+      //   verbatim — Wallach's exact words from `citation` (null when the cited
+      //              source is a Youngevity label with no quotable prose)
+      // The wallach_stance_verbatim_in_book invariant enforces verbatim ⊆ cited book.
+      summary: external_exports.string().optional(),
+      verbatim: external_exports.string().nullable().optional(),
       citation: external_exports.string().optional(),
       context: external_exports.string().optional()
     }).optional()
@@ -9598,12 +9603,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const status = statusOf(snapshot, key);
     const target = getTargets().find((t) => t.name === key);
     const stance = target?.wallach_stance;
-    const quote = stance?.quote ?? stance?.stance;
+    const summary = stance?.summary;
     const citation = stance?.citation;
     const products = vaultProductsFor(key);
-    const wallachHTML = quote !== void 0 && quote.length > 0 ? `
+    const wallachHTML = summary !== void 0 && summary.length > 0 ? `
       <div class="kd-essential-deep__sub">WALLACH SAYS</div>
-      <p class="kd-essential-deep__body">${escHTML4(quote)}</p>
+      <p class="kd-essential-deep__body">${escHTML4(summary)}</p>
       ${citation !== void 0 ? `<div class="kd-essential-deep__source">CITED \xB7 <strong>${escHTML4(citation)}</strong></div>` : ""}` : '<div class="kd-essential-deep__sub">WALLACH SAYS</div><p class="kd-essential-deep__body">\u2014 no stance on file for this essential \u2014</p>';
     const productsHTML = products.length > 0 ? `
       <div class="kd-essential-deep__sub">FOUND IN YGY VAULT</div>
@@ -10186,7 +10191,15 @@ no_dead_legacy_paths invariant (critical) -- the enforcement centerpiece. Scans 
 
 WORKFLOW NOTE for the ongoing purification campaign: deleting knowledge/wallach-books/ removed the in-repo PDF arbiter used to image-verify the PDF-sourced books (Let's Play Doctor, Rare Earths, DDDL) during mining. Screenshot-sourced books (IAIYH, Epigenetics, Immortality via temporary/) are unaffected. PDF-sourced verification now relies on Luneth's local Downloads PDFs or his PDF-paste.
 
-VERIFY: invariants 42/42 (0 failed), the new no_dead_legacy_paths + build_log_append_only both green. DEFERRED: task-A graphic-alignment amino/tile + the vit-K summary still owe Luneth's VISUAL signoff (functionally probe-verified); outputs/contradiction-log.md salvage decision; a reboot is owed since CLAUDE.md + wild-west-mode.md (boot-loaded) changed.` }];
+VERIFY: invariants 42/42 (0 failed), the new no_dead_legacy_paths + build_log_append_only both green. DEFERRED: task-A graphic-alignment amino/tile + the vit-K summary still owe Luneth's VISUAL signoff (functionally probe-verified); outputs/contradiction-log.md salvage decision; a reboot is owed since CLAUDE.md + wild-west-mode.md (boot-loaded) changed.` }, { id: "lg_mr7o45qu_a76e3s", ts: "2026-07-05T05:48:21.270954-05:00", surface: "knowledge/stance", kind: "round-close", summary: "Stance sweep Chunk 1: split wallach_stance into summary (ours) + verbatim (his) across all 3 copies, plus a corpus-anchored machine guard so no synthesized quote can ship as Wallach's words. Board 43/43. Per-entry verbatim backfill is next.", detail: `Split the "Wallach says" stance layer into two honest fields so we stop presenting our own plain-language summaries as if they were Wallach's exact words. Each of the 90 essentials (+ Omega-9) now carries a SUMMARY (our modern-voice reading) AND a VERBATIM (his exact words from the cited book). A new machine guard refuses to ship any verbatim that isn't actually in the cited book. This is Chunk 1 of the stance sweep \u2014 structure + guard; the per-entry verbatim backfill (reading each source) is Chunk 2.
+
+TECH: migrated wallach_stance {quote,citation,context} -> {summary,verbatim,citation,context} across all 3 copies \u2014 canonical knowledge/essentials-targets.json, flat dashboard/assets/data/essentials-targets-data.json, and the inline dashboard.html embed \u2014 via a fidelity-proofed \xA717 script: an identity transform reproduces each file byte-for-byte first, so ONLY the stance bytes changed (surgical diff). quote->summary, verbatim=null for all 91. Zod EssentialSchema.wallach_stance gained summary + nullable verbatim and dropped the migrated-away quote/stance. views/knowledge.ts "WALLACH SAYS" card now reads stance.summary. New invariant wallach_stance_verbatim_in_book (critical): a non-null verbatim must appear as a de-hyphenated normalized substring of the cited eden/corpus/books/*.txt; verbatim=null is allowed (label-only Youngevity sources have no quotable prose); a non-null verbatim whose citation resolves to no Eden book fails loudly. Same standard as corpus_verify #2 (verbatim \u2286 book).
+
+VERIFY: build OK (tsc --noEmit + esbuild), invariants 43/43 (0 failed; the new guard is green at 91 null / 0 verified \u2014 correct baseline), knowledge render probe PASS (0 page errors), and a one-off probe confirms the WALLACH SAYS card renders the summary (not the empty fallback) for Magnesium/Sodium/Germanium/Aluminum.
+
+FINDING that reframed the whole sweep: the pass-off feared ~50 fabricated stances, but an automated overlap score measures verbatim-ness, NOT faithfulness. Spot-reading the COV=0 stances (Germanium, the already-fixed vit-K) shows they are FAITHFUL modern-voice syntheses of real Wallach content \u2014 Germanium's "50 mg/day, immune, oxygen, anti-tumor" is all in DDDL (lines 7833-7869, 12067); vit-K is an honest expansion of the deficiency-table row (line 22589). Genuine fabrication (old vit-K's invented newborns/K2 content) is semantic and rarer, and only per-entry source reading finds it. That is Chunk 2, now safely enforced by the guard.
+
+DEFERRED: Chunk 2 \u2014 pull a faithful verbatim for each book-cited stance + read each summary for semantic fabrication (label-only aminos/Silica stay verbatim:null; resolve the 35-way p.277 reuse). Chunk 3 \u2014 render the verbatim under WALLACH SAYS with the summary as the plain-language lead (user-facing \u2192 visual signoff).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
