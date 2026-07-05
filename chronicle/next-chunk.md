@@ -27,4 +27,8 @@ menaquinone→phylloquinone book correction + K1/K2 alert-box → Phase E/G · t
 
 ## IMMEDIATE NEXT TASK = the last 2 Phase A governance items (either order; genesis will ask).
 Charter permanent home + the 74-memory audit are DONE (above). REMAINING Phase A: (1) `genesis/02-clarifications-and-plan.md` → mark SUPERSEDED by the blueprint + archive; (2) ADD the `no_operating_doc_contradiction` gate (a scan proving no operating doc contradicts the Charter / cites a deleted structure — extends `no_dead_legacy_paths`). Both small. Then Phase A is COMPLETE → Phase B (Catalog pillar).
-Board: 38/38 green. Memory-audit chunk committed 2026-07-05 (build-log below).
+Board: 38/38 green (re-verified after the asset deletions — build OK · render probe PAGE_ERRORS 0 · 91 tiles render).
+
+**THIS SESSION (all committed + pushed):** memory audit + consolidation 75→68 (`f15cfc6`, `6620e7f`) · obsolete-asset cleanup — Luneth deleted + I committed 33 unused files from `dashboard/assets/` top-level (obsolete duplicate variable-font TTFs [the shipped copies live in `assets/fonts/`], unused backgrounds/themes/slab-masks/button-PNGs) + the whole `dashboard/design-styles/` (12 design-inspiration JPGs, not shipped). Verified nothing shipped referenced them (shipped CSS `@font-face` points only at `assets/fonts/*`).
+
+**SET UP FOR NEXT SESSION:** start fresh + run `genesis`. Next = the 2 remaining Phase A items above (genesis/02 supersede-archive + the `no_operating_doc_contradiction` gate), then Phase A is COMPLETE → Phase B (Catalog pillar).
