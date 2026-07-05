@@ -8,7 +8,7 @@ slim, view-shaped JSON at dashboard/assets/data/corpus-embed.json.
 
 Single source of truth stays the sealed corpus (claims/* + indices/* + books-meta);
 the embed holds no independent state and is regenerated whenever the corpus changes.
-An invariant (corpus_embed_synced) byte/semantic-compares build_embed() against the
+An invariant (derived_artifacts_fresh, via eden/derived/MANIFEST.json) byte/semantic-compares build_embed() against the
 on-disk embed so a stale build can never let the in-app Knowledge drawer lie.
 
 There is NO timestamp in the embed: knowledge_version (from knowledge-version.json)

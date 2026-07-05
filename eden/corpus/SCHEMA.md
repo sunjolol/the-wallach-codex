@@ -138,7 +138,7 @@ at build (esbuild JSON import in `state/corpus.ts`):
 Single source of truth stays `claims/*` + `indices/*`; the embed holds no independent
 state. The derived index shapes flow through unchanged — essentials/conditions only gain
 the canon `layout_key` + `symbol` (the Coverage periodic-table join key), and each claim
-is slimmed to the runtime-needed fields (audit metadata dropped). The `corpus_embed_synced`
+is slimmed to the runtime-needed fields (audit metadata dropped). The `derived_artifacts_fresh` (eden/derived/MANIFEST.json)
 invariant re-runs `build_embed()` and object-compares it to the on-disk embed, so a stale
 build can never let the Knowledge drawer's Essential/Condition deep-dive lie. Regenerate
 via `python eden/tools/corpus_embed.py`.

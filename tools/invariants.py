@@ -1431,35 +1431,64 @@ def check_corpus_runtime_purity():
     return True, "dist/main.js carries no LLM/external-network markers (extraction stays offline)"
 
 
-def check_corpus_embed_synced():
-    """Phase epsilon — the dashboard build-time corpus embed
-    (dashboard/assets/data/corpus-embed.json) must equal a fresh projection of the
-    sealed corpus (eden/tools/corpus_embed.py::build_embed). The offline file:// app
-    cannot fetch(), so the slim claim graph is inlined into the bundle at build
-    (esbuild JSON import in state/corpus.ts); drift means a stale build or a hand-edit,
-    which would make the Knowledge drawer's Essential/Condition deep-dive lie.
-    build_embed() is pure (no write); regenerate the embed via
-    `python eden/tools/corpus_embed.py`. Mirrors creators_log_embed_synced."""
+def check_derived_artifacts_fresh():
+    """R1 / blueprint D2 — every GENERATED data artifact listed in
+    eden/derived/MANIFEST.json must equal a fresh run of its ONE pure generator
+    over the sealed pillars. The offline file:// app inlines these into the bundle
+    at build (esbuild JSON import), so a hand-edit or a stale build would make a
+    surface lie. Regenerate via `python eden/tools/build_embeds.py`. Generalizes
+    the retired corpus_embed_synced to ALL manifest artifacts (grows through Phase
+    C: C2 adds essentials-targets-data, C3 the product embeds). Truth-anchored on a
+    deterministic re-derive from the sealed source each run — never stale-to-stale."""
+    import importlib.util as _ilu
     import json as _json
-    embed = ROOT / "dashboard" / "assets" / "data" / "corpus-embed.json"
-    builder = ROOT / "eden" / "tools" / "corpus_embed.py"
-    if not builder.exists():
-        return True, "eden/tools/corpus_embed.py missing (corpus not installed; bootstrap-guard)"
-    if not embed.exists():
-        return False, "corpus-embed.json missing — run `python eden/tools/corpus_embed.py`"
+    manifest_path = ROOT / "eden" / "derived" / "MANIFEST.json"
+    if not manifest_path.exists():
+        return True, "eden/derived/MANIFEST.json missing (bootstrap-guard)"
+    try:
+        manifest = _json.loads(manifest_path.read_text(encoding="utf-8"))
+    except Exception as e:
+        return False, f"MANIFEST.json is not valid JSON: {e}"
     sys.path.insert(0, str(ROOT / "tools"))
     sys.path.insert(0, str(ROOT / "eden" / "tools"))
-    import corpus_embed
-    try:
-        on_disk = _json.loads(embed.read_text(encoding="utf-8"))
-    except Exception as e:
-        return False, f"corpus-embed.json is not valid JSON: {e}"
-    expected = corpus_embed.build_embed()
-    if on_disk == expected:
-        n = len(expected.get("claims", {}))
-        return True, (f"corpus embed in sync with the sealed corpus "
-                      f"({n} claims, knowledge_version={expected.get('knowledge_version')})")
-    return False, "corpus-embed.json is STALE — run `python eden/tools/corpus_embed.py`"
+
+    def _load(rel):
+        p = ROOT / rel
+        spec = _ilu.spec_from_file_location(p.stem, p)
+        mod = _ilu.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        return mod
+
+    artifacts = manifest.get("artifacts", [])
+    if not artifacts:
+        return True, "manifest empty — no derived artifacts to verify"
+    stale, checked = [], 0
+    for entry in artifacts:
+        artifact, gen = entry["artifact"], entry["generator"]
+        if not (ROOT / gen).exists():
+            continue  # generator not installed (bootstrap-guard)
+        compare = entry.get("compare", "json")
+        if compare != "json":
+            stale.append(f"{artifact} UNSUPPORTED compare='{compare}'")
+            continue
+        apath = ROOT / artifact
+        if not apath.exists():
+            stale.append(f"{artifact} MISSING — run build_embeds.py")
+            continue
+        try:
+            mod = _load(gen)
+            expected = getattr(mod, entry["build_fn"])()
+            on_disk = _json.loads(apath.read_text(encoding="utf-8"))
+        except Exception as e:
+            stale.append(f"{artifact} ERROR: {e}")
+            continue
+        checked += 1
+        if on_disk != expected:
+            stale.append(f"{artifact} STALE")
+    if stale:
+        return False, ("derived artifact(s) drift from the pillars — run "
+                       f"`python eden/tools/build_embeds.py`: {'; '.join(stale)}")
+    return True, f"all {checked} derived artifact(s) in sync with the sealed pillars"
 
 
 def check_search_only_indices_excluded():
@@ -2025,12 +2054,12 @@ INVARIANTS = [
         lesson_ref="Wallach Knowledge Revamp Phase alpha (2026-06-24) — L10 portability guarantee: extraction may use an LLM, the runtime never may (offline-forever)",
     ),
     Invariant(
-        name="corpus_embed_synced",
-        description="the dashboard build-time corpus embed (dashboard/assets/data/corpus-embed.json) equals a fresh projection of the sealed corpus (eden/tools/corpus_embed.py::build_embed) — the Knowledge drawer's claim graph never drifts from claims/*",
-        check_fn=check_corpus_embed_synced,
-        truth_anchor="json.loads(dashboard/assets/data/corpus-embed.json) == eden/tools/corpus_embed.py::build_embed() over the sealed indices + claim shards",
-        severity="warning",
-        lesson_ref="Wallach Knowledge Revamp Phase epsilon (2026-06-24) — the offline file:// dashboard inlines the sealed claim graph at build; this catches a stale build or hand-edit that would make the in-app Essential/Condition deep-dive lie",
+        name="derived_artifacts_fresh",
+        description="every GENERATED data artifact in eden/derived/MANIFEST.json equals a fresh run of its one pure generator over the sealed pillars (R1 / blueprint D2) — a hand-edit or stale build of any listed artifact is RED; generalizes the retired corpus_embed_synced, grows through Phase C",
+        check_fn=check_derived_artifacts_fresh,
+        truth_anchor="for each manifest artifact: json.loads(on-disk) == generator.build_fn() re-derived from the sealed pillars each run (no stale-to-stale compare)",
+        severity="critical",
+        lesson_ref="Blueprint Phase C / D2 (2026-07-05) — the ~200x hand-typed-citation drift that triggered the overhaul; one freshness gate over a manifest registry means no derived file can silently drift from the pillars. Replaces the standalone corpus_embed_synced (folded in). memory: overhaul-blueprint-active-plan",
     ),
     Invariant(
         name="search_only_indices_excluded",

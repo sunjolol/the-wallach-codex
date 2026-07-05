@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "_purpose": "The registry of every GENERATED data artifact + its ONE pure generator (Phase C / blueprint D2). The derived_artifacts_fresh invariant iterates this list: for each entry it re-runs the generator over the sealed pillars and compares to the on-disk artifact, so a hand-edit or a stale build of any listed artifact is un-shippable (R1). eden/tools/build_embeds.py iterates the same list to regenerate. GROWS as Phase C folds each embed into the pipeline (C2: essentials-targets-data; C3: the product embeds).",
+  "_contract": "Each generator module exposes build_fn() -> the artifact object (pure, no write; used by the freshness gate) and write_fn() -> regenerates the on-disk file via safe_write (used by build_embeds). compare='json' means the gate compares json.loads(disk) == build_fn(); 'text' means exact-text. inputs list the pillar paths the generator reads (documentation + future input-hash tracking).",
+  "artifacts": [
+    {
+      "artifact": "dashboard/assets/data/corpus-embed.json",
+      "generator": "eden/tools/corpus_embed.py",
+      "build_fn": "build_embed",
+      "write_fn": "write_embed",
+      "compare": "json",
+      "inputs": [
+        "eden/corpus/claims/",
+        "eden/corpus/indices/",
+        "eden/corpus/essentials-canon.json",
+        "eden/corpus/books-meta.json",
+        "eden/corpus/books-roadmap.json",
+        "eden/corpus/knowledge-version.json",
+        "eden/catalog/conditions.json"
+      ],
+      "note": "Slim Wallach claim graph inlined into the bundle for the Knowledge drawer (esbuild JSON import in state/corpus.ts). Freshness was previously gated by the standalone corpus_embed_synced, now folded into derived_artifacts_fresh."
+    }
+  ]
+}
