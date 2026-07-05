@@ -49,7 +49,7 @@ _(No surface is signed-off at 100% yet. The Knowledge drawer is the most built-o
 
 ## 4 · Phase-4 legal / distribution wave (Wild West Mode ends here)
 
-_All deferred under `.claude/rules/wild-west-mode.md` — read `genesis/02-clarifications-and-plan.md` §8 for full scope, then DELETE wild-west-mode.md._
+_Deferred to the END of the build by Luneth's standing call (2026-07-05): no legal / copyright / disclaimer work interrupts the build — one clean legal + copyright pass happens here, at the end. (The old `.claude/rules/wild-west-mode.md` that encoded this was deleted 2026-07-05; its intent is folded into project memory + this checklist. Full scope: `genesis/02-clarifications-and-plan.md` §8, superseded-but-retained for reference.)_
 
 - [x] **Copyright scrub (source PDFs)** — the ~95 MB Wallach source PDFs were deleted 2026-07-04; the copyrighted material remaining is the book texts under `eden/corpus/books/`, gated by the repo staying private. (L + C)
 - [ ] **TOS · Privacy Policy · Medical disclaimer.** (C→L)
@@ -60,7 +60,6 @@ _All deferred under `.claude/rules/wild-west-mode.md` — read `genesis/02-clari
 - [ ] **SEO / landing page.** (C→L)
 - [ ] **SECURITY.md.** (C)
 - [ ] **Export raw + refined transcripts per book** for L's archive (raw lives in git history). (C)
-- [ ] **DELETE `.claude/rules/wild-west-mode.md`** once the wave is done. (C)
 
 ---
 

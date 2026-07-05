@@ -92,7 +92,6 @@ Read the matching file before the first write in that domain:
 | render probes, vitest | `testing.md` |
 | chunk close, commit, push | `commits-and-rounds.md` |
 | bash / python on the Windows host | `windows-host.md` |
-| Phase-bounded scope authorizations | `wild-west-mode.md` |
 | any health number / dose / claim (§00.A) | `source-rule.md` |
 | proposing a new system, tool, or invariant (§00.B) | `engineering-doctrine.md` |
 | logging · history · what & why to record | `logging-doctrine.md` |
