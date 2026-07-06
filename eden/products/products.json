@@ -1584,6 +1584,598 @@
           "source_label": "acv_gummy_suppfacts_0524.jpg"
         }
       ]
+    },
+    "as-slim-as-possible-asap": {
+      "product_id": "as-slim-as-possible-asap",
+      "name": "Sold Out - As Slim As Possible (ASAP)",
+      "sku": "USYG239001",
+      "ygy_id": "860",
+      "components": [
+        {
+          "form": "liquid",
+          "serving_size": "0.75 mL",
+          "servings_per_container": 80,
+          "nutrients": [
+            {
+              "name": "Niacin",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": 94,
+              "unit_detail": "B3"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 588,
+              "form": "as Pyridoxine HCl"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 4167,
+              "form": "Methylcobalamin"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 500,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "L-Arginine HCl, L-Carnitine, L-Glutamine, Tribulus terrestris Leaf Extract, Epimedium Leaf Extract, Resveratrol",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "L-Arginine",
+                  "form": "HCl"
+                },
+                {
+                  "pos": 2,
+                  "name": "L-Carnitine"
+                },
+                {
+                  "pos": 3,
+                  "name": "L-Glutamine"
+                },
+                {
+                  "pos": 4,
+                  "name": "Tribulus terrestris",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Epimedium",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 6,
+                  "name": "Resveratrol"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Water",
+            "Food Grade Alcohol",
+            "Natural Flavors",
+            "Stevia"
+          ],
+          "source_label": "asap_label-0120_panel-900x1200_1.jpg",
+          "role": null,
+          "macros": {}
+        }
+      ]
+    },
+    "beyond-hot-chocolate": {
+      "product_id": "beyond-hot-chocolate",
+      "name": "Beyond Hot Chocolate™ - 360G Canister",
+      "sku": "USYG104145",
+      "ygy_id": "370",
+      "components": [
+        {
+          "form": "powder",
+          "serving_size": "1 scoop (12 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 50,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 2.5,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "saturated_fat": {
+              "amount": 2.5,
+              "unit": "g",
+              "pct_dv": 13
+            },
+            "total_carbohydrate": {
+              "amount": 8,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "dietary_fiber": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "total_sugars": {
+              "amount": 6,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 5,
+              "unit": "g",
+              "pct_dv": 10
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Iron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 6
+            },
+            {
+              "name": "Sodium",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Reishi Mushroom",
+              "amount": 250,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "part": "fruit body"
+            }
+          ],
+          "other_ingredients": [
+            "Cane sugar",
+            "organic cocoa",
+            "medium chain triglycerides",
+            "natural flavors",
+            "rebaudioside A",
+            "silica"
+          ],
+          "source_label": "beyond-hot-chocolate-canister_suppfacts-0325.jpg",
+          "role": null,
+          "blends": []
+        }
+      ]
+    },
+    "beyond-sleep-gummies": {
+      "product_id": "beyond-sleep-gummies",
+      "name": "Beyond Sleep Gummies™",
+      "sku": "USYG100507",
+      "ygy_id": "9576",
+      "components": [
+        {
+          "form": "gummy",
+          "serving_size": "1 gummy",
+          "servings_per_container": 60,
+          "macros": {
+            "calories": {
+              "amount": 5,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "dietary_fiber": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 4
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Magnesium",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": "<1",
+              "form": "Magnesium Citrate"
+            },
+            {
+              "name": "Sodium",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": "<1"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 7300,
+                "unit": "mcg"
+              },
+              "pct_dv": null,
+              "as_labeled": "GABA Powder (Gamma Aminobutyric Acid), Chamomile Extract (Matricaria Chamomilla) (Flower), L-Tryptophan Powder, Melatonin Phytomelatonin (Melatonin from Hypericum perforatum L.) (Flower)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "GABA",
+                  "form": "powder"
+                },
+                {
+                  "pos": 2,
+                  "name": "Chamomile",
+                  "form": "extract",
+                  "latin": "Matricaria Chamomilla",
+                  "part": "flower"
+                },
+                {
+                  "pos": 3,
+                  "name": "L-Tryptophan",
+                  "form": "powder"
+                },
+                {
+                  "pos": 4,
+                  "name": "Melatonin",
+                  "form": "Phytomelatonin",
+                  "latin": "Hypericum perforatum L.",
+                  "part": "flower"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Tapioca Fiber",
+            "Allulose Syrup",
+            "Purified Water",
+            "Pectin",
+            "Sorbitol",
+            "Natural Tart Cherry Flavor",
+            "Citric Acid",
+            "Pecmate",
+            "Natural Colors (Red Beet and Black Carrot)"
+          ],
+          "source_label": "sleep-gummy-supp-facts-0425.jpg",
+          "role": null
+        }
+      ]
+    },
+    "bio-alert": {
+      "product_id": "bio-alert",
+      "name": "Bio Alert",
+      "sku": "USBI000002",
+      "ygy_id": "785",
+      "components": [
+        {
+          "form": "liquid",
+          "serving_size": "1 tbsp (15 mL)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 16,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "total_sugars": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Thiamin",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": 250
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 3.4,
+              "unit": "mg",
+              "pct_dv": 260
+            },
+            {
+              "name": "Niacin",
+              "amount": 60,
+              "unit": "mg",
+              "pct_dv": 460,
+              "unit_detail": "NE"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 300
+            },
+            {
+              "name": "Choline",
+              "amount": 1000,
+              "unit": "mg",
+              "pct_dv": 180
+            },
+            {
+              "name": "Glycine",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "other_ingredients": [
+            "Purified Water",
+            "Xylitol",
+            "Choline Dihydrogen Citrate",
+            "Potassium Citrate",
+            "Natural Flavors",
+            "Glycine",
+            "d-Panthenol",
+            "Niacin",
+            "Niacinamide",
+            "Stevia Extract",
+            "Potassium Sorbate",
+            "Pyridoxine Hydrochloride",
+            "Sodium Benzoate",
+            "Riboflavin",
+            "Thiamine Hydrochloride"
+          ],
+          "source_label": "usbi000002_biometics-bio-alert-0422_panel-900x1200.jpg",
+          "role": null,
+          "blends": []
+        }
+      ]
+    },
+    "bio-calcium": {
+      "product_id": "bio-calcium",
+      "name": "Bio Calcium™ - 120 capsules",
+      "sku": "82132",
+      "ygy_id": "787",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 60,
+          "nutrients": [
+            {
+              "name": "Calcium",
+              "amount": 225,
+              "unit": "mg",
+              "pct_dv": 23,
+              "form": "as citrate, malate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": 38,
+              "form": "as amino acid chelate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 13,
+              "form": "as gluconate, amino acid chelate"
+            },
+            {
+              "name": "Copper",
+              "amount": 0.4,
+              "unit": "mg",
+              "pct_dv": 20,
+              "form": "as amino acid chelate"
+            },
+            {
+              "name": "Manganese",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 50,
+              "form": "as gluconate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 99,
+              "unit": "mg",
+              "pct_dv": 3,
+              "form": "as citrate"
+            },
+            {
+              "name": "Boron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as amino acid chelate"
+            }
+          ],
+          "other_ingredients": [
+            "Capsule (gelatin and water)",
+            "magnesium stearate"
+          ],
+          "source_label": "sl-82132-bio-calcium-suppfacts-0311.jpg",
+          "role": null,
+          "macros": {},
+          "blends": []
+        }
+      ]
+    },
+    "bio-fuel": {
+      "product_id": "bio-fuel",
+      "name": "Bio Fuel",
+      "sku": "USBI000004",
+      "ygy_id": "876",
+      "components": [
+        {
+          "form": "liquid",
+          "serving_size": "1 tbsp (15 mL)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 0,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "total_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 2250,
+              "unit": "mcg",
+              "pct_dv": 250,
+              "form": "50% from beta carotene",
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 180,
+              "unit": "mg",
+              "pct_dv": 200
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 5,
+              "unit": "mcg",
+              "pct_dv": 25
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 130
+            },
+            {
+              "name": "Thiamin",
+              "amount": 1.5,
+              "unit": "mg",
+              "pct_dv": 130
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 1.7,
+              "unit": "mg",
+              "pct_dv": 130
+            },
+            {
+              "name": "Niacin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 130,
+              "unit_detail": "NE"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 2.5,
+              "unit": "mg",
+              "pct_dv": 150
+            },
+            {
+              "name": "Folate",
+              "amount": 400,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 9,
+              "unit": "mcg",
+              "pct_dv": 380
+            },
+            {
+              "name": "Biotin",
+              "amount": 150,
+              "unit": "mcg",
+              "pct_dv": 500
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 200
+            },
+            {
+              "name": "Zinc",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": 140
+            },
+            {
+              "name": "Selenium",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 180
+            },
+            {
+              "name": "Copper",
+              "amount": 0.5,
+              "unit": "mg",
+              "pct_dv": 60
+            },
+            {
+              "name": "Manganese",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 50
+            },
+            {
+              "name": "Chromium",
+              "amount": 50,
+              "unit": "mcg",
+              "pct_dv": 45
+            },
+            {
+              "name": "Potassium",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 1
+            }
+          ],
+          "other_ingredients": [
+            "Purified Water",
+            "Xylitol",
+            "Biocellular Micellized® Vitamin Core (Ethoxylated Vegetable Oil, Glycerine, Ascorbic Acid, d-alpha-Tocopheryl Acetate, Niacinamide, d-Panthenol, Pyridoxine Hydrochloride, Beta Carotene, Vitamin A Palmitate, Riboflavin-5-Phosphate, Thiamin Hydrochloride, Folic Acid, Cholecalciferol, Biotin, Cyanocobalamin)",
+            "Aloe Vera Juice",
+            "Natural Flavors",
+            "Citric Acid",
+            "Zinc Gluconate",
+            "Stevia Extract (Reb A)",
+            "Potassium Sorbate",
+            "Manganese Gluconate",
+            "Sodium Benzoate",
+            "Copper Gluconate",
+            "Grape Seed Extract",
+            "Green Tea Extract",
+            "Ginkgo Biloba Extract",
+            "Chromium Polynicotinate",
+            "Sodium Selenite"
+          ],
+          "source_label": "usbi000004-bio-fuel_supplementfacts_1021_1200x900.jpg",
+          "role": null,
+          "blends": []
+        }
+      ]
     }
   }
 }

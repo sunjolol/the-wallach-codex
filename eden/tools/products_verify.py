@@ -19,6 +19,7 @@ PRODUCTS = ROOT / "eden" / "products" / "products.json"
 
 AS_LABELED_MAX = 600          # bounded fidelity token
 TOKEN_MAX = 120               # any other structured string
+OTHER_ING_MAX = 350           # excipients/compound ingredients (parenthetical sub-lists) can be long but are still facts
 ALLOWED_UNITS = {"mg", "mcg", "g", "iu", "mcg rae", "mcg dfe", "mg ne", "ml", "fl oz", None}
 # A "prose" heuristic: a sentence-shaped token (". " + capital, or "; " glue) in a
 # field that must be a short structured token = a leak. as_labeled is exempt (bounded).
@@ -31,13 +32,16 @@ def err(where: str, msg: str) -> None:
     errors.append(f"{where}: {msg}")
 
 
-def check_token(where: str, s, *, allow_period: bool = False) -> None:
-    """A structured string field — short, no prose shape."""
+def check_token(where: str, s, *, max_len: int = TOKEN_MAX) -> None:
+    """A structured string field — bounded, no prose shape. Compound ingredients
+    (e.g. a micellized 'vitamin core' with a parenthetical sub-list) can be long but
+    are still FACTS, so other_ingredients passes a higher max_len; PROSE_RE still
+    blocks sentence-shaped text everywhere."""
     if not isinstance(s, str) or not s.strip():
         err(where, f"empty/non-string token: {s!r}")
         return
-    if len(s) > TOKEN_MAX:
-        err(where, f"token too long ({len(s)}>{TOKEN_MAX}) — prose leak? {s[:40]!r}")
+    if len(s) > max_len:
+        err(where, f"token too long ({len(s)}>{max_len}) — prose leak? {s[:40]!r}")
     if PROSE_RE.search(s):
         err(where, f"prose-shaped text in a fact field: {s[:50]!r}")
 
@@ -122,7 +126,7 @@ def check_component(where: str, c: dict) -> None:
             check_ingredient(f"{w}.ingredients[{j}]", ing)
     # other ingredients — short excipient tokens
     for i, oi in enumerate(c.get("other_ingredients", []) or []):
-        check_token(f"{where}.other_ingredients[{i}]", oi)
+        check_token(f"{where}.other_ingredients[{i}]", oi, max_len=OTHER_ING_MAX)
     # source label
     sl = c.get("source_label")
     if not isinstance(sl, str) or not sl.lower().endswith(".jpg"):
