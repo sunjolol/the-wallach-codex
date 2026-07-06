@@ -1577,6 +1577,11 @@ _CLEAN_SURFACE_DERIVED = (   # corpus-derived artifacts that are clean today
 _CLEAN_SURFACE_STORES = (   # hand-edited designated prose stores clean today (blueprint §2.4)
     "dashboard/assets/data/doctrine-data.json",  # Knowledge>Doctrine cards (Phase E)
 )
+_CLEAN_SURFACE_LEGACY_DATA = (   # legacy hand-authored data now under the prose/citation gates (crack #3, 2026-07-06)
+    "dashboard/assets/data/regimen-base-data.json",    # transitional HBSP composition (Pillar 2 in Phase F)
+    "dashboard/assets/data/scanner-corpus-data.json",  # scanner dietary baselines (Phase E/F)
+    "dashboard/assets/data/ocr-dict-data.json",        # OCR normalization dictionary (Phase E/F)
+)
 # Designated prose / free-descriptor homes -- the ONLY keys allowed to hold
 # prose-shaped text on the clean surface. This allowlist IS R4's "ONE compartment":
 # the corpus's two prose fields, file-level metadata/audit prose, and the dose
@@ -1585,10 +1590,11 @@ _CLEAN_SURFACE_STORES = (   # hand-edited designated prose stores clean today (b
 _PROSE_HOME_KEYS = {
     "claim_text", "verbatim",                                  # corpus prose homes
     "_doctrine", "_purpose", "_doc", "provenance", "notes",    # file metadata prose
-    "hash_note", "source", "description", "question",
+    "hash_note", "source", "_source", "description", "question",
     "resolution", "_note", "rationale", "file", "authors", "sealed_at",
     "duration", "for_condition", "form",                       # dose free descriptors
     "body",                                                    # doctrine-store prose home (§2.4 #4)
+    "_prose_container",                                        # a leaf under a _PROSE_CONTAINER_KEYS subtree (crack #3)
 }
 
 
@@ -1600,24 +1606,36 @@ def _clean_surface_files():
                 "eden/catalog/conditions.json",
                 "eden/catalog/symptoms.json",
                 *_CLEAN_SURFACE_DERIVED,
-                *_CLEAN_SURFACE_STORES):
+                *_CLEAN_SURFACE_STORES,
+                *_CLEAN_SURFACE_LEGACY_DATA):
         p = ROOT / rel
         if p.exists():
             files.append(p)
     return files
 
 
-def _walk_strings(obj, key=None):
+_PROSE_CONTAINER_KEYS = {"antiListNotes"}  # a whole subtree that IS one designated prose
+# home (its leaves are contained prose keyed by an entity name, not fact fields). Crack #3
+# (2026-07-06): scanner-corpus-data keeps its Wallach food-guidance PROSE in antiListNotes,
+# cleanly apart from the antiList fact arrays; recognize it so the fact arrays stay gated
+# while the contained prose gets its one home. (That prose still carries hand-authored
+# Wallach health claims + inline book-refs -- a Phase E/F scanner-rework item to source into
+# corpus claims; tracked in the blueprint, not gated here.)
+
+
+def _walk_strings(obj, key=None, in_prose=False):
     """Yield (parent_key, value) for every string leaf. List elements inherit their
-    enclosing key so `synonyms: [...]` leaves are tagged 'synonyms', etc."""
+    enclosing key so `synonyms: [...]` leaves are tagged 'synonyms', etc. A leaf anywhere
+    under a _PROSE_CONTAINER_KEYS subtree is tagged '_prose_container' (a prose home) so a
+    designated prose block is not mis-read as fact-field prose."""
     if isinstance(obj, dict):
         for k, v in obj.items():
-            yield from _walk_strings(v, k)
+            yield from _walk_strings(v, k, in_prose or k in _PROSE_CONTAINER_KEYS)
     elif isinstance(obj, list):
         for x in obj:
-            yield from _walk_strings(x, key)
+            yield from _walk_strings(x, key, in_prose)
     elif isinstance(obj, str):
-        yield key, obj
+        yield ("_prose_container" if in_prose else key), obj
 
 
 def check_citations_reference_registry():
@@ -1632,8 +1650,8 @@ def check_citations_reference_registry():
     claim->book_id substring is also gated by corpus_verify #2 (this makes the rule explicit +
     extends it to titles). NOW COVERED (Phase E): the doctrine-data.json prose store (its cards'
     enforced_by names real gates, no book title). OUT of scope (WISH, Phase E/F -- do NOT sell as
-    guarded): the legacy/orphaned data embeds (essentials-benefits-data still carries "(Wallach Dead
-    Doctors Don't Lie)") + views/regimen.ts. Truth-anchored on books-meta titles + book_ids x the
+    guarded): inline view prose (e.g. views/regimen.ts). The legacy DATA embeds (regimen-base /
+    scanner / ocr) are now COVERED after crack #3 widened the surface (2026-07-06). Truth-anchored on books-meta titles + book_ids x the
     clean-surface bytes, recomputed each run."""
     meta_p = ROOT / "eden" / "corpus" / "books-meta.json"
     if not meta_p.exists():
@@ -1667,7 +1685,8 @@ def check_citations_reference_registry():
 def check_prose_contained():
     """Charter R4 -- prose lives in ONE designated compartment, never in a fact field. LIVE teeth
     over the CLEAN Charter surface (corpus claims + canon + catalog + the corpus-derived
-    targets/coverage-layout artifacts): no prose-shaped string appears under a NON-prose key.
+    targets/coverage-layout artifacts + the legacy regimen-base/scanner/ocr data, crack #3):
+    no prose-shaped string appears under a NON-prose key.
     Prose-shaped = >= 12 words OR a sentence boundary ('. X') in a > 40-char value. The designated
     prose/descriptor homes (_PROSE_HOME_KEYS: claim_text, verbatim, file-metadata prose, dose
     descriptors) are R4's "ONE compartment" -- everything else must stay structured. Catches a
@@ -1691,7 +1710,7 @@ def check_prose_contained():
         return False, ("prose-shaped text in a fact field on the clean surface (R4) -- move it to a "
                        "designated prose home: " + "; ".join(viol[:6]) + (" ..." if len(viol) > 6 else ""))
     return True, (f"no prose in a fact field across {len(files)} clean-surface file(s); prose stays "
-                  f"in its designated homes (full prose-store R4 + legacy embeds/views are a WISH, "
+                  f"in its designated homes (full prose-store R4 + inline view prose are a WISH, "
                   f"Phase E/F)")
 
 
@@ -1801,6 +1820,189 @@ def check_scanner_user_items_marked():
     return True, ("Eden's wall holds -- RegimenItemSchema requires provenance, every code provenance "
                   f"literal is a user token {_USER_PROVENANCE}, and no user token appears in any pillar "
                   "or operational artifact (scanned/manual items stay user-provided, never canonical)")
+
+
+def check_data_artifacts_accounted():
+    """Charter R1 -- the manifest-COMPLETENESS gate (crack #1 fix, 2026-07-06).
+    derived_artifacts_fresh proves the files LISTED in eden/derived/MANIFEST.json are fresh;
+    it does NOT prove the list is COMPLETE. This closes that hole: every
+    dashboard/assets/data/*.json must appear either in the manifest's `artifacts` (derived +
+    freshness-gated) or in `accounted` (hand-authored / externally-gated, each entry carrying
+    a disposition + reason). A data file in NEITHER list is RED -- the exact 'is the list
+    complete?' hole the 2026-07-06 audit found (a silently hand-maintained artifact that drift
+    could ship). A stale `accounted` entry whose file is gone, a file in BOTH lists, or an
+    accounted entry missing its disposition/reason, is also RED. Truth-anchored on the on-disk
+    glob x the manifest, recomputed each run."""
+    import json as _json
+    manifest_path = ROOT / "eden" / "derived" / "MANIFEST.json"
+    data_dir = ROOT / "dashboard" / "assets" / "data"
+    if not manifest_path.exists() or not data_dir.exists():
+        return True, "manifest / assets-data not installed (bootstrap-guard)"
+    try:
+        manifest = _json.loads(manifest_path.read_text(encoding="utf-8"))
+    except Exception as e:
+        return False, f"MANIFEST.json is not valid JSON: {e}"
+    derived = {e["artifact"] for e in manifest.get("artifacts", [])}
+    accounted_entries = manifest.get("accounted", [])
+    accounted = {e.get("file") for e in accounted_entries}
+    on_disk = {p.relative_to(ROOT).as_posix() for p in data_dir.glob("*.json")}
+    registered = derived | accounted
+    unaccounted = sorted(on_disk - registered)
+    both = sorted(derived & accounted)
+    stale = sorted(f for f in accounted if f and not (ROOT / f).exists())
+    missing_reason = [e.get("file", "?") for e in accounted_entries
+                      if not (e.get("disposition") and e.get("reason"))]
+    viol = []
+    if unaccounted:
+        viol.append("unaccounted data file(s) -- add to MANIFEST artifacts or accounted: "
+                    + ", ".join(unaccounted))
+    if both:
+        viol.append("file(s) in BOTH artifacts and accounted: " + ", ".join(both))
+    if stale:
+        viol.append("accounted entry(ies) whose file is gone: " + ", ".join(stale))
+    if missing_reason:
+        viol.append("accounted entry(ies) missing disposition/reason: " + ", ".join(missing_reason))
+    if viol:
+        return False, "manifest incomplete (R1): " + "; ".join(viol)
+    return True, (f"all {len(on_disk)} assets/data/*.json accounted -- {len(derived)} derived "
+                  f"(freshness-gated) + {len(accounted)} hand-authored/externally-gated (each with a reason)")
+
+
+def check_charter_gates_present():
+    """Charter R7 (the meta-gate) -- 'codify, don't promise': every gate the Charter presents
+    as its proof must actually EXIST, or the rule must be labeled WISH (crack #2 fix,
+    2026-07-06). Parses the R1-R9 rule table in .claude/rules/charter.md; for each
+    backtick-quoted gate name in a rule's GATE column, that name must be (a) a live invariant
+    here, (b) a known non-invariant enforcement mechanism (a verify tool / hook / lint rule),
+    or (c) the rule's STATUS cell must contain 'WISH' (an honestly-labeled promise). A Charter
+    that names a gate which neither exists nor is labeled WISH is overselling its enforcement
+    -- RED. This is the gate that keeps the Charter from lying about its own gates.
+    NOT covered (WISH, not sold as guarded): SEMANTIC verification that a present gate actually
+    ENFORCES its rule -- no non-gaming machine check exists; that rests on review. Truth-anchored
+    on the charter.md table x the live invariant names, recomputed each run."""
+    charter = ROOT / ".claude" / "rules" / "charter.md"
+    if not charter.exists():
+        return True, ".claude/rules/charter.md missing (bootstrap-guard)"
+    live = {i.name for i in INVARIANTS}
+    KNOWN_MECHANISMS = {
+        "corpus_verify", "catalog_verify", "book_purity", "mine", "mine_batch",
+        "stop_round_close", "pre_write_guard", "post_write_verify", "pre_bash_guard",
+        "no-restricted-globals", "eslint-plugin-boundaries",
+    }
+    # backticked identifiers that are field/ID names, not gates (they appear in gate-cell prose)
+    SKIP = {"book_id", "nutrient_id", "condition_id", "essential_id", "source_claim_id",
+            "layout_key", "for_condition", "review_state", "other_substances", "umbrella_of",
+            "canon_slug", "display_name", "knowledge_version", "coverage_kind"}
+    tok_re = re.compile(r"`([a-z][a-z0-9_]*(?:-[a-z0-9_]+)*)`")
+    viol, rows = [], 0
+    for line in charter.read_text(encoding="utf-8").splitlines():
+        s = line.strip()
+        if not re.match(r"\|\s*R[0-9]\b", s):
+            continue
+        cells = [c.strip() for c in s.strip("|").split("|")]
+        if len(cells) < 4:
+            viol.append(f"{cells[0] if cells else '?'}: malformed rule row (expected 4 columns)")
+            continue
+        rows += 1
+        rule_id, gate_cell, status_cell = cells[0], cells[2], cells[3]
+        is_wish = "WISH" in status_cell or "WISH" in gate_cell
+        for m in tok_re.finditer(gate_cell):
+            name = m.group(1)
+            if name in SKIP or ("_" not in name and "-" not in name):
+                continue  # not gate-shaped (a plain word) or a known field id
+            if name in live or name in KNOWN_MECHANISMS:
+                continue
+            if is_wish:
+                continue
+            viol.append(f"{rule_id}: Gate names `{name}`, which is neither a live gate nor "
+                        f"labeled WISH (the Charter oversells its enforcement)")
+    if rows != 9:
+        viol.append(f"parsed {rows} rule rows, expected 9 (charter.md R1-R9 table drift?)")
+    if viol:
+        return False, "Charter gate honesty broken (R7): " + "; ".join(viol[:6])
+    return True, (f"all {rows} Charter rules name real gates or are labeled WISH "
+                  f"({len(live)} live invariants cross-checked)")
+
+
+def check_exceptions_justified():
+    """Charter R9 -- 'refinements are codified too, never a silent loosening' (crack #2 fix,
+    2026-07-06). Every tolerated invariant failure in .claude/invariant-baseline.json must
+    carry a JUSTIFICATION: an object with an `invariant` (the live gate it excepts), a
+    non-empty `reason`, and a `test` reference (the proof the tolerated case is genuinely
+    correct). A bare-string or reason-less exception is exactly the silent loosening R9
+    forbids -- RED. An empty baseline is vacuously green (nothing to justify), but the gate
+    stands so the NEXT exception must be justified. Paired reader: tools/hooks/
+    stop_round_close.py tolerates the SAME entries by their `invariant` name. Truth-anchored
+    on the baseline file, recomputed each run."""
+    import json as _json
+    baseline = ROOT / ".claude" / "invariant-baseline.json"
+    if not baseline.exists():
+        return True, "invariant-baseline.json missing (bootstrap-guard)"
+    try:
+        data = _json.loads(baseline.read_text(encoding="utf-8"))
+    except Exception as e:
+        return False, f"invariant-baseline.json is not valid JSON: {e}"
+    entries = data.get("tolerated_failures", [])
+    live = {i.name for i in INVARIANTS}
+    viol = []
+    for i, e in enumerate(entries):
+        if not isinstance(e, dict):
+            viol.append(f"entry #{i + 1} is a bare {type(e).__name__} -- an exception must be an "
+                        f"object with invariant+reason+test (R9: no silent loosening)")
+            continue
+        inv = e.get("invariant")
+        if not inv:
+            viol.append(f"entry #{i + 1} has no `invariant` name")
+        elif inv not in live:
+            viol.append(f"entry #{i + 1} excepts `{inv}`, not a live invariant (stale exception?)")
+        if not e.get("reason"):
+            viol.append(f"entry #{i + 1} ({inv or '?'}) has no `reason`")
+        if not e.get("test"):
+            viol.append(f"entry #{i + 1} ({inv or '?'}) has no `test` reference")
+    if viol:
+        return False, "unjustified baseline exception(s) (R9): " + "; ".join(viol[:6])
+    n = len(entries)
+    return True, (f"all {n} baseline exception(s) carry invariant+reason+test" if n else
+                  "no baseline exceptions (vacuously clean); the R9 gate stands for the next one")
+
+
+def check_corpus_audit_gate():
+    """Charter R8 / memory full-corpus-audit-before-phase-g -- the MANDATORY full-corpus claim
+    audit (all claims, every kind) that must run BEFORE Phase G resumes book mining, made
+    STRUCTURAL instead of a memory that can be forgotten (crack #4 fix, 2026-07-06).
+    eden/tools/corpus-audit-status.json records a `frozen_claim_count` (the corpus size at
+    freeze) and a `phase_g_unlocked` flag. While the audit is NOT signed off
+    (phase_g_unlocked=false), the live corpus claim count may not EXCEED the frozen count --
+    i.e. new claims cannot be mined onto unaudited data. Growing the corpus is BLOCKED (RED)
+    until either the audit signs off (set phase_g_unlocked=true after the corpus_audit.py
+    worklist + Luneth's per-claim review) or the freeze baseline is deliberately re-anchored.
+    count == frozen -> pass (audit owed, Phase G locked); count < frozen (a deletion) -> pass.
+    This never reds the board during Phase E; it reds the instant unaudited mining begins.
+    Truth-anchored on the live shard claim count x the frozen baseline, recomputed each run."""
+    import json as _json
+    status_p = ROOT / "eden" / "tools" / "corpus-audit-status.json"
+    claims_dir = ROOT / "eden" / "corpus" / "claims"
+    if not status_p.exists() or not claims_dir.exists():
+        return True, "corpus-audit-status / corpus not installed (bootstrap-guard)"
+    try:
+        st = _json.loads(status_p.read_text(encoding="utf-8"))
+    except Exception as e:
+        return False, f"corpus-audit-status.json is not valid JSON: {e}"
+    count = 0
+    for shard in claims_dir.glob("claims-*.json"):
+        count += len(_json.loads(shard.read_text(encoding="utf-8")).get("claims", []))
+    if st.get("phase_g_unlocked") is True:
+        return True, f"corpus audit signed off (phase_g_unlocked) -- mining unblocked; {count} claims"
+    frozen = st.get("frozen_claim_count")
+    if not isinstance(frozen, int):
+        return False, "corpus-audit-status.json has no integer frozen_claim_count"
+    if count > frozen:
+        return False, (f"PHASE G LOCKED -- corpus grew to {count} claims (frozen at {frozen}) without "
+                       f"the mandatory full-corpus audit sign-off; new claims may not land on unaudited "
+                       f"data. Run eden/tools/corpus_audit.py, review, then set phase_g_unlocked=true. "
+                       f"(memory: full-corpus-audit-before-phase-g)")
+    note = "audit OWED, Phase G LOCKED" if count == frozen else f"corpus shrank to {count} (was {frozen})"
+    return True, f"corpus audit gate holding -- {count} claims vs freeze {frozen}; {note}"
 
 
 INVARIANTS = [
@@ -2131,6 +2333,38 @@ INVARIANTS = [
         truth_anchor="dashboard/assets/js/src provenance literals + RegimenItemSchema x a user-token scan of eden/{corpus,catalog}/*.json & dashboard/assets/data/*.json (excl. append-only creators-log narrative), recomputed each run",
         severity="critical",
         lesson_ref="Blueprint Phase E -- §5.4 (2026-07-06): Eden's wall -- the scanner lets a user add ANY item to THEIR regimen but can NEVER modify the sealed pillars; this codifies 'user items flagged, never enter pillars/indices' (R7). memory: overhaul-blueprint-active-plan",
+    ),
+    Invariant(
+        name="data_artifacts_accounted",
+        description="Charter R1 completeness half -- every dashboard/assets/data/*.json is registered in eden/derived/MANIFEST.json, either in `artifacts` (derived + freshness-gated) or in `accounted` (hand-authored/externally-gated, each with a disposition + reason); a data file in neither list is RED (no silent hand-maintained artifact can ship)",
+        check_fn=check_data_artifacts_accounted,
+        truth_anchor="the on-disk glob of dashboard/assets/data/*.json x the MANIFEST.json artifacts+accounted registries, recomputed each run",
+        severity="critical",
+        lesson_ref="Crack #1 (2026-07-06 vision-vs-reality audit): derived_artifacts_fresh proved the LISTED artifacts fresh but nothing proved the list COMPLETE -- coverage-layout-data + 3 others were hand-maintained outside the gate. This forces every data file into a visible bucket. memory: overhaul-blueprint-active-plan",
+    ),
+    Invariant(
+        name="charter_gates_present",
+        description="Charter R7 meta-gate -- every gate named in the R1-R9 table's Gate column in .claude/rules/charter.md must be a live invariant, a known enforcement mechanism (verify tool/hook/lint), or the rule must be labeled WISH; a named gate that neither exists nor is WISH means the Charter oversells its enforcement = RED",
+        check_fn=check_charter_gates_present,
+        truth_anchor="the parsed charter.md R1-R9 rule table (Gate + Status columns) x the live invariant name set + a fixed mechanism allowlist, recomputed each run",
+        severity="critical",
+        lesson_ref="Crack #2 (2026-07-06): R7 ('codify, don't promise') was itself only a WISH -- nothing verified the Charter's gate column named real gates. This makes the Charter unable to lie about its own enforcement. Semantic 'the gate truly enforces the rule' stays review-only (labeled). memory: overhaul-blueprint-active-plan",
+    ),
+    Invariant(
+        name="exceptions_justified",
+        description="Charter R9 -- every tolerated failure in .claude/invariant-baseline.json is a justification object {invariant, reason, test}; a bare-string or reason-less/test-less exception is a silent loosening = RED. Empty baseline is vacuously clean but the gate stands for the next exception",
+        check_fn=check_exceptions_justified,
+        truth_anchor="the tolerated_failures list in .claude/invariant-baseline.json x the live invariant names, recomputed each run; paired reader stop_round_close.py tolerates the same entries by their `invariant` name",
+        severity="critical",
+        lesson_ref="Crack #2 (2026-07-06): R9 ('refinements are codified too, never a silent loosening') was a WISH -- the baseline could hold an unjustified exception with nothing to catch it. Now every exception must carry its reason + a proving test. memory: overhaul-blueprint-active-plan",
+    ),
+    Invariant(
+        name="corpus_audit_gate",
+        description="Charter R8 / the mandatory pre-Phase-G full-corpus audit made STRUCTURAL: while eden/tools/corpus-audit-status.json has phase_g_unlocked=false, the live claim count may not exceed frozen_claim_count -- new claims cannot be mined onto unaudited data (RED the instant they are). Green while count==freeze (audit owed, Phase G locked); unblocks on audit sign-off",
+        check_fn=check_corpus_audit_gate,
+        truth_anchor="the live corpus shard claim count x frozen_claim_count in eden/tools/corpus-audit-status.json, recomputed each run",
+        severity="critical",
+        lesson_ref="Crack #4 (2026-07-06): the full 1203-claim audit owed before Phase G rested on a memory that could be forgotten. This codifies it -- mining new claims onto unaudited data is structurally blocked until sign-off. Harness: eden/tools/corpus_audit.py. memory: full-corpus-audit-before-phase-g",
     ),
 ]
 

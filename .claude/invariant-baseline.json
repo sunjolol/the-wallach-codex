@@ -1,6 +1,11 @@
 {
   "tolerated_failures": [],
-  "captured": "2026-06-22",
-  "board": "20/20 (old-system decommission, cleanup chunk C2)",
-  "note": "Failures stop_round_close.py tolerates (no NEW-regression block). Empty by design: invariants.py was pruned to the 20 checks that protect the live app / code / eden / §17 write-discipline. The perpetually-red dashboard_integrity smoke test was retired (render probes verify the dashboard end-to-end). Any red now is a real regression."
+  "captured": "2026-07-06",
+  "board": "45/45 (crack-fix chunk: manifest-completeness + R7/R9 meta-gates + widened prose + corpus-audit lock)",
+  "note": "Invariant failures stop_round_close.py tolerates without blocking a round-close (no NEW-regression block). EMPTY BY DESIGN: every red is a real regression. Any entry MUST be justified (Charter R9, gated by exceptions_justified): an object {invariant, reason, test}, never a bare name -- a reason-less exception is a silent loosening and is itself RED. stop_round_close.py reads each entry's `invariant` name.",
+  "_entry_schema": {
+    "invariant": "the live invariant name this exception tolerates",
+    "reason": "why the failure is acceptable (the recorded justification -- never blank)",
+    "test": "a reference (path or test name) proving the tolerated case is genuinely correct"
+  }
 }

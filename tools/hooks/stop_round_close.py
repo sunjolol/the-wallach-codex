@@ -116,7 +116,10 @@ def _tolerated():
     path = os.environ.get("STOP_ROUND_CLOSE_BASELINE") or str(BASELINE_FILE)
     try:
         data = json.loads(Path(path).read_text(encoding="utf-8"))
-        return set(data.get("tolerated_failures", []))
+        # Entries are R9 justification objects {invariant, reason, test} (gated by
+        # exceptions_justified); tolerate a bare-string entry too for forward-compat.
+        return {e if isinstance(e, str) else e.get("invariant")
+                for e in data.get("tolerated_failures", [])}
     except Exception:
         return None  # missing/unreadable → cannot judge regressions; fail-open
 
