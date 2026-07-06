@@ -1541,6 +1541,181 @@ def check_mined_pages_clean():
     return True, f"all mined source pages clean across campaign books [{gated}] (tight gibberish+spacing gate)"
 
 
+# ---------------------------------------------------------------------------
+# Charter R3 / R4 gates (Phase D-c, 2026-07-05) -- citations, prose, dedup
+# ---------------------------------------------------------------------------
+# The three gates the blueprint's Phase D prescribes (§6 / enforcement table 4.1).
+# They enforce Charter R3 (one source per fact, referenced by ID -- no value
+# hand-written twice) and R4 (prose contained in ONE compartment) over the CLEAN
+# Charter-governed surface: the Wallach Corpus pillar (claims + essentials-canon)
+# + the Catalog pillar (conditions/symptoms) + the corpus-DERIVED artifacts
+# (essentials-targets-data, coverage-layout-data). This is where the rules HOLD
+# today, so the gates have real teeth and stay green.
+#
+# OPTION-1 ALTITUDE (Luneth 2026-07-05): real teeth on the clean surface NOW;
+# the surfaces that are still legacy are a LABELED WISH (R7 -- documented, never
+# sold as guarded), extended when Phase E/F/G collapses them into the pipeline:
+#   * the legacy not-yet-collapsed data embeds -- essentials-benefits-data (still
+#     carries "(Wallach Dead Doctors Don't Lie)"), essentials-best-supplements,
+#     goal-recommendations-data, ingredients-embed, ingredients-quickref-data,
+#     regimen-label-lookup, scanner-corpus-data, ocr-dict-data -- carry
+#     hand-maintained prose + hand-typed cites;
+#   * the legacy view scaffold -- views/knowledge.ts DOCTRINES, views/regimen.ts
+#     placeholders -- carry hand-typed cites + inline educational prose.
+# The FULL R4 (verbatim = a claim POINTER + a single-copy per-essential prose
+# store, blueprint Q3) also only becomes meaningful once clean post-mining stances
+# exist -- likewise WISH. None of that is sold as guarded here.
+
+_CLEAN_SURFACE_DERIVED = (   # corpus-derived artifacts that are clean today
+    "dashboard/assets/data/essentials-targets-data.json",
+    "dashboard/assets/data/coverage-layout-data.json",
+)
+# Designated prose / free-descriptor homes -- the ONLY keys allowed to hold
+# prose-shaped text on the clean surface. This allowlist IS R4's "ONE compartment":
+# the corpus's two prose fields, file-level metadata/audit prose, and the dose
+# sub-fields whose values are inherently short free descriptors (a titration
+# schedule, a target condition, a dose form).
+_PROSE_HOME_KEYS = {
+    "claim_text", "verbatim",                                  # corpus prose homes
+    "_doctrine", "_purpose", "_doc", "provenance", "notes",    # file metadata prose
+    "hash_note", "source", "description", "question",
+    "resolution", "_note", "rationale", "file", "authors", "sealed_at",
+    "duration", "for_condition", "form",                       # dose free descriptors
+}
+
+
+def _clean_surface_files():
+    """The CLEAN Charter-governed file set (see the block header). Missing files are
+    skipped (bootstrap-safe)."""
+    files = sorted((ROOT / "eden" / "corpus" / "claims").glob("claims-*.json"))
+    for rel in ("eden/corpus/essentials-canon.json",
+                "eden/catalog/conditions.json",
+                "eden/catalog/symptoms.json",
+                *_CLEAN_SURFACE_DERIVED):
+        p = ROOT / rel
+        if p.exists():
+            files.append(p)
+    return files
+
+
+def _walk_strings(obj, key=None):
+    """Yield (parent_key, value) for every string leaf. List elements inherit their
+    enclosing key so `synonyms: [...]` leaves are tagged 'synonyms', etc."""
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            yield from _walk_strings(v, k)
+    elif isinstance(obj, list):
+        for x in obj:
+            yield from _walk_strings(x, key)
+    elif isinstance(obj, str):
+        yield key, obj
+
+
+def check_citations_reference_registry():
+    """Charter R3 / the overhaul-trigger gate -- a book is referenced by book_id and its
+    display citation is COMPOSED from the sealed registry (books-meta.json), never hand-typed.
+    Hand-typed citations (the ~200x drift where a cite said 1999 while the registry said 2011)
+    are the exact failure this overhaul exists to kill. LIVE teeth over the CLEAN Charter
+    surface: (1) every claim's locator.book resolves to a registry book_id; (2) no clean-surface
+    FACT field carries a registry book TITLE literal -- titles live ONLY in books-meta + its
+    derived projection, so a title in a fact field is a hand-typed citation. Prose homes
+    (verbatim/claim_text/...) are allowlisted: Wallach may name a book in his own words. The
+    claim->book_id substring is also gated by corpus_verify #2 (this makes the rule explicit +
+    extends it to titles). OUT of scope (WISH, Phase E/F -- do NOT sell as guarded): the legacy
+    data embeds (essentials-benefits-data still carries "(Wallach Dead Doctors Don't Lie)") + the
+    legacy views (knowledge.ts DOCTRINES). Truth-anchored on books-meta titles + book_ids x the
+    clean-surface bytes, recomputed each run."""
+    meta_p = ROOT / "eden" / "corpus" / "books-meta.json"
+    if not meta_p.exists():
+        return True, "eden/corpus/books-meta.json missing (bootstrap-guard)"
+    meta = json.loads(meta_p.read_text(encoding="utf-8"))["books"]
+    titles = [b["title"] for b in meta]
+    book_ids = {b["book_id"] for b in meta}
+    viol = []
+    for shard in sorted((ROOT / "eden" / "corpus" / "claims").glob("claims-*.json")):
+        for c in json.loads(shard.read_text(encoding="utf-8")).get("claims", []):
+            b = (c.get("locator") or {}).get("book")
+            if b is not None and b not in book_ids:
+                viol.append(f"claim {c.get('id')} locator.book '{b}' is not a registry book_id")
+    for p in _clean_surface_files():
+        for key, val in _walk_strings(json.loads(p.read_text(encoding="utf-8"))):
+            if key in _PROSE_HOME_KEYS:
+                continue
+            for t in titles:
+                if t in val:
+                    viol.append(f"{p.name}: hand-typed book title {t!r} in fact field '{key}' "
+                                f"(reference by book_id; compose the citation from the registry)")
+                    break
+    if viol:
+        return False, ("hand-typed / unresolved book citation(s) on the clean surface (R3): "
+                       + "; ".join(viol[:6]) + (" ..." if len(viol) > 6 else ""))
+    return True, (f"all book references on the clean Charter surface use book_id + the sealed "
+                  f"registry ({len(book_ids)} books); no hand-typed citation (legacy embeds + "
+                  f"views are a labeled WISH, Phase E/F)")
+
+
+def check_prose_contained():
+    """Charter R4 -- prose lives in ONE designated compartment, never in a fact field. LIVE teeth
+    over the CLEAN Charter surface (corpus claims + canon + catalog + the corpus-derived
+    targets/coverage-layout artifacts): no prose-shaped string appears under a NON-prose key.
+    Prose-shaped = >= 12 words OR a sentence boundary ('. X') in a > 40-char value. The designated
+    prose/descriptor homes (_PROSE_HOME_KEYS: claim_text, verbatim, file-metadata prose, dose
+    descriptors) are R4's "ONE compartment" -- everything else must stay structured. Catches a
+    paragraph leaking into a slug/symbol/enum/numeric fact field. PARTIAL by design (R7): the FULL
+    R4 (verbatim = a claim POINTER + a single-copy per-essential prose store, blueprint Q3) only
+    matters once clean post-mining stances exist, and the legacy data embeds + inline view prose
+    (DOCTRINES bodies) are WISH until Phase E/F collapses them -- not sold as guarded. Truth-anchored
+    on the clean-surface bytes, recomputed each run."""
+    def _prose_shaped(s):
+        return len(s.split()) >= 12 or (len(s) > 40 and re.search(r"\. [A-Z]", s) is not None)
+    viol = []
+    files = _clean_surface_files()
+    for p in files:
+        for key, val in _walk_strings(json.loads(p.read_text(encoding="utf-8"))):
+            if key in _PROSE_HOME_KEYS:
+                continue
+            if _prose_shaped(val):
+                viol.append(f"{p.name}: prose-shaped text in fact field '{key}': {val[:50]!r}")
+    if viol:
+        return False, ("prose-shaped text in a fact field on the clean surface (R4) -- move it to a "
+                       "designated prose home: " + "; ".join(viol[:6]) + (" ..." if len(viol) > 6 else ""))
+    return True, (f"no prose in a fact field across {len(files)} clean-surface file(s); prose stays "
+                  f"in its designated homes (full prose-store R4 + legacy embeds/views are a WISH, "
+                  f"Phase E/F)")
+
+
+def check_no_hand_duplicated_canonical():
+    """Charter R3 -- no canonical value is hand-written twice; the pillar is the single hand-edited
+    home, and derived copies are proven fresh (derived_artifacts_fresh IS R3's 'derived copies only'
+    clause). LIVE teeth: the 90/91 canonical essential display_names live ONLY in essentials-canon.json
+    among HAND-EDITED files -- no other hand-edited pillar file (catalog conditions/symptoms) may
+    re-store one as a field value. This is exactly the duplication the deleted nutrients.json committed
+    (91 names re-copied from canon, 2026-07-05 D-c); the gate makes re-introducing that class RED.
+    Generated artifacts are EXEMPT -- a display_name in corpus-embed is a DERIVED copy gated fresh by
+    derived_artifacts_fresh. Truth-anchored on essentials-canon x the other hand-edited pillar files,
+    recomputed each run. WISH (Phase F): extend to every pillar identity field once the Product DB lands."""
+    canon_p = ROOT / "eden" / "corpus" / "essentials-canon.json"
+    if not canon_p.exists():
+        return True, "essentials-canon.json missing (bootstrap-guard)"
+    names = {e["display_name"] for e in json.loads(canon_p.read_text(encoding="utf-8"))["essentials"]}
+    others = [ROOT / "eden" / "catalog" / "conditions.json",
+              ROOT / "eden" / "catalog" / "symptoms.json"]
+    viol = []
+    for p in others:
+        if not p.exists():
+            continue
+        for key, val in _walk_strings(json.loads(p.read_text(encoding="utf-8"))):
+            if val in names:
+                viol.append(f"{p.name}: field '{key}' re-stores canonical essential name {val!r} "
+                            f"(reference essentials-canon by slug, never re-type the name)")
+    if viol:
+        return False, ("canonical essential name hand-duplicated outside essentials-canon (R3): "
+                       + "; ".join(viol[:6]) + (" ..." if len(viol) > 6 else ""))
+    return True, (f"no canonical essential name ({len(names)}) hand-duplicated in another pillar file; "
+                  f"essentials-canon is the single hand-edited home (derived copies exempt, gated by "
+                  f"derived_artifacts_fresh)")
+
+
 INVARIANTS = [
     Invariant(
         name="safe_write_canary",
@@ -1837,6 +2012,30 @@ INVARIANTS = [
         truth_anchor="_JARGON_SUFFIX matches in every sealed claim_text vs glossary.json keys+aliases",
         severity="warning",
         lesson_ref="SESSION 39 (2026-07-02) -- Luneth 'nothing behind me': glossary coverage guard so no un-glossed jargon slips; warning (heuristic can false-match a scientific name); memory term-gloss-standard + perfect-entry-no-deferral",
+    ),
+    Invariant(
+        name="citations_reference_registry",
+        description="on the CLEAN Charter surface (corpus claims + canon + catalog + corpus-derived targets/coverage-layout), every claim's locator.book resolves to a books-meta book_id and no fact field carries a hand-typed book TITLE -- book refs are IDs, display citations are composed from the sealed registry (Charter R3, the overhaul-trigger anti-drift gate). Legacy embeds + views are a labeled WISH (Phase E/F)",
+        check_fn=check_citations_reference_registry,
+        truth_anchor="eden/corpus/books-meta.json titles + book_ids x the clean-surface bytes (corpus claims/canon + catalog + essentials-targets-data/coverage-layout-data), recomputed each run; prose homes allowlisted",
+        severity="critical",
+        lesson_ref="Blueprint Phase D / Charter R3 + enforcement table 4.1 (2026-07-05) -- the ~200x hand-typed citations (a cite said 1999 while books-meta said 2011) triggered the whole overhaul; this makes 'book refs = book_id, display composed from the registry' a machine gate on the surface where it holds today. Option-1 altitude (Luneth): real teeth on the clean surface now, legacy embeds/views WISH until E/F. memory: overhaul-blueprint-active-plan",
+    ),
+    Invariant(
+        name="prose_contained",
+        description="on the CLEAN Charter surface, no prose-shaped string (>=12 words or a sentence boundary) appears under a NON-prose key -- prose lives in ONE designated compartment (claim_text/verbatim + file-metadata + dose descriptors), never in a fact field (Charter R4). Full R4 (verbatim=pointer + per-essential prose store) + legacy embeds/views are a labeled WISH",
+        check_fn=check_prose_contained,
+        truth_anchor="the clean-surface bytes (corpus claims/canon + catalog + essentials-targets-data/coverage-layout-data) x the _PROSE_HOME_KEYS allowlist, recomputed each run",
+        severity="critical",
+        lesson_ref="Blueprint Phase D / Charter R4 + enforcement table 4.1 (2026-07-05) -- prose leaking into a fact field is how the rotten layer baked hand-typed summaries into data; this contains it on the clean surface. PARTIAL by design (R7): the full prose-store R4 only matters once clean post-mining stances exist, and the legacy embeds/inline-view prose are WISH until E/F. memory: overhaul-blueprint-active-plan",
+    ),
+    Invariant(
+        name="no_hand_duplicated_canonical",
+        description="the 90/91 canonical essential display_names live ONLY in essentials-canon.json among hand-edited files -- no other hand-edited pillar file (catalog conditions/symptoms) re-stores one as a field value (Charter R3, 'no value hand-written twice'); derived copies (corpus-embed) are exempt, gated fresh by derived_artifacts_fresh",
+        check_fn=check_no_hand_duplicated_canonical,
+        truth_anchor="essentials-canon.json display_names x every string leaf of the other hand-edited pillar files (catalog conditions/symptoms), recomputed each run",
+        severity="critical",
+        lesson_ref="Blueprint Phase D / Charter R3 + enforcement table 4.1 (2026-07-05) -- the deleted nutrients.json hand-duplicated all 91 canonical names (D-c); this gate makes re-introducing that class of duplication RED. WISH (Phase F): extend to every pillar identity field once the Product DB lands. memory: overhaul-blueprint-active-plan",
     ),
 ]
 
