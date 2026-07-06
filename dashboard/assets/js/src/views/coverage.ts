@@ -139,7 +139,7 @@ function renderHero(snapshot: CoverageSnapshot | null): string {
           <div class="coverage-hero__kicker">Your essentials · <span class="ds-cipher" data-cipher-set="numfrac">${essentialCount()}</span> minerals + vitamins + amino acids + fats</div>
           <h2 class="coverage-hero__title">
             THE WHOLE PICTURE
-            <em>// what you'\''re absorbing, what you'\''re missing</em>
+            <em>// what you're absorbing, what you're missing</em>
           </h2>
         </div>
         <div class="coverage-stat">

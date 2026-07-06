@@ -218,14 +218,14 @@ body { margin: 0; background: var(--ds-paper-deep); }
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: minmax(0, 1fr) 380px;
   gap: var(--ds-space-6);
   padding: var(--ds-space-7);
 }
 
 
 /* ════ COVERAGE HERO ═══════════════════════════════════════════════════════ */
-.coverage-main { display: flex; flex-direction: column; gap: var(--ds-space-6); }
+.coverage-main { display: flex; flex-direction: column; gap: var(--ds-space-6); min-width: 0; }
 
 .coverage-hero {
   background: var(--ds-paper);
@@ -1039,3 +1039,18 @@ body { margin: 0; background: var(--ds-paper-deep); }
 }
 .footer__spacer { flex: 1; }
 .footer__signature { color: var(--ds-tech); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; }
+
+
+/* ═══ RESPONSIVE FALLBACK — desktop (> 1160px) UNCHANGED ════════════
+   (minmax(0,1fr) == 1fr when content fits, so 1920 is byte-identical.) */
+@media (max-width: 1160px) {
+  .coverage-grid { grid-template-columns: minmax(0, 1fr); }   /* protocol panel stacks below */
+}
+@media (max-width: 640px) {
+  .coverage-grid { padding: var(--ds-space-4); gap: var(--ds-space-4); }
+  .coverage-hero { padding: var(--ds-space-5); }
+  .coverage-hero__head { grid-template-columns: minmax(0, 1fr); }   /* covered-stat drops below title */
+  .essentials-grid--minerals, .essentials-grid--vitamins, .essentials-grid--aminos {
+    grid-template-columns: repeat(auto-fill, minmax(58px, 1fr));   /* smaller tiles fit more per row */
+  }
+}
