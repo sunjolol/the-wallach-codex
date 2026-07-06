@@ -138,7 +138,7 @@ chronicle/                                  ← discipline ledger
 ├── build-log.md · next-chunk.md            ← pre-write contract + handoff pointer
 ├── creators-log/ (SACRED, append-only) · CHANGELOG.md · versions/ · contradictions/
 
-tests/scanner-labels/                       ← scanner test fixtures (deletable when scanner done)
+scanner/                                    ← scanner label test fixtures (deletable when scanner done)
 schemas/                                    ← JSON Schemas (versions; product schema → eden/products/)
 genesis/                                    ← boot system (genesis.py); 02-plan SUPERSEDED by the blueprint
 
