@@ -1026,9 +1026,9 @@ def check_catalog_integrity():
     """Catalog pillar (eden/catalog/) integrity. Delegates to the single implementation
     eden/tools/catalog_verify.py (one source, no duplication): exit 0 = sealed & healthy,
     2 = BOOTSTRAP (unsealed; structural checks passed), 1 = FAIL. Verifies the catalog's
-    internal structure (counts, well-formed slugs, umbrella children resolve) + its
-    canon_slug pointers into essentials-canon; the cross-pillar claim->catalog resolution
-    is the separate references_resolve gate."""
+    internal structure (counts, well-formed slugs, umbrella children resolve); the
+    cross-pillar claim->catalog resolution is the separate references_resolve gate.
+    (nutrients.json was deleted 2026-07-05 D-c; the nutrient registry returns in Phase F.)"""
     verify = ROOT / "eden" / "tools" / "catalog_verify.py"
     if not verify.exists():
         return True, "eden/tools/catalog_verify.py missing (catalog not installed; bootstrap-guard)"
@@ -1060,9 +1060,10 @@ def check_references_resolve():
                        f"condition/symptom (add to eden/catalog/): {unresolved[0]}"
                        f"{' ...' if len(unresolved) > 1 else ''}")
     import catalog
-    return True, (f"all claim condition/symptom/substance slugs resolve to the Catalog "
-                  f"({len(catalog.condition_slugs())} conditions, {len(catalog.symptom_slugs())} symptoms, "
-                  f"{len(catalog.nutrient_slugs())} nutrients registered)")
+    return True, (f"all claim condition/symptom slugs resolve to the Catalog "
+                  f"({len(catalog.condition_slugs())} conditions, {len(catalog.symptom_slugs())} symptoms); "
+                  f"the substance (other_substances) half is DORMANT until Phase F rebuilds the nutrient "
+                  f"registry (nutrients.json deleted 2026-07-05 D-c)")
 
 
 def check_corpus_runtime_purity():
@@ -1775,7 +1776,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="references_resolve",
-        description="every condition/symptom/substance slug a claim maps to is pre-registered in the Catalog pillar (eden/catalog/{conditions,symptoms,nutrients}.json); an unregistered slug (typo / phantom condition) is RED -- closes the phantom-slug hole",
+        description="every condition/symptom slug a claim maps to is pre-registered in the Catalog pillar (eden/catalog/{conditions,symptoms}.json); an unregistered slug (typo / phantom condition) is RED -- closes the phantom-slug hole. The substance (other_substances) half is DORMANT until Phase F rebuilds the nutrient registry (nutrients.json deleted 2026-07-05 D-c)",
         check_fn=check_references_resolve,
         truth_anchor="sealed claim shards (eden/corpus/claims/*) x the catalog registries (eden/catalog/*), recomputed each run via corpus_verify.unresolved_references -- no stale-to-stale comparison",
         severity="critical",
@@ -1783,7 +1784,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="catalog_integrity",
-        description="the Catalog pillar (eden/catalog/{conditions,symptoms,nutrients}.json) is structurally sound: counts match, every umbrella_of child + nutrient canon_slug resolves, slugs are well-formed, and (when sealed) golden hashes hold",
+        description="the Catalog pillar (eden/catalog/{conditions,symptoms}.json) is structurally sound: counts match, every umbrella_of child resolves, slugs are well-formed, and (when sealed) golden hashes hold",
         check_fn=check_catalog_integrity,
         truth_anchor="deterministic re-parse of eden/catalog/* + the essentials-canon slug set + golden hashes (LF-normalized), recomputed each run via eden/tools/catalog_verify.py; 0=sealed&healthy, 2=bootstrap, 1=fail",
         severity="critical",

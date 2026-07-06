@@ -7,8 +7,10 @@ consumer that needs a condition/symptom display name, the umbrella->subtype map,
 the synonym phrasings reads them HERE -- never from a private copy -- so no fact lives
 in two places (Charter R3). Promoted 2026-07-05 (Phase B) from the emergent derived
 indices + eden/tools/{condition-taxonomy,condition-synonyms}.json (retired). The nutrient
-vocabulary (essentials + the non-essential substances Wallach names) is single-sourced here
-too, seeded from essentials-canon + the corpus other-substances.
+vocabulary once lived here too (nutrients.json) but was DELETED 2026-07-05 (D-c) as
+too-basic duplication (its 91 canonical names re-copied essentials-canon; its 408 substance
+names were byte-identical to the auto-humanized slug). The nutrient_* accessors below now
+degrade to empty and are the seam the Youngevity Product DB re-plugs in Phase F.
 
 Loads are memoized once per process; the catalog is static during a derive/verify run.
 Every accessor degrades gracefully to empty/None if a catalog file is absent (bootstrap
@@ -64,9 +66,9 @@ def symptom_display(slug: str):
 
 
 def _nutrients() -> dict:
-    """slug -> {display_name, canon_slug} (memoized). canon_slug points into
-    essentials-canon for the 91 canonical nutrients, or is null for the non-essential
-    substances Wallach names (herbs, drugs, compounds, foods)."""
+    """slug -> {display_name, canon_slug} (memoized). nutrients.json was DELETED 2026-07-05
+    (D-c); until Phase F rebuilds the nutrient/ingredient registry this returns {} (bootstrap
+    guard), so nutrient_slugs()/nutrient_display() are dormant, not load-bearing."""
     global _NUTR
     if _NUTR is None:
         _NUTR = json.loads(NUTR_PATH.read_text(encoding="utf-8")).get("nutrients", {}) if NUTR_PATH.exists() else {}

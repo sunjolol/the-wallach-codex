@@ -40,7 +40,7 @@ Operational consequences (detail: `.claude/rules/engineering-doctrine.md` + the 
 
 ## Architecture (one paragraph)
 
-**Three sealed data pillars are the only hand-edited data:** the Wallach Corpus (`eden/corpus/`, exists), the Youngevity Product DB (`eden/products/`, hand-built), and the shared Catalog (`eden/catalog/`: essentials · nutrients · conditions · symptoms). *(products/ + catalog/ are being built per the blueprint; corpus/ is live.)* Every shipped artifact is **generated** from the pillars — `eden/tools/` derive scripts project them into `dashboard/assets/data/*.json`, which esbuild inlines into one bundle at `dashboard/assets/js/dist/main.js`. The page loads from `dashboard/dashboard.html` (a pure shell). Surfaces: Coverage (⌘1), Regimen (⌘2), Scanner (⌘3), Knowledge (K), Journey (J, rebuilt last), Command Palette (⌘K), Search (offline retrieval helper), Profile. User state persists to `localStorage` through the §31 chokepoint only — the scanner lets users add any item but can **never** write a pillar (Eden's wall). OCR runs locally via vendored Tesseract.js (~22 MB, `assets/vendor/tesseract/`, gitignored). Sealed canonicals carry a `*.golden.sha256` sibling (user-only writer): `design-system.css` + every pillar.
+**Three sealed data pillars are the only hand-edited data:** the Wallach Corpus (`eden/corpus/`, exists), the Youngevity Product DB (`eden/products/`, hand-built), and the shared Catalog (`eden/catalog/`: conditions · symptoms; the 90/91 essentials live in `corpus/essentials-canon`, and the nutrient/ingredient vocabulary rebuilds with the Product DB in Phase F — the too-basic `nutrients.json` was deleted 2026-07-05). *(products/ is being built per the blueprint; corpus/ + catalog/ are live.)* Every shipped artifact is **generated** from the pillars — `eden/tools/` derive scripts project them into `dashboard/assets/data/*.json`, which esbuild inlines into one bundle at `dashboard/assets/js/dist/main.js`. The page loads from `dashboard/dashboard.html` (a pure shell). Surfaces: Coverage (⌘1), Regimen (⌘2), Scanner (⌘3), Knowledge (K), Journey (J, rebuilt last), Command Palette (⌘K), Search (offline retrieval helper), Profile. User state persists to `localStorage` through the §31 chokepoint only — the scanner lets users add any item but can **never** write a pillar (Eden's wall). OCR runs locally via vendored Tesseract.js (~22 MB, `assets/vendor/tesseract/`, gitignored). Sealed canonicals carry a `*.golden.sha256` sibling (user-only writer): `design-system.css` + every pillar.
 
 ---
 
@@ -118,7 +118,7 @@ JS budget failure splits into a lazy-loaded chunk. Design generosity lives in CS
 eden/                                       ← THE SOURCE — three sealed pillars + tooling
 ├── corpus/{books,books-meta,claims,drafts,indices,essentials-canon}   ← Wallach pillar (live)
 ├── products/                               ← Youngevity Product DB pillar (hand-built)
-├── catalog/{essentials,nutrients,conditions,symptoms}                 ← shared ID Catalog pillar
+├── catalog/{conditions,symptoms}                                     ← shared ID Catalog pillar (nutrients → Phase F; essentials in corpus/essentials-canon)
 ├── graphics/ · derived/ (GENERATED) · tools/  ← mining + derive pipeline; *.golden.sha256 siblings
                                             ← eden-catalog.json folds into catalog/ (blueprint D3)
 

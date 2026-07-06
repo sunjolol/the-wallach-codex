@@ -25,7 +25,7 @@ SEAL_LOG = CATALOG / "seal-history.log"
 sys.path.insert(0, str(ROOT / "eden" / "tools"))
 import catalog_verify  # noqa: E402
 
-FILES = [CATALOG / "conditions.json", CATALOG / "symptoms.json", CATALOG / "nutrients.json"]
+FILES = [CATALOG / "conditions.json", CATALOG / "symptoms.json"]
 
 
 def lf_text(p: Path) -> str:

@@ -4,14 +4,20 @@
 Mirrors corpus_verify: it only parses JSON, hashes files, and tests set membership, so it
 cannot lie. The single implementation of the catalog checks (the `catalog_integrity`
 invariant shells out to this file -- one source, no duplication). It verifies the catalog's
-INTERNAL structure + its pointers into essentials-canon; the cross-pillar corpus->catalog
-resolution (a claim slug must be catalogued) is the separate `references_resolve` gate.
+INTERNAL structure (the conditions + symptoms registries: well-formed slugs, umbrella
+children resolve); the cross-pillar corpus->catalog resolution (a claim slug must be
+catalogued) is the separate `references_resolve` gate.
+
+The nutrient/ingredient vocabulary is NOT here: nutrients.json was deleted 2026-07-05 (D-c)
+as too-basic duplication -- its 91 canonical entries only re-copied essentials-canon names,
+and its 408 substance display names were byte-identical to the auto-humanized slug. The real
+nutrient/ingredient registry is rebuilt from scratch with the Youngevity Product DB in Phase F.
 
 All hashes are over LF-NORMALIZED UTF-8 content (clone/CRLF-stable).
 
 Exit codes:
   0  SEALED & healthy -- every check passed (incl. golden hashes).
-  1  FAIL -- a real violation (bad slug, dangling umbrella child, canon_slug not in canon...).
+  1  FAIL -- a real violation (bad slug, dangling umbrella child...).
   2  BOOTSTRAP -- not yet sealed (no golden siblings). Structural checks still ran + passed.
 
 The agent MAY run this. It never writes anything.
@@ -24,15 +30,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 CATALOG = ROOT / "eden" / "catalog"
-CORPUS = ROOT / "eden" / "corpus"
 COND_PATH = CATALOG / "conditions.json"
 SYMP_PATH = CATALOG / "symptoms.json"
-NUTR_PATH = CATALOG / "nutrients.json"
-CANON_PATH = CORPUS / "essentials-canon.json"
 
-FILES = [COND_PATH, SYMP_PATH, NUTR_PATH]
-# conditions/symptoms use snake_case slugs; essentials/nutrients use kebab-case. The one
-# rule both share: lowercase alphanumerics joined by a SINGLE separator, never a space.
+FILES = [COND_PATH, SYMP_PATH]
+# conditions/symptoms use snake_case slugs. The rule: lowercase alphanumerics joined by a
+# SINGLE separator, never a space.
 SLUG_RE = re.compile(r"^[a-z0-9]+([_-][a-z0-9]+)*$")
 
 
@@ -67,12 +70,9 @@ def run_checks():
 
     cond = load(COND_PATH)
     symp = load(SYMP_PATH)
-    nutr = load(NUTR_PATH)
-    canon = load(CANON_PATH)
-    canon_slugs = {e["slug"] for e in canon.get("essentials", [])}
 
     # header sanity
-    for name, obj in (("conditions", cond), ("symptoms", symp), ("nutrients", nutr)):
+    for name, obj in (("conditions", cond), ("symptoms", symp)):
         if obj.get("schema_version") != 1:
             fails.append(f"{name}.json schema_version != 1")
         if not isinstance(obj.get("_doctrine"), str) or not obj["_doctrine"]:
@@ -80,7 +80,6 @@ def run_checks():
 
     conditions = cond.get("conditions", {})
     symptoms = symp.get("symptoms", {})
-    nutrients = nutr.get("nutrients", {})
 
     # ---- conditions ----
     n_umb = n_syn = 0
@@ -115,33 +114,8 @@ def run_checks():
             fails.append(f"[symp] {slug} missing display_name")
     _count(fails, "symptoms", symp, "symptoms", len(symptoms))
 
-    # ---- nutrients ----
-    n_canon = 0
-    for slug, e in nutrients.items():
-        if not SLUG_RE.match(slug):
-            fails.append(f"[nutr] malformed slug '{slug}'")
-        if not e.get("display_name"):
-            fails.append(f"[nutr] {slug} missing display_name")
-        if "canon_slug" not in e:
-            fails.append(f"[nutr] {slug} missing canon_slug key")
-            continue
-        cs = e["canon_slug"]
-        if cs is not None:
-            n_canon += 1
-            if cs not in canon_slugs:
-                fails.append(f"[nutr] {slug} canon_slug '{cs}' not in essentials-canon")
-            elif cs != slug:
-                fails.append(f"[nutr] canonical nutrient '{slug}' canon_slug '{cs}' must equal its own slug")
-    # every canon essential must be registered as a nutrient (superset rule)
-    missing_canon = sorted(canon_slugs - {s for s, e in nutrients.items() if e.get("canon_slug")})
-    if missing_canon:
-        fails.append(f"[nutr] {len(missing_canon)} canon essential(s) not registered as nutrients: {missing_canon[:5]}")
-    _count(fails, "nutrients", nutr, "nutrients", len(nutrients))
-    _count(fails, "nutrients", nutr, "canonical", n_canon)
-    _count(fails, "nutrients", nutr, "non_canonical", len(nutrients) - n_canon)
-
     infos.append(f"{len(conditions)} conditions ({n_umb} umbrellas, {n_syn} synonyms), "
-                 f"{len(symptoms)} symptoms, {len(nutrients)} nutrients ({n_canon} canonical)")
+                 f"{len(symptoms)} symptoms")
     return fails, infos
 
 
