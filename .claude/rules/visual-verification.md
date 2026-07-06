@@ -21,7 +21,7 @@ Applies to any page / view / visual / UX / copy / interaction-feel / requirement
 
 ## How to use
 - Closing a visual chunk: functional gates pass (build · invariants · probe) → **STOP** → "Here's what to verify: …" + how to view it → wait for sign-off → only THEN log the chunk + continue.
-- Pairs with the per-surface build method (one surface to 100% before the next — `genesis/02-clarifications-and-plan.md`, Phase 2) and `commits-and-rounds.md` (round-close mechanics).
+- Pairs with the per-surface build method (one surface to 100% before the next — `chronicle/genesis-origin-plan.md`, Phase 2) and `commits-and-rounds.md` (round-close mechanics).
 
 ## Enforcement
 Behavioral discipline, like the §00.A turn-gap — documented here and loaded every session via CLAUDE.md. A Python invariant cannot verify "the user approved the visuals," so the guarantee is structural: visual chunks END at a STOP-for-verification by default, and the agent never chains past it. The honesty rule binds absolutely — NEVER claim the user verified something they did not, and never log a visual chunk as "done" before sign-off.

@@ -136,12 +136,11 @@ dashboard/                                  ← the app (pure views over generat
 chronicle/                                  ← discipline ledger
 ├── OVERHAUL-BLUEPRINT.md                   ← active plan (temporary/living)
 ├── build-log.md · next-chunk.md            ← pre-write contract + handoff pointer
-├── creators-log/ (SACRED, append-only) · CHANGELOG.md · versions/ · contradictions/
+├── creators-log/ (SACRED, append-only) · CHANGELOG.md · versions/ · contradictions/ · genesis-origin-plan.md (frozen origin archive)
 
 schemas/                                    ← JSON Schemas (versions; product schema → eden/products/)
-genesis/                                    ← boot system (genesis.py); 02-plan SUPERSEDED by the blueprint
 
-tools/{build.mjs, invariants.py, safe_write.py, creators_log.py, render_probe*.js, hooks/*}
+tools/{build.mjs, genesis.py (the `genesis` boot script), invariants.py, safe_write.py, creators_log.py, render_probe*.js, hooks/*}
 .claude/{settings.json, settings.local.json (gitignored), invariant-baseline.json, rules/}
 ```
 

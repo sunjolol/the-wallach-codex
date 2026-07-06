@@ -1,14 +1,8 @@
 {
   "name": "health-expert",
   "version": "1.0.0",
-  "description": "",
-  "main": "tmp_jscheck.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "The Wallach Codex — root package. Exists only to hold puppeteer for the headless render probes (tools/render_probe*.js); the app + its build toolchain live in dashboard/.",
+  "private": true,
   "type": "commonjs",
   "devDependencies": {
     "puppeteer": "^25.1.0"

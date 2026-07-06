@@ -1,5 +1,7 @@
 # 02 — Build Plan for Claude Code
 
+> **FROZEN ORIGIN ARCHIVE — not the live plan.** The original Cowork→Claude-Code handoff/build plan that shaped the project. **Superseded** as the active plan by `chronicle/OVERHAUL-BLUEPRINT.md`, and as the rolling handoff by `chronicle/next-chunk.md`. Kept for origin/vision context only — never "what's next." Relocated here from the deleted root `genesis/` folder on 2026-07-06 (the boot SYSTEM is `tools/genesis.py`, not this).
+
 > **SUPERSEDED 2026-07-05 — archived planning history, NOT a live plan.**
 > This is the June-2026 build plan. It was **superseded in full by `chronicle/OVERHAUL-BLUEPRINT.md`** (the active plan, locked 2026-07-05) when the project pivoted from finishing the v3 dashboard to the full structural overhaul — the pillar data model, Wallach-only amounts, and the Charter (R1–R9). It is retained here in `genesis/` as frozen history for the audit trail; for anything LIVE read the blueprint + `CLAUDE.md`. Where this file disagrees with them, they win ("older loses").
 
