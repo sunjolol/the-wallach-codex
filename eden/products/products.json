@@ -1,0 +1,1124 @@
+{
+  "_meta": {
+    "purpose": "The Youngevity Product DB (Pillar 2) — SEALED, hand-built composition source. Pure label facts only; NO prose, NO Wallach claims, NO targets (§00.A: composition only). Prices + marketing description live in the volatile sidecar prices.json, never here. Every ingredient/nutrient resolves to the Catalog nutrient/botanical registry (Phase F rebuild).",
+    "schema_version": 1,
+    "sealed": false,
+    "build_status": "UNDER CONSTRUCTION — extracting 204 labels alphabetically in batches; seal once complete + user-signed."
+  },
+  "products": {
+    "18-and-20-daily-super-blend": {
+      "product_id": "18-and-20-daily-super-blend",
+      "name": "18 Daily™ Super Fruit Blend & 20 Daily™ Super Veggie Blend",
+      "sku": "USYG1006",
+      "ygy_id": "9055",
+      "components": [
+        {
+          "role": "18 Daily Super Fruit Blend",
+          "form": "capsule",
+          "serving_size": "3 capsules",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 5,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "total_sugars": {
+              "amount": "<1",
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 2010,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Tomato (fruit), Apple (fruit), Grape (fruit), Papaya (fruit), Pineapple (fruit), Bilberry (fruit), Cranberry extract (fruit), Mango (fruit), Elderberry extract (fruit), Baobab (fruit), Orange juice powder, Cherry juice powder, Raspberry (fruit), Blueberry (fruit), Strawberry (fruit), Tart cherry (fruit), Banana (fruit), Lemon juice powder.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Tomato",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 2,
+                  "name": "Apple",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 3,
+                  "name": "Grape",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 4,
+                  "name": "Papaya",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 5,
+                  "name": "Pineapple",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 6,
+                  "name": "Bilberry",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 7,
+                  "name": "Cranberry",
+                  "form": "extract",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 8,
+                  "name": "Mango",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 9,
+                  "name": "Elderberry",
+                  "form": "extract",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 10,
+                  "name": "Baobab",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 11,
+                  "name": "Orange",
+                  "form": "juice powder"
+                },
+                {
+                  "pos": 12,
+                  "name": "Cherry",
+                  "form": "juice powder"
+                },
+                {
+                  "pos": 13,
+                  "name": "Raspberry",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 14,
+                  "name": "Blueberry",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 15,
+                  "name": "Strawberry",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 16,
+                  "name": "Tart cherry",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 17,
+                  "name": "Banana",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 18,
+                  "name": "Lemon",
+                  "form": "juice powder"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Hypromellose",
+            "L-leucine",
+            "bamboo extract (stem and leaf)",
+            "microcrystalline cellulose"
+          ],
+          "source_label": "18-daily-superblend-fruit-label_suppfacts_0623.jpg"
+        },
+        {
+          "role": "20 Daily Super Veggie Blend",
+          "form": "capsule",
+          "serving_size": "3 capsules",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 5,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": "<1",
+              "unit": "g",
+              "pct_dv": "<1"
+            }
+          },
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 2010,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Spinach (leaf), Carrot (root), Garlic (bulb), Kale (leaf), Cauliflower (floret), Celery (stalk), Red cabbage (leaf), Alfalfa grass (aerials), Broccoli (floret), Cayenne pepper (fruit), Green cabbage (leaf), Sweet potato (tuber), White onion (bulb), Red onion (bulb), Mushroom Blend [Maitake, Reishi, Himematsutake (Agaricus blazei), Turkey tail, Shiitake, Lion's mane, Chaga].",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Spinach",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 2,
+                  "name": "Carrot",
+                  "part": "root"
+                },
+                {
+                  "pos": 3,
+                  "name": "Garlic",
+                  "part": "bulb"
+                },
+                {
+                  "pos": 4,
+                  "name": "Kale",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 5,
+                  "name": "Cauliflower",
+                  "part": "floret"
+                },
+                {
+                  "pos": 6,
+                  "name": "Celery",
+                  "part": "stalk"
+                },
+                {
+                  "pos": 7,
+                  "name": "Red cabbage",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 8,
+                  "name": "Alfalfa grass",
+                  "part": "aerials"
+                },
+                {
+                  "pos": 9,
+                  "name": "Broccoli",
+                  "part": "floret"
+                },
+                {
+                  "pos": 10,
+                  "name": "Cayenne pepper",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 11,
+                  "name": "Green cabbage",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 12,
+                  "name": "Sweet potato",
+                  "part": "tuber"
+                },
+                {
+                  "pos": 13,
+                  "name": "White onion",
+                  "part": "bulb"
+                },
+                {
+                  "pos": 14,
+                  "name": "Red onion",
+                  "part": "bulb"
+                },
+                {
+                  "pos": 15,
+                  "name": "Mushroom Blend",
+                  "sub_ingredients": [
+                    {
+                      "name": "Maitake"
+                    },
+                    {
+                      "name": "Reishi"
+                    },
+                    {
+                      "name": "Himematsutake",
+                      "latin": "Agaricus blazei"
+                    },
+                    {
+                      "name": "Turkey tail"
+                    },
+                    {
+                      "name": "Shiitake"
+                    },
+                    {
+                      "name": "Lion's mane"
+                    },
+                    {
+                      "name": "Chaga"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Hypromellose",
+            "L-leucine",
+            "bamboo extract (stem and leaf)",
+            "microcrystalline cellulose"
+          ],
+          "source_label": "20-daily-veggie-panel-900x1200.jpg"
+        }
+      ]
+    },
+    "3-0-rise-and-restore": {
+      "product_id": "3-0-rise-and-restore",
+      "name": "3.0 Rise & Restore™",
+      "sku": "USYG30",
+      "ygy_id": "10052",
+      "components": [
+        {
+          "role": "3.0 Rise",
+          "form": "powder",
+          "serving_size": "1 scoop (7.6 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 5,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "total_carbohydrate": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "total_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 900,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "as Retinyl Palmitate",
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 1000,
+              "unit": "mg",
+              "pct_dv": 1111,
+              "form": "as Ascorbic Acid"
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 20,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "as Vegan Cholecalciferol",
+              "label_iu": 800
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": 100,
+              "form": "as D-Alpha Tocopherol Acetate"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 6,
+              "unit": "mg",
+              "pct_dv": 500,
+              "form": "as Thiamine HCl",
+              "unit_detail": "B1"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 3.25,
+              "unit": "mg",
+              "pct_dv": 250,
+              "unit_detail": "B2"
+            },
+            {
+              "name": "Niacin",
+              "amount": 16,
+              "unit": "mg",
+              "pct_dv": 100,
+              "form": "as Niacinamide",
+              "unit_detail": "NE"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 8.5,
+              "unit": "mg",
+              "pct_dv": 500,
+              "form": "as Pyridoxine HCl"
+            },
+            {
+              "name": "Folate",
+              "amount": 1000,
+              "unit": "mcg",
+              "pct_dv": 250,
+              "form": "as 5-Methyltetrahydrofolate Calcium Salt",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 480,
+              "unit": "mcg",
+              "pct_dv": 20000,
+              "form": "as Methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 75,
+              "unit": "mcg",
+              "pct_dv": 250
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 500,
+              "unit_detail": "B5"
+            },
+            {
+              "name": "Calcium",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 2
+            },
+            {
+              "name": "Chromium",
+              "amount": 35,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "Chromium Chelate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 110,
+              "unit": "mcg",
+              "pct_dv": 200,
+              "form": "Selenomethionine"
+            },
+            {
+              "name": "Phosphorous",
+              "amount": 125,
+              "unit": "mg",
+              "pct_dv": 10
+            },
+            {
+              "name": "Zinc",
+              "amount": 11,
+              "unit": "mg",
+              "pct_dv": 100
+            },
+            {
+              "name": "Sodium",
+              "amount": 230,
+              "unit": "mg",
+              "pct_dv": 10
+            },
+            {
+              "name": "Potassium",
+              "amount": 410,
+              "unit": "mg",
+              "pct_dv": 9
+            }
+          ],
+          "blends": [
+            {
+              "name": "Energy & Metabolism Booster",
+              "total": {
+                "amount": 500,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "L-taurine, natural caffeine from green tea extract (100 mg), guarana, yerba mate leaf extract, matcha tea, green coffee bean, ginkgo biloba, schisandra berry.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "L-taurine"
+                },
+                {
+                  "pos": 2,
+                  "name": "Green tea",
+                  "form": "extract",
+                  "amount": 100,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 3,
+                  "name": "Guarana"
+                },
+                {
+                  "pos": 4,
+                  "name": "Yerba mate",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Matcha tea"
+                },
+                {
+                  "pos": 6,
+                  "name": "Green coffee bean"
+                },
+                {
+                  "pos": 7,
+                  "name": "Ginkgo biloba"
+                },
+                {
+                  "pos": 8,
+                  "name": "Schisandra berry"
+                }
+              ]
+            },
+            {
+              "name": "Nootropic Cognitive Blend",
+              "total": {
+                "amount": 140,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Brainberry® Aronia Berry, Bilberry, Bacopa monnieri, rhodiola rosea.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Aronia berry",
+                  "standardization": "Brainberry®"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bilberry"
+                },
+                {
+                  "pos": 3,
+                  "name": "Bacopa monnieri"
+                },
+                {
+                  "pos": 4,
+                  "name": "Rhodiola rosea"
+                }
+              ]
+            },
+            {
+              "name": "Mood Wellness Blend",
+              "total": {
+                "amount": 100,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "5HTP (Griffonia simplicifolia) (seed) extract, Lion's mane (hericium erinaceus) mushroom, maitake mushroom (Grifola frondosus), himematsutake (Agaricus blazei), Cordyceps sinensis mushroom, turkey tail (Trametes versicolor) mushroom, shiitake (lentinula edodes) mushroom, zhu ling (Plyporus umbellatus) mushroom, chaga (Inonotus obliquus) mushroom, reishi (Ganoderma lucidum) mushroom, meshimakobus (Phellinus linteus) mushroom.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "5HTP",
+                  "latin": "Griffonia simplicifolia",
+                  "part": "seed",
+                  "form": "extract"
+                },
+                {
+                  "pos": 2,
+                  "name": "Lion's mane",
+                  "latin": "Hericium erinaceus"
+                },
+                {
+                  "pos": 3,
+                  "name": "Maitake",
+                  "latin": "Grifola frondosus"
+                },
+                {
+                  "pos": 4,
+                  "name": "Himematsutake",
+                  "latin": "Agaricus blazei"
+                },
+                {
+                  "pos": 5,
+                  "name": "Cordyceps sinensis"
+                },
+                {
+                  "pos": 6,
+                  "name": "Turkey tail",
+                  "latin": "Trametes versicolor"
+                },
+                {
+                  "pos": 7,
+                  "name": "Shiitake",
+                  "latin": "Lentinula edodes"
+                },
+                {
+                  "pos": 8,
+                  "name": "Zhu ling",
+                  "latin": "Plyporus umbellatus"
+                },
+                {
+                  "pos": 9,
+                  "name": "Chaga",
+                  "latin": "Inonotus obliquus"
+                },
+                {
+                  "pos": 10,
+                  "name": "Reishi",
+                  "latin": "Ganoderma lucidum"
+                },
+                {
+                  "pos": 11,
+                  "name": "Meshimakobus",
+                  "latin": "Phellinus linteus"
+                }
+              ]
+            },
+            {
+              "name": "Phytonutrients Matrix",
+              "total": {
+                "amount": 500,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Apple peel, grape seed extract, quercetin, resveratrol, alpha lipoic acid, pterostilbene, CoQ10.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Apple peel"
+                },
+                {
+                  "pos": 2,
+                  "name": "Grape seed",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Quercetin"
+                },
+                {
+                  "pos": 4,
+                  "name": "Resveratrol"
+                },
+                {
+                  "pos": 5,
+                  "name": "Alpha lipoic acid"
+                },
+                {
+                  "pos": 6,
+                  "name": "Pterostilbene"
+                },
+                {
+                  "pos": 7,
+                  "name": "CoQ10"
+                }
+              ]
+            },
+            {
+              "name": "Plant Derived Mineral Complex",
+              "total": {
+                "amount": 50,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Blend of sea algae trace minerals, fulvic acid.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Sea algae trace minerals"
+                },
+                {
+                  "pos": 2,
+                  "name": "Fulvic acid"
+                }
+              ]
+            },
+            {
+              "name": "Cellular Drip Hydration Complex",
+              "total": {
+                "amount": 1800,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Potassium citrate, dipotassium phosphate, disodium phosphate, sodium chloride, zinc amino acid chelate.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Potassium citrate"
+                },
+                {
+                  "pos": 2,
+                  "name": "Dipotassium phosphate"
+                },
+                {
+                  "pos": 3,
+                  "name": "Disodium phosphate"
+                },
+                {
+                  "pos": 4,
+                  "name": "Sodium chloride"
+                },
+                {
+                  "pos": 5,
+                  "name": "Zinc amino acid chelate"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Citric acid",
+            "natural flavors (acai, pomegranate)",
+            "guar gum",
+            "silica",
+            "color (from grape skin)",
+            "stevia leaf extract"
+          ],
+          "source_label": "3.0-rise_supp-facts_1124_1200x900_1.jpg"
+        },
+        {
+          "role": "3.0 Restore",
+          "form": "powder",
+          "serving_size": "1 scoop (8 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 10,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "total_carbohydrate": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "total_sugars": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 900,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "as Retinyl Palmitate",
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 450,
+              "unit": "mg",
+              "pct_dv": 500,
+              "form": "as Ascorbic Acid"
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 20,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "as Vegan Cholecalciferol",
+              "label_iu": 800
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": 100,
+              "form": "as D-Alpha Tocopherol Acetate"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 480,
+              "unit": "mcg",
+              "pct_dv": 20000,
+              "form": "as Methylcobalamin"
+            },
+            {
+              "name": "Folate",
+              "amount": 400,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "as 5-Methyltetrahydrofolate",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Chromium",
+              "amount": 35,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "Chromium Chelate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": 48,
+              "form": "as Magnesium Citrate & Chelate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 1
+            }
+          ],
+          "blends": [
+            {
+              "name": "Circulation Booster",
+              "total": {
+                "amount": 2000,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Beet root, celery, carrot, turmeric, ginger, pomegranate, ginkgo biloba, watermelon, grapes, spinach, tomato, cinnamon, banana, garlic.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Beet",
+                  "part": "root"
+                },
+                {
+                  "pos": 2,
+                  "name": "Celery"
+                },
+                {
+                  "pos": 3,
+                  "name": "Carrot"
+                },
+                {
+                  "pos": 4,
+                  "name": "Turmeric"
+                },
+                {
+                  "pos": 5,
+                  "name": "Ginger"
+                },
+                {
+                  "pos": 6,
+                  "name": "Pomegranate"
+                },
+                {
+                  "pos": 7,
+                  "name": "Ginkgo biloba"
+                },
+                {
+                  "pos": 8,
+                  "name": "Watermelon"
+                },
+                {
+                  "pos": 9,
+                  "name": "Grapes"
+                },
+                {
+                  "pos": 10,
+                  "name": "Spinach"
+                },
+                {
+                  "pos": 11,
+                  "name": "Tomato"
+                },
+                {
+                  "pos": 12,
+                  "name": "Cinnamon"
+                },
+                {
+                  "pos": 13,
+                  "name": "Banana"
+                },
+                {
+                  "pos": 14,
+                  "name": "Garlic"
+                }
+              ]
+            },
+            {
+              "name": "Relaxation Support Matrix",
+              "total": {
+                "amount": 500,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "L-theanine, Ashwagandha (Sensoril®), chamomile, lemon balm, holy basil, passionflower.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "L-theanine"
+                },
+                {
+                  "pos": 2,
+                  "name": "Ashwagandha",
+                  "standardization": "Sensoril®"
+                },
+                {
+                  "pos": 3,
+                  "name": "Chamomile"
+                },
+                {
+                  "pos": 4,
+                  "name": "Lemon balm"
+                },
+                {
+                  "pos": 5,
+                  "name": "Holy basil"
+                },
+                {
+                  "pos": 6,
+                  "name": "Passionflower"
+                }
+              ]
+            },
+            {
+              "name": "Immunity Superfood Complex",
+              "total": {
+                "amount": 500,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Goji berry, amla, acai, acerola, camu camu, strawberry, raspberry, mulberry, maqui, black berry, aronia, elderberry, blueberry, cranberry, bilberry, hawthorn.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Goji berry"
+                },
+                {
+                  "pos": 2,
+                  "name": "Amla"
+                },
+                {
+                  "pos": 3,
+                  "name": "Acai"
+                },
+                {
+                  "pos": 4,
+                  "name": "Acerola"
+                },
+                {
+                  "pos": 5,
+                  "name": "Camu camu"
+                },
+                {
+                  "pos": 6,
+                  "name": "Strawberry"
+                },
+                {
+                  "pos": 7,
+                  "name": "Raspberry"
+                },
+                {
+                  "pos": 8,
+                  "name": "Mulberry"
+                },
+                {
+                  "pos": 9,
+                  "name": "Maqui"
+                },
+                {
+                  "pos": 10,
+                  "name": "Black berry"
+                },
+                {
+                  "pos": 11,
+                  "name": "Aronia"
+                },
+                {
+                  "pos": 12,
+                  "name": "Elderberry"
+                },
+                {
+                  "pos": 13,
+                  "name": "Blueberry"
+                },
+                {
+                  "pos": 14,
+                  "name": "Cranberry"
+                },
+                {
+                  "pos": 15,
+                  "name": "Bilberry"
+                },
+                {
+                  "pos": 16,
+                  "name": "Hawthorn"
+                }
+              ]
+            },
+            {
+              "name": "Liver Detox Blend",
+              "total": {
+                "amount": 400,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "L-glutathione, N-Acetyl cysteine, milk thistle extract (80% silymarin), DHM, bupleurum root (chai hu), guarana, inositol hexanicotinate, kudzu root (40% isoflavones).",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "L-glutathione"
+                },
+                {
+                  "pos": 2,
+                  "name": "N-Acetyl cysteine"
+                },
+                {
+                  "pos": 3,
+                  "name": "Milk thistle",
+                  "form": "extract",
+                  "standardization": "80% silymarin"
+                },
+                {
+                  "pos": 4,
+                  "name": "DHM"
+                },
+                {
+                  "pos": 5,
+                  "name": "Bupleurum",
+                  "part": "root"
+                },
+                {
+                  "pos": 6,
+                  "name": "Guarana"
+                },
+                {
+                  "pos": 7,
+                  "name": "Inositol hexanicotinate"
+                },
+                {
+                  "pos": 8,
+                  "name": "Kudzu",
+                  "part": "root",
+                  "standardization": "40% isoflavones"
+                }
+              ]
+            },
+            {
+              "name": "Adaptogenic Hormonal Balance Aid",
+              "total": {
+                "amount": 250,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Maca root, American Ginseng, panax ginseng, eleuthero root, Korean red ginseng, schisandra berry.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Maca",
+                  "part": "root"
+                },
+                {
+                  "pos": 2,
+                  "name": "American Ginseng"
+                },
+                {
+                  "pos": 3,
+                  "name": "Panax ginseng"
+                },
+                {
+                  "pos": 4,
+                  "name": "Eleuthero",
+                  "part": "root"
+                },
+                {
+                  "pos": 5,
+                  "name": "Korean red ginseng"
+                },
+                {
+                  "pos": 6,
+                  "name": "Schisandra berry"
+                }
+              ]
+            },
+            {
+              "name": "Pre-Probiotic Blend",
+              "total": {
+                "amount": 100,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Fructo oligosaccharide, Bacillus coagulans (500 million CFU).",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Fructo oligosaccharide"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bacillus coagulans",
+                  "standardization": "500 million CFU"
+                }
+              ]
+            },
+            {
+              "name": "Plant Derived Mineral Complex",
+              "total": {
+                "amount": 100,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Blend of sea algae minerals, fulvic acid.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Sea algae minerals"
+                },
+                {
+                  "pos": 2,
+                  "name": "Fulvic acid"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Citric acid",
+            "natural flavors (raspberry, lemon)",
+            "guar gum",
+            "silica",
+            "stevia leaf extract",
+            "natural color (beet)"
+          ],
+          "source_label": "3.0-restore_supp-facts_1124_1200x900.jpg"
+        }
+      ]
+    }
+  }
+}
