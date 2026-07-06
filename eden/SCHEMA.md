@@ -1,4 +1,12 @@
-# Eden Catalog — Schema Specification
+# Eden Catalog — Schema Specification  (VESTIGIAL — retired in Phase F)
+
+> **Vestigial.** This spec describes `eden/eden-catalog.json`, the pre-overhaul
+> single-file Youngevity catalog (the old "Wing 1"). It is **superseded by the
+> Products pillar** (`eden/products/`, built in Phase F) and retired when that lands.
+> The `pack_extrapolation` source kind documented below is **retired poison**: under
+> the current source rule (§00.A / R2) Youngevity never sets an amount or target —
+> Wallach drives every amount, Youngevity is composition only. Kept only so the
+> interim file validates until Phase F.
 
 _Strict spec for `eden/eden-catalog.json`. Any deviation = build failure._
 

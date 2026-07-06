@@ -1,24 +1,29 @@
 # eden/corpus — the sealed Wallach knowledge corpus
 
-_Created 2026-06-24 (Phase α of the Wallach Knowledge Revamp). Proposal of record:
-`chronicle/proposals/wallach-knowledge-revamp.md`._
+_Created 2026-06-24 (Phase α of the Wallach Knowledge Revamp; proposal of record:
+`chronicle/proposals/wallach-knowledge-revamp.md`). It is now **Pillar 1** of the
+three-pillar Eden model (blueprint §2)._
 
 ## What this is
 
-`eden/corpus/` is **Wing 2 of Eden** — the sealed, hash-anchored home for everything
-that is *direct Wallach truth*: his books, and the claim graph extracted from them.
-It joins Wing 1 (`eden/eden-catalog.json`, the Youngevity product catalog) and Wing 3
-(`eden/graphics/`, the sacred hand-made graphics) under one sealing discipline.
+`eden/corpus/` is the sealed, hash-anchored home for everything that is *direct
+Wallach truth*: his books, and the claim graph extracted from them. It is one of the
+three sealed pillars (Corpus · Products · Catalog — see `eden/README.md`), alongside
+`eden/graphics/` (the sacred hand-made graphics) under one sealing discipline. The
+corpus is the model the other pillars copy.
 
-## The two tiers (why this exists)
+## Fully sealed — working + excluded material lives elsewhere
 
-| Tier | Home | Posture | Contents |
-|---|---|---|---|
-| **Tier 1 — canonical** | `eden/` | Sealed · hash-anchored · user-only-writer · loud-fail on drift | books + claim graph + graphics + YGY catalog |
-| **Tier 2 — working** | `knowledge/` | Unsealed · agent-writable · advisory | `design-wisdom/`, `fringe-knowledge/`, derived working data |
+Everything under `eden/corpus/` is Tier-1 canonical: sealed, hash-anchored,
+user-only-writer, loud-fail on drift. Non-canonical material is kept deliberately
+*outside* the corpus so it can never poison the canon — design references under
+`dashboard/design-wisdom/`, and Wallach content held out of the app under
+`eden/fringe-knowledge/`. Anything that must be true lives here, in the sealed pillar.
 
-Tier 2 is kept *out* of Eden precisely so it can never poison the canon. Anything that
-must be true lives here, in Tier 1.
+(A separate two-tier split lives *inside* the corpus at the claim level: **operational**
+claims feed the app surfaces, while **`search-only`** tier-2 claims — broader Wallach
+guidance — are excluded from the operational indices by `corpus_derive` and guarded by
+`search_only_indices_excluded`.)
 
 ## Layout
 
@@ -26,11 +31,13 @@ must be true lives here, in Tier 1.
 eden/corpus/
 ├── books/                       sealed book text (LF-normalized; anchored via books-meta)
 ├── books-meta.json              per-book metadata + content_sha256 anchor      [seals: .golden.sha256]
-├── essentials-canon.json        the immutable 90 — every slug used anywhere    [seals: .golden.sha256]
-├── knowledge-version.json       monotonic seal stamp (mirrors eden_version)    [seals: .golden.sha256]
-├── claims/                      THE SPINE — one sealed shard per book          [each: .golden.sha256]
+├── books-roadmap.json           mining roadmap / per-book status (working)
+├── essentials-canon.json        the immutable 90/91 — every slug used anywhere [seals: .golden.sha256]
+├── knowledge-version.json       monotonic seal stamp                           [seals: .golden.sha256]
+├── SCHEMA.md                    the authoritative claim + canon schema spec
+├── claims/                      THE SPINE — one sealed shard per book           [each: .golden.sha256]
 │   └── claims-<book_id>.json
-├── indices/                     DERIVED from claims/* (never hand-edited)      [each: .golden.sha256]
+├── indices/                     DERIVED from claims/* (never hand-edited)       [each: .golden.sha256]
 │   ├── essentials.json · other-substances.json · conditions.json
 │   ├── symptoms.json · consistency.json
 └── drafts/                      AGENT WRITES ONLY HERE (no golden siblings)
@@ -47,39 +54,47 @@ surfaces can disagree, because they are all views of one graph.
 
 ## The durable anchor: verbatim, not page numbers
 
-Each claim carries a **required `verbatim`** (60–500 chars, an EXACT substring of its
-source book). The PDF-extracted books carry no reliable page markers, so the verbatim
-is the load-bearing locator: `corpus_verify` proves every claim's verbatim is a real
-substring of its book (in LF-normalized space). The structured `locator` (screenshot +
-location for the OCR books, chapter where detectable, always a `char_offset`) is
-best-effort convenience — verify never fails on a missing page, only on a verbatim that
-isn't there. This is what survives a 4-year-unattended re-OCR.
+Each claim carries a **required `verbatim`** (an EXACT substring of its source book).
+The PDF-extracted books carry no reliable page markers, so the verbatim is the
+load-bearing locator: `corpus_verify` proves every claim's verbatim is a real
+substring of its book (in LF-normalized space). The structured `locator` (chapter
+where detectable, always a `char_offset`) is best-effort convenience — verify never
+fails on a missing page, only on a verbatim that isn't there. This is what survives a
+4-year-unattended re-OCR.
 
-## Tools (under `eden/tools/`, one roof with the catalog tools)
+## The books (six sealed)
+
+`dddl-3e-2011` · `rare-earths` · `lets-play-doctor` · `epigenetics` · `immortality` ·
+`iaiyh` — the six in-housed Wallach books, each a sealed claim shard under `claims/`.
+Book citations reference these by `book_id` → `books-meta.json` (composed display,
+never hand-typed — `citations_reference_registry`).
+
+## Tools (under `eden/tools/`, one roof with the derive + catalog + products tooling)
 
 | Tool | Who | Does |
 |---|---|---|
 | `corpus_extract.py` | agent | deterministic draft scaffolding (chunking, dose regex, char_offset) → `drafts/` |
-| `corpus_derive.py` | agent | `claims/*` → `indices/*` (pure, deterministic; excludes `search-only` tier-2 claims from the operational indices) |
-| `corpus_resnap.py` | agent | after a sealed book `.txt` is corrected, relocate every claim's `char_offset` + recompute the book `content_sha256` anchor (locator-only; no claim content changes) |
+| `corpus_derive.py` | agent | `claims/*` → `indices/*` (pure; excludes `search-only` tier-2 claims from the operational indices) |
+| `corpus_resnap.py` | agent | after a sealed book `.txt` is corrected, relocate every claim's `char_offset` + recompute the book `content_sha256` (locator-only; no claim-content change) |
 | `corpus_embed.py` | agent | build the dashboard's embedded corpus JSON from the sealed shards (Zod-validated at load) |
-| `corpus_verify.py` | agent (read-only) | the 11 integrity checks; truth-anchored on book bytes; cannot lie |
+| `build_embeds.py` | agent | the **unified derive pipeline** — orchestrates `corpus_embed` + `targets_derive` (+ products in Phase F) into `eden/derived/` + `dashboard/assets/data/`; freshness-gated by `derived_artifacts_fresh` |
+| `corpus_verify.py` | agent (read-only) | the integrity checks; truth-anchored on book bytes; cannot lie |
 | `corpus_seal.py` | **user only** | promote drafts → claims, derive indices, recompute golden hashes, bump version |
-| `graphics_seal.py` | **user only** | seal the graphics manifest |
-| `graphics_verify.py` | agent (read-only) | each graphic's bytes match its manifest hash |
+| `graphics_seal.py` / `graphics_verify.py` | user / agent | seal + read-only-verify the graphics manifest |
 
-The agent fills `drafts/`; Luneth reviews chunk-by-chunk; **only `*_seal.py` (user-run)**
-promotes and re-anchors. The LLM (the session agent) is never on the source-rule
-allowlist — it sorts passages; the *book* is always the source.
+Mining + purification helpers also live here (`mine_batch.py`, `mined_page_audit.py`,
+`book_purity.py` / `book_purify_apply.py`, `anomaly_scan.py`, `verbatim_audit.py`,
+`vb_*`). The agent fills `drafts/`; Luneth reviews chunk-by-chunk; **only `*_seal.py`
+(user-run)** promotes and re-anchors. The LLM is never on the source-rule allowlist —
+it sorts passages; the *book* is always the source.
 
-## Sealing posture (mirrors `eden/eden-catalog.json`)
+## Sealing posture (shared across the pillars)
 
 Every canonical file has a `*.golden.sha256` sibling. The §17 `pre_write_guard` hook
 auto-blocks any path with a golden sibling, so sealed files are user-only-writer for
-free; `drafts/` (no siblings) stays agent-writable. `pre_bash_guard` already bans bash
-writes into `eden/`. Four invariants enforce integrity at every round-close:
-`corpus_integrity`, `corpus_runtime_purity` (dashboard makes no LLM/network call),
-`graphics_integrity`, and `search_only_indices_excluded` (tier-2 `search-only` claims never leak into the operational indices).
+free; `pre_bash_guard` already bans bash writes into `eden/`. Integrity is enforced at
+every round-close by `corpus_integrity`, `corpus_runtime_purity` (the dashboard makes
+no LLM/network call), `graphics_integrity`, and `search_only_indices_excluded`.
 
 **Bootstrap:** until `corpus_seal.py` runs, there are no golden hashes and
 `corpus_verify` reports BOOTSTRAP (the invariants pass green, mirroring `eden_hash_integrity`).

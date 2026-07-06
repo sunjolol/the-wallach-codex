@@ -1,70 +1,115 @@
 # Eden — the sealed canonical source
 
-_Created 2026-06-20. The architectural surface where the recommendation system is locked down by design._
+_Created 2026-06-20. The architectural surface where the recommendation system is locked down by design. Restructured 2026-07-05 to the three-pillar model (blueprint §2)._
 
 ## What Eden is
 
-Eden is the **single sealed source of truth** for everything the dashboard treats as canonical. It's a closed garden: data flows IN only by user-controlled edits, flows OUT to read surfaces, and user inputs (Scanner, manual additions) live in a strictly parallel namespace the canon can never read.
+Eden is the **only hand-edited data in the repo** — the sealed source of truth for
+everything the dashboard treats as canonical. It is a closed garden: data flows IN
+only by user-controlled, sign-off-gated edits; flows OUT only as *generated*
+artifacts; and user inputs (Scanner, manual additions) live in a strictly parallel
+`localStorage` namespace the canon can never read or be written by.
 
-Naming is intentional. "Eden" captures the architectural posture: pristine, sealed, can't be poisoned, manually tended.
+Naming is intentional. "Eden" captures the architectural posture: pristine, sealed,
+can't be poisoned, manually tended.
 
-### The three wings
+## The three pillars
 
-Eden has grown into three sealed wings, all under one hash-anchored, user-only-writer discipline (each canonical file carries a `*.golden.sha256` sibling; the §17 `pre_write_guard` hook auto-blocks any path that has one):
+Everything canonical lives in one of three sealed, hand-edited pillars. Everything
+else in the repo is **generated from them** (see "The derive pipeline" below).
 
-| Wing | Home | Contents | Documented in |
-|---|---|---|---|
-| **1 — Catalog** | `eden/eden-catalog.json` (+ derived embeds in `eden/derived/`) | the Youngevity product catalog the recommendation engine surfaces | **this file** |
-| **2 — Corpus** | `eden/corpus/` | the Wallach claim graph — his books → extracted, sealed claims + the indices derived from them | `eden/corpus/README.md` |
-| **3 — Graphics** | `eden/graphics/` | the sacred hand-made nutrient/food graphics + their sealed manifest | `eden/corpus/README.md` (shared sealing posture) |
+| Pillar | Home | Contents | Status | Detail |
+|---|---|---|---|---|
+| **1 — Corpus** | `eden/corpus/` | the Wallach claim graph — his books → extracted, sealed claims + the indices derived from them | **live** | `eden/corpus/README.md` |
+| **2 — Products** | `eden/products/` | the Youngevity Product DB — pure product *composition* (what each product contains), never a target | **Phase F (not yet built)** | (built in Phase F) |
+| **3 — Catalog** | `eden/catalog/` | the canonical ID registries both pillars reference: `conditions.json` + `symptoms.json` (the 90/91 essentials live in `corpus/essentials-canon.json`) | **live** | `eden/catalog/README.md` |
 
-The rest of this file documents **Wing 1 (the product catalog)**; the corpus wing has its own README with full detail.
+Alongside the pillars, `eden/graphics/` holds the sacred hand-made nutrient/food
+graphics under the same seal, and `eden/fringe-knowledge/` contains Wallach content
+deliberately held OUT of the app (recorded faithfully, never front-facing —
+`eden/fringe-knowledge/README.md`).
 
-## The Eden invariants — what makes the garden hold
+## The source split (§00.A / R2)
 
-1. **One source of truth.** `eden/eden-catalog.json` is the canonical catalog. All dashboard embeds (regimen-label-lookup, goal-recommendations-data, REGIMEN_BASE_DATA.recommended) derive deterministically from it via `eden/tools/eden_build.py`.
-2. **Sealed by hash.** `eden/eden-catalog.golden.sha256` holds the SHA-256 of the canonical catalog at last user-approved seal. Any drift between actual hash and golden hash → loud failure → recommendation surfaces refuse to render.
-3. **Embed coherence.** All three dashboard embeds carry the same Eden version stamp. Any drift between them or against the canonical catalog → loud failure.
-4. **Write-protection at the agent layer.** Claude (the agent) is explicitly forbidden from writing to `eden/eden-catalog.json` or `eden/eden-catalog.golden.sha256`. The §17 write-discipline hooks block agent writes to these files at the tool boundary, and the `eden_hash_integrity` invariant fires CRITICAL on any drift between the catalog and its sealed golden hash.
-5. **Strict ID namespace.** Eden product IDs use the prefix `EDEN-LOCKED-<slug>` (e.g. `EDEN-LOCKED-btt-2-5-canister`). User-scanned items use `scan-<timestamp>`; user-manual items use `manual-<timestamp>`. The system rejects any `EDEN-LOCKED-*` ID found in user namespace data — quarantines and flags loud.
-6. **Scanner severance.** Eden items have no path through the Scanner. "Details" opens a read-only modal. The "Recent scans" surface filters out any item with `EDEN-LOCKED-*` source. Boot-time scrub removes drift.
-7. **Truth-anchored self-check.** `eden/tools/eden_verify.py` is purely read-only. Compares actual hashes against golden. Cannot lie because it only hashes + compares. A meta-invariant tests the verifier against a known-good fixture so a corrupted verifier can't fake a "pass".
-8. **No silent failures.** Every check either passes loud OR fails loud. Quiet success = pass. Quiet anything else = a bug in the verification logic itself, which the meta-invariant catches.
+**Wallach drives every recommended amount, dose, range, and target.** Youngevity
+(Pillar 2) contributes **composition only** — the ingredient amounts a product
+contains, an *input* to the coverage math, never a target. Where the corpus has no
+maintenance-dose claim for an essential yet, the target is an honest gap ("no
+Wallach target stated"), never a Youngevity-derived fallback. Enforced by
+`amounts_wallach_only`.
 
-## File map
+## The derive pipeline (R1)
 
-| File | Purpose | Writer |
-|---|---|---|
-| `eden/eden-catalog.json` | The canonical sealed catalog. All products + metadata. | **User only** (Luneth) |
-| `eden/eden-catalog.golden.sha256` | SHA-256 of canonical catalog at last seal. Truth anchor. | **User only**, via `eden_seal.py` |
-| `eden/SCHEMA.md` | Strict schema spec for eden-catalog.json. | Editors of this doc, not the catalog. |
-| `eden/tools/eden_build.py` | Derives the three dashboard embeds from canonical catalog. Read-only against eden-catalog.json. | Agent (can run, can't modify catalog) |
-| `eden/tools/eden_seal.py` | Recomputes the golden hash. Run only when user intentionally modifies catalog. | User only |
-| `eden/tools/eden_verify.py` | Read-only verifier. Hashes catalog, compares against golden, verifies embed coherence. | Agent (can run, only reports) |
-| `eden/tools/eden_test_fixture.json` | Known-good catalog used by the meta-invariant to test the verifier. Locked. | User only |
+The three pillars are the ONLY hand-edited data. Every other data artifact is
+GENERATED by a deterministic, network-free generator under `eden/tools/`:
 
-## How updates work
+```
+PILLARS (sealed, hand-edited)          GENERATORS (eden/tools/)     ARTIFACTS (generated, never hand-edited)
+  corpus/  (claims)      ──derive──▶  corpus_derive   ──▶ corpus/indices/
+  catalog/               ──derive──▶  targets_derive  ──▶ per-essential Wallach targets (from dose claims)
+  products/ (Phase F)    ──derive──▶  products_embed  ──▶ product rollups
+        └──── all pillars ──────────▶ build_embeds    ──▶ eden/derived/ + dashboard/assets/data/*.json
+                                                       ──▶ esbuild inlines them into dist/main.js
+```
 
-**To add or modify an Eden product (you, the user):**
-1. Edit `eden/eden-catalog.json` directly OR paste a full replacement into the file. Agent can paste contents for you to overwrite with, but the agent cannot write to this file.
-2. Run `python3 eden/tools/eden_seal.py` to regenerate the golden hash.
-3. Run `python3 eden/tools/eden_build.py` to refresh the dashboard embeds.
-4. Run `python3 eden/tools/eden_verify.py` to confirm everything is coherent.
-5. Reload dashboard.
+`eden/derived/MANIFEST.json` lists every generated artifact + its generator + input
+hashes. The `derived_artifacts_fresh` invariant re-runs each generator over the
+sealed pillars and byte-compares to disk, so a hand-edited or stale artifact is RED.
+No canonical value lives in two hand-maintained places (`no_hand_duplicated_canonical`).
 
-**To verify Eden integrity (agent or user, any time):**
-- `python3 eden/tools/eden_verify.py` — read-only report. Returns `pass / fail / drift-detected`.
+## The sealing discipline — what makes the garden hold
 
-## Why this works
+Every canonical file carries a `*.golden.sha256` sibling holding its SHA-256 at the
+last user-approved seal:
 
-Eden is the architectural answer to "the system can't be trusted to be self-consistent without external proof." Hash anchoring is the external proof. The verifier can't lie because it only computes hashes (deterministic, math-anchored). The meta-invariant prevents the verifier itself from being silently broken. The agent's write-protection lockdown means even agent-side mistakes can't poison the garden. The user is the only writer; everyone else reads.
+1. **Sealed by hash.** Any drift between a file and its golden → loud failure. The
+   `*_hash_integrity` invariants (`eden_hash_integrity`, `corpus_integrity`,
+   `catalog_integrity`, `graphics_integrity`) fire CRITICAL on any mismatch.
+2. **User-only writer.** The §17 `pre_write_guard` hook auto-blocks any path that has
+   a golden sibling, so sealed files are agent-unwritable for free; `pre_bash_guard`
+   also bans bash writes into `eden/`. Only the `*_seal.py` tools (user-run) promote
+   drafts and recompute golden hashes.
+3. **Read-only verifiers.** Each pillar's `*_verify.py` only hashes + compares — it
+   cannot lie, because it computes nothing else. A meta-invariant tests a verifier
+   against a known-good fixture so a corrupted verifier can't fake a pass.
+4. **No silent failures.** Every check passes loud or fails loud. If a pillar goes
+   wrong, failure is loud and the surfaces refuse to render — no silent degradation.
+5. **Strict user/canon namespace split.** Scanner/manual items are MARKED user-provided
+   (`scanner_user_items_marked`) and can never masquerade as canonical or enter a pillar.
 
-If something inside Eden goes wrong, **failure is loud and the system refuses to surface recommendations**. The user always knows whether Eden is healthy or not — no in-between, no silent degradation.
+## Reference integrity (R3)
 
-This is the "no silent failures + no discipline-only + truth-anchored" framing fully instantiated at the catalog layer.
+Every ID a claim or product references must resolve to a real catalog/registry entry
+(`references_resolve` — the condition/symptom half is live; the substance half
+re-lights with the Phase-F Products pillar). Book citations reference the sealed
+registry (`books-meta.json`) by `book_id`, with the display composed, never
+hand-typed (`citations_reference_registry`). Prose stays in its designated homes,
+never in a fact field (`prose_contained`).
+
+## How updates work (you, the user)
+
+To add or modify canonical data:
+1. Edit the relevant pillar file (or paste a full replacement — the agent can prepare
+   contents but cannot write a sealed file).
+2. Run that pillar's `*_seal.py` (user-only) to promote/re-anchor and recompute the
+   golden hash.
+3. Run `node tools/build.mjs` to regenerate the derived artifacts + bundle.
+4. Run `PYTHONUTF8=1 python tools/invariants.py` to confirm the board is green.
+5. Reload the dashboard.
+
+## Vestigial — retired in Phase F
+
+`eden/eden-catalog.json` (+ `.golden.sha256`, `.draft.json`), its tools
+(`eden_build.py`, `eden_seal.py`, `eden_verify.py`), and `eden/SCHEMA.md` are the
+**old single-file Youngevity catalog** (the pre-overhaul "Wing 1"). They are superseded
+by the Products pillar (`eden/products/`) and its derived lookups, and are retired when
+Phase F lands. They remain only so nothing breaks in the interim.
 
 ## Related doctrine
 
-- `.claude/rules/source-rule.md` — Eden formalizes the boundary the cornerstone has been protecting.
-- `.claude/rules/engineering-doctrine.md` — Doctrine §1 (no silent failures), §6 (verifiable invariants), §11 (truth-anchored invariants) instantiated in code.
-- `.claude/rules/write-discipline.md` (§17) — Edit-tool ban applies to all Eden files; only `safe_write` for agent-readable edits; `eden-catalog.json` and `eden-catalog.golden.sha256` are user-only.
+- `.claude/rules/source-rule.md` (§00.A / R2) — Wallach as the immutable cornerstone.
+- `.claude/rules/data-flow.md` — the pillars → generators → views flow + anti-fakery.
+- `.claude/rules/engineering-doctrine.md` — no silent failures, verifiable invariants,
+  truth-anchored invariants, instantiated here.
+- `.claude/rules/write-discipline.md` (§17) — sealed files are user-only; the agent uses
+  only `safe_write`.

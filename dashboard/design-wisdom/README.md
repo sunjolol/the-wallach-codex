@@ -53,7 +53,7 @@ design-wisdom/
 2. **Code is best-effort.** Per-reference HTML files include extracted CodePen content where extraction succeeded. If a fetch failed, the metadata header notes the URL + retry path; the user's notes still apply.
 3. **Categories overlap.** A reference can carry multiple category tags. No forced single-bucket.
 4. **No silent overwrites.** When updating a reference's notes (e.g., after the user adds nuance through applying it), append `_[edited YYYY-MM-DD]_` rather than rewriting in place. The full history of taste-articulation is preserved.
-5. **The folder is portable as-is.** No external dependencies, no tool requirements. Drop into any project's `knowledge/design-wisdom/`, and it works.
+5. **The folder is portable as-is.** No external dependencies, no tool requirements. Drop it into any project (it currently lives at `dashboard/design-wisdom/`), and it works.
 
 ## Provenance
 

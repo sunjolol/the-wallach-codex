@@ -8,7 +8,7 @@ _Read this BEFORE writing any new visual code for this dashboard, and BEFORE mig
 
 1. **No external resources.** Every font, image, and asset is local. No `fonts.googleapis.com`. No CDN-loaded JS or CSS. The `check_no_external_style_resources` invariant enforces this. The one currently-allowed external — Tesseract.js for OCR — is carved out explicitly with a TODO to in-house in a future round.
 
-2. **No hardcoded visual values.** Every color, font, shadow, spacing comes from a `--ds-*` token. The `check_dashboard_uses_design_system_tokens` invariant scans for hex colors / font-family declarations / box-shadow values outside the design system's vocabulary.
+2. **No hardcoded visual values.** Every color, font, shadow, spacing comes from a `--ds-*` token — never a literal. (This rule is discipline + review, not yet a machine gate; the live design-system invariants are `no_external_style_resources`, `design_system_hash_integrity`, and `design_system_write_protection`.)
 
 3. **Re-theme, don't rewrite logic.** When migrating a surface, the BEHAVIOR stays intact. State models, invariants, event handlers, chokepoint helpers, regimen state mutations, scanner pipelines — all untouched. Only the visual layer changes. The safe fallback when uncertain: exact-copy-current-behavior, retheme only.
 
