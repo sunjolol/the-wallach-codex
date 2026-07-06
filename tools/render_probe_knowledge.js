@@ -244,6 +244,29 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     return { total: all.length, visible: all.filter(r => !r.classList.contains('kd-hidden')).length };
   });
 
+  // 4f. Doctrine tab — the app-guarantee cards read from the doctrine-data.json
+  //     prose store (Phase E). Assert: 4 cards (the 3 Wallach health cards dropped),
+  //     DOCT·01 the featured cornerstone, cites COMPOSED ("ENFORCED BY <real gate>"),
+  //     and NO retired "lecture corpus" / dead-invariant text survives.
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="doctrine"]')?.click());
+  await wait(300);
+  const doctrine = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const cards = root ? [...root.querySelectorAll('.kd-doctrine-card')] : [];
+    const cites = cards.map(c => (c.querySelector('.kd-doctrine-card__cite')?.textContent || '').trim());
+    const ids = cards.map(c => (c.querySelector('.kd-doctrine-card__id')?.textContent || '').trim());
+    const bodies = cards.map(c => c.querySelector('.kd-doctrine-card__body')?.textContent || '').join(' ');
+    const featured = root ? root.querySelector('.kd-doctrine-card.featured') : null;
+    return {
+      count: cards.length,
+      allCitesComposed: cites.length > 0 && cites.every(t => /^ENFORCED BY /.test(t)),
+      featuredCornerstone: featured ? /CORNERSTONE/.test(featured.querySelector('.kd-doctrine-card__id')?.textContent || '') : false,
+      hasLectureText: /lecture/i.test(bodies + ' ' + cites.join(' ') + ' ' + ids.join(' ')),
+      hasDeadInvariant: /check_no_unsourced_claims|check_regimen_state_mutation_routing/.test(cites.join(' ')),
+      citeSample: cites[0] || '',
+    };
+  });
+
   // 5. Esc closes.
   await page.keyboard.press('Escape');
   await wait(200);
@@ -254,7 +277,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, corpus, bookOpen, products, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, afterEsc, afterK, search, highlight, searchClear };
+  const out = { boot, afterClick, corpus, bookOpen, products, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, doctrine, afterEsc, afterK, search, highlight, searchClear };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -292,6 +315,11 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['search: content match surfaces Anosmia (title lacks "smell")', search.anosmiaVisible === true && search.anosmiaTitleHasSmell === false],
     ['search: deep-view live-highlights the matched term (smell)', highlight.deepShown === true && highlight.markCount >= 1 && highlight.allSmell === true],
     ['search: clearing restores all rows', searchClear.visible === searchClear.total && searchClear.total === search.total],
+    ['doctrine: 4 app-guarantee cards (health cards dropped)', doctrine.count === 4],
+    ['doctrine: DOCT·01 is the featured cornerstone', doctrine.featuredCornerstone === true],
+    ['doctrine: cites COMPOSED from real gates (ENFORCED BY …)', doctrine.allCitesComposed === true],
+    ['doctrine: no retired lecture-corpus text', doctrine.hasLectureText === false],
+    ['doctrine: no dead-invariant cite', doctrine.hasDeadInvariant === false],
     ['Esc closes drawer', afterEsc.open === false],
     ['bare K reopens drawer', afterK.open === true],
     ['no page errors', errs.length === 0],

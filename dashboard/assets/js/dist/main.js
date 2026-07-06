@@ -4469,6 +4469,20 @@
     nutrients: external_exports.array(external_exports.unknown()).optional()
   }).passthrough();
 
+  // assets/js/src/core/schemas/doctrine.ts
+  var DoctrineCardSchema = external_exports.object({
+    id: external_exports.string(),
+    title: external_exports.string(),
+    featured: external_exports.boolean(),
+    body: external_exports.string(),
+    /** Real invariant/hook/lint names that prove this doctrine — displayed, never a hand-typed cite. */
+    enforced_by: external_exports.array(external_exports.string()),
+    tier: external_exports.string()
+  });
+  var DoctrineSchema = external_exports.object({
+    doctrines: external_exports.array(DoctrineCardSchema)
+  });
+
   // assets/js/src/core/schemas/glossary.ts
   var GlossaryEntrySchema = external_exports.object({
     term: external_exports.string(),
@@ -7901,6 +7915,46 @@
       isOpen: () => isOpen
     };
   }
+
+  // assets/data/doctrine-data.json
+  var doctrine_data_default = {
+    _purpose: "Designated prose store for the Knowledge > Doctrine tab (blueprint Section 2.4, prose home #4: ID-keyed, single-copy, never inline in code). Holds the app's own operating-guarantee cards -- the reader-facing gloss of how this system protects the user's data. Hand-edited store (like glossary.json); read + Zod-validated by views/knowledge.ts, which composes each card's enforcement line from enforced_by + tier (never a hand-typed citation). R3/R4 gated: this file is on the invariants clean surface (citations_reference_registry + prose_contained + no_hand_duplicated_canonical); `body` is a designated prose home, everything else stays structured.",
+    _note: "Phase E (2026-07-05): the 3 Wallach HEALTH-claim cards (former DOCT-02 PDM aggregate-vehicle, DOCT-03 BTT layering, DOCT-04 trace-mineral source-not-quantity) were DROPPED here -- they assert health doctrine that must trace to real corpus claim IDs (Section 00.A), DOCT-03 cited the retired lecture corpus, and re-grounding them is Phase G curation. They re-light as claim-pointing cards once mined (same pattern as the dropped WALLACH SAYS box). The card STYLING is untouched. enforced_by values name REAL live gates/hooks, replacing the former hand-typed cites (two of which -- check_no_unsourced_claims, check_regimen_state_mutation_routing -- referenced deleted invariants).",
+    doctrines: [
+      {
+        id: "DOCT\xB701",
+        title: "Source-Rule \xB7 Wallach Primary Only",
+        featured: true,
+        body: "Every numeric target, dose, deficiency indicator, and health claim this system shows must trace to a primary source in the Wallach corpus. Youngevity products contribute composition only -- what a product contains -- never a recommended amount. No exceptions, including the user.",
+        enforced_by: ["amounts_wallach_only", "citations_reference_registry"],
+        tier: "invariant \xB7 critical"
+      },
+      {
+        id: "DOCT\xB705",
+        title: "Atomic Write Discipline (\xA717)",
+        featured: false,
+        body: "Every project-file write routes through one atomic verify-and-swap primitive: temp-file, read it back, reject on mismatch. Silent truncations from direct-edit tools taught us this. A write that cannot confirm itself fails loudly.",
+        enforced_by: ["pre_write_guard", "post_write_verify", "safe_write"],
+        tier: "hook \xB7 \xA717"
+      },
+      {
+        id: "DOCT\xB706",
+        title: "Chokepoint Discipline (\xA731)",
+        featured: false,
+        body: "Every regimen-state mutation flows through one of five named chokepoint helpers, each emitting a typed event so all subscribed surfaces re-render together. State drift is made structurally hard by module design, not vigilance.",
+        enforced_by: ["no-restricted-globals (ESLint)"],
+        tier: "lint"
+      },
+      {
+        id: "DOCT\xB707",
+        title: "Sealed-Canonical \xB7 User-Only-Writer",
+        featured: false,
+        body: "Sealed canonical files -- the eden pillars and design-system.css -- each carry a golden SHA-256 sibling. The agent reads them freely but never writes after sealing; drift is detected, and a read from a drifted file fails loudly.",
+        enforced_by: ["eden_hash_integrity", "pre_write_guard"],
+        tier: "invariant + hook"
+      }
+    ]
+  };
 
   // assets/data/regimen-label-lookup.json
   var regimen_label_lookup_default = {
@@ -25065,15 +25119,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     }
     return [...byName.values()];
   }
-  var DOCTRINES = [
-    { id: "DOCT\xB701", title: "Source-Rule \xB7 Wallach Primary Only", featured: true, body: "Every numeric target, dose recommendation, deficiency indicator, or health claim displayed by this system must cite a primary source from the Wallach corpus or the YGY product allowlist. No exceptions, including the user.", cite: "ENFORCED BY check_no_unsourced_claims \xB7 invariant tier \xB7 critical" },
-    { id: "DOCT\xB702", title: "Aggregate-Vehicle Coverage (PDM)", featured: false, body: "Plant-derived minerals are defined by sourcing, not by amounts. If a plant-derived mineral aggregate is present in a product, every trace mineral in that aggregate is considered covered \u2014 binary, not graduated.", cite: "CITED \xB7 Dead Doctors Don't Lie \xB7 ch. 4" },
-    { id: "DOCT\xB703", title: "BTT Layering Order", featured: false, body: "Beyond Tangy Tangerine is the foundational morning layer \u2014 vitamins, aminos, foundational minerals. Stack PDM on top for the rare-trace closure. Add EFA Plus for fatty acids. Order matters for absorption.", cite: "CITED \xB7 Wallach lecture corpus \xB7 YGY protocol guide" },
-    { id: "DOCT\xB704", title: "Trace Minerals: Source-Not-Quantity", featured: false, body: "For the 35 rare trace minerals, presence in a plant-derived vehicle is the qualifying criterion. Mass-spec verification of every trace amount is unnecessary if the source is doctrinally sound.", cite: "CITED \xB7 Rare Earths \xB7 ch. 9" },
-    { id: "DOCT\xB705", title: "Atomic LS Write Discipline (\xA717)", featured: false, body: "Every regimen LS write goes through a verified round-trip set \u2192 re-read \u2192 reject-on-mismatch loop. Silent truncations from the Edit tool taught us this. Writes that cannot confirm fail loudly.", cite: "PROVED \xB7 Round 73 lessons + 9 truncation incidents" },
-    { id: "DOCT\xB706", title: "\xA731 Chokepoint Discipline (Cross-Surface Sync)", featured: false, body: "Every regimen mutation flows through one of 5 named chokepoint helpers. Each fires triggerRegimenRerender so all subscribed surfaces re-render. State drift is structurally impossible by module design, not vigilance.", cite: "CITED \xB7 Round 150 doctrine \xB7 enforced by check_regimen_state_mutation_routing" },
-    { id: "DOCT\xB707", title: "Eden Sealed-Canonical (User-Only-Writer)", featured: false, body: "Sealed canonical files (design-system.css, eden corpus) carry hash anchors. Agent reads freely, never writes after sealing time. Drift is detected at startup; reads from drifted files fail loudly.", cite: "CITED \xB7 Round 157 \xB7 enforced by eden_hash_integrity + write_protection invariants" }
-  ];
+  var DOCTRINES = DoctrineSchema.parse(doctrine_data_default).doctrines;
   var LAYOUT3 = CoverageLayoutSchema.parse(coverage_layout_data_default);
   function tileSymbol(t) {
     return t.sym ?? t.letter ?? t.abbr ?? t.code ?? t.name.charAt(0).toUpperCase();
@@ -25278,13 +25324,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     ${productsHTML}
     ${products.length > 30 ? `<div class="kd-more">\u2014 + ${products.length - 30} more \xB7 scroll wired in polish pass \u2014</div>` : ""}`;
   }
+  function doctrineCite(d) {
+    return `ENFORCED BY ${[...d.enforced_by, d.tier].join(" \xB7 ")}`;
+  }
   function renderDoctrineTab() {
     return DOCTRINES.map((d) => `
     <div class="kd-doctrine-card${d.featured ? " featured" : ""}">
       <div class="kd-doctrine-card__id">${escHTML4(d.id)}${d.featured ? " \xB7 CORNERSTONE" : ""}</div>
       <h4 class="kd-doctrine-card__title">${escHTML4(d.title)}</h4>
       <p class="kd-doctrine-card__body">${escHTML4(d.body)}</p>
-      <div class="kd-doctrine-card__cite">${escHTML4(d.cite)}</div>
+      <div class="kd-doctrine-card__cite">${escHTML4(doctrineCite(d))}</div>
     </div>`).join("");
   }
   function renderTab2(tab, snapshot, selectedKey, selectedCondition, selectedBook) {
@@ -25864,7 +25913,21 @@ Technical: tools/invariants.py \u2014 three new critical checks (check_citations
 
 Technical: REVIEW findings \u2014 dashboard/creators-log-handler.js is loaded by nothing (dashboard.html has only <script src=./assets/js/dist/main.js>); its target elements (cl-enter-btn, creators-log, journey-timeline, data-version-slot) exist only as prose inside the markdown blocks; its guard tools/dashboard_integrity.py + the check_script_blocks invariant were deleted in the Phase-A sever (so the handoff's "guarded by check_script_blocks/dashboard_integrity" was stale). CONSOLIDATE \u2014 git rm dashboard/creators-log-handler.js; a strip script (dry-run-then-write, safe_write \xA717) removed the 5 <script type="text/markdown" id="cl-data-*"> blocks (saga 4203 / lessons 849 / decisions 1141 / changelog 189 / notebook 1596 lines) \u2014 internal <\/script> are escaped as <\\/script> so a non-greedy regex is exact \u2014 plus the dead inline <script id="versions-data"> block (read only by the dead handler; version_bump.py is also gone; the assets/data/versions-data.json FILE stays) plus their two orphaned section comments, and rewrote the header comment to describe a pure shell. Strong asserts guarded the surgery: exactly 5 markdown + 1 versions block removed, ZERO id-bearing <script> tags survive, doctype + main.js script + </body></html> all present. dashboard.html: 1,716,306 \u2192 6,231 chars, 8,112 \u2192 128 lines. Also reworded the CSP header comment's literal https://fonts.googleapis.com / gstatic.com strings (documentation of REMOVED resources) which had been WARN-tripping no_external_style_resources \u2192 now "portability rule clean" (0 findings). Marked blueprint \xA76 creators-log-handler line DONE. Verify: build.mjs OK (tsc + esbuild); render_probe (coverage, 0 page errors, 60 tiles) + render_probe_knowledge (0 page errors, PASS \u2014 corpus 6 books, products vault 201, essentials 91, conditions 506, deep-dives + gloss + search all live); board 40/40 (no_dead_legacy_paths, no_native_dialogs, no_external_style_resources green). This CLOSES Phase D. Deferred to Phase E per-surface finalize: two stale header/body comments (a non-existent dashboard/ARCHITECTURE.md pointer + "Round 2-5" mount-slot comments) \u2014 cosmetic, no gate impact.` }, { id: "lg_mr8jruxe_y3by0c", ts: "2026-07-05T20:34:35.090072-05:00", surface: "chronicle/next-chunk", kind: "milestone", summary: "Phase D CLOSED \u2014 reset the session handoff for Phase E: compressed the four completed phases to a one-line map, made the per-surface finalize (visual/UX half) the actionable focus, preserved every forward-pointer", detail: `Plain: with Phase D finished, Luneth asked me to stop and fully prepare a clean session handoff for the next phase. The rolling handoff note (next-chunk.md) had grown to carry the full blow-by-blow of four completed phases \u2014 useful once, but that detail is now permanently in the Creator's Log and git, and CLAUDE.md says this note should be a rolling pointer that gets pruned as phases land. So I rewrote it: the four done phases are compressed to a one-line-per-phase map, and Phase E (the visual/UX half \u2014 rebuilding the legacy surfaces onto the clean pipeline and extending the new gates to them) is now the clear, actionable focus. Nothing forward-looking was lost.
 
-Technical: safe_write rewrite of chronicle/next-chunk.md (6717 B). Preserved every forward-pointer: the pillar model + blueprint-authoritative note; the compact A\u2013D done-map with phase commit trails (A/B dcee79c\xB7c22b527, C 811b418\xB7d87b1d6\xB79b09aa1\xB7d8d7e51, D 020fa46\xB7d0b4656\xB7638e8bb\xB7e4cf937\xB70b9cfac); the Phase-E "start here" (the WISH surfaces to clean \u2014 essentials-benefits-data with its hand-typed cite, best-supplements, goal-recommendations, ingredients-embed/quickref, knowledge.ts DOCTRINES, regimen.ts placeholders \u2014 the per-surface method: re-derive via build_embeds \u2192 migrate the view to esbuild import \u2192 extend citations_reference_registry + prose_contained via _clean_surface_files() \u2192 STOP for visual sign-off; one surface to 100%, build-priority Coverage\xB7Knowledge\xB7Regimen\xB7Scanner\u2192Search\u2192Journey); the F\u2192G\u2192H\u2192I roadmap (F rebuilds the nutrient/ingredient registry + re-lights references_resolve's substance half + retires the old-D3 vestigial tools); the two \u2605 owed-before-G items (the FULL corpus audit + the mining-mechanics memory consolidation); the OLD BACKLOG (menaquinone\u2192phylloquinone + K1/K2 alert \u2192 E/G; Immortality/DDDL re-mine \u2192 G); and the LEFT-noted cosmetics (dashboard.html's non-existent ARCHITECTURE.md ref + "Round 2-5" comments; design-system.css's design-wisdom ref). Verify: genesis boots clean (invariants 40/40, build parity fresh, pass-off reads as a Phase-E handoff), HEAD 0b9cfac, all pushed. This is the deliberate session-end prep the user requested \u2014 no functional change; the next session runs \`genesis\` then begins Phase E.` }];
+Technical: safe_write rewrite of chronicle/next-chunk.md (6717 B). Preserved every forward-pointer: the pillar model + blueprint-authoritative note; the compact A\u2013D done-map with phase commit trails (A/B dcee79c\xB7c22b527, C 811b418\xB7d87b1d6\xB79b09aa1\xB7d8d7e51, D 020fa46\xB7d0b4656\xB7638e8bb\xB7e4cf937\xB70b9cfac); the Phase-E "start here" (the WISH surfaces to clean \u2014 essentials-benefits-data with its hand-typed cite, best-supplements, goal-recommendations, ingredients-embed/quickref, knowledge.ts DOCTRINES, regimen.ts placeholders \u2014 the per-surface method: re-derive via build_embeds \u2192 migrate the view to esbuild import \u2192 extend citations_reference_registry + prose_contained via _clean_surface_files() \u2192 STOP for visual sign-off; one surface to 100%, build-priority Coverage\xB7Knowledge\xB7Regimen\xB7Scanner\u2192Search\u2192Journey); the F\u2192G\u2192H\u2192I roadmap (F rebuilds the nutrient/ingredient registry + re-lights references_resolve's substance half + retires the old-D3 vestigial tools); the two \u2605 owed-before-G items (the FULL corpus audit + the mining-mechanics memory consolidation); the OLD BACKLOG (menaquinone\u2192phylloquinone + K1/K2 alert \u2192 E/G; Immortality/DDDL re-mine \u2192 G); and the LEFT-noted cosmetics (dashboard.html's non-existent ARCHITECTURE.md ref + "Round 2-5" comments; design-system.css's design-wisdom ref). Verify: genesis boots clean (invariants 40/40, build parity fresh, pass-off reads as a Phase-E handoff), HEAD 0b9cfac, all pushed. This is the deliberate session-end prep the user requested \u2014 no functional change; the next session runs \`genesis\` then begins Phase E.` }, { id: "lg_mr92zs3y_rt6vzx", ts: "2026-07-06T05:32:37.390994-05:00", surface: "knowledge", kind: "round-close", summary: "Phase E first surface: cleaned Knowledge>Doctrine \u2014 4 app-guarantee cards moved to a gated prose store (doctrine-data.json), cites composed from REAL gates; 3 Wallach health cards + retired-lecture + 2 dead-invariant cites purged; board 40/40, probe PASS, Luneth signed off.", detail: `The Knowledge drawer's "Doctrine" tab shows small cards explaining the app's OWN rules. They were hard-coded in the view and had quietly gone stale: one cited a source we retired (Wallach lectures), two "enforced by" lines named safety-checks that no longer exist, and the top card's wording still allowed the old poison of a Youngevity product setting a recommended amount. I moved the 4 real app-guarantee cards into a proper data file the gates now watch, dropped the 3 Wallach health-claim cards (those must trace to mined book claims, not hand-typed doctrine \u2014 they return in Phase G, exactly like the WALLACH SAYS box), and rebuilt each card's "enforced by" line from real, live checks. Luneth verified the cleaned tab visually before this entry.
+
+Phase E, first surface (blueprint \xA75.2 Knowledge). Option B (Luneth's call): keep the 4 app-guarantee cards, drop the 3 Wallach health cards.
+
+NEW dashboard/assets/data/doctrine-data.json \u2014 designated prose store (blueprint \xA72.4 prose home #4), hand-edited like glossary.json. 4 cards {id, title, featured, body, enforced_by[], tier}. enforced_by names REAL live gates/hooks: DOCT\xB701 Source-Rule = amounts_wallach_only + citations_reference_registry; DOCT\xB705 \xA717 = pre_write_guard + post_write_verify + safe_write; DOCT\xB706 \xA731 = no-restricted-globals (ESLint, honestly lint-only \u2014 the routing invariant is still a WISH, NOT claimed); DOCT\xB707 sealed = eden_hash_integrity + pre_write_guard. DOCT\xB701's body also corrected: dropped the retired "or the YGY product allowlist" two-role poison \u2192 Youngevity = composition only, never an amount (\xA700.A/R2).
+
+NEW core/schemas/doctrine.ts (DoctrineSchema/DoctrineCardSchema, Zod boundary) + export in core/schemas/index.ts. views/knowledge.ts: removed the inline 7-card DOCTRINES literal \u2192 \`DoctrineSchema.parse(doctrineData).doctrines\`; new doctrineCite() composes "ENFORCED BY <gate> \xB7 <gate> \xB7 <tier>" (R3 \u2014 the app-doctrine analogue of composing a book cite from book_id). state/coverage.ts: softened a dangling "(DOCT\xB702)" comment to "(trace_pdm)" \u2014 the PDM aggregate-vehicle RULE stays in the coverage engine; only its user-facing card dropped.
+
+Gates extended (R3/R4): tools/invariants.py \u2014 added "body" to _PROSE_HOME_KEYS (the doctrine store's designated prose field) + new _CLEAN_SURFACE_STORES tuple registering doctrine-data.json on the clean surface, so citations_reference_registry + prose_contained + no_hand_duplicated_canonical now have real teeth over it. Refreshed the block-header + two gate docstrings that named "knowledge.ts DOCTRINES" as WISH \u2192 now CLEANED. tools/render_probe_knowledge.js: added step 4f asserting count=4, DOCT\xB701 featured cornerstone, all cites composed ("ENFORCED BY \u2026"), no "lecture" text, no dead-invariant cite.
+
+Verified: node tools/build.mjs OK (tsc + esbuild, dist re-inlined AFTER this log per step 6); invariants 40/40 (prose_contained now 12 clean-surface files; citations_reference_registry + no_hand_duplicated_canonical green); render_probe_knowledge PASS with doctrine {count:4, allCitesComposed:true, featuredCornerstone:true, hasLectureText:false, hasDeadInvariant:false, 0 page errors}; eslint clean on all 4 TS files (hand-fixed one JSDoc multiline warning, never --fix).
+
+Finding (recorded in chronicle/next-chunk.md so the next session inherits the truth, not the Phase-D-close premise): the 5 named "WISH embeds" \u2014 essentials-benefits-data, essentials-best-supplements, goal-recommendations-data, ingredients-embed, ingredients-quickref-data \u2014 are ORPHANED DEAD files: imported by no source, absent from the shipped bundle, stranded when Phase A severed the legacy dashboard.html inline blocks + legacy-dashboard.js. Re-deriving them is blocked, not a quick clean: the corpus has ZERO benefit/function/role claims (so essentials-benefits can't derive yet); best-supplements + ingredients need the Phase-F Product DB. The genuine live poison Phase E targets is in wired view code (this chunk cleaned knowledge.ts; views/regimen.ts placeholders remain).
+
+Deferrals: the 3 Wallach health-doctrine cards \u2192 Phase G (need real corpus claim IDs; DOCT\xB703 BTT had no clean book source at all). Friendlier enforcement-label styling optional \u2014 Luneth kept the raw gate names (truthful + verifiable).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

@@ -26,7 +26,7 @@
  *   manual items, minus removed, with override scaling) → sum each item's label
  *   nutrients into per-essential mg/IU totals (unit-convert + scale, match each
  *   nutrient name to an essential) → classify each essential against its Wallach
- *   target. The PDM aggregate-vehicle rule (DOCT·02): a trace_pdm mineral is
+ *   target. The PDM aggregate-vehicle rule (trace_pdm): a trace_pdm mineral is
  *   `trace` (covered by presence) iff a plant-derived-mineral vehicle is in the
  *   stack — binary, not graduated.
  *

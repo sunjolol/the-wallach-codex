@@ -1,0 +1,38 @@
+{
+  "_purpose": "Designated prose store for the Knowledge > Doctrine tab (blueprint Section 2.4, prose home #4: ID-keyed, single-copy, never inline in code). Holds the app's own operating-guarantee cards -- the reader-facing gloss of how this system protects the user's data. Hand-edited store (like glossary.json); read + Zod-validated by views/knowledge.ts, which composes each card's enforcement line from enforced_by + tier (never a hand-typed citation). R3/R4 gated: this file is on the invariants clean surface (citations_reference_registry + prose_contained + no_hand_duplicated_canonical); `body` is a designated prose home, everything else stays structured.",
+  "_note": "Phase E (2026-07-05): the 3 Wallach HEALTH-claim cards (former DOCT-02 PDM aggregate-vehicle, DOCT-03 BTT layering, DOCT-04 trace-mineral source-not-quantity) were DROPPED here -- they assert health doctrine that must trace to real corpus claim IDs (Section 00.A), DOCT-03 cited the retired lecture corpus, and re-grounding them is Phase G curation. They re-light as claim-pointing cards once mined (same pattern as the dropped WALLACH SAYS box). The card STYLING is untouched. enforced_by values name REAL live gates/hooks, replacing the former hand-typed cites (two of which -- check_no_unsourced_claims, check_regimen_state_mutation_routing -- referenced deleted invariants).",
+  "doctrines": [
+    {
+      "id": "DOCT·01",
+      "title": "Source-Rule · Wallach Primary Only",
+      "featured": true,
+      "body": "Every numeric target, dose, deficiency indicator, and health claim this system shows must trace to a primary source in the Wallach corpus. Youngevity products contribute composition only -- what a product contains -- never a recommended amount. No exceptions, including the user.",
+      "enforced_by": ["amounts_wallach_only", "citations_reference_registry"],
+      "tier": "invariant · critical"
+    },
+    {
+      "id": "DOCT·05",
+      "title": "Atomic Write Discipline (§17)",
+      "featured": false,
+      "body": "Every project-file write routes through one atomic verify-and-swap primitive: temp-file, read it back, reject on mismatch. Silent truncations from direct-edit tools taught us this. A write that cannot confirm itself fails loudly.",
+      "enforced_by": ["pre_write_guard", "post_write_verify", "safe_write"],
+      "tier": "hook · §17"
+    },
+    {
+      "id": "DOCT·06",
+      "title": "Chokepoint Discipline (§31)",
+      "featured": false,
+      "body": "Every regimen-state mutation flows through one of five named chokepoint helpers, each emitting a typed event so all subscribed surfaces re-render together. State drift is made structurally hard by module design, not vigilance.",
+      "enforced_by": ["no-restricted-globals (ESLint)"],
+      "tier": "lint"
+    },
+    {
+      "id": "DOCT·07",
+      "title": "Sealed-Canonical · User-Only-Writer",
+      "featured": false,
+      "body": "Sealed canonical files -- the eden pillars and design-system.css -- each carry a golden SHA-256 sibling. The agent reads them freely but never writes after sealing; drift is detected, and a read from a drifted file fails loudly.",
+      "enforced_by": ["eden_hash_integrity", "pre_write_guard"],
+      "tier": "invariant + hook"
+    }
+  ]
+}

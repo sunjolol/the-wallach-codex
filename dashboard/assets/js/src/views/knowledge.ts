@@ -24,10 +24,13 @@
  */
 
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
+import doctrineData from '../../../data/doctrine-data.json';
 import regimenLabelLookup from '../../../data/regimen-label-lookup.json';
 import { on as onEvent } from '../core/events.js';
 import {
   CoverageLayoutSchema,
+  type DoctrineCard,
+  DoctrineSchema,
   type LayoutSection,
   type LayoutTile,
   type ProductEntry,
@@ -93,20 +96,17 @@ function readProducts(): ProductEntry[] {
   return [...byName.values()];
 }
 
-// Doctrines — small, stable curated cards; doesn't warrant LS or a fetch.
-// (Books are NOT hard-coded: the Corpus tab is driven by the sealed corpus via
-//  state/corpus.ts — listBooks() = in-housed books-meta + REAL per-book claim
-//  counts; listPlannedBooks() = the books-roadmap 'coming soon' set. No fabricated
-//  cite totals ever — §00.A/anti-fakery.)
-const DOCTRINES = [
-  { id: 'DOCT·01', title: 'Source-Rule · Wallach Primary Only', featured: true, body: 'Every numeric target, dose recommendation, deficiency indicator, or health claim displayed by this system must cite a primary source from the Wallach corpus or the YGY product allowlist. No exceptions, including the user.', cite: 'ENFORCED BY check_no_unsourced_claims · invariant tier · critical' },
-  { id: 'DOCT·02', title: 'Aggregate-Vehicle Coverage (PDM)', featured: false, body: 'Plant-derived minerals are defined by sourcing, not by amounts. If a plant-derived mineral aggregate is present in a product, every trace mineral in that aggregate is considered covered — binary, not graduated.', cite: 'CITED · Dead Doctors Don\'t Lie · ch. 4' },
-  { id: 'DOCT·03', title: 'BTT Layering Order', featured: false, body: 'Beyond Tangy Tangerine is the foundational morning layer — vitamins, aminos, foundational minerals. Stack PDM on top for the rare-trace closure. Add EFA Plus for fatty acids. Order matters for absorption.', cite: 'CITED · Wallach lecture corpus · YGY protocol guide' },
-  { id: 'DOCT·04', title: 'Trace Minerals: Source-Not-Quantity', featured: false, body: 'For the 35 rare trace minerals, presence in a plant-derived vehicle is the qualifying criterion. Mass-spec verification of every trace amount is unnecessary if the source is doctrinally sound.', cite: 'CITED · Rare Earths · ch. 9' },
-  { id: 'DOCT·05', title: 'Atomic LS Write Discipline (§17)', featured: false, body: 'Every regimen LS write goes through a verified round-trip set → re-read → reject-on-mismatch loop. Silent truncations from the Edit tool taught us this. Writes that cannot confirm fail loudly.', cite: 'PROVED · Round 73 lessons + 9 truncation incidents' },
-  { id: 'DOCT·06', title: '§31 Chokepoint Discipline (Cross-Surface Sync)', featured: false, body: 'Every regimen mutation flows through one of 5 named chokepoint helpers. Each fires triggerRegimenRerender so all subscribed surfaces re-render. State drift is structurally impossible by module design, not vigilance.', cite: 'CITED · Round 150 doctrine · enforced by check_regimen_state_mutation_routing' },
-  { id: 'DOCT·07', title: 'Eden Sealed-Canonical (User-Only-Writer)', featured: false, body: 'Sealed canonical files (design-system.css, eden corpus) carry hash anchors. Agent reads freely, never writes after sealing time. Drift is detected at startup; reads from drifted files fail loudly.', cite: 'CITED · Round 157 · enforced by eden_hash_integrity + write_protection invariants' },
-];
+// Doctrines — the app's OWN operating-guarantee cards (source-rule, §17, §31,
+// sealed-canonical), read from the designated prose store (doctrine-data.json,
+// blueprint §2.4 prose home #4) + Zod-validated at the boundary. The prose +
+// enforcement refs live in the store, never inline here (R4); the view composes
+// each card's cite from enforced_by + tier, so no citation is hand-typed (R3). The
+// Wallach HEALTH-doctrine cards (former PDM / BTT / trace-mineral) were dropped
+// pending Phase-G mining — they must trace to real corpus claim IDs (see the
+// store's _note). (Books are NOT hard-coded either: the Corpus tab is driven by the
+// sealed corpus via state/corpus.ts — listBooks() = books-meta + REAL per-book
+// claim counts; no fabricated cite totals ever — §00.A/anti-fakery.)
+const DOCTRINES: DoctrineCard[] = DoctrineSchema.parse(doctrineData).doctrines;
 
 // ─── Essentials layout (shared with the Coverage periodic table) ───────────
 
@@ -383,13 +383,22 @@ function renderProductsTab(): string {
     ${products.length > 30 ? `<div class="kd-more">— + ${products.length - 30} more · scroll wired in polish pass —</div>` : ''}`;
 }
 
+/**
+ * Compose a card's enforcement line from its REAL gate/hook names — never a
+ * hand-typed citation (R3): "ENFORCED BY <gate> · <gate> · <tier>". This is the
+ * app-doctrine analogue of composing a book cite from book_id.
+ */
+function doctrineCite(d: DoctrineCard): string {
+  return `ENFORCED BY ${[...d.enforced_by, d.tier].join(' · ')}`;
+}
+
 function renderDoctrineTab(): string {
   return DOCTRINES.map(d => `
     <div class="kd-doctrine-card${d.featured ? ' featured' : ''}">
       <div class="kd-doctrine-card__id">${escHTML(d.id)}${d.featured ? ' · CORNERSTONE' : ''}</div>
       <h4 class="kd-doctrine-card__title">${escHTML(d.title)}</h4>
       <p class="kd-doctrine-card__body">${escHTML(d.body)}</p>
-      <div class="kd-doctrine-card__cite">${escHTML(d.cite)}</div>
+      <div class="kd-doctrine-card__cite">${escHTML(doctrineCite(d))}</div>
     </div>`).join('');
 }
 

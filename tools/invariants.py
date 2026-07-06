@@ -1560,8 +1560,12 @@ def check_mined_pages_clean():
 #     goal-recommendations-data, ingredients-embed, ingredients-quickref-data,
 #     regimen-label-lookup, scanner-corpus-data, ocr-dict-data -- carry
 #     hand-maintained prose + hand-typed cites;
-#   * the legacy view scaffold -- views/knowledge.ts DOCTRINES, views/regimen.ts
-#     placeholders -- carry hand-typed cites + inline educational prose.
+#   * the legacy view scaffold -- views/regimen.ts placeholders -- carry hand-typed
+#     cites + inline educational prose.
+# CLEANED (Phase E, 2026-07-05): views/knowledge.ts DOCTRINES -- the 4 app-guarantee
+# cards moved to the doctrine-data.json prose store (now ON the clean surface below,
+# _CLEAN_SURFACE_STORES) with enforced_by composed from real gate names; the 3 Wallach
+# health cards dropped pending Phase-G mining (same pattern as the WALLACH SAYS box).
 # The FULL R4 (verbatim = a claim POINTER + a single-copy per-essential prose
 # store, blueprint Q3) also only becomes meaningful once clean post-mining stances
 # exist -- likewise WISH. None of that is sold as guarded here.
@@ -1569,6 +1573,9 @@ def check_mined_pages_clean():
 _CLEAN_SURFACE_DERIVED = (   # corpus-derived artifacts that are clean today
     "dashboard/assets/data/essentials-targets-data.json",
     "dashboard/assets/data/coverage-layout-data.json",
+)
+_CLEAN_SURFACE_STORES = (   # hand-edited designated prose stores clean today (blueprint §2.4)
+    "dashboard/assets/data/doctrine-data.json",  # Knowledge>Doctrine cards (Phase E)
 )
 # Designated prose / free-descriptor homes -- the ONLY keys allowed to hold
 # prose-shaped text on the clean surface. This allowlist IS R4's "ONE compartment":
@@ -1581,6 +1588,7 @@ _PROSE_HOME_KEYS = {
     "hash_note", "source", "description", "question",
     "resolution", "_note", "rationale", "file", "authors", "sealed_at",
     "duration", "for_condition", "form",                       # dose free descriptors
+    "body",                                                    # doctrine-store prose home (§2.4 #4)
 }
 
 
@@ -1591,7 +1599,8 @@ def _clean_surface_files():
     for rel in ("eden/corpus/essentials-canon.json",
                 "eden/catalog/conditions.json",
                 "eden/catalog/symptoms.json",
-                *_CLEAN_SURFACE_DERIVED):
+                *_CLEAN_SURFACE_DERIVED,
+                *_CLEAN_SURFACE_STORES):
         p = ROOT / rel
         if p.exists():
             files.append(p)
@@ -1621,9 +1630,10 @@ def check_citations_reference_registry():
     derived projection, so a title in a fact field is a hand-typed citation. Prose homes
     (verbatim/claim_text/...) are allowlisted: Wallach may name a book in his own words. The
     claim->book_id substring is also gated by corpus_verify #2 (this makes the rule explicit +
-    extends it to titles). OUT of scope (WISH, Phase E/F -- do NOT sell as guarded): the legacy
-    data embeds (essentials-benefits-data still carries "(Wallach Dead Doctors Don't Lie)") + the
-    legacy views (knowledge.ts DOCTRINES). Truth-anchored on books-meta titles + book_ids x the
+    extends it to titles). NOW COVERED (Phase E): the doctrine-data.json prose store (its cards'
+    enforced_by names real gates, no book title). OUT of scope (WISH, Phase E/F -- do NOT sell as
+    guarded): the legacy/orphaned data embeds (essentials-benefits-data still carries "(Wallach Dead
+    Doctors Don't Lie)") + views/regimen.ts. Truth-anchored on books-meta titles + book_ids x the
     clean-surface bytes, recomputed each run."""
     meta_p = ROOT / "eden" / "corpus" / "books-meta.json"
     if not meta_p.exists():
@@ -1663,9 +1673,10 @@ def check_prose_contained():
     descriptors) are R4's "ONE compartment" -- everything else must stay structured. Catches a
     paragraph leaking into a slug/symbol/enum/numeric fact field. PARTIAL by design (R7): the FULL
     R4 (verbatim = a claim POINTER + a single-copy per-essential prose store, blueprint Q3) only
-    matters once clean post-mining stances exist, and the legacy data embeds + inline view prose
-    (DOCTRINES bodies) are WISH until Phase E/F collapses them -- not sold as guarded. Truth-anchored
-    on the clean-surface bytes, recomputed each run."""
+    matters once clean post-mining stances exist. The doctrine-store bodies are now the designated
+    prose home ("body" in _PROSE_HOME_KEYS) + on the clean surface; the legacy/orphaned data embeds +
+    views/regimen.ts inline prose stay WISH until Phase E/F collapses them -- not sold as guarded.
+    Truth-anchored on the clean-surface bytes, recomputed each run."""
     def _prose_shaped(s):
         return len(s.split()) >= 12 or (len(s) > 40 and re.search(r"\. [A-Z]", s) is not None)
     viol = []
