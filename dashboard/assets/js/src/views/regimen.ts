@@ -58,6 +58,18 @@ interface SlotMeta {
   empty?: boolean;
 }
 
+// ─── FABRICATED DEMO SCAFFOLD — Phase-F placeholder (NOT real, NOT derived) ──
+// LOUD NOTE (Phase E, 2026-07-06): the three constants below — SLOT_PLACEHOLDERS,
+// RECOMMENDATIONS, WISHLIST — are v3-mockup demo data hand-authored for visual
+// parity. They are NOT the user's real state and NOT derived from any pillar; they
+// render as-is today. Their real engines land in Phase F: cartridge slots ← a new
+// §31 slot-state system · recommendations ← the goal-driven product engine (needs
+// the Youngevity Product DB) · wishlist ← real saved-for-later state. Likewise the
+// cart-action buttons (save / new / import / export / vault / duplicate) bridge to
+// legacy window.* globals SEVERED in Phase A, so they are silent no-ops until Phase
+// F rewires them. What IS real below: the active-slot item rows + dose / remove /
+// add-from-vault, all wired to live §31 state. A hand-typed book cite ("Rare Earths
+// p. 132") was removed from RECOMMENDATIONS on 2026-07-06 (R3 — no hand-typed cites).
 const SLOT_PLACEHOLDERS: SlotMeta[] = [
   { id: 'slot-01', num: '01', serial: '01·A23F', name: 'Travel Pack', items: 6, coverage: 31, total: essentialCount(), stamp: 'SAVED · 2D AGO' },
   { id: 'slot-02', num: '02', serial: '02·F71D', name: 'Daily Protocol', items: 9, coverage: 47, total: essentialCount(), stamp: 'EDIT 0:14 AGO', active: true },
@@ -76,7 +88,7 @@ interface RecItem {
 const RECOMMENDATIONS: RecItem[] = [
   { name: 'CHEWABLE VITAMIN D3', contribution: 12, heat: 'xl', reason: 'Closes 12 trace tiles via the PDM-aggregate vehicle. Single-serve daily, neutral taste.' },
   { name: 'ULTIMATE EFA PLUS', contribution: 2, heat: 'md', reason: 'Adds Omega-6 + Omega-9 coverage. Bone & skeletal goal already at 78%, this raises to 84%.' },
-  { name: 'CHEWABLE C·1000', contribution: 1, heat: 'sm', reason: 'Strengthens existing Vitamin C coverage to clinical-dose level per Wallach Rare Earths p. 132.' },
+  { name: 'CHEWABLE C·1000', contribution: 1, heat: 'sm', reason: 'Strengthens existing Vitamin C coverage to clinical-dose level.' },
   { name: 'SLENDER FX SHAKE', contribution: 8, heat: 'lg', reason: 'Meal-replacement option; adds 8 essentials at once but high overlap with existing BTT.' },
 ];
 
