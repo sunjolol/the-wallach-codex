@@ -1119,6 +1119,471 @@
           "source_label": "3.0-restore_supp-facts_1124_1200x900.jpg"
         }
       ]
+    },
+    "act-canister": {
+      "product_id": "act-canister",
+      "name": "A.C.T.™ Canister",
+      "sku": "ACTCanister",
+      "ygy_id": "358",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "1 scoop (15 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 45,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 10,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "dietary_fiber": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 7
+            },
+            "total_sugars": {
+              "amount": 7,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 60,
+              "unit": "mg",
+              "pct_dv": 67,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Niacin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 125
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 135,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 6,
+              "unit": "mcg",
+              "pct_dv": 250,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Potassium",
+              "amount": 395,
+              "unit": "mg",
+              "pct_dv": 8,
+              "form": "as potassium citrate"
+            },
+            {
+              "name": "Caffeine",
+              "amount": 120,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from green coffee bean and guarana seed extract [Paullinia cupana]"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Fructose (Crystalline)",
+            "Resistant Maltodextrin (Fibersol®-2)",
+            "Citric Acid",
+            "Maltodextrin",
+            "Natural Flavors",
+            "Vegetable Juice (for color)",
+            "Stevia Leaf Extract",
+            "Silicon Dioxide",
+            "L-Arginine",
+            "Taurine",
+            "L-Tyrosine",
+            "Green Tea Extract",
+            "Orange Juice Powder",
+            "Pineapple Juice Powder",
+            "Panax Ginseng Extract"
+          ],
+          "source_label": "act-energy-canister_0424_suppfacts.jpg"
+        }
+      ]
+    },
+    "act-energy-on-the-go-gusset": {
+      "product_id": "act-energy-on-the-go-gusset",
+      "name": "A.C.T.™ Energy On-The-Go 1 Gusset",
+      "sku": "AE-1001A",
+      "ygy_id": "360",
+      "components": [
+        {
+          "role": null,
+          "form": "stick",
+          "serving_size": "1 stick (15 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 45,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 10,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "dietary_fiber": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 7
+            },
+            "total_sugars": {
+              "amount": 7,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 60,
+              "unit": "mg",
+              "pct_dv": 67,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Niacin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 125
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 118,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 6,
+              "unit": "mcg",
+              "pct_dv": 250,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Potassium",
+              "amount": 395,
+              "unit": "mg",
+              "pct_dv": 8,
+              "form": "as potassium citrate"
+            },
+            {
+              "name": "Caffeine",
+              "amount": 120,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from green coffee bean and guarana seed extract [Paullinia cupana]"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Fructose (Crystalline)",
+            "Resistant Maltodextrin",
+            "Citric acid",
+            "Maltodextrin",
+            "Natural Flavors",
+            "Vegetable Juice (for Color)",
+            "Stevia Leaf Extract",
+            "Silicon Dioxide",
+            "L-Arginine",
+            "L-Tyrosine",
+            "Taurine",
+            "Green Tea Extract",
+            "Orange Juice Powder",
+            "Pineapple Juice Powder",
+            "Panax Ginseng Extract"
+          ],
+          "source_label": "act-30-pk-gusset_1225_supp-facts.jpg"
+        }
+      ]
+    },
+    "adrenal-health": {
+      "product_id": "adrenal-health",
+      "name": "Adrenal Health",
+      "sku": "USGH000001",
+      "ygy_id": "647",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (tincture)",
+          "serving_size": "2 mL (approx. 1/2 tsp or 40 drops)",
+          "servings_per_container": 60,
+          "extract_ratio": "1:4 (250 mg herb per 1 mL)",
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Extract Blend",
+              "total": {
+                "amount": 1900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Chinese Licorice Root, Holy Basil Herb, Royal Jelly",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Chinese Licorice",
+                  "part": "root"
+                },
+                {
+                  "pos": 2,
+                  "name": "Holy Basil",
+                  "part": "herb"
+                },
+                {
+                  "pos": 3,
+                  "name": "Royal Jelly"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "ethyl alcohol (35-45%)"
+          ],
+          "source_label": "usgh000001_gh-adrenal-health-0721_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "aloe-plus": {
+      "product_id": "aloe-plus",
+      "name": "Aloe Plus",
+      "sku": "USBI000001",
+      "ygy_id": "850",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "1 tbsp (15 mL)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 13,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "total_sugars": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 60,
+              "unit": "mg",
+              "pct_dv": 70
+            },
+            {
+              "name": "Sodium",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Potassium",
+              "amount": 75,
+              "unit": "mg",
+              "pct_dv": 2
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Purified Water",
+            "Xylitol",
+            "Glucose",
+            "Aloe Vera Concentrate",
+            "Citric Acid",
+            "Potassium Citrate",
+            "Natural Flavor",
+            "Ascorbic Acid",
+            "Ethoxylated Vegetable Oil",
+            "Glycerin",
+            "d-alpha-Tocopheryl Acetate",
+            "Beta Carotene",
+            "Natural Color",
+            "Potassium Sorbate",
+            "Sodium Benzoate"
+          ],
+          "source_label": "usbi000001_biometics-aloe-plus-0422_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "antioxidant-response": {
+      "product_id": "antioxidant-response",
+      "name": "Antioxidant Response",
+      "sku": "USGH000012",
+      "ygy_id": "718",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (tincture)",
+          "serving_size": "2 mL (approx. 1/2 tsp or 40 drops)",
+          "servings_per_container": 60,
+          "extract_ratio": "1:4 (250 mg herb per 1 mL)",
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Extract Blend",
+              "total": {
+                "amount": 1900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Barberry Root, Bilberry Fruit, Ginger Root, Holy Basil Herb, Oregano Leaf, Rosemary Leaf, Skullcap Herb, Turmeric Root, White Willow Bark",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Barberry",
+                  "part": "root"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bilberry",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 3,
+                  "name": "Ginger",
+                  "part": "root"
+                },
+                {
+                  "pos": 4,
+                  "name": "Holy Basil",
+                  "part": "herb"
+                },
+                {
+                  "pos": 5,
+                  "name": "Oregano",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 6,
+                  "name": "Rosemary",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 7,
+                  "name": "Skullcap",
+                  "part": "herb"
+                },
+                {
+                  "pos": 8,
+                  "name": "Turmeric",
+                  "part": "root"
+                },
+                {
+                  "pos": 9,
+                  "name": "White Willow",
+                  "part": "bark"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "ethyl alcohol (35-45%)"
+          ],
+          "source_label": "gh-antioxidant-response_supp-facts-0422_cart_1200x900.jpg"
+        }
+      ]
+    },
+    "apple-cider-vinegar-gummies": {
+      "product_id": "apple-cider-vinegar-gummies",
+      "name": "Apple Cider Vinegar Gummies",
+      "sku": "USYG100504",
+      "ygy_id": "9745",
+      "components": [
+        {
+          "role": null,
+          "form": "gummy",
+          "serving_size": "2 gummies",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 15,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 4,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "total_sugars": {
+              "amount": 4,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": 0
+            },
+            {
+              "name": "Apple Cider Vinegar",
+              "amount": 500,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Lion's Mane Mushroom",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Hericium Erinaceus"
+            },
+            {
+              "name": "Black Currant",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Ribes Nigrum"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Honey",
+            "Allulose",
+            "Water",
+            "Pectin",
+            "Citric Acid",
+            "Mixed Berry Natural Flavor",
+            "Pecmate"
+          ],
+          "source_label": "acv_gummy_suppfacts_0524.jpg"
+        }
+      ]
     }
   }
 }

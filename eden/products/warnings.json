@@ -1,0 +1,19 @@
+{
+  "_meta": {
+    "purpose": "VOLATILE safety sidecar — Youngevity label WARNINGS (contraindications / cautions), hand-extracted from label images during composition extraction. source:ygy, quarantined like the description (§00.A: NEVER a Wallach claim or a target; feeds product-display safety surfacing + search only). Joined to products.json by ygy_id.",
+    "sealed": false,
+    "note": "Not golden-sealed. Only products whose label carries a warning appear here."
+  },
+  "warnings": {
+    "647": {
+      "ygy_id": "647",
+      "source": "ygy",
+      "text": "Do not take if you are pregnant, nursing, diabetic; have hypertension, a liver disorder, severe kidney insufficiency, hypokalemia or taking diuretics, laxatives, warfarin or medications for heart conditions, unless directed by a healthcare professional. Not for prolonged use. Do not exceed recommended dose. This product contains an ingredient derived from a bee source. Keep out of the reach of children."
+    },
+    "718": {
+      "ygy_id": "718",
+      "source": "ygy",
+      "text": "Do not use if you are pregnant, nursing, sensitive to aspirin, taking anticoagulants or have gallstones, unless directed by a healthcare professional. Not for prolonged use. Do not exceed recommended dose. Discontinue use if abdominal pain, nausea or vomiting occur unless directed by your physician. Keep out of the reach of children."
+    }
+  }
+}
