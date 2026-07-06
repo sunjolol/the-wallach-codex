@@ -207,7 +207,7 @@ Legend: **KEEP** · **CHANGE** (rewrite for new model) · **GEN** (becomes gener
 
 **App shell + styles**
 - `dashboard.html` — **CHANGE** (pure shell; embeds removed, D1). `styles/design-system.css{,.golden}` — **KEEP** (sealed). Other `.css` — **KEEP**. `legacy-dashboard.css` — **DELETED (Phase A, 2026-07-05)** — full sever, link + host + rule all removed.
-- `legacy-dashboard.js` — **DELETED (Phase A, 2026-07-05)** — Luneth: no deferral, full sever now; the #legacy-workspace-host fallback (dead code) + 5 legacy-IIFE invariants were removed with it. `creators-log-handler.js` — **REVIEW/CONSOLIDATE**.
+- `legacy-dashboard.js` — **DELETED (Phase A, 2026-07-05)** — Luneth: no deferral, full sever now; the #legacy-workspace-host fallback (dead code) + 5 legacy-IIFE invariants were removed with it. `creators-log-handler.js` — **REMOVED (Phase D-review, 2026-07-05)** — it was an unloaded orphan (dashboard.html loads only the bundle) whose target DOM elements + guard (`dashboard_integrity.py`/`check_script_blocks`, itself deleted in Phase A) were already gone; deleted together with the 5 orphaned `cl-data-*` markdown blocks + the dead inline `versions-data` block → dashboard.html is now a TRUE pure shell (1.72 MB / 8112 lines → 6 KB / 128 lines). Content preserved in git + chronicle/creators-log + assets/data/creators-log.
 - `assets/*.ttf` — **KEEP**. `assets/*.{jpg,png,pdf}` (backgrounds/themes/slab-masks) — **KEEP**, audit unused (slab-mask variants, `.pdf`).
 - `components/*.html` (v3 PROPOSALs) — **KEEP** (read-only design targets). `design-styles/*.jpg` (12) — **RELOCATE** (design inspiration, not shipped).
 - `eslint.config.js`, `tsconfig.json`, `package*.json`, `.prettierrc` — **KEEP**.
