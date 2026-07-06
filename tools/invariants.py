@@ -1727,6 +1727,82 @@ def check_no_hand_duplicated_canonical():
                   f"derived_artifacts_fresh)")
 
 
+# ---------------------------------------------------------------------------
+# Eden's WALL (Phase E, blueprint §5.4) -- scanner_user_items_marked
+# ---------------------------------------------------------------------------
+# The scanner lets a user add ANY item to THEIR regimen, but a user/scanned item can
+# NEVER masquerade as Wallach/Youngevity canonical, nor leak into a sealed pillar or a
+# generated artifact. Three USER provenance tokens are the wall's subject; the base
+# HBSP default (wallach_hbsp_default) is DATA-only (regimen-base-data), never minted in code.
+_USER_PROVENANCE = ("user_scanned", "user_manual", "wishlist_promoted")
+_PROV_RE = re.compile(r"provenance:\s*['\"]([^'\"]+)['\"]")
+
+
+def check_scanner_user_items_marked():
+    """Blueprint §5.4 -- EDEN'S WALL. A user/scanner-added regimen item is MARKED
+    user-provided (provenance) so it can never masquerade as canonical, and it never
+    leaks into a sealed pillar or an operational artifact. Two clauses, both
+    truth-anchored on committed bytes (recomputed each run):
+      (A) FLAGGED -- RegimenItemSchema requires `provenance`, and every provenance
+          LITERAL in the app source is a recognized USER token (user_scanned /
+          user_manual / wishlist_promoted). No view/state code mints a regimen item
+          marked as anything canonical (the base HBSP default's wallach_hbsp_default
+          lives ONLY in the regimen-base-data artifact, never minted in code).
+      (B) CONTAINED -- no USER token appears in a sealed pillar (eden/corpus,
+          eden/catalog) or an operational generated artifact (assets/data/*.json),
+          proving a scanned/user item never got baked into canonical data. The
+          append-only Creator's Log narrative (creators-log*) is EXCLUDED: it
+          legitimately discusses these tokens as project history.
+    R7: shipped with the wall it governs; proven with a negative test (a user token
+    injected into an artifact, or a masquerade provenance minted in code, -> RED)."""
+    viol = []
+
+    # (A1) the schema still requires the provenance marker.
+    schema_p = ROOT / "dashboard" / "assets" / "js" / "src" / "core" / "schemas" / "regimen.ts"
+    if schema_p.exists() and not re.search(r"provenance:\s*z\.", schema_p.read_text(encoding="utf-8")):
+        viol.append("RegimenItemSchema no longer requires `provenance` (the wall's marker field)")
+
+    # (A2) every provenance literal minted in the app source is a USER token.
+    src_root = ROOT / "dashboard" / "assets" / "js" / "src"
+    if src_root.exists():
+        for p in sorted(src_root.rglob("*.ts")):
+            if p.name.endswith(".test.ts") or (p.name == "regimen.ts" and p.parent.name == "schemas"):
+                continue  # tests + the schema file's token-listing doc-comment
+            for m in _PROV_RE.finditer(p.read_text(encoding="utf-8")):
+                if m.group(1) not in _USER_PROVENANCE:
+                    viol.append(f"{p.relative_to(ROOT).as_posix()}: code mints a regimen item with "
+                                f"non-user provenance '{m.group(1)}' -- views/state may only ADD user "
+                                f"items; canonical items come from sealed data, never minted in a view")
+
+    # (B) no USER token in a sealed pillar or an operational artifact.
+    scan = []
+    for d in (ROOT / "eden" / "corpus", ROOT / "eden" / "catalog"):
+        if d.exists():
+            scan += sorted(d.rglob("*.json"))
+    data_dir = ROOT / "dashboard" / "assets" / "data"
+    if data_dir.exists():
+        scan += sorted(data_dir.glob("*.json"))
+    for p in scan:
+        rel = p.relative_to(ROOT).as_posix()
+        if "creators-log" in rel:  # append-only project NARRATIVE, not operational data
+            continue
+        try:
+            blob = p.read_text(encoding="utf-8")
+        except (UnicodeDecodeError, OSError):
+            continue
+        hit = next((tok for tok in _USER_PROVENANCE if tok in blob), None)
+        if hit is not None:
+            viol.append(f"{rel}: carries USER-provenance token '{hit}' -- a user/scanned item leaked "
+                        f"into canonical data (Eden's wall breach)")
+
+    if viol:
+        return False, ("Eden's wall breached (scanner_user_items_marked): " + "; ".join(viol[:6])
+                       + (" ..." if len(viol) > 6 else ""))
+    return True, ("Eden's wall holds -- RegimenItemSchema requires provenance, every code provenance "
+                  f"literal is a user token {_USER_PROVENANCE}, and no user token appears in any pillar "
+                  "or operational artifact (scanned/manual items stay user-provided, never canonical)")
+
+
 INVARIANTS = [
     Invariant(
         name="safe_write_canary",
@@ -2047,6 +2123,14 @@ INVARIANTS = [
         truth_anchor="essentials-canon.json display_names x every string leaf of the other hand-edited pillar files (catalog conditions/symptoms), recomputed each run",
         severity="critical",
         lesson_ref="Blueprint Phase D / Charter R3 + enforcement table 4.1 (2026-07-05) -- the deleted nutrients.json hand-duplicated all 91 canonical names (D-c); this gate makes re-introducing that class of duplication RED. WISH (Phase F): extend to every pillar identity field once the Product DB lands. memory: overhaul-blueprint-active-plan",
+    ),
+    Invariant(
+        name="scanner_user_items_marked",
+        description="Eden's WALL (blueprint §5.4): a user/scanner-added regimen item is provenance-marked user-provided (user_scanned/user_manual/wishlist_promoted) so it can never masquerade as Wallach/Youngevity canonical, and no user token ever appears in a sealed pillar or an operational generated artifact -- the scanner writes only the user's localStorage, never a pillar",
+        check_fn=check_scanner_user_items_marked,
+        truth_anchor="dashboard/assets/js/src provenance literals + RegimenItemSchema x a user-token scan of eden/{corpus,catalog}/*.json & dashboard/assets/data/*.json (excl. append-only creators-log narrative), recomputed each run",
+        severity="critical",
+        lesson_ref="Blueprint Phase E -- §5.4 (2026-07-06): Eden's wall -- the scanner lets a user add ANY item to THEIR regimen but can NEVER modify the sealed pillars; this codifies 'user items flagged, never enter pillars/indices' (R7). memory: overhaul-blueprint-active-plan",
     ),
 ]
 

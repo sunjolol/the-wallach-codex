@@ -4636,7 +4636,7 @@
     addedDate: external_exports.string(),
     // ISO YYYY-MM-DD
     provenance: external_exports.string()
-    // 'user_scanned' | 'user_manual' | 'wishlist_promoted' | ...
+    // user_scanned | user_manual | wishlist_promoted (USER) · wallach_hbsp_default (base HBSP default, data-only). Gated by scanner_user_items_marked (§5.4 wall).
   });
   var RegimenSchema = external_exports.object({
     items: external_exports.array(RegimenItemSchema)
@@ -25937,7 +25937,21 @@ Change (minimal, no behavior change): removed "per Wallach Rare Earths p. 132" f
 
 Verified: node tools/build.mjs OK (dist re-inlined after this log per step 6); "Rare Earths p. 132" gone from dist/main.js (grep=0); eslint clean on regimen.ts (hand-checked); invariants 40/40; render_probe_adopt PASS {provenance:user_scanned, before:0\u2192after:1, coverage 0\u21923, 0 page errors} \u2014 the \xA731 cascade the change sits next to is intact.
 
-Next: pivoting to a completable-now Phase-E task \u2014 the Scanner "wall" gate (scanner_user_items_marked, blueprint \xA75.4): a NEW invariant proving scanner/user-added items are marked user-provided (provenance) so they can never masquerade as Wallach/Youngevity canonical or enter the pillars/indices. The adopt probe above already shows the marking exists (provenance:user_scanned); the gate codifies it (R7 \u2014 ship the gate).` }];
+Next: pivoting to a completable-now Phase-E task \u2014 the Scanner "wall" gate (scanner_user_items_marked, blueprint \xA75.4): a NEW invariant proving scanner/user-added items are marked user-provided (provenance) so they can never masquerade as Wallach/Youngevity canonical or enter the pillars/indices. The adopt probe above already shows the marking exists (provenance:user_scanned); the gate codifies it (R7 \u2014 ship the gate).` }, { id: "lg_mr94sizg_5e1efd", ts: "2026-07-06T06:22:58.204944-05:00", surface: "scanner", kind: "round-close", summary: "Phase E: shipped the Scanner wall gate (scanner_user_items_marked, \xA75.4) \u2014 a critical invariant proving user/scanned regimen items are provenance-marked + never leak into a sealed pillar or artifact. Board 40\u219241. Negative test proves all 3 clauses bite; adopt probe PASS.", detail: `Added an automatic safety check that enforces "Eden's wall" \u2014 the rule that anything a user scans or types into their OWN regimen is tagged as user-provided and can NEVER pose as an official Wallach/Youngevity fact, nor sneak into the sealed source data. Until now that wall held by architecture (the offline app can't write files) plus discipline; now it's a red-board gate. I also proved it actually bites with a negative test, and fixed a stale doc-comment on the schema so it lists the real provenance values.
+
+Phase E \u2014 the Scanner wall gate (blueprint \xA75.4), the pivot after Regimen was deferred to Phase F.
+
+NEW tools/invariants.py::check_scanner_user_items_marked (critical, registered #41). Two clauses, both truth-anchored on committed bytes, recomputed each run:
+  (A) FLAGGED \u2014 RegimenItemSchema requires \`provenance\`, and every provenance LITERAL in dashboard/assets/js/src is a recognized USER token (user_scanned / user_manual / wishlist_promoted). No view/state code path mints a regimen item marked as anything canonical. The base HBSP foundation's provenance (wallach_hbsp_default) is DATA-only \u2014 it lives in the regimen-base-data artifact (negative ids -1/-2/-3), never minted in code \u2014 so it is correctly NOT in the code allowlist.
+  (B) CONTAINED \u2014 no USER token appears in a sealed pillar (eden/corpus, eden/catalog) or an operational generated artifact (dashboard/assets/data/*.json). The append-only Creator's Log narrative (creators-log*) is EXCLUDED \u2014 it legitimately discusses these tokens as project history (they appear in decisions.md / saga.md / the embed). This proves a scanned/user item never got baked into canonical data.
+
+Why this shape (design notes): the two item-creation sites are views/scanner.ts::adoptProduct (user_scanned) + views/regimen.ts::addItem (user_manual) \u2014 both already mark user items; the gate makes that mandatory + un-droppable. I deliberately did NOT tighten RegimenItemSchema from z.string() to a z.enum: existing users' localStorage items carry free-form provenance, and a stricter runtime schema could reject accumulated data (engineering-doctrine: schema changes must not break saved user data). The static invariant is the right layer for the wall. Also fixed core/schemas/regimen.ts's provenance doc-comment, which listed '... | wishlist_promoted | ...' but omitted the real wallach_hbsp_default default \u2014 now accurate + names the gate.
+
+R7 proof (negative test, scratchpad harness monkeypatching invariants.ROOT to throwaway temp trees \u2014 no repo files touched): (1) masquerade provenance 'youngevity' minted in a view + a leaked 'user_scanned' token in an artifact \u2192 ok=False, BOTH clauses named; (2) schema present but provenance requirement dropped \u2192 ok=False (clause A1); (3) clean tree \u2192 ok=True. All three clauses proven to bite; the clean case passes. (First draft of the test mis-fired case 2 by deleting the schema file entirely, which correctly hit the bootstrap-missing-file guard \u2014 corrected to a schema that exists but lacks provenance.)
+
+Verified: node tools/build.mjs OK (dist re-inlined after this log per step 6); invariants 41/41 (was 40 \u2014 this is the +1; new gate GREEN: "Eden's wall holds"); negative test PASS; eslint clean on regimen.ts; render_probe_adopt PASS {provenance:user_scanned, before 0\u2192after 1, coverage 0\u21923, 0 page errors}.
+
+Phase E status: Knowledge>Doctrine finalized (02ba4af); Regimen deferred to Phase F w/ its R3 cite killed (59288e0); Scanner wall gate now landed. Remaining Phase-E-completable-now: the dead-embed triage (delete vs keep the 5 orphaned embeds) \u2014 Luneth's call.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
