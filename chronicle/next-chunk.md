@@ -39,5 +39,17 @@ The 5 "WISH embeds" this handoff previously called live surfaces to re-derive �
 - **OLD BACKLOG:** menaquinone→phylloquinone book correction + the K1/K2 alert-box → Phase E/G; Immortality + DDDL re-mine (both under-mined) → Phase G.
 - **LEFT-noted cosmetics (no gate impact):** dashboard.html's header references a non-existent `dashboard/ARCHITECTURE.md` + carries stale "Round 2-5" mount-slot comments (fix in Phase E as the shell's surfaces finalize); the SEALED `design-system.css` header still references `knowledge/design-wisdom` (fix at the next design-system re-seal / project end).
 
-## SET UP FOR NEXT SESSION
-Start fresh → run `genesis` (expect board 40/40, HEAD `0b9cfac`, Phases A–D done). Begin **Phase E**: ask Luneth which surface first, then one-surface-to-100% with a STOP-for-visual-sign-off gate. The blueprint is authoritative for the how.
+## ★ NEXT SESSION = README / doc accuracy pass (Luneth, 2026-07-06)
+Start fresh → run `genesis` (expect board **41/41**, HEAD `98f3c42`; Phases A–D done + Phase E's clean-now work done: Knowledge>Doctrine, Regimen deferred, Scanner wall gate, dead-embed + root housekeeping). Then the FIRST task Luneth wants:
+
+**Audit + rewrite ALL README/doc files to be ACCURATE to the current structure + systems** — the 3-pillar model (corpus live · products Phase-F · catalog), generated-artifacts + freshness gates, the Charter R1–R9 + the 41 live invariants, the current file layout (no more `knowledge/essentials-targets.json` rotten layer; `genesis/` folder gone → boot is `tools/genesis.py`; `scanner/` gone; etc.). **ACCURACY, NOT bloat** — fix stale content, don't pad. Read the blueprint + CLAUDE.md (the authoritative current state) FIRST, then go file-by-file; verify each doesn't trip `no_operating_doc_contradiction` (board stays green); round-close per group or all together.
+
+**The 17 tracked READMEs** (`git ls-files | grep -i readme`), grouped by likely staleness:
+- **HIGH (most likely stale, do first):** `README.md` (root) · `eden/README.md` (must show the 3-pillar model) · `tools/README.md` (reflect the CURRENT tools — genesis.py, build_embeds.py, catalog*.py, targets_derive.py, products_embed.py; drop any deleted like dashboard_integrity) · `chronicle/README.md`.
+- **Pillars:** `eden/corpus/README.md` · `eden/catalog/README.md` · `eden/corpus/{claims,drafts,indices}/README.md` · `eden/fringe-knowledge/README.md`.
+- **Chronicle/tools:** `chronicle/creators-log/README.md` · `chronicle/evals/README.md` · `tools/canaries/README.md`.
+- **Dashboard/design:** `dashboard/assets/fonts/README.md` · `dashboard/design-wisdom/README.md` + `applications/` + `learnings/` (NB: `design-wisdom/` was slated to RELOCATE per blueprint §6 — decide relocate-vs-keep here).
+- Likely already fine (confirm, don't rewrite for its own sake): fonts, canaries.
+- **Sweep these doc-accuracy stragglers too:** `eden/SCHEMA.md` · `dashboard/assets/styles/STYLE-GUIDE.md` · `REVIEW.md`; + the LEFT-noted stale refs (dashboard.html → non-existent `dashboard/ARCHITECTURE.md`; SEALED `design-system.css` header → `knowledge/design-wisdom`, needs a re-seal so hold unless doing the design-system pass).
+
+After the README pass → **Phase F** (Youngevity Product DB, above). The blueprint is authoritative for the how.
