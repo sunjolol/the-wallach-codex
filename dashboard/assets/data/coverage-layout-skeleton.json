@@ -1,0 +1,430 @@
+{
+  "_purpose": "HAND-AUTHORED skeleton for the Coverage periodic table (crack #1 fix, 2026-07-06). Holds ONLY the editorial arrangement -- section/subsection chrome, per-tile codes/letters/abbrs/hints, the goals block -- plus each tile's `key` (a reference to a canon layout_key). The canon-owned fields (name; mineral sym/num) are NOT here; they are filled from essentials-canon by eden/tools/coverage_layout_derive.py, so the periodic table's canonical identity can never drift from the pillar. Edit THIS for layout/chrome; names+symbols come from the canon. Output: coverage-layout-data.json (generated).",
+  "sections": [
+    {
+      "num": "01",
+      "title": "MINERALS",
+      "sub": "// 60 · THE FOUNDATION · ATOMIC SYMBOLS PRESERVED",
+      "gridClass": "essentials-grid--minerals",
+      "tileClass": "tile",
+      "subsections": [
+        {
+          "rank": "A",
+          "label": "FOUNDATIONAL",
+          "hint": "structural + macro · atomic order",
+          "tiles": [
+            {
+              "key": "Hydrogen"
+            },
+            {
+              "key": "Carbon"
+            },
+            {
+              "key": "Nitrogen"
+            },
+            {
+              "key": "Oxygen"
+            },
+            {
+              "key": "Sodium"
+            },
+            {
+              "key": "Magnesium"
+            },
+            {
+              "key": "Phosphorus"
+            },
+            {
+              "key": "Sulfur"
+            },
+            {
+              "key": "Chloride"
+            },
+            {
+              "key": "Potassium"
+            },
+            {
+              "key": "Calcium"
+            }
+          ]
+        },
+        {
+          "rank": "B",
+          "label": "MAJOR TRACE",
+          "hint": "mid-dose essentials · A→Z",
+          "tiles": [
+            {
+              "key": "Boron"
+            },
+            {
+              "key": "Cobalt"
+            },
+            {
+              "key": "Chromium"
+            },
+            {
+              "key": "Copper"
+            },
+            {
+              "key": "Germanium"
+            },
+            {
+              "key": "Iron"
+            },
+            {
+              "key": "Iodine"
+            },
+            {
+              "key": "Manganese"
+            },
+            {
+              "key": "Molybdenum"
+            },
+            {
+              "key": "Selenium"
+            },
+            {
+              "key": "Silica"
+            },
+            {
+              "key": "Strontium"
+            },
+            {
+              "key": "Vanadium"
+            },
+            {
+              "key": "Zinc"
+            }
+          ]
+        },
+        {
+          "rank": "C",
+          "label": "RARE TRACE",
+          "hint": "PDM aggregate spectrum · A→Z",
+          "tiles": [
+            {
+              "key": "Silver"
+            },
+            {
+              "key": "Aluminum"
+            },
+            {
+              "key": "Arsenic"
+            },
+            {
+              "key": "Gold"
+            },
+            {
+              "key": "Barium"
+            },
+            {
+              "key": "Beryllium"
+            },
+            {
+              "key": "Bromine"
+            },
+            {
+              "key": "Cerium"
+            },
+            {
+              "key": "Cesium"
+            },
+            {
+              "key": "Dysprosium"
+            },
+            {
+              "key": "Erbium"
+            },
+            {
+              "key": "Europium"
+            },
+            {
+              "key": "Gallium"
+            },
+            {
+              "key": "Gadolinium"
+            },
+            {
+              "key": "Hafnium"
+            },
+            {
+              "key": "Holmium"
+            },
+            {
+              "key": "Lanthanum"
+            },
+            {
+              "key": "Lithium"
+            },
+            {
+              "key": "Lutetium"
+            },
+            {
+              "key": "Niobium"
+            },
+            {
+              "key": "Neodymium"
+            },
+            {
+              "key": "Nickel"
+            },
+            {
+              "key": "Praseodymium"
+            },
+            {
+              "key": "Rubidium"
+            },
+            {
+              "key": "Rhenium"
+            },
+            {
+              "key": "Scandium"
+            },
+            {
+              "key": "Samarium"
+            },
+            {
+              "key": "Tin"
+            },
+            {
+              "key": "Tantalum"
+            },
+            {
+              "key": "Terbium"
+            },
+            {
+              "key": "Titanium"
+            },
+            {
+              "key": "Thulium"
+            },
+            {
+              "key": "Yttrium"
+            },
+            {
+              "key": "Ytterbium"
+            },
+            {
+              "key": "Zirconium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "02",
+      "title": "VITAMINS",
+      "sub": "// 16 · THE CO-FACTORS · ENZYME ENABLERS",
+      "gridClass": "essentials-grid--vitamins",
+      "tileClass": "tile--vitamin",
+      "tiles": [
+        {
+          "key": "Vitamin A (Retinol / beta-carotene)",
+          "code": "V·01",
+          "letter": "A"
+        },
+        {
+          "key": "Vitamin B1 (Thiamine)",
+          "code": "V·02",
+          "letter": "B1"
+        },
+        {
+          "key": "Vitamin B2 (Riboflavin)",
+          "code": "V·03",
+          "letter": "B2"
+        },
+        {
+          "key": "Vitamin B3 (Niacin)",
+          "code": "V·04",
+          "letter": "B3"
+        },
+        {
+          "key": "Vitamin B5 (Pantothenic Acid)",
+          "code": "V·05",
+          "letter": "B5"
+        },
+        {
+          "key": "Vitamin B6 (Pyridoxine)",
+          "code": "V·06",
+          "letter": "B6"
+        },
+        {
+          "key": "Folic Acid (Folate)",
+          "code": "V·07",
+          "letter": "B9"
+        },
+        {
+          "key": "Vitamin B12 (Cobalamin)",
+          "code": "V·08",
+          "letter": "B12"
+        },
+        {
+          "key": "Vitamin C (Ascorbic Acid)",
+          "code": "V·09",
+          "letter": "C"
+        },
+        {
+          "key": "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)",
+          "code": "V·10",
+          "letter": "D3"
+        },
+        {
+          "key": "Vitamin E (Tocopherol)",
+          "code": "V·11",
+          "letter": "E"
+        },
+        {
+          "key": "Vitamin K (Phylloquinone)",
+          "code": "V·12",
+          "letter": "K"
+        },
+        {
+          "key": "Biotin",
+          "code": "V·13",
+          "letter": "H"
+        },
+        {
+          "key": "Choline",
+          "code": "V·14",
+          "letter": "Ch"
+        },
+        {
+          "key": "Inositol",
+          "code": "V·15",
+          "letter": "In"
+        },
+        {
+          "key": "Flavonoids / Bioflavonoids",
+          "code": "V·16",
+          "letter": "Fl"
+        }
+      ]
+    },
+    {
+      "num": "03",
+      "title": "AMINO ACIDS",
+      "sub": "// 12 · PROTEIN BUILDING BLOCKS · ESSENTIAL + CONDITIONAL",
+      "gridClass": "essentials-grid--aminos",
+      "tileClass": "tile--amino",
+      "tiles": [
+        {
+          "key": "Arginine",
+          "code": "AA·01",
+          "abbr": "Arg"
+        },
+        {
+          "key": "Histidine",
+          "code": "AA·02",
+          "abbr": "His"
+        },
+        {
+          "key": "Isoleucine",
+          "code": "AA·03",
+          "abbr": "Ile"
+        },
+        {
+          "key": "Leucine",
+          "code": "AA·04",
+          "abbr": "Leu"
+        },
+        {
+          "key": "Lysine",
+          "code": "AA·05",
+          "abbr": "Lys"
+        },
+        {
+          "key": "Methionine",
+          "code": "AA·06",
+          "abbr": "Met"
+        },
+        {
+          "key": "Phenylalanine",
+          "code": "AA·07",
+          "abbr": "Phe"
+        },
+        {
+          "key": "Taurine",
+          "code": "AA·08",
+          "abbr": "Tau"
+        },
+        {
+          "key": "Threonine",
+          "code": "AA·09",
+          "abbr": "Thr"
+        },
+        {
+          "key": "Tryptophan",
+          "code": "AA·10",
+          "abbr": "Trp"
+        },
+        {
+          "key": "Tyrosine",
+          "code": "AA·11",
+          "abbr": "Tyr"
+        },
+        {
+          "key": "Valine",
+          "code": "AA·12",
+          "abbr": "Val"
+        }
+      ]
+    },
+    {
+      "num": "04",
+      "title": "FATTY ACIDS",
+      "sub": "// 3 · ESSENTIAL LIPIDS · MEMBRANE + SIGNAL",
+      "gridClass": "essentials-grid--fats",
+      "tileClass": "tile--fat",
+      "tiles": [
+        {
+          "key": "Omega-3 (alpha-linolenic + EPA/DHA in marine form)",
+          "code": "F·01",
+          "hint": "n-3 · ALA · EPA · DHA"
+        },
+        {
+          "key": "Omega-6 (linoleic + GLA)",
+          "code": "F·02",
+          "hint": "n-6 · linoleic · GLA"
+        },
+        {
+          "key": "Omega-9 (Arachidonic / Oleic)",
+          "code": "F·03",
+          "hint": "n-9 · oleic · arachidonic",
+          "essential": false
+        }
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "bone-skeletal",
+      "name": "BONE & SKELETAL",
+      "total": 14
+    },
+    {
+      "id": "energy-metabolism",
+      "name": "ENERGY & METABOLISM",
+      "total": 13
+    },
+    {
+      "id": "cognition",
+      "name": "COGNITION",
+      "total": 11
+    },
+    {
+      "id": "hormones-strength",
+      "name": "HORMONES & STRENGTH",
+      "total": 12
+    },
+    {
+      "id": "longevity-anti-aging",
+      "name": "LONGEVITY & ANTI-AGING",
+      "total": 18
+    },
+    {
+      "id": "cardiovascular",
+      "name": "CARDIOVASCULAR",
+      "total": 10
+    }
+  ]
+}

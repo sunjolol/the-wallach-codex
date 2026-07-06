@@ -12,17 +12,72 @@
           "label": "FOUNDATIONAL",
           "hint": "structural + macro · atomic order",
           "tiles": [
-            { "key": "Hydrogen", "num": 1, "sym": "H", "name": "HYDROGEN" },
-            { "key": "Carbon", "num": 6, "sym": "C", "name": "CARBON" },
-            { "key": "Nitrogen", "num": 7, "sym": "N", "name": "NITROGEN" },
-            { "key": "Oxygen", "num": 8, "sym": "O", "name": "OXYGEN" },
-            { "key": "Sodium", "num": 11, "sym": "Na", "name": "SODIUM" },
-            { "key": "Magnesium", "num": 12, "sym": "Mg", "name": "MAGNESIUM" },
-            { "key": "Phosphorus", "num": 15, "sym": "P", "name": "PHOSPHORUS" },
-            { "key": "Sulfur", "num": 16, "sym": "S", "name": "SULFUR" },
-            { "key": "Chloride", "num": 17, "sym": "Cl", "name": "CHLORIDE" },
-            { "key": "Potassium", "num": 19, "sym": "K", "name": "POTASSIUM" },
-            { "key": "Calcium", "num": 20, "sym": "Ca", "name": "CALCIUM" }
+            {
+              "key": "Hydrogen",
+              "name": "HYDROGEN",
+              "num": 1,
+              "sym": "H"
+            },
+            {
+              "key": "Carbon",
+              "name": "CARBON",
+              "num": 6,
+              "sym": "C"
+            },
+            {
+              "key": "Nitrogen",
+              "name": "NITROGEN",
+              "num": 7,
+              "sym": "N"
+            },
+            {
+              "key": "Oxygen",
+              "name": "OXYGEN",
+              "num": 8,
+              "sym": "O"
+            },
+            {
+              "key": "Sodium",
+              "name": "SODIUM",
+              "num": 11,
+              "sym": "Na"
+            },
+            {
+              "key": "Magnesium",
+              "name": "MAGNESIUM",
+              "num": 12,
+              "sym": "Mg"
+            },
+            {
+              "key": "Phosphorus",
+              "name": "PHOSPHORUS",
+              "num": 15,
+              "sym": "P"
+            },
+            {
+              "key": "Sulfur",
+              "name": "SULFUR",
+              "num": 16,
+              "sym": "S"
+            },
+            {
+              "key": "Chloride",
+              "name": "CHLORIDE",
+              "num": 17,
+              "sym": "Cl"
+            },
+            {
+              "key": "Potassium",
+              "name": "POTASSIUM",
+              "num": 19,
+              "sym": "K"
+            },
+            {
+              "key": "Calcium",
+              "name": "CALCIUM",
+              "num": 20,
+              "sym": "Ca"
+            }
           ]
         },
         {
@@ -30,20 +85,90 @@
           "label": "MAJOR TRACE",
           "hint": "mid-dose essentials · A→Z",
           "tiles": [
-            { "key": "Boron", "num": 5, "sym": "B", "name": "BORON" },
-            { "key": "Cobalt", "num": 27, "sym": "Co", "name": "COBALT" },
-            { "key": "Chromium", "num": 24, "sym": "Cr", "name": "CHROMIUM" },
-            { "key": "Copper", "num": 29, "sym": "Cu", "name": "COPPER" },
-            { "key": "Germanium", "num": 32, "sym": "Ge", "name": "GERMANIUM" },
-            { "key": "Iron", "num": 26, "sym": "Fe", "name": "IRON" },
-            { "key": "Iodine", "num": 53, "sym": "I", "name": "IODINE" },
-            { "key": "Manganese", "num": 25, "sym": "Mn", "name": "MANGANESE" },
-            { "key": "Molybdenum", "num": 42, "sym": "Mo", "name": "MOLYBDENUM" },
-            { "key": "Selenium", "num": 34, "sym": "Se", "name": "SELENIUM" },
-            { "key": "Silica", "num": 14, "sym": "Si", "name": "SILICA" },
-            { "key": "Strontium", "num": 38, "sym": "Sr", "name": "STRONTIUM" },
-            { "key": "Vanadium", "num": 23, "sym": "V", "name": "VANADIUM" },
-            { "key": "Zinc", "num": 30, "sym": "Zn", "name": "ZINC" }
+            {
+              "key": "Boron",
+              "name": "BORON",
+              "num": 5,
+              "sym": "B"
+            },
+            {
+              "key": "Cobalt",
+              "name": "COBALT",
+              "num": 27,
+              "sym": "Co"
+            },
+            {
+              "key": "Chromium",
+              "name": "CHROMIUM",
+              "num": 24,
+              "sym": "Cr"
+            },
+            {
+              "key": "Copper",
+              "name": "COPPER",
+              "num": 29,
+              "sym": "Cu"
+            },
+            {
+              "key": "Germanium",
+              "name": "GERMANIUM",
+              "num": 32,
+              "sym": "Ge"
+            },
+            {
+              "key": "Iron",
+              "name": "IRON",
+              "num": 26,
+              "sym": "Fe"
+            },
+            {
+              "key": "Iodine",
+              "name": "IODINE",
+              "num": 53,
+              "sym": "I"
+            },
+            {
+              "key": "Manganese",
+              "name": "MANGANESE",
+              "num": 25,
+              "sym": "Mn"
+            },
+            {
+              "key": "Molybdenum",
+              "name": "MOLYBDENUM",
+              "num": 42,
+              "sym": "Mo"
+            },
+            {
+              "key": "Selenium",
+              "name": "SELENIUM",
+              "num": 34,
+              "sym": "Se"
+            },
+            {
+              "key": "Silica",
+              "name": "SILICA",
+              "num": 14,
+              "sym": "Si"
+            },
+            {
+              "key": "Strontium",
+              "name": "STRONTIUM",
+              "num": 38,
+              "sym": "Sr"
+            },
+            {
+              "key": "Vanadium",
+              "name": "VANADIUM",
+              "num": 23,
+              "sym": "V"
+            },
+            {
+              "key": "Zinc",
+              "name": "ZINC",
+              "num": 30,
+              "sym": "Zn"
+            }
           ]
         },
         {
@@ -51,41 +176,216 @@
           "label": "RARE TRACE",
           "hint": "PDM aggregate spectrum · A→Z",
           "tiles": [
-            { "key": "Silver", "num": 47, "sym": "Ag", "name": "SILVER" },
-            { "key": "Aluminum", "num": 13, "sym": "Al", "name": "ALUMINUM" },
-            { "key": "Arsenic", "num": 33, "sym": "As", "name": "ARSENIC" },
-            { "key": "Gold", "num": 79, "sym": "Au", "name": "GOLD" },
-            { "key": "Barium", "num": 56, "sym": "Ba", "name": "BARIUM" },
-            { "key": "Beryllium", "num": 4, "sym": "Be", "name": "BERYLLIUM" },
-            { "key": "Bromine", "num": 35, "sym": "Br", "name": "BROMINE" },
-            { "key": "Cerium", "num": 58, "sym": "Ce", "name": "CERIUM" },
-            { "key": "Cesium", "num": 55, "sym": "Cs", "name": "CESIUM" },
-            { "key": "Dysprosium", "num": 66, "sym": "Dy", "name": "DYSPROSIUM" },
-            { "key": "Erbium", "num": 68, "sym": "Er", "name": "ERBIUM" },
-            { "key": "Europium", "num": 63, "sym": "Eu", "name": "EUROPIUM" },
-            { "key": "Gallium", "num": 31, "sym": "Ga", "name": "GALLIUM" },
-            { "key": "Gadolinium", "num": 64, "sym": "Gd", "name": "GADOLINIUM" },
-            { "key": "Hafnium", "num": 72, "sym": "Hf", "name": "HAFNIUM" },
-            { "key": "Holmium", "num": 67, "sym": "Ho", "name": "HOLMIUM" },
-            { "key": "Lanthanum", "num": 57, "sym": "La", "name": "LANTHANUM" },
-            { "key": "Lithium", "num": 3, "sym": "Li", "name": "LITHIUM" },
-            { "key": "Lutetium", "num": 71, "sym": "Lu", "name": "LUTETIUM" },
-            { "key": "Niobium", "num": 41, "sym": "Nb", "name": "NIOBIUM" },
-            { "key": "Neodymium", "num": 60, "sym": "Nd", "name": "NEODYMIUM" },
-            { "key": "Nickel", "num": 28, "sym": "Ni", "name": "NICKEL" },
-            { "key": "Praseodymium", "num": 59, "sym": "Pr", "name": "PRASEODYMIUM" },
-            { "key": "Rubidium", "num": 37, "sym": "Rb", "name": "RUBIDIUM" },
-            { "key": "Rhenium", "num": 75, "sym": "Re", "name": "RHENIUM" },
-            { "key": "Scandium", "num": 21, "sym": "Sc", "name": "SCANDIUM" },
-            { "key": "Samarium", "num": 62, "sym": "Sm", "name": "SAMARIUM" },
-            { "key": "Tin", "num": 50, "sym": "Sn", "name": "TIN" },
-            { "key": "Tantalum", "num": 73, "sym": "Ta", "name": "TANTALUM" },
-            { "key": "Terbium", "num": 65, "sym": "Tb", "name": "TERBIUM" },
-            { "key": "Titanium", "num": 22, "sym": "Ti", "name": "TITANIUM" },
-            { "key": "Thulium", "num": 69, "sym": "Tm", "name": "THULIUM" },
-            { "key": "Yttrium", "num": 39, "sym": "Y", "name": "YTTRIUM" },
-            { "key": "Ytterbium", "num": 70, "sym": "Yb", "name": "YTTERBIUM" },
-            { "key": "Zirconium", "num": 40, "sym": "Zr", "name": "ZIRCONIUM" }
+            {
+              "key": "Silver",
+              "name": "SILVER",
+              "num": 47,
+              "sym": "Ag"
+            },
+            {
+              "key": "Aluminum",
+              "name": "ALUMINUM",
+              "num": 13,
+              "sym": "Al"
+            },
+            {
+              "key": "Arsenic",
+              "name": "ARSENIC",
+              "num": 33,
+              "sym": "As"
+            },
+            {
+              "key": "Gold",
+              "name": "GOLD",
+              "num": 79,
+              "sym": "Au"
+            },
+            {
+              "key": "Barium",
+              "name": "BARIUM",
+              "num": 56,
+              "sym": "Ba"
+            },
+            {
+              "key": "Beryllium",
+              "name": "BERYLLIUM",
+              "num": 4,
+              "sym": "Be"
+            },
+            {
+              "key": "Bromine",
+              "name": "BROMINE",
+              "num": 35,
+              "sym": "Br"
+            },
+            {
+              "key": "Cerium",
+              "name": "CERIUM",
+              "num": 58,
+              "sym": "Ce"
+            },
+            {
+              "key": "Cesium",
+              "name": "CESIUM",
+              "num": 55,
+              "sym": "Cs"
+            },
+            {
+              "key": "Dysprosium",
+              "name": "DYSPROSIUM",
+              "num": 66,
+              "sym": "Dy"
+            },
+            {
+              "key": "Erbium",
+              "name": "ERBIUM",
+              "num": 68,
+              "sym": "Er"
+            },
+            {
+              "key": "Europium",
+              "name": "EUROPIUM",
+              "num": 63,
+              "sym": "Eu"
+            },
+            {
+              "key": "Gallium",
+              "name": "GALLIUM",
+              "num": 31,
+              "sym": "Ga"
+            },
+            {
+              "key": "Gadolinium",
+              "name": "GADOLINIUM",
+              "num": 64,
+              "sym": "Gd"
+            },
+            {
+              "key": "Hafnium",
+              "name": "HAFNIUM",
+              "num": 72,
+              "sym": "Hf"
+            },
+            {
+              "key": "Holmium",
+              "name": "HOLMIUM",
+              "num": 67,
+              "sym": "Ho"
+            },
+            {
+              "key": "Lanthanum",
+              "name": "LANTHANUM",
+              "num": 57,
+              "sym": "La"
+            },
+            {
+              "key": "Lithium",
+              "name": "LITHIUM",
+              "num": 3,
+              "sym": "Li"
+            },
+            {
+              "key": "Lutetium",
+              "name": "LUTETIUM",
+              "num": 71,
+              "sym": "Lu"
+            },
+            {
+              "key": "Niobium",
+              "name": "NIOBIUM",
+              "num": 41,
+              "sym": "Nb"
+            },
+            {
+              "key": "Neodymium",
+              "name": "NEODYMIUM",
+              "num": 60,
+              "sym": "Nd"
+            },
+            {
+              "key": "Nickel",
+              "name": "NICKEL",
+              "num": 28,
+              "sym": "Ni"
+            },
+            {
+              "key": "Praseodymium",
+              "name": "PRASEODYMIUM",
+              "num": 59,
+              "sym": "Pr"
+            },
+            {
+              "key": "Rubidium",
+              "name": "RUBIDIUM",
+              "num": 37,
+              "sym": "Rb"
+            },
+            {
+              "key": "Rhenium",
+              "name": "RHENIUM",
+              "num": 75,
+              "sym": "Re"
+            },
+            {
+              "key": "Scandium",
+              "name": "SCANDIUM",
+              "num": 21,
+              "sym": "Sc"
+            },
+            {
+              "key": "Samarium",
+              "name": "SAMARIUM",
+              "num": 62,
+              "sym": "Sm"
+            },
+            {
+              "key": "Tin",
+              "name": "TIN",
+              "num": 50,
+              "sym": "Sn"
+            },
+            {
+              "key": "Tantalum",
+              "name": "TANTALUM",
+              "num": 73,
+              "sym": "Ta"
+            },
+            {
+              "key": "Terbium",
+              "name": "TERBIUM",
+              "num": 65,
+              "sym": "Tb"
+            },
+            {
+              "key": "Titanium",
+              "name": "TITANIUM",
+              "num": 22,
+              "sym": "Ti"
+            },
+            {
+              "key": "Thulium",
+              "name": "THULIUM",
+              "num": 69,
+              "sym": "Tm"
+            },
+            {
+              "key": "Yttrium",
+              "name": "YTTRIUM",
+              "num": 39,
+              "sym": "Y"
+            },
+            {
+              "key": "Ytterbium",
+              "name": "YTTERBIUM",
+              "num": 70,
+              "sym": "Yb"
+            },
+            {
+              "key": "Zirconium",
+              "name": "ZIRCONIUM",
+              "num": 40,
+              "sym": "Zr"
+            }
           ]
         }
       ]
@@ -97,22 +397,102 @@
       "gridClass": "essentials-grid--vitamins",
       "tileClass": "tile--vitamin",
       "tiles": [
-        { "key": "Vitamin A (Retinol / beta-carotene)", "code": "V·01", "letter": "A", "name": "RETINOL" },
-        { "key": "Vitamin B1 (Thiamine)", "code": "V·02", "letter": "B1", "name": "THIAMINE" },
-        { "key": "Vitamin B2 (Riboflavin)", "code": "V·03", "letter": "B2", "name": "RIBOFLAVIN" },
-        { "key": "Vitamin B3 (Niacin)", "code": "V·04", "letter": "B3", "name": "NIACIN" },
-        { "key": "Vitamin B5 (Pantothenic Acid)", "code": "V·05", "letter": "B5", "name": "PANTOTHENIC ACID" },
-        { "key": "Vitamin B6 (Pyridoxine)", "code": "V·06", "letter": "B6", "name": "PYRIDOXINE" },
-        { "key": "Folic Acid (Folate)", "code": "V·07", "letter": "B9", "name": "FOLATE" },
-        { "key": "Vitamin B12 (Cobalamin)", "code": "V·08", "letter": "B12", "name": "COBALAMIN" },
-        { "key": "Vitamin C (Ascorbic Acid)", "code": "V·09", "letter": "C", "name": "ASCORBIC ACID" },
-        { "key": "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)", "code": "V·10", "letter": "D3", "name": "CHOLECALCIFEROL" },
-        { "key": "Vitamin E (Tocopherol)", "code": "V·11", "letter": "E", "name": "TOCOPHEROL" },
-        { "key": "Vitamin K (Phylloquinone)", "code": "V·12", "letter": "K", "name": "PHYLLOQUINONE" },
-        { "key": "Biotin", "code": "V·13", "letter": "H", "name": "BIOTIN" },
-        { "key": "Choline", "code": "V·14", "letter": "Ch", "name": "CHOLINE" },
-        { "key": "Inositol", "code": "V·15", "letter": "In", "name": "INOSITOL" },
-        { "key": "Flavonoids / Bioflavonoids", "code": "V·16", "letter": "Fl", "name": "FLAVONOIDS" }
+        {
+          "key": "Vitamin A (Retinol / beta-carotene)",
+          "code": "V·01",
+          "letter": "A",
+          "name": "RETINOL"
+        },
+        {
+          "key": "Vitamin B1 (Thiamine)",
+          "code": "V·02",
+          "letter": "B1",
+          "name": "THIAMINE"
+        },
+        {
+          "key": "Vitamin B2 (Riboflavin)",
+          "code": "V·03",
+          "letter": "B2",
+          "name": "RIBOFLAVIN"
+        },
+        {
+          "key": "Vitamin B3 (Niacin)",
+          "code": "V·04",
+          "letter": "B3",
+          "name": "NIACIN"
+        },
+        {
+          "key": "Vitamin B5 (Pantothenic Acid)",
+          "code": "V·05",
+          "letter": "B5",
+          "name": "PANTOTHENIC ACID"
+        },
+        {
+          "key": "Vitamin B6 (Pyridoxine)",
+          "code": "V·06",
+          "letter": "B6",
+          "name": "PYRIDOXINE"
+        },
+        {
+          "key": "Folic Acid (Folate)",
+          "code": "V·07",
+          "letter": "B9",
+          "name": "FOLATE"
+        },
+        {
+          "key": "Vitamin B12 (Cobalamin)",
+          "code": "V·08",
+          "letter": "B12",
+          "name": "COBALAMIN"
+        },
+        {
+          "key": "Vitamin C (Ascorbic Acid)",
+          "code": "V·09",
+          "letter": "C",
+          "name": "ASCORBIC ACID"
+        },
+        {
+          "key": "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)",
+          "code": "V·10",
+          "letter": "D3",
+          "name": "CHOLECALCIFEROL"
+        },
+        {
+          "key": "Vitamin E (Tocopherol)",
+          "code": "V·11",
+          "letter": "E",
+          "name": "TOCOPHEROL"
+        },
+        {
+          "key": "Vitamin K (Phylloquinone)",
+          "code": "V·12",
+          "letter": "K",
+          "name": "PHYLLOQUINONE"
+        },
+        {
+          "key": "Biotin",
+          "code": "V·13",
+          "letter": "H",
+          "name": "BIOTIN"
+        },
+        {
+          "key": "Choline",
+          "code": "V·14",
+          "letter": "Ch",
+          "name": "CHOLINE"
+        },
+        {
+          "key": "Inositol",
+          "code": "V·15",
+          "letter": "In",
+          "name": "INOSITOL"
+        },
+        {
+          "key": "Flavonoids / Bioflavonoids",
+          "code": "V·16",
+          "letter": "Fl",
+          "name": "FLAVONOIDS"
+        }
       ]
     },
     {
@@ -122,18 +502,78 @@
       "gridClass": "essentials-grid--aminos",
       "tileClass": "tile--amino",
       "tiles": [
-        { "key": "Arginine", "code": "AA·01", "abbr": "Arg", "name": "ARGININE" },
-        { "key": "Histidine", "code": "AA·02", "abbr": "His", "name": "HISTIDINE" },
-        { "key": "Isoleucine", "code": "AA·03", "abbr": "Ile", "name": "ISOLEUCINE" },
-        { "key": "Leucine", "code": "AA·04", "abbr": "Leu", "name": "LEUCINE" },
-        { "key": "Lysine", "code": "AA·05", "abbr": "Lys", "name": "LYSINE" },
-        { "key": "Methionine", "code": "AA·06", "abbr": "Met", "name": "METHIONINE" },
-        { "key": "Phenylalanine", "code": "AA·07", "abbr": "Phe", "name": "PHENYLALANINE" },
-        { "key": "Taurine", "code": "AA·08", "abbr": "Tau", "name": "TAURINE" },
-        { "key": "Threonine", "code": "AA·09", "abbr": "Thr", "name": "THREONINE" },
-        { "key": "Tryptophan", "code": "AA·10", "abbr": "Trp", "name": "TRYPTOPHAN" },
-        { "key": "Tyrosine", "code": "AA·11", "abbr": "Tyr", "name": "TYROSINE" },
-        { "key": "Valine", "code": "AA·12", "abbr": "Val", "name": "VALINE" }
+        {
+          "key": "Arginine",
+          "code": "AA·01",
+          "abbr": "Arg",
+          "name": "ARGININE"
+        },
+        {
+          "key": "Histidine",
+          "code": "AA·02",
+          "abbr": "His",
+          "name": "HISTIDINE"
+        },
+        {
+          "key": "Isoleucine",
+          "code": "AA·03",
+          "abbr": "Ile",
+          "name": "ISOLEUCINE"
+        },
+        {
+          "key": "Leucine",
+          "code": "AA·04",
+          "abbr": "Leu",
+          "name": "LEUCINE"
+        },
+        {
+          "key": "Lysine",
+          "code": "AA·05",
+          "abbr": "Lys",
+          "name": "LYSINE"
+        },
+        {
+          "key": "Methionine",
+          "code": "AA·06",
+          "abbr": "Met",
+          "name": "METHIONINE"
+        },
+        {
+          "key": "Phenylalanine",
+          "code": "AA·07",
+          "abbr": "Phe",
+          "name": "PHENYLALANINE"
+        },
+        {
+          "key": "Taurine",
+          "code": "AA·08",
+          "abbr": "Tau",
+          "name": "TAURINE"
+        },
+        {
+          "key": "Threonine",
+          "code": "AA·09",
+          "abbr": "Thr",
+          "name": "THREONINE"
+        },
+        {
+          "key": "Tryptophan",
+          "code": "AA·10",
+          "abbr": "Trp",
+          "name": "TRYPTOPHAN"
+        },
+        {
+          "key": "Tyrosine",
+          "code": "AA·11",
+          "abbr": "Tyr",
+          "name": "TYROSINE"
+        },
+        {
+          "key": "Valine",
+          "code": "AA·12",
+          "abbr": "Val",
+          "name": "VALINE"
+        }
       ]
     },
     {
@@ -143,18 +583,58 @@
       "gridClass": "essentials-grid--fats",
       "tileClass": "tile--fat",
       "tiles": [
-        { "key": "Omega-3 (alpha-linolenic + EPA/DHA in marine form)", "code": "F·01", "name": "OMEGA-3", "hint": "n-3 · ALA · EPA · DHA" },
-        { "key": "Omega-6 (linoleic + GLA)", "code": "F·02", "name": "OMEGA-6", "hint": "n-6 · linoleic · GLA" },
-        { "key": "Omega-9 (Arachidonic / Oleic)", "code": "F·03", "name": "OMEGA-9", "hint": "n-9 · oleic · arachidonic", "essential": false }
+        {
+          "key": "Omega-3 (alpha-linolenic + EPA/DHA in marine form)",
+          "code": "F·01",
+          "hint": "n-3 · ALA · EPA · DHA",
+          "name": "OMEGA-3"
+        },
+        {
+          "key": "Omega-6 (linoleic + GLA)",
+          "code": "F·02",
+          "hint": "n-6 · linoleic · GLA",
+          "name": "OMEGA-6"
+        },
+        {
+          "key": "Omega-9 (Arachidonic / Oleic)",
+          "code": "F·03",
+          "hint": "n-9 · oleic · arachidonic",
+          "essential": false,
+          "name": "OMEGA-9"
+        }
       ]
     }
   ],
   "goals": [
-    { "id": "bone-skeletal", "name": "BONE & SKELETAL", "total": 14 },
-    { "id": "energy-metabolism", "name": "ENERGY & METABOLISM", "total": 13 },
-    { "id": "cognition", "name": "COGNITION", "total": 11 },
-    { "id": "hormones-strength", "name": "HORMONES & STRENGTH", "total": 12 },
-    { "id": "longevity-anti-aging", "name": "LONGEVITY & ANTI-AGING", "total": 18 },
-    { "id": "cardiovascular", "name": "CARDIOVASCULAR", "total": 10 }
+    {
+      "id": "bone-skeletal",
+      "name": "BONE & SKELETAL",
+      "total": 14
+    },
+    {
+      "id": "energy-metabolism",
+      "name": "ENERGY & METABOLISM",
+      "total": 13
+    },
+    {
+      "id": "cognition",
+      "name": "COGNITION",
+      "total": 11
+    },
+    {
+      "id": "hormones-strength",
+      "name": "HORMONES & STRENGTH",
+      "total": 12
+    },
+    {
+      "id": "longevity-anti-aging",
+      "name": "LONGEVITY & ANTI-AGING",
+      "total": 18
+    },
+    {
+      "id": "cardiovascular",
+      "name": "CARDIOVASCULAR",
+      "total": 10
+    }
   ]
 }

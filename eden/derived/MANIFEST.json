@@ -43,6 +43,18 @@
         "eden/eden-catalog.json"
       ],
       "note": "The product-vault embed (regimen-label-lookup) read by views/regimen.ts (Full-edit) + views/knowledge.ts (Products tab) via esbuild JSON import. Phase C3 migrated it off the inline dashboard.html <script> block (D1) and retired the version-stamp eden_embeds_match_canonical (this content gate replaces it). TRANSITIONAL source eden/eden-catalog.json; Phase F swaps to the Products pillar. Deterministic (NO timestamp) so build_fn byte-compares to disk."
+    },
+    {
+      "artifact": "dashboard/assets/data/coverage-layout-data.json",
+      "generator": "eden/tools/coverage_layout_derive.py",
+      "build_fn": "build_data",
+      "write_fn": "write_data",
+      "compare": "json",
+      "inputs": [
+        "dashboard/assets/data/coverage-layout-skeleton.json",
+        "eden/corpus/essentials-canon.json"
+      ],
+      "note": "The Coverage periodic-table layout (state/coverage.ts esbuild JSON import). Editorial arrangement/chrome + tile key refs come from the hand-authored coverage-layout-skeleton.json; each tile's canonical identity -- name (canon display_name uppercased) and, for minerals, sym+num -- is filled from essentials-canon, so the table can never drift from the pillar (crack #1 deferred half, Phase E 2026-07-06). Replaces the old hand-typed coverage-layout-data (91 names + 60 symbols were re-stored by hand)."
     }
   ],
   "_accounted_purpose": "The COMPLETENESS half of R1 (crack #1 fix, 2026-07-06). derived_artifacts_fresh proves the `artifacts` above are fresh; it does NOT prove the list is complete. The data_artifacts_accounted invariant requires EVERY dashboard/assets/data/*.json to appear either in `artifacts` (derived + freshness-gated) or here in `accounted` (hand-authored or gated by a dedicated invariant), each with a disposition + reason. A data file in neither list is RED -- no silently-added hand-maintained artifact can ship. disposition = hand_authored | externally_gated.",
@@ -63,9 +75,9 @@
       "reason": "Knowledge>Doctrine cards (a designated R4 prose store, blueprint 2.4 #4). On the clean Charter surface for prose_contained + citations_reference_registry; original prose, not a pillar projection."
     },
     {
-      "file": "dashboard/assets/data/coverage-layout-data.json",
+      "file": "dashboard/assets/data/coverage-layout-skeleton.json",
       "disposition": "hand_authored",
-      "reason": "TRACKED DEBT: the periodic-table section arrangement is editorial, but each tile's name/sym/num re-stores essentials-canon values by hand -- it SHOULD derive (tiles from canon by slug, arrangement as a minimal skeleton). On the clean surface for prose/citation gates but NOT yet freshness-gated. Deriving it regenerates a rendered artifact (needs visual sign-off); deferred by Luneth 2026-07-06 (crack #1 = gate now, derive later)."
+      "reason": "The hand-authored arrangement/chrome skeleton for the Coverage periodic table (section+subsection chrome, per-tile codes/letters/abbrs/hints, the goals block, tile key refs). The canon-owned fields (name; mineral sym/num) are filled from essentials-canon by coverage_layout_derive.py into the derived coverage-layout-data.json. Editorial UI arrangement, not canonical health data (crack #1 fix, Phase E 2026-07-06)."
     },
     {
       "file": "dashboard/assets/data/regimen-base-data.json",

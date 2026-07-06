@@ -122,17 +122,72 @@
             label: "FOUNDATIONAL",
             hint: "structural + macro \xB7 atomic order",
             tiles: [
-              { key: "Hydrogen", num: 1, sym: "H", name: "HYDROGEN" },
-              { key: "Carbon", num: 6, sym: "C", name: "CARBON" },
-              { key: "Nitrogen", num: 7, sym: "N", name: "NITROGEN" },
-              { key: "Oxygen", num: 8, sym: "O", name: "OXYGEN" },
-              { key: "Sodium", num: 11, sym: "Na", name: "SODIUM" },
-              { key: "Magnesium", num: 12, sym: "Mg", name: "MAGNESIUM" },
-              { key: "Phosphorus", num: 15, sym: "P", name: "PHOSPHORUS" },
-              { key: "Sulfur", num: 16, sym: "S", name: "SULFUR" },
-              { key: "Chloride", num: 17, sym: "Cl", name: "CHLORIDE" },
-              { key: "Potassium", num: 19, sym: "K", name: "POTASSIUM" },
-              { key: "Calcium", num: 20, sym: "Ca", name: "CALCIUM" }
+              {
+                key: "Hydrogen",
+                name: "HYDROGEN",
+                num: 1,
+                sym: "H"
+              },
+              {
+                key: "Carbon",
+                name: "CARBON",
+                num: 6,
+                sym: "C"
+              },
+              {
+                key: "Nitrogen",
+                name: "NITROGEN",
+                num: 7,
+                sym: "N"
+              },
+              {
+                key: "Oxygen",
+                name: "OXYGEN",
+                num: 8,
+                sym: "O"
+              },
+              {
+                key: "Sodium",
+                name: "SODIUM",
+                num: 11,
+                sym: "Na"
+              },
+              {
+                key: "Magnesium",
+                name: "MAGNESIUM",
+                num: 12,
+                sym: "Mg"
+              },
+              {
+                key: "Phosphorus",
+                name: "PHOSPHORUS",
+                num: 15,
+                sym: "P"
+              },
+              {
+                key: "Sulfur",
+                name: "SULFUR",
+                num: 16,
+                sym: "S"
+              },
+              {
+                key: "Chloride",
+                name: "CHLORIDE",
+                num: 17,
+                sym: "Cl"
+              },
+              {
+                key: "Potassium",
+                name: "POTASSIUM",
+                num: 19,
+                sym: "K"
+              },
+              {
+                key: "Calcium",
+                name: "CALCIUM",
+                num: 20,
+                sym: "Ca"
+              }
             ]
           },
           {
@@ -140,20 +195,90 @@
             label: "MAJOR TRACE",
             hint: "mid-dose essentials \xB7 A\u2192Z",
             tiles: [
-              { key: "Boron", num: 5, sym: "B", name: "BORON" },
-              { key: "Cobalt", num: 27, sym: "Co", name: "COBALT" },
-              { key: "Chromium", num: 24, sym: "Cr", name: "CHROMIUM" },
-              { key: "Copper", num: 29, sym: "Cu", name: "COPPER" },
-              { key: "Germanium", num: 32, sym: "Ge", name: "GERMANIUM" },
-              { key: "Iron", num: 26, sym: "Fe", name: "IRON" },
-              { key: "Iodine", num: 53, sym: "I", name: "IODINE" },
-              { key: "Manganese", num: 25, sym: "Mn", name: "MANGANESE" },
-              { key: "Molybdenum", num: 42, sym: "Mo", name: "MOLYBDENUM" },
-              { key: "Selenium", num: 34, sym: "Se", name: "SELENIUM" },
-              { key: "Silica", num: 14, sym: "Si", name: "SILICA" },
-              { key: "Strontium", num: 38, sym: "Sr", name: "STRONTIUM" },
-              { key: "Vanadium", num: 23, sym: "V", name: "VANADIUM" },
-              { key: "Zinc", num: 30, sym: "Zn", name: "ZINC" }
+              {
+                key: "Boron",
+                name: "BORON",
+                num: 5,
+                sym: "B"
+              },
+              {
+                key: "Cobalt",
+                name: "COBALT",
+                num: 27,
+                sym: "Co"
+              },
+              {
+                key: "Chromium",
+                name: "CHROMIUM",
+                num: 24,
+                sym: "Cr"
+              },
+              {
+                key: "Copper",
+                name: "COPPER",
+                num: 29,
+                sym: "Cu"
+              },
+              {
+                key: "Germanium",
+                name: "GERMANIUM",
+                num: 32,
+                sym: "Ge"
+              },
+              {
+                key: "Iron",
+                name: "IRON",
+                num: 26,
+                sym: "Fe"
+              },
+              {
+                key: "Iodine",
+                name: "IODINE",
+                num: 53,
+                sym: "I"
+              },
+              {
+                key: "Manganese",
+                name: "MANGANESE",
+                num: 25,
+                sym: "Mn"
+              },
+              {
+                key: "Molybdenum",
+                name: "MOLYBDENUM",
+                num: 42,
+                sym: "Mo"
+              },
+              {
+                key: "Selenium",
+                name: "SELENIUM",
+                num: 34,
+                sym: "Se"
+              },
+              {
+                key: "Silica",
+                name: "SILICA",
+                num: 14,
+                sym: "Si"
+              },
+              {
+                key: "Strontium",
+                name: "STRONTIUM",
+                num: 38,
+                sym: "Sr"
+              },
+              {
+                key: "Vanadium",
+                name: "VANADIUM",
+                num: 23,
+                sym: "V"
+              },
+              {
+                key: "Zinc",
+                name: "ZINC",
+                num: 30,
+                sym: "Zn"
+              }
             ]
           },
           {
@@ -161,41 +286,216 @@
             label: "RARE TRACE",
             hint: "PDM aggregate spectrum \xB7 A\u2192Z",
             tiles: [
-              { key: "Silver", num: 47, sym: "Ag", name: "SILVER" },
-              { key: "Aluminum", num: 13, sym: "Al", name: "ALUMINUM" },
-              { key: "Arsenic", num: 33, sym: "As", name: "ARSENIC" },
-              { key: "Gold", num: 79, sym: "Au", name: "GOLD" },
-              { key: "Barium", num: 56, sym: "Ba", name: "BARIUM" },
-              { key: "Beryllium", num: 4, sym: "Be", name: "BERYLLIUM" },
-              { key: "Bromine", num: 35, sym: "Br", name: "BROMINE" },
-              { key: "Cerium", num: 58, sym: "Ce", name: "CERIUM" },
-              { key: "Cesium", num: 55, sym: "Cs", name: "CESIUM" },
-              { key: "Dysprosium", num: 66, sym: "Dy", name: "DYSPROSIUM" },
-              { key: "Erbium", num: 68, sym: "Er", name: "ERBIUM" },
-              { key: "Europium", num: 63, sym: "Eu", name: "EUROPIUM" },
-              { key: "Gallium", num: 31, sym: "Ga", name: "GALLIUM" },
-              { key: "Gadolinium", num: 64, sym: "Gd", name: "GADOLINIUM" },
-              { key: "Hafnium", num: 72, sym: "Hf", name: "HAFNIUM" },
-              { key: "Holmium", num: 67, sym: "Ho", name: "HOLMIUM" },
-              { key: "Lanthanum", num: 57, sym: "La", name: "LANTHANUM" },
-              { key: "Lithium", num: 3, sym: "Li", name: "LITHIUM" },
-              { key: "Lutetium", num: 71, sym: "Lu", name: "LUTETIUM" },
-              { key: "Niobium", num: 41, sym: "Nb", name: "NIOBIUM" },
-              { key: "Neodymium", num: 60, sym: "Nd", name: "NEODYMIUM" },
-              { key: "Nickel", num: 28, sym: "Ni", name: "NICKEL" },
-              { key: "Praseodymium", num: 59, sym: "Pr", name: "PRASEODYMIUM" },
-              { key: "Rubidium", num: 37, sym: "Rb", name: "RUBIDIUM" },
-              { key: "Rhenium", num: 75, sym: "Re", name: "RHENIUM" },
-              { key: "Scandium", num: 21, sym: "Sc", name: "SCANDIUM" },
-              { key: "Samarium", num: 62, sym: "Sm", name: "SAMARIUM" },
-              { key: "Tin", num: 50, sym: "Sn", name: "TIN" },
-              { key: "Tantalum", num: 73, sym: "Ta", name: "TANTALUM" },
-              { key: "Terbium", num: 65, sym: "Tb", name: "TERBIUM" },
-              { key: "Titanium", num: 22, sym: "Ti", name: "TITANIUM" },
-              { key: "Thulium", num: 69, sym: "Tm", name: "THULIUM" },
-              { key: "Yttrium", num: 39, sym: "Y", name: "YTTRIUM" },
-              { key: "Ytterbium", num: 70, sym: "Yb", name: "YTTERBIUM" },
-              { key: "Zirconium", num: 40, sym: "Zr", name: "ZIRCONIUM" }
+              {
+                key: "Silver",
+                name: "SILVER",
+                num: 47,
+                sym: "Ag"
+              },
+              {
+                key: "Aluminum",
+                name: "ALUMINUM",
+                num: 13,
+                sym: "Al"
+              },
+              {
+                key: "Arsenic",
+                name: "ARSENIC",
+                num: 33,
+                sym: "As"
+              },
+              {
+                key: "Gold",
+                name: "GOLD",
+                num: 79,
+                sym: "Au"
+              },
+              {
+                key: "Barium",
+                name: "BARIUM",
+                num: 56,
+                sym: "Ba"
+              },
+              {
+                key: "Beryllium",
+                name: "BERYLLIUM",
+                num: 4,
+                sym: "Be"
+              },
+              {
+                key: "Bromine",
+                name: "BROMINE",
+                num: 35,
+                sym: "Br"
+              },
+              {
+                key: "Cerium",
+                name: "CERIUM",
+                num: 58,
+                sym: "Ce"
+              },
+              {
+                key: "Cesium",
+                name: "CESIUM",
+                num: 55,
+                sym: "Cs"
+              },
+              {
+                key: "Dysprosium",
+                name: "DYSPROSIUM",
+                num: 66,
+                sym: "Dy"
+              },
+              {
+                key: "Erbium",
+                name: "ERBIUM",
+                num: 68,
+                sym: "Er"
+              },
+              {
+                key: "Europium",
+                name: "EUROPIUM",
+                num: 63,
+                sym: "Eu"
+              },
+              {
+                key: "Gallium",
+                name: "GALLIUM",
+                num: 31,
+                sym: "Ga"
+              },
+              {
+                key: "Gadolinium",
+                name: "GADOLINIUM",
+                num: 64,
+                sym: "Gd"
+              },
+              {
+                key: "Hafnium",
+                name: "HAFNIUM",
+                num: 72,
+                sym: "Hf"
+              },
+              {
+                key: "Holmium",
+                name: "HOLMIUM",
+                num: 67,
+                sym: "Ho"
+              },
+              {
+                key: "Lanthanum",
+                name: "LANTHANUM",
+                num: 57,
+                sym: "La"
+              },
+              {
+                key: "Lithium",
+                name: "LITHIUM",
+                num: 3,
+                sym: "Li"
+              },
+              {
+                key: "Lutetium",
+                name: "LUTETIUM",
+                num: 71,
+                sym: "Lu"
+              },
+              {
+                key: "Niobium",
+                name: "NIOBIUM",
+                num: 41,
+                sym: "Nb"
+              },
+              {
+                key: "Neodymium",
+                name: "NEODYMIUM",
+                num: 60,
+                sym: "Nd"
+              },
+              {
+                key: "Nickel",
+                name: "NICKEL",
+                num: 28,
+                sym: "Ni"
+              },
+              {
+                key: "Praseodymium",
+                name: "PRASEODYMIUM",
+                num: 59,
+                sym: "Pr"
+              },
+              {
+                key: "Rubidium",
+                name: "RUBIDIUM",
+                num: 37,
+                sym: "Rb"
+              },
+              {
+                key: "Rhenium",
+                name: "RHENIUM",
+                num: 75,
+                sym: "Re"
+              },
+              {
+                key: "Scandium",
+                name: "SCANDIUM",
+                num: 21,
+                sym: "Sc"
+              },
+              {
+                key: "Samarium",
+                name: "SAMARIUM",
+                num: 62,
+                sym: "Sm"
+              },
+              {
+                key: "Tin",
+                name: "TIN",
+                num: 50,
+                sym: "Sn"
+              },
+              {
+                key: "Tantalum",
+                name: "TANTALUM",
+                num: 73,
+                sym: "Ta"
+              },
+              {
+                key: "Terbium",
+                name: "TERBIUM",
+                num: 65,
+                sym: "Tb"
+              },
+              {
+                key: "Titanium",
+                name: "TITANIUM",
+                num: 22,
+                sym: "Ti"
+              },
+              {
+                key: "Thulium",
+                name: "THULIUM",
+                num: 69,
+                sym: "Tm"
+              },
+              {
+                key: "Yttrium",
+                name: "YTTRIUM",
+                num: 39,
+                sym: "Y"
+              },
+              {
+                key: "Ytterbium",
+                name: "YTTERBIUM",
+                num: 70,
+                sym: "Yb"
+              },
+              {
+                key: "Zirconium",
+                name: "ZIRCONIUM",
+                num: 40,
+                sym: "Zr"
+              }
             ]
           }
         ]
@@ -207,22 +507,102 @@
         gridClass: "essentials-grid--vitamins",
         tileClass: "tile--vitamin",
         tiles: [
-          { key: "Vitamin A (Retinol / beta-carotene)", code: "V\xB701", letter: "A", name: "RETINOL" },
-          { key: "Vitamin B1 (Thiamine)", code: "V\xB702", letter: "B1", name: "THIAMINE" },
-          { key: "Vitamin B2 (Riboflavin)", code: "V\xB703", letter: "B2", name: "RIBOFLAVIN" },
-          { key: "Vitamin B3 (Niacin)", code: "V\xB704", letter: "B3", name: "NIACIN" },
-          { key: "Vitamin B5 (Pantothenic Acid)", code: "V\xB705", letter: "B5", name: "PANTOTHENIC ACID" },
-          { key: "Vitamin B6 (Pyridoxine)", code: "V\xB706", letter: "B6", name: "PYRIDOXINE" },
-          { key: "Folic Acid (Folate)", code: "V\xB707", letter: "B9", name: "FOLATE" },
-          { key: "Vitamin B12 (Cobalamin)", code: "V\xB708", letter: "B12", name: "COBALAMIN" },
-          { key: "Vitamin C (Ascorbic Acid)", code: "V\xB709", letter: "C", name: "ASCORBIC ACID" },
-          { key: "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)", code: "V\xB710", letter: "D3", name: "CHOLECALCIFEROL" },
-          { key: "Vitamin E (Tocopherol)", code: "V\xB711", letter: "E", name: "TOCOPHEROL" },
-          { key: "Vitamin K (Phylloquinone)", code: "V\xB712", letter: "K", name: "PHYLLOQUINONE" },
-          { key: "Biotin", code: "V\xB713", letter: "H", name: "BIOTIN" },
-          { key: "Choline", code: "V\xB714", letter: "Ch", name: "CHOLINE" },
-          { key: "Inositol", code: "V\xB715", letter: "In", name: "INOSITOL" },
-          { key: "Flavonoids / Bioflavonoids", code: "V\xB716", letter: "Fl", name: "FLAVONOIDS" }
+          {
+            key: "Vitamin A (Retinol / beta-carotene)",
+            code: "V\xB701",
+            letter: "A",
+            name: "RETINOL"
+          },
+          {
+            key: "Vitamin B1 (Thiamine)",
+            code: "V\xB702",
+            letter: "B1",
+            name: "THIAMINE"
+          },
+          {
+            key: "Vitamin B2 (Riboflavin)",
+            code: "V\xB703",
+            letter: "B2",
+            name: "RIBOFLAVIN"
+          },
+          {
+            key: "Vitamin B3 (Niacin)",
+            code: "V\xB704",
+            letter: "B3",
+            name: "NIACIN"
+          },
+          {
+            key: "Vitamin B5 (Pantothenic Acid)",
+            code: "V\xB705",
+            letter: "B5",
+            name: "PANTOTHENIC ACID"
+          },
+          {
+            key: "Vitamin B6 (Pyridoxine)",
+            code: "V\xB706",
+            letter: "B6",
+            name: "PYRIDOXINE"
+          },
+          {
+            key: "Folic Acid (Folate)",
+            code: "V\xB707",
+            letter: "B9",
+            name: "FOLATE"
+          },
+          {
+            key: "Vitamin B12 (Cobalamin)",
+            code: "V\xB708",
+            letter: "B12",
+            name: "COBALAMIN"
+          },
+          {
+            key: "Vitamin C (Ascorbic Acid)",
+            code: "V\xB709",
+            letter: "C",
+            name: "ASCORBIC ACID"
+          },
+          {
+            key: "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)",
+            code: "V\xB710",
+            letter: "D3",
+            name: "CHOLECALCIFEROL"
+          },
+          {
+            key: "Vitamin E (Tocopherol)",
+            code: "V\xB711",
+            letter: "E",
+            name: "TOCOPHEROL"
+          },
+          {
+            key: "Vitamin K (Phylloquinone)",
+            code: "V\xB712",
+            letter: "K",
+            name: "PHYLLOQUINONE"
+          },
+          {
+            key: "Biotin",
+            code: "V\xB713",
+            letter: "H",
+            name: "BIOTIN"
+          },
+          {
+            key: "Choline",
+            code: "V\xB714",
+            letter: "Ch",
+            name: "CHOLINE"
+          },
+          {
+            key: "Inositol",
+            code: "V\xB715",
+            letter: "In",
+            name: "INOSITOL"
+          },
+          {
+            key: "Flavonoids / Bioflavonoids",
+            code: "V\xB716",
+            letter: "Fl",
+            name: "FLAVONOIDS"
+          }
         ]
       },
       {
@@ -232,18 +612,78 @@
         gridClass: "essentials-grid--aminos",
         tileClass: "tile--amino",
         tiles: [
-          { key: "Arginine", code: "AA\xB701", abbr: "Arg", name: "ARGININE" },
-          { key: "Histidine", code: "AA\xB702", abbr: "His", name: "HISTIDINE" },
-          { key: "Isoleucine", code: "AA\xB703", abbr: "Ile", name: "ISOLEUCINE" },
-          { key: "Leucine", code: "AA\xB704", abbr: "Leu", name: "LEUCINE" },
-          { key: "Lysine", code: "AA\xB705", abbr: "Lys", name: "LYSINE" },
-          { key: "Methionine", code: "AA\xB706", abbr: "Met", name: "METHIONINE" },
-          { key: "Phenylalanine", code: "AA\xB707", abbr: "Phe", name: "PHENYLALANINE" },
-          { key: "Taurine", code: "AA\xB708", abbr: "Tau", name: "TAURINE" },
-          { key: "Threonine", code: "AA\xB709", abbr: "Thr", name: "THREONINE" },
-          { key: "Tryptophan", code: "AA\xB710", abbr: "Trp", name: "TRYPTOPHAN" },
-          { key: "Tyrosine", code: "AA\xB711", abbr: "Tyr", name: "TYROSINE" },
-          { key: "Valine", code: "AA\xB712", abbr: "Val", name: "VALINE" }
+          {
+            key: "Arginine",
+            code: "AA\xB701",
+            abbr: "Arg",
+            name: "ARGININE"
+          },
+          {
+            key: "Histidine",
+            code: "AA\xB702",
+            abbr: "His",
+            name: "HISTIDINE"
+          },
+          {
+            key: "Isoleucine",
+            code: "AA\xB703",
+            abbr: "Ile",
+            name: "ISOLEUCINE"
+          },
+          {
+            key: "Leucine",
+            code: "AA\xB704",
+            abbr: "Leu",
+            name: "LEUCINE"
+          },
+          {
+            key: "Lysine",
+            code: "AA\xB705",
+            abbr: "Lys",
+            name: "LYSINE"
+          },
+          {
+            key: "Methionine",
+            code: "AA\xB706",
+            abbr: "Met",
+            name: "METHIONINE"
+          },
+          {
+            key: "Phenylalanine",
+            code: "AA\xB707",
+            abbr: "Phe",
+            name: "PHENYLALANINE"
+          },
+          {
+            key: "Taurine",
+            code: "AA\xB708",
+            abbr: "Tau",
+            name: "TAURINE"
+          },
+          {
+            key: "Threonine",
+            code: "AA\xB709",
+            abbr: "Thr",
+            name: "THREONINE"
+          },
+          {
+            key: "Tryptophan",
+            code: "AA\xB710",
+            abbr: "Trp",
+            name: "TRYPTOPHAN"
+          },
+          {
+            key: "Tyrosine",
+            code: "AA\xB711",
+            abbr: "Tyr",
+            name: "TYROSINE"
+          },
+          {
+            key: "Valine",
+            code: "AA\xB712",
+            abbr: "Val",
+            name: "VALINE"
+          }
         ]
       },
       {
@@ -253,19 +693,59 @@
         gridClass: "essentials-grid--fats",
         tileClass: "tile--fat",
         tiles: [
-          { key: "Omega-3 (alpha-linolenic + EPA/DHA in marine form)", code: "F\xB701", name: "OMEGA-3", hint: "n-3 \xB7 ALA \xB7 EPA \xB7 DHA" },
-          { key: "Omega-6 (linoleic + GLA)", code: "F\xB702", name: "OMEGA-6", hint: "n-6 \xB7 linoleic \xB7 GLA" },
-          { key: "Omega-9 (Arachidonic / Oleic)", code: "F\xB703", name: "OMEGA-9", hint: "n-9 \xB7 oleic \xB7 arachidonic", essential: false }
+          {
+            key: "Omega-3 (alpha-linolenic + EPA/DHA in marine form)",
+            code: "F\xB701",
+            hint: "n-3 \xB7 ALA \xB7 EPA \xB7 DHA",
+            name: "OMEGA-3"
+          },
+          {
+            key: "Omega-6 (linoleic + GLA)",
+            code: "F\xB702",
+            hint: "n-6 \xB7 linoleic \xB7 GLA",
+            name: "OMEGA-6"
+          },
+          {
+            key: "Omega-9 (Arachidonic / Oleic)",
+            code: "F\xB703",
+            hint: "n-9 \xB7 oleic \xB7 arachidonic",
+            essential: false,
+            name: "OMEGA-9"
+          }
         ]
       }
     ],
     goals: [
-      { id: "bone-skeletal", name: "BONE & SKELETAL", total: 14 },
-      { id: "energy-metabolism", name: "ENERGY & METABOLISM", total: 13 },
-      { id: "cognition", name: "COGNITION", total: 11 },
-      { id: "hormones-strength", name: "HORMONES & STRENGTH", total: 12 },
-      { id: "longevity-anti-aging", name: "LONGEVITY & ANTI-AGING", total: 18 },
-      { id: "cardiovascular", name: "CARDIOVASCULAR", total: 10 }
+      {
+        id: "bone-skeletal",
+        name: "BONE & SKELETAL",
+        total: 14
+      },
+      {
+        id: "energy-metabolism",
+        name: "ENERGY & METABOLISM",
+        total: 13
+      },
+      {
+        id: "cognition",
+        name: "COGNITION",
+        total: 11
+      },
+      {
+        id: "hormones-strength",
+        name: "HORMONES & STRENGTH",
+        total: 12
+      },
+      {
+        id: "longevity-anti-aging",
+        name: "LONGEVITY & ANTI-AGING",
+        total: 18
+      },
+      {
+        id: "cardiovascular",
+        name: "CARDIOVASCULAR",
+        total: 10
+      }
     ]
   };
 
@@ -25970,7 +26450,7 @@ Substance corrected: Eden de-Winged to the 3-pillar model (Corpus live \xB7 Prod
 
 Left untouched as already-accurate (verified, not rewritten for its own sake): eden/catalog, chronicle/creators-log, eden/fringe-knowledge, eden/corpus/indices, eden/corpus/drafts, chronicle/evals, dashboard/assets/fonts, tools/canaries, dashboard/design-wisdom/{applications,learnings} READMEs; REVIEW.md; eden/corpus/SCHEMA.md. All 17 tracked READMEs + the 4 doc stragglers accounted for.
 
-Verified: node tools/build.mjs OK (rebuilt after this log entry so the ledger re-inlines into dist/main.js); PYTHONUTF8=1 python tools/invariants.py = 41/41 (no_dead_legacy_paths green \u2014 no forbidden legacy token introduced; no_operating_doc_contradiction green \u2014 CLAUDE.md/REVIEW.md/rules untouched). No view surface changed, so no render probe was needed. Luneth gave visual sign-off before commit. No deferrals; the vestigial eden-catalog.json / eden_*.py / eden/SCHEMA.md docs retire when the Phase-F Products pillar lands.` }, { id: "lg_mr9g9g5z_hnrcv4", ts: "2026-07-06T11:44:03.479846-05:00", surface: "enforcement/governance", kind: "round-close", summary: "Vision-audit crack-fix: 4 new critical gates -- manifest-completeness (R1), the R7+R9 meta-gates, and a corpus-audit lock (Phase G blocked until sign-off) -- plus widened prose containment. Board 41->45; all 4 negative-tested (RED on violation, GREEN on restore).", detail: 'Luneth re-sent his original overhaul prompt and had me audit everything we built against that vision. The audit found four places where our promise of a system "impossible to compromise" was still just a promise. This chunk turns all four into real, machine-checked gates, each proven to fail loudly when broken. Nothing here changes what the app shows; it hardens the rules that keep our data honest.\n\nFour new critical invariants (board 41 -> 45):\n\n- data_artifacts_accounted (R1 completeness): every dashboard/assets/data/*.json must be registered in eden/derived/MANIFEST.json -- either in `artifacts` (derived + freshness-gated) or in the new `accounted` block (hand-authored/externally-gated, each with disposition+reason). Closes the hole where derived_artifacts_fresh only proved the LISTED files fresh, never that the list was COMPLETE. 8 files accounted; coverage-layout-data flagged as tracked debt (its 90 tile names should derive from essentials-canon -- Luneth chose gate-now-derive-later).\n\n- charter_gates_present (R7 meta-gate): parses charter.md\'s R1-R9 table; a Gate-column gate name that is neither a live invariant, a known mechanism (verify tool / hook / lint), nor in a WISH-labeled row = RED. The Charter can no longer oversell its own enforcement.\n\n- exceptions_justified (R9): every .claude/invariant-baseline.json tolerated_failures entry must be {invariant, reason, test}; a bare string or missing reason/test = RED (no silent loosening). Empty today so vacuously green; stop_round_close.py updated to read the object form.\n\n- corpus_audit_gate (R8 / crack #4): eden/tools/corpus-audit-status.json freezes the corpus at 1203 claims with phase_g_unlocked=false; the live claim count may not exceed the freeze, so mining new claims onto unaudited data is structurally blocked until the mandatory full-corpus audit signs off. Harness eden/tools/corpus_audit.py generates corpus-audit-worklist.md (grouped by kind/book + machine-flagged suspects); first run flagged 15 dose-kind claims with no numeric dose -- the exact defect class the full-corpus-audit-before-phase-g memory warned about.\n\nCrack #3 (widened prose containment): prose_contained + citations_reference_registry now scan the legacy regimen-base/scanner/ocr data embeds. The scan caught real Wallach-guidance prose in scanner-corpus-data -- but it lives in a dedicated antiListNotes block, cleanly apart from the antiList fact arrays, so it IS contained; taught _walk_strings about prose CONTAINERS (_PROSE_CONTAINER_KEYS) so the fact arrays stay gated while the contained prose gets its one home. That prose still carries hand-authored Wallach health claims + inline book-refs -- flagged as a Phase E/F scanner-rework item to source into corpus claims.\n\ncharter.md updated: R7 + R9 WISH -> LIVE, R1 gains the completeness gate, R4 notes the widened surface.\n\nVerification (structure is the proof): board 45/45; each new gate negative-tested in-process (inject a real violation -> RED, restore -> GREEN); build.mjs OK; render probes N/A (no rendered surface touched). Deferrals: coverage-layout-data proper derivation, inline view prose R4, antiListNotes sourcing -- all Phase E/F.' }];
+Verified: node tools/build.mjs OK (rebuilt after this log entry so the ledger re-inlines into dist/main.js); PYTHONUTF8=1 python tools/invariants.py = 41/41 (no_dead_legacy_paths green \u2014 no forbidden legacy token introduced; no_operating_doc_contradiction green \u2014 CLAUDE.md/REVIEW.md/rules untouched). No view surface changed, so no render probe was needed. Luneth gave visual sign-off before commit. No deferrals; the vestigial eden-catalog.json / eden_*.py / eden/SCHEMA.md docs retire when the Phase-F Products pillar lands.` }, { id: "lg_mr9g9g5z_hnrcv4", ts: "2026-07-06T11:44:03.479846-05:00", surface: "enforcement/governance", kind: "round-close", summary: "Vision-audit crack-fix: 4 new critical gates -- manifest-completeness (R1), the R7+R9 meta-gates, and a corpus-audit lock (Phase G blocked until sign-off) -- plus widened prose containment. Board 41->45; all 4 negative-tested (RED on violation, GREEN on restore).", detail: 'Luneth re-sent his original overhaul prompt and had me audit everything we built against that vision. The audit found four places where our promise of a system "impossible to compromise" was still just a promise. This chunk turns all four into real, machine-checked gates, each proven to fail loudly when broken. Nothing here changes what the app shows; it hardens the rules that keep our data honest.\n\nFour new critical invariants (board 41 -> 45):\n\n- data_artifacts_accounted (R1 completeness): every dashboard/assets/data/*.json must be registered in eden/derived/MANIFEST.json -- either in `artifacts` (derived + freshness-gated) or in the new `accounted` block (hand-authored/externally-gated, each with disposition+reason). Closes the hole where derived_artifacts_fresh only proved the LISTED files fresh, never that the list was COMPLETE. 8 files accounted; coverage-layout-data flagged as tracked debt (its 90 tile names should derive from essentials-canon -- Luneth chose gate-now-derive-later).\n\n- charter_gates_present (R7 meta-gate): parses charter.md\'s R1-R9 table; a Gate-column gate name that is neither a live invariant, a known mechanism (verify tool / hook / lint), nor in a WISH-labeled row = RED. The Charter can no longer oversell its own enforcement.\n\n- exceptions_justified (R9): every .claude/invariant-baseline.json tolerated_failures entry must be {invariant, reason, test}; a bare string or missing reason/test = RED (no silent loosening). Empty today so vacuously green; stop_round_close.py updated to read the object form.\n\n- corpus_audit_gate (R8 / crack #4): eden/tools/corpus-audit-status.json freezes the corpus at 1203 claims with phase_g_unlocked=false; the live claim count may not exceed the freeze, so mining new claims onto unaudited data is structurally blocked until the mandatory full-corpus audit signs off. Harness eden/tools/corpus_audit.py generates corpus-audit-worklist.md (grouped by kind/book + machine-flagged suspects); first run flagged 15 dose-kind claims with no numeric dose -- the exact defect class the full-corpus-audit-before-phase-g memory warned about.\n\nCrack #3 (widened prose containment): prose_contained + citations_reference_registry now scan the legacy regimen-base/scanner/ocr data embeds. The scan caught real Wallach-guidance prose in scanner-corpus-data -- but it lives in a dedicated antiListNotes block, cleanly apart from the antiList fact arrays, so it IS contained; taught _walk_strings about prose CONTAINERS (_PROSE_CONTAINER_KEYS) so the fact arrays stay gated while the contained prose gets its one home. That prose still carries hand-authored Wallach health claims + inline book-refs -- flagged as a Phase E/F scanner-rework item to source into corpus claims.\n\ncharter.md updated: R7 + R9 WISH -> LIVE, R1 gains the completeness gate, R4 notes the widened surface.\n\nVerification (structure is the proof): board 45/45; each new gate negative-tested in-process (inject a real violation -> RED, restore -> GREEN); build.mjs OK; render probes N/A (no rendered surface touched). Deferrals: coverage-layout-data proper derivation, inline view prose R4, antiListNotes sourcing -- all Phase E/F.' }, { id: "lg_mr9l06hj_um9yw2", ts: "2026-07-06T13:56:49.111703-05:00", surface: "coverage", kind: "round-close", summary: "Phase E Coverage chunk 1: coverage-layout-data now derives from the canon (crack #1's deferred half). The 91 tile names + 60 mineral symbols/numbers fill from essentials-canon, so they can't drift. Board 45/45; render probes pass; Luneth verified identical.", detail: "Phase E (per-surface finalize) has begun with the Coverage surface, and its first chunk closes the \"most important gap\" the vision audit found: the periodic table no longer hand-types the canonical nutrient identities. Before, all 91 tile names + the 60 mineral symbols/atomic-numbers were re-typed in the layout file -- a silent duplicate of the sealed canon that could drift. Now those values are FILLED from the canon, so the table's identity IS the pillar. Luneth verified the table looks exactly the same.\n\nWhat changed:\n- New generator eden/tools/coverage_layout_derive.py: build_data() merges a hand-authored skeleton with essentials-canon -- name <- display_name.upper() for every tile; minerals also get sym <- symbol and num <- atomic_number. Skeleton metadata (top-level _-keys) is dropped so the artifact carries only sections + goals.\n- New hand-authored dashboard/assets/data/coverage-layout-skeleton.json: the editorial ARRANGEMENT only -- section/subsection chrome, per-tile codes/letters/abbrs/hints, the goals block, and each tile's `key` (a reference to a canon layout_key). The canon-owned fields (name; mineral sym/num) are NOT here. Edit this for layout; identities come from canon.\n- coverage-layout-data.json moved from `accounted` to `artifacts` in eden/derived/MANIFEST.json -- it is now a derived, freshness-gated artifact (4 derived total). The skeleton took its place in `accounted` (12 files accounted).\n\nWhy a skeleton instead of full canon-derivation: the layout is heterogeneous -- minerals use sym/num, vitamins use code/letter, aminos use code/abbr, fats use code/hint, plus a goals block -- and most of those fields are genuinely editorial UI, not canonical health data. The skeleton keeps the editorial arrangement hand-editable while lifting ONLY the canon-owned identities into derivation. Presentation arrangement is not a pillar; it is a separate hand-authored input, so this does not expand the canonical-data sources.\n\nVerification (structure is the proof): before swapping, a one-time script confirmed build_data() json-equals the original coverage-layout-data.json (all 91 tiles, zero diff). Then: board 45/45; derived_artifacts_fresh now covers coverage-layout-data; data_artifacts_accounted green at 12 files; render_probe.js (60 minerals + 16 vitamins + 12 aminos + 3 fats, 4 sections, 0 page errors) + render_probe_seeded.js (classifier lights covered/partial/trace/gap correct) PASS; build.mjs OK; Luneth visual sign-off -- the Coverage periodic table is identical.\n\nNext: remaining Phase E Coverage work (per-essential deep-dive; the composition-driven coverage math wires to real products in Phase F)." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
