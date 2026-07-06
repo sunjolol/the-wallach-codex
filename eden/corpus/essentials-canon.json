@@ -30,7 +30,8 @@
       "atomic_number": 1,
       "symbol": "H",
       "layout_key": "Hydrogen",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "dietary"
     },
     {
       "slug": "carbon",
@@ -40,7 +41,8 @@
       "atomic_number": 6,
       "symbol": "C",
       "layout_key": "Carbon",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "dietary"
     },
     {
       "slug": "nitrogen",
@@ -50,7 +52,8 @@
       "atomic_number": 7,
       "symbol": "N",
       "layout_key": "Nitrogen",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "dietary"
     },
     {
       "slug": "oxygen",
@@ -60,7 +63,8 @@
       "atomic_number": 8,
       "symbol": "O",
       "layout_key": "Oxygen",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "sodium",
@@ -70,7 +74,8 @@
       "atomic_number": 11,
       "symbol": "Na",
       "layout_key": "Sodium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "magnesium",
@@ -80,7 +85,8 @@
       "atomic_number": 12,
       "symbol": "Mg",
       "layout_key": "Magnesium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "phosphorus",
@@ -90,7 +96,8 @@
       "atomic_number": 15,
       "symbol": "P",
       "layout_key": "Phosphorus",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "sulfur",
@@ -100,7 +107,8 @@
       "atomic_number": 16,
       "symbol": "S",
       "layout_key": "Sulfur",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "chloride",
@@ -110,7 +118,8 @@
       "atomic_number": 17,
       "symbol": "Cl",
       "layout_key": "Chloride",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "potassium",
@@ -120,7 +129,8 @@
       "atomic_number": 19,
       "symbol": "K",
       "layout_key": "Potassium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "calcium",
@@ -130,7 +140,8 @@
       "atomic_number": 20,
       "symbol": "Ca",
       "layout_key": "Calcium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "boron",
@@ -140,7 +151,8 @@
       "atomic_number": 5,
       "symbol": "B",
       "layout_key": "Boron",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "cobalt",
@@ -150,7 +162,8 @@
       "atomic_number": 27,
       "symbol": "Co",
       "layout_key": "Cobalt",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "chromium",
@@ -160,7 +173,8 @@
       "atomic_number": 24,
       "symbol": "Cr",
       "layout_key": "Chromium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "copper",
@@ -170,7 +184,8 @@
       "atomic_number": 29,
       "symbol": "Cu",
       "layout_key": "Copper",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "germanium",
@@ -180,7 +195,8 @@
       "atomic_number": 32,
       "symbol": "Ge",
       "layout_key": "Germanium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "iron",
@@ -190,7 +206,8 @@
       "atomic_number": 26,
       "symbol": "Fe",
       "layout_key": "Iron",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "iodine",
@@ -200,7 +217,8 @@
       "atomic_number": 53,
       "symbol": "I",
       "layout_key": "Iodine",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "manganese",
@@ -210,7 +228,8 @@
       "atomic_number": 25,
       "symbol": "Mn",
       "layout_key": "Manganese",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "molybdenum",
@@ -220,7 +239,8 @@
       "atomic_number": 42,
       "symbol": "Mo",
       "layout_key": "Molybdenum",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "selenium",
@@ -230,7 +250,8 @@
       "atomic_number": 34,
       "symbol": "Se",
       "layout_key": "Selenium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "silica",
@@ -240,7 +261,8 @@
       "atomic_number": 14,
       "symbol": "Si",
       "layout_key": "Silica",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "strontium",
@@ -250,7 +272,8 @@
       "atomic_number": 38,
       "symbol": "Sr",
       "layout_key": "Strontium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "vanadium",
@@ -260,7 +283,8 @@
       "atomic_number": 23,
       "symbol": "V",
       "layout_key": "Vanadium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "zinc",
@@ -270,7 +294,8 @@
       "atomic_number": 30,
       "symbol": "Zn",
       "layout_key": "Zinc",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "silver",
@@ -280,7 +305,8 @@
       "atomic_number": 47,
       "symbol": "Ag",
       "layout_key": "Silver",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "aluminum",
@@ -290,7 +316,8 @@
       "atomic_number": 13,
       "symbol": "Al",
       "layout_key": "Aluminum",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "arsenic",
@@ -300,7 +327,8 @@
       "atomic_number": 33,
       "symbol": "As",
       "layout_key": "Arsenic",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "gold",
@@ -310,7 +338,8 @@
       "atomic_number": 79,
       "symbol": "Au",
       "layout_key": "Gold",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "barium",
@@ -320,7 +349,8 @@
       "atomic_number": 56,
       "symbol": "Ba",
       "layout_key": "Barium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "beryllium",
@@ -330,7 +360,8 @@
       "atomic_number": 4,
       "symbol": "Be",
       "layout_key": "Beryllium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "bromine",
@@ -340,7 +371,8 @@
       "atomic_number": 35,
       "symbol": "Br",
       "layout_key": "Bromine",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "cerium",
@@ -350,7 +382,8 @@
       "atomic_number": 58,
       "symbol": "Ce",
       "layout_key": "Cerium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "cesium",
@@ -360,7 +393,8 @@
       "atomic_number": 55,
       "symbol": "Cs",
       "layout_key": "Cesium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "dysprosium",
@@ -370,7 +404,8 @@
       "atomic_number": 66,
       "symbol": "Dy",
       "layout_key": "Dysprosium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "erbium",
@@ -380,7 +415,8 @@
       "atomic_number": 68,
       "symbol": "Er",
       "layout_key": "Erbium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "europium",
@@ -390,7 +426,8 @@
       "atomic_number": 63,
       "symbol": "Eu",
       "layout_key": "Europium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "gallium",
@@ -400,7 +437,8 @@
       "atomic_number": 31,
       "symbol": "Ga",
       "layout_key": "Gallium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "gadolinium",
@@ -410,7 +448,8 @@
       "atomic_number": 64,
       "symbol": "Gd",
       "layout_key": "Gadolinium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "hafnium",
@@ -420,7 +459,8 @@
       "atomic_number": 72,
       "symbol": "Hf",
       "layout_key": "Hafnium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "holmium",
@@ -430,7 +470,8 @@
       "atomic_number": 67,
       "symbol": "Ho",
       "layout_key": "Holmium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "lanthanum",
@@ -440,7 +481,8 @@
       "atomic_number": 57,
       "symbol": "La",
       "layout_key": "Lanthanum",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "lithium",
@@ -450,7 +492,8 @@
       "atomic_number": 3,
       "symbol": "Li",
       "layout_key": "Lithium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "lutetium",
@@ -460,7 +503,8 @@
       "atomic_number": 71,
       "symbol": "Lu",
       "layout_key": "Lutetium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "niobium",
@@ -470,7 +514,8 @@
       "atomic_number": 41,
       "symbol": "Nb",
       "layout_key": "Niobium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "neodymium",
@@ -480,7 +525,8 @@
       "atomic_number": 60,
       "symbol": "Nd",
       "layout_key": "Neodymium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "nickel",
@@ -490,7 +536,8 @@
       "atomic_number": 28,
       "symbol": "Ni",
       "layout_key": "Nickel",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "praseodymium",
@@ -500,7 +547,8 @@
       "atomic_number": 59,
       "symbol": "Pr",
       "layout_key": "Praseodymium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "rubidium",
@@ -510,7 +558,8 @@
       "atomic_number": 37,
       "symbol": "Rb",
       "layout_key": "Rubidium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "rhenium",
@@ -520,7 +569,8 @@
       "atomic_number": 75,
       "symbol": "Re",
       "layout_key": "Rhenium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "scandium",
@@ -530,7 +580,8 @@
       "atomic_number": 21,
       "symbol": "Sc",
       "layout_key": "Scandium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "samarium",
@@ -540,7 +591,8 @@
       "atomic_number": 62,
       "symbol": "Sm",
       "layout_key": "Samarium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "tin",
@@ -550,7 +602,8 @@
       "atomic_number": 50,
       "symbol": "Sn",
       "layout_key": "Tin",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "tantalum",
@@ -560,7 +613,8 @@
       "atomic_number": 73,
       "symbol": "Ta",
       "layout_key": "Tantalum",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "terbium",
@@ -570,7 +624,8 @@
       "atomic_number": 65,
       "symbol": "Tb",
       "layout_key": "Terbium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "titanium",
@@ -580,7 +635,8 @@
       "atomic_number": 22,
       "symbol": "Ti",
       "layout_key": "Titanium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "thulium",
@@ -590,7 +646,8 @@
       "atomic_number": 69,
       "symbol": "Tm",
       "layout_key": "Thulium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "yttrium",
@@ -600,7 +657,8 @@
       "atomic_number": 39,
       "symbol": "Y",
       "layout_key": "Yttrium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "ytterbium",
@@ -610,7 +668,8 @@
       "atomic_number": 70,
       "symbol": "Yb",
       "layout_key": "Ytterbium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "zirconium",
@@ -620,7 +679,8 @@
       "atomic_number": 40,
       "symbol": "Zr",
       "layout_key": "Zirconium",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "vitamin-a",
@@ -629,7 +689,8 @@
       "subtype": null,
       "letter": "A",
       "layout_key": "Vitamin A (Retinol / beta-carotene)",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "vitamin-b1",
@@ -638,7 +699,8 @@
       "subtype": null,
       "letter": "B1",
       "layout_key": "Vitamin B1 (Thiamine)",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "vitamin-b2",
@@ -647,7 +709,8 @@
       "subtype": null,
       "letter": "B2",
       "layout_key": "Vitamin B2 (Riboflavin)",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "vitamin-b3",
@@ -656,7 +719,8 @@
       "subtype": null,
       "letter": "B3",
       "layout_key": "Vitamin B3 (Niacin)",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "vitamin-b5",
@@ -665,7 +729,8 @@
       "subtype": null,
       "letter": "B5",
       "layout_key": "Vitamin B5 (Pantothenic Acid)",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "vitamin-b6",
@@ -674,7 +739,8 @@
       "subtype": null,
       "letter": "B6",
       "layout_key": "Vitamin B6 (Pyridoxine)",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "vitamin-b9",
@@ -683,7 +749,8 @@
       "subtype": null,
       "letter": "B9",
       "layout_key": "Folic Acid (Folate)",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "vitamin-b12",
@@ -692,7 +759,8 @@
       "subtype": null,
       "letter": "B12",
       "layout_key": "Vitamin B12 (Cobalamin)",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "vitamin-c",
@@ -701,7 +769,8 @@
       "subtype": null,
       "letter": "C",
       "layout_key": "Vitamin C (Ascorbic Acid)",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "vitamin-d",
@@ -710,7 +779,8 @@
       "subtype": null,
       "letter": "D3",
       "layout_key": "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "vitamin-e",
@@ -719,7 +789,8 @@
       "subtype": null,
       "letter": "E",
       "layout_key": "Vitamin E (Tocopherol)",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "vitamin-k",
@@ -728,7 +799,8 @@
       "subtype": null,
       "letter": "K",
       "layout_key": "Vitamin K (Phylloquinone)",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "biotin",
@@ -737,7 +809,8 @@
       "subtype": null,
       "letter": "H",
       "layout_key": "Biotin",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "choline",
@@ -746,7 +819,8 @@
       "subtype": null,
       "letter": "Ch",
       "layout_key": "Choline",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "inositol",
@@ -755,7 +829,8 @@
       "subtype": null,
       "letter": "In",
       "layout_key": "Inositol",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "flavonoids",
@@ -764,7 +839,8 @@
       "subtype": null,
       "letter": "Fl",
       "layout_key": "Flavonoids / Bioflavonoids",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "dietary_with_clinical_lever"
     },
     {
       "slug": "arginine",
@@ -773,7 +849,8 @@
       "subtype": null,
       "abbr": "Arg",
       "layout_key": "Arginine",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "dietary_with_clinical_lever"
     },
     {
       "slug": "taurine",
@@ -782,7 +859,8 @@
       "subtype": null,
       "abbr": "Tau",
       "layout_key": "Taurine",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "dietary_with_clinical_lever"
     },
     {
       "slug": "histidine",
@@ -791,7 +869,8 @@
       "subtype": null,
       "abbr": "His",
       "layout_key": "Histidine",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "dietary_with_clinical_lever"
     },
     {
       "slug": "isoleucine",
@@ -800,7 +879,8 @@
       "subtype": null,
       "abbr": "Ile",
       "layout_key": "Isoleucine",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "dietary_with_clinical_lever"
     },
     {
       "slug": "leucine",
@@ -809,7 +889,8 @@
       "subtype": null,
       "abbr": "Leu",
       "layout_key": "Leucine",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "dietary_with_clinical_lever"
     },
     {
       "slug": "lysine",
@@ -818,7 +899,8 @@
       "subtype": null,
       "abbr": "Lys",
       "layout_key": "Lysine",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "dietary_with_clinical_lever"
     },
     {
       "slug": "methionine",
@@ -827,7 +909,8 @@
       "subtype": null,
       "abbr": "Met",
       "layout_key": "Methionine",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "dietary_with_clinical_lever"
     },
     {
       "slug": "phenylalanine",
@@ -836,7 +919,8 @@
       "subtype": null,
       "abbr": "Phe",
       "layout_key": "Phenylalanine",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "dietary_with_clinical_lever"
     },
     {
       "slug": "threonine",
@@ -845,7 +929,8 @@
       "subtype": null,
       "abbr": "Thr",
       "layout_key": "Threonine",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "dietary_with_clinical_lever"
     },
     {
       "slug": "tryptophan",
@@ -854,7 +939,8 @@
       "subtype": null,
       "abbr": "Trp",
       "layout_key": "Tryptophan",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "dietary_with_clinical_lever"
     },
     {
       "slug": "tyrosine",
@@ -863,7 +949,8 @@
       "subtype": null,
       "abbr": "Tyr",
       "layout_key": "Tyrosine",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "dietary_with_clinical_lever"
     },
     {
       "slug": "valine",
@@ -872,7 +959,8 @@
       "subtype": null,
       "abbr": "Val",
       "layout_key": "Valine",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "dietary_with_clinical_lever"
     },
     {
       "slug": "omega-3",
@@ -880,7 +968,8 @@
       "category": "fatty_acid",
       "subtype": null,
       "layout_key": "Omega-3 (alpha-linolenic + EPA/DHA in marine form)",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "unspecified"
     },
     {
       "slug": "omega-6",
@@ -888,7 +977,8 @@
       "category": "fatty_acid",
       "subtype": null,
       "layout_key": "Omega-6 (linoleic + GLA)",
-      "essential": true
+      "essential": true,
+      "coverage_kind": "dietary_with_clinical_lever"
     },
     {
       "slug": "omega-9",
@@ -896,7 +986,8 @@
       "category": "fatty_acid",
       "subtype": "conditional",
       "layout_key": "Omega-9 (Arachidonic / Oleic)",
-      "essential": false
+      "essential": false,
+      "coverage_kind": "dietary_with_clinical_lever"
     }
   ]
 }

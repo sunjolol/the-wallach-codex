@@ -25,9 +25,10 @@ WHAT COMES FROM WHERE:
   - STRUCTURE (name=layout_key, category, order) → eden/corpus/essentials-canon.json (pillar).
   - NUMERIC TARGET (low/high/unit + source_claim_id) → sealed corpus dose claims (pillar).
   - CITATION source string → composed from books-meta.json (never hand-typed).
-  - kind (how Wallach covers a NON-numeric essential: trace-via-PDM, dietary, …) →
-    knowledge/essentials-targets.json, TRANSITIONALLY (a classification, not an amount
-    or prose). Phase D re-homes it; until then targets_derive reads ONLY that field.
+  - coverage_kind (how Wallach covers a NON-numeric essential: trace_pdm, dietary,
+    dietary_with_clinical_lever, unspecified) → eden/corpus/essentials-canon.json (the
+    essentials pillar). Re-homed there in Phase D-b (2026-07-05); the old transitional
+    knowledge/essentials-targets.json hand-file was deleted with its dead poison stances.
 
 The "WALLACH SAYS" stance layer is DROPPED here (Luneth 2026-07-05): the old hand-file
 stances carried lecture citations, Youngevity-sourced stances, and hand-typed cites
@@ -45,7 +46,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 CORPUS = ROOT / "eden" / "corpus"
-KNOWLEDGE = ROOT / "knowledge" / "essentials-targets.json"
 OUT_PATH = ROOT / "dashboard" / "assets" / "data" / "essentials-targets-data.json"
 
 sys.path.insert(0, str(ROOT / "tools"))
@@ -53,8 +53,6 @@ import safe_write  # noqa: E402
 
 CAT_MAP = {"mineral": "minerals", "vitamin": "vitamins",
            "amino_acid": "amino_acids", "fatty_acid": "fatty_acids"}
-
-_NUMERIC_INTENT_KINDS = {"hbsp", "wallach", "wallach_clinical"}
 
 # for_condition -> target priority (lower = preferred). None => disease-specific
 # therapeutic dose (NOT a maintenance target). A bare/empty condition is a general
@@ -143,8 +141,6 @@ def build_data() -> dict:
     books_meta = {b["book_id"]: b for b in
                   json.loads((CORPUS / "books-meta.json").read_text(encoding="utf-8"))["books"]}
     targets = _target_doses(claims, books_meta)
-    kd = json.loads(KNOWLEDGE.read_text(encoding="utf-8"))["categories"]
-    kd_kind = {e["name"]: e.get("kind", "unspecified") for cat in kd.values() for e in cat}
 
     essentials = []
     for e in canon:
@@ -167,10 +163,12 @@ def build_data() -> dict:
             if high is not None:
                 target["high"] = high
         else:
-            old_kind = kd_kind.get(name, "unspecified")
-            kind = "unspecified" if old_kind in _NUMERIC_INTENT_KINDS else old_kind
+            # coverage_kind lives on the essentials-canon pillar (Phase D-b) — the
+            # per-essential classification of how Wallach covers a NON-numeric
+            # essential (trace_pdm / dietary / dietary_with_clinical_lever /
+            # unspecified). Already normalized at the pillar, so read it directly.
             target = {
-                "kind": kind,
+                "kind": e.get("coverage_kind", "unspecified"),
                 "source": "Wallach framework — no maintenance amount stated (honest gap; blueprint §7.1)",
             }
 

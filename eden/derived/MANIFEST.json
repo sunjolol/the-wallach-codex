@@ -29,10 +29,9 @@
       "inputs": [
         "eden/corpus/essentials-canon.json",
         "eden/corpus/claims/",
-        "eden/corpus/books-meta.json",
-        "knowledge/essentials-targets.json"
+        "eden/corpus/books-meta.json"
       ],
-      "note": "The Coverage targets DB (state/coverage.ts esbuild JSON import). Numeric targets are Wallach-ONLY (R2), sourced from base-line supplement-program dose claims + carrying source_claim_id (gated by amounts_wallach_only). kind + wallach_stance are read TRANSITIONALLY from the hand-file knowledge/essentials-targets.json (NO amount is taken from it); Phase D moves the stance to the prose store, makes verbatim a claim pointer, and deletes that hand-file."
+      "note": "The Coverage targets DB (state/coverage.ts esbuild JSON import). Numeric targets are Wallach-ONLY (R2), sourced from base-line supplement-program dose claims + carrying source_claim_id (gated by amounts_wallach_only). The per-essential coverage_kind (non-numeric classification: trace_pdm / dietary / dietary_with_clinical_lever / unspecified) reads from the essentials-canon pillar. Phase D-b (2026-07-05) re-homed coverage_kind onto essentials-canon + deleted the old poison hand-file knowledge/essentials-targets.json (its dead wallach_stance prose went with it; clean stances re-authored post-mining)."
     },
     {
       "artifact": "dashboard/assets/data/regimen-label-lookup.json",
