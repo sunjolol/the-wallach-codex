@@ -13996,6 +13996,1780 @@
           "source_label": "pollenburst_suppfacts_0823.jpg"
         }
       ]
+    },
+    "rebound-fx-citrus-punch": {
+      "product_id": "rebound-fx-citrus-punch",
+      "name": "Rebound FX™ Citrus Punch Sports Energy Drink",
+      "sku": "13223",
+      "ygy_id": "6935",
+      "variants": [
+        {
+          "sku": "13231",
+          "ygy_id": "362",
+          "name": "Rebound FX™ Citrus Punch On-The-Go Stick Packs",
+          "form": "stick pack",
+          "source_label": "rebound-fx_gusset_supp-facts_0326.jpg"
+        }
+      ],
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "2 scoops (12 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 35,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "total_sugars": {
+              "amount": 8,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 8,
+              "unit": "g",
+              "pct_dv": 16
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 1500,
+              "unit": "mcg",
+              "pct_dv": 167,
+              "form": "as retinyl palmitate and beta carotene",
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 500,
+              "unit": "mg",
+              "pct_dv": 556,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D3",
+              "amount": 2.5,
+              "unit": "mcg",
+              "pct_dv": 13,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 67,
+              "unit": "mg",
+              "pct_dv": 447,
+              "form": "as d-alpha tocopherol acetate"
+            },
+            {
+              "name": "Vitamin B1",
+              "amount": 1.5,
+              "unit": "mg",
+              "pct_dv": 125,
+              "form": "as thiamine hydrochloride"
+            },
+            {
+              "name": "Vitamin B2",
+              "amount": 1.7,
+              "unit": "mg",
+              "pct_dv": 131,
+              "form": "as riboflavin"
+            },
+            {
+              "name": "Niacin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 125,
+              "form": "as niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 118,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Folate",
+              "amount": 400,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "unit_detail": "DFE",
+              "form": "as folic acid (235 mcg)"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 1042,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 300,
+              "unit": "mcg",
+              "pct_dv": 1000
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 400,
+              "form": "as calcium pantothenate"
+            },
+            {
+              "name": "Choline",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": 3,
+              "form": "as choline bitartrate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 2,
+              "form": "as potassium citrate"
+            },
+            {
+              "name": "Inositol",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Taurine",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Green Tea",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "standardization": "50% polyphenols"
+            },
+            {
+              "name": "Ginseng",
+              "amount": 60,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "root",
+              "form": "extract"
+            },
+            {
+              "name": "Glucono Delta Lactone",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Plant Derived Minerals",
+              "amount": 120,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Amino Acid Complex",
+              "total": {
+                "amount": 150,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Glycine"
+                },
+                {
+                  "pos": 2,
+                  "name": "L-Arginine"
+                },
+                {
+                  "pos": 3,
+                  "name": "L-Tyrosine"
+                },
+                {
+                  "pos": 4,
+                  "name": "L-Alanine"
+                },
+                {
+                  "pos": 5,
+                  "name": "L-Aspartic Acid"
+                },
+                {
+                  "pos": 6,
+                  "name": "L-Cystine"
+                },
+                {
+                  "pos": 7,
+                  "name": "L-Glutamic Acid"
+                },
+                {
+                  "pos": 8,
+                  "name": "L-Lysine"
+                },
+                {
+                  "pos": 9,
+                  "name": "L-Leucine"
+                },
+                {
+                  "pos": 10,
+                  "name": "L-Proline"
+                },
+                {
+                  "pos": 11,
+                  "name": "L-Histidine"
+                },
+                {
+                  "pos": 12,
+                  "name": "L-Isoleucine"
+                },
+                {
+                  "pos": 13,
+                  "name": "L-Methionine"
+                },
+                {
+                  "pos": 14,
+                  "name": "L-Phenylalanine"
+                },
+                {
+                  "pos": 15,
+                  "name": "L-Serine"
+                },
+                {
+                  "pos": 16,
+                  "name": "L-Threonine"
+                },
+                {
+                  "pos": 17,
+                  "name": "L-Valine"
+                }
+              ],
+              "as_labeled": "Glycine, L-Arginine, L-Tyrosine, L-Alanine, L-Aspartic Acid, L-Cystine, L-Glutamic Acid, L-Lysine, L-Leucine, L-Proline, L-Histidine, L-Isoleucine, L-Methionine, L-Phenylalanine, L-Serine, L-Threonine, L-Valine"
+            }
+          ],
+          "other_ingredients": [
+            "Fructose",
+            "citric acid",
+            "natural lemon flavor",
+            "natural orange flavor",
+            "natural pineapple flavor",
+            "maltodextrin",
+            "stevia extract",
+            "silica",
+            "guar gum",
+            "pineapple juice powder",
+            "orange juice powder"
+          ],
+          "source_label": "rebound-fx-citrus-punch_supp-facts_1225.jpg"
+        }
+      ]
+    },
+    "rebound-fx-can": {
+      "product_id": "rebound-fx-can",
+      "name": "Rebound FX™ Citrus Punch Sports Energy Drink - 1 Case (12-12 oz cans)",
+      "sku": "USYG100007",
+      "ygy_id": "6933",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (ready-to-drink can)",
+          "serving_size": "1 can (12 fl oz / 355 mL)",
+          "servings_per_container": 1,
+          "macros": {
+            "calories": {
+              "amount": 100,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 27,
+              "unit": "g",
+              "pct_dv": 9
+            },
+            "total_sugars": {
+              "amount": 24,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 24,
+              "unit": "g",
+              "pct_dv": 48
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 3500,
+              "unit": "iu",
+              "pct_dv": 117,
+              "form": "as retinol palmitate"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 350,
+              "unit": "mg",
+              "pct_dv": 396,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 70,
+              "unit": "iu",
+              "pct_dv": 9,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 70,
+              "unit": "mg",
+              "pct_dv": 500,
+              "form": "as DL-alpha tocopherol acetate"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 0.07,
+              "unit": "mg",
+              "pct_dv": 5,
+              "form": "as thiamin hydrochloride"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 0.07,
+              "unit": "mg",
+              "pct_dv": 5
+            },
+            {
+              "name": "Niacin",
+              "amount": 14,
+              "unit": "mg",
+              "pct_dv": 88,
+              "form": "as niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 1.4,
+              "unit": "mg",
+              "pct_dv": 82,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Folic Acid",
+              "amount": 285,
+              "unit": "mcg",
+              "pct_dv": 72
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 17.5,
+              "unit": "mcg",
+              "pct_dv": 729,
+              "form": "as cyanocobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": 667
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 14,
+              "unit": "mg",
+              "pct_dv": 280,
+              "form": "as D-calcium pantothenate"
+            },
+            {
+              "name": "Sodium",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 1
+            },
+            {
+              "name": "Potassium",
+              "amount": 70,
+              "unit": "mg",
+              "pct_dv": 2,
+              "form": "as potassium citrate"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 440,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Taurine"
+                },
+                {
+                  "pos": 2,
+                  "name": "Green Tea",
+                  "form": "extract",
+                  "standardization": "50% caffeine"
+                },
+                {
+                  "pos": 3,
+                  "name": "Trace Mineral Blend"
+                },
+                {
+                  "pos": 4,
+                  "name": "Ginseng",
+                  "latin": "Panax",
+                  "part": "root",
+                  "form": "extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Glucuronolactone"
+                },
+                {
+                  "pos": 6,
+                  "name": "Choline",
+                  "form": "bitartrate"
+                },
+                {
+                  "pos": 7,
+                  "name": "Inositol"
+                }
+              ],
+              "as_labeled": "Taurine, Green Tea Extract (50% caffeine), Trace Mineral Blend, Panax Ginseng Root Extract, Glucuronolactone, Choline Bitartrate, Inositol"
+            }
+          ],
+          "other_ingredients": [
+            "Carbonated water",
+            "peach juice concentrate",
+            "fructose",
+            "orange juice concentrate",
+            "citric acid",
+            "stevia rebaudiana leaf extract",
+            "pectin",
+            "natural flavor",
+            "purple carrot juice",
+            "beta carotene"
+          ],
+          "source_label": "rebound-fx-can-supp-facts_0326_1200x900.jpg"
+        }
+      ]
+    },
+    "recharge-recovery": {
+      "product_id": "recharge-recovery",
+      "name": "Recharge Recovery",
+      "sku": "USLF050051",
+      "ygy_id": "9953",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "2 fl oz (60 mL)",
+          "servings_per_container": 8,
+          "macros": {
+            "calories": {
+              "amount": 10,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "dietary_fiber": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 9
+            },
+            "total_sugars": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Thiamin",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 130,
+              "form": "as thiamin"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 120,
+              "form": "as riboflavin"
+            },
+            {
+              "name": "Niacin",
+              "amount": 17,
+              "unit": "mg",
+              "pct_dv": 85,
+              "form": "as niacin"
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 9,
+              "unit": "mg",
+              "pct_dv": 90,
+              "form": "as pantothenate"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 4,
+              "unit": "mg",
+              "pct_dv": 200,
+              "form": "as pyridoxine"
+            },
+            {
+              "name": "Biotin",
+              "amount": 215,
+              "unit": "mcg",
+              "pct_dv": 70
+            },
+            {
+              "name": "Folate",
+              "amount": 170,
+              "unit": "mcg",
+              "pct_dv": 40,
+              "form": "as folic acid"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 13,
+              "unit": "mcg",
+              "pct_dv": 215,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 170,
+              "form": "as calcium ascorbate"
+            },
+            {
+              "name": "Calcium",
+              "amount": 120,
+              "unit": "mg",
+              "pct_dv": 12,
+              "form": "as dicalcium malate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 75,
+              "unit": "mg",
+              "pct_dv": 18,
+              "form": "as amino acid chelate"
+            },
+            {
+              "name": "Manganese",
+              "amount": 0.4,
+              "unit": "mg",
+              "pct_dv": 20,
+              "form": "as amino acid chelate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 2.7,
+              "unit": "mg",
+              "pct_dv": 18,
+              "form": "as amino acid chelate"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Recharge and Recovery Blend",
+              "total": {
+                "amount": 610,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Aloe Vera",
+                  "part": "inner leaf",
+                  "form": "organic, freeze-dried"
+                },
+                {
+                  "pos": 2,
+                  "name": "Orgen-B's",
+                  "form": "certified organic extract blend",
+                  "sub_ingredients": [
+                    {
+                      "name": "Guava"
+                    },
+                    {
+                      "name": "Holy Basil"
+                    },
+                    {
+                      "name": "Citrus Limon"
+                    }
+                  ]
+                },
+                {
+                  "pos": 3,
+                  "name": "Bacopa",
+                  "latin": "Bacopa monnieri",
+                  "form": "Bacopin"
+                },
+                {
+                  "pos": 4,
+                  "name": "Lemon Balm",
+                  "latin": "Melissa officinalis",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 5,
+                  "name": "Ashwagandha",
+                  "latin": "Withania somnifera"
+                },
+                {
+                  "pos": 6,
+                  "name": "Astaxanthin",
+                  "form": "from Haematococcus pluvialis microalgae"
+                },
+                {
+                  "pos": 7,
+                  "name": "Elderberry",
+                  "latin": "Sambucus nigra",
+                  "part": "fruit"
+                }
+              ],
+              "as_labeled": "Organic Aloe Vera (Inner Leaf, Freeze Dried), Orgen-B's® (Certified Organic Blend of Guava, Holy Basil and Citrus Limon extracts), Bacopa monnieri (Bacopin®), Lemon Balm Leaf (Melissa officinalis), Ashwaganda (Withania somnifera), Astaxanthin (vegetable sourced from the microalgae, Haematococcus pluvialis), and Elderberry Fruit (Sambucus nigra L.) extracts"
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "natural elderberry juice concentrate",
+            "organic acacia fiber",
+            "malic acid",
+            "citric acid",
+            "natural black cherry flavor",
+            "potassium sorbate (to preserve freshness)",
+            "Luo Han Guo fruit extract"
+          ],
+          "source_label": "Supplement-Facts-Rebalance.png"
+        }
+      ]
+    },
+    "rejuvenate-rewind-restore": {
+      "product_id": "rejuvenate-rewind-restore",
+      "name": "Rejuvenate, Rewind, Restore",
+      "sku": "USYG70006",
+      "ygy_id": "10453",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Riboflavin",
+              "amount": 1.3,
+              "unit": "mg",
+              "pct_dv": 100
+            },
+            {
+              "name": "Niacin",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 63
+            },
+            {
+              "name": "Copper",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 111,
+              "form": "as copper gluconate"
+            },
+            {
+              "name": "Fisetin",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Cotinus coggygria",
+              "part": "stem and leaf"
+            },
+            {
+              "name": "Quercetin",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "dihydrate",
+              "latin": "Sophora japonica",
+              "part": "flower bud"
+            },
+            {
+              "name": "D-Ribose",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Coenzyme Q10",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Black Pepper",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "fruit",
+              "form": "BioPerine extract",
+              "latin": "Piper nigrum"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Hypromellose",
+            "microcrystalline cellulose",
+            "magnesium stearate",
+            "silicon dioxide"
+          ],
+          "source_label": "rejuvenate-rewind-restore_suppfacts_0725.jpg"
+        }
+      ]
+    },
+    "renu-iq": {
+      "product_id": "renu-iq",
+      "name": "Renu iQ™",
+      "sku": "USAD500007",
+      "ygy_id": "7108",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "1 scoop (8 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 30,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 7,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "total_sugars": {
+              "amount": 6,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 5,
+              "unit": "g",
+              "pct_dv": 10
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin D3",
+              "amount": 40,
+              "unit": "mcg",
+              "pct_dv": 200,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 1.7,
+              "unit": "mg",
+              "pct_dv": 100,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Folate",
+              "amount": 801,
+              "unit": "mcg",
+              "pct_dv": 200,
+              "unit_detail": "DFE",
+              "form": "as folic acid (471 mcg)"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": 8334,
+              "form": "as methylcobalamin"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Renu Proprietary Blend",
+              "total": {
+                "amount": 1540,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Pomegranate",
+                  "part": "fruit",
+                  "form": "powder"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bacopa",
+                  "latin": "Bacopa monnieri"
+                },
+                {
+                  "pos": 3,
+                  "name": "Grape",
+                  "part": "seed",
+                  "form": "extract",
+                  "standardization": "min. 95% polyphenols"
+                },
+                {
+                  "pos": 4,
+                  "name": "Rhodiola",
+                  "part": "root",
+                  "form": "extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Resveratrol"
+                }
+              ],
+              "as_labeled": "Pomegranate Fruit Powder, Bacopa monnieri, Grape Seed Extract (min 95% polyphenols), Rhodiola Root Extract, Resveratrol"
+            }
+          ],
+          "other_ingredients": [
+            "Organic dried cane syrup",
+            "citric acid",
+            "natural flavors (mixed berry, strawberry & pineapple)",
+            "stevia"
+          ],
+          "source_label": "renuiq_label_1025_1.jpg"
+        }
+      ]
+    },
+    "respiratory-support": {
+      "product_id": "respiratory-support",
+      "name": "Respiratory Support",
+      "sku": "USGH000010",
+      "ygy_id": "705",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (tincture)",
+          "serving_size": "2 mL (approx. 1/2 tsp or 40 drops)",
+          "servings_per_container": 60,
+          "extract_ratio": "1:4 (250 mg herb per 1 mL)",
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Extract Blend",
+              "total": {
+                "amount": 1900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Garlic",
+                  "part": "bulb"
+                },
+                {
+                  "pos": 2,
+                  "name": "Mullein",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 3,
+                  "name": "Oatstraw",
+                  "part": "herb"
+                },
+                {
+                  "pos": 4,
+                  "name": "Blessed Thistle",
+                  "part": "herb"
+                },
+                {
+                  "pos": 5,
+                  "name": "Elecampane",
+                  "part": "root"
+                },
+                {
+                  "pos": 6,
+                  "name": "Marshmallow",
+                  "part": "root"
+                },
+                {
+                  "pos": 7,
+                  "name": "Bugleweed",
+                  "part": "herb"
+                },
+                {
+                  "pos": 8,
+                  "name": "Yerba Santa",
+                  "part": "herb"
+                }
+              ],
+              "as_labeled": "Garlic Bulb, Mullein Leaf, Oatstraw Herb, Blessed Thistle Herb, Elecampane Root, Marshmallow Root, Bugleweed Herb, Yerba Santa Herb"
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "ethyl alcohol (35-45%)"
+          ],
+          "source_label": "gh-respiratory-support_suppfacts-1221_cart_1200x900.jpg"
+        }
+      ]
+    },
+    "reverse": {
+      "product_id": "reverse",
+      "name": "ReVERSE!®",
+      "sku": "USFL000172",
+      "ygy_id": "950",
+      "components": [
+        {
+          "role": "multivitamin tablets",
+          "form": "tablet",
+          "serving_size": "6 tablets",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 3000,
+              "unit": "mcg",
+              "pct_dv": 333,
+              "form": "as beta carotene",
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": 222,
+              "form": "as calcium ascorbate, sodium isoascorbate, citrus glycosyl flavones"
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 125,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 134,
+              "unit": "mg",
+              "pct_dv": 893,
+              "form": "as d-alpha tocopheryl succinate with mixed tocopherols and tocotrienols"
+            },
+            {
+              "name": "Vitamin K",
+              "amount": 45,
+              "unit": "mcg",
+              "pct_dv": 38,
+              "form": "as phylloquinone"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 4167,
+              "form": "as thiamin mononitrate"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 3846
+            },
+            {
+              "name": "Niacin",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 313,
+              "form": "as niacin, niacinamide and inositol hexanicotinate"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 2941,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Folate",
+              "amount": 1333,
+              "unit": "mcg",
+              "pct_dv": 333,
+              "unit_detail": "DFE",
+              "form": "as folic acid (800 mcg)"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 4167,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 300,
+              "unit": "mcg",
+              "pct_dv": 1000
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 1000,
+              "form": "as D-calcium pantothenate"
+            },
+            {
+              "name": "Calcium",
+              "amount": 1200,
+              "unit": "mg",
+              "pct_dv": 92,
+              "form": "as calcium carbonate, hydroxyapatite, citrate, ascorbate"
+            },
+            {
+              "name": "Phosphorus",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 8,
+              "form": "from hydroxyapatite"
+            },
+            {
+              "name": "Iodine",
+              "amount": 150,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "from kelp"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 400,
+              "unit": "mg",
+              "pct_dv": 95,
+              "form": "as magnesium oxide and citrate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": 136,
+              "form": "as zinc citrate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": 364,
+              "form": "as selenium amino acid chelate"
+            },
+            {
+              "name": "Copper",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 222,
+              "form": "as copper gluconate"
+            },
+            {
+              "name": "Manganese",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 87,
+              "form": "as manganese gluconate"
+            },
+            {
+              "name": "Chromium",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": 571,
+              "form": "as chromium nicotinate glycinate chelate"
+            },
+            {
+              "name": "Molybdenum",
+              "amount": 75,
+              "unit": "mcg",
+              "pct_dv": 167,
+              "form": "as molybdenum glycinate chelate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 1,
+              "form": "as potassium citrate"
+            },
+            {
+              "name": "Boron",
+              "amount": 700,
+              "unit": "mcg",
+              "pct_dv": null,
+              "form": "as boron glycinate chelate"
+            },
+            {
+              "name": "Vanadium",
+              "amount": 50,
+              "unit": "mcg",
+              "pct_dv": null,
+              "form": "as vanadium nicotinate glycinate chelate"
+            },
+            {
+              "name": "Bacillus coagulans",
+              "amount": 850,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "microencapsulated culture, 100 million viable cells, with prebiotic cellulose fiber"
+            },
+            {
+              "name": "GoZanthene",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Lycium barbarum",
+              "form": "goji lipophilic fraction with marigold extract",
+              "standardization": "1500 mcg carotenoids (zeaxanthin, lutein, lycopene)"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Glutathione Co-Factors with Vegetable Thiols",
+              "total": {
+                "amount": 450,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Alpha-Lipoic Acid"
+                },
+                {
+                  "pos": 2,
+                  "name": "L-Glutamine"
+                },
+                {
+                  "pos": 3,
+                  "name": "Methylsulfonylmethane"
+                },
+                {
+                  "pos": 4,
+                  "name": "N-Acetyl-L-Cysteine"
+                },
+                {
+                  "pos": 5,
+                  "name": "Broccoli",
+                  "part": "floret"
+                },
+                {
+                  "pos": 6,
+                  "name": "Garlic",
+                  "part": "bulb"
+                }
+              ],
+              "as_labeled": "alpha-Lipoic acid (ALA), L-glutamine, methylsulfonylmethane, N-acetyl-L-cysteine (NAC), broccoli floret and garlic bulb"
+            },
+            {
+              "name": "Bio-Active Polyphenol Complex",
+              "total": {
+                "amount": 100,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Green Tea",
+                  "part": "leaf",
+                  "form": "extract",
+                  "standardization": "98% polyphenols"
+                },
+                {
+                  "pos": 2,
+                  "name": "Pomegranate",
+                  "part": "fruit",
+                  "form": "extract",
+                  "standardization": "20% ellagitannins"
+                },
+                {
+                  "pos": 3,
+                  "name": "Cocoa"
+                },
+                {
+                  "pos": 4,
+                  "name": "Quercetin",
+                  "form": "dihydrate"
+                }
+              ],
+              "as_labeled": "Green tea leaf extract (98% polyphenols), pomegranate fruit extract (20% ellagitannins), cocoa, quercetin dihydrate"
+            },
+            {
+              "name": "Res-V-Plex",
+              "total": {
+                "amount": 155,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Grape",
+                  "part": "seed",
+                  "form": "OPC 95% extract"
+                },
+                {
+                  "pos": 2,
+                  "name": "Red Grape",
+                  "part": "skin",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Japanese Knotweed",
+                  "part": "root",
+                  "form": "extract"
+                }
+              ],
+              "as_labeled": "Grape seed OPC 95% extract with extracts of red grape skin and Japanese knotweed root, providing 30 mg trans-resveratrol"
+            },
+            {
+              "name": "Spice of Life Antioxidant Blend",
+              "total": {
+                "amount": 50,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Ginger",
+                  "part": "root",
+                  "form": "extract",
+                  "standardization": "5% gingerols"
+                },
+                {
+                  "pos": 2,
+                  "name": "Oregano",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 3,
+                  "name": "Cinnamon",
+                  "part": "bark",
+                  "form": "extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "Rosemary",
+                  "part": "leaf",
+                  "standardization": "6% rosmarinic acid"
+                },
+                {
+                  "pos": 5,
+                  "name": "Turmeric",
+                  "part": "rhizome",
+                  "standardization": "95% curcumin"
+                }
+              ],
+              "as_labeled": "Standardized extracts of ginger root (5% gingerols), oregano leaf, cinnamon bark extract, rosemary leaf (6% rosmarinic acid) and turmeric rhizome (95% curcumin)"
+            },
+            {
+              "name": "Balancing Adaptogen Blend",
+              "total": {
+                "amount": 200,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Ginseng",
+                  "latin": "Panax",
+                  "part": "root (whole plant)",
+                  "form": "extract"
+                },
+                {
+                  "pos": 2,
+                  "name": "Astragalus",
+                  "part": "root",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Reishi Mushroom",
+                  "form": "extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "Schizandra",
+                  "part": "berry",
+                  "form": "extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Shiitake Mushroom",
+                  "form": "extract"
+                }
+              ],
+              "as_labeled": "Extracts of Panax ginseng root (whole plant), astragalus root, reishi mushroom, schizandra berry and shiitake mushroom"
+            }
+          ],
+          "other_ingredients": [
+            "Stearic acid",
+            "coating (hypromellose, glycerine, hydroxypropyl cellulose)",
+            "magnesium stearate",
+            "silica"
+          ],
+          "source_label": "tai-wellness_reverse_usfl000172_0824_suppfacts_1.jpg"
+        },
+        {
+          "role": "omega-3 softgels",
+          "form": "softgel",
+          "serving_size": "2 softgels",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 20,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 3
+            }
+          },
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Marine Lipid Concentrate",
+              "total": {
+                "amount": 2400,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Omega-3 fatty acids",
+                  "amount": 1200,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 2,
+                  "name": "EPA",
+                  "amount": 720,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 3,
+                  "name": "DHA",
+                  "amount": 480,
+                  "unit": "mg"
+                }
+              ],
+              "as_labeled": "Marine Lipid Concentrate (highly refined), Omega-3 fatty acids (1,200 mg): EPA - eicosapentaenoic acid (720 mg), DHA - docosahexaenoic acid (480 mg)"
+            }
+          ],
+          "other_ingredients": [
+            "Gelatin",
+            "glycerin",
+            "mixed tocopherols (as an antioxidant)"
+          ],
+          "source_label": "tai-wellness_reverse_usfl000172_0824_suppfacts_1.jpg"
+        }
+      ]
+    },
+    "root-beer-belly": {
+      "product_id": "root-beer-belly",
+      "name": "Root Beer Belly - 30 Count Box",
+      "sku": "USYG100000",
+      "ygy_id": "777",
+      "components": [
+        {
+          "role": null,
+          "form": "powder (drink packet)",
+          "serving_size": "2 g (1 packet)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 4,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "total_carbohydrate": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "total_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "protein": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": "<20",
+              "unit": "mg",
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Potassium",
+              "amount": "<30",
+              "unit": "mg",
+              "pct_dv": "<1"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Probiotic Blend",
+              "total": null,
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Lactobacillus acidophilus"
+                },
+                {
+                  "pos": 2,
+                  "name": "Lactobacillus plantarum"
+                },
+                {
+                  "pos": 3,
+                  "name": "Lactobacillus rhamnosus"
+                },
+                {
+                  "pos": 4,
+                  "name": "Bifidobacterium breve"
+                },
+                {
+                  "pos": 5,
+                  "name": "Bifidobacterium lactis"
+                }
+              ],
+              "as_labeled": "Proprietary Probiotic Blend Guaranteed 5.0 Billion; Proprietary Probiotic Strain Blend of 5: Lactobacillus acidophilus, Lactobacillus plantarum, Lactobacillus rhamnosus, Bifidobacterium breve, Bifidobacterium lactis"
+            }
+          ],
+          "other_ingredients": [
+            "Xylitol",
+            "fructooligosaccharide",
+            "erythritol",
+            "natural flavors",
+            "citric acid",
+            "silica"
+          ],
+          "source_label": "ygy-usyg100000-root-beer-belly-suppfacts-1012.jpg"
+        }
+      ]
+    },
+    "refresh-fx": {
+      "product_id": "refresh-fx",
+      "name": "Refresh FX™",
+      "sku": "USYG103200",
+      "ygy_id": "10497",
+      "components": [
+        {
+          "role": null,
+          "form": "powder (stick pack)",
+          "serving_size": "1 stick pack (approx. 13.2 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 50,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 11,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "total_sugars": {
+              "amount": 10,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 360,
+              "unit": "mcg",
+              "pct_dv": 40,
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 30,
+              "unit": "mcg",
+              "pct_dv": 152,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 0.5,
+              "unit": "mg",
+              "pct_dv": 3
+            },
+            {
+              "name": "Thiamin",
+              "amount": 7,
+              "unit": "mcg",
+              "pct_dv": 583,
+              "form": "as thiamine hydrochloride"
+            },
+            {
+              "name": "Niacin",
+              "amount": 22,
+              "unit": "mg",
+              "pct_dv": 138
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 8,
+              "unit": "mg",
+              "pct_dv": 471,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 136,
+              "unit": "mcg",
+              "pct_dv": 5667,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 100,
+              "form": "as calcium d-pantothenate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 9
+            },
+            {
+              "name": "Chloride",
+              "amount": 72,
+              "unit": "mg",
+              "pct_dv": 3
+            },
+            {
+              "name": "Sodium",
+              "amount": 42,
+              "unit": "mg",
+              "pct_dv": 2
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 980,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "D-Glucuronolactone"
+                },
+                {
+                  "pos": 2,
+                  "name": "Green Tea",
+                  "latin": "Camellia sinensis",
+                  "part": "leaf",
+                  "form": "extract",
+                  "standardization": "providing polyphenols and natural caffeine"
+                },
+                {
+                  "pos": 3,
+                  "name": "Inositol"
+                }
+              ],
+              "as_labeled": "D-Glucuronolactone, Green Tea Extract (Camellia sinensis (leaf)) (providing Polyphenols and natural caffeine), Inositol"
+            }
+          ],
+          "other_ingredients": [
+            "Fructose",
+            "citric acid",
+            "natural flavors",
+            "fruit & vegetable powder (color)",
+            "stevia extract (sweetener)",
+            "silicon dioxide",
+            "salt"
+          ],
+          "source_label": "refresh-fx_0126_supp-facts.jpg"
+        }
+      ]
+    },
+    "rvb-350": {
+      "product_id": "rvb-350",
+      "name": "RVB 350 (Beta 1, 3/1, 6-Glucan)",
+      "sku": "USRS000005",
+      "ygy_id": "10130",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 60,
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary RVB350 Blend",
+              "total": {
+                "amount": 595,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Beta 1,3/1,6 D Glucan Complex",
+                  "latin": "Saccharomyces cerevisiae",
+                  "form": "from S. cerevisiae"
+                },
+                {
+                  "pos": 2,
+                  "name": "MOS",
+                  "latin": "Saccharomyces cerevisiae",
+                  "form": "Manno-Oligosaccharides from S. cerevisiae"
+                },
+                {
+                  "pos": 3,
+                  "name": "Turkey Tail Mushroom",
+                  "part": "fruiting body",
+                  "form": "organic extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "Poria Mushroom",
+                  "part": "fruiting body",
+                  "form": "organic extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Reishi Mushroom",
+                  "part": "fruiting body",
+                  "form": "organic extract"
+                }
+              ],
+              "as_labeled": "350 mg Beta-1,3/1,6-Glucan; Beta 1,3/1,6 D Glucan Complex (from saccharomyces cerevisiae), MOS (Manno-Oligosaccharides from saccharomyces cerevisiae), Organic Turkey Tail Mushroom Extract (fruiting body), Organic Poria Mushroom Extract (fruiting body), Organic Reishi Mushroom Extract (fruiting body)"
+            }
+          ],
+          "other_ingredients": [
+            "Vegetarian capsule (hypromellose and water)",
+            "silicon dioxide"
+          ],
+          "source_label": "rvb_350_supp-fact_1024.jpg"
+        }
+      ]
+    },
+    "ryl-beta550": {
+      "product_id": "ryl-beta550",
+      "name": "RYL BETA550 (Beta-1, 3/1, 6-Glucan)",
+      "sku": "USRS000006",
+      "ygy_id": "10132",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 60,
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary RYL550 Blend",
+              "total": {
+                "amount": 705,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Beta 1,3/1,6 D Glucan Complex",
+                  "latin": "Saccharomyces cerevisiae",
+                  "form": "from S. cerevisiae"
+                },
+                {
+                  "pos": 2,
+                  "name": "MOS",
+                  "latin": "Saccharomyces cerevisiae",
+                  "form": "Manno-Oligosaccharides from S. cerevisiae"
+                },
+                {
+                  "pos": 3,
+                  "name": "Turkey Tail Mushroom",
+                  "part": "fruiting body",
+                  "form": "organic extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "Poria Mushroom",
+                  "part": "fruiting body",
+                  "form": "organic extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Reishi Mushroom",
+                  "part": "fruiting body",
+                  "form": "organic extract"
+                }
+              ],
+              "as_labeled": "550 mg Beta-1,3/1,6-Glucan; Beta 1,3/1,6 D Glucan Complex (from saccharomyces cerevisiae), MOS (Manno-Oligosaccharides from saccharomyces cerevisiae), Organic Turkey Tail Mushroom Extract (fruiting body), Organic Poria Mushroom Extract (fruiting body), Organic Reishi Mushroom Extract (fruiting body)"
+            }
+          ],
+          "other_ingredients": [
+            "Vegetarian capsule (hypromellose and water)",
+            "silicon dioxide"
+          ],
+          "source_label": "ryl_beta550_supp-fact_1024.jpg"
+        }
+      ]
     }
   }
 }

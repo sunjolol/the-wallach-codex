@@ -129,7 +129,7 @@ def check_component(where: str, c: dict) -> None:
         check_token(f"{where}.other_ingredients[{i}]", oi, max_len=OTHER_ING_MAX)
     # source label
     sl = c.get("source_label")
-    if not isinstance(sl, str) or not sl.lower().endswith(".jpg"):
+    if not isinstance(sl, str) or not sl.lower().endswith((".jpg", ".jpeg", ".png")):
         err(where + ".source_label", f"missing/invalid label ref: {sl!r}")
 
 
