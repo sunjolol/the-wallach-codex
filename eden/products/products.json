@@ -12728,6 +12728,585 @@
           "source_label": "13211_oxy-body-cherry-berry-0120_panel-900x1200.jpg"
         }
       ]
+    },
+    "pancreas-support": {
+      "product_id": "pancreas-support",
+      "name": "Pancreas Support",
+      "sku": "USGH000015",
+      "ygy_id": "699",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (tincture)",
+          "serving_size": "2 mL (approx. 1/2 tsp or 40 drops)",
+          "servings_per_container": 60,
+          "extract_ratio": "1:4 (250 mg herb per 1 mL)",
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Extract Blend",
+              "total": {
+                "amount": 1900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Bilberry",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bitter Melon",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 3,
+                  "name": "Gymnema",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 4,
+                  "name": "Hawthorn",
+                  "part": "berry"
+                }
+              ],
+              "as_labeled": "Bilberry Fruit, Bitter Melon Fruit, Gymnema Leaf, Hawthorn Berry"
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "ethyl alcohol (35-45%)"
+          ],
+          "source_label": "gh-pancreas-support_supp-facts-1021_cart_1200x900.jpg"
+        }
+      ]
+    },
+    "prostate-health": {
+      "product_id": "prostate-health",
+      "name": "Prostate Health",
+      "sku": "USGH000005",
+      "ygy_id": "702",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (tincture)",
+          "serving_size": "2 mL (approx. 1/2 tsp or 40 drops)",
+          "servings_per_container": 60,
+          "extract_ratio": "1:4 (250 mg herb per 1 mL)",
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Extract Blend",
+              "total": {
+                "amount": 1900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Buchu",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 2,
+                  "name": "Nettle",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 3,
+                  "name": "Saw Palmetto",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 4,
+                  "name": "Calendula",
+                  "part": "flower"
+                },
+                {
+                  "pos": 5,
+                  "name": "Cat's Claw",
+                  "part": "bark"
+                },
+                {
+                  "pos": 6,
+                  "name": "Shiitake Mushroom"
+                }
+              ],
+              "as_labeled": "Buchu Leaf, Nettle Leaf, Saw Palmetto Fruit, Calendula Flower, Cat's Claw Bark, Shiitake Mushroom"
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "ethyl alcohol (35-45%)"
+          ],
+          "source_label": "gh-prostate-health_suppfacts-0422_cart_1200x900.jpg"
+        }
+      ]
+    },
+    "procardio-fx": {
+      "product_id": "procardio-fx",
+      "name": "ProCardio FX™",
+      "sku": "USYG100093",
+      "ygy_id": "8282",
+      "components": [
+        {
+          "role": null,
+          "form": "softgel",
+          "serving_size": "2 softgels",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 15,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 1
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin D",
+              "amount": 12.5,
+              "unit": "mcg",
+              "pct_dv": 63,
+              "form": "as cholecalciferol",
+              "label_iu": 500
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 7,
+              "unit": "mg",
+              "pct_dv": 49,
+              "form": "as d-alpha tocopherol",
+              "label_iu": 11
+            },
+            {
+              "name": "Iodine",
+              "amount": 50,
+              "unit": "mcg",
+              "pct_dv": 33,
+              "form": "from kelp"
+            },
+            {
+              "name": "Selenium",
+              "amount": 50,
+              "unit": "mcg",
+              "pct_dv": 91,
+              "form": "as selenium yeast"
+            },
+            {
+              "name": "Turmeric",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "root",
+              "latin": "Curcuma longa",
+              "form": "extract",
+              "standardization": "95% curcuminoids"
+            },
+            {
+              "name": "Resveratrol",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Polygonum cuspidatum"
+            },
+            {
+              "name": "Quercetin",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as dihydrate"
+            },
+            {
+              "name": "Coenzyme Q10",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Garlic",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "oil concentrate",
+              "standardization": "500:1"
+            },
+            {
+              "name": "Black Pepper",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "fruit",
+              "form": "BioPerine extract"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Omega-3 Fish Oil",
+              "total": {
+                "amount": 1000,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "EPA",
+                  "amount": 330,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 2,
+                  "name": "DHA",
+                  "amount": 220,
+                  "unit": "mg"
+                }
+              ],
+              "as_labeled": "Omega-3 Fish Oil, providing EPA (Eicosapentaenoic Acid) 330 mg, DHA (Docosahexaenoic Acid) 220 mg"
+            }
+          ],
+          "other_ingredients": [
+            "Highly refined and concentrated Omega-3 Fish Oil (anchovy, sardine, mackerel)",
+            "Capsule Shell (gelatin, glycerin, purified water, caramel)",
+            "beeswax",
+            "sunflower lecithin",
+            "natural mixed tocopherols"
+          ],
+          "source_label": "usyg100093_procardio-fx-0921_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "projoint-fx": {
+      "product_id": "projoint-fx",
+      "name": "ProJoint FX™",
+      "sku": "USYG100092",
+      "ygy_id": "6009",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "3 capsules",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin D",
+              "amount": 18.5,
+              "unit": "mcg",
+              "pct_dv": 93,
+              "form": "as cholecalciferol",
+              "label_iu": 740
+            },
+            {
+              "name": "Calcium",
+              "amount": 375,
+              "unit": "mg",
+              "pct_dv": 29,
+              "form": "as calcium carbonate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 225,
+              "unit": "mg",
+              "pct_dv": 54,
+              "form": "as magnesium oxide"
+            },
+            {
+              "name": "Vitamin K2",
+              "amount": 113,
+              "unit": "mcg",
+              "pct_dv": null,
+              "form": "as menaquinone-7"
+            },
+            {
+              "name": "Trace Mineral Complex",
+              "amount": 75,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from red algae"
+            },
+            {
+              "name": "Silicon",
+              "amount": 1.5,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from bamboo extract"
+            },
+            {
+              "name": "Boron",
+              "amount": 750,
+              "unit": "mcg",
+              "pct_dv": null,
+              "form": "as boron chelate"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Joint Rebuild Complex",
+              "total": null,
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Glucosamine",
+                  "form": "HCl",
+                  "amount": 375,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 2,
+                  "name": "MSM",
+                  "form": "methylsulfonylmethane",
+                  "amount": 75,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 3,
+                  "name": "Collagen Type II",
+                  "form": "from chicken",
+                  "amount": 28,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 4,
+                  "name": "Hyaluronic Acid",
+                  "form": "as sodium hyaluronate",
+                  "amount": 15,
+                  "unit": "mg"
+                }
+              ],
+              "as_labeled": "Glucosamine HCl, Methylsulfonylmethane (MSM), Collagen Type II (chicken), Hyaluronic Acid (as sodium hyaluronate)"
+            },
+            {
+              "name": "Joint Relief Complex",
+              "total": null,
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Turmeric",
+                  "part": "rhizome",
+                  "form": "extract",
+                  "standardization": "min. 95% curcuminoids",
+                  "amount": 225,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 2,
+                  "name": "Olive",
+                  "part": "leaf",
+                  "form": "extract",
+                  "amount": 188,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 3,
+                  "name": "Hops",
+                  "part": "strobile",
+                  "form": "extract",
+                  "amount": 150,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 4,
+                  "name": "Boswellia serrata",
+                  "form": "extract",
+                  "amount": 113,
+                  "unit": "mg"
+                }
+              ],
+              "as_labeled": "Turmeric rhizome extract (min. 95% curcuminoids), Olive leaf extract, Hops extract (strobile), Boswellia serrata extract"
+            }
+          ],
+          "other_ingredients": [
+            "Hypromellose",
+            "magnesium stearate",
+            "silica",
+            "microcrystalline cellulose"
+          ],
+          "source_label": "projoint-fx_suppfacts_0622.jpg"
+        }
+      ]
+    },
+    "projoba-profemme": {
+      "product_id": "projoba-profemme",
+      "name": "ProJoba Profemme™ - 60 tablets",
+      "sku": "PJ400",
+      "ygy_id": "982",
+      "components": [
+        {
+          "role": null,
+          "form": "tablet",
+          "serving_size": "2 tablets",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 500,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Flower Pollen",
+                  "latin": "Secale cereale",
+                  "form": "Graminex G63 concentrated extract",
+                  "standardization": "20:1 (G60:GFX)"
+                }
+              ],
+              "as_labeled": "Graminex G63™ Flower Pollen Extract (concentrated pollen extract [Secale cereale L.]) [Standardized extract 20:1]; [G60:GFX]"
+            }
+          ],
+          "other_ingredients": [
+            "Microcrystalline Cellulose",
+            "Maltodextrin",
+            "Silicon Dioxide",
+            "Calcium Stearate",
+            "Monocalcium Phosphate",
+            "Hydroxypropyl Cellulose",
+            "Gum Arabic",
+            "Opadry ns"
+          ],
+          "source_label": "pj-pj400-profemme-suppfacts-0515.jpg"
+        }
+      ]
+    },
+    "projoba-prostat": {
+      "product_id": "projoba-prostat",
+      "name": "Projoba Prostat - 60 tablets",
+      "sku": "PJ102",
+      "ygy_id": "561",
+      "components": [
+        {
+          "role": null,
+          "form": "tablet",
+          "serving_size": "2 tablets",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 500,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Flower Pollen",
+                  "latin": "Secale cereale",
+                  "form": "Graminex G63 concentrated extract",
+                  "standardization": "20:1 (G60:GFX)"
+                }
+              ],
+              "as_labeled": "Graminex G63™ Flower Pollen Extract (concentrated pollen extract [Secale cereale L.]) [Standardized extract 20:1]; [G60:GFX]"
+            }
+          ],
+          "other_ingredients": [
+            "Microcrystalline Cellulose",
+            "Maltodextrin",
+            "Silicon Dioxide",
+            "Calcium Stearate",
+            "Monocalcium Phosphate",
+            "Hydroxypropyl Cellulose",
+            "Gum Arabic",
+            "Opadry ns"
+          ],
+          "source_label": "pj-pj102-prostat-suppfacts-0515.jpg"
+        }
+      ]
+    },
+    "purmeric": {
+      "product_id": "purmeric",
+      "name": "Purmeric™ - 60 Organic Capsules",
+      "sku": "USYG100088",
+      "ygy_id": "551",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Turmeric",
+              "amount": 500,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "rhizome",
+              "form": "organic extract",
+              "standardization": "95% curcuminoids"
+            },
+            {
+              "name": "Black Pepper",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "fruit",
+              "form": "BioPerine extract",
+              "latin": "Piper nigrum"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Organic acacia gum",
+            "hypromellose",
+            "organic bamboo shoot & leaf extract"
+          ],
+          "source_label": "purmeric-supp-facts_0724_900x1200.jpg"
+        }
+      ]
+    },
+    "plant-derived-minerals": {
+      "product_id": "plant-derived-minerals",
+      "name": "Plant Derived Minerals™",
+      "sku": "13203",
+      "ygy_id": "6750",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "1 fl oz (2 tablespoons)",
+          "servings_per_container": 32,
+          "macros": {
+            "calories": {
+              "amount": 5,
+              "unit": null,
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Plant Derived Minerals",
+              "amount": 600,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "Majestic Earth"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Purified water"
+          ],
+          "source_label": "13203_plant_derived_minerals_supfacts.jpg"
+        }
+      ]
     }
   }
 }

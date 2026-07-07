@@ -25,7 +25,7 @@ Deluxe Nutritional Energy · Nutritional Alert Program · On-The-Go Healthy Body
 - Manuka Force Lemon Honey Lozenges (USLF700002) — RESOLVED 2026-07-07: Luneth supplied `manuka-force-lemon-honey-lozenges_nfp_0126.jpg`; extracted as `manuka-force-lemon-honey-lozenges` (food-format lozenge).
 - Multi-Collagen Peptide Gummies (USYG100506)
 - Nano Balance (USLF700001) — RESOLVED 2026-07-07: Luneth supplied `nano-balance-tincture_1224_supp-facts.jpg`; extracted as `nano-balance` (glycerin-based liquid, Curcumin Complex Blend 500mg).
-- Plant Derived Minerals (13203)
+- Plant Derived Minerals (13203) — RESOLVED 2026-07-07: Luneth supplied `13203_plant_derived_minerals_supfacts.jpg`; extracted as `plant-derived-minerals` (liquid, Majestic Earth Plant Derived Minerals 600mg).
 - Refresh FX (USYG103200)
 - RVB 350 (USRS000005) + RYL BETA550 (USRS000006)
 - Super Collagen Shot (USYG300055)
