@@ -8680,6 +8680,457 @@
           "source_label": "fucoidz_label-1025.jpg"
         }
       ]
+    },
+    "gi-cleanse": {
+      "product_id": "gi-cleanse",
+      "name": "G.I. Cleanse",
+      "sku": "USGH000016",
+      "ygy_id": "572",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (tincture)",
+          "serving_size": "2 mL (approx. 1/2 tsp or 40 drops)",
+          "servings_per_container": 60,
+          "extract_ratio": "1:4 (250 mg herb per 1 mL)",
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Extract Blend",
+              "total": {
+                "amount": 1900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Wormwood",
+                  "part": "herb"
+                },
+                {
+                  "pos": 2,
+                  "name": "Papaya",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 3,
+                  "name": "Pumpkin",
+                  "part": "seed"
+                },
+                {
+                  "pos": 4,
+                  "name": "Black Walnut",
+                  "part": "hull"
+                },
+                {
+                  "pos": 5,
+                  "name": "Clove",
+                  "part": "bud"
+                }
+              ],
+              "as_labeled": "Wormwood Herb, Papaya Fruit, Pumpkin Seed, Black Walnut Hull, Cloves Bud"
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "ethyl alcohol (35-45%)"
+          ],
+          "source_label": "usgh000016_gh-gi-cleanse-0521_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "get-go-n-plus": {
+      "product_id": "get-go-n-plus",
+      "name": "Get Go N Plus",
+      "sku": "USBI000010",
+      "ygy_id": "936",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "2 scoops (10 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 35,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "dietary_fiber": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "total_sugars": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": 18
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": 170,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 830,
+              "form": "as thiamin hydrochloride"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 1.7,
+              "unit": "mg",
+              "pct_dv": 130
+            },
+            {
+              "name": "Niacin",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 310,
+              "form": "as niacin and niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 590,
+              "form": "as pyridoxine hydrochloride and pyridoxal 5-phosphate"
+            },
+            {
+              "name": "Folate",
+              "amount": 400,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "as folic acid"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 6,
+              "unit": "mcg",
+              "pct_dv": 250,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 200,
+              "form": "as d-calcium pantothenate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 45,
+              "form": "as zinc gluconate"
+            },
+            {
+              "name": "Copper",
+              "amount": 0.6,
+              "unit": "mg",
+              "pct_dv": 70,
+              "form": "as copper gluconate"
+            },
+            {
+              "name": "L-Tyrosine",
+              "amount": 500,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Caffeine",
+              "amount": 80,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Fructose",
+            "Honey Granules",
+            "Citric Acid",
+            "Natural Flavors",
+            "Xanthan Gum",
+            "Silicon Dioxide",
+            "Stevia Leaf Extract",
+            "Cinnamon"
+          ],
+          "source_label": "biometics_getgonplus_suppfacts_1124.jpg"
+        }
+      ]
+    },
+    "gluco-gel-plus": {
+      "product_id": "gluco-gel-plus",
+      "name": "Gluco-Gel Plus™ - 32 fl oz",
+      "sku": "USYG100050",
+      "ygy_id": "632",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "1 fl oz (30 mL)",
+          "servings_per_container": 32,
+          "macros": {
+            "calories": {
+              "amount": 18,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 4,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "total_sugars": {
+              "amount": 4,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 4,
+              "unit": "mg",
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Potassium",
+              "amount": 48,
+              "unit": "mg",
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Glucosamine",
+              "amount": 2000,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as hydrochloride (from vegetable)"
+            },
+            {
+              "name": "Chondroitin Sulfate",
+              "amount": 1200,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Antioxidant Blend",
+              "total": {
+                "amount": 7004,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Apple",
+                  "form": "juice concentrate"
+                },
+                {
+                  "pos": 2,
+                  "name": "Açaí",
+                  "form": "puree"
+                },
+                {
+                  "pos": 3,
+                  "name": "Mangosteen",
+                  "part": "fruit",
+                  "form": "extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "Pomegranate",
+                  "form": "juice concentrate"
+                },
+                {
+                  "pos": 5,
+                  "name": "Cranberry",
+                  "part": "fruit",
+                  "form": "extract",
+                  "latin": "Vaccinium macrocarpon"
+                },
+                {
+                  "pos": 6,
+                  "name": "Red Grape",
+                  "part": "fruit",
+                  "form": "concentrate"
+                }
+              ],
+              "as_labeled": "Apple Juice Concentrate, Açaí Puree, Mangosteen Fruit Extract, Pomegranate Juice Concentrate, Cranberry Extract (Vaccinium macrocarpon) (Fruit), Red Grape Fruit Concentrate."
+            }
+          ],
+          "other_ingredients": [
+            "Purified Water",
+            "Potassium Sorbate",
+            "Sodium Benzoate",
+            "Natural Flavor",
+            "Xanthan Gum"
+          ],
+          "source_label": "gluco-gel-plus_suppfacts-0824_1.jpg"
+        }
+      ]
+    },
+    "glucogenix": {
+      "product_id": "glucogenix",
+      "name": "Glucogenix™ - 60 Tablets",
+      "sku": "USYG100087",
+      "ygy_id": "565",
+      "components": [
+        {
+          "role": null,
+          "form": "tablet",
+          "serving_size": "2 tablets",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 5,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "dietary_fiber": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 4
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Chromium",
+              "amount": 70,
+              "unit": "mcg",
+              "pct_dv": 200,
+              "form": "as chromium polynicotinate"
+            },
+            {
+              "name": "Inulin",
+              "amount": 500,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from chicory root"
+            },
+            {
+              "name": "L-Aspartic Acid",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Green Tea",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "leaf",
+              "latin": "Camellia sinensis",
+              "form": "extract"
+            },
+            {
+              "name": "Banaba",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "leaf",
+              "latin": "Lagerstroemia speciosa",
+              "form": "extract"
+            },
+            {
+              "name": "Rhodiola",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "root",
+              "latin": "Rhodiola rosea",
+              "form": "extract"
+            },
+            {
+              "name": "Gymnema",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "leaf",
+              "latin": "Gymnema sylvestre",
+              "form": "extract"
+            },
+            {
+              "name": "Calcareous Marine Algae",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "Aquamin TG"
+            },
+            {
+              "name": "Alpha-Lipoic Acid",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Bitter Melon",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "fruit",
+              "latin": "Momordica charantia",
+              "form": "extract"
+            },
+            {
+              "name": "Clove",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "flower bud",
+              "latin": "Syzygium aromaticum",
+              "form": "powder"
+            },
+            {
+              "name": "Vanadium",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": null,
+              "form": "as vanadium nicotinate amino acid chelate"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Microcrystalline cellulose",
+            "Stearic acid",
+            "Croscarmellose sodium",
+            "Magnesium stearate",
+            "Silica",
+            "Coating (hypromellose, glycerin)"
+          ],
+          "source_label": "glucogenix_box_0925.jpg"
+        }
+      ]
     }
   }
 }
