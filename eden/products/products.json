@@ -10295,6 +10295,75 @@
           "source_label": "733-32_integris-vitamin-k2-suppfacts-1024.jpg"
         }
       ]
+    },
+    "i26-hyperimmune-egg-powder-french-vanilla": {
+      "product_id": "i26-hyperimmune-egg-powder-french-vanilla",
+      "name": "i26 Hyperimmune Egg Powder – French Vanilla",
+      "sku": "USLL005060",
+      "ygy_id": "9965",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "6 g",
+          "servings_per_container": 15,
+          "macros": {
+            "calories": {
+              "amount": 30,
+              "unit": null,
+              "pct_dv": null
+            },
+            "calories_from_fat": {
+              "amount": 18,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 8
+            },
+            "cholesterol": {
+              "amount": 70,
+              "unit": "mg",
+              "pct_dv": 46
+            },
+            "total_carbohydrate": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 2
+            },
+            "added_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "protein": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 8
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 18
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "IgY Max® Hyperimmune Egg Powder",
+            "Natural Vanilla Flavors",
+            "Inulin (from chicory root)",
+            "Stevia Leaf Extract",
+            "Silicon Dioxide",
+            "Monk Fruit Extract"
+          ],
+          "source_label": "i26-egg-powder_french-vanilla_canister-suppfacts_0724.jpg"
+        }
+      ]
     }
   }
 }
