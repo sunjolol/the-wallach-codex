@@ -13307,6 +13307,695 @@
           "source_label": "13203_plant_derived_minerals_supfacts.jpg"
         }
       ]
+    },
+    "pollen-burst-strawberry-acai": {
+      "product_id": "pollen-burst-strawberry-acai",
+      "name": "Pollen Burst™ Energy Drink – Strawberry Acai 30 Count Box",
+      "sku": "PJ730",
+      "ygy_id": "9987",
+      "components": [
+        {
+          "role": null,
+          "form": "powder (drink packet)",
+          "serving_size": "1 packet (12.6 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 45,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 10,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "total_sugars": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": 18
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 300,
+              "unit": "mcg",
+              "pct_dv": 33,
+              "form": "as beta carotene",
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 125,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 417,
+              "form": "as thiamine hydrochloride"
+            },
+            {
+              "name": "Niacin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 125
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 294,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 4167,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 100,
+              "form": "as d-calcium pantothenate"
+            },
+            {
+              "name": "Sodium",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 2
+            },
+            {
+              "name": "Glucuronolactone",
+              "amount": 600,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Caffeine",
+              "amount": 75,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "natural, from coffee bean"
+            },
+            {
+              "name": "Inositol",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 340,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Green Tea",
+                  "form": "extract",
+                  "standardization": "45% EGCG"
+                },
+                {
+                  "pos": 2,
+                  "name": "Superoxide Dismutase/Gliadin Complex",
+                  "form": "GLiSODin"
+                },
+                {
+                  "pos": 3,
+                  "name": "Flower Pollen",
+                  "form": "extract",
+                  "standardization": "G-40"
+                }
+              ],
+              "as_labeled": "Green Tea Extract (45% EGCG), Superoxide Dismutase/Gliadin Complex (GLiSODin®), Pollen Extract (G-40)"
+            }
+          ],
+          "other_ingredients": [
+            "Fructose",
+            "citric acid",
+            "natural flavors",
+            "vegetable juice (for color)",
+            "silicon dioxide",
+            "sea salt",
+            "stevia leaf extract"
+          ],
+          "source_label": "pj730_strawberry-acai-sticks_pollenburst-0224-suppfacts.jpg"
+        }
+      ]
+    },
+    "pollen-burst-dragon-fruit": {
+      "product_id": "pollen-burst-dragon-fruit",
+      "name": "Pollen Burst™ Energy Drink - Dragon Fruit",
+      "sku": "PJ830",
+      "ygy_id": "10021",
+      "components": [
+        {
+          "role": null,
+          "form": "powder (drink packet)",
+          "serving_size": "1 packet (12.6 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 45,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 10,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "total_sugars": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": 18
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 300,
+              "unit": "mcg",
+              "pct_dv": 33,
+              "form": "as beta carotene",
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin D3",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 125,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 417,
+              "form": "as thiamine hydrochloride"
+            },
+            {
+              "name": "Niacin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 125,
+              "form": "as niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 294,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 4167,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 100,
+              "form": "as d-calcium pantothenate"
+            },
+            {
+              "name": "Sodium",
+              "amount": 65,
+              "unit": "mg",
+              "pct_dv": 3
+            },
+            {
+              "name": "Glucuronolactone",
+              "amount": 600,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Caffeine",
+              "amount": 75,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "natural, from coffee bean"
+            },
+            {
+              "name": "Inositol",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 340,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Green Tea",
+                  "form": "extract",
+                  "standardization": "45% EGCG"
+                },
+                {
+                  "pos": 2,
+                  "name": "Superoxide Dismutase/Gliadin Complex",
+                  "form": "GLiSODin"
+                },
+                {
+                  "pos": 3,
+                  "name": "Flower Pollen",
+                  "form": "extract",
+                  "standardization": "G-40"
+                }
+              ],
+              "as_labeled": "Green Tea Extract (45% EGCG), Superoxide Dismutase/Gliadin Complex (GLiSODin®), Pollen Extract (G-40)"
+            }
+          ],
+          "other_ingredients": [
+            "Fructose",
+            "citric acid",
+            "natural flavors",
+            "vegetable juice (for color)",
+            "stevia leaf extract",
+            "sea salt",
+            "silicon dioxide",
+            "dragon fruit extract"
+          ],
+          "source_label": "pj830_dragonfruit-sticks_pollenburst-0524-suppfacts.jpg"
+        }
+      ]
+    },
+    "projoba-pollen-burst-plus-berry": {
+      "product_id": "projoba-pollen-burst-plus-berry",
+      "name": "Projoba Pollen Burst Plus Berry - 30 Packets",
+      "sku": "PJ500",
+      "ygy_id": "330",
+      "components": [
+        {
+          "role": null,
+          "form": "powder (drink packet)",
+          "serving_size": "1 packet (12 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 45,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 10,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "total_sugars": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": 18
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 300,
+              "unit": "mcg",
+              "pct_dv": 33,
+              "form": "as beta carotene",
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin D3",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 125,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 417,
+              "form": "as thiamine hydrochloride"
+            },
+            {
+              "name": "Niacin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 125,
+              "form": "as niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 294,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 4167,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 100,
+              "form": "as d-calcium pantothenate"
+            },
+            {
+              "name": "Glucuronolactone",
+              "amount": 600,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Caffeine",
+              "amount": 75,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "natural"
+            },
+            {
+              "name": "Inositol",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 500,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Superoxide Dismutase/Gliadin Complex",
+                  "form": "GLiSODin"
+                },
+                {
+                  "pos": 2,
+                  "name": "Green Tea",
+                  "form": "extract",
+                  "standardization": "45% EGCG"
+                },
+                {
+                  "pos": 3,
+                  "name": "Flower Pollen",
+                  "form": "extract",
+                  "standardization": "G-40"
+                },
+                {
+                  "pos": 4,
+                  "name": "Blackcurrant",
+                  "form": "cassis pigment extract",
+                  "standardization": "S.D."
+                }
+              ],
+              "as_labeled": "Superoxide Dismutase/Gliadin Complex (GLiSODin®), Green Tea Extract (45% EGCG), Pollen Extract (G-40) and Cassis Pigment Extract (Blackcurrant S.D.)"
+            }
+          ],
+          "other_ingredients": [
+            "Fructose",
+            "citric acid",
+            "natural flavor",
+            "stevia leaf extract",
+            "beet juice powder",
+            "silicon dioxide"
+          ],
+          "source_label": "pollen-burst-plus-berry-30ct-box_suppfacts-0325.jpg"
+        }
+      ]
+    },
+    "projoba-pollen-burst": {
+      "product_id": "projoba-pollen-burst",
+      "name": "ProJoba Pollen Burst™",
+      "sku": "PJ330",
+      "ygy_id": "6758",
+      "components": [
+        {
+          "role": null,
+          "form": "powder (drink packet)",
+          "serving_size": "1 packet (12 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 45,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 10,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "total_sugars": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": 18
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 300,
+              "unit": "mcg",
+              "pct_dv": 33,
+              "form": "as beta carotene",
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin D3",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 125,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 417,
+              "form": "as thiamine hydrochloride"
+            },
+            {
+              "name": "Niacin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 125,
+              "form": "as niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 294,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 4167,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 100,
+              "form": "as d-calcium pantothenate"
+            },
+            {
+              "name": "Glucuronolactone",
+              "amount": 600,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Caffeine",
+              "amount": 75,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "natural"
+            },
+            {
+              "name": "Inositol",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 340,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Superoxide Dismutase/Gliadin Complex",
+                  "form": "GLiSODin"
+                },
+                {
+                  "pos": 2,
+                  "name": "Green Tea",
+                  "form": "extract",
+                  "standardization": "45% EGCG"
+                },
+                {
+                  "pos": 3,
+                  "name": "Flower Pollen",
+                  "form": "extract",
+                  "standardization": "G-40"
+                }
+              ],
+              "as_labeled": "Superoxide Dismutase/Gliadin Complex (GLiSODin®), Green Tea Extract (45% EGCG), and Pollen Extract (G-40)"
+            }
+          ],
+          "other_ingredients": [
+            "Fructose",
+            "citric acid",
+            "natural flavor",
+            "stevia leaf extract",
+            "maltodextrin",
+            "silicon dioxide"
+          ],
+          "source_label": "pollen-burst_orange_30ct-box_suppfacts-0325_1.jpg"
+        }
+      ]
+    },
+    "pollen-burst-plus-daily-liver": {
+      "product_id": "pollen-burst-plus-daily-liver",
+      "name": "Pollen Burst™ Plus - Daily Liver Formula - 60 tablets",
+      "sku": "PJ415",
+      "ygy_id": "6708",
+      "components": [
+        {
+          "role": null,
+          "form": "tablet",
+          "serving_size": "2 tablets",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 340,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Glutathione",
+                  "form": "yeast extract"
+                },
+                {
+                  "pos": 2,
+                  "name": "Aloe Vera",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Flower Pollen",
+                  "form": "extract"
+                }
+              ],
+              "as_labeled": "Glutathione Yeast Extract, Aloe Vera Extract, and Pollen Extract"
+            }
+          ],
+          "other_ingredients": [
+            "Microcrystalline cellulose",
+            "magnesium stearate",
+            "silicon dioxide",
+            "croscarmellose sodium"
+          ],
+          "source_label": "pj415_pollen-burst-daily-liver-0420_panel-900x1200_1.jpg"
+        }
+      ]
+    },
+    "pollen-burst-tabs": {
+      "product_id": "pollen-burst-tabs",
+      "name": "Pollen Burst™ Tabs - 60 tablets",
+      "sku": "PJ302",
+      "ygy_id": "6709",
+      "components": [
+        {
+          "role": null,
+          "form": "tablet",
+          "serving_size": "1 tablet",
+          "servings_per_container": 60,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Flower Pollen",
+              "amount": 68,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "standardized extract"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Cellulose",
+            "dicalcium phosphate",
+            "stearic acid",
+            "magnesium stearate",
+            "silicon dioxide",
+            "croscarmellose sodium"
+          ],
+          "source_label": "pollenburst_suppfacts_0823.jpg"
+        }
+      ]
     }
   }
 }

@@ -15,7 +15,7 @@ So the RELIABLE genuine-missing list = base-unique products still un-extracted A
 - Refrigerator eCrystal (USEW000005)
 
 ## Confirmed bundles among the "ambiguous" (description lists component products → no label)
-Deluxe Nutritional Energy · Nutritional Alert Program · On-The-Go Healthy Body Start Pak 2.0 · Nutritional Energy Basics · Nutritional Energy Program · PigPak® · PigPak® Plus · Super Immune · Super Immune Plus · VitalStart Body Shield · Scholastic Enhancement · Baseline / Baseline Plus / Baseline Ultra · Chocolate/French Vanilla Weight Loss 150 · Healthy Weight Loss Chocolate/French Vanilla
+Deluxe Nutritional Energy · Nutritional Alert Program · On-The-Go Healthy Body Start Pak 2.0 · Nutritional Energy Basics · Nutritional Energy Program · PigPak® · PigPak® Plus · Pollen Burst Combo · Power Pak · Premiere 30 Day Liver Pure Detox (Chocolate / French Vanilla) · Super Immune · Super Immune Plus · VitalStart Body Shield · Scholastic Enhancement · Baseline / Baseline Plus / Baseline Ultra · Chocolate/French Vanilla Weight Loss 150 · Healthy Weight Loss Chocolate/French Vanilla
 
 ## PROVISIONAL genuine-missing candidates (single products, no label seen yet — CONFIRM at end)
 - Activated Charcoal (USLF000112)
