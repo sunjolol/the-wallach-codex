@@ -19,7 +19,7 @@ Deluxe Nutritional Energy · Nutritional Energy Basics · PigPak® · PigPak® P
 
 ## PROVISIONAL genuine-missing candidates (single products, no label seen yet — CONFIRM at end)
 - Activated Charcoal (USLF000112)
-- HOPE (Sta-Natural, ygy 577 / USSN000009) — RESOLVED 2026-07-07: Luneth supplied sn-hope label; extracted as `hope-sta-natural`. HOPE (Youngevity, ygy 10359 / USYG7000) = a women's-healthy-aging BUNDLE of 3 separate products (Life Balance Menopause Support + Rejuvenate/Rewind/Restore + Women's Probiotic COMPLETE, all sold individually) — bundle-modeling pending Luneth's decision (see next-chunk).
+- HOPE (Sta-Natural, ygy 577 / USSN000009) — RESOLVED 2026-07-07: Luneth supplied sn-hope label; extracted as `hope-sta-natural`. HOPE (Youngevity, ygy 10359 / USYG7000) = a BUNDLE (3 sold-separately products: Life Balance Menopause Support + Rejuvenate/Rewind/Restore + Women's Probiotic COMPLETE) → SKIP per standard bundle policy; its parts record individually.
 - Imortalium 120ct (USYG100080)
 - Manuka Force Lemon Honey Lozenges (USLF700002)
 - Multi-Collagen Peptide Gummies (USYG100506)
