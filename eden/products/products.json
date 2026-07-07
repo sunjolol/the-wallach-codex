@@ -9131,6 +9131,460 @@
           "source_label": "glucogenix_box_0925.jpg"
         }
       ]
+    },
+    "hgh-amino-acid-blend": {
+      "product_id": "hgh-amino-acid-blend",
+      "name": "H.G.H. Amino Acid Blend - 180 capsules",
+      "sku": "50223",
+      "ygy_id": "542",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "6 capsules",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin B6",
+              "amount": 6,
+              "unit": "mg",
+              "pct_dv": 353,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 60,
+              "unit": "mcg",
+              "pct_dv": 2500,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Iodine",
+              "amount": 120,
+              "unit": "mcg",
+              "pct_dv": 80,
+              "form": "from potassium iodide"
+            },
+            {
+              "name": "Selenium",
+              "amount": 3,
+              "unit": "mcg",
+              "pct_dv": 7,
+              "form": "from selenium glycinate"
+            },
+            {
+              "name": "Manganese",
+              "amount": 1.6,
+              "unit": "mg",
+              "pct_dv": 70,
+              "form": "from manganese glycinate chelate"
+            },
+            {
+              "name": "Chromium",
+              "amount": 102,
+              "unit": "mcg",
+              "pct_dv": 291,
+              "form": "from chromium nicotinate glycinate"
+            },
+            {
+              "name": "Molybdenum",
+              "amount": 9,
+              "unit": "mcg",
+              "pct_dv": 20,
+              "form": "from molybdenum glycinate chelate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 128,
+              "unit": "mg",
+              "pct_dv": 3,
+              "form": "from potassium chloride"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary HGH Amino Acid Blend",
+              "total": {
+                "amount": 1950,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Ornithine",
+                  "form": "as L-ornithine hydrochloride"
+                },
+                {
+                  "pos": 2,
+                  "name": "Lysine",
+                  "form": "as L-lysine monohydrate hydrochloride"
+                },
+                {
+                  "pos": 3,
+                  "name": "Arginine",
+                  "form": "as L-arginine hydrochloride"
+                },
+                {
+                  "pos": 4,
+                  "name": "Glycine",
+                  "form": "as L-glycine"
+                },
+                {
+                  "pos": 5,
+                  "name": "Glutamine",
+                  "form": "as L-glutamine"
+                },
+                {
+                  "pos": 6,
+                  "name": "Tyrosine",
+                  "form": "as L-tyrosine"
+                },
+                {
+                  "pos": 7,
+                  "name": "GABA",
+                  "form": "gamma-aminobutyric acid"
+                }
+              ],
+              "as_labeled": "Ornithine (as l-ornithine hydrochloride), Lysine (as l-lysine monohydrate hydrochloride), Arginine (as l-arginine hydrochloride), Glycine (as l-glycine), Glutamine (as l-glutamine), Tyrosine (as l-tyrosine), GABA (Gamma-aminobutyric acid)"
+            }
+          ],
+          "other_ingredients": [
+            "Vegetarian Capsule (hypromellose and water)",
+            "Rice Flour",
+            "Magnesium Stearate",
+            "Silicon Dioxide",
+            "Minerals less than 1% DV (Magnesium Bisglycinate Chelate, Calcium Bisglycinate Chelate, Ferrous Bisglycinate Chelate, Vanadium Nicotinate Glycinate Chelate, Copper Bisglycinate Chelate, Zinc Bisglycinate Chelate)"
+          ],
+          "source_label": "hgh_amino_acid_blend_supp_facts_0725.jpg"
+        }
+      ]
+    },
+    "harmony-drops": {
+      "product_id": "harmony-drops",
+      "name": "Harmony Drops 15 Ml Bottle",
+      "sku": "USEW000004",
+      "ygy_id": "870",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (drops)",
+          "serving_size": "3 drops",
+          "servings_per_container": 80,
+          "directions": "3 drops per 8 oz water three times per day or as directed.",
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Chloride",
+              "amount": 5.8,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Magnesium",
+              "amount": 2.1,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Sulfate",
+              "amount": 0.45,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Potassium",
+              "amount": 0.08,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Distilled Water",
+            "Trace amounts of 85 minerals from sea water"
+          ],
+          "source_label": "usew000004_harmony-drops-15-ml-bottle_suppfacts.jpg"
+        }
+      ]
+    },
+    "heart-support": {
+      "product_id": "heart-support",
+      "name": "Heart Support",
+      "sku": "USGH000007",
+      "ygy_id": "990",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (tincture)",
+          "serving_size": "2 mL (approx. 1/2 tsp or 40 drops)",
+          "servings_per_container": 60,
+          "extract_ratio": "1:4 (250 mg herb per 1 mL)",
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Extract Blend",
+              "total": {
+                "amount": 1900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Blessed Thistle",
+                  "part": "herb"
+                },
+                {
+                  "pos": 2,
+                  "name": "Motherwort",
+                  "part": "herb"
+                },
+                {
+                  "pos": 3,
+                  "name": "Hawthorn",
+                  "part": "berry"
+                },
+                {
+                  "pos": 4,
+                  "name": "Hawthorn",
+                  "part": "leaf & flower"
+                },
+                {
+                  "pos": 5,
+                  "name": "Garlic",
+                  "part": "bulb"
+                },
+                {
+                  "pos": 6,
+                  "name": "Cayenne",
+                  "part": "fruit"
+                }
+              ],
+              "as_labeled": "Blessed Thistle Herb, Motherwort Herb, Hawthorn Berry, Hawthorn Leaf & Flower, Garlic Bulb, Cayenne Fruit"
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "ethyl alcohol (35-45%)"
+          ],
+          "source_label": "gh-heart-support_suppfacts-1221_cart_1200x900_1.jpg"
+        }
+      ]
+    },
+    "herbal-rainforest": {
+      "product_id": "herbal-rainforest",
+      "name": "Herbal Rainforest™ - 32 fl oz",
+      "sku": "13205",
+      "ygy_id": "693",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "1 fl oz (2 tablespoons)",
+          "servings_per_container": 32,
+          "macros": {
+            "calories": {
+              "amount": 15,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 4,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "total_sugars": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": 6
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Potassium",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Vitamin A",
+              "amount": 675,
+              "unit": "IU",
+              "pct_dv": 45,
+              "form": "as beta carotene"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Blend",
+              "total": {
+                "amount": 16,
+                "unit": "mcg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Chamomile",
+                  "part": "flowers"
+                },
+                {
+                  "pos": 2,
+                  "name": "Echinacea",
+                  "part": "leaves and roots"
+                },
+                {
+                  "pos": 3,
+                  "name": "Sarsaparilla",
+                  "part": "root"
+                },
+                {
+                  "pos": 4,
+                  "name": "Celery",
+                  "part": "seed"
+                },
+                {
+                  "pos": 5,
+                  "name": "Alfalfa",
+                  "part": "leaves and stems"
+                },
+                {
+                  "pos": 6,
+                  "name": "Dandelion",
+                  "part": "root"
+                },
+                {
+                  "pos": 7,
+                  "name": "Eleuthero",
+                  "part": "root"
+                },
+                {
+                  "pos": 8,
+                  "name": "Horehound",
+                  "part": "root"
+                },
+                {
+                  "pos": 9,
+                  "name": "Licorice",
+                  "part": "root"
+                },
+                {
+                  "pos": 10,
+                  "name": "Ginkgo Biloba",
+                  "part": "leaves"
+                },
+                {
+                  "pos": 11,
+                  "name": "Passion Flower"
+                },
+                {
+                  "pos": 12,
+                  "name": "Thyme",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 13,
+                  "name": "Saw Palmetto",
+                  "part": "berry"
+                },
+                {
+                  "pos": 14,
+                  "name": "Angelica",
+                  "part": "root"
+                },
+                {
+                  "pos": 15,
+                  "name": "Cascara Sagrada",
+                  "part": "bark"
+                }
+              ],
+              "as_labeled": "Chamomile (flowers), Echinacea (leaves and roots), Sarsaparilla (root), Celery (seed), Alfalfa (leaves and stems), Dandelion (root), Eleuthero Root (formerly known as Siberian Ginseng), Horehound (root), Licorices (root), Ginkgo Biloba (leaves), Passion Flowers, Thyme (leave), Saw Palmetto Berries, Angelica (root), Cascara Sagrada (bark)."
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "Fructose",
+            "Majestic Earth® Plant Derived Minerals™",
+            "Glycerine",
+            "Citric acid",
+            "Potassium aspartate",
+            "Flavors",
+            "Potassium sorbate",
+            "Aloe vera gel powder",
+            "Beta carotene",
+            "Natural vegetable color"
+          ],
+          "source_label": "13205_herbalrainforest_suppfacts_0120.jpg"
+        }
+      ]
+    },
+    "hypothalamus-support": {
+      "product_id": "hypothalamus-support",
+      "name": "Hypothalamus Support",
+      "sku": "USGH000003",
+      "ygy_id": "675",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (tincture)",
+          "serving_size": "2 mL (approx. 1/2 tsp or 40 drops)",
+          "servings_per_container": 60,
+          "extract_ratio": "1:4 (250 mg herb per 1 mL)",
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Extract Blend",
+              "total": {
+                "amount": 1900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Ashwagandha",
+                  "part": "root"
+                },
+                {
+                  "pos": 2,
+                  "name": "Eleuthero",
+                  "part": "root"
+                },
+                {
+                  "pos": 3,
+                  "name": "Bilberry",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 4,
+                  "name": "Rhodiola",
+                  "part": "root"
+                },
+                {
+                  "pos": 5,
+                  "name": "Schizandra",
+                  "part": "fruit"
+                }
+              ],
+              "as_labeled": "Ashwagandha Root, Eleuthero Root, Bilberry Fruit, Rhodiola Root, Schizandra Fruit"
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "ethyl alcohol (35-45%)"
+          ],
+          "source_label": "gh-hypothalamus-support_suppfacts-1021_cart_1200x900.jpg"
+        }
+      ]
     }
   }
 }

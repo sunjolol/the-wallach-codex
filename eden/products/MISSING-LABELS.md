@@ -19,6 +19,7 @@ Deluxe Nutritional Energy · Nutritional Energy Basics · PigPak® · PigPak® P
 
 ## PROVISIONAL genuine-missing candidates (single products, no label seen yet — CONFIRM at end)
 - Activated Charcoal (USLF000112)
+- HOPE ×2 — ygy 10359 (sku USYG7000) + ygy 577 (sku USSN000009); no 'hope' label file in temporary/labels/ (Batch 12, 2026-07-07 — first genuine miss, Luneth to supply)
 - Imortalium 120ct (USYG100080)
 - Manuka Force Lemon Honey Lozenges (USLF700002)
 - Multi-Collagen Peptide Gummies (USYG100506)
