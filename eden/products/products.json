@@ -11882,6 +11882,316 @@
           "source_label": "gh-lymphatic-health_supp-facts-0622_cart_1200x900.jpg"
         }
       ]
+    },
+    "ultimate-mineral-caps": {
+      "product_id": "ultimate-mineral-caps",
+      "name": "Ultimate Mineral Caps™ - 64 capsules",
+      "sku": "20691",
+      "ygy_id": "751",
+      "additional_labels": [
+        "20691_ult-mineral-caps-0922_panel-900x1200.jpg"
+      ],
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 64,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Calcium",
+              "amount": 90,
+              "unit": "mg",
+              "pct_dv": 7,
+              "form": "from Aquamin, seaweed"
+            },
+            {
+              "name": "Plant Derived Trace Minerals",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Aquamin Seaweed",
+              "amount": 280,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "containing 72 trace minerals"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Gelatin capsule (gelatin and water)",
+            "rice flour",
+            "magnesium stearate",
+            "silica"
+          ],
+          "source_label": "ult-mineral-caps_suppfacts-0922_2.jpg"
+        }
+      ]
+    },
+    "male-hormonal-support": {
+      "product_id": "male-hormonal-support",
+      "name": "Male Hormonal Support",
+      "sku": "USGH000014",
+      "ygy_id": "672",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (tincture)",
+          "serving_size": "2 mL (approx. 1/2 tsp or 40 drops)",
+          "servings_per_container": 60,
+          "extract_ratio": "1:4 (250 mg herb per 1 mL)",
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Extract Blend",
+              "total": {
+                "amount": 1900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Dong Quai",
+                  "part": "root"
+                },
+                {
+                  "pos": 2,
+                  "name": "Jujube",
+                  "part": "date"
+                },
+                {
+                  "pos": 3,
+                  "name": "Astragalus",
+                  "part": "root"
+                },
+                {
+                  "pos": 4,
+                  "name": "Blessed Thistle",
+                  "part": "herb"
+                },
+                {
+                  "pos": 5,
+                  "name": "Ginseng",
+                  "part": "root",
+                  "latin": "Panax"
+                },
+                {
+                  "pos": 6,
+                  "name": "Lycium",
+                  "part": "berry"
+                },
+                {
+                  "pos": 7,
+                  "name": "Rehmannia",
+                  "part": "root"
+                },
+                {
+                  "pos": 8,
+                  "name": "Schisandra",
+                  "part": "berry"
+                }
+              ],
+              "as_labeled": "Dong Quai Root, Jujube Date, Astragalus Root, Blessed Thistle Herb, Ginseng Root (Panax), Lycium Berry, Rehmannia Root, Schisandra Berry"
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "ethyl alcohol (35-45%)"
+          ],
+          "source_label": "gh-male-hormone-support_supp-facts-0622_cart_1200x900.jpg"
+        }
+      ]
+    },
+    "midnight-minerals-fulvic-mins": {
+      "product_id": "midnight-minerals-fulvic-mins",
+      "name": "Midnight Minerals™ Fulvic Mins™",
+      "sku": "USGC200000",
+      "ygy_id": "8741",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Acerola",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "powder extract"
+            },
+            {
+              "name": "Peat Bog Clay",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "supplying humic/fulvic acids"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Hypromellose (capsule)",
+            "microcrystalline cellulose",
+            "di-calcium phosphate",
+            "vegetable magnesium stearate"
+          ],
+          "source_label": "midnight-minerals_fulvic-mins_suppfacts-0522.jpg"
+        }
+      ]
+    },
+    "msm-ultra": {
+      "product_id": "msm-ultra",
+      "name": "MSM Ultra® (180 Caplets)",
+      "sku": "USFL000123",
+      "ygy_id": "794",
+      "components": [
+        {
+          "role": null,
+          "form": "caplet",
+          "serving_size": "3 caplets",
+          "servings_per_container": 60,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 180,
+              "unit": "mg",
+              "pct_dv": 200,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "MSM",
+              "amount": 3000,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "methylsulfonylmethane"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Citri-C Complex™ Blend",
+              "total": {
+                "amount": 300,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Ascorbic acid"
+                },
+                {
+                  "pos": 2,
+                  "name": "Isoascorbic acid"
+                },
+                {
+                  "pos": 3,
+                  "name": "Orange bioflavonoids"
+                }
+              ],
+              "as_labeled": "Ascorbic acid, isoascorbic acid, orange bioflavonoids"
+            }
+          ],
+          "other_ingredients": [
+            "Microcrystalline cellulose",
+            "croscarmellose sodium",
+            "vegetable stearic acid",
+            "silica",
+            "vegetable magnesium stearate",
+            "coating (hydroxypropyl methylcellulose, glycerin, alpha-lipoic acid)"
+          ],
+          "source_label": "msm_ultra_caplets_supp_facts_0924_1.jpg"
+        }
+      ]
+    },
+    "manuka-force-lemon-honey-lozenges": {
+      "product_id": "manuka-force-lemon-honey-lozenges",
+      "name": "Manuka Force™ Lemon Honey Lozenges",
+      "sku": "USLF700002",
+      "ygy_id": "10496",
+      "components": [
+        {
+          "role": null,
+          "form": "lozenge",
+          "serving_size": "1 lozenge (4 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 15,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "saturated_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "trans_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "cholesterol": {
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": 0
+            },
+            "sodium": {
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": 0
+            },
+            "total_carbohydrate": {
+              "amount": 4,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "dietary_fiber": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "total_sugars": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": 6
+            },
+            "protein": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            }
+          },
+          "nutrients": [],
+          "blends": [],
+          "other_ingredients": [
+            "Raw Cane Sugar",
+            "Brown Rice Syrup",
+            "Manuka Honey",
+            "Bee Propolis",
+            "Natural Lemon Oil Flavor",
+            "Menthol"
+          ],
+          "source_label": "manuka-force-lemon-honey-lozenges_nfp_0126.jpg"
+        }
+      ]
     }
   }
 }
