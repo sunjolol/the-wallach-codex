@@ -9397,36 +9397,25 @@
               "pct_dv": 1
             },
             "total_sugars": {
-              "amount": 3,
+              "amount": 4,
               "unit": "g",
               "pct_dv": null
-            },
-            "added_sugars": {
-              "amount": 3,
-              "unit": "g",
-              "pct_dv": 6
             }
           },
           "nutrients": [
             {
-              "name": "Potassium",
-              "amount": 40,
-              "unit": "mg",
-              "pct_dv": "<1"
-            },
-            {
               "name": "Vitamin A",
               "amount": 675,
               "unit": "IU",
-              "pct_dv": 45,
+              "pct_dv": 13,
               "form": "as beta carotene"
             }
           ],
           "blends": [
             {
-              "name": "Proprietary Herbal Blend",
+              "name": "Herbal Mix",
               "total": {
-                "amount": 16,
+                "amount": 31.3,
                 "unit": "mcg"
               },
               "pct_dv": null,
@@ -9448,81 +9437,83 @@
                 },
                 {
                   "pos": 4,
+                  "name": "Goldenseal",
+                  "part": "root"
+                },
+                {
+                  "pos": 5,
                   "name": "Celery",
                   "part": "seed"
                 },
                 {
-                  "pos": 5,
+                  "pos": 6,
                   "name": "Alfalfa",
                   "part": "leaves and stems"
                 },
                 {
-                  "pos": 6,
+                  "pos": 7,
                   "name": "Dandelion",
                   "part": "root"
                 },
                 {
-                  "pos": 7,
+                  "pos": 8,
                   "name": "Eleuthero",
                   "part": "root"
                 },
                 {
-                  "pos": 8,
+                  "pos": 9,
                   "name": "Horehound",
                   "part": "root"
                 },
                 {
-                  "pos": 9,
+                  "pos": 10,
                   "name": "Licorice",
                   "part": "root"
                 },
                 {
-                  "pos": 10,
+                  "pos": 11,
                   "name": "Ginkgo Biloba",
                   "part": "leaves"
                 },
                 {
-                  "pos": 11,
+                  "pos": 12,
                   "name": "Passion Flower"
                 },
                 {
-                  "pos": 12,
+                  "pos": 13,
                   "name": "Thyme",
                   "part": "leaf"
                 },
                 {
-                  "pos": 13,
+                  "pos": 14,
                   "name": "Saw Palmetto",
                   "part": "berry"
                 },
                 {
-                  "pos": 14,
+                  "pos": 15,
                   "name": "Angelica",
                   "part": "root"
                 },
                 {
-                  "pos": 15,
+                  "pos": 16,
                   "name": "Cascara Sagrada",
                   "part": "bark"
                 }
               ],
-              "as_labeled": "Chamomile (flowers), Echinacea (leaves and roots), Sarsaparilla (root), Celery (seed), Alfalfa (leaves and stems), Dandelion (root), Eleuthero Root (formerly known as Siberian Ginseng), Horehound (root), Licorices (root), Ginkgo Biloba (leaves), Passion Flowers, Thyme (leave), Saw Palmetto Berries, Angelica (root), Cascara Sagrada (bark)."
+              "as_labeled": "Proprietary Blend - chamomile (flowers), echinacea (leaves and roots), sarsaparilla (root), golden seal (root), celery (seed), alfalfa (leaves and stems), dandelion (root), eleuthero root (formerly known as siberian ginseng), horehound (root), licorice (root), ginkgo biloba (leaves), passion flowers, thyme (leaves), saw palmetto berries, angelica (root), and cascara sagrada (bark)."
             }
           ],
           "other_ingredients": [
-            "Purified water",
-            "Fructose",
             "Majestic Earth® Plant Derived Minerals™",
-            "Glycerine",
-            "Citric acid",
-            "Potassium aspartate",
-            "Flavors",
-            "Potassium sorbate",
-            "Aloe vera gel powder",
-            "Beta carotene",
-            "Natural vegetable color"
+            "purified water",
+            "potassium aspartate",
+            "crystalline fructose",
+            "glycerine",
+            "natural flavors",
+            "citric acid",
+            "potassium sorbate"
           ],
-          "source_label": "13205_herbalrainforest_suppfacts_0120.jpg"
+          "source_label": "13205_YGY-13205-Herbal-Rainforest-SuppFacts-0811_2000x.jpg"
         }
       ]
     },
@@ -9583,6 +9574,129 @@
             "ethyl alcohol (35-45%)"
           ],
           "source_label": "gh-hypothalamus-support_suppfacts-1021_cart_1200x900.jpg"
+        }
+      ]
+    },
+    "hope-sta-natural": {
+      "product_id": "hope-sta-natural",
+      "name": "HOPE",
+      "sku": "USSN000009",
+      "ygy_id": "577",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 90,
+          "directions": "Take 1 capsule with food, 3 times daily with 8 oz of water. Store at room temperature.",
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 526,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Sheep Sorrel",
+                  "part": "herb"
+                },
+                {
+                  "pos": 2,
+                  "name": "Burdock",
+                  "latin": "Arctium lappa",
+                  "part": "root"
+                },
+                {
+                  "pos": 3,
+                  "name": "Rhubarb",
+                  "latin": "Rheum palmatum",
+                  "part": "root"
+                },
+                {
+                  "pos": 4,
+                  "name": "Red Raspberry",
+                  "latin": "Rubus idaeus",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 5,
+                  "name": "Noni",
+                  "part": "fruit",
+                  "form": "extract",
+                  "standardization": "10:1"
+                },
+                {
+                  "pos": 6,
+                  "name": "Slippery Elm",
+                  "latin": "Ulmus rubra",
+                  "part": "bark"
+                },
+                {
+                  "pos": 7,
+                  "name": "Milk Thistle",
+                  "latin": "Silybum marianum",
+                  "part": "bark",
+                  "standardization": "80%"
+                },
+                {
+                  "pos": 8,
+                  "name": "Quercetin Dihydrate",
+                  "latin": "Sophora japonica"
+                },
+                {
+                  "pos": 9,
+                  "name": "Olive",
+                  "latin": "Olea europaea",
+                  "part": "leaf",
+                  "form": "extract",
+                  "standardization": "15%"
+                },
+                {
+                  "pos": 10,
+                  "name": "Garlic",
+                  "latin": "Allium sativum",
+                  "form": "odorless"
+                },
+                {
+                  "pos": 11,
+                  "name": "Dandelion",
+                  "latin": "Taraxacum officinale",
+                  "part": "root"
+                },
+                {
+                  "pos": 12,
+                  "name": "Protease",
+                  "form": "fungal",
+                  "standardization": "1,000 u/g"
+                },
+                {
+                  "pos": 13,
+                  "name": "Amylase",
+                  "form": "fungal",
+                  "standardization": "1,000 u/g"
+                },
+                {
+                  "pos": 14,
+                  "name": "Lipase",
+                  "form": "fungal",
+                  "standardization": "1,000 u/g"
+                }
+              ],
+              "as_labeled": "Sheep Sorrel Herb, Burdock (Arctium lappa) Root, Rhubarb (Rheum palmatum) Root, Red Raspberry (Rubus idaeus) Leaves, Noni Fruit 10:1 Extract, Slippery Elm (Ulmus rubra) Bark, Milk Thistle 80% (Silybum marianum) Bark, Quercetin Dihydrate (Sophora japonica), Olive Leaf (Olea europaea) 15% Extract, Odorless Garlic (Allium sativum), Dandelion (Taraxacum officinale) Root, Protease Fungal 1,000u/g, Amylase Fungal 1,000 u/g, Lipase Fungal 1,000 u/g."
+            }
+          ],
+          "other_ingredients": [
+            "Rice Flour",
+            "Cellulose",
+            "Magnesium Stearate",
+            "Silica"
+          ],
+          "source_label": "sn-hope_label-suppfacts_0524.jpg"
         }
       ]
     }
