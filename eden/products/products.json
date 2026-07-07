@@ -12384,6 +12384,350 @@
           "source_label": "nano-balance-tincture_1224_supp-facts.jpg"
         }
       ]
+    },
+    "ocutiv": {
+      "product_id": "ocutiv",
+      "name": "Ocutiv™",
+      "sku": "USYG100086",
+      "ygy_id": "797",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 900,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "as beta carotene",
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 60,
+              "unit": "mg",
+              "pct_dv": 67,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 167,
+              "form": "as d-alpha tocopheryl succinate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 45,
+              "form": "from monomethionine"
+            },
+            {
+              "name": "Selenium",
+              "amount": 50,
+              "unit": "mcg",
+              "pct_dv": 91,
+              "form": "from selenomethionine"
+            },
+            {
+              "name": "Bilberry",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "fruit",
+              "latin": "Vaccinium uliginosum",
+              "form": "extract",
+              "standardization": "25% proanthocyanidins"
+            },
+            {
+              "name": "Grape",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "seed",
+              "latin": "Vitis vinifera",
+              "form": "extract",
+              "standardization": "95% proanthocyanidins"
+            },
+            {
+              "name": "Lutein",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from marigold flower extract"
+            },
+            {
+              "name": "Lycopene",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Zeaxanthin",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from marigold flower extract"
+            },
+            {
+              "name": "Astaxanthin",
+              "amount": 250,
+              "unit": "mcg",
+              "pct_dv": null,
+              "form": "from Haematococcus pluvialis"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Organic Whole Food Blend",
+              "total": {
+                "amount": 25,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Apple"
+                },
+                {
+                  "pos": 2,
+                  "name": "Kale"
+                },
+                {
+                  "pos": 3,
+                  "name": "Broccoli"
+                },
+                {
+                  "pos": 4,
+                  "name": "Spinach"
+                },
+                {
+                  "pos": 5,
+                  "name": "Carrot"
+                },
+                {
+                  "pos": 6,
+                  "name": "Parsley"
+                },
+                {
+                  "pos": 7,
+                  "name": "Beet"
+                },
+                {
+                  "pos": 8,
+                  "name": "Green Cabbage"
+                },
+                {
+                  "pos": 9,
+                  "name": "Blueberry"
+                },
+                {
+                  "pos": 10,
+                  "name": "Raspberry"
+                },
+                {
+                  "pos": 11,
+                  "name": "Strawberry"
+                },
+                {
+                  "pos": 12,
+                  "name": "Tomato"
+                }
+              ],
+              "as_labeled": "Proprietary blend of organic apple, organic kale, organic broccoli, organic spinach, organic carrot, organic parsley, organic beet, organic green cabbage, organic blueberry, organic raspberry, organic strawberry and organic tomato"
+            },
+            {
+              "name": "Organic Trace Mineral Complex",
+              "total": {
+                "amount": 25,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "AlgaeCal",
+                  "latin": "Algas calcareas"
+                }
+              ],
+              "as_labeled": "AlgaeCal (Algas calcareas)"
+            }
+          ],
+          "other_ingredients": [
+            "Hypromellose",
+            "microcrystalline cellulose",
+            "stearic acid",
+            "magnesium stearate",
+            "silicon dioxide"
+          ],
+          "source_label": "usyg100086_ocutiv-0421_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "omega": {
+      "product_id": "omega",
+      "name": "Omega™ - 120 Softgels",
+      "sku": "PJ290",
+      "ygy_id": "744",
+      "components": [
+        {
+          "role": null,
+          "form": "softgel",
+          "serving_size": "1 softgel",
+          "servings_per_container": 120,
+          "macros": {
+            "calories": {
+              "amount": 10,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 1
+            }
+          },
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Fish Oil",
+              "total": {
+                "amount": 1000,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "EPA",
+                  "form": "ethyl ester",
+                  "amount": 180,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 2,
+                  "name": "DHA",
+                  "form": "ethyl ester",
+                  "amount": 120,
+                  "unit": "mg"
+                }
+              ],
+              "as_labeled": "Fish Oil (esterified), typically providing EPA (Eicosapentaenoic Acid, ethyl ester form) 180 mg, DHA (Docosahexaenoic Acid, ethyl ester form) 120 mg"
+            }
+          ],
+          "other_ingredients": [
+            "Gelatin (bovine)",
+            "glycerin",
+            "purified water",
+            "vitamin E (dl-alpha tocopheryl acetate, as a stabilizer)"
+          ],
+          "source_label": "projoba-omega_label-suppfacts_0723.jpg"
+        }
+      ]
+    },
+    "oxybody-cherry-berry": {
+      "product_id": "oxybody-cherry-berry",
+      "name": "Oxybody™ Cherry Berry - 32 fl oz",
+      "sku": "13211",
+      "ygy_id": "555",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "1 fl oz (2 tablespoons)",
+          "servings_per_container": 32,
+          "macros": {
+            "calories": {
+              "amount": 15,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "total_sugars": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 4
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Potassium",
+              "amount": 4,
+              "unit": "mg",
+              "pct_dv": "<1",
+              "form": "as citrate"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 60,
+              "unit": "mg",
+              "pct_dv": 67,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Chromium",
+              "amount": 12,
+              "unit": "mcg",
+              "pct_dv": 34,
+              "form": "as chromium amino acid chelate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 15,
+              "unit": "mcg",
+              "pct_dv": 27,
+              "form": "as L-selenomethionine"
+            },
+            {
+              "name": "Zinc",
+              "amount": 1.5,
+              "unit": "mg",
+              "pct_dv": 13,
+              "form": "as zinc gluconate"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Purified water",
+            "plant derived minerals",
+            "fructose",
+            "aloe vera powder",
+            "magnesium peroxide",
+            "hydrogen peroxide",
+            "sodium benzoate",
+            "potassium sorbate",
+            "malic acid",
+            "citric acid",
+            "flavors",
+            "cherry juice concentrate",
+            "peppermint tea",
+            "ginseng tea",
+            "ginkgo biloba",
+            "citrus pectin",
+            "bee pollen",
+            "suma powder",
+            "myrrh",
+            "grape skin extract",
+            "vegetable juice color"
+          ],
+          "source_label": "13211_oxy-body-cherry-berry-0120_panel-900x1200.jpg"
+        }
+      ]
     }
   }
 }
