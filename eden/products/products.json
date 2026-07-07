@@ -702,7 +702,7 @@
             "color (from grape skin)",
             "stevia leaf extract"
           ],
-          "source_label": "3.0-rise_supp-facts_1124_1200x900_1.jpg"
+          "source_label": "3.0-rise_supp-facts_1124_1200x900.jpg"
         },
         {
           "role": "3.0 Restore",
@@ -1752,6 +1752,271 @@
           "source_label": "beyond-hot-chocolate-canister_suppfacts-0325.jpg",
           "role": null,
           "blends": []
+        }
+      ]
+    },
+    "beyond-osteo-fx-liquid": {
+      "product_id": "beyond-osteo-fx-liquid",
+      "name": "Beyond Osteo FX™ Liquid - 32 fl oz",
+      "sku": "USYG103210",
+      "ygy_id": "6712",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "1 fl oz (30 mL)",
+          "servings_per_container": 32,
+          "macros": {
+            "calories": {
+              "amount": 26,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 7,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "total_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Vitamin D3",
+              "amount": 10,
+              "unit": "mcg",
+              "pct_dv": 50,
+              "form": "as cholecalciferol",
+              "label_iu": 400
+            },
+            {
+              "name": "Calcium",
+              "amount": 1200,
+              "unit": "mg",
+              "pct_dv": 92,
+              "form": "from tricalcium phosphate, calcium citrate"
+            },
+            {
+              "name": "Phosphorous",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": 24,
+              "form": "from tricalcium phosphate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": 71,
+              "form": "from magnesium citrate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 45,
+              "form": "from zinc gluconate"
+            },
+            {
+              "name": "Copper",
+              "amount": 0.05,
+              "unit": "mg",
+              "pct_dv": 6,
+              "form": "as copper gluconate"
+            },
+            {
+              "name": "Boron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from boron amino acid chelate"
+            },
+            {
+              "name": "MSM",
+              "amount": 250,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as methylsulfonylmethane"
+            },
+            {
+              "name": "Glucosamine",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "HCl, from vegetable"
+            },
+            {
+              "name": "Strontium",
+              "amount": 500,
+              "unit": "mcg",
+              "pct_dv": null,
+              "form": "from strontium chloride"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Water",
+            "Glycerin",
+            "Plant Derived Minerals",
+            "Natural Flavors Blend",
+            "Citrisweet",
+            "Citric acid",
+            "Xanthan gum",
+            "Potassium sorbate",
+            "Sodium benzoate",
+            "Stevia",
+            "Vanillin"
+          ],
+          "source_label": "beyond-osteo-fx_sleeve_supp-facts_0426.jpg"
+        }
+      ]
+    },
+    "beyond-osteo-fx-powder": {
+      "product_id": "beyond-osteo-fx-powder",
+      "name": "Beyond Osteo FX™ Powder",
+      "sku": "USYG103211",
+      "ygy_id": "6753",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "1 scoop (12.8 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 20,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 6,
+              "unit": "g",
+              "pct_dv": 2
+            },
+            "dietary_fiber": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": 11
+            },
+            "soluble_fiber": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "total_sugars": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 4
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin D",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 125,
+              "form": "as cholecalciferol",
+              "label_iu": 1000
+            },
+            {
+              "name": "Calcium",
+              "amount": 1200,
+              "unit": "mg",
+              "pct_dv": 90,
+              "form": "as tricalcium phosphate, calcium citrate"
+            },
+            {
+              "name": "Phosphorus",
+              "amount": 600,
+              "unit": "mg",
+              "pct_dv": 48,
+              "form": "as tricalcium phosphate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": 71,
+              "form": "as magnesium citrate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 45,
+              "form": "as zinc gluconate"
+            },
+            {
+              "name": "Copper",
+              "amount": 0.1,
+              "unit": "mg",
+              "pct_dv": 11,
+              "form": "as copper gluconate"
+            },
+            {
+              "name": "MSM",
+              "amount": 250,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "methylsulfonylmethane"
+            },
+            {
+              "name": "Trace mineral complex",
+              "amount": 140,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from red algae"
+            },
+            {
+              "name": "Glucosamine",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "HCl"
+            },
+            {
+              "name": "Boron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as boron chelate"
+            },
+            {
+              "name": "Strontium",
+              "amount": 500,
+              "unit": "mcg",
+              "pct_dv": null,
+              "form": "as strontium citrate"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Chicory root inulin",
+            "Fructose",
+            "Natural flavors",
+            "Guar gum",
+            "Xanthan gum",
+            "Organic stevia (Rebaudioside A)",
+            "Silica",
+            "Sunflower oil powder",
+            "Natural color (beta carotene)",
+            "Orange peel"
+          ],
+          "source_label": "beyond-osteo-fx-powder-canister_suppfacts-0725_vq-1200x900.jpg"
         }
       ]
     },
@@ -5631,6 +5896,391 @@
             "Silica"
           ],
           "source_label": "btt-2.0-tablets_box_0125_supp-facts.jpg"
+        }
+      ]
+    },
+    "osteo-mag": {
+      "product_id": "osteo-mag",
+      "name": "Osteo-Mag™ - 60 tablets",
+      "sku": "21210",
+      "ygy_id": "969",
+      "components": [
+        {
+          "role": null,
+          "form": "tablet",
+          "serving_size": "1 tablet",
+          "servings_per_container": 60,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Thiamin",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 2083,
+              "form": "as thiamine mononitrate",
+              "unit_detail": "B1"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 1923,
+              "form": "as riboflavin",
+              "unit_detail": "B2"
+            },
+            {
+              "name": "Niacin",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 156,
+              "form": "as niacinamide",
+              "unit_detail": "NE"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 1471,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Folate",
+              "amount": 666,
+              "unit": "mcg",
+              "pct_dv": 167,
+              "form": "as folic acid (400 mcg folic acid)",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 4167,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 300,
+              "unit": "mcg",
+              "pct_dv": 1000
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 500,
+              "form": "from calcium pantothenate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": 48,
+              "form": "from magnesium oxide/glycinate complex"
+            },
+            {
+              "name": "Choline",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 5,
+              "form": "from choline bitartrate"
+            },
+            {
+              "name": "Inositol",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Stearic acid",
+            "Microcrystalline cellulose",
+            "Croscarmellose sodium",
+            "Magnesium stearate",
+            "Silicon dioxide"
+          ],
+          "source_label": "osteo-mag_supp_facts-0424_1.jpg"
+        }
+      ]
+    },
+    "osteoprocare": {
+      "product_id": "osteoprocare",
+      "name": "OsteoProCare®",
+      "sku": "USLF000700V",
+      "ygy_id": "9951",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "1 tablespoon (15 mL)",
+          "servings_per_container": 64,
+          "macros": {
+            "calories": {
+              "amount": 10,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 1
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin D",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 125,
+              "form": "as vitamin D3 cholecalciferol",
+              "label_iu": 1000
+            },
+            {
+              "name": "Calcium",
+              "amount": 600,
+              "unit": "mg",
+              "pct_dv": 46,
+              "form": "as calcium carbonate/orotate"
+            },
+            {
+              "name": "Iron",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": 14,
+              "form": "as ferrous gluconate"
+            },
+            {
+              "name": "Iodine",
+              "amount": 75,
+              "unit": "mcg",
+              "pct_dv": 50,
+              "form": "as potassium iodide"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": 71,
+              "form": "as magnesium hydroxide"
+            },
+            {
+              "name": "Zinc",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 23,
+              "form": "as zinc gluconate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 182,
+              "form": "as sodium selenite"
+            },
+            {
+              "name": "Copper",
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": 56,
+              "form": "as copper gluconate"
+            },
+            {
+              "name": "Manganese",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 109,
+              "form": "as manganese gluconate"
+            },
+            {
+              "name": "Chromium",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 286,
+              "form": "as chromium chloride"
+            },
+            {
+              "name": "Molybdenum",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 56,
+              "form": "as sodium molybdate"
+            },
+            {
+              "name": "Chloride",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 2,
+              "form": "as potassium chloride"
+            },
+            {
+              "name": "Glucosamine",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "HCl, vegetable sourced"
+            },
+            {
+              "name": "Vanadium",
+              "amount": 50,
+              "unit": "mcg",
+              "pct_dv": null,
+              "form": "as vanadyl sulfate"
+            },
+            {
+              "name": "Silica",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as silicon dioxide"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Purified water",
+            "Glycerin (vegetarian source)",
+            "Orotic acid",
+            "Sodium propionate",
+            "Xanthan gum",
+            "Vanilla flavor",
+            "Montmorillonite",
+            "Rebaudioside A (Purified Stevia Leaf Extract)"
+          ],
+          "source_label": "osteoprocare_supp_panel_900x1200.jpg"
+        }
+      ]
+    },
+    "ultimate-osteo-fx": {
+      "product_id": "ultimate-osteo-fx",
+      "name": "Ultimate Osteo fx™ - 32 fl oz",
+      "sku": "13209",
+      "ygy_id": "627",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "1 fl oz (2 tablespoons)",
+          "servings_per_container": 32,
+          "macros": {
+            "calories": {
+              "amount": 0,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "saturated_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "cholesterol": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "dietary_fiber": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "total_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "protein": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Vitamin D3",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 125,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Calcium",
+              "amount": 1200,
+              "unit": "mg",
+              "pct_dv": 92,
+              "form": "from tricalcium phosphate, calcium citrate"
+            },
+            {
+              "name": "Phosphorus",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": 24,
+              "form": "from tricalcium phosphate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": 48,
+              "form": "from magnesium citrate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 45,
+              "form": "from zinc gluconate"
+            },
+            {
+              "name": "Boron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from boron amino acid chelate"
+            },
+            {
+              "name": "MSM",
+              "amount": 250,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "methylsulfonylmethane"
+            },
+            {
+              "name": "Glucosamine",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "HCl, from vegetable"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Water",
+            "Plant Derived Minerals",
+            "Natural Flavors Blend",
+            "CitriSweet",
+            "Citric acid",
+            "Potassium sorbate",
+            "Sodium benzoate",
+            "Xanthan gum",
+            "Stevia",
+            "Vanilla"
+          ],
+          "source_label": "13209_ult-osteo-fx-0120_panel-900x1200_1_1.jpg"
         }
       ]
     },
