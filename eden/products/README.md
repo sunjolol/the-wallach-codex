@@ -20,7 +20,11 @@ listing manifest; replaces the transitional `eden/eden-catalog.json`.
 
 ## Record schema (`products.json`)
 ```
-product_id · name · sku · ygy_id · components[]
+product_id · name · sku · ygy_id · variants[]? · additional_labels[]? · components[]
+  variant: sku · ygy_id · name · form · source_label  ← a SIBLING sku sharing this EXACT formula
+           (30-count box, 4-pack, …). ONE record per formula, not per sku (Luneth 2026-07-06); a
+           sku whose formula DIFFERS gets its OWN record, not a variant (e.g. BTT 2.0 CPF canister vs box).
+  additional_labels[]: label filenames for the SAME sku (older/regional) kept for provenance, not re-extracted
   component: role? · form · serving_size · servings_per_container · directions?
              · macros{} · nutrients[] · blends[] · other_ingredients[] · source_label
     nutrient (quantified): name · form? · amount · unit · unit_detail?(RAE/NE/DFE)

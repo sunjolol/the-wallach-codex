@@ -36,4 +36,4 @@ Deluxe Nutritional Energy · Nutritional Energy Basics · PigPak® · PigPak® P
 - XeraTest Hormonal Support for Men (USYG100081)
 - Youngevity CardioBeets 195g (USYG100071)
 
-_(Same-name clusters — BTT, Body Balance, etc. — pending careful side-by-side label passes; not counted here yet.)_
+_(Same-name clusters — Body Balance, etc. — pending careful side-by-side label passes; not counted here yet. **BTT / Tangy Tangerine line RESOLVED 2026-07-06:** all 6 base products extracted — 2.5 Canister, Original 450G (+ its 30-count box variant 23230), 2.0 CPF canister, 2.0 CPF 30-count box, 2.0 Tablets, Ultimate Liquid — no genuine-missing among them.)_

@@ -1850,6 +1850,1195 @@
         }
       ]
     },
+    "beyond-tangy-tangerine-2-5-canister": {
+      "product_id": "beyond-tangy-tangerine-2-5-canister",
+      "name": "Beyond Tangy Tangerine® (BTT) 2.5 Canister",
+      "sku": "USYG100074",
+      "ygy_id": "8119",
+      "additional_labels": [
+        "usyg100074_btt-2.5_canister-1220_amino-acids-2_1.jpg"
+      ],
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "1 scoop (16 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 25,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 5,
+              "unit": "g",
+              "pct_dv": 2
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 3200,
+              "unit": "mcg",
+              "pct_dv": 356,
+              "form": "as retinyl palmitate and 61% as beta-carotene"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 1250,
+              "unit": "mg",
+              "pct_dv": 1389,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 125,
+              "form": "as cholecalciferol",
+              "label_iu": 1000
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 267,
+              "form": "as d-alpha tocopheryl acetate"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 2500,
+              "form": "as thiamine mononitrate",
+              "unit_detail": "B1"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 2308,
+              "unit_detail": "B2"
+            },
+            {
+              "name": "Niacin",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 250,
+              "form": "as niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 1765,
+              "form": "as pyridoxine HCl"
+            },
+            {
+              "name": "Folate",
+              "amount": 667,
+              "unit": "mcg",
+              "pct_dv": 167,
+              "form": "as calcium-L-5-methyltetrahydrofolate",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 1000,
+              "unit": "mcg",
+              "pct_dv": 41667,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 750,
+              "unit": "mcg",
+              "pct_dv": 2500
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": 3000,
+              "form": "as D-calcium pantothenate"
+            },
+            {
+              "name": "Calcium",
+              "amount": 140,
+              "unit": "mg",
+              "pct_dv": 11
+            },
+            {
+              "name": "Iron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 6,
+              "form": "as ferrous gluconate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 10,
+              "form": "as magnesium gluconate and oxide"
+            },
+            {
+              "name": "Zinc",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": 27,
+              "form": "as zinc gluconate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 182,
+              "form": "as selenomethionine"
+            },
+            {
+              "name": "Copper",
+              "amount": 1.5,
+              "unit": "mg",
+              "pct_dv": 167,
+              "form": "as copper gluconate"
+            },
+            {
+              "name": "Chromium",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": 571,
+              "form": "as chromium amino acid chelate"
+            },
+            {
+              "name": "Sodium",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Potassium",
+              "amount": 170,
+              "unit": "mg",
+              "pct_dv": 4,
+              "form": "as potassium gluconate and citrate"
+            },
+            {
+              "name": "Beet root",
+              "amount": 500,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Glucosamine",
+              "amount": 125,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "HCl"
+            },
+            {
+              "name": "MSM",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Chondroitin sulfate",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Inositol",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Coenzyme Q10",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Boron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as sodium tetraborate decahydrate"
+            },
+            {
+              "name": "Vitamin K2",
+              "amount": 40,
+              "unit": "mcg",
+              "pct_dv": null,
+              "form": "as menaquinone-7"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Whole Foods Blend",
+              "total": {
+                "amount": 5700,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Gum acacia"
+                },
+                {
+                  "pos": 2,
+                  "name": "Acerola"
+                },
+                {
+                  "pos": 3,
+                  "name": "Agave inulin"
+                },
+                {
+                  "pos": 4,
+                  "name": "Alfalfa"
+                },
+                {
+                  "pos": 5,
+                  "name": "Amla"
+                },
+                {
+                  "pos": 6,
+                  "name": "Apple"
+                },
+                {
+                  "pos": 7,
+                  "name": "Apple cider vinegar"
+                },
+                {
+                  "pos": 8,
+                  "name": "Beet"
+                },
+                {
+                  "pos": 9,
+                  "name": "Banana"
+                },
+                {
+                  "pos": 10,
+                  "name": "Blackberry"
+                },
+                {
+                  "pos": 11,
+                  "name": "Black currant"
+                },
+                {
+                  "pos": 12,
+                  "name": "Blueberry"
+                },
+                {
+                  "pos": 13,
+                  "name": "Broccoli"
+                },
+                {
+                  "pos": 14,
+                  "name": "Brown rice"
+                },
+                {
+                  "pos": 15,
+                  "name": "Carrot"
+                },
+                {
+                  "pos": 16,
+                  "name": "Chlorella"
+                },
+                {
+                  "pos": 17,
+                  "name": "Cinnamon"
+                },
+                {
+                  "pos": 18,
+                  "name": "Cranberry"
+                },
+                {
+                  "pos": 19,
+                  "name": "Fennel"
+                },
+                {
+                  "pos": 20,
+                  "name": "Fenugreek"
+                },
+                {
+                  "pos": 21,
+                  "name": "Garlic"
+                },
+                {
+                  "pos": 22,
+                  "name": "Ginger"
+                },
+                {
+                  "pos": 23,
+                  "name": "Goji",
+                  "latin": "Lycium barbarum"
+                },
+                {
+                  "pos": 24,
+                  "name": "Holy basil"
+                },
+                {
+                  "pos": 25,
+                  "name": "Kale"
+                },
+                {
+                  "pos": 26,
+                  "name": "Mango"
+                },
+                {
+                  "pos": 27,
+                  "name": "Onion"
+                },
+                {
+                  "pos": 28,
+                  "name": "Orange"
+                },
+                {
+                  "pos": 29,
+                  "name": "Papaya"
+                },
+                {
+                  "pos": 30,
+                  "name": "Parsley"
+                },
+                {
+                  "pos": 31,
+                  "name": "Pear"
+                },
+                {
+                  "pos": 32,
+                  "name": "Pineapple"
+                },
+                {
+                  "pos": 33,
+                  "name": "Plum"
+                },
+                {
+                  "pos": 34,
+                  "name": "Pomegranate"
+                },
+                {
+                  "pos": 35,
+                  "name": "Prune"
+                },
+                {
+                  "pos": 36,
+                  "name": "Grape"
+                },
+                {
+                  "pos": 37,
+                  "name": "Raspberry"
+                },
+                {
+                  "pos": 38,
+                  "name": "Shiitake mushroom"
+                },
+                {
+                  "pos": 39,
+                  "name": "Spinach"
+                },
+                {
+                  "pos": 40,
+                  "name": "Spirulina"
+                },
+                {
+                  "pos": 41,
+                  "name": "Strawberry"
+                },
+                {
+                  "pos": 42,
+                  "name": "Tomato"
+                },
+                {
+                  "pos": 43,
+                  "name": "Turmeric"
+                },
+                {
+                  "pos": 44,
+                  "name": "Organic rice protein"
+                }
+              ]
+            },
+            {
+              "name": "Plant Derived Mineral Complex",
+              "total": {
+                "amount": 300,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Trace mineral complex from red algae"
+                },
+                {
+                  "pos": 2,
+                  "name": "Fulvic acid"
+                }
+              ],
+              "as_labeled": "Trace mineral complex from red algae, fulvic acid"
+            },
+            {
+              "name": "PrePro Prebiotic and Probiotic Blend",
+              "total": {
+                "amount": 173,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Fructooligosaccharides",
+                  "form": "FOS"
+                },
+                {
+                  "pos": 2,
+                  "name": "Chicory root inulin"
+                },
+                {
+                  "pos": 3,
+                  "name": "Lactobacillus acidophilus"
+                },
+                {
+                  "pos": 4,
+                  "name": "Bacillus coagulans"
+                }
+              ],
+              "as_labeled": "1 billion CFU viable cells: Fructooligosaccharides (FOS), chicory root inulin, Lactobacillus acidophilus, Bacillus coagulans"
+            },
+            {
+              "name": "PuriGenic Multifaceted Free Radical Defense System",
+              "total": {
+                "amount": 150,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Citrus bioflavonoid complex"
+                },
+                {
+                  "pos": 2,
+                  "name": "Grape seed extract",
+                  "standardization": "95% proanthocyanidin"
+                }
+              ],
+              "as_labeled": "Citrus bioflavonoid complex, grape seed extract (95% proanthocyanidin)"
+            },
+            {
+              "name": "Typical Amino Acid Profile",
+              "total": null,
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Alanine",
+                  "amount": 26.91,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 2,
+                  "name": "Arginine",
+                  "amount": 38.18,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 3,
+                  "name": "Aspartic acid",
+                  "amount": 39.22,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 4,
+                  "name": "Cystine",
+                  "amount": 15.81,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 5,
+                  "name": "Glutamic acid",
+                  "amount": 84.58,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 6,
+                  "name": "Glycine",
+                  "amount": 20.47,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 7,
+                  "name": "Histidine",
+                  "amount": 10.81,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 8,
+                  "name": "Isoleucine",
+                  "amount": 20.18,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 9,
+                  "name": "Leucine",
+                  "amount": 39.85,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 10,
+                  "name": "Lysine",
+                  "amount": 12.71,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 11,
+                  "name": "Methionine",
+                  "amount": 15.76,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 12,
+                  "name": "Phenylalanine",
+                  "amount": 26.11,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 13,
+                  "name": "Proline",
+                  "amount": 20.18,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 14,
+                  "name": "Serine",
+                  "amount": 22.89,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 15,
+                  "name": "Threonine",
+                  "amount": 16.79,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 16,
+                  "name": "Tryptophan",
+                  "amount": 5.64,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 17,
+                  "name": "Tyrosine",
+                  "amount": 26.39,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 18,
+                  "name": "Valine",
+                  "amount": 27.95,
+                  "unit": "mg"
+                }
+              ],
+              "as_labeled": "Typical amino acid profile from organic rice protein in Whole Foods Blend (mg per serving)"
+            }
+          ],
+          "other_ingredients": [
+            "Organic tapioca maltodextrin",
+            "Citric acid",
+            "Natural flavors",
+            "Rebaudioside A",
+            "Acacia gum",
+            "Beet root (color)",
+            "Calcium citrate",
+            "Calcium gluconate"
+          ],
+          "source_label": "usyg100074_btt-2.5_canister-0222_panel-900x1200_1.jpg"
+        }
+      ]
+    },
+    "beyond-tangy-tangerine-450g-canister": {
+      "product_id": "beyond-tangy-tangerine-450g-canister",
+      "name": "Beyond Tangy Tangerine® 450 G Canister (BTT Original)",
+      "sku": "23221",
+      "ygy_id": "6693",
+      "variants": [
+        {
+          "sku": "23230",
+          "ygy_id": "6704",
+          "name": "Beyond Tangy Tangerine® - 30 Count Box",
+          "form": "stick pack box",
+          "source_label": "btt_30ct_box_supp_facts_1224_1.jpg"
+        }
+      ],
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "2 scoops (15 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 40,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "dietary_fiber": {
+              "amount": "<1",
+              "unit": "g",
+              "pct_dv": 2
+            },
+            "total_sugars": {
+              "amount": "<1",
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 810,
+              "unit": "mcg",
+              "pct_dv": 90,
+              "form": "as retinyl palmitate and 54% as beta-carotene",
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 1000,
+              "unit": "mg",
+              "pct_dv": 1111,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 18.8,
+              "unit": "mcg",
+              "pct_dv": 94,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 667,
+              "form": "as d-alpha tocopheryl acetate"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 2500,
+              "form": "as thiamine mononitrate",
+              "unit_detail": "B1"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 2308,
+              "unit_detail": "B2"
+            },
+            {
+              "name": "Niacin",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 250,
+              "form": "as niacinamide",
+              "unit_detail": "NE"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 1765,
+              "form": "as pyridoxine HCl"
+            },
+            {
+              "name": "Folate",
+              "amount": 400,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "as calcium-L-5-methylfolate",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 500,
+              "unit": "mcg",
+              "pct_dv": 20833,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 600,
+              "unit": "mcg",
+              "pct_dv": 2000
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": 3000,
+              "form": "as D-calcium pantothenate"
+            },
+            {
+              "name": "Choline",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 5,
+              "form": "as choline bitartrate"
+            },
+            {
+              "name": "Calcium",
+              "amount": 130,
+              "unit": "mg",
+              "pct_dv": 10
+            },
+            {
+              "name": "Iron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 6,
+              "form": "as ferrous gluconate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 5,
+              "form": "as magnesium gluconate and oxide"
+            },
+            {
+              "name": "Zinc",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 18,
+              "form": "as zinc gluconate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 182,
+              "form": "as selenomethionine"
+            },
+            {
+              "name": "Copper",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 111,
+              "form": "as copper gluconate"
+            },
+            {
+              "name": "Chromium",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": 571,
+              "form": "as chromium chelate"
+            },
+            {
+              "name": "Sodium",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 1
+            },
+            {
+              "name": "Potassium",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 2,
+              "form": "as potassium gluconate and citrate"
+            },
+            {
+              "name": "Glucosamine",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "HCl"
+            },
+            {
+              "name": "MSM",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Chondroitin sulfate",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Inositol",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Dimethylglycine",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Citrus bioflavonoid complex",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Grape seed",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract"
+            },
+            {
+              "name": "Coenzyme Q10",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Boron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as boron citrate"
+            },
+            {
+              "name": "Vitamin K2",
+              "amount": 30,
+              "unit": "mcg",
+              "pct_dv": null,
+              "form": "as menaquinone-7"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Whole Foods Blend",
+              "total": {
+                "amount": 500,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Gum acacia"
+                },
+                {
+                  "pos": 2,
+                  "name": "Acerola",
+                  "latin": "Malpighia glabra",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 3,
+                  "name": "Agave inulin"
+                },
+                {
+                  "pos": 4,
+                  "name": "Alfalfa",
+                  "form": "juice"
+                },
+                {
+                  "pos": 5,
+                  "name": "Amla",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 6,
+                  "name": "Apple",
+                  "latin": "Malus pumila",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 7,
+                  "name": "Apple cider vinegar"
+                },
+                {
+                  "pos": 8,
+                  "name": "Banana",
+                  "latin": "Musa spp",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 9,
+                  "name": "Beet",
+                  "latin": "Beta vulgaris",
+                  "part": "root"
+                },
+                {
+                  "pos": 10,
+                  "name": "Blackberry",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 11,
+                  "name": "Black currant",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 12,
+                  "name": "Blueberry",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 13,
+                  "name": "Broccoli",
+                  "latin": "Brassica oleracea",
+                  "part": "crown"
+                },
+                {
+                  "pos": 14,
+                  "name": "Brown rice"
+                },
+                {
+                  "pos": 15,
+                  "name": "Carrot",
+                  "part": "root"
+                },
+                {
+                  "pos": 16,
+                  "name": "Chlorella"
+                },
+                {
+                  "pos": 17,
+                  "name": "Cinnamon",
+                  "part": "bark"
+                },
+                {
+                  "pos": 18,
+                  "name": "Cranberry",
+                  "latin": "Vaccinium macrocarpon",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 19,
+                  "name": "Fennel",
+                  "part": "seed"
+                },
+                {
+                  "pos": 20,
+                  "name": "Fenugreek",
+                  "part": "seed"
+                },
+                {
+                  "pos": 21,
+                  "name": "Garlic",
+                  "part": "bulb"
+                },
+                {
+                  "pos": 22,
+                  "name": "Ginger",
+                  "part": "root"
+                },
+                {
+                  "pos": 23,
+                  "name": "Goji berry",
+                  "latin": "Lycium barbarum",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 24,
+                  "name": "Holy basil",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 25,
+                  "name": "Kale",
+                  "latin": "Brassica oleracea",
+                  "part": "sprout"
+                },
+                {
+                  "pos": 26,
+                  "name": "Mango",
+                  "latin": "Mangifera indica",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 27,
+                  "name": "Onion",
+                  "latin": "Allium cepa",
+                  "part": "bulb"
+                },
+                {
+                  "pos": 28,
+                  "name": "Orange",
+                  "part": "peel"
+                },
+                {
+                  "pos": 29,
+                  "name": "Papaya",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 30,
+                  "name": "Parsley",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 31,
+                  "name": "Pear",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 32,
+                  "name": "Pineapple",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 33,
+                  "name": "Plum",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 34,
+                  "name": "Pomegranate",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 35,
+                  "name": "Prune",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 36,
+                  "name": "Grape",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 37,
+                  "name": "Raspberry",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 38,
+                  "name": "Shiitake mushroom"
+                },
+                {
+                  "pos": 39,
+                  "name": "Spinach",
+                  "latin": "Spinacia oleracea"
+                },
+                {
+                  "pos": 40,
+                  "name": "Spirulina"
+                },
+                {
+                  "pos": 41,
+                  "name": "Strawberry",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 42,
+                  "name": "Tomato",
+                  "latin": "Lycopersicon esculentum",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 43,
+                  "name": "Turmeric",
+                  "part": "root"
+                }
+              ]
+            },
+            {
+              "name": "Plant Derived Mineral Complex",
+              "total": {
+                "amount": 300,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Mineralized seaweed extract",
+                  "latin": "Lithothamnion sp."
+                },
+                {
+                  "pos": 2,
+                  "name": "Fulvic acid"
+                }
+              ],
+              "as_labeled": "from mineralized seaweed extract (Lithothamnion sp.) and fulvic acid"
+            },
+            {
+              "name": "Amino Acid Complex",
+              "total": {
+                "amount": 125,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "L-leucine"
+                },
+                {
+                  "pos": 2,
+                  "name": "L-isoleucine"
+                },
+                {
+                  "pos": 3,
+                  "name": "L-valine"
+                },
+                {
+                  "pos": 4,
+                  "name": "L-lysine"
+                },
+                {
+                  "pos": 5,
+                  "name": "L-methionine"
+                },
+                {
+                  "pos": 6,
+                  "name": "L-histidine"
+                },
+                {
+                  "pos": 7,
+                  "name": "L-phenylalanine"
+                },
+                {
+                  "pos": 8,
+                  "name": "L-threonine"
+                }
+              ],
+              "as_labeled": "L-leucine, L-isoleucine, L-valine, L-lysine, L-methionine, L-histidine, L-phenylalanine, L-threonine"
+            }
+          ],
+          "other_ingredients": [
+            "Organic tapioca maltodextrin",
+            "Citric acid",
+            "Natural flavors",
+            "Beet powder",
+            "Rebaudioside A",
+            "Pea protein",
+            "Fructose",
+            "Guar gum",
+            "Fructooligosaccharides",
+            "Xanthan gum",
+            "Calcium citrate",
+            "Sodium ascorbate",
+            "Black currant",
+            "Calcium gluconate"
+          ],
+          "source_label": "btt-canister_suppfacts-0725_vq.jpg"
+        }
+      ]
+    },
     "bio-alert": {
       "product_id": "bio-alert",
       "name": "Bio Alert",
@@ -2174,6 +3363,2096 @@
           "source_label": "usbi000004-bio-fuel_supplementfacts_1021_1200x900.jpg",
           "role": null,
           "blends": []
+        }
+      ]
+    },
+    "btt-2-0-citrus-peach-fusion": {
+      "product_id": "btt-2-0-citrus-peach-fusion",
+      "name": "BTT 2.0 Citrus Peach Fusion",
+      "sku": "USYG100075",
+      "ygy_id": "6699",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "1 scoop (16 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 40,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 10,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "total_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 3000,
+              "unit": "mcg",
+              "pct_dv": 333,
+              "form": "as retinyl palmitate & 40% beta carotene",
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 1250,
+              "unit": "mg",
+              "pct_dv": 1389,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 125,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 267,
+              "form": "as d-alpha tocopheryl acetate"
+            },
+            {
+              "name": "Vitamin K",
+              "amount": 40,
+              "unit": "mcg",
+              "pct_dv": 33,
+              "form": "as menatetrenone"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 2500,
+              "form": "as thiamin mononitrate",
+              "unit_detail": "B1"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 2308,
+              "unit_detail": "B2"
+            },
+            {
+              "name": "Niacin",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 250,
+              "form": "as niacinamide",
+              "unit_detail": "NE"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 1765,
+              "form": "as pyridoxine HCl"
+            },
+            {
+              "name": "Folate",
+              "amount": 300,
+              "unit": "mcg",
+              "pct_dv": 75,
+              "form": "as calcium 5-methylfolate",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 1000,
+              "unit": "mcg",
+              "pct_dv": 41667,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 750,
+              "unit": "mcg",
+              "pct_dv": 2500
+            },
+            {
+              "name": "Pantothenic acid",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": 3000,
+              "form": "as D-calcium pantothenate"
+            },
+            {
+              "name": "Calcium",
+              "amount": 120,
+              "unit": "mg",
+              "pct_dv": 9,
+              "form": "as citrate, gluconate (from AlgaeCal)"
+            },
+            {
+              "name": "Iron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 6,
+              "form": "as ferrous gluconate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 10,
+              "form": "as magnesium gluconate, oxide (from AlgaeCal)"
+            },
+            {
+              "name": "Zinc",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": 27,
+              "form": "as zinc gluconate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 182
+            },
+            {
+              "name": "Copper",
+              "amount": 1.5,
+              "unit": "mg",
+              "pct_dv": 167,
+              "form": "as copper oxide"
+            },
+            {
+              "name": "Chromium",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": 571,
+              "form": "as chromium chelate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 175,
+              "unit": "mg",
+              "pct_dv": 4,
+              "form": "as potassium citrate"
+            },
+            {
+              "name": "Beet root",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Glucosamine",
+              "amount": 125,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "vegan HCl"
+            },
+            {
+              "name": "MSM",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Chondroitin sulfate",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from bovine"
+            },
+            {
+              "name": "Inositol",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Coenzyme Q10",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Organic Whole Food Blend",
+              "total": {
+                "amount": 5700,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Rice solids",
+                  "sub_ingredients": [
+                    {
+                      "name": "Rice maltodextrin"
+                    },
+                    {
+                      "name": "Rice protein"
+                    }
+                  ]
+                },
+                {
+                  "pos": 2,
+                  "name": "Carrot",
+                  "part": "root"
+                },
+                {
+                  "pos": 3,
+                  "name": "Acai",
+                  "part": "berry"
+                },
+                {
+                  "pos": 4,
+                  "name": "Curry leaf",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Parsley",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 6,
+                  "name": "Spinach",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 7,
+                  "name": "Tomato",
+                  "form": "juice"
+                },
+                {
+                  "pos": 8,
+                  "name": "Spirulina"
+                },
+                {
+                  "pos": 9,
+                  "name": "Chlorella"
+                },
+                {
+                  "pos": 10,
+                  "name": "Blueberry",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 11,
+                  "name": "Acerola",
+                  "part": "fruit",
+                  "form": "extract"
+                },
+                {
+                  "pos": 12,
+                  "name": "Guava",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 13,
+                  "name": "Lemon",
+                  "part": "peel"
+                },
+                {
+                  "pos": 14,
+                  "name": "Mustard",
+                  "part": "seed",
+                  "form": "extract"
+                },
+                {
+                  "pos": 15,
+                  "name": "Holy basil",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 16,
+                  "name": "Moringa",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 17,
+                  "name": "Annatto",
+                  "part": "seed",
+                  "form": "extract"
+                },
+                {
+                  "pos": 18,
+                  "name": "Maitake mushroom"
+                },
+                {
+                  "pos": 19,
+                  "name": "Shiitake mushroom"
+                },
+                {
+                  "pos": 20,
+                  "name": "Cordyceps mushroom"
+                },
+                {
+                  "pos": 21,
+                  "name": "Bilberry",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 22,
+                  "name": "Broccoli",
+                  "part": "sprout"
+                },
+                {
+                  "pos": 23,
+                  "name": "Cauliflower",
+                  "part": "sprout"
+                },
+                {
+                  "pos": 24,
+                  "name": "Kale",
+                  "part": "sprout"
+                },
+                {
+                  "pos": 25,
+                  "name": "Nettle",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 26,
+                  "name": "Reishi mushroom"
+                },
+                {
+                  "pos": 27,
+                  "name": "Broccoli"
+                },
+                {
+                  "pos": 28,
+                  "name": "Kale"
+                },
+                {
+                  "pos": 29,
+                  "name": "Cauliflower"
+                }
+              ]
+            },
+            {
+              "name": "Organic Typical Amino Acid Complex",
+              "total": null,
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "L-alanine",
+                  "amount": 20,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 2,
+                  "name": "L-arginine",
+                  "amount": 29,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 3,
+                  "name": "L-aspartic",
+                  "amount": 40,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 4,
+                  "name": "L-cysteine",
+                  "amount": 9,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 5,
+                  "name": "L-glutamic acid",
+                  "amount": 80,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 6,
+                  "name": "L-glycine",
+                  "amount": 20,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 7,
+                  "name": "L-histidine",
+                  "amount": 10,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 8,
+                  "name": "L-isoleucine",
+                  "amount": 20,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 9,
+                  "name": "L-leucine",
+                  "amount": 20,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 10,
+                  "name": "L-lysine",
+                  "amount": 15,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 11,
+                  "name": "L-methionine",
+                  "amount": 10,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 12,
+                  "name": "L-phenylalanine",
+                  "amount": 20,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 13,
+                  "name": "L-proline",
+                  "amount": 20,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 14,
+                  "name": "L-serine",
+                  "amount": 20,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 15,
+                  "name": "L-threonine",
+                  "amount": 15,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 16,
+                  "name": "L-tryptophan",
+                  "amount": 5,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 17,
+                  "name": "L-tyrosine",
+                  "amount": 20,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 18,
+                  "name": "L-valine",
+                  "amount": 25,
+                  "unit": "mg"
+                }
+              ],
+              "as_labeled": "From whole brown rice (L-alanine, L-arginine, L-aspartic, L-cysteine, L-glutamic acid, L-glycine, L-histidine, L-isoleucine, L-leucine, L-lysine, L-methionine, L-phenylalanine, L-proline, L-serine, L-threonine, L-tryptophan, L-tyrosine, L-valine)"
+            },
+            {
+              "name": "Trace Mineral",
+              "total": {
+                "amount": 300,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Marine algae",
+                  "latin": "algas calcareas",
+                  "sub_ingredients": [
+                    {
+                      "name": "Boron"
+                    },
+                    {
+                      "name": "Manganese"
+                    },
+                    {
+                      "name": "Silica"
+                    },
+                    {
+                      "name": "Strontium"
+                    },
+                    {
+                      "name": "Vanadium"
+                    },
+                    {
+                      "name": "Zinc"
+                    }
+                  ]
+                }
+              ],
+              "as_labeled": "containing Marine algae (algas calcareas) including boron, manganese, silica, strontium, vanadium, zinc"
+            },
+            {
+              "name": "PuriGenic Multifaceted Free Radical Defense System",
+              "total": {
+                "amount": 150,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Amla",
+                  "form": "organic"
+                },
+                {
+                  "pos": 2,
+                  "name": "Selenomethionine"
+                },
+                {
+                  "pos": 3,
+                  "name": "Grape seed",
+                  "form": "extract"
+                }
+              ],
+              "as_labeled": "organic amla, selenomethionine, grape seed extract"
+            },
+            {
+              "name": "Prebiotic Probiotic Blend",
+              "total": {
+                "amount": 100,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Fructooligosaccharides",
+                  "form": "FOS"
+                },
+                {
+                  "pos": 2,
+                  "name": "Lactobacillus acidophilus"
+                },
+                {
+                  "pos": 3,
+                  "name": "Lactobacillus sporogenes",
+                  "standardization": "a.k.a. bacillus coagulans"
+                }
+              ],
+              "as_labeled": "prebiotic fiber from fructooligosaccharides (FOS), Lactobacillus acidophilus, Lactobacillus sporogenes (a.k.a. bacillus coagulans) (1 billion CFU)"
+            }
+          ],
+          "other_ingredients": [
+            "Organic tapioca maltodextrin",
+            "Citric acid",
+            "Natural flavors",
+            "Organic stevia (Rebaudioside A)",
+            "Xanthan gum",
+            "Silica",
+            "Natural color (turmeric color)",
+            "Acacia gum"
+          ],
+          "source_label": "btt2-canister_suppfacts-0524_4.jpg"
+        }
+      ]
+    },
+    "btt-2-0-citrus-peach-fusion-30-count-box": {
+      "product_id": "btt-2-0-citrus-peach-fusion-30-count-box",
+      "name": "BTT 2.0 Citrus Peach Fusion - 30 Count Box",
+      "sku": "USYG100076",
+      "ygy_id": "960",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "1 stick pack (16 g)",
+          "servings_per_container": 30,
+          "directions": "Adults, mix one stick pack in 12-16 oz of water or juice. Children, 1/4 stick pack daily per 20 pounds of body weight. Not to exceed one stick pack a day.",
+          "macros": {
+            "calories": {
+              "amount": 40,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 10,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "total_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 3000,
+              "unit": "mcg",
+              "pct_dv": 333,
+              "form": "as beta-carotene",
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 1250,
+              "unit": "mg",
+              "pct_dv": 1389,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 125,
+              "form": "as cholecalciferol (vegan D3, from food algae)"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 267,
+              "form": "as d-alpha tocopheryl acetate"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 2500,
+              "form": "as thiamine mononitrate",
+              "unit_detail": "B1"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 2308,
+              "unit_detail": "B2"
+            },
+            {
+              "name": "Niacin",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 250,
+              "form": "as niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 1765,
+              "form": "as pyridoxine HCl"
+            },
+            {
+              "name": "Folate",
+              "amount": 833,
+              "unit": "mcg",
+              "pct_dv": 208,
+              "form": "as folic acid (500 mcg folic acid)",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 1000,
+              "unit": "mcg",
+              "pct_dv": 41667,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 750,
+              "unit": "mcg",
+              "pct_dv": 2500
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": 3000,
+              "form": "as calcium pantothenate"
+            },
+            {
+              "name": "Calcium",
+              "amount": 120,
+              "unit": "mg",
+              "pct_dv": 9,
+              "form": "as citrate, gluconate"
+            },
+            {
+              "name": "Iron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 6,
+              "form": "as ferrous gluconate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 10,
+              "form": "as oxide, gluconate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": 27,
+              "form": "as gluconate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 182,
+              "form": "as selenomethionine"
+            },
+            {
+              "name": "Copper",
+              "amount": 1.5,
+              "unit": "mg",
+              "pct_dv": 167,
+              "form": "as gluconate"
+            },
+            {
+              "name": "Chromium",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": 571,
+              "form": "as amino acid chelate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 175,
+              "unit": "mg",
+              "pct_dv": 4,
+              "form": "as citrate, gluconate"
+            },
+            {
+              "name": "Glucosamine",
+              "amount": 125,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "vegan HCl"
+            },
+            {
+              "name": "MSM",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Chondroitin sulfate",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from bovine"
+            },
+            {
+              "name": "Inositol",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Beet root",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Beta vulgaris",
+              "form": "rich in dimethylglycine"
+            },
+            {
+              "name": "Coenzyme Q10",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Boron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as sodium borate"
+            },
+            {
+              "name": "Vitamin K",
+              "amount": 40,
+              "unit": "mcg",
+              "pct_dv": null,
+              "form": "as menatetrenone"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Organic Whole Food Blend",
+              "total": {
+                "amount": 5700,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Rice maltodextrin"
+                },
+                {
+                  "pos": 2,
+                  "name": "Rice protein"
+                },
+                {
+                  "pos": 3,
+                  "name": "Amla",
+                  "latin": "Phyllanthus emblica",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 4,
+                  "name": "Acai",
+                  "latin": "Euterpe oleracea",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 5,
+                  "name": "Carrot",
+                  "latin": "Dacus carota",
+                  "part": "root"
+                },
+                {
+                  "pos": 6,
+                  "name": "Parsley",
+                  "latin": "Petroselinum crispum",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 7,
+                  "name": "Spinach",
+                  "latin": "Spinacia oleracea",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 8,
+                  "name": "Tomato",
+                  "latin": "Lycopersicon esculentum",
+                  "form": "juice"
+                },
+                {
+                  "pos": 9,
+                  "name": "Spirulina",
+                  "latin": "Spirulina platensis"
+                },
+                {
+                  "pos": 10,
+                  "name": "Chlorella",
+                  "latin": "Chlorella vulgaris"
+                },
+                {
+                  "pos": 11,
+                  "name": "Blueberry",
+                  "latin": "Vaccinium angustifolium",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 12,
+                  "name": "Acerola",
+                  "latin": "Malphighia glabra",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 13,
+                  "name": "Beet",
+                  "latin": "Beta vulgaris",
+                  "form": "juice"
+                },
+                {
+                  "pos": 14,
+                  "name": "Maitake mushroom",
+                  "latin": "Grifola frondosa"
+                },
+                {
+                  "pos": 15,
+                  "name": "Shiitake mushroom",
+                  "latin": "Lentinus edodes"
+                },
+                {
+                  "pos": 16,
+                  "name": "Cordyceps",
+                  "latin": "Cordyceps sinensis"
+                },
+                {
+                  "pos": 17,
+                  "name": "Bilberry",
+                  "latin": "Vaccinium myrtallis",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 18,
+                  "name": "Broccoli",
+                  "latin": "Brassica oleracea"
+                },
+                {
+                  "pos": 19,
+                  "name": "Kale",
+                  "latin": "Brassica oleracea"
+                },
+                {
+                  "pos": 20,
+                  "name": "Cauliflower",
+                  "latin": "Brassica oleracea"
+                },
+                {
+                  "pos": 21,
+                  "name": "Guava"
+                },
+                {
+                  "pos": 22,
+                  "name": "Basil"
+                },
+                {
+                  "pos": 23,
+                  "name": "Lemon",
+                  "form": "extract"
+                },
+                {
+                  "pos": 24,
+                  "name": "Murraya koenigii",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 25,
+                  "name": "Reishi mushroom",
+                  "latin": "Ganoderma lucidum"
+                },
+                {
+                  "pos": 26,
+                  "name": "Nettle",
+                  "latin": "Urtica dioica",
+                  "part": "leaf"
+                }
+              ]
+            },
+            {
+              "name": "Typical Organic Amino Acid Complex",
+              "total": {
+                "amount": 575,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "L-glutamic acid",
+                  "amount": 78,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 2,
+                  "name": "L-leucine",
+                  "amount": 38,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 3,
+                  "name": "L-aspartic",
+                  "amount": 38,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 4,
+                  "name": "L-valine",
+                  "amount": 26,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 5,
+                  "name": "L-arginine",
+                  "amount": 26,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 6,
+                  "name": "L-phenylalanine",
+                  "amount": 24,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 7,
+                  "name": "L-alanine",
+                  "amount": 24,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 8,
+                  "name": "L-serine",
+                  "amount": 22,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 9,
+                  "name": "L-tyrosine",
+                  "amount": 21,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 10,
+                  "name": "L-proline",
+                  "amount": 19,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 11,
+                  "name": "L-isoleucine",
+                  "amount": 19,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 12,
+                  "name": "L-glycine",
+                  "amount": 18,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 13,
+                  "name": "L-threonine",
+                  "amount": 16,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 14,
+                  "name": "L-methionine",
+                  "amount": 11,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 15,
+                  "name": "L-lysine",
+                  "amount": 11,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 16,
+                  "name": "L-histidine",
+                  "amount": 11,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 17,
+                  "name": "L-cystine",
+                  "amount": 8,
+                  "unit": "mg"
+                }
+              ],
+              "as_labeled": "From organic brown rice protein (L-glutamic acid, L-leucine, L-aspartic, L-valine, L-arginine, L-phenylalanine, L-alanine, L-serine, L-tyrosine, L-proline, L-isoleucine, L-glycine, L-threonine, L-methionine, L-lysine, L-histidine, L-cystine)"
+            },
+            {
+              "name": "Trace Mineral Blend",
+              "total": {
+                "amount": 300,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Algas calcareas",
+                  "form": "organic"
+                },
+                {
+                  "pos": 2,
+                  "name": "Hydrothermal mineral clay"
+                }
+              ],
+              "as_labeled": "organic Algas calcareas and hydrothermal mineral clay including Boron, Manganese, Silica, Strontium, Vanadium, Zinc"
+            },
+            {
+              "name": "PuriGenic Multifaceted Free Radical Defense System",
+              "total": {
+                "amount": 150,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Amla",
+                  "form": "organic"
+                },
+                {
+                  "pos": 2,
+                  "name": "Grape seed",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Selenium",
+                  "form": "as selenomethionine"
+                }
+              ],
+              "as_labeled": "organic amla, grape seed extract, selenium (as selenomethionine)"
+            },
+            {
+              "name": "PrePro Prebiotic and Probiotic Blend",
+              "total": {
+                "amount": 100,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Fructooligosaccharides",
+                  "form": "FOS"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bacillus coagulans",
+                  "standardization": "Lactobacillus sporogenes, MTCC5856"
+                },
+                {
+                  "pos": 3,
+                  "name": "Lactobacillus acidophilus",
+                  "standardization": "NCIMB 30333"
+                }
+              ],
+              "as_labeled": "prebiotic fiber from fructooligosaccharides (FOS), Bacillus coagulans (Lactobacillus sporogenes) (MTCC5856), Lactobacillus acidophilus (NCIMB 30333) (93.75 million viable cells)"
+            }
+          ],
+          "other_ingredients": [
+            "Natural flavors",
+            "Citric acid",
+            "Stevia (Rebaudioside A)",
+            "Xanthan gum",
+            "Natural color (purple carrot)",
+            "Acacia gum"
+          ],
+          "source_label": "btt_2.0_30ct-box-suppfacts-0124.jpg"
+        }
+      ]
+    },
+    "btt-2-0-tablets": {
+      "product_id": "btt-2-0-tablets",
+      "name": "BTT 2.0® Tablets - 120 Tablets",
+      "sku": "USYG100077",
+      "ygy_id": "6521",
+      "additional_labels": [
+        "btt_2.0_tablets_suppfacts_0122_2.jpg"
+      ],
+      "components": [
+        {
+          "role": null,
+          "form": "tablet",
+          "serving_size": "4 tablets",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 3000,
+              "unit": "mcg",
+              "pct_dv": 333,
+              "form": "as retinyl palmitate and beta-carotene",
+              "label_iu": 10000
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 1250,
+              "unit": "mg",
+              "pct_dv": 1389,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 125,
+              "form": "as cholecalciferol",
+              "label_iu": 1000
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 267,
+              "form": "as d-alpha-tocopherol acetate",
+              "label_iu": 55
+            },
+            {
+              "name": "Vitamin K",
+              "amount": 40,
+              "unit": "mcg",
+              "pct_dv": 33,
+              "form": "as phylloquinone"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 2500,
+              "form": "as thiamine HCl",
+              "unit_detail": "B1"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 2308,
+              "unit_detail": "B2"
+            },
+            {
+              "name": "Niacin",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 250,
+              "form": "as niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 1765,
+              "form": "as pyridoxine HCl"
+            },
+            {
+              "name": "Folate",
+              "amount": 835,
+              "unit": "mcg",
+              "pct_dv": 209,
+              "form": "as 5-methylfolate",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 1000,
+              "unit": "mcg",
+              "pct_dv": 41667,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 750,
+              "unit": "mcg",
+              "pct_dv": 2500
+            },
+            {
+              "name": "Pantothenic acid",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": 3000,
+              "form": "as D-calcium pantothenate"
+            },
+            {
+              "name": "Calcium",
+              "amount": 180,
+              "unit": "mg",
+              "pct_dv": 14,
+              "form": "as calcium gluconate, dicalcium phosphate and calcium citrate"
+            },
+            {
+              "name": "Iron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 6,
+              "form": "as ferrous gluconate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 10,
+              "form": "as magnesium gluconate and magnesium oxide"
+            },
+            {
+              "name": "Zinc",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 273,
+              "form": "as zinc gluconate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 182,
+              "form": "as selenomethionine"
+            },
+            {
+              "name": "Copper",
+              "amount": 1.5,
+              "unit": "mg",
+              "pct_dv": 167,
+              "form": "as copper gluconate"
+            },
+            {
+              "name": "Chromium",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": 571,
+              "form": "as chromium amino acid chelate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 90,
+              "unit": "mg",
+              "pct_dv": "<2",
+              "form": "as potassium gluconate and citrate"
+            },
+            {
+              "name": "Beet root",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "organic powder"
+            },
+            {
+              "name": "Glucosamine",
+              "amount": 125,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "HCl"
+            },
+            {
+              "name": "MSM",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Trans-Resveratrol",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from Polygonum cuspidatum root extract"
+            },
+            {
+              "name": "Chondroitin sulfate",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Inositol",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Coenzyme Q10",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Boron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as sodium borate"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Whole Foods Blend",
+              "total": {
+                "amount": 620,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Gum acacia"
+                },
+                {
+                  "pos": 2,
+                  "name": "Acerola"
+                },
+                {
+                  "pos": 3,
+                  "name": "Agave"
+                },
+                {
+                  "pos": 4,
+                  "name": "Alfalfa"
+                },
+                {
+                  "pos": 5,
+                  "name": "Amla"
+                },
+                {
+                  "pos": 6,
+                  "name": "Apple"
+                },
+                {
+                  "pos": 7,
+                  "name": "Apple cider vinegar"
+                },
+                {
+                  "pos": 8,
+                  "name": "Banana"
+                },
+                {
+                  "pos": 9,
+                  "name": "Beet",
+                  "part": "root"
+                },
+                {
+                  "pos": 10,
+                  "name": "Blackberry"
+                },
+                {
+                  "pos": 11,
+                  "name": "Blueberry"
+                },
+                {
+                  "pos": 12,
+                  "name": "Broccoli"
+                },
+                {
+                  "pos": 13,
+                  "name": "Brown rice soluble protein"
+                },
+                {
+                  "pos": 14,
+                  "name": "Carrot"
+                },
+                {
+                  "pos": 15,
+                  "name": "Chlorella"
+                },
+                {
+                  "pos": 16,
+                  "name": "Cinnamon",
+                  "part": "bark"
+                },
+                {
+                  "pos": 17,
+                  "name": "Cranberry"
+                },
+                {
+                  "pos": 18,
+                  "name": "Fennel",
+                  "part": "seed"
+                },
+                {
+                  "pos": 19,
+                  "name": "Fenugreek",
+                  "part": "seed"
+                },
+                {
+                  "pos": 20,
+                  "name": "Garlic"
+                },
+                {
+                  "pos": 21,
+                  "name": "Ginger",
+                  "part": "root"
+                },
+                {
+                  "pos": 22,
+                  "name": "Goji"
+                },
+                {
+                  "pos": 23,
+                  "name": "Holy basil"
+                },
+                {
+                  "pos": 24,
+                  "name": "Kale"
+                },
+                {
+                  "pos": 25,
+                  "name": "Mango"
+                },
+                {
+                  "pos": 26,
+                  "name": "Onion"
+                },
+                {
+                  "pos": 27,
+                  "name": "Papaya"
+                },
+                {
+                  "pos": 28,
+                  "name": "Parsley"
+                },
+                {
+                  "pos": 29,
+                  "name": "Pear"
+                },
+                {
+                  "pos": 30,
+                  "name": "Pineapple"
+                },
+                {
+                  "pos": 31,
+                  "name": "Prune"
+                },
+                {
+                  "pos": 32,
+                  "name": "Plum"
+                },
+                {
+                  "pos": 33,
+                  "name": "Pomegranate"
+                },
+                {
+                  "pos": 34,
+                  "name": "Grape",
+                  "form": "juice"
+                },
+                {
+                  "pos": 35,
+                  "name": "Raspberry"
+                },
+                {
+                  "pos": 36,
+                  "name": "Shiitake mushroom"
+                },
+                {
+                  "pos": 37,
+                  "name": "Spinach"
+                },
+                {
+                  "pos": 38,
+                  "name": "Spirulina"
+                },
+                {
+                  "pos": 39,
+                  "name": "Strawberry",
+                  "form": "juice"
+                },
+                {
+                  "pos": 40,
+                  "name": "Tomato"
+                },
+                {
+                  "pos": 41,
+                  "name": "Turmeric",
+                  "part": "root"
+                },
+                {
+                  "pos": 42,
+                  "name": "Orange",
+                  "part": "peel"
+                },
+                {
+                  "pos": 43,
+                  "name": "Black currant"
+                }
+              ]
+            },
+            {
+              "name": "Organic Amino Acids Complex",
+              "total": {
+                "amount": 100,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Alanine"
+                },
+                {
+                  "pos": 2,
+                  "name": "Arginine"
+                },
+                {
+                  "pos": 3,
+                  "name": "Aspartic acid"
+                },
+                {
+                  "pos": 4,
+                  "name": "Cystine"
+                },
+                {
+                  "pos": 5,
+                  "name": "Glutamic acid"
+                },
+                {
+                  "pos": 6,
+                  "name": "Glycine"
+                },
+                {
+                  "pos": 7,
+                  "name": "Histidine"
+                },
+                {
+                  "pos": 8,
+                  "name": "Isoleucine"
+                },
+                {
+                  "pos": 9,
+                  "name": "Leucine"
+                },
+                {
+                  "pos": 10,
+                  "name": "Lysine"
+                },
+                {
+                  "pos": 11,
+                  "name": "Methionine"
+                },
+                {
+                  "pos": 12,
+                  "name": "Phenylalanine"
+                },
+                {
+                  "pos": 13,
+                  "name": "Proline"
+                },
+                {
+                  "pos": 14,
+                  "name": "Serine"
+                },
+                {
+                  "pos": 15,
+                  "name": "Threonine"
+                },
+                {
+                  "pos": 16,
+                  "name": "Tryptophan"
+                },
+                {
+                  "pos": 17,
+                  "name": "Tyrosine"
+                },
+                {
+                  "pos": 18,
+                  "name": "Valine"
+                }
+              ],
+              "as_labeled": "from brown rice sprouts: Alanine, Arginine, Aspartic Acid, Cystine, Glutamic Acid, Glycine, Histidine, Isoleucine, Leucine, Lysine, Methionine, Phenylalanine, Proline, Serine, Threonine, Tryptophan, Tyrosine, Valine"
+            },
+            {
+              "name": "Trace Minerals",
+              "total": {
+                "amount": 50,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Red algae",
+                  "latin": "Lithothamnion corallioides"
+                }
+              ],
+              "as_labeled": "from red algae (Lithothamnion corallioides)"
+            },
+            {
+              "name": "Multifaceted Free Radical Defense System",
+              "total": {
+                "amount": 25,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Amla",
+                  "form": "extract"
+                },
+                {
+                  "pos": 2,
+                  "name": "Grape seed",
+                  "form": "extract",
+                  "standardization": "95% proanthocyanidins"
+                }
+              ],
+              "as_labeled": "proprietary blend of amla extract and grape seed extract (95% proanthocyanidins)"
+            },
+            {
+              "name": "PrePro Prebiotic and Probiotic Blend",
+              "total": {
+                "amount": 50,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Chicory root oligofructose",
+                  "form": "FOS"
+                },
+                {
+                  "pos": 2,
+                  "name": "Lactobacillus acidophilus",
+                  "standardization": "500 million CFU"
+                },
+                {
+                  "pos": 3,
+                  "name": "Bacillus coagulans",
+                  "standardization": "500 million CFU"
+                }
+              ],
+              "as_labeled": "Chicory root oligofructose (FOS), Lactobacillus acidophilus (500 million CFU), Bacillus coagulans (500 million CFU)"
+            }
+          ],
+          "other_ingredients": [
+            "Microcrystalline cellulose",
+            "Stearic acid",
+            "Croscarmellose sodium",
+            "Pharmaceutical glaze",
+            "Vegetable magnesium stearate",
+            "Silica"
+          ],
+          "source_label": "btt-2.0-tablets_box_0125_supp-facts.jpg"
+        }
+      ]
+    },
+    "ultimate-tangy-tangerine-liquid": {
+      "product_id": "ultimate-tangy-tangerine-liquid",
+      "name": "Ultimate Tangy Tangerine® - Liquid",
+      "sku": "13221",
+      "ygy_id": "7788",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "1 fl oz (2 tablespoons)",
+          "servings_per_container": 32,
+          "macros": {
+            "calories": {
+              "amount": 16,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 4,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "total_sugars": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 3000,
+              "unit": "mcg",
+              "pct_dv": 333,
+              "form": "as 50% beta carotene, palmitate",
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 1000,
+              "unit": "mg",
+              "pct_dv": 1111,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D3",
+              "amount": 5,
+              "unit": "mcg",
+              "pct_dv": 25,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 134,
+              "unit": "mg",
+              "pct_dv": 893,
+              "form": "as d-alpha tocopherol"
+            },
+            {
+              "name": "Vitamin K",
+              "amount": 30,
+              "unit": "mcg",
+              "pct_dv": 25,
+              "form": "as phytonadione"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 2500,
+              "form": "as thiamine mononitrate",
+              "unit_detail": "B1"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 2308,
+              "form": "as riboflavin",
+              "unit_detail": "B2"
+            },
+            {
+              "name": "Niacin",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 250,
+              "form": "as niacinamide",
+              "unit_detail": "B3"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 1765,
+              "form": "as pyridoxine HCl"
+            },
+            {
+              "name": "Folate",
+              "amount": 400,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "as folic acid (240 mcg folic acid)",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 500,
+              "unit": "mcg",
+              "pct_dv": 20833,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 600,
+              "unit": "mcg",
+              "pct_dv": 2000
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": 3000,
+              "form": "as d-calcium pantothenate"
+            },
+            {
+              "name": "Calcium",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 4,
+              "form": "as gluconate"
+            },
+            {
+              "name": "Iron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 6,
+              "form": "as gluconate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 5,
+              "form": "as gluconate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 18,
+              "form": "as gluconate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 182,
+              "form": "as selenium methionine"
+            },
+            {
+              "name": "Copper",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 111,
+              "form": "as gluconate"
+            },
+            {
+              "name": "Chromium",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": 571,
+              "form": "as amino acid chelate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 2,
+              "form": "as citrate"
+            },
+            {
+              "name": "Choline",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 5,
+              "form": "bitartrate"
+            },
+            {
+              "name": "Majestic Earth Plant Derived Minerals",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Chondroitin sulfate",
+              "amount": 250,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Inositol",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Dimethylglycine",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Citrus bioflavonoids",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Grape seed",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract"
+            },
+            {
+              "name": "Coenzyme Q10",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Boron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as amino acid chelate"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Amino Acid Complex",
+              "total": {
+                "amount": 125,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Alanine"
+                },
+                {
+                  "pos": 2,
+                  "name": "Arginine"
+                },
+                {
+                  "pos": 3,
+                  "name": "Aspartic acid"
+                },
+                {
+                  "pos": 4,
+                  "name": "Cystine"
+                },
+                {
+                  "pos": 5,
+                  "name": "Glutamic acid"
+                },
+                {
+                  "pos": 6,
+                  "name": "Glycine"
+                },
+                {
+                  "pos": 7,
+                  "name": "Histidine"
+                },
+                {
+                  "pos": 8,
+                  "name": "Isoleucine"
+                },
+                {
+                  "pos": 9,
+                  "name": "Leucine"
+                },
+                {
+                  "pos": 10,
+                  "name": "Lysine"
+                },
+                {
+                  "pos": 11,
+                  "name": "Methionine"
+                },
+                {
+                  "pos": 12,
+                  "name": "Phenylalanine"
+                },
+                {
+                  "pos": 13,
+                  "name": "Proline"
+                },
+                {
+                  "pos": 14,
+                  "name": "Serine"
+                },
+                {
+                  "pos": 15,
+                  "name": "Threonine"
+                },
+                {
+                  "pos": 16,
+                  "name": "Tyrosine"
+                },
+                {
+                  "pos": 17,
+                  "name": "Valine"
+                }
+              ],
+              "as_labeled": "Alanine, Arginine, Aspartic Acid, Cystine, Glutamic Acid, Glycine, Histidine, Isoleucine, Leucine, Lysine, Methionine, Phenylalanine, Proline, Serine, Threonine, Tyrosine, Valine"
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "Natural vegetable glycerin",
+            "Natural flavors (tangerine, orange)",
+            "Citrisweet®",
+            "Citric acid",
+            "Rebaudioside A (from stevia leaf)",
+            "Xanthan gum",
+            "Potassium sorbate",
+            "Sodium benzoate",
+            "Pollen extract"
+          ],
+          "source_label": "ultimate-tangy-tangerine_liquid_sleeve_0523_1200x900_1.jpg"
         }
       ]
     }
