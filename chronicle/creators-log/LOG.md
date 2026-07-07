@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 397 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 398 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-07 10:19 UTC-05:00 · round-close · products
+Phase F Batch 10 — the F-range: 4 products from their labels (Female Hormonal Support tincture; FlexeoPlus + Flexi-Care Plus joint liquids; FucoidZ fucoidan capsules). products.json 50→54; warnings.json +867. Two 'no-label' items were false-negatives, confirmed via the image.
+  ↳ Added the four F-range Youngevity products to the composition database by reading each product's actual label picture. Two of them (FlexeoPlus, Flexi-Care Plus) had been auto-flagged as having no label — but the labels existed. A good reminder to always trust the image over the filename. Records (all label-verified, composition-only per §00.A): • female-hormonal-support (sku USGH000006, ygy 867) — liquid tincture, 2 mL / 60 servings, extract_ratio 1:4 (250 mg herb per 1 mL). Proprietary Herbal Extract Blend 1900 mg: Chaste Tree (berry), Wild Yam (root), Ashwagandha (root), Licorice (root), Turmeric (root). Other: purified water, ethyl alcohol 35-45%. Label WARNING → warnings.json ygy 867 (aspirin/anticoagulant/gallstone caution; source:ygy, volatile sidecar). • flexeoplus (sku USLF000703, ygy 9948; matcher NO-LABEL false-negative, label lf_flexeo-plus_supp-facts_1225_1.jpg) — sublingual dropper liquid, 5 droppers (~3.75 mL) / ~32 servings. Vitamin C 50 mg, Vitamin K (phytonadione) 33.3 mcg, Zinc (citrate) 8.3 mg, Glucosamine (HCl) 416.6 mg, MSM 416.6 mg, Ipriflavone 83.3 mg. No blend, no warning. • flexi-care-plus (sku USBI000009, ygy 637; matcher NO-LABEL false-negative, label biometrics-flexicare_mod-0522_suppfacts.jpg) — Biocellular-micellized liquid, 1 tbsp (15 mL) / 30 servings, zero macros. Vitamin E (d-alpha-tocopheryl acetate, micellized) 14 mg, MSM 200 mg, Glucosamine (HCl) 150 mg, Collagen Type I 200 mg. • fucoidz (sku 3005, ygy 618) — capsules, 2 caps / 30 servings. Vitamin C 250 mg, Zinc (ascorbate) 5 mg, standalone Fucoidans 110 mg, and Proprietary Blend 500 mg (L-Lysine HCl, Astragalus root extract, Elderberry fruit extract, Olive leaf extract). Cluster note: FucoidZ (capsules) was disambiguated from ZRadical by reading the ZRadical powder-canister label too — confirmed distinct products (ZRadical powder = sku 3207: calories/B-vitamins + a different fucoidan+fruit blend). The ZRadical family is held for a dedicated Z-range side-by-side pass. French Vanilla Weight Loss 150 = bundle (no own label, skipped). Verification: eden/tools/products_verify.py OK (54 products, 56 components, 0 problems); invariants 45/45; node tools/build.mjs exit 0. Writes routed through safe_write.safe_rewrite (products.json + warnings.json) + safe_append (build-log).
 
 ## 2026-07-07 10:05 UTC-05:00 · session-end · chronicle
 Session-close wrap for reboot: this session grew the Product DB from 14 → 50 products (0-9 through E complete, 5 committed batches B5-B9); rewrote next-chunk.md to current reality (HEAD cbffc5f, F-range next, new locked decisions).
@@ -782,6 +786,3 @@ Ch10 b66: SEBACEOUS CYST→SKIN AILMENTS (p167-168) — LETS-429..433, 5 tier-1:
 
 ## 2026-06-29 11:55 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b65: SCABIES→SCURVY (S's pt 1, p166-167) — LETS-424..428, 5 tier-1 protocol: scabies/scarlatina/sciatica/scoliosis/scurvy. 1 meg→mcg (scoliosis selenium). ★ seal misfire recovered (sulfur=canon → dropped, git-revert+redo). kv176, claims 808, conds 416, board 31/31.
-
-## 2026-06-29 11:44 UTC-05:00 · round-close · knowledge/corpus
-Ch10 b64: RHEUMATIC FEVER→ROSEOLA = ★ R SECTION COMPLETE (p165-166) — LETS-418..423, 6 tier-1 protocol: rheumatic_fever/RA[2nd,Mycoplasma]/rickets[2nd]/ringworm/RMSF/roseola. 1 meg→mcg (RA selenium). kv175, claims 803, conds 413, board 31/31.

@@ -8398,6 +8398,288 @@
           "source_label": "ultimate-tangy-tangerine_liquid_sleeve_0523_1200x900_1.jpg"
         }
       ]
+    },
+    "female-hormonal-support": {
+      "product_id": "female-hormonal-support",
+      "name": "Female Hormonal Support",
+      "sku": "USGH000006",
+      "ygy_id": "867",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (tincture)",
+          "serving_size": "2 mL (approx. 1/2 tsp or 40 drops)",
+          "servings_per_container": 60,
+          "extract_ratio": "1:4 (250 mg herb per 1 mL)",
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Extract Blend",
+              "total": {
+                "amount": 1900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Chaste Tree",
+                  "part": "berry"
+                },
+                {
+                  "pos": 2,
+                  "name": "Wild Yam",
+                  "part": "root"
+                },
+                {
+                  "pos": 3,
+                  "name": "Ashwagandha",
+                  "part": "root"
+                },
+                {
+                  "pos": 4,
+                  "name": "Licorice",
+                  "part": "root"
+                },
+                {
+                  "pos": 5,
+                  "name": "Turmeric",
+                  "part": "root"
+                }
+              ],
+              "as_labeled": "Chaste Tree Berry, Wild Yam Root, Ashwaganda Root, Licorice Root, Turmeric Root"
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "ethyl alcohol (35-45%)"
+          ],
+          "source_label": "gh-female-hormonal-support_suppfacts-0222_cart_1200x900_1.jpg"
+        }
+      ]
+    },
+    "flexeoplus": {
+      "product_id": "flexeoplus",
+      "name": "FlexeoPlus®",
+      "sku": "USLF000703",
+      "ygy_id": "9948",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "5 droppers full (approx. 3.75 mL)",
+          "servings_per_container": 32,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 55,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin K",
+              "amount": 33.3,
+              "unit": "mcg",
+              "pct_dv": 28,
+              "form": "as phytonadione"
+            },
+            {
+              "name": "Zinc",
+              "amount": 8.3,
+              "unit": "mg",
+              "pct_dv": 75,
+              "form": "from zinc citrate"
+            },
+            {
+              "name": "Glucosamine",
+              "amount": 416.6,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as hydrochloride"
+            },
+            {
+              "name": "Methylsulfonylmethane (MSM)",
+              "amount": 416.6,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Ipriflavone",
+              "amount": 83.3,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Filtered Water",
+            "Vegetable Glycerin",
+            "Lecithin (Sunflower)",
+            "Xanthum Gum",
+            "Stevia Leaf Extract",
+            "Sodium Benzoate",
+            "Potassium Sorbate"
+          ],
+          "source_label": "lf_flexeo-plus_supp-facts_1225_1.jpg"
+        }
+      ]
+    },
+    "flexi-care-plus": {
+      "product_id": "flexi-care-plus",
+      "name": "Flexi-Care Plus",
+      "sku": "USBI000009",
+      "ygy_id": "637",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "1 tbsp (15 mL)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 0,
+              "unit": null,
+              "pct_dv": 0
+            },
+            "total_carbohydrate": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "total_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin E",
+              "amount": 14,
+              "unit": "mg",
+              "pct_dv": 100,
+              "form": "as d-alpha-tocopheryl acetate, Biocellular Micellized"
+            },
+            {
+              "name": "Methylsulfonylmethane (MSM)",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Glucosamine",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as hydrochloride"
+            },
+            {
+              "name": "Collagen Type I",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Purified Water",
+            "Xylitol",
+            "Citric Acid",
+            "Natural Flavors",
+            "Glycerin",
+            "Ethoxylated Vegetable Oil",
+            "Potassium Sorbate",
+            "Sodium Benzoate"
+          ],
+          "source_label": "biometrics-flexicare_mod-0522_suppfacts.jpg"
+        }
+      ]
+    },
+    "fucoidz": {
+      "product_id": "fucoidz",
+      "name": "FucoidZ - ZRadical™ Fucoidan Extract Capsules [QTY: 60]",
+      "sku": "3005",
+      "ygy_id": "618",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 250,
+              "unit": "mg",
+              "pct_dv": 278,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Zinc",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 47,
+              "form": "from zinc ascorbate"
+            },
+            {
+              "name": "Fucoidans",
+              "amount": 110,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 500,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "L-Lysine",
+                  "form": "as hydrochloride"
+                },
+                {
+                  "pos": 2,
+                  "name": "Astragalus",
+                  "form": "extract",
+                  "latin": "Astragalus membranaceus",
+                  "part": "root"
+                },
+                {
+                  "pos": 3,
+                  "name": "Elderberry",
+                  "form": "extract",
+                  "latin": "Sambucus nigra",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 4,
+                  "name": "Olive",
+                  "form": "extract",
+                  "latin": "Olea europaea",
+                  "part": "leaf"
+                }
+              ],
+              "as_labeled": "L-Lysine Hydrochloride, Astragalus Extract (Astragalus membranaceus)(root), Elderberry Extract (Sambucus nigra)(fruit), Olive Extract (Olea europaea)(leaf)"
+            }
+          ],
+          "other_ingredients": [
+            "Rice Flour",
+            "Vegetable Capsule",
+            "Magnesium Stearate",
+            "Silicon Dioxide"
+          ],
+          "source_label": "fucoidz_label-1025.jpg"
+        }
+      ]
     }
   }
 }
