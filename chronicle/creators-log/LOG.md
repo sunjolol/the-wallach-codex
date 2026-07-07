@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 395 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 396 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-07 09:56 UTC-05:00 · round-close · eden/products
+Phase F Batch 9: catalogued the D+E range (4: Digestwel+, ElectroFuel, Energize Wellness Tea, Eucalyptus Honey Thyme Syrup) — finishing 0-9 through E; 46→50 products; board 45/45.
+  ↳ Catalogued the final four products of the D and E ranges, completing the alphabet from 0-9 through E (50 products total). Digestwel+ is a digestive-enzyme tablet; ElectroFuel a caffeine/electrolyte energy stick; Energize an organic wellness tea; and the Eucalyptus & Honey Winter Thyme Syrup a honey-based herbal cough syrup. eden/products/products.json: +4 records (46->50 products, 52 components): digestwel-plus (USBE0101101014) -- Proprietary Digestive Enzyme Blend 83mg modeled as 3 category ingredients (Protein/Fat/Carbohydrate Digestive Enzymes) with the actual enzymes as sub_ingredients (9 total); electrofuel (USBE10003) -- B-vitamins + electrolytes + 110mg caffeine + Proprietary Blend 130mg; energize-wellness-tea (USLD010011) -- Proprietary CWG Energize Herbal Blend 2g (yerba mate, green/black tea, gynostemma, American ginseng); eucalyptus-honey-winter-thyme-syrup (USYG103240) -- 5 botanical extracts (thyme/licorice/plantain/horse chestnut/pine) + Proprietary Essential Oil Blend 12mg. The syrup's label was a fuzzy-matcher MISS (filename said 'cough-syrup', not 'eucalyptus'); Luneth pointed to it by SKU -- reinforcing the never-trust-filename rule. D/E otherwise exhausted (Defense Pack / Deluxe Nutritional Energy / Essential 90 = bundles; EP2-Plus pendant = non-supplement). Verified: eden/tools/products_verify.py OK (0 problems); node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py = 45/45. Deferred: F-range next.
 
 ## 2026-07-07 08:22 UTC-05:00 · round-close · eden/products
 Phase F Batch 8: catalogued the entire C-range — 15 products (C-Fx, CAL/MAG, Cell Shield RTQ, Cheri-Mins, CHI3, Circulatory, Citri-D, Colloidal Silver, CoreAO + CAL Toddy/Ultimate CAL + 4 Collagens via Luneth's cluster maps); 31→46 products; board 45/45.
@@ -780,7 +784,3 @@ Ch10 b64: RHEUMATIC FEVER→ROSEOLA = ★ R SECTION COMPLETE (p165-166) — LETS
 
 ## 2026-06-29 11:36 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b63: RACHITIC ROSARY→REYE'S (R's pt 1, p163-164) — LETS-413..417, 5 tier-1 protocol: rickets/radial_nerve_palsy/raynauds/rectal_itching/reyes. 1 meg→mcg (reyes selenium). ★ RAPE skipped (Luneth: out of app scope). kv174, claims 797, conds 409, board 31/31.
-
-## 2026-06-29 10:37 UTC-05:00 · session-end · chronicle
-SESSION 22 WRAPPED — Ch10 Materia Medica, 5 batches b58-b62 (ORGANIC BRAIN SYNDROME→RABIES): O complete + entire P section + Q's + first R's. LETS-388..412, 25 claims. corpus 767→792, conds 383→405, kv 168→173. 3 meg→mcg + 1 dangerous copper gm→mg fix; 2 scrambles. board 31/31.
-  ↳ Session 22 (2026-06-29): fresh genesis boot, resumed Ch10 Materia Medica at ORGANIC BRAIN SYNDROME and drove 5 round-close batches b58-b62, all pushed to origin/master. Completed the O section, the ENTIRE P section, the Q's, and the first R's (printed p156-163). 25 tier-1 protocol claims LETS-388..412. corpus 767→792, conditions 383→405, kv 168→173, board 31/31 throughout, knowledge probe green every batch. Dose safety: 3 render-verified meg→mcg fixes (chromium/octacosanol/selenium) + 1 DANGEROUS gm→mg book-misprint corrected in the verbatim (PHLEBITIS copper 2gm→2mg, per dose-misprint-safety-mandate — surfaced to Luneth at the b60 checkpoint, no objection). 2 new 2-column OCR scrambles untangled via render + reassembled in claim_text (b60 PERIODONTAL/PHLEBITIS/PICA, b62 Q-FEVER) — physical .txt reorders deferred to the final sweep (now 4 scrambles owed). palpitations promoted symptom→condition. Caught + fixed a b53-class page off-by-one in b61 (book index is the page truth anchor). No editorial STOPs (all clean TIER-1; ORGANIC BRAIN behavioral umbrella documented with 12 manifestations). Handoff rolled to NEXT=b63 (RACHITIC ROSARY onward, the R's). Clean tree, ready for fresh genesis.

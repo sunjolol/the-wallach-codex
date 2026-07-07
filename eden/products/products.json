@@ -7200,6 +7200,412 @@
         }
       ]
     },
+    "digestwel-plus": {
+      "product_id": "digestwel-plus",
+      "name": "Digestwel+",
+      "sku": "USBE0101101014",
+      "ygy_id": "7174",
+      "components": [
+        {
+          "role": null,
+          "form": "tablet",
+          "serving_size": "1 tablet",
+          "servings_per_container": 90,
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Digestive Enzyme Blend",
+              "total": {
+                "amount": 83,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Protein Digestive Enzymes",
+                  "sub_ingredients": [
+                    {
+                      "name": "Protease"
+                    },
+                    {
+                      "name": "Acid-Stable Protease"
+                    },
+                    {
+                      "name": "Bromelain"
+                    },
+                    {
+                      "name": "Papain"
+                    }
+                  ]
+                },
+                {
+                  "pos": 2,
+                  "name": "Fat Digestive Enzyme",
+                  "sub_ingredients": [
+                    {
+                      "name": "Lipase"
+                    }
+                  ]
+                },
+                {
+                  "pos": 3,
+                  "name": "Carbohydrate Digestive Enzymes",
+                  "sub_ingredients": [
+                    {
+                      "name": "Amylase"
+                    },
+                    {
+                      "name": "Glucoamylase"
+                    },
+                    {
+                      "name": "Invertase"
+                    },
+                    {
+                      "name": "Maltase"
+                    }
+                  ]
+                }
+              ],
+              "as_labeled": "Protein Digestive Enzymes (Protease, Acid-Stable Protease, Bromelain, Papain), Fat Digestive Enzyme (Lipase), Carbohydrate Digestive Enzymes (Amylase, Glucoamylase, Invertase, Maltase)"
+            }
+          ],
+          "other_ingredients": [
+            "Xylitol",
+            "Stearic acid",
+            "Citric acid",
+            "Lemon flavor",
+            "Magnesium stearate",
+            "Silicon dioxide",
+            "Stevia leaf extract"
+          ],
+          "source_label": "digestwel__label_0124_suppfacts.jpg"
+        }
+      ]
+    },
+    "electrofuel": {
+      "product_id": "electrofuel",
+      "name": "ElectroFuel™",
+      "sku": "USBE10003",
+      "ygy_id": "7707",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "1 stick pack (3.1 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 5,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "total_sugars": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 2
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Niacin",
+              "amount": 22,
+              "unit": "mg",
+              "pct_dv": 138,
+              "form": "as niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 118,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 7,
+              "unit": "mcg",
+              "pct_dv": 292,
+              "form": "as cyanocobalamin"
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 200,
+              "form": "as calcium pantothenate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 2,
+              "form": "as magnesium oxide"
+            },
+            {
+              "name": "Sodium",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 4,
+              "form": "as sodium chloride"
+            },
+            {
+              "name": "Potassium",
+              "amount": 38,
+              "unit": "mg",
+              "pct_dv": "<1",
+              "form": "as monopotassium phosphate"
+            },
+            {
+              "name": "Black pepper",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "fruit extract (BioPerine®)"
+            },
+            {
+              "name": "Caffeine",
+              "amount": 110,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "total caffeine content"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 130,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Caffeine",
+                  "form": "from coffee bean"
+                },
+                {
+                  "pos": 2,
+                  "name": "Guarana",
+                  "part": "seed",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Yerba Mate",
+                  "part": "leaf",
+                  "form": "extract"
+                }
+              ],
+              "as_labeled": "Caffeine (from coffee bean), Guarana (seed) Extract, Yerba Mate Leaf extract"
+            }
+          ],
+          "other_ingredients": [
+            "Natural raspberry flavor",
+            "Beet root powder",
+            "Sucralose",
+            "Gum arabic",
+            "Raspberry juice powder"
+          ],
+          "source_label": "electrofuel-suppfacts_1224.jpg"
+        }
+      ]
+    },
+    "energize-wellness-tea": {
+      "product_id": "energize-wellness-tea",
+      "name": "Energize - Wellness Tea (56 g)",
+      "sku": "USLD010011",
+      "ygy_id": "1701",
+      "components": [
+        {
+          "role": null,
+          "form": "tea",
+          "serving_size": "1 level teaspoon (for 8 oz cup of brewed tea)",
+          "servings_per_container": 28,
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary CWG Energize Herbal Blend",
+              "total": {
+                "amount": 2,
+                "unit": "g"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Yerba Maté",
+                  "part": "leaf",
+                  "form": "organic"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bancha Green Tea",
+                  "part": "leaf",
+                  "form": "organic"
+                },
+                {
+                  "pos": 3,
+                  "name": "Ceylon Black Tea",
+                  "part": "leaf",
+                  "form": "organic"
+                },
+                {
+                  "pos": 4,
+                  "name": "Gynostemma",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 5,
+                  "name": "American Ginseng",
+                  "part": "root"
+                }
+              ],
+              "as_labeled": "Organic Green Yerba Maté (leaf), Organic Bancha Green Tea (leaf), Organic Ceylon Black Tea (leaf), Gynostemma (Jiaogulan) (leaf), American Ginseng (root)"
+            }
+          ],
+          "other_ingredients": [
+            "Natural elderberry flavor"
+          ],
+          "source_label": "usld010011_wellness-tea-energize_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "eucalyptus-honey-winter-thyme-syrup": {
+      "product_id": "eucalyptus-honey-winter-thyme-syrup",
+      "name": "Eucalyptus & Honey Winter Thyme Syrup",
+      "sku": "USYG103240",
+      "ygy_id": "711",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (syrup)",
+          "serving_size": "2 teaspoons (10 mL)",
+          "servings_per_container": 12,
+          "macros": {
+            "calories": {
+              "amount": 25,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 7,
+              "unit": "g",
+              "pct_dv": 2
+            },
+            "total_sugars": {
+              "amount": 7,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Thyme",
+              "amount": 196,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Thymus vulgaris",
+              "form": "extract"
+            },
+            {
+              "name": "Licorice",
+              "amount": 114,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Glycyrrhiza glabra",
+              "form": "extract"
+            },
+            {
+              "name": "Plantain",
+              "amount": 82,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Plantago major",
+              "form": "extract"
+            },
+            {
+              "name": "Horse Chestnut",
+              "amount": 32,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Aesculus hippocastanum",
+              "form": "extract"
+            },
+            {
+              "name": "Pine",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Pinus strobus",
+              "form": "extract"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Essential Oil Blend",
+              "total": {
+                "amount": 12,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Peppermint (Mentha piperita), Eucalyptus (Eucalyptus globulus), Cajeput (Melaleuca leucadendron), Juniper (Juniperus communis), Wintergreen (Gaultheria procumbrens), Clove (Caryophyllus aromaticus)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Peppermint",
+                  "latin": "Mentha piperita"
+                },
+                {
+                  "pos": 2,
+                  "name": "Eucalyptus",
+                  "latin": "Eucalyptus globulus"
+                },
+                {
+                  "pos": 3,
+                  "name": "Cajeput",
+                  "latin": "Melaleuca leucadendron"
+                },
+                {
+                  "pos": 4,
+                  "name": "Juniper",
+                  "latin": "Juniperus communis"
+                },
+                {
+                  "pos": 5,
+                  "name": "Wintergreen",
+                  "latin": "Gaultheria procumbrens"
+                },
+                {
+                  "pos": 6,
+                  "name": "Clove",
+                  "latin": "Caryophyllus aromaticus"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Wildflower honey",
+            "Purified water",
+            "Citric acid"
+          ],
+          "source_label": "ygy-usyg103240-cough-syrup-suppfacts-0116.jpg"
+        }
+      ]
+    },
     "osteo-mag": {
       "product_id": "osteo-mag",
       "name": "Osteo-Mag™ - 60 tablets",
