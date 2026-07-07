@@ -17,7 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent.parent
 PRODUCTS = ROOT / "eden" / "products" / "products.json"
 
-AS_LABELED_MAX = 600          # bounded fidelity token
+AS_LABELED_MAX = 1200         # bounded fidelity token (fits BTT whole-foods blends w/ full latin names; matches the corpus verbatim hard cap)
 TOKEN_MAX = 120               # any other structured string
 OTHER_ING_MAX = 350           # excipients/compound ingredients (parenthetical sub-lists) can be long but are still facts
 ALLOWED_UNITS = {"mg", "mcg", "g", "iu", "mcg rae", "mcg dfe", "mg ne", "ml", "fl oz", None}
@@ -112,10 +112,10 @@ def check_component(where: str, c: dict) -> None:
         if total is not None:
             check_amount(w + ".total.amount", total.get("amount"))
         al = b.get("as_labeled")
-        if al is not None:
-            if not isinstance(al, str):
-                err(w + ".as_labeled", "must be string")
-            elif "\n" in al:
+        if not isinstance(al, str) or not al.strip():
+            err(w + ".as_labeled", "missing/empty (required on every blend)")
+        else:
+            if "\n" in al:
                 err(w + ".as_labeled", "must be single line")
             elif len(al) > AS_LABELED_MAX:
                 err(w + ".as_labeled", f"too long ({len(al)}>{AS_LABELED_MAX})")

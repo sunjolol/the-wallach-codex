@@ -2527,7 +2527,8 @@
                   "pos": 44,
                   "name": "Organic rice protein"
                 }
-              ]
+              ],
+              "as_labeled": "Fruit and Vegetable Blend [gum acacia, acerola, agave inulin, alfalfa, amla, apple, apple cider vinegar, banana, beet, blackberry, black currant, blueberry, broccoli, brown rice, carrot, chlorella, cinnamon, cranberry, fennel, fenugreek, garlic, ginger, goji (Lycium barbarum), holy basil, kale, mango, onion, orange, papaya, parsley, pear, pineapple, plum, pomegranate, prune, grape, raspberry, shitake mushroom, spinach, spirulina, strawberry, tomato, turmeric], Organic rice protein"
             },
             {
               "name": "Plant Derived Mineral Complex",
@@ -3218,7 +3219,8 @@
                   "name": "Turmeric",
                   "part": "root"
                 }
-              ]
+              ],
+              "as_labeled": "Fruit and Vegetable Blend [gum acacia, acerola (Malpighia glabra) (fruit), agave inulin, alfalfa juice, amla fruit, apple fruit (Malus pumila), apple cider vinegar, banana fruit (Musa spp), beet root (Beta vulgaris), blackberry fruit, black currant fruit, blueberry fruit, broccoli crown (Brassica oleracea), brown rice, carrot root, chlorella, cinnamon bark, cranberry fruit (Vaccinium macrocarpon), fennel seed, fenugreek seed, garlic bulb, ginger root, goji berry fruit (Lycium barbarum), holy basil leaf, kale sprout (Brassica oleracea), mango fruit (Mangifera indica), onion bulb (Allium cepa), orange peel, papaya fruit, parsley leaf, pear fruit, pineapple fruit, plum fruit, pomegranate fruit, prune fruit, grape fruit, raspberry fruit, shiitake mushroom, spinach (Spinacia oleracea), spirulina, strawberry fruit, tomato fruit (Lycopersicon esculentum), turmeric root]"
             },
             {
               "name": "Plant Derived Mineral Complex",
@@ -4530,7 +4532,8 @@
                   "pos": 29,
                   "name": "Cauliflower"
                 }
-              ]
+              ],
+              "as_labeled": "Rice solids [Rice maltodextrin, rice protein, carrot root, acai berry, curry leaf extract, parsley leaves, spinach leaves, tomato juice, spirulina, chlorella, blueberry fruit, acerola fruit extract, guava leaves extract, citrus lemon peel, mustard seed extract, holy basil leaves extract, moringa leaves extract, annatto seed extract, maitake mushroom, shitake mushroom, cordyceps mushroom, bilberry fruit, broccoli sprout, cauliflower sprout, kale sprout, nettle leaves, reishi mushroom, broccoli, kale, cauliflower]"
             },
             {
               "name": "Organic Typical Amino Acid Complex",
@@ -5127,7 +5130,8 @@
                   "latin": "Urtica dioica",
                   "part": "leaf"
                 }
-              ]
+              ],
+              "as_labeled": "Organic rice maltodextrin, organic rice protein, organic amla fruit (Phyllanthus emblica), organic acai fruit (Euterpe oleracea), organic carrot root (Dacus carota), organic parsley leaf (Petroselinum crispum), organic spinach leaf (Spinacia oleracea), organic tomato juice (Lycopersicon esculentum), organic spirulina (spirulina platensis), organic chlorella (Chlorella vulgaris), organic blueberry fruit (Vaccinium angustifolium), organic acerola fruit (Malphigia glabra), organic beet juice (Beta vulgaris), organic maitake mushroom (Grifola frondosa), organic shiitake mushroom (Lentinus edodes), organic mushroom (Cordyceps sinensis), organic bilberry fruit (Vaccinium myrtillus), organic broccoli (Brassica oleracea), organic kale (Brassica oleracea), organic cauliflower (Brassica oleracea), organic guava, organic basil, organic lemon extract, organic Murraya koenigii leaf extract, organic reishi mushroom (Ganoderma lucidum), organic nettle leaf (Urtica dioica)"
             },
             {
               "name": "Typical Organic Amino Acid Complex",
@@ -5737,7 +5741,8 @@
                   "pos": 43,
                   "name": "Black currant"
                 }
-              ]
+              ],
+              "as_labeled": "Gum Acacia, Acerola, Agave, Alfalfa, Amla, Apple, Apple Cider Vinegar, Banana, Beet Root, Blackberry, Blueberry, Broccoli, Brown Rice Soluble Protein, Carrot, Chlorella, Cinnamon Bark, Cranberry, Fennel Seed, Fenugreek Seed, Garlic, Ginger Root, Goji, Holy Basil, Kale, Mango, Onion, Papaya, Parsley, Pear, Pineapple, Prune, Plum, Pomegranate, Grape Juice, Raspberry, Mushroom Shitake, Spinach, Spirulina, Strawberry Juice, Tomato, Turmeric Root, Orange Peel, Black Currant"
             },
             {
               "name": "Organic Amino Acids Complex",
