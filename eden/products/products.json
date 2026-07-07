@@ -11018,6 +11018,870 @@
           "source_label": "gh-kidney-bladder-support_suppfacts-cart_1200x900.jpg"
         }
       ]
+    },
+    "life-balance-menopause-support": {
+      "product_id": "life-balance-menopause-support",
+      "name": "Life Balance Menopause Support",
+      "sku": "USYG70005",
+      "ygy_id": "10452",
+      "additional_labels": [
+        "lifebalance-menopause-support_suppfacts_0725_1.jpg"
+      ],
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin D",
+              "amount": 30,
+              "unit": "mcg",
+              "label_iu": 1200,
+              "pct_dv": 150,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Vitamin K",
+              "amount": 10,
+              "unit": "mcg",
+              "pct_dv": 8,
+              "form": "as menaquinone"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 2.4,
+              "unit": "mg",
+              "pct_dv": 200,
+              "form": "as thiamine HCl"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 2.6,
+              "unit": "mg",
+              "pct_dv": 200,
+              "form": "as riboflavin sodium phosphate"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 3.4,
+              "unit": "mg",
+              "pct_dv": 200,
+              "form": "as pyridoxine HCl"
+            },
+            {
+              "name": "Folate",
+              "amount": 680,
+              "unit": "mcg",
+              "unit_detail": "DFE",
+              "pct_dv": 170,
+              "form": "as folic acid"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 4.8,
+              "unit": "mcg",
+              "pct_dv": 200,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 30,
+              "unit": "mcg",
+              "pct_dv": 100
+            },
+            {
+              "name": "Calcium",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 4,
+              "form": "as calcium carbonate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 12,
+              "unit": "mg",
+              "pct_dv": 3,
+              "form": "as magnesium citrate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 50,
+              "unit": "mcg",
+              "pct_dv": 91,
+              "form": "as selenium glycinate"
+            },
+            {
+              "name": "Chromium",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": 571,
+              "form": "as chromium picolinate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 43,
+              "unit": "mg",
+              "pct_dv": 1,
+              "form": "as potassium citrate"
+            },
+            {
+              "name": "Rhodiola",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Rhodiola rosea",
+              "part": "root",
+              "form": "extract",
+              "standardization": "1% rosavins, 3% salidrosides"
+            },
+            {
+              "name": "Chaste Tree",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Vitex agnus-castus",
+              "part": "berry",
+              "form": "extract",
+              "standardization": "4:1"
+            },
+            {
+              "name": "Berberine",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Berberis aristata",
+              "part": "root",
+              "form": "as HCl"
+            },
+            {
+              "name": "Ashwagandha",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Withania somnifera",
+              "part": "root and aerial parts",
+              "form": "extract",
+              "standardization": "1.5% withanolides"
+            },
+            {
+              "name": "Alpha Lipoic Acid",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Cinnamon",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Cinnamomum cassia",
+              "part": "bark",
+              "form": "powder"
+            },
+            {
+              "name": "Rhapontic Rhubarb",
+              "amount": 4,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Rheum rhaponticum",
+              "part": "root",
+              "form": "Menofelis® extract"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Microcrystalline cellulose",
+            "hypromellose",
+            "magnesium stearate",
+            "silicon dioxide"
+          ],
+          "source_label": "lifebalance-menopause-support_suppfacts_0725.jpg"
+        }
+      ]
+    },
+    "life-solubles-rice-bran": {
+      "product_id": "life-solubles-rice-bran",
+      "name": "Life Solubles (360 g) Rice Bran",
+      "sku": "USSI000051",
+      "ygy_id": "6094",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "1 scoop (12 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 65,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 3.5,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "saturated_fat": {
+              "amount": 0.66,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "trans_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "cholesterol": {
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": 0
+            },
+            "total_carbohydrate": {
+              "amount": 6.6,
+              "unit": "g",
+              "pct_dv": 2
+            },
+            "dietary_fiber": {
+              "amount": 0.5,
+              "unit": "g",
+              "pct_dv": 2
+            },
+            "total_sugars": {
+              "amount": 1.7,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "protein": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 2
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 1.3,
+              "unit": "mg",
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Vitamin D",
+              "amount": null,
+              "unit": null,
+              "pct_dv": 0
+            },
+            {
+              "name": "Calcium",
+              "amount": null,
+              "unit": null,
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Iron",
+              "amount": null,
+              "unit": null,
+              "pct_dv": 4
+            },
+            {
+              "name": "Potassium",
+              "amount": null,
+              "unit": null,
+              "pct_dv": 3
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "StabilSolo® rice bran solubles"
+          ],
+          "source_label": "integris_life_solubles_nut_facts_0325.jpg"
+        }
+      ]
+    },
+    "cookies-n-cream-protein-shake": {
+      "product_id": "cookies-n-cream-protein-shake",
+      "name": "Limited-Edition Cookies 'N Cream Protein Shake",
+      "sku": "USYG100058",
+      "ygy_id": "10477",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "1 packet (~38.2 g)",
+          "servings_per_container": 15,
+          "macros": {
+            "calories": {
+              "amount": 160,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 4,
+              "unit": "g",
+              "pct_dv": 5
+            },
+            "saturated_fat": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 5
+            },
+            "trans_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "cholesterol": {
+              "amount": 70,
+              "unit": "mg",
+              "pct_dv": 23
+            },
+            "total_carbohydrate": {
+              "amount": 6,
+              "unit": "g",
+              "pct_dv": 2
+            },
+            "dietary_fiber": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "total_sugars": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "protein": {
+              "amount": 24,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 180,
+              "unit": "mg",
+              "pct_dv": 8
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 0,
+              "unit": "mcg",
+              "pct_dv": 0
+            },
+            {
+              "name": "Calcium",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": 15
+            },
+            {
+              "name": "Iron",
+              "amount": 0.6,
+              "unit": "mg",
+              "pct_dv": 4
+            },
+            {
+              "name": "Potassium",
+              "amount": 170,
+              "unit": "mg",
+              "pct_dv": 4
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Whey Protein Concentrate",
+            "Sunflower Oil",
+            "Calcium Caseinate",
+            "Natural Cookies & Cream Type flavor",
+            "Sodium Chloride",
+            "Modified Gum Acacia",
+            "Natural Roasted Marshmallow Type Flavor",
+            "Stevia",
+            "Guar Gum",
+            "Xanthan Gum",
+            "Natural Vanilla Flavor (Madagascar Type)"
+          ],
+          "source_label": "cookie-_n-cream-pouch_0226_supp-facts.jpg"
+        }
+      ]
+    },
+    "pumpkin-spice-protein-shake": {
+      "product_id": "pumpkin-spice-protein-shake",
+      "name": "Limited-Edition Pumpkin Spice Protein Shake",
+      "sku": "USYG100059",
+      "ygy_id": "10327",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "1 packet (~38.5 g)",
+          "servings_per_container": 15,
+          "macros": {
+            "calories": {
+              "amount": 160,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 4,
+              "unit": "g",
+              "pct_dv": 5
+            },
+            "saturated_fat": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 5
+            },
+            "trans_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "cholesterol": {
+              "amount": 70,
+              "unit": "mg",
+              "pct_dv": 23
+            },
+            "total_carbohydrate": {
+              "amount": 7,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "dietary_fiber": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "total_sugars": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 2
+            },
+            "protein": {
+              "amount": 24,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": 7
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 0,
+              "unit": "mcg",
+              "pct_dv": 0
+            },
+            {
+              "name": "Calcium",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": 15
+            },
+            {
+              "name": "Iron",
+              "amount": 0.3,
+              "unit": "mg",
+              "pct_dv": 2
+            },
+            {
+              "name": "Potassium",
+              "amount": 160,
+              "unit": "mg",
+              "pct_dv": 4
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Whey Protein Concentrate",
+            "Sunflower Oil",
+            "Calcium Caseinate",
+            "Natural Pumpkin Spice Flavor",
+            "Natural Graham Cracker Flavor",
+            "Sodium Chloride",
+            "Modified Gum Acacia",
+            "Stevia",
+            "Natural Roasted Marshmallow Flavor",
+            "Guar Gum",
+            "Xanthan Gum",
+            "Natural Madagascar Vanilla Flavor",
+            "Beta Carotene (for color)"
+          ],
+          "source_label": "pumpkin-spice-shake_gusset_bag_0625_suppfacts.jpg"
+        }
+      ]
+    },
+    "liquid-gluco-gel": {
+      "product_id": "liquid-gluco-gel",
+      "name": "Liquid Gluco-Gel™ - 32 fl oz",
+      "sku": "13216",
+      "ygy_id": "633",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "1 fl oz (2 tbsp)",
+          "servings_per_container": 32,
+          "macros": {
+            "calories": {
+              "amount": 16,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 4,
+              "unit": "g",
+              "pct_dv": 2
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Glucosamine",
+              "amount": 750,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as hydrochloride (from vegetable)"
+            },
+            {
+              "name": "Methylsulfonylmethane (MSM)",
+              "amount": 400,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Chondroitin Sulfate",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Cetylmyristoleate (CMO)",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Collagen Hydrolysate",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Water",
+            "Glycerin",
+            "Soy Lecithin",
+            "Natural Flavor Blend",
+            "Citric Acid",
+            "Stevia",
+            "Fruit and Vegetable Juice (Color)",
+            "Sodium Benzoate",
+            "Potassium Sorbate"
+          ],
+          "source_label": "liquid-gluco-gel_suppfacts-0224.jpg"
+        }
+      ]
+    },
+    "liver-and-gallbladder-health": {
+      "product_id": "liver-and-gallbladder-health",
+      "name": "Liver And Gallbladder Health",
+      "sku": "USGH000013",
+      "ygy_id": "681",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (tincture)",
+          "serving_size": "2 mL (approx. 1/2 tsp or 40 drops)",
+          "servings_per_container": 60,
+          "extract_ratio": "1:4 (250 mg herb per 1 mL)",
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Extract Blend",
+              "total": {
+                "amount": 1900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Bupleurum",
+                  "part": "root"
+                },
+                {
+                  "pos": 2,
+                  "name": "Burdock",
+                  "part": "root"
+                },
+                {
+                  "pos": 3,
+                  "name": "Chicory",
+                  "part": "root"
+                },
+                {
+                  "pos": 4,
+                  "name": "Milk Thistle",
+                  "part": "seed"
+                },
+                {
+                  "pos": 5,
+                  "name": "Rhubarb",
+                  "part": "root"
+                },
+                {
+                  "pos": 6,
+                  "name": "Turmeric",
+                  "part": "root"
+                },
+                {
+                  "pos": 7,
+                  "name": "Yellow Dock",
+                  "part": "root"
+                }
+              ],
+              "as_labeled": "Bupleurum Root, Burdock Root, Chicory Root, Milk Thistle Seed, Rhubarb Root (Chinese), Turmeric Root, Yellow Dock Root"
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "ethyl alcohol (35-45%)"
+          ],
+          "source_label": "gh-liver-gallbladder-health_label-1021-suppfacts.jpg"
+        }
+      ]
+    },
+    "liverpure": {
+      "product_id": "liverpure",
+      "name": "LiverPure",
+      "sku": "TL009PROD",
+      "ygy_id": "895",
+      "additional_labels": [
+        "t2l-tl009prod-liverprep-suppfacts-0612.jpg"
+      ],
+      "components": [
+        {
+          "role": "LiverPrep",
+          "form": "powder",
+          "serving_size": "49 g (makes four 6 fl oz servings)",
+          "servings_per_container": 1,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 2940,
+              "unit": "mg",
+              "pct_dv": 3267,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 787.5,
+              "unit": "mg",
+              "pct_dv": 188,
+              "form": "as magnesium sulfate"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 500,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Yucca",
+                  "part": "root"
+                },
+                {
+                  "pos": 2,
+                  "name": "Artichoke",
+                  "part": "leaf",
+                  "form": "extract",
+                  "standardization": "4:1"
+                },
+                {
+                  "pos": 3,
+                  "name": "Dandelion",
+                  "part": "leaf",
+                  "form": "extract",
+                  "standardization": "4:1"
+                },
+                {
+                  "pos": 4,
+                  "name": "Milk Thistle",
+                  "part": "seed",
+                  "form": "extract"
+                }
+              ],
+              "as_labeled": "Yucca (root), Artichoke 4:1 extract (leaf), Dandelion 4:1 extract (leaf), Milk Thistle extract (seed)"
+            }
+          ],
+          "other_ingredients": [],
+          "source_label": "tl009prod_t2l-liverpure-kit-0620_panels-900x1200.jpg"
+        },
+        {
+          "role": "LiverClean",
+          "form": "liquid",
+          "serving_size": "1 bottle (4 fl oz / 118 mL)",
+          "servings_per_container": 1,
+          "macros": {
+            "calories": {
+              "amount": 944,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 110,
+              "unit": "g",
+              "pct_dv": 141
+            },
+            "saturated_fat": {
+              "amount": 8,
+              "unit": "g",
+              "pct_dv": 40
+            },
+            "trans_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "polyunsaturated_fat": {
+              "amount": 16,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "monounsaturated_fat": {
+              "amount": 86,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "protein": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": 0
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 22,
+              "unit": "mg",
+              "pct_dv": 147,
+              "form": "as d-alpha tocopherol acetate"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Safflower Oil"
+          ],
+          "source_label": "tl009prod_t2l-liverpure-kit-0620_panels-900x1200.jpg"
+        }
+      ]
+    },
+    "lymphatic-health": {
+      "product_id": "lymphatic-health",
+      "name": "Lymphatic Health",
+      "sku": "USGH000009",
+      "ygy_id": "696",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (tincture)",
+          "serving_size": "2 mL (approx. 1/2 tsp or 40 drops)",
+          "servings_per_container": 60,
+          "extract_ratio": "1:4 (250 mg herb per 1 mL)",
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Extract Blend",
+              "total": {
+                "amount": 1900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Oregon Grape",
+                  "part": "root"
+                },
+                {
+                  "pos": 2,
+                  "name": "Horse Chestnut",
+                  "part": "seed"
+                },
+                {
+                  "pos": 3,
+                  "name": "Marshmallow",
+                  "part": "root"
+                },
+                {
+                  "pos": 4,
+                  "name": "Blue Flag",
+                  "part": "root"
+                },
+                {
+                  "pos": 5,
+                  "name": "Mullein",
+                  "part": "leaf"
+                }
+              ],
+              "as_labeled": "Oregon Grape Root, Horse Chestnut Seed, Marshmallow Root, Blue Flag Root, Mullein Leaf"
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "ethyl alcohol (35-45%)"
+          ],
+          "source_label": "gh-lymphatic-health_supp-facts-0622_cart_1200x900.jpg"
+        }
+      ]
     }
   }
 }
