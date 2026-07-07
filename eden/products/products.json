@@ -10369,6 +10369,655 @@
           "source_label": "i26-egg-powder_french-vanilla_canister-suppfacts_0724.jpg"
         }
       ]
+    },
+    "kids-toddy": {
+      "product_id": "kids-toddy",
+      "name": "Kid's Toddy™",
+      "sku": "81150",
+      "ygy_id": "849",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "1 fl oz (29.57 mL)",
+          "servings_per_container": 32,
+          "macros": {
+            "calories": {
+              "amount": 24,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 6,
+              "unit": "g",
+              "pct_dv": 2
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 750,
+              "unit": "mcg",
+              "unit_detail": "RAE",
+              "pct_dv": 83,
+              "form": "as palmitate"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 111,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D3",
+              "amount": 5,
+              "unit": "mcg",
+              "pct_dv": 25,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 67,
+              "form": "as d-alpha tocopherol acetate"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 2.5,
+              "unit": "mg",
+              "pct_dv": 208,
+              "form": "as thiamine mononitrate"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 2.5,
+              "unit": "mg",
+              "pct_dv": 192
+            },
+            {
+              "name": "Niacin",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 63,
+              "form": "as niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 2.5,
+              "unit": "mg",
+              "pct_dv": 147,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Folate",
+              "amount": 333,
+              "unit": "mcg",
+              "unit_detail": "DFE",
+              "pct_dv": 83,
+              "form": "as folic acid (200 mcg)"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 7.5,
+              "unit": "mcg",
+              "pct_dv": 313,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 20,
+              "unit": "mcg",
+              "pct_dv": 67
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 200,
+              "form": "as calcium pantothenate"
+            },
+            {
+              "name": "Choline",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 4
+            },
+            {
+              "name": "Calcium",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 1,
+              "form": "as calcium citrate"
+            },
+            {
+              "name": "Iron",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 11,
+              "form": "as ferrous gluconate"
+            },
+            {
+              "name": "Iodine",
+              "amount": 75,
+              "unit": "mcg",
+              "pct_dv": 50,
+              "form": "as potassium iodide"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 1,
+              "form": "as magnesium citrate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 45,
+              "form": "as zinc gluconate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 20,
+              "unit": "mcg",
+              "pct_dv": 36,
+              "form": "as L-selenium methionine"
+            },
+            {
+              "name": "Copper",
+              "amount": 0.75,
+              "unit": "mg",
+              "pct_dv": 83,
+              "form": "as copper gluconate"
+            },
+            {
+              "name": "Manganese",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 43,
+              "form": "as manganese gluconate"
+            },
+            {
+              "name": "Chromium",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 71,
+              "form": "as amino acid chelate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": "<1",
+              "form": "as potassium citrate"
+            },
+            {
+              "name": "Inositol",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Grape Seed Extract",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend of Phytonutrients",
+              "total": {
+                "amount": 11,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Tomato",
+                  "form": "powder"
+                },
+                {
+                  "pos": 2,
+                  "name": "Broccoli",
+                  "form": "powder"
+                },
+                {
+                  "pos": 3,
+                  "name": "Banana",
+                  "form": "powder"
+                },
+                {
+                  "pos": 4,
+                  "name": "Carrot",
+                  "form": "powder"
+                },
+                {
+                  "pos": 5,
+                  "name": "Blueberry",
+                  "form": "powder"
+                },
+                {
+                  "pos": 6,
+                  "name": "Cherry",
+                  "form": "powder"
+                },
+                {
+                  "pos": 7,
+                  "name": "Spinach",
+                  "form": "powder"
+                },
+                {
+                  "pos": 8,
+                  "name": "Peach",
+                  "form": "powder"
+                }
+              ],
+              "as_labeled": "Tomato powder, broccoli powder, banana powder, carrot powder, blueberry powder, cherry powder, spinach powder, peach powder"
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "natural vegetable glycerin",
+            "citric acid",
+            "Citrisweet",
+            "xanthan gum",
+            "natural flavors",
+            "masking agents",
+            "sodium benzoate",
+            "potassium sorbate"
+          ],
+          "source_label": "kids_toddy_suppfacts_1122.jpg"
+        }
+      ]
+    },
+    "kidsprinklz": {
+      "product_id": "kidsprinklz",
+      "name": "Kidsprinklz™ Watermelon Mist - Multi-Vitamin Powder",
+      "sku": "USYG100006",
+      "ygy_id": "956",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "2 grams (1 packet)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 5,
+              "unit": null,
+              "pct_dv": null
+            },
+            "calories_from_saturated_fat": {
+              "amount": 0,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "total_carbohydrate": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "dietary_fiber": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "total_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "protein": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 60,
+              "unit": "mg",
+              "pct_dv": 67,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 10,
+              "unit": "mcg",
+              "pct_dv": 50,
+              "form": "as vitamin D3"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 11,
+              "unit": "mg",
+              "pct_dv": 73,
+              "form": "as natural vitamin E acetate"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 0.3,
+              "unit": "mg",
+              "pct_dv": 25
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 0.34,
+              "unit": "mg",
+              "pct_dv": 26
+            },
+            {
+              "name": "Niacin",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 63,
+              "form": "as niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 59,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Folate",
+              "amount": 667,
+              "unit": "mcg",
+              "unit_detail": "DFE",
+              "pct_dv": 167,
+              "form": "as folic acid"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 6,
+              "unit": "mcg",
+              "pct_dv": 250,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 150,
+              "unit": "mcg",
+              "pct_dv": 500
+            },
+            {
+              "name": "Calcium",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": "<1",
+              "form": "as calcium lactate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 18,
+              "form": "as zinc citrate"
+            },
+            {
+              "name": "Manganese",
+              "amount": 0.25,
+              "unit": "mg",
+              "pct_dv": 11,
+              "form": "as manganese citrate"
+            },
+            {
+              "name": "Sodium",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": "<1",
+              "form": "as sodium citrate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": "<1",
+              "form": "as potassium citrate"
+            },
+            {
+              "name": "Citrulline",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Lactobacillus",
+              "total": {
+                "amount": 20,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Lactobacillus acidophilus"
+                },
+                {
+                  "pos": 2,
+                  "name": "Lactobacillus plantarum"
+                },
+                {
+                  "pos": 3,
+                  "name": "Lactobacillus rhamnosus"
+                },
+                {
+                  "pos": 4,
+                  "name": "Bifidobacterium breve"
+                },
+                {
+                  "pos": 5,
+                  "name": "Bifidobacterium lactis"
+                }
+              ],
+              "as_labeled": "L. Acidophillus, L. Plantarum, L. Rhamnosus, B. Breve, B. Lactis"
+            }
+          ],
+          "other_ingredients": [
+            "Xylitol",
+            "Erythritol",
+            "Natural Flavors",
+            "Citric Acid",
+            "Maltodextrin",
+            "Silica",
+            "Fruit Blend (Strawberry Powder, Raspberry Powder, and Blueberry Powder)"
+          ],
+          "source_label": "kid-sprinklz-suppfacts-0124.jpg"
+        }
+      ]
+    },
+    "killer-biotic-fx": {
+      "product_id": "killer-biotic-fx",
+      "name": "Killer Biotic FX® - 60 capsules",
+      "sku": "20688",
+      "ygy_id": "591",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 60,
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 360,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Colostrum"
+                },
+                {
+                  "pos": 2,
+                  "name": "Beta Sitosterol"
+                },
+                {
+                  "pos": 3,
+                  "name": "Olive",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "Propolis",
+                  "form": "concentrate"
+                },
+                {
+                  "pos": 5,
+                  "name": "Cayenne",
+                  "part": "fruit",
+                  "form": "concentrate"
+                },
+                {
+                  "pos": 6,
+                  "name": "Garlic",
+                  "part": "bulb",
+                  "form": "concentrate"
+                },
+                {
+                  "pos": 7,
+                  "name": "Ginger",
+                  "part": "root",
+                  "form": "extract"
+                },
+                {
+                  "pos": 8,
+                  "name": "Cordyceps Mushroom",
+                  "latin": "Cordyceps sinensis",
+                  "part": "mycelium",
+                  "form": "extract"
+                },
+                {
+                  "pos": 9,
+                  "name": "Turkey Tail Mushroom",
+                  "latin": "Coriolus versicolor",
+                  "form": "extract"
+                },
+                {
+                  "pos": 10,
+                  "name": "Maitake Mushroom",
+                  "latin": "Grifola frondosa",
+                  "part": "fruiting body",
+                  "form": "extract"
+                },
+                {
+                  "pos": 11,
+                  "name": "Reishi Mushroom",
+                  "latin": "Ganoderma lucidum",
+                  "part": "fruiting body",
+                  "form": "extract"
+                },
+                {
+                  "pos": 12,
+                  "name": "Shiitake Mushroom",
+                  "latin": "Lentinus edodes",
+                  "part": "fruiting body",
+                  "form": "extract"
+                }
+              ],
+              "as_labeled": "Colostrum, Beta Sitosterol, Olive Extract (Leaf), Propolis Concentrate, Cayenne Concentrate (Fruit), Garlic Concentrate (Bulb), Ginger Extract (Root), Cordyceps Mushroom Extract (Cordyceps sinensis, Mycelium), Turkey Tail Mushroom Extract (Coriolus versicolor), Maitake Mushroom Extract (Grifola frondosa, fruitting body), Reishi Mushroom Extract (Ganoderma lucidum, fruitting body), Shiitake Mushroom Extract (Lentinus edodes, fruitting body)"
+            }
+          ],
+          "other_ingredients": [
+            "Gelatin capsule (gelatin and water)"
+          ],
+          "source_label": "ygy-20688-killer-biotic-fx-suppfacts-0317.jpg"
+        }
+      ]
+    },
+    "kidney-bladder-support": {
+      "product_id": "kidney-bladder-support",
+      "name": "Kidney & Bladder Support",
+      "sku": "USGH000008",
+      "ygy_id": "678",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (tincture)",
+          "serving_size": "2 mL (approx. 1/2 tsp or 40 drops)",
+          "servings_per_container": 60,
+          "extract_ratio": "1:4 (250 mg herb per 1 mL)",
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Extract Blend",
+              "total": {
+                "amount": 1900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Dandelion",
+                  "part": "root"
+                },
+                {
+                  "pos": 2,
+                  "name": "Hydrangea",
+                  "part": "root"
+                },
+                {
+                  "pos": 3,
+                  "name": "Uva Ursi",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 4,
+                  "name": "Cranberry",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 5,
+                  "name": "Buchu",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 6,
+                  "name": "Chamomile",
+                  "part": "flower"
+                },
+                {
+                  "pos": 7,
+                  "name": "Juniper",
+                  "part": "berry"
+                },
+                {
+                  "pos": 8,
+                  "name": "Parsley",
+                  "part": "leaf"
+                }
+              ],
+              "as_labeled": "Dandelion Root, Hydrangea Root, Uva Ursi Leaf, Cranberry Fruit, Buchu Leaf, Chamomile Flower, Juniper Berry, Parsley Leaf"
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "ethyl alcohol (35-45%)"
+          ],
+          "source_label": "gh-kidney-bladder-support_suppfacts-cart_1200x900.jpg"
+        }
+      ]
     }
   }
 }
