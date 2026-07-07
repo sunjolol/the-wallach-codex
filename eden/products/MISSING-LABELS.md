@@ -19,6 +19,7 @@ Deluxe Nutritional Energy · Nutritional Energy Basics · PigPak® · PigPak® P
 
 ## PROVISIONAL genuine-missing candidates (single products, no label seen yet — CONFIRM at end)
 - Activated Charcoal (USLF000112)
+- i26 Hyperimmune Egg Powder French Vanilla (USLL005060, ygy 9965) — no label found; likely a flavored twin of the 31-day powder canister (USLL005030), confirm at end (Batch 13, 2026-07-07)
 - HOPE (Sta-Natural, ygy 577 / USSN000009) — RESOLVED 2026-07-07: Luneth supplied sn-hope label; extracted as `hope-sta-natural`. HOPE (Youngevity, ygy 10359 / USYG7000) = a BUNDLE (3 sold-separately products: Life Balance Menopause Support + Rejuvenate/Rewind/Restore + Women's Probiotic COMPLETE) → SKIP per standard bundle policy; its parts record individually.
 - Imortalium 120ct (USYG100080)
 - Manuka Force Lemon Honey Lozenges (USLF700002)

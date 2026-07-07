@@ -9699,6 +9699,602 @@
           "source_label": "sn-hope_label-suppfacts_0524.jpg"
         }
       ]
+    },
+    "i26-banana-coconut-chewables": {
+      "product_id": "i26-banana-coconut-chewables",
+      "name": "i26 Hyperimmune Egg Banana Coconut Chewables",
+      "sku": "USLL006012",
+      "ygy_id": "8740",
+      "components": [
+        {
+          "role": null,
+          "form": "tablet (chewable)",
+          "serving_size": "3 tablets",
+          "servings_per_container": 15,
+          "macros": {
+            "calories": {
+              "amount": 55,
+              "unit": null,
+              "pct_dv": null
+            },
+            "calories_from_fat": {
+              "amount": 27,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "cholesterol": {
+              "amount": 70,
+              "unit": "mg",
+              "pct_dv": 23
+            },
+            "total_carbohydrate": {
+              "amount": 5,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "total_sugars": {
+              "amount": 4.5,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "protein": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 4
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 9
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "IgY Max® Hyperimmune Egg Powder",
+            "Sugar",
+            "Stearic Acid",
+            "Natural Banana Coconut Flavor",
+            "Magnesium Stearate",
+            "Silicon Dioxide"
+          ],
+          "source_label": "usll006012_i26-banana-coconut-0222_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "i26-french-vanilla-chewables": {
+      "product_id": "i26-french-vanilla-chewables",
+      "name": "i26® French Vanilla Chewables - 45 Tablets",
+      "sku": "USLL006011",
+      "ygy_id": "838",
+      "components": [
+        {
+          "role": null,
+          "form": "tablet (chewable)",
+          "serving_size": "3 tablets",
+          "servings_per_container": 15,
+          "macros": {
+            "calories": {
+              "amount": 55,
+              "unit": null,
+              "pct_dv": null
+            },
+            "calories_from_fat": {
+              "amount": 27,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "cholesterol": {
+              "amount": 70,
+              "unit": "mg",
+              "pct_dv": 23
+            },
+            "total_carbohydrate": {
+              "amount": 5,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "total_sugars": {
+              "amount": 4.5,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "protein": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 4
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 9
+            },
+            {
+              "name": "IgY Max Hyperimmune Egg Powder",
+              "amount": 4500,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Sugar",
+            "Stearic Acid",
+            "Natural Vanilla Flavors",
+            "Magnesium Stearate",
+            "Silicon Dioxide"
+          ],
+          "source_label": "usll006011_i26_egg_tablets_frenchvanilla_suppfacts_1023.jpg"
+        }
+      ]
+    },
+    "i26-hyperimmune-egg-135-capsules": {
+      "product_id": "i26-hyperimmune-egg-135-capsules",
+      "name": "i26® Hyperimmune Egg - 135 Capsules",
+      "sku": "USLL006014",
+      "ygy_id": "833",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "9 capsules",
+          "servings_per_container": 15,
+          "directions": "Adults - Take 9 capsules daily for optimum benefit. For best results, take in conjunction with a balanced diet and regular physical activity. Store at room temperature in a dry place. Do not use if clear neck seal is broken or missing.",
+          "macros": {
+            "calories": {
+              "amount": 20,
+              "unit": null,
+              "pct_dv": null
+            },
+            "calories_from_fat": {
+              "amount": 15,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 1.5,
+              "unit": "g",
+              "pct_dv": 2
+            },
+            "saturated_fat": {
+              "amount": 0.6,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "cholesterol": {
+              "amount": 75,
+              "unit": "mg",
+              "pct_dv": 25
+            },
+            "protein": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 4
+            }
+          },
+          "nutrients": [
+            {
+              "name": "IgY Max Hyperimmune Egg Powder",
+              "amount": 4500,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Vegetable Cellulose (Capsule)",
+            "Silica",
+            "Magnesium Stearate"
+          ],
+          "source_label": "i26_egg_capsules_suppfacts_1123.jpg"
+        }
+      ]
+    },
+    "i26-hyperimmune-egg-powder-canister": {
+      "product_id": "i26-hyperimmune-egg-powder-canister",
+      "name": "i26 Hyperimmune Egg Powder - 31 Day Supply - Canister",
+      "sku": "USLL005030",
+      "ygy_id": "340",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "1 scoop (4.5 g)",
+          "servings_per_container": 31,
+          "directions": "Blend or shake at least 1-2 scoops in any cold liquid such as fruit juice or milk. Sprinkle on any cold food such as salad or yogurt. Use once daily or as often as desired. For best results, take in conjunction with a balanced diet and regular physical activity. Keep in a cool, dry place.",
+          "macros": {
+            "calories": {
+              "amount": 21.5,
+              "unit": null,
+              "pct_dv": null
+            },
+            "calories_from_fat": {
+              "amount": 13,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 1.5,
+              "unit": "g",
+              "pct_dv": 2
+            },
+            "saturated_fat": {
+              "amount": 0.6,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "cholesterol": {
+              "amount": 75.6,
+              "unit": "mg",
+              "pct_dv": 25
+            },
+            "protein": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 4
+            }
+          },
+          "nutrients": [],
+          "blends": [],
+          "other_ingredients": [
+            "IgY Max® Hyperimmune Egg Powder"
+          ],
+          "source_label": "i26-egg-powder_canister-suppfacts-0118.jpg"
+        }
+      ]
+    },
+    "immu-911": {
+      "product_id": "immu-911",
+      "name": "Immu-911™",
+      "sku": "82505",
+      "ygy_id": "589",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 60,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 50,
+              "form": "as calcium ascorbate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 7,
+              "form": "from zinc gluconate"
+            },
+            {
+              "name": "Colostrum",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": null,
+              "standardization": "20% gamma globulins"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Botanical Blend",
+              "total": {
+                "amount": 153,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Echinacea",
+                  "latin": "Echinacea purpurea",
+                  "part": "herb",
+                  "form": "extract",
+                  "standardization": "4:1"
+                },
+                {
+                  "pos": 2,
+                  "name": "Astragalus",
+                  "part": "root",
+                  "form": "extract",
+                  "standardization": "4:1"
+                },
+                {
+                  "pos": 3,
+                  "name": "Pau D'Arco",
+                  "part": "bark",
+                  "form": "extract",
+                  "standardization": "4:1"
+                },
+                {
+                  "pos": 4,
+                  "name": "Beta 1,3 Glucan Complex"
+                },
+                {
+                  "pos": 5,
+                  "name": "Cordyceps Mushroom",
+                  "standardization": "40% polysaccharides"
+                },
+                {
+                  "pos": 6,
+                  "name": "Maitake Mushroom"
+                },
+                {
+                  "pos": 7,
+                  "name": "Shiitake Mushroom"
+                },
+                {
+                  "pos": 8,
+                  "name": "Split Gill Mushroom",
+                  "form": "extract",
+                  "standardization": "10:1"
+                },
+                {
+                  "pos": 9,
+                  "name": "Tremella Mushroom",
+                  "form": "extract",
+                  "standardization": "15:1"
+                },
+                {
+                  "pos": 10,
+                  "name": "Turkey Tail Mushroom",
+                  "form": "extract",
+                  "standardization": "20:1"
+                }
+              ],
+              "as_labeled": "Echinacea Purpurea Herb (4:1 extract), Astragalus Root (4:1 extract), Pau D'Arco Bark (4:1 extract), Beta 1,3 Glucan Complex, Cordyceps Mushroom (40% polysaccharides), Maitake Mushroom, Shiitake Mushroom, Split Gill Mushroom (10:1 extract), Tremella Mushroom (15:1 extact), Turkey Tail Mushroom (20:1 extract)"
+            }
+          ],
+          "other_ingredients": [
+            "Gelatin capsule (gelatin and water)",
+            "Rice flour",
+            "Magnesium stearate"
+          ],
+          "source_label": "ygy-82505-immu-911-suppfacts-0115.jpg"
+        }
+      ]
+    },
+    "immune-support": {
+      "product_id": "immune-support",
+      "name": "Immune Support",
+      "sku": "USGH000018",
+      "ygy_id": "651",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (tincture)",
+          "serving_size": "2 mL (approx. 1/2 tsp or 40 drops)",
+          "servings_per_container": 60,
+          "extract_ratio": "1:4 (250 mg herb per 1 mL)",
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Extract Blend",
+              "total": {
+                "amount": 1900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Calendula",
+                  "part": "flower"
+                },
+                {
+                  "pos": 2,
+                  "name": "Chaparral",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 3,
+                  "name": "Pau D'Arco",
+                  "part": "bark"
+                },
+                {
+                  "pos": 4,
+                  "name": "Olive",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 5,
+                  "name": "Garlic",
+                  "part": "bud"
+                }
+              ],
+              "as_labeled": "Calendula Flower, Chaparral Leaf, Pau D'Arco Bark, Olive Leaf, Garlic Bud"
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "ethyl alcohol (35-45%)"
+          ],
+          "source_label": "usgh000018_gh-immune-support-0521_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "integris-probiotics": {
+      "product_id": "integris-probiotics",
+      "name": "Integris - Probiotics (30 caplets)",
+      "sku": "USSI000006",
+      "ygy_id": "5951",
+      "components": [
+        {
+          "role": null,
+          "form": "caplet",
+          "serving_size": "1 caplet",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Fructo-oligosaccharides (FOS)",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Probiotic Blend (10 Billion CFU per caplet)",
+              "total": {
+                "amount": 250,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Lactobacillus acidophilus"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bifidobacterium bifidum"
+                },
+                {
+                  "pos": 3,
+                  "name": "Bifidobacterium breve"
+                },
+                {
+                  "pos": 4,
+                  "name": "Bifidobacterium infantis"
+                },
+                {
+                  "pos": 5,
+                  "name": "Bifidobacterium longum"
+                },
+                {
+                  "pos": 6,
+                  "name": "Lactobacillus fermentum"
+                },
+                {
+                  "pos": 7,
+                  "name": "Lactobacillus casei"
+                },
+                {
+                  "pos": 8,
+                  "name": "Lactobacillus rhamnosus"
+                },
+                {
+                  "pos": 9,
+                  "name": "Lactobacillus plantarum"
+                },
+                {
+                  "pos": 10,
+                  "name": "Streptococcus thermophilus"
+                }
+              ],
+              "as_labeled": "Lactobacillus acidophilus, Bifidobacterium bifidum, Bifidobacterium breve, Bifidobacterium infantis, Bifidobacterium longum, Lactobacillus fermentum, Lactobacillus casei, Lactobacillus rhamnosus, Lactobacillus plantarum, Streptococcus thermophilus."
+            }
+          ],
+          "other_ingredients": [
+            "Microcrystalline cellulose",
+            "Hydroxypropyl methylcellulose",
+            "Pectin",
+            "Sodium carbonate",
+            "Silicon dioxide",
+            "Stearic acid",
+            "Turmeric (color)"
+          ],
+          "source_label": "ussi000006_integris-probiotics-0319_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "integris-coq10-plus-e": {
+      "product_id": "integris-coq10-plus-e",
+      "name": "Integris® - Coq10 Plus E",
+      "sku": "USSI000003",
+      "ygy_id": "593",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": null,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin E",
+              "amount": 66,
+              "unit": "mg",
+              "pct_dv": 440,
+              "form": "as d-alpha tocopheryl succinate"
+            },
+            {
+              "name": "Coenzyme Q10",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as ubiquinone"
+            },
+            {
+              "name": "Black Pepper",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "fruit",
+              "form": "extract",
+              "standardization": "95% piperine (BioPerine)"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Rice flour",
+            "Fumed silica",
+            "Vegetable lubricant",
+            "Gelatin (capsule)"
+          ],
+          "source_label": "ussi000003_integris-coq10-0320_panel-900x1200_1.jpg"
+        }
+      ]
+    },
+    "integris-vitamin-k2": {
+      "product_id": "integris-vitamin-k2",
+      "name": "Integris® - Vitamin K2",
+      "sku": "USSI000001",
+      "ygy_id": "790",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "1 vegetable capsule",
+          "servings_per_container": null,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin K2",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 125,
+              "form": "as menaquinone-7"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Hydroxypropyl methylcellulose",
+            "Rice flour"
+          ],
+          "source_label": "733-32_integris-vitamin-k2-suppfacts-1024.jpg"
+        }
+      ]
     }
   }
 }
