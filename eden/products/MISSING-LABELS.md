@@ -15,7 +15,7 @@ So the RELIABLE genuine-missing list = base-unique products still un-extracted A
 - Refrigerator eCrystal (USEW000005)
 
 ## Confirmed bundles among the "ambiguous" (description lists component products → no label)
-Deluxe Nutritional Energy · Nutritional Energy Basics · PigPak® · PigPak® Plus · Super Immune · Super Immune Plus · VitalStart Body Shield · Scholastic Enhancement · Baseline / Baseline Plus / Baseline Ultra · Chocolate/French Vanilla Weight Loss 150 · Healthy Weight Loss Chocolate/French Vanilla
+Deluxe Nutritional Energy · Nutritional Alert Program · Nutritional Energy Basics · Nutritional Energy Program · PigPak® · PigPak® Plus · Super Immune · Super Immune Plus · VitalStart Body Shield · Scholastic Enhancement · Baseline / Baseline Plus / Baseline Ultra · Chocolate/French Vanilla Weight Loss 150 · Healthy Weight Loss Chocolate/French Vanilla
 
 ## PROVISIONAL genuine-missing candidates (single products, no label seen yet — CONFIRM at end)
 - Activated Charcoal (USLF000112)
@@ -24,7 +24,7 @@ Deluxe Nutritional Energy · Nutritional Energy Basics · PigPak® · PigPak® P
 - Majestic Earth Mineral STX - BOGO (USYG400401, ygy 10540) — the fuzzy matcher assigned it the `ult-mineral-caps` label, but that label is Ultimate Mineral Caps (sku 20691, extracted early as `ultimate-mineral-caps` in Batch 16). "STX" = the stick form; the BOGO's real (mineral-stick) label is absent, and its only manifest SKU is the BOGO promo itself. CONFIRM identity + supply the real label at end.
 - Manuka Force Lemon Honey Lozenges (USLF700002) — RESOLVED 2026-07-07: Luneth supplied `manuka-force-lemon-honey-lozenges_nfp_0126.jpg`; extracted as `manuka-force-lemon-honey-lozenges` (food-format lozenge).
 - Multi-Collagen Peptide Gummies (USYG100506)
-- Nano Balance (USLF700001)
+- Nano Balance (USLF700001) — RESOLVED 2026-07-07: Luneth supplied `nano-balance-tincture_1224_supp-facts.jpg`; extracted as `nano-balance` (glycerin-based liquid, Curcumin Complex Blend 500mg).
 - Plant Derived Minerals (13203)
 - Refresh FX (USYG103200)
 - RVB 350 (USRS000005) + RYL BETA550 (USRS000006)
@@ -37,4 +37,4 @@ Deluxe Nutritional Energy · Nutritional Energy Basics · PigPak® · PigPak® P
 - XeraTest Hormonal Support for Men (USYG100081)
 - Youngevity CardioBeets 195g (USYG100071)
 
-_(Same-name clusters pending careful side-by-side label passes; not counted here yet. **Body Balance RESOLVED 2026-07-06:** base liquid (USLF000130) + Sticks powder (USLF070031) extracted; Body Balance Mix + Starter Pack + the '×N w/ TruBoost/VitalStart' listings are bundles (skip). **Osteo family RESOLVED 2026-07-06:** Beyond Osteo FX Liquid (USYG103210) + Powder (USYG103211), Osteo-Mag (21210), OsteoProCare (USLF000700V), Ultimate Osteo FX (13209) all extracted. **BTT / Tangy Tangerine line RESOLVED 2026-07-06:** all 6 base products extracted — 2.5 Canister, Original 450G (+ its 30-count box variant 23230), 2.0 CPF canister, 2.0 CPF 30-count box, 2.0 Tablets, Ultimate Liquid — no genuine-missing among them.) **Ultimate Mineral Caps RESOLVED 2026-07-07 (Batch 16 — extracted early from the M-range because the mislabeled `ult-mineral-caps` label is actually this product):** base 64-cap (sku 20691, ygy 751) is `ultimate-mineral-caps`; the 4-pack (20691C, ygy 752) is a plain multipack (not a variant, per the female/GH precedent). The U-range pass can skip it._
+_(Same-name clusters pending careful side-by-side label passes; not counted here yet. **Body Balance RESOLVED 2026-07-06:** base liquid (USLF000130) + Sticks powder (USLF070031) extracted; Body Balance Mix + Starter Pack + the '×N w/ TruBoost/VitalStart' listings are bundles (skip). **Osteo family RESOLVED 2026-07-06:** Beyond Osteo FX Liquid (USYG103210) + Powder (USYG103211), Osteo-Mag (21210), OsteoProCare (USLF000700V), Ultimate Osteo FX (13209) all extracted. **BTT / Tangy Tangerine line RESOLVED 2026-07-06:** all 6 base products extracted — 2.5 Canister, Original 450G (+ its 30-count box variant 23230), 2.0 CPF canister, 2.0 CPF 30-count box, 2.0 Tablets, Ultimate Liquid — no genuine-missing among them.) **Ultimate Mineral Caps RESOLVED 2026-07-07 (Batch 16 — extracted early from the M-range because the mislabeled `ult-mineral-caps` label is actually this product):** base 64-cap (sku 20691, ygy 751) is `ultimate-mineral-caps`; the 4-pack (20691C, ygy 752) is a plain multipack (not a variant, per the female/GH precedent). The U-range pass can skip it._ **Premium Muscadine Grape Seed (USNP000001, ygy 988) done EARLY 2026-07-07 (Batch 17)** — its label `usnp000001_...caps_suppfacts` was in hand alongside the N-range Nature's Pearl Muscadine Grape *Extract* syrup (7756); two distinct muscadine products. The P-range pass can skip the Grape Seed._

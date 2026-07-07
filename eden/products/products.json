@@ -12192,6 +12192,198 @@
           "source_label": "manuka-force-lemon-honey-lozenges_nfp_0126.jpg"
         }
       ]
+    },
+    "natures-pearl-muscadine-grape-extract": {
+      "product_id": "natures-pearl-muscadine-grape-extract",
+      "name": "Nature's Pearl® Premium Muscadine Grape Extract",
+      "sku": "USNP000002",
+      "ygy_id": "7756",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (syrup)",
+          "serving_size": "1/2 fl oz (15 mL)",
+          "servings_per_container": 64,
+          "macros": {
+            "calories": {
+              "amount": 40,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 10,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "total_sugars": {
+              "amount": 8,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Calcium",
+              "amount": 13,
+              "unit": "mg",
+              "pct_dv": 1
+            },
+            {
+              "name": "Potassium",
+              "amount": 87,
+              "unit": "mg",
+              "pct_dv": 2
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Alcohol-free 100% muscadine fruit extract"
+          ],
+          "source_label": "muscadine_900x1200_1_.jpg"
+        }
+      ]
+    },
+    "nerve-support": {
+      "product_id": "nerve-support",
+      "name": "Nerve Support",
+      "sku": "USGH000004",
+      "ygy_id": "690",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (tincture)",
+          "serving_size": "2 mL (approx. 1/2 tsp or 40 drops)",
+          "servings_per_container": 60,
+          "extract_ratio": "1:4 (250 mg herb per 1 mL)",
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Extract Blend",
+              "total": {
+                "amount": 1900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Skullcap",
+                  "part": "herb"
+                },
+                {
+                  "pos": 2,
+                  "name": "White Willow",
+                  "part": "bark"
+                },
+                {
+                  "pos": 3,
+                  "name": "Blue Vervain",
+                  "part": "herb"
+                },
+                {
+                  "pos": 4,
+                  "name": "Hops",
+                  "part": "strobile"
+                },
+                {
+                  "pos": 5,
+                  "name": "Valerian",
+                  "part": "root"
+                }
+              ],
+              "as_labeled": "Skullcap Herb, White Willow Bark, Blue Vervain Herb, Hops Strobile, Valerian Root"
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "ethyl alcohol (35-45%)"
+          ],
+          "source_label": "usgh000004_gh-nerve-support-0721_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "premium-muscadine-grape-seed": {
+      "product_id": "premium-muscadine-grape-seed",
+      "name": "Premium Muscadine Grape Seed",
+      "sku": "USNP000001",
+      "ygy_id": "988",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 60,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Muscadine Grape",
+              "amount": 650,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "seed"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Vegetable Capsule (Hypromellose)"
+          ],
+          "source_label": "usnp000001_naturespearl_muscadine_caps_suppfacts_1223.jpg"
+        }
+      ]
+    },
+    "nano-balance": {
+      "product_id": "nano-balance",
+      "name": "Nano Balance™",
+      "sku": "USLF700001",
+      "ygy_id": "10140",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "2.5 mL",
+          "servings_per_container": 24,
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Curcumin Complex Blend",
+              "total": {
+                "amount": 500,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Manuka Honey"
+                },
+                {
+                  "pos": 2,
+                  "name": "Curcumin"
+                },
+                {
+                  "pos": 3,
+                  "name": "Black Pepper",
+                  "form": "extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "Thyme",
+                  "form": "oil"
+                }
+              ],
+              "as_labeled": "Manuka Honey, Curcumin, Black Pepper Extract, Thyme Oil"
+            }
+          ],
+          "other_ingredients": [
+            "Water",
+            "Glycerin",
+            "Colloidal Silver"
+          ],
+          "source_label": "nano-balance-tincture_1224_supp-facts.jpg"
+        }
+      ]
     }
   }
 }
