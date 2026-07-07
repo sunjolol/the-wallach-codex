@@ -5899,6 +5899,1307 @@
         }
       ]
     },
+    "c-fx": {
+      "product_id": "c-fx",
+      "name": "C-Fx™ - 90 capsules",
+      "sku": "20984",
+      "ygy_id": "601",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 90,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 500,
+              "unit": "mg",
+              "pct_dv": 833,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Calcium",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 5,
+              "form": "from calcium carbonate"
+            },
+            {
+              "name": "Echinacea",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "herb",
+              "latin": "Echinacea angustifolia, purpurea",
+              "form": "powdered extract"
+            },
+            {
+              "name": "Echinacea",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "root",
+              "latin": "Echinacea angustifolia",
+              "form": "powdered extract"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Gelatin capsule (gelatin and water)",
+            "Rice flour"
+          ],
+          "source_label": "ygy-20984-c-fx-suppfacts-0315.jpg"
+        }
+      ]
+    },
+    "cal-mag-100": {
+      "product_id": "cal-mag-100",
+      "name": "CAL/MAG 100",
+      "sku": "USBI000008",
+      "ygy_id": "938",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "1 scoop (20 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 50,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 12,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "dietary_fiber": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "total_sugars": {
+              "amount": 12,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 12,
+              "unit": "g",
+              "pct_dv": 24
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 1200,
+              "unit": "mcg",
+              "pct_dv": 133,
+              "form": "as beta carotene"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 60,
+              "unit": "mg",
+              "pct_dv": 67,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 10,
+              "unit": "mcg",
+              "pct_dv": 50,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Calcium",
+              "amount": 1000,
+              "unit": "mg",
+              "pct_dv": 77,
+              "form": "as calcium carbonate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 400,
+              "unit": "mg",
+              "pct_dv": 95,
+              "form": "as magnesium citrate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": 136,
+              "form": "as zinc gluconate"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Fructose",
+            "Citric acid",
+            "Natural flavors"
+          ],
+          "source_label": "usbi000008_cal-mag-0420_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "cal-toddy": {
+      "product_id": "cal-toddy",
+      "name": "CAL Toddy™ - 32 fl oz",
+      "sku": "81200",
+      "ygy_id": "841",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "1 fl oz",
+          "servings_per_container": 32,
+          "macros": {
+            "calories": {
+              "amount": 32,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 8,
+              "unit": "g",
+              "pct_dv": 3
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin D3",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 125,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Calcium",
+              "amount": 1200,
+              "unit": "mg",
+              "pct_dv": 92,
+              "form": "as tricalcium phosphate, calcium citrate"
+            },
+            {
+              "name": "Phosphorus",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": 24,
+              "form": "from tricalcium phosphate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 600,
+              "unit": "mg",
+              "pct_dv": 143,
+              "form": "from magnesium citrate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": 136,
+              "form": "from zinc gluconate"
+            },
+            {
+              "name": "Copper",
+              "amount": 0.5,
+              "unit": "mg",
+              "pct_dv": 56,
+              "form": "as copper gluconate"
+            },
+            {
+              "name": "Manganese",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 87,
+              "form": "as manganese gluconate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 2,
+              "form": "as potassium citrate"
+            },
+            {
+              "name": "Boron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as boron amino acid chelate"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Water",
+            "Plant Derived Minerals",
+            "Natural Vegetable Glycerin",
+            "Natural Orange-Vanilla Flavor",
+            "Citric acid",
+            "Xanthan gum",
+            "Stevia",
+            "Potassium sorbate",
+            "Sodium benzoate"
+          ],
+          "source_label": "81200_cal-toddy-liquid-0120_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "cell-shield-rtq": {
+      "product_id": "cell-shield-rtq",
+      "name": "Cell Shield RTQ™ - 60 capsules",
+      "sku": "21203",
+      "ygy_id": "805",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Turmeric",
+                  "part": "root",
+                  "standardization": "root extract 95% curcuminoids + organic root powder"
+                },
+                {
+                  "pos": 2,
+                  "name": "Quercetin dihydrate"
+                },
+                {
+                  "pos": 3,
+                  "name": "Japanese Knotweed",
+                  "form": "extract",
+                  "standardization": "50% trans-resveratrol"
+                }
+              ],
+              "as_labeled": "Turmeric Root (blend of root extract standardized to 95% curcuminoids and organic root powder), Quercetin Dihydrate and Japanese Knotweed Extract (containing 50% trans-resveratrol)"
+            }
+          ],
+          "other_ingredients": [
+            "Vegetarian capsule (Hypromellose and water)",
+            "Vegetable cellulose",
+            "Magnesium silicate",
+            "Vegetable stearate",
+            "Silicon dioxide"
+          ],
+          "source_label": "cell-shield-rtq_label6-suppfacts_0217.jpg"
+        }
+      ]
+    },
+    "cheri-mins": {
+      "product_id": "cheri-mins",
+      "name": "Cheri-Mins™ - 32 fl oz",
+      "sku": "13204",
+      "ygy_id": "754",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "1 fl oz (2 tablespoons)",
+          "servings_per_container": 32,
+          "macros": {
+            "calories": {
+              "amount": 36,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "total_sugars": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Majestic Earth Plant Derived Minerals",
+              "amount": 600,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Plant Derived Minerals",
+            "Purified water",
+            "Fructose",
+            "Natural Flavors Blend",
+            "Citric acid",
+            "Sodium benzoate",
+            "Potassium sorbate"
+          ],
+          "source_label": "ygy-13204-cheri-mins-suppfacts-0910.jpg"
+        }
+      ]
+    },
+    "chi3-energy": {
+      "product_id": "chi3-energy",
+      "name": "CHI3 Energy™ - Powered by GoChi™",
+      "sku": "USFL000180",
+      "ygy_id": "354",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "2 fl oz (60 mL)",
+          "servings_per_container": 10,
+          "macros": {
+            "calories": {
+              "amount": 16,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 4,
+              "unit": "g",
+              "pct_dv": 1
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Niacin",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 150,
+              "form": "as niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 2000,
+              "form": "as pyridoxine HCl"
+            },
+            {
+              "name": "Folate",
+              "amount": 400,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "as folic acid"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 500,
+              "unit": "mcg",
+              "pct_dv": 8333,
+              "form": "as cyanocobalamin"
+            },
+            {
+              "name": "Sodium",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 1
+            }
+          ],
+          "blends": [
+            {
+              "name": "GoChi",
+              "total": {
+                "amount": 30,
+                "unit": "mL"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Himalayan Goji Juice",
+                  "latin": "Lycium barbarum",
+                  "form": "reconstituted"
+                },
+                {
+                  "pos": 2,
+                  "name": "White grape juice concentrate"
+                },
+                {
+                  "pos": 3,
+                  "name": "Red grape juice concentrate"
+                },
+                {
+                  "pos": 4,
+                  "name": "Pomegranate juice concentrate"
+                },
+                {
+                  "pos": 5,
+                  "name": "Natural flavor"
+                }
+              ],
+              "as_labeled": "Proprietary Himalayan Goji Juice (reconstituted from whole Lycium barbarum fruit), white grape juice concentrate, red grape juice concentrate, pomegranate juice concentrate, natural flavor"
+            },
+            {
+              "name": "EFP (Energy - Focus - Performance) Blend",
+              "total": {
+                "amount": 1900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Taurine"
+                },
+                {
+                  "pos": 2,
+                  "name": "L-phenylalanine"
+                },
+                {
+                  "pos": 3,
+                  "name": "N-acetyl-L-tyrosine"
+                },
+                {
+                  "pos": 4,
+                  "name": "Green tea",
+                  "part": "leaf",
+                  "form": "extract",
+                  "standardization": "provides 100 mg natural caffeine"
+                },
+                {
+                  "pos": 5,
+                  "name": "Glucuronolactone"
+                }
+              ],
+              "as_labeled": "Taurine, L-phenylalanine, N-acetyl-L-tyrosine, green tea leaf extract (provides 100 mg natural caffeine), glucuronolactone"
+            }
+          ],
+          "other_ingredients": [],
+          "source_label": "usfl000180_chi3-energy-1117_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "circulatory-formula": {
+      "product_id": "circulatory-formula",
+      "name": "Circulatory Formula",
+      "sku": "USGH000002",
+      "ygy_id": "658",
+      "components": [
+        {
+          "role": null,
+          "form": "liquid (tincture)",
+          "serving_size": "2 mL (approx. 1/2 tsp or 40 drops)",
+          "servings_per_container": 60,
+          "extract_ratio": "1:4 (250 mg herb per 1 mL)",
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Extract Blend",
+              "total": {
+                "amount": 1900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Chickweed",
+                  "part": "herb"
+                },
+                {
+                  "pos": 2,
+                  "name": "Flax",
+                  "part": "seed"
+                },
+                {
+                  "pos": 3,
+                  "name": "Ginkgo",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 4,
+                  "name": "Gotu Kola",
+                  "part": "herb"
+                },
+                {
+                  "pos": 5,
+                  "name": "Holy Basil",
+                  "part": "herb"
+                },
+                {
+                  "pos": 6,
+                  "name": "Linden",
+                  "part": "flower"
+                },
+                {
+                  "pos": 7,
+                  "name": "Stoneroot",
+                  "part": "root"
+                }
+              ],
+              "as_labeled": "Chickweed Herb, Flax Seed, Ginkgo Leaf, Gotu Kola Herb, Holy Basil Herb, Linden Flower, Stone Root"
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "ethyl alcohol (35-45%)"
+          ],
+          "source_label": "usgh000002_gh-circulatory-formula-0721_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "citri-d-spray": {
+      "product_id": "citri-d-spray",
+      "name": "Citri-D™ Vitamin D3 Spray",
+      "sku": "USYG100001",
+      "ygy_id": "954",
+      "components": [
+        {
+          "role": null,
+          "form": "spray",
+          "serving_size": "0.90 mL (6 sprays)",
+          "servings_per_container": 66,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin D3",
+              "amount": 150,
+              "unit": "mcg",
+              "pct_dv": 1500,
+              "form": "as cholecalciferol",
+              "label_iu": 6000
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Purified water",
+            "Peach concentrate",
+            "Natural vegetable glycerine",
+            "Natural flavors blend",
+            "Sea minerals",
+            "Citric acid",
+            "Xanthan gum",
+            "Potassium sorbate",
+            "Potassium benzoate"
+          ],
+          "source_label": "ygy-usyg100001-citri-d-spray-suppfacts-0113.jpg"
+        }
+      ]
+    },
+    "collagen-creamer": {
+      "product_id": "collagen-creamer",
+      "name": "Collagen Creamer",
+      "sku": "USYG300009",
+      "ygy_id": "7828",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "1 packet (8.5 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 30,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "saturated_fat": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 5
+            },
+            "total_carbohydrate": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "dietary_fiber": {
+              "amount": "<1",
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "soluble_fiber": {
+              "amount": 0.5,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "protein": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 55,
+              "unit": "mg",
+              "pct_dv": 2
+            },
+            {
+              "name": "Bovine collagen peptides",
+              "amount": 3750,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Medium chain triglycerides (MCT)",
+              "amount": 1200,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Resistant maltodextrin",
+            "Allulose",
+            "Natural flavors",
+            "Sea salt",
+            "Stevia leaf extract"
+          ],
+          "source_label": "mct-collagen-creamer_pouch_sachet_0126_supp-facts.jpg"
+        }
+      ]
+    },
+    "collagen-peptide-joint-health-support": {
+      "product_id": "collagen-peptide-joint-health-support",
+      "name": "Collagen Peptide Joint Health Support",
+      "sku": "USYG300006",
+      "ygy_id": "7916",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "1 scoop (12 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 40,
+              "unit": null,
+              "pct_dv": null
+            },
+            "protein": {
+              "amount": 8,
+              "unit": "g",
+              "pct_dv": 16
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 500,
+              "unit": "mcg",
+              "pct_dv": 56
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 56,
+              "unit": "mg",
+              "pct_dv": 62
+            },
+            {
+              "name": "Calcium",
+              "amount": 35,
+              "unit": "mg",
+              "pct_dv": 3
+            },
+            {
+              "name": "Sodium",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 2
+            },
+            {
+              "name": "Turmeric",
+              "amount": 35,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "root",
+              "form": "powder"
+            },
+            {
+              "name": "Hyaluronic acid",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Cherry",
+              "amount": 6,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Prunus cerasus",
+              "part": "skin",
+              "form": "powder"
+            },
+            {
+              "name": "Cranberry",
+              "amount": 6,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Vaccinium macrocarpon",
+              "part": "fruit",
+              "form": "juice powder"
+            },
+            {
+              "name": "MSM",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "methylsulfonyl methane"
+            },
+            {
+              "name": "Glucosamine",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "HCl"
+            },
+            {
+              "name": "Chondroitin sulfate",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "bovine"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Collagen Blend",
+              "total": {
+                "amount": 9.5,
+                "unit": "g"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Bovine Collagen Hydrolysate"
+                },
+                {
+                  "pos": 2,
+                  "name": "Fish Collagen"
+                },
+                {
+                  "pos": 3,
+                  "name": "Chicken Collagen Peptides"
+                },
+                {
+                  "pos": 4,
+                  "name": "Eggshell Membrane Collagen"
+                }
+              ],
+              "as_labeled": "Bovine Collagen Hydrolysate, Fish Collagen, Chicken Collagen Peptides, Eggshell Membrane Collagen"
+            },
+            {
+              "name": "Collagen Enzymes Blend",
+              "total": {
+                "amount": 8,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Fungal Protease"
+                },
+                {
+                  "pos": 2,
+                  "name": "Serratiopeptidase"
+                }
+              ],
+              "as_labeled": "Fungal Protease, Serratiopeptidase"
+            }
+          ],
+          "other_ingredients": [
+            "Citric acid",
+            "Natural flavor",
+            "Stevia leaf extract",
+            "Beet root powder (for color)",
+            "Beta carotene (for color)"
+          ],
+          "source_label": "collagen-peptides-joint_0524_supp-facts.jpg"
+        }
+      ]
+    },
+    "collagen-peptides": {
+      "product_id": "collagen-peptides",
+      "name": "Collagen Peptides",
+      "sku": "USYG300005",
+      "ygy_id": "7107",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "2 scoops (21.2 g)",
+          "servings_per_container": 15,
+          "macros": {
+            "calories": {
+              "amount": 80,
+              "unit": null,
+              "pct_dv": null
+            },
+            "protein": {
+              "amount": 19,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 4
+            },
+            {
+              "name": "OPTIZIOME P3 Hydrolyzer",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Fulvic powder",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Collagen Blend",
+              "total": {
+                "amount": 20,
+                "unit": "g"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Hydrolyzed Grass-Fed Collagen"
+                },
+                {
+                  "pos": 2,
+                  "name": "Fish Collagen"
+                },
+                {
+                  "pos": 3,
+                  "name": "Chicken Collagen"
+                },
+                {
+                  "pos": 4,
+                  "name": "Eggshell Membrane Collagen"
+                }
+              ],
+              "as_labeled": "Hydrolyzed Grass-Fed Collagen, Fish Collagen, Chicken Collagen, and Eggshell Membrane Collagen (includes Types I, II, III, V, X)"
+            }
+          ],
+          "other_ingredients": [
+            "Silica"
+          ],
+          "source_label": "collagen_peptides_label_suppfacts_0923.jpg"
+        }
+      ]
+    },
+    "collagen-peptides-hair-skin-nail-support": {
+      "product_id": "collagen-peptides-hair-skin-nail-support",
+      "name": "Collagen Peptides Hair, Skin & Nail Support",
+      "sku": "USYG300007",
+      "ygy_id": "8281",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "1 scoop (8.38 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 20,
+              "unit": null,
+              "pct_dv": null
+            },
+            "protein": {
+              "amount": 5,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 776,
+              "unit": "mcg",
+              "pct_dv": 86,
+              "form": "as vitamin A palmitate"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": 222,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 110,
+              "unit": "mg",
+              "pct_dv": 735,
+              "form": "as d-alpha tocopheryl acetate"
+            },
+            {
+              "name": "Niacin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 124,
+              "form": "as niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 116,
+              "form": "as pyridoxine HCl"
+            },
+            {
+              "name": "Folate",
+              "amount": 405,
+              "unit": "mcg",
+              "pct_dv": 101,
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 250,
+              "unit": "mcg",
+              "pct_dv": 10417,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 10000,
+              "unit": "mcg",
+              "pct_dv": 33333
+            },
+            {
+              "name": "Zinc",
+              "amount": 6,
+              "unit": "mg",
+              "pct_dv": 53
+            },
+            {
+              "name": "Betaine",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Alpha lipoic acid",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Papain",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "standardization": "50,000 USP/mg"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Collagen Blend",
+              "total": {
+                "amount": 5,
+                "unit": "g"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Fish Collagen"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bovine Collagen Hydrolysate"
+                }
+              ],
+              "as_labeled": "Fish Collagen, Bovine Collagen Hydrolysate"
+            },
+            {
+              "name": "Enzyme Blend",
+              "total": {
+                "amount": 30,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Protease 6.0"
+                },
+                {
+                  "pos": 2,
+                  "name": "Protease 4.5"
+                },
+                {
+                  "pos": 3,
+                  "name": "Bromelain"
+                },
+                {
+                  "pos": 4,
+                  "name": "Serratiopeptidase"
+                }
+              ],
+              "as_labeled": "Protease 6.0, Protease 4.5, Bromelain, Serratiopeptidase"
+            },
+            {
+              "name": "Antioxidant Blend",
+              "total": {
+                "amount": 28,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Resveratrol"
+                },
+                {
+                  "pos": 2,
+                  "name": "Grape seed",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Blueberry",
+                  "form": "powder"
+                },
+                {
+                  "pos": 4,
+                  "name": "Quercetin"
+                },
+                {
+                  "pos": 5,
+                  "name": "Bilberry",
+                  "part": "fruit",
+                  "form": "powder"
+                },
+                {
+                  "pos": 6,
+                  "name": "Cherry",
+                  "form": "powder"
+                },
+                {
+                  "pos": 7,
+                  "name": "Prune",
+                  "form": "powder"
+                },
+                {
+                  "pos": 8,
+                  "name": "Raspberry",
+                  "part": "fruit"
+                }
+              ],
+              "as_labeled": "Resveratrol, Grape Seed Extract, Blueberry Powder, Quercetin, Bilberry Fruit Powder, Cherry Powder, Prune Powder, Raspberry Fruit"
+            }
+          ],
+          "other_ingredients": [
+            "Citric acid",
+            "Natural flavor",
+            "Beet root powder (for color)",
+            "Stevia leaf extract"
+          ],
+          "source_label": "collagen-beauty-suppfacts-0321.jpg"
+        }
+      ]
+    },
+    "colloidal-silver": {
+      "product_id": "colloidal-silver",
+      "name": "Colloidal Silver",
+      "sku": "USLF000600",
+      "ygy_id": "9898",
+      "additional_labels": [
+        "colloidalsilversuppfacts_0620.jpg"
+      ],
+      "components": [
+        {
+          "role": null,
+          "form": "liquid",
+          "serving_size": "4 droppers (4 mL)",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Silver",
+              "amount": 40,
+              "unit": "mcg",
+              "pct_dv": null,
+              "form": "as colloidal silver"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Deionized water"
+          ],
+          "source_label": "colloidal_silver_supp_panel_900x1200.jpg"
+        }
+      ]
+    },
+    "coreao-sticks": {
+      "product_id": "coreao-sticks",
+      "name": "CoreAO Sticks",
+      "sku": "USBE10001",
+      "ygy_id": "7186",
+      "components": [
+        {
+          "role": null,
+          "form": "powder",
+          "serving_size": "1 stick pack (4.2 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 5,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "total_sugars": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 23,
+              "unit": "mg",
+              "pct_dv": 25,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D3",
+              "amount": 2,
+              "unit": "mcg",
+              "pct_dv": 10,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Zinc",
+              "amount": 700,
+              "unit": "mcg",
+              "pct_dv": 6,
+              "form": "as zinc citrate"
+            },
+            {
+              "name": "Black pepper",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract (BioPerine®)"
+            }
+          ],
+          "blends": [
+            {
+              "name": "M-DEFEND Proprietary Blend",
+              "total": {
+                "amount": 826,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Elderberry",
+                  "form": "juice powder"
+                },
+                {
+                  "pos": 2,
+                  "name": "Mangosteen",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Green tea",
+                  "part": "leaf",
+                  "form": "extract",
+                  "standardization": "EGCG"
+                },
+                {
+                  "pos": 4,
+                  "name": "Grape seed",
+                  "form": "extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Astragalus",
+                  "part": "root",
+                  "form": "extract"
+                },
+                {
+                  "pos": 6,
+                  "name": "Acai berry",
+                  "form": "extract"
+                },
+                {
+                  "pos": 7,
+                  "name": "Bilberry",
+                  "part": "fruit",
+                  "form": "powder"
+                },
+                {
+                  "pos": 8,
+                  "name": "Cranberry",
+                  "part": "fruit",
+                  "form": "extract"
+                }
+              ],
+              "as_labeled": "Elderberry Juice Powder, Mangosteen Extract, Green Tea Leaf Extract (EGCG), Grape Seed Extract, Astragalus Root Extract, Acai Berry Extract, Bilberry Fruit Powder, Cranberry Fruit Extract"
+            }
+          ],
+          "other_ingredients": [
+            "Organic cane sugar",
+            "Malic acid",
+            "Natural berry flavor",
+            "Gum arabic",
+            "Beet root juice powder",
+            "Citric acid",
+            "Xanthan gum",
+            "Stevia leaf extract"
+          ],
+          "source_label": "coreao_box_suppfact_0823.jpg"
+        }
+      ]
+    },
     "osteo-mag": {
       "product_id": "osteo-mag",
       "name": "Osteo-Mag™ - 60 tablets",
@@ -6147,6 +7448,74 @@
             "Rebaudioside A (Purified Stevia Leaf Extract)"
           ],
           "source_label": "osteoprocare_supp_panel_900x1200.jpg"
+        }
+      ]
+    },
+    "ultimate-cal": {
+      "product_id": "ultimate-cal",
+      "name": "Ultimate CAL® - 120 capsules",
+      "sku": "21221",
+      "ygy_id": "782",
+      "components": [
+        {
+          "role": null,
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 60,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin D3",
+              "amount": 12.5,
+              "unit": "mcg",
+              "pct_dv": 63,
+              "form": "as cholecalciferol",
+              "label_iu": 500
+            },
+            {
+              "name": "Calcium",
+              "amount": 230,
+              "unit": "mg",
+              "pct_dv": 18,
+              "form": "from tricalcium phosphate, citrate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 10,
+              "form": "from magnesium bisglycinate chelate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": 27,
+              "form": "from zinc bisglycinate chelate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 80,
+              "unit": "mg",
+              "pct_dv": 2,
+              "form": "from potassium citrate"
+            },
+            {
+              "name": "Boron",
+              "amount": 1.5,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from boroganic glycine"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Gelatin capsule (gelatin and water)",
+            "Vegetable stearate",
+            "Silicon dioxide",
+            "Magnesium silicate"
+          ],
+          "source_label": "ult-cal_suppfacts-0320_2_1.jpg"
         }
       ]
     },
