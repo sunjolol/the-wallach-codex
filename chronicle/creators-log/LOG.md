@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 396 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 397 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-07 10:05 UTC-05:00 · session-end · chronicle
+Session-close wrap for reboot: this session grew the Product DB from 14 → 50 products (0-9 through E complete, 5 committed batches B5-B9); rewrote next-chunk.md to current reality (HEAD cbffc5f, F-range next, new locked decisions).
+  ↳ Wrapping the session at a clean A-E milestone so the next session boots from current truth. Over this session the Youngevity Product DB went from 14 to 50 products across five committed+pushed batches (B5 tangy/BTT line, B6 rest of B, B7 osteo cluster + 3.0 verify, B8 full C-range, B9 D+E range), board green (45/45) throughout, every product verified by label content. chronicle/next-chunk.md brought current: header HEAD -> cbffc5f (2026-07-07) + '50 products, 0-9 through E COMPLETE, resume at F-range'; PROGRESS block rewritten with batches B5-B9 and their commit hashes + warnings.json = 4 entries; DECISIONS LOCKED extended with (7) one-record-per-formula (variants[] for identical-formula pack variants, own record when the formula differs, additional_labels[] for older/regional same-sku images), (8) amino profiles as blends, (9) buy-together 2-product bundles = one record with two role-named components (3.0 Rise & Restore), (10) get Luneth's authoritative label->product map for same-name clusters; NEXT pointer -> F-range (Female Hormonal Support, FlexeoPlus, Flexi-Care Plus, FucoidZ/ZRadical cluster; French Vanilla Weight Loss = bundle). Memory phase-f-product-db-underway.md kept in sync. Verified: PYTHONUTF8=1 python tools/invariants.py = 45/45; node tools/build.mjs exit 0. Next session: run genesis.
 
 ## 2026-07-07 09:56 UTC-05:00 · round-close · eden/products
 Phase F Batch 9: catalogued the D+E range (4: Digestwel+, ElectroFuel, Energize Wellness Tea, Eucalyptus Honey Thyme Syrup) — finishing 0-9 through E; 46→50 products; board 45/45.
@@ -781,6 +785,3 @@ Ch10 b65: SCABIES→SCURVY (S's pt 1, p166-167) — LETS-424..428, 5 tier-1 prot
 
 ## 2026-06-29 11:44 UTC-05:00 · round-close · knowledge/corpus
 Ch10 b64: RHEUMATIC FEVER→ROSEOLA = ★ R SECTION COMPLETE (p165-166) — LETS-418..423, 6 tier-1 protocol: rheumatic_fever/RA[2nd,Mycoplasma]/rickets[2nd]/ringworm/RMSF/roseola. 1 meg→mcg (RA selenium). kv175, claims 803, conds 413, board 31/31.
-
-## 2026-06-29 11:36 UTC-05:00 · round-close · knowledge/corpus
-Ch10 b63: RACHITIC ROSARY→REYE'S (R's pt 1, p163-164) — LETS-413..417, 5 tier-1 protocol: rickets/radial_nerve_palsy/raynauds/rectal_itching/reyes. 1 meg→mcg (reyes selenium). ★ RAPE skipped (Luneth: out of app scope). kv174, claims 797, conds 409, board 31/31.
