@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """graphics_seal.py — USER-ONLY. Seals the sacred graphics manifest.
 
-Mirrors corpus_seal / eden_seal posture: the agent may not run this on the user's
+Mirrors corpus_seal posture: the agent may not run this on the user's
 behalf without explicit per-invocation approval. Recomputes each graphic's RAW-BYTE
 sha256, refuses if any drifts from the manifest, then writes the manifest's
 LF-content hash to graphics-manifest.golden.sha256 and logs the seal.

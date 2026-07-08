@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """catalog_seal.py -- USER-ONLY. Seals the Catalog pillar (eden/catalog/) as canonical.
 
-Like corpus_seal.py / eden_seal.py, sealing is the human's act of ratifying catalog state as
+Like corpus_seal.py, sealing is the human's act of ratifying catalog state as
 truth. The agent (Claude) MAY NOT run this without explicit per-invocation approval.
 
 What it does, in order:

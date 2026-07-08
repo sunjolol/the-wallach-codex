@@ -352,43 +352,62 @@ def check_no_native_dialogs():
 
 
 # ---------------------------------------------------------------------------
-# Eden — sealed catalog architecture (Round 157 / 2026-06-20)
+# Product vault — composition-only gate (Phase F / A1, 2026-07-08)
 # ---------------------------------------------------------------------------
-# The sealed-catalog integrity anchor:
-#   check_eden_hash_integrity — actual SHA-256 of eden-catalog.json must match
-#   the locked golden hash. Truth anchor: math (deterministic hash).
-# (The former check_eden_embeds_match_canonical — a version-STAMP gate over the
-#  dashboard embeds — was RETIRED in Phase C3: the product embed now derives
-#  through the manifest and is content-gated by derived_artifacts_fresh, a real
-#  freshness proof rather than a stamp.)
-def check_eden_hash_integrity():
-    """Round 157 — Eden truth anchor. Computes SHA-256 of eden-catalog.json,
-    compares against eden-catalog.golden.sha256. Identical = pass. Any drift
-    = critical fail. BOOTSTRAP state (golden placeholder) reports as info-
-    level success since Eden hasn\'t shipped yet."""
-    import hashlib
-    catalog = ROOT / "eden" / "eden-catalog.json"
-    golden = ROOT / "eden" / "eden-catalog.golden.sha256"
-    if not catalog.exists():
-        return True, "eden/eden-catalog.json missing (Eden not installed; bootstrap-guard)"
-    if not golden.exists():
-        return True, "eden/eden-catalog.golden.sha256 missing (Eden not installed; bootstrap-guard)"
-    golden_hash = golden.read_text(encoding="utf-8").strip()
-    if golden_hash == "" or golden_hash == "BOOTSTRAP-PLACEHOLDER-PRE-SEAL":
-        return True, "Eden in BOOTSTRAP state (golden placeholder; pre-seal)"
-    h = hashlib.sha256()
-    with open(catalog, "rb") as f:
-        for chunk in iter(lambda: f.read(8192), b""):
-            h.update(chunk)
-    actual = h.hexdigest()
-    if actual != golden_hash:
+# The transitional eden-catalog.json -- and eden_hash_integrity that guarded it,
+# plus eden_build/seal/verify.py -- were DELETED in A1. That whole old product
+# subsystem carried scraped Youngevity marketing prose that had poisoned the
+# corpus. The product vault now derives from the SEALED Products pillar
+# (products.json, guarded by products_hash_integrity) as COMPOSITION ONLY. This
+# gate keeps it that way: marketing prose can never re-enter the vault (memory
+# old-product-system-full-delete; the stop-the-leak-before-building sever+enforce).
+_VAULT_ARTIFACT = "dashboard/assets/data/regimen-label-lookup.json"
+_VAULT_PROSE_KEYS = {
+    "what_it_does", "tagline", "features", "description", "brand_tier",
+    "dose_text", "non_essentials_parsed", "summary", "blurb", "marketing",
+}
+_VAULT_PRODUCT_KEYS = {"canonical_name", "nutrients"}
+_VAULT_NUTRIENT_KEYS = {"name", "amount", "unit"}
+
+
+def check_no_product_marketing_prose():
+    """The product vault (regimen-label-lookup.json) must be COMPOSITION ONLY:
+    each product record = {canonical_name, nutrients:[{name, amount, unit}]}, and
+    nothing else. A strict key-allowlist -- any extra key is RED, and a known
+    marketing-prose key (what_it_does / tagline / description / ...) is named
+    explicitly. This makes the A1 deletion permanent: scraped YGY marketing copy
+    can never re-enter the vault through the generator (R7 sever + enforce)."""
+    art = ROOT / _VAULT_ARTIFACT
+    if not art.exists():
+        return True, f"{_VAULT_ARTIFACT} missing (bootstrap-guard)"
+    data = json.loads(art.read_text(encoding="utf-8"))
+    products = data.get("products", {})
+    problems = []
+    for pid, rec in products.items():
+        if not isinstance(rec, dict):
+            problems.append(f"{pid}: record is not an object")
+            continue
+        extra = set(rec.keys()) - _VAULT_PRODUCT_KEYS
+        if extra:
+            prose = extra & _VAULT_PROSE_KEYS
+            problems.append(f"{pid}: {'MARKETING-PROSE ' if prose else ''}unexpected key(s) {sorted(extra)}")
+        for row in rec.get("nutrients", []) or []:
+            if not isinstance(row, dict):
+                problems.append(f"{pid}: a nutrient row is not an object")
+                continue
+            nextra = set(row.keys()) - _VAULT_NUTRIENT_KEYS
+            if nextra:
+                problems.append(f"{pid}: nutrient {row.get('name', '?')!r} unexpected key(s) {sorted(nextra)}")
+    if problems:
         return False, (
-            f"Eden catalog hash drift! golden={golden_hash[:16]}... "
-            f"actual={actual[:16]}... — somebody modified eden-catalog.json "
-            f"without re-sealing. Run eden/tools/eden_seal.py to re-anchor "
-            f"OR revert the catalog change."
+            f"product vault carries {len(problems)} non-composition field(s) -- "
+            f"marketing prose must never re-enter the vault: "
+            + "; ".join(problems[:6]) + (" ..." if len(problems) > 6 else "")
         )
-    return True, f"Eden hash matches golden ({actual[:16]}...)"
+    return True, (
+        f"product vault is composition-only across {len(products)} product(s) "
+        f"(keys subset of {{canonical_name, nutrients:[{{name,amount,unit}}]}}; no marketing prose)"
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -1718,13 +1737,14 @@ def check_mining_coverage_accounted():
 # OPTION-1 ALTITUDE (Luneth 2026-07-05): real teeth on the clean surface NOW;
 # the surfaces that are still legacy are a LABELED WISH (R7 -- documented, never
 # sold as guarded), extended when Phase E/F/G collapses them into the pipeline:
-#   * the legacy not-yet-collapsed data embeds -- essentials-benefits-data (still
-#     carries "(Wallach Dead Doctors Don't Lie)"), essentials-best-supplements,
-#     goal-recommendations-data, ingredients-embed, ingredients-quickref-data,
-#     regimen-label-lookup, scanner-corpus-data, ocr-dict-data -- carry
-#     hand-maintained prose + hand-typed cites;
-#   * the legacy view scaffold -- views/regimen.ts placeholders -- carry hand-typed
-#     cites + inline educational prose.
+#   * the prose-carrying legacy embeds (essentials-benefits-data,
+#     essentials-best-supplements, goal-recommendations-data, ingredients-embed,
+#     ingredients-quickref-data) were DELETED (blueprint §3.2/§6); scanner-corpus-data,
+#     ocr-dict-data, regimen-base-data were brought ONTO the clean surface
+#     (_CLEAN_SURFACE_LEGACY_DATA, crack #3); and regimen-label-lookup is now
+#     COMPOSITION-ONLY (Phase F/A1) with its own dedicated gate no_product_marketing_prose;
+#   * what remains WISH -- the legacy view scaffold (views/regimen.ts + views/knowledge.ts
+#     placeholders) still carries hand-typed cites + inline educational prose.
 # CLEANED (Phase E, 2026-07-05): views/knowledge.ts DOCTRINES -- the 4 app-guarantee
 # cards moved to the doctrine-data.json prose store (now ON the clean surface below,
 # _CLEAN_SURFACE_STORES) with enforced_by composed from real gate names; the 3 Wallach
@@ -2226,12 +2246,12 @@ INVARIANTS = [
         lesson_ref="Round 127 — design family; native dialogs break the modal contract + theme + accessibility flow",
     ),
     Invariant(
-        name="eden_hash_integrity",
-        description="eden/eden-catalog.json hash matches eden/eden-catalog.golden.sha256",
-        check_fn=check_eden_hash_integrity,
-        truth_anchor="SHA-256 of eden/eden-catalog.json vs golden file",
+        name="no_product_marketing_prose",
+        description="the product vault (regimen-label-lookup.json) is composition-only -- each record = {canonical_name, nutrients:[{name,amount,unit}]}; any extra/prose key (what_it_does/tagline/description/...) is RED",
+        check_fn=check_no_product_marketing_prose,
+        truth_anchor="strict key-allowlist over dashboard/assets/data/regimen-label-lookup.json (the generated product vault), recomputed each run",
         severity="critical",
-        lesson_ref="Round 157 — Eden sealed-canonical pattern; math doesn't lie",
+        lesson_ref="Phase F / A1 (2026-07-08) -- the old product subsystem's scraped YGY marketing prose poisoned the corpus; A1 deleted it + this gate keeps prose from re-entering the vault (memory old-product-system-full-delete; stop-the-leak-before-building sever+enforce).",
     ),
     Invariant(
         name="no_external_style_resources",

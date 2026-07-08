@@ -364,7 +364,7 @@ function renderEssentialsTab(snapshot: CoverageSnapshot | null, selectedKey: str
 function renderProductsTab(): string {
   const products = readProducts();
   if (products.length === 0) {
-    return '<div class="kd-empty">— vault data not loaded · 59 known products live in regimen-label-lookup —</div>';
+    return '<div class="kd-empty">— vault data not loaded —</div>';
   }
 
   const productsHTML = products.slice(0, 30).map(p => `

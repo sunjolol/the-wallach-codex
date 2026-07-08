@@ -40,9 +40,9 @@
       "write_fn": "write_embed",
       "compare": "json",
       "inputs": [
-        "eden/eden-catalog.json"
+        "eden/products/products.json"
       ],
-      "note": "The product-vault embed (regimen-label-lookup) read by views/regimen.ts (Full-edit) + views/knowledge.ts (Products tab) via esbuild JSON import. Phase C3 migrated it off the inline dashboard.html <script> block (D1) and retired the version-stamp eden_embeds_match_canonical (this content gate replaces it). TRANSITIONAL source eden/eden-catalog.json; Phase F swaps to the Products pillar. Deterministic (NO timestamp) so build_fn byte-compares to disk."
+      "note": "The product-vault embed (regimen-label-lookup) read by views/regimen.ts (Full-edit) + views/knowledge.ts (Products tab) via esbuild JSON import. Phase F/A1 (2026-07-08) swapped the source to the SEALED Products pillar (eden/products/products.json) + deleted the transitional eden/eden-catalog.json and the whole old product subsystem as poison; the vault carries composition ONLY (a display name + quantified {name,amount,unit} rows flattened across components incl. blend ingredients), NO marketing prose (no_product_marketing_prose). Deterministic (NO timestamp) so build_fn byte-compares to disk."
     },
     {
       "artifact": "dashboard/assets/data/coverage-layout-data.json",

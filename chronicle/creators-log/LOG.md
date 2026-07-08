@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 438 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 439 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-08 14:28 UTC-05:00 · round-close · products
+A1: the product vault now derives from the sealed Products pillar (215) and the entire old scraped-catalog product system is deleted as poison; a new key-allowlist gate keeps marketing prose out of the vault for good.
+  ↳ The dashboard's product list used to come from an old catalog we built by scraping every Youngevity page -- and that marketing text had leaked into our real Wallach corpus (poison we're still cleaning). We pointed the app at the clean, sealed Products pillar from Phase F instead, deleted the entire old product system so it can never poison anything again, and added a gate that turns the board red if marketing copy ever sneaks back into the product vault. Going forward, product 'prose' comes from matching Wallach's own book claims to ingredients -- not scraped descriptions. products_embed.py re-sourced eden/eden-catalog.json -> sealed eden/products/products.json; projects each product to {canonical_name, nutrients:[{name,amount,unit}]}, flattening components[].nutrients[] + quantified blends[].ingredients[]/sub_ingredients[] (skips blend totals + non-numeric amounts), mirroring nutrient_resolve._iter_substances -> 215 products, 177 with >=1 quantified row (Taurine-in-blend verified). MANIFEST regimen-label-lookup input re-sourced. prices.json: 432 marketing `description` blobs stripped (price/BV/QV kept). DELETED (11): eden-catalog.json+draft+golden, eden_build/seal/verify.py, build_regimen_label_lookup.py, knowledge/products-db.json (+empty dir), eden/derived orphans (regimen-label-lookup, goal-recommendations-data, regimen-base-data-recommended). Retired eden_hash_integrity (guarded the deleted catalog) -> added no_product_marketing_prose (strict key-allowlist over the generated vault; negative-tested: inject what_it_does -> RED naming MARKETING-PROSE, regenerate -> clean). Also: knowledge.ts stale '59 products' copy fixed; 3 seal-script docstrings de-referenced the deleted eden_seal.py; refreshed a stale R3/R4 WISH-scope comment. Verify: build OK (tsc+esbuild), invariants 49/49 (net 0: -eden_hash_integrity +no_product_marketing_prose; charter_gates_present green), render_probe_knowledge/adopt/seeded PASS (Products tab '215 ENTRIES', real names, anyUnnamed=false). Visual sign-off: Luneth confirmed the data is right (real 215, no prose). Deferrals (Luneth-flagged next work): A2 runtime coverage-matcher unification onto the registry (coverage still uses the interim string matcher); the Products DETAIL-PANEL surface = the next chunk (list ALL 215 no-truncation + click a product -> full YGY detail panel like the condition deep-dive + essentials 'FOUND IN YGY VAULT' chips clickable); condition -> product suggestions later (needs cure->essential->product link); regimen-base-data.json swap is its own chunk. Memories: old-product-system-full-delete, product-detail-panel-vision.
 
 ## 2026-07-08 12:06 UTC-05:00 · milestone · products
 Phase F SEAL: both pillars sealed as canonical (Eden's wall up) — the Youngevity Product DB (215 products, golden 3e8468ce) + the nutrient registry (408 substances). NEW products_seal.py + live gates products_verify + products_hash_integrity; board 47->49.
@@ -787,6 +791,3 @@ SESSION 32 b4a — EPIGEN: calcium re-anchored from the 147-diseases summary to 
 
 ## 2026-07-01 06:49 UTC-05:00 · round-close · knowledge-drawer
 SESSION 32 b3 — EPIGEN verbatim-remediation: Vitamin K (bleeding cluster, page-marker split) + chromium (full deficiency list, 17 conditions) re-anchored to name every mapped condition; +8 synonyms. Violations 498->476 (EPIGEN 80->61), board 32/32, 0 NEW, probe PASS.
-
-## 2026-07-01 06:39 UTC-05:00 · round-close · knowledge-drawer
-SESSION 32 b2 — EPIGEN verbatim-remediation: 15 more claims re-anchored to name every mapped condition; 4 orphans fixed (cretinism/ED/addisons/eye_redness); +8 synonyms (apostrophe-s: crohn/addison/wernecke). Violations 541->498, board 32/32, 0 NEW.

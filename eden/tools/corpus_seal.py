@@ -2,7 +2,7 @@
 """corpus_seal.py — USER-ONLY. Seals eden/corpus as the new truth anchor.
 
 The agent (Claude) MAY NOT run this on the user's behalf without explicit
-per-invocation approval. Like eden_seal.py, sealing is the human's act of
+per-invocation approval. Sealing is the human's act of
 ratifying corpus state as canonical.
 
 What it does, in order:
