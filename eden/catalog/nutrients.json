@@ -1,0 +1,1747 @@
+{
+  "schema_version": 1,
+  "_doctrine": "The Youngevity Product-DB nutrient/ingredient registry (Pillar 3, rebuilt in Phase F; the too-basic Phase-B nutrients.json was deleted 2026-07-05, then rebuilt RICHER here). Three parts, none derivable in full from a single pillar: (1) essential_aliases -- which product-label vitamin/mineral name credits which of the 91 essentials (essentials-canon slugs); (2) canonical_forms -- the collision-collapse map (norm-key -> ONE canonical display form) that unifies label-faithful surface variants (Ginkgo biloba/Ginkgo Biloba, L-glutamine/L-Glutamine) so aggregation + search group correctly; (3) nutrients -- the pre-registered substance vocabulary (every corpus other_substances slug), which RE-LIGHTS the dormant substance half of references_resolve (a claim can no longer cite a phantom substance). display_name mirrors corpus_derive.humanize(slug) so the derived other-substances index stays byte-identical; canon_slug is null (other_substances are non-essential by the corpus's own essentials/other split). Minerals/amino acids matching a canon display_name, and fatty acids by omega family, resolve by RULE in nutrient_resolve.py. The products pillar stays byte-faithful to the labels; canonicalization lives HERE (registry layer), never lossily in-pillar. Composition-only (SS00.A): nothing here is a Wallach target.",
+  "essential_aliases": {
+    "vitamins": {
+      "vitamin a": "vitamin-a",
+      "retinol": "vitamin-a",
+      "vitamin b1": "vitamin-b1",
+      "thiamin": "vitamin-b1",
+      "thiamine": "vitamin-b1",
+      "vitamin b2": "vitamin-b2",
+      "riboflavin": "vitamin-b2",
+      "vitamin b3": "vitamin-b3",
+      "niacin": "vitamin-b3",
+      "niacinamide": "vitamin-b3",
+      "vitamin b5": "vitamin-b5",
+      "pantothenic acid": "vitamin-b5",
+      "vitamin b6": "vitamin-b6",
+      "pyridoxine": "vitamin-b6",
+      "folate": "vitamin-b9",
+      "folic acid": "vitamin-b9",
+      "vitamin b12": "vitamin-b12",
+      "cobalamin": "vitamin-b12",
+      "vitamin c": "vitamin-c",
+      "ascorbic acid": "vitamin-c",
+      "vitamin d": "vitamin-d",
+      "vitamin d3": "vitamin-d",
+      "cholecalciferol": "vitamin-d",
+      "vitamin e": "vitamin-e",
+      "tocopherol": "vitamin-e",
+      "vitamin k": "vitamin-k",
+      "vitamin k1": "vitamin-k",
+      "phylloquinone": "vitamin-k",
+      "vitamin k2": "vitamin-k",
+      "biotin": "biotin",
+      "choline": "choline",
+      "inositol": "inositol",
+      "flavonoids": "flavonoids",
+      "bioflavonoids": "flavonoids",
+      "citrus bioflavonoids": "flavonoids",
+      "citrus bioflavonoid complex": "flavonoids"
+    },
+    "minerals": {
+      "silicon": "silica",
+      "phosphorous": "phosphorus",
+      "sulfate": "sulfur"
+    }
+  },
+  "canonical_forms": {
+    "alfalfa grass": "Alfalfa Grass",
+    "alpha galactosidase": "Alpha Galactosidase",
+    "apple cider vinegar": "Apple Cider Vinegar",
+    "aspartic acid": "Aspartic Acid",
+    "bacillus subtillus": "Bacillus subtilis",
+    "bacopa monnieri": "Bacopa monnieri",
+    "beta glucanase": "Beta Glucanase",
+    "bifidobacterium longum": "Bifidobacterium longum",
+    "black currant": "Black Currant",
+    "bovine collagen peptides": "Bovine Collagen Peptides",
+    "cascara sagrada": "Cascara Sagrada",
+    "cordyceps mushroom": "Cordyceps Mushroom",
+    "dragon fruit": "Dragon Fruit",
+    "fibersol 2": "Fibersol-2",
+    "ginkgo biloba": "Ginkgo biloba",
+    "glutamic acid": "Glutamic Acid",
+    "grape seed": "Grape Seed",
+    "grape seed extract": "Grape Seed Extract",
+    "green cabbage": "Green Cabbage",
+    "green tea": "Green Tea",
+    "holy basil": "Holy Basil",
+    "l alanine": "L-Alanine",
+    "l cysteine": "L-Cysteine",
+    "l cystine": "L-Cystine",
+    "l glutamic acid": "L-Glutamic Acid",
+    "l glutamine": "L-Glutamine",
+    "l glutathione": "L-Glutathione",
+    "l glycine": "L-Glycine",
+    "l proline": "L-Proline",
+    "l serine": "L-Serine",
+    "l theanine": "L-Theanine",
+    "lemon balm": "Lemon Balm",
+    "lion's mane": "Lion's Mane",
+    "maitake mushroom": "Maitake Mushroom",
+    "maqui berry": "Maqui Berry",
+    "milk thistle": "Milk Thistle",
+    "milk thistle extract": "Milk Thistle Extract",
+    "n acetyl cysteine": "N-Acetyl Cysteine",
+    "n acetyl l cysteine": "N-Acetyl-L-Cysteine",
+    "organic apple": "Organic Apple",
+    "organic beet": "Organic Beet",
+    "organic blueberry": "Organic Blueberry",
+    "organic broccoli": "Organic Broccoli",
+    "organic carrot": "Organic Carrot",
+    "organic green cabbage": "Organic Green Cabbage",
+    "organic kale": "Organic Kale",
+    "organic parsley": "Organic Parsley",
+    "organic raspberry": "Organic Raspberry",
+    "organic spinach": "Organic Spinach",
+    "organic strawberry": "Organic Strawberry",
+    "organic tomato": "Organic Tomato",
+    "panax ginseng": "Panax ginseng",
+    "pau d'arco": "Pau D'Arco",
+    "pine bark": "Pine Bark",
+    "quercetin dihydrate": "Quercetin Dihydrate",
+    "reishi mushroom": "Reishi Mushroom",
+    "rose hips": "Rose Hips",
+    "saccharomyces boulardii": "Saccharomyces boulardii",
+    "shiitake mushroom": "Shiitake Mushroom",
+    "tart cherry": "Tart Cherry",
+    "turkey tail": "Turkey Tail",
+    "yerba mate": "Yerba Mate"
+  },
+  "nutrients": {
+    "acetaminophen": {
+      "display_name": "Acetaminophen",
+      "canon_slug": null
+    },
+    "aconite": {
+      "display_name": "Aconite",
+      "canon_slug": null
+    },
+    "adrenal-cortical-extract": {
+      "display_name": "Adrenal Cortical Extract",
+      "canon_slug": null
+    },
+    "agrimony": {
+      "display_name": "Agrimony",
+      "canon_slug": null
+    },
+    "alanine": {
+      "display_name": "Alanine",
+      "canon_slug": null
+    },
+    "alder-buckthorn": {
+      "display_name": "Alder Buckthorn",
+      "canon_slug": null
+    },
+    "alfalfa": {
+      "display_name": "Alfalfa",
+      "canon_slug": null
+    },
+    "aloe": {
+      "display_name": "Aloe",
+      "canon_slug": null
+    },
+    "aloe-vera": {
+      "display_name": "Aloe Vera",
+      "canon_slug": null
+    },
+    "alpine-ragwort": {
+      "display_name": "Alpine Ragwort",
+      "canon_slug": null
+    },
+    "american-blackberry": {
+      "display_name": "American Blackberry",
+      "canon_slug": null
+    },
+    "american-ginseng": {
+      "display_name": "American Ginseng",
+      "canon_slug": null
+    },
+    "american-mandrake": {
+      "display_name": "American Mandrake",
+      "canon_slug": null
+    },
+    "amino-acids": {
+      "display_name": "Amino Acids",
+      "canon_slug": null
+    },
+    "angelica": {
+      "display_name": "Angelica",
+      "canon_slug": null
+    },
+    "anise": {
+      "display_name": "Anise",
+      "canon_slug": null
+    },
+    "antibiotic-ointment": {
+      "display_name": "Antibiotic Ointment",
+      "canon_slug": null
+    },
+    "antibiotics": {
+      "display_name": "Antibiotics",
+      "canon_slug": null
+    },
+    "antimony": {
+      "display_name": "Antimony",
+      "canon_slug": null
+    },
+    "araroba": {
+      "display_name": "Araroba",
+      "canon_slug": null
+    },
+    "aristolochia": {
+      "display_name": "Aristolochia",
+      "canon_slug": null
+    },
+    "arnica": {
+      "display_name": "Arnica",
+      "canon_slug": null
+    },
+    "artichoke": {
+      "display_name": "Artichoke",
+      "canon_slug": null
+    },
+    "asparagus": {
+      "display_name": "Asparagus",
+      "canon_slug": null
+    },
+    "aspirin": {
+      "display_name": "Aspirin",
+      "canon_slug": null
+    },
+    "avens": {
+      "display_name": "Avens",
+      "canon_slug": null
+    },
+    "b-complex": {
+      "display_name": "B Complex",
+      "canon_slug": null
+    },
+    "balm": {
+      "display_name": "Balm",
+      "canon_slug": null
+    },
+    "barberry": {
+      "display_name": "Barberry",
+      "canon_slug": null
+    },
+    "barley": {
+      "display_name": "Barley",
+      "canon_slug": null
+    },
+    "bayberry": {
+      "display_name": "Bayberry",
+      "canon_slug": null
+    },
+    "bearberry": {
+      "display_name": "Bearberry",
+      "canon_slug": null
+    },
+    "bearded-usnea": {
+      "display_name": "Bearded Usnea",
+      "canon_slug": null
+    },
+    "bears-garlic": {
+      "display_name": "Bears Garlic",
+      "canon_slug": null
+    },
+    "benzyl-benzoate": {
+      "display_name": "Benzyl Benzoate",
+      "canon_slug": null
+    },
+    "beta-carotene": {
+      "display_name": "Beta Carotene",
+      "canon_slug": null
+    },
+    "betaine-hcl": {
+      "display_name": "Betaine Hcl",
+      "canon_slug": null
+    },
+    "bethroot": {
+      "display_name": "Bethroot",
+      "canon_slug": null
+    },
+    "bilberry": {
+      "display_name": "Bilberry",
+      "canon_slug": null
+    },
+    "birch": {
+      "display_name": "Birch",
+      "canon_slug": null
+    },
+    "bismuth": {
+      "display_name": "Bismuth",
+      "canon_slug": null
+    },
+    "bismuth-subsalicylate": {
+      "display_name": "Bismuth Subsalicylate",
+      "canon_slug": null
+    },
+    "bitter-orange": {
+      "display_name": "Bitter Orange",
+      "canon_slug": null
+    },
+    "black-caraway": {
+      "display_name": "Black Caraway",
+      "canon_slug": null
+    },
+    "black-cohosh": {
+      "display_name": "Black Cohosh",
+      "canon_slug": null
+    },
+    "black-currant": {
+      "display_name": "Black Currant",
+      "canon_slug": null
+    },
+    "black-hellebore": {
+      "display_name": "Black Hellebore",
+      "canon_slug": null
+    },
+    "black-mustard": {
+      "display_name": "Black Mustard",
+      "canon_slug": null
+    },
+    "black-walnut": {
+      "display_name": "Black Walnut",
+      "canon_slug": null
+    },
+    "blackroot": {
+      "display_name": "Blackroot",
+      "canon_slug": null
+    },
+    "blessed-thistle": {
+      "display_name": "Blessed Thistle",
+      "canon_slug": null
+    },
+    "blood-therapy": {
+      "display_name": "Blood Therapy",
+      "canon_slug": null
+    },
+    "blue-cohosh": {
+      "display_name": "Blue Cohosh",
+      "canon_slug": null
+    },
+    "boric-acid": {
+      "display_name": "Boric Acid",
+      "canon_slug": null
+    },
+    "broad-leaved-lime": {
+      "display_name": "Broad Leaved Lime",
+      "canon_slug": null
+    },
+    "bromelain": {
+      "display_name": "Bromelain",
+      "canon_slug": null
+    },
+    "broom": {
+      "display_name": "Broom",
+      "canon_slug": null
+    },
+    "broom-corn": {
+      "display_name": "Broom Corn",
+      "canon_slug": null
+    },
+    "buckbean": {
+      "display_name": "Buckbean",
+      "canon_slug": null
+    },
+    "burdock": {
+      "display_name": "Burdock",
+      "canon_slug": null
+    },
+    "butternut": {
+      "display_name": "Butternut",
+      "canon_slug": null
+    },
+    "cabbage-juice": {
+      "display_name": "Cabbage Juice",
+      "canon_slug": null
+    },
+    "cadmium": {
+      "display_name": "Cadmium",
+      "canon_slug": null
+    },
+    "caeap": {
+      "display_name": "Caeap",
+      "canon_slug": null
+    },
+    "cajuput": {
+      "display_name": "Cajuput",
+      "canon_slug": null
+    },
+    "caladryl": {
+      "display_name": "Caladryl",
+      "canon_slug": null
+    },
+    "calamus": {
+      "display_name": "Calamus",
+      "canon_slug": null
+    },
+    "california-poppy": {
+      "display_name": "California Poppy",
+      "canon_slug": null
+    },
+    "camphor": {
+      "display_name": "Camphor",
+      "canon_slug": null
+    },
+    "canadian-fleabane": {
+      "display_name": "Canadian Fleabane",
+      "canon_slug": null
+    },
+    "caraway": {
+      "display_name": "Caraway",
+      "canon_slug": null
+    },
+    "carbamide": {
+      "display_name": "Carbamide",
+      "canon_slug": null
+    },
+    "carcelim": {
+      "display_name": "Carcelim",
+      "canon_slug": null
+    },
+    "carnitine": {
+      "display_name": "Carnitine",
+      "canon_slug": null
+    },
+    "cartilage": {
+      "display_name": "Cartilage",
+      "canon_slug": null
+    },
+    "cascara-sagrada": {
+      "display_name": "Cascara Sagrada",
+      "canon_slug": null
+    },
+    "cashew-nut": {
+      "display_name": "Cashew Nut",
+      "canon_slug": null
+    },
+    "castor-oil": {
+      "display_name": "Castor Oil",
+      "canon_slug": null
+    },
+    "catechin": {
+      "display_name": "Catechin",
+      "canon_slug": null
+    },
+    "catnip": {
+      "display_name": "Catnip",
+      "canon_slug": null
+    },
+    "cayenne": {
+      "display_name": "Cayenne",
+      "canon_slug": null
+    },
+    "celandine": {
+      "display_name": "Celandine",
+      "canon_slug": null
+    },
+    "centaury": {
+      "display_name": "Centaury",
+      "canon_slug": null
+    },
+    "centrophenoxine": {
+      "display_name": "Centrophenoxine",
+      "canon_slug": null
+    },
+    "cesium-chloride": {
+      "display_name": "Cesium Chloride",
+      "canon_slug": null
+    },
+    "charcoal": {
+      "display_name": "Charcoal",
+      "canon_slug": null
+    },
+    "chemotherapy": {
+      "display_name": "Chemotherapy",
+      "canon_slug": null
+    },
+    "cherries": {
+      "display_name": "Cherries",
+      "canon_slug": null
+    },
+    "chickweed": {
+      "display_name": "Chickweed",
+      "canon_slug": null
+    },
+    "chicory": {
+      "display_name": "Chicory",
+      "canon_slug": null
+    },
+    "chionanthus": {
+      "display_name": "Chionanthus",
+      "canon_slug": null
+    },
+    "chloramphenicol": {
+      "display_name": "Chloramphenicol",
+      "canon_slug": null
+    },
+    "chlorophyll": {
+      "display_name": "Chlorophyll",
+      "canon_slug": null
+    },
+    "cholesterol": {
+      "display_name": "Cholesterol",
+      "canon_slug": null
+    },
+    "chondroitin": {
+      "display_name": "Chondroitin",
+      "canon_slug": null
+    },
+    "cinchona": {
+      "display_name": "Cinchona",
+      "canon_slug": null
+    },
+    "cliff-rose": {
+      "display_name": "Cliff Rose",
+      "canon_slug": null
+    },
+    "clodronate": {
+      "display_name": "Clodronate",
+      "canon_slug": null
+    },
+    "clove-root": {
+      "display_name": "Clove Root",
+      "canon_slug": null
+    },
+    "codeine": {
+      "display_name": "Codeine",
+      "canon_slug": null
+    },
+    "colchicine": {
+      "display_name": "Colchicine",
+      "canon_slug": null
+    },
+    "colloidal-minerals": {
+      "display_name": "Colloidal Minerals",
+      "canon_slug": null
+    },
+    "colloidal-selenium": {
+      "display_name": "Colloidal Selenium",
+      "canon_slug": null
+    },
+    "colonics": {
+      "display_name": "Colonics",
+      "canon_slug": null
+    },
+    "coltsfoot": {
+      "display_name": "Coltsfoot",
+      "canon_slug": null
+    },
+    "columbine": {
+      "display_name": "Columbine",
+      "canon_slug": null
+    },
+    "comfrey": {
+      "display_name": "Comfrey",
+      "canon_slug": null
+    },
+    "common-ivy": {
+      "display_name": "Common Ivy",
+      "canon_slug": null
+    },
+    "contac": {
+      "display_name": "Contac",
+      "canon_slug": null
+    },
+    "coq10": {
+      "display_name": "Coq10",
+      "canon_slug": null
+    },
+    "corn-ergot": {
+      "display_name": "Corn Ergot",
+      "canon_slug": null
+    },
+    "cornflower": {
+      "display_name": "Cornflower",
+      "canon_slug": null
+    },
+    "cowslip": {
+      "display_name": "Cowslip",
+      "canon_slug": null
+    },
+    "cramp-bark": {
+      "display_name": "Cramp Bark",
+      "canon_slug": null
+    },
+    "cranberry": {
+      "display_name": "Cranberry",
+      "canon_slug": null
+    },
+    "cruciferous-vegetables": {
+      "display_name": "Cruciferous Vegetables",
+      "canon_slug": null
+    },
+    "cucumber": {
+      "display_name": "Cucumber",
+      "canon_slug": null
+    },
+    "cysteine": {
+      "display_name": "Cysteine",
+      "canon_slug": null
+    },
+    "d-penicillamine": {
+      "display_name": "D Penicillamine",
+      "canon_slug": null
+    },
+    "dandelion": {
+      "display_name": "Dandelion",
+      "canon_slug": null
+    },
+    "dermese": {
+      "display_name": "Dermese",
+      "canon_slug": null
+    },
+    "desenex": {
+      "display_name": "Desenex",
+      "canon_slug": null
+    },
+    "devils-claw": {
+      "display_name": "Devils Claw",
+      "canon_slug": null
+    },
+    "diazepam": {
+      "display_name": "Diazepam",
+      "canon_slug": null
+    },
+    "dietary-fiber": {
+      "display_name": "Dietary Fiber",
+      "canon_slug": null
+    },
+    "digestive-enzymes": {
+      "display_name": "Digestive Enzymes",
+      "canon_slug": null
+    },
+    "dill": {
+      "display_name": "Dill",
+      "canon_slug": null
+    },
+    "dimethyl-glycine": {
+      "display_name": "Dimethyl Glycine",
+      "canon_slug": null
+    },
+    "dmso": {
+      "display_name": "Dmso",
+      "canon_slug": null
+    },
+    "dog-rose": {
+      "display_name": "Dog Rose",
+      "canon_slug": null
+    },
+    "dogwood": {
+      "display_name": "Dogwood",
+      "canon_slug": null
+    },
+    "dramamine": {
+      "display_name": "Dramamine",
+      "canon_slug": null
+    },
+    "dwarf-elder": {
+      "display_name": "Dwarf Elder",
+      "canon_slug": null
+    },
+    "echinacea": {
+      "display_name": "Echinacea",
+      "canon_slug": null
+    },
+    "edta": {
+      "display_name": "Edta",
+      "canon_slug": null
+    },
+    "edta-chelation": {
+      "display_name": "Edta Chelation",
+      "canon_slug": null
+    },
+    "elderberry": {
+      "display_name": "Elderberry",
+      "canon_slug": null
+    },
+    "english-mandrake": {
+      "display_name": "English Mandrake",
+      "canon_slug": null
+    },
+    "english-plantain": {
+      "display_name": "English Plantain",
+      "canon_slug": null
+    },
+    "english-walnut": {
+      "display_name": "English Walnut",
+      "canon_slug": null
+    },
+    "epinephrine": {
+      "display_name": "Epinephrine",
+      "canon_slug": null
+    },
+    "ergot": {
+      "display_name": "Ergot",
+      "canon_slug": null
+    },
+    "erythromycin": {
+      "display_name": "Erythromycin",
+      "canon_slug": null
+    },
+    "estrogen-patch": {
+      "display_name": "Estrogen Patch",
+      "canon_slug": null
+    },
+    "eucalyptus": {
+      "display_name": "Eucalyptus",
+      "canon_slug": null
+    },
+    "euphorbia": {
+      "display_name": "Euphorbia",
+      "canon_slug": null
+    },
+    "european-holly": {
+      "display_name": "European Holly",
+      "canon_slug": null
+    },
+    "european-snakeroot": {
+      "display_name": "European Snakeroot",
+      "canon_slug": null
+    },
+    "evening-primrose": {
+      "display_name": "Evening Primrose",
+      "canon_slug": null
+    },
+    "evening-primrose-oil": {
+      "display_name": "Evening Primrose Oil",
+      "canon_slug": null
+    },
+    "ex-lax": {
+      "display_name": "Ex Lax",
+      "canon_slug": null
+    },
+    "eyebright": {
+      "display_name": "Eyebright",
+      "canon_slug": null
+    },
+    "fennel": {
+      "display_name": "Fennel",
+      "canon_slug": null
+    },
+    "fenugreek": {
+      "display_name": "Fenugreek",
+      "canon_slug": null
+    },
+    "feverfew": {
+      "display_name": "Feverfew",
+      "canon_slug": null
+    },
+    "field-larkspur": {
+      "display_name": "Field Larkspur",
+      "canon_slug": null
+    },
+    "flax": {
+      "display_name": "Flax",
+      "canon_slug": null
+    },
+    "flaxseed": {
+      "display_name": "Flaxseed",
+      "canon_slug": null
+    },
+    "flaxseed-oil": {
+      "display_name": "Flaxseed Oil",
+      "canon_slug": null
+    },
+    "flea-collar": {
+      "display_name": "Flea Collar",
+      "canon_slug": null
+    },
+    "fleabane": {
+      "display_name": "Fleabane",
+      "canon_slug": null
+    },
+    "fluoride": {
+      "display_name": "Fluoride",
+      "canon_slug": null
+    },
+    "flutamide": {
+      "display_name": "Flutamide",
+      "canon_slug": null
+    },
+    "fluviatol": {
+      "display_name": "Fluviatol",
+      "canon_slug": null
+    },
+    "foxglove": {
+      "display_name": "Foxglove",
+      "canon_slug": null
+    },
+    "fumitory": {
+      "display_name": "Fumitory",
+      "canon_slug": null
+    },
+    "gamma-benzene-hexachloride": {
+      "display_name": "Gamma Benzene Hexachloride",
+      "canon_slug": null
+    },
+    "garden-sage": {
+      "display_name": "Garden Sage",
+      "canon_slug": null
+    },
+    "garlic": {
+      "display_name": "Garlic",
+      "canon_slug": null
+    },
+    "gelatin": {
+      "display_name": "Gelatin",
+      "canon_slug": null
+    },
+    "gelsemium": {
+      "display_name": "Gelsemium",
+      "canon_slug": null
+    },
+    "gentian": {
+      "display_name": "Gentian",
+      "canon_slug": null
+    },
+    "german-chamomile": {
+      "display_name": "German Chamomile",
+      "canon_slug": null
+    },
+    "ginkgo": {
+      "display_name": "Ginkgo",
+      "canon_slug": null
+    },
+    "ginseng": {
+      "display_name": "Ginseng",
+      "canon_slug": null
+    },
+    "globe-mallow": {
+      "display_name": "Globe Mallow",
+      "canon_slug": null
+    },
+    "glucomannan": {
+      "display_name": "Glucomannan",
+      "canon_slug": null
+    },
+    "glutamic-acid": {
+      "display_name": "Glutamic Acid",
+      "canon_slug": null
+    },
+    "glutamine": {
+      "display_name": "Glutamine",
+      "canon_slug": null
+    },
+    "glutathione": {
+      "display_name": "Glutathione",
+      "canon_slug": null
+    },
+    "glycine": {
+      "display_name": "Glycine",
+      "canon_slug": null
+    },
+    "goats-rue": {
+      "display_name": "Goats Rue",
+      "canon_slug": null
+    },
+    "goldenrod": {
+      "display_name": "Goldenrod",
+      "canon_slug": null
+    },
+    "goldenseal": {
+      "display_name": "Goldenseal",
+      "canon_slug": null
+    },
+    "gout-weed": {
+      "display_name": "Gout Weed",
+      "canon_slug": null
+    },
+    "green-hellebore": {
+      "display_name": "Green Hellebore",
+      "canon_slug": null
+    },
+    "griseofulvin": {
+      "display_name": "Griseofulvin",
+      "canon_slug": null
+    },
+    "hawthorn": {
+      "display_name": "Hawthorn",
+      "canon_slug": null
+    },
+    "hedge-mustard": {
+      "display_name": "Hedge Mustard",
+      "canon_slug": null
+    },
+    "hemp-agrimony": {
+      "display_name": "Hemp Agrimony",
+      "canon_slug": null
+    },
+    "high-mallow": {
+      "display_name": "High Mallow",
+      "canon_slug": null
+    },
+    "hollyhock": {
+      "display_name": "Hollyhock",
+      "canon_slug": null
+    },
+    "honeysuckle": {
+      "display_name": "Honeysuckle",
+      "canon_slug": null
+    },
+    "hops": {
+      "display_name": "Hops",
+      "canon_slug": null
+    },
+    "horehound": {
+      "display_name": "Horehound",
+      "canon_slug": null
+    },
+    "horse-chestnut": {
+      "display_name": "Horse Chestnut",
+      "canon_slug": null
+    },
+    "horsetail": {
+      "display_name": "Horsetail",
+      "canon_slug": null
+    },
+    "hounds-tongue": {
+      "display_name": "Hounds Tongue",
+      "canon_slug": null
+    },
+    "hoxey-herbal-formula": {
+      "display_name": "Hoxey Herbal Formula",
+      "canon_slug": null
+    },
+    "hydergine": {
+      "display_name": "Hydergine",
+      "canon_slug": null
+    },
+    "hydrazine-sulfate": {
+      "display_name": "Hydrazine Sulfate",
+      "canon_slug": null
+    },
+    "hydrogen-peroxide": {
+      "display_name": "Hydrogen Peroxide",
+      "canon_slug": null
+    },
+    "hydrogenated-vegetable-oil": {
+      "display_name": "Hydrogenated Vegetable Oil",
+      "canon_slug": null
+    },
+    "ibuprofen": {
+      "display_name": "Ibuprofen",
+      "canon_slug": null
+    },
+    "immu-stim": {
+      "display_name": "Immu Stim",
+      "canon_slug": null
+    },
+    "interlipids": {
+      "display_name": "Interlipids",
+      "canon_slug": null
+    },
+    "ipecac": {
+      "display_name": "Ipecac",
+      "canon_slug": null
+    },
+    "irish-moss": {
+      "display_name": "Irish Moss",
+      "canon_slug": null
+    },
+    "isoprinosin": {
+      "display_name": "Isoprinosin",
+      "canon_slug": null
+    },
+    "isoprinosine": {
+      "display_name": "Isoprinosine",
+      "canon_slug": null
+    },
+    "iv-nutrition": {
+      "display_name": "Iv Nutrition",
+      "canon_slug": null
+    },
+    "jaborandi": {
+      "display_name": "Jaborandi",
+      "canon_slug": null
+    },
+    "java-tea": {
+      "display_name": "Java Tea",
+      "canon_slug": null
+    },
+    "jerusalem-artichoke": {
+      "display_name": "Jerusalem Artichoke",
+      "canon_slug": null
+    },
+    "juniper": {
+      "display_name": "Juniper",
+      "canon_slug": null
+    },
+    "kaopectate": {
+      "display_name": "Kaopectate",
+      "canon_slug": null
+    },
+    "kelp": {
+      "display_name": "Kelp",
+      "canon_slug": null
+    },
+    "khella": {
+      "display_name": "Khella",
+      "canon_slug": null
+    },
+    "kidney-bean": {
+      "display_name": "Kidney Bean",
+      "canon_slug": null
+    },
+    "krypton": {
+      "display_name": "Krypton",
+      "canon_slug": null
+    },
+    "labrador-tea": {
+      "display_name": "Labrador Tea",
+      "canon_slug": null
+    },
+    "lactase": {
+      "display_name": "Lactase",
+      "canon_slug": null
+    },
+    "lactobacillus-acidophilus": {
+      "display_name": "Lactobacillus Acidophilus",
+      "canon_slug": null
+    },
+    "ladies-mantle": {
+      "display_name": "Ladies Mantle",
+      "canon_slug": null
+    },
+    "ladys-mantle": {
+      "display_name": "Ladys Mantle",
+      "canon_slug": null
+    },
+    "laetrile": {
+      "display_name": "Laetrile",
+      "canon_slug": null
+    },
+    "lavender": {
+      "display_name": "Lavender",
+      "canon_slug": null
+    },
+    "lead": {
+      "display_name": "Lead",
+      "canon_slug": null
+    },
+    "lecithin": {
+      "display_name": "Lecithin",
+      "canon_slug": null
+    },
+    "leek": {
+      "display_name": "Leek",
+      "canon_slug": null
+    },
+    "leeks": {
+      "display_name": "Leeks",
+      "canon_slug": null
+    },
+    "levamisol": {
+      "display_name": "Levamisol",
+      "canon_slug": null
+    },
+    "levamisole": {
+      "display_name": "Levamisole",
+      "canon_slug": null
+    },
+    "lhrh": {
+      "display_name": "Lhrh",
+      "canon_slug": null
+    },
+    "licorice": {
+      "display_name": "Licorice",
+      "canon_slug": null
+    },
+    "lily-of-the-valley": {
+      "display_name": "Lily Of The Valley",
+      "canon_slug": null
+    },
+    "lindane": {
+      "display_name": "Lindane",
+      "canon_slug": null
+    },
+    "linseed-oil": {
+      "display_name": "Linseed Oil",
+      "canon_slug": null
+    },
+    "liver-extract": {
+      "display_name": "Liver Extract",
+      "canon_slug": null
+    },
+    "lobelia": {
+      "display_name": "Lobelia",
+      "canon_slug": null
+    },
+    "lovage": {
+      "display_name": "Lovage",
+      "canon_slug": null
+    },
+    "lucidril": {
+      "display_name": "Lucidril",
+      "canon_slug": null
+    },
+    "lugols-solution": {
+      "display_name": "Lugols Solution",
+      "canon_slug": null
+    },
+    "madder": {
+      "display_name": "Madder",
+      "canon_slug": null
+    },
+    "male-fern": {
+      "display_name": "Male Fern",
+      "canon_slug": null
+    },
+    "manna-ash": {
+      "display_name": "Manna Ash",
+      "canon_slug": null
+    },
+    "marigold": {
+      "display_name": "Marigold",
+      "canon_slug": null
+    },
+    "marjoram": {
+      "display_name": "Marjoram",
+      "canon_slug": null
+    },
+    "marsh-marigold": {
+      "display_name": "Marsh Marigold",
+      "canon_slug": null
+    },
+    "marshmallow": {
+      "display_name": "Marshmallow",
+      "canon_slug": null
+    },
+    "meadowsweet": {
+      "display_name": "Meadowsweet",
+      "canon_slug": null
+    },
+    "mercury": {
+      "display_name": "Mercury",
+      "canon_slug": null
+    },
+    "methadone": {
+      "display_name": "Methadone",
+      "canon_slug": null
+    },
+    "metronidazole": {
+      "display_name": "Metronidazole",
+      "canon_slug": null
+    },
+    "midol": {
+      "display_name": "Midol",
+      "canon_slug": null
+    },
+    "milk-of-magnesia": {
+      "display_name": "Milk Of Magnesia",
+      "canon_slug": null
+    },
+    "milk-thistle": {
+      "display_name": "Milk Thistle",
+      "canon_slug": null
+    },
+    "milkweed": {
+      "display_name": "Milkweed",
+      "canon_slug": null
+    },
+    "minoxidil": {
+      "display_name": "Minoxidil",
+      "canon_slug": null
+    },
+    "mint": {
+      "display_name": "Mint",
+      "canon_slug": null
+    },
+    "mistletoe": {
+      "display_name": "Mistletoe",
+      "canon_slug": null
+    },
+    "motherwort": {
+      "display_name": "Motherwort",
+      "canon_slug": null
+    },
+    "mugwort": {
+      "display_name": "Mugwort",
+      "canon_slug": null
+    },
+    "mullein": {
+      "display_name": "Mullein",
+      "canon_slug": null
+    },
+    "myrtle": {
+      "display_name": "Myrtle",
+      "canon_slug": null
+    },
+    "nail-polish": {
+      "display_name": "Nail Polish",
+      "canon_slug": null
+    },
+    "neomycin": {
+      "display_name": "Neomycin",
+      "canon_slug": null
+    },
+    "nettle": {
+      "display_name": "Nettle",
+      "canon_slug": null
+    },
+    "neuro-gen": {
+      "display_name": "Neuro Gen",
+      "canon_slug": null
+    },
+    "niclosamide": {
+      "display_name": "Niclosamide",
+      "canon_slug": null
+    },
+    "nitrates": {
+      "display_name": "Nitrates",
+      "canon_slug": null
+    },
+    "nitrites": {
+      "display_name": "Nitrites",
+      "canon_slug": null
+    },
+    "nitroglycerine": {
+      "display_name": "Nitroglycerine",
+      "canon_slug": null
+    },
+    "nutritional-fiber": {
+      "display_name": "Nutritional Fiber",
+      "canon_slug": null
+    },
+    "nux-vomica": {
+      "display_name": "Nux Vomica",
+      "canon_slug": null
+    },
+    "nystatin": {
+      "display_name": "Nystatin",
+      "canon_slug": null
+    },
+    "oak": {
+      "display_name": "Oak",
+      "canon_slug": null
+    },
+    "oat-bran": {
+      "display_name": "Oat Bran",
+      "canon_slug": null
+    },
+    "oats": {
+      "display_name": "Oats",
+      "canon_slug": null
+    },
+    "octacosanol": {
+      "display_name": "Octacosanol",
+      "canon_slug": null
+    },
+    "olive": {
+      "display_name": "Olive",
+      "canon_slug": null
+    },
+    "olive-oil": {
+      "display_name": "Olive Oil",
+      "canon_slug": null
+    },
+    "onco-tox": {
+      "display_name": "Onco Tox",
+      "canon_slug": null
+    },
+    "onion": {
+      "display_name": "Onion",
+      "canon_slug": null
+    },
+    "ox-bile": {
+      "display_name": "Ox Bile",
+      "canon_slug": null
+    },
+    "oxytetracycline": {
+      "display_name": "Oxytetracycline",
+      "canon_slug": null
+    },
+    "paba": {
+      "display_name": "Paba",
+      "canon_slug": null
+    },
+    "pancreatic-enzymes": {
+      "display_name": "Pancreatic Enzymes",
+      "canon_slug": null
+    },
+    "pansy": {
+      "display_name": "Pansy",
+      "canon_slug": null
+    },
+    "papaya": {
+      "display_name": "Papaya",
+      "canon_slug": null
+    },
+    "parsley": {
+      "display_name": "Parsley",
+      "canon_slug": null
+    },
+    "pasque-flower": {
+      "display_name": "Pasque Flower",
+      "canon_slug": null
+    },
+    "passion-flower": {
+      "display_name": "Passion Flower",
+      "canon_slug": null
+    },
+    "peach": {
+      "display_name": "Peach",
+      "canon_slug": null
+    },
+    "pectin": {
+      "display_name": "Pectin",
+      "canon_slug": null
+    },
+    "penicillin": {
+      "display_name": "Penicillin",
+      "canon_slug": null
+    },
+    "pennyroyal": {
+      "display_name": "Pennyroyal",
+      "canon_slug": null
+    },
+    "peony": {
+      "display_name": "Peony",
+      "canon_slug": null
+    },
+    "pepper": {
+      "display_name": "Pepper",
+      "canon_slug": null
+    },
+    "peppermint": {
+      "display_name": "Peppermint",
+      "canon_slug": null
+    },
+    "pepto-bismol": {
+      "display_name": "Pepto Bismol",
+      "canon_slug": null
+    },
+    "phosphatidylcholine": {
+      "display_name": "Phosphatidylcholine",
+      "canon_slug": null
+    },
+    "pilocarpine": {
+      "display_name": "Pilocarpine",
+      "canon_slug": null
+    },
+    "pine-oil": {
+      "display_name": "Pine Oil",
+      "canon_slug": null
+    },
+    "piracetam": {
+      "display_name": "Piracetam",
+      "canon_slug": null
+    },
+    "placenta-extract": {
+      "display_name": "Placenta Extract",
+      "canon_slug": null
+    },
+    "plantain": {
+      "display_name": "Plantain",
+      "canon_slug": null
+    },
+    "pleurisy-root": {
+      "display_name": "Pleurisy Root",
+      "canon_slug": null
+    },
+    "poison-ivy": {
+      "display_name": "Poison Ivy",
+      "canon_slug": null
+    },
+    "poke": {
+      "display_name": "Poke",
+      "canon_slug": null
+    },
+    "polyerga": {
+      "display_name": "Polyerga",
+      "canon_slug": null
+    },
+    "poultry-dusting-powder": {
+      "display_name": "Poultry Dusting Powder",
+      "canon_slug": null
+    },
+    "prednisone": {
+      "display_name": "Prednisone",
+      "canon_slug": null
+    },
+    "prenatal-vitamins": {
+      "display_name": "Prenatal Vitamins",
+      "canon_slug": null
+    },
+    "prickly-restharrow": {
+      "display_name": "Prickly Restharrow",
+      "canon_slug": null
+    },
+    "psyllium": {
+      "display_name": "Psyllium",
+      "canon_slug": null
+    },
+    "pulse-test": {
+      "display_name": "Pulse Test",
+      "canon_slug": null
+    },
+    "pumpkin-seeds": {
+      "display_name": "Pumpkin Seeds",
+      "canon_slug": null
+    },
+    "pyrantel-pamoate": {
+      "display_name": "Pyrantel Pamoate",
+      "canon_slug": null
+    },
+    "quack-grass": {
+      "display_name": "Quack Grass",
+      "canon_slug": null
+    },
+    "quercetin": {
+      "display_name": "Quercetin",
+      "canon_slug": null
+    },
+    "quercus-marine": {
+      "display_name": "Quercus Marine",
+      "canon_slug": null
+    },
+    "radon": {
+      "display_name": "Radon",
+      "canon_slug": null
+    },
+    "raspberry": {
+      "display_name": "Raspberry",
+      "canon_slug": null
+    },
+    "rauwolfia": {
+      "display_name": "Rauwolfia",
+      "canon_slug": null
+    },
+    "retin-a": {
+      "display_name": "Retin A",
+      "canon_slug": null
+    },
+    "ribavirin": {
+      "display_name": "Ribavirin",
+      "canon_slug": null
+    },
+    "rosemary": {
+      "display_name": "Rosemary",
+      "canon_slug": null
+    },
+    "rue": {
+      "display_name": "Rue",
+      "canon_slug": null
+    },
+    "rupturewort": {
+      "display_name": "Rupturewort",
+      "canon_slug": null
+    },
+    "rutin": {
+      "display_name": "Rutin",
+      "canon_slug": null
+    },
+    "saffron": {
+      "display_name": "Saffron",
+      "canon_slug": null
+    },
+    "sagebrush": {
+      "display_name": "Sagebrush",
+      "canon_slug": null
+    },
+    "salicylic-acid": {
+      "display_name": "Salicylic Acid",
+      "canon_slug": null
+    },
+    "sand-sagebrush": {
+      "display_name": "Sand Sagebrush",
+      "canon_slug": null
+    },
+    "sarsaparilla": {
+      "display_name": "Sarsaparilla",
+      "canon_slug": null
+    },
+    "sauna": {
+      "display_name": "Sauna",
+      "canon_slug": null
+    },
+    "saw-palmetto": {
+      "display_name": "Saw Palmetto",
+      "canon_slug": null
+    },
+    "scopolamine": {
+      "display_name": "Scopolamine",
+      "canon_slug": null
+    },
+    "scotch-broom": {
+      "display_name": "Scotch Broom",
+      "canon_slug": null
+    },
+    "scotch-pine": {
+      "display_name": "Scotch Pine",
+      "canon_slug": null
+    },
+    "sea-buckthorn": {
+      "display_name": "Sea Buckthorn",
+      "canon_slug": null
+    },
+    "senna": {
+      "display_name": "Senna",
+      "canon_slug": null
+    },
+    "shark-cartilage": {
+      "display_name": "Shark Cartilage",
+      "canon_slug": null
+    },
+    "shark-liver-extract": {
+      "display_name": "Shark Liver Extract",
+      "canon_slug": null
+    },
+    "shark-liver-oil": {
+      "display_name": "Shark Liver Oil",
+      "canon_slug": null
+    },
+    "shepherds-purse": {
+      "display_name": "Shepherds Purse",
+      "canon_slug": null
+    },
+    "silver-weed": {
+      "display_name": "Silver Weed",
+      "canon_slug": null
+    },
+    "skullcap": {
+      "display_name": "Skullcap",
+      "canon_slug": null
+    },
+    "slippery-elm": {
+      "display_name": "Slippery Elm",
+      "canon_slug": null
+    },
+    "smart-weed": {
+      "display_name": "Smart Weed",
+      "canon_slug": null
+    },
+    "snake-venom": {
+      "display_name": "Snake Venom",
+      "canon_slug": null
+    },
+    "snapdragon": {
+      "display_name": "Snapdragon",
+      "canon_slug": null
+    },
+    "soapwort": {
+      "display_name": "Soapwort",
+      "canon_slug": null
+    },
+    "solomons-seal": {
+      "display_name": "Solomons Seal",
+      "canon_slug": null
+    },
+    "spring-adonis": {
+      "display_name": "Spring Adonis",
+      "canon_slug": null
+    },
+    "squawroot": {
+      "display_name": "Squawroot",
+      "canon_slug": null
+    },
+    "st-johns-wort": {
+      "display_name": "St Johns Wort",
+      "canon_slug": null
+    },
+    "streptomycin": {
+      "display_name": "Streptomycin",
+      "canon_slug": null
+    },
+    "sulfadiazine": {
+      "display_name": "Sulfadiazine",
+      "canon_slug": null
+    },
+    "sunflower": {
+      "display_name": "Sunflower",
+      "canon_slug": null
+    },
+    "sunscreen": {
+      "display_name": "Sunscreen",
+      "canon_slug": null
+    },
+    "sweet-chestnut": {
+      "display_name": "Sweet Chestnut",
+      "canon_slug": null
+    },
+    "sweet-cicely": {
+      "display_name": "Sweet Cicely",
+      "canon_slug": null
+    },
+    "sweet-clover": {
+      "display_name": "Sweet Clover",
+      "canon_slug": null
+    },
+    "sweet-coltsfoot": {
+      "display_name": "Sweet Coltsfoot",
+      "canon_slug": null
+    },
+    "sweet-vernal-grass": {
+      "display_name": "Sweet Vernal Grass",
+      "canon_slug": null
+    },
+    "sweet-woodruff": {
+      "display_name": "Sweet Woodruff",
+      "canon_slug": null
+    },
+    "tamarac": {
+      "display_name": "Tamarac",
+      "canon_slug": null
+    },
+    "testosterone": {
+      "display_name": "Testosterone",
+      "canon_slug": null
+    },
+    "tetanus-antitoxin": {
+      "display_name": "Tetanus Antitoxin",
+      "canon_slug": null
+    },
+    "tetracycline": {
+      "display_name": "Tetracycline",
+      "canon_slug": null
+    },
+    "thallium": {
+      "display_name": "Thallium",
+      "canon_slug": null
+    },
+    "thyme": {
+      "display_name": "Thyme",
+      "canon_slug": null
+    },
+    "thymus": {
+      "display_name": "Thymus",
+      "canon_slug": null
+    },
+    "thymus-extract": {
+      "display_name": "Thymus Extract",
+      "canon_slug": null
+    },
+    "thyroid": {
+      "display_name": "Thyroid",
+      "canon_slug": null
+    },
+    "toad-flax": {
+      "display_name": "Toad Flax",
+      "canon_slug": null
+    },
+    "tormentil": {
+      "display_name": "Tormentil",
+      "canon_slug": null
+    },
+    "trans-fatty-acids": {
+      "display_name": "Trans Fatty Acids",
+      "canon_slug": null
+    },
+    "triple-sulfonamide": {
+      "display_name": "Triple Sulfonamide",
+      "canon_slug": null
+    },
+    "trisulfapyrimidine": {
+      "display_name": "Trisulfapyrimidine",
+      "canon_slug": null
+    },
+    "tylosin": {
+      "display_name": "Tylosin",
+      "canon_slug": null
+    },
+    "urine-therapy": {
+      "display_name": "Urine Therapy",
+      "canon_slug": null
+    },
+    "valerian": {
+      "display_name": "Valerian",
+      "canon_slug": null
+    },
+    "vasopressin": {
+      "display_name": "Vasopressin",
+      "canon_slug": null
+    },
+    "vervain": {
+      "display_name": "Vervain",
+      "canon_slug": null
+    },
+    "vinegar": {
+      "display_name": "Vinegar",
+      "canon_slug": null
+    },
+    "walnut": {
+      "display_name": "Walnut",
+      "canon_slug": null
+    },
+    "white-deadnettle": {
+      "display_name": "White Deadnettle",
+      "canon_slug": null
+    },
+    "white-pond-lily": {
+      "display_name": "White Pond Lily",
+      "canon_slug": null
+    },
+    "white-willow": {
+      "display_name": "White Willow",
+      "canon_slug": null
+    },
+    "whortleberry": {
+      "display_name": "Whortleberry",
+      "canon_slug": null
+    },
+    "wild-carrot": {
+      "display_name": "Wild Carrot",
+      "canon_slug": null
+    },
+    "wild-celery": {
+      "display_name": "Wild Celery",
+      "canon_slug": null
+    },
+    "wild-cherry": {
+      "display_name": "Wild Cherry",
+      "canon_slug": null
+    },
+    "wild-ginger": {
+      "display_name": "Wild Ginger",
+      "canon_slug": null
+    },
+    "wild-strawberry": {
+      "display_name": "Wild Strawberry",
+      "canon_slug": null
+    },
+    "willow": {
+      "display_name": "Willow",
+      "canon_slug": null
+    },
+    "witch-hazel": {
+      "display_name": "Witch Hazel",
+      "canon_slug": null
+    },
+    "wormwood": {
+      "display_name": "Wormwood",
+      "canon_slug": null
+    },
+    "xenon": {
+      "display_name": "Xenon",
+      "canon_slug": null
+    },
+    "yarrow": {
+      "display_name": "Yarrow",
+      "canon_slug": null
+    },
+    "yellow-cedar": {
+      "display_name": "Yellow Cedar",
+      "canon_slug": null
+    },
+    "yellow-sweet-clover": {
+      "display_name": "Yellow Sweet Clover",
+      "canon_slug": null
+    },
+    "yogurt": {
+      "display_name": "Yogurt",
+      "canon_slug": null
+    },
+    "zinc-oxide": {
+      "display_name": "Zinc Oxide",
+      "canon_slug": null
+    },
+    "zumba": {
+      "display_name": "Zumba",
+      "canon_slug": null
+    }
+  }
+}

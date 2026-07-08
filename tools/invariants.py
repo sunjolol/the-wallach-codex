@@ -1028,7 +1028,8 @@ def check_catalog_integrity():
     2 = BOOTSTRAP (unsealed; structural checks passed), 1 = FAIL. Verifies the catalog's
     internal structure (counts, well-formed slugs, umbrella children resolve); the
     cross-pillar claim->catalog resolution is the separate references_resolve gate.
-    (nutrients.json was deleted 2026-07-05 D-c; the nutrient registry returns in Phase F.)"""
+    (the nutrient registry nutrients.json returned in Phase F; it re-lights the substance half
+    of references_resolve.)"""
     verify = ROOT / "eden" / "tools" / "catalog_verify.py"
     if not verify.exists():
         return True, "eden/tools/catalog_verify.py missing (catalog not installed; bootstrap-guard)"
@@ -1060,10 +1061,15 @@ def check_references_resolve():
                        f"condition/symptom (add to eden/catalog/): {unresolved[0]}"
                        f"{' ...' if len(unresolved) > 1 else ''}")
     import catalog
+    nutr_active = (ROOT / "eden" / "catalog" / "nutrients.json").exists()
+    substance_note = (
+        f"the substance (other_substances) half is ACTIVE: every claim substance resolves to "
+        f"nutrients.json ({len(catalog.nutrient_slugs())} substances registered, Phase F)"
+        if nutr_active else
+        "the substance (other_substances) half is DORMANT until Phase F rebuilds the nutrient registry")
     return True, (f"all claim condition/symptom slugs resolve to the Catalog "
                   f"({len(catalog.condition_slugs())} conditions, {len(catalog.symptom_slugs())} symptoms); "
-                  f"the substance (other_substances) half is DORMANT until Phase F rebuilds the nutrient "
-                  f"registry (nutrients.json deleted 2026-07-05 D-c)")
+                  f"{substance_note}")
 
 
 def check_corpus_runtime_purity():
@@ -2334,7 +2340,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="references_resolve",
-        description="every condition/symptom slug a claim maps to is pre-registered in the Catalog pillar (eden/catalog/{conditions,symptoms}.json); an unregistered slug (typo / phantom condition) is RED -- closes the phantom-slug hole. The substance (other_substances) half is DORMANT until Phase F rebuilds the nutrient registry (nutrients.json deleted 2026-07-05 D-c)",
+        description="every condition/symptom slug a claim maps to is pre-registered in the Catalog pillar (eden/catalog/{conditions,symptoms}.json); an unregistered slug (typo / phantom condition) is RED -- closes the phantom-slug hole. The substance (other_substances) half is now ACTIVE (Phase F): every claim substance must resolve to eden/catalog/nutrients.json, else RED",
         check_fn=check_references_resolve,
         truth_anchor="sealed claim shards (eden/corpus/claims/*) x the catalog registries (eden/catalog/*), recomputed each run via corpus_verify.unresolved_references -- no stale-to-stale comparison",
         severity="critical",
