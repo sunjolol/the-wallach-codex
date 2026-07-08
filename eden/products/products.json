@@ -27878,6 +27878,148 @@
           "source_label": "usyg100072_zinc_immune-0420_panel-900x1200.jpg"
         }
       ]
+    },
+    "saxi-super-juice": {
+      "product_id": "saxi-super-juice",
+      "name": "SaXi™ Super Juice +",
+      "sku": "20035",
+      "ygy_id": "10127",
+      "components": [
+        {
+          "form": "powder",
+          "serving_size": "1 packet (11 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 35,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 7,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "dietary_fiber": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "protein": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 450,
+              "unit": "mcg",
+              "unit_detail": "RAE",
+              "pct_dv": 50,
+              "form": "as vitamin A palmitate"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 33,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Collagen Peptide",
+              "amount": 2000,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "bovine"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 2000,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Muscadine Grape Powder, Black Currant Powder, Acai Juice Powder, Amla Fruit Powder, Goji Powder, Pomegranate Juice Powder, Acerola Juice Powder, Mangosteen Powder, Strawberry Juice Powder, Cranberry Juice Powder, Maqui Berry Powder, Jabuticaba Juice Powder",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Muscadine Grape",
+                  "form": "powder"
+                },
+                {
+                  "pos": 2,
+                  "name": "Black Currant",
+                  "form": "powder"
+                },
+                {
+                  "pos": 3,
+                  "name": "Acai",
+                  "form": "juice powder"
+                },
+                {
+                  "pos": 4,
+                  "name": "Amla",
+                  "form": "powder",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 5,
+                  "name": "Goji",
+                  "form": "powder"
+                },
+                {
+                  "pos": 6,
+                  "name": "Pomegranate",
+                  "form": "juice powder"
+                },
+                {
+                  "pos": 7,
+                  "name": "Acerola",
+                  "form": "juice powder"
+                },
+                {
+                  "pos": 8,
+                  "name": "Mangosteen",
+                  "form": "powder"
+                },
+                {
+                  "pos": 9,
+                  "name": "Strawberry",
+                  "form": "juice powder"
+                },
+                {
+                  "pos": 10,
+                  "name": "Cranberry",
+                  "form": "juice powder"
+                },
+                {
+                  "pos": 11,
+                  "name": "Maqui Berry",
+                  "form": "powder"
+                },
+                {
+                  "pos": 12,
+                  "name": "Jabuticaba",
+                  "form": "juice powder"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Maltodextrin (Tapioca)",
+            "Citric Acid",
+            "Natural Flavors",
+            "Vegetable Juice (for color)",
+            "Gum Blend (Guar Gum, Gum Acacia, Xanthan Gum)",
+            "Stevia Leaf Extract"
+          ],
+          "source_label": "saxi-with-collagen_0624_supp-facts.jpg"
+        }
+      ]
     }
   }
 }
