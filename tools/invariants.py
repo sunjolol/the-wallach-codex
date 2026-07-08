@@ -1072,6 +1072,30 @@ def check_references_resolve():
                   f"{substance_note}")
 
 
+def check_product_registry_resolves():
+    """Product-DB registry health (Phase F chunk 2). Delegates to the single implementation
+    eden/tools/nutrient_resolve.py, which for every quantified Product-DB substance resolves it
+    to an essential slug OR classifies it as a botanical, collapses the botanical vocabulary to
+    ZERO surface collisions, and asserts a bank of known identity + unit-conversion values
+    (incl. substance-specific IU->mass for A/D/E). Exit 0 = all pass. Bootstrap-guarded until the
+    Products pillar + the nutrient registry exist. Truth-anchored on the sealed products.json +
+    catalog/nutrients.json, recomputed each run -- no stale-to-stale compare."""
+    resolver = ROOT / "eden" / "tools" / "nutrient_resolve.py"
+    products = ROOT / "eden" / "products" / "products.json"
+    registry = ROOT / "eden" / "catalog" / "nutrients.json"
+    if not (resolver.exists() and products.exists() and registry.exists()):
+        return True, "products pillar / nutrient registry not installed (bootstrap-guard)"
+    env = dict(os.environ)
+    env.setdefault("PYTHONUTF8", "1")
+    r = subprocess.run([sys.executable, str(resolver)], capture_output=True, text=True, env=env)
+    out = (r.stdout or "").strip().splitlines()
+    head = out[0] if out else (r.stderr or "").strip()[:160]
+    if r.returncode == 0:
+        return True, head
+    fails = [ln.strip() for ln in out if "[FAIL]" in ln]
+    return False, f"product registry resolve FAIL: {('; '.join(fails))[:200] or head}"
+
+
 def check_corpus_runtime_purity():
     """Phase alpha — the shipped dashboard bundle must make no LLM / external-network
     call (offline-forever; proposal section 5). Greps dist/main.js for LLM-SDK +
@@ -2345,6 +2369,14 @@ INVARIANTS = [
         truth_anchor="sealed claim shards (eden/corpus/claims/*) x the catalog registries (eden/catalog/*), recomputed each run via corpus_verify.unresolved_references -- no stale-to-stale comparison",
         severity="critical",
         lesson_ref="Blueprint Phase B / Charter R3 -- promoting conditions+symptoms from emergent-claim-slugs to a pre-registered catalog: before this a typo'd slug silently minted a condition in the derived index with nothing to catch it. memory: overhaul-blueprint-active-plan",
+    ),
+    Invariant(
+        name="product_registry_resolves",
+        description="every quantified Product-DB substance resolves to an essential (one of the 91) OR is classified as a botanical, the botanical vocabulary collapses to ZERO surface-form collisions, and a bank of known identity + unit-conversion values holds -- proves eden/catalog/nutrients.json + nutrient_resolve keep the Products pillar machine-readable (Phase F chunk 2)",
+        check_fn=check_product_registry_resolves,
+        truth_anchor="deterministic re-run of eden/tools/nutrient_resolve.py over the sealed products.json x catalog/nutrients.json each run (exit 0 = all resolve/classify + zero collisions + known values); no stale-to-stale comparison",
+        severity="critical",
+        lesson_ref="Phase F chunk 2 (2026-07-08) -- externalizing the resolver's alias table to the Catalog pillar + canonicalizing the botanical vocabulary; the unit-conversion self-checks immediately caught a latent canonical_unit bug (mcg vitamins keyed by display-name, not slug). memory: substance-registry-and-triage-buffer",
     ),
     Invariant(
         name="catalog_integrity",

@@ -55,6 +55,19 @@
         "eden/corpus/essentials-canon.json"
       ],
       "note": "The Coverage periodic-table layout (state/coverage.ts esbuild JSON import). Editorial arrangement/chrome + tile key refs come from the hand-authored coverage-layout-skeleton.json; each tile's canonical identity -- name (canon display_name uppercased) and, for minerals, sym+num -- is filled from essentials-canon, so the table can never drift from the pillar (crack #1 deferred half, Phase E 2026-07-06). Replaces the old hand-typed coverage-layout-data (91 names + 60 symbols were re-stored by hand)."
+    },
+    {
+      "artifact": "eden/derived/product-composition.json",
+      "generator": "eden/tools/products_composition_derive.py",
+      "build_fn": "build_data",
+      "write_fn": "write_data",
+      "compare": "json",
+      "inputs": [
+        "eden/products/products.json",
+        "eden/catalog/nutrients.json",
+        "eden/corpus/essentials-canon.json"
+      ],
+      "note": "Product COMPOSITION rollup (Phase F chunk 2): per essential -> the products that deliver it + summed amount in the canonical unit (nutrient_resolve.to_canonical, incl. substance-specific IU->mass for A/D/E); plus the canonical botanical search vocabulary -> products. Composition only (SS00.A): an amount is what a product CONTAINS, never a Wallach target. The RAW highest-first (amount desc) data foundation for the Phase-G cost-per-nutrient recommender (saturating adequacy + breadth + banded cost; memory cost-per-nutrient-match-score). Deterministic (NO timestamp; amounts 4dp) so build_fn byte-compares to disk. Lives in eden/derived (not shipped to a view yet); promote to assets/data when a surface consumes it."
     }
   ],
   "_accounted_purpose": "The COMPLETENESS half of R1 (crack #1 fix, 2026-07-06). derived_artifacts_fresh proves the `artifacts` above are fresh; it does NOT prove the list is complete. The data_artifacts_accounted invariant requires EVERY dashboard/assets/data/*.json to appear either in `artifacts` (derived + freshness-gated) or here in `accounted` (hand-authored or gated by a dedicated invariant), each with a disposition + reason. A data file in neither list is RED -- no silently-added hand-maintained artifact can ship. disposition = hand_authored | externally_gated.",

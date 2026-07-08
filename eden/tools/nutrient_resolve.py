@@ -46,10 +46,48 @@ TRACE_MCG = {"selenium","chromium","iodine","molybdenum","boron","vanadium"}
 def canonical_unit(slug):
     c = CAT.get(slug)
     if c == "amino_acid" or c == "fatty_acid": return "mg"
-    if c == "vitamin": return {"retinol":"mcg","cholecalciferol":"mcg","phylloquinone":"mcg",
-                               "cobalamin":"mcg","folate":"mcg","biotin":"mcg"}.get(slug, "mg")
+    # mcg-dosed vitamins keyed by SLUG (A, D, K, B12, folate/B9, biotin); the rest are mg.
+    # (Earlier this dict was keyed by display_name -- retinol/cholecalciferol/... -- which never
+    #  matched the vitamin-* slugs, so it silently returned mg for all of them; fixed 2026-07-08.)
+    if c == "vitamin": return "mcg" if slug in {
+        "vitamin-a", "vitamin-d", "vitamin-k", "vitamin-b12", "vitamin-b9", "biotin"} else "mg"
     if c == "mineral": return "mcg" if slug in TRACE_MCG else "mg"
     return None
+
+# substance-specific IU -> mass. Standard USP/pharmacological factors -- these convert a
+# product's OWN label amount between units (faithful, like mg<->g), NEVER a Wallach amount (SS00.A):
+#   vitamin A: 1 IU = 0.3 mcg retinol (RAE basis; supplements list retinol/RAE)
+#   vitamin D: 1 IU = 0.025 mcg  (40 IU = 1 mcg)
+#   vitamin E: 1 IU = 0.67 mg    (natural d-alpha-tocopherol; dl-alpha synthetic would be 0.9)
+IU_TO_MASS = {"vitamin-a": (0.3, "mcg"), "vitamin-d": (0.025, "mcg"), "vitamin-e": (0.67, "mg")}
+MASS_TO_MG = {"g": 1000.0, "mg": 1.0, "mcg": 0.001}
+
+def to_canonical(amount, unit, slug):
+    """Convert a delivered (amount, unit) into the essential's canonical unit so a product's
+    contribution is summable. Returns (amount_in_canonical, canonical_unit), or None when the
+    value is not a mass we can aggregate (CFU/potency, or IU with no substance factor). IU->mass
+    uses the standard factor above -- a faithful unit change, never a new amount (SS00.A)."""
+    if amount is None or slug is None:
+        return None
+    if not isinstance(amount, (int, float)):
+        try:
+            amount = float(amount)
+        except (TypeError, ValueError):
+            return None  # non-scalar label value (e.g. "<20") -- not summable; surfaced upstream
+    cu = canonical_unit(slug)
+    if cu is None:
+        return None
+    u = (unit or "").strip().lower()
+    if u in MASS_TO_MG:
+        mg = amount * MASS_TO_MG[u]
+    elif u == "iu":
+        f = IU_TO_MASS.get(slug)
+        if f is None:
+            return None
+        mg = amount * f[0] * MASS_TO_MG[f[1]]
+    else:
+        return None
+    return (round(mg / MASS_TO_MG[cu], 4), cu)
 
 def strip_stereo(n):
     for p in ("l-", "d-", "dl-"):
@@ -158,6 +196,11 @@ def report():
         ("canon: 'Saccharomyces Boulardii' -> 'Saccharomyces boulardii'",
          canonicalize("Saccharomyces Boulardii") == "Saccharomyces boulardii"),
         ("slug: 'Grape seed' -> 'grape-seed'", slug_of("Grape seed") == "grape-seed"),
+        ("unit: 1000 IU vitamin D -> 25 mcg", to_canonical(1000, "IU", "vitamin-d") == (25.0, "mcg")),
+        ("unit: 400 IU vitamin E -> 268 mg", to_canonical(400, "IU", "vitamin-e") == (268.0, "mg")),
+        ("unit: 5000 IU vitamin A -> 1500 mcg", to_canonical(5000, "IU", "vitamin-a") == (1500.0, "mcg")),
+        ("unit: 1 g arginine -> 1000 mg", to_canonical(1, "g", "arginine") == (1000.0, "mg")),
+        ("unit: 200 mcg selenium -> 200 mcg", to_canonical(200, "mcg", "selenium") == (200.0, "mcg")),
         ("ZERO remaining botanical collisions", len(collisions) == 0),
     ]
     ok = True
