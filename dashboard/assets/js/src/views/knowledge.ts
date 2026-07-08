@@ -25,7 +25,6 @@
 
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import doctrineData from '../../../data/doctrine-data.json';
-import regimenLabelLookup from '../../../data/regimen-label-lookup.json';
 import { on as onEvent } from '../core/events.js';
 import {
   CoverageLayoutSchema,
@@ -33,9 +32,6 @@ import {
   DoctrineSchema,
   type LayoutSection,
   type LayoutTile,
-  type ProductEntry,
-  ProductEntrySchema,
-  ProductsLookupSchema,
 } from '../core/schemas/index.js';
 import {
   getEssentialByLayoutKey,
@@ -47,9 +43,9 @@ import {
   type CoverageStatus,
   getOrCompute,
   getTargets,
-  matchEssential,
 } from '../state/coverage.js';
 import { renderConditionsTab, renderCorpusForEssential, renderCorpusTab, renderIntakeMeter, tileOf } from './knowledge-corpus.js';
+import { productCount, productsForEssential, renderProductsTab } from './knowledge-products.js';
 import { clearSearchHighlights, highlightMatchesIn } from './search-highlight.js';
 
 export interface DrawerHandle {
@@ -61,40 +57,6 @@ export interface DrawerHandle {
 }
 
 type Tab = 'corpus' | 'essentials' | 'conditions' | 'products' | 'doctrine';
-
-// ─── Data readers — Zod-validated at the parse boundary ───────────────────
-
-function readProducts(): ProductEntry[] {
-  // Product vault inlined via esbuild JSON import (Phase C3 / D1 — replaced the
-  // getElementById('regimen-label-lookup') read of the now-retired inline block).
-  // The artifact wraps the map under a `products` key, and the vault keys its
-  // display name as `canonical_name` (not always `name`); walk every value,
-  // resolve canonical_name ?? name, dedup by lowercased name below.
-  const parsed: unknown = regimenLabelLookup;
-  let root: unknown = parsed;
-  if (parsed !== null && typeof parsed === 'object' && 'products' in parsed) {
-    root = parsed.products;
-  }
-  const lookup = ProductsLookupSchema.safeParse(root);
-  if (!lookup.success) {
-    return [];
-  }
-  const byName = new Map<string, ProductEntry>();
-  for (const value of Object.values(lookup.data)) {
-    const candidates = Array.isArray(value) ? value : [value];
-    for (const candidate of candidates) {
-      const r = ProductEntrySchema.safeParse(candidate);
-      if (!r.success) {
-        continue;
-      }
-      const nm = r.data.canonical_name ?? r.data.name;
-      if (typeof nm === 'string' && nm.length > 0) {
-        byName.set(nm.toLowerCase(), r.data);
-      }
-    }
-  }
-  return [...byName.values()];
-}
 
 // Doctrines — the app's OWN operating-guarantee cards (source-rule, §17, §31,
 // sealed-canonical), read from the designated prose store (doctrine-data.json,
@@ -238,31 +200,6 @@ function statusPillClass(s: CoverageStatus): string {
   return 'kd-essential-deep__status-pill--pending';
 }
 
-/** Vault products that carry this essential — resolved via the canonical matcher. */
-function vaultProductsFor(key: string): string[] {
-  const out: string[] = [];
-  for (const p of readProducts()) {
-    const nutrients = p.nutrients ?? [];
-    const carries = nutrients.some((n) => {
-      if (typeof n !== 'object' || n === null) {
-        return false;
-      }
-      const nm = (n as { name?: unknown }).name;
-      return typeof nm === 'string' && matchEssential(nm)?.name === key;
-    });
-    if (carries) {
-      const nm = p.canonical_name ?? p.name;
-      if (typeof nm === 'string' && nm.length > 0) {
-        out.push(nm);
-      }
-    }
-    if (out.length >= 8) {
-      break;
-    }
-  }
-  return out;
-}
-
 // ─── Render helpers ────────────────────────────────────────────────────────
 
 function escHTML(s: unknown): string {
@@ -287,7 +224,7 @@ function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): st
   const stance = target?.wallach_stance;
   const summary = stance?.summary;
   const citation = stance?.citation;
-  const products = vaultProductsFor(key);
+  const products = productsForEssential(key);
 
   // Phase C2 (2026-07-05): the "WALLACH SAYS" stance box is DROPPED for now. Its old
   // data (knowledge/essentials-targets.json) carried lecture citations, Youngevity
@@ -307,7 +244,7 @@ function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): st
     ? `
       <div class="kd-essential-deep__sub">FOUND IN YGY VAULT</div>
       <div class="kd-essential-deep__products">
-        ${products.map(p => `<span class="kd-essential-deep__product-chip">${escHTML(p)}</span>`).join('')}
+        ${products.map(p => `<span class="kd-essential-deep__product-chip" data-kd-product="${escHTML(p.id)}" role="button" tabindex="0">${escHTML(p.name)}</span>`).join('')}
       </div>`
     : '';
 
@@ -361,28 +298,6 @@ function renderEssentialsTab(snapshot: CoverageSnapshot | null, selectedKey: str
   return `${deepHTML}${groupsHTML}`;
 }
 
-function renderProductsTab(): string {
-  const products = readProducts();
-  if (products.length === 0) {
-    return '<div class="kd-empty">— vault data not loaded —</div>';
-  }
-
-  const productsHTML = products.slice(0, 30).map(p => `
-    <div class="kd-product-row">
-      <div class="kd-product-row__icon">${escHTML((p.canonical_name ?? p.name ?? '?').charAt(0).toUpperCase())}</div>
-      <div class="kd-product-row__body">
-        <h4 class="kd-product-row__name">${escHTML(p.canonical_name ?? p.name ?? '(unnamed)')}</h4>
-        <div class="kd-product-row__meta">${escHTML(p.brand ?? 'YGY')} · ${(p.nutrients?.length ?? 0)} NUTRIENTS LISTED</div>
-      </div>
-      <span class="kd-product-row__verdict kd-product-row__verdict--ok">VAULT</span>
-    </div>`).join('');
-
-  return `
-    <div class="kd-section-head">PRODUCTS VAULT · ${products.length} ENTRIES</div>
-    ${productsHTML}
-    ${products.length > 30 ? `<div class="kd-more">— + ${products.length - 30} more · scroll wired in polish pass —</div>` : ''}`;
-}
-
 /**
  * Compose a card's enforcement line from its REAL gate/hook names — never a
  * hand-typed citation (R3): "ENFORCED BY <gate> · <gate> · <tier>". This is the
@@ -402,24 +317,24 @@ function renderDoctrineTab(): string {
     </div>`).join('');
 }
 
-function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null, selectedCondition: string | null, selectedBook: string | null): string {
+function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null, selectedCondition: string | null, selectedBook: string | null, selectedProduct: string | null): string {
   switch (tab) {
     case 'corpus': return renderCorpusTab(selectedBook);
     case 'essentials': return renderEssentialsTab(snapshot, selectedKey);
     case 'conditions': return renderConditionsTab(selectedCondition);
-    case 'products': return renderProductsTab();
+    case 'products': return renderProductsTab(selectedProduct);
     case 'doctrine': return renderDoctrineTab();
   }
 }
 
-function renderShell(activeTab: Tab, selectedKey: string | null, selectedCondition: string | null, selectedBook: string | null): string {
+function renderShell(activeTab: Tab, selectedKey: string | null, selectedCondition: string | null, selectedBook: string | null, selectedProduct: string | null): string {
   const snapshot = getOrCompute();
-  const productsCount = readProducts().length;
+  const productsCount = productCount();
   const tabs = [
     { id: 'corpus' as Tab, label: 'Corpus', count: `${listBooks().length} BOOKS` },
     { id: 'essentials' as Tab, label: 'Essentials', count: `${ESS_ESSENTIAL_COUNT} ESSENTIAL` },
     { id: 'conditions' as Tab, label: 'Conditions', count: `${listConditions().length} INDEXED` },
-    { id: 'products' as Tab, label: 'Products', count: `${productsCount > 0 ? productsCount : 59} KNOWN` },
+    { id: 'products' as Tab, label: 'Products', count: `${productsCount} KNOWN` },
     { id: 'doctrine' as Tab, label: 'Doctrine', count: `${DOCTRINES.length} RULES` },
   ];
   const tabsHTML = tabs.map(t => `
@@ -444,7 +359,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
       <input class="kd-search-input" type="text" placeholder="SEARCH ${activeTab.toUpperCase()}…" />
       <span class="kd-search-kbd">/</span>
     </div>
-    <div class="kd-body">${renderTab(activeTab, snapshot, selectedKey, selectedCondition, selectedBook)}</div>
+    <div class="kd-body">${renderTab(activeTab, snapshot, selectedKey, selectedCondition, selectedBook, selectedProduct)}</div>
     <footer class="kd-footer">
       <button class="kd-action" data-kd-action="pin"><span class="kd-action__glyph">⊕</span>PIN</button>
       <button class="kd-action" data-kd-action="share"><span class="kd-action__glyph">↗</span>SHARE</button>
@@ -554,10 +469,11 @@ export function mount(container: HTMLElement): DrawerHandle {
   let selectedEssential: string | null = null;
   let selectedCondition: string | null = null;
   let selectedBook: string | null = null;
+  let selectedProduct: string | null = null;
   let searchQuery = '';
 
   const render = (): void => {
-    container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition, selectedBook);
+    container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition, selectedBook, selectedProduct);
     // Re-apply the live query so a re-render (deep-dive open, regimen:changed)
     // doesn't silently drop an in-progress filter.
     if (searchQuery.length > 0) {
@@ -589,6 +505,7 @@ export function mount(container: HTMLElement): DrawerHandle {
     selectedEssential = null;
     selectedCondition = null;
     selectedBook = null;
+    selectedProduct = null;
     container.classList.remove('kd-open', 'kd-expanded');
     container.innerHTML = '';
   };
@@ -618,6 +535,7 @@ export function mount(container: HTMLElement): DrawerHandle {
         selectedEssential = null;
         selectedCondition = null;
         selectedBook = null;
+        selectedProduct = null;
         searchQuery = '';
         render();
       }
@@ -644,6 +562,19 @@ export function mount(container: HTMLElement): DrawerHandle {
       render();
       return;
     }
+    const prodEl = target.closest<HTMLElement>('[data-kd-product]');
+    if (prodEl !== null) {
+      // A product is clickable from the Products list OR an essentials-deep-dive
+      // chip: toggle its detail panel and switch to the Products tab so product
+      // detail always has one home.
+      const k = prodEl.getAttribute('data-kd-product');
+      selectedProduct = (k !== null && k === selectedProduct) ? null : k;
+      if (selectedProduct !== null) {
+        activeTab = 'products';
+      }
+      render();
+      return;
+    }
     const actionEl = target.closest<HTMLElement>('[data-kd-action]');
     if (actionEl !== null) {
       const action = actionEl.getAttribute('data-kd-action');
@@ -663,6 +594,10 @@ export function mount(container: HTMLElement): DrawerHandle {
       }
       else if (action === 'book-close') {
         selectedBook = null;
+        render();
+      }
+      else if (action === 'product-close') {
+        selectedProduct = null;
         render();
       }
       else {

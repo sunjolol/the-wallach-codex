@@ -3,7 +3,7 @@
 // Usage: node tools/render_probe_knowledge.js   (exit 0 = PASS, non-zero = FAIL)
 //
 // Verifies the Knowledge drawer end-to-end: the K rail item toggles the overlay,
-// the Products tab lists REAL vault entries (canonical_name fix in readProducts),
+// the Products tab lists ALL products (each clickable to a full detail panel),
 // the Essentials tab shows ALL essentials (every section, not paginated) with
 // coverage-state tiles, a tile click expands the Wallach deep-dive, and both Esc
 // and a bare "K" press close/toggle it. Requires puppeteer.
@@ -72,23 +72,42 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-action="book-close"]')?.click());
   await wait(200);
 
-  // 3. Switch to the Products tab; read the vault count + the rendered names.
+  // 3. Switch to the Products tab; list ALL products (no 30 cap), each clickable.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="products"]')?.click());
   await wait(300);
   const products = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
     const heads = root ? [...root.querySelectorAll('.kd-section-head')].map(e => e.textContent.trim()) : [];
-    const head = heads.find(t => /PRODUCTS VAULT/.test(t)) || '';
-    const m = head.match(/·\s*(\d+)\s*ENTRIES/);
+    const head = heads.find(t => /PRODUCTS/.test(t)) || '';
+    const m = head.match(/PRODUCTS\s*·\s*(\d+)/);
     const rows = root ? [...root.querySelectorAll('.kd-product-row__name')].map(e => e.textContent.trim()) : [];
+    const clickable = root ? root.querySelectorAll('.kd-product-row[data-kd-product]').length : 0;
     return {
       head,
       count: m ? parseInt(m[1], 10) : 0,
       rowCount: rows.length,
+      clickable,
       firstNames: rows.slice(0, 3),
       anyUnnamed: rows.some(n => n === '(unnamed)' || n === ''),
     };
   });
+
+  // 3b. Click a product row -> the full detail panel opens (price band + label components).
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount .kd-product-row[data-kd-product]')?.click());
+  await wait(250);
+  const productDeep = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const d = root ? root.querySelector('.kd-product-deep') : null;
+    return {
+      shown: d !== null,
+      hasName: d ? (d.querySelector('.kd-essential-deep__name')?.textContent || '').length > 0 : false,
+      hasPrice: d ? d.querySelector('.kd-product-deep__price') !== null : false,
+      hasComponent: d ? d.querySelector('.kd-product-comp') !== null : false,
+      hasFactsOrBlend: d ? (d.querySelector('.kd-product-nut') !== null || d.querySelector('.kd-product-blend') !== null) : false,
+    };
+  });
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-action="product-close"]')?.click());
+  await wait(150);
 
   // 4. Essentials tab -> ALL essentials shown (every section), then click a tile
   //    to expand the Wallach deep-dive.
@@ -138,6 +157,25 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       hasPill: d ? d.querySelector('.kd-essential-deep__status-pill') !== null : null,
     };
   });
+
+  // 4a2. Essentials "FOUND IN YGY VAULT" chips are clickable -> open the product
+  //       detail panel and switch to the Products tab (one home for product detail).
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-essential="Magnesium"]')?.click());
+  await wait(200);
+  const magChip = await page.evaluate(() => {
+    const chips = [...document.querySelectorAll('#drawer-knowledge-mount .kd-essential-deep__product-chip[data-kd-product]')];
+    return { count: chips.length, cursor: chips[0] ? getComputedStyle(chips[0]).cursor : '' };
+  });
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount .kd-essential-deep__product-chip[data-kd-product]')?.click());
+  await wait(250);
+  const chipToProduct = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const d = root ? root.querySelector('.kd-product-deep') : null;
+    const active = root ? (root.querySelector('.kd-tab.active')?.textContent || '') : '';
+    return { productShown: d !== null, onProductsTab: /Products/i.test(active) };
+  });
+  chipToProduct.chipCount = magChip.count;
+  chipToProduct.chipCursor = magChip.cursor;
 
   // 4b. Conditions tab — list over conditions.json + click a condition to expand
   //     the role-grouped deep view (causes/protocols/doses/... with citations).
@@ -277,7 +315,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, corpus, bookOpen, products, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, doctrine, afterEsc, afterK, search, highlight, searchClear };
+  const out = { boot, afterClick, corpus, bookOpen, products, productDeep, chipToProduct, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, doctrine, afterEsc, afterK, search, highlight, searchClear };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -289,9 +327,14 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['corpus: no fabricated CITES/CHAPTERS', corpus.fakeCites === false],
     ['corpus: coming-soon books shown', corpus.plannedCount >= 1],
     ['corpus: book row opens a claim browser (rare-earths)', bookOpen.shown === true && bookOpen.claimCount > 0],
-    ['products vault non-empty', products.count > 0],
-    ['product rows rendered', products.rowCount > 0],
+    ['products count parsed from head', products.count > 0],
+    ['products: ALL listed (no 30 cap)', products.rowCount === products.count && products.rowCount >= 200],
+    ['products: every row is clickable', products.clickable === products.rowCount],
     ['no unnamed product rows', products.anyUnnamed === false],
+    ['product row opens the detail panel (price + components + facts/blend)', productDeep.shown === true && productDeep.hasName === true && productDeep.hasPrice === true && productDeep.hasComponent === true && productDeep.hasFactsOrBlend === true],
+    ['essentials vault chips are clickable (Magnesium)', chipToProduct.chipCount > 0],
+    ['essentials chips show a pointer cursor (look clickable)', chipToProduct.chipCursor === 'pointer'],
+    ['essentials chip opens the product panel on the Products tab', chipToProduct.productShown === true && chipToProduct.onProductsTab === true],
     ['essentials: all shown (>= 90 tiles)', essentials.tileCount >= 90],
     ['essentials: every section present (>= 4 heads)', essentials.sectionCount >= 4],
     ['essentials: coverage states rendered', essentials.stateTiles > 0],
@@ -327,5 +370,5 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   const failed = checks.filter(([, ok]) => !ok).map(([n]) => n);
   await browser.close();
   if (failed.length) { console.log('FAIL', JSON.stringify(failed)); process.exit(1); }
-  console.log('PASS · Knowledge drawer wired · Products vault real · Essentials all-shown + deep-dive + sealed-corpus claims');
+  console.log('PASS · Knowledge drawer wired · Products list-all + clickable detail panel + essentials-chip link · Essentials/Conditions deep-dives + sealed-corpus claims');
 })().catch(e => { console.log('PROBE_ERR', e.message); process.exit(1); });

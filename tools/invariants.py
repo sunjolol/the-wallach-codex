@@ -368,15 +368,34 @@ _VAULT_PROSE_KEYS = {
 }
 _VAULT_PRODUCT_KEYS = {"canonical_name", "nutrients"}
 _VAULT_NUTRIENT_KEYS = {"name", "amount", "unit"}
+_DETAIL_ARTIFACT = "dashboard/assets/data/product-detail-data.json"
+
+
+def _walk_forbidden_keys(node, hits, path=""):
+    """Recurse an arbitrary JSON node; record every dict KEY that is a known
+    marketing-prose field. For the rich product-DISPLAY artifact, whose full
+    label structure can't take a strict allowlist -- but a marketing key
+    anywhere is still RED (stops the price join re-importing a description)."""
+    if isinstance(node, dict):
+        for k, v in node.items():
+            sub = f"{path}/{k}" if path else str(k)
+            if k in _VAULT_PROSE_KEYS:
+                hits.append(sub)
+            _walk_forbidden_keys(v, hits, sub)
+    elif isinstance(node, list):
+        for i, v in enumerate(node):
+            _walk_forbidden_keys(v, hits, f"{path}[{i}]")
 
 
 def check_no_product_marketing_prose():
-    """The product vault (regimen-label-lookup.json) must be COMPOSITION ONLY:
-    each product record = {canonical_name, nutrients:[{name, amount, unit}]}, and
-    nothing else. A strict key-allowlist -- any extra key is RED, and a known
-    marketing-prose key (what_it_does / tagline / description / ...) is named
-    explicitly. This makes the A1 deletion permanent: scraped YGY marketing copy
-    can never re-enter the vault through the generator (R7 sever + enforce)."""
+    """The product SURFACES must be COMPOSITION ONLY -- no marketing prose can
+    re-enter (R7 sever + enforce; the A1 deletion made permanent). Two artifacts:
+    (1) the slim vault (regimen-label-lookup.json) = {canonical_name,
+    nutrients:[{name, amount, unit}]} under a STRICT key-allowlist (any extra key
+    is RED); (2) the rich display artifact (product-detail-data.json) carries the
+    whole label structure, so it is scanned for any marketing-prose KEY anywhere
+    (what_it_does / tagline / description / ...) -- which stops the price join from
+    ever re-importing prices.json's stripped description."""
     art = ROOT / _VAULT_ARTIFACT
     if not art.exists():
         return True, f"{_VAULT_ARTIFACT} missing (bootstrap-guard)"
@@ -398,15 +417,24 @@ def check_no_product_marketing_prose():
             nextra = set(row.keys()) - _VAULT_NUTRIENT_KEYS
             if nextra:
                 problems.append(f"{pid}: nutrient {row.get('name', '?')!r} unexpected key(s) {sorted(nextra)}")
+    # The rich product-DISPLAY artifact carries the whole label structure, so it
+    # can not take a strict allowlist -- instead RED-flag any marketing-prose KEY
+    # anywhere in it (stops the price join re-importing prices.json's description).
+    detail = ROOT / _DETAIL_ARTIFACT
+    if detail.exists():
+        dhits = []
+        _walk_forbidden_keys(json.loads(detail.read_text(encoding="utf-8")).get("products", {}), dhits)
+        for h in dhits:
+            problems.append(f"{_DETAIL_ARTIFACT}: MARKETING-PROSE key '{h}'")
     if problems:
         return False, (
-            f"product vault carries {len(problems)} non-composition field(s) -- "
-            f"marketing prose must never re-enter the vault: "
+            f"product surfaces carry {len(problems)} marketing/non-composition field(s) -- "
+            f"prose must never re-enter the product data: "
             + "; ".join(problems[:6]) + (" ..." if len(problems) > 6 else "")
         )
     return True, (
-        f"product vault is composition-only across {len(products)} product(s) "
-        f"(keys subset of {{canonical_name, nutrients:[{{name,amount,unit}}]}}; no marketing prose)"
+        f"product surfaces composition-only -- vault ({len(products)} products, strict "
+        f"key-allowlist) + detail artifact (no marketing-prose key anywhere); no prose re-entry"
     )
 
 
@@ -2247,9 +2275,9 @@ INVARIANTS = [
     ),
     Invariant(
         name="no_product_marketing_prose",
-        description="the product vault (regimen-label-lookup.json) is composition-only -- each record = {canonical_name, nutrients:[{name,amount,unit}]}; any extra/prose key (what_it_does/tagline/description/...) is RED",
+        description="the product surfaces are composition-only -- the slim vault (regimen-label-lookup.json) under a strict key-allowlist + the rich display artifact (product-detail-data.json) scanned for any marketing-prose key anywhere; prose can never re-enter (R7)",
         check_fn=check_no_product_marketing_prose,
-        truth_anchor="strict key-allowlist over dashboard/assets/data/regimen-label-lookup.json (the generated product vault), recomputed each run",
+        truth_anchor="strict key-allowlist over regimen-label-lookup.json + recursive marketing-key scan over product-detail-data.json (both generated), recomputed each run",
         severity="critical",
         lesson_ref="Phase F / A1 (2026-07-08) -- the old product subsystem's scraped YGY marketing prose poisoned the corpus; A1 deleted it + this gate keeps prose from re-entering the vault (memory old-product-system-full-delete; stop-the-leak-before-building sever+enforce).",
     ),

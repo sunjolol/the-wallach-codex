@@ -20,3 +20,4 @@ export * from './ocr-dict.js';
 export * from './regimen.js';
 export * from './scanner-corpus.js';
 export * from './scanner.js';
+export * from './product-detail.js';

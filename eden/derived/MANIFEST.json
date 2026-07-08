@@ -68,6 +68,18 @@
         "eden/corpus/essentials-canon.json"
       ],
       "note": "Product COMPOSITION rollup (Phase F chunk 2): per essential -> the products that deliver it + summed amount in the canonical unit (nutrient_resolve.to_canonical, incl. substance-specific IU->mass for A/D/E); plus the canonical botanical search vocabulary -> products. Composition only (SS00.A): an amount is what a product CONTAINS, never a Wallach target. The RAW highest-first (amount desc) data foundation for the Phase-G cost-per-nutrient recommender (saturating adequacy + breadth + banded cost; memory cost-per-nutrient-match-score). Deterministic (NO timestamp; amounts 4dp) so build_fn byte-compares to disk. Lives in eden/derived (not shipped to a view yet); promote to assets/data when a surface consumes it."
+    },
+    {
+      "artifact": "dashboard/assets/data/product-detail-data.json",
+      "generator": "eden/tools/product_detail_derive.py",
+      "build_fn": "build_data",
+      "write_fn": "write_data",
+      "compare": "json",
+      "inputs": [
+        "eden/products/products.json",
+        "eden/products/prices.json"
+      ],
+      "note": "The full per-product DISPLAY record (whole label structure + an indicative YGY listing price {retail,wholesale} joined by ygy_id) read by the Knowledge Products surface (views/knowledge-products.ts): the Products list, the product detail panel, and the essentials FOUND-IN-VAULT chips. DISPLAY ONLY (§00.A) -- composition is what a product CONTAINS + price is a volatile YGY listing; neither feeds coverage. Distinct from the slim regimen-label-lookup vault (regimen/coverage path). Deterministic (NO timestamp) so build_fn byte-compares to disk. Marketing prose forbidden by no_product_marketing_prose."
     }
   ],
   "_accounted_purpose": "The COMPLETENESS half of R1 (crack #1 fix, 2026-07-06). derived_artifacts_fresh proves the `artifacts` above are fresh; it does NOT prove the list is complete. The data_artifacts_accounted invariant requires EVERY dashboard/assets/data/*.json to appear either in `artifacts` (derived + freshness-gated) or here in `accounted` (hand-authored or gated by a dedicated invariant), each with a disposition + reason. A data file in neither list is RED -- no silently-added hand-maintained artifact can ship. disposition = hand_authored | externally_gated.",

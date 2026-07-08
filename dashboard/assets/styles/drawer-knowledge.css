@@ -970,3 +970,191 @@
   pointer-events: none;
 }
 .gloss-tip[hidden] { display: none; }
+
+/* ─── PRODUCTS · detail panel (reuses .kd-essential-deep base; Products surface) ──
+     Clicking a product row (or an essentials "FOUND IN YGY VAULT" chip) opens this
+     full label panel: price band → per-component serving/directions/supplement-facts/
+     blends/other-ingredients. Same visual language as the condition deep-dive. */
+#drawer-knowledge-mount .kd-product-row.is-selected {
+  border-color: var(--ds-accent);
+  border-left-color: var(--ds-accent);
+  box-shadow: 0 2px 10px -3px rgba(255, 126, 60, 0.22);
+}
+
+#drawer-knowledge-mount .kd-product-deep__price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--ds-space-3);
+  margin: var(--ds-space-2) 0 var(--ds-space-3);
+  padding: var(--ds-space-2) var(--ds-space-3);
+  background: var(--ds-accent-wash);
+  border-left: 2px solid var(--ds-accent);
+  border-radius: var(--ds-radius-xs);
+}
+#drawer-knowledge-mount .kd-product-deep__price-item {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-sm);
+  font-weight: 700;
+  color: var(--ds-accent-deep);
+}
+#drawer-knowledge-mount .kd-product-deep__price-label {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  color: var(--ds-ink-faint);
+  font-weight: 600;
+  margin-right: 4px;
+}
+#drawer-knowledge-mount .kd-product-deep__price-note {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  color: var(--ds-ink-faint);
+  margin-left: auto;
+}
+
+#drawer-knowledge-mount .kd-product-comp {
+  border-top: 1px solid var(--ds-rule-soft);
+  padding-top: var(--ds-space-3);
+  margin-top: var(--ds-space-3);
+}
+#drawer-knowledge-mount .kd-product-comp:first-of-type {
+  border-top: 0;
+  margin-top: 0;
+  padding-top: 0;
+}
+#drawer-knowledge-mount .kd-product-comp__label {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-tech);
+  font-weight: 700;
+  margin-bottom: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-product-comp__meta {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+  margin-bottom: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-product-comp__directions {
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-mini);
+  line-height: 1.5;
+  color: var(--ds-ink-medium);
+  margin: 0 0 var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-product-comp__directions strong {
+  color: var(--ds-accent-deep);
+  font-weight: 600;
+}
+#drawer-knowledge-mount .kd-product-comp__macros {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide);
+  color: var(--ds-ink-faint);
+  margin-bottom: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-product-comp__sub {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-widest);
+  text-transform: uppercase;
+  color: var(--ds-accent);
+  font-weight: 600;
+  margin: var(--ds-space-3) 0 var(--ds-space-1);
+}
+
+#drawer-knowledge-mount .kd-product-nuts {
+  display: flex;
+  flex-direction: column;
+}
+#drawer-knowledge-mount .kd-product-nut {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--ds-space-3);
+  padding: 3px 0;
+  border-bottom: 1px dotted var(--ds-rule-soft);
+}
+#drawer-knowledge-mount .kd-product-nut__name {
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-mini);
+  color: var(--ds-ink);
+  font-weight: 500;
+}
+#drawer-knowledge-mount .kd-product-nut__form {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  color: var(--ds-ink-faint);
+  text-transform: none;
+  letter-spacing: 0;
+}
+#drawer-knowledge-mount .kd-product-nut__amt {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-mini);
+  color: var(--ds-ink-medium);
+  white-space: nowrap;
+  display: flex;
+  gap: var(--ds-space-2);
+  align-items: baseline;
+}
+#drawer-knowledge-mount .kd-product-nut__dv {
+  font-size: var(--ds-text-micro);
+  color: var(--ds-ink-faint);
+}
+
+#drawer-knowledge-mount .kd-product-blend {
+  background: var(--ds-paper-light);
+  border: 1px solid var(--ds-rule-soft);
+  border-radius: var(--ds-radius-xs);
+  padding: var(--ds-space-2) var(--ds-space-3);
+  margin-bottom: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-product-blend__head {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-mini);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--ds-ink);
+  margin-bottom: 2px;
+}
+#drawer-knowledge-mount .kd-product-blend__labeled {
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-micro);
+  line-height: 1.5;
+  color: var(--ds-ink-soft);
+}
+
+#drawer-knowledge-mount .kd-product-comp__other {
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-micro);
+  line-height: 1.5;
+  color: var(--ds-ink-soft);
+  margin-top: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-product-comp__other-label {
+  font-family: var(--ds-font-mono);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  color: var(--ds-ink-faint);
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+/* Essentials "FOUND IN YGY VAULT" chips are clickable (-> product detail panel) --
+   signal it: pointer cursor + a hover invert so they read as interactive. */
+#drawer-knowledge-mount .kd-essential-deep__product-chip {
+  cursor: pointer;
+  transition: background var(--ds-motion-fast) var(--ds-ease-out), color var(--ds-motion-fast) var(--ds-ease-out);
+}
+#drawer-knowledge-mount .kd-essential-deep__product-chip:hover {
+  background: var(--ds-tech);
+  color: var(--ds-paper-light);
+}
