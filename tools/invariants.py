@@ -1096,6 +1096,45 @@ def check_product_registry_resolves():
     return False, f"product registry resolve FAIL: {('; '.join(fails))[:200] or head}"
 
 
+def check_products_verify():
+    """Products pillar (eden/products/products.json) structural + prose-containment integrity.
+    Delegates to eden/tools/products_verify.py (one source, no duplication): exit 0 = clean.
+    Bootstrap-guarded until the pillar exists. Recomputed over the sealed pillar each run."""
+    verify = ROOT / "eden" / "tools" / "products_verify.py"
+    products = ROOT / "eden" / "products" / "products.json"
+    if not (verify.exists() and products.exists()):
+        return True, "eden/products not installed (bootstrap-guard)"
+    env = dict(os.environ)
+    env.setdefault("PYTHONUTF8", "1")
+    r = subprocess.run([sys.executable, str(verify)], capture_output=True, text=True, env=env)
+    out = (r.stdout or "").strip().splitlines()
+    tail = out[-1] if out else (r.stderr or "").strip()[:160]
+    if r.returncode == 0:
+        return True, tail
+    return False, f"products_verify FAIL: {tail}"
+
+
+def check_products_hash_integrity():
+    """Eden's wall for the Products pillar: products.json's LF-content hash must match its golden
+    sibling. Bootstrap-safe until the user seals (eden/tools/products_seal.py writes the golden).
+    Any drift after sealing = RED -- the scanner/user path can never silently rewrite the pillar.
+    LF-normalized (clone/CRLF-stable). Truth anchor: deterministic hash."""
+    import hashlib
+    products = ROOT / "eden" / "products" / "products.json"
+    golden = products.parent / (products.name + ".golden.sha256")
+    if not products.exists():
+        return True, "eden/products/products.json missing (bootstrap-guard)"
+    if not golden.exists():
+        return True, "products.json not yet sealed (no golden; bootstrap-guard -- run eden/tools/products_seal.py)"
+    lf = products.read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n")
+    actual = hashlib.sha256(lf.encode("utf-8")).hexdigest()
+    want = golden.read_text(encoding="utf-8").strip()
+    if actual != want:
+        return False, (f"products.json hash drift! golden={want[:16]}... actual={actual[:16]}... -- "
+                       f"the sealed pillar was modified without re-sealing. Revert or re-run products_seal.py.")
+    return True, f"products.json matches golden ({actual[:16]}...)"
+
+
 def check_corpus_runtime_purity():
     """Phase alpha — the shipped dashboard bundle must make no LLM / external-network
     call (offline-forever; proposal section 5). Greps dist/main.js for LLM-SDK +
@@ -2377,6 +2416,22 @@ INVARIANTS = [
         truth_anchor="deterministic re-run of eden/tools/nutrient_resolve.py over the sealed products.json x catalog/nutrients.json each run (exit 0 = all resolve/classify + zero collisions + known values); no stale-to-stale comparison",
         severity="critical",
         lesson_ref="Phase F chunk 2 (2026-07-08) -- externalizing the resolver's alias table to the Catalog pillar + canonicalizing the botanical vocabulary; the unit-conversion self-checks immediately caught a latent canonical_unit bug (mcg vitamins keyed by display-name, not slug). memory: substance-registry-and-triage-buffer",
+    ),
+    Invariant(
+        name="products_verify",
+        description="the Products pillar (eden/products/products.json) is structurally sound + prose-contained: every record shape valid, amounts are composition (never a Wallach target), and the only long free-text token is a blend's bounded as_labeled (R4/R5). A malformed record or leaked prose is RED",
+        check_fn=check_products_verify,
+        truth_anchor="deterministic re-run of eden/tools/products_verify.py over the sealed products.json each run (exit 0 = clean); no stale-to-stale comparison",
+        severity="critical",
+        lesson_ref="Phase F seal (2026-07-08) -- promoting the products build-time verifier to a live board gate at the pillar seal, mirroring corpus_integrity/catalog_integrity. memory: phase-f-product-db-underway",
+    ),
+    Invariant(
+        name="products_hash_integrity",
+        description="Eden's wall for the Products pillar: products.json's LF-content hash matches its *.golden.sha256 (written by the USER-approved products_seal.py). Bootstrap-safe pre-seal; after sealing, any drift = RED, so the scanner/user path can never silently rewrite the sealed composition",
+        check_fn=check_products_hash_integrity,
+        truth_anchor="math -- deterministic LF-normalized SHA-256 of products.json vs the locked golden, recomputed each run (clone/CRLF-stable)",
+        severity="critical",
+        lesson_ref="Phase F seal (2026-07-08) -- the sealed-canonical rule extended to Pillar 2; sealing is the user's act (products_seal.py), the golden is the anti-tamper anchor. memory: phase-f-product-db-underway",
     ),
     Invariant(
         name="catalog_integrity",

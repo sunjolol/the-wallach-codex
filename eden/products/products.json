@@ -3,7 +3,8 @@
     "purpose": "The Youngevity Product DB (Pillar 2) — SEALED, hand-built composition source. Pure label facts only; NO prose, NO Wallach claims, NO targets (§00.A: composition only). Prices + marketing description live in the volatile sidecar prices.json, never here. Every ingredient/nutrient resolves to the Catalog nutrient/botanical registry (Phase F rebuild).",
     "schema_version": 1,
     "sealed": false,
-    "build_status": "UNDER CONSTRUCTION — extracting 204 labels alphabetically in batches; seal once complete + user-signed."
+    "build_status": "UNDER CONSTRUCTION — extracting 204 labels alphabetically in batches; seal once complete + user-signed.",
+    "sealed_at": "2026-07-08T17:04:24+00:00"
   },
   "products": {
     "18-and-20-daily-super-blend": {

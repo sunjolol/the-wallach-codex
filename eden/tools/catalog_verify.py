@@ -32,8 +32,9 @@ ROOT = Path(__file__).resolve().parent.parent.parent
 CATALOG = ROOT / "eden" / "catalog"
 COND_PATH = CATALOG / "conditions.json"
 SYMP_PATH = CATALOG / "symptoms.json"
+NUTR_PATH = CATALOG / "nutrients.json"
 
-FILES = [COND_PATH, SYMP_PATH]
+FILES = [COND_PATH, SYMP_PATH, NUTR_PATH]
 # conditions/symptoms use snake_case slugs. The rule: lowercase alphanumerics joined by a
 # SINGLE separator, never a space.
 SLUG_RE = re.compile(r"^[a-z0-9]+([_-][a-z0-9]+)*$")
@@ -114,8 +115,16 @@ def run_checks():
             fails.append(f"[symp] {slug} missing display_name")
     _count(fails, "symptoms", symp, "symptoms", len(symptoms))
 
+    # ---- nutrients (Phase F registry: essential aliases + canonical forms + substance vocab) ----
+    nutr = load(NUTR_PATH)
+    if nutr.get("schema_version") != 1:
+        fails.append("nutrients.json schema_version != 1")
+    for key in ("essential_aliases", "canonical_forms", "nutrients"):
+        if not isinstance(nutr.get(key), dict):
+            fails.append(f"nutrients.json missing/invalid '{key}'")
+
     infos.append(f"{len(conditions)} conditions ({n_umb} umbrellas, {n_syn} synonyms), "
-                 f"{len(symptoms)} symptoms")
+                 f"{len(symptoms)} symptoms, {len(nutr.get('nutrients', {}))} substances")
     return fails, infos
 
 
