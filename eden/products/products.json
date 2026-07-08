@@ -25569,9 +25569,9 @@
         }
       ]
     },
-    "youngevity-cardiobeets": {
-      "product_id": "youngevity-cardiobeets",
-      "name": "Youngevity CardioBeets™ (195 g)",
+    "cardiobeets": {
+      "product_id": "cardiobeets",
+      "name": "CardioBeets™ (195 g)",
       "sku": "USYG100071",
       "ygy_id": "321",
       "components": [
@@ -25648,6 +25648,469 @@
             "Rebaudioside A (from Stevia rebaudiana leaf)"
           ],
           "source_label": "usyg100071_cardiobeets-0319_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "viaviente": {
+      "product_id": "viaviente",
+      "name": "ViaViente Whole Food Puree (1-8 oz Bottle)",
+      "sku": "USVV100000",
+      "ygy_id": "6060",
+      "variants": [
+        {
+          "sku": "USVV1002",
+          "ygy_id": "6067",
+          "name": "ViaViente Whole Food Puree 2 Pack (2-8oz Bottles)",
+          "form": "liquid",
+          "source_label": "usvv100000_viaviente-8oz-1219_panel-900x1200.jpg"
+        },
+        {
+          "sku": "USVV1012",
+          "ygy_id": "6070",
+          "name": "ViaViente Whole Food Puree 12-Pack (12-8oz Bottles)",
+          "form": "liquid",
+          "source_label": "usvv100000_viaviente-8oz-1219_panel-900x1200.jpg"
+        }
+      ],
+      "components": [
+        {
+          "form": "liquid",
+          "serving_size": "7.4 ml (1/2 Tablespoon)",
+          "servings_per_container": 32,
+          "macros": {
+            "calories": {
+              "amount": 25,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 6,
+              "unit": "g",
+              "pct_dv": 2
+            },
+            "total_sugars": {
+              "amount": 5,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 4,
+              "unit": "g",
+              "pct_dv": 8
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": 1
+            },
+            {
+              "name": "Potassium",
+              "amount": 80,
+              "unit": "mg",
+              "pct_dv": 2
+            },
+            {
+              "name": "Vilcabamba Trace Minerals",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Fruit Blend",
+              "total": {
+                "amount": 8300,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Apple blend (fruit powder and juice concentrate), Grape blend (seed, skin, and juice concentrate), Cranberry Extract (fruit), Blueberry Extract (fruit), Aloe Vera Juice Extract (leaf), Noni Extract (fruit), Lycium Extract (fruit), Elderberry Powder (fruit), Bilberry Extract (fruit), Pomegranate Extract (fruit), Plum Powder (fruit), Maca Extract (root).",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Apple blend",
+                  "form": "fruit powder and juice concentrate"
+                },
+                {
+                  "pos": 2,
+                  "name": "Grape blend",
+                  "form": "seed, skin, and juice concentrate"
+                },
+                {
+                  "pos": 3,
+                  "name": "Cranberry",
+                  "form": "extract",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 4,
+                  "name": "Blueberry",
+                  "form": "extract",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 5,
+                  "name": "Aloe Vera",
+                  "form": "juice extract",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 6,
+                  "name": "Noni",
+                  "form": "extract",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 7,
+                  "name": "Lycium",
+                  "form": "extract",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 8,
+                  "name": "Elderberry",
+                  "form": "powder",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 9,
+                  "name": "Bilberry",
+                  "form": "extract",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 10,
+                  "name": "Pomegranate",
+                  "form": "extract",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 11,
+                  "name": "Plum",
+                  "form": "powder",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 12,
+                  "name": "Maca",
+                  "form": "extract",
+                  "part": "root"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Water (10%)",
+            "Potassium citrate",
+            "Citric acid (for freshness)"
+          ],
+          "source_label": "usvv100000_viaviente-8oz-1219_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "vitali-c-plus": {
+      "product_id": "vitali-c-plus",
+      "name": "Vitali-C Plus",
+      "sku": "USLF070044",
+      "ygy_id": "9930",
+      "components": [
+        {
+          "form": "powder stick",
+          "serving_size": "1 Stick (2.25 g)",
+          "servings_per_container": 32,
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 1000,
+              "unit": "mg",
+              "pct_dv": 1111,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Zinc",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": 136,
+              "form": "from zinc citrate"
+            },
+            {
+              "name": "Sodium",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 4,
+              "form": "from sodium bicarbonate"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Antioxidant Blend",
+              "total": {
+                "amount": 147,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Organic Acerola Fruit, Beet Juice Extract, Bilberry Fruit Extract, Black Currant Fruit Extract, Elderberry Fruit Extract, and Quercetin.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Acerola",
+                  "form": "organic",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 2,
+                  "name": "Beet Juice",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Bilberry",
+                  "form": "extract",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 4,
+                  "name": "Black Currant",
+                  "form": "extract",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 5,
+                  "name": "Elderberry",
+                  "form": "extract",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 6,
+                  "name": "Quercetin"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Citric Acid",
+            "Organic Tapioca Fiber",
+            "Natural Mixed Berry Flavor",
+            "Stevia Leaf Extract"
+          ],
+          "source_label": "vitalic_pouch_suppfacts_0126.jpg"
+        }
+      ]
+    },
+    "vitalstart": {
+      "product_id": "vitalstart",
+      "name": "VitalSTART™ (Stick Packs)",
+      "sku": "USLF072007",
+      "ygy_id": "9943",
+      "components": [
+        {
+          "form": "powder stick",
+          "serving_size": "1 Stick (10 g)",
+          "servings_per_container": null,
+          "macros": {
+            "calories": {
+              "amount": 10,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 1
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 120,
+              "unit": "mg",
+              "pct_dv": 133,
+              "form": "as Calcium ascorbate"
+            },
+            {
+              "name": "Vitamin D3",
+              "amount": 10,
+              "unit": "mcg",
+              "pct_dv": 50,
+              "label_iu": 400,
+              "form": "as Cholecalciferol"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 1.5,
+              "unit": "mg",
+              "pct_dv": 125,
+              "form": "Thiamin mononitrate"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 1.7,
+              "unit": "mg",
+              "pct_dv": 131
+            },
+            {
+              "name": "Niacin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 100,
+              "form": "as Niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 294,
+              "form": "Pyridoxine hydrochloride"
+            },
+            {
+              "name": "Folate",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": 50,
+              "form": "as Folic acid"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 15,
+              "unit": "mcg",
+              "pct_dv": 625,
+              "form": "Methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 250,
+              "unit": "mcg",
+              "pct_dv": 833
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 200,
+              "form": "as Calcium pantothenate"
+            },
+            {
+              "name": "Calcium",
+              "amount": 120,
+              "unit": "mg",
+              "pct_dv": 9,
+              "form": "as Calcium citrate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 120,
+              "unit": "mg",
+              "pct_dv": 29,
+              "form": "as magnesium gluconate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 4,
+              "unit": "mg",
+              "pct_dv": 36,
+              "form": "as zinc gluconate"
+            },
+            {
+              "name": "Manganese",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 43,
+              "form": "as Manganese citrate"
+            },
+            {
+              "name": "ViNitrox",
+              "amount": 500,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "Vitis vinifera and Malus pumila extract"
+            },
+            {
+              "name": "AstraGin",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "Astragalus & Panax notoginseng root extracts"
+            },
+            {
+              "name": "Astaxanthin",
+              "amount": 12,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from Haematococcus pluvialis microalgae"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Formulation for Cardiovascular support",
+              "total": {
+                "amount": 5432,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "L-Citrulline, Beetroot extract (Beta vulgaris), L-Carnitine, Taurine, Citicoline, Citrin®K (Garcinia cambogia extract, fruit), Luo Han Guo fruit extract, uC3® Clear (Curcuma longa extract, complex), Saberry® (Indian gooseberry; Emblica officinalis extract, fruit), and Pine bark extract.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "L-Citrulline"
+                },
+                {
+                  "pos": 2,
+                  "name": "Beetroot",
+                  "form": "extract",
+                  "latin": "Beta vulgaris"
+                },
+                {
+                  "pos": 3,
+                  "name": "L-Carnitine"
+                },
+                {
+                  "pos": 4,
+                  "name": "Taurine"
+                },
+                {
+                  "pos": 5,
+                  "name": "Citicoline"
+                },
+                {
+                  "pos": 6,
+                  "name": "Citrin K",
+                  "form": "Garcinia cambogia extract",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 7,
+                  "name": "Luo Han Guo",
+                  "form": "extract",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 8,
+                  "name": "uC3 Clear",
+                  "form": "Curcuma longa extract, complex"
+                },
+                {
+                  "pos": 9,
+                  "name": "Saberry",
+                  "form": "extract",
+                  "part": "fruit",
+                  "latin": "Emblica officinalis"
+                },
+                {
+                  "pos": 10,
+                  "name": "Pine bark",
+                  "form": "extract"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Raspberry Fruit (Dried)",
+            "Natural Raspberry Flavor"
+          ],
+          "source_label": "vitalstart_supp_panel_900x1200_3.jpg"
         }
       ]
     }
