@@ -80,6 +80,19 @@
         "eden/products/prices.json"
       ],
       "note": "The full per-product DISPLAY record (whole label structure + an indicative YGY listing price {retail,wholesale} joined by ygy_id) read by the Knowledge Products surface (views/knowledge-products.ts): the Products list, the product detail panel, and the essentials FOUND-IN-VAULT chips. DISPLAY ONLY (§00.A) -- composition is what a product CONTAINS + price is a volatile YGY listing; neither feeds coverage. Distinct from the slim regimen-label-lookup vault (regimen/coverage path). Deterministic (NO timestamp) so build_fn byte-compares to disk. Marketing prose forbidden by no_product_marketing_prose."
+    },
+    {
+      "artifact": "dashboard/assets/data/nutrient-resolver-data.json",
+      "generator": "eden/tools/nutrient_resolver_embed.py",
+      "build_fn": "build_data",
+      "write_fn": "write_data",
+      "compare": "json",
+      "inputs": [
+        "eden/catalog/nutrients.json",
+        "eden/corpus/essentials-canon.json",
+        "eden/products/products.json"
+      ],
+      "note": "The runtime IDENTITY resolver map (nutrient label name -> canon slug) read by core/nutrient-resolver.ts (esbuild JSON import) so the Coverage matcher resolves through the SAME tables as the Python resolver (A2, 2026-07-08). GENERATED from nutrient_resolve: registry essential_aliases (nutrients.json) + canon mineral/amino display names (essentials-canon) + the resolver's FA_PATTERNS + stereo prefixes, so it cannot drift from resolve(). Deterministic (sorted keys, NO timestamp) so build_fn byte-compares to disk. write_data() ALSO emits the parity fixture sibling dashboard/assets/js/src/core/__fixtures__/nutrient-resolver-fixture.json (every distinct pillar (name,form) -> resolve()'s slug; gated by nutrient_resolver_parity, NOT the manifest). Composition-only (SS00.A): identity never sets a Wallach target."
     }
   ],
   "_accounted_purpose": "The COMPLETENESS half of R1 (crack #1 fix, 2026-07-06). derived_artifacts_fresh proves the `artifacts` above are fresh; it does NOT prove the list is complete. The data_artifacts_accounted invariant requires EVERY dashboard/assets/data/*.json to appear either in `artifacts` (derived + freshness-gated) or here in `accounted` (hand-authored or gated by a dedicated invariant), each with a disposition + reason. A data file in neither list is RED -- no silently-added hand-maintained artifact can ship. disposition = hand_authored | externally_gated.",

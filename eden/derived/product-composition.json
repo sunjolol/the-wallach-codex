@@ -5766,12 +5766,12 @@
     "omega-3": {
       "display_name": "Omega-3",
       "unit": "mg",
-      "product_count": 6,
+      "product_count": 7,
       "products": [
         {
           "product_id": "reverse",
-          "amount": 1200.0,
-          "rows": 2
+          "amount": 2400.0,
+          "rows": 3
         },
         {
           "product_id": "ultimate-efa-plus",
@@ -5797,6 +5797,11 @@
           "product_id": "ultimate-smart-fx",
           "amount": 280.0,
           "rows": 2
+        },
+        {
+          "product_id": "sta-clear",
+          "amount": 25.0,
+          "rows": 1
         }
       ]
     },
@@ -7828,10 +7833,9 @@
     },
     "fish-oil": {
       "name": "Fish Oil",
-      "product_count": 2,
+      "product_count": 1,
       "products": [
-        "sta-cardio",
-        "sta-clear"
+        "sta-cardio"
       ]
     },
     "flax": {
@@ -9684,13 +9688,6 @@
         "zinc-immune-support"
       ]
     },
-    "omega-3-fatty-acids": {
-      "name": "Omega-3 fatty acids",
-      "product_count": 1,
-      "products": [
-        "reverse"
-      ]
-    },
     "onion": {
       "name": "Onion",
       "product_count": 4,
@@ -11518,7 +11515,7 @@
   },
   "_stats": {
     "essentials_with_a_product": 51,
-    "distinct_botanicals": 655,
+    "distinct_botanicals": 654,
     "unconverted_essential_rows": [
       {
         "product_id": "root-beer-belly",

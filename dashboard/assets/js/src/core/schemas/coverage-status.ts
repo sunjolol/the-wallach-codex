@@ -31,6 +31,8 @@ export const RegimenNutrientSchema = z.object({
   name: z.string(),
   amount: z.coerce.number(),
   unit: z.string().optional(),
+  /** Optional label form (e.g. "Omega 3") — feeds fatty-acid resolution (A2). */
+  form: z.string().nullable().optional(),
 }).passthrough();
 export type RegimenNutrient = z.infer<typeof RegimenNutrientSchema>;
 

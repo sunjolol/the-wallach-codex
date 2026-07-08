@@ -1312,6 +1312,109 @@ def check_amounts_wallach_only():
     return True, f"all {numeric} numeric coverage target(s) trace to a Wallach dose claim (R2 clean)"
 
 
+def check_nutrient_resolver_parity():
+    """A2 / §00.B #3 -- the runtime IDENTITY resolver == the Python source of truth.
+    The Coverage matcher (core/nutrient-resolver.ts) resolves label names to canon slugs
+    from the GENERATED nutrient-resolver-data.json. Two proofs over the REAL input universe
+    (every distinct (name, form) in the sealed Products pillar):
+      (a) FIXTURE FRESH -- the committed parity fixture equals a fresh run of
+          nutrient_resolve.resolve() over the pillar, so it can never go stale vs the Python
+          source of truth (the vitest checks the TS code against this same fixture).
+      (b) ARTIFACT FAITHFUL -- a resolver driven ONLY by the emitted nutrient-resolver-data.json
+          reproduces resolve()'s output on every input, so the map the app inlines encodes the
+          resolver exactly.
+    Together with the vitest (TS == fixture): the TS runtime resolver == Python resolve().
+    Truth-anchored on a live re-derive from the sealed pillar each run."""
+    import importlib.util as _ilu
+    art_p = ROOT / "dashboard" / "assets" / "data" / "nutrient-resolver-data.json"
+    fix_p = (ROOT / "dashboard" / "assets" / "js" / "src" / "core" / "__fixtures__"
+             / "nutrient-resolver-fixture.json")
+    resolver_p = ROOT / "eden" / "tools" / "nutrient_resolve.py"
+    embed_p = ROOT / "eden" / "tools" / "nutrient_resolver_embed.py"
+    for p in (art_p, fix_p, resolver_p, embed_p):
+        if not p.exists():
+            return True, f"{p.name} not installed (bootstrap-guard)"
+    sys.path.insert(0, str(ROOT / "eden" / "tools"))
+    sys.path.insert(0, str(ROOT / "tools"))
+
+    def _load(p):
+        spec = _ilu.spec_from_file_location(p.stem, p)
+        mod = _ilu.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        return mod
+
+    try:
+        emb = _load(embed_p)  # imports nutrient_resolve internally
+    except Exception as e:
+        return False, f"resolver embed import failed: {e}"
+
+    # (a) fixture freshness vs live resolve()
+    try:
+        expected = emb.build_fixture()
+        on_disk = json.loads(fix_p.read_text(encoding="utf-8"))
+    except Exception as e:
+        return False, f"fixture load/build failed: {e}"
+    if on_disk != expected:
+        return False, ("nutrient-resolver-fixture.json is STALE vs live nutrient_resolve.resolve() "
+                       "-- run `python eden/tools/build_embeds.py`")
+
+    # (b) artifact faithfulness -- an artifact-driven resolver must match resolve() on every input
+    try:
+        art = json.loads(art_p.read_text(encoding="utf-8"))
+        fa = [(slug, re.compile(pat)) for slug, pat in art["fatty_acid_patterns"]]
+        od = re.compile(art["omega_digit_pattern"])
+        stereo = tuple(art["stereo_prefixes"])
+        vit, min_al = art["vitamin_aliases"], art["mineral_aliases"]
+        min_nm, amino = art["mineral_names"], art["amino_names"]
+    except Exception as e:
+        return False, f"resolver artifact invalid: {e}"
+
+    def _clean(name):
+        n = name or ""
+        for ch in "™®©":
+            n = n.replace(ch, "")
+        return re.sub(r"\s+", " ", n).strip()
+
+    def art_resolve(name, form):
+        # Faithful mirror of nutrient_resolve.resolve(), driven ONLY by the artifact tables.
+        if not name:
+            return None
+        n = re.sub(r"\s+", " ", re.sub(r"\s*\([^)]*\)\s*", " ", _clean(name).lower())).strip()
+        s = f"{name} {form or ''}".lower()
+        om = od.search(s)
+        if om:
+            return f"omega-{om.group(1)}"
+        for slug, rx in fa:
+            if rx.search(s):
+                return slug
+        if n in vit:
+            return vit[n]
+        if n in min_nm:
+            return min_nm[n]
+        if n in min_al:
+            return min_al[n]
+        a = n
+        for p in stereo:
+            if a.startswith(p):
+                a = a[len(p):]
+                break
+        a = a.split(" ")[0].strip()
+        if a in amino:
+            return amino[a]
+        return None
+
+    mism = []
+    for row in expected:
+        got = art_resolve(row["name"], row["form"])
+        if got != row["slug"]:
+            mism.append(f"{row['name']!r}(form={row['form']!r}): artifact={got} vs resolve={row['slug']}")
+    if mism:
+        return False, ("resolver ARTIFACT disagrees with nutrient_resolve.resolve() on "
+                       f"{len(mism)} input(s): " + "; ".join(mism[:6]))
+    return True, (f"runtime resolver == Python resolve() over {len(expected)} distinct pillar "
+                  "substance names (fixture fresh + artifact faithful)")
+
+
 def check_search_only_indices_excluded():
     """Tier-2 / "search-only" claims (the Ch7 modality survey: color/light therapy,
     aromatherapy, faith-healing, Schuessler, Bach, chiropractic, etc.) feed ONLY the
@@ -2416,6 +2519,14 @@ INVARIANTS = [
         truth_anchor="dashboard/assets/data/essentials-targets-data.json numeric targets x sealed corpus dose claims (eden/corpus/claims/*), joined by essentials-canon layout_key->slug, recomputed each run",
         severity="critical",
         lesson_ref="Blueprint Phase C / Charter R2 (2026-07-05) -- the poison purge: targets used to sum Youngevity Healthy Body Start Pak labels, letting Youngevity define recommended amounts; now every number is a Wallach dose claim carrying its source_claim_id. memory: wallach-drives-recommendations-youngevity-composition",
+    ),
+    Invariant(
+        name="nutrient_resolver_parity",
+        description="A2 / SS00.B #3 -- the runtime identity resolver (core/nutrient-resolver.ts, reading nutrient-resolver-data.json) == the Python source of truth nutrient_resolve.resolve(): the committed parity fixture is FRESH vs live resolve() AND an artifact-driven resolver reproduces resolve() on every distinct pillar substance name; with the vitest (TS == fixture) this proves the TS runtime matcher == the Python resolver (one resolution truth, no drift across the boundary)",
+        check_fn=check_nutrient_resolver_parity,
+        truth_anchor="every distinct (name,form) in eden/products/products.json -> nutrient_resolve.resolve() re-derived each run, compared to the committed core/__fixtures__/nutrient-resolver-fixture.json AND to an artifact-driven resolver over nutrient-resolver-data.json",
+        severity="critical",
+        lesson_ref="A2 (2026-07-08) -- unified the runtime Coverage matcher onto the registry resolver: state/coverage.ts held a hand-rolled string matcher independent of eden/tools/nutrient_resolve.py (two resolution truths; it silently dropped Thiamin -> Vitamin B1). This gate proves the single resolver cannot drift across the Python/TS boundary. memory: substance-registry-and-triage-buffer / overhaul-blueprint-active-plan",
     ),
     Invariant(
         name="search_only_indices_excluded",

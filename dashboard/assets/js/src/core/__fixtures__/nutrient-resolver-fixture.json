@@ -1,0 +1,6802 @@
+[
+  {
+    "name": "5-HTP",
+    "form": "L-5-hydroxytryptophan",
+    "slug": null
+  },
+  {
+    "name": "5HTP",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Acacia Fiber",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Acai",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Acai",
+    "form": "juice powder",
+    "slug": null
+  },
+  {
+    "name": "Acai berry",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Acerola",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Acerola",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Acerola",
+    "form": "juice powder",
+    "slug": null
+  },
+  {
+    "name": "Acerola",
+    "form": "organic",
+    "slug": null
+  },
+  {
+    "name": "Acerola",
+    "form": "powder extract",
+    "slug": null
+  },
+  {
+    "name": "Acetyl-L-Carnitine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Acetyl-L-Carnitine HCl",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Acid Protease",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Acid-Stable Protease",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Activated Charcoal",
+    "form": "from coconut shells",
+    "slug": null
+  },
+  {
+    "name": "Adrenal Substance",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "African Mango",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "African Wild Mango",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Agave",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Agave inulin",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Alanine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Alaria",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Alaria esculenta",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Alfalfa",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Alfalfa",
+    "form": "juice",
+    "slug": null
+  },
+  {
+    "name": "Alfalfa",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Alfalfa Grass",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Alfalfa grass",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "AlgaeCal",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Algas calcareas",
+    "form": "organic",
+    "slug": null
+  },
+  {
+    "name": "Aloe Vera",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Aloe Vera",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Aloe Vera",
+    "form": "juice extract",
+    "slug": null
+  },
+  {
+    "name": "Aloe Vera",
+    "form": "organic, freeze-dried",
+    "slug": null
+  },
+  {
+    "name": "Alpha Galactosidase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Alpha-Linolenic Acid (ALA)",
+    "form": "Omega 3",
+    "slug": "omega-3"
+  },
+  {
+    "name": "Alpha-Lipoic Acid",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Alpha-galactosidase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "American Ginseng",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Amla",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Amla",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Amla",
+    "form": "organic",
+    "slug": null
+  },
+  {
+    "name": "Amla",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Amylase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Amylase",
+    "form": "fungal",
+    "slug": null
+  },
+  {
+    "name": "Andrographis",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Angelica",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Annatto",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Apple",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Apple",
+    "form": "juice concentrate",
+    "slug": null
+  },
+  {
+    "name": "Apple Cider Vinegar",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Apple blend",
+    "form": "fruit powder and juice concentrate",
+    "slug": null
+  },
+  {
+    "name": "Apple cider vinegar",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Apple fiber",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Apple peel",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Aquamin Seaweed",
+    "form": "containing 72 trace minerals",
+    "slug": null
+  },
+  {
+    "name": "Arginine",
+    "form": null,
+    "slug": "arginine"
+  },
+  {
+    "name": "Arginine",
+    "form": "as L-arginine hydrochloride",
+    "slug": "arginine"
+  },
+  {
+    "name": "Arjuna",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Aronia",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Aronia berry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Artichoke",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Ascophyllum nodosum",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Ascorbic acid",
+    "form": null,
+    "slug": "vitamin-c"
+  },
+  {
+    "name": "Ashwagandha",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Ashwagandha",
+    "form": "Sensoril extract",
+    "slug": null
+  },
+  {
+    "name": "Ashwagandha",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Aspartic Acid",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Aspartic acid",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Astaxanthin",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Astaxanthin",
+    "form": "from Haematococcus pluvialis",
+    "slug": null
+  },
+  {
+    "name": "Astaxanthin",
+    "form": "from Haematococcus pluvialis microalgae",
+    "slug": null
+  },
+  {
+    "name": "Astaxanthin-enriched algae",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "AstraGin",
+    "form": "Astragalus & Panax notoginseng root extracts",
+    "slug": null
+  },
+  {
+    "name": "Astragalus",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Astragalus",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Açaí",
+    "form": "puree",
+    "slug": null
+  },
+  {
+    "name": "Açaí Berry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bacillus coagulans",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bacillus coagulans",
+    "form": "microencapsulated culture, 100 million viable cells, with prebiotic cellulose fiber",
+    "slug": null
+  },
+  {
+    "name": "Bacillus subtilis",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bacillus subtillus",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bacopa",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bacopa",
+    "form": "Bacopin",
+    "slug": null
+  },
+  {
+    "name": "Bacopa",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Bacopa Monnieri",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Bacopa monnieri",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bamboo",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Banaba",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Banana",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Banana",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Banana Fruit",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Banana Powder",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Banana puree",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bancha Green Tea",
+    "form": "organic",
+    "slug": null
+  },
+  {
+    "name": "Baobab",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Barberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Basil",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bayberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bee Pollen",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Beet",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Beet",
+    "form": "juice",
+    "slug": null
+  },
+  {
+    "name": "Beet",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Beet Fiber",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Beet Juice",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Beet Juice",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Beet root",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Beet root",
+    "form": "organic powder",
+    "slug": null
+  },
+  {
+    "name": "Beet root",
+    "form": "rich in dimethylglycine",
+    "slug": null
+  },
+  {
+    "name": "Beetroot",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Berberine",
+    "form": "as HCl",
+    "slug": null
+  },
+  {
+    "name": "Beta 1,3 Glucan Complex",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Beta 1,3/1,6 D Glucan Complex",
+    "form": "from S. cerevisiae",
+    "slug": null
+  },
+  {
+    "name": "Beta Glucanase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Beta Sitosterol",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Beta-glucanase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Betaine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Betaine HCl",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Betaine Hydrochloride",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bifidobacterium Longum",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bifidobacterium bifidum",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bifidobacterium breve",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bifidobacterium breve postbiotic",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bifidobacterium infantis",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bifidobacterium lactis",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bifidobacterium longum",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bilberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bilberry",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Bilberry",
+    "form": "fruit extract (25% proanthocyanidins)",
+    "slug": null
+  },
+  {
+    "name": "Bilberry",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "BioPerine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "BioPerine",
+    "form": "Black Pepper Extract",
+    "slug": null
+  },
+  {
+    "name": "Biotin",
+    "form": null,
+    "slug": "biotin"
+  },
+  {
+    "name": "Bismuth Citrate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bitter Melon",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bitter Melon",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Bitter Melon",
+    "form": "fruit powder",
+    "slug": null
+  },
+  {
+    "name": "Black Cohosh",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Black Cohosh",
+    "form": "root extract 4:1",
+    "slug": null
+  },
+  {
+    "name": "Black Currant",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Black Currant",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Black Currant",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Black Pepper",
+    "form": "BioPerine extract",
+    "slug": null
+  },
+  {
+    "name": "Black Pepper",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Black Pepper",
+    "form": "extract (BioPerine®)",
+    "slug": null
+  },
+  {
+    "name": "Black Pepper",
+    "form": "fruit extract (BioPerine®)",
+    "slug": null
+  },
+  {
+    "name": "Black Walnut",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Black berry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Black currant",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Blackberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Blackcurrant",
+    "form": "cassis pigment extract",
+    "slug": null
+  },
+  {
+    "name": "Bladderwrack",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Blessed Thistle",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Blue Flag",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Blue Vervain",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Blueberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Blueberry",
+    "form": "concentrate",
+    "slug": null
+  },
+  {
+    "name": "Blueberry",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Blueberry",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Blueberry Powder",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Boron",
+    "form": null,
+    "slug": "boron"
+  },
+  {
+    "name": "Boron",
+    "form": "as amino acid chelate",
+    "slug": "boron"
+  },
+  {
+    "name": "Boron",
+    "form": "as boron amino acid chelate",
+    "slug": "boron"
+  },
+  {
+    "name": "Boron",
+    "form": "as boron chelate",
+    "slug": "boron"
+  },
+  {
+    "name": "Boron",
+    "form": "as boron citrate",
+    "slug": "boron"
+  },
+  {
+    "name": "Boron",
+    "form": "as boron glycinate chelate",
+    "slug": "boron"
+  },
+  {
+    "name": "Boron",
+    "form": "as sodium borate",
+    "slug": "boron"
+  },
+  {
+    "name": "Boron",
+    "form": "as sodium tetraborate decahydrate",
+    "slug": "boron"
+  },
+  {
+    "name": "Boron",
+    "form": "from boroganic glycine",
+    "slug": "boron"
+  },
+  {
+    "name": "Boron",
+    "form": "from boron amino acid chelate",
+    "slug": "boron"
+  },
+  {
+    "name": "Boswellia serrata",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Bovine Collagen Hydrolysate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bovine Collagen Hydrolyzed",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bovine Collagen Peptides",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bovine Hydrolysate Collagen",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bovine collagen peptides",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Broccoli",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Broccoli",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Broccoli Powder",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bromelain",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bromelain",
+    "form": "1,350,000 FCC PU at time of manufacture",
+    "slug": null
+  },
+  {
+    "name": "Brown rice",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Brown rice soluble protein",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Brussel Sprouts",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Buchu",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bugleweed",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Bupleurum",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Burdock",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Burdock",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Cabbage",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Caffeine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Caffeine",
+    "form": "as caffeine anhydrous, green tea extract",
+    "slug": null
+  },
+  {
+    "name": "Caffeine",
+    "form": "from coffee bean",
+    "slug": null
+  },
+  {
+    "name": "Caffeine",
+    "form": "from coffee beans",
+    "slug": null
+  },
+  {
+    "name": "Caffeine",
+    "form": "from green coffee bean and guarana seed extract [Paullinia cupana]",
+    "slug": null
+  },
+  {
+    "name": "Caffeine",
+    "form": "natural",
+    "slug": null
+  },
+  {
+    "name": "Caffeine",
+    "form": "natural, from coffee bean",
+    "slug": null
+  },
+  {
+    "name": "Caffeine",
+    "form": "total caffeine content",
+    "slug": null
+  },
+  {
+    "name": "Cajeput",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Calcareous Marine Algae",
+    "form": "Aquamin TG",
+    "slug": null
+  },
+  {
+    "name": "Calcium",
+    "form": null,
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "Tricalcium Phosphate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as Calcium citrate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as calcium carbonate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as calcium carbonate, hydroxyapatite, citrate, ascorbate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as calcium carbonate/glycinate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as calcium carbonate/orotate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as calcium citrate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as calcium citrate and dicalcium phosphate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as calcium gluconate, dicalcium phosphate and calcium citrate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as calcium lactate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as citrate, gluconate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as citrate, gluconate (from AlgaeCal)",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as citrate, malate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as dicalcium malate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as dicalcium phosphate and calcium citrate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as dicalcium phosphate, hydroxyapatite",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as gluconate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as tri-calcium phosphate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as tricalcium phosphate, calcium citrate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "as tricalcium phosphate, citrate, gluconate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "from Aquamin Seaweed Powder",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "from Aquamin, seaweed",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "from calcium carbonate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "from calcium carbonate, lactate, gluconate, amino acid chelate (1500 mg calcium compound)",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "from seaweed",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "from seaweed, Aquamin",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "from tricalcium phosphate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "from tricalcium phosphate, calcium citrate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calcium",
+    "form": "from tricalcium phosphate, citrate",
+    "slug": "calcium"
+  },
+  {
+    "name": "Calendula",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Camu camu",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Cape Aloe",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Carbohydrate Digestive Enzymes",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Careflow Mango Fruit Powder",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Carrageen Moss",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Carrot",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Carrot",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Carrot Powder",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Cascara Sagrada",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Cascara sagrada",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Cassis Pigment",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Cat's Claw",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Catalase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Cauliflower",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Cayenne",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Cayenne",
+    "form": "concentrate",
+    "slug": null
+  },
+  {
+    "name": "Cayenne pepper",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Celery",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Celery",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Cellulase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Cetyl Myristoleate Complex",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Cetylmyristoleate (CMO)",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Ceylon Black Tea",
+    "form": "organic",
+    "slug": null
+  },
+  {
+    "name": "Chaga",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chaga",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Chamomile",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chamomile",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Chaparral",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chaste Tree",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chaste Tree",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Cherry",
+    "form": "juice powder",
+    "slug": null
+  },
+  {
+    "name": "Cherry",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Cherry Powder",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chia Seed",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chicken Collagen",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chicken Collagen Hydrolyzed",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chicken Collagen Peptides",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chicken Eggshell Membrane",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chickweed",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chicory",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chicory root inulin",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chicory root oligofructose",
+    "form": "FOS",
+    "slug": null
+  },
+  {
+    "name": "Chinese Licorice",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chlorella",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chloride",
+    "form": null,
+    "slug": "chloride"
+  },
+  {
+    "name": "Chloride",
+    "form": "as potassium chloride",
+    "slug": "chloride"
+  },
+  {
+    "name": "Chloride",
+    "form": "from potassium chloride",
+    "slug": "chloride"
+  },
+  {
+    "name": "Choline",
+    "form": null,
+    "slug": "choline"
+  },
+  {
+    "name": "Choline",
+    "form": "Bitartrate",
+    "slug": "choline"
+  },
+  {
+    "name": "Choline",
+    "form": "as bitartrate",
+    "slug": "choline"
+  },
+  {
+    "name": "Choline",
+    "form": "as choline bitartrate",
+    "slug": "choline"
+  },
+  {
+    "name": "Choline",
+    "form": "bitartrate",
+    "slug": "choline"
+  },
+  {
+    "name": "Choline",
+    "form": "from 30 mg choline bitartrate",
+    "slug": "choline"
+  },
+  {
+    "name": "Choline",
+    "form": "from choline bitartrate",
+    "slug": "choline"
+  },
+  {
+    "name": "Choline bitartrate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chondroitin Sulfate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chondroitin Sulfate",
+    "form": "bovine",
+    "slug": null
+  },
+  {
+    "name": "Chondroitin Sulfate",
+    "form": "from bovine",
+    "slug": null
+  },
+  {
+    "name": "Chondroitin sulfate sodium",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chondrus crispus",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Chromium",
+    "form": null,
+    "slug": "chromium"
+  },
+  {
+    "name": "Chromium",
+    "form": "Chromium Chelate",
+    "slug": "chromium"
+  },
+  {
+    "name": "Chromium",
+    "form": "Polynicotinate",
+    "slug": "chromium"
+  },
+  {
+    "name": "Chromium",
+    "form": "as Chromium Polynicotinate, Chromium Aspartate, Chromium Picolinate",
+    "slug": "chromium"
+  },
+  {
+    "name": "Chromium",
+    "form": "as amino acid chelate",
+    "slug": "chromium"
+  },
+  {
+    "name": "Chromium",
+    "form": "as chromium amino acid chelate",
+    "slug": "chromium"
+  },
+  {
+    "name": "Chromium",
+    "form": "as chromium chelate",
+    "slug": "chromium"
+  },
+  {
+    "name": "Chromium",
+    "form": "as chromium chloride",
+    "slug": "chromium"
+  },
+  {
+    "name": "Chromium",
+    "form": "as chromium nicotinate glycinate chelate",
+    "slug": "chromium"
+  },
+  {
+    "name": "Chromium",
+    "form": "as chromium picolinate",
+    "slug": "chromium"
+  },
+  {
+    "name": "Chromium",
+    "form": "as chromium polynicotinate",
+    "slug": "chromium"
+  },
+  {
+    "name": "Chromium",
+    "form": "from amino acid chelate",
+    "slug": "chromium"
+  },
+  {
+    "name": "Chromium",
+    "form": "from chromium nicotinate glycinate",
+    "slug": "chromium"
+  },
+  {
+    "name": "Chromium",
+    "form": "from chromium nicotinate glycinate chelate",
+    "slug": "chromium"
+  },
+  {
+    "name": "Cinnamon",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Cinnamon",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Cinnamon",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Cis-Linoleic Acid (LA)",
+    "form": null,
+    "slug": "omega-6"
+  },
+  {
+    "name": "Citicoline",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Citrin K",
+    "form": "Garcinia cambogia extract",
+    "slug": null
+  },
+  {
+    "name": "Citrulline",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Citrus Bioflavonoids",
+    "form": null,
+    "slug": "flavonoids"
+  },
+  {
+    "name": "Citrus Bioflavonoids Complex",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Citrus Limon",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Citrus aurantium",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Citrus bioflavonoid complex",
+    "form": null,
+    "slug": "flavonoids"
+  },
+  {
+    "name": "Clove",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Clove",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "CoQ10",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Cocoa",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Coenzyme Q10",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Coenzyme Q10",
+    "form": "as ubiquinone",
+    "slug": null
+  },
+  {
+    "name": "Collagen",
+    "form": "from hydrolyzed beef (Type I and III)",
+    "slug": null
+  },
+  {
+    "name": "Collagen Hydrolysate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Collagen Hydrolyzed Bovine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Collagen Peptide",
+    "form": "bovine",
+    "slug": null
+  },
+  {
+    "name": "Collagen Peptides",
+    "form": "Bovine",
+    "slug": null
+  },
+  {
+    "name": "Collagen Type I",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Collagen Type II",
+    "form": "from chicken",
+    "slug": null
+  },
+  {
+    "name": "Colostrum",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Copper",
+    "form": null,
+    "slug": "copper"
+  },
+  {
+    "name": "Copper",
+    "form": "Amino Acid Chelate",
+    "slug": "copper"
+  },
+  {
+    "name": "Copper",
+    "form": "as amino acid chelate",
+    "slug": "copper"
+  },
+  {
+    "name": "Copper",
+    "form": "as copper bisglycinate chelate",
+    "slug": "copper"
+  },
+  {
+    "name": "Copper",
+    "form": "as copper citrate",
+    "slug": "copper"
+  },
+  {
+    "name": "Copper",
+    "form": "as copper gluconate",
+    "slug": "copper"
+  },
+  {
+    "name": "Copper",
+    "form": "as copper oxide",
+    "slug": "copper"
+  },
+  {
+    "name": "Copper",
+    "form": "as gluconate",
+    "slug": "copper"
+  },
+  {
+    "name": "Copper",
+    "form": "from copper bisglycinate chelate",
+    "slug": "copper"
+  },
+  {
+    "name": "Copper",
+    "form": "from cupric chloride",
+    "slug": "copper"
+  },
+  {
+    "name": "Cordyceps",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Cordyceps",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Cordyceps Mushroom",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Cordyceps Mushroom",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Cordyceps mushroom",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Cordyceps sinensis",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Cornsilk",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Cranberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Cranberry",
+    "form": "concentrate",
+    "slug": null
+  },
+  {
+    "name": "Cranberry",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Cranberry",
+    "form": "juice powder",
+    "slug": null
+  },
+  {
+    "name": "CurCousin",
+    "form": "Calebin A, feruloylmethyl ferulate",
+    "slug": null
+  },
+  {
+    "name": "Curcumin",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Curcumin",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Curry leaf",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Cysteine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Cystine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "D-Glucuronolactone",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "D-Ribose",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "DHA",
+    "form": null,
+    "slug": "omega-3"
+  },
+  {
+    "name": "DHA",
+    "form": "ethyl ester",
+    "slug": "omega-3"
+  },
+  {
+    "name": "DHEA",
+    "form": "dehydroepiandrosterone",
+    "slug": null
+  },
+  {
+    "name": "DHM",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "DL-Methionine",
+    "form": null,
+    "slug": "methionine"
+  },
+  {
+    "name": "Damiana",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Damiana",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Dandelion",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Dandelion",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Devil's Claw",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Dimethylglycine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Dipotassium phosphate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Disodium phosphate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Docosahexaenoic Acid (DHA)",
+    "form": null,
+    "slug": "omega-3"
+  },
+  {
+    "name": "Dong Quai",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Dong Quai",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Dragon Fruit",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Dragon fruit",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Dragonfruit juice concentrate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Dulse",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "EPA",
+    "form": null,
+    "slug": "omega-3"
+  },
+  {
+    "name": "EPA",
+    "form": "ethyl ester",
+    "slug": "omega-3"
+  },
+  {
+    "name": "Echinacea",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Echinacea",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Echinacea",
+    "form": "powdered extract",
+    "slug": null
+  },
+  {
+    "name": "Eggshell Membrane Collagen",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Eicosapentaenoic Acid (EPA)",
+    "form": null,
+    "slug": "omega-3"
+  },
+  {
+    "name": "Elderberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Elderberry",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Elderberry",
+    "form": "juice powder",
+    "slug": null
+  },
+  {
+    "name": "Elderberry",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Elecampane",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Eleuthero",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Eleuthero",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Enzyme Blend",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Eucalyptus",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Evening Primrose Oil",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "FOS",
+    "form": "Fructo-Oligosaccharides",
+    "slug": null
+  },
+  {
+    "name": "FOS",
+    "form": "fructooligosaccharides",
+    "slug": null
+  },
+  {
+    "name": "Fat Digestive Enzyme",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fennel",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fennel",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Fennel",
+    "form": "fruit powder",
+    "slug": null
+  },
+  {
+    "name": "Fennel",
+    "form": "seed extract 5:1",
+    "slug": null
+  },
+  {
+    "name": "Fenugreek",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fenugreek",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Fenugreek",
+    "form": "seed extract (containing saponins)",
+    "slug": null
+  },
+  {
+    "name": "FermaPro Organic Fermented Fruit and Veggie Blend",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Feverfew",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Fibersol 2",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fibersol-2",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fisetin",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fish Collagen",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fish Hydrolyzed Collagen",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fish Oil",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fish Oil",
+    "form": "50% Powder (Omega-3 Fatty Acids)",
+    "slug": "omega-3"
+  },
+  {
+    "name": "Flax",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Flax Seed",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Flax Seed",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Flaxseed",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Flower Pollen",
+    "form": "Graminex G63 concentrated extract",
+    "slug": null
+  },
+  {
+    "name": "Flower Pollen",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Flower Pollen",
+    "form": "standardized extract",
+    "slug": null
+  },
+  {
+    "name": "Folate",
+    "form": null,
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "200 mcg folic acid",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "46 mcg Folic Acid",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "Folic Acid",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as 5-Methyltetrahydrofolate",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as 5-Methyltetrahydrofolate Calcium Salt",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as 5-methylfolate",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as Folic Acid",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as Folic Acid (400 mcg)",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as Folic acid",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as calcium 5-methylfolate",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as calcium L-5-methyltetrahydrofolate",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as calcium-L-5-methylfolate",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as calcium-L-5-methyltetrahydrofolate",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as folic acid",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as folic acid (150 mcg folic acid)",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as folic acid (200 mcg)",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as folic acid (235 mcg)",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as folic acid (240 mcg folic acid)",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as folic acid (400 mcg folic acid)",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as folic acid (471 mcg)",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as folic acid (480 mcg folic acid)",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as folic acid (500 mcg folic acid)",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as folic acid (800 mcg)",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as folic acid (824 mcg folic acid)",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folate",
+    "form": "as folic acid and (6S)-5-MTHF Choline Salt, Optifolin",
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Folic Acid",
+    "form": null,
+    "slug": "vitamin-b9"
+  },
+  {
+    "name": "Fructo oligosaccharide",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fructo-oligosaccharides (FOS)",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fructooligosaccharides",
+    "form": "FOS",
+    "slug": null
+  },
+  {
+    "name": "Fucoidan",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fucoidan Extract",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fucoidan Sea Nutrient Blend",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fucoidans",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fucoidans",
+    "form": "from fucoidan extract",
+    "slug": null
+  },
+  {
+    "name": "Fucose",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fucoxanthin-rich seaweed (whole plant, 10% fucoxanthin)",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fucus vesiculosus",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fulvic acid",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fulvic powder",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Fungal Protease",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "GABA",
+    "form": "gamma aminobutyric acid",
+    "slug": null
+  },
+  {
+    "name": "GABA",
+    "form": "gamma-aminobutyric acid",
+    "slug": null
+  },
+  {
+    "name": "GABA",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "GDL",
+    "form": "as glucono delta-lactone",
+    "slug": null
+  },
+  {
+    "name": "GDL",
+    "form": "glucono delta lactone",
+    "slug": null
+  },
+  {
+    "name": "Gamma Oryzanol",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Gamma-Linolenic Acid (GLA)",
+    "form": null,
+    "slug": "omega-6"
+  },
+  {
+    "name": "Garlic",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Garlic",
+    "form": "concentrate",
+    "slug": null
+  },
+  {
+    "name": "Garlic",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Garlic",
+    "form": "odorless",
+    "slug": null
+  },
+  {
+    "name": "Garlic",
+    "form": "oil concentrate",
+    "slug": null
+  },
+  {
+    "name": "Garlic",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Gelatin",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Gelatin",
+    "form": "bovine",
+    "slug": null
+  },
+  {
+    "name": "Gentian",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Gigartina skottsbergii",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Ginger",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Ginger",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Gingko",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Ginkgo",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Ginkgo",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Ginkgo Biloba",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Ginkgo Biloba",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Ginkgo biloba",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Ginkgo biloba",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Ginkgo biloba",
+    "form": "leaf extract (24% ginkgo flavone glycosides & 6% terpene lactones)",
+    "slug": null
+  },
+  {
+    "name": "Ginkgo biloba",
+    "form": "standardized powdered extract (24% flavonglycosides)",
+    "slug": null
+  },
+  {
+    "name": "Ginseng",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Ginseng",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Glucoamylase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Glucono Delta Lactone",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Glucosamine",
+    "form": "HCl",
+    "slug": null
+  },
+  {
+    "name": "Glucosamine",
+    "form": "HCl, from vegetable",
+    "slug": null
+  },
+  {
+    "name": "Glucosamine",
+    "form": "HCl, plant source",
+    "slug": null
+  },
+  {
+    "name": "Glucosamine",
+    "form": "HCl, vegetable sourced",
+    "slug": null
+  },
+  {
+    "name": "Glucosamine",
+    "form": "as hydrochloride",
+    "slug": null
+  },
+  {
+    "name": "Glucosamine",
+    "form": "as hydrochloride (from vegetable)",
+    "slug": null
+  },
+  {
+    "name": "Glucosamine",
+    "form": "vegan HCl",
+    "slug": null
+  },
+  {
+    "name": "Glucosamine Sulfate",
+    "form": "as Glucosamine Sulfate 2KCl",
+    "slug": null
+  },
+  {
+    "name": "Glucosamine sulfate 2KCl",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Glucuronolactone",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Glutamic Acid",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Glutamic acid",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Glutamine",
+    "form": "as L-glutamine",
+    "slug": null
+  },
+  {
+    "name": "Glutathione",
+    "form": "yeast extract",
+    "slug": null
+  },
+  {
+    "name": "Glycine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Glycine",
+    "form": "as L-glycine",
+    "slug": null
+  },
+  {
+    "name": "GoZanthene",
+    "form": "goji lipophilic fraction with marigold extract",
+    "slug": null
+  },
+  {
+    "name": "Goji",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Goji",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Goji Berry Extract",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Goji berry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Goldenseal",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Gotu Kola",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Grape",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Grape",
+    "form": "OPC 95% extract",
+    "slug": null
+  },
+  {
+    "name": "Grape",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Grape",
+    "form": "juice",
+    "slug": null
+  },
+  {
+    "name": "Grape Seed",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Grape Seed",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Grape Seed Extract",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Grape blend",
+    "form": "seed, skin, and juice concentrate",
+    "slug": null
+  },
+  {
+    "name": "Grape seed",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Grape seed extract",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Grapes",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Green Barley Grass",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Green Cabbage",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Green Coffee",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Green Tea",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Green Tea",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Green cabbage",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Green coffee bean",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Green coffee bean extract",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Green tea",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Guarana",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Guarana",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Guava",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Guava",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Gum acacia",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Gymnema",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Gymnema",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Gymnema Sylvestre",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Gynostemma",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Hawthorn",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Hawthorn",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Hawthorn Berry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Hemicellulase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Hesperidin Complex",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Himalayan Goji Juice",
+    "form": "reconstituted",
+    "slug": null
+  },
+  {
+    "name": "Himematsutake",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Histidine",
+    "form": null,
+    "slug": "histidine"
+  },
+  {
+    "name": "Holy Basil",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Holy basil",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Holy basil",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Hops",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Hops",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Horehound",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Horse Chestnut",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Horse Chestnut",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Horseradish",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Horsetail",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Horsetail",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Huperzine",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Huperzine-A",
+    "form": "from toothed club moss whole plant extract",
+    "slug": null
+  },
+  {
+    "name": "Hyaluronic Acid",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Hyaluronic Acid",
+    "form": "as sodium hyaluronate",
+    "slug": null
+  },
+  {
+    "name": "Hydrangea",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Hydrolyzed Grass-Fed Collagen",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Hydrothermal mineral clay",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Hydroxyproline",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "IgY Max Hyperimmune Egg Powder",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Indian Frankincense",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Inositol",
+    "form": null,
+    "slug": "inositol"
+  },
+  {
+    "name": "Inositol Nicotinate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Inositol hexanicotinate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Inulin",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Inulin",
+    "form": "from chicory root",
+    "slug": null
+  },
+  {
+    "name": "Invertase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Iodine",
+    "form": null,
+    "slug": "iodine"
+  },
+  {
+    "name": "Iodine",
+    "form": "Kelp",
+    "slug": "iodine"
+  },
+  {
+    "name": "Iodine",
+    "form": "as potassium iodide",
+    "slug": "iodine"
+  },
+  {
+    "name": "Iodine",
+    "form": "from kelp",
+    "slug": "iodine"
+  },
+  {
+    "name": "Iodine",
+    "form": "from ocean harvested kelp",
+    "slug": "iodine"
+  },
+  {
+    "name": "Iodine",
+    "form": "from potassium iodide",
+    "slug": "iodine"
+  },
+  {
+    "name": "Iodine",
+    "form": "from sodium iodide",
+    "slug": "iodine"
+  },
+  {
+    "name": "Ipriflavone",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Irish Moss",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Iron",
+    "form": null,
+    "slug": "iron"
+  },
+  {
+    "name": "Iron",
+    "form": "as ferrous fumarate",
+    "slug": "iron"
+  },
+  {
+    "name": "Iron",
+    "form": "as ferrous gluconate",
+    "slug": "iron"
+  },
+  {
+    "name": "Iron",
+    "form": "as gluconate",
+    "slug": "iron"
+  },
+  {
+    "name": "Iron",
+    "form": "from ferrous bisglycinate chelate",
+    "slug": "iron"
+  },
+  {
+    "name": "Iron",
+    "form": "from ferrous bisglycinate chelate and Pea Seed, SloIron",
+    "slug": "iron"
+  },
+  {
+    "name": "Isoascorbic acid",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Isoleucine",
+    "form": null,
+    "slug": "isoleucine"
+  },
+  {
+    "name": "Isomalto Oligosaccharide",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Jabuticaba",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Jabuticaba",
+    "form": "juice powder",
+    "slug": null
+  },
+  {
+    "name": "Jambolan",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Japanese Knotweed",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Juice Dry Mandarin",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Juice Dry Orange",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Juice Dry Raspberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Jujube",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Jujube",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Juniper",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Kale",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Kelp",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Klamath Falls Blue Green Algae",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Knotted Wrack",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Kombu seaweed",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Korean red ginseng",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Krishna Tulsi",
+    "form": "Holy Basil",
+    "slug": null
+  },
+  {
+    "name": "Kudzu",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L Acidophilus",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-Alanine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-Arginine",
+    "form": null,
+    "slug": "arginine"
+  },
+  {
+    "name": "L-Arginine Base",
+    "form": null,
+    "slug": "arginine"
+  },
+  {
+    "name": "L-Aspartic Acid",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-Carnitine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-Carnitine",
+    "form": "Tartrate",
+    "slug": null
+  },
+  {
+    "name": "L-Carnitine",
+    "form": "as L-carnitine tartrate",
+    "slug": null
+  },
+  {
+    "name": "L-Carnitine Tartrate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-Citrulline",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-Cysteine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-Cystine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-Glutamic Acid",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-Glutamine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-Glutathione",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-Glycine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-Histidine",
+    "form": null,
+    "slug": "histidine"
+  },
+  {
+    "name": "L-Isoleucine",
+    "form": null,
+    "slug": "isoleucine"
+  },
+  {
+    "name": "L-Leucine",
+    "form": null,
+    "slug": "leucine"
+  },
+  {
+    "name": "L-Lysine",
+    "form": null,
+    "slug": "lysine"
+  },
+  {
+    "name": "L-Lysine",
+    "form": "as hydrochloride",
+    "slug": "lysine"
+  },
+  {
+    "name": "L-Lysine HCL",
+    "form": null,
+    "slug": "lysine"
+  },
+  {
+    "name": "L-Methionine",
+    "form": null,
+    "slug": "methionine"
+  },
+  {
+    "name": "L-Phenylalanine",
+    "form": null,
+    "slug": "phenylalanine"
+  },
+  {
+    "name": "L-Proline",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-Serine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-Theanine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-Threonine",
+    "form": null,
+    "slug": "threonine"
+  },
+  {
+    "name": "L-Tryptophan",
+    "form": null,
+    "slug": "tryptophan"
+  },
+  {
+    "name": "L-Tryptophan",
+    "form": "powder",
+    "slug": "tryptophan"
+  },
+  {
+    "name": "L-Tyrosine",
+    "form": null,
+    "slug": "tyrosine"
+  },
+  {
+    "name": "L-Valine",
+    "form": null,
+    "slug": "valine"
+  },
+  {
+    "name": "L-alanine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-arginine",
+    "form": null,
+    "slug": "arginine"
+  },
+  {
+    "name": "L-arginine HCl",
+    "form": null,
+    "slug": "arginine"
+  },
+  {
+    "name": "L-aspartic",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-cysteine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-cystine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-glutamic acid",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-glutamine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-glutathione",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-glycine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-histidine",
+    "form": null,
+    "slug": "histidine"
+  },
+  {
+    "name": "L-isoleucine",
+    "form": null,
+    "slug": "isoleucine"
+  },
+  {
+    "name": "L-leucine",
+    "form": null,
+    "slug": "leucine"
+  },
+  {
+    "name": "L-lysine",
+    "form": null,
+    "slug": "lysine"
+  },
+  {
+    "name": "L-methionine",
+    "form": null,
+    "slug": "methionine"
+  },
+  {
+    "name": "L-phenylalanine",
+    "form": null,
+    "slug": "phenylalanine"
+  },
+  {
+    "name": "L-proline",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-serine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-taurine",
+    "form": null,
+    "slug": "taurine"
+  },
+  {
+    "name": "L-theanine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "L-threonine",
+    "form": null,
+    "slug": "threonine"
+  },
+  {
+    "name": "L-tryptophan",
+    "form": null,
+    "slug": "tryptophan"
+  },
+  {
+    "name": "L-tyrosine",
+    "form": null,
+    "slug": "tyrosine"
+  },
+  {
+    "name": "L-valine",
+    "form": null,
+    "slug": "valine"
+  },
+  {
+    "name": "Lactase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lactobacillus acidophilus",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lactobacillus brevis",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lactobacillus bulgaricus",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lactobacillus casei",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lactobacillus fermentum",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lactobacillus gasseri",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lactobacillus helveticus",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lactobacillus lactis",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lactobacillus paracasei",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lactobacillus plantarum",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lactobacillus reuteri",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lactobacillus rhamnosus",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lactobacillus salivarius",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lactobacillus sporogenes",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Laminaria digitata",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Laver",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Leek",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lemon",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lemon",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Lemon",
+    "form": "juice powder",
+    "slug": null
+  },
+  {
+    "name": "Lemon Balm",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lemon Balm",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Lemon Balm",
+    "form": "stem & leaf extract",
+    "slug": null
+  },
+  {
+    "name": "Lemon balm",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Leucine",
+    "form": null,
+    "slug": "leucine"
+  },
+  {
+    "name": "Licorice",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Licorice",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Linden",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Linoleic Acid (LA)",
+    "form": "Omega 6",
+    "slug": "omega-6"
+  },
+  {
+    "name": "Lion's Mane",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Lion's Mane Mushroom",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lion's mane",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lipase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lipase",
+    "form": "fungal",
+    "slug": null
+  },
+  {
+    "name": "Lobelia",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Longjack",
+    "form": "root extract (Tongkat Ali)",
+    "slug": null
+  },
+  {
+    "name": "Luo Han Guo",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Lutein",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lutein",
+    "form": "from marigold flower extract",
+    "slug": null
+  },
+  {
+    "name": "Lutein",
+    "form": "marigold flower extract",
+    "slug": null
+  },
+  {
+    "name": "Lutein Esters",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lycium",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lycium",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Lycopene",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Lysine",
+    "form": null,
+    "slug": "lysine"
+  },
+  {
+    "name": "Lysine",
+    "form": "as L-lysine monohydrate hydrochloride",
+    "slug": "lysine"
+  },
+  {
+    "name": "MOS",
+    "form": "Manno-Oligosaccharides from S. cerevisiae",
+    "slug": null
+  },
+  {
+    "name": "MSM",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "MSM",
+    "form": "Methyl-Sulfonyl-Methane",
+    "slug": null
+  },
+  {
+    "name": "MSM",
+    "form": "as methylsulfonylmethane",
+    "slug": null
+  },
+  {
+    "name": "MSM",
+    "form": "methylsulfonyl methane",
+    "slug": null
+  },
+  {
+    "name": "MSM",
+    "form": "methylsulfonylmethane",
+    "slug": null
+  },
+  {
+    "name": "Maca",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Maca",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Magnesium",
+    "form": null,
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "Magnesium Citrate",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "Oxide",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "as Magnesium Citrate & Chelate",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "as amino acid chelate",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "as citrate, gluconate",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "as gluconate",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "as magnesium amino acid chelate",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "as magnesium citrate",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "as magnesium gluconate",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "as magnesium gluconate and magnesium oxide",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "as magnesium gluconate and oxide",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "as magnesium gluconate, oxide (from AlgaeCal)",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "as magnesium glycinate chelate",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "as magnesium hydroxide",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "as magnesium oxide",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "as magnesium oxide and citrate",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "as magnesium sulfate",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "as oxide, gluconate",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "from magnesium amino acid chelate",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "from magnesium bisglycinate chelate",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "from magnesium citrate",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "from magnesium oxide",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "from magnesium oxide/glycinate",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Magnesium",
+    "form": "from magnesium oxide/glycinate complex",
+    "slug": "magnesium"
+  },
+  {
+    "name": "Maitake",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Maitake",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Maitake Mushroom",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Maitake Mushroom",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Maitake mushroom",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Majestic Earth Plant Derived Minerals",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Malt Diastase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Maltase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Mandarin Orange",
+    "form": "unripe fruit extract",
+    "slug": null
+  },
+  {
+    "name": "Manganese",
+    "form": null,
+    "slug": "manganese"
+  },
+  {
+    "name": "Manganese",
+    "form": "Amino Acid Chelate",
+    "slug": "manganese"
+  },
+  {
+    "name": "Manganese",
+    "form": "as Manganese Aspartate",
+    "slug": "manganese"
+  },
+  {
+    "name": "Manganese",
+    "form": "as Manganese Sulfate",
+    "slug": "manganese"
+  },
+  {
+    "name": "Manganese",
+    "form": "as Manganese citrate",
+    "slug": "manganese"
+  },
+  {
+    "name": "Manganese",
+    "form": "as amino acid chelate",
+    "slug": "manganese"
+  },
+  {
+    "name": "Manganese",
+    "form": "as gluconate",
+    "slug": "manganese"
+  },
+  {
+    "name": "Manganese",
+    "form": "as manganese amino acid chelate",
+    "slug": "manganese"
+  },
+  {
+    "name": "Manganese",
+    "form": "as manganese bisglycinate chelate",
+    "slug": "manganese"
+  },
+  {
+    "name": "Manganese",
+    "form": "as manganese citrate",
+    "slug": "manganese"
+  },
+  {
+    "name": "Manganese",
+    "form": "as manganese gluconate",
+    "slug": "manganese"
+  },
+  {
+    "name": "Manganese",
+    "form": "from manganese bisglycinate chelate",
+    "slug": "manganese"
+  },
+  {
+    "name": "Manganese",
+    "form": "from manganese glycinate",
+    "slug": "manganese"
+  },
+  {
+    "name": "Manganese",
+    "form": "from manganese glycinate chelate",
+    "slug": "manganese"
+  },
+  {
+    "name": "Manganese",
+    "form": "from manganese sulfate",
+    "slug": "manganese"
+  },
+  {
+    "name": "Mango",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Mangosteen",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Mangosteen",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Mangosteen",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Manuka Honey",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Maqui",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Maqui Berry",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Maqui berry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Marine Collagen Peptides",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Marine algae",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Marshmallow",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Marshmallow",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Matcha tea",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Medium chain triglycerides (MCT)",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Melatonin",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Melatonin",
+    "form": "Phytomelatonin",
+    "slug": null
+  },
+  {
+    "name": "Melon juice concentrate",
+    "form": "140 IU SOD",
+    "slug": null
+  },
+  {
+    "name": "Melon juice concentrate with Bioperine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Meshimakobus",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Methionine",
+    "form": null,
+    "slug": "methionine"
+  },
+  {
+    "name": "Methylsulfonylmethane",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Methylsulfonylmethane (MSM)",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Milk Thistle",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Milk Thistle",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Milk Thistle Extract",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Milk thistle",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Milk thistle extract",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Mineralized seaweed extract",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Molybdenum",
+    "form": null,
+    "slug": "molybdenum"
+  },
+  {
+    "name": "Molybdenum",
+    "form": "as molybdenum glycinate chelate",
+    "slug": "molybdenum"
+  },
+  {
+    "name": "Molybdenum",
+    "form": "as sodium molybdate",
+    "slug": "molybdenum"
+  },
+  {
+    "name": "Molybdenum",
+    "form": "from molybdenum glycinate chelate",
+    "slug": "molybdenum"
+  },
+  {
+    "name": "Moringa",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Moringa",
+    "form": "organic",
+    "slug": null
+  },
+  {
+    "name": "Motherwort",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Mulberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Mullein",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Murraya koenigii",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Muscadine Grape",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Muscadine Grape",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Mushroom Blend",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Mustard",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "N-Acetyl Cysteine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "N-Acetyl cysteine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "N-Acetyl-D-Glucosamine",
+    "form": "vegan",
+    "slug": null
+  },
+  {
+    "name": "N-Acetyl-L-Cysteine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "N-Acetyl-L-cysteine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "N-acetyl-L-cysteine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "N-acetyl-L-tyrosine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Nattokinase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Natural Mango Flavor",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Natural Mixed Berry flavor",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Natural flavor",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Neem",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Nettle",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Niacin",
+    "form": null,
+    "slug": "vitamin-b3"
+  },
+  {
+    "name": "Niacin",
+    "form": "as Niacinamide",
+    "slug": "vitamin-b3"
+  },
+  {
+    "name": "Niacin",
+    "form": "as inositol hexanicotinate",
+    "slug": "vitamin-b3"
+  },
+  {
+    "name": "Niacin",
+    "form": "as niacin",
+    "slug": "vitamin-b3"
+  },
+  {
+    "name": "Niacin",
+    "form": "as niacin and niacinamide",
+    "slug": "vitamin-b3"
+  },
+  {
+    "name": "Niacin",
+    "form": "as niacin, niacinamide",
+    "slug": "vitamin-b3"
+  },
+  {
+    "name": "Niacin",
+    "form": "as niacin, niacinamide and inositol hexanicotinate",
+    "slug": "vitamin-b3"
+  },
+  {
+    "name": "Niacin",
+    "form": "as niacinamide",
+    "slug": "vitamin-b3"
+  },
+  {
+    "name": "Niacin",
+    "form": "from niacinamide",
+    "slug": "vitamin-b3"
+  },
+  {
+    "name": "Niacinamide",
+    "form": null,
+    "slug": "vitamin-b3"
+  },
+  {
+    "name": "Noni",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Nori",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Nori seaweed",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "OPTIZIOME P3 Hydrolyzer",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Oarweed",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Oat Grass",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Oat Straw",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Oatstraw",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Oleic Acid (OA)",
+    "form": "Omega 9",
+    "slug": "omega-9"
+  },
+  {
+    "name": "Oligonol",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Olive",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Olive",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Omega-3 fatty acids",
+    "form": null,
+    "slug": "omega-3"
+  },
+  {
+    "name": "Onion",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Orange",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Orange",
+    "form": "juice powder",
+    "slug": null
+  },
+  {
+    "name": "Orange bioflavonoids",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Oregano",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Oregon Grape",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic Acacia Gum",
+    "form": "Prebiotic Fiber",
+    "slug": null
+  },
+  {
+    "name": "Organic Apple",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic Beet",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic Blueberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic Broccoli",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic Carrot",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic Flaxseed Fiber",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic Green Cabbage",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic Kale",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic Parsley",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic Raspberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic Spinach",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic Strawberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic Tomato",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic Whole Food Blend",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic apple",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic beet",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic blueberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic broccoli",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic carrot",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic coconut milk powder",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic flaxseed",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic green cabbage",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic kale",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic parsley",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic raspberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic rice protein",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic spinach",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic strawberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Organic tomato",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Orgen-B's",
+    "form": "certified organic extract blend",
+    "slug": null
+  },
+  {
+    "name": "Ornithine",
+    "form": "as L-ornithine hydrochloride",
+    "slug": null
+  },
+  {
+    "name": "Ox Bile",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Oyster Mushroom",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "PABA",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "PABA",
+    "form": "as para amino benzoic acid",
+    "slug": null
+  },
+  {
+    "name": "PABA",
+    "form": "as para-aminobenzoic acid",
+    "slug": null
+  },
+  {
+    "name": "PABA",
+    "form": "para aminobenzoic acid",
+    "slug": null
+  },
+  {
+    "name": "PABA",
+    "form": "para-aminobenzoic acid",
+    "slug": null
+  },
+  {
+    "name": "Palm oil powder",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Palmaria palmata",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Panax Ginseng",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Panax Ginseng",
+    "form": "powder extract",
+    "slug": null
+  },
+  {
+    "name": "Panax ginseng",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Pantothenic Acid",
+    "form": null,
+    "slug": "vitamin-b5"
+  },
+  {
+    "name": "Pantothenic Acid",
+    "form": "Calcium Pantothenate",
+    "slug": "vitamin-b5"
+  },
+  {
+    "name": "Pantothenic Acid",
+    "form": "as Calcium pantothenate",
+    "slug": "vitamin-b5"
+  },
+  {
+    "name": "Pantothenic Acid",
+    "form": "as D-calcium pantothenate",
+    "slug": "vitamin-b5"
+  },
+  {
+    "name": "Pantothenic Acid",
+    "form": "as calcium d-pantothenate",
+    "slug": "vitamin-b5"
+  },
+  {
+    "name": "Pantothenic Acid",
+    "form": "as calcium pantothenate",
+    "slug": "vitamin-b5"
+  },
+  {
+    "name": "Pantothenic Acid",
+    "form": "as d-calcium pantothenate",
+    "slug": "vitamin-b5"
+  },
+  {
+    "name": "Pantothenic Acid",
+    "form": "as pantothenate",
+    "slug": "vitamin-b5"
+  },
+  {
+    "name": "Pantothenic Acid",
+    "form": "from calcium pantothenate",
+    "slug": "vitamin-b5"
+  },
+  {
+    "name": "Papain",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Papain",
+    "form": "315,000 FCC PU at time of manufacture",
+    "slug": null
+  },
+  {
+    "name": "Papaya",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Papaya",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Parsley",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Passion Flower",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Passion Flower",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Passionflower",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Pau D'Arco",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Pau D'Arco",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Pau d'Arco",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Pau d'Arco",
+    "form": "liquid extract",
+    "slug": null
+  },
+  {
+    "name": "Peach",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Peach Powder",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Pear",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Peat Bog Clay",
+    "form": "supplying humic/fulvic acids",
+    "slug": null
+  },
+  {
+    "name": "Pectinase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Peppermint",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Peppermint",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Pepsin",
+    "form": "225,000 FCC PU at time of manufacture",
+    "slug": null
+  },
+  {
+    "name": "Peptidase DPPIV",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Periwinkle",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Phenylalanine",
+    "form": null,
+    "slug": "phenylalanine"
+  },
+  {
+    "name": "Phosphatidylserine-enriched lecithin",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Phosphorous",
+    "form": null,
+    "slug": "phosphorus"
+  },
+  {
+    "name": "Phosphorous",
+    "form": "from tricalcium phosphate",
+    "slug": "phosphorus"
+  },
+  {
+    "name": "Phosphorus",
+    "form": null,
+    "slug": "phosphorus"
+  },
+  {
+    "name": "Phosphorus",
+    "form": "as dicalcium phosphate, hydroxyapatite",
+    "slug": "phosphorus"
+  },
+  {
+    "name": "Phosphorus",
+    "form": "as tricalcium phosphate",
+    "slug": "phosphorus"
+  },
+  {
+    "name": "Phosphorus",
+    "form": "from hydroxyapatite",
+    "slug": "phosphorus"
+  },
+  {
+    "name": "Phosphorus",
+    "form": "from tricalcium phosphate",
+    "slug": "phosphorus"
+  },
+  {
+    "name": "Phytase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Pine",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Pine Bark",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Pine bark",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Pineapple",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Plant Derived Minerals",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Plant Derived Minerals",
+    "form": "Majestic Earth",
+    "slug": null
+  },
+  {
+    "name": "Plant Derived Trace Mineral Blend",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Plant Derived Trace Minerals",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Plantain",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Plum",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Plum",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Polygonum cuspidatum",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Pomegranate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Pomegranate",
+    "form": "concentrate",
+    "slug": null
+  },
+  {
+    "name": "Pomegranate",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Pomegranate",
+    "form": "fruit juice",
+    "slug": null
+  },
+  {
+    "name": "Pomegranate",
+    "form": "juice concentrate",
+    "slug": null
+  },
+  {
+    "name": "Pomegranate",
+    "form": "juice powder",
+    "slug": null
+  },
+  {
+    "name": "Pomegranate",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Pomegranate Juice",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Pomegranate juice concentrate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Poria Mushroom",
+    "form": "organic extract",
+    "slug": null
+  },
+  {
+    "name": "Porphyra yezoensis",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Potassium",
+    "form": null,
+    "slug": "potassium"
+  },
+  {
+    "name": "Potassium",
+    "form": "Chloride",
+    "slug": "potassium"
+  },
+  {
+    "name": "Potassium",
+    "form": "as Potassium Citrate",
+    "slug": "potassium"
+  },
+  {
+    "name": "Potassium",
+    "form": "as citrate",
+    "slug": "potassium"
+  },
+  {
+    "name": "Potassium",
+    "form": "as citrate, gluconate",
+    "slug": "potassium"
+  },
+  {
+    "name": "Potassium",
+    "form": "as monopotassium phosphate",
+    "slug": "potassium"
+  },
+  {
+    "name": "Potassium",
+    "form": "as potassium citrate",
+    "slug": "potassium"
+  },
+  {
+    "name": "Potassium",
+    "form": "as potassium citrate monohydrate",
+    "slug": "potassium"
+  },
+  {
+    "name": "Potassium",
+    "form": "as potassium gluconate and citrate",
+    "slug": "potassium"
+  },
+  {
+    "name": "Potassium",
+    "form": "as potassium phosphate",
+    "slug": "potassium"
+  },
+  {
+    "name": "Potassium",
+    "form": "from potassium chloride",
+    "slug": "potassium"
+  },
+  {
+    "name": "Potassium",
+    "form": "from potassium citrate",
+    "slug": "potassium"
+  },
+  {
+    "name": "Potassium D-glucarate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Potassium citrate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Poultry Collagen Peptides",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Prickly Ash",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Probio-Kombu Black Tea",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Probiotics",
+    "form": "Bacillus coagulans",
+    "slug": null
+  },
+  {
+    "name": "Proline",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Propolis",
+    "form": "concentrate",
+    "slug": null
+  },
+  {
+    "name": "Protease",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Protease",
+    "form": "acid stable",
+    "slug": null
+  },
+  {
+    "name": "Protease",
+    "form": "fungal",
+    "slug": null
+  },
+  {
+    "name": "Protease 4.5",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Protease 6.0",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Protein Digestive Enzymes",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Prune",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Prune",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Pterostilbene",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Pumpkin",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Pumpkin",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Purified water",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Purslane",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Pygeum",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Quassia",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Quercetin",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Quercetin",
+    "form": "as dihydrate",
+    "slug": null
+  },
+  {
+    "name": "Quercetin",
+    "form": "dihydrate",
+    "slug": null
+  },
+  {
+    "name": "Quercetin Dihydrate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Quercetin dihydrate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Radish",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Rama Tulsi",
+    "form": "Holy Basil",
+    "slug": null
+  },
+  {
+    "name": "Raspberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Raspberry",
+    "form": "juice powder",
+    "slug": null
+  },
+  {
+    "name": "Raspberry",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Red Clover",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Red Clover",
+    "form": "herb extract 4:1",
+    "slug": null
+  },
+  {
+    "name": "Red Grape",
+    "form": "concentrate",
+    "slug": null
+  },
+  {
+    "name": "Red Grape",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Red Raspberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Red algae",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Red cabbage",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Red grape juice concentrate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Red onion",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Rehmannia",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Reishi",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Reishi",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Reishi Mushroom",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Reishi Mushroom",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Reishi Mushroom",
+    "form": "organic extract",
+    "slug": null
+  },
+  {
+    "name": "Reishi mushroom",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Resveratrol",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Resveratrol",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Resveratrol",
+    "form": "from Polygonum cuspidatum root extract",
+    "slug": null
+  },
+  {
+    "name": "Rhapontic Rhubarb",
+    "form": "Menofelis® extract",
+    "slug": null
+  },
+  {
+    "name": "Rhodiola",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Rhodiola",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Rhodiola rosea",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Rhubarb",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Riboflavin",
+    "form": null,
+    "slug": "vitamin-b2"
+  },
+  {
+    "name": "Riboflavin",
+    "form": "as riboflavin",
+    "slug": "vitamin-b2"
+  },
+  {
+    "name": "Riboflavin",
+    "form": "as riboflavin sodium phosphate",
+    "slug": "vitamin-b2"
+  },
+  {
+    "name": "Rice Bran",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Rice maltodextrin",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Rice protein",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Rice solids",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Rocket Apple Extract",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Rose Hips",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Rose hips",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Rosemary",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Rosemary",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Royal Jelly",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Royal Jelly",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Royal Sun Agaricus",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Rutin",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "SOD",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Saberry",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Saccharomyces Boulardii",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Sage",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Sarsaparilla",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Sarsaparilla",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Saw Palmetto",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Saw Palmetto",
+    "form": "blend",
+    "slug": null
+  },
+  {
+    "name": "Saw Palmetto",
+    "form": "containing fatty acids",
+    "slug": null
+  },
+  {
+    "name": "Saw Palmetto",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Schisandra",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Schisandra berry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Schizandra",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Schizandra",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Sea Cucumber",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Sea Lettuce",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Sea algae minerals",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Sea algae trace minerals",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Seaprose S",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Seaweed Calcium",
+    "form": "Aquamin",
+    "slug": null
+  },
+  {
+    "name": "Selenium",
+    "form": null,
+    "slug": "selenium"
+  },
+  {
+    "name": "Selenium",
+    "form": "Selenomethionine",
+    "slug": "selenium"
+  },
+  {
+    "name": "Selenium",
+    "form": "as L-selenium methionine",
+    "slug": "selenium"
+  },
+  {
+    "name": "Selenium",
+    "form": "as L-selenomethionine",
+    "slug": "selenium"
+  },
+  {
+    "name": "Selenium",
+    "form": "as Selenium Aspartate",
+    "slug": "selenium"
+  },
+  {
+    "name": "Selenium",
+    "form": "as selenium amino acid chelate",
+    "slug": "selenium"
+  },
+  {
+    "name": "Selenium",
+    "form": "as selenium glycinate",
+    "slug": "selenium"
+  },
+  {
+    "name": "Selenium",
+    "form": "as selenium methionine",
+    "slug": "selenium"
+  },
+  {
+    "name": "Selenium",
+    "form": "as selenium yeast",
+    "slug": "selenium"
+  },
+  {
+    "name": "Selenium",
+    "form": "as selenomethionine",
+    "slug": "selenium"
+  },
+  {
+    "name": "Selenium",
+    "form": "as sodium selenite",
+    "slug": "selenium"
+  },
+  {
+    "name": "Selenium",
+    "form": "from l-selenomethionine",
+    "slug": "selenium"
+  },
+  {
+    "name": "Selenium",
+    "form": "from selenium bisglycinate complex",
+    "slug": "selenium"
+  },
+  {
+    "name": "Selenium",
+    "form": "from selenium glycinate",
+    "slug": "selenium"
+  },
+  {
+    "name": "Selenium",
+    "form": "from selenomethionine",
+    "slug": "selenium"
+  },
+  {
+    "name": "Selenium",
+    "form": "from sodium selenate",
+    "slug": "selenium"
+  },
+  {
+    "name": "Selenium",
+    "form": "from yeast",
+    "slug": "selenium"
+  },
+  {
+    "name": "Selenomethionine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Senna",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Serine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Serratiopeptidase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Shark Cartilage",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Sheep Sorrel",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Shiitake",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Shiitake",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Shiitake Mushroom",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Shiitake Mushroom",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Shiitake mushroom",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Siberian ginseng",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Silica",
+    "form": null,
+    "slug": "silica"
+  },
+  {
+    "name": "Silica",
+    "form": "as silicon dioxide",
+    "slug": "silica"
+  },
+  {
+    "name": "Silicon",
+    "form": "from bamboo extract",
+    "slug": "silica"
+  },
+  {
+    "name": "Silicon Dioxide",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Silver",
+    "form": "as colloidal silver",
+    "slug": "silver"
+  },
+  {
+    "name": "Skullcap",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Slippery Elm",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Sodium",
+    "form": null,
+    "slug": "sodium"
+  },
+  {
+    "name": "Sodium",
+    "form": "as sodium chloride",
+    "slug": "sodium"
+  },
+  {
+    "name": "Sodium",
+    "form": "as sodium citrate",
+    "slug": "sodium"
+  },
+  {
+    "name": "Sodium",
+    "form": "from sodium bicarbonate",
+    "slug": "sodium"
+  },
+  {
+    "name": "Sodium Alginate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Sodium chloride",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Soy Isoflavones",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Spinach",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Spinach",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Spinach Powder",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Spirulina",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Spirulina",
+    "form": "algae powder",
+    "slug": null
+  },
+  {
+    "name": "Split Gill Mushroom",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Stevia",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Stoneroot",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Strawberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Strawberry",
+    "form": "juice",
+    "slug": null
+  },
+  {
+    "name": "Strawberry",
+    "form": "juice powder",
+    "slug": null
+  },
+  {
+    "name": "Strawberry",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Streptococcus thermophilus",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Strontium",
+    "form": null,
+    "slug": "strontium"
+  },
+  {
+    "name": "Strontium",
+    "form": "as strontium citrate",
+    "slug": "strontium"
+  },
+  {
+    "name": "Strontium",
+    "form": "from strontium chloride",
+    "slug": "strontium"
+  },
+  {
+    "name": "Sulfate",
+    "form": null,
+    "slug": "sulfur"
+  },
+  {
+    "name": "Suma",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Super Sweet Corn Powder",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Superoxide Dismutase/Gliadin Complex",
+    "form": "GLiSODin",
+    "slug": null
+  },
+  {
+    "name": "Sweet potato",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "T-Nutrient Blend",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Tapioca Maltodextrin",
+    "form": "base",
+    "slug": null
+  },
+  {
+    "name": "Tart Cherry",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Tart Cherry Juice",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Tart cherry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Tart cherry",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Taurine",
+    "form": null,
+    "slug": "taurine"
+  },
+  {
+    "name": "Telomere Support Blend",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Theobromine",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Thiamin",
+    "form": null,
+    "slug": "vitamin-b1"
+  },
+  {
+    "name": "Thiamin",
+    "form": "Thiamin mononitrate",
+    "slug": "vitamin-b1"
+  },
+  {
+    "name": "Thiamin",
+    "form": "as Thiamine HCl",
+    "slug": "vitamin-b1"
+  },
+  {
+    "name": "Thiamin",
+    "form": "as thiamin",
+    "slug": "vitamin-b1"
+  },
+  {
+    "name": "Thiamin",
+    "form": "as thiamin hydrochloride",
+    "slug": "vitamin-b1"
+  },
+  {
+    "name": "Thiamin",
+    "form": "as thiamin mononitrate",
+    "slug": "vitamin-b1"
+  },
+  {
+    "name": "Thiamin",
+    "form": "as thiamine HCl",
+    "slug": "vitamin-b1"
+  },
+  {
+    "name": "Thiamin",
+    "form": "as thiamine hydrochloride",
+    "slug": "vitamin-b1"
+  },
+  {
+    "name": "Thiamin",
+    "form": "as thiamine mononitrate",
+    "slug": "vitamin-b1"
+  },
+  {
+    "name": "Threonine",
+    "form": null,
+    "slug": "threonine"
+  },
+  {
+    "name": "Thyme",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Thyme",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Thyme",
+    "form": "oil",
+    "slug": null
+  },
+  {
+    "name": "Tomato",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Tomato",
+    "form": "juice",
+    "slug": null
+  },
+  {
+    "name": "Tomato",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Trace Mineral Blend",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Trace Mineral Complex",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Trace Mineral Complex",
+    "form": "from red algae",
+    "slug": null
+  },
+  {
+    "name": "Trace mineral complex from red algae",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Trans-Resveratrol",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Trans-Resveratrol",
+    "form": "from Polygonum cuspidatum root extract",
+    "slug": null
+  },
+  {
+    "name": "Tremella Mushroom",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Tri-calcium Phosphate",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Tribulus",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Triphala",
+    "form": "blend of Amla fruit, belleric myrobalan fruit and chebulic myrobalan fruit",
+    "slug": null
+  },
+  {
+    "name": "TrueZyme Enzyme blend",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Tryptophan",
+    "form": null,
+    "slug": "tryptophan"
+  },
+  {
+    "name": "Turkey Tail",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Turkey Tail Mushroom",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Turkey Tail Mushroom",
+    "form": "organic extract",
+    "slug": null
+  },
+  {
+    "name": "Turkey tail",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Turmeric",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Turmeric",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Turmeric",
+    "form": "organic extract",
+    "slug": null
+  },
+  {
+    "name": "Turmeric",
+    "form": "powder",
+    "slug": null
+  },
+  {
+    "name": "Tyrosine",
+    "form": null,
+    "slug": "tyrosine"
+  },
+  {
+    "name": "Tyrosine",
+    "form": "as L-tyrosine",
+    "slug": "tyrosine"
+  },
+  {
+    "name": "Ulva lactuca",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Uva Ursi",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Uva Ursi",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Valerian",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Valerian",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Valine",
+    "form": null,
+    "slug": "valine"
+  },
+  {
+    "name": "Vana Tulsi",
+    "form": "Holy Basil",
+    "slug": null
+  },
+  {
+    "name": "Vanadium",
+    "form": null,
+    "slug": "vanadium"
+  },
+  {
+    "name": "Vanadium",
+    "form": "as vanadium nicotinate amino acid chelate",
+    "slug": "vanadium"
+  },
+  {
+    "name": "Vanadium",
+    "form": "as vanadium nicotinate glycinate chelate",
+    "slug": "vanadium"
+  },
+  {
+    "name": "Vanadium",
+    "form": "as vanadyl sulfate",
+    "slug": "vanadium"
+  },
+  {
+    "name": "Vanadium",
+    "form": "from vanadium nicotinate glycinate chelate",
+    "slug": "vanadium"
+  },
+  {
+    "name": "Vegetable Glycerin",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "ViNitrox",
+    "form": "Vitis vinifera and Malus pumila extract",
+    "slug": null
+  },
+  {
+    "name": "ViNitrox",
+    "form": "grape marc and apple skin extracts",
+    "slug": null
+  },
+  {
+    "name": "Vilcabamba Trace Minerals",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "VitaKelp",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Vitamin A",
+    "form": null,
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "50% from beta carotene",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "Acetate",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "Palmitate",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "as 50% beta carotene, palmitate",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "as Retinyl Palmitate",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "as beta carotene",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "as beta carotene, palmitate",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "as beta-carotene",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "as beta-carotene & palmitate",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "as natural beta-carotene",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "as palmitate",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "as retinol palmitate",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "as retinyl acetate",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "as retinyl palmitate & 40% beta carotene",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "as retinyl palmitate and 54% as beta-carotene",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "as retinyl palmitate and 61% as beta-carotene",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "as retinyl palmitate and beta carotene",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "as retinyl palmitate and beta-carotene",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "as vitamin A palmitate",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin A",
+    "form": "from beta carotene",
+    "slug": "vitamin-a"
+  },
+  {
+    "name": "Vitamin B1",
+    "form": "Thiamine HCl",
+    "slug": "vitamin-b1"
+  },
+  {
+    "name": "Vitamin B1",
+    "form": "as Thiamine HCl",
+    "slug": "vitamin-b1"
+  },
+  {
+    "name": "Vitamin B1",
+    "form": "as thiamine hydrochloride",
+    "slug": "vitamin-b1"
+  },
+  {
+    "name": "Vitamin B12",
+    "form": null,
+    "slug": "vitamin-b12"
+  },
+  {
+    "name": "Vitamin B12",
+    "form": "Methylcobalamin",
+    "slug": "vitamin-b12"
+  },
+  {
+    "name": "Vitamin B12",
+    "form": "as Cyanocobalamin",
+    "slug": "vitamin-b12"
+  },
+  {
+    "name": "Vitamin B12",
+    "form": "as Methylcobalamin",
+    "slug": "vitamin-b12"
+  },
+  {
+    "name": "Vitamin B12",
+    "form": "as cyanocobalamin",
+    "slug": "vitamin-b12"
+  },
+  {
+    "name": "Vitamin B12",
+    "form": "as methylcobalamin",
+    "slug": "vitamin-b12"
+  },
+  {
+    "name": "Vitamin B12",
+    "form": "from Cyanocobalamin",
+    "slug": "vitamin-b12"
+  },
+  {
+    "name": "Vitamin B12",
+    "form": "from methylcobalamin",
+    "slug": "vitamin-b12"
+  },
+  {
+    "name": "Vitamin B2",
+    "form": "Riboflavin",
+    "slug": "vitamin-b2"
+  },
+  {
+    "name": "Vitamin B2",
+    "form": "as riboflavin",
+    "slug": "vitamin-b2"
+  },
+  {
+    "name": "Vitamin B3",
+    "form": null,
+    "slug": "vitamin-b3"
+  },
+  {
+    "name": "Vitamin B3",
+    "form": "Niacin",
+    "slug": "vitamin-b3"
+  },
+  {
+    "name": "Vitamin B3",
+    "form": "as niacinamide",
+    "slug": "vitamin-b3"
+  },
+  {
+    "name": "Vitamin B5",
+    "form": "as Calcium Pantothenate",
+    "slug": "vitamin-b5"
+  },
+  {
+    "name": "Vitamin B6",
+    "form": null,
+    "slug": "vitamin-b6"
+  },
+  {
+    "name": "Vitamin B6",
+    "form": "Pyridoxal 5 Phosphate",
+    "slug": "vitamin-b6"
+  },
+  {
+    "name": "Vitamin B6",
+    "form": "Pyridoxine HCl",
+    "slug": "vitamin-b6"
+  },
+  {
+    "name": "Vitamin B6",
+    "form": "Pyridoxine hydrochloride",
+    "slug": "vitamin-b6"
+  },
+  {
+    "name": "Vitamin B6",
+    "form": "as Pyridoxine HCL",
+    "slug": "vitamin-b6"
+  },
+  {
+    "name": "Vitamin B6",
+    "form": "as Pyridoxine HCl",
+    "slug": "vitamin-b6"
+  },
+  {
+    "name": "Vitamin B6",
+    "form": "as pyridoxal 5 phosphate",
+    "slug": "vitamin-b6"
+  },
+  {
+    "name": "Vitamin B6",
+    "form": "as pyridoxine",
+    "slug": "vitamin-b6"
+  },
+  {
+    "name": "Vitamin B6",
+    "form": "as pyridoxine HCl",
+    "slug": "vitamin-b6"
+  },
+  {
+    "name": "Vitamin B6",
+    "form": "as pyridoxine hydrochloride",
+    "slug": "vitamin-b6"
+  },
+  {
+    "name": "Vitamin B6",
+    "form": "as pyridoxine hydrochloride and pyridoxal 5-phosphate",
+    "slug": "vitamin-b6"
+  },
+  {
+    "name": "Vitamin B6",
+    "form": "from Pyridoxine hydrochloride",
+    "slug": "vitamin-b6"
+  },
+  {
+    "name": "Vitamin B6",
+    "form": "from pyridoxine HCL",
+    "slug": "vitamin-b6"
+  },
+  {
+    "name": "Vitamin C",
+    "form": null,
+    "slug": "vitamin-c"
+  },
+  {
+    "name": "Vitamin C",
+    "form": "Ascorbic Acid",
+    "slug": "vitamin-c"
+  },
+  {
+    "name": "Vitamin C",
+    "form": "as Ascorbic Acid",
+    "slug": "vitamin-c"
+  },
+  {
+    "name": "Vitamin C",
+    "form": "as Calcium ascorbate",
+    "slug": "vitamin-c"
+  },
+  {
+    "name": "Vitamin C",
+    "form": "as ascorbic acid",
+    "slug": "vitamin-c"
+  },
+  {
+    "name": "Vitamin C",
+    "form": "as ascorbic acid, ascorbyl palmitate",
+    "slug": "vitamin-c"
+  },
+  {
+    "name": "Vitamin C",
+    "form": "as calcium ascorbate",
+    "slug": "vitamin-c"
+  },
+  {
+    "name": "Vitamin C",
+    "form": "as calcium ascorbate, sodium isoascorbate, citrus glycosyl flavones",
+    "slug": "vitamin-c"
+  },
+  {
+    "name": "Vitamin C",
+    "form": "ascorbic acid",
+    "slug": "vitamin-c"
+  },
+  {
+    "name": "Vitamin C",
+    "form": "from calcium ascorbate",
+    "slug": "vitamin-c"
+  },
+  {
+    "name": "Vitamin D",
+    "form": null,
+    "slug": "vitamin-d"
+  },
+  {
+    "name": "Vitamin D",
+    "form": "as Vegan Cholecalciferol",
+    "slug": "vitamin-d"
+  },
+  {
+    "name": "Vitamin D",
+    "form": "as cholecalciferol",
+    "slug": "vitamin-d"
+  },
+  {
+    "name": "Vitamin D",
+    "form": "as cholecalciferol (vegan D3, from food algae)",
+    "slug": "vitamin-d"
+  },
+  {
+    "name": "Vitamin D",
+    "form": "as vitamin D3",
+    "slug": "vitamin-d"
+  },
+  {
+    "name": "Vitamin D",
+    "form": "as vitamin D3 cholecalciferol",
+    "slug": "vitamin-d"
+  },
+  {
+    "name": "Vitamin D3",
+    "form": "Cholecalciferol",
+    "slug": "vitamin-d"
+  },
+  {
+    "name": "Vitamin D3",
+    "form": "as Cholecalciferol",
+    "slug": "vitamin-d"
+  },
+  {
+    "name": "Vitamin D3",
+    "form": "as cholecalciferol",
+    "slug": "vitamin-d"
+  },
+  {
+    "name": "Vitamin E",
+    "form": null,
+    "slug": "vitamin-e"
+  },
+  {
+    "name": "Vitamin E",
+    "form": "Natural D-Alpha Tocopheryl",
+    "slug": "vitamin-e"
+  },
+  {
+    "name": "Vitamin E",
+    "form": "as D-Alpha Tocopherol Acetate",
+    "slug": "vitamin-e"
+  },
+  {
+    "name": "Vitamin E",
+    "form": "as DL-alpha tocopherol acetate",
+    "slug": "vitamin-e"
+  },
+  {
+    "name": "Vitamin E",
+    "form": "as d-alpha tocopherol",
+    "slug": "vitamin-e"
+  },
+  {
+    "name": "Vitamin E",
+    "form": "as d-alpha tocopherol acetate",
+    "slug": "vitamin-e"
+  },
+  {
+    "name": "Vitamin E",
+    "form": "as d-alpha tocopheryl acetate",
+    "slug": "vitamin-e"
+  },
+  {
+    "name": "Vitamin E",
+    "form": "as d-alpha tocopheryl succinate",
+    "slug": "vitamin-e"
+  },
+  {
+    "name": "Vitamin E",
+    "form": "as d-alpha tocopheryl succinate with mixed tocopherols and tocotrienols",
+    "slug": "vitamin-e"
+  },
+  {
+    "name": "Vitamin E",
+    "form": "as d-alpha-tocopherol acetate",
+    "slug": "vitamin-e"
+  },
+  {
+    "name": "Vitamin E",
+    "form": "as d-alpha-tocopheryl acetate",
+    "slug": "vitamin-e"
+  },
+  {
+    "name": "Vitamin E",
+    "form": "as d-alpha-tocopheryl acetate, Biocellular Micellized",
+    "slug": "vitamin-e"
+  },
+  {
+    "name": "Vitamin E",
+    "form": "as d-alpha-tocopheryl succinate",
+    "slug": "vitamin-e"
+  },
+  {
+    "name": "Vitamin E",
+    "form": "as natural vitamin E acetate",
+    "slug": "vitamin-e"
+  },
+  {
+    "name": "Vitamin E",
+    "form": "d-Alpha Tocopheryl Succinate",
+    "slug": "vitamin-e"
+  },
+  {
+    "name": "Vitamin E",
+    "form": "dl-Alpha Tocopherol Acetate",
+    "slug": "vitamin-e"
+  },
+  {
+    "name": "Vitamin E",
+    "form": "from d-alpha tocopheryl acetate",
+    "slug": "vitamin-e"
+  },
+  {
+    "name": "Vitamin K",
+    "form": "as menaquinone",
+    "slug": "vitamin-k"
+  },
+  {
+    "name": "Vitamin K",
+    "form": "as menatetrenone",
+    "slug": "vitamin-k"
+  },
+  {
+    "name": "Vitamin K",
+    "form": "as phylloquinone",
+    "slug": "vitamin-k"
+  },
+  {
+    "name": "Vitamin K",
+    "form": "as phytonadione",
+    "slug": "vitamin-k"
+  },
+  {
+    "name": "Vitamin K2",
+    "form": "as menaquinone-4 and menaquinone-7",
+    "slug": "vitamin-k"
+  },
+  {
+    "name": "Vitamin K2",
+    "form": "as menaquinone-7",
+    "slug": "vitamin-k"
+  },
+  {
+    "name": "Wakame",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Wakame seaweed",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Wasabi",
+    "form": "leaf extract",
+    "slug": null
+  },
+  {
+    "name": "Water",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Watercress",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Watermelon",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Whey protein concentrate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "White Fungus",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "White Mulberry",
+    "form": "fruit juice",
+    "slug": null
+  },
+  {
+    "name": "White Oak",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "White Willow",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "White Willow",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "White grape juice concentrate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "White onion",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Wild Yam",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Wild Yam",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Wild Yam",
+    "form": "root extract 4:1",
+    "slug": null
+  },
+  {
+    "name": "Wintergreen",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Wolfberry",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Wolfberry Juice",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Wolfberry concentrate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Wolfberry juice concentrate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Wood Betony",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Wormwood",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Xylanase",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Yellow Dock",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Yellow Pepper",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Yellowdock",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Yerba Mate",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Yerba Maté",
+    "form": "organic",
+    "slug": null
+  },
+  {
+    "name": "Yerba Santa",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Yerba mate",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Yohimbe",
+    "form": "extract",
+    "slug": null
+  },
+  {
+    "name": "Yucca",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Yumberry Juice",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Yumberry juice concentrate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Zeaxanthin",
+    "form": "from marigold flower extract",
+    "slug": null
+  },
+  {
+    "name": "Zeaxanthin",
+    "form": "marigold flower extract",
+    "slug": null
+  },
+  {
+    "name": "Zhu ling",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "Zinc",
+    "form": null,
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "Monomethionine",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "Oxide",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "as Zinc Aspartate",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "as amino acid chelate",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "as gluconate",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "as gluconate, amino acid chelate",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "as zinc amino acid chelate",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "as zinc bisglycinate chelate",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "as zinc citrate",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "as zinc gluconate",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "from amino acid chelate",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "from aspartate complex",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "from monomethionine",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "from zinc ascorbate",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "from zinc bisglycinate chelate",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "from zinc citrate",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "from zinc gluconate",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "from zinc methionine",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc",
+    "form": "from zinc sulfate",
+    "slug": "zinc"
+  },
+  {
+    "name": "Zinc amino acid chelate",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "i26 Hyperimmune Egg Powder",
+    "form": null,
+    "slug": null
+  },
+  {
+    "name": "uC3 Clear",
+    "form": "Curcuma longa extract, complex",
+    "slug": null
+  }
+]

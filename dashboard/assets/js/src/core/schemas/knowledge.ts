@@ -16,6 +16,8 @@ import { z } from 'zod';
 /** A single essential entry from `essentials-targets-data`. */
 export const EssentialSchema = z.object({
   name: z.string(),
+  /** Canon slug — the join key to the registry resolver (added A2). */
+  slug: z.string(),
   category: z.string(),
   target: z.unknown().optional(),
   wallach_stance: z.object({

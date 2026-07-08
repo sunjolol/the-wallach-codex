@@ -21,3 +21,4 @@ export * from './regimen.js';
 export * from './scanner-corpus.js';
 export * from './scanner.js';
 export * from './product-detail.js';
+export * from './nutrient-resolver.js';

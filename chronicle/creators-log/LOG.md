@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 440 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 441 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-08 16:40 UTC-05:00 · round-close · coverage
+A2: Coverage nutrient-matcher unified onto the ONE registry resolver (label name -> canon slug -> target); parity gate proves TS resolveSlug == Python resolve over all 1360 pillar names; default-stack coverage byte-identical (0 diffs); board 50/50, vitest 4/4.
+  ↳ Plain: the Coverage screen used to guess which of the 90 nutrients each ingredient counts toward using its own hand-written name-matcher, separate from the rigorous resolver the Products database uses - two answers to one question (it silently dropped 'Thiamin'). A2 routes Coverage through that one resolver, so an ingredient always credits the same nutrient everywhere; the covered numbers on the default stack are unchanged (verified) - it's just correct-by-construction now and more robust. Tech: NEW eden/tools/nutrient_resolver_embed.py -> dashboard/assets/data/nutrient-resolver-data.json (MANIFEST-registered, freshness-gated), projecting nutrient_resolve.py's identity tables. NEW core/nutrient-resolver.ts::resolveSlug (faithful TS port) + core/schemas/nutrient-resolver.ts. state/coverage.ts rewritten: label name -> canon slug -> target via a bySlug index (matchToEssential/cleanName/buildByName deleted; toMg/classify unchanged, IU-native). targets_derive.py emits per-essential slug (EssentialSchema types it). nutrient_resolve.py: hoisted FA_PATTERNS/STEREO_PREFIXES/OMEGA_DIGIT, added parenthetical-strip + explicit-Omega-N-wins (fixes 2 dropped pillar omega-3 rows). RegimenNutrientSchema gains optional form. NEW critical invariant nutrient_resolver_parity (two-layer over all 1360 distinct pillar (name,form): committed fixture == live resolve() AND an artifact-driven resolver == resolve()) + vitest (nutrient-resolver.test.ts + coverage.test.ts); npm test glob fixed to run the whole suite. Verified: board 50/50 (0 new reds), vitest 4/4, tsc+esbuild clean, render probes x4 PASS (0 page errors), base-foundation coverage byte-identical to the old matcher. Scope kept to IDENTITY (units IU-native = WISH). NEXT chunk (Luneth 2026-07-08): Omega-9 canon correction - the 90-nutrients graphic mislabels Omega-9 as 'Arachidonic' (it is Oleic Acid) - plus per-omega clarity alert boxes.
 
 ## 2026-07-08 15:13 UTC-05:00 · round-close · knowledge
 Products detail-panel surface: Knowledge>Products now lists ALL 215 products, each clickable to a full YGY detail panel (price/serving/directions/supplement-facts/blends), reachable from the product rows AND the essentials 'FOUND IN YGY VAULT' chips.
@@ -789,6 +793,3 @@ SESSION 32 b4c — copper SPLIT: orphans at both ends of a >500 list, split at L
 
 ## 2026-07-01 07:12 UTC-05:00 · design-decision · knowledge-drawer
 SESSION 32 b4b — first claim SPLIT (Luneth-approved): dyslexia orphan gets naming claim EPIGEN-000106 from the Bad Seeds sentence, verbatim trimmed at 'ADD, ADHD, autism' to exclude 'congenital homosexuality'; dyslexia dropped from 000002. claims 1001->1002, 0 NEW.
-
-## 2026-07-01 07:07 UTC-05:00 · round-close · knowledge-drawer
-SESSION 32 b4a — EPIGEN: calcium re-anchored from the 147-diseases summary to its clean table sub-span (9 conditions, 3 orphans); CNS-defects dropped 4 sibling-covered; new applier keep_unnamed. Violations 476->445 (EPIGEN 61->32), board 32/32, 0 NEW.

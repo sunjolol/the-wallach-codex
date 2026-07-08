@@ -89,16 +89,35 @@ def to_canonical(amount, unit, slug):
         return None
     return (round(mg / MASS_TO_MG[cu], 4), cu)
 
+STEREO_PREFIXES = ("l-", "d-", "dl-")
+
+# Fatty-acid family resolution: (essential slug, regex source). Hoisted to a module
+# constant so BOTH fa_of() AND the runtime-resolver embed (nutrient_resolver_embed.py)
+# read ONE source; the TS coverage matcher (core/nutrient-resolver.ts) mirrors these
+# exact patterns and the parity gate proves TS == this Python resolver (A2 2026-07-08).
+FA_PATTERNS = [
+    ("omega-3", r'omega\s*3|alpha-linolenic|\bala\b|eicosapentaenoic|\bepa\b|docosahexaenoic|\bdha\b'),
+    ("omega-6", r'omega\s*6|linoleic|\bla\b|gamma-linolenic|\bgla\b|arachidonic'),
+    ("omega-9", r'omega\s*9|oleic|\boa\b'),
+]
+# An EXPLICIT "omega N" token in the label wins over an incidental fatty-acid keyword:
+# "Omega-9 (Arachidonic / Oleic)" is the omega-9/oleic slot, not omega-6 just because
+# "arachidonic" appears; and hyphenated "Omega-3 Fatty Acids" (which FA_PATTERNS' omega\s*3
+# misses) resolves. Only 3/6/9 are canon families. Emitted to the artifact + mirrored in the
+# TS resolver + the parity gate (Luneth 2026-07-08).
+OMEGA_DIGIT = re.compile(r"omega[-\s]*([369])")
+
 def strip_stereo(n):
-    for p in ("l-", "d-", "dl-"):
+    for p in STEREO_PREFIXES:
         if n.startswith(p): return n[len(p):]
     return n
 
 def fa_of(name, form):
     s = f"{name} {form or ''}".lower()
-    if re.search(r'omega\s*3|alpha-linolenic|\bala\b|eicosapentaenoic|\bepa\b|docosahexaenoic|\bdha\b', s): return "omega-3"
-    if re.search(r'omega\s*6|linoleic|\bla\b|gamma-linolenic|\bgla\b|arachidonic', s): return "omega-6"
-    if re.search(r'omega\s*9|oleic|\boa\b', s): return "omega-9"
+    m = OMEGA_DIGIT.search(s)
+    if m: return f"omega-{m.group(1)}"
+    for slug, pat in FA_PATTERNS:
+        if re.search(pat, s): return slug
     return None
 
 def _clean(name):
@@ -114,12 +133,20 @@ def _norm(name):
     for ch in "™®©.,": n = n.replace(ch, "")
     return re.sub(r'\s+', ' ', n.replace("-", " ")).strip()
 
+# A parenthetical qualifier on a label name ("Vitamin B1 (Thiamine)", "Folic Acid
+# (Folate)") is stripped before the alias lookup. Real label sources the Coverage matcher
+# feeds this resolver -- the base-foundation regimen + user OCR scans -- carry them; the
+# Products pillar names are already clean, so this is a NO-OP there (verified: 0 pillar
+# resolution changes). Mirrored in core/nutrient-resolver.ts + the nutrient_resolver_parity gate.
+PAREN_QUALIFIER = re.compile(r"\s*\([^)]*\)\s*")
+
 def resolve(name, form=None):
-    """Return an essential slug, or None if the substance is a botanical/active."""
+    """Return an essential slug, or None if the substance is a botanical/active.
+    Strips a parenthetical qualifier before the alias lookup (see PAREN_QUALIFIER)."""
     if not name: return None
-    n = _clean(name).lower()
     fa = fa_of(name, form)
     if fa: return fa
+    n = re.sub(r'\s+', ' ', PAREN_QUALIFIER.sub(' ', _clean(name).lower())).strip()
     if n in VIT_ALIAS: return VIT_ALIAS[n]
     if n in MINERALS: return MINERALS[n]
     if n in MIN_ALIAS: return MIN_ALIAS[n]
@@ -176,6 +203,9 @@ def report():
     checks = [
         ("Vitamin A -> vitamin-a", resolve("Vitamin A") == "vitamin-a"),
         ("Thiamin -> vitamin-b1", resolve("Thiamin") == "vitamin-b1"),
+        ("paren: Vitamin B1 (Thiamine) -> vitamin-b1", resolve("Vitamin B1 (Thiamine)") == "vitamin-b1"),
+        ("paren: Folic Acid (Folate) -> vitamin-b9", resolve("Folic Acid (Folate)") == "vitamin-b9"),
+        ("paren: Vitamin A (beta-carotene) -> vitamin-a", resolve("Vitamin A (beta-carotene)") == "vitamin-a"),
         ("Vitamin B6 -> vitamin-b6", resolve("Vitamin B6") == "vitamin-b6"),
         ("Folic Acid -> vitamin-b9", resolve("Folic Acid") == "vitamin-b9"),
         ("L-Arginine -> arginine", resolve("L-Arginine") == "arginine"),
@@ -185,6 +215,8 @@ def report():
         ("Vitamin K2 -> vitamin-k", resolve("Vitamin K2") == "vitamin-k"),
         ("ALA(form Omega 3) -> omega-3", resolve("Alpha-Linolenic Acid (ALA)", "Omega 3") == "omega-3"),
         ("EPA -> omega-3", resolve("EPA") == "omega-3"),
+        ("explicit: Omega-9 (Arachidonic / Oleic) -> omega-9", resolve("Omega-9 (Arachidonic / Oleic)", "Oleic") == "omega-9"),
+        ("explicit: Omega-3 fatty acids -> omega-3", resolve("Omega-3 fatty acids") == "omega-3"),
         ("PABA -> botanical(None)", resolve("PABA") is None),
         ("Caffeine -> botanical(None)", resolve("Caffeine") is None),
         ("CoQ10 -> botanical(None)", resolve("CoQ10") is None),
