@@ -12061,11 +12061,6 @@
               "unit": "mg",
               "pct_dv": 0
             },
-            "sodium": {
-              "amount": 0,
-              "unit": "mg",
-              "pct_dv": 0
-            },
             "total_carbohydrate": {
               "amount": 4,
               "unit": "g",
@@ -12092,7 +12087,14 @@
               "pct_dv": 0
             }
           },
-          "nutrients": [],
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": 0
+            }
+          ],
           "blends": [],
           "other_ingredients": [
             "Raw Cane Sugar",
@@ -15983,11 +15985,6 @@
               "unit": "mg",
               "pct_dv": 10
             },
-            "sodium": {
-              "amount": 60,
-              "unit": "mg",
-              "pct_dv": 3
-            },
             "total_carbohydrate": {
               "amount": 14,
               "unit": "g",
@@ -16020,6 +16017,12 @@
             }
           },
           "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 60,
+              "unit": "mg",
+              "pct_dv": 3
+            },
             {
               "name": "Vitamin D",
               "amount": 25,
@@ -16657,14 +16660,15 @@
               "amount": 9,
               "unit": "g",
               "pct_dv": null
-            },
-            "sodium": {
-              "amount": 5,
-              "unit": "mg",
-              "pct_dv": "<1"
             }
           },
           "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": "<1"
+            },
             {
               "name": "Majestic Earth Plant Derived Minerals",
               "amount": 600,
@@ -17644,14 +17648,15 @@
               "amount": 20,
               "unit": "g",
               "pct_dv": null
-            },
-            "sodium": {
-              "amount": 280,
-              "unit": "mg",
-              "pct_dv": 12
             }
           },
           "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 280,
+              "unit": "mg",
+              "pct_dv": 12
+            },
             {
               "name": "Calcium",
               "amount": 56,
@@ -18354,11 +18359,6 @@
               "unit": "g",
               "pct_dv": 0
             },
-            "sodium": {
-              "amount": 0,
-              "unit": "mg",
-              "pct_dv": 0
-            },
             "total_carbohydrate": {
               "amount": 2,
               "unit": "g",
@@ -18385,7 +18385,14 @@
               "pct_dv": null
             }
           },
-          "nutrients": [],
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": 0
+            }
+          ],
           "blends": [],
           "other_ingredients": [
             "Instant Coffee Powder",
@@ -18426,11 +18433,6 @@
               "unit": "g",
               "pct_dv": null
             },
-            "sodium": {
-              "amount": 10,
-              "unit": "mg",
-              "pct_dv": 0
-            },
             "total_carbohydrate": {
               "amount": 7,
               "unit": "g",
@@ -18457,7 +18459,14 @@
               "pct_dv": 0
             }
           },
-          "nutrients": [],
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 0
+            }
+          ],
           "blends": [
             {
               "name": "UltimateMushroom Mushroom Complex Extract Powder",
@@ -18573,11 +18582,6 @@
               "unit": "mg",
               "pct_dv": 19
             },
-            "sodium": {
-              "amount": 170,
-              "unit": "mg",
-              "pct_dv": 7
-            },
             "total_carbohydrate": {
               "amount": 12,
               "unit": "g",
@@ -18600,6 +18604,12 @@
             }
           },
           "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 170,
+              "unit": "mg",
+              "pct_dv": 7
+            },
             {
               "name": "Vitamin A",
               "amount": 1276,
@@ -18780,19 +18790,21 @@
               "amount": 0,
               "unit": "mg",
               "pct_dv": 0
-            },
-            "sodium": {
-              "amount": 0,
-              "unit": "mg",
-              "pct_dv": 0
-            },
-            "potassium": {
-              "amount": 0,
-              "unit": "mg",
-              "pct_dv": 0
             }
           },
           "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": 0
+            },
+            {
+              "name": "Potassium",
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": 0
+            },
             {
               "name": "Caffeine",
               "amount": 104,
@@ -19218,11 +19230,6 @@
               "unit": null,
               "pct_dv": null
             },
-            "sodium": {
-              "amount": 55,
-              "unit": "mg",
-              "pct_dv": null
-            },
             "total_carbohydrate": {
               "amount": 4.7,
               "unit": "g",
@@ -19240,6 +19247,12 @@
             }
           },
           "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 55,
+              "unit": "mg",
+              "pct_dv": null
+            },
             {
               "name": "Vitamin B3",
               "amount": 4,

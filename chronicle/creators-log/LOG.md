@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 430 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 431 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-08 07:43 UTC-05:00 · round-close · products
+Phase F pre-seal remediation P4: unified Sodium/Potassium storage -- moved the 10 macro-block entries into nutrients[] so every product carries these minerals in one place (no value changes).
+  ↳ Some food-style products (shakes, sticks, lattes) listed Sodium/Potassium in the Nutrition-Facts macros block, while supplements list them in the vitamins/minerals block. That split meant the coverage calculator -- which reads nutrients[] -- could miss them. I moved all 10 straggler entries into nutrients[] so the storage is uniform. Only the location changed; every amount, unit and %DV is preserved exactly. Moved 10 macro entries -> nutrients[] (9 Sodium + trim-stiks Potassium): manuka-force-lemon-honey-lozenges (Na 0), slender-fx-meal-replacement-shake (Na 60), strawberry-kiwi-mins (Na 5, pct_dv '<1'), sta-natural-plant-shake (Na 280), tazza-di-vita-cafe-ganoderma (Na 0), tazza-di-vita-latte (Na 10), tmr-total-meal-replacement-shake (Na 170), trim-stiks (Na 0 + K 0), truecleanse (Na 55, pct_dv null). Prepended in Sodium-then-Potassium order (label main-panel position). No dup risk (verified none pre-existed in nutrients[]). After: Sodium macros 0 / nutrients 54; Potassium macros 0 / nutrients 49. products_verify OK (215/221/0); invariants 46/46; node build OK. Rationale vs the units decision (C): this is a STRUCTURAL move, not a value transformation -- no label number is distorted (unlike a lossy IU->mcg conversion), and Sodium/Potassium ARE minerals/essentials, so the nutrients[] mineral block is the more correct home. It keeps the coverage engine to a single lookup path for every mineral instead of a permanent 2-substance special-case.
 
 ## 2026-07-08 07:22 UTC-05:00 · round-close · products
 Phase F pre-seal remediation P3: normalized the 12 nutrient-name spelling collisions (29 renames); discovered + deferred 65 more ingredient-vocabulary collisions to the Phase-7/8 registry.
@@ -785,7 +789,3 @@ SESSION 31 b1 — Epigenetics Ch18 minerals Hf→La (+6: Hafnium/Mercury[tox]/Ho
 ## 2026-06-30 21:05 UTC-05:00 · design-decision · knowledge-drawer
 SESSION 30 Feature B — openable books in the Corpus tab. Clicking a book opens a browse of all its tier-1 claims, finally surfacing the composition/dose tables that had no essential/condition home. Added an embed tier field to hold back search-only. Luneth signed off.
   ↳ corpus_embed.py emits tier (1 operational / 2 search-only); getClaimsForBook returns tier-1 only; listBooksWithId pairs books with their id; knowledge-corpus.ts renderBookDeep + relocated corpus-tab renderers (fixed knowledge.ts line budget). Epigenetics opens 74 of 89 (15 search-only hidden), tables present; Immortality 0-claim graceful empty state. Probe +1 assertion, 31/31, build+lint clean. Next: resume Epigenetics forward pass Hf->La.
-
-## 2026-06-30 20:47 UTC-05:00 · design-decision · knowledge-drawer
-SESSION 30 Feature A — intake-vs-Wallach-target meter in the essential deep-dive. Compact top-right: intake / goal + fill bar + '% OF WALLACH GOAL' when Wallach states a numeric target; covered/not-covered pill otherwise (no invented ratios). Luneth signed off.
-  ↳ Surfaces the coverage engine's already-computed intake (summed Youngevity regimen) vs target (Wallach targets DB) per essential. coverage.ts exposes intakeVsTarget on CoverageTile; render helpers in knowledge-corpus.ts (keeps knowledge.ts under 600-line budget). Verified: Magnesium 320/620mg 52% partial, Selenium 100/100mcg covered, Dysprosium trace=pill only. Probe +2 assertions, 31/31, build+lint clean. Fixes Luneth's 'can't verify per-mineral doses'. Next: Feature B openable books.
