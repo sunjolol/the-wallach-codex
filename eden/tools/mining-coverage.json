@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "_doctrine": "Coverage-accounting ledger for book mining (Proposal A -- 2026-07-07). Makes WHOLESALE under-mining a red-board state AT COMPLETION instead of an invisible dropped thread (DDDL Appendix-B long tail; Immortality at 0 claims for ~40 sessions). For each book: mining_status incomplete|complete. A book flagged 'complete' must account for every source page (screenshot-scheme books: every ===== Screenshot(N) ===== with zero claims must be in reviewed_empty {page: reason}) or every entry in sections[] (chapter-scheme books: status mined|reviewed-empty, reviewed-empty needs a reason). 'incomplete' books are reported informationally, NEVER RED -- exactly as book_source_clean asserts only pristine books. Claim-bearing pages auto-derive from sealed locator.char_offset -> nearest ===== Screenshot(N) ===== marker (ONE internally-consistent text-position basis; independent of per-book locator.screenshot, which is populated inconsistently). Gate: mining_coverage_accounted. This is the coverage leg (the product label-gate analog); per-claim sub-page completeness stays with the corpus_audit end-pass, and the manual mining checkpoint samples faithfulness. User is sole writer; NOT sealed, NOT a generated data artifact.",
+  "books": {
+    "dddl-3e-2011":     { "mining_status": "incomplete", "coverage_basis": "section",    "sections": [], "reviewed_empty": {} },
+    "rare-earths":      { "mining_status": "incomplete", "coverage_basis": "section",    "sections": [], "reviewed_empty": {} },
+    "lets-play-doctor": { "mining_status": "incomplete", "coverage_basis": "section",    "sections": [], "reviewed_empty": {} },
+    "epigenetics":      { "mining_status": "incomplete", "coverage_basis": "screenshot", "reviewed_empty": {} },
+    "immortality":      { "mining_status": "incomplete", "coverage_basis": "screenshot", "reviewed_empty": {} },
+    "iaiyh":            { "mining_status": "incomplete", "coverage_basis": "screenshot", "reviewed_empty": {} }
+  }
+}

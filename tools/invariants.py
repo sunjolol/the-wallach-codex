@@ -1541,6 +1541,100 @@ def check_mined_pages_clean():
     return True, f"all mined source pages clean across campaign books [{gated}] (tight gibberish+spacing gate)"
 
 
+def check_mining_coverage_accounted():
+    """Coverage-accounting gate for book mining (Proposal A, 2026-07-07 -- the
+    page/section DENOMINATOR). For each book flagged mining_status:'complete' in
+    eden/tools/mining-coverage.json, prove no WHOLESALE skip: every source page
+    (screenshot-scheme books) or section (chapter-scheme books) is either
+    claim-bearing or explicitly reviewed-empty WITH A REASON. Books still
+    'incomplete' are reported informationally, NEVER RED -- exactly as
+    book_source_clean asserts only pristine books. Turns silent under-mining
+    (DDDL Appendix-B long tail; Immortality at 0 claims for ~40 sessions) into a
+    red board AT COMPLETION instead of an invisible dropped thread. Claim-bearing
+    pages auto-derive from sealed locator.char_offset -> the nearest preceding
+    '===== Screenshot(N) =====' marker: ONE internally-consistent text-position
+    basis, deliberately NOT locator.screenshot (which is populated inconsistently
+    per book -- epigenetics numbers by Page, iaiyh/immortality by marker N). The
+    only human input is resolving zero-claim pages/sections with a reason
+    (exceptions_justified pattern). Wholesale accounting only -- per-claim sub-page
+    completeness stays with the corpus_audit end-pass; faithfulness is sampled by
+    the manual mining checkpoint. memory: dddl-undermined-remine,
+    immortality-mining-policy."""
+    import bisect
+    ledger_p = ROOT / "eden" / "tools" / "mining-coverage.json"
+    meta_p = ROOT / "eden" / "corpus" / "books-meta.json"
+    if not ledger_p.exists():
+        return True, "no mining-coverage.json -- coverage ledger not installed (bootstrap-guard)"
+    ledger = json.loads(ledger_p.read_text(encoding="utf-8")).get("books", {})
+    meta = json.loads(meta_p.read_text(encoding="utf-8"))["books"]
+    marker_re = re.compile(r"=====\s*Screenshot\s*\((\d+)\)")
+    failures, info = [], []
+    for m in meta:
+        book_id = m["book_id"]
+        entry = ledger.get(book_id, {})
+        status = entry.get("mining_status", "incomplete")
+        basis = entry.get("coverage_basis",
+                          "screenshot" if m.get("locator_scheme") == "screenshot" else "section")
+        shard = ROOT / "eden" / "corpus" / "claims" / f"claims-{book_id}.json"
+        claims = []
+        if shard.exists():
+            sd = json.loads(shard.read_text(encoding="utf-8"))
+            claims = sd.get("claims", []) if isinstance(sd, dict) else sd
+        if basis == "screenshot":
+            txt = (ROOT / m["file"]).read_text(encoding="utf-8")
+            marks = [(mm.start(), int(mm.group(1))) for mm in marker_re.finditer(txt)]
+            if not marks:
+                info.append(f"{book_id}=no-markers({len(claims)} claims)")
+                continue
+            positions = [p for p, _ in marks]
+            all_pages = {n for _, n in marks}
+            bearing = set()
+            for c in claims:
+                off = (c.get("locator") or {}).get("char_offset")
+                if off is None:
+                    continue
+                i = bisect.bisect_right(positions, off) - 1
+                if i >= 0:
+                    bearing.add(marks[i][1])
+            zero = sorted(all_pages - bearing)
+            reviewed = entry.get("reviewed_empty", {})
+            if status == "complete":
+                unresolved = [p for p in zero if str(p) not in reviewed]
+                no_reason = [p for p in zero
+                             if str(p) in reviewed and not str(reviewed[str(p)]).strip()]
+                if unresolved:
+                    failures.append(f"{book_id}: flagged COMPLETE but {len(unresolved)} page(s) neither "
+                                    f"claim-bearing nor reviewed-empty (e.g. Screenshot {unresolved[:6]})")
+                if no_reason:
+                    failures.append(f"{book_id}: {len(no_reason)} reviewed-empty page(s) with no reason "
+                                    f"(Screenshot {no_reason[:6]})")
+                info.append(f"{book_id}=COMPLETE:{len(bearing)}/{len(all_pages)} pages mined")
+            else:
+                info.append(f"{book_id}=incomplete:{len(bearing)}/{len(all_pages)} pages "
+                            f"({len(zero)} zero-claim, {len(claims)} claims)")
+        else:  # section basis -- chapter-scheme books have no reliable page markers
+            sections = entry.get("sections", [])
+            if status == "complete":
+                if not sections:
+                    failures.append(f"{book_id}: flagged COMPLETE but no sections[] to prove coverage")
+                pending = [s.get("name", "?") for s in sections
+                           if s.get("status") not in ("mined", "reviewed-empty")]
+                no_reason = [s.get("name", "?") for s in sections
+                             if s.get("status") == "reviewed-empty" and not str(s.get("reason", "")).strip()]
+                if pending:
+                    failures.append(f"{book_id}: flagged COMPLETE but {len(pending)} section(s) pending "
+                                    f"({pending[:6]})")
+                if no_reason:
+                    failures.append(f"{book_id}: {len(no_reason)} reviewed-empty section(s) with no reason")
+                info.append(f"{book_id}=COMPLETE:{len(sections)} sections accounted")
+            else:
+                info.append(f"{book_id}=incomplete(section-basis, {len(claims)} claims)")
+    if failures:
+        return False, ("book mining coverage gaps -- " + "; ".join(failures) +
+                       " (resolve in eden/tools/mining-coverage.json). memory: dddl-undermined-remine")
+    return True, "book mining coverage accounted -- " + "; ".join(info)
+
+
 # ---------------------------------------------------------------------------
 # Charter R3 / R4 gates (Phase D-c, 2026-07-05) -- citations, prose, dedup
 # ---------------------------------------------------------------------------
@@ -2269,6 +2363,14 @@ INVARIANTS = [
         truth_anchor="sealed claim locator.screenshot x deterministic book_purity detectors, re-scanned each run; genuine FPs triaged in eden/tools/mined-page-triage.json",
         severity="critical",
         lesson_ref="SESSION 44 (2026-07-04) -- Luneth: I keep catching you deferring OCR garbage on pages we just mined; advisory memories are rationalizable, so make it a red-board gate on the pages we actually touch; memory perfect-entry-no-deferral",
+    ),
+    Invariant(
+        name="mining_coverage_accounted",
+        description="every book flagged mining_status:'complete' in eden/tools/mining-coverage.json accounts for every source page (screenshot books, auto-derived from locator.char_offset->nearest marker) or section (chapter books) with a claim OR a reviewed-empty+reason; 'incomplete' books reported informationally only -- makes WHOLESALE under-mining a red board at completion, not an invisible dropped thread",
+        check_fn=check_mining_coverage_accounted,
+        truth_anchor="sealed claim locator.char_offset -> nearest ===== Screenshot(N) ===== marker in the book .txt (one text-position basis, NOT the inconsistent locator.screenshot), re-derived each run vs the book's marker set; reviewed-empty reasons per the exceptions_justified pattern",
+        severity="critical",
+        lesson_ref="Proposal A (2026-07-07) -- Luneth: silent under-mining (DDDL Appendix-B long tail, Immortality 0 claims for ~40 sessions) forced whole-book re-mines; give book mining the same coverage-accounting leg the product label-gate gives products, asserted only at completion so it never falsely reds the legitimately-incomplete corpus; memory dddl-undermined-remine + immortality-mining-policy",
     ),
     Invariant(
         name="graphics_integrity",
