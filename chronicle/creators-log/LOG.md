@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 431 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 432 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-08 08:16 UTC-05:00 · round-close · products
+Phase F pre-seal remediation P6: backfilled servings-per-container for the 3 supplements whose panels omit it (VitalStart 7, Integris K2 30, Integris CoQ10 60 -- user-supplied counts); cream stays null (N/A).
+  ↳ Three products' panels do not print Servings Per Container, so per-container cost math was blocked. I first confirmed the counts could NOT be derived from our data (panels omit them; listing names/descriptions carry no count or net weight). Luneth then read them off the packaging and supplied them, so I backfilled. set servings_per_container: vitalstart 7 (7 sticks x 10 g = 70 g / 2.5 oz), integris-vitamin-k2 30 capsules, integris-coq10-plus-e 60 capsules -- each 1 unit per serving. ultimate-cm-cream left null: it is a 2-oz topical applied as directed, so servings-per-container is genuinely N/A (the only remaining null spc, by design). products_verify OK (215/221/0); invariants 46/46; node build OK. Provenance note: these counts are packaging facts supplied by Luneth (the supplement panels omit them), not derived and not invented -- consistent with how missing labels were supplied during extraction.
 
 ## 2026-07-08 07:43 UTC-05:00 · round-close · products
 Phase F pre-seal remediation P4: unified Sodium/Potassium storage -- moved the 10 macro-block entries into nutrients[] so every product carries these minerals in one place (no value changes).
@@ -785,7 +789,3 @@ SESSION 31 b2 — Epigenetics Ch18 charged Lithium (EPIGEN-096 tier-1): Li defic
 ## 2026-06-30 21:28 UTC-05:00 · round-close · knowledge/corpus
 SESSION 31 b1 — Epigenetics Ch18 minerals Hf→La (+6: Hafnium/Mercury[tox]/Holmium/Iodine/Potassium/Lanthanum). New condition Cretinism; iodine deficiency-only + potassium cond=[] (Luneth-ruled); Hf/Ho now 2-source. kv205 · claims 991 · 468 conditions · board 31/31.
   ↳ WAL-CLM-EPIGEN-000090..095. Skipped In/Ir/Kr (non-canon inert); stopped before charged Lithium. Verbatims snapped to exact book bytes; render probe 0 errors.
-
-## 2026-06-30 21:05 UTC-05:00 · design-decision · knowledge-drawer
-SESSION 30 Feature B — openable books in the Corpus tab. Clicking a book opens a browse of all its tier-1 claims, finally surfacing the composition/dose tables that had no essential/condition home. Added an embed tier field to hold back search-only. Luneth signed off.
-  ↳ corpus_embed.py emits tier (1 operational / 2 search-only); getClaimsForBook returns tier-1 only; listBooksWithId pairs books with their id; knowledge-corpus.ts renderBookDeep + relocated corpus-tab renderers (fixed knowledge.ts line budget). Epigenetics opens 74 of 89 (15 search-only hidden), tables present; Immortality 0-claim graceful empty state. Probe +1 assertion, 31/31, build+lint clean. Next: resume Epigenetics forward pass Hf->La.

@@ -10146,7 +10146,7 @@
           "role": null,
           "form": "capsule",
           "serving_size": "1 capsule",
-          "servings_per_container": null,
+          "servings_per_container": 60,
           "macros": {},
           "nutrients": [
             {
@@ -10194,7 +10194,7 @@
           "role": null,
           "form": "capsule",
           "serving_size": "1 vegetable capsule",
-          "servings_per_container": null,
+          "servings_per_container": 30,
           "macros": {},
           "nutrients": [
             {
@@ -25922,7 +25922,7 @@
         {
           "form": "powder stick",
           "serving_size": "1 Stick (10 g)",
-          "servings_per_container": null,
+          "servings_per_container": 7,
           "macros": {
             "calories": {
               "amount": 10,
