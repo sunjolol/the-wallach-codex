@@ -74,6 +74,8 @@ def check_ingredient(where: str, ing: dict) -> None:
         check_token(f"{where}.sub[{i}].name", sub.get("name"))
         if "latin" in sub:
             check_token(f"{where}.sub[{i}].latin", sub["latin"])
+        if "amount" in sub:
+            check_amount(f"{where}.sub[{i}].amount", sub["amount"])
 
 
 def check_component(where: str, c: dict) -> None:

@@ -477,8 +477,14 @@
                   "pos": 2,
                   "name": "Green tea",
                   "form": "extract",
-                  "amount": 100,
-                  "unit": "mg"
+                  "standardization": "provides 100 mg caffeine",
+                  "sub_ingredients": [
+                    {
+                      "name": "Caffeine",
+                      "amount": 100,
+                      "unit": "mg"
+                    }
+                  ]
                 },
                 {
                   "pos": 3,
@@ -6307,7 +6313,14 @@
                   "name": "Green tea",
                   "part": "leaf",
                   "form": "extract",
-                  "standardization": "provides 100 mg natural caffeine"
+                  "standardization": "provides 100 mg natural caffeine",
+                  "sub_ingredients": [
+                    {
+                      "name": "Caffeine",
+                      "amount": 100,
+                      "unit": "mg"
+                    }
+                  ]
                 },
                 {
                   "pos": 5,
@@ -15178,7 +15191,14 @@
                   "pos": 3,
                   "name": "Japanese Knotweed",
                   "part": "root",
-                  "form": "extract"
+                  "form": "extract",
+                  "sub_ingredients": [
+                    {
+                      "name": "Trans-Resveratrol",
+                      "amount": 30,
+                      "unit": "mg"
+                    }
+                  ]
                 }
               ],
               "as_labeled": "Grape seed OPC 95% extract with extracts of red grape skin and Japanese knotweed root, providing 30 mg trans-resveratrol"
@@ -25581,7 +25601,14 @@
                 {
                   "pos": 3,
                   "name": "Melon juice concentrate with Bioperine",
-                  "form": "providing 140 IU SOD"
+                  "standardization": "providing 140 IU SOD",
+                  "sub_ingredients": [
+                    {
+                      "name": "SOD",
+                      "amount": 140,
+                      "unit": "iu"
+                    }
+                  ]
                 },
                 {
                   "pos": 4,
@@ -26695,7 +26722,14 @@
                 {
                   "pos": 3,
                   "name": "Melon juice concentrate with Bioperine",
-                  "standardization": "providing 140 IU SOD"
+                  "standardization": "providing 140 IU SOD",
+                  "sub_ingredients": [
+                    {
+                      "name": "SOD",
+                      "amount": 140,
+                      "unit": "iu"
+                    }
+                  ]
                 },
                 {
                   "pos": 4,

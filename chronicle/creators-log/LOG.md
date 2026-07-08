@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 433 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 434 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-08 09:31 UTC-05:00 · round-close · products
+Phase F pre-seal: captured the 5 quantified actives trapped in label-text (caffeine/resveratrol/SOD) as comparable sub-ingredient amounts + fixed the 3-0-rise green-tea/caffeine mislabel; hardened products_verify (sub-amounts) + negative test.
+  ↳ Luneth's principle: any number we have should be comparable across products, and a green-tea amount was mislabeled. A few quantified actives sat only in label-text notes ('provides 100 mg caffeine'), so I structured them; and 3-0-rise had 100 mg stored as green tea when it means 100 mg caffeine. Whole-DB scans proved these 5 are the only such cases. Edits (sub_ingredient{name,amount,unit}): 3-0-rise Green tea -> drop mislabeled 100mg, +Caffeine 100mg; chi3-energy Green tea +Caffeine 100mg; reverse Res-V-Plex Japanese Knotweed +Trans-Resveratrol 30mg; xeratest + xerafem Melon juice +SOD 140 IU. products_verify now validates sub_ingredient amounts (check_amount) -- R7 negative test passes (bad rejected, valid accepted). products_verify OK (215/221/0); invariants 46/46; node build OK. Verification: a drop-detector over all 206 blends (as_labeled mass-amounts vs captured) + a standardization/form amount scan both converged to exactly these 5; procardio (EPA 330/DHA 220) and reverse-marine (Omega-3 1200/EPA 720/DHA 480) confirmed already-captured; rvb/ryl/zradical amounts are blend totals (faithful). Also closes Phase 8/8b: 7 name-only amino products label-verified faithful; corrected coverage 50/91 essentials with a usable amount (blend ingredients carry ~half of it -- my earlier by-hand analysis undercounted, which is why Phase 9 will be tested code validated against known values).
 
 ## 2026-07-08 08:33 UTC-05:00 · round-close · products
 Phase F pre-seal remediation P7: made probiotic CFU a comparable quantity -- migrated 7 per-strain CFU strings to amount+unit, added blend-level total_cfu to 4 products, extended products_verify + 5/5 negative test.
@@ -785,7 +789,3 @@ SESSION 31 FIX — Luneth caught 2 corpus-trust bugs: quotes under a condition d
 ## 2026-06-30 22:09 UTC-05:00 · round-close · knowledge/corpus
 SESSION 31 b3 — Epigenetics Ch18 minerals Lu→Ni (+9: Lu/Mg/Mn/Mo/N/Na/Nb/Nd/Ni). Mg/Mn/Na rich (asthma/carpal-tunnel/Addison's/Kwashiorkor enriched); excess-Mn parkinsonism kept descriptive; zero new conditions. Crossed 1,000. kv207 · claims 1001 · 468 cond · 31/31.
   ↳ Skipped Ne/Np (non-canon). RDA figures dropped per §00.A. Lu/Nb/Nd now 2-source. Nitrogen verbatim fixed for column-interleaved OCR. render probe 0 errors.
-
-## 2026-06-30 21:55 UTC-05:00 · round-close · knowledge/corpus
-SESSION 31 b2 — Epigenetics Ch18 charged Lithium (EPIGEN-096 tier-1): Li deficiency → depression/bipolar/autism/ADHD/hyperactivity + Schrauzer water-Li study; autism mapped. Graphic killer/cannibalism list held OUT → fringe files (Luneth-approved). kv206 · claims 992 · 31/31.
-  ↳ Charged-content gate: Luneth approved conditions, kept Schrauzer stats in the tier-1 claim, approved both fringe additions (criminal-behavior.md + divine-hunger-cannibalism.md). search-only unchanged 75; render probe 0 errors.
