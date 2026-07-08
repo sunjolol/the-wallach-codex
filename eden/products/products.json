@@ -24076,6 +24076,425 @@
           "source_label": "81099_ultra-body-toddy-liquid-0120_panel-900x1200.jpg"
         }
       ]
+    },
+    "ultimate-vitamin-d3": {
+      "product_id": "ultimate-vitamin-d3",
+      "name": "Ultimate™ Vitamin D3",
+      "sku": "USYG100099",
+      "ygy_id": "6748",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 60,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin D3",
+              "amount": 125,
+              "unit": "mcg",
+              "pct_dv": 625,
+              "form": "as cholecalciferol",
+              "label_iu": 5000
+            },
+            {
+              "name": "Vitamin K",
+              "amount": 45,
+              "unit": "mcg",
+              "pct_dv": 38,
+              "form": "as phytonadione"
+            },
+            {
+              "name": "Calcium",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 2,
+              "form": "from seaweed"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Vegan capsule (hypromellose and water)",
+            "Brown rice flour",
+            "Horsetail herb extract"
+          ],
+          "source_label": "ult-vitamin-d3_5000iu__suppfacts_0225.jpg"
+        }
+      ]
+    },
+    "ultimate-vitamin-d3-2500": {
+      "product_id": "ultimate-vitamin-d3-2500",
+      "name": "Ultimate™ Vitamin D3 2500IU Caps",
+      "sku": "USYG100091",
+      "ygy_id": "789",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 60,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin D3",
+              "amount": 62.5,
+              "unit": "mcg",
+              "pct_dv": 313,
+              "form": "as cholecalciferol",
+              "label_iu": 2500
+            },
+            {
+              "name": "Vitamin K",
+              "amount": 45,
+              "unit": "mcg",
+              "pct_dv": 38,
+              "form": "as phytonadione"
+            },
+            {
+              "name": "Calcium",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 2,
+              "form": "from seaweed"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Vegetarian capsule (hypromellose and water)",
+            "Rice flour",
+            "Horsetail herb extract (7% silica)",
+            "Lecithin (from sunflower)"
+          ],
+          "source_label": "ult-vitd3_supp_facts_0624.jpg"
+        }
+      ]
+    },
+    "ultimate-smart-fx": {
+      "product_id": "ultimate-smart-fx",
+      "name": "Ultimate S.M.A.R.T. FX™ - 60 soft gel capsules",
+      "sku": "20970",
+      "ygy_id": "736",
+      "components": [
+        {
+          "form": "softgel",
+          "serving_size": "1 soft gel",
+          "servings_per_container": 60,
+          "macros": {
+            "calories": {
+              "amount": 5,
+              "unit": null,
+              "pct_dv": null
+            },
+            "calories_from_fat": {
+              "amount": 4,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 0.5,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "saturated_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": "<1"
+            }
+          },
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Total Omega-3",
+              "total": {
+                "amount": 315,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Docosahexaenoic Acid (DHA) 230 mg, Eicosapentaenoic Acid (EPA) 50 mg",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Docosahexaenoic Acid (DHA)",
+                  "amount": 230,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 2,
+                  "name": "Eicosapentaenoic Acid (EPA)",
+                  "amount": 50,
+                  "unit": "mg"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Fish oil (anchovy, mackerel, and/or tuna)",
+            "Bovine gelatin",
+            "Vegetable glycerin",
+            "Purified water",
+            "Carob (in glycerin and caramel)",
+            "Proprietary Blend (Astaxanthin in high oleic safflower oil, sunflower lecithin, non-GMO mixed tocopherols, rosemary leaf extract and ascorbyl palmitate)"
+          ],
+          "source_label": "ult-smart-fx_supp-facts-0125.jpg"
+        }
+      ]
+    },
+    "ultimate-iodine": {
+      "product_id": "ultimate-iodine",
+      "name": "Ultimate Iodine™",
+      "sku": "USYG100402",
+      "ygy_id": "7776",
+      "components": [
+        {
+          "form": "spray",
+          "serving_size": "2 sprays (0.38 mL)",
+          "servings_per_container": 80,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin B12",
+              "amount": 24,
+              "unit": "mcg",
+              "pct_dv": 1000,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Iodine",
+              "amount": 300,
+              "unit": "mcg",
+              "pct_dv": 200,
+              "form": "from sodium iodide"
+            },
+            {
+              "name": "Zinc",
+              "amount": 55,
+              "unit": "mcg",
+              "pct_dv": 5,
+              "form": "from zinc sulfate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 11,
+              "unit": "mcg",
+              "pct_dv": 20,
+              "form": "from sodium selenate"
+            },
+            {
+              "name": "Copper",
+              "amount": 180,
+              "unit": "mcg",
+              "pct_dv": 20,
+              "form": "from cupric chloride"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Vegetable glycerin",
+            "Purified water"
+          ],
+          "source_label": "ultimate-iodine-spray-label-0925.jpg"
+        }
+      ]
+    },
+    "super-greens-canister": {
+      "product_id": "super-greens-canister",
+      "name": "Super Greens™ Canister",
+      "sku": "USYG300001",
+      "ygy_id": "953",
+      "components": [
+        {
+          "form": "powder",
+          "serving_size": "8.575 g (1 scoop)",
+          "servings_per_container": 30,
+          "directions": "Adults, mix 1 level scoop in 8 ounces of water or juice one or more times daily.",
+          "macros": {
+            "calories": {
+              "amount": 30,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 5,
+              "unit": "g",
+              "pct_dv": 2
+            },
+            "dietary_fiber": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 7
+            },
+            "total_sugars": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "protein": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Calcium",
+              "amount": 33,
+              "unit": "mg",
+              "pct_dv": 3
+            },
+            {
+              "name": "Iron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 6
+            },
+            {
+              "name": "Sodium",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 1
+            }
+          ],
+          "blends": [
+            {
+              "name": "Superfood Botanical and Digestive Blend",
+              "total": {
+                "amount": 4.4,
+                "unit": "g"
+              },
+              "pct_dv": null,
+              "as_labeled": "Organic Flaxseed Fiber, FermaPro Organic Fermented Fruit and Veggie Blend [Apple, Blueberry, Carrot, Cranberry, Broccoli, Kale, Parsley, Spinach], Probiotics (Bacillus coagulans), Enzyme Blend [Cellulase (Trichoderma longibrachiatum), Protease (Aspergillus oryzae), Amylase (Aspergillus oryzae), Lipase (Candida rugosa)]",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Organic Flaxseed Fiber"
+                },
+                {
+                  "pos": 2,
+                  "name": "FermaPro Organic Fermented Fruit and Veggie Blend",
+                  "sub_ingredients": [
+                    {
+                      "name": "Apple"
+                    },
+                    {
+                      "name": "Blueberry"
+                    },
+                    {
+                      "name": "Carrot"
+                    },
+                    {
+                      "name": "Cranberry"
+                    },
+                    {
+                      "name": "Broccoli"
+                    },
+                    {
+                      "name": "Kale"
+                    },
+                    {
+                      "name": "Parsley"
+                    },
+                    {
+                      "name": "Spinach"
+                    }
+                  ]
+                },
+                {
+                  "pos": 3,
+                  "name": "Probiotics",
+                  "form": "Bacillus coagulans"
+                },
+                {
+                  "pos": 4,
+                  "name": "Enzyme Blend",
+                  "sub_ingredients": [
+                    {
+                      "name": "Cellulase",
+                      "latin": "Trichoderma longibrachiatum"
+                    },
+                    {
+                      "name": "Protease",
+                      "latin": "Aspergillus oryzae"
+                    },
+                    {
+                      "name": "Amylase",
+                      "latin": "Aspergillus oryzae"
+                    },
+                    {
+                      "name": "Lipase",
+                      "latin": "Candida rugosa"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Organic Greens, Vegetable and Fruit Blend",
+              "total": {
+                "amount": 3.075,
+                "unit": "g"
+              },
+              "pct_dv": null,
+              "as_labeled": "Oat Grass, Alfalfa Grass, Carrot, Spirulina, Blueberry, Pomegranate Juice, Goji Berry Extract, Chlorella, Broccoli, Spinach, Kale, Açaí Berry",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Oat Grass"
+                },
+                {
+                  "pos": 2,
+                  "name": "Alfalfa Grass"
+                },
+                {
+                  "pos": 3,
+                  "name": "Carrot"
+                },
+                {
+                  "pos": 4,
+                  "name": "Spirulina"
+                },
+                {
+                  "pos": 5,
+                  "name": "Blueberry"
+                },
+                {
+                  "pos": 6,
+                  "name": "Pomegranate Juice"
+                },
+                {
+                  "pos": 7,
+                  "name": "Goji Berry Extract"
+                },
+                {
+                  "pos": 8,
+                  "name": "Chlorella"
+                },
+                {
+                  "pos": 9,
+                  "name": "Broccoli"
+                },
+                {
+                  "pos": 10,
+                  "name": "Spinach"
+                },
+                {
+                  "pos": 11,
+                  "name": "Kale"
+                },
+                {
+                  "pos": 12,
+                  "name": "Açaí Berry"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Beet juice (on maltodextrin)",
+            "Organic apple cider vinegar",
+            "Organic flavors",
+            "Rebaudioside A (from organic Stevia rebaudiana leaf)"
+          ],
+          "source_label": "ygy-super-greens-powder_label-suppfacts_0523.jpg"
+        }
+      ]
     }
   }
 }

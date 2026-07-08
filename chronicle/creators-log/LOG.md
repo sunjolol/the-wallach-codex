@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 421 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 422 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-07 23:17 UTC-05:00 · round-close · products
+Phase F U-range FINISH +5 (188 total): both Vitamin D3s, Ultimate S.M.A.R.T. FX, Ultimate Iodine, Super Greens Canister. Applied Luneth's naming rule (drop redundant 'Youngevity' prefix). U-range COMPLETE. Genuine-missing to grab: FitShake Banana Cream (no label).
+  ↳ Finished the Ultimate range with the last confirmed labels and locked in a naming rule from Luneth: the 'Youngevity' prefix is redundant on Ultimate-branded products (all/almost-all Ultimate products ARE Youngevity), so it's dropped. He also flagged that Youngevity mislabels the S.M.A.R.T. FX soft gel without the 'Ultimate' prefix -- corrected. eden/products/products.json 183->188 (+5): ultimate-vitamin-d3 (5000 IU, USYG100099, label ult-vitamin-d3_5000iu), ultimate-vitamin-d3-2500 (2500 IU caps, USYG100091, label ult-vitd3_0624), ultimate-smart-fx (sku 20970 / ygy 736 -- omega-3 DHA/EPA + astaxanthin soft gel; the 20970c 4-pack skipped as a multipack; canonical name 'Ultimate S.M.A.R.T. FX'), ultimate-iodine (spray, USYG100402 -- manifest 'Youngevity Ultimate Iodine' -> 'Ultimate Iodine'), super-greens-canister (USYG300001 -- manifest 'Youngevity Super Greens' -> 'Super Greens'; its label was a matcher false-negative on disk; nested FermaPro fruit/veggie blend + enzyme blend modeled with sub_ingredients). Naming rule logged (Luneth 2026-07-07): drop the redundant 'Youngevity' prefix on Ultimate-branded products. MISSING-LABELS.md: FitShake Banana Cream (USYG300012, ygy 10599) confirmed GENUINE MISSING (no label on disk) for Luneth to grab tonight; Super Greens logged as a resolved false-negative. Verify: products_verify OK (188 products, 194 components, 0 problems); invariants 46/46; node build OK, bundle re-inlined. The U-range is COMPLETE; next alphabetical range is V. Reliable full genuine-missing list still finalizes at Phase-F end (products.json vs manifest).
 
 ## 2026-07-07 23:01 UTC-05:00 · round-close · products
 Phase F U-range U5-U6: +11 Ultimate products (183 total). Luneth label map un-blocked 5 no-label items -- Iron 26/ParaClear/Super KB extracted; EFA-180 & Gluco-Gel-120 confirmed as pack-size variants[]. U-range nearly done -- only the 2 Vitamin D3s + Smart FX remain.
@@ -785,7 +789,3 @@ SESSION 28 b7 - Epigenetics Ch 18 minerals batch 1. EPIGEN-060..063 (+4): minera
 ## 2026-06-30 16:34 UTC-05:00 · round-close · knowledge/corpus
 SESSION 28 b6 - Epigenetics Ch 18 amino acids + essential fatty acids. EPIGEN-047..059 (+13: 9 mechanism + 4 deficiency_sign): 11 canon amino acids + taurine (non-canon -> other_substances) + omega-3/omega-6. kv196, claims 940, conditions 456 (0 new). Visual-verify owed.
   ↳ Amino acids are function/biochemistry-focused with scattered condition links (methionine->fatty liver/anemia; taurine->cataracts; lysine->varicose/hemorrhoids/aneurysm; tryptophan->depression; EFA->thrombosis/skin/respiratory/depression); pure-function ones (histidine/isoleucine/threonine/valine) capture the bare stance. taurine non-canon -> other_substances. Board 31/31, search-only 98, probe green. Synopsis auto-fires. Awaiting sign-off before b7 (minerals).
-
-## 2026-06-30 16:26 UTC-05:00 · round-close · knowledge/corpus
-SESSION 28 b5 - Epigenetics Ch 18 water-soluble vitamins. EPIGEN-035..046 (+12 deficiency_sign): B1/B2/B3/B5/B6/B12/B9/C + biotin/choline/inositol/flavonoids, each function + deficiency list. kv195, claims 927, conditions 456 (0 new). Visual-verify owed before b6.
-  ↳ Comprehensive tier-1 batched per Luneth's ruling; all 12 map to existing conditions (no new). No .txt edits (clean list bodies cited, OCR-garbled headers left for the final sweep). Board 31/31 (0 NEW), search-only unchanged 98, probe green. The b4-fix synopsis auto-fires for newly-enriched conditions. Awaiting visual sign-off before b6 (amino acids + fatty acids).
