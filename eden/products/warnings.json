@@ -129,6 +129,26 @@
       "ygy_id": "10599",
       "source": "ygy",
       "text": "Contains: Milk."
+    },
+    "8686": {
+      "ygy_id": "8686",
+      "source": "ygy",
+      "text": "Contains: Egg, Fish (Tilapia, Cod)."
+    },
+    "10441": {
+      "ygy_id": "10441",
+      "source": "ygy",
+      "text": "Contains: Fish (Basa, Tilapia)."
+    },
+    "1696": {
+      "ygy_id": "1696",
+      "source": "ygy",
+      "text": "This product contains Senna Leaf. Do not use this product if you have abdominal pain or diarrhea. Discontinue use in the event of diarrhea or watery stools. Do not exceed recommended dose. Not for long-term use. If you are pregnant, nursing or taking medications, consult your healthcare professional before using this product. Keep out of the reach of children. Do not use if tea bag is damaged. Store in a cool, dry place."
+    },
+    "564": {
+      "ygy_id": "564",
+      "source": "ygy",
+      "text": "Phenylketonurics: contains phenylalanine."
     }
   }
 }

@@ -24705,6 +24705,951 @@
           "source_label": "banana-fitshake_pouch_0426_supp-facts_3.jpg"
         }
       ]
+    },
+    "activated-charcoal": {
+      "product_id": "activated-charcoal",
+      "name": "Activated Charcoal",
+      "sku": "USLF000112",
+      "ygy_id": "9875",
+      "components": [
+        {
+          "form": "powder",
+          "serving_size": "1 tsp (2.4 g)",
+          "servings_per_container": 60,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Activated Charcoal",
+              "amount": 2.4,
+              "unit": "g",
+              "pct_dv": null,
+              "form": "from coconut shells"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [],
+          "source_label": "activated_charcoal_supp_panel_900x1200.jpg"
+        }
+      ]
+    },
+    "imortalium": {
+      "product_id": "imortalium",
+      "name": "Imortalium® - 120 ct",
+      "sku": "USYG100080",
+      "ygy_id": "975",
+      "components": [
+        {
+          "form": "tablet",
+          "serving_size": "4 tablets",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 900,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "as natural beta-carotene"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 120,
+              "unit": "mg",
+              "pct_dv": 133,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 20,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 60,
+              "unit": "mg",
+              "pct_dv": 400,
+              "form": "as d-alpha-tocopheryl succinate"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 118,
+              "form": "as pyridoxine HCl"
+            },
+            {
+              "name": "Calcium",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": 23
+            },
+            {
+              "name": "Zinc",
+              "amount": 7.5,
+              "unit": "mg",
+              "pct_dv": 68,
+              "form": "as zinc citrate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 54,
+              "unit": "mcg",
+              "pct_dv": 98,
+              "form": "as selenomethionine"
+            },
+            {
+              "name": "Copper",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 111,
+              "form": "as copper citrate"
+            },
+            {
+              "name": "MSM",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "methylsulfonylmethane"
+            },
+            {
+              "name": "Alpha-Lipoic acid",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Resveratrol",
+              "amount": 125,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from Polygonum cuspidatum root extract"
+            },
+            {
+              "name": "Melon juice concentrate",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "140 IU SOD"
+            },
+            {
+              "name": "Vitamin K2",
+              "amount": 40,
+              "unit": "mcg",
+              "pct_dv": null,
+              "form": "as menaquinone-4 and menaquinone-7"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Skin Rejuvenating Whole Food Blend",
+              "total": {
+                "amount": 200,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Organic Apple, Organic Beet, Organic Broccoli, Organic Carrot, Organic Green Cabbage, Organic Kale, Organic Parsley, Organic Spinach, Organic Blueberry, Organic Raspberry, Organic Strawberry, Organic Tomato",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Organic Apple"
+                },
+                {
+                  "pos": 2,
+                  "name": "Organic Beet"
+                },
+                {
+                  "pos": 3,
+                  "name": "Organic Broccoli"
+                },
+                {
+                  "pos": 4,
+                  "name": "Organic Carrot"
+                },
+                {
+                  "pos": 5,
+                  "name": "Organic Green Cabbage"
+                },
+                {
+                  "pos": 6,
+                  "name": "Organic Kale"
+                },
+                {
+                  "pos": 7,
+                  "name": "Organic Parsley"
+                },
+                {
+                  "pos": 8,
+                  "name": "Organic Spinach"
+                },
+                {
+                  "pos": 9,
+                  "name": "Organic Blueberry"
+                },
+                {
+                  "pos": 10,
+                  "name": "Organic Raspberry"
+                },
+                {
+                  "pos": 11,
+                  "name": "Organic Strawberry"
+                },
+                {
+                  "pos": 12,
+                  "name": "Organic Tomato"
+                }
+              ]
+            },
+            {
+              "name": "Telomere Support Blend",
+              "total": {
+                "amount": 200,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "L-Glutamine, Catalase, N-Acetyl-L-cysteine, Grape seed extract, L-Glutathione",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "L-Glutamine"
+                },
+                {
+                  "pos": 2,
+                  "name": "Catalase"
+                },
+                {
+                  "pos": 3,
+                  "name": "N-Acetyl-L-cysteine"
+                },
+                {
+                  "pos": 4,
+                  "name": "Grape seed",
+                  "form": "extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "L-Glutathione"
+                }
+              ]
+            },
+            {
+              "name": "Fucoidan Sea Nutrients Blend",
+              "total": {
+                "amount": 100,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Fucoxanthin-rich kelp (10% fucoxanthin), Kombu seaweed, Nori seaweed, Wakame seaweed",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Kelp",
+                  "standardization": "fucoxanthin-rich, 10% fucoxanthin"
+                },
+                {
+                  "pos": 2,
+                  "name": "Kombu seaweed"
+                },
+                {
+                  "pos": 3,
+                  "name": "Nori seaweed"
+                },
+                {
+                  "pos": 4,
+                  "name": "Wakame seaweed"
+                }
+              ]
+            },
+            {
+              "name": "Skin Defense Carotenoid Blend",
+              "total": {
+                "amount": 400,
+                "unit": "mcg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Astaxanthin-enriched Haematococcus pluvialis algae, Lutein (marigold flower extract), Zeaxanthin (marigold flower extract)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Astaxanthin-enriched algae",
+                  "latin": "Haematococcus pluvialis"
+                },
+                {
+                  "pos": 2,
+                  "name": "Lutein",
+                  "form": "marigold flower extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Zeaxanthin",
+                  "form": "marigold flower extract"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Dicalcium phosphate",
+            "Microcrystalline cellulose",
+            "Stearic acid",
+            "Hypromellose",
+            "Coating (hypromellose, glycerin, hydroxypropyl cellulose)",
+            "Magnesium stearate",
+            "Silica"
+          ],
+          "source_label": "imortalium_suppfacts-box-0724.jpg"
+        }
+      ]
+    },
+    "majestic-earth-mineral-stx": {
+      "product_id": "majestic-earth-mineral-stx",
+      "name": "Majestic Earth® Mineral STX™",
+      "sku": "USYG400401",
+      "ygy_id": "10540",
+      "components": [
+        {
+          "form": "powder",
+          "serving_size": "1 stickpack",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 15,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "dietary_fiber": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "total_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "protein": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Bovine Collagen Hydrolysate",
+              "amount": 3000,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Fibersol-2",
+              "amount": 990,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Trace Mineral Blend",
+              "amount": 600,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Natural flavor",
+            "Beet root powder (for color)",
+            "Stevia leaf extract",
+            "Vegetable juice powder (for color)"
+          ],
+          "source_label": "majesticmineralsbox-and-stick-suppfacts-900x1200_1.jpg"
+        }
+      ]
+    },
+    "multi-collagen-peptide-gummies": {
+      "product_id": "multi-collagen-peptide-gummies",
+      "name": "Multi-Collagen Peptide Gummies",
+      "sku": "USYG100506",
+      "ygy_id": "8686",
+      "components": [
+        {
+          "form": "gummy",
+          "serving_size": "2 gummies",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 15,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "saturated_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "total_carbohydrate": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "dietary_fiber": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "total_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "protein": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 0,
+              "unit": "mcg",
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Calcium",
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Iron",
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Sodium",
+              "amount": 19,
+              "unit": "mg",
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Potassium",
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": "<1"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Multi Collagen Complex",
+              "total": {
+                "amount": 1585,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Bovine Collagen Hydrolyzed, Chicken Collagen Hydrolyzed, Chicken Eggshell Membrane, Fish Hydrolyzed Collagen",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Bovine Collagen Hydrolyzed"
+                },
+                {
+                  "pos": 2,
+                  "name": "Chicken Collagen Hydrolyzed"
+                },
+                {
+                  "pos": 3,
+                  "name": "Chicken Eggshell Membrane"
+                },
+                {
+                  "pos": 4,
+                  "name": "Fish Hydrolyzed Collagen"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Allulose",
+            "Inulin syrup",
+            "Tapioca syrup",
+            "Water",
+            "Pectin",
+            "Glycerin",
+            "Natural strawberry flavors",
+            "Xylitol",
+            "Gelatin",
+            "Sodium citrate",
+            "Red beet color",
+            "Natural berry flavor"
+          ],
+          "source_label": "collagen-gummy-supp-facts-0824.jpg"
+        }
+      ]
+    },
+    "super-collagen-shot": {
+      "product_id": "super-collagen-shot",
+      "name": "Super Collagen Shot",
+      "sku": "USYG300055",
+      "ygy_id": "10441",
+      "components": [
+        {
+          "form": "liquid",
+          "serving_size": "1 bottle (50 mL)",
+          "servings_per_container": 10,
+          "directions": "Adults, drink one (1) bottle daily.",
+          "macros": {
+            "calories": {
+              "amount": 45,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "total_sugars": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "protein": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 33,
+              "form": "ascorbic acid"
+            },
+            {
+              "name": "Biotin",
+              "amount": 120,
+              "unit": "mcg",
+              "pct_dv": 400
+            },
+            {
+              "name": "Sodium",
+              "amount": 45,
+              "unit": "mg",
+              "pct_dv": 2
+            },
+            {
+              "name": "Wasabi",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "leaf extract",
+              "latin": "Wasabia japonica"
+            },
+            {
+              "name": "Hyaluronic Acid",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as sodium hyaluronate"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Collagen Blend",
+              "total": {
+                "amount": 10,
+                "unit": "g"
+              },
+              "pct_dv": null,
+              "as_labeled": "Bovine Collagen Peptides, Marine Collagen Peptides, Bovine Hydrolysate Collagen, Poultry Collagen Peptides (19 collagen peptide types: I, II, III, IV, V, VI, VII, IX, XI, XII, XV, XVI, XVII, XVIII, XIX, XXII, XXVI, XXVII, XXVIII)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Bovine Collagen Peptides"
+                },
+                {
+                  "pos": 2,
+                  "name": "Marine Collagen Peptides"
+                },
+                {
+                  "pos": 3,
+                  "name": "Bovine Hydrolysate Collagen"
+                },
+                {
+                  "pos": 4,
+                  "name": "Poultry Collagen Peptides"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Water",
+            "Grape juice from concentrate",
+            "Natural flavors",
+            "Phosphoric acid",
+            "Citric acid",
+            "Steviol glycosides",
+            "Sunflower lecithin",
+            "Gum acacia"
+          ],
+          "source_label": "supercollagenshot-suppfacts_900x1200.png"
+        }
+      ]
+    },
+    "taheebo": {
+      "product_id": "taheebo",
+      "name": "Taheebo",
+      "sku": "USLF000120",
+      "ygy_id": "9923",
+      "components": [
+        {
+          "form": "liquid",
+          "serving_size": "1 dropper full (approx. 0.75 mL)",
+          "servings_per_container": 80,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Pau d'Arco",
+              "amount": 720,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "liquid extract",
+              "part": "inner bark"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Filtered water",
+            "Vegetable glycerin",
+            "Alcohol (20%)",
+            "Natural flavor",
+            "Citric acid",
+            "Potassium benzoate (<0.2%, preservative)"
+          ],
+          "source_label": "facts_1 (1).jpg"
+        }
+      ]
+    },
+    "truedetox-tea": {
+      "product_id": "truedetox-tea",
+      "name": "TrueDetox Tea™ 30ct Box",
+      "sku": "TL021PROD",
+      "ygy_id": "1696",
+      "components": [
+        {
+          "form": "tea bag",
+          "serving_size": "1 tea bag (2 g)",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Senna",
+              "amount": 1100,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "leaf",
+              "latin": "Cassia angustifolia"
+            },
+            {
+              "name": "Orange",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "fruit peel",
+              "latin": "Citrus sinensis"
+            },
+            {
+              "name": "Stevia",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "leaf",
+              "latin": "Stevia rebaudiana"
+            },
+            {
+              "name": "Peppermint",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "leaf",
+              "latin": "Mentha piperita"
+            },
+            {
+              "name": "Cinnamon",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "bark",
+              "latin": "Cinnamomum cassia"
+            },
+            {
+              "name": "Ginger",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "rhizome",
+              "latin": "Zingiber officinale"
+            },
+            {
+              "name": "Chamomile",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "flower",
+              "latin": "Chamaemelum nobile"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Natural lemon flavor"
+          ],
+          "source_label": "tl021prod_t2l-truedetox-tea-1120_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "xeratest": {
+      "product_id": "xeratest",
+      "name": "XeraTest™ Hormonal Support for Men",
+      "sku": "USYG100081",
+      "ygy_id": "564",
+      "components": [
+        {
+          "form": "tablet",
+          "serving_size": "2 tablets",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 750,
+              "unit": "mcg",
+              "pct_dv": 83,
+              "form": "as beta-carotene",
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 60,
+              "unit": "mg",
+              "pct_dv": 67,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 134,
+              "form": "as d-alpha-tocopheryl succinate"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 118,
+              "form": "as pyridoxine HCl"
+            },
+            {
+              "name": "Calcium",
+              "amount": 170,
+              "unit": "mg",
+              "pct_dv": 13,
+              "form": "as calcium citrate and dicalcium phosphate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 12,
+              "form": "as magnesium citrate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 273,
+              "form": "as zinc citrate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 35,
+              "unit": "mcg",
+              "pct_dv": 64,
+              "form": "as selenomethionine"
+            },
+            {
+              "name": "Fenugreek",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "part": "seed"
+            },
+            {
+              "name": "T-Nutrient Blend",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "ViNitrox",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "grape marc and apple skin extracts"
+            },
+            {
+              "name": "Alpha lipoic acid",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Boron",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as boron citrate"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Imortalium® Youth Complex",
+              "total": {
+                "amount": 150,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Organic Whole Food Blend, Telomere Support Blend, Melon juice concentrate with Bioperine (providing 140 IU SOD), Fucoidan Sea Nutrient Blend",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Organic Whole Food Blend"
+                },
+                {
+                  "pos": 2,
+                  "name": "Telomere Support Blend"
+                },
+                {
+                  "pos": 3,
+                  "name": "Melon juice concentrate with Bioperine",
+                  "form": "providing 140 IU SOD"
+                },
+                {
+                  "pos": 4,
+                  "name": "Fucoidan Sea Nutrient Blend"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Microcrystalline cellulose",
+            "Stearic acid",
+            "Croscarmellose sodium",
+            "Coating (hypromellose, macrogol, hydroxypropyl cellulose)",
+            "Magnesium stearate",
+            "Silica"
+          ],
+          "source_label": "xeratest_suppfacts_0923_1.jpg"
+        }
+      ]
+    },
+    "youngevity-cardiobeets": {
+      "product_id": "youngevity-cardiobeets",
+      "name": "Youngevity CardioBeets™ (195 g)",
+      "sku": "USYG100071",
+      "ygy_id": "321",
+      "components": [
+        {
+          "form": "powder",
+          "serving_size": "1 scoop (6.5 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 20,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 5,
+              "unit": "g",
+              "pct_dv": 2
+            },
+            "total_sugars": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Careflow Mango Fruit Powder",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "CardioBeets™ Proprietary Blend",
+              "total": {
+                "amount": 5.44,
+                "unit": "g"
+              },
+              "pct_dv": null,
+              "as_labeled": "Beet Juice, VitaKelp™ (Ascophyllum nodosum), Olive Leaf, Tart Cherry Juice",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Beet Juice"
+                },
+                {
+                  "pos": 2,
+                  "name": "VitaKelp",
+                  "latin": "Ascophyllum nodosum"
+                },
+                {
+                  "pos": 3,
+                  "name": "Olive",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 4,
+                  "name": "Tart Cherry Juice"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Maltodextrin",
+            "Natural flavors",
+            "Malic acid",
+            "Rebaudioside A (from Stevia rebaudiana leaf)"
+          ],
+          "source_label": "usyg100071_cardiobeets-0319_panel-900x1200.jpg"
+        }
+      ]
     }
   }
 }

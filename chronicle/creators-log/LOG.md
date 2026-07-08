@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 424 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 425 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-07 23:39 UTC-05:00 · round-close · products
+Phase F +9 (198 total): the 9 formerly-missing products -- Luneth added their labels mid-session, clearing the known provisional-missing list (Charcoal, Imortalium, Mineral STX, collagen gummies/shot, Taheebo, TrueDetox tea, XeraTest, CardioBeets). Clean wrap; resume V-range.
+  ↳ Session-closing batch. Luneth dropped in the labels for all 9 remaining genuine-missing products while we worked, so I extracted them and the known provisional-missing list is now empty. He set two naming calls: Majestic Earth Mineral STX drops the '- BOGO' promo suffix, and CardioBeets KEEPS its 'Youngevity' prefix (it isn't an Ultimate product, so the drop-prefix rule doesn't apply -- confirming the rule is per-product for non-Ultimate names). eden/products/products.json 189->198 (+9): activated-charcoal (coconut-shell), imortalium (Imortalium 120ct anti-aging tablet -- 14 nutrients + 4 blends incl. carotenoid/fucoidan), majestic-earth-mineral-stx (collagen/fibersol/trace-mineral stick), multi-collagen-peptide-gummies, super-collagen-shot (19-type collagen liquid), taheebo (Pau d'Arco tincture, alcohol 20%), truedetox-tea (7-herb senna tea), xeratest (men's hormonal tablet), youngevity-cardiobeets (beet/kelp/olive/tart-cherry powder). warnings.json 25->29: 8686 gummies (egg/fish), 10441 shot (fish), 1696 TrueDetox (senna caution, do-not-use-with-diarrhea), 564 XeraTest (phenylketonurics). Modeling: 'Trace Mineral Blend' and 'T-Nutrient Blend' recorded as nutrients (no sub-ingredient list printed -> can't be a blend, which requires a non-empty ingredient list); the Imortalium Youth Complex and Skin/Telomere/Fucoidan blends captured with their named sub-blends. Verify: products_verify OK (198 products, 204 components, 0 problems); invariants 46/46; node build OK, bundle re-inlined. CLEAN WRAP for the session. Next (fresh genesis): the V-range, then W-Z, then the Phase-F-end steps (registry rebuild, products_derive, wire Coverage/Regimen, seal + gate suite). The reliable full missing list finalizes at that end reconciliation.
 
 ## 2026-07-07 23:27 UTC-05:00 · note · products
 Correction to the prior FitShake incident entry: the label was NOT missed via a keyword-prefix search gap — Luneth ADDED banana-fitshake_...jpg mid-session, so it was genuinely absent when first checked. Original missing-flag was correct; no data change (189 products).
@@ -785,7 +789,3 @@ SESSION 29 b2 — Epigenetics Ch 18 minerals Cd→Co + Cesium, EPIGEN-074..078 (
 ## 2026-06-30 17:49 UTC-05:00 · round-close · knowledge/corpus
 SESSION 29 b1 — Epigenetics Ch 18 minerals A–C (Ag/Al/As/Au/B/Ba/Be/Bi/Br/C): EPIGEN-064..073 (+10 stance claims). Aluminum debunks the Alzheimer's myth, arsenic reframes the poison. 0 new conds. kv 198, claims 954, board 31/31. Luneth visual-verified.
   ↳ Periodic-table deficiency encyclopedia, alphabetical batch. Dispositions: bare/inert/radioactive elements captured stance-only (Ac/Am/Ar/At skipped); cesium-chloride alt-cancer deferred to search-only. All canon minerals -> essentials[]; bismuth non-canon -> other_substances. conditions=[] (descriptive substance stances). Verified: finalize 10 verbatims snapped, seal kv 197->198, corpus_verify PASS, build OK, invariants 31/31, render_probe_knowledge PASS.
-
-## 2026-06-30 16:53 UTC-05:00 · session-end · chronicle
-SESSION 28 b4-b7 WRAPPED - Epigenetics Ch 18 mined through minerals batch 1 + the condition-synopsis UX fix. 5 chunks pushed, +37 claims (EPIGEN-027..063), kv 193->197, claims 907->944, board 31/31 throughout. Handoff updated for SESSION 29 = the rest of the minerals.
-  ↳ Closing for a fresh genesis. b4 opening+fat-soluble vitamins, b4-fix synopsis UX (auto-fires), b5 water-soluble vitamins, b6 amino acids+EFA (taurine non-canon->other_substances), b7 minerals batch 1 (forms search-only + calcium/chromium/copper). All visually verified by Luneth. next-chunk.md + epigenetics-mining-policy memory updated. NEXT: cobalt/iodine/selenium/zinc/etc. (cesium-cancer search-only) then Ch 19+ + final .txt sweep.

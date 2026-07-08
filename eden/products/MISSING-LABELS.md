@@ -18,6 +18,8 @@ So the RELIABLE genuine-missing list = base-unique products still un-extracted A
 Deluxe Nutritional Energy · Nutritional Alert Program · On-The-Go Healthy Body Start Pak 2.0 · Nutritional Energy Basics · Nutritional Energy Program · PigPak® · PigPak® Plus · Pollen Burst Combo · R&R + BB Combo · Power Pak · Premiere 30 Day Liver Pure Detox (Chocolate / French Vanilla) · Super Immune · Super Immune Plus · VitalStart Body Shield · Scholastic Enhancement · Baseline / Baseline Plus / Baseline Ultra · Chocolate/French Vanilla Weight Loss 150 · Healthy Weight Loss Chocolate/French Vanilla
 
 ## PROVISIONAL genuine-missing candidates (single products, no label seen yet — CONFIRM at end)
+
+_★ 2026-07-07 — the known provisional list below is now FULLY RESOLVED: Luneth added the last 9 labels mid-session (Activated Charcoal, Imortalium, Majestic Earth Mineral STX, Multi-Collagen Peptide Gummies, Super Collagen Shot, Taheebo, TrueDetox Tea, XeraTest, CardioBeets) and they were extracted; the earlier bullets were resolved across prior batches. The TRUE remaining-missing list (if any) surfaces only at the Phase-F-end products.json-vs-manifest reconciliation, once ranges V–Z are also done. Bullets kept below for the historical record._
 - Activated Charcoal (USLF000112)
 - HOPE (Sta-Natural, ygy 577 / USSN000009) — RESOLVED 2026-07-07: Luneth supplied sn-hope label; extracted as `hope-sta-natural`. HOPE (Youngevity, ygy 10359 / USYG7000) = a BUNDLE (3 sold-separately products: Life Balance Menopause Support + Rejuvenate/Rewind/Restore + Women's Probiotic COMPLETE) → SKIP per standard bundle policy; its parts record individually.
 - Imortalium 120ct (USYG100080)
