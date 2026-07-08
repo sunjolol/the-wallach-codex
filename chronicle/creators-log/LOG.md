@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 434 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 435 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-08 09:41 UTC-05:00 · milestone · products
+Phase 9.1: built + tested the nutrient resolver (product substance -> essential identity) over nutrient rows + blend ingredients + subs; 15/15 known-value checks pass; no essential missed (all vitamins/aminos/FA resolve; 40 untouched = rare-earth/foundational minerals).
+  ↳ Built the identity layer of the Phase-9 registry as tested code, since my by-hand coverage analysis proved unreliable this session. Maps every product substance to an essential slug or None (botanical), over nutrient rows AND blend ingredients AND sub-ingredients. eden/tools/nutrient_resolve.py (NEW): rules (strip L-/D-/DL-; vitamin-number<->chemical via VIT_ALIAS; fatty-acid class by name/form; direct mineral/amino match against essentials-canon) + a small alias table (K2->vitamin-k, sulfate->sulfur, silicon->silica, phosphorous->phosphorus, folic acid->vitamin-b9). `report` CLI validates + reports. Validation: 15/15 known-value checks pass (Vitamin A->vitamin-a, Thiamin->vitamin-b1, L-Arginine->arginine, Taurine->taurine, ALA(Omega 3)->omega-3, PABA/Caffeine/CoQ10->botanical, Taurine amount in rebound-fx-citrus-punch=200mg). Completeness: the 40 untouched essentials are ALL minerals (H/C/N/O + rare-earth/trace delivered only as lump blends); 0 vitamins/aminos/FA untouched -- no essential missed behind a bad alias. 51/91 with a usable amount; 717 botanicals. products_verify OK; invariants 46/46; build OK. Deferred to Phase 9.2: externalize aliases into catalog/nutrients.json (Catalog pillar); canonicalize the 717 botanicals (collapse the 65 collisions, binomial-aware); unit conversions (IU); wire into coverage; promote to an invariant. Coverage-vs-target awaits corpus dose mining (all 91 targets are honest gaps today).
 
 ## 2026-07-08 09:31 UTC-05:00 · round-close · products
 Phase F pre-seal: captured the 5 quantified actives trapped in label-text (caffeine/resveratrol/SOD) as comparable sub-ingredient amounts + fixed the 3-0-rise green-tea/caffeine mislabel; hardened products_verify (sub-amounts) + negative test.
@@ -785,7 +789,3 @@ SESSION 31 step 1 — THE GUARD: verbatim_names_mapped_conditions invariant + au
 ## 2026-06-30 22:43 UTC-05:00 · design-decision · knowledge-drawer
 SESSION 31 FIX — Luneth caught 2 corpus-trust bugs: quotes under a condition didn't name it (unverifiable link), and the synopsis disagreed with the chips. Fixed issue-2 (role-labeled chip groups) + the carpal-tunnel/Mn case. 609 verbatim violations to remediate next. kv208.
   ↳ Luneth ruled full-fix-now + name-or-synonym invariant + two chip groups (DEFICIENCY/CAUSE·TREATED WITH·ALSO CITED). Mineral-mining paused until the verbatim backlog clears. Banked to memory verbatim-must-name-mapped-condition.
-
-## 2026-06-30 22:09 UTC-05:00 · round-close · knowledge/corpus
-SESSION 31 b3 — Epigenetics Ch18 minerals Lu→Ni (+9: Lu/Mg/Mn/Mo/N/Na/Nb/Nd/Ni). Mg/Mn/Na rich (asthma/carpal-tunnel/Addison's/Kwashiorkor enriched); excess-Mn parkinsonism kept descriptive; zero new conditions. Crossed 1,000. kv207 · claims 1001 · 468 cond · 31/31.
-  ↳ Skipped Ne/Np (non-canon). RDA figures dropped per §00.A. Lu/Nb/Nd now 2-source. Nitrogen verbatim fixed for column-interleaved OCR. render probe 0 errors.
