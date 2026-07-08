@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 419 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 420 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-07 22:38 UTC-05:00 · round-close · products
+Phase F U-range U3-U4: +11 Ultimate products — the 3 distinct EFA formulas (flax / fish-oil+EPA / evening primrose), Enzymes + Flora FX, and the Hair-Skin-Nails / Hormone FX / King Calcium / Memory FX / Microbiome / Gluco-Gel block. 172 products, 0 verify problems.
+  ↳ Kept the U-range rolling after Luneth confirmed the Vitamin C mg fix and said continue. 11 more Ultimate products catalogued straight from their labels, composition only. Nothing sensitive here -- all ordinary supplements. eden/products/products.json 161->172 (+11). U3: ultimate-efa (60-ct, flax-forward omega blend), ultimate-efa-plus (90-ct, fish-oil forward, adds EPA), ultimate-multi-efa (evening primrose oil), ultimate-enzymes (digestive), ultimate-flora-fx (probiotic + GDL). U4: ultimate-gluco-gel (240-ct glucosamine/gelatin), ultimate-hair-skin-nails, ultimate-hormone-fx (women's botanical blend incl. DHEA), ultimate-king-calcium (chewable), ultimate-memory-fx (ginkgo/periwinkle), ultimate-microbiome (i26 egg + mushrooms + pre/probiotic gut powder). Modeling notes: the fatty-acid profiles are 'Total Omega' / Evening-Primrose blends carrying per-acid ingredient amounts (ALA/LA/OA/GLA/EPA/DHA); Pancreatin 11X, the Proprietary Silica Complex, and the pre/probiotic + enzyme complexes are blends. warnings.json 21->23: allergen statements quarantined source:ygy -- Gluco-Gel 'Contains: Crustacean shellfish' (6714) + Microbiome 'Contains: Egg' (7106). MISSING-LABELS.md: logged two no-label COUNT-VARIANTS to attach as variants[] once their pack-size labels are in hand -- Ultimate EFA-180 (sku 21832) shares the ultimate-efa softgel formula, Ultimate Gluco-Gel-120 (sku 21251) shares the ultimate-gluco-gel formula. Correction: King Calcium label 'Phyllquinone' -> phylloquinone (transcription typo). Verify: products_verify OK (172 products, 178 components, 0 problems); invariants 46/46; node build OK, bundle re-inlined. Remaining U (~9 w/ labels + ParaClear/Super KB/Iron-26 no-label): Niacin Plus, Nightly Essense, Ocean's Gold, Prost FX, Selenium, Vision FX, Zinc, 2x Vitamin D3 (cluster), Ultra Body Toddy, Smart FX (verify identity).
 
 ## 2026-07-07 22:14 UTC-05:00 · round-close · products
 Phase F U-range begins: +12 Ultimate products (batches U1-U2), incl. Ultimate CM Cream added as an ordinary composition-only topical — searchable, zero tier-1/condition hook; the risky product->condition alert-box idea deferred to end-of-build per the source rule (SS00.A).
@@ -785,7 +789,3 @@ SESSION 28 b5 - Epigenetics Ch 18 water-soluble vitamins. EPIGEN-035..046 (+12 d
 ## 2026-06-30 16:18 UTC-05:00 · design-decision · views/knowledge
 SESSION 28 b4-fix - Condition deep-view synopsis (Luneth UX): the deep view now opens with a condition-first sentence (e.g. 'Wallach links Uterine Fibroids to a deficiency of Vitamin D') before the nutrient breakdown. Familiar vitamin names, views-only. Visually verified.
   ↳ Synopsis derived from the leading role's own essentials (deficiency->'linked to a deficiency of', treatment->'protocol centers on'), capped at 4. familiarEssentialName shows Vitamin D/B12 not Cholecalciferol/Cobalamin. faithful to claim role. eslint 0, build OK, invariants 31/31, probe green. Luneth: 'Looks good to me.'
-
-## 2026-06-30 15:30 UTC-05:00 · round-close · knowledge/corpus
-SESSION 28 b4 - Epigenetics Ch 18 opening + fat-soluble vitamins. EPIGEN-027..034 (+8): 2 search-only polemic + 2 tier-1 absorption (hypochlorhydria/gluten) + 4 deficiency_sign (vit A/D/E/K). kv194, claims 915, conditions 456 (+uterine_fibroids). VISUAL-VERIFY OWED before b5.
-  ↳ Ch 18 audited as a per-nutrient deficiency-sign encyclopedia (not 'disease protocols' as policy guessed); Luneth ruled comprehensive tier-1 batched + opening search-only / absorption tier-1 (AskUserQuestion). Board 31/31 (0 NEW), render probe green. Awaiting Conditions/Essentials-tab visual sign-off before b5 (water-soluble vitamins).

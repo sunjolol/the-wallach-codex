@@ -21517,6 +21517,1090 @@
           "source_label": "ult-digest-fx_suppfactst-0617.jpg"
         }
       ]
+    },
+    "ultimate-efa": {
+      "product_id": "ultimate-efa",
+      "name": "Ultimate EFA™ - 60 soft gels",
+      "sku": "20641",
+      "ygy_id": "741",
+      "components": [
+        {
+          "form": "softgel",
+          "serving_size": "1 soft gel",
+          "servings_per_container": 60,
+          "macros": {
+            "calories": {
+              "amount": 9,
+              "unit": null,
+              "pct_dv": null
+            },
+            "calories_from_fat": {
+              "amount": 8,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": "<1",
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "saturated_fat": {
+              "amount": "<1",
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "polyunsaturated_fat": {
+              "amount": "<1",
+              "unit": "g",
+              "pct_dv": null
+            },
+            "monounsaturated_fat": {
+              "amount": "<1",
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Total Omega",
+              "total": {
+                "amount": 714,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Typical Average Fatty Acid Profile: Alpha Linolenic Acid (ALA) Omega 3 447 mg, Linoleic Acid (LA) Omega 6 110 mg, Oleic Acid (OA) Omega 9 137 mg, Gamma Linolenic Acid (GLA) 4 mg, Docosahexaenoic Acid (DHA) 16 mg",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Alpha-Linolenic Acid (ALA)",
+                  "form": "Omega 3",
+                  "amount": 447,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 2,
+                  "name": "Linoleic Acid (LA)",
+                  "form": "Omega 6",
+                  "amount": 110,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 3,
+                  "name": "Oleic Acid (OA)",
+                  "form": "Omega 9",
+                  "amount": 137,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 4,
+                  "name": "Gamma-Linolenic Acid (GLA)",
+                  "amount": 4,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 5,
+                  "name": "Docosahexaenoic Acid (DHA)",
+                  "amount": 16,
+                  "unit": "mg"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Organic flax seed oil",
+            "Gelatin",
+            "Glycerin",
+            "Fish oil (tuna and/or anchovy and/or mackerel)",
+            "Purified water",
+            "Borage seed oil",
+            "Carob extract",
+            "Mixed tocopherols"
+          ],
+          "source_label": "ult-efa-60_label-1023_suppfacts.jpg"
+        }
+      ]
+    },
+    "ultimate-efa-plus": {
+      "product_id": "ultimate-efa-plus",
+      "name": "Ultimate EFA Plus™ - 90 soft gels",
+      "sku": "20989",
+      "ygy_id": "6782",
+      "components": [
+        {
+          "form": "softgel",
+          "serving_size": "1 softgel",
+          "servings_per_container": 90,
+          "directions": "Take 1 softgel three times daily, or as directed by your healthcare professional. Store in a cool dry place.",
+          "macros": {
+            "calories": {
+              "amount": 10,
+              "unit": null,
+              "pct_dv": null
+            },
+            "calories_from_fat": {
+              "amount": 10,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "saturated_fat": {
+              "amount": "<1",
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "polyunsaturated_fat": {
+              "amount": "<1",
+              "unit": "g",
+              "pct_dv": null
+            },
+            "monounsaturated_fat": {
+              "amount": "<1",
+              "unit": "g",
+              "pct_dv": null
+            },
+            "cholesterol": {
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": 1
+            }
+          },
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Total Omega",
+              "total": {
+                "amount": 827,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Typical Average Fatty Acid Profile: Alpha Linolenic Acid (ALA) Omega 3 300 mg, Linoleic Acid (LA) Omega 6 103 mg, Oleic Acid (OA) Omega 9 120 mg, Gamma Linolenic Acid (GLA) 19 mg, Eicosapentaenoic Acid (EPA) 171 mg, Docosahexaenoic Acid (DHA) 114 mg",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Alpha-Linolenic Acid (ALA)",
+                  "form": "Omega 3",
+                  "amount": 300,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 2,
+                  "name": "Linoleic Acid (LA)",
+                  "form": "Omega 6",
+                  "amount": 103,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 3,
+                  "name": "Oleic Acid (OA)",
+                  "form": "Omega 9",
+                  "amount": 120,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 4,
+                  "name": "Gamma-Linolenic Acid (GLA)",
+                  "amount": 19,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 5,
+                  "name": "Eicosapentaenoic Acid (EPA)",
+                  "amount": 171,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 6,
+                  "name": "Docosahexaenoic Acid (DHA)",
+                  "amount": 114,
+                  "unit": "mg"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Fish oil (anchovy, sardines, or mackerel)",
+            "Organic flax seed oil",
+            "Gelatin",
+            "Glycerin",
+            "Borage seed oil",
+            "Purified water",
+            "Sunflower oil",
+            "Mixed tocopherols"
+          ],
+          "source_label": "ult-efa-plus-90_suppfacts2-1020_8.jpg"
+        }
+      ]
+    },
+    "ultimate-multi-efa": {
+      "product_id": "ultimate-multi-efa",
+      "name": "Ultimate Multi-EFA™ - 90 soft-gels",
+      "sku": "USYG102165",
+      "ygy_id": "764",
+      "components": [
+        {
+          "form": "softgel",
+          "serving_size": "1 soft gel",
+          "servings_per_container": 90,
+          "macros": {
+            "calories": {
+              "amount": 5,
+              "unit": null,
+              "pct_dv": null
+            },
+            "calories_from_fat": {
+              "amount": 5,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 0.5,
+              "unit": "g",
+              "pct_dv": 1
+            }
+          },
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Evening Primrose Oil",
+              "total": {
+                "amount": 500,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Evening Primrose Oil (seed) 500 mg — Cis-Linoleic Acid (LA) 365 mg, Gamma-Linolenic Acid (GLA) 45 mg",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Cis-Linoleic Acid (LA)",
+                  "amount": 365,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 2,
+                  "name": "Gamma-Linolenic Acid (GLA)",
+                  "amount": 45,
+                  "unit": "mg"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Gelatin",
+            "Vegetable glycerin",
+            "Purified water"
+          ],
+          "source_label": "ult-multi-efa_label-0824_suppfacts.jpg"
+        }
+      ]
+    },
+    "ultimate-enzymes": {
+      "product_id": "ultimate-enzymes",
+      "name": "Ultimate Enzymes™ - 120 capsules",
+      "sku": "21211",
+      "ygy_id": "609",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 120,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Betaine Hydrochloride",
+              "amount": 105,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Papain",
+              "amount": 5.3,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "315,000 FCC PU at time of manufacture"
+            },
+            {
+              "name": "Pepsin",
+              "amount": 22.5,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "225,000 FCC PU at time of manufacture"
+            },
+            {
+              "name": "Bromelain",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "1,350,000 FCC PU at time of manufacture"
+            },
+            {
+              "name": "Ox Bile",
+              "amount": 33,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Pancreatin 11X",
+              "total": {
+                "amount": 75,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Protease 275 USP/mg, Amylase 275 USP/mg, Lipase 22 USP/mg (at time of manufacture)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Protease",
+                  "standardization": "275 USP/mg"
+                },
+                {
+                  "pos": 2,
+                  "name": "Amylase",
+                  "standardization": "275 USP/mg"
+                },
+                {
+                  "pos": 3,
+                  "name": "Lipase",
+                  "standardization": "22 USP/mg"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Rice bran",
+            "Gelatin capsule (gelatin and water)",
+            "Magnesium stearate"
+          ],
+          "source_label": "21211_ult-enzymes-1120_panel-900x1200_1.jpg"
+        }
+      ]
+    },
+    "ultimate-flora-fx": {
+      "product_id": "ultimate-flora-fx",
+      "name": "Ultimate Flora FX™ - 60 capsules",
+      "sku": "20692",
+      "ygy_id": "766",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "GDL",
+              "amount": 1334,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "glucono delta lactone"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary 4 Billion CFU Probiotic Blend",
+              "total": {
+                "amount": 400,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Lactobacillus acidophilus, Bifidobacterium bifidum, Bifidobacterium infantis in a base of Tapioca Maltodextrin (4 billion CFU minimum at time of manufacture)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Lactobacillus acidophilus"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bifidobacterium bifidum"
+                },
+                {
+                  "pos": 3,
+                  "name": "Bifidobacterium infantis"
+                },
+                {
+                  "pos": 4,
+                  "name": "Tapioca Maltodextrin",
+                  "form": "base"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Vegetarian capsule (hypromellose and water)",
+            "Vegetable stearate"
+          ],
+          "source_label": "20692_ultimate-flora-fx-1017_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "ultimate-gluco-gel": {
+      "product_id": "ultimate-gluco-gel",
+      "name": "Ultimate Gluco-Gel™ - 240 Capsules",
+      "sku": "21252",
+      "ygy_id": "6714",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 120,
+          "directions": "Take 2 capsules two times daily, or as directed by your healthcare professional. Store in a cool dry place.",
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Manganese",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 87,
+              "form": "from manganese sulfate"
+            },
+            {
+              "name": "Gelatin",
+              "amount": 500,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Glucosamine sulfate 2KCl",
+              "amount": 500,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Gelatin capsule",
+            "Rice flour",
+            "Magnesium stearate"
+          ],
+          "source_label": "ult-gluco-gel-240_suppfacts-1119_2.jpg"
+        }
+      ]
+    },
+    "ultimate-hair-skin-nails": {
+      "product_id": "ultimate-hair-skin-nails",
+      "name": "Ultimate Hair, Skin and Nails Formula™ - 60 capsules",
+      "sku": "50225",
+      "ygy_id": "817",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 30,
+          "directions": "Take 2 capsules daily, or as directed by your healthcare professional. Store in a cool dry place.",
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 1500,
+              "unit": "mcg",
+              "pct_dv": 167,
+              "form": "as retinyl acetate",
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 120,
+              "unit": "mg",
+              "pct_dv": 133,
+              "form": "from calcium ascorbate"
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 2.5,
+              "unit": "mcg",
+              "pct_dv": 12.5,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 417,
+              "form": "as thiamine hydrochloride",
+              "unit_detail": "B1"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 385,
+              "form": "as riboflavin",
+              "unit_detail": "B2"
+            },
+            {
+              "name": "Niacin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 125,
+              "form": "as niacinamide",
+              "unit_detail": "NE"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 588,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Folate",
+              "amount": 340,
+              "unit": "mcg",
+              "pct_dv": 85,
+              "form": "as folic acid",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 20,
+              "unit": "mcg",
+              "pct_dv": 833,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 2000,
+              "unit": "mcg",
+              "pct_dv": 6667
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 400,
+              "form": "from calcium pantothenate"
+            },
+            {
+              "name": "MSM",
+              "amount": 700,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "methylsulfonylmethane"
+            },
+            {
+              "name": "Choline",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from choline bitartrate"
+            },
+            {
+              "name": "Inositol",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "L-Methionine",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "PABA",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "para-aminobenzoic acid"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Silica Complex",
+              "total": {
+                "amount": 80,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Silicon Dioxide, Bamboo Extract and Horsetail Herb Extract",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Silicon Dioxide"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bamboo",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Horsetail",
+                  "part": "herb",
+                  "form": "extract"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Gelatin capsule (gelatin and water)",
+            "Magnesium stearate"
+          ],
+          "source_label": "ult-hair-skin-nails_suppfacts_1221_1.jpg"
+        }
+      ]
+    },
+    "ultimate-hormone-fx": {
+      "product_id": "ultimate-hormone-fx",
+      "name": "Ultimate Hormone FX™",
+      "sku": "20684",
+      "ygy_id": "9744",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 60,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Saw Palmetto",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "containing fatty acids",
+              "part": "fruit"
+            },
+            {
+              "name": "Longjack",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "root extract (Tongkat Ali)"
+            },
+            {
+              "name": "Fenugreek",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "seed extract (containing saponins)"
+            },
+            {
+              "name": "Red Clover",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "herb extract 4:1"
+            },
+            {
+              "name": "Wild Yam",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "root extract 4:1"
+            },
+            {
+              "name": "Blessed Thistle",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "herb"
+            },
+            {
+              "name": "Black Cohosh",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "root extract 4:1"
+            },
+            {
+              "name": "DHEA",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "dehydroepiandrosterone"
+            },
+            {
+              "name": "Fennel",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "seed extract 5:1"
+            },
+            {
+              "name": "Motherwort",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "herb"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Vegetarian capsule (cellulose and water)",
+            "Magnesium stearate",
+            "Silicon dioxide"
+          ],
+          "source_label": "20684_ultimate_hormonefx_suppfacts_1023_900x1200x.jpg"
+        }
+      ]
+    },
+    "ultimate-king-calcium": {
+      "product_id": "ultimate-king-calcium",
+      "name": "Ultimate King Calcium™ - 90 chewable tablets",
+      "sku": "67504",
+      "ygy_id": "835",
+      "components": [
+        {
+          "form": "chewable tablet",
+          "serving_size": "3 chewable tablets",
+          "servings_per_container": 30,
+          "directions": "Take 3 chewable tablets per day. Tablets may be taken throughout the day, one with each meal, or as directed by your healthcare professional. Store in a cool dry place.",
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin D",
+              "amount": 10,
+              "unit": "mcg",
+              "pct_dv": 50,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Vitamin K",
+              "amount": 40,
+              "unit": "mcg",
+              "pct_dv": 33,
+              "form": "as phylloquinone"
+            },
+            {
+              "name": "Calcium",
+              "amount": 550,
+              "unit": "mg",
+              "pct_dv": 42,
+              "form": "from calcium carbonate, lactate, gluconate, amino acid chelate (1500 mg calcium compound)"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 12,
+              "unit": "mg",
+              "pct_dv": 3,
+              "form": "from magnesium amino acid chelate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 1.5,
+              "unit": "mg",
+              "pct_dv": 14,
+              "form": "from zinc gluconate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 40,
+              "unit": "mcg",
+              "pct_dv": 73,
+              "form": "from l-selenomethionine"
+            },
+            {
+              "name": "Boron",
+              "amount": 1.8,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from boron amino acid chelate"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Sorbitol",
+            "Fructose",
+            "Natural flavors",
+            "Stearic acid",
+            "Magnesium stearate",
+            "Silica"
+          ],
+          "source_label": "ult-king-calcium_suppfacts-1119.jpg"
+        }
+      ]
+    },
+    "ultimate-memory-fx": {
+      "product_id": "ultimate-memory-fx",
+      "name": "Ultimate Memory FX™ - 60 capsules",
+      "sku": "20690",
+      "ygy_id": "786",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 60,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 10000,
+              "unit": "iu",
+              "pct_dv": 200,
+              "form": "as beta carotene"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 500,
+              "unit": "mg",
+              "pct_dv": 833,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 1667,
+              "form": "as thiamine HCl",
+              "unit_detail": "B1"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 1470,
+              "form": "as riboflavin",
+              "unit_detail": "B2"
+            },
+            {
+              "name": "Niacin",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 125,
+              "form": "as niacinamide",
+              "unit_detail": "B3"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 1250,
+              "form": "as pyridoxine HCl"
+            },
+            {
+              "name": "Folate",
+              "amount": 800,
+              "unit": "mcg",
+              "pct_dv": 200,
+              "form": "as folic acid"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 50,
+              "unit": "mcg",
+              "pct_dv": 833,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 300,
+              "unit": "mcg",
+              "pct_dv": 100
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 250,
+              "form": "as calcium pantothenate"
+            },
+            {
+              "name": "Ginkgo biloba",
+              "amount": 60,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "standardized powdered extract (24% flavonglycosides)",
+              "part": "leaf"
+            },
+            {
+              "name": "Periwinkle",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "herb",
+              "latin": "Vinca minor"
+            },
+            {
+              "name": "Choline",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as choline bitartrate"
+            },
+            {
+              "name": "Inositol",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Lutein",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Gelatin capsule (gelatin and water)",
+            "Magnesium stearate",
+            "Magnesium silicate"
+          ],
+          "source_label": "ygy-20690-ultimate-memory-fx-suppfacts-1214.jpg"
+        }
+      ]
+    },
+    "ultimate-microbiome": {
+      "product_id": "ultimate-microbiome",
+      "name": "Ultimate Microbiome™",
+      "sku": "USYG300004",
+      "ygy_id": "7106",
+      "components": [
+        {
+          "form": "powder",
+          "serving_size": "1 rounded scoop (approx. 8.7 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 35,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "cholesterol": {
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 13
+            },
+            "total_carbohydrate": {
+              "amount": 4,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "dietary_fiber": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 7
+            },
+            "protein": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 1
+            },
+            {
+              "name": "i26 Hyperimmune Egg Powder",
+              "amount": 2.5,
+              "unit": "g",
+              "pct_dv": null
+            },
+            {
+              "name": "L-Glutamine",
+              "amount": 1.5,
+              "unit": "g",
+              "pct_dv": null
+            },
+            {
+              "name": "Reishi Mushroom",
+              "amount": 750,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "mycelium, fruiting body",
+              "latin": "Ganoderma lucidum"
+            },
+            {
+              "name": "Lion's Mane Mushroom",
+              "amount": 500,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "mycelium",
+              "latin": "Hericium erinaceus"
+            },
+            {
+              "name": "Cordyceps",
+              "amount": 250,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "part": "mycelium",
+              "latin": "Cordyceps sinensis"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Pre & Probiotic Blend",
+              "total": {
+                "amount": 2,
+                "unit": "g"
+              },
+              "pct_dv": null,
+              "as_labeled": "Inulin, Probiotics ((Bacillus coagulans SNZ 1969) 5 billion cfu/serving at time of manufacture)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Inulin"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bacillus coagulans",
+                  "standardization": "SNZ 1969, 5 billion CFU/serving at manufacture"
+                }
+              ]
+            },
+            {
+              "name": "Enzyme Blend",
+              "total": {
+                "amount": 100,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Protease, Amylase, Bromelain, Cellulase, Lactase, Papain, Lipase",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Protease"
+                },
+                {
+                  "pos": 2,
+                  "name": "Amylase"
+                },
+                {
+                  "pos": 3,
+                  "name": "Bromelain"
+                },
+                {
+                  "pos": 4,
+                  "name": "Cellulase"
+                },
+                {
+                  "pos": 5,
+                  "name": "Lactase"
+                },
+                {
+                  "pos": 6,
+                  "name": "Papain"
+                },
+                {
+                  "pos": 7,
+                  "name": "Lipase"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Natural flavors",
+            "Rebaudioside A (from Stevia rebaudiana leaf extract)"
+          ],
+          "source_label": "ult-microbiome_canister_label-0925_1.jpg"
+        }
+      ]
     }
   }
 }
