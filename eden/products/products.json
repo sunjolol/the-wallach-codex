@@ -26113,6 +26113,380 @@
           "source_label": "vitalstart_supp_panel_900x1200_3.jpg"
         }
       ]
+    },
+    "womens-fx": {
+      "product_id": "womens-fx",
+      "name": "Women's FX™ with Black Cohosh (32 fl oz)",
+      "sku": "13215",
+      "ygy_id": "868",
+      "variants": [
+        {
+          "sku": "13215C",
+          "ygy_id": "869",
+          "name": "Women's FX™ with Black Cohosh - 32 fl oz (4 Pack)",
+          "form": "liquid",
+          "source_label": "womens-fx_suppfacts_0320.jpg"
+        }
+      ],
+      "components": [
+        {
+          "form": "liquid",
+          "serving_size": "1 fl oz (2 tablespoons)",
+          "servings_per_container": 32,
+          "macros": {
+            "calories": {
+              "amount": 30,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 7.5,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "total_sugars": {
+              "amount": 1.5,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Trace Mineral Complex",
+              "amount": 250,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Pomegranate",
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": null,
+              "form": "concentrate",
+              "part": "fruit"
+            },
+            {
+              "name": "Blueberry",
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": null,
+              "form": "concentrate",
+              "part": "fruit"
+            },
+            {
+              "name": "Black Cohosh",
+              "amount": 75,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract"
+            },
+            {
+              "name": "Gamma Oryzanol",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Green Tea",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "leaf"
+            },
+            {
+              "name": "Soy Isoflavones",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Wild Yam",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "root"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Purified water",
+            "Pure vegetable glycerine",
+            "Pomegranate concentrate",
+            "Blueberry concentrate",
+            "Natural flavor",
+            "Xanthan gum",
+            "Citric acid",
+            "Rebaudioside A (purified from stevia leaf)",
+            "Potassium sorbate (for freshness)",
+            "Sodium benzoate (for freshness)"
+          ],
+          "source_label": "womens-fx_suppfacts_0320.jpg"
+        }
+      ]
+    },
+    "womens-hormonal-balancer": {
+      "product_id": "womens-hormonal-balancer",
+      "name": "Women's Hormonal Balancer™ (120 capsules)",
+      "sku": "50241",
+      "ygy_id": "821",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "4 Capsules",
+          "servings_per_container": 30,
+          "nutrients": [
+            {
+              "name": "Vitamin B12",
+              "amount": 40,
+              "unit": "mcg",
+              "pct_dv": 1667,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Iodine",
+              "amount": 40,
+              "unit": "mcg",
+              "pct_dv": 27,
+              "form": "from potassium iodide"
+            },
+            {
+              "name": "Potassium",
+              "amount": 42.8,
+              "unit": "mg",
+              "pct_dv": "<1",
+              "form": "from potassium chloride"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Hormonal Balancer Blend",
+              "total": {
+                "amount": 1590,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Rice Bran, Gelatin (bovine), Dandelion Root Extract 4:1, Dong Quai Root Extract 4:1, Fenugreek Seed Extract 4:1, Maca Tuber Extract 4:1, Passion Flower Herb Extract 4:1, Sarsaparilla Root Extract 4:1, Saw Palmetto Berry Extract 4:1, Wild Yam Root Extract 4:1, Fennel Seed Extract 5:1",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Rice Bran"
+                },
+                {
+                  "pos": 2,
+                  "name": "Gelatin",
+                  "form": "bovine"
+                },
+                {
+                  "pos": 3,
+                  "name": "Dandelion",
+                  "part": "root",
+                  "form": "extract",
+                  "standardization": "4:1"
+                },
+                {
+                  "pos": 4,
+                  "name": "Dong Quai",
+                  "part": "root",
+                  "form": "extract",
+                  "standardization": "4:1"
+                },
+                {
+                  "pos": 5,
+                  "name": "Fenugreek",
+                  "part": "seed",
+                  "form": "extract",
+                  "standardization": "4:1"
+                },
+                {
+                  "pos": 6,
+                  "name": "Maca",
+                  "part": "tuber",
+                  "form": "extract",
+                  "standardization": "4:1"
+                },
+                {
+                  "pos": 7,
+                  "name": "Passion Flower",
+                  "part": "herb",
+                  "form": "extract",
+                  "standardization": "4:1"
+                },
+                {
+                  "pos": 8,
+                  "name": "Sarsaparilla",
+                  "part": "root",
+                  "form": "extract",
+                  "standardization": "4:1"
+                },
+                {
+                  "pos": 9,
+                  "name": "Saw Palmetto",
+                  "part": "berry",
+                  "form": "extract",
+                  "standardization": "4:1"
+                },
+                {
+                  "pos": 10,
+                  "name": "Wild Yam",
+                  "part": "root",
+                  "form": "extract",
+                  "standardization": "4:1"
+                },
+                {
+                  "pos": 11,
+                  "name": "Fennel",
+                  "part": "seed",
+                  "form": "extract",
+                  "standardization": "5:1"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Gelatin capsule (gelatin and water)",
+            "Microcrystalline cellulose",
+            "Magnesium stearate",
+            "Silicon dioxide",
+            "Proprietary Vilcabamba mineral blend (each containing <2% DV)",
+            "Magnesium bisglycinate chelate",
+            "Calcium bisglycinate chelate",
+            "Ferrous bisglycinate chelate",
+            "Zinc bisglycinate chelate",
+            "Manganese bisglycinate chelate",
+            "Vanadyl sulfate",
+            "Chromium nicotinate bisglycinate chelate",
+            "Molybdenum bisglycinate chelate",
+            "Selenium glycinate complex",
+            "Copper bisglycinate chelate"
+          ],
+          "source_label": "ygy-womens-hormonal-balancer_label-suppfacts_0423.jpg"
+        }
+      ]
+    },
+    "womens-probiotic-complete": {
+      "product_id": "womens-probiotic-complete",
+      "name": "Women's Probiotic COMPLETE",
+      "sku": "USYG70007",
+      "ygy_id": "10454",
+      "additional_labels": [
+        "womens-probiotic-complete_suppfacts_0725_1.jpg"
+      ],
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 Capsule",
+          "servings_per_container": 30,
+          "nutrients": [
+            {
+              "name": "FOS",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "Fructo-Oligosaccharides"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Menopause Probiotic Blend",
+              "total": {
+                "amount": 250,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Total Probiotic Cultures 35 Billion CFU: Lactobacillus acidophilus (La-14), Lactobacillus plantarum (Lp-115), Lactobacillus rhamnosus (HN001), Lactobacillus paracasei (Lpc-37), Lactobacillus casei (Lc-11), Lactobacillus rhamnosus (GG), Lactobacillus rhamnosus (Lr-32), Lactobacillus reuteri (1E1), Lactobacillus brevis (Lbr-35), Lactobacillus gasseri (Lg-36), Lactobacillus bulgaricus (Lb-87), Bifidobacterium lactis (HN019), Bifidobacterium breve (Bb-18), Bifidobacterium infantis (Bi-26), Bifidobacterium longum (Bi-05), Bifidobacterium bifidum (Bb-06)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Lactobacillus acidophilus",
+                  "standardization": "La-14"
+                },
+                {
+                  "pos": 2,
+                  "name": "Lactobacillus plantarum",
+                  "standardization": "Lp-115"
+                },
+                {
+                  "pos": 3,
+                  "name": "Lactobacillus rhamnosus",
+                  "standardization": "HN001"
+                },
+                {
+                  "pos": 4,
+                  "name": "Lactobacillus paracasei",
+                  "standardization": "Lpc-37"
+                },
+                {
+                  "pos": 5,
+                  "name": "Lactobacillus casei",
+                  "standardization": "Lc-11"
+                },
+                {
+                  "pos": 6,
+                  "name": "Lactobacillus rhamnosus",
+                  "standardization": "GG"
+                },
+                {
+                  "pos": 7,
+                  "name": "Lactobacillus rhamnosus",
+                  "standardization": "Lr-32"
+                },
+                {
+                  "pos": 8,
+                  "name": "Lactobacillus reuteri",
+                  "standardization": "1E1"
+                },
+                {
+                  "pos": 9,
+                  "name": "Lactobacillus brevis",
+                  "standardization": "Lbr-35"
+                },
+                {
+                  "pos": 10,
+                  "name": "Lactobacillus gasseri",
+                  "standardization": "Lg-36"
+                },
+                {
+                  "pos": 11,
+                  "name": "Lactobacillus bulgaricus",
+                  "standardization": "Lb-87"
+                },
+                {
+                  "pos": 12,
+                  "name": "Bifidobacterium lactis",
+                  "standardization": "HN019"
+                },
+                {
+                  "pos": 13,
+                  "name": "Bifidobacterium breve",
+                  "standardization": "Bb-18"
+                },
+                {
+                  "pos": 14,
+                  "name": "Bifidobacterium infantis",
+                  "standardization": "Bi-26"
+                },
+                {
+                  "pos": 15,
+                  "name": "Bifidobacterium longum",
+                  "standardization": "Bi-05"
+                },
+                {
+                  "pos": 16,
+                  "name": "Bifidobacterium bifidum",
+                  "standardization": "Bb-06"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Vegetarian delayed-release capsule (hypromellose, gellan gum, and water)",
+            "Microcrystalline cellulose",
+            "Magnesium stearate",
+            "Silicon dioxide"
+          ],
+          "source_label": "womens-probiotic-complete_suppfacts_0725.jpg"
+        }
+      ]
     }
   }
 }
