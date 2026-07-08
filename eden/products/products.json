@@ -18322,6 +18322,1372 @@
           "source_label": "sta-young_6pt375x2pt2_label2-suppfacts_0524.jpg"
         }
       ]
+    },
+    "tazza-di-vita-cafe-ganoderma": {
+      "product_id": "tazza-di-vita-cafe-ganoderma",
+      "name": "Tazza Di Vita™ Café Ganoderma",
+      "sku": "USYG400402",
+      "ygy_id": "9961",
+      "components": [
+        {
+          "form": "stick powder",
+          "serving_size": "2.5 g (1 stick)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 10,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "saturated_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "trans_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "sodium": {
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": 0
+            },
+            "total_carbohydrate": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "dietary_fiber": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "total_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "added_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "protein": {
+              "amount": "<1",
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [],
+          "blends": [],
+          "other_ingredients": [
+            "Instant Coffee Powder",
+            "UltimateMushroom Complex Extract Powder"
+          ],
+          "source_label": "tazza-di-vita_gusset_0324_suppfacts.jpg"
+        }
+      ]
+    },
+    "tazza-di-vita-latte": {
+      "product_id": "tazza-di-vita-latte",
+      "name": "Tazza Di Vita™ Café Ganoderma Latte+",
+      "sku": "USYG400403",
+      "ygy_id": "10230",
+      "components": [
+        {
+          "form": "powder",
+          "serving_size": "10 g (1 Packet)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 50,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "saturated_fat": {
+              "amount": 2.2,
+              "unit": "g",
+              "pct_dv": 11
+            },
+            "trans_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "sodium": {
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 0
+            },
+            "total_carbohydrate": {
+              "amount": 7,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "dietary_fiber": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "total_sugars": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "protein": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            }
+          },
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "UltimateMushroom Mushroom Complex Extract Powder",
+              "total": null,
+              "pct_dv": null,
+              "as_labeled": "Organic Royal Sun Agaricus Extract Powder (Agaricus blazei), Organic Lion's Mane Extract Powder (Hericium erinaceus), Organic Reishi Extract Powder (Ganoderma lucidum), Organic White Fungus Extract Powder (Tremella fuciformis), Organic Maitake Extract Powder (Grifola frondosa), Organic Chaga Extract Powder (Inonotus obliquus), Organic Cordyceps Extract Powder (Cordyceps militaris), Organic Turkey Tail Extract Powder (Coriolus versicolor), Organic Oyster Mushroom Extract Powder (Pleurotus ostreatus), Organic Shiitake Extract Powder (Lentinus edodes)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Royal Sun Agaricus",
+                  "form": "extract",
+                  "latin": "Agaricus blazei"
+                },
+                {
+                  "pos": 2,
+                  "name": "Lion's Mane",
+                  "form": "extract",
+                  "latin": "Hericium erinaceus"
+                },
+                {
+                  "pos": 3,
+                  "name": "Reishi",
+                  "form": "extract",
+                  "latin": "Ganoderma lucidum"
+                },
+                {
+                  "pos": 4,
+                  "name": "White Fungus",
+                  "form": "extract",
+                  "latin": "Tremella fuciformis"
+                },
+                {
+                  "pos": 5,
+                  "name": "Maitake",
+                  "form": "extract",
+                  "latin": "Grifola frondosa"
+                },
+                {
+                  "pos": 6,
+                  "name": "Chaga",
+                  "form": "extract",
+                  "latin": "Inonotus obliquus"
+                },
+                {
+                  "pos": 7,
+                  "name": "Cordyceps",
+                  "form": "extract",
+                  "latin": "Cordyceps militaris"
+                },
+                {
+                  "pos": 8,
+                  "name": "Turkey Tail",
+                  "form": "extract",
+                  "latin": "Coriolus versicolor"
+                },
+                {
+                  "pos": 9,
+                  "name": "Oyster Mushroom",
+                  "form": "extract",
+                  "latin": "Pleurotus ostreatus"
+                },
+                {
+                  "pos": 10,
+                  "name": "Shiitake",
+                  "form": "extract",
+                  "latin": "Lentinus edodes"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Non-Dairy Creamer",
+            "Cane Sugar",
+            "MCTsolutions Medium Chain Triglycerides Oil Powder",
+            "Coffee Powder",
+            "Guar Gum",
+            "Silicon Dioxide",
+            "Monk Fruit Powder",
+            "Sodium Bicarbonate"
+          ],
+          "source_label": "tazza_di_vita_latte__nutrition_facts_panel_0325.jpg"
+        }
+      ]
+    },
+    "tmr-total-meal-replacement-shake": {
+      "product_id": "tmr-total-meal-replacement-shake",
+      "name": "TMR - Total Meal Replacement Shake - Chocolate",
+      "sku": "USSN100001",
+      "ygy_id": "7153",
+      "components": [
+        {
+          "form": "powder",
+          "serving_size": "46 g (2 scoops)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 200,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 5,
+              "unit": "g",
+              "pct_dv": 8
+            },
+            "saturated_fat": {
+              "amount": 1.5,
+              "unit": "g",
+              "pct_dv": 7
+            },
+            "cholesterol": {
+              "amount": 55,
+              "unit": "mg",
+              "pct_dv": 19
+            },
+            "sodium": {
+              "amount": 170,
+              "unit": "mg",
+              "pct_dv": 7
+            },
+            "total_carbohydrate": {
+              "amount": 12,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "dietary_fiber": {
+              "amount": 5,
+              "unit": "g",
+              "pct_dv": 22
+            },
+            "total_sugars": {
+              "amount": 4,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "protein": {
+              "amount": 24,
+              "unit": "g",
+              "pct_dv": 48
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 1276,
+              "unit": "IU",
+              "pct_dv": 25
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 16,
+              "unit": "mg",
+              "pct_dv": 25
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 8.06,
+              "unit": "IU",
+              "pct_dv": 25
+            },
+            {
+              "name": "Thiamin",
+              "amount": 0.38,
+              "unit": "mg",
+              "pct_dv": 25
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 0.43,
+              "unit": "mg",
+              "pct_dv": 25
+            },
+            {
+              "name": "Niacin",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 25
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 0.5,
+              "unit": "mg",
+              "pct_dv": 25
+            },
+            {
+              "name": "Folate",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 25,
+              "form": "as Folic Acid"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 1.5,
+              "unit": "mcg",
+              "pct_dv": 25
+            },
+            {
+              "name": "Biotin",
+              "amount": 75,
+              "unit": "mcg",
+              "pct_dv": 25
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 2.5,
+              "unit": "mg",
+              "pct_dv": 25
+            },
+            {
+              "name": "Calcium",
+              "amount": 110,
+              "unit": "mg",
+              "pct_dv": 10
+            },
+            {
+              "name": "Phosphorus",
+              "amount": 140.16,
+              "unit": "mg",
+              "pct_dv": 15
+            },
+            {
+              "name": "Iodine",
+              "amount": 37.5,
+              "unit": "mcg",
+              "pct_dv": 25
+            },
+            {
+              "name": "Magnesium",
+              "amount": 19.69,
+              "unit": "mg",
+              "pct_dv": 6
+            },
+            {
+              "name": "Zinc",
+              "amount": 3.75,
+              "unit": "mg",
+              "pct_dv": 25
+            },
+            {
+              "name": "Copper",
+              "amount": 0.5,
+              "unit": "mg",
+              "pct_dv": 25
+            },
+            {
+              "name": "Manganese",
+              "amount": 0.5,
+              "unit": "mg",
+              "pct_dv": 25
+            },
+            {
+              "name": "Chromium",
+              "amount": 34,
+              "unit": "mcg",
+              "pct_dv": 30
+            },
+            {
+              "name": "Potassium",
+              "amount": 250,
+              "unit": "mg",
+              "pct_dv": 7
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Sta-Protein Cold Filtered Proprietary Blend (Whey Protein Concentrate, Milk Protein Concentrate, Whey Protein Isolate, Egg White, Chia Seed)",
+            "Sunflower Powder",
+            "(Chicory) Inulin",
+            "Cocoa Powder with Alkali",
+            "Natural Flavoring",
+            "Stevia Extract",
+            "Medium Chain Triglycerides",
+            "Cellulose Gum",
+            "Vitamin & Mineral Premix (Vitamin A Palmitate, Ascorbic Acid, Ferrous Sulfate, dl-Alpha Tocopheryl Acetate, Thiamine Hydrochloride, Riboflavin, Niacinamide, Pyridoxine Hydrochloride, Folic Acid, Methylcobalamin, Biotin, Calcium D-Pantothenate, Potassium Iodide, Zinc Sulfate, Copper, Amino Acid Chelate)",
+            "Manganese Sulfate",
+            "Chromium Amino Acid Chelate",
+            "Sodium Chloride",
+            "Papain",
+            "Protease",
+            "Luo Han Guo extract",
+            "Lecithin"
+          ],
+          "source_label": "tmr-canister-chocolate-0817_panel-900x1200_2_.jpg"
+        }
+      ]
+    },
+    "trim-stiks": {
+      "product_id": "trim-stiks",
+      "name": "TRIM Stiks™",
+      "sku": "USBE10004",
+      "ygy_id": "7188",
+      "components": [
+        {
+          "form": "stick powder",
+          "serving_size": "1 stick pack (1.8 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 5,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "total_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": 0
+            },
+            "protein": {
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": 0
+            },
+            "sodium": {
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": 0
+            },
+            "potassium": {
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": 0
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Caffeine",
+              "amount": 104,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from coffee beans"
+            },
+            {
+              "name": "BioPerine",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "Black Pepper Extract"
+            }
+          ],
+          "blends": [
+            {
+              "name": "M-THERMX™ Proprietary Blend",
+              "total": {
+                "amount": 165,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Green Tea Leaf Extract, Oligonol, Theobromine, Niacinamide",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Green Tea",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 2,
+                  "name": "Oligonol"
+                },
+                {
+                  "pos": 3,
+                  "name": "Theobromine"
+                },
+                {
+                  "pos": 4,
+                  "name": "Niacinamide"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Malic Acid",
+            "Citric Acid",
+            "Stevia Leaf Extract",
+            "Red-Beet Color",
+            "Natural Kiwi-Strawberry Flavor",
+            "Sucralose"
+          ],
+          "source_label": "usbe10004_box_trim_sticks_suppfacts_1023.jpg"
+        }
+      ]
+    },
+    "truboost": {
+      "product_id": "truboost",
+      "name": "TruBoost™",
+      "sku": "USLF070017",
+      "ygy_id": "9954",
+      "components": [
+        {
+          "form": "liquid",
+          "serving_size": "1 bottle (4 oz.)",
+          "servings_per_container": 1,
+          "macros": {
+            "calories": {
+              "amount": 30,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 7,
+              "unit": "g",
+              "pct_dv": 2
+            },
+            "total_sugars": {
+              "amount": 6,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Niacin",
+              "amount": 6,
+              "unit": "mg",
+              "pct_dv": 30,
+              "form": "as niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 600,
+              "unit": "mcg",
+              "pct_dv": 30,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 1.8,
+              "unit": "mcg",
+              "pct_dv": 30,
+              "form": "as cyanocobalamin"
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": 30,
+              "form": "as calcium pantothenate"
+            },
+            {
+              "name": "Potassium D-glucarate",
+              "amount": 500,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Ashwagandha",
+              "amount": 125,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "Sensoril extract",
+              "part": "leaf, root",
+              "latin": "Withania somnifera",
+              "standardization": "8% withanolides"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Organic Blend",
+              "total": {
+                "amount": 1.4,
+                "unit": "g"
+              },
+              "pct_dv": null,
+              "as_labeled": "Krishna Tulsi (Holy Basil) (leaf & flower), Vana Tulsi (Holy Basil) (leaf & flower), Rama Tulsi (Holy Basil) (leaf & flower)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Krishna Tulsi",
+                  "part": "leaf & flower",
+                  "form": "Holy Basil"
+                },
+                {
+                  "pos": 2,
+                  "name": "Vana Tulsi",
+                  "part": "leaf & flower",
+                  "form": "Holy Basil"
+                },
+                {
+                  "pos": 3,
+                  "name": "Rama Tulsi",
+                  "part": "leaf & flower",
+                  "form": "Holy Basil"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Peach Juice (Water, Peach Juice Concentrate)",
+            "Organic Agave Nectar",
+            "Natural Flavors",
+            "Citric Acid"
+          ],
+          "source_label": "truboost_supp_panel_900x1200_1.jpg"
+        }
+      ]
+    },
+    "true2life-daily-digest": {
+      "product_id": "true2life-daily-digest",
+      "name": "True2Life Daily Digest",
+      "sku": "TL10229",
+      "ygy_id": "7914",
+      "components": [
+        {
+          "role": "Liver Cleanse",
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 30,
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 90,
+              "unit": "mg",
+              "pct_dv": 100,
+              "form": "as ascorbic acid, ascorbyl palmitate"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Liver Detox-Cleanse Blend",
+              "total": {
+                "amount": 355,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Milk Thistle Seed Extract (80% silymarin), Artichoke Leaf Extract, Turmeric Root Extract, Dandelion Root Extract, Andrographis Leaf Extract, Burdock Root Extract and Green Tea Leaf Extract.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Milk Thistle",
+                  "part": "seed",
+                  "form": "extract",
+                  "standardization": "80% silymarin"
+                },
+                {
+                  "pos": 2,
+                  "name": "Artichoke",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Turmeric",
+                  "part": "root",
+                  "form": "extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "Dandelion",
+                  "part": "root",
+                  "form": "extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Andrographis",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 6,
+                  "name": "Burdock",
+                  "part": "root",
+                  "form": "extract"
+                },
+                {
+                  "pos": 7,
+                  "name": "Green Tea",
+                  "part": "leaf",
+                  "form": "extract"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Vegetarian capsule (cellulose and water)",
+            "silicon dioxide"
+          ],
+          "source_label": "tl10229_daily-digest-1223_panel-900x1200_1.jpg"
+        },
+        {
+          "role": "Microbiome Support",
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 30,
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Prebiotic & Probiotic Blend",
+              "total": {
+                "amount": 284,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Organic Acacia Gum (Prebiotic Fiber), Saccharomyces Boulardii, Bacillus coagulans, Bacillus subtillus",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Organic Acacia Gum",
+                  "form": "Prebiotic Fiber"
+                },
+                {
+                  "pos": 2,
+                  "name": "Saccharomyces Boulardii"
+                },
+                {
+                  "pos": 3,
+                  "name": "Bacillus coagulans"
+                },
+                {
+                  "pos": 4,
+                  "name": "Bacillus subtillus"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Vegetarian Capsule (cellulose and water)"
+          ],
+          "source_label": "tl10229_daily-digest-1223_panel-900x1200_1.jpg"
+        },
+        {
+          "role": "Intestinal Maintenance",
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 30,
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Leaky Gut Repair Blend",
+              "total": {
+                "amount": 810,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "L-Glutamine, Glutamic Acid, N-Acetyl-D-Glucosamine (vegan), Aloe Vera Leaf Gel Extract",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "L-Glutamine"
+                },
+                {
+                  "pos": 2,
+                  "name": "Glutamic Acid"
+                },
+                {
+                  "pos": 3,
+                  "name": "N-Acetyl-D-Glucosamine",
+                  "form": "vegan"
+                },
+                {
+                  "pos": 4,
+                  "name": "Aloe Vera",
+                  "part": "leaf gel",
+                  "form": "extract"
+                }
+              ]
+            },
+            {
+              "name": "Proprietary Enzyme Blend",
+              "total": {
+                "amount": 170,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Protein Digestion: Bromelain, Papain, Peptidase DPPIV, Protease 4.5, Protease 6.0, Acid-Stable Protease. Carbohydrate Digestion: Amylase, Glucoamylase, Lactase, Malt Diastase, Invertase, Alpha Galactosidase, Phytase. Fat Digestion: Lipase.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Bromelain"
+                },
+                {
+                  "pos": 2,
+                  "name": "Papain"
+                },
+                {
+                  "pos": 3,
+                  "name": "Peptidase DPPIV"
+                },
+                {
+                  "pos": 4,
+                  "name": "Protease 4.5"
+                },
+                {
+                  "pos": 5,
+                  "name": "Protease 6.0"
+                },
+                {
+                  "pos": 6,
+                  "name": "Acid-Stable Protease"
+                },
+                {
+                  "pos": 7,
+                  "name": "Amylase"
+                },
+                {
+                  "pos": 8,
+                  "name": "Glucoamylase"
+                },
+                {
+                  "pos": 9,
+                  "name": "Lactase"
+                },
+                {
+                  "pos": 10,
+                  "name": "Malt Diastase"
+                },
+                {
+                  "pos": 11,
+                  "name": "Invertase"
+                },
+                {
+                  "pos": 12,
+                  "name": "Alpha Galactosidase"
+                },
+                {
+                  "pos": 13,
+                  "name": "Phytase"
+                },
+                {
+                  "pos": 14,
+                  "name": "Lipase"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Vegetarian capsule (cellulose and water)",
+            "magnesium stearate",
+            "silicon dioxide"
+          ],
+          "source_label": "tl10229_daily-digest-1223_panel-900x1200_1.jpg"
+        }
+      ]
+    },
+    "truecleanse": {
+      "product_id": "truecleanse",
+      "name": "TrueCleanse",
+      "sku": "TL006PROD",
+      "ygy_id": "966",
+      "components": [
+        {
+          "form": "powder",
+          "serving_size": "1 packet (7.2 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 29,
+              "unit": null,
+              "pct_dv": null
+            },
+            "sodium": {
+              "amount": 55,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 4.7,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "total_sugars": {
+              "amount": "<1",
+              "unit": "g",
+              "pct_dv": null
+            },
+            "dietary_fiber": {
+              "amount": 3.2,
+              "unit": "g",
+              "pct_dv": 9
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin B3",
+              "amount": 4,
+              "unit": "mg",
+              "pct_dv": 25,
+              "unit_detail": "NE"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 294
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 15,
+              "unit": "mcg",
+              "pct_dv": 625
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 7215,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Apple fiber, Fibersol 2, Inositol, Yellowdock root, Alfalfa leaf powder, Peppermint leaf, Eleutherococcus Senticosus root, Pau d'Arco inner bark, Suma root, Aloe Vera Leaf gel, Betaine HCl, Choline bitartrate, Cranberry, Green Coffee bean extract, Raspberry powder, Strawberry powder, Burdock root, TrueZyme Enzyme blend, Licorice root extract, Natural Mixed Berry flavor, Acerola berry extract, Beet powder, Guarana extract, Tri-calcium Phosphate powder, Papaya Seed Extract, Ashwagandha root, Blueberry extract, Fennel seed, L-Methionine, Natural Mango Flavor, Green tea extract, Stevia, Bilberry fruit, Grape seed extract, Pomegranate extract.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Apple fiber"
+                },
+                {
+                  "pos": 2,
+                  "name": "Fibersol 2"
+                },
+                {
+                  "pos": 3,
+                  "name": "Inositol"
+                },
+                {
+                  "pos": 4,
+                  "name": "Yellowdock",
+                  "part": "root"
+                },
+                {
+                  "pos": 5,
+                  "name": "Alfalfa",
+                  "part": "leaf",
+                  "form": "powder"
+                },
+                {
+                  "pos": 6,
+                  "name": "Peppermint",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 7,
+                  "name": "Eleuthero",
+                  "part": "root",
+                  "latin": "Eleutherococcus senticosus"
+                },
+                {
+                  "pos": 8,
+                  "name": "Pau d'Arco",
+                  "part": "inner bark"
+                },
+                {
+                  "pos": 9,
+                  "name": "Suma",
+                  "part": "root"
+                },
+                {
+                  "pos": 10,
+                  "name": "Aloe Vera",
+                  "part": "leaf gel"
+                },
+                {
+                  "pos": 11,
+                  "name": "Betaine HCl"
+                },
+                {
+                  "pos": 12,
+                  "name": "Choline bitartrate"
+                },
+                {
+                  "pos": 13,
+                  "name": "Cranberry"
+                },
+                {
+                  "pos": 14,
+                  "name": "Green Coffee",
+                  "part": "bean",
+                  "form": "extract"
+                },
+                {
+                  "pos": 15,
+                  "name": "Raspberry",
+                  "form": "powder"
+                },
+                {
+                  "pos": 16,
+                  "name": "Strawberry",
+                  "form": "powder"
+                },
+                {
+                  "pos": 17,
+                  "name": "Burdock",
+                  "part": "root"
+                },
+                {
+                  "pos": 18,
+                  "name": "TrueZyme Enzyme blend"
+                },
+                {
+                  "pos": 19,
+                  "name": "Licorice",
+                  "part": "root",
+                  "form": "extract"
+                },
+                {
+                  "pos": 20,
+                  "name": "Natural Mixed Berry flavor"
+                },
+                {
+                  "pos": 21,
+                  "name": "Acerola",
+                  "part": "berry",
+                  "form": "extract"
+                },
+                {
+                  "pos": 22,
+                  "name": "Beet",
+                  "form": "powder"
+                },
+                {
+                  "pos": 23,
+                  "name": "Guarana",
+                  "form": "extract"
+                },
+                {
+                  "pos": 24,
+                  "name": "Tri-calcium Phosphate",
+                  "form": "powder"
+                },
+                {
+                  "pos": 25,
+                  "name": "Papaya",
+                  "part": "seed",
+                  "form": "extract"
+                },
+                {
+                  "pos": 26,
+                  "name": "Ashwagandha",
+                  "part": "root"
+                },
+                {
+                  "pos": 27,
+                  "name": "Blueberry",
+                  "form": "extract"
+                },
+                {
+                  "pos": 28,
+                  "name": "Fennel",
+                  "part": "seed"
+                },
+                {
+                  "pos": 29,
+                  "name": "L-Methionine"
+                },
+                {
+                  "pos": 30,
+                  "name": "Natural Mango Flavor"
+                },
+                {
+                  "pos": 31,
+                  "name": "Green tea",
+                  "form": "extract"
+                },
+                {
+                  "pos": 32,
+                  "name": "Stevia"
+                },
+                {
+                  "pos": 33,
+                  "name": "Bilberry",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 34,
+                  "name": "Grape seed",
+                  "form": "extract"
+                },
+                {
+                  "pos": 35,
+                  "name": "Pomegranate",
+                  "form": "extract"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Magnesium Stearate"
+          ],
+          "source_label": "tl006prod_t2l-truecleanse-0620_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "truezyme": {
+      "product_id": "truezyme",
+      "name": "TrueZyme",
+      "sku": "TL011PROD",
+      "ygy_id": "607",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 Capsule",
+          "servings_per_container": 60,
+          "macros": {
+            "calories": {
+              "amount": 3,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": "<1",
+              "unit": "g",
+              "pct_dv": "<.2"
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 44,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin B2",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 153,
+              "form": "as riboflavin"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 2.33,
+              "unit": "mg",
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Chromium",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 285
+            },
+            {
+              "name": "Potassium",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": "<1"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Probiotic Blend",
+              "total": {
+                "amount": 7.5,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "L Acidophilus 3.75 mg, Bifidobacterium Longum 3.75 mg",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "L Acidophilus",
+                  "amount": 3.75,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bifidobacterium Longum",
+                  "amount": 3.75,
+                  "unit": "mg"
+                }
+              ]
+            },
+            {
+              "name": "Proprietary Nutritional Blend",
+              "total": {
+                "amount": 326,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Alpha Lipoic Acid, Alfalfa Leaf Powder, Flax Seed Powder, Gotu Kola (Aerial) (10% Triterpines), Marshmellow Root Powder, Papaya Seed PE 4:1, Prickly Ash Bark, Spirulina algae powder, Spinach Leaf Powder, Broccoli Powder",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Alpha Lipoic Acid"
+                },
+                {
+                  "pos": 2,
+                  "name": "Alfalfa",
+                  "part": "leaf",
+                  "form": "powder"
+                },
+                {
+                  "pos": 3,
+                  "name": "Flax Seed",
+                  "form": "powder"
+                },
+                {
+                  "pos": 4,
+                  "name": "Gotu Kola",
+                  "part": "aerial",
+                  "standardization": "10% triterpenes"
+                },
+                {
+                  "pos": 5,
+                  "name": "Marshmallow",
+                  "part": "root",
+                  "form": "powder"
+                },
+                {
+                  "pos": 6,
+                  "name": "Papaya",
+                  "part": "seed",
+                  "form": "extract",
+                  "standardization": "4:1"
+                },
+                {
+                  "pos": 7,
+                  "name": "Prickly Ash",
+                  "part": "bark"
+                },
+                {
+                  "pos": 8,
+                  "name": "Spirulina",
+                  "form": "algae powder"
+                },
+                {
+                  "pos": 9,
+                  "name": "Spinach",
+                  "part": "leaf",
+                  "form": "powder"
+                },
+                {
+                  "pos": 10,
+                  "name": "Broccoli",
+                  "form": "powder"
+                }
+              ]
+            },
+            {
+              "name": "TrueZymes™ Proprietary Blend",
+              "total": {
+                "amount": 250,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Protease, Lipase, Lactase, Catalase, Pectinase, Amylase, Hemicellulase, Protease, Bromeain, Papain, Xylanase, Acid Protease, Cellulase, alpha Galactosidase, Phytase, Beta Glucanase, Invertase, Maltase",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Protease"
+                },
+                {
+                  "pos": 2,
+                  "name": "Lipase"
+                },
+                {
+                  "pos": 3,
+                  "name": "Lactase"
+                },
+                {
+                  "pos": 4,
+                  "name": "Catalase"
+                },
+                {
+                  "pos": 5,
+                  "name": "Pectinase"
+                },
+                {
+                  "pos": 6,
+                  "name": "Amylase"
+                },
+                {
+                  "pos": 7,
+                  "name": "Hemicellulase"
+                },
+                {
+                  "pos": 8,
+                  "name": "Protease"
+                },
+                {
+                  "pos": 9,
+                  "name": "Bromelain"
+                },
+                {
+                  "pos": 10,
+                  "name": "Papain"
+                },
+                {
+                  "pos": 11,
+                  "name": "Xylanase"
+                },
+                {
+                  "pos": 12,
+                  "name": "Acid Protease"
+                },
+                {
+                  "pos": 13,
+                  "name": "Cellulase"
+                },
+                {
+                  "pos": 14,
+                  "name": "Alpha Galactosidase"
+                },
+                {
+                  "pos": 15,
+                  "name": "Phytase"
+                },
+                {
+                  "pos": 16,
+                  "name": "Beta Glucanase"
+                },
+                {
+                  "pos": 17,
+                  "name": "Invertase"
+                },
+                {
+                  "pos": 18,
+                  "name": "Maltase"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Magnesium Stearate",
+            "HMPC (Hydroxypropyl methyl cellulose) vegetable capsules",
+            "Rice Powder"
+          ],
+          "source_label": "tl011prod_t2l-truezyme-0620_panel-900x1200_1.jpg"
+        }
+      ]
     }
   }
 }

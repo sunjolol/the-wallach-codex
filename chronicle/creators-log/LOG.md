@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 416 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 417 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-07 19:22 UTC-05:00 · round-close · products
+Phase F Batch 25: the T-range (+8 products, 141->149)
+  ↳ Catalogued the whole T-range from labels: two Tazza Di Vita mushroom-coffee products, the TMR meal-replacement shake, TRIM Stiks, TruBoost energy shot, and the True2Life digestive trio (Daily Digest, TrueCleanse, TrueZyme). Records: tazza-di-vita-cafe-ganoderma (plain coffee stick), tazza-di-vita-latte (Latte+ packet; its 10-mushroom UltimateMushroom complex broken out into a null-total blend with latin binomials), tmr-total-meal-replacement-shake (old IU-format label -> Vitamin A 1276 IU + Vitamin E 8.06 IU recorded unit=IU per the whitelist/herbal-rainforest precedent), trim-stiks (M-THERMX thermogenic blend + caffeine/BioPerine), truboost (single-serve 4oz shot: Sensoril Ashwagandha + Potassium D-glucarate + a Tulsi organic blend), true2life-daily-digest (a 4-capsule packet in 3 functional sections -> 3 components: Liver Cleanse / Microbiome Support / Intestinal Maintenance), truecleanse (35-ingredient 7215mg blend powder), truezyme (3 blends incl. an 18-enzyme complex; label typo 'Bromeain' preserved in as_labeled, normalized to Bromelain in the structured ingredient). Tazza Latte+ (USYG400403) was found as a distinct product not in the base worklist. Taheebo + TrueDetox Tea have no label (already on the provisional missing list). products.json 141->149 (155 components). Verify: products_verify OK (0 problems), invariants 45/45, build OK. Flagged Ultimate CM Cream (topical drug-facts) to Luneth. Resume at the U-range (24 to do).
 
 ## 2026-07-07 19:04 UTC-05:00 · round-close · products
 Phase F Batches 22-24: the S-range complete (+21 products, 123->144)
@@ -785,7 +789,3 @@ SESSION 28 b3 — cross-book homosexuality/intersex sweep (Luneth #1): Epigeneti
 ## 2026-06-30 12:48 UTC-05:00 · milestone · knowledge/corpus
 Epigenetics (2014) b2: Ch 17 rest, EPIGEN-000010..018 (9 claims) — 7 tier-1 [deafness=manganese, obesity=minerals, dementia + 4 types: vascular(NEW)/Korsakoff-B1/Wernicke-MS-selenium/Alzheimer-omega3] + 2 search-only [teratology, minerals-currency]. kv192, conditions 454→455.
   ↳ Ch 17 mined to the Ch 18 boundary (L19336). 7 tier-1 enrich/add: deafness (manganese, from the A.G. Bell eugenics passage — Luneth ruled tier-1 deafness fact only, skip the biography); obesity (mineral-deficiency → cravings/binge/munchies/pica); dementia overview (a minimum of 4 distinct nutritional diseases); vascular_dementia (NEW); korsakoffs_syndrome (BeriBeri/thiamine); wernicke_korsakoff_syndrome + multiple_sclerosis (6-8 eggs/day + selenium for myelin); alzheimers (physician-caused; Johns Hopkins 78% study; DHA/EPA). 2 search-only framework: teratology history (monsters→Vrolik→thalidomide) + Minerals: The Currency of Life. DISPOSITION (Luneth): the large homosexuality/intersex section DEFERRED to a dedicated cross-book sweep = the #1 task of next genesis (handoff updated). Board 31/31, render probe green, search-only excluded 86→88. Visual-verify of the new/enriched condition entries still owed before next chunk.
-
-## 2026-06-30 12:22 UTC-05:00 · milestone · knowledge/corpus
-Epigenetics (2014) batch 1 [b1]: new 5th shard, EPIGEN-000001..009 (Ch17 genetic-diseases core). 7 tier-1 reframes (diabetes=Cr+V, CF/MD/Keshan=Se, Kawasaki=Cu) + 2 search-only (homosexuality/intersex, neutral, search-confined per Luneth). kv191, 881->890 claims.
-  ↳ Audit-first confirmed in-housing (hash exact-match) + full 32,141-line structure; tier-1 disease core = Ch17-18 only. Homosexuality/intersex built tier-1/neutral so Luneth could visual-verify, approved presentation, ruled search-only (not a condition). VERIFY: finalize->seal kv190->retag draft->reseal kv191->verify PASS->embed->build OK->invariants 31/31 (search_only 84->86)->knowledge probe PASS (conds 456->454, both topics absent from index).
