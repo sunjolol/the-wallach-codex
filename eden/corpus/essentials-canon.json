@@ -967,7 +967,7 @@
       "display_name": "Omega-3",
       "category": "fatty_acid",
       "subtype": null,
-      "layout_key": "Omega-3 (alpha-linolenic + EPA/DHA in marine form)",
+      "layout_key": "Omega-3 (Alpha-Linolenic Acid / ALA)",
       "essential": true,
       "coverage_kind": "unspecified"
     },
@@ -976,7 +976,7 @@
       "display_name": "Omega-6",
       "category": "fatty_acid",
       "subtype": null,
-      "layout_key": "Omega-6 (linoleic + GLA)",
+      "layout_key": "Omega-6 (Linoleic Acid / LA)",
       "essential": true,
       "coverage_kind": "dietary_with_clinical_lever"
     },
@@ -985,7 +985,7 @@
       "display_name": "Omega-9",
       "category": "fatty_acid",
       "subtype": "conditional",
-      "layout_key": "Omega-9 (Arachidonic / Oleic)",
+      "layout_key": "Omega-9 (Oleic Acid / OA)",
       "essential": false,
       "coverage_kind": "dietary_with_clinical_lever"
     }

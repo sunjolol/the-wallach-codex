@@ -377,19 +377,19 @@
       "tileClass": "tile--fat",
       "tiles": [
         {
-          "key": "Omega-3 (alpha-linolenic + EPA/DHA in marine form)",
+          "key": "Omega-3 (Alpha-Linolenic Acid / ALA)",
           "code": "F·01",
-          "hint": "n-3 · ALA · EPA · DHA"
+          "hint": "n-3 · alpha-linolenic (ALA)"
         },
         {
-          "key": "Omega-6 (linoleic + GLA)",
+          "key": "Omega-6 (Linoleic Acid / LA)",
           "code": "F·02",
-          "hint": "n-6 · linoleic · GLA"
+          "hint": "n-6 · linoleic (LA)"
         },
         {
-          "key": "Omega-9 (Arachidonic / Oleic)",
+          "key": "Omega-9 (Oleic Acid / OA)",
           "code": "F·03",
-          "hint": "n-9 · oleic · arachidonic",
+          "hint": "n-9 · oleic (OA)",
           "essential": false
         }
       ]

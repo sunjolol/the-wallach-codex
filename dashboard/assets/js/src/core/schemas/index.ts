@@ -22,3 +22,4 @@ export * from './scanner-corpus.js';
 export * from './scanner.js';
 export * from './product-detail.js';
 export * from './nutrient-resolver.js';
+export * from './fatty-acid-clarity.js';

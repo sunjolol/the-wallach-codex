@@ -255,21 +255,21 @@
         "dose_text": "1 softgel daily",
         "nutrients": [
           {
-            "name": "Omega-3 (alpha-linolenic + EPA/DHA in marine form)",
+            "name": "Omega-3 (Alpha-Linolenic Acid / ALA)",
             "amount": 585,
             "unit": "mg",
             "form": "ALA 300 + EPA 171 + DHA 114 (per softgel)",
             "alignment": "aligned"
           },
           {
-            "name": "Omega-6 (linoleic + GLA)",
+            "name": "Omega-6 (Linoleic Acid / LA)",
             "amount": 122,
             "unit": "mg",
             "form": "Linoleic 103 + GLA 19 (per softgel)",
             "alignment": "aligned"
           },
           {
-            "name": "Omega-9 (Arachidonic / Oleic)",
+            "name": "Omega-9 (Oleic Acid / OA)",
             "amount": 120,
             "unit": "mg",
             "form": "Oleic",

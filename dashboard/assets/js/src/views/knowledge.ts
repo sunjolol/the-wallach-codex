@@ -25,11 +25,13 @@
 
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import doctrineData from '../../../data/doctrine-data.json';
+import fattyAcidClarityData from '../../../data/fatty-acid-clarity-data.json';
 import { on as onEvent } from '../core/events.js';
 import {
   CoverageLayoutSchema,
   type DoctrineCard,
   DoctrineSchema,
+  FattyAcidClaritySchema,
   type LayoutSection,
   type LayoutTile,
 } from '../core/schemas/index.js';
@@ -73,6 +75,12 @@ const DOCTRINES: DoctrineCard[] = DoctrineSchema.parse(doctrineData).doctrines;
 // ─── Essentials layout (shared with the Coverage periodic table) ───────────
 
 const LAYOUT = CoverageLayoutSchema.parse(coverageLayoutData);
+
+// Omega fatty-acid CLARITY explainer (GENERAL reference, NOT a Wallach claim) — shown on each
+// omega essential's deep-dive so the naming stays unambiguous (the source 90-nutrients graphic
+// mislabeled Omega-9 as "Arachidonic"; it is Oleic Acid). Prose lives in the store (R4).
+const FATTY_ACID_CLARITY = FattyAcidClaritySchema.parse(fattyAcidClarityData);
+const OMEGA_BY_FAMILY = new Map(FATTY_ACID_CLARITY.omegas.map(o => [o.family, o] as const));
 
 /** One essential as the drawer grid + deep-dive render it. */
 interface EssentialView {
@@ -212,6 +220,39 @@ function hexSerial(seed: number): string {
 
 // ─── Tab renderers ─────────────────────────────────────────────────────────
 
+/**
+ * Per-omega clarity alert for the deep-dive: lists the family's fatty acids (primary +
+ * additional forms) with a plain description. GENERAL reference, explicitly marked NOT a
+ * Wallach claim (§00.A: clearly-marked non-Wallach educational context). Empty for non-omegas.
+ */
+function renderOmegaClarity(key: string): string {
+  const m = /^Omega-([369])\b/.exec(key);
+  const digit = m?.[1];
+  if (digit === undefined) {
+    return '';
+  }
+  const fam = OMEGA_BY_FAMILY.get(`omega-${digit}`);
+  if (fam === undefined) {
+    return '';
+  }
+  const rows = fam.acids.map(a => `
+      <li class="kd-omega__row">
+        <span class="kd-omega__abbr">${escHTML(a.abbr)}</span>
+        <div class="kd-omega__body">
+          <span class="kd-omega__name">${escHTML(a.name)}${a.primary ? ' <em class="kd-omega__primary">primary</em>' : ''}</span>
+          <span class="kd-omega__desc">${escHTML(a.description)}</span>
+        </div>
+      </li>`).join('');
+  return `
+    <div class="kd-omega">
+      <div class="kd-omega__head">
+        <span class="kd-omega__title">${escHTML(fam.label)} · FATTY-ACID FORMS</span>
+      </div>
+      <ul class="kd-omega__list">${rows}</ul>
+      <div class="kd-omega__note">${escHTML(FATTY_ACID_CLARITY.disclaimer)}</div>
+    </div>`;
+}
+
 function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): string {
   const e = ESS_BY_KEY.get(key);
   if (e === undefined) {
@@ -265,6 +306,7 @@ function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): st
         </div>
       </header>
       ${e.essential ? '' : '<div class="kd-essential-deep__flag"><strong>NON-ESSENTIAL</strong> · the body can synthesize this, so it is not one of the 90. Shown for completeness — Youngevity includes it (Ultimate EFA Plus) for cardiovascular balance + optimal absorption.</div>'}
+      ${renderOmegaClarity(e.key)}
       ${wallachHTML}
       ${corpusHTML}
       ${productsHTML}

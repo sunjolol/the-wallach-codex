@@ -92,15 +92,15 @@
       "amount": 24,
       "unit": "mcg"
     },
-    "Omega-3 (alpha-linolenic + EPA/DHA in marine form)": {
+    "Omega-3 (Alpha-Linolenic Acid / ALA)": {
       "amount": 1000,
       "unit": "mg"
     },
-    "Omega-6 (linoleic + GLA)": {
+    "Omega-6 (Linoleic Acid / LA)": {
       "amount": 1000,
       "unit": "mg"
     },
-    "Omega-9 (Arachidonic / Oleic)": {
+    "Omega-9 (Oleic Acid / OA)": {
       "amount": 1000,
       "unit": "mg"
     }

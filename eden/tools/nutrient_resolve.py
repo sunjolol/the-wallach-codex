@@ -101,7 +101,7 @@ FA_PATTERNS = [
     ("omega-9", r'omega\s*9|oleic|\boa\b'),
 ]
 # An EXPLICIT "omega N" token in the label wins over an incidental fatty-acid keyword:
-# "Omega-9 (Arachidonic / Oleic)" is the omega-9/oleic slot, not omega-6 just because
+# an explicit "Omega-9" label is the omega-9/oleic (OA) slot, not omega-6 just because an
 # "arachidonic" appears; and hyphenated "Omega-3 Fatty Acids" (which FA_PATTERNS' omega\s*3
 # misses) resolves. Only 3/6/9 are canon families. Emitted to the artifact + mirrored in the
 # TS resolver + the parity gate (Luneth 2026-07-08).
@@ -215,7 +215,8 @@ def report():
         ("Vitamin K2 -> vitamin-k", resolve("Vitamin K2") == "vitamin-k"),
         ("ALA(form Omega 3) -> omega-3", resolve("Alpha-Linolenic Acid (ALA)", "Omega 3") == "omega-3"),
         ("EPA -> omega-3", resolve("EPA") == "omega-3"),
-        ("explicit: Omega-9 (Arachidonic / Oleic) -> omega-9", resolve("Omega-9 (Arachidonic / Oleic)", "Oleic") == "omega-9"),
+        ("explicit: Omega-9 (Oleic Acid / OA) -> omega-9", resolve("Omega-9 (Oleic Acid / OA)") == "omega-9"),
+        ("arachidonic alone -> omega-6 (correct biochemistry)", resolve("Arachidonic Acid") == "omega-6"),
         ("explicit: Omega-3 fatty acids -> omega-3", resolve("Omega-3 fatty acids") == "omega-3"),
         ("PABA -> botanical(None)", resolve("PABA") is None),
         ("Caffeine -> botanical(None)", resolve("Caffeine") is None),

@@ -1,0 +1,60 @@
+{
+  "_purpose": "Designated CLARITY prose store for the omega fatty-acid explainer alert on the essentials deep-dive (views/knowledge.ts). GENERAL reference for clarity -- NOT a Wallach claim and NOT doctrine (SS00.A: clearly-marked non-Wallach educational context is permitted; it is visually + textually marked as such). Added 2026-07-08 after the 90-nutrients graphic was found to MISLABEL Omega-9 as 'Arachidonic' (arachidonic is Omega-6; Omega-9 is Oleic Acid); this store keeps the omega naming unambiguous so the confusion never recurs. Hand-authored, MANIFEST-accounted; Zod-validated at the boundary; never inline in code. GLA is Gamma-Linolenic Acid (the correct name; 'gamma linoleic' is a common misnomer).",
+  "disclaimer": "General reference for clarity — not a Wallach claim, not medical advice.",
+  "omegas": [
+    {
+      "family": "omega-3",
+      "label": "Omega-3",
+      "acids": [
+        {
+          "abbr": "ALA",
+          "name": "Alpha-Linolenic Acid",
+          "primary": true,
+          "description": "Found mostly in plant foods; supports cardiovascular health and helps combat inflammation."
+        },
+        {
+          "abbr": "EPA",
+          "name": "Eicosapentaenoic Acid",
+          "primary": false,
+          "description": "Supports several physiological roles and may play a role against inflammation."
+        },
+        {
+          "abbr": "DHA",
+          "name": "Docosahexaenoic Acid",
+          "primary": false,
+          "description": "Found mostly in seafood; a structural part of every cell and concentrated in the brain."
+        }
+      ]
+    },
+    {
+      "family": "omega-6",
+      "label": "Omega-6",
+      "acids": [
+        {
+          "abbr": "LA",
+          "name": "Linoleic Acid",
+          "primary": true,
+          "description": "Works alongside omega-3 fatty acids to support brain function and normal growth and development."
+        },
+        {
+          "abbr": "GLA",
+          "name": "Gamma-Linolenic Acid",
+          "primary": false,
+          "description": "Some evidence it may help with blood pressure and overall inflammation."
+        }
+      ]
+    },
+    {
+      "family": "omega-9",
+      "label": "Omega-9",
+      "acids": [
+        {
+          "abbr": "OA",
+          "name": "Oleic Acid",
+          "primary": true,
+          "description": "An omega-9 fatty acid linked to a lower risk of coronary heart disease."
+        }
+      ]
+    }
+  ]
+}
