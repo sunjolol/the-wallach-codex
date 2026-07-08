@@ -631,7 +631,7 @@
                 },
                 {
                   "pos": 5,
-                  "name": "Alpha lipoic acid"
+                  "name": "Alpha-Lipoic Acid"
                 },
                 {
                   "pos": 6,
@@ -1888,7 +1888,7 @@
               "form": "methylsulfonylmethane"
             },
             {
-              "name": "Trace mineral complex",
+              "name": "Trace Mineral Complex",
               "amount": 140,
               "unit": "mg",
               "pct_dv": null,
@@ -2222,7 +2222,7 @@
               "pct_dv": null
             },
             {
-              "name": "Chondroitin sulfate",
+              "name": "Chondroitin Sulfate",
               "amount": 25,
               "unit": "mg",
               "pct_dv": null
@@ -2853,7 +2853,7 @@
               "pct_dv": null
             },
             {
-              "name": "Chondroitin sulfate",
+              "name": "Chondroitin Sulfate",
               "amount": 25,
               "unit": "mg",
               "pct_dv": null
@@ -4186,7 +4186,7 @@
               "pct_dv": 2500
             },
             {
-              "name": "Pantothenic acid",
+              "name": "Pantothenic Acid",
               "amount": 150,
               "unit": "mg",
               "pct_dv": 3000,
@@ -4267,7 +4267,7 @@
               "pct_dv": null
             },
             {
-              "name": "Chondroitin sulfate",
+              "name": "Chondroitin Sulfate",
               "amount": 25,
               "unit": "mg",
               "pct_dv": null,
@@ -4856,7 +4856,7 @@
               "pct_dv": null
             },
             {
-              "name": "Chondroitin sulfate",
+              "name": "Chondroitin Sulfate",
               "amount": 25,
               "unit": "mg",
               "pct_dv": null,
@@ -5349,7 +5349,7 @@
               "pct_dv": 2500
             },
             {
-              "name": "Pantothenic acid",
+              "name": "Pantothenic Acid",
               "amount": 150,
               "unit": "mg",
               "pct_dv": 3000,
@@ -5439,7 +5439,7 @@
               "form": "from Polygonum cuspidatum root extract"
             },
             {
-              "name": "Chondroitin sulfate",
+              "name": "Chondroitin Sulfate",
               "amount": 25,
               "unit": "mg",
               "pct_dv": null
@@ -6560,7 +6560,7 @@
               "form": "powder"
             },
             {
-              "name": "Hyaluronic acid",
+              "name": "Hyaluronic Acid",
               "amount": 10,
               "unit": "mg",
               "pct_dv": null
@@ -6598,7 +6598,7 @@
               "form": "HCl"
             },
             {
-              "name": "Chondroitin sulfate",
+              "name": "Chondroitin Sulfate",
               "amount": 5,
               "unit": "mg",
               "pct_dv": null,
@@ -6835,7 +6835,7 @@
               "pct_dv": null
             },
             {
-              "name": "Alpha lipoic acid",
+              "name": "Alpha-Lipoic Acid",
               "amount": 30,
               "unit": "mg",
               "pct_dv": null
@@ -7039,7 +7039,7 @@
               "form": "as zinc citrate"
             },
             {
-              "name": "Black pepper",
+              "name": "Black Pepper",
               "amount": 5,
               "unit": "mg",
               "pct_dv": null,
@@ -7286,7 +7286,7 @@
               "form": "as monopotassium phosphate"
             },
             {
-              "name": "Black pepper",
+              "name": "Black Pepper",
               "amount": 5,
               "unit": "mg",
               "pct_dv": null,
@@ -8176,7 +8176,7 @@
               "pct_dv": null
             },
             {
-              "name": "Chondroitin sulfate",
+              "name": "Chondroitin Sulfate",
               "amount": 250,
               "unit": "mg",
               "pct_dv": null
@@ -8194,7 +8194,7 @@
               "pct_dv": null
             },
             {
-              "name": "Citrus bioflavonoids",
+              "name": "Citrus Bioflavonoids",
               "amount": 15,
               "unit": "mg",
               "pct_dv": null
@@ -11080,7 +11080,7 @@
               "standardization": "1.5% withanolides"
             },
             {
-              "name": "Alpha Lipoic Acid",
+              "name": "Alpha-Lipoic Acid",
               "amount": 100,
               "unit": "mg",
               "pct_dv": null
@@ -17261,14 +17261,14 @@
               "form": "Acetate"
             },
             {
-              "name": "Vitamin B-1",
+              "name": "Vitamin B1",
               "amount": 12.5,
               "unit": "mg",
               "pct_dv": 833,
               "form": "Thiamine HCl"
             },
             {
-              "name": "Vitamin B-2",
+              "name": "Vitamin B2",
               "amount": 12.5,
               "unit": "mg",
               "pct_dv": 735,
@@ -17281,7 +17281,7 @@
               "pct_dv": 63
             },
             {
-              "name": "Vitamin B-6",
+              "name": "Vitamin B6",
               "amount": 12.5,
               "unit": "mg",
               "pct_dv": 625,
@@ -17295,7 +17295,7 @@
               "form": "Calcium Pantothenate"
             },
             {
-              "name": "Vitamin D-3",
+              "name": "Vitamin D3",
               "amount": 6.25,
               "unit": "mcg",
               "pct_dv": 31,
@@ -17330,7 +17330,7 @@
               "form": "Tartrate"
             },
             {
-              "name": "Coenzyme Q-10",
+              "name": "Coenzyme Q10",
               "amount": 5,
               "unit": "mg",
               "pct_dv": null
@@ -19541,7 +19541,7 @@
               "ingredients": [
                 {
                   "pos": 1,
-                  "name": "Alpha Lipoic Acid"
+                  "name": "Alpha-Lipoic Acid"
                 },
                 {
                   "pos": 2,
@@ -19781,7 +19781,7 @@
                 },
                 {
                   "pos": 6,
-                  "name": "Coenzyme Q-10"
+                  "name": "Coenzyme Q10"
                 },
                 {
                   "pos": 7,
@@ -20277,7 +20277,7 @@
               "form": "as para amino benzoic acid"
             },
             {
-              "name": "Citrus bioflavonoids",
+              "name": "Citrus Bioflavonoids",
               "amount": 13,
               "unit": "mg",
               "pct_dv": null
@@ -23917,7 +23917,7 @@
                 },
                 {
                   "pos": 4,
-                  "name": "Coenzyme Q-10"
+                  "name": "Coenzyme Q10"
                 },
                 {
                   "pos": 5,
@@ -24814,7 +24814,7 @@
               "form": "methylsulfonylmethane"
             },
             {
-              "name": "Alpha-Lipoic acid",
+              "name": "Alpha-Lipoic Acid",
               "amount": 300,
               "unit": "mg",
               "pct_dv": null
@@ -25514,7 +25514,7 @@
               "form": "grape marc and apple skin extracts"
             },
             {
-              "name": "Alpha lipoic acid",
+              "name": "Alpha-Lipoic Acid",
               "amount": 50,
               "unit": "mg",
               "pct_dv": null
@@ -26566,7 +26566,7 @@
               "standardization": "0.6% glucosinolates"
             },
             {
-              "name": "Alpha lipoic acid",
+              "name": "Alpha-Lipoic Acid",
               "amount": 50,
               "unit": "mg",
               "pct_dv": null
