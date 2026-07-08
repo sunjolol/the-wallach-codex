@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 423 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 424 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-07 23:27 UTC-05:00 · note · products
+Correction to the prior FitShake incident entry: the label was NOT missed via a keyword-prefix search gap — Luneth ADDED banana-fitshake_...jpg mid-session, so it was genuinely absent when first checked. Original missing-flag was correct; no data change (189 products).
+  ↳ Superseding the cause I gave in the previous incident entry. I had written that FitShake's label was on disk all along and my disk-check missed the 'banana-' filename prefix. Luneth clarified that is not what happened: he ADDED `banana-fitshake_pouch_0426_supp-facts_3.jpg` to temporary/labels/ WHILE this session was running. So the label genuinely did not exist at my first check -- the original 'genuine-missing' flag was correct for that moment -- and my search ('fitshake' substring, which matches 'banana-fitshake') was not actually deficient. No product or data change: fitshake-banana-cream stays extracted (189 products, 195 components, products_verify 0 problems, invariants 46/46). Corrected the narrative in eden/products/MISSING-LABELS.md and chronicle/next-chunk.md, and I retract the 'disk-check needs broader alt-spelling greps' lesson from the prior entry -- it was based on the wrong premise. The real, mundane lesson: labels can appear mid-session (Luneth drops them in as we go), so a 'missing' result is a point-in-time snapshot, not permanent.
 
 ## 2026-07-07 23:24 UTC-05:00 · incident · products
 Correction + FitShake (+1, 189 total): I wrongly flagged FitShake Banana Cream as a missing label last entry — its label was on disk (banana- prefix my search missed). Extracted it; re-verified the real genuine-missing list = 9 items. warnings 25.
@@ -785,7 +789,3 @@ SESSION 29 b1 — Epigenetics Ch 18 minerals A–C (Ag/Al/As/Au/B/Ba/Be/Bi/Br/C)
 ## 2026-06-30 16:53 UTC-05:00 · session-end · chronicle
 SESSION 28 b4-b7 WRAPPED - Epigenetics Ch 18 mined through minerals batch 1 + the condition-synopsis UX fix. 5 chunks pushed, +37 claims (EPIGEN-027..063), kv 193->197, claims 907->944, board 31/31 throughout. Handoff updated for SESSION 29 = the rest of the minerals.
   ↳ Closing for a fresh genesis. b4 opening+fat-soluble vitamins, b4-fix synopsis UX (auto-fires), b5 water-soluble vitamins, b6 amino acids+EFA (taurine non-canon->other_substances), b7 minerals batch 1 (forms search-only + calcium/chromium/copper). All visually verified by Luneth. next-chunk.md + epigenetics-mining-policy memory updated. NEXT: cobalt/iodine/selenium/zinc/etc. (cesium-cancer search-only) then Ch 19+ + final .txt sweep.
-
-## 2026-06-30 16:43 UTC-05:00 · round-close · knowledge/corpus
-SESSION 28 b7 - Epigenetics Ch 18 minerals batch 1. EPIGEN-060..063 (+4): mineral-forms framework (search-only: metallic 8-12% vs colloidal) + calcium/chromium/copper deficiency_sign (rich tables). kv197, claims 944, conditions 456 (0 new), search-only 98->99. Visual-verify owed.
-  ↳ Minerals is the largest Ch 18 block (~60 elements, each with a deficiency table) — splitting across batches. Calcium (147 diseases: osteoporosis/arthritis/kidney stones/PMS/tetany/panic), chromium (glucose tolerance: diabetes/ADHD/bipolar), copper (prion-reframe: aneurysm/ptosis/cerebral palsy). No new conditions. Cesium-cancer noted for careful later handling. Board 31/31, probe green, synopsis auto-fires. Awaiting sign-off; b8 = cobalt/iodine/selenium/zinc/etc.
