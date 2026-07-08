@@ -47,7 +47,7 @@ import {
   getTargets,
 } from '../state/coverage.js';
 import { renderConditionsTab, renderCorpusForEssential, renderCorpusTab, renderIntakeMeter, tileOf } from './knowledge-corpus.js';
-import { productCount, productsForEssential, renderProductsTab } from './knowledge-products.js';
+import { productCount, renderEssentialSources, renderProductsTab } from './knowledge-products.js';
 import { clearSearchHighlights, highlightMatchesIn } from './search-highlight.js';
 
 export interface DrawerHandle {
@@ -265,7 +265,6 @@ function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): st
   const stance = target?.wallach_stance;
   const summary = stance?.summary;
   const citation = stance?.citation;
-  const products = productsForEssential(key);
 
   // Phase C2 (2026-07-05): the "WALLACH SAYS" stance box is DROPPED for now. Its old
   // data (knowledge/essentials-targets.json) carried lecture citations, Youngevity
@@ -281,13 +280,7 @@ function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): st
       ${citation !== undefined ? `<div class="kd-essential-deep__source">CITED · <strong>${escHTML(citation)}</strong></div>` : ''}`
     : '';
 
-  const productsHTML = products.length > 0
-    ? `
-      <div class="kd-essential-deep__sub">FOUND IN YGY VAULT</div>
-      <div class="kd-essential-deep__products">
-        ${products.map(p => `<span class="kd-essential-deep__product-chip" data-kd-product="${escHTML(p.id)}" role="button" tabindex="0">${escHTML(p.name)}</span>`).join('')}
-      </div>`
-    : '';
+  const sourcesHTML = renderEssentialSources(key);
 
   return `
     <div class="kd-essential-deep">
@@ -309,7 +302,7 @@ function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): st
       ${renderOmegaClarity(e.key)}
       ${wallachHTML}
       ${corpusHTML}
-      ${productsHTML}
+      ${sourcesHTML}
     </div>`;
 }
 

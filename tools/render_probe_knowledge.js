@@ -158,15 +158,28 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     };
   });
 
-  // 4a2. Essentials "FOUND IN YGY VAULT" chips are clickable -> open the product
-  //       detail panel and switch to the Products tab (one home for product detail).
+  // 4a2. Essentials "BEST SOURCES" — the cost-per-nutrient recommender (A3) ranks the
+  //       vault products that deliver the essential (rank + delivered amount + breadth/
+  //       price), each row clickable -> product detail panel on the Products tab. With no
+  //       Wallach target yet, the honest-gap adequacy note must show.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-essential="Magnesium"]')?.click());
   await wait(200);
-  const magChip = await page.evaluate(() => {
-    const chips = [...document.querySelectorAll('#drawer-knowledge-mount .kd-essential-deep__product-chip[data-kd-product]')];
-    return { count: chips.length, cursor: chips[0] ? getComputedStyle(chips[0]).cursor : '' };
+  const magSources = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const rows = root ? [...root.querySelectorAll('.kd-source[data-kd-product]')] : [];
+    const subs = root ? [...root.querySelectorAll('.kd-essential-deep__sub')].map(s => s.textContent.trim()) : [];
+    const first = rows[0] || null;
+    return {
+      count: rows.length,
+      hasHeader: subs.some(s => /BEST SOURCES/i.test(s)),
+      firstRank: first ? (first.querySelector('.kd-source__rank')?.textContent || '').trim() : '',
+      firstHasAmount: first ? (first.querySelector('.kd-source__amt')?.textContent || '').trim().length > 0 : false,
+      firstHasName: first ? (first.querySelector('.kd-source__name')?.textContent || '').trim().length > 0 : false,
+      cursor: first ? getComputedStyle(first).cursor : '',
+      hasNote: root ? root.querySelector('.kd-source-note') !== null : false,
+    };
   });
-  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount .kd-essential-deep__product-chip[data-kd-product]')?.click());
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount .kd-source[data-kd-product]')?.click());
   await wait(250);
   const chipToProduct = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
@@ -174,8 +187,28 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     const active = root ? (root.querySelector('.kd-tab.active')?.textContent || '') : '';
     return { productShown: d !== null, onProductsTab: /Products/i.test(active) };
   });
-  chipToProduct.chipCount = magChip.count;
-  chipToProduct.chipCursor = magChip.cursor;
+  // Honest-gap essential (no numeric Wallach target) — Boron — DOES show the adequacy
+  // note over its ranked sources, whereas Magnesium (numeric target) hides it.
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="essentials"]')?.click());
+  await wait(120);
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-essential="Boron"]')?.click());
+  await wait(200);
+  const gapNote = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    return {
+      hasNote: root ? root.querySelector('.kd-source-note') !== null : false,
+      sources: root ? root.querySelectorAll('.kd-source[data-kd-product]').length : 0,
+    };
+  });
+  chipToProduct.srcCount = magSources.count;
+  chipToProduct.srcCursor = magSources.cursor;
+  chipToProduct.hasHeader = magSources.hasHeader;
+  chipToProduct.firstRank = magSources.firstRank;
+  chipToProduct.firstHasAmount = magSources.firstHasAmount;
+  chipToProduct.firstHasName = magSources.firstHasName;
+  chipToProduct.magHasNote = magSources.hasNote;
+  chipToProduct.gapHasNote = gapNote.hasNote;
+  chipToProduct.gapSources = gapNote.sources;
 
   // 4b. Conditions tab — list over conditions.json + click a condition to expand
   //     the role-grouped deep view (causes/protocols/doses/... with citations).
@@ -332,9 +365,12 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['products: every row is clickable', products.clickable === products.rowCount],
     ['no unnamed product rows', products.anyUnnamed === false],
     ['product row opens the detail panel (price + components + facts/blend)', productDeep.shown === true && productDeep.hasName === true && productDeep.hasPrice === true && productDeep.hasComponent === true && productDeep.hasFactsOrBlend === true],
-    ['essentials vault chips are clickable (Magnesium)', chipToProduct.chipCount > 0],
-    ['essentials chips show a pointer cursor (look clickable)', chipToProduct.chipCursor === 'pointer'],
-    ['essentials chip opens the product panel on the Products tab', chipToProduct.productShown === true && chipToProduct.onProductsTab === true],
+    ['essentials BEST SOURCES list renders with header (Magnesium)', chipToProduct.srcCount > 0 && chipToProduct.hasHeader === true],
+    ['best-source rows are ranked (#1) + show a name + delivered amount', chipToProduct.firstRank === '1' && chipToProduct.firstHasName === true && chipToProduct.firstHasAmount === true],
+    ['best-source rows show a pointer cursor (look clickable)', chipToProduct.srcCursor === 'pointer'],
+    ['best-source row opens the product panel on the Products tab', chipToProduct.productShown === true && chipToProduct.onProductsTab === true],
+    ['numeric-target essential hides the honest-gap note (Magnesium adequacy is real)', chipToProduct.magHasNote === false],
+    ['honest-gap essential shows the adequacy note over ranked sources (Boron)', chipToProduct.gapHasNote === true && chipToProduct.gapSources > 0],
     ['essentials: all shown (>= 90 tiles)', essentials.tileCount >= 90],
     ['essentials: every section present (>= 4 heads)', essentials.sectionCount >= 4],
     ['essentials: coverage states rendered', essentials.stateTiles > 0],

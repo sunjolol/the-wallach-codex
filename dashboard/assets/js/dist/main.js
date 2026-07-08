@@ -5414,6 +5414,24 @@
     omegas: external_exports.array(OmegaFamilySchema)
   }).passthrough();
 
+  // assets/js/src/core/schemas/recommender.ts
+  var RecommenderCandidateSchema = external_exports.object({
+    product_id: external_exports.string(),
+    /** Amount of the essential this product delivers, in the essential's canonical unit. */
+    amount: external_exports.number(),
+    /** Distinct essentials this product delivers — the well-roundedness / anti-mono signal. */
+    breadth: external_exports.number().int().nonnegative(),
+    /** Indicative retail price (USD) — the value tuner; null when the product is unpriced. */
+    price: external_exports.number().nullable()
+  });
+  var RecommenderEssentialSchema = external_exports.object({
+    unit: external_exports.string(),
+    candidates: external_exports.array(RecommenderCandidateSchema)
+  });
+  var RecommenderDataSchema = external_exports.object({
+    essentials: external_exports.record(external_exports.string(), RecommenderEssentialSchema)
+  }).passthrough();
+
   // assets/js/src/core/nutrient-resolver.ts
   var MAP = NutrientResolverSchema.parse(nutrient_resolver_data_default);
   var FA_PATTERNS = MAP.fatty_acid_patterns.map(([slug, src]) => [slug, new RegExp(src)]);
@@ -38570,6 +38588,6902 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     }
   };
 
+  // assets/data/product-recommender-data.json
+  var product_recommender_data_default = {
+    schema_version: 1,
+    _meta: {
+      purpose: "Per-essential RANKING INPUTS for the cost-per-nutrient recommender (state/recommender.ts scores these at runtime). Each candidate: amount (composition, canonical unit -- what the product CONTAINS), breadth (distinct essentials the product delivers), price (retail, the cost tuner). GENERATED from eden/products/products.json + prices.json via products_composition_derive -- never hand-edited (R1). \xA700.A: composition + price are DISPLAY/recommender data, never a Wallach target; there is no Wallach number here. Saturating adequacy (min(1, delivered/target)) awaits corpus dose-mining (blueprint b); until then the runtime ranks by amount-potency + breadth + value.",
+      source: "eden/products/products.json + eden/products/prices.json",
+      generator: "eden/tools/recommender_derive.py",
+      essential_count: 51,
+      candidate_rows: 1097,
+      priced_rows: 1097
+    },
+    essentials: {
+      sodium: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "sta-natural-plant-shake",
+            amount: 280,
+            breadth: 15,
+            price: 79.99
+          },
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 230,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "cookies-n-cream-protein-shake",
+            amount: 180,
+            breadth: 5,
+            price: 49.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 170,
+            breadth: 21,
+            price: 71.99
+          },
+          {
+            product_id: "pumpkin-spice-protein-shake",
+            amount: 150,
+            breadth: 5,
+            price: 49.99
+          },
+          {
+            product_id: "fitshake-banana-cream",
+            amount: 105,
+            breadth: 5,
+            price: 49.99
+          },
+          {
+            product_id: "collagen-peptides",
+            amount: 100,
+            breadth: 1,
+            price: 38.99
+          },
+          {
+            product_id: "electrofuel",
+            amount: 100,
+            breadth: 7,
+            price: 49.99
+          },
+          {
+            product_id: "soul-stiks",
+            amount: 100,
+            breadth: 6,
+            price: 36.99
+          },
+          {
+            product_id: "vitali-c-plus",
+            amount: 100,
+            breadth: 3,
+            price: 55.99
+          },
+          {
+            product_id: "pollen-burst-dragon-fruit",
+            amount: 65,
+            breadth: 9,
+            price: 81.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 60,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "collagen-creamer",
+            amount: 55,
+            breadth: 1,
+            price: 54.99
+          },
+          {
+            product_id: "truecleanse",
+            amount: 55,
+            breadth: 4,
+            price: 74.99
+          },
+          {
+            product_id: "collagen-peptide-joint-health-support",
+            amount: 50,
+            breadth: 4,
+            price: 79.99
+          },
+          {
+            product_id: "pollen-burst-strawberry-acai",
+            amount: 50,
+            breadth: 9,
+            price: 81.99
+          },
+          {
+            product_id: "super-collagen-shot",
+            amount: 45,
+            breadth: 3,
+            price: 61.99
+          },
+          {
+            product_id: "refresh-fx",
+            amount: 42,
+            breadth: 11,
+            price: 49.99
+          },
+          {
+            product_id: "body-balance",
+            amount: 36,
+            breadth: 2,
+            price: 45.99
+          },
+          {
+            product_id: "super-greens-canister",
+            amount: 30,
+            breadth: 3,
+            price: 64.99
+          },
+          {
+            product_id: "ygy-elevate-glp1",
+            amount: 30,
+            breadth: 1,
+            price: 68.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 25,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "body-balance-sticks",
+            amount: 20,
+            breadth: 2,
+            price: 79.99
+          },
+          {
+            product_id: "chi3-energy",
+            amount: 20,
+            breadth: 5,
+            price: 40.99
+          },
+          {
+            product_id: "i26-banana-coconut-chewables",
+            amount: 20,
+            breadth: 1,
+            price: 40.99
+          },
+          {
+            product_id: "i26-french-vanilla-chewables",
+            amount: 20,
+            breadth: 1,
+            price: 40.99
+          },
+          {
+            product_id: "i26-hyperimmune-egg-powder-french-vanilla",
+            amount: 20,
+            breadth: 1,
+            price: 55.99
+          },
+          {
+            product_id: "rebound-fx-can",
+            amount: 20,
+            breadth: 14,
+            price: 59.99
+          },
+          {
+            product_id: "ultimate-microbiome",
+            amount: 20,
+            breadth: 1,
+            price: 74.99
+          },
+          {
+            product_id: "ygy-regulate-glp1",
+            amount: 20,
+            breadth: 1,
+            price: 68.99
+          },
+          {
+            product_id: "multi-collagen-peptide-gummies",
+            amount: 19,
+            breadth: 5,
+            price: 52.99
+          },
+          {
+            product_id: "ultimate-cardio-stx",
+            amount: 18,
+            breadth: 11,
+            price: 95.99
+          },
+          {
+            product_id: "kidsprinklz",
+            amount: 15,
+            breadth: 15,
+            price: 41.99
+          },
+          {
+            product_id: "cardiobeets",
+            amount: 10,
+            breadth: 1,
+            price: 58.99
+          },
+          {
+            product_id: "tazza-di-vita-latte",
+            amount: 10,
+            breadth: 1,
+            price: 48.99
+          },
+          {
+            product_id: "aloe-plus",
+            amount: 5,
+            breadth: 3,
+            price: 43.99
+          },
+          {
+            product_id: "beyond-hot-chocolate",
+            amount: 5,
+            breadth: 2,
+            price: 70.99
+          },
+          {
+            product_id: "beyond-osteo-fx-liquid",
+            amount: 5,
+            breadth: 9,
+            price: 60.99
+          },
+          {
+            product_id: "beyond-sleep-gummies",
+            amount: 5,
+            breadth: 2,
+            price: 43.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 5,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "cheri-mins",
+            amount: 5,
+            breadth: 1,
+            price: 33.99
+          },
+          {
+            product_id: "liquid-gluco-gel",
+            amount: 5,
+            breadth: 1,
+            price: 59.99
+          },
+          {
+            product_id: "strawberry-kiwi-mins",
+            amount: 5,
+            breadth: 1,
+            price: 35.99
+          },
+          {
+            product_id: "gluco-gel-plus",
+            amount: 4,
+            breadth: 2,
+            price: 68.99
+          },
+          {
+            product_id: "viaviente",
+            amount: 3,
+            breadth: 2,
+            price: 58.99
+          },
+          {
+            product_id: "life-solubles-rice-bran",
+            amount: 1.3,
+            breadth: 1,
+            price: 37.5
+          },
+          {
+            product_id: "apple-cider-vinegar-gummies",
+            amount: 0,
+            breadth: 1,
+            price: 44.99
+          },
+          {
+            product_id: "liverpure",
+            amount: 0,
+            breadth: 4,
+            price: 115.99
+          },
+          {
+            product_id: "manuka-force-lemon-honey-lozenges",
+            amount: 0,
+            breadth: 1,
+            price: 21.99
+          },
+          {
+            product_id: "tazza-di-vita-cafe-ganoderma",
+            amount: 0,
+            breadth: 1,
+            price: 46.99
+          },
+          {
+            product_id: "trim-stiks",
+            amount: 0,
+            breadth: 2,
+            price: 49.99
+          },
+          {
+            product_id: "ultimate-colloidal-silver",
+            amount: 0,
+            breadth: 2,
+            price: 39.99
+          },
+          {
+            product_id: "ultimate-osteo-fx",
+            amount: 0,
+            breadth: 7,
+            price: 58.99
+          }
+        ]
+      },
+      magnesium: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "liverpure",
+            amount: 787.5,
+            breadth: 4,
+            price: 115.99
+          },
+          {
+            product_id: "cal-toddy",
+            amount: 600,
+            breadth: 9,
+            price: 54.99
+          },
+          {
+            product_id: "cal-mag-100",
+            amount: 400,
+            breadth: 6,
+            price: 28.99
+          },
+          {
+            product_id: "reverse",
+            amount: 400,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "beyond-osteo-fx-liquid",
+            amount: 300,
+            breadth: 9,
+            price: 60.99
+          },
+          {
+            product_id: "beyond-osteo-fx-powder",
+            amount: 300,
+            breadth: 8,
+            price: 60.99
+          },
+          {
+            product_id: "osteoprocare",
+            amount: 300,
+            breadth: 14,
+            price: 55.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 300,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "projoint-fx",
+            amount: 225,
+            breadth: 6,
+            price: 74.99
+          },
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 200,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "bone-building-formula",
+            amount: 200,
+            breadth: 6,
+            price: 33.99
+          },
+          {
+            product_id: "osteo-mag",
+            amount: 200,
+            breadth: 11,
+            price: 43.99
+          },
+          {
+            product_id: "ultimate-osteo-fx",
+            amount: 200,
+            breadth: 7,
+            price: 58.99
+          },
+          {
+            product_id: "bio-calcium",
+            amount: 150,
+            breadth: 7,
+            price: 31.99
+          },
+          {
+            product_id: "vitalstart",
+            amount: 120,
+            breadth: 14,
+            price: 44.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 105,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "ultimate-d-stress",
+            amount: 100,
+            breadth: 8,
+            price: 44.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 100,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 100,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 100,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 80,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "recharge-recovery",
+            amount: 75,
+            breadth: 13,
+            price: 45.99
+          },
+          {
+            product_id: "sleep-eze",
+            amount: 50,
+            breadth: 4,
+            price: 51.99
+          },
+          {
+            product_id: "xerafem",
+            amount: 50,
+            breadth: 8,
+            price: 54.99
+          },
+          {
+            product_id: "xeratest",
+            amount: 50,
+            breadth: 9,
+            price: 55.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 40,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 40,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 40,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 40,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "ultimate-cal",
+            amount: 40,
+            breadth: 6,
+            price: 31.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 25,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 20,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "ultimate-cardio-fx",
+            amount: 20,
+            breadth: 6,
+            price: 53.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 20,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 19.69,
+            breadth: 21,
+            price: 71.99
+          },
+          {
+            product_id: "life-balance-menopause-support",
+            amount: 12,
+            breadth: 13,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-king-calcium",
+            amount: 12,
+            breadth: 7,
+            price: 40.99
+          },
+          {
+            product_id: "electrofuel",
+            amount: 10,
+            breadth: 7,
+            price: 49.99
+          },
+          {
+            product_id: "soul-stiks",
+            amount: 10,
+            breadth: 6,
+            price: 36.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 5,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "truezyme",
+            amount: 2.33,
+            breadth: 5,
+            price: 60.99
+          },
+          {
+            product_id: "harmony-drops",
+            amount: 2.1,
+            breadth: 4,
+            price: 28.99
+          },
+          {
+            product_id: "beyond-sleep-gummies",
+            amount: 2,
+            breadth: 2,
+            price: 43.99
+          }
+        ]
+      },
+      phosphorus: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "beyond-osteo-fx-powder",
+            amount: 600,
+            breadth: 8,
+            price: 60.99
+          },
+          {
+            product_id: "beyond-osteo-fx-liquid",
+            amount: 300,
+            breadth: 9,
+            price: 60.99
+          },
+          {
+            product_id: "cal-toddy",
+            amount: 300,
+            breadth: 9,
+            price: 54.99
+          },
+          {
+            product_id: "ultimate-osteo-fx",
+            amount: 300,
+            breadth: 7,
+            price: 58.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 250,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 200,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 175,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 150,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 140.16,
+            breadth: 21,
+            price: 71.99
+          },
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 125,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "reverse",
+            amount: 100,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 80,
+            breadth: 27,
+            price: 60.99
+          }
+        ]
+      },
+      sulfur: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "harmony-drops",
+            amount: 0.45,
+            breadth: 4,
+            price: 28.99
+          }
+        ]
+      },
+      chloride: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "refresh-fx",
+            amount: 72,
+            breadth: 11,
+            price: 49.99
+          },
+          {
+            product_id: "osteoprocare",
+            amount: 50,
+            breadth: 14,
+            price: 55.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 31,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "harmony-drops",
+            amount: 5.8,
+            breadth: 4,
+            price: 28.99
+          }
+        ]
+      },
+      potassium: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 460,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "act-canister",
+            amount: 395,
+            breadth: 5,
+            price: 58.99
+          },
+          {
+            product_id: "act-energy-on-the-go-gusset",
+            amount: 395,
+            breadth: 5,
+            price: 74.99
+          },
+          {
+            product_id: "ultimate-cardio-stx",
+            amount: 395,
+            breadth: 11,
+            price: 95.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 250,
+            breadth: 21,
+            price: 71.99
+          },
+          {
+            product_id: "fitshake-banana-cream",
+            amount: 210,
+            breadth: 5,
+            price: 49.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 175,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 175,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 170,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "cookies-n-cream-protein-shake",
+            amount: 170,
+            breadth: 5,
+            price: 49.99
+          },
+          {
+            product_id: "pumpkin-spice-protein-shake",
+            amount: 160,
+            breadth: 5,
+            price: 49.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 140,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "hgh-amino-acid-blend",
+            amount: 128,
+            breadth: 8,
+            price: 46.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 120,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 100,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "cal-toddy",
+            amount: 100,
+            breadth: 9,
+            price: 54.99
+          },
+          {
+            product_id: "rebound-fx-citrus-punch",
+            amount: 100,
+            breadth: 16,
+            price: 51.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 100,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 100,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 100,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "bio-calcium",
+            amount: 99,
+            breadth: 7,
+            price: 31.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 90,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "natures-pearl-muscadine-grape-extract",
+            amount: 87,
+            breadth: 2,
+            price: 376.99
+          },
+          {
+            product_id: "body-balance",
+            amount: 80,
+            breadth: 2,
+            price: 45.99
+          },
+          {
+            product_id: "ultimate-cal",
+            amount: 80,
+            breadth: 6,
+            price: 31.99
+          },
+          {
+            product_id: "viaviente",
+            amount: 80,
+            breadth: 2,
+            price: 58.99
+          },
+          {
+            product_id: "aloe-plus",
+            amount: 75,
+            breadth: 3,
+            price: 43.99
+          },
+          {
+            product_id: "rebound-fx-can",
+            amount: 70,
+            breadth: 14,
+            price: 59.99
+          },
+          {
+            product_id: "reverse",
+            amount: 50,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "sta-clear",
+            amount: 50,
+            breadth: 11,
+            price: 31.99
+          },
+          {
+            product_id: "gluco-gel-plus",
+            amount: 48,
+            breadth: 2,
+            price: 68.99
+          },
+          {
+            product_id: "life-balance-menopause-support",
+            amount: 43,
+            breadth: 13,
+            price: 61.99
+          },
+          {
+            product_id: "womens-hormonal-balancer",
+            amount: 42.8,
+            breadth: 3,
+            price: 40.99
+          },
+          {
+            product_id: "bio-fuel",
+            amount: 40,
+            breadth: 18,
+            price: 43.99
+          },
+          {
+            product_id: "soul-stiks",
+            amount: 39,
+            breadth: 6,
+            price: 36.99
+          },
+          {
+            product_id: "electrofuel",
+            amount: 38,
+            breadth: 7,
+            price: 49.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 33,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 30,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "kidsprinklz",
+            amount: 20,
+            breadth: 15,
+            price: 41.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 10,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "sta-balanced",
+            amount: 10,
+            breadth: 5,
+            price: 31.99
+          },
+          {
+            product_id: "oxybody-cherry-berry",
+            amount: 4,
+            breadth: 5,
+            price: 43.99
+          },
+          {
+            product_id: "truezyme",
+            amount: 3,
+            breadth: 5,
+            price: 60.99
+          },
+          {
+            product_id: "harmony-drops",
+            amount: 0.08,
+            breadth: 4,
+            price: 28.99
+          },
+          {
+            product_id: "multi-collagen-peptide-gummies",
+            amount: 0,
+            breadth: 5,
+            price: 52.99
+          },
+          {
+            product_id: "trim-stiks",
+            amount: 0,
+            breadth: 2,
+            price: 49.99
+          }
+        ]
+      },
+      calcium: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "beyond-osteo-fx-liquid",
+            amount: 1200,
+            breadth: 9,
+            price: 60.99
+          },
+          {
+            product_id: "beyond-osteo-fx-powder",
+            amount: 1200,
+            breadth: 8,
+            price: 60.99
+          },
+          {
+            product_id: "cal-toddy",
+            amount: 1200,
+            breadth: 9,
+            price: 54.99
+          },
+          {
+            product_id: "reverse",
+            amount: 1200,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "ultimate-osteo-fx",
+            amount: 1200,
+            breadth: 7,
+            price: 58.99
+          },
+          {
+            product_id: "cal-mag-100",
+            amount: 1e3,
+            breadth: 6,
+            price: 28.99
+          },
+          {
+            product_id: "osteoprocare",
+            amount: 600,
+            breadth: 14,
+            price: 55.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 600,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-king-calcium",
+            amount: 550,
+            breadth: 7,
+            price: 40.99
+          },
+          {
+            product_id: "bone-building-formula",
+            amount: 500,
+            breadth: 6,
+            price: 33.99
+          },
+          {
+            product_id: "ultimate-d-stress",
+            amount: 400,
+            breadth: 8,
+            price: 44.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 400,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 400,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "projoint-fx",
+            amount: 375,
+            breadth: 6,
+            price: 74.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 325,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "imortalium",
+            amount: 300,
+            breadth: 10,
+            price: 85.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 300,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 300,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-oceans-gold",
+            amount: 250,
+            breadth: 2,
+            price: 43.99
+          },
+          {
+            product_id: "ultimate-cal",
+            amount: 230,
+            breadth: 6,
+            price: 31.99
+          },
+          {
+            product_id: "bio-calcium",
+            amount: 225,
+            breadth: 7,
+            price: 31.99
+          },
+          {
+            product_id: "cookies-n-cream-protein-shake",
+            amount: 200,
+            breadth: 5,
+            price: 49.99
+          },
+          {
+            product_id: "pumpkin-spice-protein-shake",
+            amount: 200,
+            breadth: 5,
+            price: 49.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 180,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "xeratest",
+            amount: 170,
+            breadth: 9,
+            price: 55.99
+          },
+          {
+            product_id: "synaptiv",
+            amount: 160,
+            breadth: 10,
+            price: 79.99
+          },
+          {
+            product_id: "xerafem",
+            amount: 150,
+            breadth: 8,
+            price: 54.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 140,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 130,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 120,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 120,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "fitshake-banana-cream",
+            amount: 120,
+            breadth: 5,
+            price: 49.99
+          },
+          {
+            product_id: "recharge-recovery",
+            amount: 120,
+            breadth: 13,
+            price: 45.99
+          },
+          {
+            product_id: "vitalstart",
+            amount: 120,
+            breadth: 14,
+            price: 44.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 110,
+            breadth: 21,
+            price: 71.99
+          },
+          {
+            product_id: "ultimate-mineral-caps",
+            amount: 90,
+            breadth: 1,
+            price: 58.99
+          },
+          {
+            product_id: "sta-natural-plant-shake",
+            amount: 56,
+            breadth: 15,
+            price: 79.99
+          },
+          {
+            product_id: "c-fx",
+            amount: 50,
+            breadth: 2,
+            price: 30.99
+          },
+          {
+            product_id: "life-balance-menopause-support",
+            amount: 50,
+            breadth: 13,
+            price: 61.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 50,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 50,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-digest-fx",
+            amount: 40,
+            breadth: 1,
+            price: 46.99
+          },
+          {
+            product_id: "collagen-peptide-joint-health-support",
+            amount: 35,
+            breadth: 4,
+            price: 79.99
+          },
+          {
+            product_id: "super-greens-canister",
+            amount: 33,
+            breadth: 3,
+            price: 64.99
+          },
+          {
+            product_id: "body-balance-sticks",
+            amount: 30,
+            breadth: 2,
+            price: 79.99
+          },
+          {
+            product_id: "ultimate-vitamin-d3",
+            amount: 30,
+            breadth: 3,
+            price: 25.99
+          },
+          {
+            product_id: "ultimate-vitamin-d3-2500",
+            amount: 30,
+            breadth: 3,
+            price: 25.99
+          },
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 25,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "sleep-eze",
+            amount: 25,
+            breadth: 4,
+            price: 51.99
+          },
+          {
+            product_id: "natures-pearl-muscadine-grape-extract",
+            amount: 13,
+            breadth: 2,
+            price: 376.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 10,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "kidsprinklz",
+            amount: 10,
+            breadth: 15,
+            price: 41.99
+          },
+          {
+            product_id: "multi-collagen-peptide-gummies",
+            amount: 0,
+            breadth: 5,
+            price: 52.99
+          }
+        ]
+      },
+      boron: {
+        unit: "mcg",
+        candidates: [
+          {
+            product_id: "xeratest",
+            amount: 5e3,
+            breadth: 9,
+            price: 55.99
+          },
+          {
+            product_id: "ultimate-cardio-stx",
+            amount: 2e3,
+            breadth: 11,
+            price: 95.99
+          },
+          {
+            product_id: "ultimate-king-calcium",
+            amount: 1800,
+            breadth: 7,
+            price: 40.99
+          },
+          {
+            product_id: "ultimate-cal",
+            amount: 1500,
+            breadth: 6,
+            price: 31.99
+          },
+          {
+            product_id: "beyond-osteo-fx-liquid",
+            amount: 1e3,
+            breadth: 9,
+            price: 60.99
+          },
+          {
+            product_id: "beyond-osteo-fx-powder",
+            amount: 1e3,
+            breadth: 8,
+            price: 60.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 1e3,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 1e3,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "bio-calcium",
+            amount: 1e3,
+            breadth: 7,
+            price: 31.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 1e3,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 1e3,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "cal-toddy",
+            amount: 1e3,
+            breadth: 9,
+            price: 54.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 1e3,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-osteo-fx",
+            amount: 1e3,
+            breadth: 7,
+            price: 58.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 1e3,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 1e3,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "projoint-fx",
+            amount: 750,
+            breadth: 6,
+            price: 74.99
+          },
+          {
+            product_id: "reverse",
+            amount: 700,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "bone-building-formula",
+            amount: 500,
+            breadth: 6,
+            price: 33.99
+          }
+        ]
+      },
+      chromium: {
+        unit: "mcg",
+        candidates: [
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 200,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 200,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 200,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 200,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 200,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "life-balance-menopause-support",
+            amount: 200,
+            breadth: 13,
+            price: 61.99
+          },
+          {
+            product_id: "reverse",
+            amount: 200,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "sta-energized-plus",
+            amount: 200,
+            breadth: 1,
+            price: 31.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 200,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 200,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 200,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "hgh-amino-acid-blend",
+            amount: 102,
+            breadth: 8,
+            price: 46.99
+          },
+          {
+            product_id: "osteoprocare",
+            amount: 100,
+            breadth: 14,
+            price: 55.99
+          },
+          {
+            product_id: "sweet-eze",
+            amount: 100,
+            breadth: 2,
+            price: 36.99
+          },
+          {
+            product_id: "truezyme",
+            amount: 100,
+            breadth: 5,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-selenium",
+            amount: 100,
+            breadth: 8,
+            price: 38.99
+          },
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 70,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "glucogenix",
+            amount: 70,
+            breadth: 2,
+            price: 68.99
+          },
+          {
+            product_id: "keto-power-up",
+            amount: 60,
+            breadth: 2,
+            price: 54.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 60,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "bio-fuel",
+            amount: 50,
+            breadth: 18,
+            price: 43.99
+          },
+          {
+            product_id: "ultimate-vision-fx",
+            amount: 50,
+            breadth: 6,
+            price: 46.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 40,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 40,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 35,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 34,
+            breadth: 21,
+            price: 71.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 25,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 18,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "oxybody-cherry-berry",
+            amount: 12,
+            breadth: 5,
+            price: 43.99
+          }
+        ]
+      },
+      copper: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "reverse",
+            amount: 2,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 1.5,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 1.5,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 1.5,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 1.5,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 1,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "imortalium",
+            amount: 1,
+            breadth: 10,
+            price: 85.99
+          },
+          {
+            product_id: "rejuvenate-rewind-restore",
+            amount: 1,
+            breadth: 3,
+            price: 68.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 1,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 1,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 1,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 1,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 0.8,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 0.75,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "get-go-n-plus",
+            amount: 0.6,
+            breadth: 11,
+            price: 33.99
+          },
+          {
+            product_id: "bio-fuel",
+            amount: 0.5,
+            breadth: 18,
+            price: 43.99
+          },
+          {
+            product_id: "cal-toddy",
+            amount: 0.5,
+            breadth: 9,
+            price: 54.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 0.5,
+            breadth: 21,
+            price: 71.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 0.5,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-selenium",
+            amount: 0.5,
+            breadth: 8,
+            price: 38.99
+          },
+          {
+            product_id: "bio-calcium",
+            amount: 0.4,
+            breadth: 7,
+            price: 31.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 0.3,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "ultimate-iodine",
+            amount: 0.18,
+            breadth: 5,
+            price: 33.99
+          },
+          {
+            product_id: "ultimate-paraclear",
+            amount: 0.18,
+            breadth: 3,
+            price: 45.99
+          },
+          {
+            product_id: "beyond-osteo-fx-powder",
+            amount: 0.1,
+            breadth: 8,
+            price: 60.99
+          },
+          {
+            product_id: "beyond-osteo-fx-liquid",
+            amount: 0.05,
+            breadth: 9,
+            price: 60.99
+          },
+          {
+            product_id: "osteoprocare",
+            amount: 0,
+            breadth: 14,
+            price: 55.99
+          }
+        ]
+      },
+      iron: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "ultimate-iron-26",
+            amount: 18,
+            breadth: 3,
+            price: 34.99
+          },
+          {
+            product_id: "sta-natural-plant-shake",
+            amount: 5,
+            breadth: 15,
+            price: 79.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 4.5,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 4,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 4,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 3.6,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "osteoprocare",
+            amount: 3,
+            breadth: 14,
+            price: 55.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 2,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 2,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 2,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "beyond-hot-chocolate",
+            amount: 1,
+            breadth: 2,
+            price: 70.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 1,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 1,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 1,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 1,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 1,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "super-greens-canister",
+            amount: 1,
+            breadth: 3,
+            price: 64.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 1,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "fitshake-banana-cream",
+            amount: 0.7,
+            breadth: 5,
+            price: 49.99
+          },
+          {
+            product_id: "cookies-n-cream-protein-shake",
+            amount: 0.6,
+            breadth: 5,
+            price: 49.99
+          },
+          {
+            product_id: "pumpkin-spice-protein-shake",
+            amount: 0.3,
+            breadth: 5,
+            price: 49.99
+          },
+          {
+            product_id: "multi-collagen-peptide-gummies",
+            amount: 0,
+            breadth: 5,
+            price: 52.99
+          }
+        ]
+      },
+      iodine: {
+        unit: "mcg",
+        candidates: [
+          {
+            product_id: "ultimate-oceans-gold",
+            amount: 500,
+            breadth: 2,
+            price: 43.99
+          },
+          {
+            product_id: "keto-power-up",
+            amount: 300,
+            breadth: 2,
+            price: 54.99
+          },
+          {
+            product_id: "ultimate-iodine",
+            amount: 300,
+            breadth: 5,
+            price: 33.99
+          },
+          {
+            product_id: "reverse",
+            amount: 150,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "hgh-amino-acid-blend",
+            amount: 120,
+            breadth: 8,
+            price: 46.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 105,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 90,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 75,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "osteoprocare",
+            amount: 75,
+            breadth: 14,
+            price: 55.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 75,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "procardio-fx",
+            amount: 50,
+            breadth: 5,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 40,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 40,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "womens-hormonal-balancer",
+            amount: 40,
+            breadth: 3,
+            price: 40.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 37.5,
+            breadth: 21,
+            price: 71.99
+          }
+        ]
+      },
+      manganese: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 5,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 5,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 5,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 2.3,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "cal-toddy",
+            amount: 2,
+            breadth: 9,
+            price: 54.99
+          },
+          {
+            product_id: "osteoprocare",
+            amount: 2,
+            breadth: 14,
+            price: 55.99
+          },
+          {
+            product_id: "reverse",
+            amount: 2,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 2,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 2,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "ultimate-gluco-gel",
+            amount: 2,
+            breadth: 1,
+            price: 54.99
+          },
+          {
+            product_id: "hgh-amino-acid-blend",
+            amount: 1.6,
+            breadth: 8,
+            price: 46.99
+          },
+          {
+            product_id: "bio-calcium",
+            amount: 1,
+            breadth: 7,
+            price: 31.99
+          },
+          {
+            product_id: "bio-fuel",
+            amount: 1,
+            breadth: 18,
+            price: 43.99
+          },
+          {
+            product_id: "bone-building-formula",
+            amount: 1,
+            breadth: 6,
+            price: 33.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 1,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "sta-balanced",
+            amount: 1,
+            breadth: 5,
+            price: 31.99
+          },
+          {
+            product_id: "sta-restored",
+            amount: 1,
+            breadth: 1,
+            price: 40.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 1,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "vitalstart",
+            amount: 1,
+            breadth: 14,
+            price: 44.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 0.5,
+            breadth: 21,
+            price: 71.99
+          },
+          {
+            product_id: "recharge-recovery",
+            amount: 0.4,
+            breadth: 13,
+            price: 45.99
+          },
+          {
+            product_id: "kidsprinklz",
+            amount: 0.25,
+            breadth: 15,
+            price: 41.99
+          }
+        ]
+      },
+      molybdenum: {
+        unit: "mcg",
+        candidates: [
+          {
+            product_id: "reverse",
+            amount: 75,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "osteoprocare",
+            amount: 25,
+            breadth: 14,
+            price: 55.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 20,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "hgh-amino-acid-blend",
+            amount: 9,
+            breadth: 8,
+            price: 46.99
+          }
+        ]
+      },
+      selenium: {
+        unit: "mcg",
+        candidates: [
+          {
+            product_id: "reverse",
+            amount: 200,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 110,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 100,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 100,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "bio-fuel",
+            amount: 100,
+            breadth: 18,
+            price: 43.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 100,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 100,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 100,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "osteoprocare",
+            amount: 100,
+            breadth: 14,
+            price: 55.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 100,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-prost-fx",
+            amount: 100,
+            breadth: 2,
+            price: 50.99
+          },
+          {
+            product_id: "ultimate-selenium",
+            amount: 100,
+            breadth: 8,
+            price: 38.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 100,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 100,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-vision-fx",
+            amount: 70,
+            breadth: 6,
+            price: 46.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 60,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 60,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 55,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "imortalium",
+            amount: 54,
+            breadth: 10,
+            price: 85.99
+          },
+          {
+            product_id: "life-balance-menopause-support",
+            amount: 50,
+            breadth: 13,
+            price: 61.99
+          },
+          {
+            product_id: "ocutiv",
+            amount: 50,
+            breadth: 5,
+            price: 85.99
+          },
+          {
+            product_id: "procardio-fx",
+            amount: 50,
+            breadth: 5,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-king-calcium",
+            amount: 40,
+            breadth: 7,
+            price: 40.99
+          },
+          {
+            product_id: "sta-balanced",
+            amount: 35,
+            breadth: 5,
+            price: 31.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 35,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "xerafem",
+            amount: 35,
+            breadth: 8,
+            price: 54.99
+          },
+          {
+            product_id: "xeratest",
+            amount: 35,
+            breadth: 9,
+            price: 55.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 21,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 20,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "oxybody-cherry-berry",
+            amount: 15,
+            breadth: 5,
+            price: 43.99
+          },
+          {
+            product_id: "ultimate-iodine",
+            amount: 11,
+            breadth: 5,
+            price: 33.99
+          },
+          {
+            product_id: "ultimate-paraclear",
+            amount: 11,
+            breadth: 3,
+            price: 45.99
+          },
+          {
+            product_id: "hgh-amino-acid-blend",
+            amount: 3,
+            breadth: 8,
+            price: 46.99
+          }
+        ]
+      },
+      silica: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "projoint-fx",
+            amount: 1.5,
+            breadth: 6,
+            price: 74.99
+          },
+          {
+            product_id: "osteoprocare",
+            amount: 1,
+            breadth: 14,
+            price: 55.99
+          }
+        ]
+      },
+      strontium: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "beyond-osteo-fx-liquid",
+            amount: 0.5,
+            breadth: 9,
+            price: 60.99
+          },
+          {
+            product_id: "beyond-osteo-fx-powder",
+            amount: 0.5,
+            breadth: 8,
+            price: 60.99
+          }
+        ]
+      },
+      vanadium: {
+        unit: "mcg",
+        candidates: [
+          {
+            product_id: "glucogenix",
+            amount: 200,
+            breadth: 2,
+            price: 68.99
+          },
+          {
+            product_id: "sweet-eze",
+            amount: 200,
+            breadth: 2,
+            price: 36.99
+          },
+          {
+            product_id: "osteoprocare",
+            amount: 50,
+            breadth: 14,
+            price: 55.99
+          },
+          {
+            product_id: "reverse",
+            amount: 50,
+            breadth: 27,
+            price: 111.99
+          }
+        ]
+      },
+      zinc: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 30,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "xeratest",
+            amount: 30,
+            breadth: 9,
+            price: 55.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 20,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "bio-fuel",
+            amount: 15,
+            breadth: 18,
+            price: 43.99
+          },
+          {
+            product_id: "cal-mag-100",
+            amount: 15,
+            breadth: 6,
+            price: 28.99
+          },
+          {
+            product_id: "cal-toddy",
+            amount: 15,
+            breadth: 9,
+            price: 54.99
+          },
+          {
+            product_id: "reverse",
+            amount: 15,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 15,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "vitali-c-plus",
+            amount: 15,
+            breadth: 3,
+            price: 55.99
+          },
+          {
+            product_id: "xerafem",
+            amount: 15,
+            breadth: 8,
+            price: 54.99
+          },
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 11,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "zinc-fx",
+            amount: 10,
+            breadth: 1,
+            price: 16.99
+          },
+          {
+            product_id: "zinc-immune-support",
+            amount: 10,
+            breadth: 2,
+            price: 19.99
+          },
+          {
+            product_id: "flexeoplus",
+            amount: 8.3,
+            breadth: 3,
+            price: 35.99
+          },
+          {
+            product_id: "imortalium",
+            amount: 7.5,
+            breadth: 10,
+            price: 85.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 7.5,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "sta-balanced",
+            amount: 7.5,
+            breadth: 5,
+            price: 31.99
+          },
+          {
+            product_id: "sta-clear",
+            amount: 7.5,
+            breadth: 11,
+            price: 31.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 7.5,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "collagen-peptides-hair-skin-nail-support",
+            amount: 6,
+            breadth: 9,
+            price: 79.99
+          },
+          {
+            product_id: "beyond-osteo-fx-liquid",
+            amount: 5,
+            breadth: 9,
+            price: 60.99
+          },
+          {
+            product_id: "beyond-osteo-fx-powder",
+            amount: 5,
+            breadth: 8,
+            price: 60.99
+          },
+          {
+            product_id: "fucoidz",
+            amount: 5,
+            breadth: 2,
+            price: 54.99
+          },
+          {
+            product_id: "get-go-n-plus",
+            amount: 5,
+            breadth: 11,
+            price: 33.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 5,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "ocutiv",
+            amount: 5,
+            breadth: 5,
+            price: 85.99
+          },
+          {
+            product_id: "ultimate-osteo-fx",
+            amount: 5,
+            breadth: 7,
+            price: 58.99
+          },
+          {
+            product_id: "ultimate-prost-fx",
+            amount: 5,
+            breadth: 2,
+            price: 50.99
+          },
+          {
+            product_id: "ultimate-selenium",
+            amount: 5,
+            breadth: 8,
+            price: 38.99
+          },
+          {
+            product_id: "ultimate-vision-fx",
+            amount: 5,
+            breadth: 6,
+            price: 46.99
+          },
+          {
+            product_id: "ultimate-zinc",
+            amount: 5,
+            breadth: 1,
+            price: 25
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 4,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 4,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "vitalstart",
+            amount: 4,
+            breadth: 14,
+            price: 44.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 3.75,
+            breadth: 21,
+            price: 71.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 3.3,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 3,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 3,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 3,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "ultimate-cal",
+            amount: 3,
+            breadth: 6,
+            price: 31.99
+          },
+          {
+            product_id: "recharge-recovery",
+            amount: 2.7,
+            breadth: 13,
+            price: 45.99
+          },
+          {
+            product_id: "synaptiv",
+            amount: 2.5,
+            breadth: 10,
+            price: 79.99
+          },
+          {
+            product_id: "ultimate-paraclear",
+            amount: 2.2,
+            breadth: 3,
+            price: 45.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 2,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "bio-calcium",
+            amount: 2,
+            breadth: 7,
+            price: 31.99
+          },
+          {
+            product_id: "kidsprinklz",
+            amount: 2,
+            breadth: 15,
+            price: 41.99
+          },
+          {
+            product_id: "osteoprocare",
+            amount: 2,
+            breadth: 14,
+            price: 55.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 2,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "oxybody-cherry-berry",
+            amount: 1.5,
+            breadth: 5,
+            price: 43.99
+          },
+          {
+            product_id: "ultimate-king-calcium",
+            amount: 1.5,
+            breadth: 7,
+            price: 40.99
+          },
+          {
+            product_id: "immu-911",
+            amount: 1,
+            breadth: 2,
+            price: 45.99
+          },
+          {
+            product_id: "refresh-fx",
+            amount: 1,
+            breadth: 11,
+            price: 49.99
+          },
+          {
+            product_id: "sta-natural-plant-shake",
+            amount: 1,
+            breadth: 15,
+            price: 79.99
+          },
+          {
+            product_id: "coreao-sticks",
+            amount: 0.7,
+            breadth: 3,
+            price: 49.99
+          },
+          {
+            product_id: "ultimate-iodine",
+            amount: 0.055,
+            breadth: 5,
+            price: 33.99
+          }
+        ]
+      },
+      silver: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "colloidal-silver",
+            amount: 0.04,
+            breadth: 1,
+            price: 31.99
+          },
+          {
+            product_id: "ultimate-colloidal-silver",
+            amount: 0.013,
+            breadth: 2,
+            price: 39.99
+          }
+        ]
+      },
+      "vitamin-a": {
+        unit: "mcg",
+        candidates: [
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 3200,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 3e3,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 3e3,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 3e3,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "reverse",
+            amount: 3e3,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "ultimate-memory-fx",
+            amount: 3e3,
+            breadth: 12,
+            price: 56.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 3e3,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 2750,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "bio-fuel",
+            amount: 2250,
+            breadth: 18,
+            price: 43.99
+          },
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 1800,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "rebound-fx-citrus-punch",
+            amount: 1500,
+            breadth: 16,
+            price: 51.99
+          },
+          {
+            product_id: "ultimate-hair-skin-nails",
+            amount: 1500,
+            breadth: 14,
+            price: 36.99
+          },
+          {
+            product_id: "ultimate-vision-fx",
+            amount: 1500,
+            breadth: 6,
+            price: 46.99
+          },
+          {
+            product_id: "cal-mag-100",
+            amount: 1200,
+            breadth: 6,
+            price: 28.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 1200,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "rebound-fx-can",
+            amount: 1050,
+            breadth: 14,
+            price: 59.99
+          },
+          {
+            product_id: "imortalium",
+            amount: 900,
+            breadth: 10,
+            price: 85.99
+          },
+          {
+            product_id: "ocutiv",
+            amount: 900,
+            breadth: 5,
+            price: 85.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 900,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 810,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 780,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 780,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "collagen-peptides-hair-skin-nail-support",
+            amount: 776,
+            breadth: 9,
+            price: 79.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 750,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 750,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "sta-clear",
+            amount: 750,
+            breadth: 11,
+            price: 31.99
+          },
+          {
+            product_id: "ultimate-selenium",
+            amount: 750,
+            breadth: 8,
+            price: 38.99
+          },
+          {
+            product_id: "xerafem",
+            amount: 750,
+            breadth: 8,
+            price: 54.99
+          },
+          {
+            product_id: "xeratest",
+            amount: 750,
+            breadth: 9,
+            price: 55.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 720,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "collagen-peptide-joint-health-support",
+            amount: 500,
+            breadth: 4,
+            price: 79.99
+          },
+          {
+            product_id: "saxi-super-juice",
+            amount: 450,
+            breadth: 2,
+            price: 49.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 382.8,
+            breadth: 21,
+            price: 71.99
+          },
+          {
+            product_id: "refresh-fx",
+            amount: 360,
+            breadth: 11,
+            price: 49.99
+          },
+          {
+            product_id: "pollen-burst-dragon-fruit",
+            amount: 300,
+            breadth: 9,
+            price: 81.99
+          },
+          {
+            product_id: "pollen-burst-strawberry-acai",
+            amount: 300,
+            breadth: 9,
+            price: 81.99
+          },
+          {
+            product_id: "projoba-pollen-burst",
+            amount: 300,
+            breadth: 8,
+            price: 81.99
+          },
+          {
+            product_id: "projoba-pollen-burst-plus-berry",
+            amount: 300,
+            breadth: 8,
+            price: 81.99
+          },
+          {
+            product_id: "herbal-rainforest",
+            amount: 202.5,
+            breadth: 1,
+            price: 43.99
+          },
+          {
+            product_id: "multi-collagen-peptide-gummies",
+            amount: 0,
+            breadth: 5,
+            price: 52.99
+          },
+          {
+            product_id: "ultimate-cardio-stx",
+            amount: 0,
+            breadth: 11,
+            price: 95.99
+          }
+        ]
+      },
+      "vitamin-b1": {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "reverse",
+            amount: 50,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "ultimate-d-stress",
+            amount: 50,
+            breadth: 8,
+            price: 44.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 30,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 30,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 30,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 30,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 30,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 30,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 30,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "osteo-mag",
+            amount: 25,
+            breadth: 11,
+            price: 43.99
+          },
+          {
+            product_id: "ultimate-memory-fx",
+            amount: 25,
+            breadth: 12,
+            price: 56.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 25,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 20,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 20,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 18,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "sta-clear",
+            amount: 12.5,
+            breadth: 11,
+            price: 31.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 12.5,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "get-go-n-plus",
+            amount: 10,
+            breadth: 11,
+            price: 33.99
+          },
+          {
+            product_id: "refresh-fx",
+            amount: 7,
+            breadth: 11,
+            price: 49.99
+          },
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 6,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "pollen-burst-dragon-fruit",
+            amount: 5,
+            breadth: 9,
+            price: 81.99
+          },
+          {
+            product_id: "pollen-burst-strawberry-acai",
+            amount: 5,
+            breadth: 9,
+            price: 81.99
+          },
+          {
+            product_id: "projoba-pollen-burst",
+            amount: 5,
+            breadth: 8,
+            price: 81.99
+          },
+          {
+            product_id: "projoba-pollen-burst-plus-berry",
+            amount: 5,
+            breadth: 8,
+            price: 81.99
+          },
+          {
+            product_id: "ultimate-hair-skin-nails",
+            amount: 5,
+            breadth: 14,
+            price: 36.99
+          },
+          {
+            product_id: "bio-alert",
+            amount: 3,
+            breadth: 5,
+            price: 36.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 2.5,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "life-balance-menopause-support",
+            amount: 2.4,
+            breadth: 13,
+            price: 61.99
+          },
+          {
+            product_id: "recharge-recovery",
+            amount: 2,
+            breadth: 13,
+            price: 45.99
+          },
+          {
+            product_id: "bio-fuel",
+            amount: 1.5,
+            breadth: 18,
+            price: 43.99
+          },
+          {
+            product_id: "rebound-fx-citrus-punch",
+            amount: 1.5,
+            breadth: 16,
+            price: 51.99
+          },
+          {
+            product_id: "sta-cardio",
+            amount: 1.5,
+            breadth: 6,
+            price: 40.99
+          },
+          {
+            product_id: "synaptiv",
+            amount: 1.5,
+            breadth: 10,
+            price: 79.99
+          },
+          {
+            product_id: "vitalstart",
+            amount: 1.5,
+            breadth: 14,
+            price: 44.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 0.75,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 0.38,
+            breadth: 21,
+            price: 71.99
+          },
+          {
+            product_id: "kidsprinklz",
+            amount: 0.3,
+            breadth: 15,
+            price: 41.99
+          },
+          {
+            product_id: "rebound-fx-can",
+            amount: 0.07,
+            breadth: 14,
+            price: 59.99
+          }
+        ]
+      },
+      "vitamin-b2": {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "ultimate-daily",
+            amount: 75,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "reverse",
+            amount: 50,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "ultimate-d-stress",
+            amount: 50,
+            breadth: 8,
+            price: 44.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 30,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 30,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 30,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 30,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 30,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 30,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 30,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "osteo-mag",
+            amount: 25,
+            breadth: 11,
+            price: 43.99
+          },
+          {
+            product_id: "ultimate-memory-fx",
+            amount: 25,
+            breadth: 12,
+            price: 56.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 25,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 20,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 19.5,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "sta-clear",
+            amount: 12.5,
+            breadth: 11,
+            price: 31.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 12.5,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "ultimate-hair-skin-nails",
+            amount: 5,
+            breadth: 14,
+            price: 36.99
+          },
+          {
+            product_id: "bio-alert",
+            amount: 3.4,
+            breadth: 5,
+            price: 36.99
+          },
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 3.25,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "life-balance-menopause-support",
+            amount: 2.6,
+            breadth: 13,
+            price: 61.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 2.5,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "recharge-recovery",
+            amount: 2,
+            breadth: 13,
+            price: 45.99
+          },
+          {
+            product_id: "truezyme",
+            amount: 2,
+            breadth: 5,
+            price: 60.99
+          },
+          {
+            product_id: "bio-fuel",
+            amount: 1.7,
+            breadth: 18,
+            price: 43.99
+          },
+          {
+            product_id: "get-go-n-plus",
+            amount: 1.7,
+            breadth: 11,
+            price: 33.99
+          },
+          {
+            product_id: "rebound-fx-citrus-punch",
+            amount: 1.7,
+            breadth: 16,
+            price: 51.99
+          },
+          {
+            product_id: "vitalstart",
+            amount: 1.7,
+            breadth: 14,
+            price: 44.99
+          },
+          {
+            product_id: "zradical-liquid",
+            amount: 1.7,
+            breadth: 7,
+            price: 54.99
+          },
+          {
+            product_id: "zradical-plus",
+            amount: 1.7,
+            breadth: 6,
+            price: 61.99
+          },
+          {
+            product_id: "zradical-powder-canister",
+            amount: 1.7,
+            breadth: 6,
+            price: 61.99
+          },
+          {
+            product_id: "rejuvenate-rewind-restore",
+            amount: 1.3,
+            breadth: 3,
+            price: 68.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 0.85,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 0.43,
+            breadth: 21,
+            price: 71.99
+          },
+          {
+            product_id: "kidsprinklz",
+            amount: 0.34,
+            breadth: 15,
+            price: 41.99
+          },
+          {
+            product_id: "rebound-fx-can",
+            amount: 0.07,
+            breadth: 14,
+            price: 59.99
+          }
+        ]
+      },
+      "vitamin-b3": {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "ultimate-niacin-plus",
+            amount: 500,
+            breadth: 1,
+            price: 46.99
+          },
+          {
+            product_id: "ultimate-cardio-stx",
+            amount: 100,
+            breadth: 11,
+            price: 95.99
+          },
+          {
+            product_id: "bio-alert",
+            amount: 60,
+            breadth: 5,
+            price: 36.99
+          },
+          {
+            product_id: "get-go-n-plus",
+            amount: 50,
+            breadth: 11,
+            price: 33.99
+          },
+          {
+            product_id: "reverse",
+            amount: 50,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 40,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 40,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 40,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 40,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 40,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 40,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "chi3-energy",
+            amount: 30,
+            breadth: 5,
+            price: 40.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 30,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "osteo-mag",
+            amount: 25,
+            breadth: 11,
+            price: 43.99
+          },
+          {
+            product_id: "sleep-eze",
+            amount: 25,
+            breadth: 4,
+            price: 51.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 25,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "ultimate-memory-fx",
+            amount: 25,
+            breadth: 12,
+            price: 56.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 25,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 24,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "electrofuel",
+            amount: 22,
+            breadth: 7,
+            price: 49.99
+          },
+          {
+            product_id: "refresh-fx",
+            amount: 22,
+            breadth: 11,
+            price: 49.99
+          },
+          {
+            product_id: "act-canister",
+            amount: 20,
+            breadth: 5,
+            price: 58.99
+          },
+          {
+            product_id: "act-energy-on-the-go-gusset",
+            amount: 20,
+            breadth: 5,
+            price: 74.99
+          },
+          {
+            product_id: "bio-fuel",
+            amount: 20,
+            breadth: 18,
+            price: 43.99
+          },
+          {
+            product_id: "collagen-peptides-hair-skin-nail-support",
+            amount: 20,
+            breadth: 9,
+            price: 79.99
+          },
+          {
+            product_id: "pollen-burst-dragon-fruit",
+            amount: 20,
+            breadth: 9,
+            price: 81.99
+          },
+          {
+            product_id: "pollen-burst-strawberry-acai",
+            amount: 20,
+            breadth: 9,
+            price: 81.99
+          },
+          {
+            product_id: "projoba-pollen-burst",
+            amount: 20,
+            breadth: 8,
+            price: 81.99
+          },
+          {
+            product_id: "projoba-pollen-burst-plus-berry",
+            amount: 20,
+            breadth: 8,
+            price: 81.99
+          },
+          {
+            product_id: "rebound-fx-citrus-punch",
+            amount: 20,
+            breadth: 16,
+            price: 51.99
+          },
+          {
+            product_id: "soul-stiks",
+            amount: 20,
+            breadth: 6,
+            price: 36.99
+          },
+          {
+            product_id: "ultimate-cardio-fx",
+            amount: 20,
+            breadth: 6,
+            price: 53.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 20,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 20,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "ultimate-hair-skin-nails",
+            amount: 20,
+            breadth: 14,
+            price: 36.99
+          },
+          {
+            product_id: "vitalstart",
+            amount: 20,
+            breadth: 14,
+            price: 44.99
+          },
+          {
+            product_id: "zradical-liquid",
+            amount: 20,
+            breadth: 7,
+            price: 54.99
+          },
+          {
+            product_id: "zradical-plus",
+            amount: 20,
+            breadth: 6,
+            price: 61.99
+          },
+          {
+            product_id: "zradical-powder-canister",
+            amount: 20,
+            breadth: 6,
+            price: 61.99
+          },
+          {
+            product_id: "recharge-recovery",
+            amount: 17,
+            breadth: 13,
+            price: 45.99
+          },
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 16,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "slender-fx-rev",
+            amount: 16,
+            breadth: 3,
+            price: 129.99
+          },
+          {
+            product_id: "rebound-fx-can",
+            amount: 14,
+            breadth: 14,
+            price: 59.99
+          },
+          {
+            product_id: "sta-clear",
+            amount: 12.5,
+            breadth: 11,
+            price: 31.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 10,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "kidsprinklz",
+            amount: 10,
+            breadth: 15,
+            price: 41.99
+          },
+          {
+            product_id: "rejuvenate-rewind-restore",
+            amount: 10,
+            breadth: 3,
+            price: 68.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 10,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "sta-balanced",
+            amount: 10,
+            breadth: 5,
+            price: 31.99
+          },
+          {
+            product_id: "xerafem",
+            amount: 10,
+            breadth: 8,
+            price: 54.99
+          },
+          {
+            product_id: "truboost",
+            amount: 6,
+            breadth: 4,
+            price: 73.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 5,
+            breadth: 21,
+            price: 71.99
+          },
+          {
+            product_id: "synaptiv",
+            amount: 4,
+            breadth: 10,
+            price: 79.99
+          },
+          {
+            product_id: "truecleanse",
+            amount: 4,
+            breadth: 4,
+            price: 74.99
+          },
+          {
+            product_id: "sta-cardio",
+            amount: 2.5,
+            breadth: 6,
+            price: 40.99
+          }
+        ]
+      },
+      "vitamin-b5": {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "ultimate-d-stress",
+            amount: 1e3,
+            breadth: 8,
+            price: 44.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 150,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 150,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 150,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 150,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 150,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 150,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 150,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 100,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "reverse",
+            amount: 50,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 30,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 30,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 25,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "osteo-mag",
+            amount: 25,
+            breadth: 11,
+            price: 43.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 25,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "ultimate-memory-fx",
+            amount: 25,
+            breadth: 12,
+            price: 56.99
+          },
+          {
+            product_id: "rebound-fx-citrus-punch",
+            amount: 20,
+            breadth: 16,
+            price: 51.99
+          },
+          {
+            product_id: "ultimate-hair-skin-nails",
+            amount: 20,
+            breadth: 14,
+            price: 36.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 15,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "rebound-fx-can",
+            amount: 14,
+            breadth: 14,
+            price: 59.99
+          },
+          {
+            product_id: "sta-clear",
+            amount: 12.5,
+            breadth: 11,
+            price: 31.99
+          },
+          {
+            product_id: "bio-fuel",
+            amount: 10,
+            breadth: 18,
+            price: 43.99
+          },
+          {
+            product_id: "electrofuel",
+            amount: 10,
+            breadth: 7,
+            price: 49.99
+          },
+          {
+            product_id: "get-go-n-plus",
+            amount: 10,
+            breadth: 11,
+            price: 33.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 10,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "vitalstart",
+            amount: 10,
+            breadth: 14,
+            price: 44.99
+          },
+          {
+            product_id: "zradical-liquid",
+            amount: 10,
+            breadth: 7,
+            price: 54.99
+          },
+          {
+            product_id: "zradical-plus",
+            amount: 10,
+            breadth: 6,
+            price: 61.99
+          },
+          {
+            product_id: "zradical-powder-canister",
+            amount: 10,
+            breadth: 6,
+            price: 61.99
+          },
+          {
+            product_id: "recharge-recovery",
+            amount: 9,
+            breadth: 13,
+            price: 45.99
+          },
+          {
+            product_id: "pollen-burst-dragon-fruit",
+            amount: 5,
+            breadth: 9,
+            price: 81.99
+          },
+          {
+            product_id: "pollen-burst-strawberry-acai",
+            amount: 5,
+            breadth: 9,
+            price: 81.99
+          },
+          {
+            product_id: "projoba-pollen-burst",
+            amount: 5,
+            breadth: 8,
+            price: 81.99
+          },
+          {
+            product_id: "projoba-pollen-burst-plus-berry",
+            amount: 5,
+            breadth: 8,
+            price: 81.99
+          },
+          {
+            product_id: "refresh-fx",
+            amount: 5,
+            breadth: 11,
+            price: 49.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 5,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "truboost",
+            amount: 3,
+            breadth: 4,
+            price: 73.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 2.5,
+            breadth: 21,
+            price: 71.99
+          },
+          {
+            product_id: "synaptiv",
+            amount: 1.5,
+            breadth: 10,
+            price: 79.99
+          }
+        ]
+      },
+      "vitamin-b6": {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "reverse",
+            amount: 50,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "ultimate-d-stress",
+            amount: 50,
+            breadth: 8,
+            price: 44.99
+          },
+          {
+            product_id: "chi3-energy",
+            amount: 40,
+            breadth: 5,
+            price: 40.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 40,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 30,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 30,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 30,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 30,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 30,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 30,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 30,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 25.5,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "osteo-mag",
+            amount: 25,
+            breadth: 11,
+            price: 43.99
+          },
+          {
+            product_id: "sleep-eze",
+            amount: 25,
+            breadth: 4,
+            price: 51.99
+          },
+          {
+            product_id: "ultimate-memory-fx",
+            amount: 25,
+            breadth: 12,
+            price: 56.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 20,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 20,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "sta-clear",
+            amount: 12.5,
+            breadth: 11,
+            price: 31.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 12.5,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "get-go-n-plus",
+            amount: 10,
+            breadth: 11,
+            price: 33.99
+          },
+          {
+            product_id: "slender-fx-rev",
+            amount: 10,
+            breadth: 3,
+            price: 129.99
+          },
+          {
+            product_id: "ultimate-hair-skin-nails",
+            amount: 10,
+            breadth: 14,
+            price: 36.99
+          },
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 8.5,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "refresh-fx",
+            amount: 8,
+            breadth: 11,
+            price: 49.99
+          },
+          {
+            product_id: "ultimate-cardio-fx",
+            amount: 8,
+            breadth: 6,
+            price: 53.99
+          },
+          {
+            product_id: "hgh-amino-acid-blend",
+            amount: 6,
+            breadth: 8,
+            price: 46.99
+          },
+          {
+            product_id: "bio-alert",
+            amount: 5,
+            breadth: 5,
+            price: 36.99
+          },
+          {
+            product_id: "pollen-burst-dragon-fruit",
+            amount: 5,
+            breadth: 9,
+            price: 81.99
+          },
+          {
+            product_id: "pollen-burst-strawberry-acai",
+            amount: 5,
+            breadth: 9,
+            price: 81.99
+          },
+          {
+            product_id: "projoba-pollen-burst",
+            amount: 5,
+            breadth: 8,
+            price: 81.99
+          },
+          {
+            product_id: "projoba-pollen-burst-plus-berry",
+            amount: 5,
+            breadth: 8,
+            price: 81.99
+          },
+          {
+            product_id: "truecleanse",
+            amount: 5,
+            breadth: 4,
+            price: 74.99
+          },
+          {
+            product_id: "vitalstart",
+            amount: 5,
+            breadth: 14,
+            price: 44.99
+          },
+          {
+            product_id: "recharge-recovery",
+            amount: 4,
+            breadth: 13,
+            price: 45.99
+          },
+          {
+            product_id: "life-balance-menopause-support",
+            amount: 3.4,
+            breadth: 13,
+            price: 61.99
+          },
+          {
+            product_id: "bio-fuel",
+            amount: 2.5,
+            breadth: 18,
+            price: 43.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 2.5,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "act-canister",
+            amount: 2,
+            breadth: 5,
+            price: 58.99
+          },
+          {
+            product_id: "act-energy-on-the-go-gusset",
+            amount: 2,
+            breadth: 5,
+            price: 74.99
+          },
+          {
+            product_id: "collagen-peptides-hair-skin-nail-support",
+            amount: 2,
+            breadth: 9,
+            price: 79.99
+          },
+          {
+            product_id: "electrofuel",
+            amount: 2,
+            breadth: 7,
+            price: 49.99
+          },
+          {
+            product_id: "imortalium",
+            amount: 2,
+            breadth: 10,
+            price: 85.99
+          },
+          {
+            product_id: "rebound-fx-citrus-punch",
+            amount: 2,
+            breadth: 16,
+            price: 51.99
+          },
+          {
+            product_id: "sta-cardio",
+            amount: 2,
+            breadth: 6,
+            price: 40.99
+          },
+          {
+            product_id: "ultimate-cardio-stx",
+            amount: 2,
+            breadth: 11,
+            price: 95.99
+          },
+          {
+            product_id: "xeratest",
+            amount: 2,
+            breadth: 9,
+            price: 55.99
+          },
+          {
+            product_id: "zradical-liquid",
+            amount: 2,
+            breadth: 7,
+            price: 54.99
+          },
+          {
+            product_id: "zradical-plus",
+            amount: 2,
+            breadth: 6,
+            price: 61.99
+          },
+          {
+            product_id: "zradical-powder-canister",
+            amount: 2,
+            breadth: 6,
+            price: 61.99
+          },
+          {
+            product_id: "renu-iq",
+            amount: 1.7,
+            breadth: 4,
+            price: 85.99
+          },
+          {
+            product_id: "rebound-fx-can",
+            amount: 1.4,
+            breadth: 14,
+            price: 59.99
+          },
+          {
+            product_id: "kidsprinklz",
+            amount: 1,
+            breadth: 15,
+            price: 41.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 1,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "truboost",
+            amount: 0.6,
+            breadth: 4,
+            price: 73.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 0.5,
+            breadth: 21,
+            price: 71.99
+          }
+        ]
+      },
+      "vitamin-b9": {
+        unit: "mcg",
+        candidates: [
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 1400,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "ultimate-cardio-fx",
+            amount: 1360,
+            breadth: 6,
+            price: 53.99
+          },
+          {
+            product_id: "reverse",
+            amount: 1333,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 835,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 833,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "renu-iq",
+            amount: 801,
+            breadth: 4,
+            price: 85.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 800,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "ultimate-iron-26",
+            amount: 800,
+            breadth: 3,
+            price: 34.99
+          },
+          {
+            product_id: "ultimate-memory-fx",
+            amount: 800,
+            breadth: 12,
+            price: 56.99
+          },
+          {
+            product_id: "life-balance-menopause-support",
+            amount: 680,
+            breadth: 13,
+            price: 61.99
+          },
+          {
+            product_id: "zradical-powder-canister",
+            amount: 680,
+            breadth: 6,
+            price: 61.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 667,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "kidsprinklz",
+            amount: 667,
+            breadth: 15,
+            price: 41.99
+          },
+          {
+            product_id: "zradical-plus",
+            amount: 667,
+            breadth: 6,
+            price: 61.99
+          },
+          {
+            product_id: "osteo-mag",
+            amount: 666,
+            breadth: 11,
+            price: 43.99
+          },
+          {
+            product_id: "collagen-peptides-hair-skin-nail-support",
+            amount: 405,
+            breadth: 9,
+            price: 79.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 400,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "bio-fuel",
+            amount: 400,
+            breadth: 18,
+            price: 43.99
+          },
+          {
+            product_id: "chi3-energy",
+            amount: 400,
+            breadth: 5,
+            price: 40.99
+          },
+          {
+            product_id: "get-go-n-plus",
+            amount: 400,
+            breadth: 11,
+            price: 33.99
+          },
+          {
+            product_id: "rebound-fx-citrus-punch",
+            amount: 400,
+            breadth: 16,
+            price: 51.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 400,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 400,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 400,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "zradical-liquid",
+            amount: 400,
+            breadth: 7,
+            price: 54.99
+          },
+          {
+            product_id: "ultimate-hair-skin-nails",
+            amount: 340,
+            breadth: 14,
+            price: 36.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 333,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 333,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 300,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "rebound-fx-can",
+            amount: 285,
+            breadth: 14,
+            price: 59.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 250,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 250,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "sta-cardio",
+            amount: 200,
+            breadth: 6,
+            price: 40.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 200,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "vitalstart",
+            amount: 200,
+            breadth: 14,
+            price: 44.99
+          },
+          {
+            product_id: "recharge-recovery",
+            amount: 170,
+            breadth: 13,
+            price: 45.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 100,
+            breadth: 21,
+            price: 71.99
+          },
+          {
+            product_id: "synaptiv",
+            amount: 75,
+            breadth: 10,
+            price: 79.99
+          }
+        ]
+      },
+      "vitamin-b12": {
+        unit: "mcg",
+        candidates: [
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 1e3,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 1e3,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 1e3,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 1e3,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 1e3,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 960,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 500,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "chi3-energy",
+            amount: 500,
+            breadth: 5,
+            price: 40.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 500,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-d-stress",
+            amount: 500,
+            breadth: 8,
+            price: 44.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 500,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "collagen-peptides-hair-skin-nail-support",
+            amount: 250,
+            breadth: 9,
+            price: 79.99
+          },
+          {
+            product_id: "renu-iq",
+            amount: 200,
+            breadth: 4,
+            price: 85.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 200,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "refresh-fx",
+            amount: 136,
+            breadth: 11,
+            price: 49.99
+          },
+          {
+            product_id: "osteo-mag",
+            amount: 100,
+            breadth: 11,
+            price: 43.99
+          },
+          {
+            product_id: "pollen-burst-dragon-fruit",
+            amount: 100,
+            breadth: 9,
+            price: 81.99
+          },
+          {
+            product_id: "pollen-burst-strawberry-acai",
+            amount: 100,
+            breadth: 9,
+            price: 81.99
+          },
+          {
+            product_id: "projoba-pollen-burst",
+            amount: 100,
+            breadth: 8,
+            price: 81.99
+          },
+          {
+            product_id: "projoba-pollen-burst-plus-berry",
+            amount: 100,
+            breadth: 8,
+            price: 81.99
+          },
+          {
+            product_id: "reverse",
+            amount: 100,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "slender-fx-rev",
+            amount: 100,
+            breadth: 3,
+            price: 129.99
+          },
+          {
+            product_id: "ultimate-cardio-fx",
+            amount: 100,
+            breadth: 6,
+            price: 53.99
+          },
+          {
+            product_id: "zradical-liquid",
+            amount: 80,
+            breadth: 7,
+            price: 54.99
+          },
+          {
+            product_id: "hgh-amino-acid-blend",
+            amount: 60,
+            breadth: 8,
+            price: 46.99
+          },
+          {
+            product_id: "zradical-plus",
+            amount: 60,
+            breadth: 6,
+            price: 61.99
+          },
+          {
+            product_id: "zradical-powder-canister",
+            amount: 60,
+            breadth: 6,
+            price: 61.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 50,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "ultimate-memory-fx",
+            amount: 50,
+            breadth: 12,
+            price: 56.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 40,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 40,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "womens-hormonal-balancer",
+            amount: 40,
+            breadth: 3,
+            price: 40.99
+          },
+          {
+            product_id: "rebound-fx-citrus-punch",
+            amount: 25,
+            breadth: 16,
+            price: 51.99
+          },
+          {
+            product_id: "synaptiv",
+            amount: 24,
+            breadth: 10,
+            price: 79.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 24,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "ultimate-iodine",
+            amount: 24,
+            breadth: 5,
+            price: 33.99
+          },
+          {
+            product_id: "ultimate-hair-skin-nails",
+            amount: 20,
+            breadth: 14,
+            price: 36.99
+          },
+          {
+            product_id: "rebound-fx-can",
+            amount: 17.5,
+            breadth: 14,
+            price: 59.99
+          },
+          {
+            product_id: "truecleanse",
+            amount: 15,
+            breadth: 4,
+            price: 74.99
+          },
+          {
+            product_id: "vitalstart",
+            amount: 15,
+            breadth: 14,
+            price: 44.99
+          },
+          {
+            product_id: "recharge-recovery",
+            amount: 13,
+            breadth: 13,
+            price: 45.99
+          },
+          {
+            product_id: "bio-fuel",
+            amount: 9,
+            breadth: 18,
+            price: 43.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 7.5,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "electrofuel",
+            amount: 7,
+            breadth: 7,
+            price: 49.99
+          },
+          {
+            product_id: "act-canister",
+            amount: 6,
+            breadth: 5,
+            price: 58.99
+          },
+          {
+            product_id: "act-energy-on-the-go-gusset",
+            amount: 6,
+            breadth: 5,
+            price: 74.99
+          },
+          {
+            product_id: "get-go-n-plus",
+            amount: 6,
+            breadth: 11,
+            price: 33.99
+          },
+          {
+            product_id: "kidsprinklz",
+            amount: 6,
+            breadth: 15,
+            price: 41.99
+          },
+          {
+            product_id: "sta-cardio",
+            amount: 6,
+            breadth: 6,
+            price: 40.99
+          },
+          {
+            product_id: "ultimate-cardio-stx",
+            amount: 6,
+            breadth: 11,
+            price: 95.99
+          },
+          {
+            product_id: "life-balance-menopause-support",
+            amount: 4.8,
+            breadth: 13,
+            price: 61.99
+          },
+          {
+            product_id: "truboost",
+            amount: 1.8,
+            breadth: 4,
+            price: 73.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 1.5,
+            breadth: 21,
+            price: 71.99
+          }
+        ]
+      },
+      "vitamin-c": {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "liverpure",
+            amount: 2940,
+            breadth: 4,
+            price: 115.99
+          },
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 1450,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 1250,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 1250,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 1250,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 1250,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 1e3,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 1e3,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-d-stress",
+            amount: 1e3,
+            breadth: 8,
+            price: 44.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 1e3,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 1e3,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "vitali-c-plus",
+            amount: 1e3,
+            breadth: 3,
+            price: 55.99
+          },
+          {
+            product_id: "c-fx",
+            amount: 500,
+            breadth: 2,
+            price: 30.99
+          },
+          {
+            product_id: "rebound-fx-citrus-punch",
+            amount: 500,
+            breadth: 16,
+            price: 51.99
+          },
+          {
+            product_id: "ultimate-memory-fx",
+            amount: 500,
+            breadth: 12,
+            price: 56.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 400,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 400,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "rebound-fx-can",
+            amount: 350,
+            breadth: 14,
+            price: 59.99
+          },
+          {
+            product_id: "soul-stiks",
+            amount: 350,
+            breadth: 6,
+            price: 36.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 270,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "fucoidz",
+            amount: 250,
+            breadth: 2,
+            price: 54.99
+          },
+          {
+            product_id: "ultimate-vision-fx",
+            amount: 240,
+            breadth: 6,
+            price: 46.99
+          },
+          {
+            product_id: "collagen-peptides-hair-skin-nail-support",
+            amount: 200,
+            breadth: 9,
+            price: 79.99
+          },
+          {
+            product_id: "reverse",
+            amount: 200,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "bio-fuel",
+            amount: 180,
+            breadth: 18,
+            price: 43.99
+          },
+          {
+            product_id: "msm-ultra",
+            amount: 180,
+            breadth: 1,
+            price: 54.99
+          },
+          {
+            product_id: "get-go-n-plus",
+            amount: 150,
+            breadth: 11,
+            price: 33.99
+          },
+          {
+            product_id: "imortalium",
+            amount: 120,
+            breadth: 10,
+            price: 85.99
+          },
+          {
+            product_id: "ultimate-cardio-fx",
+            amount: 120,
+            breadth: 6,
+            price: 53.99
+          },
+          {
+            product_id: "ultimate-hair-skin-nails",
+            amount: 120,
+            breadth: 14,
+            price: 36.99
+          },
+          {
+            product_id: "ultimate-selenium",
+            amount: 120,
+            breadth: 8,
+            price: 38.99
+          },
+          {
+            product_id: "vitalstart",
+            amount: 120,
+            breadth: 14,
+            price: 44.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 100,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "recharge-recovery",
+            amount: 100,
+            breadth: 13,
+            price: 45.99
+          },
+          {
+            product_id: "true2life-daily-digest",
+            amount: 90,
+            breadth: 1,
+            price: 71.99
+          },
+          {
+            product_id: "ultimate-iron-26",
+            amount: 90,
+            breadth: 3,
+            price: 34.99
+          },
+          {
+            product_id: "act-canister",
+            amount: 60,
+            breadth: 5,
+            price: 58.99
+          },
+          {
+            product_id: "act-energy-on-the-go-gusset",
+            amount: 60,
+            breadth: 5,
+            price: 74.99
+          },
+          {
+            product_id: "aloe-plus",
+            amount: 60,
+            breadth: 3,
+            price: 43.99
+          },
+          {
+            product_id: "cal-mag-100",
+            amount: 60,
+            breadth: 6,
+            price: 28.99
+          },
+          {
+            product_id: "kidsprinklz",
+            amount: 60,
+            breadth: 15,
+            price: 41.99
+          },
+          {
+            product_id: "ocutiv",
+            amount: 60,
+            breadth: 5,
+            price: 85.99
+          },
+          {
+            product_id: "oxybody-cherry-berry",
+            amount: 60,
+            breadth: 5,
+            price: 43.99
+          },
+          {
+            product_id: "ultimate-cardio-stx",
+            amount: 60,
+            breadth: 11,
+            price: 95.99
+          },
+          {
+            product_id: "xeratest",
+            amount: 60,
+            breadth: 9,
+            price: 55.99
+          },
+          {
+            product_id: "collagen-peptide-joint-health-support",
+            amount: 56,
+            breadth: 4,
+            price: 79.99
+          },
+          {
+            product_id: "flexeoplus",
+            amount: 50,
+            breadth: 3,
+            price: 35.99
+          },
+          {
+            product_id: "ygy-activate-glp1",
+            amount: 50,
+            breadth: 2,
+            price: 68.99
+          },
+          {
+            product_id: "truezyme",
+            amount: 40,
+            breadth: 5,
+            price: 60.99
+          },
+          {
+            product_id: "immu-911",
+            amount: 30,
+            breadth: 2,
+            price: 45.99
+          },
+          {
+            product_id: "saxi-super-juice",
+            amount: 30,
+            breadth: 2,
+            price: 49.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 30,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "super-collagen-shot",
+            amount: 30,
+            breadth: 3,
+            price: 61.99
+          },
+          {
+            product_id: "xerafem",
+            amount: 30,
+            breadth: 8,
+            price: 54.99
+          },
+          {
+            product_id: "coreao-sticks",
+            amount: 23,
+            breadth: 3,
+            price: 49.99
+          },
+          {
+            product_id: "synaptiv",
+            amount: 20,
+            breadth: 10,
+            price: 79.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 16,
+            breadth: 21,
+            price: 71.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 3,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "zradical-liquid",
+            amount: 3,
+            breadth: 7,
+            price: 54.99
+          }
+        ]
+      },
+      "vitamin-d": {
+        unit: "mcg",
+        candidates: [
+          {
+            product_id: "citri-d-spray",
+            amount: 150,
+            breadth: 1,
+            price: 33.99
+          },
+          {
+            product_id: "ultimate-vitamin-d3",
+            amount: 125,
+            breadth: 3,
+            price: 25.99
+          },
+          {
+            product_id: "ultimate-vitamin-d3-2500",
+            amount: 62.5,
+            breadth: 3,
+            price: 25.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 50,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 50,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 40,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "renu-iq",
+            amount: 40,
+            breadth: 4,
+            price: 85.99
+          },
+          {
+            product_id: "life-balance-menopause-support",
+            amount: 30,
+            breadth: 13,
+            price: 61.99
+          },
+          {
+            product_id: "refresh-fx",
+            amount: 30,
+            breadth: 11,
+            price: 49.99
+          },
+          {
+            product_id: "beyond-osteo-fx-powder",
+            amount: 25,
+            breadth: 8,
+            price: 60.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 25,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 25,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 25,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 25,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "cal-toddy",
+            amount: 25,
+            breadth: 9,
+            price: 54.99
+          },
+          {
+            product_id: "fitshake-banana-cream",
+            amount: 25,
+            breadth: 5,
+            price: 49.99
+          },
+          {
+            product_id: "osteoprocare",
+            amount: 25,
+            breadth: 14,
+            price: 55.99
+          },
+          {
+            product_id: "pollen-burst-dragon-fruit",
+            amount: 25,
+            breadth: 9,
+            price: 81.99
+          },
+          {
+            product_id: "pollen-burst-strawberry-acai",
+            amount: 25,
+            breadth: 9,
+            price: 81.99
+          },
+          {
+            product_id: "projoba-pollen-burst",
+            amount: 25,
+            breadth: 8,
+            price: 81.99
+          },
+          {
+            product_id: "projoba-pollen-burst-plus-berry",
+            amount: 25,
+            breadth: 8,
+            price: 81.99
+          },
+          {
+            product_id: "reverse",
+            amount: 25,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 25,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "ultimate-osteo-fx",
+            amount: 25,
+            breadth: 7,
+            price: 58.99
+          },
+          {
+            product_id: "zinc-immune-support",
+            amount: 25,
+            breadth: 2,
+            price: 19.99
+          },
+          {
+            product_id: "imortalium",
+            amount: 20,
+            breadth: 10,
+            price: 85.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 20,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 18.8,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "projoint-fx",
+            amount: 18.5,
+            breadth: 6,
+            price: 74.99
+          },
+          {
+            product_id: "procardio-fx",
+            amount: 12.5,
+            breadth: 5,
+            price: 60.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 12.5,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "ultimate-cal",
+            amount: 12.5,
+            breadth: 6,
+            price: 31.99
+          },
+          {
+            product_id: "beyond-osteo-fx-liquid",
+            amount: 10,
+            breadth: 9,
+            price: 60.99
+          },
+          {
+            product_id: "bone-building-formula",
+            amount: 10,
+            breadth: 6,
+            price: 33.99
+          },
+          {
+            product_id: "cal-mag-100",
+            amount: 10,
+            breadth: 6,
+            price: 28.99
+          },
+          {
+            product_id: "kidsprinklz",
+            amount: 10,
+            breadth: 15,
+            price: 41.99
+          },
+          {
+            product_id: "ultimate-king-calcium",
+            amount: 10,
+            breadth: 7,
+            price: 40.99
+          },
+          {
+            product_id: "vitalstart",
+            amount: 10,
+            breadth: 14,
+            price: 44.99
+          },
+          {
+            product_id: "sta-clear",
+            amount: 6.25,
+            breadth: 11,
+            price: 31.99
+          },
+          {
+            product_id: "bio-fuel",
+            amount: 5,
+            breadth: 18,
+            price: 43.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 5,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "ultimate-selenium",
+            amount: 5,
+            breadth: 8,
+            price: 38.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 5,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 3.25,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 3,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "rebound-fx-citrus-punch",
+            amount: 2.5,
+            breadth: 16,
+            price: 51.99
+          },
+          {
+            product_id: "ultimate-hair-skin-nails",
+            amount: 2.5,
+            breadth: 14,
+            price: 36.99
+          },
+          {
+            product_id: "coreao-sticks",
+            amount: 2,
+            breadth: 3,
+            price: 49.99
+          },
+          {
+            product_id: "rebound-fx-can",
+            amount: 1.75,
+            breadth: 14,
+            price: 59.99
+          },
+          {
+            product_id: "cookies-n-cream-protein-shake",
+            amount: 0,
+            breadth: 5,
+            price: 49.99
+          },
+          {
+            product_id: "pumpkin-spice-protein-shake",
+            amount: 0,
+            breadth: 5,
+            price: 49.99
+          }
+        ]
+      },
+      "vitamin-e": {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "reverse",
+            amount: 134,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 134,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 134,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 134,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "collagen-peptides-hair-skin-nail-support",
+            amount: 110,
+            breadth: 9,
+            price: 79.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 100,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "rebound-fx-can",
+            amount: 70,
+            breadth: 14,
+            price: 59.99
+          },
+          {
+            product_id: "rebound-fx-citrus-punch",
+            amount: 67,
+            breadth: 16,
+            price: 51.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 67,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "integris-coq10-plus-e",
+            amount: 66,
+            breadth: 1,
+            price: 46.99
+          },
+          {
+            product_id: "imortalium",
+            amount: 60,
+            breadth: 10,
+            price: 85.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 50,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "ultimate-vision-fx",
+            amount: 40.2,
+            breadth: 6,
+            price: 46.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 40,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 40,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 40,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 40,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 32,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 30,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 30,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "ocutiv",
+            amount: 25,
+            breadth: 5,
+            price: 85.99
+          },
+          {
+            product_id: "liverpure",
+            amount: 22,
+            breadth: 4,
+            price: 115.99
+          },
+          {
+            product_id: "bio-fuel",
+            amount: 20,
+            breadth: 18,
+            price: 43.99
+          },
+          {
+            product_id: "sta-clear",
+            amount: 20,
+            breadth: 11,
+            price: 31.99
+          },
+          {
+            product_id: "ultimate-selenium",
+            amount: 20,
+            breadth: 8,
+            price: 38.99
+          },
+          {
+            product_id: "xeratest",
+            amount: 20,
+            breadth: 9,
+            price: 55.99
+          },
+          {
+            product_id: "flexi-care-plus",
+            amount: 14,
+            breadth: 1,
+            price: 38.99
+          },
+          {
+            product_id: "kidsprinklz",
+            amount: 11,
+            breadth: 15,
+            price: 41.99
+          },
+          {
+            product_id: "sta-cardio",
+            amount: 11,
+            breadth: 6,
+            price: 40.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 10,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 10,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "xerafem",
+            amount: 10,
+            breadth: 8,
+            price: 54.99
+          },
+          {
+            product_id: "procardio-fx",
+            amount: 7,
+            breadth: 5,
+            price: 60.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 5.4002,
+            breadth: 21,
+            price: 71.99
+          },
+          {
+            product_id: "refresh-fx",
+            amount: 0.5,
+            breadth: 11,
+            price: 49.99
+          }
+        ]
+      },
+      "vitamin-k": {
+        unit: "mcg",
+        candidates: [
+          {
+            product_id: "projoint-fx",
+            amount: 113,
+            breadth: 6,
+            price: 74.99
+          },
+          {
+            product_id: "integris-vitamin-k2",
+            amount: 100,
+            breadth: 1,
+            price: 39.99
+          },
+          {
+            product_id: "reverse",
+            amount: 45,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "ultimate-vitamin-d3",
+            amount: 45,
+            breadth: 3,
+            price: 25.99
+          },
+          {
+            product_id: "ultimate-vitamin-d3-2500",
+            amount: 45,
+            breadth: 3,
+            price: 25.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 40,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 40,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 40,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 40,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "imortalium",
+            amount: 40,
+            breadth: 10,
+            price: 85.99
+          },
+          {
+            product_id: "ultimate-king-calcium",
+            amount: 40,
+            breadth: 7,
+            price: 40.99
+          },
+          {
+            product_id: "flexeoplus",
+            amount: 33.3,
+            breadth: 3,
+            price: 35.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 30,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 30,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 30,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "life-balance-menopause-support",
+            amount: 10,
+            breadth: 13,
+            price: 61.99
+          }
+        ]
+      },
+      biotin: {
+        unit: "mcg",
+        candidates: [
+          {
+            product_id: "collagen-peptides-hair-skin-nail-support",
+            amount: 1e4,
+            breadth: 9,
+            price: 79.99
+          },
+          {
+            product_id: "ultimate-hair-skin-nails",
+            amount: 2e3,
+            breadth: 14,
+            price: 36.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 750,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 750,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 750,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 750,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 600,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 600,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "osteo-mag",
+            amount: 300,
+            breadth: 11,
+            price: 43.99
+          },
+          {
+            product_id: "rebound-fx-citrus-punch",
+            amount: 300,
+            breadth: 16,
+            price: 51.99
+          },
+          {
+            product_id: "reverse",
+            amount: 300,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 300,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-memory-fx",
+            amount: 300,
+            breadth: 12,
+            price: 56.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 300,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "vitalstart",
+            amount: 250,
+            breadth: 14,
+            price: 44.99
+          },
+          {
+            product_id: "recharge-recovery",
+            amount: 215,
+            breadth: 13,
+            price: 45.99
+          },
+          {
+            product_id: "bone-building-formula",
+            amount: 200,
+            breadth: 6,
+            price: 33.99
+          },
+          {
+            product_id: "rebound-fx-can",
+            amount: 200,
+            breadth: 14,
+            price: 59.99
+          },
+          {
+            product_id: "bio-fuel",
+            amount: 150,
+            breadth: 18,
+            price: 43.99
+          },
+          {
+            product_id: "kidsprinklz",
+            amount: 150,
+            breadth: 15,
+            price: 41.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 150,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 150,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "super-collagen-shot",
+            amount: 120,
+            breadth: 3,
+            price: 61.99
+          },
+          {
+            product_id: "3-0-rise-and-restore",
+            amount: 75,
+            breadth: 20,
+            price: 124.99
+          },
+          {
+            product_id: "tmr-total-meal-replacement-shake",
+            amount: 75,
+            breadth: 21,
+            price: 71.99
+          },
+          {
+            product_id: "life-balance-menopause-support",
+            amount: 30,
+            breadth: 13,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-capsules",
+            amount: 30,
+            breadth: 24,
+            price: 59.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 20,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 20,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 20,
+            breadth: 25,
+            price: 54.99
+          }
+        ]
+      },
+      choline: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "bio-alert",
+            amount: 1e3,
+            breadth: 5,
+            price: 36.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 30,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 25,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "osteo-mag",
+            amount: 25,
+            breadth: 11,
+            price: 43.99
+          },
+          {
+            product_id: "ultimate-memory-fx",
+            amount: 25,
+            breadth: 12,
+            price: 56.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 25,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 25,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 20,
+            breadth: 24,
+            price: 33.99
+          },
+          {
+            product_id: "ultimate-hair-skin-nails",
+            amount: 20,
+            breadth: 14,
+            price: 36.99
+          },
+          {
+            product_id: "rebound-fx-citrus-punch",
+            amount: 15,
+            breadth: 16,
+            price: 51.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 12.5,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "synaptiv",
+            amount: 12,
+            breadth: 10,
+            price: 79.99
+          },
+          {
+            product_id: "slender-fx-meal-replacement-shake",
+            amount: 10,
+            breadth: 25,
+            price: 71.99
+          },
+          {
+            product_id: "soul-stiks",
+            amount: 4,
+            breadth: 6,
+            price: 36.99
+          }
+        ]
+      },
+      inositol: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "pollen-burst-dragon-fruit",
+            amount: 50,
+            breadth: 9,
+            price: 81.99
+          },
+          {
+            product_id: "pollen-burst-strawberry-acai",
+            amount: 50,
+            breadth: 9,
+            price: 81.99
+          },
+          {
+            product_id: "projoba-pollen-burst",
+            amount: 50,
+            breadth: 8,
+            price: 81.99
+          },
+          {
+            product_id: "projoba-pollen-burst-plus-berry",
+            amount: 50,
+            breadth: 8,
+            price: 81.99
+          },
+          {
+            product_id: "synaptiv",
+            amount: 30,
+            breadth: 10,
+            price: 79.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 30,
+            breadth: 27,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 30,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 25,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 25,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 25,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 25,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-tablets",
+            amount: 25,
+            breadth: 23,
+            price: 68.99
+          },
+          {
+            product_id: "osteo-mag",
+            amount: 25,
+            breadth: 11,
+            price: 43.99
+          },
+          {
+            product_id: "ultimate-memory-fx",
+            amount: 25,
+            breadth: 12,
+            price: 56.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 25,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "ultra-body-toddy",
+            amount: 25,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "rebound-fx-citrus-punch",
+            amount: 20,
+            breadth: 16,
+            price: 51.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 20,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "ultimate-hair-skin-nails",
+            amount: 20,
+            breadth: 14,
+            price: 36.99
+          },
+          {
+            product_id: "sta-vital",
+            amount: 12.5,
+            breadth: 22,
+            price: 31.99
+          },
+          {
+            product_id: "kids-toddy",
+            amount: 2,
+            breadth: 24,
+            price: 33.99
+          }
+        ]
+      },
+      flavonoids: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "ultra-body-toddy",
+            amount: 100,
+            breadth: 26,
+            price: 60.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-450g-canister",
+            amount: 15,
+            breadth: 26,
+            price: 81.99
+          },
+          {
+            product_id: "ultimate-tangy-tangerine-liquid",
+            amount: 15,
+            breadth: 25,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-classic",
+            amount: 13,
+            breadth: 27,
+            price: 60.99
+          }
+        ]
+      },
+      arginine: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "ygy-activate-glp1",
+            amount: 4500,
+            breadth: 2,
+            price: 68.99
+          },
+          {
+            product_id: "sta-natural-plant-shake",
+            amount: 1494,
+            breadth: 15,
+            price: 79.99
+          },
+          {
+            product_id: "ultimate-cardio-stx",
+            amount: 1e3,
+            breadth: 11,
+            price: 95.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 38.18,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 29,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 26,
+            breadth: 33,
+            price: 106.99
+          }
+        ]
+      },
+      taurine: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "rebound-fx-citrus-punch",
+            amount: 200,
+            breadth: 16,
+            price: 51.99
+          },
+          {
+            product_id: "ultimate-cardio-stx",
+            amount: 120,
+            breadth: 11,
+            price: 95.99
+          }
+        ]
+      },
+      histidine: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "sta-natural-plant-shake",
+            amount: 480,
+            breadth: 15,
+            price: 79.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 11,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 10.81,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 10,
+            breadth: 33,
+            price: 86.99
+          }
+        ]
+      },
+      isoleucine: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "sta-natural-plant-shake",
+            amount: 890,
+            breadth: 15,
+            price: 79.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 20.18,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 20,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 19,
+            breadth: 33,
+            price: 106.99
+          }
+        ]
+      },
+      leucine: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "sta-natural-plant-shake",
+            amount: 1595,
+            breadth: 15,
+            price: 79.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 39.85,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 38,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 20,
+            breadth: 33,
+            price: 86.99
+          }
+        ]
+      },
+      lysine: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "sta-natural-plant-shake",
+            amount: 1356,
+            breadth: 15,
+            price: 79.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 15,
+            breadth: 33,
+            price: 86.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 12.71,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 11,
+            breadth: 33,
+            price: 106.99
+          }
+        ]
+      },
+      methionine: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "sta-natural-plant-shake",
+            amount: 173,
+            breadth: 15,
+            price: 79.99
+          },
+          {
+            product_id: "ultimate-daily",
+            amount: 45,
+            breadth: 24,
+            price: 61.99
+          },
+          {
+            product_id: "ultimate-daily-classic",
+            amount: 30,
+            breadth: 25,
+            price: 54.99
+          },
+          {
+            product_id: "ultimate-hair-skin-nails",
+            amount: 20,
+            breadth: 14,
+            price: 36.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 15.76,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 11,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 10,
+            breadth: 33,
+            price: 86.99
+          }
+        ]
+      },
+      phenylalanine: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "sta-natural-plant-shake",
+            amount: 1007,
+            breadth: 15,
+            price: 79.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 26.11,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 24,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 20,
+            breadth: 33,
+            price: 86.99
+          }
+        ]
+      },
+      threonine: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "sta-natural-plant-shake",
+            amount: 677,
+            breadth: 15,
+            price: 79.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 16.79,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 16,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 15,
+            breadth: 33,
+            price: 86.99
+          }
+        ]
+      },
+      tryptophan: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "sta-natural-plant-shake",
+            amount: 148,
+            breadth: 15,
+            price: 79.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 5.64,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 5,
+            breadth: 33,
+            price: 86.99
+          }
+        ]
+      },
+      tyrosine: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "sta-natural-plant-shake",
+            amount: 640,
+            breadth: 15,
+            price: 79.99
+          },
+          {
+            product_id: "get-go-n-plus",
+            amount: 500,
+            breadth: 11,
+            price: 33.99
+          },
+          {
+            product_id: "ultimate-cardio-stx",
+            amount: 120,
+            breadth: 11,
+            price: 95.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 26.39,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 21,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 20,
+            breadth: 33,
+            price: 86.99
+          }
+        ]
+      },
+      valine: {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "sta-natural-plant-shake",
+            amount: 981,
+            breadth: 15,
+            price: 79.99
+          },
+          {
+            product_id: "beyond-tangy-tangerine-2-5-canister",
+            amount: 27.95,
+            breadth: 35,
+            price: 86.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+            amount: 26,
+            breadth: 33,
+            price: 106.99
+          },
+          {
+            product_id: "btt-2-0-citrus-peach-fusion",
+            amount: 25,
+            breadth: 33,
+            price: 86.99
+          }
+        ]
+      },
+      "omega-3": {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "reverse",
+            amount: 2400,
+            breadth: 27,
+            price: 111.99
+          },
+          {
+            product_id: "ultimate-efa-plus",
+            amount: 585,
+            breadth: 3,
+            price: 46.99
+          },
+          {
+            product_id: "procardio-fx",
+            amount: 550,
+            breadth: 5,
+            price: 60.99
+          },
+          {
+            product_id: "ultimate-efa",
+            amount: 463,
+            breadth: 3,
+            price: 29.99
+          },
+          {
+            product_id: "omega",
+            amount: 300,
+            breadth: 1,
+            price: 24.99
+          },
+          {
+            product_id: "ultimate-smart-fx",
+            amount: 280,
+            breadth: 1,
+            price: 45.99
+          },
+          {
+            product_id: "sta-clear",
+            amount: 25,
+            breadth: 11,
+            price: 31.99
+          }
+        ]
+      },
+      "omega-6": {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "ultimate-multi-efa",
+            amount: 410,
+            breadth: 1,
+            price: 36.99
+          },
+          {
+            product_id: "ultimate-efa-plus",
+            amount: 122,
+            breadth: 3,
+            price: 46.99
+          },
+          {
+            product_id: "ultimate-efa",
+            amount: 114,
+            breadth: 3,
+            price: 29.99
+          }
+        ]
+      },
+      "omega-9": {
+        unit: "mg",
+        candidates: [
+          {
+            product_id: "ultimate-efa",
+            amount: 137,
+            breadth: 3,
+            price: 29.99
+          },
+          {
+            product_id: "ultimate-efa-plus",
+            amount: 120,
+            breadth: 3,
+            price: 46.99
+          }
+        ]
+      }
+    }
+  };
+
+  // assets/js/src/state/recommender.ts
+  var W_ADEQ = 0.6;
+  var W_BREADTH = 0.3;
+  var W_VALUE = 0.1;
+  var BREADTH_HALF = 5;
+  var DATA = RecommenderDataSchema.parse(product_recommender_data_default);
+  function breadthScore(n) {
+    return n / (n + BREADTH_HALF);
+  }
+  function rankSources(slug, targetLow = null) {
+    const entry = DATA.essentials[slug];
+    if (entry === void 0 || entry.candidates.length === 0) {
+      return [];
+    }
+    const { unit, candidates } = entry;
+    const maxAmount = candidates.reduce((m, c) => c.amount > m ? c.amount : m, 0);
+    const useTarget = targetLow !== null && targetLow > 0;
+    const cpuOf = (price, amount) => price !== null && amount > 0 ? price / amount : null;
+    const cpus = candidates.map((c) => cpuOf(c.price, c.amount)).filter((v) => v !== null);
+    const minCpu = cpus.length > 0 ? Math.min(...cpus) : 0;
+    const maxCpu = cpus.length > 0 ? Math.max(...cpus) : 0;
+    const ranked = candidates.map((c) => {
+      const adequacy = targetLow !== null && targetLow > 0 ? Math.min(1, c.amount / targetLow) : maxAmount > 0 ? c.amount / maxAmount : 0;
+      const bScore = breadthScore(c.breadth);
+      const cpu = cpuOf(c.price, c.amount);
+      const vScore = cpu === null || maxCpu === minCpu ? 0.5 : (maxCpu - cpu) / (maxCpu - minCpu);
+      const score = W_ADEQ * adequacy + W_BREADTH * bScore + W_VALUE * vScore;
+      return {
+        productId: c.product_id,
+        amount: c.amount,
+        unit,
+        breadth: c.breadth,
+        price: c.price,
+        adequacy,
+        adequacyIsTarget: useTarget,
+        breadthScore: bScore,
+        valueScore: vScore,
+        score
+      };
+    });
+    ranked.sort((a, b) => b.score - a.score || b.amount - a.amount || a.productId.localeCompare(b.productId));
+    return ranked;
+  }
+
   // assets/js/src/views/knowledge-products.ts
   function escHTML4(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -38597,21 +45511,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   function productCount() {
     return listProducts().length;
   }
-  var RAW_PRODUCTS = (() => {
-    const root = product_detail_data_default;
-    if (root !== null && typeof root === "object" && "products" in root) {
-      const p = root.products;
-      if (p !== null && typeof p === "object") {
-        return p;
-      }
-    }
-    return {};
-  })();
   function fmtAmt(a) {
     return a === void 0 || a === null ? "" : String(a);
   }
   function fmtMoney(n) {
     return n.toFixed(2);
+  }
+  function fmtNum(n) {
+    return String(Math.round(n * 100) / 100);
   }
   function countNutrients(p) {
     return p.components.reduce((s, c) => s + (c.nutrients?.length ?? 0), 0);
@@ -38752,43 +45659,51 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       <div class="kd-corpus__foot">SOURCE \xB7 Youngevity product label \xB7 composition + indicative listing price (\xA700.A \xB7 never a Wallach target)</div>
     </div>`;
   }
-  function collectNames(node, out) {
-    if (Array.isArray(node)) {
-      for (const el of node) {
-        collectNames(el, out);
-      }
-      return;
-    }
-    if (node !== null && typeof node === "object") {
-      for (const [k, v] of Object.entries(node)) {
-        if (k === "name" && typeof v === "string") {
-          out.add(v);
-        } else {
-          collectNames(v, out);
-        }
+  function targetLowOf(target) {
+    if (target !== null && typeof target === "object" && "low" in target) {
+      const low = target.low;
+      if (typeof low === "number" && low > 0) {
+        return low;
       }
     }
+    return null;
   }
-  function productsForEssential(key) {
-    const out = [];
-    for (const p of listProducts()) {
-      const names = /* @__PURE__ */ new Set();
-      collectNames(RAW_PRODUCTS[p.product_id], names);
-      let carries = false;
-      for (const nm of names) {
-        if (matchEssential(nm)?.name === key) {
-          carries = true;
-          break;
-        }
-      }
-      if (carries) {
-        out.push({ id: p.product_id, name: p.name });
-      }
-      if (out.length >= 12) {
-        break;
-      }
+  function rankedSourcesForEssential(key) {
+    const target = getTargets().find((e) => e.name === key);
+    if (target === void 0) {
+      return [];
     }
-    return out;
+    return rankSources(target.slug, targetLowOf(target.target)).map((r) => ({ ...r, name: getProduct(r.productId)?.name ?? r.productId }));
+  }
+  function renderSourceRow(s, rank) {
+    const amt = `${fmtNum(s.amount)} ${escHTML4(s.unit)}`;
+    const price = s.price !== null ? `$${fmtMoney(s.price)}` : "\u2014";
+    const breadth = `${s.breadth} NUTRIENT${s.breadth === 1 ? "" : "S"}`;
+    return `
+    <div class="kd-source" data-kd-product="${escHTML4(s.productId)}" role="button" tabindex="0">
+      <span class="kd-source__rank">${rank}</span>
+      <span class="kd-source__body">
+        <span class="kd-source__name">${escHTML4(s.name)}</span>
+        <span class="kd-source__meta">${escHTML4(breadth)} \xB7 ${price}</span>
+      </span>
+      <span class="kd-source__amt">${escHTML4(amt)}</span>
+    </div>`;
+  }
+  function renderEssentialSources(key) {
+    const sources = rankedSourcesForEssential(key);
+    if (sources.length === 0) {
+      return "";
+    }
+    const TOP = 8;
+    const rows = sources.slice(0, TOP).map((s, i) => renderSourceRow(s, i + 1)).join("");
+    const extra = sources.length - TOP;
+    const more = extra > 0 ? `<div class="kd-source-more">+ ${extra} more source${extra === 1 ? "" : "s"} in the vault</div>` : "";
+    const note = sources[0]?.adequacyIsTarget === true ? "" : '<div class="kd-source-note">Ranked by amount delivered \xB7 breadth \xB7 value. The <em>enough-vs-your-target</em> adequacy step activates once Wallach dose targets are mined.</div>';
+    return `
+    <div class="kd-essential-deep__sub">BEST SOURCES \xB7 YGY VAULT</div>
+    <div class="kd-sources">${rows}</div>
+    ${more}
+    ${note}`;
   }
 
   // assets/js/src/views/search-highlight.ts
@@ -38979,16 +45894,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const stance = target?.wallach_stance;
     const summary = stance?.summary;
     const citation = stance?.citation;
-    const products = productsForEssential(key);
     const wallachHTML = summary !== void 0 && summary.length > 0 ? `
       <div class="kd-essential-deep__sub">WALLACH SAYS</div>
       <p class="kd-essential-deep__body">${escHTML5(summary)}</p>
       ${citation !== void 0 ? `<div class="kd-essential-deep__source">CITED \xB7 <strong>${escHTML5(citation)}</strong></div>` : ""}` : "";
-    const productsHTML = products.length > 0 ? `
-      <div class="kd-essential-deep__sub">FOUND IN YGY VAULT</div>
-      <div class="kd-essential-deep__products">
-        ${products.map((p) => `<span class="kd-essential-deep__product-chip" data-kd-product="${escHTML5(p.id)}" role="button" tabindex="0">${escHTML5(p.name)}</span>`).join("")}
-      </div>` : "";
+    const sourcesHTML = renderEssentialSources(key);
     return `
     <div class="kd-essential-deep">
       <button class="kd-essential-deep__close" data-kd-action="essential-close" title="Close (Esc)">\xD7</button>
@@ -39009,7 +45919,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       ${renderOmegaClarity(e.key)}
       ${wallachHTML}
       ${corpusHTML}
-      ${productsHTML}
+      ${sourcesHTML}
     </div>`;
   }
   function renderEssentialsTab(snapshot, selectedKey) {
@@ -39837,7 +46747,17 @@ NEW live invariants (tools/invariants.py): products_verify shells eden/tools/pro
 
 Verify: catalog_seal.py exit 0 (3 files sealed); products_seal.py exit 0 (products_verify 0 problems); invariants 49/49 green. The key safety check: derived_artifacts_fresh stayed green AFTER sealing -- proving the sealed_at stamps I wrote into products.json (_meta) and the catalog files did NOT drift any of the 5 derived artifacts (the generators read only the substantive fields, never _meta/sealed_at). products_hash_integrity now matches the golden. node tools/build.mjs exit 0 (bundle carries no pillar bytes; unchanged).
 
-Honestly deferred: product_labels_accounted (from the README's seal-gate list) is a labeled WISH, not gated -- the 204 label images live in gitignored temporary/, so a portable board invariant can't read them; the full 243-file label accounting was already done by hand in the 2026-07-08 reconciliation. Remaining Phase-F work is view-affecting and separate: swap the products_embed source from the transitional eden-catalog.json to the sealed products.json, and unify the runtime coverage matcher onto the registry (the Coverage deep-dive, needs visual verification).` }, { id: "lg_mrch0jx7_z3ahet", ts: "2026-07-08T14:28:26.587486-05:00", surface: "products", kind: "round-close", summary: "A1: the product vault now derives from the sealed Products pillar (215) and the entire old scraped-catalog product system is deleted as poison; a new key-allowlist gate keeps marketing prose out of the vault for good.", detail: "The dashboard's product list used to come from an old catalog we built by scraping every Youngevity page -- and that marketing text had leaked into our real Wallach corpus (poison we're still cleaning). We pointed the app at the clean, sealed Products pillar from Phase F instead, deleted the entire old product system so it can never poison anything again, and added a gate that turns the board red if marketing copy ever sneaks back into the product vault. Going forward, product 'prose' comes from matching Wallach's own book claims to ingredients -- not scraped descriptions.\n\nproducts_embed.py re-sourced eden/eden-catalog.json -> sealed eden/products/products.json; projects each product to {canonical_name, nutrients:[{name,amount,unit}]}, flattening components[].nutrients[] + quantified blends[].ingredients[]/sub_ingredients[] (skips blend totals + non-numeric amounts), mirroring nutrient_resolve._iter_substances -> 215 products, 177 with >=1 quantified row (Taurine-in-blend verified). MANIFEST regimen-label-lookup input re-sourced. prices.json: 432 marketing `description` blobs stripped (price/BV/QV kept). DELETED (11): eden-catalog.json+draft+golden, eden_build/seal/verify.py, build_regimen_label_lookup.py, knowledge/products-db.json (+empty dir), eden/derived orphans (regimen-label-lookup, goal-recommendations-data, regimen-base-data-recommended). Retired eden_hash_integrity (guarded the deleted catalog) -> added no_product_marketing_prose (strict key-allowlist over the generated vault; negative-tested: inject what_it_does -> RED naming MARKETING-PROSE, regenerate -> clean). Also: knowledge.ts stale '59 products' copy fixed; 3 seal-script docstrings de-referenced the deleted eden_seal.py; refreshed a stale R3/R4 WISH-scope comment. Verify: build OK (tsc+esbuild), invariants 49/49 (net 0: -eden_hash_integrity +no_product_marketing_prose; charter_gates_present green), render_probe_knowledge/adopt/seeded PASS (Products tab '215 ENTRIES', real names, anyUnnamed=false). Visual sign-off: Luneth confirmed the data is right (real 215, no prose). Deferrals (Luneth-flagged next work): A2 runtime coverage-matcher unification onto the registry (coverage still uses the interim string matcher); the Products DETAIL-PANEL surface = the next chunk (list ALL 215 no-truncation + click a product -> full YGY detail panel like the condition deep-dive + essentials 'FOUND IN YGY VAULT' chips clickable); condition -> product suggestions later (needs cure->essential->product link); regimen-base-data.json swap is its own chunk. Memories: old-product-system-full-delete, product-detail-panel-vision." }, { id: "lg_mrcimvua_b1mj0l", ts: "2026-07-08T15:13:48.082901-05:00", surface: "knowledge", kind: "round-close", summary: "Products detail-panel surface: Knowledge>Products now lists ALL 215 products, each clickable to a full YGY detail panel (price/serving/directions/supplement-facts/blends), reachable from the product rows AND the essentials 'FOUND IN YGY VAULT' chips.", detail: "The Products tab used to be a placeholder -- 30 products max, nothing clickable. Now it lists all 215 Youngevity products, and clicking any one (or clicking a product 'chip' inside an essential's breakdown) opens a full detail panel built to match our condition deep-dive: the product name + SKU, a price band (retail + wholesale, labelled an indicative listing), then the whole label -- serving size, directions, supplement facts, blends with their ingredient text, and other ingredients. This is the first place the freshly-sealed Phase-F product data becomes genuinely useful to a reader.\n\nNEW eden/tools/product_detail_derive.py -> dashboard/assets/data/product-detail-data.json: full per-product display record from products.json + a price:{retail,wholesale} join from prices.json by ygy_id (215 products, all priced; source_label dropped). MANIFEST-registered (build_data/write_data, compare=json) so build_embeds + derived_artifacts_fresh pick it up. NEW views/knowledge-products.ts (mirrors knowledge-corpus.ts): renderProductsTab (list ALL, each data-kd-product), renderProductDeep (the panel), productsForEssential (registry-resolved {id,name} chips via state/coverage.matchEssential, walking every nutrient/blend-ingredient/sub-ingredient name). NEW core/schemas/product-detail.ts (ProductDetailSchema, loose/passthrough at the leaves). Wired views/knowledge.ts: selectedProduct state threaded through renderShell/renderTab; a [data-kd-product] click branch (toggle + switch to the Products tab) + a product-close action; the essentials deep-dive chips became data-kd-product buttons; removed the old placeholder renderProductsTab/readProducts/vaultProductsFor + the slim regimen-label-lookup import (that vault stays solely for the Regimen/coverage path). kd-product-deep__* CSS on the kd-essential-deep base (drawer-knowledge.css) + pointer/hover on the chips. Extended no_product_marketing_prose to recursively scan the detail artifact for any marketing-prose KEY (what_it_does/tagline/description/...) so the price join can never re-import a stripped description; negative-tested (a nested `description` -> RED naming the path, restore clean). BUG (found by the render probe -> Products tab came up EMPTY, no page error): 8 %DV-only nutrient rows carry amount:null, and ProductNutrientRowSchema.amount was optional-but-not-nullable, so z.record rejected the whole artifact and listProducts() returned []. Fixed amount + label_iu to nullable and fmtAmt to accept null. Verify: tsc + eslint clean; invariants 49/49; render_probe_knowledge PASS (head 'PRODUCTS - 215 - YOUNGEVITY', rowCount 215, clickable 215, row->panel shows price+component+facts/blend, essentials chip (12 for Magnesium)->panel on the Products tab, chip cursor=pointer). Visual sign-off: Luneth approved the surface (deferring global styling touch-ups to one end pass) and requested the chip pointer cursor, which was added + probe-guarded. Deferrals: conditions->product suggestions (post-mining; needs the cure->essential->product link); the A2 runtime coverage-matcher unification onto the registry; the regimen-base-data.json swap; a global styling pass. Memory: product-detail-panel-vision." }, { id: "lg_mrclq86a_j7apn3", ts: "2026-07-08T16:40:22.882577-05:00", surface: "coverage", kind: "round-close", summary: "A2: Coverage nutrient-matcher unified onto the ONE registry resolver (label name -> canon slug -> target); parity gate proves TS resolveSlug == Python resolve over all 1360 pillar names; default-stack coverage byte-identical (0 diffs); board 50/50, vitest 4/4.", detail: "Plain: the Coverage screen used to guess which of the 90 nutrients each ingredient counts toward using its own hand-written name-matcher, separate from the rigorous resolver the Products database uses - two answers to one question (it silently dropped 'Thiamin'). A2 routes Coverage through that one resolver, so an ingredient always credits the same nutrient everywhere; the covered numbers on the default stack are unchanged (verified) - it's just correct-by-construction now and more robust.\n\nTech: NEW eden/tools/nutrient_resolver_embed.py -> dashboard/assets/data/nutrient-resolver-data.json (MANIFEST-registered, freshness-gated), projecting nutrient_resolve.py's identity tables. NEW core/nutrient-resolver.ts::resolveSlug (faithful TS port) + core/schemas/nutrient-resolver.ts. state/coverage.ts rewritten: label name -> canon slug -> target via a bySlug index (matchToEssential/cleanName/buildByName deleted; toMg/classify unchanged, IU-native). targets_derive.py emits per-essential slug (EssentialSchema types it). nutrient_resolve.py: hoisted FA_PATTERNS/STEREO_PREFIXES/OMEGA_DIGIT, added parenthetical-strip + explicit-Omega-N-wins (fixes 2 dropped pillar omega-3 rows). RegimenNutrientSchema gains optional form. NEW critical invariant nutrient_resolver_parity (two-layer over all 1360 distinct pillar (name,form): committed fixture == live resolve() AND an artifact-driven resolver == resolve()) + vitest (nutrient-resolver.test.ts + coverage.test.ts); npm test glob fixed to run the whole suite.\n\nVerified: board 50/50 (0 new reds), vitest 4/4, tsc+esbuild clean, render probes x4 PASS (0 page errors), base-foundation coverage byte-identical to the old matcher. Scope kept to IDENTITY (units IU-native = WISH). NEXT chunk (Luneth 2026-07-08): Omega-9 canon correction - the 90-nutrients graphic mislabels Omega-9 as 'Arachidonic' (it is Oleic Acid) - plus per-omega clarity alert boxes." }, { id: "lg_mrcmwu8b_d7njdv", ts: "2026-07-08T17:13:31.019976-05:00", surface: "knowledge", kind: "round-close", summary: "Omega-9 label correction: the 90-nutrients graphic mislabeled Omega-9 as 'Arachidonic' (it is Oleic Acid). Corrected labels across the sealed canon (re-sealed, kv=305) + join-keys + derived; added a per-omega non-Wallach clarity alert on the essentials deep-dive. Board 50/50.", detail: "Plain: Luneth caught that our authoritative 90-nutrients graphic wrongly labels the Omega-9 fatty acid 'arachidonic' -- arachidonic is actually an Omega-6; Omega-9 is Oleic Acid. We fixed the labels everywhere and added a small clearly-marked 'for clarity' box on each omega's detail page so the naming can never confuse anyone again. Wallach's own words are untouched.\n\nTech: corrected the 3 omega layout_keys in the SEALED essentials-canon.json (Omega-3 = Alpha-Linolenic Acid/ALA, Omega-6 = Linoleic Acid/LA, Omega-9 = Oleic Acid/OA) + re-sealed via corpus_seal.py (Luneth-authorized; knowledge_version=305, corpus_verify PASS). The layout_key is the coverage<->snapshot join key, so it changed in lockstep across coverage-layout-skeleton (key+hint), scanner-corpus-data (keys), regimen-base-data (names); targets/coverage-layout/corpus-embed regenerated. NEW non-Wallach clarity store fatty-acid-clarity-data.json (+ Zod schema + MANIFEST accounted) rendered as a per-omega kd-omega alert in views/knowledge.ts (CSS in drawer-knowledge.css); GLA corrected to Gamma-Linolenic Acid. nutrient_resolve.py comment + self-test updated. Luneth removed the redundant top clarity tag (bottom disclaimer suffices).\n\nVerified: board 50/50, tsc+esbuild clean, a targeted puppeteer check on all 3 omega deep-dives 8/8 (correct headers, ALA+EPA+DHA / LA+GLA / OA, all marked non-Wallach, zero arachidonic in labels, 0 page errors); render probes PASS. Wallach's verbatim ('linoleic, linolenic, and arachidonic acids') stays as-is; the arachidonic->omega-6 resolver keyword stays (correct). Memory essentials-authority-graphic corrected so no future session restores arachidonic. NEXT: A3 cost-per-nutrient recommender." }];
+Honestly deferred: product_labels_accounted (from the README's seal-gate list) is a labeled WISH, not gated -- the 204 label images live in gitignored temporary/, so a portable board invariant can't read them; the full 243-file label accounting was already done by hand in the 2026-07-08 reconciliation. Remaining Phase-F work is view-affecting and separate: swap the products_embed source from the transitional eden-catalog.json to the sealed products.json, and unify the runtime coverage matcher onto the registry (the Coverage deep-dive, needs visual verification).` }, { id: "lg_mrch0jx7_z3ahet", ts: "2026-07-08T14:28:26.587486-05:00", surface: "products", kind: "round-close", summary: "A1: the product vault now derives from the sealed Products pillar (215) and the entire old scraped-catalog product system is deleted as poison; a new key-allowlist gate keeps marketing prose out of the vault for good.", detail: "The dashboard's product list used to come from an old catalog we built by scraping every Youngevity page -- and that marketing text had leaked into our real Wallach corpus (poison we're still cleaning). We pointed the app at the clean, sealed Products pillar from Phase F instead, deleted the entire old product system so it can never poison anything again, and added a gate that turns the board red if marketing copy ever sneaks back into the product vault. Going forward, product 'prose' comes from matching Wallach's own book claims to ingredients -- not scraped descriptions.\n\nproducts_embed.py re-sourced eden/eden-catalog.json -> sealed eden/products/products.json; projects each product to {canonical_name, nutrients:[{name,amount,unit}]}, flattening components[].nutrients[] + quantified blends[].ingredients[]/sub_ingredients[] (skips blend totals + non-numeric amounts), mirroring nutrient_resolve._iter_substances -> 215 products, 177 with >=1 quantified row (Taurine-in-blend verified). MANIFEST regimen-label-lookup input re-sourced. prices.json: 432 marketing `description` blobs stripped (price/BV/QV kept). DELETED (11): eden-catalog.json+draft+golden, eden_build/seal/verify.py, build_regimen_label_lookup.py, knowledge/products-db.json (+empty dir), eden/derived orphans (regimen-label-lookup, goal-recommendations-data, regimen-base-data-recommended). Retired eden_hash_integrity (guarded the deleted catalog) -> added no_product_marketing_prose (strict key-allowlist over the generated vault; negative-tested: inject what_it_does -> RED naming MARKETING-PROSE, regenerate -> clean). Also: knowledge.ts stale '59 products' copy fixed; 3 seal-script docstrings de-referenced the deleted eden_seal.py; refreshed a stale R3/R4 WISH-scope comment. Verify: build OK (tsc+esbuild), invariants 49/49 (net 0: -eden_hash_integrity +no_product_marketing_prose; charter_gates_present green), render_probe_knowledge/adopt/seeded PASS (Products tab '215 ENTRIES', real names, anyUnnamed=false). Visual sign-off: Luneth confirmed the data is right (real 215, no prose). Deferrals (Luneth-flagged next work): A2 runtime coverage-matcher unification onto the registry (coverage still uses the interim string matcher); the Products DETAIL-PANEL surface = the next chunk (list ALL 215 no-truncation + click a product -> full YGY detail panel like the condition deep-dive + essentials 'FOUND IN YGY VAULT' chips clickable); condition -> product suggestions later (needs cure->essential->product link); regimen-base-data.json swap is its own chunk. Memories: old-product-system-full-delete, product-detail-panel-vision." }, { id: "lg_mrcimvua_b1mj0l", ts: "2026-07-08T15:13:48.082901-05:00", surface: "knowledge", kind: "round-close", summary: "Products detail-panel surface: Knowledge>Products now lists ALL 215 products, each clickable to a full YGY detail panel (price/serving/directions/supplement-facts/blends), reachable from the product rows AND the essentials 'FOUND IN YGY VAULT' chips.", detail: "The Products tab used to be a placeholder -- 30 products max, nothing clickable. Now it lists all 215 Youngevity products, and clicking any one (or clicking a product 'chip' inside an essential's breakdown) opens a full detail panel built to match our condition deep-dive: the product name + SKU, a price band (retail + wholesale, labelled an indicative listing), then the whole label -- serving size, directions, supplement facts, blends with their ingredient text, and other ingredients. This is the first place the freshly-sealed Phase-F product data becomes genuinely useful to a reader.\n\nNEW eden/tools/product_detail_derive.py -> dashboard/assets/data/product-detail-data.json: full per-product display record from products.json + a price:{retail,wholesale} join from prices.json by ygy_id (215 products, all priced; source_label dropped). MANIFEST-registered (build_data/write_data, compare=json) so build_embeds + derived_artifacts_fresh pick it up. NEW views/knowledge-products.ts (mirrors knowledge-corpus.ts): renderProductsTab (list ALL, each data-kd-product), renderProductDeep (the panel), productsForEssential (registry-resolved {id,name} chips via state/coverage.matchEssential, walking every nutrient/blend-ingredient/sub-ingredient name). NEW core/schemas/product-detail.ts (ProductDetailSchema, loose/passthrough at the leaves). Wired views/knowledge.ts: selectedProduct state threaded through renderShell/renderTab; a [data-kd-product] click branch (toggle + switch to the Products tab) + a product-close action; the essentials deep-dive chips became data-kd-product buttons; removed the old placeholder renderProductsTab/readProducts/vaultProductsFor + the slim regimen-label-lookup import (that vault stays solely for the Regimen/coverage path). kd-product-deep__* CSS on the kd-essential-deep base (drawer-knowledge.css) + pointer/hover on the chips. Extended no_product_marketing_prose to recursively scan the detail artifact for any marketing-prose KEY (what_it_does/tagline/description/...) so the price join can never re-import a stripped description; negative-tested (a nested `description` -> RED naming the path, restore clean). BUG (found by the render probe -> Products tab came up EMPTY, no page error): 8 %DV-only nutrient rows carry amount:null, and ProductNutrientRowSchema.amount was optional-but-not-nullable, so z.record rejected the whole artifact and listProducts() returned []. Fixed amount + label_iu to nullable and fmtAmt to accept null. Verify: tsc + eslint clean; invariants 49/49; render_probe_knowledge PASS (head 'PRODUCTS - 215 - YOUNGEVITY', rowCount 215, clickable 215, row->panel shows price+component+facts/blend, essentials chip (12 for Magnesium)->panel on the Products tab, chip cursor=pointer). Visual sign-off: Luneth approved the surface (deferring global styling touch-ups to one end pass) and requested the chip pointer cursor, which was added + probe-guarded. Deferrals: conditions->product suggestions (post-mining; needs the cure->essential->product link); the A2 runtime coverage-matcher unification onto the registry; the regimen-base-data.json swap; a global styling pass. Memory: product-detail-panel-vision." }, { id: "lg_mrclq86a_j7apn3", ts: "2026-07-08T16:40:22.882577-05:00", surface: "coverage", kind: "round-close", summary: "A2: Coverage nutrient-matcher unified onto the ONE registry resolver (label name -> canon slug -> target); parity gate proves TS resolveSlug == Python resolve over all 1360 pillar names; default-stack coverage byte-identical (0 diffs); board 50/50, vitest 4/4.", detail: "Plain: the Coverage screen used to guess which of the 90 nutrients each ingredient counts toward using its own hand-written name-matcher, separate from the rigorous resolver the Products database uses - two answers to one question (it silently dropped 'Thiamin'). A2 routes Coverage through that one resolver, so an ingredient always credits the same nutrient everywhere; the covered numbers on the default stack are unchanged (verified) - it's just correct-by-construction now and more robust.\n\nTech: NEW eden/tools/nutrient_resolver_embed.py -> dashboard/assets/data/nutrient-resolver-data.json (MANIFEST-registered, freshness-gated), projecting nutrient_resolve.py's identity tables. NEW core/nutrient-resolver.ts::resolveSlug (faithful TS port) + core/schemas/nutrient-resolver.ts. state/coverage.ts rewritten: label name -> canon slug -> target via a bySlug index (matchToEssential/cleanName/buildByName deleted; toMg/classify unchanged, IU-native). targets_derive.py emits per-essential slug (EssentialSchema types it). nutrient_resolve.py: hoisted FA_PATTERNS/STEREO_PREFIXES/OMEGA_DIGIT, added parenthetical-strip + explicit-Omega-N-wins (fixes 2 dropped pillar omega-3 rows). RegimenNutrientSchema gains optional form. NEW critical invariant nutrient_resolver_parity (two-layer over all 1360 distinct pillar (name,form): committed fixture == live resolve() AND an artifact-driven resolver == resolve()) + vitest (nutrient-resolver.test.ts + coverage.test.ts); npm test glob fixed to run the whole suite.\n\nVerified: board 50/50 (0 new reds), vitest 4/4, tsc+esbuild clean, render probes x4 PASS (0 page errors), base-foundation coverage byte-identical to the old matcher. Scope kept to IDENTITY (units IU-native = WISH). NEXT chunk (Luneth 2026-07-08): Omega-9 canon correction - the 90-nutrients graphic mislabels Omega-9 as 'Arachidonic' (it is Oleic Acid) - plus per-omega clarity alert boxes." }, { id: "lg_mrcmwu8b_d7njdv", ts: "2026-07-08T17:13:31.019976-05:00", surface: "knowledge", kind: "round-close", summary: "Omega-9 label correction: the 90-nutrients graphic mislabeled Omega-9 as 'Arachidonic' (it is Oleic Acid). Corrected labels across the sealed canon (re-sealed, kv=305) + join-keys + derived; added a per-omega non-Wallach clarity alert on the essentials deep-dive. Board 50/50.", detail: "Plain: Luneth caught that our authoritative 90-nutrients graphic wrongly labels the Omega-9 fatty acid 'arachidonic' -- arachidonic is actually an Omega-6; Omega-9 is Oleic Acid. We fixed the labels everywhere and added a small clearly-marked 'for clarity' box on each omega's detail page so the naming can never confuse anyone again. Wallach's own words are untouched.\n\nTech: corrected the 3 omega layout_keys in the SEALED essentials-canon.json (Omega-3 = Alpha-Linolenic Acid/ALA, Omega-6 = Linoleic Acid/LA, Omega-9 = Oleic Acid/OA) + re-sealed via corpus_seal.py (Luneth-authorized; knowledge_version=305, corpus_verify PASS). The layout_key is the coverage<->snapshot join key, so it changed in lockstep across coverage-layout-skeleton (key+hint), scanner-corpus-data (keys), regimen-base-data (names); targets/coverage-layout/corpus-embed regenerated. NEW non-Wallach clarity store fatty-acid-clarity-data.json (+ Zod schema + MANIFEST accounted) rendered as a per-omega kd-omega alert in views/knowledge.ts (CSS in drawer-knowledge.css); GLA corrected to Gamma-Linolenic Acid. nutrient_resolve.py comment + self-test updated. Luneth removed the redundant top clarity tag (bottom disclaimer suffices).\n\nVerified: board 50/50, tsc+esbuild clean, a targeted puppeteer check on all 3 omega deep-dives 8/8 (correct headers, ALA+EPA+DHA / LA+GLA / OA, all marked non-Wallach, zero arachidonic in labels, 0 page errors); render probes PASS. Wallach's verbatim ('linoleic, linolenic, and arachidonic acids') stays as-is; the arachidonic->omega-6 resolver keyword stays (correct). Memory essentials-authority-graphic corrected so no future session restores arachidonic. NEXT: A3 cost-per-nutrient recommender." }, { id: "lg_mrcoijtx_8wxq41", ts: "2026-07-08T17:58:23.589855-05:00", surface: "Knowledge/Products", kind: "round-close", summary: "A3: Knowledge Essentials 'BEST SOURCES' cost-per-nutrient ranker = 0.6 adequacy + 0.3 breadth + 0.1 value over a NEW freshness-gated recommender artifact. Adequacy real for 34 numeric targets, proxy for 57 gaps. Board 50/50, vitest 7/7, probe PASS; Luneth signed off.", detail: `On each nutrient's detail page in the Knowledge drawer, the flat "found in these products" chip list is now a RANKED "best sources" list: for a chosen nutrient it orders the Youngevity products that deliver it, best first, by a transparent score \u2014 how well it meets the goal (adequacy), how well-rounded the product is (breadth), and value (cost per unit) \u2014 and each row clicks through to that product. "Adequacy" is Wallach's saturating idea: ENOUGH, not most \u2014 min(1, delivered/target). A correction rode along: the prior handoff wrongly said all 91 targets are honest gaps; 34 essentials already carry a numeric Wallach target (base-line dose claims), so adequacy is REAL for those now (e.g. Magnesium 1000mg), and the other 57 use an honest, clearly-labeled amount-potency proxy that upgrades to real adequacy automatically as book-mining fills targets.
+
+DATA \u2014 NEW eden/tools/recommender_derive.py \u2192 dashboard/assets/data/product-recommender-data.json: per essential, {product_id, amount(canonical unit), breadth(distinct essentials the product delivers), price(retail)} candidate rows, sorted amount-desc. Re-derives products_composition_derive.build_data() in-memory (no logic duplication) + joins prices.json by ygy_id. Deterministic (no timestamp); MANIFEST-registered \u2192 freshness-gated (derived_artifacts_fresh, now 8 artifacts) + counted (data_artifacts_accounted, now 16 files). \xA700.A-clean: composition + retail price only \u2014 NO Wallach number in the artifact.
+
+LOGIC \u2014 NEW core/schemas/recommender.ts (+ schemas barrel) + state/recommender.ts::rankSources(slug, targetLow?). Score = 0.6\xB7adequacy + 0.3\xB7breadth + 0.1\xB7value, weights = tunable module consts. adequacy = min(1, delivered/target) when a numeric target is supplied, else the potency proxy delivered/best-in-set (adequacyIsTarget flag distinguishes). breadth saturates n/(n+5). value = min-max-inverted cost-per-delivered-unit, a low-weight band. rankSources reads the target via the view's getTargets\u2192target.low, so new mined targets light adequacy up with no code change.
+
+VIEW \u2014 views/knowledge-products.ts: productsForEssential/RAW_PRODUCTS/collectNames DELETED (dead after A2's registry unification) \u2192 rankedSourcesForEssential + renderEssentialSources (BEST SOURCES block: rank \xB7 name \xB7 N nutrients \xB7 $price \xB7 delivered amount; top-8 + "+N more"; honest-gap note shown ONLY when there is no numeric target). views/knowledge.ts renderEssentialDeep now calls renderEssentialSources. drawer-knowledge.css: old .kd-essential-deep__product-chip styles removed, NEW .kd-source* row styles added (design-system tokens, clickable rows).
+
+VERIFIED \u2014 board 50/50 (0 new reds; +1 derived artifact, +1 accounted file), vitest 7/7 (5 NEW recommender tests: best-first order, potency-proxy at no-target, saturating adequacy capped at 1 with a target, determinism, unknown-slug \u2192 []), tsc + esbuild clean, render_probe_knowledge PASS (asserts the ranked list renders with header, rank #1 + name + delivered amount, a row click opens the product panel on the Products tab, the honest-gap note shows on Boron and hides on Magnesium). Magnesium + Boron clip screenshots self-checked \u2014 breadth correctly breaks amount ties (Reverse! 400mg/27-nutrients outranks Cal/Mag 400mg/6-nutrients). Visual sign-off: Luneth approved ("phenomenal").
+
+DEFERRALS \u2014 recommender weight-tuning (0.6/0.3/0.1 is the locked start; revisit post-mining); product-recommender-data onto the prose_contained clean surface (currently accounted); JS size budget (dist gzip ~846KB vs the 250KB budget \u2014 PRE-EXISTING/structural: the offline bundle inlines all pillar data uncompressed; A3 added ~17KB; the blueprint remedy is code-splitting into lazy chunks, deferred).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

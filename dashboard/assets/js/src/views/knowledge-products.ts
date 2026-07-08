@@ -24,7 +24,8 @@ import {
   ProductDetailDataSchema,
   type ProductNutrientRow,
 } from '../core/schemas/index.js';
-import { matchEssential } from '../state/coverage.js';
+import { getTargets } from '../state/coverage.js';
+import { type RankedSource, rankSources } from '../state/recommender.js';
 
 function escHTML(s: unknown): string {
   return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', '\'': '&#39;' }[c] as string));
@@ -61,22 +62,6 @@ export function productCount(): number {
   return listProducts().length;
 }
 
-/**
- * The raw products map (unknown-typed) — used only by productsForEssential to
- * walk EVERY nutrient/ingredient/sub-ingredient name (levels the display schema
- * intentionally doesn't type). Display uses the validated ProductDetail above.
- */
-const RAW_PRODUCTS: Record<string, unknown> = (() => {
-  const root: unknown = productDetailData;
-  if (root !== null && typeof root === 'object' && 'products' in root) {
-    const p: unknown = root.products;
-    if (p !== null && typeof p === 'object') {
-      return p as Record<string, unknown>;
-    }
-  }
-  return {};
-})();
-
 // ─── Formatting helpers ────────────────────────────────────────────────────
 
 function fmtAmt(a: number | string | null | undefined): string {
@@ -85,6 +70,11 @@ function fmtAmt(a: number | string | null | undefined): string {
 
 function fmtMoney(n: number): string {
   return n.toFixed(2);
+}
+
+/** Compact amount: drop trailing zeros (200 not 200.0000, 787.5 kept), cap at 2 dp. */
+function fmtNum(n: number): string {
+  return String(Math.round(n * 100) / 100);
 }
 
 /** Count of quantified nutrient rows across a product's components (list meta). */
@@ -254,55 +244,81 @@ export function renderProductDeep(id: string): string {
     </div>`;
 }
 
-// ─── Essentials deep-dive chips (products that carry an essential) ──────────
+// ─── Essentials deep-dive: BEST SOURCES (the cost-per-nutrient recommender) ──
 
-/**
- * Recursively collect every `name` string in a product subtree (nutrients, blend
- * ingredients, sub-ingredients) — the full set to resolve against.
- */
-function collectNames(node: unknown, out: Set<string>): void {
-  if (Array.isArray(node)) {
-    for (const el of node) {
-      collectNames(el, out);
-    }
-    return;
-  }
-  if (node !== null && typeof node === 'object') {
-    for (const [k, v] of Object.entries(node)) {
-      if (k === 'name' && typeof v === 'string') {
-        out.add(v);
-      }
-      else {
-        collectNames(v, out);
-      }
-    }
-  }
+export interface RankedSourceRow extends RankedSource {
+  /** Product display name, joined from the display record. */
+  name: string;
 }
 
 /**
- * Products whose composition delivers `key` (a coverage essential name), resolved
- * via the SAME matcher the coverage classifier uses (state/coverage.matchEssential)
- * so the chips agree with the coverage math. Returns {id, name} so the chip can
- * link to the product detail panel. Capped at 12.
+ * Numeric Wallach maintenance amount from a target's (unknown-typed) blob, or null.
+ * Today every target is an honest gap (no `low`), so this returns null and the ranker
+ * uses the amount-potency proxy; the moment dose-mining fills a `low`, adequacy lights up.
  */
-export function productsForEssential(key: string): { id: string; name: string }[] {
-  const out: { id: string; name: string }[] = [];
-  for (const p of listProducts()) {
-    const names = new Set<string>();
-    collectNames(RAW_PRODUCTS[p.product_id], names);
-    let carries = false;
-    for (const nm of names) {
-      if (matchEssential(nm)?.name === key) {
-        carries = true;
-        break;
-      }
-    }
-    if (carries) {
-      out.push({ id: p.product_id, name: p.name });
-    }
-    if (out.length >= 12) {
-      break;
+function targetLowOf(target: unknown): number | null {
+  if (target !== null && typeof target === 'object' && 'low' in target) {
+    const low = (target as { low?: unknown }).low;
+    if (typeof low === 'number' && low > 0) {
+      return low;
     }
   }
-  return out;
+  return null;
+}
+
+/**
+ * The vault products that deliver essential `key`, RANKED best-first by the match score
+ * (state/recommender.rankSources), with each product's display name joined in. `key` is
+ * the deep-dive layout name; its canon slug + any Wallach target come from getTargets.
+ */
+export function rankedSourcesForEssential(key: string): RankedSourceRow[] {
+  const target = getTargets().find(e => e.name === key);
+  if (target === undefined) {
+    return [];
+  }
+  return rankSources(target.slug, targetLowOf(target.target))
+    .map(r => ({ ...r, name: getProduct(r.productId)?.name ?? r.productId }));
+}
+
+/** One ranked source row — clickable (data-kd-product) to the product detail panel. */
+function renderSourceRow(s: RankedSourceRow, rank: number): string {
+  const amt = `${fmtNum(s.amount)} ${escHTML(s.unit)}`;
+  const price = s.price !== null ? `$${fmtMoney(s.price)}` : '—';
+  const breadth = `${s.breadth} NUTRIENT${s.breadth === 1 ? '' : 'S'}`;
+  return `
+    <div class="kd-source" data-kd-product="${escHTML(s.productId)}" role="button" tabindex="0">
+      <span class="kd-source__rank">${rank}</span>
+      <span class="kd-source__body">
+        <span class="kd-source__name">${escHTML(s.name)}</span>
+        <span class="kd-source__meta">${escHTML(breadth)} · ${price}</span>
+      </span>
+      <span class="kd-source__amt">${escHTML(amt)}</span>
+    </div>`;
+}
+
+/**
+ * The "BEST SOURCES" block for the essentials deep-dive — the ranked vault products that
+ * deliver the essential (top-N + an overflow line). Returns '' when nothing delivers it.
+ * Shows the honest-gap note until a Wallach target exists (then the keystone is real
+ * saturating adequacy, not the amount-potency proxy).
+ */
+export function renderEssentialSources(key: string): string {
+  const sources = rankedSourcesForEssential(key);
+  if (sources.length === 0) {
+    return '';
+  }
+  const TOP = 8;
+  const rows = sources.slice(0, TOP).map((s, i) => renderSourceRow(s, i + 1)).join('');
+  const extra = sources.length - TOP;
+  const more = extra > 0
+    ? `<div class="kd-source-more">+ ${extra} more source${extra === 1 ? '' : 's'} in the vault</div>`
+    : '';
+  const note = sources[0]?.adequacyIsTarget === true
+    ? ''
+    : '<div class="kd-source-note">Ranked by amount delivered · breadth · value. The <em>enough-vs-your-target</em> adequacy step activates once Wallach dose targets are mined.</div>';
+  return `
+    <div class="kd-essential-deep__sub">BEST SOURCES · YGY VAULT</div>
+    <div class="kd-sources">${rows}</div>
+    ${more}
+    ${note}`;
 }

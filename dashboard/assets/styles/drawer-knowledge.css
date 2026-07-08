@@ -484,18 +484,51 @@
   margin-top: var(--ds-space-2);
 }
 #drawer-knowledge-mount .kd-essential-deep__source strong { color: var(--ds-accent-deep); font-weight: 600; }
-#drawer-knowledge-mount .kd-essential-deep__products { display: flex; flex-wrap: wrap; gap: 4px; margin-top: var(--ds-space-2); }
-#drawer-knowledge-mount .kd-essential-deep__product-chip {
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  letter-spacing: var(--ds-track-wide);
-  text-transform: uppercase;
-  color: var(--ds-tech);
-  background: var(--ds-tech-wash);
-  padding: 3px 8px;
-  border-radius: var(--ds-radius-pill);
-  font-weight: 600;
+/* ─── Essentials deep-dive BEST SOURCES — the cost-per-nutrient recommender.
+       Ranked vault products that deliver the essential; each row clicks through to
+       the product detail panel (data-kd-product). Replaced the old flat "FOUND IN
+       YGY VAULT" chip list (its chip styles are gone; see git history). ─── */
+#drawer-knowledge-mount .kd-sources { display: flex; flex-direction: column; gap: var(--ds-space-1); margin-top: var(--ds-space-2); }
+#drawer-knowledge-mount .kd-source {
+  display: flex; align-items: center; gap: var(--ds-space-2);
+  padding: var(--ds-space-2) var(--ds-space-3);
+  background: var(--ds-accent-wash);
+  border-radius: var(--ds-radius-xs);
+  border-left: 2px solid transparent;
+  cursor: pointer;
+  transition: background var(--ds-motion-fast) var(--ds-ease-out), border-color var(--ds-motion-fast) var(--ds-ease-out);
 }
+#drawer-knowledge-mount .kd-source:hover { background: var(--ds-tech-wash); border-left-color: var(--ds-tech); }
+#drawer-knowledge-mount .kd-source__rank {
+  flex: 0 0 auto; width: 18px; text-align: center;
+  font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); font-weight: 700;
+  color: var(--ds-tech);
+}
+#drawer-knowledge-mount .kd-source__body { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+#drawer-knowledge-mount .kd-source__name {
+  font-family: var(--ds-font-display-interface); font-size: var(--ds-text-sm); font-weight: 700;
+  color: var(--ds-ink); letter-spacing: 0.02em; text-transform: uppercase;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+#drawer-knowledge-mount .kd-source__meta {
+  font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-soft);
+}
+#drawer-knowledge-mount .kd-source__amt {
+  flex: 0 0 auto; white-space: nowrap;
+  font-family: var(--ds-font-mono); font-size: var(--ds-text-mini); font-weight: 700;
+  color: var(--ds-accent-deep);
+}
+#drawer-knowledge-mount .kd-source-more {
+  font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint);
+  margin-top: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-source-note {
+  font-family: var(--ds-font-sans); font-size: var(--ds-text-mini); line-height: 1.45;
+  color: var(--ds-ink-soft); margin-top: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-source-note em { font-style: italic; color: var(--ds-ink-medium); }
 
 /* ─── Non-essential ("bonus") nutrient — Omega-9: shown + covered, but not one
        of the 90. Distinct teal so it reads apart from the green/amber/neutral
@@ -1191,15 +1224,4 @@
   color: var(--ds-ink-faint);
   font-weight: 600;
   margin-right: 4px;
-}
-
-/* Essentials "FOUND IN YGY VAULT" chips are clickable (-> product detail panel) --
-   signal it: pointer cursor + a hover invert so they read as interactive. */
-#drawer-knowledge-mount .kd-essential-deep__product-chip {
-  cursor: pointer;
-  transition: background var(--ds-motion-fast) var(--ds-ease-out), color var(--ds-motion-fast) var(--ds-ease-out);
-}
-#drawer-knowledge-mount .kd-essential-deep__product-chip:hover {
-  background: var(--ds-tech);
-  color: var(--ds-paper-light);
 }
