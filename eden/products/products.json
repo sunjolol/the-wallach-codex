@@ -24495,6 +24495,216 @@
           "source_label": "ygy-super-greens-powder_label-suppfacts_0523.jpg"
         }
       ]
+    },
+    "fitshake-banana-cream": {
+      "product_id": "fitshake-banana-cream",
+      "name": "FitShake™ Banana Cream",
+      "sku": "USYG300012",
+      "ygy_id": "10599",
+      "components": [
+        {
+          "form": "powder",
+          "serving_size": "1 packet (37.1 g)",
+          "servings_per_container": 15,
+          "macros": {
+            "calories": {
+              "amount": 150,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 3.5,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "saturated_fat": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 5
+            },
+            "cholesterol": {
+              "amount": 70,
+              "unit": "mg",
+              "pct_dv": 23
+            },
+            "total_carbohydrate": {
+              "amount": 5,
+              "unit": "g",
+              "pct_dv": 2
+            },
+            "dietary_fiber": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "total_sugars": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "protein": {
+              "amount": 24,
+              "unit": "g",
+              "pct_dv": 48
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin D",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 125,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Calcium",
+              "amount": 120,
+              "unit": "mg",
+              "pct_dv": 9
+            },
+            {
+              "name": "Iron",
+              "amount": 0.7,
+              "unit": "mg",
+              "pct_dv": 4
+            },
+            {
+              "name": "Sodium",
+              "amount": 105,
+              "unit": "mg",
+              "pct_dv": 5
+            },
+            {
+              "name": "Potassium",
+              "amount": 210,
+              "unit": "mg",
+              "pct_dv": 4
+            },
+            {
+              "name": "Collagen",
+              "amount": 500,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "from hydrolyzed beef (Type I and III)"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Protein Blend",
+              "total": {
+                "amount": 34347,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Whey protein concentrate, organic flaxseed, organic coconut milk powder",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Whey protein concentrate"
+                },
+                {
+                  "pos": 2,
+                  "name": "Organic flaxseed"
+                },
+                {
+                  "pos": 3,
+                  "name": "Organic coconut milk powder"
+                }
+              ]
+            },
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 310,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Apple cider vinegar, green coffee bean extract, amylase, protease, glucoamylase, bromelain, lactase, cellulase, papain, pectinase, alpha-galactosidase, xylanase, beta-glucanase, maltase, lipase, invertase, hemicellulase, Bacillus subtilis ATCC122264 (1 billion CFU)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Apple cider vinegar"
+                },
+                {
+                  "pos": 2,
+                  "name": "Green coffee bean extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Amylase"
+                },
+                {
+                  "pos": 4,
+                  "name": "Protease"
+                },
+                {
+                  "pos": 5,
+                  "name": "Glucoamylase"
+                },
+                {
+                  "pos": 6,
+                  "name": "Bromelain"
+                },
+                {
+                  "pos": 7,
+                  "name": "Lactase"
+                },
+                {
+                  "pos": 8,
+                  "name": "Cellulase"
+                },
+                {
+                  "pos": 9,
+                  "name": "Papain"
+                },
+                {
+                  "pos": 10,
+                  "name": "Pectinase"
+                },
+                {
+                  "pos": 11,
+                  "name": "Alpha-galactosidase"
+                },
+                {
+                  "pos": 12,
+                  "name": "Xylanase"
+                },
+                {
+                  "pos": 13,
+                  "name": "Beta-glucanase"
+                },
+                {
+                  "pos": 14,
+                  "name": "Maltase"
+                },
+                {
+                  "pos": 15,
+                  "name": "Lipase"
+                },
+                {
+                  "pos": 16,
+                  "name": "Invertase"
+                },
+                {
+                  "pos": 17,
+                  "name": "Hemicellulase"
+                },
+                {
+                  "pos": 18,
+                  "name": "Bacillus subtilis",
+                  "standardization": "ATCC122264, 1 billion CFU"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Natural flavors",
+            "Rebaudioside A",
+            "Sunflower lecithin"
+          ],
+          "source_label": "banana-fitshake_pouch_0426_supp-facts_3.jpg"
+        }
+      ]
     }
   }
 }

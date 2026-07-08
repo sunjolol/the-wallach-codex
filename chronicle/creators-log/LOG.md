@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 422 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 423 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-07 23:24 UTC-05:00 · incident · products
+Correction + FitShake (+1, 189 total): I wrongly flagged FitShake Banana Cream as a missing label last entry — its label was on disk (banana- prefix my search missed). Extracted it; re-verified the real genuine-missing list = 9 items. warnings 25.
+  ↳ Honesty correction. In the prior round-close I logged FitShake Banana Cream as GENUINE MISSING for Luneth to grab tonight. That was wrong: the label `banana-fitshake_pouch_0426_supp-facts_3.jpg` was on disk the whole time -- my keyword disk-check searched 'fitshake' but the filename leads with 'banana-', and my first pass missed it. Caught it on a broader grep, verified identity, and extracted the product. eden/products/products.json 188->189 (+1): fitshake-banana-cream (USYG300012, ygy 10599) -- a protein/collagen meal shake: Protein Blend 34,347 mg (whey/flaxseed/coconut), Collagen 500 mg (hydrolyzed beef, Type I & III), a 310 mg ACV + green-coffee + 15-enzyme + Bacillus subtilis proprietary blend, plus Vitamin D/Ca/Fe/Na/K. Name 'FitShake Banana Cream' (dropped 'Youngevity' per the 2026-07-07 naming rule). warnings.json 24->25: 'Contains: Milk' (10599). Records corrected: MISSING-LABELS.md FitShake line flipped GENUINE MISSING -> RESOLVED; next-chunk.md genuine-missing note replaced with the VERIFIED list. After a broad alt-spelling grep, the real genuine-missing (no disk label) = 9: Activated Charcoal (USLF000112), Imortalium (USYG100080), Majestic Earth Mineral STX BOGO (USYG400401), Multi-Collagen Peptide Gummies (USYG100506), Super Collagen Shot (USYG300055), Taheebo (USLF000120), TrueDetox Tea (TL021PROD), XeraTest for Men (USYG100081), CardioBeets (USYG100071). Verify: products_verify OK (189 products, 195 components, 0 problems); invariants 46/46; node build OK, bundle re-inlined. Lesson: disk-checking a label needs a BROAD alt-spelling grep -- flavor/prefix-led filenames (banana-fitshake) are the same false-negative trap as the matcher's.
 
 ## 2026-07-07 23:17 UTC-05:00 · round-close · products
 Phase F U-range FINISH +5 (188 total): both Vitamin D3s, Ultimate S.M.A.R.T. FX, Ultimate Iodine, Super Greens Canister. Applied Luneth's naming rule (drop redundant 'Youngevity' prefix). U-range COMPLETE. Genuine-missing to grab: FitShake Banana Cream (no label).
@@ -785,7 +789,3 @@ SESSION 28 b4-b7 WRAPPED - Epigenetics Ch 18 mined through minerals batch 1 + th
 ## 2026-06-30 16:43 UTC-05:00 · round-close · knowledge/corpus
 SESSION 28 b7 - Epigenetics Ch 18 minerals batch 1. EPIGEN-060..063 (+4): mineral-forms framework (search-only: metallic 8-12% vs colloidal) + calcium/chromium/copper deficiency_sign (rich tables). kv197, claims 944, conditions 456 (0 new), search-only 98->99. Visual-verify owed.
   ↳ Minerals is the largest Ch 18 block (~60 elements, each with a deficiency table) — splitting across batches. Calcium (147 diseases: osteoporosis/arthritis/kidney stones/PMS/tetany/panic), chromium (glucose tolerance: diabetes/ADHD/bipolar), copper (prion-reframe: aneurysm/ptosis/cerebral palsy). No new conditions. Cesium-cancer noted for careful later handling. Board 31/31, probe green, synopsis auto-fires. Awaiting sign-off; b8 = cobalt/iodine/selenium/zinc/etc.
-
-## 2026-06-30 16:34 UTC-05:00 · round-close · knowledge/corpus
-SESSION 28 b6 - Epigenetics Ch 18 amino acids + essential fatty acids. EPIGEN-047..059 (+13: 9 mechanism + 4 deficiency_sign): 11 canon amino acids + taurine (non-canon -> other_substances) + omega-3/omega-6. kv196, claims 940, conditions 456 (0 new). Visual-verify owed.
-  ↳ Amino acids are function/biochemistry-focused with scattered condition links (methionine->fatty liver/anemia; taurine->cataracts; lysine->varicose/hemorrhoids/aneurysm; tryptophan->depression; EFA->thrombosis/skin/respiratory/depression); pure-function ones (histidine/isoleucine/threonine/valine) capture the bare stance. taurine non-canon -> other_substances. Board 31/31, search-only 98, probe green. Synopsis auto-fires. Awaiting sign-off before b7 (minerals).
