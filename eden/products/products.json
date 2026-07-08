@@ -19688,6 +19688,1835 @@
           "source_label": "tl011prod_t2l-truezyme-0620_panel-900x1200_1.jpg"
         }
       ]
+    },
+    "ultimate-cardio-fx": {
+      "product_id": "ultimate-cardio-fx",
+      "name": "Ultimate Cardio FX™ - 60 capsules",
+      "sku": "20683",
+      "ygy_id": "596",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 30,
+          "directions": "Take 2 capsules daily, or as directed by your healthcare professional. Store in a cool dry place.",
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 120,
+              "unit": "mg",
+              "pct_dv": 133,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Niacin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 125,
+              "form": "as inositol hexanicotinate",
+              "unit_detail": "NE"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 8,
+              "unit": "mg",
+              "pct_dv": 471,
+              "form": "as pyridoxal 5 phosphate"
+            },
+            {
+              "name": "Folate",
+              "amount": 1360,
+              "unit": "mcg",
+              "pct_dv": 206,
+              "form": "as folic acid (824 mcg folic acid)",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 4167,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 5,
+              "form": "as magnesium glycinate chelate"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 690,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Taurine, Garlic (bulb), Acetyl-L-Carnitine, Gingko (leaf), L-Arginine, Coenzyme Q-10, Hawthorn Berry",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Taurine"
+                },
+                {
+                  "pos": 2,
+                  "name": "Garlic",
+                  "part": "bulb"
+                },
+                {
+                  "pos": 3,
+                  "name": "Acetyl-L-Carnitine"
+                },
+                {
+                  "pos": 4,
+                  "name": "Gingko",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 5,
+                  "name": "L-Arginine"
+                },
+                {
+                  "pos": 6,
+                  "name": "Coenzyme Q-10"
+                },
+                {
+                  "pos": 7,
+                  "name": "Hawthorn Berry"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Gelatin capsule",
+            "Rice flour",
+            "Magnesium stearate",
+            "Silica"
+          ],
+          "source_label": "ult-cardio-fx_label-suppfacts_1221.jpg"
+        }
+      ]
+    },
+    "ultimate-cardio-stx": {
+      "product_id": "ultimate-cardio-stx",
+      "name": "Ultimate Cardio STX™ 30ct Box",
+      "sku": "USYG102683",
+      "ygy_id": "598",
+      "components": [
+        {
+          "form": "powder",
+          "serving_size": "1 packet (17 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 45,
+              "unit": null,
+              "pct_dv": null
+            },
+            "calories_from_fat": {
+              "amount": 0,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "saturated_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "total_carbohydrate": {
+              "amount": 11,
+              "unit": "g",
+              "pct_dv": 4
+            },
+            "dietary_fiber": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 7
+            },
+            "total_sugars": {
+              "amount": 8,
+              "unit": "g",
+              "pct_dv": 16
+            },
+            "protein": {
+              "amount": "<1",
+              "unit": "g",
+              "pct_dv": "<2"
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 18,
+              "unit": "mg",
+              "pct_dv": "<1"
+            },
+            {
+              "name": "Potassium",
+              "amount": 395,
+              "unit": "mg",
+              "pct_dv": 8
+            },
+            {
+              "name": "Vitamin A",
+              "amount": 0,
+              "unit": "iu",
+              "pct_dv": 0
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 60,
+              "unit": "mg",
+              "pct_dv": 67,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Niacin",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 625,
+              "form": "as niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 118,
+              "form": "as pyridoxine HCl"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 6,
+              "unit": "mcg",
+              "pct_dv": 250,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Boron",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Caffeine",
+              "amount": 120,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as caffeine anhydrous, green tea extract"
+            },
+            {
+              "name": "L-Citrulline",
+              "amount": 500,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "L-Arginine",
+              "amount": 1000,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Taurine",
+              "amount": 120,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "L-Tyrosine",
+              "amount": 120,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 250,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Cassis Pigment Extract (Blackcurrant S.D.), Maca Root Extract, Green Tea Extract, Damiana Extract, Panax Ginseng Powder Extract, Juice Dry Mandarin, Juice Dry Orange, Juice Dry Raspberry, Curcumin Extract, Ginger Extract",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Cassis Pigment",
+                  "form": "extract",
+                  "standardization": "Blackcurrant S.D."
+                },
+                {
+                  "pos": 2,
+                  "name": "Maca",
+                  "part": "root",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Green Tea",
+                  "form": "extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "Damiana",
+                  "form": "extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Panax Ginseng",
+                  "form": "powder extract"
+                },
+                {
+                  "pos": 6,
+                  "name": "Juice Dry Mandarin"
+                },
+                {
+                  "pos": 7,
+                  "name": "Juice Dry Orange"
+                },
+                {
+                  "pos": 8,
+                  "name": "Juice Dry Raspberry"
+                },
+                {
+                  "pos": 9,
+                  "name": "Curcumin",
+                  "form": "extract"
+                },
+                {
+                  "pos": 10,
+                  "name": "Ginger",
+                  "form": "extract"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Crystalline fructose",
+            "Fibersol-2 resistant maltodextrin",
+            "Citric acid",
+            "Maltodextrin",
+            "Natural flavors",
+            "Stevia",
+            "Beta carotene",
+            "Silica"
+          ],
+          "source_label": "ultimate_cardio_stx_suppfacts_0125.jpg"
+        }
+      ]
+    },
+    "ultimate-classic": {
+      "product_id": "ultimate-classic",
+      "name": "Ultimate Classic® - 32 fl oz",
+      "sku": "13201",
+      "ygy_id": "770",
+      "components": [
+        {
+          "form": "liquid",
+          "serving_size": "1 fl oz (2 tablespoons)",
+          "servings_per_container": 32,
+          "macros": {
+            "calories": {
+              "amount": 40,
+              "unit": null,
+              "pct_dv": null
+            },
+            "calories_from_fat": {
+              "amount": 0,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "saturated_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "cholesterol": {
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "dietary_fiber": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "total_sugars": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 780,
+              "unit": "mcg",
+              "pct_dv": 87,
+              "form": "as beta carotene, palmitate",
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 1000,
+              "unit": "mg",
+              "pct_dv": 1111,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D3",
+              "amount": 50,
+              "unit": "mcg",
+              "pct_dv": 250,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 134,
+              "unit": "mg",
+              "pct_dv": 893,
+              "form": "as d-alpha tocopherol"
+            },
+            {
+              "name": "Vitamin K",
+              "amount": 30,
+              "unit": "mcg",
+              "pct_dv": 25,
+              "form": "as phytonadione"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 2500,
+              "form": "as thiamine mononitrate",
+              "unit_detail": "B1"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 2308,
+              "form": "as riboflavin",
+              "unit_detail": "B2"
+            },
+            {
+              "name": "Niacin",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 188,
+              "form": "as niacinamide",
+              "unit_detail": "B3"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 1765,
+              "form": "as pyridoxine HCl"
+            },
+            {
+              "name": "Folate",
+              "amount": 400,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "as folic acid"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 500,
+              "unit": "mcg",
+              "pct_dv": 20833,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 300,
+              "unit": "mcg",
+              "pct_dv": 1000
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": 3000,
+              "form": "as d-calcium pantothenate"
+            },
+            {
+              "name": "Choline",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 5,
+              "form": "as bitartrate"
+            },
+            {
+              "name": "Calcium",
+              "amount": 600,
+              "unit": "mg",
+              "pct_dv": 46,
+              "form": "as tricalcium phosphate, citrate, gluconate"
+            },
+            {
+              "name": "Iron",
+              "amount": 4,
+              "unit": "mg",
+              "pct_dv": 22,
+              "form": "as ferrous gluconate"
+            },
+            {
+              "name": "Phosphorus",
+              "amount": 80,
+              "unit": "mg",
+              "pct_dv": 6,
+              "form": "from tricalcium phosphate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": 71,
+              "form": "as citrate, gluconate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": 136,
+              "form": "as gluconate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 182,
+              "form": "as L-selenium methionine"
+            },
+            {
+              "name": "Copper",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 111,
+              "form": "as gluconate"
+            },
+            {
+              "name": "Manganese",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 217,
+              "form": "as gluconate"
+            },
+            {
+              "name": "Chromium",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": 571,
+              "form": "as amino acid chelate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 2,
+              "form": "as citrate"
+            },
+            {
+              "name": "Inositol",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Boron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as boron amino acid chelate"
+            },
+            {
+              "name": "Grape seed",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract"
+            },
+            {
+              "name": "Coenzyme Q10",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Dimethylglycine",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "PABA",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as para amino benzoic acid"
+            },
+            {
+              "name": "Citrus bioflavonoids",
+              "amount": 13,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "GDL",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as glucono delta-lactone"
+            },
+            {
+              "name": "Plant Derived Minerals",
+              "amount": 600,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Amino Acid Complex",
+              "total": {
+                "amount": 125,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Alanine, Arginine, Aspartic Acid, Cystine, Glutamic Acid, Glycine, Histidine, Isoleucine, Leucine, Lysine, Methionine, Phenylalanine, Proline, Serine, Threonine, Tyrosine, Valine",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Alanine"
+                },
+                {
+                  "pos": 2,
+                  "name": "Arginine"
+                },
+                {
+                  "pos": 3,
+                  "name": "Aspartic acid"
+                },
+                {
+                  "pos": 4,
+                  "name": "Cystine"
+                },
+                {
+                  "pos": 5,
+                  "name": "Glutamic acid"
+                },
+                {
+                  "pos": 6,
+                  "name": "Glycine"
+                },
+                {
+                  "pos": 7,
+                  "name": "Histidine"
+                },
+                {
+                  "pos": 8,
+                  "name": "Isoleucine"
+                },
+                {
+                  "pos": 9,
+                  "name": "Leucine"
+                },
+                {
+                  "pos": 10,
+                  "name": "Lysine"
+                },
+                {
+                  "pos": 11,
+                  "name": "Methionine"
+                },
+                {
+                  "pos": 12,
+                  "name": "Phenylalanine"
+                },
+                {
+                  "pos": 13,
+                  "name": "Proline"
+                },
+                {
+                  "pos": 14,
+                  "name": "Serine"
+                },
+                {
+                  "pos": 15,
+                  "name": "Threonine"
+                },
+                {
+                  "pos": 16,
+                  "name": "Tyrosine"
+                },
+                {
+                  "pos": 17,
+                  "name": "Valine"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "Plant derived minerals",
+            "Natural vegetable glycerine",
+            "CitriSweet (inulin, stevia extract (rebaudioside A))",
+            "Sodium erythorbate",
+            "Citric acid",
+            "Malic acid",
+            "Natural flavors blend",
+            "Xanthan gum",
+            "Stevia",
+            "Sodium benzoate (for freshness)",
+            "Potassium sorbate (for freshness)"
+          ],
+          "source_label": "ultimate_classic_liquid-suppfacts_0523.jpg"
+        }
+      ]
+    },
+    "ultimate-cm-cream": {
+      "product_id": "ultimate-cm-cream",
+      "name": "Ultimate CM Cream™ (Paraben-Free) - 2 oz",
+      "sku": "150203",
+      "ygy_id": "6690",
+      "components": [
+        {
+          "form": "topical cream",
+          "serving_size": "topical (as directed)",
+          "servings_per_container": null,
+          "directions": "Adults and children 2 years of age or older, apply to affected area no more than 3 to 4 times a day. Children under 2 years of age: do not use, consult a doctor.",
+          "macros": {},
+          "nutrients": [],
+          "blends": [],
+          "other_ingredients": [
+            "Menthol 1.4% (active)",
+            "Carbomer",
+            "Celadrin (cetyl myristoleate, cetyl myristate, cetyl palmitaoleate, cetyl oleate, cetyl laurate)",
+            "Cetyl alcohol",
+            "Ethylhexylglycerin",
+            "Glycerin",
+            "Glyceryl monostearate",
+            "Myristyl alcohol",
+            "Olive oil",
+            "Peppermint oil",
+            "Phenoxyethanol",
+            "Polysorbate 20",
+            "Propylene glycol",
+            "Stearic acid",
+            "Triethanolamine",
+            "Water"
+          ],
+          "source_label": "ult-cm-cream_drug-facts_0426_1.jpg"
+        }
+      ]
+    },
+    "ultimate-cm-plus": {
+      "product_id": "ultimate-cm-plus",
+      "name": "Ultimate CM Plus™ - 90 capsules",
+      "sku": "20985",
+      "ygy_id": "635",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "3 capsules",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 1100,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Cetyl Myristoleate Complex and MSM (methylsulfonylmethane)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Cetyl Myristoleate Complex"
+                },
+                {
+                  "pos": 2,
+                  "name": "MSM",
+                  "form": "methylsulfonylmethane"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Gelatin capsule (gelatin and water)",
+            "Gelatin"
+          ],
+          "source_label": "ult-cm-plus-label-0118-suppfacts.jpg"
+        }
+      ]
+    },
+    "ultimate-colon-fx": {
+      "product_id": "ultimate-colon-fx",
+      "name": "Ultimate Colon Fx™",
+      "sku": "USYG100095",
+      "ygy_id": "645",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 90,
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Herbal Proprietary Blend",
+              "total": {
+                "amount": 500,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Cape Aloe leaf (Aloe ferox), Cascara sagrada bark (Frangula purshiana), Barberry root (Berberis vulgaris), Ginger root (Zingiber officinale), Fennel seed (Foeniculum vulgare), Senna leaf (S. alexandrina), Cayenne fruit (Capsicum annum)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Cape Aloe",
+                  "part": "leaf",
+                  "latin": "Aloe ferox"
+                },
+                {
+                  "pos": 2,
+                  "name": "Cascara sagrada",
+                  "part": "bark",
+                  "latin": "Frangula purshiana"
+                },
+                {
+                  "pos": 3,
+                  "name": "Barberry",
+                  "part": "root",
+                  "latin": "Berberis vulgaris"
+                },
+                {
+                  "pos": 4,
+                  "name": "Ginger",
+                  "part": "root",
+                  "latin": "Zingiber officinale"
+                },
+                {
+                  "pos": 5,
+                  "name": "Fennel",
+                  "part": "seed",
+                  "latin": "Foeniculum vulgare"
+                },
+                {
+                  "pos": 6,
+                  "name": "Senna",
+                  "part": "leaf",
+                  "latin": "S. alexandrina"
+                },
+                {
+                  "pos": 7,
+                  "name": "Cayenne",
+                  "part": "fruit",
+                  "latin": "Capsicum annum"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Gelatin capsule (gelatin, water)"
+          ],
+          "source_label": "ygy-usyg100095-ultimate-colon-fx-suppfacts-0315.jpg"
+        }
+      ]
+    },
+    "ultimate-colloidal-silver": {
+      "product_id": "ultimate-colloidal-silver",
+      "name": "Ultimate Colloidal Silver™",
+      "sku": "USYG100401",
+      "ygy_id": "586",
+      "components": [
+        {
+          "form": "liquid",
+          "serving_size": "1/2 teaspoon (2.5 mL)",
+          "servings_per_container": 48,
+          "macros": {
+            "calories": {
+              "amount": 0,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "saturated_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "cholesterol": {
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": 0
+            },
+            "total_carbohydrate": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "total_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 0,
+              "unit": "mg",
+              "pct_dv": 0
+            },
+            {
+              "name": "Silver",
+              "amount": 13,
+              "unit": "mcg",
+              "pct_dv": null,
+              "form": "as colloidal silver"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Purified water",
+            "Pure micro fine silver in suspension"
+          ],
+          "source_label": "colloidalsilversuppfacts_0620.jpg"
+        }
+      ]
+    },
+    "ultimate-d-stress": {
+      "product_id": "ultimate-d-stress",
+      "name": "Ultimate D-Stress™",
+      "sku": "82123",
+      "ygy_id": "829",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "4 capsules",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 1000,
+              "unit": "mg",
+              "pct_dv": 1111,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 4167,
+              "form": "as thiamine hydrochloride",
+              "unit_detail": "B1"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 3846,
+              "form": "as riboflavin",
+              "unit_detail": "B2"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 2941,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 500,
+              "unit": "mcg",
+              "pct_dv": 20833,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 1000,
+              "unit": "mg",
+              "pct_dv": 20000,
+              "form": "from calcium pantothenate",
+              "unit_detail": "B5"
+            },
+            {
+              "name": "Calcium",
+              "amount": 400,
+              "unit": "mg",
+              "pct_dv": 31,
+              "form": "from calcium carbonate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 24,
+              "form": "from magnesium oxide"
+            },
+            {
+              "name": "Adrenal Substance",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Valerian",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "part": "root"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Gelatin capsule (gelatin and water)",
+            "Magnesium stearate",
+            "Talc (magnesium silicate)",
+            "Silicon dioxide"
+          ],
+          "source_label": "82123_ult-d-stress-1219_panel-900x1200v2.jpg"
+        }
+      ]
+    },
+    "ultimate-daily": {
+      "product_id": "ultimate-daily",
+      "name": "Ultimate Daily - 180 Tablets",
+      "sku": "21831",
+      "ygy_id": "761",
+      "components": [
+        {
+          "form": "tablet",
+          "serving_size": "2 tablets",
+          "servings_per_container": 90,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 1200,
+              "unit": "mcg",
+              "pct_dv": 133,
+              "form": "as beta carotene",
+              "unit_detail": "RAE",
+              "label_iu": 4000
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 400,
+              "unit": "mg",
+              "pct_dv": 444,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 3.25,
+              "unit": "mcg",
+              "pct_dv": 16,
+              "form": "as cholecalciferol",
+              "label_iu": 130
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 67,
+              "unit": "mg",
+              "pct_dv": 447,
+              "form": "as d-alpha tocopherol acetate",
+              "label_iu": 100
+            },
+            {
+              "name": "Thiamin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 1667,
+              "form": "as thiamine HCl",
+              "unit_detail": "B1"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 75,
+              "unit": "mg",
+              "pct_dv": 5769,
+              "form": "as riboflavin",
+              "unit_detail": "B2"
+            },
+            {
+              "name": "Niacin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 125,
+              "form": "as niacinamide",
+              "unit_detail": "B3"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 1176,
+              "form": "as pyridoxine HCl"
+            },
+            {
+              "name": "Folate",
+              "amount": 250,
+              "unit": "mcg",
+              "pct_dv": 63,
+              "form": "as folic acid (150 mcg folic acid)",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 40,
+              "unit": "mcg",
+              "pct_dv": 1667,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 20,
+              "unit": "mcg",
+              "pct_dv": 67
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 600,
+              "form": "as d-calcium pantothenate"
+            },
+            {
+              "name": "Calcium",
+              "amount": 400,
+              "unit": "mg",
+              "pct_dv": 31,
+              "form": "as tri-calcium phosphate"
+            },
+            {
+              "name": "Iron",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 11,
+              "form": "as ferrous fumarate"
+            },
+            {
+              "name": "Iodine",
+              "amount": 40,
+              "unit": "mcg",
+              "pct_dv": 27,
+              "form": "from ocean harvested kelp"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 24,
+              "form": "as magnesium amino acid chelate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 4,
+              "unit": "mg",
+              "pct_dv": 36,
+              "form": "as zinc amino acid chelate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 60,
+              "unit": "mcg",
+              "pct_dv": 109,
+              "form": "as selenium amino acid chelate"
+            },
+            {
+              "name": "Copper",
+              "amount": 0.5,
+              "unit": "mg",
+              "pct_dv": 56,
+              "form": "as copper bisglycinate chelate"
+            },
+            {
+              "name": "Manganese",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 87,
+              "form": "as manganese amino acid chelate"
+            },
+            {
+              "name": "Chromium",
+              "amount": 40,
+              "unit": "mcg",
+              "pct_dv": 114,
+              "form": "as chromium picolinate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": "<1",
+              "form": "as potassium citrate monohydrate"
+            },
+            {
+              "name": "Coenzyme Q10",
+              "amount": 6,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "L-Carnitine Tartrate",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Inositol",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "L-Methionine",
+              "amount": 45,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "PABA",
+              "amount": 45,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as para-aminobenzoic acid"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Microcrystalline cellulose",
+            "Vegetable cellulose",
+            "Stearic acid",
+            "Silica",
+            "Organic Film Coating (maltodextrin, sunflower lecithin, palm olein, guar gum)",
+            "Magnesium stearate",
+            "Organic turmeric"
+          ],
+          "source_label": "ult_daily_tabs_180_suppfacts_mod1223_1.jpg"
+        }
+      ]
+    },
+    "ultimate-daily-capsules": {
+      "product_id": "ultimate-daily-capsules",
+      "name": "Ultimate Daily Capsules",
+      "sku": "21833",
+      "ygy_id": "7839",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 90,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 900,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "from beta carotene",
+              "unit_detail": "RAE",
+              "label_iu": 3000
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 270,
+              "unit": "mg",
+              "pct_dv": 300,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D3",
+              "amount": 20,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "as cholecalciferol",
+              "label_iu": 800
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 200,
+              "form": "as d-alpha tocopheryl acetate",
+              "label_iu": 44.8
+            },
+            {
+              "name": "Thiamin",
+              "amount": 18,
+              "unit": "mg",
+              "pct_dv": 1500,
+              "form": "as thiamine hydrochloride",
+              "unit_detail": "B1"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 19.5,
+              "unit": "mg",
+              "pct_dv": 1500,
+              "form": "as riboflavin",
+              "unit_detail": "B2"
+            },
+            {
+              "name": "Niacin",
+              "amount": 24,
+              "unit": "mg",
+              "pct_dv": 150,
+              "form": "as niacin, niacinamide",
+              "unit_detail": "NE"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 25.5,
+              "unit": "mg",
+              "pct_dv": 1500,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Folate",
+              "amount": 800,
+              "unit": "mcg",
+              "pct_dv": 200,
+              "form": "as folic acid (480 mcg folic acid)",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 24,
+              "unit": "mcg",
+              "pct_dv": 1000,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 30,
+              "unit": "mcg",
+              "pct_dv": 100
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": 300,
+              "form": "from calcium pantothenate",
+              "unit_detail": "B5"
+            },
+            {
+              "name": "Calcium",
+              "amount": 325,
+              "unit": "mg",
+              "pct_dv": 25,
+              "form": "from tricalcium phosphate"
+            },
+            {
+              "name": "Phosphorus",
+              "amount": 175,
+              "unit": "mg",
+              "pct_dv": 14,
+              "form": "from tricalcium phosphate"
+            },
+            {
+              "name": "Iron",
+              "amount": 3.6,
+              "unit": "mg",
+              "pct_dv": 20,
+              "form": "from ferrous bisglycinate chelate"
+            },
+            {
+              "name": "Iodine",
+              "amount": 90,
+              "unit": "mcg",
+              "pct_dv": 60,
+              "form": "from potassium iodide"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 105,
+              "unit": "mg",
+              "pct_dv": 25,
+              "form": "from magnesium oxide"
+            },
+            {
+              "name": "Zinc",
+              "amount": 3.3,
+              "unit": "mg",
+              "pct_dv": 30,
+              "form": "from zinc bisglycinate chelate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 55,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "from selenium bisglycinate complex"
+            },
+            {
+              "name": "Copper",
+              "amount": 0.3,
+              "unit": "mg",
+              "pct_dv": 33,
+              "form": "from copper bisglycinate chelate"
+            },
+            {
+              "name": "Manganese",
+              "amount": 2.3,
+              "unit": "mg",
+              "pct_dv": 100,
+              "form": "from manganese bisglycinate chelate"
+            },
+            {
+              "name": "Chromium",
+              "amount": 35,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "from chromium nicotinate glycinate chelate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 33,
+              "unit": "mg",
+              "pct_dv": "<1",
+              "form": "from potassium chloride"
+            },
+            {
+              "name": "Chloride",
+              "amount": 31,
+              "unit": "mg",
+              "pct_dv": 1,
+              "form": "from potassium chloride"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 95,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "L-Methionine, PABA (para aminobenzoic acid), Inositol, Acetyl-L-Carnitine HCl, Coenzyme Q10",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "L-Methionine"
+                },
+                {
+                  "pos": 2,
+                  "name": "PABA",
+                  "form": "para aminobenzoic acid"
+                },
+                {
+                  "pos": 3,
+                  "name": "Inositol"
+                },
+                {
+                  "pos": 4,
+                  "name": "Acetyl-L-Carnitine HCl"
+                },
+                {
+                  "pos": 5,
+                  "name": "Coenzyme Q10"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Vegetable capsule (cellulose and water)",
+            "Magnesium stearate",
+            "Silica"
+          ],
+          "source_label": "21833-ult-daily-capsules-0620_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "ultimate-daily-classic": {
+      "product_id": "ultimate-daily-classic",
+      "name": "Ultimate Daily Classic™ - 90 tablets",
+      "sku": "USYG100084",
+      "ygy_id": "762",
+      "components": [
+        {
+          "form": "tablet",
+          "serving_size": "3 tablets",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 720,
+              "unit": "mcg",
+              "pct_dv": 80,
+              "form": "as natural beta-carotene"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 400,
+              "unit": "mg",
+              "pct_dv": 444,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D",
+              "amount": 3,
+              "unit": "mcg",
+              "pct_dv": 15,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 333,
+              "form": "as d-alpha-tocopheryl acetate"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 1667,
+              "form": "as thiamine HCl",
+              "unit_detail": "B1"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 1538,
+              "form": "as riboflavin",
+              "unit_detail": "B2"
+            },
+            {
+              "name": "Niacin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 125,
+              "form": "as inositol hexanicotinate",
+              "unit_detail": "B3"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 1176,
+              "form": "as pyridoxine HCl"
+            },
+            {
+              "name": "Folate",
+              "amount": 250,
+              "unit": "mcg",
+              "pct_dv": 63,
+              "form": "as calcium L-5-methyltetrahydrofolate",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 40,
+              "unit": "mcg",
+              "pct_dv": 1667,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 20,
+              "unit": "mcg",
+              "pct_dv": 67
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 600,
+              "form": "as D-calcium pantothenate"
+            },
+            {
+              "name": "Calcium",
+              "amount": 400,
+              "unit": "mg",
+              "pct_dv": 31,
+              "form": "as dicalcium phosphate, hydroxyapatite"
+            },
+            {
+              "name": "Iron",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 11,
+              "form": "as ferrous fumarate"
+            },
+            {
+              "name": "Phosphorus",
+              "amount": 250,
+              "unit": "mg",
+              "pct_dv": 20,
+              "form": "as dicalcium phosphate, hydroxyapatite"
+            },
+            {
+              "name": "Iodine",
+              "amount": 40,
+              "unit": "mcg",
+              "pct_dv": 27,
+              "form": "from kelp"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 24,
+              "form": "as magnesium amino acid chelate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 4,
+              "unit": "mg",
+              "pct_dv": 36,
+              "form": "as zinc bisglycinate chelate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 60,
+              "unit": "mcg",
+              "pct_dv": 109,
+              "form": "as selenium amino acid chelate"
+            },
+            {
+              "name": "Copper",
+              "amount": 0.8,
+              "unit": "mg",
+              "pct_dv": 89,
+              "form": "as copper bisglycinate chelate"
+            },
+            {
+              "name": "Manganese",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 87,
+              "form": "as manganese bisglycinate chelate"
+            },
+            {
+              "name": "Chromium",
+              "amount": 40,
+              "unit": "mcg",
+              "pct_dv": 114,
+              "form": "as chromium picolinate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 120,
+              "unit": "mg",
+              "pct_dv": 3,
+              "form": "as potassium citrate"
+            },
+            {
+              "name": "L-Cysteine",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "DL-Methionine",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "PABA",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "para aminobenzoic acid"
+            },
+            {
+              "name": "Inositol",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Chondroitin sulfate sodium",
+              "amount": 14,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Dimethylglycine",
+              "amount": 14,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Ginkgo biloba",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "leaf extract (24% ginkgo flavone glycosides & 6% terpene lactones)"
+            },
+            {
+              "name": "L-Carnitine",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as L-carnitine tartrate"
+            },
+            {
+              "name": "Bilberry",
+              "amount": 8,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "fruit extract (25% proanthocyanidins)"
+            },
+            {
+              "name": "Coenzyme Q10",
+              "amount": 4,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Hawthorn",
+              "amount": 4,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "berry"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Microcrystalline cellulose",
+            "Stearic acid",
+            "Croscarmellose sodium",
+            "Magnesium stearate",
+            "Silica",
+            "Pharmaceutical glaze"
+          ],
+          "source_label": "usyg100084_ultimate-daily-classic-0921_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "ultimate-digest-fx": {
+      "product_id": "ultimate-digest-fx",
+      "name": "Ultimate Digest FX™",
+      "sku": "USYG100090",
+      "ygy_id": "771",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "3 capsules",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Calcium",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 4,
+              "form": "from Aquamin Seaweed Powder"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Fungal Enzyme Blend",
+              "total": {
+                "amount": 310,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Protein Digestion: Protease (acid stable), Bromelain, Protease; Fat Digestion: Lipase; Carbohydrate Digestion: Amylase, Lactase, Cellulase, Glucoamylase",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Protease",
+                  "form": "acid stable"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bromelain"
+                },
+                {
+                  "pos": 3,
+                  "name": "Protease"
+                },
+                {
+                  "pos": 4,
+                  "name": "Lipase"
+                },
+                {
+                  "pos": 5,
+                  "name": "Amylase"
+                },
+                {
+                  "pos": 6,
+                  "name": "Lactase"
+                },
+                {
+                  "pos": 7,
+                  "name": "Cellulase"
+                },
+                {
+                  "pos": 8,
+                  "name": "Glucoamylase"
+                }
+              ]
+            },
+            {
+              "name": "Proprietary Prebiotic and Probiotic Blend",
+              "total": {
+                "amount": 78,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "FOS (fructooligosaccharides) and Bacillus coagulans (500 million cfu at time of manufacture)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "FOS",
+                  "form": "fructooligosaccharides"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bacillus coagulans",
+                  "standardization": "500 million cfu at time of manufacture"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Microcrystalline cellulose",
+            "Gelatin capsule (gelatin and water)",
+            "Silicon dioxide"
+          ],
+          "source_label": "ult-digest-fx_suppfactst-0617.jpg"
+        }
+      ]
     }
   }
 }
