@@ -15551,7 +15551,7 @@
             {
               "name": "Thiamin",
               "amount": 7,
-              "unit": "mcg",
+              "unit": "mg",
               "pct_dv": 583,
               "form": "as thiamine hydrochloride"
             },
@@ -15768,6 +15768,2870 @@
             "silicon dioxide"
           ],
           "source_label": "ryl_beta550_supp-fact_1024.jpg"
+        }
+      ]
+    },
+    "sleep-eze": {
+      "product_id": "sleep-eze",
+      "name": "Sleep Eze™",
+      "sku": "USYG102067",
+      "ygy_id": "732",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 60,
+          "nutrients": [
+            {
+              "name": "Vitamin B3",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 156,
+              "form": "as niacinamide",
+              "unit_detail": "NE"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 1470,
+              "form": "as pyridoxine hydrochloride"
+            },
+            {
+              "name": "Calcium",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 2,
+              "form": "from calcium carbonate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 12,
+              "form": "from magnesium oxide"
+            },
+            {
+              "name": "GABA",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "gamma aminobutyric acid"
+            },
+            {
+              "name": "5-HTP",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "L-5-hydroxytryptophan"
+            },
+            {
+              "name": "Melatonin",
+              "amount": 2.5,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 320,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Passion Flower Extract, Valerian Root Extract, Lemon Balm Herb, Chamomile Flower Extract, and Hops Stobile Extract.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Passion Flower",
+                  "form": "extract"
+                },
+                {
+                  "pos": 2,
+                  "name": "Valerian",
+                  "part": "root",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Lemon Balm",
+                  "part": "herb"
+                },
+                {
+                  "pos": 4,
+                  "name": "Chamomile",
+                  "part": "flower",
+                  "form": "extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Hops",
+                  "part": "strobile",
+                  "form": "extract"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Vegetarian capsule (hypromellose and water)",
+            "cellulose",
+            "vegetable stearate",
+            "silica"
+          ],
+          "source_label": "usyg102067_sleep-eze-0420_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "cleanse-fx": {
+      "product_id": "cleanse-fx",
+      "name": "Slender Fx™ Cleanse Fx™",
+      "sku": "21011",
+      "ygy_id": "643",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 30,
+          "nutrients": [
+            {
+              "name": "Flax Seed",
+              "amount": 600,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Linum usitatissimum"
+            },
+            {
+              "name": "Cape Aloe",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "leaf",
+              "latin": "Aloe ferox"
+            },
+            {
+              "name": "Rhubarb",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "root",
+              "latin": "Rheum sp."
+            },
+            {
+              "name": "Marshmallow",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "root",
+              "latin": "Althaea officinalis"
+            },
+            {
+              "name": "Slippery Elm",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "bark",
+              "latin": "Ulmus rubra"
+            },
+            {
+              "name": "Triphala",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "blend of Amla fruit, belleric myrobalan fruit and chebulic myrobalan fruit"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Vegetarian capsule (hypromellose and water)"
+          ],
+          "source_label": "ygy-21011-cleanse-fx-suppfacts-0217.jpg"
+        }
+      ]
+    },
+    "keto-power-up": {
+      "product_id": "keto-power-up",
+      "name": "Slender FX™ Keto Power Up™",
+      "sku": "USYG100064",
+      "ygy_id": "5695",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 60,
+          "nutrients": [
+            {
+              "name": "Iodine",
+              "amount": 300,
+              "unit": "mcg",
+              "pct_dv": 200,
+              "form": "from potassium iodide"
+            },
+            {
+              "name": "Chromium",
+              "amount": 60,
+              "unit": "mcg",
+              "pct_dv": 50,
+              "form": "from chromium nicotinate glycinate chelate"
+            },
+            {
+              "name": "Caffeine",
+              "amount": 75,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "KETO Power Up™ Proprietary Blend",
+              "total": {
+                "amount": 545.7,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Green Tea Leaf Extract (95% phenols, 70% catechins, 45% EGCG), African Wild Mango Seed Extract (4:1), Green Coffee Bean Extract (50% chlorogenic acid), Cayenne Fruit, Bamboo Leaf Extract",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Green Tea",
+                  "part": "leaf",
+                  "form": "extract",
+                  "standardization": "95% phenols, 70% catechins, 45% EGCG"
+                },
+                {
+                  "pos": 2,
+                  "name": "African Wild Mango",
+                  "part": "seed",
+                  "form": "extract",
+                  "standardization": "4:1"
+                },
+                {
+                  "pos": 3,
+                  "name": "Green Coffee",
+                  "part": "bean",
+                  "form": "extract",
+                  "standardization": "50% chlorogenic acid"
+                },
+                {
+                  "pos": 4,
+                  "name": "Cayenne",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 5,
+                  "name": "Bamboo",
+                  "part": "leaf",
+                  "form": "extract"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Gelatin capsule (gelatin and water)"
+          ],
+          "source_label": "sfx-keto-power-up_suppfacts-0717.jpg"
+        }
+      ]
+    },
+    "slender-fx-meal-replacement-shake": {
+      "product_id": "slender-fx-meal-replacement-shake",
+      "name": "Slender FX™ Meal Replacement Shake - French Vanilla",
+      "sku": "USYG100061",
+      "ygy_id": "386",
+      "components": [
+        {
+          "form": "powder",
+          "serving_size": "1 scoop (32.5 g)",
+          "servings_per_container": 30,
+          "directions": "Mix 1 scoop of Slender FX Meal Replacement Shake per 1 cup of water, skim milk or juice and blend until smooth and creamy.",
+          "macros": {
+            "calories": {
+              "amount": 120,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "saturated_fat": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 5
+            },
+            "trans_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "cholesterol": {
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 10
+            },
+            "sodium": {
+              "amount": 60,
+              "unit": "mg",
+              "pct_dv": 3
+            },
+            "total_carbohydrate": {
+              "amount": 14,
+              "unit": "g",
+              "pct_dv": 5
+            },
+            "dietary_fiber": {
+              "amount": 7,
+              "unit": "g",
+              "pct_dv": 25
+            },
+            "insoluble_fiber": {
+              "amount": 4,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "total_sugars": {
+              "amount": 5,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 5,
+              "unit": "g",
+              "pct_dv": 10
+            },
+            "protein": {
+              "amount": 14,
+              "unit": "g",
+              "pct_dv": 28
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin D",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 130,
+              "label_iu": 1000
+            },
+            {
+              "name": "Calcium",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": 25
+            },
+            {
+              "name": "Iron",
+              "amount": 4.5,
+              "unit": "mg",
+              "pct_dv": 25
+            },
+            {
+              "name": "Potassium",
+              "amount": 140,
+              "unit": "mg",
+              "pct_dv": 2
+            },
+            {
+              "name": "Vitamin A",
+              "amount": 750,
+              "unit": "mcg",
+              "pct_dv": 80,
+              "unit_detail": "RAE",
+              "label_iu": 2500
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 35
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 70,
+              "label_iu": 15
+            },
+            {
+              "name": "Thiamin",
+              "amount": 0.75,
+              "unit": "mg",
+              "pct_dv": 60
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 0.85,
+              "unit": "mg",
+              "pct_dv": 60
+            },
+            {
+              "name": "Niacin",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 60,
+              "unit_detail": "NE"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 60
+            },
+            {
+              "name": "Folate",
+              "amount": 333,
+              "unit": "mcg",
+              "pct_dv": 80,
+              "form": "200 mcg folic acid",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 1000,
+              "unit": "mcg",
+              "pct_dv": 41670
+            },
+            {
+              "name": "Biotin",
+              "amount": 150,
+              "unit": "mcg",
+              "pct_dv": 500
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 100
+            },
+            {
+              "name": "Phosphorus",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": 15
+            },
+            {
+              "name": "Iodine",
+              "amount": 105,
+              "unit": "mcg",
+              "pct_dv": 70
+            },
+            {
+              "name": "Magnesium",
+              "amount": 80,
+              "unit": "mg",
+              "pct_dv": 20
+            },
+            {
+              "name": "Zinc",
+              "amount": 7.5,
+              "unit": "mg",
+              "pct_dv": 70
+            },
+            {
+              "name": "Selenium",
+              "amount": 21,
+              "unit": "mcg",
+              "pct_dv": 40
+            },
+            {
+              "name": "Manganese",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 220
+            },
+            {
+              "name": "Chromium",
+              "amount": 18,
+              "unit": "mcg",
+              "pct_dv": 50
+            },
+            {
+              "name": "Molybdenum",
+              "amount": 20,
+              "unit": "mcg",
+              "pct_dv": 45
+            },
+            {
+              "name": "Choline",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 2
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Slender FX Custom Protein Blend (Agglomerated whey [milk] protein, pea protein, rice protein, quinoa protein, flax protein, chia protein)",
+            "RejuvaSweet (Naturally Sweet Branched Linear Chain Cellular Energy Concentrates [organic brown rice syrup solids, organic cane sugar, fructooligosaccharides, stevia (rebaudioside A, rebaudioside D), organic rice bran])",
+            "microcrystalline cellulose",
+            "di-calcium phosphate",
+            "natural flavor",
+            "sunflower lecithin",
+            "xanthan gum",
+            "potassium citrate",
+            "cyanocobalamin",
+            "Slender FX Metabolism Boosting Botanical Blend (30% catechin-standardized Green Tea, L-glutamine, 3% Rosavin-standardized Rhodiola rosea, 0.8% eleutherosides-standardized Eleutherococcus senticosus)",
+            "magnesium oxide",
+            "guar gum",
+            "psyllium seed",
+            "maltodextrin",
+            "spirulina",
+            "choline bitartrate",
+            "ascorbic acid",
+            "inositol",
+            "citric acid",
+            "d-alpha tocopheryl acetate",
+            "biotin",
+            "ferrous fumarate",
+            "apple pectin",
+            "niacinamide",
+            "manganese sulfate",
+            "vitamin A palmitate",
+            "zinc oxide",
+            "calcium pantothenate",
+            "lemon bioflavonoids",
+            "ergocalciferol",
+            "pyridoxine HCl",
+            "papaya",
+            "riboflavin",
+            "thiamine HCl",
+            "folic acid",
+            "sodium molybdate",
+            "sodium selenite",
+            "chromium chloride",
+            "potassium iodide"
+          ],
+          "source_label": "sfx-shake-french-vanilla_sleeve-suppfacts-0322.jpg"
+        }
+      ]
+    },
+    "slender-fx-rev": {
+      "product_id": "slender-fx-rev",
+      "name": "Slender FX™ Rev",
+      "sku": "USYG239002",
+      "ygy_id": "5694",
+      "components": [
+        {
+          "form": "liquid",
+          "serving_size": "1 dropper full (approx. 0.75 ml)",
+          "servings_per_container": 80,
+          "nutrients": [
+            {
+              "name": "Vitamin B3",
+              "amount": 16,
+              "unit": "mg",
+              "pct_dv": 100,
+              "form": "Niacin"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 588,
+              "form": "Pyridoxal 5 Phosphate"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 4167,
+              "form": "Methylcobalamin"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 707.0,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Vegetable Glycerin, Water, Green Tea Leaf Extract, African Mango Seed Extract, Green Coffee Bean Extract, and CurCousin (Calebin A, feruloylmethyl ferulate).",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Vegetable Glycerin"
+                },
+                {
+                  "pos": 2,
+                  "name": "Water"
+                },
+                {
+                  "pos": 3,
+                  "name": "Green Tea",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "African Mango",
+                  "part": "seed",
+                  "form": "extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Green Coffee",
+                  "part": "bean",
+                  "form": "extract"
+                },
+                {
+                  "pos": 6,
+                  "name": "CurCousin",
+                  "form": "Calebin A, feruloylmethyl ferulate"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Natural Flavor"
+          ],
+          "source_label": "slender-fx-rev_label-0423.jpg"
+        }
+      ]
+    },
+    "sweet-eze": {
+      "product_id": "sweet-eze",
+      "name": "Slender FX™ Sweet Eze™",
+      "sku": "21014",
+      "ygy_id": "6713",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 120,
+          "nutrients": [
+            {
+              "name": "Chromium",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 286,
+              "form": "from chromium nicotinate glycinate chelate"
+            },
+            {
+              "name": "Cinnamon",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "bark"
+            },
+            {
+              "name": "L-Aspartic Acid",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Ginseng",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "root"
+            },
+            {
+              "name": "Gymnema",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "part": "leaf"
+            },
+            {
+              "name": "Bitter Melon",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "part": "fruit"
+            },
+            {
+              "name": "Jambolan",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "part": "fruit"
+            },
+            {
+              "name": "Vanadium",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": null,
+              "form": "from vanadium nicotinate glycinate chelate"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Gelatin capsule (gelatin and water)",
+            "brown rice flour"
+          ],
+          "source_label": "21014_sfx-sweet-eze-1219_panel-900x1200_1.jpg"
+        }
+      ]
+    },
+    "smart-stiks": {
+      "product_id": "smart-stiks",
+      "name": "SMART Stiks™",
+      "sku": "USBE10002",
+      "ygy_id": "7187",
+      "components": [
+        {
+          "form": "stick powder",
+          "serving_size": "1 Stick (4.5 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 10,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "total_sugars": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "protein": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Caffeine",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "natural"
+            },
+            {
+              "name": "BioPerine",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "M-NOOT™ Proprietary Blend",
+              "total": {
+                "amount": 139,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "L-Theanine, Bacopa Monnieri Extract, Ginkgo Biloba Extract, Panax Ginseng Extract, Inositol Nicotinate, Huperzine Extract",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "L-Theanine"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bacopa Monnieri",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Ginkgo Biloba",
+                  "form": "extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "Panax Ginseng",
+                  "form": "extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Inositol Nicotinate"
+                },
+                {
+                  "pos": 6,
+                  "name": "Huperzine",
+                  "form": "extract"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Unrefined Cane Sugar",
+            "Citric Acid",
+            "Natural Pineapple Flavor",
+            "Beta Carotene (color)",
+            "Stevia"
+          ],
+          "source_label": "smart_stiks_supp_facts_0724.jpg"
+        }
+      ]
+    },
+    "soul-stiks": {
+      "product_id": "soul-stiks",
+      "name": "SOUL Stiks™",
+      "sku": "USBE10005",
+      "ygy_id": "7189",
+      "components": [
+        {
+          "form": "stick powder",
+          "serving_size": "1 Stick (2.7 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 5,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "dietary_fiber": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            },
+            "total_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": 0
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 350,
+              "unit": "mg",
+              "pct_dv": 389,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Niacin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 125,
+              "form": "as niacinamide"
+            },
+            {
+              "name": "Choline",
+              "amount": 4,
+              "unit": "mg",
+              "pct_dv": 0,
+              "form": "from choline bitartrate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 2,
+              "form": "as magnesium oxide"
+            },
+            {
+              "name": "Sodium",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 4,
+              "form": "as sodium chloride"
+            },
+            {
+              "name": "Potassium",
+              "amount": 39,
+              "unit": "mg",
+              "pct_dv": 1,
+              "form": "as potassium phosphate"
+            },
+            {
+              "name": "Caffeine",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "BioPerine",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 356,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Guarana Seed Extract, Yerba Mate Leaf Extract, Eleuthero Root Extract, Ginkgo Biloba Leaf Extract, Elderberry Fruit.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Guarana",
+                  "part": "seed",
+                  "form": "extract"
+                },
+                {
+                  "pos": 2,
+                  "name": "Yerba Mate",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Eleuthero",
+                  "part": "root",
+                  "form": "extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "Ginkgo Biloba",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Elderberry",
+                  "part": "fruit"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Citric acid",
+            "malic acid",
+            "sucralose",
+            "gum Arabic",
+            "natural flavors (orange mango flavor, tangerine flavor)",
+            "beta carotene (color)"
+          ],
+          "source_label": "soul_stiks_supp_facts_0924.jpg"
+        }
+      ]
+    },
+    "relieve": {
+      "product_id": "relieve",
+      "name": "Relieve",
+      "sku": "USBE0101101005",
+      "ygy_id": "7173",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": null,
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 27,
+              "unit": "mg",
+              "pct_dv": 30,
+              "form": "as ascorbic acid"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Jointrestor™ Proprietary Joint-Health Formula",
+              "total": {
+                "amount": 587,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Glucosamine (as glucosamine sulfate), FruiteX-B (as calcium fructoborate)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Glucosamine",
+                  "form": "as glucosamine sulfate"
+                },
+                {
+                  "pos": 2,
+                  "name": "FruiteX-B",
+                  "form": "as calcium fructoborate"
+                }
+              ]
+            },
+            {
+              "name": "Proprietary Actisity™ Inflammation-Health Formula",
+              "total": {
+                "amount": 134,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "White willow (Salix alba)-bark extract (15% salicin), Bromelain (2400 GDU), Quercetin, Resveratrol (from Polygonum cuspidatum) extract, Myrrh gum (as Commiphora myrrha), Yucca (as Yucca schidera), Saffron (as Crocus sativus) powder",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "White willow",
+                  "part": "bark",
+                  "form": "extract",
+                  "latin": "Salix alba",
+                  "standardization": "15% salicin"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bromelain",
+                  "standardization": "2400 GDU"
+                },
+                {
+                  "pos": 3,
+                  "name": "Quercetin"
+                },
+                {
+                  "pos": 4,
+                  "name": "Resveratrol",
+                  "form": "from Polygonum cuspidatum extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Myrrh gum",
+                  "latin": "Commiphora myrrha"
+                },
+                {
+                  "pos": 6,
+                  "name": "Yucca",
+                  "latin": "Yucca schidera"
+                },
+                {
+                  "pos": 7,
+                  "name": "Saffron",
+                  "form": "powder",
+                  "latin": "Crocus sativus"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Gelatin",
+            "Magnesium stearate",
+            "Black-pepper (piper nigrum) extract (95% piperine)",
+            "Silicon dioxide",
+            "Contains ingredients from shellfish (shrimp, crab, lobster, crayfish)"
+          ],
+          "source_label": "usbe0101101005_900a.jpg"
+        }
+      ]
+    },
+    "super-cell-protector": {
+      "product_id": "super-cell-protector",
+      "name": "Super Cell Protector™",
+      "sku": "50217",
+      "ygy_id": "799",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "3 capsules",
+          "servings_per_container": 30,
+          "nutrients": [
+            {
+              "name": "Vitamin B12",
+              "amount": 55,
+              "unit": "mcg",
+              "pct_dv": 917,
+              "form": "as cyanocobalamin"
+            },
+            {
+              "name": "Calcium",
+              "amount": 3.8,
+              "unit": "mg",
+              "pct_dv": "<1",
+              "form": "from calcium glycinate"
+            },
+            {
+              "name": "Iron",
+              "amount": 0.054,
+              "unit": "mg",
+              "pct_dv": "<1",
+              "form": "from iron glycinate"
+            },
+            {
+              "name": "Iodine",
+              "amount": 0.11,
+              "unit": "mcg",
+              "pct_dv": "<1",
+              "form": "from potassium iodide"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": "<1",
+              "form": "from magnesium glycinate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 0.0243,
+              "unit": "mg",
+              "pct_dv": "<1",
+              "form": "from zinc glycinate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 2.7,
+              "unit": "mcg",
+              "pct_dv": 4,
+              "form": "from selenium glycinate"
+            },
+            {
+              "name": "Copper",
+              "amount": 0.0022,
+              "unit": "mg",
+              "pct_dv": "<1",
+              "form": "from copper glycinate"
+            },
+            {
+              "name": "Manganese",
+              "amount": 0.0135,
+              "unit": "mg",
+              "pct_dv": "<1",
+              "form": "from manganese glycinate"
+            },
+            {
+              "name": "Chromium",
+              "amount": 10.8,
+              "unit": "mcg",
+              "pct_dv": 9,
+              "form": "from chromium glycinate"
+            },
+            {
+              "name": "Molybdenum",
+              "amount": 0.8,
+              "unit": "mcg",
+              "pct_dv": 1,
+              "form": "from molybdenum glycinate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 99,
+              "unit": "mg",
+              "pct_dv": 3,
+              "form": "from potassium iodide"
+            },
+            {
+              "name": "Grape Seed",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "latin": "Vitis vinifera",
+              "standardization": "95% proanthocyanidins"
+            },
+            {
+              "name": "Vanadium",
+              "amount": 1.1,
+              "unit": "mcg",
+              "pct_dv": null,
+              "form": "from vanadyl sulfate"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Rice flour",
+            "gelatin capsule (gelatin, water)",
+            "magnesium stearate",
+            "silicon dioxide"
+          ],
+          "source_label": "ygy-50217-super-cell-protector-suppfacts-0910.jpg"
+        }
+      ]
+    },
+    "strawberry-kiwi-mins": {
+      "product_id": "strawberry-kiwi-mins",
+      "name": "Strawberry Kiwi-Mins 32oz",
+      "sku": "USYG103230",
+      "ygy_id": "768",
+      "components": [
+        {
+          "form": "liquid",
+          "serving_size": "1 fl.oz. (2 tablespoons)",
+          "servings_per_container": 32,
+          "macros": {
+            "calories": {
+              "amount": 35,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "total_sugars": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "sodium": {
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": "<1"
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Majestic Earth Plant Derived Minerals",
+              "amount": 600,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Purified Water",
+            "Fructose",
+            "Citric Acid",
+            "Natural Flavor",
+            "Sodium Benzoate",
+            "Potassium Sorbate (for freshness)"
+          ],
+          "source_label": "strawberry-kiwi-mins_suppfacts-0219.jpg"
+        }
+      ]
+    },
+    "super-olive-health": {
+      "product_id": "super-olive-health",
+      "name": "Super Olive Health",
+      "sku": "USGH000019",
+      "ygy_id": "716",
+      "components": [
+        {
+          "form": "liquid",
+          "serving_size": "2 mL (approx. 1/2 tsp or 40 drops)",
+          "servings_per_container": 60,
+          "extract_ratio": "1:4",
+          "nutrients": [
+            {
+              "name": "Olive",
+              "amount": 1900,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "part": "leaf"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Purified water",
+            "ethyl alcohol (35-45%)"
+          ],
+          "source_label": "gh-super-olive-health_suppfacts-1021_cart_1200x900.jpg"
+        }
+      ]
+    },
+    "synaptiv": {
+      "product_id": "synaptiv",
+      "name": "Synaptiv™",
+      "sku": "USYG100083",
+      "ygy_id": "968",
+      "components": [
+        {
+          "form": "tablet",
+          "serving_size": "2 Tablets",
+          "servings_per_container": 30,
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 22,
+              "form": "ascorbic acid"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 1.5,
+              "unit": "mg",
+              "pct_dv": 125,
+              "form": "as thiamine mononitrate"
+            },
+            {
+              "name": "Niacin",
+              "amount": 4,
+              "unit": "mg",
+              "pct_dv": 25,
+              "form": "as niacinamide"
+            },
+            {
+              "name": "Folate",
+              "amount": 75,
+              "unit": "mcg",
+              "pct_dv": 19,
+              "form": "46 mcg Folic Acid",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 24,
+              "unit": "mcg",
+              "pct_dv": 1000,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 1.5,
+              "unit": "mg",
+              "pct_dv": 30,
+              "form": "as D-calcium pantothenate"
+            },
+            {
+              "name": "Choline",
+              "amount": 12,
+              "unit": "mg",
+              "pct_dv": 2,
+              "form": "from 30 mg choline bitartrate"
+            },
+            {
+              "name": "Calcium",
+              "amount": 160,
+              "unit": "mg",
+              "pct_dv": 12
+            },
+            {
+              "name": "Zinc",
+              "amount": 2.5,
+              "unit": "mg",
+              "pct_dv": 23,
+              "form": "as zinc citrate"
+            },
+            {
+              "name": "Lemon Balm",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "part": "aerial parts"
+            },
+            {
+              "name": "Inositol",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Huperzine-A",
+              "amount": 50,
+              "unit": "mcg",
+              "pct_dv": null,
+              "form": "from toothed club moss whole plant extract"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Botanical Antioxidant Blend",
+              "total": {
+                "amount": 75,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Grape seed extract, Blueberry (fruit), Polygonum cuspidatum root extract, Quercetin dihydrate, Bilberry extract (fruit), Cranberry concentrate (fruit), Tart cherry powder, Prune (fruit), Raspberry juice powder, Strawberry (fruit).",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Grape seed",
+                  "form": "extract"
+                },
+                {
+                  "pos": 2,
+                  "name": "Blueberry",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 3,
+                  "name": "Polygonum cuspidatum",
+                  "part": "root",
+                  "form": "extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "Quercetin dihydrate"
+                },
+                {
+                  "pos": 5,
+                  "name": "Bilberry",
+                  "part": "fruit",
+                  "form": "extract"
+                },
+                {
+                  "pos": 6,
+                  "name": "Cranberry",
+                  "part": "fruit",
+                  "form": "concentrate"
+                },
+                {
+                  "pos": 7,
+                  "name": "Tart cherry",
+                  "form": "powder"
+                },
+                {
+                  "pos": 8,
+                  "name": "Prune",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 9,
+                  "name": "Raspberry",
+                  "form": "juice powder"
+                },
+                {
+                  "pos": 10,
+                  "name": "Strawberry",
+                  "part": "fruit"
+                }
+              ]
+            },
+            {
+              "name": "Brain Support Complex",
+              "total": {
+                "amount": 50,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "L-Glutamine, Ginkgo leaf extract, Bacopa (whole plant) extract, Phosphatidylserine-enriched lecithin, Palm oil powder.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "L-Glutamine"
+                },
+                {
+                  "pos": 2,
+                  "name": "Ginkgo",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Bacopa",
+                  "part": "whole plant",
+                  "form": "extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "Phosphatidylserine-enriched lecithin"
+                },
+                {
+                  "pos": 5,
+                  "name": "Palm oil powder"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Dicalcium phosphate",
+            "microcrystalline cellulose",
+            "coating [hypromellose, polydextrose, titanium dioxide, riboflavin (for color), talc, spirulina extract (for color), medium chain triglycerides]",
+            "stearic acid",
+            "croscarmellose sodium",
+            "silica",
+            "magnesium stearate"
+          ],
+          "source_label": "synaptiv_suppfacts_box_0425.jpg"
+        }
+      ]
+    },
+    "sta-balanced": {
+      "product_id": "sta-balanced",
+      "name": "Sta-Balanced™",
+      "sku": "USSN000004",
+      "ygy_id": "819",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 Capsule",
+          "servings_per_container": 60,
+          "directions": "Take 1 capsule, twice daily with 8 oz. of water. Store at room temperature.",
+          "nutrients": [
+            {
+              "name": "Niacinamide",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 63
+            },
+            {
+              "name": "Zinc",
+              "amount": 7.5,
+              "unit": "mg",
+              "pct_dv": 68,
+              "form": "as Zinc Aspartate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 35,
+              "unit": "mcg",
+              "pct_dv": 64,
+              "form": "as Selenium Aspartate"
+            },
+            {
+              "name": "Manganese",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 43,
+              "form": "as Manganese Aspartate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": "<1",
+              "form": "as Potassium Citrate"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 440,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Yohimbe (Pausingstalia johimbe) Bark 2% Extract, Fenugreek (Trigonella foenum-graecum) Seeds 50% Fibers, Spirulina, Zygophyllaceae (Tribulus Terrestis) 40% Extract, Oat Straw (Arena sativa) 4:1 Extract, Damiana (Turnera diffusa) Leaves, L-Arginine, Maca (Lepidium meyenii) Root 0.6% Extract, Ginkgo Biloba 24% Extract.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Yohimbe",
+                  "part": "bark",
+                  "form": "extract",
+                  "latin": "Pausinystalia johimbe",
+                  "standardization": "2%"
+                },
+                {
+                  "pos": 2,
+                  "name": "Fenugreek",
+                  "part": "seed",
+                  "latin": "Trigonella foenum-graecum",
+                  "standardization": "50% fibers"
+                },
+                {
+                  "pos": 3,
+                  "name": "Spirulina"
+                },
+                {
+                  "pos": 4,
+                  "name": "Tribulus",
+                  "form": "extract",
+                  "latin": "Tribulus terrestris",
+                  "standardization": "40%"
+                },
+                {
+                  "pos": 5,
+                  "name": "Oat Straw",
+                  "form": "extract",
+                  "latin": "Avena sativa",
+                  "standardization": "4:1"
+                },
+                {
+                  "pos": 6,
+                  "name": "Damiana",
+                  "part": "leaves",
+                  "latin": "Turnera diffusa"
+                },
+                {
+                  "pos": 7,
+                  "name": "L-Arginine"
+                },
+                {
+                  "pos": 8,
+                  "name": "Maca",
+                  "part": "root",
+                  "form": "extract",
+                  "latin": "Lepidium meyenii",
+                  "standardization": "0.6%"
+                },
+                {
+                  "pos": 9,
+                  "name": "Ginkgo Biloba",
+                  "form": "extract",
+                  "standardization": "24%"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Cellulose",
+            "magnesium stearate",
+            "silica"
+          ],
+          "source_label": "sta-balanced_label-suppfacts-0323.jpg"
+        }
+      ]
+    },
+    "sta-cardio": {
+      "product_id": "sta-cardio",
+      "name": "Sta-Cardio®",
+      "sku": "USSN000008",
+      "ygy_id": "594",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 Capsule",
+          "servings_per_container": 60,
+          "directions": "Take 1 capsule, twice daily with 8 oz. of water. Store at room temperature.",
+          "nutrients": [
+            {
+              "name": "Vitamin E",
+              "amount": 11,
+              "unit": "mg",
+              "pct_dv": 74,
+              "form": "Natural D-Alpha Tocopheryl",
+              "label_iu": 15
+            },
+            {
+              "name": "Vitamin B1",
+              "amount": 1.5,
+              "unit": "mg",
+              "pct_dv": 125,
+              "form": "as Thiamine HCl"
+            },
+            {
+              "name": "Niacin",
+              "amount": 2.5,
+              "unit": "mg",
+              "pct_dv": 16,
+              "form": "as Niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 118,
+              "form": "as Pyridoxine HCl"
+            },
+            {
+              "name": "Folate",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": 50,
+              "form": "as Folic Acid",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 6,
+              "unit": "mcg",
+              "pct_dv": 250,
+              "form": "as Cyanocobalamin"
+            },
+            {
+              "name": "Fish Oil",
+              "amount": 38,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "L-Carnitine Tartrate",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "CoQ10",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 300,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Spirulina, Chlorella (Chlorella pyrenoidosa), Klamath Falls Blue Green Algae, Green Barley Grass, Alfalfa (Medicago sativa), Broccoli (Brassica oleracea), Cauliflower, Brussel Sprouts, Spinach (Spinacia oleracea), Radish (Raphanus sativus), Carrot, Beet (Beta vulgaris L.) Root, Tomato, Celery (Apium graveolens), Onion (Allium cepa), Leek, Yellow Pepper, Garlic (Allium sativum) Powder, Ginger (Zingiber officinale) Extract, Cinnamon (Cinnamomum zeylanicum).",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Spirulina"
+                },
+                {
+                  "pos": 2,
+                  "name": "Chlorella",
+                  "latin": "Chlorella pyrenoidosa"
+                },
+                {
+                  "pos": 3,
+                  "name": "Klamath Falls Blue Green Algae"
+                },
+                {
+                  "pos": 4,
+                  "name": "Green Barley Grass"
+                },
+                {
+                  "pos": 5,
+                  "name": "Alfalfa",
+                  "latin": "Medicago sativa"
+                },
+                {
+                  "pos": 6,
+                  "name": "Broccoli",
+                  "latin": "Brassica oleracea"
+                },
+                {
+                  "pos": 7,
+                  "name": "Cauliflower"
+                },
+                {
+                  "pos": 8,
+                  "name": "Brussel Sprouts"
+                },
+                {
+                  "pos": 9,
+                  "name": "Spinach",
+                  "latin": "Spinacia oleracea"
+                },
+                {
+                  "pos": 10,
+                  "name": "Radish",
+                  "latin": "Raphanus sativus"
+                },
+                {
+                  "pos": 11,
+                  "name": "Carrot"
+                },
+                {
+                  "pos": 12,
+                  "name": "Beet",
+                  "part": "root",
+                  "latin": "Beta vulgaris"
+                },
+                {
+                  "pos": 13,
+                  "name": "Tomato"
+                },
+                {
+                  "pos": 14,
+                  "name": "Celery",
+                  "latin": "Apium graveolens"
+                },
+                {
+                  "pos": 15,
+                  "name": "Onion",
+                  "latin": "Allium cepa"
+                },
+                {
+                  "pos": 16,
+                  "name": "Leek"
+                },
+                {
+                  "pos": 17,
+                  "name": "Yellow Pepper"
+                },
+                {
+                  "pos": 18,
+                  "name": "Garlic",
+                  "form": "powder",
+                  "latin": "Allium sativum"
+                },
+                {
+                  "pos": 19,
+                  "name": "Ginger",
+                  "form": "extract",
+                  "latin": "Zingiber officinale"
+                },
+                {
+                  "pos": 20,
+                  "name": "Cinnamon",
+                  "latin": "Cinnamomum zeylanicum"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Vegetable Cellulose (Capsule)",
+            "Magnesium Stearate",
+            "Silicon Dioxide"
+          ],
+          "source_label": "sta-cardio_label-suppfacts_0323.jpg"
+        }
+      ]
+    },
+    "sta-clear": {
+      "product_id": "sta-clear",
+      "name": "Sta-Clear",
+      "sku": "USSN000010",
+      "ygy_id": "719",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 Capsule",
+          "servings_per_container": 60,
+          "directions": "Take 1 capsule twice daily, with 8 oz. of water.",
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 750,
+              "unit": "mcg",
+              "pct_dv": 83,
+              "form": "Acetate"
+            },
+            {
+              "name": "Vitamin B-1",
+              "amount": 12.5,
+              "unit": "mg",
+              "pct_dv": 833,
+              "form": "Thiamine HCl"
+            },
+            {
+              "name": "Vitamin B-2",
+              "amount": 12.5,
+              "unit": "mg",
+              "pct_dv": 735,
+              "form": "Riboflavin"
+            },
+            {
+              "name": "Niacinamide",
+              "amount": 12.5,
+              "unit": "mg",
+              "pct_dv": 63
+            },
+            {
+              "name": "Vitamin B-6",
+              "amount": 12.5,
+              "unit": "mg",
+              "pct_dv": 625,
+              "form": "Pyridoxine HCl"
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 12.5,
+              "unit": "mg",
+              "pct_dv": 125,
+              "form": "Calcium Pantothenate"
+            },
+            {
+              "name": "Vitamin D-3",
+              "amount": 6.25,
+              "unit": "mcg",
+              "pct_dv": 31,
+              "form": "Cholecalciferol"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 133,
+              "form": "dl-Alpha Tocopherol Acetate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 7.5,
+              "unit": "mg",
+              "pct_dv": 50,
+              "form": "Oxide"
+            },
+            {
+              "name": "Potassium",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 2,
+              "form": "Chloride"
+            },
+            {
+              "name": "L-Carnitine",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "Tartrate"
+            },
+            {
+              "name": "Coenzyme Q-10",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Fish Oil",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "50% Powder (Omega-3 Fatty Acids)"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 450,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Burdock Root, Dandelion Root, Yellow Dock Root, Citrus Bioflavonoids Complex, Spirulina, Bromelain, Papaya Fruit, White Willow Bark, Oregon Grape Root, Goldenseal Herb, Wolfberry Fruit, Celery Powder, Carrot Powder, Beet Root, Cranberry Fruit Concentrate, Evening Primrose Oil 60% Powder, Red Clover Flowers, Licorice Root.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Burdock",
+                  "part": "root"
+                },
+                {
+                  "pos": 2,
+                  "name": "Dandelion",
+                  "part": "root"
+                },
+                {
+                  "pos": 3,
+                  "name": "Yellow Dock",
+                  "part": "root"
+                },
+                {
+                  "pos": 4,
+                  "name": "Citrus Bioflavonoids Complex"
+                },
+                {
+                  "pos": 5,
+                  "name": "Spirulina"
+                },
+                {
+                  "pos": 6,
+                  "name": "Bromelain"
+                },
+                {
+                  "pos": 7,
+                  "name": "Papaya",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 8,
+                  "name": "White Willow",
+                  "part": "bark"
+                },
+                {
+                  "pos": 9,
+                  "name": "Oregon Grape",
+                  "part": "root"
+                },
+                {
+                  "pos": 10,
+                  "name": "Goldenseal",
+                  "part": "herb"
+                },
+                {
+                  "pos": 11,
+                  "name": "Wolfberry",
+                  "part": "fruit"
+                },
+                {
+                  "pos": 12,
+                  "name": "Celery",
+                  "form": "powder"
+                },
+                {
+                  "pos": 13,
+                  "name": "Carrot",
+                  "form": "powder"
+                },
+                {
+                  "pos": 14,
+                  "name": "Beet",
+                  "part": "root"
+                },
+                {
+                  "pos": 15,
+                  "name": "Cranberry",
+                  "part": "fruit",
+                  "form": "concentrate"
+                },
+                {
+                  "pos": 16,
+                  "name": "Evening Primrose Oil",
+                  "form": "powder",
+                  "standardization": "60%"
+                },
+                {
+                  "pos": 17,
+                  "name": "Red Clover",
+                  "part": "flowers"
+                },
+                {
+                  "pos": 18,
+                  "name": "Licorice",
+                  "part": "root"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Cellulose",
+            "silicon dioxide",
+            "magnesium stearate"
+          ],
+          "source_label": "sta-clear_label-suppfacts-0323.jpg"
+        }
+      ]
+    },
+    "sta-energized-plus": {
+      "product_id": "sta-energized-plus",
+      "name": "Sta-Energized PLUS™",
+      "sku": "USSN000001",
+      "ygy_id": "576",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "2 Capsules",
+          "servings_per_container": 120,
+          "directions": "Take 2 capsules, twice daily with 8 oz. of water. Store at room temperature.",
+          "nutrients": [
+            {
+              "name": "Chromium",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": 185,
+              "form": "as Chromium Polynicotinate, Chromium Aspartate, Chromium Picolinate"
+            },
+            {
+              "name": "Citrus aurantium",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "standardization": "6%"
+            },
+            {
+              "name": "Guarana",
+              "amount": 360,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "standardization": "20%"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 300,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Siberian ginseng (Eleutherococcus senticosus) 0.8% Extract, Ginseng (Panax ginseng) 5% Extract, White Willow Bark (Salix alba) 15% Extract, Bee Pollen, Royal Jelly 6% Extract, Spirulina, Chlorella, Kelp, Cayenne 40,000 hu/g, Beet Leaf.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Siberian ginseng",
+                  "form": "extract",
+                  "latin": "Eleutherococcus senticosus",
+                  "standardization": "0.8%"
+                },
+                {
+                  "pos": 2,
+                  "name": "Ginseng",
+                  "form": "extract",
+                  "latin": "Panax ginseng",
+                  "standardization": "5%"
+                },
+                {
+                  "pos": 3,
+                  "name": "White Willow",
+                  "part": "bark",
+                  "form": "extract",
+                  "latin": "Salix alba",
+                  "standardization": "15%"
+                },
+                {
+                  "pos": 4,
+                  "name": "Bee Pollen"
+                },
+                {
+                  "pos": 5,
+                  "name": "Royal Jelly",
+                  "form": "extract",
+                  "standardization": "6%"
+                },
+                {
+                  "pos": 6,
+                  "name": "Spirulina"
+                },
+                {
+                  "pos": 7,
+                  "name": "Chlorella"
+                },
+                {
+                  "pos": 8,
+                  "name": "Kelp"
+                },
+                {
+                  "pos": 9,
+                  "name": "Cayenne",
+                  "standardization": "40,000 hu/g"
+                },
+                {
+                  "pos": 10,
+                  "name": "Beet",
+                  "part": "leaf"
+                }
+              ]
+            },
+            {
+              "name": "Amino Acid Complex",
+              "total": {
+                "amount": 60,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "L-Carnitine, L-Arginine, DL-Methionine.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "L-Carnitine"
+                },
+                {
+                  "pos": 2,
+                  "name": "L-Arginine"
+                },
+                {
+                  "pos": 3,
+                  "name": "DL-Methionine"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Cellulose",
+            "silica",
+            "magnesium stearate"
+          ],
+          "source_label": "sta-energized-plus_label-suppfacts_0323.jpg"
+        }
+      ]
+    },
+    "sta-natural-plant-shake": {
+      "product_id": "sta-natural-plant-shake",
+      "name": "Sta-Natural® Plant-Based Protein Shake - Vanilla",
+      "sku": "USSN100004",
+      "ygy_id": "7827",
+      "components": [
+        {
+          "form": "powder",
+          "serving_size": "One scoop (33 g)",
+          "servings_per_container": 28,
+          "macros": {
+            "calories": {
+              "amount": 140,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 4,
+              "unit": "g",
+              "pct_dv": 6
+            },
+            "saturated_fat": {
+              "amount": 0.5,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "monounsaturated_fat": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "cholesterol": {
+              "amount": null,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 6,
+              "unit": "g",
+              "pct_dv": 2
+            },
+            "dietary_fiber": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": 8
+            },
+            "total_sugars": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "protein": {
+              "amount": 20,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "sodium": {
+              "amount": 280,
+              "unit": "mg",
+              "pct_dv": 12
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Calcium",
+              "amount": 56,
+              "unit": "mg",
+              "pct_dv": 6
+            },
+            {
+              "name": "Iron",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 28
+            },
+            {
+              "name": "Zinc",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 7
+            }
+          ],
+          "blends": [
+            {
+              "name": "Super Fruit Antioxidant Blend",
+              "total": {
+                "amount": 146,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Pomegranate fruit powder, Acai berry, Acerola, Amla, Jabuticaba, Cranberry, Goji, Mangosteen, Maqui berry, Strawberry, Organic schisandra",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Pomegranate",
+                  "part": "fruit",
+                  "form": "powder"
+                },
+                {
+                  "pos": 2,
+                  "name": "Acai",
+                  "part": "berry"
+                },
+                {
+                  "pos": 3,
+                  "name": "Acerola"
+                },
+                {
+                  "pos": 4,
+                  "name": "Amla"
+                },
+                {
+                  "pos": 5,
+                  "name": "Jabuticaba"
+                },
+                {
+                  "pos": 6,
+                  "name": "Cranberry"
+                },
+                {
+                  "pos": 7,
+                  "name": "Goji"
+                },
+                {
+                  "pos": 8,
+                  "name": "Mangosteen"
+                },
+                {
+                  "pos": 9,
+                  "name": "Maqui berry"
+                },
+                {
+                  "pos": 10,
+                  "name": "Strawberry"
+                },
+                {
+                  "pos": 11,
+                  "name": "Schisandra"
+                }
+              ]
+            },
+            {
+              "name": "Typical Amino Acids Per Serving",
+              "total": null,
+              "pct_dv": null,
+              "as_labeled": "Typical amino acids per serving (mg)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Alanine",
+                  "amount": 806,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 2,
+                  "name": "Arginine",
+                  "amount": 1494,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 3,
+                  "name": "Aspartic Acid",
+                  "amount": 2089,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 4,
+                  "name": "Cystine",
+                  "amount": 172,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 5,
+                  "name": "Glutamic Acid",
+                  "amount": 3087,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 6,
+                  "name": "Glycine",
+                  "amount": 3033,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 7,
+                  "name": "Histidine",
+                  "amount": 480,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 8,
+                  "name": "Isoleucine",
+                  "amount": 890,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 9,
+                  "name": "Leucine",
+                  "amount": 1595,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 10,
+                  "name": "Lysine",
+                  "amount": 1356,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 11,
+                  "name": "Methionine",
+                  "amount": 173,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 12,
+                  "name": "Phenylalanine",
+                  "amount": 1007,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 13,
+                  "name": "Proline",
+                  "amount": 858,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 14,
+                  "name": "Serine",
+                  "amount": 856,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 15,
+                  "name": "Threonine",
+                  "amount": 677,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 16,
+                  "name": "Tryptophan",
+                  "amount": 148,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 17,
+                  "name": "Tyrosine",
+                  "amount": 640,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 18,
+                  "name": "Valine",
+                  "amount": 981,
+                  "unit": "mg"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Vegan protein blend (Pea protein isolate, Brown rice protein, Quinoa)",
+            "Creamer (High oleic sunflower oil, tapioca dextrin, tapioca food starch)",
+            "Tricalcium Phosphate",
+            "mono-and diglycerides (with citric acid to preserve freshness)",
+            "mixed tocopherols",
+            "Natural flavors (Chicory root Inulin)",
+            "Stevia",
+            "Monk fruit",
+            "Cellulose gum"
+          ],
+          "source_label": "ussn100004_plant-shake-0520_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "sta-restored": {
+      "product_id": "sta-restored",
+      "name": "Sta-Restored®",
+      "sku": "USSN000006",
+      "ygy_id": "625",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 Capsule",
+          "servings_per_container": 90,
+          "directions": "Take 1 capsule, three times a day with 8 oz. of water. Store at room temperature.",
+          "nutrients": [
+            {
+              "name": "Manganese",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 43,
+              "form": "as Manganese Sulfate"
+            },
+            {
+              "name": "Glucosamine Sulfate",
+              "amount": 250,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as Glucosamine Sulfate 2KCl"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 317,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Shark Cartilage, White Willow (Salix alba) 15% Extract, Collagen Hydrolyzed Bovine, MSM (Methyl-Sulfonyl-Methane), Bromelain, Sea Cucumber, Feverfew (Tanacetum parthenium) 0.9% Extract, Indian Frankincense (Boswellia serrata) 65% Extract, Ginger (Zingiber officinale) Root 5% Extract.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Shark Cartilage"
+                },
+                {
+                  "pos": 2,
+                  "name": "White Willow",
+                  "form": "extract",
+                  "latin": "Salix alba",
+                  "standardization": "15%"
+                },
+                {
+                  "pos": 3,
+                  "name": "Collagen Hydrolyzed Bovine"
+                },
+                {
+                  "pos": 4,
+                  "name": "MSM",
+                  "form": "Methyl-Sulfonyl-Methane"
+                },
+                {
+                  "pos": 5,
+                  "name": "Bromelain"
+                },
+                {
+                  "pos": 6,
+                  "name": "Sea Cucumber"
+                },
+                {
+                  "pos": 7,
+                  "name": "Feverfew",
+                  "form": "extract",
+                  "latin": "Tanacetum parthenium",
+                  "standardization": "0.9%"
+                },
+                {
+                  "pos": 8,
+                  "name": "Indian Frankincense",
+                  "form": "extract",
+                  "latin": "Boswellia serrata",
+                  "standardization": "65%"
+                },
+                {
+                  "pos": 9,
+                  "name": "Ginger",
+                  "part": "root",
+                  "form": "extract",
+                  "latin": "Zingiber officinale",
+                  "standardization": "5%"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Cellulose",
+            "Silica",
+            "Magnesium Stearate"
+          ],
+          "source_label": "sta-restored_label-suppfacts_0123.jpg"
+        }
+      ]
+    },
+    "sta-vital": {
+      "product_id": "sta-vital",
+      "name": "Sta-Vital®",
+      "sku": "USSN000007",
+      "ygy_id": "827",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 Capsule",
+          "servings_per_container": 60,
+          "directions": "Take 1 capsule twice daily, with 8 oz. of water.",
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 2750,
+              "unit": "mcg",
+              "pct_dv": 306,
+              "form": "Palmitate"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": 3,
+              "form": "Ascorbic Acid"
+            },
+            {
+              "name": "Vitamin D3",
+              "amount": 12.5,
+              "unit": "mcg",
+              "pct_dv": 63,
+              "form": "Cholecalciferol",
+              "label_iu": 500
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 32,
+              "unit": "mg",
+              "pct_dv": 215,
+              "form": "d-Alpha Tocopheryl Succinate"
+            },
+            {
+              "name": "Vitamin B1",
+              "amount": 12.5,
+              "unit": "mg",
+              "pct_dv": 1042,
+              "form": "Thiamine HCl"
+            },
+            {
+              "name": "Vitamin B2",
+              "amount": 12.5,
+              "unit": "mg",
+              "pct_dv": 962,
+              "form": "Riboflavin"
+            },
+            {
+              "name": "Niacinamide",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 156
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 12.5,
+              "unit": "mg",
+              "pct_dv": 735,
+              "form": "Pyridoxine HCl"
+            },
+            {
+              "name": "Folate",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": 50,
+              "form": "Folic Acid",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 50,
+              "unit": "mcg",
+              "pct_dv": 2083
+            },
+            {
+              "name": "Biotin",
+              "amount": 150,
+              "unit": "mcg",
+              "pct_dv": 500
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 500,
+              "form": "Calcium Pantothenate"
+            },
+            {
+              "name": "Choline",
+              "amount": 12.5,
+              "unit": "mg",
+              "pct_dv": 2,
+              "form": "Bitartrate"
+            },
+            {
+              "name": "Calcium",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 4,
+              "form": "Tricalcium Phosphate"
+            },
+            {
+              "name": "Iodine",
+              "amount": 75,
+              "unit": "mcg",
+              "pct_dv": 50,
+              "form": "Kelp"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 6,
+              "form": "Oxide"
+            },
+            {
+              "name": "Zinc",
+              "amount": 7.5,
+              "unit": "mg",
+              "pct_dv": 68,
+              "form": "Monomethionine"
+            },
+            {
+              "name": "Selenium",
+              "amount": 35,
+              "unit": "mcg",
+              "pct_dv": 64,
+              "form": "Selenomethionine"
+            },
+            {
+              "name": "Copper",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 111,
+              "form": "Amino Acid Chelate"
+            },
+            {
+              "name": "Manganese",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 43,
+              "form": "Amino Acid Chelate"
+            },
+            {
+              "name": "Chromium",
+              "amount": 60,
+              "unit": "mcg",
+              "pct_dv": 171,
+              "form": "Polynicotinate"
+            },
+            {
+              "name": "Inositol",
+              "amount": 12.5,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "PABA",
+              "amount": 12.5,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Fruit Blend",
+              "total": {
+                "amount": 200,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Bilberry, Blueberry, Papaya, Red Raspberry, Strawberry, Cranberry, Citrus Bioflavonoids Complex, Hesperidin Complex, Acerola",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Bilberry"
+                },
+                {
+                  "pos": 2,
+                  "name": "Blueberry"
+                },
+                {
+                  "pos": 3,
+                  "name": "Papaya"
+                },
+                {
+                  "pos": 4,
+                  "name": "Red Raspberry"
+                },
+                {
+                  "pos": 5,
+                  "name": "Strawberry"
+                },
+                {
+                  "pos": 6,
+                  "name": "Cranberry"
+                },
+                {
+                  "pos": 7,
+                  "name": "Citrus Bioflavonoids Complex"
+                },
+                {
+                  "pos": 8,
+                  "name": "Hesperidin Complex"
+                },
+                {
+                  "pos": 9,
+                  "name": "Acerola"
+                }
+              ]
+            },
+            {
+              "name": "Enzyme Blend",
+              "total": {
+                "amount": 37.5,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Betaine HCl, Bromelain, Papain",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Betaine HCl"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bromelain"
+                },
+                {
+                  "pos": 3,
+                  "name": "Papain"
+                }
+              ]
+            },
+            {
+              "name": "Herbal Base",
+              "total": {
+                "amount": 40,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Alfalfa Herb, Quercetin Dihydrate, Cabbage, Parsley Leaves, Rice Bran, Rose Hips, Watercress Herb",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Alfalfa",
+                  "part": "herb"
+                },
+                {
+                  "pos": 2,
+                  "name": "Quercetin Dihydrate"
+                },
+                {
+                  "pos": 3,
+                  "name": "Cabbage"
+                },
+                {
+                  "pos": 4,
+                  "name": "Parsley",
+                  "part": "leaves"
+                },
+                {
+                  "pos": 5,
+                  "name": "Rice Bran"
+                },
+                {
+                  "pos": 6,
+                  "name": "Rose Hips"
+                },
+                {
+                  "pos": 7,
+                  "name": "Watercress",
+                  "part": "herb"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Hydroxypropyl Methylcellulose",
+            "Cellulose Powder",
+            "Magnesium Stearate",
+            "Silicon Dioxide"
+          ],
+          "source_label": "sta-vital_label-suppfacts_0524.jpg"
+        }
+      ]
+    },
+    "sta-young": {
+      "product_id": "sta-young",
+      "name": "Sta-Young™",
+      "sku": "USSN000003",
+      "ygy_id": "828",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 Capsule",
+          "servings_per_container": 60,
+          "directions": "Take 1 capsule, twice daily with 8 oz. of water. Store at room temperature.",
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 500,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Citrus Bioflavonoids Complex, Hesperidin Complex, Green Tea (Camellia sinesis) 50% Polyphenols, Grape Seed 95% OPCs, Astaxanthin 1% Extract, Pine (Pinus strobus) Bark 85% Extract.",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Citrus Bioflavonoids Complex"
+                },
+                {
+                  "pos": 2,
+                  "name": "Hesperidin Complex"
+                },
+                {
+                  "pos": 3,
+                  "name": "Green Tea",
+                  "latin": "Camellia sinensis",
+                  "standardization": "50% polyphenols"
+                },
+                {
+                  "pos": 4,
+                  "name": "Grape Seed",
+                  "standardization": "95% OPCs"
+                },
+                {
+                  "pos": 5,
+                  "name": "Astaxanthin",
+                  "form": "extract",
+                  "standardization": "1%"
+                },
+                {
+                  "pos": 6,
+                  "name": "Pine",
+                  "part": "bark",
+                  "form": "extract",
+                  "latin": "Pinus strobus",
+                  "standardization": "85%"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Cellulose",
+            "silica",
+            "magnesium stearate"
+          ],
+          "source_label": "sta-young_6pt375x2pt2_label2-suppfacts_0524.jpg"
         }
       ]
     }

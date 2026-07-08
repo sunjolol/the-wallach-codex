@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 415 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 416 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-07 19:04 UTC-05:00 · round-close · products
+Phase F Batches 22-24: the S-range complete (+21 products, 123->144)
+  ↳ Catalogued the entire S-range of Youngevity products from their labels: the Slender FX weight/energy family, the SMART/SOUL nootropic sticks, five singletons, and the full 8-product Sta-Natural capsule line read side-by-side. Fixed two label typos by internal cross-check (SOUL Stiks blend '356 g'->356 mg in a 2.7 g stick; Refresh FX Thiamin '7 mcg'@583%->7 mg, Luneth's call earlier this session). The verify gate caught a duplicate (ASAP already existed as as-slim-as-possible-asap) and I dropped it. Batch 22 (8): sleep-eze, cleanse-fx, keto-power-up, slender-fx-meal-replacement-shake (two-column Whey/with-milk panel; recorded as-sold Whey %DV + amounts), slender-fx-rev, sweet-eze, smart-stiks, soul-stiks. Batch 23 (5 net): relieve (BeneYOU joint/inflammation, panel self-un-named -> identity from sku USBE0101101005 in the filename, a reliable match not a fuzzy-name guess), super-cell-protector, strawberry-kiwi-mins, super-olive-health (Good Herbs tincture: extract_ratio 1:4 + warning to warnings.json ygy 716), synaptiv; ASAP dropped as a pre-existing dup. Batch 24 (8, the Sta-Natural cluster read side-by-side): sta-balanced, sta-cardio, sta-clear, sta-energized-plus, sta-natural-plant-shake (amino-acid profile as a null-total blend, per-AA mg in ingredients[]), sta-restored, sta-vital, sta-young. Standalone actives -> nutrients[] (Lion's Mane precedent); headed/grouped blends -> blends[] with required as_labeled. Botanical latin normalized in the structured layer (Avena sativa, Tribulus terrestris, Pausinystalia johimbe, Camellia sinensis) while as_labeled preserves each label verbatim. Every label read with vision to confirm identity before recording. products.json 123->144; warnings.json ->20. Verify: products_verify OK (0 problems), invariants 45/45, build OK. Resume at the T-range.
 
 ## 2026-07-07 18:25 UTC-05:00 · session-end · chronicle
 Session close 2026-07-07: Phase F products 86->123 (Batches 16-21, ranges M-R). Caught 2 mislabels + 2 misprints; ReVERSE 2-component; products_verify accepts .png. Resume at S-range.
@@ -785,7 +789,3 @@ Epigenetics (2014) b2: Ch 17 rest, EPIGEN-000010..018 (9 claims) — 7 tier-1 [d
 ## 2026-06-30 12:22 UTC-05:00 · milestone · knowledge/corpus
 Epigenetics (2014) batch 1 [b1]: new 5th shard, EPIGEN-000001..009 (Ch17 genetic-diseases core). 7 tier-1 reframes (diabetes=Cr+V, CF/MD/Keshan=Se, Kawasaki=Cu) + 2 search-only (homosexuality/intersex, neutral, search-confined per Luneth). kv191, 881->890 claims.
   ↳ Audit-first confirmed in-housing (hash exact-match) + full 32,141-line structure; tier-1 disease core = Ch17-18 only. Homosexuality/intersex built tier-1/neutral so Luneth could visual-verify, approved presentation, ruled search-only (not a condition). VERIFY: finalize->seal kv190->retag draft->reseal kv191->verify PASS->embed->build OK->invariants 31/31 (search_only 84->86)->knowledge probe PASS (conds 456->454, both topics absent from index).
-
-## 2026-06-30 10:59 UTC-05:00 · milestone · knowledge/corpus
-iaiyh (2020) FULLY MINED — batch 3 = 3 search-only claims: The Solution cofactor + soil-depletion rationale (Edison wood-ashes, −37%/−77%) + Wallach credentials (Nobel nom, Klaus Schwarz/epigenetics, DSHEA). kv 189, claims 881; board 31/31, probe green. NEXT: Epigenetics 2014.
-  ↳ WAL-CLM-IAIYH-000018..000020, all search-only (essentials[]/conditions[] empty). Dispositions ruled live by Luneth (AskUserQuestion): Solution rationale=2 claims, About-the-Author bio=1 claim. No .txt edits (b75 re-OCR already clean), no new conditions, no operational-index change → operationally invisible (Ask-Wallach search only). SESSION 27 b78.

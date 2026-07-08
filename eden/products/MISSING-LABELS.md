@@ -26,7 +26,7 @@ Deluxe Nutritional Energy · Nutritional Alert Program · On-The-Go Healthy Body
 - Multi-Collagen Peptide Gummies (USYG100506)
 - Nano Balance (USLF700001) — RESOLVED 2026-07-07: Luneth supplied `nano-balance-tincture_1224_supp-facts.jpg`; extracted as `nano-balance` (glycerin-based liquid, Curcumin Complex Blend 500mg).
 - Plant Derived Minerals (13203) — RESOLVED 2026-07-07: Luneth supplied `13203_plant_derived_minerals_supfacts.jpg`; extracted as `plant-derived-minerals` (liquid, Majestic Earth Plant Derived Minerals 600mg).
-- Refresh FX (USYG103200) — RESOLVED 2026-07-07: Luneth supplied `refresh-fx_0126_supp-facts.jpg`; extracted as `refresh-fx`. [FLAG: label Thiamin '7 mcg' @583% DV = likely a mg typo; recorded faithfully.]
+- Refresh FX (USYG103200) — RESOLVED 2026-07-07: Luneth supplied `refresh-fx_0126_supp-facts.jpg`; extracted as `refresh-fx`. [RESOLVED 2026-07-07: Thiamin corrected 7 mcg -> 7 mg (Luneth's call; 583% x 1.2 mg DV = exactly 7 mg).]
 - Root Beer Belly (USYG100000) — RESOLVED 2026-07-07: Luneth supplied `ygy-usyg100000-root-beer-belly-suppfacts-1012.jpg`; extracted as `root-beer-belly` (probiotic packet, 5 billion CFU).
 - RVB 350 (USRS000005) + RYL BETA550 (USRS000006) — RESOLVED 2026-07-07: Luneth supplied `rvb_350_supp-fact_1024.jpg` + `ryl_beta550_supp-fact_1024.jpg`; extracted as `rvb-350` (350mg beta-glucan) + `ryl-beta550` (550mg beta-glucan).
 - Super Collagen Shot (USYG300055)
