@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 420 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 421 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-07 23:01 UTC-05:00 · round-close · products
+Phase F U-range U5-U6: +11 Ultimate products (183 total). Luneth label map un-blocked 5 no-label items -- Iron 26/ParaClear/Super KB extracted; EFA-180 & Gluco-Gel-120 confirmed as pack-size variants[]. U-range nearly done -- only the 2 Vitamin D3s + Smart FX remain.
+  ↳ Luneth gave the authoritative label->product map for the U items the fuzzy matcher had missed, plus corrected my remaining-count (it was ~15, not the ~9 I'd said). That un-blocked five items: three became real products (Iron 26, ParaClear, Super KB), and two turned out to be the SAME formula at a different capsule count as products already done -- so they were folded in as pack-size variants rather than duplicated. He also caught that my EFA Plus record pointed at a second scan of its label; I switched it to his canonical file and kept the other as provenance. eden/products/products.json 172->183 (+11). U5 new: ultimate-iron-26, ultimate-niacin-plus, ultimate-paraclear, ultimate-super-kb. U5 reconciliations: EFA-180 (sku 21832) verified identical per-softgel formula to ultimate-efa -> variants[] entry; Gluco-Gel-120 (sku 21251) verified identical to ultimate-gluco-gel -> variants[] entry; ultimate-efa-plus source_label ult-efa-plus-90_suppfacts2-1020_8.jpg -> suppfacts1 (Luneth's canonical), old scan moved to additional_labels[]. U6 new: ultimate-selenium, ultimate-zinc (liquid drops), ultimate-prost-fx, ultimate-nightly-essense (14-strain probiotic blend + systemic enzyme blend, CFU/activity carried as ingredient amounts/standardizations), ultimate-oceans-gold (13 sea vegetables), ultimate-vision-fx, ultra-body-toddy (dense liquid multivitamin, 29 nutrients + Cell-Shield/Amino/Phytonutrient blends). warnings.json 23->24: ParaClear 'Contains: Tree nuts' (10594, source ygy). Label-typo corrections: Prost FX 'Curcurbita' -> Cucurbita; Ultra Body Toddy 'pyrodoxine' -> pyridoxine. MISSING-LABELS.md: 5 resolutions logged. Verify: products_verify OK (183 products, 189 components, 0 problems); invariants 46/46; node build OK, bundle re-inlined. REMAINING U (need Luneth): the two Vitamin D3s (5000 IU vs 2500 IU -- confirm which label maps to which sku) + Ultimate Smart FX (ult-smart-fx, not in worklist -- verify identity) + Youngevity Ultimate Iodine (sorts under Y though Ultimate-branded).
 
 ## 2026-07-07 22:38 UTC-05:00 · round-close · products
 Phase F U-range U3-U4: +11 Ultimate products — the 3 distinct EFA formulas (flax / fish-oil+EPA / evening primrose), Enzymes + Flora FX, and the Hair-Skin-Nails / Hormone FX / King Calcium / Memory FX / Microbiome / Gluco-Gel block. 172 products, 0 verify problems.
@@ -785,7 +789,3 @@ SESSION 28 b6 - Epigenetics Ch 18 amino acids + essential fatty acids. EPIGEN-04
 ## 2026-06-30 16:26 UTC-05:00 · round-close · knowledge/corpus
 SESSION 28 b5 - Epigenetics Ch 18 water-soluble vitamins. EPIGEN-035..046 (+12 deficiency_sign): B1/B2/B3/B5/B6/B12/B9/C + biotin/choline/inositol/flavonoids, each function + deficiency list. kv195, claims 927, conditions 456 (0 new). Visual-verify owed before b6.
   ↳ Comprehensive tier-1 batched per Luneth's ruling; all 12 map to existing conditions (no new). No .txt edits (clean list bodies cited, OCR-garbled headers left for the final sweep). Board 31/31 (0 NEW), search-only unchanged 98, probe green. The b4-fix synopsis auto-fires for newly-enriched conditions. Awaiting visual sign-off before b6 (amino acids + fatty acids).
-
-## 2026-06-30 16:18 UTC-05:00 · design-decision · views/knowledge
-SESSION 28 b4-fix - Condition deep-view synopsis (Luneth UX): the deep view now opens with a condition-first sentence (e.g. 'Wallach links Uterine Fibroids to a deficiency of Vitamin D') before the nutrient breakdown. Familiar vitamin names, views-only. Visually verified.
-  ↳ Synopsis derived from the leading role's own essentials (deficiency->'linked to a deficiency of', treatment->'protocol centers on'), capped at 4. familiarEssentialName shows Vitamin D/B12 not Cholecalciferol/Cobalamin. faithful to claim role. eslint 0, build OK, invariants 31/31, probe green. Luneth: 'Looks good to me.'

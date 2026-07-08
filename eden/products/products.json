@@ -21619,6 +21619,15 @@
           ],
           "source_label": "ult-efa-60_label-1023_suppfacts.jpg"
         }
+      ],
+      "variants": [
+        {
+          "sku": "21832",
+          "ygy_id": "739",
+          "name": "Ultimate EFA™ - 180 soft gels",
+          "form": "softgel",
+          "source_label": "21832_ult-efa-180_0520_panel-900x1200_1.jpg"
+        }
       ]
     },
     "ultimate-efa-plus": {
@@ -21732,8 +21741,11 @@
             "Sunflower oil",
             "Mixed tocopherols"
           ],
-          "source_label": "ult-efa-plus-90_suppfacts2-1020_8.jpg"
+          "source_label": "ult-efa-plus-90_suppfacts1-1020.jpg"
         }
+      ],
+      "additional_labels": [
+        "ult-efa-plus-90_suppfacts2-1020_8.jpg"
       ]
     },
     "ultimate-multi-efa": {
@@ -21979,6 +21991,15 @@
             "Magnesium stearate"
           ],
           "source_label": "ult-gluco-gel-240_suppfacts-1119_2.jpg"
+        }
+      ],
+      "variants": [
+        {
+          "sku": "21251",
+          "ygy_id": "581",
+          "name": "Ultimate Gluco-Gel™ - 120 capsules",
+          "form": "capsule",
+          "source_label": "21251_ult-gluco-gel-120_1119_panel-900x1200_2.jpg"
         }
       ]
     },
@@ -22599,6 +22620,1460 @@
             "Rebaudioside A (from Stevia rebaudiana leaf extract)"
           ],
           "source_label": "ult-microbiome_canister_label-0925_1.jpg"
+        }
+      ]
+    },
+    "ultimate-iron-26": {
+      "product_id": "ultimate-iron-26",
+      "name": "Ultimate Iron 26™",
+      "sku": "USYG70008",
+      "ygy_id": "10426",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 90,
+              "unit": "mg",
+              "pct_dv": 100,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Folate",
+              "amount": 800,
+              "unit": "mcg",
+              "pct_dv": 200,
+              "form": "as folic acid and (6S)-5-MTHF Choline Salt, Optifolin",
+              "unit_detail": "DFE"
+            },
+            {
+              "name": "Iron",
+              "amount": 18,
+              "unit": "mg",
+              "pct_dv": 100,
+              "form": "from ferrous bisglycinate chelate and Pea Seed, SloIron"
+            },
+            {
+              "name": "Moringa",
+              "amount": 400,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "organic",
+              "part": "leaf"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Vegetarian capsule (hypromellose and water)",
+            "Magnesium stearate",
+            "Silicon dioxide"
+          ],
+          "source_label": "iron_suppfacts_1025.jpg"
+        }
+      ]
+    },
+    "ultimate-niacin-plus": {
+      "product_id": "ultimate-niacin-plus",
+      "name": "Ultimate Niacin Plus™",
+      "sku": "USYG102684",
+      "ygy_id": "986",
+      "components": [
+        {
+          "form": "tablet",
+          "serving_size": "1 tablet",
+          "servings_per_container": 60,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Niacin",
+              "amount": 500,
+              "unit": "mg",
+              "pct_dv": 3125
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 100,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Arjuna Extract (Bark), Hawthorn Extract (Berry), Nattokinase",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Arjuna",
+                  "part": "bark",
+                  "form": "extract"
+                },
+                {
+                  "pos": 2,
+                  "name": "Hawthorn",
+                  "part": "berry",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Nattokinase"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Carnauba wax",
+            "Vegetable stearine",
+            "Vegetable stearate",
+            "Silica",
+            "Cellulose gum"
+          ],
+          "source_label": "ultimate-niacin-plus_0126_supp-facts.jpg"
+        }
+      ]
+    },
+    "ultimate-paraclear": {
+      "product_id": "ultimate-paraclear",
+      "name": "Ultimate ParaClear™",
+      "sku": "20972",
+      "ygy_id": "10594",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Zinc",
+              "amount": 2.2,
+              "unit": "mg",
+              "pct_dv": 20,
+              "form": "from zinc bisglycinate chelate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 11,
+              "unit": "mcg",
+              "pct_dv": 20,
+              "form": "from l-selenomethionine"
+            },
+            {
+              "name": "Copper",
+              "amount": 180,
+              "unit": "mcg",
+              "pct_dv": 20,
+              "form": "from copper bisglycinate chelate"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 1220,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Black Walnut Hull, Quassia Bark, Wormwood Herb, Bismuth Citrate, Cascara Sagrada Bark, Garlic Bulb Extract, Licorice Root Extract (DGL, deglycyrrhizinated), Pau D'Arco Bark Extract, Clove Bud, Neem Leaf Extract, Pumpkin Seed Extract, Rosemary Leaf Extract, and Thyme Herb Extract",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Black Walnut",
+                  "part": "hull"
+                },
+                {
+                  "pos": 2,
+                  "name": "Quassia",
+                  "part": "bark"
+                },
+                {
+                  "pos": 3,
+                  "name": "Wormwood",
+                  "part": "herb"
+                },
+                {
+                  "pos": 4,
+                  "name": "Bismuth Citrate"
+                },
+                {
+                  "pos": 5,
+                  "name": "Cascara Sagrada",
+                  "part": "bark"
+                },
+                {
+                  "pos": 6,
+                  "name": "Garlic",
+                  "part": "bulb",
+                  "form": "extract"
+                },
+                {
+                  "pos": 7,
+                  "name": "Licorice",
+                  "part": "root",
+                  "form": "extract",
+                  "standardization": "DGL, deglycyrrhizinated"
+                },
+                {
+                  "pos": 8,
+                  "name": "Pau D'Arco",
+                  "part": "bark",
+                  "form": "extract"
+                },
+                {
+                  "pos": 9,
+                  "name": "Clove",
+                  "part": "bud"
+                },
+                {
+                  "pos": 10,
+                  "name": "Neem",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 11,
+                  "name": "Pumpkin",
+                  "part": "seed",
+                  "form": "extract"
+                },
+                {
+                  "pos": 12,
+                  "name": "Rosemary",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 13,
+                  "name": "Thyme",
+                  "part": "herb",
+                  "form": "extract"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Vegetarian capsule (cellulose and water)",
+            "Microcrystalline cellulose",
+            "Magnesium stearate",
+            "Silicon dioxide"
+          ],
+          "source_label": "ultimate-paracleanse_supp-facts_0426.jpg"
+        }
+      ]
+    },
+    "ultimate-super-kb": {
+      "product_id": "ultimate-super-kb",
+      "name": "Ultimate Super KB™ - 90 capsules",
+      "sku": "67508",
+      "ygy_id": "10195",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 90,
+          "macros": {},
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 375,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Cranberry Fruit Extract, Bilberry Fruit Extract, Devil's Claw Root Extract, Horsetail Herb Extract, Pygeum Bark Extract, Uva Ursi Leaf Extract, and White Willow Bark Extract",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Cranberry",
+                  "part": "fruit",
+                  "form": "extract"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bilberry",
+                  "part": "fruit",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Devil's Claw",
+                  "part": "root",
+                  "form": "extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "Horsetail",
+                  "part": "herb",
+                  "form": "extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Pygeum",
+                  "part": "bark",
+                  "form": "extract"
+                },
+                {
+                  "pos": 6,
+                  "name": "Uva Ursi",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 7,
+                  "name": "White Willow",
+                  "part": "bark",
+                  "form": "extract"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Gelatin capsule (gelatin and water)",
+            "Microcrystalline cellulose",
+            "Magnesium stearate",
+            "Silicon dioxide"
+          ],
+          "source_label": "ult_super_kb_supp_facts_0225.jpg"
+        }
+      ]
+    },
+    "ultimate-selenium": {
+      "product_id": "ultimate-selenium",
+      "name": "Ultimate Selenium",
+      "sku": "20971",
+      "ygy_id": "6752",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 90,
+          "directions": "Take 1 capsule three times daily, or as directed by your healthcare professional. Store in a cool dry place.",
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 750,
+              "unit": "mcg",
+              "pct_dv": 83,
+              "form": "from beta carotene",
+              "unit_detail": "RAE",
+              "label_iu": 2500
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 120,
+              "unit": "mg",
+              "pct_dv": 133,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D3",
+              "amount": 5,
+              "unit": "mcg",
+              "pct_dv": 25,
+              "form": "as cholecalciferol",
+              "label_iu": 200
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 133,
+              "form": "as d-alpha tocopheryl acetate",
+              "label_iu": 30
+            },
+            {
+              "name": "Zinc",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 45,
+              "form": "from zinc bisglycinate chelate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 181,
+              "form": "from l-selenomethionine"
+            },
+            {
+              "name": "Copper",
+              "amount": 0.5,
+              "unit": "mg",
+              "pct_dv": 55,
+              "form": "from copper bisglycinate chelate"
+            },
+            {
+              "name": "Chromium",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 286,
+              "form": "from chromium nicotinate glycinate chelate"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 200,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "L-Aspartic Acid, Elderberry Fruit Extract, Blueberry Fruit Extract, Bilberry Fruit Extract, and Vanadium (from vanadium nicotinate glycinate chelate)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "L-Aspartic Acid"
+                },
+                {
+                  "pos": 2,
+                  "name": "Elderberry",
+                  "part": "fruit",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Blueberry",
+                  "part": "fruit",
+                  "form": "extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "Bilberry",
+                  "part": "fruit",
+                  "form": "extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Vanadium",
+                  "form": "from vanadium nicotinate glycinate chelate"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Gelatin capsule (gelatin and water)",
+            "Gelatin",
+            "Vegetable stearate"
+          ],
+          "source_label": "ult-selenium_label-suppfacts_0324_1.jpg"
+        }
+      ]
+    },
+    "ultimate-zinc": {
+      "product_id": "ultimate-zinc",
+      "name": "Ultimate Zinc™",
+      "sku": "USYG100403",
+      "ygy_id": "7928",
+      "components": [
+        {
+          "form": "liquid",
+          "serving_size": "1 dropper full (approx. 0.75 mL)",
+          "servings_per_container": 80,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Zinc",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 45,
+              "form": "from zinc sulfate"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Blend",
+              "total": {
+                "amount": 33.3,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Thyme Leaf Extract, Licorice Root Extract, Plantain Leaf Extract, Horse Chestnut Seed Extract, Pine Bark Extract",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Thyme",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 2,
+                  "name": "Licorice",
+                  "part": "root",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Plantain",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "Horse Chestnut",
+                  "part": "seed",
+                  "form": "extract"
+                },
+                {
+                  "pos": 5,
+                  "name": "Pine Bark",
+                  "form": "extract"
+                }
+              ]
+            },
+            {
+              "name": "Proprietary Essential Oil Blend",
+              "total": {
+                "amount": 0.9,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Peppermint Leaf, Eucalyptus Leaf, Cajeput Leaf, Juniper Berry, Wintergreen Leaf, and Clove Bud",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Peppermint",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 2,
+                  "name": "Eucalyptus",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 3,
+                  "name": "Cajeput",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 4,
+                  "name": "Juniper",
+                  "part": "berry"
+                },
+                {
+                  "pos": 5,
+                  "name": "Wintergreen",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 6,
+                  "name": "Clove",
+                  "part": "bud"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Vegetable glycerin",
+            "Wildflower honey",
+            "Purified water",
+            "Citric acid"
+          ],
+          "source_label": "usyg100403_ult-zinc-0720_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "ultimate-prost-fx": {
+      "product_id": "ultimate-prost-fx",
+      "name": "Ultimate Prost FX™ - 60 capsules",
+      "sku": "20682",
+      "ygy_id": "6751",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "1 capsule",
+          "servings_per_container": 60,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Zinc",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 45,
+              "form": "from zinc methionine"
+            },
+            {
+              "name": "Selenium",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 182,
+              "form": "from selenium glycinate"
+            },
+            {
+              "name": "Saw Palmetto",
+              "amount": 320,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "blend",
+              "part": "fruit",
+              "latin": "Serenoa repens"
+            },
+            {
+              "name": "L-Alanine",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "L-Glycine",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Pumpkin",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "part": "seed",
+              "latin": "Cucurbita pepo"
+            },
+            {
+              "name": "Pygeum",
+              "amount": 38,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "part": "bark",
+              "latin": "Pygeum africanum"
+            },
+            {
+              "name": "Eleuthero",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "part": "root",
+              "latin": "Eleutherococcus senticosus"
+            },
+            {
+              "name": "Gamma Oryzanol",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Horsetail",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "part": "aerial parts",
+              "latin": "Equisetum arvense"
+            },
+            {
+              "name": "Sarsaparilla",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "part": "root",
+              "latin": "Smilax officinalis"
+            },
+            {
+              "name": "Ginkgo biloba",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "part": "leaf",
+              "latin": "Ginkgo biloba"
+            },
+            {
+              "name": "Lycopene",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Gelatin (capsule shell)",
+            "Microcrystalline cellulose",
+            "Silicon dioxide"
+          ],
+          "source_label": "ult-prost-fx_suppfacts_0825.jpg"
+        }
+      ]
+    },
+    "ultimate-nightly-essense": {
+      "product_id": "ultimate-nightly-essense",
+      "name": "Ultimate Nightly Essense - 62 capsules",
+      "sku": "65002",
+      "ygy_id": "818",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 31,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Rutin",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": null,
+              "latin": "Sophora japonica"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Probiotic Bacteria Blend",
+              "total": {
+                "amount": 700,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Bifidobacterium bifidum 2.4 billion CFU, Bifidobacterium breve 4.4 billion CFU, Bifidobacterium infantis 5.8 billion CFU, Bifidobacterium longum 1.0 billion CFU, Lactobacillus acidophilus 5.8 billion CFU, Lactobacillus brevis 720 million CFU, Lactobacillus bulgaricus 720 million CFU, Lactobacillus casei 720 million CFU, Lactobacillus helveticus 240 million CFU, Lactobacillus lactis 240 million CFU, Lactobacillus plantarum 720 million CFU, Lactobacillus rhamnosus 720 million CFU, Lactobacillus salivarius 240 million CFU, Streptococcus thermophilus 720 million CFU",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Bifidobacterium bifidum",
+                  "amount": 2.4,
+                  "unit": "billion CFU"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bifidobacterium breve",
+                  "amount": 4.4,
+                  "unit": "billion CFU"
+                },
+                {
+                  "pos": 3,
+                  "name": "Bifidobacterium infantis",
+                  "amount": 5.8,
+                  "unit": "billion CFU"
+                },
+                {
+                  "pos": 4,
+                  "name": "Bifidobacterium longum",
+                  "amount": 1.0,
+                  "unit": "billion CFU"
+                },
+                {
+                  "pos": 5,
+                  "name": "Lactobacillus acidophilus",
+                  "amount": 5.8,
+                  "unit": "billion CFU"
+                },
+                {
+                  "pos": 6,
+                  "name": "Lactobacillus brevis",
+                  "amount": 720,
+                  "unit": "million CFU"
+                },
+                {
+                  "pos": 7,
+                  "name": "Lactobacillus bulgaricus",
+                  "amount": 720,
+                  "unit": "million CFU"
+                },
+                {
+                  "pos": 8,
+                  "name": "Lactobacillus casei",
+                  "amount": 720,
+                  "unit": "million CFU"
+                },
+                {
+                  "pos": 9,
+                  "name": "Lactobacillus helveticus",
+                  "amount": 240,
+                  "unit": "million CFU"
+                },
+                {
+                  "pos": 10,
+                  "name": "Lactobacillus lactis",
+                  "amount": 240,
+                  "unit": "million CFU"
+                },
+                {
+                  "pos": 11,
+                  "name": "Lactobacillus plantarum",
+                  "amount": 720,
+                  "unit": "million CFU"
+                },
+                {
+                  "pos": 12,
+                  "name": "Lactobacillus rhamnosus",
+                  "amount": 720,
+                  "unit": "million CFU"
+                },
+                {
+                  "pos": 13,
+                  "name": "Lactobacillus salivarius",
+                  "amount": 240,
+                  "unit": "million CFU"
+                },
+                {
+                  "pos": 14,
+                  "name": "Streptococcus thermophilus",
+                  "amount": 720,
+                  "unit": "million CFU"
+                }
+              ]
+            },
+            {
+              "name": "Systemic Enzyme Blend",
+              "total": {
+                "amount": 700,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Protease 200,000 HUT, Papain 2,400,000 FCC PU, Bromelain 2,400,000 FCC PU, Nattokinase 2,000 FU, Seaprose S 20,000 U",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Protease",
+                  "standardization": "200,000 HUT"
+                },
+                {
+                  "pos": 2,
+                  "name": "Papain",
+                  "standardization": "2,400,000 FCC PU"
+                },
+                {
+                  "pos": 3,
+                  "name": "Bromelain",
+                  "standardization": "2,400,000 FCC PU"
+                },
+                {
+                  "pos": 4,
+                  "name": "Nattokinase",
+                  "standardization": "2,000 FU"
+                },
+                {
+                  "pos": 5,
+                  "name": "Seaprose S",
+                  "standardization": "20,000 U"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Inulin (FOS)",
+            "Rice extract",
+            "Capsule (vegetable cellulose, water)"
+          ],
+          "source_label": "ygy-65002-nightly-essense-suppfacts-0116.jpg"
+        }
+      ]
+    },
+    "ultimate-oceans-gold": {
+      "product_id": "ultimate-oceans-gold",
+      "name": "Ultimate Ocean's Gold™ - 60 Capsules",
+      "sku": "67507",
+      "ygy_id": "983",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Calcium",
+              "amount": 250,
+              "unit": "mg",
+              "pct_dv": 19,
+              "form": "from seaweed, Aquamin"
+            },
+            {
+              "name": "Iodine",
+              "amount": 500,
+              "unit": "mcg",
+              "pct_dv": 333,
+              "form": "from potassium iodide"
+            },
+            {
+              "name": "Coenzyme Q10",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Ocean's Gold Blend",
+              "total": {
+                "amount": 1205,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Seaweed Calcium (Aquamin), Chlorella, Bladderwrack, Sodium Alginate, Spirulina, Irish Moss, Kelp, Dulse, Alaria, Laver, Nori, Sea Lettuce, and Wakame",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Seaweed Calcium",
+                  "form": "Aquamin"
+                },
+                {
+                  "pos": 2,
+                  "name": "Chlorella"
+                },
+                {
+                  "pos": 3,
+                  "name": "Bladderwrack"
+                },
+                {
+                  "pos": 4,
+                  "name": "Sodium Alginate"
+                },
+                {
+                  "pos": 5,
+                  "name": "Spirulina"
+                },
+                {
+                  "pos": 6,
+                  "name": "Irish Moss"
+                },
+                {
+                  "pos": 7,
+                  "name": "Kelp"
+                },
+                {
+                  "pos": 8,
+                  "name": "Dulse"
+                },
+                {
+                  "pos": 9,
+                  "name": "Alaria"
+                },
+                {
+                  "pos": 10,
+                  "name": "Laver"
+                },
+                {
+                  "pos": 11,
+                  "name": "Nori"
+                },
+                {
+                  "pos": 12,
+                  "name": "Sea Lettuce"
+                },
+                {
+                  "pos": 13,
+                  "name": "Wakame"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Vegetarian capsule (hypromellose and water)",
+            "Microcrystalline cellulose",
+            "Magnesium stearate",
+            "Silicon dioxide"
+          ],
+          "source_label": "ultimate-oceans-gold_supp-facts_0126.jpg"
+        }
+      ]
+    },
+    "ultimate-vision-fx": {
+      "product_id": "ultimate-vision-fx",
+      "name": "Ultimate Vision FX™ - 60 capsules",
+      "sku": "21202",
+      "ygy_id": "547",
+      "components": [
+        {
+          "form": "capsule",
+          "serving_size": "2 capsules",
+          "servings_per_container": 30,
+          "macros": {},
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 1500,
+              "unit": "mcg",
+              "pct_dv": 167,
+              "form": "as beta carotene",
+              "unit_detail": "RAE"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 240,
+              "unit": "mg",
+              "pct_dv": 267,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 40.2,
+              "unit": "mg",
+              "pct_dv": 268,
+              "form": "from d-alpha tocopheryl acetate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 45,
+              "form": "from amino acid chelate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 70,
+              "unit": "mcg",
+              "pct_dv": 127,
+              "form": "from yeast"
+            },
+            {
+              "name": "Chromium",
+              "amount": 50,
+              "unit": "mcg",
+              "pct_dv": 143,
+              "form": "from amino acid chelate"
+            },
+            {
+              "name": "Lutein Esters",
+              "amount": 8,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Coenzyme Q10",
+              "amount": 4,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Microcrystalline cellulose",
+            "Gelatin capsule (gelatin and water)",
+            "Magnesium stearate",
+            "Silicon dioxide"
+          ],
+          "source_label": "ult-vision-fx_suppfacts-0425.jpg"
+        }
+      ]
+    },
+    "ultra-body-toddy": {
+      "product_id": "ultra-body-toddy",
+      "name": "Ultra Body Toddy™",
+      "sku": "81099",
+      "ygy_id": "875",
+      "components": [
+        {
+          "form": "liquid",
+          "serving_size": "1 fl oz (2 tablespoons)",
+          "servings_per_container": 32,
+          "macros": {
+            "calories": {
+              "amount": 35,
+              "unit": null,
+              "pct_dv": null
+            },
+            "calories_from_fat": {
+              "amount": 0,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_fat": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 8,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "total_sugars": {
+              "amount": 8,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 780,
+              "unit": "mcg",
+              "pct_dv": 87,
+              "form": "as beta-carotene & palmitate"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 1000,
+              "unit": "mg",
+              "pct_dv": 1111,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin D3",
+              "amount": 50,
+              "unit": "mcg",
+              "pct_dv": 250,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 134,
+              "unit": "mg",
+              "pct_dv": 893,
+              "form": "as d-alpha tocopherol acetate"
+            },
+            {
+              "name": "Thiamin",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 2083,
+              "form": "as thiamine mononitrate",
+              "unit_detail": "B1"
+            },
+            {
+              "name": "Riboflavin",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 1923,
+              "form": "as riboflavin",
+              "unit_detail": "B2"
+            },
+            {
+              "name": "Niacin",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 156,
+              "form": "as niacinamide",
+              "unit_detail": "B3"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 40,
+              "unit": "mg",
+              "pct_dv": 2353,
+              "form": "as pyridoxine HCl"
+            },
+            {
+              "name": "Folate",
+              "amount": 400,
+              "unit": "mcg",
+              "pct_dv": 100,
+              "form": "as folic acid"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": 8333,
+              "form": "as methylcobalamin"
+            },
+            {
+              "name": "Biotin",
+              "amount": 300,
+              "unit": "mcg",
+              "pct_dv": 1000
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 2000,
+              "form": "as d-calcium pantothenate"
+            },
+            {
+              "name": "Choline",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": 5,
+              "form": "as choline bitartrate"
+            },
+            {
+              "name": "Calcium",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": 23,
+              "form": "as tricalcium phosphate, calcium citrate"
+            },
+            {
+              "name": "Iron",
+              "amount": 4,
+              "unit": "mg",
+              "pct_dv": 22,
+              "form": "as ferrous gluconate"
+            },
+            {
+              "name": "Phosphorus",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": 12,
+              "form": "from tricalcium phosphate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 24,
+              "form": "as magnesium citrate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 182,
+              "form": "as zinc gluconate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 100,
+              "unit": "mcg",
+              "pct_dv": 182,
+              "form": "as L-selenium methionine"
+            },
+            {
+              "name": "Copper",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": 111,
+              "form": "as copper gluconate"
+            },
+            {
+              "name": "Manganese",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": 217,
+              "form": "as manganese gluconate"
+            },
+            {
+              "name": "Chromium",
+              "amount": 200,
+              "unit": "mcg",
+              "pct_dv": 571,
+              "form": "as chromium amino acid chelate"
+            },
+            {
+              "name": "Potassium",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": 2,
+              "form": "as potassium citrate"
+            },
+            {
+              "name": "Inositol",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Boron",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as boron amino acid chelate"
+            },
+            {
+              "name": "PABA",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "as para amino benzoic acid"
+            },
+            {
+              "name": "Citrus Bioflavonoids",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Dimethylglycine",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Majestic Earth Plant Derived Minerals",
+              "amount": 300,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend of Cell Shield",
+              "total": {
+                "amount": 200,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "N-Acetyl Cysteine, Bilberry extract, Milk Thistle Seed, Co-enzyme Q-10, Quercetin, Lycopene, Grape Seed extract",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "N-Acetyl Cysteine"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bilberry",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Milk Thistle",
+                  "part": "seed"
+                },
+                {
+                  "pos": 4,
+                  "name": "Coenzyme Q-10"
+                },
+                {
+                  "pos": 5,
+                  "name": "Quercetin"
+                },
+                {
+                  "pos": 6,
+                  "name": "Lycopene"
+                },
+                {
+                  "pos": 7,
+                  "name": "Grape Seed",
+                  "form": "extract"
+                }
+              ]
+            },
+            {
+              "name": "Proprietary Blend of Amino Acids",
+              "total": {
+                "amount": 125,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "From gelatin hydrolysate: Glycine, Arginine, Valine, Methionine, Hydroxyproline, Aspartic Acid, Phenylalanine, Tyrosine, Proline, Serine, Isoleucine, Cysteine, Glutamic Acid, Lysine, Threonine, Alanine, Leucine, Histidine",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Glycine"
+                },
+                {
+                  "pos": 2,
+                  "name": "Arginine"
+                },
+                {
+                  "pos": 3,
+                  "name": "Valine"
+                },
+                {
+                  "pos": 4,
+                  "name": "Methionine"
+                },
+                {
+                  "pos": 5,
+                  "name": "Hydroxyproline"
+                },
+                {
+                  "pos": 6,
+                  "name": "Aspartic Acid"
+                },
+                {
+                  "pos": 7,
+                  "name": "Phenylalanine"
+                },
+                {
+                  "pos": 8,
+                  "name": "Tyrosine"
+                },
+                {
+                  "pos": 9,
+                  "name": "Proline"
+                },
+                {
+                  "pos": 10,
+                  "name": "Serine"
+                },
+                {
+                  "pos": 11,
+                  "name": "Isoleucine"
+                },
+                {
+                  "pos": 12,
+                  "name": "Cysteine"
+                },
+                {
+                  "pos": 13,
+                  "name": "Glutamic Acid"
+                },
+                {
+                  "pos": 14,
+                  "name": "Lysine"
+                },
+                {
+                  "pos": 15,
+                  "name": "Threonine"
+                },
+                {
+                  "pos": 16,
+                  "name": "Alanine"
+                },
+                {
+                  "pos": 17,
+                  "name": "Leucine"
+                },
+                {
+                  "pos": 18,
+                  "name": "Histidine"
+                }
+              ]
+            },
+            {
+              "name": "Proprietary Blend of Phytonutrients",
+              "total": {
+                "amount": 25,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Broccoli Powder, Banana Powder, Carrot Powder, Blueberry Powder, Super Sweet Corn Powder, Cherry Powder, Spinach Powder, Peach Powder",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Broccoli Powder"
+                },
+                {
+                  "pos": 2,
+                  "name": "Banana Powder"
+                },
+                {
+                  "pos": 3,
+                  "name": "Carrot Powder"
+                },
+                {
+                  "pos": 4,
+                  "name": "Blueberry Powder"
+                },
+                {
+                  "pos": 5,
+                  "name": "Super Sweet Corn Powder"
+                },
+                {
+                  "pos": 6,
+                  "name": "Cherry Powder"
+                },
+                {
+                  "pos": 7,
+                  "name": "Spinach Powder"
+                },
+                {
+                  "pos": 8,
+                  "name": "Peach Powder"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Water",
+            "Majestic Earth Plant Derived Minerals",
+            "Natural vegetable glycerine",
+            "Sorbitol",
+            "Citric acid",
+            "Natural flavor blend",
+            "Stevia",
+            "Xanthan gum",
+            "Potassium sorbate",
+            "Sodium benzoate"
+          ],
+          "source_label": "81099_ultra-body-toddy-liquid-0120_panel-900x1200.jpg"
         }
       ]
     }

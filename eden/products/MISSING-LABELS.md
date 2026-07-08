@@ -32,14 +32,14 @@ Deluxe Nutritional Energy · Nutritional Alert Program · On-The-Go Healthy Body
 - Super Collagen Shot (USYG300055)
 - Taheebo (USLF000120)
 - TrueDetox Tea 30ct (TL021PROD)
-- Ultimate Iron 26 (USYG70008)
-- Ultimate ParaClear (20972)
-- Ultimate Super KB 90caps (67508)
+- Ultimate Iron 26 (USYG70008) — RESOLVED 2026-07-07 (U5): Luneth mapped `iron_suppfacts_1025.jpg`; extracted as `ultimate-iron-26` (Optifolin folate + SloIron + moringa).
+- Ultimate ParaClear (20972) — RESOLVED 2026-07-07 (U5): Luneth mapped `ultimate-paracleanse_supp-facts_0426.jpg` (matcher missed it — 'paraCleanse' filename vs 'ParaClear' product); extracted as `ultimate-paraclear`.
+- Ultimate Super KB 90caps (67508) — RESOLVED 2026-07-07 (U5): Luneth mapped `ult_super_kb_supp_facts_0225.jpg`; extracted as `ultimate-super-kb` (kidney & bladder botanicals).
 - XeraTest Hormonal Support for Men (USYG100081)
 - Youngevity CardioBeets 195g (USYG100071)
 
 _(Same-name clusters pending careful side-by-side label passes; not counted here yet. **Body Balance RESOLVED 2026-07-06:** base liquid (USLF000130) + Sticks powder (USLF070031) extracted; Body Balance Mix + Starter Pack + the '×N w/ TruBoost/VitalStart' listings are bundles (skip). **Osteo family RESOLVED 2026-07-06:** Beyond Osteo FX Liquid (USYG103210) + Powder (USYG103211), Osteo-Mag (21210), OsteoProCare (USLF000700V), Ultimate Osteo FX (13209) all extracted. **BTT / Tangy Tangerine line RESOLVED 2026-07-06:** all 6 base products extracted — 2.5 Canister, Original 450G (+ its 30-count box variant 23230), 2.0 CPF canister, 2.0 CPF 30-count box, 2.0 Tablets, Ultimate Liquid — no genuine-missing among them.) **Ultimate Mineral Caps RESOLVED 2026-07-07 (Batch 16 — extracted early from the M-range because the mislabeled `ult-mineral-caps` label is actually this product):** base 64-cap (sku 20691, ygy 751) is `ultimate-mineral-caps`; the 4-pack (20691C, ygy 752) is a plain multipack (not a variant, per the female/GH precedent). The U-range pass can skip it._ **Premium Muscadine Grape Seed (USNP000001, ygy 988) done EARLY 2026-07-07 (Batch 17)** — its label `usnp000001_...caps_suppfacts` was in hand alongside the N-range Nature's Pearl Muscadine Grape *Extract* syrup (7756); two distinct muscadine products. The P-range pass can skip the Grape Seed._
 
 ## Count-variants of extracted products (attach as variants[] when the pack-size label is obtained)
-- Ultimate EFA - 180 soft gels (21832, ygy 739) - same softgel formula as `ultimate-efa` (60-ct, sku 20641); no 180 label in hand (noted U3, 2026-07-07).
-- Ultimate Gluco-Gel - 120 Capsules (21251, ygy 581 & 6763) - same formula as `ultimate-gluco-gel` (240-ct, sku 21252); no 120 label in hand (noted U4, 2026-07-07).
+- Ultimate EFA - 180 soft gels (21832, ygy 739) - same softgel formula as `ultimate-efa` (60-ct, sku 20641); RESOLVED 2026-07-07 (U5): Luneth mapped `21832_ult-efa-180_0520_panel-900x1200_1.jpg`; verified identical per-softgel formula; attached as a variants[] entry on `ultimate-efa`.
+- Ultimate Gluco-Gel - 120 Capsules (21251, ygy 581 & 6763) - same formula as `ultimate-gluco-gel` (240-ct, sku 21252); RESOLVED 2026-07-07 (U5): Luneth mapped `21251_ult-gluco-gel-120_1119_panel-900x1200_2.jpg`; verified identical per-serving formula; attached as a variants[] entry on `ultimate-gluco-gel`.
