@@ -26487,6 +26487,1397 @@
           "source_label": "womens-probiotic-complete_suppfacts_0725.jpg"
         }
       ]
+    },
+    "xerafem": {
+      "product_id": "xerafem",
+      "name": "XeraFem™ Hormonal Support for Women",
+      "sku": "USYG100082",
+      "ygy_id": "979",
+      "components": [
+        {
+          "form": "tablet",
+          "serving_size": "2 Tablets",
+          "servings_per_container": 30,
+          "nutrients": [
+            {
+              "name": "Vitamin A",
+              "amount": 750,
+              "unit": "mcg",
+              "unit_detail": "RAE",
+              "pct_dv": 83,
+              "form": "as beta carotene"
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 33,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "Vitamin E",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 67,
+              "form": "as d-alpha-tocopheryl succinate"
+            },
+            {
+              "name": "Niacin",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 63,
+              "form": "as niacinamide"
+            },
+            {
+              "name": "Calcium",
+              "amount": 150,
+              "unit": "mg",
+              "pct_dv": 12,
+              "form": "as dicalcium phosphate and calcium citrate"
+            },
+            {
+              "name": "Magnesium",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 12,
+              "form": "as magnesium citrate"
+            },
+            {
+              "name": "Zinc",
+              "amount": 15,
+              "unit": "mg",
+              "pct_dv": 136,
+              "form": "as zinc citrate"
+            },
+            {
+              "name": "Selenium",
+              "amount": 35,
+              "unit": "mcg",
+              "pct_dv": 64,
+              "form": "as selenomethionine"
+            },
+            {
+              "name": "Maca",
+              "amount": 200,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "root",
+              "form": "extract",
+              "standardization": "0.6% glucosinolates"
+            },
+            {
+              "name": "Alpha lipoic acid",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Organic flaxseed",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Imortalium® Youth Complex",
+              "total": {
+                "amount": 150,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Organic Whole Food Blend (organic apple, beet, broccoli, carrot, green cabbage, kale, parsley, spinach, blueberry, raspberry, strawberry, tomato); Telomere Support Blend (L-glutamine, catalase, N-acetyl-L-cysteine, grape seed extract, L-glutathione, resveratrol from Polygonum cuspidatum root extract); Melon juice concentrate with Bioperine (providing 140 IU SOD); Fucoidan Sea Nutrient Blend (fucoxanthin-rich seaweed whole plant, Ascophyllum nodosum, 10% fucoxanthin; kombu, nori, wakame seaweed)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Organic Whole Food Blend",
+                  "sub_ingredients": [
+                    {
+                      "name": "Organic apple"
+                    },
+                    {
+                      "name": "Organic beet"
+                    },
+                    {
+                      "name": "Organic broccoli"
+                    },
+                    {
+                      "name": "Organic carrot"
+                    },
+                    {
+                      "name": "Organic green cabbage"
+                    },
+                    {
+                      "name": "Organic kale"
+                    },
+                    {
+                      "name": "Organic parsley"
+                    },
+                    {
+                      "name": "Organic spinach"
+                    },
+                    {
+                      "name": "Organic blueberry"
+                    },
+                    {
+                      "name": "Organic raspberry"
+                    },
+                    {
+                      "name": "Organic strawberry"
+                    },
+                    {
+                      "name": "Organic tomato"
+                    }
+                  ]
+                },
+                {
+                  "pos": 2,
+                  "name": "Telomere Support Blend",
+                  "sub_ingredients": [
+                    {
+                      "name": "L-glutamine"
+                    },
+                    {
+                      "name": "Catalase"
+                    },
+                    {
+                      "name": "N-acetyl-L-cysteine"
+                    },
+                    {
+                      "name": "Grape seed extract"
+                    },
+                    {
+                      "name": "L-glutathione"
+                    },
+                    {
+                      "name": "Resveratrol",
+                      "latin": "Polygonum cuspidatum"
+                    }
+                  ]
+                },
+                {
+                  "pos": 3,
+                  "name": "Melon juice concentrate with Bioperine",
+                  "standardization": "providing 140 IU SOD"
+                },
+                {
+                  "pos": 4,
+                  "name": "Fucoidan Sea Nutrient Blend",
+                  "sub_ingredients": [
+                    {
+                      "name": "Fucoxanthin-rich seaweed (whole plant, 10% fucoxanthin)",
+                      "latin": "Ascophyllum nodosum"
+                    },
+                    {
+                      "name": "Kombu seaweed"
+                    },
+                    {
+                      "name": "Nori seaweed"
+                    },
+                    {
+                      "name": "Wakame seaweed"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Botanical Blend",
+              "total": {
+                "amount": 100,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Jujube seed extract, citrus bioflavonoid complex, sage leaf",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Jujube",
+                  "part": "seed",
+                  "form": "extract"
+                },
+                {
+                  "pos": 2,
+                  "name": "Citrus bioflavonoid complex"
+                },
+                {
+                  "pos": 3,
+                  "name": "Sage",
+                  "part": "leaf"
+                }
+              ]
+            },
+            {
+              "name": "Natural Vitality Factors",
+              "total": {
+                "amount": 100,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Ginger root, dong quai root, damiana leaf, L-arginine HCl, L-histidine",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Ginger",
+                  "part": "root"
+                },
+                {
+                  "pos": 2,
+                  "name": "Dong Quai",
+                  "part": "root"
+                },
+                {
+                  "pos": 3,
+                  "name": "Damiana",
+                  "part": "leaf"
+                },
+                {
+                  "pos": 4,
+                  "name": "L-arginine HCl"
+                },
+                {
+                  "pos": 5,
+                  "name": "L-histidine"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Microcrystalline cellulose",
+            "Stearic acid",
+            "Croscarmellose sodium",
+            "Coating (hypromellose, macrogol, hydroxypropyl cellulose)",
+            "Magnesium stearate",
+            "Silica"
+          ],
+          "source_label": "usyg100082_xerafem-1022_panel-900x1200.jpg"
+        }
+      ]
+    },
+    "zinc-fx": {
+      "product_id": "zinc-fx",
+      "name": "Zinc Fx (30 Lozenges)",
+      "sku": "USYG100085",
+      "ygy_id": "556",
+      "variants": [
+        {
+          "sku": "USYG100085C",
+          "ygy_id": "557",
+          "name": "Zinc Fx 30 Lozenges (4 Pack)",
+          "form": "lozenge",
+          "source_label": "ygy-usyg100085-zinc-fx-suppfacts-1114.jpg"
+        },
+        {
+          "sku": "USYG100085D",
+          "ygy_id": "558",
+          "name": "Zinc Fx 30 Lozenges (6 Pack)",
+          "form": "lozenge",
+          "source_label": "ygy-usyg100085-zinc-fx-suppfacts-1114.jpg"
+        }
+      ],
+      "components": [
+        {
+          "form": "lozenge",
+          "serving_size": "1 Lozenge",
+          "servings_per_container": 30,
+          "macros": {
+            "total_carbohydrate": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "sugar_alcohol": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Zinc",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 67,
+              "form": "from aspartate complex"
+            },
+            {
+              "name": "Trace Mineral Blend",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Protective Food & Nutrient Blend",
+              "total": {
+                "amount": 150,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Cranberry (Vaccinium macrocarpon), olive leaf (Olea europa, standardized extract), elderberry (Sambucus canadensis fruit, standardized extract), and astragalus (Astragalus membranaceus root, standardized extract)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Cranberry",
+                  "latin": "Vaccinium macrocarpon"
+                },
+                {
+                  "pos": 2,
+                  "name": "Olive",
+                  "part": "leaf",
+                  "latin": "Olea europa",
+                  "standardization": "standardized extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Elderberry",
+                  "part": "fruit",
+                  "latin": "Sambucus canadensis",
+                  "standardization": "standardized extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "Astragalus",
+                  "part": "root",
+                  "latin": "Astragalus membranaceus",
+                  "standardization": "standardized extract"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Xylitol",
+            "Stearic acid (from red palm oil, Elaeis guineensis)",
+            "Magnesium stearate (from red palm oil, Elaeis guineensis)",
+            "Natural flavors (cherry, raspberry, vanilla)",
+            "Silica",
+            "Zinc oxide",
+            "Stevia"
+          ],
+          "source_label": "ygy-usyg100085-zinc-fx-suppfacts-1114.jpg"
+        }
+      ]
+    },
+    "zradical-liquid": {
+      "product_id": "zradical-liquid",
+      "name": "ZRadical™ (32 fl oz)",
+      "sku": "3026",
+      "ygy_id": "6642",
+      "components": [
+        {
+          "form": "liquid",
+          "serving_size": "1 fl oz",
+          "servings_per_container": 32,
+          "macros": {
+            "calories": {
+              "amount": 15,
+              "unit": null,
+              "pct_dv": null
+            },
+            "calories_from_fat": {
+              "amount": 0,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 4,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "total_sugars": {
+              "amount": 4,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Riboflavin",
+              "amount": 1.7,
+              "unit": "mg",
+              "pct_dv": 130
+            },
+            {
+              "name": "Niacin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 125,
+              "form": "from niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 118,
+              "form": "from Pyridoxine hydrochloride"
+            },
+            {
+              "name": "Folic Acid",
+              "amount": 400,
+              "unit": "mcg",
+              "pct_dv": 100
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 80,
+              "unit": "mcg",
+              "pct_dv": 3334,
+              "form": "from Cyanocobalamin"
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 200
+            },
+            {
+              "name": "Vitamin C",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": 3
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": null,
+              "pct_dv": null,
+              "as_labeled": "Fucoidan 50 mg; plus an 840 mg portion: Banana puree, dragonfruit juice concentrate, wolfberry juice concentrate, yumberry juice concentrate, milk thistle extract, fucose, turmeric",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Fucoidan",
+                  "amount": 50,
+                  "unit": "mg"
+                },
+                {
+                  "pos": 2,
+                  "name": "Banana puree"
+                },
+                {
+                  "pos": 3,
+                  "name": "Dragonfruit juice concentrate"
+                },
+                {
+                  "pos": 4,
+                  "name": "Wolfberry juice concentrate"
+                },
+                {
+                  "pos": 5,
+                  "name": "Yumberry juice concentrate"
+                },
+                {
+                  "pos": 6,
+                  "name": "Milk thistle extract"
+                },
+                {
+                  "pos": 7,
+                  "name": "Fucose"
+                },
+                {
+                  "pos": 8,
+                  "name": "Turmeric"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Water",
+            "Fruit juices and purees blend (contains one or more of the following: apple, pear and/or grape)",
+            "Natural flavors",
+            "Xanthan gum",
+            "Citric acid"
+          ],
+          "source_label": "3026_zradical-liquid-0418_panel-900x1200_1.jpg"
+        }
+      ]
+    },
+    "zradical-powder-canister": {
+      "product_id": "zradical-powder-canister",
+      "name": "ZRadical™ Powder Canister (207 g)",
+      "sku": "3207",
+      "ygy_id": "619",
+      "components": [
+        {
+          "form": "powder",
+          "serving_size": "1 Scoop (6.9 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 24,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 6,
+              "unit": "g",
+              "pct_dv": 5
+            },
+            "total_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Riboflavin",
+              "amount": 1.7,
+              "unit": "mg",
+              "pct_dv": 131
+            },
+            {
+              "name": "Niacin",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 125,
+              "form": "from niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 118,
+              "form": "from pyridoxine HCL"
+            },
+            {
+              "name": "Folic Acid",
+              "amount": 680,
+              "unit": "mcg",
+              "unit_detail": "DFE",
+              "pct_dv": 170
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 60,
+              "unit": "mcg",
+              "pct_dv": 2500,
+              "form": "from methylcobalamin"
+            },
+            {
+              "name": "Pantothenic Acid",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 200
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": null,
+              "pct_dv": null,
+              "as_labeled": "Fucoidans (from fucoidan extract) 50 mg; plus an 840 mg portion: Banana puree, Dragon fruit (Hylocereus undatus) powder, Wolfberry concentrate, Yumberry (Myrica rubra) juice concentrate, Milk thistle (Silybum marianum) extract, Turmeric",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Fucoidans",
+                  "amount": 50,
+                  "unit": "mg",
+                  "form": "from fucoidan extract"
+                },
+                {
+                  "pos": 2,
+                  "name": "Banana puree"
+                },
+                {
+                  "pos": 3,
+                  "name": "Dragon fruit",
+                  "form": "powder",
+                  "latin": "Hylocereus undatus"
+                },
+                {
+                  "pos": 4,
+                  "name": "Wolfberry concentrate"
+                },
+                {
+                  "pos": 5,
+                  "name": "Yumberry juice concentrate",
+                  "latin": "Myrica rubra"
+                },
+                {
+                  "pos": 6,
+                  "name": "Milk thistle extract",
+                  "latin": "Silybum marianum"
+                },
+                {
+                  "pos": 7,
+                  "name": "Turmeric"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Maltodextrin",
+            "Natural Flavors (Apple, Grape, and other Natural Flavors)",
+            "Citric Acid",
+            "Stevia",
+            "Natural Color (Grape Skin Extract and other Natural Ingredients)",
+            "Grape Seed"
+          ],
+          "source_label": "zradical_powder_canister_suppfacts_0525.jpg"
+        }
+      ]
+    },
+    "zradical-plus": {
+      "product_id": "zradical-plus",
+      "name": "ZRadical+™ (with Collagen)",
+      "sku": "3235",
+      "ygy_id": "10396",
+      "components": [
+        {
+          "form": "powder packet",
+          "serving_size": "1 Packet (9.1 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 33,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 6,
+              "unit": "g",
+              "pct_dv": 2
+            },
+            "total_sugars": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "added_sugars": {
+              "amount": 0,
+              "unit": "g",
+              "pct_dv": null
+            },
+            "protein": {
+              "amount": 2,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin B2",
+              "amount": 1.7,
+              "unit": "mg",
+              "pct_dv": 131,
+              "form": "Riboflavin"
+            },
+            {
+              "name": "Niacin",
+              "amount": 20,
+              "unit": "mg",
+              "unit_detail": "NE",
+              "pct_dv": 125,
+              "form": "as Niacinamide"
+            },
+            {
+              "name": "Vitamin B6",
+              "amount": 2,
+              "unit": "mg",
+              "pct_dv": 118,
+              "form": "as Pyridoxine HCL"
+            },
+            {
+              "name": "Folate",
+              "amount": 667,
+              "unit": "mcg",
+              "unit_detail": "DFE",
+              "pct_dv": 167,
+              "form": "as Folic Acid (400 mcg)"
+            },
+            {
+              "name": "Vitamin B12",
+              "amount": 60,
+              "unit": "mcg",
+              "pct_dv": 2500,
+              "form": "as Methylcobalamin"
+            },
+            {
+              "name": "Vitamin B5",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 200,
+              "form": "as Calcium Pantothenate"
+            },
+            {
+              "name": "Collagen Peptides",
+              "amount": 2000,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "Bovine"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 890,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Banana Fruit, Fucoidan Extract, Yumberry Juice, Dragon Fruit, Wolfberry Juice, Milk Thistle Extract, Turmeric",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Banana Fruit"
+                },
+                {
+                  "pos": 2,
+                  "name": "Fucoidan Extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Yumberry Juice"
+                },
+                {
+                  "pos": 4,
+                  "name": "Dragon Fruit"
+                },
+                {
+                  "pos": 5,
+                  "name": "Wolfberry Juice"
+                },
+                {
+                  "pos": 6,
+                  "name": "Milk Thistle Extract"
+                },
+                {
+                  "pos": 7,
+                  "name": "Turmeric"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Maltodextrin",
+            "Natural Flavors (Sour Apple, Grape)",
+            "Citric Acid",
+            "Stevia",
+            "Grape Skin",
+            "Xanthan Gum",
+            "Grape Seed"
+          ],
+          "source_label": "zradical-collagen_suppfacts-0925_1_.jpg"
+        }
+      ]
+    },
+    "ygy-activate-glp1": {
+      "product_id": "ygy-activate-glp1",
+      "name": "YGY Activate™ - GLP-1 Boost",
+      "sku": "USYG70001",
+      "ygy_id": "10598",
+      "additional_labels": [
+        "ygy-activate-glp1_suppfacts_0625_2.jpg"
+      ],
+      "components": [
+        {
+          "form": "powder packet",
+          "serving_size": "1 Packet (8.4 g)",
+          "servings_per_container": 20,
+          "macros": {
+            "calories": {
+              "amount": 5,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": "<1"
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin C",
+              "amount": 50,
+              "unit": "mg",
+              "pct_dv": 56,
+              "form": "as ascorbic acid"
+            },
+            {
+              "name": "L-Arginine Base",
+              "amount": 4500,
+              "unit": "mg",
+              "pct_dv": null
+            },
+            {
+              "name": "Tart Cherry",
+              "amount": 250,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "powder",
+              "latin": "Prunus cerasus"
+            },
+            {
+              "name": "Resveratrol",
+              "amount": 100,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "extract",
+              "latin": "Polygonum cuspidatum"
+            }
+          ],
+          "blends": [],
+          "other_ingredients": [
+            "Citric acid",
+            "Malic acid",
+            "Natural flavors",
+            "Stevia leaf extract",
+            "Guar gum",
+            "Silica",
+            "Natural colors (Beta carotene, Beet root)"
+          ],
+          "source_label": "ygy-activate-glp1_suppfacts_0625_3.jpg"
+        }
+      ]
+    },
+    "ygy-elevate-glp1": {
+      "product_id": "ygy-elevate-glp1",
+      "name": "YGY Elevate™ - GLP-1 Support Shot",
+      "sku": "USYG70002",
+      "ygy_id": "10541",
+      "additional_labels": [
+        "ygy-elevate-glp1-shot_suppfacts_0725_2.jpg"
+      ],
+      "components": [
+        {
+          "form": "liquid shot",
+          "serving_size": "1 Shot (50 ml)",
+          "servings_per_container": 10,
+          "macros": {
+            "calories": {
+              "amount": 15,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 3,
+              "unit": "g",
+              "pct_dv": 1
+            },
+            "protein": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 30,
+              "unit": "mg",
+              "pct_dv": 1
+            },
+            {
+              "name": "Mandarin Orange",
+              "amount": 3,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "unripe fruit extract",
+              "latin": "Citrus reticulata blanco"
+            },
+            {
+              "name": "Moringa",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "leaf",
+              "form": "extract",
+              "latin": "Moringa oleifera"
+            },
+            {
+              "name": "Lemon Balm",
+              "amount": 5,
+              "unit": "mg",
+              "pct_dv": null,
+              "form": "stem & leaf extract",
+              "latin": "Melissa officinalis"
+            },
+            {
+              "name": "Grape",
+              "amount": 1,
+              "unit": "mg",
+              "pct_dv": null,
+              "part": "skin",
+              "form": "extract",
+              "latin": "Vitis vinifera"
+            }
+          ],
+          "blends": [
+            {
+              "name": "GLP-1 Support Formula",
+              "total": {
+                "amount": 1800,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Bifidobacterium Breve Postbiotic, Rocket Apple Extract, Probio-Kombu Black Tea",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Bifidobacterium breve postbiotic"
+                },
+                {
+                  "pos": 2,
+                  "name": "Rocket Apple Extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Probio-Kombu Black Tea"
+                }
+              ]
+            },
+            {
+              "name": "Lepteam Ferment Powder",
+              "total": {
+                "amount": 330,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Isomalto Oligosaccharide, Pomegranate (Punica granatum) Fruit Juice, Purslane (Portulaca oleracea) Leaf Powder, White Mulberry (Morus alba) Fruit Juice, Fennel (Foeniculum vulgare) Fruit Powder, Bitter Melon (Momordica charantia) Fruit Powder",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Isomalto Oligosaccharide"
+                },
+                {
+                  "pos": 2,
+                  "name": "Pomegranate",
+                  "form": "fruit juice",
+                  "latin": "Punica granatum"
+                },
+                {
+                  "pos": 3,
+                  "name": "Purslane",
+                  "part": "leaf",
+                  "form": "powder",
+                  "latin": "Portulaca oleracea"
+                },
+                {
+                  "pos": 4,
+                  "name": "White Mulberry",
+                  "form": "fruit juice",
+                  "latin": "Morus alba"
+                },
+                {
+                  "pos": 5,
+                  "name": "Fennel",
+                  "form": "fruit powder",
+                  "latin": "Foeniculum vulgare"
+                },
+                {
+                  "pos": 6,
+                  "name": "Bitter Melon",
+                  "form": "fruit powder",
+                  "latin": "Momordica charantia"
+                }
+              ]
+            },
+            {
+              "name": "EAA proprietary Blend",
+              "total": {
+                "amount": 692,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "L-Phenylalanine, L-Leucine, L-Lysine HCL, L-Valine, L-Isoleucine, L-Arginine, L-Threonine, L-Methionine, L-Histidine, L-Tryptophan",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "L-Phenylalanine"
+                },
+                {
+                  "pos": 2,
+                  "name": "L-Leucine"
+                },
+                {
+                  "pos": 3,
+                  "name": "L-Lysine HCL"
+                },
+                {
+                  "pos": 4,
+                  "name": "L-Valine"
+                },
+                {
+                  "pos": 5,
+                  "name": "L-Isoleucine"
+                },
+                {
+                  "pos": 6,
+                  "name": "L-Arginine"
+                },
+                {
+                  "pos": 7,
+                  "name": "L-Threonine"
+                },
+                {
+                  "pos": 8,
+                  "name": "L-Methionine"
+                },
+                {
+                  "pos": 9,
+                  "name": "L-Histidine"
+                },
+                {
+                  "pos": 10,
+                  "name": "L-Tryptophan"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Water",
+            "Natural Flavors",
+            "Erythritol",
+            "Phosphoric Acid",
+            "Steviol Glycosides",
+            "Gum Acacia",
+            "Sunflower Lecithin",
+            "Xanthan Gum",
+            "Contains milk (allergen)"
+          ],
+          "source_label": "ygy-elevate-glp1-shot_suppfacts_0725.jpg"
+        }
+      ]
+    },
+    "ygy-regulate-glp1": {
+      "product_id": "ygy-regulate-glp1",
+      "name": "YGY Regulate™ - Daily Fiber",
+      "sku": "USYG70003",
+      "ygy_id": "10358",
+      "additional_labels": [
+        "ygy-regulate-glp1_suppfacts_0725_2_1.jpg"
+      ],
+      "components": [
+        {
+          "form": "powder packet",
+          "serving_size": "1 Packet (10.3 g)",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 35,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 9,
+              "unit": "g",
+              "pct_dv": 3
+            },
+            "dietary_fiber": {
+              "amount": 8,
+              "unit": "g",
+              "pct_dv": 29
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Sodium",
+              "amount": 20,
+              "unit": "mg",
+              "pct_dv": 1
+            },
+            {
+              "name": "Bacillus coagulans",
+              "amount": null,
+              "unit": null,
+              "pct_dv": null,
+              "form": "5 billion CFU"
+            }
+          ],
+          "blends": [
+            {
+              "name": "Prebiotic Fiber Blend",
+              "total": {
+                "amount": 8.5,
+                "unit": "g"
+              },
+              "pct_dv": null,
+              "as_labeled": "Inulin, Acacia Fiber, Beet Fiber, Flaxseed, Chia Seed",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Inulin"
+                },
+                {
+                  "pos": 2,
+                  "name": "Acacia Fiber"
+                },
+                {
+                  "pos": 3,
+                  "name": "Beet Fiber"
+                },
+                {
+                  "pos": 4,
+                  "name": "Flaxseed"
+                },
+                {
+                  "pos": 5,
+                  "name": "Chia Seed"
+                }
+              ]
+            },
+            {
+              "name": "Blood Sugar Support Blend",
+              "total": {
+                "amount": 100,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Cinnamon Bark Extract, Bitter Melon Fruit Extract, Gymnema Sylvestre (leaf) Extract (std. to 25% Gymnemic Acid)",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Cinnamon",
+                  "part": "bark",
+                  "form": "extract"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bitter Melon",
+                  "part": "fruit",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Gymnema Sylvestre",
+                  "part": "leaf",
+                  "form": "extract",
+                  "standardization": "standardized to 25% Gymnemic Acid"
+                }
+              ]
+            },
+            {
+              "name": "Enzyme Blend",
+              "total": {
+                "amount": 100,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Bromelain, Papain, Protease, Amylase, Cellulase, Lactase, Lipase",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Bromelain"
+                },
+                {
+                  "pos": 2,
+                  "name": "Papain"
+                },
+                {
+                  "pos": 3,
+                  "name": "Protease"
+                },
+                {
+                  "pos": 4,
+                  "name": "Amylase"
+                },
+                {
+                  "pos": 5,
+                  "name": "Cellulase"
+                },
+                {
+                  "pos": 6,
+                  "name": "Lactase"
+                },
+                {
+                  "pos": 7,
+                  "name": "Lipase"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Citric acid",
+            "Natural flavors",
+            "Silica",
+            "Stevia leaf extract (Rebaudioside A)",
+            "Natural color (Beta-carotene)",
+            "Stevia leaf extract (RebM)"
+          ],
+          "source_label": "ygy-regulate-glp1_suppfacts_0725_2.jpg"
+        }
+      ]
+    },
+    "sinus-allergy-support": {
+      "product_id": "sinus-allergy-support",
+      "name": "Sinus & Allergy Support",
+      "sku": "USGH000017",
+      "ygy_id": "708",
+      "components": [
+        {
+          "form": "liquid tincture",
+          "serving_size": "2 mL (approx. 1/2 tsp or 40 drops)",
+          "servings_per_container": 60,
+          "extract_ratio": "1:4 (250 mg herb per 1 mL)",
+          "nutrients": [],
+          "blends": [
+            {
+              "name": "Proprietary Herbal Extract Blend",
+              "total": {
+                "amount": 1900,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Horseradish Root, Bayberry Root Bark, Chickweed Herb, Gentian Root, Goldenseal Root, Oregon Grape Root, Wood Betony Herb",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Horseradish",
+                  "part": "root"
+                },
+                {
+                  "pos": 2,
+                  "name": "Bayberry",
+                  "part": "root bark"
+                },
+                {
+                  "pos": 3,
+                  "name": "Chickweed",
+                  "part": "herb"
+                },
+                {
+                  "pos": 4,
+                  "name": "Gentian",
+                  "part": "root"
+                },
+                {
+                  "pos": 5,
+                  "name": "Goldenseal",
+                  "part": "root"
+                },
+                {
+                  "pos": 6,
+                  "name": "Oregon Grape",
+                  "part": "root"
+                },
+                {
+                  "pos": 7,
+                  "name": "Wood Betony",
+                  "part": "herb"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Purified water",
+            "Ethyl alcohol (35-45%)"
+          ],
+          "source_label": "gh-sinus-allergy_suppfacts-1221_cart_1200x900.jpg"
+        }
+      ]
+    },
+    "zinc-immune-support": {
+      "product_id": "zinc-immune-support",
+      "name": "Zinc + Immune Support™",
+      "sku": "USYG100072",
+      "ygy_id": "7777",
+      "components": [
+        {
+          "form": "lozenge",
+          "serving_size": "1 Lozenge",
+          "servings_per_container": 30,
+          "macros": {
+            "calories": {
+              "amount": 6,
+              "unit": null,
+              "pct_dv": null
+            },
+            "calories_from_fat": {
+              "amount": 1,
+              "unit": null,
+              "pct_dv": null
+            },
+            "total_carbohydrate": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": "<1"
+            },
+            "sugar_alcohol": {
+              "amount": 1,
+              "unit": "g",
+              "pct_dv": null
+            }
+          },
+          "nutrients": [
+            {
+              "name": "Vitamin D",
+              "amount": 25,
+              "unit": "mcg",
+              "pct_dv": 125,
+              "label_iu": 1000,
+              "form": "as cholecalciferol"
+            },
+            {
+              "name": "Zinc",
+              "amount": 10,
+              "unit": "mg",
+              "pct_dv": 91,
+              "form": "from zinc gluconate"
+            },
+            {
+              "name": "Plant Derived Trace Minerals",
+              "amount": 25,
+              "unit": "mg",
+              "pct_dv": null
+            }
+          ],
+          "blends": [
+            {
+              "name": "Proprietary Blend",
+              "total": {
+                "amount": 175,
+                "unit": "mg"
+              },
+              "pct_dv": null,
+              "as_labeled": "Cranberry Fruit Extract, Elderberry Fruit Extract, Olive Leaf Extract, Astragalus Root Extract",
+              "ingredients": [
+                {
+                  "pos": 1,
+                  "name": "Cranberry",
+                  "part": "fruit",
+                  "form": "extract"
+                },
+                {
+                  "pos": 2,
+                  "name": "Elderberry",
+                  "part": "fruit",
+                  "form": "extract"
+                },
+                {
+                  "pos": 3,
+                  "name": "Olive",
+                  "part": "leaf",
+                  "form": "extract"
+                },
+                {
+                  "pos": 4,
+                  "name": "Astragalus",
+                  "part": "root",
+                  "form": "extract"
+                }
+              ]
+            }
+          ],
+          "other_ingredients": [
+            "Sorbitol",
+            "Xylitol",
+            "Stearic Acid",
+            "Mixed Berry Flavor",
+            "Magnesium Stearate",
+            "Silicon Dioxide",
+            "Stevia Leaf Extract"
+          ],
+          "source_label": "usyg100072_zinc_immune-0420_panel-900x1200.jpg"
+        }
+      ]
     }
   }
 }
