@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 432 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 433 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-08 08:33 UTC-05:00 · round-close · products
+Phase F pre-seal remediation P7: made probiotic CFU a comparable quantity -- migrated 7 per-strain CFU strings to amount+unit, added blend-level total_cfu to 4 products, extended products_verify + 5/5 negative test.
+  ↳ Probiotic strength (CFU) was stored three inconsistent ways and sometimes only in text, so it was not comparable. I made it a real quantity everywhere: per-strain CFU -> ingredient amount+unit; a blend's stated total -> a new total_cfu field. The checker now accepts CFU units, and a negative test proves it still rejects bad input. 7a (7 items -> amount+unit, billion/million CFU): 3-0-rise-and-restore, btt-2-0-tablets (x2), ultimate-digest-fx, ultimate-microbiome (std 'SNZ 1969' kept), fitshake-banana-cream (std 'ATCC122264' kept), ygy-regulate-glp1 (nutrient form -> amount+unit). Boilerplate 'at manufacture' qualifiers dropped from the structured field but preserved in as_labeled. 7b (blend total_cfu, inserted after the mg total): womens-probiotic-complete 35B, integris-probiotics 10B, ultimate-flora-fx 4B, beyond-tangy-tangerine-2-5-canister 1B. Unchanged: ultimate-nightly-essense's 14 strains (already amount+unit); 10 as_labeled CFU mentions (verbatim by design). Gate (eden/tools/products_verify.py): ALLOWED_UNITS += billion/million cfu (the ygy-regulate nutrient row needs it; ingredient units are unchecked, which is why the other 6 already validated); added total_cfu validation (numeric amount + billion/million CFU unit). R7 negative test 5/5 PASS: bogus nutrient unit rejected; 'billion CFU' accepted; total_cfu 'mg' unit rejected; total_cfu 'abc' amount rejected; valid total_cfu accepted. README documents the new field + convention. products_verify OK (215/221/0); invariants 46/46; node build OK. (Estimation note per Luneth: blend totals are label-stated headline CFU, not exact per-strain breakdowns -- adequate for comparison; users can deep-dive.)
 
 ## 2026-07-08 08:16 UTC-05:00 · round-close · products
 Phase F pre-seal remediation P6: backfilled servings-per-container for the 3 supplements whose panels omit it (VitalStart 7, Integris K2 30, Integris CoQ10 60 -- user-supplied counts); cream stays null (N/A).
@@ -785,7 +789,3 @@ SESSION 31 b3 — Epigenetics Ch18 minerals Lu→Ni (+9: Lu/Mg/Mn/Mo/N/Na/Nb/Nd/
 ## 2026-06-30 21:55 UTC-05:00 · round-close · knowledge/corpus
 SESSION 31 b2 — Epigenetics Ch18 charged Lithium (EPIGEN-096 tier-1): Li deficiency → depression/bipolar/autism/ADHD/hyperactivity + Schrauzer water-Li study; autism mapped. Graphic killer/cannibalism list held OUT → fringe files (Luneth-approved). kv206 · claims 992 · 31/31.
   ↳ Charged-content gate: Luneth approved conditions, kept Schrauzer stats in the tier-1 claim, approved both fringe additions (criminal-behavior.md + divine-hunger-cannibalism.md). search-only unchanged 75; render probe 0 errors.
-
-## 2026-06-30 21:28 UTC-05:00 · round-close · knowledge/corpus
-SESSION 31 b1 — Epigenetics Ch18 minerals Hf→La (+6: Hafnium/Mercury[tox]/Holmium/Iodine/Potassium/Lanthanum). New condition Cretinism; iodine deficiency-only + potassium cond=[] (Luneth-ruled); Hf/Ho now 2-source. kv205 · claims 991 · 468 conditions · board 31/31.
-  ↳ WAL-CLM-EPIGEN-000090..095. Skipped In/Ir/Kr (non-canon inert); stopped before charged Lithium. Verbatims snapped to exact book bytes; render probe 0 errors.

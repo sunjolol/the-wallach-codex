@@ -20,7 +20,7 @@ PRODUCTS = ROOT / "eden" / "products" / "products.json"
 AS_LABELED_MAX = 1200         # bounded fidelity token (fits BTT whole-foods blends w/ full latin names; matches the corpus verbatim hard cap)
 TOKEN_MAX = 120               # any other structured string
 OTHER_ING_MAX = 350           # excipients/compound ingredients (parenthetical sub-lists) can be long but are still facts
-ALLOWED_UNITS = {"mg", "mcg", "g", "iu", "mcg rae", "mcg dfe", "mg ne", "ml", "fl oz", None}
+ALLOWED_UNITS = {"mg", "mcg", "g", "iu", "mcg rae", "mcg dfe", "mg ne", "ml", "fl oz", "billion cfu", "million cfu", None}
 # A "prose" heuristic: a sentence-shaped token (". " + capital, or "; " glue) in a
 # field that must be a short structured token = a leak. as_labeled is exempt (bounded).
 PROSE_RE = re.compile(r"[.;]\s+[A-Z]")
@@ -111,6 +111,12 @@ def check_component(where: str, c: dict) -> None:
         total = b.get("total")
         if total is not None:
             check_amount(w + ".total.amount", total.get("amount"))
+        tcfu = b.get("total_cfu")           # blend-level probiotic potency (parallel to mg total)
+        if tcfu is not None:
+            check_amount(w + ".total_cfu.amount", tcfu.get("amount"))
+            tu = tcfu.get("unit")
+            if not isinstance(tu, str) or tu.lower() not in {"billion cfu", "million cfu"}:
+                err(w + ".total_cfu.unit", f"total_cfu unit must be billion/million CFU, got {tu!r}")
         al = b.get("as_labeled")
         if not isinstance(al, str) or not al.strip():
             err(w + ".as_labeled", "missing/empty (required on every blend)")

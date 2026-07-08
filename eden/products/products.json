@@ -1084,7 +1084,8 @@
                 {
                   "pos": 2,
                   "name": "Bacillus coagulans",
-                  "standardization": "500 million CFU"
+                  "amount": 500,
+                  "unit": "million CFU"
                 }
               ]
             },
@@ -2467,6 +2468,10 @@
               "total": {
                 "amount": 173,
                 "unit": "mg"
+              },
+              "total_cfu": {
+                "amount": 1,
+                "unit": "billion CFU"
               },
               "pct_dv": null,
               "ingredients": [
@@ -5794,12 +5799,14 @@
                 {
                   "pos": 2,
                   "name": "Lactobacillus acidophilus",
-                  "standardization": "500 million CFU"
+                  "amount": 500,
+                  "unit": "million CFU"
                 },
                 {
                   "pos": 3,
                   "name": "Bacillus coagulans",
-                  "standardization": "500 million CFU"
+                  "amount": 500,
+                  "unit": "million CFU"
                 }
               ],
               "as_labeled": "Chicory root oligofructose (FOS), Lactobacillus acidophilus (500 million CFU), Bacillus coagulans (500 million CFU)"
@@ -10076,6 +10083,10 @@
               "total": {
                 "amount": 250,
                 "unit": "mg"
+              },
+              "total_cfu": {
+                "amount": 10,
+                "unit": "billion CFU"
               },
               "pct_dv": null,
               "ingredients": [
@@ -21517,7 +21528,8 @@
                 {
                   "pos": 2,
                   "name": "Bacillus coagulans",
-                  "standardization": "500 million cfu at time of manufacture"
+                  "amount": 500,
+                  "unit": "million CFU"
                 }
               ]
             }
@@ -21932,6 +21944,10 @@
               "total": {
                 "amount": 400,
                 "unit": "mg"
+              },
+              "total_cfu": {
+                "amount": 4,
+                "unit": "billion CFU"
               },
               "pct_dv": null,
               "as_labeled": "Lactobacillus acidophilus, Bifidobacterium bifidum, Bifidobacterium infantis in a base of Tapioca Maltodextrin (4 billion CFU minimum at time of manufacture)",
@@ -22584,7 +22600,9 @@
                 {
                   "pos": 2,
                   "name": "Bacillus coagulans",
-                  "standardization": "SNZ 1969, 5 billion CFU/serving at manufacture"
+                  "standardization": "SNZ 1969",
+                  "amount": 5,
+                  "unit": "billion CFU"
                 }
               ]
             },
@@ -24705,7 +24723,9 @@
                 {
                   "pos": 18,
                   "name": "Bacillus subtilis",
-                  "standardization": "ATCC122264, 1 billion CFU"
+                  "standardization": "ATCC122264",
+                  "amount": 1,
+                  "unit": "billion CFU"
                 }
               ]
             }
@@ -26405,6 +26425,10 @@
                 "amount": 250,
                 "unit": "mg"
               },
+              "total_cfu": {
+                "amount": 35,
+                "unit": "billion CFU"
+              },
               "pct_dv": null,
               "as_labeled": "Total Probiotic Cultures 35 Billion CFU: Lactobacillus acidophilus (La-14), Lactobacillus plantarum (Lp-115), Lactobacillus rhamnosus (HN001), Lactobacillus paracasei (Lpc-37), Lactobacillus casei (Lc-11), Lactobacillus rhamnosus (GG), Lactobacillus rhamnosus (Lr-32), Lactobacillus reuteri (1E1), Lactobacillus brevis (Lbr-35), Lactobacillus gasseri (Lg-36), Lactobacillus bulgaricus (Lb-87), Bifidobacterium lactis (HN019), Bifidobacterium breve (Bb-18), Bifidobacterium infantis (Bi-26), Bifidobacterium longum (Bi-05), Bifidobacterium bifidum (Bb-06)",
               "ingredients": [
@@ -27599,10 +27623,9 @@
             },
             {
               "name": "Bacillus coagulans",
-              "amount": null,
-              "unit": null,
-              "pct_dv": null,
-              "form": "5 billion CFU"
+              "amount": 5,
+              "unit": "billion CFU",
+              "pct_dv": null
             }
           ],
           "blends": [

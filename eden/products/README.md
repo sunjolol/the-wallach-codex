@@ -29,10 +29,13 @@ product_id · name · sku · ygy_id · variants[]? · additional_labels[]? · co
              · macros{} · nutrients[] · blends[] · other_ingredients[] · source_label
     nutrient (quantified): name · form? · amount · unit · unit_detail?(RAE/NE/DFE)
              · label_iu? · pct_dv          ← pct_dv is an FDA Daily Value, NOT a target
-    blend: name · total{amount,unit}|null · pct_dv? · as_labeled(bounded fidelity) · ingredients[]
+    blend: name · total{amount,unit}|null · total_cfu{amount,unit}? · pct_dv? · as_labeled(bounded fidelity) · ingredients[]
       ingredient: pos · name · part? · form? · latin? · standardization? · amount? · unit?
              · sub_ingredients[]           ← array ORDER = label order = descending amount (FDA)
 ```
+Probiotic potency (CFU) is a quantified amount so items are comparable: per-strain CFU lives in an
+ingredient `amount`+`unit` (`billion CFU` / `million CFU`); a blend's stated total lives in `total_cfu`.
+Strain/culture codes stay in `standardization`; the full label wording stays in `as_labeled`.
 
 ## Registry
 Every ingredient/nutrient resolves to the rebuilt Catalog nutrient/botanical registry
