@@ -706,18 +706,32 @@
   font-weight: 500;
   margin: 0;
 }
+/* Dose card (audit 2026-07-08): a bold, eye-scannable VALUE pill preceded by a label
+   naming what the number is ("True Supplement Need" for a Fig. 8-1 row). */
 #drawer-knowledge-mount .kd-claim__dose {
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--ds-space-1) var(--ds-space-2);
+  margin-top: var(--ds-space-2);
+}
+#drawer-knowledge-mount .kd-claim__dose-label {
   font-family: var(--ds-font-mono);
   font-size: var(--ds-text-micro);
   letter-spacing: var(--ds-track-wide);
   text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ds-accent-deep);
+  align-self: center;
+}
+#drawer-knowledge-mount .kd-claim__dose-value {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-sm);
+  font-weight: 700;
   color: var(--ds-accent-deep);
   background: var(--ds-accent-wash);
   padding: 2px 8px;
   border-radius: var(--ds-radius-pill);
-  font-weight: 700;
-  margin-top: var(--ds-space-2);
 }
 #drawer-knowledge-mount .kd-claim__verbatim {
   font-family: 'Playfair Display', Georgia, serif;

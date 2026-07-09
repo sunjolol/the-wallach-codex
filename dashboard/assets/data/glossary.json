@@ -825,6 +825,28 @@
       "plain": "brain damage caused by a toxin",
       "category": "medical",
       "aliases": []
+    },
+    {
+      "term": "RDA",
+      "plain": "the government's Recommended Dietary Allowance — a bare-minimum intake meant only to prevent deficiency disease, which Wallach considers far too low for real health",
+      "category": "nutrition",
+      "aliases": [
+        "recommended dietary allowance"
+      ]
+    },
+    {
+      "term": "True Supplement Need",
+      "plain": "Wallach's own daily maintenance target — the amount he says you actually need to take each day for lasting health, set well above the RDA",
+      "category": "nutrition"
+    },
+    {
+      "term": "30-Day Pharmacologic",
+      "plain": "a higher, short-term therapeutic dose taken for about a month to correct an existing deficiency, above the everyday maintenance amount",
+      "category": "nutrition",
+      "aliases": [
+        "pharmacologic daily dose",
+        "pharmacologic dose"
+      ]
     }
   ]
 }

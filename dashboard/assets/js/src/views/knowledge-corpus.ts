@@ -164,8 +164,11 @@ export function renderBookDeep(bookId: string): string {
 
 // ─── Corpus claim rendering (Essentials deep-dive) ─────────────────────────
 
-/** Most-salient claim kinds first; the rest fall after, alphabetically. */
-const CORPUS_KIND_PRIORITY = ['deficiency_sign', 'toxicity_sign', 'dose', 'protocol', 'mechanism', 'prognosis'];
+/**
+ * Dose first — the recommended amount should be findable without scrolling (Luneth,
+ * audit 2026-07-08); then the most-salient kinds, alphabetical after.
+ */
+const CORPUS_KIND_PRIORITY = ['dose', 'deficiency_sign', 'toxicity_sign', 'protocol', 'mechanism', 'prognosis'];
 
 /** A claim kind slug → an uppercase human label (no literal map — §00.B). */
 function corpusKindLabel(kind: string): string {
@@ -218,33 +221,98 @@ function isFig81Row(claim: CorpusClaim): boolean {
 }
 
 /**
- * The column legend for a Fig. 8-1 dose-table row — Wallach's OWN header names
- * (book: "Nutrient · RDA · True Supplement Need · 30-Day Pharmacologic Daily
- * Dose"). Pure static labels: no data crosses into the view here — it only names
- * the columns of the faithful verbatim rendered directly below it (§00.A).
+ * The column legend for a Fig. 8-1 dose-table row — Wallach's OWN header names, each
+ * wrapped as a glossary tooltip (dotted underline; hover/tap explains what "RDA" vs
+ * "True Supplement Need" vs the pharmacologic dose mean) so the row's three numbers stop
+ * reading as an unlabeled run. Only the column NAMES cross into the view; the numbers
+ * live in the faithful verbatim rendered directly below it (§00.A).
  */
 function renderFig81Legend(): string {
+  const cols = ['RDA', 'True Supplement Need', '30-Day Pharmacologic'].map(glossCol).join(' · ');
   return `
       <div class="kd-claim__legend" role="note">
         <span class="kd-claim__legend-eyebrow">Fig. 8-1 columns</span>
-        <span class="kd-claim__legend-cols">Nutrient · RDA · True Supplement Need · 30-Day Pharmacologic</span>
+        <span class="kd-claim__legend-cols">Nutrient · ${cols}</span>
       </div>`;
 }
 
-/** One corpus claim: paraphrase + optional dose + verbatim source + citation. */
+/** A legend column header wrapped as a glossary tooltip (definition from the lexicon). */
+function glossCol(term: string): string {
+  const def = glossaryDef(term);
+  if (def === null) {
+    return escHTML(term);
+  }
+  return `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML(term)}: ${escHTML(def)}" data-def="${escHTML(def)}">${escHTML(term)}</span>`;
+}
+
+/**
+ * The clicked nutrient's OWN row from a Fig. 8-1 verbatim. The sealed verbatim runs from
+ * this nutrient's row into the NEXT one (a side-effect of the 60-char verbatim floor at
+ * extraction time), so a reader on Biotin would otherwise see a stray Calcium row. Keep
+ * the first line + any wrap continuation ("(time release)", "per day") and stop at the
+ * next ALL-CAPS nutrient label or a footnote line. Faithful subset: the shown text is
+ * still Wallach's exact row; the whole verbatim stays in the sealed data.
+ */
+function fig81OwnRow(verbatim: string): string {
+  const lines = verbatim.split('\n');
+  const kept: string[] = [lines[0] ?? ''];
+  for (let i = 1; i < lines.length; i++) {
+    const t = (lines[i] ?? '').trim();
+    if (t.length === 0 || /^[A-Z]/.test(t) || t.startsWith('*')) {
+      break;
+    }
+    kept.push(lines[i] ?? '');
+  }
+  return kept.join('\n');
+}
+
+/**
+ * The context label for a dose value — WHAT the number is. A Fig. 8-1 row's number is
+ * Wallach's "True Supplement Need" (his daily maintenance target); any other dose claim
+ * carries its own for_condition (e.g. "maintenance", "serious illness"), minus a trailing
+ * parenthetical qualifier. Sealed data only (§00.A) — no number crosses here.
+ */
+function doseContextLabel(claim: CorpusClaim): string {
+  if (isFig81Row(claim)) {
+    return 'True Supplement Need';
+  }
+  const fc = (claim.dose?.for_condition ?? '').trim();
+  return fc.replace(/\s*\([^)]*\)\s*$/, '').trim();
+}
+
+/**
+ * The dose card at the head of a dose claim: a bold, eye-scannable VALUE with a label
+ * naming what it is (point of the audit-2026-07-08 rework). Value + label come straight
+ * from the sealed dose atom; nothing is computed in the view (§00.A). Empty when the
+ * claim has no structured dose.
+ */
+function renderDoseBlock(claim: CorpusClaim): string {
+  const value = formatDose(claim.dose);
+  if (value.length === 0) {
+    return '';
+  }
+  const label = doseContextLabel(claim);
+  const labelHTML = label.length > 0
+    ? `<span class="kd-claim__dose-label">${escHTML(label)}</span>`
+    : '';
+  return `
+      <div class="kd-claim__dose">${labelHTML}<span class="kd-claim__dose-value">${escHTML(value)}</span></div>`;
+}
+
+/** One corpus claim: paraphrase + optional dose card + verbatim source + citation. */
 function renderCorpusClaim(claim: CorpusClaim): string {
-  const dose = formatDose(claim.dose);
   const isTable = isFig81Row(claim);
-  // Fig. 8-1 rows are raw table rows: keep the source line-breaks (CSS pre-line)
-  // so each nutrient stays its own row instead of mushing into one line, under the
-  // column legend. Every other verbatim collapses its hard-wraps to one clean line
-  // as before. The verbatim TEXT is untouched either way (§00.A faithful).
-  const verbatimHTML = isTable ? glossify(claim.verbatim) : glossify(collapseWS(claim.verbatim));
+  // Fig. 8-1 rows are raw table rows: show ONLY this nutrient's own row (fig81OwnRow drops
+  // the bled next-row + footnotes) and keep the source line-breaks (CSS pre-line) under the
+  // column legend. Every other verbatim collapses its hard-wraps to one clean line. The
+  // verbatim TEXT shown is Wallach's exact words either way (§00.A faithful).
+  const shownVerbatim = isTable ? fig81OwnRow(claim.verbatim) : collapseWS(claim.verbatim);
+  const verbatimHTML = glossify(shownVerbatim);
   const verbatimCls = isTable ? 'kd-claim__verbatim kd-claim__verbatim--rows' : 'kd-claim__verbatim';
   return `
     <div class="kd-claim">
       <p class="kd-claim__text">${glossify(claim.claim_text)}</p>
-      ${dose.length > 0 ? `<div class="kd-claim__dose">${escHTML(dose)}</div>` : ''}
+      ${renderDoseBlock(claim)}
       ${isTable ? renderFig81Legend() : ''}
       <blockquote class="${verbatimCls}">${verbatimHTML}</blockquote>
       <div class="kd-claim__cite">CITED · ${escHTML(getBookLabel(claim.book))}</div>

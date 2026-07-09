@@ -9847,6 +9847,28 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         plain: "brain damage caused by a toxin",
         category: "medical",
         aliases: []
+      },
+      {
+        term: "RDA",
+        plain: "the government's Recommended Dietary Allowance \u2014 a bare-minimum intake meant only to prevent deficiency disease, which Wallach considers far too low for real health",
+        category: "nutrition",
+        aliases: [
+          "recommended dietary allowance"
+        ]
+      },
+      {
+        term: "True Supplement Need",
+        plain: "Wallach's own daily maintenance target \u2014 the amount he says you actually need to take each day for lasting health, set well above the RDA",
+        category: "nutrition"
+      },
+      {
+        term: "30-Day Pharmacologic",
+        plain: "a higher, short-term therapeutic dose taken for about a month to correct an existing deficiency, above the everyday maintenance amount",
+        category: "nutrition",
+        aliases: [
+          "pharmacologic daily dose",
+          "pharmacologic dose"
+        ]
       }
     ]
   };
@@ -9970,7 +9992,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     }).join("");
     return `<div class="kd-book-deep">${closeBtn}${head}<div class="kd-corpus">${groupsHTML}</div></div>`;
   }
-  var CORPUS_KIND_PRIORITY = ["deficiency_sign", "toxicity_sign", "dose", "protocol", "mechanism", "prognosis"];
+  var CORPUS_KIND_PRIORITY = ["dose", "deficiency_sign", "toxicity_sign", "protocol", "mechanism", "prognosis"];
   function corpusKindLabel(kind) {
     return kind.replace(/[_-]+/g, " ").toUpperCase();
   }
@@ -10002,21 +10024,58 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return claim.dose?.for_condition === FIG_8_1_FOR_CONDITION;
   }
   function renderFig81Legend() {
+    const cols = ["RDA", "True Supplement Need", "30-Day Pharmacologic"].map(glossCol).join(" \xB7 ");
     return `
       <div class="kd-claim__legend" role="note">
         <span class="kd-claim__legend-eyebrow">Fig. 8-1 columns</span>
-        <span class="kd-claim__legend-cols">Nutrient \xB7 RDA \xB7 True Supplement Need \xB7 30-Day Pharmacologic</span>
+        <span class="kd-claim__legend-cols">Nutrient \xB7 ${cols}</span>
       </div>`;
   }
+  function glossCol(term) {
+    const def = glossaryDef(term);
+    if (def === null) {
+      return escHTML3(term);
+    }
+    return `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML3(term)}: ${escHTML3(def)}" data-def="${escHTML3(def)}">${escHTML3(term)}</span>`;
+  }
+  function fig81OwnRow(verbatim) {
+    const lines = verbatim.split("\n");
+    const kept = [lines[0] ?? ""];
+    for (let i = 1; i < lines.length; i++) {
+      const t = (lines[i] ?? "").trim();
+      if (t.length === 0 || /^[A-Z]/.test(t) || t.startsWith("*")) {
+        break;
+      }
+      kept.push(lines[i] ?? "");
+    }
+    return kept.join("\n");
+  }
+  function doseContextLabel(claim) {
+    if (isFig81Row(claim)) {
+      return "True Supplement Need";
+    }
+    const fc = (claim.dose?.for_condition ?? "").trim();
+    return fc.replace(/\s*\([^)]*\)\s*$/, "").trim();
+  }
+  function renderDoseBlock(claim) {
+    const value = formatDose(claim.dose);
+    if (value.length === 0) {
+      return "";
+    }
+    const label = doseContextLabel(claim);
+    const labelHTML = label.length > 0 ? `<span class="kd-claim__dose-label">${escHTML3(label)}</span>` : "";
+    return `
+      <div class="kd-claim__dose">${labelHTML}<span class="kd-claim__dose-value">${escHTML3(value)}</span></div>`;
+  }
   function renderCorpusClaim(claim) {
-    const dose = formatDose(claim.dose);
     const isTable = isFig81Row(claim);
-    const verbatimHTML = isTable ? glossify(claim.verbatim) : glossify(collapseWS(claim.verbatim));
+    const shownVerbatim = isTable ? fig81OwnRow(claim.verbatim) : collapseWS(claim.verbatim);
+    const verbatimHTML = glossify(shownVerbatim);
     const verbatimCls = isTable ? "kd-claim__verbatim kd-claim__verbatim--rows" : "kd-claim__verbatim";
     return `
     <div class="kd-claim">
       <p class="kd-claim__text">${glossify(claim.claim_text)}</p>
-      ${dose.length > 0 ? `<div class="kd-claim__dose">${escHTML3(dose)}</div>` : ""}
+      ${renderDoseBlock(claim)}
       ${isTable ? renderFig81Legend() : ""}
       <blockquote class="${verbatimCls}">${verbatimHTML}</blockquote>
       <div class="kd-claim__cite">CITED \xB7 ${escHTML3(getBookLabel(claim.book))}</div>
@@ -46757,7 +46816,19 @@ VIEW \u2014 views/knowledge-products.ts: productsForEssential/RAW_PRODUCTS/colle
 
 VERIFIED \u2014 board 50/50 (0 new reds; +1 derived artifact, +1 accounted file), vitest 7/7 (5 NEW recommender tests: best-first order, potency-proxy at no-target, saturating adequacy capped at 1 with a target, determinism, unknown-slug \u2192 []), tsc + esbuild clean, render_probe_knowledge PASS (asserts the ranked list renders with header, rank #1 + name + delivered amount, a row click opens the product panel on the Products tab, the honest-gap note shows on Boron and hides on Magnesium). Magnesium + Boron clip screenshots self-checked \u2014 breadth correctly breaks amount ties (Reverse! 400mg/27-nutrients outranks Cal/Mag 400mg/6-nutrients). Visual sign-off: Luneth approved ("phenomenal").
 
-DEFERRALS \u2014 recommender weight-tuning (0.6/0.3/0.1 is the locked start; revisit post-mining); product-recommender-data onto the prose_contained clean surface (currently accounted); JS size budget (dist gzip ~846KB vs the 250KB budget \u2014 PRE-EXISTING/structural: the offline bundle inlines all pillar data uncompressed; A3 added ~17KB; the blueprint remedy is code-splitting into lazy chunks, deferred).` }];
+DEFERRALS \u2014 recommender weight-tuning (0.6/0.3/0.1 is the locked start; revisit post-mining); product-recommender-data onto the prose_contained clean surface (currently accounted); JS size budget (dist gzip ~846KB vs the 250KB budget \u2014 PRE-EXISTING/structural: the offline bundle inlines all pillar data uncompressed; A3 added ~17KB; the blueprint remedy is code-splitting into lazy chunks, deferred).` }, { id: "lg_mrct6r0e_hf2av7", ts: "2026-07-08T20:09:11.102900-05:00", surface: "Knowledge/Corpus", kind: "round-close", summary: "Corpus-audit kickoff: hardened the pre-Phase-G audit harness (3-tier worklist + dose-mislabel detectors) and rebuilt the Knowledge dose card \u2014 bold labeled amount pinned to top, Base Line quote shows only the clicked nutrient's row, column-name tooltips. View-only; board 50/50.", detail: `Two pieces landed toward the full-corpus audit we owe before resuming book-mining. (1) The audit harness now does the machine half: it reads all 1203 sealed claims and pre-sorts them into suspect / needs-a-look / likely-fine, with a suggested fix attached to each suspect \u2014 turning a 1203-claim slog into a focused review. (2) What it surfaced (a systematic "headerless table" defect across the Base Line supplement claims \u2014 the same class Luneth caught on Magnesium in Phase C) drove a rebuild of how dose numbers are shown in the Knowledge deep-dive: the recommended daily amount is now a bold labeled pill pinned to the TOP of each nutrient; the Base Line table quotes ONLY the nutrient you clicked (no more bleeding into the next row); and RDA / True Supplement Need / 30-Day Pharmacologic carry hover tooltips. It is a reusable template for every book's dose data.
+
+AUDIT HARNESS (eden/tools/corpus_audit.py): replaced the crude single dose_without_dose flag with parse-check (reuses targets_derive._parse_amount, so valid range doses like "20-30"/"5,000" stop false-alarming) + semantic detectors for the latent mislabel class \u2014 dose_reports_rda / dose_reports_intake / dose_reports_toxicity / dose_per_kg (a kind=dose claim actually reporting an RDA, average intake, toxicity ceiling, or per-kg figure), dose_range_high_lost (surfaces a real targets_derive comma-range parse bug: "1,000-1,500" drops the high end), nondose_states_dose (a non-dose claim asserting a recommended dose = possible missed dose). Tightened the table detector to ALL-CAPS-label rows (dropped 9 prose false positives, caught all 33 Base Line rows). Output = a 3-tier worklist (43 suspect / 9 needs-a-look / 1142 likely-fine), each suspect carrying a proposed disposition (a CHECK to run, never a verdict).
+
+SOURCE-IMAGE VERIFICATION (Luneth's chosen method): rendered Let's Play Doctor p.73 (fitz page 84) and verified all 33 Fig. 8-1 rows; confirmed the folic-acid "gm"->"mg" and calcium "mcg"->"mg" misprints were already safely normalized; resolved Vitamin A's blank-RDA column split via the PDF text-layer word coordinates.
+
+EXPLORED THEN REVERTED: a shared full-table verbatim for all 33 Base Line claims + a 1200->1500 verbatim hard-cap raise across 6 tools. Luneth's feedback ("only the clicked nutrient's row should show") made that the wrong direction, so it was fully reverted \u2014 no corpus edit, no gate change survived.
+
+VIEW TEMPLATE (view-only): CORPUS_KIND_PRIORITY -> dose first; fig81OwnRow() keeps the first row-group + wraps ("(time release)", "per day"), stopping at the next ALL-CAPS label/footnote; renderFig81Legend() wraps the 3 column names as .gloss tooltips; renderDoseBlock() renders a labeled bold value from the structured dose atom. Point 1 (bold True Need + value) was surfaced as a labeled pill rather than bolding it in-row, because in-row it is ambiguous (biotin's RDA and True Need are both "200 mcg"; Vitamin A has a blank RDA that shifts columns) \u2014 Luneth agreed it reads better. glossary.json +3 digit-free terms (RDA, True Supplement Need, 30-Day Pharmacologic), glossary_wellformed-clean. drawer-knowledge.css: .kd-claim__dose becomes a flex label + bold-value pill. render_probe_knowledge.js: the DDDL-hardcoded firstCite check broke when dose moved to the top (Magnesium's first claim now cites Let's Play Doctor, not DDDL) \u2014 made book-agnostic across all 6 books; a stale test assumption, not a regression.
+
+VERIFIED: build OK, tsc + eslint clean, invariants 50/50, knowledge render probe PASS, Luneth visual sign-off ("looks much better than my idea").
+
+DEFERRED: audit Workstream B (reclassify the 11 dose-mislabel suspects \u2014 incl. the cobalt/B12 250-400 mcg missing-target, magnesium/molybdenum/iodine RDA-reports, lithium mechanism, copper per-kg); the underlying bled verbatims stay in the sealed data for a later book-purification pass; the pantothenic "...4 mg" OCR artifact.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

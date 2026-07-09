@@ -141,7 +141,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       countTxt: corpus ? (corpus.querySelector('.kd-corpus__count')?.textContent || '').trim() : '',
       firstText: first ? (first.querySelector('.kd-claim__text')?.textContent || '').length > 0 : false,
       firstVerbatim: first ? (first.querySelector('.kd-claim__verbatim')?.textContent || '').length > 0 : false,
-      firstCite: first ? /DEAD DOCTORS|DDDL/i.test(first.querySelector('.kd-claim__cite')?.textContent || '') : false,
+      firstCite: first ? /DEAD DOCTORS|DDDL|RARE EARTHS|EPIGENETICS|IMMORTALITY|PLAY DOCTOR|YOUR HEAD/i.test(first.querySelector('.kd-claim__cite')?.textContent || '') : false,
     };
   });
 
@@ -238,7 +238,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       shown: d !== null,
       claimCount: claims.length,
       groupCount: d ? d.querySelectorAll('.kd-corpus__group').length : 0,
-      firstCite: first ? /DEAD DOCTORS|DDDL/i.test(first.querySelector('.kd-claim__cite')?.textContent || '') : false,
+      firstCite: first ? /DEAD DOCTORS|DDDL|RARE EARTHS|EPIGENETICS|IMMORTALITY|PLAY DOCTOR|YOUR HEAD/i.test(first.querySelector('.kd-claim__cite')?.textContent || '') : false,
       subLabels: subs,
       synopsisCoherent,
       hasUmbrellaTip: !!(d && d.querySelector('.kd-condition-deep__umbrella-tip')),
