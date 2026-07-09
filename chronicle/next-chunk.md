@@ -9,9 +9,9 @@
 
 Board **50/50 green**; **36 of 91** essentials carry a numeric Wallach target today (rest are honest gaps); active plan = `chronicle/OVERHAUL-BLUEPRINT.md`.
 
-## ★ RESUME HERE — Workstream B (rest): the remaining dose-mislabel suspects (corpus edits, source-image per claim)
+## ✓ Workstream B — dose-mislabel suspects — ALL DONE (2026-07-08, sealed knowledge_version 306→310)
 
-`kind=dose` claims that need reclassifying/restructuring. Route through draft → `vb_apply`/`corpus_resnap` → **USER-ONLY `corpus_seal`**; verify each against the book page ([[verify-against-source-images]], [[editing-sealed-corpus-claims]]). Highest-value first:
+_Historical record of the resolved suspects. Route used per claim: draft → `mine_batch`/`vb_apply`/`corpus_resnap` → USER-authorized `corpus_seal` ([[verify-against-source-images]], [[editing-sealed-corpus-claims]])._
 1. ✓ **DONE (B-1, 2026-07-08)** — cobalt/B12 target: `IMMORT-000084` structured + `RARE-000014` re-scoped; **Cobalt + Vitamin B12 now carry the 250-400 mcg/day target** (source_claim_id=`WAL-CLM-IMMORT-000084`, newest-book rule). Numeric targets 34 → 36.
 2. ✓ **DONE (B-2, 2026-07-08)** — RDA/intake reports reclassified dose→definition: `RARE-000173` (magnesium), `RARE-000180` (molybdenum), `RARE-000146` (iodine). Zero target impact (all had `dose:null`); magnesium keeps its 1000 mg Base Line target. Sealed knowledge_version 307.
 3. ✓ **DONE (B-3, 2026-07-08)** — `RARE-000207` phosphorus: dose→definition + dose→null (typical dietary INTAKE 1,000-1,500 mg/day, not a Wallach dose; phosphorus keeps its 0 mg Base Line target from `LETS-000061`), verbatim EXTENDED (vb_apply) to include the intake sentence so the claim_text is backed. **+ fixed `targets_derive._parse_amount` comma-range bug** (now keeps the range high end; verified 6 cases, proven behavior-neutral on current data, defensive for future comma-range doses; regression-guarded by `derived_artifacts_fresh`). Sealed knowledge_version 308.
