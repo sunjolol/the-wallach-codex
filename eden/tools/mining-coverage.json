@@ -1,12 +1,161 @@
 {
-  "schema_version": 1,
-  "_doctrine": "Coverage-accounting ledger for book mining (Proposal A -- 2026-07-07). Makes WHOLESALE under-mining a red-board state AT COMPLETION instead of an invisible dropped thread (DDDL Appendix-B long tail; Immortality at 0 claims for ~40 sessions). For each book: mining_status incomplete|complete. A book flagged 'complete' must account for every source page (screenshot-scheme books: every ===== Screenshot(N) ===== with zero claims must be in reviewed_empty {page: reason}) or every entry in sections[] (chapter-scheme books: status mined|reviewed-empty, reviewed-empty needs a reason). 'incomplete' books are reported informationally, NEVER RED -- exactly as book_source_clean asserts only pristine books. Claim-bearing pages auto-derive from sealed locator.char_offset -> nearest ===== Screenshot(N) ===== marker (ONE internally-consistent text-position basis; independent of per-book locator.screenshot, which is populated inconsistently). Gate: mining_coverage_accounted. This is the coverage leg (the product label-gate analog); per-claim sub-page completeness stays with the corpus_audit end-pass, and the manual mining checkpoint samples faithfulness. User is sole writer; NOT sealed, NOT a generated data artifact.",
+  "schema_version": 2,
+  "_doctrine": "Coverage-accounting ledger + VEIN-MAP for book mining. TWO layers. (1) COMPLETENESS ACCOUNTING (Proposal A, 2026-07-07 -- read by the mining_coverage_accounted gate): makes WHOLESALE under-mining a red-board state AT COMPLETION instead of an invisible dropped thread (DDDL long tail; Immortality at 0 claims for ~40 sessions). Per book: mining_status incomplete|complete. A book flagged 'complete' must account for every source page (screenshot-scheme: every ===== Screenshot(N) ===== with zero claims in reviewed_empty {page: reason}) or every entry in sections[] (chapter-scheme: status mined|reviewed-empty, reviewed-empty needs a reason). 'incomplete' books are reported informationally, NEVER RED. Claim-bearing pages auto-derive from sealed locator.char_offset -> nearest ===== Screenshot(N) ===== marker. (2) VEIN-MAP (added G-3, 2026-07-09 -- the forward roadmap; NOT read by any gate, so it can never move the board): veins[] = the rich mineable regions per book (mine 100%) with kind, char/chapter region, home (tier-1 / search-only / editorial), status (pending|in-progress|mined|reviewed-empty) and progress. Non-vein filler is NOT listed here; it is dispositioned at completion via reviewed_empty/sections with a reason. The vein-vs-non-vein call stays human review discipline (.claude/rules/mining-veins.md); this layer just records the plan so no vein is forgotten and each mining session resumes where the last stopped. Regions were char-offset-verified against the sealed .txt this session. User is sole writer; NOT sealed, NOT a generated data artifact.",
   "books": {
-    "dddl-3e-2011":     { "mining_status": "incomplete", "coverage_basis": "section",    "sections": [], "reviewed_empty": {} },
-    "rare-earths":      { "mining_status": "incomplete", "coverage_basis": "section",    "sections": [], "reviewed_empty": {} },
-    "lets-play-doctor": { "mining_status": "incomplete", "coverage_basis": "section",    "sections": [], "reviewed_empty": {} },
-    "epigenetics":      { "mining_status": "incomplete", "coverage_basis": "screenshot", "reviewed_empty": {} },
-    "immortality":      { "mining_status": "incomplete", "coverage_basis": "screenshot", "reviewed_empty": {} },
-    "iaiyh":            { "mining_status": "incomplete", "coverage_basis": "screenshot", "reviewed_empty": {} }
+    "dddl-3e-2011": {
+      "mining_status": "incomplete",
+      "coverage_basis": "section",
+      "veins": [
+        {
+          "name": "Appendix B 'Let's Play Doctor' -- materia-medica disease encyclopedia (the long tail)",
+          "kind": "materia-medica",
+          "region": "char 604194-951228 (~200-entry A-Z condition->treatment)",
+          "home": "tier-1 (condition->protocol)",
+          "status": "in-progress",
+          "progress": "43 first-pass claims (~25 common conditions, 2026-06-24); the ~175-entry long tail is UNCAPTURED. memory: dddl-undermined-remine"
+        },
+        {
+          "name": "Appendix A 'The New Alphabet of Wellness' -- mineral/nutrient encyclopedia",
+          "kind": "nutrient-encyclopedia",
+          "region": "char 472203-604194 (79 minerals; deficiency + function)",
+          "home": "tier-1 for canon trace/rare minerals (deficiency_sign/function; capture-all, favor-newest for placement)",
+          "status": "in-progress",
+          "progress": "38 first-pass claims; complete the remaining canon minerals."
+        },
+        {
+          "name": "Ch1-21 narrative",
+          "kind": "narrative",
+          "region": "char 6413-472203 (Chapters 1-21)",
+          "home": "search-only + tier-1 enrich",
+          "status": "in-progress",
+          "progress": "11 first-pass claims; re-mine for enrich + search candidates (G-5 full re-mine)."
+        }
+      ],
+      "sections": [],
+      "reviewed_empty": {}
+    },
+    "rare-earths": {
+      "mining_status": "incomplete",
+      "coverage_basis": "section",
+      "veins": [
+        {
+          "name": "Minerals materia-medica (Ch2 Minerals-Currency, Ch4 Pica & Cribbing, Ch10 Glacial Milk)",
+          "kind": "materia-medica",
+          "region": "chapters (OCR reading-order scrambled -- per-page char boundaries unreliable; account precisely at G-8 close-out)",
+          "home": "tier-1 + search",
+          "status": "in-progress",
+          "progress": "302 sealed claims (1.55/1k words). Well-mined; re-scan for gaps at G-8, not a G-4/G-5 target."
+        }
+      ],
+      "sections": [],
+      "reviewed_empty": {}
+    },
+    "lets-play-doctor": {
+      "mining_status": "incomplete",
+      "coverage_basis": "section",
+      "veins": [
+        {
+          "name": "Ch10 Materia Medica (condition->treatment) + Ch1-9 clinical narrative",
+          "kind": "materia-medica",
+          "region": "Ch10 Materia Medica + Ch1-9 (OCR reading-order scrambled; account precisely at G-8 close-out)",
+          "home": "tier-1 + search",
+          "status": "in-progress",
+          "progress": "481 sealed claims (5.81/1k words -- highest density). Well-mined; re-scan for gaps at G-8, not a G-4/G-5 target."
+        }
+      ],
+      "sections": [],
+      "reviewed_empty": {}
+    },
+    "epigenetics": {
+      "mining_status": "incomplete",
+      "coverage_basis": "screenshot",
+      "veins": [
+        {
+          "name": "Ch18 per-nutrient deficiency-sign encyclopedia + supplement dose table",
+          "kind": "deficiency-catalog",
+          "region": "Ch18 (line ~19340-25460; screenshot markers within)",
+          "home": "tier-1 (one deficiency_sign claim per nutrient) + supplement-program dose table",
+          "status": "in-progress",
+          "progress": "G-1 (2026-07-09) mined the 2014 supplement dose table -> 38 numeric targets. Ch18 MINERALS-REST pending: cobalt/iodine/selenium/zinc/magnesium/potassium/iron/manganese + ~50 trace/rare (one deficiency_sign each); CESIUM->cesium-chloride high-pH cancer therapy = tier-1 protocol. memory: epigenetics-mining-policy"
+        },
+        {
+          "name": "Ch17 Epigenetic Manifestations of Disease",
+          "kind": "disease-core",
+          "region": "Ch17 (line ~17880-19340)",
+          "home": "tier-1 (epigenetic etiology + protocols) -- enrich + add conditions",
+          "status": "mined",
+          "progress": "b1-b3 shipped (EPIGEN-001..026): genetic-disease core, obesity, 4 dementias, deafness=manganese."
+        },
+        {
+          "name": "Pt1-3 + Ch13-16 + Ch19 narrative (history-of-science / philosophy)",
+          "kind": "narrative",
+          "region": "line 777-17880 + 25460-27336",
+          "home": "search-only; charged homosexuality/intersex content = search-only NEUTRAL (done: EPIGEN-008/009/019-026)",
+          "status": "in-progress",
+          "progress": "search candidates partly captured; Glossary/Refs/Index = skip (reviewed-empty at completion)."
+        }
+      ],
+      "reviewed_empty": {}
+    },
+    "immortality": {
+      "mining_status": "incomplete",
+      "coverage_basis": "screenshot",
+      "veins": [
+        {
+          "name": "Element A-Z encyclopedia (Ch5 'Sym-Name' entries)",
+          "kind": "element-encyclopedia",
+          "region": "char 168037-405591 (Ag-Silver through Zr-Zirconium; 94 Sym-Name headers, inside Chapter 5 Minerals)",
+          "home": "tier-1 one claim per CANON trace/rare mineral (capture-all, even thin); non-canon inert/radioactive (Am, Ar, At, Cm, Fr, He, Kr, Ne, Np, Po, Pm, Ra, Tc, Xe + synthetic actinides) -> search-only or reviewed-empty",
+          "status": "in-progress",
+          "progress": "Ag-Silver (168037) through Kr-Krypton (298194) mined; La-Lanthanum (299378) through Zr-Zirconium (403350) PENDING -- RESUME AT char 299378. 189 of 197 sealed claims sit in this vein. memory: trace-mineral-completeness-capture-all"
+        },
+        {
+          "name": "Anti-aging protocols + doses (Ch11-12)",
+          "kind": "supplement-program",
+          "region": "char 516729-716736 (Ch11 + Ch12 'The Common Threads of Anti-Aging')",
+          "home": "tier-1 (protocols/doses) + dual-home search",
+          "status": "pending",
+          "progress": "0 claims -- ENTIRELY UNMINED. THE book's distinctive value (immortality-mining-policy) -- not just the element A-Z."
+        },
+        {
+          "name": "Deficiency->disease + named conditions (Ch4, Ch6-10)",
+          "kind": "disease-core",
+          "region": "char 92635-143300 (Ch4) + 405591-516729 (Ch6-10; Ch8 Pica, Ch9 Energy Crisis)",
+          "home": "tier-1 (deficiency/disease) + enrich existing conditions, favor-newest for placement",
+          "status": "pending",
+          "progress": "8 claims in Ch4; Ch6-10 = 0 claims. Minerals are a KNOWN WEAK LINK -- capture more."
+        },
+        {
+          "name": "Aging theory + biography / vindication (search candidates)",
+          "kind": "narrative",
+          "region": "char 23430-92635 (Part 1, Ch1-3) + Introduction",
+          "home": "search-only (aging theory, Wallach bio/credentials, Wallach-vs-establishment)",
+          "status": "pending"
+        },
+        {
+          "name": "Ch13 Religious Dietary Practices",
+          "kind": "narrative",
+          "region": "char 716736-794265 (Ch13)",
+          "home": "EDITORIAL -- surface to Luneth before include/rebut/exclude (memory: editorial-spiritual-vs-mystical)",
+          "status": "pending"
+        }
+      ],
+      "reviewed_empty": {}
+    },
+    "iaiyh": {
+      "mining_status": "incomplete",
+      "coverage_basis": "screenshot",
+      "veins": [
+        {
+          "name": "WALLACH'S WORDS blocks (+ Prologue / Definition / The Skull / The Solution)",
+          "kind": "disease-core",
+          "region": "the 'WALLACH'S WORDS' blocks throughout (skull-osteoporosis thesis -> ~25 diseases)",
+          "home": "tier-1 (enrich + add conditions); essentials[] EMPTY (generic 90-essentials captured once in The Solution)",
+          "status": "in-progress",
+          "progress": "20 sealed claims. The 'General Overview' blocks are EXCLUDED from everything (Medscape/Merck filler, not Wallach). memory: iaiyh-mining-policy"
+        }
+      ],
+      "reviewed_empty": {}
+    }
   }
 }
