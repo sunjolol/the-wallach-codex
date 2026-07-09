@@ -344,7 +344,7 @@ function renderCorpusClaim(claim: CorpusClaim): string {
 }
 
 /** The full "FROM THE CORPUS" block for one essential. */
-export function renderCorpusForEssential(c: CorpusEssential): string {
+export function renderCorpusForEssential(c: CorpusEssential, whyHTML = ''): string {
   if (c.claim_count === 0) {
     return `
       <div class="kd-corpus">
@@ -352,7 +352,7 @@ export function renderCorpusForEssential(c: CorpusEssential): string {
         <p class="kd-corpus__empty">— no sealed claims extracted for this essential yet · the corpus is still being built out —</p>
       </div>`;
   }
-  const groupsHTML = Object.keys(c.claims_by_kind).sort(corpusKindOrder).map((kind) => {
+  const renderGroup = (kind: string): string => {
     const ids = c.claims_by_kind[kind] ?? [];
     const claimsHTML = resolveClaims(ids).map(renderCorpusClaim).join('');
     return `
@@ -360,7 +360,12 @@ export function renderCorpusForEssential(c: CorpusEssential): string {
         <div class="kd-corpus__group-label">${escHTML(corpusKindLabel(kind))}</div>
         ${claimsHTML}
       </div>`;
-  }).join('');
+  };
+  // Dose group LEADS the deep-dive (the recommended amounts — the first thing to see);
+  // "why this number?" sits right under it; the chips + other kinds follow.
+  const kinds = Object.keys(c.claims_by_kind).sort(corpusKindOrder);
+  const doseHTML = kinds.filter(k => k === 'dose').map(renderGroup).join('');
+  const restHTML = kinds.filter(k => k !== 'dose').map(renderGroup).join('');
 
   const condChips = c.conditions_treated
     .map(s => `<span class="kd-corpus__chip">${escHTML(conditionDisplayName(s))}</span>`)
@@ -376,9 +381,11 @@ export function renderCorpusForEssential(c: CorpusEssential): string {
         <span class="kd-corpus__eyebrow"><span class="pulse-dot"></span>FROM THE WALLACH CORPUS</span>
         <span class="kd-corpus__count">${c.claim_count} CLAIM${c.claim_count === 1 ? '' : 'S'}</span>
       </div>
+      ${doseHTML}
+      ${whyHTML}
       ${condChips.length > 0 ? `<div class="kd-corpus__sub">IMPLICATED CONDITIONS</div><div class="kd-corpus__chips">${condChips}</div>` : ''}
       ${interactChips.length > 0 ? `<div class="kd-corpus__sub">WORKS ALONGSIDE</div><div class="kd-corpus__chips">${interactChips}</div>` : ''}
-      ${groupsHTML}
+      ${restHTML}
       <div class="kd-corpus__foot">SOURCE · ${escHTML(books)}</div>
     </div>`;
 }

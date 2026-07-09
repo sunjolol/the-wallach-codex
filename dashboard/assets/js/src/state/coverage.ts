@@ -196,18 +196,35 @@ function readTargets(): Essential[] {
 // ─── Unit conversion (delivery vs. Wallach target, in the target's unit) ───
 
 /** Convert an amount to a common unit. Faithful legacy `toMg`: IU stays IU. */
-function toMg(value: number, unit: string | undefined): { v: number; u: 'mg' | 'iu' } {
-  const u = (unit ?? 'mg').toLowerCase();
-  if (u === 'g') {
-    return { v: value * 1000, u: 'mg' };
+// IU→mg for the three fat-soluble vitamins that labels/Wallach state in IU. MUST mirror
+// eden/tools/targets_derive.py IU_CONVERSIONS: the A/D/E TARGET is derived there in mcg/mg,
+// so a product listing them in IU has to use the SAME physical factor to land in the same
+// mg-family the target lives in (§00.B #3 — one conversion truth across the Python/TS line).
+// Values are IU→mg: retinol/beta-carotene 0.3 mcg RAE/IU ÷1000; D 0.025 mcg/IU ÷1000; E 0.67 mg/IU.
+const IU_TO_MG: Record<string, number> = {
+  'vitamin-a': 0.3 / 1000,
+  'vitamin-d': 0.025 / 1000,
+  'vitamin-e': 0.67,
+};
+
+function toMg(value: number, unit: string | undefined, slug?: string): { v: number; u: 'mg' | 'iu' } {
+  // Robust unit parse: labels/regimen snapshots carry SUFFIXED units ("mcg RAE", "mg NE",
+  // "mcg DFE") and micro-sign variants. Match by token/prefix, not exact string, so a
+  // "mcg RAE" can never fall through to the mg default and inflate 1000x (the Vitamin A bug).
+  const u = (unit ?? 'mg').toLowerCase().trim();
+  if (u.includes('iu')) {
+    // A/D/E: convert IU into the mg-family so an IU-listed product still counts toward its
+    // metric target (Phase G-1 residual). Other IU nutrients stay IU-family (no metric target).
+    const f = slug !== undefined ? IU_TO_MG[slug] : undefined;
+    return (f !== undefined) ? { v: value * f, u: 'mg' } : { v: value, u: 'iu' };
   }
-  if (u === 'mcg' || u === 'μg' || u === 'µg') {
+  if (u.startsWith('mcg') || u.startsWith('ug') || u.includes('μg') || u.includes('µg')) {
     return { v: value / 1000, u: 'mg' };
   }
-  if (u === 'iu') {
-    return { v: value, u: 'iu' };
+  if (u === 'g' || u.startsWith('gram')) {
+    return { v: value * 1000, u: 'mg' };
   }
-  return { v: value, u: 'mg' };
+  return { v: value, u: 'mg' };  // 'mg' + 'mg RAE'/'mg NE' + unknown -> mg-family
 }
 
 /**
@@ -311,7 +328,7 @@ function accumulate(
       if (d === undefined) {
         continue;
       }
-      const conv = toMg(n.amount * scale, n.unit);
+      const conv = toMg(n.amount * scale, n.unit, matched.slug);
       if (conv.u === 'iu') {
         d.totalIU += conv.v;
       }

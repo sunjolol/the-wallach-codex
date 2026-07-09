@@ -28,7 +28,7 @@ const PRODUCT = {
     { name: 'Calcium', amount: 1600, unit: 'mg' },
     { name: 'Magnesium', amount: 800, unit: 'mg' },
     { name: 'Zinc', amount: 50, unit: 'mg' },
-    { name: 'Vitamin D', amount: 60, unit: 'mcg' },
+    { name: 'Vitamin D', amount: 2400, unit: 'iu' },  // 2400 IU x0.025 = 60 mcg > 50 mcg target: exercises the IU->mcg fix
     { name: 'Selenium', amount: 400, unit: 'mcg' },
   ],
   ingredients: 'ascorbic acid, calcium citrate, magnesium glycinate, zinc picolinate',

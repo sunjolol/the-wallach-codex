@@ -253,15 +253,99 @@ function renderOmegaClarity(key: string): string {
     </div>`;
 }
 
+// ─── "Why this number?" — the target's provenance, collapsed under the meter ─
+// Surfaces Wallach's own stated range (with the explicit "we target the upper end"
+// framing Luneth chose), Vitamin A's two-part retinol+beta-carotene breakdown, any
+// earlier-book figure, and the "his guidance evolved" gloss. Reads the derived target's
+// range/parts/other_claims/provenance fields (targets_derive.py). Content micro-copy is
+// inline here (the full R4 prose store is a Phase E/F WISH; matches the kd-source-note pattern).
+interface WTNRange { low: number; high: number | null; unit: string }
+interface WTNPart { form?: string | null; value: number; unit: string; range?: WTNRange }
+interface WTNOther { low: number; high: number | null; unit: string; source?: string }
+interface WallachTargetDetail {
+  low?: number;
+  unit?: string;
+  source?: string;
+  range?: WTNRange;
+  parts?: WTNPart[];
+  other_claims?: WTNOther[];
+  provenance?: { body_weight_basis?: string; unit_detail?: string };
+}
+
+function wtnNum(n: number): string {
+  return n.toLocaleString('en-US', { maximumFractionDigits: 2 });
+}
+
+// "Wallach \u2014 Epigenetics: The Death of ... (Wallach, 2014)" -> "Epigenetics (2014)"
+function wtnBook(src: string | undefined): string {
+  if (src === undefined) { return ''; }
+  const yr = src.match(/\((?:Wallach,\s*)?(\d{4})\)/);
+  const stripped = src
+    .replace(/^Wallach\s*[\u2014-]\s*/, '')
+    .replace(/\s*\((?:Wallach,\s*)?\d{4}\)/, '');
+  const title = (stripped.split(':')[0] ?? stripped).trim();
+  return (yr !== null) ? `${title} (${yr[1]})` : title;
+}
+
+function wtnAmount(low: number, high: number | null, unit: string): string {
+  const val = (high !== null && high !== low) ? `${wtnNum(low)}\u2013${wtnNum(high)}` : wtnNum(low);
+  return `${val} ${escHTML(unit)}`;
+}
+
+function renderWhyThisNumber(td: WallachTargetDetail | undefined): string {
+  if (td === undefined || typeof td.low !== 'number') {
+    return '';
+  }
+  const weightScaled = td.provenance?.body_weight_basis !== undefined;
+  const detail = td.provenance?.unit_detail !== undefined ? ` ${escHTML(td.provenance.unit_detail)}` : '';
+  const rows: string[] = [];
+
+  rows.push(`<div class="kd-why__posted"><strong>${wtnNum(td.low)} ${escHTML(td.unit ?? '')}${detail}</strong> daily${td.source !== undefined ? ` \u00b7 ${escHTML(wtnBook(td.source))}` : ''}</div>`);
+
+  const parts = td.parts;
+  if (Array.isArray(parts) && parts.length > 1) {
+    const partsTxt = parts
+      .map(p => `${(p.form !== undefined && p.form !== null) ? escHTML(p.form) + ' ' : ''}<strong>${wtnNum(p.value)}</strong>`)
+      .join(' + ');
+    rows.push(`<div class="kd-why__parts">= ${partsTxt} ${escHTML(td.unit ?? '')}</div>`);
+    const rangeTxt = parts
+      .map(p => `${(p.form !== undefined && p.form !== null) ? escHTML(p.form) + ' ' : ''}${p.range !== undefined ? wtnAmount(p.range.low, p.range.high, p.range.unit) : ''}`)
+      .join(' \u00b7 ');
+    rows.push(`<div class="kd-why__range">Wallach's stated ranges: <strong>${rangeTxt}</strong> \u2014 <em>we target the upper of each</em>.</div>`);
+  } else if (td.range !== undefined) {
+    const scaleNote = weightScaled ? ' per 100 lb \u2192 scaled to 154 lb (70 kg reference)' : '';
+    const isRange = td.range.high !== null && td.range.high !== td.range.low;
+    if (isRange) {
+      rows.push(`<div class="kd-why__range">Wallach's stated range: <strong>${wtnAmount(td.range.low, td.range.high, td.range.unit)}</strong>${scaleNote} \u2014 <em>we target the upper end</em>.</div>`);
+    } else {
+      rows.push(`<div class="kd-why__range">Wallach states <strong>${wtnAmount(td.range.low, td.range.high, td.range.unit)}</strong>${scaleNote}.</div>`);
+    }
+  }
+
+  if (Array.isArray(td.other_claims) && td.other_claims.length > 0) {
+    for (const o of td.other_claims) {
+      rows.push(`<div class="kd-why__older">\u21a9 Earlier: <strong>${wtnAmount(o.low, o.high, o.unit)}</strong>${o.source !== undefined ? ` \u2014 ${escHTML(wtnBook(o.source))}` : ''}</div>`);
+    }
+    rows.push('<div class="kd-why__gloss">Wallach\u2019s guidance evolved across his books \u2014 we default to his most recent figure and keep the earlier one for context.</div>');
+  }
+
+  return `
+    <details class="kd-why">
+      <summary class="kd-why__summary">why this number?</summary>
+      <div class="kd-why__body">${rows.join('')}</div>
+    </details>`;
+}
+
 function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): string {
   const e = ESS_BY_KEY.get(key);
   if (e === undefined) {
     return '';
   }
   const corpusEss = getEssentialByLayoutKey(key);
-  const corpusHTML = corpusEss !== null ? renderCorpusForEssential(corpusEss) : '';
   const status = statusOf(snapshot, key);
   const target = getTargets().find(t => t.name === key);
+  const td = (target as { target?: unknown } | undefined)?.target as WallachTargetDetail | undefined;
+  const corpusHTML = corpusEss !== null ? renderCorpusForEssential(corpusEss, renderWhyThisNumber(td)) : renderWhyThisNumber(td);
   const stance = target?.wallach_stance;
   const summary = stance?.summary;
   const citation = stance?.citation;

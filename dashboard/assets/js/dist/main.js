@@ -5885,16 +5885,22 @@
     const result = EssentialsDataSchema.safeParse(essentials_targets_data_default);
     return result.success ? result.data.essentials : [];
   }
-  function toMg(value, unit) {
-    const u = (unit ?? "mg").toLowerCase();
-    if (u === "g") {
-      return { v: value * 1e3, u: "mg" };
+  var IU_TO_MG = {
+    "vitamin-a": 0.3 / 1e3,
+    "vitamin-d": 0.025 / 1e3,
+    "vitamin-e": 0.67
+  };
+  function toMg(value, unit, slug) {
+    const u = (unit ?? "mg").toLowerCase().trim();
+    if (u.includes("iu")) {
+      const f = slug !== void 0 ? IU_TO_MG[slug] : void 0;
+      return f !== void 0 ? { v: value * f, u: "mg" } : { v: value, u: "iu" };
     }
-    if (u === "mcg" || u === "\u03BCg" || u === "\xB5g") {
+    if (u.startsWith("mcg") || u.startsWith("ug") || u.includes("\u03BCg") || u.includes("\xB5g")) {
       return { v: value / 1e3, u: "mg" };
     }
-    if (u === "iu") {
-      return { v: value, u: "iu" };
+    if (u === "g" || u.startsWith("gram")) {
+      return { v: value * 1e3, u: "mg" };
     }
     return { v: value, u: "mg" };
   }
@@ -5964,7 +5970,7 @@
         if (d === void 0) {
           continue;
         }
-        const conv = toMg(n.amount * scale, n.unit);
+        const conv = toMg(n.amount * scale, n.unit, matched.slug);
         if (conv.u === "iu") {
           d.totalIU += conv.v;
         } else {
@@ -10094,7 +10100,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       <div class="kd-claim__cite">CITED \xB7 ${escHTML3(getBookLabel(claim.book))}</div>
     </div>`;
   }
-  function renderCorpusForEssential(c) {
+  function renderCorpusForEssential(c, whyHTML = "") {
     if (c.claim_count === 0) {
       return `
       <div class="kd-corpus">
@@ -10102,7 +10108,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         <p class="kd-corpus__empty">\u2014 no sealed claims extracted for this essential yet \xB7 the corpus is still being built out \u2014</p>
       </div>`;
     }
-    const groupsHTML = Object.keys(c.claims_by_kind).sort(corpusKindOrder).map((kind) => {
+    const renderGroup = (kind) => {
       const ids = c.claims_by_kind[kind] ?? [];
       const claimsHTML = resolveClaims(ids).map(renderCorpusClaim).join("");
       return `
@@ -10110,7 +10116,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         <div class="kd-corpus__group-label">${escHTML3(corpusKindLabel(kind))}</div>
         ${claimsHTML}
       </div>`;
-    }).join("");
+    };
+    const kinds = Object.keys(c.claims_by_kind).sort(corpusKindOrder);
+    const doseHTML = kinds.filter((k) => k === "dose").map(renderGroup).join("");
+    const restHTML = kinds.filter((k) => k !== "dose").map(renderGroup).join("");
     const condChips = c.conditions_treated.map((s) => `<span class="kd-corpus__chip">${escHTML3(conditionDisplayName(s))}</span>`).join("");
     const interactChips = c.interacts_with.map((s) => `<span class="kd-corpus__chip kd-corpus__chip--ess">${escHTML3(essentialDisplayName(s))}</span>`).join("");
     const books = c.books_cited.map((b) => getBookLabel(b)).join(" \xB7 ");
@@ -10120,9 +10129,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         <span class="kd-corpus__eyebrow"><span class="pulse-dot"></span>FROM THE WALLACH CORPUS</span>
         <span class="kd-corpus__count">${c.claim_count} CLAIM${c.claim_count === 1 ? "" : "S"}</span>
       </div>
+      ${doseHTML}
+      ${whyHTML}
       ${condChips.length > 0 ? `<div class="kd-corpus__sub">IMPLICATED CONDITIONS</div><div class="kd-corpus__chips">${condChips}</div>` : ""}
       ${interactChips.length > 0 ? `<div class="kd-corpus__sub">WORKS ALONGSIDE</div><div class="kd-corpus__chips">${interactChips}</div>` : ""}
-      ${groupsHTML}
+      ${restHTML}
       <div class="kd-corpus__foot">SOURCE \xB7 ${escHTML3(books)}</div>
     </div>`;
   }
@@ -46000,15 +46011,67 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       <div class="kd-omega__note">${escHTML5(FATTY_ACID_CLARITY.disclaimer)}</div>
     </div>`;
   }
+  function wtnNum(n) {
+    return n.toLocaleString("en-US", { maximumFractionDigits: 2 });
+  }
+  function wtnBook(src) {
+    if (src === void 0) {
+      return "";
+    }
+    const yr = src.match(/\((?:Wallach,\s*)?(\d{4})\)/);
+    const stripped = src.replace(/^Wallach\s*[\u2014-]\s*/, "").replace(/\s*\((?:Wallach,\s*)?\d{4}\)/, "");
+    const title = (stripped.split(":")[0] ?? stripped).trim();
+    return yr !== null ? `${title} (${yr[1]})` : title;
+  }
+  function wtnAmount(low, high, unit) {
+    const val = high !== null && high !== low ? `${wtnNum(low)}\u2013${wtnNum(high)}` : wtnNum(low);
+    return `${val} ${escHTML5(unit)}`;
+  }
+  function renderWhyThisNumber(td) {
+    if (td === void 0 || typeof td.low !== "number") {
+      return "";
+    }
+    const weightScaled = td.provenance?.body_weight_basis !== void 0;
+    const detail = td.provenance?.unit_detail !== void 0 ? ` ${escHTML5(td.provenance.unit_detail)}` : "";
+    const rows = [];
+    rows.push(`<div class="kd-why__posted"><strong>${wtnNum(td.low)} ${escHTML5(td.unit ?? "")}${detail}</strong> daily${td.source !== void 0 ? ` \xB7 ${escHTML5(wtnBook(td.source))}` : ""}</div>`);
+    const parts = td.parts;
+    if (Array.isArray(parts) && parts.length > 1) {
+      const partsTxt = parts.map((p) => `${p.form !== void 0 && p.form !== null ? escHTML5(p.form) + " " : ""}<strong>${wtnNum(p.value)}</strong>`).join(" + ");
+      rows.push(`<div class="kd-why__parts">= ${partsTxt} ${escHTML5(td.unit ?? "")}</div>`);
+      const rangeTxt = parts.map((p) => `${p.form !== void 0 && p.form !== null ? escHTML5(p.form) + " " : ""}${p.range !== void 0 ? wtnAmount(p.range.low, p.range.high, p.range.unit) : ""}`).join(" \xB7 ");
+      rows.push(`<div class="kd-why__range">Wallach's stated ranges: <strong>${rangeTxt}</strong> \u2014 <em>we target the upper of each</em>.</div>`);
+    } else if (td.range !== void 0) {
+      const scaleNote = weightScaled ? " per 100 lb \u2192 scaled to 154 lb (70 kg reference)" : "";
+      const isRange = td.range.high !== null && td.range.high !== td.range.low;
+      if (isRange) {
+        rows.push(`<div class="kd-why__range">Wallach's stated range: <strong>${wtnAmount(td.range.low, td.range.high, td.range.unit)}</strong>${scaleNote} \u2014 <em>we target the upper end</em>.</div>`);
+      } else {
+        rows.push(`<div class="kd-why__range">Wallach states <strong>${wtnAmount(td.range.low, td.range.high, td.range.unit)}</strong>${scaleNote}.</div>`);
+      }
+    }
+    if (Array.isArray(td.other_claims) && td.other_claims.length > 0) {
+      for (const o of td.other_claims) {
+        rows.push(`<div class="kd-why__older">\u21A9 Earlier: <strong>${wtnAmount(o.low, o.high, o.unit)}</strong>${o.source !== void 0 ? ` \u2014 ${escHTML5(wtnBook(o.source))}` : ""}</div>`);
+      }
+      rows.push('<div class="kd-why__gloss">Wallach\u2019s guidance evolved across his books \u2014 we default to his most recent figure and keep the earlier one for context.</div>');
+    }
+    return `
+    <details class="kd-why">
+      <summary class="kd-why__summary">why this number?</summary>
+      <div class="kd-why__body">${rows.join("")}</div>
+    </details>`;
+  }
   function renderEssentialDeep(key, snapshot) {
     const e = ESS_BY_KEY.get(key);
     if (e === void 0) {
       return "";
     }
     const corpusEss = getEssentialByLayoutKey(key);
-    const corpusHTML = corpusEss !== null ? renderCorpusForEssential(corpusEss) : "";
     const status = statusOf(snapshot, key);
     const target = getTargets().find((t) => t.name === key);
+    const td = target?.target;
+    const corpusHTML = corpusEss !== null ? renderCorpusForEssential(corpusEss, renderWhyThisNumber(td)) : renderWhyThisNumber(td);
     const stance = target?.wallach_stance;
     const summary = stance?.summary;
     const citation = stance?.citation;
@@ -46994,7 +47057,15 @@ PROBES: swapped the Knowledge honest-gap example from Boron to Strontium (Boron 
 
 VERIFIED: build OK (dist 4020.8 KB), invariants 52/52 (0 new reds), all 6 render probes PASS, targets spot-checked against Luneth's approved change report (Boron 9.2, Calcium 1500, Chromium 620, Molybdenum 38, Vitamin A 1500+7500=9000, D 50, E 134).
 
-DEFERRED (next chunk, Luneth OK'd): (a) IU-residual \u2014 ~7 products that still list A/D/E in IU land in the now-unused totalIU accumulator and don't count toward the metric targets; fix = teach coverage.ts toMg to convert IU->mcg per-vitamin. (b) the detail-view precedence display (default-on-top + older-book-below + the range quote + Vitamin A two-part breakdown) + the smoothing gloss in the content store.` }];
+DEFERRED (next chunk, Luneth OK'd): (a) IU-residual \u2014 ~7 products that still list A/D/E in IU land in the now-unused totalIU accumulator and don't count toward the metric targets; fix = teach coverage.ts toMg to convert IU->mcg per-vitamin. (b) the detail-view precedence display (default-on-top + older-book-below + the range quote + Vitamin A two-part breakdown) + the smoothing gloss in the content store.` }, { id: "lg_mrdq23au_4rpkk4", ts: "2026-07-09T11:29:21.078468-05:00", surface: "coverage", kind: "round-close", summary: "Phase G-1 detail-view: 'why this number?' expander (range + upper-end framing + Vitamin A parts + older-book gloss) below the now-leading dose claims; fixed the Vitamin A 810000 unit bug (toMg parses 'mcg RAE') + IU->mcg so IU products count. Board 52/52; Luneth signed off.", detail: `This is the front-facing half of Phase G-1: it makes the new coverage numbers explain and justify themselves. Each essential's deep-dive now LEADS with the recommended dose amounts (all of them, including older books), and a collapsed "why this number?" toggle right below shows Wallach's actual stated range, that we default to the UPPER end, the two Vitamin A forms, and any earlier-book figure with a plain note that his guidance evolved over time. It also fixes a display bug Luneth caught where Vitamin A read as an absurd 810000 mcg \u2014 a stale unit string ("mcg RAE") in a weeks-old regimen item was being treated as milligrams and inflated 1000x.
+
+VIEW: renderWhyThisNumber (views/knowledge.ts) is a collapsed <details> expander: posted-upper + source book, Vitamin A parts (retinol + beta-carotene), Wallach's stated range(s) with explicit "we target the upper end / of each" framing, the per-100-lb -> 154 lb (70 kg) scaling note, older-book other_claims + the "his guidance evolved" gloss; book names shortened to "Title (year)" by wtnBook. renderCorpusForEssential (views/knowledge-corpus.ts) reordered so the DOSE group LEADS, then the why-panel, then IMPLICATED CONDITIONS / WORKS ALONGSIDE / other kinds. CSS: bigger accent-colored why-summary.
+
+FIX (the 810000 bug + the IU residual): coverage.ts toMg now (a) converts IU -> mcg per-vitamin for A/D/E via IU_TO_MG (which MUST mirror targets_derive IU_CONVERSIONS) so an IU-listed product still counts toward its metric target, and (b) parses the unit by prefix/token (mcg/ug/micro-sign/iu/gram) instead of exact string match, so a suffixed unit like "mcg RAE" can never fall through to the mg default and inflate 1000x. Root cause: a weeks-old regimen snapshot carried Vitamin A value 810 with unit "mcg RAE" -> treated as 810 mg -> 810000 mcg. My Phase-G-1 change merely EXPOSED it (Vitamin A had no target before, so no meter).
+
+VERIFIED: build OK (dist 4028.1 KB), tsc clean, invariants 52/52 (0 new reds), all 6 render probes PASS. Reproduced the bug headless (Vitamin A 810 "mcg RAE" -> meter 810/9000 mcg = 9%, was 810000). Deep-dive order confirmed DOSE -> why this number? -> IMPLICATED CONDITIONS. render_probe_adopt now exercises the IU -> mcg path (Vitamin D listed in IU converts + counts; afterCovered 0 -> 6). Luneth visually signed off.
+
+DEFERRED (Luneth OK'd): (a) regimen snapshot AUTO-HEAL \u2014 items should re-read live product composition so a stale VALUE self-corrects without the user re-adding (memory: auto-heal-not-user-debug). The unit fix already auto-heals on reload; only value drift remains. (b) Epigenetics end-of-book glossary -> term-gloss overlays (G-2). (c) tighten amounts_wallach_only to validate the full transform chain (WISH; provenance stamp exists for it).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
