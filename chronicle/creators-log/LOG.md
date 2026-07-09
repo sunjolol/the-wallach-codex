@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 453 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 454 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-09 00:34 UTC-05:00 · round-close · knowledge
+Wallach's table/figure reference numbers now leave the reader-facing summaries and sit in a clean labeled header — fixed the durable way (clean the sealed data + a new gate), not a view hack.
+  ↳ Plain: when the app shows one of Wallach's numbered tables (e.g. his vitamin-deficiency list, Table 11-9), the '(Table 11-9)' used to sit inside the summary sentence — a reference number that means nothing to a reader. Now the number lives in a small labeled header above the quote, and the summary reads cleanly. Luneth caught that my first attempt did this by REWRITING the sentence at display time (a fragile bad-habit trap), so we fixed it the right way instead: the reference was removed from the STORED summary itself, and the label moved to a structured field the view just reads. He also had the 33 Base-Line dose summaries stripped so the whole corpus is reference-free in prose. Technical: sealed eden/corpus at knowledge_version 314 (1203 claims, count unchanged so the pre-Phase-G audit freeze holds). Removed the internal Table/Fig/page ref from claim_text on 44 table claims (42 Rare-Earths + 2 Immortality page-refs) + 33 Let's-Play-Doctor Base-Line dose summaries, via eden/tools/mine_batch.py on the drafts -> user-authorized corpus_seal.py. Added a source-ref tag (table-<n>/fig-<n>) to the 7 rare-earths that lacked one. eden/tools/corpus_embed.py::_source_table_label projects the tag into a new source_table embed field (fig-8-1 dose rows excluded — they keep their own dose card + column legend); dashboard/assets/js/src/core/schemas/corpus.ts adds source_table: z.string().optional(); dashboard/assets/js/src/views/knowledge-corpus.ts reverted from the render-time regex transform (INTERNAL_REF_RE/relocateInternalRef etc., deleted) to a pure renderRefHeader(claim.source_table) projection. New critical invariant internal_refs_out_of_prose (flags any Table/Fig/page ref in any claim_text; replaced the transitional internal_refs_tagged). Verified: node tools/build.mjs OK, eslint + tsc clean, invariants 51/51 (0 failed), render_probe_knowledge PASS with 0 page errors + 0 ref-leaks in shown summaries + 40 source_table headers rendering, and a headless LETS audit (33 Base-Line summaries Fig-8-1-free, all 33 keep the FIG. 8-1 COLUMNS dose-card legend + the verbatim). Memory updated: labeled-table-header-view (DONE, clean-data mechanism) + front-facing-human-first (machine guard now LIVE). Deferred: none for this item; next action = likely-fine sign-off then Phase G unlock.
 
 ## 2026-07-08 23:20 UTC-05:00 · note · corpus
 Corpus audit spot-check fix: relabeled the mislabeled Chilblains-vs-Hypothermia claim (LETS-000218) to Hypothermia — promoted hypothermia to a catalog condition + dropped the bogus chilblains condition (Luneth: ghostwriter error)
@@ -793,6 +797,3 @@ SESSION 35 CLOSE — RARE verbatim campaign DONE 26→0; shipped content-aware s
 
 ## 2026-07-01 15:54 UTC-05:00 · milestone · eden/tools/anomaly_scan
 SESSION 35 — built anomaly_scan.py (linguistic/logic surfacer) after the Zumba→Zumbani catch. 3 detectors (hormone_as_herb, near_miss, run_together), review-queue only, never auto-fix. Full scan = 39 candidates: Zumba×4 + Sarenoa + ~10 NEW real errors.
-
-## 2026-07-01 15:44 UTC-05:00 · round-close · views/knowledge-drawer
-SESSION 35 — content-aware Conditions search + live warm highlight. Per-row data-search blob (nutrients/symptoms/claim text) matched with the title so 'smell' finds Anosmia; live #ffe69c highlight (no SVG filter) on rows + deep-view. board 32/32, probe PASS.

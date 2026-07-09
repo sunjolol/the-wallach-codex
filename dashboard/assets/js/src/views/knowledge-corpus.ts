@@ -299,13 +299,36 @@ function renderDoseBlock(claim: CorpusClaim): string {
       <div class="kd-claim__dose">${labelHTML}<span class="kd-claim__dose-value">${escHTML(value)}</span></div>`;
 }
 
-/** One corpus claim: paraphrase + optional dose card + verbatim source + citation. */
+// ─── Source-table attribution header (Table/Fig ref → labeled header) ──
+
+/**
+ * The attribution header for a claim whose paraphrase named an internal Table/Figure/page.
+ * Styled with the shared .kd-claim__legend (same box as the Fig. 8-1 column legend) so the
+ * two provenance surfaces read as one system: the label as the accent eyebrow, a muted
+ * qualifier beside it. Only the label crosses into the view; the faithful verbatim below
+ * carries the table's actual content (§00.A).
+ */
+function renderRefHeader(label: string): string {
+  return `
+      <div class="kd-claim__legend" role="note">
+        <span class="kd-claim__legend-eyebrow">${escHTML(label)}</span>
+        <span class="kd-claim__legend-cols">as printed in Wallach's book</span>
+      </div>`;
+}
+
+/** One corpus claim: paraphrase + optional dose card / table header + verbatim source + citation. */
 function renderCorpusClaim(claim: CorpusClaim): string {
   const isTable = isFig81Row(claim);
-  // Fig. 8-1 rows are raw table rows: show ONLY this nutrient's own row (fig81OwnRow drops
-  // the bled next-row + footnotes) and keep the source line-breaks (CSS pre-line) under the
-  // column legend. Every other verbatim collapses its hard-wraps to one clean line. The
-  // verbatim TEXT shown is Wallach's exact words either way (§00.A faithful).
+  // A claim carrying source_table describes one of Wallach's numbered tables/figures: the ref
+  // was removed from the sealed claim_text at mining time and the label surfaced here as a
+  // labeled attribution header instead (front-facing-human-first). The Fig. 8-1 dose rows keep
+  // their own dose-card + column-legend, so the table header is suppressed for them.
+  const refLabel = (!isTable && typeof claim.source_table === 'string' && claim.source_table.length > 0)
+    ? claim.source_table
+    : null;
+  // Fig. 8-1 rows show ONLY this nutrient's own row (fig81OwnRow drops the bled next-row +
+  // footnotes) with source line-breaks kept (CSS pre-line). Every other verbatim collapses
+  // its hard-wraps to one clean line. The verbatim shown is Wallach's exact words either way.
   const shownVerbatim = isTable ? fig81OwnRow(claim.verbatim) : collapseWS(claim.verbatim);
   const verbatimHTML = glossify(shownVerbatim);
   const verbatimCls = isTable ? 'kd-claim__verbatim kd-claim__verbatim--rows' : 'kd-claim__verbatim';
@@ -314,6 +337,7 @@ function renderCorpusClaim(claim: CorpusClaim): string {
       <p class="kd-claim__text">${glossify(claim.claim_text)}</p>
       ${renderDoseBlock(claim)}
       ${isTable ? renderFig81Legend() : ''}
+      ${refLabel !== null ? renderRefHeader(refLabel) : ''}
       <blockquote class="${verbatimCls}">${verbatimHTML}</blockquote>
       <div class="kd-claim__cite">CITED · ${escHTML(getBookLabel(claim.book))}</div>
     </div>`;

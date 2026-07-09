@@ -2744,7 +2744,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach teaches that the RATIOS between hair minerals — not just absolute levels — are good barometers of specific organ systems. His Table 11-2 ideal hair mineral ratios: Zn/Cu 8:1 (cardiovascular, liver, female reproductive system), Zn/Mn 150:1 (musculoskeletal, collagen, cholesterol biosynthesis), Zn/Ca 3:1 (cardiovascular, osteodynamics, kidney), Na/P 2:1 (adrenal and general endocrine function), Ca/Mg 8:1 (cardiovascular, osteodynamics, dietary imbalances), and Fe/Cu 2.5:1 (hematology, energy production, cellular respiration).",
+      "claim_text": "Wallach teaches that the RATIOS between hair minerals — not just absolute levels — are good barometers of specific organ systems. His ideal hair mineral ratios: Zn/Cu 8:1 (cardiovascular, liver, female reproductive system), Zn/Mn 150:1 (musculoskeletal, collagen, cholesterol biosynthesis), Zn/Ca 3:1 (cardiovascular, osteodynamics, kidney), Na/P 2:1 (adrenal and general endocrine function), Ca/Mg 8:1 (cardiovascular, osteodynamics, dietary imbalances), and Fe/Cu 2.5:1 (hematology, energy production, cellular respiration).",
       "verbatim": "The ratios of trace minerals and Rare Earths in hair are of interest in the interpretation of a hair analysis as they are good barometers of what is happening in specific organ systems or tissues (Table 11 - 2).",
       "locator": {
         "book": "rare-earths",
@@ -3556,7 +3556,7 @@
         "panic_attacks"
       ],
       "symptoms": [],
-      "claim_text": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists (Table 11-10) include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
+      "claim_text": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "verbatim": "Osteoporosis (kyphosis, Dowagers Hump, lordosis, Legg-Perthe's, spontaneous fractures)\nReceding gums (osteoporosis of facial bones and jaw bone)\nOsteomalacia (failure to mineralize the protein bone matrix)\nArthritis (Degenerative, osteo, spondylitis)\nHypertension (High blood pressure)\nInsomnia (inability to get restful sleep)\nKidney stones\nBone spurs (heel spurs or anywhere tendons or ligaments attach to the bone)\nCalcium deposits (anywhere tendons or ligaments attach to the bone)\nCramps and twitches (foot, calf, eye lids, hamstring muscles, etc.)\nPMS (emotional and physical symptoms)\nLow back (sciatica, muscle spasm, disc problems)\nBell's Palsy (drooping facial muscle because of strangulated facial nerve)\nNSH (nutritional secondary hyperparathyroidism)\nOsteofibrosis (enlargement of bones with fibrous scar tissue)\nTetany (convulsions, usually in infants fed undiluted cows milk which contains more phosphorus than calcium)\nPanic attacks (hyperirritability)",
       "locator": {
         "book": "rare-earths",
@@ -3773,7 +3773,7 @@
         "dermatitis"
       ],
       "symptoms": [],
-      "claim_text": "Wallach reports that essential fatty acid deficiency in human infants results in a poor growth rate, eczema, and lowered resistance to infectious diseases; in animals, essential fatty acid deficiency produces atherosclerosis (Fig. 11-2 shows it in a sheep's aorta and a pheasant's coronary arteries).",
+      "claim_text": "Wallach reports that essential fatty acid deficiency in human infants results in a poor growth rate, eczema, and lowered resistance to infectious diseases; in animals, essential fatty acid deficiency produces atherosclerosis (seen in a sheep's aorta and a pheasant's coronary arteries).",
       "verbatim": "EFA deficiency in human infants results in a poor growth rate, eczema, lowered resistance to infectious diseases.",
       "locator": {
         "book": "rare-earths",
@@ -3790,7 +3790,8 @@
         "deficiency",
         "infants",
         "eczema",
-        "atherosclerosis"
+        "atherosclerosis",
+        "fig-11-2"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -3977,7 +3978,7 @@
         "violent_behavior"
       ],
       "symptoms": [],
-      "claim_text": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency (Table 11-12) produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
+      "claim_text": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "verbatim": "Low blood sugar\nPrediabetes\nDiabetes (ulcers/gangrene)\nHyperinsulinemia\nHyperactivity\nLearning disabilities\nADD/ADHD\nHyperirritability\nDepression\nManic depression\n“Bi-polar” disease\nDr. Jekyll/Mr. Hyde rages (\"Bad Seeds”)\nImpaired growth\nPeripheral neuropathy\nNegative nitrogen balance (protein loss)\nElevated blood triglycerides\nElevated blood cholesterol\nCoronary blood vessel disease\nAortic cholesterol plaque\nInfertility and decreased sperm count\nShortened life span",
       "locator": {
         "book": "rare-earths",
@@ -3996,7 +3997,8 @@
         "mental-health",
         "cardiovascular",
         "deficiency",
-        "behavioral-rage"
+        "behavioral-rage",
+        "table-11-12"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -4158,7 +4160,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach reports that the gray, white, or silver hair of copper deficiency can be reversed: a figure in the book (Fig. 11-7) shows normal hair color returning six months after supplementing with colloidal copper.",
+      "claim_text": "Wallach reports that the gray, white, or silver hair of copper deficiency can be reversed: a figure in the book shows normal hair color returning six months after supplementing with colloidal copper.",
       "verbatim": "Normal color\nreturned six months after supplementing with colloidal copper.",
       "locator": {
         "book": "rare-earths",
@@ -4175,7 +4177,8 @@
         "gray-hair",
         "reversal",
         "colloidal-copper",
-        "melanin"
+        "melanin",
+        "fig-11-7"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -4203,7 +4206,7 @@
         "liver_disease"
       ],
       "symptoms": [],
-      "claim_text": "Wallach's Table 11-13 lists copper-deficiency signs that appear in many forms, including: white, gray and dry brittle hair; ptosis (sagging tissue of eyelids, skin, breasts, stomach); congenital and acquired hernias; varicose veins; aneurysms (including cerebral artery blowouts); Kawasaki disease (congenital aneurysms with streptococcal infection); anemia (especially on vegan and high-milk diets); hypo- and hyperthyroid; arthritis; ruptured vertebral disc; and liver cirrhosis.",
+      "claim_text": "Wallach lists copper-deficiency signs that appear in many forms, including: white, gray and dry brittle hair; ptosis (sagging tissue of eyelids, skin, breasts, stomach); congenital and acquired hernias; varicose veins; aneurysms (including cerebral artery blowouts); Kawasaki disease (congenital aneurysms with streptococcal infection); anemia (especially on vegan and high-milk diets); hypo- and hyperthyroid; arthritis; ruptured vertebral disc; and liver cirrhosis.",
       "verbatim": "Ptosis (sagging tissue - eye lids, skin,\nbreasts, stomach, etc.)\n\nHernias (Congenital and acquired)\nVaricose veins\n\nAneurysms (large artery blowouts,\ncerebral artery blowouts)\n\nKawasaki Disease (congenital aneurysms\nwith Streptococcal infection)\n\nAnemia (especially in vegan and\n\nhigh milk diets)\n\nHypo and hyper thyroid\n\nArthritis (especially where growth plate\nis involved)\n\nRuptured vertebral disc\n\nLiver cirrhosis",
       "locator": {
         "book": "rare-earths",
@@ -6051,7 +6054,7 @@
         "convulsions",
         "ecg_changes"
       ],
-      "claim_text": "Wallach lists the deficiency diseases of magnesium (Table 11-18): asthma, anorexia, menstrual migraines, growth failure, electrocardiogram (ECG) changes, neuromuscular problems, tetany (convulsions), depression, muscular weakness, muscle 'Ties' (muscle knots), tremors, vertigo, calcification of small arteries, and 'malignant' calcification of soft tissue.",
+      "claim_text": "Wallach lists the deficiency diseases of magnesium: asthma, anorexia, menstrual migraines, growth failure, electrocardiogram (ECG) changes, neuromuscular problems, tetany (convulsions), depression, muscular weakness, muscle 'Ties' (muscle knots), tremors, vertigo, calcification of small arteries, and 'malignant' calcification of soft tissue.",
       "verbatim": "Table 11-18. Deficiency Diseases of Magnesium.\nAsthma\nAnorexia\nMenstrual migraines\nGrowth failure\nECG changes\nNeuromuscular problems\nTetany (Convulsions)\nDepression\nMuscular weakness\nMuscle “Ties”\nTremors\nVertigo\nCalcification of small arteries\n“Malignant” calcification of soft tissue",
       "locator": {
         "book": "rare-earths",
@@ -6069,7 +6072,8 @@
         "depression",
         "tetany",
         "asthma",
-        "arterial-calcification"
+        "arterial-calcification",
+        "table-11-18"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -6211,7 +6215,7 @@
         "shortened_long_bones",
         "testicular_atrophy"
       ],
-      "claim_text": "Wallach lists the deficiency diseases of manganese (Table 11-19): congenital ataxia, deafness (malformation of the otoliths), asthma, chondromalacia, chondrodystrophy, 'slipped tendon,' defects of chondroitin sulfate metabolism (poor cartilage formation), temporomandibular joint (TMJ) problems, repetitive motion syndrome, carpal tunnel syndrome, convulsions, infertility (failure to ovulate; testicular atrophy), stillbirths or miscarriages, loss of libido in both sexes, retarded growth rate, and shortened long bones.",
+      "claim_text": "Wallach lists the deficiency diseases of manganese: congenital ataxia, deafness (malformation of the otoliths), asthma, chondromalacia, chondrodystrophy, 'slipped tendon,' defects of chondroitin sulfate metabolism (poor cartilage formation), temporomandibular joint (TMJ) problems, repetitive motion syndrome, carpal tunnel syndrome, convulsions, infertility (failure to ovulate; testicular atrophy), stillbirths or miscarriages, loss of libido in both sexes, retarded growth rate, and shortened long bones.",
       "verbatim": "Table 11-19. Deficiency Diseases of Manganese.\nCongenital ataxia\ndeafness (malformation of otoliths)\nAsthma\nChondromalacia\nChondrodystrophy\n“Slipped Tendon”\nDefects of chondroitin sulfate metabolism (poor cartilage formation)\nTMJ\nRepetitive Motion Syndrome\nCarpal Tunnel Syndrome\nConvulsions\nInfertility (failure to ovulate; testicular atrophy)\nStill births or spontaneous abortions (miscarriages)\nLoss of libido in males and females\nRetarded growth rate\nShortened long bones",
       "locator": {
         "book": "rare-earths",
@@ -6229,7 +6233,8 @@
         "cartilage",
         "carpal-tunnel",
         "infertility",
-        "tmj"
+        "tmj",
+        "table-11-19"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -6834,7 +6839,7 @@
         "delayed_puberty",
         "poor_zinc_absorption"
       ],
-      "claim_text": "Wallach lists the symptoms of nickel deficiency in the rat (Table 11-21): poor growth, lower hematocrit (anemia), depressed oxidative ability of the liver, high newborn mortality, rough/dry hair coat, dermatitis, delayed puberty, and poor zinc absorption.",
+      "claim_text": "Wallach lists the symptoms of nickel deficiency in the rat: poor growth, lower hematocrit (anemia), depressed oxidative ability of the liver, high newborn mortality, rough/dry hair coat, dermatitis, delayed puberty, and poor zinc absorption.",
       "verbatim": "Table 11-21. Symptoms of Nickel Deficiency in the rat.\nPoor growth\nLower hematocrit (anemia)\nDepressed oxidative ability of the liver\nHigh newborn mortality\nRough/dry hair coat\nDermatitis\nDelayed puberty\nPoor zinc absorption",
       "locator": {
         "book": "rare-earths",
@@ -6851,7 +6856,8 @@
         "deficiency",
         "anemia",
         "dermatitis",
-        "newborn-mortality"
+        "newborn-mortality",
+        "table-11-21"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -8153,7 +8159,7 @@
         "lowered_immunity",
         "poor_growth"
       ],
-      "claim_text": "Wallach lists the common diseases of vitamin A (retinol) deficiency in Table 11-9: night blindness (nyctalopia), conjunctivitis, dryness of the eyes (xerophthalmia), softening of the cornea with corneal ulcers (keratomalacia), infertility, birth defects, a depressed immune system, bone disease, poor growth, acne, dermatitis (skin inflammation), rough bumpy 'goose flesh' skin (hyperkeratosis), scaly skin (ichthyosis), and increased cancer risk.",
+      "claim_text": "Wallach lists the common diseases of vitamin A (retinol) deficiency: night blindness (nyctalopia), conjunctivitis, dryness of the eyes (xerophthalmia), softening of the cornea with corneal ulcers (keratomalacia), infertility, birth defects, a depressed immune system, bone disease, poor growth, acne, dermatitis (skin inflammation), rough bumpy 'goose flesh' skin (hyperkeratosis), scaly skin (ichthyosis), and increased cancer risk.",
       "verbatim": "Night blindness (Nyctalopia), conjunctivitis, xerophthalmia,\nkeratomalacia (corneal ulcers), infertility, birth defects, depressed\nimmune system, bone disease, poor growth, acne, dermatitis,\nhyperkeratosis (“goose flesh”), ichthyosis, increased cancer risk.",
       "locator": {
         "book": "rare-earths",
@@ -8195,7 +8201,7 @@
         "knock_knees",
         "profuse_sweating"
       ],
-      "claim_text": "Wallach lists the common diseases of vitamin D deficiency in Table 11-9: rickets, beaded rib cartilage (rachitic rosary), bow-legs, knock-knees, soft bones (osteomalacia), osteoporosis, arthritis, pigeon chest, profuse sweating, restless leg syndrome, enlarged wrists, and delayed or poor tooth development.",
+      "claim_text": "Wallach lists the common diseases of vitamin D deficiency: rickets, beaded rib cartilage (rachitic rosary), bow-legs, knock-knees, soft bones (osteomalacia), osteoporosis, arthritis, pigeon chest, profuse sweating, restless leg syndrome, enlarged wrists, and delayed or poor tooth development.",
       "verbatim": "Rickets, rachitic rosary, bow-legs, knock-knees, osteomalacia,\nosteoporosis, arthritis, pigeon chest, profuse sweating, restless leg\nsyndrome, enlarged wrists, delayed or poor tooth development.",
       "locator": {
         "book": "rare-earths",
@@ -8242,7 +8248,7 @@
         "muscle_weakness",
         "myalgia"
       ],
-      "claim_text": "Wallach lists the common diseases of vitamin E (tocopherol) deficiency in Table 11-9: infertility, a lowered immune system, age spots or liver spots (from lipid peroxidation by free radicals), ischemic heart disease, fibrocystic breast disease, muscle weakness, muscle pain (myalgia), muscular dystrophy, anemia from red-blood-cell breakdown (hemolysis), increased cancer risk, and Alzheimer's syndrome.",
+      "claim_text": "Wallach lists the common diseases of vitamin E (tocopherol) deficiency: infertility, a lowered immune system, age spots or liver spots (from lipid peroxidation by free radicals), ischemic heart disease, fibrocystic breast disease, muscle weakness, muscle pain (myalgia), muscular dystrophy, anemia from red-blood-cell breakdown (hemolysis), increased cancer risk, and Alzheimer's syndrome.",
       "verbatim": "Infertility, lowered immune system, age spots (liver spots, lipid\nperoxidation, free radicals), ischemic heart disease, fibrocystic breast\ndisease, muscle weakness, myalgia, muscular dystrophy, anemia\n(hemolysis), increased risk of cancer, Alzheimer’s syndrome.",
       "locator": {
         "book": "rare-earths",
@@ -8280,7 +8286,7 @@
         "prolonged_clotting_time",
         "easy_bruising"
       ],
-      "claim_text": "Wallach lists the common diseases of vitamin K (menaquinone) deficiency in Table 11-9: extended clotting time, hemorrhage (bleeding), and osteoporosis (from a deficiency of the bone protein osteocalcin).",
+      "claim_text": "Wallach lists the common diseases of vitamin K (menaquinone) deficiency: extended clotting time, hemorrhage (bleeding), and osteoporosis (from a deficiency of the bone protein osteocalcin).",
       "verbatim": "Extended clotting time, hemorrhage, osteoporosis (osteocalcin\n\ndeficiency).",
       "locator": {
         "book": "rare-earths",
@@ -8325,7 +8331,7 @@
         "loss_of_appetite",
         "low_energy"
       ],
-      "claim_text": "Wallach lists the common diseases of vitamin B1 (thiamine) deficiency in Table 11-9: congestive heart failure (beriberi), loss of memory (Wernicke-Korsakoff syndrome), mental confusion, depression, lethargy, muscular weakness, paralysis, emotional instability, and loss of appetite.",
+      "claim_text": "Wallach lists the common diseases of vitamin B1 (thiamine) deficiency: congestive heart failure (beriberi), loss of memory (Wernicke-Korsakoff syndrome), mental confusion, depression, lethargy, muscular weakness, paralysis, emotional instability, and loss of appetite.",
       "verbatim": "Congestive heart failure (Beriberi), loss of memory (Wernicke-Korsakoff syndrome), mental confusion, depression, lethargy,\nmuscular weakness, paralysis, emotional instability, loss of appetite.",
       "locator": {
         "book": "rare-earths",
@@ -8366,7 +8372,7 @@
         "geographic_tongue",
         "magenta_tongue"
       ],
-      "claim_text": "Wallach lists the common diseases of vitamin B2 (riboflavin) deficiency in Table 11-9: soreness and burning of the lips, mouth and tongue, erosions and swelling of the tongue ('geographic' tongue), magenta tongue, light sensitivity (photophobia), excess tearing (lacrimation), cracked lips and mouth corners (cheilosis), angular stomatitis, seborrheic dermatitis of the nasal folds, bloodshot cornea (capillary 'injection'), anemia, and neuropathy.",
+      "claim_text": "Wallach lists the common diseases of vitamin B2 (riboflavin) deficiency: soreness and burning of the lips, mouth and tongue, erosions and swelling of the tongue ('geographic' tongue), magenta tongue, light sensitivity (photophobia), excess tearing (lacrimation), cracked lips and mouth corners (cheilosis), angular stomatitis, seborrheic dermatitis of the nasal folds, bloodshot cornea (capillary 'injection'), anemia, and neuropathy.",
       "verbatim": "Soreness and burning of lips, mouth and tongue, erosions and swelling\nof tongue (“geographic” tongue), magenta tongue, photophobia,\nlacrimation (tearing), cheilosis, angular stomatitis, seborrheic dermatitis\nof the nasal folds, capillary “injection” of cornea, anemia, neuropathy.",
       "locator": {
         "book": "rare-earths",
@@ -8406,7 +8412,7 @@
         "muscle_weakness",
         "diarrhea"
       ],
-      "claim_text": "Wallach lists the common diseases of vitamin B3 (niacin) deficiency in Table 11-9: pellagra (dermatitis, diarrhea, dementia and retardation), muscular weakness, loss of appetite (anorexia), sore 'beef tongue,' darkened skin pigmentation, and scaly dermatitis.",
+      "claim_text": "Wallach lists the common diseases of vitamin B3 (niacin) deficiency: pellagra (dermatitis, diarrhea, dementia and retardation), muscular weakness, loss of appetite (anorexia), sore 'beef tongue,' darkened skin pigmentation, and scaly dermatitis.",
       "verbatim": "Pellagra (dermatitis, diarrhea, dementia and retardation), muscular\nweakness, anorexia, sore “beef tongue,” darkened skin pigmentation,\nscaly dermatitis.",
       "locator": {
         "book": "rare-earths",
@@ -8447,7 +8453,7 @@
         "behavioral_problems",
         "burning_feet"
       ],
-      "claim_text": "Wallach lists the common diseases of vitamin B5 (pantothenic acid) deficiency in Table 11-9: dermatitis, burning of the feet, loss of appetite, quarrelsomeness, sullenness, depression, rapid heartbeat (tachycardia), fainting, and indigestion.",
+      "claim_text": "Wallach lists the common diseases of vitamin B5 (pantothenic acid) deficiency: dermatitis, burning of the feet, loss of appetite, quarrelsomeness, sullenness, depression, rapid heartbeat (tachycardia), fainting, and indigestion.",
       "verbatim": "Dermatitis, burning of feet, loss of appetite, quarrelsome, sullen,\ndepressed, tachycardia, fainting, indigestion.",
       "locator": {
         "book": "rare-earths",
@@ -8491,7 +8497,7 @@
         "ataxia",
         "convulsions"
       ],
-      "claim_text": "Wallach lists the common diseases of vitamin B6 (pyridoxine) deficiency in Table 11-9: depression, nausea, vomiting, seborrheic dermatitis, mucous-membrane lesions and peripheral neuritis (nerve inflammation), unsteadiness (ataxia), hyperirritability, head tic (Tourette's syndrome), and convulsions.",
+      "claim_text": "Wallach lists the common diseases of vitamin B6 (pyridoxine) deficiency: depression, nausea, vomiting, seborrheic dermatitis, mucous-membrane lesions and peripheral neuritis (nerve inflammation), unsteadiness (ataxia), hyperirritability, head tic (Tourette's syndrome), and convulsions.",
       "verbatim": "Depression, nausea, vomiting, seborrheic dermatitis, mucus\nmembrane lesions and peripheral neuritis, ataxia (instability),\nhyperirritability, head tic (Tourette's syndrome), convulsions.",
       "locator": {
         "book": "rare-earths",
@@ -8528,7 +8534,7 @@
       "symptoms": [
         "spinal_cord_demyelination"
       ],
-      "claim_text": "Wallach lists the common diseases of vitamin B12 (cobalamin) deficiency in Table 11-9: spinal cord demyelination, progressive neuropathy (nerve damage), and pernicious anemia.",
+      "claim_text": "Wallach lists the common diseases of vitamin B12 (cobalamin) deficiency: spinal cord demyelination, progressive neuropathy (nerve damage), and pernicious anemia.",
       "verbatim": "Spinal cord demyelination, progressive neuropathy, pernicious\nanemia.",
       "locator": {
         "book": "rare-earths",
@@ -8566,7 +8572,7 @@
       "symptoms": [
         "poor_growth"
       ],
-      "claim_text": "Wallach lists the common diseases of folic acid (folacin, vitamin B9) deficiency in Table 11-9: anemia, poor growth, and birth defects (spina bifida).",
+      "claim_text": "Wallach lists the common diseases of folic acid (folacin, vitamin B9) deficiency: anemia, poor growth, and birth defects (spina bifida).",
       "verbatim": "Folic acid (Folacin) - 1946\nAnemia, poor growth, birth defects (spina bifida).",
       "locator": {
         "book": "rare-earths",
@@ -8608,7 +8614,7 @@
         "white_hair",
         "paresthesia"
       ],
-      "claim_text": "Wallach lists the common diseases of biotin deficiency in Table 11-9: eczema, hair loss (alopecia/baldness), depression, heightened skin sensitivity (hyperesthesia), abnormal tingling sensations (paraesthesia), eyelid inflammation (blepharitis), and gray or white hair.",
+      "claim_text": "Wallach lists the common diseases of biotin deficiency: eczema, hair loss (alopecia/baldness), depression, heightened skin sensitivity (hyperesthesia), abnormal tingling sensations (paraesthesia), eyelid inflammation (blepharitis), and gray or white hair.",
       "verbatim": "Biotin - 1936\nEczema, alopecia (baldness), depression, hyperesthesia, paraesthesia, blepharitis, gray or white hair.",
       "locator": {
         "book": "rare-earths",
@@ -8650,7 +8656,7 @@
         "loose_teeth",
         "skin_hemorrhages"
       ],
-      "claim_text": "Wallach lists the common diseases of vitamin C (ascorbic acid) deficiency in Table 11-9: scurvy, bleeding gums, anemia, poor appetite, poor growth, high risk for infection, high risk for cancer, loosened teeth, skin hemorrhages, swollen wrist and ankle joints, and rib/cartilage fractures.",
+      "claim_text": "Wallach lists the common diseases of vitamin C (ascorbic acid) deficiency: scurvy, bleeding gums, anemia, poor appetite, poor growth, high risk for infection, high risk for cancer, loosened teeth, skin hemorrhages, swollen wrist and ankle joints, and rib/cartilage fractures.",
       "verbatim": "Vitamin C (Ascorbic acid)\nScurvy, bleeding gums, anemia, poor appetite, poor growth, high risk for infection, high risk for cancer, loosened teeth, skin hemorrhages, swollen wrist and ankle joints, rib/cartilage fractures.",
       "locator": {
         "book": "rare-earths",
@@ -8691,7 +8697,7 @@
       "symptoms": [
         "kidney_hemorrhage"
       ],
-      "claim_text": "Wallach lists the common diseases of choline deficiency in Table 11-9: fatty liver, kidney hemorrhage, Alzheimer's disease, tardive dyskinesia, and Huntington's disease (treatment requires 20 grams per day).",
+      "claim_text": "Wallach lists the common diseases of choline deficiency: fatty liver, kidney hemorrhage, Alzheimer's disease, tardive dyskinesia, and Huntington's disease (treatment requires 20 grams per day).",
       "verbatim": "Choline\nFatty liver, kidney hemorrhage, Alzheimer’s disease, tardive dyskinesia, Huntington's disease (treatment requires 20 G per day).",
       "locator": {
         "book": "rare-earths",
@@ -8726,7 +8732,7 @@
         "capillary_hemorrhage",
         "lowered_immunity"
       ],
-      "claim_text": "Wallach lists the common diseases of bioflavonoid deficiency in Table 11-9: capillary hemorrhage and reduced immune function.",
+      "claim_text": "Wallach lists the common diseases of bioflavonoid deficiency: capillary hemorrhage and reduced immune function.",
       "verbatim": "Bioflavonoids - 1936\ncapillary hemorrhage, reduced immune function.",
       "locator": {
         "book": "rare-earths",
@@ -9413,7 +9419,7 @@
         "heart_defects"
       ],
       "symptoms": [],
-      "claim_text": "Wallach's Table 11-24 lists the congenital birth defects associated with zinc deficiency: Down's Syndrome, cleft lip, cleft palate, brain defects (dorsal herniation, hydroencephalocele), micro- or anophthalmia (small or absent eyes), micro- or agnathia (small or absent jaw), spina bifida, clubbed limbs, syndactyly (webbed toes and fingers), diaphragmatic (hiatal) hernias, umbilical hernias, heart defects, lung defects, and urogenital defects.",
+      "claim_text": "Wallach lists the congenital birth defects associated with zinc deficiency: Down's Syndrome, cleft lip, cleft palate, brain defects (dorsal herniation, hydroencephalocele), micro- or anophthalmia (small or absent eyes), micro- or agnathia (small or absent jaw), spina bifida, clubbed limbs, syndactyly (webbed toes and fingers), diaphragmatic (hiatal) hernias, umbilical hernias, heart defects, lung defects, and urogenital defects.",
       "verbatim": "Table 11-24. Congenital Birth defects associated with Zinc Deficiency.\nDown’s Syndrome\nCleft lip\nCleft palate\nBrain defects (dorsal herniation, hydroencephalocele)\nMicro- or anophthalmia (small or absent eyes)\nMicro- or agnathia\nSpina bifida\nclubbed limbs\nSyndactyly (webbed toes and fingers)\nDiaphragmatic hernias (hiatal hernia)\nUmbilical hernias\nHeart defects\nlung defects\nUrogenital",
       "locator": {
         "book": "rare-earths",
@@ -9430,7 +9436,8 @@
         "deficiency",
         "birth-defects",
         "congenital",
-        "down-syndrome"
+        "down-syndrome",
+        "table-11-24"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -9454,7 +9461,7 @@
         "anemia"
       ],
       "symptoms": [],
-      "claim_text": "Wallach's Table 11-25 lists the symptoms and diseases of zinc deficiency (part 1 of 2): pica (the eating of non-food substances — geophagia/earth-eating, wool eating, hair eating), loss of the sense of smell, loss of the sense of taste, infertility, failure of wounds and ulcers to heal, immune-status failure, poor growth (short stature), high infant mortality, hypogonadism (small, poorly functioning ovaries and testes), remaining in a prepuberty state, and anemia.",
+      "claim_text": "Wallach lists the symptoms and diseases of zinc deficiency (part 1 of 2): pica (the eating of non-food substances — geophagia/earth-eating, wool eating, hair eating), loss of the sense of smell, loss of the sense of taste, infertility, failure of wounds and ulcers to heal, immune-status failure, poor growth (short stature), high infant mortality, hypogonadism (small, poorly functioning ovaries and testes), remaining in a prepuberty state, and anemia.",
       "verbatim": "Table 11-25. Symptoms and Diseases of Zinc Deficiency\nPica (geophagia, wool eating, hair eating, etc.)\nLoss of sense of smell\nLoss of sense of taste\nInfertility\nFailure of wounds and ulcers to heal\nImmune status failure\nPoor growth (short stature)\nHigh infant mortality\nHypogonadism (small poorly functioning ovaries and testes)\nRemains in a prepuberty state\nAnemia",
       "locator": {
         "book": "rare-earths",
@@ -9497,7 +9504,7 @@
         "bulimia"
       ],
       "symptoms": [],
-      "claim_text": "Wallach's Table 11-25 lists the symptoms and diseases of zinc deficiency (part 2 of 2): alopecia (hair loss), acrodermatitis enteropathica (parakeratosis in pigs and calves), 'frizzy' hair, diarrhea, depression, paranoia, oral and perioral dermatitis, weight loss (anorexia nervosa), benign prostatic hypertrophy (prostate enlargement), severe body odor ('smelly tennis shoe' syndrome), and anorexia and bulimia.",
+      "claim_text": "Wallach lists the symptoms and diseases of zinc deficiency (part 2 of 2): alopecia (hair loss), acrodermatitis enteropathica (parakeratosis in pigs and calves), 'frizzy' hair, diarrhea, depression, paranoia, oral and perioral dermatitis, weight loss (anorexia nervosa), benign prostatic hypertrophy (prostate enlargement), severe body odor ('smelly tennis shoe' syndrome), and anorexia and bulimia.",
       "verbatim": "Alopecia (hair loss)\nAcrodermatitis enteropathica (Parakeratosis in pigs and calves)\n“Frizzy” hair\nDiarrhea\nDepression\nParanoia\nOral and perioral dermatitis\nWeight loss (anorexia nervosa)\nBenign prostatic hypertrophy (prostate enlargement)\nSevere body odor (“smelly tennis shoe” syndrome)\nAnorexia & Bulimia",
       "locator": {
         "book": "rare-earths",
@@ -9681,7 +9688,7 @@
         "liver_disease"
       ],
       "symptoms": [],
-      "claim_text": "Wallach's Table 11-23 lists the diseases of selenium deficiency (part 1 of 2): HIV/AIDS (human immunodeficiency virus / acquired immunodeficiency syndrome), anemia (red-blood-cell fragility), 'age spots' and 'liver spots,' fatigue, muscular weakness, myalgia (muscle pain and soreness), scoliosis, muscular dystrophy (including white muscle disease and stiff lamb disease), congenital cystic fibrosis, cardiomyopathy (Keshan disease, 'mulberry heart' disease), multiple sclerosis (associated with mercury poisoning), heart palpitations, irregular heartbeat, and liver cirrhosis.",
+      "claim_text": "Wallach lists the diseases of selenium deficiency (part 1 of 2): HIV/AIDS (human immunodeficiency virus / acquired immunodeficiency syndrome), anemia (red-blood-cell fragility), 'age spots' and 'liver spots,' fatigue, muscular weakness, myalgia (muscle pain and soreness), scoliosis, muscular dystrophy (including white muscle disease and stiff lamb disease), congenital cystic fibrosis, cardiomyopathy (Keshan disease, 'mulberry heart' disease), multiple sclerosis (associated with mercury poisoning), heart palpitations, irregular heartbeat, and liver cirrhosis.",
       "verbatim": "Table 11-23. Selenium Deficiency Diseases.\nHIV (AIDS)\nAnemia (RBC fragility)\n“Age Spots” & “Liver Spots”\nFatigue\nMuscular weakness\nMyalgia (muscle pain and soreness)\nScoliosis\nMuscular Dystrophy (MD, White Muscle Disease, Stiff Lamb Disease)\nCystic Fibrosis (congenital)\nCardiomyopathy (Keshan Disease, “Mulberry heart” Disease)\nMultiple Sclerosis (MS) - associated with Hg poisoning\nHeart palpitations\nIrregular heart beat\nLiver cirrhosis",
       "locator": {
         "book": "rare-earths",
@@ -9728,7 +9735,7 @@
         "dementia"
       ],
       "symptoms": [],
-      "claim_text": "Wallach's Table 11-23 lists the diseases of selenium deficiency (part 2 of 2): pancreatitis, pancreatic atrophy, amyotrophic lateral sclerosis (Lou Gehrig's disease, associated with mercury poisoning), Parkinson's disease (associated with mercury poisoning), Alzheimer's disease (associated with high vegetable-oil consumption), adrenoleukodystrophy (ALD, 'Lorenzo's Oil' syndrome), infertility, low birth weight, high infant mortality, sudden infant death syndrome (SIDS), cancer (associated with carcinogen contact and high vegetable-oil intake), clinical AIDS (human immunodeficiency virus infection), and sickle cell anemia.",
+      "claim_text": "Wallach lists the diseases of selenium deficiency (part 2 of 2): pancreatitis, pancreatic atrophy, amyotrophic lateral sclerosis (Lou Gehrig's disease, associated with mercury poisoning), Parkinson's disease (associated with mercury poisoning), Alzheimer's disease (associated with high vegetable-oil consumption), adrenoleukodystrophy (ALD, 'Lorenzo's Oil' syndrome), infertility, low birth weight, high infant mortality, sudden infant death syndrome (SIDS), cancer (associated with carcinogen contact and high vegetable-oil intake), clinical AIDS (human immunodeficiency virus infection), and sickle cell anemia.",
       "verbatim": "Pancreatitis\nPancreatic atrophy\nLou Gehrig's Disease (ALS) - associated with Hg poisoning\nParkinson's Disease - associated with Hg poisoning\nAlzheimer’s Disease - associated with high vegetable oil consumption\nAdrenoleucodystrophy (ALD -\"Lorenzo’s Oil’ Syndrome)\nInfertility\nLow birth weight\nHigh infant mortality\nSudden Infant Death Syndrome (SIDS)\nCancer - associated with carcinogen contact as well as high vegetable oil intake\nClinical AIDS (HIV infection)\nSickle cell anemia",
       "locator": {
         "book": "rare-earths",
@@ -9906,7 +9913,7 @@
         "deafness"
       ],
       "symptoms": [],
-      "claim_text": "Wallach's Table 7-8 maps common degenerative diseases of humans to their causal nutrient deficiencies: osteoporosis and arthritis (ankylosing spondylitis) to calcium, magnesium, boron, copper, and sulfur; hypertension and bone spurs/heel spurs/calcium deposits to calcium, magnesium, and boron; cancer, cardiomyopathy, and cataracts to selenium; diabetes to chromium, vanadium, and zinc; aneurysms to copper; and deafness to tin.",
+      "claim_text": "Wallach maps common degenerative diseases of humans to their causal nutrient deficiencies: osteoporosis and arthritis (ankylosing spondylitis) to calcium, magnesium, boron, copper, and sulfur; hypertension and bone spurs/heel spurs/calcium deposits to calcium, magnesium, and boron; cancer, cardiomyopathy, and cataracts to selenium; diabetes to chromium, vanadium, and zinc; aneurysms to copper; and deafness to tin.",
       "verbatim": "Table 7-8. Common Degenerative Diseases of Humans and Their Cause.\nOsteoporosis: Ca, Mg, B, Cu, S\nArthritis (Ankylosing spondylitis): Ca, Mg, B, Cu, S\nHypertension: Ca, Mg, B\nBone spurs, heel spurs, Ca deposits: Ca, Mg, B\nCancer: Se\nDiabetes: Cr, Va, Zn\nAneurysms: Cu\nCardiomyopathy: Se\nCataracts: Se\nDeafness: Sn",
       "locator": {
         "book": "rare-earths",
@@ -9942,7 +9949,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach's Table 9-1 lists tranquilizers and sleeping aids regarded as unsuitable for older patients (part 1 of 2) — Diazepam (Valium), Chlordiazepoxide (Librium), and Flurazepam (Dalmane), all addictive and/or too long-acting and prone to cause falls — with the mineral replacement to address the underlying need instead: calcium, magnesium, lithium, chromium, and vanadium (while avoiding sugar, natural and processed, and caffeine).",
+      "claim_text": "Wallach lists tranquilizers and sleeping aids regarded as unsuitable for older patients (part 1 of 2) — Diazepam (Valium), Chlordiazepoxide (Librium), and Flurazepam (Dalmane), all addictive and/or too long-acting and prone to cause falls — with the mineral replacement to address the underlying need instead: calcium, magnesium, lithium, chromium, and vanadium (while avoiding sugar, natural and processed, and caffeine).",
       "verbatim": "Tranquilizers & Sleeping Aids — Mineral Replacement: Ca, Mg, Li, Cr, Va (avoid sugar, natural and processed, and caffeine):\nDiazepam (Valium) - Tranquilizer. Addictive and too long-acting, causing drowsiness, confusion and falls.\nChlordiazepoxide (Librium) - Tranquilizer. Too long-acting causes falls.\nFlurazepam (Dalmane), a sleeping aid. Too long-acting, causes falls.",
       "locator": {
         "book": "rare-earths",
@@ -9980,7 +9987,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach's Table 9-1, tranquilizers/sleeping aids unsuitable for older patients (part 2 of 2) — Meprobamate (Miltown, Deprol, Equagesic, Equanil), Pentobarbital (Nembutal), and Secobarbital (Seconal) — with the same mineral replacement: calcium, magnesium, lithium, chromium, and vanadium.",
+      "claim_text": "Wallach lists tranquilizers/sleeping aids unsuitable for older patients (part 2 of 2) — Meprobamate (Miltown, Deprol, Equagesic, Equanil), Pentobarbital (Nembutal), and Secobarbital (Seconal) — with the same mineral replacement: calcium, magnesium, lithium, chromium, and vanadium.",
       "verbatim": "Meprobamate (Miltown, Deprol, Equagesic, Equanil) - Tranquilizer, sometimes combined with an anti-depressant or pain reliever. Addictive, too long-acting, causes falls.\nPentobarbital (Nembutol) - Sedative. Addictive, long-acting, can cause falls.\nSecobarbitol (Seconal). Addictive, long acting, causes falls.",
       "locator": {
         "book": "rare-earths",
@@ -10018,7 +10025,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach's Table 9-1 lists the antidepressant Amitriptyline (Elavil, Endep, Etrafon, Limbitrol, Triavil) as unsuitable for older patients (stops urination, causes dizziness, drowsiness and falls), with the mineral replacement: calcium, magnesium, lithium, chromium, and vanadium.",
+      "claim_text": "Wallach lists the antidepressant Amitriptyline (Elavil, Endep, Etrafon, Limbitrol, Triavil) as unsuitable for older patients (stops urination, causes dizziness, drowsiness and falls), with the mineral replacement: calcium, magnesium, lithium, chromium, and vanadium.",
       "verbatim": "Antidepressants — Mineral Replacement: Ca, Mg, Li, Cr, Va:\nAmitriptyline (Elavil, Endep, Etrafon, Limbitrol, Triavil). Stops the ability to urinate, causes dizziness and drowsiness, causes falls.",
       "locator": {
         "book": "rare-earths",
@@ -10058,7 +10065,7 @@
         "arthritis"
       ],
       "symptoms": [],
-      "claim_text": "Wallach's Table 9-1 lists arthritis drugs unsuitable for older patients — Indomethacin (Indocin; can cause confusion and headaches) and Phenylbutazone (Butazolidin; risk of bone-marrow toxicity) — with the mineral replacement: calcium, magnesium, boron, copper, selenium, lithium, plus chondroitin sulfate (Knox gelatin).",
+      "claim_text": "Wallach lists arthritis drugs unsuitable for older patients — Indomethacin (Indocin; can cause confusion and headaches) and Phenylbutazone (Butazolidin; risk of bone-marrow toxicity) — with the mineral replacement: calcium, magnesium, boron, copper, selenium, lithium, plus chondroitin sulfate (Knox gelatin).",
       "verbatim": "Arthritis Drugs — Mineral Replacement: Ca, Mg, B, Cu, Se, Li, chondroitin sulfate (Knox gelatin):\nIndomethacin (Indocin). Can cause confusion and headaches.\nPhenylbutazone (Butazolidin) - risk of bone marrow toxicity.",
       "locator": {
         "book": "rare-earths",
@@ -10095,7 +10102,7 @@
         "diabetes"
       ],
       "symptoms": [],
-      "claim_text": "Wallach's Table 9-1 lists the diabetes drug Chlorpropamide (Diabinese) as unsuitable for older patients (dangerous fluid retention, slow excretion), with the mineral replacement: chromium, vanadium, and zinc (no sugar).",
+      "claim_text": "Wallach lists the diabetes drug Chlorpropamide (Diabinese) as unsuitable for older patients (dangerous fluid retention, slow excretion), with the mineral replacement: chromium, vanadium, and zinc (no sugar).",
       "verbatim": "Diabetes Drugs — Mineral Replacement: Cr, Va, Zn (no sugar, natural or processed):\nChlorpropramide (Diabinase) - Can cause dangerous fluid retention, is excreted slowly; overdose requires long intensive treatment period.",
       "locator": {
         "book": "rare-earths",
@@ -10131,7 +10138,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach's Table 9-1 lists pain relievers unsuitable for older patients — Propoxyphene (Darvon Compound, Darvocet, Wygesic) and Pentazocine (Talwin), both addictive, no more effective than aspirin, with more side effects than morphine and risk of seizures and heart complications — with the mineral replacement: calcium, magnesium, copper, and selenium.",
+      "claim_text": "Wallach lists pain relievers unsuitable for older patients — Propoxyphene (Darvon Compound, Darvocet, Wygesic) and Pentazocine (Talwin), both addictive, no more effective than aspirin, with more side effects than morphine and risk of seizures and heart complications — with the mineral replacement: calcium, magnesium, copper, and selenium.",
       "verbatim": "Pain Relievers — Mineral Replacement: Ca, Mg, Cu, Se:\nPropoxyphene (Darvon Compound, Darvocet, Wygesic). Addictive, no more effective than aspirin, has more side effects than morphine, causes seizures and heart complications.\nPentazocine (Talwin). Addictive, no more effective than aspirin, has more side effects than morphine, causes seizures and heart complications.",
       "locator": {
         "book": "rare-earths",
@@ -10175,7 +10182,7 @@
         "dementia"
       ],
       "symptoms": [],
-      "claim_text": "Wallach's Table 9-1 lists dementia treatments deemed not effective for older patients — Cyclandelate and Isoxsuprine — with the mineral replacement: gallium, germanium, selenium, calcium, oxygen, chromium, vanadium, lithium, vitamin B-1 (thiamine), and vitamin B-3 (niacin), with no sugar and no caffeine.",
+      "claim_text": "Wallach lists dementia treatments deemed not effective for older patients — Cyclandelate and Isoxsuprine — with the mineral replacement: gallium, germanium, selenium, calcium, oxygen, chromium, vanadium, lithium, vitamin B-1 (thiamine), and vitamin B-3 (niacin), with no sugar and no caffeine.",
       "verbatim": "Dementia Treatments — Mineral Replacement: Ga, Ge, Se, Ca, O2, Cr, Va, Li, B-1, B-3 (no sugar, no caffeine):\nCyclandelate - Not effective.\nIsoxsuprine - Not effective.",
       "locator": {
         "book": "rare-earths",
@@ -10212,7 +10219,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach's Table 9-1 lists the blood thinner Dipyridamole (Persantine) as unsuitable for older patients (not shown effective except with artificial heart valves), with the mineral replacement: selenium, manganese, magnesium, vitamin E, and omega-3 oils.",
+      "claim_text": "Wallach lists the blood thinner Dipyridamole (Persantine) as unsuitable for older patients (not shown effective except with artificial heart valves), with the mineral replacement: selenium, manganese, magnesium, vitamin E, and omega-3 oils.",
       "verbatim": "Blood Thinners — Mineral Replacement: Se, Mn, Mg, Vit E, Omega 3 Oils:\nDipyridamole (Persantine). Except in patients with artificial heart valves, not shown to be effective.",
       "locator": {
         "book": "rare-earths",
@@ -10248,7 +10255,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach's Table 9-1 lists muscle relaxants/spasm relievers unsuitable for older patients — Cyclobenzaprine (Flexeril), Orphenidrine (Norflex, Norgesic), Methocarbamol (Robaxin), and Carisoprodol (Soma), causing dizziness, drowsiness, fainting and falls — with the mineral replacement: calcium, magnesium, boron, and lithium.",
+      "claim_text": "Wallach lists muscle relaxants/spasm relievers unsuitable for older patients — Cyclobenzaprine (Flexeril), Orphenidrine (Norflex, Norgesic), Methocarbamol (Robaxin), and Carisoprodol (Soma), causing dizziness, drowsiness, fainting and falls — with the mineral replacement: calcium, magnesium, boron, and lithium.",
       "verbatim": "Muscle Relaxants, Spasm Relievers — Mineral Replacement: Ca, Mg, B, Li:\nCyclobenzaprine (Flexeril) - Causes dizziness, drowsiness, fainting, falls.\nOrphenidrine (Norflex, Norgesic) - Causes dizziness, drowsiness, fainting, falls.\nMethocarbamol (Roboxin) - Causes dizziness, drowsiness, falls.\nCarisoprodol (Soma) - Potential for nervous system toxicity is greater than potential benefit.",
       "locator": {
         "book": "rare-earths",
@@ -10285,7 +10292,7 @@
       ],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach's Table 9-1 lists the anti-nausea/anti-vomiting drug Trimethobenzamide (Tigan) as unsuitable for older patients (not very effective; causes drowsiness, dizziness and falls), with the mineral replacement: bismuth, calcium, and lithium.",
+      "claim_text": "Wallach lists the anti-nausea/anti-vomiting drug Trimethobenzamide (Tigan) as unsuitable for older patients (not very effective; causes drowsiness, dizziness and falls), with the mineral replacement: bismuth, calcium, and lithium.",
       "verbatim": "Anti-Nausea Drugs, Anti-Vomiting Drugs — Mineral Replacement: Bi, Ca, Li:\nTrimethobenzamide (Tigan). Not very effective. Causes drowsiness, dizziness and falls.",
       "locator": {
         "book": "rare-earths",
@@ -10321,7 +10328,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach's Table 9-1 lists antihypertensive drugs unsuitable for older patients — Propranolol (Inderal), Methyldopa (Aldoril, Aldomet), and Reserpine (Regroton, Hydropres), causing mental/physical slowing or depression — with the mineral replacement: calcium, magnesium, omega-3, and vitamin B-6 (pyridoxine).",
+      "claim_text": "Wallach lists antihypertensive drugs unsuitable for older patients — Propranolol (Inderal), Methyldopa (Aldoril, Aldomet), and Reserpine (Regroton, Hydropres), causing mental/physical slowing or depression — with the mineral replacement: calcium, magnesium, omega-3, and vitamin B-6 (pyridoxine).",
       "verbatim": "Antihypertensive — Mineral Replacement: Ca, Mg, Omega 3, B6:\nPropranolol (Inderal). Feeling slowed mentally and physically.\nMethyldopa (Aldoril, Aldomet). Feeling mentally and physically slowed.\nReserpine (Regroton, Hydropres). Depression.",
       "locator": {
         "book": "rare-earths",
@@ -10856,7 +10863,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach documents the full mineral content of his own plant-derived colloidal mineral supplement in a spark-source mass-spectrographic analysis of Humic Shale (Table 10-5; Humic Shale is a plant-derived colloidal nutritional supplement produced under Consent Decree by the U.S. Department of Health and Human Services; WAL INC, Golden, Colorado). The suspended-solids concentration is 38 grams per liter, and the extract contains no less than 60 plant-derived colloidal minerals at about 98 percent bioavailability. Critically for the trace and rare-earth minerals, the analysis lists a concentration for every one of them (in parts-per-million unless noted): the rare earths tantalum 0.6, lutetium 0.05, ytterbium 2, thulium 0.02, erbium 0.1, holmium 0.1, dysprosium 0.5, terbium 0.1, gadolinium 0.1, europium 0.1, samarium 0.8, neodymium 0.8, praseodymium 0.4, cerium 4.0, lanthanum 2.0, scandium 0.1 and yttrium 4.0; the trace metals barium 0.3, cesium 0.1, tin 0.03, silver 0.2, niobium 0.02, zirconium 0.2, rubidium 0.8, gallium 0.1, titanium 1.0 and lithium 10.0; plus the major and minor minerals iron 43, zinc 47, manganese 36, nickel 30, copper 20, cobalt 9, selenium 0.9, germanium under 0.01, chromium 0.4, vanadium 0.1, iodine 0.1, bromine 0.2, boron 0.2, beryllium 0.1 and the bulk electrolytes at roughly 1 gram per liter. This table is direct evidence that Wallach's supplement delivers the complete mineral spectrum -- including every rare earth -- rather than the handful found in conventional multivitamins.",
+      "claim_text": "Wallach documents the full mineral content of his own plant-derived colloidal mineral supplement in a spark-source mass-spectrographic analysis of Humic Shale (Humic Shale is a plant-derived colloidal nutritional supplement produced under Consent Decree by the U.S. Department of Health and Human Services; WAL INC, Golden, Colorado). The suspended-solids concentration is 38 grams per liter, and the extract contains no less than 60 plant-derived colloidal minerals at about 98 percent bioavailability. Critically for the trace and rare-earth minerals, the analysis lists a concentration for every one of them (in parts-per-million unless noted): the rare earths tantalum 0.6, lutetium 0.05, ytterbium 2, thulium 0.02, erbium 0.1, holmium 0.1, dysprosium 0.5, terbium 0.1, gadolinium 0.1, europium 0.1, samarium 0.8, neodymium 0.8, praseodymium 0.4, cerium 4.0, lanthanum 2.0, scandium 0.1 and yttrium 4.0; the trace metals barium 0.3, cesium 0.1, tin 0.03, silver 0.2, niobium 0.02, zirconium 0.2, rubidium 0.8, gallium 0.1, titanium 1.0 and lithium 10.0; plus the major and minor minerals iron 43, zinc 47, manganese 36, nickel 30, copper 20, cobalt 9, selenium 0.9, germanium under 0.01, chromium 0.4, vanadium 0.1, iodine 0.1, bromine 0.2, boron 0.2, beryllium 0.1 and the bulk electrolytes at roughly 1 gram per liter. This table is direct evidence that Wallach's supplement delivers the complete mineral spectrum -- including every rare earth -- rather than the handful found in conventional multivitamins.",
       "verbatim": "Humic Shale is a plant derived colloidal nutritional supplement produced under Consent Decree by the",
       "locator": {
         "book": "rare-earths",

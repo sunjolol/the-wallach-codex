@@ -41,6 +41,10 @@ export const CorpusClaimSchema = z.object({
   confidence: z.string(),
   /** 1 = operational (tier-1); 2 = search-only (tier-2, index-excluded). */
   tier: z.number().optional(),
+  /** "Table 11-9" / "Fig. 11-2" — the numbered Wallach table/figure a claim describes, projected
+   * from the claim's source-ref tag. The view surfaces it as a labeled attribution header so the
+   * ref is kept OUT of the reader-facing claim_text (front-facing-human-first). Absent when none. */
+  source_table: z.string().optional(),
 }).passthrough();
 
 /** A deficiency-sign edge inside an essential entry. */

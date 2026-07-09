@@ -58,9 +58,25 @@ def book_code(title: str) -> str:
     return longest.upper()[:4]
 
 
+def _source_table_label(tags: list) -> str:
+    """The display label ('Table 11-9' / 'Fig. 11-2') for a claim's source table/figure, read from
+    its source-ref tag (table-<n> / fig-<n>). This is how a numbered Wallach table a claim describes
+    reaches the view as a labeled attribution HEADER, so the ref never has to sit in the reader-facing
+    claim_text (front-facing-human-first). The Fig. 8-1 Base-Line dose table is excluded -- those rows
+    have their own dose-card + column legend. Returns '' when the claim names no numbered table."""
+    for t in tags:
+        if t == "fig-8-1":
+            continue
+        m = re.match(r"^(table|fig)-(\d.*)$", t)
+        if m:
+            kind = "Fig." if m.group(1) == "fig" else "Table"
+            return f"{kind} {m.group(2)}"
+    return ""
+
+
 def _slim_claim(c: dict) -> dict:
     """Project a full claim atom to the runtime-needed fields."""
-    return {
+    out = {
         "id": c["id"],
         "kind": c["kind"],
         "claim_text": c["claim_text"],
@@ -77,6 +93,10 @@ def _slim_claim(c: dict) -> dict:
         # from the derived indices but still ride in the claims map.
         "tier": 2 if "search-only" in c.get("tags", []) else 1,
     }
+    label = _source_table_label(c.get("tags", []))
+    if label:
+        out["source_table"] = label
+    return out
 
 
 def build_embed() -> dict:

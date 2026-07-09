@@ -2015,7 +2015,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives biotin a True Supplement Need (daily maintenance target) of 200 mcg and a 30-day pharmacologic daily dose of 500 to 3,000 mcg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives biotin a True Supplement Need (daily maintenance target) of 200 mcg and a 30-day pharmacologic daily dose of 500 to 3,000 mcg.",
       "verbatim": "BIOTIN 200 mcg 200 mcg 500 to 3,000 mcg\nCALCIUM 800 mg 2,000 mg 2,000 to 5,000 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2055,7 +2055,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives calcium a True Supplement Need (daily maintenance target) of 2,000 mg and a 30-day pharmacologic daily dose of 2,000 to 5,000 mg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives calcium a True Supplement Need (daily maintenance target) of 2,000 mg and a 30-day pharmacologic daily dose of 2,000 to 5,000 mg.",
       "verbatim": "CALCIUM 800 mg 2,000 mg 2,000 to 5,000 mg\nCHLORIDE 1,700 mg 2,500 mg 500 to 2,500 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2095,7 +2095,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives chloride a True Supplement Need (daily maintenance target) of 2,500 mg and a 30-day pharmacologic daily dose of 500 to 2,500 mg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives chloride a True Supplement Need (daily maintenance target) of 2,500 mg and a 30-day pharmacologic daily dose of 500 to 2,500 mg.",
       "verbatim": "CHLORIDE 1,700 mg 2,500 mg 500 to 2,500 mg\nCHOLINE 150 mg 600 mg 500 to 1,000 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2135,7 +2135,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives choline a True Supplement Need (daily maintenance target) of 600 mg and a 30-day pharmacologic daily dose of 500 to 1,000 mg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives choline a True Supplement Need (daily maintenance target) of 600 mg and a 30-day pharmacologic daily dose of 500 to 1,000 mg.",
       "verbatim": "CHOLINE 150 mg 600 mg 500 to 1,000 mg\nCHROMIUM 50 mcg 200 mcg 300 to 600 mcg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2175,7 +2175,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives chromium a True Supplement Need (daily maintenance target) of 200 mcg and a 30-day pharmacologic daily dose of 300 to 600 mcg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives chromium a True Supplement Need (daily maintenance target) of 200 mcg and a 30-day pharmacologic daily dose of 300 to 600 mcg.",
       "verbatim": "CHROMIUM 50 mcg 200 mcg 300 to 600 mcg\nCOPPER 2 mg 3 to 4 mg 4 to 6 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2215,7 +2215,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives copper a True Supplement Need (daily maintenance target) of 3 to 4 mg and a 30-day pharmacologic daily dose of 4 to 6 mg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives copper a True Supplement Need (daily maintenance target) of 3 to 4 mg and a 30-day pharmacologic daily dose of 4 to 6 mg.",
       "verbatim": "COPPER 2 mg 3 to 4 mg 4 to 6 mg\nFLUORIDE 1.5 mg 1.5 mg 20 mg **",
       "locator": {
         "book": "lets-play-doctor",
@@ -2257,7 +2257,7 @@
         "osteoporosis"
       ],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives fluoride a True Supplement Need (daily maintenance target) of 1.5 mg and a 30-day pharmacologic daily dose of 20 mg — the 20 mg level to be used only with a prescription for osteoporosis.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives fluoride a True Supplement Need (daily maintenance target) of 1.5 mg and a 30-day pharmacologic daily dose of 20 mg — the 20 mg level to be used only with a prescription for osteoporosis.",
       "verbatim": "FLUORIDE 1.5 mg 1.5 mg 20 mg **\nFOLIC ACID 400 mcg 1,000 mcg 15 to 20 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2297,7 +2297,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives folic acid (vitamin B-9) a True Supplement Need (daily maintenance target) of 1,000 mcg and a 30-day pharmacologic daily dose of 15 to 20 mg. (The book misprints the pharmacologic figure as \"15 to 20 gm\"/grams; it is corrected here to mg, since grams would be a dangerous ~1000-fold overdose.)",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives folic acid (vitamin B-9) a True Supplement Need (daily maintenance target) of 1,000 mcg and a 30-day pharmacologic daily dose of 15 to 20 mg. (The book misprints the pharmacologic figure as \"15 to 20 gm\"/grams; it is corrected here to mg, since grams would be a dangerous ~1000-fold overdose.)",
       "verbatim": "FOLIC ACID 400 mcg 1,000 mcg 15 to 20 mg\nINOSITOL 75 mg 90 mg 500 to 2,000 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2338,7 +2338,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives inositol a True Supplement Need (daily maintenance target) of 90 mg and a 30-day pharmacologic daily dose of 500 to 2,000 mg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives inositol a True Supplement Need (daily maintenance target) of 90 mg and a 30-day pharmacologic daily dose of 500 to 2,000 mg.",
       "verbatim": "INOSITOL 75 mg 90 mg 500 to 2,000 mg\nIODINE 150 mcg 250 mcg 1,000 mcg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2378,7 +2378,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives iodine a True Supplement Need (daily maintenance target) of 250 mcg and a 30-day pharmacologic daily dose of 1,000 mcg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives iodine a True Supplement Need (daily maintenance target) of 250 mcg and a 30-day pharmacologic daily dose of 1,000 mcg.",
       "verbatim": "IODINE 150 mcg 250 mcg 1,000 mcg\nIRON 18 mg 45 mg 50 to 100 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2418,7 +2418,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives iron a True Supplement Need (daily maintenance target) of 45 mg and a 30-day pharmacologic daily dose of 50 to 100 mg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives iron a True Supplement Need (daily maintenance target) of 45 mg and a 30-day pharmacologic daily dose of 50 to 100 mg.",
       "verbatim": "IRON 18 mg 45 mg 50 to 100 mg\nMAGNESIUM 350 mg 1,000 mg 1,000 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2458,7 +2458,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives magnesium a True Supplement Need (daily maintenance target) of 1,000 mg and a 30-day pharmacologic daily dose of 1,000 mg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives magnesium a True Supplement Need (daily maintenance target) of 1,000 mg and a 30-day pharmacologic daily dose of 1,000 mg.",
       "verbatim": "MAGNESIUM 350 mg 1,000 mg 1,000 mg\nMANGANESE 2.5 mg 5 mg 2 to 50 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2498,7 +2498,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives manganese a True Supplement Need (daily maintenance target) of 5 mg and a 30-day pharmacologic daily dose of 2 to 50 mg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives manganese a True Supplement Need (daily maintenance target) of 5 mg and a 30-day pharmacologic daily dose of 2 to 50 mg.",
       "verbatim": "MANGANESE 2.5 mg 5 mg 2 to 50 mg\nMOLYBDENUM 15 mcg 500 mcg 1,000 mcg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2538,7 +2538,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives molybdenum a True Supplement Need (daily maintenance target) of 500 mcg and a 30-day pharmacologic daily dose of 1,000 mcg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives molybdenum a True Supplement Need (daily maintenance target) of 500 mcg and a 30-day pharmacologic daily dose of 1,000 mcg.",
       "verbatim": "MOLYBDENUM 15 mcg 500 mcg 1,000 mcg\nNIACIN 18 mg 50 mg 2,000 to 6,000 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2578,7 +2578,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives niacin (vitamin B-3) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 2,000 to 6,000 mg in time-release form.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives niacin (vitamin B-3) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 2,000 to 6,000 mg in time-release form.",
       "verbatim": "NIACIN 18 mg 50 mg 2,000 to 6,000 mg\n(time release)\nPANTOTHENIC ACID ...4 mg 50 mg 300 to 1,000 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2618,7 +2618,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives pantothenic acid (vitamin B-5) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 300 to 1,000 mg per day.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives pantothenic acid (vitamin B-5) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 300 to 1,000 mg per day.",
       "verbatim": "PANTOTHENIC ACID ...4 mg 50 mg 300 to 1,000 mg\nper day\nPHOSPHORUS 800 mg 0.0 0.0",
       "locator": {
         "book": "lets-play-doctor",
@@ -2658,7 +2658,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach lists phosphorus's True Supplement Need and 30-day pharmacologic daily dose both as 0.0 — that is, he recommends no supplemental phosphorus (the ordinary diet already supplies more than enough).",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach lists phosphorus's True Supplement Need and 30-day pharmacologic daily dose both as 0.0 — that is, he recommends no supplemental phosphorus (the ordinary diet already supplies more than enough).",
       "verbatim": "PHOSPHORUS 800 mg 0.0 0.0\nPOTASSIUM 1,875 mg 5,500 mg 5,500 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2698,7 +2698,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives potassium a True Supplement Need (daily maintenance target) of 5,500 mg and a 30-day pharmacologic daily dose of 5,500 mg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives potassium a True Supplement Need (daily maintenance target) of 5,500 mg and a 30-day pharmacologic daily dose of 5,500 mg.",
       "verbatim": "POTASSIUM 1,875 mg 5,500 mg 5,500 mg\nPYRIDOXINE 2.2 mg 50 mg 200 to 500 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2738,7 +2738,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives pyridoxine (vitamin B-6) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 200 to 500 mg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives pyridoxine (vitamin B-6) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 200 to 500 mg.",
       "verbatim": "PYRIDOXINE 2.2 mg 50 mg 200 to 500 mg\nRIBOFLAVIN 1.6 mg 50 mg 200 to 500 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2778,7 +2778,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives riboflavin (vitamin B-2) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 200 to 500 mg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives riboflavin (vitamin B-2) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 200 to 500 mg.",
       "verbatim": "RIBOFLAVIN 1.6 mg 50 mg 200 to 500 mg\nSELENIUM ? 200 mcg 500 to 3,000 mcg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2818,7 +2818,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives selenium a True Supplement Need (daily maintenance target) of 200 mcg and a 30-day pharmacologic daily dose of 500 to 3,000 mcg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives selenium a True Supplement Need (daily maintenance target) of 200 mcg and a 30-day pharmacologic daily dose of 500 to 3,000 mcg.",
       "verbatim": "SELENIUM ? 200 mcg 500 to 3,000 mcg\nSODIUM 1,100 mg 3,300 mg 300 to 3,000 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2858,7 +2858,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives sodium a True Supplement Need (daily maintenance target) of 3,300 mg and a 30-day pharmacologic daily dose of 300 to 3,000 mg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives sodium a True Supplement Need (daily maintenance target) of 3,300 mg and a 30-day pharmacologic daily dose of 300 to 3,000 mg.",
       "verbatim": "SODIUM 1,100 mg 3,300 mg 300 to 3,000 mg\nSULPHUR ? 500 mg 1,000 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2898,7 +2898,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives sulphur (sulfur) a True Supplement Need (daily maintenance target) of 500 mg and a 30-day pharmacologic daily dose of 1,000 mg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives sulphur (sulfur) a True Supplement Need (daily maintenance target) of 500 mg and a 30-day pharmacologic daily dose of 1,000 mg.",
       "verbatim": "SULPHUR ? 500 mg 1,000 mg\nTHIAMINE 1.4 mg 50 mg 200 to 500 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2938,7 +2938,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives thiamine (vitamin B-1) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 200 to 500 mg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives thiamine (vitamin B-1) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 200 to 500 mg.",
       "verbatim": "THIAMINE 1.4 mg 50 mg 200 to 500 mg\nTIN ? 500 mcg 1000 mcg\nVANADIUM ? 500 mcg 2 - 5 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -2978,7 +2978,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives tin a True Supplement Need (daily maintenance target) of 500 mcg and a 30-day pharmacologic daily dose of 1,000 mcg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives tin a True Supplement Need (daily maintenance target) of 500 mcg and a 30-day pharmacologic daily dose of 1,000 mcg.",
       "verbatim": "TIN ? 500 mcg 1000 mcg\nVANADIUM ? 500 mcg 2 - 5 mg\nVITAMIN A 5,000 IU 20,000 IU - 300,000 IU",
       "locator": {
         "book": "lets-play-doctor",
@@ -3018,7 +3018,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vanadium a True Supplement Need (daily maintenance target) of 500 mcg and a 30-day pharmacologic daily dose of 2 to 5 mg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives vanadium a True Supplement Need (daily maintenance target) of 500 mcg and a 30-day pharmacologic daily dose of 2 to 5 mg.",
       "verbatim": "VANADIUM ? 500 mcg 2 - 5 mg\nVITAMIN A 5,000 IU 20,000 IU - 300,000 IU",
       "locator": {
         "book": "lets-play-doctor",
@@ -3058,7 +3058,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vitamin A a True Supplement Need (daily maintenance target) of 20,000 IU and a 30-day pharmacologic daily dose of 20,000 to 300,000 IU, taken as beta-carotene.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives vitamin A a True Supplement Need (daily maintenance target) of 20,000 IU and a 30-day pharmacologic daily dose of 20,000 to 300,000 IU, taken as beta-carotene.",
       "verbatim": "VITAMIN A 5,000 IU 20,000 IU - 300,000 IU\n(beta carotene)\nVITAMIN B-12 3 mcg 200 mcg 1,000 mcg",
       "locator": {
         "book": "lets-play-doctor",
@@ -3098,7 +3098,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vitamin B-12 a True Supplement Need (daily maintenance target) of 200 mcg and a 30-day pharmacologic daily dose of 1,000 mcg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives vitamin B-12 a True Supplement Need (daily maintenance target) of 200 mcg and a 30-day pharmacologic daily dose of 1,000 mcg.",
       "verbatim": "VITAMIN B-12 3 mcg 200 mcg 1,000 mcg\nVITAMIN C 60 mg 1,000 mg 10,000 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -3138,7 +3138,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vitamin C a True Supplement Need (daily maintenance target) of 1,000 mg and a 30-day pharmacologic daily dose of 10,000 mg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives vitamin C a True Supplement Need (daily maintenance target) of 1,000 mg and a 30-day pharmacologic daily dose of 10,000 mg.",
       "verbatim": "VITAMIN C 60 mg 1,000 mg 10,000 mg\nVITAMIN D 400 IU 275 IU 1,000 IU",
       "locator": {
         "book": "lets-play-doctor",
@@ -3178,7 +3178,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vitamin D a True Supplement Need (daily maintenance target) of 275 IU and a 30-day pharmacologic daily dose of 1,000 IU.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives vitamin D a True Supplement Need (daily maintenance target) of 275 IU and a 30-day pharmacologic daily dose of 1,000 IU.",
       "verbatim": "VITAMIN D 400 IU 275 IU 1,000 IU\nVITAMIN E 15 IU 400 IU 1,200 IU",
       "locator": {
         "book": "lets-play-doctor",
@@ -3218,7 +3218,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vitamin E a True Supplement Need (daily maintenance target) of 400 IU and a 30-day pharmacologic daily dose of 1,200 IU.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives vitamin E a True Supplement Need (daily maintenance target) of 400 IU and a 30-day pharmacologic daily dose of 1,200 IU.",
       "verbatim": "VITAMIN E 15 IU 400 IU 1,200 IU\nVITAMIN K 70 mcg 140 mcg 140 mcg",
       "locator": {
         "book": "lets-play-doctor",
@@ -3258,7 +3258,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives vitamin K a True Supplement Need (daily maintenance target) of 140 mcg and a 30-day pharmacologic daily dose of 140 mcg.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives vitamin K a True Supplement Need (daily maintenance target) of 140 mcg and a 30-day pharmacologic daily dose of 140 mcg.",
       "verbatim": "VITAMIN K 70 mcg 140 mcg 140 mcg\nZINC 15 mg 25 mg 150 mg\n* The most efficient way to get mineral supplements is in the plant derived colloidal liquid form.",
       "locator": {
         "book": "lets-play-doctor",
@@ -3298,7 +3298,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults (Fig. 8-1), Wallach gives zinc a True Supplement Need (daily maintenance target) of 25 mg and a 30-day pharmacologic daily dose of 150 mg. He notes the most efficient way to take minerals is the plant-derived colloidal liquid form.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives zinc a True Supplement Need (daily maintenance target) of 25 mg and a 30-day pharmacologic daily dose of 150 mg. He notes the most efficient way to take minerals is the plant-derived colloidal liquid form.",
       "verbatim": "ZINC 15 mg 25 mg 150 mg\n* The most efficient way to get mineral supplements is in the plant derived colloidal liquid form.",
       "locator": {
         "book": "lets-play-doctor",

@@ -2028,6 +2028,36 @@ def check_prose_contained():
                   f"Phase E/F)")
 
 
+def check_internal_refs_out_of_prose():
+    """front-facing-human-first / Charter R4 -- an internal book NAVIGATION ref (Table/Fig/page N)
+    is provenance, not reader content, so it NEVER appears in a claim_text (the reader-facing
+    summary): provenance rides on the source-ref tag (surfaced as a labeled attribution HEADER) and
+    in the verbatim quote. Any ref token in ANY claim_text is RED. The 44 Rare-Earths/Immortality
+    table claims + the 33 Let's-Play-Doctor Base-Line dose summaries were cleaned (2026-07-09); the
+    Fig. 8-1 label survives only in the dose card's own legend + the verbatim. Replaces render-time
+    prose REWRITING with a data-cleanliness gate: the fix lives in the sealed source, the view is a
+    pure projection. Truth-anchored on the sealed shard claim_texts, recomputed each run."""
+    pat = re.compile("\\b(Table|Fig\\.?|Figure|page|p\\.)\\s*\\d", re.I)
+    claims_dir = ROOT / "eden" / "corpus" / "claims"
+    if not claims_dir.exists():
+        return True, "eden/corpus/claims missing (bootstrap-guard)"
+    viol, n = [], 0
+    for shard in sorted(claims_dir.glob("claims-*.json")):
+        for c in json.loads(shard.read_text(encoding="utf-8")).get("claims", []):
+            ct = c.get("claim_text", "") or ""
+            m = pat.search(ct)
+            if m:
+                n += 1
+                if len(viol) < 6:
+                    viol.append(f"claim {c.get('id')}: claim_text carries internal ref '{m.group(0).strip()}'")
+    if viol:
+        return False, ("internal book ref in a reader-facing claim_text (front-facing-human-first) -- "
+                       "provenance belongs in the source-ref tag/header + the verbatim: "
+                       + "; ".join(viol) + (f" ... (+{n - 6} more)" if n > 6 else ""))
+    return True, ("no internal Table/Fig/page ref in any claim_text; provenance lives in the source-ref "
+                  "tag/header + the verbatim quote, never the reader-facing summary")
+
+
 def check_no_hand_duplicated_canonical():
     """Charter R3 -- no canonical value is hand-written twice; the pillar is the single hand-edited
     home, and derived copies are proven fresh (derived_artifacts_fresh IS R3's 'derived copies only'
@@ -2671,6 +2701,14 @@ INVARIANTS = [
         truth_anchor="the clean-surface bytes (corpus claims/canon + catalog + essentials-targets-data/coverage-layout-data) x the _PROSE_HOME_KEYS allowlist, recomputed each run",
         severity="critical",
         lesson_ref="Blueprint Phase D / Charter R4 + enforcement table 4.1 (2026-07-05) -- prose leaking into a fact field is how the rotten layer baked hand-typed summaries into data; this contains it on the clean surface. PARTIAL by design (R7): the full prose-store R4 only matters once clean post-mining stances exist, and the legacy embeds/inline-view prose are WISH until E/F. memory: overhaul-blueprint-active-plan",
+    ),
+    Invariant(
+        name="internal_refs_out_of_prose",
+        description="front-facing-human-first / Charter R4 -- NO internal book navigation ref (Table/Fig/page N) appears in any claim_text (the reader-facing summary); provenance rides on the source-ref tag (surfaced as a labeled header) + the verbatim quote, never the summary prose. The 44 Rare-Earths/Immortality table claims + the 33 Base-Line dose summaries were cleaned; any ref left in a claim_text is RED",
+        check_fn=check_internal_refs_out_of_prose,
+        truth_anchor="every sealed claim's claim_text, recomputed each run",
+        severity="critical",
+        lesson_ref="2026-07-09 pre-Phase-G audit (memory: labeled-table-header-view, front-facing-human-first) -- Luneth flagged render-time regex REWRITING of prose as a bad-habit trap; the durable fix cleans the sealed claim_text + moves the label to a structured tag->header, and this gate keeps refs out of reader summaries going forward (Phase G). Luneth 2026-07-09 also had the 33 Base-Line dose summaries stripped so the whole corpus is ref-free in prose.",
     ),
     Invariant(
         name="no_hand_duplicated_canonical",
