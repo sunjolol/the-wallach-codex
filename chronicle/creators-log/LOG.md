@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 459 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 460 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-09 13:50 UTC-05:00 · round-close · Knowledge/glossary
+Phase G-2: added 56 curated plain-language term glosses (dotted-underline tooltips, glossary.json 148 -> 204) so obscure words in claim text like goiter, ataxia, kwashiorkor, myelin get a one-line definition on hover.
+  ↳ Made the deficiency claims self-explaining: hover an obscure word (goiter, ataxia, kwashiorkor, myelin, telomere...) and get a short plain-language definition, so no reader is left not understanding a term. Curated from the Epigenetics end-of-book glossary. SOURCE ANALYSIS: the Epigenetics 'glossary' turned out to be a ~1,600-entry ACADEMIC molecular-biology textbook glossary (AAA ATPase family, adenylyl cyclase...), NOT Wallach's own plain definitions -- OCR-messy and digit-laden (and glossary_wellformed forbids any digit in a gloss). Wholesale import was rejected with Luneth (noise, UI over-decoration, off-brand academic tone). Instead: measured the overlap -- 409 single-word headwords appear in our claim_text unglossed, but ~75% is noise (common words like acid/blood/plant, proper names like Pauling/Semmelweis, and our own essentials-elements like boron/cobalt). The genuinely-useful residue = 56 obscure medical/biology terms, prioritized by how many claims they appear in (autoimmune x43, congenital x38, goiter x20, ataxia x18, systemic x15). WROTE a short, plain, NUMBER-FREE gloss for each in our modern voice (common-word-first per the term-gloss standard), informed by the book's definitions; added morphological aliases (plurals/adjectives, e.g. goitrogen->goitrogens) so the overlay catches the form that actually appears. FILE: dashboard/assets/data/glossary.json (hand-authored R4 prose store, allowlisted in eden/derived/MANIFEST.json; safe_write JSON round-trip). The lexicon (eden/tools/term-gloss-lexicon.json) was left untouched -- no new obscure abbreviations in the curated set. VERIFIED: build OK (dist 4044.2 KB), invariants 52/52 (0 new reds) incl. glossary_wellformed (204 defs, no numeric assertions), jargon_terms_glossed (272 keys), claim_text_term_gloss clean; Knowledge render probe PASS -- the diabetes deep-view gloss overlays rose 74 -> 94, proving the new terms decorate live; a headless spot-check across 12 essentials surfaced 32 of the 56 new glosses firing with correct tooltips (the rest surface in conditions / other essentials). Luneth reviewed the full 56-term list and signed off, keeping all (no cuts). DEFERRED: none for this item. Next = item 2, regimen snapshot auto-heal.
 
 ## 2026-07-09 12:44 UTC-05:00 · round-close · Coverage/Knowledge
 "Why this number?" box now appears ONLY where Wallach's newest book changed a dose from an older one (26 shown / 12 hidden), walks the full derivation for any newer book (not just Epigenetics), and its text is resized to 15px / 13px.
@@ -799,6 +803,3 @@ SESSION 36: the 2 flagged fixes Luneth ruled — LETS-324 salt nibs->salt rubs +
 
 ## 2026-07-01 17:31 UTC-05:00 · round-close · corpus/all-books
 SESSION 36 adjacent-OCR cleanup (Luneth: stop deferring): fixed clear orthographic/name OCR errors in touched verbatims across 4 books (filifolia, Ricinus, Cichorium, mg t.i.d., Bitot's, annuus, Gadolinium, vitamin B1, etc.). 21 verbatims healed. seal kv 226, board 32/32, 0 NEW.
-
-## 2026-07-01 17:08 UTC-05:00 · milestone · corpus/lets+rare
-SESSION 36 anomaly campaign COMPLETE: bucket-C run-together fixes (LETS 5 + RARE 5: of Menke's, dogwood (Cornus, sugarless Jello, Symphytum/rue/Ruta, OTC analgesics, Diabetes (, Rare Earth x4) then baselined 10 true FPs. seal kv 225, board 32/32, scan 0 NEW.

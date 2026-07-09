@@ -847,6 +847,368 @@
         "pharmacologic daily dose",
         "pharmacologic dose"
       ]
+    },
+    {
+      "term": "autoimmune",
+      "plain": "when the body's immune system attacks its own healthy tissue",
+      "category": "medical",
+      "aliases": [
+        "autoimmunity"
+      ]
+    },
+    {
+      "term": "congenital",
+      "plain": "present from birth",
+      "category": "medical"
+    },
+    {
+      "term": "goiter",
+      "plain": "a swollen thyroid gland, seen as a lump in the neck",
+      "category": "medical",
+      "aliases": [
+        "goitre"
+      ]
+    },
+    {
+      "term": "ataxia",
+      "plain": "loss of muscle coordination and balance",
+      "category": "medical",
+      "aliases": [
+        "ataxic"
+      ]
+    },
+    {
+      "term": "systemic",
+      "plain": "affecting the whole body, not just one part",
+      "category": "medical"
+    },
+    {
+      "term": "myelin",
+      "plain": "the fatty insulating sheath around nerve fibers",
+      "category": "medical"
+    },
+    {
+      "term": "metalloenzyme",
+      "plain": "an enzyme that needs a specific mineral to work",
+      "category": "medical",
+      "aliases": [
+        "metalloenzymes"
+      ]
+    },
+    {
+      "term": "benign",
+      "plain": "not cancerous; harmless",
+      "category": "medical"
+    },
+    {
+      "term": "phytate",
+      "plain": "a plant compound that binds minerals and blocks their absorption",
+      "category": "nutrition",
+      "aliases": [
+        "phytates",
+        "phytic acid"
+      ]
+    },
+    {
+      "term": "hypothyroidism",
+      "plain": "an underactive thyroid gland",
+      "category": "medical",
+      "aliases": [
+        "hypothyroid"
+      ]
+    },
+    {
+      "term": "tetany",
+      "plain": "muscle cramps and spasms, often from low calcium",
+      "category": "medical"
+    },
+    {
+      "term": "varicose",
+      "plain": "swollen, twisted veins, usually in the legs",
+      "category": "medical"
+    },
+    {
+      "term": "aneurysm",
+      "plain": "a bulge in the weakened wall of a blood vessel",
+      "category": "medical",
+      "aliases": [
+        "aneurysms"
+      ]
+    },
+    {
+      "term": "cerebellum",
+      "plain": "the brain region that controls balance and coordination",
+      "category": "medical",
+      "aliases": [
+        "cerebellar"
+      ]
+    },
+    {
+      "term": "cation",
+      "plain": "a positively charged ion",
+      "category": "nutrition",
+      "aliases": [
+        "cations"
+      ]
+    },
+    {
+      "term": "collagen",
+      "plain": "the main structural protein in skin, bone, and connective tissue",
+      "category": "medical"
+    },
+    {
+      "term": "goitrogen",
+      "plain": "a substance that interferes with the thyroid and can cause goiter",
+      "category": "nutrition",
+      "aliases": [
+        "goitrogens"
+      ]
+    },
+    {
+      "term": "chondroitin",
+      "plain": "a cushioning building-block compound found in cartilage",
+      "category": "nutrition"
+    },
+    {
+      "term": "lipid",
+      "plain": "a fat or fat-like molecule",
+      "category": "nutrition",
+      "aliases": [
+        "lipids"
+      ]
+    },
+    {
+      "term": "congestive",
+      "plain": "relating to heart failure in which fluid backs up in the lungs and body",
+      "category": "medical"
+    },
+    {
+      "term": "polyunsaturated",
+      "plain": "a type of fat with several double bonds, common in vegetable and fish oils",
+      "category": "nutrition"
+    },
+    {
+      "term": "kwashiorkor",
+      "plain": "severe malnutrition caused by too little protein",
+      "category": "medical"
+    },
+    {
+      "term": "geophagia",
+      "plain": "compulsive eating of dirt or clay",
+      "category": "medical"
+    },
+    {
+      "term": "keratomalacia",
+      "plain": "softening and clouding of the cornea from severe vitamin A deficiency",
+      "category": "medical"
+    },
+    {
+      "term": "keratin",
+      "plain": "the tough protein that forms hair, nails, and the outer skin",
+      "category": "medical"
+    },
+    {
+      "term": "kinase",
+      "plain": "an enzyme that switches proteins on or off by adding a phosphate group",
+      "category": "medical",
+      "aliases": [
+        "kinases"
+      ]
+    },
+    {
+      "term": "glycogen",
+      "plain": "the body's stored form of glucose, kept in the liver and muscles",
+      "category": "nutrition"
+    },
+    {
+      "term": "malignant",
+      "plain": "cancerous and able to spread to other tissues",
+      "category": "medical",
+      "aliases": [
+        "malignancy"
+      ]
+    },
+    {
+      "term": "pagophagia",
+      "plain": "compulsive chewing of ice",
+      "category": "medical"
+    },
+    {
+      "term": "gangrene",
+      "plain": "death of body tissue from a lost blood supply or infection",
+      "category": "medical",
+      "aliases": [
+        "gangrenous"
+      ]
+    },
+    {
+      "term": "telomere",
+      "plain": "the protective cap on the end of a chromosome",
+      "category": "medical",
+      "aliases": [
+        "telomeres"
+      ]
+    },
+    {
+      "term": "macrophage",
+      "plain": "a large immune cell that engulfs germs and debris",
+      "category": "medical",
+      "aliases": [
+        "macrophages"
+      ]
+    },
+    {
+      "term": "neutrophil",
+      "plain": "the most common white blood cell that fights infection",
+      "category": "medical",
+      "aliases": [
+        "neutrophils"
+      ]
+    },
+    {
+      "term": "neurotransmitter",
+      "plain": "a chemical messenger that carries signals between nerve cells",
+      "category": "medical",
+      "aliases": [
+        "neurotransmitters"
+      ]
+    },
+    {
+      "term": "cytoplasm",
+      "plain": "the jelly-like fluid that fills a cell",
+      "category": "medical"
+    },
+    {
+      "term": "hydrophobic",
+      "plain": "water-repelling",
+      "category": "medical"
+    },
+    {
+      "term": "anaerobic",
+      "plain": "happening without oxygen",
+      "category": "medical"
+    },
+    {
+      "term": "aldehyde",
+      "plain": "a reactive type of organic molecule",
+      "category": "medical",
+      "aliases": [
+        "aldehydes"
+      ]
+    },
+    {
+      "term": "carcinogen",
+      "plain": "a cancer-causing substance",
+      "category": "medical",
+      "aliases": [
+        "carcinogens"
+      ]
+    },
+    {
+      "term": "macular",
+      "plain": "relating to the macula, the central seeing part of the retina",
+      "category": "medical"
+    },
+    {
+      "term": "atrioventricular",
+      "plain": "between the heart's upper and lower chambers",
+      "category": "medical"
+    },
+    {
+      "term": "oncogene",
+      "plain": "a gene that can turn a normal cell cancerous",
+      "category": "medical",
+      "aliases": [
+        "oncogenes"
+      ]
+    },
+    {
+      "term": "fibroblast",
+      "plain": "a cell that produces collagen and connective tissue",
+      "category": "medical",
+      "aliases": [
+        "fibroblasts"
+      ]
+    },
+    {
+      "term": "erythropoietin",
+      "plain": "a hormone that signals the body to make red blood cells",
+      "category": "medical"
+    },
+    {
+      "term": "epithelium",
+      "plain": "the sheet of cells that lines the body's surfaces and cavities",
+      "category": "medical",
+      "aliases": [
+        "epithelial"
+      ]
+    },
+    {
+      "term": "organelle",
+      "plain": "a specialized structure inside a cell",
+      "category": "medical",
+      "aliases": [
+        "organelles"
+      ]
+    },
+    {
+      "term": "ligand",
+      "plain": "a molecule that binds to a protein or receptor",
+      "category": "medical"
+    },
+    {
+      "term": "peptide",
+      "plain": "a short chain of amino acids",
+      "category": "nutrition",
+      "aliases": [
+        "peptides"
+      ]
+    },
+    {
+      "term": "triglyceride",
+      "plain": "the main form in which fat is stored and carried in the blood",
+      "category": "nutrition",
+      "aliases": [
+        "triglycerides"
+      ]
+    },
+    {
+      "term": "cellulose",
+      "plain": "the fiber that makes up plant cell walls",
+      "category": "nutrition"
+    },
+    {
+      "term": "disulfide",
+      "plain": "a sulfur-to-sulfur bond that holds a protein's shape",
+      "category": "medical"
+    },
+    {
+      "term": "redox",
+      "plain": "a reaction in which electrons pass from one molecule to another",
+      "category": "medical"
+    },
+    {
+      "term": "aerobic",
+      "plain": "requiring oxygen",
+      "category": "medical"
+    },
+    {
+      "term": "aflatoxin",
+      "plain": "a cancer-causing toxin made by mold on grains and nuts",
+      "category": "nutrition",
+      "aliases": [
+        "aflatoxins"
+      ]
+    },
+    {
+      "term": "zygote",
+      "plain": "a fertilized egg",
+      "category": "medical"
+    },
+    {
+      "term": "familial",
+      "plain": "running in families; inherited",
+      "category": "medical"
     }
   ]
 }

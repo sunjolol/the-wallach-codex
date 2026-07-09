@@ -9879,6 +9879,368 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "pharmacologic daily dose",
           "pharmacologic dose"
         ]
+      },
+      {
+        term: "autoimmune",
+        plain: "when the body's immune system attacks its own healthy tissue",
+        category: "medical",
+        aliases: [
+          "autoimmunity"
+        ]
+      },
+      {
+        term: "congenital",
+        plain: "present from birth",
+        category: "medical"
+      },
+      {
+        term: "goiter",
+        plain: "a swollen thyroid gland, seen as a lump in the neck",
+        category: "medical",
+        aliases: [
+          "goitre"
+        ]
+      },
+      {
+        term: "ataxia",
+        plain: "loss of muscle coordination and balance",
+        category: "medical",
+        aliases: [
+          "ataxic"
+        ]
+      },
+      {
+        term: "systemic",
+        plain: "affecting the whole body, not just one part",
+        category: "medical"
+      },
+      {
+        term: "myelin",
+        plain: "the fatty insulating sheath around nerve fibers",
+        category: "medical"
+      },
+      {
+        term: "metalloenzyme",
+        plain: "an enzyme that needs a specific mineral to work",
+        category: "medical",
+        aliases: [
+          "metalloenzymes"
+        ]
+      },
+      {
+        term: "benign",
+        plain: "not cancerous; harmless",
+        category: "medical"
+      },
+      {
+        term: "phytate",
+        plain: "a plant compound that binds minerals and blocks their absorption",
+        category: "nutrition",
+        aliases: [
+          "phytates",
+          "phytic acid"
+        ]
+      },
+      {
+        term: "hypothyroidism",
+        plain: "an underactive thyroid gland",
+        category: "medical",
+        aliases: [
+          "hypothyroid"
+        ]
+      },
+      {
+        term: "tetany",
+        plain: "muscle cramps and spasms, often from low calcium",
+        category: "medical"
+      },
+      {
+        term: "varicose",
+        plain: "swollen, twisted veins, usually in the legs",
+        category: "medical"
+      },
+      {
+        term: "aneurysm",
+        plain: "a bulge in the weakened wall of a blood vessel",
+        category: "medical",
+        aliases: [
+          "aneurysms"
+        ]
+      },
+      {
+        term: "cerebellum",
+        plain: "the brain region that controls balance and coordination",
+        category: "medical",
+        aliases: [
+          "cerebellar"
+        ]
+      },
+      {
+        term: "cation",
+        plain: "a positively charged ion",
+        category: "nutrition",
+        aliases: [
+          "cations"
+        ]
+      },
+      {
+        term: "collagen",
+        plain: "the main structural protein in skin, bone, and connective tissue",
+        category: "medical"
+      },
+      {
+        term: "goitrogen",
+        plain: "a substance that interferes with the thyroid and can cause goiter",
+        category: "nutrition",
+        aliases: [
+          "goitrogens"
+        ]
+      },
+      {
+        term: "chondroitin",
+        plain: "a cushioning building-block compound found in cartilage",
+        category: "nutrition"
+      },
+      {
+        term: "lipid",
+        plain: "a fat or fat-like molecule",
+        category: "nutrition",
+        aliases: [
+          "lipids"
+        ]
+      },
+      {
+        term: "congestive",
+        plain: "relating to heart failure in which fluid backs up in the lungs and body",
+        category: "medical"
+      },
+      {
+        term: "polyunsaturated",
+        plain: "a type of fat with several double bonds, common in vegetable and fish oils",
+        category: "nutrition"
+      },
+      {
+        term: "kwashiorkor",
+        plain: "severe malnutrition caused by too little protein",
+        category: "medical"
+      },
+      {
+        term: "geophagia",
+        plain: "compulsive eating of dirt or clay",
+        category: "medical"
+      },
+      {
+        term: "keratomalacia",
+        plain: "softening and clouding of the cornea from severe vitamin A deficiency",
+        category: "medical"
+      },
+      {
+        term: "keratin",
+        plain: "the tough protein that forms hair, nails, and the outer skin",
+        category: "medical"
+      },
+      {
+        term: "kinase",
+        plain: "an enzyme that switches proteins on or off by adding a phosphate group",
+        category: "medical",
+        aliases: [
+          "kinases"
+        ]
+      },
+      {
+        term: "glycogen",
+        plain: "the body's stored form of glucose, kept in the liver and muscles",
+        category: "nutrition"
+      },
+      {
+        term: "malignant",
+        plain: "cancerous and able to spread to other tissues",
+        category: "medical",
+        aliases: [
+          "malignancy"
+        ]
+      },
+      {
+        term: "pagophagia",
+        plain: "compulsive chewing of ice",
+        category: "medical"
+      },
+      {
+        term: "gangrene",
+        plain: "death of body tissue from a lost blood supply or infection",
+        category: "medical",
+        aliases: [
+          "gangrenous"
+        ]
+      },
+      {
+        term: "telomere",
+        plain: "the protective cap on the end of a chromosome",
+        category: "medical",
+        aliases: [
+          "telomeres"
+        ]
+      },
+      {
+        term: "macrophage",
+        plain: "a large immune cell that engulfs germs and debris",
+        category: "medical",
+        aliases: [
+          "macrophages"
+        ]
+      },
+      {
+        term: "neutrophil",
+        plain: "the most common white blood cell that fights infection",
+        category: "medical",
+        aliases: [
+          "neutrophils"
+        ]
+      },
+      {
+        term: "neurotransmitter",
+        plain: "a chemical messenger that carries signals between nerve cells",
+        category: "medical",
+        aliases: [
+          "neurotransmitters"
+        ]
+      },
+      {
+        term: "cytoplasm",
+        plain: "the jelly-like fluid that fills a cell",
+        category: "medical"
+      },
+      {
+        term: "hydrophobic",
+        plain: "water-repelling",
+        category: "medical"
+      },
+      {
+        term: "anaerobic",
+        plain: "happening without oxygen",
+        category: "medical"
+      },
+      {
+        term: "aldehyde",
+        plain: "a reactive type of organic molecule",
+        category: "medical",
+        aliases: [
+          "aldehydes"
+        ]
+      },
+      {
+        term: "carcinogen",
+        plain: "a cancer-causing substance",
+        category: "medical",
+        aliases: [
+          "carcinogens"
+        ]
+      },
+      {
+        term: "macular",
+        plain: "relating to the macula, the central seeing part of the retina",
+        category: "medical"
+      },
+      {
+        term: "atrioventricular",
+        plain: "between the heart's upper and lower chambers",
+        category: "medical"
+      },
+      {
+        term: "oncogene",
+        plain: "a gene that can turn a normal cell cancerous",
+        category: "medical",
+        aliases: [
+          "oncogenes"
+        ]
+      },
+      {
+        term: "fibroblast",
+        plain: "a cell that produces collagen and connective tissue",
+        category: "medical",
+        aliases: [
+          "fibroblasts"
+        ]
+      },
+      {
+        term: "erythropoietin",
+        plain: "a hormone that signals the body to make red blood cells",
+        category: "medical"
+      },
+      {
+        term: "epithelium",
+        plain: "the sheet of cells that lines the body's surfaces and cavities",
+        category: "medical",
+        aliases: [
+          "epithelial"
+        ]
+      },
+      {
+        term: "organelle",
+        plain: "a specialized structure inside a cell",
+        category: "medical",
+        aliases: [
+          "organelles"
+        ]
+      },
+      {
+        term: "ligand",
+        plain: "a molecule that binds to a protein or receptor",
+        category: "medical"
+      },
+      {
+        term: "peptide",
+        plain: "a short chain of amino acids",
+        category: "nutrition",
+        aliases: [
+          "peptides"
+        ]
+      },
+      {
+        term: "triglyceride",
+        plain: "the main form in which fat is stored and carried in the blood",
+        category: "nutrition",
+        aliases: [
+          "triglycerides"
+        ]
+      },
+      {
+        term: "cellulose",
+        plain: "the fiber that makes up plant cell walls",
+        category: "nutrition"
+      },
+      {
+        term: "disulfide",
+        plain: "a sulfur-to-sulfur bond that holds a protein's shape",
+        category: "medical"
+      },
+      {
+        term: "redox",
+        plain: "a reaction in which electrons pass from one molecule to another",
+        category: "medical"
+      },
+      {
+        term: "aerobic",
+        plain: "requiring oxygen",
+        category: "medical"
+      },
+      {
+        term: "aflatoxin",
+        plain: "a cancer-causing toxin made by mold on grains and nuts",
+        category: "nutrition",
+        aliases: [
+          "aflatoxins"
+        ]
+      },
+      {
+        term: "zygote",
+        plain: "a fertilized egg",
+        category: "medical"
+      },
+      {
+        term: "familial",
+        plain: "running in families; inherited",
+        category: "medical"
       }
     ]
   };
@@ -47099,7 +47461,7 @@ VERIFIED: build OK (dist 4028.1 KB), tsc clean, invariants 52/52 (0 new reds), a
 
 DEFERRED (Luneth OK'd): (a) regimen snapshot AUTO-HEAL \u2014 items should re-read live product composition so a stale VALUE self-corrects without the user re-adding (memory: auto-heal-not-user-debug). The unit fix already auto-heals on reload; only value drift remains. (b) Epigenetics end-of-book glossary -> term-gloss overlays (G-2). (c) tighten amounts_wallach_only to validate the full transform chain (WISH; provenance stamp exists for it).` }, { id: "lg_mrdsr7a9_wpz0ie", ts: "2026-07-09T12:44:51.873990-05:00", surface: "Coverage/Knowledge", kind: "round-close", summary: `"Why this number?" box now appears ONLY where Wallach's newest book changed a dose from an older one (26 shown / 12 hidden), walks the full derivation for any newer book (not just Epigenetics), and its text is resized to 15px / 13px.`, detail: `Made the coverage "why this number?" box discerning: it now only pops up when Wallach actually revised a dose between his books, and when it does it explains the whole calculation instead of restating the number. Also fixed the text sizing so the lower lines (the older figure + the evolution note) are actually readable, not tiny.
 
-TRIGGER (views/knowledge.ts whyThisNumberQualifies): shows iff >=1 earlier-book figure in other_claims DISAGREES with the posted number, comparing each book's UPPER (o.high ?? o.low) in the same unit. A tie (a newer book restated the same number) or a single-source number shows nothing. Book-agnostic: Potassium 5000mg (Immortality 2008 vs LPD 5500) now shows; Cobalt (Immortality = Rare Earths 250-400mcg) and Germanium (DDDL = Immortality 20-30mg) hide because the newer book gave the identical range. Split = 26 show, 12 hide (7 single-source: Sodium/Phosphorus/Sulfur/Chloride/Boron/Tin/Flavonoids; 5 tie: Cobalt/Germanium/Silver/Vitamin B2/Vitamin C). RICHNESS (wtnChain): every shown box walks stated-range -> target-the-upper -> IU->metric convert (factor_source shown verbatim, e.g. 'USP: 1 IU retinol = 0.3 mcg RAE') -> per-100-lb x1.54 -> 2-sig-fig round -> posted; Vitamin A renders one chain per form (retinol + beta-carotene) + a summed total; all book names dynamic via wtnBook, no Epigenetics hardcode. SIZING (drawer-knowledge.css): upper tier (posted + 'how we got this' + derivation) = 0.9375rem (15px), lower tier (earlier + gloss) = 0.8125rem (13px), rem-based so it scales with the root; new .kd-why__derivation/__how/__parts-list styles; dropped the dead __parts/__range rules. PROBE: render_probe_knowledge.js gains 2 assertions codifying the trigger (Magnesium shows box WITH derivation; Boron, no earlier figure, hides it). VERIFIED: build OK (dist 4032.5 KB), lint 0 errors, tsc clean, invariants 52/52 (0 new reds), Knowledge render probe PASS incl. the 2 new assertions, 9-essential live show/hide spot-check matched the computed 26/12 split, computed font-sizes confirmed 15px/13px, Luneth reviewed the full 26/12 list and signed off. HISTORY: first pass mis-scoped the trigger twice -- (1) always-on box, then (2) I inverted Luneth's two points (wrongly showed ties/reworded them); corrected to disagreement-only per his explicit restatement, and fixed a comparison bug (earlier-LOW vs posted-UPPER) that had wrongly shown Cobalt/Germanium. DEFERRED: none for this item; queued next-phase items unchanged.` }];
+TRIGGER (views/knowledge.ts whyThisNumberQualifies): shows iff >=1 earlier-book figure in other_claims DISAGREES with the posted number, comparing each book's UPPER (o.high ?? o.low) in the same unit. A tie (a newer book restated the same number) or a single-source number shows nothing. Book-agnostic: Potassium 5000mg (Immortality 2008 vs LPD 5500) now shows; Cobalt (Immortality = Rare Earths 250-400mcg) and Germanium (DDDL = Immortality 20-30mg) hide because the newer book gave the identical range. Split = 26 show, 12 hide (7 single-source: Sodium/Phosphorus/Sulfur/Chloride/Boron/Tin/Flavonoids; 5 tie: Cobalt/Germanium/Silver/Vitamin B2/Vitamin C). RICHNESS (wtnChain): every shown box walks stated-range -> target-the-upper -> IU->metric convert (factor_source shown verbatim, e.g. 'USP: 1 IU retinol = 0.3 mcg RAE') -> per-100-lb x1.54 -> 2-sig-fig round -> posted; Vitamin A renders one chain per form (retinol + beta-carotene) + a summed total; all book names dynamic via wtnBook, no Epigenetics hardcode. SIZING (drawer-knowledge.css): upper tier (posted + 'how we got this' + derivation) = 0.9375rem (15px), lower tier (earlier + gloss) = 0.8125rem (13px), rem-based so it scales with the root; new .kd-why__derivation/__how/__parts-list styles; dropped the dead __parts/__range rules. PROBE: render_probe_knowledge.js gains 2 assertions codifying the trigger (Magnesium shows box WITH derivation; Boron, no earlier figure, hides it). VERIFIED: build OK (dist 4032.5 KB), lint 0 errors, tsc clean, invariants 52/52 (0 new reds), Knowledge render probe PASS incl. the 2 new assertions, 9-essential live show/hide spot-check matched the computed 26/12 split, computed font-sizes confirmed 15px/13px, Luneth reviewed the full 26/12 list and signed off. HISTORY: first pass mis-scoped the trigger twice -- (1) always-on box, then (2) I inverted Luneth's two points (wrongly showed ties/reworded them); corrected to disagreement-only per his explicit restatement, and fixed a comparison bug (earlier-LOW vs posted-UPPER) that had wrongly shown Cobalt/Germanium. DEFERRED: none for this item; queued next-phase items unchanged.` }, { id: "lg_mrdv3u5n_u75g3o", ts: "2026-07-09T13:50:40.619632-05:00", surface: "Knowledge/glossary", kind: "round-close", summary: "Phase G-2: added 56 curated plain-language term glosses (dotted-underline tooltips, glossary.json 148 -> 204) so obscure words in claim text like goiter, ataxia, kwashiorkor, myelin get a one-line definition on hover.", detail: "Made the deficiency claims self-explaining: hover an obscure word (goiter, ataxia, kwashiorkor, myelin, telomere...) and get a short plain-language definition, so no reader is left not understanding a term. Curated from the Epigenetics end-of-book glossary.\n\nSOURCE ANALYSIS: the Epigenetics 'glossary' turned out to be a ~1,600-entry ACADEMIC molecular-biology textbook glossary (AAA ATPase family, adenylyl cyclase...), NOT Wallach's own plain definitions -- OCR-messy and digit-laden (and glossary_wellformed forbids any digit in a gloss). Wholesale import was rejected with Luneth (noise, UI over-decoration, off-brand academic tone). Instead: measured the overlap -- 409 single-word headwords appear in our claim_text unglossed, but ~75% is noise (common words like acid/blood/plant, proper names like Pauling/Semmelweis, and our own essentials-elements like boron/cobalt). The genuinely-useful residue = 56 obscure medical/biology terms, prioritized by how many claims they appear in (autoimmune x43, congenital x38, goiter x20, ataxia x18, systemic x15). WROTE a short, plain, NUMBER-FREE gloss for each in our modern voice (common-word-first per the term-gloss standard), informed by the book's definitions; added morphological aliases (plurals/adjectives, e.g. goitrogen->goitrogens) so the overlay catches the form that actually appears. FILE: dashboard/assets/data/glossary.json (hand-authored R4 prose store, allowlisted in eden/derived/MANIFEST.json; safe_write JSON round-trip). The lexicon (eden/tools/term-gloss-lexicon.json) was left untouched -- no new obscure abbreviations in the curated set.\n\nVERIFIED: build OK (dist 4044.2 KB), invariants 52/52 (0 new reds) incl. glossary_wellformed (204 defs, no numeric assertions), jargon_terms_glossed (272 keys), claim_text_term_gloss clean; Knowledge render probe PASS -- the diabetes deep-view gloss overlays rose 74 -> 94, proving the new terms decorate live; a headless spot-check across 12 essentials surfaced 32 of the 56 new glosses firing with correct tooltips (the rest surface in conditions / other essentials). Luneth reviewed the full 56-term list and signed off, keeping all (no cuts). DEFERRED: none for this item. Next = item 2, regimen snapshot auto-heal." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
