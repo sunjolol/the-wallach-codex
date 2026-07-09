@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 463 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 464 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-09 15:15 UTC-05:00 · milestone · planning
+Remaining-work roadmap LOCKED (2026-07-09): blueprint §7 phases flipped to LOCKED, stale Phase F line corrected, next-chunk refreshed to point at Phase G (G-3 vein-maps → G-4 Immortality @ La-Lanthanum). Session closing for a fresh start before mining.
+  ↳ Locked in the plan so a fresh session starts clean. Flipped the blueprint's expanded phases from 'pending Luneth lock' to LOCKED (Luneth: 'Looks good'); corrected the stale Phase F line (read UNDERWAY — it is DONE + SEALED); rewrote next-chunk.md into a clean forward-looking handoff. The locked roadmap (blueprint §7): Phase G = vein-selective book mining → Search-validation → seal (G-3 adopt doctrine + seed mining-coverage.json vein-maps; G-4 finish Immortality resuming the element encyclopedia at La-Lanthanum char 299,378; G-5 DDDL re-mine; G-6 the 3 newly-bought books via Luneth photos; G-7 build Search as the corpus completeness-harness + re-mine gaps before seal; G-8 close-out audit + seal; Hell's Kitchen deferred). Phase H = app completion (Scanner/Regimen/Journey + periodic-table element-click detail + product detail panel + wire dead buttons). Phase I = design touch-up LAST + distribution + legal/a11y. Mining HOW = .claude/rules/mining-veins.md. Verified: invariants 52/52 green; no build/view change. Next session: re-genesis → start G-3. Files touched: chronicle/OVERHAUL-BLUEPRINT.md, chronicle/next-chunk.md.
 
 ## 2026-07-09 15:07 UTC-05:00 · design-decision · planning
 Laid out the remaining-project roadmap in the blueprint: vein-selective book mining (skip filler but gated-honest), Search-before-seal to validate the corpus, then app completion, then design last. New mining-veins.md doctrine. Pending Luneth lock.
@@ -803,6 +807,3 @@ SESSION 37 — LETS verbatim FINDABLE campaign, 3rd increment: 20 clean FINDABLE
 
 ## 2026-07-01 18:19 UTC-05:00 · session-end · session
 SESSION 36 CLOSE — anomaly-scan campaign COMPLETE (all reals fixed corpus-wide, 10 FPs baselined, touched verbatims cleaned) + LETS verbatim campaign STARTED (24 FINDABLE claims, 283->258). kv 229, board 32/32, clean tree. RESUME = continue FINDABLE extends then 138 NOT_FINDABLE.
-
-## 2026-07-01 18:13 UTC-05:00 · round-close · corpus/lets
-SESSION 36 LETS verbatim campaign 2nd increment: 19 more FINDABLE claims extended to name their conditions (Ch10 heading pattern). violations 278->258 (LETS 219->199). Session total 24 claims, 283->258. seal kv 229, board 32/32, probe PASS.
