@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 461 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 462 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-09 14:30 UTC-05:00 · round-close · coverage
+Tightened R2 amounts_wallach_only to recompute Wallach's full dose-transform chain (not just provenance-existence) + committed a 7-class negative test proving it reddens on poison; board 52/52, next-chunk WISH #2 landed.
+  ↳ The gate that guarantees every recommended dose is Wallach's own number used to only check that the number POINTED at a Wallach claim. Now it independently re-does Wallach's math — takes his stated range, applies the same unit conversions and body-weight scaling, and checks the posted number matches to the decimal — so a typo, a fabricated conversion factor, or a stale data file can no longer slip a non-Wallach amount past the guard. tools/invariants.py: check_amounts_wallach_only split into module-level _amounts_wallach_only_impl(embed,canon,claims) + a thin path-binding wrapper (so a negative test can drive it with a tampered artifact). Two new proof layers on top of the existing source_claim_id resolution — TRACE: provenance.original_{low,high,unit} must equal the sealed dose claim's amount/unit (anchors the transform input to Wallach's real number); CHAIN: independently recompute upper-of-range → ×IU-factor (if any) → ×1.54 weight-scale + round-2sf (if per-100lb), byte-compare to posted low. IU factors are pinned to the known USP/FDA physical constants (retinol/beta-carotene 0.3 RAE, vit-D 0.025, vit-E 0.67), re-stated independently in the gate; weight-scale pinned to 154/100; IU/weight scaling is legal only when the claim itself is IU / per-100lb. Vitamin-A summed-parts handled (recompute each part, sum, unit-check). Parser + 2-sig-fig rounding are re-implemented inside the gate (nothing imported from targets_derive.py, so a derive bug cannot slip both surfaces — §00.B #11). New tools/test_amounts_wallach_only.py: baseline-green + 7 poison classes (hand-typed value, planted/wrong IU factor, broken trace, planted scale_factor, tampered summed-part, missing provenance, drifted unit) all redden — 8/8, exit-coded, ROOT from __file__. Docs reconciled (all understated the gate as provenance-only): charter.md R2 status, source-rule.md enforcement, data-flow.md invariant list, targets_derive.py module docstring. Verifications: build OK; invariants 52/52 (amounts_wallach_only: "all 38 numeric coverage targets trace to a Wallach dose claim AND recompute exactly from documented transform chain"); Coverage render probe 0 page-errors (60 tiles, unchanged); negative test 8/8. No data/view change — artifact byte-identical, derived_artifacts_fresh green. Closes next-chunk item #2 (was labeled WISH); this is an R9 refinement — the gate now proves its own enforcement, not just its provenance.
 
 ## 2026-07-09 14:05 UTC-05:00 · round-close · Coverage
 Regimen snapshot auto-heal: coverage.ts now re-reads live product composition from the vault by canonical name, so a user's saved item self-corrects when we fix the Product DB -- no re-adding. Scanned items keep their own data.
@@ -801,6 +805,3 @@ SESSION 36 LETS verbatim campaign 2nd increment: 19 more FINDABLE claims extende
 
 ## 2026-07-01 17:57 UTC-05:00 · round-close · corpus/lets
 SESSION 36: LETS verbatim campaign resumed. First increment — 5 claims extended to name their conditions (achlorhydria, adrenal_exhaustion, alcoholism, diabetes/hypoglycemia, absence_attacks). violations 283->278, LETS 224->219. seal kv 228, board 32/32, probe PASS.
-
-## 2026-07-01 17:44 UTC-05:00 · round-close · corpus/lets+rare
-SESSION 36: the 2 flagged fixes Luneth ruled — LETS-324 salt nibs->salt rubs + RARE Dr.Jykel->Dr. Jekyll (all 3 garbled Jekyll spellings per fix-everywhere doctrine, RARE-081+129). 3 verbatims healed. seal kv 227, board 32/32, 0 NEW.

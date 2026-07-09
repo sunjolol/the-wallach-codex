@@ -35,8 +35,10 @@ WHAT COMES FROM WHERE:
   - coverage_kind (non-numeric coverage) -> essentials-canon.json.
 
 amounts_wallach_only proves every posted number traces to a Wallach dose claim mapping the
-essential. (Validating the full transform CHAIN is a labeled WISH — the provenance stamp is
-here for it; the gate today checks provenance-existence, not value.)
+essential AND recomputes exactly from the documented transform chain — it anchors each
+`provenance.original_*` to the sealed claim's dose, pins IU factors to the known physical
+constants, and byte-compares the re-derived value to the posted number (tightened 2026-07-09;
+the provenance stamp exists for exactly this).
 """
 import collections
 import json

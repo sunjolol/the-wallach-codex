@@ -26,7 +26,7 @@ eden/* → schemas/* → core/* → state/* → views/*
 
 ## Enforcement
 - Invariant `views_state_no_inline_data` — blocks literal arrays/objects > 10 elements in `views/` and `state/`.
-- Invariant `amounts_wallach_only` — every numeric coverage target in `essentials-targets-data.json` traces to a sealed Wallach dose claim via `source_claim_id` (R2 poison gate; replaced the retired `wallach_stance_source_rule` in Phase C2).
+- Invariant `amounts_wallach_only` — every numeric coverage target in `essentials-targets-data.json` traces to a sealed Wallach dose claim via `source_claim_id` AND recomputes exactly from its documented transform chain (provenance anchored to the claim's dose, IU factors pinned to known physical constants, the value re-derived and byte-compared) — R2 poison gate; replaced the retired `wallach_stance_source_rule` in Phase C2, chain-tightened 2026-07-09.
 - Invariant `citations_reference_registry` (R3) — book refs = `book_id`, no hand-typed citation on the clean Charter surface (the overhaul-trigger anti-drift gate).
 - Invariant `prose_contained` (R4) — no prose-shaped text in a fact field on the clean Charter surface (prose stays in its designated homes).
 - Invariant `no_hand_duplicated_canonical` (R3) — no canonical essential name re-stored outside `essentials-canon` (derived copies exempt, gated by `derived_artifacts_fresh`).

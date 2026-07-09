@@ -1261,23 +1261,43 @@ def check_derived_artifacts_fresh():
     return True, f"all {checked} derived artifact(s) in sync with the sealed pillars"
 
 
-def check_amounts_wallach_only():
+def _amounts_wallach_only_impl(embed_p, canon_p, claims_dir):
     """Charter R2 / §00.A — every NUMERIC coverage target in
-    dashboard/assets/data/essentials-targets-data.json traces to a Wallach dose
-    claim. Each numeric target must carry a source_claim_id resolving to a sealed
-    corpus `dose` claim that maps the essential's slug. A numeric target with no
-    source_claim_id, or one pointing at a non-dose / wrong-essential claim, is a
-    Youngevity-or-fabricated amount = RED (the poison this overhaul purged).
-    Non-numeric (honest-gap / trace / dietary) targets carry no number and are
-    skipped. Truth-anchored on the sealed claim shards, recomputed each run."""
+    dashboard/assets/data/essentials-targets-data.json is a Wallach dose, AND the posted
+    number is the DETERMINISTIC result of the documented transform chain applied to that
+    sealed Wallach dose. Two layers of proof (§00.B #2 defense in depth, #11 truth-anchoring):
+
+      TRACE (the anchor) -- source_claim_id resolves to a sealed corpus `dose` claim mapping
+        the essential's slug, AND provenance.original_{low,high,unit} EQUALS that claim's dose
+        amount/unit. So the "original" the transform starts from really is Wallach's number,
+        not a hand-inserted value.
+      CHAIN (the recompute) -- re-run the documented chain here, independently:
+        upper-of-range -> x IU-factor (if any) -> x 1.54 weight-scale + round-to-2sf (if
+        per-100lb), and compare the result to the posted `low`. Any IU factor must equal the
+        known physical constant for that vitamin (0.3 RAE / 0.025 vit-D / 0.67 vit-E); any
+        weight scale must equal 154/100; IU/weight scaling is only legal when the claim itself
+        is IU / per-100lb. So a fabricated number, a wrong-or-planted factor, an arithmetic
+        drift, or a stale artifact all go RED -- the transform can no longer LAUNDER a
+        non-Wallach amount past mere provenance-existence.
+
+    Non-numeric (honest-gap / trace / dietary) targets carry no number and are skipped.
+    Truth-anchored on the sealed claim shards + externally-true physical constants, recomputed
+    each run (nothing imported from the derive script, so a derive bug cannot slip both
+    surfaces). Split out from check_amounts_wallach_only so a negative test can drive the same
+    logic with a tampered artifact (proving the gate reddens on poison, not just greens on truth)."""
     import json as _json
-    embed = ROOT / "dashboard" / "assets" / "data" / "essentials-targets-data.json"
-    canon_p = ROOT / "eden" / "corpus" / "essentials-canon.json"
-    claims_dir = ROOT / "eden" / "corpus" / "claims"
-    if not embed.exists() or not canon_p.exists() or not claims_dir.exists():
+    import math
+    # IU conversions are USP/FDA definitional constants (physical truth, NOT project-chosen
+    # values), re-stated here as the INDEPENDENT anchor for the derive script's IU_CONVERSIONS
+    # table -- if a derive factor ever drifts from the true constant, this catches it (§00.B #2/#11).
+    iu_factor = {"vitamin-a": 0.3, "vitamin-d": 0.025, "vitamin-e": 0.67}
+    iu_out_unit = {"vitamin-a": "mcg", "vitamin-d": "mcg", "vitamin-e": "mg"}
+    weight_scale = 154 / 100.0  # 70 kg / 154 lb reference adult; source states doses per 100 lb
+
+    if not embed_p.exists() or not canon_p.exists() or not claims_dir.exists():
         return True, "essentials-targets-data / corpus not installed (bootstrap-guard)"
     try:
-        data = _json.loads(embed.read_text(encoding="utf-8"))
+        data = _json.loads(embed_p.read_text(encoding="utf-8"))
     except Exception as e:
         return False, f"essentials-targets-data.json not valid JSON: {e}"
     canon = _json.loads(canon_p.read_text(encoding="utf-8"))["essentials"]
@@ -1287,6 +1307,71 @@ def check_amounts_wallach_only():
         for c in _json.loads(shard.read_text(encoding="utf-8")).get("claims", []):
             if c.get("kind") == "dose":
                 dose_claims[c["id"]] = c
+
+    def parse_amt(a):
+        # Independent re-implementation of the derive's amount grammar (number OR "low-high").
+        if isinstance(a, (int, float)):
+            return float(a), None
+        if isinstance(a, str):
+            m = re.match(r"\s*([\d.,]+)\s*[-–]\s*([\d.,]+)", a)
+            if m:
+                return float(m.group(1).replace(",", "")), float(m.group(2).replace(",", ""))
+            m = re.match(r"\s*([\d.,]+)", a)
+            if m:
+                return float(m.group(1).replace(",", "")), None
+        return None, None
+
+    def round_2sf(x):
+        # The documented "2 significant figures" rounding, recomputed independently.
+        if not x:
+            return 0.0
+        return round(x, 1 - int(math.floor(math.log10(abs(x)))))
+
+    def close(a, b):
+        if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+            return False
+        return abs(a - b) <= 1e-6 * max(1.0, abs(b))
+
+    def leaf(name, slug, claim, prov):
+        """Verify one dose's provenance against its sealed claim + recompute its value.
+        Returns (recomputed_value_or_None, scaled_bool, list_of_errors)."""
+        errs = []
+        dz = claim.get("dose") or {}
+        clow, chigh = parse_amt(dz.get("amount"))
+        if prov.get("original_low") != clow or prov.get("original_high") != chigh:
+            errs.append(f"{name}: provenance original {prov.get('original_low')}-{prov.get('original_high')} "
+                        f"!= claim {claim['id']} dose {clow}-{chigh}")
+        if prov.get("original_unit") != dz.get("unit"):
+            errs.append(f"{name}: provenance unit {prov.get('original_unit')!r} != claim unit {dz.get('unit')!r}")
+        exp_upper = chigh if chigh is not None else clow
+        if exp_upper is not None and not close(prov.get("upper_taken"), exp_upper):
+            errs.append(f"{name}: upper_taken {prov.get('upper_taken')} != upper-of-range {exp_upper}")
+        if "factor" in prov:
+            legit = iu_factor.get(slug)
+            if legit is None or not close(prov["factor"], legit):
+                errs.append(f"{name}: IU factor {prov['factor']} is not the known constant for {slug} ({legit})")
+            if dz.get("unit") != "IU":
+                errs.append(f"{name}: factor applied but claim unit is {dz.get('unit')!r}, not IU")
+        elif dz.get("unit") == "IU" and slug in iu_factor:
+            errs.append(f"{name}: IU dose for {slug} but no conversion factor recorded")
+        if "scale_factor" in prov:
+            if not close(prov["scale_factor"], weight_scale):
+                errs.append(f"{name}: scale_factor {prov['scale_factor']} != 1.54 (154 lb / 100 lb)")
+            if dz.get("per_body_weight") != "100lb":
+                errs.append(f"{name}: scaled but claim {claim['id']} is not per-100lb")
+        elif dz.get("per_body_weight") == "100lb":
+            errs.append(f"{name}: claim {claim['id']} is per-100lb but no scale_factor recorded")
+        v = prov.get("upper_taken")
+        scaled = "scale_factor" in prov
+        if isinstance(v, (int, float)):
+            if "factor" in prov:
+                v = v * prov["factor"]
+            if scaled:
+                v = round_2sf(v * prov["scale_factor"])
+        else:
+            v = None
+        return v, scaled, errs
+
     viol, numeric = [], 0
     for e in data.get("essentials", []):
         t = e.get("target") or {}
@@ -1295,6 +1380,7 @@ def check_amounts_wallach_only():
             continue
         numeric += 1
         name = e.get("name", "?")
+        slug = name2slug.get(name)
         scid = t.get("source_claim_id")
         if not scid:
             viol.append(f"{name}: numeric target {low}{t.get('unit', '')} with NO source_claim_id")
@@ -1303,13 +1389,71 @@ def check_amounts_wallach_only():
         if claim is None:
             viol.append(f"{name}: source_claim_id {scid} is not a sealed Wallach dose claim")
             continue
-        slug = name2slug.get(name)
         if slug is None or slug not in claim.get("essentials", []):
             viol.append(f"{name}: dose claim {scid} does not map essential '{slug}'")
+            continue
+        prov = t.get("provenance")
+        if not isinstance(prov, dict):
+            viol.append(f"{name}: numeric target {low} has no provenance to audit (R2 chain)")
+            continue
+        parts = t.get("parts")
+        if isinstance(parts, list) and parts:
+            # Complementary (summed) target, e.g. Vitamin A = retinol + beta-carotene.
+            part_vals, any_scaled, perrs = [], False, []
+            for p in parts:
+                pclaim = dose_claims.get(p.get("claim_id"))
+                pprov = p.get("provenance") or {}
+                if pclaim is None:
+                    perrs.append(f"{name}: part claim_id {p.get('claim_id')} is not a dose claim")
+                    continue
+                if slug not in pclaim.get("essentials", []):
+                    perrs.append(f"{name}: part claim {p.get('claim_id')} does not map '{slug}'")
+                pv, psc, pe = leaf(name, slug, pclaim, pprov)
+                perrs += pe
+                any_scaled = any_scaled or psc
+                if pv is not None:
+                    part_vals.append(pv)
+                    if not close(p.get("value"), pv):
+                        perrs.append(f"{name}: part value {p.get('value')} != recomputed {pv}")
+                exp_pu = iu_out_unit.get(slug) if "factor" in pprov else pprov.get("original_unit")
+                if p.get("unit") != exp_pu:
+                    perrs.append(f"{name}: part unit {p.get('unit')!r} != expected {exp_pu!r}")
+            if perrs:
+                viol += perrs
+                continue
+            expected = round_2sf(sum(part_vals)) if any_scaled else sum(part_vals)
+            if not close(low, expected):
+                viol.append(f"{name}: posted {low} != sum of recomputed parts {expected}")
+            exp_unit = iu_out_unit.get(slug, t.get("unit"))
+            if t.get("unit") != exp_unit:
+                viol.append(f"{name}: target unit {t.get('unit')!r} != expected {exp_unit!r}")
+        else:
+            v, scaled, errs = leaf(name, slug, claim, prov)
+            if errs:
+                viol += errs
+                continue
+            if v is None or not close(low, v):
+                viol.append(f"{name}: posted {low} != value recomputed from its transform chain ({v})")
+            exp_unit = iu_out_unit.get(slug) if "factor" in prov else prov.get("original_unit")
+            if t.get("unit") != exp_unit:
+                viol.append(f"{name}: target unit {t.get('unit')!r} != expected {exp_unit!r}")
+            if t.get("unit") == "IU":
+                viol.append(f"{name}: posted target still in IU (should be unit-normalized to metric)")
     if viol:
-        return False, ("non-Wallach / unsourced amount(s) in essentials-targets-data (R2 poison): "
-                       + "; ".join(viol[:8]))
-    return True, f"all {numeric} numeric coverage target(s) trace to a Wallach dose claim (R2 clean)"
+        return False, ("non-Wallach / unsourced / mis-derived amount(s) in essentials-targets-data "
+                       "(R2 poison / broken chain): " + "; ".join(viol[:8]))
+    return True, (f"all {numeric} numeric coverage target(s) trace to a Wallach dose claim AND "
+                  "recompute exactly from its documented transform chain (R2 clean)")
+
+
+def check_amounts_wallach_only():
+    """Charter R2 / §00.A wrapper -- see _amounts_wallach_only_impl for the full contract.
+    Thin path-binding shell over the impl so a negative test can drive the same logic with a
+    tampered artifact (proving the gate goes RED on poison, not just green on truth)."""
+    embed = ROOT / "dashboard" / "assets" / "data" / "essentials-targets-data.json"
+    canon_p = ROOT / "eden" / "corpus" / "essentials-canon.json"
+    claims_dir = ROOT / "eden" / "corpus" / "claims"
+    return _amounts_wallach_only_impl(embed, canon_p, claims_dir)
 
 
 def check_nutrient_resolver_parity():
