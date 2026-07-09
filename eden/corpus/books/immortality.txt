@@ -4457,7 +4457,7 @@ subjects of many law suites because of its known toxic effects
 on the brain (selenium is the specific antidote for mercury
 poisoning).
 
-Humans can consume 400 mg of silver per day. A
+Humans can consume 400 mcg of silver per day. A
 silver “deficiency” results in an impaired immune system. In
 The Body Electric, Dr. Robert Becker identified a relationship
 between low levels of tissue and dietary silver and the rate
