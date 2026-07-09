@@ -1273,18 +1273,18 @@
       "iodine"
     ],
     "conditions": [],
-    "kind": "dose",
+    "kind": "definition",
     "repetitions": [
       {
-        "claim_id": "WAL-CLM-LETS-000054",
-        "book": "lets-play-doctor"
+        "claim_id": "WAL-CLM-RARE-000144",
+        "book": "rare-earths"
       },
       {
         "claim_id": "WAL-CLM-RARE-000146",
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 2,
+    "books_repeating": 1,
     "claim_count": 2
   },
   {
@@ -1387,18 +1387,18 @@
       "magnesium"
     ],
     "conditions": [],
-    "kind": "dose",
+    "kind": "definition",
     "repetitions": [
       {
-        "claim_id": "WAL-CLM-LETS-000056",
-        "book": "lets-play-doctor"
+        "claim_id": "WAL-CLM-RARE-000168",
+        "book": "rare-earths"
       },
       {
         "claim_id": "WAL-CLM-RARE-000173",
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 2,
+    "books_repeating": 1,
     "claim_count": 2
   },
   {
@@ -1427,18 +1427,18 @@
       "molybdenum"
     ],
     "conditions": [],
-    "kind": "dose",
+    "kind": "definition",
     "repetitions": [
       {
-        "claim_id": "WAL-CLM-LETS-000058",
-        "book": "lets-play-doctor"
+        "claim_id": "WAL-CLM-RARE-000179",
+        "book": "rare-earths"
       },
       {
         "claim_id": "WAL-CLM-RARE-000180",
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 2,
+    "books_repeating": 1,
     "claim_count": 2
   },
   {

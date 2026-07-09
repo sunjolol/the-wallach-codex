@@ -326,15 +326,15 @@
       ],
       "definition": [
         "WAL-CLM-RARE-000168",
-        "WAL-CLM-RARE-000169"
+        "WAL-CLM-RARE-000169",
+        "WAL-CLM-RARE-000173"
       ],
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000082",
         "WAL-CLM-RARE-000083"
       ],
       "dose": [
-        "WAL-CLM-LETS-000056",
-        "WAL-CLM-RARE-000173"
+        "WAL-CLM-LETS-000056"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000053",
@@ -2233,15 +2233,15 @@
         "WAL-CLM-RARE-000150"
       ],
       "definition": [
-        "WAL-CLM-RARE-000144"
+        "WAL-CLM-RARE-000144",
+        "WAL-CLM-RARE-000146"
       ],
       "diagnostic_pattern": [
         "WAL-CLM-IMMORT-000183",
         "WAL-CLM-RARE-000151"
       ],
       "dose": [
-        "WAL-CLM-LETS-000054",
-        "WAL-CLM-RARE-000146"
+        "WAL-CLM-LETS-000054"
       ],
       "interaction": [
         "WAL-CLM-DDDL-000025",
@@ -2568,11 +2568,11 @@
         "WAL-CLM-RARE-000181"
       ],
       "definition": [
-        "WAL-CLM-RARE-000179"
+        "WAL-CLM-RARE-000179",
+        "WAL-CLM-RARE-000180"
       ],
       "dose": [
-        "WAL-CLM-LETS-000058",
-        "WAL-CLM-RARE-000180"
+        "WAL-CLM-LETS-000058"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000028",

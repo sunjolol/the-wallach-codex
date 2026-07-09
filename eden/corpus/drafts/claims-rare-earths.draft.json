@@ -5070,7 +5070,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000146",
-      "kind": "dose",
+      "kind": "definition",
       "essentials": [
         "iodine"
       ],
@@ -6080,7 +6080,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000173",
-      "kind": "dose",
+      "kind": "definition",
       "essentials": [
         "magnesium"
       ],
@@ -6102,7 +6102,6 @@
       "tags": [
         "magnesium",
         "rda",
-        "dose",
         "toxicity"
       ],
       "confidence": "high",
@@ -6346,7 +6345,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000180",
-      "kind": "dose",
+      "kind": "definition",
       "essentials": [
         "molybdenum"
       ],

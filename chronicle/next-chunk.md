@@ -1,4 +1,4 @@
-# Next chunk — CORPUS AUDIT UNDERWAY (Workstream A + B-1 done) → Workstream B rest (RDA/intake reclassifications) NEXT
+# Next chunk — CORPUS AUDIT UNDERWAY (Workstream A + B-1 + B-2 done) → Workstream B rest (remaining 6 dose suspects) NEXT
 
 **★ CURRENT STATE (2026-07-08).** Phases A–F COMPLETE + SEALED; task (a) (the Coverage/Knowledge deep-dive on real product data) COMPLETE. Now on **task (b) — the mandatory pre-Phase-G full-corpus audit** ([[full-corpus-audit-before-phase-g]]; gated by `corpus_audit_gate`, `phase_g_unlocked=false`, frozen 1203 claims). This session kicked it off:
 
@@ -13,8 +13,8 @@ Board **50/50 green**; **36 of 91** essentials carry a numeric Wallach target to
 
 `kind=dose` claims that need reclassifying/restructuring. Route through draft → `vb_apply`/`corpus_resnap` → **USER-ONLY `corpus_seal`**; verify each against the book page ([[verify-against-source-images]], [[editing-sealed-corpus-claims]]). Highest-value first:
 1. ✓ **DONE (B-1, 2026-07-08)** — cobalt/B12 target: `IMMORT-000084` structured + `RARE-000014` re-scoped; **Cobalt + Vitamin B12 now carry the 250-400 mcg/day target** (source_claim_id=`WAL-CLM-IMMORT-000084`, newest-book rule). Numeric targets 34 → 36.
-2. **★ NEXT — RDA/intake reports → reclassify dose→definition/toxicity_sign**: `RARE-000173` (magnesium RDA + toxicity ceiling), `RARE-000180` (molybdenum avg-intake + RDA), `RARE-000146` (iodine avg-intake + toxicity).
-3. `RARE-000164` lithium → mechanism · `IMMORT-000105` copper per-kg → definition · `RARE-000154` potassium (dup of `IMMORT-000193`) · `RARE-000207` phosphorus (dietary-intake mislabel **+ a real `targets_derive._parse_amount` comma-range bug: "1,000-1,500" drops the 1,500 high — fix + confirm it's a real target**) · `EPIGEN-000086` germanium (claim_text over-reaches its one-sentence verbatim) · `RARE-000096` gold (allopathic gold-injection schedule — leave as protocol, no target).
+2. ✓ **DONE (B-2, 2026-07-08)** — RDA/intake reports reclassified dose→definition: `RARE-000173` (magnesium), `RARE-000180` (molybdenum), `RARE-000146` (iodine). Zero target impact (all had `dose:null`); magnesium keeps its 1000 mg Base Line target. Sealed knowledge_version 307.
+3. **★ NEXT — the remaining 6 dose suspects**: `RARE-000164` lithium → mechanism · `IMMORT-000105` copper per-kg → definition · `RARE-000154` potassium (dup of `IMMORT-000193`) · `RARE-000207` phosphorus (dietary-intake mislabel **+ a real `targets_derive._parse_amount` comma-range bug: "1,000-1,500" drops the 1,500 high — fix + confirm it's a real target**) · `EPIGEN-000086` germanium (claim_text over-reaches its one-sentence verbatim) · `RARE-000096` gold (allopathic gold-injection schedule — leave as protocol, no target).
 
 Then: sweep the **9 needs-a-look** (confirm each number, incl. the DDDL/RARE silver 400 mg duplicate), then the **1142 likely-fine** tier (lowest priority), then set `phase_g_unlocked=true` + re-anchor `frozen_claim_count` in `eden/tools/corpus-audit-status.json` → Phase G book-mining unblocks. [[substance-registry-and-triage-buffer]] (task-zero triage buffer) builds at Phase-G kickoff.
 
