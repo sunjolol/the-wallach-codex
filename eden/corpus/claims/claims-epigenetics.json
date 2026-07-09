@@ -3406,7 +3406,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Epigenetics closes its nutrition chapter with Wallach's recommended daily multiple vitamin and mineral intake, given per 100 pounds of body weight for adults and children -- the operational target amounts behind his 90-essential-nutrient program. His mineral recommendations are: boron 1 to 6 milligrams, calcium 600 to 1,000 milligrams, chromium 200 to 400 micrograms, copper 1 to 2 milligrams, iodine 50 to 150 micrograms, iron 15 to 30 milligrams, magnesium 250 to 500 milligrams, manganese 3 to 5 milligrams, molybdenum 10 to 25 micrograms, potassium (which the U.S. Food and Drug Administration restricts to 99 milligrams per supplement), selenium 100 to 200 micrograms, silica 1 to 25 milligrams, vanadium 50 to 100 micrograms, and zinc 15 to 30 milligrams. The same table's vitamin figures include vitamin K 60 to 300 micrograms, niacinamide (niacin) 10 to 30 milligrams, biotin 100 to 300 micrograms, folic acid 400 micrograms, choline 10 to 100 milligrams, inositol 10 to 100 milligrams, and bioflavonoids 1,000 to 5,000 milligrams.",
-      "verbatim": "Minerals Range for adults and children/100 pounds\nBoron 1-6mg\nCalcium 600 -1,000 mg",
+      "verbatim": "Minerals Range for adults and children/100 pounds\nBoron 1 - 6 mg\nCalcium 600 - 1,000 mg",
       "locator": {
         "book": "epigenetics",
         "scheme": "screenshot",
@@ -3414,7 +3414,7 @@
         "page": null,
         "screenshot": "675",
         "kindle_location": null,
-        "char_offset": 1414024
+        "char_offset": 1414037
       },
       "dose": null,
       "tags": [
@@ -3450,7 +3450,7 @@
         "page": null,
         "screenshot": "675",
         "kindle_location": null,
-        "char_offset": 1414470
+        "char_offset": 1414509
       },
       "dose": null,
       "tags": [
@@ -4253,6 +4253,1262 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-07-01T13:09:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000110",
+      "kind": "dose",
+      "essentials": [
+        "vitamin-a"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin A as preformed retinol a daily range of 2,500 to 5,000 IU.",
+      "verbatim": "Vitamin A (retinol) 2,500 - 5,000 IU\nVitamin A (beta-carotene) 5,000 - 25,000 IU",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1413391
+      },
+      "dose": {
+        "amount": "2500-5000",
+        "unit": "IU",
+        "period": "daily",
+        "form": "retinol",
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000111",
+      "kind": "dose",
+      "essentials": [
+        "vitamin-a"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin A as beta-carotene a daily range of 5,000 to 25,000 IU.",
+      "verbatim": "Vitamin A (beta-carotene) 5,000 - 25,000 IU\nVitamin B1 (thiamine) 10 - 100 mg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1413428
+      },
+      "dose": {
+        "amount": "5000-25000",
+        "unit": "IU",
+        "period": "daily",
+        "form": "beta-carotene",
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000112",
+      "kind": "dose",
+      "essentials": [
+        "vitamin-b1"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin B1 (thiamine) a daily range of 10 to 100 mg.",
+      "verbatim": "Vitamin B1 (thiamine) 10 - 100 mg\nVitamin B2 (riboflavin) 10 - 50 mg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1413472
+      },
+      "dose": {
+        "amount": "10-100",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000113",
+      "kind": "dose",
+      "essentials": [
+        "vitamin-b2"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin B2 (riboflavin) a daily range of 10 to 50 mg.",
+      "verbatim": "Vitamin B2 (riboflavin) 10 - 50 mg\nVitamin B3 (niacin) 10 - 100 mg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1413506
+      },
+      "dose": {
+        "amount": "10-50",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000114",
+      "kind": "dose",
+      "essentials": [
+        "vitamin-b3"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin B3 (niacin) a daily range of 10 to 100 mg.",
+      "verbatim": "Vitamin B3 (niacin) 10 - 100 mg\nVitamin B5 (pantothenic acid) 25 - 100 mg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1413541
+      },
+      "dose": {
+        "amount": "10-100",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000115",
+      "kind": "dose",
+      "essentials": [
+        "vitamin-b5"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin B5 (pantothenic acid) a daily range of 25 to 100 mg.",
+      "verbatim": "Vitamin B5 (pantothenic acid) 25 - 100 mg\nVitamin B6 (pyridoxine) 25 - 100 mg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1413573
+      },
+      "dose": {
+        "amount": "25-100",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000116",
+      "kind": "dose",
+      "essentials": [
+        "vitamin-b6"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin B6 (pyridoxine) a daily range of 25 to 100 mg.",
+      "verbatim": "Vitamin B6 (pyridoxine) 25 - 100 mg\nVitamin B12 (methylcobalamin) 400 mcg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1413615
+      },
+      "dose": {
+        "amount": "25-100",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000117",
+      "kind": "dose",
+      "essentials": [
+        "vitamin-b12"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin B12 (methylcobalamin) a daily amount of 400 mcg.",
+      "verbatim": "Vitamin B12 (methylcobalamin) 400 mcg\nVitamin C (ascorbic acid) 250 - 1,000 mg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1413651
+      },
+      "dose": {
+        "amount": "400",
+        "unit": "mcg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000118",
+      "kind": "dose",
+      "essentials": [
+        "vitamin-c"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin C (ascorbic acid) a daily range of 250 to 1,000 mg.",
+      "verbatim": "Vitamin C (ascorbic acid) 250 - 1,000 mg\nVitamin D 1,000 - 2,000 IU",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1413689
+      },
+      "dose": {
+        "amount": "250-1000",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000119",
+      "kind": "dose",
+      "essentials": [
+        "vitamin-d"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin D a daily range of 1,000 to 2,000 IU.",
+      "verbatim": "Vitamin D 1,000 - 2,000 IU\nVitamin E (mixed tocopherols) 100 - 200 IU",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1413730
+      },
+      "dose": {
+        "amount": "1000-2000",
+        "unit": "IU",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000120",
+      "kind": "dose",
+      "essentials": [
+        "vitamin-e"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin E (mixed tocopherols) a daily range of 100 to 200 IU.",
+      "verbatim": "Vitamin E (mixed tocopherols) 100 - 200 IU\nVitamin K1 or K2 60 - 300 mcg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1413757
+      },
+      "dose": {
+        "amount": "100-200",
+        "unit": "IU",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000121",
+      "kind": "dose",
+      "essentials": [
+        "vitamin-k"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin K (K1 or K2) a daily range of 60 to 300 mcg.",
+      "verbatim": "Vitamin K1 or K2 60 - 300 mcg\nNiacinamide (niacin) 10 - 30 mg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1413800
+      },
+      "dose": {
+        "amount": "60-300",
+        "unit": "mcg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000122",
+      "kind": "dose",
+      "essentials": [
+        "biotin"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily multiple recommendations, Wallach gives biotin a daily range of 100 to 300 mcg.",
+      "verbatim": "Biotin 100 - 300 mcg\nFolic acid 400 mcg\nCholine 10 - 100 mg\nInositol 10 - 100 mg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1413862
+      },
+      "dose": {
+        "amount": "100-300",
+        "unit": "mcg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000123",
+      "kind": "dose",
+      "essentials": [
+        "vitamin-b9"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily multiple recommendations, Wallach gives folic acid (folate) a daily amount of 400 mcg.",
+      "verbatim": "Folic acid 400 mcg\nCholine 10 - 100 mg\nInositol 10 - 100 mg\n",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1413883
+      },
+      "dose": {
+        "amount": "400",
+        "unit": "mcg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000124",
+      "kind": "dose",
+      "essentials": [
+        "choline"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily multiple recommendations, Wallach gives choline a daily range of 10 to 100 mg.",
+      "verbatim": "Choline 10 - 100 mg\nInositol 10 - 100 mg\n\n===== Screenshot (675) -- Page 818 of 936 =====",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1413902
+      },
+      "dose": {
+        "amount": "10-100",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000125",
+      "kind": "dose",
+      "essentials": [
+        "inositol"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily multiple recommendations, Wallach gives inositol a daily range of 10 to 100 mg.",
+      "verbatim": "Inositol 10 - 100 mg\n\n===== Screenshot (675) -- Page 818 of 936 =====",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1413922
+      },
+      "dose": {
+        "amount": "10-100",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000126",
+      "kind": "dose",
+      "essentials": [
+        "flavonoids"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily multiple recommendations, Wallach gives bioflavonoids a daily range of 1,000 to 5,000 mg.",
+      "verbatim": "Bioflavonoids 1,000 - 5,000 mg\n\nMinerals Range for adults and children/100 pounds",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1414005
+      },
+      "dose": {
+        "amount": "1000-5000",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000127",
+      "kind": "dose",
+      "essentials": [
+        "boron"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives boron a daily range of 1 to 6 mg.",
+      "verbatim": "Boron 1 - 6 mg\nCalcium 600 - 1,000 mg\nChromium 200 - 400 mcg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1414087
+      },
+      "dose": {
+        "amount": "1-6",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program",
+        "per_body_weight": "100lb"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target",
+        "per-100lb"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000128",
+      "kind": "dose",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives calcium a daily range of 600 to 1,000 mg.",
+      "verbatim": "Calcium 600 - 1,000 mg\nChromium 200 - 400 mcg\nCopper 1 - 2 mg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1414102
+      },
+      "dose": {
+        "amount": "600-1000",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program",
+        "per_body_weight": "100lb"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target",
+        "per-100lb"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000129",
+      "kind": "dose",
+      "essentials": [
+        "chromium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives chromium a daily range of 200 to 400 mcg.",
+      "verbatim": "Chromium 200 - 400 mcg\nCopper 1 - 2 mg\nIodine 50 - 150 mcg\nIron 15 - 30 mg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1414125
+      },
+      "dose": {
+        "amount": "200-400",
+        "unit": "mcg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program",
+        "per_body_weight": "100lb"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target",
+        "per-100lb"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000130",
+      "kind": "dose",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives copper a daily range of 1 to 2 mg.",
+      "verbatim": "Copper 1 - 2 mg\nIodine 50 - 150 mcg\nIron 15 - 30 mg\nMagnesium 250 - 500 mg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1414148
+      },
+      "dose": {
+        "amount": "1-2",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program",
+        "per_body_weight": "100lb"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target",
+        "per-100lb"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000131",
+      "kind": "dose",
+      "essentials": [
+        "iodine"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives iodine a daily range of 50 to 150 mcg.",
+      "verbatim": "Iodine 50 - 150 mcg\nIron 15 - 30 mg\nMagnesium 250 - 500 mg\nManganese 3 - 5 mg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1414164
+      },
+      "dose": {
+        "amount": "50-150",
+        "unit": "mcg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program",
+        "per_body_weight": "100lb"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target",
+        "per-100lb"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000132",
+      "kind": "dose",
+      "essentials": [
+        "iron"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives iron a daily range of 15 to 30 mg.",
+      "verbatim": "Iron 15 - 30 mg\nMagnesium 250 - 500 mg\nManganese 3 - 5 mg\nMolybdenum 10 - 25 mcg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1414184
+      },
+      "dose": {
+        "amount": "15-30",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program",
+        "per_body_weight": "100lb"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target",
+        "per-100lb"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000133",
+      "kind": "dose",
+      "essentials": [
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives magnesium a daily range of 250 to 500 mg.",
+      "verbatim": "Magnesium 250 - 500 mg\nManganese 3 - 5 mg\nMolybdenum 10 - 25 mcg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1414200
+      },
+      "dose": {
+        "amount": "250-500",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program",
+        "per_body_weight": "100lb"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target",
+        "per-100lb"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000134",
+      "kind": "dose",
+      "essentials": [
+        "manganese"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives manganese a daily range of 3 to 5 mg.",
+      "verbatim": "Manganese 3 - 5 mg\nMolybdenum 10 - 25 mcg\nPotassium NA\nSelenium 100 - 200 mcg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1414223
+      },
+      "dose": {
+        "amount": "3-5",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program",
+        "per_body_weight": "100lb"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target",
+        "per-100lb"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000135",
+      "kind": "dose",
+      "essentials": [
+        "molybdenum"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives molybdenum a daily range of 10 to 25 mcg.",
+      "verbatim": "Molybdenum 10 - 25 mcg\nPotassium NA\nSelenium 100 - 200 mcg\nSilica 1 - 25 mg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1414242
+      },
+      "dose": {
+        "amount": "10-25",
+        "unit": "mcg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program",
+        "per_body_weight": "100lb"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target",
+        "per-100lb"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000136",
+      "kind": "dose",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives selenium a daily range of 100 to 200 mcg.",
+      "verbatim": "Selenium 100 - 200 mcg\nSilica 1 - 25 mg\nVanadium 50 - 100 mcg",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1414278
+      },
+      "dose": {
+        "amount": "100-200",
+        "unit": "mcg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program",
+        "per_body_weight": "100lb"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target",
+        "per-100lb"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000137",
+      "kind": "dose",
+      "essentials": [
+        "silica"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives silica a daily range of 1 to 25 mg.",
+      "verbatim": "Silica 1 - 25 mg\nVanadium 50 - 100 mcg\nZinc 15 - 30 mg\n\n\nINA: The FDA restricts the amount of potassium in supplements to 99 mg. Murray, MT. and Pizzorno, J:",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1414301
+      },
+      "dose": {
+        "amount": "1-25",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program",
+        "per_body_weight": "100lb"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target",
+        "per-100lb"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000138",
+      "kind": "dose",
+      "essentials": [
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives vanadium a daily range of 50 to 100 mcg.",
+      "verbatim": "Vanadium 50 - 100 mcg\nZinc 15 - 30 mg\n\n\nINA: The FDA restricts the amount of potassium in supplements to 99 mg. Murray, MT. and Pizzorno, J:",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1414318
+      },
+      "dose": {
+        "amount": "50-100",
+        "unit": "mcg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program",
+        "per_body_weight": "100lb"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target",
+        "per-100lb"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000139",
+      "kind": "dose",
+      "essentials": [
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives zinc a daily range of 15 to 30 mg.",
+      "verbatim": "Zinc 15 - 30 mg\n\n\nINA: The FDA restricts the amount of potassium in supplements to 99 mg. Murray, MT. and Pizzorno, J:",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1414340
+      },
+      "dose": {
+        "amount": "15-30",
+        "unit": "mg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": "daily multiple vitamin and mineral supplement program",
+        "per_body_weight": "100lb"
+      },
+      "tags": [
+        "dose-table",
+        "epigenetics-daily-multiple",
+        "supplement-program",
+        "maintenance-target",
+        "per-100lb"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T07:57:43+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

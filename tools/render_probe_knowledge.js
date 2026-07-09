@@ -238,11 +238,12 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     const active = root ? (root.querySelector('.kd-tab.active')?.textContent || '') : '';
     return { productShown: d !== null, onProductsTab: /Products/i.test(active) };
   });
-  // Honest-gap essential (no numeric Wallach target) — Boron — DOES show the adequacy
+  // Honest-gap essential (no numeric Wallach target) — Strontium — DOES show the adequacy
   // note over its ranked sources, whereas Magnesium (numeric target) hides it.
+  // (Boron was the old example; Epigenetics 2014 gave it a target, so it is no longer a gap.)
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="essentials"]')?.click());
   await wait(120);
-  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-essential="Boron"]')?.click());
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-essential="Strontium"]')?.click());
   await wait(200);
   const gapNote = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
@@ -421,7 +422,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['best-source rows show a pointer cursor (look clickable)', chipToProduct.srcCursor === 'pointer'],
     ['best-source row opens the product panel on the Products tab', chipToProduct.productShown === true && chipToProduct.onProductsTab === true],
     ['numeric-target essential hides the honest-gap note (Magnesium adequacy is real)', chipToProduct.magHasNote === false],
-    ['honest-gap essential shows the adequacy note over ranked sources (Boron)', chipToProduct.gapHasNote === true && chipToProduct.gapSources > 0],
+    ['honest-gap essential shows the adequacy note over ranked sources (Strontium)', chipToProduct.gapHasNote === true && chipToProduct.gapSources > 0],
     ['essentials: all shown (>= 90 tiles)', essentials.tileCount >= 90],
     ['essentials: every section present (>= 4 heads)', essentials.sectionCount >= 4],
     ['essentials: coverage states rendered', essentials.stateTiles > 0],

@@ -29,9 +29,13 @@
  *   string-matching). This replaced a hand-rolled matcher that disagreed with the
  *   registry (e.g. it silently dropped "Thiamin" → Vitamin B1).
  *
- *   UNITS: still IU-native — delivery is compared to each Wallach target in
- *   Wallach's OWN stated unit (toMg keeps IU as IU). Canonical-unit unification
- *   (the registry's to_canonical) is a deliberately deferred later chunk.
+ *   UNITS (Phase G-1): mcg/mg unify into one mg-family. The A/D/E targets are now
+ *   METRIC (mcg RAE / mcg / mg) to match Youngevity's product units (the goal↔product
+ *   alignment Luneth asked for). RESIDUAL: no target is IU-family anymore, so a product
+ *   that still lists A/D/E in IU lands in the (now unused) totalIU accumulator and does
+ *   NOT count toward its metric target (~7 products) — closeable by converting per-vitamin
+ *   IU→mcg in toMg (needs the nutrient identity). Full canonical-unit unification stays a
+ *   later chunk.
  *
  *   Pipeline: collect the active regimen (the migrated §31 state — committed +
  *   manual items, minus removed, with override scaling) → resolve each label

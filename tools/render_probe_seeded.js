@@ -10,9 +10,10 @@
 // (Phase C2 poison purge — numeric targets are Wallach dose claims, not Youngevity):
 //
 //   Vitamin C  2000 mg  -> covered  (numeric, >= 0.95 * Wallach low 1000 mg)
-//   Zinc         10 mg  -> partial  (numeric, 40% of the Wallach low 25 mg)
-//   Boron         3 mg  -> covered  (Wallach states NO boron maintenance target
-//                                    -> honest gap, covered-by-presence)
+//   Zinc         10 mg  -> gap      (numeric, ~22% of the Wallach UPPER 46 mg — Epigenetics
+//                                    2014, scaled to 154 lb; below the partial threshold)
+//   Boron         3 mg  -> partial  (numeric, ~33% of the Wallach UPPER 9.2 mg — Epigenetics
+//                                    2014 filled this former gap; scaled to 154 lb)
 //   Aluminum   0.05 mg  -> trace    (trace_pdm + a PDM vehicle in the source name)
 //
 // The seed item is named "Beyond Tangy Tangerine 2.5" so it matches the PDM
@@ -85,8 +86,8 @@ const SEED = { items: [{
     ['seeded localStorage', info.seeded === true],
     ['no seed error', info.seedErr === null],
     ['Vitamin C covered (>= 0.95 * Wallach 1000mg)', info.VitaminC === 'covered'],
-    ['Zinc partial (40% of Wallach 25mg)', info.Zinc === 'partial'],
-    ['Boron covered-by-presence (honest gap, no Wallach target)', info.Boron === 'covered'],
+    ['Zinc gap (~22% of Wallach upper 46mg — Epigenetics)', info.Zinc === 'gap'],
+    ['Boron partial (~33% of Wallach upper 9.2mg — Epigenetics filled the gap)', info.Boron === 'partial'],
     ['Aluminum trace', info.Aluminum === 'trace'],
     ['coveredStat >= 2', Number(info.coveredStat) >= 2],
     ['no page errors', pageErrors.length === 0],
@@ -94,5 +95,5 @@ const SEED = { items: [{
   const failed = checks.filter(([, ok]) => !ok).map(([n]) => n);
   await browser.close();
   if (failed.length) { console.log('FAIL', JSON.stringify(failed)); process.exit(1); }
-  console.log('PASS · classifier lights covered + partial + covered-by-presence + trace correctly');
+  console.log('PASS · classifier lights covered + partial + gap + trace correctly');
 })().catch(e => { console.log('PROBE_ERR', e.message); process.exit(1); });

@@ -24,12 +24,12 @@ const PRODUCT = {
   name: 'Test Adopt Multi',
   servings: 1,
   nutrients: [
-    { name: 'Vitamin C', amount: 500, unit: 'mg' },
-    { name: 'Calcium', amount: 1000, unit: 'mg' },
-    { name: 'Magnesium', amount: 400, unit: 'mg' },
-    { name: 'Zinc', amount: 30, unit: 'mg' },
-    { name: 'Vitamin D', amount: 5000, unit: 'iu' },
-    { name: 'Selenium', amount: 200, unit: 'mcg' },
+    { name: 'Vitamin C', amount: 1200, unit: 'mg' },
+    { name: 'Calcium', amount: 1600, unit: 'mg' },
+    { name: 'Magnesium', amount: 800, unit: 'mg' },
+    { name: 'Zinc', amount: 50, unit: 'mg' },
+    { name: 'Vitamin D', amount: 60, unit: 'mcg' },
+    { name: 'Selenium', amount: 400, unit: 'mcg' },
   ],
   ingredients: 'ascorbic acid, calcium citrate, magnesium glycinate, zinc picolinate',
 };

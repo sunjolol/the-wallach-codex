@@ -1,45 +1,46 @@
 #!/usr/bin/env python3
-"""targets_derive.py — per-essential Wallach coverage targets (Phase C2 / the poison purge).
+"""targets_derive.py — per-essential Wallach coverage targets (Phase G-1 upgrade).
 
 Generates dashboard/assets/data/essentials-targets-data.json — the DB the Coverage
-surface reads to answer "how much of each of the 90 essentials does the regimen
-cover." This is the artifact that carried the poison: its numeric targets used to
-be sourced from Youngevity product labels (Healthy Body Start Pak component sums),
-which R2 forbids — Youngevity may never define a recommended amount.
+surface reads to answer "how much of each of the 90 essentials does the regimen cover."
 
-THE RULE (Charter R2 / §00.A): every numeric target here is a Wallach maintenance
-dose, sourced ONLY from Wallach's BOOKS (no lectures/transcripts — Luneth 2026-07-05).
-A target-eligible dose is a Wallach DAILY / MAINTENANCE dose — his "Base Line
-Nutritional Supplement Program" table (Let's Play Doctor Fig. 8-1, the True Supplement
-Need column) plus any general/maintenance daily dose stated in another book. It EXCLUDES
-disease-specific therapeutic doses (herpes lysine, keshan selenium, cataracts arginine) —
-those stay in the corpus for the Knowledge/protocol surfaces, never a coverage target.
-When an essential has several eligible doses from DIFFERENT books, the NEWEST
-book's number wins (Luneth 2026-07-05: always favor Wallach's most recent stated
-daily amount — e.g. Potassium uses Immortality 2008's 5,000 mg, not Let's Play
-Doctor 1995's 5,500 mg); ties within a year break to the Base Line table. Each numeric
-target carries its source_claim_id → a real sealed claim. Essentials with NO Wallach
-daily dose show no number (an honest gap, blueprint §7.1); nothing is invented.
+THE RULE (Charter R2 / §00.A): every numeric target is a Wallach maintenance dose,
+sourced ONLY from Wallach's BOOKS. A target-eligible dose is a DAILY / MAINTENANCE dose
+(the "supplement program" / "base line" / "true supplement need" tables + any general
+daily dose). Disease-specific therapeutic doses are excluded.
+
+PHASE G-1 policy (Luneth 2026-07-09), layered on top of the source rule:
+  1. POST THE UPPER of Wallach's stated range (a single number, not a range). The upper
+     IS a number Wallach wrote (top of his own range); the full range is preserved in
+     `range` for a "he recommends a range" quote. Applied to every target.
+  2. NEWEST BOOK WINS. When an essential has doses in several books, the newest book's
+     dose is the default (posted); older ones are kept in `other_claims` for the detail
+     view + the "his guidance evolved" gloss. (Epigenetics 2014 > Let's Play Doctor 1995.)
+  3. UNIT-NORMALIZE to the unit Youngevity products use, so goal and product amounts line
+     up. Only Vitamin A/D/E need it (IU -> metric); everything else is already mg/mcg. The
+     IU factors are physical/definitional constants (USP/FDA label conventions), NOT Wallach
+     numbers — they only re-express Wallach's amount in a different unit. His original IU
+     value is preserved in `range` + `provenance` (§00.B #11: the transform is auditable).
+  4. WEIGHT-SCALE the per-100-lb mineral doses to a 154 lb / 70 kg reference adult (×1.54),
+     then round to 2 significant figures DETERMINISTICALLY (so the gate can reproduce the
+     exact chain raw×factor→round, nothing hand-typed).
+  5. VITAMIN A is one essential with two complementary forms (retinol + beta-carotene);
+     both convert to retinol-equivalents (mcg RAE) and SUM into one coverage target, with
+     both sub-recs kept in `parts`.
 
 WHAT COMES FROM WHERE:
-  - STRUCTURE (name=layout_key, category, order) → eden/corpus/essentials-canon.json (pillar).
-  - NUMERIC TARGET (low/high/unit + source_claim_id) → sealed corpus dose claims (pillar).
-  - CITATION source string → composed from books-meta.json (never hand-typed).
-  - coverage_kind (how Wallach covers a NON-numeric essential: trace_pdm, dietary,
-    dietary_with_clinical_lever, unspecified) → eden/corpus/essentials-canon.json (the
-    essentials pillar). Re-homed there in Phase D-b (2026-07-05); the old transitional
-    knowledge/essentials-targets.json hand-file was deleted with its dead poison stances.
+  - STRUCTURE (name, category, order) -> essentials-canon.json (pillar).
+  - NUMERIC TARGET -> sealed corpus dose claims (pillar); the transform is deterministic here.
+  - CITATION -> composed from books-meta.json (never hand-typed).
+  - coverage_kind (non-numeric coverage) -> essentials-canon.json.
 
-The "WALLACH SAYS" stance layer is DROPPED here (Luneth 2026-07-05): the old hand-file
-stances carried lecture citations, Youngevity-sourced stances, and hand-typed cites
-(the poison). A per-essential stance will be re-authored MANUALLY once every book is
-mined; the Knowledge deep-dive shows the clean sealed corpus claims meanwhile.
-
-amounts_wallach_only (the gate shipped with this) proves every numeric low here
-resolves to a Wallach dose claim, so the poison can never creep back.
+amounts_wallach_only proves every posted number traces to a Wallach dose claim mapping the
+essential. (Validating the full transform CHAIN is a labeled WISH — the provenance stamp is
+here for it; the gate today checks provenance-existence, not value.)
 """
 import collections
 import json
+import math
 import re
 import sys
 from pathlib import Path
@@ -54,13 +55,21 @@ import safe_write  # noqa: E402
 CAT_MAP = {"mineral": "minerals", "vitamin": "vitamins",
            "amino_acid": "amino_acids", "fatty_acid": "fatty_acids"}
 
-# for_condition -> target priority (lower = preferred). None => disease-specific
-# therapeutic dose (NOT a maintenance target). A bare/empty condition is a general
-# daily dose (priority 3).
+# IU -> Youngevity-common metric unit. Physical/definitional constants (USP/FDA supplement-
+# label conventions), NOT Wallach numbers: they re-express his stated amount in the unit the
+# products use. (slug, form) -> (factor, out_unit, factor_source, unit_detail).
+IU_CONVERSIONS = {
+    ("vitamin-a", "retinol"):       (0.3,   "mcg", "USP: 1 IU retinol = 0.3 mcg RAE", "RAE"),
+    ("vitamin-a", "beta-carotene"): (0.3,   "mcg", "USP: 1 IU supplemental beta-carotene = 0.3 mcg RAE", "RAE"),
+    ("vitamin-d", None):            (0.025, "mcg", "1 mcg vitamin D = 40 IU", None),
+    ("vitamin-e", None):            (0.67,  "mg",  "1 IU natural d-alpha-tocopherol = 0.67 mg", None),
+}
+BODY_WEIGHT_LB = 154  # 70 kg reference adult; Epigenetics mineral doses are stated per 100 lb
+
+# for_condition -> maintenance priority (lower preferred). None => therapeutic (excluded).
 _COND_MARKERS = [
     ("base-line", 0), ("base line", 0), ("true supplement need", 0), ("supplement program", 0),
-    ("daily maintenance", 1),
-    ("maintenance", 2),
+    ("daily maintenance", 1), ("maintenance", 2),
 ]
 
 
@@ -74,6 +83,13 @@ def _cond_priority(cond):
     return None
 
 
+def _round_2sf(x):
+    """Round to 2 significant figures (deterministic — the gate can reproduce it)."""
+    if not x:
+        return 0.0
+    return round(x, 1 - int(math.floor(math.log10(abs(x)))))
+
+
 def _load_claims() -> list:
     claims = []
     for shard in sorted((CORPUS / "claims").glob("claims-*.json")):
@@ -81,46 +97,10 @@ def _load_claims() -> list:
     return claims
 
 
-def _target_doses(claims: list, books_meta: dict) -> dict:
-    """slug -> the best Wallach daily/maintenance dose claim (amount/unit + id).
-
-    Ranked NEWEST BOOK FIRST (Luneth: always favor Wallach's most recent stated
-    daily number); within a year the Base Line table wins, then id. Therapeutic
-    disease-specific doses are excluded entirely."""
-    cand = collections.defaultdict(list)
-    for c in claims:
-        if c.get("kind") != "dose":
-            continue
-        dz = c.get("dose") or {}
-        if dz.get("amount") is None:
-            continue
-        pr = _cond_priority(dz.get("for_condition"))
-        if pr is None:
-            continue
-        year = (books_meta.get(c["locator"]["book"], {}) or {}).get("year") or 0
-        for slug in c.get("essentials", []):
-            cand[slug].append((pr, -year, c["id"], c))
-    out = {}
-    for slug, lst in cand.items():
-        # NEWEST book first (x[1] = -year), then base-line-priority, then id.
-        lst.sort(key=lambda x: (x[1], x[0], x[2]))
-        _pr, _ny, cid, c = lst[0]
-        dz = c.get("dose") or {}
-        out[slug] = {"amount": dz.get("amount"), "unit": dz.get("unit"),
-                     "period": dz.get("period"), "claim_id": cid,
-                     "book": c["locator"]["book"],
-                     "for_condition": dz.get("for_condition")}
-    return out
-
-
 def _parse_amount(a):
     if isinstance(a, (int, float)):
         return float(a), None
     if isinstance(a, str):
-        # Ranges AND singles can carry a thousands comma ("1,000-1,500"). The range branch
-        # must accept a comma in BOTH digit groups and strip it before float() — otherwise the
-        # old [\d.]+ range pattern failed on the comma and control fell through to the single
-        # branch, which silently kept only the low end ("1,000") and dropped the "1,500" high.
         m = re.match(r"\s*([\d.,]+)\s*[-–]\s*([\d.,]+)", a)
         if m:
             return float(m.group(1).replace(",", "")), float(m.group(2).replace(",", ""))
@@ -138,39 +118,119 @@ def _book_display(books_meta: dict, book_id: str) -> str:
     return f"{b['title']} (Wallach{', ' + str(yr) if yr else ''})"
 
 
+def _maintenance_doses(claims: list, books_meta: dict) -> dict:
+    """slug -> list of maintenance dose records (parsed range + year + form + per_bw)."""
+    out = collections.defaultdict(list)
+    for c in claims:
+        if c.get("kind") != "dose":
+            continue
+        dz = c.get("dose") or {}
+        if dz.get("amount") is None:
+            continue
+        pr = _cond_priority(dz.get("for_condition"))
+        if pr is None:
+            continue
+        low, high = _parse_amount(dz.get("amount"))
+        if low is None:
+            continue
+        year = (books_meta.get(c["locator"]["book"], {}) or {}).get("year") or 0
+        for slug in c.get("essentials", []):
+            out[slug].append({
+                "id": c["id"], "book": c["locator"]["book"], "year": year,
+                "low": low, "high": high, "unit": dz.get("unit"),
+                "form": dz.get("form"), "per_bw": dz.get("per_body_weight"),
+                "priority": pr,
+            })
+    return out
+
+
+def _convert(slug: str, d: dict):
+    """Apply upper-of-range -> IU conversion -> weight-scaling -> rounding.
+    Returns (value, unit_out, provenance)."""
+    upper = d["high"] if d["high"] is not None else d["low"]
+    prov = {"original_low": d["low"], "original_high": d["high"],
+            "original_unit": d["unit"], "upper_taken": upper}
+    value, unit_out = upper, d["unit"]
+    conv = IU_CONVERSIONS.get((slug, d.get("form"))) or IU_CONVERSIONS.get((slug, None))
+    if d["unit"] == "IU" and conv:
+        factor, unit_out, src, detail = conv
+        value = upper * factor
+        prov["factor"] = factor
+        prov["factor_source"] = src
+        if detail:
+            prov["unit_detail"] = detail
+    if d.get("per_bw") == "100lb":
+        value = _round_2sf(value * (BODY_WEIGHT_LB / 100.0))
+        prov["scale_factor"] = BODY_WEIGHT_LB / 100.0
+        prov["body_weight_basis"] = f"{BODY_WEIGHT_LB} lb (70 kg reference); source stated per 100 lb"
+        prov["rounding"] = "2 significant figures"
+    return value, unit_out, prov
+
+
 def build_data() -> dict:
-    """Deterministic projection of the pillars into the coverage targets DB."""
     canon = json.loads((CORPUS / "essentials-canon.json").read_text(encoding="utf-8"))["essentials"]
     claims = _load_claims()
     books_meta = {b["book_id"]: b for b in
                   json.loads((CORPUS / "books-meta.json").read_text(encoding="utf-8"))["books"]}
-    targets = _target_doses(claims, books_meta)
+    doses = _maintenance_doses(claims, books_meta)
 
     essentials = []
     for e in canon:
         slug = e["slug"]
         name = e["layout_key"]
         category = CAT_MAP.get(e["category"], "minerals")
+        lst = doses.get(slug, [])
 
-        t = targets.get(slug)
-        if t is not None:
-            low, high = _parse_amount(t["amount"])
-            cond = t.get("for_condition") or "daily dose"
+        if lst:
+            max_year = max(d["year"] for d in lst)
+            primary = sorted([d for d in lst if d["year"] == max_year],
+                             key=lambda d: (d["priority"], d["id"]))
+            others = [d for d in lst if d["year"] != max_year]
+
+            forms = [d.get("form") for d in primary]
+            complementary = len(primary) > 1 and all(forms) and len(set(forms)) == len(forms)
+            if not complementary:
+                # not distinct complementary forms -> one primary, the rest are "other" doses
+                others = primary[1:] + others
+                primary = primary[:1]
+            others.sort(key=lambda d: (-d["year"], d["priority"], d["id"]))
+
+            conv = [_convert(slug, d) for d in primary]  # list of (value, unit, prov)
+            unit_out = conv[0][1]
+            if complementary:
+                scaled = any(d.get("per_bw") for d in primary)
+                total = sum(c[0] for c in conv)
+                value = _round_2sf(total) if scaled else total
+                parts = [{
+                    "form": d.get("form"), "value": c[0], "unit": c[1],
+                    "claim_id": d["id"],
+                    "range": {"low": d["low"], "high": d["high"], "unit": d["unit"]},
+                    "provenance": c[2],
+                } for d, c in zip(primary, conv)]
+            else:
+                value = conv[0][0]
+                parts = None
+
+            p0 = primary[0]
             target = {
                 "kind": "wallach",
-                "low": low,
-                "unit": t["unit"],
-                "period": t.get("period") or "daily",
-                "source_claim_id": t["claim_id"],
-                "source": f"Wallach — {_book_display(books_meta, t['book'])}: {cond}",
+                "low": value,
+                "unit": unit_out,
+                "period": "daily",
+                "source_claim_id": p0["id"],
+                "source": f"Wallach — {_book_display(books_meta, p0['book'])}",
+                "range": {"low": p0["low"], "high": p0["high"], "unit": p0["unit"]},
+                "provenance": conv[0][2],
             }
-            if high is not None:
-                target["high"] = high
+            if parts:
+                target["parts"] = parts
+            if others:
+                target["other_claims"] = [{
+                    "claim_id": d["id"], "book": d["book"], "year": d["year"],
+                    "low": d["low"], "high": d["high"], "unit": d["unit"],
+                    "source": _book_display(books_meta, d["book"]),
+                } for d in others]
         else:
-            # coverage_kind lives on the essentials-canon pillar (Phase D-b) — the
-            # per-essential classification of how Wallach covers a NON-numeric
-            # essential (trace_pdm / dietary / dietary_with_clinical_lever /
-            # unspecified). Already normalized at the pillar, so read it directly.
             target = {
                 "kind": e.get("coverage_kind", "unspecified"),
                 "source": "Wallach framework — no maintenance amount stated (honest gap; blueprint §7.1)",
@@ -180,9 +240,11 @@ def build_data() -> dict:
 
     return {
         "_purpose": "Per-essential Wallach coverage targets. GENERATED by eden/tools/targets_derive.py "
-                    "from essentials-canon + sealed corpus dose claims (numeric targets are Wallach-only, "
-                    "books-only, R2). No stance layer (dropped 2026-07-05). Never hand-edit; run "
-                    "eden/tools/build_embeds.py.",
+                    "from essentials-canon + sealed corpus dose claims. Numeric targets are Wallach-only, "
+                    "books-only (R2); the posted number is the UPPER of Wallach's newest stated maintenance "
+                    "range, unit-normalized to Youngevity units + (minerals) scaled to 154 lb. The full range "
+                    "+ transform live in `range`/`provenance`; older books in `other_claims`. Never hand-edit; "
+                    "run eden/tools/build_embeds.py.",
         "essentials": essentials,
     }
 

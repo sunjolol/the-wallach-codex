@@ -315,7 +315,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 78,
+    "claim_count": 79,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -334,6 +334,7 @@
         "WAL-CLM-RARE-000083"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000133",
         "WAL-CLM-LETS-000056"
       ],
       "mechanism": [
@@ -1024,7 +1025,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 100,
+    "claim_count": 101,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1049,6 +1050,7 @@
         "WAL-CLM-RARE-000083"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000128",
         "WAL-CLM-LETS-000046"
       ],
       "interaction": [
@@ -1369,7 +1371,7 @@
     "display_name": "Boron",
     "canon_slug": "boron",
     "category": "mineral",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000275"
@@ -1377,6 +1379,9 @@
       "definition": [
         "WAL-CLM-IMMORT-000042",
         "WAL-CLM-IMMORT-000043"
+      ],
+      "dose": [
+        "WAL-CLM-EPIGEN-000127"
       ],
       "mechanism": [
         "WAL-CLM-EPIGEN-000068",
@@ -1471,7 +1476,7 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 63,
+    "claim_count": 64,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -1491,6 +1496,7 @@
         "WAL-CLM-RARE-000129"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000129",
         "WAL-CLM-LETS-000049"
       ],
       "mechanism": [
@@ -1723,7 +1729,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 56,
+    "claim_count": 57,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
@@ -1751,6 +1757,7 @@
         "WAL-CLM-RARE-000129"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000130",
         "WAL-CLM-LETS-000050"
       ],
       "interaction": [
@@ -2046,7 +2053,7 @@
     "display_name": "Iron",
     "canon_slug": "iron",
     "category": "mineral",
-    "claim_count": 28,
+    "claim_count": 29,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000022"
@@ -2064,6 +2071,7 @@
         "WAL-CLM-RARE-000083"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000132",
         "WAL-CLM-LETS-000055"
       ],
       "interaction": [
@@ -2224,7 +2232,7 @@
     "display_name": "Iodine",
     "canon_slug": "iodine",
     "category": "mineral",
-    "claim_count": 25,
+    "claim_count": 26,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000093",
@@ -2241,6 +2249,7 @@
         "WAL-CLM-RARE-000151"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000131",
         "WAL-CLM-LETS-000054"
       ],
       "interaction": [
@@ -2423,7 +2432,7 @@
     "display_name": "Manganese",
     "canon_slug": "manganese",
     "category": "mineral",
-    "claim_count": 18,
+    "claim_count": 19,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000175"
@@ -2438,6 +2447,7 @@
         "WAL-CLM-RARE-000174"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000134",
         "WAL-CLM-LETS-000057"
       ],
       "mechanism": [
@@ -2562,7 +2572,7 @@
     "display_name": "Molybdenum",
     "canon_slug": "molybdenum",
     "category": "mineral",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
@@ -2572,6 +2582,7 @@
         "WAL-CLM-RARE-000180"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000135",
         "WAL-CLM-LETS-000058"
       ],
       "mechanism": [
@@ -2598,7 +2609,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 99,
+    "claim_count": 100,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2610,6 +2621,7 @@
         "WAL-CLM-RARE-000275"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000136",
         "WAL-CLM-LETS-000065",
         "WAL-CLM-RARE-000048"
       ],
@@ -2888,12 +2900,13 @@
     "display_name": "Silica",
     "canon_slug": "silica",
     "category": "mineral",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000245"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000137",
         "WAL-CLM-RARE-000246"
       ],
       "mechanism": [
@@ -2922,6 +2935,7 @@
     ],
     "interacts_with": [],
     "books_cited": [
+      "epigenetics",
       "rare-earths"
     ]
   },
@@ -2956,7 +2970,7 @@
     "display_name": "Vanadium",
     "canon_slug": "vanadium",
     "category": "mineral",
-    "claim_count": 35,
+    "claim_count": 36,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -2971,6 +2985,7 @@
         "WAL-CLM-RARE-000129"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000138",
         "WAL-CLM-LETS-000070"
       ],
       "mechanism": [
@@ -3100,7 +3115,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 109,
+    "claim_count": 110,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -3120,6 +3135,7 @@
         "WAL-CLM-RARE-000129"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000139",
         "WAL-CLM-LETS-000077"
       ],
       "interaction": [
@@ -3445,6 +3461,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -4392,7 +4409,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 63,
+    "claim_count": 65,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -4401,6 +4418,8 @@
         "WAL-CLM-RARE-000229"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000110",
+        "WAL-CLM-EPIGEN-000111",
         "WAL-CLM-LETS-000071"
       ],
       "mechanism": [
@@ -4641,7 +4660,7 @@
     "display_name": "Thiamine",
     "canon_slug": "vitamin-b1",
     "category": "vitamin",
-    "claim_count": 20,
+    "claim_count": 21,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000043",
@@ -4650,6 +4669,7 @@
         "WAL-CLM-RARE-000233"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000112",
         "WAL-CLM-LETS-000068"
       ],
       "protocol": [
@@ -4866,7 +4886,7 @@
     "display_name": "Riboflavin",
     "canon_slug": "vitamin-b2",
     "category": "vitamin",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000036",
@@ -4874,6 +4894,7 @@
         "WAL-CLM-RARE-000234"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000113",
         "WAL-CLM-LETS-000064"
       ],
       "mechanism": [
@@ -4997,7 +5018,7 @@
     "display_name": "Niacin",
     "canon_slug": "vitamin-b3",
     "category": "vitamin",
-    "claim_count": 24,
+    "claim_count": 25,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000037",
@@ -5005,6 +5026,7 @@
         "WAL-CLM-RARE-000235"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000114",
         "WAL-CLM-LETS-000059"
       ],
       "protocol": [
@@ -5186,7 +5208,7 @@
     "display_name": "Pantothenic Acid",
     "canon_slug": "vitamin-b5",
     "category": "vitamin",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000038",
@@ -5194,6 +5216,7 @@
         "WAL-CLM-RARE-000236"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000115",
         "WAL-CLM-LETS-000060"
       ],
       "protocol": [
@@ -5361,7 +5384,7 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 49,
+    "claim_count": 50,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000039",
@@ -5371,6 +5394,7 @@
         "WAL-CLM-RARE-000237"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000116",
         "WAL-CLM-LETS-000063"
       ],
       "mechanism": [
@@ -5634,7 +5658,7 @@
     "display_name": "Folate",
     "canon_slug": "vitamin-b9",
     "category": "vitamin",
-    "claim_count": 24,
+    "claim_count": 25,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000042",
@@ -5643,6 +5667,7 @@
         "WAL-CLM-RARE-000239"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000123",
         "WAL-CLM-LETS-000052"
       ],
       "protocol": [
@@ -5792,7 +5817,7 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 33,
+    "claim_count": 34,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000040",
@@ -5800,6 +5825,7 @@
         "WAL-CLM-RARE-000238"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000117",
         "WAL-CLM-IMMORT-000084",
         "WAL-CLM-LETS-000072",
         "WAL-CLM-RARE-000014"
@@ -5999,7 +6025,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 74,
+    "claim_count": 75,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000043",
@@ -6007,6 +6033,7 @@
         "WAL-CLM-RARE-000241"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000118",
         "WAL-CLM-LETS-000073"
       ],
       "interaction": [
@@ -6301,7 +6328,7 @@
     "display_name": "Cholecalciferol",
     "canon_slug": "vitamin-d",
     "category": "vitamin",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000083"
@@ -6312,6 +6339,7 @@
         "WAL-CLM-RARE-000230"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000119",
         "WAL-CLM-LETS-000074"
       ],
       "mechanism": [
@@ -6412,7 +6440,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 69,
+    "claim_count": 70,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -6421,6 +6449,7 @@
         "WAL-CLM-RARE-000231"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000120",
         "WAL-CLM-LETS-000075"
       ],
       "mechanism": [
@@ -6702,7 +6731,7 @@
     "display_name": "Phylloquinone",
     "canon_slug": "vitamin-k",
     "category": "vitamin",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -6711,6 +6740,7 @@
         "WAL-CLM-RARE-000232"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000121",
         "WAL-CLM-LETS-000076"
       ],
       "protocol": [
@@ -6774,7 +6804,7 @@
     "display_name": "Biotin",
     "canon_slug": "biotin",
     "category": "vitamin",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000042",
@@ -6782,6 +6812,7 @@
         "WAL-CLM-RARE-000240"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000122",
         "WAL-CLM-LETS-000045"
       ],
       "protocol": [
@@ -6910,13 +6941,14 @@
     "display_name": "Choline",
     "canon_slug": "choline",
     "category": "vitamin",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000044",
         "WAL-CLM-RARE-000242"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000124",
         "WAL-CLM-LETS-000048"
       ],
       "protocol": [
@@ -6997,13 +7029,14 @@
     "display_name": "Inositol",
     "canon_slug": "inositol",
     "category": "vitamin",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000045",
         "WAL-CLM-LETS-000012"
       ],
       "dose": [
+        "WAL-CLM-EPIGEN-000125",
         "WAL-CLM-LETS-000053"
       ],
       "protocol": [
@@ -7056,11 +7089,14 @@
     "display_name": "Flavonoids",
     "canon_slug": "flavonoids",
     "category": "vitamin",
-    "claim_count": 17,
+    "claim_count": 18,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000046",
         "WAL-CLM-RARE-000243"
+      ],
+      "dose": [
+        "WAL-CLM-EPIGEN-000126"
       ],
       "protocol": [
         "WAL-CLM-LETS-000127",
