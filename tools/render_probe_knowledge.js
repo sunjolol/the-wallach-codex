@@ -179,7 +179,20 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       firstText: first ? (first.querySelector('.kd-claim__text')?.textContent || '').length > 0 : false,
       firstVerbatim: first ? (first.querySelector('.kd-claim__verbatim')?.textContent || '').length > 0 : false,
       firstCite: first ? /DEAD DOCTORS|DDDL|RARE EARTHS|EPIGENETICS|IMMORTALITY|PLAY DOCTOR|YOUR HEAD/i.test(first.querySelector('.kd-claim__cite')?.textContent || '') : false,
+      whyShown: root ? root.querySelector('.kd-why') !== null : false,
+      whyHasDerivation: root ? /how we got this/i.test(root.querySelector('.kd-why')?.textContent || '') : false,
     };
+  });
+
+  // 4-why. The "why this number?" box appears ONLY where the newest Wallach number
+  //   DISAGREES with an older book (Luneth 2026-07-09). Magnesium (Epigenetics 770 vs
+  //   LPD 1000) shows it with the full derivation (asserted on `deep` above); Boron --
+  //   one book, no earlier figure -- must NOT show it.
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-essential="Boron"]')?.click());
+  await wait(200);
+  const whyHidden = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    return { boronHasWhy: root ? root.querySelector('.kd-why') !== null : true };
   });
 
   // 4a. Meter fallback -- a trace essential (no numeric Wallach target) shows the
@@ -432,6 +445,8 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['corpus: claims grouped by kind', deep.groupCount > 0],
     ['corpus: claim shows paraphrase + verbatim + citation', deep.firstText && deep.firstVerbatim && deep.firstCite],
     ['meter: numeric target shows intake-vs-goal (Magnesium)', /WALLACH GOAL/.test(deep.meterText)],
+    ['why-this-number: box shows with full derivation where a newer book overrode an older (Magnesium)', deep.whyShown === true && deep.whyHasDerivation === true],
+    ['why-this-number: box hidden where no earlier figure exists (Boron)', whyHidden.boronHasWhy === false],
     ['meter: trace element shows pill only, no meter (Dysprosium)', traceMeter.hasMeter === false && traceMeter.hasPill === true],
     ['conditions: list rendered', conditions.rowCount >= 1],
     ['conditions: deep view opens (diabetes)', condDeep.shown === true],

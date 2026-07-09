@@ -46019,7 +46019,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       return "";
     }
     const yr = src.match(/\((?:Wallach,\s*)?(\d{4})\)/);
-    const stripped = src.replace(/^Wallach\s*[\u2014-]\s*/, "").replace(/\s*\((?:Wallach,\s*)?\d{4}\)/, "");
+    const stripped = src.replace(/^Wallach\s*[—-]\s*/, "").replace(/\s*\((?:Wallach,\s*)?\d{4}\)/, "");
     const title = (stripped.split(":")[0] ?? stripped).trim();
     return yr !== null ? `${title} (${yr[1]})` : title;
   }
@@ -46027,34 +46027,66 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const val = high !== null && high !== low ? `${wtnNum(low)}\u2013${wtnNum(high)}` : wtnNum(low);
     return `${val} ${escHTML5(unit)}`;
   }
+  function whyThisNumberQualifies(td) {
+    if (typeof td.low !== "number") {
+      return false;
+    }
+    const posted = td.low;
+    return (td.other_claims ?? []).some((o) => !(o.unit === td.unit && (o.high ?? o.low) === posted));
+  }
+  function wtnChain(p, finalUnit, finalVal, leadName) {
+    const oUnit = p.original_unit ?? finalUnit;
+    const oLow = typeof p.original_low === "number" ? p.original_low : finalVal;
+    const oHigh = typeof p.original_high === "number" ? p.original_high : null;
+    const upper = typeof p.upper_taken === "number" ? p.upper_taken : oHigh ?? oLow;
+    const isRange = oHigh !== null && oHigh !== oLow;
+    const scaled = typeof p.scale_factor === "number";
+    const converted = p.factor_source !== void 0;
+    const detail = p.unit_detail !== void 0 ? ` ${escHTML5(p.unit_detail)}` : "";
+    const per100 = scaled ? " per 100 lb of body weight" : "";
+    const lead = leadName !== void 0 ? `<strong>${escHTML5(leadName)}</strong> \u2014 ` : "";
+    const stated = `${lead}Wallach lists <strong>${wtnAmount(oLow, oHigh, oUnit)}</strong>${per100}`;
+    const steps = [];
+    if (isRange) {
+      const upperIsFinal = !scaled && !converted;
+      steps.push(upperIsFinal ? "target the upper end" : `target the upper (<strong>${wtnNum(upper)} ${escHTML5(oUnit)}</strong>)`);
+    }
+    if (converted) {
+      steps.push(`convert to metric (${escHTML5(p.factor_source ?? "")})`);
+    }
+    if (scaled) {
+      steps.push(`scale to a 154 lb reference body (\xD7${wtnNum(p.scale_factor ?? 1)})`);
+    }
+    if (p.rounding !== void 0 && (scaled || converted)) {
+      steps.push(`round to ${escHTML5(p.rounding)}`);
+    }
+    const posted = `<strong>${wtnNum(finalVal)} ${escHTML5(finalUnit)}${detail}</strong>`;
+    if (steps.length === 0) {
+      return `${stated}.`;
+    }
+    const joined = steps.length === 1 ? steps[0] ?? "" : `${steps.slice(0, -1).join(", ")}, then ${steps[steps.length - 1] ?? ""}`;
+    return `${stated}; we ${joined} \u2192 ${posted}.`;
+  }
   function renderWhyThisNumber(td) {
-    if (td === void 0 || typeof td.low !== "number") {
+    if (td === void 0 || typeof td.low !== "number" || !whyThisNumberQualifies(td)) {
       return "";
     }
-    const weightScaled = td.provenance?.body_weight_basis !== void 0;
+    const unit = td.unit ?? "";
     const detail = td.provenance?.unit_detail !== void 0 ? ` ${escHTML5(td.provenance.unit_detail)}` : "";
     const rows = [];
-    rows.push(`<div class="kd-why__posted"><strong>${wtnNum(td.low)} ${escHTML5(td.unit ?? "")}${detail}</strong> daily${td.source !== void 0 ? ` \xB7 ${escHTML5(wtnBook(td.source))}` : ""}</div>`);
+    rows.push(`<div class="kd-why__posted"><strong>${wtnNum(td.low)} ${escHTML5(unit)}${detail}</strong> daily${td.source !== void 0 ? ` \xB7 ${escHTML5(wtnBook(td.source))}` : ""}</div>`);
     const parts = td.parts;
     if (Array.isArray(parts) && parts.length > 1) {
-      const partsTxt = parts.map((p) => `${p.form !== void 0 && p.form !== null ? escHTML5(p.form) + " " : ""}<strong>${wtnNum(p.value)}</strong>`).join(" + ");
-      rows.push(`<div class="kd-why__parts">= ${partsTxt} ${escHTML5(td.unit ?? "")}</div>`);
-      const rangeTxt = parts.map((p) => `${p.form !== void 0 && p.form !== null ? escHTML5(p.form) + " " : ""}${p.range !== void 0 ? wtnAmount(p.range.low, p.range.high, p.range.unit) : ""}`).join(" \xB7 ");
-      rows.push(`<div class="kd-why__range">Wallach's stated ranges: <strong>${rangeTxt}</strong> \u2014 <em>we target the upper of each</em>.</div>`);
-    } else if (td.range !== void 0) {
-      const scaleNote = weightScaled ? " per 100 lb \u2192 scaled to 154 lb (70 kg reference)" : "";
-      const isRange = td.range.high !== null && td.range.high !== td.range.low;
-      if (isRange) {
-        rows.push(`<div class="kd-why__range">Wallach's stated range: <strong>${wtnAmount(td.range.low, td.range.high, td.range.unit)}</strong>${scaleNote} \u2014 <em>we target the upper end</em>.</div>`);
-      } else {
-        rows.push(`<div class="kd-why__range">Wallach states <strong>${wtnAmount(td.range.low, td.range.high, td.range.unit)}</strong>${scaleNote}.</div>`);
-      }
+      const items = parts.map((p) => `<li>${wtnChain(p.provenance ?? {}, p.unit, p.value, p.form ?? void 0)}</li>`).join("");
+      rows.push(`<div class="kd-why__derivation"><span class="kd-why__how">how we got this</span> Wallach states each form separately:<ul class="kd-why__parts-list">${items}</ul>Summed \u2192 <strong>${wtnNum(td.low)} ${escHTML5(unit)}${detail}</strong>.</div>`);
+    } else if (td.provenance !== void 0) {
+      rows.push(`<div class="kd-why__derivation"><span class="kd-why__how">how we got this</span> ${wtnChain(td.provenance, unit, td.low)}</div>`);
     }
-    if (Array.isArray(td.other_claims) && td.other_claims.length > 0) {
-      for (const o of td.other_claims) {
-        rows.push(`<div class="kd-why__older">\u21A9 Earlier: <strong>${wtnAmount(o.low, o.high, o.unit)}</strong>${o.source !== void 0 ? ` \u2014 ${escHTML5(wtnBook(o.source))}` : ""}</div>`);
-      }
-      rows.push('<div class="kd-why__gloss">Wallach\u2019s guidance evolved across his books \u2014 we default to his most recent figure and keep the earlier one for context.</div>');
+    const earlier = td.other_claims ?? [];
+    if (earlier.length > 0) {
+      const lines = earlier.map((o) => `Earlier, <strong>${escHTML5(wtnBook(o.source))}</strong> recommended <strong>${wtnAmount(o.low, o.high, o.unit)}</strong>.`).join(" ");
+      rows.push(`<div class="kd-why__older">${lines}</div>`);
+      rows.push('<div class="kd-why__gloss">Wallach\u2019s guidance evolved across his books \u2014 we follow his most recent figure and keep the earlier one for context.</div>');
     }
     return `
     <details class="kd-why">
@@ -47065,7 +47097,9 @@ FIX (the 810000 bug + the IU residual): coverage.ts toMg now (a) converts IU -> 
 
 VERIFIED: build OK (dist 4028.1 KB), tsc clean, invariants 52/52 (0 new reds), all 6 render probes PASS. Reproduced the bug headless (Vitamin A 810 "mcg RAE" -> meter 810/9000 mcg = 9%, was 810000). Deep-dive order confirmed DOSE -> why this number? -> IMPLICATED CONDITIONS. render_probe_adopt now exercises the IU -> mcg path (Vitamin D listed in IU converts + counts; afterCovered 0 -> 6). Luneth visually signed off.
 
-DEFERRED (Luneth OK'd): (a) regimen snapshot AUTO-HEAL \u2014 items should re-read live product composition so a stale VALUE self-corrects without the user re-adding (memory: auto-heal-not-user-debug). The unit fix already auto-heals on reload; only value drift remains. (b) Epigenetics end-of-book glossary -> term-gloss overlays (G-2). (c) tighten amounts_wallach_only to validate the full transform chain (WISH; provenance stamp exists for it).` }];
+DEFERRED (Luneth OK'd): (a) regimen snapshot AUTO-HEAL \u2014 items should re-read live product composition so a stale VALUE self-corrects without the user re-adding (memory: auto-heal-not-user-debug). The unit fix already auto-heals on reload; only value drift remains. (b) Epigenetics end-of-book glossary -> term-gloss overlays (G-2). (c) tighten amounts_wallach_only to validate the full transform chain (WISH; provenance stamp exists for it).` }, { id: "lg_mrdsr7a9_wpz0ie", ts: "2026-07-09T12:44:51.873990-05:00", surface: "Coverage/Knowledge", kind: "round-close", summary: `"Why this number?" box now appears ONLY where Wallach's newest book changed a dose from an older one (26 shown / 12 hidden), walks the full derivation for any newer book (not just Epigenetics), and its text is resized to 15px / 13px.`, detail: `Made the coverage "why this number?" box discerning: it now only pops up when Wallach actually revised a dose between his books, and when it does it explains the whole calculation instead of restating the number. Also fixed the text sizing so the lower lines (the older figure + the evolution note) are actually readable, not tiny.
+
+TRIGGER (views/knowledge.ts whyThisNumberQualifies): shows iff >=1 earlier-book figure in other_claims DISAGREES with the posted number, comparing each book's UPPER (o.high ?? o.low) in the same unit. A tie (a newer book restated the same number) or a single-source number shows nothing. Book-agnostic: Potassium 5000mg (Immortality 2008 vs LPD 5500) now shows; Cobalt (Immortality = Rare Earths 250-400mcg) and Germanium (DDDL = Immortality 20-30mg) hide because the newer book gave the identical range. Split = 26 show, 12 hide (7 single-source: Sodium/Phosphorus/Sulfur/Chloride/Boron/Tin/Flavonoids; 5 tie: Cobalt/Germanium/Silver/Vitamin B2/Vitamin C). RICHNESS (wtnChain): every shown box walks stated-range -> target-the-upper -> IU->metric convert (factor_source shown verbatim, e.g. 'USP: 1 IU retinol = 0.3 mcg RAE') -> per-100-lb x1.54 -> 2-sig-fig round -> posted; Vitamin A renders one chain per form (retinol + beta-carotene) + a summed total; all book names dynamic via wtnBook, no Epigenetics hardcode. SIZING (drawer-knowledge.css): upper tier (posted + 'how we got this' + derivation) = 0.9375rem (15px), lower tier (earlier + gloss) = 0.8125rem (13px), rem-based so it scales with the root; new .kd-why__derivation/__how/__parts-list styles; dropped the dead __parts/__range rules. PROBE: render_probe_knowledge.js gains 2 assertions codifying the trigger (Magnesium shows box WITH derivation; Boron, no earlier figure, hides it). VERIFIED: build OK (dist 4032.5 KB), lint 0 errors, tsc clean, invariants 52/52 (0 new reds), Knowledge render probe PASS incl. the 2 new assertions, 9-essential live show/hide spot-check matched the computed 26/12 split, computed font-sizes confirmed 15px/13px, Luneth reviewed the full 26/12 list and signed off. HISTORY: first pass mis-scoped the trigger twice -- (1) always-on box, then (2) I inverted Luneth's two points (wrongly showed ties/reworded them); corrected to disagreement-only per his explicit restatement, and fixed a comparison bug (earlier-LOW vs posted-UPPER) that had wrongly shown Cobalt/Germanium. DEFERRED: none for this item; queued next-phase items unchanged.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

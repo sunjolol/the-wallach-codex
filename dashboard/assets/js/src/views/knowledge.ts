@@ -254,14 +254,32 @@ function renderOmegaClarity(key: string): string {
 }
 
 // ─── "Why this number?" — the target's provenance, collapsed under the meter ─
-// Surfaces Wallach's own stated range (with the explicit "we target the upper end"
-// framing Luneth chose), Vitamin A's two-part retinol+beta-carotene breakdown, any
-// earlier-book figure, and the "his guidance evolved" gloss. Reads the derived target's
-// range/parts/other_claims/provenance fields (targets_derive.py). Content micro-copy is
-// inline here (the full R4 prose store is a Phase E/F WISH; matches the kd-source-note pattern).
+// Appears under ONE condition (Luneth 2026-07-09): the posted number comes from
+// Epigenetics (2014) AND an earlier Let's Play Doctor (1995) figure it contradicts
+// still exists -- i.e. Wallach's newest dose table overrode his oldest. No older
+// figure, a non-Epigenetics newest source, or a tie where the two books agree ->
+// no box (the old always-on box merely restated the number). When it DOES show it
+// walks the full derivation like Vitamin A: Wallach's stated range, every unit
+// conversion / body-weight scaling / rounding step, the earlier figure(s), and the
+// "his guidance evolved" gloss -- nothing left unexplained. Reads the derived
+// target's parts/other_claims/provenance fields (eden/tools/targets_derive.py).
+// Micro-copy is inline here (the full R4 prose store is a Phase E/F WISH; matches
+// the kd-source-note pattern).
 interface WTNRange { low: number; high: number | null; unit: string }
-interface WTNPart { form?: string | null; value: number; unit: string; range?: WTNRange }
-interface WTNOther { low: number; high: number | null; unit: string; source?: string }
+interface WTNProvenance {
+  body_weight_basis?: string;
+  unit_detail?: string;
+  original_low?: number;
+  original_high?: number | null;
+  original_unit?: string;
+  upper_taken?: number;
+  scale_factor?: number;
+  rounding?: string;
+  factor?: number;
+  factor_source?: string;
+}
+interface WTNPart { form?: string | null; value: number; unit: string; range?: WTNRange; provenance?: WTNProvenance }
+interface WTNOther { low: number; high: number | null; unit: string; source?: string; book?: string; year?: number }
 interface WallachTargetDetail {
   low?: number;
   unit?: string;
@@ -269,64 +287,126 @@ interface WallachTargetDetail {
   range?: WTNRange;
   parts?: WTNPart[];
   other_claims?: WTNOther[];
-  provenance?: { body_weight_basis?: string; unit_detail?: string };
+  provenance?: WTNProvenance;
 }
 
 function wtnNum(n: number): string {
   return n.toLocaleString('en-US', { maximumFractionDigits: 2 });
 }
 
-// "Wallach \u2014 Epigenetics: The Death of ... (Wallach, 2014)" -> "Epigenetics (2014)"
+// "Wallach — Epigenetics: The Death of ... (Wallach, 2014)" -> "Epigenetics (2014)"
 function wtnBook(src: string | undefined): string {
-  if (src === undefined) { return ''; }
+  if (src === undefined) {
+    return '';
+  }
   const yr = src.match(/\((?:Wallach,\s*)?(\d{4})\)/);
   const stripped = src
-    .replace(/^Wallach\s*[\u2014-]\s*/, '')
+    .replace(/^Wallach\s*[—-]\s*/, '')
     .replace(/\s*\((?:Wallach,\s*)?\d{4}\)/, '');
   const title = (stripped.split(':')[0] ?? stripped).trim();
   return (yr !== null) ? `${title} (${yr[1]})` : title;
 }
 
 function wtnAmount(low: number, high: number | null, unit: string): string {
-  const val = (high !== null && high !== low) ? `${wtnNum(low)}\u2013${wtnNum(high)}` : wtnNum(low);
+  const val = (high !== null && high !== low) ? `${wtnNum(low)}–${wtnNum(high)}` : wtnNum(low);
   return `${val} ${escHTML(unit)}`;
 }
 
+// The box shows ONLY when Epigenetics (2014) posts a number that CONTRADICTS an
+// earlier Let's Play Doctor (1995) figure. A tie (both books state the same amount
+// in the same unit) is not a contradiction -> no box; nor is a non-Epigenetics
+// newest source or an essential with no earlier LPD figure at all.
+function whyThisNumberQualifies(td: WallachTargetDetail): boolean {
+  // Show the box wherever the posted (newest-book) number DISAGREES with an earlier
+  // figure Wallach gave in another book -- that is the number that needs explaining,
+  // whatever the newer book is (Epigenetics, Immortality, DDDL...). No earlier figure,
+  // or every earlier figure MATCHES the posted one (a tie), means nothing changed
+  // across the books, so no box (Luneth 2026-07-09).
+  if (typeof td.low !== 'number') {
+    return false;
+  }
+  // Each book's comparable figure is its UPPER (we always target the upper); the box
+  // shows unless every earlier book's upper matches the posted number in the same unit.
+  const posted = td.low;
+  return (td.other_claims ?? []).some(o => !(o.unit === td.unit && (o.high ?? o.low) === posted));
+}
+
+// One derivation chain: what Wallach's newest book states -> the transforms we apply
+// -> the posted number. Parts (Vitamin A) render one chain each with a lead form name.
+// Covers every transform shape in eden/tools/targets_derive.py: upper-of-range,
+// IU->metric conversion, per-100-lb body-weight scaling, rounding, and combinations.
+function wtnChain(p: WTNProvenance, finalUnit: string, finalVal: number, leadName?: string): string {
+  const oUnit = p.original_unit ?? finalUnit;
+  const oLow = typeof p.original_low === 'number' ? p.original_low : finalVal;
+  const oHigh = typeof p.original_high === 'number' ? p.original_high : null;
+  const upper = typeof p.upper_taken === 'number' ? p.upper_taken : (oHigh ?? oLow);
+  const isRange = oHigh !== null && oHigh !== oLow;
+  const scaled = typeof p.scale_factor === 'number';
+  const converted = p.factor_source !== undefined;
+  const detail = p.unit_detail !== undefined ? ` ${escHTML(p.unit_detail)}` : '';
+  const per100 = scaled ? ' per 100 lb of body weight' : '';
+  const lead = leadName !== undefined ? `<strong>${escHTML(leadName)}</strong> — ` : '';
+  const stated = `${lead}Wallach lists <strong>${wtnAmount(oLow, oHigh, oUnit)}</strong>${per100}`;
+
+  const steps: string[] = [];
+  if (isRange) {
+    const upperIsFinal = !scaled && !converted;
+    steps.push(upperIsFinal
+      ? 'target the upper end'
+      : `target the upper (<strong>${wtnNum(upper)} ${escHTML(oUnit)}</strong>)`);
+  }
+  if (converted) {
+    steps.push(`convert to metric (${escHTML(p.factor_source ?? '')})`);
+  }
+  if (scaled) {
+    steps.push(`scale to a 154 lb reference body (×${wtnNum(p.scale_factor ?? 1)})`);
+  }
+  if (p.rounding !== undefined && (scaled || converted)) {
+    steps.push(`round to ${escHTML(p.rounding)}`);
+  }
+
+  const posted = `<strong>${wtnNum(finalVal)} ${escHTML(finalUnit)}${detail}</strong>`;
+  if (steps.length === 0) {
+    return `${stated}.`;
+  }
+  const joined = steps.length === 1
+    ? (steps[0] ?? '')
+    : `${steps.slice(0, -1).join(', ')}, then ${steps[steps.length - 1] ?? ''}`;
+  return `${stated}; we ${joined} → ${posted}.`;
+}
+
 function renderWhyThisNumber(td: WallachTargetDetail | undefined): string {
-  if (td === undefined || typeof td.low !== 'number') {
+  if (td === undefined || typeof td.low !== 'number' || !whyThisNumberQualifies(td)) {
     return '';
   }
-  const weightScaled = td.provenance?.body_weight_basis !== undefined;
+  const unit = td.unit ?? '';
   const detail = td.provenance?.unit_detail !== undefined ? ` ${escHTML(td.provenance.unit_detail)}` : '';
   const rows: string[] = [];
 
-  rows.push(`<div class="kd-why__posted"><strong>${wtnNum(td.low)} ${escHTML(td.unit ?? '')}${detail}</strong> daily${td.source !== undefined ? ` \u00b7 ${escHTML(wtnBook(td.source))}` : ''}</div>`);
+  // The answer, up top.
+  rows.push(`<div class="kd-why__posted"><strong>${wtnNum(td.low)} ${escHTML(unit)}${detail}</strong> daily${td.source !== undefined ? ` · ${escHTML(wtnBook(td.source))}` : ''}</div>`);
 
+  // The full derivation. Parts (Vitamin A) get one chain each + a summed total;
+  // everything else is a single chain.
   const parts = td.parts;
   if (Array.isArray(parts) && parts.length > 1) {
-    const partsTxt = parts
-      .map(p => `${(p.form !== undefined && p.form !== null) ? escHTML(p.form) + ' ' : ''}<strong>${wtnNum(p.value)}</strong>`)
-      .join(' + ');
-    rows.push(`<div class="kd-why__parts">= ${partsTxt} ${escHTML(td.unit ?? '')}</div>`);
-    const rangeTxt = parts
-      .map(p => `${(p.form !== undefined && p.form !== null) ? escHTML(p.form) + ' ' : ''}${p.range !== undefined ? wtnAmount(p.range.low, p.range.high, p.range.unit) : ''}`)
-      .join(' \u00b7 ');
-    rows.push(`<div class="kd-why__range">Wallach's stated ranges: <strong>${rangeTxt}</strong> \u2014 <em>we target the upper of each</em>.</div>`);
-  } else if (td.range !== undefined) {
-    const scaleNote = weightScaled ? ' per 100 lb \u2192 scaled to 154 lb (70 kg reference)' : '';
-    const isRange = td.range.high !== null && td.range.high !== td.range.low;
-    if (isRange) {
-      rows.push(`<div class="kd-why__range">Wallach's stated range: <strong>${wtnAmount(td.range.low, td.range.high, td.range.unit)}</strong>${scaleNote} \u2014 <em>we target the upper end</em>.</div>`);
-    } else {
-      rows.push(`<div class="kd-why__range">Wallach states <strong>${wtnAmount(td.range.low, td.range.high, td.range.unit)}</strong>${scaleNote}.</div>`);
-    }
+    const items = parts
+      .map(p => `<li>${wtnChain(p.provenance ?? {}, p.unit, p.value, p.form ?? undefined)}</li>`)
+      .join('');
+    rows.push(`<div class="kd-why__derivation"><span class="kd-why__how">how we got this</span> Wallach states each form separately:<ul class="kd-why__parts-list">${items}</ul>Summed → <strong>${wtnNum(td.low)} ${escHTML(unit)}${detail}</strong>.</div>`);
+  }
+  else if (td.provenance !== undefined) {
+    rows.push(`<div class="kd-why__derivation"><span class="kd-why__how">how we got this</span> ${wtnChain(td.provenance, unit, td.low)}</div>`);
   }
 
-  if (Array.isArray(td.other_claims) && td.other_claims.length > 0) {
-    for (const o of td.other_claims) {
-      rows.push(`<div class="kd-why__older">\u21a9 Earlier: <strong>${wtnAmount(o.low, o.high, o.unit)}</strong>${o.source !== undefined ? ` \u2014 ${escHTML(wtnBook(o.source))}` : ''}</div>`);
-    }
-    rows.push('<div class="kd-why__gloss">Wallach\u2019s guidance evolved across his books \u2014 we default to his most recent figure and keep the earlier one for context.</div>');
+  // The earlier figure(s) this newest number superseded -- the reason the box exists.
+  const earlier = td.other_claims ?? [];
+  if (earlier.length > 0) {
+    const lines = earlier
+      .map(o => `Earlier, <strong>${escHTML(wtnBook(o.source))}</strong> recommended <strong>${wtnAmount(o.low, o.high, o.unit)}</strong>.`)
+      .join(' ');
+    rows.push(`<div class="kd-why__older">${lines}</div>`);
+    rows.push('<div class="kd-why__gloss">Wallach’s guidance evolved across his books — we follow his most recent figure and keep the earlier one for context.</div>');
   }
 
   return `
