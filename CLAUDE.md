@@ -94,6 +94,7 @@ Read the matching file before the first write in that domain:
 | bash / python on the Windows host | `windows-host.md` |
 | any health number / dose / claim (§00.A) | `source-rule.md` |
 | resuming book mining · choosing what to mine (Phase G) | `mining-veins.md` |
+| mining for search · building the Search surface | `search-corpus.md` |
 | proposing a new system, tool, or invariant (§00.B) | `engineering-doctrine.md` |
 | the Charter's enforceable rules (R1–R9) + their gate status | `charter.md` |
 | logging · history · what & why to record | `logging-doctrine.md` |

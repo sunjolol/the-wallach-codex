@@ -1,28 +1,36 @@
-# Next chunk — ★ PLAN LOCKED 2026-07-09 · G-3 DONE → NEXT = Phase G-4 (finish Immortality: element A-Z La→Zr @ char 299,378 + the UNMINED Ch11-12 protocols)
+# Next chunk — ★ PIVOT 2026-07-09 · mining PAUSED, building SEARCH · NEXT = the Mercury thin-slice (visual reference)
 
-**★ CURRENT STATE (2026-07-09).** Phases A–F COMPLETE + SEALED. Phase-G book mining UNLOCKED (`corpus_audit_gate` = `phase_g_unlocked`). **knowledge_version 315 · 1233 claims · board 52/52 green · 38 of 91 essentials carry a numeric Wallach target · glossary 204 terms.** `amounts_wallach_only` recomputes the full dose-transform chain (7-class negative test). **G-3 vein-maps DONE 2026-07-09** — `eden/tools/mining-coverage.json` now carries a char-offset-verified `veins[]` roadmap per book (schema_version 2; `veins[]` is a planning layer, NOT read by any gate). Active plan = `chronicle/OVERHAUL-BLUEPRINT.md` §7; mining HOW = `.claude/rules/mining-veins.md`.
+**★ CURRENT STATE (2026-07-09).** Phases A–F COMPLETE + SEALED. **knowledge_version 319 · 1246 claims · board 52/52 green.** Mining is **PAUSED** at Immortality element A-Z **Mn-Manganese** (45/94 headers done, Ag→Mg) — kept on the list. We PULLED **Search (blueprint G-7 / §5.5) FORWARD** because we can't keep mining into a format Luneth can't see + steer.
 
-## The locked roadmap (blueprint §7)
-- **Phase G — book mining (vein-selective) → Search validation → seal.** Mine rich VEINS only, review-and-disposition filler (honesty gated by `mining_coverage_accounted`), ONE seal per vein.
-  - G-1 ✓ Epigenetics dose table · G-2 ✓ glossary · R2 chain-tightening ✓ · **G-3 ✓ vein-maps seeded (2026-07-09)**
-  - **G-4 (NEXT)** — finish **Immortality**. Read the `veins[]` in `eden/tools/mining-coverage.json` for the full map. Two threads: **(a)** element A-Z encyclopedia (Ch5, char 168,037–405,591) — resume at **`La-Lanthanum` (char 299,378)** through **`Zr-Zirconium` (403,350)**; **41 of 94** Sym-Name headers mined (Ag→Kr), 53 pending; canon trace/rare minerals → tier-1 (one claim each, capture-all even thin), non-canon inert/radioactive → search-only / reviewed-empty. **(b)** **Ch11-12 anti-aging protocols+doses (char 516,729–716,736) = 0 claims, ENTIRELY UNMINED** — the book's distinctive value; plus Ch4 + Ch6-10 deficiency/disease. Ch13 Religious → surface to Luneth before include/rebut/exclude.
-  - G-5 — full **DDDL** re-mine (source pristine). Veins: Appendix B "Let's Play Doctor" disease materia-medica long-tail (char 604,194–951,228; ~175 entries uncaptured), Appendix A "New Alphabet of Wellness" minerals (472,203–604,194), Ch1-21 narrative enrich.
-  - G-6 — the **3 newly-bought books** (Luneth photographs favorite chapters → Claude in-houses + adds each `book_id` to the sealed `books-meta` allowlist + mines). · G-7 — **build Search** as the corpus completeness-harness → re-mine gaps it finds BEFORE seal. · G-8 — close-out audit + seal (incl. rare-earths + lets-play-doctor precise per-page accounting, deferred here due to OCR reading-order scramble).
-  - Deferred: **Hell's Kitchen** (not in-housed yet).
-- **Phase H — app completion:** Scanner / Regimen / Journey to spec (one surface to 100% before the next, render probes + visual sign-off) + periodic-table **element-click detail** + **product detail panel** + wire every dead button.
-- **Phase I — design touch-up (LAST) + distribution + legal/a11y/i18n.**
+## Why the pivot (Luneth, 2026-07-09)
+Search is the corpus's **LARGER consumer by design** — the near-complete Wallach knowledge base powering plain-language "Ask-Wallach" Q&A; the wow-factor. Tier-1 (Conditions/Essentials/Coverage) is the small operational slice carved out of it. Today the ratio is inverted (186 search / 1060 operational); it must flip. I was **regressing** — a fully-mined element is 9–13 claims (mercury=13, hydrogen=9: basics/discovery/uses/mechanism/sources/stances/big-questions + tier-1); my La/Li/Lu/Mg captured only the tier-1 half. Fix the FORMAT first, then resume mining search-first.
 
-## What 2026-07-09 landed (all committed + pushed)
-1. "Why this number?" box refine (`75cfbcab`) · 2. G-2 glossary +56 (`fccbb88a`) · 3. Regimen snapshot auto-heal (`22188a0e`) · 4. R2 `amounts_wallach_only` chain-tightening + 7-class negative test (`95424a85`) · 5. Remaining-work roadmap expanded + LOCKED + new `.claude/rules/mining-veins.md` (`7bf88c4a`) · 6. **G-3 vein-maps seeded into `mining-coverage.json` (schema_version 1→2; char-offset-verified `veins[]` planning layer) (`cd956010`)** — plus a logged correction: my "DDDL appendix labels backwards in memory" claim was FALSE (memory was right; the guess was mine). The vein-map data is correct.
+## The doctrine (AUTHORITATIVE — read before search work)
+- **`.claude/rules/search-corpus.md`** — the operating spine (inclusion test · facet taxonomy · structured template · tier-1 boundary · completeness layers). **SUPERSEDES** the old "search is tier-2/secondary" + "capture case-by-case / present candidates for yes/no" framings (reconciled to zero across rules+memory 2026-07-09; historical logs untouched by design).
+- **`chronicle/search-build-blueprint.md`** — the full build plan (data model · entity registry · display · retrieval · sharding · migration · gates · sequence).
+- **`chronicle/search-corpus-plan.md`** — the capture criteria + the density/question-inventory/harness completeness layers.
 
-## Mining workflow (Phase G — READ `.claude/rules/mining-veins.md` first)
-The input loop: **Luneth pastes** a section's PDF/OCR → **Claude diffs** vs the sealed `.txt` → **corrects the `.txt`** (safe_write → `corpus_resnap.py --write` [+`--fix` for quoting claims] → re-seal) → **extract claims** (`corpus_extract finalize` ADD + `mine_batch apply` EDIT) → **ONE `corpus_seal` per vein** (user-authorized) → build → invariants → build-log → Creator's Log → re-inline build → commit. Unknown substances with no slug → `eden/tools/substance_triage.py park …` (leave out of the claim). **Where the veins are: `eden/tools/mining-coverage.json` `veins[]` per book** (the G-3 roadmap — kind, char/chapter region, tier-1 vs search-only, progress). Favor the newest book for placement, keep older. Mine every vein 100%, skip only low-value regions never valuable data — ASK when unsure.
+## Luneth's LOCKED decisions (2026-07-09)
+1. Search lives in **BOTH** a top **search bar** AND a **"SEARCH" tab placed above "KNOWLEDGE"**, visible from every page.
+2. The **entity page** (product-detail-style, categorized by facet) is the primary "wow" view; the demo-style **Ask** answer is the quick path.
+3. First visual reference = the **Mercury** thin-slice (richest, 13 claims).
+4. **Entity registry** = a new curated `eden/catalog/search-entities.json` (display/type/synonyms/related), reusing canon/catalog slugs (no duplication). Keep prose CONTAINED + single-source.
+5. Facet list approved; stay grounded — **never invent/hallucinate** to chase the wow-factor.
 
-## Carried follow-ups (deferred; NOT blockers — `corpus-audit-status.json` deferred_followups)
-1. Deep linguistic/logic anomaly sweep (finalization / G-8). 2. Book-source purification — 2/6 pristine (iaiyh, DDDL); completes via the Phase-G mining loop. 3. 3 parked claim notes: IAIYH-000020 (award vs verbatim) · germanium "osteoarthritis" vs "osteoporosis" wording · RARE-000048 selenium verbatim extension.
+## NEXT = the Mercury thin-slice (the visual reference — STOP for sign-off)
+1. Restructure Immortality's **13 mercury claims** into the new template (subject · facet · question · answer_short · answer · verbatim · cite · topics) — split the blob (`claim_text` currently jams summary + verbatim).
+2. Seed the mercury entry in `search-entities.json`.
+3. Build a **minimal Search surface** (the SEARCH tab + top search bar) rendering just Mercury: the entity page (facet sections) + one Ask answer.
+4. **STOP → Luneth visual sign-off** on the info format. Iterate on this slice until right.
 
-## Other still-open (Phase H / I)
-Conditions → product suggestions · recommender weight-tuning · canonical-unit unification · JS size budget (code-splitting) · global styling touch-ups (Phase I) · legal/copyright/a11y/i18n (Phase I, ONE end pass).
+## THEN (after the format is validated)
+Mass-migrate the 186 → new template (script + review) · seed the full entity registry · add `assets/data/search/` folder sharding (lazy-load) · retrieval index (retrieval-first, offline) · NEW gates (`search_claim_wellformed`, `facet_in_taxonomy`, `search_entity_resolves`, `search_index_fresh`, `render_probe_search`) · **then RESUME mining search-first** — backfill La/Li/Lu/Mg to standard + Immortality from Mn-Manganese onward.
 
-## The overhaul in one paragraph
-Full structural overhaul after book citations were caught hand-typed ~200×. Model: TWO sealed hand-edited sources — the Wallach Corpus (`eden/corpus/`) + the Youngevity Product DB (`eden/products/`, sealed) — plus the shared Catalog (`eden/catalog/`). Everything else GENERATED + freshness-gated. Phases A–F done; Phase G (mining → Search → seal) active; H (app completion) + I (design) remain. Charter R1–R9 + gates = the enforceable spine; `.claude/rules/` = the per-domain HOW.
+## The paused mining roadmap (still on the list — blueprint §7)
+G-4 finish **Immortality** (resume element A-Z at **Mn-Manganese ~char 309953**, then Ch11-12 anti-aging protocols = 0 claims / unmined + Ch4/6-10) · G-5 DDDL re-mine · G-6 the 3 new books · G-7 = the Search build (now active, pulled forward) · G-8 close-out + seal. Phases H (app completion) + I (design) after.
+
+## Mining loop (when resumed — READ `.claude/rules/mining-veins.md` + `search-corpus.md`)
+Luneth pastes a section → diff vs sealed `.txt` → correct `.txt` (safe_write → `corpus_resnap --write` [+`--fix`]) → **capture search-first** (every search-worthy statement, structured) + tier-1 promotion where it maps → auto-seal per vein (Luneth-authorized) → build → invariants → build-log → Creator's Log → re-inline → commit → SHOW Luneth. Vein-map: `eden/tools/mining-coverage.json`. Faithful paraphrase synonyms may be added during mining (shown for veto); front-facing labels stay display_name.
+
+## Carried follow-ups (deferred; NOT blockers)
+`search_density_report` + per-region question-inventory (Layer 2/3) · lithium coverage target could derive (targets_derive, 38→39) · rare-earths/lets-play-doctor per-page accounting (G-8) · deep linguistic sweep + book purification (G-8) · 3 parked claim notes.

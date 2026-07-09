@@ -176,7 +176,7 @@ Every surface is a READ-ONLY view of the pillars + the user's own localStorage. 
 - **Gates:** `corpus_runtime_purity` (offline OCR), `scanner_user_items_marked` (NEW — user items flagged, never enter pillars/indices), storage chokepoint.
 
 ### 5.5 · Search — the offline helper agent
-- **Derives from:** the full corpus (operational + search-only tier-2 broader Wallach guidance).
+- **Derives from:** the full corpus — search is the LARGER consumer (the near-complete Wallach knowledge base), tier-1 the operational slice. Doctrine: `.claude/rules/search-corpus.md` + `chronicle/search-build-blueprint.md`.
 - **Renders:** natural-language Q&A over all-Wallach content, offline. The delight = off-path topics that don't fit the 90-essentials frame.
 - **Boundary:** READ-ONLY over corpus; search-only content NEVER feeds the operational tabs (`search_only_indices_excluded`, exists).
 - **[DECISION D4] — the engine:** a true bundled offline LLM (heavy ~GBs, complex, most "agent"-like) **vs.** smart offline retrieval + templated synthesis over the corpus (light, deterministic, never breaks, still impressive). *Recommend retrieval-first* to protect the "never breaks / fully portable" vision, with a bundled small model as a later opt-in.
