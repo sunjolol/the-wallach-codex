@@ -6975,7 +6975,7 @@ Silver is an anti-bacterial, anti-viral, anti-fungal, anti-metabolite that
 disables specific enzymes that microorganisms use for respiration. Silver is
 such an efficient bactericide that our great-grandmothers put silver dollars
 into fresh milk to keep it from spoiling at room temperature. Humans can
-consume 400 mg of silver per day. A silver “deficiency” results in an
+consume 400 mcg of silver per day. A silver “deficiency” results in an
 impaired immune system. In The Body Electric Dr. Robert Becker identified
 a relationship between low levels of tissue and dietary silver and the rate of
 illness. He stated, “Silver deficiency was responsible for the improper

@@ -1,4 +1,4 @@
-# Next chunk — CORPUS AUDIT: ★ WORKSTREAM B COMPLETE → Tier-2 needs-a-look (9) NEXT, then likely-fine sweep → Phase G
+# Next chunk — CORPUS AUDIT: Workstream B + Tier-2 DONE (incl. silver 400mg→mcg safety fix) → likely-fine sweep → Phase G
 
 **★ CURRENT STATE (2026-07-08).** Phases A–F COMPLETE + SEALED; task (a) (the Coverage/Knowledge deep-dive on real product data) COMPLETE. Now on **task (b) — the mandatory pre-Phase-G full-corpus audit** ([[full-corpus-audit-before-phase-g]]; gated by `corpus_audit_gate`, `phase_g_unlocked=false`, frozen 1203 claims). This session kicked it off:
 
@@ -21,10 +21,15 @@ Board **50/50 green**; **36 of 91** essentials carry a numeric Wallach target to
 
 **★ WORKSTREAM B COMPLETE** — the full dose-mislabel tier is resolved. (Kept as-is per Luneth: `RARE-000154` per-book dup, `RARE-000096` gold protocol. FLAG for the linguistic sweep: epigenetics germanium verbatim says "osteoarthritis" vs "osteoporosis" in DDDL/RARE/Immortality — left faithful, Luneth to interpret.)
 
-## ★ RESUME HERE — Tier-2: the 9 needs-a-look claims
-Run `PYTHONUTF8=1 python eden/tools/corpus_audit.py` → `eden/tools/corpus-audit-worklist.md` (Tier 2). Confirm each number against its book page (incl. the DDDL/RARE silver 400 mg duplicate). Then the **1151 likely-fine** tier (lowest priority spot-check), then set `phase_g_unlocked=true` + re-anchor `frozen_claim_count` in `eden/tools/corpus-audit-status.json` → Phase G book-mining unblocks. [[substance-registry-and-triage-buffer]] (task-zero triage buffer) builds at Phase-G kickoff.
+## ✓ Tier-2 (needs-a-look) DONE (2026-07-08)
+- **★ SAFETY FIX — silver 400 mg → 400 mcg:** the app was surfacing a silver target of **400 mg/day** (toxic — argyria). Luneth caught it (YGY colloidal silver = 13-40 mcg → 400 mg is a 1000x misprint in Wallach's books). Corrected to **400 mcg** in BOTH book sources + both silver claims (`DDDL-000013`, `RARE-000090`) — verbatim (via `corpus_resnap --fix`), claim_text, and dose.unit. Sealed knowledge_version 311. NOTE: printed books say "400 mg"; this is a user-authorized dose-misprint-safety correction, logged with the original value.
+- **All other Tier-2 numbers VERIFIED correct** vs the books: germanium 20-30 / 50-100 mg (DDDL-000011/IMMORT-000140/RARE-000012), potassium 5,000 mg (IMMORT-000193), zinc 25 mg (LETS-000077 Base Line), silica 200-500 mg (RARE-000246), selenium 1 mg selenite 3x/wk Keshan (RARE-000048).
+
+## ★ RESUME HERE — the 1151 likely-fine sweep, then Phase G
+Lowest-priority spot-check of the likely-fine tier (`corpus_audit.py` → worklist), then set `phase_g_unlocked=true` + re-anchor `frozen_claim_count` in `eden/tools/corpus-audit-status.json` → Phase G book-mining unblocks. [[substance-registry-and-triage-buffer]] (task-zero triage buffer) builds at Phase-G kickoff.
 
 ### Deferred (owed, not yet done)
+- **RARE-000048 selenium verbatim extension** (Tier-2 follow-up): the 1 mg selenite 3x/wk dose is confirmed in the book but this claim's verbatim quotes the study RESULTS, not the dose sentence — extend via `vb_apply` (therapeutic dose, no target impact, low priority).
 - **Bled Base Line verbatims** stay in the sealed data (the view hides the bleed); a later **book-purification pass** can clean each to its own row (needs a MIN_VB-floor decision) + clean the pantothenic "...4 mg" OCR artifact.
 - Still-open from the prior handoff: conditions→product suggestions (needs mining), recommender weight-tuning, canonical-unit unification, JS size budget (~846 KB vs 250 KB → code-splitting), global styling touch-ups (ONE end pass — Luneth 2026-07-08).
 
