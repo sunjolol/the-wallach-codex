@@ -1742,6 +1742,7 @@
       ],
       "definition": [
         "WAL-CLM-IMMORT-000098",
+        "WAL-CLM-IMMORT-000105",
         "WAL-CLM-IMMORT-000110"
       ],
       "diagnostic_pattern": [
@@ -1750,7 +1751,6 @@
         "WAL-CLM-RARE-000129"
       ],
       "dose": [
-        "WAL-CLM-IMMORT-000105",
         "WAL-CLM-LETS-000050"
       ],
       "interaction": [
@@ -3896,9 +3896,6 @@
         "WAL-CLM-RARE-000129",
         "WAL-CLM-RARE-000165"
       ],
-      "dose": [
-        "WAL-CLM-RARE-000164"
-      ],
       "interaction": [
         "WAL-CLM-RARE-000167"
       ],
@@ -3906,7 +3903,8 @@
         "WAL-CLM-RARE-000041",
         "WAL-CLM-RARE-000043",
         "WAL-CLM-RARE-000128",
-        "WAL-CLM-RARE-000161"
+        "WAL-CLM-RARE-000161",
+        "WAL-CLM-RARE-000164"
       ],
       "prevalence": [
         "WAL-CLM-RARE-000160"

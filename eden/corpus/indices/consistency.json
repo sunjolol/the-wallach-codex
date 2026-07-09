@@ -993,18 +993,18 @@
       "copper"
     ],
     "conditions": [],
-    "kind": "dose",
+    "kind": "definition",
     "repetitions": [
       {
-        "claim_id": "WAL-CLM-IMMORT-000105",
+        "claim_id": "WAL-CLM-IMMORT-000098",
         "book": "immortality"
       },
       {
-        "claim_id": "WAL-CLM-LETS-000050",
-        "book": "lets-play-doctor"
+        "claim_id": "WAL-CLM-IMMORT-000105",
+        "book": "immortality"
       }
     ],
-    "books_repeating": 2,
+    "books_repeating": 1,
     "claim_count": 2
   },
   {

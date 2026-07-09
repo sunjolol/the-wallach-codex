@@ -5750,7 +5750,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000164",
-      "kind": "dose",
+      "kind": "mechanism",
       "essentials": [
         "lithium"
       ],

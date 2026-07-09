@@ -3682,7 +3682,7 @@
     },
     {
       "id": "WAL-CLM-IMMORT-000105",
-      "kind": "dose",
+      "kind": "definition",
       "essentials": [
         "copper"
       ],
