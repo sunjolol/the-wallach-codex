@@ -1,72 +1,98 @@
 # Extraction report — immortality (Immortality)
 
-_6 claim(s) drafted 2026-07-09T21:18:23+00:00. Review then run corpus_seal.py to promote._
+_7 claim(s) drafted 2026-07-09T22:13:27+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: deficiency_sign×3, definition×1, dose×1, mechanism×1
+Kinds: deficiency_sign×2, definition×1, interaction×1, mechanism×2, toxicity_sign×1
 
-### WAL-CLM-IMMORT-000198 · mechanism
-- **essentials:** lanthanum · **conditions:** chronic_fatigue_syndrome · **symptoms:** —
-- **claim:** Wallach's theory linking lanthanum to chronic fatigue. The yeast Candida albicans accumulates lanthanum at 370 ppm (parts per million) per day; Wallach theorizes this is how C. albicans produces a debilitating, energy-sapping 'chronic fatigue' disease -- by 'stealing' lanthanum from its victim. He also notes lanthanum's biological potency: at just 0.32 ppm it stimulates the growth of the protozoa Blepherisma and Tetrahymena pyriformis and doubles their lifespan.
-- **verbatim** (offset 299756): “Notably the yeast Candida albicans accumulates
-lanthanum at the rate of 370 ppm/day. It is theorized that
-this is how C. albicans produces a debilitating, energy sapping
-“chronic fatigue” disease, by “stealing” lanthanum from the
-victim.
+### WAL-CLM-IMMORT-000204 · deficiency_sign
+- **essentials:** magnesium · **conditions:** asthma, anorexia, migraine, tetany, depression, vertigo, failure_to_thrive · **symptoms:** —
+- **claim:** Magnesium deficiency diseases. Wallach lists the conditions that flow from a magnesium deficiency: asthma, anorexia, menstrual migraines, growth failure, ECG (electrocardiogram, a heart tracing) changes, neuromuscular problems, tetany (convulsions with muscle cramping), depression, muscular weakness, tremors, and vertigo -- plus calcification of the arterial wall and 'malignant calcification' of soft tissue.
+- **verbatim** (offset 308999): “Magnesium Deficiency Diseases
 
-The growth of the protozoa Blepherisma and Tetrahymena
-pyriformis is stimulated and their life span doubled by the
-presence of the rare earth lanthanum at concentrations of 0.32
-ppm.”
+Asthma
+Anorexia
 
-### WAL-CLM-IMMORT-000199 · dose
-- **essentials:** lithium · **conditions:** — · **symptoms:** —
-- **dose:** {'amount': '1,000 to 2,000', 'unit': 'mcg', 'period': 'daily', 'form': 'chelated', 'duration': None, 'for_condition': 'lithium supplementation (hair-lithium response)'}
-- **claim:** Wallach's lithium supplement dose. Chelated lithium supplemented at 1,000-2,000 mcg (1-2 mg) per day produces a dose-related rise in hair-lithium levels -- climbing after four weeks, leveling off by three months, and falling back to baseline within two months of stopping. Wallach notes this response is not seen with metallic lithium carbonate.
-- **verbatim** (offset 302967): “Chelated lithium supplemented at 1,000 to 2,000 ug/day causes a dose related increase in hair lithium levels. Hair
-lithium levels increased after four weeks of supplementation
-and leveled off and became stationary after three months.
-When the lithium supplementation was stopped, hair lithium
-levels dropped to presupplement values in two months. This
-scenario is not seen with the supplementation of metallic
-lithium carbonate.”
+Menstrual migraines
 
-### WAL-CLM-IMMORT-000200 · deficiency_sign
-- **essentials:** lithium · **conditions:** depression, bipolar_disorder, adhd, hyperactivity, autism, violent_behavior, criminal_behavior, blind_rage · **symptoms:** —
-- **claim:** Lithium deficiency and mental/behavioral health. Wallach frames depression and manic-depression (bipolar disorder) as, at root, a lithium deficiency aggravated by high sugar -- noting conventional psychiatry itself treats depression with the trace mineral lithium, and lithium carbonate is standard for severe bipolar disorder. He lists depression, manic-depression, hyperactivity, attention-deficit disorders (ADD/ADHD), certain forms of autism, and a spectrum of aggression, rage, and violent or criminal behavior as hallmarks of a lithium deficiency worsened by high sugar or alcohol intake.
-- **verbatim** (offset 302688): “In humans, manic depression, depression, “bi-polar”
-disease, rage, road rage, “going postal,” Dr. Jekyll/Mr. Hyde
-behavior, hyperactivity, ADD, ADHD, certain forms of autism
-and “bad seeds” are all hallmarks of a lithium deficiency
-aggravated by a high sugar or alcohol intake.”
 
-### WAL-CLM-IMMORT-000201 · deficiency_sign
-- **essentials:** lithium · **conditions:** infertility · **symptoms:** —
-- **claim:** What lithium deficiency does in animal studies. A deficiency of lithium produces reproductive failure, infertility, reduced growth rate, shortened life expectancy, and behavioral problems.
-- **verbatim** (offset 302519): “Animal studies show that a deficiency of lithium
-results in reproductive failure, infertility, reduced growth
-rate, shortened life expectancy, and behavioral problems.”
+ 
 
-### WAL-CLM-IMMORT-000202 · deficiency_sign
-- **essentials:** lithium · **conditions:** criminal_behavior, violent_behavior · **symptoms:** —
-- **claim:** Lithium levels track with violent and criminal behavior. Wallach reports that normal controls had almost 400 times more hair lithium than violent criminals sampled across California, Florida, Texas, and Oregon -- evidence he ties to lithium's role in curbing aggression and criminal behavior. He cautions that the EPA-estimated daily lithium intake of 650-3,100 mcg overstates what is usable, since much dietary lithium is metallic and not necessarily bioavailable.
-- **verbatim** (offset 303786): “Normal controls showed almost 400 times more hair
-lithium than do the violent criminals from California, Florida,
-Texas and Oregon. The EPA estimated daily intake of lithium
-ranges from 650 to 3,100 ug/day, however, much of the
-ingested lithium is metallic and not necessarily biologically
-available.”
+Growth failure
 
-### WAL-CLM-IMMORT-000203 · definition
-- **essentials:** lutetium · **conditions:** — · **symptoms:** —
-- **claim:** Lutetium, a canon rare-earth element. As the last lanthanide in the periodic table, lutetium is the hardest, heaviest, and one of the least abundant of the rare earths -- silvery-white and corrosion-resistant. It was discovered in 1907, independently, by the Austrian mineralogist Carl Auer von Welsbach and the French scientist Georges Urbain, and named for Lutetia, the ancient name of Paris.
-- **verbatim** (offset 304410): “As with most of the other rare earth metals, lutetium
-is silvery-white and corrosion-resistant. As the last lanthanide
-in the periodic table, it is the hardest and heaviest rare earth
-element.
+ECG changes
 
-Lutetium is one of the least abundant of the rare
-earth elements. It was discovered in 1907 by the Austrian
-mineralogist Baron Carl Auer von Welsbach and the French
-scientist Georges Urbain as an impurity in a mineral sample
-thought to contain ytterbium.”
+Neuromuscular problems
+
+Tetany (convulsions with muscle cramping)
+Depression
+
+Muscular weakness
+
+Muscle “ties”
+
+Tremors
+
+Vertigo
+
+Calcification of arterial media
+
+“Malignant calcification” of soft tissue”
+
+### WAL-CLM-IMMORT-000205 · deficiency_sign
+- **essentials:** magnesium · **conditions:** arteriosclerosis · **symptoms:** —
+- **claim:** Magnesium deficiency, not cholesterol, as the root of arterial calcification. Wallach calls 'malignant calcification' -- calcium deposits in soft tissue, especially the middle layer (media) of the artery wall -- perhaps the most important manifestation of magnesium deficiency today. He argues magnesium deficiency, not elevated cholesterol or triglycerides, is the basic root cause of the arteriosclerotic calcium deposits behind hardening of the arteries.
+- **verbatim** (offset 308620): “Perhaps the most important manifestation of
+magnesium deficiency in modern times is “malignant
+calcification.” Malignant calcification appears as calcium
+deposits in soft tissue, especially the media or middle layer of
+arterial walls. Magnesium deficiency appears to be the basic
+root cause of arteriosclerotic calcium deposits, not elevated
+blood cholesterol or triglycerides!”
+
+### WAL-CLM-IMMORT-000206 · interaction
+- **essentials:** magnesium, calcium · **conditions:** — · **symptoms:** —
+- **claim:** Calcium and magnesium balance each other. In normal muscle contraction they play antagonistic roles -- calcium the stimulator, magnesium the 'relaxer.' Wallach warns that an excessive amount of calcium can itself induce the signs of a magnesium deficiency.
+- **verbatim** (offset 308405): “Calcium and magnesium have antagonistic roles in
+normal muscle contraction, calcium acting as the stimulator
+and magnesium as the “relaxer.” An excessive amount of
+calcium can induce signs of magnesium deficiency.”
+
+### WAL-CLM-IMMORT-000207 · mechanism
+- **essentials:** magnesium · **conditions:** — · **symptoms:** —
+- **claim:** What magnesium does -- and what too much does. Magnesium is required for producing and transferring energy, for protein synthesis, for muscle contractility and nerve excitability, and as a cofactor in a myriad of enzyme systems. Wallach also warns (his emphasis) that an excess of magnesium will cause diarrhea and inhibit bone calcification.
+- **verbatim** (offset 308137): “Magnesium is required for the production and transfer
+of energy for protein synthesis, for contractility of muscle and
+excitability of nerves, and as a cofactor in a myriad of enzyme
+systems. AN EXCESS OF MAGNESIUM WILL CAUSE
+DIARRHEA AND INHIBIT BONE CALCIFICATION.”
+
+### WAL-CLM-IMMORT-000208 · definition
+- **essentials:** magnesium · **conditions:** — · **symptoms:** —
+- **claim:** Magnesium as the 'ultimate source of all biological energy.' Magnesium is the metal atom at the center of chlorophyll in every green plant, driving photosynthesis -- the process that stores the sun's energy as the chemical 'solar currency' feeding all plants, animals, and humans. Wallach calls magnesium, the source of the deep green of plants, the ultimate source of all biological energy.
+- **verbatim** (offset 307077): “It is also the metallic atom found in
+chlorophyll of all green plants, which plays an essential role
+in photosynthesis, the photochemical process that converts the
+sun’s solar energy into a stored “solar currency” for a source
+of chemical energy for all plants and all animals and humans.
+Magnesium, the source of the deep green color of plants, is the
+ultimate source of all biological energy!”
+
+### WAL-CLM-IMMORT-000209 · mechanism
+- **essentials:** magnesium · **conditions:** — · **symptoms:** —
+- **claim:** How well magnesium is absorbed. Absorption ranges from 24% to 85%: metallic sources of magnesium are absorbed least, and plant-derived colloidal mineral sources most (a recurring Wallach theme). Vitamin D has no effect on magnesium absorption; dietary fat, phytates, and calcium reduce it; and high-performance athletes lose a considerable amount of magnesium in sweat.
+- **verbatim** (offset 309309): “The rate of absorption of magnesium ranges from 24
+to 85%. The lesser absorption rate is for metallic sources of
+Mg, the higher rates of absorption are associated with plant
+derived colloidal mineral sources. Vitamin D has no effect
+on Mg absorption. The presence of dietary fat, phytates, and
+calcium reduces the efficiency of absorption. High performance
+athletes lose a considerable amount of Mg in sweat.”
+
+### WAL-CLM-IMMORT-000210 · toxicity_sign
+- **essentials:** magnesium · **conditions:** — · **symptoms:** —
+- **claim:** Magnesium's reference intake and safety ceiling. Wallach cites the RDA (Recommended Dietary Allowance) -- 350 mg/day for adult men, 300 mg/day for women, and 450 mg/day for pregnant and lactating women -- and notes that, with healthy kidneys, there is no evidence of toxicity even at supplemental doses up to 6,000 mg/day. (The RDA is the government reference figure Wallach reports, not his own recommended target.)
+- **verbatim** (offset 309719): “The RDA for Mg is 350 mg/day for adult males, 300
+mg/day for adult females, and 450 mg/day for pregnant and
+lactating females. If the kidneys are healthy, there is no evidence
+of toxicity at supplemental doses of up to 6,000 mg/day.”
 

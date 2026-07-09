@@ -880,7 +880,7 @@
   },
   "anorexia": {
     "display_name": "Anorexia",
-    "claim_count": 27,
+    "claim_count": 28,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-RARE-000268"
@@ -894,6 +894,7 @@
         "WAL-CLM-EPIGEN-000043",
         "WAL-CLM-EPIGEN-000098",
         "WAL-CLM-IMMORT-000082",
+        "WAL-CLM-IMMORT-000204",
         "WAL-CLM-LETS-000003",
         "WAL-CLM-LETS-000010",
         "WAL-CLM-LETS-000011",
@@ -1084,13 +1085,16 @@
   },
   "arteriosclerosis": {
     "display_name": "Arteriosclerosis",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000082"
       ],
       "contraindications": [
         "WAL-CLM-DDDL-000083"
+      ],
+      "deficiency_signs": [
+        "WAL-CLM-IMMORT-000205"
       ],
       "definitions": [
         "WAL-CLM-LETS-000001"
@@ -1254,7 +1258,7 @@
   },
   "asthma": {
     "display_name": "Asthma",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000053"
@@ -1264,6 +1268,7 @@
         "WAL-CLM-EPIGEN-000059",
         "WAL-CLM-EPIGEN-000098",
         "WAL-CLM-EPIGEN-000099",
+        "WAL-CLM-IMMORT-000204",
         "WAL-CLM-RARE-000172",
         "WAL-CLM-RARE-000176"
       ],
@@ -4263,7 +4268,7 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 44,
+    "claim_count": 45,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000018",
@@ -4281,6 +4286,7 @@
         "WAL-CLM-EPIGEN-000098",
         "WAL-CLM-IMMORT-000088",
         "WAL-CLM-IMMORT-000200",
+        "WAL-CLM-IMMORT-000204",
         "WAL-CLM-LETS-000003",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000008",
@@ -5374,12 +5380,13 @@
   },
   "failure_to_thrive": {
     "display_name": "Failure To Thrive",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000031",
         "WAL-CLM-EPIGEN-000041",
-        "WAL-CLM-IMMORT-000088"
+        "WAL-CLM-IMMORT-000088",
+        "WAL-CLM-IMMORT-000204"
       ],
       "definitions": [
         "WAL-CLM-IMMORT-000053",
@@ -5391,6 +5398,7 @@
     },
     "essentials_involved": [
       "chromium",
+      "magnesium",
       "omega-3",
       "omega-6",
       "vitamin-a",
@@ -8937,10 +8945,11 @@
   },
   "migraine": {
     "display_name": "Migraine",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000098",
+        "WAL-CLM-IMMORT-000204",
         "WAL-CLM-RARE-000172"
       ],
       "protocols": [
@@ -8959,6 +8968,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -12304,12 +12314,13 @@
   },
   "tetany": {
     "display_name": "Tetany",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000032",
         "WAL-CLM-EPIGEN-000098",
         "WAL-CLM-IMMORT-000064",
+        "WAL-CLM-IMMORT-000204",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000172"
       ],
@@ -12881,7 +12892,7 @@
   },
   "vertigo": {
     "display_name": "Vertigo",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IAIYH-000012"
@@ -12889,6 +12900,7 @@
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000098",
         "WAL-CLM-IMMORT-000064",
+        "WAL-CLM-IMMORT-000204",
         "WAL-CLM-RARE-000172"
       ],
       "diagnostics": [

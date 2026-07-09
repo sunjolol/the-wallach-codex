@@ -7216,6 +7216,259 @@
       "extracted_at": "2026-07-09T21:18:23+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000204",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "asthma",
+        "anorexia",
+        "migraine",
+        "tetany",
+        "depression",
+        "vertigo",
+        "failure_to_thrive"
+      ],
+      "symptoms": [],
+      "claim_text": "Magnesium deficiency diseases. Wallach lists the conditions that flow from a magnesium deficiency: asthma, anorexia, menstrual migraines, growth failure, ECG (electrocardiogram, a heart tracing) changes, neuromuscular problems, tetany (convulsions with muscle cramping), depression, muscular weakness, tremors, and vertigo -- plus calcification of the arterial wall and 'malignant calcification' of soft tissue.",
+      "verbatim": "Magnesium Deficiency Diseases\n\nAsthma\nAnorexia\n\nMenstrual migraines\n\n\n \n\nGrowth failure\n\nECG changes\n\nNeuromuscular problems\n\nTetany (convulsions with muscle cramping)\nDepression\n\nMuscular weakness\n\nMuscle “ties”\n\nTremors\n\nVertigo\n\nCalcification of arterial media\n\n“Malignant calcification” of soft tissue",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 171,
+        "screenshot": 98,
+        "kindle_location": null,
+        "char_offset": 308999
+      },
+      "dose": null,
+      "tags": [
+        "magnesium",
+        "deficiency",
+        "asthma",
+        "migraine",
+        "tetany",
+        "depression"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T22:13:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000205",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "arteriosclerosis"
+      ],
+      "symptoms": [],
+      "claim_text": "Magnesium deficiency, not cholesterol, as the root of arterial calcification. Wallach calls 'malignant calcification' -- calcium deposits in soft tissue, especially the middle layer (media) of the artery wall -- perhaps the most important manifestation of magnesium deficiency today. He argues magnesium deficiency, not elevated cholesterol or triglycerides, is the basic root cause of the calcium deposits that harden the arteries.",
+      "verbatim": "Perhaps the most important manifestation of\nmagnesium deficiency in modern times is “malignant\ncalcification.” Malignant calcification appears as calcium\ndeposits in soft tissue, especially the media or middle layer of\narterial walls. Magnesium deficiency appears to be the basic\nroot cause of arteriosclerotic calcium deposits, not elevated\nblood cholesterol or triglycerides!",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 170,
+        "screenshot": 98,
+        "kindle_location": null,
+        "char_offset": 308620
+      },
+      "dose": null,
+      "tags": [
+        "magnesium",
+        "deficiency",
+        "arteriosclerosis",
+        "malignant-calcification",
+        "cholesterol-myth"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T22:13:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000206",
+      "kind": "interaction",
+      "essentials": [
+        "magnesium",
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Calcium and magnesium balance each other. In normal muscle contraction they play antagonistic roles -- calcium the stimulator, magnesium the 'relaxer.' Wallach warns that an excessive amount of calcium can itself induce the signs of a magnesium deficiency.",
+      "verbatim": "Calcium and magnesium have antagonistic roles in\nnormal muscle contraction, calcium acting as the stimulator\nand magnesium as the “relaxer.” An excessive amount of\ncalcium can induce signs of magnesium deficiency.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 170,
+        "screenshot": 98,
+        "kindle_location": null,
+        "char_offset": 308405
+      },
+      "dose": null,
+      "tags": [
+        "magnesium",
+        "calcium",
+        "interaction",
+        "muscle"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T22:13:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000207",
+      "kind": "mechanism",
+      "essentials": [
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "What magnesium does -- and what too much does. Magnesium is required for producing and transferring energy, for protein synthesis, for muscle contractility and nerve excitability, and as a cofactor in a myriad of enzyme systems. Wallach also warns (his emphasis) that an excess of magnesium will cause diarrhea and inhibit bone calcification.",
+      "verbatim": "Magnesium is required for the production and transfer\nof energy for protein synthesis, for contractility of muscle and\nexcitability of nerves, and as a cofactor in a myriad of enzyme\nsystems. AN EXCESS OF MAGNESIUM WILL CAUSE\nDIARRHEA AND INHIBIT BONE CALCIFICATION.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 170,
+        "screenshot": 98,
+        "kindle_location": null,
+        "char_offset": 308137
+      },
+      "dose": null,
+      "tags": [
+        "magnesium",
+        "function",
+        "enzyme",
+        "toxicity",
+        "excess"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T22:13:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000208",
+      "kind": "definition",
+      "essentials": [
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Magnesium as the 'ultimate source of all biological energy.' Magnesium is the metal atom at the center of chlorophyll in every green plant, driving photosynthesis -- the process that stores the sun's energy as the chemical 'solar currency' feeding all plants, animals, and humans. Wallach calls magnesium, the source of the deep green of plants, the ultimate source of all biological energy.",
+      "verbatim": "It is also the metallic atom found in\nchlorophyll of all green plants, which plays an essential role\nin photosynthesis, the photochemical process that converts the\nsun’s solar energy into a stored “solar currency” for a source\nof chemical energy for all plants and all animals and humans.\nMagnesium, the source of the deep green color of plants, is the\nultimate source of all biological energy!",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 170,
+        "screenshot": 97,
+        "kindle_location": null,
+        "char_offset": 307077
+      },
+      "dose": null,
+      "tags": [
+        "magnesium",
+        "chlorophyll",
+        "photosynthesis",
+        "energy"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T22:13:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000209",
+      "kind": "mechanism",
+      "essentials": [
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "How well magnesium is absorbed. Absorption ranges from 24% to 85%: metallic sources of magnesium are absorbed least, and plant-derived colloidal mineral sources most (a recurring Wallach theme). Vitamin D has no effect on magnesium absorption; dietary fat, phytates, and calcium reduce it; and high-performance athletes lose a considerable amount of magnesium in sweat.",
+      "verbatim": "The rate of absorption of magnesium ranges from 24\nto 85%. The lesser absorption rate is for metallic sources of\nMg, the higher rates of absorption are associated with plant\nderived colloidal mineral sources. Vitamin D has no effect\non Mg absorption. The presence of dietary fat, phytates, and\ncalcium reduces the efficiency of absorption. High performance\nathletes lose a considerable amount of Mg in sweat.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 171,
+        "screenshot": 98,
+        "kindle_location": null,
+        "char_offset": 309309
+      },
+      "dose": null,
+      "tags": [
+        "magnesium",
+        "absorption",
+        "colloidal",
+        "bioavailability"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T22:13:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000210",
+      "kind": "toxicity_sign",
+      "essentials": [
+        "magnesium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Magnesium's reference intake and safety ceiling. Wallach cites the RDA (Recommended Dietary Allowance) -- 350 mg/day for adult men, 300 mg/day for women, and 450 mg/day for pregnant and lactating women -- and notes that, with healthy kidneys, there is no evidence of toxicity even at supplemental doses up to 6,000 mg/day. (The RDA is the government reference figure Wallach reports, not his own recommended target.)",
+      "verbatim": "The RDA for Mg is 350 mg/day for adult males, 300\nmg/day for adult females, and 450 mg/day for pregnant and\nlactating females. If the kidneys are healthy, there is no evidence\nof toxicity at supplemental doses of up to 6,000 mg/day.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 171,
+        "screenshot": 98,
+        "kindle_location": null,
+        "char_offset": 309719
+      },
+      "dose": null,
+      "tags": [
+        "magnesium",
+        "rda",
+        "safety",
+        "toxicity-ceiling"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T22:13:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

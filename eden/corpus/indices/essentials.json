@@ -315,16 +315,19 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 79,
+    "claim_count": 86,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
         "WAL-CLM-EPIGEN-000098",
+        "WAL-CLM-IMMORT-000204",
+        "WAL-CLM-IMMORT-000205",
         "WAL-CLM-LETS-000016",
         "WAL-CLM-RARE-000172",
         "WAL-CLM-RARE-000275"
       ],
       "definition": [
+        "WAL-CLM-IMMORT-000208",
         "WAL-CLM-RARE-000168",
         "WAL-CLM-RARE-000169",
         "WAL-CLM-RARE-000173"
@@ -337,10 +340,15 @@
         "WAL-CLM-EPIGEN-000133",
         "WAL-CLM-LETS-000056"
       ],
+      "interaction": [
+        "WAL-CLM-IMMORT-000206"
+      ],
       "mechanism": [
         "WAL-CLM-DDDL-000053",
         "WAL-CLM-DDDL-000082",
         "WAL-CLM-DDDL-000087",
+        "WAL-CLM-IMMORT-000207",
+        "WAL-CLM-IMMORT-000209",
         "WAL-CLM-RARE-000098",
         "WAL-CLM-RARE-000099",
         "WAL-CLM-RARE-000170",
@@ -407,6 +415,9 @@
         "WAL-CLM-RARE-000281",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
+      ],
+      "toxicity_sign": [
+        "WAL-CLM-IMMORT-000210"
       ]
     },
     "deficiency_signs": [
@@ -546,6 +557,7 @@
       "dyspepsia",
       "enuresis",
       "epilepsy",
+      "failure_to_thrive",
       "fractures",
       "gingivitis",
       "growing_pains",
@@ -622,6 +634,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -1025,7 +1038,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 101,
+    "claim_count": 102,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1054,6 +1067,7 @@
         "WAL-CLM-LETS-000046"
       ],
       "interaction": [
+        "WAL-CLM-IMMORT-000206",
         "WAL-CLM-RARE-000084",
         "WAL-CLM-RARE-000086"
       ],
