@@ -453,7 +453,7 @@
         "period": "daily",
         "form": null,
         "duration": null,
-        "for_condition": "pregnancy preparation and nursing"
+        "for_condition": null
       },
       "tags": [
         "b12-dose",

@@ -2894,7 +2894,8 @@
       "id": "WAL-CLM-IMMORT-000084",
       "kind": "dose",
       "essentials": [
-        "cobalt"
+        "cobalt",
+        "vitamin-b12"
       ],
       "other_substances": [],
       "conditions": [],
@@ -2910,7 +2911,14 @@
         "kindle_location": null,
         "char_offset": 233434
       },
-      "dose": null,
+      "dose": {
+        "amount": "250-400",
+        "unit": "mcg",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": null
+      },
       "tags": [
         "cobalt",
         "vitamin-b12",

@@ -5794,7 +5794,7 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 32,
+    "claim_count": 33,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000040",
@@ -5802,6 +5802,7 @@
         "WAL-CLM-RARE-000238"
       ],
       "dose": [
+        "WAL-CLM-IMMORT-000084",
         "WAL-CLM-LETS-000072",
         "WAL-CLM-RARE-000014"
       ],
@@ -5991,6 +5992,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]

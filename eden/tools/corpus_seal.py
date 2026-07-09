@@ -17,6 +17,7 @@ What it does, in order:
 
 All hashes are over LF-normalized UTF-8 content (clone/CRLF-stable; see .gitattributes).
 """
+import argparse
 import datetime
 import hashlib
 import json
@@ -51,7 +52,27 @@ def seal_one(p: Path) -> str:
     return h
 
 
+def _guard_cli() -> None:
+    """USER-ONLY arg guard: a bare invocation seals; ANY argument is rejected.
+
+    corpus_seal has NO options — it always seals the whole corpus. Historically it
+    ignored argv entirely, so `corpus_seal.py --help` (an agent probing for usage) SILENTLY
+    RAN a full seal (2026-07-08 incident). argparse now prints real help on -h/--help and
+    errors on any unknown flag, so only a deliberate BARE run can seal. Runs once at CLI
+    start — zero cost to any build/derive/runtime path, and the normal seal command is
+    unchanged.
+    """
+    argparse.ArgumentParser(
+        prog="corpus_seal.py",
+        description="USER-ONLY. Seals eden/corpus as the new canonical truth anchor: promotes "
+                    "drafts/claims-<book>.draft.json -> claims/, re-derives indices, bumps "
+                    "knowledge_version, writes *.golden.sha256, then runs corpus_verify as the "
+                    "final gate. Takes NO options — a bare run seals; any argument is rejected.",
+    ).parse_args()
+
+
 def main() -> int:
+    _guard_cli()
     # 1. gate on always-valid checks. Skip #8 (index-is-clean-derivation): step 3
     # below re-derives every index from the promoted shards, so a #8 mismatch here is
     # EXPECTED whenever corpus_derive.py changed or a draft edits a mapping. The FINAL
