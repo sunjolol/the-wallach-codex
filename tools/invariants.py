@@ -1854,6 +1854,79 @@ def check_mining_coverage_accounted():
     return True, "book mining coverage accounted -- " + "; ".join(info)
 
 
+def check_substance_triage_accounted(buffer_path=None, coverage_path=None):
+    """Phase-G task-zero -- the substance triage buffer's accounting gate (design LOCKED
+    2026-07-08, memory substance-registry-and-triage-buffer). references_resolve reds on any claim
+    other_substances slug not registered in eden/catalog/nutrients.json. Its relief valve is
+    eden/tools/substance-triage-buffer.json: a substance with no registry slug is PARKED there with
+    source context and left out of the claim FOR NOW, so mining never has to choose between
+    typo-polluting the registry and silently dropping a substance. This gate keeps that pile
+    un-forgettable WITHOUT trusting it as a source (the single registry stays nutrients.json -- no
+    drift): while a book is mining_status:'incomplete' its pending entries are informational (never
+    RED, exactly as mining_coverage_accounted stays quiet on incomplete books), but the moment a
+    book is flagged COMPLETE in eden/tools/mining-coverage.json, every entry for it MUST be
+    resolved/rejected with a written reason -- an unresolved pending entry under a complete book is
+    RED. Also structural: valid JSON, unique ids, required fields, a terminal status carries a
+    non-empty resolution. Bootstrap-safe (missing buffer = pass). Truth-anchored on the buffer x the
+    coverage ledger, recomputed each run -- the buffer is NEVER read for resolution, only accounting."""
+    buffer_path = buffer_path or (ROOT / "eden" / "tools" / "substance-triage-buffer.json")
+    coverage_path = coverage_path or (ROOT / "eden" / "tools" / "mining-coverage.json")
+    if not buffer_path.exists():
+        return True, "substance-triage-buffer.json missing (bootstrap-guard)"
+    try:
+        data = json.loads(buffer_path.read_text(encoding="utf-8"))
+    except Exception as e:
+        return False, f"substance-triage-buffer.json is not valid JSON: {e}"
+    entries = data.get("entries", [])
+    if not isinstance(entries, list):
+        return False, "substance-triage-buffer.json 'entries' must be a list"
+    # complete books (teeth fire ONLY here) -- mirrors mining_coverage_accounted's completion semantics
+    complete = set()
+    if coverage_path.exists():
+        try:
+            cov = json.loads(coverage_path.read_text(encoding="utf-8")).get("books", {})
+            complete = {b for b, v in cov.items() if v.get("mining_status") == "complete"}
+        except Exception as e:
+            return False, f"mining-coverage.json unreadable for triage accounting: {e}"
+    REQUIRED = ("id", "raw_name", "book_id", "locator", "context", "claim_id", "noticed_at",
+                "status", "resolution")
+    viol, seen, per_book_pending = [], set(), {}
+    for i, e in enumerate(entries):
+        if not isinstance(e, dict):
+            viol.append(f"entry #{i} is not an object")
+            continue
+        missing = [k for k in REQUIRED if k not in e]
+        if missing:
+            viol.append(f"entry {e.get('id', '#' + str(i))} missing field(s): {missing}")
+            continue
+        eid = e["id"]
+        if eid in seen:
+            viol.append(f"duplicate id {eid}")
+        seen.add(eid)
+        status = e["status"]
+        if status not in ("pending", "resolved", "rejected"):
+            viol.append(f"entry {eid} has invalid status '{status}'")
+            continue
+        if status != "pending" and not str(e.get("resolution", "")).strip():
+            viol.append(f"entry {eid} is {status} but carries no resolution reason")
+        if status == "pending":
+            per_book_pending[e["book_id"]] = per_book_pending.get(e["book_id"], 0) + 1
+            if e["book_id"] in complete:
+                viol.append(f"entry {eid} ('{e['raw_name']}') is PENDING but its book "
+                            f"'{e['book_id']}' is flagged mining_status:complete -- resolve or reject "
+                            f"it before the book seals (eden/tools/substance_triage.py resolve)")
+    if viol:
+        return False, ("substance triage buffer not accounted -- " + "; ".join(viol[:6])
+                       + (" ..." if len(viol) > 6 else ""))
+    total = len(entries)
+    pending = sum(1 for e in entries if e.get("status") == "pending")
+    if total == 0:
+        return True, "substance triage buffer empty -- no parked substances (bootstrap-clean)"
+    info = ", ".join(f"{b}:{n}" for b, n in sorted(per_book_pending.items())) or "none pending"
+    return True, (f"substance triage buffer accounted -- {total} entr{'y' if total == 1 else 'ies'}, "
+                  f"{pending} pending [{info}] (all pending books still incomplete)")
+
+
 # ---------------------------------------------------------------------------
 # Charter R3 / R4 gates (Phase D-c, 2026-07-05) -- citations, prose, dedup
 # ---------------------------------------------------------------------------
@@ -2653,6 +2726,14 @@ INVARIANTS = [
         truth_anchor="sealed claim locator.char_offset -> nearest ===== Screenshot(N) ===== marker in the book .txt (one text-position basis, NOT the inconsistent locator.screenshot), re-derived each run vs the book's marker set; reviewed-empty reasons per the exceptions_justified pattern",
         severity="critical",
         lesson_ref="Proposal A (2026-07-07) -- Luneth: silent under-mining (DDDL Appendix-B long tail, Immortality 0 claims for ~40 sessions) forced whole-book re-mines; give book mining the same coverage-accounting leg the product label-gate gives products, asserted only at completion so it never falsely reds the legitimately-incomplete corpus; memory dddl-undermined-remine + immortality-mining-policy",
+    ),
+    Invariant(
+        name="substance_triage_accounted",
+        description="the source-anchored substance triage buffer (eden/tools/substance-triage-buffer.json) is accounted for: valid JSON, unique ids, required fields, a resolved/rejected entry carries a reason, and -- the teeth -- NO entry stays 'pending' under a book flagged mining_status:'complete' in mining-coverage.json. Pending entries under an INCOMPLETE book are informational only. The relief valve for references_resolve's strict substance half; NEVER trusted as a source (registry stays nutrients.json). Missing/empty buffer = pass",
+        check_fn=check_substance_triage_accounted,
+        truth_anchor="eden/tools/substance-triage-buffer.json x the mining-coverage.json completion flags, recomputed each run -- the gate NEVER reads the buffer for resolution (single registry, no drift), only for accounting; no stale-to-stale comparison",
+        severity="critical",
+        lesson_ref="Phase-G task-zero (2026-07-09) -- Luneth: make the honest path the path of LEAST resistance; a legitimate low-effort third exit (park the unmatched substance) drains the incentive to typo-pollute the registry or silently under-capture. Mirrors mining_coverage_accounted (teeth at completion, quiet while incomplete). memory: substance-registry-and-triage-buffer",
     ),
     Invariant(
         name="graphics_integrity",
