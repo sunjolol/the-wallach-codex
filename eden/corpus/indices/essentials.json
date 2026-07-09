@@ -637,11 +637,11 @@
       ],
       "definition": [
         "WAL-CLM-RARE-000204",
-        "WAL-CLM-RARE-000205"
+        "WAL-CLM-RARE-000205",
+        "WAL-CLM-RARE-000207"
       ],
       "dose": [
-        "WAL-CLM-LETS-000061",
-        "WAL-CLM-RARE-000207"
+        "WAL-CLM-LETS-000061"
       ],
       "interaction": [
         "WAL-CLM-RARE-000206",

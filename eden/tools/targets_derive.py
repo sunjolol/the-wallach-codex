@@ -117,9 +117,13 @@ def _parse_amount(a):
     if isinstance(a, (int, float)):
         return float(a), None
     if isinstance(a, str):
-        m = re.match(r"\s*([\d.]+)\s*[-–]\s*([\d.]+)", a)
+        # Ranges AND singles can carry a thousands comma ("1,000-1,500"). The range branch
+        # must accept a comma in BOTH digit groups and strip it before float() — otherwise the
+        # old [\d.]+ range pattern failed on the comma and control fell through to the single
+        # branch, which silently kept only the low end ("1,000") and dropped the "1,500" high.
+        m = re.match(r"\s*([\d.,]+)\s*[-–]\s*([\d.,]+)", a)
         if m:
-            return float(m.group(1)), float(m.group(2))
+            return float(m.group(1).replace(",", "")), float(m.group(2).replace(",", ""))
         m = re.match(r"\s*([\d.,]+)", a)
         if m:
             return float(m.group(1).replace(",", "")), None

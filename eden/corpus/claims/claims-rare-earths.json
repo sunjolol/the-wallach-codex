@@ -7326,7 +7326,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000207",
-      "kind": "dose",
+      "kind": "definition",
       "essentials": [
         "phosphorus"
       ],
@@ -7334,7 +7334,7 @@
       "conditions": [],
       "symptoms": [],
       "claim_text": "Wallach gives the average adult dietary phosphorus intake as 1,000–1,500 mg per day. Absorption depends heavily on form: metallic phosphorus is absorbed at only about 3–5 percent in adults (up to 8–12 percent in infants), chelated forms at 40–50 percent, and colloidal phosphorus up to 98 percent — and optimal absorption of metallic and chelated phosphorus occurs at a calcium-to-phosphorus ratio of 1:1.",
-      "verbatim": "In adults and older children, the absorption of metallic P is limited to about three to five percent and as high as eight to 12 percent in infants. Mixed dietary sources of P (chelated forms) may be absorbed at the rate of 40 to 50 %.",
+      "verbatim": "The average adult human dietary intake of P is 1,000 to 1,500 mg/day. In adults and older children, the absorption of metallic P is limited to about three to five percent and as high as eight to 12 percent in infants. Mixed dietary sources of P (chelated forms) may be absorbed at the rate of 40 to 50 %. Optimal absorption of metallic and chelated P occurs when the Ca:P ratio is 1:1. Colloidal P is absorbed up to 98 %.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -7342,16 +7342,9 @@
         "page": 373,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 889415
+        "char_offset": 889345
       },
-      "dose": {
-        "amount": "1,000-1,500",
-        "unit": "mg",
-        "period": "daily",
-        "form": null,
-        "duration": null,
-        "for_condition": null
-      },
+      "dose": null,
       "tags": [
         "phosphorus",
         "intake",
