@@ -4,6 +4,8 @@ _The complete plan. Built and verified in full BEFORE any implementation (Luneth
 
 **STATUS: LOCKED IN FULL — 2026-07-05.** All 8 sections verified by Luneth. Implementation begins at **Phase A** (Section 7) — the governance reset + noise purge, which also executes the Section 8 operating-file audit. Phase C's honest-gap trade-off (Wallach-only targets, empty where no claim exists yet) explicitly accepted.
 
+**EXTENDED 2026-07-09** (pending Luneth lock): Section 7's remaining phases (G book-mining, H, I) were expanded into the vein-selective mining → Search-validation → seal → app-completion → design roadmap; the mining HOW is `.claude/rules/mining-veins.md`.
+
 _Status legend: `[DRAFT]` written, awaiting Luneth verification · `[LOCKED]` verified, may be built against · `[OPEN Qn]` a decision that blocks locking._
 
 ---
@@ -252,9 +254,17 @@ The sequence from now → the new structure. **Rules:** every phase ends with th
 - **Phase D — Collapse the rotten layer (§6).** Only after C's generated data is verified correct: DELETE `knowledge/` + the inline embeds; `dashboard.html` → pure shell; relocate `design-wisdom/` + `fringe-knowledge/`. Add `citations_reference_registry`, `prose_contained` (verbatim = claim pointer, summary = prose store per Q3), `no_hand_duplicated_canonical`.
 - **Phase E — Per-surface finalize (§5).** Update views to the new derived data (coverage/goals); Knowledge already clean; scanner wall + `scanner_user_items_marked`. *(Legacy sever already done in Phase A — no legacy fallback remains.)* Per-surface probes + visual sign-off.
 - **Phase F — Pillar 2: Youngevity Products — UNDERWAY (Luneth supplies label images; Claude vision-extracts).** `eden/products/` built (products.json + prices.json + warnings.json + README + `products_verify`); extracting 204 labels alphabetically in batches (14 products done, Batches 1–4, as of 2026-07-06). Remaining: finish extraction → rebuild `catalog/nutrients.json` registry → `references_resolve` substance-half → `products_derive` (best-supplements + coverage composition math + cost-per-nutrient, all 91 essentials) → seal. Full process + schema: `eden/products/README.md` + `chronicle/next-chunk.md`.
-- **Phase G — Resume book mining into the clean pipeline.** With structure + gates solid, finish the under-mined books (DDDL re-mine, Immortality, …) via the gated mine pipeline — every claim lands proven (R5). Continuous, board green per batch.
-- **Phase H — Search** (retrieval-first, §5.5) — the offline helper agent over the corpus.
-- **Phase I — Journey** (last, §5.6) **+ distribution** (portable offline browser, §5.7).
+- **Phase G — Book mining (vein-selective) → Search validation → seal.** _Expanded 2026-07-09 (pending Luneth lock); mining HOW: `.claude/rules/mining-veins.md`._ Finish the corpus by VEINS, not a full-page sweep — mine the rich regions 100%, review-and-disposition the filler with a reason, one seal per vein. Honesty is gated by `mining_coverage_accounted` (a book flips to `complete` only when every page/section is claim-bearing OR reviewed-empty+reason). Sub-phases:
+  - **G-1 ✓** Epigenetics dose table · **G-2 ✓** glossary (2026-07-09).
+  - **G-3** — adopt the vein doctrine; seed `eden/tools/mining-coverage.json` vein-maps for the remaining books.
+  - **G-4** — finish **Immortality**: resume the element encyclopedia at `La-Lanthanum` (char 299,378) through Zr (canon elements tier-1; the ~21 non-canon inert/radioactive → search-only or reviewed-empty), then scan Ch 4–12 narrative for other veins.
+  - **G-5** — full **DDDL** re-mine (as a new book, vein-selective; source already pristine).
+  - **G-6** — the **3 newly-bought books**: Luneth reads + photographs the chapters he wants; Claude in-houses them (adding each `book_id` to the sealed `books-meta` allowlist with year) and mines the photographed veins.
+  - **G-7 — build Search FIRST as the corpus's completeness harness** (offline helper §5.5; resolve D4 = retrieval-first). Search runs over the finished content, surfaces gaps / thin areas, and those feed back into targeted re-mining (loop to G-4/5/6) UNTIL Search is robust + complete enough that no re-mine is needed. _(Luneth 2026-07-09: Search validates the corpus BEFORE we seal it.)_
+  - **G-8 — mining close-out + seal-up:** the deferred linguistic/logic sweep, finish source-purification, resolve the 3 parked claim notes + the substance-triage buffer, full R1–R9 re-audit → flip the books `complete` in the ledger → **book mining DONE + sealed.**
+  - _Deferred: **Hell's Kitchen** — not in-housed yet; re-open later as its own mini-pass (Luneth's call)._
+- **Phase H — App completion (build the still-stub surfaces).** Scanner (⌘3, §5.4), Regimen (⌘2, §5.3), Journey (§5.6) built to spec — one surface to 100% before the next, render probes + Luneth visual sign-off each. Plus the uncoded demo pages: the periodic-table **element-click detail** view + the **product detail panel** (list all products; click a product / essential-chip / condition → full Youngevity detail); and wire every main button still lacking functionality.
+- **Phase I — Final design touch-up (LAST) + distribution.** Luneth's many small template refinements (`style_diff`-driven; `design-system.css` is sealed → sign-off per change), one global styling pass, the deferred legal/copyright/a11y/i18n pass, and the portable permanently-offline browser wrapper (§5.7).
 
 ### 7.1 · The one sequencing risk (flagged, not hidden)
 Phase C's Wallach-only targets depend on the corpus having a maintenance-dose claim per essential. Where it doesn't yet, the target is an **honest gap** ("no Wallach target stated") until Phase G mining fills it. This is correct per R2 (no Youngevity fallback) — so the coverage UI's "no target" states are **expected, not a bug**. This is the trade we accept to keep the cornerstone intact.
