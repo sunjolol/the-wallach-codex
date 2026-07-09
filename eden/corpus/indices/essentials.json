@@ -3874,10 +3874,11 @@
     "display_name": "Lanthanum",
     "canon_slug": "lanthanum",
     "category": "mineral",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-EPIGEN-000095",
+        "WAL-CLM-IMMORT-000198",
         "WAL-CLM-RARE-000157",
         "WAL-CLM-RARE-000158"
       ]
@@ -3885,11 +3886,13 @@
     "deficiency_signs": [],
     "conditions_treated": [
       "candidiasis",
-      "chronic_fatigue"
+      "chronic_fatigue",
+      "chronic_fatigue_syndrome"
     ],
     "interacts_with": [],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },
@@ -3897,11 +3900,14 @@
     "display_name": "Lithium",
     "canon_slug": "lithium",
     "category": "mineral",
-    "claim_count": 21,
+    "claim_count": 25,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000079",
         "WAL-CLM-EPIGEN-000096",
+        "WAL-CLM-IMMORT-000200",
+        "WAL-CLM-IMMORT-000201",
+        "WAL-CLM-IMMORT-000202",
         "WAL-CLM-RARE-000042",
         "WAL-CLM-RARE-000163"
       ],
@@ -3912,6 +3918,9 @@
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000129",
         "WAL-CLM-RARE-000165"
+      ],
+      "dose": [
+        "WAL-CLM-IMMORT-000199"
       ],
       "interaction": [
         "WAL-CLM-RARE-000167"
@@ -3968,6 +3977,7 @@
       }
     ],
     "conditions_treated": [
+      "adhd",
       "anorexia",
       "arthritis",
       "autism",
@@ -4011,6 +4021,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]

@@ -6984,6 +6984,238 @@
       "extracted_at": "2026-07-04T23:55:14+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000198",
+      "kind": "mechanism",
+      "essentials": [
+        "lanthanum"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "chronic_fatigue_syndrome"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach's theory linking lanthanum to chronic fatigue. The yeast Candida albicans accumulates lanthanum at 370 ppm (parts per million) per day; Wallach theorizes this is how C. albicans produces a debilitating, energy-sapping 'chronic fatigue' disease -- by 'stealing' lanthanum from its victim. He also notes lanthanum's biological potency: at just 0.32 ppm it stimulates the growth of the protozoa Blepherisma and Tetrahymena pyriformis and doubles their lifespan.",
+      "verbatim": "Notably the yeast Candida albicans accumulates\nlanthanum at the rate of 370 ppm/day. It is theorized that\nthis is how C. albicans produces a debilitating, energy sapping\n“chronic fatigue” disease, by “stealing” lanthanum from the\nvictim.\n\nThe growth of the protozoa Blepherisma and Tetrahymena\npyriformis is stimulated and their life span doubled by the\npresence of the rare earth lanthanum at concentrations of 0.32\nppm.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 166,
+        "screenshot": 96,
+        "kindle_location": null,
+        "char_offset": 299756
+      },
+      "dose": null,
+      "tags": [
+        "lanthanum",
+        "rare-earth",
+        "chronic-fatigue",
+        "candida"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T21:18:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000199",
+      "kind": "dose",
+      "essentials": [
+        "lithium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach's lithium supplement dose. Chelated lithium supplemented at 1,000-2,000 mcg (1-2 mg) per day produces a dose-related rise in hair-lithium levels -- climbing after four weeks, leveling off by three months, and falling back to baseline within two months of stopping. Wallach notes this response is not seen with metallic lithium carbonate.",
+      "verbatim": "Chelated lithium supplemented at 1,000 to 2,000 ug/day causes a dose related increase in hair lithium levels. Hair\nlithium levels increased after four weeks of supplementation\nand leveled off and became stationary after three months.\nWhen the lithium supplementation was stopped, hair lithium\nlevels dropped to presupplement values in two months. This\nscenario is not seen with the supplementation of metallic\nlithium carbonate.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 167,
+        "screenshot": 96,
+        "kindle_location": null,
+        "char_offset": 302967
+      },
+      "dose": {
+        "amount": "1,000 to 2,000",
+        "unit": "mcg",
+        "period": "daily",
+        "form": "chelated",
+        "duration": null,
+        "for_condition": "lithium supplementation (hair-lithium response)"
+      },
+      "tags": [
+        "lithium",
+        "dose",
+        "chelated",
+        "daily-intake"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T21:18:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000200",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "lithium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "depression",
+        "bipolar_disorder",
+        "adhd",
+        "hyperactivity",
+        "autism",
+        "violent_behavior",
+        "criminal_behavior",
+        "blind_rage"
+      ],
+      "symptoms": [],
+      "claim_text": "Lithium deficiency and mental/behavioral health. Wallach frames depression and manic-depression (bipolar disorder) as, at root, a lithium deficiency aggravated by high sugar -- noting conventional psychiatry itself treats depression with the trace mineral lithium, and lithium carbonate is standard for severe bipolar disorder. He lists depression, manic-depression, hyperactivity, attention-deficit disorders (ADD/ADHD), certain forms of autism, and a spectrum of aggression, rage, and violent or criminal behavior as hallmarks of a lithium deficiency worsened by high sugar or alcohol intake.",
+      "verbatim": "In humans, manic depression, depression, “bi-polar”\ndisease, rage, road rage, “going postal,” Dr. Jekyll/Mr. Hyde\nbehavior, hyperactivity, ADD, ADHD, certain forms of autism\nand “bad seeds” are all hallmarks of a lithium deficiency\naggravated by a high sugar or alcohol intake.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 167,
+        "screenshot": 96,
+        "kindle_location": null,
+        "char_offset": 302688
+      },
+      "dose": null,
+      "tags": [
+        "lithium",
+        "deficiency",
+        "depression",
+        "bipolar",
+        "adhd",
+        "autism",
+        "behavior"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T21:18:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000201",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "lithium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "infertility"
+      ],
+      "symptoms": [],
+      "claim_text": "What lithium deficiency does in animal studies. A deficiency of lithium produces reproductive failure, infertility, reduced growth rate, shortened life expectancy, and behavioral problems.",
+      "verbatim": "Animal studies show that a deficiency of lithium\nresults in reproductive failure, infertility, reduced growth\nrate, shortened life expectancy, and behavioral problems.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 167,
+        "screenshot": 96,
+        "kindle_location": null,
+        "char_offset": 302519
+      },
+      "dose": null,
+      "tags": [
+        "lithium",
+        "deficiency",
+        "animal-study",
+        "infertility",
+        "reproduction"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T21:18:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000202",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "lithium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "criminal_behavior",
+        "violent_behavior"
+      ],
+      "symptoms": [],
+      "claim_text": "Lithium levels track with violent and criminal behavior. Wallach reports that normal controls had almost 400 times more hair lithium than violent criminals sampled across California, Florida, Texas, and Oregon -- evidence he ties to lithium's role in curbing aggression and criminal behavior. He cautions that the daily lithium intake estimated by the EPA (Environmental Protection Agency), 650-3,100 mcg, overstates what is usable, since much dietary lithium is metallic and not necessarily bioavailable.",
+      "verbatim": "Normal controls showed almost 400 times more hair\nlithium than do the violent criminals from California, Florida,\nTexas and Oregon. The EPA estimated daily intake of lithium\nranges from 650 to 3,100 ug/day, however, much of the\ningested lithium is metallic and not necessarily biologically\navailable.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 168,
+        "screenshot": 97,
+        "kindle_location": null,
+        "char_offset": 303786
+      },
+      "dose": null,
+      "tags": [
+        "lithium",
+        "deficiency",
+        "criminal-behavior",
+        "violent-behavior",
+        "hair-analysis"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T21:18:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000203",
+      "kind": "definition",
+      "essentials": [
+        "lutetium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Lutetium, a canon rare-earth element. As the last lanthanide in the periodic table, lutetium is the hardest, heaviest, and one of the least abundant of the rare earths -- silvery-white and corrosion-resistant. It was discovered in 1907, independently, by the Austrian mineralogist Carl Auer von Welsbach and the French scientist Georges Urbain, and named for Lutetia, the ancient name of Paris.",
+      "verbatim": "As with most of the other rare earth metals, lutetium\nis silvery-white and corrosion-resistant. As the last lanthanide\nin the periodic table, it is the hardest and heaviest rare earth\nelement.\n\nLutetium is one of the least abundant of the rare\nearth elements. It was discovered in 1907 by the Austrian\nmineralogist Baron Carl Auer von Welsbach and the French\nscientist Georges Urbain as an impurity in a mineral sample\nthought to contain ytterbium.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 168,
+        "screenshot": 97,
+        "kindle_location": null,
+        "char_offset": 304410
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "lutetium",
+        "rare-earth",
+        "chemistry"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-09T21:18:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

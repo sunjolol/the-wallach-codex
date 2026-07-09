@@ -196,7 +196,7 @@
   },
   "adhd": {
     "display_name": "Adhd",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000106",
@@ -205,7 +205,8 @@
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-IMMORT-000088",
-        "WAL-CLM-IMMORT-000099"
+        "WAL-CLM-IMMORT-000099",
+        "WAL-CLM-IMMORT-000200"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
@@ -213,7 +214,8 @@
     },
     "essentials_involved": [
       "chromium",
-      "copper"
+      "copper",
+      "lithium"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -1424,7 +1426,7 @@
   },
   "autism": {
     "display_name": "Autism",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000106",
@@ -1433,7 +1435,8 @@
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000096",
         "WAL-CLM-IMMORT-000088",
-        "WAL-CLM-IMMORT-000099"
+        "WAL-CLM-IMMORT-000099",
+        "WAL-CLM-IMMORT-000200"
       ],
       "protocols": [
         "WAL-CLM-LETS-000151"
@@ -1719,7 +1722,7 @@
   },
   "bipolar_disorder": {
     "display_name": "Bipolar Disorder",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000018",
@@ -1729,6 +1732,7 @@
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000096",
         "WAL-CLM-IMMORT-000088",
+        "WAL-CLM-IMMORT-000200",
         "WAL-CLM-RARE-000163"
       ],
       "definitions": [
@@ -1948,12 +1952,13 @@
   },
   "blind_rage": {
     "display_name": "Blind Rage",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000107",
         "WAL-CLM-IMMORT-000088",
         "WAL-CLM-IMMORT-000099",
+        "WAL-CLM-IMMORT-000200",
         "WAL-CLM-RARE-000163",
         "WAL-CLM-RARE-000302"
       ],
@@ -3263,15 +3268,19 @@
   },
   "chronic_fatigue_syndrome": {
     "display_name": "Chronic Fatigue Syndrome",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-IMMORT-000198"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000221"
       ]
     },
     "essentials_involved": [
       "chromium",
-      "germanium"
+      "germanium",
+      "lanthanum"
     ],
     "other_substances_involved": [
       "blood-therapy",
@@ -3282,6 +3291,7 @@
       "urine-therapy"
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor"
     ]
   },
@@ -3876,7 +3886,7 @@
   },
   "criminal_behavior": {
     "display_name": "Criminal Behavior",
-    "claim_count": 7,
+    "claim_count": 9,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000018",
@@ -3884,6 +3894,8 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000107",
+        "WAL-CLM-IMMORT-000200",
+        "WAL-CLM-IMMORT-000202",
         "WAL-CLM-LETS-000008",
         "WAL-CLM-RARE-000302"
       ],
@@ -4251,7 +4263,7 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 43,
+    "claim_count": 44,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000018",
@@ -4268,6 +4280,7 @@
         "WAL-CLM-EPIGEN-000096",
         "WAL-CLM-EPIGEN-000098",
         "WAL-CLM-IMMORT-000088",
+        "WAL-CLM-IMMORT-000200",
         "WAL-CLM-LETS-000003",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000008",
@@ -6531,11 +6544,12 @@
   },
   "hyperactivity": {
     "display_name": "Hyperactivity",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-IMMORT-000088",
+        "WAL-CLM-IMMORT-000200",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-LETS-000016",
         "WAL-CLM-RARE-000163"
@@ -7240,7 +7254,7 @@
   },
   "infertility": {
     "display_name": "Infertility",
-    "claim_count": 24,
+    "claim_count": 25,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000005",
@@ -7249,6 +7263,7 @@
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000101",
         "WAL-CLM-IMMORT-000088",
+        "WAL-CLM-IMMORT-000201",
         "WAL-CLM-LETS-000011",
         "WAL-CLM-LETS-000030",
         "WAL-CLM-LETS-000036",
@@ -12900,7 +12915,7 @@
   },
   "violent_behavior": {
     "display_name": "Violent Behavior",
-    "claim_count": 8,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000018",
@@ -12909,6 +12924,8 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000107",
+        "WAL-CLM-IMMORT-000200",
+        "WAL-CLM-IMMORT-000202",
         "WAL-CLM-RARE-000163",
         "WAL-CLM-RARE-000302"
       ],
