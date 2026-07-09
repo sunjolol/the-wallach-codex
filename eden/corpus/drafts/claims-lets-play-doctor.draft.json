@@ -8773,10 +8773,10 @@
       "essentials": [],
       "other_substances": [],
       "conditions": [
-        "chilblains"
+        "hypothermia"
       ],
       "symptoms": [],
-      "claim_text": "Chilblains (hypothermia) is the lowering of body or limb temperature to subnormal levels long enough to approach frostbite, with severe numbness and possible loss of function; prevention is dressing properly for the weather. Wallach's treatment is rapid warming in warm water and/or warm enemas, and electric blankets if available (placed underneath as well as on top).",
+      "claim_text": "Hypothermia is the lowering of body or limb temperature to subnormal levels long enough to approach frostbite, with severe numbness and possible loss of function; prevention is dressing properly for the weather. Wallach's treatment is rapid warming in warm water and/or warm enemas, and electric blankets if available (placed underneath as well as on top).",
       "verbatim": "Treatment includes rapid warming in warm\nwater and/or warm enemas, electric blankets\nif available (underneath as well as on top).",
       "locator": {
         "book": "lets-play-doctor",

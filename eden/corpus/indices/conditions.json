@@ -3159,20 +3159,6 @@
       "lets-play-doctor"
     ]
   },
-  "chilblains": {
-    "display_name": "Chilblains",
-    "claim_count": 1,
-    "claims_by_role": {
-      "protocols": [
-        "WAL-CLM-LETS-000218"
-      ]
-    },
-    "essentials_involved": [],
-    "other_substances_involved": [],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
   "chills": {
     "display_name": "Chills",
     "claim_count": 1,
@@ -6952,6 +6938,20 @@
       "spring-adonis",
       "thyroid"
     ],
+    "books_cited": [
+      "lets-play-doctor"
+    ]
+  },
+  "hypothermia": {
+    "display_name": "Hypothermia",
+    "claim_count": 1,
+    "claims_by_role": {
+      "protocols": [
+        "WAL-CLM-LETS-000218"
+      ]
+    },
+    "essentials_involved": [],
+    "other_substances_involved": [],
     "books_cited": [
       "lets-play-doctor"
     ]
