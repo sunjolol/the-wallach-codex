@@ -59,6 +59,7 @@
 
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import essentialsTargetsData from '../../../data/essentials-targets-data.json';
+import regimenLabelLookup from '../../../data/regimen-label-lookup.json';
 import { emit, on } from '../core/events.js';
 import { resolveSlug } from '../core/nutrient-resolver.js';
 import {
@@ -224,7 +225,7 @@ function toMg(value: number, unit: string | undefined, slug?: string): { v: numb
   if (u === 'g' || u.startsWith('gram')) {
     return { v: value * 1000, u: 'mg' };
   }
-  return { v: value, u: 'mg' };  // 'mg' + 'mg RAE'/'mg NE' + unknown -> mg-family
+  return { v: value, u: 'mg' }; // 'mg' + 'mg RAE'/'mg NE' + unknown -> mg-family
 }
 
 /**
@@ -268,6 +269,57 @@ interface Delivery {
 
 const EMPTY_DELIVERY: Delivery = { totalMg: 0, totalIU: 0, sources: [] };
 
+// ─── Live-composition auto-heal (memory: auto-heal-not-user-debug) ─────────
+// A regimen item stores a SNAPSHOT of its product's nutrients at add-time. If the
+// sealed Product DB later corrects a value, that snapshot goes stale and the user
+// would have to re-add the item to pick up the fix. Instead: for any item that came
+// from the catalog (NOT a user-scanned label) whose name still matches a live
+// product, we re-read the CURRENT composition from the SAME vault the add-picker
+// uses (regimen-label-lookup) at compute time, so the number self-corrects on the
+// next render with no re-adding. The match is EXACT on the lowercased canonical
+// name -- addItem (views/regimen.ts) stores label.name = the vault's canonical_name
+// verbatim, so a user-scanned custom item (or the base foundation, whose legacy
+// names differ) never collides and always keeps its own data.
+let cachedVaultNutrients: Map<string, unknown[]> | null = null;
+function vaultNutrientsByName(): Map<string, unknown[]> {
+  if (cachedVaultNutrients === null) {
+    const m = new Map<string, unknown[]>();
+    const root: unknown = (regimenLabelLookup as { products?: unknown }).products ?? regimenLabelLookup;
+    if (root !== null && typeof root === 'object') {
+      for (const value of Object.values(root as Record<string, unknown>)) {
+        for (const cand of (Array.isArray(value) ? value : [value])) {
+          if (cand !== null && typeof cand === 'object') {
+            const c = cand as { canonical_name?: unknown; name?: unknown; nutrients?: unknown };
+            const nm = typeof c.canonical_name === 'string'
+              ? c.canonical_name
+              : (typeof c.name === 'string' ? c.name : undefined);
+            if (nm !== undefined && Array.isArray(c.nutrients)) {
+              m.set(nm.toLowerCase(), c.nutrients);
+            }
+          }
+        }
+      }
+    }
+    cachedVaultNutrients = m;
+  }
+  return cachedVaultNutrients;
+}
+
+/**
+ * The composition to credit for an item: the LIVE vault nutrients when the item
+ * came from the catalog and still matches a product (auto-heal), else the item's
+ * own stored snapshot (user-scanned / custom items and the base foundation keep
+ * their data). No write-back -- the heal is a read-time re-resolution.
+ */
+export function liveNutrients(item: RegimenItem): unknown[] {
+  const snapshot = Array.isArray(item.label.nutrients) ? item.label.nutrients : [];
+  if (item.provenance === 'user_scanned') {
+    return snapshot;
+  }
+  const name = typeof item.label.name === 'string' ? item.label.name.toLowerCase() : '';
+  return vaultNutrientsByName().get(name) ?? snapshot;
+}
+
 /** Resolve an item's serving/dose scaling factor (override → item → label.servings → 1). */
 function readScale(item: RegimenItem, overrides: OverridesMap): number {
   const ov = overrides[String(item.id)];
@@ -306,7 +358,7 @@ function accumulate(
     const displayName = typeof item.label.name === 'string' && item.label.name !== ''
       ? item.label.name
       : 'Unknown';
-    const rawNutrients = Array.isArray(item.label.nutrients) ? item.label.nutrients : [];
+    const rawNutrients = liveNutrients(item);
     for (const raw of rawNutrients) {
       const parsed = RegimenNutrientSchema.safeParse(raw);
       if (!parsed.success) {
