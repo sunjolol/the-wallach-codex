@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 465 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 466 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-09 15:38 UTC-05:00 · note · mining
+Correction to G-3 entry lg_mrdyuisw_nasrv4: my claim that DDDL appendix labels were backwards in stale memory was FALSE - memory dddl-undermined-remine correctly named Appendix B the disease encyclopedia; the backwards guess was my own. Vein-map DATA correct; no data change.
+  ↳ Correcting a false statement in the immediately-prior G-3 entry (lg_mrdyuisw_nasrv4) and its build-log line + commit cd956010. I wrote that the DDDL appendix labels were "backwards in stale memory." That is FALSE and I am flagging it so the record is not poisoned. The memory dddl-undermined-remine correctly says "Appendix B is a ~200-entry A-Z disease encyclopedia." My char-offset check confirmed exactly that: Appendix B (604194-951228) = "Let's Play Doctor" materia-medica disease long-tail. The memory was right. What was actually backwards was my own transient initial hypothesis during investigation (I briefly guessed from the offsets that Appendix A might be the big disease section), which I corrected on inspection. I then mis-attributed my own corrected guess to the memory. No data change: the seeded vein-map in eden/tools/mining-coverage.json is correct as written — Appendix A (472203) = "The New Alphabet of Wellness" mineral/nutrient encyclopedia; Appendix B (604194-951228) = "Let's Play Doctor" disease materia-medica. Only the editorial "memory was backwards" characterization in the prior log/commit is wrong; this note supersedes it. Lesson: do not attribute my own mid-investigation wrong guess to a source that was actually correct.
 
 ## 2026-07-09 15:35 UTC-05:00 · milestone · mining
 Phase G-3: seeded char-offset-verified vein-maps into mining-coverage.json for all 6 books — the mining roadmap (where each vein is, its kind, tier-1 vs search-only, how far mined). schema_version 1->2; veins[] is a planning layer, not read by any gate.
@@ -804,7 +808,3 @@ SESSION 37 — CODIFY verbatim/log length rule: completeness > 500-char limit (h
 ## 2026-07-01 19:13 UTC-05:00 · round-close · corpus
 SESSION 37 — Book-OCR bucket: 3 OCR fixes via resnap (203 arrythmia, 369/287 page-markers)
   ↳ Luneth-authorized book-OCR fixes to LETS .txt. 203: 'ofcardiac arrythmia'->'of cardiac arrhythmia' (missing space + missing h) — verbatim now names cardiac_arrhythmia with NO extend. 369 morning_sickness + 287 goiter: removed stray page-numbers (150, 127) that OCR had inserted mid-word into the section headings (oc-[150]-curs, ex-[127]-clude; also elude->clude), then vb_apply heading-extended each to name its condition. Pipeline: safe_write book -> corpus_resnap --write --fix (272 relocated, 1 healed, 0 broken) -> corpus_extract finalize (rebuild draft) -> vb_apply 369+287 -> reseal kv231 -> embed -> build -> invariants 32/32 -> render_probe_knowledge PASS. violations 234->231, LETS 175->172, orphans 67->65.
-
-## 2026-07-01 18:46 UTC-05:00 · round-close · corpus
-SESSION 37 — LETS verbatim FINDABLE campaign, 3rd increment: 20 clean FINDABLE extends
-  ↳ Extended 20 LETS Ch10 materia-medica verbatims back to their ALL-CAPS section heading (or forward to the naming sentence) so each names its mapped condition. Total verbatim-names-condition violations 258->234, LETS 199->175, FINDABLE 88->64; orphans 67 (not up); resealed kv 230; board 32/32; render_probe_knowledge PASS. Claims: 126 aids, 140 anorexia(+nervosa), 151 autism, 160 birth_defects, 193+200 cancer, 252 vaginitis, 257 dyslexia(keep_unnamed hyperactivity), 260 earache/tonsillitis, 303 hoarseness/laryngitis, 317 infarction/stroke/heart_attack, 354 rubella, 375 nasal_catarrh, 379 neuralgia/bells_palsy/neuropathy, 396 parkinsonism, 406 labor, 414 radial_nerve_palsy, 446 teeth_discoloration, 465 parasites, 129 allergies. 129+396 got near-zero-loss end-trims to fit <=500.
