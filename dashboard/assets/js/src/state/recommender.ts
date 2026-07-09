@@ -129,3 +129,35 @@ export function hasSources(slug: string): boolean {
   const entry = DATA.essentials[slug];
   return entry !== undefined && entry.candidates.length > 0;
 }
+
+// ─── Product → delivered-essentials index (for the Products-tab search) ──────
+
+let productEssentialsCache: Map<string, string[]> | null = null;
+
+/**
+ * product_id → the canon essential slugs it delivers, inverted from the recommender
+ * data (the quantified candidates). Powers the Products-tab search index so a
+ * nutrient / trace-mineral query surfaces every product that carries it — including
+ * the ones delivered THROUGH a blend (e.g. boron, vanadium) that never appear in the
+ * printed label text. Canonical + auto-widening: as composition mining adds candidates,
+ * the search index grows with zero view changes. Memoized (the data is immutable).
+ */
+export function essentialSlugsByProduct(): Map<string, string[]> {
+  if (productEssentialsCache !== null) {
+    return productEssentialsCache;
+  }
+  const m = new Map<string, string[]>();
+  for (const [slug, entry] of Object.entries(DATA.essentials)) {
+    for (const c of entry.candidates) {
+      const arr = m.get(c.product_id);
+      if (arr === undefined) {
+        m.set(c.product_id, [slug]);
+      }
+      else {
+        arr.push(slug);
+      }
+    }
+  }
+  productEssentialsCache = m;
+  return m;
+}

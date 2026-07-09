@@ -10,7 +10,7 @@
  */
 
 import { describe, expect, it } from 'vitest';
-import { hasSources, rankSources } from './recommender.js';
+import { essentialSlugsByProduct, hasSources, rankSources } from './recommender.js';
 
 const SLUG = 'selenium'; // 33 quantified vault sources — a stable, well-populated essential
 
@@ -64,5 +64,29 @@ describe('recommender: cost-per-nutrient ranking', () => {
     expect(rankSources('___not-an-essential___')).toEqual([]);
     expect(hasSources('___not-an-essential___')).toBe(false);
     expect(hasSources(SLUG)).toBe(true);
+  });
+});
+
+describe('recommender: product → delivered-essentials index', () => {
+  it('inverts the data so a product lists every essential it delivers', () => {
+    const idx = essentialSlugsByProduct();
+    expect(idx.size).toBeGreaterThan(0);
+    // Every (slug → product) edge in the ranking must appear in the inverted (product → slug) index.
+    const someSlug = rankSources(SLUG);
+    expect(someSlug.length).toBeGreaterThan(0);
+    for (const r of someSlug) {
+      expect(idx.get(r.productId)).toContain(SLUG);
+    }
+  });
+
+  it('surfaces trace minerals delivered through blends (boron), not just labeled rows', () => {
+    const idx = essentialSlugsByProduct();
+    // boron has quantified vault sources; each must be reachable by the "boron" query.
+    const boronProducts = [...idx.entries()].filter(([, slugs]) => slugs.includes('boron'));
+    expect(boronProducts.length).toBeGreaterThan(0);
+  });
+
+  it('is memoized — returns a stable reference', () => {
+    expect(essentialSlugsByProduct()).toBe(essentialSlugsByProduct());
   });
 });

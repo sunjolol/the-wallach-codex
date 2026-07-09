@@ -45542,6 +45542,25 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     ranked.sort((a, b) => b.score - a.score || b.amount - a.amount || a.productId.localeCompare(b.productId));
     return ranked;
   }
+  var productEssentialsCache = null;
+  function essentialSlugsByProduct() {
+    if (productEssentialsCache !== null) {
+      return productEssentialsCache;
+    }
+    const m = /* @__PURE__ */ new Map();
+    for (const [slug, entry] of Object.entries(DATA.essentials)) {
+      for (const c of entry.candidates) {
+        const arr = m.get(c.product_id);
+        if (arr === void 0) {
+          m.set(c.product_id, [slug]);
+        } else {
+          arr.push(slug);
+        }
+      }
+    }
+    productEssentialsCache = m;
+    return m;
+  }
 
   // assets/js/src/views/knowledge-products.ts
   function escHTML4(s) {
@@ -45582,13 +45601,36 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   function countNutrients(p) {
     return p.components.reduce((s, c) => s + (c.nutrients?.length ?? 0), 0);
   }
+  function productSearchBlob(p) {
+    const parts = [p.name];
+    for (const slug of essentialSlugsByProduct().get(p.product_id) ?? []) {
+      parts.push(slug, slug.replace(/-/g, " "));
+    }
+    for (const c of p.components) {
+      for (const nut of c.nutrients ?? []) {
+        parts.push(nut.name);
+      }
+      for (const b of c.blends ?? []) {
+        if (b.name !== void 0 && b.name.length > 0) {
+          parts.push(b.name);
+        }
+        if (b.as_labeled !== void 0 && b.as_labeled.length > 0) {
+          parts.push(b.as_labeled);
+        }
+      }
+      if (c.other_ingredients !== void 0 && c.other_ingredients.length > 0) {
+        parts.push(c.other_ingredients.join(" "));
+      }
+    }
+    return parts.join(" ");
+  }
   function renderProductRow(p, selected) {
     const cls = `kd-product-row${p.product_id === selected ? " is-selected" : ""}`;
     const n = countNutrients(p);
     const price = p.price != null && p.price.retail != null ? `$${fmtMoney(p.price.retail)}` : "";
     const meta = [`${n} NUTRIENT${n === 1 ? "" : "S"}`, price].filter((s) => s.length > 0).join(" \xB7 ");
     return `
-    <div class="${cls}" data-kd-product="${escHTML4(p.product_id)}" role="button" tabindex="0">
+    <div class="${cls}" data-kd-product="${escHTML4(p.product_id)}" data-search="${escHTML4(productSearchBlob(p))}" role="button" tabindex="0">
       <div class="kd-product-row__icon">${escHTML4(p.name.charAt(0).toUpperCase())}</div>
       <div class="kd-product-row__body">
         <h4 class="kd-product-row__name">${escHTML4(p.name)}</h4>
@@ -45734,12 +45776,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     }
     return rankSources(target.slug, targetLowOf(target.target)).map((r) => ({ ...r, name: getProduct(r.productId)?.name ?? r.productId }));
   }
-  function renderSourceRow(s, rank) {
+  function renderSourceRow(s, rank, isExtra) {
     const amt = `${fmtNum(s.amount)} ${escHTML4(s.unit)}`;
     const price = s.price !== null ? `$${fmtMoney(s.price)}` : "\u2014";
     const breadth = `${s.breadth} NUTRIENT${s.breadth === 1 ? "" : "S"}`;
+    const cls = `kd-source${isExtra ? " kd-source--extra" : ""}`;
     return `
-    <div class="kd-source" data-kd-product="${escHTML4(s.productId)}" role="button" tabindex="0">
+    <div class="${cls}" data-kd-product="${escHTML4(s.productId)}" role="button" tabindex="0">
       <span class="kd-source__rank">${rank}</span>
       <span class="kd-source__body">
         <span class="kd-source__name">${escHTML4(s.name)}</span>
@@ -45754,9 +45797,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       return "";
     }
     const TOP = 8;
-    const rows = sources.slice(0, TOP).map((s, i) => renderSourceRow(s, i + 1)).join("");
+    const rows = sources.map((s, i) => renderSourceRow(s, i + 1, i >= TOP)).join("");
     const extra = sources.length - TOP;
-    const more = extra > 0 ? `<div class="kd-source-more">+ ${extra} more source${extra === 1 ? "" : "s"} in the vault</div>` : "";
+    const more = extra > 0 ? `<button class="kd-source-more" data-kd-action="sources-more" data-count="${extra}" aria-expanded="false" type="button">
+        <span class="kd-source-more__label">Show ${extra} more source${extra === 1 ? "" : "s"} in the vault</span>
+        <span class="kd-source-more__chev" aria-hidden="true">\u25BE</span>
+      </button>` : "";
     const note = sources[0]?.adequacyIsTarget === true ? "" : '<div class="kd-source-note">Ranked by amount delivered \xB7 breadth \xB7 value. The <em>enough-vs-your-target</em> adequacy step activates once Wallach dose targets are mined.</div>';
     return `
     <div class="kd-essential-deep__sub">BEST SOURCES \xB7 YGY VAULT</div>
@@ -46059,6 +46105,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     <div class="kd-search">
       <span class="kd-search-icon">\u2315</span>
       <input class="kd-search-input" type="text" placeholder="SEARCH ${activeTab.toUpperCase()}\u2026" />
+      <button class="kd-search-clear" data-kd-action="search-clear" type="button" aria-label="Clear search" title="Clear search">\xD7</button>
       <span class="kd-search-kbd">/</span>
     </div>
     <div class="kd-body">${renderTab2(activeTab, snapshot, selectedKey, selectedCondition, selectedBook, selectedProduct)}</div>
@@ -46141,6 +46188,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         if (input !== null) {
           input.value = searchQuery;
         }
+        container.querySelector(".kd-search")?.classList.toggle("has-query", searchQuery.trim().length > 0);
         const body = container.querySelector(".kd-body");
         if (body !== null) {
           applyKnowledgeSearch(body, activeTab, searchQuery);
@@ -46248,6 +46296,30 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         } else if (action === "product-close") {
           selectedProduct = null;
           render();
+        } else if (action === "sources-more") {
+          const list = actionEl.closest(".kd-essential-deep")?.querySelector(".kd-sources");
+          if (list !== null && list !== void 0) {
+            const expanded = list.classList.toggle("is-expanded");
+            actionEl.setAttribute("aria-expanded", String(expanded));
+            actionEl.classList.toggle("is-expanded", expanded);
+            const label = actionEl.querySelector(".kd-source-more__label");
+            if (label !== null) {
+              const count = actionEl.getAttribute("data-count") ?? "";
+              label.textContent = expanded ? "Show fewer sources" : `Show ${count} more source${count === "1" ? "" : "s"} in the vault`;
+            }
+          }
+        } else if (action === "search-clear") {
+          searchQuery = "";
+          const input = container.querySelector(".kd-search-input");
+          if (input !== null) {
+            input.value = "";
+            input.focus();
+          }
+          container.querySelector(".kd-search")?.classList.remove("has-query");
+          const body = container.querySelector(".kd-body");
+          if (body !== null) {
+            applyKnowledgeSearch(body, activeTab, "");
+          }
         } else {
           console.warn("[views/knowledge] action stub:", action);
         }
@@ -46260,6 +46332,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         return;
       }
       searchQuery = t.value;
+      container.querySelector(".kd-search")?.classList.toggle("has-query", searchQuery.trim().length > 0);
       const body = container.querySelector(".kd-body");
       if (body !== null) {
         applyKnowledgeSearch(body, activeTab, searchQuery);
@@ -46828,7 +46901,9 @@ VIEW TEMPLATE (view-only): CORPUS_KIND_PRIORITY -> dose first; fig81OwnRow() kee
 
 VERIFIED: build OK, tsc + eslint clean, invariants 50/50, knowledge render probe PASS, Luneth visual sign-off ("looks much better than my idea").
 
-DEFERRED: audit Workstream B (reclassify the 11 dose-mislabel suspects \u2014 incl. the cobalt/B12 250-400 mcg missing-target, magnesium/molybdenum/iodine RDA-reports, lithium mechanism, copper per-kg); the underlying bled verbatims stay in the sealed data for a later book-purification pass; the pantothenic "...4 mg" OCR artifact.` }];
+DEFERRED: audit Workstream B (reclassify the 11 dose-mislabel suspects \u2014 incl. the cobalt/B12 250-400 mcg missing-target, magnesium/molybdenum/iodine RDA-reports, lithium mechanism, copper per-kg); the underlying bled verbatims stay in the sealed data for a later book-purification pass; the pantothenic "...4 mg" OCR artifact.` }, { id: "lg_mrcu3q23_7qgbpy", ts: "2026-07-08T20:34:49.515173-05:00", surface: "Knowledge/Products", kind: "round-close", summary: "Knowledge drawer: Products search now matches any nutrient/trace-mineral/ingredient a product CONTAINS (not just its name), the '+N more sources' line became a real expander button, and a clear (x) button resets the search in one click.", detail: `Three UX upgrades to the Knowledge drawer that lean on our finished product catalogue. (1) The "BEST SOURCES" list on a nutrient's page used to stop at 8 with a dead gray "+22 more sources" line \u2014 it is now a bold, clickable button that expands the rest right there (and collapses again). (2) The Products search matched only the product NAME; now it matches every nutrient, trace mineral, and ingredient a product actually CONTAINS \u2014 so typing "boron" finds the products whose blends deliver boron even though that word never appears on their label. (3) A small "x" clear button now resets the search box in one click instead of holding backspace.
+
+Search index (state/recommender.ts): added essentialSlugsByProduct() \u2014 a memoized inversion of the recommender data into product_id -> the canon essential slugs it delivers; recommender.test.ts +3 tests (edge coverage vs rankSources, boron-via-blend reachability, memoized stable reference). Product rows (views/knowledge-products.ts): new productSearchBlob() unions the delivered-essential slugs (hyphens spaced so "vitamin-b12" also answers "b12") with the raw label ingredients (nutrient row names + blend names + as_labeled botanicals + other_ingredients) into a hidden data-search attribute; applyKnowledgeSearch already reads data-search, so the search engine itself was unchanged \u2014 this is the mapping that makes blend-delivered trace minerals (boron, vanadium) searchable when they are absent from the printed label. Expander (views/knowledge-products.ts): renderEssentialSources now renders ALL ranked rows (was slice(0,8)); rows past the top-8 carry kd-source--extra (CSS display:none) and the overflow line became a <button data-kd-action=sources-more> that toggles .is-expanded on .kd-sources \u2014 a pure DOM class toggle in views/knowledge.ts, no re-render, so scroll position and any open deep-dive survive \u2014 and swaps its own label + flips its chevron. Clear button (views/knowledge.ts): .kd-search-clear in the shell, data-kd-action=search-clear resets query + input value + refocuses; .kd-search gains .has-query while typing (input handler + the render re-apply path), and CSS swaps the "/" kbd hint for the x on .has-query. CSS: drawer-shared.css (.kd-search-clear + the has-query hint swap), drawer-knowledge.css (.kd-source-more restyled from a faint static line into a tech-colored button + the extra-row show/hide + chevron rotate). Probe: tools/render_probe_knowledge.js +4 assertions. Verified: eslint clean, build.mjs OK (tsc + bundle), invariants 50/50, vitest 8/8, knowledge render probe PASS with 0 page-errors \u2014 "boron" narrows Products 215 -> 20 with matchedByComposition:true (no visible row is named boron), the clear button restores 215 with an empty input, and the Magnesium expander goes 8 -> 43 visible source rows with .is-expanded set. Luneth gave explicit visual sign-off ("Looks great, everything works as envisioned"). Scope: the Knowledge drawer only; the dashboard-wide search is deferred to the user's stated "later".` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

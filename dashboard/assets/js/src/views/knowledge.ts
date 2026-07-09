@@ -392,6 +392,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
     <div class="kd-search">
       <span class="kd-search-icon">⌕</span>
       <input class="kd-search-input" type="text" placeholder="SEARCH ${activeTab.toUpperCase()}…" />
+      <button class="kd-search-clear" data-kd-action="search-clear" type="button" aria-label="Clear search" title="Clear search">×</button>
       <span class="kd-search-kbd">/</span>
     </div>
     <div class="kd-body">${renderTab(activeTab, snapshot, selectedKey, selectedCondition, selectedBook, selectedProduct)}</div>
@@ -516,6 +517,7 @@ export function mount(container: HTMLElement): DrawerHandle {
       if (input !== null) {
         input.value = searchQuery;
       }
+      container.querySelector('.kd-search')?.classList.toggle('has-query', searchQuery.trim().length > 0);
       const body = container.querySelector<HTMLElement>('.kd-body');
       if (body !== null) {
         applyKnowledgeSearch(body, activeTab, searchQuery);
@@ -635,6 +637,37 @@ export function mount(container: HTMLElement): DrawerHandle {
         selectedProduct = null;
         render();
       }
+      else if (action === 'sources-more') {
+        // In-place reveal of the overflow BEST SOURCES rows — a pure DOM class toggle,
+        // no re-render, so the scroll position + open deep-dive are untouched.
+        const list = actionEl.closest('.kd-essential-deep')?.querySelector<HTMLElement>('.kd-sources');
+        if (list !== null && list !== undefined) {
+          const expanded = list.classList.toggle('is-expanded');
+          actionEl.setAttribute('aria-expanded', String(expanded));
+          actionEl.classList.toggle('is-expanded', expanded);
+          const label = actionEl.querySelector('.kd-source-more__label');
+          if (label !== null) {
+            const count = actionEl.getAttribute('data-count') ?? '';
+            label.textContent = expanded
+              ? 'Show fewer sources'
+              : `Show ${count} more source${count === '1' ? '' : 's'} in the vault`;
+          }
+        }
+      }
+      else if (action === 'search-clear') {
+        // Reset the active tab's filter in place (no re-render) + refocus for fast re-typing.
+        searchQuery = '';
+        const input = container.querySelector<HTMLInputElement>('.kd-search-input');
+        if (input !== null) {
+          input.value = '';
+          input.focus();
+        }
+        container.querySelector('.kd-search')?.classList.remove('has-query');
+        const body = container.querySelector<HTMLElement>('.kd-body');
+        if (body !== null) {
+          applyKnowledgeSearch(body, activeTab, '');
+        }
+      }
       else {
         console.warn('[views/knowledge] action stub:', action);
       }
@@ -650,6 +683,7 @@ export function mount(container: HTMLElement): DrawerHandle {
       return;
     }
     searchQuery = (t as HTMLInputElement).value;
+    container.querySelector('.kd-search')?.classList.toggle('has-query', searchQuery.trim().length > 0);
     const body = container.querySelector<HTMLElement>('.kd-body');
     if (body !== null) {
       applyKnowledgeSearch(body, activeTab, searchQuery);

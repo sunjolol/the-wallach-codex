@@ -25,7 +25,7 @@ import {
   type ProductNutrientRow,
 } from '../core/schemas/index.js';
 import { getTargets } from '../state/coverage.js';
-import { type RankedSource, rankSources } from '../state/recommender.js';
+import { essentialSlugsByProduct, type RankedSource, rankSources } from '../state/recommender.js';
 
 function escHTML(s: unknown): string {
   return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', '\'': '&#39;' }[c] as string));
@@ -84,13 +84,46 @@ function countNutrients(p: ProductDetail): number {
 
 // ─── Products tab (list ALL + deep-dive above when selected) ───────────────
 
+/**
+ * Hidden keyword blob for the Products-tab search (read by applyKnowledgeSearch via the
+ * row's data-search). Two unioned sources: (1) the CANONICAL essentials the product
+ * delivers — from the recommender index, so trace minerals carried THROUGH a blend
+ * (boron, vanadium …) match even though they never print on the label; (2) the raw label
+ * ingredients — nutrient rows, blend names + as-labeled botanicals, and other ingredients —
+ * so herbs / fruits / probiotics ("reishi", "lactobacillus") match too. Slug hyphens are
+ * spaced so "vitamin-b12" also answers "b12" and "vitamin b12".
+ */
+function productSearchBlob(p: ProductDetail): string {
+  const parts: string[] = [p.name];
+  for (const slug of essentialSlugsByProduct().get(p.product_id) ?? []) {
+    parts.push(slug, slug.replace(/-/g, ' '));
+  }
+  for (const c of p.components) {
+    for (const nut of c.nutrients ?? []) {
+      parts.push(nut.name);
+    }
+    for (const b of c.blends ?? []) {
+      if (b.name !== undefined && b.name.length > 0) {
+        parts.push(b.name);
+      }
+      if (b.as_labeled !== undefined && b.as_labeled.length > 0) {
+        parts.push(b.as_labeled);
+      }
+    }
+    if (c.other_ingredients !== undefined && c.other_ingredients.length > 0) {
+      parts.push(c.other_ingredients.join(' '));
+    }
+  }
+  return parts.join(' ');
+}
+
 function renderProductRow(p: ProductDetail, selected: string | null): string {
   const cls = `kd-product-row${p.product_id === selected ? ' is-selected' : ''}`;
   const n = countNutrients(p);
   const price = (p.price != null && p.price.retail != null) ? `$${fmtMoney(p.price.retail)}` : '';
   const meta = [`${n} NUTRIENT${n === 1 ? '' : 'S'}`, price].filter(s => s.length > 0).join(' · ');
   return `
-    <div class="${cls}" data-kd-product="${escHTML(p.product_id)}" role="button" tabindex="0">
+    <div class="${cls}" data-kd-product="${escHTML(p.product_id)}" data-search="${escHTML(productSearchBlob(p))}" role="button" tabindex="0">
       <div class="kd-product-row__icon">${escHTML(p.name.charAt(0).toUpperCase())}</div>
       <div class="kd-product-row__body">
         <h4 class="kd-product-row__name">${escHTML(p.name)}</h4>
@@ -280,13 +313,18 @@ export function rankedSourcesForEssential(key: string): RankedSourceRow[] {
     .map(r => ({ ...r, name: getProduct(r.productId)?.name ?? r.productId }));
 }
 
-/** One ranked source row — clickable (data-kd-product) to the product detail panel. */
-function renderSourceRow(s: RankedSourceRow, rank: number): string {
+/**
+ * One ranked source row — clickable (data-kd-product) to the product detail panel.
+ * `isExtra` rows (rank > the shown top-N) carry kd-source--extra and stay hidden until
+ * the "show more" expander toggles .is-expanded on the list.
+ */
+function renderSourceRow(s: RankedSourceRow, rank: number, isExtra: boolean): string {
   const amt = `${fmtNum(s.amount)} ${escHTML(s.unit)}`;
   const price = s.price !== null ? `$${fmtMoney(s.price)}` : '—';
   const breadth = `${s.breadth} NUTRIENT${s.breadth === 1 ? '' : 'S'}`;
+  const cls = `kd-source${isExtra ? ' kd-source--extra' : ''}`;
   return `
-    <div class="kd-source" data-kd-product="${escHTML(s.productId)}" role="button" tabindex="0">
+    <div class="${cls}" data-kd-product="${escHTML(s.productId)}" role="button" tabindex="0">
       <span class="kd-source__rank">${rank}</span>
       <span class="kd-source__body">
         <span class="kd-source__name">${escHTML(s.name)}</span>
@@ -308,10 +346,16 @@ export function renderEssentialSources(key: string): string {
     return '';
   }
   const TOP = 8;
-  const rows = sources.slice(0, TOP).map((s, i) => renderSourceRow(s, i + 1)).join('');
+  // Render EVERY ranked source; the overflow rows carry kd-source--extra and stay hidden
+  // by CSS until the expander toggles .is-expanded on the list — a pure DOM toggle in
+  // views/knowledge.ts, so the open deep-dive + scroll position survive the click.
+  const rows = sources.map((s, i) => renderSourceRow(s, i + 1, i >= TOP)).join('');
   const extra = sources.length - TOP;
   const more = extra > 0
-    ? `<div class="kd-source-more">+ ${extra} more source${extra === 1 ? '' : 's'} in the vault</div>`
+    ? `<button class="kd-source-more" data-kd-action="sources-more" data-count="${extra}" aria-expanded="false" type="button">
+        <span class="kd-source-more__label">Show ${extra} more source${extra === 1 ? '' : 's'} in the vault</span>
+        <span class="kd-source-more__chev" aria-hidden="true">▾</span>
+      </button>`
     : '';
   const note = sources[0]?.adequacyIsTarget === true
     ? ''

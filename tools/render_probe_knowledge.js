@@ -109,6 +109,43 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-action="product-close"]')?.click());
   await wait(150);
 
+  // 3c. Products search matches COMPOSITION, not just the name: "boron" (a trace mineral
+  //     delivered THROUGH blends, absent from most labels) narrows to the products that
+  //     carry it — proving the per-row data-search index (delivered essentials + label
+  //     ingredients). The clear (×) affordance must also appear while a query is active.
+  await page.click('#drawer-knowledge-mount .kd-search-input');
+  await page.type('#drawer-knowledge-mount .kd-search-input', 'boron', { delay: 10 });
+  await wait(150);
+  const prodSearch = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const all = [...root.querySelectorAll('.kd-product-row')];
+    const visible = all.filter(r => !r.classList.contains('kd-hidden'));
+    const nameHasBoron = visible.some(r => /boron/i.test(r.querySelector('.kd-product-row__name')?.textContent || ''));
+    const searchWrap = root.querySelector('.kd-search');
+    const clearBtn = root.querySelector('.kd-search-clear');
+    return {
+      total: all.length,
+      visible: visible.length,
+      // >=1 match whose NAME lacks "boron" => it matched via composition / ingredients.
+      matchedByComposition: visible.length > 0 && !nameHasBoron,
+      hasQueryClass: searchWrap ? searchWrap.classList.contains('has-query') : false,
+      clearVisible: clearBtn ? getComputedStyle(clearBtn).display !== 'none' : false,
+    };
+  });
+  // 3d. Clear BUTTON resets the filter in one click (no held backspace).
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount .kd-search-clear')?.click());
+  await wait(120);
+  const prodClear = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const all = [...root.querySelectorAll('.kd-product-row')];
+    const input = root.querySelector('.kd-search-input');
+    return {
+      visible: all.filter(r => !r.classList.contains('kd-hidden')).length,
+      total: all.length,
+      inputEmpty: input ? input.value === '' : false,
+    };
+  });
+
   // 4. Essentials tab -> ALL essentials shown (every section), then click a tile
   //    to expand the Wallach deep-dive.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="essentials"]')?.click());
@@ -178,6 +215,20 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       cursor: first ? getComputedStyle(first).cursor : '',
       hasNote: root ? root.querySelector('.kd-source-note') !== null : false,
     };
+  });
+  // 4a2-exp. BEST SOURCES overflow expander — Magnesium has >8 vault sources, so the top-N
+  //          render visible and the rest stay hidden (kd-source--extra) behind the "Show N
+  //          more" button until it is clicked, which toggles .is-expanded on the list.
+  const srcExpand = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const vis = () => [...root.querySelectorAll('.kd-source[data-kd-product]')]
+      .filter(r => getComputedStyle(r).display !== 'none').length;
+    const before = vis();
+    const btn = root.querySelector('.kd-source-more[data-kd-action="sources-more"]');
+    const hadButton = btn !== null;
+    if (btn) btn.click();
+    const list = root.querySelector('.kd-sources');
+    return { hadButton, before, after: vis(), expanded: list ? list.classList.contains('is-expanded') : false };
   });
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount .kd-source[data-kd-product]')?.click());
   await wait(250);
@@ -348,7 +399,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, corpus, bookOpen, products, productDeep, chipToProduct, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, doctrine, afterEsc, afterK, search, highlight, searchClear };
+  const out = { boot, afterClick, corpus, bookOpen, products, productDeep, prodSearch, prodClear, chipToProduct, srcExpand, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, doctrine, afterEsc, afterK, search, highlight, searchClear };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -399,6 +450,10 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['doctrine: cites COMPOSED from real gates (ENFORCED BY …)', doctrine.allCitesComposed === true],
     ['doctrine: no retired lecture-corpus text', doctrine.hasLectureText === false],
     ['doctrine: no dead-invariant cite', doctrine.hasDeadInvariant === false],
+    ['products search: composition match narrows rows (boron via blends)', prodSearch.visible > 0 && prodSearch.visible < prodSearch.total && prodSearch.matchedByComposition === true],
+    ['products search: clear (×) affordance appears while querying', prodSearch.hasQueryClass === true && prodSearch.clearVisible === true],
+    ['products search: clear button resets the filter in one click', prodClear.visible === prodClear.total && prodClear.inputEmpty === true],
+    ['best sources: expander reveals the hidden overflow rows', srcExpand.hadButton === true && srcExpand.after > srcExpand.before && srcExpand.expanded === true],
     ['Esc closes drawer', afterEsc.open === false],
     ['bare K reopens drawer', afterK.open === true],
     ['no page errors', errs.length === 0],

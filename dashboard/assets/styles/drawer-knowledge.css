@@ -519,11 +519,31 @@
   font-family: var(--ds-font-mono); font-size: var(--ds-text-mini); font-weight: 700;
   color: var(--ds-accent-deep);
 }
+/* Overflow BEST SOURCES rows — hidden until the expander toggles .is-expanded on the list. */
+#drawer-knowledge-mount .kd-source--extra { display: none; }
+#drawer-knowledge-mount .kd-sources.is-expanded .kd-source--extra { display: flex; }
+/* "Show N more sources" — a real, prominent button (was a faint static line): bold tech
+   type, a left accent bar, and a chevron that flips 180° when the overflow is open. */
 #drawer-knowledge-mount .kd-source-more {
-  font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
-  letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint);
+  display: flex; align-items: center; gap: var(--ds-space-2);
+  width: 100%;
+  appearance: none; border: 0; text-align: left; cursor: pointer;
   margin-top: var(--ds-space-2);
+  padding: var(--ds-space-2) var(--ds-space-3);
+  background: var(--ds-tech-wash);
+  border-radius: var(--ds-radius-xs);
+  border-left: 2px solid var(--ds-tech);
+  font-family: var(--ds-font-mono); font-size: var(--ds-text-mini); font-weight: 700;
+  letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-tech);
+  transition: background var(--ds-motion-fast) var(--ds-ease-out), color var(--ds-motion-fast) var(--ds-ease-out);
 }
+#drawer-knowledge-mount .kd-source-more:hover { background: var(--ds-tech); color: var(--ds-paper); }
+#drawer-knowledge-mount .kd-source-more__label { flex: 1 1 auto; }
+#drawer-knowledge-mount .kd-source-more__chev {
+  flex: 0 0 auto; font-size: var(--ds-text-sm);
+  transition: transform var(--ds-motion-fast) var(--ds-ease-out);
+}
+#drawer-knowledge-mount .kd-source-more.is-expanded .kd-source-more__chev { transform: rotate(180deg); }
 #drawer-knowledge-mount .kd-source-note {
   font-family: var(--ds-font-sans); font-size: var(--ds-text-mini); line-height: 1.45;
   color: var(--ds-ink-soft); margin-top: var(--ds-space-2);

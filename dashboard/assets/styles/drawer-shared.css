@@ -228,6 +228,26 @@
   padding: 2px 6px;
   border-radius: var(--ds-radius-xs);
 }
+/* Clear (×) affordance — swaps in for the "/" kbd hint the moment a query is typed, so a
+   multi-term search resets in one click instead of a held backspace. */
+#drawer-knowledge-mount .kd-search-clear {
+  display: none;
+  flex: 0 0 auto;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-md);
+  line-height: 1;
+  color: var(--ds-ink-faint);
+  padding: 2px 7px;
+  border-radius: var(--ds-radius-xs);
+  transition: color var(--ds-motion-fast) var(--ds-ease-out), background var(--ds-motion-fast) var(--ds-ease-out);
+}
+#drawer-knowledge-mount .kd-search-clear:hover { color: var(--ds-tech); background: var(--ds-tech-wash); }
+#drawer-knowledge-mount .kd-search.has-query .kd-search-clear { display: inline-flex; align-items: center; }
+#drawer-knowledge-mount .kd-search.has-query .kd-search-kbd { display: none; }
 
 /* ─── BODY ───────────────────────────────────────────────────────────────── */
 #drawer-journey-mount .jd-body,
