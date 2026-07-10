@@ -1678,6 +1678,289 @@
         "digitalis",
         "safety"
       ]
+    },
+    "WAL-CLM-LETS-000475": {
+      "subject": "be_your_own_doctor",
+      "also_about": [],
+      "facet": "stance",
+      "question": "What does Wallach mean by 'be your own doctor'?",
+      "answer_short": "Become your own primary care provider - you're unlikely to harm yourself. Try conservative and alternative care before orthodox medicine, and 'separate medicine and state.'",
+      "topics": [
+        "self-reliance",
+        "country-doctor",
+        "medicine-and-state"
+      ]
+    },
+    "WAL-CLM-LETS-000476": {
+      "subject": "be_your_own_doctor",
+      "also_about": [
+        "essential_nutrients",
+        "colloidal_minerals"
+      ],
+      "facet": "stance",
+      "question": "What's the best health insurance?",
+      "answer_short": "Not getting sick. Prevention - a baseline supplement program and daily self-care - is cheaper and easier than illness; Wallach calls it the best buy for your health dollars.",
+      "topics": [
+        "prevention",
+        "insurance",
+        "supplementation"
+      ]
+    },
+    "WAL-CLM-LETS-000473": {
+      "subject": "be_your_own_doctor",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How should you choose a medical specialist?",
+      "answer_short": "Only when truly needed - then get three-plus opinions from different fields, ask to speak with ten past patients, and start conservative; the more 'exotic' the specialist, the higher the risk.",
+      "topics": [
+        "specialists",
+        "second-opinion",
+        "referrals"
+      ]
+    },
+    "WAL-CLM-LETS-000474": {
+      "subject": "be_your_own_doctor",
+      "also_about": [],
+      "facet": "warning",
+      "question": "How impaired are conventional doctors?",
+      "answer_short": "Wallach cites alarming numbers - tens of thousands of physician alcoholics, heavy drug use among doctors and students, and the U.S. losing 'seven medical-school classes' a year to addiction and suicide.",
+      "topics": [
+        "physician-impairment",
+        "addiction",
+        "statistics"
+      ]
+    },
+    "WAL-CLM-LETS-000481": {
+      "subject": "be_your_own_doctor",
+      "also_about": [
+        "colloidal_minerals",
+        "negative_ion_therapy"
+      ],
+      "facet": "protocol",
+      "question": "How do you take charge of your home environment?",
+      "answer_short": "Grow some food and treat your home water and air - Wallach says 3,000+ mostly-carcinogenic chemicals slip through city water (clear isn't safe); a bone-charcoal filter removes them.",
+      "topics": [
+        "water-filtration",
+        "home-environment",
+        "toxins"
+      ]
+    },
+    "WAL-CLM-LETS-000362": {
+      "subject": "be_your_own_doctor",
+      "also_about": [
+        "herbal_medicine",
+        "homeopathy",
+        "hydrotherapy"
+      ],
+      "facet": "basics",
+      "question": "What is 'metabolic therapy'?",
+      "answer_short": "Wallach's umbrella term for curing disease by fixing whole-body metabolism - through nutrition, herbs, homeopathy, acupuncture, manipulation and hydrotherapy.",
+      "topics": [
+        "metabolic-therapy",
+        "holistic",
+        "approach"
+      ]
+    },
+    "WAL-CLM-LETS-000477": {
+      "subject": "hospital_dangers",
+      "also_about": [],
+      "facet": "warning",
+      "question": "How dangerous are hospitals?",
+      "answer_short": "Wallach's tally: 970 of 1,000 hospitals billed wrong (always in their favor), up to half of new equipment defective on arrival, and 100,000+ deaths a year from hospital-caught infections.",
+      "topics": [
+        "nosocomial-infection",
+        "medical-error",
+        "billing"
+      ]
+    },
+    "WAL-CLM-LETS-000478": {
+      "subject": "hospital_dangers",
+      "also_about": [
+        "chiropractic",
+        "homeopathy"
+      ],
+      "facet": "protocol",
+      "question": "What should you do if you're hospitalized?",
+      "answer_short": "Have a family member stay to check every shot, pill and procedure before it's given, confirm your IV lines, and use family blood if needed - just as orthodox doctors monitor their own families.",
+      "topics": [
+        "hospital-stay",
+        "patient-advocate",
+        "safety"
+      ]
+    },
+    "WAL-CLM-LETS-000479": {
+      "subject": "hospital_dangers",
+      "also_about": [],
+      "facet": "stance",
+      "question": "What is the 'medical industrial Bermuda Triangle'?",
+      "answer_short": "Wallach's name for the FDA, AMA and drug companies - costing Americans more than national defense while the U.S. ranks 17th in longevity and 32nd in birth defects. He calls to 'separate Medicine and State.'",
+      "topics": [
+        "fda",
+        "ama",
+        "public-health"
+      ]
+    },
+    "WAL-CLM-LETS-000467": {
+      "subject": "pregnancy_birth",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Is a hospital birth necessary?",
+      "answer_short": "Wallach says pregnancy is normal, not a disease, and home birth is the safest, cheapest option - he delivered ~200 babies at home with one c-section, and blames the 35% hospital c-section rate on economics.",
+      "topics": [
+        "home-birth",
+        "cesarean",
+        "semmelweis"
+      ]
+    },
+    "WAL-CLM-LETS-000468": {
+      "subject": "pregnancy_birth",
+      "also_about": [
+        "vitamins"
+      ],
+      "facet": "protocol",
+      "question": "What prenatal care can a woman do herself?",
+      "answer_short": "A lot: self breast and pelvic exams, cycle tracking, home pregnancy tests, OTC prenatal vitamins, own blood-pressure and urine tests - and, barring a few specific risks, she can give birth at home.",
+      "topics": [
+        "self-care",
+        "prenatal",
+        "home-testing"
+      ]
+    },
+    "WAL-CLM-LETS-000469": {
+      "subject": "pregnancy_birth",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What birth control can you buy without a prescription?",
+      "answer_short": "Condoms, spermicidal creams, jellies, foams and sponges - all over the counter. Wallach considers these barrier methods much safer than IUDs (the Dalkon Shield) and the pill (clots, deaths, sterility).",
+      "topics": [
+        "contraception",
+        "barrier-methods",
+        "otc"
+      ]
+    },
+    "WAL-CLM-LETS-000470": {
+      "subject": "pregnancy_birth",
+      "also_about": [
+        "birth_defects",
+        "cystic_fibrosis"
+      ],
+      "facet": "stance",
+      "question": "What causes most birth defects?",
+      "answer_short": "Wallach's 'pet peeve': 98% come from nutritional deficiencies, not radiation. Teens have more than women over 40 - and lab animals get defect-free diets, so why feed a rat better than a pregnant woman?",
+      "topics": [
+        "birth-defects",
+        "preconception",
+        "supplementation"
+      ]
+    },
+    "WAL-CLM-LETS-000472": {
+      "subject": "pregnancy_birth",
+      "also_about": [
+        "infertility"
+      ],
+      "facet": "mechanism",
+      "question": "Is infertility a nutrition problem?",
+      "answer_short": "Wallach says mostly yes - as a breeder feeds a mare 120 days before mating, he's reversed hundreds of cases by nourishing both partners; one 'infertile' doctor had vitamin A at 10% of normal (malabsorption).",
+      "topics": [
+        "infertility",
+        "malabsorption",
+        "preconception"
+      ]
+    },
+    "WAL-CLM-LETS-000480": {
+      "subject": "pregnancy_birth",
+      "also_about": [
+        "birth_defects"
+      ],
+      "facet": "history",
+      "question": "Which agency said women should supplement before pregnancy?",
+      "answer_short": "The CDC, in 1992 - not the FDA. Wallach credits the CDC's independence from company revenue, and notes it independently echoed his own preconception-supplementation thesis.",
+      "topics": [
+        "cdc",
+        "preconception",
+        "folic-acid"
+      ]
+    },
+    "WAL-CLM-LETS-000471": {
+      "subject": "cystic_fibrosis",
+      "also_about": [
+        "selenium",
+        "omega-3"
+      ],
+      "facet": "stance",
+      "question": "Is cystic fibrosis really genetic?",
+      "answer_short": "Wallach's signature thesis: no - it's a selenium and essential-fatty-acid deficiency from the mother's malabsorption. He cites 1972 Cornell chicks cured in 21 days by selenium, and 450 patients treated since 1978.",
+      "topics": [
+        "selenium",
+        "essential-fatty-acids",
+        "deficiency-thesis"
+      ]
+    },
+    "WAL-CLM-LETS-000347": {
+      "subject": "longevity",
+      "also_about": [
+        "colloidal_minerals",
+        "essential_nutrients",
+        "negative_ion_therapy"
+      ],
+      "facet": "stance",
+      "question": "How long can humans live?",
+      "answer_short": "Wallach says 120-130 years, vs the ~72-78 of actuary tables. He credits the Hunza's ~100-year average to plant-derived colloidal minerals, and says filters, digestive aids and the baseline program add ~20 years.",
+      "topics": [
+        "lifespan",
+        "hunza",
+        "colloidal-minerals"
+      ]
+    },
+    "WAL-CLM-LETS-000312": {
+      "subject": "vaccines",
+      "also_about": [],
+      "facet": "stance",
+      "question": "What is Wallach's stance on vaccine mandates?",
+      "answer_short": "He calls immunization 'the greatest interface between government and freedom of choice,' opposes compulsory school mandates, defends the religious exemption, and says some experts blame certain vaccine programs for catastrophic diseases.",
+      "topics": [
+        "vaccine-mandates",
+        "medical-freedom",
+        "religious-exemption"
+      ]
+    },
+    "WAL-CLM-LETS-000232": {
+      "subject": "pregnancy_birth",
+      "also_about": [],
+      "facet": "history",
+      "question": "Why were midwives who knew contraception called witches?",
+      "answer_short": "Wallach notes midwives who knew contraception herbs were once branded 'witches' and burned; he ranks birth control (abstinence, barriers, hormones - least desirable, IUDs, surgery) and bluntly calls sex outside marriage 'Russian roulette.'",
+      "topics": [
+        "contraception",
+        "history",
+        "midwives"
+      ]
+    },
+    "WAL-CLM-LETS-000263": {
+      "subject": "sexual_health",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How does Wallach approach premature ejaculation?",
+      "answer_short": "He calls it normal and curable, with physical causes (high expectation, infrequent sex, friction) not guilt; his fix is comfort with each other's bodies, frequent sex, and good lubrication, with ginseng and Zumbani as tonics.",
+      "topics": [
+        "premature-ejaculation",
+        "sexual-health",
+        "mens-health"
+      ]
+    },
+    "WAL-CLM-LETS-000370": {
+      "subject": "home_remedies",
+      "also_about": [
+        "vitamin-b1"
+      ],
+      "facet": "uses",
+      "question": "How can you repel mosquitoes naturally?",
+      "answer_short": "Screen doors and 'zapper' lights set 15-25 yards from the house draw mosquitoes off; Wallach adds pennyroyal oil on the skin and vitamin B1 at 500 mg/day as natural repellents - handy since mosquitoes carry malaria and encephalitis.",
+      "topics": [
+        "mosquito-repellent",
+        "pennyroyal",
+        "vitamin-b1"
+      ]
     }
   }
 }

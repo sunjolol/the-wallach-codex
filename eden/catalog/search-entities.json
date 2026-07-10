@@ -14,7 +14,8 @@
       "related": [
         "selenium",
         "mercury_poisoning",
-        "minamata_disease"
+        "minamata_disease",
+        "vaccines"
       ]
     },
     "vaccines": {
@@ -28,7 +29,8 @@
       ],
       "related": [
         "mercury",
-        "autism"
+        "autism",
+        "be_your_own_doctor"
       ]
     },
     "calcium": {
@@ -41,7 +43,9 @@
         "magnesium",
         "phosphorus",
         "osteoporosis",
-        "vitamin-d"
+        "vitamin-d",
+        "essential_nutrients",
+        "colloidal_minerals"
       ]
     },
     "cholesterol": {
@@ -53,7 +57,8 @@
       "related": [
         "vanadium",
         "silicon",
-        "menopause"
+        "menopause",
+        "macronutrients"
       ]
     },
     "diabetes": {
@@ -68,7 +73,8 @@
       "related": [
         "chromium",
         "vanadium",
-        "hypoglycemia"
+        "hypoglycemia",
+        "colloidal_minerals"
       ]
     },
     "colloidal_minerals": {
@@ -83,7 +89,8 @@
       "related": [
         "chromium",
         "calcium",
-        "selenium"
+        "selenium",
+        "essential_nutrients"
       ]
     },
     "color_therapy": {
@@ -95,7 +102,8 @@
         "colour therapy"
       ],
       "related": [
-        "light_therapy"
+        "light_therapy",
+        "be_your_own_doctor"
       ]
     },
     "wallach": {
@@ -107,7 +115,9 @@
         "joel d wallach"
       ],
       "related": [
-        "epigenetics"
+        "epigenetics",
+        "essential_nutrients",
+        "colloidal_minerals"
       ]
     },
     "iron": {
@@ -120,7 +130,9 @@
       "related": [
         "vitamin-c",
         "anemia",
-        "copper"
+        "copper",
+        "essential_nutrients",
+        "colloidal_minerals"
       ]
     },
     "iodine": {
@@ -132,7 +144,9 @@
       "related": [
         "thyroid_disease",
         "hypothyroidism",
-        "selenium"
+        "selenium",
+        "essential_nutrients",
+        "colloidal_minerals"
       ]
     },
     "germanium": {
@@ -145,7 +159,9 @@
       "related": [
         "cancer",
         "selenium",
-        "lithium"
+        "lithium",
+        "essential_nutrients",
+        "colloidal_minerals"
       ]
     },
     "hydrogen": {
@@ -157,7 +173,8 @@
       "related": [
         "oxygen",
         "water",
-        "ph"
+        "ph",
+        "essential_nutrients"
       ]
     },
     "potassium": {
@@ -170,7 +187,9 @@
       "related": [
         "sodium",
         "magnesium",
-        "lithium"
+        "lithium",
+        "essential_nutrients",
+        "colloidal_minerals"
       ]
     },
     "fluoride": {
@@ -185,7 +204,8 @@
       "related": [
         "calcium",
         "osteoporosis",
-        "tooth_decay"
+        "tooth_decay",
+        "essential_nutrients"
       ]
     },
     "copper": {
@@ -198,7 +218,9 @@
       "related": [
         "zinc",
         "iron",
-        "anemia"
+        "anemia",
+        "essential_nutrients",
+        "colloidal_minerals"
       ]
     },
     "chromium": {
@@ -210,7 +232,8 @@
       "related": [
         "diabetes",
         "vanadium",
-        "colloidal_minerals"
+        "colloidal_minerals",
+        "essential_nutrients"
       ]
     },
     "gold": {
@@ -223,7 +246,9 @@
       "related": [
         "arthritis",
         "cancer",
-        "silver"
+        "silver",
+        "essential_nutrients",
+        "colloidal_minerals"
       ]
     },
     "aluminum": {
@@ -249,7 +274,8 @@
       ],
       "related": [
         "fluoride",
-        "helium"
+        "helium",
+        "essential_nutrients"
       ]
     },
     "gallium": {
@@ -262,7 +288,9 @@
       "related": [
         "aluminum",
         "cancer",
-        "germanium"
+        "germanium",
+        "essential_nutrients",
+        "colloidal_minerals"
       ]
     },
     "essential_nutrients": {
@@ -276,7 +304,8 @@
       "related": [
         "colloidal_minerals",
         "vitamins",
-        "amino_acids"
+        "amino_acids",
+        "macronutrients"
       ]
     },
     "vitamins": {
@@ -334,7 +363,8 @@
       ],
       "related": [
         "color_therapy",
-        "vitamin-d"
+        "vitamin-d",
+        "be_your_own_doctor"
       ]
     },
     "chiropractic": {
@@ -346,7 +376,8 @@
         "subluxation"
       ],
       "related": [
-        "hydrotherapy"
+        "hydrotherapy",
+        "be_your_own_doctor"
       ]
     },
     "aromatherapy": {
@@ -358,7 +389,8 @@
       ],
       "related": [
         "herbal_medicine",
-        "ayurveda"
+        "ayurveda",
+        "be_your_own_doctor"
       ]
     },
     "ayurveda": {
@@ -371,7 +403,8 @@
       ],
       "related": [
         "herbal_medicine",
-        "homeopathy"
+        "homeopathy",
+        "be_your_own_doctor"
       ]
     },
     "homeopathy": {
@@ -384,7 +417,8 @@
       ],
       "related": [
         "herbal_medicine",
-        "naturopathy"
+        "naturopathy",
+        "be_your_own_doctor"
       ]
     },
     "hydrotherapy": {
@@ -396,7 +430,8 @@
         "balneotherapy"
       ],
       "related": [
-        "chiropractic"
+        "chiropractic",
+        "be_your_own_doctor"
       ]
     },
     "negative_ion_therapy": {
@@ -408,7 +443,8 @@
         "ionizer"
       ],
       "related": [
-        "asthma"
+        "asthma",
+        "be_your_own_doctor"
       ]
     },
     "urine_therapy": {
@@ -421,7 +457,8 @@
       ],
       "related": [
         "allergies",
-        "cancer"
+        "cancer",
+        "be_your_own_doctor"
       ]
     },
     "macrobiotics": {
@@ -434,7 +471,8 @@
       ],
       "related": [
         "celiac_disease",
-        "diabetes"
+        "diabetes",
+        "be_your_own_doctor"
       ]
     },
     "herbal_medicine": {
@@ -449,7 +487,117 @@
       "related": [
         "aromatherapy",
         "ayurveda",
-        "homeopathy"
+        "homeopathy",
+        "be_your_own_doctor"
+      ]
+    },
+    "be_your_own_doctor": {
+      "display_name": "Be Your Own Doctor",
+      "type": "topic",
+      "synonyms": [
+        "self-care",
+        "self-reliance",
+        "primary care",
+        "preventive medicine",
+        "separate medicine and state"
+      ],
+      "related": [
+        "hospital_dangers",
+        "pregnancy_birth",
+        "essential_nutrients",
+        "negative_ion_therapy"
+      ]
+    },
+    "hospital_dangers": {
+      "display_name": "Hospital Dangers",
+      "type": "topic",
+      "synonyms": [
+        "hospital safety",
+        "nosocomial infection",
+        "iatrogenic",
+        "medical errors"
+      ],
+      "related": [
+        "be_your_own_doctor"
+      ]
+    },
+    "pregnancy_birth": {
+      "display_name": "Pregnancy & Birth",
+      "type": "topic",
+      "synonyms": [
+        "pregnancy",
+        "childbirth",
+        "home birth",
+        "prenatal",
+        "obstetrics",
+        "contraception"
+      ],
+      "related": [
+        "birth_defects",
+        "infertility",
+        "cystic_fibrosis",
+        "vitamins",
+        "sexual_health"
+      ]
+    },
+    "cystic_fibrosis": {
+      "catalog_ref": true,
+      "type": "condition",
+      "synonyms": [
+        "cf",
+        "mucoviscidosis"
+      ],
+      "related": [
+        "selenium",
+        "omega-3",
+        "birth_defects"
+      ]
+    },
+    "longevity": {
+      "display_name": "Longevity",
+      "type": "topic",
+      "synonyms": [
+        "lifespan",
+        "aging",
+        "live longer",
+        "hunza"
+      ],
+      "related": [
+        "essential_nutrients",
+        "colloidal_minerals",
+        "be_your_own_doctor",
+        "negative_ion_therapy"
+      ]
+    },
+    "sexual_health": {
+      "display_name": "Sexual Health",
+      "type": "topic",
+      "synonyms": [
+        "mens health",
+        "sexual function",
+        "potency",
+        "libido",
+        "premature ejaculation"
+      ],
+      "related": [
+        "pregnancy_birth",
+        "be_your_own_doctor",
+        "herbal_medicine"
+      ]
+    },
+    "home_remedies": {
+      "display_name": "Home Remedies",
+      "type": "topic",
+      "synonyms": [
+        "natural remedies",
+        "folk remedies",
+        "pest control",
+        "mosquito repellent"
+      ],
+      "related": [
+        "herbal_medicine",
+        "be_your_own_doctor",
+        "hydrotherapy"
       ]
     }
   }

@@ -1214,6 +1214,11 @@
       "term": "familial",
       "plain": "running in families; inherited",
       "category": "medical"
+    },
+    {
+      "term": "Zumbani",
+      "plain": "an African medicinal herb (Lippia javanica) used as a tonic for vitality and potency",
+      "category": "nutrition"
     }
   ]
 }

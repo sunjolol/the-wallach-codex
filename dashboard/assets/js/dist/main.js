@@ -18911,6 +18911,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         term: "familial",
         plain: "running in families; inherited",
         category: "medical"
+      },
+      {
+        term: "Zumbani",
+        plain: "an African medicinal herb (Lippia javanica) used as a tonic for vitality and potency",
+        category: "nutrition"
       }
     ]
   };
@@ -56224,7 +56229,7 @@ Two correctness fixes the batch forced (both gated + negative-tested):
 - catalog_ref in search_index_derive: condition entities pull display_name from eden/catalog/conditions.json (no duplication, mirrors canon_ref). validate() + the search_index_wellformed gate cover it; negative test grew to 10 cases (added catalog_ref-with-name, catalog_ref-not-condition).
 - tier1_link fires ONLY for non-search-only claims: a search-only modality claim (Color Therapy's color-map) can carry a conditions array for search matching, but must not show operational cross-links -- so the tier1/RELATED pills no longer flood a modality page.
 
-Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 with 0 page errors, negative test 10/10. All seven type pages, the color wheel, the self-upgrading pills, and BACK navigation visually verified via headless screenshots and signed off by Luneth. NEXT = BULK MIGRATION of the remaining ~180 search-only + dual-home claims into entities using these seven patterns -- Luneth: start bulking but STAY GROUNDED, keep the first few dozen at the golden-standard quality before accelerating. Mining still PAUSED at Immortality Mn-Manganese (~char 309953).` }, { id: "lg_mrefuoom_7uhdfi", ts: "2026-07-09T23:31:25.558933-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 1: 6 element entities (Iron/Iodine/Germanium/Hydrogen/Potassium/Fluoride, 33 claims) + 3 template refinements: glossary tooltips in Search answers, scroll-to-top on nav, and a new see_also in-text cross-reference to another claim card.", detail: "Kicked off the real bulk migration of the Search knowledge base with a first, fully-polished batch of six element/mineral entities (Iron, Iodine, Germanium, Hydrogen, Potassium, Fluoride). Then folded in three fixes from Luneth's review that make EVERY entity better, not just these six: glossary tooltips now appear inside Search answers (a dotted-underline term like 'fluorine' explains itself on hover), clicking an entity always opens at the top, and a 'see the full fluoride stance'-style pointer is now a real clickable link that jumps down to that card and flashes it.\r\n\r\nWHAT: 33 sealed search-only claims -> 6 finished faceted entity pages. Iron/Iodine/Germanium/Hydrogen/Potassium are canon minerals (canon_ref, symbol from essentials-canon); Fluoride is the non-canon exemplar (display_name + symbol F) and the two-sided-controversy showcase (a stance facet + a big_question 'Is fluoridated water safe?').\r\n\r\nSOURCE: eden/corpus/search-enrichment.json 41->74 enriched claims (+the see_also on claim 118); eden/catalog/search-entities.json 8->14 entities.\r\n\r\nREFINEMENT 1 (glosses in Search): extracted glossify() into a shared views/glossify.ts (single source for Knowledge + Search); knowledge-corpus.ts imports it; search.ts glossifies answer+verbatim; .gloss CSS un-scoped from #drawer-knowledge-mount to global so the dotted underline renders in the Search drawer; added the fluorine term to glossary.json.\r\n\r\nREFINEMENT 2 (scroll-to-top): search.ts paintBody resets .sr-body.scrollTop=0 on every repaint (replacing innerHTML alone did not reset it when the new content was as tall).\r\n\r\nREFINEMENT 3 (see_also in-text cross-reference, shipped WITH its gate per R7): core/schemas/search.ts adds SeeAlsoSchema {phrase,target} + optional field; search_index_derive.py passes it through and validate() gates it (target is an enriched claim of the SAME subject; phrase must occur in the answer); search.ts renderAnswer splits the answer around the phrase into glossify(before)+link+glossify(after), and jumpToClaim opens the target + ancestor details, scrollIntoView, adds a flash class; drawer-search.css adds .sr-xref (solid-underline accent link, distinct from the dotted gloss) + a sr-claim-flash keyframe. tools/test_search_index_wellformed.py 10->13 negative cases (ghost-target, phantom-phrase, cross-subject all RED).\r\n\r\nVERIFIED: build OK (tsc clean + esbuild), invariants 53/53, render_probe_search + render_probe_knowledge PASS (0 page errors), negative test 13/13; targeted headless checks all PASS -- fluorine .gloss dotted underline in the Search drawer, scroll-reset before=400/after=0, and the see_also link rendering + click opening/flashing Big Questions claim 124. Luneth visually signed off the whole batch.\r\n\r\nNEXT: continue bulk migration at this quality (next cluster: Copper, Chromium, rare-earth trace minerals). Epigenetics deferred (charged content). Mining still PAUSED at Immortality Mn-Manganese." }, { id: "lg_mrehejh9_0bpa5h", ts: "2026-07-10T00:14:51.549811-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 2: 6 more element entities (Copper, Chromium, Gold, Aluminum, Krypton, Gallium; 15 claims). Pure data migration on the batch-1 template -- no code changes. Landing now 19 entities; cross-link pills self-upgraded.", detail: "Kept the Search bulk migration rolling at golden quality with a second batch of six element/mineral entities -- Copper, Chromium, Gold, Aluminum, Krypton, Gallium. This one was pure content authoring: the template from batch 1 held, so no code or gate changes were needed. Best part -- authoring these automatically turned three previously-grey cross-reference chips into live clickable links (the pill rule paying off with zero extra wiring).\r\n\r\nWHAT: 15 sealed search-only claims -> 6 faceted entity pages. Copper/Chromium/Gold/Aluminum/Gallium are canon (canon_ref, symbol from essentials-canon); Krypton is the non-canon noble gas (display_name + symbol Kr). Delight content: Krypton (Superman/kryptonite + Pauling predicting krypton-fluoride), Aluminum (the Alzheimer-myth as a big_question -- Wallach says no, a single faulty study), Gallium (the metal that melts in your hand + gallium-67 cancer medicine), Chromium (why trace chromium colors rubies and emeralds), Copper (copper-overload Kayser-Fleischer eye rings as a warning). Facet spreads: copper basics/physiology/warning, chromium mechanism/physiology/discovery, gold stance/uses, aluminum sources/big_question, krypton basics/discovery/history, gallium basics/uses.\r\n\r\nEMERGENT self-upgrade: the ONE pill rule (a slug pill is a clickable link iff it has an entity page) meant authoring these lit up cross-links that were plain chips before -- Gallium->Aluminum, Krypton->Fluoride, and Diabetes->Chromium are now clickable, no per-site wiring.\r\n\r\nDATA ONLY: eden/corpus/search-enrichment.json 74->89 enriched claims; eden/catalog/search-entities.json 14->20 entities. No schema/view/gate changes. Landing = 19 entities.\r\n\r\nVERIFIED: build OK, invariants 53/53, render_probe_search PASS (19-entity landing, all types, 0 page errors), targeted headless check PASS (gallium/krypton/diabetes cross-link pills render as clickable links + Gallium->Aluminum click navigates). Luneth visually signed off.\r\n\r\nNEXT: continue bulk migration -- remaining Immortality element A-Z search-only claims (cobalt, silver, bromine, cadmium, cesium, bismuth, helium, hafnium, holmium, indium, iridium, lutetium, rare earths dysprosium/erbium/europium), then the Lets-Play-Doctor modality cluster (hydrotherapy, homeopathy, Ayurveda, reflexology -- topic exemplars) + Wallach philosophy claims. ~129 non-epigenetics search-only claims remain. Mining still PAUSED at Immortality Mn-Manganese." }, { id: "lg_mrehujgp_1f7ol4", ts: "2026-07-10T00:27:18.025323-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 3: 4 general-nutrition CONCEPT entities (Essential Nutrients, Vitamins, Amino Acids, Macronutrients; 16 claims). First concept-type bulk batch; the 4 cross-link each other. Pure data migration, no code. Landing now 23 entities.", detail: "Shifted the bulk migration from single elements to broader CONCEPT entities -- the educational backbone of Wallach nutrition. Grouped 16 primer claims into four framework pages: Essential Nutrients, Vitamins, Amino Acids and Macronutrients. The nice part: these four reference each other, so the knowledge graph is starting to weave together into something a reader can wander through.\r\n\r\nWHAT: 16 sealed search-only primer claims -> 4 faceted concept entity pages (type=concept, non-canon display_name, nodes icon). Essential Nutrients: the 90 = 60 minerals + 16 vitamins + 12 amino acids + 3 essential fatty acids; the cannot-eat-your-way food-depletion stance (vitamins -37%, trace minerals -77%); the 4 hidden deficiency stages. Vitamins: definition + fat/water-soluble + flavanols; pregnancy birth-defect warning; the pill depletes B6. Amino Acids: Wallach 12 (vs mainstream 9) + what each makes. Macronutrients: carbs are NOT essential (stance); carbs/fats/proteins primers; 300 g/day protein is fine absent kidney/liver disease.\r\n\r\nGRAPH: also_about now cross-links the 4 to each other -- Essential Nutrients -> Vitamins + Amino Acids, Macronutrients -> Amino Acids -- all live pills, plus outward links (colloidal_minerals, selenium, omega-3, vitamin-b6, vitamin-b3, magnesium, birth_defects, kidney_disease, liver_disease).\r\n\r\nDATA ONLY: search-enrichment.json 89->105 enriched claims; search-entities.json 20->24 entities. No schema/view/gate changes -- the batch-1 template held for a new entity type.\r\n\r\nVERIFIED: build OK, invariants 53/53, render_probe_search PASS (23-entity landing, 0 page errors), targeted headless PASS (concept nodes-icon with no atomic symbol; the intra-batch cross-link pills clickable). Luneth signed off.\r\n\r\nNEXT: remaining Immortality elements OR the Lets-Play-Doctor modality topic cluster (54 claims). ~113 non-epigenetics search-only claims remain; ~16 entities across 3 batches (near the end of the grounded first-few-dozen). Mining PAUSED at Immortality Mn-Manganese." }, { id: "lg_mrej3gjz_jrfli1", ts: "2026-07-10T01:02:13.775769-05:00", surface: "search", kind: "round-close", summary: "Search G-7 batch 4: 10 healing-modality TOPIC entities, 24 claims -- Light Therapy, Chiropractic, Aromatherapy, Ayurveda, Homeopathy, Hydrotherapy, Negative Ion, Urine, Macrobiotics, Herbal Medicine. Modality cross-link web weaving; Color<->Light reconnected. 33 entities total.", detail: "Went bigger (Luneth OK-d accelerating): migrated 24 Lets-Play-Doctor modality claims into 10 topic pages -- the distinctive delight content, same flavor as Color Therapy. The knowledge graph is genuinely weaving now: these modalities link to each other, so a reader can wander from Herbal Medicine to Aromatherapy to Ayurveda. And a real-world proof landed mid-session -- the Negative Ion Therapy page taught Luneth something new enough that he went and bought an ion generator.\r\n\r\nWHAT: 24 sealed search-only modality claims -> 10 topic entity pages (type=topic). Light Therapy (UV+infrared; the UV-burns-eyes warning; Angstrom spectrum), Chiropractic (subluxations; Palmer 1895 + 1987 AMA antitrust), Aromatherapy, Ayurveda (Dhatus model; Greeks-learned-from-India), Homeopathy (like-cures-like; Hahnemann + Avogadro dilution puzzle), Hydrotherapy, Negative Ion Therapy, Urine Therapy (3 claims), Macrobiotics (3 claims; stance = it works by cutting gluten), Herbal Medicine (30% of drugs come from plants). Thin claims grouped sensibly (Light Therapy folds UV+infrared).\r\n\r\nGRAPH: modality also_about/related now cross-link each other -- Herbal Medicine <-> Aromatherapy/Ayurveda/Homeopathy, and Color Therapy <-> Light Therapy reconnected (color_therapy carried a dormant related:[light_therapy] that lit up the instant the entity was authored -- the ONE pill rule self-upgrading).\r\n\r\nVALIDATION: Luneth used the live app, hit Negative Ion Therapy (never heard of it), researched it, and bought a generator. Captured as memory search-delight-validated -- proof the search-first, capture-broadly, off-path-delight direction is paying off in real user behavior.\r\n\r\nDATA ONLY: search-enrichment.json 105->129 enriched claims; search-entities.json 24->34 entities. No code changes -- the batch-1 template held for a 4th entity flavor. 26 entities migrated across 4 batches (mineral, element, concept, topic).\r\n\r\nVERIFIED: build OK, invariants 53/53, render_probe_search PASS (33-entity landing, 0 page errors), targeted headless PASS (modality cross-link web clickable; Color<->Light reciprocal + navigation). Luneth signed off mid-use.\r\n\r\nNEXT: ~89 non-epigenetics search-only claims remain -- thin modality singles (osteopathy/reflexology/Rolfing/naturopathy/megavitamin/cell-salts/Bach-flower/faith-healing/Christian-Science), Wallach self-reliance/philosophy claims, remaining Immortality elements. Mining PAUSED at Immortality Mn-Manganese." }];
+Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 with 0 page errors, negative test 10/10. All seven type pages, the color wheel, the self-upgrading pills, and BACK navigation visually verified via headless screenshots and signed off by Luneth. NEXT = BULK MIGRATION of the remaining ~180 search-only + dual-home claims into entities using these seven patterns -- Luneth: start bulking but STAY GROUNDED, keep the first few dozen at the golden-standard quality before accelerating. Mining still PAUSED at Immortality Mn-Manganese (~char 309953).` }, { id: "lg_mrefuoom_7uhdfi", ts: "2026-07-09T23:31:25.558933-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 1: 6 element entities (Iron/Iodine/Germanium/Hydrogen/Potassium/Fluoride, 33 claims) + 3 template refinements: glossary tooltips in Search answers, scroll-to-top on nav, and a new see_also in-text cross-reference to another claim card.", detail: "Kicked off the real bulk migration of the Search knowledge base with a first, fully-polished batch of six element/mineral entities (Iron, Iodine, Germanium, Hydrogen, Potassium, Fluoride). Then folded in three fixes from Luneth's review that make EVERY entity better, not just these six: glossary tooltips now appear inside Search answers (a dotted-underline term like 'fluorine' explains itself on hover), clicking an entity always opens at the top, and a 'see the full fluoride stance'-style pointer is now a real clickable link that jumps down to that card and flashes it.\r\n\r\nWHAT: 33 sealed search-only claims -> 6 finished faceted entity pages. Iron/Iodine/Germanium/Hydrogen/Potassium are canon minerals (canon_ref, symbol from essentials-canon); Fluoride is the non-canon exemplar (display_name + symbol F) and the two-sided-controversy showcase (a stance facet + a big_question 'Is fluoridated water safe?').\r\n\r\nSOURCE: eden/corpus/search-enrichment.json 41->74 enriched claims (+the see_also on claim 118); eden/catalog/search-entities.json 8->14 entities.\r\n\r\nREFINEMENT 1 (glosses in Search): extracted glossify() into a shared views/glossify.ts (single source for Knowledge + Search); knowledge-corpus.ts imports it; search.ts glossifies answer+verbatim; .gloss CSS un-scoped from #drawer-knowledge-mount to global so the dotted underline renders in the Search drawer; added the fluorine term to glossary.json.\r\n\r\nREFINEMENT 2 (scroll-to-top): search.ts paintBody resets .sr-body.scrollTop=0 on every repaint (replacing innerHTML alone did not reset it when the new content was as tall).\r\n\r\nREFINEMENT 3 (see_also in-text cross-reference, shipped WITH its gate per R7): core/schemas/search.ts adds SeeAlsoSchema {phrase,target} + optional field; search_index_derive.py passes it through and validate() gates it (target is an enriched claim of the SAME subject; phrase must occur in the answer); search.ts renderAnswer splits the answer around the phrase into glossify(before)+link+glossify(after), and jumpToClaim opens the target + ancestor details, scrollIntoView, adds a flash class; drawer-search.css adds .sr-xref (solid-underline accent link, distinct from the dotted gloss) + a sr-claim-flash keyframe. tools/test_search_index_wellformed.py 10->13 negative cases (ghost-target, phantom-phrase, cross-subject all RED).\r\n\r\nVERIFIED: build OK (tsc clean + esbuild), invariants 53/53, render_probe_search + render_probe_knowledge PASS (0 page errors), negative test 13/13; targeted headless checks all PASS -- fluorine .gloss dotted underline in the Search drawer, scroll-reset before=400/after=0, and the see_also link rendering + click opening/flashing Big Questions claim 124. Luneth visually signed off the whole batch.\r\n\r\nNEXT: continue bulk migration at this quality (next cluster: Copper, Chromium, rare-earth trace minerals). Epigenetics deferred (charged content). Mining still PAUSED at Immortality Mn-Manganese." }, { id: "lg_mrehejh9_0bpa5h", ts: "2026-07-10T00:14:51.549811-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 2: 6 more element entities (Copper, Chromium, Gold, Aluminum, Krypton, Gallium; 15 claims). Pure data migration on the batch-1 template -- no code changes. Landing now 19 entities; cross-link pills self-upgraded.", detail: "Kept the Search bulk migration rolling at golden quality with a second batch of six element/mineral entities -- Copper, Chromium, Gold, Aluminum, Krypton, Gallium. This one was pure content authoring: the template from batch 1 held, so no code or gate changes were needed. Best part -- authoring these automatically turned three previously-grey cross-reference chips into live clickable links (the pill rule paying off with zero extra wiring).\r\n\r\nWHAT: 15 sealed search-only claims -> 6 faceted entity pages. Copper/Chromium/Gold/Aluminum/Gallium are canon (canon_ref, symbol from essentials-canon); Krypton is the non-canon noble gas (display_name + symbol Kr). Delight content: Krypton (Superman/kryptonite + Pauling predicting krypton-fluoride), Aluminum (the Alzheimer-myth as a big_question -- Wallach says no, a single faulty study), Gallium (the metal that melts in your hand + gallium-67 cancer medicine), Chromium (why trace chromium colors rubies and emeralds), Copper (copper-overload Kayser-Fleischer eye rings as a warning). Facet spreads: copper basics/physiology/warning, chromium mechanism/physiology/discovery, gold stance/uses, aluminum sources/big_question, krypton basics/discovery/history, gallium basics/uses.\r\n\r\nEMERGENT self-upgrade: the ONE pill rule (a slug pill is a clickable link iff it has an entity page) meant authoring these lit up cross-links that were plain chips before -- Gallium->Aluminum, Krypton->Fluoride, and Diabetes->Chromium are now clickable, no per-site wiring.\r\n\r\nDATA ONLY: eden/corpus/search-enrichment.json 74->89 enriched claims; eden/catalog/search-entities.json 14->20 entities. No schema/view/gate changes. Landing = 19 entities.\r\n\r\nVERIFIED: build OK, invariants 53/53, render_probe_search PASS (19-entity landing, all types, 0 page errors), targeted headless check PASS (gallium/krypton/diabetes cross-link pills render as clickable links + Gallium->Aluminum click navigates). Luneth visually signed off.\r\n\r\nNEXT: continue bulk migration -- remaining Immortality element A-Z search-only claims (cobalt, silver, bromine, cadmium, cesium, bismuth, helium, hafnium, holmium, indium, iridium, lutetium, rare earths dysprosium/erbium/europium), then the Lets-Play-Doctor modality cluster (hydrotherapy, homeopathy, Ayurveda, reflexology -- topic exemplars) + Wallach philosophy claims. ~129 non-epigenetics search-only claims remain. Mining still PAUSED at Immortality Mn-Manganese." }, { id: "lg_mrehujgp_1f7ol4", ts: "2026-07-10T00:27:18.025323-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 3: 4 general-nutrition CONCEPT entities (Essential Nutrients, Vitamins, Amino Acids, Macronutrients; 16 claims). First concept-type bulk batch; the 4 cross-link each other. Pure data migration, no code. Landing now 23 entities.", detail: "Shifted the bulk migration from single elements to broader CONCEPT entities -- the educational backbone of Wallach nutrition. Grouped 16 primer claims into four framework pages: Essential Nutrients, Vitamins, Amino Acids and Macronutrients. The nice part: these four reference each other, so the knowledge graph is starting to weave together into something a reader can wander through.\r\n\r\nWHAT: 16 sealed search-only primer claims -> 4 faceted concept entity pages (type=concept, non-canon display_name, nodes icon). Essential Nutrients: the 90 = 60 minerals + 16 vitamins + 12 amino acids + 3 essential fatty acids; the cannot-eat-your-way food-depletion stance (vitamins -37%, trace minerals -77%); the 4 hidden deficiency stages. Vitamins: definition + fat/water-soluble + flavanols; pregnancy birth-defect warning; the pill depletes B6. Amino Acids: Wallach 12 (vs mainstream 9) + what each makes. Macronutrients: carbs are NOT essential (stance); carbs/fats/proteins primers; 300 g/day protein is fine absent kidney/liver disease.\r\n\r\nGRAPH: also_about now cross-links the 4 to each other -- Essential Nutrients -> Vitamins + Amino Acids, Macronutrients -> Amino Acids -- all live pills, plus outward links (colloidal_minerals, selenium, omega-3, vitamin-b6, vitamin-b3, magnesium, birth_defects, kidney_disease, liver_disease).\r\n\r\nDATA ONLY: search-enrichment.json 89->105 enriched claims; search-entities.json 20->24 entities. No schema/view/gate changes -- the batch-1 template held for a new entity type.\r\n\r\nVERIFIED: build OK, invariants 53/53, render_probe_search PASS (23-entity landing, 0 page errors), targeted headless PASS (concept nodes-icon with no atomic symbol; the intra-batch cross-link pills clickable). Luneth signed off.\r\n\r\nNEXT: remaining Immortality elements OR the Lets-Play-Doctor modality topic cluster (54 claims). ~113 non-epigenetics search-only claims remain; ~16 entities across 3 batches (near the end of the grounded first-few-dozen). Mining PAUSED at Immortality Mn-Manganese." }, { id: "lg_mrej3gjz_jrfli1", ts: "2026-07-10T01:02:13.775769-05:00", surface: "search", kind: "round-close", summary: "Search G-7 batch 4: 10 healing-modality TOPIC entities, 24 claims -- Light Therapy, Chiropractic, Aromatherapy, Ayurveda, Homeopathy, Hydrotherapy, Negative Ion, Urine, Macrobiotics, Herbal Medicine. Modality cross-link web weaving; Color<->Light reconnected. 33 entities total.", detail: "Went bigger (Luneth OK-d accelerating): migrated 24 Lets-Play-Doctor modality claims into 10 topic pages -- the distinctive delight content, same flavor as Color Therapy. The knowledge graph is genuinely weaving now: these modalities link to each other, so a reader can wander from Herbal Medicine to Aromatherapy to Ayurveda. And a real-world proof landed mid-session -- the Negative Ion Therapy page taught Luneth something new enough that he went and bought an ion generator.\r\n\r\nWHAT: 24 sealed search-only modality claims -> 10 topic entity pages (type=topic). Light Therapy (UV+infrared; the UV-burns-eyes warning; Angstrom spectrum), Chiropractic (subluxations; Palmer 1895 + 1987 AMA antitrust), Aromatherapy, Ayurveda (Dhatus model; Greeks-learned-from-India), Homeopathy (like-cures-like; Hahnemann + Avogadro dilution puzzle), Hydrotherapy, Negative Ion Therapy, Urine Therapy (3 claims), Macrobiotics (3 claims; stance = it works by cutting gluten), Herbal Medicine (30% of drugs come from plants). Thin claims grouped sensibly (Light Therapy folds UV+infrared).\r\n\r\nGRAPH: modality also_about/related now cross-link each other -- Herbal Medicine <-> Aromatherapy/Ayurveda/Homeopathy, and Color Therapy <-> Light Therapy reconnected (color_therapy carried a dormant related:[light_therapy] that lit up the instant the entity was authored -- the ONE pill rule self-upgrading).\r\n\r\nVALIDATION: Luneth used the live app, hit Negative Ion Therapy (never heard of it), researched it, and bought a generator. Captured as memory search-delight-validated -- proof the search-first, capture-broadly, off-path-delight direction is paying off in real user behavior.\r\n\r\nDATA ONLY: search-enrichment.json 105->129 enriched claims; search-entities.json 24->34 entities. No code changes -- the batch-1 template held for a 4th entity flavor. 26 entities migrated across 4 batches (mineral, element, concept, topic).\r\n\r\nVERIFIED: build OK, invariants 53/53, render_probe_search PASS (33-entity landing, 0 page errors), targeted headless PASS (modality cross-link web clickable; Color<->Light reciprocal + navigation). Luneth signed off mid-use.\r\n\r\nNEXT: ~89 non-epigenetics search-only claims remain -- thin modality singles (osteopathy/reflexology/Rolfing/naturopathy/megavitamin/cell-salts/Bach-flower/faith-healing/Christian-Science), Wallach self-reliance/philosophy claims, remaining Immortality elements. Mining PAUSED at Immortality Mn-Manganese." }, { id: "lg_mrekal7j_3cqqu1", ts: "2026-07-10T01:35:46.015765-05:00", surface: "search", kind: "round-close", summary: "Search G-7 batch 5: 7 self-reliance/philosophy entities, 21 claims (Be Your Own Doctor, Hospital Dangers, Pregnancy & Birth, Longevity, Cystic Fibrosis, Sexual Health, Home Remedies). All 4 held-back charged claims included per Luneth; related-enrichment pass. 41 entities.", detail: "Migrated the richest remaining vein -- Wallach self-reliance/philosophy -- into seven entities, and folded in Luneth's decisions on the four claims I had held back for review: he said include all four, verbatim, exclude nothing. Also addressed his note: air-treatment content now links to Negative Ion Therapy, and the max-3 related he was seeing was just my authoring (no cap exists) -- so I enriched the cross-link graph broadly with real connections.\r\n\r\nENTITIES: Be Your Own Doctor (self-care philosophy, the vet model, metabolic-therapy hub linking the modalities), Hospital Dangers (the indictment), Pregnancy & Birth (home birth, 98%-of-birth-defects-are-nutritional), Longevity (120-130 lifespan, Hunza), Cystic Fibrosis (his signature CF=selenium/EFA thesis -- a catalog_ref CONDITION page that leads with stance), plus two new topics Sexual Health and Home Remedies.\r\n\r\nINCLUDED (Luneth reviewed the 4 held-back charged/editorial claims, said include all): 312 vaccine-mandate politics -> Vaccines (verbatim); 232 contraception with his moralizing kept exactly -> Pregnancy & Birth (exclude nothing); 263 premature-ejaculation technique -> new Sexual Health; 370 mosquito-repellent B1 tip -> new Home Remedies (built now, not deferred).\r\n\r\nNOTE FIXES: (1) Longevity 347 + Be Your Own Doctor 481 (air treatment) now also_about Negative Ion Therapy. (2) The max-3-related was NOT a cap -- renderRelated renders ALL of e.related, CSS wraps freely; I had authored ~3. Broad related-enrichment with REAL links (canon nutrient -> essential_nutrients; minerals -> colloidal_minerals; modalities -> be_your_own_doctor; + EXTRA map). Distribution now 4+ on 20 entities (max 6); thin entities honestly left thin. (3) Zumbani was already correct in the sealed text + all source .txt (I over-flagged the OCR) -- no source fix; added a glossary gloss (Lippia javanica) for clarity.\r\n\r\nDATA ONLY: search-enrichment.json 129->150 claims; search-entities.json 34->41 entities; glossary.json +Zumbani. No code changes. 33 entities migrated across 5 batches.\r\n\r\nVERIFIED: build OK, invariants 53/53, render_probe_search + render_probe_knowledge PASS (0 page errors), targeted headless PASS (air link, richer related, CF condition stance-first, Vaccines mandate stance, Zumbani gloss, new entities render). Luneth signed off.\r\n\r\nNEXT: ~72 non-epigenetics search-only claims -- thin modality singles (group into Bodywork / Energy Healing) + remaining Immortality elements. Mining PAUSED at Immortality Mn-Manganese." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -57549,7 +57554,8 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ],
         related: [
           "herbal_medicine",
-          "ayurveda"
+          "ayurveda",
+          "be_your_own_doctor"
         ],
         claim_count: 2
       },
@@ -57563,9 +57569,28 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ],
         related: [
           "herbal_medicine",
-          "homeopathy"
+          "homeopathy",
+          "be_your_own_doctor"
         ],
         claim_count: 2
+      },
+      be_your_own_doctor: {
+        display_name: "Be Your Own Doctor",
+        type: "topic",
+        synonyms: [
+          "self-care",
+          "self-reliance",
+          "primary care",
+          "preventive medicine",
+          "separate medicine and state"
+        ],
+        related: [
+          "hospital_dangers",
+          "pregnancy_birth",
+          "essential_nutrients",
+          "negative_ion_therapy"
+        ],
+        claim_count: 6
       },
       calcium: {
         display_name: "Calcium",
@@ -57577,7 +57602,9 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
           "magnesium",
           "phosphorus",
           "osteoporosis",
-          "vitamin-d"
+          "vitamin-d",
+          "essential_nutrients",
+          "colloidal_minerals"
         ],
         claim_count: 8,
         symbol: "Ca"
@@ -57591,7 +57618,8 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
           "subluxation"
         ],
         related: [
-          "hydrotherapy"
+          "hydrotherapy",
+          "be_your_own_doctor"
         ],
         claim_count: 2
       },
@@ -57604,7 +57632,8 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         related: [
           "vanadium",
           "silicon",
-          "menopause"
+          "menopause",
+          "macronutrients"
         ],
         claim_count: 2
       },
@@ -57617,7 +57646,8 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         related: [
           "diabetes",
           "vanadium",
-          "colloidal_minerals"
+          "colloidal_minerals",
+          "essential_nutrients"
         ],
         claim_count: 3,
         symbol: "Cr"
@@ -57634,7 +57664,8 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         related: [
           "chromium",
           "calcium",
-          "selenium"
+          "selenium",
+          "essential_nutrients"
         ],
         claim_count: 5
       },
@@ -57647,7 +57678,8 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
           "colour therapy"
         ],
         related: [
-          "light_therapy"
+          "light_therapy",
+          "be_your_own_doctor"
         ],
         claim_count: 3
       },
@@ -57661,10 +57693,26 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         related: [
           "zinc",
           "iron",
-          "anemia"
+          "anemia",
+          "essential_nutrients",
+          "colloidal_minerals"
         ],
         claim_count: 3,
         symbol: "Cu"
+      },
+      cystic_fibrosis: {
+        display_name: "Cystic Fibrosis",
+        type: "condition",
+        synonyms: [
+          "cf",
+          "mucoviscidosis"
+        ],
+        related: [
+          "selenium",
+          "omega-3",
+          "birth_defects"
+        ],
+        claim_count: 1
       },
       diabetes: {
         display_name: "Diabetes",
@@ -57678,7 +57726,8 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         related: [
           "chromium",
           "vanadium",
-          "hypoglycemia"
+          "hypoglycemia",
+          "colloidal_minerals"
         ],
         claim_count: 6
       },
@@ -57693,7 +57742,8 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         related: [
           "colloidal_minerals",
           "vitamins",
-          "amino_acids"
+          "amino_acids",
+          "macronutrients"
         ],
         claim_count: 5
       },
@@ -57708,7 +57758,8 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         related: [
           "calcium",
           "osteoporosis",
-          "tooth_decay"
+          "tooth_decay",
+          "essential_nutrients"
         ],
         claim_count: 6,
         symbol: "F"
@@ -57723,7 +57774,9 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         related: [
           "aluminum",
           "cancer",
-          "germanium"
+          "germanium",
+          "essential_nutrients",
+          "colloidal_minerals"
         ],
         claim_count: 2,
         symbol: "Ga"
@@ -57738,7 +57791,9 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         related: [
           "cancer",
           "selenium",
-          "lithium"
+          "lithium",
+          "essential_nutrients",
+          "colloidal_minerals"
         ],
         claim_count: 6,
         symbol: "Ge"
@@ -57753,7 +57808,9 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         related: [
           "arthritis",
           "cancer",
-          "silver"
+          "silver",
+          "essential_nutrients",
+          "colloidal_minerals"
         ],
         claim_count: 2,
         symbol: "Au"
@@ -57770,9 +57827,26 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         related: [
           "aromatherapy",
           "ayurveda",
-          "homeopathy"
+          "homeopathy",
+          "be_your_own_doctor"
         ],
         claim_count: 2
+      },
+      home_remedies: {
+        display_name: "Home Remedies",
+        type: "topic",
+        synonyms: [
+          "natural remedies",
+          "folk remedies",
+          "pest control",
+          "mosquito repellent"
+        ],
+        related: [
+          "herbal_medicine",
+          "be_your_own_doctor",
+          "hydrotherapy"
+        ],
+        claim_count: 1
       },
       homeopathy: {
         display_name: "Homeopathy",
@@ -57784,9 +57858,24 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ],
         related: [
           "herbal_medicine",
-          "naturopathy"
+          "naturopathy",
+          "be_your_own_doctor"
         ],
         claim_count: 2
+      },
+      hospital_dangers: {
+        display_name: "Hospital Dangers",
+        type: "topic",
+        synonyms: [
+          "hospital safety",
+          "nosocomial infection",
+          "iatrogenic",
+          "medical errors"
+        ],
+        related: [
+          "be_your_own_doctor"
+        ],
+        claim_count: 3
       },
       hydrogen: {
         display_name: "Hydrogen",
@@ -57797,7 +57886,8 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         related: [
           "oxygen",
           "water",
-          "ph"
+          "ph",
+          "essential_nutrients"
         ],
         claim_count: 5,
         symbol: "H"
@@ -57811,7 +57901,8 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
           "balneotherapy"
         ],
         related: [
-          "chiropractic"
+          "chiropractic",
+          "be_your_own_doctor"
         ],
         claim_count: 2
       },
@@ -57824,7 +57915,9 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         related: [
           "thyroid_disease",
           "hypothyroidism",
-          "selenium"
+          "selenium",
+          "essential_nutrients",
+          "colloidal_minerals"
         ],
         claim_count: 6,
         symbol: "I"
@@ -57839,7 +57932,9 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         related: [
           "vitamin-c",
           "anemia",
-          "copper"
+          "copper",
+          "essential_nutrients",
+          "colloidal_minerals"
         ],
         claim_count: 5,
         symbol: "Fe"
@@ -57853,7 +57948,8 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ],
         related: [
           "fluoride",
-          "helium"
+          "helium",
+          "essential_nutrients"
         ],
         claim_count: 3,
         symbol: "Kr"
@@ -57869,9 +57965,27 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ],
         related: [
           "color_therapy",
-          "vitamin-d"
+          "vitamin-d",
+          "be_your_own_doctor"
         ],
         claim_count: 4
+      },
+      longevity: {
+        display_name: "Longevity",
+        type: "topic",
+        synonyms: [
+          "lifespan",
+          "aging",
+          "live longer",
+          "hunza"
+        ],
+        related: [
+          "essential_nutrients",
+          "colloidal_minerals",
+          "be_your_own_doctor",
+          "negative_ion_therapy"
+        ],
+        claim_count: 1
       },
       macrobiotics: {
         display_name: "Macrobiotics",
@@ -57883,7 +57997,8 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ],
         related: [
           "celiac_disease",
-          "diabetes"
+          "diabetes",
+          "be_your_own_doctor"
         ],
         claim_count: 3
       },
@@ -57915,7 +58030,8 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         related: [
           "selenium",
           "mercury_poisoning",
-          "minamata_disease"
+          "minamata_disease",
+          "vaccines"
         ],
         claim_count: 13,
         symbol: "Hg"
@@ -57929,7 +58045,8 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
           "ionizer"
         ],
         related: [
-          "asthma"
+          "asthma",
+          "be_your_own_doctor"
         ],
         claim_count: 2
       },
@@ -57943,10 +58060,49 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         related: [
           "sodium",
           "magnesium",
-          "lithium"
+          "lithium",
+          "essential_nutrients",
+          "colloidal_minerals"
         ],
         claim_count: 5,
         symbol: "K"
+      },
+      pregnancy_birth: {
+        display_name: "Pregnancy & Birth",
+        type: "topic",
+        synonyms: [
+          "pregnancy",
+          "childbirth",
+          "home birth",
+          "prenatal",
+          "obstetrics",
+          "contraception"
+        ],
+        related: [
+          "birth_defects",
+          "infertility",
+          "cystic_fibrosis",
+          "vitamins",
+          "sexual_health"
+        ],
+        claim_count: 7
+      },
+      sexual_health: {
+        display_name: "Sexual Health",
+        type: "topic",
+        synonyms: [
+          "mens health",
+          "sexual function",
+          "potency",
+          "libido",
+          "premature ejaculation"
+        ],
+        related: [
+          "pregnancy_birth",
+          "be_your_own_doctor",
+          "herbal_medicine"
+        ],
+        claim_count: 1
       },
       urine_therapy: {
         display_name: "Urine Therapy",
@@ -57958,9 +58114,26 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ],
         related: [
           "allergies",
-          "cancer"
+          "cancer",
+          "be_your_own_doctor"
         ],
         claim_count: 3
+      },
+      vaccines: {
+        display_name: "Vaccines",
+        type: "topic",
+        synonyms: [
+          "vaccine",
+          "vaccination",
+          "immunization",
+          "thimerosal"
+        ],
+        related: [
+          "mercury",
+          "autism",
+          "be_your_own_doctor"
+        ],
+        claim_count: 1
       },
       vitamins: {
         display_name: "Vitamins",
@@ -57986,7 +58159,9 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
           "joel d wallach"
         ],
         related: [
-          "epigenetics"
+          "epigenetics",
+          "essential_nutrients",
+          "colloidal_minerals"
         ],
         claim_count: 4
       }
@@ -60427,6 +60602,401 @@ therapy from the Madagascar periwinkle`,
           "immune",
           "cancer",
           "autoimmune"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000232",
+        subject: "pregnancy_birth",
+        also_about: [],
+        facet: "history",
+        question: "Why were midwives who knew contraception called witches?",
+        answer_short: "Wallach notes midwives who knew contraception herbs were once branded 'witches' and burned; he ranks birth control (abstinence, barriers, hormones - least desirable, IUDs, surgery) and bluntly calls sex outside marriage 'Russian roulette.'",
+        answer: "Wallach frames contraception as historically fraught \u2014 noting that midwives who knew contraception and abortion herbs were once branded \u201Cwitches\u201D and burned at the stake \u2014 and argues that, with population pressures, AIDS, and teen pregnancies, contraception cannot be ignored. He divides it into abstinence, barriers, hormones (the least desirable because of side effects), intrauterine devices (IUDs \u2014 \u201Cbe careful here,\u201D citing the Dalkon Shield), and surgery (vasectomy or tying the fallopian tubes). He considers the \u201Crhythm\u201D method unsafe outside of marriage because of the AIDS risk and because few couples have the consistent self-control it requires, and he states bluntly that sex outside of marriage is \u201CRussian roulette\u201D and that anal sex is especially dangerous.",
+        verbatim: 'Contraception is divided into abstinence, barriers, hormones (this is the least desirable from\nthe standpoint of side effects), IUDs (intrauterine devices - be careful here - remember the\nDelcon Shield!!!), and surgery (vasectomy or\ntying the fallopian tubes). The "rhythm"\nmethod cannot be considered a safe form of\ncontraception outside of the mamage because of the AIDS risk and few couples have\nthe consistent self-control necessary to prevent pregnancies',
+        page: null,
+        book_id: "lets-play-doctor",
+        topics: [
+          "contraception",
+          "history",
+          "midwives"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000263",
+        subject: "sexual_health",
+        also_about: [],
+        facet: "protocol",
+        question: "How does Wallach approach premature ejaculation?",
+        answer_short: "He calls it normal and curable, with physical causes (high expectation, infrequent sex, friction) not guilt; his fix is comfort with each other's bodies, frequent sex, and good lubrication, with ginseng and Zumbani as tonics.",
+        answer: "Wallach treats premature ejaculation as a normal, preventable, and curable issue with basic physical causes \u2014 a mental state of high expectation, infrequency of sex, and too much friction \u2014 rather than the 'mental block' or 'guilt' the orthodox sexologist invokes. His approach has three parts: be very open and comfortable with each other's bodies (time spent together unclothed, showers, massages, until nakedness is unremarkable); have frequent sex, which requires effort and romance from both partners; and ensure proper lubrication (natural arousal, or a water-soluble gel such as K-Y Jelly, inserting slowly and letting the partner relax). Ginseng (Panax spp.) and herb combinations (Zumbani) are noted as tonifying agents for potency.",
+        verbatim: "The true basics of premature ejaculation (it happens to all men given\nthe classic circumstances) include a mental\nstate of high expectation, infrequency of sex\nand too much friction",
+        page: null,
+        book_id: "lets-play-doctor",
+        topics: [
+          "premature-ejaculation",
+          "sexual-health",
+          "mens-health"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000312",
+        subject: "vaccines",
+        also_about: [],
+        facet: "stance",
+        question: "What is Wallach's stance on vaccine mandates?",
+        answer_short: "He calls immunization 'the greatest interface between government and freedom of choice,' opposes compulsory school mandates, defends the religious exemption, and says some experts blame certain vaccine programs for catastrophic diseases.",
+        answer: "In this entry Wallach frames immunization (vaccination) as, in his words, 'perhaps the greatest interface between government and freedom of choice' in personal health care. He objects to compulsory school-entry vaccination mandates and to states treating refusal as grounds for a child-abuse charge, defends the religious exemption, and asserts that some experts believe certain vaccination programs have carried catastrophic diseases. This is captured for the search corpus as Wallach's political/editorial opinion \u2014 it is commentary, not a deficiency-treatment protocol, so it does not appear in the operational condition indices.",
+        verbatim: "IMMUNIZATION (vaccination): is perhaps\nthe greatest interface between government\nand freedom of choice in your own health\ncare!!!",
+        page: null,
+        book_id: "lets-play-doctor",
+        topics: [
+          "vaccine-mandates",
+          "medical-freedom",
+          "religious-exemption"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000347",
+        subject: "longevity",
+        also_about: [
+          "colloidal_minerals",
+          "essential_nutrients",
+          "negative_ion_therapy"
+        ],
+        facet: "stance",
+        question: "How long can humans live?",
+        answer_short: "Wallach says 120-130 years, vs the ~72-78 of actuary tables. He credits the Hunza's ~100-year average to plant-derived colloidal minerals, and says filters, digestive aids and the baseline program add ~20 years.",
+        answer: "Wallach holds that the potential lifespan for humans is 120-130 years, yet insurance actuary tables put the average at only 72 for males and 78 for females \u2014 a 40-50 year gap to work toward. He says home water-filtration systems, air filters and conditioners, and the baseline nutrition program can each add years, and that digestive aids (betaine hydrochloride and pancreatic enzymes) add another ten \u2014 about twenty added years when pursued actively. He attributes the Hunza secret of longevity (averaging 100 years, up to 140) to the daily consumption of plant-derived colloidal minerals, and warns that exercise alone \u2014 without attention to food allergies, digestive aids, the baseline program, colloidal minerals, and avoiding pollutants \u2014 will only shorten life. He also notes that 40% of hospital patients are there because of iatrogenic (doctor-caused) disease. (Captured for the search corpus as Wallach's general longevity guidance.)",
+        verbatim: "LIFE EXPECTANCY (life span): potential\nfor man is 120-130 years, yet the average life\nspan based on insurance actuary tables is\nonly 72 for males and 78 for females. This\nleaves a 40-50 year differential that we can\nwork towards with hopeful expectations.",
+        page: null,
+        book_id: "lets-play-doctor",
+        topics: [
+          "lifespan",
+          "hunza",
+          "colloidal-minerals"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000362",
+        subject: "be_your_own_doctor",
+        also_about: [
+          "herbal_medicine",
+          "homeopathy",
+          "hydrotherapy"
+        ],
+        facet: "basics",
+        question: "What is 'metabolic therapy'?",
+        answer_short: "Wallach's umbrella term for curing disease by fixing whole-body metabolism - through nutrition, herbs, homeopathy, acupuncture, manipulation and hydrotherapy.",
+        answer: "Wallach defines 'metabolic therapy' as the resolving or curing of disease processes by correcting the whole-body metabolism through nutrition, herbs, homeopathy, acupuncture, manipulation and hydrotherapy. (Captured for the search corpus as a general definition of his therapeutic approach.)",
+        verbatim: "METABOLIC THERAPY: is the resolving or\ncuring of disease processes by conecting the\nwhole body metabolism through nutrition,\nherbs, homeopathy, acupuncture, manipulation and hydrotherapy",
+        page: 149,
+        book_id: "lets-play-doctor",
+        topics: [
+          "metabolic-therapy",
+          "holistic",
+          "approach"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000370",
+        subject: "home_remedies",
+        also_about: [
+          "vitamin-b1"
+        ],
+        facet: "uses",
+        question: "How can you repel mosquitoes naturally?",
+        answer_short: "Screen doors and 'zapper' lights set 15-25 yards from the house draw mosquitoes off; Wallach adds pennyroyal oil on the skin and vitamin B1 at 500 mg/day as natural repellents - handy since mosquitoes carry malaria and encephalitis.",
+        answer: "Mosquitoes can be kept out of the home with screen windows and doors and electric 'zapper' lights placed 15-25 yards from the back door (the violet light draws mosquitoes away from the house). Wallach notes mosquitoes carry serious human diseases \u2014 meningitis and encephalitis in North America; malaria, yellow fever, meningitis and encephalitis in South America. Beyond over-the-counter flying-insect sprays, he says the herb pennyroyal (Mentha pulegium) oil rubbed on the skin and vitamin B-1 (thiamine) at 500 milligrams a day will also help repel mosquitoes.",
+        verbatim: 'There are numerous OTC flying\ninsect sprays, herbs like pennyroyal (Mentha\npulegium) oil nibbed on the skin and vitamins\nsuch as B-l at 500 mg/day will also "repel"\nmosquitoes.',
+        page: 151,
+        book_id: "lets-play-doctor",
+        topics: [
+          "mosquito-repellent",
+          "pennyroyal",
+          "vitamin-b1"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000467",
+        subject: "pregnancy_birth",
+        also_about: [],
+        facet: "stance",
+        question: "Is a hospital birth necessary?",
+        answer_short: "Wallach says pregnancy is normal, not a disease, and home birth is the safest, cheapest option - he delivered ~200 babies at home with one c-section, and blames the 35% hospital c-section rate on economics.",
+        answer: "Wallach holds that pregnancy is a normal biological process, not a disease, and that hospitalizing women to deliver babies is rarely medically necessary (exceptions such as Rh incompatibility or placenta previa aside). He argues the modern hospital-birth model is driven by the obstetrician-gynecologist's economics \u2014 roughly 15 to 30 minutes of attending a normal birth for about $1,000 \u2014 and that the United States' 35% hospital caesarean-section rate reflects a profitable practice rather than genuine need. As a naturopathic doctor practicing in Oregon he reports delivering some 200 babies at home and referring only one for a caesarean section (about 0.5%). He says home birth is the safest, least expensive option and brings the family together, noting that more infections occur in newborns and post-delivery mothers in the hospital than at home, and that the United States ranks 23rd in newborn mortality among industrialized nations (World Health Organization). He invokes the history of Dr. Ignaz Semmelweis, who showed that orthodox doctors who failed to wash their hands between the autopsy room and the delivery room caused far higher newborn mortality (about 80%) than hand-washing midwives (about 5%) at the Vienna Children's Hospital between 1774 and 1836.",
+        verbatim: 'Contrary to the "orthodox" OB/GYN\nteaching and general medical thought, pregnancy is a normal biological process and not\na disease!! The hospitalization of women for\nthe delivery of babies is rarely necessary',
+        page: 74,
+        book_id: "lets-play-doctor",
+        topics: [
+          "home-birth",
+          "cesarean",
+          "semmelweis"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000468",
+        subject: "pregnancy_birth",
+        also_about: [
+          "vitamins"
+        ],
+        facet: "protocol",
+        question: "What prenatal care can a woman do herself?",
+        answer_short: "A lot: self breast and pelvic exams, cycle tracking, home pregnancy tests, OTC prenatal vitamins, own blood-pressure and urine tests - and, barring a few specific risks, she can give birth at home.",
+        answer: "Wallach describes how much of routine obstetric and gynecologic self-care can be done at home. A woman can perform her own monthly breast self-examination, take advantage of free or reduced-fee mammograms, do a self internal (vaginal and cervical) examination, and track her cycles so any abnormal change is noticed immediately. Pregnancy can be diagnosed at home with over-the-counter home pregnancy test kits, and prenatal vitamins are sold without a prescription \u2014 he urges any sexually active woman to be on a baseline vitamin-and-mineral supplement program to prevent birth defects. He notes a woman can weigh herself, take her own blood pressure and test her own urine, send blood to the public-health lab for Rh, anemia and toxoplasmosis testing, take a LaMaze class to understand labor, and request a hospital or university ultrasound to locate the placenta, confirm the baby's age and rule out twins. Except for twins, placenta previa, pelvic deformity or Rh problems, he says a woman can have her baby at home.",
+        verbatim: "Pregnancy is easily diagnosed at home\nwith any of the numerous HPT kits (Home\nPregnancy Test) that can be purchased from\nthe pharmacy or grocery store, as can prenatal\nvitamins (you should be on vitamins and\nminerals (i.e., baseline nutrition supplement\nprogram) if you are sexually active to prevent",
+        page: 75,
+        book_id: "lets-play-doctor",
+        topics: [
+          "self-care",
+          "prenatal",
+          "home-testing"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000469",
+        subject: "pregnancy_birth",
+        also_about: [],
+        facet: "uses",
+        question: "What birth control can you buy without a prescription?",
+        answer_short: "Condoms, spermicidal creams, jellies, foams and sponges - all over the counter. Wallach considers these barrier methods much safer than IUDs (the Dalkon Shield) and the pill (clots, deaths, sterility).",
+        answer: "Wallach notes that birth control \u2014 condoms, spermicidal creams, jellies, foams and sponges \u2014 can be bought over the counter from pharmacies and grocery stores without a prescription from an orthodox doctor. He considers these barrier and spermicidal methods considerably safer than intrauterine devices (citing the Dalkon Shield) and birth-control pills (which he associates with deaths, blood clots and sterility).",
+        verbatim: `Birth control (i.e. , condoms, spennicidal
+creams, jellies, and foams,sponges, etc.) can
+be obtained OTC (over the counter) from
+pharmacies and grocery stores (next they will
+show up at McDonald's) without a prescription from the "orthodox" doctor. These forms
+of contraception are a lot safer than IUDs (i.e.,
+Delcon Shield) and birth control pills (i.e.,
+deaths, blood clots, sterility`,
+        page: 75,
+        book_id: "lets-play-doctor",
+        topics: [
+          "contraception",
+          "barrier-methods",
+          "otc"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000470",
+        subject: "pregnancy_birth",
+        also_about: [
+          "birth_defects",
+          "cystic_fibrosis"
+        ],
+        facet: "stance",
+        question: "What causes most birth defects?",
+        answer_short: "Wallach's 'pet peeve': 98% come from nutritional deficiencies, not radiation. Teens have more than women over 40 - and lab animals get defect-free diets, so why feed a rat better than a pregnant woman?",
+        answer: "Wallach calls birth defects his 'pet peeve' and contends that, in a review of causes, 98% of birth defects are caused by nutritional deficiencies \u2014 citing cystic fibrosis, muscular dystrophy, heart defects, brain defects, spina bifida, cleft palate, limb defects and hernia \u2014 while radiation causes less than 0.10% (since most pregnant women already avoid x-rays). He argues teenagers have a higher rate of birth defects than women over 40 because of poor eating habits, lack of supplementation, and the competing nutrient demands of their own puberty growth. He points out that billions have been spent perfecting preconception and pregnancy rations for laboratory, pet and agricultural animals that totally eliminate birth defects (pelleted diets that deliver complete nutrition in every mouthful), and asks why a laboratory rat should be fed better than a pregnant woman. Preconception and prenatal supplements, he says, are cheap insurance against the tragedy of birth defects, and a woman whose obstetrician failed to prescribe a baseline program may be within her rights to sue for malpractice.",
+        verbatim: "In a review of causes of birth defects, 98% are\nknown to be caused by nutritional deficiencies (i.e., cystic fibrosis, muscular dystrophy,\nheart defects,brain defects, spina bifida, cleft\npalates or limb defects, hernia, etc.); radiation, by contrast, causes less than 0.10% of the",
+        page: 76,
+        book_id: "lets-play-doctor",
+        topics: [
+          "birth-defects",
+          "preconception",
+          "supplementation"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000471",
+        subject: "cystic_fibrosis",
+        also_about: [
+          "selenium",
+          "omega-3"
+        ],
+        facet: "stance",
+        question: "Is cystic fibrosis really genetic?",
+        answer_short: "Wallach's signature thesis: no - it's a selenium and essential-fatty-acid deficiency from the mother's malabsorption. He cites 1972 Cornell chicks cured in 21 days by selenium, and 450 patients treated since 1978.",
+        answer: "Wallach's signature thesis: cystic fibrosis is not a genetic disease but a selenium and essential-fatty-acid deficiency in the fetus and/or breastfed newborn, initiated by the mother's malabsorption of selenium from subclinical celiac disease and food allergies. Selenium deficiency produces the classic cystic-fibrosis lesions of the pancreas; affected infants are born with normal lungs and a negative 'sweat test' that only turns positive over the first months of life as they lose the essential fatty acids their mother gave them as a fetus. He notes the sweat test (introduced by Dr. Paul di Sant'Agnese of the National Institutes of Health in 1958) is non-specific, also turning positive in eight other conditions such as celiac disease, allergies and starvation. He marshals evidence: Dr. Klaus Schwartz reported selenium as an essential nutrient in 1958 and recorded cystic-fibrosis-like pancreatic changes in deficient rats; in 1972 Cornell University found chicks from selenium-deficient hens developed classic cystic fibrosis that was totally cured within 21 days when selenium was given within 30 days of hatching; in 1978 Wallach reported the first agreed-upon non-human cystic fibrosis in NASA monkeys (and says he was fired with 24 hours' notice, 10 days after his wife died). Since 1978 he reports treating 450 cystic-fibrosis patients with excellent results. A joint study with Harbin Medical University and Shanghai First Medical University examined 1,700 Chinese children who died of Keshan disease (a selenium-deficiency heart disease); 595 \u2014 35% \u2014 had classic cystic-fibrosis pancreatic lesions, and of over 400 cystic-fibrosis autopsies, 79 had Keshan heart disease.",
+        verbatim: 'for the last 40 years. In reality,\n"cystic fibrosis" is a selenium and fatty acid\ndeficiency in the fetus and/or newborn\nbreastfed infant.',
+        page: 76,
+        book_id: "lets-play-doctor",
+        topics: [
+          "selenium",
+          "essential-fatty-acids",
+          "deficiency-thesis"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000472",
+        subject: "pregnancy_birth",
+        also_about: [
+          "infertility"
+        ],
+        facet: "mechanism",
+        question: "Is infertility a nutrition problem?",
+        answer_short: "Wallach says mostly yes - as a breeder feeds a mare 120 days before mating, he's reversed hundreds of cases by nourishing both partners; one 'infertile' doctor had vitamin A at 10% of normal (malabsorption).",
+        answer: "Wallach argues that infertility in Americans is primarily a nutritional problem. He draws the farmer's analogy \u2014 a farmer expects 100 cows to yield 100 pregnancies and 100 normal calves \u2014 and notes that breeders feed a mare special foods for 90 to 120 days before breeding, asking how we can expect conception in women with poor nutrition, no supplementation, or malabsorption syndromes. He reports successfully reversing hundreds of infertility cases by nutritionally revitalizing both husband and wife. As an example he describes a young female orthodox doctor who had tried for years to conceive; her blood vitamin A was at 10% of normal despite supplementation \u2014 a classic case of malabsorption \u2014 and after rotation diets, identifying her food allergies, considering celiac disease, and 120 days of supplementation, she became pregnant.",
+        verbatim: "Infertility is another common problem\nin Americans that is primarilya nutritional problem. Why can a farmer have 100 cows, 100\npregnancies and 100 normal calves. We have\nsuccessfully tested literally hundreds of cases\nof infertility with nutritional revitalization of\nboth the husband and the wife",
+        page: 77,
+        book_id: "lets-play-doctor",
+        topics: [
+          "infertility",
+          "malabsorption",
+          "preconception"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000473",
+        subject: "be_your_own_doctor",
+        also_about: [],
+        facet: "protocol",
+        question: "How should you choose a medical specialist?",
+        answer_short: "Only when truly needed - then get three-plus opinions from different fields, ask to speak with ten past patients, and start conservative; the more 'exotic' the specialist, the higher the risk.",
+        answer: "Wallach's guidance on when and how to use a medical specialist. One of your responsibilities as your own primary health care provider is recognizing when you genuinely need a specialist (e.g. an orthopedic surgeon if you are run over by a concrete truck) versus when you do not (you don't need an ear-eye-nose-and-throat specialist for an occasional earache). If a specialist's skills are required, he advises getting three or more opinions from three or more different specialists \u2014 including one from a totally different field, who is more likely to give an objective view \u2014 just as you would get three bids for car body repair. Ask the specialist to let you speak with ten of his patients who went through the procedure (to learn whether they survived and whether he has even done it before). Start at the conservative end; the more 'exotic' the specialist, the greater the risk. Your chiropractor, naturopathic physician, or even your veterinarian can refer you.",
+        verbatim: 'get three (3) or more opinions from three (3)\nor more different "specialists" (be sure to ask\none from a totally different field as they will be\nmore likely to give you an objective view) as\nthis will increase your chances of survival',
+        page: 176,
+        book_id: "lets-play-doctor",
+        topics: [
+          "specialists",
+          "second-opinion",
+          "referrals"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000474",
+        subject: "be_your_own_doctor",
+        also_about: [],
+        facet: "warning",
+        question: "How impaired are conventional doctors?",
+        answer_short: "Wallach cites alarming numbers - tens of thousands of physician alcoholics, heavy drug use among doctors and students, and the U.S. losing 'seven medical-school classes' a year to addiction and suicide.",
+        answer: "Wallach cites statistics on the impairment of orthodox physicians as a reason to be cautious about specialist care. Per Stephen C. Scheiber, Medical Doctor (in 'The Impaired Physician'), 22,600 to 33,600 physicians are alcoholics, recovering alcoholics, or soon to be alcoholics, and alcoholism often goes hand in hand with drug abuse. A Harvard study, he says, found that 59% of physicians and 78% of medical students use psychoactive drugs (usually marijuana and cocaine) and that 40% of orthodox doctors get high with friends on a regular basis; he adds that the United States loses the equivalent of seven medical-school graduating classes each year to drug addiction, alcoholism and suicide, and (per 'Medicine On Trial') that patients visit these physicians 45 to 100 million times a year.",
+        verbatim: 'A recent Harvard study has revealed that\n"59% of physicians 78% of medical students\nuse psychoactive dmgs (usually marijuana\nand cocaine) and that 40% of "orthodox" doctors get "high" with friends on a regular basis',
+        page: 176,
+        book_id: "lets-play-doctor",
+        topics: [
+          "physician-impairment",
+          "addiction",
+          "statistics"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000475",
+        subject: "be_your_own_doctor",
+        also_about: [],
+        facet: "stance",
+        question: "What does Wallach mean by 'be your own doctor'?",
+        answer_short: "Become your own primary care provider - you're unlikely to harm yourself. Try conservative and alternative care before orthodox medicine, and 'separate medicine and state.'",
+        answer: "Wallach's core self-reliance philosophy: become your own primary health care provider, because it is highly unlikely you will harm yourself. He admires the old country doctor and the veterinary model \u2014 the veterinarian does his own anesthesia, obstetrics, surgery, dentistry, internal medicine, cardiology and radiology \u2014 and argues that the closer the doctor is to the patient, the less likely they are to do harm. He urges pursuing conservative and alternative therapies before being 'cut, burned and poisoned' by orthodox medicine, and closes the chapter with his recurring call to 'separate medicine and state.'",
+        verbatim: "We like the old country doctor or the\nveterinary approach; the closer the doctor is to\nhis patient, the less likely it is they will do them",
+        page: 176,
+        book_id: "lets-play-doctor",
+        topics: [
+          "self-reliance",
+          "country-doctor",
+          "medicine-and-state"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000476",
+        subject: "be_your_own_doctor",
+        also_about: [
+          "essential_nutrients",
+          "colloidal_minerals"
+        ],
+        facet: "stance",
+        question: "What's the best health insurance?",
+        answer_short: "Not getting sick. Prevention - a baseline supplement program and daily self-care - is cheaper and easier than illness; Wallach calls it the best buy for your health dollars.",
+        answer: "Wallach's thesis that the best insurance is not to get sick \u2014 it is both less time-consuming and cheaper than illness. He draws the veterinary analogy: it is cheaper to put a little calcium in the feed to prevent arthritis than to give gold shots to a prize bull. True preventive medicine \u2014 through healthful living, a baseline nutritional supplement program (including plant-derived colloidal minerals), and constant self-care \u2014 is, he argues, the best insurance buy for your health dollars.",
+        verbatim: "The best insurance is not to get sick!!\nThis is not only less time consuming but it is\nalso cheaper than illness",
+        page: 179,
+        book_id: "lets-play-doctor",
+        topics: [
+          "prevention",
+          "insurance",
+          "supplementation"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000477",
+        subject: "hospital_dangers",
+        also_about: [],
+        facet: "warning",
+        question: "How dangerous are hospitals?",
+        answer_short: "Wallach's tally: 970 of 1,000 hospitals billed wrong (always in their favor), up to half of new equipment defective on arrival, and 100,000+ deaths a year from hospital-caught infections.",
+        answer: "Wallach's catalog of hospital dangers. An independent survey of insurance billing in 1,000 hospitals found 97% (970) sent incorrect billings, with 100% of the 'mistakes' in the hospital's favor. He states as much as 50% of new hospital equipment (anesthesia machines, fetal cardiac monitors, infusion pumps) is defective on delivery; that 80 to 90% of anesthetic deaths are due to human error; and that a minimum of 100,000 deaths from nosocomial (hospital-caused) infections occur each year, plus another 100,000 nosocomial blood infections \u2014 leading a Harvard study to call doctor-induced infection among the top ten leading causes of death in the United States. He notes veterinarians avoid such infections by giving preventive antibiotics during surgery.",
+        verbatim: 'A minimum of 100,000\ndeaths from "nosocomial" infections (hospital\ncaused) occur each year and another 100,000\nhave "nosocomial" blood infections each year\nbut recover because of antibiotics',
+        page: 179,
+        book_id: "lets-play-doctor",
+        topics: [
+          "nosocomial-infection",
+          "medical-error",
+          "billing"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000478",
+        subject: "hospital_dangers",
+        also_about: [
+          "chiropractic",
+          "homeopathy"
+        ],
+        facet: "protocol",
+        question: "What should you do if you're hospitalized?",
+        answer_short: "Have a family member stay to check every shot, pill and procedure before it's given, confirm your IV lines, and use family blood if needed - just as orthodox doctors monitor their own families.",
+        answer: "Wallach's practical hospital-stay advice: if you must be hospitalized, insist that a spouse, parent or child stay with you to check every shot, every pill and every procedure before it is administered, make sure you are not 'dropped through the cracks,' confirm your intravenous lines are hooked up properly, and get blood from your own family if needed. He also notes that insurance coverage for alternative care (naturopathic, chiropractic and homeopathic physicians) exists but only as an expensive 'rider' \u2014 not because alternative care costs more (it costs less) but because insurers' medical committees, dominated by medical doctors, only approve orthodox services. He observes that orthodox doctors do this monitoring for their own families.",
+        verbatim: "If you have to be in the hospital, insist on\nhaving a spouse, parent or child stay with you\nto check out each shot, each pill and each\nprocedure before it is administered to you",
+        page: 180,
+        book_id: "lets-play-doctor",
+        topics: [
+          "hospital-stay",
+          "patient-advocate",
+          "safety"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000479",
+        subject: "hospital_dangers",
+        also_about: [],
+        facet: "stance",
+        question: "What is the 'medical industrial Bermuda Triangle'?",
+        answer_short: "Wallach's name for the FDA, AMA and drug companies - costing Americans more than national defense while the U.S. ranks 17th in longevity and 32nd in birth defects. He calls to 'separate Medicine and State.'",
+        answer: "Wallach's public-health indictment. He charges that for the last five years the 'medical industrial Bermuda Triangle' \u2014 the Food and Drug Administration, the American Medical Association, and the drug companies \u2014 has cost the American people more than the Pentagon and national-defense budget, yet the United States is rated 17th in longevity, 19th in healthfulness, 23rd in live births and first-year survival, and 32nd in birth defects among the western industrialized nations (World Health Organization). He adds that the 20 countries healthier than the United States together have a gross national product less than what the United States spends on medical care, and calls for a separation of 'Medicine and State' just as church is separated from state.",
+        verbatim: "Americans are rated\n17th in longivity, 19th in healthfulness, 23rd in\nlive births and first year surviability and 32nd\nin birth defects when compared with the\nwestern industrialized nations by the WHO",
+        page: 182,
+        book_id: "lets-play-doctor",
+        topics: [
+          "fda",
+          "ama",
+          "public-health"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000480",
+        subject: "pregnancy_birth",
+        also_about: [
+          "birth_defects"
+        ],
+        facet: "history",
+        question: "Which agency said women should supplement before pregnancy?",
+        answer_short: "The CDC, in 1992 - not the FDA. Wallach credits the CDC's independence from company revenue, and notes it independently echoed his own preconception-supplementation thesis.",
+        answer: "Wallach highlights that the government agency which came forward in 1992 to say all sexually active women should be taking vitamins and minerals before conception to prevent birth defects was the Centers for Disease Control \u2014 not the Food and Drug Administration. He attributes this to the Centers for Disease Control not being beholden to any company for generating revenue, as (he argues) the Food and Drug Administration is. The recommendation independently echoes his own preconception-supplementation thesis.",
+        verbatim: "It is of interest that the government agency that came forward in 1992 and\nsaid that all sexually active women should be\ntaking vitamins and minerals before conception to prevent birth defects was the CDC",
+        page: 182,
+        book_id: "lets-play-doctor",
+        topics: [
+          "cdc",
+          "preconception",
+          "folic-acid"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000481",
+        subject: "be_your_own_doctor",
+        also_about: [
+          "colloidal_minerals",
+          "negative_ion_therapy"
+        ],
+        facet: "protocol",
+        question: "How do you take charge of your home environment?",
+        answer_short: "Grow some food and treat your home water and air - Wallach says 3,000+ mostly-carcinogenic chemicals slip through city water (clear isn't safe); a bone-charcoal filter removes them.",
+        answer: "Wallach's home-environment public-health program: take responsibility for your household 'micro' environment \u2014 grow a portion of your own organic food, install home water and air treatment, and pursue energy conservation. He argues home water treatment is no longer a luxury but a necessity: there are more than 3,000 chemicals in drinking and bathing water not removed by community treatment systems, almost all of them carcinogenic (clear water is not necessarily safe water), and a bone-charcoal filter will remove the hydrocarbons and heavy metals. He urges including plant-derived colloidal minerals in your public-health program to prevent disease and reduce damage from heavy metals and environmental pollution.",
+        verbatim: "Home water treatment systems are no\nlonger an elective luxury; they have, in fact,\nbecome necessary to life itself. There are more\nthan 3,000 chemicals in our drinking and\nbathing water that are not removed by present\ncommunity water treatment systems",
+        page: 182,
+        book_id: "lets-play-doctor",
+        topics: [
+          "water-filtration",
+          "home-environment",
+          "toxins"
         ]
       }
     ]
