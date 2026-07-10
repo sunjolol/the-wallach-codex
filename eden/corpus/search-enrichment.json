@@ -2403,6 +2403,205 @@
         "falls-in-elderly",
         "mineral-replacement"
       ]
+    },
+    "WAL-CLM-EPIGEN-000019": {
+      "subject": "homosexuality",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Does Wallach think homosexuality is a lifestyle choice?",
+      "answer_short": "No. Wallach reframes it as a prenatal, congenital event -- a preventable deficiency of minerals or vitamins in early pregnancy, not a learned behavior or a choice.",
+      "topics": [
+        "congenital",
+        "prenatal",
+        "choice-vs-biology",
+        "prevention"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000008": {
+      "subject": "homosexuality",
+      "also_about": [
+        "intersex"
+      ],
+      "facet": "mechanism",
+      "question": "What does Wallach say happens in the brain to cause homosexuality?",
+      "answer_short": "He points to underdevelopment of the preoptic hypothalamus, so the brain's sense of gender diverges from the genetic gender carried in the chromosomes.",
+      "topics": [
+        "preoptic-hypothalamus",
+        "barr-body",
+        "brain",
+        "congenital"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000022": {
+      "subject": "homosexuality",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What brain-anatomy research does Wallach cite on homosexuality?",
+      "answer_short": "He cites Simon LeVay's autopsy studies finding the preoptic hypothalamus smaller in homosexual men, plus differences in the anterior commissure and a prenatal testosterone surge.",
+      "topics": [
+        "levay",
+        "brain-anatomy",
+        "hypothalamus",
+        "testosterone"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000023": {
+      "subject": "homosexuality",
+      "also_about": [],
+      "facet": "big_question",
+      "question": "Is there a 'gay gene'?",
+      "answer_short": "Wallach says no -- identical twins are only about 50% concordant, so he argues it is congenital but not genetic; he quotes geneticist Dean Hamer that there is no gay gene.",
+      "topics": [
+        "twin-studies",
+        "gay-gene",
+        "dean-hamer",
+        "genetics-vs-congenital"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000024": {
+      "subject": "homosexuality",
+      "also_about": [],
+      "facet": "history",
+      "question": "Why does Wallach think homosexuality has become more common?",
+      "answer_short": "He ties the rise in reported homosexuality to the steady decline of minerals in farm soils and the food supply, citing Kinsey and later prevalence figures.",
+      "topics": [
+        "prevalence",
+        "soil-minerals",
+        "kinsey",
+        "food-supply"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000026": {
+      "subject": "homosexuality",
+      "also_about": [
+        "intersex"
+      ],
+      "facet": "protocol",
+      "question": "Does Wallach think homosexuality can be prevented?",
+      "answer_short": "He says a complete preconception nutrition program -- the 90 essential nutrients -- could prevent it; from his interviews he holds it is congenital, so it cannot be prayed away or coached away.",
+      "topics": [
+        "prevention",
+        "preconception-nutrition",
+        "survey",
+        "90-nutrients"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000020": {
+      "subject": "intersex",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What does 'intersex' mean?",
+      "answer_short": "Intersex is the modern medical term for what was once called hermaphroditism -- a range of congenital variations in sexual anatomy; one 1969 catalogue listed 98 distinct types.",
+      "topics": [
+        "hermaphrodite",
+        "definition",
+        "congenital",
+        "anatomy"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000009": {
+      "subject": "intersex",
+      "also_about": [
+        "pregnancy_birth"
+      ],
+      "facet": "mechanism",
+      "question": "What causes intersex conditions, and can they be prevented?",
+      "answer_short": "Wallach ties them to mineral or vitamin deficiency in the embryo -- citing John Money's estimate of up to 4% of births -- and argues they could be avoided with complete preconception nutrition.",
+      "topics": [
+        "john-money",
+        "preconception-nutrition",
+        "prevention",
+        "congenital"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000025": {
+      "subject": "intersex",
+      "also_about": [
+        "homosexuality"
+      ],
+      "facet": "mechanism",
+      "question": "What do animals reveal about intersex birth defects?",
+      "answer_short": "Every human congenital sexual defect also appears in animals from embryonic malnutrition -- like the 'freemartin,' a masculinized female calf twinned with a male; scarcer nutrition means more defects.",
+      "topics": [
+        "freemartin",
+        "animal-model",
+        "veterinary",
+        "embryonic-nutrition"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000021": {
+      "subject": "intersex",
+      "also_about": [
+        "homosexuality"
+      ],
+      "facet": "history",
+      "question": "How have intersex and homosexual people been regarded through history?",
+      "answer_short": "Wallach traces it from Plato's 'three sexes' and the Hermes-plus-Aphrodite root of 'hermaphrodite' through executions of intersex people to modern cases like Christine Jorgenson and Olympic sex testing.",
+      "topics": [
+        "plato",
+        "etymology",
+        "christine-jorgenson",
+        "olympics"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000017": {
+      "subject": "pregnancy_birth",
+      "also_about": [],
+      "facet": "history",
+      "question": "How were birth defects explained before modern medicine?",
+      "answer_short": "Wallach surveys centuries of theories -- Renaissance omens and divine punishment, early teratology collections -- up to the 1961 thalidomide disaster that proved drugs can deform a fetus.",
+      "topics": [
+        "teratology",
+        "thalidomide",
+        "history",
+        "monsters"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000018": {
+      "subject": "pregnancy_birth",
+      "also_about": [
+        "essential_nutrients"
+      ],
+      "facet": "warning",
+      "question": "What does Wallach say is the most common cause of birth defects?",
+      "answer_short": "Deficiency of one or more of the 90 essential nutrients in the mother before conception and through the first 90 days of pregnancy -- proven, he says, by an animal industry that breeds out birth defects with nutrition.",
+      "topics": [
+        "90-nutrients",
+        "preconception",
+        "animal-industry",
+        "genetic-theory"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000027": {
+      "subject": "quackbusters",
+      "also_about": [
+        "be_your_own_doctor",
+        "essential_nutrients"
+      ],
+      "facet": "stance",
+      "question": "What are the 'Quackbusters' and what does Wallach say about them?",
+      "answer_short": "Wallach calls the Quackbusters a group of doctors organized to destroy alternative-medicine competition, and rejects their claim that a varied diet alone supplies all the vitamins and minerals you need.",
+      "topics": [
+        "quackbusters",
+        "medical-monopoly",
+        "victor-herbert",
+        "censorship"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000028": {
+      "subject": "longevity",
+      "also_about": [
+        "macronutrients"
+      ],
+      "facet": "history",
+      "question": "What did a Harvard survey find about where Americans live longest?",
+      "answer_short": "A 1990 survey found the longest-living Americans were Scandinavian-heritage dairy farmers who poached, stewed and baked their food, while the shortest-lived regions fried everything -- diet, not doctors, drove the gap.",
+      "topics": [
+        "longevity",
+        "cooking-methods",
+        "diet",
+        "county-survey"
+      ]
     }
   }
 }

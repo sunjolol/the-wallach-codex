@@ -541,7 +541,10 @@
         "home birth",
         "prenatal",
         "obstetrics",
-        "contraception"
+        "contraception",
+        "birth defects",
+        "congenital defects",
+        "teratology"
       ],
       "related": [
         "birth_defects",
@@ -826,6 +829,60 @@
         "hospital_dangers",
         "colloidal_minerals",
         "essential_nutrients"
+      ]
+    },
+    "homosexuality": {
+      "display_name": "Homosexuality",
+      "type": "topic",
+      "synonyms": [
+        "gay",
+        "homosexual",
+        "gay gene",
+        "sexual orientation",
+        "same-sex attraction",
+        "lgbt"
+      ],
+      "related": [
+        "intersex",
+        "essential_nutrients",
+        "pregnancy_birth"
+      ]
+    },
+    "intersex": {
+      "display_name": "Intersex",
+      "type": "topic",
+      "synonyms": [
+        "hermaphrodite",
+        "hermaphroditism",
+        "intersexual",
+        "ambiguous genitalia",
+        "disorders of sex development",
+        "dsd"
+      ],
+      "related": [
+        "homosexuality",
+        "essential_nutrients",
+        "pregnancy_birth"
+      ]
+    },
+    "quackbusters": {
+      "display_name": "Quackbusters & Medical Freedom",
+      "type": "topic",
+      "synonyms": [
+        "quackbuster",
+        "quackwatch",
+        "medical censorship",
+        "medical freedom",
+        "health freedom",
+        "medical monopoly",
+        "victor herbert",
+        "stephen barrett"
+      ],
+      "related": [
+        "be_your_own_doctor",
+        "vaccines",
+        "essential_nutrients",
+        "hospital_dangers"
       ]
     }
   }

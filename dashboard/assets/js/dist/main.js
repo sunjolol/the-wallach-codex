@@ -56265,7 +56265,26 @@ Data only, no corpus reseal (knowledge_version stays 320): eden/corpus/search-en
 
 Verified: build OK; invariants 53/53 (0 new reds); render_probe_search PASS (53-entity landing, 0 page errors); targeted headless dump (three warnings render with the mineral chips, cite = Rare Earths: Forbidden Cures 1994 p.233, the "valium" synonym resolves to the page, related pills all clickable). Luneth signed off, then called it for the night.
 
-MILESTONE: the NON-CHARGED bulk migration is COMPLETE (8 batches, 53 entities, 184 enriched claims). Remaining = 15 DEFERRED CHARGED claims only -- 14 Epigenetics (homosexuality/intersex/teratology/quackbusters/longevity-cooking) + 1 Immortality homosexuality (IMMORT-000020) -- to be handled in a dedicated per-instance review with Luneth (fresh genesis, next session). After that review: seal the two search source files (search-enrichment.json + search-entities.json), consider index sharding, then resume search-first mining at Immortality Mn-Manganese.` }];
+MILESTONE: the NON-CHARGED bulk migration is COMPLETE (8 batches, 53 entities, 184 enriched claims). Remaining = 15 DEFERRED CHARGED claims only -- 14 Epigenetics (homosexuality/intersex/teratology/quackbusters/longevity-cooking) + 1 Immortality homosexuality (IMMORT-000020) -- to be handled in a dedicated per-instance review with Luneth (fresh genesis, next session). After that review: seal the two search source files (search-enrichment.json + search-entities.json), consider index sharding, then resume search-first mining at Immortality Mn-Manganese.` }, { id: "lg_mrf2iru9_myidje", ts: "2026-07-10T10:06:00.945254-05:00", surface: "search", kind: "round-close", summary: "Search G-7 CHARGED cluster DONE \u2014 14 of Wallach's most-sensitive search claims (homosexuality/intersex treatise, Quackbusters, longevity) authored into browsable pages after per-instance review with Luneth; birth-defect claims folded into Pregnancy & Birth.", detail: `This closes the last deferred piece of the Search build \u2014 the 15 charged claims we'd set aside for a careful, one-by-one review. The heart of it is Wallach's homosexuality/intersex material, presented faithfully and neutrally: his view that these are congenital, preventable, nutrition-linked events during fetal development, not choices or anyone's fault. Luneth reviewed every claim, pruned a few, and signed off \u2014 his words: "the opposite of offensive... extremely freeing for a potential future homosexual reader... not their fault, misunderstood, and very simple in the end." The Search build's migration is now COMPLETE (56 entities / 198 claims).
+
+TECHNICAL RECORD
+
+Authoring (2 hand-authored search source files, everything else derives):
+- eden/corpus/search-enrichment.json: added 15 enrichment records, then Luneth's prune removed 1 (IMMORT-020) -> net +14 (198 total). eden/catalog/search-entities.json: added 4 entities, then dropped Birth Defects -> net +3 (homosexuality, intersex, quackbusters; 56 total).
+- Entities homosexuality/intersex/quackbusters = type \`topic\` + display_name. homosexuality/intersex ARE catalog condition slugs but are deliberately NOT catalog_ref conditions (fringe policy: the "condition" framing sends the wrong message). quackbusters display_name "Quackbusters & Medical Freedom" (names Victor Herbert / Stephen Barrett -> earmarked for the end legal pass).
+- Homosexuality page (6 claims): stance (congenital/preventable reframe), mechanism (Barr-body/preoptic-hypothalamus; Simon LeVay autopsy + anterior commissure + Gorski), big_question (twins ~50% concordance, Dean Hamer "no gay gene"), history (prevalence <-> soil-mineral decline, Kinsey), protocol (preconception 90-nutrient prevention). Intersex page (4): basics (98 types), mechanism (John Money 4% + prevention; freemartin animal evidence), history (Plato/Hermes+Aphrodite/Jorgenson/Olympics).
+
+Luneth's prune pass (all applied + verified in the derived index):
+- Birth Defects dropped as an entity; its 2 claims moved to the existing Pregnancy & Birth page \u2014 EPIGEN-018 as a WARNING (deficiency = #1 cause of birth defects), EPIGEN-017 as HISTORY & LORE (teratology through the ages -> 1961 thalidomide). Added "birth defects / congenital defects / teratology" to pregnancy_birth synonyms so searching "birth defects" still lands the content. Re-introduce a standalone Birth Defects page later only if pregnancy_birth bloats.
+- Removed the IMMORT-020 "does he mention it in other books?" enrichment (deferred to a proper cross-book pass).
+- answer_short "LeVay" -> "Simon LeVay". Repointed also_about off the deleted birth_defects entity onto pregnancy_birth / intersex.
+- Result: Pregnancy & Birth 7->9 claims, homosexuality 6, Longevity +1 (1990 Lepe Harvard survey), landing 53->56 browse cards.
+
+Doctrine correction (same session, purged to zero): the invented "newest-book-only capture" rule (Luneth had to correct it twice) was WRONG. Newest-wins is CONTRADICTION-handling ONLY; ALL books are captured in search, older books fill gaps/context/cross-reference. Deleted the homosexuality-intersex-newest-book-only memory; corrected editorial-fringe-exclusion-policy / epigenetics-mining-policy / favor-newest-wallach-number / enrich-tier1-every-book-favor-newer. Actionable follow-up logged: capture the wrongly-skipped Rare Earths Ch7 + DDDL homosexuality/intersex treatises + the IMMORT-020 parallel.
+
+Verification: search_index_derive.py --check VALID; node tools/build.mjs OK; PYTHONUTF8=1 python tools/invariants.py = 53/53 (0 new red); node tools/render_probe_search.js PASS (0 page errors, birth_defects card gone, pregnancy_birth=9, homosexuality=6, Simon LeVay confirmed in the derived index).
+
+Deferred (not blockers): SEAL the 2 search source files (now due \u2014 migration complete); cross-book homo/intersex capture (RARE Ch7 + DDDL + IMMORT-020); more Quackbusters/medical-freedom material as mining continues; resume search-first mining from Immortality Mn-Manganese.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -58038,6 +58057,24 @@ MILESTONE: the NON-CHARGED bulk migration is COMPLETE (8 batches, 53 entities, 1
         ],
         claim_count: 4
       },
+      homosexuality: {
+        display_name: "Homosexuality",
+        type: "topic",
+        synonyms: [
+          "gay",
+          "homosexual",
+          "gay gene",
+          "sexual orientation",
+          "same-sex attraction",
+          "lgbt"
+        ],
+        related: [
+          "intersex",
+          "essential_nutrients",
+          "pregnancy_birth"
+        ],
+        claim_count: 6
+      },
       hospital_dangers: {
         display_name: "Hospital Dangers",
         type: "topic",
@@ -58080,6 +58117,24 @@ MILESTONE: the NON-CHARGED bulk migration is COMPLETE (8 batches, 53 entities, 1
           "be_your_own_doctor"
         ],
         claim_count: 2
+      },
+      intersex: {
+        display_name: "Intersex",
+        type: "topic",
+        synonyms: [
+          "hermaphrodite",
+          "hermaphroditism",
+          "intersexual",
+          "ambiguous genitalia",
+          "disorders of sex development",
+          "dsd"
+        ],
+        related: [
+          "homosexuality",
+          "essential_nutrients",
+          "pregnancy_birth"
+        ],
+        claim_count: 4
       },
       iodine: {
         display_name: "Iodine",
@@ -58160,7 +58215,7 @@ MILESTONE: the NON-CHARGED bulk migration is COMPLETE (8 batches, 53 entities, 1
           "be_your_own_doctor",
           "negative_ion_therapy"
         ],
-        claim_count: 1
+        claim_count: 2
       },
       macrobiotics: {
         display_name: "Macrobiotics",
@@ -58291,7 +58346,10 @@ MILESTONE: the NON-CHARGED bulk migration is COMPLETE (8 batches, 53 entities, 1
           "home birth",
           "prenatal",
           "obstetrics",
-          "contraception"
+          "contraception",
+          "birth defects",
+          "congenital defects",
+          "teratology"
         ],
         related: [
           "birth_defects",
@@ -58300,7 +58358,28 @@ MILESTONE: the NON-CHARGED bulk migration is COMPLETE (8 batches, 53 entities, 1
           "vitamins",
           "sexual_health"
         ],
-        claim_count: 7
+        claim_count: 9
+      },
+      quackbusters: {
+        display_name: "Quackbusters & Medical Freedom",
+        type: "topic",
+        synonyms: [
+          "quackbuster",
+          "quackwatch",
+          "medical censorship",
+          "medical freedom",
+          "health freedom",
+          "medical monopoly",
+          "victor herbert",
+          "stephen barrett"
+        ],
+        related: [
+          "be_your_own_doctor",
+          "vaccines",
+          "essential_nutrients",
+          "hospital_dangers"
+        ],
+        claim_count: 1
       },
       rare_earth_elements: {
         display_name: "Rare Earth Elements",
@@ -58565,6 +58644,275 @@ MILESTONE: the NON-CHARGED bulk migration is COMPLETE (8 batches, 53 entities, 1
             "hyperinsulinemia"
           ]
         }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000008",
+        subject: "homosexuality",
+        also_about: [
+          "intersex"
+        ],
+        facet: "mechanism",
+        question: "What does Wallach say happens in the brain to cause homosexuality?",
+        answer_short: "He points to underdevelopment of the preoptic hypothalamus, so the brain's sense of gender diverges from the genetic gender carried in the chromosomes.",
+        answer: "Wallach presents homosexuality as a congenital condition rather than a lifestyle choice: he attributes it to congenital events during embryonic development -- specifically a hypoplasia (underdevelopment) of the preoptic hypothalamus -- that cause the brain's perception of gender to diverge from the genetic gender recorded in the chromosomes (the Barr body, or female X chromosome). He places these congenital events within his broader thesis that such embryonic aberrations are nutritionally influenced and preventable with proper preconception nutrition.",
+        verbatim: "the genetic gender based on the presence of Barr bodies (the\nfemale X chromosome) in blood smears do not always coincide with the\nbrain's perception of gender because of concurrent congenital events relating to\nhypoplasia of the preoptic hypothalamus.",
+        page: 570,
+        book_id: "epigenetics",
+        topics: [
+          "preoptic-hypothalamus",
+          "barr-body",
+          "brain",
+          "congenital"
+        ]
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000009",
+        subject: "intersex",
+        also_about: [
+          "pregnancy_birth"
+        ],
+        facet: "mechanism",
+        question: "What causes intersex conditions, and can they be prevented?",
+        answer_short: "Wallach ties them to mineral or vitamin deficiency in the embryo -- citing John Money's estimate of up to 4% of births -- and argues they could be avoided with complete preconception nutrition.",
+        answer: "Wallach presents intersex conditions (the medical term for what was historically called hermaphroditism) as congenital sexual-organ defects that are present at birth and are related to mineral or vitamin deficiencies of the embryo -- citing John Money of Johns Hopkins, who estimated intersex conditions occur in as many as four percent of births. He holds that the social and surgical problems of intersex individuals could be entirely avoided by providing a proper and complete preconception nutritional program for the embryo.",
+        verbatim: "However, the social and surgical problems of intersexuals could be totally\navoided by providing a proper and complete preconception nutritional program\nfor the embryo.",
+        page: 570,
+        book_id: "epigenetics",
+        topics: [
+          "john-money",
+          "preconception-nutrition",
+          "prevention",
+          "congenital"
+        ]
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000017",
+        subject: "pregnancy_birth",
+        also_about: [],
+        facet: "history",
+        question: "How were birth defects explained before modern medicine?",
+        answer_short: "Wallach surveys centuries of theories -- Renaissance omens and divine punishment, early teratology collections -- up to the 1961 thalidomide disaster that proved drugs can deform a fetus.",
+        answer: `Search-only framework narrative. Wallach surveys how congenital birth defects ('monsters') were understood across the centuries -- from Renaissance omens and divine-punishment interpretations (the 1512 Monster of Ravenna; Ambroise Pare's 1573 catalogue of supposed causes), through the great teratological collections (Willem Vrolik's cyclops/holoprosencephaly specimens), to the modern recognition of chemical and drug teratogens exemplified by the 1961 thalidomide ('seal-limb') limb-defect epidemic. His thesis throughout is that most such congenital and central-nervous-system defects are, at root, manifestations of a maternal nutritional deficiency during early embryonic development, and are therefore preventable. In Wallach's words: "A catastrophic teratogenic event was reported in 1961. William McBride, an Australian physician, reported an uptick in the rate of babies born with congenitally deformed limbs. In just a few months, a German physician (Lenz), reported a series of similar births. Both doctors believed that the defects were caused by the use of a sedative (phtalimido-glutarimide) by the trade name Thalidomide (the third-best selling pharmaceutical in Europe)."`,
+        verbatim: "A catastrophic teratogenic event was reported in 1961. William McBride,\nan Australian physician, reported an uptick in the rate of babies born with\ncongenitally deformed limbs. In just a few months, a German physician (Lenz),\nreported a series of similar births. Both doctors believed that the defects were\ncaused by the use of a sedative (phtalimido-glutarimide) by the trade name\nThalidomide (the third-best selling pharmaceutical in Europe).",
+        page: 556,
+        book_id: "epigenetics",
+        topics: [
+          "teratology",
+          "thalidomide",
+          "history",
+          "monsters"
+        ]
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000018",
+        subject: "pregnancy_birth",
+        also_about: [
+          "essential_nutrients"
+        ],
+        facet: "warning",
+        question: "What does Wallach say is the most common cause of birth defects?",
+        answer_short: "Deficiency of one or more of the 90 essential nutrients in the mother before conception and through the first 90 days of pregnancy -- proven, he says, by an animal industry that breeds out birth defects with nutrition.",
+        answer: `Search-only framework narrative. In the chapter's closing section, 'Minerals: The Currency of Life,' Wallach argues that the modern faith in genetic mapping is the latest in a series of medical 'discoveries of the century' (after germ theory and virology) that draw enormous research funding yet have not cured cancer, diabetes, or Alzheimer's. He restates the framework's core claim: chromosomes and genes have second-by-second requirements for minerals, trace minerals, rare-earth metals, vitamins, amino acids, and essential fatty acids, and the most common cause of birth defects worldwide is overt clinical deficiency of one or more of the 90 essential nutrients in the mother-to-be before conception and through the first 90 days of pregnancy. He points to the animal industry -- which has effectively eliminated birth defects, infertility, and 'genetic' disease in livestock and pets purely through optimal preconception nutrition -- as proof of concept. In Wallach's words: "However, the most common cause of birth defects in American babies and babies around the world are overt clinical deficiencies of one or more of the 90 essential nutrients of the mother-to-be and therefore of the embryo prior to conception and for the first 90 days of pregnancy!"`,
+        verbatim: "However, the most common cause of birth defects in American babies and\nbabies around the world are overt clinical deficiencies of one or more of the\n90 essential nutrients of the mother-to-be and therefore of the embryo prior to\nconception and for the first 90 days of pregnancy!",
+        page: 587,
+        book_id: "epigenetics",
+        topics: [
+          "90-nutrients",
+          "preconception",
+          "animal-industry",
+          "genetic-theory"
+        ]
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000019",
+        subject: "homosexuality",
+        also_about: [],
+        facet: "stance",
+        question: "Does Wallach think homosexuality is a lifestyle choice?",
+        answer_short: "No. Wallach reframes it as a prenatal, congenital event -- a preventable deficiency of minerals or vitamins in early pregnancy, not a learned behavior or a choice.",
+        answer: 'Wallach presents homosexuality as a congenital, prenatal biological event rather than a learned behavior or lifestyle choice. He traces a historical shift in thinking: from regarding homosexuality as an emotional or environmental aberration created by improper role models or parenting, to a "choice of sexual preference," and finally to what he frames as a preventable congenital event caused by a deficiency of minerals and/or vitamins in early pregnancy. He calls this a "180 degree change in thinking" that followed the discovery of consistent physical differences in the brains of homosexual men, and holds that the orientation is set early in the formation of the embryonic brain.',
+        verbatim: "The current focus on the \u201Cgay\u201D phenomena has moved from that of a learned\nbehavior or a \u201Clifestyle choice\u201D to that of a prenatal biological event, in other\nwords, a preventable congenital event caused by a deficiency of minerals and or\nvitamins in early pregnancy.",
+        page: 574,
+        book_id: "epigenetics",
+        topics: [
+          "congenital",
+          "prenatal",
+          "choice-vs-biology",
+          "prevention"
+        ]
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000020",
+        subject: "intersex",
+        also_about: [],
+        facet: "basics",
+        question: "What does 'intersex' mean?",
+        answer_short: "Intersex is the modern medical term for what was once called hermaphroditism -- a range of congenital variations in sexual anatomy; one 1969 catalogue listed 98 distinct types.",
+        answer: 'Wallach defines "intersex" as the medical term for what was historically called hermaphroditism, and describes the classifications used: a female hermaphrodite may possess one testicle and one ovary; a male pseudo-hermaphrodite may have testicles and some female genitalia but lack ovaries; and a female pseudo-hermaphrodite may have ovaries and some male genital features but no testicles. He notes that a series of preventable embryologic congenital events can produce individuals who are asexual, neither male nor female, or both at once -- forming five commonly accepted classifications -- and adds that the variation is so wide that in 1969 Paul Guinet (Endocrine Clinic, Lyons, France) and Jacques Decount (Endocrine Clinic, Paris) listed 98 different types of true hermaphrodite.',
+        verbatim: "In first discussing congenital events, \u201Cintersex\u201D is the medical term used\nto describe the term hermaphrodite. A female hermaphrodite might possess\none testicle and one ovary, a male pseudo hermaphrodite could have testicles\nand some recognizable female genitalia but lack ovaries, and a female pseudo\nhermaphrodite may have ovaries and some noticeable features of male genitalia\nbut no testicles.",
+        page: 568,
+        book_id: "epigenetics",
+        topics: [
+          "hermaphrodite",
+          "definition",
+          "congenital",
+          "anatomy"
+        ]
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000021",
+        subject: "intersex",
+        also_about: [
+          "homosexuality"
+        ],
+        facet: "history",
+        question: "How have intersex and homosexual people been regarded through history?",
+        answer_short: "Wallach traces it from Plato's 'three sexes' and the Hermes-plus-Aphrodite root of 'hermaphrodite' through executions of intersex people to modern cases like Christine Jorgenson and Olympic sex testing.",
+        answer: `In a historical and cultural survey, Wallach traces societal treatment of intersex and homosexual people across the centuries. He notes that the term "hermaphrodite" joins the Greek god Hermes and goddess Aphrodite; that Plato was the only recognized authority to surmise "three sexes (male, female, and hermaphrodite)" and gave the first interpretation of the origin of homosexual behavior; that in ancient times and as late as a 1600s Scottish case intersex people could be put to death (one hermaphrodite living as a woman was buried alive as a witch); and he cites the medical case literature -- Hugh H. Young's 1937 "Genital Abnormalities, Hermaphroditism and Related Adrenal Diseases" and the 1967 Dewhurst and Gordon work "The Intersexual Disorders." He also recounts how the high-profile sexual conversion of Christine Jorgenson, and the chromosome testing introduced at the 1972 Munich Olympic Games, brought the subject to public attention.`,
+        verbatim: 'According to historians, Plato is the only recognized authority to have\nsurmised that there were "three sexes (male, female, and hermaphrodite).\u201D',
+        page: 572,
+        book_id: "epigenetics",
+        topics: [
+          "plato",
+          "etymology",
+          "christine-jorgenson",
+          "olympics"
+        ]
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000022",
+        subject: "homosexuality",
+        also_about: [],
+        facet: "mechanism",
+        question: "What brain-anatomy research does Wallach cite on homosexuality?",
+        answer_short: "He cites Simon LeVay's autopsy studies finding the preoptic hypothalamus smaller in homosexual men, plus differences in the anterior commissure and a prenatal testosterone surge.",
+        answer: "Wallach cites neuroanatomical research as evidence that homosexuality reflects a congenital difference in brain structure. He notes that in the 1970s German doctors found an area of the preoptic hypothalamus abnormal in homosexual men; that Simon LeVay's autopsy studies found the preoptic area of the hypothalamus (which Wallach describes as the center of sexual appetite and sex drive) smaller in homosexual than in heterosexual men; and that the anterior commissure (a nerve-fiber bundle connecting the brain's two sides) differs in size as well. He acknowledges a limitation -- some men in LeVay's study had died of acquired immunodeficiency syndrome (AIDS), which can damage brain cells -- but notes other brain regions were unaffected. He adds that Roger Gorski's 1978 work at the University of California, Los Angeles found a prenatal testosterone surge stabilizes these cell populations in males. Wallach attributes the differences to a congenital malformation or biochemical deficiency event -- ultimately a congenital deficiency of minerals.",
+        verbatim: "In autopsy studies, LeVay found that an area in the brain of the pre-optic\narea of the hypothalamus (center of sexual appetite and sex drive) is smaller in\nhomosexual men than it is in heterosexual men.",
+        page: 577,
+        book_id: "epigenetics",
+        topics: [
+          "levay",
+          "brain-anatomy",
+          "hypothalamus",
+          "testosterone"
+        ]
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000023",
+        subject: "homosexuality",
+        also_about: [],
+        facet: "big_question",
+        question: "Is there a 'gay gene'?",
+        answer_short: "Wallach says no -- identical twins are only about 50% concordant, so he argues it is congenital but not genetic; he quotes geneticist Dean Hamer that there is no gay gene.",
+        answer: `Wallach argues that twin studies show homosexuality is congenital but not genetic. He cites Richard Pillard and Michael Bailey's finding that only 52 percent of the identical twins of homosexual men were themselves homosexual -- reasoning that a purely genetic trait would require 100 percent concordance -- with lower rates among fraternal and adopted brothers, and a parallel study of 147 homosexual women showing about 48 percent identical-twin concordance. He quotes geneticist Dean Hamer of the National Cancer Institute that "it is a mistake to think there is a gay gene," and concludes the consistent-but-incomplete twin concordance points to a congenital deficiency event during embryonic development rather than a genetic defect or a choice.`,
+        verbatim: "\u201CIt is a mistake to think there is a gay gene\u201D says Dean Hamer, a geneticist at\nthe National Cancer Institute.",
+        page: 577,
+        book_id: "epigenetics",
+        topics: [
+          "twin-studies",
+          "gay-gene",
+          "dean-hamer",
+          "genetics-vs-congenital"
+        ]
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000024",
+        subject: "homosexuality",
+        also_about: [],
+        facet: "history",
+        question: "Why does Wallach think homosexuality has become more common?",
+        answer_short: "He ties the rise in reported homosexuality to the steady decline of minerals in farm soils and the food supply, citing Kinsey and later prevalence figures.",
+        answer: 'Wallach reports prevalence figures for homosexuality and ties their rise to declining soil minerals. He cites the Alfred Kinsey Reports of the 1940s-50s (4 to 10 percent of the American population), psychiatrist Richard Pillard (4 percent of United States males and 2 to 3 percent of females), and overseas figures (possibly 25 percent in Great Britain in the 1990s). He argues the gradual increase in homosexuality in America and other industrialized nations parallels the gradual decrease in the mineral content of farm and range soils, and therefore of the food supply. He also notes that "gay" behavior occurs in animals kept in same-sex groups through puberty, similar to opportunistic behavior seen in prison.',
+        verbatim: "The gradual increase in the percentage of gays in America and other\nindustrialized nations of the world parallels the gradual decrease in the mineral\ncontent in our farm and range soils and therefore a decrease in the mineral\ncontent of our food supply.",
+        page: 574,
+        book_id: "epigenetics",
+        topics: [
+          "prevalence",
+          "soil-minerals",
+          "kinsey",
+          "food-supply"
+        ]
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000025",
+        subject: "intersex",
+        also_about: [
+          "homosexuality"
+        ],
+        facet: "mechanism",
+        question: "What do animals reveal about intersex birth defects?",
+        answer_short: "Every human congenital sexual defect also appears in animals from embryonic malnutrition -- like the 'freemartin,' a masculinized female calf twinned with a male; scarcer nutrition means more defects.",
+        answer: 'Wallach draws on veterinary and animal evidence to support his thesis that intersex conditions arise from embryonic nutritional deficiency. He notes that veterinarians routinely see unusual sexual anatomy and congenital defects in animals resulting from embryonic nutritional deficiencies, and that every known congenital defect of the human sexual organs has been recorded in animals. He cites the "freemartin" -- an infertile, masculinized female calf born as the fraternal twin of a male (about 80 percent of cases in cattle) -- and observes that in litters competing for limited nutrition, the more limited the nutrition, the more numerous and severe the birth defects, so multiple-birth embryos (which compete for resources) show more congenital defects than single embryos.',
+        verbatim: "Veterinarians have a lot of experience with normal animals that have unusual\nsexual anatomy and also abnormal congenital defects as a result of embryonic\nnutritional deficiencies.",
+        page: 572,
+        book_id: "epigenetics",
+        topics: [
+          "freemartin",
+          "animal-model",
+          "veterinary",
+          "embryonic-nutrition"
+        ]
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000026",
+        subject: "homosexuality",
+        also_about: [
+          "intersex"
+        ],
+        facet: "protocol",
+        question: "Does Wallach think homosexuality can be prevented?",
+        answer_short: "He says a complete preconception nutrition program -- the 90 essential nutrients -- could prevent it; from his interviews he holds it is congenital, so it cannot be prayed away or coached away.",
+        answer: 'Wallach reports that, in his own interviews with hundreds of homosexual men and women, in every case the mother had been in nutritional distress during the pregnancy -- citing gluten intolerance (reducing absorption efficiency), alcoholism, low income with reduced access to healthy food, or failure to use prenatal vitamins and minerals. He adds that his survey found these individuals knew of their orientation between the ages of six and ten, which he takes as evidence that it is driven by a congenital event in brain development rather than a choice and therefore cannot be "prayed away" or "coached away." He concludes that the congenital hermaphrodite, the intersexual, and the homosexual embryo could all be prevented with complete preconception nutrition -- the 90 essential nutrients including minerals (zinc, manganese, magnesium, gallium, copper), vitamins (vitamin B12, folic acid, vitamin A), amino acids, and essential fatty acids.',
+        verbatim: "Wallach has interviewed hundreds of gay men and women and found that\nin each case the mother of the gay male or female was in nutritional distress\nduring their pregnancy.",
+        page: 579,
+        book_id: "epigenetics",
+        topics: [
+          "prevention",
+          "preconception-nutrition",
+          "survey",
+          "90-nutrients"
+        ]
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000027",
+        subject: "quackbusters",
+        also_about: [
+          "be_your_own_doctor",
+          "essential_nutrients"
+        ],
+        facet: "stance",
+        question: "What are the 'Quackbusters' and what does Wallach say about them?",
+        answer_short: "Wallach calls the Quackbusters a group of doctors organized to destroy alternative-medicine competition, and rejects their claim that a varied diet alone supplies all the vitamins and minerals you need.",
+        answer: "Wallach attacks the 'Quackbuster' movement -- a private group of physicians who, he says, organized to destroy legitimate alternative-medicine competition to the medical monopoly. He names its founder Victor Herbert, MD (who titled it the Committee Against Medical Fraud), along with John Renner, MD, William Jarvis, MD, and Stephan Barret, MD. He rebuts their central claim -- voiced by Victor Herbert -- that healthy adults eating a varied diet already get all the vitamins and minerals they need, countering that you cannot guarantee optimal micro- and macro-nutrient intake even by 'eating well': the animal-feed industry adds the full mix of all 90 essential nutrients for maximum health, while an April 2012 Food Chemistry report found commercial baby foods contain less than 20% of an infant's minimum daily requirements of minerals and vitamins.",
+        verbatim: "False, dangerous and criminal advice is given to the American public by the\nignorant group known as \u201CQuack Busters,\u201D who are doctors who joined together\nto destroy legitimate alternative competition to the medical monopoly.",
+        page: 594,
+        book_id: "epigenetics",
+        topics: [
+          "quackbusters",
+          "medical-monopoly",
+          "victor-herbert",
+          "censorship"
+        ]
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000028",
+        subject: "longevity",
+        also_about: [
+          "macronutrients"
+        ],
+        facet: "history",
+        question: "What did a Harvard survey find about where Americans live longest?",
+        answer_short: "A 1990 survey found the longest-living Americans were Scandinavian-heritage dairy farmers who poached, stewed and baked their food, while the shortest-lived regions fried everything -- diet, not doctors, drove the gap.",
+        answer: "Wallach cites a 1990 survey by Lucian Lepe, head of the Department of Public Health at Harvard Medical School, which sought the longest-living county in America so its healthcare practices could be copied nationwide. What Lepe found was that the longest-living counties clustered in the mid-west, upper mid-west, and plains states among people of Scandinavian heritage -- dairy farmers who cooked by poaching, stewing, roasting, grilling, and baking -- while the shortest-living counties were the old Confederate states and Indian reservations west of the Mississippi, where everything was fried, forming America's heart-attack, stroke, diabetes, obesity, and cancer belt. Because all counties had equal access to healthcare (even the uninsured, through Medicaid), Wallach concludes it was diet, not medical technology, that added or subtracted years of life -- underscored by Philadelphia County having the most doctors, hospitals, and health funding yet the worst health of any American county.",
+        verbatim: "What Lepe found, however, was that the counties with the longest-living\npeople in America were clustered in the mid-west, the upper mid-west and the\nplains states. Their common heritage was Scandinavian.",
+        page: 594,
+        book_id: "epigenetics",
+        topics: [
+          "longevity",
+          "cooking-methods",
+          "diet",
+          "county-survey"
+        ]
       },
       {
         id: "WAL-CLM-EPIGEN-000060",
