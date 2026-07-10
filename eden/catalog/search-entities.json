@@ -264,6 +264,64 @@
         "cancer",
         "germanium"
       ]
+    },
+    "essential_nutrients": {
+      "display_name": "Essential Nutrients",
+      "type": "concept",
+      "synonyms": [
+        "90 essential nutrients",
+        "90 nutrients",
+        "essential nutrient"
+      ],
+      "related": [
+        "colloidal_minerals",
+        "vitamins",
+        "amino_acids"
+      ]
+    },
+    "vitamins": {
+      "display_name": "Vitamins",
+      "type": "concept",
+      "synonyms": [
+        "vitamin",
+        "fat-soluble",
+        "water-soluble",
+        "flavanols"
+      ],
+      "related": [
+        "essential_nutrients",
+        "vitamin-c"
+      ]
+    },
+    "amino_acids": {
+      "display_name": "Amino Acids",
+      "type": "concept",
+      "synonyms": [
+        "amino acid",
+        "essential amino acids",
+        "protein building blocks"
+      ],
+      "related": [
+        "essential_nutrients",
+        "macronutrients",
+        "selenium"
+      ]
+    },
+    "macronutrients": {
+      "display_name": "Macronutrients",
+      "type": "concept",
+      "synonyms": [
+        "carbohydrates",
+        "carbs",
+        "fats",
+        "protein",
+        "sugar"
+      ],
+      "related": [
+        "amino_acids",
+        "essential_nutrients",
+        "omega-3"
+      ]
     }
   }
 }

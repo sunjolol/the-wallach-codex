@@ -56224,7 +56224,7 @@ Two correctness fixes the batch forced (both gated + negative-tested):
 - catalog_ref in search_index_derive: condition entities pull display_name from eden/catalog/conditions.json (no duplication, mirrors canon_ref). validate() + the search_index_wellformed gate cover it; negative test grew to 10 cases (added catalog_ref-with-name, catalog_ref-not-condition).
 - tier1_link fires ONLY for non-search-only claims: a search-only modality claim (Color Therapy's color-map) can carry a conditions array for search matching, but must not show operational cross-links -- so the tier1/RELATED pills no longer flood a modality page.
 
-Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 with 0 page errors, negative test 10/10. All seven type pages, the color wheel, the self-upgrading pills, and BACK navigation visually verified via headless screenshots and signed off by Luneth. NEXT = BULK MIGRATION of the remaining ~180 search-only + dual-home claims into entities using these seven patterns -- Luneth: start bulking but STAY GROUNDED, keep the first few dozen at the golden-standard quality before accelerating. Mining still PAUSED at Immortality Mn-Manganese (~char 309953).` }, { id: "lg_mrefuoom_7uhdfi", ts: "2026-07-09T23:31:25.558933-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 1: 6 element entities (Iron/Iodine/Germanium/Hydrogen/Potassium/Fluoride, 33 claims) + 3 template refinements: glossary tooltips in Search answers, scroll-to-top on nav, and a new see_also in-text cross-reference to another claim card.", detail: "Kicked off the real bulk migration of the Search knowledge base with a first, fully-polished batch of six element/mineral entities (Iron, Iodine, Germanium, Hydrogen, Potassium, Fluoride). Then folded in three fixes from Luneth's review that make EVERY entity better, not just these six: glossary tooltips now appear inside Search answers (a dotted-underline term like 'fluorine' explains itself on hover), clicking an entity always opens at the top, and a 'see the full fluoride stance'-style pointer is now a real clickable link that jumps down to that card and flashes it.\r\n\r\nWHAT: 33 sealed search-only claims -> 6 finished faceted entity pages. Iron/Iodine/Germanium/Hydrogen/Potassium are canon minerals (canon_ref, symbol from essentials-canon); Fluoride is the non-canon exemplar (display_name + symbol F) and the two-sided-controversy showcase (a stance facet + a big_question 'Is fluoridated water safe?').\r\n\r\nSOURCE: eden/corpus/search-enrichment.json 41->74 enriched claims (+the see_also on claim 118); eden/catalog/search-entities.json 8->14 entities.\r\n\r\nREFINEMENT 1 (glosses in Search): extracted glossify() into a shared views/glossify.ts (single source for Knowledge + Search); knowledge-corpus.ts imports it; search.ts glossifies answer+verbatim; .gloss CSS un-scoped from #drawer-knowledge-mount to global so the dotted underline renders in the Search drawer; added the fluorine term to glossary.json.\r\n\r\nREFINEMENT 2 (scroll-to-top): search.ts paintBody resets .sr-body.scrollTop=0 on every repaint (replacing innerHTML alone did not reset it when the new content was as tall).\r\n\r\nREFINEMENT 3 (see_also in-text cross-reference, shipped WITH its gate per R7): core/schemas/search.ts adds SeeAlsoSchema {phrase,target} + optional field; search_index_derive.py passes it through and validate() gates it (target is an enriched claim of the SAME subject; phrase must occur in the answer); search.ts renderAnswer splits the answer around the phrase into glossify(before)+link+glossify(after), and jumpToClaim opens the target + ancestor details, scrollIntoView, adds a flash class; drawer-search.css adds .sr-xref (solid-underline accent link, distinct from the dotted gloss) + a sr-claim-flash keyframe. tools/test_search_index_wellformed.py 10->13 negative cases (ghost-target, phantom-phrase, cross-subject all RED).\r\n\r\nVERIFIED: build OK (tsc clean + esbuild), invariants 53/53, render_probe_search + render_probe_knowledge PASS (0 page errors), negative test 13/13; targeted headless checks all PASS -- fluorine .gloss dotted underline in the Search drawer, scroll-reset before=400/after=0, and the see_also link rendering + click opening/flashing Big Questions claim 124. Luneth visually signed off the whole batch.\r\n\r\nNEXT: continue bulk migration at this quality (next cluster: Copper, Chromium, rare-earth trace minerals). Epigenetics deferred (charged content). Mining still PAUSED at Immortality Mn-Manganese." }, { id: "lg_mrehejh9_0bpa5h", ts: "2026-07-10T00:14:51.549811-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 2: 6 more element entities (Copper, Chromium, Gold, Aluminum, Krypton, Gallium; 15 claims). Pure data migration on the batch-1 template -- no code changes. Landing now 19 entities; cross-link pills self-upgraded.", detail: "Kept the Search bulk migration rolling at golden quality with a second batch of six element/mineral entities -- Copper, Chromium, Gold, Aluminum, Krypton, Gallium. This one was pure content authoring: the template from batch 1 held, so no code or gate changes were needed. Best part -- authoring these automatically turned three previously-grey cross-reference chips into live clickable links (the pill rule paying off with zero extra wiring).\r\n\r\nWHAT: 15 sealed search-only claims -> 6 faceted entity pages. Copper/Chromium/Gold/Aluminum/Gallium are canon (canon_ref, symbol from essentials-canon); Krypton is the non-canon noble gas (display_name + symbol Kr). Delight content: Krypton (Superman/kryptonite + Pauling predicting krypton-fluoride), Aluminum (the Alzheimer-myth as a big_question -- Wallach says no, a single faulty study), Gallium (the metal that melts in your hand + gallium-67 cancer medicine), Chromium (why trace chromium colors rubies and emeralds), Copper (copper-overload Kayser-Fleischer eye rings as a warning). Facet spreads: copper basics/physiology/warning, chromium mechanism/physiology/discovery, gold stance/uses, aluminum sources/big_question, krypton basics/discovery/history, gallium basics/uses.\r\n\r\nEMERGENT self-upgrade: the ONE pill rule (a slug pill is a clickable link iff it has an entity page) meant authoring these lit up cross-links that were plain chips before -- Gallium->Aluminum, Krypton->Fluoride, and Diabetes->Chromium are now clickable, no per-site wiring.\r\n\r\nDATA ONLY: eden/corpus/search-enrichment.json 74->89 enriched claims; eden/catalog/search-entities.json 14->20 entities. No schema/view/gate changes. Landing = 19 entities.\r\n\r\nVERIFIED: build OK, invariants 53/53, render_probe_search PASS (19-entity landing, all types, 0 page errors), targeted headless check PASS (gallium/krypton/diabetes cross-link pills render as clickable links + Gallium->Aluminum click navigates). Luneth visually signed off.\r\n\r\nNEXT: continue bulk migration -- remaining Immortality element A-Z search-only claims (cobalt, silver, bromine, cadmium, cesium, bismuth, helium, hafnium, holmium, indium, iridium, lutetium, rare earths dysprosium/erbium/europium), then the Lets-Play-Doctor modality cluster (hydrotherapy, homeopathy, Ayurveda, reflexology -- topic exemplars) + Wallach philosophy claims. ~129 non-epigenetics search-only claims remain. Mining still PAUSED at Immortality Mn-Manganese." }];
+Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 with 0 page errors, negative test 10/10. All seven type pages, the color wheel, the self-upgrading pills, and BACK navigation visually verified via headless screenshots and signed off by Luneth. NEXT = BULK MIGRATION of the remaining ~180 search-only + dual-home claims into entities using these seven patterns -- Luneth: start bulking but STAY GROUNDED, keep the first few dozen at the golden-standard quality before accelerating. Mining still PAUSED at Immortality Mn-Manganese (~char 309953).` }, { id: "lg_mrefuoom_7uhdfi", ts: "2026-07-09T23:31:25.558933-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 1: 6 element entities (Iron/Iodine/Germanium/Hydrogen/Potassium/Fluoride, 33 claims) + 3 template refinements: glossary tooltips in Search answers, scroll-to-top on nav, and a new see_also in-text cross-reference to another claim card.", detail: "Kicked off the real bulk migration of the Search knowledge base with a first, fully-polished batch of six element/mineral entities (Iron, Iodine, Germanium, Hydrogen, Potassium, Fluoride). Then folded in three fixes from Luneth's review that make EVERY entity better, not just these six: glossary tooltips now appear inside Search answers (a dotted-underline term like 'fluorine' explains itself on hover), clicking an entity always opens at the top, and a 'see the full fluoride stance'-style pointer is now a real clickable link that jumps down to that card and flashes it.\r\n\r\nWHAT: 33 sealed search-only claims -> 6 finished faceted entity pages. Iron/Iodine/Germanium/Hydrogen/Potassium are canon minerals (canon_ref, symbol from essentials-canon); Fluoride is the non-canon exemplar (display_name + symbol F) and the two-sided-controversy showcase (a stance facet + a big_question 'Is fluoridated water safe?').\r\n\r\nSOURCE: eden/corpus/search-enrichment.json 41->74 enriched claims (+the see_also on claim 118); eden/catalog/search-entities.json 8->14 entities.\r\n\r\nREFINEMENT 1 (glosses in Search): extracted glossify() into a shared views/glossify.ts (single source for Knowledge + Search); knowledge-corpus.ts imports it; search.ts glossifies answer+verbatim; .gloss CSS un-scoped from #drawer-knowledge-mount to global so the dotted underline renders in the Search drawer; added the fluorine term to glossary.json.\r\n\r\nREFINEMENT 2 (scroll-to-top): search.ts paintBody resets .sr-body.scrollTop=0 on every repaint (replacing innerHTML alone did not reset it when the new content was as tall).\r\n\r\nREFINEMENT 3 (see_also in-text cross-reference, shipped WITH its gate per R7): core/schemas/search.ts adds SeeAlsoSchema {phrase,target} + optional field; search_index_derive.py passes it through and validate() gates it (target is an enriched claim of the SAME subject; phrase must occur in the answer); search.ts renderAnswer splits the answer around the phrase into glossify(before)+link+glossify(after), and jumpToClaim opens the target + ancestor details, scrollIntoView, adds a flash class; drawer-search.css adds .sr-xref (solid-underline accent link, distinct from the dotted gloss) + a sr-claim-flash keyframe. tools/test_search_index_wellformed.py 10->13 negative cases (ghost-target, phantom-phrase, cross-subject all RED).\r\n\r\nVERIFIED: build OK (tsc clean + esbuild), invariants 53/53, render_probe_search + render_probe_knowledge PASS (0 page errors), negative test 13/13; targeted headless checks all PASS -- fluorine .gloss dotted underline in the Search drawer, scroll-reset before=400/after=0, and the see_also link rendering + click opening/flashing Big Questions claim 124. Luneth visually signed off the whole batch.\r\n\r\nNEXT: continue bulk migration at this quality (next cluster: Copper, Chromium, rare-earth trace minerals). Epigenetics deferred (charged content). Mining still PAUSED at Immortality Mn-Manganese." }, { id: "lg_mrehejh9_0bpa5h", ts: "2026-07-10T00:14:51.549811-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 2: 6 more element entities (Copper, Chromium, Gold, Aluminum, Krypton, Gallium; 15 claims). Pure data migration on the batch-1 template -- no code changes. Landing now 19 entities; cross-link pills self-upgraded.", detail: "Kept the Search bulk migration rolling at golden quality with a second batch of six element/mineral entities -- Copper, Chromium, Gold, Aluminum, Krypton, Gallium. This one was pure content authoring: the template from batch 1 held, so no code or gate changes were needed. Best part -- authoring these automatically turned three previously-grey cross-reference chips into live clickable links (the pill rule paying off with zero extra wiring).\r\n\r\nWHAT: 15 sealed search-only claims -> 6 faceted entity pages. Copper/Chromium/Gold/Aluminum/Gallium are canon (canon_ref, symbol from essentials-canon); Krypton is the non-canon noble gas (display_name + symbol Kr). Delight content: Krypton (Superman/kryptonite + Pauling predicting krypton-fluoride), Aluminum (the Alzheimer-myth as a big_question -- Wallach says no, a single faulty study), Gallium (the metal that melts in your hand + gallium-67 cancer medicine), Chromium (why trace chromium colors rubies and emeralds), Copper (copper-overload Kayser-Fleischer eye rings as a warning). Facet spreads: copper basics/physiology/warning, chromium mechanism/physiology/discovery, gold stance/uses, aluminum sources/big_question, krypton basics/discovery/history, gallium basics/uses.\r\n\r\nEMERGENT self-upgrade: the ONE pill rule (a slug pill is a clickable link iff it has an entity page) meant authoring these lit up cross-links that were plain chips before -- Gallium->Aluminum, Krypton->Fluoride, and Diabetes->Chromium are now clickable, no per-site wiring.\r\n\r\nDATA ONLY: eden/corpus/search-enrichment.json 74->89 enriched claims; eden/catalog/search-entities.json 14->20 entities. No schema/view/gate changes. Landing = 19 entities.\r\n\r\nVERIFIED: build OK, invariants 53/53, render_probe_search PASS (19-entity landing, all types, 0 page errors), targeted headless check PASS (gallium/krypton/diabetes cross-link pills render as clickable links + Gallium->Aluminum click navigates). Luneth visually signed off.\r\n\r\nNEXT: continue bulk migration -- remaining Immortality element A-Z search-only claims (cobalt, silver, bromine, cadmium, cesium, bismuth, helium, hafnium, holmium, indium, iridium, lutetium, rare earths dysprosium/erbium/europium), then the Lets-Play-Doctor modality cluster (hydrotherapy, homeopathy, Ayurveda, reflexology -- topic exemplars) + Wallach philosophy claims. ~129 non-epigenetics search-only claims remain. Mining still PAUSED at Immortality Mn-Manganese." }, { id: "lg_mrehujgp_1f7ol4", ts: "2026-07-10T00:27:18.025323-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 3: 4 general-nutrition CONCEPT entities (Essential Nutrients, Vitamins, Amino Acids, Macronutrients; 16 claims). First concept-type bulk batch; the 4 cross-link each other. Pure data migration, no code. Landing now 23 entities.", detail: "Shifted the bulk migration from single elements to broader CONCEPT entities -- the educational backbone of Wallach nutrition. Grouped 16 primer claims into four framework pages: Essential Nutrients, Vitamins, Amino Acids and Macronutrients. The nice part: these four reference each other, so the knowledge graph is starting to weave together into something a reader can wander through.\r\n\r\nWHAT: 16 sealed search-only primer claims -> 4 faceted concept entity pages (type=concept, non-canon display_name, nodes icon). Essential Nutrients: the 90 = 60 minerals + 16 vitamins + 12 amino acids + 3 essential fatty acids; the cannot-eat-your-way food-depletion stance (vitamins -37%, trace minerals -77%); the 4 hidden deficiency stages. Vitamins: definition + fat/water-soluble + flavanols; pregnancy birth-defect warning; the pill depletes B6. Amino Acids: Wallach 12 (vs mainstream 9) + what each makes. Macronutrients: carbs are NOT essential (stance); carbs/fats/proteins primers; 300 g/day protein is fine absent kidney/liver disease.\r\n\r\nGRAPH: also_about now cross-links the 4 to each other -- Essential Nutrients -> Vitamins + Amino Acids, Macronutrients -> Amino Acids -- all live pills, plus outward links (colloidal_minerals, selenium, omega-3, vitamin-b6, vitamin-b3, magnesium, birth_defects, kidney_disease, liver_disease).\r\n\r\nDATA ONLY: search-enrichment.json 89->105 enriched claims; search-entities.json 20->24 entities. No schema/view/gate changes -- the batch-1 template held for a new entity type.\r\n\r\nVERIFIED: build OK, invariants 53/53, render_probe_search PASS (23-entity landing, 0 page errors), targeted headless PASS (concept nodes-icon with no atomic symbol; the intra-batch cross-link pills clickable). Luneth signed off.\r\n\r\nNEXT: remaining Immortality elements OR the Lets-Play-Doctor modality topic cluster (54 claims). ~113 non-epigenetics search-only claims remain; ~16 entities across 3 batches (near the end of the grounded first-few-dozen). Mining PAUSED at Immortality Mn-Manganese." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -57525,6 +57525,21 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         claim_count: 2,
         symbol: "Al"
       },
+      amino_acids: {
+        display_name: "Amino Acids",
+        type: "concept",
+        synonyms: [
+          "amino acid",
+          "essential amino acids",
+          "protein building blocks"
+        ],
+        related: [
+          "essential_nutrients",
+          "macronutrients",
+          "selenium"
+        ],
+        claim_count: 2
+      },
       calcium: {
         display_name: "Calcium",
         type: "nutrient",
@@ -57626,6 +57641,21 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
           "hypoglycemia"
         ],
         claim_count: 6
+      },
+      essential_nutrients: {
+        display_name: "Essential Nutrients",
+        type: "concept",
+        synonyms: [
+          "90 essential nutrients",
+          "90 nutrients",
+          "essential nutrient"
+        ],
+        related: [
+          "colloidal_minerals",
+          "vitamins",
+          "amino_acids"
+        ],
+        claim_count: 5
       },
       fluoride: {
         display_name: "Fluoride",
@@ -57745,6 +57775,23 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         claim_count: 3,
         symbol: "Kr"
       },
+      macronutrients: {
+        display_name: "Macronutrients",
+        type: "concept",
+        synonyms: [
+          "carbohydrates",
+          "carbs",
+          "fats",
+          "protein",
+          "sugar"
+        ],
+        related: [
+          "amino_acids",
+          "essential_nutrients",
+          "omega-3"
+        ],
+        claim_count: 5
+      },
       mercury: {
         display_name: "Mercury",
         type: "element",
@@ -57775,6 +57822,21 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ],
         claim_count: 5,
         symbol: "K"
+      },
+      vitamins: {
+        display_name: "Vitamins",
+        type: "concept",
+        synonyms: [
+          "vitamin",
+          "fat-soluble",
+          "water-soluble",
+          "flavanols"
+        ],
+        related: [
+          "essential_nutrients",
+          "vitamin-c"
+        ],
+        claim_count: 4
       },
       wallach: {
         display_name: "Dr. Joel Wallach",
@@ -57925,6 +57987,42 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ]
       },
       {
+        id: "WAL-CLM-IAIYH-000018",
+        subject: "essential_nutrients",
+        also_about: [],
+        facet: "mechanism",
+        question: "Why do the 90 essential nutrients matter?",
+        answer_short: "They're the cofactors enzymes need to work - miss one and the enzyme stalls. Most people never reach optimal levels, a 'subclinical' shortfall felt as fatigue and low mood.",
+        answer: "Wallach explains why the 90 essential nutrients matter at the cellular level: vitamins and minerals act as cofactors that enzymes and coenzymes require to do their work, and if an essential cofactor is missing the enzyme cannot perform properly, if at all. He notes that most people never reach optimal levels of all 90 nutrients \u2014 a state he calls subclinical (marginal) deficiency \u2014 which typically shows up as chronic fatigue, lethargy, depression, and lack of concentration.",
+        verbatim: "The general role of vitamins and minerals is their requirement as cofactors to\nimplement the activity of enzymes and coenzymes.",
+        page: 46,
+        book_id: "iaiyh",
+        topics: [
+          "cofactors",
+          "subclinical-deficiency",
+          "enzymes"
+        ]
+      },
+      {
+        id: "WAL-CLM-IAIYH-000019",
+        subject: "essential_nutrients",
+        also_about: [
+          "colloidal_minerals"
+        ],
+        facet: "stance",
+        question: "Can you get all your nutrition from food alone?",
+        answer_short: "Wallach says no - food itself is depleted (vitamins down 37%, trace minerals 77%), so he calls a full 90-nutrient supplement program a cornerstone of health.",
+        answer: "Wallach argues you cannot eat your way to full nutrition because the food supply itself is depleted: vitamin levels in food fell more than 37% (1950 to 1999) and trace minerals 77% (1940 to 1991). He attributes this not to fertilizers or seed types but to two facts \u2014 minerals occur in veins rather than spread evenly through the soil and plants cannot manufacture them, and the traditional renewal of farm-soil minerals through wood ashes ended once the Industrialized World switched from wood fuel to electricity, natural gas, and propane after Thomas Edison's first commercial power plant opened in 1882. Even organic and vegetarian diets fall short, so he calls a complete 90-nutrient supplementation program a cornerstone of optimal health.",
+        verbatim: "Vitamin levels in food\nhave decreased by more than 37% between 1950 and 1999, and trace mineral\nlevels have decreased by 77% between 1940 and 1991.",
+        page: 48,
+        book_id: "iaiyh",
+        topics: [
+          "soil-depletion",
+          "supplementation",
+          "cornerstone"
+        ]
+      },
+      {
         id: "WAL-CLM-IAIYH-000020",
         subject: "wallach",
         also_about: [],
@@ -57957,6 +58055,42 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
           "wallach-biography",
           "autopsy-evidence",
           "comparative-pathology"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000003",
+        subject: "macronutrients",
+        also_about: [],
+        facet: "stance",
+        question: "Are carbohydrates an essential nutrient?",
+        answer_short: "No, says Wallach - the body can make all the carbs and sugar it needs by breaking down and rebuilding fats and proteins, so none has to come from the diet.",
+        answer: "Wallach's stance on carbohydrates and sugars: they are not essential nutrients. His reasoning is that the body can make all the carbohydrate and sugar it needs - for energy, upkeep, and structural repair - by breaking down and rebuilding fats and proteins inside the cell, so none has to come from the diet. This runs counter to the popular view of carbohydrates as a required food group.",
+        verbatim: "Contrary to popular belief, carbohydrates and sugars\nare not essential nutrients by anybody\u2019s standards, as we\ncan make all of the carbohydrates and sugars we need for\nenergy and maintenance and repair of structural components\nby breaking down and reconfiguring fats and proteins at the\ncellular level.",
+        page: 52,
+        book_id: "immortality",
+        topics: [
+          "carbohydrates",
+          "non-essential",
+          "wallach-stance"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000004",
+        subject: "amino_acids",
+        also_about: [
+          "selenium"
+        ],
+        facet: "basics",
+        question: "How many essential amino acids are there?",
+        answer_short: "Wallach counts 12 the body can't make (mainstream says 9; he adds tyrosine, arginine, taurine, histidine). Miss any for long and a specific deficiency disease follows.",
+        answer: "Wallach counts 12 essential amino acids - the protein building blocks the body cannot make for itself and so must obtain from food: valine, tyrosine, tryptophan, lysine, isoleucine, threonine, methionine, histidine, phenylalanine, arginine, taurine, and leucine. (Mainstream nutrition usually lists nine; Wallach's list adds tyrosine, arginine, taurine, and histidine.) He warns that if any essential amino acid is missing from the diet for any length of time, a specific - sometimes reversible - deficiency disease results. A footnote adds that selenium researcher Dr. Gerhard Schrauzer considered selenomethionine (the selenium form of methionine) a 13th essential amino acid.",
+        verbatim: "There are 12 amino acids that are required by the body\nas protein building blocks, and because the body is unable to\nmanufacture them, they are termed \u201Cessential amino acids.\u201D",
+        page: 57,
+        book_id: "immortality",
+        topics: [
+          "essential-amino-acids",
+          "protein",
+          "deficiency"
         ]
       },
       {
@@ -57995,6 +58129,44 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ]
       },
       {
+        id: "WAL-CLM-IMMORT-000007",
+        subject: "vitamins",
+        also_about: [
+          "birth_defects"
+        ],
+        facet: "warning",
+        question: "What happens if you're vitamin-deficient during pregnancy?",
+        answer_short: "Wallach warns it can cause catastrophic birth defects - among them neural-tube defects, cleft lip and palate, muscular dystrophy, cystic fibrosis and heart defects.",
+        answer: "Wallach warns that vitamin deficiencies during pregnancy can cause catastrophic birth defects - he lists neural tube defects, intellectual disability, muscular dystrophy, cystic fibrosis, cleft lip, cleft palate, and heart defects among the possible outcomes. This is a general warning; the specific nutrient-to-defect links (such as folic acid and neural tube defects, or zinc and cleft palate) are covered as their own operational claims.",
+        verbatim: "Deficiencies of many vitamins during pregnancy\ncan result in catastrophic birth defects (neural tube defects,\nmental retardation, muscular dystrophy, cystic fibrosis, cleft\nlip, cleft palate, heart defects, etc.).",
+        page: 61,
+        book_id: "immortality",
+        topics: [
+          "pregnancy",
+          "birth-defects",
+          "warning"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000009",
+        subject: "vitamins",
+        also_about: [
+          "vitamin-b6"
+        ],
+        facet: "warning",
+        question: "Does the birth-control pill deplete a vitamin?",
+        answer_short: "Yes - Wallach says 15-20% of women on the pill show vitamin B6 (pyridoxine) deficiency: malaise, depression, and glucose intolerance (trouble handling blood sugar).",
+        answer: "Does the birth-control pill deplete a nutrient? Per Wallach, yes: 15 to 20 percent of women taking oral contraceptives show symptoms of vitamin B6 (pyridoxine) deficiency - including malaise, depression, and glucose intolerance (trouble regulating blood sugar).",
+        verbatim: "Fifteen to 20 percent of women taking oral contraceptives\nshow the symptoms of pyridoxine deficiency manifested by\nmalaise, depression and glucose intolerance.",
+        page: 65,
+        book_id: "immortality",
+        topics: [
+          "oral-contraceptives",
+          "vitamin-b6",
+          "drug-depletion"
+        ]
+      },
+      {
         id: "WAL-CLM-IMMORT-000010",
         subject: "wallach",
         also_about: [],
@@ -58010,6 +58182,62 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
           "minerals",
           "selenium",
           "establishment-critique"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000013",
+        subject: "essential_nutrients",
+        also_about: [
+          "colloidal_minerals"
+        ],
+        facet: "sources",
+        question: "How depleted is the food supply?",
+        answer_short: "A USDA comparison (1975-2004) shows steep losses - broccoli lost 54% of its calcium, apples 60% of their iron - so Wallach says food alone can't supply enough minerals.",
+        answer: 'A central Wallach teaching: our food has been massively depleted of vitamins and minerals as farm soils were stripped. A USDA database comparing common foods between 1975 and 2004 shows dramatic losses - for example, broccoli lost 54% of its calcium and 74% of its vitamin A, onions lost 95% of their vitamin A, apples lost 60% of their iron, and kale lost 46% of its calcium. His conclusion: we can no longer get adequate minerals from food alone and must supplement, especially with plant-derived minerals (the "culinary ashes" of traditional diets).',
+        verbatim: "Only when one looks at a USDA data base that\ncompares the level of vitamins and minerals in certain common\nfoods between 1975 and 2004, do we truly understand how\ndepleted our foods have become since we gave up the back\nyard gardens and wood ashes (plant minerals).",
+        page: 79,
+        book_id: "immortality",
+        topics: [
+          "soil-depletion",
+          "usda-data",
+          "minerals"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000014",
+        subject: "essential_nutrients",
+        also_about: [
+          "vitamins",
+          "amino_acids"
+        ],
+        facet: "basics",
+        question: "What are the 90 essential nutrients?",
+        answer_short: "Of 79+ elements found in the body, Wallach counts 60 minerals as essential - plus 16 vitamins, 12 amino acids and 3 essential fatty acids: the '90 essentials.'",
+        answer: "How many minerals does the body actually need? Wallach's starting point: more than 79 elements and minerals have been detected in human and animal tissue, and simply being present in the tissue meets the first criterion for calling a substance an 'essential nutrient.' From there, he says thousands of studies support designating 60 of those 79 as truly essential - the mineral backbone of his '90 essential nutrients' framework (60 minerals, 16 vitamins, 12 amino acids, and 3 essential fatty acids).",
+        verbatim: "More than 79 elements and minerals have been detected\nin animal and human tissue (i.e. - blood, liver, muscle, brain,\nbones, connective tissue, etc.) in the 20th and 21st centuries. Their\npresence in human tissue fulfills the first criteria for designating\nan element or mineral an \u201Cessential nutrient.\u201D Literally thousands\nof additional studies provide support for designating 60 of these\n79 elemental nutrients to be essential nutrients.",
+        page: 84,
+        book_id: "immortality",
+        topics: [
+          "90-essentials",
+          "minerals",
+          "framework"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000017",
+        subject: "essential_nutrients",
+        also_about: [],
+        facet: "warning",
+        question: "How does a mineral deficiency progress before you notice?",
+        answer_short: "In four hidden stages: initial (just 'low energy,' tests normal), compensated (cravings, odd symptoms), decompensated (real disease), then clinical (full disease, even death).",
+        answer: "Wallach maps trace-mineral deficiency as a four-stage progression that mostly hides from standard testing until it is advanced. Initial Depletion - the body quietly adjusts and tests still look normal; the only clue is 'lack of energy' plus mild cravings. Compensated Metabolic - specific biochemical functions falter (low blood sugar, irregular heartbeat, loss of hair color, mild weight gain) and cravings intensify into 'chocoholic' or 'cola addict' behavior. Decompensated - serious metabolic, cognitive, emotional, developmental and structural disorders appear. Clinical - full disease and even death; yet orthodox physicians rarely diagnose the mineral cause, and the cure is often simply replacing the specific missing element.",
+        verbatim: "Initial depletion of trace elements in animals and\nhumans is characterized by changes only in the metabolism\nof the element itself in response to a suboptimal intake, the\nindividual target tissue compensating so that no disturbance\nof biological structure or function are detectable by means of\na test. However, the individual usually complains of \u201Clack of\n\nenergy.\u201D",
+        page: 84,
+        book_id: "immortality",
+        topics: [
+          "deficiency-stages",
+          "subclinical",
+          "trace-minerals"
         ]
       },
       {
@@ -58155,6 +58383,44 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ]
       },
       {
+        id: "WAL-CLM-IMMORT-000051",
+        subject: "macronutrients",
+        also_about: [
+          "magnesium"
+        ],
+        facet: "basics",
+        question: "What are carbohydrates?",
+        answer_short: "The body's convenient fuel (but not essential) - plants build them from CO2 and water by photosynthesis. Sized as single sugars, double sugars, and long chains like starch and fiber.",
+        answer: "What are carbohydrates? Wallach explains that carbs and sugars are the body's convenient everyday fuel, but - importantly - they are NOT essential nutrients: the body can make all the carbohydrate it needs by reconfiguring proteins and fats. Plants build carbohydrates from carbon dioxide and water using sunlight (photosynthesis, which runs on chlorophyll, a magnesium/carbon ring). Carbohydrates are classified by size: single sugars (monosaccharides like glucose and fructose), double sugars (disaccharides like sucrose, maltose and lactose), and large chains (polysaccharides like starch, cellulose, fiber and glycogen).",
+        verbatim: "While\ncarbohydrates and sugars are convenient sources of fuel for\nenergy, they are not essential nutrients as all living organisms\ncan make them by reconfiguring proteins and fats.",
+        page: 109,
+        book_id: "immortality",
+        topics: [
+          "carbohydrates",
+          "sugars",
+          "photosynthesis"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000052",
+        subject: "macronutrients",
+        also_about: [
+          "omega-3"
+        ],
+        facet: "basics",
+        question: "What are fats?",
+        answer_short: "Water-repelling molecules packing ~9 calories a gram (vs 4.5); mostly triglycerides (glycerol + fatty acids). Fatty acids differ by chain length, saturation, and 'omega' number.",
+        answer: "A primer on fats: like carbohydrates, fats (lipids) are built from carbon, hydrogen and oxygen, but they don't dissolve in water and pack more energy - about 9 calories per gram versus 4.5 for carbohydrate or protein. The main form of fat is the triglyceride: a molecule of glycerol joined to fatty acids. Fatty acids are described three ways - chain length (short, medium or long, by the number of carbons), how 'saturated' they are with hydrogen (no double bonds = saturated; one = monounsaturated; several = polyunsaturated), and where the first double bond sits counting from the tail (the 'omega' number, e.g. omega-3, omega-6).",
+        verbatim: "Triglycerides (the primary component of fats and oils)\nare composed of carbon, hydrogen, and oxygen. Structurally,\nthey are esters of a trihydric alcohol (glycerol) and fatty acids.",
+        page: 111,
+        book_id: "immortality",
+        topics: [
+          "fats",
+          "triglycerides",
+          "fatty-acids"
+        ]
+      },
+      {
         id: "WAL-CLM-IMMORT-000054",
         subject: "cholesterol",
         also_about: [],
@@ -58176,6 +58442,98 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
             "low_libido"
           ]
         }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000055",
+        subject: "macronutrients",
+        also_about: [
+          "amino_acids"
+        ],
+        facet: "physiology",
+        question: "What are proteins?",
+        answer_short: "The body's most abundant carbon compound - the main stuff of muscle and every cell, and enzymes are proteins too. Built from amino acids linked by peptide bonds; they add nitrogen.",
+        answer: "What are proteins? Like carbohydrates and fats they contain carbon, hydrogen and oxygen, but proteins add nitrogen (about 16%, the 'amine' group), sometimes with phosphorus, iron, sulfur or cobalt. Their basic building block is the amino acid; amino acids link by 'peptide bonds' into long chains, and digestion breaks those bonds to free the individual amino acids again. Proteins are the most abundant carbon-based compound in the body - the main stuff of muscle and every cell - and enzymes (the workers that speed up the body's chemical reactions) are themselves proteins.",
+        verbatim: "Proteins are the fundamental structural components\nof the living cell (cytoplasm). They are essential parts of the\ncell nucleus and protoplasm. Proteins are the most abundant\nof all carbon containing organic compounds in the human\nbody.",
+        page: 114,
+        book_id: "immortality",
+        topics: [
+          "protein",
+          "amino-acids",
+          "enzymes"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000056",
+        subject: "macronutrients",
+        also_about: [
+          "kidney_disease",
+          "liver_disease"
+        ],
+        facet: "warning",
+        question: "Can you eat too much protein?",
+        answer_short: "Wallach's view: a healthy person can eat even 300 g of protein a day (nearly 3/4 lb of meat) with no harm - as long as they have no kidney or liver disease and supplement properly.",
+        answer: "Can you eat too much protein? Wallach's view: a healthy person can consume even 300 grams of protein a day - nearly three-quarters of a pound of meat - with no ill effects, as long as they do not have kidney or liver disease and they supplement properly with vitamins and minerals.",
+        verbatim: "An individual consuming protein at even 300 gm per\nday (almost 3/4 of a pound of meat a day) will have no adverse\neffects as long as they do not have kidney or liver disease and\nsupplement properly with vitamins and minerals.",
+        page: 114,
+        book_id: "immortality",
+        topics: [
+          "high-protein",
+          "kidney",
+          "liver"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000057",
+        subject: "amino_acids",
+        also_about: [
+          "vitamin-b3"
+        ],
+        facet: "mechanism",
+        question: "What does each amino acid do?",
+        answer_short: "Many build protein (valine, lysine, leucine...); tryptophan makes niacin and serotonin; phenylalanine makes thyroid hormone and adrenaline; methionine makes choline and creatine.",
+        answer: "Wallach's essential amino acids and what each does. Classically there are nine that must come from the diet because the body cannot make them, and Wallach would add three more - arginine, taurine and tyrosine. Their roles: valine, lysine, threonine, leucine and isoleucine build protein; tryptophan is the precursor of niacin (vitamin B3) and serotonin; phenylalanine makes thyroxine (a thyroid hormone) and epinephrine (adrenaline); methionine makes choline and creatine phosphate; histidine makes histamine; and the added three help prevent specific diseases (arginine, taurine, tyrosine - see the related claim).",
+        verbatim: "Classically there are nine essential amino acids that are\nrequired in the daily diet as they cannot be manufactured by\nthe human body.",
+        page: 113,
+        book_id: "immortality",
+        topics: [
+          "amino-acid-roles",
+          "tryptophan",
+          "methionine"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000059",
+        subject: "vitamins",
+        also_about: [],
+        facet: "basics",
+        question: "What are vitamins?",
+        answer_short: "Organic compounds the body needs in tiny daily amounts but can't make itself; they work mostly as coenzymes (switching enzymes on) and supply no calories and no body mass.",
+        answer: "What are vitamins? Wallach defines them as a group of unrelated, carbon-based organic compounds the body needs in tiny daily amounts for specific chemical reactions - essential for normal growth, development, maintenance, health, longevity and life itself. They work mainly as coenzymes (helper molecules that switch enzymes on) and cannot be manufactured by the human body, yet they supply no calories and add no body mass. Getting optimal vitamins, he says, goes a long way toward preventing birth defects and many debilitating degenerative diseases.",
+        verbatim: "Vitamins are essential nutrients in that, they can not\nbe manufactured by humans; they do not supply calories or\ncontribute to body mass.",
+        page: 114,
+        book_id: "immortality",
+        topics: [
+          "definition",
+          "coenzymes",
+          "organic-compounds"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000060",
+        subject: "vitamins",
+        also_about: [],
+        facet: "mechanism",
+        question: "What are the different kinds of vitamins?",
+        answer_short: "Three classes: fat-soluble (A, D, E, K - need fat/bile to absorb), water-soluble (the B's and C, cell-energy cofactors), and flavanols (the dark-chocolate bioflavonoids).",
+        answer: "Wallach sorts vitamins into three classes. (1) Fat-soluble - A, D, E and K - work in fat metabolism and cannot be absorbed on a very low-fat diet; people who have had their gallbladder removed should take ox bile to supply the bile salts needed to absorb fats and fat-soluble vitamins. (2) Water-soluble - the ten B vitamins plus vitamin C - act as cofactors that help cells turn food into energy. (3) Flavanols - the bioflavonoids (polyphenols / epicatechins) - which he counts as a third vitamin category. Flavanols in dark chocolate, he notes, help keep capillaries strong, lower blood pressure and improve blood flow.",
+        verbatim: "Flavanols found in dark chocolate, participate in\nmaintaining the strength of capillaries, lower blood pressure,\nimprove blood flow via increased production of nitric oxide\n(a molecule used by the vascular endothelium to signal\nthe surrounding muscle to relax) and have vitamin C-like\nfunctions",
+        page: 115,
+        book_id: "immortality",
+        topics: [
+          "fat-soluble",
+          "water-soluble",
+          "flavanols"
+        ]
       },
       {
         id: "WAL-CLM-IMMORT-000062",

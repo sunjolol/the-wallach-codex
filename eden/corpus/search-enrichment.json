@@ -1141,6 +1141,222 @@
         "melanoma",
         "nuclear-medicine"
       ]
+    },
+    "WAL-CLM-IAIYH-000018": {
+      "subject": "essential_nutrients",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why do the 90 essential nutrients matter?",
+      "answer_short": "They're the cofactors enzymes need to work - miss one and the enzyme stalls. Most people never reach optimal levels, a 'subclinical' shortfall felt as fatigue and low mood.",
+      "topics": [
+        "cofactors",
+        "subclinical-deficiency",
+        "enzymes"
+      ]
+    },
+    "WAL-CLM-IAIYH-000019": {
+      "subject": "essential_nutrients",
+      "also_about": [
+        "colloidal_minerals"
+      ],
+      "facet": "stance",
+      "question": "Can you get all your nutrition from food alone?",
+      "answer_short": "Wallach says no - food itself is depleted (vitamins down 37%, trace minerals 77%), so he calls a full 90-nutrient supplement program a cornerstone of health.",
+      "topics": [
+        "soil-depletion",
+        "supplementation",
+        "cornerstone"
+      ]
+    },
+    "WAL-CLM-IMMORT-000013": {
+      "subject": "essential_nutrients",
+      "also_about": [
+        "colloidal_minerals"
+      ],
+      "facet": "sources",
+      "question": "How depleted is the food supply?",
+      "answer_short": "A USDA comparison (1975-2004) shows steep losses - broccoli lost 54% of its calcium, apples 60% of their iron - so Wallach says food alone can't supply enough minerals.",
+      "topics": [
+        "soil-depletion",
+        "usda-data",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-IMMORT-000014": {
+      "subject": "essential_nutrients",
+      "also_about": [
+        "vitamins",
+        "amino_acids"
+      ],
+      "facet": "basics",
+      "question": "What are the 90 essential nutrients?",
+      "answer_short": "Of 79+ elements found in the body, Wallach counts 60 minerals as essential - plus 16 vitamins, 12 amino acids and 3 essential fatty acids: the '90 essentials.'",
+      "topics": [
+        "90-essentials",
+        "minerals",
+        "framework"
+      ]
+    },
+    "WAL-CLM-IMMORT-000017": {
+      "subject": "essential_nutrients",
+      "also_about": [],
+      "facet": "warning",
+      "question": "How does a mineral deficiency progress before you notice?",
+      "answer_short": "In four hidden stages: initial (just 'low energy,' tests normal), compensated (cravings, odd symptoms), decompensated (real disease), then clinical (full disease, even death).",
+      "topics": [
+        "deficiency-stages",
+        "subclinical",
+        "trace-minerals"
+      ]
+    },
+    "WAL-CLM-IMMORT-000059": {
+      "subject": "vitamins",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What are vitamins?",
+      "answer_short": "Organic compounds the body needs in tiny daily amounts but can't make itself; they work mostly as coenzymes (switching enzymes on) and supply no calories and no body mass.",
+      "topics": [
+        "definition",
+        "coenzymes",
+        "organic-compounds"
+      ]
+    },
+    "WAL-CLM-IMMORT-000060": {
+      "subject": "vitamins",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What are the different kinds of vitamins?",
+      "answer_short": "Three classes: fat-soluble (A, D, E, K - need fat/bile to absorb), water-soluble (the B's and C, cell-energy cofactors), and flavanols (the dark-chocolate bioflavonoids).",
+      "topics": [
+        "fat-soluble",
+        "water-soluble",
+        "flavanols"
+      ]
+    },
+    "WAL-CLM-IMMORT-000007": {
+      "subject": "vitamins",
+      "also_about": [
+        "birth_defects"
+      ],
+      "facet": "warning",
+      "question": "What happens if you're vitamin-deficient during pregnancy?",
+      "answer_short": "Wallach warns it can cause catastrophic birth defects - among them neural-tube defects, cleft lip and palate, muscular dystrophy, cystic fibrosis and heart defects.",
+      "topics": [
+        "pregnancy",
+        "birth-defects",
+        "warning"
+      ]
+    },
+    "WAL-CLM-IMMORT-000009": {
+      "subject": "vitamins",
+      "also_about": [
+        "vitamin-b6"
+      ],
+      "facet": "warning",
+      "question": "Does the birth-control pill deplete a vitamin?",
+      "answer_short": "Yes - Wallach says 15-20% of women on the pill show vitamin B6 (pyridoxine) deficiency: malaise, depression, and glucose intolerance (trouble handling blood sugar).",
+      "topics": [
+        "oral-contraceptives",
+        "vitamin-b6",
+        "drug-depletion"
+      ]
+    },
+    "WAL-CLM-IMMORT-000004": {
+      "subject": "amino_acids",
+      "also_about": [
+        "selenium"
+      ],
+      "facet": "basics",
+      "question": "How many essential amino acids are there?",
+      "answer_short": "Wallach counts 12 the body can't make (mainstream says 9; he adds tyrosine, arginine, taurine, histidine). Miss any for long and a specific deficiency disease follows.",
+      "topics": [
+        "essential-amino-acids",
+        "protein",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-IMMORT-000057": {
+      "subject": "amino_acids",
+      "also_about": [
+        "vitamin-b3"
+      ],
+      "facet": "mechanism",
+      "question": "What does each amino acid do?",
+      "answer_short": "Many build protein (valine, lysine, leucine...); tryptophan makes niacin and serotonin; phenylalanine makes thyroid hormone and adrenaline; methionine makes choline and creatine.",
+      "topics": [
+        "amino-acid-roles",
+        "tryptophan",
+        "methionine"
+      ]
+    },
+    "WAL-CLM-IMMORT-000003": {
+      "subject": "macronutrients",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Are carbohydrates an essential nutrient?",
+      "answer_short": "No, says Wallach - the body can make all the carbs and sugar it needs by breaking down and rebuilding fats and proteins, so none has to come from the diet.",
+      "topics": [
+        "carbohydrates",
+        "non-essential",
+        "wallach-stance"
+      ]
+    },
+    "WAL-CLM-IMMORT-000051": {
+      "subject": "macronutrients",
+      "also_about": [
+        "magnesium"
+      ],
+      "facet": "basics",
+      "question": "What are carbohydrates?",
+      "answer_short": "The body's convenient fuel (but not essential) - plants build them from CO2 and water by photosynthesis. Sized as single sugars, double sugars, and long chains like starch and fiber.",
+      "topics": [
+        "carbohydrates",
+        "sugars",
+        "photosynthesis"
+      ]
+    },
+    "WAL-CLM-IMMORT-000052": {
+      "subject": "macronutrients",
+      "also_about": [
+        "omega-3"
+      ],
+      "facet": "basics",
+      "question": "What are fats?",
+      "answer_short": "Water-repelling molecules packing ~9 calories a gram (vs 4.5); mostly triglycerides (glycerol + fatty acids). Fatty acids differ by chain length, saturation, and 'omega' number.",
+      "topics": [
+        "fats",
+        "triglycerides",
+        "fatty-acids"
+      ]
+    },
+    "WAL-CLM-IMMORT-000055": {
+      "subject": "macronutrients",
+      "also_about": [
+        "amino_acids"
+      ],
+      "facet": "physiology",
+      "question": "What are proteins?",
+      "answer_short": "The body's most abundant carbon compound - the main stuff of muscle and every cell, and enzymes are proteins too. Built from amino acids linked by peptide bonds; they add nitrogen.",
+      "topics": [
+        "protein",
+        "amino-acids",
+        "enzymes"
+      ]
+    },
+    "WAL-CLM-IMMORT-000056": {
+      "subject": "macronutrients",
+      "also_about": [
+        "kidney_disease",
+        "liver_disease"
+      ],
+      "facet": "warning",
+      "question": "Can you eat too much protein?",
+      "answer_short": "Wallach's view: a healthy person can eat even 300 g of protein a day (nearly 3/4 lb of meat) with no harm - as long as they have no kidney or liver disease and supplement properly.",
+      "topics": [
+        "high-protein",
+        "kidney",
+        "liver"
+      ]
     }
   }
 }
