@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "_note": "THIN-SLICE DRAFT (2026-07-09) for the Search visual-reference. Hand-authored de-blobbed restructure of Immortality's 13 sealed mercury claims into the faceted search template (subject/facet/question/answer_short/answer/verbatim/cite/topics). verbatim + answer are byte-faithful from the sealed corpus; the rest is authored. REPLACED post-format-signoff by the derived search index (search_index_fresh) built from the sealed claims; do NOT hand-maintain long-term.",
+  "book": {
+    "book_id": "immortality",
+    "title": "Immortality",
+    "year": 2008
+  },
+  "claims": [
+    {
+      "id": "WAL-CLM-IMMORT-000159",
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is mercury?",
+      "answer_short": "Mercury (Hg) is the only metal that is liquid at room temperature — a dense, silvery 'quicksilver' found in the bright-red ore cinnabar.",
+      "answer": "Mercury — the basics. Mercury (chemical symbol Hg) is the only metal that is liquid at ordinary room temperature — a very dense, heavy metal with a silvery-white sheen, which earned it the old common name 'quicksilver.' It is rarely found pure in nature; instead it occurs locked in a bright-red ore called cinnabar (also called vermillion), which is mostly mercury sulfide. The largest deposits are in Spain and Italy — Spain has mercury mines that have run continuously for over 2,000 years — and metallic mercury is extracted by heating the ore and condensing the vapor.",
+      "verbatim": "Mercury is the only\nmetal that is liquid at room temperatures. It is an extremely\ndense metal, and therefore a heavy metal with a silvery-white\ncolor that has resulted in the common name of “quicksilver.”\n\nMercury is rarely found as a pure metal in nature,\nrather it is found bound in a bright red ore called cinnabar\nor vermillion. Cinnabar is primarily mercury sulfide and is\nfound in large deposits in Spain and Italy. Spain has mercury\nmines that have been operating continuously for more than\n2,000 years.",
+      "page": 154,
+      "topics": [
+        "quicksilver",
+        "cinnabar",
+        "heavy-metals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000160",
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How does mercury poison the body?",
+      "answer_short": "Mercury is an accumulative poison that binds to enzymes and cripples them; its vapor is far more dangerous than the liquid metal.",
+      "answer": "How mercury poisons the body. Like other heavy metals, mercury is an accumulative poison — it builds up in the body and binds to enzymes, crippling their job as catalysts that drive the body's biological reactions. It is easily absorbed through the digestive (gastrointestinal) tract and can also pass straight through the skin (trans-dermal absorption). Mercury vapor is far more dangerous than the liquid metal: Wallach cites an estimate that the fumes from as little as a teaspoon of mercury can saturate a large room within a week and make it unsafe to work in.",
+      "verbatim": "Like many heavy metals, mercury is an accumulative\npoison that binds with enzymes in the body, producing\na reduction or loss of function as a catalyst of biological\nfunctions. It is easily absorbed into the body through the\ngastrointestinal tract and can enter the body via trans-dermal\nroutes. The vapor is considerably more dangerous than the\nelemental metal. It has been estimated that the vapors from\nthe volume of mercury as small as a teaspoon can saturate a\nlarge room within a week and make it unsafe to work in.",
+      "page": 154,
+      "topics": [
+        "mercury-poisoning",
+        "heavy-metals",
+        "enzymes"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000161",
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "history",
+      "question": "What does mercury have to do with the quest for immortality?",
+      "answer_short": "Ancient Chinese alchemists drank mercury as an immortality elixir — China's first emperor poisoned himself to death that way.",
+      "answer": "Mercury and the ancient quest for immortality. Fittingly for a book about immortality, Wallach recounts how the early Chinese alchemists insisted that regularly consuming mercury ('potable gold') was the path to eternal life — a deadly error. Mercury was known to the ancient Chinese and Egyptians (samples have been found in tombs dating to 1500 B.C.); its name comes from the planet Mercury, and its symbol Hg from the Latin hydragyrum, 'liquid silver.' The most famous victim was China's first emperor, Jing Shi Huang (210 B.C. — historically Qin Shi Huang), who inadvertently poisoned himself to death by drinking a mercury-spiked immortality elixir over many years. Before dying he grew paranoid ('mad as a hatter'), had much of his inner circle executed, and built the vast army of life-sized terra-cotta guards to accompany him through an intended thousand-year reign.",
+      "verbatim": "The first Chinese Emperor (210 B.C.), Jing Shi Huang,\nin a failed attempt to attain immortality, inadvertently killed\nhimself by drinking several doses of a mercury spiked elixir\nover an extended period of time.\n\nPrior to his death, Jing became paranoid (“mad as a\nhatter”), had many of his loyal inner circle, advisors, scholars\nand academics executed and had hundreds of life sized terra\ncotta likenesses of his loyal palace guard constructed, painted\nand dressed to be with him throughout a thousand year reign",
+      "page": 155,
+      "topics": [
+        "alchemy",
+        "immortality",
+        "china",
+        "quicksilver"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000162",
+      "subject": "mercury",
+      "also_about": [
+        "vaccines"
+      ],
+      "facet": "sources",
+      "question": "Where does mercury exposure come from?",
+      "answer_short": "Industry, mining, farming, vaccines and dental amalgam fillings concentrate mercury in the environment — even in people whose only exposure is their fillings.",
+      "answer": "Where mercury exposure comes from. Wallach traces how mercury is concentrated in the environment by industry, mining, agriculture, dental amalgam fillings, and microorganisms that convert (methylate) it into methyl mercury in the sediments of rivers, lakes and oceans. The main industrial source is the chlor-alkali industry (chlorine and caustic-soda manufacturing); other human sources include electrical appliances, paint, dental amalgams, pharmaceuticals, vaccines, slimicides and algaecides (used by the paper and pulp industry), mercury seed-treatment fungicides (especially dangerous as methyl mercury), and the burning of fossil fuels. Historically, dentists exploited mercury's ability to dissolve other metals into alloys (amalgams) to make silver- and gold-mercury fillings for cavities (caries). Tellingly, mercury has been found in all tissues of accident victims whose only known exposure was their dental amalgam fillings.",
+      "verbatim": "Mercury is concentrated in the environment by\nindustry, mining operations, agriculture, dental repairs\n(amalgams), and microorganisms that methylate mercury\nin the sediments at the bottoms of fresh water or salt water\nrivers, lakes, oceans and seas. Mercury has been detected in all\ntissues of accident victims, with no known mercury exposure\nexcept dental mercury amalgam fillings.",
+      "page": 155,
+      "topics": [
+        "exposure",
+        "dental-amalgam",
+        "vaccines",
+        "environment"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000163",
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Is the mercury in fish dangerous?",
+      "answer_short": "Fish carry mercury as persistent methylmercury; heavy fish-eaters hold far more, and unlike inorganic mercury it crosses the placenta into the fetus.",
+      "answer": "Methyl mercury, fish, and the unborn. In fish, mercury occurs as methyl mercury. Wallach gives typical body levels: people who rarely eat fish carry 2-5 micrograms per kilogram (µg/kg), moderate fish-eaters about 10 µg/kg, and heavy consumers — especially of shark, tuna or swordfish — up to 400 µg/kg. Methyl mercury is dangerously persistent: its biological half-life in humans is about 70 days, versus only 4 days for inorganic mercury. And while the placenta blocks inorganic mercury, it does NOT block methyl mercury — which crosses easily into the fetus, causing the 'congenital' form of Minamata disease seen in Japanese infants.",
+      "verbatim": "Mercury in fish is present as methyl mercury. People\nwho rarely eat fish have low levels of mercury (2-5ug/kg);\nmoderate fish consumers have 10 ug/kg; high fish consumers\n(especially if they eat shark, tuna, or swordfish) have higher\nvalues ranging up to 400 ug/kg.",
+      "page": 155,
+      "topics": [
+        "methylmercury",
+        "fish",
+        "pregnancy",
+        "minamata"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000164",
+      "subject": "mercury",
+      "also_about": [
+        "selenium"
+      ],
+      "facet": "protocol",
+      "question": "What protects against mercury poisoning?",
+      "answer_short": "Selenium is mercury's natural antidote: the two are mutually antagonistic, and selenium shields the kidneys and fetus from mercury.",
+      "answer": "Selenium is mercury's natural antidote. Wallach describes a mutual metabolic antagonism between mercury and selenium: each protects against poisoning by the other. Selenium supplements protect against mercury poisoning — specifically, selenium shields the human kidney from the tissue death (necrosis) that mercury causes, and guards against mercury crossing the placenta to the fetus. (Conversely, mercury protects against selenium poisoning.) The operational takeaway: selenium is the key nutrient defense against mercury toxicity.",
+      "verbatim": "The metabolic antagonism between mercury and\nselenium, results in the protection from selenium poisoning\nby mercury and protection against mercury poisoning by\nselenium supplements. Because a mutual antagonism between\nHg and Se exists, Se protects the human kidney from necrosis\n(tissue death) by mercury poisoning and the placental transfer\nof mercury.",
+      "page": 156,
+      "topics": [
+        "selenium",
+        "antidote",
+        "mercury-poisoning"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "selenium"
+        ],
+        "conditions": [
+          "mercury_poisoning"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000165",
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Can dental mercury fillings affect gut bacteria?",
+      "answer_short": "In monkeys, vapor from dental amalgam raised antibiotic-resistant gut bacteria from 9% to 70% — dropping back to 12% once the fillings were removed.",
+      "answer": "Dental mercury and antibiotic resistance. Wallach cites a striking animal experiment: mercury vapor off-gassing from dental amalgam fillings raised the proportion of antibiotic-resistant bacteria in the gut from 9% to 70% in monkeys given mercury fillings — and the drug-resistant population fell back to 12% once the fillings were removed.",
+      "verbatim": "Mercury vapor off-gassing from dental amalgam\nhas been shown to increase the percent of antibiotic resistant\nbacteria in the gut from nine percent to 70% in monkeys\ngiven dental mercury fillings. The drug resistant bacterial\npopulation dropped to 12% when the fillings were removed.",
+      "page": 156,
+      "topics": [
+        "dental-amalgam",
+        "antibiotic-resistance",
+        "gut"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000166",
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "history",
+      "question": "Why do we say 'mad as a hatter'?",
+      "answer_short": "The phrase comes from real poisoning: Victorian hatmakers who brushed mercury paste onto felt inhaled the vapor and went 'mad as a hatter.'",
+      "answer": "'Mad as a hatter' — occupational mercury poisoning. The phrase comes from real mercury poisoning. During the Victorian era, 'hatters' who brushed mercuric-nitrate paste onto felt hats to stop mold routinely inhaled mercury vapor and developed serious problems — hair loss, loss of teeth, loss of memory, bizarre behavior and various forms of insanity — which is where the expression 'mad as a hatter' (from Alice in Wonderland) originates. Goldsmiths and mirror workers, who also worked with mercury, could suffer the same inhalation poisoning.",
+      "verbatim": "Mercury poisoning from inhalation of mercury vapors\nwas reported during the Victorian Age in “hatters” who used\nmercuric nitrate paste to prevent molds from growing on felt\nhats and as a result, commonly developed serious problems,\nincluding hair loss, loss of teeth, loss of memory, bizarre\nbehavior and various forms of insanity, hence the expression\n\n“mad as a hatter” from Alice in Wonderland.",
+      "page": 156,
+      "topics": [
+        "mad-as-a-hatter",
+        "occupational",
+        "history"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "mercury_poisoning",
+          "alopecia",
+          "memory_loss"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000167",
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Is dental mercury linked to MS, ALS or Parkinson's?",
+      "answer_short": "Wallach reports dentists and patients develop high rates of MS, ALS and Parkinson's tied to mercury vapor — he cites Annette Funicello's MS.",
+      "answer": "Dental mercury linked to MS, ALS and Parkinson's. Wallach reports that in modern times both dentists and dental patients have developed high rates of several diseases believed related to mercury exposure — multiple sclerosis (MS), ALS (Lou Gehrig's disease) and Parkinson's disease — with which one depending on the part of the brain most affected. He notes actress Annette Funicello's multiple sclerosis, which is believed to have been caused by vapors from her dental mercury amalgams.",
+      "verbatim": "In modern times dentists and dental patients have\ndeveloped high rates of several diseases thought to be related\nto mercury exposure including multiple sclerosis, ALS (Lou\nGehrig’s Disease) and Parkinson’s Disease depending on\nwhat part of the brain was most severely affected. Annette\nFunicello contracted multiple sclerosis, which is believed to\nbe caused by vapors from dental mercury amalgams.",
+      "page": 156,
+      "topics": [
+        "dental-amalgam",
+        "multiple-sclerosis",
+        "als",
+        "parkinsons",
+        "neurological"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "multiple_sclerosis",
+          "als",
+          "parkinsons_disease"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000168",
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "warning",
+      "question": "What are the signs of mercury poisoning?",
+      "answer_short": "Mostly neurological: tremors, vertigo, irritability, mood changes, salivation, mouth inflammation and diarrhea — organic mercury is the most toxic.",
+      "answer": "The signs of mercury poisoning. Wallach describes how direct mercury poisoning shows up mainly as neurological problems: tremors, vertigo (dizziness), irritability, moodiness (including suicidal feelings and depression), excess salivation, inflammation of the mouth (stomatitis) and diarrhea. The pattern depends on the form: inorganic mercury mainly attacks the liver and kidneys, while the more toxic alkyl (organic) mercury causes progressive loss of coordination, loss of vision, heart palpitations, loss of hearing and mental deterioration — the result of a toxic brain injury (neuroencephalopathy) that selectively damages the nerve cells of the cerebral and cerebellar cortex.",
+      "verbatim": "The manifestations of direct mercury poisoning are\n\n\n \n\nprimarily neurological (i.e. tremors, vertigo, irritability,\nmoodiness (suicidal, depression, etc.), salivation, inflammation\nof the mouth, stomatitis and diarrhea.\n\nPoisoning with inorganic mercury targets the liver and\nkidneys. Poisoning with the more toxic alkyl mercury results\nin progressive lack of coordination, loss of vision, heart\npalpitations, loss of hearing, and mental deterioration caused\nby a toxic neuroencephalopathy in which the neuronal cells of\nthe cerebral and cerebellar cortex are selectively affected.",
+      "page": 157,
+      "topics": [
+        "mercury-poisoning",
+        "symptoms",
+        "neurological"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "mercury_poisoning",
+          "stomatitis",
+          "depression",
+          "vertigo",
+          "diarrhea"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000169",
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "history",
+      "question": "What was the Minamata disaster?",
+      "answer_short": "In 1962 a Japanese factory dumped mercury into Minamata Bay; contaminated fish caused an epidemic of birth defects, cerebral palsy and infant death.",
+      "answer": "The Minamata disaster (1962). In 1962, in the small fishing village of Minamata, Japan, a factory dumped mercury-contaminated waste water (effluent) straight into the bay. The mercury contaminated aquatic plants (kelp, algae) and bacteria, which were eaten by fish, which were eaten by the villagers — with disastrous results. The Minamata disaster was marked by a high rate of 'congenital' (fetal) damage: mental retardation, cerebral palsy, neural tube defects and high infant mortality. (The catastrophe led to the founding of the Center for the Biology of Natural Systems.)",
+      "verbatim": "The contaminated fish were eaten by the bay\nresidents with disastrous results. The Minamata disaster was\ncharacterized by a high incidence of “congenital” (damage\nto the fetus) mental retardation, cerebral palsy, neural tube\ndefects and high rates of infant mortality.",
+      "page": 157,
+      "topics": [
+        "minamata",
+        "eco-disaster",
+        "congenital",
+        "japan"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "minamata_disease",
+          "mental_retardation",
+          "cerebral_palsy",
+          "neural_tube_defects"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000170",
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "history",
+      "question": "What happened in the Iraq mercury poisoning?",
+      "answer_short": "Iraqis ate bread from seed grain treated with mercury fungicide — thousands of babies were born with brain defects, cerebral palsy and neural-tube defects.",
+      "answer": "The Iraq methyl-mercury mass poisoning. Wallach recounts a large-scale methyl mercury poisoning in Iraq, when many people ate bread made from seed grain treated with mercurial fungicide — and meat (liver and kidneys) from animals fed the same treated grain. The result of eating the mercury-contaminated grain was thousands of babies born mentally retarded, with a high rate of congenital brain defects including neural tube defects and cerebral palsy.",
+      "verbatim": "In Iraq, a large scale methyl mercury poisoning was\nreported when large numbers of people were fed bread made\nwith mercurial fungicide treated seed grain and meat (liver\nand kidneys) from animals fed the treated grain. The result of\nconsuming the mercury contaminated grains was thousands\nof babies born retarded and having a high incidence of\ncongenital brain defects including neural tube defects and\ncerebral palsy.",
+      "page": 158,
+      "topics": [
+        "iraq",
+        "methylmercury",
+        "congenital",
+        "fungicide"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "mental_retardation",
+          "neural_tube_defects",
+          "cerebral_palsy"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000171",
+      "subject": "mercury",
+      "also_about": [
+        "vaccines",
+        "autism"
+      ],
+      "facet": "big_question",
+      "question": "Do vaccines cause autism?",
+      "answer_short": "Wallach gives both sides — the mercury-preservative (thimerosal) hypothesis and his doubt that no other country saw the same autism surge — and leaves it open.",
+      "answer": "Do vaccines cause autism? — Wallach's full take on the mercury-vaccine-autism question. This is one of the most-asked health questions, and Wallach lays out both sides. THE HYPOTHESIS: some people believe autism is linked to the mercury-based preservative (a compound called thimerosal) once used in some childhood vaccines. WALLACH'S OWN SKEPTICISM: he points to a major hole in that theory — no other country, developing or industrialized, using the very same vaccines from the same manufacturers has reported the same complaints, rate of autism diagnosis, or lawsuits over a vaccine-autism link. THE NUMBERS he cites: reported autism in America rose from about 1 in 150,000 (1980) to a claimed 1 in 150 (2008); only about 10% of autistic children are born with it, while roughly 90% are born normal and develop it between ages two and six. THE OUTCOME: since 2006, most of the mercury preservatives have been removed from childhood vaccines in response to public concern and class-action lawsuits. Notably, Wallach does NOT flatly assert that vaccines cause autism — he presents the hypothesis alongside the international counter-evidence, leaving it an open question.",
+      "verbatim": "The cause of autism is thought by some to have a\nrelationship to the mercury preservatives in some vaccines.\n\nIt is of interest to note that none of the other countries (Third\nWorld or Industrialized) using the same vaccines and vaccine\nmanufacturers have registered the same complaints, level\nof diagnosis or law suites regarding a relationship between\nautism and vaccinations.\n\nThe rate of autism in America in 1980 was 1/150,000 and\n2008 it is claimed to be 1/150. A few autistic babies (10%) are\nborn with the disease, 90% are born normal and then develop\nit somewhere between the ages of two and six years of age.",
+      "page": 158,
+      "topics": [
+        "vaccines-autism",
+        "thimerosal",
+        "autism",
+        "vaccines",
+        "big-question"
+      ]
+    }
+  ]
+}

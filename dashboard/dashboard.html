@@ -37,6 +37,7 @@
 <link rel="stylesheet" href="./assets/styles/drawer-shared.css">
 <link rel="stylesheet" href="./assets/styles/drawer-journey.css">
 <link rel="stylesheet" href="./assets/styles/drawer-knowledge.css">
+<link rel="stylesheet" href="./assets/styles/drawer-search.css">
 
 </head>
 <body>
@@ -60,6 +61,7 @@
     <div class="rail__divider"></div>
     <div class="rail__section">
       <div class="rail__section-label">Drawers</div>
+      <button class="rail__item" data-rail-nav="search"><span class="rail__icon">⌕</span><span class="rail__label">Search</span><span class="rail__kbd">S</span></button>
       <button class="rail__item" data-rail-nav="knowledge"><span class="rail__icon">❡</span><span class="rail__label">Knowledge</span><span class="rail__kbd">K</span></button>
       <button class="rail__item" data-rail-nav="journey"><span class="rail__icon">⌭</span><span class="rail__label">Journey</span><span class="rail__kbd">J</span></button>
     </div>
@@ -82,11 +84,11 @@
       <h1 class="topbar__title">COVERAGE</h1>
       <span class="topbar__sub">// where you are, what you're missing</span>
     </div>
-    <div class="topbar__cmd">
-      <span class="topbar__cmd-icon">⌕</span>
-      <span class="topbar__cmd-input">JUMP TO ELEMENT, PRODUCT, GOAL, LAB…</span>
-      <span class="topbar__cmd-kbd">⌘K</span>
-    </div>
+    <button class="topbar__ask topbar__ask--green" data-topbar-ask type="button" aria-label="Ask Wallach — open Search">
+      <span class="topbar__ask-dot" aria-hidden="true"></span>
+      <span class="topbar__ask-label">Ask Wallach</span>
+      <span class="topbar__ask-kbd">S</span>
+    </button>
     <div class="topbar__telemetry">
       <span class="telemetry__item"><span class="pulse-dot"></span> SYNCED</span>
       <span class="telemetry__item">CODEX <strong>v3.27</strong></span>
@@ -113,6 +115,7 @@
   </footer>
 
   <!-- OVERLAY MOUNT SLOTS — drawers + palette mount here in Round 5 -->
+  <div id="drawer-search-mount"></div>
   <div id="drawer-knowledge-mount"></div>
   <div id="drawer-journey-mount"></div>
   <div id="palette-mount"></div>

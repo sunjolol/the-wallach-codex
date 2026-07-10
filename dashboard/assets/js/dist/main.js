@@ -13970,6 +13970,84 @@
     essentials: external_exports.record(external_exports.string(), RecommenderEssentialSchema)
   }).passthrough();
 
+  // assets/js/src/core/schemas/search.ts
+  var SEARCH_FACETS = [
+    "basics",
+    "discovery",
+    "etymology",
+    "physiology",
+    "mechanism",
+    "sources",
+    "uses",
+    "stance",
+    "protocol",
+    "warning",
+    "history",
+    "big_question",
+    "biography"
+  ];
+  var SearchFacetSchema = external_exports.enum(SEARCH_FACETS);
+  var FACET_LABEL = {
+    basics: "BASICS",
+    discovery: "DISCOVERY",
+    etymology: "ETYMOLOGY",
+    physiology: "IN THE BODY",
+    mechanism: "HOW IT WORKS",
+    sources: "SOURCES & EXPOSURE",
+    uses: "USES",
+    stance: "WALLACH\u2019S STANCE",
+    protocol: "WHAT TO DO",
+    warning: "WARNINGS",
+    history: "HISTORY & LORE",
+    big_question: "BIG QUESTIONS",
+    biography: "ABOUT WALLACH"
+  };
+  var Tier1LinkSchema = external_exports.object({
+    essentials: external_exports.array(external_exports.string()).optional(),
+    conditions: external_exports.array(external_exports.string()).optional(),
+    symptoms: external_exports.array(external_exports.string()).optional()
+  });
+  var SearchClaimSchema = external_exports.object({
+    id: external_exports.string(),
+    /** Primary entity slug this claim is about (→ the entity registry). */
+    subject: external_exports.string(),
+    /** Secondary entity slugs for cross-surfacing. */
+    also_about: external_exports.array(external_exports.string()),
+    facet: SearchFacetSchema,
+    /** The plain-language question this answers (powers Ask + the question-inventory). */
+    question: external_exports.string(),
+    /** ≤160-char one-line answer (the palette/preview line). */
+    answer_short: external_exports.string(),
+    /** Modern-voice explanation — NO inline verbatim (byte-faithful from the sealed claim's summary). */
+    answer: external_exports.string(),
+    /** Wallach's exact words (byte-faithful; the separate verbatim layer). */
+    verbatim: external_exports.string(),
+    /** Source page in the book (composed into the display cite with the slice's book meta — never hand-typed). */
+    page: external_exports.number().nullable(),
+    /** Routing handles for retrieval (search-topic:* space). */
+    topics: external_exports.array(external_exports.string()),
+    tier1_link: Tier1LinkSchema.optional()
+  }).passthrough();
+  var SearchBookSchema = external_exports.object({
+    book_id: external_exports.string(),
+    title: external_exports.string(),
+    year: external_exports.number()
+  }).passthrough();
+  var SearchSliceSchema = external_exports.object({
+    book: SearchBookSchema,
+    claims: external_exports.array(SearchClaimSchema)
+  }).passthrough();
+  var SearchEntitySchema = external_exports.object({
+    display_name: external_exports.string(),
+    type: external_exports.enum(["element", "nutrient", "substance", "condition", "concept", "topic", "person", "event"]),
+    symbol: external_exports.string().optional(),
+    synonyms: external_exports.array(external_exports.string()),
+    related: external_exports.array(external_exports.string())
+  }).passthrough();
+  var SearchEntitiesSchema = external_exports.object({
+    entities: external_exports.record(external_exports.string(), SearchEntitySchema)
+  }).passthrough();
+
   // assets/js/src/core/nutrient-resolver.ts
   var MAP = NutrientResolverSchema.parse(nutrient_resolver_data_default);
   var FA_PATTERNS = MAP.fatty_acid_patterns.map(([slug, src]) => [slug, new RegExp(src)]);
@@ -14511,7 +14589,7 @@
     }
     for (const item of items) {
       const scale = readScale(item, overrides);
-      const displayName = typeof item.label.name === "string" && item.label.name !== "" ? item.label.name : "Unknown";
+      const displayName2 = typeof item.label.name === "string" && item.label.name !== "" ? item.label.name : "Unknown";
       const rawNutrients = liveNutrients(item);
       for (const raw of rawNutrients) {
         const parsed = RegimenNutrientSchema.safeParse(raw);
@@ -14540,8 +14618,8 @@
         } else {
           d.totalMg += conv.v;
         }
-        if (!d.sources.includes(displayName)) {
-          d.sources.push(displayName);
+        if (!d.sources.includes(displayName2)) {
+          d.sources.push(displayName2);
         }
       }
     }
@@ -56081,7 +56159,13 @@ Deliverables this chunk (planning + doctrine only -- no mining, no code, no seal
 
 Luneth's locked decisions: Search lives in BOTH a top search bar AND a "SEARCH" tab placed above "KNOWLEDGE" (visible on every page); the categorized entity page is the primary wow view with Ask as the quick path; first visual reference = the Mercury slice (richest, 13 claims); entities get a curated registry eden/catalog/search-entities.json; and stay grounded -- never invent to chase the wow-factor.
 
-Verified: invariants 52/52 green (the rule/doc/memory edits break no gate); no code or data changed so build parity is unaffected. NEXT = build the Mercury thin-slice (restructure its 13 claims into the new template + a minimal Search surface rendering just Mercury) and STOP for Luneth's visual sign-off on the info format before mass-migrating the 186 + resuming mining. Mining stays paused at Immortality Mn-Manganese, on the list.` }];
+Verified: invariants 52/52 green (the rule/doc/memory edits break no gate); no code or data changed so build parity is unaffected. NEXT = build the Mercury thin-slice (restructure its 13 claims into the new template + a minimal Search surface rendering just Mercury) and STOP for Luneth's visual sign-off on the info format before mass-migrating the 186 + resuming mining. Mining stays paused at Immortality Mn-Manganese, on the list.` }, { id: "lg_mre80ibh_qglmj3", ts: "2026-07-09T19:52:00.317102-05:00", surface: "search", kind: "milestone", summary: `Search thin-slice SIGNED OFF -- Immortality's 13 mercury claims become a faceted "Ask-Wallach" entity page (quick-answer FAQ + Wallach verbatim + composed cite) + a demo Ask card; topbar gains an inviting green "Ask Wallach" button (one-class pivot to a plain matching one).`, detail: `This is the first time you can actually SEE and use the offline "Ask-Wallach" search, and you signed off on how it reads: pick a subject (Mercury) and get a tidy, categorized page -- what it is, how it poisons, where it comes from, the antidote, the dangers, the historical disasters, and the big questions -- each a one-line quick answer you can expand into Wallach's full words and exact quote. You said this is the vision: it turns a dry black-and-white book into something enjoyable to browse. I also replaced the old top command bar with a friendly green "Ask Wallach" button, built so it flips back to a plain matching button in one move if you don't want the green.
+
+TECHNICAL. Draft-first (nothing sealed touched): dashboard/assets/data/search/{mercury-slice.json, search-entities.json} -- the 13 mercury claims restructured into the faceted template (subject/facet/question/answer_short/answer/verbatim/page/topics/tier1_link) with verbatim+answer pulled BYTE-FAITHFUL from the sealed corpus (extracted programmatically, no transcription) and only the faceting/question/answer_short authored; both registered in eden/derived/MANIFEST.json accounted (hand_authored, flagged to be REPLACED by the derived search_index_fresh index once the format locks). Code: core/schemas/search.ts (SEARCH_FACETS closed taxonomy in display order + FACET_LABEL, held in core/ so state+views carry no >10-element literal per views_state_no_inline_data; Zod for SearchClaim/Slice/Entity), state/search.ts (offline deterministic retrieval -- entity/synonym hit vs field-weighted Ask, facetGroups in canonical order, composeCite from the slice's ONE book-meta so no cite is hand-typed [R3]; window.wallachSearch bridge), views/search.ts (sr-* Search drawer: search bar + faceted entity page + Ask card + more-on-subject + no-match fallback), assets/styles/drawer-search.css (self-contained sr-* chrome rooted at #drawer-search-mount -- Sever-safe, deliberately duplicated from the shared drawer chrome so this pre-signoff slice stays reshapeable). Wiring: dashboard.html (Search rail item ABOVE Knowledge + drawer-search-mount + stylesheet link + the Ask Wallach button), main.ts (DRAWER_SPECS search key 's' + WorkspaceTarget + wireTopbarSearch), core/events.ts (rail:navigate +search), schemas/index.ts (+search barrel), dashboard.css (.topbar__ask -- green-by-default via the design-system --ds-status-ok token; four --ask-* vars drive the whole look so deleting the topbar__ask--green class yields a plain orange interface-matching button). New tools/render_probe_search.js (21 checks).
+
+VERIFIED: build OK (tsc + esbuild); invariants 52/52 green (data_artifacts_accounted absorbs the 2 new accounted entries; no sealed data touched so corpus/catalog/products integrity untouched); render_probe_search PASS (Mercury entity 7 facets / 13 claims, Ask card carries verbatim + composed IMMORTALITY cite, dual-home tier-1 chips, and the rail item + bare-S + topbar button all open it); 0 page errors; the topbar button visually verified (green default, orange one-class pivot, single-line label) via headless screenshots. NO mining, NO seal -- draft artifacts only.
+
+DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with its topic label (e.g. "Mercury -- the basics.") -- offered to strip since answer_short already carries it; facet label wording/order + drawer-vs-full-page left for his steer. THEN the real build: mass-migrate the 186 existing search claims to the template + the derived sharded search index + the real gates (search_claim_wellformed / facet_in_taxonomy / search_entity_resolves / search_index_fresh) + a sealed eden/catalog/search-entities.json, THEN resume mining search-first. Mining remains paused at Immortality Mn-Manganese (~char 309953).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -57340,6 +57424,688 @@ Verified: invariants 52/52 green (the rule/doc/memory edits break no gate); no c
     };
   }
 
+  // assets/data/search/mercury-slice.json
+  var mercury_slice_default = {
+    schema_version: 1,
+    _note: "THIN-SLICE DRAFT (2026-07-09) for the Search visual-reference. Hand-authored de-blobbed restructure of Immortality's 13 sealed mercury claims into the faceted search template (subject/facet/question/answer_short/answer/verbatim/cite/topics). verbatim + answer are byte-faithful from the sealed corpus; the rest is authored. REPLACED post-format-signoff by the derived search index (search_index_fresh) built from the sealed claims; do NOT hand-maintain long-term.",
+    book: {
+      book_id: "immortality",
+      title: "Immortality",
+      year: 2008
+    },
+    claims: [
+      {
+        id: "WAL-CLM-IMMORT-000159",
+        subject: "mercury",
+        also_about: [],
+        facet: "basics",
+        question: "What is mercury?",
+        answer_short: "Mercury (Hg) is the only metal that is liquid at room temperature \u2014 a dense, silvery 'quicksilver' found in the bright-red ore cinnabar.",
+        answer: "Mercury \u2014 the basics. Mercury (chemical symbol Hg) is the only metal that is liquid at ordinary room temperature \u2014 a very dense, heavy metal with a silvery-white sheen, which earned it the old common name 'quicksilver.' It is rarely found pure in nature; instead it occurs locked in a bright-red ore called cinnabar (also called vermillion), which is mostly mercury sulfide. The largest deposits are in Spain and Italy \u2014 Spain has mercury mines that have run continuously for over 2,000 years \u2014 and metallic mercury is extracted by heating the ore and condensing the vapor.",
+        verbatim: "Mercury is the only\nmetal that is liquid at room temperatures. It is an extremely\ndense metal, and therefore a heavy metal with a silvery-white\ncolor that has resulted in the common name of \u201Cquicksilver.\u201D\n\nMercury is rarely found as a pure metal in nature,\nrather it is found bound in a bright red ore called cinnabar\nor vermillion. Cinnabar is primarily mercury sulfide and is\nfound in large deposits in Spain and Italy. Spain has mercury\nmines that have been operating continuously for more than\n2,000 years.",
+        page: 154,
+        topics: [
+          "quicksilver",
+          "cinnabar",
+          "heavy-metals"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000160",
+        subject: "mercury",
+        also_about: [],
+        facet: "mechanism",
+        question: "How does mercury poison the body?",
+        answer_short: "Mercury is an accumulative poison that binds to enzymes and cripples them; its vapor is far more dangerous than the liquid metal.",
+        answer: "How mercury poisons the body. Like other heavy metals, mercury is an accumulative poison \u2014 it builds up in the body and binds to enzymes, crippling their job as catalysts that drive the body's biological reactions. It is easily absorbed through the digestive (gastrointestinal) tract and can also pass straight through the skin (trans-dermal absorption). Mercury vapor is far more dangerous than the liquid metal: Wallach cites an estimate that the fumes from as little as a teaspoon of mercury can saturate a large room within a week and make it unsafe to work in.",
+        verbatim: "Like many heavy metals, mercury is an accumulative\npoison that binds with enzymes in the body, producing\na reduction or loss of function as a catalyst of biological\nfunctions. It is easily absorbed into the body through the\ngastrointestinal tract and can enter the body via trans-dermal\nroutes. The vapor is considerably more dangerous than the\nelemental metal. It has been estimated that the vapors from\nthe volume of mercury as small as a teaspoon can saturate a\nlarge room within a week and make it unsafe to work in.",
+        page: 154,
+        topics: [
+          "mercury-poisoning",
+          "heavy-metals",
+          "enzymes"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000161",
+        subject: "mercury",
+        also_about: [],
+        facet: "history",
+        question: "What does mercury have to do with the quest for immortality?",
+        answer_short: "Ancient Chinese alchemists drank mercury as an immortality elixir \u2014 China's first emperor poisoned himself to death that way.",
+        answer: "Mercury and the ancient quest for immortality. Fittingly for a book about immortality, Wallach recounts how the early Chinese alchemists insisted that regularly consuming mercury ('potable gold') was the path to eternal life \u2014 a deadly error. Mercury was known to the ancient Chinese and Egyptians (samples have been found in tombs dating to 1500 B.C.); its name comes from the planet Mercury, and its symbol Hg from the Latin hydragyrum, 'liquid silver.' The most famous victim was China's first emperor, Jing Shi Huang (210 B.C. \u2014 historically Qin Shi Huang), who inadvertently poisoned himself to death by drinking a mercury-spiked immortality elixir over many years. Before dying he grew paranoid ('mad as a hatter'), had much of his inner circle executed, and built the vast army of life-sized terra-cotta guards to accompany him through an intended thousand-year reign.",
+        verbatim: "The first Chinese Emperor (210 B.C.), Jing Shi Huang,\nin a failed attempt to attain immortality, inadvertently killed\nhimself by drinking several doses of a mercury spiked elixir\nover an extended period of time.\n\nPrior to his death, Jing became paranoid (\u201Cmad as a\nhatter\u201D), had many of his loyal inner circle, advisors, scholars\nand academics executed and had hundreds of life sized terra\ncotta likenesses of his loyal palace guard constructed, painted\nand dressed to be with him throughout a thousand year reign",
+        page: 155,
+        topics: [
+          "alchemy",
+          "immortality",
+          "china",
+          "quicksilver"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000162",
+        subject: "mercury",
+        also_about: [
+          "vaccines"
+        ],
+        facet: "sources",
+        question: "Where does mercury exposure come from?",
+        answer_short: "Industry, mining, farming, vaccines and dental amalgam fillings concentrate mercury in the environment \u2014 even in people whose only exposure is their fillings.",
+        answer: "Where mercury exposure comes from. Wallach traces how mercury is concentrated in the environment by industry, mining, agriculture, dental amalgam fillings, and microorganisms that convert (methylate) it into methyl mercury in the sediments of rivers, lakes and oceans. The main industrial source is the chlor-alkali industry (chlorine and caustic-soda manufacturing); other human sources include electrical appliances, paint, dental amalgams, pharmaceuticals, vaccines, slimicides and algaecides (used by the paper and pulp industry), mercury seed-treatment fungicides (especially dangerous as methyl mercury), and the burning of fossil fuels. Historically, dentists exploited mercury's ability to dissolve other metals into alloys (amalgams) to make silver- and gold-mercury fillings for cavities (caries). Tellingly, mercury has been found in all tissues of accident victims whose only known exposure was their dental amalgam fillings.",
+        verbatim: "Mercury is concentrated in the environment by\nindustry, mining operations, agriculture, dental repairs\n(amalgams), and microorganisms that methylate mercury\nin the sediments at the bottoms of fresh water or salt water\nrivers, lakes, oceans and seas. Mercury has been detected in all\ntissues of accident victims, with no known mercury exposure\nexcept dental mercury amalgam fillings.",
+        page: 155,
+        topics: [
+          "exposure",
+          "dental-amalgam",
+          "vaccines",
+          "environment"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000163",
+        subject: "mercury",
+        also_about: [],
+        facet: "warning",
+        question: "Is the mercury in fish dangerous?",
+        answer_short: "Fish carry mercury as persistent methylmercury; heavy fish-eaters hold far more, and unlike inorganic mercury it crosses the placenta into the fetus.",
+        answer: "Methyl mercury, fish, and the unborn. In fish, mercury occurs as methyl mercury. Wallach gives typical body levels: people who rarely eat fish carry 2-5 micrograms per kilogram (\xB5g/kg), moderate fish-eaters about 10 \xB5g/kg, and heavy consumers \u2014 especially of shark, tuna or swordfish \u2014 up to 400 \xB5g/kg. Methyl mercury is dangerously persistent: its biological half-life in humans is about 70 days, versus only 4 days for inorganic mercury. And while the placenta blocks inorganic mercury, it does NOT block methyl mercury \u2014 which crosses easily into the fetus, causing the 'congenital' form of Minamata disease seen in Japanese infants.",
+        verbatim: "Mercury in fish is present as methyl mercury. People\nwho rarely eat fish have low levels of mercury (2-5ug/kg);\nmoderate fish consumers have 10 ug/kg; high fish consumers\n(especially if they eat shark, tuna, or swordfish) have higher\nvalues ranging up to 400 ug/kg.",
+        page: 155,
+        topics: [
+          "methylmercury",
+          "fish",
+          "pregnancy",
+          "minamata"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000164",
+        subject: "mercury",
+        also_about: [
+          "selenium"
+        ],
+        facet: "protocol",
+        question: "What protects against mercury poisoning?",
+        answer_short: "Selenium is mercury's natural antidote: the two are mutually antagonistic, and selenium shields the kidneys and fetus from mercury.",
+        answer: "Selenium is mercury's natural antidote. Wallach describes a mutual metabolic antagonism between mercury and selenium: each protects against poisoning by the other. Selenium supplements protect against mercury poisoning \u2014 specifically, selenium shields the human kidney from the tissue death (necrosis) that mercury causes, and guards against mercury crossing the placenta to the fetus. (Conversely, mercury protects against selenium poisoning.) The operational takeaway: selenium is the key nutrient defense against mercury toxicity.",
+        verbatim: "The metabolic antagonism between mercury and\nselenium, results in the protection from selenium poisoning\nby mercury and protection against mercury poisoning by\nselenium supplements. Because a mutual antagonism between\nHg and Se exists, Se protects the human kidney from necrosis\n(tissue death) by mercury poisoning and the placental transfer\nof mercury.",
+        page: 156,
+        topics: [
+          "selenium",
+          "antidote",
+          "mercury-poisoning"
+        ],
+        tier1_link: {
+          essentials: [
+            "selenium"
+          ],
+          conditions: [
+            "mercury_poisoning"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000165",
+        subject: "mercury",
+        also_about: [],
+        facet: "warning",
+        question: "Can dental mercury fillings affect gut bacteria?",
+        answer_short: "In monkeys, vapor from dental amalgam raised antibiotic-resistant gut bacteria from 9% to 70% \u2014 dropping back to 12% once the fillings were removed.",
+        answer: "Dental mercury and antibiotic resistance. Wallach cites a striking animal experiment: mercury vapor off-gassing from dental amalgam fillings raised the proportion of antibiotic-resistant bacteria in the gut from 9% to 70% in monkeys given mercury fillings \u2014 and the drug-resistant population fell back to 12% once the fillings were removed.",
+        verbatim: "Mercury vapor off-gassing from dental amalgam\nhas been shown to increase the percent of antibiotic resistant\nbacteria in the gut from nine percent to 70% in monkeys\ngiven dental mercury fillings. The drug resistant bacterial\npopulation dropped to 12% when the fillings were removed.",
+        page: 156,
+        topics: [
+          "dental-amalgam",
+          "antibiotic-resistance",
+          "gut"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000166",
+        subject: "mercury",
+        also_about: [],
+        facet: "history",
+        question: "Why do we say 'mad as a hatter'?",
+        answer_short: "The phrase comes from real poisoning: Victorian hatmakers who brushed mercury paste onto felt inhaled the vapor and went 'mad as a hatter.'",
+        answer: "'Mad as a hatter' \u2014 occupational mercury poisoning. The phrase comes from real mercury poisoning. During the Victorian era, 'hatters' who brushed mercuric-nitrate paste onto felt hats to stop mold routinely inhaled mercury vapor and developed serious problems \u2014 hair loss, loss of teeth, loss of memory, bizarre behavior and various forms of insanity \u2014 which is where the expression 'mad as a hatter' (from Alice in Wonderland) originates. Goldsmiths and mirror workers, who also worked with mercury, could suffer the same inhalation poisoning.",
+        verbatim: "Mercury poisoning from inhalation of mercury vapors\nwas reported during the Victorian Age in \u201Chatters\u201D who used\nmercuric nitrate paste to prevent molds from growing on felt\nhats and as a result, commonly developed serious problems,\nincluding hair loss, loss of teeth, loss of memory, bizarre\nbehavior and various forms of insanity, hence the expression\n\n\u201Cmad as a hatter\u201D from Alice in Wonderland.",
+        page: 156,
+        topics: [
+          "mad-as-a-hatter",
+          "occupational",
+          "history"
+        ],
+        tier1_link: {
+          conditions: [
+            "mercury_poisoning",
+            "alopecia",
+            "memory_loss"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000167",
+        subject: "mercury",
+        also_about: [],
+        facet: "warning",
+        question: "Is dental mercury linked to MS, ALS or Parkinson's?",
+        answer_short: "Wallach reports dentists and patients develop high rates of MS, ALS and Parkinson's tied to mercury vapor \u2014 he cites Annette Funicello's MS.",
+        answer: "Dental mercury linked to MS, ALS and Parkinson's. Wallach reports that in modern times both dentists and dental patients have developed high rates of several diseases believed related to mercury exposure \u2014 multiple sclerosis (MS), ALS (Lou Gehrig's disease) and Parkinson's disease \u2014 with which one depending on the part of the brain most affected. He notes actress Annette Funicello's multiple sclerosis, which is believed to have been caused by vapors from her dental mercury amalgams.",
+        verbatim: "In modern times dentists and dental patients have\ndeveloped high rates of several diseases thought to be related\nto mercury exposure including multiple sclerosis, ALS (Lou\nGehrig\u2019s Disease) and Parkinson\u2019s Disease depending on\nwhat part of the brain was most severely affected. Annette\nFunicello contracted multiple sclerosis, which is believed to\nbe caused by vapors from dental mercury amalgams.",
+        page: 156,
+        topics: [
+          "dental-amalgam",
+          "multiple-sclerosis",
+          "als",
+          "parkinsons",
+          "neurological"
+        ],
+        tier1_link: {
+          conditions: [
+            "multiple_sclerosis",
+            "als",
+            "parkinsons_disease"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000168",
+        subject: "mercury",
+        also_about: [],
+        facet: "warning",
+        question: "What are the signs of mercury poisoning?",
+        answer_short: "Mostly neurological: tremors, vertigo, irritability, mood changes, salivation, mouth inflammation and diarrhea \u2014 organic mercury is the most toxic.",
+        answer: "The signs of mercury poisoning. Wallach describes how direct mercury poisoning shows up mainly as neurological problems: tremors, vertigo (dizziness), irritability, moodiness (including suicidal feelings and depression), excess salivation, inflammation of the mouth (stomatitis) and diarrhea. The pattern depends on the form: inorganic mercury mainly attacks the liver and kidneys, while the more toxic alkyl (organic) mercury causes progressive loss of coordination, loss of vision, heart palpitations, loss of hearing and mental deterioration \u2014 the result of a toxic brain injury (neuroencephalopathy) that selectively damages the nerve cells of the cerebral and cerebellar cortex.",
+        verbatim: "The manifestations of direct mercury poisoning are\n\n\n \n\nprimarily neurological (i.e. tremors, vertigo, irritability,\nmoodiness (suicidal, depression, etc.), salivation, inflammation\nof the mouth, stomatitis and diarrhea.\n\nPoisoning with inorganic mercury targets the liver and\nkidneys. Poisoning with the more toxic alkyl mercury results\nin progressive lack of coordination, loss of vision, heart\npalpitations, loss of hearing, and mental deterioration caused\nby a toxic neuroencephalopathy in which the neuronal cells of\nthe cerebral and cerebellar cortex are selectively affected.",
+        page: 157,
+        topics: [
+          "mercury-poisoning",
+          "symptoms",
+          "neurological"
+        ],
+        tier1_link: {
+          conditions: [
+            "mercury_poisoning",
+            "stomatitis",
+            "depression",
+            "vertigo",
+            "diarrhea"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000169",
+        subject: "mercury",
+        also_about: [],
+        facet: "history",
+        question: "What was the Minamata disaster?",
+        answer_short: "In 1962 a Japanese factory dumped mercury into Minamata Bay; contaminated fish caused an epidemic of birth defects, cerebral palsy and infant death.",
+        answer: "The Minamata disaster (1962). In 1962, in the small fishing village of Minamata, Japan, a factory dumped mercury-contaminated waste water (effluent) straight into the bay. The mercury contaminated aquatic plants (kelp, algae) and bacteria, which were eaten by fish, which were eaten by the villagers \u2014 with disastrous results. The Minamata disaster was marked by a high rate of 'congenital' (fetal) damage: mental retardation, cerebral palsy, neural tube defects and high infant mortality. (The catastrophe led to the founding of the Center for the Biology of Natural Systems.)",
+        verbatim: "The contaminated fish were eaten by the bay\nresidents with disastrous results. The Minamata disaster was\ncharacterized by a high incidence of \u201Ccongenital\u201D (damage\nto the fetus) mental retardation, cerebral palsy, neural tube\ndefects and high rates of infant mortality.",
+        page: 157,
+        topics: [
+          "minamata",
+          "eco-disaster",
+          "congenital",
+          "japan"
+        ],
+        tier1_link: {
+          conditions: [
+            "minamata_disease",
+            "mental_retardation",
+            "cerebral_palsy",
+            "neural_tube_defects"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000170",
+        subject: "mercury",
+        also_about: [],
+        facet: "history",
+        question: "What happened in the Iraq mercury poisoning?",
+        answer_short: "Iraqis ate bread from seed grain treated with mercury fungicide \u2014 thousands of babies were born with brain defects, cerebral palsy and neural-tube defects.",
+        answer: "The Iraq methyl-mercury mass poisoning. Wallach recounts a large-scale methyl mercury poisoning in Iraq, when many people ate bread made from seed grain treated with mercurial fungicide \u2014 and meat (liver and kidneys) from animals fed the same treated grain. The result of eating the mercury-contaminated grain was thousands of babies born mentally retarded, with a high rate of congenital brain defects including neural tube defects and cerebral palsy.",
+        verbatim: "In Iraq, a large scale methyl mercury poisoning was\nreported when large numbers of people were fed bread made\nwith mercurial fungicide treated seed grain and meat (liver\nand kidneys) from animals fed the treated grain. The result of\nconsuming the mercury contaminated grains was thousands\nof babies born retarded and having a high incidence of\ncongenital brain defects including neural tube defects and\ncerebral palsy.",
+        page: 158,
+        topics: [
+          "iraq",
+          "methylmercury",
+          "congenital",
+          "fungicide"
+        ],
+        tier1_link: {
+          conditions: [
+            "mental_retardation",
+            "neural_tube_defects",
+            "cerebral_palsy"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000171",
+        subject: "mercury",
+        also_about: [
+          "vaccines",
+          "autism"
+        ],
+        facet: "big_question",
+        question: "Do vaccines cause autism?",
+        answer_short: "Wallach gives both sides \u2014 the mercury-preservative (thimerosal) hypothesis and his doubt that no other country saw the same autism surge \u2014 and leaves it open.",
+        answer: "Do vaccines cause autism? \u2014 Wallach's full take on the mercury-vaccine-autism question. This is one of the most-asked health questions, and Wallach lays out both sides. THE HYPOTHESIS: some people believe autism is linked to the mercury-based preservative (a compound called thimerosal) once used in some childhood vaccines. WALLACH'S OWN SKEPTICISM: he points to a major hole in that theory \u2014 no other country, developing or industrialized, using the very same vaccines from the same manufacturers has reported the same complaints, rate of autism diagnosis, or lawsuits over a vaccine-autism link. THE NUMBERS he cites: reported autism in America rose from about 1 in 150,000 (1980) to a claimed 1 in 150 (2008); only about 10% of autistic children are born with it, while roughly 90% are born normal and develop it between ages two and six. THE OUTCOME: since 2006, most of the mercury preservatives have been removed from childhood vaccines in response to public concern and class-action lawsuits. Notably, Wallach does NOT flatly assert that vaccines cause autism \u2014 he presents the hypothesis alongside the international counter-evidence, leaving it an open question.",
+        verbatim: "The cause of autism is thought by some to have a\nrelationship to the mercury preservatives in some vaccines.\n\nIt is of interest to note that none of the other countries (Third\nWorld or Industrialized) using the same vaccines and vaccine\nmanufacturers have registered the same complaints, level\nof diagnosis or law suites regarding a relationship between\nautism and vaccinations.\n\nThe rate of autism in America in 1980 was 1/150,000 and\n2008 it is claimed to be 1/150. A few autistic babies (10%) are\nborn with the disease, 90% are born normal and then develop\nit somewhere between the ages of two and six years of age.",
+        page: 158,
+        topics: [
+          "vaccines-autism",
+          "thimerosal",
+          "autism",
+          "vaccines",
+          "big-question"
+        ]
+      }
+    ]
+  };
+
+  // assets/data/search/search-entities.json
+  var search_entities_default = {
+    schema_version: 1,
+    _note: "THIN-SLICE DRAFT entity registry (Mercury only) for the Search visual-reference. Final home = eden/catalog/search-entities.json (sealed, curated) after format sign-off. related[] reuse canon/catalog slugs; display resolves human-first.",
+    entities: {
+      mercury: {
+        display_name: "Mercury",
+        type: "element",
+        symbol: "Hg",
+        synonyms: [
+          "quicksilver",
+          "hg",
+          "hydrargyrum"
+        ],
+        related: [
+          "selenium",
+          "mercury_poisoning",
+          "minamata_disease"
+        ]
+      }
+    }
+  };
+
+  // assets/js/src/state/search.ts
+  var EMPTY_SLICE = { book: { book_id: "", title: "", year: 0 }, claims: [] };
+  var EMPTY_ENTITIES = { entities: {} };
+  var sliceCache = null;
+  var entitiesCache = null;
+  function slice() {
+    if (sliceCache === null) {
+      const parsed = SearchSliceSchema.safeParse(mercury_slice_default);
+      sliceCache = parsed.success ? parsed.data : EMPTY_SLICE;
+    }
+    return sliceCache;
+  }
+  function registry() {
+    if (entitiesCache === null) {
+      const parsed = SearchEntitiesSchema.safeParse(search_entities_default);
+      entitiesCache = parsed.success ? parsed.data : EMPTY_ENTITIES;
+    }
+    return entitiesCache;
+  }
+  function getEntity(slug) {
+    return registry().entities[slug] ?? null;
+  }
+  function displayName(slug) {
+    const e = getEntity(slug);
+    if (e !== null) {
+      return e.display_name;
+    }
+    return slug.replace(/[_-]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+  }
+  function claimsForSubject(subject) {
+    return slice().claims.filter((c) => c.subject === subject).sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
+  }
+  function facetGroups(subject) {
+    const claims = claimsForSubject(subject);
+    const out = [];
+    for (const facet of SEARCH_FACETS) {
+      const inFacet = claims.filter((c) => c.facet === facet);
+      if (inFacet.length > 0) {
+        out.push({ facet, label: FACET_LABEL[facet], claims: inFacet });
+      }
+    }
+    return out;
+  }
+  function composeCite(claim) {
+    const b = slice().book;
+    const head = `${b.title.toUpperCase()}${b.year > 0 ? ` (${b.year})` : ""}`;
+    return claim.page !== null ? `${head} \xB7 P.${claim.page}` : head;
+  }
+  function normalize2(s) {
+    return s.trim().toLowerCase();
+  }
+  function entityHit(q) {
+    for (const [slug, e] of Object.entries(registry().entities)) {
+      if (slug === q || e.display_name.toLowerCase() === q) {
+        return slug;
+      }
+      if (e.synonyms.some((s) => s.toLowerCase() === q)) {
+        return slug;
+      }
+    }
+    return null;
+  }
+  function scoreClaim(c, q) {
+    let score = 0;
+    if (c.question.toLowerCase().includes(q)) {
+      score += 6;
+    }
+    if (c.topics.some((t) => t.includes(q) || q.includes(t))) {
+      score += 4;
+    }
+    if (c.answer_short.toLowerCase().includes(q)) {
+      score += 3;
+    }
+    if (c.answer.toLowerCase().includes(q)) {
+      score += 1;
+    }
+    if (c.verbatim.toLowerCase().includes(q)) {
+      score += 1;
+    }
+    return score;
+  }
+  function ask(query) {
+    const q = normalize2(query);
+    if (q.length < 2) {
+      return null;
+    }
+    let best = null;
+    let bestScore = 0;
+    for (const c of slice().claims) {
+      const s = scoreClaim(c, q);
+      if (s > bestScore) {
+        bestScore = s;
+        best = c;
+      }
+    }
+    return best;
+  }
+  function resolveQuery(query) {
+    const q = normalize2(query);
+    const fallbackSubject = defaultSubject();
+    if (q.length === 0) {
+      return { mode: "entity", subject: fallbackSubject, claim: null, noMatch: false };
+    }
+    const hit = entityHit(q);
+    if (hit !== null) {
+      return { mode: "entity", subject: hit, claim: null, noMatch: false };
+    }
+    const best = ask(q);
+    if (best !== null) {
+      return { mode: "ask", subject: best.subject, claim: best, noMatch: false };
+    }
+    return { mode: "entity", subject: fallbackSubject, claim: null, noMatch: true };
+  }
+  function defaultSubject() {
+    const keys = Object.keys(registry().entities);
+    return keys[0] ?? "mercury";
+  }
+  function claimCount(subject) {
+    return claimsForSubject(subject).length;
+  }
+  var bridge = window;
+  bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject };
+
+  // assets/js/src/views/search.ts
+  function escHTML9(s) {
+    return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  }
+  function oneLine(s) {
+    return s.replace(/\s+/g, " ").trim();
+  }
+  function tier1Chips(claim) {
+    const link = claim.tier1_link;
+    if (link === void 0) {
+      return "";
+    }
+    const chips = [];
+    for (const slug of link.essentials ?? []) {
+      chips.push(`<span class="sr-t1 sr-t1--ess" title="Also an operational essential in Coverage/Knowledge">${escHTML9(displayName(slug))}</span>`);
+    }
+    for (const slug of link.conditions ?? []) {
+      chips.push(`<span class="sr-t1 sr-t1--cond" title="Also an indexed condition in Knowledge">${escHTML9(displayName(slug))}</span>`);
+    }
+    if (chips.length === 0) {
+      return "";
+    }
+    return `<div class="sr-claim__tier1"><span class="sr-claim__tier1-label">ALSO TIER-1</span>${chips.join("")}</div>`;
+  }
+  function topicTags(claim) {
+    if (claim.topics.length === 0) {
+      return "";
+    }
+    const tags = claim.topics.map((t) => `<span class="sr-tag">#${escHTML9(t)}</span>`).join("");
+    return `<div class="sr-claim__tags">${tags}</div>`;
+  }
+  function claimDetail(claim) {
+    return `
+      <div class="sr-claim__short">${escHTML9(claim.answer_short)}</div>
+      <div class="sr-claim__answer">${escHTML9(claim.answer)}</div>
+      <blockquote class="sr-claim__verbatim">\u201C${escHTML9(oneLine(claim.verbatim))}\u201D</blockquote>
+      <div class="sr-claim__cite">${escHTML9(composeCite(claim))}</div>
+      ${tier1Chips(claim)}
+      ${topicTags(claim)}`;
+  }
+  function renderClaimRow(claim) {
+    return `
+    <details class="sr-claim" data-sr-claim="${escHTML9(claim.id)}">
+      <summary class="sr-claim__summary">
+        <span class="sr-claim__badge">?</span>
+        <span class="sr-claim__qblock">
+          <span class="sr-claim__q">${escHTML9(claim.question)}</span>
+          <span class="sr-claim__preview">${escHTML9(claim.answer_short)}</span>
+        </span>
+        <span class="sr-claim__chev">\u203A</span>
+      </summary>
+      <div class="sr-claim__body">${claimDetail(claim)}</div>
+    </details>`;
+  }
+  function renderFacet(group) {
+    const rows = group.claims.map(renderClaimRow).join("");
+    return `
+    <details class="sr-facet" open>
+      <summary class="sr-facet__head">
+        <span class="sr-facet__label">${escHTML9(group.label)}</span>
+        <span class="sr-facet__count">${group.claims.length}</span>
+      </summary>
+      <div class="sr-facet__body">${rows}</div>
+    </details>`;
+  }
+  function renderRelated(subject) {
+    const e = getEntity(subject);
+    if (e === null || e.related.length === 0) {
+      return "";
+    }
+    const chips = e.related.map((slug) => `<span class="sr-related__chip" title="Related entity">${escHTML9(displayName(slug))}</span>`).join("");
+    return `
+    <div class="sr-related">
+      <span class="sr-related__label">RELATED</span>
+      <div class="sr-related__chips">${chips}</div>
+    </div>`;
+  }
+  function renderEntity(subject, noMatch) {
+    const e = getEntity(subject);
+    const groups = facetGroups(subject);
+    const n = claimCount(subject);
+    if (e === null || groups.length === 0) {
+      return '<div class="sr-empty">\u2014 this slice has no entity to show yet \u2014</div>';
+    }
+    const synLine = e.synonyms.length > 0 ? ` \xB7 also: ${e.synonyms.map(escHTML9).join(", ")}` : "";
+    const noteHTML = noMatch ? '<div class="sr-note">No direct match yet \u2014 this thin-slice reference only knows <strong>Mercury</strong>. Showing it below.</div>' : "";
+    const facetsHTML = groups.map(renderFacet).join("");
+    return `
+    ${noteHTML}
+    <div class="sr-entity">
+      <header class="sr-entity__head">
+        <div class="sr-entity__sym">${escHTML9(e.symbol ?? e.display_name.charAt(0))}</div>
+        <div class="sr-entity__idblock">
+          <h3 class="sr-entity__name">${escHTML9(e.display_name)}</h3>
+          <div class="sr-entity__meta">${escHTML9(e.type.toUpperCase())} \xB7 ${n} ENTR${n === 1 ? "Y" : "IES"}${escHTML9(synLine)}</div>
+        </div>
+      </header>
+      <div class="sr-facets">${facetsHTML}</div>
+      ${renderRelated(subject)}
+    </div>`;
+  }
+  function renderAsk(claim) {
+    return `
+    <div class="sr-ask">
+      <div class="sr-ask__badge"><span class="sr-ask__q-mark">?</span> ASK \xB7 WALLACH</div>
+      <div class="sr-ask__q">${escHTML9(claim.question)}</div>
+      <div class="sr-ask__detail">${claimDetail(claim)}</div>
+      <button class="sr-ask__more" data-sr-more="${escHTML9(claim.subject)}">MORE ON ${escHTML9(displayName(claim.subject).toUpperCase())} \u2192</button>
+    </div>`;
+  }
+  function renderBody(result) {
+    if (result.mode === "ask" && result.claim !== null) {
+      return renderAsk(result.claim);
+    }
+    return renderEntity(result.subject, result.noMatch);
+  }
+  function hexSerial3(seed) {
+    return (seed * 2654435769 >>> 0).toString(16).toUpperCase().padStart(4, "0").slice(0, 4);
+  }
+  function renderShell4() {
+    return `
+    <span class="ds-scan-line" aria-hidden="true"></span>
+    <header class="sr-head">
+      <div>
+        <div class="sr-eyebrow"><span class="pulse-dot"></span>DRAWER \xB7 <span class="ds-cipher" data-cipher-set="hexa">SR\xB7${hexSerial3(13)}</span></div>
+        <h2 class="sr-title">Search</h2>
+        <div class="sr-sub">// ask Wallach anything \u2014 offline, in his own words</div>
+      </div>
+      <button class="sr-close" data-sr-action="close" title="Close (Esc)">\xD7</button>
+    </header>
+    <div class="sr-searchbar">
+      <span class="sr-searchbar__icon">\u2315</span>
+      <input class="sr-searchbar__input" type="text" placeholder="ASK A QUESTION OR NAME A SUBJECT\u2026" autocomplete="off" spellcheck="false" />
+      <button class="sr-searchbar__clear" data-sr-action="search-clear" type="button" aria-label="Clear" title="Clear">\xD7</button>
+    </div>
+    <div class="sr-body"></div>
+    <footer class="sr-footer">
+      <span class="sr-footer__hint">MERCURY THIN-SLICE \xB7 ${escHTML9(String(claimCount(defaultSubject())))} ENTRIES</span>
+      <span class="sr-footer__spacer"></span>
+      <button class="sr-action sr-action--expand" data-sr-action="expand"><span class="sr-action__glyph">\u2922</span>EXPAND</button>
+    </footer>`;
+  }
+  function mount7(container) {
+    let isOpen = false;
+    let isExpanded = false;
+    let query = "";
+    let lastKey = "";
+    const resultKey = (r) => `${r.mode}|${r.subject}|${r.claim?.id ?? ""}|${r.noMatch}`;
+    const paintBody = (force) => {
+      const result = resolveQuery(query);
+      const key = resultKey(result);
+      if (!force && key === lastKey) {
+        return;
+      }
+      lastKey = key;
+      const body = container.querySelector(".sr-body");
+      if (body !== null) {
+        body.innerHTML = renderBody(result);
+      }
+    };
+    const render = () => {
+      container.innerHTML = renderShell4();
+      lastKey = "";
+      paintBody(true);
+      const input = container.querySelector(".sr-searchbar__input");
+      if (input !== null) {
+        input.value = query;
+        container.querySelector(".sr-searchbar")?.classList.toggle("has-query", query.trim().length > 0);
+        setTimeout(() => input.focus(), 0);
+      }
+    };
+    const open = () => {
+      if (isOpen) {
+        return;
+      }
+      isOpen = true;
+      container.classList.add("sr-open");
+      render();
+    };
+    const close = () => {
+      if (!isOpen) {
+        return;
+      }
+      isOpen = false;
+      isExpanded = false;
+      query = "";
+      container.classList.remove("sr-open", "sr-expanded");
+      container.innerHTML = "";
+    };
+    const toggle = () => {
+      if (isOpen) {
+        close();
+      } else {
+        open();
+      }
+    };
+    const toggleExpanded = () => {
+      isExpanded = !isExpanded;
+      container.classList.toggle("sr-expanded", isExpanded);
+    };
+    container.addEventListener("input", (ev) => {
+      const t = ev.target;
+      if (t === null || !t.classList.contains("sr-searchbar__input")) {
+        return;
+      }
+      query = t.value;
+      container.querySelector(".sr-searchbar")?.classList.toggle("has-query", query.trim().length > 0);
+      paintBody(false);
+    });
+    container.addEventListener("click", (ev) => {
+      const target = ev.target;
+      if (target === null) {
+        return;
+      }
+      const moreBtn = target.closest("[data-sr-more]");
+      if (moreBtn !== null) {
+        query = "";
+        const input = container.querySelector(".sr-searchbar__input");
+        if (input !== null) {
+          input.value = "";
+        }
+        container.querySelector(".sr-searchbar")?.classList.remove("has-query");
+        paintBody(true);
+        return;
+      }
+      const actionEl = target.closest("[data-sr-action]");
+      if (actionEl !== null) {
+        const action = actionEl.getAttribute("data-sr-action");
+        if (action === "close") {
+          close();
+        } else if (action === "expand") {
+          toggleExpanded();
+        } else if (action === "search-clear") {
+          query = "";
+          const input = container.querySelector(".sr-searchbar__input");
+          if (input !== null) {
+            input.value = "";
+            input.focus();
+          }
+          container.querySelector(".sr-searchbar")?.classList.remove("has-query");
+          paintBody(true);
+        }
+      }
+    });
+    return {
+      open,
+      close,
+      toggle,
+      toggleExpanded,
+      isOpen: () => isOpen
+    };
+  }
+
   // assets/js/src/views/gloss-tooltip.ts
   var tip = null;
   var wired = false;
@@ -57436,6 +58202,7 @@ Verified: invariants 52/52 green (the rule/doc/memory edits break no gate); no c
     }
   }
   var DRAWER_SPECS = [
+    { target: "search", mountId: "drawer-search-mount", key: "s", mount: mount7 },
     { target: "knowledge", mountId: "drawer-knowledge-mount", key: "k", mount: mount3 },
     { target: "journey", mountId: "drawer-journey-mount", key: "j", mount: mount2 }
   ];
@@ -57600,6 +58367,13 @@ Verified: invariants 52/52 green (the rule/doc/memory edits break no gate); no c
     profileOverlay = overlay;
     profileHandle = mount4(overlay);
   }
+  function wireTopbarSearch() {
+    const btn = document.querySelector(".topbar__ask");
+    if (btn === null) {
+      return;
+    }
+    btn.addEventListener("click", () => toggleDrawer("search"));
+  }
   function wireProfileChip() {
     const chip = document.querySelector(".rail__profile");
     if (chip === null) {
@@ -57630,6 +58404,7 @@ Verified: invariants 52/52 green (the rule/doc/memory edits break no gate); no c
     }
     wireRail();
     wireProfileChip();
+    wireTopbarSearch();
     mountDrawers();
     wireDrawerKeys();
     wireJourneyAutoDerive();

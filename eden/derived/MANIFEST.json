@@ -155,6 +155,16 @@
       "file": "dashboard/assets/data/fatty-acid-clarity-data.json",
       "disposition": "hand_authored",
       "reason": "Designated CLARITY prose store for the omega fatty-acid explainer alert (views/knowledge.ts deep-dive). GENERAL reference, clearly marked non-Wallach (SS00.A-safe) -- original prose, not a pillar projection, no generator. Added 2026-07-08 alongside the Omega-9 label correction (the source graphic mislabeled Omega-9 as 'Arachidonic'). prose in the `description` field (a prose-home key); not yet on the prose_contained clean surface (WISH, like the other hand stores)."
+    },
+    {
+      "file": "dashboard/assets/data/search/mercury-slice.json",
+      "disposition": "hand_authored",
+      "reason": "THIN-SLICE DRAFT (2026-07-09) -- Immortality 13 mercury claims de-blobbed into the faceted Search template (subject/facet/question/answer_short/answer/verbatim/topics), read by views/search.ts for the Search visual-reference sign-off. verbatim+answer are byte-faithful from the sealed corpus; the rest is authored. In an assets/data/search/ subdir so the FLAT accounting glob does not require it -- registered here anyway for honesty. REPLACED by the derived, sharded search index (future search_index_fresh gate) once the format is locked; not hand-maintained long-term."
+    },
+    {
+      "file": "dashboard/assets/data/search/search-entities.json",
+      "disposition": "hand_authored",
+      "reason": "THIN-SLICE DRAFT entity registry (Mercury only) for the Search visual-reference; related[] reuse canon/catalog slugs. Final home = eden/catalog/search-entities.json (sealed, curated) after format sign-off; superseded by that + a future search_entity_resolves gate."
     }
   ]
 }

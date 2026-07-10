@@ -41,7 +41,7 @@ export interface EventPayloads {
   'journey:changed': { reason: 'event-logged' | 'checkin-logged' };
   'eden:hash-mismatch': { file: string; expected: string; actual: string };
   'storage:pressure-warn': { bytesUsed: number; bytesLimit: number };
-  'rail:navigate': { target: 'coverage' | 'regimen' | 'scanner' | 'knowledge' | 'journey' };
+  'rail:navigate': { target: 'coverage' | 'regimen' | 'scanner' | 'search' | 'knowledge' | 'journey' };
   'log:entry-added': { id: string; kind: string };
 }
 

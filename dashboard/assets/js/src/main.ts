@@ -29,6 +29,7 @@ import * as paletteView from './views/palette.js';
 import * as profileView from './views/profile.js';
 import * as regimenView from './views/regimen.js';
 import * as scannerView from './views/scanner.js';
+import * as searchView from './views/search.js';
 import { initGlossTooltip } from './views/gloss-tooltip.js';
 
 /*
@@ -40,7 +41,7 @@ void _refs;
 
 // ─── Rail navigation state ────────────────────────────────────────────────
 
-type WorkspaceTarget = 'coverage' | 'regimen' | 'scanner' | 'knowledge' | 'journey';
+type WorkspaceTarget = 'coverage' | 'regimen' | 'scanner' | 'search' | 'knowledge' | 'journey';
 
 interface MountedView {
   unmount: () => void;
@@ -82,6 +83,7 @@ interface DrawerSpec {
 }
 
 const DRAWER_SPECS: readonly DrawerSpec[] = [
+  { target: 'search', mountId: 'drawer-search-mount', key: 's', mount: searchView.mount },
   { target: 'knowledge', mountId: 'drawer-knowledge-mount', key: 'k', mount: knowledgeView.mount },
   { target: 'journey', mountId: 'drawer-journey-mount', key: 'j', mount: journeyView.mount },
 ];
@@ -288,6 +290,15 @@ function showProfilePanel(): void {
   profileHandle = profileView.mount(overlay);
 }
 
+/** The topbar "Ask Wallach" button — the always-visible, inviting entry that opens the Search drawer. */
+function wireTopbarSearch(): void {
+  const btn = document.querySelector<HTMLElement>('.topbar__ask');
+  if (btn === null) {
+    return;
+  }
+  btn.addEventListener('click', () => toggleDrawer('search'));
+}
+
 function wireProfileChip(): void {
   const chip = document.querySelector<HTMLElement>('.rail__profile');
   if (chip === null) {
@@ -325,6 +336,7 @@ function bootstrap(): void {
 
   wireRail();
   wireProfileChip();
+  wireTopbarSearch();
   mountDrawers();
   wireDrawerKeys();
   wireJourneyAutoDerive();
