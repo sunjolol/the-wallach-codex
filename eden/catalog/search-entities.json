@@ -666,6 +666,140 @@
         "hydrotherapy",
         "be_your_own_doctor"
       ]
+    },
+    "rare_earth_elements": {
+      "display_name": "Rare Earth Elements",
+      "type": "concept",
+      "synonyms": [
+        "rare earths",
+        "lanthanides",
+        "rare earth metals",
+        "dysprosium",
+        "erbium",
+        "europium",
+        "gadolinium",
+        "holmium",
+        "lutetium",
+        "cerium",
+        "monazite"
+      ],
+      "related": [
+        "obscure_elements",
+        "colloidal_minerals",
+        "essential_nutrients"
+      ]
+    },
+    "obscure_elements": {
+      "display_name": "Obscure Elements",
+      "type": "concept",
+      "synonyms": [
+        "obscure elements",
+        "trace elements",
+        "actinium",
+        "bromine",
+        "cesium",
+        "caesium",
+        "hafnium",
+        "indium",
+        "iridium",
+        "bromide"
+      ],
+      "related": [
+        "rare_earth_elements",
+        "colloidal_minerals",
+        "essential_nutrients"
+      ]
+    },
+    "cobalt": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "co",
+        "vitamin b12",
+        "b12",
+        "cobalamin",
+        "cyanocobalamine"
+      ],
+      "related": [
+        "vitamins",
+        "iron",
+        "essential_nutrients",
+        "colloidal_minerals"
+      ]
+    },
+    "helium": {
+      "display_name": "Helium",
+      "type": "element",
+      "symbol": "He",
+      "synonyms": [
+        "he",
+        "noble gas",
+        "the bends",
+        "decompression sickness"
+      ],
+      "related": [
+        "hydrogen",
+        "krypton",
+        "obscure_elements"
+      ]
+    },
+    "silver": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "ag",
+        "argentum",
+        "colloidal silver",
+        "silver sulfadiazine"
+      ],
+      "related": [
+        "gold",
+        "colloidal_minerals",
+        "essential_nutrients"
+      ]
+    },
+    "cadmium": {
+      "display_name": "Cadmium",
+      "type": "element",
+      "symbol": "Cd",
+      "synonyms": [
+        "cd",
+        "heavy metal",
+        "cadmium toxicity"
+      ],
+      "related": [
+        "zinc",
+        "mercury",
+        "obscure_elements"
+      ]
+    },
+    "bismuth": {
+      "display_name": "Bismuth",
+      "type": "element",
+      "symbol": "Bi",
+      "synonyms": [
+        "bi",
+        "pepto-bismol",
+        "pepto bismol",
+        "bismuth subsalicylate"
+      ],
+      "related": [
+        "obscure_elements",
+        "colloidal_minerals"
+      ]
+    },
+    "carbon": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "c",
+        "carbon dioxide",
+        "co2",
+        "global warming",
+        "climate change",
+        "climate"
+      ],
+      "related": []
     }
   }
 }

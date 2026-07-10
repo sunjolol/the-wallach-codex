@@ -2077,6 +2077,279 @@
         "orthomolecular",
         "pauling"
       ]
+    },
+    "WAL-CLM-IMMORT-000112": {
+      "subject": "rare_earth_elements",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "What is dysprosium?",
+      "answer_short": "A soft, silvery rare-earth metal -- the 9th most abundant of the rare earths -- discovered in 1886 and named from the Greek for 'hard to get at.' Its magnetic alloys help CDs work, and in the body it collects in bone.",
+      "topics": [
+        "dysprosium",
+        "rare-earth",
+        "discovery"
+      ]
+    },
+    "WAL-CLM-IMMORT-000113": {
+      "subject": "rare_earth_elements",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What is erbium used for?",
+      "answer_short": "A scarce rare-earth metal (found 1843), alloyed with vanadium to improve workability; its most memorable use is tinting glass and enamel pink -- the pink glass of sunglasses and costume jewelry. In the body it settles in bone.",
+      "topics": [
+        "erbium",
+        "rare-earth",
+        "pink-glass"
+      ]
+    },
+    "WAL-CLM-IMMORT-000114": {
+      "subject": "rare_earth_elements",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "What is europium?",
+      "answer_short": "One of the rarest rare earths, isolated in 1901 and named for Europe; it is the softest of them and so reactive it bursts into flame in air above 150C. It is mined from the ores monazite and bastnasite.",
+      "topics": [
+        "europium",
+        "rare-earth",
+        "monazite"
+      ]
+    },
+    "WAL-CLM-IMMORT-000137": {
+      "subject": "rare_earth_elements",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Where is gadolinium found?",
+      "answer_short": "A rare-earth mineral scattered through rocks and plants -- hickory trees can concentrate it to 70 ppm -- and in land animals it collects in the bone and liver almost as soon as it is absorbed.",
+      "topics": [
+        "gadolinium",
+        "rare-earth",
+        "bone"
+      ]
+    },
+    "WAL-CLM-IMMORT-000172": {
+      "subject": "rare_earth_elements",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is holmium?",
+      "answer_short": "A soft, silvery rare-earth metal the body carries in trace amounts, mostly in bone. Spotted by its spectral 'fingerprint' in 1878 as unknown 'element X,' it was isolated in 1879 and named Holmia, the Latin name for Stockholm.",
+      "topics": [
+        "holmium",
+        "rare-earth",
+        "stockholm"
+      ]
+    },
+    "WAL-CLM-IMMORT-000203": {
+      "subject": "rare_earth_elements",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is lutetium?",
+      "answer_short": "The last lanthanide -- the hardest, heaviest and one of the least abundant rare earths, silvery-white and corrosion-resistant. Discovered independently in 1907 and named for Lutetia, the ancient name of Paris.",
+      "topics": [
+        "lutetium",
+        "rare-earth",
+        "lanthanide"
+      ]
+    },
+    "WAL-CLM-RARE-000112": {
+      "subject": "rare_earth_elements",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Does cerium have a medical use?",
+      "answer_short": "Yes -- cerium (a rare earth that accumulates in bone) is used as cerium nitrate, a topical disinfectant for severe burn victims.",
+      "topics": [
+        "cerium",
+        "rare-earth",
+        "burns"
+      ]
+    },
+    "WAL-CLM-IMMORT-000035": {
+      "subject": "obscure_elements",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is actinium?",
+      "answer_short": "A naturally radioactive metal that glows in the dark like radium (its name is Greek for 'ray'). Wallach lists it among elements found in living tissue -- it gathers in bone and liver, where he speculates it may have a metabolic role, though he assigns it no health use.",
+      "topics": [
+        "actinium",
+        "radioactive",
+        "trace-element"
+      ]
+    },
+    "WAL-CLM-IMMORT-000048": {
+      "subject": "obscure_elements",
+      "also_about": [],
+      "facet": "history",
+      "question": "Where does the word 'bromide' come from?",
+      "answer_short": "From medicine: sodium bromide, a bromine salt, was a common mild sedative in the late 1800s prescribed to calm the nerves -- which is why we still speak of taking a 'bromide' to settle down.",
+      "topics": [
+        "bromine",
+        "bromide",
+        "sedative"
+      ]
+    },
+    "WAL-CLM-IMMORT-000095": {
+      "subject": "obscure_elements",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "How was cesium discovered?",
+      "answer_short": "In 1860 the German chemists Bunsen and Kirchhoff identified cesium by its spectral 'fingerprint' -- the colors of light it emits when heated. Its lines were sky-blue, so they named it from the Latin caesius, 'sky blue.'",
+      "topics": [
+        "cesium",
+        "spectroscopy",
+        "discovery"
+      ]
+    },
+    "WAL-CLM-IMMORT-000158": {
+      "subject": "obscure_elements",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Why was hafnium discovered so late?",
+      "answer_short": "Because it hid inside its chemical 'twin' zirconium -- common in the crust but nearly impossible to separate, so it was not isolated until 1923. Coster and de Hevesy named it Hafnia, the Latin name for Copenhagen, to honor Niels Bohr's home city.",
+      "topics": [
+        "hafnium",
+        "zirconium",
+        "discovery"
+      ]
+    },
+    "WAL-CLM-IMMORT-000185": {
+      "subject": "obscure_elements",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is indium?",
+      "answer_short": "A rare, soft, bluish-white metal that resists corrosion and 'shrieks' when bent; it is a byproduct of refining zinc. Discovered in 1863 by its bright violet spectral line, it is named from the Latin indicum, 'indigo.'",
+      "topics": [
+        "indium",
+        "zinc-byproduct",
+        "discovery"
+      ]
+    },
+    "WAL-CLM-IMMORT-000186": {
+      "subject": "obscure_elements",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is iridium?",
+      "answer_short": "One of the hardest, most corrosion-resistant metals known -- a precious metal like platinum. Smithson Tennant isolated it in 1803 from platinum-ore residues and named it for the Latin iris ('rainbow'), after its vividly colored salts.",
+      "topics": [
+        "iridium",
+        "precious-metal",
+        "platinum"
+      ]
+    },
+    "WAL-CLM-IMMORT-000085": {
+      "subject": "cobalt",
+      "also_about": [
+        "iron",
+        "magnesium"
+      ],
+      "facet": "mechanism",
+      "question": "What does cobalt have to do with vitamin B12?",
+      "answer_short": "Cobalt is the heart of vitamin B12 -- it sits in a ring related to the ones holding iron in hemoglobin and magnesium in chlorophyll, and gives B12 its red color. 'Cyanocobalamine' was named for a cyanide group on the first B12 isolated (1948).",
+      "topics": [
+        "cobalt",
+        "vitamin-b12",
+        "cyanocobalamine"
+      ]
+    },
+    "WAL-CLM-IMMORT-000086": {
+      "subject": "cobalt",
+      "also_about": [],
+      "facet": "sources",
+      "question": "How do animals get vitamin B12 from cobalt?",
+      "answer_short": "Microbes do the work: gut bacteria in a cow's rumen turn elemental cobalt into B12, which the animal absorbs. Carnivores get it secondhand from prey, and rabbits and rodents eat their own night feces (coprophagy) to recover it.",
+      "topics": [
+        "cobalt",
+        "b12",
+        "ruminants"
+      ]
+    },
+    "WAL-CLM-IMMORT-000156": {
+      "subject": "helium",
+      "also_about": [
+        "hydrogen"
+      ],
+      "facet": "basics",
+      "question": "What is helium?",
+      "answer_short": "The lightest noble gas -- so inert it forms no compounds and occurs pure in nature. After hydrogen it is the 2nd most abundant element in the universe (~7% of atoms). It was the first element found off Earth: seen in the sun's spectrum in 1868 and named from Greek Helios, 'sun.'",
+      "topics": [
+        "helium",
+        "noble-gas",
+        "sun"
+      ]
+    },
+    "WAL-CLM-IMMORT-000157": {
+      "subject": "helium",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Why do deep-sea divers breathe helium?",
+      "answer_short": "Because helium dissolves in blood far less than nitrogen, so less gas builds up under pressure and the risk of 'the bends' drops. The bends hits when a diver surfaces too fast and dissolved gas fizzes out of the blood into the joints -- like a just-opened soda.",
+      "topics": [
+        "helium",
+        "diving",
+        "the-bends"
+      ]
+    },
+    "WAL-CLM-IMMORT-000031": {
+      "subject": "silver",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What was colloidal silver used for?",
+      "answer_short": "Wallach relays older medical reports (not his own protocol): in 1917-18 colloidal silver was described as soothing inflammation and helping prostate/bladder irritation, itching, catarrh, even a post-childbirth blood infection. Silver sulfadiazine is still used in ~70% of U.S. burn centers.",
+      "topics": [
+        "silver",
+        "colloidal-silver",
+        "burns"
+      ]
+    },
+    "WAL-CLM-IMMORT-000077": {
+      "subject": "cadmium",
+      "also_about": [
+        "zinc"
+      ],
+      "facet": "warning",
+      "question": "Why is cadmium toxic?",
+      "answer_short": "It is a non-essential heavy metal that piles up in the kidneys, and tobacco concentrates it -- so smokers and bystanders breathe it in. The danger is that cadmium mimics zinc and can shove it out of zinc-dependent enzymes.",
+      "topics": [
+        "cadmium",
+        "heavy-metal",
+        "zinc-antagonist"
+      ]
+    },
+    "WAL-CLM-IMMORT-000046": {
+      "subject": "bismuth",
+      "also_about": [
+        "peptic_ulcers"
+      ],
+      "facet": "uses",
+      "question": "What is bismuth used for, and did stress really cause ulcers?",
+      "answer_short": "Bismuth is the pink in Pepto-Bismol, used for stomach ulcers and gut infections for millennia. Wallach's myth-buster: ulcers were blamed on stress for decades, but the real cause is Helicobacter pylori bacteria (Marshall & Warren, 1983) -- treated with antibiotics, antacids and bismuth.",
+      "topics": [
+        "bismuth",
+        "peptic-ulcers",
+        "h-pylori"
+      ]
+    },
+    "WAL-CLM-IMMORT-000050": {
+      "subject": "carbon",
+      "also_about": [],
+      "facet": "stance",
+      "question": "What is Wallach's view on global warming?",
+      "answer_short": "Off nutrition, he is skeptical of blaming humans -- calling our share of Earth's biomass 'pitifully small' and noting Ice Ages and warm spells have always cycled naturally. His fix is simply to plant more trees, which pull carbon dioxide from the air. (His personal stance on a debated topic.)",
+      "topics": [
+        "carbon",
+        "global-warming",
+        "climate"
+      ]
+    },
+    "WAL-CLM-IMMORT-000147": {
+      "subject": "hydrogen",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is hydrogen?",
+      "answer_short": "The simplest atom -- one proton, one electron -- and the most abundant element in the universe (~93% of all atoms). As a gas it is diatomic (H2), colorless and highly flammable, burning with oxygen to make water; its name is Greek for 'water-maker.'",
+      "topics": [
+        "hydrogen",
+        "simplest-atom",
+        "abundance"
+      ]
     }
   }
 }

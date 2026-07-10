@@ -56245,7 +56245,19 @@ PROCESS LESSON: at round-close, READ the full probe PASS/FAIL line -- never just
 
 Luneth's two directed edits on review: (1) "Bodywork" -> "Somatic Therapies" rename (slug bodywork -> somatic_therapies; "bodywork" kept as a hidden synonym so search still finds it). (2) Faith-healing claim_text trim -- removed the mystical clause per the spiritual-vs-mystical editorial rule (Christian-positive kept, endorsed-mystical dropped). The trim went via eden/tools/mine_batch.py apply to the DRAFT (WAL-CLM-LETS-000102, claim_text ONLY; verbatim untouched so quote-integrity holds), then Luneth gave explicit per-invocation approval and I ran the user-only eden/tools/corpus_seal.py -> knowledge_version 319 -> 320, 6 shards promoted, 14 goldens rehashed, corpus_verify PASS.
 
-Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, eden/corpus/claims/claims-lets-play-doctor.json (+ golden), knowledge-version.json, seal-history.log, and all rebuilt dashboard embeds (search-index.json = 44 entities / 159 claims). No schema/view/gate changes. Verified: build OK; invariants 53/53 (0 new reds); render_probe_search PASS (44-entity landing, 0 page errors); targeted headless dump of all 5 affected pages (facets, questions, composed cites, related links correct); derived index confirms the mystical clause is gone from 000102.answer and somatic_therapies is present with bodywork removed as an entity. NEXT: ~63 non-epigenetics search-only claims remain (thin Immortality elements -- cobalt, silver, bromine, cadmium, cesium, bismuth, rare earths -- + a rare-earths drug-safety-in-elderly concept); Epigenetics charged cluster deferred; mining PAUSED at Immortality Mn-Manganese.` }];
+Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, eden/corpus/claims/claims-lets-play-doctor.json (+ golden), knowledge-version.json, seal-history.log, and all rebuilt dashboard embeds (search-index.json = 44 entities / 159 claims). No schema/view/gate changes. Verified: build OK; invariants 53/53 (0 new reds); render_probe_search PASS (44-entity landing, 0 page errors); targeted headless dump of all 5 affected pages (facets, questions, composed cites, related links correct); derived index confirms the mystical clause is gone from 000102.answer and somatic_therapies is present with bodywork removed as an entity. NEXT: ~63 non-epigenetics search-only claims remain (thin Immortality elements -- cobalt, silver, bromine, cadmium, cesium, bismuth, rare earths -- + a rare-earths drug-safety-in-elderly concept); Epigenetics charged cluster deferred; mining PAUSED at Immortality Mn-Manganese.` }, { id: "lg_mren9xq7_lnkhq7", ts: "2026-07-10T02:59:14.431960-05:00", surface: "search", kind: "round-close", summary: "Search batch 7: cleared the Immortality thin-element backlog -- 22 A-Z element notes -> 8 entities. Grouped thin ones (Rare Earth + Obscure Elements concepts), substantive ones standalone (Cobalt/Helium/Silver/Cadmium/Bismuth/Carbon) + hydrogen fold. No reseal.", detail: `I finished off Wallach's long A-Z list of thin element notes from the Immortality book (plus one from Rare Earths) -- the ones where he says a sentence or two about an obscure element. Instead of making 20+ skinny one-line pages, I grouped the truly-thin ones into two "browse" pages and kept the elements with real substance on their own. Before building I asked Luneth how to group these, because the same choice will repeat for many trace minerals as mining continues; he said group the thin ones and include the (charged, off-nutrition) climate claim faithfully.
+
+22 search-only claims -> 8 entities. GROUPED concept pages: Rare Earth Elements (7 -- Dysprosium, Erbium, Europium, Gadolinium, Holmium, Lutetium + Cerium from the Rare-Earths book, a genuine multi-book entity whose cerium claim carries the cerium-nitrate burns use); Obscure Elements (6 -- Actinium, Bromine, Cesium, Hafnium, Indium, Iridium; discovery/etymology/the "bromide" sedative history). STANDALONE: Cobalt (canon, 2 -- the vitamin-B12 story), Helium (element, 2 -- noble gas + "the bends"), Silver (canon, 1 -- colloidal-silver clinical history, framed exactly as Wallach did: relayed for reference, not his own protocol), Cadmium (element, 1 -- toxic zinc-mimic), Bismuth (element, 1 -- Pepto-Bismol + the H. pylori ulcer myth-buster), Carbon (canon, 1 -- his climate-skepticism stance). FOLD-IN: hydrogen "what is it?" (000147) into the existing Hydrogen page, which now leads with Basics.
+
+Landing 44 -> 52 entities; enriched claims 159 -> 181. Every grouped element stays findable by its own name via synonyms, and the two concept pages cross-link each other.
+
+CHARGED-CONTENT handling: the Carbon page's only claim is Wallach's personal global-warming skepticism (off-nutrition). Per the editorial/fringe rule I flagged it for Luneth's per-instance call rather than surfacing it silently; he said include-it-faithfully, so it renders as a neutral "stance" with the parenthetical that it is his personal view on a debated topic.
+
+LUNETH REVIEW: signed off with one fix -- Carbon's related pills (Macronutrients, Essential Nutrients) made no sense on a page that is entirely a climate stance (the same padding lesson as the batch-5 Home-Remedies -> Hydrotherapy catch). Since there is no climate/environment entity to genuinely link to, Carbon.related is now empty; the page renders with no related section, honestly thin until carbon gains real nutrition claims.
+
+CANON handling: cobalt, silver and carbon are canon essentials, so they are canon_ref entities (display_name + atomic symbol pulled from essentials-canon, never hand-typed). The grouped rare earths are canon too but ride the concept page (found by name via synonyms); no_hand_duplicated_canonical is unaffected -- it scans only conditions/symptoms by exact display_name, not the search source files.
+
+Files (DATA ONLY, no corpus reseal, knowledge_version stays 320): eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, and the rebuilt embeds (search-index.json = 52 entities / 181 claims). No schema/view/gate changes. Verified: build OK; invariants 53/53 (0 new reds); render_probe_search PASS (52-entity landing, 0 page errors); targeted headless dump of the grouped + canon + carbon pages (facet grouping, questions, composed cites including cerium's Rare-Earths cite, related links, Carbon gracefully showing no related section); all 22 new answer_short/question fields ASCII-clean. NEXT: 18 search-only claims remain and only 3 are non-deferred (rare-earths drug-safety-in-elderly, RARE 276/277/284); the other 15 are the deferred charged cluster (14 Epigenetics + 1 Immortality homosexuality/intersex). After the rare-earths concept the non-charged bulk migration is done -- then seal the 2 search source files + resume search-first mining at Immortality Mn-Manganese.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -57528,6 +57540,10 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
       "lets-play-doctor": {
         title: "Let's Play Doctor",
         year: 1995
+      },
+      "rare-earths": {
+        title: "Rare Earths: Forbidden Cures",
+        year: 1994
       }
     },
     entities: {
@@ -57608,6 +57624,38 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
         ],
         claim_count: 6
       },
+      bismuth: {
+        display_name: "Bismuth",
+        type: "element",
+        synonyms: [
+          "bi",
+          "pepto-bismol",
+          "pepto bismol",
+          "bismuth subsalicylate"
+        ],
+        related: [
+          "obscure_elements",
+          "colloidal_minerals"
+        ],
+        claim_count: 1,
+        symbol: "Bi"
+      },
+      cadmium: {
+        display_name: "Cadmium",
+        type: "element",
+        synonyms: [
+          "cd",
+          "heavy metal",
+          "cadmium toxicity"
+        ],
+        related: [
+          "zinc",
+          "mercury",
+          "obscure_elements"
+        ],
+        claim_count: 1,
+        symbol: "Cd"
+      },
       calcium: {
         display_name: "Calcium",
         type: "nutrient",
@@ -57624,6 +57672,21 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
         ],
         claim_count: 8,
         symbol: "Ca"
+      },
+      carbon: {
+        display_name: "Carbon",
+        type: "nutrient",
+        synonyms: [
+          "c",
+          "carbon dioxide",
+          "co2",
+          "global warming",
+          "climate change",
+          "climate"
+        ],
+        related: [],
+        claim_count: 1,
+        symbol: "C"
       },
       chiropractic: {
         display_name: "Chiropractic",
@@ -57667,6 +57730,25 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
         ],
         claim_count: 3,
         symbol: "Cr"
+      },
+      cobalt: {
+        display_name: "Cobalt",
+        type: "nutrient",
+        synonyms: [
+          "co",
+          "vitamin b12",
+          "b12",
+          "cobalamin",
+          "cyanocobalamine"
+        ],
+        related: [
+          "vitamins",
+          "iron",
+          "essential_nutrients",
+          "colloidal_minerals"
+        ],
+        claim_count: 2,
+        symbol: "Co"
       },
       colloidal_minerals: {
         display_name: "Colloidal Minerals",
@@ -57850,6 +57932,23 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
         claim_count: 2,
         symbol: "Au"
       },
+      helium: {
+        display_name: "Helium",
+        type: "element",
+        synonyms: [
+          "he",
+          "noble gas",
+          "the bends",
+          "decompression sickness"
+        ],
+        related: [
+          "hydrogen",
+          "krypton",
+          "obscure_elements"
+        ],
+        claim_count: 2,
+        symbol: "He"
+      },
       herbal_medicine: {
         display_name: "Herbal Medicine",
         type: "topic",
@@ -57929,7 +58028,7 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
           "ph",
           "essential_nutrients"
         ],
-        claim_count: 5,
+        claim_count: 6,
         symbol: "H"
       },
       hydrotherapy: {
@@ -58108,6 +58207,28 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
         ],
         claim_count: 2
       },
+      obscure_elements: {
+        display_name: "Obscure Elements",
+        type: "concept",
+        synonyms: [
+          "obscure elements",
+          "trace elements",
+          "actinium",
+          "bromine",
+          "cesium",
+          "caesium",
+          "hafnium",
+          "indium",
+          "iridium",
+          "bromide"
+        ],
+        related: [
+          "rare_earth_elements",
+          "colloidal_minerals",
+          "essential_nutrients"
+        ],
+        claim_count: 6
+      },
       potassium: {
         display_name: "Potassium",
         type: "nutrient",
@@ -58145,6 +58266,29 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
         ],
         claim_count: 7
       },
+      rare_earth_elements: {
+        display_name: "Rare Earth Elements",
+        type: "concept",
+        synonyms: [
+          "rare earths",
+          "lanthanides",
+          "rare earth metals",
+          "dysprosium",
+          "erbium",
+          "europium",
+          "gadolinium",
+          "holmium",
+          "lutetium",
+          "cerium",
+          "monazite"
+        ],
+        related: [
+          "obscure_elements",
+          "colloidal_minerals",
+          "essential_nutrients"
+        ],
+        claim_count: 7
+      },
       sexual_health: {
         display_name: "Sexual Health",
         type: "topic",
@@ -58161,6 +58305,23 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
           "herbal_medicine"
         ],
         claim_count: 1
+      },
+      silver: {
+        display_name: "Silver",
+        type: "nutrient",
+        synonyms: [
+          "ag",
+          "argentum",
+          "colloidal silver",
+          "silver sulfadiazine"
+        ],
+        related: [
+          "gold",
+          "colloidal_minerals",
+          "essential_nutrients"
+        ],
+        claim_count: 1,
+        symbol: "Ag"
       },
       somatic_therapies: {
         display_name: "Somatic Therapies",
@@ -58709,6 +58870,23 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
         ]
       },
       {
+        id: "WAL-CLM-IMMORT-000031",
+        subject: "silver",
+        also_about: [],
+        facet: "uses",
+        question: "What was colloidal silver used for?",
+        answer_short: "Wallach relays older medical reports (not his own protocol): in 1917-18 colloidal silver was described as soothing inflammation and helping prostate/bladder irritation, itching, catarrh, even a post-childbirth blood infection. Silver sulfadiazine is still used in ~70% of U.S. burn centers.",
+        answer: "Silver has a long clinical track record that Wallach relays from the older medical literature (presented for reference, not as his own protocol). Colloidal silver was reported in the British Medical Journal (Sir Malcolm Morris, 1917) as soothing rather than irritating - subduing inflammation and promoting healing - and used for enlarged prostate with bladder irritation, pruritus (itching) of the anus, perineal eczema, and hemorrhoids; J. Mark Hovell (1917) reported benefit for the Eustachian tubes, nasal-and-throat congestion (catarrh), and mouth, throat and ear infections; and T.H. Anderson Wells (Lancet, 1918) used it intravenously for a post-childbirth blood infection. Silver sulfadiazine (Silvadene) is used in about 70% of U.S. burn centers and stops the herpes simplex virus behind cold sores.",
+        verbatim: "colloidal silver is free from the drawbacks of\nother preparations of silver, viz. pain caused and discoloration\nof the skin. Instead of producing irritation, it has a distinctly\nsoothing effect. It rapidly subdues inflammation and promotes\nhealing of the lesions. It can be used with remarkable results\nin enlarged prostate with irritation of the bladder, in pruritus\nani and perineal eczema, and in hemorrhoids.",
+        page: 94,
+        book_id: "immortality",
+        topics: [
+          "silver",
+          "colloidal-silver",
+          "burns"
+        ]
+      },
+      {
         id: "WAL-CLM-IMMORT-000033",
         subject: "aluminum",
         also_about: [],
@@ -58742,6 +58920,23 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
           "alzheimers",
           "myth",
           "is-x-good-bad"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000035",
+        subject: "obscure_elements",
+        also_about: [],
+        facet: "basics",
+        question: "What is actinium?",
+        answer_short: "A naturally radioactive metal that glows in the dark like radium (its name is Greek for 'ray'). Wallach lists it among elements found in living tissue -- it gathers in bone and liver, where he speculates it may have a metabolic role, though he assigns it no health use.",
+        answer: "Actinium is a naturally occurring (and radioactive) element that Wallach includes among those detected in living tissue. Beyond the physics - it is a metal that, like radium, glows in the dark, and its name comes from the Greek aktinos ('ray') - his biological note is speculative but intriguing: actinium accumulates in the bones and liver, where he suggests it may have some metabolic function. He also observes that plant roots readily absorb it, though little travels up into the plant. Presented for the curious; Wallach assigns it no specific health role.",
+        verbatim: "Actinium accumulates in and presumably has metabolic\nfunctions in the bones and liver.",
+        page: 92,
+        book_id: "immortality",
+        topics: [
+          "actinium",
+          "radioactive",
+          "trace-element"
         ]
       },
       {
@@ -58780,6 +58975,59 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
           "gold-198",
           "radiotherapy",
           "cancer"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000046",
+        subject: "bismuth",
+        also_about: [
+          "peptic_ulcers"
+        ],
+        facet: "uses",
+        question: "What is bismuth used for, and did stress really cause ulcers?",
+        answer_short: "Bismuth is the pink in Pepto-Bismol, used for stomach ulcers and gut infections for millennia. Wallach's myth-buster: ulcers were blamed on stress for decades, but the real cause is Helicobacter pylori bacteria (Marshall & Warren, 1983) -- treated with antibiotics, antacids and bismuth.",
+        answer: "Bismuth is not one of Wallach's essential nutrients, but he gives it a memorable entry. Chinese physicians used it for stomach ulcers and gut infections for thousands of years, and today it is the pink liquid in over-the-counter remedies like Pepto-Bismol (bismuth subsalicylate). His larger point is a myth-buster: stress was blamed for decades as the cause of gastric, peptic and duodenal ulcers, but the real cause turned out to be infection with the bacterium Helicobacter pylori - a link Australians Barry Marshall and Robin Warren proposed in 1983 (and one already known in pigs back in 1952). The standard treatment pairs antibiotics and antacids with bismuth subsalicylate.",
+        verbatim: "Stress has historically been blamed as the boogy-man\nas the cause of gastric, peptic, and duodenal ulcers. Animal\nand human studies have in fact demonstrated that the true\ncause of ulcers is an infection with a bacterium known as\nHelicobacter pylori.\n\nAustralian gastroenterologist Barry Marshall, M.D.\nand pathologist J. Robin Warren proposed their theory for the\nbacterial cause of gastric ulcers in 1983. The bacterial cause\n(H. pylori) for gastric ulcers was known in pigs in 1952.",
+        page: 106,
+        book_id: "immortality",
+        topics: [
+          "bismuth",
+          "peptic-ulcers",
+          "h-pylori"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000048",
+        subject: "obscure_elements",
+        also_about: [],
+        facet: "history",
+        question: "Where does the word 'bromide' come from?",
+        answer_short: "From medicine: sodium bromide, a bromine salt, was a common mild sedative in the late 1800s prescribed to calm the nerves -- which is why we still speak of taking a 'bromide' to settle down.",
+        answer: "A bit of history on bromine: sodium bromide (a bromine salt) was a common mild sedative in the late 1800s and early 1900s, prescribed to calm the nerves. That is where the old expression comes from - people still talk about taking a 'bromide' to settle down and ease stress and tension.",
+        verbatim: "Sodium bromide, a salt of bromine, is a mild sedative\nthat was commonly used in the late 19th and early 20th\ncenturies. People still speak of taking a \u201Cbromide\u201D to calm\ndown and ease stress and tension.",
+        page: 107,
+        book_id: "immortality",
+        topics: [
+          "bromine",
+          "bromide",
+          "sedative"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000050",
+        subject: "carbon",
+        also_about: [],
+        facet: "stance",
+        question: "What is Wallach's view on global warming?",
+        answer_short: "Off nutrition, he is skeptical of blaming humans -- calling our share of Earth's biomass 'pitifully small' and noting Ice Ages and warm spells have always cycled naturally. His fix is simply to plant more trees, which pull carbon dioxide from the air. (His personal stance on a debated topic.)",
+        answer: "Outside of nutrition, Wallach shares his personal view on climate. He is skeptical of blaming human activity for global warming - he calls humanity's share of the planet's biomass 'pitifully small' and argues that Ice Ages and warm periods have cycled naturally throughout Earth's history, so today's warming is part of that long-running cycle. His proposed remedy is simply to plant more trees, which pull carbon dioxide from the air and release oxygen and water. (Recorded as his own stance on a debated, non-health topic, outside the book's nutrition framework.)",
+        verbatim: "While many individuals and organizations, want to\nblame man\u2019s activities and pitifully small biomass for \u201Cglobal\nwarming,\u201D we must look to the past for the cycles of Ice Ages and\n\u201Cglobal warming\u201D that have taken place over and over through\nthe millennia to understand the cyclic nature of these events.",
+        page: 109,
+        book_id: "immortality",
+        topics: [
+          "carbon",
+          "global-warming",
+          "climate"
         ]
       },
       {
@@ -59073,6 +59321,62 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
         ]
       },
       {
+        id: "WAL-CLM-IMMORT-000077",
+        subject: "cadmium",
+        also_about: [
+          "zinc"
+        ],
+        facet: "warning",
+        question: "Why is cadmium toxic?",
+        answer_short: "It is a non-essential heavy metal that piles up in the kidneys, and tobacco concentrates it -- so smokers and bystanders breathe it in. The danger is that cadmium mimics zinc and can shove it out of zinc-dependent enzymes.",
+        answer: "Cadmium is a non-essential heavy metal, and Wallach frames it mainly as a toxin. It accumulates in kidney tissue, and because tobacco concentrates it, both smokers and people around second-hand smoke inhale dangerous cadmium ashes. Its chemistry closely mimics zinc's \u2014 which is the crux of its toxicity: cadmium can replace zinc in zinc-dependent enzyme reactions, displacing the essential mineral.",
+        verbatim: "Cadmium functions in nature by stimulating the\nhatching of nematode (round worm) cysts. Cadmium-bound\nproteins have been isolated from molluscs and horse kidneys\n- cadmium is known for its ability to replace zinc in zinc\ndependent enzyme reactions.",
+        page: 124,
+        book_id: "immortality",
+        topics: [
+          "cadmium",
+          "heavy-metal",
+          "zinc-antagonist"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000085",
+        subject: "cobalt",
+        also_about: [
+          "iron",
+          "magnesium"
+        ],
+        facet: "mechanism",
+        question: "What does cobalt have to do with vitamin B12?",
+        answer_short: "Cobalt is the heart of vitamin B12 -- it sits in a ring related to the ones holding iron in hemoglobin and magnesium in chlorophyll, and gives B12 its red color. 'Cyanocobalamine' was named for a cyanide group on the first B12 isolated (1948).",
+        answer: "Some biochemistry of vitamin B12: its cobalt sits chelated in a large tetrapyrrole ring \u2014 the same ring family as the porphyrin ring that holds iron in hemoglobin and magnesium in chlorophyll. The first B12 molecule isolated in the lab carried a cyanide group, hence the name cyanocobalamine; several cobalamine forms have B12 activity, with cyanocobalamine and hydroxycobalamine the most active. B12 is a red, water-soluble crystalline substance (the red comes from the cobalt atom), slowly destroyed by acid, alkali, light and oxidizing/reducing agents \u2014 and about 30% of its activity is lost in cooking. It was isolated from liver extracts in 1948 and shown to have anti-pernicious-anemia activity.",
+        verbatim: "B12 cobalt is chelated in a large tetrapyrrole ring\nsimilar to the porphyrin ring found in hemoglobin (iron) and\nchlorophyll (magnesium).",
+        page: 126,
+        book_id: "immortality",
+        topics: [
+          "cobalt",
+          "vitamin-b12",
+          "cyanocobalamine"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000086",
+        subject: "cobalt",
+        also_about: [],
+        facet: "sources",
+        question: "How do animals get vitamin B12 from cobalt?",
+        answer_short: "Microbes do the work: gut bacteria in a cow's rumen turn elemental cobalt into B12, which the animal absorbs. Carnivores get it secondhand from prey, and rabbits and rodents eat their own night feces (coprophagy) to recover it.",
+        answer: "Wallach explains how animals actually get their B12 from elemental cobalt \u2014 a job done by microbes, not the animal itself. Ruminants (cows, sheep, goats, deer, antelope, buffalo, giraffe) rely on the microbes fermenting plant material in their first stomach (the rumen) to convert elemental cobalt into vitamin B12, which the animal then absorbs. Carnivores get their B12 secondhand by eating the stomach contents, liver, bone and muscle of their ruminant prey. And poultry, lagomorphs (rabbits and hares) and rodents eat feces at night (coprophagy) to recover the B12 their own gut microbes manufactured.",
+        verbatim: "Ruminants (i.e. cows, sheep, goats, deer, antelope,\nbuffalo, giraffe, etc.) can use elemental cobalt because the\nmicrobes fermenting and digesting plant material in their first\nstomach (rumen) convert elemental cobalt into vitamin B12,\nwhich the animal then uses.",
+        page: 127,
+        book_id: "immortality",
+        topics: [
+          "cobalt",
+          "b12",
+          "ruminants"
+        ]
+      },
+      {
         id: "WAL-CLM-IMMORT-000089",
         subject: "diabetes",
         also_about: [],
@@ -59153,6 +59457,23 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
         ]
       },
       {
+        id: "WAL-CLM-IMMORT-000095",
+        subject: "obscure_elements",
+        also_about: [],
+        facet: "discovery",
+        question: "How was cesium discovered?",
+        answer_short: "In 1860 the German chemists Bunsen and Kirchhoff identified cesium by its spectral 'fingerprint' -- the colors of light it emits when heated. Its lines were sky-blue, so they named it from the Latin caesius, 'sky blue.'",
+        answer: "The element's discovery story. Cesium was discovered in 1860 by the German chemists Robert Bunsen and Gustav Kirchhoff, who identified it by its spectral 'fingerprint' \u2014 the specific colors of light (spectral emission lines) it emits when heated. Those lines were a bright sky-blue, which is why they named it cesium, from the Latin caesius ('sky blue').",
+        verbatim: "Cesium was discovered in 1860 by the German chemists\nRobert Bunsen and Gustav Kirchhoff. They isolated cesium by\nobserving colors or spectral emission lines, that cesium emits\nwhen it is heated. The color lines were bright blue, which\nprompted them to name the element cesium after the Latin\ncoesius (\u201Csky blue\u201D).",
+        page: 133,
+        book_id: "immortality",
+        topics: [
+          "cesium",
+          "spectroscopy",
+          "discovery"
+        ]
+      },
+      {
         id: "WAL-CLM-IMMORT-000097",
         subject: "copper",
         also_about: [],
@@ -59203,6 +59524,57 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
           "copper-overload",
           "kayser-fleischer",
           "ceruloplasmin"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000112",
+        subject: "rare_earth_elements",
+        also_about: [],
+        facet: "discovery",
+        question: "What is dysprosium?",
+        answer_short: "A soft, silvery rare-earth metal -- the 9th most abundant of the rare earths -- discovered in 1886 and named from the Greek for 'hard to get at.' Its magnetic alloys help CDs work, and in the body it collects in bone.",
+        answer: "Dysprosium is a rare earth element and, Wallach notes, the ninth most abundant of the rare earths. It was discovered in 1886 by the French chemist Paul-\xC9mile Lecoq de Boisbaudran while working with a sample of erbium oxide, and named from the Greek dysprositos \u2014 'hard to get at.' It's a soft, shiny, silvery metal (soft enough to cut with a knife) that is fairly stable in air, and its magnetic alloys are used to help compact discs (CDs) work efficiently. In the body it accumulates in the bones.",
+        verbatim: "Of the rare earths, dysprosium is a metal that ranks\nninth in abundance. It was discovered in 1886 by the French\nchemist Paul-Emile Lecoq de Boisbaudran who was working\nwith a sample of erbium oxide. It was named for the Greek\nword dysprositos, which translates to \u201Chard to get at.\u201D",
+        page: 138,
+        book_id: "immortality",
+        topics: [
+          "dysprosium",
+          "rare-earth",
+          "discovery"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000113",
+        subject: "rare_earth_elements",
+        also_about: [],
+        facet: "uses",
+        question: "What is erbium used for?",
+        answer_short: "A scarce rare-earth metal (found 1843), alloyed with vanadium to improve workability; its most memorable use is tinting glass and enamel pink -- the pink glass of sunglasses and costume jewelry. In the body it settles in bone.",
+        answer: "Erbium is a scarce rare earth metal, discovered in 1843 by the Swedish chemist Carl Gustaf Mosander; in its ores it occurs as an impurity among the other rare earths. Industrially, erbium is alloyed with metals like vanadium to improve their workability, and \u2014 its most memorable use \u2014 it is added to glass and enamel to tint them pink, the pink glass being used for sunglasses and costume jewelry. In the body it concentrates mainly in bone.",
+        verbatim: "Erbium is employed in special alloys with metals such\nas vanadium to improve their workability characteristics.\nErbium is frequently added to glass and enamel to tint them\npink, this glass is commonly used for sunglasses and costume\njewelry.",
+        page: 139,
+        book_id: "immortality",
+        topics: [
+          "erbium",
+          "rare-earth",
+          "pink-glass"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000114",
+        subject: "rare_earth_elements",
+        also_about: [],
+        facet: "discovery",
+        question: "What is europium?",
+        answer_short: "One of the rarest rare earths, isolated in 1901 and named for Europe; it is the softest of them and so reactive it bursts into flame in air above 150C. It is mined from the ores monazite and bastnasite.",
+        answer: "Europium is a 'light' rare earth and one of the rarest of all the rare earth elements. It was isolated in 1901 by the French chemist Eug\xE8ne-Anatole Demar\xE7ay, who named it for the continent of Europe. It is the softest of the rare earths and so reactive it ignites spontaneously in air above 150\xB0C. It occurs in the ores monazite and bastn\xE4site \u2014 monazite (found in the river sands of India and Brazil and in Florida beach sand) carries all the rare earths plus thorium and calcium, and large bastn\xE4site deposits sit in Southern California.",
+        verbatim: "Europium is one of the most-rare of the rare earth\nelements. It was isolated in 1901 by the French chemist\nEugene-Anatole Demarcay, who named the new element for\nthe continent of Europe.",
+        page: 139,
+        book_id: "immortality",
+        topics: [
+          "europium",
+          "rare-earth",
+          "monazite"
         ]
       },
       {
@@ -59446,6 +59818,23 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
         ]
       },
       {
+        id: "WAL-CLM-IMMORT-000137",
+        subject: "rare_earth_elements",
+        also_about: [],
+        facet: "sources",
+        question: "Where is gadolinium found?",
+        answer_short: "A rare-earth mineral scattered through rocks and plants -- hickory trees can concentrate it to 70 ppm -- and in land animals it collects in the bone and liver almost as soon as it is absorbed.",
+        answer: "Gadolinium \u2014 a rare-earth mineral. Wallach notes where gadolinium turns up in nature (rocks, and plants \u2014 the hickory genus Carya can concentrate it to 70 ppm), and that in land animals it collects in the bone and liver almost immediately after it is absorbed.",
+        verbatim: "Gd-Gadolinium, a rare earth, is found in igneous rocks\nat 5.4 ppm, shale at 4.3 ppm, sandstone at 2.6 ppm, limestone\nat 0.7 ppm, terrestrial plants (Carya spp.) can concentrate\ngadolinium up to 70 ppm, and in marine animals at 0.06 ppm.\nTerrestrial animals accumulate gadolinium in bone and liver\nalmost immediately after absorption.",
+        page: 146,
+        book_id: "immortality",
+        topics: [
+          "gadolinium",
+          "rare-earth",
+          "bone"
+        ]
+      },
+      {
         id: "WAL-CLM-IMMORT-000138",
         subject: "germanium",
         also_about: [],
@@ -59552,6 +59941,23 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
         ]
       },
       {
+        id: "WAL-CLM-IMMORT-000147",
+        subject: "hydrogen",
+        also_about: [],
+        facet: "basics",
+        question: "What is hydrogen?",
+        answer_short: "The simplest atom -- one proton, one electron -- and the most abundant element in the universe (~93% of all atoms). As a gas it is diatomic (H2), colorless and highly flammable, burning with oxygen to make water; its name is Greek for 'water-maker.'",
+        answer: "What hydrogen is. Hydrogen is the simplest atom \u2014 a single proton circled by a single electron \u2014 which is part of why it is the most abundant element in the universe: it dominates interstellar space and the stars, and makes up about 93% of all the atoms in existence. As a gas it is diatomic (two atoms bonded, H2), colorless, odorless, tasteless, and extremely flammable, burning with oxygen to form water (its name comes from the Greek hydro 'water' + genes 'creator').",
+        verbatim: "Hydrogen is the most simple of all atoms, consisting\nof a single proton, its nucleus, which is circled by a single\nelectron. Its simple and basic structure partially explains\nwhy hydrogen is the most abundant element in the universe.\nEnormous quantities of hydrogen gas is found in interstellar\nspace, and is by far the most dominant element found in the\nstars. Hydrogen atoms make up a whopping 93% of all the\natoms in the universe.",
+        page: 148,
+        book_id: "immortality",
+        topics: [
+          "hydrogen",
+          "simplest-atom",
+          "abundance"
+        ]
+      },
+      {
         id: "WAL-CLM-IMMORT-000148",
         subject: "hydrogen",
         also_about: [],
@@ -59635,6 +60041,59 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
           "biomolecules",
           "water",
           "dna"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000156",
+        subject: "helium",
+        also_about: [
+          "hydrogen"
+        ],
+        facet: "basics",
+        question: "What is helium?",
+        answer_short: "The lightest noble gas -- so inert it forms no compounds and occurs pure in nature. After hydrogen it is the 2nd most abundant element in the universe (~7% of atoms). It was the first element found off Earth: seen in the sun's spectrum in 1868 and named from Greek Helios, 'sun.'",
+        answer: "Helium \u2014 what it is. Helium is the lightest of the 'noble gases,' the column of chemically inert elements at the edge of the periodic table. It is so inert that it will not react or combine even with itself and forms no stable compounds, so it occurs in nature as a pure element. After hydrogen, helium is the second-most-abundant element in the universe: it makes up about seven percent of all atoms, and together helium and hydrogen account for 99.9% of the matter in the universe. Most of Earth's helium is trapped in 'natural gas,' formed as radioactive uranium and radon decay (the released helium nuclei are the 'alpha particles' named by Ernest Rutherford). Helium was the first element ever discovered off the Earth: in 1868 the French astronomer Pierre Janssen saw an unexplained line in the sun's spectrum and named the new element from the Greek Helios ('sun'); the Scottish chemist William Ramsay isolated it from uranium ore in 1895.",
+        verbatim: "Helium is colorless, odorless and is so inert that it will\nnot even react or combine with itself. It is so inert that it is\none of those few elements that are found in nature in its pure\nelemental form. No stable compound of helium has ever been\nmanufactured.\n\nHelium is second only to hydrogen as the most abundant\nelement in the universe. Helium makes up seven percent of\nall the existing atoms. Together, helium and hydrogen make\nup 99.9% of elements in the universe.",
+        page: 152,
+        book_id: "immortality",
+        topics: [
+          "helium",
+          "noble-gas",
+          "sun"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000157",
+        subject: "helium",
+        also_about: [],
+        facet: "uses",
+        question: "Why do deep-sea divers breathe helium?",
+        answer_short: "Because helium dissolves in blood far less than nitrogen, so less gas builds up under pressure and the risk of 'the bends' drops. The bends hits when a diver surfaces too fast and dissolved gas fizzes out of the blood into the joints -- like a just-opened soda.",
+        answer: "Helium and 'the bends' (decompression sickness). Deep-sea divers breathe a helium-oxygen mixture instead of ordinary air because helium is far less soluble in blood than the nitrogen in air, so less gas dissolves under pressure and the risk of 'the bends' drops. The bends is caused by a diver surfacing too quickly: the sudden drop in pressure makes the gases dissolved in the blood bubble out of solution \u2014 like the fizzing of a just-opened bottle of carbonated soda \u2014 and in the body those bubbles become trapped in the joints, causing severe pain that doubles the diver over into a fetal position.",
+        verbatim: "Divers use helium/ oxygen \u201Cair\u201D when working at great\ndepths; helium being less soluble than nitrogen dissolves\n\n\nat a low percentage in blood, therefore reducing the risk of\n\u201Cbends.\u201D\n\nThe \u201Cbends\u201D is a condition that is produced by a diver\ncoming to the surface too quickly, the lower pressure at the\nwater's surface results in the dissolved gasses to bubble out of\nsolution. The effect is like fizzing of an opened bottle or can of\ncarbonated soft drinks. In the human body these gas bubbles\nbecome trapped in the joints, causing severe pain and causing\nthe diver to \u201Cbend\u201D in a fetal position.",
+        page: 153,
+        book_id: "immortality",
+        topics: [
+          "helium",
+          "diving",
+          "the-bends"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000158",
+        subject: "obscure_elements",
+        also_about: [],
+        facet: "discovery",
+        question: "Why was hafnium discovered so late?",
+        answer_short: "Because it hid inside its chemical 'twin' zirconium -- common in the crust but nearly impossible to separate, so it was not isolated until 1923. Coster and de Hevesy named it Hafnia, the Latin name for Copenhagen, to honor Niels Bohr's home city.",
+        answer: "Hafnium \u2014 a common metal that hid in plain sight. Hafnium is a bright, silvery-white metal that is actually common and abundant in the Earth's crust, yet it was not discovered until 1923 \u2014 unusually late \u2014 because it is almost always found together with its chemical 'twin' zirconium and is nearly impossible to separate from it, so zirconium long masked its existence. Mendeleyev and other investigators had predicted a missing 'element 72.' The Dutch physicist Dirk Coster and the Hungarian physicist George de Hevesy finally isolated it and named it Hafnia \u2014 the Latin name for Copenhagen \u2014 to honor the home city of Niels Bohr. Hafnium is denser than zirconium but chemically almost identical to it.",
+        verbatim: "Hafnium is a common and abundant metal, however,\nit was not discovered until 1923. Numerous investigators,\nincluding the creator of the periodic table Mendeleyev,\npredicted the existence of \u201Celement 72,\u201D however, the ever\npresent diamond-like twin zirconium overshadowed the\nexistence of hafnium. Ultimately, Dirk Coster, a Dutch\nphysicist and George Karl von Hevesy, a Hungarian physicist\nfound the element.",
+        page: 153,
+        book_id: "immortality",
+        topics: [
+          "hafnium",
+          "zirconium",
+          "discovery"
         ]
       },
       {
@@ -59921,6 +60380,23 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
         ]
       },
       {
+        id: "WAL-CLM-IMMORT-000172",
+        subject: "rare_earth_elements",
+        also_about: [],
+        facet: "basics",
+        question: "What is holmium?",
+        answer_short: "A soft, silvery rare-earth metal the body carries in trace amounts, mostly in bone. Spotted by its spectral 'fingerprint' in 1878 as unknown 'element X,' it was isolated in 1879 and named Holmia, the Latin name for Stockholm.",
+        answer: "Holmium \u2014 a soft, silvery rare-earth metal (one of the trace 'rare earth' elements the body carries in tiny amounts). Wallach notes it is scattered thinly through rocks, plants and animals, collecting mainly in bone in land animals, and recounts its discovery: in 1878 two Swiss chemists spotted its unique fingerprint in light (its 'spectral lines') but could not identify the element, so they called it 'element X'; in 1879 the Swedish chemist Per Teodor Cleve isolated it and named it Holmia, the Latin name for his home city of Stockholm.",
+        verbatim: "Ho-Holmium, a rare earth, is found in igneous rocks at\n1.2 ppm, shale at 0.6 ppm, sandstone at 0.51 ppm, limestone\nat 0.17 ppm, terrestrial plants at 16 ppm (Carya spp.), marine\nanimals at 0.005 to 0.01 ppm and terrestrial animals at 0.5 ppm\nin bone.\n\nIn 1878, two Swiss chemists noticed holmium\u2019s\ncharacteristic spectral lines, but could not identify them, so\nthey referred to the unknown element as \u201Celement X.\u201D In 1879,\na Swedish chemist, Per Teodor Cleve isolated and identified\nthe element and called it Holmia, Latin for his home town of\nStockholm.",
+        page: 158,
+        book_id: "immortality",
+        topics: [
+          "holmium",
+          "rare-earth",
+          "stockholm"
+        ]
+      },
+      {
         id: "WAL-CLM-IMMORT-000173",
         subject: "iodine",
         also_about: [],
@@ -60025,6 +60501,40 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
           "thyroid",
           "metabolism",
           "hormones"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000185",
+        subject: "obscure_elements",
+        also_about: [],
+        facet: "basics",
+        question: "What is indium?",
+        answer_short: "A rare, soft, bluish-white metal that resists corrosion and 'shrieks' when bent; it is a byproduct of refining zinc. Discovered in 1863 by its bright violet spectral line, it is named from the Latin indicum, 'indigo.'",
+        answer: "Indium \u2014 a rare, soft, bluish-white metal. Wallach notes it resists corrosion, leaves a residue when rubbed on other metals, and emits a strange 'shrieking' noise when bent; commercially it is a byproduct of refining zinc. It was discovered in 1863 by the German chemist Ferdinand Reich while studying zinc ore, identified by the bright violet light it gives off under spectroscopic analysis (splitting its light into a color fingerprint), and named from the Latin 'indicum' meaning 'violet' or 'indigo.'",
+        verbatim: "In-Indium is found in igneous rocks at 0.05 to 1.0 ppm,\n\nterrestrial plants at 0.62 ppm, and terrestrial animals at 0.016\n\nppm. Indium is a rare, soft, bluish-white metal that is corrosion\nresistant. When it is vigorously rubbed against other metals it\nwill leave small residues of itself; when bent rapidly, indium\nemits a bizarre \u201Cshrieking\u201D noise. Commercial sources of\nindium are produced as a byproduct of refining zinc.\n\nIndium was discovered in 1863 by the German chemist\nFerdinand Reich while studying zinc ore. It was identified by\nthe bright violet light that it gave off during spectroscopic\nanalysis. Its name is taken from the Latin word indicum, which\ntranslates to \u201Cviolet\u201D or \u201Cindigo.\u201D",
+        page: 163,
+        book_id: "immortality",
+        topics: [
+          "indium",
+          "zinc-byproduct",
+          "discovery"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000186",
+        subject: "obscure_elements",
+        also_about: [],
+        facet: "basics",
+        question: "What is iridium?",
+        answer_short: "One of the hardest, most corrosion-resistant metals known -- a precious metal like platinum. Smithson Tennant isolated it in 1803 from platinum-ore residues and named it for the Latin iris ('rainbow'), after its vividly colored salts.",
+        answer: "Iridium \u2014 one of the hardest and most corrosion-resistant metals known, a precious metal similar to platinum. It was discovered in 1803 by the English chemist Smithson Tennant, using the same process that led him to osmium: he isolated it from the residues left when platinum ores are treated with aqua regia (a nitric + hydrochloric acid mixture that dissolves gold and platinum). Tennant named it after the Latin 'iris' ('rainbow'), for the vividly colored salts it forms.",
+        verbatim: "Ir-Iridium is found in igneous rocks at 0.001 ppm,\nterrestrial plants at 0.62 ppm and terrestrial animals at 0.00002\nppm. Iridium is one of the hardest and most corrosion resistant\nmetals known. It is considered a precious metal similar to\nplatinum.\n\nThe English chemist Smithson Tennant discovered\niridium in 1803, using the same process that led him to the\ndiscovery of osmium; he isolated iridium from the residues of\nplatinum ores he treated with aqua regia (a mixture of nitric\nand hydrochloric acids).\n\nTennant named the new metal iridium after the Latin\nword, iris, which translates to \u201Crainbow\u201D because of the highly\ncolored salts.",
+        page: 163,
+        book_id: "immortality",
+        topics: [
+          "iridium",
+          "precious-metal",
+          "platinum"
         ]
       },
       {
@@ -60163,6 +60673,23 @@ Files: eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, ed
           "pauling",
           "krypton-fluoride",
           "chemistry"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000203",
+        subject: "rare_earth_elements",
+        also_about: [],
+        facet: "basics",
+        question: "What is lutetium?",
+        answer_short: "The last lanthanide -- the hardest, heaviest and one of the least abundant rare earths, silvery-white and corrosion-resistant. Discovered independently in 1907 and named for Lutetia, the ancient name of Paris.",
+        answer: "Lutetium, a canon rare-earth element. As the last lanthanide in the periodic table, lutetium is the hardest, heaviest, and one of the least abundant of the rare earths -- silvery-white and corrosion-resistant. It was discovered in 1907, independently, by the Austrian mineralogist Carl Auer von Welsbach and the French scientist Georges Urbain, and named for Lutetia, the ancient name of Paris.",
+        verbatim: "As with most of the other rare earth metals, lutetium\nis silvery-white and corrosion-resistant. As the last lanthanide\nin the periodic table, it is the hardest and heaviest rare earth\nelement.\n\nLutetium is one of the least abundant of the rare\nearth elements. It was discovered in 1907 by the Austrian\nmineralogist Baron Carl Auer von Welsbach and the French\nscientist Georges Urbain as an impurity in a mineral sample\nthought to contain ytterbium.",
+        page: 168,
+        book_id: "immortality",
+        topics: [
+          "lutetium",
+          "rare-earth",
+          "lanthanide"
         ]
       },
       {
@@ -61246,6 +61773,23 @@ deaths, blood clots, sterility`,
           "water-filtration",
           "home-environment",
           "toxins"
+        ]
+      },
+      {
+        id: "WAL-CLM-RARE-000112",
+        subject: "rare_earth_elements",
+        also_about: [],
+        facet: "uses",
+        question: "Does cerium have a medical use?",
+        answer_short: "Yes -- cerium (a rare earth that accumulates in bone) is used as cerium nitrate, a topical disinfectant for severe burn victims.",
+        answer: "Wallach notes that cerium \u2014 a Rare Earth element that accumulates in bone \u2014 has a medical use: cerium nitrate is used as a topical disinfectant for severe burn victims.",
+        verbatim: "Cerium nitrate is used as a topical disinfectant for severe burn victims.",
+        page: 304,
+        book_id: "rare-earths",
+        topics: [
+          "cerium",
+          "rare-earth",
+          "burns"
         ]
       }
     ]
