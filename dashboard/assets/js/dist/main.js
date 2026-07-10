@@ -56284,7 +56284,17 @@ Doctrine correction (same session, purged to zero): the invented "newest-book-on
 
 Verification: search_index_derive.py --check VALID; node tools/build.mjs OK; PYTHONUTF8=1 python tools/invariants.py = 53/53 (0 new red); node tools/render_probe_search.js PASS (0 page errors, birth_defects card gone, pregnancy_birth=9, homosexuality=6, Simon LeVay confirmed in the derived index).
 
-Deferred (not blockers): SEAL the 2 search source files (now due \u2014 migration complete); cross-book homo/intersex capture (RARE Ch7 + DDDL + IMMORT-020); more Quackbusters/medical-freedom material as mining continues; resume search-first mining from Immortality Mn-Manganese.` }];
+Deferred (not blockers): SEAL the 2 search source files (now due \u2014 migration complete); cross-book homo/intersex capture (RARE Ch7 + DDDL + IMMORT-020); more Quackbusters/medical-freedom material as mining continues; resume search-first mining from Immortality Mn-Manganese.` }, { id: "lg_mrf8hd5f_cqnwm3", ts: "2026-07-10T12:52:52.947622-05:00", surface: "redesign", kind: "milestone", summary: "Locked the UI-redesign DEMO-PHASE blueprint (chronicle/entity-page-redesign-blueprint.md) so the reasoning survives across sessions: D1 (Essential) + D2 (Condition) signed off; ONE unified entity-page format for every subject; D3-D5 + the master blueprint come next.", detail: `After signing off the first two redesign demos -- the Calcium essential page and the Osteoporosis condition page -- Luneth asked to lock a demo-phase blueprint so nothing about the design reasoning is lost between sessions. The master blueprint stays deferred until all demos are built and refined ("no blueprint quite yet until we get all our demos right"); this is the durable bridge.
+
+TECHNICAL RECORD
+
+NEW chronicle/entity-page-redesign-blueprint.md captures: the problem (Search delightful, the rest an ignorable wall); the reframe (it's presentation-format + curation, not Search-vs-drawer); the mental model (one content layer, one presentation unit = the entity page, three access modes = Search front-door / curated browse / branching, two intents = explore vs help-now); the demo roadmap (D1 done, D2 done, D3 browse/nav shell, D4 Coverage, D5 Product, then the master blueprint, then Phase H build); the LOCKED colour language (teal science / orange positions-reserved / green what-to-do / amber signs / violet story / red cautions; deep-orange text not bright; opened cards keep their own family colour); full D1 + D2 specs with the refinement arc; the technical approach (self-contained prototypes reusing the app's real design-system.css + drawer-search.css + .sr-* classes + real data, gitignored temporary/); and section 10 open follow-ups.
+
+Prose containment (Luneth's explicit concern): the doc is prose-heavy by nature but lives in chronicle/ (never scanned by prose_contained) and the prototypes live in gitignored temporary/ -- neither touches a pillar fact-field, an assets/data artifact, or app code, so it can never poison the corpus, the gates, or the shipped app.
+
+chronicle/next-chunk.md rolled to a two-thread handoff: THREAD 1 (active) = the redesign demos, resume at D3; THREAD 2 (queued) = seal the 2 search source files, resume mining at Immortality Mn-Manganese, and the cross-book homosexuality/intersex + Quackbusters captures. Memory entity-page-redesign-demo-phase saved with a MEMORY.md index line.
+
+Verification: no app/pillar/artifact code touched (the demos are gitignored temporary/ prototypes); invariants 53/53, board green. The prototypes remain gitignored -- the blueprint is the durable, rebuildable record. Resume next session at D3.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
