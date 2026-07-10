@@ -107,6 +107,22 @@
         "eden/products/products.json"
       ],
       "note": "The runtime IDENTITY resolver map (nutrient label name -> canon slug) read by core/nutrient-resolver.ts (esbuild JSON import) so the Coverage matcher resolves through the SAME tables as the Python resolver (A2, 2026-07-08). GENERATED from nutrient_resolve: registry essential_aliases (nutrients.json) + canon mineral/amino display names (essentials-canon) + the resolver's FA_PATTERNS + stereo prefixes, so it cannot drift from resolve(). Deterministic (sorted keys, NO timestamp) so build_fn byte-compares to disk. write_data() ALSO emits the parity fixture sibling dashboard/assets/js/src/core/__fixtures__/nutrient-resolver-fixture.json (every distinct pillar (name,form) -> resolve()'s slug; gated by nutrient_resolver_parity, NOT the manifest). Composition-only (SS00.A): identity never sets a Wallach target."
+    },
+    {
+      "artifact": "dashboard/assets/data/search/search-index.json",
+      "generator": "eden/tools/search_index_derive.py",
+      "build_fn": "build_index",
+      "write_fn": "write_index",
+      "compare": "json",
+      "inputs": [
+        "eden/corpus/search-enrichment.json",
+        "eden/catalog/search-entities.json",
+        "eden/corpus/claims/",
+        "eden/corpus/essentials-canon.json",
+        "eden/corpus/books-meta.json",
+        "eden/catalog/conditions.json"
+      ],
+      "note": "The Search 'Ask-Wallach' index (state/search.ts esbuild JSON import). DERIVES from the two hand-authored SOURCE files -- search-enrichment.json (per-claim subject/facet/question/answer_short/also_about/topics) + the entity registry search-entities.json -- JOINED with the sealed claim (answer = claim_text minus the ' In his words:' tail, byte-faithful; verbatim; page; book_id; tier1_link from the claim's essentials/conditions/symptoms arrays) + books-meta (composed cite) + essentials-canon (canon entity display_name/symbol, so a canonical name is never hand-duplicated). build_index() hard-fails via validate() on a bad facet / subject not in registry-or-canon / unresolved also_about / missing authored field / empty derived answer-or-verbatim (validate() is shared with the search_index_wellformed invariant). Replaces the retired thin-slice drafts (mercury-slice.json + the hand search-entities.json under assets/data/search). Deterministic (sorted) so build_fn byte-compares to disk. G-7 entity-by-entity build: mercury (13) + calcium (8) are the first two entities."
     }
   ],
   "_accounted_purpose": "The COMPLETENESS half of R1 (crack #1 fix, 2026-07-06). derived_artifacts_fresh proves the `artifacts` above are fresh; it does NOT prove the list is complete. The data_artifacts_accounted invariant requires EVERY dashboard/assets/data/*.json to appear either in `artifacts` (derived + freshness-gated) or here in `accounted` (hand-authored or gated by a dedicated invariant), each with a disposition + reason. A data file in neither list is RED -- no silently-added hand-maintained artifact can ship. disposition = hand_authored | externally_gated.",
@@ -155,16 +171,6 @@
       "file": "dashboard/assets/data/fatty-acid-clarity-data.json",
       "disposition": "hand_authored",
       "reason": "Designated CLARITY prose store for the omega fatty-acid explainer alert (views/knowledge.ts deep-dive). GENERAL reference, clearly marked non-Wallach (SS00.A-safe) -- original prose, not a pillar projection, no generator. Added 2026-07-08 alongside the Omega-9 label correction (the source graphic mislabeled Omega-9 as 'Arachidonic'). prose in the `description` field (a prose-home key); not yet on the prose_contained clean surface (WISH, like the other hand stores)."
-    },
-    {
-      "file": "dashboard/assets/data/search/mercury-slice.json",
-      "disposition": "hand_authored",
-      "reason": "THIN-SLICE DRAFT (2026-07-09) -- Immortality 13 mercury claims de-blobbed into the faceted Search template (subject/facet/question/answer_short/answer/verbatim/topics), read by views/search.ts for the Search visual-reference sign-off. verbatim+answer are byte-faithful from the sealed corpus; the rest is authored. In an assets/data/search/ subdir so the FLAT accounting glob does not require it -- registered here anyway for honesty. REPLACED by the derived, sharded search index (future search_index_fresh gate) once the format is locked; not hand-maintained long-term."
-    },
-    {
-      "file": "dashboard/assets/data/search/search-entities.json",
-      "disposition": "hand_authored",
-      "reason": "THIN-SLICE DRAFT entity registry (Mercury only) for the Search visual-reference; related[] reuse canon/catalog slugs. Final home = eden/catalog/search-entities.json (sealed, curated) after format sign-off; superseded by that + a future search_entity_resolves gate."
     }
   ]
 }

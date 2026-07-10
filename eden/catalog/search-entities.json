@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "_note": "SOURCE (hand-authored) entity registry for Search (blueprint §4B). Non-canon entities carry display_name/type/symbol here. Canon entities set canon_ref:true and OMIT display_name/symbol — the derive pulls those from eden/corpus/essentials-canon.json so a canonical name is never hand-duplicated (no_hand_duplicated_canonical). synonyms power retrieval; related are soft cross-link chips. Grows one entity at a time as we author.",
+  "entities": {
+    "mercury": {
+      "display_name": "Mercury",
+      "type": "element",
+      "symbol": "Hg",
+      "synonyms": [
+        "quicksilver",
+        "hg",
+        "hydrargyrum"
+      ],
+      "related": [
+        "selenium",
+        "mercury_poisoning",
+        "minamata_disease"
+      ]
+    },
+    "vaccines": {
+      "display_name": "Vaccines",
+      "type": "topic",
+      "synonyms": [
+        "vaccine",
+        "vaccination",
+        "immunization",
+        "thimerosal"
+      ],
+      "related": [
+        "mercury",
+        "autism"
+      ]
+    },
+    "calcium": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "ca"
+      ],
+      "related": [
+        "magnesium",
+        "phosphorus",
+        "osteoporosis",
+        "vitamin-d"
+      ]
+    }
+  }
+}

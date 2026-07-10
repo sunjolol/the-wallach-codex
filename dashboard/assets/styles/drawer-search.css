@@ -1,13 +1,14 @@
 /* ═══════════════════════════════════════════════════════════════════════════
  * drawer-search.css — the Search drawer ("Ask-Wallach"), sr-* namespace
  * ───────────────────────────────────────────────────────────────────────────
- * THIN-SLICE (2026-07-09): self-contained chrome + content for the Mercury search
- * visual-reference. Every rule is rooted at #drawer-search-mount so nothing leaks
- * onto another surface (Sever-Safety). Deliberately duplicates the drawer chrome
- * (panel/head/search/body/footer) rather than sharing drawer-shared.css, so this
- * throwaway-until-signed-off slice can be reshaped freely; once the format is locked
- * the shared chrome can be refactored out. Tokens come from design-system.css (sealed)
- * + workspace-coverage.css (--ds-font-display-interface). Loaded last in dashboard.html.
+ * The offline "Ask-Wallach" surface over the DERIVED search index (search-index.json).
+ * Every rule is rooted at #drawer-search-mount so nothing leaks onto another surface
+ * (Sever-Safety). Deliberately duplicates the drawer chrome (panel/head/search/body/footer)
+ * rather than sharing drawer-shared.css, so the format can still be reshaped freely while the
+ * entity-by-entity build proceeds; once locked the shared chrome can be refactored out. Three
+ * render modes: browse LANDING (entity cards) · ENTITY page (faceted FAQ) · ASK card. Tokens
+ * from design-system.css (sealed) + workspace-coverage.css (--ds-font-display-interface).
+ * Loaded last in dashboard.html.
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 /* ─── OVERLAY CONTAINER + PANEL ───────────────────────────────────────────── */
@@ -17,7 +18,7 @@
   top: 0;
   bottom: 0;
   left: 220px;
-  width: 540px;
+  width: 700px;
   max-width: calc(100vw - 220px);
   background: var(--ds-paper);
   border-right: 1px solid var(--ds-rule);
@@ -227,7 +228,19 @@
 }
 
 /* ─── FACET SECTIONS (collapsible) ─────────────────────────────────────────── */
-#drawer-search-mount .sr-facet { border-bottom: 1px solid var(--ds-rule-soft); }
+#drawer-search-mount .sr-facet { --sr-facet-accent: var(--ds-ink-soft); border-bottom: 1px solid var(--ds-rule-soft); }
+/* Facet color-coding (Search enrichment, 2026-07-09): WARNINGS reads in caution amber so a poison
+   entity flags itself right after BASICS; the science facets tech-blue, Wallach's positions
+   accent-orange, protocol green. One --sr-facet-accent var drives the marker + count pill (+ the
+   amber warning label) so entity pages gain visual variety instead of reading repetitively. */
+#drawer-search-mount .sr-facet[data-facet="warning"] { --sr-facet-accent: var(--ds-status-warn); }
+#drawer-search-mount .sr-facet[data-facet="protocol"] { --sr-facet-accent: var(--ds-status-ok); }
+#drawer-search-mount .sr-facet[data-facet="stance"],
+#drawer-search-mount .sr-facet[data-facet="big_question"] { --sr-facet-accent: var(--ds-accent); }
+#drawer-search-mount .sr-facet[data-facet="mechanism"],
+#drawer-search-mount .sr-facet[data-facet="physiology"],
+#drawer-search-mount .sr-facet[data-facet="sources"] { --sr-facet-accent: var(--ds-tech); }
+#drawer-search-mount .sr-facet[data-facet="warning"] .sr-facet__label { color: var(--ds-status-warn); }
 #drawer-search-mount .sr-facet__head {
   display: flex;
   align-items: center;
@@ -242,7 +255,7 @@
   content: '▸';
   font-family: var(--ds-font-mono);
   font-size: var(--ds-text-xs);
-  color: var(--ds-accent);
+  color: var(--sr-facet-accent);
   transition: transform var(--ds-motion-fast) var(--ds-ease-out);
 }
 #drawer-search-mount .sr-facet[open] > .sr-facet__head::before { transform: rotate(90deg); }
@@ -258,9 +271,9 @@
 #drawer-search-mount .sr-facet__count {
   font-family: var(--ds-font-mono);
   font-size: var(--ds-text-micro);
-  color: var(--ds-accent);
+  color: var(--sr-facet-accent);
   background: var(--ds-paper-deep);
-  border: 1px solid var(--ds-rule-soft);
+  border: 1px solid var(--sr-facet-accent);
   border-radius: var(--ds-radius-xs);
   padding: 1px 7px;
 }
@@ -323,7 +336,7 @@
   transition: transform var(--ds-motion-fast) var(--ds-ease-out);
 }
 #drawer-search-mount .sr-claim[open] .sr-claim__chev { transform: rotate(90deg); color: var(--ds-accent); }
-#drawer-search-mount .sr-claim__body { padding: 0 var(--ds-space-3) var(--ds-space-3) calc(20px + var(--ds-space-3) + var(--ds-space-3)); }
+#drawer-search-mount .sr-claim__body { padding: 0 calc(var(--ds-space-3) + 20px) var(--ds-space-3) calc(20px + var(--ds-space-3) + var(--ds-space-3)); }
 #drawer-search-mount .sr-claim__short {
   font-family: var(--ds-font-sans);
   font-size: var(--ds-text-sm);
@@ -501,3 +514,80 @@
 }
 #drawer-search-mount .sr-action:hover { border-color: var(--ds-accent); color: var(--ds-accent-deep); }
 #drawer-search-mount .sr-action__glyph { font-family: var(--ds-font-mono); color: var(--ds-tech); }
+
+/* ─── BROWSE LANDING (entity picker — the multi-entity home) ────────────────── */
+#drawer-search-mount .sr-landing { display: flex; flex-direction: column; gap: var(--ds-space-3); }
+#drawer-search-mount .sr-landing__eyebrow {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  color: var(--ds-ink-faint);
+  margin-bottom: var(--ds-space-2);
+}
+#drawer-search-mount .sr-landing__grid { display: flex; flex-direction: column; gap: var(--ds-space-3); }
+#drawer-search-mount .sr-ent-card {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-4);
+  width: 100%;
+  text-align: left;
+  padding: var(--ds-space-3) var(--ds-space-4);
+  background: var(--ds-paper);
+  border: 1px solid var(--ds-rule-soft);
+  border-radius: var(--ds-radius-md);
+  cursor: pointer;
+  transition: border-color var(--ds-motion-fast) var(--ds-ease-out), background var(--ds-motion-fast) var(--ds-ease-out), transform var(--ds-motion-fast) var(--ds-ease-out);
+}
+#drawer-search-mount .sr-ent-card:hover { border-color: var(--ds-accent); background: var(--ds-paper-deep); transform: translateX(2px); }
+#drawer-search-mount .sr-ent-card__sym {
+  flex: 0 0 auto;
+  width: 46px; height: 46px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--ds-font-display-interface);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ds-accent-deep);
+  background: var(--ds-paper-deep);
+  border: 1px solid var(--ds-accent);
+  border-radius: var(--ds-radius-sm);
+}
+#drawer-search-mount .sr-ent-card__idblock { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+#drawer-search-mount .sr-ent-card__name {
+  font-family: var(--ds-font-display-interface);
+  font-size: var(--ds-text-lg);
+  font-weight: 700;
+  color: var(--ds-ink);
+  line-height: 1;
+}
+#drawer-search-mount .sr-ent-card__meta {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+}
+#drawer-search-mount .sr-ent-card__chev { flex: 0 0 auto; font-family: var(--ds-font-mono); color: var(--ds-ink-faint); font-size: var(--ds-text-lg); }
+#drawer-search-mount .sr-ent-card:hover .sr-ent-card__chev { color: var(--ds-accent); }
+
+/* ─── ENTITY BACK BUTTON (breadcrumb to the browse landing) ─────────────────── */
+#drawer-search-mount .sr-entity__back {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--ds-rule);
+  color: var(--ds-ink-soft);
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: var(--ds-radius-xs);
+  cursor: pointer;
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+}
+#drawer-search-mount .sr-entity__back:hover { border-color: var(--ds-accent); color: var(--ds-accent-deep); }
+
+/* ─── RELATED (clickable cross-link variant — a related entity that IS registered) ── */
+#drawer-search-mount .sr-related__chip--link { cursor: pointer; background: transparent; transition: all var(--ds-motion-fast) var(--ds-ease-out); }
+#drawer-search-mount .sr-related__chip--link:hover { border-color: var(--ds-accent); color: var(--ds-accent-deep); }

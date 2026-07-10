@@ -1,13 +1,13 @@
-// tools/render_probe_search.js — Search drawer (Ask-Wallach) thin-slice, Mercury.
+// tools/render_probe_search.js — Search drawer (Ask-Wallach), multi-entity derived index.
 //
 // Usage: node tools/render_probe_search.js   (exit 0 = PASS, non-zero = FAIL)
 //
-// Verifies the Search drawer end-to-end for the Mercury visual-reference slice:
-// the rail "Search" item (+ bare "S" + the topbar command bar) toggles the overlay;
-// the default view is the Mercury ENTITY PAGE — a faceted header + collapsible facet
-// sections listing all 13 claims as FAQ rows that carry answer/verbatim/cite; a typed
-// QUESTION resolves to a single ASK card (question + Wallach verbatim + composed cite +
-// "more on" back to the entity page). Requires puppeteer.
+// Verifies the Search drawer end-to-end over the DERIVED search index (search-index.json):
+// the rail "Search" item (+ bare "S" + topbar Ask-Wallach button) toggles the overlay; the
+// default view is the BROWSE LANDING (one card per registered entity); clicking an entity
+// card opens its ENTITY PAGE (faceted FAQ header + collapsible facet sections listing every
+// claim as an answer/verbatim/cite row); a typed QUESTION resolves to one ASK card. Drives
+// BOTH seeded entities — Calcium (the newly authored second entity) and Mercury. Requires puppeteer.
 
 const path = require('path');
 const REPO = path.resolve(__dirname, '..');
@@ -38,7 +38,6 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       hasSearchbar: el ? el.querySelector('.sr-searchbar__input') !== null : null,
     };
   });
-
   const setQuery = async (q) => {
     await page.evaluate((val) => {
       const i = document.querySelector('#drawer-search-mount .sr-searchbar__input');
@@ -46,39 +45,56 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     }, q);
     await wait(150);
   };
-
-  // 1. Closed at boot.
-  const boot = await drawerState();
-
-  // 2. Click the Search rail item -> opens the entity page for Mercury.
-  await page.evaluate(() => document.querySelector('[data-rail-nav="search"]')?.click());
-  await wait(300);
-  const afterClick = await drawerState();
-
-  const entity = await page.evaluate(() => {
+  const readEntity = () => page.evaluate(() => {
     const root = document.getElementById('drawer-search-mount');
     const name = root?.querySelector('.sr-entity__name')?.textContent?.trim() || '';
     const meta = root?.querySelector('.sr-entity__meta')?.textContent?.trim() || '';
     const facets = root ? [...root.querySelectorAll('.sr-facet__label')].map(e => e.textContent.trim()) : [];
     const claims = root ? [...root.querySelectorAll('.sr-claim')] : [];
     const first = claims[0] || null;
-    const related = root ? root.querySelectorAll('.sr-related__chip').length : 0;
-    // A dual-homed claim (selenium antidote) must render its tier-1 chips.
-    const tier1 = root ? root.querySelectorAll('.sr-t1').length : 0;
     return {
-      name, meta,
-      facetCount: facets.length,
-      facets,
-      claimCount: claims.length,
+      name, meta, facets, facetCount: facets.length, claimCount: claims.length,
       firstQ: first ? (first.querySelector('.sr-claim__q')?.textContent || '').length > 0 : false,
       firstPreview: first ? (first.querySelector('.sr-claim__preview')?.textContent || '').length > 0 : false,
       firstVerbatim: first ? (first.querySelector('.sr-claim__verbatim')?.textContent || '').length > 0 : false,
       firstCite: first ? /IMMORTALITY/i.test(first.querySelector('.sr-claim__cite')?.textContent || '') : false,
-      related, tier1,
+      related: root ? root.querySelectorAll('.sr-related__chip').length : 0,
+      tier1: root ? root.querySelectorAll('.sr-t1').length : 0,
     };
   });
 
-  // 3. Ask path — a typed QUESTION resolves to ONE Ask card (the vaccine/autism claim).
+  // 1. Closed at boot.
+  const boot = await drawerState();
+
+  // 2. Rail "Search" opens the drawer -> the BROWSE LANDING (entity cards).
+  await page.evaluate(() => document.querySelector('[data-rail-nav="search"]')?.click());
+  await wait(300);
+  const afterClick = await drawerState();
+  const landing = await page.evaluate(() => {
+    const root = document.getElementById('drawer-search-mount');
+    const cards = root ? [...root.querySelectorAll('.sr-ent-card')] : [];
+    const slugs = cards.map(c => c.getAttribute('data-sr-entity'));
+    return { cardCount: cards.length, slugs, hasCalcium: slugs.includes('calcium'), hasMercury: slugs.includes('mercury') };
+  });
+
+  // 3. Click the CALCIUM card -> Calcium entity page (the newly authored second entity).
+  await page.evaluate(() => document.querySelector('#drawer-search-mount [data-sr-entity="calcium"]')?.click());
+  await wait(250);
+  const calcium = await readEntity();
+
+  // 3b. Back button -> the landing again.
+  await page.evaluate(() => document.querySelector('#drawer-search-mount [data-sr-action="home"]')?.click());
+  await wait(200);
+  const afterBack = await page.evaluate(() => {
+    const root = document.getElementById('drawer-search-mount');
+    return { landingShown: root?.querySelector('.sr-landing') !== null, entityGone: root?.querySelector('.sr-entity') === null };
+  });
+
+  // 4. Subject synonym query -> Mercury entity page.
+  await setQuery('quicksilver');
+  const mercury = await readEntity();
+
+  // 5. Ask path — a typed QUESTION resolves to ONE Ask card (the vaccine/autism claim).
   await setQuery('do vaccines cause autism');
   const ask = await page.evaluate(() => {
     const root = document.getElementById('drawer-search-mount');
@@ -88,11 +104,11 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       q: card ? (card.querySelector('.sr-ask__q')?.textContent || '') : '',
       hasVerbatim: card ? (card.querySelector('.sr-claim__verbatim')?.textContent || '').length > 0 : false,
       hasCite: card ? /IMMORTALITY/i.test(card.querySelector('.sr-claim__cite')?.textContent || '') : false,
-      hasMore: card ? card.querySelector('.sr-ask__more[data-sr-more]') !== null : false,
+      hasMore: card ? card.querySelector('.sr-ask__more[data-sr-entity]') !== null : false,
     };
   });
 
-  // 3b. "MORE ON MERCURY" returns to the entity page.
+  // 5b. "MORE ON MERCURY" returns to the entity page.
   await page.evaluate(() => document.querySelector('#drawer-search-mount .sr-ask__more')?.click());
   await wait(200);
   const afterMore = await page.evaluate(() => {
@@ -100,57 +116,54 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     return { entityShown: root?.querySelector('.sr-entity') !== null, askGone: root?.querySelector('.sr-ask') === null };
   });
 
-  // 4. Subject query -> entity page (synonym/name hit).
-  await setQuery('quicksilver');
-  const synonymHit = await page.evaluate(() => {
-    const root = document.getElementById('drawer-search-mount');
-    return { name: root?.querySelector('.sr-entity__name')?.textContent?.trim() || '' };
-  });
-
-  // 4b. A gibberish query falls back to the Mercury browse with a no-match note.
+  // 6. A gibberish query falls back to the LANDING with a no-match note.
   await setQuery('zzzznotathing');
   const noMatch = await page.evaluate(() => {
     const root = document.getElementById('drawer-search-mount');
-    return { hasNote: root?.querySelector('.sr-note') !== null, entityShown: root?.querySelector('.sr-entity') !== null };
+    return { hasNote: root?.querySelector('.sr-note') !== null, landingShown: root?.querySelector('.sr-landing') !== null };
   });
 
-  // 5. Esc closes; bare "S" reopens; topbar command bar also opens it.
+  // 7. Esc closes; bare "S" reopens; topbar Ask-Wallach button also opens it.
   await page.keyboard.press('Escape');
   await wait(200);
   const afterEsc = await drawerState();
-
   await page.keyboard.press('KeyS');
   await wait(200);
   const afterS = await drawerState();
-
   await page.keyboard.press('Escape');
   await wait(150);
   await page.evaluate(() => document.querySelector('.topbar__ask')?.click());
   await wait(200);
   const afterTopbar = await drawerState();
 
-  const out = { boot, afterClick, entity, ask, afterMore, synonymHit, noMatch, afterEsc, afterS, afterTopbar };
+  const out = { boot, afterClick, landing, calcium, afterBack, mercury, ask, afterMore, noMatch, afterEsc, afterS, afterTopbar };
   console.log('SEARCH', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
   const checks = [
     ['drawer closed at boot', boot.open === false],
     ['rail Search opens the drawer', afterClick.open === true && afterClick.hasHead === true && afterClick.hasSearchbar === true],
-    ['entity page: Mercury header', /MERCURY/i.test(entity.name)],
-    ['entity page: type + count meta (ELEMENT · 13 entries)', /ELEMENT/i.test(entity.meta) && /13/.test(entity.meta)],
-    ['entity page: multiple facet sections (>= 5)', entity.facetCount >= 5],
-    ['entity page: all 13 claims listed as FAQ rows', entity.claimCount === 13],
-    ['claim row: question + preview render', entity.firstQ === true && entity.firstPreview === true],
-    ['claim row: verbatim + composed cite (IMMORTALITY)', entity.firstVerbatim === true && entity.firstCite === true],
-    ['dual-homed claim shows tier-1 chips', entity.tier1 >= 1],
-    ['entity page: related chips render', entity.related >= 1],
+    ['landing lists >= 2 entity cards', landing.cardCount >= 2],
+    ['landing has both Calcium + Mercury cards', landing.hasCalcium === true && landing.hasMercury === true],
+    ['calcium card -> Calcium entity page', /CALCIUM/i.test(calcium.name)],
+    ['calcium meta: NUTRIENT · 8 entries', /NUTRIENT/i.test(calcium.meta) && /8/.test(calcium.meta)],
+    ['calcium: >= 4 facet sections', calcium.facetCount >= 4],
+    ['calcium: "IN THE BODY" + "HOW IT WORKS" sections present', calcium.facets.includes('IN THE BODY') && calcium.facets.includes('HOW IT WORKS')],
+    ['calcium: all 8 claims listed as FAQ rows', calcium.claimCount === 8],
+    ['calcium claim row: question + preview render', calcium.firstQ === true && calcium.firstPreview === true],
+    ['calcium claim row: verbatim + composed cite (IMMORTALITY)', calcium.firstVerbatim === true && calcium.firstCite === true],
+    ['entity back button -> browse landing', afterBack.landingShown === true && afterBack.entityGone === true],
+    ['synonym query "quicksilver" -> Mercury entity', /MERCURY/i.test(mercury.name)],
+    ['mercury: all 13 claims as FAQ rows', mercury.claimCount === 13],
+    ['mercury: multiple facet sections (>= 5)', mercury.facetCount >= 5],
+    ['mercury: dual-homed claim shows tier-1 chips', mercury.tier1 >= 1],
+    ['mercury: related chips render', mercury.related >= 1],
     ['ask: a question resolves to one Ask card', ask.shown === true],
     ['ask: card shows the vaccine/autism question', /vaccine/i.test(ask.q)],
     ['ask: card carries Wallach verbatim + composed cite', ask.hasVerbatim === true && ask.hasCite === true],
     ['ask: "more on" back-link present', ask.hasMore === true],
     ['ask: "more on" returns to the entity page', afterMore.entityShown === true && afterMore.askGone === true],
-    ['subject synonym query -> Mercury entity (quicksilver)', /MERCURY/i.test(synonymHit.name)],
-    ['no-match query -> gentle note + Mercury browse fallback', noMatch.hasNote === true && noMatch.entityShown === true],
+    ['no-match query -> gentle note + browse landing', noMatch.hasNote === true && noMatch.landingShown === true],
     ['Esc closes drawer', afterEsc.open === false],
     ['bare S reopens drawer', afterS.open === true],
     ['topbar Ask Wallach button opens the Search drawer', afterTopbar.open === true],
@@ -159,5 +172,5 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   const failed = checks.filter(([, ok]) => !ok).map(([n]) => n);
   await browser.close();
   if (failed.length) { console.log('FAIL', JSON.stringify(failed)); process.exit(1); }
-  console.log('PASS · Search drawer wired · Mercury entity page (faceted FAQ + verbatim + cite) · Ask card · rail/S/topbar entries');
+  console.log('PASS · Search drawer · browse landing (Calcium + Mercury) · Calcium + Mercury entity pages (faceted FAQ + verbatim + cite) · Ask card · rail/S/topbar entries');
 })().catch(e => { console.log('PROBE_ERR', e.message); process.exit(1); });

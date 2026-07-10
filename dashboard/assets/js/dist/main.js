@@ -12036,10 +12036,10 @@
     //   }) as any;
     //   return merged;
     // }
-    catchall(index2) {
+    catchall(index3) {
       return new _ZodObject({
         ...this._def,
-        catchall: index2
+        catchall: index3
       });
     }
     pick(mask) {
@@ -12357,9 +12357,9 @@
         return { valid: false };
       }
       const newArray = [];
-      for (let index2 = 0; index2 < a.length; index2++) {
-        const itemA = a[index2];
-        const itemB = b[index2];
+      for (let index3 = 0; index3 < a.length; index3++) {
+        const itemA = a[index3];
+        const itemB = b[index3];
         const sharedValue = mergeValues(itemA, itemB);
         if (!sharedValue.valid) {
           return { valid: false };
@@ -12565,10 +12565,10 @@
       }
       const keyType = this._def.keyType;
       const valueType = this._def.valueType;
-      const pairs = [...ctx.data.entries()].map(([key, value], index2) => {
+      const pairs = [...ctx.data.entries()].map(([key, value], index3) => {
         return {
-          key: keyType._parse(new ParseInputLazyPath(ctx, key, ctx.path, [index2, "key"])),
-          value: valueType._parse(new ParseInputLazyPath(ctx, value, ctx.path, [index2, "value"]))
+          key: keyType._parse(new ParseInputLazyPath(ctx, key, ctx.path, [index3, "key"])),
+          value: valueType._parse(new ParseInputLazyPath(ctx, value, ctx.path, [index3, "value"]))
         };
       });
       if (ctx.common.async) {
@@ -13973,6 +13973,7 @@
   // assets/js/src/core/schemas/search.ts
   var SEARCH_FACETS = [
     "basics",
+    "warning",
     "discovery",
     "etymology",
     "physiology",
@@ -13981,7 +13982,6 @@
     "uses",
     "stance",
     "protocol",
-    "warning",
     "history",
     "big_question",
     "biography"
@@ -14022,30 +14022,31 @@
     answer: external_exports.string(),
     /** Wallach's exact words (byte-faithful; the separate verbatim layer). */
     verbatim: external_exports.string(),
-    /** Source page in the book (composed into the display cite with the slice's book meta — never hand-typed). */
+    /** Source page in the book (composed into the display cite with the index's book meta — never hand-typed). */
     page: external_exports.number().nullable(),
+    /** The book this claim is from (→ the index `books` map for the composed cite). */
+    book_id: external_exports.string().nullable(),
     /** Routing handles for retrieval (search-topic:* space). */
     topics: external_exports.array(external_exports.string()),
     tier1_link: Tier1LinkSchema.optional()
   }).passthrough();
-  var SearchBookSchema = external_exports.object({
-    book_id: external_exports.string(),
+  var SearchBookMetaSchema = external_exports.object({
     title: external_exports.string(),
     year: external_exports.number()
-  }).passthrough();
-  var SearchSliceSchema = external_exports.object({
-    book: SearchBookSchema,
-    claims: external_exports.array(SearchClaimSchema)
   }).passthrough();
   var SearchEntitySchema = external_exports.object({
     display_name: external_exports.string(),
     type: external_exports.enum(["element", "nutrient", "substance", "condition", "concept", "topic", "person", "event"]),
     symbol: external_exports.string().optional(),
     synonyms: external_exports.array(external_exports.string()),
-    related: external_exports.array(external_exports.string())
+    related: external_exports.array(external_exports.string()),
+    /** Derived count of claims whose subject is this entity (index-time, for the header readout). */
+    claim_count: external_exports.number()
   }).passthrough();
-  var SearchEntitiesSchema = external_exports.object({
-    entities: external_exports.record(external_exports.string(), SearchEntitySchema)
+  var SearchIndexSchema = external_exports.object({
+    books: external_exports.record(external_exports.string(), SearchBookMetaSchema),
+    entities: external_exports.record(external_exports.string(), SearchEntitySchema),
+    claims: external_exports.array(SearchClaimSchema)
   }).passthrough();
 
   // assets/js/src/core/nutrient-resolver.ts
@@ -56165,7 +56166,19 @@ TECHNICAL. Draft-first (nothing sealed touched): dashboard/assets/data/search/{m
 
 VERIFIED: build OK (tsc + esbuild); invariants 52/52 green (data_artifacts_accounted absorbs the 2 new accounted entries; no sealed data touched so corpus/catalog/products integrity untouched); render_probe_search PASS (Mercury entity 7 facets / 13 claims, Ask card carries verbatim + composed IMMORTALITY cite, dual-home tier-1 chips, and the rail item + bare-S + topbar button all open it); 0 page errors; the topbar button visually verified (green default, orange one-class pivot, single-line label) via headless screenshots. NO mining, NO seal -- draft artifacts only.
 
-DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with its topic label (e.g. "Mercury -- the basics.") -- offered to strip since answer_short already carries it; facet label wording/order + drawer-vs-full-page left for his steer. THEN the real build: mass-migrate the 186 existing search claims to the template + the derived sharded search index + the real gates (search_claim_wellformed / facet_in_taxonomy / search_entity_resolves / search_index_fresh) + a sealed eden/catalog/search-entities.json, THEN resume mining search-first. Mining remains paused at Immortality Mn-Manganese (~char 309953).` }];
+DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with its topic label (e.g. "Mercury -- the basics.") -- offered to strip since answer_short already carries it; facet label wording/order + drawer-vs-full-page left for his steer. THEN the real build: mass-migrate the 186 existing search claims to the template + the derived sharded search index + the real gates (search_claim_wellformed / facet_in_taxonomy / search_entity_resolves / search_index_fresh) + a sealed eden/catalog/search-entities.json, THEN resume mining search-first. Mining remains paused at Immortality Mn-Manganese (~char 309953).` }, { id: "lg_mreazbb1_k4e62w", ts: "2026-07-09T21:15:03.421132-05:00", surface: "search", kind: "round-close", summary: "Search G-7: built the real enrichment->derived Search index (Luneth's chosen architecture) + authored Calcium as the 2nd entity to Mercury quality; WARNINGS now flag poisons in amber right after BASICS, drawer wider with color-coded facets", detail: `The Mercury demo Luneth signed off on is now the real machine. The words a reader sees are still Wallach's exact sentences from the sealed books, but the "wrapper" fields -- which plain-language question each claim answers, which category (facet) it belongs to, its one-line summary -- now live in ONE hand-edited file, and the actual Search page is GENERATED from that file joined with the sealed corpus. So the page can never silently drift from the books. I authored a whole second entity, Calcium (Wallach's flagship mineral), to the same quality as Mercury, and made Luneth's two visual calls: a poison now flags itself (a WARNINGS section in caution-amber right after BASICS), and the panel is wider with gentle facet color-coding so pages don't all read the same.
+
+Architecture (the field-home + cadence Luneth chose: separate enrichment file, entity-by-entity with review). NEW SOURCE files (hand-authored, NOT sealed -- iterated per-entity with review): eden/corpus/search-enrichment.json (21 claims = 13 mercury re-homed byte-faithful from the signed-off slice + 8 calcium newly authored; carries ONLY the authored fields subject/also_about/facet/question/answer_short/topics) and eden/catalog/search-entities.json (entity registry: mercury full [element/Hg], vaccines [topic], calcium [canon_ref -> display_name+symbol pulled from essentials-canon at derive time, so a canonical name is never hand-duplicated). Everything a reader sees beyond those authored fields DERIVES from the sealed claim: answer = claim_text minus the " In his words:" verbatim tail (byte-faithful, lead label kept per Luneth), verbatim, page, tier1_link (from the claim's essentials/conditions/symptoms arrays), and the composed cite (from books-meta).
+
+NEW GENERATOR eden/tools/search_index_derive.py -- build_index()/write_index() per the manifest contract + a shared validate(); joins enrichment + claims + books-meta + canon/registry into dashboard/assets/data/search/search-index.json {books, entities, claims}. Registered in eden/derived/MANIFEST.json artifacts so derived_artifacts_fresh re-runs build_index() and byte-compares (R1 -- un-shippable if drifted); the two throwaway draft artifacts (mercury-slice.json + the hand search-entities.json under assets/data/search) were deleted and their accounted entries removed.
+
+NEW GATE search_index_wellformed (critical) -- delegates to validate(): every enriched claim has its authored fields, facet is in the closed taxonomy, subject resolves to registry-or-canon, every also_about resolves to registry/canon/condition, and the derived answer + sealed verbatim are non-empty; plus it cross-checks the TS schema SEARCH_FACETS equals the Python one (two surfaces, one truth). Negative test tools/test_search_index_wellformed.py drives validate() with tampered in-memory copies: 8/8 (greens on real data, reds on 7 poison classes -- bad facet, unresolved subject, unresolved also_about, empty field, ghost claim, canon_ref hand-storing a name, canon_ref not-in-canon).
+
+APP repoint: core/schemas/search.ts (added book_id + SearchIndexSchema; SearchEntity gains claim_count; facet taxonomy reorder -- warning moved to slot 2, right after basics), state/search.ts (reads the single derived index, multi-book composed cite, entityList() browse landing + indexTotals()), views/search.ts (new browse LANDING of entity cards + "< ALL" back-nav + data-facet on each section; the ask "more" + card clicks route through one data-sr-entity handler), drawer-search.css (drawer 540->700px; --sr-facet-accent color-coding: warning=amber, protocol=green, stance/big_question=accent-orange, mechanism/physiology/sources=tech-blue; amber warning label; +20px right padding on sr-claim__body so expanded text clears the chevron; header comment de-stale-d off "thin-slice"). render_probe_search.js updated to 27 checks driving BOTH Calcium and Mercury.
+
+DISCOVERY worth remembering: 6 of Mercury's 13 claims are NOT tagged search-only -- they are dual-home tier-1 claims (they map real operational conditions like mercury_poisoning / multiple_sclerosis and render in the Knowledge tabs too). That is intended (dual-home is allowed), and it means the true search corpus is LARGER than the 186 search-only figure -- dual-home tier-1 claims belong to search entities as well. The validator's initial "must be search-only" rule was wrong and was removed; the real tier-1 boundary runs the other direction (search-only must not leak INTO the operational tabs -- search_only_indices_excluded, already live).
+
+Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derived_artifacts_fresh now covers search-index.json; data_artifacts_accounted = 16 flat assets/data + 9 derived), render_probe_search 27/27 with 0 page errors, negative test 8/8. Visually verified via headless screenshots and reviewed by Luneth across two rounds: Calcium + Mercury entity pages, browse landing (2 entity cards), WARNINGS-in-amber right after BASICS, wider drawer, and the right-padding fix. NEXT = author the next entity (Hydrogen suggested -- the other rich Immortality A-Z element) to the same standard, entity-by-entity with per-entity review. Mining stays PAUSED at Immortality Mn-Manganese (~char 309953, kept on the list).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -57424,16 +57437,187 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
     };
   }
 
-  // assets/data/search/mercury-slice.json
-  var mercury_slice_default = {
+  // assets/data/search/search-index.json
+  var search_index_default = {
     schema_version: 1,
-    _note: "THIN-SLICE DRAFT (2026-07-09) for the Search visual-reference. Hand-authored de-blobbed restructure of Immortality's 13 sealed mercury claims into the faceted search template (subject/facet/question/answer_short/answer/verbatim/cite/topics). verbatim + answer are byte-faithful from the sealed corpus; the rest is authored. REPLACED post-format-signoff by the derived search index (search_index_fresh) built from the sealed claims; do NOT hand-maintain long-term.",
-    book: {
-      book_id: "immortality",
-      title: "Immortality",
-      year: 2008
+    _generated: "DERIVED by eden/tools/search_index_derive.py from the sealed pillars \u2014 do not hand-edit",
+    books: {
+      immortality: {
+        title: "Immortality",
+        year: 2008
+      }
+    },
+    entities: {
+      calcium: {
+        display_name: "Calcium",
+        type: "nutrient",
+        synonyms: [
+          "ca"
+        ],
+        related: [
+          "magnesium",
+          "phosphorus",
+          "osteoporosis",
+          "vitamin-d"
+        ],
+        claim_count: 8,
+        symbol: "Ca"
+      },
+      mercury: {
+        display_name: "Mercury",
+        type: "element",
+        synonyms: [
+          "quicksilver",
+          "hg",
+          "hydrargyrum"
+        ],
+        related: [
+          "selenium",
+          "mercury_poisoning",
+          "minamata_disease"
+        ],
+        claim_count: 13,
+        symbol: "Hg"
+      }
     },
     claims: [
+      {
+        id: "WAL-CLM-IMMORT-000062",
+        subject: "calcium",
+        also_about: [],
+        facet: "stance",
+        question: "How much calcium are humans designed to eat?",
+        answer_short: "Wallach argues we're built for Stone-Age intakes of 1,600\u20133,000 mg a day; modern Americans get a fraction \u2014 as little as 300 mg.",
+        answer: "Wallach argues humans are biologically designed to eat high-calcium diets. In the late Paleolithic (35,000\u201310,000 years ago), wild plant foods and game supplied about 1,600 mg of calcium a day at rest and 2,000\u20133,000 mg at the activity levels of hunting and labor. The agricultural revolution ~10,000 years ago narrowed the variety of foods and permanently lowered mineral intake \u2014 by the 20th century American adults took in only one-fifth to one-third as much, a median of 300\u2013508 mg/day for women and 680 mg/day for men (National Health & Nutrition Examination Survey II).",
+        verbatim: "The\nuncultivated food plants and wild game commonly available\nto Stone Age humans would supply 1600 mg of calcium at\nbasal energy intakes and between 2,000 and 3,000 mg of\ncalcium at the energy levels required to support hunting and\nwork.",
+        page: 117,
+        book_id: "immortality",
+        topics: [
+          "paleolithic-diet",
+          "calcium-intake",
+          "agriculture"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000065",
+        subject: "calcium",
+        also_about: [],
+        facet: "physiology",
+        question: "How much calcium is in your body, and where?",
+        answer_short: "Calcium is the body's most abundant mineral (~1\u20131.2 kg); 99% sits in the bones and teeth, and the last 1% works in blood and cells.",
+        answer: "Calcium is the most abundant mineral in the human body. The average man holds about 1,200 grams and the average woman about 1,000 grams \u2014 roughly 2% of adult body weight, and up to 39% of the body's total mineral reserves (the ash left after cremation). Ninety-nine percent of it sits in the bones and teeth; the remaining 1% circulates in blood, extracellular fluid and inside cells, where it acts as a cofactor and activator for numerous enzyme systems.",
+        verbatim: "Calcium is the most abundant mineral in the human\nbody. The average male has 1,200 grams and the average\nfemale has 1,000 grams. Calcium makes up two percent of the\nadult body weight (water makes up 65 to 75%). Calcium also\ncomposes up to 39% of the total mineral reserves (ash after\ncremation). Ninety-nine percent of body calcium is found in\nbones and teeth. The other one percent is found in the blood,\nextracellular fluids, and within cells where it is a cofactor and\nactivator for numerous enzyme systems.",
+        page: 119,
+        book_id: "immortality",
+        topics: [
+          "distribution",
+          "bone",
+          "body-content"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000066",
+        subject: "calcium",
+        also_about: [],
+        facet: "mechanism",
+        question: "How is calcium stored in your bones?",
+        answer_short: "As hydroxyapatite crystals on a protein 'bone matrix' \u2014 soak a bone in vinegar two weeks and the calcium leaches out, leaving the bendy scaffold.",
+        answer: 'In bone, calcium is stored as hydroxyapatite salts (calcium phosphate plus calcium carbonate) laid down in a crystal lattice bound to a protein scaffold called the "bone matrix." Wallach offers a simple kitchen demonstration of that matrix: soak a chicken "drumstick" bone in a quart of vinegar for two weeks and the acid leaches the calcium out, leaving the flexible protein framework behind.',
+        verbatim: "in a classic crystal structure bound to a protein framework\ncalled \u201Cbone matrix.\u201D\n\nTo extract the calcium from a bone and reveal the\nprotein matrix, put a chicken \u201Cdrumstick\u201D bone in a quart of\nvinegar for two weeks and the calcium will be leached out of\nthe bone leaving the protein matrix.",
+        page: 120,
+        book_id: "immortality",
+        topics: [
+          "bone-matrix",
+          "hydroxyapatite"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000067",
+        subject: "calcium",
+        also_about: [],
+        facet: "mechanism",
+        question: "What does calcium do besides build bone?",
+        answer_short: "It's a working cofactor: it releases ATP energy for muscle, drives blood clotting, moves signals across membranes, fires nerves and paces the heartbeat.",
+        answer: "Beyond its structural role, calcium is a working cofactor throughout the body. It is required to release energy from ATP (adenosine triphosphate) for muscle contraction, and it drives the blood-clotting cascade: ionized calcium triggers platelets to release thromboplastin and converts prothrombin to thrombin, which turns fibrinogen into fibrin \u2014 the protein web that traps red blood cells to form a clot. Calcium also governs transport across cell and organelle membranes, the release of neurotransmitters at synapses, the secretion and effects of hormones and enzymes, and the rate and strength of the heartbeat, muscle tone and nerve responsiveness.",
+        verbatim: "In addition to being a major structural mineral, Ca is also\nrequired as a cofactor for the release of energy from ATP for\nmuscular contraction, and blood clotting. In the blood clotting\nprocess, ionized Ca stimulates the release of thromboplastin\nfrom platelets and converts prothrombin to thrombin. Thrombin\nhelps to convert fibrinogen to fibrin, and fibrin is the protein\nweb that traps red blood cells to create blood clots.",
+        page: 120,
+        book_id: "immortality",
+        topics: [
+          "cofactor",
+          "blood-clotting",
+          "muscle",
+          "nerves"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000069",
+        subject: "calcium",
+        also_about: [],
+        facet: "mechanism",
+        question: "How does the body keep blood calcium steady?",
+        answer_short: "Two hormones \u2014 parathormone and calcitonin \u2014 hold serum calcium at 8.5\u201310.5 mg/dL, mostly by borrowing it from and returning it to bone.",
+        answer: "The body holds blood calcium within a tight range using two hormones. Parathormone (from the parathyroid glands) and calcitonin (from the thyroid) keep serum calcium at 8.5-10.5 mg/dL, largely by drawing on the calcium reserves in bone. Parathormone raises blood calcium \u2014 pulling it from bone, making the kidney retain more, and making the gut absorb more efficiently; when blood calcium climbs above 10.5 mg/dL from too much parathyroid activity, calcitonin reduces how much calcium is released from the bones.",
+        verbatim: "Under optimal conditions, parathormone secreted by\nthe parathyroid gland and calcitonin secreted by the thyroid\ngland, maintain a serum calcium of 8.5 to 10.5 mg% by drawing\non calcium reserves from the bones.",
+        page: 121,
+        book_id: "immortality",
+        topics: [
+          "homeostasis",
+          "parathyroid",
+          "calcitonin"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000070",
+        subject: "calcium",
+        also_about: [],
+        facet: "mechanism",
+        question: "What in the modern diet drains your calcium?",
+        answer_short: "Fiber, salt and soft-drink phosphate force calcium out of the body \u2014 the modern diet's calcium-to-phosphorus ratio simply can't be met by eating alone.",
+        answer: `Several common features of the modern diet quietly raise the body's calcium requirement \u2014 an increased calcium "cost." Overloading on fiber, salt and phosphates (soft drinks) all force more calcium out: urinary calcium loss rose from 96 mg to 148 mg per day when food was heavily salted, and doubling phosphate intake raised urinary calcium output by 50%. Wallach argues the industrialized diet is chronically calcium-poor and phosphorus-rich, so the ideal calcium-to-phosphorus (Ca:P) ratio of 2:1 is impossible to hit by eating alone (you would have to eat 25 pounds of broccoli for every 16 oz T-bone steak); the only practical route is to avoid high-phosphorus foods and supplement with plant-derived colloidal and chelated calcium.`,
+        verbatim: "Other nutrients that are commonly found in the\nAmerican diet can aggravate the national calcium deficiency\ncrisis. Diets rich with an overabundance of fiber, salt and\nphosphates (soft drinks) result in an increased calcium \u201Ccost.\u201D\nIn effect, these foods increase the dietary requirements for\ncalcium. Urinary calcium loss increased from 96 mg per day\nto 148 mg per day when food was excessively salted. As\n\n\n \n\nphosphate intake is doubled, the output of urinary calcium\nincreases by 50%.",
+        page: 118,
+        book_id: "immortality",
+        topics: [
+          "calcium-phosphorus-ratio",
+          "phosphorus",
+          "anti-nutrients",
+          "soft-drinks"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000074",
+        subject: "calcium",
+        also_about: [],
+        facet: "stance",
+        question: "How many diseases does Wallach tie to calcium deficiency?",
+        answer_short: "147 \u2014 Wallach links no fewer than 147 diseases to calcium deficiency or imbalance, and says U.S. diets are so deficient that only supplements fix it.",
+        answer: 'Wallach holds that there are no fewer than 147 deficiency diseases attributable to calcium deficiencies or imbalances, and that American diets across the board are critically deficient in calcium \u2014 so the only practical way to get enough is supplementation. He jabs at the researchers who studied the problem: instead of recommending effective calcium supplementation, they told people to eat five cups of broccoli a day ("Try and get a kid to eat five cups of broccoli each day").',
+        verbatim: "There are no less than 147 deficiency diseases that can\nbe attributed to calcium deficiencies or imbalances. The most\nrecent clinical research clearly points out that the entire scope\nof American diets are critically deficient in calcium. The only\npractical way to obtain enough sufficient amounts of calcium\nis through supplementation.",
+        page: 119,
+        book_id: "immortality",
+        topics: [
+          "147-diseases",
+          "deficiency-thesis",
+          "supplementation"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000075",
+        subject: "calcium",
+        also_about: [],
+        facet: "history",
+        question: "Which famous people did Wallach say had calcium deficiency?",
+        answer_short: "He points to Pope John Paul II, Elizabeth Taylor, 'Bo' Jackson and vegan NBA star Bill Walton \u2014 all, he says, with osteoporosis or fractures.",
+        answer: 'To make the point that calcium deficiency reaches even the famous and well-fed, Wallach lists public figures he says suffered an advanced degree of it: Pope John Paul II (fractured hip / osteoporosis), Elizabeth Taylor (osteoporosis / multiple hip-replacement surgeries), "Bo" Jackson (fractured hip / osteoporosis), and Bill Walton, a vegan of professional-basketball fame (osteoporosis, arthritis, fractures).',
+        verbatim: "Famous people who have suffered from an advanced\ndegree of calcium deficiency include Pope John Paul II\n(fractured hip/ osteoporosis), Elizabeth Taylor (osteoporosis/\nmultiple hip replacement surgeries), \u201CBo\u201D Jackson (fractured\nhip/osteoporosis), Bill Walton, a vegan of professional\nbasketball fame (osteoporosis, arthritis, fractures), etc.",
+        page: 119,
+        book_id: "immortality",
+        topics: [
+          "osteoporosis",
+          "celebrities",
+          "anecdote"
+        ]
+      },
       {
         id: "WAL-CLM-IMMORT-000159",
         subject: "mercury",
@@ -57444,6 +57628,7 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
         answer: "Mercury \u2014 the basics. Mercury (chemical symbol Hg) is the only metal that is liquid at ordinary room temperature \u2014 a very dense, heavy metal with a silvery-white sheen, which earned it the old common name 'quicksilver.' It is rarely found pure in nature; instead it occurs locked in a bright-red ore called cinnabar (also called vermillion), which is mostly mercury sulfide. The largest deposits are in Spain and Italy \u2014 Spain has mercury mines that have run continuously for over 2,000 years \u2014 and metallic mercury is extracted by heating the ore and condensing the vapor.",
         verbatim: "Mercury is the only\nmetal that is liquid at room temperatures. It is an extremely\ndense metal, and therefore a heavy metal with a silvery-white\ncolor that has resulted in the common name of \u201Cquicksilver.\u201D\n\nMercury is rarely found as a pure metal in nature,\nrather it is found bound in a bright red ore called cinnabar\nor vermillion. Cinnabar is primarily mercury sulfide and is\nfound in large deposits in Spain and Italy. Spain has mercury\nmines that have been operating continuously for more than\n2,000 years.",
         page: 154,
+        book_id: "immortality",
         topics: [
           "quicksilver",
           "cinnabar",
@@ -57460,6 +57645,7 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
         answer: "How mercury poisons the body. Like other heavy metals, mercury is an accumulative poison \u2014 it builds up in the body and binds to enzymes, crippling their job as catalysts that drive the body's biological reactions. It is easily absorbed through the digestive (gastrointestinal) tract and can also pass straight through the skin (trans-dermal absorption). Mercury vapor is far more dangerous than the liquid metal: Wallach cites an estimate that the fumes from as little as a teaspoon of mercury can saturate a large room within a week and make it unsafe to work in.",
         verbatim: "Like many heavy metals, mercury is an accumulative\npoison that binds with enzymes in the body, producing\na reduction or loss of function as a catalyst of biological\nfunctions. It is easily absorbed into the body through the\ngastrointestinal tract and can enter the body via trans-dermal\nroutes. The vapor is considerably more dangerous than the\nelemental metal. It has been estimated that the vapors from\nthe volume of mercury as small as a teaspoon can saturate a\nlarge room within a week and make it unsafe to work in.",
         page: 154,
+        book_id: "immortality",
         topics: [
           "mercury-poisoning",
           "heavy-metals",
@@ -57476,6 +57662,7 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
         answer: "Mercury and the ancient quest for immortality. Fittingly for a book about immortality, Wallach recounts how the early Chinese alchemists insisted that regularly consuming mercury ('potable gold') was the path to eternal life \u2014 a deadly error. Mercury was known to the ancient Chinese and Egyptians (samples have been found in tombs dating to 1500 B.C.); its name comes from the planet Mercury, and its symbol Hg from the Latin hydragyrum, 'liquid silver.' The most famous victim was China's first emperor, Jing Shi Huang (210 B.C. \u2014 historically Qin Shi Huang), who inadvertently poisoned himself to death by drinking a mercury-spiked immortality elixir over many years. Before dying he grew paranoid ('mad as a hatter'), had much of his inner circle executed, and built the vast army of life-sized terra-cotta guards to accompany him through an intended thousand-year reign.",
         verbatim: "The first Chinese Emperor (210 B.C.), Jing Shi Huang,\nin a failed attempt to attain immortality, inadvertently killed\nhimself by drinking several doses of a mercury spiked elixir\nover an extended period of time.\n\nPrior to his death, Jing became paranoid (\u201Cmad as a\nhatter\u201D), had many of his loyal inner circle, advisors, scholars\nand academics executed and had hundreds of life sized terra\ncotta likenesses of his loyal palace guard constructed, painted\nand dressed to be with him throughout a thousand year reign",
         page: 155,
+        book_id: "immortality",
         topics: [
           "alchemy",
           "immortality",
@@ -57495,6 +57682,7 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
         answer: "Where mercury exposure comes from. Wallach traces how mercury is concentrated in the environment by industry, mining, agriculture, dental amalgam fillings, and microorganisms that convert (methylate) it into methyl mercury in the sediments of rivers, lakes and oceans. The main industrial source is the chlor-alkali industry (chlorine and caustic-soda manufacturing); other human sources include electrical appliances, paint, dental amalgams, pharmaceuticals, vaccines, slimicides and algaecides (used by the paper and pulp industry), mercury seed-treatment fungicides (especially dangerous as methyl mercury), and the burning of fossil fuels. Historically, dentists exploited mercury's ability to dissolve other metals into alloys (amalgams) to make silver- and gold-mercury fillings for cavities (caries). Tellingly, mercury has been found in all tissues of accident victims whose only known exposure was their dental amalgam fillings.",
         verbatim: "Mercury is concentrated in the environment by\nindustry, mining operations, agriculture, dental repairs\n(amalgams), and microorganisms that methylate mercury\nin the sediments at the bottoms of fresh water or salt water\nrivers, lakes, oceans and seas. Mercury has been detected in all\ntissues of accident victims, with no known mercury exposure\nexcept dental mercury amalgam fillings.",
         page: 155,
+        book_id: "immortality",
         topics: [
           "exposure",
           "dental-amalgam",
@@ -57512,6 +57700,7 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
         answer: "Methyl mercury, fish, and the unborn. In fish, mercury occurs as methyl mercury. Wallach gives typical body levels: people who rarely eat fish carry 2-5 micrograms per kilogram (\xB5g/kg), moderate fish-eaters about 10 \xB5g/kg, and heavy consumers \u2014 especially of shark, tuna or swordfish \u2014 up to 400 \xB5g/kg. Methyl mercury is dangerously persistent: its biological half-life in humans is about 70 days, versus only 4 days for inorganic mercury. And while the placenta blocks inorganic mercury, it does NOT block methyl mercury \u2014 which crosses easily into the fetus, causing the 'congenital' form of Minamata disease seen in Japanese infants.",
         verbatim: "Mercury in fish is present as methyl mercury. People\nwho rarely eat fish have low levels of mercury (2-5ug/kg);\nmoderate fish consumers have 10 ug/kg; high fish consumers\n(especially if they eat shark, tuna, or swordfish) have higher\nvalues ranging up to 400 ug/kg.",
         page: 155,
+        book_id: "immortality",
         topics: [
           "methylmercury",
           "fish",
@@ -57531,6 +57720,7 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
         answer: "Selenium is mercury's natural antidote. Wallach describes a mutual metabolic antagonism between mercury and selenium: each protects against poisoning by the other. Selenium supplements protect against mercury poisoning \u2014 specifically, selenium shields the human kidney from the tissue death (necrosis) that mercury causes, and guards against mercury crossing the placenta to the fetus. (Conversely, mercury protects against selenium poisoning.) The operational takeaway: selenium is the key nutrient defense against mercury toxicity.",
         verbatim: "The metabolic antagonism between mercury and\nselenium, results in the protection from selenium poisoning\nby mercury and protection against mercury poisoning by\nselenium supplements. Because a mutual antagonism between\nHg and Se exists, Se protects the human kidney from necrosis\n(tissue death) by mercury poisoning and the placental transfer\nof mercury.",
         page: 156,
+        book_id: "immortality",
         topics: [
           "selenium",
           "antidote",
@@ -57555,6 +57745,7 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
         answer: "Dental mercury and antibiotic resistance. Wallach cites a striking animal experiment: mercury vapor off-gassing from dental amalgam fillings raised the proportion of antibiotic-resistant bacteria in the gut from 9% to 70% in monkeys given mercury fillings \u2014 and the drug-resistant population fell back to 12% once the fillings were removed.",
         verbatim: "Mercury vapor off-gassing from dental amalgam\nhas been shown to increase the percent of antibiotic resistant\nbacteria in the gut from nine percent to 70% in monkeys\ngiven dental mercury fillings. The drug resistant bacterial\npopulation dropped to 12% when the fillings were removed.",
         page: 156,
+        book_id: "immortality",
         topics: [
           "dental-amalgam",
           "antibiotic-resistance",
@@ -57571,6 +57762,7 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
         answer: "'Mad as a hatter' \u2014 occupational mercury poisoning. The phrase comes from real mercury poisoning. During the Victorian era, 'hatters' who brushed mercuric-nitrate paste onto felt hats to stop mold routinely inhaled mercury vapor and developed serious problems \u2014 hair loss, loss of teeth, loss of memory, bizarre behavior and various forms of insanity \u2014 which is where the expression 'mad as a hatter' (from Alice in Wonderland) originates. Goldsmiths and mirror workers, who also worked with mercury, could suffer the same inhalation poisoning.",
         verbatim: "Mercury poisoning from inhalation of mercury vapors\nwas reported during the Victorian Age in \u201Chatters\u201D who used\nmercuric nitrate paste to prevent molds from growing on felt\nhats and as a result, commonly developed serious problems,\nincluding hair loss, loss of teeth, loss of memory, bizarre\nbehavior and various forms of insanity, hence the expression\n\n\u201Cmad as a hatter\u201D from Alice in Wonderland.",
         page: 156,
+        book_id: "immortality",
         topics: [
           "mad-as-a-hatter",
           "occupational",
@@ -57594,6 +57786,7 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
         answer: "Dental mercury linked to MS, ALS and Parkinson's. Wallach reports that in modern times both dentists and dental patients have developed high rates of several diseases believed related to mercury exposure \u2014 multiple sclerosis (MS), ALS (Lou Gehrig's disease) and Parkinson's disease \u2014 with which one depending on the part of the brain most affected. He notes actress Annette Funicello's multiple sclerosis, which is believed to have been caused by vapors from her dental mercury amalgams.",
         verbatim: "In modern times dentists and dental patients have\ndeveloped high rates of several diseases thought to be related\nto mercury exposure including multiple sclerosis, ALS (Lou\nGehrig\u2019s Disease) and Parkinson\u2019s Disease depending on\nwhat part of the brain was most severely affected. Annette\nFunicello contracted multiple sclerosis, which is believed to\nbe caused by vapors from dental mercury amalgams.",
         page: 156,
+        book_id: "immortality",
         topics: [
           "dental-amalgam",
           "multiple-sclerosis",
@@ -57619,6 +57812,7 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
         answer: "The signs of mercury poisoning. Wallach describes how direct mercury poisoning shows up mainly as neurological problems: tremors, vertigo (dizziness), irritability, moodiness (including suicidal feelings and depression), excess salivation, inflammation of the mouth (stomatitis) and diarrhea. The pattern depends on the form: inorganic mercury mainly attacks the liver and kidneys, while the more toxic alkyl (organic) mercury causes progressive loss of coordination, loss of vision, heart palpitations, loss of hearing and mental deterioration \u2014 the result of a toxic brain injury (neuroencephalopathy) that selectively damages the nerve cells of the cerebral and cerebellar cortex.",
         verbatim: "The manifestations of direct mercury poisoning are\n\n\n \n\nprimarily neurological (i.e. tremors, vertigo, irritability,\nmoodiness (suicidal, depression, etc.), salivation, inflammation\nof the mouth, stomatitis and diarrhea.\n\nPoisoning with inorganic mercury targets the liver and\nkidneys. Poisoning with the more toxic alkyl mercury results\nin progressive lack of coordination, loss of vision, heart\npalpitations, loss of hearing, and mental deterioration caused\nby a toxic neuroencephalopathy in which the neuronal cells of\nthe cerebral and cerebellar cortex are selectively affected.",
         page: 157,
+        book_id: "immortality",
         topics: [
           "mercury-poisoning",
           "symptoms",
@@ -57644,6 +57838,7 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
         answer: "The Minamata disaster (1962). In 1962, in the small fishing village of Minamata, Japan, a factory dumped mercury-contaminated waste water (effluent) straight into the bay. The mercury contaminated aquatic plants (kelp, algae) and bacteria, which were eaten by fish, which were eaten by the villagers \u2014 with disastrous results. The Minamata disaster was marked by a high rate of 'congenital' (fetal) damage: mental retardation, cerebral palsy, neural tube defects and high infant mortality. (The catastrophe led to the founding of the Center for the Biology of Natural Systems.)",
         verbatim: "The contaminated fish were eaten by the bay\nresidents with disastrous results. The Minamata disaster was\ncharacterized by a high incidence of \u201Ccongenital\u201D (damage\nto the fetus) mental retardation, cerebral palsy, neural tube\ndefects and high rates of infant mortality.",
         page: 157,
+        book_id: "immortality",
         topics: [
           "minamata",
           "eco-disaster",
@@ -57669,6 +57864,7 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
         answer: "The Iraq methyl-mercury mass poisoning. Wallach recounts a large-scale methyl mercury poisoning in Iraq, when many people ate bread made from seed grain treated with mercurial fungicide \u2014 and meat (liver and kidneys) from animals fed the same treated grain. The result of eating the mercury-contaminated grain was thousands of babies born mentally retarded, with a high rate of congenital brain defects including neural tube defects and cerebral palsy.",
         verbatim: "In Iraq, a large scale methyl mercury poisoning was\nreported when large numbers of people were fed bread made\nwith mercurial fungicide treated seed grain and meat (liver\nand kidneys) from animals fed the treated grain. The result of\nconsuming the mercury contaminated grains was thousands\nof babies born retarded and having a high incidence of\ncongenital brain defects including neural tube defects and\ncerebral palsy.",
         page: 158,
+        book_id: "immortality",
         topics: [
           "iraq",
           "methylmercury",
@@ -57696,6 +57892,7 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
         answer: "Do vaccines cause autism? \u2014 Wallach's full take on the mercury-vaccine-autism question. This is one of the most-asked health questions, and Wallach lays out both sides. THE HYPOTHESIS: some people believe autism is linked to the mercury-based preservative (a compound called thimerosal) once used in some childhood vaccines. WALLACH'S OWN SKEPTICISM: he points to a major hole in that theory \u2014 no other country, developing or industrialized, using the very same vaccines from the same manufacturers has reported the same complaints, rate of autism diagnosis, or lawsuits over a vaccine-autism link. THE NUMBERS he cites: reported autism in America rose from about 1 in 150,000 (1980) to a claimed 1 in 150 (2008); only about 10% of autistic children are born with it, while roughly 90% are born normal and develop it between ages two and six. THE OUTCOME: since 2006, most of the mercury preservatives have been removed from childhood vaccines in response to public concern and class-action lawsuits. Notably, Wallach does NOT flatly assert that vaccines cause autism \u2014 he presents the hypothesis alongside the international counter-evidence, leaving it an open question.",
         verbatim: "The cause of autism is thought by some to have a\nrelationship to the mercury preservatives in some vaccines.\n\nIt is of interest to note that none of the other countries (Third\nWorld or Industrialized) using the same vaccines and vaccine\nmanufacturers have registered the same complaints, level\nof diagnosis or law suites regarding a relationship between\nautism and vaccinations.\n\nThe rate of autism in America in 1980 was 1/150,000 and\n2008 it is claimed to be 1/150. A few autistic babies (10%) are\nborn with the disease, 90% are born normal and then develop\nit somewhere between the ages of two and six years of age.",
         page: 158,
+        book_id: "immortality",
         topics: [
           "vaccines-autism",
           "thimerosal",
@@ -57707,50 +57904,18 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
     ]
   };
 
-  // assets/data/search/search-entities.json
-  var search_entities_default = {
-    schema_version: 1,
-    _note: "THIN-SLICE DRAFT entity registry (Mercury only) for the Search visual-reference. Final home = eden/catalog/search-entities.json (sealed, curated) after format sign-off. related[] reuse canon/catalog slugs; display resolves human-first.",
-    entities: {
-      mercury: {
-        display_name: "Mercury",
-        type: "element",
-        symbol: "Hg",
-        synonyms: [
-          "quicksilver",
-          "hg",
-          "hydrargyrum"
-        ],
-        related: [
-          "selenium",
-          "mercury_poisoning",
-          "minamata_disease"
-        ]
-      }
-    }
-  };
-
   // assets/js/src/state/search.ts
-  var EMPTY_SLICE = { book: { book_id: "", title: "", year: 0 }, claims: [] };
-  var EMPTY_ENTITIES = { entities: {} };
-  var sliceCache = null;
-  var entitiesCache = null;
-  function slice() {
-    if (sliceCache === null) {
-      const parsed = SearchSliceSchema.safeParse(mercury_slice_default);
-      sliceCache = parsed.success ? parsed.data : EMPTY_SLICE;
+  var EMPTY_INDEX = { books: {}, entities: {}, claims: [] };
+  var indexCache = null;
+  function index2() {
+    if (indexCache === null) {
+      const parsed = SearchIndexSchema.safeParse(search_index_default);
+      indexCache = parsed.success ? parsed.data : EMPTY_INDEX;
     }
-    return sliceCache;
-  }
-  function registry() {
-    if (entitiesCache === null) {
-      const parsed = SearchEntitiesSchema.safeParse(search_entities_default);
-      entitiesCache = parsed.success ? parsed.data : EMPTY_ENTITIES;
-    }
-    return entitiesCache;
+    return indexCache;
   }
   function getEntity(slug) {
-    return registry().entities[slug] ?? null;
+    return index2().entities[slug] ?? null;
   }
   function displayName(slug) {
     const e = getEntity(slug);
@@ -57760,7 +57925,7 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
     return slug.replace(/[_-]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
   }
   function claimsForSubject(subject) {
-    return slice().claims.filter((c) => c.subject === subject).sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
+    return index2().claims.filter((c) => c.subject === subject).sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
   }
   function facetGroups(subject) {
     const claims = claimsForSubject(subject);
@@ -57773,16 +57938,26 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
     }
     return out;
   }
+  function entityList() {
+    const ents = index2().entities;
+    return Object.keys(ents).sort().map((slug) => {
+      const e = ents[slug];
+      return { slug, display_name: e.display_name, type: e.type, symbol: e.symbol ?? null, claim_count: e.claim_count };
+    });
+  }
   function composeCite(claim) {
-    const b = slice().book;
-    const head = `${b.title.toUpperCase()}${b.year > 0 ? ` (${b.year})` : ""}`;
+    const b = claim.book_id !== null ? index2().books[claim.book_id] : void 0;
+    if (b === void 0) {
+      return "";
+    }
+    const head = `${b.title.toUpperCase()} (${b.year})`;
     return claim.page !== null ? `${head} \xB7 P.${claim.page}` : head;
   }
   function normalize2(s) {
     return s.trim().toLowerCase();
   }
   function entityHit(q) {
-    for (const [slug, e] of Object.entries(registry().entities)) {
+    for (const [slug, e] of Object.entries(index2().entities)) {
       if (slug === q || e.display_name.toLowerCase() === q) {
         return slug;
       }
@@ -57794,6 +57969,9 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
   }
   function scoreClaim(c, q) {
     let score = 0;
+    if (c.subject.includes(q) || q.includes(c.subject)) {
+      score += 5;
+    }
     if (c.question.toLowerCase().includes(q)) {
       score += 6;
     }
@@ -57818,7 +57996,7 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
     }
     let best = null;
     let bestScore = 0;
-    for (const c of slice().claims) {
+    for (const c of index2().claims) {
       const s = scoreClaim(c, q);
       if (s > bestScore) {
         bestScore = s;
@@ -57829,9 +58007,8 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
   }
   function resolveQuery(query) {
     const q = normalize2(query);
-    const fallbackSubject = defaultSubject();
     if (q.length === 0) {
-      return { mode: "entity", subject: fallbackSubject, claim: null, noMatch: false };
+      return { mode: "landing", subject: "", claim: null, noMatch: false };
     }
     const hit = entityHit(q);
     if (hit !== null) {
@@ -57841,17 +58018,22 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
     if (best !== null) {
       return { mode: "ask", subject: best.subject, claim: best, noMatch: false };
     }
-    return { mode: "entity", subject: fallbackSubject, claim: null, noMatch: true };
+    return { mode: "landing", subject: "", claim: null, noMatch: true };
   }
   function defaultSubject() {
-    const keys = Object.keys(registry().entities);
-    return keys[0] ?? "mercury";
+    const keys = Object.keys(index2().entities).sort();
+    return keys[0] ?? "";
   }
   function claimCount(subject) {
-    return claimsForSubject(subject).length;
+    const e = getEntity(subject);
+    return e !== null ? e.claim_count : claimsForSubject(subject).length;
+  }
+  function indexTotals() {
+    const idx = index2();
+    return { entities: Object.keys(idx.entities).length, claims: idx.claims.length };
   }
   var bridge = window;
-  bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject };
+  bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals };
 
   // assets/js/src/views/search.ts
   function escHTML9(s) {
@@ -57910,7 +58092,7 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
   function renderFacet(group) {
     const rows = group.claims.map(renderClaimRow).join("");
     return `
-    <details class="sr-facet" open>
+    <details class="sr-facet" data-facet="${escHTML9(group.facet)}" open>
       <summary class="sr-facet__head">
         <span class="sr-facet__label">${escHTML9(group.label)}</span>
         <span class="sr-facet__count">${group.claims.length}</span>
@@ -57923,27 +58105,51 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
     if (e === null || e.related.length === 0) {
       return "";
     }
-    const chips = e.related.map((slug) => `<span class="sr-related__chip" title="Related entity">${escHTML9(displayName(slug))}</span>`).join("");
+    const chips = e.related.map((slug) => {
+      const known = getEntity(slug) !== null;
+      return known ? `<button class="sr-related__chip sr-related__chip--link" data-sr-entity="${escHTML9(slug)}" title="Open ${escHTML9(displayName(slug))}">${escHTML9(displayName(slug))}</button>` : `<span class="sr-related__chip" title="Related">${escHTML9(displayName(slug))}</span>`;
+    }).join("");
     return `
     <div class="sr-related">
       <span class="sr-related__label">RELATED</span>
       <div class="sr-related__chips">${chips}</div>
     </div>`;
   }
-  function renderEntity(subject, noMatch) {
+  function renderLanding(noMatch) {
+    const ents = entityList();
+    const noteHTML = noMatch ? '<div class="sr-note">No direct match \u2014 browse the entities below, or try a different word.</div>' : "";
+    if (ents.length === 0) {
+      return '<div class="sr-empty">\u2014 no entities in the index yet \u2014</div>';
+    }
+    const card = (e) => `
+    <button class="sr-ent-card" data-sr-entity="${escHTML9(e.slug)}">
+      <span class="sr-ent-card__sym">${escHTML9(e.symbol ?? e.display_name.charAt(0))}</span>
+      <span class="sr-ent-card__idblock">
+        <span class="sr-ent-card__name">${escHTML9(e.display_name)}</span>
+        <span class="sr-ent-card__meta">${escHTML9(e.type.toUpperCase())} \xB7 ${e.claim_count} ENTR${e.claim_count === 1 ? "Y" : "IES"}</span>
+      </span>
+      <span class="sr-ent-card__chev">\u203A</span>
+    </button>`;
+    return `
+    ${noteHTML}
+    <div class="sr-landing">
+      <div class="sr-landing__eyebrow">BROWSE \xB7 ${ents.length} ENTIT${ents.length === 1 ? "Y" : "IES"}</div>
+      <div class="sr-landing__grid">${ents.map(card).join("")}</div>
+    </div>`;
+  }
+  function renderEntity(subject) {
     const e = getEntity(subject);
     const groups = facetGroups(subject);
     const n = claimCount(subject);
     if (e === null || groups.length === 0) {
-      return '<div class="sr-empty">\u2014 this slice has no entity to show yet \u2014</div>';
+      return '<div class="sr-empty">\u2014 nothing to show for this entity yet \u2014</div>';
     }
     const synLine = e.synonyms.length > 0 ? ` \xB7 also: ${e.synonyms.map(escHTML9).join(", ")}` : "";
-    const noteHTML = noMatch ? '<div class="sr-note">No direct match yet \u2014 this thin-slice reference only knows <strong>Mercury</strong>. Showing it below.</div>' : "";
     const facetsHTML = groups.map(renderFacet).join("");
     return `
-    ${noteHTML}
     <div class="sr-entity">
       <header class="sr-entity__head">
+        <button class="sr-entity__back" data-sr-action="home" title="Back to browse">\u2039 ALL</button>
         <div class="sr-entity__sym">${escHTML9(e.symbol ?? e.display_name.charAt(0))}</div>
         <div class="sr-entity__idblock">
           <h3 class="sr-entity__name">${escHTML9(e.display_name)}</h3>
@@ -57960,24 +58166,28 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
       <div class="sr-ask__badge"><span class="sr-ask__q-mark">?</span> ASK \xB7 WALLACH</div>
       <div class="sr-ask__q">${escHTML9(claim.question)}</div>
       <div class="sr-ask__detail">${claimDetail(claim)}</div>
-      <button class="sr-ask__more" data-sr-more="${escHTML9(claim.subject)}">MORE ON ${escHTML9(displayName(claim.subject).toUpperCase())} \u2192</button>
+      <button class="sr-ask__more" data-sr-entity="${escHTML9(claim.subject)}">MORE ON ${escHTML9(displayName(claim.subject).toUpperCase())} \u2192</button>
     </div>`;
   }
   function renderBody(result) {
     if (result.mode === "ask" && result.claim !== null) {
       return renderAsk(result.claim);
     }
-    return renderEntity(result.subject, result.noMatch);
+    if (result.mode === "entity") {
+      return renderEntity(result.subject);
+    }
+    return renderLanding(result.noMatch);
   }
   function hexSerial3(seed) {
     return (seed * 2654435769 >>> 0).toString(16).toUpperCase().padStart(4, "0").slice(0, 4);
   }
   function renderShell4() {
+    const totals = indexTotals();
     return `
     <span class="ds-scan-line" aria-hidden="true"></span>
     <header class="sr-head">
       <div>
-        <div class="sr-eyebrow"><span class="pulse-dot"></span>DRAWER \xB7 <span class="ds-cipher" data-cipher-set="hexa">SR\xB7${hexSerial3(13)}</span></div>
+        <div class="sr-eyebrow"><span class="pulse-dot"></span>DRAWER \xB7 <span class="ds-cipher" data-cipher-set="hexa">SR\xB7${hexSerial3(totals.claims)}</span></div>
         <h2 class="sr-title">Search</h2>
         <div class="sr-sub">// ask Wallach anything \u2014 offline, in his own words</div>
       </div>
@@ -57990,7 +58200,7 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
     </div>
     <div class="sr-body"></div>
     <footer class="sr-footer">
-      <span class="sr-footer__hint">MERCURY THIN-SLICE \xB7 ${escHTML9(String(claimCount(defaultSubject())))} ENTRIES</span>
+      <span class="sr-footer__hint">${totals.entities} ENTIT${totals.entities === 1 ? "Y" : "IES"} \xB7 ${totals.claims} ENTRIES</span>
       <span class="sr-footer__spacer"></span>
       <button class="sr-action sr-action--expand" data-sr-action="expand"><span class="sr-action__glyph">\u2922</span>EXPAND</button>
     </footer>`;
@@ -58013,14 +58223,20 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
         body.innerHTML = renderBody(result);
       }
     };
+    const syncSearchbar = () => {
+      const input = container.querySelector(".sr-searchbar__input");
+      if (input !== null) {
+        input.value = query;
+      }
+      container.querySelector(".sr-searchbar")?.classList.toggle("has-query", query.trim().length > 0);
+    };
     const render = () => {
       container.innerHTML = renderShell4();
       lastKey = "";
       paintBody(true);
+      syncSearchbar();
       const input = container.querySelector(".sr-searchbar__input");
       if (input !== null) {
-        input.value = query;
-        container.querySelector(".sr-searchbar")?.classList.toggle("has-query", query.trim().length > 0);
         setTimeout(() => input.focus(), 0);
       }
     };
@@ -58053,6 +58269,16 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
       isExpanded = !isExpanded;
       container.classList.toggle("sr-expanded", isExpanded);
     };
+    const gotoEntity = (slug) => {
+      query = displayName(slug);
+      syncSearchbar();
+      paintBody(true);
+    };
+    const gotoHome = () => {
+      query = "";
+      syncSearchbar();
+      paintBody(true);
+    };
     container.addEventListener("input", (ev) => {
       const t = ev.target;
       if (t === null || !t.classList.contains("sr-searchbar__input")) {
@@ -58067,15 +58293,9 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
       if (target === null) {
         return;
       }
-      const moreBtn = target.closest("[data-sr-more]");
-      if (moreBtn !== null) {
-        query = "";
-        const input = container.querySelector(".sr-searchbar__input");
-        if (input !== null) {
-          input.value = "";
-        }
-        container.querySelector(".sr-searchbar")?.classList.remove("has-query");
-        paintBody(true);
+      const entBtn = target.closest("[data-sr-entity]");
+      if (entBtn !== null) {
+        gotoEntity(entBtn.getAttribute("data-sr-entity") ?? "");
         return;
       }
       const actionEl = target.closest("[data-sr-action]");
@@ -58085,15 +58305,11 @@ DEFERRED (surfaced to Luneth, not blockers): the full answer still leads with it
           close();
         } else if (action === "expand") {
           toggleExpanded();
+        } else if (action === "home") {
+          gotoHome();
         } else if (action === "search-clear") {
-          query = "";
-          const input = container.querySelector(".sr-searchbar__input");
-          if (input !== null) {
-            input.value = "";
-            input.focus();
-          }
-          container.querySelector(".sr-searchbar")?.classList.remove("has-query");
-          paintBody(true);
+          gotoHome();
+          container.querySelector(".sr-searchbar__input")?.focus();
         }
       }
     });

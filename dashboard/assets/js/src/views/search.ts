@@ -1,21 +1,22 @@
 /**
- * views/search.ts — Search drawer (the "Ask-Wallach" surface, thin-slice)
+ * views/search.ts — Search drawer (the "Ask-Wallach" surface)
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * Slide-in-from-left overlay drawer (mirrors the Knowledge drawer chrome, own sr-*
- * namespace + drawer-search.css so nothing leaks). Two render modes on ONE surface
+ * namespace + drawer-search.css so nothing leaks). Three render modes on ONE surface
  * (blueprint §5):
- *   - ENTITY PAGE (query = a subject, or the default landing): a product-detail-style
- *     panel — header (symbol · display_name · type · claim count · synonyms) then one
- *     collapsible section per FACET the entity has (BASICS · HOW IT WORKS · SOURCES …),
- *     each an FAQ list of question rows that expand to answer + verbatim + cite.
+ *   - LANDING (empty query): a browse grid of every registered entity (symbol · name ·
+ *     type · claim count) — click a card to open its entity page.
+ *   - ENTITY PAGE (query = a subject): a product-detail-style panel — header (symbol ·
+ *     display_name · type · claim count · synonyms) then one collapsible section per FACET
+ *     the entity has (BASICS · HOW IT WORKS · SOURCES …), each an FAQ list of question rows
+ *     that expand to answer + verbatim + cite.
  *   - ASK ANSWER (query = a question): the demo's ask-result — a ? badge, the question,
  *     the short + full answer, an italic Wallach verbatim, a mono cite, and "MORE ON
  *     {SUBJECT}" back to the entity page.
  *
- * Thin-slice scope: renders the Mercury entity only (the visual reference for Luneth's
- * format sign-off). Retrieval + data come from state/search.ts (pure, offline, no LLM).
- * §00 Zod boundary: all reads pass through core/schemas/search before field access.
+ * Retrieval + data come from state/search.ts (pure, offline, no LLM) reading the ONE derived
+ * search index. §00 Zod boundary: all reads pass through core/schemas/search before field access.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -23,11 +24,13 @@ import type { SearchClaim } from '../core/schemas/index.js';
 import {
   claimCount,
   composeCite,
-  defaultSubject,
   displayName,
+  type EntitySummary,
+  entityList,
   type FacetGroup,
   facetGroups,
   getEntity,
+  indexTotals,
   resolveQuery,
   type SearchResult,
 } from '../state/search.js';
@@ -51,7 +54,7 @@ function oneLine(s: string): string {
   return s.replace(/\s+/g, ' ').trim();
 }
 
-/** A claim's dual-home chips — the operational tabs it also feeds (static in the slice). */
+/** A claim's dual-home chips — the operational tabs it also feeds (derived from the sealed claim). */
 function tier1Chips(claim: SearchClaim): string {
   const link = claim.tier1_link;
   if (link === undefined) {
@@ -108,7 +111,7 @@ function renderClaimRow(claim: SearchClaim): string {
 function renderFacet(group: FacetGroup): string {
   const rows = group.claims.map(renderClaimRow).join('');
   return `
-    <details class="sr-facet" open>
+    <details class="sr-facet" data-facet="${escHTML(group.facet)}" open>
       <summary class="sr-facet__head">
         <span class="sr-facet__label">${escHTML(group.label)}</span>
         <span class="sr-facet__count">${group.claims.length}</span>
@@ -122,7 +125,13 @@ function renderRelated(subject: string): string {
   if (e === null || e.related.length === 0) {
     return '';
   }
-  const chips = e.related.map(slug => `<span class="sr-related__chip" title="Related entity">${escHTML(displayName(slug))}</span>`).join('');
+  const chips = e.related.map((slug) => {
+    // A related entity that IS in the registry is a clickable cross-link; otherwise a plain chip.
+    const known = getEntity(slug) !== null;
+    return known
+      ? `<button class="sr-related__chip sr-related__chip--link" data-sr-entity="${escHTML(slug)}" title="Open ${escHTML(displayName(slug))}">${escHTML(displayName(slug))}</button>`
+      : `<span class="sr-related__chip" title="Related">${escHTML(displayName(slug))}</span>`;
+  }).join('');
   return `
     <div class="sr-related">
       <span class="sr-related__label">RELATED</span>
@@ -130,22 +139,45 @@ function renderRelated(subject: string): string {
     </div>`;
 }
 
-function renderEntity(subject: string, noMatch: boolean): string {
+/** Browse landing — every registered entity as a card. */
+function renderLanding(noMatch: boolean): string {
+  const ents = entityList();
+  const noteHTML = noMatch
+    ? '<div class="sr-note">No direct match — browse the entities below, or try a different word.</div>'
+    : '';
+  if (ents.length === 0) {
+    return '<div class="sr-empty">— no entities in the index yet —</div>';
+  }
+  const card = (e: EntitySummary): string => `
+    <button class="sr-ent-card" data-sr-entity="${escHTML(e.slug)}">
+      <span class="sr-ent-card__sym">${escHTML(e.symbol ?? e.display_name.charAt(0))}</span>
+      <span class="sr-ent-card__idblock">
+        <span class="sr-ent-card__name">${escHTML(e.display_name)}</span>
+        <span class="sr-ent-card__meta">${escHTML(e.type.toUpperCase())} · ${e.claim_count} ENTR${e.claim_count === 1 ? 'Y' : 'IES'}</span>
+      </span>
+      <span class="sr-ent-card__chev">›</span>
+    </button>`;
+  return `
+    ${noteHTML}
+    <div class="sr-landing">
+      <div class="sr-landing__eyebrow">BROWSE · ${ents.length} ENTIT${ents.length === 1 ? 'Y' : 'IES'}</div>
+      <div class="sr-landing__grid">${ents.map(card).join('')}</div>
+    </div>`;
+}
+
+function renderEntity(subject: string): string {
   const e = getEntity(subject);
   const groups = facetGroups(subject);
   const n = claimCount(subject);
   if (e === null || groups.length === 0) {
-    return '<div class="sr-empty">— this slice has no entity to show yet —</div>';
+    return '<div class="sr-empty">— nothing to show for this entity yet —</div>';
   }
   const synLine = e.synonyms.length > 0 ? ` · also: ${e.synonyms.map(escHTML).join(', ')}` : '';
-  const noteHTML = noMatch
-    ? '<div class="sr-note">No direct match yet — this thin-slice reference only knows <strong>Mercury</strong>. Showing it below.</div>'
-    : '';
   const facetsHTML = groups.map(renderFacet).join('');
   return `
-    ${noteHTML}
     <div class="sr-entity">
       <header class="sr-entity__head">
+        <button class="sr-entity__back" data-sr-action="home" title="Back to browse">‹ ALL</button>
         <div class="sr-entity__sym">${escHTML(e.symbol ?? e.display_name.charAt(0))}</div>
         <div class="sr-entity__idblock">
           <h3 class="sr-entity__name">${escHTML(e.display_name)}</h3>
@@ -163,7 +195,7 @@ function renderAsk(claim: SearchClaim): string {
       <div class="sr-ask__badge"><span class="sr-ask__q-mark">?</span> ASK · WALLACH</div>
       <div class="sr-ask__q">${escHTML(claim.question)}</div>
       <div class="sr-ask__detail">${claimDetail(claim)}</div>
-      <button class="sr-ask__more" data-sr-more="${escHTML(claim.subject)}">MORE ON ${escHTML(displayName(claim.subject).toUpperCase())} →</button>
+      <button class="sr-ask__more" data-sr-entity="${escHTML(claim.subject)}">MORE ON ${escHTML(displayName(claim.subject).toUpperCase())} →</button>
     </div>`;
 }
 
@@ -171,7 +203,10 @@ function renderBody(result: SearchResult): string {
   if (result.mode === 'ask' && result.claim !== null) {
     return renderAsk(result.claim);
   }
-  return renderEntity(result.subject, result.noMatch);
+  if (result.mode === 'entity') {
+    return renderEntity(result.subject);
+  }
+  return renderLanding(result.noMatch);
 }
 
 function hexSerial(seed: number): string {
@@ -179,11 +214,12 @@ function hexSerial(seed: number): string {
 }
 
 function renderShell(): string {
+  const totals = indexTotals();
   return `
     <span class="ds-scan-line" aria-hidden="true"></span>
     <header class="sr-head">
       <div>
-        <div class="sr-eyebrow"><span class="pulse-dot"></span>DRAWER · <span class="ds-cipher" data-cipher-set="hexa">SR·${hexSerial(13)}</span></div>
+        <div class="sr-eyebrow"><span class="pulse-dot"></span>DRAWER · <span class="ds-cipher" data-cipher-set="hexa">SR·${hexSerial(totals.claims)}</span></div>
         <h2 class="sr-title">Search</h2>
         <div class="sr-sub">// ask Wallach anything — offline, in his own words</div>
       </div>
@@ -196,7 +232,7 @@ function renderShell(): string {
     </div>
     <div class="sr-body"></div>
     <footer class="sr-footer">
-      <span class="sr-footer__hint">MERCURY THIN-SLICE · ${escHTML(String(claimCount(defaultSubject())))} ENTRIES</span>
+      <span class="sr-footer__hint">${totals.entities} ENTIT${totals.entities === 1 ? 'Y' : 'IES'} · ${totals.claims} ENTRIES</span>
       <span class="sr-footer__spacer"></span>
       <button class="sr-action sr-action--expand" data-sr-action="expand"><span class="sr-action__glyph">⤢</span>EXPAND</button>
     </footer>`;
@@ -225,14 +261,21 @@ export function mount(container: HTMLElement): DrawerHandle {
     }
   };
 
+  const syncSearchbar = (): void => {
+    const input = container.querySelector<HTMLInputElement>('.sr-searchbar__input');
+    if (input !== null) {
+      input.value = query;
+    }
+    container.querySelector('.sr-searchbar')?.classList.toggle('has-query', query.trim().length > 0);
+  };
+
   const render = (): void => {
     container.innerHTML = renderShell();
     lastKey = '';
     paintBody(true);
+    syncSearchbar();
     const input = container.querySelector<HTMLInputElement>('.sr-searchbar__input');
     if (input !== null) {
-      input.value = query;
-      container.querySelector('.sr-searchbar')?.classList.toggle('has-query', query.trim().length > 0);
       // Focus for immediate typing when opened.
       setTimeout(() => input.focus(), 0);
     }
@@ -269,6 +312,19 @@ export function mount(container: HTMLElement): DrawerHandle {
     container.classList.toggle('sr-expanded', isExpanded);
   };
 
+  /** Navigate to an entity page by setting the query to its display name (entityHit resolves it). */
+  const gotoEntity = (slug: string): void => {
+    query = displayName(slug);
+    syncSearchbar();
+    paintBody(true);
+  };
+  /** Return to the browse landing. */
+  const gotoHome = (): void => {
+    query = '';
+    syncSearchbar();
+    paintBody(true);
+  };
+
   // ─── Events ──────────────────────────────────────────────────────────────
 
   container.addEventListener('input', (ev: Event): void => {
@@ -286,16 +342,9 @@ export function mount(container: HTMLElement): DrawerHandle {
     if (target === null) {
       return;
     }
-    const moreBtn = target.closest<HTMLElement>('[data-sr-more]');
-    if (moreBtn !== null) {
-      // "More on {subject}" — drop the Ask query and browse the entity page.
-      query = '';
-      const input = container.querySelector<HTMLInputElement>('.sr-searchbar__input');
-      if (input !== null) {
-        input.value = '';
-      }
-      container.querySelector('.sr-searchbar')?.classList.remove('has-query');
-      paintBody(true);
+    const entBtn = target.closest<HTMLElement>('[data-sr-entity]');
+    if (entBtn !== null) {
+      gotoEntity(entBtn.getAttribute('data-sr-entity') ?? '');
       return;
     }
     const actionEl = target.closest<HTMLElement>('[data-sr-action]');
@@ -307,15 +356,12 @@ export function mount(container: HTMLElement): DrawerHandle {
       else if (action === 'expand') {
         toggleExpanded();
       }
+      else if (action === 'home') {
+        gotoHome();
+      }
       else if (action === 'search-clear') {
-        query = '';
-        const input = container.querySelector<HTMLInputElement>('.sr-searchbar__input');
-        if (input !== null) {
-          input.value = '';
-          input.focus();
-        }
-        container.querySelector('.sr-searchbar')?.classList.remove('has-query');
-        paintBody(true);
+        gotoHome();
+        container.querySelector<HTMLInputElement>('.sr-searchbar__input')?.focus();
       }
     }
   });

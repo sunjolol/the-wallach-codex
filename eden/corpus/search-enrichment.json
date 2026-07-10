@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "_note": "SOURCE (hand-authored) for the Search subsystem — the AUTHORED fields per sealed search-only claim (subject/also_about/facet/question/answer_short/topics). Everything else the Search index shows (answer, verbatim, page, tier1_link, composed cite) DERIVES from the sealed claim + books-meta via eden/tools/search_index_derive.py. Keyed by claim id. Enrichment for a claim id NOT tagged search-only, a bad facet, or an unresolved subject is caught by search_index_wellformed. NOT sealed yet (entity-by-entity build, reviewed with Luneth); mercury + calcium are the first two entities.",
+  "enrichment": {
+    "WAL-CLM-IMMORT-000159": {
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is mercury?",
+      "answer_short": "Mercury (Hg) is the only metal that is liquid at room temperature — a dense, silvery 'quicksilver' found in the bright-red ore cinnabar.",
+      "topics": [
+        "quicksilver",
+        "cinnabar",
+        "heavy-metals"
+      ]
+    },
+    "WAL-CLM-IMMORT-000160": {
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How does mercury poison the body?",
+      "answer_short": "Mercury is an accumulative poison that binds to enzymes and cripples them; its vapor is far more dangerous than the liquid metal.",
+      "topics": [
+        "mercury-poisoning",
+        "heavy-metals",
+        "enzymes"
+      ]
+    },
+    "WAL-CLM-IMMORT-000161": {
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "history",
+      "question": "What does mercury have to do with the quest for immortality?",
+      "answer_short": "Ancient Chinese alchemists drank mercury as an immortality elixir — China's first emperor poisoned himself to death that way.",
+      "topics": [
+        "alchemy",
+        "immortality",
+        "china",
+        "quicksilver"
+      ]
+    },
+    "WAL-CLM-IMMORT-000162": {
+      "subject": "mercury",
+      "also_about": [
+        "vaccines"
+      ],
+      "facet": "sources",
+      "question": "Where does mercury exposure come from?",
+      "answer_short": "Industry, mining, farming, vaccines and dental amalgam fillings concentrate mercury in the environment — even in people whose only exposure is their fillings.",
+      "topics": [
+        "exposure",
+        "dental-amalgam",
+        "vaccines",
+        "environment"
+      ]
+    },
+    "WAL-CLM-IMMORT-000163": {
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Is the mercury in fish dangerous?",
+      "answer_short": "Fish carry mercury as persistent methylmercury; heavy fish-eaters hold far more, and unlike inorganic mercury it crosses the placenta into the fetus.",
+      "topics": [
+        "methylmercury",
+        "fish",
+        "pregnancy",
+        "minamata"
+      ]
+    },
+    "WAL-CLM-IMMORT-000164": {
+      "subject": "mercury",
+      "also_about": [
+        "selenium"
+      ],
+      "facet": "protocol",
+      "question": "What protects against mercury poisoning?",
+      "answer_short": "Selenium is mercury's natural antidote: the two are mutually antagonistic, and selenium shields the kidneys and fetus from mercury.",
+      "topics": [
+        "selenium",
+        "antidote",
+        "mercury-poisoning"
+      ]
+    },
+    "WAL-CLM-IMMORT-000165": {
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Can dental mercury fillings affect gut bacteria?",
+      "answer_short": "In monkeys, vapor from dental amalgam raised antibiotic-resistant gut bacteria from 9% to 70% — dropping back to 12% once the fillings were removed.",
+      "topics": [
+        "dental-amalgam",
+        "antibiotic-resistance",
+        "gut"
+      ]
+    },
+    "WAL-CLM-IMMORT-000166": {
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "history",
+      "question": "Why do we say 'mad as a hatter'?",
+      "answer_short": "The phrase comes from real poisoning: Victorian hatmakers who brushed mercury paste onto felt inhaled the vapor and went 'mad as a hatter.'",
+      "topics": [
+        "mad-as-a-hatter",
+        "occupational",
+        "history"
+      ]
+    },
+    "WAL-CLM-IMMORT-000167": {
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Is dental mercury linked to MS, ALS or Parkinson's?",
+      "answer_short": "Wallach reports dentists and patients develop high rates of MS, ALS and Parkinson's tied to mercury vapor — he cites Annette Funicello's MS.",
+      "topics": [
+        "dental-amalgam",
+        "multiple-sclerosis",
+        "als",
+        "parkinsons",
+        "neurological"
+      ]
+    },
+    "WAL-CLM-IMMORT-000168": {
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "warning",
+      "question": "What are the signs of mercury poisoning?",
+      "answer_short": "Mostly neurological: tremors, vertigo, irritability, mood changes, salivation, mouth inflammation and diarrhea — organic mercury is the most toxic.",
+      "topics": [
+        "mercury-poisoning",
+        "symptoms",
+        "neurological"
+      ]
+    },
+    "WAL-CLM-IMMORT-000169": {
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "history",
+      "question": "What was the Minamata disaster?",
+      "answer_short": "In 1962 a Japanese factory dumped mercury into Minamata Bay; contaminated fish caused an epidemic of birth defects, cerebral palsy and infant death.",
+      "topics": [
+        "minamata",
+        "eco-disaster",
+        "congenital",
+        "japan"
+      ]
+    },
+    "WAL-CLM-IMMORT-000170": {
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "history",
+      "question": "What happened in the Iraq mercury poisoning?",
+      "answer_short": "Iraqis ate bread from seed grain treated with mercury fungicide — thousands of babies were born with brain defects, cerebral palsy and neural-tube defects.",
+      "topics": [
+        "iraq",
+        "methylmercury",
+        "congenital",
+        "fungicide"
+      ]
+    },
+    "WAL-CLM-IMMORT-000171": {
+      "subject": "mercury",
+      "also_about": [
+        "vaccines",
+        "autism"
+      ],
+      "facet": "big_question",
+      "question": "Do vaccines cause autism?",
+      "answer_short": "Wallach gives both sides — the mercury-preservative (thimerosal) hypothesis and his doubt that no other country saw the same autism surge — and leaves it open.",
+      "topics": [
+        "vaccines-autism",
+        "thimerosal",
+        "autism",
+        "vaccines",
+        "big-question"
+      ]
+    },
+    "WAL-CLM-IMMORT-000062": {
+      "subject": "calcium",
+      "also_about": [],
+      "facet": "stance",
+      "question": "How much calcium are humans designed to eat?",
+      "answer_short": "Wallach argues we're built for Stone-Age intakes of 1,600–3,000 mg a day; modern Americans get a fraction — as little as 300 mg.",
+      "topics": [
+        "paleolithic-diet",
+        "calcium-intake",
+        "agriculture"
+      ]
+    },
+    "WAL-CLM-IMMORT-000065": {
+      "subject": "calcium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "How much calcium is in your body, and where?",
+      "answer_short": "Calcium is the body's most abundant mineral (~1–1.2 kg); 99% sits in the bones and teeth, and the last 1% works in blood and cells.",
+      "topics": [
+        "distribution",
+        "bone",
+        "body-content"
+      ]
+    },
+    "WAL-CLM-IMMORT-000066": {
+      "subject": "calcium",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How is calcium stored in your bones?",
+      "answer_short": "As hydroxyapatite crystals on a protein 'bone matrix' — soak a bone in vinegar two weeks and the calcium leaches out, leaving the bendy scaffold.",
+      "topics": [
+        "bone-matrix",
+        "hydroxyapatite"
+      ]
+    },
+    "WAL-CLM-IMMORT-000067": {
+      "subject": "calcium",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What does calcium do besides build bone?",
+      "answer_short": "It's a working cofactor: it releases ATP energy for muscle, drives blood clotting, moves signals across membranes, fires nerves and paces the heartbeat.",
+      "topics": [
+        "cofactor",
+        "blood-clotting",
+        "muscle",
+        "nerves"
+      ]
+    },
+    "WAL-CLM-IMMORT-000069": {
+      "subject": "calcium",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How does the body keep blood calcium steady?",
+      "answer_short": "Two hormones — parathormone and calcitonin — hold serum calcium at 8.5–10.5 mg/dL, mostly by borrowing it from and returning it to bone.",
+      "topics": [
+        "homeostasis",
+        "parathyroid",
+        "calcitonin"
+      ]
+    },
+    "WAL-CLM-IMMORT-000070": {
+      "subject": "calcium",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What in the modern diet drains your calcium?",
+      "answer_short": "Fiber, salt and soft-drink phosphate force calcium out of the body — the modern diet's calcium-to-phosphorus ratio simply can't be met by eating alone.",
+      "topics": [
+        "calcium-phosphorus-ratio",
+        "phosphorus",
+        "anti-nutrients",
+        "soft-drinks"
+      ]
+    },
+    "WAL-CLM-IMMORT-000074": {
+      "subject": "calcium",
+      "also_about": [],
+      "facet": "stance",
+      "question": "How many diseases does Wallach tie to calcium deficiency?",
+      "answer_short": "147 — Wallach links no fewer than 147 diseases to calcium deficiency or imbalance, and says U.S. diets are so deficient that only supplements fix it.",
+      "topics": [
+        "147-diseases",
+        "deficiency-thesis",
+        "supplementation"
+      ]
+    },
+    "WAL-CLM-IMMORT-000075": {
+      "subject": "calcium",
+      "also_about": [],
+      "facet": "history",
+      "question": "Which famous people did Wallach say had calcium deficiency?",
+      "answer_short": "He points to Pope John Paul II, Elizabeth Taylor, 'Bo' Jackson and vegan NBA star Bill Walton — all, he says, with osteoporosis or fractures.",
+      "topics": [
+        "osteoporosis",
+        "celebrities",
+        "anecdote"
+      ]
+    }
+  }
+}

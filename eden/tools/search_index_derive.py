@@ -1,0 +1,220 @@
+#!/usr/bin/env python3
+"""
+eden/tools/search_index_derive.py — DERIVE the shipped Search index from the pillars.
+
+Joins the two hand-authored SOURCE files with the sealed corpus:
+  - eden/corpus/search-enrichment.json  (authored: subject/also_about/facet/question/
+        answer_short/topics per search-only claim id)
+  - eden/catalog/search-entities.json   (entity registry; canon entities via canon_ref)
+  - eden/corpus/claims/claims-*.json     (the sealed claim → answer/verbatim/page/book/tier1)
+  - eden/corpus/essentials-canon.json    (canon display_name/symbol for canon_ref entities)
+  - eden/corpus/books-meta.json          (book title/year for the composed cite)
+  - eden/catalog/conditions.json         (also_about resolution)
+into ONE derived artifact:
+  - dashboard/assets/data/search/search-index.json  { books, entities, claims }
+
+R1: this artifact is registered in eden/derived/MANIFEST.json, so derived_artifacts_fresh
+re-runs build_index() and byte-compares to disk — a hand-edit or stale build is un-shippable.
+build_index() is pure + deterministic (sorted). validate() (also called by the
+search_index_wellformed invariant) hard-fails on a bad facet, an unresolved subject/also_about,
+a missing authored field, an enrichment entry that is not a search-only claim, or an empty
+derived answer/verbatim — so poison can never reach the shipped index.
+
+§00.A: every answer/verbatim shipped here is a byte-faithful projection of a sealed Wallach
+claim; the derive never invents content, only re-homes + joins it.
+"""
+import json
+import pathlib
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
+
+# The closed facet taxonomy — MUST mirror core/schemas/search.ts SEARCH_FACETS (blueprint §4A).
+SEARCH_FACETS = [
+    'basics', 'warning', 'discovery', 'etymology', 'physiology', 'mechanism', 'sources',
+    'uses', 'stance', 'protocol', 'history', 'big_question', 'biography',
+]
+
+ARTIFACT = 'dashboard/assets/data/search/search-index.json'
+
+
+def _load(rel):
+    return json.loads((ROOT / rel).read_text(encoding='utf-8'))
+
+
+def _claims_by_id():
+    out = {}
+    for shard in sorted((ROOT / 'eden' / 'corpus' / 'claims').glob('claims-*.json')):
+        for c in json.loads(shard.read_text(encoding='utf-8')).get('claims', []):
+            out[c['id']] = c
+    return out
+
+
+def _derive_answer(claim_text):
+    """answer = claim_text minus the trailing ' In his words: "..."' verbatim tail (blueprint §8;
+    the tail's exact words already live in the separate `verbatim` layer). Byte-faithful otherwise —
+    the lead label (e.g. 'Mercury — the basics.') is KEPT (Luneth 2026-07-09)."""
+    idx = claim_text.find(' In his words:')
+    return claim_text[:idx].rstrip() if idx != -1 else claim_text
+
+
+def _canon():
+    return {e['slug']: e for e in _load('eden/corpus/essentials-canon.json')['essentials']}
+
+
+def _condition_slugs():
+    return set(_load('eden/catalog/conditions.json').get('conditions', {}).keys())
+
+
+def validate(enr=None, reg=None, canon=None, claims_by_id=None):
+    """Structural gate (shared by build_index + the search_index_wellformed invariant). Returns a
+    list of human-readable violations ([] == clean). Validates only the ENRICHED claims that exist,
+    so the board stays green as entities are added one at a time (completeness is a later gate)."""
+    enr = _load('eden/corpus/search-enrichment.json')['enrichment'] if enr is None else enr
+    reg = _load('eden/catalog/search-entities.json')['entities'] if reg is None else reg
+    canon = _canon() if canon is None else canon
+    claims_by_id = _claims_by_id() if claims_by_id is None else claims_by_id
+
+    canon_slugs = set(canon.keys())
+    reg_slugs = set(reg.keys())
+    resolvable = canon_slugs | reg_slugs | _condition_slugs()
+    errs = []
+
+    for cid in sorted(enr.keys()):
+        a = enr[cid]
+        c = claims_by_id.get(cid)
+        if c is None:
+            errs.append(f'{cid}: enrichment references a claim id that does not exist')
+            continue
+        # NOTE: an enriched claim may be search-only OR dual-home tier-1 (a claim that ALSO
+        # maps an operational condition/essential is BOTH searchable and tier-1 — search-corpus
+        # doctrine). So there is NO "must be search-only" check here: the tier-1 boundary runs the
+        # OTHER direction (search-only must not leak INTO the operational tabs — search_only_indices_excluded).
+        for fld in ('subject', 'facet', 'question', 'answer_short'):
+            if not str(a.get(fld, '')).strip():
+                errs.append(f'{cid}: missing authored field {fld!r}')
+        if a.get('facet') not in SEARCH_FACETS:
+            errs.append(f'{cid}: facet {a.get("facet")!r} not in the closed taxonomy')
+        subj = a.get('subject')
+        if subj and subj not in (reg_slugs | canon_slugs):
+            errs.append(f'{cid}: subject {subj!r} resolves to neither the registry nor essentials-canon')
+        for ab in a.get('also_about', []):
+            if ab not in resolvable:
+                errs.append(f'{cid}: also_about {ab!r} resolves to no registry/canon/condition slug')
+        if not _derive_answer(c.get('claim_text', '')).strip():
+            errs.append(f'{cid}: derived answer is empty')
+        if not str(c.get('verbatim', '')).strip():
+            errs.append(f'{cid}: sealed verbatim is empty')
+
+    for slug, r in reg.items():
+        if r.get('canon_ref'):
+            if slug not in canon_slugs:
+                errs.append(f'registry {slug!r}: canon_ref but not an essentials-canon slug')
+            if r.get('display_name'):
+                errs.append(f'registry {slug!r}: canon_ref must OMIT display_name (pulled from canon)')
+    return errs
+
+
+def _entity_record(slug, reg, canon, count):
+    r = reg.get(slug, {})
+    if r.get('canon_ref'):
+        ce = canon[slug]
+        rec = {
+            'display_name': ce['display_name'],
+            'type': r.get('type', 'nutrient'),
+            'synonyms': r.get('synonyms', []),
+            'related': r.get('related', []),
+            'claim_count': count,
+        }
+        if ce.get('symbol'):
+            rec['symbol'] = ce['symbol']
+        return rec
+    rec = {
+        'display_name': r['display_name'],
+        'type': r.get('type', 'concept'),
+        'synonyms': r.get('synonyms', []),
+        'related': r.get('related', []),
+        'claim_count': count,
+    }
+    if r.get('symbol'):
+        rec['symbol'] = r['symbol']
+    return rec
+
+
+def build_index():
+    """Pure — returns the derived index object (no write). Used by derived_artifacts_fresh."""
+    enr = _load('eden/corpus/search-enrichment.json')['enrichment']
+    reg = _load('eden/catalog/search-entities.json')['entities']
+    canon = _canon()
+    claims_by_id = _claims_by_id()
+    books_meta = {b['book_id']: b for b in _load('eden/corpus/books-meta.json')['books']}
+
+    errs = validate(enr, reg, canon, claims_by_id)
+    if errs:
+        raise ValueError('search index INVALID — refuses to derive:\n  ' + '\n  '.join(errs))
+
+    claims = []
+    counts = {}
+    for cid in sorted(enr.keys()):
+        a = enr[cid]
+        c = claims_by_id[cid]
+        loc = c.get('locator') or {}
+        rec = {
+            'id': cid,
+            'subject': a['subject'],
+            'also_about': a.get('also_about', []),
+            'facet': a['facet'],
+            'question': a['question'],
+            'answer_short': a['answer_short'],
+            'answer': _derive_answer(c.get('claim_text', '')),
+            'verbatim': c.get('verbatim', ''),
+            'page': loc.get('page'),
+            'book_id': loc.get('book'),
+            'topics': a.get('topics', []),
+        }
+        tier1 = {}
+        if c.get('essentials'):
+            tier1['essentials'] = c['essentials']
+        if c.get('conditions'):
+            tier1['conditions'] = c['conditions']
+        if c.get('symptoms'):
+            tier1['symptoms'] = c['symptoms']
+        if tier1:
+            rec['tier1_link'] = tier1
+        claims.append(rec)
+        counts[a['subject']] = counts.get(a['subject'], 0) + 1
+
+    books = {}
+    for rec in claims:
+        bid = rec['book_id']
+        if bid and bid in books_meta and bid not in books:
+            b = books_meta[bid]
+            books[bid] = {'title': b['title'], 'year': b['year']}
+
+    entities = {slug: _entity_record(slug, reg, canon, counts[slug]) for slug in sorted(counts.keys())}
+
+    return {
+        'schema_version': 1,
+        '_generated': 'DERIVED by eden/tools/search_index_derive.py from the sealed pillars — do not hand-edit',
+        'books': books,
+        'entities': entities,
+        'claims': claims,
+    }
+
+
+def write_index():
+    """Regenerate the on-disk artifact via safe_write (§17). Used by build_embeds.py."""
+    import sys
+    sys.path.insert(0, str(ROOT / 'tools'))
+    import safe_write
+    payload = json.dumps(build_index(), indent=2, ensure_ascii=False) + '\n'
+    return safe_write.safe_rewrite(ROOT / ARTIFACT, payload)
+
+
+if __name__ == '__main__':
+    import sys
+    if '--check' in sys.argv:
+        v = validate()
+        print('VALID' if not v else 'INVALID:\n  ' + '\n  '.join(v))
+        sys.exit(1 if v else 0)
+    n = write_index()
+    print(f'wrote {ARTIFACT} ({n} B)')

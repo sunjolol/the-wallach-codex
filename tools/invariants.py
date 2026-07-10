@@ -1615,6 +1615,42 @@ def check_search_only_indices_excluded():
     return True, f"all {len(search_ids)} search-only (tier-2) claim(s) correctly excluded from operational indices"
 
 
+def check_search_index_wellformed():
+    """Search-corpus doctrine + Charter R4/R5 -- every ENRICHED search claim is STRUCTURED, not a
+    blob: the authored fields (subject/facet/question/answer_short) are present, facet is in the
+    closed taxonomy, subject resolves to the entity registry OR essentials-canon, every also_about
+    resolves to a registry/canon/condition slug, and the DERIVED answer + sealed verbatim are
+    non-empty. Delegates to eden/tools/search_index_derive.validate() -- the SAME check build_index()
+    refuses to derive on -- so a bad facet / unresolved subject / empty answer can never reach the
+    shipped search-index.json (R7: the gate ships with the derive; negative-tested by
+    tools/test_search_index_wellformed.py). Also cross-checks that the TS schema's SEARCH_FACETS
+    taxonomy has not drifted from the Python one (SS00.B #11 -- two surfaces, one truth). Validates
+    ONLY the enriched claims that exist (entity-by-entity build), so the board stays green as
+    entities are added; full-corpus search completeness is a later gate. Truth-anchored on the sealed
+    claim shards x the hand-authored enrichment/registry, recomputed each run."""
+    tool = ROOT / "eden" / "tools" / "search_index_derive.py"
+    enr_p = ROOT / "eden" / "corpus" / "search-enrichment.json"
+    if not tool.exists() or not enr_p.exists():
+        return True, "search subsystem not installed (bootstrap-guard)"
+    sys.path.insert(0, str(ROOT / "eden" / "tools"))
+    import search_index_derive
+    errs = list(search_index_derive.validate())
+    ts_p = ROOT / "dashboard" / "assets" / "js" / "src" / "core" / "schemas" / "search.ts"
+    if ts_p.exists():
+        m = re.search(r"SEARCH_FACETS\s*=\s*\[(.*?)\]\s*as const", ts_p.read_text(encoding="utf-8"), re.S)
+        if m:
+            ts_facets = set(re.findall(r"'([a-z_]+)'", m.group(1)))
+            py_facets = set(search_index_derive.SEARCH_FACETS)
+            if ts_facets != py_facets:
+                errs.append(f"facet taxonomy DRIFT TS vs Python: {sorted(ts_facets ^ py_facets)}")
+    if errs:
+        return False, ("search index NOT well-formed (" + str(len(errs)) + "): "
+                       + "; ".join(errs[:6]) + (" ..." if len(errs) > 6 else ""))
+    enr = json.loads(enr_p.read_text(encoding="utf-8"))["enrichment"]
+    return True, (f"all {len(enr)} enriched search claim(s) well-formed (facet in taxonomy, subject "
+                  f"resolves, answer+verbatim present) + TS/Python facet taxonomy in sync")
+
+
 def check_verbatim_names_mapped_conditions():
     """Luneth rule (SESSION 31, 2026-07-01): a Wallach quote shown under a condition
     MUST name that condition (or a registered synonym) in the SHOWN verbatim text --
@@ -2782,6 +2818,14 @@ INVARIANTS = [
         truth_anchor="claim `search-only` tag (eden/corpus/claims/*) vs claim ids referenced by the sealed indices (eden/corpus/indices/*); independent of corpus_derive's own filter",
         severity="critical",
         lesson_ref="Wallach SESSION 12 (2026-06-28) — Luneth: baking modality name-drops (color->jaundice) into the conditions tab reads as AI slop + dilutes the 90-essentials solid-cure doctrine; tier-1 doctrine vs tier-2 search-only must stay separated (memory search-vs-operational-index-separation)",
+    ),
+    Invariant(
+        name="search_index_wellformed",
+        description="every enriched search claim is structured (facet in the closed taxonomy, subject resolves to registry/canon, also_about resolves, answer+verbatim non-empty); TS/Python facet taxonomy in sync",
+        check_fn=check_search_index_wellformed,
+        truth_anchor="eden/corpus/search-enrichment.json x registry/canon/conditions via search_index_derive.validate() + the TS schema SEARCH_FACETS literal",
+        severity="critical",
+        lesson_ref="Search G-7 (2026-07-09) -- de-blobbed faceted search template (mercury+calcium first entities); negative test tools/test_search_index_wellformed.py",
     ),
     Invariant(
         name="verbatim_names_mapped_conditions",
