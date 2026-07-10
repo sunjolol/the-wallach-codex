@@ -943,6 +943,204 @@
         "cancer",
         "big-question"
       ]
+    },
+    "WAL-CLM-IMMORT-000097": {
+      "subject": "copper",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is copper, and where does its name come from?",
+      "answer_short": "A soft reddish metal - only 0.007% of Earth's crust. Its name is Latin 'cuprum' ('from Cyprus,' where Rome mined it), and it was one of humanity's first metals.",
+      "topics": [
+        "etymology",
+        "cyprus",
+        "bronze"
+      ]
+    },
+    "WAL-CLM-IMMORT-000106": {
+      "subject": "copper",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "What are normal copper levels in the blood?",
+      "answer_short": "Average plasma copper is about 87-153 (women) and 89-137 (men) micrograms per deciliter, and ~90% of it rides on a carrier protein called ceruloplasmin.",
+      "topics": [
+        "blood-levels",
+        "ceruloplasmin",
+        "plasma"
+      ]
+    },
+    "WAL-CLM-IMMORT-000111": {
+      "subject": "copper",
+      "also_about": [
+        "pellagra"
+      ],
+      "facet": "warning",
+      "question": "What raises blood copper, and what is copper overload?",
+      "answer_short": "Copper roughly doubles in pregnancy and on the pill, and rises with infection, liver disease and pellagra; overload shows as copper Kayser-Fleischer rings in the eye.",
+      "topics": [
+        "copper-overload",
+        "kayser-fleischer",
+        "ceruloplasmin"
+      ]
+    },
+    "WAL-CLM-IMMORT-000091": {
+      "subject": "chromium",
+      "also_about": [
+        "colloidal_minerals"
+      ],
+      "facet": "mechanism",
+      "question": "Why is chromium so easy to lose and hard to absorb?",
+      "answer_short": "Sugar flushes chromium out in urine (up 300% for 12 hrs) and food chromium is barely retained; form decides - ~25% of chelated vs up to 98% of colloidal is absorbed.",
+      "topics": [
+        "absorption",
+        "sugar",
+        "colloidal",
+        "rda"
+      ]
+    },
+    "WAL-CLM-IMMORT-000092": {
+      "subject": "chromium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Has Americans' chromium level been falling?",
+      "answer_short": "Yes - the young hold more chromium than the old, unsupplemented tissue steadily drops with age, and Wallach charts a steep fall in average American blood chromium since 1948.",
+      "topics": [
+        "chromium-decline",
+        "aging",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-IMMORT-000093": {
+      "subject": "chromium",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "How was chromium discovered, and why does it color gemstones?",
+      "answer_short": "Found in 1797 by Vauquelin and named from Greek 'chroma' (color) for its vivid compounds - trace chromium makes rubies red, emeralds green, and alexandrite shift color.",
+      "topics": [
+        "vauquelin",
+        "etymology",
+        "gemstones"
+      ]
+    },
+    "WAL-CLM-IMMORT-000040": {
+      "subject": "gold",
+      "also_about": [
+        "arthritis"
+      ],
+      "facet": "stance",
+      "question": "Does gold treat arthritis?",
+      "answer_short": "Wallach is cautious - doctors add gold to aspirin for arthritis, but he stresses it only helps ACTIVE joint inflammation, not advanced, destructive rheumatoid arthritis.",
+      "topics": [
+        "arthritis",
+        "gold-therapy",
+        "rheumatoid-arthritis"
+      ]
+    },
+    "WAL-CLM-IMMORT-000041": {
+      "subject": "gold",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "uses",
+      "question": "Is gold used to treat cancer?",
+      "answer_short": "One form is: gold-198, a short-lived radioactive isotope (2.7-day half-life), is used as radiation therapy for some cancers - a medical use Wallach notes, not nutrition.",
+      "topics": [
+        "gold-198",
+        "radiotherapy",
+        "cancer"
+      ]
+    },
+    "WAL-CLM-IMMORT-000033": {
+      "subject": "aluminum",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Is aluminum in our food, and is that dangerous?",
+      "answer_short": "Unavoidable but normal, Wallach says: aluminum is Earth's most abundant metal (~12% of crust) and every plant takes it up - so no food or natural water is free of it.",
+      "topics": [
+        "food-source",
+        "abundance",
+        "exposure"
+      ]
+    },
+    "WAL-CLM-IMMORT-000034": {
+      "subject": "aluminum",
+      "also_about": [
+        "alzheimers"
+      ],
+      "facet": "big_question",
+      "question": "Does aluminum cause Alzheimer's disease?",
+      "answer_short": "Wallach says no - he calls it a myth from 'a single faulty study,' citing later work (Oxford 1992, a 2007 German assessment) that found no proven dietary-aluminum link.",
+      "topics": [
+        "alzheimers",
+        "myth",
+        "is-x-good-bad"
+      ]
+    },
+    "WAL-CLM-IMMORT-000195": {
+      "subject": "krypton",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is krypton - the Superman element?",
+      "answer_short": "Despite Superman's 'kryptonite,' real krypton is a harmless, unreactive noble gas - which Wallach says 'may in fact be an essential element for all vertebrates.'",
+      "topics": [
+        "noble-gas",
+        "superman",
+        "kryptonite"
+      ]
+    },
+    "WAL-CLM-IMMORT-000196": {
+      "subject": "krypton",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "How was krypton discovered?",
+      "answer_short": "Noble gases had no place in Mendeleyev's 1869 table; after argon forced a new column, Sir William Ramsay isolated krypton in 1898, naming it from Greek 'kryptos,' hidden.",
+      "topics": [
+        "ramsay",
+        "etymology",
+        "noble-gas"
+      ]
+    },
+    "WAL-CLM-IMMORT-000197": {
+      "subject": "krypton",
+      "also_about": [
+        "fluoride"
+      ],
+      "facet": "history",
+      "question": "Can krypton form compounds - didn't Pauling predict it?",
+      "answer_short": "Yes - though noble gases were thought inert, Linus Pauling used quantum mechanics in 1933 to predict krypton fluoride; Neil Bartlett proved him right by making KrF2 in 1966.",
+      "topics": [
+        "pauling",
+        "krypton-fluoride",
+        "chemistry"
+      ]
+    },
+    "WAL-CLM-IMMORT-000134": {
+      "subject": "gallium",
+      "also_about": [
+        "aluminum"
+      ],
+      "facet": "basics",
+      "question": "What is gallium - the metal that melts in your hand?",
+      "answer_short": "A soft, aluminum-like metal so low-melting it liquefies from your body heat, yet has the widest liquid range of any metal; named for Gallia (the Latin name for France).",
+      "topics": [
+        "melting-point",
+        "mendeleyev",
+        "france"
+      ]
+    },
+    "WAL-CLM-IMMORT-000136": {
+      "subject": "gallium",
+      "also_about": [
+        "cancer",
+        "melanoma"
+      ],
+      "facet": "uses",
+      "question": "Is gallium used in cancer medicine?",
+      "answer_short": "Yes - gallium-67 (78-hour half-life), one of medicine's first man-made isotopes, gathers in cancers like melanoma, letting it treat them with little harm to nearby tissue.",
+      "topics": [
+        "gallium-67",
+        "melanoma",
+        "nuclear-medicine"
+      ]
     }
   }
 }

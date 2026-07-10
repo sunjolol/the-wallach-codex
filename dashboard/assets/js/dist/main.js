@@ -56224,7 +56224,7 @@ Two correctness fixes the batch forced (both gated + negative-tested):
 - catalog_ref in search_index_derive: condition entities pull display_name from eden/catalog/conditions.json (no duplication, mirrors canon_ref). validate() + the search_index_wellformed gate cover it; negative test grew to 10 cases (added catalog_ref-with-name, catalog_ref-not-condition).
 - tier1_link fires ONLY for non-search-only claims: a search-only modality claim (Color Therapy's color-map) can carry a conditions array for search matching, but must not show operational cross-links -- so the tier1/RELATED pills no longer flood a modality page.
 
-Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 with 0 page errors, negative test 10/10. All seven type pages, the color wheel, the self-upgrading pills, and BACK navigation visually verified via headless screenshots and signed off by Luneth. NEXT = BULK MIGRATION of the remaining ~180 search-only + dual-home claims into entities using these seven patterns -- Luneth: start bulking but STAY GROUNDED, keep the first few dozen at the golden-standard quality before accelerating. Mining still PAUSED at Immortality Mn-Manganese (~char 309953).` }, { id: "lg_mrefuoom_7uhdfi", ts: "2026-07-09T23:31:25.558933-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 1: 6 element entities (Iron/Iodine/Germanium/Hydrogen/Potassium/Fluoride, 33 claims) + 3 template refinements: glossary tooltips in Search answers, scroll-to-top on nav, and a new see_also in-text cross-reference to another claim card.", detail: "Kicked off the real bulk migration of the Search knowledge base with a first, fully-polished batch of six element/mineral entities (Iron, Iodine, Germanium, Hydrogen, Potassium, Fluoride). Then folded in three fixes from Luneth's review that make EVERY entity better, not just these six: glossary tooltips now appear inside Search answers (a dotted-underline term like 'fluorine' explains itself on hover), clicking an entity always opens at the top, and a 'see the full fluoride stance'-style pointer is now a real clickable link that jumps down to that card and flashes it.\r\n\r\nWHAT: 33 sealed search-only claims -> 6 finished faceted entity pages. Iron/Iodine/Germanium/Hydrogen/Potassium are canon minerals (canon_ref, symbol from essentials-canon); Fluoride is the non-canon exemplar (display_name + symbol F) and the two-sided-controversy showcase (a stance facet + a big_question 'Is fluoridated water safe?').\r\n\r\nSOURCE: eden/corpus/search-enrichment.json 41->74 enriched claims (+the see_also on claim 118); eden/catalog/search-entities.json 8->14 entities.\r\n\r\nREFINEMENT 1 (glosses in Search): extracted glossify() into a shared views/glossify.ts (single source for Knowledge + Search); knowledge-corpus.ts imports it; search.ts glossifies answer+verbatim; .gloss CSS un-scoped from #drawer-knowledge-mount to global so the dotted underline renders in the Search drawer; added the fluorine term to glossary.json.\r\n\r\nREFINEMENT 2 (scroll-to-top): search.ts paintBody resets .sr-body.scrollTop=0 on every repaint (replacing innerHTML alone did not reset it when the new content was as tall).\r\n\r\nREFINEMENT 3 (see_also in-text cross-reference, shipped WITH its gate per R7): core/schemas/search.ts adds SeeAlsoSchema {phrase,target} + optional field; search_index_derive.py passes it through and validate() gates it (target is an enriched claim of the SAME subject; phrase must occur in the answer); search.ts renderAnswer splits the answer around the phrase into glossify(before)+link+glossify(after), and jumpToClaim opens the target + ancestor details, scrollIntoView, adds a flash class; drawer-search.css adds .sr-xref (solid-underline accent link, distinct from the dotted gloss) + a sr-claim-flash keyframe. tools/test_search_index_wellformed.py 10->13 negative cases (ghost-target, phantom-phrase, cross-subject all RED).\r\n\r\nVERIFIED: build OK (tsc clean + esbuild), invariants 53/53, render_probe_search + render_probe_knowledge PASS (0 page errors), negative test 13/13; targeted headless checks all PASS -- fluorine .gloss dotted underline in the Search drawer, scroll-reset before=400/after=0, and the see_also link rendering + click opening/flashing Big Questions claim 124. Luneth visually signed off the whole batch.\r\n\r\nNEXT: continue bulk migration at this quality (next cluster: Copper, Chromium, rare-earth trace minerals). Epigenetics deferred (charged content). Mining still PAUSED at Immortality Mn-Manganese." }];
+Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 with 0 page errors, negative test 10/10. All seven type pages, the color wheel, the self-upgrading pills, and BACK navigation visually verified via headless screenshots and signed off by Luneth. NEXT = BULK MIGRATION of the remaining ~180 search-only + dual-home claims into entities using these seven patterns -- Luneth: start bulking but STAY GROUNDED, keep the first few dozen at the golden-standard quality before accelerating. Mining still PAUSED at Immortality Mn-Manganese (~char 309953).` }, { id: "lg_mrefuoom_7uhdfi", ts: "2026-07-09T23:31:25.558933-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 1: 6 element entities (Iron/Iodine/Germanium/Hydrogen/Potassium/Fluoride, 33 claims) + 3 template refinements: glossary tooltips in Search answers, scroll-to-top on nav, and a new see_also in-text cross-reference to another claim card.", detail: "Kicked off the real bulk migration of the Search knowledge base with a first, fully-polished batch of six element/mineral entities (Iron, Iodine, Germanium, Hydrogen, Potassium, Fluoride). Then folded in three fixes from Luneth's review that make EVERY entity better, not just these six: glossary tooltips now appear inside Search answers (a dotted-underline term like 'fluorine' explains itself on hover), clicking an entity always opens at the top, and a 'see the full fluoride stance'-style pointer is now a real clickable link that jumps down to that card and flashes it.\r\n\r\nWHAT: 33 sealed search-only claims -> 6 finished faceted entity pages. Iron/Iodine/Germanium/Hydrogen/Potassium are canon minerals (canon_ref, symbol from essentials-canon); Fluoride is the non-canon exemplar (display_name + symbol F) and the two-sided-controversy showcase (a stance facet + a big_question 'Is fluoridated water safe?').\r\n\r\nSOURCE: eden/corpus/search-enrichment.json 41->74 enriched claims (+the see_also on claim 118); eden/catalog/search-entities.json 8->14 entities.\r\n\r\nREFINEMENT 1 (glosses in Search): extracted glossify() into a shared views/glossify.ts (single source for Knowledge + Search); knowledge-corpus.ts imports it; search.ts glossifies answer+verbatim; .gloss CSS un-scoped from #drawer-knowledge-mount to global so the dotted underline renders in the Search drawer; added the fluorine term to glossary.json.\r\n\r\nREFINEMENT 2 (scroll-to-top): search.ts paintBody resets .sr-body.scrollTop=0 on every repaint (replacing innerHTML alone did not reset it when the new content was as tall).\r\n\r\nREFINEMENT 3 (see_also in-text cross-reference, shipped WITH its gate per R7): core/schemas/search.ts adds SeeAlsoSchema {phrase,target} + optional field; search_index_derive.py passes it through and validate() gates it (target is an enriched claim of the SAME subject; phrase must occur in the answer); search.ts renderAnswer splits the answer around the phrase into glossify(before)+link+glossify(after), and jumpToClaim opens the target + ancestor details, scrollIntoView, adds a flash class; drawer-search.css adds .sr-xref (solid-underline accent link, distinct from the dotted gloss) + a sr-claim-flash keyframe. tools/test_search_index_wellformed.py 10->13 negative cases (ghost-target, phantom-phrase, cross-subject all RED).\r\n\r\nVERIFIED: build OK (tsc clean + esbuild), invariants 53/53, render_probe_search + render_probe_knowledge PASS (0 page errors), negative test 13/13; targeted headless checks all PASS -- fluorine .gloss dotted underline in the Search drawer, scroll-reset before=400/after=0, and the see_also link rendering + click opening/flashing Big Questions claim 124. Luneth visually signed off the whole batch.\r\n\r\nNEXT: continue bulk migration at this quality (next cluster: Copper, Chromium, rare-earth trace minerals). Epigenetics deferred (charged content). Mining still PAUSED at Immortality Mn-Manganese." }, { id: "lg_mrehejh9_0bpa5h", ts: "2026-07-10T00:14:51.549811-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 2: 6 more element entities (Copper, Chromium, Gold, Aluminum, Krypton, Gallium; 15 claims). Pure data migration on the batch-1 template -- no code changes. Landing now 19 entities; cross-link pills self-upgraded.", detail: "Kept the Search bulk migration rolling at golden quality with a second batch of six element/mineral entities -- Copper, Chromium, Gold, Aluminum, Krypton, Gallium. This one was pure content authoring: the template from batch 1 held, so no code or gate changes were needed. Best part -- authoring these automatically turned three previously-grey cross-reference chips into live clickable links (the pill rule paying off with zero extra wiring).\r\n\r\nWHAT: 15 sealed search-only claims -> 6 faceted entity pages. Copper/Chromium/Gold/Aluminum/Gallium are canon (canon_ref, symbol from essentials-canon); Krypton is the non-canon noble gas (display_name + symbol Kr). Delight content: Krypton (Superman/kryptonite + Pauling predicting krypton-fluoride), Aluminum (the Alzheimer-myth as a big_question -- Wallach says no, a single faulty study), Gallium (the metal that melts in your hand + gallium-67 cancer medicine), Chromium (why trace chromium colors rubies and emeralds), Copper (copper-overload Kayser-Fleischer eye rings as a warning). Facet spreads: copper basics/physiology/warning, chromium mechanism/physiology/discovery, gold stance/uses, aluminum sources/big_question, krypton basics/discovery/history, gallium basics/uses.\r\n\r\nEMERGENT self-upgrade: the ONE pill rule (a slug pill is a clickable link iff it has an entity page) meant authoring these lit up cross-links that were plain chips before -- Gallium->Aluminum, Krypton->Fluoride, and Diabetes->Chromium are now clickable, no per-site wiring.\r\n\r\nDATA ONLY: eden/corpus/search-enrichment.json 74->89 enriched claims; eden/catalog/search-entities.json 14->20 entities. No schema/view/gate changes. Landing = 19 entities.\r\n\r\nVERIFIED: build OK, invariants 53/53, render_probe_search PASS (19-entity landing, all types, 0 page errors), targeted headless check PASS (gallium/krypton/diabetes cross-link pills render as clickable links + Gallium->Aluminum click navigates). Luneth visually signed off.\r\n\r\nNEXT: continue bulk migration -- remaining Immortality element A-Z search-only claims (cobalt, silver, bromine, cadmium, cesium, bismuth, helium, hafnium, holmium, indium, iridium, lutetium, rare earths dysprosium/erbium/europium), then the Lets-Play-Doctor modality cluster (hydrotherapy, homeopathy, Ayurveda, reflexology -- topic exemplars) + Wallach philosophy claims. ~129 non-epigenetics search-only claims remain. Mining still PAUSED at Immortality Mn-Manganese." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -57510,6 +57510,21 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
       }
     },
     entities: {
+      aluminum: {
+        display_name: "Aluminum",
+        type: "nutrient",
+        synonyms: [
+          "al",
+          "aluminium"
+        ],
+        related: [
+          "gallium",
+          "alzheimers",
+          "mercury"
+        ],
+        claim_count: 2,
+        symbol: "Al"
+      },
       calcium: {
         display_name: "Calcium",
         type: "nutrient",
@@ -57537,6 +57552,20 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
           "menopause"
         ],
         claim_count: 2
+      },
+      chromium: {
+        display_name: "Chromium",
+        type: "nutrient",
+        synonyms: [
+          "cr"
+        ],
+        related: [
+          "diabetes",
+          "vanadium",
+          "colloidal_minerals"
+        ],
+        claim_count: 3,
+        symbol: "Cr"
       },
       colloidal_minerals: {
         display_name: "Colloidal Minerals",
@@ -57566,6 +57595,21 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
           "light_therapy"
         ],
         claim_count: 3
+      },
+      copper: {
+        display_name: "Copper",
+        type: "nutrient",
+        synonyms: [
+          "cu",
+          "cuprum"
+        ],
+        related: [
+          "zinc",
+          "iron",
+          "anemia"
+        ],
+        claim_count: 3,
+        symbol: "Cu"
       },
       diabetes: {
         display_name: "Diabetes",
@@ -57599,6 +57643,21 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         claim_count: 6,
         symbol: "F"
       },
+      gallium: {
+        display_name: "Gallium",
+        type: "nutrient",
+        synonyms: [
+          "ga",
+          "gallium-67"
+        ],
+        related: [
+          "aluminum",
+          "cancer",
+          "germanium"
+        ],
+        claim_count: 2,
+        symbol: "Ga"
+      },
       germanium: {
         display_name: "Germanium",
         type: "nutrient",
@@ -57613,6 +57672,21 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ],
         claim_count: 6,
         symbol: "Ge"
+      },
+      gold: {
+        display_name: "Gold",
+        type: "nutrient",
+        synonyms: [
+          "au",
+          "aurum"
+        ],
+        related: [
+          "arthritis",
+          "cancer",
+          "silver"
+        ],
+        claim_count: 2,
+        symbol: "Au"
       },
       hydrogen: {
         display_name: "Hydrogen",
@@ -57656,6 +57730,20 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ],
         claim_count: 5,
         symbol: "Fe"
+      },
+      krypton: {
+        display_name: "Krypton",
+        type: "element",
+        synonyms: [
+          "kr",
+          "noble gas"
+        ],
+        related: [
+          "fluoride",
+          "helium"
+        ],
+        claim_count: 3,
+        symbol: "Kr"
       },
       mercury: {
         display_name: "Mercury",
@@ -57993,6 +58081,80 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ]
       },
       {
+        id: "WAL-CLM-IMMORT-000033",
+        subject: "aluminum",
+        also_about: [],
+        facet: "sources",
+        question: "Is aluminum in our food, and is that dangerous?",
+        answer_short: "Unavoidable but normal, Wallach says: aluminum is Earth's most abundant metal (~12% of crust) and every plant takes it up - so no food or natural water is free of it.",
+        answer: "Aluminum is everywhere in the food supply, and Wallach frames that as normal, not alarming: it is the most abundant metal in the earth's crust (about 12%) and is taken up by every plant grown in soil - so you cannot eat any grain, vegetable, fruit or nut, or drink any natural water, without ingesting it. He notes it is especially high in plankton and red algae and concentrates in mammals' hair and lungs.",
+        verbatim: "Aluminum represents 12%\nof the earth\u2019s crust and is the third most abundant element in the\nearth\u2019s crust and the most abundant metal in the earth\u2019s crust.",
+        page: 96,
+        book_id: "immortality",
+        topics: [
+          "food-source",
+          "abundance",
+          "exposure"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000034",
+        subject: "aluminum",
+        also_about: [
+          "alzheimers"
+        ],
+        facet: "big_question",
+        question: "Does aluminum cause Alzheimer's disease?",
+        answer_short: "Wallach says no - he calls it a myth from 'a single faulty study,' citing later work (Oxford 1992, a 2007 German assessment) that found no proven dietary-aluminum link.",
+        answer: "Does aluminum cause Alzheimer's disease? Wallach says no - and calls the scare a myth built on 'a single faulty study.' He cites the follow-up work: a 1992 study in Nature by Frank Watt and colleagues at Oxford, using a highly accurate technique, found the same aluminum levels in the brains of non-Alzheimer's controls as in Alzheimer's patients; a 1997 Berkeley newsletter and a 2007 German Federal Institute for Risk Assessment opinion both concluded there is no proven link between dietary aluminum and Alzheimer's.",
+        verbatim: "A single faulty study over 35 years ago suggested a link\nbetween chronic aluminum exposure and Alzheimer\u2019s disease.",
+        page: 97,
+        book_id: "immortality",
+        topics: [
+          "alzheimers",
+          "myth",
+          "is-x-good-bad"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000040",
+        subject: "gold",
+        also_about: [
+          "arthritis"
+        ],
+        facet: "stance",
+        question: "Does gold treat arthritis?",
+        answer_short: "Wallach is cautious - doctors add gold to aspirin for arthritis, but he stresses it only helps ACTIVE joint inflammation, not advanced, destructive rheumatoid arthritis.",
+        answer: "Does gold treat arthritis? Wallach's take is more cautionary than the mainstream - he is refining a common stance, not endorsing it. He acknowledges that orthodox physicians do give gold compounds (gold sodium thiomalate, aurothioglucose) as an add-on to aspirin for arthritis pain, but immediately qualifies it: gold has been reported effective ONLY against active joint inflammation, and is not usually helpful for advanced, destructive rheumatoid arthritis. So he is describing and limiting an existing orthodox therapy, not putting gold forward as a broad arthritis cure.",
+        verbatim: "Gold compounds (gold sodium thiomalate, gold\nthioglucose also known as aurothioglucose) are frequently\nadministered by orthodox physicians as an add-on therapy\nwith salicylates (aspirin) for arthritis when added pain relief\nis required. Gold has been reported only to be effective\nagainst active joint inflammation and is not usually helpful\nfor treating advanced destructive rheumatoid arthritis.",
+        page: 102,
+        book_id: "immortality",
+        topics: [
+          "arthritis",
+          "gold-therapy",
+          "rheumatoid-arthritis"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000041",
+        subject: "gold",
+        also_about: [
+          "cancer"
+        ],
+        facet: "uses",
+        question: "Is gold used to treat cancer?",
+        answer_short: "One form is: gold-198, a short-lived radioactive isotope (2.7-day half-life), is used as radiation therapy for some cancers - a medical use Wallach notes, not nutrition.",
+        answer: "Separate from gold's nutritional role, Wallach notes a purely medical use of a radioactive form of gold: gold-198, a short-lived isotope (half-life 2.7 days, made by bombarding natural gold with neutrons in a reactor), is used to treat some forms of cancer. This is radiation therapy, not nutrition - included for reference.",
+        verbatim: "A radioactive isotope of gold\nwith a short half-life of 2.7 days is used to treat some forms of\ncancer. Known as gold-198, it is easily produced by exposing\nnatural gold to a beam of neutrons in a nuclear reactor.",
+        page: 102,
+        book_id: "immortality",
+        topics: [
+          "gold-198",
+          "radiotherapy",
+          "cancer"
+        ]
+      },
+      {
         id: "WAL-CLM-IMMORT-000054",
         subject: "cholesterol",
         also_about: [],
@@ -58177,6 +58339,113 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
             "gestational_diabetes"
           ]
         }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000091",
+        subject: "chromium",
+        also_about: [
+          "colloidal_minerals"
+        ],
+        facet: "mechanism",
+        question: "Why is chromium so easy to lose and hard to absorb?",
+        answer_short: "Sugar flushes chromium out in urine (up 300% for 12 hrs) and food chromium is barely retained; form decides - ~25% of chelated vs up to 98% of colloidal is absorbed.",
+        answer: "Wallach explains why chromium is both easy to lose and hard to absorb \u2014 his argument for supplementing it in a highly-absorbable form. Eating sugar (colas, fruit juices, honey, candy, table sugar, fructose) raises the rate at which chromium is flushed out in the urine by 300% for 12 hours. And ordinary inorganic chromium from food and water is poorly used: a typical 50-100 microgram (mcg) intake yields only 0.25-5 mcg the body can actually retain. Form is decisive \u2014 about 25% of chelated chromium is absorbed, versus up to 98% of colloidal chromium. He notes the chromium RDA (the government's Recommended Daily Allowance) is 50-200 mcg of usable chromium per day for adults.",
+        verbatim: "Dietary sugar\nloads (i.e. colas, apple juice, grape juice, honey, candy, table\nsugar, fructose, etc.) increase the natural rate of urinary Cr loss\nby 300% for 12 hours. The average intake of 50 to 100 ug of\ninorganic chromium from food and water supplies only 0.25\nto 5 ug of usable and retainable chromium. By contrast, 25%\nof chelated chromium is absorbed and up to 98% of colloidal\n\n\n \n\nchromium is absorbed. The chromium RDA for humans is a\nrange of 50 to 200 ug of usable chromium per day for adults.",
+        page: 130,
+        book_id: "immortality",
+        topics: [
+          "absorption",
+          "sugar",
+          "colloidal",
+          "rda"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000092",
+        subject: "chromium",
+        also_about: [],
+        facet: "physiology",
+        question: "Has Americans' chromium level been falling?",
+        answer_short: "Yes - the young hold more chromium than the old, unsupplemented tissue steadily drops with age, and Wallach charts a steep fall in average American blood chromium since 1948.",
+        answer: "A recurring worry in the book: Americans' chromium status has been sliding for decades. Newborn animals and people carry more chromium per pound of body weight than older ones, and in anyone who doesn't supplement, tissue chromium steadily falls with age. Wallach flags a population-wide drop in average American blood chromium since 1948, tabulating mean levels in micrograms per liter (mcg/L) by year: 28 in cities and 1000 in rural areas in 1948, 13 in 1971, 10 in 1972, 4.7-5.1 in 1973, 0.73-1.6 in 1974, 0.16 in 1978, 0.43 in 1980, and 0.13 by 1985.",
+        verbatim: "The concentration of chromium found in newborn\nanimals and humans is higher per pound of body weight\nthan it is in older individuals. In fact, the chromium levels of\nunsupplemented human tissue, steadily decreases throughout\nlife. Of greater concern has been the steady decline in the\naverage American serum chromium since 1948.",
+        page: 131,
+        book_id: "immortality",
+        topics: [
+          "chromium-decline",
+          "aging",
+          "deficiency"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000093",
+        subject: "chromium",
+        also_about: [],
+        facet: "discovery",
+        question: "How was chromium discovered, and why does it color gemstones?",
+        answer_short: "Found in 1797 by Vauquelin and named from Greek 'chroma' (color) for its vivid compounds - trace chromium makes rubies red, emeralds green, and alexandrite shift color.",
+        answer: "The element's backstory \u2014 and why it colors gemstones. Chromium was discovered by the French chemist Louis-Nicolas Vauquelin in 1797 and named from the Greek chroma, 'color,' because all its compounds are vividly colored (the pure metal itself, though, is a hard, brittle, silver-white). Added to steel at 18% it makes stainless steel, and its near-invisible corrosion-proof oxide layer makes it the bright plating on bathroom fixtures, jewelry and car bumpers. Trace chromium is what tints many gems: it makes rubies red (in corundum), emeralds green (in beryl), and gives alexandrite (in chrysoberyl) its famous color-shift \u2014 red in firelight, blue in daylight.",
+        verbatim: "Chromium was discovered by French chemist Louis-Nicolas Vauquelin in 1797 and named from the Greek word\nchroma, which translates to \u201Ccolor.\u201D",
+        page: 129,
+        book_id: "immortality",
+        topics: [
+          "vauquelin",
+          "etymology",
+          "gemstones"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000097",
+        subject: "copper",
+        also_about: [],
+        facet: "basics",
+        question: "What is copper, and where does its name come from?",
+        answer_short: "A soft reddish metal - only 0.007% of Earth's crust. Its name is Latin 'cuprum' ('from Cyprus,' where Rome mined it), and it was one of humanity's first metals.",
+        answer: "The element's name and history. Copper makes up only 0.007% of the earth's crust. Its name comes from the Latin cuprum, meaning 'from Cyprus' \u2014 the Romans mined their copper on the island of Cyprus. Copper was one of the first metals humanity used: copper jewelry from about 9000 B.C. has been found in Iraq. Because pure copper is soft, ancient peoples alloyed it with tin to make bronze, zinc to make brass, and nickel to make monel, producing harder metals for tools and weapons.",
+        verbatim: "Despite the common use of copper, it makes up only\n0.007% of the earth\u2019s crust. Copper gets its name from the\nLatin word, cuprum, which translates to \u201Cfrom Cyprus,\u201D a\nreference to the fact that the Romans mined their copper from\nthe island of Cyprus.",
+        page: 134,
+        book_id: "immortality",
+        topics: [
+          "etymology",
+          "cyprus",
+          "bronze"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000106",
+        subject: "copper",
+        also_about: [],
+        facet: "physiology",
+        question: "What are normal copper levels in the blood?",
+        answer_short: "Average plasma copper is about 87-153 (women) and 89-137 (men) micrograms per deciliter, and ~90% of it rides on a carrier protein called ceruloplasmin.",
+        answer: "Typical copper levels in the blood. Wallach gives average plasma copper as 87\u2013153 (women) and 89\u2013137 (men) \u2014 the book prints the unit as mg/dl, but for copper this is really micrograms per deciliter (\xB5g/dL), the standard unit for plasma copper. About 90% of the copper in plasma travels bound to a carrier protein called ceruloplasmin.",
+        verbatim: "The average plasma copper levels of women ranges\nfrom 87 to 153 mg/dl; for men the range is 89 to 137 mg/dl.\nAbout 90% of the plasma copper is bound in a protein called\nceruloplasmin.",
+        page: 137,
+        book_id: "immortality",
+        topics: [
+          "blood-levels",
+          "ceruloplasmin",
+          "plasma"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000111",
+        subject: "copper",
+        also_about: [
+          "pellagra"
+        ],
+        facet: "warning",
+        question: "What raises blood copper, and what is copper overload?",
+        answer_short: "Copper roughly doubles in pregnancy and on the pill, and rises with infection, liver disease and pellagra; overload shows as copper Kayser-Fleischer rings in the eye.",
+        answer: "Some situations that raise blood copper. Serum and plasma copper roughly double (increase 100%) in pregnant women and in women taking oral contraceptives (the pill), and rise during acute infections, liver disease, and pellagra (the disease of niacin / vitamin-B3 deficiency). When copper accumulates in the cornea of the eye it forms visible Kayser-Fleischer rings \u2014 a classic sign of copper overload.",
+        verbatim: "Serum and plasma copper increases 100% in pregnant\nwomen and women using oral contraceptives. Serum copper\nlevels are also elevated during acute infections, liver disease,\nand pellagra (niacin deficiency).\n\nAccumulations of copper in the cornea form Kayser-Fleischer Rings.",
+        page: 138,
+        book_id: "immortality",
+        topics: [
+          "copper-overload",
+          "kayser-fleischer",
+          "ceruloplasmin"
+        ]
       },
       {
         id: "WAL-CLM-IMMORT-000116",
@@ -58377,6 +58646,45 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
           "vitamin-c",
           "phytates",
           "rda"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000134",
+        subject: "gallium",
+        also_about: [
+          "aluminum"
+        ],
+        facet: "basics",
+        question: "What is gallium - the metal that melts in your hand?",
+        answer_short: "A soft, aluminum-like metal so low-melting it liquefies from your body heat, yet has the widest liquid range of any metal; named for Gallia (the Latin name for France).",
+        answer: "Gallium \u2014 the metal that melts in your hand. Gallium is in the same chemical family as aluminum and behaves much like it. It is so soft you can cut it with a knife, and its melting point is so low (29.8 degrees C, about 86 degrees F) that it turns liquid from the warmth of your hand; yet it does not boil until 2,403 degrees C, giving it the widest liquid range of any known metal. Its existence was predicted by Mendeleyev's periodic table in 1871, and Paul-Emile Lecoq de Boisbaudran identified it in 1875, naming it for Gallia (the Latin name for France).",
+        verbatim: "It is an extremely soft metal that can easily be cut with a knife.\nIt also has an extremely low melting point of 29.8 degrees C,\nallowing gallium to liquefy when it is held in the hand. Gallium\nhas an extremely high boiling point of 2,403 degrees C, allowing\ngallium to be in its liquid form in a range greater than that of\nany known metal.",
+        page: 145,
+        book_id: "immortality",
+        topics: [
+          "melting-point",
+          "mendeleyev",
+          "france"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000136",
+        subject: "gallium",
+        also_about: [
+          "cancer",
+          "melanoma"
+        ],
+        facet: "uses",
+        question: "Is gallium used in cancer medicine?",
+        answer_short: "Yes - gallium-67 (78-hour half-life), one of medicine's first man-made isotopes, gathers in cancers like melanoma, letting it treat them with little harm to nearby tissue.",
+        answer: "Gallium-67 in cancer medicine. Gallium-67 was one of the first artificially produced radioactive isotopes used in medicine. Its short half-life (78 hours) means it quickly loses its radioactivity and its tissue-destroying power. Because gallium-67 tends to accumulate in certain cancers (such as melanoma), it can be used to treat those cancers with little damage to the surrounding healthy tissue.",
+        verbatim: "radioactive isotopes to be used in medicine. Because of its\nshort half-life (78 hours), it rapidly loses its radioactivity and\nits destructive properties. This isotope has the property of\naccumulating in certain cancers (melanoma) and is used to\ntreat these cancers without damage to surrounding tissues.",
+        page: 146,
+        book_id: "immortality",
+        topics: [
+          "gallium-67",
+          "melanoma",
+          "nuclear-medicine"
         ]
       },
       {
@@ -59044,6 +59352,59 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
           "saltpeter",
           "gunpowder",
           "preservative"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000195",
+        subject: "krypton",
+        also_about: [],
+        facet: "basics",
+        question: "What is krypton - the Superman element?",
+        answer_short: "Despite Superman's 'kryptonite,' real krypton is a harmless, unreactive noble gas - which Wallach says 'may in fact be an essential element for all vertebrates.'",
+        answer: "Krypton \u2014 the noble gas of Superman fame. Famous as Superman's home planet and the source of 'kryptonite,' real krypton is a noble gas (an extremely unreactive element) that is totally harmless to humans. Notably, Wallach adds that krypton 'may in fact be an essential element for all vertebrates' \u2014 a speculative but intriguing note that even this inert gas could have a biological role.",
+        verbatim: "Kr-Krypton is found in igneous rock at 0.0001 ppm\nand sea water at 0.0025 ppm. Krypton is legendary as the\nhome planet of \u201CSuperman\u201D and the source of the mineral\n\u201Ckryptonite\u201D which had a crippling effect on \u201CSuperman.\u201D\nIn fact krypton in its natural elemental form is a noble gas,\ntotally harmless to humans and may in fact be an essential\nelement for all vertebrates.",
+        page: 165,
+        book_id: "immortality",
+        topics: [
+          "noble-gas",
+          "superman",
+          "kryptonite"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000196",
+        subject: "krypton",
+        also_about: [],
+        facet: "discovery",
+        question: "How was krypton discovered?",
+        answer_short: "Noble gases had no place in Mendeleyev's 1869 table; after argon forced a new column, Sir William Ramsay isolated krypton in 1898, naming it from Greek 'kryptos,' hidden.",
+        answer: "How krypton was discovered. When Mendeleyev built the first periodic table in 1869, no noble gases were yet known, so he left no place for them; the discovery of argon in 1894 forced a whole new column. In 1898 the English chemist Sir William Ramsay isolated and identified krypton, naming it from the Greek 'kryptos' meaning 'hidden.'",
+        verbatim: "As none of the Noble gases had been discovered when\nMendeleyev first constructed the periodic table in 1869, he\nmade no provision for them in the original table. It was only\nthe discovery of argon in 1894 that produced the need for a new\ncolumn in the table. In 1898, the English chemist Sir William\nRamsay isolated and identified krypton as a new element.\nHe named it for the Greek word kryptos, which translates to\n\u201Chidden.\u201D",
+        page: 165,
+        book_id: "immortality",
+        topics: [
+          "ramsay",
+          "etymology",
+          "noble-gas"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000197",
+        subject: "krypton",
+        also_about: [
+          "fluoride"
+        ],
+        facet: "history",
+        question: "Can krypton form compounds - didn't Pauling predict it?",
+        answer_short: "Yes - though noble gases were thought inert, Linus Pauling used quantum mechanics in 1933 to predict krypton fluoride; Neil Bartlett proved him right by making KrF2 in 1966.",
+        answer: "Krypton's supposed inertness, challenged and broken. Though noble gases were thought to form no compounds, the celebrated American chemist and two-time Nobel laureate Linus Pauling used quantum mechanics in 1933 to predict that a molecule of krypton and fluorine should be stable enough to exist. He was proven right in 1966 when Neil Bartlett of the University of British Columbia produced krypton fluoride (KrF2).",
+        verbatim: "The chemical inertness of krypton was challenged by\nthe celebrated American chemist and two time Nobel Prize\nwinner, Linus Pauling, who in 1933 used quantum mechanics\nto demonstrate that a molecule containing krypton and\nfluorine should be stable enough to exist. In 1966, Neil Bartlett\nof the University of British Columbia produced krypton\nfluoride (KrF2) as Pauling had predicted.",
+        page: 165,
+        book_id: "immortality",
+        topics: [
+          "pauling",
+          "krypton-fluoride",
+          "chemistry"
         ]
       },
       {

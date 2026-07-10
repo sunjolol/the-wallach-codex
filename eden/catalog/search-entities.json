@@ -187,6 +187,83 @@
         "osteoporosis",
         "tooth_decay"
       ]
+    },
+    "copper": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "cu",
+        "cuprum"
+      ],
+      "related": [
+        "zinc",
+        "iron",
+        "anemia"
+      ]
+    },
+    "chromium": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "cr"
+      ],
+      "related": [
+        "diabetes",
+        "vanadium",
+        "colloidal_minerals"
+      ]
+    },
+    "gold": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "au",
+        "aurum"
+      ],
+      "related": [
+        "arthritis",
+        "cancer",
+        "silver"
+      ]
+    },
+    "aluminum": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "al",
+        "aluminium"
+      ],
+      "related": [
+        "gallium",
+        "alzheimers",
+        "mercury"
+      ]
+    },
+    "krypton": {
+      "display_name": "Krypton",
+      "type": "element",
+      "symbol": "Kr",
+      "synonyms": [
+        "kr",
+        "noble gas"
+      ],
+      "related": [
+        "fluoride",
+        "helium"
+      ]
+    },
+    "gallium": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "ga",
+        "gallium-67"
+      ],
+      "related": [
+        "aluminum",
+        "cancer",
+        "germanium"
+      ]
     }
   }
 }
